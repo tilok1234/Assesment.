@@ -1,0 +1,12 @@
+{
+  "name": "8-bit-sprite-assembler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Procedural 24x24 character and enemy sprite assembler",
+  "scripts": {
+    "dev": "node tools/dev-server.mjs",
+    "dev:open": "node tools/dev-server.mjs --open",
+    "check": "node tools/check-project.mjs"
+  }
+}
