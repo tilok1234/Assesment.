@@ -47,6 +47,14 @@ const engine = await import(`${pathToFileURL(path.join(root, 'sprite-engine.js')
 
 checkSyntax('sprite-engine.js');
 checkSyntax('app.js');
+checkSyntax('engine/catalogs.js');
+checkSyntax('engine/catalogs/animation.js');
+checkSyntax('engine/catalogs/enemies.js');
+checkSyntax('engine/catalogs/palettes.js');
+checkSyntax('engine/catalogs/player-options.js');
+checkSyntax('engine/generators.js');
+checkSyntax('engine/renderer.js');
+checkSyntax('engine/sheets.js');
 checkSyntax('tools/build.mjs');
 checkSyntax('tools/dev-server.mjs');
 
@@ -69,11 +77,33 @@ const runtimeSources = {
   'index.html': entrySource,
   'app.js': await readFile(path.join(root, 'app.js'), 'utf8'),
   'sprite-engine.js': await readFile(path.join(root, 'sprite-engine.js'), 'utf8'),
+  'engine/catalogs.js': await readFile(path.join(root, 'engine', 'catalogs.js'), 'utf8'),
+  'engine/catalogs/animation.js': await readFile(path.join(root, 'engine', 'catalogs', 'animation.js'), 'utf8'),
+  'engine/catalogs/enemies.js': await readFile(path.join(root, 'engine', 'catalogs', 'enemies.js'), 'utf8'),
+  'engine/catalogs/palettes.js': await readFile(path.join(root, 'engine', 'catalogs', 'palettes.js'), 'utf8'),
+  'engine/catalogs/player-options.js': await readFile(path.join(root, 'engine', 'catalogs', 'player-options.js'), 'utf8'),
+  'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
+  'engine/renderer.js': await readFile(path.join(root, 'engine', 'renderer.js'), 'utf8'),
+  'engine/sheets.js': await readFile(path.join(root, 'engine', 'sheets.js'), 'utf8'),
 };
 for (const [relativePath, source] of Object.entries(runtimeSources)) {
   check(!/\bnew\s+Function\s*\(/.test(source), `${relativePath}: runtime code generation with new Function is not allowed`);
   check(!/\beval\s*\(/.test(source), `${relativePath}: runtime code generation with eval is not allowed`);
 }
+
+const expectedEngineExports = [
+  'ANIMS', 'DIRS', 'DIR_LABELS', 'ENEMIES', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
+  'OUTFITS', 'OUTFIT_COLORS', 'SHEET_COLS', 'SHIELDS', 'SIZE', 'SKINS', 'WEAPONS',
+  'buildSheet', 'describe', 'drawSprite', 'randomEnemy', 'randomPlayer', 'thumbURL',
+].sort();
+check(
+  JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
+  'sprite-engine.js public exports changed; consumers must keep using the stable facade API',
+);
+check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 40, 'sprite-engine.js must remain a small public facade');
+check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 40, 'engine/catalogs.js must remain a small internal facade');
+check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
+check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
 check(packageJson.scripts?.build === 'node tools/build.mjs', 'package.json must expose the production build command');

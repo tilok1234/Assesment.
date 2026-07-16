@@ -75,12 +75,14 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
 - `app.js` - editor state, controls, animation preview, persistence, and downloads
-- `sprite-engine.js` - procedural sprite definitions, rendering, animation, and export
+- `sprite-engine.js` - stable public engine API
+- `engine/` - focused animation, palette, player-option, enemy, renderer, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build
 - `tools/check-project.mjs` - project and asset validator
 - `src-tauri/` - Tauri 2 Windows wrapper, permissions, CSP, and icon resources
+- `ARCHITECTURE.md` - engine boundaries, dependency direction, and safe extension points
 - `ROADMAP.md` - agreed development and Windows release order
 
 ## Direction

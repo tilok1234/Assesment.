@@ -37,7 +37,7 @@ Exit criteria:
 
 ## Phase 2 - App-ready frontend and content foundation
 
-Progress: the standard `index.html` module frontend, restrictive-CSP-compatible runtime, dependency-free production build, and UI parity migration are complete. Splitting the procedural engine into its final content and renderer modules remains.
+Progress: complete for the current engine contract. The standard frontend, restrictive-CSP-compatible runtime, dependency-free production build, stable public engine facade, focused catalogs, renderer, sheet/export, and generator modules are all in place and parity-verified.
 
 Goals:
 
