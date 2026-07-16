@@ -42,7 +42,7 @@ Catalog files describe content. They do not touch the DOM, canvas, editor state,
 
 ### Sheets and thumbnails
 
-`engine/sheets.js` assembles renderer frames into the stable 12-column by 4-row sheet and produces UI thumbnails.
+`engine/sheets.js` assembles renderer frames into the stable 12-column by 4-row full sheet, selected-animation sheets with four direction rows, selected-direction sheets with all 12 frame columns, and UI thumbnails.
 
 ### Generators
 

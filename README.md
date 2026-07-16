@@ -16,6 +16,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Whole-sprite and per-category randomization with undo support
 - Persistent character names, live preview labels, and Windows-safe custom PNG filenames
 - Editable skin, hair, and outfit tone pairs with a reusable local palette library
+- Full-sheet, selected-animation, and selected-direction PNG export scopes
 
 ## Run it on Windows
 
@@ -71,6 +72,8 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 - Grid: 12 columns by 4 rows
 - Rows: down, left, right, up
 - Columns: idle x2, walk x4, attack x4, hurt x2
+- Animation export: selected animation frames across four direction rows
+- Direction export: all 12 animation frames across one selected direction row
 - Pack export scale: 4x
 - Pack sheet size: 1152x384 pixels
 - Transparent background with no baked shadow

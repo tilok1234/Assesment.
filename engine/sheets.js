@@ -28,6 +28,48 @@ export function buildSheet(spec, scale = 1, opts = {}) {
   return out;
 }
 
+export function buildAnimationSheet(spec, animId, scale = 1, opts = {}) {
+  const anim = ANIMS.find((item) => item.id === animId) || ANIMS[0];
+  const out = document.createElement('canvas');
+  out.width = anim.frames * SIZE * scale;
+  out.height = DIRS.length * SIZE * scale;
+  const octx = out.getContext('2d');
+  octx.imageSmoothingEnabled = false;
+
+  const tmp = document.createElement('canvas');
+  tmp.width = SIZE; tmp.height = SIZE;
+  const tctx = tmp.getContext('2d');
+  DIRS.forEach((dir, row) => {
+    for (let frame = 0; frame < anim.frames; frame++) {
+      drawSprite(tctx, spec, dir, anim.id, frame, { shadow: opts.shadow === true });
+      octx.drawImage(tmp, frame * SIZE * scale, row * SIZE * scale, SIZE * scale, SIZE * scale);
+    }
+  });
+  return out;
+}
+
+export function buildDirectionSheet(spec, direction, scale = 1, opts = {}) {
+  const dir = DIRS.includes(direction) ? direction : DIRS[0];
+  const out = document.createElement('canvas');
+  out.width = SHEET_COLS * SIZE * scale;
+  out.height = SIZE * scale;
+  const octx = out.getContext('2d');
+  octx.imageSmoothingEnabled = false;
+
+  const tmp = document.createElement('canvas');
+  tmp.width = SIZE; tmp.height = SIZE;
+  const tctx = tmp.getContext('2d');
+  let column = 0;
+  for (const anim of ANIMS) {
+    for (let frame = 0; frame < anim.frames; frame++) {
+      drawSprite(tctx, spec, dir, anim.id, frame, { shadow: opts.shadow === true });
+      octx.drawImage(tmp, column * SIZE * scale, 0, SIZE * scale, SIZE * scale);
+      column++;
+    }
+  }
+  return out;
+}
+
 // ---------------- thumbnails ----------------
 let _thumbCanvas = null;
 export function thumbURL(spec, dir = 'down', animId = 'idle', f = 0) {

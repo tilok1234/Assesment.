@@ -148,11 +148,19 @@
           </section>
 
           <section>
-            <h2>Sprite sheet</h2>
+            <div class="sheet-heading-row">
+              <h2 id="sheet-title">Full sprite sheet</h2>
+              <label class="sr-only" for="export-scope">Export scope</label>
+              <select id="export-scope" aria-label="Export scope">
+                <option value="full">Full sheet</option>
+                <option value="animation">Selected animation</option>
+                <option value="direction">Selected direction</option>
+              </select>
+            </div>
             <div class="sheet-preview">
               <canvas id="sheet-canvas" width="288" height="96" aria-label="Complete sprite sheet"></canvas>
             </div>
-            <p class="sheet-contract">cols: 2 idle · 4 walk · 4 attack · 2 hurt<br>rows: down / left / right / up</p>
+            <p class="sheet-contract" id="sheet-contract">12 columns · 4 rows · all animations and directions</p>
           </section>
 
           <section>

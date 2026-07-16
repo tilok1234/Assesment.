@@ -78,6 +78,7 @@ for (const controlId of [
   'character-name', 'export-name', 'export-filename-preview',
   'palette-editor', 'palette-summary', 'reset-palette-button', 'palette-name',
   'palette-select', 'save-palette-button', 'load-palette-button', 'delete-palette-button',
+  'sheet-title', 'sheet-contract', 'export-scope',
 ]) {
   check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
 }
@@ -103,7 +104,8 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 const expectedEngineExports = [
   'ANIMS', 'DIRS', 'DIR_LABELS', 'ENEMIES', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OUTFITS', 'OUTFIT_COLORS', 'SHEET_COLS', 'SHIELDS', 'SIZE', 'SKINS', 'WEAPONS',
-  'buildSheet', 'describe', 'drawSprite', 'randomEnemy', 'randomPlayer', 'thumbURL',
+  'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'describe', 'drawSprite',
+  'randomEnemy', 'randomPlayer', 'thumbURL',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
@@ -124,6 +126,8 @@ check(runtimeSources['app.js'].includes("className = 'category-randomize'"), 'ap
 check(runtimeSources['app.js'].includes('function randomDifferent('), 'app.js category randomization must guarantee a different selection');
 check(runtimeSources['app.js'].includes('function sanitizeFilenameBase('), 'app.js must sanitize custom export filenames');
 check(runtimeSources['app.js'].includes('triggerDownload(canvas, exportFilename())'), 'PNG downloads must use the resolved custom export filename');
+check(runtimeSources['app.js'].includes('function buildExportCanvas('), 'app.js must route full and scoped exports through one resolver');
+check(runtimeSources['app.js'].includes("EXPORT_SCOPES = ['full', 'animation', 'direction']"), 'app.js must support full, animation, and direction export scopes');
 check((entrySource.match(/data-palette-color=/g) || []).length === 6, 'index.html must expose all six editable player palette tones');
 check(runtimeSources['engine/renderer.js'].includes('palettePair(spec.palette?.skin'), 'the renderer must consume safe player palette overrides');
 

@@ -8,6 +8,7 @@ const PALETTE_VERSION = 1;
 const HISTORY_LIMIT = 100;
 const ZOOM_LEVELS = [6, 10, 14, 20];
 const EXPORT_SCALES = [4, 8, 12];
+const EXPORT_SCOPES = ['full', 'animation', 'direction'];
 const DIRECTION_NAMES = { down: 'Down', left: 'Left', right: 'Right', up: 'Up' };
 const DEFAULT_STATE = {
   mode: 'player',
@@ -30,6 +31,9 @@ const DEFAULT_STATE = {
   zoom: 14,
   spin: true,
   exportScale: 8,
+  exportScope: 'full',
+  exportAnim: 'walk',
+  exportDir: 'down',
 };
 
 const elements = {
@@ -57,6 +61,9 @@ const elements = {
       .map((canvas) => [canvas.dataset.directionCanvas, canvas]),
   ),
   sheetCanvas: document.querySelector('#sheet-canvas'),
+  sheetTitle: document.querySelector('#sheet-title'),
+  sheetContract: document.querySelector('#sheet-contract'),
+  exportScope: document.querySelector('#export-scope'),
   scaleButtons: document.querySelector('#scale-buttons'),
   sizeLabel: document.querySelector('#size-label'),
   characterName: document.querySelector('#character-name'),
@@ -195,6 +202,11 @@ function loadState() {
   loaded.exportScale = EXPORT_SCALES.includes(loaded.exportScale)
     ? loaded.exportScale
     : DEFAULT_STATE.exportScale;
+  loaded.exportScope = EXPORT_SCOPES.includes(loaded.exportScope)
+    ? loaded.exportScope
+    : DEFAULT_STATE.exportScope;
+  loaded.exportAnim = listHas(E.ANIMS, loaded.exportAnim) ? loaded.exportAnim : DEFAULT_STATE.exportAnim;
+  loaded.exportDir = E.DIRS.includes(loaded.exportDir) ? loaded.exportDir : DEFAULT_STATE.exportDir;
   loaded.spin = loaded.spin !== false;
 
   return loaded;
@@ -296,10 +308,57 @@ function generatedNameBase() {
   return characterName || E.describe(currentSpec());
 }
 
+function selectedExportAnimation() {
+  return E.ANIMS.find((anim) => anim.id === state.exportAnim) || E.ANIMS[0];
+}
+
+function exportDescriptor() {
+  if (state.exportScope === 'animation') {
+    const anim = selectedExportAnimation();
+    return {
+      width: anim.frames * E.SIZE,
+      height: E.DIRS.length * E.SIZE,
+      title: `${anim.name} animation`,
+      contract: `${anim.frames} frame columns · 4 direction rows`,
+      filenamePart: `${anim.id}-animation`,
+      buttonLabel: `Download ${anim.name.toLocaleLowerCase()} animation`,
+    };
+  }
+  if (state.exportScope === 'direction') {
+    const directionName = DIRECTION_NAMES[state.exportDir];
+    return {
+      width: E.SHEET_COLS * E.SIZE,
+      height: E.SIZE,
+      title: `${directionName} direction`,
+      contract: '12 frame columns · idle, walk, attack, and hurt',
+      filenamePart: `${state.exportDir}-direction`,
+      buttonLabel: `Download ${directionName.toLocaleLowerCase()} direction`,
+    };
+  }
+  return {
+    width: E.SHEET_COLS * E.SIZE,
+    height: E.DIRS.length * E.SIZE,
+    title: 'Full sprite sheet',
+    contract: '12 columns · 4 rows · all animations and directions',
+    filenamePart: 'sheet',
+    buttonLabel: 'Download full sheet',
+  };
+}
+
+function buildExportCanvas(spec, scale = 1) {
+  if (state.exportScope === 'animation') {
+    return E.buildAnimationSheet(spec, state.exportAnim, scale);
+  }
+  if (state.exportScope === 'direction') {
+    return E.buildDirectionSheet(spec, state.exportDir, scale);
+  }
+  return E.buildSheet(spec, scale);
+}
+
 function exportFilename() {
   const customName = sanitizeFilenameBase(state.exportName);
   if (customName) return `${customName}.png`;
-  return `${generatedNameBase()}-sheet@${state.exportScale}x.png`;
+  return `${generatedNameBase()}-${exportDescriptor().filenamePart}@${state.exportScale}x.png`;
 }
 
 function sanitizePreset(raw) {
@@ -771,7 +830,7 @@ function renderPlaybackControls() {
   elements.animationButtons.replaceChildren(...E.ANIMS.map((anim) => makeButton(
     anim.name,
     !state.spin && state.anim === anim.id,
-    () => setState({ anim: anim.id, spin: false }),
+    () => setState({ anim: anim.id, exportAnim: anim.id, spin: false }),
   )));
 
   elements.zoomButtons.replaceChildren(...ZOOM_LEVELS.map((zoom) => makeButton(
@@ -796,12 +855,19 @@ function renderDirectionControls() {
 }
 
 function renderExportControls() {
+  const descriptor = exportDescriptor();
   elements.scaleButtons.replaceChildren(...EXPORT_SCALES.map((scale) => makeButton(
     `${scale}x`,
     state.exportScale === scale,
     () => setState({ exportScale: scale }),
   )));
-  elements.sizeLabel.textContent = `${E.SHEET_COLS * E.SIZE * state.exportScale}x${E.DIRS.length * E.SIZE * state.exportScale}px`;
+  elements.exportScope.value = state.exportScope;
+  elements.sheetTitle.textContent = descriptor.title;
+  elements.sheetContract.textContent = descriptor.contract;
+  elements.sheetCanvas.dataset.scope = state.exportScope;
+  elements.sheetCanvas.setAttribute('aria-label', descriptor.title);
+  elements.sizeLabel.textContent = `${descriptor.width * state.exportScale}x${descriptor.height * state.exportScale}px`;
+  elements.downloadButton.textContent = descriptor.buttonLabel;
 }
 
 function renderExportFilename() {
@@ -890,13 +956,21 @@ function renderUi() {
 }
 
 function updateSheet(spec) {
-  const key = JSON.stringify(spec);
+  const key = JSON.stringify({
+    spec,
+    scope: state.exportScope,
+    animation: state.exportAnim,
+    direction: state.exportDir,
+  });
   if (key === sheetKey) return;
   sheetKey = key;
+  const sheet = buildExportCanvas(spec, 1);
+  elements.sheetCanvas.width = sheet.width;
+  elements.sheetCanvas.height = sheet.height;
   const context = elements.sheetCanvas.getContext('2d');
   context.imageSmoothingEnabled = false;
   context.clearRect(0, 0, elements.sheetCanvas.width, elements.sheetCanvas.height);
-  context.drawImage(E.buildSheet(spec, 1), 0, 0);
+  context.drawImage(sheet, 0, 0);
 }
 
 function drawFrame(animId, direction, frame) {
@@ -957,12 +1031,15 @@ function toggleCycle() {
     spinIndex = findSpinIndex();
     spinTime = 0;
   }
-  setState({ spin });
+  const patch = spin
+    ? { spin }
+    : { spin, exportAnim: state.anim, exportDir: state.dir };
+  setState(patch);
 }
 
 function chooseDirection(direction) {
   spinTime = 0;
-  setState({ dir: direction, spin: false });
+  setState({ dir: direction, exportDir: direction, spin: false });
 }
 
 function randomize() {
@@ -994,7 +1071,7 @@ function triggerDownload(canvas, filename) {
 
 function downloadSheet() {
   const spec = currentSpec();
-  const canvas = E.buildSheet(spec, state.exportScale);
+  const canvas = buildExportCanvas(spec, state.exportScale);
   triggerDownload(canvas, exportFilename());
 }
 
@@ -1005,6 +1082,9 @@ elements.randomizeButton.addEventListener('click', randomize);
 elements.savePresetButton.addEventListener('click', savePreset);
 elements.loadPresetButton.addEventListener('click', loadSelectedPreset);
 elements.deletePresetButton.addEventListener('click', deleteSelectedPreset);
+elements.exportScope.addEventListener('change', () => {
+  setState({ exportScope: elements.exportScope.value });
+});
 for (const input of elements.paletteInputs) {
   input.addEventListener('change', () => {
     const [material, indexText] = input.dataset.paletteColor.split('.');

@@ -737,6 +737,9 @@ button:disabled:hover {
 }
 
 .sheet-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 8px;
   padding: 7px;
   border: 1px solid rgba(0, 0, 0, 0.07);
@@ -745,8 +748,35 @@ button:disabled:hover {
 }
 
 .sheet-preview canvas {
+  display: block;
   width: 100%;
   height: auto;
+  image-rendering: pixelated;
+}
+
+.sheet-preview canvas[data-scope='animation'] {
+  width: auto;
+  max-width: 100%;
+  height: 104px;
+}
+
+.sheet-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#export-scope {
+  min-width: 0;
+  max-width: 158px;
+  padding: 5px 7px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 7px;
+  background: #ffffff;
+  color: rgba(35, 37, 43, 0.72);
+  font: inherit;
+  font-size: 10px;
 }
 
 .sheet-contract {
