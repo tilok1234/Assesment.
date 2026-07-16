@@ -21,7 +21,11 @@
           <h1>Sprite Assembler</h1>
           <p>24x24 · 4 directions · idle / walk / attack / hurt</p>
         </div>
-        <button class="secondary-button header-action" id="randomize-button" type="button">Randomize</button>
+        <div class="header-actions" aria-label="Editor actions">
+          <button class="secondary-button compact-action" id="undo-button" type="button" disabled>Undo</button>
+          <button class="secondary-button compact-action" id="redo-button" type="button" disabled>Redo</button>
+          <button class="secondary-button" id="randomize-button" type="button">Randomize</button>
+        </div>
       </header>
 
       <main class="app-main">
@@ -63,6 +67,24 @@
         </section>
 
         <aside class="export-panel" aria-label="Sprite sheet and export">
+          <section class="preset-panel">
+            <h2>Presets</h2>
+            <div class="preset-save-row">
+              <label class="sr-only" for="preset-name">Preset name</label>
+              <input id="preset-name" type="text" maxlength="48" placeholder="Name this sprite">
+              <button class="secondary-button compact-action" id="save-preset-button" type="button">Save</button>
+            </div>
+            <label class="sr-only" for="preset-select">Saved presets</label>
+            <select id="preset-select" aria-label="Saved presets">
+              <option value="">No presets saved</option>
+            </select>
+            <div class="preset-action-row">
+              <button class="secondary-button compact-action" id="load-preset-button" type="button" disabled>Load</button>
+              <button class="secondary-button compact-action danger-action" id="delete-preset-button" type="button" disabled>Delete</button>
+            </div>
+            <p class="preset-status" id="preset-status" role="status" aria-live="polite">Presets stay on this device.</p>
+          </section>
+
           <section>
             <h2>All directions</h2>
             <div class="direction-previews">

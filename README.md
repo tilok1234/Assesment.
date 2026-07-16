@@ -11,6 +11,8 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Transparent PNG sprite-sheet export at 4x, 8x, or 12x scale
 - A validated asset pack containing 144 exported sheets
 - Local browser persistence for the current configuration
+- Versioned, named player and enemy presets stored on the current device
+- Sprite-only undo and redo through the header controls or `Ctrl+Z` / `Ctrl+Y`
 
 ## Run it on Windows
 
@@ -74,7 +76,7 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
-- `app.js` - editor state, controls, animation preview, persistence, and downloads
+- `app.js` - editor state, sprite history, presets, controls, animation preview, persistence, and downloads
 - `sprite-engine.js` - stable public engine API
 - `engine/` - focused animation, palette, player-option, enemy, renderer, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets

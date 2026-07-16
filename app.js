@@ -1,6 +1,9 @@
 import * as E from './sprite-engine.js';
 
 const STORAGE_KEY = 'sprite-assembler-v1';
+const PRESET_STORAGE_KEY = 'sprite-assembler-presets-v1';
+const PRESET_VERSION = 1;
+const HISTORY_LIMIT = 100;
 const ZOOM_LEVELS = [6, 10, 14, 20];
 const EXPORT_SCALES = [4, 8, 12];
 const DIRECTION_NAMES = { down: 'Down', left: 'Left', right: 'Right', up: 'Up' };
@@ -41,13 +44,25 @@ const elements = {
   sheetCanvas: document.querySelector('#sheet-canvas'),
   scaleButtons: document.querySelector('#scale-buttons'),
   sizeLabel: document.querySelector('#size-label'),
+  undoButton: document.querySelector('#undo-button'),
+  redoButton: document.querySelector('#redo-button'),
   randomizeButton: document.querySelector('#randomize-button'),
+  presetName: document.querySelector('#preset-name'),
+  presetSelect: document.querySelector('#preset-select'),
+  savePresetButton: document.querySelector('#save-preset-button'),
+  loadPresetButton: document.querySelector('#load-preset-button'),
+  deletePresetButton: document.querySelector('#delete-preset-button'),
+  presetStatus: document.querySelector('#preset-status'),
   downloadButton: document.querySelector('#download-button'),
 };
 
 const thumbCache = new Map();
 const spinCells = E.ANIMS.flatMap((anim) => E.DIRS.map((dir) => ({ anim, dir })));
 let state = loadState();
+let presetLibrary = loadPresetLibrary();
+let selectedPresetId = '';
+const historyPast = [];
+const historyFuture = [];
 let lastTime = 0;
 let spinIndex = findSpinIndex();
 let spinTime = 0;
@@ -55,6 +70,29 @@ let sheetKey = '';
 
 function listHas(list, value) {
   return list.some((item) => item.id === value);
+}
+
+function validId(list, value, fallback) {
+  return listHas(list, value) ? value : fallback;
+}
+
+function sanitizePlayer(player = {}) {
+  return {
+    skin: validId(E.SKINS, player.skin, DEFAULT_STATE.player.skin),
+    hairStyle: validId(E.HAIR_STYLES, player.hairStyle, DEFAULT_STATE.player.hairStyle),
+    hairColor: validId(E.HAIR_COLORS, player.hairColor, DEFAULT_STATE.player.hairColor),
+    headgear: validId(E.HEADGEAR, player.headgear, DEFAULT_STATE.player.headgear),
+    outfit: validId(E.OUTFITS, player.outfit, DEFAULT_STATE.player.outfit),
+    outfitColor: validId(E.OUTFIT_COLORS, player.outfitColor, DEFAULT_STATE.player.outfitColor),
+    weapon: validId(E.WEAPONS, player.weapon, DEFAULT_STATE.player.weapon),
+    shield: validId(E.SHIELDS, player.shield, DEFAULT_STATE.player.shield),
+  };
+}
+
+function sanitizeEnemy(enemy = {}) {
+  const family = E.ENEMIES.find((item) => item.id === enemy.family) || E.ENEMIES[0];
+  const variant = validId(family.variants, enemy.variant, family.variants[0].id);
+  return { family: family.id, variant };
 }
 
 function loadState() {
@@ -68,8 +106,8 @@ function loadState() {
   const loaded = {
     ...DEFAULT_STATE,
     ...saved,
-    player: { ...DEFAULT_STATE.player, ...(saved.player || {}) },
-    enemy: { ...DEFAULT_STATE.enemy, ...(saved.enemy || {}) },
+    player: sanitizePlayer(saved.player),
+    enemy: sanitizeEnemy(saved.enemy),
   };
 
   loaded.mode = loaded.mode === 'enemy' ? 'enemy' : 'player';
@@ -90,16 +128,184 @@ function persistState() {
   } catch {}
 }
 
-function setState(patch, { persist = true, render = true } = {}) {
-  state = { ...state, ...patch };
+function editableSnapshot(source = state) {
+  return {
+    mode: source.mode,
+    player: { ...source.player },
+    enemy: { ...source.enemy },
+  };
+}
+
+function snapshotsMatch(left, right) {
+  return JSON.stringify(left) === JSON.stringify(right);
+}
+
+function pushHistory(stack, snapshot) {
+  stack.push(snapshot);
+  if (stack.length > HISTORY_LIMIT) stack.shift();
+}
+
+function setState(patch, { persist = true, render = true, recordHistory = true } = {}) {
+  const tracksSprite = ['mode', 'player', 'enemy']
+    .some((key) => Object.prototype.hasOwnProperty.call(patch, key));
+  const before = tracksSprite ? editableSnapshot() : null;
+  const next = { ...state, ...patch };
+
+  if (recordHistory && before && !snapshotsMatch(before, editableSnapshot(next))) {
+    pushHistory(historyPast, before);
+    historyFuture.length = 0;
+  }
+
+  state = next;
   if (persist) persistState();
   if (render) renderUi();
+}
+
+function restoreSnapshot(snapshot) {
+  state = {
+    ...state,
+    mode: snapshot.mode,
+    player: sanitizePlayer(snapshot.player),
+    enemy: sanitizeEnemy(snapshot.enemy),
+  };
+  persistState();
+  renderUi();
+}
+
+function undo() {
+  if (!historyPast.length) return;
+  pushHistory(historyFuture, editableSnapshot());
+  restoreSnapshot(historyPast.pop());
+}
+
+function redo() {
+  if (!historyFuture.length) return;
+  pushHistory(historyPast, editableSnapshot());
+  restoreSnapshot(historyFuture.pop());
 }
 
 function currentSpec() {
   return state.mode === 'player'
     ? { kind: 'player', ...state.player }
     : { kind: 'enemy', ...state.enemy };
+}
+
+function sanitizePreset(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const kind = raw.kind === 'enemy' ? 'enemy' : raw.kind === 'player' ? 'player' : null;
+  const name = typeof raw.name === 'string' ? raw.name.trim().slice(0, 48) : '';
+  if (!kind || !name) return null;
+
+  return {
+    id: typeof raw.id === 'string' && raw.id ? raw.id : makePresetId(),
+    name,
+    kind,
+    spec: kind === 'player' ? sanitizePlayer(raw.spec) : sanitizeEnemy(raw.spec),
+    createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
+    updatedAt: typeof raw.updatedAt === 'string' ? raw.updatedAt : new Date().toISOString(),
+  };
+}
+
+function loadPresetLibrary() {
+  let saved = null;
+  try {
+    saved = JSON.parse(localStorage.getItem(PRESET_STORAGE_KEY) || 'null');
+  } catch {}
+
+  if (!saved || saved.version !== PRESET_VERSION || !Array.isArray(saved.presets)) {
+    return { version: PRESET_VERSION, presets: [] };
+  }
+
+  const ids = new Set();
+  const presets = [];
+  for (const raw of saved.presets) {
+    const preset = sanitizePreset(raw);
+    if (!preset || ids.has(preset.id)) continue;
+    ids.add(preset.id);
+    presets.push(preset);
+  }
+  return { version: PRESET_VERSION, presets };
+}
+
+function persistPresetLibrary() {
+  try {
+    localStorage.setItem(PRESET_STORAGE_KEY, JSON.stringify(presetLibrary));
+  } catch {}
+}
+
+function makePresetId() {
+  if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
+  return `preset-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+}
+
+function selectedPreset() {
+  return presetLibrary.presets.find((preset) => preset.id === selectedPresetId) || null;
+}
+
+function presetLabel(preset) {
+  return `${preset.kind === 'player' ? 'Player' : 'Enemy'} · ${preset.name}`;
+}
+
+function setPresetStatus(message) {
+  elements.presetStatus.textContent = message;
+}
+
+function savePreset() {
+  const spec = currentSpec();
+  const typedName = elements.presetName.value.trim().slice(0, 48);
+  const name = typedName || E.describe(spec).replaceAll('-', ' ');
+  const normalizedName = name.toLocaleLowerCase();
+  const selected = selectedPreset();
+  const sameSelectedName = selected?.kind === spec.kind
+    && selected.name.toLocaleLowerCase() === normalizedName;
+  const existing = sameSelectedName
+    ? selected
+    : presetLibrary.presets.find((preset) => (
+      preset.kind === spec.kind && preset.name.toLocaleLowerCase() === normalizedName
+    ));
+  const now = new Date().toISOString();
+  const preset = {
+    id: existing?.id || makePresetId(),
+    name,
+    kind: spec.kind,
+    spec: spec.kind === 'player' ? sanitizePlayer(spec) : sanitizeEnemy(spec),
+    createdAt: existing?.createdAt || now,
+    updatedAt: now,
+  };
+
+  if (existing) {
+    presetLibrary.presets = presetLibrary.presets.map((item) => item.id === existing.id ? preset : item);
+  } else {
+    presetLibrary.presets.push(preset);
+  }
+
+  selectedPresetId = preset.id;
+  elements.presetName.value = preset.name;
+  persistPresetLibrary();
+  renderPresetControls();
+  setPresetStatus(existing ? `Updated “${preset.name}”.` : `Saved “${preset.name}”.`);
+}
+
+function loadSelectedPreset() {
+  const preset = selectedPreset();
+  if (!preset) return;
+  const patch = preset.kind === 'player'
+    ? { mode: 'player', player: sanitizePlayer(preset.spec) }
+    : { mode: 'enemy', enemy: sanitizeEnemy(preset.spec) };
+  setState(patch);
+  elements.presetName.value = preset.name;
+  setPresetStatus(`Loaded “${preset.name}”.`);
+}
+
+function deleteSelectedPreset() {
+  const preset = selectedPreset();
+  if (!preset) return;
+  presetLibrary.presets = presetLibrary.presets.filter((item) => item.id !== preset.id);
+  selectedPresetId = '';
+  elements.presetName.value = '';
+  persistPresetLibrary();
+  renderPresetControls();
+  setPresetStatus(`Deleted “${preset.name}”.`);
 }
 
 function currentFamily() {
@@ -332,12 +538,42 @@ function renderExportControls() {
   elements.sizeLabel.textContent = `${E.SHEET_COLS * E.SIZE * state.exportScale}x${E.DIRS.length * E.SIZE * state.exportScale}px`;
 }
 
+function renderHistoryControls() {
+  elements.undoButton.disabled = historyPast.length === 0;
+  elements.redoButton.disabled = historyFuture.length === 0;
+  elements.undoButton.title = historyPast.length ? 'Undo sprite change (Ctrl+Z)' : 'Nothing to undo';
+  elements.redoButton.title = historyFuture.length ? 'Redo sprite change (Ctrl+Y)' : 'Nothing to redo';
+}
+
+function renderPresetControls() {
+  if (!presetLibrary.presets.some((preset) => preset.id === selectedPresetId)) {
+    selectedPresetId = '';
+  }
+
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = presetLibrary.presets.length ? 'Choose a preset' : 'No presets saved';
+  const options = presetLibrary.presets.map((preset) => {
+    const option = document.createElement('option');
+    option.value = preset.id;
+    option.textContent = presetLabel(preset);
+    return option;
+  });
+  elements.presetSelect.replaceChildren(placeholder, ...options);
+  elements.presetSelect.value = selectedPresetId;
+  elements.presetSelect.disabled = presetLibrary.presets.length === 0;
+  elements.loadPresetButton.disabled = !selectedPresetId;
+  elements.deletePresetButton.disabled = !selectedPresetId;
+}
+
 function renderUi() {
   renderModeButtons();
   renderOptionGroups();
   renderPlaybackControls();
   renderDirectionControls();
   renderExportControls();
+  renderHistoryControls();
+  renderPresetControls();
 }
 
 function updateSheet(spec) {
@@ -447,19 +683,56 @@ function downloadSheet() {
 }
 
 elements.cycleButton.addEventListener('click', toggleCycle);
+elements.undoButton.addEventListener('click', undo);
+elements.redoButton.addEventListener('click', redo);
 elements.randomizeButton.addEventListener('click', randomize);
+elements.savePresetButton.addEventListener('click', savePreset);
+elements.loadPresetButton.addEventListener('click', loadSelectedPreset);
+elements.deletePresetButton.addEventListener('click', deleteSelectedPreset);
+elements.presetSelect.addEventListener('change', () => {
+  selectedPresetId = elements.presetSelect.value;
+  const preset = selectedPreset();
+  elements.presetName.value = preset?.name || '';
+  renderPresetControls();
+  setPresetStatus(preset ? `Selected “${preset.name}”.` : 'Presets stay on this device.');
+});
+elements.presetName.addEventListener('keydown', (event) => {
+  if (event.key !== 'Enter') return;
+  event.preventDefault();
+  savePreset();
+});
 elements.downloadButton.addEventListener('click', downloadSheet);
 for (const button of elements.directionButtons) {
   button.addEventListener('click', () => chooseDirection(button.dataset.direction));
 }
 
 window.addEventListener('keydown', (event) => {
+  const target = event.target;
+  const editingText = target instanceof Element
+    && target.matches('input, select, textarea, [contenteditable="true"]');
+  if (editingText) return;
+
+  const shortcut = (event.ctrlKey || event.metaKey) && !event.altKey;
+  const key = event.key.toLocaleLowerCase();
+  if (shortcut && key === 'z') {
+    event.preventDefault();
+    if (event.shiftKey) redo();
+    else undo();
+    return;
+  }
+  if (shortcut && key === 'y') {
+    event.preventDefault();
+    redo();
+    return;
+  }
+
   const directions = {
     ArrowUp: 'up',
     ArrowDown: 'down',
     ArrowLeft: 'left',
     ArrowRight: 'right',
   };
+  if (event.ctrlKey || event.metaKey || event.altKey) return;
   const direction = directions[event.key];
   if (!direction) return;
   event.preventDefault();

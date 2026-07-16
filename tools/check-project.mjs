@@ -72,6 +72,12 @@ check(Boolean(entryFile), `Missing application entry point (${entryCandidates.jo
 check(entryFile === 'index.html', 'The app-ready frontend must use index.html as its entry point');
 check(entrySource.includes('type="module" src="./app.js"'), 'index.html must load app.js as a module');
 check(entrySource.includes('href="./styles.css"'), 'index.html must load styles.css');
+for (const controlId of [
+  'undo-button', 'redo-button', 'preset-name', 'preset-select',
+  'save-preset-button', 'load-preset-button', 'delete-preset-button',
+]) {
+  check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
+}
 
 const runtimeSources = {
   'index.html': entrySource,
@@ -104,6 +110,11 @@ check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 40, 'sprite-eng
 check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 40, 'engine/catalogs.js must remain a small internal facade');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
+check(runtimeSources['app.js'].includes("PRESET_VERSION = 1"), 'app.js must keep presets under an explicit versioned schema');
+check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
+check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy']"), 'app.js history must remain scoped to sprite-edit state');
+check(runtimeSources['app.js'].includes("key === 'z'"), 'app.js must expose the undo keyboard shortcut');
+check(runtimeSources['app.js'].includes("key === 'y'"), 'app.js must expose the redo keyboard shortcut');
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
 check(packageJson.scripts?.build === 'node tools/build.mjs', 'package.json must expose the production build command');

@@ -50,7 +50,7 @@ Catalog files describe content. They do not touch the DOM, canvas, editor state,
 
 ### Editor
 
-`app.js` owns UI state, controls, animation playback, browser persistence, and download behavior. It consumes only the public engine facade.
+`app.js` owns UI state, controls, animation playback, browser persistence, sprite-only history, versioned named presets, and download behavior. It consumes only the public engine facade. History snapshots contain only the active mode and player/enemy specifications, so preview and export-view choices remain independent.
 
 ### Windows wrapper
 
