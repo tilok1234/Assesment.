@@ -38,6 +38,7 @@ const DEFAULT_STATE = {
   exportScope: 'full',
   exportAnim: 'walk',
   exportDir: 'down',
+  comparison: null,
 };
 
 const elements = {
@@ -81,6 +82,9 @@ const elements = {
   exportFilenamePreview: document.querySelector('#export-filename-preview'),
   undoButton: document.querySelector('#undo-button'),
   redoButton: document.querySelector('#redo-button'),
+  resetButton: document.querySelector('#reset-button'),
+  duplicateButton: document.querySelector('#duplicate-button'),
+  compareButton: document.querySelector('#compare-button'),
   randomizeButton: document.querySelector('#randomize-button'),
   presetName: document.querySelector('#preset-name'),
   presetSelect: document.querySelector('#preset-select'),
@@ -89,6 +93,19 @@ const elements = {
   deletePresetButton: document.querySelector('#delete-preset-button'),
   presetStatus: document.querySelector('#preset-status'),
   downloadButton: document.querySelector('#download-button'),
+  compareDialog: document.querySelector('#compare-dialog'),
+  compareContext: document.querySelector('#compare-context'),
+  closeCompareButton: document.querySelector('#close-compare-button'),
+  savedCopyCanvas: document.querySelector('#saved-copy-canvas'),
+  currentCopyCanvas: document.querySelector('#current-copy-canvas'),
+  savedCopyName: document.querySelector('#saved-copy-name'),
+  currentCopyName: document.querySelector('#current-copy-name'),
+  savedCopyMeta: document.querySelector('#saved-copy-meta'),
+  currentCopyMeta: document.querySelector('#current-copy-meta'),
+  restoreCopyButton: document.querySelector('#restore-copy-button'),
+  keepCurrentButton: document.querySelector('#keep-current-button'),
+  removeCopyButton: document.querySelector('#remove-copy-button'),
+  replaceCopyButton: document.querySelector('#replace-copy-button'),
 };
 
 const thumbCache = new Map();
@@ -189,6 +206,17 @@ function sanitizeEnemy(enemy = {}) {
   return { family: family.id, variant };
 }
 
+function sanitizeEditableSnapshot(snapshot) {
+  if (!snapshot || typeof snapshot !== 'object') return null;
+  return {
+    mode: snapshot.mode === 'enemy' ? 'enemy' : 'player',
+    player: sanitizePlayer(snapshot.player),
+    enemy: sanitizeEnemy(snapshot.enemy),
+    characterName: sanitizeText(snapshot.characterName, 48),
+    exportName: sanitizeText(snapshot.exportName, 80),
+  };
+}
+
 function loadState() {
   let saved = null;
   try {
@@ -227,6 +255,7 @@ function loadState() {
   loaded.exportAnim = listHas(E.ANIMS, loaded.exportAnim) ? loaded.exportAnim : DEFAULT_STATE.exportAnim;
   loaded.exportDir = E.DIRS.includes(loaded.exportDir) ? loaded.exportDir : DEFAULT_STATE.exportDir;
   loaded.spin = loaded.spin !== false;
+  loaded.comparison = sanitizeEditableSnapshot(loaded.comparison);
 
   return loaded;
 }
@@ -300,10 +329,80 @@ function redo() {
   restoreSnapshot(historyFuture.pop());
 }
 
+function resetCurrentDocument() {
+  const patch = state.mode === 'player'
+    ? { player: sanitizePlayer(DEFAULT_STATE.player), characterName: '', exportName: '' }
+    : { enemy: sanitizeEnemy(DEFAULT_STATE.enemy), characterName: '', exportName: '' };
+  selectedPresetId = '';
+  elements.presetName.value = '';
+  setState(patch);
+  setPresetStatus('Reset to defaults. Undo restores the previous sprite.');
+}
+
+function openComparison() {
+  if (!state.comparison) return;
+  if (!elements.compareDialog.open) elements.compareDialog.showModal();
+  renderComparisonControls();
+}
+
+function closeComparison() {
+  if (elements.compareDialog.open) elements.compareDialog.close();
+}
+
+function duplicateCurrentForComparison() {
+  if (state.comparison) return;
+  setState({ comparison: editableSnapshot() }, { recordHistory: false });
+  openComparison();
+}
+
+function restoreComparisonCopy() {
+  const patch = snapshotPatch(state.comparison);
+  if (!patch) return;
+  closeComparison();
+  setState(patch);
+}
+
+function replaceComparisonCopy() {
+  setState({ comparison: editableSnapshot() }, { recordHistory: false });
+}
+
+function removeComparisonCopy() {
+  closeComparison();
+  setState({ comparison: null }, { recordHistory: false });
+}
+
 function currentSpec() {
   return state.mode === 'player'
     ? { kind: 'player', ...state.player }
     : { kind: 'enemy', ...state.enemy };
+}
+
+function snapshotSpec(snapshot) {
+  return snapshot.mode === 'player'
+    ? { kind: 'player', ...snapshot.player }
+    : { kind: 'enemy', ...snapshot.enemy };
+}
+
+function snapshotPatch(snapshot) {
+  const sanitized = sanitizeEditableSnapshot(snapshot);
+  if (!sanitized) return null;
+  return {
+    mode: sanitized.mode,
+    player: sanitized.player,
+    enemy: sanitized.enemy,
+    characterName: sanitized.characterName,
+    exportName: sanitized.exportName,
+  };
+}
+
+function snapshotDisplayName(snapshot) {
+  return snapshot.characterName.trim()
+    || E.describe(snapshotSpec(snapshot)).replaceAll('-', ' ');
+}
+
+function snapshotMeta(snapshot) {
+  const kind = snapshot.mode === 'player' ? 'Player' : 'Enemy';
+  return `${kind} · ${E.describe(snapshotSpec(snapshot)).replaceAll('-', ' ')}`;
 }
 
 function sanitizeFilenameBase(value) {
@@ -964,6 +1063,46 @@ function renderHistoryControls() {
   elements.redoButton.title = historyFuture.length ? 'Redo sprite change (Ctrl+Y)' : 'Nothing to redo';
 }
 
+function drawComparisonFrame(animId, direction, frame) {
+  if (!elements.compareDialog.open || !state.comparison) return;
+  const anim = activeAnimation(animId);
+  const safeFrame = clampFrame(frame, anim);
+  const savedContext = elements.savedCopyCanvas.getContext('2d');
+  const currentContext = elements.currentCopyCanvas.getContext('2d');
+  savedContext.imageSmoothingEnabled = false;
+  currentContext.imageSmoothingEnabled = false;
+  E.drawSprite(savedContext, snapshotSpec(state.comparison), direction, anim.id, safeFrame, { shadow: true });
+  E.drawSprite(currentContext, currentSpec(), direction, anim.id, safeFrame, { shadow: true });
+  elements.compareContext.textContent = `${anim.name} · ${DIRECTION_NAMES[direction]} · frame ${safeFrame + 1} / ${anim.frames}`;
+  elements.savedCopyCanvas.dataset.frame = String(safeFrame + 1);
+  elements.currentCopyCanvas.dataset.frame = String(safeFrame + 1);
+}
+
+function renderComparisonDialog() {
+  if (!state.comparison) return;
+  const current = editableSnapshot();
+  elements.savedCopyName.textContent = snapshotDisplayName(state.comparison);
+  elements.currentCopyName.textContent = snapshotDisplayName(current);
+  elements.savedCopyMeta.textContent = snapshotMeta(state.comparison);
+  elements.currentCopyMeta.textContent = snapshotMeta(current);
+  drawComparisonFrame(state.anim, state.dir, state.frame);
+}
+
+function renderComparisonControls() {
+  const hasCopy = Boolean(state.comparison);
+  elements.duplicateButton.disabled = hasCopy;
+  elements.compareButton.disabled = !hasCopy;
+  elements.duplicateButton.title = hasCopy
+    ? 'A saved comparison copy already exists'
+    : 'Duplicate the current sprite into a saved comparison copy';
+  elements.compareButton.title = hasCopy
+    ? 'Compare the saved copy with the current editor'
+    : 'Duplicate a sprite before comparing';
+  elements.compareButton.classList.toggle('active', elements.compareDialog.open);
+  if (!hasCopy && elements.compareDialog.open) elements.compareDialog.close();
+  if (elements.compareDialog.open) renderComparisonDialog();
+}
+
 function renderPresetControls() {
   if (!presetLibrary.presets.some((preset) => preset.id === selectedPresetId)) {
     selectedPresetId = '';
@@ -1025,6 +1164,7 @@ function renderUi() {
   renderExportControls();
   renderNamingControls();
   renderHistoryControls();
+  renderComparisonControls();
   renderPresetControls();
 }
 
@@ -1061,6 +1201,7 @@ function drawFrame(animId, direction, frame) {
     ? `${state.characterName.trim()} · ${playbackLabel}`.toUpperCase()
     : playbackLabel.toUpperCase();
   renderFrameInspection(animId, frame);
+  drawComparisonFrame(animId, direction, frame);
   updateSheet(spec);
 }
 
@@ -1207,6 +1348,15 @@ elements.playbackSpeed.addEventListener('change', () => {
 });
 elements.undoButton.addEventListener('click', undo);
 elements.redoButton.addEventListener('click', redo);
+elements.resetButton.addEventListener('click', resetCurrentDocument);
+elements.duplicateButton.addEventListener('click', duplicateCurrentForComparison);
+elements.compareButton.addEventListener('click', openComparison);
+elements.closeCompareButton.addEventListener('click', closeComparison);
+elements.restoreCopyButton.addEventListener('click', restoreComparisonCopy);
+elements.keepCurrentButton.addEventListener('click', closeComparison);
+elements.removeCopyButton.addEventListener('click', removeComparisonCopy);
+elements.replaceCopyButton.addEventListener('click', replaceComparisonCopy);
+elements.compareDialog.addEventListener('close', renderComparisonControls);
 elements.randomizeButton.addEventListener('click', randomize);
 elements.savePresetButton.addEventListener('click', savePreset);
 elements.loadPresetButton.addEventListener('click', loadSelectedPreset);

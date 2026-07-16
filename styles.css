@@ -124,6 +124,12 @@ canvas {
   margin-left: auto;
 }
 
+#compare-button.active {
+  border-color: var(--accent);
+  background: rgba(74, 93, 199, 0.1);
+  color: var(--accent-dark);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -983,6 +989,203 @@ button:disabled:hover {
   color: rgba(35, 37, 43, 0.46);
   font-size: 10.5px;
   line-height: 1.5;
+}
+
+.compare-dialog {
+  width: min(760px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  background: #f5f4f1;
+  box-shadow: 0 24px 80px rgba(22, 26, 46, 0.3);
+  color: #23252b;
+}
+
+.compare-dialog::backdrop {
+  background: rgba(25, 27, 36, 0.48);
+  backdrop-filter: blur(2px);
+}
+
+.compare-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+}
+
+.compare-kicker,
+.compare-dialog-header h2,
+.compare-dialog-header p,
+.compare-card-heading h3,
+.compare-card-heading p,
+.compare-card-meta {
+  margin: 0;
+}
+
+.compare-kicker {
+  color: var(--accent);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.compare-dialog-header h2 {
+  margin-top: 3px;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.compare-dialog-header #compare-context {
+  margin-top: 4px;
+  color: var(--muted);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 10px;
+}
+
+.dialog-close-button {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  place-items: center;
+  padding: 0 0 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #f7f6f3;
+  color: rgba(35, 37, 43, 0.62);
+  cursor: pointer;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.dialog-close-button:hover {
+  border-color: var(--accent);
+  color: #23252b;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 16px 20px;
+}
+
+.compare-card {
+  display: grid;
+  min-width: 0;
+  gap: 10px;
+  padding: 13px;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 11px;
+  background: #ffffff;
+}
+
+.saved-copy-card {
+  box-shadow: inset 3px 0 0 #d4a83d;
+}
+
+.current-copy-card {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.compare-card-heading {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+}
+
+.compare-card-heading > span {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  background: #e9e7e1;
+  color: rgba(35, 37, 43, 0.62);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.current-copy-card .compare-card-heading > span {
+  background: rgba(74, 93, 199, 0.12);
+  color: var(--accent-dark);
+}
+
+.compare-card-heading div {
+  min-width: 0;
+}
+
+.compare-card-heading h3 {
+  font-size: 12.5px;
+}
+
+.compare-card-heading p {
+  margin-top: 2px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.compare-canvas-wrap {
+  display: grid;
+  min-height: 236px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: repeating-conic-gradient(#f0efeb 0% 25%, #ffffff 0% 50%) 0 0 / 16px 16px;
+}
+
+.compare-canvas-wrap canvas {
+  width: 216px;
+  max-width: calc(100% - 20px);
+  height: auto;
+}
+
+.compare-card-meta {
+  overflow: hidden;
+  color: var(--muted);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 9.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.compare-card-action {
+  width: 100%;
+  padding-block: 8px;
+}
+
+.compare-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 20px 18px;
+}
+
+@media (max-width: 620px) {
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-canvas-wrap {
+    min-height: 190px;
+  }
+
+  .compare-canvas-wrap canvas {
+    width: 168px;
+  }
 }
 
 @media (max-width: 1120px) {

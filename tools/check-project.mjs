@@ -81,6 +81,9 @@ for (const controlId of [
   'sheet-title', 'sheet-contract', 'export-scope',
   'previous-frame-button', 'play-pause-button', 'next-frame-button',
   'frame-buttons', 'frame-readout', 'playback-speed',
+  'reset-button', 'duplicate-button', 'compare-button', 'compare-dialog',
+  'saved-copy-canvas', 'current-copy-canvas', 'restore-copy-button',
+  'keep-current-button', 'remove-copy-button', 'replace-copy-button',
 ]) {
   check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
 }
@@ -134,6 +137,10 @@ check(runtimeSources['app.js'].includes('PLAYBACK_SPEEDS = [0.5, 1, 2]'), 'app.j
 check(runtimeSources['app.js'].includes('function inspectFrame('), 'app.js must expose deterministic individual frame inspection');
 check(runtimeSources['app.js'].includes("event.key === '['") && runtimeSources['app.js'].includes("event.key === ']'"), 'app.js must expose previous and next frame keyboard shortcuts');
 check((entrySource.match(/<option value="(?:0\.5|1|2)"/g) || []).length === 3, 'index.html must expose all three playback-speed choices');
+check(runtimeSources['app.js'].includes('function resetCurrentDocument('), 'app.js must expose an undoable current-document reset');
+check(runtimeSources['app.js'].includes('function duplicateCurrentForComparison('), 'app.js must expose saved comparison copies');
+check(runtimeSources['app.js'].includes('function restoreComparisonCopy('), 'app.js must restore a comparison copy through editor history');
+check(runtimeSources['app.js'].includes('.showModal()'), 'app.js must open the side-by-side comparison as an accessible dialog');
 check((entrySource.match(/data-palette-color=/g) || []).length === 6, 'index.html must expose all six editable player palette tones');
 check(runtimeSources['engine/renderer.js'].includes('palettePair(spec.palette?.skin'), 'the renderer must consume safe player palette overrides');
 
