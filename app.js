@@ -7,6 +7,7 @@ const PALETTE_STORAGE_KEY = 'sprite-assembler-palettes-v1';
 const PALETTE_VERSION = 1;
 const HISTORY_LIMIT = 100;
 const ZOOM_LEVELS = [6, 10, 14, 20];
+const PLAYBACK_SPEEDS = [0.5, 1, 2];
 const EXPORT_SCALES = [4, 8, 12];
 const EXPORT_SCOPES = ['full', 'animation', 'direction'];
 const DIRECTION_NAMES = { down: 'Down', left: 'Left', right: 'Right', up: 'Up' };
@@ -28,6 +29,9 @@ const DEFAULT_STATE = {
   exportName: '',
   dir: 'down',
   anim: 'walk',
+  frame: 0,
+  playing: true,
+  playbackSpeed: 1,
   zoom: 14,
   spin: true,
   exportScale: 8,
@@ -52,6 +56,12 @@ const elements = {
   animationButtons: document.querySelector('#animation-buttons'),
   zoomButtons: document.querySelector('#zoom-buttons'),
   cycleButton: document.querySelector('#cycle-button'),
+  previousFrameButton: document.querySelector('#previous-frame-button'),
+  playPauseButton: document.querySelector('#play-pause-button'),
+  nextFrameButton: document.querySelector('#next-frame-button'),
+  frameButtons: document.querySelector('#frame-buttons'),
+  frameReadout: document.querySelector('#frame-readout'),
+  playbackSpeed: document.querySelector('#playback-speed'),
   stageCanvas: document.querySelector('#stage-canvas'),
   liveLabel: document.querySelector('#live-label'),
   directionLetter: document.querySelector('#direction-letter'),
@@ -93,6 +103,7 @@ const historyFuture = [];
 let lastTime = 0;
 let spinIndex = findSpinIndex();
 let spinTime = 0;
+let animationTime = 0;
 let sheetKey = '';
 
 function listHas(list, value) {
@@ -198,6 +209,14 @@ function loadState() {
   loaded.exportName = sanitizeText(loaded.exportName, 80);
   loaded.dir = E.DIRS.includes(loaded.dir) ? loaded.dir : DEFAULT_STATE.dir;
   loaded.anim = listHas(E.ANIMS, loaded.anim) ? loaded.anim : DEFAULT_STATE.anim;
+  const loadedAnimation = E.ANIMS.find((anim) => anim.id === loaded.anim) || E.ANIMS[0];
+  loaded.frame = Number.isInteger(loaded.frame)
+    ? Math.max(0, Math.min(loadedAnimation.frames - 1, loaded.frame))
+    : DEFAULT_STATE.frame;
+  loaded.playing = loaded.playing !== false;
+  loaded.playbackSpeed = PLAYBACK_SPEEDS.includes(loaded.playbackSpeed)
+    ? loaded.playbackSpeed
+    : DEFAULT_STATE.playbackSpeed;
   loaded.zoom = ZOOM_LEVELS.includes(loaded.zoom) ? loaded.zoom : DEFAULT_STATE.zoom;
   loaded.exportScale = EXPORT_SCALES.includes(loaded.exportScale)
     ? loaded.exportScale
@@ -624,6 +643,23 @@ function findSpinIndex() {
   return index >= 0 ? index : 0;
 }
 
+function activeAnimation(animId = state.anim) {
+  return E.ANIMS.find((anim) => anim.id === animId) || E.ANIMS[0];
+}
+
+function clampFrame(frame, anim = activeAnimation()) {
+  return Math.max(0, Math.min(anim.frames - 1, Number.isInteger(frame) ? frame : 0));
+}
+
+function animationColumn(animId, frame) {
+  let column = 0;
+  for (const anim of E.ANIMS) {
+    if (anim.id === animId) return column + clampFrame(frame, anim);
+    column += anim.frames;
+  }
+  return 0;
+}
+
 function makeButton(label, active, onClick, className = 'segment-button') {
   const button = document.createElement('button');
   button.type = 'button';
@@ -829,8 +865,8 @@ function renderOptionGroups() {
 function renderPlaybackControls() {
   elements.animationButtons.replaceChildren(...E.ANIMS.map((anim) => makeButton(
     anim.name,
-    !state.spin && state.anim === anim.id,
-    () => setState({ anim: anim.id, exportAnim: anim.id, spin: false }),
+    state.anim === anim.id,
+    () => chooseAnimation(anim.id),
   )));
 
   elements.zoomButtons.replaceChildren(...ZOOM_LEVELS.map((zoom) => makeButton(
@@ -841,7 +877,44 @@ function renderPlaybackControls() {
 
   elements.cycleButton.classList.toggle('active', state.spin);
   elements.cycleButton.setAttribute('aria-pressed', String(state.spin));
+  elements.playPauseButton.textContent = state.playing ? 'Pause' : 'Play';
+  elements.playPauseButton.setAttribute('aria-label', state.playing ? 'Pause animation' : 'Play animation');
+  elements.playPauseButton.setAttribute('aria-pressed', String(state.playing));
+  elements.playbackSpeed.value = String(state.playbackSpeed);
+  const anim = activeAnimation();
+  const frameButtons = Array.from({ length: anim.frames }, (_, frame) => makeButton(
+    String(frame + 1),
+    frame === clampFrame(state.frame, anim),
+    () => inspectFrame(frame),
+    'frame-button',
+  ));
+  for (const [frame, button] of frameButtons.entries()) {
+    button.setAttribute('aria-label', `Inspect ${anim.name} frame ${frame + 1}`);
+  }
+  elements.frameButtons.dataset.animation = anim.id;
+  elements.frameButtons.replaceChildren(...frameButtons);
   elements.stageCanvas.style.width = `${E.SIZE * state.zoom}px`;
+  renderFrameInspection(anim.id, state.frame);
+}
+
+function renderFrameInspection(animId, frame) {
+  const anim = activeAnimation(animId);
+  const safeFrame = clampFrame(frame, anim);
+  if (elements.frameButtons.dataset.animation === anim.id) {
+    for (const [index, button] of [...elements.frameButtons.children].entries()) {
+      const active = index === safeFrame;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    }
+  }
+  const column = animationColumn(anim.id, safeFrame);
+  elements.frameReadout.value = `Frame ${safeFrame + 1} / ${anim.frames} · column ${column + 1} / ${E.SHEET_COLS} · ${anim.ms} ms`;
+  elements.frameReadout.title = `${anim.name} frame ${safeFrame + 1} is sheet column ${column + 1} of ${E.SHEET_COLS}`;
+  elements.stageCanvas.dataset.animation = anim.id;
+  elements.stageCanvas.dataset.direction = state.dir;
+  elements.stageCanvas.dataset.frame = String(safeFrame + 1);
+  elements.stageCanvas.dataset.playing = String(state.playing);
+  elements.stageCanvas.dataset.speed = String(state.playbackSpeed);
 }
 
 function renderDirectionControls() {
@@ -987,40 +1060,47 @@ function drawFrame(animId, direction, frame) {
   elements.liveLabel.textContent = state.characterName.trim()
     ? `${state.characterName.trim()} · ${playbackLabel}`.toUpperCase()
     : playbackLabel.toUpperCase();
+  renderFrameInspection(animId, frame);
   updateSheet(spec);
 }
 
 function tick(time) {
-  const delta = lastTime ? Math.min(100, time - lastTime) : 16;
+  const delta = lastTime ? Math.min(100, time - lastTime) : 0;
   lastTime = time;
   let animId = state.anim;
   let direction = state.dir;
-  let frame = 0;
+  let frame = clampFrame(state.frame);
 
-  if (state.spin) {
-    const cell = spinCells[spinIndex % spinCells.length];
-    const loops = cell.anim.frames <= 2 ? 2 : 1;
-    const duration = cell.anim.frames * cell.anim.ms * loops;
-    spinTime += delta;
+  if (state.playing) {
+    const scaledDelta = delta * state.playbackSpeed;
+    if (state.spin) {
+      spinTime += scaledDelta;
+      let cell = spinCells[spinIndex % spinCells.length];
+      let loops = cell.anim.frames <= 2 ? 2 : 1;
+      let duration = cell.anim.frames * cell.anim.ms * loops;
 
-    if (spinTime >= duration) {
-      spinTime = 0;
-      spinIndex = (spinIndex + 1) % spinCells.length;
-      const next = spinCells[spinIndex];
-      state = { ...state, anim: next.anim.id, dir: next.dir };
-      renderPlaybackControls();
-      renderDirectionControls();
+      while (spinTime >= duration) {
+        spinTime -= duration;
+        spinIndex = (spinIndex + 1) % spinCells.length;
+        cell = spinCells[spinIndex];
+        loops = cell.anim.frames <= 2 ? 2 : 1;
+        duration = cell.anim.frames * cell.anim.ms * loops;
+        state = { ...state, anim: cell.anim.id, dir: cell.dir, frame: 0 };
+        renderPlaybackControls();
+        renderDirectionControls();
+      }
+
+      animId = cell.anim.id;
+      direction = cell.dir;
+      frame = Math.floor(spinTime / cell.anim.ms) % cell.anim.frames;
+    } else {
+      const anim = activeAnimation(animId);
+      animationTime = (animationTime + scaledDelta) % (anim.frames * anim.ms);
+      frame = Math.floor(animationTime / anim.ms) % anim.frames;
     }
-
-    const activeCell = spinCells[spinIndex];
-    animId = activeCell.anim.id;
-    direction = activeCell.dir;
-    frame = Math.floor(spinTime / activeCell.anim.ms) % activeCell.anim.frames;
-  } else {
-    const anim = E.ANIMS.find((item) => item.id === animId) || E.ANIMS[0];
-    frame = Math.floor(time / anim.ms) % anim.frames;
   }
 
+  if (frame !== state.frame) state = { ...state, frame };
   drawFrame(animId, direction, frame);
   requestAnimationFrame(tick);
 }
@@ -1030,14 +1110,56 @@ function toggleCycle() {
   if (spin) {
     spinIndex = findSpinIndex();
     spinTime = 0;
+    animationTime = 0;
+  } else {
+    const anim = activeAnimation();
+    animationTime = clampFrame(state.frame, anim) * anim.ms;
   }
   const patch = spin
-    ? { spin }
+    ? { spin, playing: true, frame: 0 }
     : { spin, exportAnim: state.anim, exportDir: state.dir };
   setState(patch);
 }
 
+function chooseAnimation(animId) {
+  const anim = activeAnimation(animId);
+  animationTime = 0;
+  spinTime = 0;
+  setState({ anim: anim.id, exportAnim: anim.id, frame: 0, spin: false });
+}
+
+function togglePlayback() {
+  const playing = !state.playing;
+  if (playing) {
+    const anim = activeAnimation();
+    animationTime = clampFrame(state.frame, anim) * anim.ms;
+    if (state.spin) spinTime = animationTime;
+    lastTime = 0;
+  }
+  setState({ playing });
+}
+
+function inspectFrame(frame) {
+  const anim = activeAnimation();
+  const inspectedFrame = ((frame % anim.frames) + anim.frames) % anim.frames;
+  animationTime = inspectedFrame * anim.ms;
+  spinTime = 0;
+  setState({
+    frame: inspectedFrame,
+    playing: false,
+    spin: false,
+    exportAnim: anim.id,
+    exportDir: state.dir,
+  });
+}
+
+function stepFrame(offset) {
+  inspectFrame(state.frame + offset);
+}
+
 function chooseDirection(direction) {
+  const anim = activeAnimation();
+  animationTime = clampFrame(state.frame, anim) * anim.ms;
   spinTime = 0;
   setState({ dir: direction, exportDir: direction, spin: false });
 }
@@ -1076,6 +1198,13 @@ function downloadSheet() {
 }
 
 elements.cycleButton.addEventListener('click', toggleCycle);
+elements.previousFrameButton.addEventListener('click', () => stepFrame(-1));
+elements.playPauseButton.addEventListener('click', togglePlayback);
+elements.nextFrameButton.addEventListener('click', () => stepFrame(1));
+elements.playbackSpeed.addEventListener('change', () => {
+  const playbackSpeed = Number(elements.playbackSpeed.value);
+  if (PLAYBACK_SPEEDS.includes(playbackSpeed)) setState({ playbackSpeed });
+});
 elements.undoButton.addEventListener('click', undo);
 elements.redoButton.addEventListener('click', redo);
 elements.randomizeButton.addEventListener('click', randomize);
@@ -1162,6 +1291,21 @@ window.addEventListener('keydown', (event) => {
     ArrowRight: 'right',
   };
   if (event.ctrlKey || event.metaKey || event.altKey) return;
+  if (event.key === ' ') {
+    event.preventDefault();
+    togglePlayback();
+    return;
+  }
+  if (event.key === '[') {
+    event.preventDefault();
+    stepFrame(-1);
+    return;
+  }
+  if (event.key === ']') {
+    event.preventDefault();
+    stepFrame(1);
+    return;
+  }
   const direction = directions[event.key];
   if (!direction) return;
   event.preventDefault();

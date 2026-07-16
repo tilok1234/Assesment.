@@ -17,6 +17,14 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Persistent character names, live preview labels, and Windows-safe custom PNG filenames
 - Editable skin, hair, and outfit tone pairs with a reusable local palette library
 - Full-sheet, selected-animation, and selected-direction PNG export scopes
+- Play/pause, 0.5x/1x/2x playback speeds, frame stepping, and direct frame inspection with sheet-column metadata
+
+## Preview controls
+
+- `Space` plays or pauses the selected animation.
+- `[` and `]` inspect the previous or next frame and pause playback.
+- Arrow keys change direction without changing the inspected frame.
+- `Cycle all` resumes playback and visits every animation and direction.
 
 ## Run it on Windows
 
@@ -82,7 +90,7 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
-- `app.js` - editor state, sprite history, character and palette presets, migration, naming, controls, animation preview, persistence, and downloads
+- `app.js` - editor state, sprite history, character and palette presets, migration, naming, playback and frame inspection, persistence, and downloads
 - `sprite-engine.js` - stable public engine API
 - `engine/` - focused animation, palette, player-option, enemy, renderer, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets

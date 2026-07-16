@@ -50,7 +50,7 @@ Catalog files describe content. They do not touch the DOM, canvas, editor state,
 
 ### Editor
 
-`app.js` owns UI state, controls, animation playback, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, and download behavior. It consumes only the public engine facade. History snapshots contain the active mode, player/enemy specifications, optional player palette, and document names, so preset loads undo coherently while preview and export-view choices remain independent. Character preset schema v3 migrates v1 and v2 libraries; the independent palette-library schema stores reusable six-tone player palettes.
+`app.js` owns UI state, controls, animation playback and frame inspection, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, and download behavior. It consumes only the public engine facade. History snapshots contain the active mode, player/enemy specifications, optional player palette, and document names, so preset loads undo coherently while preview frame, direction, animation, cycle, speed, and export-view choices remain independent. Character preset schema v3 migrates v1 and v2 libraries; the independent palette-library schema stores reusable six-tone player palettes.
 
 ### Windows wrapper
 

@@ -90,6 +90,26 @@
             <div class="stage-label" id="live-label">WALK · DOWN</div>
           </div>
 
+          <div class="playback-inspector" aria-label="Playback and frame inspection">
+            <div class="playback-actions">
+              <button class="playback-control-button" id="previous-frame-button" type="button" aria-label="Previous frame" title="Previous frame ([)">◀</button>
+              <button class="playback-control-button play-pause-button" id="play-pause-button" type="button" aria-label="Pause animation" title="Play or pause (Space)">Pause</button>
+              <button class="playback-control-button" id="next-frame-button" type="button" aria-label="Next frame" title="Next frame (])">▶</button>
+            </div>
+            <div class="frame-inspection">
+              <div class="frame-buttons" id="frame-buttons" aria-label="Inspect animation frame"></div>
+              <output class="frame-readout" id="frame-readout">Frame 1 / 4 · column 3 / 12 · 150 ms</output>
+            </div>
+            <label class="speed-control" for="playback-speed">
+              <span>Speed</span>
+              <select id="playback-speed" aria-label="Playback speed">
+                <option value="0.5">0.5x</option>
+                <option value="1" selected>1x</option>
+                <option value="2">2x</option>
+              </select>
+            </label>
+          </div>
+
           <div class="direction-controls">
             <div class="direction-pad" aria-label="Preview direction">
               <span></span>
