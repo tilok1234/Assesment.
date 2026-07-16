@@ -15,6 +15,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Sprite-only undo and redo through the header controls or `Ctrl+Z` / `Ctrl+Y`
 - Whole-sprite and per-category randomization with undo support
 - Persistent character names, live preview labels, and Windows-safe custom PNG filenames
+- Editable skin, hair, and outfit tone pairs with a reusable local palette library
 
 ## Run it on Windows
 
@@ -78,7 +79,7 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
-- `app.js` - editor state, sprite history, preset migration, naming, controls, animation preview, persistence, and downloads
+- `app.js` - editor state, sprite history, character and palette presets, migration, naming, controls, animation preview, persistence, and downloads
 - `sprite-engine.js` - stable public engine API
 - `engine/` - focused animation, palette, player-option, enemy, renderer, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets

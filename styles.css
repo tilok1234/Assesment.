@@ -183,6 +183,137 @@ canvas {
   background: #ecebe7;
 }
 
+.palette-editor {
+  margin-top: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 9px;
+  background: #f7f6f3;
+}
+
+.palette-editor summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  list-style: none;
+}
+
+.palette-editor summary::-webkit-details-marker {
+  display: none;
+}
+
+.palette-editor summary::before {
+  content: '▸';
+  color: var(--accent);
+  font-size: 10px;
+}
+
+.palette-editor[open] summary::before {
+  content: '▾';
+}
+
+.palette-editor summary > span {
+  margin-right: auto;
+}
+
+.palette-editor summary small {
+  color: var(--accent);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.palette-editor-body {
+  display: grid;
+  gap: 8px;
+  padding: 9px 10px 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.palette-color-grid {
+  display: grid;
+  gap: 7px;
+}
+
+.palette-color-row {
+  display: grid;
+  grid-template-columns: minmax(54px, 1fr) repeat(2, 54px);
+  align-items: center;
+  gap: 7px;
+}
+
+.palette-color-row strong {
+  color: rgba(35, 37, 43, 0.66);
+  font-size: 10px;
+}
+
+.palette-color-row label {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  color: var(--muted);
+  font-size: 8.5px;
+}
+
+.palette-color-row input[type='color'] {
+  width: 34px;
+  height: 26px;
+  padding: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 7px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.palette-save-row,
+.palette-action-row {
+  display: flex;
+  gap: 7px;
+}
+
+.palette-save-row input,
+#palette-select {
+  min-width: 0;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #23252b;
+  font: inherit;
+  font-size: 10.5px;
+}
+
+.palette-save-row input {
+  flex: 1;
+  padding: 7px 8px;
+}
+
+#palette-select {
+  width: 100%;
+  padding: 7px 8px;
+}
+
+.palette-save-row input:focus,
+#palette-select:focus {
+  border-color: var(--accent);
+  outline: 2px solid rgba(74, 93, 199, 0.14);
+}
+
+.palette-action-row .secondary-button {
+  flex: 1;
+}
+
+.palette-status {
+  min-height: 14px;
+  margin: -1px 0 0;
+  color: var(--muted);
+  font-size: 9.5px;
+  line-height: 1.4;
+}
+
 .segment-button {
   min-width: 58px;
   padding: 6px 14px;

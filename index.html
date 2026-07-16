@@ -31,6 +31,46 @@
       <main class="app-main">
         <aside class="options-panel" aria-label="Sprite options">
           <div class="segmented-control mode-control" id="mode-buttons"></div>
+          <details class="palette-editor" id="palette-editor">
+            <summary>
+              <span>Palette editor</span>
+              <small id="palette-summary">Catalog colors</small>
+            </summary>
+            <div class="palette-editor-body">
+              <div class="palette-color-grid">
+                <div class="palette-color-row">
+                  <strong>Skin</strong>
+                  <label><input type="color" data-palette-color="skin.0" value="#eab98a"><span>Base</span></label>
+                  <label><input type="color" data-palette-color="skin.1" value="#c98a56"><span>Shadow</span></label>
+                </div>
+                <div class="palette-color-row">
+                  <strong>Hair</strong>
+                  <label><input type="color" data-palette-color="hair.0" value="#6b4327"><span>Base</span></label>
+                  <label><input type="color" data-palette-color="hair.1" value="#4a2c18"><span>Shadow</span></label>
+                </div>
+                <div class="palette-color-row">
+                  <strong>Outfit</strong>
+                  <label><input type="color" data-palette-color="outfit.0" value="#3b62c4"><span>Base</span></label>
+                  <label><input type="color" data-palette-color="outfit.1" value="#27448f"><span>Shadow</span></label>
+                </div>
+              </div>
+              <button class="secondary-button compact-action" id="reset-palette-button" type="button" disabled>Use catalog colors</button>
+              <div class="palette-save-row">
+                <label class="sr-only" for="palette-name">Palette preset name</label>
+                <input id="palette-name" type="text" maxlength="48" placeholder="Palette preset name">
+                <button class="secondary-button compact-action" id="save-palette-button" type="button">Save</button>
+              </div>
+              <label class="sr-only" for="palette-select">Saved palette presets</label>
+              <select id="palette-select" aria-label="Saved palette presets">
+                <option value="">No palettes saved</option>
+              </select>
+              <div class="palette-action-row">
+                <button class="secondary-button compact-action" id="load-palette-button" type="button" disabled>Load</button>
+                <button class="secondary-button compact-action danger-action" id="delete-palette-button" type="button" disabled>Delete</button>
+              </div>
+              <p class="palette-status" id="palette-status" role="status" aria-live="polite">Reusable across player presets.</p>
+            </div>
+          </details>
           <div id="option-groups"></div>
         </aside>
 

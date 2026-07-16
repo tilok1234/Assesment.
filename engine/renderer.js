@@ -21,6 +21,12 @@ import {
 } from './catalogs.js';
 
 const find = (list, id) => list.find(x => x.id === id) || list[0];
+const isHexColor = value => typeof value === 'string' && /^#[0-9a-f]{6}$/i.test(value);
+const palettePair = (value, fallback) => (
+  Array.isArray(value) && value.length === 2 && value.every(isHexColor)
+    ? value
+    : fallback
+);
 
 // ---------------- pixel buffer ----------------
 function makeG() {
@@ -1393,13 +1399,16 @@ function drawDrake(g, d, p, f, V, animId) {
 // ============================================================
 function buildHumanoidC(spec) {
   if (spec.kind === 'player') {
+    const skin = find(SKINS, spec.skin).c;
+    const hair = find(HAIR_COLORS, spec.hairColor).c;
+    const outfit = find(OUTFIT_COLORS, spec.outfitColor).c;
     return {
-      skin: find(SKINS, spec.skin).c,
-      hair: find(HAIR_COLORS, spec.hairColor).c,
+      skin: palettePair(spec.palette?.skin, skin),
+      hair: palettePair(spec.palette?.hair, hair),
       hairStyle: spec.hairStyle,
       gear: spec.headgear,
       outfit: spec.outfit,
-      oc: find(OUTFIT_COLORS, spec.outfitColor).c,
+      oc: palettePair(spec.palette?.outfit, outfit),
       weapon: spec.weapon,
       shield: spec.shield,
       face: 'human',

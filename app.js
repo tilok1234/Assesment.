@@ -2,7 +2,9 @@ import * as E from './sprite-engine.js';
 
 const STORAGE_KEY = 'sprite-assembler-v1';
 const PRESET_STORAGE_KEY = 'sprite-assembler-presets-v1';
-const PRESET_VERSION = 2;
+const PRESET_VERSION = 3;
+const PALETTE_STORAGE_KEY = 'sprite-assembler-palettes-v1';
+const PALETTE_VERSION = 1;
 const HISTORY_LIMIT = 100;
 const ZOOM_LEVELS = [6, 10, 14, 20];
 const EXPORT_SCALES = [4, 8, 12];
@@ -18,6 +20,7 @@ const DEFAULT_STATE = {
     outfitColor: 'royal',
     weapon: 'sword',
     shield: 'round',
+    palette: null,
   },
   enemy: { family: 'slime', variant: 'lime' },
   characterName: '',
@@ -32,6 +35,16 @@ const DEFAULT_STATE = {
 const elements = {
   modeButtons: document.querySelector('#mode-buttons'),
   optionGroups: document.querySelector('#option-groups'),
+  paletteEditor: document.querySelector('#palette-editor'),
+  paletteSummary: document.querySelector('#palette-summary'),
+  paletteInputs: [...document.querySelectorAll('[data-palette-color]')],
+  resetPaletteButton: document.querySelector('#reset-palette-button'),
+  paletteName: document.querySelector('#palette-name'),
+  paletteSelect: document.querySelector('#palette-select'),
+  savePaletteButton: document.querySelector('#save-palette-button'),
+  loadPaletteButton: document.querySelector('#load-palette-button'),
+  deletePaletteButton: document.querySelector('#delete-palette-button'),
+  paletteStatus: document.querySelector('#palette-status'),
   animationButtons: document.querySelector('#animation-buttons'),
   zoomButtons: document.querySelector('#zoom-buttons'),
   cycleButton: document.querySelector('#cycle-button'),
@@ -65,7 +78,9 @@ const thumbCache = new Map();
 const spinCells = E.ANIMS.flatMap((anim) => E.DIRS.map((dir) => ({ anim, dir })));
 let state = loadState();
 let presetLibrary = loadPresetLibrary();
+let paletteLibrary = loadPaletteLibrary();
 let selectedPresetId = '';
+let selectedPaletteId = '';
 const historyPast = [];
 const historyFuture = [];
 let lastTime = 0;
@@ -87,8 +102,56 @@ function sanitizeText(value, maxLength) {
     : '';
 }
 
-function sanitizePlayer(player = {}) {
+function catalogColorPair(list, id) {
+  const item = list.find((entry) => entry.id === id) || list[0];
+  return [...item.c];
+}
+
+function catalogPlayerPalette(player) {
   return {
+    skin: catalogColorPair(E.SKINS, player.skin),
+    hair: catalogColorPair(E.HAIR_COLORS, player.hairColor),
+    outfit: catalogColorPair(E.OUTFIT_COLORS, player.outfitColor),
+  };
+}
+
+function sanitizeHexColor(value, fallback) {
+  return typeof value === 'string' && /^#[0-9a-f]{6}$/i.test(value)
+    ? value.toLocaleLowerCase()
+    : fallback;
+}
+
+function sanitizeColorPair(value, fallback) {
+  return [
+    sanitizeHexColor(value?.[0], fallback[0]),
+    sanitizeHexColor(value?.[1], fallback[1]),
+  ];
+}
+
+function sanitizeCustomPalette(value, player) {
+  if (!value || typeof value !== 'object') return null;
+  const fallback = catalogPlayerPalette(player);
+  return {
+    skin: sanitizeColorPair(value.skin, fallback.skin),
+    hair: sanitizeColorPair(value.hair, fallback.hair),
+    outfit: sanitizeColorPair(value.outfit, fallback.outfit),
+  };
+}
+
+function clonePalette(palette) {
+  return {
+    skin: [...palette.skin],
+    hair: [...palette.hair],
+    outfit: [...palette.outfit],
+  };
+}
+
+function resolvedPlayerPalette(player = state.player) {
+  return sanitizeCustomPalette(player.palette, player) || catalogPlayerPalette(player);
+}
+
+function sanitizePlayer(player = {}) {
+  const sanitized = {
     skin: validId(E.SKINS, player.skin, DEFAULT_STATE.player.skin),
     hairStyle: validId(E.HAIR_STYLES, player.hairStyle, DEFAULT_STATE.player.hairStyle),
     hairColor: validId(E.HAIR_COLORS, player.hairColor, DEFAULT_STATE.player.hairColor),
@@ -98,6 +161,8 @@ function sanitizePlayer(player = {}) {
     weapon: validId(E.WEAPONS, player.weapon, DEFAULT_STATE.player.weapon),
     shield: validId(E.SHIELDS, player.shield, DEFAULT_STATE.player.shield),
   };
+  sanitized.palette = sanitizeCustomPalette(player.palette, sanitized);
+  return sanitized;
 }
 
 function sanitizeEnemy(enemy = {}) {
@@ -144,7 +209,10 @@ function persistState() {
 function editableSnapshot(source = state) {
   return {
     mode: source.mode,
-    player: { ...source.player },
+    player: {
+      ...source.player,
+      palette: source.player.palette ? clonePalette(source.player.palette) : null,
+    },
     enemy: { ...source.enemy },
     characterName: source.characterName,
     exportName: source.exportName,
@@ -258,7 +326,7 @@ function loadPresetLibrary() {
     saved = JSON.parse(localStorage.getItem(PRESET_STORAGE_KEY) || 'null');
   } catch {}
 
-  if (!saved || ![1, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
+  if (!saved || ![1, 2, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
     return { version: PRESET_VERSION, presets: [] };
   }
 
@@ -358,12 +426,133 @@ function deleteSelectedPreset() {
   setPresetStatus(`Deleted “${preset.name}”.`);
 }
 
+function sanitizePalettePreset(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const name = typeof raw.name === 'string' ? raw.name.trim().slice(0, 48) : '';
+  const palette = sanitizeCustomPalette(raw.palette, DEFAULT_STATE.player);
+  if (!name || !palette) return null;
+  return {
+    id: typeof raw.id === 'string' && raw.id ? raw.id : makePaletteId(),
+    name,
+    palette,
+    createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
+    updatedAt: typeof raw.updatedAt === 'string' ? raw.updatedAt : new Date().toISOString(),
+  };
+}
+
+function loadPaletteLibrary() {
+  let saved = null;
+  try {
+    saved = JSON.parse(localStorage.getItem(PALETTE_STORAGE_KEY) || 'null');
+  } catch {}
+  if (!saved || saved.version !== PALETTE_VERSION || !Array.isArray(saved.palettes)) {
+    return { version: PALETTE_VERSION, palettes: [] };
+  }
+
+  const ids = new Set();
+  const palettes = [];
+  for (const raw of saved.palettes) {
+    const preset = sanitizePalettePreset(raw);
+    if (!preset || ids.has(preset.id)) continue;
+    ids.add(preset.id);
+    palettes.push(preset);
+  }
+  return { version: PALETTE_VERSION, palettes };
+}
+
+function persistPaletteLibrary() {
+  try {
+    localStorage.setItem(PALETTE_STORAGE_KEY, JSON.stringify(paletteLibrary));
+  } catch {}
+}
+
+function makePaletteId() {
+  if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
+  return `palette-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+}
+
+function selectedPalettePreset() {
+  return paletteLibrary.palettes.find((palette) => palette.id === selectedPaletteId) || null;
+}
+
+function setPaletteStatus(message) {
+  elements.paletteStatus.textContent = message;
+}
+
+function updatePlayerPalette(material, index, value) {
+  const palette = clonePalette(resolvedPlayerPalette());
+  palette[material][index] = sanitizeHexColor(value, palette[material][index]);
+  setState({ player: { ...state.player, palette } });
+}
+
+function resetPlayerPalette() {
+  if (!state.player.palette) return;
+  setState({ player: { ...state.player, palette: null } });
+  setPaletteStatus('Using the selected catalog colors.');
+}
+
+function savePalettePreset() {
+  const typedName = elements.paletteName.value.trim().slice(0, 48);
+  const name = typedName || `Palette ${paletteLibrary.palettes.length + 1}`;
+  const normalizedName = name.toLocaleLowerCase();
+  const selected = selectedPalettePreset();
+  const existing = selected?.name.toLocaleLowerCase() === normalizedName
+    ? selected
+    : paletteLibrary.palettes.find((palette) => palette.name.toLocaleLowerCase() === normalizedName);
+  const now = new Date().toISOString();
+  const preset = {
+    id: existing?.id || makePaletteId(),
+    name,
+    palette: clonePalette(resolvedPlayerPalette()),
+    createdAt: existing?.createdAt || now,
+    updatedAt: now,
+  };
+
+  if (existing) {
+    paletteLibrary.palettes = paletteLibrary.palettes.map((item) => item.id === existing.id ? preset : item);
+  } else {
+    paletteLibrary.palettes.push(preset);
+  }
+  selectedPaletteId = preset.id;
+  elements.paletteName.value = preset.name;
+  persistPaletteLibrary();
+  renderPaletteControls();
+  setPaletteStatus(existing ? `Updated “${preset.name}”.` : `Saved “${preset.name}”.`);
+}
+
+function loadSelectedPalette() {
+  const preset = selectedPalettePreset();
+  if (!preset) return;
+  setState({ player: { ...state.player, palette: clonePalette(preset.palette) } });
+  elements.paletteName.value = preset.name;
+  setPaletteStatus(`Loaded “${preset.name}”.`);
+}
+
+function deleteSelectedPalette() {
+  const preset = selectedPalettePreset();
+  if (!preset) return;
+  paletteLibrary.palettes = paletteLibrary.palettes.filter((item) => item.id !== preset.id);
+  selectedPaletteId = '';
+  elements.paletteName.value = '';
+  persistPaletteLibrary();
+  renderPaletteControls();
+  setPaletteStatus(`Deleted “${preset.name}”.`);
+}
+
 function currentFamily() {
   return E.ENEMIES.find((family) => family.id === state.enemy.family) || E.ENEMIES[0];
 }
 
 function setPlayerOption(key, value) {
-  setState({ player: { ...state.player, [key]: value } });
+  const player = { ...state.player, [key]: value };
+  if (state.player.palette) {
+    const palette = clonePalette(resolvedPlayerPalette());
+    if (key === 'skin') palette.skin = catalogColorPair(E.SKINS, value);
+    if (key === 'hairColor') palette.hair = catalogColorPair(E.HAIR_COLORS, value);
+    if (key === 'outfitColor') palette.outfit = catalogColorPair(E.OUTFIT_COLORS, value);
+    player.palette = palette;
+  }
+  setState({ player });
 }
 
 function setEnemyFamily(familyId) {
@@ -657,8 +846,40 @@ function renderPresetControls() {
   elements.deletePresetButton.disabled = !selectedPresetId;
 }
 
+function renderPaletteControls() {
+  elements.paletteEditor.hidden = state.mode !== 'player';
+  if (state.mode !== 'player') return;
+
+  const palette = resolvedPlayerPalette();
+  elements.paletteSummary.textContent = state.player.palette ? 'Custom colors' : 'Catalog colors';
+  elements.resetPaletteButton.disabled = !state.player.palette;
+  for (const input of elements.paletteInputs) {
+    const [material, indexText] = input.dataset.paletteColor.split('.');
+    input.value = palette[material][Number(indexText)];
+  }
+
+  if (!paletteLibrary.palettes.some((preset) => preset.id === selectedPaletteId)) {
+    selectedPaletteId = '';
+  }
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = paletteLibrary.palettes.length ? 'Choose a palette' : 'No palettes saved';
+  const options = paletteLibrary.palettes.map((preset) => {
+    const option = document.createElement('option');
+    option.value = preset.id;
+    option.textContent = preset.name;
+    return option;
+  });
+  elements.paletteSelect.replaceChildren(placeholder, ...options);
+  elements.paletteSelect.value = selectedPaletteId;
+  elements.paletteSelect.disabled = paletteLibrary.palettes.length === 0;
+  elements.loadPaletteButton.disabled = !selectedPaletteId;
+  elements.deletePaletteButton.disabled = !selectedPaletteId;
+}
+
 function renderUi() {
   renderModeButtons();
+  renderPaletteControls();
   renderOptionGroups();
   renderPlaybackControls();
   renderDirectionControls();
@@ -745,7 +966,7 @@ function chooseDirection(direction) {
 }
 
 function randomize() {
-  if (state.mode === 'player') setState({ player: E.randomPlayer() });
+  if (state.mode === 'player') setState({ player: sanitizePlayer(E.randomPlayer()) });
   else setState({ enemy: E.randomEnemy() });
 }
 
@@ -784,6 +1005,29 @@ elements.randomizeButton.addEventListener('click', randomize);
 elements.savePresetButton.addEventListener('click', savePreset);
 elements.loadPresetButton.addEventListener('click', loadSelectedPreset);
 elements.deletePresetButton.addEventListener('click', deleteSelectedPreset);
+for (const input of elements.paletteInputs) {
+  input.addEventListener('change', () => {
+    const [material, indexText] = input.dataset.paletteColor.split('.');
+    updatePlayerPalette(material, Number(indexText), input.value);
+    setPaletteStatus('Custom palette applied.');
+  });
+}
+elements.resetPaletteButton.addEventListener('click', resetPlayerPalette);
+elements.savePaletteButton.addEventListener('click', savePalettePreset);
+elements.loadPaletteButton.addEventListener('click', loadSelectedPalette);
+elements.deletePaletteButton.addEventListener('click', deleteSelectedPalette);
+elements.paletteSelect.addEventListener('change', () => {
+  selectedPaletteId = elements.paletteSelect.value;
+  const preset = selectedPalettePreset();
+  elements.paletteName.value = preset?.name || '';
+  renderPaletteControls();
+  setPaletteStatus(preset ? `Selected “${preset.name}”.` : 'Reusable across player presets.');
+});
+elements.paletteName.addEventListener('keydown', (event) => {
+  if (event.key !== 'Enter') return;
+  event.preventDefault();
+  savePalettePreset();
+});
 elements.characterName.addEventListener('input', () => {
   const characterName = sanitizeText(elements.characterName.value, 48);
   setState({ characterName }, { render: false, recordHistory: false });

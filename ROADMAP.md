@@ -82,7 +82,7 @@ Exit criteria:
 
 ## Phase 4 - Core editor features
 
-Progress: the first editor-workflow slices are complete. Named player and enemy presets use a sanitized, versioned local format shared by the browser and Windows builds; schema v2 carries character and export names while migrating existing v1 libraries. Bounded undo/redo tracks editable sprite documents without rewinding preview-only direction, animation, zoom, cycle, or export-scale choices. Header controls and `Ctrl+Z`, `Ctrl+Y`, and `Ctrl+Shift+Z` are supported. Every player and enemy option group has an undoable randomize control that always selects a different valid value. Character names appear in the live preview, and exports support persistent Windows-safe filename overrides with an automatic fallback. These workflows are production-smoke-tested.
+Progress: the first editor-workflow slices are complete. Named player and enemy presets use a sanitized, versioned local format shared by the browser and Windows builds; schema v3 carries character names, export names, and optional player palette overrides while migrating existing v1 and v2 libraries. Bounded undo/redo tracks editable sprite documents without rewinding preview-only direction, animation, zoom, cycle, or export-scale choices. Header controls and `Ctrl+Z`, `Ctrl+Y`, and `Ctrl+Shift+Z` are supported. Every player and enemy option group has an undoable randomize control that always selects a different valid value. Character names appear in the live preview, and exports support persistent Windows-safe filename overrides with an automatic fallback. Players can override base/shadow tones for skin, hair, and outfit, then save those six tones in a separate versioned reusable palette library. These workflows are production-smoke-tested.
 
 Priority order:
 
@@ -90,7 +90,7 @@ Priority order:
 2. Undo and redo. Complete.
 3. Randomize individual categories as well as the whole character. Complete.
 4. Custom character and export names. Complete.
-5. Palette editing and reusable palette presets.
+5. Palette editing and reusable palette presets. Complete.
 6. Export a selected animation or direction in addition to the full sheet.
 7. Improved playback controls and frame inspection.
 8. Reset, duplicate, and compare workflows.
