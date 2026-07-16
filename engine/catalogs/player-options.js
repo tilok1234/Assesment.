@@ -26,6 +26,16 @@ export const HAIR_STYLES = [
   { id: 'ponytail', name: 'Ponytail' },
   { id: 'mohawk',   name: 'Mohawk' },
 ];
+export const FACIAL_DETAILS = [
+  { id: 'none',     name: 'None' },
+  { id: 'beard',    name: 'Beard' },
+  { id: 'mustache', name: 'Mustache' },
+  { id: 'scar',     name: 'Scar' },
+  { id: 'eyepatch', name: 'Eyepatch' },
+  { id: 'glasses',  name: 'Glasses' },
+  { id: 'blush',    name: 'Blush' },
+  { id: 'warpaint', name: 'War paint' },
+];
 export const HEADGEAR = [
   { id: 'none',     name: 'None' },
   { id: 'cap',      name: 'Cap' },

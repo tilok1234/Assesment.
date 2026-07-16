@@ -103,10 +103,12 @@ Exit criteria:
 
 ## Phase 5 - Content expansion
 
+Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
+
 Candidate additions:
 
 - Body types and silhouettes
-- Facial details and expressions
+- Facial details and expressions (first facial-detail set complete; expressions remain a future option)
 - More hairstyles and headgear
 - Armor layers, outfits, robes, capes, and accessories
 - More melee, ranged, and magical weapons

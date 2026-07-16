@@ -4,7 +4,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 
 ## Current capabilities
 
-- Player assembly from skin, hair, headgear, outfit, weapon, shield, and palette choices
+- Player assembly from skin, hair, eight facial details, headgear, outfit, weapon, shield, and palette choices
 - 41 enemy families with 138 predefined variants
 - Four directions: down, left, right, and up
 - Idle, walk, attack, and hurt animations
@@ -19,6 +19,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Full-sheet, selected-animation, and selected-direction PNG export scopes
 - Play/pause, 0.5x/1x/2x playback speeds, frame stepping, and direct frame inspection with sheet-column metadata
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
+- Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
 
 ## Preview controls
 

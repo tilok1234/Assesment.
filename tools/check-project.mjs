@@ -107,7 +107,7 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 }
 
 const expectedEngineExports = [
-  'ANIMS', 'DIRS', 'DIR_LABELS', 'ENEMIES', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
+  'ANIMS', 'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OUTFITS', 'OUTFIT_COLORS', 'SHEET_COLS', 'SHIELDS', 'SIZE', 'SKINS', 'WEAPONS',
   'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'describe', 'drawSprite',
   'randomEnemy', 'randomPlayer', 'thumbURL',
@@ -143,6 +143,13 @@ check(runtimeSources['app.js'].includes('function restoreComparisonCopy('), 'app
 check(runtimeSources['app.js'].includes('.showModal()'), 'app.js must open the side-by-side comparison as an accessible dialog');
 check((entrySource.match(/data-palette-color=/g) || []).length === 6, 'index.html must expose all six editable player palette tones');
 check(runtimeSources['engine/renderer.js'].includes('palettePair(spec.palette?.skin'), 'the renderer must consume safe player palette overrides');
+const expectedFacialDetails = ['none', 'beard', 'mustache', 'scar', 'eyepatch', 'glasses', 'blush', 'warpaint'];
+check(
+  JSON.stringify(engine.FACIAL_DETAILS.map((detail) => detail.id)) === JSON.stringify(expectedFacialDetails),
+  'the facial-detail catalog must preserve its validated option ids and default ordering',
+);
+check(runtimeSources['app.js'].includes("validId(E.FACIAL_DETAILS, player.faceDetail"), 'saved player specs must safely migrate missing or invalid facial details');
+check(runtimeSources['engine/renderer.js'].includes("detail: spec.faceDetail || 'none'"), 'the renderer must keep legacy player specs visually compatible');
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
 check(packageJson.scripts?.build === 'node tools/build.mjs', 'package.json must expose the production build command');
@@ -221,6 +228,7 @@ for (const relativePath of actualPngs) {
 const combinations = engine.SKINS.length
   * engine.HAIR_STYLES.length
   * engine.HAIR_COLORS.length
+  * engine.FACIAL_DETAILS.length
   * engine.HEADGEAR.length
   * engine.OUTFITS.length
   * engine.OUTFIT_COLORS.length

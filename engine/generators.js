@@ -2,6 +2,7 @@
 
 import {
   ENEMIES,
+  FACIAL_DETAILS,
   HAIR_COLORS,
   HAIR_STYLES,
   HEADGEAR,
@@ -20,6 +21,7 @@ export function randomPlayer() {
     skin: rnd(SKINS).id,
     hairStyle: rnd(HAIR_STYLES).id,
     hairColor: rnd(HAIR_COLORS).id,
+    faceDetail: rnd(FACIAL_DETAILS).id,
     headgear: rnd(HEADGEAR).id,
     outfit: rnd(OUTFITS).id,
     outfitColor: rnd(OUTFIT_COLORS).id,
@@ -33,7 +35,13 @@ export function randomEnemy() {
 }
 export function describe(spec) {
   if (spec.kind === 'player') {
-    const bits = ['hero', spec.hairStyle !== 'bald' ? spec.hairStyle : null, spec.outfit, spec.weapon !== 'none' ? spec.weapon : null];
+    const bits = [
+      'hero',
+      spec.hairStyle !== 'bald' ? spec.hairStyle : null,
+      spec.faceDetail && spec.faceDetail !== 'none' ? spec.faceDetail : null,
+      spec.outfit,
+      spec.weapon !== 'none' ? spec.weapon : null,
+    ];
     return bits.filter(Boolean).join('-');
   }
   return `${spec.family}-${spec.variant}`;

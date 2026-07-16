@@ -38,7 +38,7 @@ Catalog files describe content. They do not touch the DOM, canvas, editor state,
 
 ### Renderer
 
-`engine/renderer.js` converts a sprite specification, direction, animation, and frame into pixels on a 24x24 canvas context. It owns procedural shapes and family-specific drawing dispatch. Player specifications may include validated optional base/shadow overrides for skin, hair, and outfit; absent or invalid pairs fall back to the selected catalog colors.
+`engine/renderer.js` converts a sprite specification, direction, animation, and frame into pixels on a 24x24 canvas context. It owns procedural shapes and family-specific drawing dispatch. Player specifications may include validated optional base/shadow overrides for skin, hair, and outfit; absent or invalid pairs fall back to the selected catalog colors. Optional facial details are layered only on visible human faces, use the resolved player palettes where appropriate, mirror with the existing left/right renderer, and defer to headgear visibility rules.
 
 ### Sheets and thumbnails
 
@@ -74,9 +74,11 @@ Catalog files describe content. They do not touch the DOM, canvas, editor state,
 
 1. Add the option to `engine/catalogs/player-options.js`.
 2. Add or update renderer behavior only if the option introduces a new shape rather than a palette variant.
-3. Run `npm run check`, `npm run build`, and the browser smoke test.
+3. If it belongs to an existing category, its control is populated from that catalog. If it creates a new category, add the validated state field and one `playerGroups()` entry in `app.js`.
+4. Preserve a backward-compatible default so old saved state and presets still sanitize safely.
+5. Run `npm run check`, `npm run build`, and the browser smoke test.
 
-Existing UI categories populate automatically from their catalog arrays.
+For face-bound content, verify front and both side views, confirm the rear view stays anatomically correct, and test every face-hiding headgear option.
 
 ### Add an enemy variant
 

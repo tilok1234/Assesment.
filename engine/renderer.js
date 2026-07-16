@@ -258,6 +258,9 @@ function drawHumanoid(g, d, p, C) {
         S(14, HT + u + 5, eyeC);
       }
     }
+    if (C.face === 'human' && C.detail && C.detail !== 'none') {
+      drawFacialDetail(S, R, d, u, HT, C.detail, hair, skin, oc);
+    }
   }
 
   // ---- goblin/orc ears ----
@@ -377,6 +380,85 @@ function drawHumanoid(g, d, p, C) {
 
   // ---- weapon (in front) ----
   if (C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(S, R, d, p, C, u);
+}
+
+function drawFacialDetail(S, R, d, u, HT, detail, hair, skin, outfit) {
+  if (d !== 'down' && d !== 'right') return;
+  const y = HT + u;
+  const hairBase = hair?.[0] || INK;
+  const hairShade = hair?.[1] || INK;
+
+  if (detail === 'beard') {
+    if (d === 'down') {
+      R(9, y + 6, 6, 2, hairBase);
+      R(10, y + 8, 4, 1, hairBase);
+      S(11, y + 8, hairShade); S(12, y + 8, hairShade);
+    } else {
+      R(12, y + 6, 4, 2, hairBase);
+      R(13, y + 8, 3, 1, hairShade);
+    }
+    return;
+  }
+
+  if (detail === 'mustache') {
+    if (d === 'down') {
+      S(10, y + 6, hairBase); S(11, y + 6, hairShade);
+      S(12, y + 6, hairShade); S(13, y + 6, hairBase);
+    } else {
+      S(14, y + 6, hairShade); S(15, y + 6, hairBase);
+    }
+    return;
+  }
+
+  if (detail === 'scar') {
+    if (d === 'down') {
+      S(14, y + 4, skin[1]); S(14, y + 5, skin[1]); S(13, y + 6, skin[1]);
+    } else {
+      S(15, y + 4, skin[1]); S(15, y + 5, skin[1]); S(14, y + 6, skin[1]);
+    }
+    return;
+  }
+
+  if (detail === 'eyepatch') {
+    if (d === 'down') {
+      S(11, y + 4, INK); S(12, y + 4, INK); S(13, y + 5, INK); S(14, y + 4, INK);
+    } else {
+      S(13, y + 4, INK); S(14, y + 5, INK); S(15, y + 4, INK);
+    }
+    return;
+  }
+
+  if (detail === 'glasses') {
+    const frame = '#596273';
+    if (d === 'down') {
+      S(9, y + 5, frame); S(10, y + 4, frame); S(10, y + 6, frame);
+      S(14, y + 5, frame); S(13, y + 4, frame); S(13, y + 6, frame);
+    } else {
+      S(13, y + 5, frame); S(15, y + 5, frame);
+      S(14, y + 4, frame); S(14, y + 6, frame);
+    }
+    return;
+  }
+
+  if (detail === 'blush') {
+    const blush = '#c9656f';
+    if (d === 'down') {
+      S(9, y + 6, blush); S(14, y + 6, blush);
+    } else {
+      S(15, y + 6, blush);
+    }
+    return;
+  }
+
+  if (detail === 'warpaint') {
+    const paint = outfit[0];
+    if (d === 'down') {
+      S(9, y + 4, paint); S(10, y + 4, paint);
+      S(13, y + 4, paint); S(14, y + 4, paint);
+    } else {
+      S(13, y + 4, paint); S(14, y + 4, paint); S(15, y + 4, paint);
+    }
+  }
 }
 
 // ---------------- hair ----------------
@@ -1412,6 +1494,7 @@ function buildHumanoidC(spec) {
       weapon: spec.weapon,
       shield: spec.shield,
       face: 'human',
+      detail: spec.faceDetail || 'none',
     };
   }
   const fam = find(ENEMIES, spec.family);

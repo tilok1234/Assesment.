@@ -14,6 +14,7 @@ export {
   WOOD,
 } from './catalogs/palettes.js';
 export {
+  FACIAL_DETAILS,
   HAIR_COLORS,
   HAIR_STYLES,
   HEADGEAR,
