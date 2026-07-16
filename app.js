@@ -352,7 +352,7 @@ function thumbUrl(spec) {
   return thumbCache.get(key);
 }
 
-function createOptionGroup({ label, selectedName, type, options }) {
+function createOptionGroup({ label, selectedName, type, options, randomize, canRandomize }) {
   const group = document.createElement('section');
   group.className = 'option-group';
 
@@ -360,9 +360,21 @@ function createOptionGroup({ label, selectedName, type, options }) {
   heading.className = 'option-heading';
   const title = document.createElement('h2');
   title.textContent = label;
+  const headingMeta = document.createElement('div');
+  headingMeta.className = 'option-heading-meta';
   const selection = document.createElement('span');
+  selection.className = 'option-selection';
   selection.textContent = selectedName;
-  heading.append(title, selection);
+  const randomizeButton = document.createElement('button');
+  randomizeButton.type = 'button';
+  randomizeButton.className = 'category-randomize';
+  randomizeButton.textContent = '↻';
+  randomizeButton.title = `Randomize ${label}`;
+  randomizeButton.setAttribute('aria-label', `Randomize ${label}`);
+  randomizeButton.disabled = !canRandomize;
+  randomizeButton.addEventListener('click', randomize);
+  headingMeta.append(selection, randomizeButton);
+  heading.append(title, headingMeta);
   group.append(heading);
 
   const choices = document.createElement('div');
@@ -396,12 +408,25 @@ function createOptionGroup({ label, selectedName, type, options }) {
   return group;
 }
 
+function randomDifferent(list, selected) {
+  const choices = list.filter((item) => item.id !== selected);
+  if (!choices.length) return null;
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+function randomizeChoice(list, selected, pick) {
+  const choice = randomDifferent(list, selected);
+  if (choice) pick(choice.id);
+}
+
 function dotGroup(label, list, selected, pick) {
   const selectedItem = list.find((item) => item.id === selected) || list[0];
   return {
     label,
     selectedName: selectedItem.name,
     type: 'dots',
+    randomize: () => randomizeChoice(list, selectedItem.id, pick),
+    canRandomize: list.length > 1,
     options: list.map((item) => ({
       name: item.name,
       color: item.c[0],
@@ -417,6 +442,8 @@ function thumbnailGroup(label, list, selected, pick, specFor) {
     label,
     selectedName: selectedItem.name,
     type: 'thumbnails',
+    randomize: () => randomizeChoice(list, selectedItem.id, pick),
+    canRandomize: list.length > 1,
     options: list.map((item) => ({
       name: item.name,
       image: thumbUrl(specFor(item)),

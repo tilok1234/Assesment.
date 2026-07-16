@@ -13,6 +13,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
 - Sprite-only undo and redo through the header controls or `Ctrl+Z` / `Ctrl+Y`
+- Whole-sprite and per-category randomization with undo support
 
 ## Run it on Windows
 
