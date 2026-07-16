@@ -5,13 +5,15 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
-const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
+const projectRoot = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const host = '127.0.0.1';
 const portFlag = process.argv.indexOf('--port');
+const rootFlag = process.argv.indexOf('--root');
 const requestedPort = portFlag >= 0 ? Number(process.argv[portFlag + 1]) : Number(process.env.PORT || 4173);
 const port = Number.isInteger(requestedPort) && requestedPort > 0 ? requestedPort : 4173;
 const shouldOpen = process.argv.includes('--open');
-const entryFile = 'Sprite Assembler.dc.html';
+const root = rootFlag >= 0 ? path.resolve(projectRoot, process.argv[rootFlag + 1]) : projectRoot;
+const entryFile = 'index.html';
 
 const contentTypes = new Map([
   ['.html', 'text/html; charset=utf-8'],

@@ -37,6 +37,8 @@ Exit criteria:
 
 ## Phase 2 - App-ready frontend and content foundation
 
+Progress: the standard `index.html` module frontend, restrictive-CSP-compatible runtime, dependency-free production build, and UI parity migration are complete. Splitting the procedural engine into its final content and renderer modules remains.
+
 Goals:
 
 - Replace the exported runtime-driven page with a standard bundled frontend entry point.
@@ -59,6 +61,8 @@ Exit criteria:
 - No `eval` or `new Function` requirement remains in application code.
 
 ## Phase 3 - Minimal Windows packaging proof
+
+Progress: the Tauri 2 wrapper is configured and the first optimized Windows executable has been compiled and visually verified under the production content-security policy. The proof executable is intentionally built without an installer while editor development continues.
 
 Goals:
 

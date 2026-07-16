@@ -46,18 +46,51 @@ const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
 const engine = await import(`${pathToFileURL(path.join(root, 'sprite-engine.js')).href}?check=${Date.now()}`);
 
 checkSyntax('sprite-engine.js');
-checkSyntax('support.js');
+checkSyntax('app.js');
+checkSyntax('tools/build.mjs');
+checkSyntax('tools/dev-server.mjs');
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
 let entryFile = null;
+let entrySource = '';
 for (const candidate of entryCandidates) {
   try {
-    await readFile(path.join(root, candidate), 'utf8');
+    entrySource = await readFile(path.join(root, candidate), 'utf8');
     entryFile = candidate;
     break;
   } catch {}
 }
 check(Boolean(entryFile), `Missing application entry point (${entryCandidates.join(' or ')})`);
+check(entryFile === 'index.html', 'The app-ready frontend must use index.html as its entry point');
+check(entrySource.includes('type="module" src="./app.js"'), 'index.html must load app.js as a module');
+check(entrySource.includes('href="./styles.css"'), 'index.html must load styles.css');
+
+const runtimeSources = {
+  'index.html': entrySource,
+  'app.js': await readFile(path.join(root, 'app.js'), 'utf8'),
+  'sprite-engine.js': await readFile(path.join(root, 'sprite-engine.js'), 'utf8'),
+};
+for (const [relativePath, source] of Object.entries(runtimeSources)) {
+  check(!/\bnew\s+Function\s*\(/.test(source), `${relativePath}: runtime code generation with new Function is not allowed`);
+  check(!/\beval\s*\(/.test(source), `${relativePath}: runtime code generation with eval is not allowed`);
+}
+
+const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
+check(packageJson.scripts?.build === 'node tools/build.mjs', 'package.json must expose the production build command');
+check(packageJson.scripts?.['tauri:build'] === 'tauri build --no-bundle', 'package.json must expose the proof Windows build command');
+check(packageJson.devDependencies?.['@tauri-apps/cli'] === '^2.11.0', 'Tauri CLI must stay pinned to the approved 2.11 line');
+
+const tauriConfig = JSON.parse(await readFile(path.join(root, 'src-tauri', 'tauri.conf.json'), 'utf8'));
+const tauriCsp = tauriConfig.app?.security?.csp || {};
+check(tauriConfig.build?.frontendDist === '../dist', 'Tauri must package the production dist directory');
+check(tauriConfig.build?.beforeBuildCommand === 'npm run build', 'Tauri must build the frontend before native compilation');
+check(tauriCsp['script-src'] === "'self'", 'Tauri script CSP must only allow bundled application scripts');
+check(!Object.values(tauriCsp).join(' ').includes('unsafe-eval'), 'Tauri CSP must not allow unsafe-eval');
+try {
+  await readFile(path.join(root, 'src-tauri', 'icons', 'icon.ico'));
+} catch {
+  errors.push('src-tauri/icons/icon.ico: Windows application icon is missing');
+}
 
 const expectedWidth = manifest.format.sheetSize.width;
 const expectedHeight = manifest.format.sheetSize.height;

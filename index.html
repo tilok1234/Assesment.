@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Sprite Assembler</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+        <div class="brand-copy">
+          <h1>Sprite Assembler</h1>
+          <p>24x24 · 4 directions · idle / walk / attack / hurt</p>
+        </div>
+        <button class="secondary-button header-action" id="randomize-button" type="button">Randomize</button>
+      </header>
+
+      <main class="app-main">
+        <aside class="options-panel" aria-label="Sprite options">
+          <div class="segmented-control mode-control" id="mode-buttons"></div>
+          <div id="option-groups"></div>
+        </aside>
+
+        <section class="preview-panel" aria-label="Animated sprite preview">
+          <div class="preview-toolbar">
+            <div class="segmented-control" id="animation-buttons"></div>
+            <button class="cycle-button" id="cycle-button" type="button">
+              <span class="cycle-status" aria-hidden="true"></span>
+              Cycle all
+            </button>
+            <div class="toolbar-spacer"></div>
+            <div class="segmented-control compact" id="zoom-buttons" aria-label="Preview zoom"></div>
+          </div>
+
+          <div class="stage-background" id="stage-background">
+            <canvas id="stage-canvas" width="24" height="24" aria-label="Current animated sprite"></canvas>
+            <div class="stage-label" id="live-label">WALK · DOWN</div>
+          </div>
+
+          <div class="direction-controls">
+            <div class="direction-pad" aria-label="Preview direction">
+              <span></span>
+              <button type="button" data-direction="up" aria-label="Face up">▲</button>
+              <span></span>
+              <button type="button" data-direction="left" aria-label="Face left">◀</button>
+              <span class="direction-letter" id="direction-letter">D</span>
+              <button type="button" data-direction="right" aria-label="Face right">▶</button>
+              <span></span>
+              <button type="button" data-direction="down" aria-label="Face down">▼</button>
+              <span></span>
+            </div>
+            <p><strong>Direction</strong><br>Arrow keys work too — choosing one pauses Cycle all.</p>
+          </div>
+        </section>
+
+        <aside class="export-panel" aria-label="Sprite sheet and export">
+          <section>
+            <h2>All directions</h2>
+            <div class="direction-previews">
+              <figure>
+                <div><canvas width="24" height="24" data-direction-canvas="down"></canvas></div>
+                <figcaption>Down</figcaption>
+              </figure>
+              <figure>
+                <div><canvas width="24" height="24" data-direction-canvas="left"></canvas></div>
+                <figcaption>Left</figcaption>
+              </figure>
+              <figure>
+                <div><canvas width="24" height="24" data-direction-canvas="right"></canvas></div>
+                <figcaption>Right</figcaption>
+              </figure>
+              <figure>
+                <div><canvas width="24" height="24" data-direction-canvas="up"></canvas></div>
+                <figcaption>Up</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section>
+            <h2>Sprite sheet</h2>
+            <div class="sheet-preview">
+              <canvas id="sheet-canvas" width="288" height="96" aria-label="Complete sprite sheet"></canvas>
+            </div>
+            <p class="sheet-contract">cols: 2 idle · 4 walk · 4 attack · 2 hurt<br>rows: down / left / right / up</p>
+          </section>
+
+          <section>
+            <h2>Export PNG</h2>
+            <div class="export-scale-row">
+              <div class="segmented-control compact" id="scale-buttons" aria-label="Export scale"></div>
+              <span id="size-label">2304x768px</span>
+            </div>
+            <button class="primary-button" id="download-button" type="button">Download sprite sheet</button>
+            <p class="export-note">Transparent background, no baked shadow — ready for a game engine.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

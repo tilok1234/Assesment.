@@ -26,6 +26,13 @@ npm run dev:open
 
 Keep the terminal window open while using the assembler. Press `Ctrl+C` to stop the server.
 
+To build and preview the exact production files:
+
+```powershell
+npm run build
+npm run preview
+```
+
 ## Validate the project
 
 Double-click `check-project.bat`, or run:
@@ -35,6 +42,23 @@ npm run check
 ```
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, and the exact dimensions of all exported sheets.
+
+## Build the Windows application
+
+Windows development requires Node.js, Rust, Microsoft C++ Build Tools, and WebView2. After installing those prerequisites, run:
+
+```powershell
+npm install
+npm run tauri:dev
+```
+
+Create an optimized standalone executable with:
+
+```powershell
+npm run tauri:build
+```
+
+The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. The installer targets remain configured for the later release phase, but this command intentionally skips installer generation while the product is still evolving.
 
 ## Sprite-sheet contract
 
@@ -48,12 +72,15 @@ The validator checks JavaScript syntax, the engine-to-manifest contract, every r
 
 ## Project layout
 
-- `Sprite Assembler.dc.html` - current application shell and UI state
+- `index.html` - standard application entry point
+- `styles.css` - desktop-style responsive interface
+- `app.js` - editor state, controls, animation preview, persistence, and downloads
 - `sprite-engine.js` - procedural sprite definitions, rendering, animation, and export
-- `support.js` - current UI runtime
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
+- `tools/build.mjs` - dependency-free production build
 - `tools/check-project.mjs` - project and asset validator
+- `src-tauri/` - Tauri 2 Windows wrapper, permissions, CSP, and icon resources
 - `ROADMAP.md` - agreed development and Windows release order
 
 ## Direction

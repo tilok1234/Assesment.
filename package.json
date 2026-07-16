@@ -7,6 +7,14 @@
   "scripts": {
     "dev": "node tools/dev-server.mjs",
     "dev:open": "node tools/dev-server.mjs --open",
-    "check": "node tools/check-project.mjs"
+    "build": "node tools/build.mjs",
+    "preview": "node tools/dev-server.mjs --root dist --open",
+    "check": "node tools/check-project.mjs",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build --no-bundle"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.0"
   }
 }
