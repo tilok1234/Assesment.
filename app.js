@@ -2,7 +2,7 @@ import * as E from './sprite-engine.js';
 
 const STORAGE_KEY = 'sprite-assembler-v1';
 const PRESET_STORAGE_KEY = 'sprite-assembler-presets-v1';
-const PRESET_VERSION = 1;
+const PRESET_VERSION = 2;
 const HISTORY_LIMIT = 100;
 const ZOOM_LEVELS = [6, 10, 14, 20];
 const EXPORT_SCALES = [4, 8, 12];
@@ -20,6 +20,8 @@ const DEFAULT_STATE = {
     shield: 'round',
   },
   enemy: { family: 'slime', variant: 'lime' },
+  characterName: '',
+  exportName: '',
   dir: 'down',
   anim: 'walk',
   zoom: 14,
@@ -44,6 +46,9 @@ const elements = {
   sheetCanvas: document.querySelector('#sheet-canvas'),
   scaleButtons: document.querySelector('#scale-buttons'),
   sizeLabel: document.querySelector('#size-label'),
+  characterName: document.querySelector('#character-name'),
+  exportName: document.querySelector('#export-name'),
+  exportFilenamePreview: document.querySelector('#export-filename-preview'),
   undoButton: document.querySelector('#undo-button'),
   redoButton: document.querySelector('#redo-button'),
   randomizeButton: document.querySelector('#randomize-button'),
@@ -74,6 +79,12 @@ function listHas(list, value) {
 
 function validId(list, value, fallback) {
   return listHas(list, value) ? value : fallback;
+}
+
+function sanitizeText(value, maxLength) {
+  return typeof value === 'string'
+    ? value.replace(/[\u0000-\u001f\u007f]/g, '').slice(0, maxLength)
+    : '';
 }
 
 function sanitizePlayer(player = {}) {
@@ -111,6 +122,8 @@ function loadState() {
   };
 
   loaded.mode = loaded.mode === 'enemy' ? 'enemy' : 'player';
+  loaded.characterName = sanitizeText(loaded.characterName, 48);
+  loaded.exportName = sanitizeText(loaded.exportName, 80);
   loaded.dir = E.DIRS.includes(loaded.dir) ? loaded.dir : DEFAULT_STATE.dir;
   loaded.anim = listHas(E.ANIMS, loaded.anim) ? loaded.anim : DEFAULT_STATE.anim;
   loaded.zoom = ZOOM_LEVELS.includes(loaded.zoom) ? loaded.zoom : DEFAULT_STATE.zoom;
@@ -133,6 +146,8 @@ function editableSnapshot(source = state) {
     mode: source.mode,
     player: { ...source.player },
     enemy: { ...source.enemy },
+    characterName: source.characterName,
+    exportName: source.exportName,
   };
 }
 
@@ -146,7 +161,7 @@ function pushHistory(stack, snapshot) {
 }
 
 function setState(patch, { persist = true, render = true, recordHistory = true } = {}) {
-  const tracksSprite = ['mode', 'player', 'enemy']
+  const tracksSprite = ['mode', 'player', 'enemy', 'characterName', 'exportName']
     .some((key) => Object.prototype.hasOwnProperty.call(patch, key));
   const before = tracksSprite ? editableSnapshot() : null;
   const next = { ...state, ...patch };
@@ -167,6 +182,8 @@ function restoreSnapshot(snapshot) {
     mode: snapshot.mode,
     player: sanitizePlayer(snapshot.player),
     enemy: sanitizeEnemy(snapshot.enemy),
+    characterName: sanitizeText(snapshot.characterName, 48),
+    exportName: sanitizeText(snapshot.exportName, 80),
   };
   persistState();
   renderUi();
@@ -190,6 +207,33 @@ function currentSpec() {
     : { kind: 'enemy', ...state.enemy };
 }
 
+function sanitizeFilenameBase(value) {
+  let base = sanitizeText(value, 80)
+    .trim()
+    .replace(/\.png$/i, '')
+    .replace(/[<>:"/\\|?*]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/[. ]+$/g, '')
+    .trim()
+    .slice(0, 80)
+    .replace(/[. ]+$/g, '');
+  if (/^(con|prn|aux|nul|com[1-9]|lpt[1-9])$/i.test(base)) base = `sprite-${base}`;
+  return base;
+}
+
+function generatedNameBase() {
+  const characterName = sanitizeFilenameBase(state.characterName)
+    .toLocaleLowerCase()
+    .replace(/\s+/g, '-');
+  return characterName || E.describe(currentSpec());
+}
+
+function exportFilename() {
+  const customName = sanitizeFilenameBase(state.exportName);
+  if (customName) return `${customName}.png`;
+  return `${generatedNameBase()}-sheet@${state.exportScale}x.png`;
+}
+
 function sanitizePreset(raw) {
   if (!raw || typeof raw !== 'object') return null;
   const kind = raw.kind === 'enemy' ? 'enemy' : raw.kind === 'player' ? 'player' : null;
@@ -201,6 +245,8 @@ function sanitizePreset(raw) {
     name,
     kind,
     spec: kind === 'player' ? sanitizePlayer(raw.spec) : sanitizeEnemy(raw.spec),
+    characterName: sanitizeText(raw.characterName, 48),
+    exportName: sanitizeText(raw.exportName, 80),
     createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
     updatedAt: typeof raw.updatedAt === 'string' ? raw.updatedAt : new Date().toISOString(),
   };
@@ -212,7 +258,7 @@ function loadPresetLibrary() {
     saved = JSON.parse(localStorage.getItem(PRESET_STORAGE_KEY) || 'null');
   } catch {}
 
-  if (!saved || saved.version !== PRESET_VERSION || !Array.isArray(saved.presets)) {
+  if (!saved || ![1, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
     return { version: PRESET_VERSION, presets: [] };
   }
 
@@ -269,6 +315,8 @@ function savePreset() {
     name,
     kind: spec.kind,
     spec: spec.kind === 'player' ? sanitizePlayer(spec) : sanitizeEnemy(spec),
+    characterName: state.characterName,
+    exportName: state.exportName,
     createdAt: existing?.createdAt || now,
     updatedAt: now,
   };
@@ -292,6 +340,8 @@ function loadSelectedPreset() {
   const patch = preset.kind === 'player'
     ? { mode: 'player', player: sanitizePlayer(preset.spec) }
     : { mode: 'enemy', enemy: sanitizeEnemy(preset.spec) };
+  patch.characterName = preset.characterName;
+  patch.exportName = preset.exportName;
   setState(patch);
   elements.presetName.value = preset.name;
   setPresetStatus(`Loaded “${preset.name}”.`);
@@ -565,6 +615,20 @@ function renderExportControls() {
   elements.sizeLabel.textContent = `${E.SHEET_COLS * E.SIZE * state.exportScale}x${E.DIRS.length * E.SIZE * state.exportScale}px`;
 }
 
+function renderExportFilename() {
+  elements.exportFilenamePreview.textContent = exportFilename();
+}
+
+function renderNamingControls() {
+  if (elements.characterName.value !== state.characterName) {
+    elements.characterName.value = state.characterName;
+  }
+  if (elements.exportName.value !== state.exportName) {
+    elements.exportName.value = state.exportName;
+  }
+  renderExportFilename();
+}
+
 function renderHistoryControls() {
   elements.undoButton.disabled = historyPast.length === 0;
   elements.redoButton.disabled = historyFuture.length === 0;
@@ -599,6 +663,7 @@ function renderUi() {
   renderPlaybackControls();
   renderDirectionControls();
   renderExportControls();
+  renderNamingControls();
   renderHistoryControls();
   renderPresetControls();
 }
@@ -623,7 +688,10 @@ function drawFrame(animId, direction, frame) {
   }
 
   const anim = E.ANIMS.find((item) => item.id === animId) || E.ANIMS[0];
-  elements.liveLabel.textContent = `${anim.name} · ${DIRECTION_NAMES[direction]}`.toUpperCase();
+  const playbackLabel = `${anim.name} · ${DIRECTION_NAMES[direction]}`;
+  elements.liveLabel.textContent = state.characterName.trim()
+    ? `${state.characterName.trim()} · ${playbackLabel}`.toUpperCase()
+    : playbackLabel.toUpperCase();
   updateSheet(spec);
 }
 
@@ -706,7 +774,7 @@ function triggerDownload(canvas, filename) {
 function downloadSheet() {
   const spec = currentSpec();
   const canvas = E.buildSheet(spec, state.exportScale);
-  triggerDownload(canvas, `${E.describe(spec)}-sheet@${state.exportScale}x.png`);
+  triggerDownload(canvas, exportFilename());
 }
 
 elements.cycleButton.addEventListener('click', toggleCycle);
@@ -716,6 +784,16 @@ elements.randomizeButton.addEventListener('click', randomize);
 elements.savePresetButton.addEventListener('click', savePreset);
 elements.loadPresetButton.addEventListener('click', loadSelectedPreset);
 elements.deletePresetButton.addEventListener('click', deleteSelectedPreset);
+elements.characterName.addEventListener('input', () => {
+  const characterName = sanitizeText(elements.characterName.value, 48);
+  setState({ characterName }, { render: false, recordHistory: false });
+  renderExportFilename();
+});
+elements.exportName.addEventListener('input', () => {
+  const exportName = sanitizeText(elements.exportName.value, 80);
+  setState({ exportName }, { render: false, recordHistory: false });
+  renderExportFilename();
+});
 elements.presetSelect.addEventListener('change', () => {
   selectedPresetId = elements.presetSelect.value;
   const preset = selectedPreset();

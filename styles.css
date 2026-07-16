@@ -452,7 +452,10 @@ button:disabled:hover {
   color: rgba(35, 37, 43, 0.76);
   font-size: 10.5px;
   letter-spacing: 0.08em;
+  overflow: hidden;
   pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .direction-controls {
@@ -627,6 +630,56 @@ button:disabled:hover {
   align-items: center;
   gap: 10px;
   margin: 8px 0 10px;
+}
+
+.export-name-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.export-name-fields label {
+  display: grid;
+  gap: 4px;
+}
+
+.export-name-fields label > span {
+  color: rgba(35, 37, 43, 0.58);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.export-name-fields input {
+  min-width: 0;
+  padding: 7px 9px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #23252b;
+  font: inherit;
+  font-size: 11.5px;
+}
+
+.export-name-fields input:focus {
+  border-color: var(--accent);
+  outline: 2px solid rgba(74, 93, 199, 0.14);
+}
+
+.export-filename {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin: -1px 0 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 9.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.export-filename code {
+  color: var(--accent-dark);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 
 .export-scale-row span {

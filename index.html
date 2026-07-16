@@ -117,6 +117,17 @@
 
           <section>
             <h2>Export PNG</h2>
+            <div class="export-name-fields">
+              <label for="character-name">
+                <span>Character name</span>
+                <input id="character-name" type="text" maxlength="48" placeholder="Optional display name">
+              </label>
+              <label for="export-name">
+                <span>File name override</span>
+                <input id="export-name" type="text" maxlength="80" placeholder="Automatic">
+              </label>
+              <p class="export-filename">Saves as <code id="export-filename-preview">sprite-sheet@8x.png</code></p>
+            </div>
             <div class="export-scale-row">
               <div class="segmented-control compact" id="scale-buttons" aria-label="Export scale"></div>
               <span id="size-label">2304x768px</span>

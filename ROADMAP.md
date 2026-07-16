@@ -82,14 +82,14 @@ Exit criteria:
 
 ## Phase 4 - Core editor features
 
-Progress: the first editor-workflow slices are complete. Named player and enemy presets use a sanitized, versioned local format shared by the browser and Windows builds. Bounded undo/redo tracks sprite edits without rewinding preview-only direction, animation, zoom, cycle, or export-scale choices. Header controls and `Ctrl+Z`, `Ctrl+Y`, and `Ctrl+Shift+Z` are supported. Every player and enemy option group now has an undoable randomize control that always selects a different valid value. These workflows are production-smoke-tested.
+Progress: the first editor-workflow slices are complete. Named player and enemy presets use a sanitized, versioned local format shared by the browser and Windows builds; schema v2 carries character and export names while migrating existing v1 libraries. Bounded undo/redo tracks editable sprite documents without rewinding preview-only direction, animation, zoom, cycle, or export-scale choices. Header controls and `Ctrl+Z`, `Ctrl+Y`, and `Ctrl+Shift+Z` are supported. Every player and enemy option group has an undoable randomize control that always selects a different valid value. Character names appear in the live preview, and exports support persistent Windows-safe filename overrides with an automatic fallback. These workflows are production-smoke-tested.
 
 Priority order:
 
 1. Save and load named character presets. Complete.
 2. Undo and redo. Complete.
 3. Randomize individual categories as well as the whole character. Complete.
-4. Custom character and export names.
+4. Custom character and export names. Complete.
 5. Palette editing and reusable palette presets.
 6. Export a selected animation or direction in addition to the full sheet.
 7. Improved playback controls and frame inspection.

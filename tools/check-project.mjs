@@ -75,6 +75,7 @@ check(entrySource.includes('href="./styles.css"'), 'index.html must load styles.
 for (const controlId of [
   'undo-button', 'redo-button', 'preset-name', 'preset-select',
   'save-preset-button', 'load-preset-button', 'delete-preset-button',
+  'character-name', 'export-name', 'export-filename-preview',
 ]) {
   check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
 }
@@ -110,13 +111,16 @@ check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 40, 'sprite-eng
 check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 40, 'engine/catalogs.js must remain a small internal facade');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
-check(runtimeSources['app.js'].includes("PRESET_VERSION = 1"), 'app.js must keep presets under an explicit versioned schema');
+check(runtimeSources['app.js'].includes("PRESET_VERSION = 2"), 'app.js must keep presets under the current versioned schema');
+check(runtimeSources['app.js'].includes('![1, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1 preset libraries');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
-check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy']"), 'app.js history must remain scoped to sprite-edit state');
+check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'characterName', 'exportName']"), 'app.js history must remain scoped to the editable sprite document');
 check(runtimeSources['app.js'].includes("key === 'z'"), 'app.js must expose the undo keyboard shortcut');
 check(runtimeSources['app.js'].includes("key === 'y'"), 'app.js must expose the redo keyboard shortcut');
 check(runtimeSources['app.js'].includes("className = 'category-randomize'"), 'app.js must expose per-category randomize controls');
 check(runtimeSources['app.js'].includes('function randomDifferent('), 'app.js category randomization must guarantee a different selection');
+check(runtimeSources['app.js'].includes('function sanitizeFilenameBase('), 'app.js must sanitize custom export filenames');
+check(runtimeSources['app.js'].includes('triggerDownload(canvas, exportFilename())'), 'PNG downloads must use the resolved custom export filename');
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
 check(packageJson.scripts?.build === 'node tools/build.mjs', 'package.json must expose the production build command');
