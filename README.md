@@ -20,7 +20,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Play/pause, 0.5x/1x/2x playback speeds, frame stepping, and direct frame inspection with sheet-column metadata
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
-- Fifteen equipped weapon choices spanning blades, blunt weapons, polearms, ranged weapons, and magic focuses, each with a standard Tier 1 and named RPG-style Tier 2 form; all 30 variants use hand-anchored motion and preserve side-face clearance
+- Fifteen equipped weapon choices spanning blades, blunt weapons, polearms, ranged weapons, and magic focuses, each with standard Tier 1, named RPG-style Tier 2, and legendary Tier 3 forms; all 45 variants use hand-anchored motion and preserve side-face clearance
 
 ## Preview controls
 

@@ -43,7 +43,7 @@ export function describe(spec) {
       spec.hairStyle !== 'bald' ? spec.hairStyle : null,
       spec.faceDetail && spec.faceDetail !== 'none' ? spec.faceDetail : null,
       spec.outfit,
-      spec.weaponTier === 'tier2' && spec.weapon !== 'none' ? 'tier2' : null,
+      spec.weaponTier && spec.weaponTier !== 'tier1' && spec.weapon !== 'none' ? spec.weaponTier : null,
       spec.weapon !== 'none' ? spec.weapon : null,
     ];
     return bits.filter(Boolean).join('-');

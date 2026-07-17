@@ -13,6 +13,13 @@ const TIER2 = {
   gold: '#f7dc85',
   ember: '#ff8d4a',
 };
+const TIER3 = {
+  core: '#fff4a8',
+  astral: '#d979ff',
+  astralDark: '#853db5',
+  flame: '#ff5f45',
+  storm: '#8ea7ff',
+};
 
 function weaponAnchors(C) {
   return {
@@ -311,6 +318,244 @@ function drawTierTwoUpgrade(S, R, d, ph, C) {
   }
 }
 
+function drawTierThreeUpgrade(S, R, d, ph, C) {
+  const w = C.weapon;
+  const strike = ph === 'strike';
+  const wind = ph === 'wind';
+  const { downX, upX, sideX } = weaponAnchors(C);
+
+  if (w === 'sword' || w === 'dagger') {
+    const len = w === 'sword' ? 6 : 3;
+    if (d === 'down') {
+      const guardY = strike ? 14 : wind ? 12 : 13;
+      S(downX - 3, guardY, TIER3.astral); S(downX + 3, guardY, TIER3.astral);
+      S(downX + (strike ? 1 : -1), strike ? 18 : guardY - Math.max(2, len - 1), TIER3.core);
+    } else if (d === 'up') {
+      const guardY = strike ? 10 : wind ? 14 : 8 + len;
+      S(upX - 3, guardY, TIER3.astral); S(upX + 3, guardY, TIER3.astral);
+      S(upX - 1, strike ? 5 : wind ? 17 : 9, TIER3.core);
+      if (strike) S(upX + 2, 5, TIER3.astralDark);
+    } else if (strike) {
+      const tipX = Math.min(23, 16 + len);
+      S(tipX, 13, TIER3.core); S(14, 16, TIER3.astral); S(13, 14, TIER3.astralDark);
+    } else {
+      const guardY = wind ? 11 : 14;
+      S(sideX - 3, guardY, TIER3.astral); S(sideX + 3, guardY, TIER3.astral);
+      S(sideX + 1, guardY - Math.max(2, len - 1), TIER3.core);
+    }
+  }
+
+  if (w === 'greatsword') {
+    if (d === 'down') {
+      const guardY = strike ? 13 : wind ? 11 : 13;
+      S(downX - 4, guardY, TIER3.astral); S(downX + 4, guardY, TIER3.astral);
+      S(downX + 1, strike ? 19 : wind ? 3 : 5, TIER3.core);
+    } else if (d === 'up') {
+      const guardY = strike ? 10 : 14;
+      S(upX - 4, guardY, TIER3.astral); S(upX + 4, guardY, TIER3.astral);
+      S(upX + 1, strike ? 5 : 6, TIER3.core); if (strike) S(upX + 2, 5, TIER3.astralDark);
+    } else if (strike) {
+      S(23, 13, TIER3.core); S(13, 12, TIER3.astral); S(14, 17, TIER3.astralDark);
+    } else {
+      const guardY = wind ? 11 : 14;
+      S(sideX - 4, guardY, TIER3.astral); S(sideX + 4, guardY, TIER3.astral);
+      S(sideX + 1, wind ? 2 : 5, TIER3.core);
+    }
+  }
+
+  if (w === 'scimitar') {
+    if (d === 'down') {
+      const bladeY = strike ? 19 : wind ? 6 : 8;
+      S(downX + 2, bladeY, TIER3.flame); S(downX - 2, bladeY + (strike ? 2 : -1), TIER3.core);
+      S(downX + 3, strike ? 16 : wind ? 9 : 11, TIER3.astral);
+    } else if (d === 'up') {
+      const bladeY = strike ? 4 : 9;
+      S(upX + 2, bladeY, TIER3.flame); S(upX - 2, strike ? 2 : 7, TIER3.core);
+      if (strike) S(upX + 2, 6, TIER3.astral);
+    } else if (strike) {
+      S(23, 11, TIER3.core); S(21, 15, TIER3.flame); S(17, 11, TIER3.astral);
+    } else {
+      const bladeY = wind ? 7 : 9;
+      S(sideX + 2, bladeY, TIER3.flame); S(sideX + 2, bladeY - 3, TIER3.core);
+      S(sideX + 3, wind ? 10 : 12, TIER3.astral);
+    }
+  }
+
+  if (w === 'rapier') {
+    if (d === 'down') {
+      const guardY = strike ? 14 : wind ? 11 : 13;
+      S(downX - 3, guardY + (strike ? -1 : 1), TIER3.astral); S(downX + 3, guardY + (strike ? -1 : 1), TIER3.astral);
+      S(downX + 1, strike ? 21 : wind ? 4 : 6, TIER3.core);
+    } else if (d === 'up') {
+      const guardY = strike ? 9 : 14;
+      S(upX - 3, guardY + 1, TIER3.astral); S(upX + 3, guardY + 1, TIER3.astral);
+      S(upX + 1, strike ? 4 : 7, TIER3.core); if (strike) S(upX + 2, 5, TIER3.astralDark);
+    } else if (strike) {
+      S(23, 13, TIER3.core); S(14, 16, TIER3.astral); S(13, 13, TIER3.astralDark);
+    } else {
+      const guardY = wind ? 11 : 13;
+      S(sideX - 3, guardY + 1, TIER3.astral); S(sideX + 3, guardY + 1, TIER3.astral);
+      S(sideX + 1, wind ? 3 : 5, TIER3.core);
+    }
+  }
+
+  if (w === 'axe') {
+    if (d === 'down') {
+      const headY = strike ? 17 : wind ? 6 : 8;
+      S(downX - 4, headY + 1, TIER3.storm); S(downX + 3, headY + 1, TIER3.storm);
+      S(downX, headY - 1, TIER3.core); S(downX, headY + 3, TIER3.astralDark);
+    } else if (d === 'up') {
+      const headY = strike ? 2 : 8;
+      S(upX - 3, headY + 1, TIER3.storm); S(upX + 4, headY + 1, TIER3.storm);
+      S(upX, headY - 1, TIER3.core); S(upX, headY + 3, TIER3.astralDark);
+      if (strike) S(upX + 2, 6, TIER3.storm);
+    } else if (strike) {
+      S(20, 10, TIER3.core); S(21, 16, TIER3.storm); S(17, 15, TIER3.astralDark);
+    } else {
+      const headY = wind ? 5 : 8;
+      S(sideX + 4, headY + 1, TIER3.storm); S(sideX + 1, headY - 1, TIER3.core);
+      S(sideX + 1, headY + 3, TIER3.astralDark);
+    }
+  }
+
+  if (w === 'mace') {
+    const comet = (x, y, protectFace = false) => {
+      if (!protectFace) { S(x - 3, y - 2, TIER3.astral); S(x - 3, y + 2, TIER3.storm); }
+      S(x + 1, y - 2, TIER3.core); S(x + 1, y + 2, TIER3.astralDark);
+      S(x + 2, y, TIER3.flame);
+    };
+    if (d === 'down') comet(downX + 1, (strike ? 18 : wind ? 5 : 7) + 1);
+    else if (d === 'up') { comet(upX + 1, (strike ? 2 : 6) + 1); if (strike) S(upX + 2, 6, TIER3.astral); }
+    else if (strike) comet(21, 13);
+    else comet(sideX + 1, (wind ? 5 : 7) + 1, true);
+  }
+
+  if (w === 'warhammer') {
+    if (d === 'down') {
+      const headY = strike ? 18 : wind ? 5 : 7;
+      S(downX - 2, headY - 1, TIER3.core); S(downX + 2, headY - 1, TIER3.storm);
+      S(downX - 2, headY + 2, TIER3.astral); S(downX + 2, headY + 2, TIER3.astralDark);
+    } else if (d === 'up') {
+      const headY = strike ? 1 : 6;
+      S(upX - 2, headY - 1, TIER3.core); S(upX + 2, headY - 1, TIER3.storm);
+      S(upX - 2, headY + 2, TIER3.astral); S(upX + 2, headY + 2, TIER3.astralDark);
+      if (strike) S(upX + 2, 6, TIER3.storm);
+    } else {
+      const headX = strike ? 18 : sideX - 1;
+      const headY = strike ? 11 : wind ? 5 : 7;
+      S(headX + 1, headY - 1, TIER3.core); S(headX + 3, headY - 1, TIER3.storm);
+      S(headX + 1, headY + 2, TIER3.astral); S(headX + 3, headY + 2, TIER3.astralDark);
+    }
+  }
+
+  if (w === 'spear') {
+    if (d === 'down') {
+      const tipY = strike ? 21 : 6;
+      S(downX - 2, tipY, TIER3.astral); S(downX + 2, tipY, TIER3.astral);
+      S(downX, strike ? 19 : 8, TIER3.core);
+    } else if (d === 'up') {
+      const tipY = strike ? 1 : 7;
+      S(upX - 2, tipY, TIER3.astral); S(upX + 2, tipY, TIER3.astral);
+      S(upX, strike ? 5 : 9, TIER3.core); if (strike) S(upX + 2, 5, TIER3.astralDark);
+    } else if (strike) {
+      S(21, 11, TIER3.astral); S(21, 15, TIER3.astral); S(20, 13, TIER3.core);
+    } else {
+      const tipY = wind ? 5 : 6;
+      S(sideX + 2, tipY, TIER3.astral); S(sideX + 1, tipY - 2, TIER3.astral);
+      S(sideX + 1, tipY + 1, TIER3.core);
+    }
+  }
+
+  if (w === 'club') {
+    const titan = (x, y, protectFace = false) => {
+      if (!protectFace) { S(x - 2, y - 1, TIER3.core); S(x - 2, y + 3, TIER3.astralDark); }
+      S(x + 4, y - 1, TIER3.core); S(x + 4, y + 3, TIER3.astral);
+      S(x + 1, y - 2, TIER3.storm); S(x + 1, y + 4, TIER3.flame);
+    };
+    if (d === 'down') titan(16, strike ? 18 : 7);
+    else if (d === 'up') { titan(5, strike ? 3 : 13); if (strike) S(upX + 2, 6, TIER3.astral); }
+    else if (strike) titan(18, 12);
+    else titan(sideX - 1, wind ? 5 : 7, true);
+  }
+
+  if (w === 'bow') {
+    if (d === 'right') {
+      S(19, 7, TIER3.astral); S(20, 8, TIER3.core); S(19, 18, TIER3.astral); S(20, 17, TIER3.core);
+      S(19, 12, TIER3.storm); if (strike) S(23, 13, TIER3.flame);
+    } else if (d === 'down') {
+      S(15, 7, TIER3.astral); S(20, 8, TIER3.core); S(15, 17, TIER3.astral); S(20, 16, TIER3.core);
+      S(19, 12, TIER3.storm); if (strike) S(12, 22, TIER3.flame);
+    } else {
+      S(8, 7, TIER3.astral); S(3, 8, TIER3.core); S(8, 17, TIER3.astral); S(3, 16, TIER3.core);
+      S(4, 12, TIER3.storm); if (strike) S(11, 1, TIER3.flame);
+    }
+  }
+
+  if (w === 'crossbow') {
+    if (d === 'down') {
+      S(12, 8, TIER3.astral); S(22, 8, TIER3.astral); S(14, 8, TIER3.core); S(20, 8, TIER3.core);
+      S(17, 12, TIER3.flame); if (strike) S(16, 23, TIER3.flame);
+    } else if (d === 'up') {
+      S(1, 8, TIER3.astral); S(11, 8, TIER3.astral); S(3, 8, TIER3.core); S(9, 8, TIER3.core);
+      S(6, 12, TIER3.flame); if (strike) S(upX + 2, 5, TIER3.astralDark);
+    } else {
+      S(sideX - 1, 9, TIER3.astral); S(sideX + 5, 9, TIER3.astral);
+      S(sideX - 1, 15, TIER3.core); S(sideX + 5, 15, TIER3.core); S(sideX + 2, 12, TIER3.flame);
+    }
+  }
+
+  if (w === 'staff') {
+    if (d === 'down') {
+      const orbY = strike ? 19 : 5;
+      S(downX - 3, orbY - 1, TIER3.astral); S(downX + 3, orbY, TIER3.astral);
+      S(downX, orbY - 2, TIER3.core); S(downX + 1, orbY + 2, TIER3.storm);
+    } else if (d === 'up') {
+      const orbY = strike ? 0 : 6;
+      S(upX - 3, orbY, TIER3.astral); S(upX + 3, orbY + 1, TIER3.astral);
+      S(upX, orbY - 1, TIER3.core); S(upX + 1, strike ? 5 : orbY + 2, TIER3.storm);
+    } else if (strike) {
+      S(19, 10, TIER3.astral); S(22, 15, TIER3.astral); S(21, 11, TIER3.core); S(23, 16, TIER3.storm);
+    } else {
+      S(sideX - 1, 4, TIER3.astral); S(sideX + 3, 5, TIER3.astral);
+      S(sideX + 1, 3, TIER3.core); S(sideX + 2, 7, TIER3.storm);
+    }
+  }
+
+  if (w === 'wand') {
+    if (d === 'down') {
+      const gemY = strike ? 18 : 8;
+      S(downX - 3, gemY - 1, TIER3.astral); S(downX + 3, gemY, TIER3.astral);
+      S(downX, gemY - 2, TIER3.core); S(downX + 1, gemY + 2, TIER3.flame);
+    } else if (d === 'up') {
+      const gemY = strike ? 1 : 8;
+      S(upX - 3, gemY, TIER3.astral); S(upX + 3, gemY + 1, TIER3.astral);
+      S(upX, gemY - 1, TIER3.core); S(upX + 1, strike ? 5 : gemY + 2, TIER3.flame);
+    } else if (strike) {
+      S(19, 10, TIER3.astral); S(22, 15, TIER3.astral); S(21, 11, TIER3.core); S(23, 16, TIER3.flame);
+    } else {
+      const gemY = wind ? 6 : 8;
+      S(sideX - 1, gemY - 1, TIER3.astral); S(sideX + 3, gemY, TIER3.astral);
+      S(sideX + 1, gemY - 2, TIER3.core); S(sideX + 2, gemY + 2, TIER3.flame);
+    }
+  }
+
+  if (w === 'spellbook') {
+    const eternal = (x, y, protectFace = false) => {
+      if (!protectFace) S(x - 2, y, TIER3.astral);
+      S(x + 5, y + 1, TIER3.astral); S(x - 1, y + 4, TIER3.core); S(x + 4, y + 4, TIER3.core);
+      S(x + 1, y - 2, TIER3.storm); S(x + 3, y - 1, TIER3.flame);
+    };
+    if (d === 'down') eternal(15, 11);
+    else if (d === 'up') eternal(5, 11);
+    else eternal(sideX - 1, 11, true);
+    if (strike) {
+      if (d === 'down') { S(13, 18, TIER3.astral); S(21, 17, TIER3.core); }
+      else if (d === 'up') { S(3, 7, TIER3.astral); S(11, 5, TIER3.core); }
+      else { S(sideX + 4, 8, TIER3.astral); S(sideX + 6, 15, TIER3.core); }
+    }
+  }
+}
+
 export function drawWeapon(S, R, d, p, C, u) {
   const w = C.weapon;
   const ph = p.wep; // hold | wind | strike | recover
@@ -568,5 +813,6 @@ export function drawWeapon(S, R, d, p, C, u) {
     }
   }
 
-  if (C.weaponTier === 'tier2') drawTierTwoUpgrade(S, R, d, ph, C);
+  if (C.weaponTier === 'tier2' || C.weaponTier === 'tier3') drawTierTwoUpgrade(S, R, d, ph, C);
+  if (C.weaponTier === 'tier3') drawTierThreeUpgrade(S, R, d, ph, C);
 }

@@ -37,13 +37,13 @@ Consumers import `sprite-engine.js`. Internal module paths are deliberately not 
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
 
-Weapon entries include a broad content category (`blade`, `blunt`, `polearm`, `ranged`, or `magic`) and a player-facing Tier 2 name. The separate stable `WEAPON_TIERS` catalog keeps progression independent from weapon type, producing 31 meaningful equipment states: none plus 15 weapons at two tiers. The UI, randomizer, presets, and exports consume both catalogs generically.
+Weapon entries include a broad content category (`blade`, `blunt`, `polearm`, `ranged`, or `magic`) plus player-facing Tier 2 and Tier 3 names. The separate stable `WEAPON_TIERS` catalog keeps progression independent from weapon type, producing 46 meaningful equipment states: none plus 15 weapons at three tiers. The UI, randomizer, presets, and exports consume both catalogs generically.
 
 ### Renderer
 
 `engine/renderer.js` converts a sprite specification, direction, animation, and frame into pixels on a 24x24 canvas context. It owns procedural shapes and family-specific drawing dispatch. Player specifications may include validated optional base/shadow overrides for skin, hair, and outfit; absent or invalid pairs fall back to the selected catalog colors. Optional facial details are layered only on visible human faces, use the resolved player palettes where appropriate, mirror with the existing left/right renderer, and defer to headgear visibility rules.
 
-`engine/weapon-renderer.js` owns humanoid weapon pixels, reusable blade-hilt primitives, shared down, up, and side pose anchors, and the Tier 2 upgrade layer. Existing enemy-used weapon ids retain their original coordinates and Tier 1 pixels, while player content can add weapon-specific stronger silhouettes, material highlights, enhanced hilts, and magic ornaments. Both tiers use the face-safe side offset and follow the animated hand's idle bob, walk swing, attack pose, and lunge through rig transforms supplied by the humanoid configuration.
+`engine/weapon-renderer.js` owns humanoid weapon pixels, reusable blade-hilt primitives, shared down, up, and side pose anchors, and cumulative Tier 2 and Tier 3 upgrade layers. Existing enemy-used weapon ids retain their original coordinates and Tier 1 pixels. Tier 2 adds weapon-specific stronger silhouettes and materials; Tier 3 builds on that geometry with legendary structural ornaments, astral edges, elemental flares, and magic orbits. All player tiers use the face-safe side offset and follow the animated hand's idle bob, walk swing, attack pose, and lunge through rig transforms supplied by the humanoid configuration.
 
 ### Sheets and thumbnails
 

@@ -155,9 +155,11 @@ check(runtimeSources['engine/renderer.js'].includes("detail: spec.faceDetail || 
 check(engine.WEAPONS.length === 16, 'the validated weapon catalog must contain sixteen choices including none');
 check(engine.WEAPONS.every((weapon) => typeof weapon.category === 'string'), 'every weapon must declare a content category');
 check(engine.WEAPONS.filter((weapon) => weapon.id !== 'none').every((weapon) => typeof weapon.tier2Name === 'string'), 'every equipped weapon must declare an RPG-style Tier 2 name');
-check(JSON.stringify(engine.WEAPON_TIERS.map((tier) => tier.id)) === JSON.stringify(['tier1', 'tier2']), 'the weapon tier catalog must expose stable Tier 1 and Tier 2 ids');
+check(engine.WEAPONS.filter((weapon) => weapon.id !== 'none').every((weapon) => typeof weapon.tier3Name === 'string'), 'every equipped weapon must declare a legendary Tier 3 name');
+check(JSON.stringify(engine.WEAPON_TIERS.map((tier) => tier.id)) === JSON.stringify(['tier1', 'tier2', 'tier3']), 'the weapon tier catalog must expose stable Tier 1, Tier 2, and Tier 3 ids');
 check(runtimeSources['app.js'].includes("validId(E.WEAPON_TIERS, player.weaponTier"), 'saved player specs must safely migrate missing or invalid weapon tiers');
 check(runtimeSources['app.js'].includes("'Weapon tier'"), 'the player editor must expose a dedicated weapon tier control');
+check(runtimeSources['engine/weapon-renderer.js'].includes("C.weaponTier === 'tier3'"), 'the weapon renderer must apply the legendary Tier 3 upgrade layer');
 check(runtimeSources['engine/renderer.js'].includes("from './weapon-renderer.js'"), 'humanoid rendering must use the focused weapon renderer');
 check(runtimeSources['engine/renderer.js'].includes('weaponFollowRig: true'), 'player weapons must follow the animated humanoid hand rig');
 check(runtimeSources['engine/renderer.js'].includes('enhancedHilts: true'), 'player blade weapons must use readable wrapped grips and pommels');
