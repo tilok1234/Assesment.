@@ -6,6 +6,8 @@ import {
   COMPLETE_CHARACTER_KIT_LAYER_ORDER,
   COMPLETE_CHARACTER_KIT_RECIPE_LIMIT,
   COMPLETE_CHARACTER_KIT_VERSION,
+  COMPLETE_CHARACTER_PACK_FORMAT,
+  COMPLETE_CHARACTER_PACK_VERSION,
   MASTER_CHARACTER_KIT_SCALE,
 } from './character-kit.js';
 import { buildStoredZip } from './zip.js';
@@ -1408,7 +1410,8 @@ function renderPackControls() {
     elements.packMasterKitSummary.textContent = `${playerCount} player recipes · remove ${playerCount - COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} to reach the ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT}-recipe limit.`;
   } else {
     const counts = completeCharacterKitCounts();
-    elements.packMasterKitSummary.textContent = `${playerCount} / ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} recipes · ${counts.componentPngs} unique components · ${counts.totalPngs} PNGs total`;
+    const totalPngs = counts.componentPngs + playerCount;
+    elements.packMasterKitSummary.textContent = `${playerCount} ready character${playerCount === 1 ? '' : 's'} + ${counts.componentPngs} unique components · ${totalPngs} PNGs total`;
   }
   elements.downloadPackMasterKitButton.disabled = busy
     || masterKitExporting
@@ -1416,7 +1419,7 @@ function renderPackControls() {
     || playerCount > COMPLETE_CHARACTER_KIT_RECIPE_LIMIT;
   elements.downloadPackMasterKitButton.textContent = rosterKitExporting && rosterKitProgress
     ? `Building ${rosterKitProgress.done} / ${rosterKitProgress.total}…`
-    : 'Download Complete Kit + Recipes';
+    : 'Download Complete Pack';
 }
 
 function setMasterKitStatus(message) {
@@ -1732,10 +1735,18 @@ function withoutRenderSpec(entry) {
   return manifestEntry;
 }
 
-function completeCharacterKitManifest(plan, name, exportedAt) {
+function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
+  const readyCharacters = Array.isArray(options.readyCharacters) ? options.readyCharacters : [];
+  const includeReference = options.includeReference !== false;
+  const counts = {
+    ...plan.counts,
+    referencePreviews: includeReference ? 1 : 0,
+    readyCharacters: readyCharacters.length,
+    totalPngs: plan.counts.componentPngs + (includeReference ? 1 : 0) + readyCharacters.length,
+  };
   return {
-    format: COMPLETE_CHARACTER_KIT_FORMAT,
-    version: COMPLETE_CHARACTER_KIT_VERSION,
+    format: options.format || COMPLETE_CHARACTER_KIT_FORMAT,
+    version: options.version || COMPLETE_CHARACTER_KIT_VERSION,
     name,
     exportedAt,
     exportScale: MASTER_CHARACTER_KIT_SCALE,
@@ -1756,7 +1767,7 @@ function completeCharacterKitManifest(plan, name, exportedAt) {
       order: [...COMPLETE_CHARACTER_KIT_LAYER_ORDER],
       instructions: 'Draw each non-null recipe component in this order using the same frame rectangle, direction row, and animation column.',
     },
-    counts: plan.counts,
+    counts,
     components: {
       skinBodies: plan.components.skinBodies.map(withoutRenderSpec),
       heads: plan.components.heads.map(withoutRenderSpec),
@@ -1769,14 +1780,18 @@ function completeCharacterKitManifest(plan, name, exportedAt) {
       shields: plan.components.shields.map(withoutRenderSpec),
     },
     recipes: plan.recipes,
-    referencePreview: plan.reference.file,
+    ...(readyCharacters.length ? { characters: readyCharacters } : {}),
+    referencePreview: includeReference ? plan.reference.file : readyCharacters[0]?.file || null,
   };
 }
 
-function completeCharacterKitReadme(name, recipeCount) {
-  return `${name} - Complete Character Kit\n\n`
+function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) {
+  return `${name} - ${readyCharacterCount ? 'Complete Character Pack' : 'Complete Character Kit'}\n\n`
     + 'This archive is one deduplicated library of reusable character components.\n'
     + `${recipeCount} saved character recipe${recipeCount === 1 ? '' : 's'} reference those shared files without duplicating artwork.\n`
+    + (readyCharacterCount
+      ? `${readyCharacterCount} assembled native sprite sheet${readyCharacterCount === 1 ? '' : 's'} are included in characters/ for immediate game use.\n`
+      : '')
     + 'All PNG files are native 288x96 sprite sheets made from 24x24 frames.\n\n'
     + 'Component groups:\n'
     + '- skin-body: animated hands and neck for each skin tone\n'
@@ -1792,7 +1807,7 @@ function completeCharacterKitReadme(name, recipeCount) {
     + 'Custom palette values remain in recipe specs for games that support runtime recoloring.\n';
 }
 
-async function renderCompleteCharacterKitPngs(plan, zipEntries, advance) {
+async function renderCompleteCharacterKitPngs(plan, zipEntries, advance, options = {}) {
   for (const entry of plan.components.skinBodies) {
     await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
     advance('Rendering skin-body components.');
@@ -1831,13 +1846,39 @@ async function renderCompleteCharacterKitPngs(plan, zipEntries, advance) {
     await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
     advance('Rendering shield components.');
   }
-  await masterKitPng(zipEntries, plan.reference.file, plan.reference.spec, 'complete');
-  advance('Rendering the assembled reference character.');
+  if (options.includeReference !== false) {
+    await masterKitPng(zipEntries, plan.reference.file, plan.reference.spec, 'complete');
+    advance('Rendering the assembled reference character.');
+  }
 }
 
 async function masterKitPng(zipEntries, file, spec, layer) {
   const canvas = E.buildSheet(spec, MASTER_CHARACTER_KIT_SCALE, { layer });
   zipEntries.push({ name: file, data: await canvasToPngBytes(canvas) });
+}
+
+async function renderReadyPackCharacters(entries, plan, zipEntries, advance) {
+  const readyCharacters = [];
+  const usedPaths = new Set();
+  for (const entry of entries) {
+    const spec = packEntrySpec(entry);
+    const canvas = E.buildSheet(spec, MASTER_CHARACTER_KIT_SCALE);
+    const file = uniquePackCharacterPath(entry, MASTER_CHARACTER_KIT_SCALE, usedPaths);
+    zipEntries.push({ name: file, data: await canvasToPngBytes(canvas) });
+    readyCharacters.push({
+      id: entry.id,
+      recipeId: plan.recipes.find((recipe) => recipe.sourceId === entry.id)?.id || null,
+      name: entry.name,
+      kind: entry.kind,
+      createdAt: entry.createdAt,
+      file,
+      width: canvas.width,
+      height: canvas.height,
+      spec,
+    });
+    advance('Rendering ready character sheets.');
+  }
+  return readyCharacters;
 }
 
 function updateMasterKitProgress(done, total, message) {
@@ -1910,25 +1951,25 @@ async function downloadPackMasterKit() {
     .map((entry) => sanitizePackEntry(entry))
     .filter((entry) => entry?.kind === 'player');
   if (!entries.length) {
-    setPackStatus('Add at least one player recipe before building a Complete Character Kit.');
+    setPackStatus('Add at least one player before building a Complete Character Pack.');
     return;
   }
   if (entries.length > COMPLETE_CHARACTER_KIT_RECIPE_LIMIT) {
-    setPackStatus(`A Complete Character Kit supports up to ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} saved recipes.`);
+    setPackStatus(`A Complete Character Pack supports up to ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} saved players.`);
     return;
   }
 
   const plan = buildCompleteCharacterKitPlan(entries);
   const packName = sanitizeText(packLibrary.name, 64).trim() || 'Character Pack';
   const exportedAt = new Date().toISOString();
-  const total = plan.counts.totalPngs;
+  const total = plan.counts.componentPngs + entries.length;
   const zipEntries = [];
   let done = 0;
   rosterKitExporting = true;
   rosterKitProgress = { done, total };
   renderPackControls();
   renderMasterKitControls();
-  updateRosterKitProgress(done, total, `Preparing one shared component library and ${entries.length} lightweight recipes…`);
+  updateRosterKitProgress(done, total, `Preparing ${entries.length} ready characters, their recipes, and one shared component library…`);
 
   const advance = (message) => {
     done += 1;
@@ -1938,25 +1979,31 @@ async function downloadPackMasterKit() {
   };
 
   try {
-    await renderCompleteCharacterKitPngs(plan, zipEntries, advance);
-    const manifest = completeCharacterKitManifest(plan, packName, exportedAt);
+    await renderCompleteCharacterKitPngs(plan, zipEntries, advance, { includeReference: false });
+    const readyCharacters = await renderReadyPackCharacters(entries, plan, zipEntries, advance);
+    const manifest = completeCharacterKitManifest(plan, packName, exportedAt, {
+      format: COMPLETE_CHARACTER_PACK_FORMAT,
+      version: COMPLETE_CHARACTER_PACK_VERSION,
+      readyCharacters,
+      includeReference: false,
+    });
     zipEntries.push({
       name: 'manifest.json',
       data: new TextEncoder().encode(`${JSON.stringify(manifest, null, 2)}\n`),
     });
     zipEntries.push({
       name: 'README.txt',
-      data: new TextEncoder().encode(completeCharacterKitReadme(packName, entries.length)),
+      data: new TextEncoder().encode(completeCharacterKitReadme(packName, entries.length, readyCharacters.length)),
     });
 
-    updateRosterKitProgress(total, total, 'Packaging one deduplicated component library and its recipes…');
+    updateRosterKitProgress(total, total, 'Packaging the ready characters and deduplicated master library together…');
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
-    const filename = `${packFilenameBase(packName, 'character-pack')}-complete-character-kit.zip`;
+    const filename = `${packFilenameBase(packName, 'character-pack')}-complete-character-pack.zip`;
     triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    setPackStatus(`Downloaded ${plan.counts.componentPngs} unique components and ${entries.length} recipe${entries.length === 1 ? '' : 's'} with no repeated character artwork.`);
+    setPackStatus(`Downloaded one Complete Pack with ${entries.length} ready character${entries.length === 1 ? '' : 's'}, matching recipes, and ${plan.counts.componentPngs} unique components.`);
   } catch (error) {
     console.error(error);
-    setPackStatus('The Complete Character Kit could not be exported. Please try again.');
+    setPackStatus('The Complete Character Pack could not be exported. Please try again.');
   } finally {
     rosterKitExporting = false;
     rosterKitProgress = null;

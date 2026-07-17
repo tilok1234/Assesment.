@@ -213,6 +213,8 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
 check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 1, 'complete character kits must use an explicit versioned schema');
 check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
+check(characterKit.COMPLETE_CHARACTER_PACK_FORMAT === '8-bit-sprite-assembler-complete-character-pack', 'combined complete packs must expose a distinct stable format id');
+check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 1, 'combined complete packs must use an explicit versioned schema');
 check(
   JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
     'weapon-back', 'shield-back', 'outfit-back', 'outfit', 'skin-body', 'head',
@@ -249,11 +251,14 @@ check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-bac
 check(internalCatalogs.WOOD.length >= 3, 'shield highlights must not clear assembled body pixels through a missing wood color');
 check((runtimeSources['engine/sheets.js'].match(/\.\.\.opts, shadow: opts\.shadow === true/g) || []).length === 3, 'every sheet builder must forward layer options while keeping shadows opt-in');
 check(runtimeSources['app.js'].includes('function downloadMasterCharacterKit('), 'app.js must expose one-click Complete Character Kit export');
-check(runtimeSources['app.js'].includes('function downloadPackMasterKit('), 'character packs must export the shared Complete Character Kit with recipes');
+check(runtimeSources['app.js'].includes('function downloadPackMasterKit('), 'character packs must export one combined Complete Character Pack');
 check(runtimeSources['app.js'].includes('function completeCharacterKitManifest('), 'Complete Character Kit downloads must include a game-facing component manifest');
 check(runtimeSources['app.js'].includes('function renderCompleteCharacterKitPngs('), 'Complete Character Kit downloads must route every component group through one renderer');
+check(runtimeSources['app.js'].includes('function renderReadyPackCharacters('), 'Complete Character Packs must include ready-to-use assembled character sheets');
+check(runtimeSources['app.js'].includes('includeReference: false'), 'combined packs must reuse a ready character as the reference instead of duplicating its PNG');
 check(runtimeSources['app.js'].includes('MASTER_CHARACTER_KIT_SCALE, { layer }'), 'Complete Character Kits must render every requested compositing layer at native scale');
 check(runtimeSources['app.js'].includes("-complete-character-kit.zip`"), 'Complete Character Kit downloads must use an unambiguous filename');
+check(runtimeSources['app.js'].includes("-complete-character-pack.zip`"), 'combined Complete Character Pack downloads must use an unambiguous filename');
 check(!runtimeSources['app.js'].includes('buildMasterRosterKitPlan'), 'the app must not expose the duplicate-heavy roster body-matrix exporter');
 const zipFixture = zipModule.buildStoredZip([
   { name: '../characters/test.png', data: new Uint8Array([137, 80, 78, 71]) },
