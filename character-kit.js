@@ -21,6 +21,10 @@ export const MASTER_CHARACTER_KIT_LAYER_ORDER = [
   'weapon-front',
 ];
 
+export const MASTER_ROSTER_KIT_FORMAT = '8-bit-sprite-assembler-master-roster-kit';
+export const MASTER_ROSTER_KIT_VERSION = 1;
+export const MASTER_ROSTER_KIT_LIMIT = 24;
+
 const clonePair = (pair) => Array.isArray(pair) ? pair.slice(0, 2) : null;
 const samePair = (left, right) => (
   Array.isArray(left)
@@ -39,17 +43,21 @@ function clonePalette(palette) {
 }
 
 function clonePlayer(player) {
-  return { kind: 'player', ...player, palette: clonePalette(player.palette) };
+  return { ...player, kind: 'player', palette: clonePalette(player.palette) };
 }
 
-function outfitColorChoices(player) {
-  const choices = OUTFIT_COLORS.map((color) => ({
+function catalogOutfitColorChoices() {
+  return OUTFIT_COLORS.map((color) => ({
     id: color.id,
     name: color.name,
     catalogId: color.id,
     colors: clonePair(color.c),
     custom: false,
   }));
+}
+
+function outfitColorChoices(player) {
+  const choices = catalogOutfitColorChoices();
   const custom = player.palette?.outfit;
   if (custom && !OUTFIT_COLORS.some((color) => samePair(color.c, custom))) {
     choices.push({
@@ -63,11 +71,37 @@ function outfitColorChoices(player) {
   return choices;
 }
 
+function colorPathId(pair) {
+  const value = pair
+    .map((color) => String(color || '').replace(/[^a-f0-9]/gi, '').toLocaleLowerCase() || 'color')
+    .join('-');
+  return `custom-${value}`;
+}
+
+function rosterColorChoices(entries) {
+  const choices = catalogOutfitColorChoices();
+  const seen = choices.map((choice) => choice.colors);
+  for (const entry of entries) {
+    const custom = entry.player.palette?.outfit;
+    if (!custom || seen.some((pair) => samePair(pair, custom))) continue;
+    const colors = clonePair(custom);
+    choices.push({
+      id: colorPathId(colors),
+      name: `${entry.name} Custom`,
+      catalogId: entry.player.outfitColor,
+      colors,
+      custom: true,
+    });
+    seen.push(colors);
+  }
+  return choices;
+}
+
 function paletteForColor(player, color) {
-  if (!player.palette) return null;
+  if (!player.palette && !color.custom) return null;
   return {
-    skin: clonePair(player.palette.skin),
-    hair: clonePair(player.palette.hair),
+    skin: clonePair(player.palette?.skin),
+    hair: clonePair(player.palette?.hair),
     outfit: clonePair(color.colors),
   };
 }
@@ -77,32 +111,25 @@ function tieredName(item, tier) {
   return item[`${tier.id}Name`] || `${item.name} ${tier.name}`;
 }
 
-export function masterCharacterKitCounts(player) {
-  const outfitColors = outfitColorChoices(player).length;
-  const bodySheets = OUTFITS.length * HEADGEAR.length * outfitColors;
-  const weaponVariants = (WEAPONS.length - 1) * WEAPON_TIERS.length;
-  const shieldVariants = (SHIELDS.length - 1) * SHIELD_TIERS.length * outfitColors;
-  const weaponLayers = weaponVariants * 2;
-  const shieldLayers = shieldVariants * 2;
+function identityFor(player) {
   return {
-    outfitColors,
-    bodySheets,
-    weaponVariants,
-    weaponLayers,
-    shieldVariants,
-    shieldLayers,
-    assembledPreviews: 1,
-    totalPngs: bodySheets + weaponLayers + shieldLayers + 1,
+    skin: player.skin,
+    skinName: SKINS.find((item) => item.id === player.skin)?.name || player.skin,
+    hairStyle: player.hairStyle,
+    hairColor: player.hairColor,
+    hairColorName: HAIR_COLORS.find((item) => item.id === player.hairColor)?.name || player.hairColor,
+    faceDetail: player.faceDetail,
+    customSkinColors: clonePair(player.palette?.skin),
+    customHairColors: clonePair(player.palette?.hair),
   };
 }
 
-export function buildMasterCharacterKitPlan(player) {
-  const base = clonePlayer(player);
-  const colors = outfitColorChoices(base);
-  const bodies = [];
-  const weapons = [];
-  const shields = [];
+function manifestColors(colors) {
+  return colors.map(({ catalogId, ...color }) => ({ ...color, colors: clonePair(color.colors) }));
+}
 
+function buildBodies(base, colors, root = 'bodies') {
+  const bodies = [];
   for (const outfit of OUTFITS) {
     for (const color of colors) {
       for (const headgear of HEADGEAR) {
@@ -125,14 +152,18 @@ export function buildMasterCharacterKitPlan(player) {
           colors: clonePair(color.colors),
           headgear: headgear.id,
           headgearName: headgear.name,
-          file: `bodies/${outfit.id}/${color.id}/${headgear.id}.png`,
+          file: `${root}/${outfit.id}/${color.id}/${headgear.id}.png`,
           layer: 'body',
           spec,
         });
       }
     }
   }
+  return bodies;
+}
 
+function buildWeapons(base, root = 'weapons') {
+  const weapons = [];
   for (const weapon of WEAPONS.filter((item) => item.id !== 'none')) {
     for (const tier of WEAPON_TIERS) {
       weapons.push({
@@ -141,8 +172,8 @@ export function buildMasterCharacterKitPlan(player) {
         tier: tier.id,
         tierName: tier.name,
         files: {
-          back: `weapons/${weapon.id}/${tier.id}/back.png`,
-          front: `weapons/${weapon.id}/${tier.id}/front.png`,
+          back: `${root}/${weapon.id}/${tier.id}/back.png`,
+          front: `${root}/${weapon.id}/${tier.id}/front.png`,
         },
         spec: {
           ...clonePlayer(base),
@@ -154,7 +185,11 @@ export function buildMasterCharacterKitPlan(player) {
       });
     }
   }
+  return weapons;
+}
 
+function buildShields(base, colors, root = 'shields') {
+  const shields = [];
   for (const shield of SHIELDS.filter((item) => item.id !== 'none')) {
     for (const tier of SHIELD_TIERS) {
       for (const color of colors) {
@@ -167,8 +202,8 @@ export function buildMasterCharacterKitPlan(player) {
           colorName: color.name,
           colors: clonePair(color.colors),
           files: {
-            back: `shields/${shield.id}/${tier.id}/${color.id}/back.png`,
-            front: `shields/${shield.id}/${tier.id}/${color.id}/front.png`,
+            back: `${root}/${shield.id}/${tier.id}/${color.id}/back.png`,
+            front: `${root}/${shield.id}/${tier.id}/${color.id}/front.png`,
           },
           spec: {
             ...clonePlayer(base),
@@ -183,23 +218,134 @@ export function buildMasterCharacterKitPlan(player) {
       }
     }
   }
+  return shields;
+}
+
+function countsFor(characterCount, outfitColors) {
+  const bodySheets = characterCount * OUTFITS.length * HEADGEAR.length * outfitColors;
+  const weaponVariants = (WEAPONS.length - 1) * WEAPON_TIERS.length;
+  const shieldVariants = (SHIELDS.length - 1) * SHIELD_TIERS.length * outfitColors;
+  const weaponLayers = weaponVariants * 2;
+  const shieldLayers = shieldVariants * 2;
+  const assembledPreviews = characterCount;
+  return {
+    characterCount,
+    outfitColors,
+    bodySheets,
+    weaponVariants,
+    weaponLayers,
+    shieldVariants,
+    shieldLayers,
+    assembledPreviews,
+    totalPngs: bodySheets + weaponLayers + shieldLayers + assembledPreviews,
+  };
+}
+
+function normalizeRosterEntries(rawEntries) {
+  if (!Array.isArray(rawEntries)) return [];
+  return rawEntries.flatMap((raw, index) => {
+    if (!raw || typeof raw !== 'object' || (raw.kind && raw.kind !== 'player')) return [];
+    const player = raw.spec || raw.player || raw;
+    if (!player || typeof player !== 'object') return [];
+    const name = typeof raw.name === 'string' && raw.name.trim()
+      ? raw.name.trim()
+      : `Character ${index + 1}`;
+    return [{
+      sourceId: typeof raw.id === 'string' ? raw.id : null,
+      name,
+      player: clonePlayer(player),
+    }];
+  });
+}
+
+function pathSegment(value, fallback) {
+  return String(value || fallback)
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLocaleLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 48) || fallback;
+}
+
+function uniqueCharacterId(name, index, used) {
+  const base = pathSegment(name, `character-${index + 1}`);
+  let id = base;
+  let suffix = 2;
+  while (used.has(id)) {
+    id = `${base}-${suffix}`;
+    suffix += 1;
+  }
+  used.add(id);
+  return id;
+}
+
+export function masterCharacterKitCounts(player) {
+  return countsFor(1, outfitColorChoices(player).length);
+}
+
+export function buildMasterCharacterKitPlan(player) {
+  const base = clonePlayer(player);
+  const colors = outfitColorChoices(base);
+  return {
+    identity: identityFor(base),
+    sourcePlayer: base,
+    colors: manifestColors(colors),
+    bodies: buildBodies(base, colors),
+    weapons: buildWeapons(base),
+    shields: buildShields(base, colors),
+    counts: masterCharacterKitCounts(base),
+  };
+}
+
+export function masterRosterKitCounts(rawEntries) {
+  const entries = normalizeRosterEntries(rawEntries);
+  const colors = rosterColorChoices(entries);
+  return countsFor(entries.length, colors.length);
+}
+
+export function buildMasterRosterKitPlan(rawEntries) {
+  const entries = normalizeRosterEntries(rawEntries);
+  if (!entries.length) throw new Error('A master roster kit needs at least one player character.');
+  if (entries.length > MASTER_ROSTER_KIT_LIMIT) {
+    throw new RangeError(`A master roster kit supports up to ${MASTER_ROSTER_KIT_LIMIT} player characters.`);
+  }
+
+  const colors = rosterColorChoices(entries);
+  const sharedBase = entries[0].player;
+  const usedIds = new Set();
+  const characters = entries.map((entry, index) => {
+    const id = uniqueCharacterId(entry.name, index, usedIds);
+    return {
+      id,
+      sourceId: entry.sourceId,
+      name: entry.name,
+      identity: identityFor(entry.player),
+      sourcePlayer: clonePlayer(entry.player),
+      defaultPreview: `characters/${id}/preview/default.png`,
+      bodyRoot: `characters/${id}/bodies`,
+      bodies: buildBodies(entry.player, colors, `characters/${id}/bodies`),
+    };
+  });
+  const weapons = buildWeapons(sharedBase, 'shared/weapons');
+  const shields = buildShields(sharedBase, colors, 'shared/shields');
 
   return {
-    identity: {
-      skin: base.skin,
-      skinName: SKINS.find((item) => item.id === base.skin)?.name || base.skin,
-      hairStyle: base.hairStyle,
-      hairColor: base.hairColor,
-      hairColorName: HAIR_COLORS.find((item) => item.id === base.hairColor)?.name || base.hairColor,
-      faceDetail: base.faceDetail,
-      customSkinColors: clonePair(base.palette?.skin),
-      customHairColors: clonePair(base.palette?.hair),
-    },
-    sourcePlayer: base,
-    colors: colors.map(({ catalogId, ...color }) => ({ ...color, colors: clonePair(color.colors) })),
-    bodies,
+    colors: manifestColors(colors),
+    characters,
     weapons,
     shields,
-    counts: masterCharacterKitCounts(base),
+    counts: {
+      ...countsFor(characters.length, colors.length),
+      bodySheets: characters.reduce((total, character) => total + character.bodies.length, 0),
+      weaponVariants: weapons.length,
+      weaponLayers: weapons.length * 2,
+      shieldVariants: shields.length,
+      shieldLayers: shields.length * 2,
+      totalPngs: characters.reduce((total, character) => total + character.bodies.length, 0)
+        + (weapons.length * 2)
+        + (shields.length * 2)
+        + characters.length,
+    },
   };
 }

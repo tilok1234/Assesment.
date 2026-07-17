@@ -93,6 +93,7 @@ for (const controlId of [
   'keep-current-button', 'remove-copy-button', 'replace-copy-button',
   'pack-name', 'pack-summary', 'pack-list', 'pack-status',
   'add-to-pack-button', 'clear-pack-button', 'download-pack-button',
+  'pack-master-kit-summary', 'download-pack-master-kit-button',
   'master-kit-summary', 'master-kit-status', 'download-master-kit-button',
 ]) {
   check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
@@ -197,6 +198,44 @@ const customKitPlan = characterKit.buildMasterCharacterKitPlan({
   palette: { skin: ['#123456', '#234567'], hair: ['#345678', '#456789'], outfit: ['#56789a', '#6789ab'] },
 });
 check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 983, 'master kits must add the current custom outfit color without replacing catalog colors');
+check(characterKit.MASTER_ROSTER_KIT_FORMAT === '8-bit-sprite-assembler-master-roster-kit', 'roster master kits must expose a stable format id');
+check(characterKit.MASTER_ROSTER_KIT_VERSION === 1, 'roster master kits must use an explicit versioned schema');
+check(characterKit.MASTER_ROSTER_KIT_LIMIT === 24, 'roster master kits must keep the approved 24-character identity limit');
+const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
+  id: `hero-${index + 1}`,
+  name: `Hero ${index + 1}`,
+  kind: 'player',
+  spec: {
+    ...masterKitPlayer,
+    skin: engine.SKINS[index % engine.SKINS.length].id,
+    hairStyle: engine.HAIR_STYLES[index % engine.HAIR_STYLES.length].id,
+    hairColor: engine.HAIR_COLORS[index % engine.HAIR_COLORS.length].id,
+    faceDetail: engine.FACIAL_DETAILS[index % engine.FACIAL_DETAILS.length].id,
+  },
+}));
+const rosterKitPlan = characterKit.buildMasterRosterKitPlan(rosterKitEntries);
+check(rosterKitPlan.characters.length === 24, 'roster master kits must retain all 24 player identities');
+check(rosterKitPlan.counts.bodySheets === 6720, 'a standard 24-character roster kit must include 280 compatible body sheets per identity');
+check(rosterKitPlan.counts.weaponLayers === 150, 'roster master kits must render the weapon library once');
+check(rosterKitPlan.counts.shieldLayers === 448, 'roster master kits must render the color-aware shield library once');
+check(rosterKitPlan.counts.assembledPreviews === 24 && rosterKitPlan.counts.totalPngs === 7342, 'a standard 24-character roster kit must contain 7342 native PNG sheets');
+check(rosterKitPlan.weapons.every((entry) => entry.files.back.startsWith('shared/weapons/')), 'roster weapon layers must live in the shared library');
+check(rosterKitPlan.shields.every((entry) => entry.files.front.startsWith('shared/shields/')), 'roster shield layers must live in the shared library');
+check(rosterKitPlan.characters.every((character) => (
+  character.bodies.length === 280
+  && character.bodies.every((entry) => entry.file.startsWith(`${character.bodyRoot}/`))
+)), 'every roster identity must own a complete compatible body library');
+const rosterKitPaths = [
+  ...rosterKitPlan.characters.flatMap((character) => [
+    ...character.bodies.map((entry) => entry.file),
+    character.defaultPreview,
+  ]),
+  ...rosterKitPlan.weapons.flatMap((entry) => [entry.files.back, entry.files.front]),
+  ...rosterKitPlan.shields.flatMap((entry) => [entry.files.back, entry.files.front]),
+];
+check(new Set(rosterKitPaths).size === rosterKitPlan.counts.totalPngs, 'every roster master-kit PNG path must be unique');
+check(runtimeSources['app.js'].includes('function downloadPackMasterKit('), 'app.js must expose one-click character-pack Master Kit export');
+check(runtimeSources['app.js'].includes('function masterRosterKitManifest('), 'roster master-kit downloads must include a game-facing manifest');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
 check(internalCatalogs.WOOD.length >= 3, 'shield highlights must not clear assembled body pixels through a missing wood color');

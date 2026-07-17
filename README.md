@@ -110,6 +110,8 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 
 The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per character plus a versioned `manifest.json` with the exact character specifications, animation contract, dimensions, and file paths.
 
+For a reusable game asset pack, add up to 24 player characters and select **Download Pack Master Kit**. That export treats the saved players as identities rather than fixed loadouts: every identity receives all compatible outfit, color, and headgear body sheets, while one shared weapon and shield library can be equipped by the entire roster. Enemy entries remain available in the regular character-pack ZIP but are not included in the player-only Pack Master Kit.
+
 ## Master Character Kits
 
 Use **Download Master Character Kit** in Player mode when a game needs to change one character's equipment at runtime. The current skin, hair, facial detail, and custom identity colors stay locked while the kit exports:
@@ -121,6 +123,18 @@ Use **Download Master Character Kit** in Player mode when a game needs to change
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
 A standard kit contains 879 native `288x96` PNGs. Draw the same animation frame from `weapon-back`, `shield-back`, the selected body, `shield-front`, and `weapon-front`, in that order. Empty equipment pixels are intentional; they preserve direction-aware occlusion.
+
+### Pack Master Kits
+
+The Character Pack panel can combine 1-24 saved player identities into one `8-bit-sprite-assembler-master-roster-kit` archive. A standard 24-character roster contains:
+
+- 6,720 character-specific body sheets: 280 outfit, color, and headgear choices for each identity
+- 150 shared weapon layers: all 15 families at Tiers 1-5, split into back/front passes
+- 448 shared shield layers: all eight families at Tiers 1-4 and all seven catalog colors, split into back/front passes
+- 24 assembled reference sheets
+- One manifest and README describing character roots, shared paths, animation timing, and runtime draw order
+
+That is 7,342 native PNGs instead of 24 duplicated 879-file kits. Body sheets stay identity-specific so faces, hair, skin, hands, armor, and headgear retain exact pixels; weapon and shield layers are stored once and work across the roster.
 
 ## Project layout
 

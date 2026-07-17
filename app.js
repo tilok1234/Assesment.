@@ -1,11 +1,16 @@
 import * as E from './sprite-engine.js';
 import {
   buildMasterCharacterKitPlan,
+  buildMasterRosterKitPlan,
   masterCharacterKitCounts,
+  masterRosterKitCounts,
   MASTER_CHARACTER_KIT_FORMAT,
   MASTER_CHARACTER_KIT_LAYER_ORDER,
   MASTER_CHARACTER_KIT_SCALE,
   MASTER_CHARACTER_KIT_VERSION,
+  MASTER_ROSTER_KIT_FORMAT,
+  MASTER_ROSTER_KIT_LIMIT,
+  MASTER_ROSTER_KIT_VERSION,
 } from './character-kit.js';
 import { buildStoredZip } from './zip.js';
 
@@ -115,6 +120,8 @@ const elements = {
   addToPackButton: document.querySelector('#add-to-pack-button'),
   clearPackButton: document.querySelector('#clear-pack-button'),
   downloadPackButton: document.querySelector('#download-pack-button'),
+  packMasterKitSummary: document.querySelector('#pack-master-kit-summary'),
+  downloadPackMasterKitButton: document.querySelector('#download-pack-master-kit-button'),
   masterKitSummary: document.querySelector('#master-kit-summary'),
   masterKitStatus: document.querySelector('#master-kit-status'),
   downloadMasterKitButton: document.querySelector('#download-master-kit-button'),
@@ -140,6 +147,8 @@ let presetLibrary = loadPresetLibrary();
 let paletteLibrary = loadPaletteLibrary();
 let packLibrary = loadPackLibrary();
 let packExporting = false;
+let rosterKitExporting = false;
+let rosterKitProgress = null;
 let masterKitExporting = false;
 let masterKitProgress = null;
 let selectedPresetId = '';
@@ -577,8 +586,12 @@ function setPackStatus(message) {
   elements.packStatus.textContent = message;
 }
 
+function packIsBusy() {
+  return packExporting || rosterKitExporting;
+}
+
 function addCurrentToPack() {
-  if (packExporting) return;
+  if (packIsBusy()) return;
   if (packLibrary.entries.length >= PACK_ENTRY_LIMIT) {
     setPackStatus(`This pack already has the ${PACK_ENTRY_LIMIT}-character limit.`);
     return;
@@ -601,7 +614,7 @@ function addCurrentToPack() {
 
 function loadPackEntry(entryId) {
   const entry = packLibrary.entries.find((item) => item.id === entryId);
-  if (!entry || packExporting) return;
+  if (!entry || packIsBusy()) return;
   const patch = entry.kind === 'player'
     ? { mode: 'player', player: sanitizePlayer(entry.spec) }
     : { mode: 'enemy', enemy: sanitizeEnemy(entry.spec) };
@@ -614,7 +627,7 @@ function loadPackEntry(entryId) {
 }
 
 function removePackEntry(entryId) {
-  if (packExporting) return;
+  if (packIsBusy()) return;
   const entry = packLibrary.entries.find((item) => item.id === entryId);
   if (!entry) return;
   packLibrary.entries = packLibrary.entries.filter((item) => item.id !== entryId);
@@ -624,7 +637,7 @@ function removePackEntry(entryId) {
 }
 
 function clearCharacterPack() {
-  if (!packLibrary.entries.length || packExporting) return;
+  if (!packLibrary.entries.length || packIsBusy()) return;
   if (!globalThis.confirm(`Remove all ${packLibrary.entries.length} characters from this pack?`)) return;
   packLibrary.entries = [];
   persistPackLibrary();
@@ -1353,14 +1366,14 @@ function renderPackEntry(entry) {
   loadButton.type = 'button';
   loadButton.className = 'secondary-button';
   loadButton.textContent = 'Load';
-  loadButton.disabled = packExporting;
+  loadButton.disabled = packIsBusy();
   loadButton.setAttribute('aria-label', `Load ${entry.name} into the editor`);
   loadButton.addEventListener('click', () => loadPackEntry(entry.id));
   const removeButton = document.createElement('button');
   removeButton.type = 'button';
   removeButton.className = 'secondary-button danger-action';
   removeButton.textContent = 'Remove';
-  removeButton.disabled = packExporting;
+  removeButton.disabled = packIsBusy();
   removeButton.setAttribute('aria-label', `Remove ${entry.name} from the pack`);
   removeButton.addEventListener('click', () => removePackEntry(entry.id));
   actions.append(loadButton, removeButton);
@@ -1372,6 +1385,9 @@ function renderPackEntry(entry) {
 function renderPackControls() {
   if (elements.packName.value !== packLibrary.name) elements.packName.value = packLibrary.name;
   const count = packLibrary.entries.length;
+  const playerEntries = packLibrary.entries.filter((entry) => entry.kind === 'player');
+  const playerCount = playerEntries.length;
+  const busy = packIsBusy();
   const scaleLabel = state.exportScale === 1 ? '1x native' : `${state.exportScale}x`;
   elements.packSummary.textContent = `${count} character${count === 1 ? '' : 's'} · ${scaleLabel} full sheets`;
 
@@ -1384,11 +1400,27 @@ function renderPackControls() {
     elements.packList.replaceChildren(empty);
   }
 
-  elements.packName.disabled = packExporting;
-  elements.addToPackButton.disabled = packExporting || count >= PACK_ENTRY_LIMIT;
-  elements.clearPackButton.disabled = packExporting || count === 0;
-  elements.downloadPackButton.disabled = packExporting || count === 0;
+  elements.packName.disabled = busy;
+  elements.addToPackButton.disabled = busy || count >= PACK_ENTRY_LIMIT;
+  elements.clearPackButton.disabled = busy || count === 0;
+  elements.downloadPackButton.disabled = busy || count === 0;
   elements.downloadPackButton.textContent = packExporting ? 'Building pack…' : 'Download pack ZIP';
+
+  if (!playerCount) {
+    elements.packMasterKitSummary.textContent = `Add up to ${MASTER_ROSTER_KIT_LIMIT} player identities to build a shared Master Kit.`;
+  } else if (playerCount > MASTER_ROSTER_KIT_LIMIT) {
+    elements.packMasterKitSummary.textContent = `${playerCount} player identities · remove ${playerCount - MASTER_ROSTER_KIT_LIMIT} to reach the ${MASTER_ROSTER_KIT_LIMIT}-character limit.`;
+  } else {
+    const counts = masterRosterKitCounts(playerEntries);
+    elements.packMasterKitSummary.textContent = `${playerCount} / ${MASTER_ROSTER_KIT_LIMIT} player identities · ${counts.totalPngs} native shared-kit PNGs`;
+  }
+  elements.downloadPackMasterKitButton.disabled = busy
+    || masterKitExporting
+    || playerCount === 0
+    || playerCount > MASTER_ROSTER_KIT_LIMIT;
+  elements.downloadPackMasterKitButton.textContent = rosterKitExporting && rosterKitProgress
+    ? `Building ${rosterKitProgress.done} / ${rosterKitProgress.total}…`
+    : 'Download Pack Master Kit';
 }
 
 function setMasterKitStatus(message) {
@@ -1405,7 +1437,7 @@ function renderMasterKitControls() {
 
   const counts = masterCharacterKitCounts(state.player);
   elements.masterKitSummary.textContent = `${counts.bodySheets} body/armor · ${counts.weaponLayers} weapon · ${counts.shieldLayers} shield layers · ${counts.totalPngs} PNGs`;
-  elements.downloadMasterKitButton.disabled = masterKitExporting;
+  elements.downloadMasterKitButton.disabled = masterKitExporting || rosterKitExporting;
   elements.downloadMasterKitButton.textContent = masterKitExporting && masterKitProgress
     ? `Building ${masterKitProgress.done} / ${masterKitProgress.total}…`
     : 'Download Master Character Kit';
@@ -1749,6 +1781,71 @@ function masterKitReadme(name) {
     + 'See manifest.json for exact paths, choices, colors, animation timing, and the default character.\n';
 }
 
+function masterRosterKitManifest(plan, name, exportedAt) {
+  return {
+    format: MASTER_ROSTER_KIT_FORMAT,
+    version: MASTER_ROSTER_KIT_VERSION,
+    name,
+    exportedAt,
+    exportScale: MASTER_CHARACTER_KIT_SCALE,
+    transparent: true,
+    bakedShadow: false,
+    logicalFrame: { width: E.SIZE, height: E.SIZE },
+    sheet: {
+      logicalWidth: E.SHEET_COLS * E.SIZE,
+      logicalHeight: E.DIRS.length * E.SIZE,
+      width: E.SHEET_COLS * E.SIZE * MASTER_CHARACTER_KIT_SCALE,
+      height: E.DIRS.length * E.SIZE * MASTER_CHARACTER_KIT_SCALE,
+      columns: E.SHEET_COLS,
+      rows: E.DIRS.length,
+      directions: [...E.DIRS],
+      animations: packAnimationContract(),
+    },
+    layering: {
+      order: [...MASTER_CHARACTER_KIT_LAYER_ORDER],
+      instructions: 'Choose one character body and draw matching frame rectangles from shared back layers, the body, then shared front layers.',
+    },
+    counts: plan.counts,
+    colors: plan.colors,
+    shared: {
+      weapons: plan.weapons.map(({ spec, ...entry }) => entry),
+      shields: plan.shields.map(({ spec, ...entry }) => entry),
+    },
+    characters: plan.characters.map((character) => ({
+      id: character.id,
+      sourceId: character.sourceId,
+      name: character.name,
+      identity: character.identity,
+      defaultCharacter: character.sourcePlayer,
+      defaultPreview: character.defaultPreview,
+      bodyRoot: character.bodyRoot,
+      bodies: character.bodies.map(({ spec, ...entry }) => entry),
+    })),
+  };
+}
+
+function masterRosterKitReadme(name, characterCount) {
+  return `${name} - Pack Master Kit\n\n`
+    + `${characterCount} player identities share one weapon and shield library.\n`
+    + 'All PNG files are native 1x sprite sheets with 24x24 frames.\n'
+    + 'Every sheet uses the same 12-column by 4-row animation layout.\n\n'
+    + 'Folder layout:\n'
+    + '- characters/<id>/bodies: identity-compatible armor, color, and headgear sheets\n'
+    + '- characters/<id>/preview/default.png: assembled reference loadout\n'
+    + '- shared/weapons: one back/front layer pair per weapon tier\n'
+    + '- shared/shields: one back/front layer pair per shield tier and color\n\n'
+    + 'Runtime draw order:\n'
+    + '1. shared weapon back\n'
+    + '2. shared shield back\n'
+    + '3. selected character body / armor / headgear\n'
+    + '4. shared shield front\n'
+    + '5. shared weapon front\n\n'
+    + 'Use the same source rectangle, animation column, and direction row for every active layer.\n'
+    + 'Body sheets stay character-specific so skin, hair, face, hands, armor, and headgear remain pixel-perfect.\n'
+    + 'Weapons and shields are rendered once and can be equipped by every character.\n'
+    + 'See manifest.json for exact paths, character specifications, choices, colors, and animation timing.\n';
+}
+
 async function masterKitPng(zipEntries, file, spec, layer) {
   const canvas = E.buildSheet(spec, MASTER_CHARACTER_KIT_SCALE, { layer });
   zipEntries.push({ name: file, data: await canvasToPngBytes(canvas) });
@@ -1761,7 +1858,7 @@ function updateMasterKitProgress(done, total, message) {
 }
 
 async function downloadMasterCharacterKit() {
-  if (masterKitExporting || state.mode !== 'player') return;
+  if (masterKitExporting || rosterKitExporting || state.mode !== 'player') return;
   const player = sanitizePlayer(state.player);
   const plan = buildMasterCharacterKitPlan(player);
   const characterName = sanitizeText(state.characterName, 48).trim()
@@ -1826,8 +1923,97 @@ async function downloadMasterCharacterKit() {
   }
 }
 
+function updateRosterKitProgress(done, total, message) {
+  rosterKitProgress = { done, total };
+  elements.downloadPackMasterKitButton.textContent = `Building ${done} / ${total}…`;
+  setPackStatus(message);
+}
+
+async function downloadPackMasterKit() {
+  if (packIsBusy() || masterKitExporting) return;
+  const entries = packLibrary.entries
+    .map((entry) => sanitizePackEntry(entry))
+    .filter((entry) => entry?.kind === 'player');
+  if (!entries.length) {
+    setPackStatus('Add at least one player character before building a Pack Master Kit.');
+    return;
+  }
+  if (entries.length > MASTER_ROSTER_KIT_LIMIT) {
+    setPackStatus(`A Pack Master Kit supports up to ${MASTER_ROSTER_KIT_LIMIT} player identities.`);
+    return;
+  }
+
+  const plan = buildMasterRosterKitPlan(entries);
+  const packName = sanitizeText(packLibrary.name, 64).trim() || 'Character Pack';
+  const exportedAt = new Date().toISOString();
+  const total = plan.counts.totalPngs;
+  const zipEntries = [];
+  let done = 0;
+  rosterKitExporting = true;
+  rosterKitProgress = { done, total };
+  renderPackControls();
+  renderMasterKitControls();
+  updateRosterKitProgress(done, total, `Preparing ${entries.length} identities and ${total} native sprite sheets…`);
+
+  const advance = (message) => {
+    done += 1;
+    if (done === 1 || done === total || done % 25 === 0) {
+      updateRosterKitProgress(done, total, message);
+    }
+  };
+
+  try {
+    for (const character of plan.characters) {
+      for (const body of character.bodies) {
+        await masterKitPng(zipEntries, body.file, body.spec, body.layer);
+        advance(`Rendering ${character.name} body choices: ${done + 1} / ${total}`);
+      }
+      await masterKitPng(zipEntries, character.defaultPreview, character.sourcePlayer, 'complete');
+      advance(`Rendering ${character.name} assembled preview: ${done + 1} / ${total}`);
+    }
+
+    for (const entry of plan.weapons) {
+      await masterKitPng(zipEntries, entry.files.back, entry.spec, 'weapon-back');
+      advance(`Rendering shared weapon layers: ${done + 1} / ${total}`);
+      await masterKitPng(zipEntries, entry.files.front, entry.spec, 'weapon-front');
+      advance(`Rendering shared weapon layers: ${done + 1} / ${total}`);
+    }
+
+    for (const entry of plan.shields) {
+      await masterKitPng(zipEntries, entry.files.back, entry.spec, 'shield-back');
+      advance(`Rendering shared shield layers: ${done + 1} / ${total}`);
+      await masterKitPng(zipEntries, entry.files.front, entry.spec, 'shield-front');
+      advance(`Rendering shared shield layers: ${done + 1} / ${total}`);
+    }
+
+    const manifest = masterRosterKitManifest(plan, packName, exportedAt);
+    zipEntries.push({
+      name: 'manifest.json',
+      data: new TextEncoder().encode(`${JSON.stringify(manifest, null, 2)}\n`),
+    });
+    zipEntries.push({
+      name: 'README.txt',
+      data: new TextEncoder().encode(masterRosterKitReadme(packName, entries.length)),
+    });
+
+    updateRosterKitProgress(total, total, 'Packaging the shared Pack Master Kit ZIP…');
+    const archive = buildStoredZip(zipEntries, new Date(exportedAt));
+    const filename = `${packFilenameBase(packName, 'character-pack')}-master-roster-kit.zip`;
+    triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
+    setPackStatus(`Downloaded ${entries.length} identities and ${total} native PNGs with one shared equipment library.`);
+  } catch (error) {
+    console.error(error);
+    setPackStatus('The Pack Master Kit could not be exported. Please try again.');
+  } finally {
+    rosterKitExporting = false;
+    rosterKitProgress = null;
+    renderPackControls();
+    renderMasterKitControls();
+  }
+}
+
 async function downloadCharacterPack() {
-  if (packExporting || !packLibrary.entries.length) return;
+  if (packIsBusy() || !packLibrary.entries.length) return;
   const entries = packLibrary.entries.map((entry) => sanitizePackEntry(entry)).filter(Boolean);
   const scale = state.exportScale;
   const exportedAt = new Date().toISOString();
@@ -1967,6 +2153,7 @@ elements.downloadButton.addEventListener('click', downloadSheet);
 elements.addToPackButton.addEventListener('click', addCurrentToPack);
 elements.clearPackButton.addEventListener('click', clearCharacterPack);
 elements.downloadPackButton.addEventListener('click', downloadCharacterPack);
+elements.downloadPackMasterKitButton.addEventListener('click', downloadPackMasterKit);
 elements.downloadMasterKitButton.addEventListener('click', downloadMasterCharacterKit);
 elements.packName.addEventListener('input', () => {
   const name = sanitizeText(elements.packName.value, 64);
