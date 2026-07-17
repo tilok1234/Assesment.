@@ -55,6 +55,7 @@ checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/generators.js');
 checkSyntax('engine/renderer.js');
 checkSyntax('engine/sheets.js');
+checkSyntax('engine/weapon-renderer.js');
 checkSyntax('tools/build.mjs');
 checkSyntax('tools/dev-server.mjs');
 
@@ -100,6 +101,7 @@ const runtimeSources = {
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
   'engine/renderer.js': await readFile(path.join(root, 'engine', 'renderer.js'), 'utf8'),
   'engine/sheets.js': await readFile(path.join(root, 'engine', 'sheets.js'), 'utf8'),
+  'engine/weapon-renderer.js': await readFile(path.join(root, 'engine', 'weapon-renderer.js'), 'utf8'),
 };
 for (const [relativePath, source] of Object.entries(runtimeSources)) {
   check(!/\bnew\s+Function\s*\(/.test(source), `${relativePath}: runtime code generation with new Function is not allowed`);
@@ -150,6 +152,9 @@ check(
 );
 check(runtimeSources['app.js'].includes("validId(E.FACIAL_DETAILS, player.faceDetail"), 'saved player specs must safely migrate missing or invalid facial details');
 check(runtimeSources['engine/renderer.js'].includes("detail: spec.faceDetail || 'none'"), 'the renderer must keep legacy player specs visually compatible');
+check(engine.WEAPONS.length === 16, 'the validated weapon catalog must contain sixteen choices including none');
+check(engine.WEAPONS.every((weapon) => typeof weapon.category === 'string'), 'every weapon must declare a content category');
+check(runtimeSources['engine/renderer.js'].includes("from './weapon-renderer.js'"), 'humanoid rendering must use the focused weapon renderer');
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
 check(packageJson.scripts?.build === 'node tools/build.mjs', 'package.json must expose the production build command');

@@ -14,6 +14,7 @@ index.html
         -> engine/catalogs/player-options.js
         -> engine/catalogs/enemies.js
       -> engine/renderer.js
+      -> engine/weapon-renderer.js
       -> engine/sheets.js
       -> engine/generators.js
 ```
@@ -36,9 +37,13 @@ Consumers import `sprite-engine.js`. Internal module paths are deliberately not 
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
 
+Weapon entries include a broad content category (`blade`, `blunt`, `polearm`, `ranged`, or `magic`). The UI, randomizer, presets, and exports consume the catalog generically, so new validated entries do not need new editor controls.
+
 ### Renderer
 
 `engine/renderer.js` converts a sprite specification, direction, animation, and frame into pixels on a 24x24 canvas context. It owns procedural shapes and family-specific drawing dispatch. Player specifications may include validated optional base/shadow overrides for skin, hair, and outfit; absent or invalid pairs fall back to the selected catalog colors. Optional facial details are layered only on visible human faces, use the resolved player palettes where appropriate, mirror with the existing left/right renderer, and defer to headgear visibility rules.
+
+`engine/weapon-renderer.js` owns humanoid weapon pixels and shared down, up, and side pose anchors. Existing enemy-used weapon ids retain their original coordinates, while player-only content can use the face-safe side offset supplied by the humanoid configuration.
 
 ### Sheets and thumbnails
 

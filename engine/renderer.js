@@ -16,9 +16,9 @@ import {
   PANTS,
   SIZE,
   SKINS,
-  STRINGC,
   WOOD,
 } from './catalogs.js';
+import { drawWeapon } from './weapon-renderer.js';
 
 const find = (list, id) => list.find(x => x.id === id) || list[0];
 const isHexColor = value => typeof value === 'string' && /^#[0-9a-f]{6}$/i.test(value);
@@ -597,109 +597,6 @@ function drawShield(S, R, sx, u, shield, oc) {
     R(sx + 1, 13 + u, 3, 3, METAL[0]);
     S(sx + 2, 14 + u, METAL[2]);
     R(sx + 1, 15 + u, 3, 1, METAL[1]);
-  }
-}
-
-// ---------------- weapons ----------------
-// Anchors: down → right hand x16..17; side(right) → hand x12..13; up → behind at x6
-function drawWeapon(S, R, d, p, C, u) {
-  const w = C.weapon;
-  const ph = p.wep; // hold | wind | strike | recover
-  const strike = ph === 'strike';
-  const wind = ph === 'wind';
-  const sideX = 14 + (C.sideWeaponOffset || 0);
-
-  if (w === 'sword' || w === 'dagger') {
-    const len = w === 'sword' ? 6 : 3;
-    if (d === 'down') {
-      if (strike) { R(17, 15, 1, len, METAL[0]); S(17, 15 + len - 1, METAL[2]); R(16, 14, 3, 1, GOLD[0]); }
-      else if (wind) { R(17, 12 - len, 1, len, METAL[0]); S(17, 12 - len, METAL[2]); R(16, 12, 3, 1, GOLD[0]); }
-      else { R(17, 13 - len, 1, len, METAL[0]); S(17, 13 - len, METAL[2]); R(16, 13, 3, 1, GOLD[0]); }
-    } else if (d === 'up') {
-      if (strike) { R(6, 12 - len - 4, 1, len + 2, METAL[0]); S(6, 12 - len - 4, METAL[2]); R(5, 10, 3, 1, GOLD[0]); }
-      else if (wind) { R(6, 15, 1, len, METAL[0]); R(5, 14, 3, 1, GOLD[0]); }
-      else { R(6, 8, 1, len, METAL[0]); S(6, 8, METAL[2]); R(5, 8 + len, 3, 1, GOLD[0]); }
-    } else {
-      if (strike) { R(15, 13, len + 2, 1, METAL[0]); S(15 + len + 1, 13, METAL[2]); R(15, 12, 1, 3, GOLD[0]); }
-      else if (wind) { R(sideX, 11 - len, 1, len, METAL[0]); S(sideX, 11 - len, METAL[2]); R(sideX - 1, 11, 3, 1, GOLD[0]); }
-      else { R(sideX, 14 - len, 1, len, METAL[0]); S(sideX, 14 - len, METAL[2]); R(sideX - 1, 14, 3, 1, GOLD[0]); }
-    }
-  }
-
-  if (w === 'axe') {
-    if (d === 'down') {
-      if (strike) { R(17, 15, 1, 6, WOOD[0]); R(15, 17, 2, 3, METAL[0]); R(15, 17, 1, 3, METAL[2]); }
-      else if (wind) { R(17, 6, 1, 6, WOOD[0]); R(15, 6, 2, 3, METAL[0]); R(15, 6, 1, 3, METAL[2]); }
-      else { R(17, 8, 1, 6, WOOD[0]); R(15, 8, 2, 3, METAL[0]); R(15, 8, 1, 3, METAL[2]); }
-    } else if (d === 'up') {
-      if (strike) { R(6, 2, 1, 8, WOOD[0]); R(7, 2, 2, 3, METAL[0]); R(8, 2, 1, 3, METAL[2]); }
-      else { R(6, 8, 1, 6, WOOD[0]); R(7, 8, 2, 3, METAL[0]); R(8, 8, 1, 3, METAL[2]); }
-    } else {
-      if (strike) { R(14, 13, 6, 1, WOOD[0]); R(18, 11, 2, 3, METAL[0]); R(18, 11, 2, 1, METAL[2]); }
-      else if (wind) { R(sideX, 5, 1, 6, WOOD[0]); R(sideX + 1, 5, 2, 3, METAL[0]); }
-      else { R(sideX, 8, 1, 6, WOOD[0]); R(sideX + 1, 8, 2, 3, METAL[0]); R(sideX + 1, 8, 2, 1, METAL[2]); }
-    }
-  }
-
-  if (w === 'spear') {
-    if (d === 'down') {
-      if (strike) { R(17, 13, 1, 8, WOOD[0]); S(17, 21, METAL[0]); S(17, 22, METAL[2]); }
-      else { R(17, 7, 1, 9, WOOD[0]); S(17, 6, METAL[0]); S(17, 5, METAL[2]); }
-    } else if (d === 'up') {
-      if (strike) { R(6, 1, 1, 9, WOOD[0]); S(6, 0, METAL[2]); S(6, 1, METAL[0]); }
-      else { R(6, 8, 1, 9, WOOD[0]); S(6, 7, METAL[0]); S(6, 6, METAL[2]); }
-    } else {
-      if (strike) { R(13, 13, 8, 1, WOOD[0]); S(21, 13, METAL[0]); S(22, 13, METAL[2]); }
-      else if (wind) { R(sideX, 6, 1, 9, WOOD[0]); S(sideX, 5, METAL[0]); }
-      else { R(sideX, 7, 1, 9, WOOD[0]); S(sideX, 6, METAL[0]); S(sideX, 5, METAL[2]); }
-    }
-  }
-
-  if (w === 'club') {
-    if (d === 'down') {
-      if (strike) { R(17, 15, 1, 4, WOOD[0]); R(16, 18, 3, 3, WOOD[0]); S(16, 18, WOOD[1]); S(18, 20, WOOD[1]); }
-      else { R(17, 10, 1, 4, WOOD[0]); R(16, 7, 3, 3, WOOD[0]); S(16, 7, WOOD[1]); S(18, 9, WOOD[1]); }
-    } else if (d === 'up') {
-      if (strike) { R(6, 6, 1, 4, WOOD[0]); R(5, 3, 3, 3, WOOD[0]); S(5, 3, WOOD[1]); }
-      else { R(6, 10, 1, 4, WOOD[0]); R(5, 13, 3, 3, WOOD[0]); }
-    } else {
-      if (strike) { R(14, 13, 4, 1, WOOD[0]); R(18, 12, 3, 3, WOOD[0]); S(20, 12, WOOD[1]); }
-      else if (wind) { R(sideX, 8, 1, 4, WOOD[0]); R(sideX - 1, 5, 3, 3, WOOD[0]); }
-      else { R(sideX, 10, 1, 4, WOOD[0]); R(sideX - 1, 7, 3, 3, WOOD[0]); S(sideX - 1, 7, WOOD[1]); }
-    }
-  }
-
-  if (w === 'bow') {
-    if (d === 'right') {
-      S(16, 9, WOOD[0]); R(17, 10, 1, 6, WOOD[0]); S(16, 16, WOOD[0]);
-      R(16, 10, 1, 6, STRINGC);
-      if (wind) { R(11, 13, 5, 1, WOOD[0]); S(16, 13, METAL[0]); }
-      if (strike) { R(17, 13, 4, 1, WOOD[0]); S(21, 13, METAL[0]); S(22, 13, METAL[2]); }
-    } else if (d === 'down') {
-      S(17, 9, WOOD[0]); R(18, 10, 1, 5, WOOD[0]); S(17, 15, WOOD[0]);
-      R(17, 10, 1, 5, STRINGC);
-      if (strike) { R(13, 17, 1, 4, WOOD[0]); S(13, 21, METAL[0]); }
-      if (wind) { R(13, 12, 1, 4, WOOD[0]); S(13, 16, METAL[0]); }
-    } else {
-      S(6, 9, WOOD[0]); R(5, 10, 1, 5, WOOD[0]); S(6, 15, WOOD[0]);
-      R(6, 10, 1, 5, STRINGC);
-      if (strike) { R(10, 1, 1, 4, WOOD[0]); S(10, 0, METAL[0]); }
-    }
-  }
-
-  if (w === 'staff') {
-    const gem = ['#59d8cc', '#2fa79b', '#c6f7ef'];
-    if (d === 'down') {
-      if (strike) { R(17, 13, 1, 6, WOOD[0]); R(16, 19, 2, 2, gem[0]); S(16, 19, gem[2]); S(15, 20, gem[2]); S(19, 19, gem[2]); }
-      else { R(17, 7, 1, 9, WOOD[0]); R(16, 5, 2, 2, gem[0]); S(16, 5, gem[2]); }
-    } else if (d === 'up') {
-      if (strike) { R(6, 2, 1, 7, WOOD[0]); R(5, 0, 2, 2, gem[0]); S(5, 0, gem[2]); S(8, 1, gem[2]); }
-      else { R(6, 8, 1, 9, WOOD[0]); R(5, 6, 2, 2, gem[0]); S(5, 6, gem[2]); }
-    } else {
-      if (strike) { R(13, 13, 7, 1, WOOD[0]); R(20, 12, 2, 2, gem[0]); S(20, 12, gem[2]); S(22, 11, gem[2]); S(19, 15, gem[2]); }
-      else if (wind) { R(sideX, 7, 1, 9, WOOD[0]); R(sideX - 1, 5, 2, 2, gem[0]); }
-      else { R(sideX, 7, 1, 9, WOOD[0]); R(sideX - 1, 5, 2, 2, gem[0]); S(sideX - 1, 5, gem[2]); }
-    }
   }
 }
 
