@@ -89,12 +89,16 @@ export const WEAPON_TIERS = [
 ];
 export const SHIELDS = [
   { id: 'none',    name: 'None' },
-  { id: 'round',   name: 'Round' },
-  { id: 'kite',    name: 'Kite' },
-  { id: 'buckler', name: 'Buckler' },
-  { id: 'heater',  name: 'Heater' },
-  { id: 'tower',   name: 'Tower' },
-  { id: 'oval',    name: 'Oval' },
-  { id: 'bone',    name: 'Bone' },
-  { id: 'arcane',  name: 'Arcane' },
+  { id: 'round',   name: 'Round',   tier2Name: 'Ironbound Roundshield' },
+  { id: 'kite',    name: 'Kite',    tier2Name: "Knight's Bulwark" },
+  { id: 'buckler', name: 'Buckler', tier2Name: "Duelist's Guard" },
+  { id: 'heater',  name: 'Heater',  tier2Name: 'Lionheart Heater' },
+  { id: 'tower',   name: 'Tower',   tier2Name: 'Bastion Wall' },
+  { id: 'oval',    name: 'Oval',    tier2Name: 'Legionnaire Scutum' },
+  { id: 'bone',    name: 'Bone',    tier2Name: 'Ossuary Aegis' },
+  { id: 'arcane',  name: 'Arcane',  tier2Name: 'Runebound Ward' },
+];
+export const SHIELD_TIERS = [
+  { id: 'tier1', name: 'Tier 1' },
+  { id: 'tier2', name: 'Tier 2' },
 ];

@@ -9,6 +9,7 @@ import {
   OUTFITS,
   OUTFIT_COLORS,
   SHIELDS,
+  SHIELD_TIERS,
   SKINS,
   WEAPONS,
   WEAPON_TIERS,
@@ -19,6 +20,7 @@ const rnd = (arr) => arr[Math.floor(Math.random() * arr.length)];
 export function randomPlayer() {
   const weapons = WEAPONS.filter(w => w.id !== 'none');
   const weapon = Math.random() < 0.85 ? rnd(weapons).id : 'none';
+  const shield = rnd(SHIELDS).id;
   return {
     skin: rnd(SKINS).id,
     hairStyle: rnd(HAIR_STYLES).id,
@@ -29,7 +31,8 @@ export function randomPlayer() {
     outfitColor: rnd(OUTFIT_COLORS).id,
     weapon,
     weaponTier: weapon === 'none' ? 'tier1' : rnd(WEAPON_TIERS).id,
-    shield: rnd(SHIELDS).id,
+    shield,
+    shieldTier: shield === 'none' ? 'tier1' : rnd(SHIELD_TIERS).id,
   };
 }
 export function randomEnemy() {

@@ -1382,6 +1382,7 @@ function buildHumanoidC(spec) {
       weapon: spec.weapon,
       weaponTier: spec.weaponTier || 'tier1',
       shield: spec.shield,
+      shieldTier: spec.shieldTier || 'tier1',
       face: 'human',
       detail: spec.faceDetail || 'none',
       sideWeaponOffset: 3,

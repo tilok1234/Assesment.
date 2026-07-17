@@ -112,7 +112,7 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 
 const expectedEngineExports = [
   'ANIMS', 'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
-  'OUTFITS', 'OUTFIT_COLORS', 'SHEET_COLS', 'SHIELDS', 'SIZE', 'SKINS', 'WEAPONS', 'WEAPON_TIERS',
+  'OUTFITS', 'OUTFIT_COLORS', 'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'WEAPONS', 'WEAPON_TIERS',
   'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'describe', 'drawSprite',
   'randomEnemy', 'randomPlayer', 'thumbURL',
 ].sort();
@@ -124,8 +124,8 @@ check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 40, 'sprite-eng
 check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 40, 'engine/catalogs.js must remain a small internal facade');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
-check(runtimeSources['app.js'].includes("PRESET_VERSION = 4"), 'app.js must keep presets under the current versioned schema');
-check(runtimeSources['app.js'].includes('![1, 2, 3, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1, 2, and 3 preset libraries');
+check(runtimeSources['app.js'].includes("PRESET_VERSION = 5"), 'app.js must keep presets under the current versioned schema');
+check(runtimeSources['app.js'].includes('![1, 2, 3, 4, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1, 2, 3, and 4 preset libraries');
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
 check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'characterName', 'exportName']"), 'app.js history must remain scoped to the editable sprite document');
@@ -174,9 +174,16 @@ check(
   JSON.stringify(engine.SHIELDS.map((shield) => shield.id)) === JSON.stringify(expectedShields),
   'the shield catalog must expose none plus all eight validated shield families in stable order',
 );
+check(engine.SHIELDS.filter((shield) => shield.id !== 'none').every((shield) => typeof shield.tier2Name === 'string'), 'every equipped shield must declare an RPG-style Tier 2 name');
+check(JSON.stringify(engine.SHIELD_TIERS.map((tier) => tier.id)) === JSON.stringify(['tier1', 'tier2']), 'the shield tier catalog must expose stable Tier 1 and Tier 2 ids');
 check(runtimeSources['app.js'].includes('validId(E.SHIELDS, player.shield'), 'saved player specs must safely migrate missing or invalid shields');
+check(runtimeSources['app.js'].includes('validId(E.SHIELD_TIERS, player.shieldTier'), 'saved player specs must safely migrate missing or invalid shield tiers');
+check(runtimeSources['app.js'].includes("'Shield tier'"), 'the player editor must expose a dedicated shield tier control');
+check(runtimeSources['app.js'].includes("key === 'shield' && value === 'none'"), 'unequipping a shield must normalize its tier to Tier 1');
+check(runtimeSources['engine/generators.js'].includes("shieldTier: shield === 'none' ? 'tier1' : rnd(SHIELD_TIERS).id"), 'random players must choose a valid shield tier and normalize empty off-hands');
 check(runtimeSources['engine/renderer.js'].includes("from './shield-renderer.js'"), 'humanoid rendering must use the focused shield renderer');
 check(runtimeSources['engine/renderer.js'].includes('shieldFollowRig: true'), 'player shields must follow the animated off-hand rig');
+check(runtimeSources['engine/shield-renderer.js'].includes("tier === 'tier2'"), 'the shield renderer must apply the reinforced Tier 2 upgrade layer');
 check(runtimeSources['engine/shield-renderer.js'].includes("d === 'up' ? 'behind' : 'front'"), 'shield layering must place back-view shields behind the humanoid body');
 
 function renderPixels(spec, dir, animId, frame) {
@@ -221,6 +228,7 @@ const shieldBase = {
   outfitColor: engine.OUTFIT_COLORS[0].id,
   weapon: 'none',
   weaponTier: 'tier1',
+  shieldTier: 'tier1',
 };
 const equippedShields = expectedShields.slice(1);
 for (const shield of equippedShields) {
@@ -268,6 +276,47 @@ for (const shield of equippedShields) {
 for (const dir of engine.DIRS) {
   const signatures = equippedShields.map((shield) => renderPixels({ ...shieldBase, shield }, dir, 'idle', 0).join(','));
   check(new Set(signatures).size === equippedShields.length, `every shield family must have a distinct ${dir} silhouette`);
+}
+
+for (const shield of equippedShields) {
+  const tier1Spec = { ...shieldBase, shield, shieldTier: 'tier1' };
+  const tier2Spec = { ...shieldBase, shield, shieldTier: 'tier2' };
+  for (const dir of engine.DIRS) {
+    for (const anim of engine.ANIMS) {
+      for (let frame = 0; frame < anim.frames; frame++) {
+        const tier1 = renderPixels(tier1Spec, dir, anim.id, frame);
+        const tier2 = renderPixels(tier2Spec, dir, anim.id, frame);
+        const changed = changedPixels(tier2, tier1);
+        check(changed.length >= 1, `${shield} Tier 2 must differ from Tier 1 in ${dir} ${anim.id} frame ${frame}`);
+        check(
+          changed.every((index) => {
+            const x = index % engine.SIZE;
+            const y = Math.floor(index / engine.SIZE);
+            return !(x >= 9 && x <= 14 && y >= 5 && y <= 10);
+          }),
+          `${shield} Tier 2 must preserve face clearance in ${dir} ${anim.id} frame ${frame}`,
+        );
+      }
+    }
+
+    const tier1Idle = renderPixels(tier1Spec, dir, 'idle', 0);
+    const tier2Idle = renderPixels(tier2Spec, dir, 'idle', 0);
+    check(
+      tier2Idle.filter(Boolean).length > tier1Idle.filter(Boolean).length,
+      `${shield} Tier 2 must expand beyond its Tier 1 ${dir} idle silhouette`,
+    );
+
+    const walkStart = changeSignature(renderPixels(tier2Spec, dir, 'walk', 0), renderPixels(tier1Spec, dir, 'walk', 0));
+    const walkReturn = changeSignature(renderPixels(tier2Spec, dir, 'walk', 2), renderPixels(tier1Spec, dir, 'walk', 2));
+    check(walkStart !== walkReturn, `${shield} Tier 2 additions must follow the off-hand walk swing in ${dir}`);
+  }
+}
+
+for (const dir of engine.DIRS) {
+  const signatures = equippedShields.map((shield) => (
+    renderPixels({ ...shieldBase, shield, shieldTier: 'tier2' }, dir, 'idle', 0).join(',')
+  ));
+  check(new Set(signatures).size === equippedShields.length, `every Tier 2 shield family must have a distinct ${dir} silhouette`);
 }
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
@@ -352,7 +401,7 @@ const combinations = engine.SKINS.length
   * engine.OUTFITS.length
   * engine.OUTFIT_COLORS.length
   * (1 + ((engine.WEAPONS.length - 1) * engine.WEAPON_TIERS.length))
-  * engine.SHIELDS.length;
+  * (1 + ((engine.SHIELDS.length - 1) * engine.SHIELD_TIERS.length));
 
 if (errors.length) {
   console.error(`Project validation failed with ${errors.length} error${errors.length === 1 ? '' : 's'}:`);

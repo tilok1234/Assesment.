@@ -13,6 +13,17 @@ const SHIELD_TOP = {
   arcane: 11,
 };
 
+const PROFILE_HEIGHTS = {
+  round: 5,
+  kite: 7,
+  buckler: 4,
+  heater: 6,
+  tower: 9,
+  oval: 7,
+  bone: 7,
+  arcane: 7,
+};
+
 function drawLegacyFront(S, R, sx, u, shield, oc) {
   if (shield === 'round') {
     R(sx, 12 + u, 4, 5, WOOD[0]);
@@ -142,7 +153,58 @@ function drawArcane(S, R, x, y) {
   S(x + 2, y + 3, ARCANE[3]);
 }
 
-function drawFullShield(S, R, x, y, shield, oc) {
+function drawTier2Full(S, R, x, y, shield) {
+  if (shield === 'round') {
+    S(x + 2, y - 1, METAL[2]); S(x - 1, y + 2, METAL[1]);
+    S(x + 5, y + 2, METAL[1]); S(x + 2, y + 5, METAL[1]);
+    S(x + 1, y + 1, GOLD[0]); S(x + 3, y + 3, GOLD[1]);
+  }
+  if (shield === 'kite') {
+    S(x - 1, y + 1, METAL[2]); S(x + 5, y + 1, METAL[2]);
+    S(x + 2, y + 7, METAL[1]);
+    R(x + 1, y + 1, 3, 1, GOLD[0]); S(x + 2, y + 5, GOLD[1]);
+  }
+  if (shield === 'buckler') {
+    R(x + 1, y - 1, 2, 1, METAL[2]);
+    S(x - 1, y + 1, METAL[1]); S(x + 4, y + 1, METAL[1]);
+    R(x + 1, y + 4, 2, 1, METAL[1]);
+    S(x + 1, y + 2, GOLD[0]); S(x + 2, y + 1, GOLD[1]);
+  }
+  if (shield === 'heater') {
+    S(x - 1, y + 1, METAL[2]); S(x + 5, y + 1, METAL[2]);
+    S(x + 2, y + 6, METAL[1]);
+    S(x + 1, y + 1, GOLD[0]); S(x + 3, y + 1, GOLD[0]);
+    S(x + 2, y + 4, GOLD[1]);
+  }
+  if (shield === 'tower') {
+    S(x, y - 1, METAL[2]); S(x + 2, y - 1, GOLD[0]); S(x + 4, y - 1, METAL[2]);
+    R(x - 1, y + 2, 1, 5, METAL[1]); R(x + 5, y + 2, 1, 5, METAL[1]);
+    R(x + 1, y + 9, 3, 1, METAL[1]);
+    S(x, y + 4, GOLD[0]); S(x + 4, y + 4, GOLD[0]);
+  }
+  if (shield === 'oval') {
+    R(x + 1, y - 1, 2, 1, METAL[2]);
+    S(x - 1, y + 3, METAL[1]); S(x + 4, y + 3, METAL[1]);
+    R(x + 1, y + 7, 2, 1, METAL[1]);
+    S(x + 1, y + 1, GOLD[0]); S(x + 2, y + 5, GOLD[1]);
+  }
+  if (shield === 'bone') {
+    S(x + 2, y - 1, BONE[0]);
+    S(x - 1, y + 1, BONE[1]); S(x + 5, y + 1, BONE[1]);
+    S(x - 1, y + 5, BONE[1]); S(x + 5, y + 5, BONE[1]);
+    S(x + 2, y + 7, BONE[0]);
+    S(x + 1, y + 3, INK); S(x + 3, y + 3, INK); S(x + 2, y + 4, GOLD[0]);
+  }
+  if (shield === 'arcane') {
+    S(x + 2, y - 1, ARCANE[3]);
+    S(x - 1, y + 2, ARCANE[2]); S(x + 5, y + 2, ARCANE[2]);
+    S(x - 1, y + 4, ARCANE[1]); S(x + 5, y + 4, ARCANE[1]);
+    S(x + 2, y + 7, ARCANE[3]);
+    S(x + 1, y + 2, ARCANE[3]); S(x + 3, y + 4, ARCANE[2]);
+  }
+}
+
+function drawFullShield(S, R, x, y, shield, oc, tier) {
   if (shield === 'round') drawRound(S, R, x, y);
   if (shield === 'kite') drawKite(S, R, x, y, oc);
   if (shield === 'buckler') drawBuckler(S, R, x, y);
@@ -151,9 +213,26 @@ function drawFullShield(S, R, x, y, shield, oc) {
   if (shield === 'oval') drawOval(S, R, x, y);
   if (shield === 'bone') drawBone(S, R, x, y);
   if (shield === 'arcane') drawArcane(S, R, x, y);
+  if (tier === 'tier2') drawTier2Full(S, R, x, y, shield);
 }
 
-function drawProfile(S, R, x, y, shield, oc) {
+function drawTier2Profile(S, R, x, y, shield) {
+  const height = PROFILE_HEIGHTS[shield];
+  const middle = y + Math.floor(height / 2);
+  const rim = shield === 'bone' ? BONE[0] : shield === 'arcane' ? ARCANE[3] : METAL[2];
+  const accent = shield === 'arcane' ? ARCANE[2] : shield === 'bone' ? INK : GOLD[0];
+  S(x + 1, y - 1, rim);
+  S(x - 1, middle, rim);
+  S(x + 1, y + height, rim);
+  S(x, middle, accent);
+  if (shield === 'tower') R(x - 1, y + 1, 1, height - 2, METAL[1]);
+  if (shield === 'kite' || shield === 'heater') S(x + 1, y + height + 1, METAL[1]);
+  if (shield === 'round' || shield === 'oval') S(x - 1, middle - 1, METAL[1]);
+  if (shield === 'bone') S(x - 1, middle + 1, BONE[1]);
+  if (shield === 'arcane') S(x - 1, middle + 1, ARCANE[1]);
+}
+
+function drawProfile(S, R, x, y, shield, oc, tier) {
   const profiles = {
     round: [5, WOOD[0], WOOD[1]],
     kite: [7, METAL[0], METAL[1]],
@@ -174,6 +253,7 @@ function drawProfile(S, R, x, y, shield, oc) {
     S(x, y, METAL[2]); S(x, y + height - 1, METAL[1]);
   }
   if (shield === 'buckler') S(x + 2, y + 1, METAL[2]);
+  if (tier === 'tier2') drawTier2Profile(S, R, x, y, shield);
 }
 
 function shieldRig(p, d) {
@@ -198,12 +278,12 @@ export function drawShield(S, R, d, p, C, u, layer = 'front') {
 
   if (d === 'right') {
     if (layer !== 'behind') return;
-    drawProfile(S, R, 6 + rig.x, top + rig.y, C.shield, C.oc);
+    drawProfile(S, R, 6 + rig.x, top + rig.y, C.shield, C.oc, C.shieldTier);
     return;
   }
 
   const expectedLayer = d === 'up' ? 'behind' : 'front';
   if (layer !== expectedLayer) return;
   const baseX = d === 'down' ? (C.shield === 'buckler' ? 4 : 3) : 17;
-  drawFullShield(S, R, baseX + rig.x, top + rig.y, C.shield, C.oc);
+  drawFullShield(S, R, baseX + rig.x, top + rig.y, C.shield, C.oc, C.shieldTier);
 }
