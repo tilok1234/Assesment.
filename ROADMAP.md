@@ -119,6 +119,8 @@ The seventh content slice establishes the shield foundation. Humanoid shield dra
 
 The eighth content slice adds independent Tier 2 progression for all eight equipped shield families. Ironbound Roundshield, Knight's Bulwark, Duelist's Guard, Lionheart Heater, Bastion Wall, Legionnaire Scutum, Ossuary Aegis, and Runebound Ward each expand beyond the Tier 1 silhouette with family-specific bracing, flares, battlements, bands, bone crowns, or floating runes. The schema-v5 `shieldTier` field participates in the editor, named selections, whole-character and per-category randomization, reset, undo/redo, comparison, persistence, presets, and exports; old v1 through v4 presets migrate to Tier 1, and `None` always normalizes to Tier 1. Automated checks prove Tier 2 differs from Tier 1 in every direction, animation, and frame, grows every idle silhouette, remains mutually distinct, follows the off-hand rig, and preserves face clearance.
 
+The ninth content slice extends all eight shield families with cumulative legendary Tier 3 forms: Sunforged Aegis, Dragoncrest Bulwark, Starsteel Counterguard, Crowned Lion Aegis, Citadel of Kings, Imperial Scutum, Graveking Carapace, and Astral Ward. Each adds family-specific crown, crest, point, heraldry, antler, or astral geometry to both the full shield and its edge-on profile while retaining the Tier 2 reinforcement beneath it. The existing schema-v5 field carries Tier 3 through editor selection, naming, randomization, history, comparison, persistence, presets, and exports without a migration. Automated checks prove every Tier 3 frame differs from Tier 2, each directional idle silhouette grows, all eight families remain distinct, the legendary layer follows walk and attack motion, and all additions preserve face clearance.
+
 Candidate additions:
 
 - Body types and silhouettes
@@ -126,7 +128,7 @@ Candidate additions:
 - More hairstyles and headgear
 - Armor layers, outfits, robes, capes, and accessories
 - More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2/Tier 3/Tier 4/Tier 5 progression finished)
-- Shield Tier 3 through Tier 5 progression, followed by additional off-hand items (eight-family Tier 2 progression complete)
+- Shield Tier 4 and Tier 5 progression, followed by additional off-hand items (eight-family Tier 3 progression complete)
 - Species-specific features such as ears, horns, wings, and tails
 - Additional enemy families and variants
 - Optional new animations after the existing sheet contract has a versioning plan

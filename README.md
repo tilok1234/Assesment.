@@ -21,7 +21,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
 - Fifteen equipped weapon choices spanning blades, blunt weapons, polearms, ranged weapons, and magic focuses, each with standard Tier 1, named RPG-style Tier 2, legendary Tier 3, oversized mythic Tier 4, and final artifact Tier 5 forms; all 75 variants use hand-anchored motion and preserve front- and side-face clearance
-- Eight equipped shield choices—round, kite, buckler, heater, tower, oval, bone, and arcane—each with a standard Tier 1 and named reinforced Tier 2 form; all use distinct front and profile silhouettes, direction-aware layering, off-hand walk motion, and attack bracing
+- Eight equipped shield choices—round, kite, buckler, heater, tower, oval, bone, and arcane—each with a standard Tier 1, named reinforced Tier 2, and legendary Tier 3 form; all use distinct front and profile silhouettes, direction-aware layering, off-hand walk motion, and attack bracing
 
 ## Preview controls
 

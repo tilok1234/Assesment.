@@ -1,6 +1,7 @@
 import { BONE, GOLD, INK, METAL, WOOD } from './catalogs.js';
 
 const ARCANE = ['#30245c', '#7658d6', '#62d9ff', '#f0ffff'];
+const LEGEND = ['#52308b', '#9b72e8', '#f2b84b', '#fff1a8'];
 
 const SHIELD_TOP = {
   round: 12,
@@ -204,6 +205,65 @@ function drawTier2Full(S, R, x, y, shield) {
   }
 }
 
+function drawTier3Full(S, R, x, y, shield) {
+  if (shield === 'round') {
+    S(x + 1, y - 2, GOLD[2]); S(x + 3, y - 2, GOLD[2]);
+    S(x + 2, y - 1, GOLD[0]);
+    S(x - 1, y + 1, GOLD[1]); S(x + 5, y + 3, GOLD[1]);
+    S(x + 1, y + 6, GOLD[1]); S(x + 3, y + 6, GOLD[1]);
+    S(x + 1, y + 2, GOLD[0]); S(x + 3, y + 2, GOLD[0]);
+  }
+  if (shield === 'kite') {
+    S(x, y - 2, LEGEND[1]); S(x + 4, y - 2, LEGEND[1]);
+    S(x + 1, y - 1, GOLD[2]); S(x + 3, y - 1, GOLD[2]);
+    S(x - 1, y + 3, LEGEND[0]); S(x + 5, y + 3, LEGEND[0]);
+    S(x + 2, y + 8, GOLD[1]);
+    S(x + 1, y + 3, LEGEND[1]); S(x + 3, y + 3, LEGEND[1]);
+  }
+  if (shield === 'buckler') {
+    S(x, y - 2, METAL[2]); S(x + 3, y - 2, METAL[2]);
+    S(x - 1, y, GOLD[0]); S(x + 4, y + 3, GOLD[0]);
+    S(x, y + 5, METAL[1]); S(x + 3, y + 5, METAL[1]);
+    S(x + 1, y + 1, LEGEND[1]); S(x + 2, y + 2, GOLD[2]);
+  }
+  if (shield === 'heater') {
+    S(x, y - 2, GOLD[2]); S(x + 2, y - 2, GOLD[2]); S(x + 4, y - 2, GOLD[2]);
+    S(x + 1, y - 1, GOLD[0]); S(x + 3, y - 1, GOLD[0]);
+    S(x - 1, y + 3, LEGEND[0]); S(x + 5, y + 3, LEGEND[0]);
+    S(x + 1, y + 7, GOLD[1]); S(x + 3, y + 7, GOLD[1]);
+    S(x + 2, y + 2, LEGEND[1]); S(x + 2, y + 3, GOLD[2]);
+  }
+  if (shield === 'tower') {
+    S(x, y - 2, GOLD[2]); S(x + 2, y - 2, GOLD[2]); S(x + 4, y - 2, GOLD[2]);
+    S(x - 1, y + 1, METAL[2]); S(x + 5, y + 1, METAL[2]);
+    S(x - 1, y + 7, METAL[1]); S(x + 5, y + 7, METAL[1]);
+    S(x, y + 10, METAL[1]); S(x + 2, y + 10, GOLD[1]); S(x + 4, y + 10, METAL[1]);
+    R(x + 1, y + 3, 3, 1, LEGEND[0]); R(x + 1, y + 5, 3, 1, GOLD[0]);
+  }
+  if (shield === 'oval') {
+    S(x, y - 2, GOLD[2]); S(x + 3, y - 2, GOLD[2]);
+    S(x + 1, y - 1, GOLD[0]); S(x + 2, y - 1, GOLD[0]);
+    S(x - 1, y + 1, LEGEND[0]); S(x + 4, y + 5, LEGEND[0]);
+    S(x, y + 8, GOLD[1]); S(x + 3, y + 8, GOLD[1]);
+    R(x + 1, y + 2, 2, 1, GOLD[2]); R(x + 1, y + 4, 2, 1, LEGEND[1]);
+  }
+  if (shield === 'bone') {
+    S(x, y - 2, BONE[0]); S(x + 2, y - 2, LEGEND[1]); S(x + 4, y - 2, BONE[0]);
+    S(x + 1, y - 1, BONE[1]); S(x + 3, y - 1, BONE[1]);
+    S(x - 1, y + 3, BONE[0]); S(x + 5, y + 3, BONE[0]);
+    S(x, y + 8, BONE[1]); S(x + 2, y + 8, GOLD[1]); S(x + 4, y + 8, BONE[1]);
+    S(x + 1, y + 3, LEGEND[1]); S(x + 3, y + 3, LEGEND[1]);
+  }
+  if (shield === 'arcane') {
+    S(x + 1, y - 2, LEGEND[3]); S(x + 3, y - 2, LEGEND[3]);
+    S(x - 1, y, LEGEND[1]); S(x + 5, y + 6, LEGEND[1]);
+    S(x + 1, y + 8, LEGEND[2]); S(x + 3, y + 8, LEGEND[2]);
+    S(x + 1, y + 2, LEGEND[1]); S(x + 3, y + 2, LEGEND[1]);
+    S(x + 1, y + 4, LEGEND[2]); S(x + 3, y + 4, LEGEND[2]);
+    S(x + 2, y + 3, LEGEND[3]);
+  }
+}
+
 function drawFullShield(S, R, x, y, shield, oc, tier) {
   if (shield === 'round') drawRound(S, R, x, y);
   if (shield === 'kite') drawKite(S, R, x, y, oc);
@@ -213,7 +273,8 @@ function drawFullShield(S, R, x, y, shield, oc, tier) {
   if (shield === 'oval') drawOval(S, R, x, y);
   if (shield === 'bone') drawBone(S, R, x, y);
   if (shield === 'arcane') drawArcane(S, R, x, y);
-  if (tier === 'tier2') drawTier2Full(S, R, x, y, shield);
+  if (tier === 'tier2' || tier === 'tier3') drawTier2Full(S, R, x, y, shield);
+  if (tier === 'tier3') drawTier3Full(S, R, x, y, shield);
 }
 
 function drawTier2Profile(S, R, x, y, shield) {
@@ -230,6 +291,22 @@ function drawTier2Profile(S, R, x, y, shield) {
   if (shield === 'round' || shield === 'oval') S(x - 1, middle - 1, METAL[1]);
   if (shield === 'bone') S(x - 1, middle + 1, BONE[1]);
   if (shield === 'arcane') S(x - 1, middle + 1, ARCANE[1]);
+}
+
+function drawTier3Profile(S, R, x, y, shield) {
+  const height = PROFILE_HEIGHTS[shield];
+  const middle = y + Math.floor(height / 2);
+  const crown = shield === 'bone' ? BONE[0] : shield === 'arcane' ? LEGEND[3] : GOLD[2];
+  const tail = shield === 'arcane' ? LEGEND[2] : shield === 'bone' ? BONE[1] : GOLD[1];
+  S(x - 1, y - 2, crown); S(x, y - 2, crown);
+  S(x - 1, middle - 1, shield === 'arcane' ? LEGEND[1] : crown);
+  S(x - 1, middle + 1, shield === 'bone' ? BONE[0] : tail);
+  S(x, y + height + 2, tail); S(x + 2, y + height + 2, tail);
+  S(x, middle, shield === 'bone' ? LEGEND[1] : LEGEND[0]);
+  if (shield === 'tower') {
+    S(x - 1, y, METAL[2]); S(x - 1, y + height, METAL[1]);
+  }
+  if (shield === 'buckler') S(x + 2, middle - 1, LEGEND[1]);
 }
 
 function drawProfile(S, R, x, y, shield, oc, tier) {
@@ -253,7 +330,8 @@ function drawProfile(S, R, x, y, shield, oc, tier) {
     S(x, y, METAL[2]); S(x, y + height - 1, METAL[1]);
   }
   if (shield === 'buckler') S(x + 2, y + 1, METAL[2]);
-  if (tier === 'tier2') drawTier2Profile(S, R, x, y, shield);
+  if (tier === 'tier2' || tier === 'tier3') drawTier2Profile(S, R, x, y, shield);
+  if (tier === 'tier3') drawTier3Profile(S, R, x, y, shield);
 }
 
 function shieldRig(p, d) {
