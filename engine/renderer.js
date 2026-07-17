@@ -1413,6 +1413,7 @@ function buildHumanoidC(spec) {
       detail: spec.faceDetail || 'none',
       sideWeaponOffset: 3,
       weaponFollowRig: true,
+      enhancedHilts: true,
     };
   }
   const fam = find(ENEMIES, spec.family);

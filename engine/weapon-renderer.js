@@ -15,6 +15,60 @@ function weaponAnchors(C) {
   };
 }
 
+function drawVerticalHilt(S, R, x, guardY, {
+  bladeBelow = false,
+  guardSize = 3,
+  gripSize = 2,
+  style = 'cross',
+} = {}) {
+  const dir = bladeBelow ? -1 : 1;
+  const guardX = x - Math.floor(guardSize / 2);
+  R(guardX, guardY, guardSize, 1, GOLD[0]);
+  S(guardX, guardY, GOLD[2]); S(guardX + guardSize - 1, guardY, GOLD[1]);
+  for (let step = 1; step <= gripSize; step++) {
+    S(x, guardY + dir * step, step % 2 ? WOOD[1] : WOOD[0]);
+  }
+  const pommelY = guardY + dir * (gripSize + 1);
+  S(x, pommelY, GOLD[1]);
+
+  if (style === 'greatsword') {
+    S(x - 1, pommelY, GOLD[0]); S(x + 1, pommelY, GOLD[0]);
+  }
+  if (style === 'scimitar') {
+    S(x + 1, guardY + dir, GOLD[0]); S(x + 1, guardY + dir * 2, GOLD[1]);
+  }
+  if (style === 'rapier') {
+    S(x - 1, guardY + dir, GOLD[0]); S(x + 1, guardY + dir, GOLD[0]);
+    S(x - 1, guardY + dir * 2, GOLD[1]); S(x + 1, guardY + dir * 2, GOLD[1]);
+  }
+}
+
+function drawHorizontalHilt(S, R, guardX, y, {
+  guardSize = 3,
+  gripSize = 2,
+  style = 'cross',
+} = {}) {
+  const guardY = y - Math.floor(guardSize / 2);
+  R(guardX, guardY, 1, guardSize, GOLD[0]);
+  S(guardX, guardY, GOLD[2]); S(guardX, guardY + guardSize - 1, GOLD[1]);
+  for (let step = 1; step <= gripSize; step++) {
+    S(guardX - step, y, step % 2 ? WOOD[1] : WOOD[0]);
+  }
+  const pommelX = guardX - gripSize - 1;
+  S(pommelX, y, GOLD[1]);
+
+  if (style === 'greatsword') {
+    S(pommelX, y - 1, GOLD[0]); S(pommelX, y + 1, GOLD[0]);
+  }
+  if (style === 'scimitar') {
+    S(guardX - 1, y + 1, GOLD[0]); S(guardX - 2, y + 1, GOLD[1]);
+  }
+  if (style === 'rapier') {
+    S(guardX - 1, y - 1, GOLD[0]); S(guardX - 1, y + 1, GOLD[0]);
+    S(guardX - 2, y - 1, GOLD[1]); S(guardX - 2, y + 1, GOLD[1]);
+  }
+}
+
 export function drawWeapon(S, R, d, p, C, u) {
   const w = C.weapon;
   const ph = p.wep; // hold | wind | strike | recover
@@ -25,18 +79,33 @@ export function drawWeapon(S, R, d, p, C, u) {
   // ---- existing compatibility set ----
   if (w === 'sword' || w === 'dagger') {
     const len = w === 'sword' ? 6 : 3;
+    const gripSize = w === 'sword' ? 2 : 1;
     if (d === 'down') {
-      if (strike) { R(17, 15, 1, len, METAL[0]); S(17, 15 + len - 1, METAL[2]); R(16, 14, 3, 1, GOLD[0]); }
-      else if (wind) { R(17, 12 - len, 1, len, METAL[0]); S(17, 12 - len, METAL[2]); R(16, 12, 3, 1, GOLD[0]); }
-      else { R(17, 13 - len, 1, len, METAL[0]); S(17, 13 - len, METAL[2]); R(16, 13, 3, 1, GOLD[0]); }
+      const guardY = strike ? 14 : wind ? 12 : 13;
+      if (strike) { R(17, 15, 1, len, METAL[0]); S(17, 15 + len - 1, METAL[2]); }
+      else if (wind) { R(17, 12 - len, 1, len, METAL[0]); S(17, 12 - len, METAL[2]); }
+      else { R(17, 13 - len, 1, len, METAL[0]); S(17, 13 - len, METAL[2]); }
+      if (C.enhancedHilts) drawVerticalHilt(S, R, 17, guardY, { bladeBelow: strike, gripSize });
+      else R(16, guardY, 3, 1, GOLD[0]);
     } else if (d === 'up') {
-      if (strike) { R(6, 12 - len - 4, 1, len + 2, METAL[0]); S(6, 12 - len - 4, METAL[2]); R(5, 10, 3, 1, GOLD[0]); }
-      else if (wind) { R(6, 15, 1, len, METAL[0]); R(5, 14, 3, 1, GOLD[0]); }
-      else { R(6, 8, 1, len, METAL[0]); S(6, 8, METAL[2]); R(5, 8 + len, 3, 1, GOLD[0]); }
+      const guardY = strike ? 10 : wind ? 14 : 8 + len;
+      if (strike) { R(6, 12 - len - 4, 1, len + 2, METAL[0]); S(6, 12 - len - 4, METAL[2]); }
+      else if (wind) { R(6, 15, 1, len, METAL[0]); }
+      else { R(6, 8, 1, len, METAL[0]); S(6, 8, METAL[2]); }
+      if (C.enhancedHilts) drawVerticalHilt(S, R, 6, guardY, { gripSize });
+      else R(5, guardY, 3, 1, GOLD[0]);
     } else {
-      if (strike) { R(15, 13, len + 2, 1, METAL[0]); S(15 + len + 1, 13, METAL[2]); R(15, 12, 1, 3, GOLD[0]); }
-      else if (wind) { R(sideX, 11 - len, 1, len, METAL[0]); S(sideX, 11 - len, METAL[2]); R(sideX - 1, 11, 3, 1, GOLD[0]); }
-      else { R(sideX, 14 - len, 1, len, METAL[0]); S(sideX, 14 - len, METAL[2]); R(sideX - 1, 14, 3, 1, GOLD[0]); }
+      if (strike) {
+        R(15, 13, len + 2, 1, METAL[0]); S(15 + len + 1, 13, METAL[2]);
+        if (C.enhancedHilts) drawHorizontalHilt(S, R, 15, 13, { gripSize });
+        else R(15, 12, 1, 3, GOLD[0]);
+      } else {
+        const guardY = wind ? 11 : 14;
+        if (wind) { R(sideX, 11 - len, 1, len, METAL[0]); S(sideX, 11 - len, METAL[2]); }
+        else { R(sideX, 14 - len, 1, len, METAL[0]); S(sideX, 14 - len, METAL[2]); }
+        if (C.enhancedHilts) drawVerticalHilt(S, R, sideX, guardY, { gripSize });
+        else R(sideX - 1, guardY, 3, 1, GOLD[0]);
+      }
     }
   }
 
@@ -119,52 +188,64 @@ export function drawWeapon(S, R, d, p, C, u) {
   if (w === 'greatsword') {
     if (d === 'down') {
       const bladeY = strike ? 14 : wind ? 2 : 4;
+      const guardY = strike ? 13 : wind ? 11 : 13;
       R(downX - 1, bladeY, 2, 9, METAL[0]); S(downX - 1, bladeY, METAL[2]);
-      R(downX - 2, strike ? 13 : wind ? 11 : 13, 5, 1, GOLD[0]);
+      drawVerticalHilt(S, R, downX, guardY, { bladeBelow: strike, guardSize: 5, gripSize: 3, style: 'greatsword' });
     } else if (d === 'up') {
       const bladeY = strike ? 0 : 5;
+      const guardY = strike ? 10 : 14;
       R(upX - 1, bladeY, 2, strike ? 10 : 9, METAL[0]); S(upX - 1, bladeY, METAL[2]);
-      R(upX - 2, strike ? 10 : 14, 5, 1, GOLD[0]);
+      drawVerticalHilt(S, R, upX, guardY, { guardSize: 5, gripSize: 3, style: 'greatsword' });
     } else if (strike) {
-      R(14, 12, 9, 2, METAL[0]); S(22, 12, METAL[2]); R(14, 11, 1, 4, GOLD[0]);
+      R(14, 12, 9, 2, METAL[0]); S(22, 12, METAL[2]);
+      drawHorizontalHilt(S, R, 14, 13, { guardSize: 5, gripSize: 3, style: 'greatsword' });
     } else {
       const bladeY = wind ? 1 : 4;
+      const guardY = wind ? 11 : 14;
       R(sideX - 1, bladeY, 2, 10, METAL[0]); S(sideX - 1, bladeY, METAL[2]);
-      R(sideX - 2, wind ? 11 : 14, 5, 1, GOLD[0]);
+      drawVerticalHilt(S, R, sideX, guardY, { guardSize: 5, gripSize: 3, style: 'greatsword' });
     }
   }
 
   if (w === 'scimitar') {
     if (d === 'down') {
       const bladeY = strike ? 15 : wind ? 6 : 8;
+      const guardY = strike ? 14 : wind ? 11 : 13;
       R(downX, bladeY, 1, 5, METAL[0]); S(downX - 1, strike ? 20 : bladeY - 1, METAL[2]);
-      R(downX - 1, strike ? 14 : wind ? 11 : 13, 3, 1, GOLD[0]);
+      drawVerticalHilt(S, R, downX, guardY, { bladeBelow: strike, style: 'scimitar' });
     } else if (d === 'up') {
+      const guardY = strike ? 9 : 14;
       R(upX, strike ? 2 : 8, 1, 6, METAL[0]); S(upX - 1, strike ? 1 : 7, METAL[2]);
-      R(upX - 1, strike ? 9 : 14, 3, 1, GOLD[0]);
+      drawVerticalHilt(S, R, upX, guardY, { style: 'scimitar' });
     } else if (strike) {
-      R(15, 13, 7, 1, METAL[0]); S(22, 12, METAL[2]); R(15, 12, 1, 3, GOLD[0]);
+      R(15, 13, 7, 1, METAL[0]); S(22, 12, METAL[2]);
+      drawHorizontalHilt(S, R, 15, 13, { style: 'scimitar' });
     } else {
       const bladeY = wind ? 6 : 8;
+      const guardY = wind ? 11 : 13;
       R(sideX, bladeY, 1, 5, METAL[0]); S(sideX + 1, bladeY - 1, METAL[2]);
-      R(sideX - 1, wind ? 11 : 13, 3, 1, GOLD[0]);
+      drawVerticalHilt(S, R, sideX, guardY, { style: 'scimitar' });
     }
   }
 
   if (w === 'rapier') {
     if (d === 'down') {
       const bladeY = strike ? 15 : wind ? 4 : 6;
+      const guardY = strike ? 14 : wind ? 11 : 13;
       R(downX, bladeY, 1, 7, METAL[2]); S(downX, strike ? 21 : bladeY, '#f4f4f4');
-      R(downX - 1, strike ? 14 : wind ? 11 : 13, 3, 1, GOLD[0]); S(downX - 1, strike ? 13 : wind ? 10 : 12, GOLD[0]);
+      drawVerticalHilt(S, R, downX, guardY, { bladeBelow: strike, style: 'rapier' });
     } else if (d === 'up') {
+      const guardY = strike ? 9 : 14;
       R(upX, strike ? 1 : 7, 1, 7, METAL[2]); S(upX, strike ? 0 : 7, '#f4f4f4');
-      R(upX - 1, strike ? 9 : 14, 3, 1, GOLD[0]);
+      drawVerticalHilt(S, R, upX, guardY, { style: 'rapier' });
     } else if (strike) {
-      R(15, 13, 8, 1, METAL[2]); S(22, 13, '#f4f4f4'); R(15, 12, 1, 3, GOLD[0]);
+      R(15, 13, 8, 1, METAL[2]); S(22, 13, '#f4f4f4');
+      drawHorizontalHilt(S, R, 15, 13, { style: 'rapier' });
     } else {
       const bladeY = wind ? 4 : 6;
+      const guardY = wind ? 11 : 13;
       R(sideX, bladeY, 1, 7, METAL[2]); S(sideX, bladeY, '#f4f4f4');
-      R(sideX - 1, wind ? 11 : 13, 3, 1, GOLD[0]);
+      drawVerticalHilt(S, R, sideX, guardY, { style: 'rapier' });
     }
   }
 

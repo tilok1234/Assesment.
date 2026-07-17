@@ -156,6 +156,7 @@ check(engine.WEAPONS.length === 16, 'the validated weapon catalog must contain s
 check(engine.WEAPONS.every((weapon) => typeof weapon.category === 'string'), 'every weapon must declare a content category');
 check(runtimeSources['engine/renderer.js'].includes("from './weapon-renderer.js'"), 'humanoid rendering must use the focused weapon renderer');
 check(runtimeSources['engine/renderer.js'].includes('weaponFollowRig: true'), 'player weapons must follow the animated humanoid hand rig');
+check(runtimeSources['engine/renderer.js'].includes('enhancedHilts: true'), 'player blade weapons must use readable wrapped grips and pommels');
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
 check(packageJson.scripts?.build === 'node tools/build.mjs', 'package.json must expose the production build command');
