@@ -79,6 +79,11 @@ function drawHumanoid(g, d, p, C) {
   const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
   const S = (x, y, c) => g.set(x + ox, y + oy, c);
   const R = (x, y, w, h, c) => g.rect(x + ox, y + oy, w, h, c);
+  // Player weapons share the animated hand's idle bob and walk swing. Attack geometry already
+  // encodes wind/strike/recover offsets and still inherits the humanoid lunge through S/R.
+  const weaponRigY = C.weaponFollowRig ? u + (p.wep === 'hold' ? p.arm : 0) : 0;
+  const weaponS = (x, y, c) => S(x, y + weaponRigY, c);
+  const weaponR = (x, y, w, h, c) => R(x, y + weaponRigY, w, h, c);
 
   const skin = C.skin, oc = C.oc, hair = C.hair;
   const gear = C.gear || 'none';
@@ -89,7 +94,7 @@ function drawHumanoid(g, d, p, C) {
   const eyeC = C.eye || INK;
 
   // ---- weapon (behind for up-facing) ----
-  if (d === 'up' && C.weapon && C.weapon !== 'none') drawWeapon(S, R, d, p, C, u);
+  if (d === 'up' && C.weapon && C.weapon !== 'none') drawWeapon(weaponS, weaponR, d, p, C, u);
 
   // ---- shield slung on back (side view) ----
   if (d === 'right' && C.shield && C.shield !== 'none') {
@@ -209,7 +214,8 @@ function drawHumanoid(g, d, p, C) {
     armDU(6, d === 'down' ? armOffL : armOffR);
     armDU(16, d === 'down' ? armOffR : armOffL);
   } else {
-    const off = p.arm;
+    let off = p.arm;
+    if (C.weaponFollowRig && p.wep === 'wind') off = -1;
     R(12, BT + u + off, 2, 3, sleeveC[0]);
     R(12, BT + u + off + 3, 2, 2, C.bone ? BONE[0] : skin[0]);
     S(12, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
@@ -379,7 +385,7 @@ function drawHumanoid(g, d, p, C) {
   }
 
   // ---- weapon (in front) ----
-  if (C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(S, R, d, p, C, u);
+  if (C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(weaponS, weaponR, d, p, C, u);
 }
 
 function drawFacialDetail(S, R, d, u, HT, detail, hair, skin, outfit, eye) {
@@ -1406,6 +1412,7 @@ function buildHumanoidC(spec) {
       face: 'human',
       detail: spec.faceDetail || 'none',
       sideWeaponOffset: 3,
+      weaponFollowRig: true,
     };
   }
   const fam = find(ENEMIES, spec.family);

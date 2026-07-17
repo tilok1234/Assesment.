@@ -210,9 +210,9 @@ export function drawWeapon(S, R, d, p, C, u) {
       R(6, 8, 1, 7, METAL[1]);
       if (strike) { R(6, 2, 1, 6, WOOD[0]); S(6, 1, METAL[2]); }
     } else {
-      R(15, 11, 5, 3, WOOD[0]); R(16, 9, 1, 7, STRINGC);
-      R(18, 13, 4, 1, METAL[1]);
-      if (strike) { R(20, 13, 3, 1, WOOD[0]); S(23, 13, METAL[2]); }
+      R(sideX - 1, 11, 5, 3, WOOD[0]); R(sideX, 9, 1, 7, STRINGC);
+      R(sideX + 1, 13, 4, 1, METAL[1]);
+      if (strike) { R(sideX + 3, 13, 3, 1, WOOD[0]); S(sideX + 6, 13, METAL[2]); }
     }
   }
 
@@ -240,8 +240,8 @@ export function drawWeapon(S, R, d, p, C, u) {
       R(5, 11, 4, 4, BOOK[0]); R(8, 11, 1, 4, BOOK[1]); R(5, 12, 1, 2, BOOK[2]); S(7, 12, BOOK[3]);
       if (strike) { S(7, 8, BOOK[3]); S(9, 6, MAGIC[2]); S(5, 7, MAGIC[1]); }
     } else {
-      R(15, 11, 4, 4, BOOK[0]); R(15, 11, 1, 4, BOOK[1]); R(18, 12, 1, 2, BOOK[2]); S(16, 12, BOOK[3]);
-      if (strike) { S(20, 12, BOOK[3]); S(21, 10, MAGIC[2]); S(22, 13, MAGIC[1]); }
+      R(sideX - 1, 11, 4, 4, BOOK[0]); R(sideX - 1, 11, 1, 4, BOOK[1]); R(sideX + 2, 12, 1, 2, BOOK[2]); S(sideX, 12, BOOK[3]);
+      if (strike) { S(sideX + 3, 12, BOOK[3]); S(sideX + 4, 10, MAGIC[2]); S(sideX + 5, 13, MAGIC[1]); }
     }
   }
 }
