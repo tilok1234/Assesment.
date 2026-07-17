@@ -113,6 +113,14 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
     return;
   }
   const includeEquipment = renderLayer === 'complete';
+  const includeFullBody = renderLayer === 'complete' || renderLayer === 'body';
+  const includeOutfitBack = includeFullBody || renderLayer === 'outfit-back';
+  const includeOutfit = includeFullBody || renderLayer === 'outfit';
+  const includeSkinBody = includeFullBody || renderLayer === 'skin-body';
+  const includeHead = includeFullBody || renderLayer === 'head';
+  const includeFaceDetail = includeFullBody || renderLayer === 'face-detail';
+  const includeHair = includeFullBody || renderLayer === 'hair';
+  const includeHeadgear = includeFullBody || renderLayer === 'headgear';
 
   // ---- weapon (behind for up-facing) ----
   if (includeEquipment && d === 'up' && C.weapon && C.weapon !== 'none') drawWeapon(weaponS, weaponR, d, p, C, u);
@@ -120,14 +128,14 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   if (includeEquipment) drawShield(S, R, d, p, C, u, 'behind');
 
   // ---- cape behind (side view) ----
-  if (outfit === 'cape' && d === 'right') {
+  if (includeOutfitBack && outfit === 'cape' && d === 'right') {
     const sway = p.leg !== 0 ? 1 : 0;
     R(7 - sway, 12 + u, 2, 6, oc[0]);
     R(7 - sway, 17 + u, 2, 1, oc[1]);
   }
 
   // ---- legs ----
-  if (!robe) {
+  if (includeOutfit && !robe) {
     if (d === 'down' || d === 'up') {
       const legDU = (x0, raised) => {
         if (raised) {
@@ -156,14 +164,14 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
       legS(back, true);
       legS(front, false);
     }
-  } else {
+  } else if (includeOutfit) {
     // robe: boots peeking
     if (d === 'right') { R(10, 20, 2, 2, BOOTS[1]); R(13, 20, 2, 2, BOOTS[0]); }
     else { R(9, 20, 2, 2, BOOTS[0]); R(13, 20, 2, 2, BOOTS[0]); }
   }
 
   // ---- harpy wings (behind torso) ----
-  if (C.wings) {
+  if (includeFullBody && C.wings) {
     const w0 = C.wings[0], w1 = C.wings[1];
     const wu = u - (p.leg !== 0 ? 1 : 0);
     if (d === 'down' || d === 'up') {
@@ -175,40 +183,42 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   }
 
   // ---- torso ----
-  const torsoC = outfit === 'plate' ? METAL : (outfit === 'cape' || outfit === 'leather' ? CREAM : oc);
-  if (d === 'right') {
-    const tw = 6, tx = 9;
-    if (robe) {
-      R(tx, BT + u, tw, 19 - (BT + u) + 1, oc[0]);
-      R(tx, 19, tw, 1, oc[1]);
-      R(tx, BT + u, 1, 8 - u, oc[1]);
-    } else {
-      R(tx, BT + u, tw, 17 - (BT + u), torsoC[0]);
-      if (outfit === 'leather') R(tx + 2, BT + u, 3, 17 - (BT + u), WOOD[0]);
-      R(tx, 17, tw, 1, outfit === 'plate' ? METAL[1] : PANTS[1]);
-    }
-  } else {
-    if (robe) {
-      R(8, BT + u, 8, 19 - (BT + u) + 1, oc[0]);
-      R(8, 19, 8, 1, oc[1]);
-      if (d === 'down') { S(11, 19, GOLD[0]); S(12, 19, GOLD[0]); }
-    } else {
-      R(8, BT + u, 8, 17 - (BT + u), torsoC[0]);
-      if (outfit === 'leather') R(10, BT + u, 4, 17 - (BT + u), WOOD[0]);
-      if (outfit === 'plate' && d === 'down') { S(9, BT + u + 1, METAL[2]); S(10, BT + u + 1, METAL[2]); }
-      if (C.bone && d === 'down') {
-        // ribcage
-        R(9, 13 + u, 6, 1, BONE[0]); R(9, 15 + u, 6, 1, BONE[0]);
-        R(9, 14 + u, 6, 1, INK); R(9, 16 + u, 6, 1, INK);
-        S(11, 14 + u, BONE[1]); S(12, 16 + u, BONE[1]);
+  if (includeOutfit) {
+    const torsoC = outfit === 'plate' ? METAL : (outfit === 'cape' || outfit === 'leather' ? CREAM : oc);
+    if (d === 'right') {
+      const tw = 6, tx = 9;
+      if (robe) {
+        R(tx, BT + u, tw, 19 - (BT + u) + 1, oc[0]);
+        R(tx, 19, tw, 1, oc[1]);
+        R(tx, BT + u, 1, 8 - u, oc[1]);
+      } else {
+        R(tx, BT + u, tw, 17 - (BT + u), torsoC[0]);
+        if (outfit === 'leather') R(tx + 2, BT + u, 3, 17 - (BT + u), WOOD[0]);
+        R(tx, 17, tw, 1, outfit === 'plate' ? METAL[1] : PANTS[1]);
       }
-      R(8, 17, 8, 1, outfit === 'plate' ? METAL[1] : PANTS[1]);
-      if (d === 'down' && !C.bone) { S(11, 17, GOLD[0]); S(12, 17, GOLD[0]); }
+    } else {
+      if (robe) {
+        R(8, BT + u, 8, 19 - (BT + u) + 1, oc[0]);
+        R(8, 19, 8, 1, oc[1]);
+        if (d === 'down') { S(11, 19, GOLD[0]); S(12, 19, GOLD[0]); }
+      } else {
+        R(8, BT + u, 8, 17 - (BT + u), torsoC[0]);
+        if (outfit === 'leather') R(10, BT + u, 4, 17 - (BT + u), WOOD[0]);
+        if (outfit === 'plate' && d === 'down') { S(9, BT + u + 1, METAL[2]); S(10, BT + u + 1, METAL[2]); }
+        if (C.bone && d === 'down') {
+          // ribcage
+          R(9, 13 + u, 6, 1, BONE[0]); R(9, 15 + u, 6, 1, BONE[0]);
+          R(9, 14 + u, 6, 1, INK); R(9, 16 + u, 6, 1, INK);
+          S(11, 14 + u, BONE[1]); S(12, 16 + u, BONE[1]);
+        }
+        R(8, 17, 8, 1, outfit === 'plate' ? METAL[1] : PANTS[1]);
+        if (d === 'down' && !C.bone) { S(11, 17, GOLD[0]); S(12, 17, GOLD[0]); }
+      }
     }
   }
 
   // ---- cape covers back (up view) ----
-  if (outfit === 'cape' && d === 'up') {
+  if (includeOutfit && outfit === 'cape' && d === 'up') {
     R(8, BT + u, 8, 19 - (BT + u), oc[0]);
     R(8, 18, 8, 1, oc[1]);
     S(9, 19, oc[1]); S(11, 19, oc[1]); S(13, 19, oc[1]);
@@ -218,12 +228,16 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   const sleeveC = C.bone ? BONE : (outfit === 'plate' ? METAL : (outfit === 'cape' || outfit === 'leather' ? CREAM : oc));
   if (d === 'down' || d === 'up') {
     const armDU = (x0, off) => {
-      R(x0, BT + u + off, 2, 3, sleeveC[0]);
-      if (outfit === 'plate') R(x0, BT + u + off, 2, 1, METAL[2]);
-      R(x0, BT + u + off + 3, 2, 2, C.bone ? BONE[0] : skin[0]);
-      S(x0, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
-      S(x0 + 1, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
-      if (C.bone) S(x0, BT + u + off + 2, INK);
+      if (includeOutfit) {
+        R(x0, BT + u + off, 2, 3, sleeveC[0]);
+        if (outfit === 'plate') R(x0, BT + u + off, 2, 1, METAL[2]);
+        if (C.bone) S(x0, BT + u + off + 2, INK);
+      }
+      if (includeSkinBody) {
+        R(x0, BT + u + off + 3, 2, 2, C.bone ? BONE[0] : skin[0]);
+        S(x0, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
+        S(x0 + 1, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
+      }
     };
     let armOffL = -p.arm, armOffR = p.arm;
     if (p.wep === 'wind') armOffR = -1;
@@ -233,55 +247,63 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   } else {
     let off = p.arm;
     if (C.weaponFollowRig && p.wep === 'wind') off = -1;
-    R(12, BT + u + off, 2, 3, sleeveC[0]);
-    R(12, BT + u + off + 3, 2, 2, C.bone ? BONE[0] : skin[0]);
-    S(12, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
-    S(13, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
+    if (includeOutfit) R(12, BT + u + off, 2, 3, sleeveC[0]);
+    if (includeSkinBody) {
+      R(12, BT + u + off + 3, 2, 2, C.bone ? BONE[0] : skin[0]);
+      S(12, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
+      S(13, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
+    }
   }
 
   // ---- neck ----
-  S(11, BT - 1 + u, C.bone ? BONE[1] : skin[1]);
-  S(12, BT - 1 + u, C.bone ? BONE[1] : skin[1]);
+  if (includeSkinBody) {
+    S(11, BT - 1 + u, C.bone ? BONE[1] : skin[1]);
+    S(12, BT - 1 + u, C.bone ? BONE[1] : skin[1]);
+  }
 
   // ---- head ----
   const hx = d === 'right' ? 9 : 8;
   const faceShade = gearDef.shade;
   const headSkin = C.bone ? BONE : skin;
   const headBase = faceShade ? headSkin[1] : headSkin[0];
-  R(hx, HT + u, 8, 8, headBase);
-  R(hx, HT + u + 7, 8, 1, headSkin[1]);
+  if (includeHead) {
+    R(hx, HT + u, 8, 8, headBase);
+    R(hx, HT + u + 7, 8, 1, headSkin[1]);
+  }
 
   // ---- face ----
   if (!gearDef.hideAll) {
-    if (d === 'down') {
-      if (C.face === 'skull') {
-        S(10, HT + u + 4, INK); S(10, HT + u + 5, INK);
-        S(13, HT + u + 4, INK); S(13, HT + u + 5, INK);
-        if (C.eye) { S(10, HT + u + 4, eyeC); S(13, HT + u + 4, eyeC); }
-        S(11, HT + u + 6, INK);
-        S(10, HT + u + 7, INK); S(12, HT + u + 7, INK); S(14, HT + u + 7, INK);
-      } else if (C.face === 'cyclops') {
-        R(11, HT + u + 4, 2, 2, '#f4f4f4');
-        S(11, HT + u + 5, eyeC); S(12, HT + u + 5, eyeC);
-      } else if (C.face === 'zombie') {
-        S(10, HT + u + 5, eyeC); S(13, HT + u + 4, eyeC); S(13, HT + u + 5, skin[1]);
-        S(11, HT + u + 6, skin[1]); S(12, HT + u + 6, skin[1]);
-      } else {
-        S(10, HT + u + 5, eyeC); S(13, HT + u + 5, eyeC);
-        if (C.face === 'goblin' || C.face === 'imp') { S(10, HT + u + 4, skin[1]); S(13, HT + u + 4, skin[1]); }
-      }
-    } else if (d === 'right') {
-      if (C.face === 'skull') {
-        S(14, HT + u + 4, INK); S(14, HT + u + 5, INK);
-        S(13, HT + u + 7, INK); S(15, HT + u + 7, INK);
-      } else if (C.face === 'cyclops') {
-        R(14, HT + u + 4, 2, 2, '#f4f4f4');
-        S(15, HT + u + 5, eyeC);
-      } else {
-        S(14, HT + u + 5, eyeC);
+    if (includeHead) {
+      if (d === 'down') {
+        if (C.face === 'skull') {
+          S(10, HT + u + 4, INK); S(10, HT + u + 5, INK);
+          S(13, HT + u + 4, INK); S(13, HT + u + 5, INK);
+          if (C.eye) { S(10, HT + u + 4, eyeC); S(13, HT + u + 4, eyeC); }
+          S(11, HT + u + 6, INK);
+          S(10, HT + u + 7, INK); S(12, HT + u + 7, INK); S(14, HT + u + 7, INK);
+        } else if (C.face === 'cyclops') {
+          R(11, HT + u + 4, 2, 2, '#f4f4f4');
+          S(11, HT + u + 5, eyeC); S(12, HT + u + 5, eyeC);
+        } else if (C.face === 'zombie') {
+          S(10, HT + u + 5, eyeC); S(13, HT + u + 4, eyeC); S(13, HT + u + 5, skin[1]);
+          S(11, HT + u + 6, skin[1]); S(12, HT + u + 6, skin[1]);
+        } else {
+          S(10, HT + u + 5, eyeC); S(13, HT + u + 5, eyeC);
+          if (C.face === 'goblin' || C.face === 'imp') { S(10, HT + u + 4, skin[1]); S(13, HT + u + 4, skin[1]); }
+        }
+      } else if (d === 'right') {
+        if (C.face === 'skull') {
+          S(14, HT + u + 4, INK); S(14, HT + u + 5, INK);
+          S(13, HT + u + 7, INK); S(15, HT + u + 7, INK);
+        } else if (C.face === 'cyclops') {
+          R(14, HT + u + 4, 2, 2, '#f4f4f4');
+          S(15, HT + u + 5, eyeC);
+        } else {
+          S(14, HT + u + 5, eyeC);
+        }
       }
     }
-    if (C.face === 'human' && C.detail && C.detail !== 'none') {
+    if (includeFaceDetail && C.face === 'human' && C.detail && C.detail !== 'none') {
       drawFacialDetail(S, R, d, u, HT, C.detail, hair, skin, oc, eyeC);
     }
   }
@@ -370,7 +392,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   }
 
   // ---- beard ----
-  if (C.beard && !gearDef.hideAll) {
+  if (includeHead && C.beard && !gearDef.hideAll) {
     const bc = C.beard;
     if (d === 'down') {
       R(9, HT + u + 6, 6, 2, bc[0]);
@@ -383,17 +405,17 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   }
 
   // ---- hair ----
-  if (!C.bone && !gearDef.hideAll && C.hairStyle && C.hairStyle !== 'bald') {
+  if (includeHair && !C.bone && !gearDef.hideAll && C.hairStyle && C.hairStyle !== 'bald') {
     drawHair(S, R, d, u, HT, hx, C.hairStyle, hair, gearDef.hideTop);
   }
 
   // ---- back of head for up view (hair or skin already ok; bald keeps skin) ----
-  if (d === 'up' && !C.bone && !gearDef.hideAll && (C.hairStyle === 'bald' || !C.hairStyle)) {
+  if (includeHead && d === 'up' && !C.bone && !gearDef.hideAll && (C.hairStyle === 'bald' || !C.hairStyle)) {
     R(hx, HT + u, 8, 2, headSkin[0]);
   }
 
   // ---- headgear ----
-  if (gear !== 'none') drawGear(S, R, d, u, HT, hx, gear, oc, C);
+  if (includeHeadgear && gear !== 'none') drawGear(S, R, d, u, HT, hx, gear, oc, C);
 
   if (includeEquipment) drawShield(S, R, d, p, C, u, 'front');
 

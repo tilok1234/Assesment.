@@ -1,16 +1,12 @@
 import * as E from './sprite-engine.js';
 import {
-  buildMasterCharacterKitPlan,
-  buildMasterRosterKitPlan,
-  masterCharacterKitCounts,
-  masterRosterKitCounts,
-  MASTER_CHARACTER_KIT_FORMAT,
-  MASTER_CHARACTER_KIT_LAYER_ORDER,
+  buildCompleteCharacterKitPlan,
+  completeCharacterKitCounts,
+  COMPLETE_CHARACTER_KIT_FORMAT,
+  COMPLETE_CHARACTER_KIT_LAYER_ORDER,
+  COMPLETE_CHARACTER_KIT_RECIPE_LIMIT,
+  COMPLETE_CHARACTER_KIT_VERSION,
   MASTER_CHARACTER_KIT_SCALE,
-  MASTER_CHARACTER_KIT_VERSION,
-  MASTER_ROSTER_KIT_FORMAT,
-  MASTER_ROSTER_KIT_LIMIT,
-  MASTER_ROSTER_KIT_VERSION,
 } from './character-kit.js';
 import { buildStoredZip } from './zip.js';
 
@@ -1407,20 +1403,20 @@ function renderPackControls() {
   elements.downloadPackButton.textContent = packExporting ? 'Building pack…' : 'Download pack ZIP';
 
   if (!playerCount) {
-    elements.packMasterKitSummary.textContent = `Add up to ${MASTER_ROSTER_KIT_LIMIT} player identities to build a shared Master Kit.`;
-  } else if (playerCount > MASTER_ROSTER_KIT_LIMIT) {
-    elements.packMasterKitSummary.textContent = `${playerCount} player identities · remove ${playerCount - MASTER_ROSTER_KIT_LIMIT} to reach the ${MASTER_ROSTER_KIT_LIMIT}-character limit.`;
+    elements.packMasterKitSummary.textContent = `Add up to ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} players as recipes for one shared component kit.`;
+  } else if (playerCount > COMPLETE_CHARACTER_KIT_RECIPE_LIMIT) {
+    elements.packMasterKitSummary.textContent = `${playerCount} player recipes · remove ${playerCount - COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} to reach the ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT}-recipe limit.`;
   } else {
-    const counts = masterRosterKitCounts(playerEntries);
-    elements.packMasterKitSummary.textContent = `${playerCount} / ${MASTER_ROSTER_KIT_LIMIT} player identities · ${counts.totalPngs} native shared-kit PNGs`;
+    const counts = completeCharacterKitCounts();
+    elements.packMasterKitSummary.textContent = `${playerCount} / ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} recipes · ${counts.componentPngs} unique components · ${counts.totalPngs} PNGs total`;
   }
   elements.downloadPackMasterKitButton.disabled = busy
     || masterKitExporting
     || playerCount === 0
-    || playerCount > MASTER_ROSTER_KIT_LIMIT;
+    || playerCount > COMPLETE_CHARACTER_KIT_RECIPE_LIMIT;
   elements.downloadPackMasterKitButton.textContent = rosterKitExporting && rosterKitProgress
     ? `Building ${rosterKitProgress.done} / ${rosterKitProgress.total}…`
-    : 'Download Pack Master Kit';
+    : 'Download Complete Kit + Recipes';
 }
 
 function setMasterKitStatus(message) {
@@ -1429,18 +1425,18 @@ function setMasterKitStatus(message) {
 
 function renderMasterKitControls() {
   if (state.mode !== 'player') {
-    elements.masterKitSummary.textContent = 'Switch to Player mode to build a master kit.';
+    elements.masterKitSummary.textContent = 'Switch to Player mode to add the current character as the reference recipe.';
     elements.downloadMasterKitButton.disabled = true;
-    elements.downloadMasterKitButton.textContent = 'Download Master Character Kit';
+    elements.downloadMasterKitButton.textContent = 'Download Complete Character Kit';
     return;
   }
 
-  const counts = masterCharacterKitCounts(state.player);
-  elements.masterKitSummary.textContent = `${counts.bodySheets} body/armor · ${counts.weaponLayers} weapon · ${counts.shieldLayers} shield layers · ${counts.totalPngs} PNGs`;
+  const counts = completeCharacterKitCounts();
+  elements.masterKitSummary.textContent = `${counts.componentPngs} unique component sheets · 1 reference · ${counts.totalPngs} PNGs`;
   elements.downloadMasterKitButton.disabled = masterKitExporting || rosterKitExporting;
   elements.downloadMasterKitButton.textContent = masterKitExporting && masterKitProgress
     ? `Building ${masterKitProgress.done} / ${masterKitProgress.total}…`
-    : 'Download Master Character Kit';
+    : 'Download Complete Character Kit';
 }
 
 function renderPaletteControls() {
@@ -1731,10 +1727,15 @@ function packAnimationContract() {
   });
 }
 
-function masterKitManifest(plan, name, exportedAt) {
+function withoutRenderSpec(entry) {
+  const { spec, ...manifestEntry } = entry;
+  return manifestEntry;
+}
+
+function completeCharacterKitManifest(plan, name, exportedAt) {
   return {
-    format: MASTER_CHARACTER_KIT_FORMAT,
-    version: MASTER_CHARACTER_KIT_VERSION,
+    format: COMPLETE_CHARACTER_KIT_FORMAT,
+    version: COMPLETE_CHARACTER_KIT_VERSION,
     name,
     exportedAt,
     exportScale: MASTER_CHARACTER_KIT_SCALE,
@@ -1744,106 +1745,94 @@ function masterKitManifest(plan, name, exportedAt) {
     sheet: {
       logicalWidth: E.SHEET_COLS * E.SIZE,
       logicalHeight: E.DIRS.length * E.SIZE,
-      width: E.SHEET_COLS * E.SIZE * MASTER_CHARACTER_KIT_SCALE,
-      height: E.DIRS.length * E.SIZE * MASTER_CHARACTER_KIT_SCALE,
+      width: E.SHEET_COLS * E.SIZE,
+      height: E.DIRS.length * E.SIZE,
       columns: E.SHEET_COLS,
       rows: E.DIRS.length,
       directions: [...E.DIRS],
       animations: packAnimationContract(),
     },
     layering: {
-      order: [...MASTER_CHARACTER_KIT_LAYER_ORDER],
-      instructions: 'Draw matching frame rectangles from back layers, then the body, then front layers.',
+      order: [...COMPLETE_CHARACTER_KIT_LAYER_ORDER],
+      instructions: 'Draw each non-null recipe component in this order using the same frame rectangle, direction row, and animation column.',
     },
-    identity: plan.identity,
-    defaultCharacter: plan.sourcePlayer,
-    defaultPreview: 'preview/default.png',
     counts: plan.counts,
-    colors: plan.colors,
-    bodies: plan.bodies.map(({ spec, ...entry }) => entry),
-    weapons: plan.weapons.map(({ spec, ...entry }) => entry),
-    shields: plan.shields.map(({ spec, ...entry }) => entry),
+    components: {
+      skinBodies: plan.components.skinBodies.map(withoutRenderSpec),
+      heads: plan.components.heads.map(withoutRenderSpec),
+      hair: plan.components.hair.map(withoutRenderSpec),
+      faceDetails: plan.components.faceDetails.map(withoutRenderSpec),
+      outfitBack: plan.components.outfitBack.map(withoutRenderSpec),
+      outfits: plan.components.outfits.map(withoutRenderSpec),
+      headgear: plan.components.headgear.map(withoutRenderSpec),
+      weapons: plan.components.weapons.map(withoutRenderSpec),
+      shields: plan.components.shields.map(withoutRenderSpec),
+    },
+    recipes: plan.recipes,
+    referencePreview: plan.reference.file,
   };
 }
 
-function masterKitReadme(name) {
-  return `${name} - Master Character Kit\n\n`
-    + 'All PNG files are native 1x sprite sheets with 24x24 frames.\n'
-    + 'Every sheet uses the same 12-column by 4-row animation layout.\n\n'
-    + 'Runtime draw order:\n'
-    + '1. weapon back\n'
-    + '2. shield back\n'
-    + '3. selected body / armor / headgear\n'
-    + '4. shield front\n'
-    + '5. weapon front\n\n'
-    + 'Use the same source rectangle, animation column, and direction row for every active layer.\n'
-    + 'Empty pixels in an equipment layer are intentional and preserve direction-aware occlusion.\n'
-    + 'See manifest.json for exact paths, choices, colors, animation timing, and the default character.\n';
+function completeCharacterKitReadme(name, recipeCount) {
+  return `${name} - Complete Character Kit\n\n`
+    + 'This archive is one deduplicated library of reusable character components.\n'
+    + `${recipeCount} saved character recipe${recipeCount === 1 ? '' : 's'} reference those shared files without duplicating artwork.\n`
+    + 'All PNG files are native 288x96 sprite sheets made from 24x24 frames.\n\n'
+    + 'Component groups:\n'
+    + '- skin-body: animated hands and neck for each skin tone\n'
+    + '- heads: normal and shaded animated heads for each skin tone\n'
+    + '- hair: each style and color, with full and under-headgear fits\n'
+    + '- face-details: only the color-dependent variants each detail needs\n'
+    + '- outfits: reusable front layers plus separate cape-back layers\n'
+    + '- headgear: color variants only where the art actually uses outfit colors\n'
+    + '- weapons and shields: direction-aware back/front animation layers\n\n'
+    + `Runtime draw order: ${COMPLETE_CHARACTER_KIT_LAYER_ORDER.join(' -> ')}.\n`
+    + 'Use the same source rectangle, animation column, and direction row for every active component.\n'
+    + 'Recipes in manifest.json are lightweight examples; change their component paths to craft new characters from this one library.\n'
+    + 'Custom palette values remain in recipe specs for games that support runtime recoloring.\n';
 }
 
-function masterRosterKitManifest(plan, name, exportedAt) {
-  return {
-    format: MASTER_ROSTER_KIT_FORMAT,
-    version: MASTER_ROSTER_KIT_VERSION,
-    name,
-    exportedAt,
-    exportScale: MASTER_CHARACTER_KIT_SCALE,
-    transparent: true,
-    bakedShadow: false,
-    logicalFrame: { width: E.SIZE, height: E.SIZE },
-    sheet: {
-      logicalWidth: E.SHEET_COLS * E.SIZE,
-      logicalHeight: E.DIRS.length * E.SIZE,
-      width: E.SHEET_COLS * E.SIZE * MASTER_CHARACTER_KIT_SCALE,
-      height: E.DIRS.length * E.SIZE * MASTER_CHARACTER_KIT_SCALE,
-      columns: E.SHEET_COLS,
-      rows: E.DIRS.length,
-      directions: [...E.DIRS],
-      animations: packAnimationContract(),
-    },
-    layering: {
-      order: [...MASTER_CHARACTER_KIT_LAYER_ORDER],
-      instructions: 'Choose one character body and draw matching frame rectangles from shared back layers, the body, then shared front layers.',
-    },
-    counts: plan.counts,
-    colors: plan.colors,
-    shared: {
-      weapons: plan.weapons.map(({ spec, ...entry }) => entry),
-      shields: plan.shields.map(({ spec, ...entry }) => entry),
-    },
-    characters: plan.characters.map((character) => ({
-      id: character.id,
-      sourceId: character.sourceId,
-      name: character.name,
-      identity: character.identity,
-      defaultCharacter: character.sourcePlayer,
-      defaultPreview: character.defaultPreview,
-      bodyRoot: character.bodyRoot,
-      bodies: character.bodies.map(({ spec, ...entry }) => entry),
-    })),
-  };
-}
-
-function masterRosterKitReadme(name, characterCount) {
-  return `${name} - Pack Master Kit\n\n`
-    + `${characterCount} player identities share one weapon and shield library.\n`
-    + 'All PNG files are native 1x sprite sheets with 24x24 frames.\n'
-    + 'Every sheet uses the same 12-column by 4-row animation layout.\n\n'
-    + 'Folder layout:\n'
-    + '- characters/<id>/bodies: identity-compatible armor, color, and headgear sheets\n'
-    + '- characters/<id>/preview/default.png: assembled reference loadout\n'
-    + '- shared/weapons: one back/front layer pair per weapon tier\n'
-    + '- shared/shields: one back/front layer pair per shield tier and color\n\n'
-    + 'Runtime draw order:\n'
-    + '1. shared weapon back\n'
-    + '2. shared shield back\n'
-    + '3. selected character body / armor / headgear\n'
-    + '4. shared shield front\n'
-    + '5. shared weapon front\n\n'
-    + 'Use the same source rectangle, animation column, and direction row for every active layer.\n'
-    + 'Body sheets stay character-specific so skin, hair, face, hands, armor, and headgear remain pixel-perfect.\n'
-    + 'Weapons and shields are rendered once and can be equipped by every character.\n'
-    + 'See manifest.json for exact paths, character specifications, choices, colors, and animation timing.\n';
+async function renderCompleteCharacterKitPngs(plan, zipEntries, advance) {
+  for (const entry of plan.components.skinBodies) {
+    await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
+    advance('Rendering skin-body components.');
+  }
+  for (const entry of plan.components.heads) {
+    await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
+    advance('Rendering head components.');
+  }
+  for (const entry of plan.components.hair) {
+    await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
+    advance('Rendering reusable hair components.');
+  }
+  for (const entry of plan.components.faceDetails) {
+    await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
+    advance('Rendering facial-detail components.');
+  }
+  for (const entry of plan.components.outfitBack) {
+    await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
+    advance('Rendering cape-back components.');
+  }
+  for (const entry of plan.components.outfits) {
+    await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
+    advance('Rendering outfit components.');
+  }
+  for (const entry of plan.components.headgear) {
+    await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
+    advance('Rendering headgear components.');
+  }
+  for (const entry of plan.components.weapons) {
+    await masterKitPng(zipEntries, entry.files.back, entry.spec, 'weapon-back');
+    advance('Rendering weapon components.');
+    await masterKitPng(zipEntries, entry.files.front, entry.spec, 'weapon-front');
+    advance('Rendering weapon components.');
+  }
+  for (const entry of plan.components.shields) {
+    await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
+    advance('Rendering shield components.');
+  }
+  await masterKitPng(zipEntries, plan.reference.file, plan.reference.spec, 'complete');
+  advance('Rendering the assembled reference character.');
 }
 
 async function masterKitPng(zipEntries, file, spec, layer) {
@@ -1860,9 +1849,14 @@ function updateMasterKitProgress(done, total, message) {
 async function downloadMasterCharacterKit() {
   if (masterKitExporting || rosterKitExporting || state.mode !== 'player') return;
   const player = sanitizePlayer(state.player);
-  const plan = buildMasterCharacterKitPlan(player);
   const characterName = sanitizeText(state.characterName, 48).trim()
     || E.describe({ kind: 'player', ...player }).replaceAll('-', ' ');
+  const plan = buildCompleteCharacterKitPlan([{
+    id: 'current-character',
+    name: characterName,
+    kind: 'player',
+    spec: player,
+  }]);
   const exportedAt = new Date().toISOString();
   const total = plan.counts.totalPngs;
   const zipEntries = [];
@@ -1873,49 +1867,30 @@ async function downloadMasterCharacterKit() {
   const advance = (message) => {
     done += 1;
     if (done === 1 || done === total || done % 10 === 0) {
-      updateMasterKitProgress(done, total, message);
+      updateMasterKitProgress(done, total, `${message} ${done} / ${total}`);
     }
   };
 
   try {
-    for (const entry of plan.bodies) {
-      await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
-      advance(`Rendering body and armor layers: ${done + 1} / ${total}`);
-    }
-    for (const entry of plan.weapons) {
-      await masterKitPng(zipEntries, entry.files.back, entry.spec, 'weapon-back');
-      advance(`Rendering weapon layers: ${done + 1} / ${total}`);
-      await masterKitPng(zipEntries, entry.files.front, entry.spec, 'weapon-front');
-      advance(`Rendering weapon layers: ${done + 1} / ${total}`);
-    }
-    for (const entry of plan.shields) {
-      await masterKitPng(zipEntries, entry.files.back, entry.spec, 'shield-back');
-      advance(`Rendering shield layers: ${done + 1} / ${total}`);
-      await masterKitPng(zipEntries, entry.files.front, entry.spec, 'shield-front');
-      advance(`Rendering shield layers: ${done + 1} / ${total}`);
-    }
-
-    await masterKitPng(zipEntries, 'preview/default.png', { kind: 'player', ...player }, 'complete');
-    advance(`Rendering assembled preview: ${done + 1} / ${total}`);
-
-    const manifest = masterKitManifest(plan, characterName, exportedAt);
+    await renderCompleteCharacterKitPngs(plan, zipEntries, advance);
+    const manifest = completeCharacterKitManifest(plan, `${characterName} Complete Kit`, exportedAt);
     zipEntries.push({
       name: 'manifest.json',
       data: new TextEncoder().encode(`${JSON.stringify(manifest, null, 2)}\n`),
     });
     zipEntries.push({
       name: 'README.txt',
-      data: new TextEncoder().encode(masterKitReadme(characterName)),
+      data: new TextEncoder().encode(completeCharacterKitReadme(`${characterName} Complete Kit`, plan.recipes.length)),
     });
 
-    updateMasterKitProgress(total, total, 'Packaging the master kit ZIP…');
+    updateMasterKitProgress(total, total, 'Packaging one deduplicated Complete Character Kit…');
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
-    const filename = `${packFilenameBase(characterName, 'character')}-master-kit.zip`;
+    const filename = `${packFilenameBase(characterName, 'character')}-complete-character-kit.zip`;
     triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    setMasterKitStatus(`Downloaded ${total} native PNGs for “${characterName}”.`);
+    setMasterKitStatus(`Downloaded ${plan.counts.componentPngs} unique components, one reference, and the “${characterName}” recipe.`);
   } catch (error) {
     console.error(error);
-    setMasterKitStatus('The master character kit could not be exported. Please try again.');
+    setMasterKitStatus('The Complete Character Kit could not be exported. Please try again.');
   } finally {
     masterKitExporting = false;
     masterKitProgress = null;
@@ -1935,15 +1910,15 @@ async function downloadPackMasterKit() {
     .map((entry) => sanitizePackEntry(entry))
     .filter((entry) => entry?.kind === 'player');
   if (!entries.length) {
-    setPackStatus('Add at least one player character before building a Pack Master Kit.');
+    setPackStatus('Add at least one player recipe before building a Complete Character Kit.');
     return;
   }
-  if (entries.length > MASTER_ROSTER_KIT_LIMIT) {
-    setPackStatus(`A Pack Master Kit supports up to ${MASTER_ROSTER_KIT_LIMIT} player identities.`);
+  if (entries.length > COMPLETE_CHARACTER_KIT_RECIPE_LIMIT) {
+    setPackStatus(`A Complete Character Kit supports up to ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} saved recipes.`);
     return;
   }
 
-  const plan = buildMasterRosterKitPlan(entries);
+  const plan = buildCompleteCharacterKitPlan(entries);
   const packName = sanitizeText(packLibrary.name, 64).trim() || 'Character Pack';
   const exportedAt = new Date().toISOString();
   const total = plan.counts.totalPngs;
@@ -1953,57 +1928,35 @@ async function downloadPackMasterKit() {
   rosterKitProgress = { done, total };
   renderPackControls();
   renderMasterKitControls();
-  updateRosterKitProgress(done, total, `Preparing ${entries.length} identities and ${total} native sprite sheets…`);
+  updateRosterKitProgress(done, total, `Preparing one shared component library and ${entries.length} lightweight recipes…`);
 
   const advance = (message) => {
     done += 1;
-    if (done === 1 || done === total || done % 25 === 0) {
-      updateRosterKitProgress(done, total, message);
+    if (done === 1 || done === total || done % 10 === 0) {
+      updateRosterKitProgress(done, total, `${message} ${done} / ${total}`);
     }
   };
 
   try {
-    for (const character of plan.characters) {
-      for (const body of character.bodies) {
-        await masterKitPng(zipEntries, body.file, body.spec, body.layer);
-        advance(`Rendering ${character.name} body choices: ${done + 1} / ${total}`);
-      }
-      await masterKitPng(zipEntries, character.defaultPreview, character.sourcePlayer, 'complete');
-      advance(`Rendering ${character.name} assembled preview: ${done + 1} / ${total}`);
-    }
-
-    for (const entry of plan.weapons) {
-      await masterKitPng(zipEntries, entry.files.back, entry.spec, 'weapon-back');
-      advance(`Rendering shared weapon layers: ${done + 1} / ${total}`);
-      await masterKitPng(zipEntries, entry.files.front, entry.spec, 'weapon-front');
-      advance(`Rendering shared weapon layers: ${done + 1} / ${total}`);
-    }
-
-    for (const entry of plan.shields) {
-      await masterKitPng(zipEntries, entry.files.back, entry.spec, 'shield-back');
-      advance(`Rendering shared shield layers: ${done + 1} / ${total}`);
-      await masterKitPng(zipEntries, entry.files.front, entry.spec, 'shield-front');
-      advance(`Rendering shared shield layers: ${done + 1} / ${total}`);
-    }
-
-    const manifest = masterRosterKitManifest(plan, packName, exportedAt);
+    await renderCompleteCharacterKitPngs(plan, zipEntries, advance);
+    const manifest = completeCharacterKitManifest(plan, packName, exportedAt);
     zipEntries.push({
       name: 'manifest.json',
       data: new TextEncoder().encode(`${JSON.stringify(manifest, null, 2)}\n`),
     });
     zipEntries.push({
       name: 'README.txt',
-      data: new TextEncoder().encode(masterRosterKitReadme(packName, entries.length)),
+      data: new TextEncoder().encode(completeCharacterKitReadme(packName, entries.length)),
     });
 
-    updateRosterKitProgress(total, total, 'Packaging the shared Pack Master Kit ZIP…');
+    updateRosterKitProgress(total, total, 'Packaging one deduplicated component library and its recipes…');
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
-    const filename = `${packFilenameBase(packName, 'character-pack')}-master-roster-kit.zip`;
+    const filename = `${packFilenameBase(packName, 'character-pack')}-complete-character-kit.zip`;
     triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    setPackStatus(`Downloaded ${entries.length} identities and ${total} native PNGs with one shared equipment library.`);
+    setPackStatus(`Downloaded ${plan.counts.componentPngs} unique components and ${entries.length} recipe${entries.length === 1 ? '' : 's'} with no repeated character artwork.`);
   } catch (error) {
     console.error(error);
-    setPackStatus('The Pack Master Kit could not be exported. Please try again.');
+    setPackStatus('The Complete Character Kit could not be exported. Please try again.');
   } finally {
     rosterKitExporting = false;
     rosterKitProgress = null;

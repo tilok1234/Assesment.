@@ -1,5 +1,7 @@
 import {
+  FACIAL_DETAILS,
   HAIR_COLORS,
+  HAIR_STYLES,
   HEADGEAR,
   OUTFITS,
   OUTFIT_COLORS,
@@ -24,6 +26,23 @@ export const MASTER_CHARACTER_KIT_LAYER_ORDER = [
 export const MASTER_ROSTER_KIT_FORMAT = '8-bit-sprite-assembler-master-roster-kit';
 export const MASTER_ROSTER_KIT_VERSION = 1;
 export const MASTER_ROSTER_KIT_LIMIT = 24;
+
+export const COMPLETE_CHARACTER_KIT_FORMAT = '8-bit-sprite-assembler-complete-character-kit';
+export const COMPLETE_CHARACTER_KIT_VERSION = 1;
+export const COMPLETE_CHARACTER_KIT_RECIPE_LIMIT = 24;
+export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
+  'weapon-back',
+  'shield-back',
+  'outfit-back',
+  'outfit',
+  'skin-body',
+  'head',
+  'face-detail',
+  'hair',
+  'headgear',
+  'shield-front',
+  'weapon-front',
+];
 
 const clonePair = (pair) => Array.isArray(pair) ? pair.slice(0, 2) : null;
 const samePair = (left, right) => (
@@ -347,5 +366,394 @@ export function buildMasterRosterKitPlan(rawEntries) {
         + (shields.length * 2)
         + characters.length,
     },
+  };
+}
+
+const COMPONENT_BASE_PLAYER = {
+  kind: 'player',
+  skin: 'peach',
+  hairStyle: 'short',
+  hairColor: 'brown',
+  faceDetail: 'none',
+  headgear: 'none',
+  outfit: 'tunic',
+  outfitColor: 'royal',
+  weapon: 'none',
+  weaponTier: 'tier1',
+  shield: 'none',
+  shieldTier: 'tier1',
+  palette: null,
+};
+
+const COLOR_AWARE_HEADGEAR = new Set(['cap', 'hood', 'wizard']);
+
+function componentSpec(patch = {}) {
+  return clonePlayer({ ...COMPONENT_BASE_PLAYER, ...patch });
+}
+
+function skinBodyFile(skin) {
+  return `components/skin-body/${skin}.png`;
+}
+
+function headFile(skin, shade) {
+  return `components/heads/${skin}/${shade}.png`;
+}
+
+function hairFile(style, color, fit) {
+  if (fit === 'under-headgear' && ['short', 'spiky', 'bowl'].includes(style)) {
+    return `components/hair/short-spiky-bowl/${color}/${fit}.png`;
+  }
+  return `components/hair/${style}/${color}/${fit}.png`;
+}
+
+function faceDetailFile(detail, variant = 'default') {
+  return `components/face-details/${detail}/${variant}.png`;
+}
+
+function outfitFile(outfit, color) {
+  const variant = ['leather', 'plate'].includes(outfit) ? 'default' : color;
+  return `components/outfits/${outfit}/${variant}/front.png`;
+}
+
+function outfitBackFile(outfit, color) {
+  return `components/outfits/${outfit}/${color}/back.png`;
+}
+
+function headgearFile(headgear, color = 'default') {
+  return `components/headgear/${headgear}/${color}.png`;
+}
+
+function shieldPassUsesColor(shield, pass) {
+  if (pass === 'back') return !['bone', 'arcane'].includes(shield);
+  return !['round', 'oval', 'buckler', 'bone', 'arcane'].includes(shield);
+}
+
+function completeShieldFile(shield, tier, color, pass) {
+  const variant = shieldPassUsesColor(shield, pass) ? color : 'default';
+  return `components/shields/${shield}/${tier}/${pass}/${variant}.png`;
+}
+
+function completeRecipeEntries(rawEntries) {
+  if (!Array.isArray(rawEntries)) return [];
+  return rawEntries.flatMap((raw, index) => {
+    if (!raw || typeof raw !== 'object' || (raw.kind && raw.kind !== 'player')) return [];
+    const player = raw.spec || raw.player || raw;
+    if (!player || typeof player !== 'object') return [];
+    const name = typeof raw.name === 'string' && raw.name.trim()
+      ? raw.name.trim()
+      : `Character ${index + 1}`;
+    return [{
+      sourceId: typeof raw.id === 'string' ? raw.id : null,
+      name,
+      role: typeof raw.role === 'string' && raw.role.trim() ? raw.role.trim() : null,
+      player: clonePlayer(player),
+    }];
+  });
+}
+
+function faceDetailComponent(player, hidden) {
+  if (hidden || player.faceDetail === 'none') return null;
+  if (player.faceDetail === 'beard' || player.faceDetail === 'mustache') {
+    return faceDetailFile(player.faceDetail, player.hairColor);
+  }
+  if (player.faceDetail === 'scar') return faceDetailFile('scar', player.skin);
+  if (player.faceDetail === 'warpaint') return faceDetailFile('warpaint', player.outfitColor);
+  return faceDetailFile(player.faceDetail);
+}
+
+function recipeComponents(player) {
+  const gear = HEADGEAR.find((entry) => entry.id === player.headgear) || HEADGEAR[0];
+  const hideHead = Boolean(gear.hideAll);
+  const hairFit = gear.hideTop ? 'under-headgear' : 'full';
+  const equippedWeapon = player.weapon !== 'none';
+  const equippedShield = player.shield !== 'none';
+  const gearColor = COLOR_AWARE_HEADGEAR.has(player.headgear) ? player.outfitColor : 'default';
+
+  return {
+    weaponBack: equippedWeapon ? `components/weapons/${player.weapon}/${player.weaponTier}/back.png` : null,
+    shieldBack: equippedShield ? completeShieldFile(player.shield, player.shieldTier, player.outfitColor, 'back') : null,
+    outfitBack: player.outfit === 'cape' ? outfitBackFile(player.outfit, player.outfitColor) : null,
+    outfit: outfitFile(player.outfit, player.outfitColor),
+    skinBody: skinBodyFile(player.skin),
+    head: hideHead ? null : headFile(player.skin, gear.shade ? 'shaded' : 'normal'),
+    faceDetail: faceDetailComponent(player, hideHead),
+    hair: hideHead || player.hairStyle === 'bald'
+      ? null
+      : hairFile(player.hairStyle, player.hairColor, hairFit),
+    headgear: player.headgear === 'none' ? null : headgearFile(player.headgear, gearColor),
+    shieldFront: equippedShield ? completeShieldFile(player.shield, player.shieldTier, player.outfitColor, 'front') : null,
+    weaponFront: equippedWeapon ? `components/weapons/${player.weapon}/${player.weaponTier}/front.png` : null,
+  };
+}
+
+function buildSkinBodies() {
+  return SKINS.map((skin) => ({
+    skin: skin.id,
+    skinName: skin.name,
+    colors: clonePair(skin.c),
+    file: skinBodyFile(skin.id),
+    layer: 'skin-body',
+    spec: componentSpec({ skin: skin.id }),
+  }));
+}
+
+function buildHeads() {
+  return SKINS.flatMap((skin) => ['normal', 'shaded'].map((shade) => ({
+    skin: skin.id,
+    skinName: skin.name,
+    colors: clonePair(skin.c),
+    shade,
+    file: headFile(skin.id, shade),
+    layer: 'head',
+    spec: componentSpec({
+      skin: skin.id,
+      hairStyle: 'bald',
+      headgear: shade === 'shaded' ? 'hood' : 'none',
+    }),
+  })));
+}
+
+function buildHairComponents() {
+  const byFile = new Map();
+  for (const style of HAIR_STYLES.filter((entry) => entry.id !== 'bald')) {
+    for (const color of HAIR_COLORS) {
+      for (const fit of ['full', 'under-headgear']) {
+        const file = hairFile(style.id, color.id, fit);
+        const existing = byFile.get(file);
+        if (existing) {
+          existing.compatibleStyles.push(style.id);
+          continue;
+        }
+        byFile.set(file, {
+          style: style.id,
+          styleName: style.name,
+          compatibleStyles: [style.id],
+          color: color.id,
+          colorName: color.name,
+          colors: clonePair(color.c),
+          fit,
+          file,
+          layer: 'hair',
+          spec: componentSpec({
+            hairStyle: style.id,
+            hairColor: color.id,
+            headgear: fit === 'under-headgear' ? 'wizard' : 'none',
+          }),
+        });
+      }
+    }
+  }
+  return [...byFile.values()];
+}
+
+function buildFaceDetailComponents() {
+  const entries = [];
+  for (const detail of ['beard', 'mustache']) {
+    for (const color of HAIR_COLORS) {
+      entries.push({
+        detail,
+        detailName: FACIAL_DETAILS.find((entry) => entry.id === detail)?.name || detail,
+        variant: color.id,
+        variantName: color.name,
+        file: faceDetailFile(detail, color.id),
+        layer: 'face-detail',
+        spec: componentSpec({ faceDetail: detail, hairColor: color.id }),
+      });
+    }
+  }
+  for (const skin of SKINS) {
+    entries.push({
+      detail: 'scar',
+      detailName: 'Scar',
+      variant: skin.id,
+      variantName: skin.name,
+      file: faceDetailFile('scar', skin.id),
+      layer: 'face-detail',
+      spec: componentSpec({ faceDetail: 'scar', skin: skin.id }),
+    });
+  }
+  for (const detail of ['eyepatch', 'glasses', 'blush']) {
+    entries.push({
+      detail,
+      detailName: FACIAL_DETAILS.find((entry) => entry.id === detail)?.name || detail,
+      variant: 'default',
+      variantName: 'Default',
+      file: faceDetailFile(detail),
+      layer: 'face-detail',
+      spec: componentSpec({ faceDetail: detail }),
+    });
+  }
+  for (const color of OUTFIT_COLORS) {
+    entries.push({
+      detail: 'warpaint',
+      detailName: 'War paint',
+      variant: color.id,
+      variantName: color.name,
+      file: faceDetailFile('warpaint', color.id),
+      layer: 'face-detail',
+      spec: componentSpec({ faceDetail: 'warpaint', outfitColor: color.id }),
+    });
+  }
+  return entries;
+}
+
+function buildOutfitComponents() {
+  const front = [];
+  const back = [];
+  for (const outfit of OUTFITS) {
+    const colors = ['leather', 'plate'].includes(outfit.id) ? [null] : OUTFIT_COLORS;
+    for (const color of colors) {
+      const renderColor = color?.id || OUTFIT_COLORS[0].id;
+      const spec = componentSpec({ outfit: outfit.id, outfitColor: renderColor });
+      front.push({
+        outfit: outfit.id,
+        outfitName: outfit.name,
+        color: color?.id || 'default',
+        colorName: color?.name || 'Fixed colors',
+        colors: color ? clonePair(color.c) : null,
+        file: outfitFile(outfit.id, renderColor),
+        layer: 'outfit',
+        spec,
+      });
+      if (outfit.id === 'cape') {
+        back.push({
+          outfit: outfit.id,
+          outfitName: outfit.name,
+          color: color.id,
+          colorName: color.name,
+          colors: clonePair(color.c),
+          file: outfitBackFile(outfit.id, color.id),
+          layer: 'outfit-back',
+          spec,
+        });
+      }
+    }
+  }
+  return { front, back };
+}
+
+function buildCompleteShieldComponents() {
+  const entries = [];
+  for (const shield of SHIELDS.filter((entry) => entry.id !== 'none')) {
+    for (const tier of SHIELD_TIERS) {
+      for (const pass of ['back', 'front']) {
+        const colors = shieldPassUsesColor(shield.id, pass) ? OUTFIT_COLORS : [null];
+        for (const color of colors) {
+          const renderColor = color?.id || OUTFIT_COLORS[0].id;
+          entries.push({
+            shield: shield.id,
+            shieldName: shield.name,
+            tier: tier.id,
+            tierName: tier.name,
+            pass,
+            color: color?.id || 'default',
+            colorName: color?.name || 'Fixed colors',
+            colors: color ? clonePair(color.c) : null,
+            file: completeShieldFile(shield.id, tier.id, renderColor, pass),
+            layer: `shield-${pass}`,
+            spec: componentSpec({
+              shield: shield.id,
+              shieldTier: tier.id,
+              outfitColor: renderColor,
+            }),
+          });
+        }
+      }
+    }
+  }
+  return entries;
+}
+
+function buildHeadgearComponents() {
+  return HEADGEAR
+    .filter((gear) => gear.id !== 'none')
+    .flatMap((gear) => {
+      const colors = COLOR_AWARE_HEADGEAR.has(gear.id) ? OUTFIT_COLORS : [null];
+      return colors.map((color) => ({
+        headgear: gear.id,
+        headgearName: gear.name,
+        color: color?.id || 'default',
+        colorName: color?.name || 'Fixed colors',
+        file: headgearFile(gear.id, color?.id || 'default'),
+        layer: 'headgear',
+        spec: componentSpec({ headgear: gear.id, outfitColor: color?.id || 'royal' }),
+      }));
+    });
+}
+
+export function completeCharacterKitCounts() {
+  const skinBodies = SKINS.length;
+  const heads = SKINS.length * 2;
+  const hair = ((HAIR_STYLES.length - 1) * HAIR_COLORS.length * 2) - (2 * HAIR_COLORS.length);
+  const faceDetails = (2 * HAIR_COLORS.length) + SKINS.length + 3 + OUTFIT_COLORS.length;
+  const outfitFront = ((OUTFITS.length - 2) * OUTFIT_COLORS.length) + 2;
+  const outfitBack = OUTFIT_COLORS.length;
+  const headgear = (3 * OUTFIT_COLORS.length) + 4;
+  const weaponLayers = (WEAPONS.length - 1) * WEAPON_TIERS.length * 2;
+  const colorAwareShieldPasses = 9;
+  const fixedColorShieldPasses = 7;
+  const shieldLayers = SHIELD_TIERS.length
+    * ((colorAwareShieldPasses * OUTFIT_COLORS.length) + fixedColorShieldPasses);
+  const componentPngs = skinBodies + heads + hair + faceDetails + outfitFront + outfitBack
+    + headgear + weaponLayers + shieldLayers;
+  return {
+    skinBodies,
+    heads,
+    hair,
+    faceDetails,
+    outfitFront,
+    outfitBack,
+    headgear,
+    weaponLayers,
+    shieldLayers,
+    componentPngs,
+    referencePreviews: 1,
+    totalPngs: componentPngs + 1,
+  };
+}
+
+export function buildCompleteCharacterKitPlan(rawRecipes = []) {
+  const recipeEntries = completeRecipeEntries(rawRecipes);
+  if (recipeEntries.length > COMPLETE_CHARACTER_KIT_RECIPE_LIMIT) {
+    throw new RangeError(`A Complete Character Kit supports up to ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} saved recipes.`);
+  }
+
+  const skinBodies = buildSkinBodies();
+  const heads = buildHeads();
+  const hair = buildHairComponents();
+  const faceDetails = buildFaceDetailComponents();
+  const outfits = buildOutfitComponents();
+  const headgear = buildHeadgearComponents();
+  const weapons = buildWeapons(COMPONENT_BASE_PLAYER, 'components/weapons');
+  const shields = buildCompleteShieldComponents();
+  const usedIds = new Set();
+  const recipes = recipeEntries.map((entry, index) => ({
+    id: uniqueCharacterId(entry.name, index, usedIds),
+    sourceId: entry.sourceId,
+    name: entry.name,
+    role: entry.role,
+    spec: clonePlayer(entry.player),
+    components: recipeComponents(entry.player),
+  }));
+  const referenceSpec = recipes[0]?.spec || clonePlayer(COMPONENT_BASE_PLAYER);
+
+  return {
+    components: {
+      skinBodies,
+      heads,
+      hair,
+      faceDetails,
+      outfitBack: outfits.back,
+      outfits: outfits.front,
+      headgear,
+      weapons,
+      shields,
+    },
+    recipes,
+    reference: {
+      file: 'preview/reference-character.png',
+      spec: referenceSpec,
+    },
+    counts: completeCharacterKitCounts(),
   };
 }

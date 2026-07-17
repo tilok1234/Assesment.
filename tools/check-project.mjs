@@ -198,9 +198,6 @@ const customKitPlan = characterKit.buildMasterCharacterKitPlan({
   palette: { skin: ['#123456', '#234567'], hair: ['#345678', '#456789'], outfit: ['#56789a', '#6789ab'] },
 });
 check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 983, 'master kits must add the current custom outfit color without replacing catalog colors');
-check(characterKit.MASTER_ROSTER_KIT_FORMAT === '8-bit-sprite-assembler-master-roster-kit', 'roster master kits must expose a stable format id');
-check(characterKit.MASTER_ROSTER_KIT_VERSION === 1, 'roster master kits must use an explicit versioned schema');
-check(characterKit.MASTER_ROSTER_KIT_LIMIT === 24, 'roster master kits must keep the approved 24-character identity limit');
 const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   id: `hero-${index + 1}`,
   name: `Hero ${index + 1}`,
@@ -213,36 +210,51 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
     faceDetail: engine.FACIAL_DETAILS[index % engine.FACIAL_DETAILS.length].id,
   },
 }));
-const rosterKitPlan = characterKit.buildMasterRosterKitPlan(rosterKitEntries);
-check(rosterKitPlan.characters.length === 24, 'roster master kits must retain all 24 player identities');
-check(rosterKitPlan.counts.bodySheets === 6720, 'a standard 24-character roster kit must include 280 compatible body sheets per identity');
-check(rosterKitPlan.counts.weaponLayers === 150, 'roster master kits must render the weapon library once');
-check(rosterKitPlan.counts.shieldLayers === 448, 'roster master kits must render the color-aware shield library once');
-check(rosterKitPlan.counts.assembledPreviews === 24 && rosterKitPlan.counts.totalPngs === 7342, 'a standard 24-character roster kit must contain 7342 native PNG sheets');
-check(rosterKitPlan.weapons.every((entry) => entry.files.back.startsWith('shared/weapons/')), 'roster weapon layers must live in the shared library');
-check(rosterKitPlan.shields.every((entry) => entry.files.front.startsWith('shared/shields/')), 'roster shield layers must live in the shared library');
-check(rosterKitPlan.characters.every((character) => (
-  character.bodies.length === 280
-  && character.bodies.every((entry) => entry.file.startsWith(`${character.bodyRoot}/`))
-)), 'every roster identity must own a complete compatible body library');
-const rosterKitPaths = [
-  ...rosterKitPlan.characters.flatMap((character) => [
-    ...character.bodies.map((entry) => entry.file),
-    character.defaultPreview,
+check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
+check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 1, 'complete character kits must use an explicit versioned schema');
+check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
+check(
+  JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
+    'weapon-back', 'shield-back', 'outfit-back', 'outfit', 'skin-body', 'head',
+    'face-detail', 'hair', 'headgear', 'shield-front', 'weapon-front',
   ]),
-  ...rosterKitPlan.weapons.flatMap((entry) => [entry.files.back, entry.files.front]),
-  ...rosterKitPlan.shields.flatMap((entry) => [entry.files.back, entry.files.front]),
+  'complete character kits must publish the exact atomic component draw order',
+);
+const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntries);
+check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
+check(completeKitPlan.counts.componentPngs === 603 && completeKitPlan.counts.totalPngs === 604, 'complete character kits must contain 603 content-unique component sheets plus one reference preview');
+check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
+check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
+check(completeKitPlan.components.hair.length === 70, 'complete kits must collapse visually identical under-headgear hair variants');
+check(completeKitPlan.components.faceDetails.length === 30, 'complete kits must store only the color-dependent facial-detail variants');
+check(completeKitPlan.components.outfits.length === 23 && completeKitPlan.components.outfitBack.length === 7, 'complete kits must omit color variants for fixed-color outfits');
+check(completeKitPlan.components.headgear.length === 25, 'complete kits must avoid duplicate fixed-color headgear sheets');
+check(completeKitPlan.components.weapons.length === 75 && completeKitPlan.components.shields.length === 280, 'complete kits must store each weapon pair and only visually distinct shield passes');
+const completeKitPaths = [
+  ...completeKitPlan.components.skinBodies.map((entry) => entry.file),
+  ...completeKitPlan.components.heads.map((entry) => entry.file),
+  ...completeKitPlan.components.hair.map((entry) => entry.file),
+  ...completeKitPlan.components.faceDetails.map((entry) => entry.file),
+  ...completeKitPlan.components.outfitBack.map((entry) => entry.file),
+  ...completeKitPlan.components.outfits.map((entry) => entry.file),
+  ...completeKitPlan.components.headgear.map((entry) => entry.file),
+  ...completeKitPlan.components.weapons.flatMap((entry) => [entry.files.back, entry.files.front]),
+  ...completeKitPlan.components.shields.map((entry) => entry.file),
+  completeKitPlan.reference.file,
 ];
-check(new Set(rosterKitPaths).size === rosterKitPlan.counts.totalPngs, 'every roster master-kit PNG path must be unique');
-check(runtimeSources['app.js'].includes('function downloadPackMasterKit('), 'app.js must expose one-click character-pack Master Kit export');
-check(runtimeSources['app.js'].includes('function masterRosterKitManifest('), 'roster master-kit downloads must include a game-facing manifest');
+check(new Set(completeKitPaths).size === 604, 'every Complete Character Kit PNG path must be unique');
+check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
 check(internalCatalogs.WOOD.length >= 3, 'shield highlights must not clear assembled body pixels through a missing wood color');
 check((runtimeSources['engine/sheets.js'].match(/\.\.\.opts, shadow: opts\.shadow === true/g) || []).length === 3, 'every sheet builder must forward layer options while keeping shadows opt-in');
-check(runtimeSources['app.js'].includes('function downloadMasterCharacterKit('), 'app.js must expose one-click master character-kit export');
-check(runtimeSources['app.js'].includes('MASTER_CHARACTER_KIT_SCALE, { layer }'), 'master character kits must render every requested compositing layer at native scale');
-check(runtimeSources['app.js'].includes('defaultPreview: \'preview/default.png\''), 'master character-kit manifests must include an assembled reference preview');
+check(runtimeSources['app.js'].includes('function downloadMasterCharacterKit('), 'app.js must expose one-click Complete Character Kit export');
+check(runtimeSources['app.js'].includes('function downloadPackMasterKit('), 'character packs must export the shared Complete Character Kit with recipes');
+check(runtimeSources['app.js'].includes('function completeCharacterKitManifest('), 'Complete Character Kit downloads must include a game-facing component manifest');
+check(runtimeSources['app.js'].includes('function renderCompleteCharacterKitPngs('), 'Complete Character Kit downloads must route every component group through one renderer');
+check(runtimeSources['app.js'].includes('MASTER_CHARACTER_KIT_SCALE, { layer }'), 'Complete Character Kits must render every requested compositing layer at native scale');
+check(runtimeSources['app.js'].includes("-complete-character-kit.zip`"), 'Complete Character Kit downloads must use an unambiguous filename');
+check(!runtimeSources['app.js'].includes('buildMasterRosterKitPlan'), 'the app must not expose the duplicate-heavy roster body-matrix exporter');
 const zipFixture = zipModule.buildStoredZip([
   { name: '../characters/test.png', data: new Uint8Array([137, 80, 78, 71]) },
   { name: 'manifest.json', data: new TextEncoder().encode('{"version":1}') },
@@ -306,7 +318,7 @@ check(runtimeSources['engine/shield-renderer.js'].includes("tier === 'tier3'"), 
 check(runtimeSources['engine/shield-renderer.js'].includes("tier === 'tier4'"), 'the shield renderer must apply the mythic Tier 4 upgrade layer');
 check(runtimeSources['engine/shield-renderer.js'].includes("d === 'up' ? 'behind' : 'front'"), 'shield layering must place back-view shields behind the humanoid body');
 
-function renderPixels(spec, dir, animId, frame) {
+function renderPixels(spec, dir, animId, frame, opts = {}) {
   const pixels = new Array(engine.SIZE * engine.SIZE).fill(null);
   let fillStyle = '#000000';
   const ctx = {
@@ -321,8 +333,103 @@ function renderPixels(spec, dir, animId, frame) {
       }
     },
   };
-  engine.drawSprite(ctx, spec, dir, animId, frame, { shadow: false });
+  engine.drawSprite(ctx, spec, dir, animId, frame, { ...opts, shadow: false });
   return pixels;
+}
+
+function compositePixelLayers(layers) {
+  const output = new Array(engine.SIZE * engine.SIZE).fill(null);
+  for (const layer of layers) {
+    for (let index = 0; index < layer.length; index++) {
+      if (layer[index] !== null) output[index] = layer[index];
+    }
+  }
+  return output;
+}
+
+const atomicPlayerSpecs = engine.HEADGEAR.map((headgear, index) => ({
+  kind: 'player',
+  skin: engine.SKINS[index % engine.SKINS.length].id,
+  hairStyle: engine.HAIR_STYLES[index % engine.HAIR_STYLES.length].id,
+  hairColor: engine.HAIR_COLORS[index % engine.HAIR_COLORS.length].id,
+  faceDetail: engine.FACIAL_DETAILS[index % engine.FACIAL_DETAILS.length].id,
+  headgear: headgear.id,
+  outfit: engine.OUTFITS[index % engine.OUTFITS.length].id,
+  outfitColor: engine.OUTFIT_COLORS[index % engine.OUTFIT_COLORS.length].id,
+  weapon: engine.WEAPONS[1 + (index % (engine.WEAPONS.length - 1))].id,
+  weaponTier: engine.WEAPON_TIERS[index % engine.WEAPON_TIERS.length].id,
+  shield: engine.SHIELDS[1 + (index % (engine.SHIELDS.length - 1))].id,
+  shieldTier: engine.SHIELD_TIERS[index % engine.SHIELD_TIERS.length].id,
+  palette: null,
+}));
+
+for (const spec of atomicPlayerSpecs) {
+  for (const dir of engine.DIRS) {
+    for (const anim of engine.ANIMS) {
+      for (let frame = 0; frame < anim.frames; frame++) {
+        const complete = renderPixels(spec, dir, anim.id, frame);
+        const layers = characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER
+          .filter((layer) => !(spec.headgear === 'fullhelm' && ['head', 'face-detail', 'hair'].includes(layer)))
+          .map((layer) => renderPixels(spec, dir, anim.id, frame, { layer }));
+        const assembled = compositePixelLayers(layers);
+        check(
+          JSON.stringify(assembled) === JSON.stringify(complete),
+          `atomic layers must exactly recompose ${spec.headgear} ${spec.outfit} in ${dir} ${anim.id} frame ${frame}`,
+        );
+      }
+    }
+  }
+}
+
+const componentByPath = new Map();
+for (const entry of [
+  ...completeKitPlan.components.skinBodies,
+  ...completeKitPlan.components.heads,
+  ...completeKitPlan.components.hair,
+  ...completeKitPlan.components.faceDetails,
+  ...completeKitPlan.components.outfitBack,
+  ...completeKitPlan.components.outfits,
+  ...completeKitPlan.components.headgear,
+]) {
+  componentByPath.set(entry.file, entry);
+}
+for (const entry of completeKitPlan.components.weapons) {
+  componentByPath.set(entry.files.back, { spec: entry.spec, layer: 'weapon-back' });
+  componentByPath.set(entry.files.front, { spec: entry.spec, layer: 'weapon-front' });
+}
+for (const entry of completeKitPlan.components.shields) {
+  componentByPath.set(entry.file, { spec: entry.spec, layer: entry.layer });
+}
+const recipeLayerKeys = {
+  'weapon-back': 'weaponBack',
+  'shield-back': 'shieldBack',
+  'outfit-back': 'outfitBack',
+  outfit: 'outfit',
+  'skin-body': 'skinBody',
+  head: 'head',
+  'face-detail': 'faceDetail',
+  hair: 'hair',
+  headgear: 'headgear',
+  'shield-front': 'shieldFront',
+  'weapon-front': 'weaponFront',
+};
+for (const recipe of completeKitPlan.recipes) {
+  for (const dir of engine.DIRS) {
+    for (const anim of engine.ANIMS) {
+      for (let frame = 0; frame < anim.frames; frame++) {
+        const layers = characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER.flatMap((layer) => {
+          const path = recipe.components[recipeLayerKeys[layer]];
+          if (!path) return [];
+          const component = componentByPath.get(path);
+          return [renderPixels(component.spec, dir, anim.id, frame, { layer: component.layer })];
+        });
+        check(
+          JSON.stringify(compositePixelLayers(layers)) === JSON.stringify(renderPixels(recipe.spec, dir, anim.id, frame)),
+          `recipe components must exactly rebuild ${recipe.name} in ${dir} ${anim.id} frame ${frame}`,
+        );
+      }
+    }
+  }
 }
 
 function changedPixels(withShield, withoutShield) {

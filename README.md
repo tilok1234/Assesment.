@@ -10,7 +10,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
 - Persistent named character packs that collect player and enemy designs and download as a ZIP with full PNG sheets and `manifest.json`
-- One-click native Master Character Kits that lock one player identity and export every armor color, headgear, weapon tier, and color-aware shield tier as game-composable layers
+- One-click Complete Character Kits with 603 content-unique atomic component sheets, one reference preview, and up to 24 artwork-free character recipes
 - A validated asset pack containing 144 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
@@ -110,38 +110,35 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 
 The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per character plus a versioned `manifest.json` with the exact character specifications, animation contract, dimensions, and file paths.
 
-For a reusable game asset pack, add up to 24 player characters and select **Download Pack Master Kit**. That export treats the saved players as identities rather than fixed loadouts: every identity receives all compatible outfit, color, and headgear body sheets, while one shared weapon and shield library can be equipped by the entire roster. Enemy entries remain available in the regular character-pack ZIP but are not included in the player-only Pack Master Kit.
+For a reusable game asset pack, add up to 24 player characters and select **Download Complete Kit + Recipes**. The artwork is exported once; each saved player becomes only a small manifest recipe that points to shared component files. Enemy entries remain available in the regular character-pack ZIP but are not included in the player-only recipe list.
 
-## Master Character Kits
+## Complete Character Kits
 
-Use **Download Master Character Kit** in Player mode when a game needs to change one character's equipment at runtime. The current skin, hair, facial detail, and custom identity colors stay locked while the kit exports:
+Use **Download Complete Character Kit** in Player mode to export one `8-bit-sprite-assembler-complete-character-kit` archive containing the entire reusable player library:
 
-- Every outfit, catalog outfit color, and headgear combination as a complete body layer
-- All 15 weapons at Tiers 1-5 as separate back/front layers
-- All eight shields at Tiers 1-4 in every outfit color as separate back/front layers
-- The current custom outfit color as an additional option when it is not already in the catalog
+- Six animated skin-body layers and 12 normal/shaded head layers
+- 70 hair layers covering every style, color, and headgear fit; identical short, spiky, and bowl under-headgear art shares one file
+- 30 facial-detail layers containing only the color-dependent variants each detail actually needs
+- 23 outfit-front layers plus seven cape-back layers; fixed-color leather and plate art is stored once
+- 25 headgear layers; fixed-color gear is stored once, while color-aware gear gets the seven catalog colors
+- 150 weapon layers covering all 15 families at Tiers 1-5 in back/front passes
+- 280 shield layers covering all eight families at Tiers 1-4; a pass gets color variants only when color changes its pixels
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
-A standard kit contains 879 native `288x96` PNGs. Draw the same animation frame from `weapon-back`, `shield-back`, the selected body, `shield-front`, and `weapon-front`, in that order. Empty equipment pixels are intentional; they preserve direction-aware occlusion.
+The result is 603 content-unique component sheets plus one reference preview: 604 native `288x96` PNGs total. Adding 1-24 saved character recipes does not add any PNGs.
 
-### Pack Master Kits
+Draw the non-null component paths from a recipe in this order:
 
-The Character Pack panel can combine 1-24 saved player identities into one `8-bit-sprite-assembler-master-roster-kit` archive. A standard 24-character roster contains:
+`weapon-back` → `shield-back` → `outfit-back` → `outfit` → `skin-body` → `head` → `face-detail` → `hair` → `headgear` → `shield-front` → `weapon-front`
 
-- 6,720 character-specific body sheets: 280 outfit, color, and headgear choices for each identity
-- 150 shared weapon layers: all 15 families at Tiers 1-5, split into back/front passes
-- 448 shared shield layers: all eight families at Tiers 1-4 and all seven catalog colors, split into back/front passes
-- 24 assembled reference sheets
-- One manifest and README describing character roots, shared paths, animation timing, and runtime draw order
-
-That is 7,342 native PNGs instead of 24 duplicated 879-file kits. Body sheets stay identity-specific so faces, hair, skin, hands, armor, and headgear retain exact pixels; weapon and shield layers are stored once and work across the roster.
+Every component shares the same animation grid and has been validated to recompose the complete renderer pixel-for-pixel across all directions and frames. To craft a new character in a game, copy a recipe and change its component paths; no art needs to be duplicated.
 
 ## Project layout
 
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
-- `app.js` - editor state, sprite history, reset and comparison workflows, presets, character packs, Master Character Kit rendering, naming, playback and frame inspection, and downloads
-- `character-kit.js` - deterministic Master Character Kit coverage, paths, identity, and equipment-layer planning
+- `app.js` - editor state, sprite history, reset and comparison workflows, presets, character packs, Complete Character Kit rendering, naming, playback and frame inspection, and downloads
+- `character-kit.js` - deterministic component coverage, paths, recipe mapping, counts, and layer-order planning
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
 - `engine/` - focused animation, palette, player-option, enemy, humanoid weapon and shield, renderer, sheet, and generator modules
