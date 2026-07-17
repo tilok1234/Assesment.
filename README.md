@@ -10,6 +10,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
 - Persistent named character packs that collect player and enemy designs and download as a ZIP with full PNG sheets and `manifest.json`
+- One-click native Master Character Kits that lock one player identity and export every armor color, headgear, weapon tier, and color-aware shield tier as game-composable layers
 - A validated asset pack containing 144 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
@@ -68,7 +69,7 @@ Double-click `check-project.bat`, or run:
 npm run check
 ```
 
-The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, and the dimensions of all committed sheets.
+The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, and the dimensions of all committed sheets.
 
 ## Build the Windows application
 
@@ -109,12 +110,25 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 
 The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per character plus a versioned `manifest.json` with the exact character specifications, animation contract, dimensions, and file paths.
 
+## Master Character Kits
+
+Use **Download Master Character Kit** in Player mode when a game needs to change one character's equipment at runtime. The current skin, hair, facial detail, and custom identity colors stay locked while the kit exports:
+
+- Every outfit, catalog outfit color, and headgear combination as a complete body layer
+- All 15 weapons at Tiers 1-5 as separate back/front layers
+- All eight shields at Tiers 1-4 in every outfit color as separate back/front layers
+- The current custom outfit color as an additional option when it is not already in the catalog
+- One assembled reference sheet, `manifest.json`, and `README.txt`
+
+A standard kit contains 879 native `288x96` PNGs. Draw the same animation frame from `weapon-back`, `shield-back`, the selected body, `shield-front`, and `weapon-front`, in that order. Empty equipment pixels are intentional; they preserve direction-aware occlusion.
+
 ## Project layout
 
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
-- `app.js` - editor state, sprite history, reset and comparison workflows, character and palette presets, character-pack persistence, naming, playback and frame inspection, and downloads
-- `zip.js` - dependency-free ZIP archive writer used by character-pack export
+- `app.js` - editor state, sprite history, reset and comparison workflows, presets, character packs, Master Character Kit rendering, naming, playback and frame inspection, and downloads
+- `character-kit.js` - deterministic Master Character Kit coverage, paths, identity, and equipment-layer planning
+- `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
 - `engine/` - focused animation, palette, player-option, enemy, humanoid weapon and shield, renderer, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets

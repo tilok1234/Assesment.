@@ -18,6 +18,8 @@ index.html
       -> engine/shield-renderer.js
       -> engine/sheets.js
       -> engine/generators.js
+    -> character-kit.js
+      -> sprite-engine.js (catalogs through the public facade)
     -> zip.js (standalone archive writer)
 ```
 
@@ -59,13 +61,17 @@ Shield entries likewise keep family and progression independent. `SHIELD_TIERS` 
 
 `engine/generators.js` creates random valid specifications and safe default export names.
 
+### Master character kits
+
+`character-kit.js` deterministically expands one sanitized player identity into body/armor/headgear, weapon-tier, and color-aware shield-tier plans. It owns stable paths, counts, the native export scale, and the runtime layer order. It imports catalogs only through `sprite-engine.js` and does not access the DOM, canvas, editor state, persistence, or ZIP implementation.
+
 ### Archive packaging
 
 `zip.js` builds stored ZIP archives with UTF-8 paths and CRC-32 checksums. It accepts already-rendered files and has no knowledge of editor state, sprite specifications, or rendering internals.
 
 ### Editor
 
-`app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, character packs, and download behavior. It consumes sprite behavior only through the public engine facade and uses `zip.js` for packaging. History snapshots contain the active mode, player/enemy specifications, optional player palette, and document names, so preset loads, resets, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. Character preset schema v5 adds the shield tier and migrates v1 through v4 libraries; schema v4 introduced weapon tiers. The independent palette-library schema stores reusable six-tone player palettes. Character-pack schema v1 stores named player and enemy specifications independently from editor history and produces full-sheet ZIP archives with a versioned manifest.
+`app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, character packs, Master Character Kit rendering, and download behavior. It consumes sprite behavior only through the public engine facade, uses `character-kit.js` for deterministic equipment coverage, and uses `zip.js` for packaging. History snapshots contain the active mode, player/enemy specifications, optional player palette, and document names, so preset loads, resets, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. Character preset schema v5 adds the shield tier and migrates v1 through v4 libraries; schema v4 introduced weapon tiers. The independent palette-library schema stores reusable six-tone player palettes. Character-pack schema v1 stores named player and enemy specifications independently from editor history and produces full-sheet ZIP archives with a versioned manifest. Master Character Kit schema v1 exports native body and equipment layers plus a game-facing manifest and assembled reference.
 
 ### Windows wrapper
 
@@ -80,10 +86,11 @@ Shield entries likewise keep family and progression independent. `SHIELD_TIERS` 
 - Export scale 1x preserves those logical pixels exactly; full, animation, and direction exports also support 4x, 8x, and 12x nearest-neighbor scaling.
 - Exported sheets have a transparent background and no baked shadow.
 - Character-pack archives always contain complete full sheets at the selected scale plus a manifest that records their logical and actual dimensions.
+- Master Character Kits always use native 1x sheets and the draw order `weapon-back`, `shield-back`, `body`, `shield-front`, `weapon-front`; recomposing those layers must match the complete renderer pixel-for-pixel.
 - `sprite-engine.js` remains the public import path.
 - Browser and Windows builds use identical production files.
 
-`npm run check` enforces these invariants against the native export contract, character-pack ZIP format, `asset-pack/manifest.json`, and all 144 committed PNG fixtures.
+`npm run check` enforces these invariants against the native export contract, character-pack ZIP format, Master Character Kit matrix and paths, `asset-pack/manifest.json`, and all 144 committed PNG fixtures.
 
 ## Adding content safely
 

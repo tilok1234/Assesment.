@@ -44,10 +44,13 @@ function checkSyntax(relativePath) {
 
 const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
 const engine = await import(`${pathToFileURL(path.join(root, 'sprite-engine.js')).href}?check=${Date.now()}`);
+const internalCatalogs = await import(`${pathToFileURL(path.join(root, 'engine', 'catalogs.js')).href}?check=${Date.now()}`);
+const characterKit = await import(`${pathToFileURL(path.join(root, 'character-kit.js')).href}?check=${Date.now()}`);
 const zipModule = await import(`${pathToFileURL(path.join(root, 'zip.js')).href}?check=${Date.now()}`);
 
 checkSyntax('sprite-engine.js');
 checkSyntax('app.js');
+checkSyntax('character-kit.js');
 checkSyntax('zip.js');
 checkSyntax('engine/catalogs.js');
 checkSyntax('engine/catalogs/animation.js');
@@ -90,6 +93,7 @@ for (const controlId of [
   'keep-current-button', 'remove-copy-button', 'replace-copy-button',
   'pack-name', 'pack-summary', 'pack-list', 'pack-status',
   'add-to-pack-button', 'clear-pack-button', 'download-pack-button',
+  'master-kit-summary', 'master-kit-status', 'download-master-kit-button',
 ]) {
   check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
 }
@@ -98,6 +102,7 @@ const runtimeSources = {
   'index.html': entrySource,
   'app.js': await readFile(path.join(root, 'app.js'), 'utf8'),
   'sprite-engine.js': await readFile(path.join(root, 'sprite-engine.js'), 'utf8'),
+  'character-kit.js': await readFile(path.join(root, 'character-kit.js'), 'utf8'),
   'zip.js': await readFile(path.join(root, 'zip.js'), 'utf8'),
   'engine/catalogs.js': await readFile(path.join(root, 'engine', 'catalogs.js'), 'utf8'),
   'engine/catalogs/animation.js': await readFile(path.join(root, 'engine', 'catalogs', 'animation.js'), 'utf8'),
@@ -129,6 +134,8 @@ check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 40, 'sprite-eng
 check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 40, 'engine/catalogs.js must remain a small internal facade');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
+check(runtimeSources['app.js'].includes("from './character-kit.js'"), 'app.js must use the focused master character-kit planner');
+check(!runtimeSources['character-kit.js'].includes("from './engine/"), 'character-kit.js must consume only the public engine facade');
 check(runtimeSources['app.js'].includes("from './zip.js'"), 'app.js must use the standalone ZIP packaging utility');
 check(runtimeSources['app.js'].includes("PRESET_VERSION = 5"), 'app.js must keep presets under the current versioned schema');
 check(runtimeSources['app.js'].includes('![1, 2, 3, 4, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1, 2, 3, and 4 preset libraries');
@@ -158,6 +165,45 @@ check(runtimeSources['app.js'].includes('function loadPackLibrary(') && runtimeS
 check(runtimeSources['app.js'].includes('const canvas = E.buildSheet(spec, scale)'), 'character packs must always export complete sprite sheets');
 check(runtimeSources['app.js'].includes("format: '8-bit-sprite-assembler-character-pack'"), 'character pack manifests must expose their stable format id');
 check(runtimeSources['app.js'].includes('buildStoredZip(zipEntries'), 'character pack downloads must assemble their PNGs and manifest into a ZIP');
+check(characterKit.MASTER_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-master-character-kit', 'master kits must expose a stable format id');
+check(characterKit.MASTER_CHARACTER_KIT_VERSION === 1, 'master kits must use an explicit versioned schema');
+check(characterKit.MASTER_CHARACTER_KIT_SCALE === 1, 'master kits must export native logical pixels');
+check(
+  JSON.stringify(characterKit.MASTER_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify(['weapon-back', 'shield-back', 'body', 'shield-front', 'weapon-front']),
+  'master kits must preserve the renderer draw order across composable layers',
+);
+const masterKitPlayer = {
+  skin: 'peach', hairStyle: 'spiky', hairColor: 'brown', faceDetail: 'none', headgear: 'none',
+  outfit: 'tunic', outfitColor: 'royal', weapon: 'sword', weaponTier: 'tier1',
+  shield: 'round', shieldTier: 'tier1', palette: null,
+};
+const masterKitPlan = characterKit.buildMasterCharacterKitPlan(masterKitPlayer);
+check(masterKitPlan.bodies.length === 280, 'master kits must include every outfit, catalog color, and headgear body combination');
+check(masterKitPlan.weapons.length === 75, 'master kits must include all fifteen weapons at all five tiers');
+check(masterKitPlan.shields.length === 224, 'master kits must include all eight shields at four tiers and seven catalog colors');
+check(masterKitPlan.counts.totalPngs === 879, 'standard master kits must contain 879 native PNG sheets including the assembled preview');
+check(masterKitPlan.bodies.every((entry) => entry.layer === 'body' && entry.spec.weapon === 'none' && entry.spec.shield === 'none'), 'master-kit bodies must not bake weapons or shields');
+check(masterKitPlan.weapons.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit weapon must expose separate back and front layers');
+check(masterKitPlan.shields.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit shield must expose separate back and front layers');
+const masterKitPaths = [
+  ...masterKitPlan.bodies.map((entry) => entry.file),
+  ...masterKitPlan.weapons.flatMap((entry) => [entry.files.back, entry.files.front]),
+  ...masterKitPlan.shields.flatMap((entry) => [entry.files.back, entry.files.front]),
+  'preview/default.png',
+];
+check(new Set(masterKitPaths).size === masterKitPlan.counts.totalPngs, 'every master-kit PNG path must be unique');
+const customKitPlan = characterKit.buildMasterCharacterKitPlan({
+  ...masterKitPlayer,
+  palette: { skin: ['#123456', '#234567'], hair: ['#345678', '#456789'], outfit: ['#56789a', '#6789ab'] },
+});
+check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 983, 'master kits must add the current custom outfit color without replacing catalog colors');
+check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
+check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
+check(internalCatalogs.WOOD.length >= 3, 'shield highlights must not clear assembled body pixels through a missing wood color');
+check((runtimeSources['engine/sheets.js'].match(/\.\.\.opts, shadow: opts\.shadow === true/g) || []).length === 3, 'every sheet builder must forward layer options while keeping shadows opt-in');
+check(runtimeSources['app.js'].includes('function downloadMasterCharacterKit('), 'app.js must expose one-click master character-kit export');
+check(runtimeSources['app.js'].includes('MASTER_CHARACTER_KIT_SCALE, { layer }'), 'master character kits must render every requested compositing layer at native scale');
+check(runtimeSources['app.js'].includes('defaultPreview: \'preview/default.png\''), 'master character-kit manifests must include an assembled reference preview');
 const zipFixture = zipModule.buildStoredZip([
   { name: '../characters/test.png', data: new Uint8Array([137, 80, 78, 71]) },
   { name: 'manifest.json', data: new TextEncoder().encode('{"version":1}') },

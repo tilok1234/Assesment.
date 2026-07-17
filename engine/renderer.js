@@ -71,7 +71,7 @@ function makePose(animId, f) {
 // C: {skin, hair, hairStyle, gear, outfit, oc, weapon, shield,
 //     face:'human'|'skull'|'goblin', small, bone, eye}
 // ============================================================
-function drawHumanoid(g, d, p, C) {
+function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   const small = !!C.small;
   const HT = small ? 5 : 3;      // head top
   const BT = small ? 13 : 12;    // torso top
@@ -94,10 +94,30 @@ function drawHumanoid(g, d, p, C) {
   const pants = C.bone ? BONE : (outfit === 'plate' ? IRONPANTS : PANTS);
   const eyeC = C.eye || INK;
 
-  // ---- weapon (behind for up-facing) ----
-  if (d === 'up' && C.weapon && C.weapon !== 'none') drawWeapon(weaponS, weaponR, d, p, C, u);
+  // Character-kit equipment sheets are split around the complete body so a game can
+  // preserve the same direction-aware occlusion as the assembled renderer.
+  if (renderLayer === 'weapon-back') {
+    if (d === 'up' && C.weapon && C.weapon !== 'none') drawWeapon(weaponS, weaponR, d, p, C, u);
+    return;
+  }
+  if (renderLayer === 'shield-back') {
+    drawShield(S, R, d, p, C, u, 'behind');
+    return;
+  }
+  if (renderLayer === 'shield-front') {
+    drawShield(S, R, d, p, C, u, 'front');
+    return;
+  }
+  if (renderLayer === 'weapon-front') {
+    if (C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(weaponS, weaponR, d, p, C, u);
+    return;
+  }
+  const includeEquipment = renderLayer === 'complete';
 
-  drawShield(S, R, d, p, C, u, 'behind');
+  // ---- weapon (behind for up-facing) ----
+  if (includeEquipment && d === 'up' && C.weapon && C.weapon !== 'none') drawWeapon(weaponS, weaponR, d, p, C, u);
+
+  if (includeEquipment) drawShield(S, R, d, p, C, u, 'behind');
 
   // ---- cape behind (side view) ----
   if (outfit === 'cape' && d === 'right') {
@@ -375,10 +395,10 @@ function drawHumanoid(g, d, p, C) {
   // ---- headgear ----
   if (gear !== 'none') drawGear(S, R, d, u, HT, hx, gear, oc, C);
 
-  drawShield(S, R, d, p, C, u, 'front');
+  if (includeEquipment) drawShield(S, R, d, p, C, u, 'front');
 
   // ---- weapon (in front) ----
-  if (C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(weaponS, weaponR, d, p, C, u);
+  if (includeEquipment && C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(weaponS, weaponR, d, p, C, u);
 }
 
 function drawFacialDetail(S, R, d, u, HT, detail, hair, skin, outfit, eye) {
@@ -1466,10 +1486,11 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
   const p = makePose(anim.id, f);
   const flip = dir === 'left';
   const d = flip ? 'right' : dir;
+  const renderLayer = typeof opts.layer === 'string' ? opts.layer : 'complete';
 
   ctx.clearRect(0, 0, SIZE, SIZE);
 
-  if (opts.shadow !== false) {
+  if (opts.shadow !== false && (renderLayer === 'complete' || renderLayer === 'body')) {
     const sh = shadowFor(spec, anim.id, f);
     ctx.fillStyle = `rgba(26,28,44,${sh.a})`;
     ctx.fillRect(sh.x, 22, sh.w, 1);
@@ -1479,8 +1500,8 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
   const g = makeG();
   const HUMANOID_FAMS = ['goblin', 'skeleton', 'zombie', 'imp', 'elf', 'dwarf', 'bandit', 'cultist', 'orc', 'ogre', 'troll', 'kobold', 'gnoll', 'ratfolk', 'lizardfolk', 'minotaur', 'demon', 'cyclops', 'harpy'];
   if (spec.kind === 'player' || HUMANOID_FAMS.indexOf(spec.family) >= 0) {
-    drawHumanoid(g, d, p, buildHumanoidC(spec));
-  } else {
+    drawHumanoid(g, d, p, buildHumanoidC(spec), renderLayer);
+  } else if (renderLayer === 'complete' || renderLayer === 'body') {
     const fam = find(ENEMIES, spec.family);
     const V = find(fam.variants, spec.variant);
     if (spec.family === 'slime') drawSlime(g, d, p, f, V, anim.id);
