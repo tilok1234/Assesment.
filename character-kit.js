@@ -432,13 +432,15 @@ function headgearFile(headgear, color = 'default') {
   return `components/headgear/${headgear}/${color}.png`;
 }
 
-function shieldPassUsesColor(shield, pass) {
+function shieldPassUsesColor(shield, tier, pass) {
+  if (tier === 'tier5' && pass === 'back' && ['round', 'buckler', 'oval'].includes(shield)) return false;
+  if (tier === 'tier5' && pass === 'front' && shield === 'kite') return false;
   if (pass === 'back') return !['bone', 'arcane'].includes(shield);
   return !['round', 'oval', 'buckler', 'bone', 'arcane'].includes(shield);
 }
 
 function completeShieldFile(shield, tier, color, pass) {
-  const variant = shieldPassUsesColor(shield, pass) ? color : 'default';
+  const variant = shieldPassUsesColor(shield, tier, pass) ? color : 'default';
   return `components/shields/${shield}/${tier}/${pass}/${variant}.png`;
 }
 
@@ -653,7 +655,7 @@ function buildCompleteShieldComponents() {
   for (const shield of SHIELDS.filter((entry) => entry.id !== 'none')) {
     for (const tier of SHIELD_TIERS) {
       for (const pass of ['back', 'front']) {
-        const colors = shieldPassUsesColor(shield.id, pass) ? OUTFIT_COLORS : [null];
+        const colors = shieldPassUsesColor(shield.id, tier.id, pass) ? OUTFIT_COLORS : [null];
         for (const color of colors) {
           const renderColor = color?.id || OUTFIT_COLORS[0].id;
           entries.push({
@@ -706,10 +708,13 @@ export function completeCharacterKitCounts() {
   const outfitBack = OUTFIT_TIERS.length * OUTFIT_COLORS.length;
   const headgear = (3 * OUTFIT_COLORS.length) + 4;
   const weaponLayers = (WEAPONS.length - 1) * WEAPON_TIERS.length * 2;
-  const colorAwareShieldPasses = 9;
-  const fixedColorShieldPasses = 7;
-  const shieldLayers = SHIELD_TIERS.length
-    * ((colorAwareShieldPasses * OUTFIT_COLORS.length) + fixedColorShieldPasses);
+  const shieldLayers = SHIELD_TIERS.reduce((tierTotal, tier) => (
+    tierTotal + SHIELDS.filter((shield) => shield.id !== 'none').reduce((shieldTotal, shield) => (
+      shieldTotal + ['back', 'front'].reduce((passTotal, pass) => (
+        passTotal + (shieldPassUsesColor(shield.id, tier.id, pass) ? OUTFIT_COLORS.length : 1)
+      ), 0)
+    ), 0)
+  ), 0);
   const componentPngs = skinBodies + heads + hair + faceDetails + outfitFront + outfitBack
     + headgear + weaponLayers + shieldLayers;
   return {

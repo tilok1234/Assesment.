@@ -3,6 +3,11 @@ import { BONE, GOLD, INK, METAL, WOOD } from './catalogs.js';
 const ARCANE = ['#30245c', '#7658d6', '#62d9ff', '#f0ffff'];
 const LEGEND = ['#52308b', '#9b72e8', '#f2b84b', '#fff1a8'];
 const MYTHIC = { core: '#ffffff', gold: '#ffd45c', void: '#6338c7', plasma: '#ff55d7', frost: '#67f2ff' };
+const ARTIFACT = {
+  core: '#ffffff', sun: '#fff29a', gold: '#ffbd3f', ember: '#ff574f',
+  blood: '#b8294f', void: '#241248', astral: '#8b4dff', soul: '#61ffc7',
+  frost: '#55eaff', steel: '#526b91', darkSteel: '#1f2c49',
+};
 
 const SHIELD_TOP = {
   round: 12,
@@ -333,6 +338,101 @@ function drawTier4Full(S, R, x, y, shield) {
   }
 }
 
+function drawTier5Full(S, R, x, y, shield) {
+  if (shield === 'round') {
+    // Worldsun Disc: a burning solar corona around a brilliant central eye.
+    S(x + 2, y - 3, ARTIFACT.sun);
+    S(x, y - 3, ARTIFACT.ember); S(x + 4, y - 3, ARTIFACT.ember);
+    S(x - 1, y - 1, ARTIFACT.gold); S(x + 5, y - 1, ARTIFACT.gold);
+    S(x - 2, y + 2, ARTIFACT.ember); S(x + 6, y + 2, ARTIFACT.ember);
+    S(x - 2, y + 4, ARTIFACT.sun); S(x + 6, y + 4, ARTIFACT.sun);
+    S(x - 1, y + 5, ARTIFACT.gold); S(x + 5, y + 5, ARTIFACT.gold);
+    S(x + 2, y + 7, ARTIFACT.sun);
+    R(x + 1, y + 1, 3, 1, ARTIFACT.gold);
+    R(x + 1, y + 3, 3, 1, ARTIFACT.sun);
+    S(x + 2, y + 2, ARTIFACT.core); S(x + 2, y + 4, ARTIFACT.ember);
+  }
+  if (shield === 'kite') {
+    // Voidwyrm Aegis: swept horns, astral wings, and a long draconic tail.
+    S(x, y - 3, ARTIFACT.astral); S(x + 4, y - 3, ARTIFACT.astral);
+    S(x + 1, y - 2, ARTIFACT.frost); S(x + 3, y - 2, ARTIFACT.frost);
+    S(x + 2, y - 1, ARTIFACT.core);
+    S(x - 2, y + 1, ARTIFACT.void); S(x + 6, y + 1, ARTIFACT.void);
+    S(x - 1, y + 3, ARTIFACT.astral); S(x + 5, y + 3, ARTIFACT.astral);
+    S(x, y + 6, ARTIFACT.frost); S(x + 4, y + 6, ARTIFACT.frost);
+    S(x + 2, y + 9, ARTIFACT.astral); S(x + 2, y + 10, ARTIFACT.core);
+    S(x + 1, y + 2, ARTIFACT.blood); S(x + 3, y + 2, ARTIFACT.blood);
+    R(x + 2, y + 3, 1, 4, ARTIFACT.void);
+  }
+  if (shield === 'buckler') {
+    // Paradox Star: a compact eight-point counterguard built around a void core.
+    S(x + 1, y - 3, ARTIFACT.core); S(x + 2, y - 3, ARTIFACT.core);
+    S(x - 1, y - 1, ARTIFACT.astral); S(x + 4, y - 1, ARTIFACT.astral);
+    S(x - 2, y + 1, ARTIFACT.frost); S(x + 5, y + 1, ARTIFACT.frost);
+    S(x - 1, y + 4, ARTIFACT.astral); S(x + 4, y + 4, ARTIFACT.astral);
+    S(x + 1, y + 6, ARTIFACT.gold); S(x + 2, y + 6, ARTIFACT.gold);
+    S(x, y + 1, ARTIFACT.core); S(x + 3, y + 2, ARTIFACT.core);
+    S(x + 1, y + 1, ARTIFACT.void); S(x + 2, y + 2, ARTIFACT.void);
+  }
+  if (shield === 'heater') {
+    // Throneheart Aegis: a royal crown, crimson wings, and a heart-shaped point.
+    S(x, y - 3, ARTIFACT.gold); S(x + 2, y - 3, ARTIFACT.core); S(x + 4, y - 3, ARTIFACT.gold);
+    S(x + 1, y - 2, ARTIFACT.sun); S(x + 3, y - 2, ARTIFACT.sun);
+    S(x - 2, y + 1, ARTIFACT.blood); S(x + 6, y + 1, ARTIFACT.blood);
+    S(x - 1, y + 4, ARTIFACT.gold); S(x + 5, y + 4, ARTIFACT.gold);
+    S(x + 1, y + 7, ARTIFACT.blood); S(x + 3, y + 7, ARTIFACT.blood);
+    S(x + 2, y + 8, ARTIFACT.core); S(x + 2, y + 9, ARTIFACT.gold);
+    S(x + 1, y + 2, ARTIFACT.ember); S(x + 3, y + 2, ARTIFACT.ember);
+    S(x + 2, y + 3, ARTIFACT.sun);
+  }
+  if (shield === 'tower') {
+    // The Unbroken Gate: crenellations, twin warding pillars, and anchored feet.
+    S(x - 1, y - 3, ARTIFACT.steel); S(x, y - 3, ARTIFACT.core);
+    S(x + 2, y - 3, ARTIFACT.gold); S(x + 3, y - 3, ARTIFACT.core); S(x + 4, y - 3, ARTIFACT.steel);
+    R(x - 1, y, 1, 10, ARTIFACT.darkSteel); R(x + 4, y, 1, 10, ARTIFACT.darkSteel);
+    S(x - 1, y + 11, ARTIFACT.steel); S(x + 4, y + 11, ARTIFACT.steel);
+    S(x - 1, y + 12, ARTIFACT.frost); S(x + 2, y + 12, ARTIFACT.core); S(x + 4, y + 12, ARTIFACT.frost);
+    R(x + 1, y + 2, 3, 1, ARTIFACT.gold); R(x + 1, y + 7, 3, 1, ARTIFACT.frost);
+    R(x + 2, y + 3, 1, 4, ARTIFACT.darkSteel);
+    S(x, y + 4, ARTIFACT.core); S(x + 4, y + 4, ARTIFACT.core);
+  }
+  if (shield === 'oval') {
+    // Imperial Eternity: a tall war-disc enclosed by a golden victory laurel.
+    S(x + 1, y - 3, ARTIFACT.gold); S(x + 2, y - 3, ARTIFACT.gold);
+    S(x - 1, y - 1, ARTIFACT.sun); S(x + 4, y - 1, ARTIFACT.sun);
+    S(x - 2, y + 2, ARTIFACT.gold); S(x + 5, y + 2, ARTIFACT.gold);
+    S(x - 2, y + 5, ARTIFACT.gold); S(x + 5, y + 5, ARTIFACT.gold);
+    S(x - 1, y + 8, ARTIFACT.ember); S(x + 4, y + 8, ARTIFACT.ember);
+    S(x + 1, y + 10, ARTIFACT.core); S(x + 2, y + 10, ARTIFACT.core);
+    R(x, y + 2, 4, 1, ARTIFACT.blood); R(x, y + 5, 4, 1, ARTIFACT.gold);
+    S(x + 1, y + 3, ARTIFACT.sun); S(x + 2, y + 4, ARTIFACT.core);
+  }
+  if (shield === 'bone') {
+    // Deathking's Reliquary: a horned skull-cage burning with captured souls.
+    S(x, y - 3, BONE[0]); S(x + 4, y - 3, BONE[0]);
+    S(x + 1, y - 2, ARTIFACT.soul); S(x + 3, y - 2, ARTIFACT.soul);
+    S(x + 2, y - 3, ARTIFACT.core);
+    S(x - 2, y + 1, BONE[1]); S(x + 6, y + 1, BONE[1]);
+    S(x - 2, y + 5, ARTIFACT.void); S(x + 6, y + 5, ARTIFACT.void);
+    S(x, y + 9, BONE[0]); S(x + 4, y + 9, BONE[0]);
+    S(x + 1, y + 10, ARTIFACT.soul); S(x + 3, y + 10, ARTIFACT.soul);
+    S(x + 1, y + 2, ARTIFACT.void); S(x + 3, y + 2, ARTIFACT.void);
+    S(x + 2, y + 4, ARTIFACT.soul); S(x + 2, y + 7, ARTIFACT.astral);
+  }
+  if (shield === 'arcane') {
+    // Event Horizon: an asymmetric orbit of runes around a lightless singularity.
+    S(x + 2, y - 3, ARTIFACT.core);
+    S(x - 1, y - 2, ARTIFACT.frost); S(x + 5, y - 1, ARTIFACT.astral);
+    S(x - 2, y + 1, ARTIFACT.astral); S(x + 6, y + 2, ARTIFACT.frost);
+    S(x - 2, y + 6, ARTIFACT.frost); S(x + 6, y + 5, ARTIFACT.astral);
+    S(x, y + 9, ARTIFACT.astral); S(x + 4, y + 9, ARTIFACT.frost);
+    S(x + 2, y + 10, ARTIFACT.core);
+    S(x, y + 3, ARTIFACT.gold); S(x + 4, y + 3, ARTIFACT.gold);
+    R(x + 1, y + 2, 3, 3, ARTIFACT.void);
+    S(x + 2, y + 3, ARTIFACT.core); S(x + 3, y + 5, ARTIFACT.soul);
+  }
+}
+
 function drawFullShield(S, R, x, y, shield, oc, tier) {
   if (shield === 'round') drawRound(S, R, x, y);
   if (shield === 'kite') drawKite(S, R, x, y, oc);
@@ -342,9 +442,10 @@ function drawFullShield(S, R, x, y, shield, oc, tier) {
   if (shield === 'oval') drawOval(S, R, x, y);
   if (shield === 'bone') drawBone(S, R, x, y);
   if (shield === 'arcane') drawArcane(S, R, x, y);
-  if (tier === 'tier2' || tier === 'tier3' || tier === 'tier4') drawTier2Full(S, R, x, y, shield);
-  if (tier === 'tier3' || tier === 'tier4') drawTier3Full(S, R, x, y, shield);
+  if (tier === 'tier2' || tier === 'tier3' || tier === 'tier4' || tier === 'tier5') drawTier2Full(S, R, x, y, shield);
+  if (tier === 'tier3' || tier === 'tier4' || tier === 'tier5') drawTier3Full(S, R, x, y, shield);
   if (tier === 'tier4') drawTier4Full(S, R, x, y, shield);
+  if (tier === 'tier5') drawTier5Full(S, R, x, y, shield);
 }
 
 function drawTier2Profile(S, R, x, y, shield) {
@@ -401,6 +502,59 @@ function drawTier4Profile(S, R, x, y, shield) {
   if (shield === 'arcane') S(x - 2, y + 1, MYTHIC.plasma);
 }
 
+function drawTier5Profile(S, R, x, y, shield) {
+  const height = PROFILE_HEIGHTS[shield];
+  const middle = y + Math.floor(height / 2);
+
+  if (shield === 'round') {
+    S(x - 1, y - 3, ARTIFACT.sun); S(x, y - 3, ARTIFACT.gold);
+    S(x - 2, middle - 2, ARTIFACT.ember); S(x - 2, middle + 2, ARTIFACT.gold);
+    S(x - 1, y + height + 2, ARTIFACT.sun);
+    S(x + 2, middle, ARTIFACT.core); S(x - 1, middle, ARTIFACT.ember);
+  }
+  if (shield === 'kite') {
+    S(x - 2, y - 3, ARTIFACT.astral); S(x, y - 2, ARTIFACT.frost);
+    S(x - 2, middle - 2, ARTIFACT.void); S(x - 1, middle + 2, ARTIFACT.astral);
+    S(x, y + height + 3, ARTIFACT.core);
+    S(x + 2, middle - 1, ARTIFACT.blood); R(x - 1, middle, 1, 3, ARTIFACT.void);
+  }
+  if (shield === 'buckler') {
+    S(x - 1, y - 3, ARTIFACT.core); S(x, y - 3, ARTIFACT.core);
+    S(x - 2, middle - 3, ARTIFACT.frost); S(x - 2, middle + 3, ARTIFACT.gold);
+    S(x + 2, middle, ARTIFACT.void); S(x - 1, middle, ARTIFACT.astral);
+  }
+  if (shield === 'heater') {
+    S(x - 2, y - 3, ARTIFACT.gold); S(x, y - 3, ARTIFACT.core);
+    S(x - 2, middle - 2, ARTIFACT.blood); S(x - 1, middle + 2, ARTIFACT.gold);
+    S(x, y + height + 3, ARTIFACT.core); S(x - 1, y + height + 2, ARTIFACT.blood);
+    S(x + 2, middle, ARTIFACT.sun);
+  }
+  if (shield === 'tower') {
+    S(x - 2, y - 3, ARTIFACT.steel); S(x, y - 3, ARTIFACT.gold);
+    R(x - 2, y, 1, height + 1, ARTIFACT.darkSteel);
+    S(x - 2, y + height + 3, ARTIFACT.frost); S(x, y + height + 3, ARTIFACT.core);
+    S(x + 2, middle, ARTIFACT.gold); S(x - 1, middle + 2, ARTIFACT.frost);
+  }
+  if (shield === 'oval') {
+    S(x - 1, y - 3, ARTIFACT.gold); S(x, y - 3, ARTIFACT.gold);
+    S(x - 2, middle - 2, ARTIFACT.sun); S(x - 2, middle + 2, ARTIFACT.ember);
+    S(x - 1, y + height + 3, ARTIFACT.core);
+    S(x + 2, middle, ARTIFACT.blood); S(x - 1, middle, ARTIFACT.sun);
+  }
+  if (shield === 'bone') {
+    S(x - 2, y - 3, BONE[0]); S(x, y - 3, ARTIFACT.soul);
+    S(x - 2, middle - 2, BONE[1]); S(x - 2, middle + 2, ARTIFACT.void);
+    S(x - 1, y + height + 3, BONE[0]); S(x + 1, y + height + 3, ARTIFACT.soul);
+    S(x + 2, middle, ARTIFACT.void); S(x - 1, middle, ARTIFACT.soul);
+  }
+  if (shield === 'arcane') {
+    S(x - 1, y - 3, ARTIFACT.core); S(x, y - 2, ARTIFACT.frost);
+    S(x - 2, middle - 2, ARTIFACT.astral); S(x - 2, middle + 2, ARTIFACT.frost);
+    S(x, y + height + 3, ARTIFACT.core); S(x + 1, y + height + 2, ARTIFACT.soul);
+    S(x + 2, middle, ARTIFACT.core); S(x - 1, middle, ARTIFACT.void);
+  }
+}
+
 function drawProfile(S, R, x, y, shield, oc, tier) {
   const profiles = {
     round: [5, WOOD[0], WOOD[1]],
@@ -422,9 +576,10 @@ function drawProfile(S, R, x, y, shield, oc, tier) {
     S(x, y, METAL[2]); S(x, y + height - 1, METAL[1]);
   }
   if (shield === 'buckler') S(x + 2, y + 1, METAL[2]);
-  if (tier === 'tier2' || tier === 'tier3' || tier === 'tier4') drawTier2Profile(S, R, x, y, shield);
-  if (tier === 'tier3' || tier === 'tier4') drawTier3Profile(S, R, x, y, shield);
+  if (tier === 'tier2' || tier === 'tier3' || tier === 'tier4' || tier === 'tier5') drawTier2Profile(S, R, x, y, shield);
+  if (tier === 'tier3' || tier === 'tier4' || tier === 'tier5') drawTier3Profile(S, R, x, y, shield);
   if (tier === 'tier4') drawTier4Profile(S, R, x, y, shield);
+  if (tier === 'tier5') drawTier5Profile(S, R, x, y, shield);
 }
 
 function shieldRig(p, d) {

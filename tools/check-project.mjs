@@ -181,8 +181,8 @@ const masterKitPlayer = {
 const masterKitPlan = characterKit.buildMasterCharacterKitPlan(masterKitPlayer);
 check(masterKitPlan.bodies.length === 280, 'master kits must include every outfit, catalog color, and headgear body combination');
 check(masterKitPlan.weapons.length === 75, 'master kits must include all fifteen weapons at all five tiers');
-check(masterKitPlan.shields.length === 224, 'master kits must include all eight shields at four tiers and seven catalog colors');
-check(masterKitPlan.counts.totalPngs === 879, 'standard master kits must contain 879 native PNG sheets including the assembled preview');
+check(masterKitPlan.shields.length === 280, 'master kits must include all eight shields at all five tiers and seven catalog colors');
+check(masterKitPlan.counts.totalPngs === 991, 'standard master kits must contain 991 native PNG sheets including the assembled preview');
 check(masterKitPlan.bodies.every((entry) => entry.layer === 'body' && entry.spec.weapon === 'none' && entry.spec.shield === 'none'), 'master-kit bodies must not bake weapons or shields');
 check(masterKitPlan.weapons.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit weapon must expose separate back and front layers');
 check(masterKitPlan.shields.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit shield must expose separate back and front layers');
@@ -197,7 +197,7 @@ const customKitPlan = characterKit.buildMasterCharacterKitPlan({
   ...masterKitPlayer,
   palette: { skin: ['#123456', '#234567'], hair: ['#345678', '#456789'], outfit: ['#56789a', '#6789ab'] },
 });
-check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 983, 'master kits must add the current custom outfit color without replacing catalog colors');
+check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 1111, 'master kits must add the current custom outfit color without replacing catalog colors');
 const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   id: `hero-${index + 1}`,
   name: `Hero ${index + 1}`,
@@ -227,14 +227,19 @@ check(
 );
 const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntries);
 check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
-check(completeKitPlan.counts.componentPngs === 723 && completeKitPlan.counts.totalPngs === 724, 'complete character kits must contain 723 content-unique component sheets plus one reference preview');
+check(completeKitPlan.counts.componentPngs === 769 && completeKitPlan.counts.totalPngs === 770, 'complete character kits must contain 769 content-unique component sheets plus one reference preview');
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
 check(completeKitPlan.components.hair.length === 70, 'complete kits must collapse visually identical under-headgear hair variants');
 check(completeKitPlan.components.faceDetails.length === 30, 'complete kits must store only the color-dependent facial-detail variants');
 check(completeKitPlan.components.outfits.length === 115 && completeKitPlan.components.outfitBack.length === 35, 'complete kits must cover all five armor tiers while omitting fixed-color duplicates');
 check(completeKitPlan.components.headgear.length === 25, 'complete kits must avoid duplicate fixed-color headgear sheets');
-check(completeKitPlan.components.weapons.length === 75 && completeKitPlan.components.shields.length === 280, 'complete kits must store each weapon pair and only visually distinct shield passes');
+check(completeKitPlan.components.weapons.length === 75 && completeKitPlan.components.shields.length === 326, 'complete kits must store every five-tier weapon and shield family while omitting visually identical color passes');
+check(
+  completeKitPlan.components.shields.filter((entry) => entry.tier === 'tier5').length === 46
+    && completeKitPlan.components.shields.filter((entry) => entry.tier === 'tier5' && entry.color === 'default').length === 11,
+  'Tier 5 shield components must collapse the four artifact passes whose colors are fully overwritten',
+);
 const completeKitPaths = [
   ...completeKitPlan.components.skinBodies.map((entry) => entry.file),
   ...completeKitPlan.components.heads.map((entry) => entry.file),
@@ -247,7 +252,7 @@ const completeKitPaths = [
   ...completeKitPlan.components.shields.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 724, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 770, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
@@ -319,7 +324,8 @@ check(
 check(engine.SHIELDS.filter((shield) => shield.id !== 'none').every((shield) => typeof shield.tier2Name === 'string'), 'every equipped shield must declare an RPG-style Tier 2 name');
 check(engine.SHIELDS.filter((shield) => shield.id !== 'none').every((shield) => typeof shield.tier3Name === 'string'), 'every equipped shield must declare a legendary Tier 3 name');
 check(engine.SHIELDS.filter((shield) => shield.id !== 'none').every((shield) => typeof shield.tier4Name === 'string'), 'every equipped shield must declare a mythic Tier 4 name');
-check(JSON.stringify(engine.SHIELD_TIERS.map((tier) => tier.id)) === JSON.stringify(['tier1', 'tier2', 'tier3', 'tier4']), 'the shield tier catalog must expose stable Tier 1 through Tier 4 ids');
+check(engine.SHIELDS.filter((shield) => shield.id !== 'none').every((shield) => typeof shield.tier5Name === 'string'), 'every equipped shield must declare an artifact Tier 5 name');
+check(JSON.stringify(engine.SHIELD_TIERS.map((tier) => tier.id)) === JSON.stringify(['tier1', 'tier2', 'tier3', 'tier4', 'tier5']), 'the shield tier catalog must expose stable Tier 1 through Tier 5 ids');
 check(runtimeSources['app.js'].includes('validId(E.SHIELDS, player.shield'), 'saved player specs must safely migrate missing or invalid shields');
 check(runtimeSources['app.js'].includes('validId(E.SHIELD_TIERS, player.shieldTier'), 'saved player specs must safely migrate missing or invalid shield tiers');
 check(runtimeSources['app.js'].includes("'Shield tier'"), 'the player editor must expose a dedicated shield tier control');
@@ -330,6 +336,7 @@ check(runtimeSources['engine/renderer.js'].includes('shieldFollowRig: true'), 'p
 check(runtimeSources['engine/shield-renderer.js'].includes("tier === 'tier2'"), 'the shield renderer must apply the reinforced Tier 2 upgrade layer');
 check(runtimeSources['engine/shield-renderer.js'].includes("tier === 'tier3'"), 'the shield renderer must apply the legendary Tier 3 upgrade layer');
 check(runtimeSources['engine/shield-renderer.js'].includes("tier === 'tier4'"), 'the shield renderer must apply the mythic Tier 4 upgrade layer');
+check(runtimeSources['engine/shield-renderer.js'].includes("tier === 'tier5'"), 'the shield renderer must apply the artifact Tier 5 upgrade layer');
 check(runtimeSources['engine/shield-renderer.js'].includes("d === 'up' ? 'behind' : 'front'"), 'shield layering must place back-view shields behind the humanoid body');
 
 function renderPixels(spec, dir, animId, frame, opts = {}) {
@@ -700,6 +707,46 @@ for (const dir of engine.DIRS) {
     renderPixels({ ...shieldBase, shield, shieldTier: 'tier4' }, dir, 'idle', 0).join(',')
   ));
   check(new Set(signatures).size === equippedShields.length, `every Tier 4 shield family must have a distinct ${dir} silhouette`);
+}
+
+for (const shield of equippedShields) {
+  const tier4Spec = { ...shieldBase, shield, shieldTier: 'tier4' };
+  const tier5Spec = { ...shieldBase, shield, shieldTier: 'tier5' };
+  for (const dir of engine.DIRS) {
+    for (const anim of engine.ANIMS) {
+      for (let frame = 0; frame < anim.frames; frame++) {
+        const tier4 = renderPixels(tier4Spec, dir, anim.id, frame);
+        const tier5 = renderPixels(tier5Spec, dir, anim.id, frame);
+        const changed = changedPixels(tier5, tier4);
+        const faceChanges = changed.filter((index) => {
+          const x = index % engine.SIZE;
+          const y = Math.floor(index / engine.SIZE);
+          return x >= 9 && x <= 14 && y >= 5 && y <= 10;
+        });
+        const minimumArtifactChanges = anim.id === 'hurt' ? 1 : 4;
+        check(changed.length >= minimumArtifactChanges, `${shield} Tier 5 must be a substantial artifact redesign in ${dir} ${anim.id} frame ${frame}`);
+        check(
+          faceChanges.length === 0,
+          `${shield} Tier 5 must preserve face clearance in ${dir} ${anim.id} frame ${frame} (${faceChanges.map((index) => `${index % engine.SIZE},${Math.floor(index / engine.SIZE)}`).join('; ')})`,
+        );
+      }
+    }
+
+    const walkStart = changeSignature(renderPixels(tier5Spec, dir, 'walk', 0), renderPixels(tier4Spec, dir, 'walk', 0));
+    const walkReturn = changeSignature(renderPixels(tier5Spec, dir, 'walk', 2), renderPixels(tier4Spec, dir, 'walk', 2));
+    check(walkStart !== walkReturn, `${shield} Tier 5 artifact form must follow the off-hand walk swing in ${dir}`);
+
+    const attackWind = changeSignature(renderPixels(tier5Spec, dir, 'attack', 0), renderPixels(tier4Spec, dir, 'attack', 0));
+    const attackRecover = changeSignature(renderPixels(tier5Spec, dir, 'attack', 3), renderPixels(tier4Spec, dir, 'attack', 3));
+    check(attackWind !== attackRecover, `${shield} Tier 5 artifact form must brace and recover with attacks in ${dir}`);
+  }
+}
+
+for (const dir of engine.DIRS) {
+  const signatures = equippedShields.map((shield) => (
+    renderPixels({ ...shieldBase, shield, shieldTier: 'tier5' }, dir, 'idle', 0).join(',')
+  ));
+  check(new Set(signatures).size === equippedShields.length, `every Tier 5 shield family must have a distinct ${dir} artifact silhouette`);
 }
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));

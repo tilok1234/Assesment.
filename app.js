@@ -1102,13 +1102,15 @@ function playerGroups() {
     (item) => spec({ shieldTier: item.id }),
   );
   if (shieldTierGroup) {
-    shieldTierGroup.selectedName = player.shieldTier === 'tier4'
-      ? shield.tier4Name
-      : player.shieldTier === 'tier3'
-        ? shield.tier3Name
-        : player.shieldTier === 'tier2'
-          ? shield.tier2Name
-          : 'Standard issue';
+    shieldTierGroup.selectedName = player.shieldTier === 'tier5'
+      ? shield.tier5Name
+      : player.shieldTier === 'tier4'
+        ? shield.tier4Name
+        : player.shieldTier === 'tier3'
+          ? shield.tier3Name
+          : player.shieldTier === 'tier2'
+            ? shield.tier2Name
+            : 'Standard issue';
   }
   return [
     dotGroup('Skin', E.SKINS, player.skin, (value) => setPlayerOption('skin', value)),
@@ -1820,7 +1822,7 @@ function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) 
     + '- face-details: only the color-dependent variants each detail needs\n'
     + '- outfits: all five armor tiers as reusable front layers plus separate cape-back layers\n'
     + '- headgear: color variants only where the art actually uses outfit colors\n'
-    + '- weapons and shields: direction-aware back/front animation layers\n\n'
+    + '- weapons and shields: all five tiers as direction-aware back/front animation layers\n\n'
     + `Runtime draw order: ${COMPLETE_CHARACTER_KIT_LAYER_ORDER.join(' -> ')}.\n`
     + 'Use the same source rectangle, animation column, and direction row for every active component.\n'
     + 'Recipes in manifest.json are lightweight examples; change their component paths to craft new characters from this one library.\n'

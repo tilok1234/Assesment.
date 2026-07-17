@@ -10,7 +10,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
 - Persistent named character packs that collect player and enemy designs and download as a ZIP with full PNG sheets and `manifest.json`
-- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, and 723 content-unique atomic component sheets
+- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, and 769 content-unique atomic component sheets
 - A validated asset pack containing 144 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
@@ -24,7 +24,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
 - Five named armor tiers for every outfit: reinforced Tier 2, crested Tier 3, mythic Tier 4 pauldrons, and luminous Tier 5 apex forms that follow all body animations
 - Fifteen equipped weapon choices spanning blades, blunt weapons, polearms, ranged weapons, and magic focuses, each with standard Tier 1, named RPG-style Tier 2, legendary Tier 3, oversized mythic Tier 4, and final artifact Tier 5 forms; all 75 variants use hand-anchored motion and preserve front- and side-face clearance
-- Eight equipped shield choices—round, kite, buckler, heater, tower, oval, bone, and arcane—each with a standard Tier 1, named reinforced Tier 2, legendary Tier 3, and oversized mythic Tier 4 form; all use distinct front and profile silhouettes, direction-aware layering, off-hand walk motion, and attack bracing
+- Eight equipped shield choices—round, kite, buckler, heater, tower, oval, bone, and arcane—with five named tiers culminating in Worldsun Disc, Voidwyrm Aegis, Paradox Star, Throneheart Aegis, The Unbroken Gate, Imperial Eternity, Deathking's Reliquary, and Event Horizon; all use distinct front and profile silhouettes, direction-aware layering, off-hand walk motion, and attack bracing
 
 ## Preview controls
 
@@ -113,7 +113,7 @@ The working pack stays on the current device. Each downloaded ZIP contains one c
 
 For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes, and the full deduplicated component library. Enemy entries remain available in the regular character-pack ZIP but are not included in the player-only Complete Pack.
 
-A 24-player Complete Pack contains 723 shared component sheets plus 24 ready character sheets: 747 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+A 24-player Complete Pack contains 769 shared component sheets plus 24 ready character sheets: 793 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
 
 ## Complete Character Kits
 
@@ -125,10 +125,10 @@ Use **Download Complete Character Kit** in Player mode to export one `8-bit-spri
 - 115 outfit-front layers plus 35 cape-back layers covering all five armor tiers; fixed-color leather and plate art is stored once per tier
 - 25 headgear layers; fixed-color gear is stored once, while color-aware gear gets the seven catalog colors
 - 150 weapon layers covering all 15 families at Tiers 1-5 in back/front passes
-- 280 shield layers covering all eight families at Tiers 1-4; a pass gets color variants only when color changes its pixels
+- 326 shield layers covering all eight families at Tiers 1-5; a pass gets color variants only when color changes its pixels, including Tier 5 artifact passes that fully replace the underlying accent
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
-The standalone kit contains 723 content-unique component sheets plus one reference preview: 724 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
+The standalone kit contains 769 content-unique component sheets plus one reference preview: 770 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
 
 Draw the non-null component paths from a recipe in this order:
 
