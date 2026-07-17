@@ -931,11 +931,13 @@ function playerGroups() {
     (item) => spec({ shieldTier: item.id }),
   );
   if (shieldTierGroup) {
-    shieldTierGroup.selectedName = player.shieldTier === 'tier3'
-      ? shield.tier3Name
-      : player.shieldTier === 'tier2'
-        ? shield.tier2Name
-        : 'Standard issue';
+    shieldTierGroup.selectedName = player.shieldTier === 'tier4'
+      ? shield.tier4Name
+      : player.shieldTier === 'tier3'
+        ? shield.tier3Name
+        : player.shieldTier === 'tier2'
+          ? shield.tier2Name
+          : 'Standard issue';
   }
   return [
     dotGroup('Skin', E.SKINS, player.skin, (value) => setPlayerOption('skin', value)),

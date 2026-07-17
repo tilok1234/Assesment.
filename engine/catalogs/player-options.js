@@ -89,17 +89,18 @@ export const WEAPON_TIERS = [
 ];
 export const SHIELDS = [
   { id: 'none',    name: 'None' },
-  { id: 'round',   name: 'Round',   tier2Name: 'Ironbound Roundshield', tier3Name: 'Sunforged Aegis' },
-  { id: 'kite',    name: 'Kite',    tier2Name: "Knight's Bulwark",      tier3Name: 'Dragoncrest Bulwark' },
-  { id: 'buckler', name: 'Buckler', tier2Name: "Duelist's Guard",       tier3Name: 'Starsteel Counterguard' },
-  { id: 'heater',  name: 'Heater',  tier2Name: 'Lionheart Heater',       tier3Name: 'Crowned Lion Aegis' },
-  { id: 'tower',   name: 'Tower',   tier2Name: 'Bastion Wall',           tier3Name: 'Citadel of Kings' },
-  { id: 'oval',    name: 'Oval',    tier2Name: 'Legionnaire Scutum',     tier3Name: 'Imperial Scutum' },
-  { id: 'bone',    name: 'Bone',    tier2Name: 'Ossuary Aegis',          tier3Name: 'Graveking Carapace' },
-  { id: 'arcane',  name: 'Arcane',  tier2Name: 'Runebound Ward',         tier3Name: 'Astral Ward' },
+  { id: 'round',   name: 'Round',   tier2Name: 'Ironbound Roundshield', tier3Name: 'Sunforged Aegis',          tier4Name: 'Aegis of the Solar Titan' },
+  { id: 'kite',    name: 'Kite',    tier2Name: "Knight's Bulwark",      tier3Name: 'Dragoncrest Bulwark',      tier4Name: 'Worldwyrm Bulwark' },
+  { id: 'buckler', name: 'Buckler', tier2Name: "Duelist's Guard",       tier3Name: 'Starsteel Counterguard',   tier4Name: 'Empyrean Starshield' },
+  { id: 'heater',  name: 'Heater',  tier2Name: 'Lionheart Heater',       tier3Name: 'Crowned Lion Aegis',       tier4Name: 'Lion Throne Bastion' },
+  { id: 'tower',   name: 'Tower',   tier2Name: 'Bastion Wall',           tier3Name: 'Citadel of Kings',         tier4Name: 'Fortress of Eternity' },
+  { id: 'oval',    name: 'Oval',    tier2Name: 'Legionnaire Scutum',     tier3Name: 'Imperial Scutum',          tier4Name: "Imperator's Warwall" },
+  { id: 'bone',    name: 'Bone',    tier2Name: 'Ossuary Aegis',          tier3Name: 'Graveking Carapace',       tier4Name: 'Ossuary of the Colossus' },
+  { id: 'arcane',  name: 'Arcane',  tier2Name: 'Runebound Ward',         tier3Name: 'Astral Ward',              tier4Name: 'Barrier of the Firmament' },
 ];
 export const SHIELD_TIERS = [
   { id: 'tier1', name: 'Tier 1' },
   { id: 'tier2', name: 'Tier 2' },
   { id: 'tier3', name: 'Tier 3' },
+  { id: 'tier4', name: 'Tier 4' },
 ];

@@ -121,6 +121,8 @@ The eighth content slice adds independent Tier 2 progression for all eight equip
 
 The ninth content slice extends all eight shield families with cumulative legendary Tier 3 forms: Sunforged Aegis, Dragoncrest Bulwark, Starsteel Counterguard, Crowned Lion Aegis, Citadel of Kings, Imperial Scutum, Graveking Carapace, and Astral Ward. Each adds family-specific crown, crest, point, heraldry, antler, or astral geometry to both the full shield and its edge-on profile while retaining the Tier 2 reinforcement beneath it. The existing schema-v5 field carries Tier 3 through editor selection, naming, randomization, history, comparison, persistence, presets, and exports without a migration. Automated checks prove every Tier 3 frame differs from Tier 2, each directional idle silhouette grows, all eight families remain distinct, the legendary layer follows walk and attack motion, and all additions preserve face clearance.
 
+The tenth content slice adds oversized mythic Tier 4 forms for every shield family: Aegis of the Solar Titan, Worldwyrm Bulwark, Empyrean Starshield, Lion Throne Bastion, Fortress of Eternity, Imperator's Warwall, Ossuary of the Colossus, and Barrier of the Firmament. Tier 4 cumulatively preserves the Tier 2 reinforcement and Tier 3 identity while adding bright mythic cores, wider solar rays and dragon wings, larger star points, taller crowns, fortress rails, imperial bands, colossal bone spines, and expanded arcane projections. Both full and edge-on silhouettes grow while following the existing off-hand rig. Exhaustive validation proves every Tier 4 frame differs from Tier 3, every directional idle silhouette expands, all eight families remain distinct, walk and attack poses move the mythic geometry correctly, and the protected face area stays clear. Live A/B and contact-sheet review also confirm that the larger forms remain recognizable at exact 24x24 scale.
+
 Candidate additions:
 
 - Body types and silhouettes
@@ -128,7 +130,7 @@ Candidate additions:
 - More hairstyles and headgear
 - Armor layers, outfits, robes, capes, and accessories
 - More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2/Tier 3/Tier 4/Tier 5 progression finished)
-- Shield Tier 4 and Tier 5 progression, followed by additional off-hand items (eight-family Tier 3 progression complete)
+- Shield Tier 5 progression, followed by additional off-hand items (eight-family Tier 4 progression complete)
 - Species-specific features such as ears, horns, wings, and tails
 - Additional enemy families and variants
 - Optional new animations after the existing sheet contract has a versioning plan

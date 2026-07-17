@@ -2,6 +2,7 @@ import { BONE, GOLD, INK, METAL, WOOD } from './catalogs.js';
 
 const ARCANE = ['#30245c', '#7658d6', '#62d9ff', '#f0ffff'];
 const LEGEND = ['#52308b', '#9b72e8', '#f2b84b', '#fff1a8'];
+const MYTHIC = { core: '#ffffff', gold: '#ffd45c', void: '#6338c7', plasma: '#ff55d7', frost: '#67f2ff' };
 
 const SHIELD_TOP = {
   round: 12,
@@ -264,6 +265,74 @@ function drawTier3Full(S, R, x, y, shield) {
   }
 }
 
+function drawTier4Full(S, R, x, y, shield) {
+  if (shield === 'round') {
+    S(x + 2, y - 3, MYTHIC.core);
+    S(x - 1, y - 1, MYTHIC.gold); S(x + 5, y - 1, MYTHIC.gold);
+    S(x - 2, y + 2, MYTHIC.frost); S(x + 6, y + 2, MYTHIC.frost);
+    S(x - 1, y + 5, MYTHIC.plasma); S(x + 5, y + 5, MYTHIC.plasma);
+    S(x + 2, y + 7, MYTHIC.core);
+    R(x + 1, y + 1, 3, 1, MYTHIC.gold); S(x + 2, y + 3, MYTHIC.core);
+  }
+  if (shield === 'kite') {
+    S(x + 2, y - 3, MYTHIC.core);
+    S(x, y - 3, MYTHIC.plasma); S(x + 4, y - 3, MYTHIC.plasma);
+    S(x - 2, y + 1, MYTHIC.frost); S(x + 6, y + 1, MYTHIC.frost);
+    S(x - 2, y + 4, MYTHIC.void); S(x + 6, y + 4, MYTHIC.void);
+    S(x + 1, y + 9, MYTHIC.gold); S(x + 3, y + 9, MYTHIC.gold);
+    S(x + 2, y + 2, MYTHIC.core); S(x + 2, y + 6, MYTHIC.plasma);
+  }
+  if (shield === 'buckler') {
+    S(x + 1, y - 3, MYTHIC.core); S(x + 2, y - 3, MYTHIC.core);
+    S(x - 2, y, MYTHIC.frost); S(x + 5, y, MYTHIC.frost);
+    S(x - 2, y + 3, MYTHIC.plasma); S(x + 5, y + 3, MYTHIC.plasma);
+    S(x + 1, y + 6, MYTHIC.gold); S(x + 2, y + 6, MYTHIC.gold);
+    S(x - 1, y - 1, MYTHIC.gold); S(x + 4, y + 4, MYTHIC.void);
+    S(x + 1, y + 2, MYTHIC.void); S(x + 2, y + 1, MYTHIC.core);
+  }
+  if (shield === 'heater') {
+    S(x + 2, y - 3, MYTHIC.core);
+    S(x, y - 3, MYTHIC.gold); S(x + 4, y - 3, MYTHIC.gold);
+    S(x - 2, y + 1, MYTHIC.frost); S(x + 6, y + 1, MYTHIC.frost);
+    S(x - 2, y + 4, MYTHIC.void); S(x + 6, y + 4, MYTHIC.void);
+    S(x + 2, y + 8, MYTHIC.core);
+    S(x + 1, y + 2, MYTHIC.plasma); S(x + 3, y + 2, MYTHIC.plasma);
+    S(x + 2, y + 4, MYTHIC.gold);
+  }
+  if (shield === 'tower') {
+    S(x, y - 3, MYTHIC.gold); S(x + 1, y - 3, MYTHIC.core);
+    S(x + 3, y - 3, MYTHIC.core); S(x + 4, y - 3, MYTHIC.gold);
+    R(x - 2, y + 4, 1, 5, MYTHIC.void); R(x + 6, y + 4, 1, 5, MYTHIC.void);
+    S(x - 1, y + 11, MYTHIC.frost); S(x + 2, y + 11, MYTHIC.core); S(x + 5, y + 11, MYTHIC.frost);
+    R(x + 1, y + 2, 3, 1, MYTHIC.gold); R(x + 1, y + 7, 3, 1, MYTHIC.plasma);
+    S(x, y + 4, MYTHIC.core); S(x + 4, y + 4, MYTHIC.core);
+  }
+  if (shield === 'oval') {
+    S(x + 1, y - 3, MYTHIC.core); S(x + 2, y - 3, MYTHIC.core);
+    S(x - 2, y + 2, MYTHIC.gold); S(x + 5, y + 2, MYTHIC.gold);
+    S(x - 2, y + 5, MYTHIC.frost); S(x + 5, y + 5, MYTHIC.frost);
+    S(x + 1, y + 10, MYTHIC.core); S(x + 2, y + 10, MYTHIC.core);
+    R(x, y + 3, 4, 1, MYTHIC.void); R(x, y + 5, 4, 1, MYTHIC.gold);
+  }
+  if (shield === 'bone') {
+    S(x, y - 3, BONE[0]); S(x + 1, y - 3, MYTHIC.core);
+    S(x + 3, y - 3, MYTHIC.core); S(x + 4, y - 3, BONE[0]);
+    S(x - 2, y + 3, BONE[1]); S(x + 6, y + 3, BONE[1]);
+    S(x - 2, y + 5, MYTHIC.void); S(x + 6, y + 5, MYTHIC.void);
+    S(x + 1, y + 10, BONE[0]); S(x + 3, y + 10, BONE[0]);
+    S(x + 2, y + 2, MYTHIC.plasma); S(x + 2, y + 6, MYTHIC.gold);
+  }
+  if (shield === 'arcane') {
+    S(x + 2, y - 3, MYTHIC.core);
+    S(x, y - 3, MYTHIC.plasma); S(x + 4, y - 3, MYTHIC.frost);
+    S(x - 2, y + 1, MYTHIC.void); S(x + 6, y + 1, MYTHIC.gold);
+    S(x - 2, y + 6, MYTHIC.frost); S(x + 6, y + 6, MYTHIC.plasma);
+    S(x + 2, y + 10, MYTHIC.core);
+    S(x, y + 3, MYTHIC.gold); S(x + 4, y + 3, MYTHIC.gold);
+    S(x + 2, y + 2, MYTHIC.plasma); S(x + 2, y + 5, MYTHIC.frost);
+  }
+}
+
 function drawFullShield(S, R, x, y, shield, oc, tier) {
   if (shield === 'round') drawRound(S, R, x, y);
   if (shield === 'kite') drawKite(S, R, x, y, oc);
@@ -273,8 +342,9 @@ function drawFullShield(S, R, x, y, shield, oc, tier) {
   if (shield === 'oval') drawOval(S, R, x, y);
   if (shield === 'bone') drawBone(S, R, x, y);
   if (shield === 'arcane') drawArcane(S, R, x, y);
-  if (tier === 'tier2' || tier === 'tier3') drawTier2Full(S, R, x, y, shield);
-  if (tier === 'tier3') drawTier3Full(S, R, x, y, shield);
+  if (tier === 'tier2' || tier === 'tier3' || tier === 'tier4') drawTier2Full(S, R, x, y, shield);
+  if (tier === 'tier3' || tier === 'tier4') drawTier3Full(S, R, x, y, shield);
+  if (tier === 'tier4') drawTier4Full(S, R, x, y, shield);
 }
 
 function drawTier2Profile(S, R, x, y, shield) {
@@ -309,6 +379,28 @@ function drawTier3Profile(S, R, x, y, shield) {
   if (shield === 'buckler') S(x + 2, middle - 1, LEGEND[1]);
 }
 
+function drawTier4Profile(S, R, x, y, shield) {
+  const height = PROFILE_HEIGHTS[shield];
+  const middle = y + Math.floor(height / 2);
+  const crown = shield === 'bone' ? BONE[0] : MYTHIC.core;
+  const upper = shield === 'arcane' ? MYTHIC.plasma : shield === 'bone' ? BONE[1] : MYTHIC.gold;
+  const lower = shield === 'arcane' ? MYTHIC.frost : shield === 'bone' ? MYTHIC.void : MYTHIC.frost;
+  S(x - 2, y - 3, crown); S(x - 1, y - 3, upper);
+  S(x - 2, middle - 2, upper); S(x - 2, middle + 2, lower);
+  S(x - 2, y + height + 1, lower);
+  S(x + 2, middle + 2, shield === 'bone' ? MYTHIC.plasma : MYTHIC.void);
+  S(x - 1, middle, MYTHIC.core);
+  if (shield === 'tower') {
+    R(x - 2, y, 1, height, MYTHIC.void);
+    S(x + 2, y + height + 1, MYTHIC.core);
+  }
+  if (shield === 'buckler') {
+    S(x - 2, middle - 3, MYTHIC.frost); S(x - 2, middle + 3, MYTHIC.gold);
+  }
+  if (shield === 'kite' || shield === 'heater') S(x, y + height + 2, MYTHIC.core);
+  if (shield === 'arcane') S(x - 2, y + 1, MYTHIC.plasma);
+}
+
 function drawProfile(S, R, x, y, shield, oc, tier) {
   const profiles = {
     round: [5, WOOD[0], WOOD[1]],
@@ -330,8 +422,9 @@ function drawProfile(S, R, x, y, shield, oc, tier) {
     S(x, y, METAL[2]); S(x, y + height - 1, METAL[1]);
   }
   if (shield === 'buckler') S(x + 2, y + 1, METAL[2]);
-  if (tier === 'tier2' || tier === 'tier3') drawTier2Profile(S, R, x, y, shield);
-  if (tier === 'tier3') drawTier3Profile(S, R, x, y, shield);
+  if (tier === 'tier2' || tier === 'tier3' || tier === 'tier4') drawTier2Profile(S, R, x, y, shield);
+  if (tier === 'tier3' || tier === 'tier4') drawTier3Profile(S, R, x, y, shield);
+  if (tier === 'tier4') drawTier4Profile(S, R, x, y, shield);
 }
 
 function shieldRig(p, d) {
