@@ -15,6 +15,7 @@ index.html
         -> engine/catalogs/enemies.js
       -> engine/renderer.js
       -> engine/weapon-renderer.js
+      -> engine/shield-renderer.js
       -> engine/sheets.js
       -> engine/generators.js
 ```
@@ -44,6 +45,8 @@ Weapon entries include a broad content category (`blade`, `blunt`, `polearm`, `r
 `engine/renderer.js` converts a sprite specification, direction, animation, and frame into pixels on a 24x24 canvas context. It owns procedural shapes and family-specific drawing dispatch. Player specifications may include validated optional base/shadow overrides for skin, hair, and outfit; absent or invalid pairs fall back to the selected catalog colors. Optional facial details are layered only on visible human faces, use the resolved player palettes where appropriate, mirror with the existing left/right renderer, and defer to headgear visibility rules.
 
 `engine/weapon-renderer.js` owns humanoid weapon pixels, reusable blade-hilt primitives, shared down, up, and side pose anchors, and the weapon progression layers. Existing enemy-used weapon ids retain their original coordinates and Tier 1 pixels. Tier 2 adds stronger silhouettes and materials; Tier 3 builds on that geometry with legendary ornaments and effects; Tier 4 deliberately extends reach toward the safe frame limits. Tier 5 branches from the proven Tier 3 foundation instead of inheriting Tier 4's oversized overlay, then builds a purpose-made artifact silhouette with a weapon-specific palette, readable physical parts, restrained supporting effects, and distinct front, profile, and strike shapes. All player tiers use the face-safe side offset and follow the animated hand's idle bob, walk swing, attack pose, and lunge through rig transforms supplied by the humanoid configuration.
+
+`engine/shield-renderer.js` owns humanoid shield pixels, eight player shield silhouettes, edge-on side profiles, direction-aware front/behind layering, and the independent off-hand pose transform. Player shields follow the opposite walk swing, brace through attack and recovery, and inherit body lunges while preserving the protected face area. Humanoid enemies stay on the legacy shield path so expanding player content does not silently redraw established enemy sheets.
 
 ### Sheets and thumbnails
 

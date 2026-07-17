@@ -54,6 +54,7 @@ checkSyntax('engine/catalogs/palettes.js');
 checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/generators.js');
 checkSyntax('engine/renderer.js');
+checkSyntax('engine/shield-renderer.js');
 checkSyntax('engine/sheets.js');
 checkSyntax('engine/weapon-renderer.js');
 checkSyntax('tools/build.mjs');
@@ -100,6 +101,7 @@ const runtimeSources = {
   'engine/catalogs/player-options.js': await readFile(path.join(root, 'engine', 'catalogs', 'player-options.js'), 'utf8'),
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
   'engine/renderer.js': await readFile(path.join(root, 'engine', 'renderer.js'), 'utf8'),
+  'engine/shield-renderer.js': await readFile(path.join(root, 'engine', 'shield-renderer.js'), 'utf8'),
   'engine/sheets.js': await readFile(path.join(root, 'engine', 'sheets.js'), 'utf8'),
   'engine/weapon-renderer.js': await readFile(path.join(root, 'engine', 'weapon-renderer.js'), 'utf8'),
 };
@@ -167,6 +169,106 @@ check(runtimeSources['engine/weapon-renderer.js'].includes("C.weaponTier === 'ti
 check(runtimeSources['engine/renderer.js'].includes("from './weapon-renderer.js'"), 'humanoid rendering must use the focused weapon renderer');
 check(runtimeSources['engine/renderer.js'].includes('weaponFollowRig: true'), 'player weapons must follow the animated humanoid hand rig');
 check(runtimeSources['engine/renderer.js'].includes('enhancedHilts: true'), 'player blade weapons must use readable wrapped grips and pommels');
+const expectedShields = ['none', 'round', 'kite', 'buckler', 'heater', 'tower', 'oval', 'bone', 'arcane'];
+check(
+  JSON.stringify(engine.SHIELDS.map((shield) => shield.id)) === JSON.stringify(expectedShields),
+  'the shield catalog must expose none plus all eight validated shield families in stable order',
+);
+check(runtimeSources['app.js'].includes('validId(E.SHIELDS, player.shield'), 'saved player specs must safely migrate missing or invalid shields');
+check(runtimeSources['engine/renderer.js'].includes("from './shield-renderer.js'"), 'humanoid rendering must use the focused shield renderer');
+check(runtimeSources['engine/renderer.js'].includes('shieldFollowRig: true'), 'player shields must follow the animated off-hand rig');
+check(runtimeSources['engine/shield-renderer.js'].includes("d === 'up' ? 'behind' : 'front'"), 'shield layering must place back-view shields behind the humanoid body');
+
+function renderPixels(spec, dir, animId, frame) {
+  const pixels = new Array(engine.SIZE * engine.SIZE).fill(null);
+  let fillStyle = '#000000';
+  const ctx = {
+    clearRect() { pixels.fill(null); },
+    get fillStyle() { return fillStyle; },
+    set fillStyle(value) { fillStyle = value; },
+    fillRect(x, y, width, height) {
+      for (let py = y; py < y + height; py++) {
+        for (let px = x; px < x + width; px++) {
+          if (px >= 0 && py >= 0 && px < engine.SIZE && py < engine.SIZE) pixels[(py * engine.SIZE) + px] = fillStyle;
+        }
+      }
+    },
+  };
+  engine.drawSprite(ctx, spec, dir, animId, frame, { shadow: false });
+  return pixels;
+}
+
+function changedPixels(withShield, withoutShield) {
+  const changed = [];
+  for (let index = 0; index < withShield.length; index++) {
+    if (withShield[index] !== withoutShield[index]) changed.push(index);
+  }
+  return changed;
+}
+
+function changeSignature(withShield, withoutShield) {
+  return changedPixels(withShield, withoutShield).map((index) => `${index}:${withShield[index]}`).join('|');
+}
+
+const shieldBase = {
+  kind: 'player',
+  skin: engine.SKINS[0].id,
+  hairStyle: engine.HAIR_STYLES[0].id,
+  hairColor: engine.HAIR_COLORS[0].id,
+  faceDetail: 'none',
+  headgear: 'none',
+  outfit: engine.OUTFITS[0].id,
+  outfitColor: engine.OUTFIT_COLORS[0].id,
+  weapon: 'none',
+  weaponTier: 'tier1',
+};
+const equippedShields = expectedShields.slice(1);
+for (const shield of equippedShields) {
+  const spec = { ...shieldBase, shield };
+  const emptySpec = { ...shieldBase, shield: 'none' };
+  for (const dir of engine.DIRS) {
+    for (const anim of engine.ANIMS) {
+      for (let frame = 0; frame < anim.frames; frame++) {
+        const rendered = renderPixels(spec, dir, anim.id, frame);
+        const empty = renderPixels(emptySpec, dir, anim.id, frame);
+        const changed = changedPixels(rendered, empty);
+        check(changed.length >= 3, `${shield} shield must remain visible in ${dir} ${anim.id} frame ${frame}`);
+        check(
+          changed.every((index) => {
+            const x = index % engine.SIZE;
+            const y = Math.floor(index / engine.SIZE);
+            return !(x >= 9 && x <= 14 && y >= 5 && y <= 10);
+          }),
+          `${shield} shield must not cover the face in ${dir} ${anim.id} frame ${frame}`,
+        );
+      }
+    }
+
+    const walkStart = changeSignature(renderPixels(spec, dir, 'walk', 0), renderPixels(emptySpec, dir, 'walk', 0));
+    const walkReturn = changeSignature(renderPixels(spec, dir, 'walk', 2), renderPixels(emptySpec, dir, 'walk', 2));
+    check(walkStart !== walkReturn, `${shield} shield must follow the off-hand walk swing in ${dir}`);
+
+    const attackWind = changeSignature(renderPixels(spec, dir, 'attack', 0), renderPixels(emptySpec, dir, 'attack', 0));
+    const attackRecover = changeSignature(renderPixels(spec, dir, 'attack', 3), renderPixels(emptySpec, dir, 'attack', 3));
+    check(attackWind !== attackRecover, `${shield} shield must brace and recover with attacks in ${dir}`);
+  }
+
+  const right = renderPixels(spec, 'right', 'idle', 0);
+  const left = renderPixels(spec, 'left', 'idle', 0);
+  check(
+    left.every((pixel, index) => {
+      const x = index % engine.SIZE;
+      const y = Math.floor(index / engine.SIZE);
+      return pixel === right[(y * engine.SIZE) + (engine.SIZE - 1 - x)];
+    }),
+    `${shield} shield left profile must mirror the validated right profile`,
+  );
+}
+
+for (const dir of engine.DIRS) {
+  const signatures = equippedShields.map((shield) => renderPixels({ ...shieldBase, shield }, dir, 'idle', 0).join(','));
+  check(new Set(signatures).size === equippedShields.length, `every shield family must have a distinct ${dir} silhouette`);
+}
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
 check(packageJson.scripts?.build === 'node tools/build.mjs', 'package.json must expose the production build command');

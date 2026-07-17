@@ -21,6 +21,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
 - Fifteen equipped weapon choices spanning blades, blunt weapons, polearms, ranged weapons, and magic focuses, each with standard Tier 1, named RPG-style Tier 2, legendary Tier 3, oversized mythic Tier 4, and final artifact Tier 5 forms; all 75 variants use hand-anchored motion and preserve front- and side-face clearance
+- Eight equipped shield choices—round, kite, buckler, heater, tower, oval, bone, and arcane—with distinct front and profile silhouettes, direction-aware layering, off-hand walk motion, and attack bracing
 
 ## Preview controls
 
@@ -103,7 +104,7 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 - `styles.css` - desktop-style responsive interface
 - `app.js` - editor state, sprite history, reset and comparison workflows, character and palette presets, migration, naming, playback and frame inspection, persistence, and downloads
 - `sprite-engine.js` - stable public engine API
-- `engine/` - focused animation, palette, player-option, enemy, humanoid weapon, renderer, sheet, and generator modules
+- `engine/` - focused animation, palette, player-option, enemy, humanoid weapon and shield, renderer, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build

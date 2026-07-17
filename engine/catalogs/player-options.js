@@ -92,4 +92,9 @@ export const SHIELDS = [
   { id: 'round',   name: 'Round' },
   { id: 'kite',    name: 'Kite' },
   { id: 'buckler', name: 'Buckler' },
+  { id: 'heater',  name: 'Heater' },
+  { id: 'tower',   name: 'Tower' },
+  { id: 'oval',    name: 'Oval' },
+  { id: 'bone',    name: 'Bone' },
+  { id: 'arcane',  name: 'Arcane' },
 ];

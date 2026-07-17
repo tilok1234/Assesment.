@@ -19,6 +19,7 @@ import {
   WOOD,
 } from './catalogs.js';
 import { drawWeapon } from './weapon-renderer.js';
+import { drawShield } from './shield-renderer.js';
 
 const find = (list, id) => list.find(x => x.id === id) || list[0];
 const isHexColor = value => typeof value === 'string' && /^#[0-9a-f]{6}$/i.test(value);
@@ -96,11 +97,7 @@ function drawHumanoid(g, d, p, C) {
   // ---- weapon (behind for up-facing) ----
   if (d === 'up' && C.weapon && C.weapon !== 'none') drawWeapon(weaponS, weaponR, d, p, C, u);
 
-  // ---- shield slung on back (side view) ----
-  if (d === 'right' && C.shield && C.shield !== 'none') {
-    R(7, 12 + u, 2, 5, C.shield === 'round' ? WOOD[0] : METAL[1]);
-    R(7, 12 + u, 1, 5, C.shield === 'round' ? WOOD[1] : METAL[1]);
-  }
+  drawShield(S, R, d, p, C, u, 'behind');
 
   // ---- cape behind (side view) ----
   if (outfit === 'cape' && d === 'right') {
@@ -378,11 +375,7 @@ function drawHumanoid(g, d, p, C) {
   // ---- headgear ----
   if (gear !== 'none') drawGear(S, R, d, u, HT, hx, gear, oc, C);
 
-  // ---- shield (front hand) ----
-  if (C.shield && C.shield !== 'none' && d !== 'right') {
-    const sx = d === 'down' ? 4 : 16;
-    drawShield(S, R, sx, u, C.shield, oc);
-  }
+  drawShield(S, R, d, p, C, u, 'front');
 
   // ---- weapon (in front) ----
   if (C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(weaponS, weaponR, d, p, C, u);
@@ -582,27 +575,6 @@ function drawGear(S, R, d, u, HT, hx, gear, oc, C) {
     } else {
       S(hx + 1, HT + u - 1, BONE[0]); S(hx + 1, HT + u - 2, BONE[0]); S(hx, HT + u - 3, BONE[0]);
     }
-  }
-}
-
-// ---------------- shield ----------------
-function drawShield(S, R, sx, u, shield, oc) {
-  if (shield === 'round') {
-    R(sx, 12 + u, 4, 5, WOOD[0]);
-    R(sx, 12 + u, 1, 5, WOOD[1]);
-    R(sx, 12 + u, 4, 1, WOOD[1]);
-    S(sx + 1, 14 + u, METAL[0]); S(sx + 2, 14 + u, METAL[0]);
-  }
-  if (shield === 'kite') {
-    R(sx, 11 + u, 4, 5, METAL[0]);
-    R(sx, 11 + u, 4, 1, METAL[2]);
-    S(sx + 1, 16 + u, METAL[1]); S(sx + 2, 16 + u, METAL[1]);
-    S(sx + 1, 13 + u, oc[0]); S(sx + 2, 13 + u, oc[0]);
-  }
-  if (shield === 'buckler') {
-    R(sx + 1, 13 + u, 3, 3, METAL[0]);
-    S(sx + 2, 14 + u, METAL[2]);
-    R(sx + 1, 15 + u, 3, 1, METAL[1]);
   }
 }
 
@@ -1414,6 +1386,7 @@ function buildHumanoidC(spec) {
       detail: spec.faceDetail || 'none',
       sideWeaponOffset: 3,
       weaponFollowRig: true,
+      shieldFollowRig: true,
       enhancedHilts: true,
     };
   }
