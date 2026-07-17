@@ -157,11 +157,13 @@ check(engine.WEAPONS.every((weapon) => typeof weapon.category === 'string'), 'ev
 check(engine.WEAPONS.filter((weapon) => weapon.id !== 'none').every((weapon) => typeof weapon.tier2Name === 'string'), 'every equipped weapon must declare an RPG-style Tier 2 name');
 check(engine.WEAPONS.filter((weapon) => weapon.id !== 'none').every((weapon) => typeof weapon.tier3Name === 'string'), 'every equipped weapon must declare a legendary Tier 3 name');
 check(engine.WEAPONS.filter((weapon) => weapon.id !== 'none').every((weapon) => typeof weapon.tier4Name === 'string'), 'every equipped weapon must declare a mythic Tier 4 name');
-check(JSON.stringify(engine.WEAPON_TIERS.map((tier) => tier.id)) === JSON.stringify(['tier1', 'tier2', 'tier3', 'tier4']), 'the weapon tier catalog must expose stable Tier 1 through Tier 4 ids');
+check(engine.WEAPONS.filter((weapon) => weapon.id !== 'none').every((weapon) => typeof weapon.tier5Name === 'string'), 'every equipped weapon must declare an artifact Tier 5 name');
+check(JSON.stringify(engine.WEAPON_TIERS.map((tier) => tier.id)) === JSON.stringify(['tier1', 'tier2', 'tier3', 'tier4', 'tier5']), 'the weapon tier catalog must expose stable Tier 1 through Tier 5 ids');
 check(runtimeSources['app.js'].includes("validId(E.WEAPON_TIERS, player.weaponTier"), 'saved player specs must safely migrate missing or invalid weapon tiers');
 check(runtimeSources['app.js'].includes("'Weapon tier'"), 'the player editor must expose a dedicated weapon tier control');
 check(runtimeSources['engine/weapon-renderer.js'].includes("C.weaponTier === 'tier3'"), 'the weapon renderer must apply the legendary Tier 3 upgrade layer');
 check(runtimeSources['engine/weapon-renderer.js'].includes("C.weaponTier === 'tier4'"), 'the weapon renderer must apply the longer mythic Tier 4 upgrade layer');
+check(runtimeSources['engine/weapon-renderer.js'].includes("C.weaponTier === 'tier5'"), 'the weapon renderer must apply the apex artifact Tier 5 upgrade layer');
 check(runtimeSources['engine/renderer.js'].includes("from './weapon-renderer.js'"), 'humanoid rendering must use the focused weapon renderer');
 check(runtimeSources['engine/renderer.js'].includes('weaponFollowRig: true'), 'player weapons must follow the animated humanoid hand rig');
 check(runtimeSources['engine/renderer.js'].includes('enhancedHilts: true'), 'player blade weapons must use readable wrapped grips and pommels');

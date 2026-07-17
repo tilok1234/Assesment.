@@ -27,6 +27,13 @@ const TIER4 = {
   plasma: '#ff55d7',
   frost: '#67f2ff',
 };
+const TIER5 = {
+  apex: '#fffbd1',
+  divine: '#ffe05c',
+  cosmic: '#38f4ff',
+  rift: '#ff3f9f',
+  abyss: '#24105f',
+};
 
 function weaponAnchors(C) {
   return {
@@ -814,6 +821,342 @@ function drawTierFourUpgrade(S, R, d, ph, C) {
   }
 }
 
+function drawTierFiveUpgrade(S, R, d, ph, C) {
+  const w = C.weapon;
+  const strike = ph === 'strike';
+  const wind = ph === 'wind';
+  const { downX, upX, sideX } = weaponAnchors(C);
+  const pulse = strike ? TIER5.apex : wind ? TIER5.rift : TIER5.cosmic;
+  const drawNova = (cx, cy) => {
+    R(cx - 1, cy - 5, 3, 1, TIER5.divine);
+    R(cx - 3, cy - 4, 7, 1, TIER5.abyss);
+    R(cx - 4, cy - 3, 9, 2, TIER5.abyss);
+    R(cx - 5, cy - 1, 11, 3, TIER5.abyss);
+    R(cx - 4, cy + 2, 9, 2, TIER5.abyss);
+    R(cx - 3, cy + 4, 7, 1, TIER5.abyss);
+    R(cx - 1, cy + 5, 3, 1, TIER5.divine);
+    R(cx - 2, cy - 2, 5, 5, pulse);
+    S(cx, cy, TIER5.apex); S(cx - 5, cy, TIER5.cosmic); S(cx + 5, cy, TIER5.rift);
+  };
+  const drawHammerHead = (left, cy, width) => {
+    R(left + 2, cy - 3, Math.max(2, width - 4), 1, TIER5.divine);
+    R(left, cy - 2, width, 5, TIER5.abyss);
+    R(left + 1, cy - 1, Math.max(2, width - 2), 3, pulse);
+    R(left + 2, cy + 3, Math.max(2, width - 4), 1, TIER5.divine);
+    S(left, cy, TIER5.apex); S(left + width - 1, cy, TIER5.apex);
+  };
+  const drawClubHead = (left, top, width) => {
+    R(left + 2, top, Math.max(2, width - 4), 2, TIER5.abyss);
+    R(left + 1, top + 2, Math.max(3, width - 2), 2, TIER5.abyss);
+    R(left, top + 4, width, 3, TIER5.abyss);
+    R(left + 1, top + 7, Math.max(3, width - 1), 2, TIER5.abyss);
+    R(left + 2, top + 9, Math.max(2, width - 3), 2, TIER5.abyss);
+    R(left + 3, top + 2, Math.max(2, width - 5), 7, pulse);
+    S(left, top + 3, TIER5.apex); S(left + width - 1, top + 5, TIER5.divine);
+    S(left + 1, top + 10, TIER5.cosmic); S(left + width - 2, top + 1, TIER5.rift);
+  };
+
+  if (w === 'sword' || w === 'dagger') {
+    const dagger = w === 'dagger';
+    if (d === 'down') {
+      const guardY = strike ? 14 : wind ? 12 : 13;
+      if (strike) {
+        R(downX - 1, dagger ? 20 : 21, 3, dagger ? 3 : 3, TIER5.abyss);
+        S(downX, 23, TIER5.apex); S(downX - 2, 22, pulse); S(downX + 2, 22, TIER5.rift);
+      } else {
+        const tipY = dagger ? (wind ? 2 : 3) : 2;
+        R(downX - 1, tipY, 3, 2, TIER5.abyss); S(downX, tipY, TIER5.apex);
+        S(downX - 2, tipY + 1, TIER5.cosmic); S(downX + 2, tipY + 1, TIER5.rift);
+      }
+      S(downX - 5, guardY, TIER5.divine); S(downX + 5, guardY, TIER5.divine);
+      S(downX - 3, guardY + (strike ? -2 : 2), pulse); S(downX + 3, guardY + (strike ? -2 : 2), pulse);
+    } else if (d === 'up') {
+      const guardY = strike ? 10 : wind ? 14 : dagger ? 11 : 14;
+      if (strike) {
+        R(upX, 0, 3, 3, TIER5.abyss); S(upX + 1, 0, TIER5.apex);
+        S(upX - 1, 1, TIER5.cosmic); S(upX + 3, 1, TIER5.rift);
+      } else if (wind) {
+        R(upX - 1, 20, 3, 3, TIER5.abyss); S(upX, 23, TIER5.apex);
+      } else {
+        const tipY = 2;
+        R(upX - 1, tipY, 3, 2, TIER5.abyss); S(upX, tipY, TIER5.apex);
+      }
+      S(upX - 5, guardY, TIER5.divine); S(upX + 5, guardY, TIER5.divine);
+    } else if (strike) {
+      R(20, 11, 4, 4, TIER5.abyss); S(23, 12, TIER5.apex);
+      S(22, 10, TIER5.cosmic); S(22, 15, TIER5.rift); R(7, 13, 7, 1, TIER5.divine);
+    } else {
+      R(sideX, 2, 3, dagger ? 3 : 4, TIER5.abyss); S(sideX + 1, 2, TIER5.apex);
+      S(sideX, 3, TIER5.cosmic); S(sideX + 3, 3, TIER5.rift);
+      S(sideX, wind ? 11 : 14, TIER5.divine); S(sideX + 6, wind ? 11 : 14, TIER5.divine);
+    }
+  }
+
+  if (w === 'greatsword') {
+    if (d === 'down') {
+      const guardY = strike ? 13 : wind ? 11 : 13;
+      if (strike) {
+        R(downX - 2, 20, 4, 4, TIER5.abyss); R(downX - 1, 21, 2, 3, pulse); S(downX, 23, TIER5.apex);
+      } else {
+        const tipY = wind ? 0 : 2;
+        R(downX - 2, tipY, 4, wind ? 4 : 5, TIER5.abyss); R(downX - 1, tipY, 2, wind ? 3 : 4, pulse);
+        S(downX, tipY, TIER5.apex); S(downX - 3, tipY + 2, TIER5.rift); S(downX + 2, tipY + 2, TIER5.cosmic);
+      }
+      S(downX - 6, guardY, TIER5.divine); S(downX + 6, guardY, TIER5.divine);
+      S(downX - 4, guardY + 2, pulse); S(downX + 4, guardY + 2, pulse);
+    } else if (d === 'up') {
+      const guardY = strike ? 10 : 14;
+      const tipY = strike ? 0 : 2;
+      R(upX - 2, tipY, 4, strike ? 5 : 4, TIER5.abyss); R(upX - 1, tipY, 2, strike ? 4 : 3, pulse);
+      S(upX, tipY, TIER5.apex); S(upX - 3, tipY + 2, TIER5.rift); S(upX + 2, tipY + 2, TIER5.cosmic);
+      S(upX - 6, guardY, TIER5.divine); S(upX + 6, guardY, TIER5.divine);
+    } else if (strike) {
+      R(19, 10, 5, 6, TIER5.abyss); R(20, 11, 4, 4, pulse); S(23, 12, TIER5.apex);
+      S(21, 9, TIER5.rift); S(21, 16, TIER5.cosmic); R(7, 12, 7, 2, TIER5.divine);
+    } else {
+      const tipY = wind ? 0 : 2;
+      R(sideX, tipY, 4, wind ? 4 : 5, TIER5.abyss); R(sideX + 1, tipY, 2, wind ? 3 : 4, pulse);
+      S(sideX + 1, tipY, TIER5.apex); S(sideX, tipY + 2, TIER5.rift); S(sideX + 4, tipY + 2, TIER5.cosmic);
+      S(sideX, wind ? 11 : 14, TIER5.divine); S(sideX + 6, wind ? 11 : 14, TIER5.divine);
+    }
+  }
+
+  if (w === 'scimitar') {
+    if (d === 'down') {
+      const y = strike ? 20 : wind ? 1 : 2;
+      R(downX - 2, y, 4, 2, TIER5.abyss); S(downX - 3, y + 1, TIER5.apex);
+      S(downX + 2, y + 2, TIER5.rift); S(downX - 1, Math.min(23, y + 4), TIER5.cosmic);
+      S(downX + 5, strike ? 17 : wind ? 9 : 11, TIER5.divine);
+    } else if (d === 'up') {
+      const y = strike ? 0 : 2;
+      R(upX - 2, y, 4, 2, TIER5.abyss); S(upX - 3, y + 1, TIER5.apex);
+      S(upX + 2, y + 2, TIER5.rift); S(upX + 4, strike ? 6 : 10, TIER5.divine);
+    } else if (strike) {
+      R(19, 8, 5, 4, TIER5.abyss); R(20, 9, 4, 2, pulse); S(23, 8, TIER5.apex);
+      S(21, 13, TIER5.rift); S(18, 15, TIER5.cosmic); R(8, 13, 7, 1, TIER5.divine);
+    } else {
+      R(sideX, wind ? 0 : 2, 4, 3, TIER5.abyss); S(sideX, wind ? 1 : 3, TIER5.apex);
+      S(sideX + 4, wind ? 3 : 5, TIER5.rift); S(sideX + 2, wind ? 5 : 7, TIER5.cosmic);
+      S(sideX + 5, wind ? 9 : 11, TIER5.divine);
+    }
+  }
+
+  if (w === 'rapier') {
+    if (d === 'down') {
+      const tipY = strike ? 22 : 2;
+      R(downX - 1, tipY, 3, 2, TIER5.abyss); S(downX, strike ? 23 : tipY, TIER5.apex);
+      S(downX - 2, strike ? 22 : 1, TIER5.cosmic); S(downX + 2, strike ? 22 : 1, TIER5.rift);
+      const guardY = strike ? 14 : wind ? 11 : 13;
+      S(downX - 5, guardY + 1, TIER5.divine); S(downX + 5, guardY + 1, TIER5.divine);
+      S(downX, guardY + (strike ? -3 : 3), pulse);
+    } else if (d === 'up') {
+      R(upX - 1, strike ? 0 : 2, 3, 2, TIER5.abyss); S(upX, strike ? 0 : 2, TIER5.apex);
+      S(upX - 2, strike ? 1 : 3, TIER5.cosmic); S(upX + 2, strike ? 1 : 3, TIER5.rift);
+      const guardY = strike ? 9 : 14;
+      S(upX - 5, guardY + 1, TIER5.divine); S(upX + 5, guardY + 1, TIER5.divine);
+    } else if (strike) {
+      R(21, 11, 3, 4, TIER5.abyss); S(23, 13, TIER5.apex);
+      S(22, 10, TIER5.cosmic); S(22, 15, TIER5.rift); R(7, 13, 7, 1, TIER5.divine);
+    } else {
+      R(sideX, wind ? 0 : 2, 3, 2, TIER5.abyss); S(sideX + 1, wind ? 0 : 2, TIER5.apex);
+      S(sideX, wind ? 1 : 3, TIER5.cosmic); S(sideX + 3, wind ? 1 : 3, TIER5.rift);
+      const guardY = wind ? 11 : 13;
+      S(sideX, guardY + 1, TIER5.divine); S(sideX + 5, guardY + 1, TIER5.divine);
+    }
+  }
+
+  if (w === 'axe') {
+    if (d === 'down') {
+      const y = strike ? 17 : wind ? 6 : 8;
+      R(16, y - 3, 3, 1, TIER5.divine); R(21, y - 3, 2, 1, TIER5.divine);
+      R(15, y - 2, 4, 2, TIER5.abyss); R(20, y - 2, 4, 2, TIER5.abyss);
+      R(14, y, 10, 3, TIER5.abyss); R(15, y, 8, 1, pulse);
+      S(14, y, TIER5.apex); S(23, y, TIER5.apex); S(16, y - 3, TIER5.cosmic); S(21, y - 3, TIER5.rift);
+      R(downX - 1, strike ? 20 : 13, 3, strike ? 4 : 10, TIER5.divine);
+    } else if (d === 'up') {
+      const y = strike ? 2 : 8;
+      R(1, y - 3, 3, 1, TIER5.divine); R(8, y - 3, 3, 1, TIER5.divine);
+      R(0, y - 2, 5, 2, TIER5.abyss); R(7, y - 2, 5, 2, TIER5.abyss);
+      R(0, y, 12, 3, TIER5.abyss); R(1, y, 10, 1, pulse);
+      S(0, y, TIER5.apex); S(11, y, TIER5.apex); S(3, Math.max(0, y - 3), TIER5.cosmic); S(9, Math.max(0, y - 3), TIER5.rift);
+    } else if (strike) {
+      R(21, 7, 3, 12, TIER5.abyss); R(19, 8, 2, 4, TIER5.abyss); R(19, 14, 2, 4, TIER5.abyss);
+      R(22, 8, 2, 10, pulse); R(18, 11, 6, 4, TIER5.abyss);
+      S(23, 7, TIER5.apex); S(23, 18, TIER5.apex); S(18, 10, TIER5.cosmic); S(18, 16, TIER5.rift);
+      R(7, 12, 9, 3, TIER5.divine);
+    } else {
+      const y = wind ? 5 : 8;
+      R(sideX + 2, Math.max(0, y - 3), 4, 1, TIER5.divine);
+      R(sideX + 1, Math.max(0, y - 2), 6, 2, TIER5.abyss);
+      R(sideX, y, 24 - sideX, 3, TIER5.abyss); R(sideX + 1, y, 23 - sideX, 1, pulse);
+      S(23, y, TIER5.apex); S(sideX + 2, Math.max(0, y - 4), TIER5.cosmic);
+    }
+  }
+
+  if (w === 'mace') {
+    if (d === 'down') {
+      const y = strike ? 19 : wind ? 6 : 8;
+      drawNova(19, y);
+    } else if (d === 'up') {
+      const y = strike ? 3 : 7;
+      drawNova(6, y);
+    } else if (strike) {
+      drawNova(21, 13); R(7, 12, 9, 3, TIER5.divine);
+    } else {
+      const y = wind ? 6 : 8;
+      drawNova(21, y);
+    }
+  }
+
+  if (w === 'warhammer') {
+    if (d === 'down') {
+      const y = strike ? 18 : wind ? 5 : 7;
+      drawHammerHead(14, y, 10); S(16, y + 4, TIER5.cosmic); S(22, y + 4, TIER5.rift);
+    } else if (d === 'up') {
+      const y = strike ? 1 : 6;
+      drawHammerHead(0, y, 13);
+    } else if (strike) {
+      R(20, 6, 4, 14, TIER5.abyss); R(19, 8, 1, 10, TIER5.divine); R(21, 7, 3, 12, pulse);
+      S(23, 6, TIER5.apex); S(23, 19, TIER5.apex); R(18, 11, 6, 4, TIER5.divine);
+      S(19, 5, TIER5.cosmic); S(19, 20, TIER5.rift);
+    } else {
+      const y = wind ? 4 : 6;
+      drawHammerHead(sideX, y, 24 - sideX);
+    }
+  }
+
+  if (w === 'spear') {
+    if (d === 'down') {
+      R(downX - 1, strike ? 0 : 2, 3, strike ? 24 : 20, TIER5.abyss); R(downX, strike ? 0 : 2, 1, strike ? 24 : 20, pulse);
+      S(downX, strike ? 0 : 2, TIER5.apex); S(downX, strike ? 23 : 21, TIER5.apex);
+      S(downX - 3, strike ? 21 : 2, TIER5.cosmic); S(downX + 3, strike ? 21 : 2, TIER5.rift);
+      S(downX - 2, strike ? 19 : 4, TIER5.divine); S(downX + 2, strike ? 19 : 4, TIER5.divine);
+    } else if (d === 'up') {
+      R(upX - 1, strike ? 0 : 2, 3, strike ? 24 : 20, TIER5.abyss); R(upX, strike ? 0 : 2, 1, strike ? 24 : 20, pulse);
+      S(upX, strike ? 0 : 2, TIER5.apex); S(upX, strike ? 23 : 21, TIER5.apex);
+      S(upX - 3, strike ? 2 : 21, TIER5.cosmic); S(upX + 3, strike ? 2 : 21, TIER5.rift);
+    } else if (strike) {
+      R(7, 12, 17, 3, TIER5.abyss); R(7, 13, 17, 1, pulse); S(23, 13, TIER5.apex);
+      S(21, 10, TIER5.cosmic); S(21, 16, TIER5.rift); S(19, 11, TIER5.divine); S(19, 15, TIER5.divine);
+    } else {
+      R(sideX, wind ? 0 : 2, 3, wind ? 24 : 20, TIER5.abyss); R(sideX + 1, wind ? 0 : 2, 1, wind ? 24 : 20, pulse);
+      S(sideX + 1, wind ? 0 : 2, TIER5.apex); S(sideX + 1, wind ? 23 : 21, TIER5.apex);
+      S(sideX + 3, wind ? 3 : 4, TIER5.cosmic); S(sideX + 3, wind ? 6 : 7, TIER5.rift);
+    }
+  }
+
+  if (w === 'club') {
+    if (d === 'down') {
+      const top = strike ? 13 : 2;
+      drawClubHead(14, top, 10);
+      R(17, strike ? 9 : 12, 3, strike ? 14 : 10, TIER5.divine);
+    } else if (d === 'up') {
+      const top = strike ? 0 : 10;
+      drawClubHead(0, top, 12);
+    } else if (strike) {
+      drawClubHead(16, 7, 8);
+      R(7, 12, 11, 3, TIER5.divine);
+    } else {
+      const top = wind ? 0 : 2;
+      drawClubHead(sideX, top, 24 - sideX);
+    }
+  }
+
+  if (w === 'bow') {
+    if (d === 'right') {
+      R(22, 2, 2, 20, TIER5.abyss); R(21, 3, 1, 18, pulse);
+      S(20, 2, TIER5.apex); S(20, 21, TIER5.apex); S(19, 3, TIER5.divine); S(19, 20, TIER5.divine);
+      S(18, 4, TIER5.cosmic); S(18, 19, TIER5.rift); if (strike) R(16, 12, 8, 3, TIER5.apex);
+    } else if (d === 'down') {
+      R(22, 2, 2, 20, TIER5.abyss); R(21, 3, 1, 18, pulse);
+      S(20, 2, TIER5.apex); S(20, 21, TIER5.apex); S(19, 3, TIER5.divine); S(19, 20, TIER5.divine);
+      if (strike) { R(11, 17, 3, 7, TIER5.abyss); S(12, 23, TIER5.apex); S(11, 17, TIER5.cosmic); }
+    } else {
+      R(0, 2, 2, 20, TIER5.abyss); R(2, 3, 1, 18, pulse);
+      S(3, 2, TIER5.apex); S(3, 21, TIER5.apex); S(4, 3, TIER5.divine); S(4, 20, TIER5.divine);
+      S(5, 4, TIER5.cosmic); S(5, 19, TIER5.rift); if (strike) R(9, 0, 3, 8, TIER5.apex);
+    }
+  }
+
+  if (w === 'crossbow') {
+    if (d === 'down') {
+      R(8, 11, 16, 7, TIER5.abyss); R(9, 12, 15, 5, pulse); R(10, 13, 14, 3, TIER5.divine);
+      S(8, 14, TIER5.apex); S(23, 14, TIER5.apex); S(10, 10, TIER5.cosmic); S(22, 10, TIER5.rift);
+      R(downX - 1, 2, 3, 20, TIER5.abyss); R(downX, 2, 1, 20, TIER5.apex);
+    } else if (d === 'up') {
+      R(0, 5, 16, 7, TIER5.abyss); R(0, 6, 15, 5, pulse); R(0, 7, 14, 3, TIER5.divine);
+      S(0, 8, TIER5.apex); S(15, 8, TIER5.apex); S(1, 4, TIER5.cosmic); S(13, 4, TIER5.rift);
+      R(upX - 1, 2, 3, 20, TIER5.abyss); R(upX, 2, 1, 20, TIER5.apex);
+    } else {
+      R(sideX, 2, 4, 20, TIER5.abyss); R(sideX + 1, 3, 2, 18, pulse);
+      R(sideX, 10, 24 - sideX, 6, TIER5.abyss); R(sideX + 1, 11, 23 - sideX, 4, TIER5.divine);
+      S(23, 12, TIER5.apex); S(sideX + 2, 9, TIER5.cosmic); S(sideX + 6, 16, TIER5.rift);
+    }
+  }
+
+  if (w === 'staff') {
+    if (d === 'down') {
+      R(downX - 1, 2, 3, 20, TIER5.abyss); R(downX, 2, 1, 20, TIER5.divine);
+      R(14, 2, 7, 6, TIER5.abyss); R(15, 3, 5, 4, pulse); S(downX, 4, TIER5.apex);
+      S(14, 2, TIER5.cosmic); S(20, 2, TIER5.rift); S(14, 7, TIER5.rift); S(20, 7, TIER5.cosmic);
+      if (strike) { S(14, 23, TIER5.cosmic); S(20, 23, TIER5.rift); }
+    } else if (d === 'up') {
+      R(upX - 1, 2, 3, 20, TIER5.abyss); R(upX, 2, 1, 20, TIER5.divine);
+      R(2, 2, 9, 6, TIER5.abyss); R(3, 3, 7, 4, pulse); S(upX, 4, TIER5.apex);
+      S(2, 2, TIER5.cosmic); S(10, 2, TIER5.rift); S(2, 7, TIER5.rift); S(10, 7, TIER5.cosmic);
+    } else if (strike) {
+      R(7, 12, 17, 3, TIER5.abyss); R(7, 13, 17, 1, TIER5.divine); S(23, 13, TIER5.apex);
+      R(18, 7, 6, 13, TIER5.abyss); R(19, 8, 4, 11, pulse);
+      S(20, 6, TIER5.cosmic); S(23, 9, TIER5.rift); S(20, 20, TIER5.rift); S(23, 17, TIER5.cosmic);
+    } else {
+      R(sideX, 2, 3, 20, TIER5.abyss); R(sideX + 1, 2, 1, 20, TIER5.divine);
+      R(sideX, 2, 8, 6, TIER5.abyss); R(sideX + 1, 3, 6, 4, pulse); S(sideX + 3, 4, TIER5.apex);
+      S(sideX, 2, TIER5.cosmic); S(sideX + 7, 2, TIER5.rift);
+    }
+  }
+
+  if (w === 'wand') {
+    if (d === 'down') {
+      R(downX - 1, 2, 3, 20, TIER5.abyss); R(downX, 2, 1, 20, TIER5.divine);
+      R(14, 2, 7, 7, TIER5.abyss); R(15, 3, 5, 5, pulse); S(downX, 5, TIER5.apex);
+      S(14, 5, TIER5.cosmic); S(20, 5, TIER5.rift); S(17, 2, TIER5.divine); S(17, 8, TIER5.divine);
+      if (strike) { S(14, 22, TIER5.cosmic); S(21, 20, TIER5.rift); }
+    } else if (d === 'up') {
+      R(upX - 1, 2, 3, 20, TIER5.abyss); R(upX, 2, 1, 20, TIER5.divine);
+      R(2, 2, 9, 7, TIER5.abyss); R(3, 3, 7, 5, pulse); S(upX, 5, TIER5.apex);
+      S(2, 5, TIER5.cosmic); S(10, 5, TIER5.rift); S(6, 2, TIER5.divine); S(6, 8, TIER5.divine);
+    } else if (strike) {
+      R(8, 12, 16, 3, TIER5.abyss); R(9, 13, 15, 1, TIER5.divine); S(23, 13, TIER5.apex);
+      R(18, 7, 6, 13, TIER5.abyss); R(19, 8, 4, 11, pulse);
+      S(21, 6, TIER5.cosmic); S(23, 10, TIER5.rift); S(21, 20, TIER5.rift); S(18, 17, TIER5.cosmic);
+    } else {
+      R(sideX, 2, 3, 20, TIER5.abyss); R(sideX + 1, 2, 1, 20, TIER5.divine);
+      R(sideX, 2, 8, 7, TIER5.abyss); R(sideX + 1, 3, 6, 5, pulse); S(sideX + 3, 5, TIER5.apex);
+      S(sideX, 5, TIER5.cosmic); S(sideX + 7, 5, TIER5.rift);
+    }
+  }
+
+  if (w === 'spellbook') {
+    if (d === 'down') {
+      R(14, 6, 10, 13, TIER5.abyss); R(15, 7, 9, 11, pulse); R(16, 8, 7, 9, BOOK[0]);
+      R(19, 7, 1, 11, TIER5.divine); S(14, 6, TIER5.apex); S(23, 6, TIER5.apex);
+      S(14, 18, TIER5.cosmic); S(23, 18, TIER5.rift); R(22, 2, 2, 20, TIER5.abyss); R(23, 2, 1, 20, pulse);
+      if (strike) { R(14, 20, 10, 2, TIER5.divine); S(18, 23, TIER5.apex); }
+    } else if (d === 'up') {
+      R(0, 6, 12, 13, TIER5.abyss); R(1, 7, 10, 11, pulse); R(2, 8, 8, 9, BOOK[0]);
+      R(6, 7, 1, 11, TIER5.divine); S(0, 6, TIER5.apex); S(11, 6, TIER5.apex);
+      S(0, 18, TIER5.cosmic); S(11, 18, TIER5.rift); R(0, 2, 2, 20, TIER5.abyss); R(0, 2, 1, 20, pulse);
+      if (strike) { R(0, 3, 12, 2, TIER5.divine); S(6, 0, TIER5.apex); }
+    } else {
+      R(sideX, 6, 24 - sideX, 13, TIER5.abyss); R(sideX + 1, 7, 23 - sideX, 11, pulse);
+      R(sideX + 1, 8, 22 - sideX, 9, BOOK[0]); R(sideX + 4, 7, 1, 11, TIER5.divine);
+      S(sideX, 6, TIER5.apex); S(23, 6, TIER5.apex); S(sideX, 18, TIER5.cosmic); S(23, 18, TIER5.rift);
+      R(22, 2, 2, 20, TIER5.abyss); R(23, 2, 1, 20, pulse);
+      if (strike) { R(sideX, 20, 24 - sideX, 2, TIER5.divine); S(sideX + 4, 23, TIER5.apex); }
+    }
+  }
+}
+
 export function drawWeapon(S, R, d, p, C, u) {
   const w = C.weapon;
   const ph = p.wep; // hold | wind | strike | recover
@@ -1071,7 +1414,8 @@ export function drawWeapon(S, R, d, p, C, u) {
     }
   }
 
-  if (C.weaponTier === 'tier2' || C.weaponTier === 'tier3' || C.weaponTier === 'tier4') drawTierTwoUpgrade(S, R, d, ph, C);
-  if (C.weaponTier === 'tier3' || C.weaponTier === 'tier4') drawTierThreeUpgrade(S, R, d, ph, C);
-  if (C.weaponTier === 'tier4') drawTierFourUpgrade(S, R, d, ph, C);
+  if (C.weaponTier === 'tier2' || C.weaponTier === 'tier3' || C.weaponTier === 'tier4' || C.weaponTier === 'tier5') drawTierTwoUpgrade(S, R, d, ph, C);
+  if (C.weaponTier === 'tier3' || C.weaponTier === 'tier4' || C.weaponTier === 'tier5') drawTierThreeUpgrade(S, R, d, ph, C);
+  if (C.weaponTier === 'tier4' || C.weaponTier === 'tier5') drawTierFourUpgrade(S, R, d, ph, C);
+  if (C.weaponTier === 'tier5') drawTierFiveUpgrade(S, R, d, ph, C);
 }

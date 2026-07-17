@@ -113,13 +113,15 @@ The fourth content slice extends that same progression field with legendary Tier
 
 The fifth content slice adds oversized mythic Tier 4 forms such as Dawnreaver, Colossus Edge, Tempest Executioner, World Serpent Pike, Seraphim Greatbow, Wyrmfire Repeater, Staff of the Firmament, and Omniscient Codex. Tier 4 cumulatively preserves the earlier materials and ornaments while deliberately extending blade reach, pole and haft length, bow limbs, stocks, barrels, and magical projections toward the safe 24x24 frame limits. Every Tier 4 weapon expands beyond its Tier 3 idle silhouette in all four directions, remains readable in every animation frame, follows the hand rig without clipping, and clears the protected side-face area.
 
+The sixth content slice completes the progression with final artifact Tier 5 forms such as Eternity's End, The Last Horizon, Heavenrend, Supernova, Axis of Creation, Wings of Genesis, Apocalypse Engine, Pillar of Eternity, and The Final Testament. Tier 5 adds crowns, secondary edges, starburst heads, cutting wings, stepped hammer faces, multi-bolts, orbiting shards, halos, and apex magic over the complete Tier 4 form. All 15 artifacts add visible mass in every idle direction, differ from Tier 4 in every animation frame, follow the animated hand without edge-sticking, preserve both front eyes and the side face, and use the existing preset, randomization, history, persistence, and export paths without a schema migration.
+
 Candidate additions:
 
 - Body types and silhouettes
 - Facial details and expressions (first facial-detail set complete; expressions remain a future option)
 - More hairstyles and headgear
 - Armor layers, outfits, robes, capes, and accessories
-- More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2/Tier 3/Tier 4 progression finished)
+- More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2/Tier 3/Tier 4/Tier 5 progression finished)
 - More shields and off-hand items
 - Species-specific features such as ears, horns, wings, and tails
 - Additional enemy families and variants
