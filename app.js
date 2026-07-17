@@ -906,11 +906,13 @@ function playerGroups() {
     (item) => spec({ weaponTier: item.id }),
   );
   if (weaponTierGroup) {
-    weaponTierGroup.selectedName = player.weaponTier === 'tier3'
-      ? weapon.tier3Name
-      : player.weaponTier === 'tier2'
-        ? weapon.tier2Name
-        : 'Standard issue';
+    weaponTierGroup.selectedName = player.weaponTier === 'tier4'
+      ? weapon.tier4Name
+      : player.weaponTier === 'tier3'
+        ? weapon.tier3Name
+        : player.weaponTier === 'tier2'
+          ? weapon.tier2Name
+          : 'Standard issue';
   }
   return [
     dotGroup('Skin', E.SKINS, player.skin, (value) => setPlayerOption('skin', value)),

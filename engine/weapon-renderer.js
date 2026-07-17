@@ -20,6 +20,13 @@ const TIER3 = {
   flame: '#ff5f45',
   storm: '#8ea7ff',
 };
+const TIER4 = {
+  core: '#ffffff',
+  mythic: '#ffd45c',
+  void: '#6338c7',
+  plasma: '#ff55d7',
+  frost: '#67f2ff',
+};
 
 function weaponAnchors(C) {
   return {
@@ -260,7 +267,7 @@ function drawTierTwoUpgrade(S, R, d, ph, C) {
   if (w === 'crossbow') {
     if (d === 'down') {
       S(14, 10, TIER2.gold); S(20, 10, TIER2.gold); S(17, 11, TIER2.rune);
-      S(13, 9, TIER2.gold); S(21, 9, TIER2.gold);
+      S(14, 9, TIER2.gold); S(21, 9, TIER2.gold);
       if (strike) S(17, 22, TIER2.edge);
     } else if (d === 'up') {
       S(3, 10, TIER2.gold); S(9, 10, TIER2.gold); S(6, 11, TIER2.rune);
@@ -402,7 +409,7 @@ function drawTierThreeUpgrade(S, R, d, ph, C) {
   if (w === 'axe') {
     if (d === 'down') {
       const headY = strike ? 17 : wind ? 6 : 8;
-      S(downX - 4, headY + 1, TIER3.storm); S(downX + 3, headY + 1, TIER3.storm);
+      S(downX - 3, headY + 1, TIER3.storm); S(downX + 3, headY + 1, TIER3.storm);
       S(downX, headY - 1, TIER3.core); S(downX, headY + 3, TIER3.astralDark);
     } else if (d === 'up') {
       const headY = strike ? 2 : 8;
@@ -552,6 +559,257 @@ function drawTierThreeUpgrade(S, R, d, ph, C) {
       if (d === 'down') { S(13, 18, TIER3.astral); S(21, 17, TIER3.core); }
       else if (d === 'up') { S(3, 7, TIER3.astral); S(11, 5, TIER3.core); }
       else { S(sideX + 4, 8, TIER3.astral); S(sideX + 6, 15, TIER3.core); }
+    }
+  }
+}
+
+function drawTierFourUpgrade(S, R, d, ph, C) {
+  const w = C.weapon;
+  const strike = ph === 'strike';
+  const wind = ph === 'wind';
+  const { downX, upX, sideX } = weaponAnchors(C);
+
+  if (w === 'sword' || w === 'dagger') {
+    const dagger = w === 'dagger';
+    if (d === 'down') {
+      const guardY = strike ? 14 : wind ? 12 : 13;
+      if (strike) {
+        const startY = dagger ? 18 : 21;
+        const endY = dagger ? 22 : 23;
+        R(downX, startY, 1, endY - startY + 1, TIER4.frost); S(downX + 1, endY, TIER4.core);
+      } else {
+        const tipY = dagger ? (wind ? 4 : 5) : (wind ? 1 : 2);
+        const endY = dagger ? (wind ? 8 : 9) : (wind ? 5 : 6);
+        R(downX, tipY + 1, 1, endY - tipY, TIER4.frost); S(downX, tipY, TIER4.core);
+      }
+      S(downX - 4, guardY, TIER4.mythic); S(downX + 4, guardY, TIER4.mythic);
+    } else if (d === 'up') {
+      const guardY = strike ? 10 : wind ? 14 : dagger ? 11 : 14;
+      if (strike) {
+        R(upX + 1, 2, 1, 7, TIER4.frost); S(upX + 2, 2, TIER4.core); S(upX + 2, 6, TIER4.void);
+      } else if (wind) {
+        R(upX, 18, 1, 4, TIER4.frost); S(upX, 22, TIER4.core);
+      } else {
+        const tipY = dagger ? 4 : 2;
+        R(upX, tipY + 1, 1, 5, TIER4.frost); S(upX, tipY, TIER4.core);
+      }
+      S(upX - 4, guardY, TIER4.mythic); S(upX + 4, guardY, TIER4.mythic);
+    } else if (strike) {
+      const startX = dagger ? 20 : 21;
+      R(startX, 12, 24 - startX, 2, TIER4.frost); S(23, 12, TIER4.core);
+      R(dagger ? 10 : 8, 13, dagger ? 4 : 6, 1, TIER4.void);
+    } else {
+      const tipY = dagger ? (wind ? 3 : 5) : 2;
+      const endY = dagger ? (wind ? 8 : 10) : (wind ? 4 : 7);
+      R(sideX, tipY + 1, 1, endY - tipY, TIER4.frost); S(sideX, tipY, TIER4.core);
+      R(sideX, 18, 1, 4, TIER4.void); S(sideX + 1, 21, TIER4.mythic);
+    }
+  }
+
+  if (w === 'greatsword') {
+    if (d === 'down') {
+      const guardY = strike ? 13 : wind ? 11 : 13;
+      if (strike) { R(downX - 1, 22, 2, 2, TIER4.frost); S(downX, 23, TIER4.core); }
+      else { R(downX - 1, wind ? 0 : 2, 2, wind ? 2 : 2, TIER4.frost); S(downX - 1, wind ? 0 : 2, TIER4.core); }
+      S(downX - 5, guardY, TIER4.mythic); S(downX + 5, guardY, TIER4.mythic);
+    } else if (d === 'up') {
+      const guardY = strike ? 10 : 14;
+      if (strike) { R(upX + 1, 2, 2, 7, TIER4.frost); S(upX + 2, 2, TIER4.core); }
+      else { R(upX - 1, 2, 2, 3, TIER4.frost); S(upX, 2, TIER4.core); }
+      S(upX - 5, guardY, TIER4.mythic); S(upX + 5, guardY, TIER4.mythic);
+    } else if (strike) {
+      R(21, 11, 3, 3, TIER4.frost); S(23, 12, TIER4.core); R(8, 13, 6, 1, TIER4.void);
+    } else {
+      R(sideX - 1, 2, 2, wind ? 2 : 3, TIER4.frost); S(sideX, 2, TIER4.core);
+      R(sideX - 1, 18, 2, 4, TIER4.void); S(sideX, 21, TIER4.mythic);
+    }
+  }
+
+  if (w === 'scimitar') {
+    if (d === 'down') {
+      if (strike) { S(downX - 2, 23, TIER4.core); R(downX + 1, 20, 1, 3, TIER4.plasma); }
+      else { R(downX, wind ? 2 : 3, 1, 4, TIER4.frost); S(downX - 1, wind ? 1 : 2, TIER4.core); S(downX + 1, wind ? 3 : 4, TIER4.plasma); }
+      S(downX + 4, strike ? 17 : wind ? 9 : 11, TIER4.mythic);
+    } else if (d === 'up') {
+      if (strike) { R(upX + 1, 2, 1, 6, TIER4.frost); S(upX + 2, 2, TIER4.core); }
+      else { R(upX, 3, 1, 4, TIER4.frost); S(upX - 1, 2, TIER4.core); }
+      S(upX + 3, strike ? 6 : 10, TIER4.plasma);
+    } else if (strike) {
+      R(20, 10, 4, 2, TIER4.frost); S(23, 10, TIER4.core); R(9, 13, 6, 1, TIER4.void);
+    } else {
+      R(sideX, 2, 1, wind ? 3 : 4, TIER4.frost); S(sideX + 1, 2, TIER4.core);
+      R(sideX, 18, 1, 4, TIER4.void); S(sideX + 1, 21, TIER4.plasma);
+    }
+  }
+
+  if (w === 'rapier') {
+    if (d === 'down') {
+      const guardY = strike ? 14 : wind ? 11 : 13;
+      if (strike) { R(downX, 21, 1, 3, TIER4.frost); S(downX, 23, TIER4.core); }
+      else { R(downX, wind ? 1 : 2, 1, wind ? 3 : 4, TIER4.frost); S(downX, wind ? 1 : 2, TIER4.core); }
+      S(downX - 4, guardY + 1, TIER4.mythic); S(downX + 4, guardY + 1, TIER4.mythic);
+    } else if (d === 'up') {
+      const guardY = strike ? 9 : 14;
+      if (strike) { R(upX + 1, 2, 1, 7, TIER4.frost); S(upX + 1, 2, TIER4.core); }
+      else { R(upX, 2, 1, 5, TIER4.frost); S(upX, 2, TIER4.core); }
+      S(upX - 4, guardY + 1, TIER4.mythic); S(upX + 4, guardY + 1, TIER4.mythic);
+    } else if (strike) {
+      R(20, 12, 4, 2, TIER4.frost); S(23, 13, TIER4.core); R(8, 13, 6, 1, TIER4.void);
+    } else {
+      R(sideX, 2, 1, wind ? 2 : 4, TIER4.frost); S(sideX, 2, TIER4.core);
+      R(sideX, 17, 1, 5, TIER4.void); S(sideX + 1, 21, TIER4.mythic);
+    }
+  }
+
+  if (w === 'axe') {
+    if (d === 'down') {
+      const headY = strike ? 17 : wind ? 6 : 8;
+      if (strike) R(downX, 21, 1, 3, TIER4.void); else R(downX, 14, 1, 8, TIER4.void);
+      S(downX - 5, headY + 1, TIER4.frost); S(downX + 4, headY + 1, TIER4.frost); S(downX, headY - 2, TIER4.core);
+    } else if (d === 'up') {
+      const headY = strike ? 2 : 8;
+      R(upX, strike ? 6 : 14, 1, strike ? 9 : 8, TIER4.void);
+      S(upX - 4, headY + 1, TIER4.frost); S(upX + 5, headY + 1, TIER4.frost); S(upX, strike ? 6 : headY - 2, TIER4.core);
+    } else if (strike) {
+      R(9, 13, 6, 1, TIER4.void); R(21, 9, 3, 8, TIER4.frost); S(23, 12, TIER4.core);
+    } else {
+      R(sideX, 14, 1, 8, TIER4.void); S(sideX + 5, wind ? 6 : 9, TIER4.frost);
+      S(sideX + 1, wind ? 2 : 5, TIER4.core);
+    }
+  }
+
+  if (w === 'mace') {
+    if (d === 'down') {
+      const headY = strike ? 19 : wind ? 6 : 8;
+      R(downX, strike ? 12 : 13, 1, strike ? 6 : 9, TIER4.void);
+      S(downX - (strike ? 4 : 3), headY, TIER4.plasma); S(downX + 4, headY, TIER4.plasma); S(downX, headY - 4, TIER4.core); S(downX, Math.min(23, headY + 4), TIER4.frost);
+    } else if (d === 'up') {
+      const headY = strike ? 3 : 7;
+      R(upX, strike ? 6 : 13, 1, strike ? 9 : 9, TIER4.void);
+      S(upX - 4, headY, TIER4.plasma); S(upX + 4, headY, TIER4.plasma); S(upX, strike ? 6 : headY - 4, TIER4.core);
+    } else if (strike) {
+      R(8, 13, 8, 1, TIER4.void); S(23, 13, TIER4.core); S(21, 8, TIER4.plasma); S(21, 18, TIER4.frost);
+    } else {
+      R(sideX, 13, 1, 9, TIER4.void); S(sideX + 5, wind ? 6 : 8, TIER4.plasma);
+      S(sideX + 1, wind ? 2 : 4, TIER4.core); S(sideX + 1, wind ? 11 : 13, TIER4.frost);
+    }
+  }
+
+  if (w === 'warhammer') {
+    if (d === 'down') {
+      const headY = strike ? 18 : wind ? 5 : 7;
+      R(downX, strike ? 12 : 13, 1, strike ? 6 : 9, TIER4.void);
+      R(downX - 2, headY - 1, 9, 4, TIER4.frost); R(downX - 1, headY, 6, 2, TIER4.void); S(downX + 2, headY, TIER4.core);
+    } else if (d === 'up') {
+      const headY = strike ? 1 : 6;
+      R(upX, strike ? 5 : 13, 1, strike ? 10 : 9, TIER4.void);
+      R(upX - 4, Math.max(0, headY - 1), 9, 4, TIER4.frost); R(upX - 2, headY, 5, 2, TIER4.void); S(upX, strike ? 5 : headY, TIER4.core);
+    } else if (strike) {
+      R(8, 13, 8, 1, TIER4.void); R(20, 8, 4, 8, TIER4.frost); R(21, 10, 3, 4, TIER4.void); S(22, 11, TIER4.core);
+    } else {
+      R(sideX, 13, 1, 9, TIER4.void); R(sideX + 1, wind ? 3 : 5, 7, 5, TIER4.frost);
+      R(sideX + 2, wind ? 4 : 6, 5, 3, TIER4.void); S(sideX + 4, wind ? 5 : 7, TIER4.core);
+    }
+  }
+
+  if (w === 'spear') {
+    if (d === 'down') {
+      R(downX, 2, 1, 20, TIER4.void); S(downX, 2, TIER4.core); S(downX - 3, strike ? 21 : 5, TIER4.plasma); S(downX + 3, strike ? 21 : 5, TIER4.plasma);
+      if (strike) S(downX, 23, TIER4.core);
+    } else if (d === 'up') {
+      R(upX, 2, 1, 20, TIER4.void); S(upX, 2, TIER4.core); S(upX - 3, strike ? 3 : 6, TIER4.plasma); S(upX + 3, strike ? 3 : 6, TIER4.plasma);
+      if (strike) S(upX + 2, 6, TIER4.frost);
+    } else if (strike) {
+      R(8, 13, 16, 1, TIER4.void); S(23, 13, TIER4.core); S(22, 10, TIER4.plasma); S(22, 16, TIER4.plasma);
+    } else {
+      R(sideX, 2, 1, 20, TIER4.void); S(sideX, 2, TIER4.core); S(sideX + 3, wind ? 5 : 6, TIER4.plasma);
+      S(sideX + 2, wind ? 2 : 3, TIER4.frost); S(sideX + 1, 21, TIER4.mythic);
+    }
+  }
+
+  if (w === 'club') {
+    if (d === 'down') {
+      const headY = strike ? 18 : 7;
+      R(downX, strike ? 12 : 13, 1, strike ? 7 : 9, TIER4.void);
+      R(14, Math.max(2, headY - 3), 7, 7, TIER4.mythic); R(15, Math.max(3, headY - 2), 5, 5, WOOD[0]); S(downX, headY, TIER4.core);
+    } else if (d === 'up') {
+      const headY = strike ? 3 : 13;
+      R(upX, strike ? 6 : 10, 1, strike ? 10 : 12, TIER4.void);
+      R(3, Math.max(2, headY - 3), 7, 7, TIER4.mythic); R(4, Math.max(3, headY - 2), 5, 5, WOOD[0]); S(upX, strike ? 6 : headY, TIER4.core);
+    } else if (strike) {
+      R(8, 13, 10, 1, TIER4.void); R(17, 9, 7, 8, TIER4.mythic); R(18, 10, 6, 6, WOOD[0]); S(22, 12, TIER4.core);
+    } else {
+      R(sideX, 13, 1, 9, TIER4.void); R(sideX + 1, wind ? 2 : 4, 7, 8, TIER4.mythic);
+      R(sideX + 2, wind ? 3 : 5, 6, 6, WOOD[0]); S(sideX + 4, wind ? 5 : 7, TIER4.core);
+    }
+  }
+
+  if (w === 'bow') {
+    if (d === 'right') {
+      R(20, 3, 1, 19, TIER4.mythic); S(19, 2, TIER4.core); S(19, 22, TIER4.core); R(19, 4, 1, 17, TIER4.frost);
+      if (strike) R(18, 13, 6, 1, TIER4.plasma);
+    } else if (d === 'down') {
+      R(21, 4, 1, 17, TIER4.mythic); S(20, 3, TIER4.core); S(20, 21, TIER4.core); R(20, 5, 1, 15, TIER4.frost);
+      if (strike) R(12, 18, 1, 6, TIER4.plasma);
+    } else {
+      R(2, 4, 1, 17, TIER4.mythic); S(3, 3, TIER4.core); S(3, 21, TIER4.core); R(3, 5, 1, 15, TIER4.frost);
+      if (strike) R(10, 0, 1, 7, TIER4.plasma);
+    }
+  }
+
+  if (w === 'crossbow') {
+    if (d === 'down') {
+      R(10, 13, 14, 3, TIER4.mythic); R(11, 14, 12, 1, TIER4.void); R(downX, 2, 1, 20, TIER4.frost); S(downX, 2, TIER4.core);
+      if (strike) S(downX, 23, TIER4.plasma);
+    } else if (d === 'up') {
+      R(0, 7, 14, 3, TIER4.mythic); R(1, 8, 12, 1, TIER4.void); R(upX, 2, 1, 20, TIER4.frost); S(upX, 2, TIER4.core);
+      if (strike) S(upX + 2, 6, TIER4.plasma);
+    } else {
+      R(sideX - 1, 6, 2, 16, TIER4.mythic); R(sideX, 7, 1, 14, TIER4.void); R(sideX + 1, 12, 7, 2, TIER4.frost);
+      S(23, 12, TIER4.core); S(sideX + 6, 15, TIER4.plasma);
+    }
+  }
+
+  if (w === 'staff') {
+    if (d === 'down') {
+      R(downX, 2, 1, 20, TIER4.void); S(downX, 21, TIER4.mythic); R(downX - 3, 2, 7, 3, TIER4.plasma); S(downX, 1, TIER4.core);
+      if (strike) { S(downX - 5, 20, TIER4.frost); S(downX + 5, 18, TIER4.frost); }
+    } else if (d === 'up') {
+      R(upX, 2, 1, 20, TIER4.void); S(upX, 21, TIER4.mythic); R(upX - 3, 2, 7, 3, TIER4.plasma); S(upX, 1, TIER4.core);
+      if (strike) S(upX + 3, 6, TIER4.frost);
+    } else if (strike) {
+      R(8, 13, 16, 1, TIER4.void); S(23, 13, TIER4.core); S(22, 8, TIER4.plasma); S(22, 18, TIER4.frost);
+    } else {
+      R(sideX, 2, 1, 20, TIER4.void); S(sideX, 21, TIER4.mythic); R(sideX - 1, 2, 6, 3, TIER4.plasma);
+      S(sideX + 1, 1, TIER4.core); S(sideX + 5, wind ? 6 : 8, TIER4.frost);
+    }
+  }
+
+  if (w === 'wand') {
+    if (d === 'down') {
+      R(downX, 4, 1, 18, TIER4.void); S(downX, 21, TIER4.mythic); R(downX - 2, 2, 5, 4, TIER4.plasma); S(downX, 1, TIER4.core);
+      if (strike) S(downX + 5, 20, TIER4.frost);
+    } else if (d === 'up') {
+      R(upX, 4, 1, 18, TIER4.void); S(upX, 21, TIER4.mythic); R(upX - 2, 2, 5, 4, TIER4.plasma); S(upX, 1, TIER4.core);
+      if (strike) S(upX + 3, 6, TIER4.frost);
+    } else if (strike) {
+      R(9, 13, 15, 1, TIER4.void); S(23, 13, TIER4.core); S(22, 9, TIER4.plasma); S(22, 17, TIER4.frost);
+    } else {
+      R(sideX, 3, 1, 19, TIER4.void); S(sideX, 21, TIER4.mythic); R(sideX - 1, 2, 5, 4, TIER4.plasma);
+      S(sideX + 1, 1, TIER4.core); S(sideX + 5, wind ? 7 : 9, TIER4.frost);
+    }
+  }
+
+  if (w === 'spellbook') {
+    if (d === 'down') {
+      R(15, 8, 9, 9, TIER4.void); R(16, 9, 7, 7, BOOK[0]); S(15, 8, TIER4.core); S(23, 16, TIER4.core);
+      R(22, 2, 1, 20, TIER4.plasma); if (strike) R(11, 18, 12, 1, TIER4.frost);
+    } else if (d === 'up') {
+      R(2, 8, 9, 9, TIER4.void); R(3, 9, 7, 7, BOOK[0]); S(2, 8, TIER4.core); S(10, 16, TIER4.core);
+      R(1, 2, 1, 20, TIER4.plasma); if (strike) R(1, 6, 12, 1, TIER4.frost);
+    } else {
+      R(sideX - 1, 8, 8, 9, TIER4.void); R(sideX, 9, 7, 7, BOOK[0]); S(sideX - 1, 8, TIER4.core); S(sideX + 6, 16, TIER4.core);
+      R(sideX + 6, 2, 1, 20, TIER4.plasma); if (strike) R(sideX, 18, 7, 1, TIER4.frost);
     }
   }
 }
@@ -813,6 +1071,7 @@ export function drawWeapon(S, R, d, p, C, u) {
     }
   }
 
-  if (C.weaponTier === 'tier2' || C.weaponTier === 'tier3') drawTierTwoUpgrade(S, R, d, ph, C);
-  if (C.weaponTier === 'tier3') drawTierThreeUpgrade(S, R, d, ph, C);
+  if (C.weaponTier === 'tier2' || C.weaponTier === 'tier3' || C.weaponTier === 'tier4') drawTierTwoUpgrade(S, R, d, ph, C);
+  if (C.weaponTier === 'tier3' || C.weaponTier === 'tier4') drawTierThreeUpgrade(S, R, d, ph, C);
+  if (C.weaponTier === 'tier4') drawTierFourUpgrade(S, R, d, ph, C);
 }
