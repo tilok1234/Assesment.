@@ -44,9 +44,11 @@ function checkSyntax(relativePath) {
 
 const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
 const engine = await import(`${pathToFileURL(path.join(root, 'sprite-engine.js')).href}?check=${Date.now()}`);
+const zipModule = await import(`${pathToFileURL(path.join(root, 'zip.js')).href}?check=${Date.now()}`);
 
 checkSyntax('sprite-engine.js');
 checkSyntax('app.js');
+checkSyntax('zip.js');
 checkSyntax('engine/catalogs.js');
 checkSyntax('engine/catalogs/animation.js');
 checkSyntax('engine/catalogs/enemies.js');
@@ -86,6 +88,8 @@ for (const controlId of [
   'reset-button', 'duplicate-button', 'compare-button', 'compare-dialog',
   'saved-copy-canvas', 'current-copy-canvas', 'restore-copy-button',
   'keep-current-button', 'remove-copy-button', 'replace-copy-button',
+  'pack-name', 'pack-summary', 'pack-list', 'pack-status',
+  'add-to-pack-button', 'clear-pack-button', 'download-pack-button',
 ]) {
   check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
 }
@@ -94,6 +98,7 @@ const runtimeSources = {
   'index.html': entrySource,
   'app.js': await readFile(path.join(root, 'app.js'), 'utf8'),
   'sprite-engine.js': await readFile(path.join(root, 'sprite-engine.js'), 'utf8'),
+  'zip.js': await readFile(path.join(root, 'zip.js'), 'utf8'),
   'engine/catalogs.js': await readFile(path.join(root, 'engine', 'catalogs.js'), 'utf8'),
   'engine/catalogs/animation.js': await readFile(path.join(root, 'engine', 'catalogs', 'animation.js'), 'utf8'),
   'engine/catalogs/enemies.js': await readFile(path.join(root, 'engine', 'catalogs', 'enemies.js'), 'utf8'),
@@ -124,6 +129,7 @@ check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 40, 'sprite-eng
 check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 40, 'engine/catalogs.js must remain a small internal facade');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
+check(runtimeSources['app.js'].includes("from './zip.js'"), 'app.js must use the standalone ZIP packaging utility');
 check(runtimeSources['app.js'].includes("PRESET_VERSION = 5"), 'app.js must keep presets under the current versioned schema');
 check(runtimeSources['app.js'].includes('![1, 2, 3, 4, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1, 2, 3, and 4 preset libraries');
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
@@ -137,6 +143,31 @@ check(runtimeSources['app.js'].includes('function sanitizeFilenameBase('), 'app.
 check(runtimeSources['app.js'].includes('triggerDownload(canvas, exportFilename())'), 'PNG downloads must use the resolved custom export filename');
 check(runtimeSources['app.js'].includes('function buildExportCanvas('), 'app.js must route full and scoped exports through one resolver');
 check(runtimeSources['app.js'].includes("EXPORT_SCOPES = ['full', 'animation', 'direction']"), 'app.js must support full, animation, and direction export scopes');
+check(runtimeSources['app.js'].includes('EXPORT_SCALES = [1, 4, 8, 12]'), 'app.js must expose native 1x plus 4x, 8x, and 12x export scales');
+check(runtimeSources['app.js'].includes("scale === 1 ? '1x Native'"), 'the native export scale must be clearly labeled in the UI');
+check(runtimeSources['app.js'].includes("state.exportScale === 1 ? ' · native' : ''"), 'native export dimensions must be identified in the size readout');
+check(runtimeSources['engine/sheets.js'].includes('function buildSheet(spec, scale = 1, opts = {})'), 'full-sheet assembly must retain native 1x as its logical default');
+check(runtimeSources['engine/sheets.js'].includes('function buildAnimationSheet(spec, animId, scale = 1, opts = {})'), 'animation-sheet assembly must retain native 1x as its logical default');
+check(runtimeSources['engine/sheets.js'].includes('function buildDirectionSheet(spec, direction, scale = 1, opts = {})'), 'direction-sheet assembly must retain native 1x as its logical default');
+check(engine.SHEET_COLS * engine.SIZE === 288 && engine.DIRS.length * engine.SIZE === 96, 'native full-sheet dimensions must remain 288x96 pixels');
+check(engine.SHEET_COLS * engine.SIZE === 288 && engine.SIZE === 24, 'native direction-sheet dimensions must remain 288x24 pixels');
+check(engine.ANIMS.every((anim) => anim.frames * engine.SIZE === 48 || anim.frames * engine.SIZE === 96), 'native animation-sheet widths must remain 48 or 96 pixels');
+check(runtimeSources['app.js'].includes("PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1'"), 'character packs must use independent versioned persistence');
+check(runtimeSources['app.js'].includes('PACK_ENTRY_LIMIT = 200'), 'character packs must keep a bounded entry count');
+check(runtimeSources['app.js'].includes('function loadPackLibrary(') && runtimeSources['app.js'].includes('function persistPackLibrary('), 'character packs must load and persist their working library');
+check(runtimeSources['app.js'].includes('const canvas = E.buildSheet(spec, scale)'), 'character packs must always export complete sprite sheets');
+check(runtimeSources['app.js'].includes("format: '8-bit-sprite-assembler-character-pack'"), 'character pack manifests must expose their stable format id');
+check(runtimeSources['app.js'].includes('buildStoredZip(zipEntries'), 'character pack downloads must assemble their PNGs and manifest into a ZIP');
+const zipFixture = zipModule.buildStoredZip([
+  { name: '../characters/test.png', data: new Uint8Array([137, 80, 78, 71]) },
+  { name: 'manifest.json', data: new TextEncoder().encode('{"version":1}') },
+], new Date('2026-01-02T03:04:06Z'));
+const zipView = new DataView(zipFixture.buffer, zipFixture.byteOffset, zipFixture.byteLength);
+check(zipView.getUint32(0, true) === 0x04034b50, 'ZIP archives must begin with a valid local-file signature');
+check(zipView.getUint32(zipFixture.length - 22, true) === 0x06054b50, 'ZIP archives must end with a valid central-directory record');
+const zipText = new TextDecoder().decode(zipFixture);
+check(zipText.includes('characters/test.png') && !zipText.includes('../characters/test.png'), 'ZIP entry paths must reject parent traversal');
+check(zipText.includes('manifest.json'), 'ZIP archives must retain every requested entry name');
 check(runtimeSources['app.js'].includes('PLAYBACK_SPEEDS = [0.5, 1, 2]'), 'app.js must expose the supported preview playback speeds');
 check(runtimeSources['app.js'].includes('function inspectFrame('), 'app.js must expose deterministic individual frame inspection');
 check(runtimeSources['app.js'].includes("event.key === '['") && runtimeSources['app.js'].includes("event.key === ']'"), 'app.js must expose previous and next frame keyboard shortcuts');

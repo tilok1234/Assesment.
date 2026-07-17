@@ -8,7 +8,8 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - 41 enemy families with 138 predefined variants
 - Four directions: down, left, right, and up
 - Idle, walk, attack, and hurt animations
-- Transparent PNG sprite-sheet export at 4x, 8x, or 12x scale
+- Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
+- Persistent named character packs that collect player and enemy designs and download as a ZIP with full PNG sheets and `manifest.json`
 - A validated asset pack containing 144 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
@@ -67,7 +68,7 @@ Double-click `check-project.bat`, or run:
 npm run check
 ```
 
-The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, and the exact dimensions of all exported sheets.
+The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, and the dimensions of all committed sheets.
 
 ## Build the Windows application
 
@@ -94,15 +95,26 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 - Columns: idle x2, walk x4, attack x4, hurt x2
 - Animation export: selected animation frames across four direction rows
 - Direction export: all 12 animation frames across one selected direction row
-- Pack export scale: 4x
-- Pack sheet size: 1152x384 pixels
+- Native 1x export sizes: full sheet 288x96, direction sheet 288x24, and animation sheet 48x96 or 96x96 pixels
+- Committed fixture pack scale: 4x
+- Committed fixture sheet size: 1152x384 pixels
 - Transparent background with no baked shadow
+
+## Character packs
+
+1. Give the pack a name, create a player or enemy, and give the character a name.
+2. Select **Add current**, then repeat for as many characters as needed.
+3. Use **Load** to keep editing an entry or **Remove** to take it out of the pack.
+4. Choose an export scale, including **1x Native**, then select **Download pack ZIP**.
+
+The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per character plus a versioned `manifest.json` with the exact character specifications, animation contract, dimensions, and file paths.
 
 ## Project layout
 
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
-- `app.js` - editor state, sprite history, reset and comparison workflows, character and palette presets, migration, naming, playback and frame inspection, persistence, and downloads
+- `app.js` - editor state, sprite history, reset and comparison workflows, character and palette presets, character-pack persistence, naming, playback and frame inspection, and downloads
+- `zip.js` - dependency-free ZIP archive writer used by character-pack export
 - `sprite-engine.js` - stable public engine API
 - `engine/` - focused animation, palette, player-option, enemy, humanoid weapon and shield, renderer, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets

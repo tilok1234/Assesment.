@@ -1,14 +1,18 @@
 import * as E from './sprite-engine.js';
+import { buildStoredZip } from './zip.js';
 
 const STORAGE_KEY = 'sprite-assembler-v1';
 const PRESET_STORAGE_KEY = 'sprite-assembler-presets-v1';
 const PRESET_VERSION = 5;
 const PALETTE_STORAGE_KEY = 'sprite-assembler-palettes-v1';
 const PALETTE_VERSION = 1;
+const PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1';
+const PACK_VERSION = 1;
+const PACK_ENTRY_LIMIT = 200;
 const HISTORY_LIMIT = 100;
 const ZOOM_LEVELS = [6, 10, 14, 20];
 const PLAYBACK_SPEEDS = [0.5, 1, 2];
-const EXPORT_SCALES = [4, 8, 12];
+const EXPORT_SCALES = [1, 4, 8, 12];
 const EXPORT_SCOPES = ['full', 'animation', 'direction'];
 const DIRECTION_NAMES = { down: 'Down', left: 'Left', right: 'Right', up: 'Up' };
 const DEFAULT_STATE = {
@@ -96,6 +100,13 @@ const elements = {
   deletePresetButton: document.querySelector('#delete-preset-button'),
   presetStatus: document.querySelector('#preset-status'),
   downloadButton: document.querySelector('#download-button'),
+  packName: document.querySelector('#pack-name'),
+  packSummary: document.querySelector('#pack-summary'),
+  packList: document.querySelector('#pack-list'),
+  packStatus: document.querySelector('#pack-status'),
+  addToPackButton: document.querySelector('#add-to-pack-button'),
+  clearPackButton: document.querySelector('#clear-pack-button'),
+  downloadPackButton: document.querySelector('#download-pack-button'),
   compareDialog: document.querySelector('#compare-dialog'),
   compareContext: document.querySelector('#compare-context'),
   closeCompareButton: document.querySelector('#close-compare-button'),
@@ -116,6 +127,8 @@ const spinCells = E.ANIMS.flatMap((anim) => E.DIRS.map((dir) => ({ anim, dir }))
 let state = loadState();
 let presetLibrary = loadPresetLibrary();
 let paletteLibrary = loadPaletteLibrary();
+let packLibrary = loadPackLibrary();
+let packExporting = false;
 let selectedPresetId = '';
 let selectedPaletteId = '';
 const historyPast = [];
@@ -489,6 +502,121 @@ function exportFilename() {
   const customName = sanitizeFilenameBase(state.exportName);
   if (customName) return `${customName}.png`;
   return `${generatedNameBase()}-${exportDescriptor().filenamePart}@${state.exportScale}x.png`;
+}
+
+function makePackEntryId() {
+  if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
+  return `pack-entry-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+}
+
+function sanitizePackEntry(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const kind = raw.kind === 'enemy' ? 'enemy' : raw.kind === 'player' ? 'player' : null;
+  const name = sanitizeText(raw.name, 48).trim();
+  if (!kind || !name) return null;
+  return {
+    id: typeof raw.id === 'string' && raw.id ? raw.id : makePackEntryId(),
+    name,
+    kind,
+    spec: kind === 'player' ? sanitizePlayer(raw.spec) : sanitizeEnemy(raw.spec),
+    createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
+  };
+}
+
+function loadPackLibrary() {
+  let saved = null;
+  try {
+    saved = JSON.parse(localStorage.getItem(PACK_STORAGE_KEY) || 'null');
+  } catch {}
+
+  if (!saved || saved.version !== PACK_VERSION || !Array.isArray(saved.entries)) {
+    return { version: PACK_VERSION, name: 'My Character Pack', entries: [] };
+  }
+
+  const ids = new Set();
+  const entries = [];
+  for (const raw of saved.entries.slice(0, PACK_ENTRY_LIMIT)) {
+    const entry = sanitizePackEntry(raw);
+    if (!entry || ids.has(entry.id)) continue;
+    ids.add(entry.id);
+    entries.push(entry);
+  }
+  return {
+    version: PACK_VERSION,
+    name: sanitizeText(saved.name, 64).trim() || 'My Character Pack',
+    entries,
+  };
+}
+
+function persistPackLibrary() {
+  try {
+    localStorage.setItem(PACK_STORAGE_KEY, JSON.stringify(packLibrary));
+  } catch {}
+}
+
+function packEntrySpec(entry) {
+  return entry.kind === 'player'
+    ? { kind: 'player', ...entry.spec }
+    : { kind: 'enemy', ...entry.spec };
+}
+
+function setPackStatus(message) {
+  elements.packStatus.textContent = message;
+}
+
+function addCurrentToPack() {
+  if (packExporting) return;
+  if (packLibrary.entries.length >= PACK_ENTRY_LIMIT) {
+    setPackStatus(`This pack already has the ${PACK_ENTRY_LIMIT}-character limit.`);
+    return;
+  }
+
+  const spec = currentSpec();
+  const name = sanitizeText(state.characterName, 48).trim()
+    || E.describe(spec).replaceAll('-', ' ');
+  packLibrary.entries.push({
+    id: makePackEntryId(),
+    name,
+    kind: spec.kind,
+    spec: spec.kind === 'player' ? sanitizePlayer(spec) : sanitizeEnemy(spec),
+    createdAt: new Date().toISOString(),
+  });
+  persistPackLibrary();
+  renderPackControls();
+  setPackStatus(`Added “${name}” to the working pack.`);
+}
+
+function loadPackEntry(entryId) {
+  const entry = packLibrary.entries.find((item) => item.id === entryId);
+  if (!entry || packExporting) return;
+  const patch = entry.kind === 'player'
+    ? { mode: 'player', player: sanitizePlayer(entry.spec) }
+    : { mode: 'enemy', enemy: sanitizeEnemy(entry.spec) };
+  patch.characterName = entry.name;
+  patch.exportName = '';
+  selectedPresetId = '';
+  elements.presetName.value = '';
+  setState(patch);
+  setPackStatus(`Loaded “${entry.name}” into the editor.`);
+}
+
+function removePackEntry(entryId) {
+  if (packExporting) return;
+  const entry = packLibrary.entries.find((item) => item.id === entryId);
+  if (!entry) return;
+  packLibrary.entries = packLibrary.entries.filter((item) => item.id !== entryId);
+  persistPackLibrary();
+  renderPackControls();
+  setPackStatus(`Removed “${entry.name}” from the working pack.`);
+}
+
+function clearCharacterPack() {
+  if (!packLibrary.entries.length || packExporting) return;
+  if (!globalThis.confirm(`Remove all ${packLibrary.entries.length} characters from this pack?`)) return;
+  packLibrary.entries = [];
+  persistPackLibrary();
+  renderPackControls();
+  setPackStatus('Cleared the working pack.');
 }
 
 function sanitizePreset(raw) {
@@ -1088,7 +1216,7 @@ function renderDirectionControls() {
 function renderExportControls() {
   const descriptor = exportDescriptor();
   elements.scaleButtons.replaceChildren(...EXPORT_SCALES.map((scale) => makeButton(
-    `${scale}x`,
+    scale === 1 ? '1x Native' : `${scale}x`,
     state.exportScale === scale,
     () => setState({ exportScale: scale }),
   )));
@@ -1097,7 +1225,8 @@ function renderExportControls() {
   elements.sheetContract.textContent = descriptor.contract;
   elements.sheetCanvas.dataset.scope = state.exportScope;
   elements.sheetCanvas.setAttribute('aria-label', descriptor.title);
-  elements.sizeLabel.textContent = `${descriptor.width * state.exportScale}x${descriptor.height * state.exportScale}px`;
+  const nativeLabel = state.exportScale === 1 ? ' · native' : '';
+  elements.sizeLabel.textContent = `${descriptor.width * state.exportScale}x${descriptor.height * state.exportScale}px${nativeLabel}`;
   elements.downloadButton.textContent = descriptor.buttonLabel;
 }
 
@@ -1183,6 +1312,72 @@ function renderPresetControls() {
   elements.deletePresetButton.disabled = !selectedPresetId;
 }
 
+function renderPackEntry(entry) {
+  const item = document.createElement('li');
+  item.className = 'pack-entry';
+
+  const canvas = document.createElement('canvas');
+  canvas.width = E.SIZE;
+  canvas.height = E.SIZE;
+  canvas.setAttribute('aria-hidden', 'true');
+  const context = canvas.getContext('2d');
+  context.imageSmoothingEnabled = false;
+  E.drawSprite(context, packEntrySpec(entry), 'down', 'idle', 0, { shadow: false });
+
+  const copy = document.createElement('div');
+  copy.className = 'pack-entry-copy';
+  const name = document.createElement('strong');
+  name.textContent = entry.name;
+  name.title = entry.name;
+  const meta = document.createElement('span');
+  meta.textContent = `${entry.kind === 'player' ? 'Player' : 'Enemy'} · ${E.describe(packEntrySpec(entry)).replaceAll('-', ' ')}`;
+  meta.title = meta.textContent;
+  copy.append(name, meta);
+
+  const actions = document.createElement('div');
+  actions.className = 'pack-entry-actions';
+  const loadButton = document.createElement('button');
+  loadButton.type = 'button';
+  loadButton.className = 'secondary-button';
+  loadButton.textContent = 'Load';
+  loadButton.disabled = packExporting;
+  loadButton.setAttribute('aria-label', `Load ${entry.name} into the editor`);
+  loadButton.addEventListener('click', () => loadPackEntry(entry.id));
+  const removeButton = document.createElement('button');
+  removeButton.type = 'button';
+  removeButton.className = 'secondary-button danger-action';
+  removeButton.textContent = 'Remove';
+  removeButton.disabled = packExporting;
+  removeButton.setAttribute('aria-label', `Remove ${entry.name} from the pack`);
+  removeButton.addEventListener('click', () => removePackEntry(entry.id));
+  actions.append(loadButton, removeButton);
+
+  item.append(canvas, copy, actions);
+  return item;
+}
+
+function renderPackControls() {
+  if (elements.packName.value !== packLibrary.name) elements.packName.value = packLibrary.name;
+  const count = packLibrary.entries.length;
+  const scaleLabel = state.exportScale === 1 ? '1x native' : `${state.exportScale}x`;
+  elements.packSummary.textContent = `${count} character${count === 1 ? '' : 's'} · ${scaleLabel} full sheets`;
+
+  if (count) {
+    elements.packList.replaceChildren(...packLibrary.entries.map(renderPackEntry));
+  } else {
+    const empty = document.createElement('li');
+    empty.className = 'pack-empty';
+    empty.textContent = 'No characters added yet.';
+    elements.packList.replaceChildren(empty);
+  }
+
+  elements.packName.disabled = packExporting;
+  elements.addToPackButton.disabled = packExporting || count >= PACK_ENTRY_LIMIT;
+  elements.clearPackButton.disabled = packExporting || count === 0;
+  elements.downloadPackButton.disabled = packExporting || count === 0;
+  elements.downloadPackButton.textContent = packExporting ? 'Building pack…' : 'Download pack ZIP';
+}
+
 function renderPaletteControls() {
   elements.paletteEditor.hidden = state.mode !== 'player';
   if (state.mode !== 'player') return;
@@ -1225,6 +1420,7 @@ function renderUi() {
   renderHistoryControls();
   renderComparisonControls();
   renderPresetControls();
+  renderPackControls();
 }
 
 function updateSheet(spec) {
@@ -1397,6 +1593,144 @@ function downloadSheet() {
   triggerDownload(canvas, exportFilename());
 }
 
+function dataUrlBytes(dataUrl) {
+  const encoded = String(dataUrl).split(',')[1] || '';
+  const binary = atob(encoded);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index++) bytes[index] = binary.charCodeAt(index);
+  return bytes;
+}
+
+function canvasToPngBytes(canvas) {
+  if (!canvas.toBlob) return Promise.resolve(dataUrlBytes(canvas.toDataURL('image/png')));
+  return new Promise((resolve, reject) => {
+    canvas.toBlob(async (blob) => {
+      if (!blob) {
+        reject(new Error('The sprite sheet could not be encoded as PNG.'));
+        return;
+      }
+      try {
+        resolve(new Uint8Array(await blob.arrayBuffer()));
+      } catch (error) {
+        reject(error);
+      }
+    }, 'image/png');
+  });
+}
+
+function triggerBlobDownload(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.download = filename;
+  link.href = url;
+  link.hidden = true;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function packFilenameBase(value, fallback = 'character-pack') {
+  return sanitizeFilenameBase(String(value || '').replace(/\.zip$/i, ''))
+    .toLocaleLowerCase()
+    .replace(/\s+/g, '-')
+    || fallback;
+}
+
+function uniquePackCharacterPath(entry, scale, usedPaths) {
+  const fallback = E.describe(packEntrySpec(entry));
+  const base = packFilenameBase(entry.name, fallback);
+  let suffix = 1;
+  let path = `characters/${base}@${scale}x.png`;
+  while (usedPaths.has(path.toLocaleLowerCase())) {
+    suffix += 1;
+    path = `characters/${base}-${suffix}@${scale}x.png`;
+  }
+  usedPaths.add(path.toLocaleLowerCase());
+  return path;
+}
+
+function packAnimationContract() {
+  let startColumn = 0;
+  return E.ANIMS.map((animation) => {
+    const contract = {
+      id: animation.id,
+      name: animation.name,
+      startColumn,
+      frames: animation.frames,
+      frameDurationMs: animation.ms,
+    };
+    startColumn += animation.frames;
+    return contract;
+  });
+}
+
+async function downloadCharacterPack() {
+  if (packExporting || !packLibrary.entries.length) return;
+  const entries = packLibrary.entries.map((entry) => sanitizePackEntry(entry)).filter(Boolean);
+  const scale = state.exportScale;
+  const exportedAt = new Date().toISOString();
+  const packName = sanitizeText(packLibrary.name, 64).trim() || 'Character Pack';
+  packExporting = true;
+  renderPackControls();
+
+  try {
+    const zipEntries = [];
+    const manifestCharacters = [];
+    const usedPaths = new Set();
+    for (const [index, entry] of entries.entries()) {
+      setPackStatus(`Rendering ${index + 1} of ${entries.length}: ${entry.name}`);
+      const spec = packEntrySpec(entry);
+      const canvas = E.buildSheet(spec, scale);
+      const file = uniquePackCharacterPath(entry, scale, usedPaths);
+      zipEntries.push({ name: file, data: await canvasToPngBytes(canvas) });
+      manifestCharacters.push({
+        id: entry.id,
+        name: entry.name,
+        kind: entry.kind,
+        createdAt: entry.createdAt,
+        file,
+        width: canvas.width,
+        height: canvas.height,
+        spec,
+      });
+    }
+
+    const manifest = {
+      format: '8-bit-sprite-assembler-character-pack',
+      version: PACK_VERSION,
+      name: packName,
+      exportedAt,
+      exportScale: scale,
+      logicalFrame: { width: E.SIZE, height: E.SIZE },
+      sheet: {
+        logicalWidth: E.SHEET_COLS * E.SIZE,
+        logicalHeight: E.DIRS.length * E.SIZE,
+        width: E.SHEET_COLS * E.SIZE * scale,
+        height: E.DIRS.length * E.SIZE * scale,
+        columns: E.SHEET_COLS,
+        rows: E.DIRS.length,
+        directions: [...E.DIRS],
+        animations: packAnimationContract(),
+      },
+      characters: manifestCharacters,
+    };
+    zipEntries.push({
+      name: 'manifest.json',
+      data: new TextEncoder().encode(`${JSON.stringify(manifest, null, 2)}\n`),
+    });
+    const archive = buildStoredZip(zipEntries, new Date(exportedAt));
+    triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), `${packFilenameBase(packName)}.zip`);
+    setPackStatus(`Downloaded ${entries.length} character${entries.length === 1 ? '' : 's'} at ${scale}x.`);
+  } catch (error) {
+    console.error(error);
+    setPackStatus('The pack could not be exported. Please try again.');
+  } finally {
+    packExporting = false;
+    renderPackControls();
+  }
+}
+
 elements.cycleButton.addEventListener('click', toggleCycle);
 elements.previousFrameButton.addEventListener('click', () => stepFrame(-1));
 elements.playPauseButton.addEventListener('click', togglePlayback);
@@ -1469,6 +1803,22 @@ elements.presetName.addEventListener('keydown', (event) => {
   savePreset();
 });
 elements.downloadButton.addEventListener('click', downloadSheet);
+elements.addToPackButton.addEventListener('click', addCurrentToPack);
+elements.clearPackButton.addEventListener('click', clearCharacterPack);
+elements.downloadPackButton.addEventListener('click', downloadCharacterPack);
+elements.packName.addEventListener('input', () => {
+  const name = sanitizeText(elements.packName.value, 64);
+  if (name !== elements.packName.value) elements.packName.value = name;
+  packLibrary.name = name;
+  persistPackLibrary();
+});
+elements.packName.addEventListener('change', () => {
+  const name = packLibrary.name.trim() || 'My Character Pack';
+  packLibrary.name = name;
+  persistPackLibrary();
+  renderPackControls();
+  setPackStatus(`Working pack named “${name}”.`);
+});
 for (const button of elements.directionButtons) {
   button.addEventListener('click', () => chooseDirection(button.dataset.direction));
 }

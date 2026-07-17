@@ -18,9 +18,10 @@ index.html
       -> engine/shield-renderer.js
       -> engine/sheets.js
       -> engine/generators.js
+    -> zip.js (standalone archive writer)
 ```
 
-Consumers import `sprite-engine.js`. Internal module paths are deliberately not part of the public API.
+Sprite-rendering consumers import `sprite-engine.js`. Internal engine module paths are deliberately not part of the public API. `zip.js` is a packaging-only utility and does not depend on engine internals.
 
 ## Module responsibilities
 
@@ -58,9 +59,13 @@ Shield entries likewise keep family and progression independent. `SHIELD_TIERS` 
 
 `engine/generators.js` creates random valid specifications and safe default export names.
 
+### Archive packaging
+
+`zip.js` builds stored ZIP archives with UTF-8 paths and CRC-32 checksums. It accepts already-rendered files and has no knowledge of editor state, sprite specifications, or rendering internals.
+
 ### Editor
 
-`app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, and download behavior. It consumes only the public engine facade. History snapshots contain the active mode, player/enemy specifications, optional player palette, and document names, so preset loads, resets, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. Character preset schema v5 adds the shield tier and migrates v1 through v4 libraries; schema v4 introduced weapon tiers. The independent palette-library schema stores reusable six-tone player palettes.
+`app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, character packs, and download behavior. It consumes sprite behavior only through the public engine facade and uses `zip.js` for packaging. History snapshots contain the active mode, player/enemy specifications, optional player palette, and document names, so preset loads, resets, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. Character preset schema v5 adds the shield tier and migrates v1 through v4 libraries; schema v4 introduced weapon tiers. The independent palette-library schema stores reusable six-tone player palettes. Character-pack schema v1 stores named player and enemy specifications independently from editor history and produces full-sheet ZIP archives with a versioned manifest.
 
 ### Windows wrapper
 
@@ -72,11 +77,13 @@ Shield entries likewise keep family and progression independent. `SHIELD_TIERS` 
 - Directions are ordered down, left, right, up.
 - Each row contains idle x2, walk x4, attack x4, hurt x2.
 - Full sheets are 288x96 logical pixels before export scaling.
+- Export scale 1x preserves those logical pixels exactly; full, animation, and direction exports also support 4x, 8x, and 12x nearest-neighbor scaling.
 - Exported sheets have a transparent background and no baked shadow.
+- Character-pack archives always contain complete full sheets at the selected scale plus a manifest that records their logical and actual dimensions.
 - `sprite-engine.js` remains the public import path.
 - Browser and Windows builds use identical production files.
 
-`npm run check` enforces these invariants against `asset-pack/manifest.json` and all 144 committed PNG fixtures.
+`npm run check` enforces these invariants against the native export contract, character-pack ZIP format, `asset-pack/manifest.json`, and all 144 committed PNG fixtures.
 
 ## Adding content safely
 

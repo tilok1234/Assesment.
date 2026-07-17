@@ -204,7 +204,28 @@
               <span id="size-label">2304x768px</span>
             </div>
             <button class="primary-button" id="download-button" type="button">Download sprite sheet</button>
-            <p class="export-note">Transparent background, no baked shadow — ready for a game engine.</p>
+              <p class="export-note">Transparent background, no baked shadow — choose 1x Native for exact logical pixel dimensions.</p>
+          </section>
+
+          <section class="character-pack-panel" aria-labelledby="character-pack-title">
+            <h2 id="character-pack-title">Character pack</h2>
+            <label class="pack-name-field" for="pack-name">
+              <span>Pack name</span>
+              <input id="pack-name" type="text" maxlength="64" placeholder="My Character Pack">
+            </label>
+            <div class="pack-heading-row">
+              <p id="pack-summary">0 characters · 8x full sheets</p>
+              <button class="secondary-button compact-action" id="add-to-pack-button" type="button">Add current</button>
+            </div>
+            <ol class="pack-list" id="pack-list" aria-label="Characters in pack">
+              <li class="pack-empty">No characters added yet.</li>
+            </ol>
+            <div class="pack-action-row">
+              <button class="secondary-button compact-action danger-action" id="clear-pack-button" type="button" disabled>Clear pack</button>
+              <button class="primary-button pack-download-button" id="download-pack-button" type="button" disabled>Download pack ZIP</button>
+            </div>
+            <p class="preset-status" id="pack-status" role="status" aria-live="polite">The working pack stays on this device.</p>
+            <p class="export-note">Each ZIP contains full PNG sheets at the selected export scale plus a manifest.json file.</p>
           </section>
         </aside>
       </main>

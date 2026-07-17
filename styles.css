@@ -991,6 +991,143 @@ button:disabled:hover {
   line-height: 1.5;
 }
 
+.character-pack-panel {
+  display: grid;
+  gap: 8px;
+}
+
+.pack-name-field {
+  display: grid;
+  gap: 4px;
+}
+
+.pack-name-field span {
+  color: rgba(35, 37, 43, 0.58);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.pack-name-field input {
+  min-width: 0;
+  padding: 7px 9px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #23252b;
+  font: inherit;
+  font-size: 11.5px;
+}
+
+.pack-name-field input:focus {
+  border-color: var(--accent);
+  outline: 2px solid rgba(74, 93, 199, 0.14);
+}
+
+.pack-heading-row,
+.pack-action-row,
+.pack-entry,
+.pack-entry-actions {
+  display: flex;
+  align-items: center;
+}
+
+.pack-heading-row {
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pack-heading-row p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.pack-list {
+  display: grid;
+  max-height: 250px;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 9px;
+  list-style: none;
+}
+
+.pack-empty {
+  padding: 14px 10px;
+  color: var(--muted);
+  font-size: 10.5px;
+  text-align: center;
+}
+
+.pack-entry {
+  gap: 8px;
+  min-width: 0;
+  padding: 6px 7px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.pack-entry + .pack-entry {
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.pack-entry canvas {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  image-rendering: pixelated;
+}
+
+.pack-entry-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.pack-entry-copy strong,
+.pack-entry-copy span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pack-entry-copy strong {
+  color: #252831;
+  font-size: 10.5px;
+}
+
+.pack-entry-copy span {
+  color: var(--muted);
+  font-size: 9.5px;
+}
+
+.pack-entry-actions {
+  gap: 4px;
+}
+
+.pack-entry-actions button {
+  padding: 5px 6px;
+  font-size: 9px;
+}
+
+.pack-action-row {
+  gap: 7px;
+}
+
+.pack-action-row > * {
+  flex: 1;
+}
+
+.pack-download-button {
+  padding: 8px 5px;
+  font-size: 11px;
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
 .compare-dialog {
   width: min(760px, calc(100vw - 32px));
   max-height: calc(100vh - 32px);
