@@ -123,7 +123,7 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 
 const expectedEngineExports = [
   'ANIMS', 'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
-  'OUTFITS', 'OUTFIT_COLORS', 'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'WEAPONS', 'WEAPON_TIERS',
+  'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'WEAPONS', 'WEAPON_TIERS',
   'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'describe', 'drawSprite',
   'randomEnemy', 'randomPlayer', 'thumbURL',
 ].sort();
@@ -138,8 +138,8 @@ check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not de
 check(runtimeSources['app.js'].includes("from './character-kit.js'"), 'app.js must use the focused master character-kit planner');
 check(!runtimeSources['character-kit.js'].includes("from './engine/"), 'character-kit.js must consume only the public engine facade');
 check(runtimeSources['app.js'].includes("from './zip.js'"), 'app.js must use the standalone ZIP packaging utility');
-check(runtimeSources['app.js'].includes("PRESET_VERSION = 5"), 'app.js must keep presets under the current versioned schema');
-check(runtimeSources['app.js'].includes('![1, 2, 3, 4, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1, 2, 3, and 4 preset libraries');
+check(runtimeSources['app.js'].includes("PRESET_VERSION = 6"), 'app.js must keep presets under the current versioned schema');
+check(runtimeSources['app.js'].includes('![1, 2, 3, 4, 5, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1 through 5 preset libraries');
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
 check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'characterName', 'exportName']"), 'app.js history must remain scoped to the editable sprite document');
@@ -175,7 +175,7 @@ check(
 );
 const masterKitPlayer = {
   skin: 'peach', hairStyle: 'spiky', hairColor: 'brown', faceDetail: 'none', headgear: 'none',
-  outfit: 'tunic', outfitColor: 'royal', weapon: 'sword', weaponTier: 'tier1',
+  outfit: 'tunic', outfitTier: 'tier1', outfitColor: 'royal', weapon: 'sword', weaponTier: 'tier1',
   shield: 'round', shieldTier: 'tier1', palette: null,
 };
 const masterKitPlan = characterKit.buildMasterCharacterKitPlan(masterKitPlayer);
@@ -208,6 +208,9 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
     hairStyle: engine.HAIR_STYLES[index % engine.HAIR_STYLES.length].id,
     hairColor: engine.HAIR_COLORS[index % engine.HAIR_COLORS.length].id,
     faceDetail: engine.FACIAL_DETAILS[index % engine.FACIAL_DETAILS.length].id,
+    outfit: engine.OUTFITS[index % engine.OUTFITS.length].id,
+    outfitTier: engine.OUTFIT_TIERS[index % engine.OUTFIT_TIERS.length].id,
+    outfitColor: engine.OUTFIT_COLORS[index % engine.OUTFIT_COLORS.length].id,
   },
 }));
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
@@ -224,12 +227,12 @@ check(
 );
 const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntries);
 check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
-check(completeKitPlan.counts.componentPngs === 603 && completeKitPlan.counts.totalPngs === 604, 'complete character kits must contain 603 content-unique component sheets plus one reference preview');
+check(completeKitPlan.counts.componentPngs === 723 && completeKitPlan.counts.totalPngs === 724, 'complete character kits must contain 723 content-unique component sheets plus one reference preview');
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
 check(completeKitPlan.components.hair.length === 70, 'complete kits must collapse visually identical under-headgear hair variants');
 check(completeKitPlan.components.faceDetails.length === 30, 'complete kits must store only the color-dependent facial-detail variants');
-check(completeKitPlan.components.outfits.length === 23 && completeKitPlan.components.outfitBack.length === 7, 'complete kits must omit color variants for fixed-color outfits');
+check(completeKitPlan.components.outfits.length === 115 && completeKitPlan.components.outfitBack.length === 35, 'complete kits must cover all five armor tiers while omitting fixed-color duplicates');
 check(completeKitPlan.components.headgear.length === 25, 'complete kits must avoid duplicate fixed-color headgear sheets');
 check(completeKitPlan.components.weapons.length === 75 && completeKitPlan.components.shields.length === 280, 'complete kits must store each weapon pair and only visually distinct shield passes');
 const completeKitPaths = [
@@ -244,7 +247,7 @@ const completeKitPaths = [
   ...completeKitPlan.components.shields.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 604, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 724, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
@@ -302,6 +305,12 @@ check(runtimeSources['engine/weapon-renderer.js'].includes("C.weaponTier === 'ti
 check(runtimeSources['engine/renderer.js'].includes("from './weapon-renderer.js'"), 'humanoid rendering must use the focused weapon renderer');
 check(runtimeSources['engine/renderer.js'].includes('weaponFollowRig: true'), 'player weapons must follow the animated humanoid hand rig');
 check(runtimeSources['engine/renderer.js'].includes('enhancedHilts: true'), 'player blade weapons must use readable wrapped grips and pommels');
+check(engine.OUTFITS.every((outfit) => ['tier2Name', 'tier3Name', 'tier4Name', 'tier5Name'].every((key) => typeof outfit[key] === 'string')), 'every outfit must declare named RPG upgrades through Tier 5');
+check(JSON.stringify(engine.OUTFIT_TIERS.map((tier) => tier.id)) === JSON.stringify(['tier1', 'tier2', 'tier3', 'tier4', 'tier5']), 'the armor tier catalog must expose stable Tier 1 through Tier 5 ids');
+check(runtimeSources['app.js'].includes('validId(E.OUTFIT_TIERS, player.outfitTier'), 'saved player specs must safely migrate missing or invalid armor tiers');
+check(runtimeSources['app.js'].includes("'Armor tier'"), 'the player editor must expose a dedicated armor tier control');
+check(runtimeSources['engine/generators.js'].includes('outfitTier: rnd(OUTFIT_TIERS).id'), 'random players must choose a valid armor tier');
+check(runtimeSources['engine/renderer.js'].includes('function drawOutfitTier('), 'the humanoid renderer must apply visible armor-tier upgrade layers');
 const expectedShields = ['none', 'round', 'kite', 'buckler', 'heater', 'tower', 'oval', 'bone', 'arcane'];
 check(
   JSON.stringify(engine.SHIELDS.map((shield) => shield.id)) === JSON.stringify(expectedShields),
@@ -352,6 +361,55 @@ function compositePixelLayers(layers) {
   return output;
 }
 
+const armorBase = {
+  kind: 'player',
+  skin: engine.SKINS[1].id,
+  hairStyle: 'bald',
+  hairColor: engine.HAIR_COLORS[0].id,
+  faceDetail: 'none',
+  headgear: 'none',
+  outfit: engine.OUTFITS[0].id,
+  outfitTier: 'tier1',
+  outfitColor: engine.OUTFIT_COLORS[1].id,
+  weapon: 'none',
+  weaponTier: 'tier1',
+  shield: 'none',
+  shieldTier: 'tier1',
+  palette: null,
+};
+for (const outfit of engine.OUTFITS) {
+  for (let tierIndex = 1; tierIndex < engine.OUTFIT_TIERS.length; tierIndex++) {
+    const previousTier = engine.OUTFIT_TIERS[tierIndex - 1].id;
+    const currentTier = engine.OUTFIT_TIERS[tierIndex].id;
+    for (const dir of engine.DIRS) {
+      for (const anim of engine.ANIMS) {
+        for (let frame = 0; frame < anim.frames; frame++) {
+          if (anim.id === 'hurt' && frame === 0) continue;
+          const previous = renderPixels({ ...armorBase, outfit: outfit.id, outfitTier: previousTier }, dir, anim.id, frame, { layer: 'outfit' });
+          const current = renderPixels({ ...armorBase, outfit: outfit.id, outfitTier: currentTier }, dir, anim.id, frame, { layer: 'outfit' });
+          check(
+            JSON.stringify(previous) !== JSON.stringify(current),
+            `${outfit.id} ${currentTier} armor must visibly upgrade ${dir} ${anim.id} frame ${frame}`,
+          );
+        }
+      }
+    }
+  }
+}
+for (const anim of engine.ANIMS) {
+  for (let frame = 0; frame < anim.frames; frame++) {
+    if (anim.id === 'hurt' && frame === 0) continue;
+    const capeBackTiers = engine.OUTFIT_TIERS.map((tier) => renderPixels(
+      { ...armorBase, outfit: 'cape', outfitTier: tier.id },
+      'right',
+      anim.id,
+      frame,
+      { layer: 'outfit-back' },
+    ).join(','));
+    check(new Set(capeBackTiers).size === engine.OUTFIT_TIERS.length, `every cape-back armor tier must remain distinct in ${anim.id} frame ${frame}`);
+  }
+}
+
 const atomicPlayerSpecs = engine.HEADGEAR.map((headgear, index) => ({
   kind: 'player',
   skin: engine.SKINS[index % engine.SKINS.length].id,
@@ -360,6 +418,7 @@ const atomicPlayerSpecs = engine.HEADGEAR.map((headgear, index) => ({
   faceDetail: engine.FACIAL_DETAILS[index % engine.FACIAL_DETAILS.length].id,
   headgear: headgear.id,
   outfit: engine.OUTFITS[index % engine.OUTFITS.length].id,
+  outfitTier: engine.OUTFIT_TIERS[index % engine.OUTFIT_TIERS.length].id,
   outfitColor: engine.OUTFIT_COLORS[index % engine.OUTFIT_COLORS.length].id,
   weapon: engine.WEAPONS[1 + (index % (engine.WEAPONS.length - 1))].id,
   weaponTier: engine.WEAPON_TIERS[index % engine.WEAPON_TIERS.length].id,
@@ -457,6 +516,7 @@ const shieldBase = {
   faceDetail: 'none',
   headgear: 'none',
   outfit: engine.OUTFITS[0].id,
+  outfitTier: 'tier1',
   outfitColor: engine.OUTFIT_COLORS[0].id,
   weapon: 'none',
   weaponTier: 'tier1',
@@ -722,6 +782,7 @@ const combinations = engine.SKINS.length
   * engine.FACIAL_DETAILS.length
   * engine.HEADGEAR.length
   * engine.OUTFITS.length
+  * engine.OUTFIT_TIERS.length
   * engine.OUTFIT_COLORS.length
   * (1 + ((engine.WEAPONS.length - 1) * engine.WEAPON_TIERS.length))
   * (1 + ((engine.SHIELDS.length - 1) * engine.SHIELD_TIERS.length));

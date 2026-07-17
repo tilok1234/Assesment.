@@ -47,11 +47,18 @@ export const HEADGEAR = [
   { id: 'horns',    name: 'Horned helm', hideTop: true },
 ];
 export const OUTFITS = [
-  { id: 'tunic',   name: 'Tunic' },
-  { id: 'leather', name: 'Leather' },
-  { id: 'plate',   name: 'Plate' },
-  { id: 'robe',    name: 'Robe' },
-  { id: 'cape',    name: 'Caped hero' },
+  { id: 'tunic',   name: 'Tunic',      tier2Name: 'Reinforced Tunic', tier3Name: 'Royal Brigandine',        tier4Name: 'Runebound Battlegarb',  tier5Name: 'Mantle of the First Hero' },
+  { id: 'leather', name: 'Leather',    tier2Name: 'Studded Leather',  tier3Name: 'Shadowstalker Harness',  tier4Name: 'Nightreaver Carapace',  tier5Name: 'Umbral Apex Raiment' },
+  { id: 'plate',   name: 'Plate',      tier2Name: 'Knight Plate',     tier3Name: 'Dragonforged Plate',     tier4Name: 'Colossus Aegisplate',   tier5Name: 'Godking Panoply' },
+  { id: 'robe',    name: 'Robe',       tier2Name: 'Enchanter Robe',   tier3Name: 'Archmage Vestments',     tier4Name: 'Astral Regalia',        tier5Name: 'Robes of Creation' },
+  { id: 'cape',    name: 'Caped hero', tier2Name: 'Vanguard Mantle',  tier3Name: 'Dragoncrest Mantle',    tier4Name: 'Empyrean Battlecloak', tier5Name: 'Worldbanner Regalia' },
+];
+export const OUTFIT_TIERS = [
+  { id: 'tier1', name: 'Tier 1' },
+  { id: 'tier2', name: 'Tier 2' },
+  { id: 'tier3', name: 'Tier 3' },
+  { id: 'tier4', name: 'Tier 4' },
+  { id: 'tier5', name: 'Tier 5' },
 ];
 export const OUTFIT_COLORS = [
   { id: 'crimson',  name: 'Crimson',  c: ['#c23a3a', '#8c2626'] },

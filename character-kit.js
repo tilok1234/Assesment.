@@ -5,6 +5,7 @@ import {
   HEADGEAR,
   OUTFITS,
   OUTFIT_COLORS,
+  OUTFIT_TIERS,
   SHIELDS,
   SHIELD_TIERS,
   SKINS,
@@ -64,7 +65,12 @@ function clonePalette(palette) {
 }
 
 function clonePlayer(player) {
-  return { ...player, kind: 'player', palette: clonePalette(player.palette) };
+  return {
+    ...player,
+    kind: 'player',
+    outfitTier: player.outfitTier || 'tier1',
+    palette: clonePalette(player.palette),
+  };
 }
 
 function catalogOutfitColorChoices() {
@@ -379,6 +385,7 @@ const COMPONENT_BASE_PLAYER = {
   faceDetail: 'none',
   headgear: 'none',
   outfit: 'tunic',
+  outfitTier: 'tier1',
   outfitColor: 'royal',
   weapon: 'none',
   weaponTier: 'tier1',
@@ -412,13 +419,13 @@ function faceDetailFile(detail, variant = 'default') {
   return `components/face-details/${detail}/${variant}.png`;
 }
 
-function outfitFile(outfit, color) {
+function outfitFile(outfit, tier, color) {
   const variant = ['leather', 'plate'].includes(outfit) ? 'default' : color;
-  return `components/outfits/${outfit}/${variant}/front.png`;
+  return `components/outfits/${outfit}/${tier}/${variant}/front.png`;
 }
 
-function outfitBackFile(outfit, color) {
-  return `components/outfits/${outfit}/${color}/back.png`;
+function outfitBackFile(outfit, tier, color) {
+  return `components/outfits/${outfit}/${tier}/${color}/back.png`;
 }
 
 function headgearFile(headgear, color = 'default') {
@@ -469,13 +476,14 @@ function recipeComponents(player) {
   const hairFit = gear.hideTop ? 'under-headgear' : 'full';
   const equippedWeapon = player.weapon !== 'none';
   const equippedShield = player.shield !== 'none';
+  const outfitTier = player.outfitTier || 'tier1';
   const gearColor = COLOR_AWARE_HEADGEAR.has(player.headgear) ? player.outfitColor : 'default';
 
   return {
     weaponBack: equippedWeapon ? `components/weapons/${player.weapon}/${player.weaponTier}/back.png` : null,
     shieldBack: equippedShield ? completeShieldFile(player.shield, player.shieldTier, player.outfitColor, 'back') : null,
-    outfitBack: player.outfit === 'cape' ? outfitBackFile(player.outfit, player.outfitColor) : null,
-    outfit: outfitFile(player.outfit, player.outfitColor),
+    outfitBack: player.outfit === 'cape' ? outfitBackFile(player.outfit, outfitTier, player.outfitColor) : null,
+    outfit: outfitFile(player.outfit, outfitTier, player.outfitColor),
     skinBody: skinBodyFile(player.skin),
     head: hideHead ? null : headFile(player.skin, gear.shade ? 'shaded' : 'normal'),
     faceDetail: faceDetailComponent(player, hideHead),
@@ -603,31 +611,37 @@ function buildOutfitComponents() {
   const front = [];
   const back = [];
   for (const outfit of OUTFITS) {
-    const colors = ['leather', 'plate'].includes(outfit.id) ? [null] : OUTFIT_COLORS;
-    for (const color of colors) {
-      const renderColor = color?.id || OUTFIT_COLORS[0].id;
-      const spec = componentSpec({ outfit: outfit.id, outfitColor: renderColor });
-      front.push({
-        outfit: outfit.id,
-        outfitName: outfit.name,
-        color: color?.id || 'default',
-        colorName: color?.name || 'Fixed colors',
-        colors: color ? clonePair(color.c) : null,
-        file: outfitFile(outfit.id, renderColor),
-        layer: 'outfit',
-        spec,
-      });
-      if (outfit.id === 'cape') {
-        back.push({
+    for (const tier of OUTFIT_TIERS) {
+      const colors = ['leather', 'plate'].includes(outfit.id) ? [null] : OUTFIT_COLORS;
+      for (const color of colors) {
+        const renderColor = color?.id || OUTFIT_COLORS[0].id;
+        const spec = componentSpec({ outfit: outfit.id, outfitTier: tier.id, outfitColor: renderColor });
+        front.push({
           outfit: outfit.id,
           outfitName: outfit.name,
-          color: color.id,
-          colorName: color.name,
-          colors: clonePair(color.c),
-          file: outfitBackFile(outfit.id, color.id),
-          layer: 'outfit-back',
+          tier: tier.id,
+          tierName: tier.name,
+          color: color?.id || 'default',
+          colorName: color?.name || 'Fixed colors',
+          colors: color ? clonePair(color.c) : null,
+          file: outfitFile(outfit.id, tier.id, renderColor),
+          layer: 'outfit',
           spec,
         });
+        if (outfit.id === 'cape') {
+          back.push({
+            outfit: outfit.id,
+            outfitName: outfit.name,
+            tier: tier.id,
+            tierName: tier.name,
+            color: color.id,
+            colorName: color.name,
+            colors: clonePair(color.c),
+            file: outfitBackFile(outfit.id, tier.id, color.id),
+            layer: 'outfit-back',
+            spec,
+          });
+        }
       }
     }
   }
@@ -688,8 +702,8 @@ export function completeCharacterKitCounts() {
   const heads = SKINS.length * 2;
   const hair = ((HAIR_STYLES.length - 1) * HAIR_COLORS.length * 2) - (2 * HAIR_COLORS.length);
   const faceDetails = (2 * HAIR_COLORS.length) + SKINS.length + 3 + OUTFIT_COLORS.length;
-  const outfitFront = ((OUTFITS.length - 2) * OUTFIT_COLORS.length) + 2;
-  const outfitBack = OUTFIT_COLORS.length;
+  const outfitFront = OUTFIT_TIERS.length * (((OUTFITS.length - 2) * OUTFIT_COLORS.length) + 2);
+  const outfitBack = OUTFIT_TIERS.length * OUTFIT_COLORS.length;
   const headgear = (3 * OUTFIT_COLORS.length) + 4;
   const weaponLayers = (WEAPONS.length - 1) * WEAPON_TIERS.length * 2;
   const colorAwareShieldPasses = 9;

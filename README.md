@@ -4,13 +4,13 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 
 ## Current capabilities
 
-- Player assembly from skin, hair, eight facial details, headgear, outfit, weapon type and tier, shield, and palette choices
+- Player assembly from skin, hair, eight facial details, headgear, outfit and armor tier, weapon type and tier, shield, and palette choices
 - 41 enemy families with 138 predefined variants
 - Four directions: down, left, right, and up
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
 - Persistent named character packs that collect player and enemy designs and download as a ZIP with full PNG sheets and `manifest.json`
-- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, and 603 content-unique atomic component sheets
+- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, and 723 content-unique atomic component sheets
 - A validated asset pack containing 144 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
@@ -22,6 +22,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Play/pause, 0.5x/1x/2x playback speeds, frame stepping, and direct frame inspection with sheet-column metadata
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
+- Five named armor tiers for every outfit: reinforced Tier 2, crested Tier 3, mythic Tier 4 pauldrons, and luminous Tier 5 apex forms that follow all body animations
 - Fifteen equipped weapon choices spanning blades, blunt weapons, polearms, ranged weapons, and magic focuses, each with standard Tier 1, named RPG-style Tier 2, legendary Tier 3, oversized mythic Tier 4, and final artifact Tier 5 forms; all 75 variants use hand-anchored motion and preserve front- and side-face clearance
 - Eight equipped shield choices—round, kite, buckler, heater, tower, oval, bone, and arcane—each with a standard Tier 1, named reinforced Tier 2, legendary Tier 3, and oversized mythic Tier 4 form; all use distinct front and profile silhouettes, direction-aware layering, off-hand walk motion, and attack bracing
 
@@ -112,7 +113,7 @@ The working pack stays on the current device. Each downloaded ZIP contains one c
 
 For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes, and the full deduplicated component library. Enemy entries remain available in the regular character-pack ZIP but are not included in the player-only Complete Pack.
 
-A 24-player Complete Pack contains 603 shared component sheets plus 24 ready character sheets: 627 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+A 24-player Complete Pack contains 723 shared component sheets plus 24 ready character sheets: 747 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
 
 ## Complete Character Kits
 
@@ -121,13 +122,13 @@ Use **Download Complete Character Kit** in Player mode to export one `8-bit-spri
 - Six animated skin-body layers and 12 normal/shaded head layers
 - 70 hair layers covering every style, color, and headgear fit; identical short, spiky, and bowl under-headgear art shares one file
 - 30 facial-detail layers containing only the color-dependent variants each detail actually needs
-- 23 outfit-front layers plus seven cape-back layers; fixed-color leather and plate art is stored once
+- 115 outfit-front layers plus 35 cape-back layers covering all five armor tiers; fixed-color leather and plate art is stored once per tier
 - 25 headgear layers; fixed-color gear is stored once, while color-aware gear gets the seven catalog colors
 - 150 weapon layers covering all 15 families at Tiers 1-5 in back/front passes
 - 280 shield layers covering all eight families at Tiers 1-4; a pass gets color variants only when color changes its pixels
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
-The standalone kit contains 603 content-unique component sheets plus one reference preview: 604 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
+The standalone kit contains 723 content-unique component sheets plus one reference preview: 724 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
 
 Draw the non-null component paths from a recipe in this order:
 

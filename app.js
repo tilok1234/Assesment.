@@ -14,7 +14,7 @@ import { buildStoredZip } from './zip.js';
 
 const STORAGE_KEY = 'sprite-assembler-v1';
 const PRESET_STORAGE_KEY = 'sprite-assembler-presets-v1';
-const PRESET_VERSION = 5;
+const PRESET_VERSION = 6;
 const PALETTE_STORAGE_KEY = 'sprite-assembler-palettes-v1';
 const PALETTE_VERSION = 1;
 const PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1';
@@ -35,6 +35,7 @@ const DEFAULT_STATE = {
     faceDetail: 'none',
     headgear: 'none',
     outfit: 'tunic',
+    outfitTier: 'tier1',
     outfitColor: 'royal',
     weapon: 'sword',
     weaponTier: 'tier1',
@@ -231,6 +232,7 @@ function sanitizePlayer(player = {}) {
     faceDetail: validId(E.FACIAL_DETAILS, player.faceDetail, DEFAULT_STATE.player.faceDetail),
     headgear: validId(E.HEADGEAR, player.headgear, DEFAULT_STATE.player.headgear),
     outfit: validId(E.OUTFITS, player.outfit, DEFAULT_STATE.player.outfit),
+    outfitTier: validId(E.OUTFIT_TIERS, player.outfitTier, DEFAULT_STATE.player.outfitTier),
     outfitColor: validId(E.OUTFIT_COLORS, player.outfitColor, DEFAULT_STATE.player.outfitColor),
     weapon,
     weaponTier: weapon === 'none'
@@ -667,7 +669,7 @@ function loadPresetLibrary() {
     saved = JSON.parse(localStorage.getItem(PRESET_STORAGE_KEY) || 'null');
   } catch {}
 
-  if (!saved || ![1, 2, 3, 4, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
+  if (!saved || ![1, 2, 3, 4, 5, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
     return { version: PRESET_VERSION, presets: [] };
   }
 
@@ -1055,8 +1057,25 @@ function thumbnailGroup(label, list, selected, pick, specFor) {
 function playerGroups() {
   const player = state.player;
   const spec = (patch) => ({ kind: 'player', ...player, ...patch });
+  const outfit = E.OUTFITS.find((item) => item.id === player.outfit) || E.OUTFITS[0];
   const weapon = E.WEAPONS.find((item) => item.id === player.weapon) || E.WEAPONS[0];
   const shield = E.SHIELDS.find((item) => item.id === player.shield) || E.SHIELDS[0];
+  const outfitTierGroup = thumbnailGroup(
+    'Armor tier',
+    E.OUTFIT_TIERS,
+    player.outfitTier,
+    (value) => setPlayerOption('outfitTier', value),
+    (item) => spec({ outfitTier: item.id }),
+  );
+  outfitTierGroup.selectedName = player.outfitTier === 'tier5'
+    ? outfit.tier5Name
+    : player.outfitTier === 'tier4'
+      ? outfit.tier4Name
+      : player.outfitTier === 'tier3'
+        ? outfit.tier3Name
+        : player.outfitTier === 'tier2'
+          ? outfit.tier2Name
+          : 'Standard issue';
   const weaponTierGroup = player.weapon === 'none' ? null : thumbnailGroup(
     'Weapon tier',
     E.WEAPON_TIERS,
@@ -1122,6 +1141,7 @@ function playerGroups() {
       (value) => setPlayerOption('outfit', value),
       (item) => spec({ outfit: item.id }),
     ),
+    outfitTierGroup,
     dotGroup(
       'Outfit color',
       E.OUTFIT_COLORS,
@@ -1798,7 +1818,7 @@ function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) 
     + '- heads: normal and shaded animated heads for each skin tone\n'
     + '- hair: each style and color, with full and under-headgear fits\n'
     + '- face-details: only the color-dependent variants each detail needs\n'
-    + '- outfits: reusable front layers plus separate cape-back layers\n'
+    + '- outfits: all five armor tiers as reusable front layers plus separate cape-back layers\n'
     + '- headgear: color variants only where the art actually uses outfit colors\n'
     + '- weapons and shields: direction-aware back/front animation layers\n\n'
     + `Runtime draw order: ${COMPLETE_CHARACTER_KIT_LAYER_ORDER.join(' -> ')}.\n`

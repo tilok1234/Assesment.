@@ -28,6 +28,63 @@ const palettePair = (value, fallback) => (
     ? value
     : fallback
 );
+const OUTFIT_TIER_IDS = ['tier1', 'tier2', 'tier3', 'tier4', 'tier5'];
+const outfitTierRank = (tier) => Math.max(1, OUTFIT_TIER_IDS.indexOf(tier) + 1);
+
+function drawOutfitTier(S, R, d, u, BT, C, outfit) {
+  const rank = outfitTierRank(C.outfitTier);
+  if (rank === 1 || C.bone) return;
+  const tier2Trim = outfit === 'leather' ? METAL[1] : METAL[2];
+  const tier3Trim = GOLD[0];
+  const tier5Glow = '#fff2a8';
+
+  // Tier 2: reinforced shoulders and waist trim.
+  if (d === 'right') {
+    S(9, BT + u + 1, tier2Trim); S(14, BT + u + 1, tier2Trim);
+    R(10, 17, 4, 1, tier2Trim);
+  } else {
+    S(8, BT + u + 1, tier2Trim); S(15, BT + u + 1, tier2Trim);
+    R(10, 17, 4, 1, tier2Trim);
+  }
+
+  // Tier 3: a readable gold chest crest and stronger edge binding.
+  if (rank >= 3) {
+    if (d === 'down') {
+      S(11, BT + u + 2, tier3Trim); S(12, BT + u + 2, tier3Trim);
+      S(11, BT + u + 3, tier3Trim);
+    } else if (d === 'up') {
+      R(10, BT + u + 2, 4, 1, tier3Trim);
+      S(12, BT + u + 3, tier3Trim);
+    } else {
+      S(13, BT + u + 2, tier3Trim); S(13, BT + u + 3, tier3Trim);
+    }
+    S(9, 17, tier3Trim); S(14, 17, tier3Trim);
+  }
+
+  // Tier 4: broad mythic pauldrons extend the silhouette beyond the base torso.
+  if (rank >= 4) {
+    if (d === 'right') {
+      S(8, BT + u + 1, INK); S(15, BT + u, INK);
+      S(8, BT + u, tier3Trim); S(15, BT + u + 1, tier3Trim);
+    } else {
+      S(7, BT + u, INK); S(16, BT + u, INK);
+      S(7, BT + u + 1, tier3Trim); S(16, BT + u + 1, tier3Trim);
+    }
+    S(10, 16, tier3Trim); S(13, 16, tier3Trim);
+  }
+
+  // Tier 5: apex shoulder crowns and a luminous central sigil.
+  if (rank >= 5) {
+    if (d === 'right') {
+      S(8, BT + u - 1, tier5Glow); S(15, BT + u - 1, tier5Glow);
+      S(14, BT + u + 3, tier5Glow);
+    } else {
+      S(7, BT + u - 1, tier5Glow); S(16, BT + u - 1, tier5Glow);
+      S(11, BT + u + 1, tier5Glow); S(12, BT + u + 1, tier5Glow);
+    }
+    S(11, 17, tier5Glow); S(12, 17, tier5Glow);
+  }
+}
 
 // ---------------- pixel buffer ----------------
 function makeG() {
@@ -90,6 +147,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   const gear = C.gear || 'none';
   const gearDef = find(HEADGEAR, gear);
   const outfit = C.outfit || 'tunic';
+  const armorRank = outfitTierRank(C.outfitTier);
   const robe = outfit === 'robe';
   const pants = C.bone ? BONE : (outfit === 'plate' ? IRONPANTS : PANTS);
   const eyeC = C.eye || INK;
@@ -132,6 +190,10 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
     const sway = p.leg !== 0 ? 1 : 0;
     R(7 - sway, 12 + u, 2, 6, oc[0]);
     R(7 - sway, 17 + u, 2, 1, oc[1]);
+    if (armorRank >= 2) S(7 - sway, 13 + u, METAL[2]);
+    if (armorRank >= 3) S(6 - sway, 15 + u, GOLD[0]);
+    if (armorRank >= 4) { S(6 - sway, 12 + u, INK); S(6 - sway, 17 + u, GOLD[0]); }
+    if (armorRank >= 5) { S(5 - sway, 13 + u, '#fff2a8'); S(5 - sway, 16 + u, '#fff2a8'); }
   }
 
   // ---- legs ----
@@ -223,6 +285,8 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
     R(8, 18, 8, 1, oc[1]);
     S(9, 19, oc[1]); S(11, 19, oc[1]); S(13, 19, oc[1]);
   }
+
+  if (includeOutfit) drawOutfitTier(S, R, d, u, BT, C, outfit);
 
   // ---- arms ----
   const sleeveC = C.bone ? BONE : (outfit === 'plate' ? METAL : (outfit === 'cape' || outfit === 'leather' ? CREAM : oc));
@@ -1420,6 +1484,7 @@ function buildHumanoidC(spec) {
       hairStyle: spec.hairStyle,
       gear: spec.headgear,
       outfit: spec.outfit,
+      outfitTier: spec.outfitTier || 'tier1',
       oc: palettePair(spec.palette?.outfit, outfit),
       weapon: spec.weapon,
       weaponTier: spec.weaponTier || 'tier1',

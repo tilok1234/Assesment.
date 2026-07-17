@@ -8,6 +8,7 @@ import {
   HEADGEAR,
   OUTFITS,
   OUTFIT_COLORS,
+  OUTFIT_TIERS,
   SHIELDS,
   SHIELD_TIERS,
   SKINS,
@@ -28,6 +29,7 @@ export function randomPlayer() {
     faceDetail: rnd(FACIAL_DETAILS).id,
     headgear: rnd(HEADGEAR).id,
     outfit: rnd(OUTFITS).id,
+    outfitTier: rnd(OUTFIT_TIERS).id,
     outfitColor: rnd(OUTFIT_COLORS).id,
     weapon,
     weaponTier: weapon === 'none' ? 'tier1' : rnd(WEAPON_TIERS).id,
@@ -46,6 +48,7 @@ export function describe(spec) {
       spec.hairStyle !== 'bald' ? spec.hairStyle : null,
       spec.faceDetail && spec.faceDetail !== 'none' ? spec.faceDetail : null,
       spec.outfit,
+      spec.outfitTier && spec.outfitTier !== 'tier1' ? spec.outfitTier : null,
       spec.weaponTier && spec.weaponTier !== 'tier1' && spec.weapon !== 'none' ? spec.weaponTier : null,
       spec.weapon !== 'none' ? spec.weapon : null,
     ];
