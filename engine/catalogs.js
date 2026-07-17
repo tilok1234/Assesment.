@@ -23,5 +23,6 @@ export {
   SHIELDS,
   SKINS,
   WEAPONS,
+  WEAPON_TIERS,
 } from './catalogs/player-options.js';
 export { ENEMIES } from './catalogs/enemies.js';

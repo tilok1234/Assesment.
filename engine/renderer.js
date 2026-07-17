@@ -1408,6 +1408,7 @@ function buildHumanoidC(spec) {
       outfit: spec.outfit,
       oc: palettePair(spec.palette?.outfit, outfit),
       weapon: spec.weapon,
+      weaponTier: spec.weaponTier || 'tier1',
       shield: spec.shield,
       face: 'human',
       detail: spec.faceDetail || 'none',

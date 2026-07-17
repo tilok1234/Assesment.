@@ -11,12 +11,14 @@ import {
   SHIELDS,
   SKINS,
   WEAPONS,
+  WEAPON_TIERS,
 } from './catalogs.js';
 
 // ---------------- random + naming ----------------
 const rnd = (arr) => arr[Math.floor(Math.random() * arr.length)];
 export function randomPlayer() {
   const weapons = WEAPONS.filter(w => w.id !== 'none');
+  const weapon = Math.random() < 0.85 ? rnd(weapons).id : 'none';
   return {
     skin: rnd(SKINS).id,
     hairStyle: rnd(HAIR_STYLES).id,
@@ -25,7 +27,8 @@ export function randomPlayer() {
     headgear: rnd(HEADGEAR).id,
     outfit: rnd(OUTFITS).id,
     outfitColor: rnd(OUTFIT_COLORS).id,
-    weapon: Math.random() < 0.85 ? rnd(weapons).id : 'none',
+    weapon,
+    weaponTier: weapon === 'none' ? 'tier1' : rnd(WEAPON_TIERS).id,
     shield: rnd(SHIELDS).id,
   };
 }
@@ -40,6 +43,7 @@ export function describe(spec) {
       spec.hairStyle !== 'bald' ? spec.hairStyle : null,
       spec.faceDetail && spec.faceDetail !== 'none' ? spec.faceDetail : null,
       spec.outfit,
+      spec.weaponTier === 'tier2' && spec.weapon !== 'none' ? 'tier2' : null,
       spec.weapon !== 'none' ? spec.weapon : null,
     ];
     return bits.filter(Boolean).join('-');

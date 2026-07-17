@@ -107,13 +107,15 @@ Progress: underway. The first validated content slice adds eight facial-detail c
 
 The second content slice extracts humanoid weapons into a focused renderer with shared direction and pose anchors, while retaining byte-for-byte output for all existing enemy-used weapons. The player catalog grows from eight to sixteen choices with greatsword, scimitar, rapier, mace, warhammer, crossbow, wand, and spellbook additions. Each new weapon is verified across four directions and every animation, follows the animated player hand through idle, walk, attack, and lunge poses, has a distinct side strike, and observes the player face-clearance rule. Player blades also use readable style-specific hilts: compact dagger grips, sword crossguards, broad greatsword guards, scimitar knuckle guards, and rapier baskets.
 
+The third content slice adds an independent two-level weapon progression system without duplicating the weapon-type catalog. Every equipped weapon has a named Tier 2 form with a stronger silhouette and material treatment, including double axe heads, spiked mace and club profiles, reinforced ranged limbs, expanded arcane focuses, and gilded spellbooks. `None` normalizes to Tier 1, old state and preset schemas migrate safely, Tier 2 participates in thumbnails, per-category and whole-character randomization, undo/redo, comparison, persistence, naming, and every export scope, and all 15 upgrades remain distinct in every direction, animation, and frame while following the hand rig and clearing side faces.
+
 Candidate additions:
 
 - Body types and silhouettes
 - Facial details and expressions (first facial-detail set complete; expressions remain a future option)
 - More hairstyles and headgear
 - Armor layers, outfits, robes, capes, and accessories
-- More melee, ranged, and magical weapons (first eight-weapon expansion complete)
+- More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2 set finished)
 - More shields and off-hand items
 - Species-specific features such as ears, horns, wings, and tails
 - Additional enemy families and variants

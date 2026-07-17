@@ -37,13 +37,13 @@ Consumers import `sprite-engine.js`. Internal module paths are deliberately not 
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
 
-Weapon entries include a broad content category (`blade`, `blunt`, `polearm`, `ranged`, or `magic`). The UI, randomizer, presets, and exports consume the catalog generically, so new validated entries do not need new editor controls.
+Weapon entries include a broad content category (`blade`, `blunt`, `polearm`, `ranged`, or `magic`) and a player-facing Tier 2 name. The separate stable `WEAPON_TIERS` catalog keeps progression independent from weapon type, producing 31 meaningful equipment states: none plus 15 weapons at two tiers. The UI, randomizer, presets, and exports consume both catalogs generically.
 
 ### Renderer
 
 `engine/renderer.js` converts a sprite specification, direction, animation, and frame into pixels on a 24x24 canvas context. It owns procedural shapes and family-specific drawing dispatch. Player specifications may include validated optional base/shadow overrides for skin, hair, and outfit; absent or invalid pairs fall back to the selected catalog colors. Optional facial details are layered only on visible human faces, use the resolved player palettes where appropriate, mirror with the existing left/right renderer, and defer to headgear visibility rules.
 
-`engine/weapon-renderer.js` owns humanoid weapon pixels, reusable blade-hilt primitives, and shared down, up, and side pose anchors. Existing enemy-used weapon ids retain their original coordinates, while player-only content uses enhanced hilt silhouettes, the face-safe side offset, and the animated hand's idle bob, walk swing, attack pose, and lunge through rig transforms supplied by the humanoid configuration.
+`engine/weapon-renderer.js` owns humanoid weapon pixels, reusable blade-hilt primitives, shared down, up, and side pose anchors, and the Tier 2 upgrade layer. Existing enemy-used weapon ids retain their original coordinates and Tier 1 pixels, while player content can add weapon-specific stronger silhouettes, material highlights, enhanced hilts, and magic ornaments. Both tiers use the face-safe side offset and follow the animated hand's idle bob, walk swing, attack pose, and lunge through rig transforms supplied by the humanoid configuration.
 
 ### Sheets and thumbnails
 
@@ -55,7 +55,7 @@ Weapon entries include a broad content category (`blade`, `blunt`, `polearm`, `r
 
 ### Editor
 
-`app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, and download behavior. It consumes only the public engine facade. History snapshots contain the active mode, player/enemy specifications, optional player palette, and document names, so preset loads, resets, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. Character preset schema v3 migrates v1 and v2 libraries; the independent palette-library schema stores reusable six-tone player palettes.
+`app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, and download behavior. It consumes only the public engine facade. History snapshots contain the active mode, player/enemy specifications, optional player palette, and document names, so preset loads, resets, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. Character preset schema v4 adds the weapon tier and migrates v1, v2, and v3 libraries; the independent palette-library schema stores reusable six-tone player palettes.
 
 ### Windows wrapper
 

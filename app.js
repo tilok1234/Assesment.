@@ -2,7 +2,7 @@ import * as E from './sprite-engine.js';
 
 const STORAGE_KEY = 'sprite-assembler-v1';
 const PRESET_STORAGE_KEY = 'sprite-assembler-presets-v1';
-const PRESET_VERSION = 3;
+const PRESET_VERSION = 4;
 const PALETTE_STORAGE_KEY = 'sprite-assembler-palettes-v1';
 const PALETTE_VERSION = 1;
 const HISTORY_LIMIT = 100;
@@ -22,6 +22,7 @@ const DEFAULT_STATE = {
     outfit: 'tunic',
     outfitColor: 'royal',
     weapon: 'sword',
+    weaponTier: 'tier1',
     shield: 'round',
     palette: null,
   },
@@ -187,6 +188,7 @@ function resolvedPlayerPalette(player = state.player) {
 }
 
 function sanitizePlayer(player = {}) {
+  const weapon = validId(E.WEAPONS, player.weapon, DEFAULT_STATE.player.weapon);
   const sanitized = {
     skin: validId(E.SKINS, player.skin, DEFAULT_STATE.player.skin),
     hairStyle: validId(E.HAIR_STYLES, player.hairStyle, DEFAULT_STATE.player.hairStyle),
@@ -195,7 +197,10 @@ function sanitizePlayer(player = {}) {
     headgear: validId(E.HEADGEAR, player.headgear, DEFAULT_STATE.player.headgear),
     outfit: validId(E.OUTFITS, player.outfit, DEFAULT_STATE.player.outfit),
     outfitColor: validId(E.OUTFIT_COLORS, player.outfitColor, DEFAULT_STATE.player.outfitColor),
-    weapon: validId(E.WEAPONS, player.weapon, DEFAULT_STATE.player.weapon),
+    weapon,
+    weaponTier: weapon === 'none'
+      ? 'tier1'
+      : validId(E.WEAPON_TIERS, player.weaponTier, DEFAULT_STATE.player.weaponTier),
     shield: validId(E.SHIELDS, player.shield, DEFAULT_STATE.player.shield),
   };
   sanitized.palette = sanitizeCustomPalette(player.palette, sanitized);
@@ -505,7 +510,7 @@ function loadPresetLibrary() {
     saved = JSON.parse(localStorage.getItem(PRESET_STORAGE_KEY) || 'null');
   } catch {}
 
-  if (!saved || ![1, 2, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
+  if (!saved || ![1, 2, 3, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
     return { version: PRESET_VERSION, presets: [] };
   }
 
@@ -724,6 +729,7 @@ function currentFamily() {
 
 function setPlayerOption(key, value) {
   const player = { ...state.player, [key]: value };
+  if (key === 'weapon' && value === 'none') player.weaponTier = 'tier1';
   if (state.player.palette) {
     const palette = clonePalette(resolvedPlayerPalette());
     if (key === 'skin') palette.skin = catalogColorPair(E.SKINS, value);
@@ -891,6 +897,19 @@ function thumbnailGroup(label, list, selected, pick, specFor) {
 function playerGroups() {
   const player = state.player;
   const spec = (patch) => ({ kind: 'player', ...player, ...patch });
+  const weapon = E.WEAPONS.find((item) => item.id === player.weapon) || E.WEAPONS[0];
+  const weaponTierGroup = player.weapon === 'none' ? null : thumbnailGroup(
+    'Weapon tier',
+    E.WEAPON_TIERS,
+    player.weaponTier,
+    (value) => setPlayerOption('weaponTier', value),
+    (item) => spec({ weaponTier: item.id }),
+  );
+  if (weaponTierGroup) {
+    weaponTierGroup.selectedName = player.weaponTier === 'tier2'
+      ? weapon.tier2Name
+      : 'Standard issue';
+  }
   return [
     dotGroup('Skin', E.SKINS, player.skin, (value) => setPlayerOption('skin', value)),
     thumbnailGroup(
@@ -935,6 +954,7 @@ function playerGroups() {
       (value) => setPlayerOption('weapon', value),
       (item) => spec({ weapon: item.id }),
     ),
+    weaponTierGroup,
     thumbnailGroup(
       'Shield',
       E.SHIELDS,
@@ -942,7 +962,7 @@ function playerGroups() {
       (value) => setPlayerOption('shield', value),
       (item) => spec({ shield: item.id }),
     ),
-  ];
+  ].filter(Boolean);
 }
 
 function enemyGroups() {

@@ -110,7 +110,7 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 
 const expectedEngineExports = [
   'ANIMS', 'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
-  'OUTFITS', 'OUTFIT_COLORS', 'SHEET_COLS', 'SHIELDS', 'SIZE', 'SKINS', 'WEAPONS',
+  'OUTFITS', 'OUTFIT_COLORS', 'SHEET_COLS', 'SHIELDS', 'SIZE', 'SKINS', 'WEAPONS', 'WEAPON_TIERS',
   'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'describe', 'drawSprite',
   'randomEnemy', 'randomPlayer', 'thumbURL',
 ].sort();
@@ -122,8 +122,8 @@ check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 40, 'sprite-eng
 check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 40, 'engine/catalogs.js must remain a small internal facade');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
-check(runtimeSources['app.js'].includes("PRESET_VERSION = 3"), 'app.js must keep presets under the current versioned schema');
-check(runtimeSources['app.js'].includes('![1, 2, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1 and 2 preset libraries');
+check(runtimeSources['app.js'].includes("PRESET_VERSION = 4"), 'app.js must keep presets under the current versioned schema');
+check(runtimeSources['app.js'].includes('![1, 2, 3, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1, 2, and 3 preset libraries');
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
 check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'characterName', 'exportName']"), 'app.js history must remain scoped to the editable sprite document');
@@ -154,6 +154,10 @@ check(runtimeSources['app.js'].includes("validId(E.FACIAL_DETAILS, player.faceDe
 check(runtimeSources['engine/renderer.js'].includes("detail: spec.faceDetail || 'none'"), 'the renderer must keep legacy player specs visually compatible');
 check(engine.WEAPONS.length === 16, 'the validated weapon catalog must contain sixteen choices including none');
 check(engine.WEAPONS.every((weapon) => typeof weapon.category === 'string'), 'every weapon must declare a content category');
+check(engine.WEAPONS.filter((weapon) => weapon.id !== 'none').every((weapon) => typeof weapon.tier2Name === 'string'), 'every equipped weapon must declare an RPG-style Tier 2 name');
+check(JSON.stringify(engine.WEAPON_TIERS.map((tier) => tier.id)) === JSON.stringify(['tier1', 'tier2']), 'the weapon tier catalog must expose stable Tier 1 and Tier 2 ids');
+check(runtimeSources['app.js'].includes("validId(E.WEAPON_TIERS, player.weaponTier"), 'saved player specs must safely migrate missing or invalid weapon tiers');
+check(runtimeSources['app.js'].includes("'Weapon tier'"), 'the player editor must expose a dedicated weapon tier control');
 check(runtimeSources['engine/renderer.js'].includes("from './weapon-renderer.js'"), 'humanoid rendering must use the focused weapon renderer');
 check(runtimeSources['engine/renderer.js'].includes('weaponFollowRig: true'), 'player weapons must follow the animated humanoid hand rig');
 check(runtimeSources['engine/renderer.js'].includes('enhancedHilts: true'), 'player blade weapons must use readable wrapped grips and pommels');
@@ -239,7 +243,7 @@ const combinations = engine.SKINS.length
   * engine.HEADGEAR.length
   * engine.OUTFITS.length
   * engine.OUTFIT_COLORS.length
-  * engine.WEAPONS.length
+  * (1 + ((engine.WEAPONS.length - 1) * engine.WEAPON_TIERS.length))
   * engine.SHIELDS.length;
 
 if (errors.length) {

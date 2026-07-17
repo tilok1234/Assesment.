@@ -17,6 +17,7 @@ export {
   SIZE,
   SKINS,
   WEAPONS,
+  WEAPON_TIERS,
 } from './engine/catalogs.js';
 export { drawSprite } from './engine/renderer.js';
 export { buildAnimationSheet, buildDirectionSheet, buildSheet, thumbURL } from './engine/sheets.js';
