@@ -10,7 +10,7 @@ A browser-based procedural sprite creator for building 24x24 player characters a
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
 - Persistent named character packs that collect player and enemy designs and download as a ZIP with full PNG sheets and `manifest.json`
-- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, and 769 content-unique atomic component sheets
+- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 769 content-unique atomic component sheets, and all 138 enemy variations at native 1x
 - A validated asset pack containing 144 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
@@ -111,9 +111,9 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 
 The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per character plus a versioned `manifest.json` with the exact character specifications, animation contract, dimensions, and file paths.
 
-For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes, and the full deduplicated component library. Enemy entries remain available in the regular character-pack ZIP but are not included in the player-only Complete Pack.
+For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes, the full deduplicated component library, and all 41 enemy families with all 138 variations in `enemies/<family>/<variation>.png`. Enemy sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
 
-A 24-player Complete Pack contains 769 shared component sheets plus 24 ready character sheets: 793 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+A 24-player Complete Pack contains 769 shared component sheets, 138 ready enemy sheets, and 24 ready character sheets: 931 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
 
 ## Complete Character Kits
 
@@ -126,9 +126,10 @@ Use **Download Complete Character Kit** in Player mode to export one `8-bit-spri
 - 25 headgear layers; fixed-color gear is stored once, while color-aware gear gets the seven catalog colors
 - 150 weapon layers covering all 15 families at Tiers 1-5 in back/front passes
 - 326 shield layers covering all eight families at Tiers 1-5; a pass gets color variants only when color changes its pixels, including Tier 5 artifact passes that fully replace the underlying accent
+- 138 complete enemy sheets covering every variation in all 41 enemy families, organized beneath `enemies/`
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
-The standalone kit contains 769 content-unique component sheets plus one reference preview: 770 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
+The standalone kit contains 769 content-unique component sheets, 138 ready enemy sheets, and one reference preview: 908 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
 
 Draw the non-null component paths from a recipe in this order:
 

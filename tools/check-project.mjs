@@ -214,10 +214,10 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   },
 }));
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
-check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 1, 'complete character kits must use an explicit versioned schema');
+check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 2, 'complete character kits must use the enemy-library schema');
 check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
 check(characterKit.COMPLETE_CHARACTER_PACK_FORMAT === '8-bit-sprite-assembler-complete-character-pack', 'combined complete packs must expose a distinct stable format id');
-check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 1, 'combined complete packs must use an explicit versioned schema');
+check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 2, 'combined complete packs must use the enemy-library schema');
 check(
   JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
     'weapon-back', 'shield-back', 'outfit-back', 'outfit', 'skin-body', 'head',
@@ -227,7 +227,13 @@ check(
 );
 const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntries);
 check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
-check(completeKitPlan.counts.componentPngs === 769 && completeKitPlan.counts.totalPngs === 770, 'complete character kits must contain 769 content-unique component sheets plus one reference preview');
+check(
+  completeKitPlan.counts.componentPngs === 769
+    && completeKitPlan.counts.enemyFamilies === 41
+    && completeKitPlan.counts.enemySheets === 138
+    && completeKitPlan.counts.totalPngs === 908,
+  'complete character kits must contain 769 content-unique components, all 138 native enemy sheets, and one reference preview',
+);
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
 check(completeKitPlan.components.hair.length === 70, 'complete kits must collapse visually identical under-headgear hair variants');
@@ -240,6 +246,17 @@ check(
     && completeKitPlan.components.shields.filter((entry) => entry.tier === 'tier5' && entry.color === 'default').length === 11,
   'Tier 5 shield components must collapse the four artifact passes whose colors are fully overwritten',
 );
+const completeEnemyEntries = completeKitPlan.enemies.flatMap((family) => family.variants);
+check(completeKitPlan.enemies.length === 41 && completeEnemyEntries.length === 138, 'complete kits must plan every enemy family and variation');
+check(
+  completeKitPlan.enemies.every((family) => family.variants.every((entry) => (
+    entry.file === `enemies/${family.family}/${entry.id}.png`
+      && entry.spec.kind === 'enemy'
+      && entry.spec.family === family.family
+      && entry.spec.variant === entry.id
+  ))),
+  'complete-kit enemies must use stable family folders and exact render specifications',
+);
 const completeKitPaths = [
   ...completeKitPlan.components.skinBodies.map((entry) => entry.file),
   ...completeKitPlan.components.heads.map((entry) => entry.file),
@@ -250,9 +267,10 @@ const completeKitPaths = [
   ...completeKitPlan.components.headgear.map((entry) => entry.file),
   ...completeKitPlan.components.weapons.flatMap((entry) => [entry.files.back, entry.files.front]),
   ...completeKitPlan.components.shields.map((entry) => entry.file),
+  ...completeEnemyEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 770, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 908, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
@@ -262,6 +280,7 @@ check(runtimeSources['app.js'].includes('function downloadMasterCharacterKit('),
 check(runtimeSources['app.js'].includes('function downloadPackMasterKit('), 'character packs must export one combined Complete Character Pack');
 check(runtimeSources['app.js'].includes('function completeCharacterKitManifest('), 'Complete Character Kit downloads must include a game-facing component manifest');
 check(runtimeSources['app.js'].includes('function renderCompleteCharacterKitPngs('), 'Complete Character Kit downloads must route every component group through one renderer');
+check(runtimeSources['app.js'].includes("advance('Rendering native enemy sheets.')"), 'Complete Character Kits must render the planned native enemy library');
 check(runtimeSources['app.js'].includes('function renderReadyPackCharacters('), 'Complete Character Packs must include ready-to-use assembled character sheets');
 check(runtimeSources['app.js'].includes('includeReference: false'), 'combined packs must reuse a ready character as the reference instead of duplicating its PNG');
 check(runtimeSources['app.js'].includes('MASTER_CHARACTER_KIT_SCALE, { layer }'), 'Complete Character Kits must render every requested compositing layer at native scale');

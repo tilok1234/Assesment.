@@ -1432,8 +1432,8 @@ function renderPackControls() {
     elements.packMasterKitSummary.textContent = `${playerCount} player recipes · remove ${playerCount - COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} to reach the ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT}-recipe limit.`;
   } else {
     const counts = completeCharacterKitCounts();
-    const totalPngs = counts.componentPngs + playerCount;
-    elements.packMasterKitSummary.textContent = `${playerCount} ready character${playerCount === 1 ? '' : 's'} + ${counts.componentPngs} unique components · ${totalPngs} PNGs total`;
+    const totalPngs = counts.componentPngs + counts.enemySheets + playerCount;
+    elements.packMasterKitSummary.textContent = `${playerCount} ready character${playerCount === 1 ? '' : 's'} + ${counts.componentPngs} unique components + ${counts.enemySheets} native enemies · ${totalPngs} PNGs total`;
   }
   elements.downloadPackMasterKitButton.disabled = busy
     || masterKitExporting
@@ -1457,7 +1457,7 @@ function renderMasterKitControls() {
   }
 
   const counts = completeCharacterKitCounts();
-  elements.masterKitSummary.textContent = `${counts.componentPngs} unique component sheets · 1 reference · ${counts.totalPngs} PNGs`;
+  elements.masterKitSummary.textContent = `${counts.componentPngs} unique components · ${counts.enemySheets} native enemies · 1 reference · ${counts.totalPngs} PNGs`;
   elements.downloadMasterKitButton.disabled = masterKitExporting || rosterKitExporting;
   elements.downloadMasterKitButton.textContent = masterKitExporting && masterKitProgress
     ? `Building ${masterKitProgress.done} / ${masterKitProgress.total}…`
@@ -1764,7 +1764,8 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
     ...plan.counts,
     referencePreviews: includeReference ? 1 : 0,
     readyCharacters: readyCharacters.length,
-    totalPngs: plan.counts.componentPngs + (includeReference ? 1 : 0) + readyCharacters.length,
+    totalPngs: plan.counts.componentPngs + plan.counts.enemySheets
+      + (includeReference ? 1 : 0) + readyCharacters.length,
   };
   return {
     format: options.format || COMPLETE_CHARACTER_KIT_FORMAT,
@@ -1801,6 +1802,11 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
       weapons: plan.components.weapons.map(withoutRenderSpec),
       shields: plan.components.shields.map(withoutRenderSpec),
     },
+    enemies: plan.enemies.map((family) => ({
+      family: family.family,
+      name: family.name,
+      variants: family.variants.map(withoutRenderSpec),
+    })),
     recipes: plan.recipes,
     ...(readyCharacters.length ? { characters: readyCharacters } : {}),
     referencePreview: includeReference ? plan.reference.file : readyCharacters[0]?.file || null,
@@ -1808,13 +1814,14 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
 }
 
 function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) {
+  const counts = completeCharacterKitCounts();
   return `${name} - ${readyCharacterCount ? 'Complete Character Pack' : 'Complete Character Kit'}\n\n`
-    + 'This archive is one deduplicated library of reusable character components.\n'
+    + 'This archive combines one deduplicated library of reusable character components with a ready-to-use enemy library.\n'
     + `${recipeCount} saved character recipe${recipeCount === 1 ? '' : 's'} reference those shared files without duplicating artwork.\n`
     + (readyCharacterCount
       ? `${readyCharacterCount} assembled native sprite sheet${readyCharacterCount === 1 ? '' : 's'} are included in characters/ for immediate game use.\n`
       : '')
-    + 'All PNG files are native 288x96 sprite sheets made from 24x24 frames.\n\n'
+    + `All PNG files are native 288x96 sprite sheets made from 24x24 frames. The enemies/ folder contains all ${counts.enemyFamilies} enemy families and ${counts.enemySheets} variations as complete assembled sheets.\n\n`
     + 'Component groups:\n'
     + '- skin-body: animated hands and neck for each skin tone\n'
     + '- heads: normal and shaded animated heads for each skin tone\n'
@@ -1822,7 +1829,8 @@ function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) 
     + '- face-details: only the color-dependent variants each detail needs\n'
     + '- outfits: all five armor tiers as reusable front layers plus separate cape-back layers\n'
     + '- headgear: color variants only where the art actually uses outfit colors\n'
-    + '- weapons and shields: all five tiers as direction-aware back/front animation layers\n\n'
+    + '- weapons and shields: all five tiers as direction-aware back/front animation layers\n'
+    + '- enemies: every enemy variation as a complete native sheet, organized by family\n\n'
     + `Runtime draw order: ${COMPLETE_CHARACTER_KIT_LAYER_ORDER.join(' -> ')}.\n`
     + 'Use the same source rectangle, animation column, and direction row for every active component.\n'
     + 'Recipes in manifest.json are lightweight examples; change their component paths to craft new characters from this one library.\n'
@@ -1867,6 +1875,12 @@ async function renderCompleteCharacterKitPngs(plan, zipEntries, advance, options
   for (const entry of plan.components.shields) {
     await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
     advance('Rendering shield components.');
+  }
+  for (const family of plan.enemies) {
+    for (const entry of family.variants) {
+      await masterKitPng(zipEntries, entry.file, entry.spec, 'complete');
+      advance('Rendering native enemy sheets.');
+    }
   }
   if (options.includeReference !== false) {
     await masterKitPng(zipEntries, plan.reference.file, plan.reference.spec, 'complete');
@@ -1950,7 +1964,7 @@ async function downloadMasterCharacterKit() {
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
     const filename = `${packFilenameBase(characterName, 'character')}-complete-character-kit.zip`;
     triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    setMasterKitStatus(`Downloaded ${plan.counts.componentPngs} unique components, one reference, and the “${characterName}” recipe.`);
+    setMasterKitStatus(`Downloaded ${plan.counts.componentPngs} unique components, ${plan.counts.enemySheets} native enemies, one reference, and the “${characterName}” recipe.`);
   } catch (error) {
     console.error(error);
     setMasterKitStatus('The Complete Character Kit could not be exported. Please try again.');
@@ -1984,14 +1998,14 @@ async function downloadPackMasterKit() {
   const plan = buildCompleteCharacterKitPlan(entries);
   const packName = sanitizeText(packLibrary.name, 64).trim() || 'Character Pack';
   const exportedAt = new Date().toISOString();
-  const total = plan.counts.componentPngs + entries.length;
+  const total = plan.counts.componentPngs + plan.counts.enemySheets + entries.length;
   const zipEntries = [];
   let done = 0;
   rosterKitExporting = true;
   rosterKitProgress = { done, total };
   renderPackControls();
   renderMasterKitControls();
-  updateRosterKitProgress(done, total, `Preparing ${entries.length} ready characters, their recipes, and one shared component library…`);
+  updateRosterKitProgress(done, total, `Preparing ${entries.length} ready characters, their recipes, the shared component library, and every native enemy variation…`);
 
   const advance = (message) => {
     done += 1;
@@ -2018,11 +2032,11 @@ async function downloadPackMasterKit() {
       data: new TextEncoder().encode(completeCharacterKitReadme(packName, entries.length, readyCharacters.length)),
     });
 
-    updateRosterKitProgress(total, total, 'Packaging the ready characters and deduplicated master library together…');
+    updateRosterKitProgress(total, total, 'Packaging ready characters, the deduplicated master library, and native enemies together…');
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
     const filename = `${packFilenameBase(packName, 'character-pack')}-complete-character-pack.zip`;
     triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    setPackStatus(`Downloaded one Complete Pack with ${entries.length} ready character${entries.length === 1 ? '' : 's'}, matching recipes, and ${plan.counts.componentPngs} unique components.`);
+    setPackStatus(`Downloaded one Complete Pack with ${entries.length} ready character${entries.length === 1 ? '' : 's'}, matching recipes, ${plan.counts.componentPngs} unique components, and ${plan.counts.enemySheets} native enemies.`);
   } catch (error) {
     console.error(error);
     setPackStatus('The Complete Character Pack could not be exported. Please try again.');

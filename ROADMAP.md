@@ -125,6 +125,8 @@ The tenth content slice adds oversized mythic Tier 4 forms for every shield fami
 
 The eleventh content slice completes shield progression with eight artifact Tier 5 forms: Worldsun Disc, Voidwyrm Aegis, Paradox Star, Throneheart Aegis, The Unbroken Gate, Imperial Eternity, Deathking's Reliquary, and Event Horizon. Like the rebuilt Tier 5 weapons, these shields branch from the cleaner Tier 3 foundation instead of stacking more decoration onto Tier 4. Each family gains its own apex silhouette and material language—solar corona, void dragon, paradox star, royal heart, fortress gate, victory laurel, soul reliquary, or arcane singularity—in both full and edge-on views. Exhaustive validation covers every direction, animation, and frame; proves all eight artifact families remain distinct; confirms their walk and attack motion; preserves the protected face area; and expands the Complete Character Kit to 769 unique component sheets after visually identical Tier 5 color passes are collapsed.
 
+The twelfth content slice makes the Complete Character Kit a broader game-asset package by adding all 41 enemy families and 138 variations as ready-to-use native `288x96` sheets. Enemy files live at stable `enemies/<family>/<variation>.png` paths, remain independent from the regular 1x/2x/3x/4x manual export selector, and appear in both standalone Complete Character Kits and combined Complete Packs. Schema v2 publishes the enemy library and its counts in `manifest.json`; a full 24-player Complete Pack now contains 931 PNGs.
+
 Candidate additions:
 
 - Body types and silhouettes

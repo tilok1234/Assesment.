@@ -1,4 +1,5 @@
 import {
+  ENEMIES,
   FACIAL_DETAILS,
   HAIR_COLORS,
   HAIR_STYLES,
@@ -29,10 +30,10 @@ export const MASTER_ROSTER_KIT_VERSION = 1;
 export const MASTER_ROSTER_KIT_LIMIT = 24;
 
 export const COMPLETE_CHARACTER_KIT_FORMAT = '8-bit-sprite-assembler-complete-character-kit';
-export const COMPLETE_CHARACTER_KIT_VERSION = 1;
+export const COMPLETE_CHARACTER_KIT_VERSION = 2;
 export const COMPLETE_CHARACTER_KIT_RECIPE_LIMIT = 24;
 export const COMPLETE_CHARACTER_PACK_FORMAT = '8-bit-sprite-assembler-complete-character-pack';
-export const COMPLETE_CHARACTER_PACK_VERSION = 1;
+export const COMPLETE_CHARACTER_PACK_VERSION = 2;
 export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
   'weapon-back',
   'shield-back',
@@ -699,6 +700,19 @@ function buildHeadgearComponents() {
     });
 }
 
+function buildEnemyLibrary() {
+  return ENEMIES.map((family) => ({
+    family: family.id,
+    name: family.name,
+    variants: family.variants.map((variant) => ({
+      id: variant.id,
+      name: variant.name,
+      file: `enemies/${family.id}/${variant.id}.png`,
+      spec: { kind: 'enemy', family: family.id, variant: variant.id },
+    })),
+  }));
+}
+
 export function completeCharacterKitCounts() {
   const skinBodies = SKINS.length;
   const heads = SKINS.length * 2;
@@ -717,6 +731,8 @@ export function completeCharacterKitCounts() {
   ), 0);
   const componentPngs = skinBodies + heads + hair + faceDetails + outfitFront + outfitBack
     + headgear + weaponLayers + shieldLayers;
+  const enemyFamilies = ENEMIES.length;
+  const enemySheets = ENEMIES.reduce((total, family) => total + family.variants.length, 0);
   return {
     skinBodies,
     heads,
@@ -728,8 +744,10 @@ export function completeCharacterKitCounts() {
     weaponLayers,
     shieldLayers,
     componentPngs,
+    enemyFamilies,
+    enemySheets,
     referencePreviews: 1,
-    totalPngs: componentPngs + 1,
+    totalPngs: componentPngs + enemySheets + 1,
   };
 }
 
@@ -747,6 +765,7 @@ export function buildCompleteCharacterKitPlan(rawRecipes = []) {
   const headgear = buildHeadgearComponents();
   const weapons = buildWeapons(COMPONENT_BASE_PLAYER, 'components/weapons');
   const shields = buildCompleteShieldComponents();
+  const enemies = buildEnemyLibrary();
   const usedIds = new Set();
   const recipes = recipeEntries.map((entry, index) => ({
     id: uniqueCharacterId(entry.name, index, usedIds),
@@ -770,6 +789,7 @@ export function buildCompleteCharacterKitPlan(rawRecipes = []) {
       weapons,
       shields,
     },
+    enemies,
     recipes,
     reference: {
       file: 'preview/reference-character.png',
