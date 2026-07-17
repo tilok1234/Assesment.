@@ -259,7 +259,7 @@ function drawHumanoid(g, d, p, C) {
       }
     }
     if (C.face === 'human' && C.detail && C.detail !== 'none') {
-      drawFacialDetail(S, R, d, u, HT, C.detail, hair, skin, oc);
+      drawFacialDetail(S, R, d, u, HT, C.detail, hair, skin, oc, eyeC);
     }
   }
 
@@ -382,7 +382,7 @@ function drawHumanoid(g, d, p, C) {
   if (C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(S, R, d, p, C, u);
 }
 
-function drawFacialDetail(S, R, d, u, HT, detail, hair, skin, outfit) {
+function drawFacialDetail(S, R, d, u, HT, detail, hair, skin, outfit, eye) {
   if (d !== 'down' && d !== 'right') return;
   const y = HT + u;
   const hairBase = hair?.[0] || INK;
@@ -420,22 +420,34 @@ function drawFacialDetail(S, R, d, u, HT, detail, hair, skin, outfit) {
   }
 
   if (detail === 'eyepatch') {
+    const patch = '#20202a';
+    const patchLight = '#493846';
     if (d === 'down') {
-      S(11, y + 4, INK); S(12, y + 4, INK); S(13, y + 5, INK); S(14, y + 4, INK);
+      S(10, y + 3, patch); S(11, y + 3, patch); S(12, y + 4, patch);
+      R(13, y + 4, 2, 2, patch);
+      S(14, y + 4, patchLight);
     } else {
-      S(13, y + 4, INK); S(14, y + 5, INK); S(15, y + 4, INK);
+      S(11, y + 3, patch); S(12, y + 3, patch); S(13, y + 4, patch);
+      R(14, y + 4, 2, 2, patch);
+      S(15, y + 4, patchLight);
     }
     return;
   }
 
   if (detail === 'glasses') {
-    const frame = '#596273';
+    const frame = '#344252';
+    const lens = '#9bd5df';
     if (d === 'down') {
-      S(9, y + 5, frame); S(10, y + 4, frame); S(10, y + 6, frame);
-      S(14, y + 5, frame); S(13, y + 4, frame); S(13, y + 6, frame);
+      R(9, y + 4, 3, 2, lens); R(12, y + 4, 3, 2, lens);
+      S(9, y + 4, frame); S(11, y + 4, frame); S(9, y + 5, frame); S(11, y + 5, frame);
+      S(12, y + 4, frame); S(14, y + 4, frame); S(12, y + 5, frame); S(14, y + 5, frame);
+      S(10, y + 5, eye); S(13, y + 5, eye);
     } else {
+      R(11, y + 4, 3, 1, frame);
+      R(13, y + 4, 3, 2, lens);
+      S(13, y + 4, frame); S(15, y + 4, frame);
       S(13, y + 5, frame); S(15, y + 5, frame);
-      S(14, y + 4, frame); S(14, y + 6, frame);
+      S(14, y + 5, eye);
     }
     return;
   }
@@ -595,6 +607,7 @@ function drawWeapon(S, R, d, p, C, u) {
   const ph = p.wep; // hold | wind | strike | recover
   const strike = ph === 'strike';
   const wind = ph === 'wind';
+  const sideX = 14 + (C.sideWeaponOffset || 0);
 
   if (w === 'sword' || w === 'dagger') {
     const len = w === 'sword' ? 6 : 3;
@@ -608,8 +621,8 @@ function drawWeapon(S, R, d, p, C, u) {
       else { R(6, 8, 1, len, METAL[0]); S(6, 8, METAL[2]); R(5, 8 + len, 3, 1, GOLD[0]); }
     } else {
       if (strike) { R(15, 13, len + 2, 1, METAL[0]); S(15 + len + 1, 13, METAL[2]); R(15, 12, 1, 3, GOLD[0]); }
-      else if (wind) { R(14, 11 - len, 1, len, METAL[0]); S(14, 11 - len, METAL[2]); R(13, 11, 3, 1, GOLD[0]); }
-      else { R(14, 14 - len, 1, len, METAL[0]); S(14, 14 - len, METAL[2]); R(13, 14, 3, 1, GOLD[0]); }
+      else if (wind) { R(sideX, 11 - len, 1, len, METAL[0]); S(sideX, 11 - len, METAL[2]); R(sideX - 1, 11, 3, 1, GOLD[0]); }
+      else { R(sideX, 14 - len, 1, len, METAL[0]); S(sideX, 14 - len, METAL[2]); R(sideX - 1, 14, 3, 1, GOLD[0]); }
     }
   }
 
@@ -623,8 +636,8 @@ function drawWeapon(S, R, d, p, C, u) {
       else { R(6, 8, 1, 6, WOOD[0]); R(7, 8, 2, 3, METAL[0]); R(8, 8, 1, 3, METAL[2]); }
     } else {
       if (strike) { R(14, 13, 6, 1, WOOD[0]); R(18, 11, 2, 3, METAL[0]); R(18, 11, 2, 1, METAL[2]); }
-      else if (wind) { R(14, 5, 1, 6, WOOD[0]); R(15, 5, 2, 3, METAL[0]); }
-      else { R(14, 8, 1, 6, WOOD[0]); R(15, 8, 2, 3, METAL[0]); R(15, 8, 2, 1, METAL[2]); }
+      else if (wind) { R(sideX, 5, 1, 6, WOOD[0]); R(sideX + 1, 5, 2, 3, METAL[0]); }
+      else { R(sideX, 8, 1, 6, WOOD[0]); R(sideX + 1, 8, 2, 3, METAL[0]); R(sideX + 1, 8, 2, 1, METAL[2]); }
     }
   }
 
@@ -637,8 +650,8 @@ function drawWeapon(S, R, d, p, C, u) {
       else { R(6, 8, 1, 9, WOOD[0]); S(6, 7, METAL[0]); S(6, 6, METAL[2]); }
     } else {
       if (strike) { R(13, 13, 8, 1, WOOD[0]); S(21, 13, METAL[0]); S(22, 13, METAL[2]); }
-      else if (wind) { R(14, 6, 1, 9, WOOD[0]); S(14, 5, METAL[0]); }
-      else { R(14, 7, 1, 9, WOOD[0]); S(14, 6, METAL[0]); S(14, 5, METAL[2]); }
+      else if (wind) { R(sideX, 6, 1, 9, WOOD[0]); S(sideX, 5, METAL[0]); }
+      else { R(sideX, 7, 1, 9, WOOD[0]); S(sideX, 6, METAL[0]); S(sideX, 5, METAL[2]); }
     }
   }
 
@@ -651,8 +664,8 @@ function drawWeapon(S, R, d, p, C, u) {
       else { R(6, 10, 1, 4, WOOD[0]); R(5, 13, 3, 3, WOOD[0]); }
     } else {
       if (strike) { R(14, 13, 4, 1, WOOD[0]); R(18, 12, 3, 3, WOOD[0]); S(20, 12, WOOD[1]); }
-      else if (wind) { R(14, 8, 1, 4, WOOD[0]); R(13, 5, 3, 3, WOOD[0]); }
-      else { R(14, 10, 1, 4, WOOD[0]); R(13, 7, 3, 3, WOOD[0]); S(13, 7, WOOD[1]); }
+      else if (wind) { R(sideX, 8, 1, 4, WOOD[0]); R(sideX - 1, 5, 3, 3, WOOD[0]); }
+      else { R(sideX, 10, 1, 4, WOOD[0]); R(sideX - 1, 7, 3, 3, WOOD[0]); S(sideX - 1, 7, WOOD[1]); }
     }
   }
 
@@ -684,8 +697,8 @@ function drawWeapon(S, R, d, p, C, u) {
       else { R(6, 8, 1, 9, WOOD[0]); R(5, 6, 2, 2, gem[0]); S(5, 6, gem[2]); }
     } else {
       if (strike) { R(13, 13, 7, 1, WOOD[0]); R(20, 12, 2, 2, gem[0]); S(20, 12, gem[2]); S(22, 11, gem[2]); S(19, 15, gem[2]); }
-      else if (wind) { R(14, 7, 1, 9, WOOD[0]); R(13, 5, 2, 2, gem[0]); }
-      else { R(14, 7, 1, 9, WOOD[0]); R(13, 5, 2, 2, gem[0]); S(13, 5, gem[2]); }
+      else if (wind) { R(sideX, 7, 1, 9, WOOD[0]); R(sideX - 1, 5, 2, 2, gem[0]); }
+      else { R(sideX, 7, 1, 9, WOOD[0]); R(sideX - 1, 5, 2, 2, gem[0]); S(sideX - 1, 5, gem[2]); }
     }
   }
 }
@@ -1495,6 +1508,7 @@ function buildHumanoidC(spec) {
       shield: spec.shield,
       face: 'human',
       detail: spec.faceDetail || 'none',
+      sideWeaponOffset: 3,
     };
   }
   const fam = find(ENEMIES, spec.family);
