@@ -39,6 +39,10 @@ export const HAIR_STYLES = [
   { id: 'long',     name: 'Long' },
   { id: 'ponytail', name: 'Ponytail' },
   { id: 'mohawk',   name: 'Mohawk' },
+  { id: 'braids',   name: 'Braids' },
+  { id: 'afro',     name: 'Afro' },
+  { id: 'topknot',  name: 'Topknot' },
+  { id: 'messy',    name: 'Messy' },
 ];
 export const FACIAL_DETAILS = [
   { id: 'none',     name: 'None' },
@@ -67,6 +71,10 @@ export const HEADGEAR = [
   { id: 'crown',    name: 'Crown' },
   { id: 'wizard',   name: 'Wizard hat', hideTop: true },
   { id: 'horns',    name: 'Horned helm', hideTop: true },
+  { id: 'bandana',  name: 'Bandana' },
+  { id: 'circlet',  name: 'Circlet' },
+  { id: 'plumed',   name: 'Plumed helm', hideTop: true },
+  { id: 'skullmask', name: 'Skull mask' },
 ];
 export const OUTFITS = [
   { id: 'tunic',   name: 'Tunic',      tier2Name: 'Reinforced Tunic', tier3Name: 'Royal Brigandine',        tier4Name: 'Runebound Battlegarb',  tier5Name: 'Mantle of the First Hero' },

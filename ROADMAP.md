@@ -149,11 +149,13 @@ The twenty-second content slice adds four stable player body builds: Classic, Le
 
 The twenty-third content slice adds six stable player expressions: Neutral, Happy, Angry, Sad, Surprised, and Determined. Neutral is pixel-identical to every legacy or missing-expression specification, while the five new moods remain distinct across every visible direction, animation, and frame. Expressions render as their own component between the head and front species traits, remain visible through redesigned open-lens glasses, and hide completely beneath full helmets; established humanoid enemy faces remain unchanged. Presets migrate to schema v9, randomization and filenames understand expressions, and class and equipment planners preserve them as part of character identity. Complete Kit and Complete Pack schema v7 add six expression sheets, raising the shared component library to 1252 PNGs, the standalone kit to 1479 PNGs, and a 24-player Complete Pack to 1502 PNGs. Exhaustive validation proves Neutral parity, six distinct animation signatures, directional visibility and helmet occlusion, stable recipe paths, and pixel-exact recomposition.
 
+The twenty-fourth content slice expands player customization with four direction-aware hairstyles—Braids, Afro, Topknot, and Messy—and four headgear choices—Bandana, Circlet, Plumed Helm, and Skull Mask—without changing the stable ids of the original seven hairstyles or eight headgear entries. All 11 hairstyles animate through front, side, and rear views. Braids, Afro, and Messy retain readable lower details under fitted gear, while Topknot intentionally shares the compact short/spiky/bowl fit; Bandana and Plumed Helm use outfit colors, Circlet and Skull Mask remain fixed-color components, and expression visibility follows each silhouette, including complete Skull Mask coverage. Complete Kit and Complete Pack schema v8 add 119 deduplicated hair sheets and 41 headgear sheets, raising the shared component library to 1317 PNGs, the standalone kit to 1544 PNGs, and a 24-player Complete Pack to 1567 PNGs. Exhaustive validation proves catalog stability, distinct animation signatures, fitted-hair behavior, expression visibility and coverage, outfit-color behavior, and pixel-exact recipe recomposition.
+
 Candidate additions:
 
 - More body types beyond the completed four-build silhouette foundation
 - More facial details and expressions beyond the completed eight-detail and six-expression foundations
-- More hairstyles and headgear
+- More hairstyles and headgear beyond the completed 11-style and 12-choice foundation
 - Armor layers, outfits, robes, capes, and accessories
 - More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2/Tier 3/Tier 4/Tier 5 progression finished)
 - Additional off-hand items such as spell foci, lanterns, and quivers (eight-family shield progression through Tier 5 complete)

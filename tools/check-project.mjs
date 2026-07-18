@@ -221,10 +221,10 @@ const masterKitPlayer = {
   shield: 'round', shieldTier: 'tier1', palette: null,
 };
 const masterKitPlan = characterKit.buildMasterCharacterKitPlan(masterKitPlayer);
-check(masterKitPlan.bodies.length === 280, 'master kits must include every outfit, catalog color, and headgear body combination');
+check(masterKitPlan.bodies.length === 420, 'master kits must include every outfit, catalog color, and headgear body combination');
 check(masterKitPlan.weapons.length === 75, 'master kits must include all fifteen weapons at all five tiers');
 check(masterKitPlan.shields.length === 280, 'master kits must include all eight shields at all five tiers and seven catalog colors');
-check(masterKitPlan.counts.totalPngs === 991, 'standard master kits must contain 991 native PNG sheets including the assembled preview');
+check(masterKitPlan.counts.totalPngs === 1131, 'standard master kits must contain 1131 native PNG sheets including the assembled preview');
 check(masterKitPlan.bodies.every((entry) => entry.layer === 'body' && entry.spec.weapon === 'none' && entry.spec.shield === 'none'), 'master-kit bodies must not bake weapons or shields');
 check(masterKitPlan.weapons.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit weapon must expose separate back and front layers');
 check(masterKitPlan.shields.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit shield must expose separate back and front layers');
@@ -239,7 +239,7 @@ const customKitPlan = characterKit.buildMasterCharacterKitPlan({
   ...masterKitPlayer,
   palette: { skin: ['#123456', '#234567'], hair: ['#345678', '#456789'], outfit: ['#56789a', '#6789ab'] },
 });
-check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 1111, 'master kits must add the current custom outfit color without replacing catalog colors');
+check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 1271, 'master kits must add the current custom outfit color without replacing catalog colors');
 const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   id: `hero-${index + 1}`,
   name: `Hero ${index + 1}`,
@@ -259,10 +259,10 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   },
 }));
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
-check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 7, 'complete character kits must use the modular-expression component schema');
+check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 8, 'complete character kits must use the expanded hair-and-headgear component schema');
 check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
 check(characterKit.COMPLETE_CHARACTER_PACK_FORMAT === '8-bit-sprite-assembler-complete-character-pack', 'combined complete packs must expose a distinct stable format id');
-check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 7, 'combined complete packs must use the modular-expression component schema');
+check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 8, 'combined complete packs must use the expanded hair-and-headgear component schema');
 check(
   JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
     'weapon-back', 'shield-back', 'species-back', 'outfit-back', 'outfit', 'skin-body', 'head',
@@ -273,22 +273,22 @@ check(
 const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntries);
 check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
 check(
-  completeKitPlan.counts.componentPngs === 1252
+  completeKitPlan.counts.componentPngs === 1317
     && completeKitPlan.counts.enemyFamilies === 57
     && completeKitPlan.counts.enemySheets === 202
     && completeKitPlan.counts.effectCategories === 4
     && completeKitPlan.counts.effectSheets === 24
-    && completeKitPlan.counts.totalPngs === 1479,
-  'complete character kits must contain 1252 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
+    && completeKitPlan.counts.totalPngs === 1544,
+  'complete character kits must contain 1317 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
-check(completeKitPlan.components.hair.length === 70, 'complete kits must collapse visually identical under-headgear hair variants');
+check(completeKitPlan.components.hair.length === 119, 'complete kits must collapse visually identical under-headgear hair variants');
 check(completeKitPlan.components.expressions.length === 6, 'complete kits must store each animated expression exactly once');
 check(completeKitPlan.components.faceDetails.length === 30, 'complete kits must store only the color-dependent facial-detail variants');
 check(completeKitPlan.components.speciesBack.length === 7 && completeKitPlan.components.speciesFront.length === 20, 'complete kits must store only the color-dependent species back/front variants');
 check(completeKitPlan.components.outfits.length === 460 && completeKitPlan.components.outfitBack.length === 140, 'complete kits must cover all four body builds and five armor tiers while omitting fixed-color duplicates');
-check(completeKitPlan.components.headgear.length === 25, 'complete kits must avoid duplicate fixed-color headgear sheets');
+check(completeKitPlan.components.headgear.length === 41, 'complete kits must avoid duplicate fixed-color headgear sheets');
 check(completeKitPlan.components.weapons.length === 75 && completeKitPlan.components.shields.length === 326, 'complete kits must store every five-tier weapon and shield family while omitting visually identical color passes');
 check(
   completeKitPlan.components.shields.filter((entry) => entry.tier === 'tier5').length === 46
@@ -334,7 +334,7 @@ const completeKitPaths = [
   ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 1479, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 1544, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
@@ -401,6 +401,20 @@ check(runtimeSources['app.js'].includes('validId(E.EXPRESSIONS, player.expressio
 check(runtimeSources['app.js'].includes("'Expression'"), 'the player editor must expose a dedicated expression control');
 check(runtimeSources['engine/generators.js'].includes('expression: rnd(EXPRESSIONS).id'), 'random players must choose a valid expression');
 check(runtimeSources['engine/renderer.js'].includes("expression: spec.expression || 'neutral'"), 'legacy player specs must render with the Neutral expression');
+const expectedHairStyles = ['bald', 'short', 'spiky', 'bowl', 'long', 'ponytail', 'mohawk', 'braids', 'afro', 'topknot', 'messy'];
+check(
+  JSON.stringify(engine.HAIR_STYLES.map((style) => style.id)) === JSON.stringify(expectedHairStyles),
+  'the hair catalog must preserve its seven legacy ids followed by the four expanded styles',
+);
+const expectedHeadgear = ['none', 'cap', 'helm', 'fullhelm', 'hood', 'crown', 'wizard', 'horns', 'bandana', 'circlet', 'plumed', 'skullmask'];
+check(
+  JSON.stringify(engine.HEADGEAR.map((gear) => gear.id)) === JSON.stringify(expectedHeadgear),
+  'the headgear catalog must preserve its eight legacy ids followed by the four expanded options',
+);
+check(runtimeSources['app.js'].includes('validId(E.HAIR_STYLES, player.hairStyle'), 'saved player specs must validate expanded hairstyles through the stable catalog');
+check(runtimeSources['app.js'].includes('validId(E.HEADGEAR, player.headgear'), 'saved player specs must validate expanded headgear through the stable catalog');
+check(runtimeSources['engine/generators.js'].includes('hairStyle: rnd(HAIR_STYLES).id'), 'random players must include the expanded hairstyle catalog');
+check(runtimeSources['engine/generators.js'].includes('headgear: rnd(HEADGEAR).id'), 'random players must include the expanded headgear catalog');
 check(engine.WEAPONS.length === 16, 'the validated weapon catalog must contain sixteen choices including none');
 check(engine.WEAPONS.every((weapon) => typeof weapon.category === 'string'), 'every weapon must declare a content category');
 check(engine.WEAPONS.filter((weapon) => weapon.id !== 'none').every((weapon) => typeof weapon.tier2Name === 'string'), 'every equipped weapon must declare an RPG-style Tier 2 name');
@@ -538,6 +552,103 @@ for (const expression of engine.EXPRESSIONS) {
   expressionSignatures.set(expression.id, frames.join('|'));
 }
 check(new Set(expressionSignatures.values()).size === engine.EXPRESSIONS.length, 'all six expressions must remain visually distinct across the complete animation set');
+
+const hairProbe = {
+  ...expressionProbe,
+  skin: 'peach',
+  hairStyle: 'short',
+  hairColor: 'blue',
+  expression: 'neutral',
+  headgear: 'none',
+};
+const hairSignatures = new Map();
+for (const style of engine.HAIR_STYLES) {
+  const frames = [];
+  for (const dir of engine.DIRS) {
+    for (const anim of engine.ANIMS) {
+      for (let frame = 0; frame < anim.frames; frame++) {
+        const layer = renderPixels({ ...hairProbe, hairStyle: style.id }, dir, anim.id, frame, { layer: 'hair' });
+        frames.push(layer.join(','));
+        check(
+          layer.some((pixel) => pixel !== null) === (style.id !== 'bald'),
+          `${style.name} must expose its intended hair layer in ${dir} ${anim.id} frame ${frame}`,
+        );
+      }
+    }
+  }
+  hairSignatures.set(style.id, frames.join('|'));
+}
+check(new Set(hairSignatures.values()).size === engine.HAIR_STYLES.length, 'all eleven hairstyles must retain distinct complete animation signatures');
+
+const underGearSignatures = new Map();
+for (const styleId of ['braids', 'afro', 'messy']) {
+  const frames = [];
+  for (const dir of engine.DIRS) {
+    for (const anim of engine.ANIMS) {
+      for (let frame = 0; frame < anim.frames; frame++) {
+        const layer = renderPixels({ ...hairProbe, hairStyle: styleId, headgear: 'plumed' }, dir, anim.id, frame, { layer: 'hair' });
+        frames.push(layer.join(','));
+        check(layer.some((pixel) => pixel !== null), `${styleId} must remain readable beneath headgear in ${dir} ${anim.id} frame ${frame}`);
+      }
+    }
+  }
+  underGearSignatures.set(styleId, frames.join('|'));
+}
+check(new Set(underGearSignatures.values()).size === 3, 'braids, afro, and messy hair must keep distinct under-headgear silhouettes');
+for (const dir of engine.DIRS) {
+  for (const anim of engine.ANIMS) {
+    for (let frame = 0; frame < anim.frames; frame++) {
+      const shortUnderGear = renderPixels({ ...hairProbe, hairStyle: 'short', headgear: 'plumed' }, dir, anim.id, frame, { layer: 'hair' });
+      const topknotUnderGear = renderPixels({ ...hairProbe, hairStyle: 'topknot', headgear: 'plumed' }, dir, anim.id, frame, { layer: 'hair' });
+      check(JSON.stringify(shortUnderGear) === JSON.stringify(topknotUnderGear), `topknot must collapse to the shared fitted hair pass in ${dir} ${anim.id} frame ${frame}`);
+    }
+  }
+}
+
+const expandedHeadgear = ['bandana', 'circlet', 'plumed', 'skullmask'];
+const headgearSignatures = new Map();
+for (const headgear of expandedHeadgear) {
+  const frames = [];
+  for (const dir of engine.DIRS) {
+    for (const anim of engine.ANIMS) {
+      for (let frame = 0; frame < anim.frames; frame++) {
+        const layer = renderPixels({ ...hairProbe, hairStyle: 'braids', headgear }, dir, anim.id, frame, { layer: 'headgear' });
+        frames.push(layer.join(','));
+        check(layer.some((pixel) => pixel !== null), `${headgear} must remain visible in ${dir} ${anim.id} frame ${frame}`);
+      }
+    }
+  }
+  headgearSignatures.set(headgear, frames.join('|'));
+}
+check(new Set(headgearSignatures.values()).size === expandedHeadgear.length, 'all four expanded headgear options must retain distinct complete animation signatures');
+for (const headgear of ['bandana', 'plumed']) {
+  const royal = renderPixels({ ...hairProbe, headgear, outfitColor: 'royal' }, 'down', 'idle', 0, { layer: 'headgear' });
+  const crimson = renderPixels({ ...hairProbe, headgear, outfitColor: 'crimson' }, 'down', 'idle', 0, { layer: 'headgear' });
+  check(JSON.stringify(royal) !== JSON.stringify(crimson), `${headgear} must retain its catalog-color variants`);
+}
+for (const headgear of ['circlet', 'skullmask']) {
+  const royal = renderPixels({ ...hairProbe, headgear, outfitColor: 'royal' }, 'down', 'idle', 0, { layer: 'headgear' });
+  const crimson = renderPixels({ ...hairProbe, headgear, outfitColor: 'crimson' }, 'down', 'idle', 0, { layer: 'headgear' });
+  check(JSON.stringify(royal) === JSON.stringify(crimson), `${headgear} must remain a fixed-color deduplicated component`);
+}
+for (const dir of ['down', 'left', 'right']) {
+  for (const anim of engine.ANIMS) {
+    for (let frame = 0; frame < anim.frames; frame++) {
+      const maskedExpressions = engine.EXPRESSIONS.map((expression) => renderPixels({
+        ...hairProbe,
+        hairStyle: 'messy',
+        expression: expression.id,
+        headgear: 'skullmask',
+      }, dir, anim.id, frame).join(','));
+      check(new Set(maskedExpressions).size === 1, `skull mask must fully cover expressions in ${dir} ${anim.id} frame ${frame}`);
+    }
+  }
+}
+check(
+  JSON.stringify(renderPixels({ ...hairProbe, expression: 'neutral', headgear: 'circlet' }, 'down', 'idle', 0))
+    !== JSON.stringify(renderPixels({ ...hairProbe, expression: 'happy', headgear: 'circlet' }, 'down', 'idle', 0)),
+  'the circlet must preserve readable facial expressions',
+);
 
 const bodyBuildSignatures = new Map();
 for (const bodyBuild of engine.BODY_BUILDS) {

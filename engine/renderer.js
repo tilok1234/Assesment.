@@ -756,50 +756,126 @@ function drawFacialDetail(S, R, d, u, HT, detail, hair, skin, outfit, eye) {
 // ---------------- hair ----------------
 function drawHair(S, R, d, u, HT, hx, style, hc, hideTop) {
   const top = !hideTop;
+  const y = HT + u;
   if (d === 'down') {
     if (top) {
       if (style === 'mohawk') {
-        R(11, HT + u - 1, 2, 5, hc[0]); S(11, HT + u + 3, hc[1]);
+        R(11, y - 1, 2, 5, hc[0]); S(11, y + 3, hc[1]);
+      } else if (style === 'afro') {
+        R(8, y - 2, 8, 1, hc[0]); R(7, y - 1, 10, 1, hc[0]);
+        R(6, y, 12, 4, hc[0]); R(7, y + 4, 10, 1, hc[0]);
+        S(7, y, hc[1]); S(10, y - 1, hc[1]); S(16, y + 3, hc[1]);
+      } else if (style === 'topknot') {
+        R(8, y + 1, 8, 2, hc[0]); R(8, y + 2, 8, 1, hc[1]);
+        R(10, y - 2, 4, 1, hc[0]); R(9, y - 1, 6, 2, hc[0]);
+        S(10, y - 1, hc[1]); S(14, y, hc[1]);
       } else {
-        R(8, HT + u, 8, 3, hc[0]);
-        R(8, HT + u + 2, 8, 1, hc[1]);
-        S(8, HT + u + 3, hc[0]); S(15, HT + u + 3, hc[0]);
-        if (style === 'spiky') { S(9, HT + u - 1, hc[0]); S(12, HT + u - 1, hc[0]); S(15, HT + u - 1, hc[0]); }
-        if (style === 'bowl') { R(8, HT + u, 8, 4, hc[0]); R(8, HT + u + 3, 8, 1, hc[1]); }
+        R(8, y, 8, 3, hc[0]);
+        R(8, y + 2, 8, 1, hc[1]);
+        S(8, y + 3, hc[0]); S(15, y + 3, hc[0]);
+        if (style === 'spiky') { S(9, y - 1, hc[0]); S(12, y - 1, hc[0]); S(15, y - 1, hc[0]); }
+        if (style === 'bowl') { R(8, y, 8, 4, hc[0]); R(8, y + 3, 8, 1, hc[1]); }
+        if (style === 'braids') { S(11, y, hc[1]); S(12, y + 1, hc[1]); }
+        if (style === 'messy') {
+          S(7, y + 1, hc[0]); S(9, y - 1, hc[0]); S(11, y - 2, hc[0]); S(11, y - 1, hc[0]);
+          S(14, y - 1, hc[0]); S(16, y, hc[0]); S(10, y + 3, hc[1]);
+        }
       }
     }
     if (style === 'long') {
-      R(8, HT + u + 3, 1, 6, hc[0]); R(15, HT + u + 3, 1, 6, hc[0]);
-      S(7, HT + u + 8, hc[1]); S(16, HT + u + 8, hc[1]);
+      R(8, y + 3, 1, 6, hc[0]); R(15, y + 3, 1, 6, hc[0]);
+      S(7, y + 8, hc[1]); S(16, y + 8, hc[1]);
+    }
+    if (style === 'braids') {
+      R(7, y + 3, 2, 1, hc[0]); S(7, y + 4, hc[1]); S(8, y + 5, hc[0]);
+      S(7, y + 6, hc[1]); S(8, y + 7, hc[0]); S(7, y + 8, hc[1]); S(7, y + 9, GOLD[0]);
+      R(15, y + 3, 2, 1, hc[0]); S(16, y + 4, hc[1]); S(15, y + 5, hc[0]);
+      S(16, y + 6, hc[1]); S(15, y + 7, hc[0]); S(16, y + 8, hc[1]); S(16, y + 9, GOLD[0]);
+    }
+    if (style === 'afro' && !top) {
+      R(7, y + 2, 2, 3, hc[0]); R(15, y + 2, 2, 3, hc[0]);
+      S(7, y + 4, hc[1]); S(16, y + 3, hc[1]);
+    }
+    if (style === 'messy') {
+      S(8, y + 3, hc[0]); S(9, y + 2, hc[1]); S(14, y + 2, hc[1]); S(15, y + 4, hc[0]);
     }
   } else if (d === 'right') {
     if (top) {
       if (style === 'mohawk') {
-        R(10, HT + u - 1, 6, 2, hc[0]); S(10, HT + u + 1, hc[1]);
+        R(10, y - 1, 6, 2, hc[0]); S(10, y + 1, hc[1]);
+      } else if (style === 'afro') {
+        R(10, y - 2, 7, 1, hc[0]); R(8, y - 1, 10, 1, hc[0]);
+        R(7, y, 12, 4, hc[0]); R(8, y + 4, 10, 1, hc[0]);
+        S(8, y, hc[1]); S(12, y - 1, hc[1]); S(17, y + 3, hc[1]);
+      } else if (style === 'topknot') {
+        R(9, y + 1, 8, 2, hc[0]); R(9, y + 2, 4, 1, hc[1]);
+        R(8, y - 2, 4, 1, hc[0]); R(7, y - 1, 6, 2, hc[0]);
+        S(8, y - 1, hc[1]); S(11, y, hc[1]);
       } else {
-        R(9, HT + u, 8, 3, hc[0]);
-        R(9, HT + u + 2, 4, 1, hc[1]);
-        R(9, HT + u + 3, 2, 2, hc[0]);
-        if (style === 'spiky') { S(10, HT + u - 1, hc[0]); S(13, HT + u - 1, hc[0]); }
-        if (style === 'bowl') { R(9, HT + u, 8, 4, hc[0]); R(15, HT + u + 3, 2, 1, hc[1]); }
+        R(9, y, 8, 3, hc[0]);
+        R(9, y + 2, 4, 1, hc[1]);
+        R(9, y + 3, 2, 2, hc[0]);
+        if (style === 'spiky') { S(10, y - 1, hc[0]); S(13, y - 1, hc[0]); }
+        if (style === 'bowl') { R(9, y, 8, 4, hc[0]); R(15, y + 3, 2, 1, hc[1]); }
+        if (style === 'messy') {
+          S(8, y, hc[0]); S(10, y - 2, hc[0]); S(10, y - 1, hc[0]); S(13, y - 1, hc[0]);
+          S(16, y - 1, hc[0]); S(17, y + 1, hc[0]);
+        }
       }
     }
-    if (style === 'long') { R(9, HT + u + 3, 2, 6, hc[0]); S(9, HT + u + 8, hc[1]); }
-    if (style === 'ponytail') { S(8, HT + u + 2, hc[0]); S(8, HT + u + 3, hc[0]); S(8, HT + u + 4, hc[1]); }
+    if (style === 'long') { R(9, y + 3, 2, 6, hc[0]); S(9, y + 8, hc[1]); }
+    if (style === 'ponytail') { S(8, y + 2, hc[0]); S(8, y + 3, hc[0]); S(8, y + 4, hc[1]); }
+    if (style === 'braids') {
+      R(8, y + 3, 2, 1, hc[0]); S(8, y + 4, hc[1]); S(9, y + 5, hc[0]);
+      S(8, y + 6, hc[1]); S(9, y + 7, hc[0]); S(8, y + 8, hc[1]); S(8, y + 9, GOLD[0]);
+    }
+    if (style === 'afro' && !top) {
+      R(8, y + 2, 2, 3, hc[0]); R(16, y + 2, 2, 2, hc[0]);
+      S(8, y + 4, hc[1]); S(17, y + 3, hc[1]);
+    }
+    if (style === 'messy') {
+      S(9, y + 3, hc[0]); S(10, y + 4, hc[1]); S(15, y + 2, hc[1]); S(16, y + 3, hc[0]);
+    }
   } else if (d === 'up') {
     if (style === 'mohawk') {
-      R(11, HT + u - 1, 2, 7, hc[0]);
+      R(11, y - 1, 2, 7, hc[0]);
+    } else if (style === 'afro') {
+      if (top) {
+        R(8, y - 2, 8, 1, hc[0]); R(7, y - 1, 10, 1, hc[0]);
+        R(6, y, 12, 7, hc[0]); R(7, y + 7, 10, 1, hc[0]);
+        S(8, y, hc[1]); S(14, y + 2, hc[1]); S(16, y + 6, hc[1]);
+      } else {
+        R(7, y + 3, 10, 3, hc[0]); S(7, y + 5, hc[1]); S(16, y + 4, hc[1]);
+      }
+    } else if (style === 'topknot' && top) {
+      R(8, y + 2, 8, 4, hc[0]); R(8, y + 5, 8, 1, hc[1]);
+      R(10, y - 2, 4, 1, hc[0]); R(9, y - 1, 6, 3, hc[0]);
+      S(10, y - 1, hc[1]); S(14, y + 1, hc[1]);
     } else if (top) {
-      R(8, HT + u, 8, 6, hc[0]);
-      R(8, HT + u + 5, 8, 1, hc[1]);
-      S(10, HT + u + 3, hc[1]); S(13, HT + u + 2, hc[1]);
-      if (style === 'spiky') { S(9, HT + u - 1, hc[0]); S(12, HT + u - 1, hc[0]); S(15, HT + u - 1, hc[0]); }
-      if (style === 'bowl') R(8, HT + u, 8, 7, hc[0]);
+      R(8, y, 8, 6, hc[0]);
+      R(8, y + 5, 8, 1, hc[1]);
+      S(10, y + 3, hc[1]); S(13, y + 2, hc[1]);
+      if (style === 'spiky') { S(9, y - 1, hc[0]); S(12, y - 1, hc[0]); S(15, y - 1, hc[0]); }
+      if (style === 'bowl') R(8, y, 8, 7, hc[0]);
+      if (style === 'braids') { S(11, y, hc[1]); S(12, y + 1, hc[1]); }
+      if (style === 'messy') {
+        S(7, y + 1, hc[0]); S(9, y - 1, hc[0]); S(12, y - 2, hc[0]); S(12, y - 1, hc[0]);
+        S(15, y - 1, hc[0]); S(16, y + 2, hc[0]); S(9, y + 6, hc[1]);
+      }
     } else {
-      R(8, HT + u + 4, 8, 2, hc[0]);
+      R(8, y + 4, 8, 2, hc[0]);
     }
-    if (style === 'long') { R(8, HT + u, 8, 10, hc[0]); R(8, HT + u + 9, 8, 1, hc[1]); S(10, HT + u + 6, hc[1]); S(13, HT + u + 7, hc[1]); }
-    if (style === 'ponytail') { R(11, HT + u + 3, 2, 8, hc[0]); R(11, HT + u + 4, 2, 1, hc[1]); }
+    if (style === 'long') { R(8, y, 8, 10, hc[0]); R(8, y + 9, 8, 1, hc[1]); S(10, y + 6, hc[1]); S(13, y + 7, hc[1]); }
+    if (style === 'ponytail') { R(11, y + 3, 2, 8, hc[0]); R(11, y + 4, 2, 1, hc[1]); }
+    if (style === 'braids') {
+      R(8, y + 5, 2, 1, hc[0]); S(8, y + 6, hc[1]); S(9, y + 7, hc[0]);
+      S(8, y + 8, hc[1]); S(9, y + 9, hc[0]); S(8, y + 10, hc[1]); S(8, y + 11, GOLD[0]);
+      R(14, y + 5, 2, 1, hc[0]); S(15, y + 6, hc[1]); S(14, y + 7, hc[0]);
+      S(15, y + 8, hc[1]); S(14, y + 9, hc[0]); S(15, y + 10, hc[1]); S(15, y + 11, GOLD[0]);
+    }
+    if (style === 'messy' && !top) {
+      S(7, y + 4, hc[0]); S(10, y + 6, hc[1]); S(13, y + 6, hc[1]); S(16, y + 5, hc[0]);
+    }
   }
 }
 
@@ -855,6 +931,63 @@ function drawGear(S, R, d, u, HT, hx, gear, oc, C) {
       S(hx + 8, HT + u - 1, BONE[0]); S(hx + 8, HT + u, BONE[0]); S(hx + 9, HT + u - 2, BONE[0]);
     } else {
       S(hx + 1, HT + u - 1, BONE[0]); S(hx + 1, HT + u - 2, BONE[0]); S(hx, HT + u - 3, BONE[0]);
+    }
+  }
+  if (gear === 'bandana') {
+    R(hx, HT + u + 1, 8, 2, oc[0]);
+    R(hx, HT + u + 2, 8, 1, oc[1]);
+    if (d === 'down') {
+      S(hx + 8, HT + u + 1, oc[0]); S(hx + 9, HT + u + 2, oc[1]);
+      S(hx + 8, HT + u + 3, oc[0]);
+    } else if (d === 'right') {
+      S(hx - 1, HT + u + 1, oc[0]); S(hx - 2, HT + u + 2, oc[1]);
+      S(hx - 1, HT + u + 3, oc[0]);
+    } else {
+      S(hx + 7, HT + u + 3, oc[1]); S(hx + 8, HT + u + 4, oc[0]);
+    }
+  }
+  if (gear === 'circlet') {
+    const gem = '#36c8e8';
+    R(hx, HT + u + 2, 8, 1, GOLD[1]);
+    if (d === 'down') {
+      S(hx + 3, HT + u + 1, GOLD[0]); S(hx + 4, HT + u + 1, GOLD[0]);
+      S(hx + 4, HT + u + 2, gem);
+    } else if (d === 'right') {
+      S(hx + 5, HT + u + 1, GOLD[0]); S(hx + 6, HT + u + 2, gem);
+    } else {
+      S(hx + 1, HT + u + 2, GOLD[0]); S(hx + 6, HT + u + 2, GOLD[0]);
+    }
+  }
+  if (gear === 'plumed') {
+    R(hx, HT + u - 1, 8, 4, METAL[0]);
+    R(hx, HT + u - 1, 8, 1, METAL[2]);
+    R(hx, HT + u + 1, 8, 2, METAL[1]);
+    if (d === 'down') {
+      R(hx + 3, HT + u - 3, 2, 3, oc[0]); R(hx + 2, HT + u - 3, 4, 1, oc[0]);
+      S(hx + 2, HT + u - 2, oc[1]); S(hx + 4, HT + u - 1, oc[1]);
+      R(hx, HT + u + 2, 1, 4, METAL[1]); R(hx + 7, HT + u + 2, 1, 4, METAL[1]);
+    } else if (d === 'right') {
+      R(hx - 1, HT + u - 3, 5, 2, oc[0]); S(hx - 2, HT + u - 2, oc[0]);
+      S(hx, HT + u - 1, oc[1]); R(hx + 6, HT + u + 2, 2, 4, METAL[1]);
+    } else {
+      R(hx + 3, HT + u - 3, 2, 3, oc[0]); S(hx + 2, HT + u - 3, oc[1]);
+      R(hx, HT + u + 2, 8, 3, METAL[1]);
+    }
+  }
+  if (gear === 'skullmask') {
+    if (d === 'down') {
+      R(hx + 1, HT + u + 3, 6, 5, BONE[0]);
+      S(hx + 1, HT + u + 3, BONE[1]); S(hx + 6, HT + u + 3, BONE[1]);
+      R(hx + 2, HT + u + 4, 1, 2, INK); R(hx + 5, HT + u + 4, 1, 2, INK);
+      S(hx + 3, HT + u + 6, INK); S(hx + 4, HT + u + 6, INK);
+      S(hx + 2, HT + u + 7, INK); S(hx + 4, HT + u + 7, INK);
+    } else if (d === 'right') {
+      R(hx + 3, HT + u + 3, 5, 5, BONE[0]); S(hx + 8, HT + u + 5, BONE[0]);
+      R(hx + 5, HT + u + 4, 1, 2, INK); S(hx + 7, HT + u + 6, INK);
+      S(hx + 5, HT + u + 7, INK); S(hx + 7, HT + u + 7, INK);
+    } else {
+      R(hx, HT + u + 3, 8, 1, INK); S(hx + 3, HT + u + 3, BONE[1]);
+      S(hx + 4, HT + u + 3, BONE[1]);
     }
   }
 }

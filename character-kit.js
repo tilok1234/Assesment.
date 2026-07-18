@@ -34,10 +34,10 @@ export const MASTER_ROSTER_KIT_VERSION = 1;
 export const MASTER_ROSTER_KIT_LIMIT = 24;
 
 export const COMPLETE_CHARACTER_KIT_FORMAT = '8-bit-sprite-assembler-complete-character-kit';
-export const COMPLETE_CHARACTER_KIT_VERSION = 7;
+export const COMPLETE_CHARACTER_KIT_VERSION = 8;
 export const COMPLETE_CHARACTER_KIT_RECIPE_LIMIT = 24;
 export const COMPLETE_CHARACTER_PACK_FORMAT = '8-bit-sprite-assembler-complete-character-pack';
-export const COMPLETE_CHARACTER_PACK_VERSION = 7;
+export const COMPLETE_CHARACTER_PACK_VERSION = 8;
 export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
   'weapon-back',
   'shield-back',
@@ -414,7 +414,7 @@ const COMPONENT_BASE_PLAYER = {
   palette: null,
 };
 
-const COLOR_AWARE_HEADGEAR = new Set(['cap', 'hood', 'wizard']);
+const COLOR_AWARE_HEADGEAR = new Set(['cap', 'hood', 'wizard', 'bandana', 'plumed']);
 
 function componentSpec(patch = {}) {
   return clonePlayer({ ...COMPONENT_BASE_PLAYER, ...patch });
@@ -429,8 +429,8 @@ function headFile(skin, shade) {
 }
 
 function hairFile(style, color, fit) {
-  if (fit === 'under-headgear' && ['short', 'spiky', 'bowl'].includes(style)) {
-    return `components/hair/short-spiky-bowl/${color}/${fit}.png`;
+  if (fit === 'under-headgear' && ['short', 'spiky', 'bowl', 'topknot'].includes(style)) {
+    return `components/hair/short-spiky-bowl-topknot/${color}/${fit}.png`;
   }
   return `components/hair/${style}/${color}/${fit}.png`;
 }
@@ -829,14 +829,15 @@ function buildEffectLibrary() {
 export function completeCharacterKitCounts() {
   const skinBodies = SKINS.length;
   const heads = SKINS.length * 2;
-  const hair = ((HAIR_STYLES.length - 1) * HAIR_COLORS.length * 2) - (2 * HAIR_COLORS.length);
+  const hair = ((HAIR_STYLES.length - 1) * HAIR_COLORS.length * 2) - (3 * HAIR_COLORS.length);
   const expressions = EXPRESSIONS.length;
   const faceDetails = (2 * HAIR_COLORS.length) + SKINS.length + 3 + OUTFIT_COLORS.length;
   const speciesBack = SKINS.length + 1;
   const speciesFront = (3 * SKINS.length) + 2;
   const outfitFront = BODY_BUILDS.length * OUTFIT_TIERS.length * (((OUTFITS.length - 2) * OUTFIT_COLORS.length) + 2);
   const outfitBack = BODY_BUILDS.length * OUTFIT_TIERS.length * OUTFIT_COLORS.length;
-  const headgear = (3 * OUTFIT_COLORS.length) + 4;
+  const headgear = (COLOR_AWARE_HEADGEAR.size * OUTFIT_COLORS.length)
+    + ((HEADGEAR.length - 1) - COLOR_AWARE_HEADGEAR.size);
   const weaponLayers = (WEAPONS.length - 1) * WEAPON_TIERS.length * 2;
   const shieldLayers = SHIELD_TIERS.reduce((tierTotal, tier) => (
     tierTotal + SHIELDS.filter((shield) => shield.id !== 'none').reduce((shieldTotal, shield) => (
