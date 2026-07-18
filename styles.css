@@ -830,6 +830,130 @@ button:disabled:hover {
   line-height: 1.5;
 }
 
+.combat-loadout-panel {
+  display: grid;
+  gap: 9px;
+  padding: 10px;
+  border: 1px solid rgba(74, 93, 199, 0.26);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(238, 241, 255, 0.72), rgba(255, 255, 255, 0.96));
+}
+
+.combat-loadout-panel[hidden] {
+  display: none;
+}
+
+.combat-loadout-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.combat-loadout-kicker,
+.combat-loadout-summary,
+.combat-loadout-note {
+  margin: 0;
+}
+
+.combat-loadout-kicker {
+  color: var(--accent-dark);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.loadout-preview-button {
+  flex: 0 0 auto;
+  padding-inline: 7px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.loadout-preview-button.active {
+  border-color: rgba(74, 93, 199, 0.35);
+  background: rgba(74, 93, 199, 0.1);
+  color: var(--accent-dark);
+}
+
+.combat-loadout-summary {
+  color: #30364c;
+  font-size: 9.5px;
+  line-height: 1.45;
+}
+
+.combat-loadout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.combat-loadout-grid label {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.combat-loadout-grid label > span {
+  color: var(--muted);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.combat-loadout-grid select,
+.loadout-save-row input,
+#loadout-library-select {
+  min-width: 0;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 7px;
+  background: #ffffff;
+  color: #23252b;
+  font: inherit;
+  font-size: 10px;
+}
+
+.combat-loadout-grid select,
+#loadout-library-select {
+  width: 100%;
+  padding: 6px 7px;
+}
+
+.combat-loadout-grid select:focus,
+.loadout-save-row input:focus,
+#loadout-library-select:focus {
+  border-color: var(--accent);
+  outline: 2px solid rgba(74, 93, 199, 0.14);
+}
+
+.combat-loadout-note {
+  color: var(--muted);
+  font-size: 8.8px;
+  line-height: 1.45;
+}
+
+.loadout-save-row,
+.loadout-action-row {
+  display: flex;
+  gap: 7px;
+}
+
+.loadout-save-row input {
+  flex: 1;
+  padding: 7px 8px;
+}
+
+.loadout-action-row > * {
+  flex: 1;
+}
+
+.loadout-download-button {
+  padding: 8px 6px;
+  font-size: 10.5px;
+}
+
 .direction-previews figure {
   min-width: 0;
   margin: 0;

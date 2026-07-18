@@ -20,6 +20,9 @@ const PALETTE_VERSION = 1;
 const PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1';
 const PACK_VERSION = 1;
 const PACK_ENTRY_LIMIT = 200;
+const LOADOUT_STORAGE_KEY = 'sprite-assembler-combat-loadouts-v1';
+const LOADOUT_STORAGE_VERSION = 1;
+const LOADOUT_STORAGE_LIMIT = 100;
 const HISTORY_LIMIT = 100;
 const ZOOM_LEVELS = [6, 10, 14, 20];
 const PLAYBACK_SPEEDS = [0.5, 1, 2];
@@ -45,6 +48,8 @@ const DEFAULT_STATE = {
   },
   enemy: { family: 'slime', variant: 'lime' },
   effect: { category: 'trails', effect: 'sword-slash' },
+  loadout: { ...E.DEFAULT_COMBAT_LOADOUT },
+  previewEffects: true,
   characterName: '',
   exportName: '',
   dir: 'down',
@@ -112,6 +117,20 @@ const elements = {
   loadPresetButton: document.querySelector('#load-preset-button'),
   deletePresetButton: document.querySelector('#delete-preset-button'),
   presetStatus: document.querySelector('#preset-status'),
+  loadoutPanel: document.querySelector('#combat-loadout-panel'),
+  loadoutSummary: document.querySelector('#loadout-summary'),
+  loadoutPreviewButton: document.querySelector('#loadout-preview-button'),
+  loadoutSelects: new Map(E.COMBAT_LOADOUT_SLOTS.map((slot) => [
+    slot.id,
+    document.querySelector(`[data-loadout-slot="${slot.id}"]`),
+  ])),
+  loadoutName: document.querySelector('#loadout-name'),
+  loadoutLibrarySelect: document.querySelector('#loadout-library-select'),
+  saveLoadoutButton: document.querySelector('#save-loadout-button'),
+  loadLoadoutButton: document.querySelector('#load-loadout-button'),
+  deleteLoadoutButton: document.querySelector('#delete-loadout-button'),
+  downloadLoadoutButton: document.querySelector('#download-loadout-button'),
+  loadoutStatus: document.querySelector('#loadout-status'),
   downloadButton: document.querySelector('#download-button'),
   packName: document.querySelector('#pack-name'),
   packSummary: document.querySelector('#pack-summary'),
@@ -146,6 +165,7 @@ let state = loadState();
 let presetLibrary = loadPresetLibrary();
 let paletteLibrary = loadPaletteLibrary();
 let packLibrary = loadPackLibrary();
+let loadoutLibrary = loadCombatLoadoutLibrary();
 let packExporting = false;
 let rosterKitExporting = false;
 let rosterKitProgress = null;
@@ -153,6 +173,7 @@ let masterKitExporting = false;
 let masterKitProgress = null;
 let selectedPresetId = '';
 let selectedPaletteId = '';
+let selectedLoadoutId = '';
 const historyPast = [];
 const historyFuture = [];
 let lastTime = 0;
@@ -279,6 +300,7 @@ function sanitizeEditableSnapshot(snapshot) {
     player: sanitizePlayer(snapshot.player),
     enemy: sanitizeEnemy(snapshot.enemy),
     effect: sanitizeEffect(snapshot.effect),
+    loadout: E.sanitizeCombatLoadout(snapshot.loadout),
     characterName: sanitizeText(snapshot.characterName, 48),
     exportName: sanitizeText(snapshot.exportName, 80),
   };
@@ -298,6 +320,7 @@ function loadState() {
     player: sanitizePlayer(saved.player),
     enemy: sanitizeEnemy(saved.enemy),
     effect: sanitizeEffect(saved.effect),
+    loadout: E.sanitizeCombatLoadout(saved.loadout),
   };
 
   loaded.mode = sanitizeMode(loaded.mode);
@@ -323,6 +346,7 @@ function loadState() {
   loaded.exportAnim = listHas(E.ANIMS, loaded.exportAnim) ? loaded.exportAnim : DEFAULT_STATE.exportAnim;
   loaded.exportDir = E.DIRS.includes(loaded.exportDir) ? loaded.exportDir : DEFAULT_STATE.exportDir;
   loaded.spin = loaded.spin !== false;
+  loaded.previewEffects = loaded.previewEffects !== false;
   loaded.comparison = sanitizeEditableSnapshot(loaded.comparison);
 
   return loaded;
@@ -343,6 +367,7 @@ function editableSnapshot(source = state) {
     },
     enemy: { ...source.enemy },
     effect: { ...source.effect },
+    loadout: E.sanitizeCombatLoadout(source.loadout),
     characterName: source.characterName,
     exportName: source.exportName,
   };
@@ -358,7 +383,7 @@ function pushHistory(stack, snapshot) {
 }
 
 function setState(patch, { persist = true, render = true, recordHistory = true } = {}) {
-  const tracksSprite = ['mode', 'player', 'enemy', 'effect', 'characterName', 'exportName']
+  const tracksSprite = ['mode', 'player', 'enemy', 'effect', 'loadout', 'characterName', 'exportName']
     .some((key) => Object.prototype.hasOwnProperty.call(patch, key));
   const before = tracksSprite ? editableSnapshot() : null;
   const next = { ...state, ...patch };
@@ -380,6 +405,7 @@ function restoreSnapshot(snapshot) {
     player: sanitizePlayer(snapshot.player),
     enemy: sanitizeEnemy(snapshot.enemy),
     effect: sanitizeEffect(snapshot.effect),
+    loadout: E.sanitizeCombatLoadout(snapshot.loadout),
     characterName: sanitizeText(snapshot.characterName, 48),
     exportName: sanitizeText(snapshot.exportName, 80),
   };
@@ -401,9 +427,9 @@ function redo() {
 
 function resetCurrentDocument() {
   const patch = state.mode === 'player'
-    ? { player: sanitizePlayer(DEFAULT_STATE.player), characterName: '', exportName: '' }
+    ? { player: sanitizePlayer(DEFAULT_STATE.player), loadout: E.sanitizeCombatLoadout(), characterName: '', exportName: '' }
     : state.mode === 'enemy'
-      ? { enemy: sanitizeEnemy(DEFAULT_STATE.enemy), characterName: '', exportName: '' }
+      ? { enemy: sanitizeEnemy(DEFAULT_STATE.enemy), loadout: E.sanitizeCombatLoadout(), characterName: '', exportName: '' }
       : { effect: sanitizeEffect(DEFAULT_STATE.effect), characterName: '', exportName: '', anim: 'attack', exportAnim: 'attack', frame: 0 };
   selectedPresetId = '';
   elements.presetName.value = '';
@@ -467,6 +493,7 @@ function snapshotPatch(snapshot) {
     player: sanitized.player,
     enemy: sanitized.enemy,
     effect: sanitized.effect,
+    loadout: sanitized.loadout,
     characterName: sanitized.characterName,
     exportName: sanitized.exportName,
   };
@@ -571,6 +598,7 @@ function sanitizePackEntry(raw) {
     name,
     kind,
     spec: sanitizeSpec(kind, raw.spec),
+    loadout: kind === 'effect' ? null : E.sanitizeCombatLoadout(raw.loadout),
     createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
   };
 }
@@ -633,6 +661,7 @@ function addCurrentToPack() {
     name,
     kind: spec.kind,
     spec: sanitizeSpec(spec.kind, spec),
+    loadout: spec.kind === 'effect' ? null : E.sanitizeCombatLoadout(state.loadout),
     createdAt: new Date().toISOString(),
   });
   persistPackLibrary();
@@ -648,6 +677,7 @@ function loadPackEntry(entryId) {
     : entry.kind === 'enemy'
       ? { mode: 'enemy', enemy: sanitizeEnemy(entry.spec) }
       : { mode: 'effect', effect: sanitizeEffect(entry.spec), anim: 'attack', exportAnim: 'attack', frame: 0 };
+  if (entry.kind !== 'effect') patch.loadout = E.sanitizeCombatLoadout(entry.loadout);
   patch.characterName = entry.name;
   patch.exportName = '';
   selectedPresetId = '';
@@ -800,6 +830,187 @@ function deleteSelectedPreset() {
   persistPresetLibrary();
   renderPresetControls();
   setPresetStatus(`Deleted “${preset.name}”.`);
+}
+
+function makeLoadoutId() {
+  if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
+  return `combat-loadout-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+}
+
+function sanitizeStoredLoadout(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const kind = raw.kind === 'enemy' ? 'enemy' : raw.kind === 'player' ? 'player' : null;
+  const name = sanitizeText(raw.name, 48).trim();
+  if (!kind || !name) return null;
+  return {
+    id: typeof raw.id === 'string' && raw.id ? raw.id : makeLoadoutId(),
+    name,
+    kind,
+    spec: sanitizeSpec(kind, raw.spec),
+    characterName: sanitizeText(raw.characterName, 48),
+    loadout: E.sanitizeCombatLoadout(raw.loadout),
+    createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
+    updatedAt: typeof raw.updatedAt === 'string' ? raw.updatedAt : new Date().toISOString(),
+  };
+}
+
+function loadCombatLoadoutLibrary() {
+  let saved = null;
+  try {
+    saved = JSON.parse(localStorage.getItem(LOADOUT_STORAGE_KEY) || 'null');
+  } catch {}
+  if (!saved || saved.version !== LOADOUT_STORAGE_VERSION || !Array.isArray(saved.loadouts)) {
+    return { version: LOADOUT_STORAGE_VERSION, loadouts: [] };
+  }
+  const ids = new Set();
+  const loadouts = [];
+  for (const raw of saved.loadouts.slice(0, LOADOUT_STORAGE_LIMIT)) {
+    const loadout = sanitizeStoredLoadout(raw);
+    if (!loadout || ids.has(loadout.id)) continue;
+    ids.add(loadout.id);
+    loadouts.push(loadout);
+  }
+  return { version: LOADOUT_STORAGE_VERSION, loadouts };
+}
+
+function persistCombatLoadoutLibrary() {
+  try {
+    localStorage.setItem(LOADOUT_STORAGE_KEY, JSON.stringify(loadoutLibrary));
+  } catch {}
+}
+
+function selectedStoredLoadout() {
+  return loadoutLibrary.loadouts.find((loadout) => loadout.id === selectedLoadoutId) || null;
+}
+
+function setLoadoutStatus(message) {
+  elements.loadoutStatus.textContent = message;
+}
+
+function currentLoadoutSpec() {
+  if (state.mode === 'effect') return null;
+  return currentSpec();
+}
+
+function setLoadoutSlot(slotId, value) {
+  if (!E.COMBAT_LOADOUT_SLOTS.some((slot) => slot.id === slotId)) return;
+  setState({ loadout: E.sanitizeCombatLoadout({ ...state.loadout, [slotId]: value }) });
+  setLoadoutStatus(value === 'auto' ? 'Automatic weapon mapping restored.' : 'Combat effect override applied.');
+}
+
+function saveCombatLoadout() {
+  const spec = currentLoadoutSpec();
+  if (!spec) return;
+  const typedName = elements.loadoutName.value.trim().slice(0, 48);
+  const baseName = state.characterName.trim() || E.describe(spec).replaceAll('-', ' ');
+  const name = typedName || `${baseName} loadout`;
+  const normalizedName = name.toLocaleLowerCase();
+  const selected = selectedStoredLoadout();
+  const existing = selected?.name.toLocaleLowerCase() === normalizedName
+    ? selected
+    : loadoutLibrary.loadouts.find((item) => item.name.toLocaleLowerCase() === normalizedName);
+  const now = new Date().toISOString();
+  const loadout = {
+    id: existing?.id || makeLoadoutId(),
+    name,
+    kind: spec.kind,
+    spec: sanitizeSpec(spec.kind, spec),
+    characterName: state.characterName,
+    loadout: E.sanitizeCombatLoadout(state.loadout),
+    createdAt: existing?.createdAt || now,
+    updatedAt: now,
+  };
+  if (existing) {
+    loadoutLibrary.loadouts = loadoutLibrary.loadouts.map((item) => item.id === existing.id ? loadout : item);
+  } else {
+    loadoutLibrary.loadouts.push(loadout);
+  }
+  if (loadoutLibrary.loadouts.length > LOADOUT_STORAGE_LIMIT) loadoutLibrary.loadouts.shift();
+  selectedLoadoutId = loadout.id;
+  elements.loadoutName.value = loadout.name;
+  persistCombatLoadoutLibrary();
+  renderCombatLoadoutControls();
+  setLoadoutStatus(existing ? `Updated “${loadout.name}”.` : `Saved “${loadout.name}”.`);
+}
+
+function loadSelectedCombatLoadout() {
+  const loadout = selectedStoredLoadout();
+  if (!loadout) return;
+  const patch = loadout.kind === 'player'
+    ? { mode: 'player', player: sanitizePlayer(loadout.spec) }
+    : { mode: 'enemy', enemy: sanitizeEnemy(loadout.spec) };
+  patch.loadout = E.sanitizeCombatLoadout(loadout.loadout);
+  patch.characterName = loadout.characterName;
+  patch.exportName = '';
+  patch.anim = 'attack';
+  patch.exportAnim = 'attack';
+  patch.frame = 0;
+  setState(patch);
+  elements.loadoutName.value = loadout.name;
+  setLoadoutStatus(`Loaded “${loadout.name}”.`);
+}
+
+function deleteSelectedCombatLoadout() {
+  const loadout = selectedStoredLoadout();
+  if (!loadout) return;
+  loadoutLibrary.loadouts = loadoutLibrary.loadouts.filter((item) => item.id !== loadout.id);
+  selectedLoadoutId = '';
+  elements.loadoutName.value = '';
+  persistCombatLoadoutLibrary();
+  renderCombatLoadoutControls();
+  setLoadoutStatus(`Deleted “${loadout.name}”.`);
+}
+
+function manifestCombatLoadoutRecipe(spec, loadout) {
+  const resolved = E.resolveCombatLoadout(spec, loadout);
+  return {
+    format: E.COMBAT_LOADOUT_FORMAT,
+    schemaVersion: E.COMBAT_LOADOUT_VERSION,
+    selections: resolved.selections,
+    automaticDefaults: resolved.defaults,
+    resolvedEffects: resolved.slots,
+  };
+}
+
+function combatLoadoutManifest() {
+  const spec = currentLoadoutSpec();
+  if (!spec) return null;
+  const recipe = manifestCombatLoadoutRecipe(spec, state.loadout);
+  const attack = E.ANIMS.find((anim) => anim.id === 'attack');
+  return {
+    ...recipe,
+    name: elements.loadoutName.value.trim() || `${state.characterName.trim() || E.describe(spec).replaceAll('-', ' ')} loadout`,
+    exportedAt: new Date().toISOString(),
+    baseSprite: {
+      kind: spec.kind,
+      name: state.characterName.trim() || null,
+      spec: sanitizeSpec(spec.kind, spec),
+    },
+    layering: {
+      drawOrder: ['base-sprite', ...recipe.resolvedEffects.filter((slot) => slot.file).map((slot) => slot.slot)],
+      instructions: 'Draw every resolved effect sheet after the base sprite using the same source rectangle, animation column, and direction row.',
+    },
+    sheetContract: {
+      frameWidth: E.SIZE,
+      frameHeight: E.SIZE,
+      sheetWidth: E.SHEET_COLS * E.SIZE,
+      sheetHeight: E.DIRS.length * E.SIZE,
+      directions: [...E.DIRS],
+      animations: E.ANIMS.map((anim) => ({ id: anim.id, frames: anim.frames, frameMs: anim.ms })),
+      columnIndexBase: 0,
+      attackColumns: Array.from({ length: attack.frames }, (_, frame) => animationColumn('attack', frame)),
+      statusRule: 'Status overlays animate in every animation; trails, projectiles, and impacts are transparent outside attack.',
+    },
+  };
+}
+
+function downloadCombatLoadout() {
+  const manifest = combatLoadoutManifest();
+  if (!manifest) return;
+  const data = new TextEncoder().encode(`${JSON.stringify(manifest, null, 2)}\n`);
+  const filename = `${packFilenameBase(manifest.name, 'combat-loadout')}.json`;
+  triggerBlobDownload(new Blob([data], { type: 'application/json' }), filename);
+  setLoadoutStatus(`Downloaded “${manifest.name}” with ${manifest.resolvedEffects.filter((slot) => slot.file).length} resolved effects.`);
 }
 
 function sanitizePalettePreset(raw) {
@@ -1374,8 +1585,8 @@ function drawComparisonFrame(animId, direction, frame) {
   const currentContext = elements.currentCopyCanvas.getContext('2d');
   savedContext.imageSmoothingEnabled = false;
   currentContext.imageSmoothingEnabled = false;
-  E.drawSprite(savedContext, snapshotSpec(state.comparison), direction, anim.id, safeFrame, { shadow: true });
-  E.drawSprite(currentContext, currentSpec(), direction, anim.id, safeFrame, { shadow: true });
+  drawCompositeFrame(savedContext, snapshotSpec(state.comparison), state.comparison.loadout, direction, anim.id, safeFrame);
+  drawCompositeFrame(currentContext, currentSpec(), state.loadout, direction, anim.id, safeFrame);
   elements.compareContext.textContent = `${anim.name} · ${DIRECTION_NAMES[direction]} · frame ${safeFrame + 1} / ${anim.frames}`;
   elements.savedCopyCanvas.dataset.frame = String(safeFrame + 1);
   elements.currentCopyCanvas.dataset.frame = String(safeFrame + 1);
@@ -1427,6 +1638,64 @@ function renderPresetControls() {
   elements.deletePresetButton.disabled = !selectedPresetId;
 }
 
+function effectDisplayName(categoryId, effectId) {
+  if (!effectId) return 'None';
+  const category = E.COMBAT_EFFECTS.find((item) => item.id === categoryId);
+  return category?.effects.find((item) => item.id === effectId)?.name || effectId;
+}
+
+function renderCombatLoadoutControls() {
+  const spec = currentLoadoutSpec();
+  const available = Boolean(spec);
+  elements.loadoutPanel.hidden = !available;
+  if (!available) return;
+
+  const resolved = E.resolveCombatLoadout(spec, state.loadout);
+  for (const slot of E.COMBAT_LOADOUT_SLOTS) {
+    const select = elements.loadoutSelects.get(slot.id);
+    const category = E.COMBAT_EFFECTS.find((item) => item.id === slot.category);
+    const auto = document.createElement('option');
+    auto.value = 'auto';
+    auto.textContent = `Auto — ${effectDisplayName(slot.category, resolved.defaults[slot.id])}`;
+    const none = document.createElement('option');
+    none.value = 'none';
+    none.textContent = 'None';
+    const effects = category.effects.map((effect) => {
+      const option = document.createElement('option');
+      option.value = effect.id;
+      option.textContent = effect.name;
+      return option;
+    });
+    select.replaceChildren(auto, none, ...effects);
+    select.value = resolved.selections[slot.id];
+  }
+
+  const active = resolved.slots.filter((slot) => slot.effect);
+  elements.loadoutSummary.textContent = active.length
+    ? active.map((slot) => `${slot.name}: ${slot.effectName}`).join(' · ')
+    : 'No combat effects resolved.';
+  elements.loadoutPreviewButton.textContent = state.previewEffects ? 'Overlay preview: On' : 'Overlay preview: Off';
+  elements.loadoutPreviewButton.classList.toggle('active', state.previewEffects);
+  elements.loadoutPreviewButton.setAttribute('aria-pressed', String(state.previewEffects));
+
+  if (!loadoutLibrary.loadouts.some((loadout) => loadout.id === selectedLoadoutId)) selectedLoadoutId = '';
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = loadoutLibrary.loadouts.length ? 'Choose a saved loadout' : 'No loadouts saved';
+  const options = loadoutLibrary.loadouts.map((loadout) => {
+    const option = document.createElement('option');
+    option.value = loadout.id;
+    option.textContent = `${loadout.kind === 'player' ? 'Player' : 'Enemy'} · ${loadout.name}`;
+    return option;
+  });
+  elements.loadoutLibrarySelect.replaceChildren(placeholder, ...options);
+  elements.loadoutLibrarySelect.value = selectedLoadoutId;
+  elements.loadoutLibrarySelect.disabled = loadoutLibrary.loadouts.length === 0;
+  elements.loadLoadoutButton.disabled = !selectedLoadoutId;
+  elements.deleteLoadoutButton.disabled = !selectedLoadoutId;
+  elements.downloadLoadoutButton.disabled = false;
+}
+
 function renderPackEntry(entry) {
   const item = document.createElement('li');
   item.className = 'pack-entry';
@@ -1446,7 +1715,11 @@ function renderPackEntry(entry) {
   name.title = entry.name;
   const meta = document.createElement('span');
   const kind = entry.kind === 'player' ? 'Player' : entry.kind === 'enemy' ? 'Enemy' : 'Effect';
-  meta.textContent = `${kind} · ${E.describe(packEntrySpec(entry)).replaceAll('-', ' ')}`;
+  const loadoutCount = entry.kind === 'effect'
+    ? 0
+    : E.resolveCombatLoadout(packEntrySpec(entry), entry.loadout).slots.filter((slot) => slot.effect).length;
+  meta.textContent = `${kind} · ${E.describe(packEntrySpec(entry)).replaceAll('-', ' ')}`
+    + (entry.kind === 'effect' ? '' : ` · ${loadoutCount} combat effects`);
   meta.title = meta.textContent;
   copy.append(name, meta);
 
@@ -1576,8 +1849,17 @@ function renderUi() {
   renderHistoryControls();
   renderComparisonControls();
   renderPresetControls();
+  renderCombatLoadoutControls();
   renderPackControls();
   renderMasterKitControls();
+}
+
+function drawCompositeFrame(context, spec, loadout, direction, animId, frame) {
+  E.drawSprite(context, spec, direction, animId, frame, { shadow: true });
+  if (!state.previewEffects || spec.kind === 'effect') return;
+  for (const effectSpec of E.combatLoadoutEffectSpecs(spec, loadout)) {
+    E.drawSprite(context, effectSpec, direction, animId, frame, { shadow: false, clear: false });
+  }
 }
 
 function updateSheet(spec) {
@@ -1600,11 +1882,11 @@ function updateSheet(spec) {
 
 function drawFrame(animId, direction, frame) {
   const spec = currentSpec();
-  E.drawSprite(elements.stageCanvas.getContext('2d'), spec, direction, animId, frame, { shadow: true });
+  drawCompositeFrame(elements.stageCanvas.getContext('2d'), spec, state.loadout, direction, animId, frame);
 
   for (const dir of E.DIRS) {
     const canvas = elements.directionCanvases.get(dir);
-    E.drawSprite(canvas.getContext('2d'), spec, dir, animId, frame, { shadow: true });
+    drawCompositeFrame(canvas.getContext('2d'), spec, state.loadout, dir, animId, frame);
   }
 
   const anim = E.ANIMS.find((item) => item.id === animId) || E.ANIMS[0];
@@ -1830,6 +2112,8 @@ function withoutRenderSpec(entry) {
 
 function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
   const readyCharacters = Array.isArray(options.readyCharacters) ? options.readyCharacters : [];
+  const combatLoadouts = Array.isArray(options.combatLoadouts) ? options.combatLoadouts : [];
+  const combatLoadoutsBySource = new Map(combatLoadouts.map((entry) => [entry.sourceId, entry.recipe]));
   const includeReference = options.includeReference !== false;
   const counts = {
     ...plan.counts,
@@ -1884,7 +2168,13 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
       name: category.name,
       effects: category.effects.map(withoutRenderSpec),
     })),
-    recipes: plan.recipes,
+    recipes: plan.recipes.map((recipe) => ({
+      ...recipe,
+      ...(combatLoadoutsBySource.has(recipe.sourceId)
+        ? { combatLoadout: combatLoadoutsBySource.get(recipe.sourceId) }
+        : {}),
+    })),
+    ...(combatLoadouts.length ? { combatLoadouts } : {}),
     ...(readyCharacters.length ? { characters: readyCharacters } : {}),
     referencePreview: includeReference ? plan.reference.file : readyCharacters[0]?.file || null,
   };
@@ -1996,6 +2286,7 @@ async function renderReadyPackCharacters(entries, plan, zipEntries, advance) {
       width: canvas.width,
       height: canvas.height,
       spec,
+      combatLoadout: manifestCombatLoadoutRecipe(spec, entry.loadout),
     });
     advance('Rendering ready character sheets.');
   }
@@ -2035,7 +2326,13 @@ async function downloadMasterCharacterKit() {
 
   try {
     await renderCompleteCharacterKitPngs(plan, zipEntries, advance);
-    const manifest = completeCharacterKitManifest(plan, `${characterName} Complete Kit`, exportedAt);
+    const manifest = completeCharacterKitManifest(plan, `${characterName} Complete Kit`, exportedAt, {
+      combatLoadouts: [{
+        sourceId: 'current-character',
+        name: characterName,
+        recipe: manifestCombatLoadoutRecipe({ kind: 'player', ...player }, state.loadout),
+      }],
+    });
     zipEntries.push({
       name: 'manifest.json',
       data: new TextEncoder().encode(`${JSON.stringify(manifest, null, 2)}\n`),
@@ -2107,6 +2404,11 @@ async function downloadPackMasterKit() {
       version: COMPLETE_CHARACTER_PACK_VERSION,
       readyCharacters,
       includeReference: false,
+      combatLoadouts: entries.map((entry) => ({
+        sourceId: entry.id,
+        name: entry.name,
+        recipe: manifestCombatLoadoutRecipe(packEntrySpec(entry), entry.loadout),
+      })),
     });
     zipEntries.push({
       name: 'manifest.json',
@@ -2161,6 +2463,7 @@ async function downloadCharacterPack() {
         width: canvas.width,
         height: canvas.height,
         spec,
+        ...(entry.kind === 'effect' ? {} : { combatLoadout: manifestCombatLoadoutRecipe(spec, entry.loadout) }),
       });
     }
 
@@ -2222,6 +2525,29 @@ elements.randomizeButton.addEventListener('click', randomize);
 elements.savePresetButton.addEventListener('click', savePreset);
 elements.loadPresetButton.addEventListener('click', loadSelectedPreset);
 elements.deletePresetButton.addEventListener('click', deleteSelectedPreset);
+elements.loadoutPreviewButton.addEventListener('click', () => {
+  setState({ previewEffects: !state.previewEffects }, { recordHistory: false });
+  setLoadoutStatus(state.previewEffects ? 'Combined overlay preview enabled.' : 'Showing the base sprite without effect overlays.');
+});
+for (const [slotId, select] of elements.loadoutSelects) {
+  select.addEventListener('change', () => setLoadoutSlot(slotId, select.value));
+}
+elements.saveLoadoutButton.addEventListener('click', saveCombatLoadout);
+elements.loadLoadoutButton.addEventListener('click', loadSelectedCombatLoadout);
+elements.deleteLoadoutButton.addEventListener('click', deleteSelectedCombatLoadout);
+elements.downloadLoadoutButton.addEventListener('click', downloadCombatLoadout);
+elements.loadoutLibrarySelect.addEventListener('change', () => {
+  selectedLoadoutId = elements.loadoutLibrarySelect.value;
+  const loadout = selectedStoredLoadout();
+  elements.loadoutName.value = loadout?.name || '';
+  renderCombatLoadoutControls();
+  setLoadoutStatus(loadout ? `Selected “${loadout.name}”.` : 'Auto follows the current weapon or enemy attack style.');
+});
+elements.loadoutName.addEventListener('keydown', (event) => {
+  if (event.key !== 'Enter') return;
+  event.preventDefault();
+  saveCombatLoadout();
+});
 elements.exportScope.addEventListener('change', () => {
   setState({ exportScope: elements.exportScope.value });
 });

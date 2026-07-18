@@ -58,6 +58,7 @@ checkSyntax('engine/catalogs/effects.js');
 checkSyntax('engine/catalogs/enemies.js');
 checkSyntax('engine/catalogs/palettes.js');
 checkSyntax('engine/catalogs/player-options.js');
+checkSyntax('engine/combat-loadouts.js');
 checkSyntax('engine/generators.js');
 checkSyntax('engine/effect-renderer.js');
 checkSyntax('engine/renderer.js');
@@ -97,6 +98,10 @@ for (const controlId of [
   'add-to-pack-button', 'clear-pack-button', 'download-pack-button',
   'pack-master-kit-summary', 'download-pack-master-kit-button',
   'master-kit-summary', 'master-kit-status', 'download-master-kit-button',
+  'combat-loadout-panel', 'loadout-summary', 'loadout-preview-button',
+  'loadout-trail', 'loadout-projectile', 'loadout-impact', 'loadout-status-overlay',
+  'loadout-name', 'loadout-library-select', 'save-loadout-button',
+  'load-loadout-button', 'delete-loadout-button', 'download-loadout-button', 'loadout-status',
 ]) {
   check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
 }
@@ -113,6 +118,7 @@ const runtimeSources = {
   'engine/catalogs/enemies.js': await readFile(path.join(root, 'engine', 'catalogs', 'enemies.js'), 'utf8'),
   'engine/catalogs/palettes.js': await readFile(path.join(root, 'engine', 'catalogs', 'palettes.js'), 'utf8'),
   'engine/catalogs/player-options.js': await readFile(path.join(root, 'engine', 'catalogs', 'player-options.js'), 'utf8'),
+  'engine/combat-loadouts.js': await readFile(path.join(root, 'engine', 'combat-loadouts.js'), 'utf8'),
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
   'engine/effect-renderer.js': await readFile(path.join(root, 'engine', 'effect-renderer.js'), 'utf8'),
   'engine/renderer.js': await readFile(path.join(root, 'engine', 'renderer.js'), 'utf8'),
@@ -126,10 +132,11 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 }
 
 const expectedEngineExports = [
-  'ANIMS', 'COMBAT_EFFECTS', 'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
+  'ANIMS', 'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_COMBAT_LOADOUT',
+  'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'WEAPONS', 'WEAPON_TIERS',
-  'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'describe', 'drawSprite',
-  'randomEffect', 'randomEnemy', 'randomPlayer', 'thumbURL',
+  'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawSprite',
+  'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout', 'sanitizeCombatLoadout', 'thumbURL',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
@@ -146,7 +153,7 @@ check(runtimeSources['app.js'].includes("PRESET_VERSION = 6"), 'app.js must keep
 check(runtimeSources['app.js'].includes('![1, 2, 3, 4, 5, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1 through 5 preset libraries');
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
-check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'characterName', 'exportName']"), 'app.js history must remain scoped to the editable sprite document');
+check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'loadout', 'characterName', 'exportName']"), 'app.js history must include combat loadouts while remaining scoped to the editable sprite document');
 check(runtimeSources['app.js'].includes("makeButton('Effects'"), 'app.js must expose combat effects as a first-class editor mode');
 check(runtimeSources['app.js'].includes("key === 'z'"), 'app.js must expose the undo keyboard shortcut');
 check(runtimeSources['app.js'].includes("key === 'y'"), 'app.js must expose the redo keyboard shortcut');
@@ -171,6 +178,16 @@ check(runtimeSources['app.js'].includes('function loadPackLibrary(') && runtimeS
 check(runtimeSources['app.js'].includes('const canvas = E.buildSheet(spec, scale)'), 'character packs must always export complete sprite sheets');
 check(runtimeSources['app.js'].includes("format: '8-bit-sprite-assembler-character-pack'"), 'character pack manifests must expose their stable format id');
 check(runtimeSources['app.js'].includes('buildStoredZip(zipEntries'), 'character pack downloads must assemble their PNGs and manifest into a ZIP');
+check(runtimeSources['app.js'].includes("LOADOUT_STORAGE_KEY = 'sprite-assembler-combat-loadouts-v1'"), 'combat loadouts must use independent versioned persistence');
+check(runtimeSources['app.js'].includes('LOADOUT_STORAGE_LIMIT = 100'), 'saved combat loadouts must keep a bounded entry count');
+check(runtimeSources['app.js'].includes('function loadCombatLoadoutLibrary(') && runtimeSources['app.js'].includes('function persistCombatLoadoutLibrary('), 'combat loadouts must load and persist their recipe library');
+check(runtimeSources['app.js'].includes('function combatLoadoutManifest('), 'combat loadouts must expose a game-facing JSON manifest');
+check(runtimeSources['app.js'].includes('columnIndexBase: 0'), 'combat loadout JSON must identify sheet columns as zero-based');
+check(runtimeSources['app.js'].includes('manifestCombatLoadoutRecipe(spec, entry.loadout)'), 'regular sprite packs must preserve resolved combat recipes beside modular sheets');
+check(runtimeSources['app.js'].includes('combatLoadoutsBySource.has(recipe.sourceId)'), 'Complete Kit recipes must carry their matching combat loadouts');
+check(runtimeSources['app.js'].includes('E.combatLoadoutEffectSpecs(spec, loadout)'), 'combined previews must resolve modular effect overlays through the public engine facade');
+check(runtimeSources['app.js'].includes('{ shadow: false, clear: false }'), 'combined previews must layer effects without clearing the base sprite');
+check(runtimeSources['engine/renderer.js'].includes("if (opts.clear !== false) ctx.clearRect"), 'the renderer must support non-clearing modular overlay passes');
 check(characterKit.MASTER_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-master-character-kit', 'master kits must expose a stable format id');
 check(characterKit.MASTER_CHARACTER_KIT_VERSION === 1, 'master kits must use an explicit versioned schema');
 check(characterKit.MASTER_CHARACTER_KIT_SCALE === 1, 'master kits must export native logical pixels');
@@ -219,10 +236,10 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   },
 }));
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
-check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 3, 'complete character kits must use the synchronized-effects schema');
+check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 4, 'complete character kits must use the combat-loadout schema');
 check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
 check(characterKit.COMPLETE_CHARACTER_PACK_FORMAT === '8-bit-sprite-assembler-complete-character-pack', 'combined complete packs must expose a distinct stable format id');
-check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 3, 'combined complete packs must use the synchronized-effects schema');
+check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 4, 'combined complete packs must use the combat-loadout schema');
 check(
   JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
     'weapon-back', 'shield-back', 'outfit-back', 'outfit', 'skin-body', 'head',
@@ -406,6 +423,73 @@ check(
   JSON.stringify(engine.COMBAT_EFFECTS.map((category) => category.effects.length)) === JSON.stringify([5, 7, 6, 6]),
   'combat-effect groups must retain the planned 5 trail, 7 projectile, 6 impact, and 6 status sheets',
 );
+
+check(engine.COMBAT_LOADOUT_FORMAT === '8-bit-sprite-assembler-combat-loadout', 'combat loadouts must expose a stable game-facing format id');
+check(engine.COMBAT_LOADOUT_VERSION === 1, 'combat loadouts must use an explicit schema version');
+check(
+  JSON.stringify(engine.COMBAT_LOADOUT_SLOTS.map((slot) => `${slot.id}:${slot.category}`))
+    === JSON.stringify(['trail:trails', 'projectile:projectiles', 'impact:impacts', 'status:statuses']),
+  'combat loadouts must retain trail, projectile, impact, and status slots in draw order',
+);
+check(
+  JSON.stringify(engine.sanitizeCombatLoadout({ trail: 'invalid', projectile: 'arrow', impact: 'none', status: 'burning' }))
+    === JSON.stringify({ trail: 'auto', projectile: 'arrow', impact: 'none', status: 'burning' }),
+  'combat loadout sanitization must preserve valid overrides and repair invalid selections',
+);
+
+const weaponLoadoutExpectations = new Map([
+  ['none', ['shield-block', 'armor-impact']],
+  ['sword', ['sword-slash', 'sparks']],
+  ['greatsword', ['sword-slash', 'sparks']],
+  ['scimitar', ['sword-slash', 'sparks']],
+  ['rapier', ['spear-thrust', 'blood-hit']],
+  ['dagger', ['sword-slash', 'blood-hit']],
+  ['axe', ['axe-cleave', 'blood-hit']],
+  ['mace', ['hammer-smash', 'armor-impact']],
+  ['warhammer', ['hammer-smash', 'armor-impact']],
+  ['spear', ['spear-thrust', 'blood-hit']],
+  ['club', ['hammer-smash', 'armor-impact']],
+  ['bow', ['arrow', 'blood-hit']],
+  ['crossbow', ['crossbow-bolt', 'armor-impact']],
+  ['staff', ['fireball', 'explosion']],
+  ['wand', ['holy-orb', 'arcane-burst']],
+  ['spellbook', ['shadow-shot', 'arcane-burst']],
+]);
+for (const weapon of engine.WEAPONS) {
+  const spec = { kind: 'player', weapon: weapon.id, shield: 'round' };
+  const effects = engine.resolveCombatLoadout(spec, engine.DEFAULT_COMBAT_LOADOUT).slots
+    .filter((slot) => slot.effect)
+    .map((slot) => slot.effect);
+  check(
+    JSON.stringify(effects) === JSON.stringify(weaponLoadoutExpectations.get(weapon.id)),
+    `${weapon.id} must retain its automatic combat-effect mapping`,
+  );
+}
+const overrideFixture = engine.resolveCombatLoadout(
+  { kind: 'player', weapon: 'sword', shield: 'none' },
+  { trail: 'hammer-smash', projectile: 'fireball', impact: 'none', status: 'frozen' },
+);
+check(
+  JSON.stringify(overrideFixture.slots.map((slot) => slot.effect))
+    === JSON.stringify(['hammer-smash', 'fireball', null, 'frozen']),
+  'specific loadout overrides and explicit None selections must win over automatic weapon mappings',
+);
+for (const family of engine.ENEMIES) {
+  for (const variant of family.variants) {
+    const resolved = engine.resolveCombatLoadout(
+      { kind: 'enemy', family: family.id, variant: variant.id },
+      engine.DEFAULT_COMBAT_LOADOUT,
+    );
+    check(resolved.slots.some((slot) => slot.effect), `${family.id}/${variant.id} must resolve at least one automatic combat effect`);
+    for (const slot of resolved.slots.filter((item) => item.effect)) {
+      check(
+        combatEffectEntries.some(({ category, effect }) => category.id === slot.category && effect.id === slot.effect),
+        `${family.id}/${variant.id} resolves missing effect ${slot.category}/${slot.effect}`,
+      );
+      check(slot.file === `effects/${slot.category}/${slot.effect}.png`, `${family.id}/${variant.id} must resolve a stable modular effect path`);
+    }
+  }
+}
 
 for (const { category, effect } of combatEffectEntries) {
   const spec = { kind: 'effect', category: category.id, effect: effect.id };

@@ -148,6 +148,39 @@
             <p class="preset-status" id="preset-status" role="status" aria-live="polite">Presets stay on this device.</p>
           </section>
 
+          <section class="combat-loadout-panel" id="combat-loadout-panel" aria-labelledby="combat-loadout-title">
+            <div class="combat-loadout-heading">
+              <div>
+                <p class="combat-loadout-kicker">Game-ready effect recipe</p>
+                <h2 id="combat-loadout-title">Combat loadout</h2>
+              </div>
+              <button class="secondary-button compact-action loadout-preview-button active" id="loadout-preview-button" type="button" aria-pressed="true">Overlay preview: On</button>
+            </div>
+            <p class="combat-loadout-summary" id="loadout-summary">Automatic effects follow the equipped weapon.</p>
+            <div class="combat-loadout-grid">
+              <label for="loadout-trail"><span>Weapon trail</span><select id="loadout-trail" data-loadout-slot="trail"></select></label>
+              <label for="loadout-projectile"><span>Projectile</span><select id="loadout-projectile" data-loadout-slot="projectile"></select></label>
+              <label for="loadout-impact"><span>Impact</span><select id="loadout-impact" data-loadout-slot="impact"></select></label>
+              <label for="loadout-status-overlay"><span>Status overlay</span><select id="loadout-status-overlay" data-loadout-slot="status"></select></label>
+            </div>
+            <p class="combat-loadout-note">The combined animation is preview-only. JSON export keeps the base sprite and transparent effect sheets modular for the game.</p>
+            <div class="loadout-save-row">
+              <label class="sr-only" for="loadout-name">Combat loadout name</label>
+              <input id="loadout-name" type="text" maxlength="48" placeholder="Name this loadout">
+              <button class="secondary-button compact-action" id="save-loadout-button" type="button">Save</button>
+            </div>
+            <label class="sr-only" for="loadout-library-select">Saved combat loadouts</label>
+            <select id="loadout-library-select" aria-label="Saved combat loadouts">
+              <option value="">No loadouts saved</option>
+            </select>
+            <div class="loadout-action-row">
+              <button class="secondary-button compact-action" id="load-loadout-button" type="button" disabled>Load</button>
+              <button class="secondary-button compact-action danger-action" id="delete-loadout-button" type="button" disabled>Delete</button>
+            </div>
+            <button class="primary-button loadout-download-button" id="download-loadout-button" type="button">Download loadout JSON</button>
+            <p class="preset-status" id="loadout-status" role="status" aria-live="polite">Auto follows the current weapon or enemy attack style.</p>
+          </section>
+
           <section>
             <h2>All directions</h2>
             <div class="direction-previews">
@@ -229,7 +262,7 @@
               <button class="secondary-button pack-master-kit-button" id="download-pack-master-kit-button" type="button" disabled>Download Complete Pack</button>
             </div>
             <p class="preset-status" id="pack-status" role="status" aria-live="polite">The working pack stays on this device.</p>
-            <p class="export-note">The Complete Pack combines ready-made character sheets, recipes, reusable components, every enemy variation, and all synchronized combat-effect overlays at native 1x. Shared artwork is stored only once.</p>
+            <p class="export-note">The Complete Pack combines ready-made character sheets, recipes and their combat loadouts, reusable components, every enemy variation, and all synchronized combat-effect overlays at native 1x. Shared artwork is stored only once.</p>
           </section>
 
           <section class="master-kit-panel" aria-labelledby="master-kit-title">
@@ -244,7 +277,7 @@
             <p class="master-kit-summary" id="master-kit-summary">769 content-unique components · 202 native enemies · 24 combat effects · 1 reference · 996 PNGs</p>
             <button class="primary-button master-kit-download-button" id="download-master-kit-button" type="button">Download Complete Character Kit</button>
             <p class="preset-status" id="master-kit-status" role="status" aria-live="polite">Each component is stored once and shares the same animation grid.</p>
-            <p class="export-note">The current player is included only as a lightweight reference recipe; it does not duplicate component artwork.</p>
+            <p class="export-note">The current player and combat loadout are included only as a lightweight reference recipe; they do not duplicate component artwork.</p>
           </section>
         </aside>
       </main>

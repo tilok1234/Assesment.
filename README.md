@@ -7,6 +7,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Player assembly from skin, hair, eight facial details, headgear, outfit and armor tier, weapon type and tier, shield, and palette choices
 - 57 enemy families with 202 predefined variants
 - 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
+- A Combat Loadout Builder that previews those overlays on players and enemies, supplies automatic weapon-aware defaults, supports per-slot overrides, saves named recipes, and exports game-ready JSON
 - Four directions: down, left, right, and up
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
@@ -110,9 +111,9 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 3. Use **Load** to keep editing an entry or **Remove** to take it out of the pack.
 4. Choose an export scale, including **1x Native**, then select **Download pack ZIP**.
 
-The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per sprite plus a versioned `manifest.json` with the exact specifications, animation contract, dimensions, and file paths.
+The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per sprite plus a versioned `manifest.json` with the exact specifications, animation contract, dimensions, file paths, and the saved combat-loadout recipe for every player or enemy.
 
-For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes, the full deduplicated component library, all 57 enemy families with all 202 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
+For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes and combat loadouts, the full deduplicated component library, all 57 enemy families with all 202 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
 
 A 24-player Complete Pack contains 769 shared component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 1019 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
 
@@ -137,7 +138,7 @@ Draw the non-null component paths from a recipe in this order:
 
 `weapon-back` → `shield-back` → `outfit-back` → `outfit` → `skin-body` → `head` → `face-detail` → `hair` → `headgear` → `shield-front` → `weapon-front`
 
-Draw one chosen combat-effect sheet after the assembled sprite, using the same animation column, direction row, and 24x24 source rectangle.
+Each schema-v4 recipe may include a combat loadout with explicit selections, weapon-aware automatic defaults, resolved effect files, and draw order. Draw every resolved combat-effect sheet after the assembled sprite, using the same animation column, direction row, and 24x24 source rectangle. Status effects animate across every animation; trails, projectiles, and impacts are transparent outside attack.
 
 Every component shares the same animation grid and has been validated to recompose the complete renderer pixel-for-pixel across all directions and frames. To craft a new character in a game, copy a recipe and change its component paths; no art needs to be duplicated.
 
@@ -145,11 +146,11 @@ Every component shares the same animation grid and has been validated to recompo
 
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
-- `app.js` - editor state, sprite history, reset and comparison workflows, presets, character packs, Complete Character Kit rendering, naming, playback and frame inspection, and downloads
+- `app.js` - editor state, sprite history, reset and comparison workflows, presets, combat loadouts, character packs, Complete Character Kit rendering, naming, playback and frame inspection, and downloads
 - `character-kit.js` - deterministic component coverage, paths, recipe mapping, counts, and layer-order planning
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
-- `engine/` - focused animation, palette, player-option, enemy, humanoid weapon and shield, renderer, sheet, and generator modules
+- `engine/` - focused animation, palette, player-option, enemy, combat-loadout, humanoid weapon and shield, renderer, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build

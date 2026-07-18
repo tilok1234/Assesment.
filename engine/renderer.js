@@ -2307,7 +2307,7 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
   const d = flip ? 'right' : dir;
   const renderLayer = typeof opts.layer === 'string' ? opts.layer : 'complete';
 
-  ctx.clearRect(0, 0, SIZE, SIZE);
+  if (opts.clear !== false) ctx.clearRect(0, 0, SIZE, SIZE);
 
   if (spec.kind !== 'effect' && opts.shadow !== false && (renderLayer === 'complete' || renderLayer === 'body')) {
     const sh = shadowFor(spec, anim.id, f);

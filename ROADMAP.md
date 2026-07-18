@@ -137,6 +137,8 @@ The sixteenth content slice is the Cursed Frontier expansion: scarecrows, snails
 
 The seventeenth content slice adds a modular Combat Effects library: five direction-aware weapon trails, seven projectiles, six impacts, and six persistent status overlays. Every effect uses the full transparent `288x96` sheet contract, reads the same attack column and direction row as its wielder, and can be layered after either a player or enemy without rebaking character art. Non-status effects stay transparent outside attack frames, while status overlays animate throughout idle, walk, attack, and hurt. Complete Kit and Complete Pack schema v3 add stable `effects/<category>/<effect>.png` paths; the standalone kit reaches 996 PNGs, the 24-player Complete Pack reaches 1019 PNGs, and the bundled asset pack reaches 232 exported sheets.
 
+The eighteenth content slice turns those modular effects into game-ready Combat Loadouts. Player weapons and enemy attack styles now resolve automatic trail, projectile, and impact defaults, while every slot—including an optional status overlay—can be overridden or disabled. The editor previews the synchronized result without baking effects into the base sprite, saves up to 100 named recipes locally, and exports a standalone schema-v1 JSON contract with base specification, selections, resolved stable paths, zero-based attack columns, timing, and draw order. Regular packs retain each entry's recipe, while Complete Kit and Complete Pack schema v4 attach combat loadouts to their matching character recipes and keep all artwork deduplicated.
+
 Candidate additions:
 
 - Body types and silhouettes
