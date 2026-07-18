@@ -224,4 +224,28 @@ export const ENEMIES = [
     { id: 'frost',   name: 'Frost',   c: ['#7ea8d8', '#5578a8'], belly: '#e6f2ff', eye: '#1a1c2c', br: ['#aeeef7', '#e6f2ff'] },
     { id: 'verdant', name: 'Verdant', c: ['#5f9c3f', '#3f6b28'], belly: '#c9f29b', eye: '#e8b93e', br: ['#c9f29b', '#8fe06a'] },
   ]},
+  { id: 'frog', name: 'Frog', variants: [
+    { id: 'bog',    name: 'Bog hopper',  c: ['#6f9f45', '#446b2c'], belly: '#b8cd78', mark: '#d6c45a', eye: '#f7dc85' },
+    { id: 'dart',   name: 'Poison dart', c: ['#3b9fd8', '#236a9c'], belly: '#79d4ee', mark: '#f0d33b', eye: '#1a1c2c' },
+    { id: 'ember',  name: 'Ember toad',  c: ['#d85b36', '#96351f'], belly: '#f29a4a', mark: '#f7dc85', eye: '#fff2a8' },
+    { id: 'frost',  name: 'Frost croaker', c: ['#78b8d8', '#4f7fa8'], belly: '#c8eef4', mark: '#eef8ff', eye: '#1a1c2c' },
+  ]},
+  { id: 'crocodile', name: 'Crocodile', variants: [
+    { id: 'marsh',   name: 'Marsh',     c: ['#668f42', '#3e612a', '#91b45d'], belly: '#b6c77b', mark: '#d7c864', eye: '#e8b93e' },
+    { id: 'albino',  name: 'Albino',    c: ['#d8d7c5', '#9f9f91', '#f1ead5'], belly: '#efe0c8', mark: '#c79a9a', eye: '#e83a3a' },
+    { id: 'ash',     name: 'Ashscale',  c: ['#676b72', '#3f434b', '#8d929b'], belly: '#aeb2b5', mark: '#d47743', eye: '#f7b03e' },
+    { id: 'ancient', name: 'Mirejaw',   c: ['#375f48', '#213d30', '#628165'], belly: '#80966c', mark: '#b6d54a', eye: '#c9f29b' },
+  ]},
+  { id: 'turtle', name: 'Turtle', variants: [
+    { id: 'mossback', name: 'Mossback',      c: ['#607b3d', '#3d5229'], skin: ['#7da251', '#4f7135'], mark: '#a9c65e', eye: '#1a1c2c' },
+    { id: 'iron',    name: 'Iron shell',     c: ['#707681', '#454a54'], skin: ['#8b9485', '#5c665a'], mark: '#b6bec8', eye: '#e8b93e' },
+    { id: 'frost',   name: 'Frost shell',    c: ['#72a9c6', '#466f91'], skin: ['#a9d4df', '#6f9cac'], mark: '#e6f2ff', eye: '#1a1c2c' },
+    { id: 'magma',   name: 'Magma tortoise', c: ['#77362f', '#482420'], skin: ['#b55436', '#7f3425'], mark: '#f7b03e', eye: '#fff2a8' },
+  ]},
+  { id: 'jellyfish', name: 'Jellyfish', variants: [
+    { id: 'moon',  name: 'Moon jelly',   c: ['#9cd9e6', '#588ca8'], glow: '#e8fbff', eye: '#31506b' },
+    { id: 'venom', name: 'Venom medusa', c: ['#78b65a', '#477a36'], glow: '#c9f29b', eye: '#253b22' },
+    { id: 'ember', name: 'Ember bell',   c: ['#e06b44', '#a13c2c'], glow: '#f7c45a', eye: '#5a231f' },
+    { id: 'void',  name: 'Void drifter', c: ['#7660aa', '#46386f'], glow: '#c4a7f2', eye: '#eef0ff' },
+  ]},
 ];

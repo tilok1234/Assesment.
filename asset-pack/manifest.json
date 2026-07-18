@@ -1,7 +1,7 @@
 {
   "name": "8-bit Sprite Asset Pack",
-  "version": "1.0.0",
-  "generated": "2026-07-16",
+  "version": "1.1.0",
+  "generated": "2026-07-18",
   "format": {
     "frameSize": 24,
     "exportScale": 4,
@@ -982,6 +982,110 @@
           "file": "enemies/drake-verdant.png"
         }
       ]
+    },
+    {
+      "family": "frog",
+      "name": "Frog",
+      "variants": [
+        {
+          "id": "bog",
+          "name": "Bog hopper",
+          "file": "enemies/frog-bog.png"
+        },
+        {
+          "id": "dart",
+          "name": "Poison dart",
+          "file": "enemies/frog-dart.png"
+        },
+        {
+          "id": "ember",
+          "name": "Ember toad",
+          "file": "enemies/frog-ember.png"
+        },
+        {
+          "id": "frost",
+          "name": "Frost croaker",
+          "file": "enemies/frog-frost.png"
+        }
+      ]
+    },
+    {
+      "family": "crocodile",
+      "name": "Crocodile",
+      "variants": [
+        {
+          "id": "marsh",
+          "name": "Marsh",
+          "file": "enemies/crocodile-marsh.png"
+        },
+        {
+          "id": "albino",
+          "name": "Albino",
+          "file": "enemies/crocodile-albino.png"
+        },
+        {
+          "id": "ash",
+          "name": "Ashscale",
+          "file": "enemies/crocodile-ash.png"
+        },
+        {
+          "id": "ancient",
+          "name": "Mirejaw",
+          "file": "enemies/crocodile-ancient.png"
+        }
+      ]
+    },
+    {
+      "family": "turtle",
+      "name": "Turtle",
+      "variants": [
+        {
+          "id": "mossback",
+          "name": "Mossback",
+          "file": "enemies/turtle-mossback.png"
+        },
+        {
+          "id": "iron",
+          "name": "Iron shell",
+          "file": "enemies/turtle-iron.png"
+        },
+        {
+          "id": "frost",
+          "name": "Frost shell",
+          "file": "enemies/turtle-frost.png"
+        },
+        {
+          "id": "magma",
+          "name": "Magma tortoise",
+          "file": "enemies/turtle-magma.png"
+        }
+      ]
+    },
+    {
+      "family": "jellyfish",
+      "name": "Jellyfish",
+      "variants": [
+        {
+          "id": "moon",
+          "name": "Moon jelly",
+          "file": "enemies/jellyfish-moon.png"
+        },
+        {
+          "id": "venom",
+          "name": "Venom medusa",
+          "file": "enemies/jellyfish-venom.png"
+        },
+        {
+          "id": "ember",
+          "name": "Ember bell",
+          "file": "enemies/jellyfish-ember.png"
+        },
+        {
+          "id": "void",
+          "name": "Void drifter",
+          "file": "enemies/jellyfish-void.png"
+        }
+      ]
     }
   ],
   "players": [
@@ -1011,8 +1115,8 @@
     }
   ],
   "counts": {
-    "enemyFamilies": 41,
-    "enemySheets": 138,
+    "enemyFamilies": 45,
+    "enemySheets": 154,
     "playerSheets": 6
   }
 }

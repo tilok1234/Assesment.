@@ -229,10 +229,10 @@ const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntr
 check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
 check(
   completeKitPlan.counts.componentPngs === 769
-    && completeKitPlan.counts.enemyFamilies === 41
-    && completeKitPlan.counts.enemySheets === 138
-    && completeKitPlan.counts.totalPngs === 908,
-  'complete character kits must contain 769 content-unique components, all 138 native enemy sheets, and one reference preview',
+    && completeKitPlan.counts.enemyFamilies === 45
+    && completeKitPlan.counts.enemySheets === 154
+    && completeKitPlan.counts.totalPngs === 924,
+  'complete character kits must contain 769 content-unique components, all 154 native enemy sheets, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
@@ -247,7 +247,7 @@ check(
   'Tier 5 shield components must collapse the four artifact passes whose colors are fully overwritten',
 );
 const completeEnemyEntries = completeKitPlan.enemies.flatMap((family) => family.variants);
-check(completeKitPlan.enemies.length === 41 && completeEnemyEntries.length === 138, 'complete kits must plan every enemy family and variation');
+check(completeKitPlan.enemies.length === 45 && completeEnemyEntries.length === 154, 'complete kits must plan every enemy family and variation');
 check(
   completeKitPlan.enemies.every((family) => family.variants.every((entry) => (
     entry.file === `enemies/${family.family}/${entry.id}.png`
@@ -270,7 +270,7 @@ const completeKitPaths = [
   ...completeEnemyEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 908, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 924, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
@@ -375,6 +375,48 @@ function renderPixels(spec, dir, animId, frame, opts = {}) {
   };
   engine.drawSprite(ctx, spec, dir, animId, frame, { ...opts, shadow: false });
   return pixels;
+}
+
+const swampAndShoreFamilies = ['frog', 'crocodile', 'turtle', 'jellyfish'];
+for (const familyId of swampAndShoreFamilies) {
+  const family = engine.ENEMIES.find((entry) => entry.id === familyId);
+  check(Boolean(family), `${familyId} must be registered in the enemy catalog`);
+  if (!family) continue;
+  check(family.variants.length === 4, `${familyId} must ship four roster-ready variants`);
+
+  for (const dir of engine.DIRS) {
+    const variantSignatures = family.variants.map((variant) => renderPixels(
+      { kind: 'enemy', family: familyId, variant: variant.id },
+      dir,
+      'idle',
+      0,
+    ).join(','));
+    check(new Set(variantSignatures).size === family.variants.length, `${familyId} variants must remain visually distinct while facing ${dir}`);
+  }
+
+  for (const variant of family.variants) {
+    const spec = { kind: 'enemy', family: familyId, variant: variant.id };
+    for (const dir of engine.DIRS) {
+      for (const anim of engine.ANIMS) {
+        for (let frame = 0; frame < anim.frames; frame++) {
+          const pixels = renderPixels(spec, dir, anim.id, frame);
+          check(pixels.filter(Boolean).length >= 40, `${familyId}/${variant.id} must remain readable in ${dir} ${anim.id} frame ${frame}`);
+        }
+      }
+      check(
+        renderPixels(spec, dir, 'idle', 0).join(',') !== renderPixels(spec, dir, 'idle', 1).join(','),
+        `${familyId}/${variant.id} must animate its idle pose while facing ${dir}`,
+      );
+      check(
+        renderPixels(spec, dir, 'walk', 0).join(',') !== renderPixels(spec, dir, 'walk', 1).join(','),
+        `${familyId}/${variant.id} must animate locomotion while facing ${dir}`,
+      );
+      check(
+        renderPixels(spec, dir, 'attack', 0).join(',') !== renderPixels(spec, dir, 'attack', 1).join(','),
+        `${familyId}/${variant.id} must animate its attack while facing ${dir}`,
+      );
+    }
+  }
 }
 
 function compositePixelLayers(layers) {
