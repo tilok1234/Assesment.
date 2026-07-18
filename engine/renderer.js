@@ -838,31 +838,40 @@ function drawSpider(g, d, p, f, V, animId) {
 }
 
 function drawShroom(g, d, p, f, V, animId) {
-  const lean = (animId === 'walk') ? (f === 0 ? 1 : f === 2 ? -1 : 0) : 0;
-  const u = (animId === 'idle' && f === 1) ? 1 : 0;
+  const walking = animId === 'walk';
+  const gait = walking ? [
+    { x: 0,  bob: 0, lx: 8, ly: 20, rx: 13, ry: 19 },
+    { x: 1,  bob: 1, lx: 9, ly: 20, rx: 14, ry: 20 },
+    { x: 0,  bob: 0, lx: 9, ly: 19, rx: 14, ry: 20 },
+    { x: -1, bob: 1, lx: 8, ly: 20, rx: 13, ry: 20 },
+  ][f] : { x: 0, bob: 0, lx: 9, ly: 20, rx: 13, ry: 20 };
+  const u = walking ? gait.bob : ((animId === 'idle' && f === 1) ? 1 : 0);
+  const bx = gait.x;
   const ox = (d === 'right' ? p.lunge : 0);
   const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
   const S = (x, y, c) => g.set(x + ox, y + oy, c);
   const R = (x, y, w, h, c) => g.rect(x + ox, y + oy, w, h, c);
   const c = V.c;
 
-  // feet
-  R(9 + (lean === 1 ? 0 : 0), 20, 2, 2, CREAM[1]);
-  R(13, 20, 2, 2, CREAM[1]);
-  if (lean === 1) R(9, 19, 2, 1, CREAM[1]);
-  if (lean === -1) R(13, 19, 2, 1, CREAM[1]);
+  // The feet trade ground contact across all four walk frames while the
+  // complete upper body follows the step. This avoids the old detached cap
+  // slide where only the hat moved and the stem stayed frozen.
+  R(gait.lx, gait.ly, 2, 2, CREAM[1]);
+  R(gait.rx, gait.ry, 2, 2, CREAM[1]);
+  if (walking && f === 0) S(gait.lx - 1, gait.ly + 1, CREAM[1]);
+  if (walking && f === 2) S(gait.rx + 2, gait.ry + 1, CREAM[1]);
   // stem/body
-  R(9, 13 + u, 6, 7 - u, CREAM[0]);
-  R(9, 13 + u, 1, 7 - u, CREAM[1]);
+  R(9 + bx, 13 + u, 6, 7 - u, CREAM[0]);
+  R(9 + bx, 13 + u, 1, 7 - u, CREAM[1]);
   // face
   if (d === 'down') {
-    S(10, 15 + u, INK); S(13, 15 + u, INK);
-    if (animId === 'attack') { S(11, 17 + u, INK); S(12, 17 + u, INK); }
+    S(10 + bx, 15 + u, INK); S(13 + bx, 15 + u, INK);
+    if (animId === 'attack') { S(11 + bx, 17 + u, INK); S(12 + bx, 17 + u, INK); }
   } else if (d === 'right') {
-    S(13, 15 + u, INK);
+    S(13 + bx, 15 + u, INK);
   }
   // cap
-  const cx = lean;
+  const cx = bx;
   R(9 + cx, 8 + u, 6, 1, c[0]);
   R(8 + cx, 9 + u, 8, 2, c[0]);
   R(7 + cx, 11 + u, 10, 1, c[0]);
@@ -1672,20 +1681,30 @@ function drawCentipede(g, d, p, f, V, animId) {
 }
 
 function drawCarnivorousPlant(g, d, p, f, V, animId) {
-  const sway = animId === 'walk' ? (f === 0 ? -1 : f === 2 ? 1 : 0) : 0;
-  const bob = animId === 'idle' && f === 1 ? 1 : 0;
+  const walking = animId === 'walk';
+  const gait = walking ? [
+    { x: 0,  bob: 0, lx: 7, ly: 21, rx: 13, ry: 19 },
+    { x: 1,  bob: 1, lx: 8, ly: 20, rx: 14, ry: 21 },
+    { x: 0,  bob: 0, lx: 9, ly: 19, rx: 14, ry: 21 },
+    { x: -1, bob: 1, lx: 7, ly: 21, rx: 13, ry: 20 },
+  ][f] : { x: 0, bob: 0, lx: 8, ly: 21, rx: 13, ry: 21 };
+  const bob = walking ? gait.bob : (animId === 'idle' && f === 1 ? 1 : 0);
   const strike = animId === 'attack' && (f === 1 || f === 2);
   const ox = d === 'right' ? p.lunge : 0;
   const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const stem = V.stem, bloom = V.bloom, maw = V.maw, pollen = V.pollen;
-  const cx = sway;
+  const bx = gait.x;
+  const cx = walking ? bx + p.leg : 0;
 
-  R(10, 15, 4, 6, stem[0]); R(10, 19, 4, 2, stem[1]);
-  S(9, 16, stem[0]); R(6, 17, 4, 2, stem[0]); S(6, 19, stem[1]);
-  S(14, 15, stem[0]); R(14, 16, 4, 2, stem[0]); S(17, 18, stem[1]);
-  R(8, 21, 3, 1, stem[1]); R(13, 21, 3, 1, stem[1]); S(7, 22, stem[1]); S(16, 22, stem[1]);
+  // Bend the whole stalk with the bloom, then alternate the two roots as
+  // actual stepping feet. The previous cycle moved only the bloom.
+  R(10 + bx, 15 + bob, 4, 6 - bob, stem[0]); R(10 + bx, 19, 4, 2, stem[1]);
+  S(9 + bx, 16 + bob, stem[0]); R(6 + bx, 17 + bob, 4, 2, stem[0]); S(6 + bx, 19 + bob, stem[1]);
+  S(14 + bx, 15 + bob, stem[0]); R(14 + bx, 16 + bob, 4, 2, stem[0]); S(17 + bx, 18 + bob, stem[1]);
+  R(gait.lx, gait.ly, 3, 1, stem[1]); R(gait.rx, gait.ry, 3, 1, stem[1]);
+  S(gait.lx - 1, Math.min(22, gait.ly + 1), stem[1]); S(gait.rx + 2, Math.min(22, gait.ry + 1), stem[1]);
 
   if (d === 'right') {
     R(10 + cx, 8 + bob, 7, 7 - bob, bloom[0]);

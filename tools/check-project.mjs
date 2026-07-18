@@ -378,7 +378,7 @@ function renderPixels(spec, dir, animId, frame, opts = {}) {
 }
 
 const dedicatedEnemyFamilies = [
-  'frog', 'crocodile', 'turtle', 'jellyfish',
+  'shroom', 'frog', 'crocodile', 'turtle', 'jellyfish',
   'centipede', 'carniplant', 'anglerfish', 'griffin',
 ];
 for (const familyId of dedicatedEnemyFamilies) {
@@ -417,6 +417,24 @@ for (const familyId of dedicatedEnemyFamilies) {
       check(
         renderPixels(spec, dir, 'attack', 0).join(',') !== renderPixels(spec, dir, 'attack', 1).join(','),
         `${familyId}/${variant.id} must animate its attack while facing ${dir}`,
+      );
+    }
+  }
+}
+
+for (const familyId of ['shroom', 'carniplant']) {
+  const family = engine.ENEMIES.find((entry) => entry.id === familyId);
+  for (const variant of family.variants) {
+    const spec = { kind: 'enemy', family: familyId, variant: variant.id };
+    for (const dir of engine.DIRS) {
+      const walkFrames = [0, 1, 2, 3].map((frame) => renderPixels(spec, dir, 'walk', frame));
+      check(
+        new Set(walkFrames.map((pixels) => pixels.join(','))).size === 4,
+        `${familyId}/${variant.id} must use four distinct grounded walk poses while facing ${dir}`,
+      );
+      check(
+        new Set(walkFrames.map((pixels) => pixels.slice(engine.SIZE * 19).join(','))).size === 4,
+        `${familyId}/${variant.id} feet or roots must change contact in every walk frame while facing ${dir}`,
       );
     }
   }
