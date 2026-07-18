@@ -24,6 +24,7 @@ export {
   SHIELDS,
   SHIELD_TIERS,
   SKINS,
+  SPECIES,
   WEAPONS,
   WEAPON_TIERS,
 } from './catalogs/player-options.js';

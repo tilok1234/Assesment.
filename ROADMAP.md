@@ -143,6 +143,8 @@ The nineteenth content slice adds the Equipment Variant Batch Builder for games 
 
 The twentieth content slice adds focused RPG Class Packs for Warrior, Guardian, Ranger, Rogue, Mage, and Cleric roles. A class definition chooses its outfit family, Tier 1 starting loadout, allowed weapons, and allowed shields while preserving the source character's identity, colors, and custom palette. Applying a class is undoable; exporting expands every allowed weapon, the class armor, and every allowed shield through all five tiers, then deduplicates complete specifications into bounded collections of 54, 54, 29, 29, 24, and 39 ready sheets respectively. Class Pack schema v1 records the complete class definition, source character, class base, animation and scale contract, every complete variant specification, and a resolved modular combat loadout for every sheet while including referenced effects only once beneath stable game-facing paths. The native Mage production proof contains 24 ready character sheets plus six referenced effects, including all three magic projectile families and a preserved Frozen override; all 30 PNGs are unique `288x96` files with no missing, duplicate, or unreferenced content.
 
+The twenty-first content slice adds six stable player species: Human, Elf, Orc, Goblin, Tiefling, and Celestial. Human is the exact legacy-compatible default; the other species add direction-aware ears, tusks, horns, animated tails, wings, and halos while reusing the proven humanoid body, equipment, and animation rig. Front traits hide beneath full helmets, back traits retain correct occlusion, presets migrate to schema v7, and class and equipment planners preserve species as part of character identity. Complete Kit and Complete Pack schema v5 add 27 deduplicated species sheets in separate back/front passes, raising the component library to 796 PNGs, the standalone kit to 1023 PNGs, and a 24-player Complete Pack to 1046 PNGs. Exhaustive validation proves Human parity, all six complete animation signatures, visible directional traits, full-helmet behavior, and pixel-exact recipe recomposition.
+
 Candidate additions:
 
 - Body types and silhouettes
@@ -151,7 +153,7 @@ Candidate additions:
 - Armor layers, outfits, robes, capes, and accessories
 - More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2/Tier 3/Tier 4/Tier 5 progression finished)
 - Additional off-hand items such as spell foci, lanterns, and quivers (eight-family shield progression through Tier 5 complete)
-- Species-specific features such as ears, horns, wings, and tails
+- More species-specific features beyond the completed six-species ears, tusks, horns, wings, halo, and tail foundation
 - Additional enemy families and variants
 - Optional new animations after the existing sheet contract has a versioning plan
 

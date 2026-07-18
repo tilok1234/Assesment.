@@ -130,6 +130,101 @@ function makePose(animId, f) {
 // C: {skin, hair, hairStyle, gear, outfit, oc, weapon, shield,
 //     face:'human'|'skull'|'goblin', small, bone, eye}
 // ============================================================
+function drawPlayerSpeciesBack(S, R, d, p, u, species, skin) {
+  if (species === 'tiefling') {
+    const sway = p.leg === 1 ? 1 : p.leg === -1 ? -1 : p.wep === 'strike' ? 1 : 0;
+    if (d === 'down' || d === 'up') {
+      S(15, 16 + u, skin[1]); S(16, 17 + u, skin[0]);
+      S(17, 18 + u, skin[0]); S(18, 18 + u + sway, skin[1]);
+      S(19, 17 + u + sway, skin[0]);
+      S(19, 16 + u + sway, skin[0]); S(20, 17 + u + sway, skin[0]);
+    } else {
+      S(9, 16 + u, skin[1]); S(8, 17 + u, skin[0]);
+      S(7, 18 + u, skin[0]); S(6, 18 + u + sway, skin[1]);
+      S(5, 17 + u + sway, skin[0]);
+      S(4, 16 + u + sway, skin[0]); S(4, 18 + u + sway, skin[0]);
+    }
+  }
+
+  if (species === 'celestial') {
+    const wing = ['#f3ead7', '#d4b65d'];
+    const flap = p.leg !== 0 || p.wep === 'wind' ? -1 : 0;
+    const wy = u + flap;
+    if (d === 'down' || d === 'up') {
+      R(4, 10 + wy, 3, 1, wing[0]); R(3, 11 + wy, 4, 3, wing[0]);
+      S(3, 14 + wy, wing[1]); S(4, 15 + wy, wing[1]); S(5, 14 + wy, wing[1]);
+      R(17, 10 + wy, 3, 1, wing[0]); R(17, 11 + wy, 4, 3, wing[0]);
+      S(18, 14 + wy, wing[1]); S(19, 15 + wy, wing[1]); S(20, 14 + wy, wing[1]);
+    } else {
+      R(6, 9 + wy, 3, 1, wing[0]); R(5, 10 + wy, 4, 4, wing[0]);
+      S(5, 14 + wy, wing[1]); S(6, 15 + wy, wing[1]); S(7, 14 + wy, wing[1]);
+    }
+  }
+}
+
+function drawPlayerSpeciesFront(S, R, d, u, HT, species, skin, gearDef) {
+  if (!species || species === 'human' || gearDef.hideAll) return;
+
+  if (species === 'elf') {
+    if (d === 'down' || d === 'up') {
+      S(7, HT + u + 3, skin[0]); S(6, HT + u + 2, skin[0]); S(7, HT + u + 2, skin[1]);
+      S(16, HT + u + 3, skin[0]); S(17, HT + u + 2, skin[0]); S(16, HT + u + 2, skin[1]);
+    } else {
+      S(8, HT + u + 3, skin[0]); S(7, HT + u + 2, skin[0]); S(8, HT + u + 2, skin[1]);
+    }
+    return;
+  }
+
+  if (species === 'orc') {
+    if (d === 'down' || d === 'up') {
+      S(7, HT + u + 3, skin[0]); S(6, HT + u + 2, skin[0]); S(6, HT + u + 3, skin[1]);
+      S(16, HT + u + 3, skin[0]); S(17, HT + u + 2, skin[0]); S(17, HT + u + 3, skin[1]);
+    } else {
+      S(8, HT + u + 3, skin[0]); S(7, HT + u + 2, skin[0]); S(7, HT + u + 3, skin[1]);
+    }
+    if (d === 'down') {
+      S(10, HT + u + 7, '#f4f0df'); S(13, HT + u + 7, '#f4f0df');
+      S(10, HT + u + 4, skin[1]); S(13, HT + u + 4, skin[1]);
+    } else if (d === 'right') {
+      S(14, HT + u + 7, '#f4f0df'); S(14, HT + u + 4, skin[1]);
+    }
+    return;
+  }
+
+  if (species === 'goblin') {
+    if (d === 'down' || d === 'up') {
+      S(7, HT + u + 3, skin[0]); S(6, HT + u + 2, skin[0]); S(5, HT + u + 1, skin[0]);
+      S(6, HT + u + 3, skin[1]);
+      S(16, HT + u + 3, skin[0]); S(17, HT + u + 2, skin[0]); S(18, HT + u + 1, skin[0]);
+      S(17, HT + u + 3, skin[1]);
+      if (d === 'down') { S(10, HT + u + 4, skin[1]); S(13, HT + u + 4, skin[1]); }
+    } else {
+      S(8, HT + u + 3, skin[0]); S(7, HT + u + 2, skin[0]); S(6, HT + u + 1, skin[0]);
+      S(7, HT + u + 3, skin[1]); S(14, HT + u + 4, skin[1]);
+    }
+    return;
+  }
+
+  if (species === 'tiefling') {
+    if (d === 'down' || d === 'up') {
+      S(9, HT + u - 1, BONE[1]); S(8, HT + u - 2, BONE[0]); S(7, HT + u - 2, BONE[0]);
+      S(14, HT + u - 1, BONE[1]); S(15, HT + u - 2, BONE[0]); S(16, HT + u - 2, BONE[0]);
+    } else {
+      S(11, HT + u - 1, BONE[1]); S(10, HT + u - 2, BONE[0]);
+      S(14, HT + u - 1, BONE[1]); S(15, HT + u - 2, BONE[0]);
+    }
+    return;
+  }
+
+  if (species === 'celestial') {
+    if (d === 'right') {
+      R(10, HT + u - 1, 6, 1, GOLD[0]); S(9, HT + u - 1, GOLD[1]);
+    } else {
+      R(9, HT + u - 1, 6, 1, GOLD[0]); S(8, HT + u - 1, GOLD[1]); S(15, HT + u - 1, GOLD[1]);
+    }
+  }
+}
+
 function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   const small = !!C.small;
   const HT = small ? 5 : 3;      // head top
@@ -172,6 +267,14 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
     if (C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(weaponS, weaponR, d, p, C, u);
     return;
   }
+  if (renderLayer === 'species-back') {
+    drawPlayerSpeciesBack(S, R, d, p, u, C.species, skin);
+    return;
+  }
+  if (renderLayer === 'species-front') {
+    drawPlayerSpeciesFront(S, R, d, u, HT, C.species, skin, gearDef);
+    return;
+  }
   const includeEquipment = renderLayer === 'complete';
   const includeFullBody = renderLayer === 'complete' || renderLayer === 'body';
   const includeOutfitBack = includeFullBody || renderLayer === 'outfit-back';
@@ -186,6 +289,8 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   if (includeEquipment && d === 'up' && C.weapon && C.weapon !== 'none') drawWeapon(weaponS, weaponR, d, p, C, u);
 
   if (includeEquipment) drawShield(S, R, d, p, C, u, 'behind');
+
+  if (includeFullBody) drawPlayerSpeciesBack(S, R, d, p, u, C.species, skin);
 
   // ---- cape behind (side view) ----
   if (includeOutfitBack && outfit === 'cape' && d === 'right') {
@@ -369,6 +474,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
         }
       }
     }
+    if (includeFullBody) drawPlayerSpeciesFront(S, R, d, u, HT, C.species, skin, gearDef);
     if (includeFaceDetail && C.face === 'human' && C.detail && C.detail !== 'none') {
       drawFacialDetail(S, R, d, u, HT, C.detail, hair, skin, oc, eyeC);
     }
@@ -2212,6 +2318,7 @@ function buildHumanoidC(spec) {
     const outfit = find(OUTFIT_COLORS, spec.outfitColor).c;
     return {
       skin: palettePair(spec.palette?.skin, skin),
+      species: spec.species || 'human',
       hair: palettePair(spec.palette?.hair, hair),
       hairStyle: spec.hairStyle,
       gear: spec.headgear,

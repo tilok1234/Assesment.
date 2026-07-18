@@ -13,6 +13,7 @@ import {
   SHIELDS,
   SHIELD_TIERS,
   SKINS,
+  SPECIES,
   WEAPONS,
   WEAPON_TIERS,
 } from './catalogs.js';
@@ -24,6 +25,7 @@ export function randomPlayer() {
   const weapon = Math.random() < 0.85 ? rnd(weapons).id : 'none';
   const shield = rnd(SHIELDS).id;
   return {
+    species: rnd(SPECIES).id,
     skin: rnd(SKINS).id,
     hairStyle: rnd(HAIR_STYLES).id,
     hairColor: rnd(HAIR_COLORS).id,
@@ -50,6 +52,7 @@ export function describe(spec) {
   if (spec.kind === 'player') {
     const bits = [
       'hero',
+      spec.species && spec.species !== 'human' ? spec.species : null,
       spec.hairStyle !== 'bald' ? spec.hairStyle : null,
       spec.faceDetail && spec.faceDetail !== 'none' ? spec.faceDetail : null,
       spec.outfit,

@@ -1,5 +1,13 @@
 // Player-facing appearance and equipment catalogs.
 
+export const SPECIES = [
+  { id: 'human',    name: 'Human' },
+  { id: 'elf',      name: 'Elf' },
+  { id: 'orc',      name: 'Orc' },
+  { id: 'goblin',   name: 'Goblin' },
+  { id: 'tiefling', name: 'Tiefling' },
+  { id: 'celestial', name: 'Celestial' },
+];
 export const SKINS = [
   { id: 'pale',  name: 'Pale',  c: ['#f4d1a4', '#d9a06b'] },
   { id: 'peach', name: 'Peach', c: ['#eab98a', '#c98a56'] },

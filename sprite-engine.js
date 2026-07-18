@@ -19,6 +19,7 @@ export {
   SHIELD_TIERS,
   SIZE,
   SKINS,
+  SPECIES,
   WEAPONS,
   WEAPON_TIERS,
 } from './engine/catalogs.js';

@@ -144,7 +144,7 @@ const expectedEngineExports = [
   'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_CLASS_TEMPLATE',
   'DEFAULT_COMBAT_LOADOUT', 'DEFAULT_VARIANT_BATCH_SET',
   'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
-  'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'WEAPONS', 'WEAPON_TIERS',
+  'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
   'applyClassTemplate', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch',
   'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawSprite',
@@ -161,8 +161,8 @@ check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not de
 check(runtimeSources['app.js'].includes("from './character-kit.js'"), 'app.js must use the focused master character-kit planner');
 check(!runtimeSources['character-kit.js'].includes("from './engine/"), 'character-kit.js must consume only the public engine facade');
 check(runtimeSources['app.js'].includes("from './zip.js'"), 'app.js must use the standalone ZIP packaging utility');
-check(runtimeSources['app.js'].includes("PRESET_VERSION = 6"), 'app.js must keep presets under the current versioned schema');
-check(runtimeSources['app.js'].includes('![1, 2, 3, 4, 5, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1 through 5 preset libraries');
+check(runtimeSources['app.js'].includes("PRESET_VERSION = 7"), 'app.js must keep presets under the current versioned schema');
+check(runtimeSources['app.js'].includes('![1, 2, 3, 4, 5, 6, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1 through 6 preset libraries');
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
 check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'loadout', 'characterName', 'exportName']"), 'app.js history must include combat loadouts while remaining scoped to the editable sprite document');
@@ -216,7 +216,7 @@ check(
   'master kits must preserve the renderer draw order across composable layers',
 );
 const masterKitPlayer = {
-  skin: 'peach', hairStyle: 'spiky', hairColor: 'brown', faceDetail: 'none', headgear: 'none',
+  species: 'human', skin: 'peach', hairStyle: 'spiky', hairColor: 'brown', faceDetail: 'none', headgear: 'none',
   outfit: 'tunic', outfitTier: 'tier1', outfitColor: 'royal', weapon: 'sword', weaponTier: 'tier1',
   shield: 'round', shieldTier: 'tier1', palette: null,
 };
@@ -246,6 +246,7 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   kind: 'player',
   spec: {
     ...masterKitPlayer,
+    species: engine.SPECIES[index % engine.SPECIES.length].id,
     skin: engine.SKINS[index % engine.SKINS.length].id,
     hairStyle: engine.HAIR_STYLES[index % engine.HAIR_STYLES.length].id,
     hairColor: engine.HAIR_COLORS[index % engine.HAIR_COLORS.length].id,
@@ -256,32 +257,33 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   },
 }));
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
-check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 4, 'complete character kits must use the combat-loadout schema');
+check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 5, 'complete character kits must use the species-layer schema');
 check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
 check(characterKit.COMPLETE_CHARACTER_PACK_FORMAT === '8-bit-sprite-assembler-complete-character-pack', 'combined complete packs must expose a distinct stable format id');
-check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 4, 'combined complete packs must use the combat-loadout schema');
+check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 5, 'combined complete packs must use the species-layer schema');
 check(
   JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
-    'weapon-back', 'shield-back', 'outfit-back', 'outfit', 'skin-body', 'head',
-    'face-detail', 'hair', 'headgear', 'shield-front', 'weapon-front',
+    'weapon-back', 'shield-back', 'species-back', 'outfit-back', 'outfit', 'skin-body', 'head',
+    'species-front', 'face-detail', 'hair', 'headgear', 'shield-front', 'weapon-front',
   ]),
   'complete character kits must publish the exact atomic component draw order',
 );
 const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntries);
 check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
 check(
-  completeKitPlan.counts.componentPngs === 769
+  completeKitPlan.counts.componentPngs === 796
     && completeKitPlan.counts.enemyFamilies === 57
     && completeKitPlan.counts.enemySheets === 202
     && completeKitPlan.counts.effectCategories === 4
     && completeKitPlan.counts.effectSheets === 24
-    && completeKitPlan.counts.totalPngs === 996,
-  'complete character kits must contain 769 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
+    && completeKitPlan.counts.totalPngs === 1023,
+  'complete character kits must contain 796 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
 check(completeKitPlan.components.hair.length === 70, 'complete kits must collapse visually identical under-headgear hair variants');
 check(completeKitPlan.components.faceDetails.length === 30, 'complete kits must store only the color-dependent facial-detail variants');
+check(completeKitPlan.components.speciesBack.length === 7 && completeKitPlan.components.speciesFront.length === 20, 'complete kits must store only the color-dependent species back/front variants');
 check(completeKitPlan.components.outfits.length === 115 && completeKitPlan.components.outfitBack.length === 35, 'complete kits must cover all five armor tiers while omitting fixed-color duplicates');
 check(completeKitPlan.components.headgear.length === 25, 'complete kits must avoid duplicate fixed-color headgear sheets');
 check(completeKitPlan.components.weapons.length === 75 && completeKitPlan.components.shields.length === 326, 'complete kits must store every five-tier weapon and shield family while omitting visually identical color passes');
@@ -317,6 +319,8 @@ const completeKitPaths = [
   ...completeKitPlan.components.heads.map((entry) => entry.file),
   ...completeKitPlan.components.hair.map((entry) => entry.file),
   ...completeKitPlan.components.faceDetails.map((entry) => entry.file),
+  ...completeKitPlan.components.speciesBack.map((entry) => entry.file),
+  ...completeKitPlan.components.speciesFront.map((entry) => entry.file),
   ...completeKitPlan.components.outfitBack.map((entry) => entry.file),
   ...completeKitPlan.components.outfits.map((entry) => entry.file),
   ...completeKitPlan.components.headgear.map((entry) => entry.file),
@@ -326,10 +330,11 @@ const completeKitPaths = [
   ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 996, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 1023, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
+check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'species-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'species-front'"), 'the renderer must expose separate species occlusion passes');
 check(internalCatalogs.WOOD.length >= 3, 'shield highlights must not clear assembled body pixels through a missing wood color');
 check((runtimeSources['engine/sheets.js'].match(/\.\.\.opts, shadow: opts\.shadow === true/g) || []).length === 3, 'every sheet builder must forward layer options while keeping shadows opt-in');
 check(runtimeSources['app.js'].includes('function downloadMasterCharacterKit('), 'app.js must expose one-click Complete Character Kit export');
@@ -364,6 +369,12 @@ check(runtimeSources['app.js'].includes('function restoreComparisonCopy('), 'app
 check(runtimeSources['app.js'].includes('.showModal()'), 'app.js must open the side-by-side comparison as an accessible dialog');
 check((entrySource.match(/data-palette-color=/g) || []).length === 6, 'index.html must expose all six editable player palette tones');
 check(runtimeSources['engine/renderer.js'].includes('palettePair(spec.palette?.skin'), 'the renderer must consume safe player palette overrides');
+const expectedSpecies = ['human', 'elf', 'orc', 'goblin', 'tiefling', 'celestial'];
+check(JSON.stringify(engine.SPECIES.map((species) => species.id)) === JSON.stringify(expectedSpecies), 'the player species catalog must retain its stable ids and Human default');
+check(runtimeSources['app.js'].includes('validId(E.SPECIES, player.species'), 'saved player specs must safely migrate missing or invalid species');
+check(runtimeSources['app.js'].includes("'Species'"), 'the player editor must expose a dedicated species control');
+check(runtimeSources['engine/generators.js'].includes('species: rnd(SPECIES).id'), 'random players must choose a valid species');
+check(runtimeSources['engine/renderer.js'].includes("species: spec.species || 'human'"), 'legacy player specs must render as Human');
 const expectedFacialDetails = ['none', 'beard', 'mustache', 'scar', 'eyepatch', 'glasses', 'blush', 'warpaint'];
 check(
   JSON.stringify(engine.FACIAL_DETAILS.map((detail) => detail.id)) === JSON.stringify(expectedFacialDetails),
@@ -434,6 +445,43 @@ function renderPixels(spec, dir, animId, frame, opts = {}) {
   return pixels;
 }
 
+const speciesProbe = {
+  kind: 'player', species: 'human', skin: 'orc', hairStyle: 'bald', hairColor: 'brown',
+  faceDetail: 'glasses', headgear: 'none', outfit: 'tunic', outfitTier: 'tier1', outfitColor: 'royal',
+  weapon: 'none', weaponTier: 'tier1', shield: 'none', shieldTier: 'tier1', palette: null,
+};
+const speciesSignatures = new Map();
+for (const species of engine.SPECIES) {
+  const frames = [];
+  for (const dir of engine.DIRS) {
+    for (const anim of engine.ANIMS) {
+      for (let frame = 0; frame < anim.frames; frame++) {
+        const spec = { ...speciesProbe, species: species.id };
+        const complete = renderPixels(spec, dir, anim.id, frame);
+        frames.push(complete.join(','));
+        const back = renderPixels(spec, dir, anim.id, frame, { layer: 'species-back' });
+        const front = renderPixels(spec, dir, anim.id, frame, { layer: 'species-front' });
+        if (species.id === 'human') {
+          check(back.every((pixel) => pixel === null) && front.every((pixel) => pixel === null), 'Human species layers must stay empty for legacy pixel parity');
+          const legacySpec = { ...spec };
+          delete legacySpec.species;
+          check(JSON.stringify(complete) === JSON.stringify(renderPixels(legacySpec, dir, anim.id, frame)), 'an omitted species field must remain pixel-identical to Human');
+        } else {
+          const expectsBack = species.id === 'tiefling' || species.id === 'celestial';
+          check(front.some((pixel) => pixel !== null), `${species.name} must expose visible animated front species pixels in ${dir} ${anim.id} frame ${frame}`);
+          check(back.some((pixel) => pixel !== null) === expectsBack, `${species.name} must expose only its intended back species pass in ${dir} ${anim.id} frame ${frame}`);
+        }
+      }
+    }
+  }
+  speciesSignatures.set(species.id, frames.join('|'));
+}
+check(new Set(speciesSignatures.values()).size === engine.SPECIES.length, 'all six player species must remain visually distinct across the complete animation set');
+for (const speciesId of expectedSpecies.slice(1)) {
+  const hidden = renderPixels({ ...speciesProbe, species: speciesId, headgear: 'fullhelm' }, 'down', 'idle', 0, { layer: 'species-front' });
+  check(hidden.every((pixel) => pixel === null), `${speciesId} front traits must hide beneath a full helmet`);
+}
+
 check(engine.CLASS_PACK_FORMAT === '8-bit-sprite-assembler-class-pack', 'class packs must expose a stable game-facing format id');
 check(engine.CLASS_PACK_VERSION === 1, 'class packs must use an explicit schema version');
 check(engine.DEFAULT_CLASS_TEMPLATE === 'warrior', 'Warrior must remain the safe default class template');
@@ -444,6 +492,7 @@ check(
 );
 const classFixturePlayer = {
   ...masterKitPlayer,
+  species: 'tiefling',
   skin: 'orc',
   hairStyle: 'mohawk',
   hairColor: 'pink',
@@ -469,7 +518,8 @@ for (const template of engine.CLASS_TEMPLATES) {
 
   const applied = engine.applyClassTemplate(classFixturePlayer, template.id);
   check(
-    applied.skin === classFixturePlayer.skin
+    applied.species === classFixturePlayer.species
+      && applied.skin === classFixturePlayer.skin
       && applied.hairStyle === classFixturePlayer.hairStyle
       && applied.hairColor === classFixturePlayer.hairColor
       && applied.faceDetail === classFixturePlayer.faceDetail
@@ -496,6 +546,7 @@ for (const template of engine.CLASS_TEMPLATES) {
     variant.spec.outfit === template.outfit
       && template.weapons.includes(variant.spec.weapon)
       && (variant.spec.shield === 'none' || template.shields.includes(variant.spec.shield))
+      && variant.spec.species === classFixturePlayer.species
       && variant.spec.skin === classFixturePlayer.skin
       && variant.spec.hairStyle === classFixturePlayer.hairStyle
       && variant.spec.faceDetail === classFixturePlayer.faceDetail
@@ -524,6 +575,7 @@ check(
 );
 const variantBatchPlayer = {
   ...masterKitPlayer,
+  species: 'celestial',
   outfitTier: 'tier3',
   weapon: 'bow',
   weaponTier: 'tier3',
@@ -545,7 +597,8 @@ for (const set of engine.VARIANT_BATCH_SETS) {
   check(new Set(batch.variants.map((variant) => JSON.stringify(variant.spec))).size === batch.variants.length, `${set.id} must deduplicate identical character specifications`);
   check(new Set(batch.variants.map((variant) => variant.id)).size === batch.variants.length, `${set.id} must expose stable unique variant ids`);
   check(batch.variants.every((variant) => (
-    variant.spec.skin === variantBatchPlayer.skin
+    variant.spec.species === variantBatchPlayer.species
+      && variant.spec.skin === variantBatchPlayer.skin
       && variant.spec.hairStyle === variantBatchPlayer.hairStyle
       && variant.spec.hairColor === variantBatchPlayer.hairColor
       && variant.spec.faceDetail === variantBatchPlayer.faceDetail
@@ -822,6 +875,7 @@ for (const anim of engine.ANIMS) {
 
 const atomicPlayerSpecs = engine.HEADGEAR.map((headgear, index) => ({
   kind: 'player',
+  species: engine.SPECIES[index % engine.SPECIES.length].id,
   skin: engine.SKINS[index % engine.SKINS.length].id,
   hairStyle: engine.HAIR_STYLES[index % engine.HAIR_STYLES.length].id,
   hairColor: engine.HAIR_COLORS[index % engine.HAIR_COLORS.length].id,
@@ -861,6 +915,8 @@ for (const entry of [
   ...completeKitPlan.components.heads,
   ...completeKitPlan.components.hair,
   ...completeKitPlan.components.faceDetails,
+  ...completeKitPlan.components.speciesBack,
+  ...completeKitPlan.components.speciesFront,
   ...completeKitPlan.components.outfitBack,
   ...completeKitPlan.components.outfits,
   ...completeKitPlan.components.headgear,
@@ -877,10 +933,12 @@ for (const entry of completeKitPlan.components.shields) {
 const recipeLayerKeys = {
   'weapon-back': 'weaponBack',
   'shield-back': 'shieldBack',
+  'species-back': 'speciesBack',
   'outfit-back': 'outfitBack',
   outfit: 'outfit',
   'skin-body': 'skinBody',
   head: 'head',
+  'species-front': 'speciesFront',
   'face-detail': 'faceDetail',
   hair: 'hair',
   headgear: 'headgear',
@@ -1240,7 +1298,8 @@ for (const relativePath of actualPngs) {
   check(referencedSet.has(relativePath), `${relativePath}: PNG exists on disk but is not referenced by the manifest`);
 }
 
-const combinations = engine.SKINS.length
+const combinations = engine.SPECIES.length
+  * engine.SKINS.length
   * engine.HAIR_STYLES.length
   * engine.HAIR_COLORS.length
   * engine.FACIAL_DETAILS.length
