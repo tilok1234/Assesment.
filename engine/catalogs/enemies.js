@@ -248,4 +248,28 @@ export const ENEMIES = [
     { id: 'ember', name: 'Ember bell',   c: ['#e06b44', '#a13c2c'], glow: '#f7c45a', eye: '#5a231f' },
     { id: 'void',  name: 'Void drifter', c: ['#7660aa', '#46386f'], glow: '#c4a7f2', eye: '#eef0ff' },
   ]},
+  { id: 'centipede', name: 'Centipede', variants: [
+    { id: 'cave',  name: 'Cave crawler', c: ['#9b6538', '#623d25', '#c99352'], eye: '#f7dc85', venom: '#d7e28a' },
+    { id: 'venom', name: 'Venom spine',  c: ['#5e963e', '#365e2a', '#99c65c'], eye: '#c9f29b', venom: '#d7ff72' },
+    { id: 'bone',  name: 'Bone runner',  c: ['#d5cfb5', '#8f8978', '#f0ead4'], eye: '#e83a3a', venom: '#f4f4f4' },
+    { id: 'magma', name: 'Magma burrower', c: ['#c94f32', '#7f2d24', '#ef8a3d'], eye: '#fff2a8', venom: '#f7b03e' },
+  ]},
+  { id: 'carniplant', name: 'Carnivorous plant', variants: [
+    { id: 'snapvine', name: 'Snapvine',    stem: ['#5f923e', '#375e29'], bloom: ['#cf493f', '#8f2d31'], maw: '#f1dd9c', pollen: '#f7dc85' },
+    { id: 'corpse',   name: 'Corpse bloom', stem: ['#61733e', '#3c492c'], bloom: ['#8c5aa8', '#57366f'], maw: '#d9c5df', pollen: '#d69acb' },
+    { id: 'frost',    name: 'Frostbud',    stem: ['#6999a9', '#416b78'], bloom: ['#8fcce2', '#557fa8'], maw: '#eef8ff', pollen: '#b8f0ff' },
+    { id: 'ember',    name: 'Ember maw',   stem: ['#8b6133', '#594022'], bloom: ['#e06436', '#9f3426'], maw: '#f7d06a', pollen: '#fff2a8' },
+  ]},
+  { id: 'anglerfish', name: 'Anglerfish', variants: [
+    { id: 'deepglow', name: 'Deepglow', c: ['#315a82', '#20384f'], belly: '#548bb1', lure: '#8ff2f0', eye: '#e6fbff' },
+    { id: 'bloodfin', name: 'Bloodfin', c: ['#9b3843', '#5c252f'], belly: '#cb5b55', lure: '#f7b03e', eye: '#fff2a8' },
+    { id: 'frostfin', name: 'Frostfin', c: ['#75abc6', '#476e91'], belly: '#b8dde8', lure: '#eef8ff', eye: '#1a1c2c' },
+    { id: 'voidlight', name: 'Voidlight', c: ['#66519a', '#3d315f'], belly: '#967bc2', lure: '#d4b8ff', eye: '#eef0ff' },
+  ]},
+  { id: 'griffin', name: 'Griffin', variants: [
+    { id: 'royal', name: 'Royal', fur: ['#b97934', '#754526'], wing: ['#e5d5aa', '#9d8058'], beak: '#e8b93e', eye: '#1a1c2c' },
+    { id: 'ash',   name: 'Ashwing', fur: ['#6f7179', '#44464f'], wing: ['#aeb4bd', '#6e7580'], beak: '#c28f45', eye: '#e8b93e' },
+    { id: 'frost', name: 'Frostcrest', fur: ['#779db8', '#4b6f8d'], wing: ['#d9edf2', '#91b8c8'], beak: '#9ccbd8', eye: '#1a1c2c' },
+    { id: 'night', name: 'Nightfeather', fur: ['#3d3852', '#252236'], wing: ['#66578f', '#40365f'], beak: '#9b75c8', eye: '#c9f29b' },
+  ]},
 ];

@@ -1,6 +1,6 @@
 {
   "name": "8-bit Sprite Asset Pack",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "generated": "2026-07-18",
   "format": {
     "frameSize": 24,
@@ -1086,6 +1086,110 @@
           "file": "enemies/jellyfish-void.png"
         }
       ]
+    },
+    {
+      "family": "centipede",
+      "name": "Centipede",
+      "variants": [
+        {
+          "id": "cave",
+          "name": "Cave crawler",
+          "file": "enemies/centipede-cave.png"
+        },
+        {
+          "id": "venom",
+          "name": "Venom spine",
+          "file": "enemies/centipede-venom.png"
+        },
+        {
+          "id": "bone",
+          "name": "Bone runner",
+          "file": "enemies/centipede-bone.png"
+        },
+        {
+          "id": "magma",
+          "name": "Magma burrower",
+          "file": "enemies/centipede-magma.png"
+        }
+      ]
+    },
+    {
+      "family": "carniplant",
+      "name": "Carnivorous plant",
+      "variants": [
+        {
+          "id": "snapvine",
+          "name": "Snapvine",
+          "file": "enemies/carniplant-snapvine.png"
+        },
+        {
+          "id": "corpse",
+          "name": "Corpse bloom",
+          "file": "enemies/carniplant-corpse.png"
+        },
+        {
+          "id": "frost",
+          "name": "Frostbud",
+          "file": "enemies/carniplant-frost.png"
+        },
+        {
+          "id": "ember",
+          "name": "Ember maw",
+          "file": "enemies/carniplant-ember.png"
+        }
+      ]
+    },
+    {
+      "family": "anglerfish",
+      "name": "Anglerfish",
+      "variants": [
+        {
+          "id": "deepglow",
+          "name": "Deepglow",
+          "file": "enemies/anglerfish-deepglow.png"
+        },
+        {
+          "id": "bloodfin",
+          "name": "Bloodfin",
+          "file": "enemies/anglerfish-bloodfin.png"
+        },
+        {
+          "id": "frostfin",
+          "name": "Frostfin",
+          "file": "enemies/anglerfish-frostfin.png"
+        },
+        {
+          "id": "voidlight",
+          "name": "Voidlight",
+          "file": "enemies/anglerfish-voidlight.png"
+        }
+      ]
+    },
+    {
+      "family": "griffin",
+      "name": "Griffin",
+      "variants": [
+        {
+          "id": "royal",
+          "name": "Royal",
+          "file": "enemies/griffin-royal.png"
+        },
+        {
+          "id": "ash",
+          "name": "Ashwing",
+          "file": "enemies/griffin-ash.png"
+        },
+        {
+          "id": "frost",
+          "name": "Frostcrest",
+          "file": "enemies/griffin-frost.png"
+        },
+        {
+          "id": "night",
+          "name": "Nightfeather",
+          "file": "enemies/griffin-night.png"
+        }
+      ]
     }
   ],
   "players": [
@@ -1115,8 +1219,8 @@
     }
   ],
   "counts": {
-    "enemyFamilies": 45,
-    "enemySheets": 154,
+    "enemyFamilies": 49,
+    "enemySheets": 170,
     "playerSheets": 6
   }
 }

@@ -129,6 +129,8 @@ The twelfth content slice makes the Complete Character Kit a broader game-asset 
 
 The thirteenth content slice expands biome coverage with a swamp-and-shoreline roster: frogs, crocodiles, turtles, and jellyfish. Each new family has four palette-and-marking variants plus a dedicated silhouette and animation language—hopping and tongue lashes, low armored crawls and bites, shell-first trudges and head extensions, or floating bell pulses and tentacle whips. This raises the roster to 45 families and 154 variants, the standalone Complete Character Kit to 924 PNGs, and a full 24-player Complete Pack to 947 PNGs.
 
+The fourteenth content slice adds four further silhouette families in one batch: centipedes, carnivorous plants, anglerfish, and griffins. Sixteen variants introduce segmented many-leg scuttles and venom strikes, rooted bloom snaps and vine lashes, swimming lure pulses and oversized bites, plus winged quadruped flaps and claw dives. The roster reaches 49 families and 170 variants, the standalone Complete Character Kit reaches 940 PNGs, and a full 24-player Complete Pack reaches 963 PNGs.
+
 Candidate additions:
 
 - Body types and silhouettes
