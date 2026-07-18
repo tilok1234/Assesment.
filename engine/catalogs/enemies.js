@@ -296,4 +296,28 @@ export const ENEMIES = [
     { id: 'rot', name: 'Rotburrow', fur: ['#667347', '#3d492e'], belly: '#89945f', claw: '#c7cf8a', nose: '#9f705f', eye: '#d7ff72' },
     { id: 'magma', name: 'Magma mole', fur: ['#9e3f30', '#5e2925'], belly: '#d2673c', claw: '#f7b03e', nose: '#e98255', eye: '#fff2a8' },
   ]},
+  { id: 'scarecrow', name: 'Scarecrow', variants: [
+    { id: 'strawfield', name: 'Strawfield', cloth: ['#8a6338', '#594126'], straw: '#d8bd68', hat: ['#70492d', '#432e22'], eye: '#f7dc85' },
+    { id: 'plaguecrow', name: 'Plaguecrow', cloth: ['#66733f', '#3f492b'], straw: '#9caf58', hat: ['#3f4430', '#282d24'], eye: '#d7ff72' },
+    { id: 'frostbound', name: 'Frostbound', cloth: ['#668da7', '#405f7b'], straw: '#c6e8ed', hat: ['#526b80', '#344756'], eye: '#eef8ff' },
+    { id: 'infernal', name: 'Infernal', cloth: ['#9f3f30', '#612823'], straw: '#f28b3d', hat: ['#4b2927', '#2f1e21'], eye: '#fff2a8' },
+  ]},
+  { id: 'snail', name: 'Snail', variants: [
+    { id: 'meadow', name: 'Meadow', body: ['#7fa45a', '#526f3d'], shell: ['#b67a45', '#75482e', '#d39b5d'], trail: '#b9d785', eye: '#1a1c2c' },
+    { id: 'iron', name: 'Iron shell', body: ['#76827b', '#4d5954'], shell: ['#7d8490', '#474d58', '#b1b7c2'], trail: '#9da9a3', eye: '#f7dc85' },
+    { id: 'crystal', name: 'Crystal slime', body: ['#56aeba', '#347783'], shell: ['#75d3dc', '#438ba2', '#b9f2f2'], trail: '#8ee5dd', eye: '#eef8ff' },
+    { id: 'magma', name: 'Magma', body: ['#b84d31', '#732d27'], shell: ['#d86432', '#833124', '#f7b03e'], trail: '#e98255', eye: '#fff2a8' },
+  ]},
+  { id: 'porcupine', name: 'Porcupine', variants: [
+    { id: 'forest', name: 'Forest', fur: ['#79563b', '#4d382b'], quill: ['#d1b37a', '#927047'], belly: '#a77b52', eye: '#1a1c2c' },
+    { id: 'venom', name: 'Venom quill', fur: ['#4e653a', '#30442c'], quill: ['#9ecf5c', '#668f3f'], belly: '#758652', eye: '#d7ff72' },
+    { id: 'frost', name: 'Frostspine', fur: ['#58758c', '#354e64'], quill: ['#c5e9ef', '#7fb4c8'], belly: '#86aabd', eye: '#eef8ff' },
+    { id: 'ember', name: 'Emberback', fur: ['#84392d', '#542824'], quill: ['#f0843d', '#b34d2d'], belly: '#bd5f3c', eye: '#fff2a8' },
+  ]},
+  { id: 'puppet', name: 'Haunted puppet', variants: [
+    { id: 'marionette', name: 'Marionette', wood: ['#b27a48', '#71482e'], cloth: '#7b4fb5', joint: '#d9b46a', glow: '#f7dc85' },
+    { id: 'bone', name: 'Bone doll', wood: ['#d7d0b8', '#8f8877'], cloth: '#594f55', joint: '#f0ead4', glow: '#e83a3a' },
+    { id: 'ice', name: 'Icebound', wood: ['#82b8c8', '#4e7b91'], cloth: '#5d6fa8', joint: '#c7eef3', glow: '#eef8ff' },
+    { id: 'demonwood', name: 'Demonwood', wood: ['#7c382d', '#4a2624'], cloth: '#9e3f30', joint: '#e06b3f', glow: '#fff2a8' },
+  ]},
 ];

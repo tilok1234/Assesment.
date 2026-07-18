@@ -133,6 +133,8 @@ The fourteenth content slice adds four further silhouette families in one batch:
 
 The fifteenth content slice is the Strange Wilds expansion: mantises, moths, octopuses, and moles add sixteen variants with scissor-blade rushes, four-pose wing flutter and dust bursts, tentacle crawls and ink lashes, plus grounded burrow-and-erupt attacks. The roster reaches 53 families and 186 variants, the standalone Complete Character Kit reaches 956 PNGs, and a full 24-player Complete Pack reaches 979 PNGs.
 
+The sixteenth content slice is the Cursed Frontier expansion: scarecrows, snails, porcupines, and haunted puppets add sixteen variants with spinning straw arms, shell retreats and rolling charges, expanding quill bursts, and unnatural jointed marionette attacks. The roster reaches 57 families and 202 variants, the standalone Complete Character Kit reaches 972 PNGs, and a full 24-player Complete Pack reaches 995 PNGs.
+
 Candidate additions:
 
 - Body types and silhouettes

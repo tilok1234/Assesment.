@@ -1,6 +1,6 @@
 {
   "name": "8-bit Sprite Asset Pack",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "generated": "2026-07-18",
   "format": {
     "frameSize": 24,
@@ -1230,6 +1230,46 @@
         { "id": "rot", "name": "Rotburrow", "file": "enemies/mole-rot.png" },
         { "id": "magma", "name": "Magma mole", "file": "enemies/mole-magma.png" }
       ]
+    },
+    {
+      "family": "scarecrow",
+      "name": "Scarecrow",
+      "variants": [
+        { "id": "strawfield", "name": "Strawfield", "file": "enemies/scarecrow-strawfield.png" },
+        { "id": "plaguecrow", "name": "Plaguecrow", "file": "enemies/scarecrow-plaguecrow.png" },
+        { "id": "frostbound", "name": "Frostbound", "file": "enemies/scarecrow-frostbound.png" },
+        { "id": "infernal", "name": "Infernal", "file": "enemies/scarecrow-infernal.png" }
+      ]
+    },
+    {
+      "family": "snail",
+      "name": "Snail",
+      "variants": [
+        { "id": "meadow", "name": "Meadow", "file": "enemies/snail-meadow.png" },
+        { "id": "iron", "name": "Iron shell", "file": "enemies/snail-iron.png" },
+        { "id": "crystal", "name": "Crystal slime", "file": "enemies/snail-crystal.png" },
+        { "id": "magma", "name": "Magma", "file": "enemies/snail-magma.png" }
+      ]
+    },
+    {
+      "family": "porcupine",
+      "name": "Porcupine",
+      "variants": [
+        { "id": "forest", "name": "Forest", "file": "enemies/porcupine-forest.png" },
+        { "id": "venom", "name": "Venom quill", "file": "enemies/porcupine-venom.png" },
+        { "id": "frost", "name": "Frostspine", "file": "enemies/porcupine-frost.png" },
+        { "id": "ember", "name": "Emberback", "file": "enemies/porcupine-ember.png" }
+      ]
+    },
+    {
+      "family": "puppet",
+      "name": "Haunted puppet",
+      "variants": [
+        { "id": "marionette", "name": "Marionette", "file": "enemies/puppet-marionette.png" },
+        { "id": "bone", "name": "Bone doll", "file": "enemies/puppet-bone.png" },
+        { "id": "ice", "name": "Icebound", "file": "enemies/puppet-ice.png" },
+        { "id": "demonwood", "name": "Demonwood", "file": "enemies/puppet-demonwood.png" }
+      ]
     }
   ],
   "players": [
@@ -1259,8 +1299,8 @@
     }
   ],
   "counts": {
-    "enemyFamilies": 53,
-    "enemySheets": 186,
+    "enemyFamilies": 57,
+    "enemySheets": 202,
     "playerSheets": 6
   }
 }

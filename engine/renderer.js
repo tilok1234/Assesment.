@@ -2005,6 +2005,201 @@ function drawMole(g, d, p, f, V, animId) {
   }
 }
 
+// ---------------- cursed frontier creatures ----------------
+function drawScarecrow(g, d, p, f, V, animId) {
+  const walking = animId === 'walk';
+  const gait = walking ? [
+    { bob: 0, left: -1, right: 1, arm: -1 },
+    { bob: 1, left: 0, right: 1, arm: 0 },
+    { bob: 0, left: 1, right: -1, arm: 1 },
+    { bob: 1, left: -1, right: 0, arm: 0 },
+  ][f] : { bob: animId === 'idle' && f === 1 ? 1 : 0, left: 0, right: 0, arm: 0 };
+  const spinning = animId === 'attack' && (f === 1 || f === 2);
+  const spin = spinning ? (f === 1 ? -3 : 3) : gait.arm;
+  const ox = d === 'right' ? p.lunge : 0;
+  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
+  const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
+  const cloth = V.cloth, straw = V.straw, hat = V.hat, eye = V.eye;
+  const bob = gait.bob;
+
+  if (d === 'right') {
+    R(8 + gait.left, 17, 2, 5, cloth[1]); S(7 + gait.left, 21, straw);
+    R(12 + gait.right, 17, 2, 5, cloth[0]); S(14 + gait.right, 21, straw);
+    R(7, 10 + bob, 8, 9 - bob, cloth[0]); R(7, 15, 8, 3, cloth[1]);
+    S(9, 12 + bob, straw); S(13, 16, straw);
+    R(12, 6 + bob, 6, 5, straw); S(17, 8 + bob, eye);
+    R(11, 4 + bob, 8, 2, hat[0]); R(13, 2 + bob, 5, 3, hat[1]); S(18, 3 + bob, hat[0]);
+    if (spinning) {
+      R(2, 11 + bob + spin, 7, 2, straw); S(1, 10 + bob + spin, straw);
+      R(14, 11 + bob - spin, 8, 2, straw); S(22, 12 + bob - spin, straw);
+      S(3, 7 + bob, straw); S(20, 17 + bob, straw);
+    } else {
+      R(3, 11 + bob + gait.arm, 5, 2, straw); S(2, 12 + bob + gait.arm, straw);
+      R(14, 12 + bob - gait.arm, 6, 2, straw); S(20, 13 + bob - gait.arm, straw);
+    }
+  } else {
+    R(8 + gait.left, 17, 3, 5, cloth[1]); R(13 + gait.right, 17, 3, 5, cloth[0]);
+    S(7 + gait.left, 21, straw); S(16 + gait.right, 21, straw);
+    R(8, 10 + bob, 8, 9 - bob, cloth[0]); R(9, 15, 6, 3, cloth[1]);
+    S(10, 12 + bob, straw); S(14, 16, straw);
+    R(9, 6 + bob, 6, 5, straw);
+    R(7, 4 + bob, 10, 2, hat[0]); R(9, 2 + bob, 7, 3, hat[1]); S(8, 3 + bob, hat[0]);
+    if (d === 'down') { S(10, 8 + bob, eye); S(13, 8 + bob, eye); S(11, 10 + bob, hat[1]); }
+    else { R(10, 7 + bob, 4, 2, hat[1]); S(9, 10 + bob, cloth[1]); S(14, 10 + bob, cloth[1]); }
+    if (spinning) {
+      R(2, 11 + bob + spin, 7, 2, straw); S(1, 10 + bob + spin, straw);
+      R(15, 11 + bob - spin, 7, 2, straw); S(22, 10 + bob - spin, straw);
+      S(4, 7 + bob, straw); S(19, 17 + bob, straw);
+    } else {
+      R(3, 12 + bob + gait.arm, 6, 2, straw); S(2, 13 + bob + gait.arm, straw);
+      R(15, 12 + bob - gait.arm, 6, 2, straw); S(21, 13 + bob - gait.arm, straw);
+    }
+  }
+}
+
+function drawSnail(g, d, p, f, V, animId) {
+  const walking = animId === 'walk';
+  const gait = walking ? [
+    { slide: -1, bob: 0, stretch: 0, stalk: 1 },
+    { slide: 0, bob: 1, stretch: 1, stalk: 0 },
+    { slide: 1, bob: 0, stretch: 0, stalk: -1 },
+    { slide: 0, bob: 1, stretch: -1, stalk: 0 },
+  ][f] : { slide: 0, bob: animId === 'idle' && f === 1 ? 1 : 0, stretch: 0, stalk: animId === 'idle' && f === 1 ? 1 : 0 };
+  const withdrawn = animId === 'attack' && f === 1;
+  const rolling = animId === 'attack' && f === 2;
+  const ox = d === 'right' ? p.lunge : 0;
+  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
+  const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
+  const body = V.body, shell = V.shell, trail = V.trail, eye = V.eye;
+  const bx = gait.slide + (rolling ? 2 : 0), by = gait.bob - (rolling ? 1 : 0);
+
+  if (withdrawn) {
+    R(6, 10, 12, 10, shell[0]); R(8, 8, 8, 3, shell[0]); R(8, 13, 8, 5, shell[1]);
+    R(10, 11, 5, 4, shell[2]); R(11, 12, 2, 2, shell[1]);
+    R(5, 20, 14, 2, trail); S(4, 21, body[1]); S(19, 21, body[1]);
+    return;
+  }
+
+  if (d === 'right') {
+    R(4 + bx, 18 + by, 15 + gait.stretch, 4 - by, body[0]); R(3 + bx, 21, 18, 2, trail);
+    R(6 + bx, 10 + by, 11, 10 - by, shell[0]); R(8 + bx, 8 + by, 7, 3, shell[0]);
+    R(8 + bx, 13 + by, 7, 5, shell[1]); R(10 + bx, 11 + by, 5, 4, shell[2]);
+    S(11 + bx, 13 + by, shell[1]); S(12 + bx, 14 + by, shell[1]);
+    R(16 + bx, 15 + by, 5 + gait.stretch, 5 - by, body[0]); S(20 + bx + gait.stretch, 18 + by, body[1]);
+    S(17 + bx, 14 + by, body[1]); S(17 + bx, 11 + by - gait.stalk, body[1]); S(17 + bx, 10 + by - gait.stalk, eye);
+    S(20 + bx, 14 + by, body[1]); S(20 + bx, 12 + by + gait.stalk, body[1]); S(20 + bx, 11 + by + gait.stalk, eye);
+    if (rolling) { S(4, 17, trail); S(2, 19, trail); S(1, 21, trail); }
+  } else {
+    R(6 + bx, 10 + by, 12, 10 - by, shell[0]); R(8 + bx, 8 + by, 8, 3, shell[0]);
+    R(8 + bx, 13 + by, 8, 5, shell[1]); R(10 + bx, 11 + by, 5, 4, shell[2]); S(11 + bx, 13 + by, shell[1]);
+    R(5 + bx, 18 + by, 14 + gait.stretch, 4 - by, body[0]); R(4 + bx, 21, 16 + gait.stretch, 2, trail);
+    if (d === 'down') {
+      R(8 + bx, 16 + by, 8 + gait.stretch, 5 - by, body[0]);
+      S(8 + bx - gait.stretch, 15 + by, body[1]); S(7 + bx - gait.stretch, 12 + by - gait.stalk, body[1]); S(7 + bx - gait.stretch, 11 + by - gait.stalk, eye);
+      S(15 + bx + gait.stretch, 15 + by, body[1]); S(16 + bx + gait.stretch, 12 + by + gait.stalk, body[1]); S(16 + bx + gait.stretch, 11 + by + gait.stalk, eye);
+    } else {
+      S(7 + bx - gait.stretch, 17 + by, body[1]); S(16 + bx + gait.stretch, 17 + by, body[1]); R(10 + bx, 18 + by, 4 + gait.stretch, 2, shell[2]);
+    }
+    if (rolling) { S(3, 18, trail); S(20, 19, trail); S(2, 21, trail); S(21, 21, trail); }
+  }
+}
+
+function drawPorcupine(g, d, p, f, V, animId) {
+  const walking = animId === 'walk';
+  const gait = walking ? [
+    { x: -1, bob: 0, front: 1, back: -1 },
+    { x: 0, bob: 1, front: 0, back: 1 },
+    { x: 1, bob: 0, front: -1, back: 1 },
+    { x: 0, bob: 1, front: 1, back: 0 },
+  ][f] : { x: 0, bob: animId === 'idle' && f === 1 ? 1 : 0, front: 0, back: 0 };
+  const flare = animId === 'attack' && (f === 1 || f === 2);
+  const burst = animId === 'attack' && f === 2;
+  const ox = d === 'right' ? p.lunge : 0;
+  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
+  const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
+  const fur = V.fur, quill = V.quill, belly = V.belly, eye = V.eye;
+  const bx = gait.x, by = gait.bob;
+
+  if (d === 'right') {
+    R(6 + bx, 12 + by, 11, 7 - by, fur[0]); R(8 + bx, 16, 10, 3, belly);
+    R(15 + bx, 13 + by, 6, 5 - by, fur[0]); S(19 + bx, 14 + by, eye); S(21 + bx, 17 + by, fur[1]);
+    R(7 + gait.back, 18, 3, 4, fur[1]); R(15 + gait.front, 18, 3, 4, fur[1]);
+    S(6 + gait.back, 21, quill[1]); S(18 + gait.front, 21, quill[1]);
+    const spikes = flare
+      ? [[3, 11], [4, 7], [7, 5], [10, 4], [13, 5], [16, 7]]
+      : [[5, 11], [6, 8], [8, 7], [10, 6], [12, 7], [15, 9]];
+    for (const [x, y] of spikes) { S(x + bx, y + by, quill[0]); S(x + 1 + bx, y + 1 + by, quill[1]); }
+    S(5 + bx, 14 + by, quill[1]); S(4 + bx, 16 + by, quill[0]);
+    if (burst) { S(1, 7, quill[0]); S(2, 3, quill[1]); S(18, 4, quill[0]); S(22, 6, quill[1]); }
+  } else {
+    R(7 + bx, 11 + by, 10, 9 - by, fur[0]); R(9 + bx, 16, 6, 4, belly);
+    R(8 + bx, 8 + by, 8, 6, fur[0]);
+    if (d === 'down') { S(9 + bx, 10 + by, eye); S(14 + bx, 10 + by, eye); S(11 + bx, 13 + by, fur[1]); S(12 + bx, 13 + by, fur[1]); }
+    else { R(10 + bx, 9 + by, 4, 2, fur[1]); S(9 + bx, 13 + by, quill[1]); S(14 + bx, 13 + by, quill[1]); }
+    R(6 + gait.back, 18, 3, 4, fur[1]); R(15 + gait.front, 18, 3, 4, fur[1]);
+    S(5 + gait.back, 21, quill[1]); S(18 + gait.front, 21, quill[1]);
+    const spikes = flare
+      ? [[4, 10], [3, 6], [7, 4], [11, 3], [16, 4], [20, 7], [19, 12]]
+      : [[6, 11], [5, 8], [8, 6], [11, 5], [15, 6], [18, 9]];
+    for (const [x, y] of spikes) { S(x + bx, y + by, quill[0]); S(x + bx, y + 1 + by, quill[1]); }
+    if (burst) { S(1, 5, quill[0]); S(22, 5, quill[0]); S(3, 2, quill[1]); S(20, 2, quill[1]); }
+  }
+}
+
+function drawPuppet(g, d, p, f, V, animId) {
+  const walking = animId === 'walk';
+  const gait = walking ? [
+    { bob: 0, left: -1, right: 1, arm: 2 },
+    { bob: 1, left: 0, right: 1, arm: -1 },
+    { bob: 0, left: 1, right: -1, arm: -2 },
+    { bob: 1, left: -1, right: 0, arm: 1 },
+  ][f] : { bob: animId === 'idle' && f === 1 ? 1 : 0, left: 0, right: 0, arm: animId === 'idle' && f === 1 ? 1 : 0 };
+  const strike = animId === 'attack' && (f === 1 || f === 2);
+  const slash = strike ? (f === 1 ? -3 : 3) : gait.arm;
+  const ox = d === 'right' ? p.lunge : 0;
+  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
+  const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
+  const wood = V.wood, cloth = V.cloth, joint = V.joint, glow = V.glow;
+  const bob = gait.bob;
+
+  if (d === 'right') {
+    S(10, 1 + bob, glow); S(11, 3 + bob, joint); S(13, 1 + bob, glow); S(14, 4 + bob, joint);
+    R(12, 5 + bob, 7, 6, wood[0]); S(17, 7 + bob, glow); R(18, 8 + bob, 2, 2, wood[1]);
+    R(8, 10 + bob, 8, 8 - bob, cloth); R(10, 11 + bob, 5, 6 - bob, wood[0]);
+    S(10, 13 + bob, joint); S(14, 16, joint);
+    R(8 + gait.left, 17, 2, 3, wood[1]); S(8 + gait.left, 20, joint); R(7 + gait.left, 21, 3, 2, wood[0]);
+    R(13 + gait.right, 17, 2, 3, wood[1]); S(14 + gait.right, 20, joint); R(14 + gait.right, 21, 3, 2, wood[0]);
+    R(6, 11 + bob - slash, 3, 2, wood[0]); S(5, 12 + bob - slash, joint); S(4, 13 + bob - slash, wood[1]);
+    if (strike) {
+      R(15, 11 + bob + slash, 5, 2, wood[0]); S(20, 12 + bob + slash, joint); S(22, 12 + bob + slash, wood[1]);
+      S(21, 10 + bob + slash, wood[1]); S(21, 14 + bob + slash, wood[1]);
+    } else {
+      R(15, 12 + bob + gait.arm, 4, 2, wood[0]); S(19, 13 + bob + gait.arm, joint); S(20, 14 + bob + gait.arm, wood[1]);
+    }
+  } else {
+    S(9, 1 + bob, glow); S(10, 4 + bob, joint); S(14, 1 + bob, glow); S(14, 4 + bob, joint);
+    R(9, 5 + bob, 6, 6, wood[0]); R(10, 6 + bob, 4, 4, wood[1]);
+    if (d === 'down') { S(10, 7 + bob, glow); S(13, 7 + bob, glow); S(11, 9 + bob, joint); }
+    else { R(10, 6 + bob, 4, 2, cloth); S(9, 9 + bob, joint); S(14, 9 + bob, joint); }
+    R(8, 10 + bob, 8, 8 - bob, cloth); R(10, 11 + bob, 4, 6 - bob, wood[0]);
+    S(9, 13 + bob, joint); S(14, 15 + bob, joint);
+    R(8 + gait.left, 17, 2, 3, wood[1]); S(8 + gait.left, 20, joint); R(7 + gait.left, 21, 3, 2, wood[0]);
+    R(14 + gait.right, 17, 2, 3, wood[1]); S(15 + gait.right, 20, joint); R(14 + gait.right, 21, 3, 2, wood[0]);
+    if (strike) {
+      R(3, 11 + bob - slash, 5, 2, wood[0]); S(2, 12 + bob - slash, joint); S(1, 13 + bob - slash, wood[1]);
+      R(16, 11 + bob + slash, 5, 2, wood[0]); S(21, 12 + bob + slash, joint); S(22, 13 + bob + slash, wood[1]);
+      S(3, 15 + bob - slash, wood[1]); S(20, 15 + bob + slash, wood[1]);
+    } else {
+      R(4, 12 + bob + gait.arm, 5, 2, wood[0]); S(3, 13 + bob + gait.arm, joint); S(2, 14 + bob + gait.arm, wood[1]);
+      R(15, 12 + bob - gait.arm, 5, 2, wood[0]); S(20, 13 + bob - gait.arm, joint); S(21, 14 + bob - gait.arm, wood[1]);
+    }
+  }
+}
+
 // ============================================================
 // TOP-LEVEL RENDER
 // ============================================================
@@ -2092,10 +2287,10 @@ function buildHumanoidC(spec) {
 function shadowFor(spec, animId, f) {
   if (spec.kind === 'enemy') {
     if (spec.family === 'bat' || spec.family === 'ghost' || spec.family === 'elemental' || spec.family === 'eyemonster' || spec.family === 'wasp' || spec.family === 'jellyfish' || spec.family === 'anglerfish' || spec.family === 'moth') return { x: 9, w: 6, a: 0.10 };
-    if (spec.family === 'snake' || spec.family === 'worm' || spec.family === 'scorpion' || spec.family === 'crab' || spec.family === 'beetle' || spec.family === 'mimic' || spec.family === 'frog' || spec.family === 'turtle' || spec.family === 'centipede' || spec.family === 'carniplant' || spec.family === 'octopus' || spec.family === 'mole') return { x: 7, w: 10, a: 0.15 };
+    if (spec.family === 'snake' || spec.family === 'worm' || spec.family === 'scorpion' || spec.family === 'crab' || spec.family === 'beetle' || spec.family === 'mimic' || spec.family === 'frog' || spec.family === 'turtle' || spec.family === 'centipede' || spec.family === 'carniplant' || spec.family === 'octopus' || spec.family === 'mole' || spec.family === 'snail') return { x: 7, w: 10, a: 0.15 };
     if (spec.family === 'golem' || spec.family === 'treant') return { x: 6, w: 12, a: 0.15 };
     if (spec.family === 'spider') return { x: 7, w: 10, a: 0.15 };
-    if (spec.family === 'wolf' || spec.family === 'boar' || spec.family === 'bear' || spec.family === 'bigcat' || spec.family === 'drake' || spec.family === 'crocodile' || spec.family === 'griffin') return { x: 6, w: 12, a: 0.15 };
+    if (spec.family === 'wolf' || spec.family === 'boar' || spec.family === 'bear' || spec.family === 'bigcat' || spec.family === 'drake' || spec.family === 'crocodile' || spec.family === 'griffin' || spec.family === 'porcupine') return { x: 6, w: 12, a: 0.15 };
     if (spec.family === 'slime' && animId === 'walk' && (f === 1 || f === 2)) return { x: 10, w: 4, a: 0.12 };
     if (spec.family === 'slime') return { x: 8, w: 8, a: 0.15 };
   }
@@ -2157,6 +2352,10 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
     if (spec.family === 'moth') drawMoth(g, d, p, f, V, anim.id);
     if (spec.family === 'octopus') drawOctopus(g, d, p, f, V, anim.id);
     if (spec.family === 'mole') drawMole(g, d, p, f, V, anim.id);
+    if (spec.family === 'scarecrow') drawScarecrow(g, d, p, f, V, anim.id);
+    if (spec.family === 'snail') drawSnail(g, d, p, f, V, anim.id);
+    if (spec.family === 'porcupine') drawPorcupine(g, d, p, f, V, anim.id);
+    if (spec.family === 'puppet') drawPuppet(g, d, p, f, V, anim.id);
   }
 
   for (let y = 0; y < SIZE; y++) {
