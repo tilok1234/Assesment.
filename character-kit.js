@@ -34,10 +34,10 @@ export const MASTER_ROSTER_KIT_VERSION = 1;
 export const MASTER_ROSTER_KIT_LIMIT = 24;
 
 export const COMPLETE_CHARACTER_KIT_FORMAT = '8-bit-sprite-assembler-complete-character-kit';
-export const COMPLETE_CHARACTER_KIT_VERSION = 9;
+export const COMPLETE_CHARACTER_KIT_VERSION = 10;
 export const COMPLETE_CHARACTER_KIT_RECIPE_LIMIT = 24;
 export const COMPLETE_CHARACTER_PACK_FORMAT = '8-bit-sprite-assembler-complete-character-pack';
-export const COMPLETE_CHARACTER_PACK_VERSION = 9;
+export const COMPLETE_CHARACTER_PACK_VERSION = 10;
 export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
   'weapon-back',
   'shield-back',
@@ -54,6 +54,13 @@ export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
   'shield-front',
   'weapon-front',
 ];
+
+const SKIN_SPECIES_BACK = new Set(['tiefling', 'lizardfolk']);
+const HAIR_SPECIES_BACK = new Set(['beastkin']);
+const FIXED_SPECIES_BACK = new Set(['celestial']);
+const SKIN_SPECIES_FRONT = new Set(['elf', 'orc', 'goblin', 'dwarf', 'lizardfolk']);
+const HAIR_SPECIES_FRONT = new Set(['beastkin']);
+const FIXED_SPECIES_FRONT = new Set(['tiefling', 'celestial', 'undead']);
 
 const clonePair = (pair) => Array.isArray(pair) ? pair.slice(0, 2) : null;
 const samePair = (left, right) => (
@@ -510,16 +517,22 @@ function recipeComponents(player) {
   const gearColor = COLOR_AWARE_HEADGEAR.has(player.headgear) ? player.outfitColor : 'default';
   const species = player.species || 'human';
   const bodyBuild = player.bodyBuild || 'classic';
-  const speciesBack = species === 'tiefling'
+  const speciesBack = SKIN_SPECIES_BACK.has(species)
     ? speciesFile(species, 'back', player.skin)
-    : species === 'celestial'
-      ? speciesFile(species, 'back')
-      : null;
+    : HAIR_SPECIES_BACK.has(species)
+      ? speciesFile(species, 'back', player.hairColor)
+      : FIXED_SPECIES_BACK.has(species)
+        ? speciesFile(species, 'back')
+        : null;
   const speciesFront = hideHead || species === 'human'
     ? null
-    : ['elf', 'orc', 'goblin'].includes(species)
+    : SKIN_SPECIES_FRONT.has(species)
       ? speciesFile(species, 'front', player.skin)
-      : speciesFile(species, 'front');
+      : HAIR_SPECIES_FRONT.has(species)
+        ? speciesFile(species, 'front', player.hairColor)
+        : FIXED_SPECIES_FRONT.has(species)
+          ? speciesFile(species, 'front')
+          : null;
 
   return {
     weaponBack: equippedWeapon ? `components/weapons/${player.weapon}/${player.weaponTier}/back.png` : null,
@@ -545,33 +558,49 @@ function buildSpeciesComponents() {
   const back = [];
   const front = [];
   for (const species of SPECIES.filter((entry) => entry.id !== 'human')) {
-    const backVariants = species.id === 'tiefling'
-      ? SKINS
-      : species.id === 'celestial'
-        ? [null]
-        : [];
-    for (const skin of backVariants) {
+    const backVariants = SKIN_SPECIES_BACK.has(species.id)
+      ? SKINS.map((entry) => ({ ...entry, axis: 'skin' }))
+      : HAIR_SPECIES_BACK.has(species.id)
+        ? HAIR_COLORS.map((entry) => ({ ...entry, axis: 'hair' }))
+        : FIXED_SPECIES_BACK.has(species.id)
+          ? [null]
+          : [];
+    for (const variant of backVariants) {
       back.push({
         species: species.id,
         speciesName: species.name,
-        variant: skin?.id || 'default',
-        variantName: skin?.name || 'Fixed colors',
-        file: speciesFile(species.id, 'back', skin?.id || 'default'),
+        variant: variant?.id || 'default',
+        variantName: variant?.name || 'Fixed colors',
+        file: speciesFile(species.id, 'back', variant?.id || 'default'),
         layer: 'species-back',
-        spec: componentSpec({ species: species.id, skin: skin?.id || 'peach' }),
+        spec: componentSpec({
+          species: species.id,
+          ...(variant?.axis === 'skin' ? { skin: variant.id } : {}),
+          ...(variant?.axis === 'hair' ? { hairColor: variant.id } : {}),
+        }),
       });
     }
 
-    const frontVariants = ['elf', 'orc', 'goblin'].includes(species.id) ? SKINS : [null];
-    for (const skin of frontVariants) {
+    const frontVariants = SKIN_SPECIES_FRONT.has(species.id)
+      ? SKINS.map((entry) => ({ ...entry, axis: 'skin' }))
+      : HAIR_SPECIES_FRONT.has(species.id)
+        ? HAIR_COLORS.map((entry) => ({ ...entry, axis: 'hair' }))
+        : FIXED_SPECIES_FRONT.has(species.id)
+          ? [null]
+          : [];
+    for (const variant of frontVariants) {
       front.push({
         species: species.id,
         speciesName: species.name,
-        variant: skin?.id || 'default',
-        variantName: skin?.name || 'Fixed colors',
-        file: speciesFile(species.id, 'front', skin?.id || 'default'),
+        variant: variant?.id || 'default',
+        variantName: variant?.name || 'Fixed colors',
+        file: speciesFile(species.id, 'front', variant?.id || 'default'),
         layer: 'species-front',
-        spec: componentSpec({ species: species.id, skin: skin?.id || 'peach' }),
+        spec: componentSpec({
+          species: species.id,
+          ...(variant?.axis === 'skin' ? { skin: variant.id } : {}),
+          ...(variant?.axis === 'hair' ? { hairColor: variant.id } : {}),
+        }),
       });
     }
   }
@@ -832,8 +861,9 @@ export function completeCharacterKitCounts() {
   const hair = ((HAIR_STYLES.length - 1) * HAIR_COLORS.length * 2) - (3 * HAIR_COLORS.length);
   const expressions = EXPRESSIONS.length;
   const faceDetails = (2 * HAIR_COLORS.length) + SKINS.length + 3 + OUTFIT_COLORS.length;
-  const speciesBack = SKINS.length + 1;
-  const speciesFront = (3 * SKINS.length) + 2;
+  const speciesComponents = buildSpeciesComponents();
+  const speciesBack = speciesComponents.back.length;
+  const speciesFront = speciesComponents.front.length;
   const outfitFront = BODY_BUILDS.length * OUTFIT_TIERS.length * (((OUTFITS.length - 2) * OUTFIT_COLORS.length) + 2);
   const outfitBack = BODY_BUILDS.length * OUTFIT_TIERS.length * OUTFIT_COLORS.length;
   const headgear = (COLOR_AWARE_HEADGEAR.size * OUTFIT_COLORS.length)

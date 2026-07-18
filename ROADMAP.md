@@ -155,6 +155,8 @@ The twenty-fifth content slice adds four RPG-ready outfit families—Barbarian F
 
 The twenty-sixth content slice expands the Class Pack Builder from six to ten stable RPG roles. Barbarian turns the new fur silhouette into a shieldless 24-sheet heavy-weapon pack; Necromancer combines deathshrouds, four ritual weapon families, and bone or arcane shields in 34 sheets; Paladin produces 39 plate, holy-blade, crushing-weapon, and heavy-shield sheets; and Druid mixes a wilderness coat, martial tools, spell focuses, and primal shields across 34 sheets. The original six ids and Warrior default remain unchanged. Generic validation proves every template references valid unique equipment, preserves the complete source identity and custom palette, applies Tier 1 defaults, stays within its curated rules, deduplicates complete specifications, and resolves every expected modular combat-effect family.
 
+The twenty-seventh content slice expands the playable species roster from six to ten with Dwarf, Undead, Lizardfolk, and Beastkin. Dwarf adds a broad directional head silhouette without moving the shared body or equipment anchors; Undead adds a fixed-color skull and animated bone hands; Lizardfolk adds skin-matched scale crests, slit eyes, a profile snout, and an animated hip-level tail; Beastkin adds hair-matched ears, muzzle, and animated tufted tail. Human remains pixel-identical, every species stays distinct across all directions and animations, full helmets suppress front traits, and all body builds, outfits, weapons, shields, expressions, and hairstyles remain compatible. Complete Kit and Complete Pack schema v10 add 33 deduplicated species sheets for 20 back and 40 front passes overall, raising the shared component library to 1910 PNGs, the standalone kit to 2137 PNGs, and a 24-player Complete Pack to 2160 PNGs. Validation proves palette-axis selection, walk/attack tail motion, stable recipe paths, and pixel-exact recomposition.
+
 Candidate additions:
 
 - More body types beyond the completed four-build silhouette foundation
@@ -163,7 +165,7 @@ Candidate additions:
 - More outfits beyond the completed nine-family foundation; avoid tiny accessory clutter at 24x24
 - More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2/Tier 3/Tier 4/Tier 5 progression finished)
 - Additional off-hand items such as spell foci, lanterns, and quivers (eight-family shield progression through Tier 5 complete)
-- More species-specific features beyond the completed six-species ears, tusks, horns, wings, halo, and tail foundation
+- More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants
 - Optional new animations after the existing sheet contract has a versioning plan
 

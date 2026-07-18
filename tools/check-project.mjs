@@ -259,10 +259,10 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   },
 }));
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
-check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 9, 'complete character kits must use the expanded outfit component schema');
+check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 10, 'complete character kits must use the expanded species component schema');
 check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
 check(characterKit.COMPLETE_CHARACTER_PACK_FORMAT === '8-bit-sprite-assembler-complete-character-pack', 'combined complete packs must expose a distinct stable format id');
-check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 9, 'combined complete packs must use the expanded outfit component schema');
+check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 10, 'combined complete packs must use the expanded species component schema');
 check(
   JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
     'weapon-back', 'shield-back', 'species-back', 'outfit-back', 'outfit', 'skin-body', 'head',
@@ -273,20 +273,49 @@ check(
 const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntries);
 check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
 check(
-  completeKitPlan.counts.componentPngs === 1877
+  completeKitPlan.counts.componentPngs === 1910
     && completeKitPlan.counts.enemyFamilies === 57
     && completeKitPlan.counts.enemySheets === 202
     && completeKitPlan.counts.effectCategories === 4
     && completeKitPlan.counts.effectSheets === 24
-    && completeKitPlan.counts.totalPngs === 2104,
-  'complete character kits must contain 1877 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
+    && completeKitPlan.counts.totalPngs === 2137,
+  'complete character kits must contain 1910 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
 check(completeKitPlan.components.hair.length === 119, 'complete kits must collapse visually identical under-headgear hair variants');
 check(completeKitPlan.components.expressions.length === 6, 'complete kits must store each animated expression exactly once');
 check(completeKitPlan.components.faceDetails.length === 30, 'complete kits must store only the color-dependent facial-detail variants');
-check(completeKitPlan.components.speciesBack.length === 7 && completeKitPlan.components.speciesFront.length === 20, 'complete kits must store only the color-dependent species back/front variants');
+check(completeKitPlan.components.speciesBack.length === 20 && completeKitPlan.components.speciesFront.length === 40, 'complete kits must store only the color-dependent species back/front variants');
+const dwarfRecipe = completeKitPlan.recipes.find((recipe) => recipe.spec.species === 'dwarf');
+const undeadRecipe = completeKitPlan.recipes.find((recipe) => recipe.spec.species === 'undead');
+const lizardfolkRecipe = completeKitPlan.recipes.find((recipe) => recipe.spec.species === 'lizardfolk');
+const beastkinRecipe = completeKitPlan.recipes.find((recipe) => recipe.spec.species === 'beastkin');
+check(
+  dwarfRecipe?.components.speciesBack === null
+    && dwarfRecipe?.components.speciesFront === `components/species/dwarf/front/${dwarfRecipe.spec.skin}.png`,
+  'Dwarf recipes must select the matching skin-dependent front component without a back pass',
+);
+check(
+  undeadRecipe?.components.speciesBack === null
+    && undeadRecipe?.components.speciesFront === 'components/species/undead/front/default.png',
+  'Undead recipes must select the fixed-color skull component without a back pass',
+);
+check(
+  lizardfolkRecipe?.components.speciesBack === `components/species/lizardfolk/back/${lizardfolkRecipe.spec.skin}.png`
+    && lizardfolkRecipe?.components.speciesFront === `components/species/lizardfolk/front/${lizardfolkRecipe.spec.skin}.png`,
+  'Lizardfolk recipes must select matching skin-dependent front and tail components',
+);
+check(
+  beastkinRecipe?.components.speciesBack === `components/species/beastkin/back/${beastkinRecipe.spec.hairColor}.png`
+    && beastkinRecipe?.components.speciesFront === `components/species/beastkin/front/${beastkinRecipe.spec.hairColor}.png`,
+  'Beastkin recipes must select matching hair-dependent fur and tail components',
+);
+check(
+  completeKitPlan.components.speciesBack.find((entry) => entry.species === 'beastkin' && entry.variant === 'blue')?.spec.hairColor === 'blue'
+    && completeKitPlan.components.speciesFront.find((entry) => entry.species === 'lizardfolk' && entry.variant === 'orc')?.spec.skin === 'orc',
+  'species component render specs must preserve their hair- or skin-color variant axis',
+);
 check(completeKitPlan.components.outfits.length === 1020 && completeKitPlan.components.outfitBack.length === 140, 'complete kits must cover all nine outfits, four body builds, and five armor tiers while omitting fixed-color duplicates');
 check(completeKitPlan.components.headgear.length === 41, 'complete kits must avoid duplicate fixed-color headgear sheets');
 check(completeKitPlan.components.weapons.length === 75 && completeKitPlan.components.shields.length === 326, 'complete kits must store every five-tier weapon and shield family while omitting visually identical color passes');
@@ -334,7 +363,7 @@ const completeKitPaths = [
   ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 2104, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 2137, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
@@ -379,7 +408,7 @@ check(runtimeSources['app.js'].includes('validId(E.BODY_BUILDS, player.bodyBuild
 check(runtimeSources['app.js'].includes("'Body build'"), 'the player editor must expose a dedicated body-build control');
 check(runtimeSources['engine/generators.js'].includes('bodyBuild: rnd(BODY_BUILDS).id'), 'random players must choose a valid body build');
 check(runtimeSources['engine/renderer.js'].includes("bodyBuild: spec.bodyBuild || 'classic'"), 'legacy player specs must render with the Classic build');
-const expectedSpecies = ['human', 'elf', 'orc', 'goblin', 'tiefling', 'celestial'];
+const expectedSpecies = ['human', 'elf', 'orc', 'goblin', 'tiefling', 'celestial', 'dwarf', 'undead', 'lizardfolk', 'beastkin'];
 check(JSON.stringify(engine.SPECIES.map((species) => species.id)) === JSON.stringify(expectedSpecies), 'the player species catalog must retain its stable ids and Human default');
 check(runtimeSources['app.js'].includes('validId(E.SPECIES, player.species'), 'saved player specs must safely migrate missing or invalid species');
 check(runtimeSources['app.js'].includes("'Species'"), 'the player editor must expose a dedicated species control');
@@ -507,7 +536,7 @@ for (const species of engine.SPECIES) {
           delete legacySpec.species;
           check(JSON.stringify(complete) === JSON.stringify(renderPixels(legacySpec, dir, anim.id, frame)), 'an omitted species field must remain pixel-identical to Human');
         } else {
-          const expectsBack = species.id === 'tiefling' || species.id === 'celestial';
+          const expectsBack = ['tiefling', 'celestial', 'lizardfolk', 'beastkin'].includes(species.id);
           check(front.some((pixel) => pixel !== null), `${species.name} must expose visible animated front species pixels in ${dir} ${anim.id} frame ${frame}`);
           check(back.some((pixel) => pixel !== null) === expectsBack, `${species.name} must expose only its intended back species pass in ${dir} ${anim.id} frame ${frame}`);
         }
@@ -516,11 +545,38 @@ for (const species of engine.SPECIES) {
   }
   speciesSignatures.set(species.id, frames.join('|'));
 }
-check(new Set(speciesSignatures.values()).size === engine.SPECIES.length, 'all six player species must remain visually distinct across the complete animation set');
+check(new Set(speciesSignatures.values()).size === engine.SPECIES.length, 'all ten player species must remain visually distinct across the complete animation set');
 for (const speciesId of expectedSpecies.slice(1)) {
   const hidden = renderPixels({ ...speciesProbe, species: speciesId, headgear: 'fullhelm' }, 'down', 'idle', 0, { layer: 'species-front' });
   check(hidden.every((pixel) => pixel === null), `${speciesId} front traits must hide beneath a full helmet`);
 }
+
+for (const speciesId of ['lizardfolk', 'beastkin']) {
+  for (const animId of ['walk', 'attack']) {
+    const anim = engine.ANIMS.find((entry) => entry.id === animId);
+    const tailFrames = Array.from({ length: anim.frames }, (_, frame) => (
+      renderPixels({ ...speciesProbe, species: speciesId }, 'down', animId, frame, { layer: 'species-back' }).join(',')
+    ));
+    check(new Set(tailFrames).size > 1, `${speciesId} tail must follow the ${animId} animation rig`);
+  }
+}
+
+const dwarfPeach = renderPixels({ ...speciesProbe, species: 'dwarf', skin: 'peach' }, 'down', 'idle', 0, { layer: 'species-front' });
+const dwarfOrc = renderPixels({ ...speciesProbe, species: 'dwarf', skin: 'orc' }, 'down', 'idle', 0, { layer: 'species-front' });
+const lizardPeach = renderPixels({ ...speciesProbe, species: 'lizardfolk', skin: 'peach' }, 'down', 'idle', 0, { layer: 'species-back' });
+const lizardOrc = renderPixels({ ...speciesProbe, species: 'lizardfolk', skin: 'orc' }, 'down', 'idle', 0, { layer: 'species-back' });
+check(JSON.stringify(dwarfPeach) !== JSON.stringify(dwarfOrc), 'Dwarf head traits must follow the selected skin palette');
+check(JSON.stringify(lizardPeach) !== JSON.stringify(lizardOrc), 'Lizardfolk scales and tail must follow the selected skin palette');
+
+const beastBrownFront = renderPixels({ ...speciesProbe, species: 'beastkin', hairColor: 'brown' }, 'down', 'idle', 0, { layer: 'species-front' });
+const beastBlueFront = renderPixels({ ...speciesProbe, species: 'beastkin', hairColor: 'blue' }, 'down', 'idle', 0, { layer: 'species-front' });
+const beastBrownBack = renderPixels({ ...speciesProbe, species: 'beastkin', hairColor: 'brown' }, 'down', 'idle', 0, { layer: 'species-back' });
+const beastBlueBack = renderPixels({ ...speciesProbe, species: 'beastkin', hairColor: 'blue' }, 'down', 'idle', 0, { layer: 'species-back' });
+check(JSON.stringify(beastBrownFront) !== JSON.stringify(beastBlueFront) && JSON.stringify(beastBrownBack) !== JSON.stringify(beastBlueBack), 'Beastkin ears, muzzle, and tail must follow the selected hair palette');
+
+const undeadWarm = renderPixels({ ...speciesProbe, species: 'undead', skin: 'peach', hairColor: 'brown' }, 'down', 'idle', 0, { layer: 'species-front' });
+const undeadCool = renderPixels({ ...speciesProbe, species: 'undead', skin: 'orc', hairColor: 'blue' }, 'down', 'idle', 0, { layer: 'species-front' });
+check(JSON.stringify(undeadWarm) === JSON.stringify(undeadCool), 'Undead skull and bone traits must use one stable fixed-color component');
 
 const expressionProbe = {
   ...speciesProbe,

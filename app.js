@@ -2331,7 +2331,7 @@ function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) 
     + '- hair: all 11 styles and seven colors, with full and under-headgear fits\n'
     + '- expressions: neutral, happy, angry, sad, surprised, and determined animated face layers\n'
     + '- face-details: only the color-dependent variants each detail needs\n'
-    + '- species: direction-aware ears, tusks, horns, tails, wings, and halos split into back/front layers\n'
+    + '- species: direction-aware ears, tusks, horns, skulls, bone hands, muzzles, scales, tails, wings, and halos split into back/front layers\n'
     + '- outfits: all nine families, four body builds, and five armor tiers as reusable front layers plus separate cape-back layers\n'
     + '- headgear: all 12 choices, with color variants only where the art actually uses outfit colors\n'
     + '- weapons and shields: all five tiers as direction-aware back/front animation layers\n'

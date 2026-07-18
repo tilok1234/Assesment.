@@ -7,6 +7,10 @@ export const SPECIES = [
   { id: 'goblin',   name: 'Goblin' },
   { id: 'tiefling', name: 'Tiefling' },
   { id: 'celestial', name: 'Celestial' },
+  { id: 'dwarf',     name: 'Dwarf' },
+  { id: 'undead',    name: 'Undead' },
+  { id: 'lizardfolk', name: 'Lizardfolk' },
+  { id: 'beastkin',  name: 'Beastkin' },
 ];
 export const BODY_BUILDS = [
   { id: 'classic', name: 'Classic' },

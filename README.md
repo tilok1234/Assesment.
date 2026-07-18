@@ -4,7 +4,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 
 ## Current capabilities
 
-- Player assembly across Human, Elf, Orc, Goblin, Tiefling, and Celestial species; Classic, Lean, Sturdy, and Heroic body builds; plus skin, 11 hairstyles, six expressions, eight facial details, 12 headgear choices, nine outfits across five armor tiers, weapon type and tier, shield, and palette choices
+- Player assembly across Human, Elf, Orc, Goblin, Tiefling, Celestial, Dwarf, Undead, Lizardfolk, and Beastkin species; Classic, Lean, Sturdy, and Heroic body builds; plus skin, 11 hairstyles, six expressions, eight facial details, 12 headgear choices, nine outfits across five armor tiers, weapon type and tier, shield, and palette choices
 - 57 enemy families with 202 predefined variants
 - 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
 - A Combat Loadout Builder that previews those overlays on players and enemies, supplies automatic weapon-aware defaults, supports per-slot overrides, saves named recipes, and exports game-ready JSON
@@ -14,7 +14,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
 - Persistent named sprite packs that collect player, enemy, and combat-effect designs and download as a ZIP with full PNG sheets and `manifest.json`
-- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 1877 content-unique atomic component sheets, all 202 enemy variations, and all 24 combat effects at native 1x
+- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 1910 content-unique atomic component sheets, all 202 enemy variations, and all 24 combat effects at native 1x
 - A validated asset pack containing 232 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
@@ -153,7 +153,7 @@ The working pack stays on the current device. Each downloaded ZIP contains one c
 
 For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes and combat loadouts, the full deduplicated component library, all 57 enemy families with all 202 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
 
-A 24-player Complete Pack contains 1877 shared component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2127 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+A 24-player Complete Pack contains 1910 shared component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2160 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
 
 ## Complete Character Kits
 
@@ -163,7 +163,7 @@ Use **Download Complete Character Kit** in Player mode to export one `8-bit-spri
 - Six expression layers covering Neutral, Happy, Angry, Sad, Surprised, and Determined
 - 119 hair layers covering all 11 styles, seven colors, and headgear fits; identical short, spiky, bowl, and topknot fitted art shares one file
 - 30 facial-detail layers containing only the color-dependent variants each detail actually needs
-- 27 direction-aware species layers: skin-matched pointed ears, tusks, and Tiefling tails plus fixed-color horns, Celestial wings, and halos, split into seven back and 20 front passes
+- 60 direction-aware species layers split into 20 back and 40 front passes: skin-matched ears, tusks, Dwarf features, Lizardfolk scales and tails; hair-matched Beastkin ears, muzzles, and tails; plus fixed-color Tiefling horns, Celestial wings and halos, and Undead skulls and bone hands
 - 1020 outfit-front layers plus 140 cape-back layers covering all nine outfit families, four body builds, and five armor tiers; fixed-color leather and plate art is stored once per build and tier
 - 41 headgear layers covering all 12 choices; fixed-color gear is stored once, while cap, hood, wizard hat, bandana, and plumed helm receive the seven catalog outfit colors
 - 150 weapon layers covering all 15 families at Tiers 1-5 in back/front passes
@@ -172,13 +172,13 @@ Use **Download Complete Character Kit** in Player mode to export one `8-bit-spri
 - 24 transparent combat-effect sheets covering trails, projectiles, impacts, and statuses, organized beneath `effects/`
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
-The standalone kit contains 1877 content-unique component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 2104 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
+The standalone kit contains 1910 content-unique component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 2137 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
 
 Draw the non-null component paths from a recipe in this order:
 
 `weapon-back` → `shield-back` → `species-back` → `outfit-back` → `outfit` → `skin-body` → `head` → `expression` → `species-front` → `face-detail` → `hair` → `headgear` → `shield-front` → `weapon-front`
 
-Each schema-v9 recipe records the selected species, body build, expression, hairstyle, headgear, and expanded outfit family and may include a combat loadout with explicit selections, weapon-aware automatic defaults, resolved effect files, and draw order. Build-specific outfit and cape paths keep the silhouette modular while skin, head, expression, hair, species, headgear, weapon, and shield layers stay shared. Draw every resolved combat-effect sheet after the assembled sprite, using the same animation column, direction row, and 24x24 source rectangle. Status effects animate across every animation; trails, projectiles, and impacts are transparent outside attack.
+Each schema-v10 recipe records the selected species, body build, expression, hairstyle, headgear, and expanded outfit family and may include a combat loadout with explicit selections, weapon-aware automatic defaults, resolved effect files, and draw order. Build-specific outfit and cape paths keep the silhouette modular while skin, head, expression, hair, species, headgear, weapon, and shield layers stay shared. Draw every resolved combat-effect sheet after the assembled sprite, using the same animation column, direction row, and 24x24 source rectangle. Status effects animate across every animation; trails, projectiles, and impacts are transparent outside attack.
 
 Every component shares the same animation grid and has been validated to recompose the complete renderer pixel-for-pixel across all directions and frames. To craft a new character in a game, copy a recipe and change its component paths; no art needs to be duplicated.
 
