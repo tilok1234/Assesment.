@@ -31,6 +31,7 @@ const palettePair = (value, fallback) => (
     : fallback
 );
 const OUTFIT_TIER_IDS = ['tier1', 'tier2', 'tier3', 'tier4', 'tier5'];
+const ROBE_OUTFITS = new Set(['robe', 'cleric', 'necromancer']);
 const outfitTierRank = (tier) => Math.max(1, OUTFIT_TIER_IDS.indexOf(tier) + 1);
 const BODY_BUILD_PROFILES = {
   classic: { id: 'classic', frontX: 8, frontW: 8, sideX: 9, sideW: 6, capeSideX: 7, capeSideW: 2 },
@@ -46,9 +47,15 @@ function bodyBuildProfile(id) {
 function drawOutfitTier(S, R, d, u, BT, C, outfit) {
   const rank = outfitTierRank(C.outfitTier);
   if (rank === 1 || C.bone) return;
-  const tier2Trim = outfit === 'leather' ? METAL[1] : METAL[2];
-  const tier3Trim = GOLD[0];
-  const tier5Glow = '#fff2a8';
+  const tier2Trim = outfit === 'leather' || outfit === 'ranger' || outfit === 'barbarian'
+    ? METAL[1]
+    : outfit === 'necromancer' ? BONE[1] : METAL[2];
+  const tier3Trim = outfit === 'necromancer'
+    ? '#a86de0'
+    : outfit === 'ranger' ? '#9bd46a' : outfit === 'barbarian' ? '#e49a4a' : GOLD[0];
+  const tier5Glow = outfit === 'necromancer'
+    ? '#e0a4ff'
+    : outfit === 'ranger' ? '#d9ff9a' : outfit === 'barbarian' ? '#ffb15c' : '#fff2a8';
 
   // Tier 2: reinforced shoulders and waist trim.
   if (d === 'right') {
@@ -95,6 +102,98 @@ function drawOutfitTier(S, R, d, u, BT, C, outfit) {
       S(11, BT + u + 1, tier5Glow); S(12, BT + u + 1, tier5Glow);
     }
     S(11, 17, tier5Glow); S(12, 17, tier5Glow);
+  }
+}
+
+function drawOutfitIdentity(S, R, d, u, BT, outfit, oc, build) {
+  if (!['barbarian', 'ranger', 'cleric', 'necromancer'].includes(outfit)) return;
+  const side = d === 'right';
+  const tx = side ? build.sideX : build.frontX;
+  const tw = side ? build.sideW : build.frontW;
+  const top = BT + u;
+  const mid = tx + Math.floor((tw - 1) / 2);
+
+  if (outfit === 'barbarian') {
+    if (side) {
+      R(tx - 1, top, 2, 2, CREAM[0]);
+      S(tx + tw, top + 1, CREAM[1]);
+      R(tx + 1, top + 2, Math.max(2, tw - 2), 2, WOOD[0]);
+      S(tx + tw - 2, top + 3, WOOD[2]);
+    } else {
+      R(tx, top, tw, 2, CREAM[0]);
+      S(tx - 1, top + 1, CREAM[1]); S(tx + tw, top + 1, CREAM[1]);
+      S(tx + 1, top, CREAM[1]); S(tx + tw - 2, top + 1, CREAM[1]);
+      R(mid, top + 2, 2, 3, WOOD[0]);
+      if (d === 'down') S(mid + 1, top + 3, WOOD[2]);
+    }
+    R(tx, 17, tw, 1, WOOD[1]);
+    S(mid, 17, GOLD[1]);
+    return;
+  }
+
+  if (outfit === 'ranger') {
+    if (side) {
+      R(tx - 1, top + 1, 2, 5, oc[1]);
+      S(tx + tw, top + 1, CREAM[1]);
+      S(tx + 1, top + 1, WOOD[0]); S(tx + 2, top + 2, WOOD[0]);
+      S(tx + 3, top + 3, WOOD[0]);
+      R(tx, 18, Math.max(2, tw - 2), 2, oc[0]);
+      S(tx - 1, 19, oc[1]);
+    } else {
+      S(tx - 1, top + 1, oc[1]); S(tx + tw, top + 1, oc[1]);
+      if (d === 'down') {
+        const strapLength = Math.min(4, Math.max(2, tw - 2));
+        for (let i = 0; i < strapLength; i++) S(tx + 1 + i, top + 1 + i, WOOD[0]);
+        S(tx + Math.min(tw - 2, strapLength + 1), top + strapLength, GOLD[1]);
+      } else {
+        R(mid, top + 1, 1, 5, oc[1]);
+        S(mid - 1, top + 1, CREAM[1]);
+      }
+      R(tx, 18, Math.max(2, Math.floor(tw / 3)), 2, oc[0]);
+      R(tx + tw - Math.max(2, Math.floor(tw / 3)), 18, Math.max(2, Math.floor(tw / 3)), 2, oc[0]);
+      S(tx, 19, oc[1]); S(tx + tw - 1, 19, oc[1]);
+    }
+    return;
+  }
+
+  if (outfit === 'cleric') {
+    if (side) {
+      const stoleX = tx + Math.max(1, tw - 2);
+      R(stoleX, top, 1, 8 - u, CREAM[0]);
+      S(stoleX - 1, top + 2, GOLD[0]); S(stoleX, top + 2, GOLD[0]);
+      R(tx, 18, tw, 1, GOLD[1]);
+    } else {
+      const stoleW = tw >= 8 ? 2 : 1;
+      R(mid, top, stoleW, 20 - top, CREAM[0]);
+      if (d === 'down') {
+        R(mid - 1, top + 2, stoleW + 2, 1, GOLD[0]);
+        S(mid, top + 1, GOLD[0]); S(mid, top + 3, GOLD[0]);
+      } else {
+        S(mid - 1, top + 1, GOLD[0]); S(mid + stoleW, top + 1, GOLD[0]);
+        S(mid, top + 4, GOLD[0]);
+      }
+      R(tx, 18, tw, 1, GOLD[1]);
+    }
+    return;
+  }
+
+  if (side) {
+    S(tx - 1, top - 1, oc[1]); S(tx, top - 1, oc[1]);
+    S(tx + tw, top, oc[1]);
+    R(tx + 1, top + 2, 1, 5, INK);
+    S(tx + 2, top + 2, BONE[0]);
+    S(tx, 19, BONE[1]); S(tx + Math.max(2, tw - 2), 19, BONE[1]);
+  } else {
+    S(tx - 1, top, oc[1]); S(tx + tw, top, oc[1]);
+    S(tx, top - 1, oc[1]); S(tx + tw - 1, top - 1, oc[1]);
+    R(mid, top + 2, 1, 5, INK);
+    if (d === 'down') {
+      S(mid - 1, top + 1, BONE[0]); S(mid, top + 1, BONE[0]);
+      S(mid + 1, top + 2, BONE[1]);
+    } else {
+      S(mid - 1, top + 2, BONE[1]); S(mid + 1, top + 2, BONE[1]);
+    }
+    for (let x = tx; x < tx + tw; x += 2) S(x, 19, BONE[1]);
   }
 }
 
@@ -256,7 +355,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   const outfit = C.outfit || 'tunic';
   const build = bodyBuildProfile(C.bodyBuild);
   const armorRank = outfitTierRank(C.outfitTier);
-  const robe = outfit === 'robe';
+  const robe = ROBE_OUTFITS.has(outfit);
   const pants = C.bone ? BONE : (outfit === 'plate' ? IRONPANTS : PANTS);
   const eyeC = C.eye || INK;
 
@@ -371,9 +470,14 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
     if (d === 'right') {
       const tw = build.sideW, tx = build.sideX;
       if (robe) {
-        R(tx, BT + u, tw, 19 - (BT + u) + 1, oc[0]);
+        const robeBottom = outfit === 'necromancer' ? 18 : 19;
+        R(tx, BT + u, tw, robeBottom - (BT + u) + 1, oc[0]);
         if (build.heroic) R(tx - 1, BT + u, tw + 2, 2, oc[0]);
-        R(tx, 19, tw, 1, oc[1]);
+        if (outfit === 'necromancer') {
+          for (let x = tx; x < tx + tw; x += 2) S(x, 19, oc[1]);
+        } else {
+          R(tx, 19, tw, 1, oc[1]);
+        }
         R(tx, BT + u, 1, 8 - u, oc[1]);
       } else {
         R(tx, BT + u, tw, 17 - (BT + u), torsoC[0]);
@@ -384,10 +488,15 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
     } else {
       const tx = build.frontX, tw = build.frontW;
       if (robe) {
-        R(tx, BT + u, tw, 19 - (BT + u) + 1, oc[0]);
+        const robeBottom = outfit === 'necromancer' ? 18 : 19;
+        R(tx, BT + u, tw, robeBottom - (BT + u) + 1, oc[0]);
         if (build.heroic) R(tx - 1, BT + u, tw + 2, 2, oc[0]);
-        R(tx, 19, tw, 1, oc[1]);
-        if (d === 'down') { S(11, 19, GOLD[0]); S(12, 19, GOLD[0]); }
+        if (outfit === 'necromancer') {
+          for (let x = tx; x < tx + tw; x += 2) S(x, 19, oc[1]);
+        } else {
+          R(tx, 19, tw, 1, oc[1]);
+        }
+        if (d === 'down' && outfit === 'robe') { S(11, 19, GOLD[0]); S(12, 19, GOLD[0]); }
       } else {
         R(tx, BT + u, tw, 17 - (BT + u), torsoC[0]);
         if (build.heroic) R(tx - 1, BT + u, tw + 2, 2, torsoC[0]);
@@ -414,10 +523,15 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
     S(9, 19, oc[1]); S(11, 19, oc[1]); S(13, 19, oc[1]);
   }
 
+  if (includeOutfit) drawOutfitIdentity(S, R, d, u, BT, outfit, oc, build);
   if (includeOutfit) drawOutfitTier(S, R, d, u, BT, C, outfit);
 
   // ---- arms ----
-  const sleeveC = C.bone ? BONE : (outfit === 'plate' ? METAL : (outfit === 'cape' || outfit === 'leather' ? CREAM : oc));
+  const sleeveC = C.bone
+    ? BONE
+    : outfit === 'plate'
+      ? METAL
+      : ['cape', 'leather', 'barbarian'].includes(outfit) ? CREAM : oc;
   if (d === 'down' || d === 'up') {
     const armDU = (x0, off) => {
       if (includeOutfit) {

@@ -82,6 +82,10 @@ export const OUTFITS = [
   { id: 'plate',   name: 'Plate',      tier2Name: 'Knight Plate',     tier3Name: 'Dragonforged Plate',     tier4Name: 'Colossus Aegisplate',   tier5Name: 'Godking Panoply' },
   { id: 'robe',    name: 'Robe',       tier2Name: 'Enchanter Robe',   tier3Name: 'Archmage Vestments',     tier4Name: 'Astral Regalia',        tier5Name: 'Robes of Creation' },
   { id: 'cape',    name: 'Caped hero', tier2Name: 'Vanguard Mantle',  tier3Name: 'Dragoncrest Mantle',    tier4Name: 'Empyrean Battlecloak', tier5Name: 'Worldbanner Regalia' },
+  { id: 'barbarian', name: 'Barbarian furs',    tier2Name: 'Ironhide Furs',          tier3Name: 'Warbeast Regalia',       tier4Name: 'Titanhide War-Mantle',    tier5Name: 'Furs of the World-Eater' },
+  { id: 'ranger',    name: 'Ranger coat',       tier2Name: 'Trailwarden Coat',       tier3Name: 'Kingswood Mantle',       tier4Name: 'Wildhunt Greatcoat',      tier5Name: 'Cloak of the First Hunt' },
+  { id: 'cleric',    name: 'Cleric vestments',  tier2Name: 'Consecrated Vestments',  tier3Name: 'High Priest Regalia',    tier4Name: 'Seraphic War Vestments', tier5Name: 'Vestments of the Dawn Saint' },
+  { id: 'necromancer', name: 'Necromancer robes', tier2Name: 'Graveweaver Robes',    tier3Name: 'Lich Regent Vestments', tier4Name: 'Abyssal Deathshroud',     tier5Name: 'Robes of the Last Requiem' },
 ];
 export const OUTFIT_TIERS = [
   { id: 'tier1', name: 'Tier 1' },

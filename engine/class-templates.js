@@ -34,8 +34,8 @@ export const CLASS_TEMPLATES = Object.freeze([
   Object.freeze({
     id: 'ranger',
     name: 'Ranger',
-    description: 'Leather-clad ranged hunter with bows, crossbows, field blades, spears, and an optional buckler.',
-    outfit: 'leather',
+    description: 'Trail-ready hunter in a split ranger coat with bows, crossbows, field blades, spears, and an optional buckler.',
+    outfit: 'ranger',
     defaultWeapon: 'bow',
     defaultShield: 'none',
     weapons: Object.freeze(['dagger', 'spear', 'bow', 'crossbow']),
@@ -64,8 +64,8 @@ export const CLASS_TEMPLATES = Object.freeze([
   Object.freeze({
     id: 'cleric',
     name: 'Cleric',
-    description: 'Armored divine hybrid with blunt weapons, holy focuses, and physical or arcane shields.',
-    outfit: 'plate',
+    description: 'Divine hybrid in ceremonial vestments with blunt weapons, holy focuses, and physical or arcane shields.',
+    outfit: 'cleric',
     defaultWeapon: 'mace',
     defaultShield: 'round',
     weapons: Object.freeze(['mace', 'warhammer', 'staff', 'wand']),

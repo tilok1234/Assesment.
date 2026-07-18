@@ -221,10 +221,10 @@ const masterKitPlayer = {
   shield: 'round', shieldTier: 'tier1', palette: null,
 };
 const masterKitPlan = characterKit.buildMasterCharacterKitPlan(masterKitPlayer);
-check(masterKitPlan.bodies.length === 420, 'master kits must include every outfit, catalog color, and headgear body combination');
+check(masterKitPlan.bodies.length === 756, 'master kits must include every outfit, catalog color, and headgear body combination');
 check(masterKitPlan.weapons.length === 75, 'master kits must include all fifteen weapons at all five tiers');
 check(masterKitPlan.shields.length === 280, 'master kits must include all eight shields at all five tiers and seven catalog colors');
-check(masterKitPlan.counts.totalPngs === 1131, 'standard master kits must contain 1131 native PNG sheets including the assembled preview');
+check(masterKitPlan.counts.totalPngs === 1467, 'standard master kits must contain 1467 native PNG sheets including the assembled preview');
 check(masterKitPlan.bodies.every((entry) => entry.layer === 'body' && entry.spec.weapon === 'none' && entry.spec.shield === 'none'), 'master-kit bodies must not bake weapons or shields');
 check(masterKitPlan.weapons.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit weapon must expose separate back and front layers');
 check(masterKitPlan.shields.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit shield must expose separate back and front layers');
@@ -239,7 +239,7 @@ const customKitPlan = characterKit.buildMasterCharacterKitPlan({
   ...masterKitPlayer,
   palette: { skin: ['#123456', '#234567'], hair: ['#345678', '#456789'], outfit: ['#56789a', '#6789ab'] },
 });
-check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 1271, 'master kits must add the current custom outfit color without replacing catalog colors');
+check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 1655, 'master kits must add the current custom outfit color without replacing catalog colors');
 const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   id: `hero-${index + 1}`,
   name: `Hero ${index + 1}`,
@@ -259,10 +259,10 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   },
 }));
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
-check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 8, 'complete character kits must use the expanded hair-and-headgear component schema');
+check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 9, 'complete character kits must use the expanded outfit component schema');
 check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
 check(characterKit.COMPLETE_CHARACTER_PACK_FORMAT === '8-bit-sprite-assembler-complete-character-pack', 'combined complete packs must expose a distinct stable format id');
-check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 8, 'combined complete packs must use the expanded hair-and-headgear component schema');
+check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 9, 'combined complete packs must use the expanded outfit component schema');
 check(
   JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
     'weapon-back', 'shield-back', 'species-back', 'outfit-back', 'outfit', 'skin-body', 'head',
@@ -273,13 +273,13 @@ check(
 const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntries);
 check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
 check(
-  completeKitPlan.counts.componentPngs === 1317
+  completeKitPlan.counts.componentPngs === 1877
     && completeKitPlan.counts.enemyFamilies === 57
     && completeKitPlan.counts.enemySheets === 202
     && completeKitPlan.counts.effectCategories === 4
     && completeKitPlan.counts.effectSheets === 24
-    && completeKitPlan.counts.totalPngs === 1544,
-  'complete character kits must contain 1317 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
+    && completeKitPlan.counts.totalPngs === 2104,
+  'complete character kits must contain 1877 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
@@ -287,7 +287,7 @@ check(completeKitPlan.components.hair.length === 119, 'complete kits must collap
 check(completeKitPlan.components.expressions.length === 6, 'complete kits must store each animated expression exactly once');
 check(completeKitPlan.components.faceDetails.length === 30, 'complete kits must store only the color-dependent facial-detail variants');
 check(completeKitPlan.components.speciesBack.length === 7 && completeKitPlan.components.speciesFront.length === 20, 'complete kits must store only the color-dependent species back/front variants');
-check(completeKitPlan.components.outfits.length === 460 && completeKitPlan.components.outfitBack.length === 140, 'complete kits must cover all four body builds and five armor tiers while omitting fixed-color duplicates');
+check(completeKitPlan.components.outfits.length === 1020 && completeKitPlan.components.outfitBack.length === 140, 'complete kits must cover all nine outfits, four body builds, and five armor tiers while omitting fixed-color duplicates');
 check(completeKitPlan.components.headgear.length === 41, 'complete kits must avoid duplicate fixed-color headgear sheets');
 check(completeKitPlan.components.weapons.length === 75 && completeKitPlan.components.shields.length === 326, 'complete kits must store every five-tier weapon and shield family while omitting visually identical color passes');
 check(
@@ -334,7 +334,7 @@ const completeKitPaths = [
   ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 1544, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 2104, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
@@ -430,6 +430,13 @@ check(runtimeSources['engine/weapon-renderer.js'].includes("C.weaponTier === 'ti
 check(runtimeSources['engine/renderer.js'].includes("from './weapon-renderer.js'"), 'humanoid rendering must use the focused weapon renderer');
 check(runtimeSources['engine/renderer.js'].includes('weaponFollowRig: true'), 'player weapons must follow the animated humanoid hand rig');
 check(runtimeSources['engine/renderer.js'].includes('enhancedHilts: true'), 'player blade weapons must use readable wrapped grips and pommels');
+const expectedOutfits = ['tunic', 'leather', 'plate', 'robe', 'cape', 'barbarian', 'ranger', 'cleric', 'necromancer'];
+check(
+  JSON.stringify(engine.OUTFITS.map((outfit) => outfit.id)) === JSON.stringify(expectedOutfits),
+  'the outfit catalog must preserve its five legacy ids followed by the four expanded RPG families',
+);
+check(runtimeSources['app.js'].includes('validId(E.OUTFITS, player.outfit'), 'saved player specs must validate expanded outfits through the stable catalog');
+check(runtimeSources['engine/generators.js'].includes('outfit: rnd(OUTFITS).id'), 'random players must include the expanded outfit catalog');
 check(engine.OUTFITS.every((outfit) => ['tier2Name', 'tier3Name', 'tier4Name', 'tier5Name'].every((key) => typeof outfit[key] === 'string')), 'every outfit must declare named RPG upgrades through Tier 5');
 check(JSON.stringify(engine.OUTFIT_TIERS.map((tier) => tier.id)) === JSON.stringify(['tier1', 'tier2', 'tier3', 'tier4', 'tier5']), 'the armor tier catalog must expose stable Tier 1 through Tier 5 ids');
 check(runtimeSources['app.js'].includes('validId(E.OUTFIT_TIERS, player.outfitTier'), 'saved player specs must safely migrate missing or invalid armor tiers');
@@ -694,6 +701,41 @@ for (const outfit of engine.OUTFITS) {
       new Set(buildLayerSignatures).size === engine.BODY_BUILDS.length,
       `${outfit.id} ${tier.id} must retain four content-distinct body-build outfit components`,
     );
+  }
+}
+const expandedOutfitIds = ['barbarian', 'ranger', 'cleric', 'necromancer'];
+for (const tier of engine.OUTFIT_TIERS) {
+  const outfitSignatures = engine.OUTFITS.map((outfit) => engine.DIRS.flatMap((dir) => (
+    engine.ANIMS.flatMap((anim) => Array.from({ length: anim.frames }, (_, frame) => renderPixels(
+      { ...speciesProbe, bodyBuild: 'classic', outfit: outfit.id, outfitTier: tier.id, outfitColor: 'royal' },
+      dir,
+      anim.id,
+      frame,
+      { layer: 'outfit' },
+    ).join(',')))
+  )).join('|'));
+  check(
+    new Set(outfitSignatures).size === engine.OUTFITS.length,
+    `all nine outfit families must retain distinct complete animation signatures at ${tier.id}`,
+  );
+}
+for (const outfitId of expandedOutfitIds) {
+  for (const dir of engine.DIRS) {
+    const royal = renderPixels({ ...speciesProbe, outfit: outfitId, outfitTier: 'tier1', outfitColor: 'royal' }, dir, 'idle', 0, { layer: 'outfit' });
+    const crimson = renderPixels({ ...speciesProbe, outfit: outfitId, outfitTier: 'tier1', outfitColor: 'crimson' }, dir, 'idle', 0, { layer: 'outfit' });
+    check(JSON.stringify(royal) !== JSON.stringify(crimson), `${outfitId} must retain catalog outfit colors while facing ${dir}`);
+
+    for (const animationId of ['idle', 'walk', 'attack']) {
+      const animation = engine.ANIMS.find((entry) => entry.id === animationId);
+      const frames = Array.from({ length: animation.frames }, (_, frame) => renderPixels(
+        { ...speciesProbe, outfit: outfitId, outfitTier: 'tier1', outfitColor: 'royal' },
+        dir,
+        animationId,
+        frame,
+        { layer: 'outfit' },
+      ).join(','));
+      check(new Set(frames).size >= 2, `${outfitId} must follow ${animationId} body motion while facing ${dir}`);
+    }
   }
 }
 for (const tier of engine.OUTFIT_TIERS) {

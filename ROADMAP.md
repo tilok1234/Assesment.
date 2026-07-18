@@ -151,12 +151,14 @@ The twenty-third content slice adds six stable player expressions: Neutral, Happ
 
 The twenty-fourth content slice expands player customization with four direction-aware hairstyles—Braids, Afro, Topknot, and Messy—and four headgear choices—Bandana, Circlet, Plumed Helm, and Skull Mask—without changing the stable ids of the original seven hairstyles or eight headgear entries. All 11 hairstyles animate through front, side, and rear views. Braids, Afro, and Messy retain readable lower details under fitted gear, while Topknot intentionally shares the compact short/spiky/bowl fit; Bandana and Plumed Helm use outfit colors, Circlet and Skull Mask remain fixed-color components, and expression visibility follows each silhouette, including complete Skull Mask coverage. Complete Kit and Complete Pack schema v8 add 119 deduplicated hair sheets and 41 headgear sheets, raising the shared component library to 1317 PNGs, the standalone kit to 1544 PNGs, and a 24-player Complete Pack to 1567 PNGs. Exhaustive validation proves catalog stability, distinct animation signatures, fitted-hair behavior, expression visibility and coverage, outfit-color behavior, and pixel-exact recipe recomposition.
 
+The twenty-fifth content slice adds four RPG-ready outfit families—Barbarian Furs, Ranger Coat, Cleric Vestments, and Necromancer Robes—after the original five stable outfit ids. Each family has a readable front, profile, and rear identity across Classic, Lean, Sturdy, and Heroic builds; follows idle, walk, attack, and hurt motion; and receives five named armor tiers with family-specific materials and apex accents. Ranger and Cleric class defaults now select their matching outfits. Complete Kit and Complete Pack schema v9 expand outfit coverage to 1020 front sheets and 140 cape-back sheets, raising the shared component library to 1877 PNGs, the standalone kit to 2104 PNGs, and a 24-player Complete Pack to 2127 PNGs. Exhaustive validation proves stable catalog order, all-family and all-tier distinction, directional color behavior, body-build silhouettes, animated motion, and pixel-exact recipe recomposition.
+
 Candidate additions:
 
 - More body types beyond the completed four-build silhouette foundation
 - More facial details and expressions beyond the completed eight-detail and six-expression foundations
 - More hairstyles and headgear beyond the completed 11-style and 12-choice foundation
-- Armor layers, outfits, robes, capes, and accessories
+- More outfits beyond the completed nine-family foundation; avoid tiny accessory clutter at 24x24
 - More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2/Tier 3/Tier 4/Tier 5 progression finished)
 - Additional off-hand items such as spell foci, lanterns, and quivers (eight-family shield progression through Tier 5 complete)
 - More species-specific features beyond the completed six-species ears, tusks, horns, wings, halo, and tail foundation
