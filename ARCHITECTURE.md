@@ -73,7 +73,7 @@ The four expanded outfit families add direction-aware fur, coat-tail, vestment, 
 
 ### RPG class templates
 
-`engine/class-templates.js` owns the stable Warrior, Guardian, Ranger, Rogue, Mage, and Cleric definitions. Each definition selects one outfit family, Tier 1 editor defaults, permitted weapon families, and permitted shield families. Its pure planner preserves character identity and custom colors, expands permitted weapons, armor, and shields through all five tiers, deduplicates complete specifications, records series membership, and assigns stable variant ids. The bounded results are 54 Warrior, 54 Guardian, 29 Ranger, 29 Rogue, 24 Mage, and 39 Cleric sheets. It imports only public catalog data and does not render, package files, access editor state, or touch the DOM.
+`engine/class-templates.js` owns ten stable definitions: Warrior, Guardian, Ranger, Rogue, Mage, Cleric, Barbarian, Necromancer, Paladin, and Druid. The four expanded roles append after the original six ids. Each definition selects one outfit family, Tier 1 editor defaults, permitted weapon families, and permitted shield families. Its pure planner preserves character identity and custom colors, expands permitted weapons, armor, and shields through all five tiers, deduplicates complete specifications, records series membership, and assigns stable variant ids. The bounded results are 54 Warrior, 54 Guardian, 29 Ranger, 29 Rogue, 24 Mage, 39 Cleric, 24 Barbarian, 34 Necromancer, 39 Paladin, and 34 Druid sheets. It imports only public catalog data and does not render, package files, access editor state, or touch the DOM.
 
 ### Complete character kits
 

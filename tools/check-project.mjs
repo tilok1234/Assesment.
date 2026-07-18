@@ -759,8 +759,8 @@ check(engine.CLASS_PACK_VERSION === 1, 'class packs must use an explicit schema 
 check(engine.DEFAULT_CLASS_TEMPLATE === 'warrior', 'Warrior must remain the safe default class template');
 check(
   JSON.stringify(engine.CLASS_TEMPLATES.map((template) => template.id))
-    === JSON.stringify(['warrior', 'guardian', 'ranger', 'rogue', 'mage', 'cleric']),
-  'class templates must retain their stable ids and order',
+    === JSON.stringify(['warrior', 'guardian', 'ranger', 'rogue', 'mage', 'cleric', 'barbarian', 'necromancer', 'paladin', 'druid']),
+  'class templates must retain their six legacy ids followed by the four expanded RPG roles',
 );
 const classFixturePlayer = {
   ...masterKitPlayer,
@@ -782,6 +782,10 @@ const expectedClassCounts = new Map([
   ['rogue', 29],
   ['mage', 24],
   ['cleric', 39],
+  ['barbarian', 24],
+  ['necromancer', 34],
+  ['paladin', 39],
+  ['druid', 34],
 ]);
 for (const template of engine.CLASS_TEMPLATES) {
   check(engine.OUTFITS.some((outfit) => outfit.id === template.outfit), `${template.id} must reference a valid outfit`);
@@ -789,6 +793,8 @@ for (const template of engine.CLASS_TEMPLATES) {
   check(template.defaultShield === 'none' || template.shields.includes(template.defaultShield), `${template.id} default shield must belong to its shield list`);
   check(template.weapons.every((id) => engine.WEAPONS.some((weapon) => weapon.id === id && id !== 'none')), `${template.id} must reference only equipped weapon ids`);
   check(template.shields.every((id) => engine.SHIELDS.some((shield) => shield.id === id && id !== 'none')), `${template.id} must reference only equipped shield ids`);
+  check(new Set(template.weapons).size === template.weapons.length, `${template.id} must not repeat weapon families`);
+  check(new Set(template.shields).size === template.shields.length, `${template.id} must not repeat shield families`);
 
   const applied = engine.applyClassTemplate(classFixturePlayer, template.id);
   check(
@@ -842,6 +848,42 @@ const mageClassEffects = new Set(engine.buildClassPack(classFixturePlayer, 'mage
     .map((slot) => slot.effect)
 )));
 check(mageClassEffects.has('fireball') && mageClassEffects.has('holy-orb') && mageClassEffects.has('shadow-shot'), 'Mage class packs must resolve all three magic projectile families');
+const barbarianClassEffects = new Set(engine.buildClassPack(classFixturePlayer, 'barbarian').variants.flatMap((variant) => (
+  engine.resolveCombatLoadout({ kind: 'player', ...variant.spec }, engine.DEFAULT_COMBAT_LOADOUT).slots
+    .filter((slot) => slot.effect)
+    .map((slot) => slot.effect)
+)));
+check(
+  ['sword-slash', 'axe-cleave', 'spear-thrust', 'hammer-smash'].every((effect) => barbarianClassEffects.has(effect)),
+  'Barbarian class packs must resolve every permitted melee attack family',
+);
+const necromancerClassEffects = new Set(engine.buildClassPack(classFixturePlayer, 'necromancer').variants.flatMap((variant) => (
+  engine.resolveCombatLoadout({ kind: 'player', ...variant.spec }, engine.DEFAULT_COMBAT_LOADOUT).slots
+    .filter((slot) => slot.effect)
+    .map((slot) => slot.effect)
+)));
+check(
+  ['fireball', 'holy-orb', 'shadow-shot'].every((effect) => necromancerClassEffects.has(effect)),
+  'Necromancer class packs must resolve all three magic projectile families',
+);
+const paladinClassEffects = new Set(engine.buildClassPack(classFixturePlayer, 'paladin').variants.flatMap((variant) => (
+  engine.resolveCombatLoadout({ kind: 'player', ...variant.spec }, engine.DEFAULT_COMBAT_LOADOUT).slots
+    .filter((slot) => slot.effect)
+    .map((slot) => slot.effect)
+)));
+check(
+  paladinClassEffects.has('sword-slash') && paladinClassEffects.has('hammer-smash'),
+  'Paladin class packs must resolve blade and crushing attack families',
+);
+const druidClassEffects = new Set(engine.buildClassPack(classFixturePlayer, 'druid').variants.flatMap((variant) => (
+  engine.resolveCombatLoadout({ kind: 'player', ...variant.spec }, engine.DEFAULT_COMBAT_LOADOUT).slots
+    .filter((slot) => slot.effect)
+    .map((slot) => slot.effect)
+)));
+check(
+  ['sword-slash', 'spear-thrust', 'fireball', 'holy-orb'].every((effect) => druidClassEffects.has(effect)),
+  'Druid class packs must resolve both martial and magical attack families',
+);
 
 check(engine.VARIANT_BATCH_FORMAT === '8-bit-sprite-assembler-equipment-variant-batch', 'equipment batches must expose a stable game-facing format id');
 check(engine.VARIANT_BATCH_VERSION === 1, 'equipment batches must use an explicit schema version');

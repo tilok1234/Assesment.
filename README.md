@@ -9,7 +9,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
 - A Combat Loadout Builder that previews those overlays on players and enemies, supplies automatic weapon-aware defaults, supports per-slot overrides, saves named recipes, and exports game-ready JSON
 - An Equipment Variant Batch Builder that turns one character identity into bounded 16-, 5-, 76-, 41-, or 120-sheet equipment collections with per-variant loadouts and only the combat effects they actually reference
-- A Class Pack Builder with Warrior, Guardian, Ranger, Rogue, Mage, and Cleric templates that preserves one character identity while exporting only the outfit, weapon, shield, armor-tier, and equipment-tier combinations appropriate to that RPG role
+- A Class Pack Builder with ten focused templates—Warrior, Guardian, Ranger, Rogue, Mage, Cleric, Barbarian, Necromancer, Paladin, and Druid—that preserves one character identity while exporting only the outfit, weapon, shield, armor-tier, and equipment-tier combinations appropriate to that RPG role
 - Four directions: down, left, right, and up
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
@@ -129,10 +129,14 @@ Use **Class pack builder** in Player mode when one character should be ready to 
 
 - **Warrior**: plate armor, six melee weapon families, and four martial shield families (54 unique sheets)
 - **Guardian**: plate armor, four defensive weapon families, and six shield families (54 unique sheets)
-- **Ranger**: leather armor, dagger, spear, bow, crossbow, and buckler options (29 unique sheets)
+- **Ranger**: Ranger Coat, dagger, spear, bow, crossbow, and buckler options (29 unique sheets)
 - **Rogue**: leather armor, scimitar, rapier, dagger, crossbow, and buckler options (29 unique sheets)
 - **Mage**: robes, staff, wand, spellbook, and arcane shield options (24 unique sheets)
-- **Cleric**: plate armor, mace, warhammer, staff, wand, and three holy or defensive shield families (39 unique sheets)
+- **Cleric**: Cleric Vestments, mace, warhammer, staff, wand, and three holy or defensive shield families (39 unique sheets)
+- **Barbarian**: Barbarian Furs with greatsword, axe, spear, and club progression but no shields (24 unique sheets)
+- **Necromancer**: Necromancer Robes with dagger, staff, wand, spellbook, bone shield, and arcane shield progression (34 unique sheets)
+- **Paladin**: plate armor with sword, greatsword, mace, warhammer, and three heavy shield families (39 unique sheets)
+- **Druid**: Ranger Coat with dagger, spear, staff, wand, round shield, and bone shield progression (34 unique sheets)
 
 Applying a template changes only the class outfit and Tier 1 starting equipment; skin, hair, facial detail, headgear, colors, and custom palette stay intact, and the change can be undone. Export expands every permitted weapon through Tiers 1-5, the class outfit through all five armor tiers, and no shield plus every permitted shield through Tiers 1-5. Identical complete specifications are deduplicated.
 
