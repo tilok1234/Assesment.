@@ -292,6 +292,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   const includeOutfit = includeFullBody || renderLayer === 'outfit';
   const includeSkinBody = includeFullBody || renderLayer === 'skin-body';
   const includeHead = includeFullBody || renderLayer === 'head';
+  const includeExpression = includeFullBody || renderLayer === 'expression';
   const includeFaceDetail = includeFullBody || renderLayer === 'face-detail';
   const includeHair = includeFullBody || renderLayer === 'hair';
   const includeHeadgear = includeFullBody || renderLayer === 'headgear';
@@ -464,7 +465,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
 
   // ---- face ----
   if (!gearDef.hideAll) {
-    if (includeHead) {
+    if (includeHead && (!C.expression || C.face !== 'human')) {
       if (d === 'down') {
         if (C.face === 'skull') {
           S(10, HT + u + 4, INK); S(10, HT + u + 5, INK);
@@ -493,6 +494,9 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
           S(14, HT + u + 5, eyeC);
         }
       }
+    }
+    if (includeExpression && C.face === 'human' && C.expression) {
+      drawFacialExpression(S, R, d, u, HT, C.expression, eyeC);
     }
     if (includeFullBody) drawPlayerSpeciesFront(S, R, d, u, HT, C.species, skin, gearDef);
     if (includeFaceDetail && C.face === 'human' && C.detail && C.detail !== 'none') {
@@ -615,6 +619,55 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   if (includeEquipment && C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(weaponS, weaponR, d, p, C, u);
 }
 
+function drawFacialExpression(S, R, d, u, HT, expression, eye) {
+  if (d !== 'down' && d !== 'right') return;
+  const y = HT + u;
+  const selected = expression || 'neutral';
+
+  if (d === 'down') {
+    if (selected === 'happy') {
+      R(9, y + 4, 2, 1, eye); R(13, y + 4, 2, 1, eye);
+      S(10, y + 6, eye); S(13, y + 6, eye); R(11, y + 7, 2, 1, eye);
+      return;
+    }
+    if (selected === 'angry') {
+      S(9, y + 3, eye); S(10, y + 4, eye); S(14, y + 3, eye); S(13, y + 4, eye);
+      S(10, y + 5, eye); S(13, y + 5, eye); R(11, y + 7, 2, 1, eye);
+      return;
+    }
+    if (selected === 'sad') {
+      S(10, y + 4, eye); S(13, y + 4, eye); S(10, y + 5, eye); S(13, y + 5, eye);
+      R(11, y + 6, 2, 1, eye); S(10, y + 7, eye); S(13, y + 7, eye);
+      return;
+    }
+    if (selected === 'surprised') {
+      R(10, y + 4, 1, 2, eye); R(13, y + 4, 1, 2, eye); R(11, y + 7, 2, 1, eye);
+      return;
+    }
+    if (selected === 'determined') {
+      R(9, y + 4, 2, 1, eye); R(13, y + 4, 2, 1, eye);
+      S(10, y + 5, eye); S(13, y + 5, eye); R(10, y + 7, 4, 1, '#f4f4f4');
+      return;
+    }
+    S(10, y + 5, eye); S(13, y + 5, eye);
+    return;
+  }
+
+  if (selected === 'happy') {
+    S(14, y + 4, eye); S(14, y + 6, eye); S(15, y + 7, eye);
+  } else if (selected === 'angry') {
+    S(13, y + 4, eye); S(14, y + 5, eye); S(15, y + 7, eye);
+  } else if (selected === 'sad') {
+    S(14, y + 5, eye); S(15, y + 6, eye); S(14, y + 7, eye);
+  } else if (selected === 'surprised') {
+    R(14, y + 4, 1, 2, eye); S(15, y + 7, eye);
+  } else if (selected === 'determined') {
+    S(13, y + 4, eye); S(14, y + 5, eye); R(14, y + 7, 2, 1, '#f4f4f4');
+  } else {
+    S(14, y + 5, eye);
+  }
+}
+
 function drawFacialDetail(S, R, d, u, HT, detail, hair, skin, outfit, eye) {
   if (d !== 'down' && d !== 'right') return;
   const y = HT + u;
@@ -668,19 +721,13 @@ function drawFacialDetail(S, R, d, u, HT, detail, hair, skin, outfit, eye) {
   }
 
   if (detail === 'glasses') {
-    const frame = '#344252';
-    const lens = '#9bd5df';
+    const frame = '#758396';
     if (d === 'down') {
-      R(9, y + 4, 3, 2, lens); R(12, y + 4, 3, 2, lens);
       S(9, y + 4, frame); S(11, y + 4, frame); S(9, y + 5, frame); S(11, y + 5, frame);
       S(12, y + 4, frame); S(14, y + 4, frame); S(12, y + 5, frame); S(14, y + 5, frame);
-      S(10, y + 5, eye); S(13, y + 5, eye);
     } else {
-      R(11, y + 4, 3, 1, frame);
-      R(13, y + 4, 3, 2, lens);
-      S(13, y + 4, frame); S(15, y + 4, frame);
+      S(12, y + 4, frame); S(13, y + 4, frame); S(15, y + 4, frame);
       S(13, y + 5, frame); S(15, y + 5, frame);
-      S(14, y + 5, eye);
     }
     return;
   }
@@ -2342,6 +2389,7 @@ function buildHumanoidC(spec) {
       bodyBuild: spec.bodyBuild || 'classic',
       hair: palettePair(spec.palette?.hair, hair),
       hairStyle: spec.hairStyle,
+      expression: spec.expression || 'neutral',
       gear: spec.headgear,
       outfit: spec.outfit,
       outfitTier: spec.outfitTier || 'tier1',

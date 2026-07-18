@@ -14,7 +14,7 @@ import { buildStoredZip } from './zip.js';
 
 const STORAGE_KEY = 'sprite-assembler-v1';
 const PRESET_STORAGE_KEY = 'sprite-assembler-presets-v1';
-const PRESET_VERSION = 8;
+const PRESET_VERSION = 9;
 const PALETTE_STORAGE_KEY = 'sprite-assembler-palettes-v1';
 const PALETTE_VERSION = 1;
 const PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1';
@@ -37,6 +37,7 @@ const DEFAULT_STATE = {
     skin: 'peach',
     hairStyle: 'spiky',
     hairColor: 'brown',
+    expression: 'neutral',
     faceDetail: 'none',
     headgear: 'none',
     outfit: 'tunic',
@@ -275,6 +276,7 @@ function sanitizePlayer(player = {}) {
     skin: validId(E.SKINS, player.skin, DEFAULT_STATE.player.skin),
     hairStyle: validId(E.HAIR_STYLES, player.hairStyle, DEFAULT_STATE.player.hairStyle),
     hairColor: validId(E.HAIR_COLORS, player.hairColor, DEFAULT_STATE.player.hairColor),
+    expression: validId(E.EXPRESSIONS, player.expression, DEFAULT_STATE.player.expression),
     faceDetail: validId(E.FACIAL_DETAILS, player.faceDetail, DEFAULT_STATE.player.faceDetail),
     headgear: validId(E.HEADGEAR, player.headgear, DEFAULT_STATE.player.headgear),
     outfit: validId(E.OUTFITS, player.outfit, DEFAULT_STATE.player.outfit),
@@ -761,7 +763,7 @@ function loadPresetLibrary() {
     saved = JSON.parse(localStorage.getItem(PRESET_STORAGE_KEY) || 'null');
   } catch {}
 
-  if (!saved || ![1, 2, 3, 4, 5, 6, 7, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
+  if (!saved || ![1, 2, 3, 4, 5, 6, 7, 8, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
     return { version: PRESET_VERSION, presets: [] };
   }
 
@@ -1424,6 +1426,13 @@ function playerGroups() {
       (item) => spec({ hairStyle: item.id, headgear: 'none' }),
     ),
     dotGroup('Hair color', E.HAIR_COLORS, player.hairColor, (value) => setPlayerOption('hairColor', value)),
+    thumbnailGroup(
+      'Expression',
+      E.EXPRESSIONS,
+      player.expression,
+      (value) => setPlayerOption('expression', value),
+      (item) => spec({ expression: item.id, faceDetail: 'none', headgear: 'none', hairStyle: 'bald' }),
+    ),
     thumbnailGroup(
       'Facial detail',
       E.FACIAL_DETAILS,
@@ -2275,6 +2284,7 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
       skinBodies: plan.components.skinBodies.map(withoutRenderSpec),
       heads: plan.components.heads.map(withoutRenderSpec),
       hair: plan.components.hair.map(withoutRenderSpec),
+      expressions: plan.components.expressions.map(withoutRenderSpec),
       faceDetails: plan.components.faceDetails.map(withoutRenderSpec),
       speciesBack: plan.components.speciesBack.map(withoutRenderSpec),
       speciesFront: plan.components.speciesFront.map(withoutRenderSpec),
@@ -2319,6 +2329,7 @@ function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) 
     + '- skin-body: animated hands and neck for each skin tone\n'
     + '- heads: normal and shaded animated heads for each skin tone\n'
     + '- hair: each style and color, with full and under-headgear fits\n'
+    + '- expressions: neutral, happy, angry, sad, surprised, and determined animated face layers\n'
     + '- face-details: only the color-dependent variants each detail needs\n'
     + '- species: direction-aware ears, tusks, horns, tails, wings, and halos split into back/front layers\n'
     + '- outfits: all four body builds and five armor tiers as reusable front layers plus separate cape-back layers\n'
@@ -2345,6 +2356,10 @@ async function renderCompleteCharacterKitPngs(plan, zipEntries, advance, options
   for (const entry of plan.components.hair) {
     await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
     advance('Rendering reusable hair components.');
+  }
+  for (const entry of plan.components.expressions) {
+    await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
+    advance('Rendering expression components.');
   }
   for (const entry of plan.components.faceDetails) {
     await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);

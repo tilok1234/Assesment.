@@ -15,6 +15,7 @@ export {
 } from './catalogs/palettes.js';
 export {
   BODY_BUILDS,
+  EXPRESSIONS,
   FACIAL_DETAILS,
   HAIR_COLORS,
   HAIR_STYLES,

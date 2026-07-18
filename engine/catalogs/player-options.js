@@ -50,6 +50,14 @@ export const FACIAL_DETAILS = [
   { id: 'blush',    name: 'Blush' },
   { id: 'warpaint', name: 'War paint' },
 ];
+export const EXPRESSIONS = [
+  { id: 'neutral',    name: 'Neutral' },
+  { id: 'happy',      name: 'Happy' },
+  { id: 'angry',      name: 'Angry' },
+  { id: 'sad',        name: 'Sad' },
+  { id: 'surprised',  name: 'Surprised' },
+  { id: 'determined', name: 'Determined' },
+];
 export const HEADGEAR = [
   { id: 'none',     name: 'None' },
   { id: 'cap',      name: 'Cap' },

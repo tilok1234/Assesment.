@@ -2,6 +2,7 @@ import {
   BODY_BUILDS,
   COMBAT_EFFECTS,
   ENEMIES,
+  EXPRESSIONS,
   FACIAL_DETAILS,
   HAIR_COLORS,
   HAIR_STYLES,
@@ -33,10 +34,10 @@ export const MASTER_ROSTER_KIT_VERSION = 1;
 export const MASTER_ROSTER_KIT_LIMIT = 24;
 
 export const COMPLETE_CHARACTER_KIT_FORMAT = '8-bit-sprite-assembler-complete-character-kit';
-export const COMPLETE_CHARACTER_KIT_VERSION = 6;
+export const COMPLETE_CHARACTER_KIT_VERSION = 7;
 export const COMPLETE_CHARACTER_KIT_RECIPE_LIMIT = 24;
 export const COMPLETE_CHARACTER_PACK_FORMAT = '8-bit-sprite-assembler-complete-character-pack';
-export const COMPLETE_CHARACTER_PACK_VERSION = 6;
+export const COMPLETE_CHARACTER_PACK_VERSION = 7;
 export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
   'weapon-back',
   'shield-back',
@@ -45,6 +46,7 @@ export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
   'outfit',
   'skin-body',
   'head',
+  'expression',
   'species-front',
   'face-detail',
   'hair',
@@ -76,6 +78,7 @@ function clonePlayer(player) {
     kind: 'player',
     species: player.species || 'human',
     bodyBuild: player.bodyBuild || 'classic',
+    expression: player.expression || 'neutral',
     outfitTier: player.outfitTier || 'tier1',
     palette: clonePalette(player.palette),
   };
@@ -157,6 +160,8 @@ function identityFor(player) {
     hairStyle: player.hairStyle,
     hairColor: player.hairColor,
     hairColorName: HAIR_COLORS.find((item) => item.id === player.hairColor)?.name || player.hairColor,
+    expression: player.expression || 'neutral',
+    expressionName: EXPRESSIONS.find((item) => item.id === (player.expression || 'neutral'))?.name || player.expression || 'Neutral',
     faceDetail: player.faceDetail,
     customSkinColors: clonePair(player.palette?.skin),
     customHairColors: clonePair(player.palette?.hair),
@@ -396,6 +401,7 @@ const COMPONENT_BASE_PLAYER = {
   skin: 'peach',
   hairStyle: 'short',
   hairColor: 'brown',
+  expression: 'neutral',
   faceDetail: 'none',
   headgear: 'none',
   outfit: 'tunic',
@@ -431,6 +437,10 @@ function hairFile(style, color, fit) {
 
 function faceDetailFile(detail, variant = 'default') {
   return `components/face-details/${detail}/${variant}.png`;
+}
+
+function expressionFile(expression) {
+  return `components/expressions/${expression}.png`;
 }
 
 function speciesFile(species, pass, variant = 'default') {
@@ -519,6 +529,7 @@ function recipeComponents(player) {
     outfit: outfitFile(player.outfit, outfitTier, player.outfitColor, bodyBuild),
     skinBody: skinBodyFile(player.skin),
     head: hideHead ? null : headFile(player.skin, gear.shade ? 'shaded' : 'normal'),
+    expression: hideHead ? null : expressionFile(player.expression || 'neutral'),
     speciesFront,
     faceDetail: faceDetailComponent(player, hideHead),
     hair: hideHead || player.hairStyle === 'bald'
@@ -678,6 +689,16 @@ function buildFaceDetailComponents() {
   return entries;
 }
 
+function buildExpressionComponents() {
+  return EXPRESSIONS.map((expression) => ({
+    expression: expression.id,
+    expressionName: expression.name,
+    file: expressionFile(expression.id),
+    layer: 'expression',
+    spec: componentSpec({ expression: expression.id }),
+  }));
+}
+
 function buildOutfitComponents() {
   const front = [];
   const back = [];
@@ -809,6 +830,7 @@ export function completeCharacterKitCounts() {
   const skinBodies = SKINS.length;
   const heads = SKINS.length * 2;
   const hair = ((HAIR_STYLES.length - 1) * HAIR_COLORS.length * 2) - (2 * HAIR_COLORS.length);
+  const expressions = EXPRESSIONS.length;
   const faceDetails = (2 * HAIR_COLORS.length) + SKINS.length + 3 + OUTFIT_COLORS.length;
   const speciesBack = SKINS.length + 1;
   const speciesFront = (3 * SKINS.length) + 2;
@@ -823,7 +845,7 @@ export function completeCharacterKitCounts() {
       ), 0)
     ), 0)
   ), 0);
-  const componentPngs = skinBodies + heads + hair + faceDetails + speciesBack + speciesFront + outfitFront + outfitBack
+  const componentPngs = skinBodies + heads + hair + expressions + faceDetails + speciesBack + speciesFront + outfitFront + outfitBack
     + headgear + weaponLayers + shieldLayers;
   const enemyFamilies = ENEMIES.length;
   const enemySheets = ENEMIES.reduce((total, family) => total + family.variants.length, 0);
@@ -833,6 +855,7 @@ export function completeCharacterKitCounts() {
     skinBodies,
     heads,
     hair,
+    expressions,
     faceDetails,
     speciesBack,
     speciesFront,
@@ -860,6 +883,7 @@ export function buildCompleteCharacterKitPlan(rawRecipes = []) {
   const skinBodies = buildSkinBodies();
   const heads = buildHeads();
   const hair = buildHairComponents();
+  const expressions = buildExpressionComponents();
   const faceDetails = buildFaceDetailComponents();
   const species = buildSpeciesComponents();
   const outfits = buildOutfitComponents();
@@ -884,6 +908,7 @@ export function buildCompleteCharacterKitPlan(rawRecipes = []) {
       skinBodies,
       heads,
       hair,
+      expressions,
       faceDetails,
       speciesBack: species.back,
       speciesFront: species.front,
