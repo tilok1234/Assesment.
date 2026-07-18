@@ -3,6 +3,7 @@
 
 export {
   ANIMS,
+  BODY_BUILDS,
   COMBAT_EFFECTS,
   DIRS,
   DIR_LABELS,

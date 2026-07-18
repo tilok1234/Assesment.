@@ -14,7 +14,7 @@ import { buildStoredZip } from './zip.js';
 
 const STORAGE_KEY = 'sprite-assembler-v1';
 const PRESET_STORAGE_KEY = 'sprite-assembler-presets-v1';
-const PRESET_VERSION = 7;
+const PRESET_VERSION = 8;
 const PALETTE_STORAGE_KEY = 'sprite-assembler-palettes-v1';
 const PALETTE_VERSION = 1;
 const PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1';
@@ -33,6 +33,7 @@ const DEFAULT_STATE = {
   mode: 'player',
   player: {
     species: 'human',
+    bodyBuild: 'classic',
     skin: 'peach',
     hairStyle: 'spiky',
     hairColor: 'brown',
@@ -270,6 +271,7 @@ function sanitizePlayer(player = {}) {
   const shield = validId(E.SHIELDS, player.shield, DEFAULT_STATE.player.shield);
   const sanitized = {
     species: validId(E.SPECIES, player.species, DEFAULT_STATE.player.species),
+    bodyBuild: validId(E.BODY_BUILDS, player.bodyBuild, DEFAULT_STATE.player.bodyBuild),
     skin: validId(E.SKINS, player.skin, DEFAULT_STATE.player.skin),
     hairStyle: validId(E.HAIR_STYLES, player.hairStyle, DEFAULT_STATE.player.hairStyle),
     hairColor: validId(E.HAIR_COLORS, player.hairColor, DEFAULT_STATE.player.hairColor),
@@ -759,7 +761,7 @@ function loadPresetLibrary() {
     saved = JSON.parse(localStorage.getItem(PRESET_STORAGE_KEY) || 'null');
   } catch {}
 
-  if (!saved || ![1, 2, 3, 4, 5, 6, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
+  if (!saved || ![1, 2, 3, 4, 5, 6, 7, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
     return { version: PRESET_VERSION, presets: [] };
   }
 
@@ -1405,6 +1407,13 @@ function playerGroups() {
       player.species,
       (value) => setPlayerOption('species', value),
       (item) => spec({ species: item.id, headgear: 'none' }),
+    ),
+    thumbnailGroup(
+      'Body build',
+      E.BODY_BUILDS,
+      player.bodyBuild,
+      (value) => setPlayerOption('bodyBuild', value),
+      (item) => spec({ bodyBuild: item.id, headgear: 'none', outfit: 'tunic', outfitTier: 'tier1' }),
     ),
     dotGroup('Skin', E.SKINS, player.skin, (value) => setPlayerOption('skin', value)),
     thumbnailGroup(
@@ -2312,7 +2321,7 @@ function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) 
     + '- hair: each style and color, with full and under-headgear fits\n'
     + '- face-details: only the color-dependent variants each detail needs\n'
     + '- species: direction-aware ears, tusks, horns, tails, wings, and halos split into back/front layers\n'
-    + '- outfits: all five armor tiers as reusable front layers plus separate cape-back layers\n'
+    + '- outfits: all four body builds and five armor tiers as reusable front layers plus separate cape-back layers\n'
     + '- headgear: color variants only where the art actually uses outfit colors\n'
     + '- weapons and shields: all five tiers as direction-aware back/front animation layers\n'
     + '- enemies: every enemy variation as a complete native sheet, organized by family\n'

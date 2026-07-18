@@ -1,4 +1,5 @@
 import {
+  BODY_BUILDS,
   COMBAT_EFFECTS,
   ENEMIES,
   FACIAL_DETAILS,
@@ -32,10 +33,10 @@ export const MASTER_ROSTER_KIT_VERSION = 1;
 export const MASTER_ROSTER_KIT_LIMIT = 24;
 
 export const COMPLETE_CHARACTER_KIT_FORMAT = '8-bit-sprite-assembler-complete-character-kit';
-export const COMPLETE_CHARACTER_KIT_VERSION = 5;
+export const COMPLETE_CHARACTER_KIT_VERSION = 6;
 export const COMPLETE_CHARACTER_KIT_RECIPE_LIMIT = 24;
 export const COMPLETE_CHARACTER_PACK_FORMAT = '8-bit-sprite-assembler-complete-character-pack';
-export const COMPLETE_CHARACTER_PACK_VERSION = 5;
+export const COMPLETE_CHARACTER_PACK_VERSION = 6;
 export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
   'weapon-back',
   'shield-back',
@@ -74,6 +75,7 @@ function clonePlayer(player) {
     ...player,
     kind: 'player',
     species: player.species || 'human',
+    bodyBuild: player.bodyBuild || 'classic',
     outfitTier: player.outfitTier || 'tier1',
     palette: clonePalette(player.palette),
   };
@@ -148,6 +150,8 @@ function identityFor(player) {
   return {
     species: player.species || 'human',
     speciesName: SPECIES.find((item) => item.id === (player.species || 'human'))?.name || player.species || 'Human',
+    bodyBuild: player.bodyBuild || 'classic',
+    bodyBuildName: BODY_BUILDS.find((item) => item.id === (player.bodyBuild || 'classic'))?.name || player.bodyBuild || 'Classic',
     skin: player.skin,
     skinName: SKINS.find((item) => item.id === player.skin)?.name || player.skin,
     hairStyle: player.hairStyle,
@@ -388,6 +392,7 @@ export function buildMasterRosterKitPlan(rawEntries) {
 const COMPONENT_BASE_PLAYER = {
   kind: 'player',
   species: 'human',
+  bodyBuild: 'classic',
   skin: 'peach',
   hairStyle: 'short',
   hairColor: 'brown',
@@ -432,13 +437,13 @@ function speciesFile(species, pass, variant = 'default') {
   return `components/species/${species}/${pass}/${variant}.png`;
 }
 
-function outfitFile(outfit, tier, color) {
+function outfitFile(outfit, tier, color, bodyBuild = 'classic') {
   const variant = ['leather', 'plate'].includes(outfit) ? 'default' : color;
-  return `components/outfits/${outfit}/${tier}/${variant}/front.png`;
+  return `components/outfits/${outfit}/${tier}/${variant}/${bodyBuild}/front.png`;
 }
 
-function outfitBackFile(outfit, tier, color) {
-  return `components/outfits/${outfit}/${tier}/${color}/back.png`;
+function outfitBackFile(outfit, tier, color, bodyBuild = 'classic') {
+  return `components/outfits/${outfit}/${tier}/${color}/${bodyBuild}/back.png`;
 }
 
 function headgearFile(headgear, color = 'default') {
@@ -494,6 +499,7 @@ function recipeComponents(player) {
   const outfitTier = player.outfitTier || 'tier1';
   const gearColor = COLOR_AWARE_HEADGEAR.has(player.headgear) ? player.outfitColor : 'default';
   const species = player.species || 'human';
+  const bodyBuild = player.bodyBuild || 'classic';
   const speciesBack = species === 'tiefling'
     ? speciesFile(species, 'back', player.skin)
     : species === 'celestial'
@@ -509,8 +515,8 @@ function recipeComponents(player) {
     weaponBack: equippedWeapon ? `components/weapons/${player.weapon}/${player.weaponTier}/back.png` : null,
     shieldBack: equippedShield ? completeShieldFile(player.shield, player.shieldTier, player.outfitColor, 'back') : null,
     speciesBack,
-    outfitBack: player.outfit === 'cape' ? outfitBackFile(player.outfit, outfitTier, player.outfitColor) : null,
-    outfit: outfitFile(player.outfit, outfitTier, player.outfitColor),
+    outfitBack: player.outfit === 'cape' ? outfitBackFile(player.outfit, outfitTier, player.outfitColor, bodyBuild) : null,
+    outfit: outfitFile(player.outfit, outfitTier, player.outfitColor, bodyBuild),
     skinBody: skinBodyFile(player.skin),
     head: hideHead ? null : headFile(player.skin, gear.shade ? 'shaded' : 'normal'),
     speciesFront,
@@ -675,37 +681,48 @@ function buildFaceDetailComponents() {
 function buildOutfitComponents() {
   const front = [];
   const back = [];
-  for (const outfit of OUTFITS) {
-    for (const tier of OUTFIT_TIERS) {
-      const colors = ['leather', 'plate'].includes(outfit.id) ? [null] : OUTFIT_COLORS;
-      for (const color of colors) {
-        const renderColor = color?.id || OUTFIT_COLORS[0].id;
-        const spec = componentSpec({ outfit: outfit.id, outfitTier: tier.id, outfitColor: renderColor });
-        front.push({
-          outfit: outfit.id,
-          outfitName: outfit.name,
-          tier: tier.id,
-          tierName: tier.name,
-          color: color?.id || 'default',
-          colorName: color?.name || 'Fixed colors',
-          colors: color ? clonePair(color.c) : null,
-          file: outfitFile(outfit.id, tier.id, renderColor),
-          layer: 'outfit',
-          spec,
-        });
-        if (outfit.id === 'cape') {
-          back.push({
+  for (const bodyBuild of BODY_BUILDS) {
+    for (const outfit of OUTFITS) {
+      for (const tier of OUTFIT_TIERS) {
+        const colors = ['leather', 'plate'].includes(outfit.id) ? [null] : OUTFIT_COLORS;
+        for (const color of colors) {
+          const renderColor = color?.id || OUTFIT_COLORS[0].id;
+          const spec = componentSpec({
+            bodyBuild: bodyBuild.id,
+            outfit: outfit.id,
+            outfitTier: tier.id,
+            outfitColor: renderColor,
+          });
+          front.push({
+            bodyBuild: bodyBuild.id,
+            bodyBuildName: bodyBuild.name,
             outfit: outfit.id,
             outfitName: outfit.name,
             tier: tier.id,
             tierName: tier.name,
-            color: color.id,
-            colorName: color.name,
-            colors: clonePair(color.c),
-            file: outfitBackFile(outfit.id, tier.id, color.id),
-            layer: 'outfit-back',
+            color: color?.id || 'default',
+            colorName: color?.name || 'Fixed colors',
+            colors: color ? clonePair(color.c) : null,
+            file: outfitFile(outfit.id, tier.id, renderColor, bodyBuild.id),
+            layer: 'outfit',
             spec,
           });
+          if (outfit.id === 'cape') {
+            back.push({
+              bodyBuild: bodyBuild.id,
+              bodyBuildName: bodyBuild.name,
+              outfit: outfit.id,
+              outfitName: outfit.name,
+              tier: tier.id,
+              tierName: tier.name,
+              color: color.id,
+              colorName: color.name,
+              colors: clonePair(color.c),
+              file: outfitBackFile(outfit.id, tier.id, color.id, bodyBuild.id),
+              layer: 'outfit-back',
+              spec,
+            });
+          }
         }
       }
     }
@@ -795,8 +812,8 @@ export function completeCharacterKitCounts() {
   const faceDetails = (2 * HAIR_COLORS.length) + SKINS.length + 3 + OUTFIT_COLORS.length;
   const speciesBack = SKINS.length + 1;
   const speciesFront = (3 * SKINS.length) + 2;
-  const outfitFront = OUTFIT_TIERS.length * (((OUTFITS.length - 2) * OUTFIT_COLORS.length) + 2);
-  const outfitBack = OUTFIT_TIERS.length * OUTFIT_COLORS.length;
+  const outfitFront = BODY_BUILDS.length * OUTFIT_TIERS.length * (((OUTFITS.length - 2) * OUTFIT_COLORS.length) + 2);
+  const outfitBack = BODY_BUILDS.length * OUTFIT_TIERS.length * OUTFIT_COLORS.length;
   const headgear = (3 * OUTFIT_COLORS.length) + 4;
   const weaponLayers = (WEAPONS.length - 1) * WEAPON_TIERS.length * 2;
   const shieldLayers = SHIELD_TIERS.reduce((tierTotal, tier) => (

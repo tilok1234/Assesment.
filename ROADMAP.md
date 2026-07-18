@@ -145,9 +145,11 @@ The twentieth content slice adds focused RPG Class Packs for Warrior, Guardian, 
 
 The twenty-first content slice adds six stable player species: Human, Elf, Orc, Goblin, Tiefling, and Celestial. Human is the exact legacy-compatible default; the other species add direction-aware ears, tusks, horns, animated tails, wings, and halos while reusing the proven humanoid body, equipment, and animation rig. Front traits hide beneath full helmets, back traits retain correct occlusion, presets migrate to schema v7, and class and equipment planners preserve species as part of character identity. Complete Kit and Complete Pack schema v5 add 27 deduplicated species sheets in separate back/front passes, raising the component library to 796 PNGs, the standalone kit to 1023 PNGs, and a 24-player Complete Pack to 1046 PNGs. Exhaustive validation proves Human parity, all six complete animation signatures, visible directional traits, full-helmet behavior, and pixel-exact recipe recomposition.
 
+The twenty-second content slice adds four stable player body builds: Classic, Lean, Sturdy, and Heroic. Classic is pixel-identical to every legacy or missing-build specification; Lean narrows the torso, Sturdy broadens it, and Heroic creates a readable shoulder-to-waist taper while preserving the established hand, weapon, shield, species, and animation anchors. Presets migrate to schema v8, randomization and naming understand builds, and class and equipment planners preserve them as part of character identity. Complete Kit and Complete Pack schema v6 expand only the build-dependent outfit and cape passes to 460 fronts and 140 backs, raising the shared component library to 1246 PNGs, the standalone kit to 1473 PNGs, and a 24-player Complete Pack to 1496 PNGs. Exhaustive validation proves Classic parity, distinct silhouettes in every direction, animation, and frame, build-specific outfit and cape content across all five armor tiers, and pixel-exact recipe recomposition.
+
 Candidate additions:
 
-- Body types and silhouettes
+- More body types beyond the completed four-build silhouette foundation
 - Facial details and expressions (first facial-detail set complete; expressions remain a future option)
 - More hairstyles and headgear
 - Armor layers, outfits, robes, capes, and accessories

@@ -8,6 +8,12 @@ export const SPECIES = [
   { id: 'tiefling', name: 'Tiefling' },
   { id: 'celestial', name: 'Celestial' },
 ];
+export const BODY_BUILDS = [
+  { id: 'classic', name: 'Classic' },
+  { id: 'lean',    name: 'Lean' },
+  { id: 'sturdy',  name: 'Sturdy' },
+  { id: 'heroic',  name: 'Heroic' },
+];
 export const SKINS = [
   { id: 'pale',  name: 'Pale',  c: ['#f4d1a4', '#d9a06b'] },
   { id: 'peach', name: 'Peach', c: ['#eab98a', '#c98a56'] },

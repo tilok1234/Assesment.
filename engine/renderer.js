@@ -32,6 +32,16 @@ const palettePair = (value, fallback) => (
 );
 const OUTFIT_TIER_IDS = ['tier1', 'tier2', 'tier3', 'tier4', 'tier5'];
 const outfitTierRank = (tier) => Math.max(1, OUTFIT_TIER_IDS.indexOf(tier) + 1);
+const BODY_BUILD_PROFILES = {
+  classic: { id: 'classic', frontX: 8, frontW: 8, sideX: 9, sideW: 6, capeSideX: 7, capeSideW: 2 },
+  lean: { id: 'lean', frontX: 9, frontW: 6, sideX: 10, sideW: 5, capeSideX: 8, capeSideW: 1 },
+  sturdy: { id: 'sturdy', frontX: 7, frontW: 10, sideX: 8, sideW: 8, capeSideX: 6, capeSideW: 3 },
+  heroic: { id: 'heroic', frontX: 9, frontW: 6, sideX: 10, sideW: 5, capeSideX: 7, capeSideW: 2, heroic: true },
+};
+
+function bodyBuildProfile(id) {
+  return BODY_BUILD_PROFILES[id] || BODY_BUILD_PROFILES.classic;
+}
 
 function drawOutfitTier(S, R, d, u, BT, C, outfit) {
   const rank = outfitTierRank(C.outfitTier);
@@ -244,6 +254,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   const gear = C.gear || 'none';
   const gearDef = find(HEADGEAR, gear);
   const outfit = C.outfit || 'tunic';
+  const build = bodyBuildProfile(C.bodyBuild);
   const armorRank = outfitTierRank(C.outfitTier);
   const robe = outfit === 'robe';
   const pants = C.bone ? BONE : (outfit === 'plate' ? IRONPANTS : PANTS);
@@ -295,12 +306,14 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   // ---- cape behind (side view) ----
   if (includeOutfitBack && outfit === 'cape' && d === 'right') {
     const sway = p.leg !== 0 ? 1 : 0;
-    R(7 - sway, 12 + u, 2, 6, oc[0]);
-    R(7 - sway, 17 + u, 2, 1, oc[1]);
-    if (armorRank >= 2) S(7 - sway, 13 + u, METAL[2]);
-    if (armorRank >= 3) S(6 - sway, 15 + u, GOLD[0]);
-    if (armorRank >= 4) { S(6 - sway, 12 + u, INK); S(6 - sway, 17 + u, GOLD[0]); }
-    if (armorRank >= 5) { S(5 - sway, 13 + u, '#fff2a8'); S(5 - sway, 16 + u, '#fff2a8'); }
+    const capeX = build.capeSideX - sway;
+    R(capeX, 12 + u, build.capeSideW, 6, oc[0]);
+    R(capeX, 17 + u, build.capeSideW, 1, oc[1]);
+    if (build.heroic) { S(capeX - 1, 12 + u, oc[0]); S(capeX + build.capeSideW, 13 + u, oc[1]); }
+    if (armorRank >= 2) S(capeX, 13 + u, METAL[2]);
+    if (armorRank >= 3) S(capeX - 1, 15 + u, GOLD[0]);
+    if (armorRank >= 4) { S(capeX - 1, 12 + u, INK); S(capeX - 1, 17 + u, GOLD[0]); }
+    if (armorRank >= 5) { S(capeX - 2, 13 + u, '#fff2a8'); S(capeX - 2, 16 + u, '#fff2a8'); }
   }
 
   // ---- legs ----
@@ -355,32 +368,37 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   if (includeOutfit) {
     const torsoC = outfit === 'plate' ? METAL : (outfit === 'cape' || outfit === 'leather' ? CREAM : oc);
     if (d === 'right') {
-      const tw = 6, tx = 9;
+      const tw = build.sideW, tx = build.sideX;
       if (robe) {
         R(tx, BT + u, tw, 19 - (BT + u) + 1, oc[0]);
+        if (build.heroic) R(tx - 1, BT + u, tw + 2, 2, oc[0]);
         R(tx, 19, tw, 1, oc[1]);
         R(tx, BT + u, 1, 8 - u, oc[1]);
       } else {
         R(tx, BT + u, tw, 17 - (BT + u), torsoC[0]);
-        if (outfit === 'leather') R(tx + 2, BT + u, 3, 17 - (BT + u), WOOD[0]);
+        if (build.heroic) R(tx - 1, BT + u, tw + 2, 2, torsoC[0]);
+        if (outfit === 'leather') R(tx + 2, BT + u, Math.max(1, tw - 3), 17 - (BT + u), WOOD[0]);
         R(tx, 17, tw, 1, outfit === 'plate' ? METAL[1] : PANTS[1]);
       }
     } else {
+      const tx = build.frontX, tw = build.frontW;
       if (robe) {
-        R(8, BT + u, 8, 19 - (BT + u) + 1, oc[0]);
-        R(8, 19, 8, 1, oc[1]);
+        R(tx, BT + u, tw, 19 - (BT + u) + 1, oc[0]);
+        if (build.heroic) R(tx - 1, BT + u, tw + 2, 2, oc[0]);
+        R(tx, 19, tw, 1, oc[1]);
         if (d === 'down') { S(11, 19, GOLD[0]); S(12, 19, GOLD[0]); }
       } else {
-        R(8, BT + u, 8, 17 - (BT + u), torsoC[0]);
-        if (outfit === 'leather') R(10, BT + u, 4, 17 - (BT + u), WOOD[0]);
-        if (outfit === 'plate' && d === 'down') { S(9, BT + u + 1, METAL[2]); S(10, BT + u + 1, METAL[2]); }
+        R(tx, BT + u, tw, 17 - (BT + u), torsoC[0]);
+        if (build.heroic) R(tx - 1, BT + u, tw + 2, 2, torsoC[0]);
+        if (outfit === 'leather') R(tx + 2, BT + u, Math.max(2, tw - 4), 17 - (BT + u), WOOD[0]);
+        if (outfit === 'plate' && d === 'down') { S(tx + 1, BT + u + 1, METAL[2]); S(tx + 2, BT + u + 1, METAL[2]); }
         if (C.bone && d === 'down') {
           // ribcage
           R(9, 13 + u, 6, 1, BONE[0]); R(9, 15 + u, 6, 1, BONE[0]);
           R(9, 14 + u, 6, 1, INK); R(9, 16 + u, 6, 1, INK);
           S(11, 14 + u, BONE[1]); S(12, 16 + u, BONE[1]);
         }
-        R(8, 17, 8, 1, outfit === 'plate' ? METAL[1] : PANTS[1]);
+        R(tx, 17, tw, 1, outfit === 'plate' ? METAL[1] : PANTS[1]);
         if (d === 'down' && !C.bone) { S(11, 17, GOLD[0]); S(12, 17, GOLD[0]); }
       }
     }
@@ -388,8 +406,10 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
 
   // ---- cape covers back (up view) ----
   if (includeOutfit && outfit === 'cape' && d === 'up') {
-    R(8, BT + u, 8, 19 - (BT + u), oc[0]);
-    R(8, 18, 8, 1, oc[1]);
+    const tx = build.frontX, tw = build.frontW;
+    R(tx, BT + u, tw, 19 - (BT + u), oc[0]);
+    if (build.heroic) R(tx - 1, BT + u, tw + 2, 2, oc[0]);
+    R(tx, 18, tw, 1, oc[1]);
     S(9, 19, oc[1]); S(11, 19, oc[1]); S(13, 19, oc[1]);
   }
 
@@ -2319,6 +2339,7 @@ function buildHumanoidC(spec) {
     return {
       skin: palettePair(spec.palette?.skin, skin),
       species: spec.species || 'human',
+      bodyBuild: spec.bodyBuild || 'classic',
       hair: palettePair(spec.palette?.hair, hair),
       hairStyle: spec.hairStyle,
       gear: spec.headgear,

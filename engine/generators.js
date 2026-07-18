@@ -1,6 +1,7 @@
 // Random sprite specifications and export-safe names.
 
 import {
+  BODY_BUILDS,
   COMBAT_EFFECTS,
   ENEMIES,
   FACIAL_DETAILS,
@@ -26,6 +27,7 @@ export function randomPlayer() {
   const shield = rnd(SHIELDS).id;
   return {
     species: rnd(SPECIES).id,
+    bodyBuild: rnd(BODY_BUILDS).id,
     skin: rnd(SKINS).id,
     hairStyle: rnd(HAIR_STYLES).id,
     hairColor: rnd(HAIR_COLORS).id,
@@ -53,6 +55,7 @@ export function describe(spec) {
     const bits = [
       'hero',
       spec.species && spec.species !== 'human' ? spec.species : null,
+      spec.bodyBuild && spec.bodyBuild !== 'classic' ? spec.bodyBuild : null,
       spec.hairStyle !== 'bald' ? spec.hairStyle : null,
       spec.faceDetail && spec.faceDetail !== 'none' ? spec.faceDetail : null,
       spec.outfit,
