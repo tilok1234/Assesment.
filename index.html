@@ -240,6 +240,25 @@
               <p class="export-note">Transparent background, no baked shadow — choose 1x Native for exact logical pixel dimensions.</p>
           </section>
 
+          <section class="variant-batch-panel" id="variant-batch-panel" aria-labelledby="variant-batch-title">
+            <div class="variant-batch-heading">
+              <div>
+                <p class="variant-batch-kicker">One identity, complete equipment</p>
+                <h2 id="variant-batch-title">Equipment variant batch</h2>
+              </div>
+              <span>Game-ready ZIP</span>
+            </div>
+            <label class="variant-batch-field" for="variant-batch-set">
+              <span>Variant set</span>
+              <select id="variant-batch-set" aria-label="Equipment variant set"></select>
+            </label>
+            <p class="variant-batch-description" id="variant-batch-description">Builds a bounded set of ready character sheets from the current appearance.</p>
+            <p class="variant-batch-summary" id="variant-batch-summary">120 character sheets + matching effect sheets</p>
+            <button class="primary-button variant-batch-download-button" id="download-variant-batch-button" type="button">Download equipment batch ZIP</button>
+            <p class="preset-status" id="variant-batch-status" role="status" aria-live="polite">The current character identity and combat overrides will be preserved.</p>
+            <p class="export-note">Every character includes a loadout recipe; only the deduplicated effect sheets it actually needs are added. Uses the Export PNG scale selected above.</p>
+          </section>
+
           <section class="character-pack-panel" aria-labelledby="character-pack-title">
             <h2 id="character-pack-title">Sprite pack</h2>
             <label class="pack-name-field" for="pack-name">

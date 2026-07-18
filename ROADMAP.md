@@ -139,6 +139,8 @@ The seventeenth content slice adds a modular Combat Effects library: five direct
 
 The eighteenth content slice turns those modular effects into game-ready Combat Loadouts. Player weapons and enemy attack styles now resolve automatic trail, projectile, and impact defaults, while every slot—including an optional status overlay—can be overridden or disabled. The editor previews the synchronized result without baking effects into the base sprite, saves up to 100 named recipes locally, and exports a standalone schema-v1 JSON contract with base specification, selections, resolved stable paths, zero-based attack columns, timing, and draw order. Regular packs retain each entry's recipe, while Complete Kit and Complete Pack schema v4 attach combat loadouts to their matching character recipes and keep all artwork deduplicated.
 
+The nineteenth content slice adds the Equipment Variant Batch Builder for games that prefer ready-made sheets over runtime component composition. One player identity can expand into 16 weapon families at the current tier, up to five tiers of the current weapon, the complete 76-state weapon arsenal, five armor tiers, the 41-state shield armory, or a deduplicated 120-sheet RPG equipment collection. Schema v1 records the source identity, stable batch definition, complete specifications, animation contract, selected scale, and a resolved combat loadout for every variant. Only referenced combat effects are included once, explicit loadout overrides are preserved, and character PNGs remain effect-free. The production proof archive contains 120 unique native character sheets plus 16 native effects, with 136 unique `288x96` PNGs, no missing references, and no duplicate file content.
+
 Candidate additions:
 
 - Body types and silhouettes

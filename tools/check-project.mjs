@@ -59,6 +59,7 @@ checkSyntax('engine/catalogs/enemies.js');
 checkSyntax('engine/catalogs/palettes.js');
 checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/combat-loadouts.js');
+checkSyntax('engine/variant-batches.js');
 checkSyntax('engine/generators.js');
 checkSyntax('engine/effect-renderer.js');
 checkSyntax('engine/renderer.js');
@@ -102,6 +103,8 @@ for (const controlId of [
   'loadout-trail', 'loadout-projectile', 'loadout-impact', 'loadout-status-overlay',
   'loadout-name', 'loadout-library-select', 'save-loadout-button',
   'load-loadout-button', 'delete-loadout-button', 'download-loadout-button', 'loadout-status',
+  'variant-batch-panel', 'variant-batch-set', 'variant-batch-description',
+  'variant-batch-summary', 'variant-batch-status', 'download-variant-batch-button',
 ]) {
   check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
 }
@@ -119,6 +122,7 @@ const runtimeSources = {
   'engine/catalogs/palettes.js': await readFile(path.join(root, 'engine', 'catalogs', 'palettes.js'), 'utf8'),
   'engine/catalogs/player-options.js': await readFile(path.join(root, 'engine', 'catalogs', 'player-options.js'), 'utf8'),
   'engine/combat-loadouts.js': await readFile(path.join(root, 'engine', 'combat-loadouts.js'), 'utf8'),
+  'engine/variant-batches.js': await readFile(path.join(root, 'engine', 'variant-batches.js'), 'utf8'),
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
   'engine/effect-renderer.js': await readFile(path.join(root, 'engine', 'effect-renderer.js'), 'utf8'),
   'engine/renderer.js': await readFile(path.join(root, 'engine', 'renderer.js'), 'utf8'),
@@ -133,16 +137,18 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 
 const expectedEngineExports = [
   'ANIMS', 'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_COMBAT_LOADOUT',
+  'DEFAULT_VARIANT_BATCH_SET',
   'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'WEAPONS', 'WEAPON_TIERS',
-  'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawSprite',
+  'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
+  'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch', 'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawSprite',
   'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout', 'sanitizeCombatLoadout', 'thumbURL',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
   'sprite-engine.js public exports changed; consumers must keep using the stable facade API',
 );
-check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 40, 'sprite-engine.js must remain a small public facade');
+check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 50, 'sprite-engine.js must remain a small public facade');
 check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 40, 'engine/catalogs.js must remain a small internal facade');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
@@ -188,6 +194,10 @@ check(runtimeSources['app.js'].includes('combatLoadoutsBySource.has(recipe.sourc
 check(runtimeSources['app.js'].includes('E.combatLoadoutEffectSpecs(spec, loadout)'), 'combined previews must resolve modular effect overlays through the public engine facade');
 check(runtimeSources['app.js'].includes('{ shadow: false, clear: false }'), 'combined previews must layer effects without clearing the base sprite');
 check(runtimeSources['engine/renderer.js'].includes("if (opts.clear !== false) ctx.clearRect"), 'the renderer must support non-clearing modular overlay passes');
+check(runtimeSources['app.js'].includes('function downloadEquipmentVariantBatch('), 'the editor must expose the equipment-variant ZIP workflow');
+check(runtimeSources['app.js'].includes('variantBatchEffectEntries(plan)'), 'variant batches must deduplicate the combat effects actually referenced by their generated characters');
+check(runtimeSources['app.js'].includes('combatLoadout: manifestCombatLoadoutRecipe(spec, loadout)'), 'every equipment variant must carry its captured modular combat loadout');
+check(runtimeSources['app.js'].includes('format: E.VARIANT_BATCH_FORMAT'), 'equipment batches must publish their stable schema format');
 check(characterKit.MASTER_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-master-character-kit', 'master kits must expose a stable format id');
 check(characterKit.MASTER_CHARACTER_KIT_VERSION === 1, 'master kits must use an explicit versioned schema');
 check(characterKit.MASTER_CHARACTER_KIT_SCALE === 1, 'master kits must export native logical pixels');
@@ -413,6 +423,60 @@ function renderPixels(spec, dir, animId, frame, opts = {}) {
   engine.drawSprite(ctx, spec, dir, animId, frame, { ...opts, shadow: false });
   return pixels;
 }
+
+check(engine.VARIANT_BATCH_FORMAT === '8-bit-sprite-assembler-equipment-variant-batch', 'equipment batches must expose a stable game-facing format id');
+check(engine.VARIANT_BATCH_VERSION === 1, 'equipment batches must use an explicit schema version');
+check(engine.DEFAULT_VARIANT_BATCH_SET === 'rpg-equipment', 'the default equipment batch must be the deduplicated RPG collection');
+check(
+  JSON.stringify(engine.VARIANT_BATCH_SETS.map((set) => set.id))
+    === JSON.stringify(['weapon-families', 'current-weapon-tiers', 'weapon-arsenal', 'armor-tiers', 'shield-armory', 'rpg-equipment']),
+  'equipment batch presets must retain their stable ids and order',
+);
+const variantBatchPlayer = {
+  ...masterKitPlayer,
+  outfitTier: 'tier3',
+  weapon: 'bow',
+  weaponTier: 'tier3',
+  shield: 'kite',
+  shieldTier: 'tier3',
+};
+const expectedVariantBatchCounts = new Map([
+  ['weapon-families', 16],
+  ['current-weapon-tiers', 5],
+  ['weapon-arsenal', 76],
+  ['armor-tiers', 5],
+  ['shield-armory', 41],
+  ['rpg-equipment', 120],
+]);
+for (const set of engine.VARIANT_BATCH_SETS) {
+  const batch = engine.buildVariantBatch(variantBatchPlayer, set.id);
+  check(batch.set.id === set.id, `${set.id} must resolve its requested batch definition`);
+  check(batch.variants.length === expectedVariantBatchCounts.get(set.id), `${set.id} must retain its bounded variant count`);
+  check(new Set(batch.variants.map((variant) => JSON.stringify(variant.spec))).size === batch.variants.length, `${set.id} must deduplicate identical character specifications`);
+  check(new Set(batch.variants.map((variant) => variant.id)).size === batch.variants.length, `${set.id} must expose stable unique variant ids`);
+  check(batch.variants.every((variant) => (
+    variant.spec.skin === variantBatchPlayer.skin
+      && variant.spec.hairStyle === variantBatchPlayer.hairStyle
+      && variant.spec.hairColor === variantBatchPlayer.hairColor
+      && variant.spec.faceDetail === variantBatchPlayer.faceDetail
+      && variant.spec.headgear === variantBatchPlayer.headgear
+      && variant.spec.outfit === variantBatchPlayer.outfit
+      && variant.spec.outfitColor === variantBatchPlayer.outfitColor
+  )), `${set.id} must preserve the source character identity`);
+}
+check(
+  engine.buildVariantBatch({ ...variantBatchPlayer, weapon: 'none', weaponTier: 'tier1' }, 'current-weapon-tiers').variants.length === 1,
+  'an unarmed current-weapon batch must avoid five identical copies',
+);
+const fullVariantBatch = engine.buildVariantBatch(variantBatchPlayer, 'rpg-equipment');
+const fullVariantEffects = new Set(fullVariantBatch.variants.flatMap((variant) => (
+  engine.resolveCombatLoadout({ kind: 'player', ...variant.spec }, engine.DEFAULT_COMBAT_LOADOUT).slots
+    .filter((slot) => slot.effect)
+    .map((slot) => slot.file)
+)));
+check(fullVariantEffects.has('effects/projectiles/arrow.png'), 'the RPG equipment batch must resolve Bow projectiles');
+check(fullVariantEffects.has('effects/projectiles/fireball.png'), 'the RPG equipment batch must resolve Staff projectiles');
+check(fullVariantEffects.has('effects/trails/shield-block.png'), 'the RPG equipment batch must resolve unarmed shield blocks');
 
 check(engine.COMBAT_EFFECTS.length === 4, 'combat effects must expose trails, projectiles, impacts, and statuses');
 const combatEffectEntries = engine.COMBAT_EFFECTS.flatMap((category) => (

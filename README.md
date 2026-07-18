@@ -8,6 +8,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - 57 enemy families with 202 predefined variants
 - 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
 - A Combat Loadout Builder that previews those overlays on players and enemies, supplies automatic weapon-aware defaults, supports per-slot overrides, saves named recipes, and exports game-ready JSON
+- An Equipment Variant Batch Builder that turns one character identity into bounded 16-, 5-, 76-, 41-, or 120-sheet equipment collections with per-variant loadouts and only the combat effects they actually reference
 - Four directions: down, left, right, and up
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
@@ -104,6 +105,19 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 - Committed fixture sheet size: 1152x384 pixels
 - Transparent background with no baked shadow
 
+## Equipment variant batches
+
+Use **Equipment variant batch** in Player mode when the game needs ready-made full sheets instead of runtime paperdoll composition. The current skin, hair, face, headgear, outfit family, colors, custom palette, and combat overrides stay fixed while the selected equipment axis expands:
+
+- **Weapon families**: unarmed plus all 15 weapons at the current weapon tier (16 sheets)
+- **Current weapon tiers**: Tier 1 through Tier 5 for the equipped weapon (up to 5 sheets)
+- **Complete weapon arsenal**: unarmed plus all 15 weapons at every tier (76 sheets)
+- **Armor progression**: the current outfit at all five armor tiers (5 sheets)
+- **Complete shield armory**: no shield plus all eight shields at every tier (41 sheets)
+- **RPG equipment collection**: the weapon arsenal, armor progression, and shield armory merged into 120 unique sheets
+
+The ZIP uses the selected Export PNG scale and contains `manifest.json`, `README.txt`, one ready character sheet per unique specification, and one copy of every combat-effect sheet referenced by those variants. Automatic loadouts are resolved separately per weapon, explicit overrides are preserved, and effects remain modular instead of being baked into the character PNGs. Choose **1x Native** for exact `288x96` sheets.
+
 ## Character packs
 
 1. Give the pack a name, create a player or enemy, and give the character a name.
@@ -146,11 +160,11 @@ Every component shares the same animation grid and has been validated to recompo
 
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
-- `app.js` - editor state, sprite history, reset and comparison workflows, presets, combat loadouts, character packs, Complete Character Kit rendering, naming, playback and frame inspection, and downloads
+- `app.js` - editor state, sprite history, reset and comparison workflows, presets, combat loadouts, equipment-batch and character-pack exports, Complete Character Kit rendering, naming, playback and frame inspection, and downloads
 - `character-kit.js` - deterministic component coverage, paths, recipe mapping, counts, and layer-order planning
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
-- `engine/` - focused animation, palette, player-option, enemy, combat-loadout, humanoid weapon and shield, renderer, sheet, and generator modules
+- `engine/` - focused animation, palette, player-option, enemy, combat-loadout, equipment-variant planning, humanoid weapon and shield, renderer, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build

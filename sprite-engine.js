@@ -35,3 +35,10 @@ export {
   resolveCombatLoadout,
   sanitizeCombatLoadout,
 } from './engine/combat-loadouts.js';
+export {
+  buildVariantBatch,
+  DEFAULT_VARIANT_BATCH_SET,
+  VARIANT_BATCH_FORMAT,
+  VARIANT_BATCH_SETS,
+  VARIANT_BATCH_VERSION,
+} from './engine/variant-batches.js';

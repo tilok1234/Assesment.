@@ -1115,6 +1115,106 @@ button:disabled:hover {
   line-height: 1.5;
 }
 
+.variant-batch-panel {
+  display: grid;
+  gap: 9px;
+  padding: 10px;
+  border: 1px solid rgba(44, 137, 102, 0.28);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(233, 249, 242, 0.78), rgba(255, 255, 255, 0.96));
+}
+
+.variant-batch-panel[hidden] {
+  display: none;
+}
+
+.variant-batch-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.variant-batch-heading > span {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border: 1px solid rgba(44, 137, 102, 0.25);
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #247659;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.variant-batch-kicker,
+.variant-batch-description,
+.variant-batch-summary {
+  margin: 0;
+}
+
+.variant-batch-kicker {
+  color: #247659;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.variant-batch-field {
+  display: grid;
+  gap: 4px;
+}
+
+.variant-batch-field > span {
+  color: var(--muted);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.variant-batch-field select {
+  width: 100%;
+  min-width: 0;
+  padding: 7px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #23252b;
+  font: inherit;
+  font-size: 10.5px;
+}
+
+.variant-batch-field select:focus {
+  border-color: #2c8966;
+  outline: 2px solid rgba(44, 137, 102, 0.14);
+}
+
+.variant-batch-description {
+  color: #344a42;
+  font-size: 9.5px;
+  line-height: 1.45;
+}
+
+.variant-batch-summary {
+  color: #247659;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 9.5px;
+  line-height: 1.45;
+}
+
+.variant-batch-download-button {
+  padding: 8px 6px;
+  background: #2c8966;
+  font-size: 10.5px;
+}
+
+.variant-batch-download-button:hover:not(:disabled) {
+  background: #247659;
+}
+
 .character-pack-panel {
   display: grid;
   gap: 8px;
