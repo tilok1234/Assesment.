@@ -272,4 +272,28 @@ export const ENEMIES = [
     { id: 'frost', name: 'Frostcrest', fur: ['#779db8', '#4b6f8d'], wing: ['#d9edf2', '#91b8c8'], beak: '#9ccbd8', eye: '#1a1c2c' },
     { id: 'night', name: 'Nightfeather', fur: ['#3d3852', '#252236'], wing: ['#66578f', '#40365f'], beak: '#9b75c8', eye: '#c9f29b' },
   ]},
+  { id: 'mantis', name: 'Mantis', variants: [
+    { id: 'orchid', name: 'Orchid', c: ['#e7a8ca', '#a85d91', '#f3c7dc'], blade: '#f5d8e8', eye: '#59243d' },
+    { id: 'jade', name: 'Jade reaper', c: ['#5fa34e', '#356d35', '#91c867'], blade: '#c9e784', eye: '#f7dc85' },
+    { id: 'bone', name: 'Boneblade', c: ['#d7d0b8', '#8f8877', '#efe8d2'], blade: '#f4f4f4', eye: '#e83a3a' },
+    { id: 'inferno', name: 'Inferno', c: ['#d95732', '#8f2f26', '#f28b3d'], blade: '#f7c45a', eye: '#fff2a8' },
+  ]},
+  { id: 'moth', name: 'Moth', variants: [
+    { id: 'moon', name: 'Moonwing', body: ['#8b86a6', '#55516f'], wing: ['#d9d3ee', '#9a91bd'], dust: '#eef0ff', eye: '#c9f29b' },
+    { id: 'plague', name: 'Plague dust', body: ['#667a3f', '#3f522b'], wing: ['#9eb85d', '#667f3f'], dust: '#d7ff72', eye: '#f7dc85' },
+    { id: 'frost', name: 'Frostsilk', body: ['#6092aa', '#3d647e'], wing: ['#c4e7ef', '#82b8cb'], dust: '#eef8ff', eye: '#1a1c2c' },
+    { id: 'ember', name: 'Emberwing', body: ['#8f4432', '#5b2c28'], wing: ['#df6a3e', '#a63d2c'], dust: '#f7c45a', eye: '#fff2a8' },
+  ]},
+  { id: 'octopus', name: 'Octopus', variants: [
+    { id: 'reef', name: 'Reef', c: ['#d06c73', '#8f414f'], underside: '#ed9a8f', ring: '#f3c67a', ink: '#33405d', eye: '#eef0ff' },
+    { id: 'venom', name: 'Venom ring', c: ['#5368a8', '#344577'], underside: '#7f8fd0', ring: '#d7ff72', ink: '#28304f', eye: '#f7dc85' },
+    { id: 'frost', name: 'Frostkraken', c: ['#72a8c2', '#456f8b'], underside: '#b2dce5', ring: '#eef8ff', ink: '#41617b', eye: '#1a1c2c' },
+    { id: 'abyss', name: 'Abyssal', c: ['#624b91', '#382e5e'], underside: '#9272b4', ring: '#c9a7f2', ink: '#1f1c38', eye: '#c9f29b' },
+  ]},
+  { id: 'mole', name: 'Mole', variants: [
+    { id: 'tunnel', name: 'Tunnel digger', fur: ['#6d5140', '#443328'], belly: '#98745a', claw: '#d8c8a9', nose: '#d38a8a', eye: '#1a1c2c' },
+    { id: 'crystal', name: 'Crystalclaw', fur: ['#596d88', '#35465f'], belly: '#819bb1', claw: '#9de7ef', nose: '#82c6d3', eye: '#eef8ff' },
+    { id: 'rot', name: 'Rotburrow', fur: ['#667347', '#3d492e'], belly: '#89945f', claw: '#c7cf8a', nose: '#9f705f', eye: '#d7ff72' },
+    { id: 'magma', name: 'Magma mole', fur: ['#9e3f30', '#5e2925'], belly: '#d2673c', claw: '#f7b03e', nose: '#e98255', eye: '#fff2a8' },
+  ]},
 ];

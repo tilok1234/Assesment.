@@ -1,6 +1,6 @@
 {
   "name": "8-bit Sprite Asset Pack",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "generated": "2026-07-18",
   "format": {
     "frameSize": 24,
@@ -1190,6 +1190,46 @@
           "file": "enemies/griffin-night.png"
         }
       ]
+    },
+    {
+      "family": "mantis",
+      "name": "Mantis",
+      "variants": [
+        { "id": "orchid", "name": "Orchid", "file": "enemies/mantis-orchid.png" },
+        { "id": "jade", "name": "Jade reaper", "file": "enemies/mantis-jade.png" },
+        { "id": "bone", "name": "Boneblade", "file": "enemies/mantis-bone.png" },
+        { "id": "inferno", "name": "Inferno", "file": "enemies/mantis-inferno.png" }
+      ]
+    },
+    {
+      "family": "moth",
+      "name": "Moth",
+      "variants": [
+        { "id": "moon", "name": "Moonwing", "file": "enemies/moth-moon.png" },
+        { "id": "plague", "name": "Plague dust", "file": "enemies/moth-plague.png" },
+        { "id": "frost", "name": "Frostsilk", "file": "enemies/moth-frost.png" },
+        { "id": "ember", "name": "Emberwing", "file": "enemies/moth-ember.png" }
+      ]
+    },
+    {
+      "family": "octopus",
+      "name": "Octopus",
+      "variants": [
+        { "id": "reef", "name": "Reef", "file": "enemies/octopus-reef.png" },
+        { "id": "venom", "name": "Venom ring", "file": "enemies/octopus-venom.png" },
+        { "id": "frost", "name": "Frostkraken", "file": "enemies/octopus-frost.png" },
+        { "id": "abyss", "name": "Abyssal", "file": "enemies/octopus-abyss.png" }
+      ]
+    },
+    {
+      "family": "mole",
+      "name": "Mole",
+      "variants": [
+        { "id": "tunnel", "name": "Tunnel digger", "file": "enemies/mole-tunnel.png" },
+        { "id": "crystal", "name": "Crystalclaw", "file": "enemies/mole-crystal.png" },
+        { "id": "rot", "name": "Rotburrow", "file": "enemies/mole-rot.png" },
+        { "id": "magma", "name": "Magma mole", "file": "enemies/mole-magma.png" }
+      ]
     }
   ],
   "players": [
@@ -1219,8 +1259,8 @@
     }
   ],
   "counts": {
-    "enemyFamilies": 49,
-    "enemySheets": 170,
+    "enemyFamilies": 53,
+    "enemySheets": 186,
     "playerSheets": 6
   }
 }

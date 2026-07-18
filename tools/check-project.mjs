@@ -229,10 +229,10 @@ const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntr
 check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
 check(
   completeKitPlan.counts.componentPngs === 769
-    && completeKitPlan.counts.enemyFamilies === 49
-    && completeKitPlan.counts.enemySheets === 170
-    && completeKitPlan.counts.totalPngs === 940,
-  'complete character kits must contain 769 content-unique components, all 170 native enemy sheets, and one reference preview',
+    && completeKitPlan.counts.enemyFamilies === 53
+    && completeKitPlan.counts.enemySheets === 186
+    && completeKitPlan.counts.totalPngs === 956,
+  'complete character kits must contain 769 content-unique components, all 186 native enemy sheets, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
@@ -247,7 +247,7 @@ check(
   'Tier 5 shield components must collapse the four artifact passes whose colors are fully overwritten',
 );
 const completeEnemyEntries = completeKitPlan.enemies.flatMap((family) => family.variants);
-check(completeKitPlan.enemies.length === 49 && completeEnemyEntries.length === 170, 'complete kits must plan every enemy family and variation');
+check(completeKitPlan.enemies.length === 53 && completeEnemyEntries.length === 186, 'complete kits must plan every enemy family and variation');
 check(
   completeKitPlan.enemies.every((family) => family.variants.every((entry) => (
     entry.file === `enemies/${family.family}/${entry.id}.png`
@@ -270,7 +270,7 @@ const completeKitPaths = [
   ...completeEnemyEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 940, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 956, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
@@ -380,6 +380,7 @@ function renderPixels(spec, dir, animId, frame, opts = {}) {
 const dedicatedEnemyFamilies = [
   'shroom', 'frog', 'crocodile', 'turtle', 'jellyfish',
   'centipede', 'carniplant', 'anglerfish', 'griffin',
+  'mantis', 'moth', 'octopus', 'mole',
 ];
 for (const familyId of dedicatedEnemyFamilies) {
   const family = engine.ENEMIES.find((entry) => entry.id === familyId);
@@ -435,6 +436,20 @@ for (const familyId of ['shroom', 'carniplant']) {
       check(
         new Set(walkFrames.map((pixels) => pixels.slice(engine.SIZE * 19).join(','))).size === 4,
         `${familyId}/${variant.id} feet or roots must change contact in every walk frame while facing ${dir}`,
+      );
+    }
+  }
+}
+
+for (const familyId of ['mantis', 'moth', 'octopus', 'mole']) {
+  const family = engine.ENEMIES.find((entry) => entry.id === familyId);
+  for (const variant of family.variants) {
+    const spec = { kind: 'enemy', family: familyId, variant: variant.id };
+    for (const dir of engine.DIRS) {
+      const walkSignatures = [0, 1, 2, 3].map((frame) => renderPixels(spec, dir, 'walk', frame).join(','));
+      check(
+        new Set(walkSignatures).size === 4,
+        `${familyId}/${variant.id} must use four distinct walk poses while facing ${dir}`,
       );
     }
   }

@@ -131,6 +131,8 @@ The thirteenth content slice expands biome coverage with a swamp-and-shoreline r
 
 The fourteenth content slice adds four further silhouette families in one batch: centipedes, carnivorous plants, anglerfish, and griffins. Sixteen variants introduce segmented many-leg scuttles and venom strikes, rooted bloom snaps and vine lashes, swimming lure pulses and oversized bites, plus winged quadruped flaps and claw dives. The roster reaches 49 families and 170 variants, the standalone Complete Character Kit reaches 940 PNGs, and a full 24-player Complete Pack reaches 963 PNGs.
 
+The fifteenth content slice is the Strange Wilds expansion: mantises, moths, octopuses, and moles add sixteen variants with scissor-blade rushes, four-pose wing flutter and dust bursts, tentacle crawls and ink lashes, plus grounded burrow-and-erupt attacks. The roster reaches 53 families and 186 variants, the standalone Complete Character Kit reaches 956 PNGs, and a full 24-player Complete Pack reaches 979 PNGs.
+
 Candidate additions:
 
 - Body types and silhouettes

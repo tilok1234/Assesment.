@@ -1815,6 +1815,196 @@ function drawGriffin(g, d, p, f, V, animId) {
   }
 }
 
+// ---------------- strange wilds creatures ----------------
+function drawMantis(g, d, p, f, V, animId) {
+  const walking = animId === 'walk';
+  const bob = (animId === 'idle' && f === 1) || (walking && p.bob) ? 1 : 0;
+  const stride = walking ? p.leg : 0;
+  const sweep = walking ? [0, 1, 0, -1][f] : 0;
+  const strike = animId === 'attack' && (f === 1 || f === 2);
+  const ox = d === 'right' ? p.lunge : 0;
+  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
+  const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
+  const c = V.c, blade = V.blade, eye = V.eye;
+
+  if (d === 'right') {
+    R(7 + stride, 16, 2, 5, c[1]); S(6 + stride, 21, c[1]);
+    R(11 - stride, 16, 2, 6, c[0]); S(13 - stride, 21, c[1]);
+    S(8 - stride, 15, c[1]); S(6 - stride, 17, c[1]);
+    S(13 + stride, 15, c[1]); S(15 + stride, 18, c[1]);
+    R(5, 12 + bob, 7, 5 - bob, c[0]); R(4, 13 + bob, 3, 3, c[1]);
+    R(10, 9 + bob, 6, 7 - bob, c[0]); S(11, 10 + bob, c[2]);
+    R(15, 7 + bob, 5, 5, c[0]); S(18, 8 + bob, eye);
+    S(17, 6 + bob, c[2]); S(18 + sweep, 4 + bob, c[1]); S(19 + sweep, 3 + bob, c[1]);
+    if (strike) {
+      R(17, 11 + bob, 5, 2, c[1]); S(22, 12 + bob, blade); S(23, 13 + bob, blade);
+      R(16, 14 + bob, 5, 2, c[0]); S(21, 16 + bob, blade); S(22, 17 + bob, blade);
+    } else {
+      R(13 + sweep, 11 + bob, 3, 2, c[1]); R(15 + sweep, 9 + bob, 2, 4, c[0]);
+      S(16 + sweep, 8 + bob, blade); S(17 + sweep, 7 + bob, blade);
+      R(13 - sweep, 14 + bob, 3, 2, c[1]); S(16 - sweep, 16 + bob, blade);
+    }
+  } else {
+    R(8 + stride, 17, 2, 5, c[1]); R(14 - stride, 17, 2, 5, c[1]);
+    S(7 + stride, 21, c[1]); S(16 - stride, 21, c[1]);
+    S(8 - stride, 15, c[1]); S(6 - stride, 18, c[1]);
+    S(15 + stride, 15, c[1]); S(17 + stride, 18, c[1]);
+    R(9, 13 + bob, 6, 7 - bob, c[0]); R(10, 17, 4, 3, c[1]);
+    R(8, 9 + bob, 8, 6 - bob, c[0]); R(9, 6 + bob, 6, 5, c[0]);
+    S(10, 7 + bob, d === 'down' ? eye : c[2]); S(13, 7 + bob, d === 'down' ? eye : c[2]);
+    S(9, 5 + bob, c[1]); S(8 + sweep, 3 + bob, c[1]);
+    S(14, 5 + bob, c[1]); S(15 - sweep, 3 + bob, c[1]);
+    if (strike) {
+      R(4, 10 + bob, 4, 2, c[1]); S(3, 12 + bob, blade); S(4, 13 + bob, blade);
+      R(16, 10 + bob, 4, 2, c[1]); S(20, 12 + bob, blade); S(19, 13 + bob, blade);
+      if (d === 'down') { S(8, 15, blade); S(15, 15, blade); }
+    } else {
+      R(5 + sweep, 11 + bob, 4, 2, c[1]); S(5 + sweep, 13 + bob, blade);
+      R(15 - sweep, 11 + bob, 4, 2, c[1]); S(18 - sweep, 13 + bob, blade);
+    }
+  }
+}
+
+function drawMoth(g, d, p, f, V, animId) {
+  const walking = animId === 'walk';
+  const bob = (animId === 'idle' && f === 1) || (walking && p.bob) ? 1 : 0;
+  const spread = walking ? [0, 1, 2, 1][f] : (animId === 'idle' && f === 1 ? 1 : 0);
+  const sweep = walking ? [0, 1, 0, -1][f] : 0;
+  const strike = animId === 'attack' && (f === 1 || f === 2);
+  const ox = d === 'right' ? p.lunge : 0;
+  const oy = (d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0) - 1;
+  const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
+  const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
+  const body = V.body, wing = V.wing, dust = V.dust, eye = V.eye;
+
+  if (d === 'right') {
+    R(10, 9 + bob, 5, 8, body[0]); R(11, 15 + bob, 4, 4, body[1]);
+    R(14, 7 + bob, 5, 5, body[0]); S(17, 8 + bob, eye);
+    S(16, 6 + bob, body[1]); S(17 + sweep, 4 + bob, body[1]);
+    S(18, 6 + bob, body[1]); S(20 + sweep, 5 + bob, body[1]);
+    R(6 - spread, 7 + bob + sweep, 7 + spread, 4, wing[0]);
+    R(7 - spread, 11 + bob, 6 + spread, 5, wing[1]);
+    S(5 - spread, 8 + bob + sweep, wing[1]); S(6 - spread, 15 + bob, wing[0]);
+    R(10, 18 + bob, 2, 2, body[1]); R(13, 18 + bob, 2, 2, body[1]);
+    if (strike) {
+      S(20, 10 + bob, dust); S(22, 9 + bob, dust); S(21, 12 + bob, dust);
+      S(23, 14 + bob, dust); S(19, 15 + bob, dust);
+    }
+  } else {
+    R(10, 8 + bob, 4, 10, body[0]); R(10, 15 + bob, 4, 4, body[1]);
+    R(9, 6 + bob, 6, 5, body[0]);
+    if (d === 'down') { S(10, 7 + bob, eye); S(13, 7 + bob, eye); }
+    else { S(10, 8 + bob, wing[1]); S(13, 9 + bob, wing[1]); }
+    S(10, 5 + bob, body[1]); S(8 + sweep, 3 + bob, body[1]);
+    S(13, 5 + bob, body[1]); S(15 - sweep, 3 + bob, body[1]);
+    R(3 - spread, 8 + bob + sweep, 7 + spread, 5, wing[0]);
+    R(4 - spread, 13 + bob, 6 + spread, 4, wing[1]);
+    R(14, 8 + bob - sweep, 7 + spread, 5, wing[0]);
+    R(14, 13 + bob, 6 + spread, 4, wing[1]);
+    S(2 - spread, 10 + bob + sweep, wing[1]); S(21 + spread, 10 + bob - sweep, wing[1]);
+    R(9, 18 + bob, 2, 2, body[1]); R(13, 18 + bob, 2, 2, body[1]);
+    if (strike) {
+      const dy = d === 'down' ? 1 : -1;
+      S(6, 17 + dy * f, dust); S(17, 16 + dy * f, dust);
+      S(4, 19 + dy, dust); S(19, 18 + dy, dust); S(12, 21 + dy, dust);
+    }
+  }
+}
+
+function drawOctopus(g, d, p, f, V, animId) {
+  const walking = animId === 'walk';
+  const gait = walking ? [
+    { x: 0, bob: 0, a: -1, b: 1 },
+    { x: 1, bob: 1, a: 0, b: -1 },
+    { x: 0, bob: 0, a: 1, b: -1 },
+    { x: -1, bob: 1, a: 0, b: 1 },
+  ][f] : { x: 0, bob: animId === 'idle' && f === 1 ? 1 : 0, a: 0, b: 0 };
+  const strike = animId === 'attack' && (f === 1 || f === 2);
+  const ox = d === 'right' ? p.lunge : 0;
+  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
+  const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
+  const c = V.c, underside = V.underside, ring = V.ring, ink = V.ink, eye = V.eye;
+  const bx = gait.x, by = gait.bob;
+
+  if (d === 'right') {
+    R(8 + bx, 7 + by, 9, 10 - by, c[0]); R(10 + bx, 6 + by, 6, 2, c[0]);
+    R(9 + bx, 14, 8, 3, underside); S(15 + bx, 9 + by, eye); S(16 + bx, 11 + by, ring);
+    R(6 + gait.a, 16, 5, 2, c[1]); R(4 + gait.a, 18, 6, 2, c[0]); S(3 + gait.a, 20, c[1]);
+    R(9 + gait.b, 17, 5, 2, c[1]); R(8 + gait.b, 20, 6, 2, c[0]); S(7 + gait.b, 22, c[1]);
+    R(13 - gait.a, 17, 5, 2, c[1]); R(15 - gait.a, 19, 5, 2, c[0]); S(20 - gait.a, 21, c[1]);
+    if (strike) {
+      R(16, 15, 6, 2, c[0]); S(22, 14, c[1]); S(23, 13, ring);
+      S(19, 9, ink); S(21, 8, ink); S(22, 10, ink);
+    }
+  } else {
+    R(7 + bx, 7 + by, 10, 10 - by, c[0]); R(9 + bx, 5 + by, 6, 3, c[0]);
+    R(8 + bx, 14, 8, 3, underside);
+    if (d === 'down') { S(9 + bx, 9 + by, eye); S(14 + bx, 9 + by, eye); S(11 + bx, 12 + by, ring); S(13 + bx, 12 + by, ring); }
+    else { S(9 + bx, 8 + by, ring); S(14 + bx, 10 + by, ring); R(10 + bx, 6 + by, 4, 1, c[1]); }
+    R(4 + gait.a, 16, 6, 2, c[1]); R(3 + gait.a, 19, 5, 2, c[0]); S(2 + gait.a, 21, c[1]);
+    R(8 + gait.b, 17, 4, 2, c[1]); R(7 + gait.b, 20, 5, 2, c[0]); S(6 + gait.b, 22, c[1]);
+    R(12 - gait.b, 17, 4, 2, c[1]); R(12 - gait.b, 20, 5, 2, c[0]); S(17 - gait.b, 22, c[1]);
+    R(14 - gait.a, 16, 6, 2, c[1]); R(16 - gait.a, 19, 5, 2, c[0]); S(21 - gait.a, 21, c[1]);
+    if (strike) {
+      if (d === 'down') { R(10, 17, 4, 5, c[0]); S(9, 22, ring); S(14, 22, ring); }
+      S(5, 8, ink); S(3, 7, ink); S(19, 9, ink); S(21, 7, ink);
+    }
+  }
+}
+
+function drawMole(g, d, p, f, V, animId) {
+  const walking = animId === 'walk';
+  const gait = walking ? [
+    { x: 0, bob: 0, left: 1, right: -1 },
+    { x: 1, bob: 1, left: 0, right: 1 },
+    { x: 0, bob: 0, left: -1, right: 1 },
+    { x: -1, bob: 1, left: 0, right: -1 },
+  ][f] : { x: 0, bob: animId === 'idle' && f === 1 ? 1 : 0, left: 0, right: 0 };
+  const buried = animId === 'attack' && f === 1;
+  const erupt = animId === 'attack' && f === 2;
+  const ox = d === 'right' ? p.lunge : 0;
+  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
+  const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
+  const fur = V.fur, belly = V.belly, claw = V.claw, nose = V.nose, eye = V.eye;
+
+  if (buried) {
+    R(5, 19, 14, 3, fur[1]); R(7, 17, 10, 2, fur[0]);
+    S(4, 21, claw); S(19, 21, claw); S(6, 18, belly); S(17, 18, belly);
+    R(8, 22, 8, 1, fur[1]); S(3, 20, fur[0]); S(20, 20, fur[0]);
+    return;
+  }
+
+  const bx = gait.x, by = gait.bob - (erupt ? 2 : 0);
+  if (d === 'right') {
+    R(6 + bx, 12 + by, 10, 7, fur[0]); R(7 + bx, 16 + by, 9, 3, belly);
+    R(14 + bx, 9 + by, 6, 7, fur[0]); S(18 + bx, 10 + by, eye);
+    R(19 + bx, 12 + by, 3, 2, nose); S(21 + bx, 14 + by, nose);
+    S(15 + bx, 8 + by, fur[1]); S(17 + bx, 8 + by, fur[1]);
+    R(7 + gait.left, 18, 3, 4, fur[1]); R(13 + gait.right, 18, 3, 4, fur[1]);
+    S(6 + gait.left, 21, claw); S(16 + gait.right, 21, claw);
+    R(15 + bx, 15 + by, erupt ? 6 : 4, 2, fur[1]);
+    S(19 + bx, 17 + by, claw); S(20 + bx, 16 + by, claw); S(21 + bx, 15 + by, claw);
+    S(5 + bx, 14 + by, fur[1]); S(4 + bx, 15 + by, fur[1]);
+  } else {
+    R(7 + bx, 11 + by, 10, 9, fur[0]); R(9 + bx, 16 + by, 6, 4, belly);
+    R(8 + bx, 7 + by, 8, 7, fur[0]); S(8 + bx, 6 + by, fur[1]); S(15 + bx, 6 + by, fur[1]);
+    if (d === 'down') {
+      S(9 + bx, 9 + by, eye); S(14 + bx, 9 + by, eye); R(11 + bx, 12 + by, 3, 2, nose);
+    } else {
+      R(10 + bx, 8 + by, 4, 2, fur[1]); S(9 + bx, 11 + by, belly); S(14 + bx, 11 + by, belly);
+    }
+    R(6 + gait.left, 17, 3, 3, fur[1]); R(15 + gait.right, 17, 3, 3, fur[1]);
+    S(5 + gait.left, 20, claw); S(6 + gait.left, 21, claw);
+    S(18 + gait.right, 20, claw); S(17 + gait.right, 21, claw);
+    R(8 + gait.left, 19, 3, 3, fur[1]); R(13 + gait.right, 19, 3, 3, fur[1]);
+    S(7 + gait.left, 22, claw); S(16 + gait.right, 22, claw);
+    if (erupt) { S(4, 18, claw); S(19, 18, claw); S(3, 20, fur[1]); S(20, 20, fur[1]); }
+  }
+}
+
 // ============================================================
 // TOP-LEVEL RENDER
 // ============================================================
@@ -1901,8 +2091,8 @@ function buildHumanoidC(spec) {
 
 function shadowFor(spec, animId, f) {
   if (spec.kind === 'enemy') {
-    if (spec.family === 'bat' || spec.family === 'ghost' || spec.family === 'elemental' || spec.family === 'eyemonster' || spec.family === 'wasp' || spec.family === 'jellyfish' || spec.family === 'anglerfish') return { x: 9, w: 6, a: 0.10 };
-    if (spec.family === 'snake' || spec.family === 'worm' || spec.family === 'scorpion' || spec.family === 'crab' || spec.family === 'beetle' || spec.family === 'mimic' || spec.family === 'frog' || spec.family === 'turtle' || spec.family === 'centipede' || spec.family === 'carniplant') return { x: 7, w: 10, a: 0.15 };
+    if (spec.family === 'bat' || spec.family === 'ghost' || spec.family === 'elemental' || spec.family === 'eyemonster' || spec.family === 'wasp' || spec.family === 'jellyfish' || spec.family === 'anglerfish' || spec.family === 'moth') return { x: 9, w: 6, a: 0.10 };
+    if (spec.family === 'snake' || spec.family === 'worm' || spec.family === 'scorpion' || spec.family === 'crab' || spec.family === 'beetle' || spec.family === 'mimic' || spec.family === 'frog' || spec.family === 'turtle' || spec.family === 'centipede' || spec.family === 'carniplant' || spec.family === 'octopus' || spec.family === 'mole') return { x: 7, w: 10, a: 0.15 };
     if (spec.family === 'golem' || spec.family === 'treant') return { x: 6, w: 12, a: 0.15 };
     if (spec.family === 'spider') return { x: 7, w: 10, a: 0.15 };
     if (spec.family === 'wolf' || spec.family === 'boar' || spec.family === 'bear' || spec.family === 'bigcat' || spec.family === 'drake' || spec.family === 'crocodile' || spec.family === 'griffin') return { x: 6, w: 12, a: 0.15 };
@@ -1963,6 +2153,10 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
     if (spec.family === 'carniplant') drawCarnivorousPlant(g, d, p, f, V, anim.id);
     if (spec.family === 'anglerfish') drawAnglerfish(g, d, p, f, V, anim.id);
     if (spec.family === 'griffin') drawGriffin(g, d, p, f, V, anim.id);
+    if (spec.family === 'mantis') drawMantis(g, d, p, f, V, anim.id);
+    if (spec.family === 'moth') drawMoth(g, d, p, f, V, anim.id);
+    if (spec.family === 'octopus') drawOctopus(g, d, p, f, V, anim.id);
+    if (spec.family === 'mole') drawMole(g, d, p, f, V, anim.id);
   }
 
   for (let y = 0; y < SIZE; y++) {
