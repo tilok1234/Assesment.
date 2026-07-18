@@ -1,17 +1,18 @@
 # 8-bit Sprite Assembler
 
-A browser-based procedural sprite creator for building 24x24 player characters and enemies, previewing four-direction animations, and exporting game-ready PNG sprite sheets.
+A browser-based procedural sprite creator for building 24x24 player characters, enemies, and synchronized combat effects, previewing four-direction animations, and exporting game-ready PNG sprite sheets.
 
 ## Current capabilities
 
 - Player assembly from skin, hair, eight facial details, headgear, outfit and armor tier, weapon type and tier, shield, and palette choices
 - 57 enemy families with 202 predefined variants
+- 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
 - Four directions: down, left, right, and up
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
-- Persistent named character packs that collect player and enemy designs and download as a ZIP with full PNG sheets and `manifest.json`
-- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 769 content-unique atomic component sheets, and all 202 enemy variations at native 1x
-- A validated asset pack containing 208 exported sheets
+- Persistent named sprite packs that collect player, enemy, and combat-effect designs and download as a ZIP with full PNG sheets and `manifest.json`
+- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 769 content-unique atomic component sheets, all 202 enemy variations, and all 24 combat effects at native 1x
+- A validated asset pack containing 232 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
 - Sprite-only undo and redo through the header controls or `Ctrl+Z` / `Ctrl+Y`
@@ -109,11 +110,11 @@ The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. T
 3. Use **Load** to keep editing an entry or **Remove** to take it out of the pack.
 4. Choose an export scale, including **1x Native**, then select **Download pack ZIP**.
 
-The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per character plus a versioned `manifest.json` with the exact character specifications, animation contract, dimensions, and file paths.
+The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per sprite plus a versioned `manifest.json` with the exact specifications, animation contract, dimensions, and file paths.
 
-For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes, the full deduplicated component library, and all 57 enemy families with all 202 variations in `enemies/<family>/<variation>.png`. Enemy sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
+For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes, the full deduplicated component library, all 57 enemy families with all 202 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
 
-A 24-player Complete Pack contains 769 shared component sheets, 202 ready enemy sheets, and 24 ready character sheets: 995 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+A 24-player Complete Pack contains 769 shared component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 1019 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
 
 ## Complete Character Kits
 
@@ -127,13 +128,16 @@ Use **Download Complete Character Kit** in Player mode to export one `8-bit-spri
 - 150 weapon layers covering all 15 families at Tiers 1-5 in back/front passes
 - 326 shield layers covering all eight families at Tiers 1-5; a pass gets color variants only when color changes its pixels, including Tier 5 artifact passes that fully replace the underlying accent
 - 202 complete enemy sheets covering every variation in all 57 enemy families, organized beneath `enemies/`
+- 24 transparent combat-effect sheets covering trails, projectiles, impacts, and statuses, organized beneath `effects/`
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
-The standalone kit contains 769 content-unique component sheets, 202 ready enemy sheets, and one reference preview: 972 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
+The standalone kit contains 769 content-unique component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 996 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
 
 Draw the non-null component paths from a recipe in this order:
 
 `weapon-back` → `shield-back` → `outfit-back` → `outfit` → `skin-body` → `head` → `face-detail` → `hair` → `headgear` → `shield-front` → `weapon-front`
+
+Draw one chosen combat-effect sheet after the assembled sprite, using the same animation column, direction row, and 24x24 source rectangle.
 
 Every component shares the same animation grid and has been validated to recompose the complete renderer pixel-for-pixel across all directions and frames. To craft a new character in a game, copy a recipe and change its component paths; no art needs to be duplicated.
 

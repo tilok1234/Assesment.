@@ -44,6 +44,7 @@ const DEFAULT_STATE = {
     palette: null,
   },
   enemy: { family: 'slime', variant: 'lime' },
+  effect: { category: 'trails', effect: 'sword-slash' },
   characterName: '',
   exportName: '',
   dir: 'down',
@@ -253,12 +254,31 @@ function sanitizeEnemy(enemy = {}) {
   return { family: family.id, variant };
 }
 
+function sanitizeEffect(effect = {}) {
+  const category = E.COMBAT_EFFECTS.find((item) => item.id === effect.category) || E.COMBAT_EFFECTS[0];
+  return {
+    category: category.id,
+    effect: validId(category.effects, effect.effect, category.effects[0].id),
+  };
+}
+
+function sanitizeMode(mode) {
+  return mode === 'enemy' || mode === 'effect' ? mode : 'player';
+}
+
+function sanitizeSpec(kind, spec) {
+  if (kind === 'player') return sanitizePlayer(spec);
+  if (kind === 'enemy') return sanitizeEnemy(spec);
+  return sanitizeEffect(spec);
+}
+
 function sanitizeEditableSnapshot(snapshot) {
   if (!snapshot || typeof snapshot !== 'object') return null;
   return {
-    mode: snapshot.mode === 'enemy' ? 'enemy' : 'player',
+    mode: sanitizeMode(snapshot.mode),
     player: sanitizePlayer(snapshot.player),
     enemy: sanitizeEnemy(snapshot.enemy),
+    effect: sanitizeEffect(snapshot.effect),
     characterName: sanitizeText(snapshot.characterName, 48),
     exportName: sanitizeText(snapshot.exportName, 80),
   };
@@ -277,9 +297,10 @@ function loadState() {
     ...saved,
     player: sanitizePlayer(saved.player),
     enemy: sanitizeEnemy(saved.enemy),
+    effect: sanitizeEffect(saved.effect),
   };
 
-  loaded.mode = loaded.mode === 'enemy' ? 'enemy' : 'player';
+  loaded.mode = sanitizeMode(loaded.mode);
   loaded.characterName = sanitizeText(loaded.characterName, 48);
   loaded.exportName = sanitizeText(loaded.exportName, 80);
   loaded.dir = E.DIRS.includes(loaded.dir) ? loaded.dir : DEFAULT_STATE.dir;
@@ -321,6 +342,7 @@ function editableSnapshot(source = state) {
       palette: source.player.palette ? clonePalette(source.player.palette) : null,
     },
     enemy: { ...source.enemy },
+    effect: { ...source.effect },
     characterName: source.characterName,
     exportName: source.exportName,
   };
@@ -336,7 +358,7 @@ function pushHistory(stack, snapshot) {
 }
 
 function setState(patch, { persist = true, render = true, recordHistory = true } = {}) {
-  const tracksSprite = ['mode', 'player', 'enemy', 'characterName', 'exportName']
+  const tracksSprite = ['mode', 'player', 'enemy', 'effect', 'characterName', 'exportName']
     .some((key) => Object.prototype.hasOwnProperty.call(patch, key));
   const before = tracksSprite ? editableSnapshot() : null;
   const next = { ...state, ...patch };
@@ -357,6 +379,7 @@ function restoreSnapshot(snapshot) {
     mode: snapshot.mode,
     player: sanitizePlayer(snapshot.player),
     enemy: sanitizeEnemy(snapshot.enemy),
+    effect: sanitizeEffect(snapshot.effect),
     characterName: sanitizeText(snapshot.characterName, 48),
     exportName: sanitizeText(snapshot.exportName, 80),
   };
@@ -379,7 +402,9 @@ function redo() {
 function resetCurrentDocument() {
   const patch = state.mode === 'player'
     ? { player: sanitizePlayer(DEFAULT_STATE.player), characterName: '', exportName: '' }
-    : { enemy: sanitizeEnemy(DEFAULT_STATE.enemy), characterName: '', exportName: '' };
+    : state.mode === 'enemy'
+      ? { enemy: sanitizeEnemy(DEFAULT_STATE.enemy), characterName: '', exportName: '' }
+      : { effect: sanitizeEffect(DEFAULT_STATE.effect), characterName: '', exportName: '', anim: 'attack', exportAnim: 'attack', frame: 0 };
   selectedPresetId = '';
   elements.presetName.value = '';
   setState(patch);
@@ -421,13 +446,17 @@ function removeComparisonCopy() {
 function currentSpec() {
   return state.mode === 'player'
     ? { kind: 'player', ...state.player }
-    : { kind: 'enemy', ...state.enemy };
+    : state.mode === 'enemy'
+      ? { kind: 'enemy', ...state.enemy }
+      : { kind: 'effect', ...state.effect };
 }
 
 function snapshotSpec(snapshot) {
   return snapshot.mode === 'player'
     ? { kind: 'player', ...snapshot.player }
-    : { kind: 'enemy', ...snapshot.enemy };
+    : snapshot.mode === 'enemy'
+      ? { kind: 'enemy', ...snapshot.enemy }
+      : { kind: 'effect', ...snapshot.effect };
 }
 
 function snapshotPatch(snapshot) {
@@ -437,6 +466,7 @@ function snapshotPatch(snapshot) {
     mode: sanitized.mode,
     player: sanitized.player,
     enemy: sanitized.enemy,
+    effect: sanitized.effect,
     characterName: sanitized.characterName,
     exportName: sanitized.exportName,
   };
@@ -448,7 +478,7 @@ function snapshotDisplayName(snapshot) {
 }
 
 function snapshotMeta(snapshot) {
-  const kind = snapshot.mode === 'player' ? 'Player' : 'Enemy';
+  const kind = snapshot.mode === 'player' ? 'Player' : snapshot.mode === 'enemy' ? 'Enemy' : 'Effect';
   return `${kind} · ${E.describe(snapshotSpec(snapshot)).replaceAll('-', ' ')}`;
 }
 
@@ -533,14 +563,14 @@ function makePackEntryId() {
 
 function sanitizePackEntry(raw) {
   if (!raw || typeof raw !== 'object') return null;
-  const kind = raw.kind === 'enemy' ? 'enemy' : raw.kind === 'player' ? 'player' : null;
+  const kind = raw.kind === 'effect' ? 'effect' : raw.kind === 'enemy' ? 'enemy' : raw.kind === 'player' ? 'player' : null;
   const name = sanitizeText(raw.name, 48).trim();
   if (!kind || !name) return null;
   return {
     id: typeof raw.id === 'string' && raw.id ? raw.id : makePackEntryId(),
     name,
     kind,
-    spec: kind === 'player' ? sanitizePlayer(raw.spec) : sanitizeEnemy(raw.spec),
+    spec: sanitizeSpec(kind, raw.spec),
     createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
   };
 }
@@ -577,9 +607,7 @@ function persistPackLibrary() {
 }
 
 function packEntrySpec(entry) {
-  return entry.kind === 'player'
-    ? { kind: 'player', ...entry.spec }
-    : { kind: 'enemy', ...entry.spec };
+  return { kind: entry.kind, ...entry.spec };
 }
 
 function setPackStatus(message) {
@@ -593,7 +621,7 @@ function packIsBusy() {
 function addCurrentToPack() {
   if (packIsBusy()) return;
   if (packLibrary.entries.length >= PACK_ENTRY_LIMIT) {
-    setPackStatus(`This pack already has the ${PACK_ENTRY_LIMIT}-character limit.`);
+    setPackStatus(`This pack already has the ${PACK_ENTRY_LIMIT}-sprite limit.`);
     return;
   }
 
@@ -604,7 +632,7 @@ function addCurrentToPack() {
     id: makePackEntryId(),
     name,
     kind: spec.kind,
-    spec: spec.kind === 'player' ? sanitizePlayer(spec) : sanitizeEnemy(spec),
+    spec: sanitizeSpec(spec.kind, spec),
     createdAt: new Date().toISOString(),
   });
   persistPackLibrary();
@@ -617,7 +645,9 @@ function loadPackEntry(entryId) {
   if (!entry || packIsBusy()) return;
   const patch = entry.kind === 'player'
     ? { mode: 'player', player: sanitizePlayer(entry.spec) }
-    : { mode: 'enemy', enemy: sanitizeEnemy(entry.spec) };
+    : entry.kind === 'enemy'
+      ? { mode: 'enemy', enemy: sanitizeEnemy(entry.spec) }
+      : { mode: 'effect', effect: sanitizeEffect(entry.spec), anim: 'attack', exportAnim: 'attack', frame: 0 };
   patch.characterName = entry.name;
   patch.exportName = '';
   selectedPresetId = '';
@@ -638,7 +668,7 @@ function removePackEntry(entryId) {
 
 function clearCharacterPack() {
   if (!packLibrary.entries.length || packIsBusy()) return;
-  if (!globalThis.confirm(`Remove all ${packLibrary.entries.length} characters from this pack?`)) return;
+  if (!globalThis.confirm(`Remove all ${packLibrary.entries.length} sprites from this pack?`)) return;
   packLibrary.entries = [];
   persistPackLibrary();
   renderPackControls();
@@ -647,7 +677,7 @@ function clearCharacterPack() {
 
 function sanitizePreset(raw) {
   if (!raw || typeof raw !== 'object') return null;
-  const kind = raw.kind === 'enemy' ? 'enemy' : raw.kind === 'player' ? 'player' : null;
+  const kind = raw.kind === 'effect' ? 'effect' : raw.kind === 'enemy' ? 'enemy' : raw.kind === 'player' ? 'player' : null;
   const name = typeof raw.name === 'string' ? raw.name.trim().slice(0, 48) : '';
   if (!kind || !name) return null;
 
@@ -655,7 +685,7 @@ function sanitizePreset(raw) {
     id: typeof raw.id === 'string' && raw.id ? raw.id : makePresetId(),
     name,
     kind,
-    spec: kind === 'player' ? sanitizePlayer(raw.spec) : sanitizeEnemy(raw.spec),
+    spec: sanitizeSpec(kind, raw.spec),
     characterName: sanitizeText(raw.characterName, 48),
     exportName: sanitizeText(raw.exportName, 80),
     createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
@@ -700,7 +730,8 @@ function selectedPreset() {
 }
 
 function presetLabel(preset) {
-  return `${preset.kind === 'player' ? 'Player' : 'Enemy'} · ${preset.name}`;
+  const kind = preset.kind === 'player' ? 'Player' : preset.kind === 'enemy' ? 'Enemy' : 'Effect';
+  return `${kind} · ${preset.name}`;
 }
 
 function setPresetStatus(message) {
@@ -725,7 +756,7 @@ function savePreset() {
     id: existing?.id || makePresetId(),
     name,
     kind: spec.kind,
-    spec: spec.kind === 'player' ? sanitizePlayer(spec) : sanitizeEnemy(spec),
+    spec: sanitizeSpec(spec.kind, spec),
     characterName: state.characterName,
     exportName: state.exportName,
     createdAt: existing?.createdAt || now,
@@ -750,7 +781,9 @@ function loadSelectedPreset() {
   if (!preset) return;
   const patch = preset.kind === 'player'
     ? { mode: 'player', player: sanitizePlayer(preset.spec) }
-    : { mode: 'enemy', enemy: sanitizeEnemy(preset.spec) };
+    : preset.kind === 'enemy'
+      ? { mode: 'enemy', enemy: sanitizeEnemy(preset.spec) }
+      : { mode: 'effect', effect: sanitizeEffect(preset.spec), anim: 'attack', exportAnim: 'attack', frame: 0 };
   patch.characterName = preset.characterName;
   patch.exportName = preset.exportName;
   setState(patch);
@@ -886,6 +919,10 @@ function currentFamily() {
   return E.ENEMIES.find((family) => family.id === state.enemy.family) || E.ENEMIES[0];
 }
 
+function currentEffectCategory() {
+  return E.COMBAT_EFFECTS.find((category) => category.id === state.effect.category) || E.COMBAT_EFFECTS[0];
+}
+
 function setPlayerOption(key, value) {
   const player = { ...state.player, [key]: value };
   if (key === 'weapon' && value === 'none') player.weaponTier = 'tier1';
@@ -903,6 +940,11 @@ function setPlayerOption(key, value) {
 function setEnemyFamily(familyId) {
   const family = E.ENEMIES.find((item) => item.id === familyId) || E.ENEMIES[0];
   setState({ enemy: { family: family.id, variant: family.variants[0].id } });
+}
+
+function setEffectCategory(categoryId) {
+  const category = E.COMBAT_EFFECTS.find((item) => item.id === categoryId) || E.COMBAT_EFFECTS[0];
+  setState({ effect: { category: category.id, effect: category.effects[0].id }, anim: 'attack', exportAnim: 'attack', frame: 0 });
 }
 
 function findSpinIndex() {
@@ -941,6 +983,7 @@ function renderModeButtons() {
   elements.modeButtons.replaceChildren(
     makeButton('Player', state.mode === 'player', () => setState({ mode: 'player' })),
     makeButton('Enemies', state.mode === 'enemy', () => setState({ mode: 'enemy' })),
+    makeButton('Effects', state.mode === 'effect', () => setState({ mode: 'effect', anim: 'attack', exportAnim: 'attack', frame: 0 })),
   );
 }
 
@@ -948,7 +991,9 @@ function thumbUrl(spec) {
   const key = JSON.stringify(spec);
   if (!thumbCache.has(key)) {
     if (thumbCache.size > 800) thumbCache.clear();
-    thumbCache.set(key, E.thumbURL(spec));
+    thumbCache.set(key, spec.kind === 'effect'
+      ? E.thumbURL(spec, 'down', 'attack', 1)
+      : E.thumbURL(spec));
   }
   return thumbCache.get(key);
 }
@@ -1189,8 +1234,32 @@ function enemyGroups() {
   ];
 }
 
+function effectGroups() {
+  const category = currentEffectCategory();
+  return [
+    thumbnailGroup(
+      'Effect group',
+      E.COMBAT_EFFECTS,
+      category.id,
+      setEffectCategory,
+      (item) => ({ kind: 'effect', category: item.id, effect: item.effects[0].id }),
+    ),
+    thumbnailGroup(
+      'Combat effect',
+      category.effects,
+      state.effect.effect,
+      (effect) => setState({ effect: { category: category.id, effect }, anim: 'attack', exportAnim: 'attack', frame: 0 }),
+      (item) => ({ kind: 'effect', category: category.id, effect: item.id }),
+    ),
+  ];
+}
+
 function renderOptionGroups() {
-  const groups = state.mode === 'player' ? playerGroups() : enemyGroups();
+  const groups = state.mode === 'player'
+    ? playerGroups()
+    : state.mode === 'enemy'
+      ? enemyGroups()
+      : effectGroups();
   elements.optionGroups.replaceChildren(...groups.map(createOptionGroup));
 }
 
@@ -1368,7 +1437,7 @@ function renderPackEntry(entry) {
   canvas.setAttribute('aria-hidden', 'true');
   const context = canvas.getContext('2d');
   context.imageSmoothingEnabled = false;
-  E.drawSprite(context, packEntrySpec(entry), 'down', 'idle', 0, { shadow: false });
+  E.drawSprite(context, packEntrySpec(entry), 'down', entry.kind === 'effect' ? 'attack' : 'idle', entry.kind === 'effect' ? 1 : 0, { shadow: false });
 
   const copy = document.createElement('div');
   copy.className = 'pack-entry-copy';
@@ -1376,7 +1445,8 @@ function renderPackEntry(entry) {
   name.textContent = entry.name;
   name.title = entry.name;
   const meta = document.createElement('span');
-  meta.textContent = `${entry.kind === 'player' ? 'Player' : 'Enemy'} · ${E.describe(packEntrySpec(entry)).replaceAll('-', ' ')}`;
+  const kind = entry.kind === 'player' ? 'Player' : entry.kind === 'enemy' ? 'Enemy' : 'Effect';
+  meta.textContent = `${kind} · ${E.describe(packEntrySpec(entry)).replaceAll('-', ' ')}`;
   meta.title = meta.textContent;
   copy.append(name, meta);
 
@@ -1409,14 +1479,14 @@ function renderPackControls() {
   const playerCount = playerEntries.length;
   const busy = packIsBusy();
   const scaleLabel = state.exportScale === 1 ? '1x native' : `${state.exportScale}x`;
-  elements.packSummary.textContent = `${count} character${count === 1 ? '' : 's'} · ${scaleLabel} full sheets`;
+  elements.packSummary.textContent = `${count} sprite${count === 1 ? '' : 's'} · ${scaleLabel} full sheets`;
 
   if (count) {
     elements.packList.replaceChildren(...packLibrary.entries.map(renderPackEntry));
   } else {
     const empty = document.createElement('li');
     empty.className = 'pack-empty';
-    empty.textContent = 'No characters added yet.';
+    empty.textContent = 'No sprites added yet.';
     elements.packList.replaceChildren(empty);
   }
 
@@ -1427,13 +1497,13 @@ function renderPackControls() {
   elements.downloadPackButton.textContent = packExporting ? 'Building pack…' : 'Download pack ZIP';
 
   if (!playerCount) {
-    elements.packMasterKitSummary.textContent = `Add up to ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} players as recipes for one shared component kit.`;
+    elements.packMasterKitSummary.textContent = `Regular packs accept up to ${PACK_ENTRY_LIMIT} sprites; Complete Packs support up to ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} player recipes.`;
   } else if (playerCount > COMPLETE_CHARACTER_KIT_RECIPE_LIMIT) {
     elements.packMasterKitSummary.textContent = `${playerCount} player recipes · remove ${playerCount - COMPLETE_CHARACTER_KIT_RECIPE_LIMIT} to reach the ${COMPLETE_CHARACTER_KIT_RECIPE_LIMIT}-recipe limit.`;
   } else {
     const counts = completeCharacterKitCounts();
-    const totalPngs = counts.componentPngs + counts.enemySheets + playerCount;
-    elements.packMasterKitSummary.textContent = `${playerCount} ready character${playerCount === 1 ? '' : 's'} + ${counts.componentPngs} unique components + ${counts.enemySheets} native enemies · ${totalPngs} PNGs total`;
+    const totalPngs = counts.componentPngs + counts.enemySheets + counts.effectSheets + playerCount;
+    elements.packMasterKitSummary.textContent = `${playerCount} ready character${playerCount === 1 ? '' : 's'} + ${counts.componentPngs} unique components + ${counts.enemySheets} native enemies + ${counts.effectSheets} combat effects · ${totalPngs} PNGs total`;
   }
   elements.downloadPackMasterKitButton.disabled = busy
     || masterKitExporting
@@ -1457,7 +1527,7 @@ function renderMasterKitControls() {
   }
 
   const counts = completeCharacterKitCounts();
-  elements.masterKitSummary.textContent = `${counts.componentPngs} unique components · ${counts.enemySheets} native enemies · 1 reference · ${counts.totalPngs} PNGs`;
+  elements.masterKitSummary.textContent = `${counts.componentPngs} unique components · ${counts.enemySheets} native enemies · ${counts.effectSheets} combat effects · 1 reference · ${counts.totalPngs} PNGs`;
   elements.downloadMasterKitButton.disabled = masterKitExporting || rosterKitExporting;
   elements.downloadMasterKitButton.textContent = masterKitExporting && masterKitProgress
     ? `Building ${masterKitProgress.done} / ${masterKitProgress.total}…`
@@ -1649,7 +1719,8 @@ function chooseDirection(direction) {
 
 function randomize() {
   if (state.mode === 'player') setState({ player: sanitizePlayer(E.randomPlayer()) });
-  else setState({ enemy: E.randomEnemy() });
+  else if (state.mode === 'enemy') setState({ enemy: E.randomEnemy() });
+  else setState({ effect: E.randomEffect(), anim: 'attack', exportAnim: 'attack', frame: 0 });
 }
 
 function triggerDownload(canvas, filename) {
@@ -1764,7 +1835,7 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
     ...plan.counts,
     referencePreviews: includeReference ? 1 : 0,
     readyCharacters: readyCharacters.length,
-    totalPngs: plan.counts.componentPngs + plan.counts.enemySheets
+    totalPngs: plan.counts.componentPngs + plan.counts.enemySheets + plan.counts.effectSheets
       + (includeReference ? 1 : 0) + readyCharacters.length,
   };
   return {
@@ -1789,6 +1860,7 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
     layering: {
       order: [...COMPLETE_CHARACTER_KIT_LAYER_ORDER],
       instructions: 'Draw each non-null recipe component in this order using the same frame rectangle, direction row, and animation column.',
+      effectOverlay: 'Draw one effects/ sheet after the assembled sprite using that same frame rectangle, direction row, and animation column.',
     },
     counts,
     components: {
@@ -1807,6 +1879,11 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
       name: family.name,
       variants: family.variants.map(withoutRenderSpec),
     })),
+    effects: plan.effects.map((category) => ({
+      category: category.category,
+      name: category.name,
+      effects: category.effects.map(withoutRenderSpec),
+    })),
     recipes: plan.recipes,
     ...(readyCharacters.length ? { characters: readyCharacters } : {}),
     referencePreview: includeReference ? plan.reference.file : readyCharacters[0]?.file || null,
@@ -1816,12 +1893,12 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
 function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) {
   const counts = completeCharacterKitCounts();
   return `${name} - ${readyCharacterCount ? 'Complete Character Pack' : 'Complete Character Kit'}\n\n`
-    + 'This archive combines one deduplicated library of reusable character components with a ready-to-use enemy library.\n'
+    + 'This archive combines one deduplicated library of reusable character components with ready-to-use enemy and combat-effect libraries.\n'
     + `${recipeCount} saved character recipe${recipeCount === 1 ? '' : 's'} reference those shared files without duplicating artwork.\n`
     + (readyCharacterCount
       ? `${readyCharacterCount} assembled native sprite sheet${readyCharacterCount === 1 ? '' : 's'} are included in characters/ for immediate game use.\n`
       : '')
-    + `All PNG files are native 288x96 sprite sheets made from 24x24 frames. The enemies/ folder contains all ${counts.enemyFamilies} enemy families and ${counts.enemySheets} variations as complete assembled sheets.\n\n`
+    + `All PNG files are native 288x96 sprite sheets made from 24x24 frames. The enemies/ folder contains all ${counts.enemyFamilies} enemy families and ${counts.enemySheets} variations; effects/ contains ${counts.effectSheets} transparent synchronized overlays across ${counts.effectCategories} groups.\n\n`
     + 'Component groups:\n'
     + '- skin-body: animated hands and neck for each skin tone\n'
     + '- heads: normal and shaded animated heads for each skin tone\n'
@@ -1830,9 +1907,11 @@ function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) 
     + '- outfits: all five armor tiers as reusable front layers plus separate cape-back layers\n'
     + '- headgear: color variants only where the art actually uses outfit colors\n'
     + '- weapons and shields: all five tiers as direction-aware back/front animation layers\n'
-    + '- enemies: every enemy variation as a complete native sheet, organized by family\n\n'
+    + '- enemies: every enemy variation as a complete native sheet, organized by family\n'
+    + '- effects: weapon trails, projectiles, impacts, and statuses aligned to the same animation columns\n\n'
     + `Runtime draw order: ${COMPLETE_CHARACTER_KIT_LAYER_ORDER.join(' -> ')}.\n`
     + 'Use the same source rectangle, animation column, and direction row for every active component.\n'
+    + 'Draw a chosen effects/ overlay after the assembled character or enemy using that same source rectangle.\n'
     + 'Recipes in manifest.json are lightweight examples; change their component paths to craft new characters from this one library.\n'
     + 'Custom palette values remain in recipe specs for games that support runtime recoloring.\n';
 }
@@ -1880,6 +1959,12 @@ async function renderCompleteCharacterKitPngs(plan, zipEntries, advance, options
     for (const entry of family.variants) {
       await masterKitPng(zipEntries, entry.file, entry.spec, 'complete');
       advance('Rendering native enemy sheets.');
+    }
+  }
+  for (const category of plan.effects) {
+    for (const entry of category.effects) {
+      await masterKitPng(zipEntries, entry.file, entry.spec, 'complete');
+      advance('Rendering synchronized combat-effect overlays.');
     }
   }
   if (options.includeReference !== false) {
@@ -1964,7 +2049,7 @@ async function downloadMasterCharacterKit() {
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
     const filename = `${packFilenameBase(characterName, 'character')}-complete-character-kit.zip`;
     triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    setMasterKitStatus(`Downloaded ${plan.counts.componentPngs} unique components, ${plan.counts.enemySheets} native enemies, one reference, and the “${characterName}” recipe.`);
+    setMasterKitStatus(`Downloaded ${plan.counts.componentPngs} unique components, ${plan.counts.enemySheets} native enemies, ${plan.counts.effectSheets} combat effects, one reference, and the “${characterName}” recipe.`);
   } catch (error) {
     console.error(error);
     setMasterKitStatus('The Complete Character Kit could not be exported. Please try again.');
@@ -1998,14 +2083,14 @@ async function downloadPackMasterKit() {
   const plan = buildCompleteCharacterKitPlan(entries);
   const packName = sanitizeText(packLibrary.name, 64).trim() || 'Character Pack';
   const exportedAt = new Date().toISOString();
-  const total = plan.counts.componentPngs + plan.counts.enemySheets + entries.length;
+  const total = plan.counts.componentPngs + plan.counts.enemySheets + plan.counts.effectSheets + entries.length;
   const zipEntries = [];
   let done = 0;
   rosterKitExporting = true;
   rosterKitProgress = { done, total };
   renderPackControls();
   renderMasterKitControls();
-  updateRosterKitProgress(done, total, `Preparing ${entries.length} ready characters, their recipes, the shared component library, and every native enemy variation…`);
+  updateRosterKitProgress(done, total, `Preparing ${entries.length} ready characters, their recipes, the shared component library, every native enemy variation, and all synchronized combat effects…`);
 
   const advance = (message) => {
     done += 1;
@@ -2032,11 +2117,11 @@ async function downloadPackMasterKit() {
       data: new TextEncoder().encode(completeCharacterKitReadme(packName, entries.length, readyCharacters.length)),
     });
 
-    updateRosterKitProgress(total, total, 'Packaging ready characters, the deduplicated master library, and native enemies together…');
+    updateRosterKitProgress(total, total, 'Packaging ready characters, the deduplicated master library, native enemies, and combat effects together…');
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
     const filename = `${packFilenameBase(packName, 'character-pack')}-complete-character-pack.zip`;
     triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    setPackStatus(`Downloaded one Complete Pack with ${entries.length} ready character${entries.length === 1 ? '' : 's'}, matching recipes, ${plan.counts.componentPngs} unique components, and ${plan.counts.enemySheets} native enemies.`);
+    setPackStatus(`Downloaded one Complete Pack with ${entries.length} ready character${entries.length === 1 ? '' : 's'}, matching recipes, ${plan.counts.componentPngs} unique components, ${plan.counts.enemySheets} native enemies, and ${plan.counts.effectSheets} combat effects.`);
   } catch (error) {
     console.error(error);
     setPackStatus('The Complete Character Pack could not be exported. Please try again.');
@@ -2104,7 +2189,7 @@ async function downloadCharacterPack() {
     });
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
     triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), `${packFilenameBase(packName)}.zip`);
-    setPackStatus(`Downloaded ${entries.length} character${entries.length === 1 ? '' : 's'} at ${scale}x.`);
+    setPackStatus(`Downloaded ${entries.length} sprite${entries.length === 1 ? '' : 's'} at ${scale}x.`);
   } catch (error) {
     console.error(error);
     setPackStatus('The pack could not be exported. Please try again.');

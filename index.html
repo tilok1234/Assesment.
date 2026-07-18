@@ -208,28 +208,28 @@
           </section>
 
           <section class="character-pack-panel" aria-labelledby="character-pack-title">
-            <h2 id="character-pack-title">Character pack</h2>
+            <h2 id="character-pack-title">Sprite pack</h2>
             <label class="pack-name-field" for="pack-name">
               <span>Pack name</span>
               <input id="pack-name" type="text" maxlength="64" placeholder="My Character Pack">
             </label>
             <div class="pack-heading-row">
-              <p id="pack-summary">0 characters · 8x full sheets</p>
+              <p id="pack-summary">0 sprites · 8x full sheets</p>
               <button class="secondary-button compact-action" id="add-to-pack-button" type="button">Add current</button>
             </div>
-            <ol class="pack-list" id="pack-list" aria-label="Characters in pack">
-              <li class="pack-empty">No characters added yet.</li>
+            <ol class="pack-list" id="pack-list" aria-label="Sprites in pack">
+              <li class="pack-empty">No sprites added yet.</li>
             </ol>
             <div class="pack-action-row">
               <button class="secondary-button compact-action danger-action" id="clear-pack-button" type="button" disabled>Clear pack</button>
               <button class="primary-button pack-download-button" id="download-pack-button" type="button" disabled>Download pack ZIP</button>
             </div>
             <div class="pack-master-kit-action">
-              <p id="pack-master-kit-summary">Add up to 24 players for one ready-to-use pack and shared component kit.</p>
+              <p id="pack-master-kit-summary">Regular packs accept up to 200 sprites; Complete Packs support up to 24 player recipes.</p>
               <button class="secondary-button pack-master-kit-button" id="download-pack-master-kit-button" type="button" disabled>Download Complete Pack</button>
             </div>
             <p class="preset-status" id="pack-status" role="status" aria-live="polite">The working pack stays on this device.</p>
-            <p class="export-note">The Complete Pack combines ready-made character sheets, their recipes, every reusable component, and all enemy variations at native 1x in one ZIP. Shared component artwork is stored only once.</p>
+            <p class="export-note">The Complete Pack combines ready-made character sheets, recipes, reusable components, every enemy variation, and all synchronized combat-effect overlays at native 1x. Shared artwork is stored only once.</p>
           </section>
 
           <section class="master-kit-panel" aria-labelledby="master-kit-title">
@@ -240,8 +240,8 @@
               </div>
               <span>1x Native</span>
             </div>
-            <p class="master-kit-description">Exports skin, head, hair, facial detail, all five armor tiers, headgear, weapon, and shield sheets as atomic pieces, plus every enemy variation as a complete native sheet.</p>
-            <p class="master-kit-summary" id="master-kit-summary">769 content-unique components · 202 native enemies · 1 reference · 972 PNGs</p>
+            <p class="master-kit-description">Exports atomic character pieces, every enemy variation, and transparent weapon-trail, projectile, impact, and status overlays aligned to the same animation grid.</p>
+            <p class="master-kit-summary" id="master-kit-summary">769 content-unique components · 202 native enemies · 24 combat effects · 1 reference · 996 PNGs</p>
             <button class="primary-button master-kit-download-button" id="download-master-kit-button" type="button">Download Complete Character Kit</button>
             <p class="preset-status" id="master-kit-status" role="status" aria-live="polite">Each component is stored once and shares the same animation grid.</p>
             <p class="export-note">The current player is included only as a lightweight reference recipe; it does not duplicate component artwork.</p>

@@ -3,6 +3,7 @@
 
 export {
   ANIMS,
+  COMBAT_EFFECTS,
   DIRS,
   DIR_LABELS,
   ENEMIES,
@@ -23,4 +24,4 @@ export {
 } from './engine/catalogs.js';
 export { drawSprite } from './engine/renderer.js';
 export { buildAnimationSheet, buildDirectionSheet, buildSheet, thumbURL } from './engine/sheets.js';
-export { describe, randomEnemy, randomPlayer } from './engine/generators.js';
+export { describe, randomEffect, randomEnemy, randomPlayer } from './engine/generators.js';

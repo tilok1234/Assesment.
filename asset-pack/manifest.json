@@ -1,6 +1,6 @@
 {
   "name": "8-bit Sprite Asset Pack",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "generated": "2026-07-18",
   "format": {
     "frameSize": 24,
@@ -1272,6 +1272,56 @@
       ]
     }
   ],
+  "effects": [
+    {
+      "category": "trails",
+      "name": "Weapon trails",
+      "effects": [
+        { "id": "sword-slash", "name": "Sword slash", "file": "effects/trails/sword-slash.png" },
+        { "id": "spear-thrust", "name": "Spear thrust", "file": "effects/trails/spear-thrust.png" },
+        { "id": "axe-cleave", "name": "Axe cleave", "file": "effects/trails/axe-cleave.png" },
+        { "id": "hammer-smash", "name": "Hammer smash", "file": "effects/trails/hammer-smash.png" },
+        { "id": "shield-block", "name": "Shield block", "file": "effects/trails/shield-block.png" }
+      ]
+    },
+    {
+      "category": "projectiles",
+      "name": "Projectiles",
+      "effects": [
+        { "id": "arrow", "name": "Arrow", "file": "effects/projectiles/arrow.png" },
+        { "id": "crossbow-bolt", "name": "Crossbow bolt", "file": "effects/projectiles/crossbow-bolt.png" },
+        { "id": "fireball", "name": "Fireball", "file": "effects/projectiles/fireball.png" },
+        { "id": "ice-shard", "name": "Ice shard", "file": "effects/projectiles/ice-shard.png" },
+        { "id": "poison-glob", "name": "Poison glob", "file": "effects/projectiles/poison-glob.png" },
+        { "id": "holy-orb", "name": "Holy orb", "file": "effects/projectiles/holy-orb.png" },
+        { "id": "shadow-shot", "name": "Shadow shot", "file": "effects/projectiles/shadow-shot.png" }
+      ]
+    },
+    {
+      "category": "impacts",
+      "name": "Impact effects",
+      "effects": [
+        { "id": "sparks", "name": "Sparks", "file": "effects/impacts/sparks.png" },
+        { "id": "blood-hit", "name": "Blood hit", "file": "effects/impacts/blood-hit.png" },
+        { "id": "armor-impact", "name": "Armor impact", "file": "effects/impacts/armor-impact.png" },
+        { "id": "explosion", "name": "Explosion", "file": "effects/impacts/explosion.png" },
+        { "id": "arcane-burst", "name": "Arcane burst", "file": "effects/impacts/arcane-burst.png" },
+        { "id": "dust-puff", "name": "Dust puff", "file": "effects/impacts/dust-puff.png" }
+      ]
+    },
+    {
+      "category": "statuses",
+      "name": "Status overlays",
+      "effects": [
+        { "id": "burning", "name": "Burning", "file": "effects/statuses/burning.png" },
+        { "id": "frozen", "name": "Frozen", "file": "effects/statuses/frozen.png" },
+        { "id": "poisoned", "name": "Poisoned", "file": "effects/statuses/poisoned.png" },
+        { "id": "stunned", "name": "Stunned", "file": "effects/statuses/stunned.png" },
+        { "id": "cursed", "name": "Cursed", "file": "effects/statuses/cursed.png" },
+        { "id": "healing", "name": "Healing", "file": "effects/statuses/healing.png" }
+      ]
+    }
+  ],
   "players": [
     {
       "id": "knight",
@@ -1301,6 +1351,8 @@
   "counts": {
     "enemyFamilies": 57,
     "enemySheets": 202,
+    "effectCategories": 4,
+    "effectSheets": 24,
     "playerSheets": 6
   }
 }

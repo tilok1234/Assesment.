@@ -4,6 +4,7 @@ import {
   ANIMS,
   BONE,
   BOOTS,
+  COMBAT_EFFECTS,
   CREAM,
   ENEMIES,
   GOLD,
@@ -20,6 +21,7 @@ import {
 } from './catalogs.js';
 import { drawWeapon } from './weapon-renderer.js';
 import { drawShield } from './shield-renderer.js';
+import { drawCombatEffect } from './effect-renderer.js';
 
 const find = (list, id) => list.find(x => x.id === id) || list[0];
 const isHexColor = value => typeof value === 'string' && /^#[0-9a-f]{6}$/i.test(value);
@@ -2307,7 +2309,7 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
 
   ctx.clearRect(0, 0, SIZE, SIZE);
 
-  if (opts.shadow !== false && (renderLayer === 'complete' || renderLayer === 'body')) {
+  if (spec.kind !== 'effect' && opts.shadow !== false && (renderLayer === 'complete' || renderLayer === 'body')) {
     const sh = shadowFor(spec, anim.id, f);
     ctx.fillStyle = `rgba(26,28,44,${sh.a})`;
     ctx.fillRect(sh.x, 22, sh.w, 1);
@@ -2316,7 +2318,11 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
 
   const g = makeG();
   const HUMANOID_FAMS = ['goblin', 'skeleton', 'zombie', 'imp', 'elf', 'dwarf', 'bandit', 'cultist', 'orc', 'ogre', 'troll', 'kobold', 'gnoll', 'ratfolk', 'lizardfolk', 'minotaur', 'demon', 'cyclops', 'harpy'];
-  if (spec.kind === 'player' || HUMANOID_FAMS.indexOf(spec.family) >= 0) {
+  if (spec.kind === 'effect' && (renderLayer === 'complete' || renderLayer === 'body')) {
+    const category = find(COMBAT_EFFECTS, spec.category);
+    const effect = find(category.effects, spec.effect);
+    drawCombatEffect(g, d, f, effect, anim.id);
+  } else if (spec.kind === 'player' || HUMANOID_FAMS.indexOf(spec.family) >= 0) {
     drawHumanoid(g, d, p, buildHumanoidC(spec), renderLayer);
   } else if (renderLayer === 'complete' || renderLayer === 'body') {
     const fam = find(ENEMIES, spec.family);
@@ -2362,7 +2368,7 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
     for (let x = 0; x < SIZE; x++) {
       const c = g.px[y * SIZE + x];
       if (!c) continue;
-      ctx.fillStyle = p.flash ? '#ffffff' : c;
+      ctx.fillStyle = p.flash && spec.kind !== 'effect' ? '#ffffff' : c;
       ctx.fillRect(flip ? SIZE - 1 - x : x, y, 1, 1);
     }
   }

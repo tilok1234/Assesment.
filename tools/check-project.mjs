@@ -54,10 +54,12 @@ checkSyntax('character-kit.js');
 checkSyntax('zip.js');
 checkSyntax('engine/catalogs.js');
 checkSyntax('engine/catalogs/animation.js');
+checkSyntax('engine/catalogs/effects.js');
 checkSyntax('engine/catalogs/enemies.js');
 checkSyntax('engine/catalogs/palettes.js');
 checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/generators.js');
+checkSyntax('engine/effect-renderer.js');
 checkSyntax('engine/renderer.js');
 checkSyntax('engine/shield-renderer.js');
 checkSyntax('engine/sheets.js');
@@ -107,10 +109,12 @@ const runtimeSources = {
   'zip.js': await readFile(path.join(root, 'zip.js'), 'utf8'),
   'engine/catalogs.js': await readFile(path.join(root, 'engine', 'catalogs.js'), 'utf8'),
   'engine/catalogs/animation.js': await readFile(path.join(root, 'engine', 'catalogs', 'animation.js'), 'utf8'),
+  'engine/catalogs/effects.js': await readFile(path.join(root, 'engine', 'catalogs', 'effects.js'), 'utf8'),
   'engine/catalogs/enemies.js': await readFile(path.join(root, 'engine', 'catalogs', 'enemies.js'), 'utf8'),
   'engine/catalogs/palettes.js': await readFile(path.join(root, 'engine', 'catalogs', 'palettes.js'), 'utf8'),
   'engine/catalogs/player-options.js': await readFile(path.join(root, 'engine', 'catalogs', 'player-options.js'), 'utf8'),
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
+  'engine/effect-renderer.js': await readFile(path.join(root, 'engine', 'effect-renderer.js'), 'utf8'),
   'engine/renderer.js': await readFile(path.join(root, 'engine', 'renderer.js'), 'utf8'),
   'engine/shield-renderer.js': await readFile(path.join(root, 'engine', 'shield-renderer.js'), 'utf8'),
   'engine/sheets.js': await readFile(path.join(root, 'engine', 'sheets.js'), 'utf8'),
@@ -122,10 +126,10 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 }
 
 const expectedEngineExports = [
-  'ANIMS', 'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
+  'ANIMS', 'COMBAT_EFFECTS', 'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'WEAPONS', 'WEAPON_TIERS',
   'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'describe', 'drawSprite',
-  'randomEnemy', 'randomPlayer', 'thumbURL',
+  'randomEffect', 'randomEnemy', 'randomPlayer', 'thumbURL',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
@@ -142,7 +146,8 @@ check(runtimeSources['app.js'].includes("PRESET_VERSION = 6"), 'app.js must keep
 check(runtimeSources['app.js'].includes('![1, 2, 3, 4, 5, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1 through 5 preset libraries');
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
-check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'characterName', 'exportName']"), 'app.js history must remain scoped to the editable sprite document');
+check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'characterName', 'exportName']"), 'app.js history must remain scoped to the editable sprite document');
+check(runtimeSources['app.js'].includes("makeButton('Effects'"), 'app.js must expose combat effects as a first-class editor mode');
 check(runtimeSources['app.js'].includes("key === 'z'"), 'app.js must expose the undo keyboard shortcut');
 check(runtimeSources['app.js'].includes("key === 'y'"), 'app.js must expose the redo keyboard shortcut');
 check(runtimeSources['app.js'].includes("className = 'category-randomize'"), 'app.js must expose per-category randomize controls');
@@ -214,10 +219,10 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   },
 }));
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
-check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 2, 'complete character kits must use the enemy-library schema');
+check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 3, 'complete character kits must use the synchronized-effects schema');
 check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
 check(characterKit.COMPLETE_CHARACTER_PACK_FORMAT === '8-bit-sprite-assembler-complete-character-pack', 'combined complete packs must expose a distinct stable format id');
-check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 2, 'combined complete packs must use the enemy-library schema');
+check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 3, 'combined complete packs must use the synchronized-effects schema');
 check(
   JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
     'weapon-back', 'shield-back', 'outfit-back', 'outfit', 'skin-body', 'head',
@@ -231,8 +236,10 @@ check(
   completeKitPlan.counts.componentPngs === 769
     && completeKitPlan.counts.enemyFamilies === 57
     && completeKitPlan.counts.enemySheets === 202
-    && completeKitPlan.counts.totalPngs === 972,
-  'complete character kits must contain 769 content-unique components, all 202 native enemy sheets, and one reference preview',
+    && completeKitPlan.counts.effectCategories === 4
+    && completeKitPlan.counts.effectSheets === 24
+    && completeKitPlan.counts.totalPngs === 996,
+  'complete character kits must contain 769 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
@@ -257,6 +264,17 @@ check(
   ))),
   'complete-kit enemies must use stable family folders and exact render specifications',
 );
+const completeEffectEntries = completeKitPlan.effects.flatMap((category) => category.effects);
+check(completeKitPlan.effects.length === 4 && completeEffectEntries.length === 24, 'complete kits must plan all four combat-effect groups and 24 overlays');
+check(
+  completeKitPlan.effects.every((category) => category.effects.every((entry) => (
+    entry.file === `effects/${category.category}/${entry.id}.png`
+      && entry.spec.kind === 'effect'
+      && entry.spec.category === category.category
+      && entry.spec.effect === entry.id
+  ))),
+  'complete-kit effects must use stable category folders and exact overlay specifications',
+);
 const completeKitPaths = [
   ...completeKitPlan.components.skinBodies.map((entry) => entry.file),
   ...completeKitPlan.components.heads.map((entry) => entry.file),
@@ -268,9 +286,10 @@ const completeKitPaths = [
   ...completeKitPlan.components.weapons.flatMap((entry) => [entry.files.back, entry.files.front]),
   ...completeKitPlan.components.shields.map((entry) => entry.file),
   ...completeEnemyEntries.map((entry) => entry.file),
+  ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 972, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 996, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
@@ -281,6 +300,7 @@ check(runtimeSources['app.js'].includes('function downloadPackMasterKit('), 'cha
 check(runtimeSources['app.js'].includes('function completeCharacterKitManifest('), 'Complete Character Kit downloads must include a game-facing component manifest');
 check(runtimeSources['app.js'].includes('function renderCompleteCharacterKitPngs('), 'Complete Character Kit downloads must route every component group through one renderer');
 check(runtimeSources['app.js'].includes("advance('Rendering native enemy sheets.')"), 'Complete Character Kits must render the planned native enemy library');
+check(runtimeSources['app.js'].includes("advance('Rendering synchronized combat-effect overlays.')"), 'Complete Character Kits must render the planned combat-effect library');
 check(runtimeSources['app.js'].includes('function renderReadyPackCharacters('), 'Complete Character Packs must include ready-to-use assembled character sheets');
 check(runtimeSources['app.js'].includes('includeReference: false'), 'combined packs must reuse a ready character as the reference instead of duplicating its PNG');
 check(runtimeSources['app.js'].includes('MASTER_CHARACTER_KIT_SCALE, { layer }'), 'Complete Character Kits must render every requested compositing layer at native scale');
@@ -375,6 +395,53 @@ function renderPixels(spec, dir, animId, frame, opts = {}) {
   };
   engine.drawSprite(ctx, spec, dir, animId, frame, { ...opts, shadow: false });
   return pixels;
+}
+
+check(engine.COMBAT_EFFECTS.length === 4, 'combat effects must expose trails, projectiles, impacts, and statuses');
+const combatEffectEntries = engine.COMBAT_EFFECTS.flatMap((category) => (
+  category.effects.map((effect) => ({ category, effect }))
+));
+check(combatEffectEntries.length === 24, 'the combat-effects library must contain 24 synchronized overlays');
+check(
+  JSON.stringify(engine.COMBAT_EFFECTS.map((category) => category.effects.length)) === JSON.stringify([5, 7, 6, 6]),
+  'combat-effect groups must retain the planned 5 trail, 7 projectile, 6 impact, and 6 status sheets',
+);
+
+for (const { category, effect } of combatEffectEntries) {
+  const spec = { kind: 'effect', category: category.id, effect: effect.id };
+  for (const dir of engine.DIRS) {
+    const attackFrames = [0, 1, 2, 3].map((frame) => renderPixels(spec, dir, 'attack', frame));
+    check(new Set(attackFrames.map((pixels) => pixels.join(','))).size === 4, `${category.id}/${effect.id} must use four distinct synchronized attack frames while facing ${dir}`);
+    check(attackFrames.every((pixels) => pixels.filter(Boolean).length >= 3), `${category.id}/${effect.id} attack frames must remain visible while facing ${dir}`);
+    for (const pixels of attackFrames) {
+      check(!pixels.some((pixel, index) => {
+        if (!pixel) return false;
+        const x = index % engine.SIZE;
+        const y = Math.floor(index / engine.SIZE);
+        return x === 0 || y === 0 || x === engine.SIZE - 1 || y === engine.SIZE - 1;
+      }), `${category.id}/${effect.id} must preserve a transparent outer pixel margin while facing ${dir}`);
+    }
+
+    if (category.id === 'statuses') {
+      const idleFrames = [0, 1].map((frame) => renderPixels(spec, dir, 'idle', frame));
+      check(idleFrames.every((pixels) => pixels.filter(Boolean).length >= 8), `${effect.id} status must remain visible outside attacks while facing ${dir}`);
+      check(idleFrames[0].join(',') !== idleFrames[1].join(','), `${effect.id} status must animate during idle while facing ${dir}`);
+    } else {
+      for (const animId of ['idle', 'walk', 'hurt']) {
+        check(renderPixels(spec, dir, animId, 0).every((pixel) => pixel === null), `${category.id}/${effect.id} must stay transparent during ${animId}`);
+      }
+    }
+  }
+}
+
+for (const category of engine.COMBAT_EFFECTS) {
+  const signatures = category.effects.map((effect) => renderPixels(
+    { kind: 'effect', category: category.id, effect: effect.id },
+    'down',
+    'attack',
+    2,
+  ).join(','));
+  check(new Set(signatures).size === category.effects.length, `${category.id} effects must remain visually distinct`);
 }
 
 const dedicatedEnemyFamilies = [
@@ -867,8 +934,9 @@ try {
 const expectedWidth = manifest.format.sheetSize.width;
 const expectedHeight = manifest.format.sheetSize.height;
 const enemyRefs = manifest.enemies.flatMap((family) => family.variants.map((variant) => variant.file));
+const effectRefs = (manifest.effects || []).flatMap((category) => category.effects.map((effect) => effect.file));
 const playerRefs = (manifest.players || []).map((player) => player.file);
-const referenced = [...enemyRefs, ...playerRefs];
+const referenced = [...enemyRefs, ...effectRefs, ...playerRefs];
 const referencedSet = new Set(referenced);
 
 check(referencedSet.size === referenced.length, 'Manifest contains duplicate PNG references');
@@ -893,6 +961,19 @@ for (const [familyId, manifestFamily] of manifestFamilies) {
   check(
     JSON.stringify(engineVariantIds) === JSON.stringify(manifestVariantIds),
     `${familyId}: engine variants do not match manifest variants`,
+  );
+}
+
+const manifestEffectCategories = new Map((manifest.effects || []).map((category) => [category.category, category]));
+const engineEffectCategories = new Map(engine.COMBAT_EFFECTS.map((category) => [category.id, category]));
+check(engineEffectCategories.size === manifestEffectCategories.size, `Engine has ${engineEffectCategories.size} effect groups but manifest has ${manifestEffectCategories.size}`);
+for (const [categoryId, manifestCategory] of manifestEffectCategories) {
+  const engineCategory = engineEffectCategories.get(categoryId);
+  check(Boolean(engineCategory), `Manifest effect group ${categoryId} is missing from the engine`);
+  if (!engineCategory) continue;
+  check(
+    JSON.stringify(engineCategory.effects.map((effect) => effect.id)) === JSON.stringify(manifestCategory.effects.map((effect) => effect.id)),
+    `${categoryId}: engine effects do not match manifest effects`,
   );
 }
 
@@ -943,5 +1024,6 @@ console.log(`- Entry point: ${entryFile}`);
 console.log(`- Player combinations: ${combinations.toLocaleString('en-US')}`);
 console.log(`- Enemy families: ${manifest.enemies.length}`);
 console.log(`- Enemy variants: ${enemyRefs.length}`);
+console.log(`- Combat effects: ${effectRefs.length}`);
 console.log(`- Player samples: ${playerRefs.length}`);
 console.log(`- Validated PNG sheets: ${actualPngs.length} (${expectedWidth}x${expectedHeight})`);

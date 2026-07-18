@@ -1,6 +1,7 @@
 // Random sprite specifications and export-safe names.
 
 import {
+  COMBAT_EFFECTS,
   ENEMIES,
   FACIAL_DETAILS,
   HAIR_COLORS,
@@ -41,6 +42,10 @@ export function randomEnemy() {
   const fam = rnd(ENEMIES);
   return { family: fam.id, variant: rnd(fam.variants).id };
 }
+export function randomEffect() {
+  const category = rnd(COMBAT_EFFECTS);
+  return { category: category.id, effect: rnd(category.effects).id };
+}
 export function describe(spec) {
   if (spec.kind === 'player') {
     const bits = [
@@ -54,5 +59,6 @@ export function describe(spec) {
     ];
     return bits.filter(Boolean).join('-');
   }
+  if (spec.kind === 'effect') return `${spec.category}-${spec.effect}`;
   return `${spec.family}-${spec.variant}`;
 }
