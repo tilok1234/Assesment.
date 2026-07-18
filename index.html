@@ -259,6 +259,29 @@
             <p class="export-note">Every character includes a loadout recipe; only the deduplicated effect sheets it actually needs are added. Uses the Export PNG scale selected above.</p>
           </section>
 
+          <section class="class-pack-panel" id="class-pack-panel" aria-labelledby="class-pack-title">
+            <div class="class-pack-heading">
+              <div>
+                <p class="class-pack-kicker">Curated RPG equipment rules</p>
+                <h2 id="class-pack-title">Class pack builder</h2>
+              </div>
+              <span>Named template</span>
+            </div>
+            <label class="class-pack-field" for="class-template">
+              <span>Class template</span>
+              <select id="class-template" aria-label="Class template"></select>
+            </label>
+            <p class="class-pack-description" id="class-pack-description">Build a focused game-ready class library from the current character identity.</p>
+            <p class="class-pack-equipment" id="class-pack-equipment">Plate · Weapons and shields chosen by the class.</p>
+            <p class="class-pack-summary" id="class-pack-summary">54 character sheets + matching effect sheets</p>
+            <div class="class-pack-actions">
+              <button class="secondary-button" id="apply-class-template-button" type="button">Apply class defaults</button>
+              <button class="primary-button class-pack-download-button" id="download-class-pack-button" type="button">Download class pack ZIP</button>
+            </div>
+            <p class="preset-status" id="class-pack-status" role="status" aria-live="polite">Export directly, or apply the defaults to preview the class in the editor.</p>
+            <p class="export-note">Appearance and custom colors stay yours. The template chooses its outfit family, default gear, allowed progression, and per-weapon combat effects.</p>
+          </section>
+
           <section class="character-pack-panel" aria-labelledby="character-pack-title">
             <h2 id="character-pack-title">Sprite pack</h2>
             <label class="pack-name-field" for="pack-name">

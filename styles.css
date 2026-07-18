@@ -1215,6 +1215,123 @@ button:disabled:hover {
   background: #247659;
 }
 
+.class-pack-panel {
+  display: grid;
+  gap: 9px;
+  padding: 10px;
+  border: 1px solid rgba(183, 113, 34, 0.3);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(255, 244, 224, 0.82), rgba(255, 255, 255, 0.96));
+}
+
+.class-pack-panel[hidden] {
+  display: none;
+}
+
+.class-pack-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.class-pack-heading > span {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border: 1px solid rgba(183, 113, 34, 0.26);
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #965d1e;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.class-pack-kicker,
+.class-pack-description,
+.class-pack-equipment,
+.class-pack-summary {
+  margin: 0;
+}
+
+.class-pack-kicker {
+  color: #965d1e;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.class-pack-field {
+  display: grid;
+  gap: 4px;
+}
+
+.class-pack-field > span {
+  color: var(--muted);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.class-pack-field select {
+  width: 100%;
+  min-width: 0;
+  padding: 7px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #23252b;
+  font: inherit;
+  font-size: 10.5px;
+}
+
+.class-pack-field select:focus {
+  border-color: #b77122;
+  outline: 2px solid rgba(183, 113, 34, 0.14);
+}
+
+.class-pack-description {
+  color: #4c3e2f;
+  font-size: 9.5px;
+  line-height: 1.45;
+}
+
+.class-pack-equipment {
+  color: var(--muted);
+  font-size: 8.8px;
+  line-height: 1.45;
+}
+
+.class-pack-summary {
+  color: #965d1e;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 9.5px;
+  line-height: 1.45;
+}
+
+.class-pack-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 7px;
+}
+
+.class-pack-actions button {
+  min-width: 0;
+  padding: 8px 5px;
+  font-size: 9.8px;
+}
+
+.class-pack-download-button {
+  background: #b77122;
+}
+
+.class-pack-download-button:hover:not(:disabled) {
+  background: #965d1e;
+}
+
 .character-pack-panel {
   display: grid;
   gap: 8px;

@@ -59,6 +59,7 @@ checkSyntax('engine/catalogs/enemies.js');
 checkSyntax('engine/catalogs/palettes.js');
 checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/combat-loadouts.js');
+checkSyntax('engine/class-templates.js');
 checkSyntax('engine/variant-batches.js');
 checkSyntax('engine/generators.js');
 checkSyntax('engine/effect-renderer.js');
@@ -105,6 +106,8 @@ for (const controlId of [
   'load-loadout-button', 'delete-loadout-button', 'download-loadout-button', 'loadout-status',
   'variant-batch-panel', 'variant-batch-set', 'variant-batch-description',
   'variant-batch-summary', 'variant-batch-status', 'download-variant-batch-button',
+  'class-pack-panel', 'class-template', 'class-pack-description', 'class-pack-equipment',
+  'class-pack-summary', 'class-pack-status', 'apply-class-template-button', 'download-class-pack-button',
 ]) {
   check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
 }
@@ -122,6 +125,7 @@ const runtimeSources = {
   'engine/catalogs/palettes.js': await readFile(path.join(root, 'engine', 'catalogs', 'palettes.js'), 'utf8'),
   'engine/catalogs/player-options.js': await readFile(path.join(root, 'engine', 'catalogs', 'player-options.js'), 'utf8'),
   'engine/combat-loadouts.js': await readFile(path.join(root, 'engine', 'combat-loadouts.js'), 'utf8'),
+  'engine/class-templates.js': await readFile(path.join(root, 'engine', 'class-templates.js'), 'utf8'),
   'engine/variant-batches.js': await readFile(path.join(root, 'engine', 'variant-batches.js'), 'utf8'),
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
   'engine/effect-renderer.js': await readFile(path.join(root, 'engine', 'effect-renderer.js'), 'utf8'),
@@ -136,19 +140,21 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 }
 
 const expectedEngineExports = [
-  'ANIMS', 'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_COMBAT_LOADOUT',
-  'DEFAULT_VARIANT_BATCH_SET',
+  'ANIMS', 'CLASS_PACK_FORMAT', 'CLASS_PACK_VERSION', 'CLASS_TEMPLATES',
+  'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_CLASS_TEMPLATE',
+  'DEFAULT_COMBAT_LOADOUT', 'DEFAULT_VARIANT_BATCH_SET',
   'DIRS', 'DIR_LABELS', 'ENEMIES', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'WEAPONS', 'WEAPON_TIERS',
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
-  'buildAnimationSheet', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch', 'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawSprite',
+  'applyClassTemplate', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch',
+  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawSprite',
   'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout', 'sanitizeCombatLoadout', 'thumbURL',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
   'sprite-engine.js public exports changed; consumers must keep using the stable facade API',
 );
-check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 50, 'sprite-engine.js must remain a small public facade');
+check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 60, 'sprite-engine.js must remain a small public facade');
 check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 40, 'engine/catalogs.js must remain a small internal facade');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
@@ -196,8 +202,12 @@ check(runtimeSources['app.js'].includes('{ shadow: false, clear: false }'), 'com
 check(runtimeSources['engine/renderer.js'].includes("if (opts.clear !== false) ctx.clearRect"), 'the renderer must support non-clearing modular overlay passes');
 check(runtimeSources['app.js'].includes('function downloadEquipmentVariantBatch('), 'the editor must expose the equipment-variant ZIP workflow');
 check(runtimeSources['app.js'].includes('variantBatchEffectEntries(plan)'), 'variant batches must deduplicate the combat effects actually referenced by their generated characters');
-check(runtimeSources['app.js'].includes('combatLoadout: manifestCombatLoadoutRecipe(spec, loadout)'), 'every equipment variant must carry its captured modular combat loadout');
 check(runtimeSources['app.js'].includes('format: E.VARIANT_BATCH_FORMAT'), 'equipment batches must publish their stable schema format');
+check(runtimeSources['app.js'].includes('function applySelectedClassTemplate('), 'class templates must support an undoable apply-defaults action');
+check(runtimeSources['app.js'].includes('function downloadClassPack('), 'the editor must expose the focused class-pack ZIP workflow');
+check(runtimeSources['app.js'].includes('format: E.CLASS_PACK_FORMAT'), 'class packs must publish their stable schema format');
+check(runtimeSources['app.js'].includes('classTemplate: { ...plan.template }'), 'class-pack manifests must retain the complete stable template definition');
+check(runtimeSources['app.js'].includes('combatLoadout: manifestCombatLoadoutRecipe(spec, loadout)'), 'ready variant and class sheets must carry their captured modular combat loadouts');
 check(characterKit.MASTER_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-master-character-kit', 'master kits must expose a stable format id');
 check(characterKit.MASTER_CHARACTER_KIT_VERSION === 1, 'master kits must use an explicit versioned schema');
 check(characterKit.MASTER_CHARACTER_KIT_SCALE === 1, 'master kits must export native logical pixels');
@@ -423,6 +433,86 @@ function renderPixels(spec, dir, animId, frame, opts = {}) {
   engine.drawSprite(ctx, spec, dir, animId, frame, { ...opts, shadow: false });
   return pixels;
 }
+
+check(engine.CLASS_PACK_FORMAT === '8-bit-sprite-assembler-class-pack', 'class packs must expose a stable game-facing format id');
+check(engine.CLASS_PACK_VERSION === 1, 'class packs must use an explicit schema version');
+check(engine.DEFAULT_CLASS_TEMPLATE === 'warrior', 'Warrior must remain the safe default class template');
+check(
+  JSON.stringify(engine.CLASS_TEMPLATES.map((template) => template.id))
+    === JSON.stringify(['warrior', 'guardian', 'ranger', 'rogue', 'mage', 'cleric']),
+  'class templates must retain their stable ids and order',
+);
+const classFixturePlayer = {
+  ...masterKitPlayer,
+  skin: 'orc',
+  hairStyle: 'mohawk',
+  hairColor: 'pink',
+  faceDetail: 'warpaint',
+  headgear: 'crown',
+  outfitColor: 'teal',
+  palette: { skin: ['#123456', '#234567'], hair: ['#345678', '#456789'], outfit: ['#56789a', '#6789ab'] },
+};
+const expectedClassCounts = new Map([
+  ['warrior', 54],
+  ['guardian', 54],
+  ['ranger', 29],
+  ['rogue', 29],
+  ['mage', 24],
+  ['cleric', 39],
+]);
+for (const template of engine.CLASS_TEMPLATES) {
+  check(engine.OUTFITS.some((outfit) => outfit.id === template.outfit), `${template.id} must reference a valid outfit`);
+  check(template.weapons.includes(template.defaultWeapon), `${template.id} default weapon must belong to its weapon list`);
+  check(template.defaultShield === 'none' || template.shields.includes(template.defaultShield), `${template.id} default shield must belong to its shield list`);
+  check(template.weapons.every((id) => engine.WEAPONS.some((weapon) => weapon.id === id && id !== 'none')), `${template.id} must reference only equipped weapon ids`);
+  check(template.shields.every((id) => engine.SHIELDS.some((shield) => shield.id === id && id !== 'none')), `${template.id} must reference only equipped shield ids`);
+
+  const applied = engine.applyClassTemplate(classFixturePlayer, template.id);
+  check(
+    applied.skin === classFixturePlayer.skin
+      && applied.hairStyle === classFixturePlayer.hairStyle
+      && applied.hairColor === classFixturePlayer.hairColor
+      && applied.faceDetail === classFixturePlayer.faceDetail
+      && applied.headgear === classFixturePlayer.headgear
+      && applied.outfitColor === classFixturePlayer.outfitColor
+      && JSON.stringify(applied.palette) === JSON.stringify(classFixturePlayer.palette),
+    `${template.id} defaults must preserve the source character identity and custom palette`,
+  );
+  check(
+    applied.outfit === template.outfit
+      && applied.weapon === template.defaultWeapon
+      && applied.weaponTier === 'tier1'
+      && applied.shield === template.defaultShield
+      && applied.shieldTier === 'tier1',
+    `${template.id} must apply its class outfit and Tier 1 default equipment`,
+  );
+
+  const classPack = engine.buildClassPack(classFixturePlayer, template.id);
+  check(classPack.template.id === template.id, `${template.id} class pack must retain its template`);
+  check(classPack.variants.length === expectedClassCounts.get(template.id), `${template.id} must retain its bounded ready-sheet count`);
+  check(new Set(classPack.variants.map((variant) => variant.id)).size === classPack.variants.length, `${template.id} must expose stable unique variant ids`);
+  check(new Set(classPack.variants.map((variant) => JSON.stringify(variant.spec))).size === classPack.variants.length, `${template.id} must deduplicate identical complete specifications`);
+  check(classPack.variants.every((variant) => (
+    variant.spec.outfit === template.outfit
+      && template.weapons.includes(variant.spec.weapon)
+      && (variant.spec.shield === 'none' || template.shields.includes(variant.spec.shield))
+      && variant.spec.skin === classFixturePlayer.skin
+      && variant.spec.hairStyle === classFixturePlayer.hairStyle
+      && variant.spec.faceDetail === classFixturePlayer.faceDetail
+  )), `${template.id} variants must stay inside their class equipment rules and preserve identity`);
+}
+const rangerClassEffects = new Set(engine.buildClassPack(classFixturePlayer, 'ranger').variants.flatMap((variant) => (
+  engine.resolveCombatLoadout({ kind: 'player', ...variant.spec }, engine.DEFAULT_COMBAT_LOADOUT).slots
+    .filter((slot) => slot.effect)
+    .map((slot) => slot.effect)
+)));
+check(rangerClassEffects.has('arrow') && rangerClassEffects.has('crossbow-bolt'), 'Ranger class packs must resolve both ranged projectile families');
+const mageClassEffects = new Set(engine.buildClassPack(classFixturePlayer, 'mage').variants.flatMap((variant) => (
+  engine.resolveCombatLoadout({ kind: 'player', ...variant.spec }, engine.DEFAULT_COMBAT_LOADOUT).slots
+    .filter((slot) => slot.effect)
+    .map((slot) => slot.effect)
+)));
+check(mageClassEffects.has('fireball') && mageClassEffects.has('holy-orb') && mageClassEffects.has('shadow-shot'), 'Mage class packs must resolve all three magic projectile families');
 
 check(engine.VARIANT_BATCH_FORMAT === '8-bit-sprite-assembler-equipment-variant-batch', 'equipment batches must expose a stable game-facing format id');
 check(engine.VARIANT_BATCH_VERSION === 1, 'equipment batches must use an explicit schema version');

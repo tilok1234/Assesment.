@@ -51,6 +51,7 @@ const DEFAULT_STATE = {
   loadout: { ...E.DEFAULT_COMBAT_LOADOUT },
   previewEffects: true,
   variantBatchSet: E.DEFAULT_VARIANT_BATCH_SET,
+  classTemplate: E.DEFAULT_CLASS_TEMPLATE,
   characterName: '',
   exportName: '',
   dir: 'down',
@@ -138,6 +139,14 @@ const elements = {
   variantBatchSummary: document.querySelector('#variant-batch-summary'),
   variantBatchStatus: document.querySelector('#variant-batch-status'),
   downloadVariantBatchButton: document.querySelector('#download-variant-batch-button'),
+  classPackPanel: document.querySelector('#class-pack-panel'),
+  classTemplate: document.querySelector('#class-template'),
+  classPackDescription: document.querySelector('#class-pack-description'),
+  classPackEquipment: document.querySelector('#class-pack-equipment'),
+  classPackSummary: document.querySelector('#class-pack-summary'),
+  classPackStatus: document.querySelector('#class-pack-status'),
+  applyClassTemplateButton: document.querySelector('#apply-class-template-button'),
+  downloadClassPackButton: document.querySelector('#download-class-pack-button'),
   downloadButton: document.querySelector('#download-button'),
   packName: document.querySelector('#pack-name'),
   packSummary: document.querySelector('#pack-summary'),
@@ -180,6 +189,8 @@ let masterKitExporting = false;
 let masterKitProgress = null;
 let variantBatchExporting = false;
 let variantBatchProgress = null;
+let classPackExporting = false;
+let classPackProgress = null;
 let selectedPresetId = '';
 let selectedPaletteId = '';
 let selectedLoadoutId = '';
@@ -359,6 +370,9 @@ function loadState() {
   loaded.variantBatchSet = E.VARIANT_BATCH_SETS.some((set) => set.id === loaded.variantBatchSet)
     ? loaded.variantBatchSet
     : E.DEFAULT_VARIANT_BATCH_SET;
+  loaded.classTemplate = E.CLASS_TEMPLATES.some((template) => template.id === loaded.classTemplate)
+    ? loaded.classTemplate
+    : E.DEFAULT_CLASS_TEMPLATE;
   loaded.comparison = sanitizeEditableSnapshot(loaded.comparison);
 
   return loaded;
@@ -429,12 +443,14 @@ function undo() {
   if (!historyPast.length) return;
   pushHistory(historyFuture, editableSnapshot());
   restoreSnapshot(historyPast.pop());
+  elements.classPackStatus.textContent = 'Editor history changed. Apply the selected class defaults or export the current character.';
 }
 
 function redo() {
   if (!historyFuture.length) return;
   pushHistory(historyPast, editableSnapshot());
   restoreSnapshot(historyFuture.pop());
+  elements.classPackStatus.textContent = 'Editor history changed. Apply the selected class defaults or export the current character.';
 }
 
 function resetCurrentDocument() {
@@ -655,7 +671,7 @@ function setPackStatus(message) {
 }
 
 function packIsBusy() {
-  return packExporting || rosterKitExporting || variantBatchExporting;
+  return packExporting || rosterKitExporting || variantBatchExporting || classPackExporting;
 }
 
 function addCurrentToPack() {
@@ -1744,12 +1760,44 @@ function renderVariantBatchControls() {
   elements.variantBatchDescription.textContent = plan.set.description;
   elements.variantBatchSummary.textContent = `${plan.variants.length} character sheets + ${effectCount} matching effect sheets · ${scaleLabel}`;
 
-  const busy = variantBatchExporting || packExporting || rosterKitExporting || masterKitExporting;
+  const busy = variantBatchExporting || classPackExporting || packExporting || rosterKitExporting || masterKitExporting;
   elements.variantBatchSet.disabled = busy;
   elements.downloadVariantBatchButton.disabled = busy;
   elements.downloadVariantBatchButton.textContent = variantBatchExporting && variantBatchProgress
     ? `Building ${variantBatchProgress.done} / ${variantBatchProgress.total}…`
     : 'Download equipment batch ZIP';
+}
+
+function renderClassPackControls() {
+  elements.classPackPanel.hidden = state.mode !== 'player';
+  if (state.mode !== 'player') return;
+
+  const options = E.CLASS_TEMPLATES.map((template) => {
+    const option = document.createElement('option');
+    option.value = template.id;
+    option.textContent = template.name;
+    return option;
+  });
+  elements.classTemplate.replaceChildren(...options);
+  elements.classTemplate.value = state.classTemplate;
+
+  const plan = E.buildClassPack(sanitizePlayer(state.player), state.classTemplate);
+  const effectCount = variantBatchEffectEntries(plan).length;
+  const scaleLabel = state.exportScale === 1 ? '1x native' : `${state.exportScale}x`;
+  const outfitName = E.OUTFITS.find((outfit) => outfit.id === plan.template.outfit)?.name || plan.template.outfit;
+  const weaponNames = plan.template.weapons.map((id) => E.WEAPONS.find((weapon) => weapon.id === id)?.name || id);
+  const shieldNames = plan.template.shields.map((id) => E.SHIELDS.find((shield) => shield.id === id)?.name || id);
+  elements.classPackDescription.textContent = plan.template.description;
+  elements.classPackEquipment.textContent = `${outfitName} · Weapons: ${weaponNames.join(', ')} · Shields: None, ${shieldNames.join(', ')}`;
+  elements.classPackSummary.textContent = `${plan.variants.length} character sheets + ${effectCount} matching effect sheets · ${scaleLabel}`;
+
+  const busy = classPackExporting || variantBatchExporting || packExporting || rosterKitExporting || masterKitExporting;
+  elements.classTemplate.disabled = busy;
+  elements.applyClassTemplateButton.disabled = busy;
+  elements.downloadClassPackButton.disabled = busy;
+  elements.downloadClassPackButton.textContent = classPackExporting && classPackProgress
+    ? `Building ${classPackProgress.done} / ${classPackProgress.total}…`
+    : 'Download class pack ZIP';
 }
 
 function renderPackEntry(entry) {
@@ -1857,7 +1905,7 @@ function renderMasterKitControls() {
 
   const counts = completeCharacterKitCounts();
   elements.masterKitSummary.textContent = `${counts.componentPngs} unique components · ${counts.enemySheets} native enemies · ${counts.effectSheets} combat effects · 1 reference · ${counts.totalPngs} PNGs`;
-  elements.downloadMasterKitButton.disabled = masterKitExporting || rosterKitExporting || variantBatchExporting;
+  elements.downloadMasterKitButton.disabled = masterKitExporting || rosterKitExporting || variantBatchExporting || classPackExporting || packExporting;
   elements.downloadMasterKitButton.textContent = masterKitExporting && masterKitProgress
     ? `Building ${masterKitProgress.done} / ${masterKitProgress.total}…`
     : 'Download Complete Character Kit';
@@ -1907,6 +1955,7 @@ function renderUi() {
   renderPresetControls();
   renderCombatLoadoutControls();
   renderVariantBatchControls();
+  renderClassPackControls();
   renderPackControls();
   renderMasterKitControls();
 }
@@ -2342,7 +2391,7 @@ function updateVariantBatchProgress(done, total, message) {
 }
 
 async function downloadEquipmentVariantBatch() {
-  if (state.mode !== 'player' || variantBatchExporting || packExporting || rosterKitExporting || masterKitExporting) return;
+  if (state.mode !== 'player' || variantBatchExporting || classPackExporting || packExporting || rosterKitExporting || masterKitExporting) return;
 
   const player = sanitizePlayer(state.player);
   const plan = E.buildVariantBatch(player, state.variantBatchSet);
@@ -2361,6 +2410,7 @@ async function downloadEquipmentVariantBatch() {
 
   variantBatchExporting = true;
   updateVariantBatchProgress(done, total, `Preparing ${plan.variants.length} equipment variants and ${effects.length} matching effects…`);
+  renderClassPackControls();
   renderPackControls();
   renderMasterKitControls();
 
@@ -2457,6 +2507,156 @@ async function downloadEquipmentVariantBatch() {
     variantBatchExporting = false;
     variantBatchProgress = null;
     renderVariantBatchControls();
+    renderClassPackControls();
+    renderPackControls();
+    renderMasterKitControls();
+  }
+}
+
+function classPackReadme(manifest) {
+  return `${manifest.name}\n\n`
+    + `Class template: ${manifest.classTemplate.name}\n`
+    + `${manifest.classTemplate.description}\n\n`
+    + `${manifest.counts.characterSheets} ready character sheets cover the class weapon, armor, and shield progressions.\n`
+    + `${manifest.counts.effectSheets} deduplicated combat-effect sheets are included and referenced by each variant's combatLoadout.\n`
+    + `Every PNG uses ${manifest.sheet.frameWidth}x${manifest.sheet.frameHeight} frames in a ${manifest.sheet.width}x${manifest.sheet.height} sheet at ${manifest.exportScale}x scale.\n\n`
+    + 'The source character identity is preserved while the class template supplies its outfit family and default equipment.\n'
+    + 'Character PNGs do not bake combat effects into the artwork. Draw every resolved effects/ sheet after its character using the same source rectangle, animation column, and direction row.\n'
+    + 'Use manifest.json as the source of truth for the class definition, complete specifications, file paths, animation timing, and effect layering.\n';
+}
+
+function updateClassPackProgress(done, total, message) {
+  classPackProgress = { done, total };
+  elements.classPackStatus.textContent = message;
+  renderClassPackControls();
+}
+
+function applySelectedClassTemplate() {
+  if (state.mode !== 'player' || classPackExporting || variantBatchExporting || packExporting || rosterKitExporting || masterKitExporting) return;
+  const template = E.CLASS_TEMPLATES.find((item) => item.id === state.classTemplate) || E.CLASS_TEMPLATES[0];
+  const player = sanitizePlayer(E.applyClassTemplate(state.player, template.id));
+  setState({ player });
+  elements.classPackStatus.textContent = `Applied ${template.name} defaults. This change can be undone.`;
+}
+
+async function downloadClassPack() {
+  if (state.mode !== 'player' || classPackExporting || variantBatchExporting || packExporting || rosterKitExporting || masterKitExporting) return;
+
+  const player = sanitizePlayer(state.player);
+  const plan = E.buildClassPack(player, state.classTemplate);
+  const loadout = E.sanitizeCombatLoadout(state.loadout);
+  const effects = variantBatchEffectEntries(plan, loadout);
+  const scale = state.exportScale;
+  const exportedAt = new Date().toISOString();
+  const characterName = sanitizeText(state.characterName, 48).trim()
+    || E.describe({ kind: 'player', ...player }).replaceAll('-', ' ');
+  const folder = packFilenameBase(characterName, 'character');
+  const total = plan.variants.length + effects.length;
+  const zipEntries = [];
+  const manifestVariants = [];
+  const manifestEffects = [];
+  let done = 0;
+
+  classPackExporting = true;
+  updateClassPackProgress(done, total, `Preparing ${plan.template.name}: ${plan.variants.length} character variants and ${effects.length} matching effects…`);
+  renderVariantBatchControls();
+  renderPackControls();
+  renderMasterKitControls();
+
+  const advance = (message) => {
+    done += 1;
+    if (done === 1 || done === total || done % 5 === 0) {
+      updateClassPackProgress(done, total, `${message} ${done} / ${total}`);
+    }
+  };
+
+  try {
+    for (const variant of plan.variants) {
+      const spec = { kind: 'player', ...variant.spec };
+      const canvas = E.buildSheet(spec, scale);
+      const file = `classes/${plan.template.id}/characters/${folder}/${variant.id}@${scale}x.png`;
+      zipEntries.push({ name: file, data: await canvasToPngBytes(canvas) });
+      manifestVariants.push({
+        id: variant.id,
+        name: variant.name,
+        series: variant.series,
+        file,
+        width: canvas.width,
+        height: canvas.height,
+        spec: variant.spec,
+        combatLoadout: manifestCombatLoadoutRecipe(spec, loadout),
+      });
+      advance('Rendering class character variants.');
+    }
+
+    for (const effect of effects) {
+      const canvas = E.buildSheet({ kind: 'effect', category: effect.category, effect: effect.effect }, scale);
+      zipEntries.push({ name: effect.file, data: await canvasToPngBytes(canvas) });
+      manifestEffects.push({ ...effect, width: canvas.width, height: canvas.height });
+      advance('Rendering deduplicated class combat effects.');
+    }
+
+    const manifest = {
+      format: E.CLASS_PACK_FORMAT,
+      schemaVersion: E.CLASS_PACK_VERSION,
+      name: `${characterName} - ${plan.template.name} Class Pack`,
+      exportedAt,
+      exportScale: scale,
+      transparent: true,
+      bakedShadow: false,
+      classTemplate: { ...plan.template },
+      sourceCharacter: { name: characterName, spec: player },
+      classBase: {
+        spec: plan.baseSpec,
+        combatLoadout: manifestCombatLoadoutRecipe({ kind: 'player', ...plan.baseSpec }, loadout),
+      },
+      counts: {
+        characterSheets: manifestVariants.length,
+        effectSheets: manifestEffects.length,
+        totalPngs: manifestVariants.length + manifestEffects.length,
+      },
+      sheet: {
+        frameWidth: E.SIZE * scale,
+        frameHeight: E.SIZE * scale,
+        logicalFrameWidth: E.SIZE,
+        logicalFrameHeight: E.SIZE,
+        width: E.SHEET_COLS * E.SIZE * scale,
+        height: E.DIRS.length * E.SIZE * scale,
+        columns: E.SHEET_COLS,
+        rows: E.DIRS.length,
+        directions: [...E.DIRS],
+        columnIndexBase: 0,
+        animations: packAnimationContract(),
+      },
+      layering: {
+        drawOrder: ['character', 'trail', 'projectile', 'impact', 'status'],
+        instructions: 'Draw every resolved combat effect after the character using the same animation column, direction row, and source rectangle.',
+      },
+      effects: manifestEffects,
+      variants: manifestVariants,
+    };
+    zipEntries.push({
+      name: 'manifest.json',
+      data: new TextEncoder().encode(`${JSON.stringify(manifest, null, 2)}\n`),
+    });
+    zipEntries.push({
+      name: 'README.txt',
+      data: new TextEncoder().encode(classPackReadme(manifest)),
+    });
+
+    updateClassPackProgress(total, total, `Packaging the ${plan.template.name} class pack…`);
+    const archive = buildStoredZip(zipEntries, new Date(exportedAt));
+    const filename = `${folder}-${plan.template.id}-class-pack.zip`;
+    triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
+    elements.classPackStatus.textContent = `Downloaded ${plan.template.name}: ${manifestVariants.length} character sheets and ${manifestEffects.length} reusable combat effects.`;
+  } catch (error) {
+    console.error(error);
+    elements.classPackStatus.textContent = 'The class pack could not be exported. Please try again.';
+  } finally {
+    classPackExporting = false;
+    classPackProgress = null;
+    renderClassPackControls();
+    renderVariantBatchControls();
     renderPackControls();
     renderMasterKitControls();
   }
@@ -2494,7 +2694,7 @@ function updateMasterKitProgress(done, total, message) {
 }
 
 async function downloadMasterCharacterKit() {
-  if (masterKitExporting || rosterKitExporting || variantBatchExporting || state.mode !== 'player') return;
+  if (masterKitExporting || rosterKitExporting || variantBatchExporting || classPackExporting || packExporting || state.mode !== 'player') return;
   const player = sanitizePlayer(state.player);
   const characterName = sanitizeText(state.characterName, 48).trim()
     || E.describe({ kind: 'player', ...player }).replaceAll('-', ' ');
@@ -2510,6 +2710,9 @@ async function downloadMasterCharacterKit() {
   let done = 0;
   masterKitExporting = true;
   updateMasterKitProgress(done, total, `Preparing ${total} native sprite sheets…`);
+  renderVariantBatchControls();
+  renderClassPackControls();
+  renderPackControls();
 
   const advance = (message) => {
     done += 1;
@@ -2548,6 +2751,9 @@ async function downloadMasterCharacterKit() {
     masterKitExporting = false;
     masterKitProgress = null;
     renderMasterKitControls();
+    renderVariantBatchControls();
+    renderClassPackControls();
+    renderPackControls();
   }
 }
 
@@ -2581,6 +2787,8 @@ async function downloadPackMasterKit() {
   rosterKitProgress = { done, total };
   renderPackControls();
   renderMasterKitControls();
+  renderVariantBatchControls();
+  renderClassPackControls();
   updateRosterKitProgress(done, total, `Preparing ${entries.length} ready characters, their recipes, the shared component library, every native enemy variation, and all synchronized combat effects…`);
 
   const advance = (message) => {
@@ -2626,6 +2834,8 @@ async function downloadPackMasterKit() {
     rosterKitProgress = null;
     renderPackControls();
     renderMasterKitControls();
+    renderVariantBatchControls();
+    renderClassPackControls();
   }
 }
 
@@ -2637,6 +2847,9 @@ async function downloadCharacterPack() {
   const packName = sanitizeText(packLibrary.name, 64).trim() || 'Character Pack';
   packExporting = true;
   renderPackControls();
+  renderVariantBatchControls();
+  renderClassPackControls();
+  renderMasterKitControls();
 
   try {
     const zipEntries = [];
@@ -2693,6 +2906,9 @@ async function downloadCharacterPack() {
   } finally {
     packExporting = false;
     renderPackControls();
+    renderVariantBatchControls();
+    renderClassPackControls();
+    renderMasterKitControls();
   }
 }
 
@@ -2750,6 +2966,16 @@ elements.variantBatchSet.addEventListener('change', () => {
   elements.variantBatchStatus.textContent = 'The current character identity and combat overrides will be preserved.';
 });
 elements.downloadVariantBatchButton.addEventListener('click', downloadEquipmentVariantBatch);
+elements.classTemplate.addEventListener('change', () => {
+  const classTemplate = E.CLASS_TEMPLATES.some((template) => template.id === elements.classTemplate.value)
+    ? elements.classTemplate.value
+    : E.DEFAULT_CLASS_TEMPLATE;
+  setState({ classTemplate }, { recordHistory: false });
+  const template = E.CLASS_TEMPLATES.find((item) => item.id === classTemplate);
+  elements.classPackStatus.textContent = `${template.name} selected. Apply its defaults or export without changing the editor.`;
+});
+elements.applyClassTemplateButton.addEventListener('click', applySelectedClassTemplate);
+elements.downloadClassPackButton.addEventListener('click', downloadClassPack);
 elements.exportScope.addEventListener('change', () => {
   setState({ exportScope: elements.exportScope.value });
 });

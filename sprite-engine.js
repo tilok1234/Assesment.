@@ -42,3 +42,11 @@ export {
   VARIANT_BATCH_SETS,
   VARIANT_BATCH_VERSION,
 } from './engine/variant-batches.js';
+export {
+  applyClassTemplate,
+  buildClassPack,
+  CLASS_PACK_FORMAT,
+  CLASS_PACK_VERSION,
+  CLASS_TEMPLATES,
+  DEFAULT_CLASS_TEMPLATE,
+} from './engine/class-templates.js';

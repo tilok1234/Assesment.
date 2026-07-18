@@ -9,6 +9,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
 - A Combat Loadout Builder that previews those overlays on players and enemies, supplies automatic weapon-aware defaults, supports per-slot overrides, saves named recipes, and exports game-ready JSON
 - An Equipment Variant Batch Builder that turns one character identity into bounded 16-, 5-, 76-, 41-, or 120-sheet equipment collections with per-variant loadouts and only the combat effects they actually reference
+- A Class Pack Builder with Warrior, Guardian, Ranger, Rogue, Mage, and Cleric templates that preserves one character identity while exporting only the outfit, weapon, shield, armor-tier, and equipment-tier combinations appropriate to that RPG role
 - Four directions: down, left, right, and up
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
@@ -118,6 +119,21 @@ Use **Equipment variant batch** in Player mode when the game needs ready-made fu
 
 The ZIP uses the selected Export PNG scale and contains `manifest.json`, `README.txt`, one ready character sheet per unique specification, and one copy of every combat-effect sheet referenced by those variants. Automatic loadouts are resolved separately per weapon, explicit overrides are preserved, and effects remain modular instead of being baked into the character PNGs. Choose **1x Native** for exact `288x96` sheets.
 
+## RPG class packs
+
+Use **Class pack builder** in Player mode when one character should be ready to play as a focused RPG class instead of receiving the entire 120-sheet equipment collection. Pick a template, then either apply its Tier 1 defaults to the editor or download the full class ZIP immediately:
+
+- **Warrior**: plate armor, six melee weapon families, and four martial shield families (54 unique sheets)
+- **Guardian**: plate armor, four defensive weapon families, and six shield families (54 unique sheets)
+- **Ranger**: leather armor, dagger, spear, bow, crossbow, and buckler options (29 unique sheets)
+- **Rogue**: leather armor, scimitar, rapier, dagger, crossbow, and buckler options (29 unique sheets)
+- **Mage**: robes, staff, wand, spellbook, and arcane shield options (24 unique sheets)
+- **Cleric**: plate armor, mace, warhammer, staff, wand, and three holy or defensive shield families (39 unique sheets)
+
+Applying a template changes only the class outfit and Tier 1 starting equipment; skin, hair, facial detail, headgear, colors, and custom palette stay intact, and the change can be undone. Export expands every permitted weapon through Tiers 1-5, the class outfit through all five armor tiers, and no shield plus every permitted shield through Tiers 1-5. Identical complete specifications are deduplicated.
+
+Each schema-v1 ZIP contains complete character sheets at the selected PNG scale, a resolved combat-loadout recipe for every variant, only the modular effect sheets those loadouts reference, `manifest.json`, and `README.txt`. Files live beneath `classes/<class-id>/characters/<character>/`, so several class archives can be added to a game without path collisions. Choose **1x Native** for exact `288x96` game sheets.
+
 ## Character packs
 
 1. Give the pack a name, create a player or enemy, and give the character a name.
@@ -160,11 +176,11 @@ Every component shares the same animation grid and has been validated to recompo
 
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
-- `app.js` - editor state, sprite history, reset and comparison workflows, presets, combat loadouts, equipment-batch and character-pack exports, Complete Character Kit rendering, naming, playback and frame inspection, and downloads
+- `app.js` - editor state, sprite history, reset and comparison workflows, presets, combat loadouts, equipment-batch, class-pack, and character-pack exports, Complete Character Kit rendering, naming, playback and frame inspection, and downloads
 - `character-kit.js` - deterministic component coverage, paths, recipe mapping, counts, and layer-order planning
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
-- `engine/` - focused animation, palette, player-option, enemy, combat-loadout, equipment-variant planning, humanoid weapon and shield, renderer, sheet, and generator modules
+- `engine/` - focused animation, palette, player-option, enemy, combat-loadout, equipment-variant and RPG-class planning, humanoid weapon and shield, renderer, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build
