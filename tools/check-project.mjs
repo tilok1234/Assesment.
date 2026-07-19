@@ -69,6 +69,7 @@ checkSyntax('engine/sheets.js');
 checkSyntax('engine/weapon-renderer.js');
 checkSyntax('tools/build.mjs');
 checkSyntax('tools/dev-server.mjs');
+checkSyntax('tools/weapon-readability-audit.mjs');
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
 let entryFile = null;
@@ -1358,6 +1359,163 @@ function changedPixels(withShield, withoutShield) {
 
 function changeSignature(withShield, withoutShield) {
   return changedPixels(withShield, withoutShield).map((index) => `${index}:${withShield[index]}`).join('|');
+}
+
+function connectedPixelComponents(pixels) {
+  const active = pixels.map(Boolean);
+  const seen = new Set();
+  let components = 0;
+  for (let start = 0; start < active.length; start++) {
+    if (!active[start] || seen.has(start)) continue;
+    components++;
+    const queue = [start];
+    seen.add(start);
+    while (queue.length) {
+      const index = queue.pop();
+      const x = index % engine.SIZE;
+      const y = Math.floor(index / engine.SIZE);
+      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+        if (!dx && !dy) continue;
+        const nextX = x + dx;
+        const nextY = y + dy;
+        const next = (nextY * engine.SIZE) + nextX;
+        if (nextX < 0 || nextY < 0 || nextX >= engine.SIZE || nextY >= engine.SIZE) continue;
+        if (!active[next] || seen.has(next)) continue;
+        seen.add(next);
+        queue.push(next);
+      }
+    }
+  }
+  return components;
+}
+
+const straightBladeBase = {
+  kind: 'player',
+  species: 'human',
+  bodyBuild: 'classic',
+  skin: 'peach',
+  hairStyle: 'bald',
+  hairColor: 'brown',
+  expression: 'neutral',
+  faceDetail: 'none',
+  headgear: 'none',
+  outfit: 'tunic',
+  outfitTier: 'tier1',
+  outfitColor: 'charcoal',
+  shield: 'none',
+  shieldTier: 'tier1',
+};
+const readableWeaponFamilies = ['sword', 'greatsword', 'dagger', 'scimitar', 'rapier', 'axe', 'mace', 'warhammer', 'club', 'spear', 'bow', 'crossbow'];
+const weaponLayerFor = (direction) => direction === 'up' ? 'weapon-back' : 'weapon-front';
+
+for (const weapon of readableWeaponFamilies) {
+  const tierSignatures = [];
+  for (const tier of engine.WEAPON_TIERS) {
+    const spec = { ...straightBladeBase, weapon, weaponTier: tier.id };
+    tierSignatures.push(renderPixels(spec, 'down', 'idle', 0, { layer: 'weapon-front' }).join(','));
+    for (const direction of engine.DIRS) {
+      for (const animation of engine.ANIMS) {
+        for (let frame = 0; frame < animation.frames; frame++) {
+          const pixels = renderPixels(spec, direction, animation.id, frame, { layer: weaponLayerFor(direction) });
+          check(pixels.filter(Boolean).length >= 7, `${weapon} ${tier.id} must remain visible in ${direction} ${animation.id} frame ${frame}`);
+          check(connectedPixelComponents(pixels) === 1, `${weapon} ${tier.id} must remain one connected silhouette in ${direction} ${animation.id} frame ${frame}`);
+        }
+      }
+    }
+  }
+  check(new Set(tierSignatures).size === engine.WEAPON_TIERS.length, `${weapon} must expose five visually distinct tier materials or silhouettes`);
+
+  const tier4 = renderPixels({ ...straightBladeBase, weapon, weaponTier: 'tier4' }, 'down', 'idle', 0, { layer: 'weapon-front' });
+  const tier5 = renderPixels({ ...straightBladeBase, weapon, weaponTier: 'tier5' }, 'down', 'idle', 0, { layer: 'weapon-front' });
+  check(tier5.filter(Boolean).length >= tier4.filter(Boolean).length, `${weapon} Tier 5 must not shrink below its Tier 4 front silhouette`);
+}
+
+for (const tier of engine.WEAPON_TIERS) {
+  for (const direction of engine.DIRS) {
+    const signatures = readableWeaponFamilies.map((weapon) => renderPixels(
+      { ...straightBladeBase, weapon, weaponTier: tier.id },
+      direction,
+      'idle',
+      0,
+      { layer: weaponLayerFor(direction) },
+    ).map((pixel) => pixel ? 'x' : '.').join(''));
+    check(new Set(signatures).size === readableWeaponFamilies.length, `completed readability-pass weapons must keep distinct ${tier.id} ${direction} silhouettes`);
+  }
+}
+
+const axeHeadMinimums = [
+  { width: 3, height: 5 },
+  { width: 5, height: 5 },
+  { width: 6, height: 7 },
+  { width: 7, height: 7 },
+  { width: 9, height: 8 },
+];
+for (const [tierIndex, tier] of engine.WEAPON_TIERS.entries()) {
+  const pixels = renderPixels(
+    { ...straightBladeBase, weapon: 'axe', weaponTier: tier.id },
+    'down',
+    'idle',
+    0,
+    { layer: 'weapon-front' },
+  );
+  const headPoints = pixels.flatMap((pixel, index) => {
+    const x = index % engine.SIZE;
+    const y = Math.floor(index / engine.SIZE);
+    return pixel && y <= 11 ? [[x, y]] : [];
+  });
+  const xs = headPoints.map(([x]) => x);
+  const ys = headPoints.map(([, y]) => y);
+  const width = Math.max(...xs) - Math.min(...xs) + 1;
+  const height = Math.max(...ys) - Math.min(...ys) + 1;
+  check(width >= axeHeadMinimums[tierIndex].width, `axe ${tier.id} must preserve a broad cutting-head silhouette`);
+  check(height >= axeHeadMinimums[tierIndex].height, `axe ${tier.id} must preserve a tall outer cutting edge`);
+  if (tierIndex >= 2) {
+    check(Math.max(...xs) - 17 > 17 - Math.min(...xs), `axe ${tier.id} must keep its primary blade larger than its rear spike or counter-edge`);
+  }
+}
+
+function frontHeadBounds(weapon, tier, bottomY) {
+  const pixels = renderPixels(
+    { ...straightBladeBase, weapon, weaponTier: tier },
+    'down',
+    'idle',
+    0,
+    { layer: 'weapon-front' },
+  );
+  const points = pixels.flatMap((pixel, index) => {
+    const x = index % engine.SIZE;
+    const y = Math.floor(index / engine.SIZE);
+    return pixel && y <= bottomY ? [[x, y]] : [];
+  });
+  const xs = points.map(([x]) => x);
+  const ys = points.map(([, y]) => y);
+  return {
+    width: Math.max(...xs) - Math.min(...xs) + 1,
+    height: Math.max(...ys) - Math.min(...ys) + 1,
+  };
+}
+
+for (const tier of engine.WEAPON_TIERS) {
+  const maceHead = frontHeadBounds('mace', tier.id, 10);
+  const hammerHead = frontHeadBounds('warhammer', tier.id, 10);
+  const clubHead = frontHeadBounds('club', tier.id, 13);
+  check(Math.abs(maceHead.width - maceHead.height) <= 2, `mace ${tier.id} must preserve a compact radial head`);
+  check(hammerHead.width >= hammerHead.height + 2, `warhammer ${tier.id} must preserve a broad directional striking head`);
+  check(clubHead.height >= clubHead.width + 2, `club ${tier.id} must preserve a long tapered wooden silhouette`);
+}
+
+const spearHeadBottom = [7, 7, 8, 8, 9];
+for (const [tierIndex, tier] of engine.WEAPON_TIERS.entries()) {
+  const spearHead = frontHeadBounds('spear', tier.id, spearHeadBottom[tierIndex]);
+  check(spearHead.height >= spearHead.width, `spear ${tier.id} must preserve a length-led piercing head`);
+  if (tierIndex >= 3) check(spearHead.height >= spearHead.width + 2, `spear ${tier.id} relic head must stay slender rather than axe-like`);
+
+  for (const weapon of ['bow', 'crossbow']) {
+    const spec = { ...straightBladeBase, weapon, weaponTier: tier.id };
+    const wind = renderPixels(spec, 'right', 'attack', 1, { layer: 'weapon-front' }).join(',');
+    const release = renderPixels(spec, 'right', 'attack', 2, { layer: 'weapon-front' }).join(',');
+    check(wind !== release, `${weapon} ${tier.id} must visibly change between draw and release phases`);
+  }
 }
 
 const shieldBase = {

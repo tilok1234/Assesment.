@@ -107,6 +107,775 @@ function drawHorizontalHilt(S, R, guardX, y, {
   }
 }
 
+const STRAIGHT_BLADE_PROFILES = {
+  sword: {
+    verticalLength: [6, 7, 8, 9, 9],
+    sideLength: [6, 7, 7, 8, 8],
+    thickness: [1, 1, 2, 2, 2],
+    guardSize: [3, 3, 5, 5, 5],
+    gripSize: 2,
+    hiltStyle: 'cross',
+  },
+  greatsword: {
+    verticalLength: [8, 9, 10, 11, 11],
+    sideLength: [8, 8, 9, 9, 9],
+    thickness: [2, 2, 3, 3, 3],
+    guardSize: [5, 5, 5, 7, 7],
+    gripSize: 3,
+    hiltStyle: 'greatsword',
+  },
+  dagger: {
+    verticalLength: [3, 4, 4, 5, 5],
+    sideLength: [3, 4, 4, 5, 5],
+    thickness: [1, 2, 2, 2, 2],
+    guardSize: [3, 3, 3, 3, 5],
+    gripSize: 1,
+    hiltStyle: 'dagger',
+  },
+};
+
+function straightBladeTier(C) {
+  const parsed = Number.parseInt(String(C.weaponTier || 'tier1').replace('tier', ''), 10);
+  return Math.max(1, Math.min(5, Number.isFinite(parsed) ? parsed : 1));
+}
+
+function straightBladeStyle(weapon, tier) {
+  if (tier === 1) return {
+    blade: METAL[0], edge: METAL[2], shadow: METAL[1],
+    guard: GOLD[0], guardEdge: GOLD[2], guardDark: GOLD[1], rune: null,
+  };
+  if (tier === 2) return {
+    blade: '#b9d7e8', edge: TIER2.edge, shadow: TIER2.runeDark,
+    guard: TIER2.gold, guardEdge: '#fff0ad', guardDark: GOLD[1], rune: TIER2.rune,
+  };
+  if (tier === 3) return {
+    blade: '#d4d8e8', edge: TIER3.core, shadow: TIER3.astralDark,
+    guard: TIER2.gold, guardEdge: TIER3.core, guardDark: GOLD[1], rune: TIER3.astral,
+  };
+  if (tier === 4) return {
+    blade: TIER4.frost, edge: TIER4.core, shadow: TIER4.void,
+    guard: TIER4.mythic, guardEdge: TIER4.core, guardDark: TIER4.void, rune: TIER4.plasma,
+  };
+  const theme = TIER5_THEMES[weapon];
+  return {
+    blade: theme.divine, edge: theme.apex, shadow: theme.abyss,
+    guard: theme.divine, guardEdge: theme.apex, guardDark: theme.rift, rune: theme.cosmic,
+  };
+}
+
+function drawReadableVerticalBlade(S, R, x, guardY, length, thickness, bladeBelow, style, tier) {
+  const direction = bladeBelow ? 1 : -1;
+  for (let step = 1; step <= length; step++) {
+    const y = guardY + direction * step;
+    const tipDistance = length - step;
+    const rowWidth = tipDistance === 0 ? 1 : (tipDistance === 1 ? Math.min(2, thickness) : thickness);
+    const left = x - Math.floor((rowWidth - 1) / 2);
+    if (rowWidth === 1) {
+      S(x, y, tipDistance === 0 ? style.edge : style.blade);
+    } else if (rowWidth === 2) {
+      S(left, y, style.edge); S(left + 1, y, style.shadow);
+    } else {
+      S(left, y, style.edge); R(left + 1, y, rowWidth - 2, 1, style.blade); S(left + rowWidth - 1, y, style.shadow);
+    }
+  }
+  if (style.rune && length >= 4) {
+    const runeStep = Math.max(2, Math.floor(length / 2));
+    S(x, guardY + direction * runeStep, style.rune);
+    if (tier >= 5 && thickness >= 2 && runeStep + 2 < length) {
+      S(x, guardY + direction * (runeStep + 2), style.rune);
+    }
+  }
+}
+
+function drawReadableHorizontalBlade(S, R, guardX, y, length, thickness, style, tier) {
+  for (let step = 1; step <= length; step++) {
+    const x = guardX + step;
+    const tipDistance = length - step;
+    const columnHeight = tipDistance === 0 ? 1 : (tipDistance === 1 ? Math.min(2, thickness) : thickness);
+    const top = y - Math.floor((columnHeight - 1) / 2);
+    if (columnHeight === 1) {
+      S(x, y, tipDistance === 0 ? style.edge : style.blade);
+    } else if (columnHeight === 2) {
+      S(x, top, style.edge); S(x, top + 1, style.shadow);
+    } else {
+      S(x, top, style.edge); R(x, top + 1, 1, columnHeight - 2, style.blade); S(x, top + columnHeight - 1, style.shadow);
+    }
+  }
+  if (style.rune && length >= 4) {
+    const runeStep = Math.max(2, Math.floor(length / 2));
+    S(guardX + runeStep, y, style.rune);
+    if (tier >= 5 && thickness >= 2 && runeStep + 2 < length) S(guardX + runeStep + 2, y, style.rune);
+  }
+}
+
+function drawReadableVerticalHilt(S, R, x, guardY, bladeBelow, profile, guardSize, style, tier) {
+  const gripDirection = bladeBelow ? -1 : 1;
+  const guardLeft = x - Math.floor(guardSize / 2);
+  R(guardLeft, guardY, guardSize, 1, style.guardDark);
+  if (guardSize > 2) R(guardLeft + 1, guardY, guardSize - 2, 1, style.guard);
+  S(guardLeft, guardY, style.guardEdge); S(guardLeft + guardSize - 1, guardY, style.guardEdge);
+  if (tier >= 2) S(x, guardY, style.rune || style.guardEdge);
+
+  for (let step = 1; step <= profile.gripSize; step++) {
+    S(x, guardY + gripDirection * step, step % 2 ? WOOD[1] : style.guardDark);
+  }
+  const pommelY = guardY + gripDirection * (profile.gripSize + 1);
+  S(x, pommelY, style.guardDark);
+  if (profile.hiltStyle === 'greatsword') {
+    S(x - 1, pommelY, style.guard); S(x + 1, pommelY, style.guard);
+  } else if (profile.hiltStyle === 'scimitar') {
+    S(x + 1, pommelY, style.guard);
+    S(x + 1, pommelY - gripDirection, style.guardDark);
+  } else if (profile.hiltStyle === 'rapier') {
+    const basketY = guardY + gripDirection;
+    S(x - 1, basketY, style.guard); S(x + 1, basketY, style.guard);
+    S(x - 1, basketY + gripDirection, style.guardDark); S(x + 1, basketY + gripDirection, style.guardDark);
+  } else if (tier >= 4) {
+    S(x, pommelY + gripDirection, style.guardEdge);
+  }
+  if (tier >= 4 && guardSize >= 5) {
+    S(guardLeft + 1, guardY + gripDirection, style.guardDark);
+    S(guardLeft + guardSize - 2, guardY + gripDirection, style.guardDark);
+  }
+}
+
+function drawReadableHorizontalHilt(S, R, guardX, y, profile, guardSize, style, tier) {
+  const guardTop = y - Math.floor(guardSize / 2);
+  R(guardX, guardTop, 1, guardSize, style.guardDark);
+  if (guardSize > 2) R(guardX, guardTop + 1, 1, guardSize - 2, style.guard);
+  S(guardX, guardTop, style.guardEdge); S(guardX, guardTop + guardSize - 1, style.guardEdge);
+  if (tier >= 2) S(guardX, y, style.rune || style.guardEdge);
+
+  for (let step = 1; step <= profile.gripSize; step++) {
+    S(guardX - step, y, step % 2 ? WOOD[1] : style.guardDark);
+  }
+  const pommelX = guardX - profile.gripSize - 1;
+  S(pommelX, y, style.guardDark);
+  if (profile.hiltStyle === 'greatsword') {
+    S(pommelX, y - 1, style.guard); S(pommelX, y + 1, style.guard);
+  } else if (profile.hiltStyle === 'scimitar') {
+    S(pommelX, y + 1, style.guard);
+    S(pommelX + 1, y + 1, style.guardDark);
+  } else if (profile.hiltStyle === 'rapier') {
+    S(guardX - 1, y - 1, style.guard); S(guardX - 1, y + 1, style.guard);
+    S(guardX - 2, y - 1, style.guardDark); S(guardX - 2, y + 1, style.guardDark);
+  } else if (tier >= 4) {
+    S(pommelX - 1, y, style.guardEdge);
+  }
+  if (tier >= 4 && guardSize >= 5) {
+    S(guardX - 1, guardTop + 1, style.guardDark);
+    S(guardX - 1, guardTop + guardSize - 2, style.guardDark);
+  }
+}
+
+function drawReadableStraightBlade(S, R, d, p, C) {
+  const profile = STRAIGHT_BLADE_PROFILES[C.weapon];
+  if (!profile) return false;
+
+  const tier = straightBladeTier(C);
+  const style = straightBladeStyle(C.weapon, tier);
+  const thickness = profile.thickness[tier - 1];
+  const guardSize = profile.guardSize[tier - 1];
+  const verticalLength = profile.verticalLength[tier - 1];
+  const sideLength = profile.sideLength[tier - 1];
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+  const { downX, upX, sideX } = weaponAnchors(C);
+
+  if (d === 'down') {
+    const guardY = strike ? 14 : wind ? 12 : 13;
+    const bladeBelow = strike;
+    const safeLength = bladeBelow ? Math.min(verticalLength, 8) : Math.min(verticalLength, guardY - 1);
+    drawReadableVerticalBlade(S, R, downX, guardY, safeLength, thickness, bladeBelow, style, tier);
+    drawReadableVerticalHilt(S, R, downX, guardY, bladeBelow, profile, guardSize, style, tier);
+  } else if (d === 'up') {
+    const guardY = strike ? 10 : 14;
+    const bladeBelow = wind;
+    const safeLength = bladeBelow ? Math.min(verticalLength, 8) : Math.min(verticalLength, guardY - 1);
+    drawReadableVerticalBlade(S, R, upX, guardY, safeLength, thickness, bladeBelow, style, tier);
+    drawReadableVerticalHilt(S, R, upX, guardY, bladeBelow, profile, guardSize, style, tier);
+  } else if (strike) {
+    const guardX = C.weapon === 'greatsword' ? 14 : 15;
+    const safeLength = Math.min(sideLength, 23 - guardX);
+    drawReadableHorizontalBlade(S, R, guardX, 13, safeLength, thickness, style, tier);
+    drawReadableHorizontalHilt(S, R, guardX, 13, profile, guardSize, style, tier);
+  } else {
+    const guardY = wind ? 11 : 14;
+    const safeLength = Math.min(verticalLength, guardY - 1);
+    drawReadableVerticalBlade(S, R, sideX, guardY, safeLength, thickness, false, style, tier);
+    drawReadableVerticalHilt(S, R, sideX, guardY, false, profile, guardSize, style, tier);
+  }
+  return true;
+}
+
+const SCIMITAR_PROFILE = {
+  verticalLength: [5, 6, 7, 8, 8],
+  sideLength: [6, 7, 7, 8, 8],
+  thickness: [1, 1, 2, 2, 2],
+  guardSize: [3, 3, 3, 5, 5],
+  gripSize: 2,
+  hiltStyle: 'scimitar',
+};
+
+const RAPIER_PROFILE = {
+  verticalLength: [7, 8, 8, 9, 9],
+  sideLength: [7, 8, 8, 8, 8],
+  guardSize: [3, 5, 5, 5, 5],
+  gripSize: 2,
+  hiltStyle: 'rapier',
+};
+
+function drawReadableCurvedBlade(S, x, guardY, length, thickness, bladeBelow, curveSign, style, tier) {
+  const direction = bladeBelow ? 1 : -1;
+  for (let step = 1; step <= length; step++) {
+    const tipDistance = length - step;
+    const curve = tipDistance === 0 ? curveSign * 2 : tipDistance === 1 ? curveSign : 0;
+    const bladeX = x + curve;
+    const bladeY = guardY + direction * step;
+    S(bladeX, bladeY, tipDistance === 0 ? style.edge : style.blade);
+    if (thickness >= 2 && tipDistance > 0) S(bladeX - curveSign, bladeY, style.shadow);
+    if (style.rune && step === Math.max(2, Math.floor(length / 2))) S(bladeX, bladeY, style.rune);
+    if (tier >= 5 && style.rune && step === Math.max(3, length - 2)) S(bladeX, bladeY, style.rune);
+  }
+}
+
+function drawReadableHorizontalCurve(S, guardX, y, length, thickness, style, tier) {
+  for (let step = 1; step <= length; step++) {
+    const tipDistance = length - step;
+    const lift = tipDistance === 0 ? -2 : tipDistance === 1 ? -1 : 0;
+    const bladeX = guardX + step;
+    const bladeY = y + lift;
+    S(bladeX, bladeY, tipDistance === 0 ? style.edge : style.blade);
+    if (thickness >= 2 && tipDistance > 0) S(bladeX, bladeY + 1, style.shadow);
+    if (style.rune && step === Math.max(2, Math.floor(length / 2))) S(bladeX, bladeY, style.rune);
+    if (tier >= 5 && style.rune && step === Math.max(3, length - 2)) S(bladeX, bladeY, style.rune);
+  }
+}
+
+function drawReadableScimitar(S, R, d, p, C) {
+  if (C.weapon !== 'scimitar') return false;
+  const tier = straightBladeTier(C);
+  const style = straightBladeStyle('scimitar', tier);
+  const verticalLength = SCIMITAR_PROFILE.verticalLength[tier - 1];
+  const sideLength = SCIMITAR_PROFILE.sideLength[tier - 1];
+  const thickness = SCIMITAR_PROFILE.thickness[tier - 1];
+  const guardSize = SCIMITAR_PROFILE.guardSize[tier - 1];
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+  const { downX, upX, sideX } = weaponAnchors(C);
+
+  if (d === 'down') {
+    const guardY = strike ? 14 : wind ? 11 : 13;
+    const bladeBelow = strike;
+    const safeLength = bladeBelow ? Math.min(verticalLength, 7) : Math.min(verticalLength, guardY - 2);
+    drawReadableCurvedBlade(S, downX, guardY, safeLength, thickness, bladeBelow, bladeBelow ? -1 : 1, style, tier);
+    drawReadableVerticalHilt(S, R, downX, guardY, bladeBelow, SCIMITAR_PROFILE, guardSize, style, tier);
+  } else if (d === 'up') {
+    const guardY = strike ? 10 : 14;
+    const bladeBelow = wind;
+    const safeLength = bladeBelow ? Math.min(verticalLength, 7) : Math.min(verticalLength, guardY - 2);
+    drawReadableCurvedBlade(S, upX, guardY, safeLength, thickness, bladeBelow, bladeBelow ? 1 : -1, style, tier);
+    drawReadableVerticalHilt(S, R, upX, guardY, bladeBelow, SCIMITAR_PROFILE, guardSize, style, tier);
+  } else if (strike) {
+    const guardX = 15;
+    const safeLength = Math.min(sideLength, 23 - guardX);
+    drawReadableHorizontalCurve(S, guardX, 13, safeLength, thickness, style, tier);
+    drawReadableHorizontalHilt(S, R, guardX, 13, SCIMITAR_PROFILE, guardSize, style, tier);
+  } else {
+    const guardY = wind ? 11 : 13;
+    const safeLength = Math.min(verticalLength, guardY - 2);
+    drawReadableCurvedBlade(S, sideX, guardY, safeLength, thickness, false, 1, style, tier);
+    drawReadableVerticalHilt(S, R, sideX, guardY, false, SCIMITAR_PROFILE, guardSize, style, tier);
+  }
+  return true;
+}
+
+function drawReadableRapier(S, R, d, p, C) {
+  if (C.weapon !== 'rapier') return false;
+  const tier = straightBladeTier(C);
+  const style = straightBladeStyle('rapier', tier);
+  const verticalLength = RAPIER_PROFILE.verticalLength[tier - 1];
+  const sideLength = RAPIER_PROFILE.sideLength[tier - 1];
+  const guardSize = RAPIER_PROFILE.guardSize[tier - 1];
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+  const { downX, upX, sideX } = weaponAnchors(C);
+
+  if (d === 'down') {
+    const guardY = strike ? 14 : wind ? 11 : 13;
+    const bladeBelow = strike;
+    const safeLength = bladeBelow ? Math.min(verticalLength, 8) : Math.min(verticalLength, guardY - 1);
+    drawReadableVerticalBlade(S, R, downX, guardY, safeLength, 1, bladeBelow, style, tier);
+    drawReadableVerticalHilt(S, R, downX, guardY, bladeBelow, RAPIER_PROFILE, guardSize, style, tier);
+  } else if (d === 'up') {
+    const guardY = strike ? 10 : 14;
+    const bladeBelow = wind;
+    const safeLength = bladeBelow ? Math.min(verticalLength, 8) : Math.min(verticalLength, guardY - 1);
+    drawReadableVerticalBlade(S, R, upX, guardY, safeLength, 1, bladeBelow, style, tier);
+    drawReadableVerticalHilt(S, R, upX, guardY, bladeBelow, RAPIER_PROFILE, guardSize, style, tier);
+  } else if (strike) {
+    const guardX = 15;
+    const safeLength = Math.min(sideLength, 23 - guardX);
+    drawReadableHorizontalBlade(S, R, guardX, 13, safeLength, 1, style, tier);
+    drawReadableHorizontalHilt(S, R, guardX, 13, RAPIER_PROFILE, guardSize, style, tier);
+  } else {
+    const guardY = wind ? 11 : 13;
+    const safeLength = Math.min(verticalLength, guardY - 1);
+    drawReadableVerticalBlade(S, R, sideX, guardY, safeLength, 1, false, style, tier);
+    drawReadableVerticalHilt(S, R, sideX, guardY, false, RAPIER_PROFILE, guardSize, style, tier);
+  }
+  return true;
+}
+
+const AXE_HEADS = [
+  // T1 hatchet: one tall cutting edge with tapered top and beard.
+  [[-1, -2, 'edge'], [-2, -1, 'edge'], [-1, -1, 'blade'], [0, -1, 'blade'], [-2, 0, 'edge'], [-1, 0, 'blade'], [0, 0, 'accent'], [-2, 1, 'edge'], [-1, 1, 'shadow'], [0, 1, 'shadow'], [-1, 2, 'shadow']],
+  // T2 twinhead: retain the dominant cleaver and add a smaller counter-blade.
+  [[-1, -2, 'edge'], [-2, -1, 'edge'], [-1, -1, 'blade'], [0, -1, 'blade'], [1, -1, 'blade'], [2, -1, 'edge'], [-2, 0, 'edge'], [-1, 0, 'blade'], [0, 0, 'accent'], [1, 0, 'blade'], [2, 0, 'edge'], [-2, 1, 'edge'], [-1, 1, 'shadow'], [0, 1, 'shadow'], [1, 1, 'shadow'], [2, 1, 'edge'], [-1, 2, 'shadow']],
+  // T3 stormcleaver: a large crescent cheek plus a compact rear spike.
+  [[-1, -3, 'edge'], [-3, -2, 'edge'], [-2, -2, 'edge'], [-1, -2, 'blade'], [0, -2, 'blade'], [-3, -1, 'edge'], [-2, -1, 'blade'], [-1, -1, 'blade'], [0, -1, 'blade'], [1, -1, 'blade'], [-3, 0, 'edge'], [-2, 0, 'blade'], [-1, 0, 'blade'], [0, 0, 'accent'], [1, 0, 'blade'], [2, 0, 'edge'], [-3, 1, 'edge'], [-2, 1, 'shadow'], [-1, 1, 'shadow'], [0, 1, 'shadow'], [-2, 2, 'shadow'], [-1, 2, 'shadow'], [-1, 3, 'shadow']],
+  // T4 executioner: an oversized single cutting edge and a narrow back spike.
+  [[-1, -3, 'edge'], [-3, -2, 'edge'], [-2, -2, 'edge'], [-1, -2, 'blade'], [0, -2, 'blade'], [-4, -1, 'edge'], [-3, -1, 'blade'], [-2, -1, 'blade'], [-1, -1, 'blade'], [0, -1, 'blade'], [1, -1, 'blade'], [-4, 0, 'edge'], [-3, 0, 'blade'], [-2, 0, 'blade'], [-1, 0, 'blade'], [0, 0, 'accent'], [1, 0, 'blade'], [2, 0, 'edge'], [-4, 1, 'edge'], [-3, 1, 'shadow'], [-2, 1, 'shadow'], [-1, 1, 'shadow'], [0, 1, 'shadow'], [-3, 2, 'edge'], [-2, 2, 'shadow'], [-1, 2, 'shadow'], [-1, 3, 'shadow']],
+  // T5 heavenrend: a monumental bearded crescent with one narrow rear spike.
+  [[-1, -4, 'edge'], [-3, -3, 'edge'], [-2, -3, 'edge'], [-1, -3, 'blade'], [0, -3, 'blade'], [-4, -2, 'edge'], [-3, -2, 'blade'], [-2, -2, 'blade'], [-1, -2, 'blade'], [0, -2, 'blade'], [-5, -1, 'edge'], [-4, -1, 'blade'], [-3, -1, 'blade'], [-2, -1, 'blade'], [-1, -1, 'blade'], [0, -1, 'accent'], [1, -1, 'shadow'], [-5, 0, 'edge'], [-4, 0, 'blade'], [-3, 0, 'blade'], [-2, 0, 'blade'], [-1, 0, 'accent'], [0, 0, 'accent'], [1, 0, 'blade'], [2, 0, 'blade'], [3, 0, 'edge'], [-5, 1, 'edge'], [-4, 1, 'shadow'], [-3, 1, 'shadow'], [-2, 1, 'shadow'], [-1, 1, 'shadow'], [0, 1, 'shadow'], [1, 1, 'shadow'], [-4, 2, 'edge'], [-3, 2, 'shadow'], [-2, 2, 'shadow'], [-1, 2, 'shadow'], [-2, 3, 'edge'], [-1, 3, 'shadow']],
+];
+
+function readableAxeStyle(tier) {
+  if (tier === 1) return { blade: METAL[0], edge: METAL[2], shadow: METAL[1], accent: WOOD[1], shaft: WOOD[0], shaftDark: WOOD[1] };
+  if (tier === 2) return { blade: '#b9d7e8', edge: TIER2.edge, shadow: TIER2.runeDark, accent: TIER2.gold, shaft: WOOD[0], shaftDark: WOOD[1] };
+  if (tier === 3) return { blade: '#b8c9e8', edge: TIER3.core, shadow: '#5269a6', accent: TIER3.astral, shaft: '#65402d', shaftDark: '#3f2b23' };
+  if (tier === 4) return { blade: '#91cfdf', edge: TIER4.core, shadow: '#354b78', accent: TIER4.plasma, shaft: '#5b3c2c', shaftDark: '#35251f' };
+  const theme = TIER5_THEMES.axe;
+  return { blade: '#76a9ba', edge: theme.apex, shadow: '#274864', accent: theme.divine, shaft: '#4a3428', shaftDark: '#2d211c' };
+}
+
+function drawReadableAxeHead(S, x, y, tier, style, horizontal = false, mirror = false) {
+  for (const [sourceX, sourceY, colorKey] of AXE_HEADS[tier - 1]) {
+    const headX = mirror ? -sourceX : sourceX;
+    const drawX = horizontal ? x + sourceY : x + headX;
+    const drawY = horizontal ? y + headX : y + sourceY;
+    S(drawX, drawY, style[colorKey]);
+  }
+}
+
+function drawReadableAxe(S, R, d, p, C) {
+  if (C.weapon !== 'axe') return false;
+  const tier = straightBladeTier(C);
+  const style = readableAxeStyle(tier);
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+  const { downX, upX, sideX } = weaponAnchors(C);
+
+  if (d === 'down') {
+    const headY = strike ? (tier === 5 ? 18 : 20) : wind ? 6 : 8;
+    if (strike) R(downX, 14, 1, 7, style.shaft); else R(downX, headY, 1, 7, style.shaft);
+    S(downX, strike ? 16 : headY + 3, style.shaftDark);
+    drawReadableAxeHead(S, downX, headY, tier, style, false, true);
+  } else if (d === 'up') {
+    const headY = strike ? (tier === 5 ? 6 : 3) : wind ? 7 : 9;
+    R(upX, headY, 1, strike ? 8 : 7, style.shaft);
+    S(upX, headY + 3, style.shaftDark);
+    drawReadableAxeHead(S, upX, headY, tier, style, false, false);
+  } else if (strike) {
+    const headX = tier === 5 ? 18 : 20;
+    R(14, 13, headX - 13, 1, style.shaft);
+    S(17, 13, style.shaftDark);
+    drawReadableAxeHead(S, headX, 13, tier, style, true, false);
+  } else {
+    const headY = wind ? 6 : 8;
+    R(sideX, headY, 1, 7, style.shaft);
+    S(sideX, headY + 3, style.shaftDark);
+    drawReadableAxeHead(S, sideX, headY, tier, style, false, true);
+  }
+  return true;
+}
+
+const BLUNT_HEAD_MAPS = {
+  mace: [
+    { anchorX: 2, rows: ['  E  ', ' ELC ', 'ECCCE', ' SSC ', '  H  '] },
+    { anchorX: 2, rows: ['  E  ', ' ELE ', 'ECCCE', ' LACS', ' ESS ', '  H  '] },
+    { anchorX: 3, rows: ['   E   ', ' E L E ', 'ELCCCLE', ' ECCCE ', '  SAS  ', '   H   '] },
+    { anchorX: 3, rows: ['   E   ', ' E L E ', 'ELCCCLE', 'ECCACCE', ' SSSSS ', '  ESE  ', '   H   '] },
+    { anchorX: 4, rows: ['    E    ', '  E L E  ', ' ELCACLE ', 'ELCCCCCCE', 'ECCAAACCE', ' SSSSSSS ', '  E S E  ', '    H    '] },
+  ],
+  warhammer: [
+    { anchorX: 3, rows: [' ELLC  ', 'ELCCSSE', ' ESSS  ', '   H   '] },
+    { anchorX: 3, rows: ['ELLLC  ', 'ELACSSE', 'ELCCSSE', '  SSS  ', '   H   '] },
+    { anchorX: 4, rows: [' ELLLC   ', 'ELACCSEE ', 'ELCCCSS E', ' E SSS E ', '    H    '] },
+    { anchorX: 4, rows: ['ELLLLC   ', 'ELACCSEE ', 'ELACCSS E', 'ELCCSS EE', '  SSSS   ', '    H    '] },
+    { anchorX: 4, rows: ['ELLLLC    ', 'ELAACCSEE ', 'ELCCCSS E ', 'ESSSSS E  ', ' ESSSS    ', '  SSS     ', '    H     '] },
+  ],
+  club: [
+    { anchorX: 1, rows: [' LE', 'LCC', 'CCS', 'LCS', ' CC', ' H ', ' H '] },
+    { anchorX: 2, rows: [' LCE ', 'ELCCE', 'LCCS ', 'ECCSE', ' LCS ', '  H  ', '  H  '] },
+    { anchorX: 2, rows: ['  LE ', ' ELCE', 'ELCCE', 'LCCS ', 'ECCSE', ' LCS ', '  H  ', '  H  '] },
+    { anchorX: 3, rows: ['  ELCE ', ' ELCSE ', 'ELCACCE', 'LCCCSS ', 'ECCCS E', ' LCSS  ', '  LCS  ', '   H   ', '   H   '] },
+    { anchorX: 3, rows: ['  ELC E ', ' ELCACEE', 'ELCCCCE ', 'LCCAACSE', 'ECCCSS E', ' LCCSS  ', 'ELCSS   ', '  LCS   ', '   H    ', '   H    '] },
+  ],
+};
+
+const BLUNT_GLYPHS = {
+  E: 'edge',
+  L: 'light',
+  C: 'core',
+  S: 'shadow',
+  A: 'accent',
+  H: 'handle',
+};
+
+function readableBluntStyle(weapon, tier) {
+  if (weapon === 'club') {
+    if (tier === 1) return { edge: '#2d1d17', light: '#a56b3f', core: '#765039', shadow: '#4b3025', accent: METAL[0], handle: WOOD[0], handleDark: WOOD[1] };
+    if (tier === 2) return { edge: '#332019', light: '#b87943', core: '#7d5132', shadow: '#4b3023', accent: TIER2.edge, handle: '#71482f', handleDark: '#402b22' };
+    if (tier === 3) return { edge: '#2e2430', light: '#aa7445', core: '#6f4d39', shadow: '#443044', accent: TIER3.astral, handle: '#69452f', handleDark: '#3c2b27' };
+    if (tier === 4) return { edge: '#24243a', light: '#c18a4d', core: '#76543b', shadow: '#3f3348', accent: TIER4.frost, handle: '#69472f', handleDark: '#33282a' };
+    const theme = TIER5_THEMES.club;
+    return { edge: theme.abyss, light: theme.apex, core: theme.divine, shadow: '#59452c', accent: theme.cosmic, handle: '#6b4b31', handleDark: '#32251d' };
+  }
+
+  const theme = TIER5_THEMES[weapon];
+  if (tier === 1) return { edge: METAL[2], light: '#f4f4f4', core: METAL[0], shadow: METAL[1], accent: GOLD[0], handle: WOOD[0], handleDark: WOOD[1] };
+  if (tier === 2) return { edge: TIER2.edge, light: '#d8f4ff', core: '#91bbcc', shadow: TIER2.runeDark, accent: TIER2.gold, handle: WOOD[0], handleDark: WOOD[1] };
+  if (tier === 3) return { edge: TIER3.core, light: '#d9dfff', core: TIER3.storm, shadow: TIER3.astralDark, accent: TIER3.astral, handle: '#65402d', handleDark: '#3f2b23' };
+  if (tier === 4) return { edge: TIER4.core, light: TIER4.frost, core: '#8497c7', shadow: TIER4.void, accent: TIER4.plasma, handle: '#5b3c2c', handleDark: '#35251f' };
+  return { edge: theme.apex, light: theme.divine, core: theme.cosmic, shadow: theme.abyss, accent: theme.rift, handle: '#4a3428', handleDark: '#2d211c' };
+}
+
+function drawReadableBluntHead(S, x, y, weapon, tier, style, { horizontal = false, inverted = false } = {}) {
+  const profile = BLUNT_HEAD_MAPS[weapon][tier - 1];
+  const anchorY = profile.rows.length - 1;
+  for (let row = 0; row < profile.rows.length; row++) {
+    for (let column = 0; column < profile.rows[row].length; column++) {
+      const colorKey = BLUNT_GLYPHS[profile.rows[row][column]];
+      if (!colorKey) continue;
+      const sourceX = column - profile.anchorX;
+      const sourceY = (row - anchorY) * (inverted ? -1 : 1);
+      const drawX = horizontal ? x - sourceY : x + sourceX;
+      const drawY = horizontal ? y + sourceX : y + sourceY;
+      S(drawX, drawY, style[colorKey]);
+    }
+  }
+}
+
+function bluntPoseRoots(weapon, tier) {
+  const index = tier - 1;
+  if (weapon === 'mace') return {
+    hold: 10,
+    wind: 8,
+    downStrike: [18, 18, 18, 17, 16][index],
+    upStrike: [6, 6, 6, 6, 7][index],
+    sideStrike: [19, 18, 18, 17, 16][index],
+  };
+  if (weapon === 'warhammer') return {
+    hold: 10,
+    wind: 8,
+    downStrike: [20, 19, 19, 18, 17][index],
+    upStrike: [3, 4, 4, 5, 6][index],
+    sideStrike: [20, 19, 19, 18, 17][index],
+  };
+  return {
+    hold: 13,
+    wind: 11,
+    downStrike: [17, 17, 16, 15, 14][index],
+    upStrike: [6, 6, 7, 8, 9][index],
+    sideStrike: 14,
+  };
+}
+
+function drawReadableBlunt(S, R, d, p, C) {
+  const weapon = C.weapon;
+  if (!BLUNT_HEAD_MAPS[weapon]) return false;
+  const tier = straightBladeTier(C);
+  const style = readableBluntStyle(weapon, tier);
+  const roots = bluntPoseRoots(weapon, tier);
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+  const { downX, upX, sideX } = weaponAnchors(C);
+
+  if (d === 'down') {
+    const rootY = strike ? roots.downStrike : wind ? roots.wind : roots.hold;
+    if (strike) R(downX, 14, 1, rootY - 13, style.handle); else R(downX, rootY, 1, 15 - rootY, style.handle);
+    S(downX, strike ? 15 : Math.min(14, rootY + 2), style.handleDark);
+    drawReadableBluntHead(S, downX, rootY, weapon, tier, style, { inverted: strike });
+  } else if (d === 'up') {
+    const rootY = strike ? roots.upStrike : wind ? roots.wind : roots.hold;
+    R(upX, rootY, 1, Math.max(1, 11 - rootY), style.handle);
+    S(upX, Math.min(10, rootY + 2), style.handleDark);
+    drawReadableBluntHead(S, upX, rootY, weapon, tier, style);
+  } else if (strike) {
+    const rootX = roots.sideStrike;
+    R(14, 13, Math.max(1, rootX - 13), 1, style.handle);
+    S(Math.min(rootX, 16), 13, style.handleDark);
+    drawReadableBluntHead(S, rootX, 13, weapon, tier, style, { horizontal: true });
+  } else {
+    const rootY = wind ? roots.wind : roots.hold;
+    R(sideX, rootY, 1, 15 - rootY, style.handle);
+    S(sideX, Math.min(14, rootY + 2), style.handleDark);
+    drawReadableBluntHead(S, sideX, rootY, weapon, tier, style);
+  }
+  return true;
+}
+
+function drawPixelLine(S, x0, y0, x1, y1, color) {
+  let x = x0;
+  let y = y0;
+  const dx = Math.abs(x1 - x0);
+  const sx = x0 < x1 ? 1 : -1;
+  const dy = -Math.abs(y1 - y0);
+  const sy = y0 < y1 ? 1 : -1;
+  let error = dx + dy;
+  while (true) {
+    S(x, y, color);
+    if (x === x1 && y === y1) break;
+    const doubled = error * 2;
+    if (doubled >= dy) { error += dy; x += sx; }
+    if (doubled <= dx) { error += dx; y += sy; }
+  }
+}
+
+const SPEAR_HEAD_MAPS = [
+  { anchorX: 1, rows: [' E ', 'LCL', ' S ', ' H '] },
+  { anchorX: 2, rows: ['  E  ', ' LCL ', 'LCACL', '  S  ', '  H  '] },
+  { anchorX: 2, rows: ['  E  ', ' LCL ', 'LCACL', 'LCSCL', '  S  ', '  H  '] },
+  { anchorX: 2, rows: ['  E  ', ' LCL ', ' LCL ', 'LCACL', ' LSL ', '  S  ', '  H  '] },
+  { anchorX: 2, rows: ['  E  ', ' LCL ', ' LCL ', 'LCCCL', 'LCACL', ' LSL ', '  S  ', '  H  '] },
+];
+
+function readableProjectileStyle(weapon, tier) {
+  const theme = TIER5_THEMES[weapon];
+  if (tier === 1) return {
+    edge: METAL[2], light: '#f4f4f4', core: METAL[0], shadow: METAL[1], accent: GOLD[0],
+    shaft: WOOD[0], shaftDark: WOOD[1], limb: WOOD[0], limbLight: '#a86e42',
+    limbDark: WOOD[1], string: STRINGC, stock: WOOD[0], stockDark: WOOD[1], bolt: METAL[0], tip: METAL[2],
+  };
+  if (tier === 2) return {
+    edge: TIER2.edge, light: '#d8f4ff', core: '#91bbcc', shadow: TIER2.runeDark, accent: TIER2.gold,
+    shaft: '#7a5135', shaftDark: '#493126', limb: '#9b663d', limbLight: TIER2.gold,
+    limbDark: '#553328', string: '#dff8ff', stock: '#795037', stockDark: '#453027', bolt: TIER2.rune, tip: TIER2.edge,
+  };
+  if (tier === 3) return {
+    edge: TIER3.core, light: '#d9dfff', core: TIER3.storm, shadow: TIER3.astralDark, accent: TIER3.astral,
+    shaft: '#65402d', shaftDark: '#3f2b23', limb: '#7651a0', limbLight: TIER3.astral,
+    limbDark: TIER3.astralDark, string: '#d7ddff', stock: '#68432f', stockDark: '#3c2a28', bolt: TIER3.storm, tip: TIER3.core,
+  };
+  if (tier === 4) return {
+    edge: TIER4.core, light: TIER4.frost, core: '#8497c7', shadow: TIER4.void, accent: TIER4.plasma,
+    shaft: '#51355f', shaftDark: '#2d2441', limb: TIER4.void, limbLight: TIER4.frost,
+    limbDark: '#34235f', string: '#b9d4da', stock: '#5d3d54', stockDark: '#30233b', bolt: TIER4.frost, tip: TIER4.core,
+  };
+  return {
+    edge: theme.apex, light: theme.divine, core: theme.cosmic, shadow: theme.abyss, accent: theme.rift,
+    shaft: weapon === 'spear' ? '#52735b' : theme.abyss, shaftDark: '#172024', limb: theme.cosmic, limbLight: theme.divine,
+    limbDark: theme.abyss, string: '#9fb8b8', stock: theme.abyss, stockDark: '#171d22', bolt: theme.cosmic, tip: theme.apex,
+  };
+}
+
+function drawReadableSpearHead(S, x, y, tier, style, { horizontal = false, inverted = false } = {}) {
+  const profile = SPEAR_HEAD_MAPS[tier - 1];
+  const anchorY = profile.rows.length - 1;
+  for (let row = 0; row < profile.rows.length; row++) {
+    for (let column = 0; column < profile.rows[row].length; column++) {
+      const glyph = profile.rows[row][column];
+      const colorKey = glyph === 'H' ? 'shaft' : BLUNT_GLYPHS[glyph];
+      if (!colorKey) continue;
+      const sourceX = column - profile.anchorX;
+      const sourceY = (row - anchorY) * (inverted ? -1 : 1);
+      const drawX = horizontal ? x - sourceY : x + sourceX;
+      const drawY = horizontal ? y + sourceX : y + sourceY;
+      S(drawX, drawY, style[colorKey]);
+    }
+  }
+}
+
+function drawReadableSpear(S, R, d, p, C) {
+  if (C.weapon !== 'spear') return false;
+  const tier = straightBladeTier(C);
+  const style = readableProjectileStyle('spear', tier);
+  const index = tier - 1;
+  const holdRoot = [7, 7, 8, 8, 9][index];
+  const windRoot = holdRoot - 1;
+  const downStrikeRoot = [18, 17, 17, 15, 14][index];
+  const upStrikeRoot = [5, 6, 7, 8, 9][index];
+  const sideStrikeRoot = [18, 17, 17, 15, 14][index];
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+  const { downX, upX, sideX } = weaponAnchors(C);
+
+  if (d === 'down') {
+    const rootY = strike ? downStrikeRoot : wind ? windRoot : holdRoot;
+    if (strike) R(downX, 13, 1, rootY - 12, style.shaft); else R(downX, rootY, 1, 17 - rootY, style.shaft);
+    S(downX, strike ? 14 : 13, style.shaftDark);
+    drawReadableSpearHead(S, downX, rootY, tier, style, { inverted: strike });
+  } else if (d === 'up') {
+    const rootY = strike ? upStrikeRoot : wind ? windRoot : holdRoot;
+    R(upX, rootY, 1, strike ? Math.max(1, 11 - rootY) : 17 - rootY, style.shaft);
+    S(upX, strike ? 9 : 13, style.shaftDark);
+    drawReadableSpearHead(S, upX, rootY, tier, style);
+  } else if (strike) {
+    R(13, 13, sideStrikeRoot - 12, 1, style.shaft);
+    S(14, 13, style.shaftDark);
+    drawReadableSpearHead(S, sideStrikeRoot, 13, tier, style, { horizontal: true });
+  } else {
+    const rootY = wind ? windRoot : holdRoot;
+    R(sideX, rootY, 1, 17 - rootY, style.shaft);
+    S(sideX, 13, style.shaftDark);
+    drawReadableSpearHead(S, sideX, rootY, tier, style);
+  }
+  return true;
+}
+
+function orientedRangedPlotter(S, direction, originX, originY) {
+  const point = (x, y) => {
+    if (direction === 'down') return [originX + y, originY + x];
+    if (direction === 'up') return [originX - y, originY - x];
+    return [originX + x, originY + y];
+  };
+  return {
+    pixel(x, y, color) {
+      const [drawX, drawY] = point(x, y);
+      S(drawX, drawY, color);
+    },
+    line(x0, y0, x1, y1, color) {
+      const [drawX0, drawY0] = point(x0, y0);
+      const [drawX1, drawY1] = point(x1, y1);
+      drawPixelLine(S, drawX0, drawY0, drawX1, drawY1, color);
+    },
+  };
+}
+
+function drawReadableBow(S, d, p, C) {
+  if (C.weapon !== 'bow') return false;
+  const tier = straightBladeTier(C);
+  const style = readableProjectileStyle('bow', tier);
+  const index = tier - 1;
+  const span = [5, 6, 6, 7, 8][index];
+  const depth = [4, 4, 4, 5, 5][index];
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+  const centerY = 12;
+  const gripX = d === 'down'
+    ? 22
+    : d === 'up'
+      ? 2
+      : strike ? 18 : 20;
+
+  // Keep the established upright bow in every view. The side profile is the
+  // only mirrored piece: its tips and string sit in front of the character.
+  const side = d === 'up' ? 1 : -1;
+  const stringX = gripX + side * depth;
+  const topY = centerY - span;
+  const bottomY = centerY + span;
+  const hookSize = tier === 5 ? 2 : tier >= 3 ? 1 : 0;
+  const hookX = stringX - side * hookSize;
+  const bendX = gripX + side;
+  const bendY = Math.ceil(span / 2);
+  const stringColor = ['#5a5047', '#58666a', '#625979', '#51606c', '#46656a'][index];
+  const pullDistance = tier >= 4 ? 3 : 2;
+  const pullX = d === 'up'
+    ? stringX + pullDistance
+    : stringX - pullDistance;
+  const line = (x0, y0, x1, y1, color) => drawPixelLine(S, x0, y0, x1, y1, color);
+  const pixel = (x, y, color) => S(x, y, color);
+
+  if (wind) {
+    line(stringX, topY, pullX, centerY, stringColor);
+    line(pullX, centerY, stringX, bottomY, stringColor);
+  } else {
+    line(stringX, topY, stringX, bottomY, stringColor);
+  }
+
+  line(stringX, topY, hookX, topY + 1, style.limbLight);
+  line(hookX, topY + 1, bendX, centerY - bendY, style.limb);
+  line(bendX, centerY - bendY, gripX, centerY, style.limb);
+  line(gripX, centerY, bendX, centerY + bendY, style.limbDark);
+  line(bendX, centerY + bendY, hookX, bottomY - 1, style.limbDark);
+  line(hookX, bottomY - 1, stringX, bottomY, style.accent);
+
+  pixel(gripX, centerY, style.accent);
+  if (tier >= 2) pixel(gripX, centerY + 1, style.limbDark);
+  if (tier >= 3) {
+    pixel(bendX - side, centerY - bendY, style.limbLight);
+    pixel(bendX - side, centerY + bendY, style.accent);
+  }
+  if (tier === 5) {
+    // The apex bow is a longer, deeper connected crescent with reinforced
+    // recurved tips and riser; no detached ornament or direction rewrite.
+    pixel(hookX - side, topY + 1, style.light);
+    pixel(hookX - side, bottomY - 1, style.accent);
+    pixel(bendX, centerY - bendY + 1, style.limbLight);
+    pixel(bendX, centerY + bendY - 1, style.limb);
+    pixel(gripX - side, centerY - 1, style.limbLight);
+    pixel(gripX, centerY - 1, style.light);
+    pixel(gripX - side, centerY + 1, style.limbDark);
+    pixel(gripX, centerY + 1, style.accent);
+  }
+
+  if (wind) {
+    if (d === 'right') {
+      line(pullX, centerY, gripX + 2, centerY, style.bolt);
+      pixel(gripX + 2, centerY, style.tip);
+    }
+  } else if (strike && d === 'right') {
+    const arrowEnd = 20;
+    line(gripX - 1, centerY, arrowEnd, centerY, style.bolt);
+    pixel(arrowEnd, centerY, style.tip);
+    pixel(arrowEnd - 1, centerY - 1, style.tip);
+    pixel(arrowEnd - 1, centerY + 1, style.tip);
+  }
+  return true;
+}
+
+function drawReadableCrossbow(S, d, p, C) {
+  if (C.weapon !== 'crossbow') return false;
+  const tier = straightBladeTier(C);
+  const style = readableProjectileStyle('crossbow', tier);
+  const index = tier - 1;
+  const span = [3, 4, 4, 5, 6][index];
+  const back = [3, 4, 4, 5, 5][index];
+  const middle = Math.ceil(span / 2);
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+  const origin = d === 'down'
+    ? [17, strike ? 13 : 14]
+    : d === 'up'
+      ? [6, strike ? 10 : 11]
+      : [strike ? 14 : 17, 13];
+  const plot = orientedRangedPlotter(S, d, origin[0], origin[1]);
+
+  plot.line(0, -span, 1, -middle, style.limb);
+  plot.line(1, -middle, 2, 0, style.limb);
+  plot.line(2, 0, 1, middle, style.limbDark);
+  plot.line(1, middle, 0, span, style.limbDark);
+  plot.pixel(0, -span, style.limbLight);
+  plot.pixel(0, span, style.limbLight);
+  if (tier >= 3) {
+    plot.pixel(1, -middle, style.limbLight);
+    plot.pixel(1, middle, style.accent);
+  }
+
+  const latch = strike ? 2 : wind ? -2 : -1;
+  plot.line(0, -span, latch, 0, style.string);
+  plot.line(latch, 0, 0, span, style.string);
+  plot.line(-back, 0, 3, 0, style.stock);
+  plot.pixel(-back, 0, style.stockDark);
+  plot.line(-1, 0, -2, 2, style.stockDark);
+  plot.pixel(-1, 1, style.accent);
+
+  const boltEnd = strike ? (d === 'up' ? 8 : 7) : 3;
+  plot.line(latch, 0, boltEnd, 0, style.bolt);
+  plot.pixel(boltEnd, 0, style.tip);
+  plot.pixel(boltEnd - 1, -1, style.tip);
+  plot.pixel(boltEnd - 1, 1, style.tip);
+  return true;
+}
+
+function drawReadableRanged(S, R, d, p, C) {
+  if (drawReadableSpear(S, R, d, p, C)) return true;
+  if (drawReadableBow(S, d, p, C)) return true;
+  if (drawReadableCrossbow(S, d, p, C)) return true;
+  return false;
+}
+
 function drawTierTwoUpgrade(S, R, d, ph, C) {
   const w = C.weapon;
   const strike = ph === 'strike';
@@ -1217,6 +1986,15 @@ export function drawWeapon(S, R, d, p, C, u) {
   const strike = ph === 'strike';
   const wind = ph === 'wind';
   const { downX, upX, sideX } = weaponAnchors(C);
+
+  // Straight blades use explicit per-tier silhouettes instead of cumulative sparkle layers.
+  // This keeps the weapon family readable before ornament and prevents Tier 5 shrinking after Tier 4.
+  if (drawReadableStraightBlade(S, R, d, p, C)) return;
+  if (drawReadableScimitar(S, R, d, p, C)) return;
+  if (drawReadableRapier(S, R, d, p, C)) return;
+  if (drawReadableAxe(S, R, d, p, C)) return;
+  if (drawReadableBlunt(S, R, d, p, C)) return;
+  if (drawReadableRanged(S, R, d, p, C)) return;
 
   // ---- existing compatibility set ----
   if (w === 'sword' || w === 'dagger') {
