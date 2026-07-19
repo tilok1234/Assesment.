@@ -10,6 +10,7 @@
     "build": "node tools/build.mjs",
     "preview": "node tools/dev-server.mjs --root dist --open",
     "review:weapons": "node tools/weapon-readability-audit.mjs",
+    "review:outlines": "node tools/outline-review.mjs",
     "check": "node tools/check-project.mjs",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",

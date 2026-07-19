@@ -3,6 +3,7 @@ uploads/
 node_modules/
 dist/
 weapon-review/
+outline-review/
 src-tauri/gen/
 src-tauri/target/
 *.log

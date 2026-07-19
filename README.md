@@ -24,6 +24,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Editable skin, hair, and outfit tone pairs with a reusable local palette library
 - Full-sheet, selected-animation, and selected-direction PNG export scopes
 - Play/pause, 0.5x/1x/2x playback speeds, frame stepping, and direct frame inspection with sheet-column metadata
+- Optional assembled-player outlines with None, Complete B, and Selective C modes; previews, presets, comparisons, sheets, and assembled pack exports preserve the selected treatment while enemies, effects, source art, and atomic component sheets stay unchanged
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
 - Six modular expressions—Neutral, Happy, Angry, Sad, Surprised, and Determined—that animate in every visible direction, remain readable beneath glasses, and hide beneath full helmets
@@ -79,6 +80,8 @@ npm run check
 ```
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, and the dimensions of all committed sheets.
+
+Run `npm run review:outlines` for the outline-specific regression gate. It verifies anchored safe-baseline hashes, 6,000 pixel-exact None-mode parity cases, 2,000 deterministic randomized assembled-art integrity cases, ownership-layer isolation, cavity preservation, and review examples. See [OUTLINE_RENDERING_PLAN.md](OUTLINE_RENDERING_PLAN.md) for the supported modes and scope boundary.
 
 ## Build the Windows application
 

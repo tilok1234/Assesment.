@@ -63,12 +63,14 @@ checkSyntax('engine/class-templates.js');
 checkSyntax('engine/variant-batches.js');
 checkSyntax('engine/generators.js');
 checkSyntax('engine/effect-renderer.js');
+checkSyntax('engine/outline-renderer.js');
 checkSyntax('engine/renderer.js');
 checkSyntax('engine/shield-renderer.js');
 checkSyntax('engine/sheets.js');
 checkSyntax('engine/weapon-renderer.js');
 checkSyntax('tools/build.mjs');
 checkSyntax('tools/dev-server.mjs');
+checkSyntax('tools/outline-review.mjs');
 checkSyntax('tools/weapon-readability-audit.mjs');
 checkSyntax('tools/check-windows-release.mjs');
 
@@ -95,6 +97,7 @@ for (const controlId of [
   'sheet-title', 'sheet-contract', 'export-scope',
   'previous-frame-button', 'play-pause-button', 'next-frame-button',
   'frame-buttons', 'frame-readout', 'playback-speed',
+  'outline-control', 'outline-buttons',
   'reset-button', 'duplicate-button', 'compare-button', 'compare-dialog',
   'saved-copy-canvas', 'current-copy-canvas', 'restore-copy-button',
   'keep-current-button', 'remove-copy-button', 'replace-copy-button',
@@ -131,6 +134,7 @@ const runtimeSources = {
   'engine/variant-batches.js': await readFile(path.join(root, 'engine', 'variant-batches.js'), 'utf8'),
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
   'engine/effect-renderer.js': await readFile(path.join(root, 'engine', 'effect-renderer.js'), 'utf8'),
+  'engine/outline-renderer.js': await readFile(path.join(root, 'engine', 'outline-renderer.js'), 'utf8'),
   'engine/renderer.js': await readFile(path.join(root, 'engine', 'renderer.js'), 'utf8'),
   'engine/shield-renderer.js': await readFile(path.join(root, 'engine', 'shield-renderer.js'), 'utf8'),
   'engine/sheets.js': await readFile(path.join(root, 'engine', 'sheets.js'), 'utf8'),
@@ -146,11 +150,13 @@ const expectedEngineExports = [
   'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_CLASS_TEMPLATE',
   'DEFAULT_COMBAT_LOADOUT', 'DEFAULT_VARIANT_BATCH_SET',
   'DIRS', 'DIR_LABELS', 'ENEMIES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
-  'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
+  'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
+  'OUTLINE_MODE_COMPLETE_B', 'OUTLINE_MODE_NONE', 'OUTLINE_MODE_SELECTIVE_C',
+  'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
   'applyClassTemplate', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch',
-  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawSprite',
-  'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout', 'sanitizeCombatLoadout', 'thumbURL',
+  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawOutlinedSprite', 'drawSprite',
+  'normalizeOutlineMode', 'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout', 'sanitizeCombatLoadout', 'thumbURL',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
@@ -163,11 +169,13 @@ check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not de
 check(runtimeSources['app.js'].includes("from './character-kit.js'"), 'app.js must use the focused master character-kit planner');
 check(!runtimeSources['character-kit.js'].includes("from './engine/"), 'character-kit.js must consume only the public engine facade');
 check(runtimeSources['app.js'].includes("from './zip.js'"), 'app.js must use the standalone ZIP packaging utility');
-check(runtimeSources['app.js'].includes("PRESET_VERSION = 9"), 'app.js must keep presets under the current versioned schema');
-check(runtimeSources['app.js'].includes('![1, 2, 3, 4, 5, 6, 7, 8, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1 through 8 preset libraries');
+check(runtimeSources['app.js'].includes("PRESET_VERSION = 10"), 'app.js must keep presets under the current versioned schema');
+check(runtimeSources['app.js'].includes('![1, 2, 3, 4, 5, 6, 7, 8, 9, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1 through 9 preset libraries');
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
-check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'loadout', 'characterName', 'exportName']"), 'app.js history must include combat loadouts while remaining scoped to the editable sprite document');
+check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'characterName', 'exportName']"), 'app.js history must include combat loadouts and outlines while remaining scoped to the editable sprite document');
+check(runtimeSources['engine/sheets.js'].includes('drawOutlinedSprite'), 'assembled sheet exports must support optional player outlines');
+check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must expose the optional player outline selector');
 check(runtimeSources['app.js'].includes("makeButton('Effects'"), 'app.js must expose combat effects as a first-class editor mode');
 check(runtimeSources['app.js'].includes("key === 'z'"), 'app.js must expose the undo keyboard shortcut');
 check(runtimeSources['app.js'].includes("key === 'y'"), 'app.js must expose the redo keyboard shortcut');
@@ -189,7 +197,7 @@ check(engine.ANIMS.every((anim) => anim.frames * engine.SIZE === 48 || anim.fram
 check(runtimeSources['app.js'].includes("PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1'"), 'character packs must use independent versioned persistence');
 check(runtimeSources['app.js'].includes('PACK_ENTRY_LIMIT = 200'), 'character packs must keep a bounded entry count');
 check(runtimeSources['app.js'].includes('function loadPackLibrary(') && runtimeSources['app.js'].includes('function persistPackLibrary('), 'character packs must load and persist their working library');
-check(runtimeSources['app.js'].includes('const canvas = E.buildSheet(spec, scale)'), 'character packs must always export complete sprite sheets');
+check(runtimeSources['app.js'].includes('const canvas = E.buildSheet(spec, scale, outlineRenderOptions(spec, entry.outlineMode))'), 'character packs must always export complete sprite sheets with their saved outline treatment');
 check(runtimeSources['app.js'].includes("format: '8-bit-sprite-assembler-character-pack'"), 'character pack manifests must expose their stable format id');
 check(runtimeSources['app.js'].includes('buildStoredZip(zipEntries'), 'character pack downloads must assemble their PNGs and manifest into a ZIP');
 check(runtimeSources['app.js'].includes("LOADOUT_STORAGE_KEY = 'sprite-assembler-combat-loadouts-v1'"), 'combat loadouts must use independent versioned persistence');
@@ -380,7 +388,7 @@ check(runtimeSources['app.js'].includes("advance('Rendering native enemy sheets.
 check(runtimeSources['app.js'].includes("advance('Rendering synchronized combat-effect overlays.')"), 'Complete Character Kits must render the planned combat-effect library');
 check(runtimeSources['app.js'].includes('function renderReadyPackCharacters('), 'Complete Character Packs must include ready-to-use assembled character sheets');
 check(runtimeSources['app.js'].includes('includeReference: false'), 'combined packs must reuse a ready character as the reference instead of duplicating its PNG');
-check(runtimeSources['app.js'].includes('MASTER_CHARACTER_KIT_SCALE, { layer }'), 'Complete Character Kits must render every requested compositing layer at native scale');
+check(runtimeSources['app.js'].includes('MASTER_CHARACTER_KIT_SCALE, { layer, outlineMode }'), 'Complete Character Kits must render every requested compositing layer at native scale');
 check(runtimeSources['app.js'].includes("-complete-character-kit.zip`"), 'Complete Character Kit downloads must use an unambiguous filename');
 check(runtimeSources['app.js'].includes("-complete-character-pack.zip`"), 'combined Complete Character Pack downloads must use an unambiguous filename');
 check(!runtimeSources['app.js'].includes('buildMasterRosterKitPlan'), 'the app must not expose the duplicate-heavy roster body-matrix exporter');

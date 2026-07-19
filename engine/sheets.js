@@ -1,7 +1,20 @@
 // Sprite-sheet assembly and thumbnail generation.
 
 import { ANIMS, DIRS, SHEET_COLS, SIZE } from './catalogs.js';
+import {
+  drawOutlinedSprite,
+  normalizeOutlineMode,
+  OUTLINE_MODE_NONE,
+} from './outline-renderer.js';
 import { drawSprite } from './renderer.js';
+
+function drawSheetFrame(context, spec, direction, animationId, frame, options) {
+  if (normalizeOutlineMode(options.outlineMode) === OUTLINE_MODE_NONE) {
+    drawSprite(context, spec, direction, animationId, frame, options);
+    return;
+  }
+  drawOutlinedSprite(context, spec, direction, animationId, frame, options);
+}
 
 // ---------------- sheet builder ----------------
 export function buildSheet(spec, scale = 1, opts = {}) {
@@ -19,7 +32,7 @@ export function buildSheet(spec, scale = 1, opts = {}) {
     let col = 0;
     for (const anim of ANIMS) {
       for (let f = 0; f < anim.frames; f++) {
-        drawSprite(tctx, spec, dir, anim.id, f, { ...opts, shadow: opts.shadow === true });
+        drawSheetFrame(tctx, spec, dir, anim.id, f, { ...opts, shadow: opts.shadow === true });
         octx.drawImage(tmp, col * SIZE * scale, r * SIZE * scale, SIZE * scale, SIZE * scale);
         col++;
       }
@@ -41,7 +54,7 @@ export function buildAnimationSheet(spec, animId, scale = 1, opts = {}) {
   const tctx = tmp.getContext('2d');
   DIRS.forEach((dir, row) => {
     for (let frame = 0; frame < anim.frames; frame++) {
-      drawSprite(tctx, spec, dir, anim.id, frame, { ...opts, shadow: opts.shadow === true });
+      drawSheetFrame(tctx, spec, dir, anim.id, frame, { ...opts, shadow: opts.shadow === true });
       octx.drawImage(tmp, frame * SIZE * scale, row * SIZE * scale, SIZE * scale, SIZE * scale);
     }
   });
@@ -62,7 +75,7 @@ export function buildDirectionSheet(spec, direction, scale = 1, opts = {}) {
   let column = 0;
   for (const anim of ANIMS) {
     for (let frame = 0; frame < anim.frames; frame++) {
-      drawSprite(tctx, spec, dir, anim.id, frame, { ...opts, shadow: opts.shadow === true });
+      drawSheetFrame(tctx, spec, dir, anim.id, frame, { ...opts, shadow: opts.shadow === true });
       octx.drawImage(tmp, column * SIZE * scale, 0, SIZE * scale, SIZE * scale);
       column++;
     }
