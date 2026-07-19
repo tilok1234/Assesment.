@@ -876,6 +876,255 @@ function drawReadableRanged(S, R, d, p, C) {
   return false;
 }
 
+const STAFF_FOCUS_PATTERNS = [
+  [
+    [0, 0, 'trim'], [-1, -1, 'edge'], [0, -1, 'core'], [1, -1, 'light'], [0, -2, 'light'],
+  ],
+  [
+    [-1, 0, 'trim'], [0, 0, 'trim'], [1, 0, 'trim'],
+    [-1, -1, 'edge'], [0, -1, 'core'], [1, -1, 'light'],
+    [-1, -2, 'edge'], [0, -2, 'core'], [1, -2, 'light'], [0, -3, 'light'],
+  ],
+  [
+    [-1, 0, 'edge'], [0, 0, 'trim'], [1, 0, 'trim'],
+    [-2, -1, 'edge'], [-1, -2, 'edge'], [0, -2, 'core'], [1, -2, 'shadow'],
+    [2, -1, 'light'], [2, -2, 'light'], [-1, -3, 'edge'], [0, -3, 'core'], [1, -3, 'light'],
+  ],
+  [
+    [-1, 0, 'trim'], [0, 0, 'trim'], [1, 0, 'trim'],
+    [-2, -1, 'edge'], [2, -1, 'light'], [-2, -2, 'edge'], [2, -2, 'light'],
+    [-1, -3, 'edge'], [0, -4, 'light'], [1, -3, 'light'],
+    [-1, -1, 'shadow'], [0, -1, 'core'], [1, -1, 'shadow'], [0, -2, 'core'],
+    [3, -2, 'trim'], [2, -3, 'trim'],
+  ],
+  [
+    [-1, 0, 'trim'], [0, 0, 'trim'], [1, 0, 'trim'],
+    [-2, -1, 'edge'], [2, -1, 'light'], [-2, -2, 'edge'], [3, -2, 'light'],
+    [-2, -3, 'edge'], [3, -3, 'light'], [-2, -4, 'edge'], [2, -4, 'light'],
+    [-1, -5, 'edge'], [0, -5, 'light'], [1, -5, 'light'],
+    [-1, -1, 'shadow'], [0, -1, 'core'], [1, -1, 'shadow'],
+    [-1, -2, 'core'], [0, -2, 'light'], [1, -2, 'core'],
+    [-1, -3, 'shadow'], [0, -3, 'core'], [1, -3, 'shadow'], [2, -2, 'trim'], [2, -3, 'trim'],
+  ],
+];
+
+const WAND_FOCUS_PATTERNS = [
+  [[0, 0, 'trim'], [-1, -1, 'edge'], [0, -1, 'core'], [1, -1, 'light']],
+  [
+    [-1, 0, 'trim'], [0, 0, 'trim'], [1, 0, 'trim'],
+    [-1, -1, 'edge'], [0, -1, 'core'], [1, -1, 'light'], [0, -2, 'light'],
+  ],
+  [
+    [0, 0, 'trim'], [-1, -1, 'edge'], [0, -1, 'core'], [1, -1, 'light'],
+    [-2, -2, 'edge'], [-1, -2, 'core'], [0, -2, 'light'], [1, -2, 'core'], [2, -2, 'light'],
+  ],
+  [
+    [-1, 0, 'trim'], [0, 0, 'trim'], [1, 0, 'trim'],
+    [-2, -1, 'edge'], [-1, -1, 'core'], [0, -1, 'light'], [1, -1, 'core'], [2, -1, 'light'],
+    [-1, -2, 'edge'], [0, -2, 'core'], [1, -2, 'light'], [0, -3, 'light'],
+  ],
+  [
+    [-1, 0, 'trim'], [0, 0, 'trim'], [1, 0, 'trim'],
+    [-2, -1, 'edge'], [-1, -1, 'core'], [0, -1, 'light'], [1, -1, 'core'], [2, -1, 'light'],
+    [-2, -2, 'edge'], [-1, -2, 'shadow'], [0, -2, 'core'], [1, -2, 'shadow'], [2, -2, 'light'],
+    [-1, -3, 'edge'], [0, -3, 'light'], [1, -3, 'light'],
+  ],
+];
+
+function readableMagicStyle(weapon, tier) {
+  if (tier === 1) return {
+    shaft: WOOD[0], shaftDark: WOOD[1], trim: GOLD[0], edge: MAGIC[1], core: MAGIC[0], light: MAGIC[2], shadow: '#315c78',
+  };
+  if (tier === 2) return {
+    shaft: '#76523a', shaftDark: '#3d2a23', trim: TIER2.gold, edge: TIER2.edge, core: TIER2.rune, light: '#dffcff', shadow: TIER2.runeDark,
+  };
+  if (tier === 3) return {
+    shaft: '#445477', shaftDark: '#28314f', trim: TIER3.astralDark, edge: TIER3.astral, core: TIER3.storm, light: TIER3.core, shadow: '#543482',
+  };
+  if (tier === 4) return {
+    shaft: TIER4.void, shaftDark: '#1c1738', trim: TIER4.mythic, edge: TIER4.plasma, core: TIER4.frost, light: TIER4.core, shadow: '#66358f',
+  };
+  const theme = TIER5_THEMES[weapon];
+  return {
+    shaft: theme.abyss, shaftDark: '#171326', trim: theme.divine, edge: theme.rift, core: theme.cosmic, light: theme.apex, shadow: theme.abyss,
+  };
+}
+
+function drawMagicFocus(S, rootX, rootY, pattern, style, { horizontal = false, mirror = false, invert = false } = {}) {
+  for (const [sourceX, sourceY, colorKey] of pattern) {
+    const dx = mirror ? -sourceX : sourceX;
+    const dy = invert ? -sourceY : sourceY;
+    if (horizontal) S(rootX - sourceY, rootY + sourceX, style[colorKey]);
+    else S(rootX + dx, rootY + dy, style[colorKey]);
+  }
+}
+
+function drawReadableStaff(S, R, d, p, C) {
+  if (C.weapon !== 'staff' || !C.weaponFollowRig) return false;
+  const tier = straightBladeTier(C);
+  const index = tier - 1;
+  const style = readableMagicStyle('staff', tier);
+  const pattern = STAFF_FOCUS_PATTERNS[index];
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+
+  if (d === 'right' && strike) {
+    const rootX = [20, 20, 20, 19, 18][index];
+    R(9, 13, rootX - 8, 1, style.shaft);
+    S(11, 13, style.shaftDark);
+    if (tier >= 2) S(12, 13, style.trim);
+    drawMagicFocus(S, rootX, 13, pattern, style, { horizontal: true });
+    return true;
+  }
+
+  const shaftX = d === 'down' ? 17 : d === 'up' ? 6 : weaponAnchors(C).sideX;
+  const focusX = d === 'down' ? 19 : d === 'up' ? 4 : 20;
+  let rootY;
+  let bottomY;
+  let invert = false;
+  if (d === 'down' && strike) {
+    rootY = [19, 19, 19, 18, 17][index];
+    bottomY = 14;
+    invert = true;
+    drawPixelLine(S, shaftX, bottomY, focusX, rootY, style.shaft);
+  } else if (d === 'up' && strike) {
+    rootY = [3, 4, 4, 5, 6][index];
+    bottomY = 10;
+    drawPixelLine(S, focusX, rootY, shaftX, bottomY, style.shaft);
+  } else {
+    rootY = [7, 7, 7, 6, 6][index] - (wind ? 1 : 0);
+    bottomY = 16;
+    drawPixelLine(S, focusX, rootY, shaftX, rootY + 2, style.shaft);
+    R(shaftX, rootY + 2, 1, bottomY - rootY - 1, style.shaft);
+  }
+  S(shaftX, strike && d === 'down' ? 15 : Math.min(bottomY, rootY + 4), style.shaftDark);
+  if (tier >= 2) S(shaftX + (d === 'up' ? -1 : 1), strike && d === 'down' ? 16 : Math.min(bottomY, rootY + 5), style.trim);
+  if (tier >= 4) S(shaftX + (d === 'up' ? -1 : 1), strike && d === 'down' ? 15 : bottomY - 1, style.edge);
+  drawMagicFocus(S, focusX, rootY, pattern, style, { mirror: d === 'up', invert });
+  return true;
+}
+
+function drawReadableWand(S, R, d, p, C) {
+  if (C.weapon !== 'wand' || !C.weaponFollowRig) return false;
+  const tier = straightBladeTier(C);
+  const index = tier - 1;
+  const style = readableMagicStyle('wand', tier);
+  const pattern = WAND_FOCUS_PATTERNS[index];
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+
+  if (d === 'right' && strike) {
+    const rootX = 20;
+    R(14, 13, rootX - 13, 1, style.shaft);
+    S(16, 13, style.shaftDark);
+    drawMagicFocus(S, rootX, 13, pattern, style, { horizontal: true });
+    return true;
+  }
+
+  const shaftX = d === 'down' ? 17 : d === 'up' ? 6 : weaponAnchors(C).sideX;
+  const focusX = d === 'down' ? 18 : d === 'up' ? 5 : 20;
+  let rootY;
+  let bottomY;
+  let invert = false;
+  if (d === 'down' && strike) {
+    rootY = [18, 18, 18, 17, 17][index];
+    bottomY = 14;
+    invert = true;
+    drawPixelLine(S, shaftX, bottomY, focusX, rootY, style.shaft);
+  } else if (d === 'up' && strike) {
+    rootY = [3, 4, 4, 5, 5][index];
+    bottomY = 10;
+    drawPixelLine(S, focusX, rootY, shaftX, bottomY, style.shaft);
+  } else {
+    rootY = [10, 10, 9, 9, 8][index] - (wind ? 1 : 0);
+    bottomY = 15;
+    drawPixelLine(S, focusX, rootY, shaftX, rootY + 1, style.shaft);
+    R(shaftX, rootY + 1, 1, bottomY - rootY, style.shaft);
+  }
+  S(shaftX, strike && d === 'down' ? 15 : Math.min(bottomY, rootY + 3), style.shaftDark);
+  if (tier >= 2) S(shaftX + (d === 'up' ? -1 : 1), strike && d === 'down' ? 15 : bottomY - 1, style.trim);
+  if (tier >= 4) S(shaftX, bottomY, style.edge);
+  drawMagicFocus(S, focusX, rootY, pattern, style, { mirror: d === 'up', invert });
+  return true;
+}
+
+function readableBookStyle(tier) {
+  if (tier === 1) return { cover: BOOK[0], coverDark: BOOK[1], pages: '#f1dfb4', pageShadow: BOOK[2], trim: GOLD[0], rune: BOOK[3] };
+  if (tier === 2) return { cover: '#74496e', coverDark: '#382641', pages: '#fff1c4', pageShadow: '#cfb47d', trim: TIER2.gold, rune: TIER2.rune };
+  if (tier === 3) return { cover: '#535086', coverDark: '#28274d', pages: '#f4eece', pageShadow: '#b7afd0', trim: TIER3.astral, rune: TIER3.core };
+  if (tier === 4) return { cover: '#5c3485', coverDark: TIER4.void, pages: '#e8f7ff', pageShadow: '#9bbdd8', trim: TIER4.mythic, rune: TIER4.core };
+  const theme = TIER5_THEMES.spellbook;
+  return { cover: theme.rift, coverDark: theme.abyss, pages: '#fff2c7', pageShadow: '#d7bd8c', trim: theme.divine, rune: theme.apex };
+}
+
+const READABLE_BOOK_WIDTHS = [4, 5, 6, 7, 7];
+const READABLE_BOOK_HEIGHTS = [4, 4, 5, 5, 6];
+
+function drawReadableBookShape(S, x, y, tier, style) {
+  const width = READABLE_BOOK_WIDTHS[tier - 1];
+  const height = READABLE_BOOK_HEIGHTS[tier - 1];
+  const spine = Math.floor(width / 2);
+  for (let row = 0; row < height; row++) {
+    for (let column = 0; column < width; column++) {
+      const corner = (row === 0 || row === height - 1) && (column === 0 || column === width - 1);
+      const openNotch = tier >= 3 && row === 0 && column === spine;
+      if (corner || openNotch) continue;
+      const border = row === 0 || row === height - 1 || column === 0 || column === width - 1;
+      const color = column === spine
+        ? style.trim
+        : border
+          ? (column < spine ? style.coverDark : style.cover)
+          : ((row + column) % 2 ? style.pages : style.pageShadow);
+      S(x + column, y + row, color);
+    }
+  }
+  S(x + Math.max(1, spine - 1), y + Math.floor(height / 2), style.rune);
+  if (tier >= 2) {
+    S(x + 1, y, style.trim);
+    S(x + width - 2, y + height - 1, style.trim);
+  }
+  if (tier >= 3) {
+    S(x + 1, y - 1, style.pages);
+    S(x + width - 2, y - 1, style.pageShadow);
+  }
+  if (tier >= 4) {
+    S(x, y + 1, style.trim);
+    S(x + width - 1, y + height - 2, style.trim);
+  }
+  if (tier >= 5) S(x + spine, y + height, style.rune);
+}
+
+function drawReadableSpellbook(S, d, p, C) {
+  if (C.weapon !== 'spellbook' || !C.weaponFollowRig) return false;
+  const tier = straightBladeTier(C);
+  const width = READABLE_BOOK_WIDTHS[tier - 1];
+  const height = READABLE_BOOK_HEIGHTS[tier - 1];
+  const style = readableBookStyle(tier);
+  const strike = p.wep === 'strike';
+  const wind = p.wep === 'wind';
+  let x;
+  let y;
+  if (d === 'down') {
+    x = 16;
+    y = strike ? 22 - height : wind ? 13 - height : 15 - height;
+  } else if (d === 'up') {
+    x = 9 - width;
+    y = strike ? 2 : wind ? 13 - height : 15 - height;
+  } else {
+    x = strike ? 23 - width : 16;
+    y = strike ? 12 - Math.floor(height / 2) : wind ? 13 - height : 15 - height;
+  }
+  drawReadableBookShape(S, x, y, tier, style);
+  return true;
+}
+
+function drawReadableMagic(S, R, d, p, C) {
+  if (drawReadableStaff(S, R, d, p, C)) return true;
+  if (drawReadableWand(S, R, d, p, C)) return true;
+  if (drawReadableSpellbook(S, d, p, C)) return true;
+  return false;
+}
+
 function drawTierTwoUpgrade(S, R, d, ph, C) {
   const w = C.weapon;
   const strike = ph === 'strike';
@@ -1995,6 +2244,7 @@ export function drawWeapon(S, R, d, p, C, u) {
   if (drawReadableAxe(S, R, d, p, C)) return;
   if (drawReadableBlunt(S, R, d, p, C)) return;
   if (drawReadableRanged(S, R, d, p, C)) return;
+  if (drawReadableMagic(S, R, d, p, C)) return;
 
   // ---- existing compatibility set ----
   if (w === 'sword' || w === 'dagger') {

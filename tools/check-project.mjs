@@ -1389,6 +1389,32 @@ function connectedPixelComponents(pixels) {
   return components;
 }
 
+function pixelMaskSignature(pixels) {
+  return pixels.map((pixel) => pixel ? 'x' : '.').join('');
+}
+
+function horizontallyMirroredPixels(pixels) {
+  const mirrored = new Array(pixels.length).fill(null);
+  for (let y = 0; y < engine.SIZE; y++) for (let x = 0; x < engine.SIZE; x++) {
+    mirrored[(y * engine.SIZE) + (engine.SIZE - 1 - x)] = pixels[(y * engine.SIZE) + x];
+  }
+  return mirrored;
+}
+
+function minimumPixelDistance(first, second) {
+  const firstPoints = first.flatMap((pixel, index) => pixel
+    ? [[index % engine.SIZE, Math.floor(index / engine.SIZE)]]
+    : []);
+  const secondPoints = second.flatMap((pixel, index) => pixel
+    ? [[index % engine.SIZE, Math.floor(index / engine.SIZE)]]
+    : []);
+  let minimum = Infinity;
+  for (const [firstX, firstY] of firstPoints) for (const [secondX, secondY] of secondPoints) {
+    minimum = Math.min(minimum, Math.max(Math.abs(firstX - secondX), Math.abs(firstY - secondY)));
+  }
+  return minimum;
+}
+
 const straightBladeBase = {
   kind: 'player',
   species: 'human',
@@ -1405,8 +1431,12 @@ const straightBladeBase = {
   shield: 'none',
   shieldTier: 'tier1',
 };
-const readableWeaponFamilies = ['sword', 'greatsword', 'dagger', 'scimitar', 'rapier', 'axe', 'mace', 'warhammer', 'club', 'spear', 'bow', 'crossbow'];
+const readableWeaponFamilies = ['sword', 'greatsword', 'dagger', 'scimitar', 'rapier', 'axe', 'mace', 'warhammer', 'club', 'spear', 'bow', 'crossbow', 'staff', 'wand', 'spellbook'];
 const weaponLayerFor = (direction) => direction === 'up' ? 'weapon-back' : 'weapon-front';
+const oppositeWeaponLayerFor = (direction) => direction === 'up' ? 'weapon-front' : 'weapon-back';
+const minimumMotionPhases = { idle: 2, walk: 2, attack: 3, hurt: 2 };
+const tierFiveMaximumPixelRatio = 1.6;
+const tierFiveMaximumBoundsRatio = 1.75;
 
 for (const weapon of readableWeaponFamilies) {
   const tierSignatures = [];
@@ -1415,11 +1445,42 @@ for (const weapon of readableWeaponFamilies) {
     tierSignatures.push(renderPixels(spec, 'down', 'idle', 0, { layer: 'weapon-front' }).join(','));
     for (const direction of engine.DIRS) {
       for (const animation of engine.ANIMS) {
+        const motionSignatures = [];
         for (let frame = 0; frame < animation.frames; frame++) {
           const pixels = renderPixels(spec, direction, animation.id, frame, { layer: weaponLayerFor(direction) });
+          const wrongLayer = renderPixels(spec, direction, animation.id, frame, { layer: oppositeWeaponLayerFor(direction) });
+          const unarmed = renderPixels({ ...spec, weapon: 'none' }, direction, animation.id, frame);
+          const complete = renderPixels(spec, direction, animation.id, frame);
+          const expression = renderPixels(spec, direction, animation.id, frame, { layer: 'expression' });
+          const expressionIndices = expression.flatMap((pixel, index) => pixel ? [index] : []);
+          motionSignatures.push(pixelMaskSignature(pixels));
           check(pixels.filter(Boolean).length >= 7, `${weapon} ${tier.id} must remain visible in ${direction} ${animation.id} frame ${frame}`);
           check(connectedPixelComponents(pixels) === 1, `${weapon} ${tier.id} must remain one connected silhouette in ${direction} ${animation.id} frame ${frame}`);
+          check(wrongLayer.every((pixel) => pixel === null), `${weapon} ${tier.id} must use only the ${weaponLayerFor(direction)} layer in ${direction} ${animation.id} frame ${frame}`);
+          check(
+            JSON.stringify(compositePixelLayers(direction === 'up' ? [pixels, unarmed] : [unarmed, pixels])) === JSON.stringify(complete),
+            `${weapon} ${tier.id} equipment layers must exactly rebuild the complete ${direction} ${animation.id} frame ${frame}`,
+          );
+          if (direction === 'down' && expressionIndices.length) check(
+            expressionIndices.some((index) => !pixels[index]),
+            `${weapon} ${tier.id} must leave at least one front-view facial-expression pixel unobscured in ${animation.id} frame ${frame}`,
+          );
+          check(
+            minimumPixelDistance(pixels, unarmed) <= 4,
+            `${weapon} ${tier.id} must not detach from the assembled character in ${direction} ${animation.id} frame ${frame}`,
+          );
+          if (direction === 'right') {
+            const left = renderPixels(spec, 'left', animation.id, frame, { layer: 'weapon-front' });
+            check(
+              JSON.stringify(left) === JSON.stringify(horizontallyMirroredPixels(pixels)),
+              `${weapon} ${tier.id} left ${animation.id} frame ${frame} must exactly mirror right`,
+            );
+          }
         }
+        check(
+          new Set(motionSignatures).size >= minimumMotionPhases[animation.id],
+          `${weapon} ${tier.id} ${direction} ${animation.id} must preserve at least ${minimumMotionPhases[animation.id]} distinct motion phases`,
+        );
       }
     }
   }
@@ -1427,7 +1488,15 @@ for (const weapon of readableWeaponFamilies) {
 
   const tier4 = renderPixels({ ...straightBladeBase, weapon, weaponTier: 'tier4' }, 'down', 'idle', 0, { layer: 'weapon-front' });
   const tier5 = renderPixels({ ...straightBladeBase, weapon, weaponTier: 'tier5' }, 'down', 'idle', 0, { layer: 'weapon-front' });
-  check(tier5.filter(Boolean).length >= tier4.filter(Boolean).length, `${weapon} Tier 5 must not shrink below its Tier 4 front silhouette`);
+  const tier4Pixels = tier4.filter(Boolean).length;
+  const tier5Pixels = tier5.filter(Boolean).length;
+  const tier4Bounds = weaponPixelBounds(tier4);
+  const tier5Bounds = weaponPixelBounds(tier5);
+  const tier4BoundsArea = tier4Bounds.width * tier4Bounds.height;
+  const tier5BoundsArea = tier5Bounds.width * tier5Bounds.height;
+  check(tier5Pixels >= tier4Pixels, `${weapon} Tier 5 must not shrink below its Tier 4 front silhouette`);
+  check(tier5Pixels <= Math.ceil(tier4Pixels * tierFiveMaximumPixelRatio), `${weapon} Tier 5 must stay within the global decluttered pixel-density budget`);
+  check(tier5BoundsArea <= Math.ceil(tier4BoundsArea * tierFiveMaximumBoundsRatio), `${weapon} Tier 5 must stay within the global decluttered silhouette-bounds budget`);
 }
 
 for (const tier of engine.WEAPON_TIERS) {
@@ -1516,6 +1585,149 @@ for (const [tierIndex, tier] of engine.WEAPON_TIERS.entries()) {
     const release = renderPixels(spec, 'right', 'attack', 2, { layer: 'weapon-front' }).join(',');
     check(wind !== release, `${weapon} ${tier.id} must visibly change between draw and release phases`);
   }
+}
+
+function weaponPixelBounds(pixels) {
+  const points = pixels.flatMap((pixel, index) => pixel ? [[index % engine.SIZE, Math.floor(index / engine.SIZE)]] : []);
+  const xs = points.map(([x]) => x);
+  const ys = points.map(([, y]) => y);
+  return {
+    width: Math.max(...xs) - Math.min(...xs) + 1,
+    height: Math.max(...ys) - Math.min(...ys) + 1,
+  };
+}
+
+for (const tier of engine.WEAPON_TIERS) {
+  const staff = weaponPixelBounds(renderPixels(
+    { ...straightBladeBase, weapon: 'staff', weaponTier: tier.id },
+    'down', 'idle', 0, { layer: 'weapon-front' },
+  ));
+  const wand = weaponPixelBounds(renderPixels(
+    { ...straightBladeBase, weapon: 'wand', weaponTier: tier.id },
+    'down', 'idle', 0, { layer: 'weapon-front' },
+  ));
+  const spellbook = weaponPixelBounds(renderPixels(
+    { ...straightBladeBase, weapon: 'spellbook', weaponTier: tier.id },
+    'down', 'idle', 0, { layer: 'weapon-front' },
+  ));
+  const sideStaff = weaponPixelBounds(renderPixels(
+    { ...straightBladeBase, weapon: 'staff', weaponTier: tier.id },
+    'right', 'attack', 1, { layer: 'weapon-front' },
+  ));
+  const sideWand = weaponPixelBounds(renderPixels(
+    { ...straightBladeBase, weapon: 'wand', weaponTier: tier.id },
+    'right', 'attack', 1, { layer: 'weapon-front' },
+  ));
+  check(staff.height >= wand.height + 3, `staff ${tier.id} must remain substantially longer than the wand`);
+  check(sideStaff.width >= sideWand.width + 3, `staff ${tier.id} side strike must keep a visibly longer countershaft than the wand`);
+  check(spellbook.width >= wand.width, `spellbook ${tier.id} must preserve a broader page silhouette than the wand focus`);
+  if (tier.id === 'tier4' || tier.id === 'tier5') check(spellbook.width >= 6, `spellbook ${tier.id} must preserve its relic-scale open page spread`);
+
+  for (const weapon of ['staff', 'wand', 'spellbook']) {
+    const spec = { ...straightBladeBase, weapon, weaponTier: tier.id };
+    const attackSignatures = [0, 1, 2, 3].map((frame) => renderPixels(
+      spec, 'right', 'attack', frame, { layer: 'weapon-front' },
+    ).join(','));
+    check(new Set(attackSignatures).size >= 3, `${weapon} ${tier.id} must visibly progress through cast wind-up, strike, and recovery`);
+  }
+}
+
+class ValidationCanvas {
+  constructor() {
+    this._width = 0;
+    this._height = 0;
+    this.pixels = [];
+    this.context = new ValidationCanvasContext(this);
+  }
+
+  get width() { return this._width; }
+  set width(value) { this._width = value; this.resize(); }
+  get height() { return this._height; }
+  set height(value) { this._height = value; this.resize(); }
+  resize() { this.pixels = new Array(this._width * this._height).fill(null); }
+  getContext(kind) { return kind === '2d' ? this.context : null; }
+}
+
+class ValidationCanvasContext {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.fillStyle = '#000000';
+    this.imageSmoothingEnabled = true;
+  }
+
+  clearRect(x, y, width, height) {
+    for (let py = Math.floor(y); py < Math.ceil(y + height); py++) {
+      for (let px = Math.floor(x); px < Math.ceil(x + width); px++) {
+        if (px >= 0 && py >= 0 && px < this.canvas.width && py < this.canvas.height) {
+          this.canvas.pixels[(py * this.canvas.width) + px] = null;
+        }
+      }
+    }
+  }
+
+  fillRect(x, y, width, height) {
+    for (let py = Math.floor(y); py < Math.ceil(y + height); py++) {
+      for (let px = Math.floor(x); px < Math.ceil(x + width); px++) {
+        if (px >= 0 && py >= 0 && px < this.canvas.width && py < this.canvas.height) {
+          this.canvas.pixels[(py * this.canvas.width) + px] = this.fillStyle;
+        }
+      }
+    }
+  }
+
+  drawImage(source, destinationX, destinationY, destinationWidth = source.width, destinationHeight = source.height) {
+    for (let y = 0; y < destinationHeight; y++) for (let x = 0; x < destinationWidth; x++) {
+      const sourceX = Math.floor((x * source.width) / destinationWidth);
+      const sourceY = Math.floor((y * source.height) / destinationHeight);
+      const targetX = destinationX + x;
+      const targetY = destinationY + y;
+      if (targetX < 0 || targetY < 0 || targetX >= this.canvas.width || targetY >= this.canvas.height) continue;
+      const pixel = source.pixels[(sourceY * source.width) + sourceX];
+      if (pixel !== null) this.canvas.pixels[(targetY * this.canvas.width) + targetX] = pixel;
+    }
+  }
+}
+
+function checkExportFrame(canvas, column, row, expected, message) {
+  const offsetX = column * engine.SIZE;
+  const offsetY = row * engine.SIZE;
+  const actual = [];
+  for (let y = 0; y < engine.SIZE; y++) for (let x = 0; x < engine.SIZE; x++) {
+    actual.push(canvas.pixels[((offsetY + y) * canvas.width) + offsetX + x]);
+  }
+  check(JSON.stringify(actual) === JSON.stringify(expected), message);
+}
+
+const originalDocument = globalThis.document;
+try {
+  globalThis.document = { createElement: (tag) => tag === 'canvas' ? new ValidationCanvas() : null };
+  for (const weapon of readableWeaponFamilies) for (const tier of engine.WEAPON_TIERS) {
+    const spec = { ...straightBladeBase, weapon, weaponTier: tier.id };
+    const fullSheet = engine.buildSheet(spec);
+    check(fullSheet.width === 288 && fullSheet.height === 96, `${weapon} ${tier.id} full export must remain 288x96 at native scale`);
+    for (const [directionRow, direction] of engine.DIRS.entries()) {
+      const directionSheet = engine.buildDirectionSheet(spec, direction);
+      check(directionSheet.width === 288 && directionSheet.height === 24, `${weapon} ${tier.id} ${direction} export must remain 288x24 at native scale`);
+      let column = 0;
+      for (const animation of engine.ANIMS) {
+        const animationSheet = engine.buildAnimationSheet(spec, animation.id);
+        check(
+          animationSheet.width === animation.frames * engine.SIZE && animationSheet.height === 96,
+          `${weapon} ${tier.id} ${animation.id} export must retain its native frame dimensions`,
+        );
+        for (let frame = 0; frame < animation.frames; frame++) {
+          const expected = renderPixels(spec, direction, animation.id, frame);
+          checkExportFrame(fullSheet, column, directionRow, expected, `${weapon} ${tier.id} full export must preserve ${direction} ${animation.id} frame ${frame}`);
+          checkExportFrame(directionSheet, column, 0, expected, `${weapon} ${tier.id} direction export must preserve ${direction} ${animation.id} frame ${frame}`);
+          checkExportFrame(animationSheet, frame, directionRow, expected, `${weapon} ${tier.id} animation export must preserve ${direction} ${animation.id} frame ${frame}`);
+          column++;
+        }
+      }
+    }
+  }
+} finally {
+  if (originalDocument === undefined) delete globalThis.document;
+  else globalThis.document = originalDocument;
 }
 
 const shieldBase = {
