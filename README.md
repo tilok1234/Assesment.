@@ -53,7 +53,7 @@ The saved comparison copy stays on the current device until it is replaced or re
 
 Double-click `start-dev.bat`. It starts the local development server and opens the assembler in your default browser.
 
-Node.js 18 or newer is required for development. No npm packages need to be installed.
+Node.js 18 or newer is required for development. Run `npm install` once before using the native Tauri workflow.
 
 You can also run it from a terminal:
 
@@ -89,13 +89,13 @@ npm install
 npm run tauri:dev
 ```
 
-Create an optimized standalone executable with:
+Create an optimized current-user NSIS installer with:
 
 ```powershell
 npm run tauri:build
 ```
 
-The proof build is written to `src-tauri/target/release/sprite-assembler.exe`. The installer targets remain configured for the later release phase, but this command intentionally skips installer generation while the product is still evolving.
+The setup executable is written beneath `src-tauri/target/release/bundle/nsis/`. Installed builds use native Save dialogs for PNG, JSON, and ZIP exports while browser builds keep normal browser downloads. Use `npm run tauri:build:exe` for the faster standalone proof executable, and see [WINDOWS_RELEASE.md](WINDOWS_RELEASE.md) for release validation, packaged smoke tests, GitHub draft releases, and signing status.
 
 ## Sprite-sheet contract
 

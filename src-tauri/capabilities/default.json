@@ -3,5 +3,9 @@
   "identifier": "default",
   "description": "Core permissions for the Sprite Assembler main window",
   "windows": ["main"],
-  "permissions": ["core:default"]
+  "permissions": [
+    "core:default",
+    "dialog:allow-save",
+    "fs:allow-write-file"
+  ]
 }

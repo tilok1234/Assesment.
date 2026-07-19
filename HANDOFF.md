@@ -6,9 +6,11 @@ Repository: `tilok1234/8-bit-sprite-assembler`
 
 ## Immediate state
 
-The weapon-readability overhaul for all 15 weapon families and five RPG tiers is complete through Pass 7. Passes 1-4 were committed and pushed in `3cb45fb` (`Improve weapon readability and bow direction`). The user visually approved the corrected bow. Preserve that approved bow exactly.
+The weapon-readability overhaul for all 15 weapon families and five RPG tiers is complete through Pass 7. The user visually approved the corrected bow. Passes 1-4 are in `3cb45fb`; Passes 5-7 are committed and pushed in `4fbb2ca` (`Complete weapon readability overhaul`) on `codex/weapon-readability-bow`. Preserve the approved weapon rendering exactly unless new visual evidence justifies a change.
 
-Pass 5 is implemented locally, validated, and user-approved. Pass 6 accepted every Tier 4 and Tier 5 family after assembled and weapon-only review at native and enlarged scale; global Tier 5 density and bounds budgets protect that accepted ceiling. Pass 7 then validated all 3,600 family/tier/direction/animation frames and generated enlarged plus true-native all-frame audits. Edge-contact flags retained complete contours, and the side-view blunt overlaps remained readable shoulder-carry poses, so no Pass 7 renderer pixels were changed without evidence. The accumulated Pass 5-7 work is not committed; preserve the current worktree and do not reset or discard files.
+The active branch is `codex/windows-release`, based on `4fbb2ca`. Phase 6 release work is implemented locally but not yet committed. All PNG, JSON, and ZIP exports share one native-aware helper: packaged Tauri builds open a Windows Save dialog in Downloads and write only the user-selected path; browser builds keep their normal download behavior. Cancellation is reported instead of being mistaken for success.
+
+The default native release is now a current-user NSIS installer with final product metadata, the existing generated icon family, an embedded WebView2 bootstrapper, focused release validation, and a GitHub Actions draft-release workflow. The Rust/JavaScript dialog and file-system plugins use only `dialog:allow-save` and `fs:allow-write-file`; no unrestricted write permission was added.
 
 Current magic-weapon intent:
 
@@ -67,13 +69,21 @@ Inspect at native 24x24 scale and enlarged nearest-neighbor scale. Mechanical ch
 
 ## Validation status
 
-These commands passed after the complete Pass 7 automated and visual audit:
+These commands pass on the active Windows release worktree:
 
 ```powershell
 npm.cmd run check
-npm.cmd run build
-npm.cmd run review:weapons -- --all-frames
+npm.cmd run check:release -- --require-artifact
+npm.cmd run tauri:build
 ```
+
+Generated installer:
+
+`src-tauri/target/release/bundle/nsis/8-Bit Sprite Assembler_0.1.0_x64-setup.exe`
+
+The release checker verifies the setup executable's PE signature and minimum size. A live standalone packaged-app smoke test also passed: the app launched, opened a native JSON Save dialog in Downloads with the correct filename/type filter, saved a valid schema-v1 loadout, and reported cancellation correctly in a separate run. The verified test export remains at `C:\Users\headc\Downloads\hero-dwarf-sturdy-surprised-glasses-ranger-tier3-scimitar-loadout.json`.
+
+The NSIS setup executable itself has not been installed or uninstalled during this pass, because GUI software installation requires a separate action-time confirmation. The installer is unsigned, and automatic updates remain deferred until a stable public distribution URL and signing identity exist.
 
 Latest reported project totals:
 
@@ -85,29 +95,39 @@ Latest reported project totals:
 
 ## Working tree
 
-The accumulated Pass 5-7 changes are intentionally uncommitted:
+The Windows release changes are intentionally uncommitted on `codex/windows-release`:
 
 ```text
  M ARCHITECTURE.md
- M HANDOFF.md
- M WEAPON_READABILITY_PLAN.md
- M engine/weapon-renderer.js
+ M README.md
+ M ROADMAP.md
+ M app.js
+ M package-lock.json
+ M package.json
+ M src-tauri/Cargo.lock
+ M src-tauri/Cargo.toml
+ M src-tauri/capabilities/default.json
+ M src-tauri/src/lib.rs
+ M src-tauri/tauri.conf.json
  M tools/check-project.mjs
- M tools/weapon-readability-audit.mjs
+?? .github/workflows/windows-release.yml
+?? WINDOWS_RELEASE.md
+?? tools/check-windows-release.mjs
 ```
 
 Key additions include:
 
-- Separate connected staff, wand, and spellbook silhouettes for all five tiers
-- Player-only magic readability dispatch that preserves legacy enemy staves
-- Strict all-frame connectivity, tier distinction, casting-motion, staff-length, wand-compactness, and book-page-spread checks
-- Global Tier 5 pixel-density and silhouette-bounds budgets relative to Tier 4
-- Exact side mirroring, direction-aware equipment-layer recomposition, motion-phase, identity-retention, detachment, and native export pixel/order checks across every weapon frame
-- A 3,600-row exhaustive audit plus enlarged and true-native assembled all-frame sheets for every weapon
-- Updated architecture, handoff, and completed pass tracking
+- Native Save dialogs for all PNG, JSON, and ZIP exports, defaulting to Downloads
+- Browser download fallback and explicit native cancellation/error handling
+- Official Tauri dialog/file-system bindings and narrowly scoped permissions
+- NSIS-by-default build scripts, current-user installation, and embedded WebView2 bootstrapper
+- Synchronized product metadata, icons, version checks, and installer artifact validation
+- Version-tag/manual GitHub workflow that creates a draft Windows release
+- `WINDOWS_RELEASE.md` with local build, packaged smoke, migration, signing, and release instructions
 
 ## Recommended next action
 
-1. Let the user visually spot-check `weapon-review/all-frames-native/` if they want a final personal approval beyond the completed QA pass.
-2. If approved, commit and push the accumulated Pass 5-7 work; do not commit automatically without the user's request.
-3. Start the next project feature from the current green baseline. No further weapon-overhaul pass is pending.
+1. Review the active release diff, then commit and push it only when the user asks.
+2. If the user wants the full installer lifecycle proof, request action-time confirmation immediately before running the NSIS setup UI; then verify install, Start-menu launch, PNG/JSON/ZIP export, persistence, uninstall, and preservation of user exports.
+3. Configure Windows code signing before broad public distribution. Add the updater only after a stable release URL and signing identity exist.
+4. Future outfits, hairstyles, headgear, weapons, enemies, effects, and templates remain ordinary catalog/renderer work. Preserve stable IDs, advance affected schema versions, retain migrations, run `npm.cmd run check`, and rebuild the installer.

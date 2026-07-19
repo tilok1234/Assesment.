@@ -70,6 +70,7 @@ checkSyntax('engine/weapon-renderer.js');
 checkSyntax('tools/build.mjs');
 checkSyntax('tools/dev-server.mjs');
 checkSyntax('tools/weapon-readability-audit.mjs');
+checkSyntax('tools/check-windows-release.mjs');
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
 let entryFile = null;
@@ -1966,7 +1967,8 @@ for (const dir of engine.DIRS) {
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
 check(packageJson.scripts?.build === 'node tools/build.mjs', 'package.json must expose the production build command');
-check(packageJson.scripts?.['tauri:build'] === 'tauri build --no-bundle', 'package.json must expose the proof Windows build command');
+check(packageJson.scripts?.['tauri:build'] === 'tauri build --bundles nsis', 'package.json must expose the Windows installer build command');
+check(packageJson.scripts?.['tauri:build:exe'] === 'tauri build --no-bundle', 'package.json must preserve the proof Windows executable command');
 check(packageJson.devDependencies?.['@tauri-apps/cli'] === '^2.11.0', 'Tauri CLI must stay pinned to the approved 2.11 line');
 
 const tauriConfig = JSON.parse(await readFile(path.join(root, 'src-tauri', 'tauri.conf.json'), 'utf8'));

@@ -173,6 +173,8 @@ Content is added through the stable definition and validation workflow establish
 
 ## Phase 6 - Windows release
 
+Progress: active. The release lane now has native Save dialogs for every PNG, JSON, and ZIP export, final product metadata and icons, a current-user NSIS target with an embedded WebView2 bootstrapper, a release-specific validator, and a versioned GitHub draft-release workflow. The local installer builds and passes artifact validation; the standalone packaged app launches, saves valid data through the native dialog in Downloads, and reports cancellation correctly. Full NSIS install/uninstall testing still requires user confirmation. Code signing and automatic updates remain deferred until a stable distribution identity exists.
+
 Goals:
 
 - Native save and open dialogs where they improve the workflow.

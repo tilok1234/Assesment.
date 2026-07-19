@@ -1038,13 +1038,22 @@ function combatLoadoutManifest() {
   };
 }
 
-function downloadCombatLoadout() {
+async function downloadCombatLoadout() {
   const manifest = combatLoadoutManifest();
   if (!manifest) return;
   const data = new TextEncoder().encode(`${JSON.stringify(manifest, null, 2)}\n`);
   const filename = `${packFilenameBase(manifest.name, 'combat-loadout')}.json`;
-  triggerBlobDownload(new Blob([data], { type: 'application/json' }), filename);
-  setLoadoutStatus(`Downloaded “${manifest.name}” with ${manifest.resolvedEffects.filter((slot) => slot.file).length} resolved effects.`);
+  try {
+    const result = await triggerBlobDownload(new Blob([data], { type: 'application/json' }), filename);
+    if (result === 'cancelled') {
+      setLoadoutStatus('Export cancelled.');
+      return;
+    }
+    setLoadoutStatus(`${exportActionLabel(result)} “${manifest.name}” with ${manifest.resolvedEffects.filter((slot) => slot.file).length} resolved effects.`);
+  } catch (error) {
+    console.error(error);
+    setLoadoutStatus('The combat loadout could not be exported. Please try again.');
+  }
 }
 
 function sanitizePalettePreset(raw) {
@@ -2138,32 +2147,19 @@ function randomize() {
   else setState({ effect: E.randomEffect(), anim: 'attack', exportAnim: 'attack', frame: 0 });
 }
 
-function triggerDownload(canvas, filename) {
-  const save = (url, revoke = false) => {
-    const link = document.createElement('a');
-    link.download = filename;
-    link.href = url;
-    link.hidden = true;
-    document.body.append(link);
-    link.click();
-    link.remove();
-    if (revoke) setTimeout(() => URL.revokeObjectURL(url), 1000);
-  };
-
-  if (canvas.toBlob) {
-    canvas.toBlob((blob) => {
-      if (blob) save(URL.createObjectURL(blob), true);
-      else save(canvas.toDataURL('image/png'));
-    }, 'image/png');
-  } else {
-    save(canvas.toDataURL('image/png'));
-  }
+async function triggerDownload(canvas, filename) {
+  const bytes = await canvasToPngBytes(canvas);
+  return triggerBlobDownload(new Blob([bytes], { type: 'image/png' }), filename);
 }
 
-function downloadSheet() {
+async function downloadSheet() {
   const spec = currentSpec();
   const canvas = buildExportCanvas(spec, state.exportScale);
-  triggerDownload(canvas, exportFilename());
+  try {
+    await triggerDownload(canvas, exportFilename());
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 function dataUrlBytes(dataUrl) {
@@ -2191,7 +2187,7 @@ function canvasToPngBytes(canvas) {
   });
 }
 
-function triggerBlobDownload(blob, filename) {
+function browserBlobDownload(blob, filename) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.download = filename;
@@ -2201,6 +2197,54 @@ function triggerBlobDownload(blob, filename) {
   link.click();
   link.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function exportFileFilter(filename) {
+  const extension = String(filename).split('.').pop()?.toLocaleLowerCase();
+  if (extension === 'png') return { name: 'PNG image', extensions: ['png'] };
+  if (extension === 'zip') return { name: 'ZIP archive', extensions: ['zip'] };
+  if (extension === 'json') return { name: 'JSON data', extensions: ['json'] };
+  return extension ? { name: `${extension.toLocaleUpperCase()} file`, extensions: [extension] } : null;
+}
+
+function nativeExportApis() {
+  const tauri = window.__TAURI__;
+  if (typeof tauri?.dialog?.save !== 'function' || typeof tauri?.fs?.writeFile !== 'function') return null;
+  return { save: tauri.dialog.save, writeFile: tauri.fs.writeFile, path: tauri.path };
+}
+
+async function nativeExportDefaultPath(pathApi, filename) {
+  if (typeof pathApi?.downloadDir !== 'function' || typeof pathApi?.join !== 'function') return filename;
+  try {
+    return await pathApi.join(await pathApi.downloadDir(), filename);
+  } catch (error) {
+    console.warn('Could not resolve the Downloads folder for export.', error);
+    return filename;
+  }
+}
+
+async function triggerBlobDownload(blob, filename) {
+  const nativeApis = nativeExportApis();
+  if (!nativeApis) {
+    browserBlobDownload(blob, filename);
+    return 'downloaded';
+  }
+
+  const filter = exportFileFilter(filename);
+  const defaultPath = await nativeExportDefaultPath(nativeApis.path, filename);
+  const path = await nativeApis.save({
+    title: `Save ${filename}`,
+    defaultPath,
+    filters: filter ? [filter] : [],
+  });
+  if (!path) return 'cancelled';
+
+  await nativeApis.writeFile(path, new Uint8Array(await blob.arrayBuffer()));
+  return 'saved';
+}
+
+function exportActionLabel(result) {
+  return result === 'saved' ? 'Saved' : 'Downloaded';
 }
 
 function packFilenameBase(value, fallback = 'character-pack') {
@@ -2542,8 +2586,12 @@ async function downloadEquipmentVariantBatch() {
     updateVariantBatchProgress(total, total, 'Packaging the equipment batch…');
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
     const filename = `${folder}-${plan.set.id}-variant-batch.zip`;
-    triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    elements.variantBatchStatus.textContent = `Downloaded ${manifestVariants.length} character sheets and ${manifestEffects.length} reusable combat effects.`;
+    const result = await triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
+    if (result === 'cancelled') {
+      elements.variantBatchStatus.textContent = 'Export cancelled.';
+      return;
+    }
+    elements.variantBatchStatus.textContent = `${exportActionLabel(result)} ${manifestVariants.length} character sheets and ${manifestEffects.length} reusable combat effects.`;
   } catch (error) {
     console.error(error);
     elements.variantBatchStatus.textContent = 'The equipment batch could not be exported. Please try again.';
@@ -2691,8 +2739,12 @@ async function downloadClassPack() {
     updateClassPackProgress(total, total, `Packaging the ${plan.template.name} class pack…`);
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
     const filename = `${folder}-${plan.template.id}-class-pack.zip`;
-    triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    elements.classPackStatus.textContent = `Downloaded ${plan.template.name}: ${manifestVariants.length} character sheets and ${manifestEffects.length} reusable combat effects.`;
+    const result = await triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
+    if (result === 'cancelled') {
+      elements.classPackStatus.textContent = 'Export cancelled.';
+      return;
+    }
+    elements.classPackStatus.textContent = `${exportActionLabel(result)} ${plan.template.name}: ${manifestVariants.length} character sheets and ${manifestEffects.length} reusable combat effects.`;
   } catch (error) {
     console.error(error);
     elements.classPackStatus.textContent = 'The class pack could not be exported. Please try again.';
@@ -2786,8 +2838,12 @@ async function downloadMasterCharacterKit() {
     updateMasterKitProgress(total, total, 'Packaging one deduplicated Complete Character Kit…');
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
     const filename = `${packFilenameBase(characterName, 'character')}-complete-character-kit.zip`;
-    triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    setMasterKitStatus(`Downloaded ${plan.counts.componentPngs} unique components, ${plan.counts.enemySheets} native enemies, ${plan.counts.effectSheets} combat effects, one reference, and the “${characterName}” recipe.`);
+    const result = await triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
+    if (result === 'cancelled') {
+      setMasterKitStatus('Export cancelled.');
+      return;
+    }
+    setMasterKitStatus(`${exportActionLabel(result)} ${plan.counts.componentPngs} unique components, ${plan.counts.enemySheets} native enemies, ${plan.counts.effectSheets} combat effects, one reference, and the “${characterName}” recipe.`);
   } catch (error) {
     console.error(error);
     setMasterKitStatus('The Complete Character Kit could not be exported. Please try again.');
@@ -2868,8 +2924,12 @@ async function downloadPackMasterKit() {
     updateRosterKitProgress(total, total, 'Packaging ready characters, the deduplicated master library, native enemies, and combat effects together…');
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
     const filename = `${packFilenameBase(packName, 'character-pack')}-complete-character-pack.zip`;
-    triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
-    setPackStatus(`Downloaded one Complete Pack with ${entries.length} ready character${entries.length === 1 ? '' : 's'}, matching recipes, ${plan.counts.componentPngs} unique components, ${plan.counts.enemySheets} native enemies, and ${plan.counts.effectSheets} combat effects.`);
+    const result = await triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), filename);
+    if (result === 'cancelled') {
+      setPackStatus('Export cancelled.');
+      return;
+    }
+    setPackStatus(`${exportActionLabel(result)} one Complete Pack with ${entries.length} ready character${entries.length === 1 ? '' : 's'}, matching recipes, ${plan.counts.componentPngs} unique components, ${plan.counts.enemySheets} native enemies, and ${plan.counts.effectSheets} combat effects.`);
   } catch (error) {
     console.error(error);
     setPackStatus('The Complete Character Pack could not be exported. Please try again.');
@@ -2942,8 +3002,12 @@ async function downloadCharacterPack() {
       data: new TextEncoder().encode(`${JSON.stringify(manifest, null, 2)}\n`),
     });
     const archive = buildStoredZip(zipEntries, new Date(exportedAt));
-    triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), `${packFilenameBase(packName)}.zip`);
-    setPackStatus(`Downloaded ${entries.length} sprite${entries.length === 1 ? '' : 's'} at ${scale}x.`);
+    const result = await triggerBlobDownload(new Blob([archive], { type: 'application/zip' }), `${packFilenameBase(packName)}.zip`);
+    if (result === 'cancelled') {
+      setPackStatus('Export cancelled.');
+      return;
+    }
+    setPackStatus(`${exportActionLabel(result)} ${entries.length} sprite${entries.length === 1 ? '' : 's'} at ${scale}x.`);
   } catch (error) {
     console.error(error);
     setPackStatus('The pack could not be exported. Please try again.');

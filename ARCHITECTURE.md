@@ -89,7 +89,7 @@ The four expanded outfit families add direction-aware fur, coat-tail, vestment, 
 
 ### Windows wrapper
 
-`src-tauri/` owns the native window, application metadata, permissions, content-security policy, and packaging. It does not contain a second renderer or editor implementation.
+`src-tauri/` owns the native window, application metadata, permissions, content-security policy, native file-dialog/file-write plugins, and packaging. `app.js` routes the shared PNG, JSON, and ZIP export helper through a native Save dialog when the Tauri APIs are present and retains browser downloads otherwise. The dialog-selected path dynamically scopes the narrowly permitted write; the application does not receive unrestricted file-system access. The wrapper does not contain a second renderer or editor implementation.
 
 ## Stable invariants
 

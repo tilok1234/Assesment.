@@ -13,9 +13,16 @@
     "check": "node tools/check-project.mjs",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",
-    "tauri:build": "tauri build --no-bundle"
+    "tauri:build": "tauri build --bundles nsis",
+    "tauri:build:exe": "tauri build --no-bundle",
+    "check:release": "node tools/check-windows-release.mjs",
+    "release:windows": "npm run check && npm run tauri:build && npm run check:release -- --require-artifact"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.11.0"
+  },
+  "dependencies": {
+    "@tauri-apps/plugin-dialog": "^2.7.2",
+    "@tauri-apps/plugin-fs": "^2.5.1"
   }
 }
