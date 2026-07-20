@@ -1,133 +1,105 @@
-# New Chat Handoff
+# Project Handoff
 
-Date: 2026-07-19
+Date: 2026-07-20
 Workspace: `C:\Users\headc\Documents\8-bit sprite assembler`
 Repository: `tilok1234/8-bit-sprite-assembler`
 
-## Immediate state
+## Current State
 
-The weapon-readability overhaul for all 15 weapon families and five RPG tiers is complete through Pass 7. The user visually approved the corrected bow. Passes 1-4 are in `3cb45fb`; Passes 5-7 are committed and pushed in `4fbb2ca` (`Complete weapon readability overhaul`) on `codex/weapon-readability-bow`. Preserve the approved weapon rendering exactly unless new visual evidence justifies a change.
+- Branch: `codex/optional-sprite-outlines`
+- Current committed checkpoint: `aaa7a89` (`Checkpoint equipment outline assessment`), local only
+- Remote branch point: `674d926` on `origin/codex/optional-sprite-outlines`
+- The local branch is one commit ahead of its upstream.
+- The working tree contains reviewed but uncommitted outline/readability implementation and documentation.
+- No weapon or shield source artwork has changed in this worktree.
+- Do not reset, restore, stash, commit, push, or merge without first showing the exact scope and obtaining approval.
 
-The active branch is `codex/windows-release`, based on `4fbb2ca`. Phase 6 release work is implemented locally but not yet committed. All PNG, JSON, and ZIP exports share one native-aware helper: packaged Tauri builds open a Windows Save dialog in Downloads and write only the user-selected path; browser builds keep their normal download behavior. Cancellation is reported instead of being mistaken for success.
+Current changed-file scope before final validation:
 
-The default native release is now a current-user NSIS installer with final product metadata, the existing generated icon family, an embedded WebView2 bootstrapper, focused release validation, and a GitHub Actions draft-release workflow. The Rust/JavaScript dialog and file-system plugins use only `dialog:allow-save` and `fs:allow-write-file`; no unrestricted write permission was added.
+- `ARCHITECTURE.md`
+- `EQUIPMENT_OUTLINE_ASSESSMENT.md`
+- `EQUIPMENT_READABILITY_PLAN.md` (new)
+- `HANDOFF.md`
+- `OUTLINE_RENDERING_PLAN.md`
+- `README.md`
+- `WEAPON_READABILITY_PLAN.md`
+- `engine/outline-renderer.js`
+- `tools/outline-review.mjs`
 
-Current magic-weapon intent:
+## Outline Baseline
 
-- Staff remains the longest casting weapon, with a connected countershaft, grip, crown, and focus in every pose.
-- Wand stays visibly shorter and more compact than the staff across all five tiers.
-- Spellbook keeps a physical cover, spine, and page spread; upper tiers widen the tome instead of turning it into a slab.
-- Runes, clasps, focus stones, and page details remain connected to the physical weapon. No detached casting particles are part of these silhouettes.
-- Left and right views remain exact mirrors.
-- Legacy enemy staves remain on their established Tier 1 renderer; the new readable magic path is player-only.
+The current outline implementation is active and is no longer the abandoned experiment described by the old handoff.
 
-Primary implementation: `engine/weapon-renderer.js`, functions `drawReadableStaff`, `drawReadableWand`, and `drawReadableSpellbook`.
+- Player modes: None, Complete B, and Selective C.
+- None delegates directly to the original renderer and remains the compatibility baseline.
+- Equipment uses restrained cardinal contouring, filtered interior cavities, and depth-aware contact separation.
+- Front equipment preserves dark facial features by moving a necessary separator to the equipment side.
+- Front equipment/headgear contact also places the separator on equipment so headgear pixels remain unchanged.
+- Converted contact-separator pixels do not cast a redundant second halo.
+- The algorithm is frozen while source-art prototypes are reviewed.
 
-## Weapon plan
+The implementation details and regression contract are in `OUTLINE_RENDERING_PLAN.md`.
 
-The source of truth is `WEAPON_READABILITY_PLAN.md`.
+## Weapon Reassessment
 
-- Pass 1 complete: sword, greatsword, dagger
-- Pass 2 complete: scimitar, rapier, axe
-- Pass 3 complete: mace, warhammer, club
-- Pass 4 complete and user-approved: spear, bow, crossbow
-- Pass 5 complete and user-approved: staff, wand, spellbook
-- Pass 6 complete: global Tier 4/Tier 5 comparison, acceptance, and decluttering guardrails
-- Pass 7 complete: exhaustive direction, motion, occlusion, frame-safety, recomposition, and native export validation
+The full weapon audit was regenerated on 2026-07-20:
 
-## Review workflow
+- 15 families x 5 tiers = 75 family/tier variants
+- 3,600 assembled direction/animation/frame cases
+- 37 enlarged and true-native review sheets
+- every family/tier source layer remained single-component (`maxComponents=1`)
 
-Generate the complete weapon review:
+Visual verdict:
 
-```powershell
-npm.cmd run review:weapons
-```
+- Current baseline accepted: Sword, Greatsword, Scimitar, Rapier, Dagger, Axe, Mace, Warhammer, Spear, Club, Bow, Staff, Wand, and Spellbook.
+- Source-art iteration required: Crossbow T5. It can read like a compact firearm even without a shield.
+- Separate later composition issue: Crossbow T2 with a shield.
+- Local monitoring only: Mace/Warhammer protrusions and thin Staff/Wand/Dagger/Rapier frames.
 
-Generate the exhaustive enlarged and true-native Pass 7 review:
+Mechanical audit values such as detached distance, expression overlap, and edge contact are diagnostic signals, not automatic art failures.
 
-```powershell
-npm.cmd run review:weapons -- --all-frames
-```
+The canonical sequence is `EQUIPMENT_READABILITY_PLAN.md`. Historical assessment evidence is retained in `EQUIPMENT_OUTLINE_ASSESSMENT.md`.
 
-Generate a focused Pass 5 review:
+## Animation Frame-Safety Finding
 
-```powershell
-npm.cmd run review:weapons -- --focus staff,wand,spellbook --out C:\tmp\pass5-review
-```
+The user's report that weapon attacks and some hats cut out of the frame was confirmed with an instrumented read-only render:
 
-Important review sheets:
+- 259 of 3,600 weapon frames discard 915 pixels, all during attacks.
+- The affected weapon families are Warhammer, Club, Mace, Staff, Axe, Wand, Spellbook, Greatsword, Rapier, Sword, Scimitar, and Spear.
+- Dagger, Bow, and Crossbow produced no discarded weapon pixels.
+- 37 of 528 headgear cases discard 101 pixels: Wizard hat (33 cases), Plumed helm (3), and Horned helm (1).
+- A diagnostic probe without the shared whole-character attack/hurt translation reduced weapon cropping to zero and removed Plumed/Horned helm cropping.
+- Wizard hat still cropped because its tip geometry begins above the canvas, so it requires a separate targeted correction.
 
-- `weapon-review/03-tier-assembled-side-strike.svg`
-- `weapon-review/05-tier5-direction-strike.svg`
-- `weapon-review/07-tier5-side-attack.svg`
-- `weapon-review/all-frames/<weapon>-all-frames.svg`
-- `weapon-review/all-frames-native/<weapon>-all-frames.svg`
-- `weapon-review/weapon-frame-audit.csv`
-- `weapon-review/weapon-frame-audit.json`
+No source file was changed by the diagnostic probe. The repair must first add a durable out-of-canvas validator, then visually test a shared in-frame attack-pose correction. Do not shrink all weapons or hats, and do not mix this work with Crossbow T5 or outline changes.
 
-Inspect at native 24x24 scale and enlarged nearest-neighbor scale. Mechanical checks do not override a poor visual read. The generated `weapon-review/` directory is intentionally ignored by Git.
+## Runtime Evidence
 
-## Validation status
+The existing executable was older than the current source, so `npm.cmd run tauri:build:exe` rebuilt `src-tauri\target\release\sprite-assembler.exe` successfully on 2026-07-20.
 
-These commands pass on the active Windows release worktree:
+The rebuilt executable was tested with the actual selectors and modes. Crossbow T5 remained firearm-like in None, Complete B, and Selective C, including right-facing and down-facing attack views. A non-intrusive in-app browser review reproduced the same result without taking over the Windows desktop. This confirms the outline makes separation clearer but cannot repair the source silhouette.
+
+## Validation Commands
+
+Use the following before proposing the current safe-baseline checkpoint:
 
 ```powershell
 npm.cmd run check
-npm.cmd run check:release -- --require-artifact
-npm.cmd run tauri:build
+npm.cmd run review:outlines
+npm.cmd run review:weapons -- --all-frames
+npm.cmd run build
+git diff --check
 ```
 
-Generated installer:
+The generated `weapon-review/` and `outline-review/` artifacts are review outputs and are intentionally ignored by Git.
 
-`src-tauri/target/release/bundle/nsis/8-Bit Sprite Assembler_0.1.0_x64-setup.exe`
+## Next Action
 
-The release checker verifies the setup executable's PE signature and minimum size. A live standalone packaged-app smoke test also passed: the app launched, opened a native JSON Save dialog in Downloads with the correct filename/type filter, saved a valid schema-v1 loadout, and reported cancellation correctly in a separate run. The verified test export remains at `C:\Users\headc\Downloads\hero-dwarf-sturdy-surprised-glasses-ranger-tier3-scimitar-loadout.json`.
-
-The NSIS setup executable itself has not been installed or uninstalled during this pass, because GUI software installation requires a separate action-time confirmation. The installer is unsigned, and automatic updates remain deferred until a stable public distribution URL and signing identity exist.
-
-Latest reported project totals:
-
-- Player combinations: 10,447,982,899,200
-- Enemy families: 57
-- Enemy variants: 202
-- Combat effects: 24
-- Validated PNG sheets: 232 at 1152x384
-
-## Working tree
-
-The Windows release changes are intentionally uncommitted on `codex/windows-release`:
-
-```text
- M ARCHITECTURE.md
- M README.md
- M ROADMAP.md
- M app.js
- M package-lock.json
- M package.json
- M src-tauri/Cargo.lock
- M src-tauri/Cargo.toml
- M src-tauri/capabilities/default.json
- M src-tauri/src/lib.rs
- M src-tauri/tauri.conf.json
- M tools/check-project.mjs
-?? .github/workflows/windows-release.yml
-?? WINDOWS_RELEASE.md
-?? tools/check-windows-release.mjs
-```
-
-Key additions include:
-
-- Native Save dialogs for all PNG, JSON, and ZIP exports, defaulting to Downloads
-- Browser download fallback and explicit native cancellation/error handling
-- Official Tauri dialog/file-system bindings and narrowly scoped permissions
-- NSIS-by-default build scripts, current-user installation, and embedded WebView2 bootstrapper
-- Synchronized product metadata, icons, version checks, and installer artifact validation
-- Version-tag/manual GitHub workflow that creates a draft Windows release
-- `WINDOWS_RELEASE.md` with local build, packaged smoke, migration, signing, and release instructions
-
-## Recommended next action
-
-1. Review the active release diff, then commit and push it only when the user asks.
-2. If the user wants the full installer lifecycle proof, request action-time confirmation immediately before running the NSIS setup UI; then verify install, Start-menu launch, PNG/JSON/ZIP export, persistence, uninstall, and preservation of user exports.
-3. Configure Windows code signing before broad public distribution. Add the updater only after a stable release URL and signing identity exist.
-4. Future outfits, hairstyles, headgear, weapons, enemies, effects, and templates remain ordinary catalog/renderer work. Preserve stable IDs, advance affected schema versions, retain migrations, run `npm.cmd run check`, and rebuild the installer.
+1. Finish the full validation gate.
+2. Show the exact checkpoint file scope and validation results to the user.
+3. Create the checkpoint only after explicit approval.
+4. Begin only the shared attack frame-safety prototype and stop for visual approval.
+5. Correct the Wizard hat geometry separately and stop for visual approval.
+6. Begin the Crossbow T5 source-art prototype only after frame safety is approved.
+7. Preserve the 24x24 contract, hand attachment, direction mirroring, timing, and unrelated renderer logic.
+8. Stop after each prototype before considering another tier or shield work.

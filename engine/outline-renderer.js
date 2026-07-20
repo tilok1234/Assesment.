@@ -35,6 +35,14 @@ const OUTLINE_OWNER_GROUPS = Object.freeze([
 
 const EQUIPMENT_OWNER_INDICES = Object.freeze([0, 1]);
 const BODY_OWNER_INDEX = 2;
+const OUTLINE_LAYER_OWNER_INDEX = Object.freeze({
+  'weapon-back': 0,
+  'shield-back': 1,
+  body: BODY_OWNER_INDEX,
+  headgear: BODY_OWNER_INDEX,
+  'shield-front': 1,
+  'weapon-front': 0,
+});
 const OUTLINE_LAYER_INDEX = Object.freeze(Object.fromEntries(
   OUTLINE_LAYER_ORDER.map((layer, index) => [layer, index]),
 ));
@@ -47,6 +55,7 @@ const FRONT_EQUIPMENT_LAYER_INDICES = Object.freeze([
   OUTLINE_LAYER_INDEX['weapon-front'],
 ]);
 const BODY_LAYER_INDEX = OUTLINE_LAYER_INDEX.body;
+const HEADGEAR_LAYER_INDEX = OUTLINE_LAYER_INDEX.headgear;
 
 const CARDINAL_OFFSETS = Object.freeze([
   Object.freeze([0, -1]),
@@ -62,6 +71,13 @@ const COMPLETE_OFFSETS = Object.freeze([
   Object.freeze([-1, 1]),
   Object.freeze([1, 1]),
 ]);
+
+// One-to-four-pixel enclosed pockets are usually construction noise at 24x24:
+// outlining all of them turns bone lattices, crossbow joints, staff heads, and
+// late-tier ornaments into dark mazes. Larger openings remain eligible because
+// they define forms such as bows. This threshold is geometry-based, not tied to
+// any equipment family or tier.
+const MIN_EQUIPMENT_INTERIOR_AREA = 5;
 
 export function normalizeOutlineMode(value) {
   return OUTLINE_MODES.some((mode) => mode.id === value) ? value : OUTLINE_MODE_NONE;
@@ -103,12 +119,46 @@ function exteriorTransparency(pixels, width, height) {
   return exterior;
 }
 
+function equipmentEligibleTransparency(pixels, width, height, minimumInteriorArea) {
+  const eligible = exteriorTransparency(pixels, width, height);
+  const visited = new Uint8Array(eligible);
+
+  for (let start = 0; start < pixels.length; start++) {
+    if (!isTransparent(pixels[start]) || visited[start]) continue;
+    const component = [];
+    const queue = [start];
+    visited[start] = 1;
+
+    while (queue.length) {
+      const index = queue.pop();
+      component.push(index);
+      const x = index % width;
+      const y = Math.floor(index / width);
+      for (const [offsetX, offsetY] of CARDINAL_OFFSETS) {
+        const nextX = x + offsetX;
+        const nextY = y + offsetY;
+        if (nextX < 0 || nextY < 0 || nextX >= width || nextY >= height) continue;
+        const next = (nextY * width) + nextX;
+        if (!isTransparent(pixels[next]) || visited[next]) continue;
+        visited[next] = 1;
+        queue.push(next);
+      }
+    }
+
+    if (component.length >= minimumInteriorArea) {
+      for (const index of component) eligible[index] = 1;
+    }
+  }
+  return eligible;
+}
+
 function contourMaskForPixels(
   pixels,
   mode = OUTLINE_MODE_COMPLETE_B,
   width = SIZE,
   height = SIZE,
   exteriorOnly = true,
+  options = {},
 ) {
   if (!pixels || pixels.length !== width * height) {
     throw new Error(`Outline source must contain exactly ${width * height} pixels.`);
@@ -118,20 +168,35 @@ function contourMaskForPixels(
   const mask = new Uint8Array(width * height);
   if (normalizedMode === OUTLINE_MODE_NONE) return mask;
 
-  const offsets = normalizedMode === OUTLINE_MODE_COMPLETE_B
+  const sourceExclusionMask = options.sourceExclusionMask || null;
+  if (sourceExclusionMask && sourceExclusionMask.length !== width * height) {
+    throw new Error(`Outline source exclusion must contain exactly ${width * height} entries.`);
+  }
+
+  const offsets = !options.cardinalOnly && normalizedMode === OUTLINE_MODE_COMPLETE_B
     ? COMPLETE_OFFSETS
     : CARDINAL_OFFSETS;
-  const exterior = exteriorOnly ? exteriorTransparency(pixels, width, height) : null;
+  const exterior = exteriorTransparency(pixels, width, height);
+  const eligible = exteriorOnly
+    ? exterior
+    : equipmentEligibleTransparency(
+      pixels,
+      width,
+      height,
+      options.minimumInteriorArea || 1,
+    );
 
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
       const index = (y * width) + x;
-      if (!isTransparent(pixels[index]) || exteriorOnly && !exterior[index]) continue;
+      if (!isTransparent(pixels[index]) || !eligible[index]) continue;
       for (const [offsetX, offsetY] of offsets) {
         const sourceX = x + offsetX;
         const sourceY = y + offsetY;
         if (sourceX < 0 || sourceY < 0 || sourceX >= width || sourceY >= height) continue;
-        if (!isTransparent(pixels[(sourceY * width) + sourceX])) {
+        const sourceIndex = (sourceY * width) + sourceX;
+        const excludedExteriorSource = exterior[index] && sourceExclusionMask?.[sourceIndex];
+        if (!isTransparent(pixels[sourceIndex]) && !excludedExteriorSource) {
           mask[index] = 1;
           break;
         }
@@ -146,8 +211,9 @@ export function outlineMaskForPixels(
   mode = OUTLINE_MODE_COMPLETE_B,
   width = SIZE,
   height = SIZE,
+  options = {},
 ) {
-  return contourMaskForPixels(pixels, mode, width, height, true);
+  return contourMaskForPixels(pixels, mode, width, height, true, options);
 }
 
 export function outlineMaskForEquipmentPixels(
@@ -155,8 +221,17 @@ export function outlineMaskForEquipmentPixels(
   mode = OUTLINE_MODE_COMPLETE_B,
   width = SIZE,
   height = SIZE,
+  options = {},
 ) {
-  return contourMaskForPixels(pixels, mode, width, height, false);
+  // Equipment always uses a cardinal one-pixel contour. Diagonal expansion is
+  // visually too heavy for one-pixel shafts and tiny held items, while the body
+  // still keeps Complete B's full eight-neighbor exterior. Only substantial
+  // enclosed openings receive an interior contour.
+  return contourMaskForPixels(pixels, mode, width, height, false, {
+    ...options,
+    cardinalOnly: true,
+    minimumInteriorArea: MIN_EQUIPMENT_INTERIOR_AREA,
+  });
 }
 
 export function outlineMaskForOwnedPixels(
@@ -184,11 +259,21 @@ export function outlineMaskForOwnedPixels(
   if (normalizedMode === OUTLINE_MODE_NONE) return mask;
 
   const interiorOwnerIndices = new Set(options.interiorOwnerIndices || []);
+  const haloSourceExclusionMasks = options.haloSourceExclusionMasks || [];
+  for (const exclusionMask of haloSourceExclusionMasks) {
+    if (exclusionMask && exclusionMask.length !== width * height) {
+      throw new Error(`Each halo source exclusion must contain exactly ${width * height} entries.`);
+    }
+  }
 
   const ownerMasks = ownerPixels.map((pixels, ownerIndex) => (
     interiorOwnerIndices.has(ownerIndex)
-      ? outlineMaskForEquipmentPixels(pixels, normalizedMode, width, height)
-      : outlineMaskForPixels(pixels, normalizedMode, width, height)
+      ? outlineMaskForEquipmentPixels(pixels, normalizedMode, width, height, {
+        sourceExclusionMask: haloSourceExclusionMasks[ownerIndex],
+      })
+      : outlineMaskForPixels(pixels, normalizedMode, width, height, {
+        sourceExclusionMask: haloSourceExclusionMasks[ownerIndex],
+      })
   ));
 
   for (let index = 0; index < mask.length; index++) {
@@ -236,6 +321,125 @@ export function outlineContactMaskForVisibleOwners(
     }
   }
   return mask;
+}
+
+function touchesVisibleLayerColorCardinally(
+  visibleLayers,
+  visiblePixels,
+  index,
+  targetLayerIndex,
+  targetColor,
+  width,
+  height,
+) {
+  const x = index % width;
+  const y = Math.floor(index / width);
+  for (const [offsetX, offsetY] of CARDINAL_OFFSETS) {
+    const targetX = x + offsetX;
+    const targetY = y + offsetY;
+    if (targetX < 0 || targetY < 0 || targetX >= width || targetY >= height) continue;
+    const targetIndex = (targetY * width) + targetX;
+    if (
+      visibleLayers[targetIndex] === targetLayerIndex
+      && visiblePixels[targetIndex] === targetColor
+    ) return true;
+  }
+  return false;
+}
+
+function contactOutlinePlanForVisibleLayers(
+  visibleLayers,
+  visiblePixels,
+  mode,
+  width = SIZE,
+  height = SIZE,
+) {
+  const layerContactMask = new Uint8Array(width * height);
+  const haloSourceExclusionMasks = OUTLINE_OWNER_GROUPS.map(() => new Uint8Array(width * height));
+
+  const addContactMask = (contactMask, sourceOwnerIndex) => {
+    for (let index = 0; index < contactMask.length; index++) {
+      if (!contactMask[index]) continue;
+      layerContactMask[index] = 1;
+      // A source pixel converted into a one-pixel contact separator is already
+      // outline. Letting that hidden source cast a second exterior halo makes
+      // nearby owner contours fuse into thick shelves and bridges.
+      haloSourceExclusionMasks[sourceOwnerIndex][index] = 1;
+    }
+  };
+
+  for (const equipmentLayerIndex of BACK_EQUIPMENT_LAYER_INDICES) {
+    const contactMask = outlineContactMaskForVisibleOwners(
+      visibleLayers,
+      equipmentLayerIndex,
+      BODY_LAYER_INDEX,
+      mode,
+      width,
+      height,
+    );
+    const equipmentLayer = OUTLINE_LAYER_ORDER[equipmentLayerIndex];
+    addContactMask(contactMask, OUTLINE_LAYER_OWNER_INDEX[equipmentLayer]);
+  }
+  for (const equipmentLayerIndex of FRONT_EQUIPMENT_LAYER_INDICES) {
+    const contactMask = outlineContactMaskForVisibleOwners(
+      visibleLayers,
+      BODY_LAYER_INDEX,
+      equipmentLayerIndex,
+      mode,
+      width,
+      height,
+    );
+    const equipmentFallbackMask = new Uint8Array(width * height);
+    for (let index = 0; index < contactMask.length; index++) {
+      if (
+        !contactMask[index]
+        || visiblePixels[index] === OUTLINE_COLOR
+        || !touchesVisibleLayerColorCardinally(
+          visibleLayers,
+          visiblePixels,
+          index,
+          BODY_LAYER_INDEX,
+          OUTLINE_COLOR,
+          width,
+          height,
+        )
+      ) continue;
+
+      // Replacing this body pixel would lengthen an existing dark facial/body
+      // feature. Keep the body color and move the separator to each touching
+      // front-equipment pixel instead.
+      contactMask[index] = 0;
+      const x = index % width;
+      const y = Math.floor(index / width);
+      for (const [offsetX, offsetY] of CARDINAL_OFFSETS) {
+        const targetX = x + offsetX;
+        const targetY = y + offsetY;
+        if (targetX < 0 || targetY < 0 || targetX >= width || targetY >= height) continue;
+        const targetIndex = (targetY * width) + targetX;
+        if (visibleLayers[targetIndex] === equipmentLayerIndex) {
+          equipmentFallbackMask[targetIndex] = 1;
+        }
+      }
+    }
+    addContactMask(contactMask, BODY_OWNER_INDEX);
+    const equipmentLayer = OUTLINE_LAYER_ORDER[equipmentLayerIndex];
+    addContactMask(equipmentFallbackMask, OUTLINE_LAYER_OWNER_INDEX[equipmentLayer]);
+
+    // Headgear is deliberately protected from body-side replacement. When
+    // front equipment touches it directly, put the separator on the equipment
+    // edge instead so the held item remains readable without cutting the hat.
+    const headgearContactMask = outlineContactMaskForVisibleOwners(
+      visibleLayers,
+      equipmentLayerIndex,
+      HEADGEAR_LAYER_INDEX,
+      mode,
+      width,
+      height,
+    );
+    addContactMask(headgearContactMask, OUTLINE_LAYER_OWNER_INDEX[equipmentLayer]);
+  }
+
+  return { layerContactMask, haloSourceExclusionMasks };
 }
 
 export function humanoidNeckCavityMaskForPixels(
@@ -395,6 +599,7 @@ export function drawOutlinedSprite(
     && (!rendererOptions.layer || rendererOptions.layer === 'complete')
     ? compositePixels
     : renderSpritePixels(spec, direction, animationId, frame, rendererOptions);
+  const contactOutlinePlan = contactOutlinePlanForVisibleLayers(visibleLayers, compositePixels, mode);
 
   // Paint only behind the final composite, then repaint the exact offscreen renderer
   // result above it. No contour can cover assembled artwork.
@@ -405,7 +610,10 @@ export function drawOutlinedSprite(
     mode,
     SIZE,
     SIZE,
-    { interiorOwnerIndices: EQUIPMENT_OWNER_INDICES },
+    {
+      interiorOwnerIndices: EQUIPMENT_OWNER_INDICES,
+      haloSourceExclusionMasks: contactOutlinePlan.haloSourceExclusionMasks,
+    },
   );
   const neckCavityMask = humanoidNeckCavityMaskForPixels(
     ownerPixels[BODY_OWNER_INDEX],
@@ -423,28 +631,5 @@ export function drawOutlinedSprite(
   // own edge, while front equipment stays intact and receives the separator on
   // the adjacent body-side edge. Because the concrete headgear pass sits above
   // body in visibleLayers, equipment contact cannot replace a headgear pixel.
-  const layerContactMask = new Uint8Array(SIZE * SIZE);
-  for (const equipmentLayerIndex of BACK_EQUIPMENT_LAYER_INDICES) {
-    const contactMask = outlineContactMaskForVisibleOwners(
-      visibleLayers,
-      equipmentLayerIndex,
-      BODY_LAYER_INDEX,
-      mode,
-    );
-    for (let index = 0; index < layerContactMask.length; index++) {
-      if (contactMask[index]) layerContactMask[index] = 1;
-    }
-  }
-  for (const equipmentLayerIndex of FRONT_EQUIPMENT_LAYER_INDICES) {
-    const contactMask = outlineContactMaskForVisibleOwners(
-      visibleLayers,
-      BODY_LAYER_INDEX,
-      equipmentLayerIndex,
-      mode,
-    );
-    for (let index = 0; index < layerContactMask.length; index++) {
-      if (contactMask[index]) layerContactMask[index] = 1;
-    }
-  }
-  paintMask(context, layerContactMask, color);
+  paintMask(context, contactOutlinePlan.layerContactMask, color);
 }

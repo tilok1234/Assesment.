@@ -55,6 +55,46 @@ const BASE_PLAYER = Object.freeze({
   palette: null,
 });
 
+const CONTACT_BRIDGE_REGRESSION_SPEC = Object.freeze({
+  kind: 'player',
+  species: 'goblin',
+  bodyBuild: 'classic',
+  skin: 'brown',
+  hairStyle: 'short',
+  hairColor: 'blonde',
+  expression: 'determined',
+  faceDetail: 'mustache',
+  headgear: 'crown',
+  outfit: 'barbarian',
+  outfitTier: 'tier4',
+  outfitColor: 'charcoal',
+  weapon: 'bow',
+  weaponTier: 'tier5',
+  shield: 'bone',
+  shieldTier: 'tier3',
+  palette: null,
+});
+
+const HEADGEAR_CONTACT_REGRESSION_SPEC = Object.freeze({
+  kind: 'player',
+  species: 'goblin',
+  bodyBuild: 'heroic',
+  skin: 'brown',
+  hairStyle: 'ponytail',
+  hairColor: 'white',
+  expression: 'angry',
+  faceDetail: 'blush',
+  headgear: 'hood',
+  outfit: 'robe',
+  outfitTier: 'tier5',
+  outfitColor: 'purple',
+  weapon: 'mace',
+  weaponTier: 'tier1',
+  shield: 'oval',
+  shieldTier: 'tier1',
+  palette: null,
+});
+
 const TEST_LAYER_OWNER_INDEX = Object.freeze({
   'weapon-back': 0,
   'shield-back': 1,
@@ -241,9 +281,38 @@ function renderVisibleLayers(spec, direction, animation, frame) {
   return visibleLayers;
 }
 
-function equipmentContactMasks(visibleLayers, mode) {
+function touchesVisibleLayerColorCardinally(
+  visibleLayers,
+  visiblePixels,
+  index,
+  targetLayerIndex,
+  targetColor,
+) {
+  const x = index % engine.SIZE;
+  const y = Math.floor(index / engine.SIZE);
+  for (const [offsetX, offsetY] of [[0, -1], [-1, 0], [1, 0], [0, 1]]) {
+    const targetX = x + offsetX;
+    const targetY = y + offsetY;
+    if (targetX < 0 || targetY < 0 || targetX >= engine.SIZE || targetY >= engine.SIZE) continue;
+    const targetIndex = (targetY * engine.SIZE) + targetX;
+    if (
+      visibleLayers[targetIndex] === targetLayerIndex
+      && visiblePixels[targetIndex] === targetColor
+    ) return true;
+  }
+  return false;
+}
+
+function equipmentContactMasks(visibleLayers, visiblePixels, mode) {
   const back = new Uint8Array(engine.SIZE * engine.SIZE);
   const front = new Uint8Array(engine.SIZE * engine.SIZE);
+  const frontBodyFallback = new Uint8Array(engine.SIZE * engine.SIZE);
+  const frontHeadgear = new Uint8Array(engine.SIZE * engine.SIZE);
+  const haloSourceExclusionMasks = [
+    new Uint8Array(engine.SIZE * engine.SIZE),
+    new Uint8Array(engine.SIZE * engine.SIZE),
+    new Uint8Array(engine.SIZE * engine.SIZE),
+  ];
   for (const layerIndex of TEST_BACK_EQUIPMENT_LAYER_INDICES) {
     const layerMask = outlineContactMaskForVisibleOwners(
       visibleLayers,
@@ -252,7 +321,9 @@ function equipmentContactMasks(visibleLayers, mode) {
       mode,
     );
     for (let index = 0; index < back.length; index++) {
-      if (layerMask[index]) back[index] = 1;
+      if (!layerMask[index]) continue;
+      back[index] = 1;
+      haloSourceExclusionMasks[TEST_LAYER_OWNER_INDEX[OUTLINE_LAYER_ORDER[layerIndex]]][index] = 1;
     }
   }
   for (const layerIndex of TEST_FRONT_EQUIPMENT_LAYER_INDICES) {
@@ -262,15 +333,58 @@ function equipmentContactMasks(visibleLayers, mode) {
       layerIndex,
       mode,
     );
+    for (let index = 0; index < layerMask.length; index++) {
+      if (
+        !layerMask[index]
+        || visiblePixels[index] === OUTLINE_COLOR
+        || !touchesVisibleLayerColorCardinally(
+          visibleLayers,
+          visiblePixels,
+          index,
+          TEST_BODY_LAYER_INDEX,
+          OUTLINE_COLOR,
+        )
+      ) continue;
+      layerMask[index] = 0;
+      const x = index % engine.SIZE;
+      const y = Math.floor(index / engine.SIZE);
+      for (const [offsetX, offsetY] of [[0, -1], [-1, 0], [1, 0], [0, 1]]) {
+        const targetX = x + offsetX;
+        const targetY = y + offsetY;
+        if (targetX < 0 || targetY < 0 || targetX >= engine.SIZE || targetY >= engine.SIZE) continue;
+        const targetIndex = (targetY * engine.SIZE) + targetX;
+        if (visibleLayers[targetIndex] !== layerIndex) continue;
+        frontBodyFallback[targetIndex] = 1;
+        haloSourceExclusionMasks[
+          TEST_LAYER_OWNER_INDEX[OUTLINE_LAYER_ORDER[layerIndex]]
+        ][targetIndex] = 1;
+      }
+    }
     for (let index = 0; index < front.length; index++) {
-      if (layerMask[index]) front[index] = 1;
+      if (!layerMask[index]) continue;
+      front[index] = 1;
+      haloSourceExclusionMasks[TEST_BODY_OWNER_INDEX][index] = 1;
+    }
+
+    const headgearLayerMask = outlineContactMaskForVisibleOwners(
+      visibleLayers,
+      layerIndex,
+      TEST_HEADGEAR_LAYER_INDEX,
+      mode,
+    );
+    for (let index = 0; index < frontHeadgear.length; index++) {
+      if (!headgearLayerMask[index]) continue;
+      frontHeadgear[index] = 1;
+      haloSourceExclusionMasks[
+        TEST_LAYER_OWNER_INDEX[OUTLINE_LAYER_ORDER[layerIndex]]
+      ][index] = 1;
     }
   }
   const combined = new Uint8Array(engine.SIZE * engine.SIZE);
   for (let index = 0; index < combined.length; index++) {
-    if (back[index] || front[index]) combined[index] = 1;
+    if (back[index] || front[index] || frontBodyFallback[index] || frontHeadgear[index]) combined[index] = 1;
   }
-  return { back, front, combined };
+  return { back, front, frontBodyFallback, frontHeadgear, combined, haloSourceExclusionMasks };
 }
 
 function mergePixelLayers(...layers) {
@@ -418,6 +532,19 @@ function headgearCoverageSpecs() {
   ];
 }
 
+function algorithmPilotSpecs() {
+  return Object.freeze([
+    Object.freeze({ id: 'sword-tier3-control', spec: { ...BASE_PLAYER, weapon: 'sword', weaponTier: 'tier3' } }),
+    Object.freeze({ id: 'tower-tier3-control', spec: { ...BASE_PLAYER, weapon: 'none', shield: 'tower', shieldTier: 'tier3' } }),
+    Object.freeze({ id: 'bow-tier3', spec: { ...BASE_PLAYER, weapon: 'bow', weaponTier: 'tier3' } }),
+    Object.freeze({ id: 'bow-tier5', spec: { ...BASE_PLAYER, weapon: 'bow', weaponTier: 'tier5' } }),
+    Object.freeze({ id: 'crossbow-tier5', spec: { ...BASE_PLAYER, weapon: 'crossbow', weaponTier: 'tier5' } }),
+    Object.freeze({ id: 'staff-tier3', spec: { ...BASE_PLAYER, weapon: 'staff', weaponTier: 'tier3' } }),
+    Object.freeze({ id: 'dagger-tier1', spec: { ...BASE_PLAYER, weapon: 'dagger', weaponTier: 'tier1' } }),
+    Object.freeze({ id: 'bone-tier3', spec: { ...BASE_PLAYER, weapon: 'none', shield: 'bone', shieldTier: 'tier3' } }),
+  ]);
+}
+
 function maskCount(mask) {
   return mask.reduce((total, value) => total + (value ? 1 : 0), 0);
 }
@@ -505,6 +632,8 @@ check(maskCount(singleC) === 4, 'Selective C must use only four orthogonal neigh
 check(singleB[(2 * 7) + 2] === 1, 'Complete B must include diagonal coverage');
 check(singleC[(2 * 7) + 2] === 0, 'Selective C must exclude diagonal coverage');
 check(singleC.every((value, index) => !value || singleB[index]), 'Complete B must contain every Selective C candidate');
+check(maskCount(outlineMaskForEquipmentPixels(single, OUTLINE_MODE_COMPLETE_B, 7, 7)) === 4, 'Complete B equipment must use a restrained cardinal contour');
+check(maskCount(outlineMaskForEquipmentPixels(single, OUTLINE_MODE_SELECTIVE_C, 7, 7)) === 4, 'Selective C equipment must use a cardinal contour');
 
 const ring = new Array(7 * 7).fill(null);
 for (let x = 2; x <= 4; x++) {
@@ -515,8 +644,24 @@ ring[(3 * 7) + 2] = '#ffffff';
 ring[(3 * 7) + 4] = '#ffffff';
 check(outlineMaskForPixels(ring, OUTLINE_MODE_COMPLETE_B, 7, 7)[(3 * 7) + 3] === 0, 'Complete B must not fill a closed interior gap');
 check(outlineMaskForPixels(ring, OUTLINE_MODE_SELECTIVE_C, 7, 7)[(3 * 7) + 3] === 0, 'Selective C must not fill a closed interior gap');
-check(outlineMaskForEquipmentPixels(ring, OUTLINE_MODE_COMPLETE_B, 7, 7)[(3 * 7) + 3] === 1, 'Complete B equipment must outline a closed interior gap');
-check(outlineMaskForEquipmentPixels(ring, OUTLINE_MODE_SELECTIVE_C, 7, 7)[(3 * 7) + 3] === 1, 'Selective C equipment must outline a closed interior gap');
+check(outlineMaskForEquipmentPixels(ring, OUTLINE_MODE_COMPLETE_B, 7, 7)[(3 * 7) + 3] === 0, 'Complete B equipment must ignore a one-pixel construction pocket');
+check(outlineMaskForEquipmentPixels(ring, OUTLINE_MODE_SELECTIVE_C, 7, 7)[(3 * 7) + 3] === 0, 'Selective C equipment must ignore a one-pixel construction pocket');
+
+const substantialRing = new Array(9 * 9).fill(null);
+for (let x = 2; x <= 6; x++) {
+  substantialRing[(2 * 9) + x] = '#ffffff';
+  substantialRing[(6 * 9) + x] = '#ffffff';
+}
+for (let y = 3; y <= 5; y++) {
+  substantialRing[(y * 9) + 2] = '#ffffff';
+  substantialRing[(y * 9) + 6] = '#ffffff';
+}
+const substantialB = outlineMaskForEquipmentPixels(substantialRing, OUTLINE_MODE_COMPLETE_B, 9, 9);
+const substantialC = outlineMaskForEquipmentPixels(substantialRing, OUTLINE_MODE_SELECTIVE_C, 9, 9);
+check(substantialB[(3 * 9) + 3] === 1, 'Complete B equipment must retain a substantial silhouette-defining opening');
+check(substantialC[(3 * 9) + 3] === 1, 'Selective C equipment must retain a substantial silhouette-defining opening');
+check(substantialB[(4 * 9) + 4] === 0, 'Complete B equipment must contour rather than fill a substantial opening');
+check(substantialC[(4 * 9) + 4] === 0, 'Selective C equipment must contour rather than fill a substantial opening');
 
 const backContactLayers = new Int8Array(5 * 5).fill(-1);
 backContactLayers[(2 * 5) + 1] = TEST_LAYER_INDEX['weapon-back'];
@@ -566,6 +711,60 @@ check(frontContactC[(2 * 5) + 2] === 1, 'Selective C must put front-pass contact
 check(frontContactB[(2 * 5) + 3] === 0, 'Complete B must preserve front-pass equipment pixels');
 check(frontContactC[(2 * 5) + 3] === 0, 'Selective C must preserve front-pass equipment pixels');
 
+const headgearContactLayers = new Int8Array(5 * 5).fill(-1);
+headgearContactLayers[(2 * 5) + 2] = TEST_HEADGEAR_LAYER_INDEX;
+headgearContactLayers[(2 * 5) + 3] = TEST_LAYER_INDEX['weapon-front'];
+const headgearContactB = outlineContactMaskForVisibleOwners(
+  headgearContactLayers,
+  TEST_LAYER_INDEX['weapon-front'],
+  TEST_HEADGEAR_LAYER_INDEX,
+  OUTLINE_MODE_COMPLETE_B,
+  5,
+  5,
+);
+const headgearContactC = outlineContactMaskForVisibleOwners(
+  headgearContactLayers,
+  TEST_LAYER_INDEX['weapon-front'],
+  TEST_HEADGEAR_LAYER_INDEX,
+  OUTLINE_MODE_SELECTIVE_C,
+  5,
+  5,
+);
+check(headgearContactB[(2 * 5) + 3] === 1, 'Complete B must put headgear-contact separation on the front-equipment pixel');
+check(headgearContactC[(2 * 5) + 3] === 1, 'Selective C must put headgear-contact separation on the front-equipment pixel');
+check(headgearContactB[(2 * 5) + 2] === 0, 'Complete B must preserve headgear beside front equipment');
+check(headgearContactC[(2 * 5) + 2] === 0, 'Selective C must preserve headgear beside front equipment');
+
+const threeWayContactLayers = new Int8Array(engine.SIZE * engine.SIZE).fill(-1);
+const threeWayContactPixels = new Array(engine.SIZE * engine.SIZE).fill(null);
+threeWayContactLayers[(2 * engine.SIZE) + 2] = TEST_BODY_LAYER_INDEX;
+threeWayContactLayers[(1 * engine.SIZE) + 3] = TEST_HEADGEAR_LAYER_INDEX;
+threeWayContactLayers[(2 * engine.SIZE) + 3] = TEST_LAYER_INDEX['weapon-front'];
+threeWayContactPixels[(2 * engine.SIZE) + 2] = '#7a4b2c';
+threeWayContactPixels[(1 * engine.SIZE) + 3] = '#7b4fb5';
+threeWayContactPixels[(2 * engine.SIZE) + 3] = '#e6ecf4';
+const threeWayContactsB = equipmentContactMasks(threeWayContactLayers, threeWayContactPixels, OUTLINE_MODE_COMPLETE_B);
+const threeWayContactsC = equipmentContactMasks(threeWayContactLayers, threeWayContactPixels, OUTLINE_MODE_SELECTIVE_C);
+check(threeWayContactsB.front[(2 * engine.SIZE) + 2] === 1, 'Complete B must retain the existing body-side separator at a three-way contact');
+check(threeWayContactsC.front[(2 * engine.SIZE) + 2] === 1, 'Selective C must retain the existing body-side separator at a three-way contact');
+check(threeWayContactsB.frontHeadgear[(2 * engine.SIZE) + 3] === 1, 'Complete B must continue the equipment-side headgear contour through a three-way contact');
+check(threeWayContactsC.frontHeadgear[(2 * engine.SIZE) + 3] === 1, 'Selective C must continue the equipment-side headgear contour through a three-way contact');
+
+const featureContactLayers = new Int8Array(engine.SIZE * engine.SIZE).fill(-1);
+const featureContactPixels = new Array(engine.SIZE * engine.SIZE).fill(null);
+featureContactLayers[(2 * engine.SIZE) + 1] = TEST_BODY_LAYER_INDEX;
+featureContactLayers[(2 * engine.SIZE) + 2] = TEST_BODY_LAYER_INDEX;
+featureContactLayers[(2 * engine.SIZE) + 3] = TEST_LAYER_INDEX['weapon-front'];
+featureContactPixels[(2 * engine.SIZE) + 1] = OUTLINE_COLOR;
+featureContactPixels[(2 * engine.SIZE) + 2] = '#7a4b2c';
+featureContactPixels[(2 * engine.SIZE) + 3] = '#e6ecf4';
+const featureContactsB = equipmentContactMasks(featureContactLayers, featureContactPixels, OUTLINE_MODE_COMPLETE_B);
+const featureContactsC = equipmentContactMasks(featureContactLayers, featureContactPixels, OUTLINE_MODE_SELECTIVE_C);
+check(featureContactsB.front[(2 * engine.SIZE) + 2] === 0, 'Complete B must preserve a body pixel beside an existing dark body feature');
+check(featureContactsC.front[(2 * engine.SIZE) + 2] === 0, 'Selective C must preserve a body pixel beside an existing dark body feature');
+check(featureContactsB.frontBodyFallback[(2 * engine.SIZE) + 3] === 1, 'Complete B must move a feature-adjacent separator onto front equipment');
+check(featureContactsC.frontBodyFallback[(2 * engine.SIZE) + 3] === 1, 'Selective C must move a feature-adjacent separator onto front equipment');
+
 const diagonalContactLayers = new Int8Array(5 * 5).fill(-1);
 diagonalContactLayers[(2 * 5) + 2] = TEST_BODY_LAYER_INDEX;
 diagonalContactLayers[(3 * 5) + 3] = TEST_LAYER_INDEX['weapon-front'];
@@ -610,6 +809,96 @@ const ownedBridge = outlineMaskForOwnedPixels(
 check(ownedBridge[(2 * 5) + 2] === 1, 'Complete outlines must retain a pixel shared by different owners');
 check(maskCount(ownedBridge) > 0, 'Ownership compositing must preserve outline pixels');
 
+const contactBridgeEquipment = new Array(5 * 5).fill(null);
+const contactBridgeBody = new Array(5 * 5).fill(null);
+const contactBridgeComposite = new Array(5 * 5).fill(null);
+const contactBridgeBodyExclusion = new Uint8Array(5 * 5);
+contactBridgeEquipment[(2 * 5) + 1] = '#ffffff';
+contactBridgeBody[(2 * 5) + 2] = '#cc8844';
+contactBridgeComposite[(2 * 5) + 1] = '#ffffff';
+contactBridgeComposite[(2 * 5) + 2] = '#cc8844';
+contactBridgeBodyExclusion[(2 * 5) + 2] = 1;
+const contactAwareBridge = outlineMaskForOwnedPixels(
+  [contactBridgeEquipment, contactBridgeBody],
+  contactBridgeComposite,
+  OUTLINE_MODE_COMPLETE_B,
+  5,
+  5,
+  {
+    interiorOwnerIndices: [0],
+    haloSourceExclusionMasks: [null, contactBridgeBodyExclusion],
+  },
+);
+check(contactAwareBridge[(1 * 5) + 1] === 1, 'Visible front equipment must retain its own exterior contour');
+check(contactAwareBridge[(1 * 5) + 2] === 0, 'A contact-converted body pixel must not cast a second-pixel bridge');
+check(contactAwareBridge[(1 * 5) + 3] === 0, 'A contact-converted body pixel must not cast a diagonal shelf');
+
+const exactContactBridge = renderMode(
+  CONTACT_BRIDGE_REGRESSION_SPEC,
+  'down',
+  'idle',
+  0,
+  OUTLINE_MODE_COMPLETE_B,
+);
+check(exactContactBridge[(3 * engine.SIZE) + 17] === OUTLINE_COLOR, 'Bow T5 must retain its real upper-tip contour');
+check(!exactContactBridge[(3 * engine.SIZE) + 18], 'Bow T5 contact must not leave the diagnosed horizontal bridge');
+check(!exactContactBridge[(3 * engine.SIZE) + 19], 'Bow T5 contact must not leave the diagnosed diagonal shelf');
+check(exactContactBridge[(4 * engine.SIZE) + 18] === OUTLINE_COLOR, 'Bow T5 must retain its one-pixel body contact separator');
+
+const exactHeadgearContactRaw = renderMode(
+  HEADGEAR_CONTACT_REGRESSION_SPEC,
+  'down',
+  'idle',
+  0,
+  OUTLINE_MODE_NONE,
+);
+const exactHeadgearContactB = renderMode(
+  HEADGEAR_CONTACT_REGRESSION_SPEC,
+  'down',
+  'idle',
+  0,
+  OUTLINE_MODE_COMPLETE_B,
+);
+const exactHeadgearContactC = renderMode(
+  HEADGEAR_CONTACT_REGRESSION_SPEC,
+  'down',
+  'idle',
+  0,
+  OUTLINE_MODE_SELECTIVE_C,
+);
+for (const index of [
+  (7 * engine.SIZE) + 16,
+  (9 * engine.SIZE) + 16,
+]) {
+  check(exactHeadgearContactRaw[index] && exactHeadgearContactRaw[index] !== OUTLINE_COLOR, 'Mace T1 regression must begin with a visible colored weapon edge');
+  check(exactHeadgearContactB[index] === OUTLINE_COLOR, 'Complete B must separate the Mace T1 inner edge from the hood');
+  check(exactHeadgearContactC[index] === OUTLINE_COLOR, 'Selective C must separate the Mace T1 inner edge from the hood');
+}
+const eyeAdjacentMaceIndex = (8 * engine.SIZE) + 15;
+check(exactHeadgearContactRaw[eyeAdjacentMaceIndex] && exactHeadgearContactRaw[eyeAdjacentMaceIndex] !== OUTLINE_COLOR, 'Mace T1 eye-adjacent regression must begin with a visible colored weapon pixel');
+check(exactHeadgearContactB[eyeAdjacentMaceIndex] === OUTLINE_COLOR, 'Complete B must move the eye-adjacent separator onto Mace T1');
+check(exactHeadgearContactC[eyeAdjacentMaceIndex] === OUTLINE_COLOR, 'Selective C must move the eye-adjacent separator onto Mace T1');
+const preservedFaceIndex = (8 * engine.SIZE) + 14;
+check(exactHeadgearContactRaw[preservedFaceIndex] && exactHeadgearContactRaw[preservedFaceIndex] !== OUTLINE_COLOR, 'Mace T1 eye regression must begin with a colored face pixel beside the eye');
+check(exactHeadgearContactB[preservedFaceIndex] === exactHeadgearContactRaw[preservedFaceIndex], 'Complete B must preserve the face pixel beside the eye');
+check(exactHeadgearContactC[preservedFaceIndex] === exactHeadgearContactRaw[preservedFaceIndex], 'Selective C must preserve the face pixel beside the eye');
+const sourceEyeIndex = (8 * engine.SIZE) + 13;
+check(exactHeadgearContactB[sourceEyeIndex] === exactHeadgearContactRaw[sourceEyeIndex], 'Complete B must preserve the one-pixel source eye');
+check(exactHeadgearContactC[sourceEyeIndex] === exactHeadgearContactRaw[sourceEyeIndex], 'Selective C must preserve the one-pixel source eye');
+for (const index of [
+  (6 * engine.SIZE) + 16,
+]) {
+  check(exactHeadgearContactB[index] === OUTLINE_COLOR, 'Complete B must retain the existing body-side Mace T1 separator at a three-way contact');
+  check(exactHeadgearContactC[index] === OUTLINE_COLOR, 'Selective C must retain the existing body-side Mace T1 separator at a three-way contact');
+}
+for (const index of [
+  (7 * engine.SIZE) + 15,
+  (9 * engine.SIZE) + 15,
+]) {
+  check(exactHeadgearContactB[index] === exactHeadgearContactRaw[index], 'Complete B must preserve hood pixels beside Mace T1');
+  check(exactHeadgearContactC[index] === exactHeadgearContactRaw[index], 'Selective C must preserve hood pixels beside Mace T1');
+}
+
 let parityCases = 0;
 const paritySpecs = [
   ...SHOWCASES.map((showcase) => showcase.spec),
@@ -647,8 +936,8 @@ for (const showcase of SHOWCASES) {
     const selective = renderMode(showcase.spec, direction, showcase.animation, showcase.frame, OUTLINE_MODE_SELECTIVE_C);
     const visibleOwners = renderVisibleOwners(showcase.spec, direction, showcase.animation, showcase.frame);
     const visibleLayers = renderVisibleLayers(showcase.spec, direction, showcase.animation, showcase.frame);
-    const completeContacts = equipmentContactMasks(visibleLayers, OUTLINE_MODE_COMPLETE_B);
-    const selectiveContacts = equipmentContactMasks(visibleLayers, OUTLINE_MODE_SELECTIVE_C);
+    const completeContacts = equipmentContactMasks(visibleLayers, none, OUTLINE_MODE_COMPLETE_B);
+    const selectiveContacts = equipmentContactMasks(visibleLayers, none, OUTLINE_MODE_SELECTIVE_C);
     const completeChanges = changedIndices(none, complete);
     const selectiveChanges = changedIndices(none, selective);
     check(completeChanges.length > 0, `Complete B added no outline to ${showcase.id} ${direction}`);
@@ -665,8 +954,12 @@ for (const showcase of SHOWCASES) {
         check(selective[index] === none[index], `Selective C changed a visible body pixel in ${showcase.id} ${direction} at ${index}`);
       }
       if (none[index] && TEST_FRONT_EQUIPMENT_LAYER_INDICES.includes(visibleLayers[index])) {
-        check(complete[index] === none[index], `Complete B changed front-pass equipment in ${showcase.id} ${direction} at ${index}`);
-        check(selective[index] === none[index], `Selective C changed front-pass equipment in ${showcase.id} ${direction} at ${index}`);
+        if (!completeContacts.frontHeadgear[index] && !completeContacts.frontBodyFallback[index]) {
+          check(complete[index] === none[index], `Complete B changed front-pass equipment outside a headgear separator in ${showcase.id} ${direction} at ${index}`);
+        }
+        if (!selectiveContacts.frontHeadgear[index] && !selectiveContacts.frontBodyFallback[index]) {
+          check(selective[index] === none[index], `Selective C changed front-pass equipment outside a headgear separator in ${showcase.id} ${direction} at ${index}`);
+        }
       }
       if (none[index] && visibleLayers[index] === TEST_HEADGEAR_LAYER_INDEX) {
         check(complete[index] === none[index], `Complete B changed foreground headgear in ${showcase.id} ${direction} at ${index}`);
@@ -716,15 +1009,18 @@ for (let caseIndex = 0; caseIndex < 1000; caseIndex++) {
   }
   for (const mode of [OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_SELECTIVE_C]) {
     const outlined = renderMode(spec, direction, animation.id, frame, mode);
+    const contactMasks = equipmentContactMasks(visibleLayers, none, mode);
     const fullContourMask = outlineMaskForOwnedPixels(
       ownerPixels,
       none,
       mode,
       engine.SIZE,
       engine.SIZE,
-      { interiorOwnerIndices: TEST_EQUIPMENT_OWNER_INDICES },
+      {
+        interiorOwnerIndices: TEST_EQUIPMENT_OWNER_INDICES,
+        haloSourceExclusionMasks: contactMasks.haloSourceExclusionMasks,
+      },
     );
-    const contactMasks = equipmentContactMasks(visibleLayers, mode);
     const violation = outlineViolation(none, outlined, contactMasks.combined);
     check(!violation, `Random case ${caseIndex} ${mode} ${direction}/${animation.id}/${frame}: ${violation}`);
     check(
@@ -748,10 +1044,15 @@ for (let caseIndex = 0; caseIndex < 1000; caseIndex++) {
           `Random case ${caseIndex} ${mode} changed a body pixel outside a front-pass separator at ${index}`,
         );
       }
-      if (none[index] && TEST_FRONT_EQUIPMENT_LAYER_INDICES.includes(visibleLayers[index])) {
+      if (
+        none[index]
+        && TEST_FRONT_EQUIPMENT_LAYER_INDICES.includes(visibleLayers[index])
+        && !contactMasks.frontHeadgear[index]
+        && !contactMasks.frontBodyFallback[index]
+      ) {
         check(
           outlined[index] === none[index],
-          `Random case ${caseIndex} ${mode} changed front-pass equipment pixel ${index}`,
+          `Random case ${caseIndex} ${mode} changed front-pass equipment pixel ${index} outside a headgear separator`,
         );
       }
       if (none[index] && visibleLayers[index] === TEST_HEADGEAR_LAYER_INDEX) {
@@ -806,15 +1107,18 @@ for (const spec of exhaustiveEquipmentSpecs) {
 
         for (const mode of [OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_SELECTIVE_C]) {
           const outlined = renderMode(spec, direction, animation.id, frame, mode);
+          const contactMasks = equipmentContactMasks(visibleLayers, none, mode);
           const contourMask = outlineMaskForOwnedPixels(
             ownerPixels,
             none,
             mode,
             engine.SIZE,
             engine.SIZE,
-            { interiorOwnerIndices: TEST_EQUIPMENT_OWNER_INDICES },
+            {
+              interiorOwnerIndices: TEST_EQUIPMENT_OWNER_INDICES,
+              haloSourceExclusionMasks: contactMasks.haloSourceExclusionMasks,
+            },
           );
-          const contactMasks = equipmentContactMasks(visibleLayers, mode);
           const violation = outlineViolation(none, outlined, contactMasks.combined);
           check(
             !violation,
@@ -852,10 +1156,15 @@ for (const spec of exhaustiveEquipmentSpecs) {
               );
               exhaustiveBodyPixelsProtected++;
             }
-            if (none[index] && TEST_FRONT_EQUIPMENT_LAYER_INDICES.includes(visibleLayers[index])) {
+            if (
+              none[index]
+              && TEST_FRONT_EQUIPMENT_LAYER_INDICES.includes(visibleLayers[index])
+              && !contactMasks.frontHeadgear[index]
+              && !contactMasks.frontBodyFallback[index]
+            ) {
               check(
                 outlined[index] === none[index],
-                `Exhaustive ${equipmentLabel} ${direction}/${animation.id}/${frame} ${mode} changed front-pass equipment pixel ${index}`,
+                `Exhaustive ${equipmentLabel} ${direction}/${animation.id}/${frame} ${mode} changed front-pass equipment pixel ${index} outside a headgear separator`,
               );
               exhaustiveFrontEquipmentPixelsProtected++;
             }
@@ -871,6 +1180,40 @@ check(exhaustiveEquipmentInteriorPixels > 0, 'Exhaustive equipment review must e
 check(exhaustiveEquipmentContactPixels > 0, 'Exhaustive equipment review must exercise equipment/body contact separators');
 check(exhaustiveBodyPixelsProtected > 0, 'Exhaustive equipment review must protect visible body pixels');
 check(exhaustiveFrontEquipmentPixelsProtected > 0, 'Exhaustive equipment review must protect front-pass equipment pixels');
+
+const algorithmPilotInteriorPixels = Object.fromEntries(
+  algorithmPilotSpecs().map(({ id }) => [id, 0]),
+);
+let algorithmPilotEquipmentModeMismatches = 0;
+for (const { id, spec } of algorithmPilotSpecs()) {
+  const equipmentPrefix = spec.weapon !== 'none' ? 'weapon' : 'shield';
+  for (const direction of engine.DIRS) {
+    for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const equipment = mergePixelLayers(
+          renderRawLayer(spec, direction, animation.id, frame, `${equipmentPrefix}-back`),
+          renderRawLayer(spec, direction, animation.id, frame, `${equipmentPrefix}-front`),
+        );
+        const exterior = outlineMaskForPixels(equipment, OUTLINE_MODE_COMPLETE_B);
+        const complete = outlineMaskForEquipmentPixels(equipment, OUTLINE_MODE_COMPLETE_B);
+        const selective = outlineMaskForEquipmentPixels(equipment, OUTLINE_MODE_SELECTIVE_C);
+        for (let index = 0; index < complete.length; index++) {
+          if (complete[index] && !exterior[index]) algorithmPilotInteriorPixels[id]++;
+          if (complete[index] !== selective[index]) algorithmPilotEquipmentModeMismatches++;
+        }
+      }
+    }
+  }
+}
+check(algorithmPilotInteriorPixels['sword-tier3-control'] === 0, 'Sword T3 control must not invent an enclosed cavity');
+check(algorithmPilotInteriorPixels['tower-tier3-control'] === 0, 'Tower T3 control must not invent an enclosed cavity');
+check(algorithmPilotInteriorPixels['bow-tier3'] > 0, 'Bow T3 must preserve its silhouette-defining opening');
+check(algorithmPilotInteriorPixels['bow-tier5'] > algorithmPilotInteriorPixels['bow-tier3'], 'Bow T5 must preserve its larger silhouette-defining opening');
+check(algorithmPilotInteriorPixels['crossbow-tier5'] > 0, 'Crossbow T5 must preserve substantial openings while suppressing tiny pockets');
+check(algorithmPilotInteriorPixels['staff-tier3'] === 0, 'Staff T3 must suppress tiny enclosed head pockets');
+check(algorithmPilotInteriorPixels['dagger-tier1'] === 0, 'Dagger T1 must not invent an enclosed cavity');
+check(algorithmPilotInteriorPixels['bone-tier3'] === 0, 'Bone T3 must suppress one-pixel lattice pockets');
+check(algorithmPilotEquipmentModeMismatches === 0, 'Equipment contour footprint must remain cardinal in both outline modes');
 
 const exhaustiveHeadgearSpecs = headgearCoverageSpecs();
 let exhaustiveHeadgearCases = 0;
@@ -898,15 +1241,18 @@ for (const spec of exhaustiveHeadgearSpecs) {
 
         for (const mode of [OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_SELECTIVE_C]) {
           const outlined = renderMode(spec, direction, animation.id, frame, mode);
+          const contactMasks = equipmentContactMasks(visibleLayers, none, mode);
           const contourMask = outlineMaskForOwnedPixels(
             ownerPixels,
             none,
             mode,
             engine.SIZE,
             engine.SIZE,
-            { interiorOwnerIndices: TEST_EQUIPMENT_OWNER_INDICES },
+            {
+              interiorOwnerIndices: TEST_EQUIPMENT_OWNER_INDICES,
+              haloSourceExclusionMasks: contactMasks.haloSourceExclusionMasks,
+            },
           );
-          const contactMasks = equipmentContactMasks(visibleLayers, mode);
           const violation = outlineViolation(none, outlined, contactMasks.combined);
           check(
             !violation,
@@ -972,6 +1318,8 @@ const manifest = {
   exhaustiveEquipmentContactPixels,
   exhaustiveBodyPixelsProtected,
   exhaustiveFrontEquipmentPixelsProtected,
+  algorithmPilotInteriorPixels,
+  algorithmPilotEquipmentModeMismatches,
   exhaustiveHeadgearCases,
   exhaustiveHeadgearPixelsProtected,
   exhaustiveHeadgearBodyPixelsProtected,
@@ -999,6 +1347,7 @@ console.log(`- Exhaustive enclosed equipment pixels verified: ${exhaustiveEquipm
 console.log(`- Exhaustive equipment-contact pixels verified: ${exhaustiveEquipmentContactPixels}`);
 console.log(`- Exhaustive visible body pixels protected: ${exhaustiveBodyPixelsProtected}`);
 console.log(`- Exhaustive front-pass equipment pixels protected: ${exhaustiveFrontEquipmentPixelsProtected}`);
+console.log(`- Algorithm pilot interior pixels: ${JSON.stringify(algorithmPilotInteriorPixels)}`);
 console.log(`- Exhaustive outlined headgear cases: ${exhaustiveHeadgearCases}`);
 console.log(`- Exhaustive foreground headgear pixels protected: ${exhaustiveHeadgearPixelsProtected}`);
 console.log(`- Exhaustive non-contact headgear-body pixels protected: ${exhaustiveHeadgearBodyPixelsProtected}`);
