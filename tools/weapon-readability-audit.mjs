@@ -64,13 +64,13 @@ function playerSpec(weapon, weaponTier) {
   };
 }
 
-function render(spec, direction, animation, frame, weaponOnly = false) {
+function render(spec, direction, animation, frame, weaponOnly = false, onOutOfBounds = null) {
   const context = new PixelContext();
   if (weaponOnly) {
-    drawSprite(context, spec, direction, animation, frame, { layer: 'weapon-back', shadow: false });
-    drawSprite(context, spec, direction, animation, frame, { layer: 'weapon-front', shadow: false, clear: false });
+    drawSprite(context, spec, direction, animation, frame, { layer: 'weapon-back', shadow: false, onOutOfBounds });
+    drawSprite(context, spec, direction, animation, frame, { layer: 'weapon-front', shadow: false, clear: false, onOutOfBounds });
   } else {
-    drawSprite(context, spec, direction, animation, frame, { shadow: false });
+    drawSprite(context, spec, direction, animation, frame, { shadow: false, onOutOfBounds });
   }
   return context.pixels;
 }
@@ -277,7 +277,8 @@ const frameAudit = [];
 for (const weapon of weapons) for (const tier of WEAPON_TIERS) for (const direction of DIRS) {
   for (const animation of ANIMS) for (let frame = 0; frame < animation.frames; frame++) {
     const spec = playerSpec(weapon.id, tier.id);
-    const weaponPixels = render(spec, direction, animation.id, frame, true);
+    const discardedPixels = [];
+    const weaponPixels = render(spec, direction, animation.id, frame, true, (pixel) => discardedPixels.push(pixel));
     const unarmed = render({ ...spec, weapon: 'none' }, direction, animation.id, frame);
     const expression = renderLayer(spec, direction, animation.id, frame, 'expression');
     const metric = frameMetrics(weaponPixels);
@@ -297,6 +298,7 @@ for (const weapon of weapons) for (const tier of WEAPON_TIERS) for (const direct
       boundsHeight: metric.boundsHeight,
       boundsArea: metric.bboxArea,
       edgeSides: metric.edgeSides.join('|'),
+      discardedPixels: discardedPixels.length,
       characterDistance: minimumPixelDistance(weaponPixels, unarmed),
       expressionOverlapPixels: expression.filter((pixel, index) => pixel && weaponPixels[index]).length,
     });
@@ -306,6 +308,7 @@ for (const weapon of weapons) for (const tier of WEAPON_TIERS) for (const direct
 const metrics = [];
 for (const weapon of weapons) for (const tier of WEAPON_TIERS) {
   const directions = DIRS.map((direction) => frameMetrics(render(playerSpec(weapon.id, tier.id), direction, 'attack', 1, true)));
+  const auditedFrames = frameAudit.filter((row) => row.weapon === weapon.id && row.tier === tier.id);
   const average = (field) => Number((directions.reduce((sum, value) => sum + value[field], 0) / directions.length).toFixed(2));
   metrics.push({
     weapon: weapon.id,
@@ -314,16 +317,18 @@ for (const weapon of weapons) for (const tier of WEAPON_TIERS) {
     averageBoundsArea: average('bboxArea'),
     maximumComponents: Math.max(...directions.map((value) => value.components)),
     edgeDirections: directions.filter((value) => value.edgeSides.length).length,
+    discardedFrames: auditedFrames.filter((row) => row.discardedPixels > 0).length,
+    discardedPixels: auditedFrames.reduce((sum, row) => sum + row.discardedPixels, 0),
   });
 }
 
 await writeFile(path.join(output, 'weapon-readability-metrics.json'), `${JSON.stringify(metrics, null, 2)}\n`);
 await writeFile(path.join(output, 'weapon-readability-metrics.csv'), [
-  'weapon,tier,averagePixels,averageBoundsArea,maximumComponents,edgeDirections',
+  'weapon,tier,averagePixels,averageBoundsArea,maximumComponents,edgeDirections,discardedFrames,discardedPixels',
   ...metrics.map((row) => Object.values(row).join(',')),
 ].join('\n'));
 await writeFile(path.join(output, 'weapon-frame-audit.json'), `${JSON.stringify(frameAudit, null, 2)}\n`);
-const frameAuditFields = ['weapon', 'tier', 'direction', 'animation', 'frame', 'pixels', 'components', 'minX', 'minY', 'maxX', 'maxY', 'boundsWidth', 'boundsHeight', 'boundsArea', 'edgeSides', 'characterDistance', 'expressionOverlapPixels'];
+const frameAuditFields = ['weapon', 'tier', 'direction', 'animation', 'frame', 'pixels', 'components', 'minX', 'minY', 'maxX', 'maxY', 'boundsWidth', 'boundsHeight', 'boundsArea', 'edgeSides', 'discardedPixels', 'characterDistance', 'expressionOverlapPixels'];
 await writeFile(path.join(output, 'weapon-frame-audit.csv'), [
   frameAuditFields.join(','),
   ...frameAudit.map((row) => frameAuditFields.map((field) => row[field] ?? '').join(',')),

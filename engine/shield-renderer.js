@@ -422,7 +422,7 @@ function drawTier5Full(S, R, x, y, shield) {
   if (shield === 'arcane') {
     // Event Horizon: an asymmetric orbit of runes around a lightless singularity.
     S(x + 2, y - 3, ARTIFACT.core);
-    S(x - 1, y - 2, ARTIFACT.frost); S(x + 5, y - 1, ARTIFACT.astral);
+    S(x - 1, y - 2, ARTIFACT.frost); S(x + 5, y, ARTIFACT.astral);
     S(x - 2, y + 1, ARTIFACT.astral); S(x + 6, y + 2, ARTIFACT.frost);
     S(x - 2, y + 6, ARTIFACT.frost); S(x + 6, y + 5, ARTIFACT.astral);
     S(x, y + 9, ARTIFACT.astral); S(x + 4, y + 9, ARTIFACT.frost);

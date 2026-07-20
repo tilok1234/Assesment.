@@ -24,7 +24,8 @@ Run `npm run review:weapons` to generate the review dashboard, SVG contact sheet
 - Pass 4 (complete and user-approved): spear, bow, crossbow; strengthen tips, limbs, strings, stocks, and profile views.
 - Pass 5 (complete and user-approved): staff, wand, spellbook; the staff keeps a long connected shaft and crown, the wand remains a compact casting focus, and the spellbook preserves a readable cover, spine, and widening page spread without detached effects.
 - Pass 6 (complete): all 15 Tier 4 and Tier 5 families were compared assembled and weapon-only at native and enlarged scale. The review accepted the current physical silhouettes without forced pixel removal; global Tier 5 density and bounds budgets now prevent future ornament growth beyond the accepted library.
-- Pass 7 (complete): all 3,600 family/tier/direction/animation frames passed exact left/right mirroring, direction-aware front/back layer routing and recomposition, motion-phase diversity, front-view identity retention, detachment, connectivity, and native export pixel/order checks. Enlarged and true-native visual audits confirmed that reported frame-edge contacts preserve complete contours, so no evidence-backed renderer correction was required.
+- Pass 7 (superseded by stronger instrumentation): all 3,600 family/tier/direction/animation frames passed the original pixel and motion checks, but those checks did not record pixels discarded before the final canvas write.
+- Pass 8 (complete, 2026-07-20): durable out-of-canvas instrumentation exposed 259 cropped frames and 915 lost pixels in the prior attack pose. The shared in-frame correction now leaves all 3,600 cases at zero discarded pixels while preserving motion phases, routing, mirroring, connectivity, and native export parity.
 
 After each family pass, compare the focused review dashboard with the full-library dashboard before continuing.
 
@@ -45,15 +46,16 @@ The Crossbow T5 prototype must preserve the existing 24x24 frame contract, ancho
 
 ### Animation frame-safety correction
 
-An instrumented audit confirmed that 259 of the 3,600 weapon frames attempt to draw 915 pixels outside the 24x24 canvas. Every failure occurs during `attack`. The affected families are Warhammer, Club, Mace, Staff, Axe, Wand, Spellbook, Greatsword, Rapier, Sword, Scimitar, and Spear; Dagger, Bow, and Crossbow have no discarded weapon pixels.
+The pre-repair instrumented audit confirmed that 259 of the 3,600 weapon frames attempted to draw 915 pixels outside the 24x24 canvas. Every failure occurred during `attack`. The affected families were Warhammer, Club, Mace, Staff, Axe, Wand, Spellbook, Greatsword, Rapier, Sword, Scimitar, and Spear; Dagger, Bow, and Crossbow had no discarded weapon pixels.
 
-This is primarily a shared pose problem rather than twelve independent source-art failures. Attack geometry already reaches the safe frame limits, then the humanoid rig applies another directional two-pixel lunge. A read-only probe without that global translation produced zero weapon crop cases.
+This was a shared pose problem rather than twelve independent source-art failures. Attack geometry already reached the safe frame limits, then the humanoid rig applied another directional two-pixel lunge.
 
-Before the Crossbow T5 source-art prototype:
+Completed correction:
 
-1. add a validator for attempted out-of-canvas writes;
-2. prototype an in-frame attack motion that keeps hand/weapon attachment and impact without translating the complete character outside its cell;
-3. verify all 3,600 weapon frames and compare animation playback at native and enlarged scale;
-4. stop for approval before changing any weapon source identity.
+1. `drawSprite` accepts an optional out-of-bounds diagnostic callback;
+2. humanoid body, shield, and headgear stay on their registered anchor during attacks;
+3. the weapon keeps an in-frame one-pixel perpendicular follow-through/recoil so strike and hurt phases remain distinct;
+4. all 3,600 weapon frames now report zero discarded pixels and passed enlarged browser review;
+5. no weapon source identity changed, so Crossbow T5 remains the next independent art prototype.
 
 Edge contact remains advisory. Attempted writes beyond `x=0..23` or `y=0..23` are contract failures.

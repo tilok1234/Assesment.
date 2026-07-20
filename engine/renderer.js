@@ -198,13 +198,16 @@ function drawOutfitIdentity(S, R, d, u, BT, outfit, oc, build) {
 }
 
 // ---------------- pixel buffer ----------------
-function makeG() {
+function makeG(onOutOfBounds = null) {
   const px = new Array(SIZE * SIZE).fill(null);
   const g = {
     px,
     set(x, y, c) {
       x |= 0; y |= 0;
-      if (x < 0 || y < 0 || x >= SIZE || y >= SIZE) return;
+      if (x < 0 || y < 0 || x >= SIZE || y >= SIZE) {
+        if (onOutOfBounds) onOutOfBounds({ x, y, color: c });
+        return;
+      }
       px[y * SIZE + x] = c;
     },
     rect(x, y, w, h, c) {
@@ -463,15 +466,22 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   const HT = small ? 5 : 3;      // head top
   const BT = small ? 13 : 12;    // torso top
   const u = p.bob;               // upper-body bob offset
-  const ox = d === 'down' ? 0 : d === 'up' ? 0 : p.lunge; // side lunge x
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // Humanoid weapons and headgear can already reach a canvas edge, so the body,
+  // shield, and headgear remain on their registration anchor during attacks.
+  // The weapon keeps a one-pixel perpendicular follow-through/recoil instead of
+  // the old forward whole-rig lunge that discarded edge pixels.
+  const ox = 0;
+  const oy = 0;
   const S = (x, y, c) => g.set(x + ox, y + oy, c);
   const R = (x, y, w, h, c) => g.rect(x + ox, y + oy, w, h, c);
   // Player weapons share the animated hand's idle bob and walk swing. Attack geometry already
-  // encodes wind/strike/recover offsets and still inherits the humanoid lunge through S/R.
+  // encodes wind/strike/recover offsets, with a small in-frame follow-through/recoil for phase clarity.
   const weaponRigY = C.weaponFollowRig ? u + (p.wep === 'hold' ? p.arm : 0) : 0;
-  const weaponS = (x, y, c) => S(x, y + weaponRigY, c);
-  const weaponR = (x, y, w, h, c) => R(x, y + weaponRigY, w, h, c);
+  const weaponPoseShift = p.flash || p.lunge === 2 ? 1 : 0;
+  const weaponShiftX = d === 'up' ? weaponPoseShift : (d === 'down' ? -weaponPoseShift : 0);
+  const weaponShiftY = d === 'right' ? weaponPoseShift : 0;
+  const weaponS = (x, y, c) => S(x + weaponShiftX, y + weaponRigY + weaponShiftY, c);
+  const weaponR = (x, y, w, h, c) => R(x + weaponShiftX, y + weaponRigY + weaponShiftY, w, h, c);
 
   const skin = C.skin, oc = C.oc, hair = C.hair;
   const gear = C.gear || 'none';
@@ -1155,9 +1165,9 @@ function drawGear(S, R, d, u, HT, hx, gear, oc, C) {
   }
   if (gear === 'wizard') {
     R(hx - 2, HT + u + 1, 12, 1, oc[1]);
-    R(hx + 1, HT + u - 3, 4, 4, oc[0]);
-    R(hx + 2, HT + u - 4, 2, 1, oc[0]);
-    S(hx + 4, HT + u - 3, oc[1]);
+    R(hx + 1, HT + u - 2, 4, 3, oc[0]);
+    R(hx + 2, HT + u - 3, 2, 1, oc[0]);
+    S(hx + 4, HT + u - 2, oc[1]);
     S(hx + 1, HT + u, oc[1]);
   }
   if (gear === 'horns') {
@@ -2863,7 +2873,7 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
     ctx.fillRect(sh.x + 1, 23, sh.w - 2, 1);
   }
 
-  const g = makeG();
+  const g = makeG(typeof opts.onOutOfBounds === 'function' ? opts.onOutOfBounds : null);
   const HUMANOID_FAMS = ['goblin', 'skeleton', 'zombie', 'imp', 'elf', 'dwarf', 'bandit', 'cultist', 'orc', 'ogre', 'troll', 'kobold', 'gnoll', 'ratfolk', 'lizardfolk', 'minotaur', 'demon', 'cyclops', 'harpy'];
   if (spec.kind === 'effect' && (renderLayer === 'complete' || renderLayer === 'body')) {
     const category = find(COMBAT_EFFECTS, spec.category);

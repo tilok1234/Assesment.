@@ -72,9 +72,11 @@ Root-cause probe:
 - A no-write in-memory probe with the global attack/hurt translation disabled reduced weapon cropping from 915 pixels to zero and removed all Plumed/Horned helm cropping.
 - The Wizard hat still lost 72 pixels in 36 cases during that probe because its base tip geometry begins at `y=-1`; it needs its own source-geometry correction.
 
-This probe changed no project file and is evidence for the repair plan, not an approved implementation.
+Those figures are the pre-repair baseline. The approved implementation below now preserves them as regression evidence.
 
 ## Phase 0 - Establish a Safe Baseline
+
+Status: complete. The approved local-only checkpoint is commit `6667c8f` (`Checkpoint equipment readability baseline`).
 
 1. Inspect the current branch, working tree, and existing checkpoint without changing them.
 2. Separate pre-existing user work from the outline/readability work.
@@ -86,7 +88,19 @@ The checkpoint is a safety boundary, not permission to reset to it automatically
 
 ## Phase 1 - Animation Frame-Safety Prototype
 
-This phase comes before source-art redesign because the fixed 24x24 export contract is currently violated.
+Status: complete and browser-reviewed on 2026-07-20.
+
+The renderer now reports attempted out-of-canvas writes through an optional diagnostic callback. Humanoid attacks keep the body, shield, and headgear on their registered anchor while the weapon uses a one-pixel perpendicular follow-through/recoil for phase clarity. The Wizard hat tip was moved into the canvas without shortening unrelated hats. A validator-discovered Arcane T5 shield rune was also moved one pixel clear of the face during its strike cycle.
+
+Verified result:
+
+- all 3,600 weapon family/tier/direction/animation frames produce zero discarded pixels;
+- all 528 equipped-headgear animation cases produce zero discarded pixels;
+- attack and hurt phase diversity, hand/weapon routing, exact left/right mirroring, native export parity, and shield face clearance still pass;
+- Plumed and Horned helms required no source-art changes after the shared pose correction;
+- browser playback review accepted Warhammer T5 with Wizard hat, Plumed hurt, Horned attack, and the outline showcase matrix.
+
+Implementation steps retained for history:
 
 1. Add a durable validator that records attempted out-of-canvas writes separately from ordinary edge contact.
 2. Prototype replacing the shared whole-character directional attack translation with in-frame strike motion while preserving the four attack phases, hand/weapon attachment, direction mirroring, and perceived impact.
@@ -94,7 +108,7 @@ This phase comes before source-art redesign because the fixed 24x24 export contr
 4. Correct the Wizard hat's always-too-high tip geometry separately; do not shorten every hat.
 5. Verify Plumed and Horned helms after the shared pose correction before changing their art.
 
-Stop for visual approval after the shared pose prototype and again after the Wizard hat correction. Do not combine these changes with Crossbow T5 art or outline logic.
+The frame-safety prototype and Wizard correction were visually accepted together. Crossbow T5 source art and outline logic remain separate work.
 
 ## Phase 2 - Crossbow Source-Art Prototype
 
@@ -200,4 +214,4 @@ Stop immediately if a change:
 
 ## Next Action
 
-The documentation alignment, complete weapon reassessment, and animation frame-safety audit are finished. Next present the exact safe-baseline checkpoint scope. After approval, create that checkpoint, then begin only the shared attack frame-safety prototype. Crossbow T5 source art follows only after the animation crop is resolved and approved.
+The safe-baseline checkpoint and animation frame-safety correction are complete. The next separate prototype is Crossbow T5 source art. Do not mix it with the accepted pose/headgear correction or broaden it to other tiers without new visual evidence.

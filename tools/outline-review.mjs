@@ -22,17 +22,17 @@ const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const outputFlag = process.argv.indexOf('--out');
 const output = path.resolve(root, outputFlag >= 0 ? process.argv[outputFlag + 1] : 'outline-review');
 
-// These hashes are intentionally committed after being captured from 4d26784.
-// They protect the untouched renderer independently of the new outline code.
+// These hashes were recaptured after the reviewed 2026-07-20 frame-safety correction.
+// They protect the accepted renderer independently of the outline algorithm.
 const EXPECTED_BASELINE_HASHES = Object.freeze({
-  'baseline-sword': 'f1845f202376cd487b63025c99637895710991b0a88670f5aebc212a3647da92',
-  'plumed-paladin': 'a052951ef83c48fac768d4eb75abdc0cc36e3934e0671cb9fd42cd8e024a94f8',
-  'lizard-spearmaster': '8e9677f9235fd9e140bb9890c056ead4cba5eca6910dc2a4b2ee6eab2e4b1140',
-  'tiefling-arcanist': '4487f6ebc1017b6df4317d682643eb3c5bdd955ce583223d6e090e4ec088c832',
-  'afro-tower-guard': '16f371e06ab944b2b2bdedc5331c4f9be74b507428385e76c75099cded234291',
-  'braided-ranger': '5d8a4b912ac090befb003493b14b573566fae0a1d16ddb902bfa9ad535e41ef1',
-  'skull-mask-rogue': '87797fd02c976d52338f7216185e2216f169f521d76b70aa76b39c34bff9c7a3',
-  'dwarf-cleric': 'f6ced0cf1715a384b51a7eccb4a2e4570304a94111078fb7ae47b3da7ee90c85',
+  'baseline-sword': '8937f39bf1861e532acfe373e14a80ce6df550c147fff71e8d078eaea848098f',
+  'plumed-paladin': 'bc67b1ae73a04820dc7a808d435ee8e1930f88d874543bfc7632ec5ab7b47d75',
+  'lizard-spearmaster': 'a70c29f8f729656c4a14957cd112815d6c61e25ece7c6ba2836206ddf435c1b0',
+  'tiefling-arcanist': '0637d03788f157756e168ded5642d21c7120981e3738220b8b83c7df8dd1a0df',
+  'afro-tower-guard': 'e550e9cde43029cb06638abb72a0506a08769db240bd5fd56ca1dc8172589cd3',
+  'braided-ranger': 'fede741627915590c2273d6bc5b98c8756a8ceabd5c327a4040e9f35069e853c',
+  'skull-mask-rogue': 'aafb2466efb03c0f111678c32d9b74674bd11d7fc6a6a9489bbf2bcb878aadd4',
+  'dwarf-cleric': 'f75245f48e5e78c0f017bc1975120b21e5c5b048760f51c9d80ca2dd92ccce97',
 });
 
 const BASE_PLAYER = Object.freeze({
@@ -1295,7 +1295,7 @@ check(exhaustiveHeadgearBodyPixelsProtected > 0, 'Exhaustive headgear review mus
 const baselineHashes = Object.fromEntries(SHOWCASES.map((showcase) => [showcase.id, hashAllFrames(showcase.spec)]));
 if (Object.keys(EXPECTED_BASELINE_HASHES).length) {
   for (const [id, expected] of Object.entries(EXPECTED_BASELINE_HASHES)) {
-    check(baselineHashes[id] === expected, `${id} baseline drifted from 4d26784`);
+    check(baselineHashes[id] === expected, `${id} baseline drifted from the reviewed frame-safety renderer`);
   }
   check(Object.keys(baselineHashes).length === Object.keys(EXPECTED_BASELINE_HASHES).length, 'baseline hash coverage changed');
 }
@@ -1304,6 +1304,7 @@ await mkdir(output, { recursive: true });
 const comparison = await writeComparisonSvg();
 const manifest = {
   baselineCommit: '4d26784b16d945b04aca9ff4f7a15b5435ab82ff',
+  baselineReference: 'frame-safety-2026-07-20',
   modes: [OUTLINE_MODE_NONE, OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_SELECTIVE_C],
   ownershipOrder: [...OUTLINE_LAYER_ORDER],
   baselineHashes,

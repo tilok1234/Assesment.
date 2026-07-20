@@ -1446,6 +1446,7 @@ const oppositeWeaponLayerFor = (direction) => direction === 'up' ? 'weapon-front
 const minimumMotionPhases = { idle: 2, walk: 2, attack: 3, hurt: 2 };
 const tierFiveMaximumPixelRatio = 1.6;
 const tierFiveMaximumBoundsRatio = 1.75;
+let frameSafeWeaponCases = 0;
 
 for (const weapon of readableWeaponFamilies) {
   const tierSignatures = [];
@@ -1456,7 +1457,16 @@ for (const weapon of readableWeaponFamilies) {
       for (const animation of engine.ANIMS) {
         const motionSignatures = [];
         for (let frame = 0; frame < animation.frames; frame++) {
-          const pixels = renderPixels(spec, direction, animation.id, frame, { layer: weaponLayerFor(direction) });
+          const discardedPixels = [];
+          const pixels = renderPixels(spec, direction, animation.id, frame, {
+            layer: weaponLayerFor(direction),
+            onOutOfBounds: (pixel) => discardedPixels.push(pixel),
+          });
+          frameSafeWeaponCases++;
+          check(
+            discardedPixels.length === 0,
+            `${weapon} ${tier.id} discarded ${discardedPixels.length} pixel(s) outside the 24x24 canvas in ${direction} ${animation.id} frame ${frame}`,
+          );
           const wrongLayer = renderPixels(spec, direction, animation.id, frame, { layer: oppositeWeaponLayerFor(direction) });
           const unarmed = renderPixels({ ...spec, weapon: 'none' }, direction, animation.id, frame);
           const complete = renderPixels(spec, direction, animation.id, frame);
@@ -1518,6 +1528,25 @@ for (const tier of engine.WEAPON_TIERS) {
       { layer: weaponLayerFor(direction) },
     ).map((pixel) => pixel ? 'x' : '.').join(''));
     check(new Set(signatures).size === readableWeaponFamilies.length, `completed readability-pass weapons must keep distinct ${tier.id} ${direction} silhouettes`);
+  }
+}
+
+let frameSafeHeadgearCases = 0;
+for (const headgear of engine.HEADGEAR.filter((entry) => entry.id !== 'none')) {
+  const spec = { ...straightBladeBase, headgear: headgear.id, weapon: 'none', weaponTier: 'tier1' };
+  for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+    for (let frame = 0; frame < animation.frames; frame++) {
+      const discardedPixels = [];
+      renderPixels(spec, direction, animation.id, frame, {
+        layer: 'headgear',
+        onOutOfBounds: (pixel) => discardedPixels.push(pixel),
+      });
+      frameSafeHeadgearCases++;
+      check(
+        discardedPixels.length === 0,
+        `${headgear.id} headgear discarded ${discardedPixels.length} pixel(s) outside the 24x24 canvas in ${direction} ${animation.id} frame ${frame}`,
+      );
+    }
   }
 }
 
@@ -2089,4 +2118,6 @@ console.log(`- Enemy families: ${manifest.enemies.length}`);
 console.log(`- Enemy variants: ${enemyRefs.length}`);
 console.log(`- Combat effects: ${effectRefs.length}`);
 console.log(`- Player samples: ${playerRefs.length}`);
+console.log(`- Frame-safe weapon cases: ${frameSafeWeaponCases}`);
+console.log(`- Frame-safe headgear cases: ${frameSafeHeadgearCases}`);
 console.log(`- Validated PNG sheets: ${actualPngs.length} (${expectedWidth}x${expectedHeight})`);

@@ -60,18 +60,25 @@ Mechanical audit values such as detached distance, expression overlap, and edge 
 
 The canonical sequence is `EQUIPMENT_READABILITY_PLAN.md`. Historical assessment evidence is retained in `EQUIPMENT_OUTLINE_ASSESSMENT.md`.
 
-## Animation Frame-Safety Finding
+## Animation Frame-Safety Correction
 
-The user's report that weapon attacks and some hats cut out of the frame was confirmed with an instrumented read-only render:
+The user's report that weapon attacks and some hats cut out of the frame was confirmed and corrected on 2026-07-20. Pre-repair evidence:
 
 - 259 of 3,600 weapon frames discard 915 pixels, all during attacks.
 - The affected weapon families are Warhammer, Club, Mace, Staff, Axe, Wand, Spellbook, Greatsword, Rapier, Sword, Scimitar, and Spear.
 - Dagger, Bow, and Crossbow produced no discarded weapon pixels.
 - 37 of 528 headgear cases discard 101 pixels: Wizard hat (33 cases), Plumed helm (3), and Horned helm (1).
 - A diagnostic probe without the shared whole-character attack/hurt translation reduced weapon cropping to zero and removed Plumed/Horned helm cropping.
-- Wizard hat still cropped because its tip geometry begins above the canvas, so it requires a separate targeted correction.
+- Wizard hat still cropped because its tip geometry began above the canvas.
 
-No source file was changed by the diagnostic probe. The repair must first add a durable out-of-canvas validator, then visually test a shared in-frame attack-pose correction. Do not shrink all weapons or hats, and do not mix this work with Crossbow T5 or outline changes.
+Implemented result:
+
+- the pixel buffer exposes an optional diagnostic callback for attempted out-of-canvas writes;
+- humanoid attacks keep body, shield, and headgear registered while weapon follow-through/recoil moves one pixel on the safe perpendicular axis;
+- Wizard hat tip geometry is fully in-frame; Plumed and Horned helms needed no direct art edit;
+- all 3,600 weapon cases and all 528 headgear cases report zero discarded pixels;
+- the full project validator, weapon audit, outline review, and browser playback inspection pass;
+- an Arcane T5 shield orbit rune uncovered by the new pose tests was moved one pixel clear of the face.
 
 ## Runtime Evidence
 
@@ -79,9 +86,11 @@ The existing executable was older than the current source, so `npm.cmd run tauri
 
 The rebuilt executable was tested with the actual selectors and modes. Crossbow T5 remained firearm-like in None, Complete B, and Selective C, including right-facing and down-facing attack views. A non-intrusive in-app browser review reproduced the same result without taking over the Windows desktop. This confirms the outline makes separation clearer but cannot repair the source silhouette.
 
+After the frame-safety correction, `npm.cmd run tauri:build:exe` rebuilt the release executable again at `src-tauri\target\release\sprite-assembler.exe`. The stale earlier process that locked that exact file was closed first; the corrected executable was not launched, because browser playback supplied the requested non-intrusive visual QA.
+
 ## Validation Commands
 
-Use the following before proposing the current safe-baseline checkpoint:
+Use the following before proposing another checkpoint:
 
 ```powershell
 npm.cmd run check
@@ -95,11 +104,8 @@ The generated `weapon-review/` and `outline-review/` artifacts are review output
 
 ## Next Action
 
-1. Finish the full validation gate.
-2. Show the exact checkpoint file scope and validation results to the user.
-3. Create the checkpoint only after explicit approval.
-4. Begin only the shared attack frame-safety prototype and stop for visual approval.
-5. Correct the Wizard hat geometry separately and stop for visual approval.
-6. Begin the Crossbow T5 source-art prototype only after frame safety is approved.
-7. Preserve the 24x24 contract, hand attachment, direction mirroring, timing, and unrelated renderer logic.
-8. Stop after each prototype before considering another tier or shield work.
+1. Preserve local checkpoint `6667c8f`; it was approved and created without pushing.
+2. Keep the completed frame-safety implementation separate from weapon source-identity work.
+3. Begin the Crossbow T5 source-art prototype only after the user accepts this completed frame-safety pass.
+4. Preserve the 24x24 contract, hand attachment, direction mirroring, timing, and unrelated renderer logic.
+5. Stop after the Crossbow prototype before considering another tier or shield work.
