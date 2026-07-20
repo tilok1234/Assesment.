@@ -7,24 +7,19 @@ Repository: `tilok1234/8-bit-sprite-assembler`
 ## Current State
 
 - Branch: `codex/optional-sprite-outlines`
-- Current committed checkpoint: `aaa7a89` (`Checkpoint equipment outline assessment`), local only
+- Previous committed checkpoint: `220c92a` (`Fix equipment animation frame safety`); the approved Crossbow T5 source-art checkpoint is the commit containing this handoff update. Both are local only.
 - Remote branch point: `674d926` on `origin/codex/optional-sprite-outlines`
-- The local branch is one commit ahead of its upstream.
-- The working tree contains reviewed but uncommitted outline/readability implementation and documentation.
-- No weapon or shield source artwork has changed in this worktree.
+- This checkpoint leaves the local branch four commits ahead of its upstream.
+- This checkpoint contains the user-approved Crossbow T5 source-art correction and its status documentation.
+- Crossbow T5 is the only weapon source artwork changed in this worktree; no shield source artwork has changed.
 - Do not reset, restore, stash, commit, push, or merge without first showing the exact scope and obtaining approval.
 
-Current changed-file scope before final validation:
+Current changed-file scope before the approved Crossbow checkpoint:
 
-- `ARCHITECTURE.md`
-- `EQUIPMENT_OUTLINE_ASSESSMENT.md`
-- `EQUIPMENT_READABILITY_PLAN.md` (new)
-- `HANDOFF.md`
-- `OUTLINE_RENDERING_PLAN.md`
-- `README.md`
+- `engine/weapon-renderer.js`
+- `EQUIPMENT_READABILITY_PLAN.md`
 - `WEAPON_READABILITY_PLAN.md`
-- `engine/outline-renderer.js`
-- `tools/outline-review.mjs`
+- `HANDOFF.md`
 
 ## Outline Baseline
 
@@ -51,8 +46,8 @@ The full weapon audit was regenerated on 2026-07-20:
 
 Visual verdict:
 
-- Current baseline accepted: Sword, Greatsword, Scimitar, Rapier, Dagger, Axe, Mace, Warhammer, Spear, Club, Bow, Staff, Wand, and Spellbook.
-- Source-art iteration required: Crossbow T5. It can read like a compact firearm even without a shield.
+- Current source-identity baseline accepted: Sword, Greatsword, Scimitar, Rapier, Dagger, Axe, Mace, Warhammer, Spear, Club, Bow, Crossbow, Staff, Wand, and Spellbook.
+- Crossbow T5's user-approved correction uses brighter connected recurved limbs and a reinforced stock/grip so it no longer reads as a compact firearm.
 - Separate later composition issue: Crossbow T2 with a shield.
 - Local monitoring only: Mace/Warhammer protrusions and thin Staff/Wand/Dagger/Rapier frames.
 
@@ -86,6 +81,8 @@ The existing executable was older than the current source, so `npm.cmd run tauri
 
 The rebuilt executable was tested with the actual selectors and modes. Crossbow T5 remained firearm-like in None, Complete B, and Selective C, including right-facing and down-facing attack views. A non-intrusive in-app browser review reproduced the same result without taking over the Windows desktop. This confirms the outline makes separation clearer but cannot repair the source silhouette.
 
+The later Crossbow T5 source-art prototype was reviewed in the browser from front/down, back/up, left, and right through idle, walk, attack, and hurt. None, Complete B, and Selective C passed without a shield and with a representative Tower shield. The user accepted the corrected silhouette on 2026-07-20. The executable has not been rebuilt for this accepted source-art checkpoint yet.
+
 After the frame-safety correction, `npm.cmd run tauri:build:exe` rebuilt the release executable again at `src-tauri\target\release\sprite-assembler.exe`. The stale earlier process that locked that exact file was closed first; the corrected executable was not launched, because browser playback supplied the requested non-intrusive visual QA.
 
 ## Validation Commands
@@ -104,8 +101,8 @@ The generated `weapon-review/` and `outline-review/` artifacts are review output
 
 ## Next Action
 
-1. Preserve local checkpoint `6667c8f`; it was approved and created without pushing.
-2. Keep the completed frame-safety implementation separate from weapon source-identity work.
-3. Begin the Crossbow T5 source-art prototype only after the user accepts this completed frame-safety pass.
-4. Preserve the 24x24 contract, hand attachment, direction mirroring, timing, and unrelated renderer logic.
-5. Stop after the Crossbow prototype before considering another tier or shield work.
+1. Preserve the approved local outline, readability-baseline, frame-safety, and Crossbow T5 checkpoints; none are pushed.
+2. Keep the accepted Crossbow T5 source-art change separate from all shield work.
+3. The next single prototype is Bone T3 shield structure.
+4. Preserve the 24x24 contract, equipment placement, animation timing, outline logic, and unrelated shield tiers/families.
+5. Stop after Bone T3 and request visual approval before evaluating Bone T4 or T5.

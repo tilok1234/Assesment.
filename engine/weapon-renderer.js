@@ -663,6 +663,12 @@ function readableProjectileStyle(weapon, tier) {
     shaft: '#51355f', shaftDark: '#2d2441', limb: TIER4.void, limbLight: TIER4.frost,
     limbDark: '#34235f', string: '#b9d4da', stock: '#5d3d54', stockDark: '#30233b', bolt: TIER4.frost, tip: TIER4.core,
   };
+  if (weapon === 'crossbow') return {
+    edge: theme.apex, light: theme.divine, core: theme.cosmic, shadow: theme.abyss, accent: theme.rift,
+    shaft: theme.abyss, shaftDark: '#172024', limb: theme.divine, limbLight: theme.apex,
+    limbDark: theme.rift, string: '#6f6258', stock: '#6f402e', stockDark: theme.abyss,
+    bolt: theme.cosmic, tip: theme.apex,
+  };
   return {
     edge: theme.apex, light: theme.divine, core: theme.cosmic, shadow: theme.abyss, accent: theme.rift,
     shaft: weapon === 'spear' ? '#52735b' : theme.abyss, shaftDark: '#172024', limb: theme.cosmic, limbLight: theme.divine,
@@ -842,15 +848,30 @@ function drawReadableCrossbow(S, d, p, C) {
       : [strike ? 14 : 17, 13];
   const plot = orientedRangedPlotter(S, d, origin[0], origin[1]);
 
-  plot.line(0, -span, 1, -middle, style.limb);
-  plot.line(1, -middle, 2, 0, style.limb);
-  plot.line(2, 0, 1, middle, style.limbDark);
-  plot.line(1, middle, 0, span, style.limbDark);
-  plot.pixel(0, -span, style.limbLight);
-  plot.pixel(0, span, style.limbLight);
-  if (tier >= 3) {
-    plot.pixel(1, -middle, style.limbLight);
-    plot.pixel(1, middle, style.accent);
+  if (tier === 5) {
+    // The Apocalypse Engine keeps an unmistakable recurved bow in front of a
+    // reinforced stock. Bright connected limbs carry the silhouette; the
+    // darker string remains visible without becoming a firearm-like barrel.
+    plot.line(0, -span, 1, -middle, style.limbLight);
+    plot.line(1, -middle, 3, -1, style.limb);
+    plot.line(3, -1, 3, 1, style.accent);
+    plot.line(3, 1, 1, middle, style.limbDark);
+    plot.line(1, middle, 0, span, style.limbDark);
+    plot.pixel(-1, -span + 1, style.light);
+    plot.pixel(-1, span - 1, style.accent);
+    plot.pixel(2, -1, style.limbLight);
+    plot.pixel(2, 1, style.limb);
+  } else {
+    plot.line(0, -span, 1, -middle, style.limb);
+    plot.line(1, -middle, 2, 0, style.limb);
+    plot.line(2, 0, 1, middle, style.limbDark);
+    plot.line(1, middle, 0, span, style.limbDark);
+    plot.pixel(0, -span, style.limbLight);
+    plot.pixel(0, span, style.limbLight);
+    if (tier >= 3) {
+      plot.pixel(1, -middle, style.limbLight);
+      plot.pixel(1, middle, style.accent);
+    }
   }
 
   const latch = strike ? 2 : wind ? -2 : -1;
@@ -858,8 +879,17 @@ function drawReadableCrossbow(S, d, p, C) {
   plot.line(latch, 0, 0, span, style.string);
   plot.line(-back, 0, 3, 0, style.stock);
   plot.pixel(-back, 0, style.stockDark);
-  plot.line(-1, 0, -2, 2, style.stockDark);
-  plot.pixel(-1, 1, style.accent);
+  if (tier === 5) {
+    plot.line(-back + 1, 1, 0, 1, style.stockDark);
+    plot.pixel(-back, 1, style.stockDark);
+    plot.line(-1, -1, 3, -1, style.accent);
+    plot.pixel(1, -1, style.light);
+    plot.line(-1, 1, -3, 3, style.stockDark);
+    plot.pixel(-2, 2, style.accent);
+  } else {
+    plot.line(-1, 0, -2, 2, style.stockDark);
+    plot.pixel(-1, 1, style.accent);
+  }
 
   const boltEnd = strike ? (d === 'up' ? 8 : 7) : 3;
   plot.line(latch, 0, boltEnd, 0, style.bolt);

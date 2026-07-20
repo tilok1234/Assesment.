@@ -20,7 +20,7 @@ This plan supersedes any earlier recommendation to keep expanding the general ou
 The outline system is a usable baseline and is frozen for the first asset passes.
 
 - Crossbow T2 reads as a crossbow in isolation but becomes difficult to read when it overlaps another dense piece of equipment. That is primarily a composition problem.
-- Crossbow T5 has a silhouette problem even without a shield. That is a source-art problem.
+- Crossbow T5's source-art correction is accepted: brighter connected recurved limbs now carry the silhouette while the darker stock, grip, string, and firing axis remain secondary.
 - Tower and Kite shields provide the clearest shield silhouettes and are the control references.
 - Bone T3-T5, Arcane T3-T5, and Buckler T4-T5 do not provide enough solid shield structure. More outline would mostly add clutter.
 - Heater, Round, and Oval are secondary review candidates, not first-pass failures.
@@ -38,8 +38,7 @@ The complete weapon review was regenerated and inspected before choosing a proto
 
 Current art verdict:
 
-- Accept their source identities as the current baseline: Sword, Greatsword, Scimitar, Rapier, Dagger, Axe, Mace, Warhammer, Spear, Club, Bow, Staff, Wand, and Spellbook. Animation frame-safety is a separate gate below.
-- Iterate: Crossbow T5 source art only.
+- Accept their source identities as the current baseline: Sword, Greatsword, Scimitar, Rapier, Dagger, Axe, Mace, Warhammer, Spear, Club, Bow, Crossbow, Staff, Wand, and Spellbook. Crossbow T5 includes the accepted source-art correction below. Animation frame-safety is a separate gate below.
 - Defer to the separate composition phase: Crossbow T2 combined with a shield.
 - Monitor locally rather than applying a global rule: Mace/Warhammer protrusions and thin Staff/Wand/Dagger/Rapier frames.
 
@@ -114,6 +113,8 @@ The frame-safety prototype and Wizard correction were visually accepted together
 
 Prototype: Crossbow T5.
 
+Status: complete and user-approved on 2026-07-20.
+
 Goal: make the object read as a crossbow before outline or shield context is added.
 
 Allowed changes:
@@ -138,9 +139,20 @@ Acceptance check:
 
 Stop after the prototype and request visual approval. Extend the approach to another crossbow tier only if the prototype is accepted and that tier independently needs it.
 
+Accepted result:
+
+- Crossbow T5 alone received a tier-specific palette and connected recurved limb structure, plus a reinforced stock and grip;
+- tiers 1-4, anchors, equipment placement, animation poses, timing, layer order, and outline logic stayed unchanged;
+- front/down, back/up, left, and right views read as a crossbow through idle, walk, attack, and hurt;
+- None, Complete B, and Selective C passed without a shield and with a representative Tower shield;
+- all 3,600 weapon-frame cases remained inside the 24x24 canvas with zero discarded pixels;
+- project, weapon, outline, build, and diff validation passed before approval.
+
 ## Phase 3 - Shield Structure Prototypes
 
 The shield work is source-art work. It must not be mixed with outline-algorithm changes.
+
+Status: next. Begin with Bone T3 only and stop for visual approval.
 
 Order:
 
@@ -214,4 +226,4 @@ Stop immediately if a change:
 
 ## Next Action
 
-The safe-baseline checkpoint and animation frame-safety correction are complete. The next separate prototype is Crossbow T5 source art. Do not mix it with the accepted pose/headgear correction or broaden it to other tiers without new visual evidence.
+The safe-baseline checkpoint, animation frame-safety correction, and Crossbow T5 source-art prototype are complete and accepted. The next separate prototype is Bone T3 shield structure. Do not broaden it to Bone T4/T5 or another shield family until Bone T3 has independent visual evidence and user approval.

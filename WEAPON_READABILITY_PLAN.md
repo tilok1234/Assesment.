@@ -37,12 +37,11 @@ The exhaustive review was regenerated across all 15 families, 5 tiers, 4 directi
 
 Current verdict:
 
-- Accept as the current baseline: sword, greatsword, scimitar, rapier, dagger, axe, mace, warhammer, spear, club, bow, staff, wand, and spellbook.
-- Iterate: Crossbow T5. Its front/down and assembled silhouettes can read like a compact firearm or horizontal bar even with no shield. This is a source-art problem.
+- Accept as the current source-identity baseline: sword, greatsword, scimitar, rapier, dagger, axe, mace, warhammer, spear, club, bow, crossbow, staff, wand, and spellbook. Crossbow T5 includes the user-approved recurved-limb and reinforced-stock correction completed on 2026-07-20.
 - Defer to composition review: Crossbow T2 with a shield. It reads as a crossbow in isolation, so this must not be mixed into the T5 source-art prototype.
 - Monitor individual frames only: mace/warhammer protrusions and very thin staff/wand/dagger/rapier shapes.
 
-The Crossbow T5 prototype must preserve the existing 24x24 frame contract, anchors, animation poses, directional placement, scale, timing, and renderer behavior. It may clarify only the bow limbs, stock, grip, firing axis, and their color grouping. It must be reviewed in every direction and animation with None, Complete B, and Selective C before any other tier is considered.
+The completed Crossbow T5 prototype preserved the existing 24x24 frame contract, anchors, animation poses, directional placement, scale, timing, and renderer behavior. It clarified only the bow limbs, stock, grip, firing axis, and their color grouping. Browser review accepted every direction and animation with None, Complete B, and Selective C, first without a shield and then with a representative Tower shield.
 
 ### Animation frame-safety correction
 
@@ -56,6 +55,10 @@ Completed correction:
 2. humanoid body, shield, and headgear stay on their registered anchor during attacks;
 3. the weapon keeps an in-frame one-pixel perpendicular follow-through/recoil so strike and hurt phases remain distinct;
 4. all 3,600 weapon frames now report zero discarded pixels and passed enlarged browser review;
-5. no weapon source identity changed, so Crossbow T5 remains the next independent art prototype.
+5. no weapon source identity changed during the frame-safety correction, leaving Crossbow T5 for the later independent art prototype that is now complete and accepted.
 
 Edge contact remains advisory. Attempted writes beyond `x=0..23` or `y=0..23` are contract failures.
+
+### Crossbow T5 source-art correction
+
+Completed and user-approved on 2026-07-20. The tier-specific correction gives the Apocalypse Engine bright connected recurved limbs, a darker secondary string, and a reinforced stock/grip so it reads as a crossbow rather than a compact firearm. Tiers 1-4 and all placement and animation contracts remain unchanged. The full 3,600-frame audit reports zero discarded pixels, and the project, outline, weapon, and build validators pass.
