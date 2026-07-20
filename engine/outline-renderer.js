@@ -18,17 +18,35 @@ export const OUTLINE_LAYER_ORDER = Object.freeze([
   'weapon-back',
   'shield-back',
   'body',
+  'headgear',
   'shield-front',
   'weapon-front',
 ]);
 
-// Front/back passes are one visual owner. Keeping the three logical owners
-// separate lets the contour preserve narrow gaps between body, weapon, and shield.
+// Front/back equipment passes are one visual owner. Headgear stays part of the
+// body owner so the outline cannot cut a seam through the head beneath wide hats.
+// Its concrete layer remains in OUTLINE_LAYER_ORDER only to protect visible
+// headgear pixels from equipment/body contact replacement.
 const OUTLINE_OWNER_GROUPS = Object.freeze([
   Object.freeze(['weapon-back', 'weapon-front']),
   Object.freeze(['shield-back', 'shield-front']),
   Object.freeze(['body']),
 ]);
+
+const EQUIPMENT_OWNER_INDICES = Object.freeze([0, 1]);
+const BODY_OWNER_INDEX = 2;
+const OUTLINE_LAYER_INDEX = Object.freeze(Object.fromEntries(
+  OUTLINE_LAYER_ORDER.map((layer, index) => [layer, index]),
+));
+const BACK_EQUIPMENT_LAYER_INDICES = Object.freeze([
+  OUTLINE_LAYER_INDEX['weapon-back'],
+  OUTLINE_LAYER_INDEX['shield-back'],
+]);
+const FRONT_EQUIPMENT_LAYER_INDICES = Object.freeze([
+  OUTLINE_LAYER_INDEX['shield-front'],
+  OUTLINE_LAYER_INDEX['weapon-front'],
+]);
+const BODY_LAYER_INDEX = OUTLINE_LAYER_INDEX.body;
 
 const CARDINAL_OFFSETS = Object.freeze([
   Object.freeze([0, -1]),
@@ -85,11 +103,12 @@ function exteriorTransparency(pixels, width, height) {
   return exterior;
 }
 
-export function outlineMaskForPixels(
+function contourMaskForPixels(
   pixels,
   mode = OUTLINE_MODE_COMPLETE_B,
   width = SIZE,
   height = SIZE,
+  exteriorOnly = true,
 ) {
   if (!pixels || pixels.length !== width * height) {
     throw new Error(`Outline source must contain exactly ${width * height} pixels.`);
@@ -102,12 +121,12 @@ export function outlineMaskForPixels(
   const offsets = normalizedMode === OUTLINE_MODE_COMPLETE_B
     ? COMPLETE_OFFSETS
     : CARDINAL_OFFSETS;
-  const exterior = exteriorTransparency(pixels, width, height);
+  const exterior = exteriorOnly ? exteriorTransparency(pixels, width, height) : null;
 
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
       const index = (y * width) + x;
-      if (!exterior[index]) continue;
+      if (!isTransparent(pixels[index]) || exteriorOnly && !exterior[index]) continue;
       for (const [offsetX, offsetY] of offsets) {
         const sourceX = x + offsetX;
         const sourceY = y + offsetY;
@@ -122,12 +141,31 @@ export function outlineMaskForPixels(
   return mask;
 }
 
+export function outlineMaskForPixels(
+  pixels,
+  mode = OUTLINE_MODE_COMPLETE_B,
+  width = SIZE,
+  height = SIZE,
+) {
+  return contourMaskForPixels(pixels, mode, width, height, true);
+}
+
+export function outlineMaskForEquipmentPixels(
+  pixels,
+  mode = OUTLINE_MODE_COMPLETE_B,
+  width = SIZE,
+  height = SIZE,
+) {
+  return contourMaskForPixels(pixels, mode, width, height, false);
+}
+
 export function outlineMaskForOwnedPixels(
   ownerPixels,
   compositePixels,
   mode = OUTLINE_MODE_COMPLETE_B,
   width = SIZE,
   height = SIZE,
+  options = {},
 ) {
   if (!Array.isArray(ownerPixels) || !ownerPixels.length) {
     throw new Error('Outline ownership requires at least one pixel layer.');
@@ -145,11 +183,12 @@ export function outlineMaskForOwnedPixels(
   const mask = new Uint8Array(width * height);
   if (normalizedMode === OUTLINE_MODE_NONE) return mask;
 
-  const ownerMasks = ownerPixels.map((pixels) => outlineMaskForPixels(
-    pixels,
-    normalizedMode,
-    width,
-    height,
+  const interiorOwnerIndices = new Set(options.interiorOwnerIndices || []);
+
+  const ownerMasks = ownerPixels.map((pixels, ownerIndex) => (
+    interiorOwnerIndices.has(ownerIndex)
+      ? outlineMaskForEquipmentPixels(pixels, normalizedMode, width, height)
+      : outlineMaskForPixels(pixels, normalizedMode, width, height)
   ));
 
   for (let index = 0; index < mask.length; index++) {
@@ -157,6 +196,44 @@ export function outlineMaskForOwnedPixels(
     // is assembled artwork: an outline may never replace a source pixel.
     if (!isTransparent(compositePixels[index])) continue;
     if (ownerMasks.some((ownerMask) => ownerMask[index])) mask[index] = 1;
+  }
+  return mask;
+}
+
+export function outlineContactMaskForVisibleOwners(
+  visibleOwners,
+  sourceOwnerIndex,
+  targetOwnerIndex,
+  mode = OUTLINE_MODE_COMPLETE_B,
+  width = SIZE,
+  height = SIZE,
+) {
+  if (!visibleOwners || visibleOwners.length !== width * height) {
+    throw new Error(`Visible outline ownership must contain exactly ${width * height} entries.`);
+  }
+
+  const normalizedMode = normalizeOutlineMode(mode);
+  const mask = new Uint8Array(width * height);
+  if (normalizedMode === OUTLINE_MODE_NONE) return mask;
+
+  // A contact separator may replace a visible pixel, so only a true shared
+  // edge counts here. Diagonal proximity is handled by the transparent-space
+  // contour and must not bite corners or endcaps out of either owner.
+  const offsets = CARDINAL_OFFSETS;
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const index = (y * width) + x;
+      if (visibleOwners[index] !== sourceOwnerIndex) continue;
+      for (const [offsetX, offsetY] of offsets) {
+        const targetX = x + offsetX;
+        const targetY = y + offsetY;
+        if (targetX < 0 || targetY < 0 || targetX >= width || targetY >= height) continue;
+        if (visibleOwners[(targetY * width) + targetX] === targetOwnerIndex) {
+          mask[index] = 1;
+          break;
+        }
+      }
+    }
   }
   return mask;
 }
@@ -305,6 +382,14 @@ export function drawOutlinedSprite(
     }
     return merged;
   });
+  const visibleLayers = new Int8Array(SIZE * SIZE).fill(-1);
+  for (const layer of OUTLINE_LAYER_ORDER) {
+    const pixels = renderedLayers.get(layer);
+    const layerIndex = OUTLINE_LAYER_INDEX[layer];
+    for (let index = 0; index < pixels.length; index++) {
+      if (!isTransparent(pixels[index])) visibleLayers[index] = layerIndex;
+    }
+  }
   const compositePixels = renderLayerPixels(spec, direction, animationId, frame, 'complete');
   const finalPixels = rendererOptions.shadow === false
     && (!rendererOptions.layer || rendererOptions.layer === 'complete')
@@ -314,9 +399,16 @@ export function drawOutlinedSprite(
   // Paint only behind the final composite, then repaint the exact offscreen renderer
   // result above it. No contour can cover assembled artwork.
   if (rendererOptions.clear !== false) context.clearRect(0, 0, SIZE, SIZE);
-  const outlineMask = outlineMaskForOwnedPixels(ownerPixels, compositePixels, mode);
+  const outlineMask = outlineMaskForOwnedPixels(
+    ownerPixels,
+    compositePixels,
+    mode,
+    SIZE,
+    SIZE,
+    { interiorOwnerIndices: EQUIPMENT_OWNER_INDICES },
+  );
   const neckCavityMask = humanoidNeckCavityMaskForPixels(
-    ownerPixels[OUTLINE_OWNER_GROUPS.length - 1],
+    ownerPixels[BODY_OWNER_INDEX],
     compositePixels,
     direction,
   );
@@ -325,4 +417,34 @@ export function drawOutlinedSprite(
   }
   paintMask(context, outlineMask, color);
   paintPixels(context, finalPixels);
+
+  // Direct layer contact has no transparent cell available for a separator.
+  // Respect concrete pass depth: back equipment receives the separator on its
+  // own edge, while front equipment stays intact and receives the separator on
+  // the adjacent body-side edge. Because the concrete headgear pass sits above
+  // body in visibleLayers, equipment contact cannot replace a headgear pixel.
+  const layerContactMask = new Uint8Array(SIZE * SIZE);
+  for (const equipmentLayerIndex of BACK_EQUIPMENT_LAYER_INDICES) {
+    const contactMask = outlineContactMaskForVisibleOwners(
+      visibleLayers,
+      equipmentLayerIndex,
+      BODY_LAYER_INDEX,
+      mode,
+    );
+    for (let index = 0; index < layerContactMask.length; index++) {
+      if (contactMask[index]) layerContactMask[index] = 1;
+    }
+  }
+  for (const equipmentLayerIndex of FRONT_EQUIPMENT_LAYER_INDICES) {
+    const contactMask = outlineContactMaskForVisibleOwners(
+      visibleLayers,
+      BODY_LAYER_INDEX,
+      equipmentLayerIndex,
+      mode,
+    );
+    for (let index = 0; index < layerContactMask.length; index++) {
+      if (contactMask[index]) layerContactMask[index] = 1;
+    }
+  }
+  paintMask(context, layerContactMask, color);
 }

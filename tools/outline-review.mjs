@@ -12,6 +12,8 @@ import {
   OUTLINE_MODE_NONE,
   OUTLINE_MODE_SELECTIVE_C,
   humanoidNeckCavityMaskForPixels,
+  outlineContactMaskForVisibleOwners,
+  outlineMaskForEquipmentPixels,
   outlineMaskForOwnedPixels,
   outlineMaskForPixels,
 } from '../engine/outline-renderer.js';
@@ -52,6 +54,30 @@ const BASE_PLAYER = Object.freeze({
   shieldTier: 'tier1',
   palette: null,
 });
+
+const TEST_LAYER_OWNER_INDEX = Object.freeze({
+  'weapon-back': 0,
+  'shield-back': 1,
+  body: 2,
+  headgear: 2,
+  'shield-front': 1,
+  'weapon-front': 0,
+});
+const TEST_EQUIPMENT_OWNER_INDICES = Object.freeze([0, 1]);
+const TEST_BODY_OWNER_INDEX = 2;
+const TEST_LAYER_INDEX = Object.freeze(Object.fromEntries(
+  OUTLINE_LAYER_ORDER.map((layer, index) => [layer, index]),
+));
+const TEST_BACK_EQUIPMENT_LAYER_INDICES = Object.freeze([
+  TEST_LAYER_INDEX['weapon-back'],
+  TEST_LAYER_INDEX['shield-back'],
+]);
+const TEST_FRONT_EQUIPMENT_LAYER_INDICES = Object.freeze([
+  TEST_LAYER_INDEX['shield-front'],
+  TEST_LAYER_INDEX['weapon-front'],
+]);
+const TEST_BODY_LAYER_INDEX = TEST_LAYER_INDEX.body;
+const TEST_HEADGEAR_LAYER_INDEX = TEST_LAYER_INDEX.headgear;
 
 const SHOWCASES = Object.freeze([
   Object.freeze({
@@ -191,6 +217,62 @@ function renderRawLayer(spec, direction, animation, frame, layer) {
   return context.pixels;
 }
 
+function renderVisibleOwners(spec, direction, animation, frame) {
+  const visibleOwners = new Int8Array(engine.SIZE * engine.SIZE).fill(-1);
+  for (const layer of OUTLINE_LAYER_ORDER) {
+    const pixels = renderRawLayer(spec, direction, animation, frame, layer);
+    const ownerIndex = TEST_LAYER_OWNER_INDEX[layer];
+    for (let index = 0; index < pixels.length; index++) {
+      if (pixels[index]) visibleOwners[index] = ownerIndex;
+    }
+  }
+  return visibleOwners;
+}
+
+function renderVisibleLayers(spec, direction, animation, frame) {
+  const visibleLayers = new Int8Array(engine.SIZE * engine.SIZE).fill(-1);
+  for (const layer of OUTLINE_LAYER_ORDER) {
+    const pixels = renderRawLayer(spec, direction, animation, frame, layer);
+    const layerIndex = TEST_LAYER_INDEX[layer];
+    for (let index = 0; index < pixels.length; index++) {
+      if (pixels[index]) visibleLayers[index] = layerIndex;
+    }
+  }
+  return visibleLayers;
+}
+
+function equipmentContactMasks(visibleLayers, mode) {
+  const back = new Uint8Array(engine.SIZE * engine.SIZE);
+  const front = new Uint8Array(engine.SIZE * engine.SIZE);
+  for (const layerIndex of TEST_BACK_EQUIPMENT_LAYER_INDICES) {
+    const layerMask = outlineContactMaskForVisibleOwners(
+      visibleLayers,
+      layerIndex,
+      TEST_BODY_LAYER_INDEX,
+      mode,
+    );
+    for (let index = 0; index < back.length; index++) {
+      if (layerMask[index]) back[index] = 1;
+    }
+  }
+  for (const layerIndex of TEST_FRONT_EQUIPMENT_LAYER_INDICES) {
+    const layerMask = outlineContactMaskForVisibleOwners(
+      visibleLayers,
+      TEST_BODY_LAYER_INDEX,
+      layerIndex,
+      mode,
+    );
+    for (let index = 0; index < front.length; index++) {
+      if (layerMask[index]) front[index] = 1;
+    }
+  }
+  const combined = new Uint8Array(engine.SIZE * engine.SIZE);
+  for (let index = 0; index < combined.length; index++) {
+    if (back[index] || front[index]) combined[index] = 1;
+  }
+  return { back, front, combined };
+}
+
 function mergePixelLayers(...layers) {
   const merged = new Array(engine.SIZE * engine.SIZE).fill(null);
   for (const pixels of layers) {
@@ -221,9 +303,13 @@ function changedIndices(left, right) {
   return result;
 }
 
-function outlineViolation(source, outlined) {
+function outlineViolation(source, outlined, allowedSourceMask = null) {
   for (let index = 0; index < source.length; index++) {
     if (source[index] && outlined[index] !== source[index]) {
+      if (
+        outlined[index] === OUTLINE_COLOR
+        && allowedSourceMask?.[index]
+      ) continue;
       return `overwrote source pixel ${index} (${source[index]} -> ${outlined[index]})`;
     }
     if (!source[index] && outlined[index] && outlined[index] !== OUTLINE_COLOR) {
@@ -295,6 +381,41 @@ function shieldCoverageSpecs() {
     if (shield.id === 'none') return [{ ...BASE_PLAYER, shield: 'none', shieldTier: 'tier1' }];
     return engine.SHIELD_TIERS.map((tier) => ({ ...BASE_PLAYER, weapon: 'none', shield: shield.id, shieldTier: tier.id }));
   });
+}
+
+function headgearCoverageSpecs() {
+  const broadCoverage = engine.HEADGEAR
+    .filter((headgear) => headgear.id !== 'none')
+    .flatMap((headgear, headgearIndex) => engine.SPECIES.map((species, speciesIndex) => ({
+      ...BASE_PLAYER,
+      species: species.id,
+      bodyBuild: engine.BODY_BUILDS[(headgearIndex + speciesIndex) % engine.BODY_BUILDS.length].id,
+      headgear: headgear.id,
+      outfitColor: 'purple',
+      weapon: 'none',
+      shield: 'none',
+    })));
+  return [
+    ...broadCoverage,
+    {
+      ...BASE_PLAYER,
+      species: 'goblin',
+      bodyBuild: 'lean',
+      skin: 'tan',
+      hairStyle: 'spiky',
+      hairColor: 'black',
+      expression: 'determined',
+      faceDetail: 'scar',
+      headgear: 'wizard',
+      outfit: 'necromancer',
+      outfitTier: 'tier3',
+      outfitColor: 'purple',
+      weapon: 'club',
+      weaponTier: 'tier1',
+      shield: 'bone',
+      shieldTier: 'tier3',
+    },
+  ];
 }
 
 function maskCount(mask) {
@@ -371,8 +492,8 @@ const check = (condition, message) => { if (!condition) errors.push(message); };
 const startedAt = Date.now();
 
 check(
-  JSON.stringify(OUTLINE_LAYER_ORDER) === JSON.stringify(['weapon-back', 'shield-back', 'body', 'shield-front', 'weapon-front']),
-  'outline ownership order must stay weapon-back, shield-back, body, shield-front, weapon-front',
+  JSON.stringify(OUTLINE_LAYER_ORDER) === JSON.stringify(['weapon-back', 'shield-back', 'body', 'headgear', 'shield-front', 'weapon-front']),
+  'outline ownership order must stay weapon-back, shield-back, body, headgear, shield-front, weapon-front',
 );
 
 const single = new Array(7 * 7).fill(null);
@@ -394,6 +515,78 @@ ring[(3 * 7) + 2] = '#ffffff';
 ring[(3 * 7) + 4] = '#ffffff';
 check(outlineMaskForPixels(ring, OUTLINE_MODE_COMPLETE_B, 7, 7)[(3 * 7) + 3] === 0, 'Complete B must not fill a closed interior gap');
 check(outlineMaskForPixels(ring, OUTLINE_MODE_SELECTIVE_C, 7, 7)[(3 * 7) + 3] === 0, 'Selective C must not fill a closed interior gap');
+check(outlineMaskForEquipmentPixels(ring, OUTLINE_MODE_COMPLETE_B, 7, 7)[(3 * 7) + 3] === 1, 'Complete B equipment must outline a closed interior gap');
+check(outlineMaskForEquipmentPixels(ring, OUTLINE_MODE_SELECTIVE_C, 7, 7)[(3 * 7) + 3] === 1, 'Selective C equipment must outline a closed interior gap');
+
+const backContactLayers = new Int8Array(5 * 5).fill(-1);
+backContactLayers[(2 * 5) + 1] = TEST_LAYER_INDEX['weapon-back'];
+backContactLayers[(2 * 5) + 2] = TEST_BODY_LAYER_INDEX;
+const backContactB = outlineContactMaskForVisibleOwners(
+  backContactLayers,
+  TEST_LAYER_INDEX['weapon-back'],
+  TEST_BODY_LAYER_INDEX,
+  OUTLINE_MODE_COMPLETE_B,
+  5,
+  5,
+);
+const backContactC = outlineContactMaskForVisibleOwners(
+  backContactLayers,
+  TEST_LAYER_INDEX['weapon-back'],
+  TEST_BODY_LAYER_INDEX,
+  OUTLINE_MODE_SELECTIVE_C,
+  5,
+  5,
+);
+check(backContactB[(2 * 5) + 1] === 1, 'Complete B must put back-pass contact separation on the equipment-side pixel');
+check(backContactC[(2 * 5) + 1] === 1, 'Selective C must put back-pass contact separation on the equipment-side pixel');
+check(backContactB[(2 * 5) + 2] === 0, 'Complete B must preserve the body in front of back-pass equipment');
+check(backContactC[(2 * 5) + 2] === 0, 'Selective C must preserve the body in front of back-pass equipment');
+
+const frontContactLayers = new Int8Array(5 * 5).fill(-1);
+frontContactLayers[(2 * 5) + 2] = TEST_BODY_LAYER_INDEX;
+frontContactLayers[(2 * 5) + 3] = TEST_LAYER_INDEX['weapon-front'];
+const frontContactB = outlineContactMaskForVisibleOwners(
+  frontContactLayers,
+  TEST_BODY_LAYER_INDEX,
+  TEST_LAYER_INDEX['weapon-front'],
+  OUTLINE_MODE_COMPLETE_B,
+  5,
+  5,
+);
+const frontContactC = outlineContactMaskForVisibleOwners(
+  frontContactLayers,
+  TEST_BODY_LAYER_INDEX,
+  TEST_LAYER_INDEX['weapon-front'],
+  OUTLINE_MODE_SELECTIVE_C,
+  5,
+  5,
+);
+check(frontContactB[(2 * 5) + 2] === 1, 'Complete B must put front-pass contact separation on the body-side pixel');
+check(frontContactC[(2 * 5) + 2] === 1, 'Selective C must put front-pass contact separation on the body-side pixel');
+check(frontContactB[(2 * 5) + 3] === 0, 'Complete B must preserve front-pass equipment pixels');
+check(frontContactC[(2 * 5) + 3] === 0, 'Selective C must preserve front-pass equipment pixels');
+
+const diagonalContactLayers = new Int8Array(5 * 5).fill(-1);
+diagonalContactLayers[(2 * 5) + 2] = TEST_BODY_LAYER_INDEX;
+diagonalContactLayers[(3 * 5) + 3] = TEST_LAYER_INDEX['weapon-front'];
+const diagonalContactB = outlineContactMaskForVisibleOwners(
+  diagonalContactLayers,
+  TEST_BODY_LAYER_INDEX,
+  TEST_LAYER_INDEX['weapon-front'],
+  OUTLINE_MODE_COMPLETE_B,
+  5,
+  5,
+);
+const diagonalContactC = outlineContactMaskForVisibleOwners(
+  diagonalContactLayers,
+  TEST_BODY_LAYER_INDEX,
+  TEST_LAYER_INDEX['weapon-front'],
+  OUTLINE_MODE_SELECTIVE_C,
+  5,
+  5,
+);
+check(diagonalContactB[(2 * 5) + 2] === 0, 'Complete B must not cut a body corner at diagonal-only equipment proximity');
+check(diagonalContactC[(2 * 5) + 2] === 0, 'Selective C must not cut a body corner at diagonal-only equipment proximity');
 
 const corner = new Array(5 * 5).fill(null);
 corner[0] = '#ffffff';
@@ -452,14 +645,34 @@ for (const showcase of SHOWCASES) {
     const none = renderMode(showcase.spec, direction, showcase.animation, showcase.frame, OUTLINE_MODE_NONE);
     const complete = renderMode(showcase.spec, direction, showcase.animation, showcase.frame, OUTLINE_MODE_COMPLETE_B);
     const selective = renderMode(showcase.spec, direction, showcase.animation, showcase.frame, OUTLINE_MODE_SELECTIVE_C);
+    const visibleOwners = renderVisibleOwners(showcase.spec, direction, showcase.animation, showcase.frame);
+    const visibleLayers = renderVisibleLayers(showcase.spec, direction, showcase.animation, showcase.frame);
+    const completeContacts = equipmentContactMasks(visibleLayers, OUTLINE_MODE_COMPLETE_B);
+    const selectiveContacts = equipmentContactMasks(visibleLayers, OUTLINE_MODE_SELECTIVE_C);
     const completeChanges = changedIndices(none, complete);
     const selectiveChanges = changedIndices(none, selective);
     check(completeChanges.length > 0, `Complete B added no outline to ${showcase.id} ${direction}`);
     check(selectiveChanges.length > 0, `Selective C added no outline to ${showcase.id} ${direction}`);
     check(completeChanges.every((index) => complete[index] === OUTLINE_COLOR), `Complete B changed a source color in ${showcase.id} ${direction}`);
     check(selectiveChanges.every((index) => selective[index] === OUTLINE_COLOR), `Selective C changed a source color in ${showcase.id} ${direction}`);
-    check(!outlineViolation(none, complete), `Complete B overwrote assembled art in ${showcase.id} ${direction}: ${outlineViolation(none, complete)}`);
-    check(!outlineViolation(none, selective), `Selective C overwrote assembled art in ${showcase.id} ${direction}: ${outlineViolation(none, selective)}`);
+    check(!outlineViolation(none, complete, completeContacts.combined), `Complete B changed unauthorized art in ${showcase.id} ${direction}: ${outlineViolation(none, complete, completeContacts.combined)}`);
+    check(!outlineViolation(none, selective, selectiveContacts.combined), `Selective C changed unauthorized art in ${showcase.id} ${direction}: ${outlineViolation(none, selective, selectiveContacts.combined)}`);
+    for (let index = 0; index < none.length; index++) {
+      if (none[index] && visibleOwners[index] === TEST_BODY_OWNER_INDEX && !completeContacts.front[index]) {
+        check(complete[index] === none[index], `Complete B changed a visible body pixel in ${showcase.id} ${direction} at ${index}`);
+      }
+      if (none[index] && visibleOwners[index] === TEST_BODY_OWNER_INDEX && !selectiveContacts.front[index]) {
+        check(selective[index] === none[index], `Selective C changed a visible body pixel in ${showcase.id} ${direction} at ${index}`);
+      }
+      if (none[index] && TEST_FRONT_EQUIPMENT_LAYER_INDICES.includes(visibleLayers[index])) {
+        check(complete[index] === none[index], `Complete B changed front-pass equipment in ${showcase.id} ${direction} at ${index}`);
+        check(selective[index] === none[index], `Selective C changed front-pass equipment in ${showcase.id} ${direction} at ${index}`);
+      }
+      if (none[index] && visibleLayers[index] === TEST_HEADGEAR_LAYER_INDEX) {
+        check(complete[index] === none[index], `Complete B changed foreground headgear in ${showcase.id} ${direction} at ${index}`);
+        check(selective[index] === none[index], `Selective C changed foreground headgear in ${showcase.id} ${direction} at ${index}`);
+      }
+    }
     comparisonMetrics.push({
       showcase: showcase.id,
       direction,
@@ -474,6 +687,7 @@ let randomizedCases = 0;
 let randomizedFullContourPixelsPreserved = 0;
 let randomizedNeckCavityCases = 0;
 let randomizedNeckCavityPixels = 0;
+let randomizedEquipmentContactPixels = 0;
 for (let caseIndex = 0; caseIndex < 1000; caseIndex++) {
   const spec = randomOutlineSpec(random);
   const direction = engine.DIRS[Math.floor(random() * engine.DIRS.length)];
@@ -481,6 +695,8 @@ for (let caseIndex = 0; caseIndex < 1000; caseIndex++) {
   const frame = Math.floor(random() * animation.frames);
   const none = renderMode(spec, direction, animation.id, frame, OUTLINE_MODE_NONE);
   const body = renderRawLayer(spec, direction, animation.id, frame, 'body');
+  const visibleOwners = renderVisibleOwners(spec, direction, animation.id, frame);
+  const visibleLayers = renderVisibleLayers(spec, direction, animation.id, frame);
   const ownerPixels = [
     mergePixelLayers(
       renderRawLayer(spec, direction, animation.id, frame, 'weapon-back'),
@@ -500,8 +716,16 @@ for (let caseIndex = 0; caseIndex < 1000; caseIndex++) {
   }
   for (const mode of [OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_SELECTIVE_C]) {
     const outlined = renderMode(spec, direction, animation.id, frame, mode);
-    const fullContourMask = outlineMaskForOwnedPixels(ownerPixels, none, mode);
-    const violation = outlineViolation(none, outlined);
+    const fullContourMask = outlineMaskForOwnedPixels(
+      ownerPixels,
+      none,
+      mode,
+      engine.SIZE,
+      engine.SIZE,
+      { interiorOwnerIndices: TEST_EQUIPMENT_OWNER_INDICES },
+    );
+    const contactMasks = equipmentContactMasks(visibleLayers, mode);
+    const violation = outlineViolation(none, outlined, contactMasks.combined);
     check(!violation, `Random case ${caseIndex} ${mode} ${direction}/${animation.id}/${frame}: ${violation}`);
     check(
       [...fullContourMask.keys()].every((index) => (
@@ -511,6 +735,33 @@ for (let caseIndex = 0; caseIndex < 1000; caseIndex++) {
     );
     randomizedFullContourPixelsPreserved += maskCount(fullContourMask);
     check(
+      [...contactMasks.combined.keys()].every((index) => (
+        !contactMasks.combined[index] || outlined[index] === OUTLINE_COLOR
+      )),
+      `Random case ${caseIndex} ${mode} left an equipment/body contact edge open`,
+    );
+    randomizedEquipmentContactPixels += maskCount(contactMasks.combined);
+    for (let index = 0; index < none.length; index++) {
+      if (none[index] && visibleOwners[index] === TEST_BODY_OWNER_INDEX && !contactMasks.front[index]) {
+        check(
+          outlined[index] === none[index],
+          `Random case ${caseIndex} ${mode} changed a body pixel outside a front-pass separator at ${index}`,
+        );
+      }
+      if (none[index] && TEST_FRONT_EQUIPMENT_LAYER_INDICES.includes(visibleLayers[index])) {
+        check(
+          outlined[index] === none[index],
+          `Random case ${caseIndex} ${mode} changed front-pass equipment pixel ${index}`,
+        );
+      }
+      if (none[index] && visibleLayers[index] === TEST_HEADGEAR_LAYER_INDEX) {
+        check(
+          outlined[index] === none[index],
+          `Random case ${caseIndex} ${mode} changed foreground headgear pixel ${index}`,
+        );
+      }
+    }
+    check(
       neckCavityIndices.every((index) => outlined[index] === OUTLINE_COLOR),
       `Random case ${caseIndex} ${mode} left a transparent humanoid neck cavity`,
     );
@@ -519,6 +770,181 @@ for (let caseIndex = 0; caseIndex < 1000; caseIndex++) {
 }
 check(randomizedNeckCavityCases > 0, 'Randomized outline sweep must exercise humanoid neck cavities');
 check(randomizedNeckCavityPixels > 0, 'Randomized outline sweep must repair humanoid neck-cavity pixels');
+check(randomizedEquipmentContactPixels > 0, 'Randomized outline sweep must exercise equipment/body contact separators');
+
+const exhaustiveEquipmentSpecs = [
+  ...weaponCoverageSpecs().filter((spec) => spec.weapon !== 'none'),
+  ...shieldCoverageSpecs().filter((spec) => spec.shield !== 'none'),
+];
+let exhaustiveEquipmentCases = 0;
+let exhaustiveEquipmentInteriorPixels = 0;
+let exhaustiveEquipmentContactPixels = 0;
+let exhaustiveBodyPixelsProtected = 0;
+let exhaustiveFrontEquipmentPixelsProtected = 0;
+for (const spec of exhaustiveEquipmentSpecs) {
+  for (const direction of engine.DIRS) {
+    for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const none = renderMode(spec, direction, animation.id, frame, OUTLINE_MODE_NONE);
+        const body = renderRawLayer(spec, direction, animation.id, frame, 'body');
+        const ownerPixels = [
+          mergePixelLayers(
+            renderRawLayer(spec, direction, animation.id, frame, 'weapon-back'),
+            renderRawLayer(spec, direction, animation.id, frame, 'weapon-front'),
+          ),
+          mergePixelLayers(
+            renderRawLayer(spec, direction, animation.id, frame, 'shield-back'),
+            renderRawLayer(spec, direction, animation.id, frame, 'shield-front'),
+          ),
+          body,
+        ];
+        const visibleOwners = renderVisibleOwners(spec, direction, animation.id, frame);
+        const visibleLayers = renderVisibleLayers(spec, direction, animation.id, frame);
+        const equipmentLabel = spec.weapon !== 'none'
+          ? `${spec.weapon}/${spec.weaponTier}`
+          : `${spec.shield}/${spec.shieldTier}`;
+
+        for (const mode of [OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_SELECTIVE_C]) {
+          const outlined = renderMode(spec, direction, animation.id, frame, mode);
+          const contourMask = outlineMaskForOwnedPixels(
+            ownerPixels,
+            none,
+            mode,
+            engine.SIZE,
+            engine.SIZE,
+            { interiorOwnerIndices: TEST_EQUIPMENT_OWNER_INDICES },
+          );
+          const contactMasks = equipmentContactMasks(visibleLayers, mode);
+          const violation = outlineViolation(none, outlined, contactMasks.combined);
+          check(
+            !violation,
+            `Exhaustive ${equipmentLabel} ${direction}/${animation.id}/${frame} ${mode}: ${violation}`,
+          );
+          check(
+            [...contourMask.keys()].every((index) => !contourMask[index] || outlined[index] === OUTLINE_COLOR),
+            `Exhaustive ${equipmentLabel} ${direction}/${animation.id}/${frame} ${mode} missed an equipment contour`,
+          );
+          check(
+            [...contactMasks.combined.keys()].every((index) => !contactMasks.combined[index] || outlined[index] === OUTLINE_COLOR),
+            `Exhaustive ${equipmentLabel} ${direction}/${animation.id}/${frame} ${mode} left a body-contact seam open`,
+          );
+
+          for (const ownerIndex of TEST_EQUIPMENT_OWNER_INDICES) {
+            const exteriorMask = outlineMaskForPixels(ownerPixels[ownerIndex], mode);
+            const equipmentMask = outlineMaskForEquipmentPixels(ownerPixels[ownerIndex], mode);
+            for (let index = 0; index < equipmentMask.length; index++) {
+              if (equipmentMask[index] && !exteriorMask[index] && !none[index]) {
+                check(
+                  outlined[index] === OUTLINE_COLOR,
+                  `Exhaustive ${equipmentLabel} ${direction}/${animation.id}/${frame} ${mode} missed enclosed equipment pixel ${index}`,
+                );
+                exhaustiveEquipmentInteriorPixels++;
+              }
+            }
+          }
+
+          exhaustiveEquipmentContactPixels += maskCount(contactMasks.combined);
+          for (let index = 0; index < none.length; index++) {
+            if (none[index] && visibleOwners[index] === TEST_BODY_OWNER_INDEX && !contactMasks.front[index]) {
+              check(
+                outlined[index] === none[index],
+                `Exhaustive ${equipmentLabel} ${direction}/${animation.id}/${frame} ${mode} changed body pixel ${index} outside a front-pass separator`,
+              );
+              exhaustiveBodyPixelsProtected++;
+            }
+            if (none[index] && TEST_FRONT_EQUIPMENT_LAYER_INDICES.includes(visibleLayers[index])) {
+              check(
+                outlined[index] === none[index],
+                `Exhaustive ${equipmentLabel} ${direction}/${animation.id}/${frame} ${mode} changed front-pass equipment pixel ${index}`,
+              );
+              exhaustiveFrontEquipmentPixelsProtected++;
+            }
+          }
+          exhaustiveEquipmentCases++;
+        }
+      }
+    }
+  }
+}
+check(exhaustiveEquipmentCases === 11040, `Expected 11,040 exhaustive outlined equipment cases, got ${exhaustiveEquipmentCases}`);
+check(exhaustiveEquipmentInteriorPixels > 0, 'Exhaustive equipment review must exercise enclosed equipment contours');
+check(exhaustiveEquipmentContactPixels > 0, 'Exhaustive equipment review must exercise equipment/body contact separators');
+check(exhaustiveBodyPixelsProtected > 0, 'Exhaustive equipment review must protect visible body pixels');
+check(exhaustiveFrontEquipmentPixelsProtected > 0, 'Exhaustive equipment review must protect front-pass equipment pixels');
+
+const exhaustiveHeadgearSpecs = headgearCoverageSpecs();
+let exhaustiveHeadgearCases = 0;
+let exhaustiveHeadgearPixelsProtected = 0;
+let exhaustiveHeadgearBodyPixelsProtected = 0;
+for (const spec of exhaustiveHeadgearSpecs) {
+  for (const direction of engine.DIRS) {
+    for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const none = renderMode(spec, direction, animation.id, frame, OUTLINE_MODE_NONE);
+        const body = renderRawLayer(spec, direction, animation.id, frame, 'body');
+        const visibleOwners = renderVisibleOwners(spec, direction, animation.id, frame);
+        const visibleLayers = renderVisibleLayers(spec, direction, animation.id, frame);
+        const ownerPixels = [
+          mergePixelLayers(
+            renderRawLayer(spec, direction, animation.id, frame, 'weapon-back'),
+            renderRawLayer(spec, direction, animation.id, frame, 'weapon-front'),
+          ),
+          mergePixelLayers(
+            renderRawLayer(spec, direction, animation.id, frame, 'shield-back'),
+            renderRawLayer(spec, direction, animation.id, frame, 'shield-front'),
+          ),
+          body,
+        ];
+
+        for (const mode of [OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_SELECTIVE_C]) {
+          const outlined = renderMode(spec, direction, animation.id, frame, mode);
+          const contourMask = outlineMaskForOwnedPixels(
+            ownerPixels,
+            none,
+            mode,
+            engine.SIZE,
+            engine.SIZE,
+            { interiorOwnerIndices: TEST_EQUIPMENT_OWNER_INDICES },
+          );
+          const contactMasks = equipmentContactMasks(visibleLayers, mode);
+          const violation = outlineViolation(none, outlined, contactMasks.combined);
+          check(
+            !violation,
+            `Headgear ${spec.headgear}/${spec.species} ${direction}/${animation.id}/${frame} ${mode}: ${violation}`,
+          );
+          check(
+            [...contourMask.keys()].every((index) => !contourMask[index] || outlined[index] === OUTLINE_COLOR),
+            `Headgear ${spec.headgear}/${spec.species} ${direction}/${animation.id}/${frame} ${mode} missed a transparent-space contour`,
+          );
+          for (let index = 0; index < none.length; index++) {
+            if (none[index] && visibleLayers[index] === TEST_HEADGEAR_LAYER_INDEX) {
+              check(
+                outlined[index] === none[index],
+                `Headgear ${spec.headgear}/${spec.species} ${direction}/${animation.id}/${frame} ${mode} changed foreground headgear pixel ${index}`,
+              );
+              exhaustiveHeadgearPixelsProtected++;
+            }
+            if (none[index] && visibleOwners[index] === TEST_BODY_OWNER_INDEX && !contactMasks.front[index]) {
+              check(
+                outlined[index] === none[index],
+                `Headgear ${spec.headgear}/${spec.species} ${direction}/${animation.id}/${frame} ${mode} changed body pixel ${index} outside a foreground separator`,
+              );
+              exhaustiveHeadgearBodyPixelsProtected++;
+            }
+          }
+          exhaustiveHeadgearCases++;
+        }
+      }
+    }
+  }
+}
+const expectedHeadgearCases = exhaustiveHeadgearSpecs.length
+  * engine.DIRS.length
+  * engine.ANIMS.reduce((total, animation) => total + animation.frames, 0)
+  * 2;
+check(exhaustiveHeadgearCases === expectedHeadgearCases, `Expected ${expectedHeadgearCases} exhaustive headgear cases, got ${exhaustiveHeadgearCases}`);
+check(exhaustiveHeadgearPixelsProtected > 0, 'Exhaustive headgear review must protect foreground headgear pixels');
+check(exhaustiveHeadgearBodyPixelsProtected > 0, 'Exhaustive headgear review must protect non-contact body pixels');
 
 const baselineHashes = Object.fromEntries(SHOWCASES.map((showcase) => [showcase.id, hashAllFrames(showcase.spec)]));
 if (Object.keys(EXPECTED_BASELINE_HASHES).length) {
@@ -540,6 +966,15 @@ const manifest = {
   randomizedFullContourPixelsPreserved,
   randomizedNeckCavityCases,
   randomizedNeckCavityPixels,
+  randomizedEquipmentContactPixels,
+  exhaustiveEquipmentCases,
+  exhaustiveEquipmentInteriorPixels,
+  exhaustiveEquipmentContactPixels,
+  exhaustiveBodyPixelsProtected,
+  exhaustiveFrontEquipmentPixelsProtected,
+  exhaustiveHeadgearCases,
+  exhaustiveHeadgearPixelsProtected,
+  exhaustiveHeadgearBodyPixelsProtected,
   comparison,
   comparisonMetrics,
   elapsedMs: Date.now() - startedAt,
@@ -558,6 +993,15 @@ console.log(`- Randomized outline integrity cases: ${randomizedCases}`);
 console.log(`- Randomized full-contour pixels preserved: ${randomizedFullContourPixelsPreserved}`);
 console.log(`- Randomized neck-cavity cases repaired: ${randomizedNeckCavityCases}`);
 console.log(`- Randomized neck-cavity pixels added: ${randomizedNeckCavityPixels}`);
+console.log(`- Randomized equipment-contact pixels added: ${randomizedEquipmentContactPixels}`);
+console.log(`- Exhaustive outlined equipment cases: ${exhaustiveEquipmentCases}`);
+console.log(`- Exhaustive enclosed equipment pixels verified: ${exhaustiveEquipmentInteriorPixels}`);
+console.log(`- Exhaustive equipment-contact pixels verified: ${exhaustiveEquipmentContactPixels}`);
+console.log(`- Exhaustive visible body pixels protected: ${exhaustiveBodyPixelsProtected}`);
+console.log(`- Exhaustive front-pass equipment pixels protected: ${exhaustiveFrontEquipmentPixelsProtected}`);
+console.log(`- Exhaustive outlined headgear cases: ${exhaustiveHeadgearCases}`);
+console.log(`- Exhaustive foreground headgear pixels protected: ${exhaustiveHeadgearPixelsProtected}`);
+console.log(`- Exhaustive non-contact headgear-body pixels protected: ${exhaustiveHeadgearBodyPixelsProtected}`);
 console.log(`- Baseline hashes: ${JSON.stringify(baselineHashes)}`);
 console.log(`- Comparison: ${path.join(output, comparison.file)}`);
 console.log(`- Manifest: ${path.join(output, 'manifest.json')}`);
