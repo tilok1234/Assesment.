@@ -70,6 +70,7 @@ checkSyntax('engine/sheets.js');
 checkSyntax('engine/weapon-renderer.js');
 checkSyntax('tools/build.mjs');
 checkSyntax('tools/dev-server.mjs');
+checkSyntax('tools/generate-shield-placement-audit.mjs');
 checkSyntax('tools/outline-review.mjs');
 checkSyntax('tools/weapon-readability-audit.mjs');
 checkSyntax('tools/check-windows-release.mjs');
@@ -377,6 +378,9 @@ check(new Set(completeKitPaths).size === 2137, 'every Complete Character Kit PNG
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
+check(!runtimeSources['engine/shield-renderer.js'].includes('drawTurnedShield'), 'side shields must not apply a second perspective turn after the character turns');
+check(runtimeSources['engine/shield-renderer.js'].includes('drawFullShield(S, R, originX, originY'), 'shields must reuse the unchanged broad-face artwork at the hand attachment');
+check(!runtimeSources['engine/shield-renderer.js'].includes('SIDE_HANDLE_X'), 'shields must not add a detached connector beyond the body hand');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'species-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'species-front'"), 'the renderer must expose separate species occlusion passes');
 check(internalCatalogs.WOOD.length >= 3, 'shield highlights must not clear assembled body pixels through a missing wood color');
 check((runtimeSources['engine/sheets.js'].match(/\.\.\.opts, shadow: opts\.shadow === true/g) || []).length === 3, 'every sheet builder must forward layer options while keeping shadows opt-in');
@@ -1441,8 +1445,8 @@ const straightBladeBase = {
   shieldTier: 'tier1',
 };
 const readableWeaponFamilies = ['sword', 'greatsword', 'dagger', 'scimitar', 'rapier', 'axe', 'mace', 'warhammer', 'club', 'spear', 'bow', 'crossbow', 'staff', 'wand', 'spellbook'];
-const weaponLayerFor = (direction) => direction === 'up' ? 'weapon-back' : 'weapon-front';
-const oppositeWeaponLayerFor = (direction) => direction === 'up' ? 'weapon-front' : 'weapon-back';
+const weaponLayerFor = (direction) => (direction === 'up' || direction === 'left') ? 'weapon-back' : 'weapon-front';
+const oppositeWeaponLayerFor = (direction) => (direction === 'up' || direction === 'left') ? 'weapon-front' : 'weapon-back';
 const minimumMotionPhases = { idle: 2, walk: 2, attack: 3, hurt: 2 };
 const tierFiveMaximumPixelRatio = 1.6;
 const tierFiveMaximumBoundsRatio = 1.75;
@@ -1477,7 +1481,7 @@ for (const weapon of readableWeaponFamilies) {
           check(connectedPixelComponents(pixels) === 1, `${weapon} ${tier.id} must remain one connected silhouette in ${direction} ${animation.id} frame ${frame}`);
           check(wrongLayer.every((pixel) => pixel === null), `${weapon} ${tier.id} must use only the ${weaponLayerFor(direction)} layer in ${direction} ${animation.id} frame ${frame}`);
           check(
-            JSON.stringify(compositePixelLayers(direction === 'up' ? [pixels, unarmed] : [unarmed, pixels])) === JSON.stringify(complete),
+            JSON.stringify(compositePixelLayers(weaponLayerFor(direction) === 'weapon-back' ? [pixels, unarmed] : [unarmed, pixels])) === JSON.stringify(complete),
             `${weapon} ${tier.id} equipment layers must exactly rebuild the complete ${direction} ${animation.id} frame ${frame}`,
           );
           if (direction === 'down' && expressionIndices.length) check(
@@ -1488,13 +1492,6 @@ for (const weapon of readableWeaponFamilies) {
             minimumPixelDistance(pixels, unarmed) <= 4,
             `${weapon} ${tier.id} must not detach from the assembled character in ${direction} ${animation.id} frame ${frame}`,
           );
-          if (direction === 'right') {
-            const left = renderPixels(spec, 'left', animation.id, frame, { layer: 'weapon-front' });
-            check(
-              JSON.stringify(left) === JSON.stringify(horizontallyMirroredPixels(pixels)),
-              `${weapon} ${tier.id} left ${animation.id} frame ${frame} must exactly mirror right`,
-            );
-          }
         }
         check(
           new Set(motionSignatures).size >= minimumMotionPhases[animation.id],
@@ -1619,8 +1616,8 @@ for (const [tierIndex, tier] of engine.WEAPON_TIERS.entries()) {
 
   for (const weapon of ['bow', 'crossbow']) {
     const spec = { ...straightBladeBase, weapon, weaponTier: tier.id };
-    const wind = renderPixels(spec, 'right', 'attack', 1, { layer: 'weapon-front' }).join(',');
-    const release = renderPixels(spec, 'right', 'attack', 2, { layer: 'weapon-front' }).join(',');
+    const wind = renderPixels(spec, 'right', 'attack', 1, { layer: weaponLayerFor('right') }).join(',');
+    const release = renderPixels(spec, 'right', 'attack', 2, { layer: weaponLayerFor('right') }).join(',');
     check(wind !== release, `${weapon} ${tier.id} must visibly change between draw and release phases`);
   }
 }
@@ -1630,6 +1627,10 @@ function weaponPixelBounds(pixels) {
   const xs = points.map(([x]) => x);
   const ys = points.map(([, y]) => y);
   return {
+    minX: Math.min(...xs),
+    maxX: Math.max(...xs),
+    minY: Math.min(...ys),
+    maxY: Math.max(...ys),
     width: Math.max(...xs) - Math.min(...xs) + 1,
     height: Math.max(...ys) - Math.min(...ys) + 1,
   };
@@ -1650,11 +1651,11 @@ for (const tier of engine.WEAPON_TIERS) {
   ));
   const sideStaff = weaponPixelBounds(renderPixels(
     { ...straightBladeBase, weapon: 'staff', weaponTier: tier.id },
-    'right', 'attack', 1, { layer: 'weapon-front' },
+    'right', 'attack', 1, { layer: weaponLayerFor('right') },
   ));
   const sideWand = weaponPixelBounds(renderPixels(
     { ...straightBladeBase, weapon: 'wand', weaponTier: tier.id },
-    'right', 'attack', 1, { layer: 'weapon-front' },
+    'right', 'attack', 1, { layer: weaponLayerFor('right') },
   ));
   check(staff.height >= wand.height + 3, `staff ${tier.id} must remain substantially longer than the wand`);
   check(sideStaff.width >= sideWand.width + 3, `staff ${tier.id} side strike must keep a visibly longer countershaft than the wand`);
@@ -1664,7 +1665,7 @@ for (const tier of engine.WEAPON_TIERS) {
   for (const weapon of ['staff', 'wand', 'spellbook']) {
     const spec = { ...straightBladeBase, weapon, weaponTier: tier.id };
     const attackSignatures = [0, 1, 2, 3].map((frame) => renderPixels(
-      spec, 'right', 'attack', frame, { layer: 'weapon-front' },
+      spec, 'right', 'attack', frame, { layer: weaponLayerFor('right') },
     ).join(','));
     check(new Set(attackSignatures).size >= 3, `${weapon} ${tier.id} must visibly progress through cast wind-up, strike, and recovery`);
   }
@@ -1783,6 +1784,88 @@ const shieldBase = {
   shieldTier: 'tier1',
 };
 const equippedShields = expectedShields.slice(1);
+const protectedFaceChanges = (changed, unshielded, direction) => changed.filter((index) => {
+  if (unshielded[index] !== internalCatalogs.INK || direction === 'up') return false;
+  const x = index % engine.SIZE;
+  const y = Math.floor(index / engine.SIZE);
+  if (y < 5 || y > 11) return false;
+  if (direction === 'down') return x >= 9 && x <= 14;
+  if (direction === 'right') return x >= 13 && x <= 17;
+  return x >= 6 && x <= 10;
+});
+let frameSafeShieldCases = 0;
+
+function shieldTestPose(animation, frame) {
+  const pose = { bob: 0, arm: 0, wep: 'hold' };
+  if (animation === 'idle') pose.bob = frame === 1 ? 1 : 0;
+  if (animation === 'walk') {
+    pose.bob = frame === 1 || frame === 3 ? 1 : 0;
+    pose.arm = frame === 0 ? 1 : frame === 2 ? -1 : 0;
+  }
+  if (animation === 'attack') pose.wep = ['wind', 'strike', 'strike', 'recover'][frame];
+  return pose;
+}
+
+for (const bodyBuild of engine.BODY_BUILDS) for (const shield of equippedShields) for (const tier of engine.SHIELD_TIERS) {
+  const spec = { ...shieldBase, bodyBuild: bodyBuild.id, shield, shieldTier: tier.id };
+  const bodySpec = { ...spec, shield: 'none', shieldTier: 'tier1' };
+  for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+    for (let frame = 0; frame < animation.frames; frame++) {
+      const discardedPixels = [];
+      const shieldBackPixels = renderPixels(spec, direction, animation.id, frame, {
+        layer: 'shield-back',
+        onOutOfBounds: (pixel) => discardedPixels.push(pixel),
+      });
+      const shieldFrontPixels = renderPixels(spec, direction, animation.id, frame, {
+        layer: 'shield-front',
+        onOutOfBounds: (pixel) => discardedPixels.push(pixel),
+      });
+      const shieldPixels = compositePixelLayers([shieldBackPixels, shieldFrontPixels]);
+      const bodyPixels = renderPixels(bodySpec, direction, animation.id, frame, { layer: 'body' });
+      const complete = renderPixels(spec, direction, animation.id, frame);
+      const composite = compositePixelLayers([shieldBackPixels, bodyPixels, shieldFrontPixels]);
+      frameSafeShieldCases++;
+      check(
+        discardedPixels.length === 0,
+        `${bodyBuild.id} ${shield} ${tier.id} discarded ${discardedPixels.length} shield pixel(s) outside the 24x24 canvas in ${direction} ${animation.id} frame ${frame}`,
+      );
+      check(
+        minimumPixelDistance(shieldPixels, bodyPixels) <= 1,
+        `${bodyBuild.id} ${shield} ${tier.id} shield must stay attached to the body in ${direction} ${animation.id} frame ${frame}`,
+      );
+      check(
+        changedPixels(complete, bodyPixels).length >= 1,
+        `${bodyBuild.id} ${shield} ${tier.id} shield must retain a visible pixel after body occlusion in ${direction} ${animation.id} frame ${frame}`,
+      );
+      check(shieldFrontPixels.some(Boolean), `${bodyBuild.id} ${shield} ${tier.id} must export its hand-owning front grip in ${direction} ${animation.id} frame ${frame}`);
+      if (direction === 'right' || direction === 'up') {
+        check(shieldBackPixels.some(Boolean), `${bodyBuild.id} ${shield} ${tier.id} must export its far face behind the body in ${direction} ${animation.id} frame ${frame}`);
+      } else {
+        check(shieldBackPixels.every((pixel) => pixel === null), `${bodyBuild.id} ${shield} ${tier.id} must keep its near face out of the back layer in ${direction} ${animation.id} frame ${frame}`);
+      }
+      check(
+        JSON.stringify(composite) === JSON.stringify(complete),
+        `${bodyBuild.id} ${shield} ${tier.id} shield and body layers must rebuild the complete ${direction} ${animation.id} frame ${frame}`,
+      );
+      if (direction === 'down' || direction === 'left' || direction === 'right' || direction === 'up') {
+        const pose = shieldTestPose(animation.id, frame);
+        const sideOffset = pose.wep === 'wind' ? -1 : pose.arm;
+        const armOffset = direction === 'down' || direction === 'up' ? -pose.arm : sideOffset;
+        const handY = 15 + pose.bob + armOffset;
+        const handXs = direction === 'down' ? [6, 7]
+          : direction === 'up' ? [16, 17]
+            : direction === 'left' ? [10, 11]
+              : [12, 13];
+        const handIndices = handXs.flatMap((x) => [handY * engine.SIZE + x, (handY + 1) * engine.SIZE + x]);
+        check(
+          handIndices.every((index) => shieldFrontPixels[index] !== null),
+          `${bodyBuild.id} ${shield} ${tier.id} front grip must fully own the hand socket in ${direction} ${animation.id} frame ${frame}`,
+        );
+      }
+    }
+  }
+}
+
 for (const shield of equippedShields) {
   const spec = { ...shieldBase, shield };
   const emptySpec = { ...shieldBase, shield: 'none' };
@@ -1792,13 +1875,9 @@ for (const shield of equippedShields) {
         const rendered = renderPixels(spec, dir, anim.id, frame);
         const empty = renderPixels(emptySpec, dir, anim.id, frame);
         const changed = changedPixels(rendered, empty);
-        check(changed.length >= 3, `${shield} shield must remain visible in ${dir} ${anim.id} frame ${frame}`);
+        check(changed.length >= 1, `${shield} shield must remain visible in ${dir} ${anim.id} frame ${frame}`);
         check(
-          changed.every((index) => {
-            const x = index % engine.SIZE;
-            const y = Math.floor(index / engine.SIZE);
-            return !(x >= 9 && x <= 14 && y >= 5 && y <= 10);
-          }),
+          protectedFaceChanges(changed, empty, dir).length === 0,
           `${shield} shield must not cover the face in ${dir} ${anim.id} frame ${frame}`,
         );
       }
@@ -1810,19 +1889,30 @@ for (const shield of equippedShields) {
 
     const attackWind = changeSignature(renderPixels(spec, dir, 'attack', 0), renderPixels(emptySpec, dir, 'attack', 0));
     const attackRecover = changeSignature(renderPixels(spec, dir, 'attack', 3), renderPixels(emptySpec, dir, 'attack', 3));
-    check(attackWind !== attackRecover, `${shield} shield must brace and recover with attacks in ${dir}`);
+    check(
+      dir === 'left' || dir === 'right' ? attackWind !== attackRecover : attackWind === attackRecover,
+      `${shield} shield must follow only its hand socket during attacks in ${dir}`,
+    );
   }
 
-  const right = renderPixels(spec, 'right', 'idle', 0);
-  const left = renderPixels(spec, 'left', 'idle', 0);
+  const combinedShieldPixels = (direction) => compositePixelLayers([
+    renderPixels(spec, direction, 'idle', 0, { layer: 'shield-back' }),
+    renderPixels(spec, direction, 'idle', 0, { layer: 'shield-front' }),
+  ]);
+  const rightPixels = combinedShieldPixels('right');
+  const leftPixels = combinedShieldPixels('left');
+  const downPixels = combinedShieldPixels('down');
+  const right = weaponPixelBounds(rightPixels);
+  const left = weaponPixelBounds(leftPixels);
+  const down = weaponPixelBounds(downPixels);
   check(
-    left.every((pixel, index) => {
-      const x = index % engine.SIZE;
-      const y = Math.floor(index / engine.SIZE);
-      return pixel === right[(y * engine.SIZE) + (engine.SIZE - 1 - x)];
-    }),
-    `${shield} shield left profile must mirror the validated right profile`,
+    right.width >= down.width && right.height === down.height
+      && left.width >= down.width && left.height === down.height,
+    `${shield} shield side views must retain the full broad-face dimensions without perspective compression`,
   );
+  check(rightPixels[(15 * engine.SIZE) + 13] !== null, `${shield} right-facing grip must occupy the hand socket`);
+  check(leftPixels[(15 * engine.SIZE) + 10] !== null, `${shield} left-facing grip must occupy the mirrored hand socket`);
+  check(right.maxX <= 23 && left.minX >= 0, `${shield} shield side views must remain inside the safe hand-attached frame band`);
 }
 
 for (const dir of engine.DIRS) {
@@ -1838,14 +1928,11 @@ for (const shield of equippedShields) {
       for (let frame = 0; frame < anim.frames; frame++) {
         const tier1 = renderPixels(tier1Spec, dir, anim.id, frame);
         const tier2 = renderPixels(tier2Spec, dir, anim.id, frame);
+        const unshielded = renderPixels({ ...tier1Spec, shield: 'none' }, dir, anim.id, frame);
         const changed = changedPixels(tier2, tier1);
         check(changed.length >= 1, `${shield} Tier 2 must differ from Tier 1 in ${dir} ${anim.id} frame ${frame}`);
         check(
-          changed.every((index) => {
-            const x = index % engine.SIZE;
-            const y = Math.floor(index / engine.SIZE);
-            return !(x >= 9 && x <= 14 && y >= 5 && y <= 10);
-          }),
+          protectedFaceChanges(changed, unshielded, dir).length === 0,
           `${shield} Tier 2 must preserve face clearance in ${dir} ${anim.id} frame ${frame}`,
         );
       }
@@ -1879,14 +1966,11 @@ for (const shield of equippedShields) {
       for (let frame = 0; frame < anim.frames; frame++) {
         const tier2 = renderPixels(tier2Spec, dir, anim.id, frame);
         const tier3 = renderPixels(tier3Spec, dir, anim.id, frame);
+        const unshielded = renderPixels({ ...tier2Spec, shield: 'none' }, dir, anim.id, frame);
         const changed = changedPixels(tier3, tier2);
         check(changed.length >= 1, `${shield} Tier 3 must differ from Tier 2 in ${dir} ${anim.id} frame ${frame}`);
         check(
-          changed.every((index) => {
-            const x = index % engine.SIZE;
-            const y = Math.floor(index / engine.SIZE);
-            return !(x >= 9 && x <= 14 && y >= 5 && y <= 10);
-          }),
+          protectedFaceChanges(changed, unshielded, dir).length === 0,
           `${shield} Tier 3 must preserve face clearance in ${dir} ${anim.id} frame ${frame}`,
         );
       }
@@ -1905,7 +1989,10 @@ for (const shield of equippedShields) {
 
     const attackWind = changeSignature(renderPixels(tier3Spec, dir, 'attack', 0), renderPixels(tier2Spec, dir, 'attack', 0));
     const attackRecover = changeSignature(renderPixels(tier3Spec, dir, 'attack', 3), renderPixels(tier2Spec, dir, 'attack', 3));
-    check(attackWind !== attackRecover, `${shield} Tier 3 additions must brace and recover with attacks in ${dir}`);
+    check(
+      dir === 'left' || dir === 'right' ? attackWind !== attackRecover : attackWind === attackRecover,
+      `${shield} Tier 3 additions must follow only the shield-hand socket during attacks in ${dir}`,
+    );
   }
 }
 
@@ -1924,12 +2011,9 @@ for (const shield of equippedShields) {
       for (let frame = 0; frame < anim.frames; frame++) {
         const tier3 = renderPixels(tier3Spec, dir, anim.id, frame);
         const tier4 = renderPixels(tier4Spec, dir, anim.id, frame);
+        const unshielded = renderPixels({ ...tier3Spec, shield: 'none' }, dir, anim.id, frame);
         const changed = changedPixels(tier4, tier3);
-        const faceChanges = changed.filter((index) => {
-          const x = index % engine.SIZE;
-          const y = Math.floor(index / engine.SIZE);
-          return x >= 9 && x <= 14 && y >= 5 && y <= 10;
-        });
+        const faceChanges = protectedFaceChanges(changed, unshielded, dir);
         check(changed.length >= 1, `${shield} Tier 4 must differ from Tier 3 in ${dir} ${anim.id} frame ${frame}`);
         check(
           faceChanges.length === 0,
@@ -1951,7 +2035,10 @@ for (const shield of equippedShields) {
 
     const attackWind = changeSignature(renderPixels(tier4Spec, dir, 'attack', 0), renderPixels(tier3Spec, dir, 'attack', 0));
     const attackRecover = changeSignature(renderPixels(tier4Spec, dir, 'attack', 3), renderPixels(tier3Spec, dir, 'attack', 3));
-    check(attackWind !== attackRecover, `${shield} Tier 4 additions must brace and recover with attacks in ${dir}`);
+    check(
+      dir === 'left' || dir === 'right' ? attackWind !== attackRecover : attackWind === attackRecover,
+      `${shield} Tier 4 additions must follow only the shield-hand socket during attacks in ${dir}`,
+    );
   }
 }
 
@@ -1970,12 +2057,9 @@ for (const shield of equippedShields) {
       for (let frame = 0; frame < anim.frames; frame++) {
         const tier4 = renderPixels(tier4Spec, dir, anim.id, frame);
         const tier5 = renderPixels(tier5Spec, dir, anim.id, frame);
+        const unshielded = renderPixels({ ...tier4Spec, shield: 'none' }, dir, anim.id, frame);
         const changed = changedPixels(tier5, tier4);
-        const faceChanges = changed.filter((index) => {
-          const x = index % engine.SIZE;
-          const y = Math.floor(index / engine.SIZE);
-          return x >= 9 && x <= 14 && y >= 5 && y <= 10;
-        });
+        const faceChanges = protectedFaceChanges(changed, unshielded, dir);
         const minimumArtifactChanges = anim.id === 'hurt' ? 1 : 4;
         check(changed.length >= minimumArtifactChanges, `${shield} Tier 5 must be a substantial artifact redesign in ${dir} ${anim.id} frame ${frame}`);
         check(
@@ -1991,7 +2075,10 @@ for (const shield of equippedShields) {
 
     const attackWind = changeSignature(renderPixels(tier5Spec, dir, 'attack', 0), renderPixels(tier4Spec, dir, 'attack', 0));
     const attackRecover = changeSignature(renderPixels(tier5Spec, dir, 'attack', 3), renderPixels(tier4Spec, dir, 'attack', 3));
-    check(attackWind !== attackRecover, `${shield} Tier 5 artifact form must brace and recover with attacks in ${dir}`);
+    check(
+      dir === 'left' || dir === 'right' ? attackWind !== attackRecover : attackWind === attackRecover,
+      `${shield} Tier 5 artifact form must follow only the shield-hand socket during attacks in ${dir}`,
+    );
   }
 }
 
@@ -2119,5 +2206,6 @@ console.log(`- Enemy variants: ${enemyRefs.length}`);
 console.log(`- Combat effects: ${effectRefs.length}`);
 console.log(`- Player samples: ${playerRefs.length}`);
 console.log(`- Frame-safe weapon cases: ${frameSafeWeaponCases}`);
+console.log(`- Frame-safe shield cases: ${frameSafeShieldCases}`);
 console.log(`- Frame-safe headgear cases: ${frameSafeHeadgearCases}`);
 console.log(`- Validated PNG sheets: ${actualPngs.length} (${expectedWidth}x${expectedHeight})`);

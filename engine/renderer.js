@@ -461,7 +461,7 @@ function drawPlayerSpeciesFront(S, R, d, p, u, HT, species, skin, hair, gearDef)
   }
 }
 
-function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
+function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
   const small = !!C.small;
   const HT = small ? 5 : 3;      // head top
   const BT = small ? 13 : 12;    // torso top
@@ -476,7 +476,12 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   const R = (x, y, w, h, c) => g.rect(x + ox, y + oy, w, h, c);
   // Player weapons share the animated hand's idle bob and walk swing. Attack geometry already
   // encodes wind/strike/recover offsets, with a small in-frame follow-through/recoil for phase clarity.
-  const weaponRigY = C.weaponFollowRig ? u + (p.wep === 'hold' ? p.arm : 0) : 0;
+  const hasWeapon = C.weapon && C.weapon !== 'none';
+  // The weapon remains in the right hand: near while facing right, far after
+  // the left-facing mirror. This is the depth complement of the left-arm shield.
+  const sideWeaponIsFar = d === 'right' && viewDir === 'left' && hasWeapon;
+  const weaponArm = sideWeaponIsFar ? -p.arm : p.arm;
+  const weaponRigY = C.weaponFollowRig ? u + (p.wep === 'hold' ? weaponArm : 0) : 0;
   const weaponPoseShift = p.flash || p.lunge === 2 ? 1 : 0;
   const weaponShiftX = d === 'up' ? weaponPoseShift : (d === 'down' ? -weaponPoseShift : 0);
   const weaponShiftY = d === 'right' ? weaponPoseShift : 0;
@@ -496,19 +501,19 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   // Character-kit equipment sheets are split around the complete body so a game can
   // preserve the same direction-aware occlusion as the assembled renderer.
   if (renderLayer === 'weapon-back') {
-    if (d === 'up' && C.weapon && C.weapon !== 'none') drawWeapon(weaponS, weaponR, d, p, C, u);
+    if ((d === 'up' || sideWeaponIsFar) && hasWeapon) drawWeapon(weaponS, weaponR, d, p, C, u);
     return;
   }
   if (renderLayer === 'shield-back') {
-    drawShield(S, R, d, p, C, u, 'behind');
+    drawShield(S, R, d, p, C, u, 'behind', viewDir);
     return;
   }
   if (renderLayer === 'shield-front') {
-    drawShield(S, R, d, p, C, u, 'front');
+    drawShield(S, R, d, p, C, u, 'front', viewDir);
     return;
   }
   if (renderLayer === 'weapon-front') {
-    if (C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(weaponS, weaponR, d, p, C, u);
+    if (hasWeapon && d !== 'up' && !sideWeaponIsFar) drawWeapon(weaponS, weaponR, d, p, C, u);
     return;
   }
   if (renderLayer === 'species-back') {
@@ -531,9 +536,9 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   const includeHeadgear = includeFullBody || renderLayer === 'headgear';
 
   // ---- weapon (behind for up-facing) ----
-  if (includeEquipment && d === 'up' && C.weapon && C.weapon !== 'none') drawWeapon(weaponS, weaponR, d, p, C, u);
+  if (includeEquipment && (d === 'up' || sideWeaponIsFar) && hasWeapon) drawWeapon(weaponS, weaponR, d, p, C, u);
 
-  if (includeEquipment) drawShield(S, R, d, p, C, u, 'behind');
+  if (includeEquipment) drawShield(S, R, d, p, C, u, 'behind', viewDir);
 
   if (includeFullBody) drawPlayerSpeciesBack(S, R, d, p, u, C.species, skin, hair);
 
@@ -861,10 +866,10 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete') {
   // ---- headgear ----
   if (includeHeadgear && gear !== 'none') drawGear(S, R, d, u, HT, hx, gear, oc, C);
 
-  if (includeEquipment) drawShield(S, R, d, p, C, u, 'front');
+  if (includeEquipment) drawShield(S, R, d, p, C, u, 'front', viewDir);
 
   // ---- weapon (in front) ----
-  if (includeEquipment && C.weapon && C.weapon !== 'none' && d !== 'up') drawWeapon(weaponS, weaponR, d, p, C, u);
+  if (includeEquipment && hasWeapon && d !== 'up' && !sideWeaponIsFar) drawWeapon(weaponS, weaponR, d, p, C, u);
 }
 
 function drawFacialExpression(S, R, d, u, HT, expression, eye) {
@@ -2880,7 +2885,7 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
     const effect = find(category.effects, spec.effect);
     drawCombatEffect(g, d, f, effect, anim.id);
   } else if (spec.kind === 'player' || HUMANOID_FAMS.indexOf(spec.family) >= 0) {
-    drawHumanoid(g, d, p, buildHumanoidC(spec), renderLayer);
+    drawHumanoid(g, d, p, buildHumanoidC(spec), renderLayer, dir);
   } else if (renderLayer === 'complete' || renderLayer === 'body') {
     const fam = find(ENEMIES, spec.family);
     const V = find(fam.variants, spec.variant);

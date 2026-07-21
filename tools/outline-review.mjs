@@ -22,17 +22,17 @@ const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const outputFlag = process.argv.indexOf('--out');
 const output = path.resolve(root, outputFlag >= 0 ? process.argv[outputFlag + 1] : 'outline-review');
 
-// These hashes were recaptured after the reviewed 2026-07-20 frame-safety correction.
+// These hashes were recaptured after the reviewed 2026-07-21 shield object-space correction.
 // They protect the accepted renderer independently of the outline algorithm.
 const EXPECTED_BASELINE_HASHES = Object.freeze({
-  'baseline-sword': '8937f39bf1861e532acfe373e14a80ce6df550c147fff71e8d078eaea848098f',
-  'plumed-paladin': 'bc67b1ae73a04820dc7a808d435ee8e1930f88d874543bfc7632ec5ab7b47d75',
-  'lizard-spearmaster': 'a70c29f8f729656c4a14957cd112815d6c61e25ece7c6ba2836206ddf435c1b0',
-  'tiefling-arcanist': '0637d03788f157756e168ded5642d21c7120981e3738220b8b83c7df8dd1a0df',
-  'afro-tower-guard': 'e550e9cde43029cb06638abb72a0506a08769db240bd5fd56ca1dc8172589cd3',
-  'braided-ranger': 'fede741627915590c2273d6bc5b98c8756a8ceabd5c327a4040e9f35069e853c',
-  'skull-mask-rogue': 'aafb2466efb03c0f111678c32d9b74674bd11d7fc6a6a9489bbf2bcb878aadd4',
-  'dwarf-cleric': 'f75245f48e5e78c0f017bc1975120b21e5c5b048760f51c9d80ca2dd92ccce97',
+  'baseline-sword': 'b0f565f3f2599a3b25b40e64c35cb23271ca724781c082b0243c677ceeec7bf5',
+  'plumed-paladin': 'bdf83ca74fb1464716f9ce86d066003816e9b22fc59f971cbdd92709eb803ec7',
+  'lizard-spearmaster': '48b9019dcdd15e40c25563c81a7b6839dd60d7d9420c914cc6c7075c8fc2f7f3',
+  'tiefling-arcanist': '208d4df2abf53646253275b2967f734ba54f03b951ad024c7391c3b87ad629fc',
+  'afro-tower-guard': '5192d4284230d08edcf1e0ad218f93e3a4894d6f6170b962bab31c7735c11777',
+  'braided-ranger': '11f01bb9930755e5d8324997ddcf710c93c62fc1d403a6693673b371d61c4831',
+  'skull-mask-rogue': 'f8a7d4d97755721871003c89e6a0dc0617fbd6eefb27b780c765e4a3be5968f0',
+  'dwarf-cleric': '986040cb6bd63afb7c89c1c921b93e8b92a9fe5c93029224e06e83ea9939a320',
 });
 
 const BASE_PLAYER = Object.freeze({
@@ -1303,8 +1303,8 @@ if (Object.keys(EXPECTED_BASELINE_HASHES).length) {
 await mkdir(output, { recursive: true });
 const comparison = await writeComparisonSvg();
 const manifest = {
-  baselineCommit: '4d26784b16d945b04aca9ff4f7a15b5435ab82ff',
-  baselineReference: 'frame-safety-2026-07-20',
+  baselineCommit: null,
+  baselineReference: 'shield-object-space-2026-07-21',
   modes: [OUTLINE_MODE_NONE, OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_SELECTIVE_C],
   ownershipOrder: [...OUTLINE_LAYER_ORDER],
   baselineHashes,

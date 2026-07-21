@@ -9,27 +9,41 @@ const ARTIFACT = {
   frost: '#55eaff', steel: '#526b91', darkSteel: '#1f2c49',
 };
 
-const SHIELD_TOP = {
-  round: 12,
-  kite: 11,
-  buckler: 13,
-  heater: 11,
-  tower: 10,
-  oval: 11,
-  bone: 11,
-  arcane: 11,
+// Each full-face shield contains a solid grip pixel at x + 2 and at the
+// family-specific y offset below. That grip is placed directly on the body's
+// animated shield-hand socket. The body renderer suppresses its ordinary hand
+// pixels in views where that hand is visible, so the equipped shield owns the
+// socket instead of floating beyond a separately rendered hand.
+const SHIELD_GRIP_OFFSET_Y = {
+  round: 1,
+  kite: 3,
+  buckler: 1,
+  heater: 2,
+  tower: 5,
+  oval: 3,
+  bone: 3,
+  arcane: 3,
 };
 
-const PROFILE_HEIGHTS = {
-  round: 5,
-  kite: 7,
-  buckler: 4,
-  heater: 6,
-  tower: 9,
-  oval: 7,
-  bone: 7,
-  arcane: 7,
+const SHIELD_HAND_X = {
+  down: 7,
+  up: 17,
+  side: 13,
 };
+const SHIELD_HAND_Y = 15;
+
+function shieldGripColor(shield) {
+  if (shield === 'arcane') return ARCANE[3];
+  if (shield === 'bone') return INK;
+  if (shield === 'round' || shield === 'oval') return WOOD[1];
+  return METAL[1];
+}
+
+function shieldFaceOriginX(d, shield) {
+  if (d === 'right') return SHIELD_HAND_X.side;
+  if (d === 'down') return shield === 'buckler' ? 4 : 3;
+  return 16;
+}
 
 function drawLegacyFront(S, R, sx, u, shield, oc) {
   if (shield === 'round') {
@@ -95,6 +109,7 @@ function drawBuckler(S, R, x, y) {
   S(x, y + 1, METAL[2]); S(x + 3, y + 1, METAL[2]);
   S(x + 1, y + 1, METAL[2]); S(x + 2, y + 2, METAL[1]);
   S(x + 2, y + 1, GOLD[0]);
+  S(x + 1, y + 4, METAL[1]); S(x + 2, y + 4, METAL[1]);
 }
 
 function drawHeater(S, R, x, y, oc) {
@@ -144,6 +159,19 @@ function drawBone(S, R, x, y) {
   S(x, y + 5, BONE[1]); S(x + 4, y + 5, BONE[1]);
   S(x + 1, y + 6, BONE[0]); S(x + 3, y + 6, BONE[0]);
   S(x + 2, y + 1, INK); S(x + 2, y + 3, METAL[1]); S(x + 2, y + 5, INK);
+}
+
+function drawBoneTier3Foundation(S, R, x, y) {
+  // Give the open rib cage one readable shield mass without losing its gaps.
+  R(x + 1, y + 1, 3, 5, LEGEND[0]);
+}
+
+function drawBoneTier3Frame(S, R, x, y) {
+  // Join the ribs, crown, and lower teeth into one continuous bone frame.
+  R(x, y + 1, 1, 5, BONE[1]);
+  R(x + 4, y + 1, 1, 5, BONE[1]);
+  R(x + 1, y, 3, 1, BONE[0]);
+  R(x + 1, y + 6, 3, 1, BONE[0]);
 }
 
 function drawArcane(S, R, x, y) {
@@ -240,7 +268,7 @@ function drawTier3Full(S, R, x, y, shield) {
     S(x + 2, y + 2, LEGEND[1]); S(x + 2, y + 3, GOLD[2]);
   }
   if (shield === 'tower') {
-    S(x, y - 2, GOLD[2]); S(x + 2, y - 2, GOLD[2]); S(x + 4, y - 2, GOLD[2]);
+    S(x, y - 1, GOLD[2]); S(x + 2, y - 1, GOLD[2]); S(x + 4, y - 1, GOLD[2]);
     S(x - 1, y + 1, METAL[2]); S(x + 5, y + 1, METAL[2]);
     S(x - 1, y + 7, METAL[1]); S(x + 5, y + 7, METAL[1]);
     S(x, y + 10, METAL[1]); S(x + 2, y + 10, GOLD[1]); S(x + 4, y + 10, METAL[1]);
@@ -268,6 +296,14 @@ function drawTier3Full(S, R, x, y, shield) {
     S(x + 1, y + 4, LEGEND[2]); S(x + 3, y + 4, LEGEND[2]);
     S(x + 2, y + 3, LEGEND[3]);
   }
+}
+
+function drawBoneTier3Details(S, R, x, y) {
+  S(x, y - 2, BONE[0]); S(x + 2, y - 2, LEGEND[1]); S(x + 4, y - 2, BONE[0]);
+  S(x + 1, y - 1, BONE[1]); S(x + 3, y - 1, BONE[1]);
+  S(x - 1, y + 3, BONE[0]); S(x + 5, y + 3, BONE[0]);
+  S(x + 1, y + 8, BONE[1]); S(x + 2, y + 8, GOLD[1]); S(x + 3, y + 8, BONE[1]);
+  S(x + 1, y + 3, LEGEND[1]); S(x + 3, y + 3, LEGEND[1]);
 }
 
 function drawTier4Full(S, R, x, y, shield) {
@@ -305,23 +341,23 @@ function drawTier4Full(S, R, x, y, shield) {
     S(x + 2, y + 4, MYTHIC.gold);
   }
   if (shield === 'tower') {
-    S(x, y - 3, MYTHIC.gold); S(x + 1, y - 3, MYTHIC.core);
-    S(x + 3, y - 3, MYTHIC.core); S(x + 4, y - 3, MYTHIC.gold);
+    S(x, y, MYTHIC.gold); S(x + 1, y, MYTHIC.core);
+    S(x + 3, y, MYTHIC.core); S(x + 4, y, MYTHIC.gold);
     R(x - 2, y + 4, 1, 5, MYTHIC.void); R(x + 6, y + 4, 1, 5, MYTHIC.void);
     S(x - 1, y + 11, MYTHIC.frost); S(x + 2, y + 11, MYTHIC.core); S(x + 5, y + 11, MYTHIC.frost);
     R(x + 1, y + 2, 3, 1, MYTHIC.gold); R(x + 1, y + 7, 3, 1, MYTHIC.plasma);
     S(x, y + 4, MYTHIC.core); S(x + 4, y + 4, MYTHIC.core);
   }
   if (shield === 'oval') {
-    S(x + 1, y - 3, MYTHIC.core); S(x + 2, y - 3, MYTHIC.core);
+    S(x + 1, y - 2, MYTHIC.core); S(x + 2, y - 2, MYTHIC.core);
     S(x - 2, y + 2, MYTHIC.gold); S(x + 5, y + 2, MYTHIC.gold);
     S(x - 2, y + 5, MYTHIC.frost); S(x + 5, y + 5, MYTHIC.frost);
     S(x + 1, y + 10, MYTHIC.core); S(x + 2, y + 10, MYTHIC.core);
     R(x, y + 3, 4, 1, MYTHIC.void); R(x, y + 5, 4, 1, MYTHIC.gold);
   }
   if (shield === 'bone') {
-    S(x, y - 3, BONE[0]); S(x + 1, y - 3, MYTHIC.core);
-    S(x + 3, y - 3, MYTHIC.core); S(x + 4, y - 3, BONE[0]);
+    S(x, y - 2, BONE[0]); S(x + 1, y - 2, MYTHIC.core);
+    S(x + 3, y - 2, MYTHIC.core); S(x + 4, y - 2, BONE[0]);
     S(x - 2, y + 3, BONE[1]); S(x + 6, y + 3, BONE[1]);
     S(x - 2, y + 5, MYTHIC.void); S(x + 6, y + 5, MYTHIC.void);
     S(x + 1, y + 10, BONE[0]); S(x + 3, y + 10, BONE[0]);
@@ -387,8 +423,8 @@ function drawTier5Full(S, R, x, y, shield) {
   }
   if (shield === 'tower') {
     // The Unbroken Gate: crenellations, twin warding pillars, and anchored feet.
-    S(x - 1, y - 3, ARTIFACT.steel); S(x, y - 3, ARTIFACT.core);
-    S(x + 2, y - 3, ARTIFACT.gold); S(x + 3, y - 3, ARTIFACT.core); S(x + 4, y - 3, ARTIFACT.steel);
+    S(x - 1, y, ARTIFACT.steel); S(x, y, ARTIFACT.core);
+    S(x + 2, y, ARTIFACT.gold); S(x + 3, y, ARTIFACT.core); S(x + 4, y, ARTIFACT.steel);
     R(x - 1, y, 1, 10, ARTIFACT.darkSteel); R(x + 4, y, 1, 10, ARTIFACT.darkSteel);
     S(x - 1, y + 11, ARTIFACT.steel); S(x + 4, y + 11, ARTIFACT.steel);
     S(x - 1, y + 12, ARTIFACT.frost); S(x + 2, y + 12, ARTIFACT.core); S(x + 4, y + 12, ARTIFACT.frost);
@@ -398,7 +434,7 @@ function drawTier5Full(S, R, x, y, shield) {
   }
   if (shield === 'oval') {
     // Imperial Eternity: a tall war-disc enclosed by a golden victory laurel.
-    S(x + 1, y - 3, ARTIFACT.gold); S(x + 2, y - 3, ARTIFACT.gold);
+    S(x + 1, y - 2, ARTIFACT.gold); S(x + 2, y - 2, ARTIFACT.gold);
     S(x - 1, y - 1, ARTIFACT.sun); S(x + 4, y - 1, ARTIFACT.sun);
     S(x - 2, y + 2, ARTIFACT.gold); S(x + 5, y + 2, ARTIFACT.gold);
     S(x - 2, y + 5, ARTIFACT.gold); S(x + 5, y + 5, ARTIFACT.gold);
@@ -409,9 +445,9 @@ function drawTier5Full(S, R, x, y, shield) {
   }
   if (shield === 'bone') {
     // Deathking's Reliquary: a horned skull-cage burning with captured souls.
-    S(x, y - 3, BONE[0]); S(x + 4, y - 3, BONE[0]);
+    S(x, y - 2, BONE[0]); S(x + 4, y - 2, BONE[0]);
     S(x + 1, y - 2, ARTIFACT.soul); S(x + 3, y - 2, ARTIFACT.soul);
-    S(x + 2, y - 3, ARTIFACT.core);
+    S(x + 2, y - 2, ARTIFACT.core);
     S(x - 2, y + 1, BONE[1]); S(x + 6, y + 1, BONE[1]);
     S(x - 2, y + 5, ARTIFACT.void); S(x + 6, y + 5, ARTIFACT.void);
     S(x, y + 9, BONE[0]); S(x + 4, y + 9, BONE[0]);
@@ -434,6 +470,8 @@ function drawTier5Full(S, R, x, y, shield) {
 }
 
 function drawFullShield(S, R, x, y, shield, oc, tier) {
+  const reinforcedBoneFrame = shield === 'bone' && (tier === 'tier3' || tier === 'tier4');
+  if (reinforcedBoneFrame) drawBoneTier3Foundation(S, R, x, y);
   if (shield === 'round') drawRound(S, R, x, y);
   if (shield === 'kite') drawKite(S, R, x, y, oc);
   if (shield === 'buckler') drawBuckler(S, R, x, y);
@@ -443,154 +481,20 @@ function drawFullShield(S, R, x, y, shield, oc, tier) {
   if (shield === 'bone') drawBone(S, R, x, y);
   if (shield === 'arcane') drawArcane(S, R, x, y);
   if (tier === 'tier2' || tier === 'tier3' || tier === 'tier4' || tier === 'tier5') drawTier2Full(S, R, x, y, shield);
-  if (tier === 'tier3' || tier === 'tier4' || tier === 'tier5') drawTier3Full(S, R, x, y, shield);
+  if (shield === 'bone' && tier === 'tier3') drawBoneTier3Details(S, R, x, y);
+  else if (tier === 'tier3' || tier === 'tier4' || tier === 'tier5') drawTier3Full(S, R, x, y, shield);
+  if (reinforcedBoneFrame) drawBoneTier3Frame(S, R, x, y);
   if (tier === 'tier4') drawTier4Full(S, R, x, y, shield);
   if (tier === 'tier5') drawTier5Full(S, R, x, y, shield);
 }
 
-function drawTier2Profile(S, R, x, y, shield) {
-  const height = PROFILE_HEIGHTS[shield];
-  const middle = y + Math.floor(height / 2);
-  const rim = shield === 'bone' ? BONE[0] : shield === 'arcane' ? ARCANE[3] : METAL[2];
-  const accent = shield === 'arcane' ? ARCANE[2] : shield === 'bone' ? INK : GOLD[0];
-  S(x + 1, y - 1, rim);
-  S(x - 1, middle, rim);
-  S(x + 1, y + height, rim);
-  S(x, middle, accent);
-  if (shield === 'tower') R(x - 1, y + 1, 1, height - 2, METAL[1]);
-  if (shield === 'kite' || shield === 'heater') S(x + 1, y + height + 1, METAL[1]);
-  if (shield === 'round' || shield === 'oval') S(x - 1, middle - 1, METAL[1]);
-  if (shield === 'bone') S(x - 1, middle + 1, BONE[1]);
-  if (shield === 'arcane') S(x - 1, middle + 1, ARCANE[1]);
+function shieldHandOffset(p, d, viewDir) {
+  if (d !== 'right') return -p.arm;
+  if (p.wep === 'wind') return -1;
+  return p.arm;
 }
 
-function drawTier3Profile(S, R, x, y, shield) {
-  const height = PROFILE_HEIGHTS[shield];
-  const middle = y + Math.floor(height / 2);
-  const crown = shield === 'bone' ? BONE[0] : shield === 'arcane' ? LEGEND[3] : GOLD[2];
-  const tail = shield === 'arcane' ? LEGEND[2] : shield === 'bone' ? BONE[1] : GOLD[1];
-  S(x - 1, y - 2, crown); S(x, y - 2, crown);
-  S(x - 1, middle - 1, shield === 'arcane' ? LEGEND[1] : crown);
-  S(x - 1, middle + 1, shield === 'bone' ? BONE[0] : tail);
-  S(x, y + height + 2, tail); S(x + 2, y + height + 2, tail);
-  S(x, middle, shield === 'bone' ? LEGEND[1] : LEGEND[0]);
-  if (shield === 'tower') {
-    S(x - 1, y, METAL[2]); S(x - 1, y + height, METAL[1]);
-  }
-  if (shield === 'buckler') S(x + 2, middle - 1, LEGEND[1]);
-}
-
-function drawTier4Profile(S, R, x, y, shield) {
-  const height = PROFILE_HEIGHTS[shield];
-  const middle = y + Math.floor(height / 2);
-  const crown = shield === 'bone' ? BONE[0] : MYTHIC.core;
-  const upper = shield === 'arcane' ? MYTHIC.plasma : shield === 'bone' ? BONE[1] : MYTHIC.gold;
-  const lower = shield === 'arcane' ? MYTHIC.frost : shield === 'bone' ? MYTHIC.void : MYTHIC.frost;
-  S(x - 2, y - 3, crown); S(x - 1, y - 3, upper);
-  S(x - 2, middle - 2, upper); S(x - 2, middle + 2, lower);
-  S(x - 2, y + height + 1, lower);
-  S(x + 2, middle + 2, shield === 'bone' ? MYTHIC.plasma : MYTHIC.void);
-  S(x - 1, middle, MYTHIC.core);
-  if (shield === 'tower') {
-    R(x - 2, y, 1, height, MYTHIC.void);
-    S(x + 2, y + height + 1, MYTHIC.core);
-  }
-  if (shield === 'buckler') {
-    S(x - 2, middle - 3, MYTHIC.frost); S(x - 2, middle + 3, MYTHIC.gold);
-  }
-  if (shield === 'kite' || shield === 'heater') S(x, y + height + 2, MYTHIC.core);
-  if (shield === 'arcane') S(x - 2, y + 1, MYTHIC.plasma);
-}
-
-function drawTier5Profile(S, R, x, y, shield) {
-  const height = PROFILE_HEIGHTS[shield];
-  const middle = y + Math.floor(height / 2);
-
-  if (shield === 'round') {
-    S(x - 1, y - 3, ARTIFACT.sun); S(x, y - 3, ARTIFACT.gold);
-    S(x - 2, middle - 2, ARTIFACT.ember); S(x - 2, middle + 2, ARTIFACT.gold);
-    S(x - 1, y + height + 2, ARTIFACT.sun);
-    S(x + 2, middle, ARTIFACT.core); S(x - 1, middle, ARTIFACT.ember);
-  }
-  if (shield === 'kite') {
-    S(x - 2, y - 3, ARTIFACT.astral); S(x, y - 2, ARTIFACT.frost);
-    S(x - 2, middle - 2, ARTIFACT.void); S(x - 1, middle + 2, ARTIFACT.astral);
-    S(x, y + height + 3, ARTIFACT.core);
-    S(x + 2, middle - 1, ARTIFACT.blood); R(x - 1, middle, 1, 3, ARTIFACT.void);
-  }
-  if (shield === 'buckler') {
-    S(x - 1, y - 3, ARTIFACT.core); S(x, y - 3, ARTIFACT.core);
-    S(x - 2, middle - 3, ARTIFACT.frost); S(x - 2, middle + 3, ARTIFACT.gold);
-    S(x + 2, middle, ARTIFACT.void); S(x - 1, middle, ARTIFACT.astral);
-  }
-  if (shield === 'heater') {
-    S(x - 2, y - 3, ARTIFACT.gold); S(x, y - 3, ARTIFACT.core);
-    S(x - 2, middle - 2, ARTIFACT.blood); S(x - 1, middle + 2, ARTIFACT.gold);
-    S(x, y + height + 3, ARTIFACT.core); S(x - 1, y + height + 2, ARTIFACT.blood);
-    S(x + 2, middle, ARTIFACT.sun);
-  }
-  if (shield === 'tower') {
-    S(x - 2, y - 3, ARTIFACT.steel); S(x, y - 3, ARTIFACT.gold);
-    R(x - 2, y, 1, height + 1, ARTIFACT.darkSteel);
-    S(x - 2, y + height + 3, ARTIFACT.frost); S(x, y + height + 3, ARTIFACT.core);
-    S(x + 2, middle, ARTIFACT.gold); S(x - 1, middle + 2, ARTIFACT.frost);
-  }
-  if (shield === 'oval') {
-    S(x - 1, y - 3, ARTIFACT.gold); S(x, y - 3, ARTIFACT.gold);
-    S(x - 2, middle - 2, ARTIFACT.sun); S(x - 2, middle + 2, ARTIFACT.ember);
-    S(x - 1, y + height + 3, ARTIFACT.core);
-    S(x + 2, middle, ARTIFACT.blood); S(x - 1, middle, ARTIFACT.sun);
-  }
-  if (shield === 'bone') {
-    S(x - 2, y - 3, BONE[0]); S(x, y - 3, ARTIFACT.soul);
-    S(x - 2, middle - 2, BONE[1]); S(x - 2, middle + 2, ARTIFACT.void);
-    S(x - 1, y + height + 3, BONE[0]); S(x + 1, y + height + 3, ARTIFACT.soul);
-    S(x + 2, middle, ARTIFACT.void); S(x - 1, middle, ARTIFACT.soul);
-  }
-  if (shield === 'arcane') {
-    S(x - 1, y - 3, ARTIFACT.core); S(x, y - 2, ARTIFACT.frost);
-    S(x - 2, middle - 2, ARTIFACT.astral); S(x - 2, middle + 2, ARTIFACT.frost);
-    S(x, y + height + 3, ARTIFACT.core); S(x + 1, y + height + 2, ARTIFACT.soul);
-    S(x + 2, middle, ARTIFACT.core); S(x - 1, middle, ARTIFACT.void);
-  }
-}
-
-function drawProfile(S, R, x, y, shield, oc, tier) {
-  const profiles = {
-    round: [5, WOOD[0], WOOD[1]],
-    kite: [7, METAL[0], METAL[1]],
-    buckler: [4, METAL[0], METAL[1]],
-    heater: [6, METAL[0], METAL[1]],
-    tower: [9, METAL[0], METAL[1]],
-    oval: [7, WOOD[0], WOOD[1]],
-    bone: [7, BONE[0], BONE[1]],
-    arcane: [7, ARCANE[1], ARCANE[2]],
-  };
-  const [height, face, rim] = profiles[shield];
-  R(x + 1, y, 1, height, rim);
-  R(x, y + 1, 2, height - 2, face);
-  S(x, y + 1, rim); S(x, y + height - 2, rim);
-  S(x + 2, y + Math.floor(height / 2), shield === 'arcane' ? ARCANE[3] : shield === 'bone' ? INK : oc[0]);
-  if (shield === 'kite' || shield === 'heater') S(x + 1, y + height - 1, rim);
-  if (shield === 'tower') {
-    S(x, y, METAL[2]); S(x, y + height - 1, METAL[1]);
-  }
-  if (shield === 'buckler') S(x + 2, y + 1, METAL[2]);
-  if (tier === 'tier2' || tier === 'tier3' || tier === 'tier4' || tier === 'tier5') drawTier2Profile(S, R, x, y, shield);
-  if (tier === 'tier3' || tier === 'tier4' || tier === 'tier5') drawTier3Profile(S, R, x, y, shield);
-  if (tier === 'tier4') drawTier4Profile(S, R, x, y, shield);
-  if (tier === 'tier5') drawTier5Profile(S, R, x, y, shield);
-}
-
-function shieldRig(p, d) {
-  const walkingArm = p.wep === 'hold' ? -p.arm : 0;
-  const attackLift = p.wep === 'wind' ? -1 : 0;
-  const direction = d === 'down' ? 1 : -1;
-  const brace = p.wep === 'wind' ? -direction : p.wep === 'strike' ? direction : 0;
-  return { x: brace, y: p.bob + walkingArm + attackLift };
-}
-
-export function drawShield(S, R, d, p, C, u, layer = 'front') {
+export function drawShield(S, R, d, p, C, u, layer = 'front', viewDir = d) {
   if (!C.shield || C.shield === 'none') return;
 
   if (!C.shieldFollowRig) {
@@ -598,18 +502,38 @@ export function drawShield(S, R, d, p, C, u, layer = 'front') {
     return;
   }
 
-  const rig = shieldRig(p, d);
-  const top = SHIELD_TOP[C.shield];
-  if (top === undefined) return;
+  const gripOffsetY = SHIELD_GRIP_OFFSET_Y[C.shield];
+  if (gripOffsetY === undefined) return;
+  const handOffset = shieldHandOffset(p, d, viewDir);
+  const handX = d === 'right' ? SHIELD_HAND_X.side : SHIELD_HAND_X[d];
+  const originX = shieldFaceOriginX(d, C.shield);
+  const originY = SHIELD_HAND_Y + p.bob + handOffset - gripOffsetY;
+  const handY = SHIELD_HAND_Y + p.bob + handOffset;
 
   if (d === 'right') {
-    if (layer !== 'behind') return;
-    drawProfile(S, R, 6 + rig.x, top + rig.y, C.shield, C.oc, C.shieldTier);
+    // The same shield hand is near the viewer while facing right and far from
+    // the viewer while facing left. Its forearm-relative orientation does not
+    // change; only the screen attachment, body depth, and arm phase change.
+    const nearHand = viewDir === 'left';
+    const faceLayer = nearHand ? 'front' : 'behind';
+    if (layer === faceLayer) {
+      if (faceLayer === 'front') R(handX - 1, handY, 2, 2, shieldGripColor(C.shield));
+      drawFullShield(S, R, originX, originY, C.shield, C.oc, C.shieldTier);
+    }
+    // A far-side face sits behind the torso, but its equipment-owned grip still
+    // replaces the generic body hand in the front pass.
+    if (layer === 'front' && faceLayer === 'behind') {
+      R(handX - 1, handY, 2, 2, shieldGripColor(C.shield));
+    }
     return;
   }
 
-  const expectedLayer = d === 'up' ? 'behind' : 'front';
-  if (layer !== expectedLayer) return;
-  const baseX = d === 'down' ? (C.shield === 'buckler' ? 4 : 3) : 17;
-  drawFullShield(S, R, baseX + rig.x, top + rig.y, C.shield, C.oc, C.shieldTier);
+  const faceLayer = d === 'up' ? 'behind' : 'front';
+  if (layer === faceLayer) {
+    if (faceLayer === 'front') R(handX - 1, handY, 2, 2, shieldGripColor(C.shield));
+    drawFullShield(S, R, originX, originY, C.shield, C.oc, C.shieldTier);
+  }
+  if (layer === 'front' && faceLayer === 'behind') {
+    R(handX - 1, handY, 2, 2, shieldGripColor(C.shield));
+  }
 }
