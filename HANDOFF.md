@@ -1,108 +1,167 @@
 # Project Handoff
 
-Date: 2026-07-20
+Date: 2026-07-22
 Workspace: `C:\Users\headc\Documents\8-bit sprite assembler`
 Repository: `tilok1234/8-bit-sprite-assembler`
 
-## Current State
+## Read This First
+
+The active problem is **not approved shield artwork and not a weapon/shield hand conflict**. The user reports that shields look wrong in the assembler because the default combat-effect preview interacts with them incorrectly.
+
+Always reproduce and review this in the same state the user sees by default:
+
+- use the assembler UI, preferably through the isolated in-app browser;
+- leave `Overlay preview` **On**;
+- use the actual selected weapon, shield, tiers, effect loadout, direction, animation, and frame;
+- compare the same frame with effects On and Off only to isolate the cause;
+- do not treat an effects-Off review as validation of the reported combined-preview problem.
+
+Do not change already approved shield artwork merely to compensate for a preview-compositor issue.
+
+## Git Checkpoint
 
 - Branch: `codex/optional-sprite-outlines`
-- Previous committed checkpoint: `220c92a` (`Fix equipment animation frame safety`); the approved Crossbow T5 source-art checkpoint is the commit containing this handoff update. Both are local only.
-- Remote branch point: `674d926` on `origin/codex/optional-sprite-outlines`
-- This checkpoint leaves the local branch four commits ahead of its upstream.
-- This checkpoint contains the user-approved Crossbow T5 source-art correction and its status documentation.
-- Crossbow T5 is the only weapon source artwork changed in this worktree; no shield source artwork has changed.
-- Do not reset, restore, stash, commit, push, or merge without first showing the exact scope and obtaining approval.
+- Last pushed checkpoint: `f21cbe3` (`Fix shield hand attachment and facing`).
+- Upstream: `origin/codex/optional-sprite-outlines` at `f21cbe3`.
+- The branch has one later local-only documentation/review-tooling checkpoint. It is not pushed and deliberately excludes the unapproved effect-direction experiment and generated review artifacts.
+- `f21cbe3` remains the safe pushed checkpoint containing the user-approved shield hand attachment/facing work.
+- Earlier relevant commits:
+  - `f27c63f` (`Improve Crossbow T5 silhouette`)
+  - `220c92a` (`Fix equipment animation frame safety`)
 
-Current changed-file scope before the approved Crossbow checkpoint:
+Do not reset, restore, stash, commit, push, merge, or accept visual baselines without first showing the exact scope and obtaining approval.
 
-- `engine/weapon-renderer.js`
+## Current Working Tree
+
+The local-only documentation/review-tooling checkpoint contains:
+
+- all ten repository Markdown documents, reconciled to the current checkpoint, validation counts, release state, object-space shield rule, and unresolved effect/shield integration problem;
+- `tools/weapon-readability-audit.mjs`, adding the verified `--tier-sheets` review output;
+- `tools/generate-bone-tier3-review.mjs`, preserving the source-only Bone T3 review generator without accepting or publishing its generated candidate images.
+
+Remaining tracked modifications after that checkpoint:
+
+- `engine/effect-renderer.js` - unapproved two-line direction experiment described below.
+- `tools/check-project.mjs` - regression checks for that direction experiment.
+
+Remaining untracked generated review artifacts:
+
+- `shield-review/`
+- `weapon-review-tier1-focus/`
+
+These 101 generated files are intentional prior work/review artifacts. Preserve them. The `shield-review/` tree includes placement audits, combined-loadout reviews, tier sheets, and Bone T3 candidate sheets.
+
+The mistaken post-checkpoint changes previously made to `engine/renderer.js` and `engine/shield-renderer.js` were fully removed. Both files are clean relative to `f21cbe3`.
+
+## Unapproved Effect-Direction Experiment
+
+There is a current uncommitted change in `engine/effect-renderer.js`:
+
+- left-facing directional effects get their own transform instead of sharing the up-facing transform;
+- left-facing impact centers use `[8, 12]` instead of the up-facing `[12, 8]`.
+
+`tools/check-project.mjs` contains 38 added lines asserting that trails and impacts occupy the expected side for all four directions.
+
+This direction correction passes validation and may be independently useful, but it **does not implement the user-requested effect-versus-shield compositing fix**. It was incorrectly presented as though it solved the reported problem. Treat it as an unapproved experiment: inspect it separately and either keep it as a separate scoped fix with approval or remove it. Do not commit it as the shield/effect solution.
+
+## Actual Combined-Preview Problem
+
+The relevant compositor is `drawCompositeFrame` in `app.js`.
+
+Its current order is:
+
+1. draw the complete outlined character with `E.drawOutlinedSprite(...)`;
+2. resolve the combat-effect specs;
+3. draw every effect afterward with `E.drawSprite(..., { shadow: false, clear: false })`.
+
+Consequently, trails, projectiles, impacts, and status effects can paint directly over the body, headgear, weapon, and shield. The default state is `previewEffects: true`, so this is what the user sees when opening the assembler. `README.md`, `ARCHITECTURE.md`, and `ROADMAP.md` now identify the effects-after-character order as the unresolved compatibility behavior rather than final occlusion guidance; update them again if the compositor contract changes.
+
+The original reported screenshot is:
+
+`C:\Users\headc\AppData\Local\Temp\codex-clipboard-9faa9391-4da7-4521-a3ac-3f93d9d36f2b.png`
+
+It shows `ATTACK - UP` with equipment and effect pixels producing an unacceptable combined result. The user explicitly clarified that the shield is interacting with the **effect**, not the weapon.
+
+The later review image:
+
+`C:\Users\headc\AppData\Local\Temp\sprite-assembler-effects-default-view-fixed.png`
+
+only demonstrates the unapproved left/up direction experiment. It is **not** approval evidence for the compositor issue and must not be presented as the requested fix.
+
+## Correct Next Investigation
+
+Work one small verified step at a time:
+
+1. Start from `f21cbe3` plus the preserved dirty files above.
+2. Open the built assembler in the isolated browser with its default effect overlay On.
+3. Reproduce the original problem using the exact loadout visible in the screenshot or the user's current selection. Inspect every attack frame in all four directions.
+4. Toggle effects Off only for a direct same-frame comparison. Confirm which pixels belong to the approved shield and which belong to the effect.
+5. Decide the required component-aware draw order or occlusion rule before editing. Do not assume that moving every effect behind the whole character is correct: trails, projectiles, impacts, and status effects may need different ownership/front-back behavior.
+6. Apply the narrow compositor/effect change. Do not redesign the shield or alter approved shield silhouettes.
+7. Add a regression that exercises the combined preview behavior, not merely the standalone effect sheet. At minimum, prove that the intended foreground shield pixels are not incorrectly overwritten in the affected frames while the effect remains visible in its intended area.
+8. Run the browser review again with effects On by default. Check all four attack frames in down, left, right, and up views. Show the result and wait for explicit visual approval.
+9. Only after approval: rebuild the standalone executable, verify hashes/release checks, then ask before committing and pushing.
+
+The user prefers isolated browser verification because launching or controlling the desktop executable disrupts their computer. Do not use desktop control unless explicitly requested.
+
+## Current Executable
+
+The standalone executable was rebuilt after the direction-only experiment:
+
+- Path: `src-tauri\target\release\sprite-assembler.exe`
+- Last write: `2026-07-22 00:08:39` local time
+- Size: `3,689,984` bytes
+- SHA-256: `6D2B3674C87005E6D9FF27FBA29521D236B08FBC719A060E32FDB9CA4F02DFE2`
+
+It contains the unapproved direction experiment but **not** the requested effect/shield compositor fix. The NSIS installer was not rebuilt for this state. Do not describe the current executable as containing the requested fix.
+
+## Latest Validation Evidence
+
+After the direction-only experiment:
+
+- `npm.cmd run check` passed.
+- `npm.cmd run check:release` passed 37 assertions against the available release artifacts.
+- `git diff --check` passed.
+- `engine/effect-renderer.js` and `dist/engine/effect-renderer.js` were byte-identical after the build.
+
+These structural checks do not constitute visual approval of the combined effect/shield result.
+
+## Documentation Audit
+
+All ten project Markdown documents were read and reconciled on 2026-07-22:
+
+- `README.md`
+- `ARCHITECTURE.md`
+- `ROADMAP.md`
+- `HANDOFF.md`
+- `OUTLINE_RENDERING_PLAN.md`
+- `EQUIPMENT_OUTLINE_ASSESSMENT.md`
 - `EQUIPMENT_READABILITY_PLAN.md`
 - `WEAPON_READABILITY_PLAN.md`
-- `HANDOFF.md`
+- `WINDOWS_RELEASE.md`
+- `asset-pack/README.md`
 
-## Outline Baseline
+The audit removed stale local-only checkpoint claims, replaced Bone T3 as the immediate priority with the actual effect/shield integration blocker, corrected the historical 5,520-case gate to the current 11,280 weapon-plus-shield validation scope, replaced obsolete edge-on shield language with the approved object-space broad-face rule, distinguished standalone and installer artifacts, and marked effects-after-character compositing as unresolved rather than approved guidance.
 
-The current outline implementation is active and is no longer the abandoned experiment described by the old handoff.
-
-- Player modes: None, Complete B, and Selective C.
-- None delegates directly to the original renderer and remains the compatibility baseline.
-- Equipment uses restrained cardinal contouring, filtered interior cavities, and depth-aware contact separation.
-- Front equipment preserves dark facial features by moving a necessary separator to the equipment side.
-- Front equipment/headgear contact also places the separator on equipment so headgear pixels remain unchanged.
-- Converted contact-separator pixels do not cast a redundant second halo.
-- The algorithm is frozen while source-art prototypes are reviewed.
-
-The implementation details and regression contract are in `OUTLINE_RENDERING_PLAN.md`.
-
-## Weapon Reassessment
-
-The full weapon audit was regenerated on 2026-07-20:
-
-- 15 families x 5 tiers = 75 family/tier variants
-- 3,600 assembled direction/animation/frame cases
-- 37 enlarged and true-native review sheets
-- every family/tier source layer remained single-component (`maxComponents=1`)
-
-Visual verdict:
-
-- Current source-identity baseline accepted: Sword, Greatsword, Scimitar, Rapier, Dagger, Axe, Mace, Warhammer, Spear, Club, Bow, Crossbow, Staff, Wand, and Spellbook.
-- Crossbow T5's user-approved correction uses brighter connected recurved limbs and a reinforced stock/grip so it no longer reads as a compact firearm.
-- Separate later composition issue: Crossbow T2 with a shield.
-- Local monitoring only: Mace/Warhammer protrusions and thin Staff/Wand/Dagger/Rapier frames.
-
-Mechanical audit values such as detached distance, expression overlap, and edge contact are diagnostic signals, not automatic art failures.
-
-The canonical sequence is `EQUIPMENT_READABILITY_PLAN.md`. Historical assessment evidence is retained in `EQUIPMENT_OUTLINE_ASSESSMENT.md`.
-
-## Animation Frame-Safety Correction
-
-The user's report that weapon attacks and some hats cut out of the frame was confirmed and corrected on 2026-07-20. Pre-repair evidence:
-
-- 259 of 3,600 weapon frames discard 915 pixels, all during attacks.
-- The affected weapon families are Warhammer, Club, Mace, Staff, Axe, Wand, Spellbook, Greatsword, Rapier, Sword, Scimitar, and Spear.
-- Dagger, Bow, and Crossbow produced no discarded weapon pixels.
-- 37 of 528 headgear cases discard 101 pixels: Wizard hat (33 cases), Plumed helm (3), and Horned helm (1).
-- A diagnostic probe without the shared whole-character attack/hurt translation reduced weapon cropping to zero and removed Plumed/Horned helm cropping.
-- Wizard hat still cropped because its tip geometry began above the canvas.
-
-Implemented result:
-
-- the pixel buffer exposes an optional diagnostic callback for attempted out-of-canvas writes;
-- humanoid attacks keep body, shield, and headgear registered while weapon follow-through/recoil moves one pixel on the safe perpendicular axis;
-- Wizard hat tip geometry is fully in-frame; Plumed and Horned helms needed no direct art edit;
-- all 3,600 weapon cases and all 528 headgear cases report zero discarded pixels;
-- the full project validator, weapon audit, outline review, and browser playback inspection pass;
-- an Arcane T5 shield orbit rune uncovered by the new pose tests was moved one pixel clear of the face.
-
-## Runtime Evidence
-
-The existing executable was older than the current source, so `npm.cmd run tauri:build:exe` rebuilt `src-tauri\target\release\sprite-assembler.exe` successfully on 2026-07-20.
-
-The rebuilt executable was tested with the actual selectors and modes. Crossbow T5 remained firearm-like in None, Complete B, and Selective C, including right-facing and down-facing attack views. A non-intrusive in-app browser review reproduced the same result without taking over the Windows desktop. This confirms the outline makes separation clearer but cannot repair the source silhouette.
-
-The later Crossbow T5 source-art prototype was reviewed in the browser from front/down, back/up, left, and right through idle, walk, attack, and hurt. None, Complete B, and Selective C passed without a shield and with a representative Tower shield. The user accepted the corrected silhouette on 2026-07-20. The executable has not been rebuilt for this accepted source-art checkpoint yet.
-
-After the frame-safety correction, `npm.cmd run tauri:build:exe` rebuilt the release executable again at `src-tauri\target\release\sprite-assembler.exe`. The stale earlier process that locked that exact file was closed first; the corrected executable was not launched, because browser playback supplied the requested non-intrusive visual QA.
-
-## Validation Commands
-
-Use the following before proposing another checkpoint:
+Recommended commands after the actual compositor fix:
 
 ```powershell
 npm.cmd run check
-npm.cmd run review:outlines
-npm.cmd run review:weapons -- --all-frames
 npm.cmd run build
 git diff --check
+npm.cmd run tauri:build:exe
+npm.cmd run check:release
 ```
 
-The generated `weapon-review/` and `outline-review/` artifacts are review outputs and are intentionally ignored by Git.
+Do not run outline-baseline acceptance or rewrite golden files automatically. Existing outline baseline drift remains an approval gate.
 
-## Next Action
+## Broader Planned Work
 
-1. Preserve the approved local outline, readability-baseline, frame-safety, and Crossbow T5 checkpoints; none are pushed.
-2. Keep the accepted Crossbow T5 source-art change separate from all shield work.
-3. The next single prototype is Bone T3 shield structure.
-4. Preserve the 24x24 contract, equipment placement, animation timing, outline logic, and unrelated shield tiers/families.
-5. Stop after Bone T3 and request visual approval before evaluating Bone T4 or T5.
+Before the combined-preview issue interrupted the sequence, the project had already:
+
+- reassessed all weapon families and tiers;
+- corrected weapon/headgear frame clipping;
+- reviewed and approved the shield hand/facing work now in `f21cbe3`;
+- planned to continue weapon/equipment assessment one item at a time after the assembler integration was trustworthy.
+
+Do not resume the broader weapon sequence until the user-visible default assembler preview is correctly reproduced, fixed, verified, and approved.

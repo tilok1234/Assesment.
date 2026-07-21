@@ -1,11 +1,13 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { deflateSync } from 'node:zlib';
 
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const outputFlag = process.argv.indexOf('--out');
 const focusFlag = process.argv.indexOf('--focus');
 const allFrames = process.argv.includes('--all-frames');
+const tierSheets = process.argv.includes('--tier-sheets');
 const outputArg = outputFlag >= 0 ? process.argv[outputFlag + 1] : 'weapon-review';
 const focusIds = focusFlag >= 0
   ? new Set(String(process.argv[focusFlag + 1] || '').split(',').map((value) => value.trim()).filter(Boolean))
@@ -21,6 +23,7 @@ if (!weapons.length) throw new Error('The weapon review focus did not match any 
 await mkdir(output, { recursive: true });
 if (allFrames) await mkdir(path.join(output, 'all-frames'), { recursive: true });
 if (allFrames) await mkdir(path.join(output, 'all-frames-native'), { recursive: true });
+if (tierSheets) await mkdir(path.join(output, 'tier-sheets'), { recursive: true });
 
 class PixelContext {
   constructor() {
@@ -173,6 +176,124 @@ async function writeAllFrameSheet(weapon, scale = 3, folder = 'all-frames') {
   return relativePath;
 }
 
+const PNG_SIGNATURE = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
+const PNG_CRC_TABLE = Array.from({ length: 256 }, (_, value) => {
+  let crc = value;
+  for (let bit = 0; bit < 8; bit++) crc = (crc & 1) ? (0xedb88320 ^ (crc >>> 1)) : (crc >>> 1);
+  return crc >>> 0;
+});
+
+function pngCrc(buffer) {
+  let crc = 0xffffffff;
+  for (const byte of buffer) crc = PNG_CRC_TABLE[(crc ^ byte) & 0xff] ^ (crc >>> 8);
+  return (crc ^ 0xffffffff) >>> 0;
+}
+
+function pngChunk(type, data) {
+  const typeBytes = Buffer.from(type, 'ascii');
+  const length = Buffer.alloc(4);
+  length.writeUInt32BE(data.length);
+  const crc = Buffer.alloc(4);
+  crc.writeUInt32BE(pngCrc(Buffer.concat([typeBytes, data])));
+  return Buffer.concat([length, typeBytes, data, crc]);
+}
+
+function encodePng(width, height, rgba) {
+  const header = Buffer.alloc(13);
+  header.writeUInt32BE(width, 0);
+  header.writeUInt32BE(height, 4);
+  header[8] = 8;
+  header[9] = 6;
+  const stride = width * 4;
+  const rows = Buffer.alloc((stride + 1) * height);
+  for (let y = 0; y < height; y++) rgba.copy(rows, y * (stride + 1) + 1, y * stride, (y + 1) * stride);
+  return Buffer.concat([
+    PNG_SIGNATURE,
+    pngChunk('IHDR', header),
+    pngChunk('IDAT', deflateSync(rows, { level: 9 })),
+    pngChunk('IEND', Buffer.alloc(0)),
+  ]);
+}
+
+function rgb(fill) {
+  const match = /^#([0-9a-f]{6})$/i.exec(fill || '');
+  if (!match) return [255, 0, 255];
+  const value = Number.parseInt(match[1], 16);
+  return [(value >>> 16) & 255, (value >>> 8) & 255, value & 255];
+}
+
+function fillRgba(rgba, width, x, y, rectWidth, rectHeight, color) {
+  const [red, green, blue] = rgb(color);
+  for (let py = y; py < y + rectHeight; py++) for (let px = x; px < x + rectWidth; px++) {
+    const index = (py * width + px) * 4;
+    rgba[index] = red;
+    rgba[index + 1] = green;
+    rgba[index + 2] = blue;
+    rgba[index + 3] = 255;
+  }
+}
+
+async function writeTierDirectionSheet(tier, direction) {
+  const scale = 3;
+  const labelWidth = 132;
+  const titleHeight = 34;
+  const headerHeight = 26;
+  const cellWidth = SIZE * scale + 6;
+  const cellHeight = SIZE * scale + 6;
+  const columns = ANIMS.flatMap((animation) => Array.from(
+    { length: animation.frames },
+    (_, frame) => ({ animation: animation.id, frame, label: `${animation.id[0].toUpperCase()}${frame + 1}` }),
+  ));
+  const width = labelWidth + columns.length * cellWidth + 4;
+  const height = titleHeight + headerHeight + weapons.length * cellHeight + 4;
+  const body = [];
+
+  body.push(`<rect width="${width}" height="${height}" fill="#131722"/>`);
+  body.push('<defs><pattern id="checker" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#303849"/><rect width="6" height="6" fill="#252c3b"/><rect x="6" y="6" width="6" height="6" fill="#252c3b"/></pattern></defs>');
+  body.push(`<text x="6" y="22" class="title">${xml(`${tier.name.toUpperCase()} ${direction.toUpperCase()} - ALL WEAPONS / ALL FRAMES`)}</text>`);
+  columns.forEach((column, index) => {
+    body.push(`<text x="${labelWidth + index * cellWidth + 4}" y="${titleHeight + 17}" class="header">${xml(column.label)}</text>`);
+  });
+  weapons.forEach((weapon, row) => {
+    const y = titleHeight + headerHeight + row * cellHeight;
+    body.push(`<text x="6" y="${y + Math.floor(cellHeight / 2) + 5}" class="label">${xml(weapon.name.toUpperCase())}</text>`);
+    columns.forEach((column, columnIndex) => {
+      const x = labelWidth + columnIndex * cellWidth;
+      body.push(`<rect x="${x}" y="${y}" width="${SIZE * scale}" height="${SIZE * scale}" fill="url(#checker)"/>`);
+      body.push(pixelRects(render(playerSpec(weapon.id, tier.id), direction, column.animation, column.frame), x, y, scale));
+    });
+  });
+
+  const svgPath = `tier-sheets/${tier.id}-${direction}-all-frames.svg`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" shape-rendering="crispEdges"><style>text{font-family:Consolas,monospace;font-weight:700}.title{font-size:18px;fill:#f4cf66}.header{font-size:13px;fill:#9ed8ff}.label{font-size:13px;fill:#e8edf7}</style>${body.join('')}</svg>`;
+  await writeFile(path.join(output, svgPath), svg);
+
+  const pngScale = 4;
+  const pngGap = 4;
+  const pngCell = SIZE * pngScale + pngGap;
+  const pngWidth = columns.length * pngCell - pngGap;
+  const pngHeight = weapons.length * pngCell - pngGap;
+  const rgba = Buffer.alloc(pngWidth * pngHeight * 4);
+  fillRgba(rgba, pngWidth, 0, 0, pngWidth, pngHeight, '#131722');
+  weapons.forEach((weapon, row) => {
+    columns.forEach((column, columnIndex) => {
+      const offsetX = columnIndex * pngCell;
+      const offsetY = row * pngCell;
+      for (let checkerY = 0; checkerY < SIZE; checkerY++) for (let checkerX = 0; checkerX < SIZE; checkerX++) {
+        const checker = (Math.floor(checkerX / 3) + Math.floor(checkerY / 3)) % 2 ? '#303849' : '#252c3b';
+        fillRgba(rgba, pngWidth, offsetX + checkerX * pngScale, offsetY + checkerY * pngScale, pngScale, pngScale, checker);
+      }
+      const pixels = render(playerSpec(weapon.id, tier.id), direction, column.animation, column.frame);
+      for (let y = 0; y < SIZE; y++) for (let x = 0; x < SIZE; x++) {
+        const fill = pixels[y * SIZE + x];
+        if (fill) fillRgba(rgba, pngWidth, offsetX + x * pngScale, offsetY + y * pngScale, pngScale, pngScale, fill);
+      }
+    });
+  });
+  await writeFile(path.join(output, `tier-sheets/${tier.id}-${direction}-all-frames.png`), encodePng(pngWidth, pngHeight, rgba));
+  return svgPath;
+}
+
 const tierColumns = WEAPON_TIERS.map((tier, index) => ({ id: tier.id, label: `T${index + 1}` }));
 const directionColumns = DIRS.map((direction) => ({
   id: direction,
@@ -200,6 +321,9 @@ const allFrameSheets = allFrames
   : [];
 const nativeAllFrameSheets = allFrames
   ? await Promise.all(weapons.map((weapon) => writeAllFrameSheet(weapon, 1, 'all-frames-native')))
+  : [];
+const tierReviewSheets = tierSheets
+  ? await Promise.all(WEAPON_TIERS.flatMap((tier) => DIRS.map((direction) => writeTierDirectionSheet(tier, direction))))
   : [];
 
 function frameMetrics(pixels) {
@@ -337,7 +461,8 @@ await writeFile(path.join(output, 'weapon-frame-audit.csv'), [
 const cards = sheets.map((sheet) => `<section><h2>${xml(sheet.replace(/^[0-9]+-/, '').replace('.svg', '').replaceAll('-', ' '))}</h2><a href="./${sheet}"><img src="./${sheet}" alt="${xml(sheet)}"></a></section>`).join('');
 const allFrameCards = allFrameSheets.map((sheet) => `<section><h2>${xml(sheet.split('/').at(-1).replace('-all-frames.svg', '').replaceAll('-', ' '))} all frames</h2><a href="./${sheet}"><img src="./${sheet}" alt="${xml(sheet)}"></a></section>`).join('');
 const nativeAllFrameCards = nativeAllFrameSheets.map((sheet) => `<section><h2>${xml(sheet.split('/').at(-1).replace('-all-frames.svg', '').replaceAll('-', ' '))} native all frames</h2><a href="./${sheet}"><img src="./${sheet}" alt="${xml(sheet)}"></a></section>`).join('');
-const dashboard = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Weapon readability review</title><style>body{margin:0;background:#0d1018;color:#eef3ff;font:16px system-ui,sans-serif}header{position:sticky;top:0;padding:16px 24px;background:#131722;border-bottom:1px solid #303849;z-index:1}main{display:grid;gap:24px;padding:24px}section{background:#181d29;padding:16px;border-radius:8px;overflow:auto}h1,h2{margin:0 0 10px}p{margin:6px 0;color:#bfc9dc}a{color:#9ed8ff}img{display:block;max-width:none;image-rendering:pixelated}</style></head><body><header><h1>Weapon readability review</h1><p>${weapons.length} weapon families, ${weapons.length * WEAPON_TIERS.length} tier variants. Enlarged and true native 24×24 all-frame sheets are included.</p><p><a href="./weapon-readability-metrics.csv">Summary CSV</a> · <a href="./weapon-readability-metrics.json">Summary JSON</a> · <a href="./weapon-frame-audit.csv">All-frame CSV</a> · <a href="./weapon-frame-audit.json">All-frame JSON</a></p></header><main>${cards}${allFrameCards}${nativeAllFrameCards}</main></body></html>`;
+const tierReviewCards = tierReviewSheets.map((sheet) => `<section><h2>${xml(sheet.split('/').at(-1).replace('-all-frames.svg', '').replaceAll('-', ' '))}</h2><a href="./${sheet}"><img src="./${sheet}" alt="${xml(sheet)}"></a></section>`).join('');
+const dashboard = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Weapon readability review</title><style>body{margin:0;background:#0d1018;color:#eef3ff;font:16px system-ui,sans-serif}header{position:sticky;top:0;padding:16px 24px;background:#131722;border-bottom:1px solid #303849;z-index:1}main{display:grid;gap:24px;padding:24px}section{background:#181d29;padding:16px;border-radius:8px;overflow:auto}h1,h2{margin:0 0 10px}p{margin:6px 0;color:#bfc9dc}a{color:#9ed8ff}img{display:block;max-width:none;image-rendering:pixelated}</style></head><body><header><h1>Weapon readability review</h1><p>${weapons.length} weapon families, ${weapons.length * WEAPON_TIERS.length} tier variants. Enlarged and true native 24×24 all-frame sheets are included.</p><p><a href="./weapon-readability-metrics.csv">Summary CSV</a> · <a href="./weapon-readability-metrics.json">Summary JSON</a> · <a href="./weapon-frame-audit.csv">All-frame CSV</a> · <a href="./weapon-frame-audit.json">All-frame JSON</a></p></header><main>${cards}${tierReviewCards}${allFrameCards}${nativeAllFrameCards}</main></body></html>`;
 await writeFile(path.join(output, 'index.html'), dashboard);
 
-console.log(`Generated ${sheets.length + allFrameSheets.length + nativeAllFrameSheets.length} weapon review sheets and ${frameAudit.length} frame-audit rows for ${weapons.length} families in ${path.relative(root, output)}.`);
+console.log(`Generated ${sheets.length + tierReviewSheets.length + allFrameSheets.length + nativeAllFrameSheets.length} weapon review sheets and ${frameAudit.length} frame-audit rows for ${weapons.length} families in ${path.relative(root, output)}.`);

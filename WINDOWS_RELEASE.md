@@ -25,6 +25,8 @@ The distributable setup executable is written beneath `src-tauri/target/release/
 
 For a quick standalone executable without building an installer, use `npm run tauri:build:exe`.
 
+The standalone executable and NSIS installer are separate artifacts. Rebuilding one does not update the other. After any frontend or renderer change, verify the artifact timestamp and hash and run `npm run check:release`; an existing installer passing structural validation does not prove that it embeds the latest `dist/` build.
+
 ## Packaged smoke test
 
 Before publishing a release:
@@ -32,10 +34,11 @@ Before publishing a release:
 1. Install the generated setup executable.
 2. Launch **8-Bit Sprite Assembler** from the Start menu.
 3. Change a player option and confirm the preview updates.
-4. Export one PNG, one combat-loadout JSON file, and one ZIP pack. Confirm each action opens a native Save dialog in Downloads and creates a readable file at the chosen location.
-5. Cancel one Save dialog and confirm the app reports cancellation instead of success.
-6. Save a preset, close the app, reopen it, and confirm the preset remains available.
-7. Uninstall the app and confirm user-exported PNG, JSON, and ZIP files remain untouched.
+4. With the default combat-effect overlay enabled, inspect a weapon-and-shield attack in all four directions and all four attack frames. Compare the same packaged `dist/` state in the isolated browser when non-intrusive visual QA is required.
+5. Export one PNG, one combat-loadout JSON file, and one ZIP pack. Confirm each action opens a native Save dialog in Downloads and creates a readable file at the chosen location.
+6. Cancel one Save dialog and confirm the app reports cancellation instead of success.
+7. Save a preset, close the app, reopen it, and confirm the preset remains available.
+8. Uninstall the app and confirm user-exported PNG, JSON, and ZIP files remain untouched.
 
 ## Versioned GitHub release
 

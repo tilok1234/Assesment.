@@ -1,6 +1,6 @@
 # Equipment Readability Plan
 
-Status: canonical plan for the next equipment-readability work.
+Status: canonical asset-readability history and rules. Source-art work is currently paused behind the unresolved default combat-effect/shield preview integration tracked in `HANDOFF.md`.
 
 This plan supersedes any earlier recommendation to keep expanding the general outline algorithm. The current outline work is the baseline. The next problems must be handled according to their actual cause: source art, composition/placement, or a narrowly proven outline defect.
 
@@ -75,7 +75,7 @@ Those figures are the pre-repair baseline. The approved implementation below now
 
 ## Phase 0 - Establish a Safe Baseline
 
-Status: complete. The approved local-only checkpoint is commit `6667c8f` (`Checkpoint equipment readability baseline`).
+Status: complete. The approved checkpoint is commit `6667c8f` (`Checkpoint equipment readability baseline`), now preserved as an ancestor of the current committed and pushed branch checkpoint `f21cbe3`.
 
 1. Inspect the current branch, working tree, and existing checkpoint without changing them.
 2. Separate pre-existing user work from the outline/readability work.
@@ -152,7 +152,7 @@ Accepted result:
 
 The shield work is source-art work. It must not be mixed with outline-algorithm changes.
 
-Status: next. Begin with Bone T3 only and stop for visual approval.
+Status: deferred. A Bone T3 review candidate exists under `shield-review/`, but it is not the current task and must not advance while the effect-enabled assembler preview is unresolved.
 
 Order:
 
@@ -206,7 +206,7 @@ No equipment, hand, or arm movement is allowed during the source-art phases.
 
 Before any completed readability batch is proposed for commit:
 
-- rerun all 5,520 equipment render cases;
+- rerun all 3,600 weapon cases and all 7,680 current shield cases (11,280 combined equipment cases);
 - rerun all outline ownership and preservation checks;
 - review representative light, dark, complex, and simple characters;
 - verify no body, outfit, hair, animation, placement, anchor, or unrelated equipment changes entered the diff;
@@ -226,4 +226,10 @@ Stop immediately if a change:
 
 ## Next Action
 
-The safe-baseline checkpoint, animation frame-safety correction, and Crossbow T5 source-art prototype are complete and accepted. The next separate prototype is Bone T3 shield structure. Do not broaden it to Bone T4/T5 or another shield family until Bone T3 has independent visual evidence and user approval.
+The safe-baseline checkpoint, animation frame-safety correction, Crossbow T5 source-art prototype, and shield hand/facing checkpoint are complete. Before any Bone T3 or broader equipment work resumes, resolve the user-visible default combat-effect/shield preview problem described in `HANDOFF.md`:
+
+1. reproduce the exact assembler state with `Overlay preview` On;
+2. compare the same frames with effects Off only to isolate effect pixels;
+3. change the compositor/effect occlusion, not approved shield source art;
+4. verify all four attack frames in all four directions in the packaged browser build;
+5. stop for explicit visual approval before rebuilding or committing.

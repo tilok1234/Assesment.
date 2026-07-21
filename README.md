@@ -35,6 +35,10 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Fifteen equipped weapon choices spanning blades, blunt weapons, polearms, ranged weapons, and magic focuses, each with standard Tier 1, named RPG-style Tier 2, legendary Tier 3, oversized mythic Tier 4, and final artifact Tier 5 forms; all 75 variants use hand-anchored motion and preserve front- and side-face clearance
 - Eight equipped shield choices—round, kite, buckler, heater, tower, oval, bone, and arcane—with five named tiers culminating in Worldsun Disc, Voidwyrm Aegis, Paradox Star, Throneheart Aegis, The Unbroken Gate, Imperial Eternity, Deathking's Reliquary, and Event Horizon; every facing reuses the unchanged broad shield face, the equipment grip owns the animated shield-hand socket instead of leaving ordinary hand pixels visible, and near/far body occlusion is split around the reusable body layer
 
+## Current integration status
+
+The committed and pushed shield hand/facing checkpoint is `f21cbe3`. The default Combat Loadout preview still draws resolved effects after the complete assembled character, so effect pixels can overwrite otherwise approved shield, equipment, body, or headgear pixels. `Overlay preview` defaults to On, making this an active user-visible compositor problem rather than a shield source-art problem. The current uncommitted effect-direction experiment and exact continuation state are documented in [HANDOFF.md](HANDOFF.md); do not describe the combined preview as fixed until it has been verified with effects On in every attack frame and direction.
+
 ## Preview controls
 
 - `Space` plays or pauses the selected animation.
@@ -79,9 +83,9 @@ Double-click `check-project.bat`, or run:
 npm run check
 ```
 
-The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, and zero out-of-canvas writes across all 3,600 weapon animation cases and 528 equipped-headgear cases.
+The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 3,600 weapon animation cases, 7,680 shield cases across all four body builds, and 528 equipped-headgear cases.
 
-Run `npm run review:weapons -- --all-frames` to regenerate the 37 weapon review sheets and the exhaustive 3,600-row CSV/JSON audit. The audit records ordinary edge contact separately from discarded pixels, so touching `x=0` or `x=23` remains advisory while attempting to draw outside the 24x24 canvas is a hard failure.
+Run `npm run review:weapons -- --all-frames` to regenerate the 37 weapon review sheets and the exhaustive 3,600-row CSV/JSON audit. Add `--tier-sheets` to emit four labeled all-weapon/all-frame SVG review sheets per tier plus lightweight PNG inspection grids. The audit records ordinary edge contact separately from discarded pixels, so touching `x=0` or `x=23` remains advisory while attempting to draw outside the 24x24 canvas is a hard failure.
 
 Run `npm run review:outlines` for the outline-specific regression gate. It verifies anchored safe-baseline hashes, 6,000 pixel-exact None-mode parity cases, 2,000 deterministic randomized integrity cases, 11,040 exhaustive outlined equipment cases, and 10,656 exhaustive headgear-preservation cases. The gate covers restrained cardinal equipment halos, silhouette-defining cavities of at least five logical pixels, the explicit equipment pilot, depth-aware equipment/body separators, feature-preserving equipment-side fallbacks, equipment-side front-equipment/headgear separators, foreground headgear and non-contact equipment pixel protection, non-contact body protection, ownership isolation, neck-cavity completion, and review examples. See [OUTLINE_RENDERING_PLAN.md](OUTLINE_RENDERING_PLAN.md) for the supported modes and scope boundary.
 
@@ -185,7 +189,7 @@ Draw the non-null component paths from a recipe in this order:
 
 `weapon-back` → `shield-back` → `species-back` → `outfit-back` → `outfit` → `skin-body` → `head` → `expression` → `species-front` → `face-detail` → `hair` → `headgear` → `shield-front` → `weapon-front`
 
-Each schema-v10 recipe records the selected species, body build, expression, hairstyle, headgear, and expanded outfit family and may include a combat loadout with explicit selections, weapon-aware automatic defaults, resolved effect files, and draw order. Build-specific outfit and cape paths keep the silhouette modular while skin, head, expression, hair, species, headgear, weapon, and shield layers stay shared. Draw every resolved combat-effect sheet after the assembled sprite, using the same animation column, direction row, and 24x24 source rectangle. Status effects animate across every animation; trails, projectiles, and impacts are transparent outside attack.
+Each schema-v10 recipe records the selected species, body build, expression, hairstyle, headgear, and expanded outfit family and may include a combat loadout with explicit selections, weapon-aware automatic defaults, resolved effect files, and the current draw order. Build-specific outfit and cape paths keep the silhouette modular while skin, head, expression, hair, species, headgear, weapon, and shield layers stay shared. Effect sheets remain separate and use the same animation column, direction row, and 24x24 source rectangle; status effects animate across every animation, while trails, projectiles, and impacts are transparent outside attack. The existing recipe order places effects after the assembled sprite, but that is the current compatibility contract, not a resolved equipment-occlusion rule. Consumers should keep the sheets modular, and the editor's effect/shield compositor must be corrected and approved before its current preview order is treated as final guidance.
 
 Every component shares the same animation grid and has been validated to recompose the complete renderer pixel-for-pixel across all directions and frames. To craft a new character in a game, copy a recipe and change its component paths; no art needs to be duplicated.
 
@@ -197,7 +201,7 @@ Every component shares the same animation grid and has been validated to recompo
 - `character-kit.js` - deterministic component coverage, paths, recipe mapping, counts, and layer-order planning
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
-- `engine/` - focused animation, palette, player-option, enemy, combat-loadout, equipment-variant and RPG-class planning, humanoid weapon and shield, renderer, sheet, and generator modules
+- `engine/` - focused animation, palette, player-option, enemy, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon and shield, renderer, outline, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build

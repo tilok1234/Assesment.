@@ -14,7 +14,7 @@ Every weapon pass must satisfy these checks:
 6. No pixel is accidentally clipped. Intentional frame-edge contact is reviewed in every direction.
 7. The result is checked as a weapon-only layer and on the assembled character at 1x and enlarged scale.
 
-Run `npm run review:weapons` to generate the review dashboard, SVG contact sheets, summary metrics, and the exhaustive frame audit in `weapon-review/`. Add `-- --all-frames` for enlarged and true-native assembled sheets covering all 12 animation frames in every tier and direction. Use `npm run review:weapons -- --focus sword,greatsword,dagger` to isolate a pass.
+Run `npm run review:weapons` to generate the review dashboard, SVG contact sheets, summary metrics, and the exhaustive frame audit in `weapon-review/`. Add `-- --all-frames` for enlarged and true-native assembled sheets covering all 12 animation frames in every tier and direction. Add `--tier-sheets` to emit labeled all-weapon/all-frame SVG sheets and PNG inspection grids for each tier and direction. Use `npm run review:weapons -- --focus sword,greatsword,dagger` to isolate a pass.
 
 ## Passes
 
@@ -33,7 +33,7 @@ After each family pass, compare the focused review dashboard with the full-libra
 
 The completed overhaul remains the source-identity baseline, but earlier pass approval is not a permanent blanket approval when new composed-character or animation evidence exposes a problem.
 
-The exhaustive review was regenerated across all 15 families, 5 tiers, 4 directions, 4 animations, and 3 frames: 3,600 assembled frames and 37 native/enlarged review sheets. All 75 family/tier source layers remained single-component in the audit (`maxComponents=1`). Mechanical signals remain diagnostic and were checked visually rather than treated as automatic failures.
+The exhaustive review was regenerated across all 15 families, 5 tiers, 4 directions, and all 12 animation frames per direction: 3,600 assembled frames and 37 native/enlarged review sheets. All 75 family/tier source layers remained single-component in the audit (`maxComponents=1`). Mechanical signals remain diagnostic and were checked visually rather than treated as automatic failures.
 
 Current verdict:
 
@@ -62,3 +62,7 @@ Edge contact remains advisory. Attempted writes beyond `x=0..23` or `y=0..23` ar
 ### Crossbow T5 source-art correction
 
 Completed and user-approved on 2026-07-20. The tier-specific correction gives the Apocalypse Engine bright connected recurved limbs, a darker secondary string, and a reinforced stock/grip so it reads as a crossbow rather than a compact firearm. Tiers 1-4 and all placement and animation contracts remain unchanged. The full 3,600-frame audit reports zero discarded pixels, and the project, outline, weapon, and build validators pass.
+
+## Current Continuation
+
+The weapon source-art baseline remains accepted. Further item-by-item weapon work is paused until the default assembler view correctly composes modular combat effects with approved shields. That active integration problem is tracked in `HANDOFF.md`; an effects-Off sprite review does not validate it. Crossbow T2 with a shield remains a later composition review rather than a source-art change.

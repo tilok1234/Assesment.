@@ -1,6 +1,6 @@
 # Optional Player Outlines
 
-Status: implemented on `codex/optional-sprite-outlines`; safe committed recovery point `aaa7a89` is local only and remains unchanged while this pass is reviewed. The prior recovery point is `674d926`.
+Status: implemented and committed on `codex/optional-sprite-outlines`. The original outline implementation is `674d926`, the historical assessment checkpoint is `aaa7a89`, and the current committed and pushed branch checkpoint is `f21cbe3`. Combat effects remain explicitly outside the outline treatment; the unresolved default effect/shield preview issue is tracked in `HANDOFF.md` and must not be treated as an outline defect.
 
 ## Goal
 
