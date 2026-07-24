@@ -35,21 +35,9 @@ const OUTLINE_OWNER_GROUPS = Object.freeze([
 
 const EQUIPMENT_OWNER_INDICES = Object.freeze([0, 1]);
 const BODY_OWNER_INDEX = 2;
-const OUTLINE_LAYER_OWNER_INDEX = Object.freeze({
-  'weapon-back': 0,
-  'shield-back': 1,
-  body: BODY_OWNER_INDEX,
-  headgear: BODY_OWNER_INDEX,
-  'shield-front': 1,
-  'weapon-front': 0,
-});
 const OUTLINE_LAYER_INDEX = Object.freeze(Object.fromEntries(
   OUTLINE_LAYER_ORDER.map((layer, index) => [layer, index]),
 ));
-const BACK_EQUIPMENT_LAYER_INDICES = Object.freeze([
-  OUTLINE_LAYER_INDEX['weapon-back'],
-  OUTLINE_LAYER_INDEX['shield-back'],
-]);
 const FRONT_EQUIPMENT_LAYER_INDICES = Object.freeze([
   OUTLINE_LAYER_INDEX['shield-front'],
   OUTLINE_LAYER_INDEX['weapon-front'],
@@ -223,13 +211,14 @@ export function outlineMaskForEquipmentPixels(
   height = SIZE,
   options = {},
 ) {
-  // Equipment always uses a cardinal one-pixel contour. Diagonal expansion is
-  // visually too heavy for one-pixel shafts and tiny held items, while the body
-  // still keeps Complete B's full eight-neighbor exterior. Only substantial
-  // enclosed openings receive an interior contour.
+  const normalizedMode = normalizeOutlineMode(mode);
+  // Complete B is the strong eight-neighbor equipment contour; Selective C
+  // stays cardinal so one-pixel shafts and tiny held items keep more breathing
+  // room. Both modes suppress tiny enclosed construction pockets while retaining
+  // substantial silhouette-defining openings.
   return contourMaskForPixels(pixels, mode, width, height, false, {
     ...options,
-    cardinalOnly: true,
+    cardinalOnly: normalizedMode !== OUTLINE_MODE_COMPLETE_B,
     minimumInteriorArea: MIN_EQUIPMENT_INTERIOR_AREA,
   });
 }
@@ -368,18 +357,10 @@ function contactOutlinePlanForVisibleLayers(
     }
   };
 
-  for (const equipmentLayerIndex of BACK_EQUIPMENT_LAYER_INDICES) {
-    const contactMask = outlineContactMaskForVisibleOwners(
-      visibleLayers,
-      equipmentLayerIndex,
-      BODY_LAYER_INDEX,
-      mode,
-      width,
-      height,
-    );
-    const equipmentLayer = OUTLINE_LAYER_ORDER[equipmentLayerIndex];
-    addContactMask(contactMask, OUTLINE_LAYER_OWNER_INDEX[equipmentLayer]);
-  }
+  // Back-pass equipment is already separated by body occlusion and its exterior
+  // contour. Replacing its visible edge here can erase an entire one-pixel
+  // shaft, blade, or shield rim in side view, so no source equipment pixel is
+  // converted into an interior contact separator.
   for (const equipmentLayerIndex of FRONT_EQUIPMENT_LAYER_INDICES) {
     const contactMask = outlineContactMaskForVisibleOwners(
       visibleLayers,
@@ -389,7 +370,6 @@ function contactOutlinePlanForVisibleLayers(
       width,
       height,
     );
-    const equipmentFallbackMask = new Uint8Array(width * height);
     for (let index = 0; index < contactMask.length; index++) {
       if (
         !contactMask[index]
@@ -406,37 +386,24 @@ function contactOutlinePlanForVisibleLayers(
       ) continue;
 
       // Replacing this body pixel would lengthen an existing dark facial/body
-      // feature. Keep the body color and move the separator to each touching
-      // front-equipment pixel instead.
+      // feature. Keep the body color and omit this single interior separator:
+      // moving it onto front equipment can break a one-pixel shaft or grip.
       contactMask[index] = 0;
-      const x = index % width;
-      const y = Math.floor(index / width);
-      for (const [offsetX, offsetY] of CARDINAL_OFFSETS) {
-        const targetX = x + offsetX;
-        const targetY = y + offsetY;
-        if (targetX < 0 || targetY < 0 || targetX >= width || targetY >= height) continue;
-        const targetIndex = (targetY * width) + targetX;
-        if (visibleLayers[targetIndex] === equipmentLayerIndex) {
-          equipmentFallbackMask[targetIndex] = 1;
-        }
-      }
     }
     addContactMask(contactMask, BODY_OWNER_INDEX);
-    const equipmentLayer = OUTLINE_LAYER_ORDER[equipmentLayerIndex];
-    addContactMask(equipmentFallbackMask, OUTLINE_LAYER_OWNER_INDEX[equipmentLayer]);
 
-    // Headgear is deliberately protected from body-side replacement. When
-    // front equipment touches it directly, put the separator on the equipment
-    // edge instead so the held item remains readable without cutting the hat.
+    // Front equipment must remain visually continuous across a headgear
+    // contact. Put that separator on the occluded headgear edge, matching the
+    // body-side depth rule, instead of turning a thin weapon or shield rim black.
     const headgearContactMask = outlineContactMaskForVisibleOwners(
       visibleLayers,
-      equipmentLayerIndex,
       HEADGEAR_LAYER_INDEX,
+      equipmentLayerIndex,
       mode,
       width,
       height,
     );
-    addContactMask(headgearContactMask, OUTLINE_LAYER_OWNER_INDEX[equipmentLayer]);
+    addContactMask(headgearContactMask, BODY_OWNER_INDEX);
   }
 
   return { layerContactMask, haloSourceExclusionMasks };
@@ -627,9 +594,8 @@ export function drawOutlinedSprite(
   paintPixels(context, finalPixels);
 
   // Direct layer contact has no transparent cell available for a separator.
-  // Respect concrete pass depth: back equipment receives the separator on its
-  // own edge, while front equipment stays intact and receives the separator on
-  // the adjacent body-side edge. Because the concrete headgear pass sits above
-  // body in visibleLayers, equipment contact cannot replace a headgear pixel.
+  // Preserve every visible equipment source pixel: back equipment is separated
+  // by natural occlusion, while front equipment receives any necessary seam on
+  // the adjacent body/headgear side.
   paintMask(context, contactOutlinePlan.layerContactMask, color);
 }

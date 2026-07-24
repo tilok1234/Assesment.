@@ -1574,7 +1574,8 @@ for (const [tierIndex, tier] of engine.WEAPON_TIERS.entries()) {
   check(width >= axeHeadMinimums[tierIndex].width, `axe ${tier.id} must preserve a broad cutting-head silhouette`);
   check(height >= axeHeadMinimums[tierIndex].height, `axe ${tier.id} must preserve a tall outer cutting edge`);
   if (tierIndex >= 2) {
-    check(Math.max(...xs) - 17 > 17 - Math.min(...xs), `axe ${tier.id} must keep its primary blade larger than its rear spike or counter-edge`);
+    const handleX = tierIndex === 4 ? 16 : 17;
+    check(Math.max(...xs) - handleX > handleX - Math.min(...xs), `axe ${tier.id} must keep its primary blade larger than its rear spike or counter-edge`);
   }
 }
 

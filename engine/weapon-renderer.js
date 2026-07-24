@@ -280,28 +280,33 @@ function drawReadableStraightBlade(S, R, d, p, C) {
   const sideLength = profile.sideLength[tier - 1];
   const strike = p.wep === 'strike';
   const wind = p.wep === 'wind';
+  const isGreatsword = C.weapon === 'greatsword';
   const { downX, upX, sideX } = weaponAnchors(C);
 
   if (d === 'down') {
     const guardY = strike ? 14 : wind ? 12 : 13;
     const bladeBelow = strike;
-    const safeLength = bladeBelow ? Math.min(verticalLength, 8) : Math.min(verticalLength, guardY - 1);
+    const safeLength = bladeBelow
+      ? Math.min(verticalLength, isGreatsword ? 7 : 8)
+      : Math.min(verticalLength, isGreatsword ? 10 : guardY - 1);
     drawReadableVerticalBlade(S, R, downX, guardY, safeLength, thickness, bladeBelow, style, tier);
     drawReadableVerticalHilt(S, R, downX, guardY, bladeBelow, profile, guardSize, style, tier);
   } else if (d === 'up') {
     const guardY = strike ? 10 : 14;
     const bladeBelow = wind;
-    const safeLength = bladeBelow ? Math.min(verticalLength, 8) : Math.min(verticalLength, guardY - 1);
+    const safeLength = bladeBelow
+      ? Math.min(verticalLength, isGreatsword ? 7 : 8)
+      : Math.min(verticalLength, isGreatsword && strike ? 8 : guardY - 1);
     drawReadableVerticalBlade(S, R, upX, guardY, safeLength, thickness, bladeBelow, style, tier);
     drawReadableVerticalHilt(S, R, upX, guardY, bladeBelow, profile, guardSize, style, tier);
   } else if (strike) {
-    const guardX = C.weapon === 'greatsword' ? 14 : 15;
-    const safeLength = Math.min(sideLength, 23 - guardX);
+    const guardX = isGreatsword ? 13 : 15;
+    const safeLength = Math.min(sideLength, (isGreatsword ? 21 : 23) - guardX);
     drawReadableHorizontalBlade(S, R, guardX, 13, safeLength, thickness, style, tier);
     drawReadableHorizontalHilt(S, R, guardX, 13, profile, guardSize, style, tier);
   } else {
     const guardY = wind ? 11 : 14;
-    const safeLength = Math.min(verticalLength, guardY - 1);
+    const safeLength = Math.min(verticalLength, guardY - (isGreatsword && wind ? 2 : 1));
     drawReadableVerticalBlade(S, R, sideX, guardY, safeLength, thickness, false, style, tier);
     drawReadableVerticalHilt(S, R, sideX, guardY, false, profile, guardSize, style, tier);
   }
@@ -377,8 +382,8 @@ function drawReadableScimitar(S, R, d, p, C) {
     drawReadableCurvedBlade(S, upX, guardY, safeLength, thickness, bladeBelow, bladeBelow ? 1 : -1, style, tier);
     drawReadableVerticalHilt(S, R, upX, guardY, bladeBelow, SCIMITAR_PROFILE, guardSize, style, tier);
   } else if (strike) {
-    const guardX = 15;
-    const safeLength = Math.min(sideLength, 23 - guardX);
+    const guardX = 14;
+    const safeLength = Math.min(sideLength, 21 - guardX);
     drawReadableHorizontalCurve(S, guardX, 13, safeLength, thickness, style, tier);
     drawReadableHorizontalHilt(S, R, guardX, 13, SCIMITAR_PROFILE, guardSize, style, tier);
   } else {
@@ -404,18 +409,20 @@ function drawReadableRapier(S, R, d, p, C) {
   if (d === 'down') {
     const guardY = strike ? 14 : wind ? 11 : 13;
     const bladeBelow = strike;
-    const safeLength = bladeBelow ? Math.min(verticalLength, 8) : Math.min(verticalLength, guardY - 1);
+    const safeLength = bladeBelow ? Math.min(verticalLength, 7) : Math.min(verticalLength, guardY - 1);
     drawReadableVerticalBlade(S, R, downX, guardY, safeLength, 1, bladeBelow, style, tier);
     drawReadableVerticalHilt(S, R, downX, guardY, bladeBelow, RAPIER_PROFILE, guardSize, style, tier);
   } else if (d === 'up') {
     const guardY = strike ? 10 : 14;
     const bladeBelow = wind;
-    const safeLength = bladeBelow ? Math.min(verticalLength, 8) : Math.min(verticalLength, guardY - 1);
+    const safeLength = bladeBelow
+      ? Math.min(verticalLength, 7)
+      : Math.min(verticalLength, strike ? 8 : guardY - 1);
     drawReadableVerticalBlade(S, R, upX, guardY, safeLength, 1, bladeBelow, style, tier);
     drawReadableVerticalHilt(S, R, upX, guardY, bladeBelow, RAPIER_PROFILE, guardSize, style, tier);
   } else if (strike) {
-    const guardX = 15;
-    const safeLength = Math.min(sideLength, 23 - guardX);
+    const guardX = 14;
+    const safeLength = Math.min(sideLength, 21 - guardX);
     drawReadableHorizontalBlade(S, R, guardX, 13, safeLength, 1, style, tier);
     drawReadableHorizontalHilt(S, R, guardX, 13, RAPIER_PROFILE, guardSize, style, tier);
   } else {
@@ -461,31 +468,35 @@ function drawReadableAxeHead(S, x, y, tier, style, horizontal = false, mirror = 
 function drawReadableAxe(S, R, d, p, C) {
   if (C.weapon !== 'axe') return false;
   const tier = straightBladeTier(C);
+  const index = tier - 1;
   const style = readableAxeStyle(tier);
   const strike = p.wep === 'strike';
   const wind = p.wep === 'wind';
   const { downX, upX, sideX } = weaponAnchors(C);
 
   if (d === 'down') {
-    const headY = strike ? (tier === 5 ? 18 : 20) : wind ? 6 : 8;
-    if (strike) R(downX, 14, 1, 7, style.shaft); else R(downX, headY, 1, 7, style.shaft);
-    S(downX, strike ? 16 : headY + 3, style.shaftDark);
-    drawReadableAxeHead(S, downX, headY, tier, style, false, true);
+    const axeX = tier === 5 ? downX - 1 : downX;
+    const headY = strike ? [19, 19, 18, 18, 18][index] : wind ? 6 : 8;
+    if (strike) R(axeX, 14, 1, 7, style.shaft); else R(axeX, headY, 1, 7, style.shaft);
+    S(axeX, strike ? 16 : headY + 3, style.shaftDark);
+    drawReadableAxeHead(S, axeX, headY, tier, style, false, true);
   } else if (d === 'up') {
-    const headY = strike ? (tier === 5 ? 6 : 3) : wind ? 7 : 9;
-    R(upX, headY, 1, strike ? 8 : 7, style.shaft);
-    S(upX, headY + 3, style.shaftDark);
-    drawReadableAxeHead(S, upX, headY, tier, style, false, false);
+    const axeX = tier === 5 ? upX + 1 : upX;
+    const headY = strike ? [4, 4, 5, 5, 6][index] : wind ? 7 : 9;
+    R(axeX, headY, 1, strike ? 8 : 7, style.shaft);
+    S(axeX, headY + 3, style.shaftDark);
+    drawReadableAxeHead(S, axeX, headY, tier, style, false, false);
   } else if (strike) {
-    const headX = tier === 5 ? 18 : 20;
+    const headX = [19, 19, 18, 18, 18][index];
     R(14, 13, headX - 13, 1, style.shaft);
     S(17, 13, style.shaftDark);
     drawReadableAxeHead(S, headX, 13, tier, style, true, false);
   } else {
+    const axeX = tier === 5 ? sideX - 1 : sideX;
     const headY = wind ? 6 : 8;
-    R(sideX, headY, 1, 7, style.shaft);
-    S(sideX, headY + 3, style.shaftDark);
-    drawReadableAxeHead(S, sideX, headY, tier, style, false, true);
+    R(axeX, headY, 1, 7, style.shaft);
+    S(axeX, headY + 3, style.shaftDark);
+    drawReadableAxeHead(S, axeX, headY, tier, style, false, true);
   }
   return true;
 }
@@ -561,17 +572,17 @@ function bluntPoseRoots(weapon, tier) {
   const index = tier - 1;
   if (weapon === 'mace') return {
     hold: 10,
-    wind: 8,
-    downStrike: [18, 18, 18, 17, 16][index],
-    upStrike: [6, 6, 6, 6, 7][index],
-    sideStrike: [19, 18, 18, 17, 16][index],
+    wind: [8, 8, 8, 8, 9][index],
+    downStrike: [17, 16, 16, 15, 14][index],
+    upStrike: [6, 7, 7, 8, 9][index],
+    sideStrike: [17, 16, 16, 15, 14][index],
   };
   if (weapon === 'warhammer') return {
     hold: 10,
     wind: 8,
-    downStrike: [20, 19, 19, 18, 17][index],
-    upStrike: [3, 4, 4, 5, 6][index],
-    sideStrike: [20, 19, 19, 18, 17][index],
+    downStrike: [18, 17, 17, 16, 15][index],
+    upStrike: [5, 6, 6, 7, 8][index],
+    sideStrike: [18, 17, 17, 16, 15][index],
   };
   return {
     hold: 13,
@@ -999,7 +1010,7 @@ function drawReadableStaff(S, R, d, p, C) {
   const wind = p.wep === 'wind';
 
   if (d === 'right' && strike) {
-    const rootX = [20, 20, 20, 19, 18][index];
+    const rootX = [19, 18, 18, 17, 16][index];
     R(9, 13, rootX - 8, 1, style.shaft);
     S(11, 13, style.shaftDark);
     if (tier >= 2) S(12, 13, style.trim);
@@ -1008,21 +1019,27 @@ function drawReadableStaff(S, R, d, p, C) {
   }
 
   const shaftX = d === 'down' ? 17 : d === 'up' ? 6 : weaponAnchors(C).sideX;
-  const focusX = d === 'down' ? 19 : d === 'up' ? 4 : 20;
+  const focusX = d === 'down'
+    ? [19, 19, 19, 18, 18][index]
+    : d === 'up'
+      ? [4, 4, 4, 5, 5][index]
+      : [20, 20, 19, 18, 18][index];
   let rootY;
   let bottomY;
   let invert = false;
   if (d === 'down' && strike) {
-    rootY = [19, 19, 19, 18, 17][index];
+    rootY = [19, 18, 18, 17, 16][index];
     bottomY = 14;
     invert = true;
     drawPixelLine(S, shaftX, bottomY, focusX, rootY, style.shaft);
   } else if (d === 'up' && strike) {
-    rootY = [3, 4, 4, 5, 6][index];
+    rootY = [4, 5, 5, 6, 7][index];
     bottomY = 10;
     drawPixelLine(S, focusX, rootY, shaftX, bottomY, style.shaft);
   } else {
-    rootY = [7, 7, 7, 6, 6][index] - (wind ? 1 : 0);
+    rootY = wind
+      ? [6, 6, 6, 6, 7][index]
+      : [7, 7, 7, 7, 8][index];
     bottomY = 16;
     drawPixelLine(S, focusX, rootY, shaftX, rootY + 2, style.shaft);
     R(shaftX, rootY + 2, 1, bottomY - rootY - 1, style.shaft);

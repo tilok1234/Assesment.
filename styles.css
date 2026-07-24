@@ -554,6 +554,10 @@ button:disabled:hover {
   white-space: nowrap;
 }
 
+#preview-effects-button[hidden] {
+  display: none;
+}
+
 .cycle-button.active {
   border-color: var(--accent);
   background: var(--accent);

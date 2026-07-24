@@ -88,6 +88,7 @@ const elements = {
   animationButtons: document.querySelector('#animation-buttons'),
   outlineControl: document.querySelector('#outline-control'),
   outlineButtons: document.querySelector('#outline-buttons'),
+  previewEffectsButton: document.querySelector('#preview-effects-button'),
   zoomButtons: document.querySelector('#zoom-buttons'),
   cycleButton: document.querySelector('#cycle-button'),
   previousFrameButton: document.querySelector('#previous-frame-button'),
@@ -1592,6 +1593,10 @@ function renderPlaybackControls() {
 
   elements.cycleButton.classList.toggle('active', state.spin);
   elements.cycleButton.setAttribute('aria-pressed', String(state.spin));
+  elements.previewEffectsButton.hidden = state.mode === 'effect';
+  elements.previewEffectsButton.textContent = state.previewEffects ? 'Effects On' : 'Effects Off';
+  elements.previewEffectsButton.classList.toggle('active', state.previewEffects);
+  elements.previewEffectsButton.setAttribute('aria-pressed', String(state.previewEffects));
   elements.playPauseButton.textContent = state.playing ? 'Pause' : 'Play';
   elements.playPauseButton.setAttribute('aria-label', state.playing ? 'Pause animation' : 'Play animation');
   elements.playPauseButton.setAttribute('aria-pressed', String(state.playing));
@@ -3126,10 +3131,13 @@ elements.randomizeButton.addEventListener('click', randomize);
 elements.savePresetButton.addEventListener('click', savePreset);
 elements.loadPresetButton.addEventListener('click', loadSelectedPreset);
 elements.deletePresetButton.addEventListener('click', deleteSelectedPreset);
-elements.loadoutPreviewButton.addEventListener('click', () => {
+function togglePreviewEffects() {
   setState({ previewEffects: !state.previewEffects }, { recordHistory: false });
   setLoadoutStatus(state.previewEffects ? 'Combined overlay preview enabled.' : 'Showing the base sprite without effect overlays.');
-});
+}
+
+elements.previewEffectsButton.addEventListener('click', togglePreviewEffects);
+elements.loadoutPreviewButton.addEventListener('click', togglePreviewEffects);
 for (const [slotId, select] of elements.loadoutSelects) {
   select.addEventListener('change', () => setLoadoutSlot(slotId, select.value));
 }
