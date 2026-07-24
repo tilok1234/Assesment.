@@ -1,12 +1,30 @@
 # Project Handoff
 
-Date: 2026-07-22
+Date: 2026-07-25
 Workspace: `C:\Users\headc\Documents\8-bit sprite assembler`
 Repository: `tilok1234/8-bit-sprite-assembler`
 
-## Read This First
+## 2026-07-25 Current Continuation
 
-The active problem is **not approved shield artwork and not a weapon/shield hand conflict**. The user reports that shields look wrong in the assembler because the default combat-effect preview interacts with them incorrectly.
+The current priority is the newly confirmed systemic transparent-tile problem inside assembled player sprites. The user reported repeated checkerboard strips at the belt/waist in up views and larger vertical gaps in side views, including equipped attack poses.
+
+A read-only reassessment covered 90,336 broad rendered checks and a stricter 62,256-frame persistent-tunnel pass across all directions, animations, frames, body builds, outline modes, weapon tiers, shield tiers, and representative combined equipment. It identified:
+
+- 1,180 high-confidence persistent mid-body body tunnels;
+- 242 persistent mixed body/equipment contact groups;
+- deliberate leg separation and thousands of intentional weapon/shield openings that must not be blanket-filled.
+
+The canonical implementation sequence, acceptance metrics, protected behavior, and visual gates are in `TRANSPARENT_TILE_REPAIR_PLAN.md`.
+
+The reassessment itself did not modify repository source, accept a baseline, commit, or push. Existing uncommitted renderer, animation, effect-direction, and effect-compositor changes predate the audit and remain unapproved as a combined checkpoint. In particular, the current shoulder connector and loose regression do not eliminate or reliably detect every reported waist tunnel.
+
+Immediate next action after approval: implement the strict repository regression in Phase 0, then produce only the lean up/down torso-attachment candidate from Phase 1A for full None/Complete B/Selective C review.
+
+The older effect/shield investigation below remains relevant history and its dirty files must be preserved, but it is no longer the only active continuation lane.
+
+## Prior Effect/Shield Lane (Preserve)
+
+Before the transparent-tile audit became the current lane, the active problem was **not approved shield artwork and not a weapon/shield hand conflict**. The user reported that shields looked wrong in the assembler because the default combat-effect preview interacted with them incorrectly. The following reproduction rules still apply whenever that dirty compositor candidate is reviewed:
 
 Always reproduce and review this in the same state the user sees by default:
 
@@ -23,7 +41,10 @@ Do not change already approved shield artwork merely to compensate for a preview
 - Branch: `codex/optional-sprite-outlines`
 - Last pushed checkpoint: `f21cbe3` (`Fix shield hand attachment and facing`).
 - Upstream: `origin/codex/optional-sprite-outlines` at `f21cbe3`.
-- The branch has one later local-only documentation/review-tooling checkpoint. It is not pushed and deliberately excludes the unapproved effect-direction experiment and generated review artifacts.
+- The branch has two later local-only checkpoints and is currently two commits ahead of upstream:
+  - `bc912e4` (`Reconcile docs and preserve review tooling`)
+  - `a6b0db1` (`Checkpoint approved weapon and outline pass`)
+- Neither local checkpoint is pushed.
 - `f21cbe3` remains the safe pushed checkpoint containing the user-approved shield hand attachment/facing work.
 - Earlier relevant commits:
   - `f27c63f` (`Improve Crossbow T5 silhouette`)
@@ -33,25 +54,21 @@ Do not reset, restore, stash, commit, push, merge, or accept visual baselines wi
 
 ## Current Working Tree
 
-The local-only documentation/review-tooling checkpoint contains:
+Tracked modifications after `a6b0db1`:
 
-- all ten repository Markdown documents, reconciled to the current checkpoint, validation counts, release state, object-space shield rule, and unresolved effect/shield integration problem;
-- `tools/weapon-readability-audit.mjs`, adding the verified `--tier-sheets` review output;
-- `tools/generate-bone-tier3-review.mjs`, preserving the source-only Bone T3 review generator without accepting or publishing its generated candidate images.
+- `app.js` - routes combined effect previews through the uncommitted occlusion compositor.
+- `engine/effect-renderer.js` - the unapproved left-facing direction correction described below.
+- `engine/renderer.js` - in-progress attack body/foot motion and shoulder-connector work; the transparent-tile audit proves the connector is incomplete.
+- `sprite-engine.js` - exports the uncommitted effect compositor.
+- `tools/check-project.mjs` - effect, animation, shield, and loose shoulder-gap regressions associated with the dirty experiments.
 
-Remaining tracked modifications after that checkpoint:
+Untracked source and generated artifacts:
 
-- `engine/effect-renderer.js` - unapproved two-line direction experiment described below.
-- `tools/check-project.mjs` - regression checks for that direction experiment.
-
-Remaining untracked generated review artifacts:
-
+- `engine/effect-compositor.js`
 - `shield-review/`
 - `weapon-review-tier1-focus/`
 
-These 101 generated files are intentional prior work/review artifacts. Preserve them. The `shield-review/` tree includes placement audits, combined-loadout reviews, tier sheets, and Bone T3 candidate sheets.
-
-The mistaken post-checkpoint changes previously made to `engine/renderer.js` and `engine/shield-renderer.js` were fully removed. Both files are clean relative to `f21cbe3`.
+The new transparency plan and this handoff update are documentation-only additions. Preserve all pre-existing dirty files and generated review artifacts. Do not reset, restore, stash, commit, or push them as part of the plan-writing task.
 
 ## Unapproved Effect-Direction Experiment
 
@@ -64,17 +81,21 @@ There is a current uncommitted change in `engine/effect-renderer.js`:
 
 This direction correction passes validation and may be independently useful, but it **does not implement the user-requested effect-versus-shield compositing fix**. It was incorrectly presented as though it solved the reported problem. Treat it as an unapproved experiment: inspect it separately and either keep it as a separate scoped fix with approval or remove it. Do not commit it as the shield/effect solution.
 
-## Actual Combined-Preview Problem
+## Prior Combined-Preview Problem And Current Dirty Candidate
 
 The relevant compositor is `drawCompositeFrame` in `app.js`.
 
-Its current order is:
+At the committed checkpoint its order is:
 
 1. draw the complete outlined character with `E.drawOutlinedSprite(...)`;
 2. resolve the combat-effect specs;
 3. draw every effect afterward with `E.drawSprite(..., { shadow: false, clear: false })`.
 
-Consequently, trails, projectiles, impacts, and status effects can paint directly over the body, headgear, weapon, and shield. The default state is `previewEffects: true`, so this is what the user sees when opening the assembler. `README.md`, `ARCHITECTURE.md`, and `ROADMAP.md` now identify the effects-after-character order as the unresolved compatibility behavior rather than final occlusion guidance; update them again if the compositor contract changes.
+Consequently, trails, projectiles, impacts, and status effects can paint directly over the body, headgear, weapon, and shield.
+
+The current dirty candidate changes step 3: transient effects route through `engine/effect-compositor.js`, which masks pixels owned by the foreground or background shield layers, while status effects remain a foreground overlay. This candidate is present in `app.js`, `sprite-engine.js`, `engine/effect-compositor.js`, and associated `tools/check-project.mjs` checks. It is not part of the transparent-tile plan and must remain independently reviewable.
+
+The default state is `previewEffects: true`. `README.md`, `ARCHITECTURE.md`, and `ROADMAP.md` still describe the committed effects-after-character behavior; update them only if the dirty compositor contract is separately approved.
 
 The original reported screenshot is:
 
@@ -88,7 +109,7 @@ The later review image:
 
 only demonstrates the unapproved left/up direction experiment. It is **not** approval evidence for the compositor issue and must not be presented as the requested fix.
 
-## Correct Next Investigation
+## Prior Effect/Shield Investigation Sequence
 
 Work one small verified step at a time:
 
@@ -155,7 +176,7 @@ npm.cmd run check:release
 
 Do not run outline-baseline acceptance or rewrite golden files automatically. Existing outline baseline drift remains an approval gate.
 
-## Broader Planned Work
+## Earlier Broader Planned Work
 
 Before the combined-preview issue interrupted the sequence, the project had already:
 
@@ -164,4 +185,4 @@ Before the combined-preview issue interrupted the sequence, the project had alre
 - reviewed and approved the shield hand/facing work now in `f21cbe3`;
 - planned to continue weapon/equipment assessment one item at a time after the assembler integration was trustworthy.
 
-Do not resume the broader weapon sequence until the user-visible default assembler preview is correctly reproduced, fixed, verified, and approved.
+The weapon and outline pass was later checkpointed locally at `a6b0db1`. The current continuation is now the transparent-tile repair plan at the top of this handoff. Do not restart deferred shield source-art redesigns or merge them into the transparency work.
