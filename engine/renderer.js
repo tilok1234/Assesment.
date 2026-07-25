@@ -2257,8 +2257,11 @@ function drawCentipede(g, d, p, f, V, animId) {
   const wig = f % 2 === 0 ? 0 : 1;
   const bob = animId === 'idle' && f === 1 ? 1 : 0;
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // Preserve the long segmented body by keeping a one-pixel strike followed by
+  // a centered recoil instead of clipping the head, legs, and venom tips.
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const c = V.c, eye = V.eye, venom = V.venom;
@@ -2274,24 +2277,24 @@ function drawCentipede(g, d, p, f, V, animId) {
     S(19, 13 + bob, eye); S(21, 14 + bob, c[1]);
     S(19, 11 + bob, c[2]); S(20, 10 + bob, c[2]);
     if (strike) {
-      S(21, 16 + bob, venom); S(22, 15 + bob, venom); S(22, 17 + bob, venom);
+      S(20, 16 + bob, venom); S(21, 15 + bob, venom); S(21, 17 + bob, venom);
     }
     S(3, 14 + bob, c[1]); S(2, 15 + bob, c[1]);
   } else {
     for (let i = 0; i < 5; i++) {
-      const y = 8 + i * 3;
+      const y = 7 + i * 3;
       const legReach = (i + wig) % 2;
       R(10, y + bob, 4, 3, c[0]); S(11, y + bob, c[2]);
       S(9, y + 1 + bob, c[1]); S(8 - legReach, y + 2 + bob, c[1]);
       S(14, y + 1 + bob, c[1]); S(15 + legReach, y + 2 + bob, c[1]);
     }
-    R(9, 5 + bob, 6, 4, c[0]);
-    S(10, 6 + bob, d === 'down' ? eye : c[2]); S(13, 6 + bob, d === 'down' ? eye : c[2]);
-    S(9, 4 + bob, c[2]); S(14, 4 + bob, c[2]);
+    R(9, 4 + bob, 6, 4, c[0]);
+    S(10, 5 + bob, d === 'down' ? eye : c[2]); S(13, 5 + bob, d === 'down' ? eye : c[2]);
+    S(9, 3 + bob, c[2]); S(14, 3 + bob, c[2]);
     if (strike && d === 'down') {
-      S(10, 9 + bob, venom); S(9, 10 + bob, venom); S(13, 9 + bob, venom); S(14, 10 + bob, venom);
+      S(10, 8 + bob, venom); S(9, 9 + bob, venom); S(13, 8 + bob, venom); S(14, 9 + bob, venom);
     }
-    if (d === 'up') { S(11, 22, c[1]); S(12, 22, c[1]); }
+    if (d === 'up') { S(11, 21, c[1]); S(12, 21, c[1]); }
   }
 }
 

@@ -2,7 +2,7 @@
 
 Status: exhaustive assessment complete; three-family pilot visually approved;
 Frog, Jellyfish, Mole, Scarecrow, and Drake frame-safety repairs visually
-approved.
+approved; Centipede frame-safety repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -10,6 +10,7 @@ Frame-safety group 1 visual approval: 2026-07-25
 Frame-safety group 2 visual approval: 2026-07-25
 Frame-safety group 3 visual approval: 2026-07-25
 Frame-safety group 4 visual approval: 2026-07-25
+Frame-safety group 5 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -172,6 +173,36 @@ Measured candidate result across all 144 Drake frames:
 The exhaustive roster total falls from 470 to 455 edge-contact frames and from
 104 to 92 out-of-bounds frames. The remaining failures belong to Centipede,
 Carnivorous Plant, Mantis, Moth, Octopus, and Haunted Puppet.
+
+## Frame-Safety Repair Group 5
+
+Approved after contact-sheet review of Centipede's side strike/recoil, mirrored
+attack, vertical attack/idle poses, hurt flash, and walking silhouette across
+all four variants.
+
+Centipede's long vertical rig already used nearly the full cell height. Its
+idle bob reached the bottom row, its upward hurt recoil touched it again, and
+the generic attack translation discarded downward legs and side-view venom.
+
+The candidate repair:
+
+- shifts the complete vertical rig up one cell without shortening any segment;
+- uses a one-pixel strike followed by a centered recoil in all directions;
+- pulls only the side-view venom tips inward;
+- preserves all detached legs and intentional two-cell segment openings;
+- reserves at least one transparent cell on every side in every frame;
+- keeps Centipede outline enablement as a separate approval gate.
+
+Measured candidate result across all 192 Centipede frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- detached-component and enclosed-opening counts unchanged;
+- minimum margins: top 2, right 1, bottom 1, left 1.
+
+The exhaustive roster total falls from 455 to 419 edge-contact frames and from
+92 to 80 out-of-bounds frames. The remaining failures belong to Carnivorous
+Plant, Mantis, Moth, Octopus, and Haunted Puppet.
 
 ## Treatment
 
