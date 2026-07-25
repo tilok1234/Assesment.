@@ -2143,8 +2143,9 @@ function drawCrocodile(g, d, p, f, V, animId) {
   const step = animId === 'walk' ? (f === 0 ? -1 : f === 2 ? 1 : 0) : 0;
   const bob = (animId === 'idle' && f === 1) || (animId === 'walk' && (f === 1 || f === 3)) ? 1 : 0;
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const c = V.c, belly = V.belly, mark = V.mark, eye = V.eye;
@@ -2187,8 +2188,9 @@ function drawTurtle(g, d, p, f, V, animId) {
   const step = animId === 'walk' ? (f === 0 ? -1 : f === 2 ? 1 : 0) : 0;
   const bob = animId === 'idle' && f === 1 ? 1 : 0;
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const shell = V.c, skin = V.skin, mark = V.mark, eye = V.eye;
@@ -2405,8 +2407,9 @@ function drawGriffin(g, d, p, f, V, animId) {
   const bob = (animId === 'idle' && f === 1) || (animId === 'walk' && (f === 1 || f === 3)) ? 1 : 0;
   const strike = animId === 'attack' && (f === 1 || f === 2);
   const leg = p.leg;
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const fur = V.fur, wing = V.wing, beak = V.beak, eye = V.eye;

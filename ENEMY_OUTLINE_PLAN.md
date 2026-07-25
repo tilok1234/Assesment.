@@ -7,7 +7,8 @@ frame-safety repair visually approved; Mantis frame-safety repair visually
 approved; Moth frame-safety repair visually approved; Octopus frame-safety
 repair visually approved; Haunted Puppet frame-safety repair visually
 approved; shared quadruped frame-safety repair visually approved; shared
-quadruped outline expansion visually approved.
+quadruped outline expansion visually approved; Crocodile, Turtle, and Griffin
+frame-safety repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -23,6 +24,7 @@ Frame-safety group 9 visual approval: 2026-07-25
 Frame-safety group 10 visual approval: 2026-07-25
 Frame-safety group 11 visual approval: 2026-07-25
 Outline rollout group 1 visual approval: 2026-07-25
+Frame-safety group 12 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -447,6 +449,32 @@ Measured candidate result:
 
 This candidate does not enable outlines for any of the remaining 50 enemy
 families.
+
+## Frame-Safety Repair Group 12
+
+Approved after live review of Crocodile, Turtle, and Griffin attack motion.
+
+These three dedicated renderers share the same remaining contact signature:
+their first two-pixel attack strike reaches the side edge with the forward
+snout or head and the bottom edge with the down-facing feet.
+
+The candidate repair:
+
+- retains a one-pixel first strike followed by a centered recoil;
+- preserves the authored bite, shell, wing, leg, and walk animation geometry;
+- changes no idle, walk, or hurt frame;
+- reserves at least one transparent cell on every side in all three families;
+- leaves their outline enablement for a separate approval gate.
+
+Measured result across all 576 Crocodile, Turtle, and Griffin frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- minimum margins: Crocodile top 4, right 1, bottom 1, left 1;
+- minimum margins: Turtle and Griffin top 5, right 1, bottom 1, left 1;
+- distinct first-strike and recoil frames in every variant and direction;
+- exhaustive roster contacts fall from 244 frames / 920 pixels to
+  208 frames / 776 pixels.
 
 ## Treatment
 
