@@ -181,12 +181,12 @@ check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
       'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'gnoll', 'harpy',
-      'eyemonster', 'scorpion', 'crab', 'beetle', 'wasp', 'elemental',
+      'eyemonster', 'scorpion', 'crab', 'beetle', 'wasp', 'mimic', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the twenty-two approval-gated families',
+  'enemy outline support must stay limited to the twenty-three approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -1062,6 +1062,78 @@ for (const variant of waspOutlineFamily.variants) {
             }),
             `wasp ${variant.id} ${direction} ${animation.id}/${frame + 1} `
               + `${outlineMode} must leave every one-pixel stinger segment unhaloed`,
+          );
+        }
+      }
+    }
+  }
+}
+
+const mimicOutlineFamily = engine.ENEMIES.find((family) => family.id === 'mimic');
+for (const variant of mimicOutlineFamily.variants) {
+  const spec = { kind: 'enemy', family: 'mimic', variant: variant.id };
+  const frontAttackSource = renderPixels(spec, 'down', 'attack', 0);
+  const backAttackSource = renderPixels(spec, 'up', 'attack', 0);
+  check(
+    frontAttackSource[(10 * engine.SIZE) + 8] === '#f4f4f4'
+      && frontAttackSource[(14 * engine.SIZE) + 9] === '#f4f4f4',
+    `mimic ${variant.id} front attack must retain both rows of teeth`,
+  );
+  check(
+    frontAttackSource[(12 * engine.SIZE) + 11] === '#e05545'
+      && frontAttackSource[(13 * engine.SIZE) + 12] === '#e05545',
+    `mimic ${variant.id} front attack must retain the tongue`,
+  );
+  check(
+    backAttackSource[(10 * engine.SIZE) + 8] !== '#f4f4f4'
+      && backAttackSource[(12 * engine.SIZE) + 11] !== '#e05545',
+    `mimic ${variant.id} rear attack must remain eye-, tooth-, and tongue-free`,
+  );
+  for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const frontAttack = renderOutlinedPixels(spec, 'down', 'attack', 0, outlineMode);
+    const sideAttack = renderOutlinedPixels(spec, 'right', 'attack', 0, outlineMode);
+    const closedFront = renderOutlinedPixels(spec, 'down', 'idle', 0, outlineMode);
+    check(
+      frontAttack[(6 * engine.SIZE) + 7] === engine.OUTLINE_COLOR,
+      `mimic ${variant.id} ${outlineMode} must contour the raised front lid`,
+    );
+    check(
+      sideAttack[(6 * engine.SIZE) + 10] === engine.OUTLINE_COLOR,
+      `mimic ${variant.id} ${outlineMode} must contour the raised side lid`,
+    );
+    check(
+      closedFront[(10 * engine.SIZE) + 7] === engine.OUTLINE_COLOR,
+      `mimic ${variant.id} ${outlineMode} must contour the closed chest lid`,
+    );
+  }
+
+  for (const direction of engine.DIRS) {
+    for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const source = renderPixels(spec, direction, animation.id, frame);
+        check(
+          cardinalPixelComponents(source) === 1,
+          `mimic ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+            + 'must retain one connected chest silhouette',
+        );
+        for (const outlineMode of [
+          engine.OUTLINE_MODE_COMPLETE_B,
+          engine.OUTLINE_MODE_SELECTIVE_C,
+        ]) {
+          const outlined = renderOutlinedPixels(
+            spec,
+            direction,
+            animation.id,
+            frame,
+            outlineMode,
+          );
+          check(
+            cardinalPixelComponents(outlined) === 1,
+            `mimic ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `${outlineMode} must keep the chest silhouette connected`,
           );
         }
       }

@@ -19,7 +19,8 @@ component-aware outlines visually approved; Harpy exterior outline expansion
 visually approved; Eye Monster separated-component outline expansion visually
 approved; Crab separated-component outline expansion visually approved;
 Beetle separated-component outline expansion visually approved; Wasp
-separated-component outline expansion visually approved.
+separated-component outline expansion visually approved; Mimic exterior
+outline expansion visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -56,6 +57,7 @@ Outline rollout group 5 visual approval: 2026-07-25
 Outline rollout group 6 visual approval: 2026-07-25
 Outline rollout group 7 visual approval: 2026-07-25
 Outline rollout group 8 visual approval: 2026-07-25
+Outline rollout group 9 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1128,6 +1130,43 @@ Measured candidate result across the twenty-two-family outline lane:
 
 The approved treatment was reviewed structurally and directionally in the live
 assembler across front, back, and side attacks.
+
+## Outline Rollout Group 9
+
+Approved after live closed and open front, rear, and side comparison of Mimic's
+outlines in Complete B and Selective C across Wooden, Royal, and Cursed.
+
+Mimic is the next unsupported family after Wasp in roster order. All 144 source
+frames form one connected silhouette with no enclosed transparent cavities,
+source-edge contact, or out-of-bounds writes. Even the furthest down-facing
+attack retains one source pixel of bottom margin, which leaves exactly enough
+room for its exterior contour.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for Wooden, Royal, and Cursed
+  without changing another previously unsupported enemy;
+- uses the normal exterior-only contour because every closed and open chest
+  frame is a single connected source component;
+- preserves the closed lid and latch, the raised attack lid, the front teeth
+  and tongue, and the featureless rear interior;
+- keeps the front, back, and mirrored side silhouettes distinct;
+- changes no Mimic geometry, palette, animation, catalog, saved state, or
+  export schema.
+
+Measured candidate result across the twenty-three-family outline lane:
+
+- 3,888 None-mode parity checks pass;
+- all 11,664 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 3,888 frames;
+- 288 exhaustive Mimic outlined-frame component checks preserve one connected
+  chest silhouette in every direction, animation, and frame;
+- Mimic contributes 6,648 Complete B and 5,424 Selective C outline pixels
+  across its 144 source frames;
+- zero source-edge frames and zero out-of-bounds writes.
+
+The approved treatment was reviewed structurally and directionally in the live
+assembler across closed idle frames and open front, back, and side attacks.
 
 ## Treatment
 
