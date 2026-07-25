@@ -16,11 +16,15 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'bandit',
   'scorpion',
   'elemental',
+  'wolf',
+  'boar',
+  'bear',
+  'bigcat',
 ]);
-const ENEMY_OUTLINE_PILOT_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
+const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 
 export function enemySupportsOutline(spec) {
-  return spec?.kind === 'enemy' && ENEMY_OUTLINE_PILOT_SET.has(spec.family);
+  return spec?.kind === 'enemy' && ENEMY_OUTLINE_FAMILY_SET.has(spec.family);
 }
 
 // These are ownership groups, not the much finer character-kit component layers.
@@ -539,7 +543,7 @@ export function drawOutlinedSprite(
   const mode = normalizeOutlineMode(outlineMode);
 
   // None is deliberately the original renderer call, with the original options.
-  // Effects, non-pilot enemies, and individual kit layers stay outside this
+  // Effects, unsupported enemies, and individual kit layers stay outside this
   // approval-gated outline scope.
   if (
     mode === OUTLINE_MODE_NONE

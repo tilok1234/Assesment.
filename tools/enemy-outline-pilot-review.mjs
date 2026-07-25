@@ -17,7 +17,7 @@ const MODES = [
 ];
 const PILOTS = engine.ENEMY_OUTLINE_PILOT_FAMILIES.map((familyId) => {
   const family = engine.ENEMIES.find((entry) => entry.id === familyId);
-  if (!family) throw new Error(`Missing enemy outline pilot family ${familyId}.`);
+  if (!family) throw new Error(`Missing enemy outline family ${familyId}.`);
   return family;
 });
 
@@ -143,7 +143,7 @@ async function writeModeComparison() {
   const body = [
     `<rect width="${width}" height="${height}" fill="#131722"/>`,
     checkerDefinition('checker-mode', 20),
-    '<text x="6" y="22" class="title">ENEMY OUTLINE PILOT - ATTACK FRAME 2</text>',
+    '<text x="6" y="22" class="title">ENEMY OUTLINE REVIEW - ATTACK FRAME 2</text>',
   ];
   columns.forEach((column, index) => {
     body.push(
@@ -200,7 +200,7 @@ async function writeAllFrames(family) {
   const body = [
     `<rect width="${width}" height="${height}" fill="#131722"/>`,
     checkerDefinition(`checker-${family.id}`, 12),
-    `<text x="6" y="22" class="title">${xml(`${family.name.toUpperCase()} PILOT - ALL FRAMES`)}</text>`,
+    `<text x="6" y="22" class="title">${xml(`${family.name.toUpperCase()} OUTLINE REVIEW - ALL FRAMES`)}</text>`,
   ];
   columns.forEach((column, index) => {
     body.push(
@@ -339,7 +339,7 @@ for (const family of PILOTS) {
 }
 
 if (report.outOfBoundsWrites) {
-  failures.push(`pilot renderers attempted ${report.outOfBoundsWrites} out-of-bounds writes`);
+  failures.push(`outlined enemy renderers attempted ${report.outOfBoundsWrites} out-of-bounds writes`);
 }
 if (report.modeDistinctFrames !== report.frames) {
   failures.push(
@@ -356,13 +356,13 @@ await writeFile(
 );
 
 if (failures.length) {
-  console.error(`Enemy outline pilot review failed with ${failures.length} issue(s).`);
+  console.error(`Enemy outline review failed with ${failures.length} issue(s).`);
   console.error(failures.slice(0, 30).join('\n'));
   process.exit(1);
 }
 
-console.log('Enemy outline pilot review passed.');
-console.log(`- Pilot families: ${report.pilots.join(', ')}`);
+console.log('Enemy outline review passed.');
+console.log(`- Outline families: ${report.pilots.join(', ')}`);
 console.log(`- Frames: ${report.frames}`);
 console.log(`- None parity cases: ${report.noneParityCases}`);
 console.log(`- Mode cases: ${report.modeCases}`);

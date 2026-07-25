@@ -179,30 +179,30 @@ check(runtimeSources['engine/sheets.js'].includes('drawOutlinedSprite'), 'assemb
 check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must expose the optional sprite outline selector');
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
-    === JSON.stringify(['bandit', 'scorpion', 'elemental']),
-  'enemy outline pilots must stay limited to the three approval-gated families',
+    === JSON.stringify(['bandit', 'scorpion', 'elemental', 'wolf', 'boar', 'bear', 'bigcat']),
+  'enemy outline support must stay limited to the seven approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
     engine.ENEMIES.some((family) => family.id === familyId),
-    `enemy outline pilot ${familyId} must exist in the enemy catalog`,
+    `enemy outline family ${familyId} must exist in the enemy catalog`,
   );
   check(
     engine.enemySupportsOutline({ kind: 'enemy', family: familyId }),
-    `enemy outline pilot ${familyId} must opt into outline rendering`,
+    `enemy outline family ${familyId} must opt into outline rendering`,
   );
 }
 check(
   !engine.enemySupportsOutline({ kind: 'enemy', family: 'carniplant' }),
-  'non-pilot enemies must remain on the original renderer',
+  'unsupported enemies must remain on the original renderer',
 );
 check(
   !engine.enemySupportsOutline({ kind: 'player', family: 'bandit' }),
-  'enemy outline support must never classify player specs as pilot enemies',
+  'enemy outline support must never classify player specs as outlined enemies',
 );
 check(
   !engine.enemySupportsOutline({ kind: 'effect', family: 'bandit' }),
-  'enemy outline support must never classify effect specs as pilot enemies',
+  'enemy outline support must never classify effect specs as outlined enemies',
 );
 check(runtimeSources['app.js'].includes("makeButton('Effects'"), 'app.js must expose combat effects as a first-class editor mode');
 check(runtimeSources['app.js'].includes("key === 'z'"), 'app.js must expose the undo keyboard shortcut');
