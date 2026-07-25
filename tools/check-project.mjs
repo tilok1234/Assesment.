@@ -580,7 +580,11 @@ function renderOutlinedPixels(spec, dir, animId, frame, outlineMode, opts = {}) 
   return pixels;
 }
 
-const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = ['frog', 'jellyfish', 'mole', 'scarecrow', 'drake', 'centipede', 'carniplant', 'mantis', 'moth', 'octopus', 'puppet'];
+const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
+  'frog', 'jellyfish', 'mole', 'scarecrow', 'drake', 'centipede', 'carniplant',
+  'mantis', 'moth', 'octopus', 'puppet',
+  'wolf', 'boar', 'bear', 'bigcat',
+];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
   const family = engine.ENEMIES.find((entry) => entry.id === familyId);
@@ -611,6 +615,21 @@ for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
         }
         frameSafeEnemyCases++;
       }
+    }
+  }
+}
+
+for (const familyId of ['wolf', 'boar', 'bear', 'bigcat']) {
+  const family = engine.ENEMIES.find((entry) => entry.id === familyId);
+  for (const variant of family.variants) {
+    const spec = { kind: 'enemy', family: familyId, variant: variant.id };
+    for (const direction of engine.DIRS) {
+      const firstStrike = renderPixels(spec, direction, 'attack', 1);
+      const recoil = renderPixels(spec, direction, 'attack', 2);
+      check(
+        JSON.stringify(firstStrike) !== JSON.stringify(recoil),
+        `${familyId} ${variant.id} ${direction} attack must preserve distinct strike and recoil frames`,
+      );
     }
   }
 }

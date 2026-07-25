@@ -6,7 +6,7 @@ approved; Centipede frame-safety repair visually approved; Carnivorous Plant
 frame-safety repair visually approved; Mantis frame-safety repair visually
 approved; Moth frame-safety repair visually approved; Octopus frame-safety
 repair visually approved; Haunted Puppet frame-safety repair visually
-approved.
+approved; shared quadruped frame-safety repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -20,6 +20,7 @@ Frame-safety group 7 visual approval: 2026-07-25
 Frame-safety group 8 visual approval: 2026-07-25
 Frame-safety group 9 visual approval: 2026-07-25
 Frame-safety group 10 visual approval: 2026-07-25
+Frame-safety group 11 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -382,6 +383,42 @@ Measured candidate result across all 192 Haunted Puppet frames:
 The exhaustive roster total falls from 311 to 275 edge-contact frames and from
 16 to zero out-of-bounds frames. No enemy family now attempts to draw outside
 the 24x24 source cell.
+
+## Frame-Safety Repair Group 11
+
+Approved after live review of Wolf, Boar, Bear, and Big Cat attack motion.
+
+These four families share `drawQuad`. Their only remaining frame-edge contacts
+occur in the first attack strike:
+
+- Wolf: 9 frames / 30 edge pixels;
+- Boar: 9 frames / 30 edge pixels;
+- Bear: 9 frames / 36 edge pixels;
+- Big Cat: 4 frames / 16 edge pixels.
+
+The generic first-strike two-pixel lunge places the front paws on the bottom
+edge in the down view and the longer Wolf, Boar, and Bear snouts on the side
+edge. Big Cat already has a shorter side silhouette.
+
+The candidate repair:
+
+- retains a one-pixel forward first strike;
+- centers the second strike as a visible recoil;
+- leaves the authored body, legs, snouts, tails, markings, and all non-attack
+  frames unchanged;
+- reserves at least one transparent cell on every side in all four families;
+- does not enable their outlines before visual approval.
+
+Measured candidate result across all 624 shared-quadruped frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- minimum margins: Wolf, Boar, and Bear top 6, right 1, bottom 1, left 1;
+- minimum margins: Big Cat top 5, right 2, bottom 1, left 2;
+- every variant and direction retains distinct first-strike and recoil frames.
+
+The exhaustive roster total falls from 275 to 244 edge-contact frames,
+with out-of-bounds writes remaining at zero.
 
 ## Treatment
 

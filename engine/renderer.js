@@ -1494,8 +1494,12 @@ function drawQuad(g, d, p, f, V, animId) {
   const u = (animId === 'idle' && f === 1) || (animId === 'walk' && (f === 1 || f === 3)) ? 1 : 0;
   const strike = animId === 'attack' && (f === 1 || f === 2);
   const crouch = animId === 'attack' && f === 0 ? 1 : 0;
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // Keep a visible first strike and centered recoil. The generic two-pixel
+  // lunge placed side snouts and front paws on the outermost cell, leaving no
+  // room for an exterior outline across the shared quadruped families.
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, c) => g.set(x + ox, y + oy, c);
   const R = (x, y, w, h, c) => g.rect(x + ox, y + oy, w, h, c);
   const leg = p.leg;
