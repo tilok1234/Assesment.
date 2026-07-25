@@ -20,6 +20,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'elf',
   'gnoll',
   'harpy',
+  'eyemonster',
   'scorpion',
   'elemental',
   'wolf',
@@ -45,6 +46,12 @@ const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
   'elf',
   'gnoll',
 ]);
+// Orbiting one-pixel parts need their own contour ownership. A normal merged
+// silhouette contour fills the one-cell breathing room and visually welds them
+// back onto the body.
+const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
+  'eyemonster',
+]);
 
 export function enemySupportsOutline(spec) {
   return spec?.kind === 'enemy' && ENEMY_OUTLINE_FAMILY_SET.has(spec.family);
@@ -52,6 +59,10 @@ export function enemySupportsOutline(spec) {
 
 function enemyUsesComponentOutline(spec) {
   return spec?.kind === 'enemy' && ENEMY_COMPONENT_OUTLINE_FAMILY_SET.has(spec.family);
+}
+
+function enemyUsesSeparatedOutline(spec) {
+  return spec?.kind === 'enemy' && ENEMY_SEPARATED_OUTLINE_FAMILY_SET.has(spec.family);
 }
 
 // These are ownership groups, not the much finer character-kit component layers.
@@ -244,6 +255,98 @@ export function outlineMaskForPixels(
   options = {},
 ) {
   return contourMaskForPixels(pixels, mode, width, height, true, options);
+}
+
+function connectedSourceComponents(pixels, width, height) {
+  const components = [];
+  const sourceOwners = new Int16Array(width * height).fill(-1);
+
+  for (let start = 0; start < pixels.length; start++) {
+    if (isTransparent(pixels[start]) || sourceOwners[start] >= 0) continue;
+    const ownerIndex = components.length;
+    const componentPixels = new Array(width * height).fill(null);
+    const queue = [start];
+    sourceOwners[start] = ownerIndex;
+
+    while (queue.length) {
+      const index = queue.pop();
+      componentPixels[index] = pixels[index];
+      const x = index % width;
+      const y = Math.floor(index / width);
+      for (const [offsetX, offsetY] of CARDINAL_OFFSETS) {
+        const nextX = x + offsetX;
+        const nextY = y + offsetY;
+        if (nextX < 0 || nextY < 0 || nextX >= width || nextY >= height) continue;
+        const nextIndex = (nextY * width) + nextX;
+        if (
+          isTransparent(pixels[nextIndex])
+          || sourceOwners[nextIndex] >= 0
+        ) continue;
+        sourceOwners[nextIndex] = ownerIndex;
+        queue.push(nextIndex);
+      }
+    }
+    components.push(componentPixels);
+  }
+
+  return { components, sourceOwners };
+}
+
+function outlineMaskForSeparatedComponents(
+  pixels,
+  mode = OUTLINE_MODE_COMPLETE_B,
+  width = SIZE,
+  height = SIZE,
+) {
+  const { components, sourceOwners } = connectedSourceComponents(pixels, width, height);
+  if (components.length <= 1) return outlineMaskForPixels(pixels, mode, width, height);
+
+  const componentMasks = components.map((componentPixels) => (
+    outlineMaskForPixels(componentPixels, mode, width, height)
+  ));
+  const outlineOwners = new Int16Array(width * height).fill(-1);
+
+  for (let index = 0; index < pixels.length; index++) {
+    if (!isTransparent(pixels[index])) continue;
+    let candidateOwner = -1;
+    let candidateCount = 0;
+    for (let ownerIndex = 0; ownerIndex < componentMasks.length; ownerIndex++) {
+      if (!componentMasks[ownerIndex][index]) continue;
+      candidateOwner = ownerIndex;
+      candidateCount++;
+    }
+    if (candidateCount === 1) outlineOwners[index] = candidateOwner;
+  }
+
+  const mask = new Uint8Array(width * height);
+  for (let index = 0; index < outlineOwners.length; index++) {
+    const ownerIndex = outlineOwners[index];
+    if (ownerIndex < 0) continue;
+    const x = index % width;
+    const y = Math.floor(index / width);
+    let touchesAnotherOwner = false;
+    for (const [offsetX, offsetY] of CARDINAL_OFFSETS) {
+      const nextX = x + offsetX;
+      const nextY = y + offsetY;
+      if (nextX < 0 || nextY < 0 || nextX >= width || nextY >= height) continue;
+      const nextIndex = (nextY * width) + nextX;
+      if (
+        (
+          sourceOwners[nextIndex] >= 0
+          && sourceOwners[nextIndex] !== ownerIndex
+        )
+        || (
+          outlineOwners[nextIndex] >= 0
+          && outlineOwners[nextIndex] !== ownerIndex
+        )
+      ) {
+        touchesAnotherOwner = true;
+        break;
+      }
+    }
+    if (!touchesAnotherOwner) mask[index] = 1;
+  }
+  return mask;
 }
 
 export function outlineMaskForEquipmentPixels(
@@ -592,12 +695,9 @@ export function drawOutlinedSprite(
     const finalPixels = rendererOptions.shadow === false
       ? sourcePixels
       : renderSpritePixels(spec, direction, animationId, frame, rendererOptions);
-    const outlineMask = outlineMaskForPixels(
-      sourcePixels,
-      mode,
-      SIZE,
-      SIZE,
-    );
+    const outlineMask = enemyUsesSeparatedOutline(spec)
+      ? outlineMaskForSeparatedComponents(sourcePixels, mode, SIZE, SIZE)
+      : outlineMaskForPixels(sourcePixels, mode, SIZE, SIZE);
 
     if (rendererOptions.clear !== false) context.clearRect(0, 0, SIZE, SIZE);
     paintMask(context, outlineMask, color);

@@ -16,7 +16,8 @@ frame-safety repair visually approved; Worm frame-safety repair visually
 approved; Beetle frame-safety and directional silhouette repair visually
 approved; Bandit, Kobold, Skeleton, Ratfolk, Elf, and Gnoll hybrid
 component-aware outlines visually approved; Harpy exterior outline expansion
-visually approved.
+visually approved; Eye Monster separated-component outline expansion visually
+approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -49,6 +50,7 @@ Hybrid outline group 4 visual approval: 2026-07-25
 Hybrid outline group 5 visual approval: 2026-07-25
 Hybrid outline group 6 visual approval: 2026-07-25
 Outline rollout group 4 visual approval: 2026-07-25
+Outline rollout group 5 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -958,6 +960,44 @@ Measured candidate result across the eighteen-family outline lane:
 This approved group remains limited to Harpy. Another family still requires its
 own frame-safety evidence, exhaustive regression pass, and live visual
 approval.
+
+## Outline Rollout Approved Group 5
+
+Live visual approval received for Eye Monster.
+
+Eye Monster is the first outline candidate whose main body is accompanied by
+three one-pixel orbiting source components in every frame. The first generic
+contour attempt visually welded those orbitals back onto the eye, so this
+candidate uses a family-gated separated-component contour that removes only
+cross-owner outline bridges while leaving all previously approved families
+pixel-identical.
+
+The approved rollout:
+
+- enables None, Complete B, and Selective C for Watcher, Doom, and Void without
+  changing another previously unsupported enemy;
+- preserves the main eye and all three orbiting source cores in every frame;
+- keeps all four cardinally disconnected source components disconnected after
+  both outline modes;
+- preserves the one-cell breathing gaps instead of filling them with shared
+  outline bridges;
+- changes no Eye Monster geometry, palette, animation, catalog, saved state,
+  or export schema.
+
+Measured candidate result across the nineteen-family outline lane:
+
+- 3,312 None-mode parity checks pass;
+- all 9,936 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 3,312 frames;
+- 288 exhaustive Eye Monster outlined-frame component checks preserve the
+  source component count;
+- Eye Monster contributes 6,048 Complete B and 3,744 Selective C outline pixels
+  across its 144 source frames;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This approved group remains limited to Eye Monster. Another family still
+requires its own frame-safety evidence, exhaustive regression pass, and live
+visual approval.
 
 ## Treatment
 

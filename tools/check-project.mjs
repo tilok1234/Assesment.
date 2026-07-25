@@ -181,12 +181,12 @@ check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
       'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'gnoll', 'harpy',
-      'scorpion', 'elemental',
+      'eyemonster', 'scorpion', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the eighteen approval-gated families',
+  'enemy outline support must stay limited to the nineteen approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -586,6 +586,37 @@ function renderOutlinedPixels(spec, dir, animId, frame, outlineMode, opts = {}) 
   return pixels;
 }
 
+function cardinalPixelComponents(pixels) {
+  const seen = new Set();
+  let components = 0;
+  for (let start = 0; start < pixels.length; start++) {
+    if (!pixels[start] || seen.has(start)) continue;
+    components++;
+    const queue = [start];
+    seen.add(start);
+    while (queue.length) {
+      const index = queue.pop();
+      const x = index % engine.SIZE;
+      const y = Math.floor(index / engine.SIZE);
+      for (const [offsetX, offsetY] of [[0, -1], [-1, 0], [1, 0], [0, 1]]) {
+        const nextX = x + offsetX;
+        const nextY = y + offsetY;
+        if (
+          nextX < 0
+          || nextY < 0
+          || nextX >= engine.SIZE
+          || nextY >= engine.SIZE
+        ) continue;
+        const next = (nextY * engine.SIZE) + nextX;
+        if (!pixels[next] || seen.has(next)) continue;
+        seen.add(next);
+        queue.push(next);
+      }
+    }
+  }
+  return components;
+}
+
 for (const [family, variant, separatorX, separatorY] of [
   ['bandit', 'thug', 16, 12],
   ['bandit', 'brigand', 16, 12],
@@ -716,6 +747,84 @@ for (const variant of ['screech', 'storm', 'blood']) {
       wingContourIndices.every((index) => outlined[index] === engine.OUTLINE_COLOR),
       `harpy ${variant} ${outlineMode} must contour both outer wing edges`,
     );
+  }
+}
+
+for (const variant of ['watcher', 'doom', 'void']) {
+  const spec = { kind: 'enemy', family: 'eyemonster', variant };
+  const source = renderPixels(spec, 'down', 'idle', 0);
+  const none = renderOutlinedPixels(
+    spec,
+    'down',
+    'idle',
+    0,
+    engine.OUTLINE_MODE_NONE,
+  );
+  check(
+    JSON.stringify(none) === JSON.stringify(source),
+    `eye monster ${variant} None mode must remain pixel-identical`,
+  );
+  check(
+    cardinalPixelComponents(source) === 4,
+    `eye monster ${variant} down idle must retain one body and three orbiting source parts`,
+  );
+  const orbitCoreIndices = [
+    (5 * engine.SIZE) + 9,
+    (4 * engine.SIZE) + 12,
+    (6 * engine.SIZE) + 15,
+  ];
+  const protectedGapIndices = [
+    (6 * engine.SIZE) + 9,
+    (5 * engine.SIZE) + 12,
+    (6 * engine.SIZE) + 14,
+  ];
+  for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const outlined = renderOutlinedPixels(spec, 'down', 'idle', 0, outlineMode);
+    check(
+      orbitCoreIndices.every((index) => outlined[index] === source[index]),
+      `eye monster ${variant} ${outlineMode} must preserve all three orbit cores`,
+    );
+    check(
+      protectedGapIndices.every((index) => !outlined[index]),
+      `eye monster ${variant} ${outlineMode} must preserve breathing room around every orbit`,
+    );
+    check(
+      cardinalPixelComponents(outlined) === 4,
+      `eye monster ${variant} ${outlineMode} must keep all four visual components detached`,
+    );
+  }
+}
+
+const eyeMonsterFamily = engine.ENEMIES.find((family) => family.id === 'eyemonster');
+for (const variant of eyeMonsterFamily.variants) {
+  const spec = { kind: 'enemy', family: 'eyemonster', variant: variant.id };
+  for (const direction of engine.DIRS) {
+    for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const source = renderPixels(spec, direction, animation.id, frame);
+        const sourceComponents = cardinalPixelComponents(source);
+        for (const outlineMode of [
+          engine.OUTLINE_MODE_COMPLETE_B,
+          engine.OUTLINE_MODE_SELECTIVE_C,
+        ]) {
+          const outlined = renderOutlinedPixels(
+            spec,
+            direction,
+            animation.id,
+            frame,
+            outlineMode,
+          );
+          check(
+            cardinalPixelComponents(outlined) === sourceComponents,
+            `eye monster ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `${outlineMode} must preserve every detached source component`,
+          );
+        }
+      }
+    }
   }
 }
 
