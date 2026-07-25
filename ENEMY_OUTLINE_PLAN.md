@@ -11,7 +11,8 @@ quadruped outline expansion visually approved; Crocodile, Turtle, and Griffin
 frame-safety repair visually approved; armored beast outline expansion visually
 approved; Slime and Shroom frame-safety repair visually approved; Slime and
 Shroom outline expansion visually approved; shared enemy-staff frame-safety
-repair visually approved; Golem frame-safety repair visually approved.
+repair visually approved; Golem frame-safety repair visually approved; Treant
+frame-safety repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -33,6 +34,7 @@ Frame-safety group 13 visual approval: 2026-07-25
 Outline rollout group 3 visual approval: 2026-07-25
 Frame-safety group 14 visual approval: 2026-07-25
 Frame-safety group 15 visual approval: 2026-07-25
+Frame-safety group 16 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -610,7 +612,28 @@ Measured result across all 144 Golem frames:
 - exhaustive roster contacts fall from 177 frames / 660 pixels to
   174 frames / 642 pixels.
 
-This candidate does not enable Golem outlines.
+This approved repair does not enable Golem outlines.
+
+## Frame-Safety Repair Group 16
+
+Approved after live review of Treant's down-facing first attack strike and
+centered recoil across Oak, Willow, and Blighted variants.
+
+Treant's broad branch sweep already supplies the attack motion. Only the
+generic two-pixel whole-rig lunge placed eight root pixels on the bottom source
+row. The candidate keeps a one-pixel first strike, centers the recoil, and
+changes no authored canopy, branch, root, face, idle, walk, or hurt geometry.
+
+Measured result across all 144 Treant frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- minimum margins: top 2, right 3, bottom 1, left 3;
+- distinct first-strike and recoil frames in every direction and variant;
+- exhaustive roster contacts fall from 174 frames / 642 pixels to
+  171 frames / 618 pixels.
+
+This approved repair does not enable Treant outlines.
 
 ## Treatment
 

@@ -1659,8 +1659,11 @@ function drawTreant(g, d, p, f, V, animId) {
   const u = (animId === 'idle' && f === 1) || (animId === 'walk' && (f === 1 || f === 3)) ? 1 : 0;
   const wind = animId === 'attack' && f === 0;
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // The branch sweep supplies the attack motion. Keep a one-pixel first strike
+  // and centered recoil so the broad roots retain room for an exterior outline.
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const bark = V.bark, leaf = V.leaf;
