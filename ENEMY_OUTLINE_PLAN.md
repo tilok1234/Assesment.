@@ -1,12 +1,13 @@
 # Enemy Outline Plan
 
 Status: exhaustive assessment complete; three-family pilot visually approved;
-Frog, Jellyfish, and Mole frame-safety repairs visually approved.
+Frog, Jellyfish, Mole, and Scarecrow frame-safety repairs visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
 Frame-safety group 1 visual approval: 2026-07-25
 Frame-safety group 2 visual approval: 2026-07-25
+Frame-safety group 3 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -112,6 +113,34 @@ The exhaustive roster total falls again from 506 to 494 edge-contact frames and
 from 116 to 112 out-of-bounds frames. The remaining failures belong to Drake,
 Centipede, Carnivorous Plant, Mantis, Moth, Octopus, Scarecrow, and Haunted
 Puppet.
+
+## Frame-Safety Repair Group 3
+
+Approved after live review of Scarecrow's side-view spinning attack and both
+vertical strike poses.
+
+Scarecrow's spinning attack combined its wide arm sweep with the generic
+two-pixel attack translation. Across all four variants, this discarded the
+side-view hand tip and touched the left/right edge, pushed front-view feet onto
+the bottom row, and pulled the back-view hat onto the top row.
+
+The candidate repair:
+
+- caps attack translation at one pixel in all four directions;
+- pulls only the side-view spinning hand endpoint inward;
+- preserves the full windmill arm sweep and its alternating height;
+- reserves one transparent cell on every side in every Scarecrow frame;
+- keeps Scarecrow outline enablement as a separate approval gate.
+
+Measured candidate result across all 192 Scarecrow frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- minimum margins: top 1, right 1, bottom 1, left 1.
+
+The exhaustive roster total falls from 494 to 470 edge-contact frames and from
+112 to 104 out-of-bounds frames. The remaining failures belong to Drake,
+Centipede, Carnivorous Plant, Mantis, Moth, Octopus, and Haunted Puppet.
 
 ## Treatment
 

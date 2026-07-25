@@ -2629,8 +2629,12 @@ function drawScarecrow(g, d, p, f, V, animId) {
   ][f] : { bob: animId === 'idle' && f === 1 ? 1 : 0, left: 0, right: 0, arm: 0 };
   const spinning = animId === 'attack' && (f === 1 || f === 2);
   const spin = spinning ? (f === 1 ? -3 : 3) : gait.arm;
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // The full two-pixel attack translation pushed the spinning side hand out of
+  // frame, the front feet onto row 23, and the back-view hat onto row 0. One
+  // pixel retains the attack's directional drive and reserves the outline cell.
+  const forwardLunge = animId === 'attack' ? Math.min(p.lunge, 1) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const cloth = V.cloth, straw = V.straw, hat = V.hat, eye = V.eye;
@@ -2645,7 +2649,7 @@ function drawScarecrow(g, d, p, f, V, animId) {
     R(11, 4 + bob, 8, 2, hat[0]); R(13, 2 + bob, 5, 3, hat[1]); S(18, 3 + bob, hat[0]);
     if (spinning) {
       R(2, 11 + bob + spin, 7, 2, straw); S(1, 10 + bob + spin, straw);
-      R(14, 11 + bob - spin, 8, 2, straw); S(22, 12 + bob - spin, straw);
+      R(14, 11 + bob - spin, 8, 2, straw); S(21, 12 + bob - spin, straw);
       S(3, 7 + bob, straw); S(20, 17 + bob, straw);
     } else {
       R(3, 11 + bob + gait.arm, 5, 2, straw); S(2, 12 + bob + gait.arm, straw);
