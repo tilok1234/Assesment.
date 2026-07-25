@@ -17,7 +17,7 @@ approved; Beetle frame-safety and directional silhouette repair visually
 approved; Bandit, Kobold, Skeleton, Ratfolk, Elf, and Gnoll hybrid
 component-aware outlines visually approved; Harpy exterior outline expansion
 visually approved; Eye Monster separated-component outline expansion visually
-approved.
+approved; Crab separated-component outline expansion visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -51,6 +51,7 @@ Hybrid outline group 5 visual approval: 2026-07-25
 Hybrid outline group 6 visual approval: 2026-07-25
 Outline rollout group 4 visual approval: 2026-07-25
 Outline rollout group 5 visual approval: 2026-07-25
+Outline rollout group 6 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -998,6 +999,51 @@ Measured candidate result across the nineteen-family outline lane:
 This approved group remains limited to Eye Monster. Another family still
 requires its own frame-safety evidence, exhaustive regression pass, and live
 visual approval.
+
+## Outline Rollout Group 6
+
+Approved after live comparison of Crab's revised front and side outlines in
+Complete B and Selective C across Shore, Rock, and Sapphire.
+
+Crab is the next unsupported family after the already approved Scorpion in
+roster order. Its front/back frames contain nine authored components and its
+side frames contain five. The generic contour collapsed every one of the 144
+Crab frames into a single mass, so this candidate extends the approved
+separated-component path to Crab and removes any outline islands stranded by
+bridge suppression. Live review of the first candidate found that surrounding
+each one-pixel leg segment with its own halo made the diagonal legs read as
+blocky black feet. The revised candidate contours only the connected shell and
+claw mass while leaving those authored leg pixels unchanged.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for Shore, Rock, and Sapphire
+  without changing another previously unsupported enemy;
+- preserves all five-to-nine authored body, claw, and leg components in every
+  direction, animation, and frame;
+- keeps both body/leg gaps transparent while retaining outer claw-tip contours;
+- leaves every one-pixel leg segment unhaloed in both outline modes so the
+  diagonal leg rhythm remains thin and readable;
+- removes separated outline pixels that are no longer connected to their own
+  source component;
+- changes no Crab geometry, palette, animation, catalog, saved state, or export
+  schema.
+
+Measured candidate result across the twenty-family outline lane:
+
+- 3,456 None-mode parity checks pass;
+- all 10,368 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 3,456 frames;
+- 288 exhaustive Crab outlined-frame component checks preserve each frame's
+  five-to-nine source components;
+- 288 additional outlined-frame checks prove that every one-pixel Crab leg
+  segment remains unhaloed;
+- Crab contributes 6,972 Complete B and 5,172 Selective C outline pixels across
+  its 144 source frames;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This approved group remains limited to Crab. Another family still requires its
+own frame-safety evidence, exhaustive regression pass, and live visual approval.
 
 ## Treatment
 

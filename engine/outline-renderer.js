@@ -22,6 +22,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'harpy',
   'eyemonster',
   'scorpion',
+  'crab',
   'elemental',
   'wolf',
   'boar',
@@ -51,6 +52,7 @@ const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
 // back onto the body.
 const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'eyemonster',
+  'crab',
 ]);
 
 export function enemySupportsOutline(spec) {
@@ -297,13 +299,21 @@ function outlineMaskForSeparatedComponents(
   mode = OUTLINE_MODE_COMPLETE_B,
   width = SIZE,
   height = SIZE,
+  options = {},
 ) {
   const { components, sourceOwners } = connectedSourceComponents(pixels, width, height);
   if (components.length <= 1) return outlineMaskForPixels(pixels, mode, width, height);
 
-  const componentMasks = components.map((componentPixels) => (
-    outlineMaskForPixels(componentPixels, mode, width, height)
-  ));
+  const minimumComponentPixels = Math.max(1, options.minimumComponentPixels || 1);
+  const componentMasks = components.map((componentPixels) => {
+    const componentSize = componentPixels.reduce((
+      count,
+      pixel,
+    ) => count + (isTransparent(pixel) ? 0 : 1), 0);
+    return componentSize < minimumComponentPixels
+      ? new Uint8Array(width * height)
+      : outlineMaskForPixels(componentPixels, mode, width, height);
+  });
   const outlineOwners = new Int16Array(width * height).fill(-1);
 
   for (let index = 0; index < pixels.length; index++) {
@@ -345,6 +355,41 @@ function outlineMaskForSeparatedComponents(
       }
     }
     if (!touchesAnotherOwner) mask[index] = 1;
+  }
+
+  // Removing cross-owner bridges can strand halo pixels on the far side of a
+  // protected gap. Keep only outline cells that are still cardinally reachable
+  // from their own authored source component.
+  const reachableOutline = new Uint8Array(width * height);
+  for (let ownerIndex = 0; ownerIndex < components.length; ownerIndex++) {
+    const visited = new Uint8Array(width * height);
+    const queue = [];
+    for (let index = 0; index < sourceOwners.length; index++) {
+      if (sourceOwners[index] !== ownerIndex) continue;
+      visited[index] = 1;
+      queue.push(index);
+    }
+    while (queue.length) {
+      const index = queue.pop();
+      const x = index % width;
+      const y = Math.floor(index / width);
+      for (const [offsetX, offsetY] of CARDINAL_OFFSETS) {
+        const nextX = x + offsetX;
+        const nextY = y + offsetY;
+        if (nextX < 0 || nextY < 0 || nextX >= width || nextY >= height) continue;
+        const nextIndex = (nextY * width) + nextX;
+        if (visited[nextIndex]) continue;
+        const sameSource = sourceOwners[nextIndex] === ownerIndex;
+        const sameOutline = mask[nextIndex] && outlineOwners[nextIndex] === ownerIndex;
+        if (!sameSource && !sameOutline) continue;
+        visited[nextIndex] = 1;
+        queue.push(nextIndex);
+        if (sameOutline) reachableOutline[nextIndex] = 1;
+      }
+    }
+  }
+  for (let index = 0; index < mask.length; index++) {
+    if (mask[index] && !reachableOutline[index]) mask[index] = 0;
   }
   return mask;
 }
@@ -696,7 +741,14 @@ export function drawOutlinedSprite(
       ? sourcePixels
       : renderSpritePixels(spec, direction, animationId, frame, rendererOptions);
     const outlineMask = enemyUsesSeparatedOutline(spec)
-      ? outlineMaskForSeparatedComponents(sourcePixels, mode, SIZE, SIZE)
+      ? outlineMaskForSeparatedComponents(sourcePixels, mode, SIZE, SIZE, {
+        // Crab legs are authored as diagonal chains of isolated one-pixel
+        // segments. A halo around each segment turns the chain into square
+        // black weights, so only the connected shell/claw mass is contoured.
+        // Eye Monster keeps the default because its orbitals are intended to
+        // read as individually outlined floating parts.
+        minimumComponentPixels: spec.family === 'crab' ? 2 : 1,
+      })
       : outlineMaskForPixels(sourcePixels, mode, SIZE, SIZE);
 
     if (rendererOptions.clear !== false) context.clearRect(0, 0, SIZE, SIZE);

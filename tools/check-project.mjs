@@ -181,12 +181,12 @@ check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
       'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'gnoll', 'harpy',
-      'eyemonster', 'scorpion', 'elemental',
+      'eyemonster', 'scorpion', 'crab', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the nineteen approval-gated families',
+  'enemy outline support must stay limited to the twenty approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -617,6 +617,30 @@ function cardinalPixelComponents(pixels) {
   return components;
 }
 
+function cardinalSingletonIndices(pixels) {
+  const singletonIndices = [];
+  for (let index = 0; index < pixels.length; index++) {
+    if (!pixels[index]) continue;
+    const x = index % engine.SIZE;
+    const y = Math.floor(index / engine.SIZE);
+    const hasCardinalNeighbor = [[0, -1], [-1, 0], [1, 0], [0, 1]].some(
+      ([offsetX, offsetY]) => {
+        const nextX = x + offsetX;
+        const nextY = y + offsetY;
+        return (
+          nextX >= 0
+          && nextY >= 0
+          && nextX < engine.SIZE
+          && nextY < engine.SIZE
+          && pixels[(nextY * engine.SIZE) + nextX]
+        );
+      },
+    );
+    if (!hasCardinalNeighbor) singletonIndices.push(index);
+  }
+  return singletonIndices;
+}
+
 for (const [family, variant, separatorX, separatorY] of [
   ['bandit', 'thug', 16, 12],
   ['bandit', 'brigand', 16, 12],
@@ -821,6 +845,80 @@ for (const variant of eyeMonsterFamily.variants) {
             cardinalPixelComponents(outlined) === sourceComponents,
             `eye monster ${variant.id} ${direction} ${animation.id}/${frame + 1} `
               + `${outlineMode} must preserve every detached source component`,
+          );
+        }
+      }
+    }
+  }
+}
+
+const crabFamily = engine.ENEMIES.find((family) => family.id === 'crab');
+for (const variant of crabFamily.variants) {
+  const spec = { kind: 'enemy', family: 'crab', variant: variant.id };
+  const idleSource = renderPixels(spec, 'down', 'idle', 0);
+  check(
+    cardinalPixelComponents(idleSource) === 9,
+    `crab ${variant.id} down idle must retain the body and eight detached limb groups`,
+  );
+  const clawCoreIndices = [
+    (13 * engine.SIZE) + 4,
+    (13 * engine.SIZE) + 19,
+  ];
+  const limbGapIndices = [
+    (18 * engine.SIZE) + 6,
+    (18 * engine.SIZE) + 17,
+  ];
+  const outerClawContourIndices = [
+    (13 * engine.SIZE) + 3,
+    (13 * engine.SIZE) + 20,
+  ];
+  for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const outlined = renderOutlinedPixels(spec, 'down', 'idle', 0, outlineMode);
+    check(
+      clawCoreIndices.every((index) => outlined[index] === idleSource[index]),
+      `crab ${variant.id} ${outlineMode} must preserve both claw-tip cores`,
+    );
+    check(
+      limbGapIndices.every((index) => !outlined[index]),
+      `crab ${variant.id} ${outlineMode} must preserve both body/leg gaps`,
+    );
+    check(
+      outerClawContourIndices.every((index) => outlined[index] === engine.OUTLINE_COLOR),
+      `crab ${variant.id} ${outlineMode} must contour both outer claw tips`,
+    );
+  }
+
+  for (const direction of engine.DIRS) {
+    for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const source = renderPixels(spec, direction, animation.id, frame);
+        const sourceComponents = cardinalPixelComponents(source);
+        const sourceSingletons = cardinalSingletonIndices(source);
+        for (const outlineMode of [
+          engine.OUTLINE_MODE_COMPLETE_B,
+          engine.OUTLINE_MODE_SELECTIVE_C,
+        ]) {
+          const outlined = renderOutlinedPixels(
+            spec,
+            direction,
+            animation.id,
+            frame,
+            outlineMode,
+          );
+          check(
+            cardinalPixelComponents(outlined) === sourceComponents,
+            `crab ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `${outlineMode} must preserve all ${sourceComponents} source components`,
+          );
+          check(
+            sourceSingletons.every((index) => (
+              cardinalSingletonIndices(outlined).includes(index)
+            )),
+            `crab ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `${outlineMode} must leave every one-pixel leg segment unhaloed`,
           );
         }
       }
