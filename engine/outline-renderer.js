@@ -19,6 +19,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'ratfolk',
   'elf',
   'gnoll',
+  'harpy',
   'scorpion',
   'elemental',
   'wolf',

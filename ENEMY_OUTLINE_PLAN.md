@@ -15,7 +15,8 @@ repair visually approved; Golem frame-safety repair visually approved; Treant
 frame-safety repair visually approved; Worm frame-safety repair visually
 approved; Beetle frame-safety and directional silhouette repair visually
 approved; Bandit, Kobold, Skeleton, Ratfolk, Elf, and Gnoll hybrid
-component-aware outlines visually approved.
+component-aware outlines visually approved; Harpy exterior outline expansion
+visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -47,6 +48,7 @@ Hybrid outline group 3 visual approval: 2026-07-25
 Hybrid outline group 4 visual approval: 2026-07-25
 Hybrid outline group 5 visual approval: 2026-07-25
 Hybrid outline group 6 visual approval: 2026-07-25
+Outline rollout group 4 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -921,6 +923,40 @@ Measured candidate result across the seventeen-family outline lane:
 
 This approved group remains limited to Gnoll. Another family still requires
 its own frame-safety evidence, exhaustive regression pass, and live visual
+approval.
+
+## Outline Rollout Approved Group 4
+
+Live visual approval received for Harpy.
+
+Harpy is the last frame-safe unsupported humanoid family in the current
+assessment, but it does not carry held equipment. Screecher, Storm, and Blood
+instead stress a single exterior contour around long hair, paired wings, arms,
+and legs without introducing interior ownership separators.
+
+The approved rollout:
+
+- enables None, Complete B, and Selective C for Harpy without changing another
+  previously unsupported enemy;
+- preserves every authored source pixel, including all wing tips and long-hair
+  ends, in both outlined modes;
+- contours both outer wing edges while leaving the wing/body join free of
+  artificial interior seams;
+- keeps Complete B and Selective C visibly distinct across every Harpy frame;
+- changes no Harpy geometry, palette, animation, catalog, saved state, or
+  export schema.
+
+Measured candidate result across the eighteen-family outline lane:
+
+- 3,168 None-mode parity checks pass;
+- all 9,504 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 3,168 frames;
+- Harpy contributes 11,739 Complete B and 10,053 Selective C exterior-outline
+  pixels across its 144 source frames;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This approved group remains limited to Harpy. Another family still requires its
+own frame-safety evidence, exhaustive regression pass, and live visual
 approval.
 
 ## Treatment

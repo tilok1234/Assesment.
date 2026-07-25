@@ -180,12 +180,13 @@ check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
-      'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'gnoll', 'scorpion', 'elemental',
+      'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'gnoll', 'harpy',
+      'scorpion', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the seventeen approval-gated families',
+  'enemy outline support must stay limited to the eighteen approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -670,6 +671,52 @@ for (const outlineMode of [
     gnollFaceIndices.every((index) => outlined[index] === gnollAlphaSource[index]),
     `gnoll alpha ${outlineMode} must preserve both beast ears and the muzzle`,
   );
+}
+
+for (const variant of ['screech', 'storm', 'blood']) {
+  const spec = { kind: 'enemy', family: 'harpy', variant };
+  const source = renderPixels(spec, 'down', 'idle', 0);
+  const none = renderOutlinedPixels(
+    spec,
+    'down',
+    'idle',
+    0,
+    engine.OUTLINE_MODE_NONE,
+  );
+  check(
+    JSON.stringify(none) === JSON.stringify(source),
+    `harpy ${variant} None mode must remain pixel-identical`,
+  );
+  const wingCoreIndices = [
+    (12 * engine.SIZE) + 3,
+    (15 * engine.SIZE) + 3,
+    (12 * engine.SIZE) + 20,
+    (15 * engine.SIZE) + 20,
+  ];
+  const wingContourIndices = [
+    (12 * engine.SIZE) + 2,
+    (15 * engine.SIZE) + 2,
+    (12 * engine.SIZE) + 21,
+    (15 * engine.SIZE) + 21,
+  ];
+  check(
+    wingCoreIndices.every((index) => source[index]),
+    `harpy ${variant} down idle must retain all four authored wing-tip cores`,
+  );
+  for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const outlined = renderOutlinedPixels(spec, 'down', 'idle', 0, outlineMode);
+    check(
+      wingCoreIndices.every((index) => outlined[index] === source[index]),
+      `harpy ${variant} ${outlineMode} must preserve all wing-tip colors`,
+    );
+    check(
+      wingContourIndices.every((index) => outlined[index] === engine.OUTLINE_COLOR),
+      `harpy ${variant} ${outlineMode} must contour both outer wing edges`,
+    );
+  }
 }
 
 const elfDuelistSpec = { kind: 'enemy', family: 'elf', variant: 'duelist' };
