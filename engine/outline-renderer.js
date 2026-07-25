@@ -27,9 +27,20 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'shroom',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
+// Layered humanoid enemies share the player renderer's concrete body,
+// headgear, weapon, and shield passes. Keep this list approval-gated so solid
+// creatures retain the simpler exterior-only contour while one representative
+// humanoid proves the component-aware path.
+const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
+  'bandit',
+]);
 
 export function enemySupportsOutline(spec) {
   return spec?.kind === 'enemy' && ENEMY_OUTLINE_FAMILY_SET.has(spec.family);
+}
+
+function enemyUsesComponentOutline(spec) {
+  return spec?.kind === 'enemy' && ENEMY_COMPONENT_OUTLINE_FAMILY_SET.has(spec.family);
 }
 
 // These are ownership groups, not the much finer character-kit component layers.
@@ -560,7 +571,7 @@ export function drawOutlinedSprite(
   }
 
   const color = typeof outlineColor === 'string' && outlineColor ? outlineColor : OUTLINE_COLOR;
-  if (enemySupportsOutline(spec)) {
+  if (enemySupportsOutline(spec) && !enemyUsesComponentOutline(spec)) {
     const { onOutOfBounds, ...sourceOptions } = rendererOptions;
     const sourcePixels = renderSpritePixels(spec, direction, animationId, frame, {
       ...sourceOptions,

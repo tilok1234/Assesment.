@@ -585,6 +585,41 @@ function renderOutlinedPixels(spec, dir, animId, frame, outlineMode, opts = {}) 
   return pixels;
 }
 
+for (const [variant, separatorX] of [
+  ['thug', 16],
+  ['brigand', 16],
+  ['sniper', 17],
+]) {
+  const spec = { kind: 'enemy', family: 'bandit', variant };
+  const source = renderPixels(spec, 'down', 'idle', 0);
+  const none = renderOutlinedPixels(
+    spec,
+    'down',
+    'idle',
+    0,
+    engine.OUTLINE_MODE_NONE,
+  );
+  check(
+    JSON.stringify(none) === JSON.stringify(source),
+    `bandit ${variant} None mode must remain pixel-identical`,
+  );
+  const separatorIndex = (12 * engine.SIZE) + separatorX;
+  check(
+    source[separatorIndex] && source[separatorIndex] !== engine.OUTLINE_COLOR,
+    `bandit ${variant} component-aware proof must start from a colored body contact pixel`,
+  );
+  for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const outlined = renderOutlinedPixels(spec, 'down', 'idle', 0, outlineMode);
+    check(
+      outlined[separatorIndex] === engine.OUTLINE_COLOR,
+      `bandit ${variant} ${outlineMode} must place a body-side held-weapon separator`,
+    );
+  }
+}
+
 const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'frog', 'jellyfish', 'mole', 'scarecrow', 'drake', 'centipede', 'carniplant',
   'mantis', 'moth', 'octopus', 'puppet',

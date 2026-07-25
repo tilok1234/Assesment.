@@ -15,6 +15,18 @@ const MODES = [
   { id: engine.OUTLINE_MODE_COMPLETE_B, label: 'COMPLETE B' },
   { id: engine.OUTLINE_MODE_SELECTIVE_C, label: 'SELECTIVE C' },
 ];
+const COMPONENT_AWARE_FAMILIES = new Set(['bandit']);
+const COMPONENT_LAYER_ORDER = [
+  'weapon-back',
+  'shield-back',
+  'body',
+  'headgear',
+  'shield-front',
+  'weapon-front',
+];
+const COMPONENT_BODY_LAYERS = new Set(['body', 'headgear']);
+const COMPONENT_FRONT_EQUIPMENT_LAYERS = new Set(['shield-front', 'weapon-front']);
+const CARDINAL_OFFSETS = [[0, -1], [-1, 0], [1, 0], [0, 1]];
 const PILOTS = engine.ENEMY_OUTLINE_PILOT_FAMILIES.map((familyId) => {
   const family = engine.ENEMIES.find((entry) => entry.id === familyId);
   if (!family) throw new Error(`Missing enemy outline family ${familyId}.`);
@@ -53,6 +65,45 @@ function render(spec, direction, animation, frame, outlineMode) {
     onOutOfBounds: (pixel) => discarded.push(pixel),
   });
   return { pixels: context.pixels, discarded };
+}
+
+function renderLayer(spec, direction, animation, frame, layer) {
+  const context = new PixelContext();
+  engine.drawSprite(context, spec, direction, animation, frame, {
+    layer,
+    shadow: false,
+  });
+  return context.pixels;
+}
+
+function visibleComponentLayers(spec, direction, animation, frame) {
+  const visibleLayers = new Array(engine.SIZE * engine.SIZE).fill(null);
+  for (const layer of COMPONENT_LAYER_ORDER) {
+    const pixels = renderLayer(spec, direction, animation, frame, layer);
+    for (let index = 0; index < pixels.length; index++) {
+      if (pixels[index]) visibleLayers[index] = layer;
+    }
+  }
+  return visibleLayers;
+}
+
+function touchesFrontEquipment(visibleLayers, index) {
+  const x = index % engine.SIZE;
+  const y = Math.floor(index / engine.SIZE);
+  for (const [offsetX, offsetY] of CARDINAL_OFFSETS) {
+    const targetX = x + offsetX;
+    const targetY = y + offsetY;
+    if (
+      targetX >= 0
+      && targetY >= 0
+      && targetX < engine.SIZE
+      && targetY < engine.SIZE
+      && COMPONENT_FRONT_EQUIPMENT_LAYERS.has(
+        visibleLayers[(targetY * engine.SIZE) + targetX],
+      )
+    ) return true;
+  }
+  return false;
 }
 
 function arraysEqual(left, right) {
@@ -244,6 +295,7 @@ const report = {
   completeBAddedPixels: 0,
   selectiveCAddedPixels: 0,
   modeDistinctFrames: 0,
+  componentContactSeparatorPixels: 0,
   sourceEdgeFrames: 0,
   outOfBoundsWrites: 0,
   files: [],
@@ -286,6 +338,10 @@ for (const family of PILOTS) {
           );
           report.modeCases += 3;
           report.noneParityCases++;
+          const componentAware = COMPONENT_AWARE_FAMILIES.has(family.id);
+          const visibleLayers = componentAware
+            ? visibleComponentLayers(spec, direction, animation.id, frame)
+            : null;
           report.outOfBoundsWrites += directDiscarded.length
             + none.discarded.length
             + complete.discarded.length
@@ -307,11 +363,18 @@ for (const family of PILOTS) {
             for (let index = 0; index < directContext.pixels.length; index++) {
               const source = directContext.pixels[index];
               if (source && outlined[index] !== source) {
-                failures.push(
-                  `${family.id}/${variant.id} ${direction} ${animation.id}/${frame + 1} `
-                  + `${modeName} changed source pixel ${index}`,
-                );
-                break;
+                const componentSeparator = componentAware
+                  && outlined[index] === engine.OUTLINE_COLOR
+                  && COMPONENT_BODY_LAYERS.has(visibleLayers[index])
+                  && touchesFrontEquipment(visibleLayers, index);
+                if (!componentSeparator) {
+                  failures.push(
+                    `${family.id}/${variant.id} ${direction} ${animation.id}/${frame + 1} `
+                    + `${modeName} changed non-contact source pixel ${index}`,
+                  );
+                  break;
+                }
+                report.componentContactSeparatorPixels++;
               }
               if (!source && outlined[index] && outlined[index] !== engine.OUTLINE_COLOR) {
                 failures.push(
@@ -346,6 +409,9 @@ if (report.modeDistinctFrames !== report.frames) {
     `Complete B and Selective C differ in ${report.modeDistinctFrames}/${report.frames} frames`,
   );
 }
+if (!report.componentContactSeparatorPixels) {
+  failures.push('component-aware Bandit proof produced no body/equipment contact separators');
+}
 
 report.files.push(await writeModeComparison());
 for (const family of PILOTS) report.files.push(await writeAllFrames(family));
@@ -369,6 +435,7 @@ console.log(`- Mode cases: ${report.modeCases}`);
 console.log(`- Complete B added pixels: ${report.completeBAddedPixels}`);
 console.log(`- Selective C added pixels: ${report.selectiveCAddedPixels}`);
 console.log(`- Mode-distinct frames: ${report.modeDistinctFrames}`);
+console.log(`- Component contact separator pixels: ${report.componentContactSeparatorPixels}`);
 console.log(`- Source edge frames: ${report.sourceEdgeFrames}`);
 console.log(`- Out-of-bounds writes: ${report.outOfBoundsWrites}`);
 console.log(`- Review: ${path.join(output, report.files[0])}`);

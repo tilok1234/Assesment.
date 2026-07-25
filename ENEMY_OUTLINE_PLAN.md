@@ -14,7 +14,7 @@ Shroom outline expansion visually approved; shared enemy-staff frame-safety
 repair visually approved; Golem frame-safety repair visually approved; Treant
 frame-safety repair visually approved; Worm frame-safety repair visually
 approved; Beetle frame-safety and directional silhouette repair visually
-approved.
+approved; Bandit hybrid component-aware outline visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -40,6 +40,7 @@ Frame-safety group 16 visual approval: 2026-07-25
 Frame-safety group 17 visual approval: 2026-07-25
 Beetle down-view visual approval: 2026-07-25
 Frame-safety group 18 visual approval: 2026-07-25
+Hybrid outline group 1 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -694,6 +695,45 @@ Measured result across all 144 Beetle frames:
   162 frames / 582 pixels.
 
 This approved repair does not enable Beetle outlines.
+
+## Hybrid Outline Rollout Group 1
+
+Approved after live comparison of None, Complete B, and Selective C across
+Bandit's Thug, Brigand, and Sniper variants, including front, side, and rear
+equipment contacts.
+
+The current enemy treatment remains appropriate for monolithic beasts and
+detached magical creatures, but a single exterior contour flattens layered
+humanoids into one owner. Bandit is the narrow proof that humanoid enemies can
+reuse the renderer's existing body, headgear, weapon, and shield ownership
+passes without changing their source art or enabling another family.
+
+The candidate:
+
+- keeps None as direct, pixel-identical renderer delegation;
+- retains exterior-only contours for every other approved enemy;
+- contours Bandit's body and held weapon as separate logical owners;
+- adds a one-pixel separator on the body/headgear side of direct foreground
+  equipment contact while preserving the weapon's colored core;
+- keeps back-pass equipment separated by its authored occlusion instead of
+  consuming thin weapon pixels;
+- preserves Complete B as the stronger eight-neighbor exterior treatment and
+  Selective C as the lighter four-neighbor treatment;
+- changes no Bandit geometry, palette, animation, equipment placement, catalog,
+  saved state, or export schema.
+
+Measured candidate result across the full twelve-family approved outline lane:
+
+- 2,160 None-mode parity checks pass;
+- all 6,480 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 2,160 frames;
+- 962 validated body-side Bandit equipment-contact separator pixels across the
+  two outlined modes;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This approved group remains limited to Bandit. Another humanoid family still
+requires its own frame-safety evidence, exhaustive regression pass, and live
+visual approval.
 
 ## Treatment
 
