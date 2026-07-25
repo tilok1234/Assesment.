@@ -13,6 +13,7 @@ approved; Slime and Shroom frame-safety repair visually approved; Slime and
 Shroom outline expansion visually approved; shared enemy-staff frame-safety
 repair visually approved; Golem frame-safety repair visually approved; Treant
 frame-safety repair visually approved; Worm frame-safety repair visually
+approved; Beetle frame-safety and directional silhouette repair visually
 approved.
 
 Date: 2026-07-25
@@ -37,6 +38,8 @@ Frame-safety group 14 visual approval: 2026-07-25
 Frame-safety group 15 visual approval: 2026-07-25
 Frame-safety group 16 visual approval: 2026-07-25
 Frame-safety group 17 visual approval: 2026-07-25
+Beetle down-view visual approval: 2026-07-25
+Frame-safety group 18 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -657,6 +660,40 @@ Measured result across all 144 Worm frames:
   168 frames / 588 pixels.
 
 This approved repair does not enable Worm outlines.
+
+## Frame-Safety Repair Group 18
+
+Approved after live review of Beetle's mirrored side strike, foreshortened
+front/down silhouette, and matching back/up silhouette across Scarab, Stag, and
+Bomber variants.
+
+Beetle's horn extension and alternating legs already distinguish its attack
+frames. Only the generic two-pixel whole-rig lunge placed the horn tip on the
+left or right source edge, one pixel per side-facing strike per variant. The
+candidate keeps a one-pixel first strike, centers the recoil, and uses each
+variant's own highlight for the front strike antennae. The down view now turns
+the same shell, smaller eye-bearing head, antenna, and three leg pairs toward
+the camera with a foreshortened frontal game-sprite angle instead of a literal
+top-down rotation or the old rear-facing pear silhouette.
+The up view now mirrors that depth from behind: the broad rear shell overlaps
+the smaller eye-free head and its paired antennae recede away from the viewer.
+Both corrected vertical silhouettes are shared consistently by idle, walk,
+attack, and hurt while the approved side views remain unchanged.
+
+Measured result across all 144 Beetle frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- minimum margins: top 3, right 1, bottom 1, left 1;
+- distinct first-strike and recoil frames in every direction and variant;
+- a side-consistent down silhouette with two visible eyes and palette-colored
+  forward antennae in both strike frames;
+- a matching back silhouette with an eye-free recessed head and two receding
+  palette-colored antennae;
+- exhaustive roster contacts fall from 168 frames / 588 pixels to
+  162 frames / 582 pixels.
+
+This approved repair does not enable Beetle outlines.
 
 ## Treatment
 

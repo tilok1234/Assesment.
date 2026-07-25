@@ -1911,29 +1911,75 @@ function drawCrab(g, d, p, f, V, animId) {
 function drawBeetle(g, d, p, f, V, animId) {
   const wig = f % 2 === 0 ? 0 : 1;
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // The horn extension and leg alternation already distinguish the strike.
+  // Keep a one-pixel first lunge and centered recoil so the mirrored horn tip
+  // retains one cell of outline room on both side views.
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const c = V.c;
-  if (d === 'down' || d === 'up') {
+  if (d === 'down') {
+    // Foreshorten the side-view design into the game's frontal angle instead
+    // of rotating it into a literal top-down view. The shell stays broad behind
+    // an overlapping eye-bearing head, while the profile antenna becomes a
+    // mirrored pair projecting toward the viewer.
+    const legRows = [11, 14, 16];
     for (let i = 0; i < 3; i++) {
-      const y = 12 + i * 2 + (i % 2 === wig ? 0 : 1);
-      S(7, y, c[1]); S(6, y + 1, c[1]);
-      S(16, y, c[1]); S(17, y + 1, c[1]);
+      const y = legRows[i];
+      const bend = i % 2 === wig ? 0 : 1;
+      S(7, y, c[1]); S(6, y + bend, c[1]);
+      S(16, y, c[1]); S(17, y + bend, c[1]);
     }
-    R(9, 10, 6, 1, c[0]);
-    R(8, 11, 8, 8, c[0]);
-    R(9, 19, 6, 1, c[1]);
-    R(11, 11, 1, 8, c[1]);
-    S(9, 12, c[2]); S(9, 13, c[2]);
-    if (d === 'down') {
-      R(10, 8, 4, 2, c[1]);
-      S(10, 8, '#f4f4f4'); S(13, 8, '#f4f4f4');
-      S(11, 7, c[1]); S(11, 6, strike ? '#f4f4f4' : c[1]); S(12, 6, c[1]);
-    } else {
-      R(10, 8, 4, 2, c[0]);
+
+    R(9, 8, 6, 1, c[0]);
+    R(8, 9, 8, 1, c[0]);
+    R(7, 10, 10, 6, c[0]);
+    R(9, 17, 6, 1, c[1]);
+    R(8, 16, 8, 1, c[1]);
+    R(7, 13, 10, 1, c[1]);
+    R(11, 10, 1, 3, c[1]);
+    S(8, 10, c[2]); S(8, 11, c[2]);
+
+    R(10, 14, 4, 1, c[1]);
+    R(9, 15, 6, 4, c[1]);
+    S(10, 16, '#f4f4f4'); S(13, 16, '#f4f4f4');
+    R(11, 18, 2, 1, c[0]);
+    S(10, 19, c[1]); S(9, 20, c[1]);
+    S(13, 19, c[1]); S(14, 20, c[1]);
+    if (strike) {
+      S(8, 20, c[1]); S(15, 20, c[1]);
+      S(8, 21, c[2]); S(15, 21, c[2]);
     }
+  } else if (d === 'up') {
+    // Match the frontal foreshortening from behind. Draw the smaller head and
+    // receding antennae first so the broad rear shell overlaps them, while the
+    // eyes remain hidden from the back view.
+    R(10, 7, 4, 1, c[1]);
+    R(9, 8, 6, 2, c[1]);
+    S(10, 6, c[1]); S(9, 5, c[1]);
+    S(13, 6, c[1]); S(14, 5, c[1]);
+    if (strike) {
+      S(8, 5, c[1]); S(15, 5, c[1]);
+      S(8, 4, c[2]); S(15, 4, c[2]);
+    }
+
+    const legRows = [11, 14, 16];
+    for (let i = 0; i < 3; i++) {
+      const y = legRows[i];
+      const bend = i % 2 === wig ? 0 : 1;
+      S(7, y, c[1]); S(6, y + bend, c[1]);
+      S(16, y, c[1]); S(17, y + bend, c[1]);
+    }
+
+    R(9, 9, 6, 1, c[0]);
+    R(8, 10, 8, 1, c[0]);
+    R(7, 11, 10, 6, c[0]);
+    R(8, 17, 8, 1, c[1]);
+    R(7, 14, 10, 1, c[1]);
+    R(11, 11, 1, 6, c[1]);
+    S(8, 11, c[2]); S(8, 12, c[2]);
   } else {
     for (let i = 0; i < 3; i++) {
       const x = 8 + i * 3;

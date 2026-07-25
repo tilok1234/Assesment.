@@ -592,7 +592,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'crocodile', 'turtle', 'griffin',
   'slime', 'shroom',
   'elf', 'skeleton', 'kobold', 'ratfolk',
-  'golem', 'treant', 'worm',
+  'golem', 'treant', 'worm', 'beetle',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -648,7 +648,7 @@ for (const familyId of [
   'wolf', 'boar', 'bear', 'bigcat',
   'crocodile', 'turtle', 'griffin',
   'slime', 'shroom',
-  'golem', 'treant', 'worm',
+  'golem', 'treant', 'worm', 'beetle',
 ]) {
   const family = engine.ENEMIES.find((entry) => entry.id === familyId);
   for (const variant of family.variants) {
@@ -661,6 +661,36 @@ for (const familyId of [
         `${familyId} ${variant.id} ${direction} attack must preserve distinct strike and recoil frames`,
       );
     }
+  }
+}
+
+const beetleFamily = engine.ENEMIES.find((entry) => entry.id === 'beetle');
+for (const variant of beetleFamily.variants) {
+  const spec = { kind: 'enemy', family: 'beetle', variant: variant.id };
+  for (const [frame, forwardOffset] of [[1, 1], [2, 0]]) {
+    const pixels = renderPixels(spec, 'down', 'attack', frame);
+    check(
+      pixels[((16 + forwardOffset) * engine.SIZE) + 10] === '#f4f4f4'
+        && pixels[((16 + forwardOffset) * engine.SIZE) + 13] === '#f4f4f4',
+      `beetle ${variant.id} down attack frame ${frame + 1} must retain both front-facing eyes`,
+    );
+    check(
+      pixels[((21 + forwardOffset) * engine.SIZE) + 8] === variant.c[2]
+        && pixels[((21 + forwardOffset) * engine.SIZE) + 15] === variant.c[2],
+      `beetle ${variant.id} down attack frame ${frame + 1} must retain both forward palette-colored antennae`,
+    );
+
+    const backPixels = renderPixels(spec, 'up', 'attack', frame);
+    check(
+      backPixels[((8 - forwardOffset) * engine.SIZE) + 10] === variant.c[1]
+        && backPixels[((8 - forwardOffset) * engine.SIZE) + 13] === variant.c[1],
+      `beetle ${variant.id} up attack frame ${frame + 1} must show the eye-free back of the head`,
+    );
+    check(
+      backPixels[((4 - forwardOffset) * engine.SIZE) + 8] === variant.c[2]
+        && backPixels[((4 - forwardOffset) * engine.SIZE) + 15] === variant.c[2],
+      `beetle ${variant.id} up attack frame ${frame + 1} must retain both receding palette-colored antennae`,
+    );
   }
 }
 
