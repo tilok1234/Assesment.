@@ -1,9 +1,11 @@
 # Enemy Outline Plan
 
-Status: exhaustive assessment complete; three-family pilot visually approved.
+Status: exhaustive assessment complete; three-family pilot visually approved;
+Frog and Jellyfish frame-safety repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
+Frame-safety group 1 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -52,6 +54,34 @@ All pilot variants, directions, animations, and frames must:
 - keep Complete B and Selective C visibly distinct.
 
 The pilot does not enable outlines for the other 54 families. Unsupported enemies continue to delegate directly to the original renderer in every mode.
+
+## Frame-Safety Repair Group 1
+
+Approved after live review of Frog and Jellyfish side/front attack motion.
+
+Frog and Jellyfish share the smallest out-of-bounds signature in the audit:
+their second side-attack frame used the generic two-pixel lunge and discarded
+one active-tip pixel in every variant and side direction. Their front-facing
+attack also touched the bottom cell edge.
+
+The candidate repair:
+
+- caps attack translation at one pixel while preserving visible forward motion;
+- reshapes the Frog tongue inward so its longest frame still reads as longer;
+- pulls the Jellyfish attack sparks inward without merging its detached glow;
+- reserves at least one transparent cell on every side in every frame;
+- does not enable outlines for either family before visual approval.
+
+Measured candidate result across all 384 Frog/Jellyfish frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- Frog minimum margins: top 5, right 1, bottom 1, left 1;
+- Jellyfish minimum margins: top 2, right 1, bottom 1, left 1.
+
+The exhaustive roster total falls from 538 to 506 edge-contact frames and from
+132 to 116 out-of-bounds frames. The remaining failures belong to the other
+nine repair families and remain out of scope for this approval gate.
 
 ## Treatment
 

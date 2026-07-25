@@ -580,6 +580,41 @@ function renderOutlinedPixels(spec, dir, animId, frame, outlineMode, opts = {}) 
   return pixels;
 }
 
+const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = ['frog', 'jellyfish'];
+let frameSafeEnemyCases = 0;
+for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
+  const family = engine.ENEMIES.find((entry) => entry.id === familyId);
+  check(family, `frame-safe enemy repair family ${familyId} must exist`);
+  for (const variant of family.variants) {
+    const spec = { kind: 'enemy', family: familyId, variant: variant.id };
+    for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const discarded = [];
+        const pixels = renderPixels(spec, direction, animation.id, frame, {
+          onOutOfBounds: (pixel) => discarded.push(pixel),
+        });
+        const prefix = `${familyId} ${variant.id} ${direction} ${animation.id} frame ${frame + 1}`;
+        check(discarded.length === 0, `${prefix} must not attempt out-of-bounds writes`);
+        for (let x = 0; x < engine.SIZE; x++) {
+          check(pixels[x] === null, `${prefix} must reserve the top outline row`);
+          check(
+            pixels[((engine.SIZE - 1) * engine.SIZE) + x] === null,
+            `${prefix} must reserve the bottom outline row`,
+          );
+        }
+        for (let y = 1; y < engine.SIZE - 1; y++) {
+          check(pixels[y * engine.SIZE] === null, `${prefix} must reserve the left outline column`);
+          check(
+            pixels[(y * engine.SIZE) + engine.SIZE - 1] === null,
+            `${prefix} must reserve the right outline column`,
+          );
+        }
+        frameSafeEnemyCases++;
+      }
+    }
+  }
+}
+
 const speciesProbe = {
   kind: 'player', species: 'human', bodyBuild: 'classic', skin: 'orc', hairStyle: 'bald', hairColor: 'brown',
   faceDetail: 'glasses', headgear: 'none', outfit: 'tunic', outfitTier: 'tier1', outfitColor: 'royal',
@@ -2327,4 +2362,5 @@ console.log(`- Player samples: ${playerRefs.length}`);
 console.log(`- Frame-safe weapon cases: ${frameSafeWeaponCases}`);
 console.log(`- Frame-safe shield cases: ${frameSafeShieldCases}`);
 console.log(`- Frame-safe headgear cases: ${frameSafeHeadgearCases}`);
+console.log(`- Frame-safe repaired enemy cases: ${frameSafeEnemyCases}`);
 console.log(`- Validated PNG sheets: ${actualPngs.length} (${expectedWidth}x${expectedHeight})`);

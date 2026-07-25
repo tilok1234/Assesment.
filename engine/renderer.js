@@ -2083,8 +2083,12 @@ function drawFrog(g, d, p, f, V, animId) {
   const hop = animId === 'walk' && (f === 1 || f === 3) ? -2 : (animId === 'idle' && f === 1 ? 1 : 0);
   const strike = animId === 'attack' && (f === 1 || f === 2);
   const kick = animId === 'walk' && (f === 0 || f === 2) ? (f === 0 ? -1 : 1) : 0;
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = (d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0) + hop;
+  // The generic two-pixel attack lunge pushed the tongue outside the 24x24
+  // cell and planted the front-view feet on the bottom edge. Keep one pixel of
+  // readable forward motion while reserving the outer cell for a later outline.
+  const forwardLunge = animId === 'attack' ? Math.min(p.lunge, 1) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = (d === 'down' ? forwardLunge : d === 'up' ? -p.lunge : 0) + hop;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const c = V.c, belly = V.belly, mark = V.mark, eye = V.eye;
@@ -2098,8 +2102,9 @@ function drawFrog(g, d, p, f, V, animId) {
     S(17, 10, eye); S(18, 11, '#f4f4f4');
     S(8, 14, mark); S(10, 16, mark); S(13, 14, mark);
     if (strike) {
-      R(19, 13, 3, 1, tongue);
-      if (f === 1) R(21, 13, 2, 1, tongue);
+      // Frame two remains the longest tongue pose, but grows inward from the
+      // mouth instead of discarding its active tip beyond x=23.
+      R(f === 1 ? 18 : 19, 13, f === 1 ? 4 : 3, 1, tongue);
     }
   } else {
     R(5 - kick, 18, 5, 2, c[1]); R(4 - kick, 20, 6, 2, c[1]);
@@ -2210,8 +2215,11 @@ function drawJellyfish(g, d, p, f, V, animId) {
   const float = f % 2 === 0 ? -2 : -1;
   const pulse = (animId === 'idle' && f === 1) || (animId === 'walk' && (f === 1 || f === 3));
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = (d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0) + float;
+  // Cap attack translation at one pixel so the floating body still advances
+  // while its tendrils and attack sparks keep a complete outline-safe margin.
+  const forwardLunge = animId === 'attack' ? Math.min(p.lunge, 1) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = (d === 'down' ? forwardLunge : d === 'up' ? -p.lunge : 0) + float;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const c = V.c, glow = V.glow, eye = V.eye;
@@ -2222,7 +2230,7 @@ function drawJellyfish(g, d, p, f, V, animId) {
     S(10, 9, glow); S(14, 11, glow); S(15, 10, eye);
     R(8, 15, 2, strike ? 6 : 4, c[1]); R(12, 15, 2, strike ? 4 : 6, c[1]); R(16, 14, 1, strike ? 7 : 5, c[1]);
     S(7, 18, glow); S(11, 20, glow); S(15, 18, glow);
-    if (strike) { R(17, 16, 4, 1, glow); S(21, 15, glow); S(22, 14, glow); }
+    if (strike) { R(17, 16, 4, 1, glow); S(21, 15, glow); S(20, 14, glow); }
   } else {
     R(9, 6, 6, 1, c[0]); R(7, 7, 10, 2, c[0]); R(6, 9, 12, pulse ? 5 : 6, c[0]);
     R(7, pulse ? 14 : 15, 10, 2, c[1]);
