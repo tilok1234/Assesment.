@@ -2445,8 +2445,13 @@ function drawMantis(g, d, p, f, V, animId) {
   const stride = walking ? p.leg : 0;
   const sweep = walking ? [0, 1, 0, -1][f] : 0;
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // Keep the first strike visibly forward, then center the recoil. The generic
+  // two-pixel lunge discarded both side blades and put the front feet on the
+  // bottom row before enemy outlines were applied.
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const strikeInset = strike && forwardLunge ? 1 : 0;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const c = V.c, blade = V.blade, eye = V.eye;
@@ -2461,8 +2466,10 @@ function drawMantis(g, d, p, f, V, animId) {
     R(15, 7 + bob, 5, 5, c[0]); S(18, 8 + bob, eye);
     S(17, 6 + bob, c[2]); S(18 + sweep, 4 + bob, c[1]); S(19 + sweep, 3 + bob, c[1]);
     if (strike) {
-      R(17, 11 + bob, 5, 2, c[1]); S(22, 12 + bob, blade); S(23, 13 + bob, blade);
-      R(16, 14 + bob, 5, 2, c[0]); S(21, 16 + bob, blade); S(22, 17 + bob, blade);
+      R(17, 11 + bob, 5, 2, c[1]);
+      S(22 - strikeInset, 11 + bob, blade); S(22 - strikeInset, 12 + bob, blade);
+      R(16, 14 + bob, 5, 2, c[0]);
+      S(21 - strikeInset, 16 + bob, blade); S(22 - strikeInset, 17 + bob, blade);
     } else {
       R(13 + sweep, 11 + bob, 3, 2, c[1]); R(15 + sweep, 9 + bob, 2, 4, c[0]);
       S(16 + sweep, 8 + bob, blade); S(17 + sweep, 7 + bob, blade);

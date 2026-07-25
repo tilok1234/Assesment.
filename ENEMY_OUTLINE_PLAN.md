@@ -3,7 +3,8 @@
 Status: exhaustive assessment complete; three-family pilot visually approved;
 Frog, Jellyfish, Mole, Scarecrow, and Drake frame-safety repairs visually
 approved; Centipede frame-safety repair visually approved; Carnivorous Plant
-frame-safety repair visually approved.
+frame-safety repair visually approved; Mantis frame-safety repair visually
+approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -13,6 +14,7 @@ Frame-safety group 3 visual approval: 2026-07-25
 Frame-safety group 4 visual approval: 2026-07-25
 Frame-safety group 5 visual approval: 2026-07-25
 Frame-safety group 6 visual approval: 2026-07-25
+Frame-safety group 7 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -237,6 +239,39 @@ Measured candidate result across all 192 Carnivorous Plant frames:
 The exhaustive roster total falls from 419 to 391 edge-contact frames and from
 80 to 68 out-of-bounds frames. The remaining failures belong to Mantis, Moth,
 Octopus, and Haunted Puppet.
+
+## Frame-Safety Repair Group 7
+
+Approved after contact-sheet review of all four variants covering both side
+strike frames, mirroring, the downward strike and idle stance, upward strike,
+hurt flash, and walking silhouette.
+
+Mantis's generic two-pixel side strike discarded three pixels from each paired
+forearm blade, while its recoil discarded one more. The same first-strike
+translation put six front-view foot pixels on the bottom row.
+
+The candidate repair:
+
+- uses a one-pixel strike followed by a centered recoil in every direction;
+- turns only the upper side blade into a two-pixel cap and folds the lower blade
+  diagonally inward;
+- keeps the open space between the two forearm scythes connected to the
+  exterior instead of creating a new enclosed cavity;
+- preserves walking stride, antenna sweep, detached limb pixels, and all four
+  variant palettes;
+- reserves at least one transparent cell on every side in every frame;
+- keeps Mantis outline enablement as a separate approval gate.
+
+Measured candidate result across all 192 Mantis frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- detached-component and enclosed-opening counts unchanged;
+- minimum margins: top 2, right 1, bottom 1, left 1.
+
+The exhaustive roster total falls from 391 to 371 edge-contact frames and from
+68 to 52 out-of-bounds frames. The remaining failures belong to Moth, Octopus,
+and Haunted Puppet.
 
 ## Treatment
 
