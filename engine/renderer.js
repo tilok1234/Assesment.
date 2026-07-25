@@ -2032,8 +2032,11 @@ function drawDrake(g, d, p, f, V, animId) {
   const strike = animId === 'attack' && (f === 1 || f === 2);
   const leg = p.leg;
   const flap = f % 2 === 0;
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // Keep a one-pixel strike followed by a visible recoil without pushing the
+  // front feet or side-view breath into the cell reserved for an outline.
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const c = V.c, br = V.br, eye = V.eye;
@@ -2052,7 +2055,12 @@ function drawDrake(g, d, p, f, V, animId) {
     S(16, 7 + u, eye);
     if (strike) {
       S(18, 9 + u, INK);
-      S(20, 8 + u, br[0]); R(21, 7 + u, 2, 1, br[0]); S(21, 9 + u, br[1]); S(22, 8 + u, br[1]); S(23, 6 + u, br[0]);
+      S(19, 8 + u, br[0]);
+      if (f === 1) {
+        R(20, 7 + u, 2, 1, br[0]); S(20, 8 + u, br[0]); S(20, 9 + u, br[1]); S(21, 8 + u, br[1]); S(21, 5 + u, br[0]);
+      } else {
+        S(20, 7 + u, br[0]); S(20, 8 + u, br[1]); S(20, 9 + u, br[1]); S(20, 5 + u, br[0]);
+      }
     }
   } else {
     if (flap) {
