@@ -2822,36 +2822,56 @@ function drawPuppet(g, d, p, f, V, animId) {
   ][f] : { bob: animId === 'idle' && f === 1 ? 1 : 0, left: 0, right: 0, arm: animId === 'idle' && f === 1 ? 1 : 0 };
   const strike = animId === 'attack' && (f === 1 || f === 2);
   const slash = strike ? (f === 1 ? -3 : 3) : gait.arm;
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // The alternating arm slash already supplies the attack motion. Keep a
+  // one-pixel whole-rig strike and centered recoil, then fold only the string
+  // lights or feet that would otherwise consume the outline margin.
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const strikeInset = strike && forwardLunge ? 1 : 0;
+  const stringDrop = (
+    (d === 'up' && animId === 'attack' && forwardLunge)
+    || (d === 'down' && animId === 'hurt' && p.lunge < 0)
+  ) ? 1 : 0;
+  const footLift = (
+    (d === 'down' && animId === 'attack' && forwardLunge)
+    || (d === 'up' && animId === 'hurt' && p.lunge < 0)
+  ) ? -1 : 0;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const wood = V.wood, cloth = V.cloth, joint = V.joint, glow = V.glow;
   const bob = gait.bob;
 
   if (d === 'right') {
-    S(10, 1 + bob, glow); S(11, 3 + bob, joint); S(13, 1 + bob, glow); S(14, 4 + bob, joint);
+    S(10, 1 + bob + stringDrop, glow); S(11, 3 + bob, joint);
+    S(13, 1 + bob + stringDrop, glow); S(14, 4 + bob, joint);
     R(12, 5 + bob, 7, 6, wood[0]); S(17, 7 + bob, glow); R(18, 8 + bob, 2, 2, wood[1]);
     R(8, 10 + bob, 8, 8 - bob, cloth); R(10, 11 + bob, 5, 6 - bob, wood[0]);
     S(10, 13 + bob, joint); S(14, 16, joint);
-    R(8 + gait.left, 17, 2, 3, wood[1]); S(8 + gait.left, 20, joint); R(7 + gait.left, 21, 3, 2, wood[0]);
-    R(13 + gait.right, 17, 2, 3, wood[1]); S(14 + gait.right, 20, joint); R(14 + gait.right, 21, 3, 2, wood[0]);
+    R(8 + gait.left, 17, 2, 3, wood[1]); S(8 + gait.left, 20, joint);
+    R(7 + gait.left, 21 + footLift, 3, 2, wood[0]);
+    R(13 + gait.right, 17, 2, 3, wood[1]); S(14 + gait.right, 20, joint);
+    R(14 + gait.right, 21 + footLift, 3, 2, wood[0]);
     R(6, 11 + bob - slash, 3, 2, wood[0]); S(5, 12 + bob - slash, joint); S(4, 13 + bob - slash, wood[1]);
     if (strike) {
-      R(15, 11 + bob + slash, 5, 2, wood[0]); S(20, 12 + bob + slash, joint); S(22, 12 + bob + slash, wood[1]);
+      R(15, 11 + bob + slash, 5, 2, wood[0]); S(20, 12 + bob + slash, joint);
+      S(22 - strikeInset, 12 + bob + slash, wood[1]);
       S(21, 10 + bob + slash, wood[1]); S(21, 14 + bob + slash, wood[1]);
     } else {
       R(15, 12 + bob + gait.arm, 4, 2, wood[0]); S(19, 13 + bob + gait.arm, joint); S(20, 14 + bob + gait.arm, wood[1]);
     }
   } else {
-    S(9, 1 + bob, glow); S(10, 4 + bob, joint); S(14, 1 + bob, glow); S(14, 4 + bob, joint);
+    S(9, 1 + bob + stringDrop, glow); S(10, 4 + bob, joint);
+    S(14, 1 + bob + stringDrop, glow); S(14, 4 + bob, joint);
     R(9, 5 + bob, 6, 6, wood[0]); R(10, 6 + bob, 4, 4, wood[1]);
     if (d === 'down') { S(10, 7 + bob, glow); S(13, 7 + bob, glow); S(11, 9 + bob, joint); }
     else { R(10, 6 + bob, 4, 2, cloth); S(9, 9 + bob, joint); S(14, 9 + bob, joint); }
     R(8, 10 + bob, 8, 8 - bob, cloth); R(10, 11 + bob, 4, 6 - bob, wood[0]);
     S(9, 13 + bob, joint); S(14, 15 + bob, joint);
-    R(8 + gait.left, 17, 2, 3, wood[1]); S(8 + gait.left, 20, joint); R(7 + gait.left, 21, 3, 2, wood[0]);
-    R(14 + gait.right, 17, 2, 3, wood[1]); S(15 + gait.right, 20, joint); R(14 + gait.right, 21, 3, 2, wood[0]);
+    R(8 + gait.left, 17, 2, 3, wood[1]); S(8 + gait.left, 20, joint);
+    R(7 + gait.left, 21 + footLift, 3, 2, wood[0]);
+    R(14 + gait.right, 17, 2, 3, wood[1]); S(15 + gait.right, 20, joint);
+    R(14 + gait.right, 21 + footLift, 3, 2, wood[0]);
     if (strike) {
       R(3, 11 + bob - slash, 5, 2, wood[0]); S(2, 12 + bob - slash, joint); S(1, 13 + bob - slash, wood[1]);
       R(16, 11 + bob + slash, 5, 2, wood[0]); S(21, 12 + bob + slash, joint); S(22, 13 + bob + slash, wood[1]);

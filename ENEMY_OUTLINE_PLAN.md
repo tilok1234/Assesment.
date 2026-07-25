@@ -5,7 +5,8 @@ Frog, Jellyfish, Mole, Scarecrow, and Drake frame-safety repairs visually
 approved; Centipede frame-safety repair visually approved; Carnivorous Plant
 frame-safety repair visually approved; Mantis frame-safety repair visually
 approved; Moth frame-safety repair visually approved; Octopus frame-safety
-repair visually approved.
+repair visually approved; Haunted Puppet frame-safety repair visually
+approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -18,6 +19,7 @@ Frame-safety group 6 visual approval: 2026-07-25
 Frame-safety group 7 visual approval: 2026-07-25
 Frame-safety group 8 visual approval: 2026-07-25
 Frame-safety group 9 visual approval: 2026-07-25
+Frame-safety group 10 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -344,6 +346,42 @@ Measured candidate result across all 192 Octopus frames:
 The exhaustive roster total falls from 339 to 311 edge-contact frames and from
 36 to 16 out-of-bounds frames. The only remaining out-of-bounds family is
 Haunted Puppet.
+
+## Frame-Safety Repair Group 10
+
+Approved after contact-sheet review of all four variants covering both side
+strike frames, mirrored strike, both downward strike frames, upward strike, and
+both hurt directions.
+
+Haunted Puppet's generic whole-rig translation discarded the side hand tip,
+pushed both wooden feet outside the first downward strike, and pulled both
+suspension lights above the first upward strike. The recoil and opposite hurt
+poses also consumed the top or bottom outline margin.
+
+The candidate repair:
+
+- uses a one-pixel strike followed by a centered recoil in every direction;
+- folds only the side strike hand tip inward;
+- lowers only the two suspension lights during the first upward strike and
+  downward hurt recoil;
+- lifts only the two wooden feet during the first downward strike and upward
+  hurt recoil;
+- preserves the alternating arm slash, complete walking gait, detached strings
+  and joints, and all four variant palettes;
+- reserves at least one transparent cell on every side in every frame;
+- keeps Haunted Puppet outline enablement as a separate approval gate.
+
+Measured candidate result across all 192 Haunted Puppet frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- zero enclosed openings before and after the repair;
+- all 40 previously discarded draw operations now resolve inside the frame;
+- minimum margins: top 1, right 1, bottom 1, left 1.
+
+The exhaustive roster total falls from 311 to 275 edge-contact frames and from
+16 to zero out-of-bounds frames. No enemy family now attempts to draw outside
+the 24x24 source cell.
 
 ## Treatment
 
