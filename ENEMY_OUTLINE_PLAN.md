@@ -14,7 +14,8 @@ Shroom outline expansion visually approved; shared enemy-staff frame-safety
 repair visually approved; Golem frame-safety repair visually approved; Treant
 frame-safety repair visually approved; Worm frame-safety repair visually
 approved; Beetle frame-safety and directional silhouette repair visually
-approved; Bandit and Kobold hybrid component-aware outlines visually approved.
+approved; Bandit, Kobold, and Skeleton hybrid component-aware outlines visually
+approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -42,6 +43,7 @@ Beetle down-view visual approval: 2026-07-25
 Frame-safety group 18 visual approval: 2026-07-25
 Hybrid outline group 1 visual approval: 2026-07-25
 Hybrid outline group 2 visual approval: 2026-07-25
+Hybrid outline group 3 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -769,6 +771,44 @@ Measured candidate result across the thirteen-family outline lane:
 - zero source-edge frames and zero out-of-bounds writes.
 
 This approved group remains limited to Kobold. Another humanoid family still
+requires its own frame-safety evidence, exhaustive regression pass, and live
+visual approval.
+
+## Hybrid Outline Rollout Group 3
+
+Approved after live comparison of None, Complete B, and Selective C across all
+five Skeleton variants, including the unequipped Grunt and Bone Lord's dense
+Axe/Round shield attack.
+
+Skeleton is the first component-aware enemy stress test with both deliberately
+open body construction and equipped shields. Its Grunt control has no
+equipment, while Knight, Mage, Archer, and Bone Lord cover Sword/Kite,
+Staff, Bow, and Axe/Round combinations. The previously approved shared staff
+repair already reserves the outline margin in Mage's raised up-facing strike.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for Skeleton without changing
+  another previously unsupported enemy;
+- preserves every unequipped Grunt bone/body source pixel and all authored
+  rib, skull, limb, and leg openings;
+- separates Knight and Bone Lord shields from the body using the existing
+  front/back ownership passes without consuming the colored shield face;
+- keeps Sword, Staff, Bow, and Axe cores intact at direct front contacts;
+- preserves rear equipment occlusion and the lighter Selective C treatment;
+- changes no Skeleton geometry, palette, animation, equipment placement,
+  catalog, saved state, or export schema.
+
+Measured candidate result across the fourteen-family outline lane:
+
+- 2,544 None-mode parity checks pass;
+- all 7,632 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 2,544 frames;
+- 1,724 validated Skeleton body-side equipment-contact separator pixels across
+  the two outlined modes;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This approved group remains limited to Skeleton. Another humanoid family still
 requires its own frame-safety evidence, exhaustive regression pass, and live
 visual approval.
 

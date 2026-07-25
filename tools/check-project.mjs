@@ -180,12 +180,12 @@ check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
-      'bandit', 'kobold', 'scorpion', 'elemental',
+      'bandit', 'kobold', 'skeleton', 'scorpion', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the thirteen approval-gated families',
+  'enemy outline support must stay limited to the fourteen approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -592,6 +592,12 @@ for (const [family, variant, separatorX, separatorY] of [
   ['kobold', 'skirmisher', 16, 13],
   ['kobold', 'trapper', 15, 13],
   ['kobold', 'sorcerer', 16, 13],
+  ['skeleton', 'knight', 16, 12],
+  ['skeleton', 'knight', 8, 12],
+  ['skeleton', 'mage', 16, 12],
+  ['skeleton', 'archer', 17, 12],
+  ['skeleton', 'lord', 17, 15],
+  ['skeleton', 'lord', 8, 12],
 ]) {
   const spec = { kind: 'enemy', family, variant };
   const source = renderPixels(spec, 'down', 'idle', 0);
@@ -621,6 +627,25 @@ for (const [family, variant, separatorX, separatorY] of [
       `${family} ${variant} ${outlineMode} must place a body-side held-weapon separator`,
     );
   }
+}
+
+const skeletonGruntSpec = { kind: 'enemy', family: 'skeleton', variant: 'grunt' };
+const skeletonGruntSource = renderPixels(skeletonGruntSpec, 'down', 'idle', 0);
+for (const outlineMode of [
+  engine.OUTLINE_MODE_COMPLETE_B,
+  engine.OUTLINE_MODE_SELECTIVE_C,
+]) {
+  const outlined = renderOutlinedPixels(
+    skeletonGruntSpec,
+    'down',
+    'idle',
+    0,
+    outlineMode,
+  );
+  check(
+    skeletonGruntSource.every((pixel, index) => !pixel || outlined[index] === pixel),
+    `skeleton grunt ${outlineMode} must preserve every unequipped bone/body source pixel`,
+  );
 }
 
 const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
