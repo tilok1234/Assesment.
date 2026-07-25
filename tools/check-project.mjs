@@ -592,6 +592,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'crocodile', 'turtle', 'griffin',
   'slime', 'shroom',
   'elf', 'skeleton', 'kobold', 'ratfolk',
+  'golem',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -647,6 +648,7 @@ for (const familyId of [
   'wolf', 'boar', 'bear', 'bigcat',
   'crocodile', 'turtle', 'griffin',
   'slime', 'shroom',
+  'golem',
 ]) {
   const family = engine.ENEMIES.find((entry) => entry.id === familyId);
   for (const variant of family.variants) {

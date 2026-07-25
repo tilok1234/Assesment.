@@ -11,7 +11,7 @@ quadruped outline expansion visually approved; Crocodile, Turtle, and Griffin
 frame-safety repair visually approved; armored beast outline expansion visually
 approved; Slime and Shroom frame-safety repair visually approved; Slime and
 Shroom outline expansion visually approved; shared enemy-staff frame-safety
-repair visually approved.
+repair visually approved; Golem frame-safety repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -32,6 +32,7 @@ Outline rollout group 2 visual approval: 2026-07-25
 Frame-safety group 13 visual approval: 2026-07-25
 Outline rollout group 3 visual approval: 2026-07-25
 Frame-safety group 14 visual approval: 2026-07-25
+Frame-safety group 15 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -588,7 +589,28 @@ Measured result:
 - exhaustive roster contacts fall from 197 frames / 704 pixels to
   177 frames / 660 pixels.
 
-This candidate does not enable outlines for these four families.
+This approved repair does not enable outlines for these four families.
+
+## Frame-Safety Repair Group 15
+
+Approved after live review of Golem's down-facing first attack strike and
+centered recoil across Stone, Lava, and Ice variants.
+
+Golem's heavy arm swing already carries the attack. Only the generic
+two-pixel whole-rig lunge placed its six foot pixels on the bottom source row.
+The candidate keeps a one-pixel first strike, centers the recoil, and changes
+no authored body, arm, crack, eye, idle, walk, or hurt geometry.
+
+Measured result across all 144 Golem frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- minimum margins: top 4, right 4, bottom 1, left 4;
+- distinct first-strike and recoil frames in every direction and variant;
+- exhaustive roster contacts fall from 177 frames / 660 pixels to
+  174 frames / 642 pixels.
+
+This candidate does not enable Golem outlines.
 
 ## Treatment
 

@@ -1596,8 +1596,11 @@ function drawGolem(g, d, p, f, V, animId) {
   const u = p.bob;
   const wind = animId === 'attack' && f === 0;
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // The heavy arm swing already carries the attack. Keep a one-pixel first
+  // strike and centered recoil so the feet retain room for an exterior outline.
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const c = V.c;
