@@ -14,7 +14,7 @@ Shroom outline expansion visually approved; shared enemy-staff frame-safety
 repair visually approved; Golem frame-safety repair visually approved; Treant
 frame-safety repair visually approved; Worm frame-safety repair visually
 approved; Beetle frame-safety and directional silhouette repair visually
-approved; Bandit hybrid component-aware outline visually approved.
+approved; Bandit and Kobold hybrid component-aware outlines visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -41,6 +41,7 @@ Frame-safety group 17 visual approval: 2026-07-25
 Beetle down-view visual approval: 2026-07-25
 Frame-safety group 18 visual approval: 2026-07-25
 Hybrid outline group 1 visual approval: 2026-07-25
+Hybrid outline group 2 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -732,6 +733,42 @@ Measured candidate result across the full twelve-family approved outline lane:
 - zero source-edge frames and zero out-of-bounds writes.
 
 This approved group remains limited to Bandit. Another humanoid family still
+requires its own frame-safety evidence, exhaustive regression pass, and live
+visual approval.
+
+## Hybrid Outline Rollout Group 2
+
+Approved after live comparison of None, Complete B, and Selective C across
+Kobold's Skirmisher, Trapper, and Sorcerer variants, including the raised
+up-facing staff and side-facing spear strike.
+
+Kobold is the next component-aware stress test because its compact shared
+humanoid rig combines a projecting snout with Spear, Dagger, and Staff
+equipment. Its previously approved frame-safety repair already reserves one
+transparent source cell on every side, including the Sorcerer's raised
+up-facing staff strikes.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for Kobold without changing another
+  previously unsupported enemy;
+- reuses the approved Bandit body/headgear/weapon ownership treatment;
+- keeps the Skirmisher's spear, Trapper's dagger, and Sorcerer's staff colored
+  cores intact at direct front contacts;
+- preserves authored rear-equipment occlusion in up and mirrored side views;
+- changes no Kobold geometry, snout, palette, animation, equipment placement,
+  catalog, saved state, or export schema.
+
+Measured candidate result across the thirteen-family outline lane:
+
+- 2,304 None-mode parity checks pass;
+- all 6,912 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 2,304 frames;
+- 1,558 validated Kobold body-side equipment-contact separator pixels across
+  the two outlined modes, in addition to Bandit's approved 962;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This approved group remains limited to Kobold. Another humanoid family still
 requires its own frame-safety evidence, exhaustive regression pass, and live
 visual approval.
 

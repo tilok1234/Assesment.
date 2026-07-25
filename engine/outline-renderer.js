@@ -14,6 +14,7 @@ export const OUTLINE_MODES = Object.freeze([
 
 export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'bandit',
+  'kobold',
   'scorpion',
   'elemental',
   'wolf',
@@ -29,10 +30,11 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
 // headgear, weapon, and shield passes. Keep this list approval-gated so solid
-// creatures retain the simpler exterior-only contour while one representative
-// humanoid proves the component-aware path.
+// creatures retain the simpler exterior-only contour while humanoid families
+// enter the component-aware path only after their own approval gate.
 const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
   'bandit',
+  'kobold',
 ]);
 
 export function enemySupportsOutline(spec) {

@@ -15,7 +15,7 @@ const MODES = [
   { id: engine.OUTLINE_MODE_COMPLETE_B, label: 'COMPLETE B' },
   { id: engine.OUTLINE_MODE_SELECTIVE_C, label: 'SELECTIVE C' },
 ];
-const COMPONENT_AWARE_FAMILIES = new Set(['bandit']);
+const COMPONENT_AWARE_FAMILIES = new Set(['bandit', 'kobold']);
 const COMPONENT_LAYER_ORDER = [
   'weapon-back',
   'shield-back',
@@ -296,6 +296,9 @@ const report = {
   selectiveCAddedPixels: 0,
   modeDistinctFrames: 0,
   componentContactSeparatorPixels: 0,
+  componentContactSeparatorPixelsByFamily: Object.fromEntries(
+    [...COMPONENT_AWARE_FAMILIES].map((familyId) => [familyId, 0]),
+  ),
   sourceEdgeFrames: 0,
   outOfBoundsWrites: 0,
   files: [],
@@ -375,6 +378,7 @@ for (const family of PILOTS) {
                   break;
                 }
                 report.componentContactSeparatorPixels++;
+                report.componentContactSeparatorPixelsByFamily[family.id]++;
               }
               if (!source && outlined[index] && outlined[index] !== engine.OUTLINE_COLOR) {
                 failures.push(
@@ -409,8 +413,12 @@ if (report.modeDistinctFrames !== report.frames) {
     `Complete B and Selective C differ in ${report.modeDistinctFrames}/${report.frames} frames`,
   );
 }
-if (!report.componentContactSeparatorPixels) {
-  failures.push('component-aware Bandit proof produced no body/equipment contact separators');
+for (const familyId of COMPONENT_AWARE_FAMILIES) {
+  if (!report.componentContactSeparatorPixelsByFamily[familyId]) {
+    failures.push(
+      `component-aware ${familyId} proof produced no body/equipment contact separators`,
+    );
+  }
 }
 
 report.files.push(await writeModeComparison());
@@ -436,6 +444,9 @@ console.log(`- Complete B added pixels: ${report.completeBAddedPixels}`);
 console.log(`- Selective C added pixels: ${report.selectiveCAddedPixels}`);
 console.log(`- Mode-distinct frames: ${report.modeDistinctFrames}`);
 console.log(`- Component contact separator pixels: ${report.componentContactSeparatorPixels}`);
+console.log(
+  `- Component separators by family: ${JSON.stringify(report.componentContactSeparatorPixelsByFamily)}`,
+);
 console.log(`- Source edge frames: ${report.sourceEdgeFrames}`);
 console.log(`- Out-of-bounds writes: ${report.outOfBoundsWrites}`);
 console.log(`- Review: ${path.join(output, report.files[0])}`);

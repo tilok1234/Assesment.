@@ -180,12 +180,12 @@ check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
-      'bandit', 'scorpion', 'elemental',
+      'bandit', 'kobold', 'scorpion', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the twelve approval-gated families',
+  'enemy outline support must stay limited to the thirteen approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -585,12 +585,15 @@ function renderOutlinedPixels(spec, dir, animId, frame, outlineMode, opts = {}) 
   return pixels;
 }
 
-for (const [variant, separatorX] of [
-  ['thug', 16],
-  ['brigand', 16],
-  ['sniper', 17],
+for (const [family, variant, separatorX, separatorY] of [
+  ['bandit', 'thug', 16, 12],
+  ['bandit', 'brigand', 16, 12],
+  ['bandit', 'sniper', 17, 12],
+  ['kobold', 'skirmisher', 16, 13],
+  ['kobold', 'trapper', 15, 13],
+  ['kobold', 'sorcerer', 16, 13],
 ]) {
-  const spec = { kind: 'enemy', family: 'bandit', variant };
+  const spec = { kind: 'enemy', family, variant };
   const source = renderPixels(spec, 'down', 'idle', 0);
   const none = renderOutlinedPixels(
     spec,
@@ -601,12 +604,12 @@ for (const [variant, separatorX] of [
   );
   check(
     JSON.stringify(none) === JSON.stringify(source),
-    `bandit ${variant} None mode must remain pixel-identical`,
+    `${family} ${variant} None mode must remain pixel-identical`,
   );
-  const separatorIndex = (12 * engine.SIZE) + separatorX;
+  const separatorIndex = (separatorY * engine.SIZE) + separatorX;
   check(
     source[separatorIndex] && source[separatorIndex] !== engine.OUTLINE_COLOR,
-    `bandit ${variant} component-aware proof must start from a colored body contact pixel`,
+    `${family} ${variant} component-aware proof must start from a colored body contact pixel`,
   );
   for (const outlineMode of [
     engine.OUTLINE_MODE_COMPLETE_B,
@@ -615,7 +618,7 @@ for (const [variant, separatorX] of [
     const outlined = renderOutlinedPixels(spec, 'down', 'idle', 0, outlineMode);
     check(
       outlined[separatorIndex] === engine.OUTLINE_COLOR,
-      `bandit ${variant} ${outlineMode} must place a body-side held-weapon separator`,
+      `${family} ${variant} ${outlineMode} must place a body-side held-weapon separator`,
     );
   }
 }
