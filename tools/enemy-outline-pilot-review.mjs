@@ -21,6 +21,7 @@ const COMPONENT_AWARE_FAMILIES = new Set([
   'skeleton',
   'ratfolk',
   'elf',
+  'gnoll',
 ]);
 const COMPONENT_LAYER_ORDER = [
   'weapon-back',

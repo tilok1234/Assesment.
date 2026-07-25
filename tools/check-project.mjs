@@ -180,12 +180,12 @@ check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
-      'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'scorpion', 'elemental',
+      'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'gnoll', 'scorpion', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the sixteen approval-gated families',
+  'enemy outline support must stay limited to the seventeen approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -605,6 +605,9 @@ for (const [family, variant, separatorX, separatorY] of [
   ['elf', 'mage', 16, 12],
   ['elf', 'duelist', 16, 12],
   ['elf', 'dark', 16, 12],
+  ['gnoll', 'raider', 16, 12],
+  ['gnoll', 'hunter', 17, 12],
+  ['gnoll', 'alpha', 16, 12],
 ]) {
   const spec = { kind: 'enemy', family, variant };
   const source = renderPixels(spec, 'down', 'idle', 0);
@@ -634,6 +637,39 @@ for (const [family, variant, separatorX, separatorY] of [
       `${family} ${variant} ${outlineMode} must place a body-side held-weapon separator`,
     );
   }
+}
+
+const gnollAlphaSpec = { kind: 'enemy', family: 'gnoll', variant: 'alpha' };
+const gnollAlphaSource = renderPixels(gnollAlphaSpec, 'down', 'idle', 0);
+const gnollFaceIndices = [
+  (4 * engine.SIZE) + 7,
+  (5 * engine.SIZE) + 7,
+  (4 * engine.SIZE) + 16,
+  (5 * engine.SIZE) + 16,
+  (8 * engine.SIZE) + 11,
+  (8 * engine.SIZE) + 12,
+  (9 * engine.SIZE) + 11,
+  (9 * engine.SIZE) + 12,
+];
+check(
+  gnollFaceIndices.every((index) => gnollAlphaSource[index]),
+  'gnoll alpha down idle must retain both beast ears and the two-pixel muzzle',
+);
+for (const outlineMode of [
+  engine.OUTLINE_MODE_COMPLETE_B,
+  engine.OUTLINE_MODE_SELECTIVE_C,
+]) {
+  const outlined = renderOutlinedPixels(
+    gnollAlphaSpec,
+    'down',
+    'idle',
+    0,
+    outlineMode,
+  );
+  check(
+    gnollFaceIndices.every((index) => outlined[index] === gnollAlphaSource[index]),
+    `gnoll alpha ${outlineMode} must preserve both beast ears and the muzzle`,
+  );
 }
 
 const elfDuelistSpec = { kind: 'enemy', family: 'elf', variant: 'duelist' };

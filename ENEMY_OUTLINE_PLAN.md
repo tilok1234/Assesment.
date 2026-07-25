@@ -14,8 +14,8 @@ Shroom outline expansion visually approved; shared enemy-staff frame-safety
 repair visually approved; Golem frame-safety repair visually approved; Treant
 frame-safety repair visually approved; Worm frame-safety repair visually
 approved; Beetle frame-safety and directional silhouette repair visually
-approved; Bandit, Kobold, Skeleton, Ratfolk, and Elf hybrid component-aware
-outlines visually approved.
+approved; Bandit, Kobold, Skeleton, Ratfolk, Elf, and Gnoll hybrid
+component-aware outlines visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -46,6 +46,7 @@ Hybrid outline group 2 visual approval: 2026-07-25
 Hybrid outline group 3 visual approval: 2026-07-25
 Hybrid outline group 4 visual approval: 2026-07-25
 Hybrid outline group 5 visual approval: 2026-07-25
+Hybrid outline group 6 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -886,6 +887,40 @@ Measured candidate result across the sixteen-family outline lane:
 
 This approved group remains limited to Elf. Another family still requires its
 own frame-safety evidence, exhaustive regression pass, and live visual
+approval.
+
+## Hybrid Outline Rollout Approved Group 6
+
+Live visual approval received for Gnoll.
+
+Gnoll is the next frame-safe unsupported humanoid family in the current
+assessment. Raider, Hunter, and Alpha cover Axe, Bow, and Sword contacts while
+the shared spiky hair, paired beast ears, projecting muzzle, and bright Alpha
+eyes make facial-detail preservation directly reviewable.
+
+The approved rollout:
+
+- enables None, Complete B, and Selective C for Gnoll without changing another
+  previously unsupported enemy;
+- preserves both paired beast ears and the two-pixel muzzle core in both
+  outlined modes;
+- keeps Axe, Bow, and Sword colored cores intact at direct body contacts;
+- preserves spiky-hair silhouettes, rear weapon occlusion, and Selective C
+  breathing room;
+- changes no Gnoll geometry, palette, animation, equipment placement, catalog,
+  saved state, or export schema.
+
+Measured candidate result across the seventeen-family outline lane:
+
+- 3,024 None-mode parity checks pass;
+- all 9,072 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 3,024 frames;
+- 1,208 validated Gnoll body-side equipment-contact separator pixels across the
+  two outlined modes;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This approved group remains limited to Gnoll. Another family still requires
+its own frame-safety evidence, exhaustive regression pass, and live visual
 approval.
 
 ## Treatment
