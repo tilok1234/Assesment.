@@ -6,7 +6,7 @@ Repository: `tilok1234/8-bit-sprite-assembler`
 
 ## 2026-07-25 Current Continuation
 
-The current priority is the newly confirmed systemic transparent-tile problem inside assembled player sprites. The user reported repeated checkerboard strips at the belt/waist in up views and larger vertical gaps in side views, including equipped attack poses.
+The current priority is the systemic transparent-tile problem inside assembled player sprites. The user reported repeated checkerboard strips at the belt/waist in up views and larger vertical gaps in side views, including equipped attack poses.
 
 A read-only reassessment covered 90,336 broad rendered checks and a stricter 62,256-frame persistent-tunnel pass across all directions, animations, frames, body builds, outline modes, weapon tiers, shield tiers, and representative combined equipment. It identified:
 
@@ -16,9 +16,30 @@ A read-only reassessment covered 90,336 broad rendered checks and a stricter 62,
 
 The canonical implementation sequence, acceptance metrics, protected behavior, and visual gates are in `TRANSPARENT_TILE_REPAIR_PLAN.md`.
 
-The reassessment itself did not modify repository source, accept a baseline, commit, or push. Existing uncommitted renderer, animation, effect-direction, and effect-compositor changes predate the audit and remain unapproved as a combined checkpoint. In particular, the current shoulder connector and loose regression do not eliminate or reliably detect every reported waist tunnel.
+The first implementation slice was visually approved on 2026-07-25:
 
-Immediate next action after approval: implement the strict repository regression in Phase 0, then produce only the lean up/down torso-attachment candidate from Phase 1A for full None/Complete B/Selective C review.
+- lean and heroic up/down arm-to-torso tunnels are closed without moving the equipment sockets;
+- the side cape retains sway while keeping a stable torso attachment;
+- every Bone-shield tier has a recessed backing behind its ribs, removing the checkerboard pockets the user rejected without removing the rib-cage silhouette;
+- the dedicated repository regression covers 8,640 body frames and 960 Bone-shield frames;
+- deliberate leg separation remains present as an explicit control.
+
+The exact approved browser state was Goblin / Heroic / Deep / Spiky Black / Happy / Scar / Skull mask / Cleric T3 Teal, weapon None, Bone shield T2, Walk, Right, frame 1, Complete B, Effects Off, 20x. The user reviewed the candidate and replied `approved`.
+
+Validation for the approved slice:
+
+- the exact staged snapshot's `npm.cmd run review:transparency` passed with 0 persistent three-mode mid-body tunnels, 2,890 intentional leg-separation controls preserved, and 0 enclosed Bone-shield pockets;
+- `npm.cmd run check` passed;
+- `npm.cmd run build` passed;
+- `npm.cmd run review:weapons -- --all-frames --tier-sheets` passed with 57 sheets and 3,600 frame rows;
+- JavaScript syntax checks and `git diff --check` passed;
+- the exact Bone T2 browser roll passed all 144 animation/direction/frame/outline-mode states.
+
+`npm.cmd run review:outlines` still reports the pre-existing unreconciled corpus of 428 edge-touching equipment cases / 760 edge pixels, and eight representative hashes changed with the renderer repairs. No outline golden or baseline was accepted. Treat that as a separate approval gate, not as a reason to fold unrelated baseline updates into this checkpoint.
+
+The accepted slice is checkpointed by the local commit containing this handoff update and is not pushed. Existing uncommitted attack-animation, effect-direction, and effect-compositor changes remain separately reviewable.
+
+Immediate next action: reassess the 1,660 single-mode or outline-resolved advisory notches in the clean checkpoint as Phase 1C. Classify shared outfit signatures before changing them, preserve intentional leg/neck/equipment space, and then proceed to mixed-owner contacts only after the body-only lane is clean.
 
 The older effect/shield investigation below remains relevant history and its dirty files must be preserved, but it is no longer the only active continuation lane.
 
@@ -41,26 +62,28 @@ Do not change already approved shield artwork merely to compensate for a preview
 - Branch: `codex/optional-sprite-outlines`
 - Last pushed checkpoint: `f21cbe3` (`Fix shield hand attachment and facing`).
 - Upstream: `origin/codex/optional-sprite-outlines` at `f21cbe3`.
-- The branch has two later local-only checkpoints and is currently two commits ahead of upstream:
+- The branch has later local-only checkpoints:
   - `bc912e4` (`Reconcile docs and preserve review tooling`)
   - `a6b0db1` (`Checkpoint approved weapon and outline pass`)
-- Neither local checkpoint is pushed.
+  - `42bd39e` (`Document transparent tile repair plan`)
+  - the accepted transparent-tile repair checkpoint containing this update
+- None of these local checkpoints is pushed.
 - `f21cbe3` remains the safe pushed checkpoint containing the user-approved shield hand attachment/facing work.
 - Earlier relevant commits:
   - `f27c63f` (`Improve Crossbow T5 silhouette`)
   - `220c92a` (`Fix equipment animation frame safety`)
 
-Do not reset, restore, stash, commit, push, merge, or accept visual baselines without first showing the exact scope and obtaining approval.
+Do not reset, restore, stash, push, merge, or accept visual baselines without first showing the exact scope and obtaining approval. The user's 2026-07-25 `approved` response authorized only the local transparent-tile checkpoint described above.
 
 ## Current Working Tree
 
-Tracked modifications after `a6b0db1`:
+Tracked modifications remaining after the accepted transparent-tile checkpoint:
 
 - `app.js` - routes combined effect previews through the uncommitted occlusion compositor.
 - `engine/effect-renderer.js` - the unapproved left-facing direction correction described below.
-- `engine/renderer.js` - in-progress attack body/foot motion and shoulder-connector work; the transparent-tile audit proves the connector is incomplete.
+- `engine/renderer.js` - in-progress attack body/foot motion that is intentionally excluded from the transparent-tile checkpoint.
 - `sprite-engine.js` - exports the uncommitted effect compositor.
-- `tools/check-project.mjs` - effect, animation, shield, and loose shoulder-gap regressions associated with the dirty experiments.
+- `tools/check-project.mjs` - effect, animation, shield, and additional regression work associated with the dirty experiments.
 
 Untracked source and generated artifacts:
 
@@ -68,7 +91,7 @@ Untracked source and generated artifacts:
 - `shield-review/`
 - `weapon-review-tier1-focus/`
 
-The new transparency plan and this handoff update are documentation-only additions. Preserve all pre-existing dirty files and generated review artifacts. Do not reset, restore, stash, commit, or push them as part of the plan-writing task.
+Preserve all remaining dirty files and generated review artifacts. Do not reset, restore, stash, commit, or push them as part of later transparency slices.
 
 ## Unapproved Effect-Direction Experiment
 

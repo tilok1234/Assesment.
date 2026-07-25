@@ -128,6 +128,12 @@ function drawOutfitIdentity(S, R, d, u, BT, outfit, oc, build) {
     }
     R(tx, 17, tw, 1, WOOD[1]);
     S(mid, 17, GOLD[1]);
+    if (build.heroic) {
+      // Keep the heroic fur mantle visibly broader than the lean build after
+      // the arm connector closes its moving shoulder notch.
+      S(tx - 1, top + 2, CREAM[1]);
+      if (!side) S(tx + tw, top + 2, CREAM[1]);
+    }
     return;
   }
 
@@ -546,9 +552,16 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
   if (includeOutfitBack && outfit === 'cape' && d === 'right') {
     const sway = p.leg !== 0 ? 1 : 0;
     const capeX = build.capeSideX - sway;
-    R(capeX, 12 + u, build.capeSideW, 6, oc[0]);
-    R(capeX, 17 + u, build.capeSideW, 1, oc[1]);
-    if (build.heroic) { S(capeX - 1, 12 + u, oc[0]); S(capeX + build.capeSideW, 13 + u, oc[1]); }
+    // Keep the inner edge attached to the torso while the outer edge sways.
+    // The lower rows taper by one cell so the cape flexes instead of becoming
+    // a rigid rectangle, but no checkerboard channel can split it from the body.
+    for (let row = 0; row < 6; row++) {
+      const taper = row >= 4 ? 1 : 0;
+      const rowX = Math.min(build.sideX - 1, capeX + taper);
+      const rowWidth = build.sideX - rowX;
+      R(rowX, 12 + u + row, rowWidth, 1, row === 5 ? oc[1] : oc[0]);
+    }
+    if (build.heroic) { S(capeX - 1, 12 + u, oc[0]); S(build.sideX - 1, 13 + u, oc[1]); }
     if (armorRank >= 2) S(capeX, 13 + u, METAL[2]);
     if (armorRank >= 3) S(capeX - 1, 15 + u, GOLD[0]);
     if (armorRank >= 4) { S(capeX - 1, 12 + u, INK); S(capeX - 1, 17 + u, GOLD[0]); }
@@ -687,8 +700,33 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
     let armOffL = -p.arm, armOffR = p.arm;
     if (p.wep === 'wind') armOffR = -1;
     if (p.wep === 'strike') armOffR = 0;
-    armDU(6, d === 'down' ? armOffL : armOffR);
-    armDU(16, d === 'down' ? armOffR : armOffL);
+    const leftScreenOff = d === 'down' ? armOffL : armOffR;
+    const rightScreenOff = d === 'down' ? armOffR : armOffL;
+    armDU(6, leftScreenOff);
+    armDU(16, rightScreenOff);
+    // Lean and heroic torsos are one cell narrower on each side than the fixed
+    // equipment sockets. Connect the complete visible arm span, not just the
+    // shoulder rows, or the lower sleeve/hand leaves a checkerboard tunnel at
+    // the waist. The recessed shade keeps the arm readable without moving the
+    // hand socket or widening the central torso.
+    const connectArmToTorso = (startX, endX, off) => {
+      const width = endX - startX;
+      if (width <= 0 || !includeOutfit) return;
+      const armTop = BT + u + off;
+      const top = Math.min(BT + u, armTop);
+      const bottom = Math.min(17, armTop + 4);
+      for (let y = top; y <= bottom; y++) {
+        const armRow = y - armTop;
+        const color = C.bone && armRow === 2
+          ? INK
+          : outfit === 'plate' && armRow === 0
+            ? METAL[2]
+            : sleeveC[1];
+        R(startX, y, width, 1, color);
+      }
+    };
+    connectArmToTorso(8, build.frontX, leftScreenOff);
+    connectArmToTorso(build.frontX + build.frontW, 16, rightScreenOff);
   } else {
     let off = p.arm;
     if (C.weaponFollowRig && p.wep === 'wind') off = -1;

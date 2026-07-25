@@ -1,12 +1,36 @@
 # Transparent Tile Repair Plan
 
-Status: audit complete; implementation and visual acceptance pending.
+Status: first implementation slice visually accepted and checkpointed locally; remaining classification and repair pending.
 
 Date: 2026-07-25
 
 This is the canonical plan for repairing unintended transparent checkerboard cells inside assembled player sprites. It covers body construction, equipment-to-body contact, and the interaction with the three supported outline modes: None, Complete B, and Selective C.
 
-The audit that produced this plan was read-only. It did not accept a baseline, change source geometry, commit, or push. The existing dirty renderer, animation, and effect-compositor work predates the audit and must remain separately reviewable.
+The audit that produced this plan was read-only. The first repair slice was subsequently implemented and explicitly approved on 2026-07-25. The existing dirty attack-animation, effect-direction, and effect-compositor work predates that slice and remains separately reviewable.
+
+## Accepted First Slice - 2026-07-25
+
+The user explicitly approved the browser candidate containing:
+
+- lean and heroic up/down arm-to-torso connections that follow the arm pose without moving weapon or shield sockets;
+- stable left/right side-cape attachment with the outer edge still swaying and tapering;
+- a recessed backing behind every Bone-shield tier, preserving the rib-cage silhouette while removing visible checkerboard pockets;
+- a repository-owned `review:transparency` command.
+
+The dedicated audit passed:
+
+- 8,640 body frames;
+- 2,890 intentional leg-separation controls preserved in the exact clean checkpoint;
+- 960 Bone-shield direction/animation/frame checks;
+- 0 persistent mid-body tunnels that remain transparent in None, Complete B, and Selective C;
+- 0 enclosed Bone-shield checkerboard components;
+- 1,660 single-mode or outline-resolved notches retained as advisory candidates for classification.
+
+The exact approved browser state was Goblin / Heroic / Deep / Spiky Black / Happy / Scar / Skull mask / Cleric T3 Teal, weapon None, Bone shield T2, Walk, Right, frame 1, Complete B, Effects Off, 20x. The same roll was exercised through all 144 outline-mode, animation, direction, and frame states before approval.
+
+Project check, build, the 3,600-frame weapon review, syntax checks, and `git diff --check` passed. The outline review remains intentionally unaccepted: it reports 428 existing edge-touch cases / 760 pixels and eight renderer-dependent hash changes. No golden files were rewritten.
+
+This is an accepted local checkpoint, not completion of the whole plan. Effects-On integration remains blocked by the independently unapproved effect compositor, and the remaining advisory/body, mixed-owner, and optional openwork lanes still require classification and review.
 
 ## Goal
 
@@ -114,7 +138,7 @@ The repair must not:
 
 ## Phase 0 - Preserve And Prove The Baseline
 
-Status: audit complete; repository regression pending.
+Status: strict body-tunnel and Bone-shield regressions implemented; broader mixed-owner and equipment-openwork controls remain pending.
 
 1. Preserve the current branch and dirty files exactly.
 2. Promote the minimum strict detector needed for regression into a repository-owned tool or test.
@@ -141,6 +165,8 @@ Work in small independently reviewable slices.
 
 ### Phase 1A - Up/down torso attachment
 
+Status: accepted on 2026-07-25.
+
 1. Repair lean up/down joins.
 2. Verify all outfits, animations, and frames.
 3. Repair heroic up/down joins.
@@ -151,12 +177,16 @@ The connector must follow the arm pose and outfit owner. It must not move the ha
 
 ### Phase 1B - Side cape attachment
 
+Status: accepted on 2026-07-25.
+
 1. Give the cape a stable body-side attachment while retaining sway.
 2. Check left and right views separately; mirroring assumptions are not sufficient.
 3. Check idle, walk, attack, and hurt at every frame.
 4. Confirm the cape does not become a rigid rectangle or fuse to the legs.
 
 ### Phase 1C - Remaining outfit-specific gaps
+
+Status: pending. The clean checkpoint audit reports 1,660 single-mode or outline-resolved advisory notches; these are not automatic defects.
 
 1. Rerun the strict owner audit after 1A and 1B.
 2. Group remaining body holes by shared source signature.
@@ -204,6 +234,8 @@ Phase 2 exit gate:
 ## Phase 3 - Equipment Openwork Review
 
 This phase is a visual style decision, not part of the mandatory structural repair.
+
+The user specifically rejected the visible checkerboard inside the Bone-shield ribs. A recessed backing for all Bone tiers was accepted in the first slice. Other weapon and shield openings remain preserved by default.
 
 1. Preserve the known 134 weapon and 2,264 shield openwork groups by default.
 2. Present a focused native/enlarged sheet for any item that still looks accidentally transparent.
@@ -283,4 +315,4 @@ Stop and return to diagnosis if a proposed repair:
 
 ## Immediate Next Action
 
-Implement Phase 0's strict repository regression first. Then repair Phase 1A's lean up/down torso attachment as the first visual candidate. Do not begin cape, mixed-owner, or equipment-openwork work until that candidate passes the complete automated matrix and receives browser approval.
+Continue Phase 1C by grouping the 1,660 advisory notches by shared outfit/build signature and reviewing one deterministic slice at a time. Preserve leg separation, collar/neck breathing space, and equipment openings unless a specific visual candidate is rejected. Do not begin the broad mixed-owner pass or accept outline goldens until the body-only classifications are complete and reviewed.

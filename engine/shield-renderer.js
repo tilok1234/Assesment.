@@ -161,8 +161,9 @@ function drawBone(S, R, x, y) {
   S(x + 2, y + 1, INK); S(x + 2, y + 3, METAL[1]); S(x + 2, y + 5, INK);
 }
 
-function drawBoneTier3Foundation(S, R, x, y) {
-  // Give the open rib cage one readable shield mass without losing its gaps.
+function drawBoneFoundation(S, R, x, y) {
+  // A recessed backing preserves the rib-cage identity without exposing the
+  // checkerboard through the face in any outline mode.
   R(x + 1, y + 1, 3, 5, LEGEND[0]);
 }
 
@@ -471,7 +472,7 @@ function drawTier5Full(S, R, x, y, shield) {
 
 function drawFullShield(S, R, x, y, shield, oc, tier) {
   const reinforcedBoneFrame = shield === 'bone' && (tier === 'tier3' || tier === 'tier4');
-  if (reinforcedBoneFrame) drawBoneTier3Foundation(S, R, x, y);
+  if (shield === 'bone') drawBoneFoundation(S, R, x, y);
   if (shield === 'round') drawRound(S, R, x, y);
   if (shield === 'kite') drawKite(S, R, x, y, oc);
   if (shield === 'buckler') drawBuckler(S, R, x, y);
