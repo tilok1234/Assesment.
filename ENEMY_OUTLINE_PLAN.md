@@ -8,7 +8,8 @@ approved; Moth frame-safety repair visually approved; Octopus frame-safety
 repair visually approved; Haunted Puppet frame-safety repair visually
 approved; shared quadruped frame-safety repair visually approved; shared
 quadruped outline expansion visually approved; Crocodile, Turtle, and Griffin
-frame-safety repair visually approved.
+frame-safety repair visually approved; armored beast outline expansion visually
+approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -25,6 +26,7 @@ Frame-safety group 10 visual approval: 2026-07-25
 Frame-safety group 11 visual approval: 2026-07-25
 Outline rollout group 1 visual approval: 2026-07-25
 Frame-safety group 12 visual approval: 2026-07-25
+Outline rollout group 2 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -475,6 +477,32 @@ Measured result across all 576 Crocodile, Turtle, and Griffin frames:
 - distinct first-strike and recoil frames in every variant and direction;
 - exhaustive roster contacts fall from 244 frames / 920 pixels to
   208 frames / 776 pixels.
+
+## Outline Rollout Group 2
+
+Approved after live comparison of None, Complete B, and Selective C for
+Crocodile, Turtle, and Griffin.
+
+Following approval of their frame-safety repair, these three dedicated families
+are the second expansion beyond the original outline pilot. Across all 576
+frames, the candidate must:
+
+- keep None pixel-identical to the direct renderer;
+- preserve every colored source pixel in Complete B and Selective C;
+- add only `#1a1c2c` contour pixels;
+- keep enclosed transparency transparent;
+- leave no source or contour pixel outside the 24x24 frame;
+- keep Complete B and Selective C visibly distinct.
+
+Measured candidate result:
+
+- 576 None-mode parity checks pass;
+- all 1,728 None/B/C mode cases preserve their source pixels;
+- Complete B and Selective C differ in all 576 frames;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This candidate does not enable outlines for any of the remaining 47 enemy
+families.
 
 ## Treatment
 

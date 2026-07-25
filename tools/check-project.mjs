@@ -179,8 +179,12 @@ check(runtimeSources['engine/sheets.js'].includes('drawOutlinedSprite'), 'assemb
 check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must expose the optional sprite outline selector');
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
-    === JSON.stringify(['bandit', 'scorpion', 'elemental', 'wolf', 'boar', 'bear', 'bigcat']),
-  'enemy outline support must stay limited to the seven approval-gated families',
+    === JSON.stringify([
+      'bandit', 'scorpion', 'elemental',
+      'wolf', 'boar', 'bear', 'bigcat',
+      'crocodile', 'turtle', 'griffin',
+    ]),
+  'enemy outline support must stay limited to the ten approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(

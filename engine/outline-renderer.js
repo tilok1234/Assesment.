@@ -20,6 +20,9 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'boar',
   'bear',
   'bigcat',
+  'crocodile',
+  'turtle',
+  'griffin',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 
