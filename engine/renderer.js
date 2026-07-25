@@ -2502,8 +2502,14 @@ function drawMoth(g, d, p, f, V, animId) {
   const spread = walking ? [0, 1, 2, 1][f] : (animId === 'idle' && f === 1 ? 1 : 0);
   const sweep = walking ? [0, 1, 0, -1][f] : 0;
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = (d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0) - 1;
+  // Keep the authored full wing spread, but reserve the outermost cell for its
+  // future contour and stop attack dust from being discarded by the generic
+  // two-pixel lunge.
+  const wingTipSpread = Math.min(spread, 1);
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const dustInset = strike && forwardLunge ? 1 : 0;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = (d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0) - 1;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const body = V.body, wing = V.wing, dust = V.dust, eye = V.eye;
@@ -2518,8 +2524,9 @@ function drawMoth(g, d, p, f, V, animId) {
     S(5 - spread, 8 + bob + sweep, wing[1]); S(6 - spread, 15 + bob, wing[0]);
     R(10, 18 + bob, 2, 2, body[1]); R(13, 18 + bob, 2, 2, body[1]);
     if (strike) {
-      S(20, 10 + bob, dust); S(22, 9 + bob, dust); S(21, 12 + bob, dust);
-      S(23, 14 + bob, dust); S(19, 15 + bob, dust);
+      S(20, 10 + bob, dust); S(22 - dustInset, 9 + bob, dust);
+      S(21, 12 + bob, dust); S(22 - dustInset, 14 + bob, dust);
+      S(19, 15 + bob, dust);
     }
   } else {
     R(10, 8 + bob, 4, 10, body[0]); R(10, 15 + bob, 4, 4, body[1]);
@@ -2532,7 +2539,8 @@ function drawMoth(g, d, p, f, V, animId) {
     R(4 - spread, 13 + bob, 6 + spread, 4, wing[1]);
     R(14, 8 + bob - sweep, 7 + spread, 5, wing[0]);
     R(14, 13 + bob, 6 + spread, 4, wing[1]);
-    S(2 - spread, 10 + bob + sweep, wing[1]); S(21 + spread, 10 + bob - sweep, wing[1]);
+    S(2 - wingTipSpread, 10 + bob + sweep, wing[1]);
+    S(21 + wingTipSpread, 10 + bob - sweep, wing[1]);
     R(9, 18 + bob, 2, 2, body[1]); R(13, 18 + bob, 2, 2, body[1]);
     if (strike) {
       const dy = d === 'down' ? 1 : -1;

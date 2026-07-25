@@ -4,7 +4,7 @@ Status: exhaustive assessment complete; three-family pilot visually approved;
 Frog, Jellyfish, Mole, Scarecrow, and Drake frame-safety repairs visually
 approved; Centipede frame-safety repair visually approved; Carnivorous Plant
 frame-safety repair visually approved; Mantis frame-safety repair visually
-approved.
+approved; Moth frame-safety repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -15,6 +15,7 @@ Frame-safety group 4 visual approval: 2026-07-25
 Frame-safety group 5 visual approval: 2026-07-25
 Frame-safety group 6 visual approval: 2026-07-25
 Frame-safety group 7 visual approval: 2026-07-25
+Frame-safety group 8 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -272,6 +273,40 @@ Measured candidate result across all 192 Mantis frames:
 The exhaustive roster total falls from 391 to 371 edge-contact frames and from
 68 to 52 out-of-bounds frames. The remaining failures belong to Moth, Octopus,
 and Haunted Puppet.
+
+## Frame-Safety Repair Group 8
+
+Approved after contact-sheet review of all four variants covering both side
+strike frames, mirrored dust, downward and upward attacks, both widest vertical
+walking poses, and the hurt flash.
+
+Moth's generic two-pixel strike discarded detached side-view dust, put its
+upward antennae on the top row, and pushed one downward dust mote onto the
+bottom row. Its widest vertical walking pose also placed the two detached wing
+tips on the left and right edges even though the wing bodies remained safe.
+
+The candidate repair:
+
+- uses a one-pixel strike followed by a centered recoil in every direction;
+- folds only the side-attack dust positions inward while preserving five
+  visibly detached motes;
+- preserves the complete four-frame wing spread and moves only the two
+  detached peak-spread tips inward;
+- restores all previously discarded dust pixels without creating cavities;
+- reserves at least one transparent cell on every side in every frame;
+- keeps Moth outline enablement as a separate approval gate.
+
+Measured candidate result across all 192 Moth frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- zero enclosed openings before and after the repair;
+- all 24 previously discarded detached dust pixels are now visible;
+- minimum margins: top 1, right 1, bottom 1, left 1.
+
+The exhaustive roster total falls from 371 to 339 edge-contact frames and from
+52 to 36 out-of-bounds frames. The remaining failures belong to Octopus and
+Haunted Puppet.
 
 ## Treatment
 
