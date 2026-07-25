@@ -9,7 +9,7 @@ repair visually approved; Haunted Puppet frame-safety repair visually
 approved; shared quadruped frame-safety repair visually approved; shared
 quadruped outline expansion visually approved; Crocodile, Turtle, and Griffin
 frame-safety repair visually approved; armored beast outline expansion visually
-approved.
+approved; Slime and Shroom frame-safety repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -27,6 +27,7 @@ Frame-safety group 11 visual approval: 2026-07-25
 Outline rollout group 1 visual approval: 2026-07-25
 Frame-safety group 12 visual approval: 2026-07-25
 Outline rollout group 2 visual approval: 2026-07-25
+Frame-safety group 13 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -503,6 +504,33 @@ Measured candidate result:
 
 This candidate does not enable outlines for any of the remaining 47 enemy
 families.
+
+## Frame-Safety Repair Group 13
+
+Approved after live review of Slime and Shroom down-facing attack motion.
+
+These two grounded families have the smallest remaining vertical contact
+signature. Only their first down-facing attack strike touches the bottom edge:
+7 Slime frames / 56 pixels and 4 Shroom frames / 16 pixels.
+
+The candidate repair:
+
+- retains a one-pixel downward first strike followed by a centered recoil;
+- changes no side or up attack translation;
+- preserves Slime deformation and Shroom gait, cap, face, and spore geometry;
+- changes no idle, walk, or hurt frame;
+- reserves at least one transparent cell on every side in both families;
+- leaves their outline enablement for a separate approval gate.
+
+Measured result across all 528 Slime and Shroom frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- minimum margins: Slime top 9, right 5, bottom 1, left 5;
+- minimum margins: Shroom top 2, right 5, bottom 1, left 5;
+- distinct first-strike and recoil frames in every variant and direction;
+- exhaustive roster contacts fall from 208 frames / 776 pixels to
+  197 frames / 704 pixels.
 
 ## Treatment
 

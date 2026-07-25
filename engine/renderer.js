@@ -1300,7 +1300,8 @@ function drawSlime(g, d, p, f, V, animId) {
   if (animId === 'hurt' && f === 0) { dh = 2; dw = 2; }
 
   const ox = d === 'right' ? p.lunge : 0;
-  const oy = (d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0) - lift;
+  const downLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const oy = (d === 'down' ? downLunge : d === 'up' ? -p.lunge : 0) - lift;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const top = 12 + dh, L = 8 - dw, Rr = 15 + dw;
 
@@ -1447,7 +1448,8 @@ function drawShroom(g, d, p, f, V, animId) {
   const u = walking ? gait.bob : ((animId === 'idle' && f === 1) ? 1 : 0);
   const bx = gait.x;
   const ox = (d === 'right' ? p.lunge : 0);
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const downLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const oy = d === 'down' ? downLunge : d === 'up' ? -p.lunge : 0;
   const S = (x, y, c) => g.set(x + ox, y + oy, c);
   const R = (x, y, w, h, c) => g.rect(x + ox, y + oy, w, h, c);
   const c = V.c;
