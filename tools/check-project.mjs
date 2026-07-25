@@ -149,14 +149,14 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 const expectedEngineExports = [
   'ANIMS', 'BODY_BUILDS', 'CLASS_PACK_FORMAT', 'CLASS_PACK_VERSION', 'CLASS_TEMPLATES',
   'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_CLASS_TEMPLATE',
-  'DEFAULT_COMBAT_LOADOUT', 'DEFAULT_VARIANT_BATCH_SET',
+  'DEFAULT_COMBAT_LOADOUT', 'DEFAULT_VARIANT_BATCH_SET', 'ENEMY_OUTLINE_PILOT_FAMILIES',
   'DIRS', 'DIR_LABELS', 'ENEMIES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
   'OUTLINE_MODE_COMPLETE_B', 'OUTLINE_MODE_NONE', 'OUTLINE_MODE_SELECTIVE_C',
   'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
   'applyClassTemplate', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch',
-  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawOutlinedSprite', 'drawSprite',
+  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawOutlinedSprite', 'drawSprite', 'enemySupportsOutline',
   'normalizeOutlineMode', 'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout', 'sanitizeCombatLoadout', 'thumbURL',
 ].sort();
 check(
@@ -175,8 +175,35 @@ check(runtimeSources['app.js'].includes('![1, 2, 3, 4, 5, 6, 7, 8, 9, PRESET_VER
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
 check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'characterName', 'exportName']"), 'app.js history must include combat loadouts and outlines while remaining scoped to the editable sprite document');
-check(runtimeSources['engine/sheets.js'].includes('drawOutlinedSprite'), 'assembled sheet exports must support optional player outlines');
-check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must expose the optional player outline selector');
+check(runtimeSources['engine/sheets.js'].includes('drawOutlinedSprite'), 'assembled sheet exports must support optional sprite outlines');
+check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must expose the optional sprite outline selector');
+check(
+  JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
+    === JSON.stringify(['bandit', 'scorpion', 'elemental']),
+  'enemy outline pilots must stay limited to the three approval-gated families',
+);
+for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
+  check(
+    engine.ENEMIES.some((family) => family.id === familyId),
+    `enemy outline pilot ${familyId} must exist in the enemy catalog`,
+  );
+  check(
+    engine.enemySupportsOutline({ kind: 'enemy', family: familyId }),
+    `enemy outline pilot ${familyId} must opt into outline rendering`,
+  );
+}
+check(
+  !engine.enemySupportsOutline({ kind: 'enemy', family: 'carniplant' }),
+  'non-pilot enemies must remain on the original renderer',
+);
+check(
+  !engine.enemySupportsOutline({ kind: 'player', family: 'bandit' }),
+  'enemy outline support must never classify player specs as pilot enemies',
+);
+check(
+  !engine.enemySupportsOutline({ kind: 'effect', family: 'bandit' }),
+  'enemy outline support must never classify effect specs as pilot enemies',
+);
 check(runtimeSources['app.js'].includes("makeButton('Effects'"), 'app.js must expose combat effects as a first-class editor mode');
 check(runtimeSources['app.js'].includes("key === 'z'"), 'app.js must expose the undo keyboard shortcut');
 check(runtimeSources['app.js'].includes("key === 'y'"), 'app.js must expose the redo keyboard shortcut');
@@ -525,6 +552,31 @@ function renderPixels(spec, dir, animId, frame, opts = {}) {
     },
   };
   engine.drawSprite(ctx, spec, dir, animId, frame, { ...opts, shadow: false });
+  return pixels;
+}
+
+function renderOutlinedPixels(spec, dir, animId, frame, outlineMode, opts = {}) {
+  const pixels = new Array(engine.SIZE * engine.SIZE).fill(null);
+  let fillStyle = '#000000';
+  const ctx = {
+    clearRect() { pixels.fill(null); },
+    get fillStyle() { return fillStyle; },
+    set fillStyle(value) { fillStyle = value; },
+    fillRect(x, y, width, height) {
+      for (let py = y; py < y + height; py++) {
+        for (let px = x; px < x + width; px++) {
+          if (px >= 0 && py >= 0 && px < engine.SIZE && py < engine.SIZE) {
+            pixels[(py * engine.SIZE) + px] = fillStyle;
+          }
+        }
+      }
+    },
+  };
+  engine.drawOutlinedSprite(ctx, spec, dir, animId, frame, {
+    ...opts,
+    shadow: false,
+    outlineMode,
+  });
   return pixels;
 }
 
@@ -1761,6 +1813,72 @@ try {
           checkExportFrame(directionSheet, column, 0, expected, `${weapon} ${tier.id} direction export must preserve ${direction} ${animation.id} frame ${frame}`);
           checkExportFrame(animationSheet, frame, directionRow, expected, `${weapon} ${tier.id} animation export must preserve ${direction} ${animation.id} frame ${frame}`);
           column++;
+        }
+      }
+    }
+  }
+
+  for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
+    const family = engine.ENEMIES.find((entry) => entry.id === familyId);
+    for (const variant of family.variants) {
+      const spec = { kind: 'enemy', family: familyId, variant: variant.id };
+      for (const outlineMode of [
+        engine.OUTLINE_MODE_COMPLETE_B,
+        engine.OUTLINE_MODE_SELECTIVE_C,
+      ]) {
+        const options = { outlineMode, shadow: false };
+        const fullSheet = engine.buildSheet(spec, 1, options);
+        check(
+          fullSheet.width === 288 && fullSheet.height === 96,
+          `${familyId} ${variant.id} ${outlineMode} full export must remain 288x96 at native scale`,
+        );
+        for (const [directionRow, direction] of engine.DIRS.entries()) {
+          const directionSheet = engine.buildDirectionSheet(spec, direction, 1, options);
+          check(
+            directionSheet.width === 288 && directionSheet.height === 24,
+            `${familyId} ${variant.id} ${outlineMode} ${direction} export must remain 288x24 at native scale`,
+          );
+          let column = 0;
+          for (const animation of engine.ANIMS) {
+            const animationSheet = engine.buildAnimationSheet(spec, animation.id, 1, options);
+            check(
+              animationSheet.width === animation.frames * engine.SIZE
+                && animationSheet.height === 96,
+              `${familyId} ${variant.id} ${outlineMode} ${animation.id} export must retain its native frame dimensions`,
+            );
+            for (let frame = 0; frame < animation.frames; frame++) {
+              const expected = renderOutlinedPixels(
+                spec,
+                direction,
+                animation.id,
+                frame,
+                outlineMode,
+              );
+              const prefix = `${familyId} ${variant.id} ${outlineMode}`;
+              checkExportFrame(
+                fullSheet,
+                column,
+                directionRow,
+                expected,
+                `${prefix} full export must preserve ${direction} ${animation.id} frame ${frame}`,
+              );
+              checkExportFrame(
+                directionSheet,
+                column,
+                0,
+                expected,
+                `${prefix} direction export must preserve ${direction} ${animation.id} frame ${frame}`,
+              );
+              checkExportFrame(
+                animationSheet,
+                frame,
+                directionRow,
+                expected,
+                `${prefix} animation export must preserve ${direction} ${animation.id} frame ${frame}`,
+              );
+              column++;
+            }
+          }
         }
       }
     }

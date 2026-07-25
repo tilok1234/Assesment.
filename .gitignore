@@ -4,6 +4,8 @@ node_modules/
 dist/
 weapon-review/
 outline-review/
+enemy-outline-assessment/
+enemy-outline-review/
 src-tauri/gen/
 src-tauri/target/
 *.log

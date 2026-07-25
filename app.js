@@ -520,7 +520,7 @@ function currentSpec() {
 }
 
 function assembledOutlineMode(spec, outlineMode = state.outlineMode) {
-  return spec?.kind === 'player'
+  return spec?.kind === 'player' || E.enemySupportsOutline(spec)
     ? E.normalizeOutlineMode(outlineMode)
     : E.OUTLINE_MODE_NONE;
 }
@@ -1271,7 +1271,7 @@ function renderModeButtons() {
 }
 
 function renderOutlineControls() {
-  const available = state.mode === 'player';
+  const available = state.mode === 'player' || E.enemySupportsOutline(currentSpec());
   elements.outlineControl.hidden = !available;
   if (!available) return;
   elements.outlineButtons.replaceChildren(...E.OUTLINE_MODES.map((mode) => makeButton(

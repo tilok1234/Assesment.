@@ -12,6 +12,17 @@ export const OUTLINE_MODES = Object.freeze([
   Object.freeze({ id: OUTLINE_MODE_SELECTIVE_C, name: 'Selective C' }),
 ]);
 
+export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
+  'bandit',
+  'scorpion',
+  'elemental',
+]);
+const ENEMY_OUTLINE_PILOT_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
+
+export function enemySupportsOutline(spec) {
+  return spec?.kind === 'enemy' && ENEMY_OUTLINE_PILOT_SET.has(spec.family);
+}
+
 // These are ownership groups, not the much finer character-kit component layers.
 // Keeping the body together avoids outlines between skin, outfit, hair, and gear.
 export const OUTLINE_LAYER_ORDER = Object.freeze([
@@ -528,10 +539,11 @@ export function drawOutlinedSprite(
   const mode = normalizeOutlineMode(outlineMode);
 
   // None is deliberately the original renderer call, with the original options.
-  // Enemies, effects, and individual kit layers are outside the first outline scope.
+  // Effects, non-pilot enemies, and individual kit layers stay outside this
+  // approval-gated outline scope.
   if (
     mode === OUTLINE_MODE_NONE
-    || spec?.kind !== 'player'
+    || (spec?.kind !== 'player' && !enemySupportsOutline(spec))
     || (rendererOptions.layer && rendererOptions.layer !== 'complete')
   ) {
     drawSprite(context, spec, direction, animationId, frame, rendererOptions);
@@ -539,6 +551,29 @@ export function drawOutlinedSprite(
   }
 
   const color = typeof outlineColor === 'string' && outlineColor ? outlineColor : OUTLINE_COLOR;
+  if (enemySupportsOutline(spec)) {
+    const { onOutOfBounds, ...sourceOptions } = rendererOptions;
+    const sourcePixels = renderSpritePixels(spec, direction, animationId, frame, {
+      ...sourceOptions,
+      clear: true,
+      shadow: false,
+    });
+    const finalPixels = rendererOptions.shadow === false
+      ? sourcePixels
+      : renderSpritePixels(spec, direction, animationId, frame, rendererOptions);
+    const outlineMask = outlineMaskForPixels(
+      sourcePixels,
+      mode,
+      SIZE,
+      SIZE,
+    );
+
+    if (rendererOptions.clear !== false) context.clearRect(0, 0, SIZE, SIZE);
+    paintMask(context, outlineMask, color);
+    paintPixels(context, finalPixels);
+    return;
+  }
+
   const renderedLayers = new Map(OUTLINE_LAYER_ORDER.map((layer) => [
     layer,
     renderLayerPixels(spec, direction, animationId, frame, layer),

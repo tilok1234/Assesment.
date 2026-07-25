@@ -9,6 +9,8 @@
     "dev:open": "node tools/dev-server.mjs --open",
     "build": "node tools/build.mjs",
     "preview": "node tools/dev-server.mjs --root dist --open",
+    "review:enemy-outlines": "node tools/enemy-outline-assessment.mjs",
+    "review:enemy-outline-pilots": "node tools/enemy-outline-pilot-review.mjs",
     "review:transparency": "node tools/transparent-tile-review.mjs",
     "review:weapons": "node tools/weapon-readability-audit.mjs",
     "review:outlines": "node tools/outline-review.mjs",
