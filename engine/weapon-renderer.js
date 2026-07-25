@@ -2392,7 +2392,9 @@ export function drawWeapon(S, R, d, p, C, u) {
       if (strike) { R(17, 13, 1, 6, WOOD[0]); R(16, 19, 2, 2, MAGIC[0]); S(16, 19, MAGIC[2]); S(15, 20, MAGIC[2]); S(19, 19, MAGIC[2]); }
       else { R(17, 7, 1, 9, WOOD[0]); R(16, 5, 2, 2, MAGIC[0]); S(16, 5, MAGIC[2]); }
     } else if (d === 'up') {
-      if (strike) { R(6, 2, 1, 7, WOOD[0]); R(5, 0, 2, 2, MAGIC[0]); S(5, 0, MAGIC[2]); S(8, 1, MAGIC[2]); }
+      // Keep the raised focus one cell below the source edge so the shared
+      // enemy-caster strike has room for an exterior outline.
+      if (strike) { R(6, 2, 1, 7, WOOD[0]); R(5, 1, 2, 2, MAGIC[0]); S(5, 1, MAGIC[2]); S(8, 2, MAGIC[2]); }
       else { R(6, 8, 1, 9, WOOD[0]); R(5, 6, 2, 2, MAGIC[0]); S(5, 6, MAGIC[2]); }
     } else {
       if (strike) { R(13, 13, 7, 1, WOOD[0]); R(20, 12, 2, 2, MAGIC[0]); S(20, 12, MAGIC[2]); S(22, 11, MAGIC[2]); S(19, 15, MAGIC[2]); }

@@ -10,7 +10,8 @@ approved; shared quadruped frame-safety repair visually approved; shared
 quadruped outline expansion visually approved; Crocodile, Turtle, and Griffin
 frame-safety repair visually approved; armored beast outline expansion visually
 approved; Slime and Shroom frame-safety repair visually approved; Slime and
-Shroom outline expansion visually approved.
+Shroom outline expansion visually approved; shared enemy-staff frame-safety
+repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -29,6 +30,8 @@ Outline rollout group 1 visual approval: 2026-07-25
 Frame-safety group 12 visual approval: 2026-07-25
 Outline rollout group 2 visual approval: 2026-07-25
 Frame-safety group 13 visual approval: 2026-07-25
+Outline rollout group 3 visual approval: 2026-07-25
+Frame-safety group 14 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -558,6 +561,34 @@ Measured approved result:
 
 This candidate does not enable outlines for any of the remaining 45 enemy
 families.
+
+## Frame-Safety Repair Group 14
+
+Approved after live review of the shared up-facing enemy-staff strike used by
+Elf Mage, Skeleton Mage, Kobold Sorcerer, and Ratfolk Plague.
+
+These four families had the smallest remaining edge signature: only the two
+raised-staff strike frames touched the top source row, at two pixels per frame.
+The shared compatibility staff focus now sits one cell lower while retaining
+the full shaft, focus, sparks, and two-frame attack motion.
+
+The same shared geometry also improves the staff variants in Goblin, Imp,
+Cultist, Ogre, Lizardfolk, and Demon without claiming those families as
+outline-safe; their unrelated head, horn, or foot contacts remain for later
+passes.
+
+Measured result:
+
+- all 720 frames across Elf, Skeleton, Kobold, and Ratfolk reserve one
+  transparent source cell on every side;
+- their minimum margins are top 1, right 1, bottom 2, left 1;
+- all 22 up-facing staff strike layers across the eleven staff-bearing enemy
+  variants reserve the top outline row;
+- zero out-of-bounds writes across the 9,696-frame enemy roster;
+- exhaustive roster contacts fall from 197 frames / 704 pixels to
+  177 frames / 660 pixels.
+
+This candidate does not enable outlines for these four families.
 
 ## Treatment
 

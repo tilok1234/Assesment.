@@ -591,6 +591,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'wolf', 'boar', 'bear', 'bigcat',
   'crocodile', 'turtle', 'griffin',
   'slime', 'shroom',
+  'elf', 'skeleton', 'kobold', 'ratfolk',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -622,6 +623,22 @@ for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
         }
         frameSafeEnemyCases++;
       }
+    }
+  }
+}
+
+let frameSafeEnemyStaffCases = 0;
+for (const family of engine.ENEMIES) {
+  for (const variant of family.variants.filter((entry) => entry.weapon === 'staff')) {
+    const spec = { kind: 'enemy', family: family.id, variant: variant.id };
+    for (const frame of [1, 2]) {
+      const pixels = renderPixels(spec, 'up', 'attack', frame, { layer: 'weapon-back' });
+      check(
+        pixels.slice(0, engine.SIZE).every((pixel) => pixel === null),
+        `${family.id} ${variant.id} up attack frame ${frame + 1} staff layer must reserve the top outline row`,
+      );
+      check(pixels.some(Boolean), `${family.id} ${variant.id} up attack frame ${frame + 1} must retain the raised staff`);
+      frameSafeEnemyStaffCases++;
     }
   }
 }
@@ -2393,4 +2410,5 @@ console.log(`- Frame-safe weapon cases: ${frameSafeWeaponCases}`);
 console.log(`- Frame-safe shield cases: ${frameSafeShieldCases}`);
 console.log(`- Frame-safe headgear cases: ${frameSafeHeadgearCases}`);
 console.log(`- Frame-safe repaired enemy cases: ${frameSafeEnemyCases}`);
+console.log(`- Frame-safe enemy staff strikes: ${frameSafeEnemyStaffCases}`);
 console.log(`- Validated PNG sheets: ${actualPngs.length} (${expectedWidth}x${expectedHeight})`);
