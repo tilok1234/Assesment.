@@ -181,12 +181,12 @@ check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
       'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'gnoll', 'harpy',
-      'eyemonster', 'scorpion', 'crab', 'beetle', 'elemental',
+      'eyemonster', 'scorpion', 'crab', 'beetle', 'wasp', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the twenty-one approval-gated families',
+  'enemy outline support must stay limited to the twenty-two approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -984,6 +984,84 @@ for (const variant of beetleOutlineFamily.variants) {
             }),
             `beetle ${variant.id} ${direction} ${animation.id}/${frame + 1} `
               + `${outlineMode} must leave every one- and two-pixel leg component unhaloed`,
+          );
+        }
+      }
+    }
+  }
+}
+
+const waspOutlineFamily = engine.ENEMIES.find((family) => family.id === 'wasp');
+for (const variant of waspOutlineFamily.variants) {
+  const spec = { kind: 'enemy', family: 'wasp', variant: variant.id };
+  const sideFlapSource = renderPixels(spec, 'right', 'idle', 0);
+  const sideFlapGroups = cardinalPixelComponentGroups(sideFlapSource);
+  check(
+    sideFlapGroups.map((group) => group.length).sort((left, right) => right - left)
+      .join(',') === '53,11,1',
+    `wasp ${variant.id} right idle frame 1 must retain body, detached wing, and stinger tip`,
+  );
+  const wingCoreIndex = (4 * engine.SIZE) + 9;
+  const wingContourIndex = (3 * engine.SIZE) + 9;
+  const stingerTipIndex = (11 * engine.SIZE) + 3;
+  for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const sideFlap = renderOutlinedPixels(spec, 'right', 'idle', 0, outlineMode);
+    check(
+      sideFlap[wingCoreIndex] === sideFlapSource[wingCoreIndex],
+      `wasp ${variant.id} ${outlineMode} must preserve the raised wing core`,
+    );
+    check(
+      sideFlap[wingContourIndex] === engine.OUTLINE_COLOR,
+      `wasp ${variant.id} ${outlineMode} must contour the raised wing`,
+    );
+    check(
+      sideFlap[stingerTipIndex] === sideFlapSource[stingerTipIndex],
+      `wasp ${variant.id} ${outlineMode} must preserve the one-pixel stinger tip`,
+    );
+  }
+
+  for (const direction of engine.DIRS) {
+    for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const source = renderPixels(spec, direction, animation.id, frame);
+        const sourceGroups = cardinalPixelComponentGroups(source);
+        check(
+          sourceGroups.length >= 1 && sourceGroups.length <= 4,
+          `wasp ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+            + 'must retain one-to-four authored body, wing, and stinger components',
+        );
+        const sourceSingletons = sourceGroups.filter((component) => component.length === 1);
+        for (const outlineMode of [
+          engine.OUTLINE_MODE_COMPLETE_B,
+          engine.OUTLINE_MODE_SELECTIVE_C,
+        ]) {
+          const outlined = renderOutlinedPixels(
+            spec,
+            direction,
+            animation.id,
+            frame,
+            outlineMode,
+          );
+          const outlinedGroups = cardinalPixelComponentGroups(outlined);
+          check(
+            outlinedGroups.length === sourceGroups.length,
+            `wasp ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `${outlineMode} must preserve all ${sourceGroups.length} source components`,
+          );
+          check(
+            sourceSingletons.every((sourceGroup) => {
+              const outlinedGroup = outlinedGroups.find((group) => group.includes(sourceGroup[0]));
+              return (
+                outlinedGroup
+                && outlinedGroup.length === 1
+                && outlinedGroup[0] === sourceGroup[0]
+              );
+            }),
+            `wasp ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `${outlineMode} must leave every one-pixel stinger segment unhaloed`,
           );
         }
       }

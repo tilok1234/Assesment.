@@ -18,7 +18,8 @@ approved; Bandit, Kobold, Skeleton, Ratfolk, Elf, and Gnoll hybrid
 component-aware outlines visually approved; Harpy exterior outline expansion
 visually approved; Eye Monster separated-component outline expansion visually
 approved; Crab separated-component outline expansion visually approved;
-Beetle separated-component outline expansion visually approved.
+Beetle separated-component outline expansion visually approved; Wasp
+separated-component outline expansion visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -54,6 +55,7 @@ Outline rollout group 4 visual approval: 2026-07-25
 Outline rollout group 5 visual approval: 2026-07-25
 Outline rollout group 6 visual approval: 2026-07-25
 Outline rollout group 7 visual approval: 2026-07-25
+Outline rollout group 8 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1082,6 +1084,46 @@ Measured candidate result across the twenty-one-family outline lane:
   Beetle leg component remains unhaloed;
 - Beetle contributes 6,432 Complete B and 4,620 Selective C outline pixels
   across its 144 source frames;
+- zero source-edge frames and zero out-of-bounds writes.
+
+The approved treatment was reviewed structurally and directionally in the live
+assembler across front, back, and side attacks.
+
+## Outline Rollout Group 8
+
+Approved after live front, back, and side comparison of Wasp's revised outlines
+in Complete B and Selective C across Yellowjacket, Hornet, and Royal.
+
+Wasp is the next unsupported family after Beetle in roster order. Half of its
+144 source frames contain detached geometry: the raised side-view wing is an
+eleven-pixel component, while the stinger chain uses deliberately separated
+one-pixel tips. Treating the whole frame as one contour risks visually welding
+the raised wing back onto the body or turning each stinger pixel into a black
+block.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for Yellowjacket, Hornet, and Royal
+  without changing another previously unsupported enemy;
+- contours the connected body and every meaningful detached wing component;
+- preserves the transparent breathing room below the raised side-view wing;
+- leaves every one-pixel stinger segment unhaloed so the attack tip remains
+  narrow and directional;
+- preserves each frame's original one-to-four connected source components;
+- changes no Wasp geometry, palette, animation, catalog, saved state, or export
+  schema.
+
+Measured candidate result across the twenty-two-family outline lane:
+
+- 3,744 None-mode parity checks pass;
+- all 11,232 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 3,744 frames;
+- 288 exhaustive Wasp outlined-frame component checks preserve each frame's
+  one-to-four source components;
+- 288 additional outlined-frame checks prove that every one-pixel Wasp stinger
+  component remains unhaloed;
+- Wasp contributes 8,088 Complete B and 6,180 Selective C outline pixels across
+  its 144 source frames;
 - zero source-edge frames and zero out-of-bounds writes.
 
 The approved treatment was reviewed structurally and directionally in the live
