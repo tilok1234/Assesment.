@@ -17,6 +17,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'kobold',
   'skeleton',
   'ratfolk',
+  'elf',
   'scorpion',
   'elemental',
   'wolf',
@@ -39,6 +40,7 @@ const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
   'kobold',
   'skeleton',
   'ratfolk',
+  'elf',
 ]);
 
 export function enemySupportsOutline(spec) {

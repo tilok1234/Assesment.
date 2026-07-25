@@ -15,7 +15,13 @@ const MODES = [
   { id: engine.OUTLINE_MODE_COMPLETE_B, label: 'COMPLETE B' },
   { id: engine.OUTLINE_MODE_SELECTIVE_C, label: 'SELECTIVE C' },
 ];
-const COMPONENT_AWARE_FAMILIES = new Set(['bandit', 'kobold', 'skeleton', 'ratfolk']);
+const COMPONENT_AWARE_FAMILIES = new Set([
+  'bandit',
+  'kobold',
+  'skeleton',
+  'ratfolk',
+  'elf',
+]);
 const COMPONENT_LAYER_ORDER = [
   'weapon-back',
   'shield-back',

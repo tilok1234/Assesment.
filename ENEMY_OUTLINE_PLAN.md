@@ -14,8 +14,8 @@ Shroom outline expansion visually approved; shared enemy-staff frame-safety
 repair visually approved; Golem frame-safety repair visually approved; Treant
 frame-safety repair visually approved; Worm frame-safety repair visually
 approved; Beetle frame-safety and directional silhouette repair visually
-approved; Bandit, Kobold, Skeleton, and Ratfolk hybrid component-aware outlines
-visually approved.
+approved; Bandit, Kobold, Skeleton, Ratfolk, and Elf hybrid component-aware
+outlines visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -45,6 +45,7 @@ Hybrid outline group 1 visual approval: 2026-07-25
 Hybrid outline group 2 visual approval: 2026-07-25
 Hybrid outline group 3 visual approval: 2026-07-25
 Hybrid outline group 4 visual approval: 2026-07-25
+Hybrid outline group 5 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -850,6 +851,42 @@ Measured candidate result across the fifteen-family outline lane:
 This approved group remains limited to Ratfolk. Another humanoid family still
 requires its own frame-safety evidence, exhaustive regression pass, and live
 visual approval.
+
+## Hybrid Outline Rollout Approved Group 5
+
+Live visual approval received for Elf.
+
+Elf is the first component-aware family whose head silhouette depends on both
+pointed ears and long or ponytail hair. Ranger, Mage, Duelist, and Dark Elf
+cover Bow, Staff, Sword, and Dagger contacts, while Ranger's hood and Mage's
+raised up-facing staff exercise the existing headgear and repaired frame-margin
+rules.
+
+The approved rollout:
+
+- enables None, Complete B, and Selective C for Elf without changing another
+  previously unsupported enemy;
+- preserves both two-pixel pointed-ear cores and all non-contact hair/headgear
+  source pixels;
+- keeps Bow, Staff, Sword, and Dagger colored cores intact at direct
+  body/headgear contacts;
+- preserves rear weapon occlusion, ponytail/long-hair silhouettes, and
+  Selective C breathing room;
+- changes no Elf geometry, palette, animation, equipment placement, catalog,
+  saved state, or export schema.
+
+Measured candidate result across the sixteen-family outline lane:
+
+- 2,880 None-mode parity checks pass;
+- all 8,640 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 2,880 frames;
+- 1,712 validated Elf body-side equipment-contact separator pixels across the
+  two outlined modes;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This approved group remains limited to Elf. Another family still requires its
+own frame-safety evidence, exhaustive regression pass, and live visual
+approval.
 
 ## Treatment
 

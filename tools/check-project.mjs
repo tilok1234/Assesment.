@@ -180,12 +180,12 @@ check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
-      'bandit', 'kobold', 'skeleton', 'ratfolk', 'scorpion', 'elemental',
+      'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'scorpion', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the fifteen approval-gated families',
+  'enemy outline support must stay limited to the sixteen approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -601,6 +601,10 @@ for (const [family, variant, separatorX, separatorY] of [
   ['ratfolk', 'skulker', 15, 13],
   ['ratfolk', 'plague', 16, 13],
   ['ratfolk', 'blade', 15, 13],
+  ['elf', 'ranger', 17, 12],
+  ['elf', 'mage', 16, 12],
+  ['elf', 'duelist', 16, 12],
+  ['elf', 'dark', 16, 12],
 ]) {
   const spec = { kind: 'enemy', family, variant };
   const source = renderPixels(spec, 'down', 'idle', 0);
@@ -630,6 +634,35 @@ for (const [family, variant, separatorX, separatorY] of [
       `${family} ${variant} ${outlineMode} must place a body-side held-weapon separator`,
     );
   }
+}
+
+const elfDuelistSpec = { kind: 'enemy', family: 'elf', variant: 'duelist' };
+const elfDuelistSource = renderPixels(elfDuelistSpec, 'down', 'idle', 0);
+const elfEarIndices = [
+  (5 * engine.SIZE) + 7,
+  (6 * engine.SIZE) + 7,
+  (5 * engine.SIZE) + 16,
+  (6 * engine.SIZE) + 16,
+];
+check(
+  elfEarIndices.every((index) => elfDuelistSource[index]),
+  'elf duelist down idle must retain both authored two-pixel pointed ears',
+);
+for (const outlineMode of [
+  engine.OUTLINE_MODE_COMPLETE_B,
+  engine.OUTLINE_MODE_SELECTIVE_C,
+]) {
+  const outlined = renderOutlinedPixels(
+    elfDuelistSpec,
+    'down',
+    'idle',
+    0,
+    outlineMode,
+  );
+  check(
+    elfEarIndices.every((index) => outlined[index] === elfDuelistSource[index]),
+    `elf duelist ${outlineMode} must preserve both pointed-ear cores`,
+  );
 }
 
 const skeletonGruntSpec = { kind: 'enemy', family: 'skeleton', variant: 'grunt' };
