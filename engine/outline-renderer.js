@@ -23,6 +23,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'eyemonster',
   'scorpion',
   'crab',
+  'beetle',
   'elemental',
   'wolf',
   'boar',
@@ -53,6 +54,7 @@ const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
 const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'eyemonster',
   'crab',
+  'beetle',
 ]);
 
 export function enemySupportsOutline(spec) {
@@ -743,11 +745,16 @@ export function drawOutlinedSprite(
     const outlineMask = enemyUsesSeparatedOutline(spec)
       ? outlineMaskForSeparatedComponents(sourcePixels, mode, SIZE, SIZE, {
         // Crab legs are authored as diagonal chains of isolated one-pixel
-        // segments. A halo around each segment turns the chain into square
-        // black weights, so only the connected shell/claw mass is contoured.
-        // Eye Monster keeps the default because its orbitals are intended to
-        // read as individually outlined floating parts.
-        minimumComponentPixels: spec.family === 'crab' ? 2 : 1,
+        // segments. Beetle legs are similarly delicate one- or two-pixel
+        // components, while its three-pixel attack antenna/horn tips still
+        // need their own contour. Eye Monster keeps the default because its
+        // orbitals are intended to read as individually outlined floating
+        // parts.
+        minimumComponentPixels: spec.family === 'beetle'
+          ? 3
+          : spec.family === 'crab'
+            ? 2
+            : 1,
       })
       : outlineMaskForPixels(sourcePixels, mode, SIZE, SIZE);
 

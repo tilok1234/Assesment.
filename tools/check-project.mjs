@@ -181,12 +181,12 @@ check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
       'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'gnoll', 'harpy',
-      'eyemonster', 'scorpion', 'crab', 'elemental',
+      'eyemonster', 'scorpion', 'crab', 'beetle', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the twenty approval-gated families',
+  'enemy outline support must stay limited to the twenty-one approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -586,16 +586,17 @@ function renderOutlinedPixels(spec, dir, animId, frame, outlineMode, opts = {}) 
   return pixels;
 }
 
-function cardinalPixelComponents(pixels) {
+function cardinalPixelComponentGroups(pixels) {
   const seen = new Set();
-  let components = 0;
+  const components = [];
   for (let start = 0; start < pixels.length; start++) {
     if (!pixels[start] || seen.has(start)) continue;
-    components++;
+    const component = [];
     const queue = [start];
     seen.add(start);
     while (queue.length) {
       const index = queue.pop();
+      component.push(index);
       const x = index % engine.SIZE;
       const y = Math.floor(index / engine.SIZE);
       for (const [offsetX, offsetY] of [[0, -1], [-1, 0], [1, 0], [0, 1]]) {
@@ -613,32 +614,19 @@ function cardinalPixelComponents(pixels) {
         queue.push(next);
       }
     }
+    components.push(component);
   }
   return components;
 }
 
+function cardinalPixelComponents(pixels) {
+  return cardinalPixelComponentGroups(pixels).length;
+}
+
 function cardinalSingletonIndices(pixels) {
-  const singletonIndices = [];
-  for (let index = 0; index < pixels.length; index++) {
-    if (!pixels[index]) continue;
-    const x = index % engine.SIZE;
-    const y = Math.floor(index / engine.SIZE);
-    const hasCardinalNeighbor = [[0, -1], [-1, 0], [1, 0], [0, 1]].some(
-      ([offsetX, offsetY]) => {
-        const nextX = x + offsetX;
-        const nextY = y + offsetY;
-        return (
-          nextX >= 0
-          && nextY >= 0
-          && nextX < engine.SIZE
-          && nextY < engine.SIZE
-          && pixels[(nextY * engine.SIZE) + nextX]
-        );
-      },
-    );
-    if (!hasCardinalNeighbor) singletonIndices.push(index);
-  }
-  return singletonIndices;
+  return cardinalPixelComponentGroups(pixels)
+    .filter((component) => component.length === 1)
+    .flat();
 }
 
 for (const [family, variant, separatorX, separatorY] of [
@@ -919,6 +907,83 @@ for (const variant of crabFamily.variants) {
             )),
             `crab ${variant.id} ${direction} ${animation.id}/${frame + 1} `
               + `${outlineMode} must leave every one-pixel leg segment unhaloed`,
+          );
+        }
+      }
+    }
+  }
+}
+
+const beetleOutlineFamily = engine.ENEMIES.find((family) => family.id === 'beetle');
+for (const variant of beetleOutlineFamily.variants) {
+  const spec = { kind: 'enemy', family: 'beetle', variant: variant.id };
+  for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const frontStrikeSource = renderPixels(spec, 'down', 'attack', 1);
+    const frontStrike = renderOutlinedPixels(spec, 'down', 'attack', 1, outlineMode);
+    check(
+      frontStrike[((23 * engine.SIZE) + 8)] === engine.OUTLINE_COLOR
+        && frontStrike[((23 * engine.SIZE) + 15)] === engine.OUTLINE_COLOR,
+      `beetle ${variant.id} ${outlineMode} must contour both front attack antenna tips`,
+    );
+    check(
+      frontStrike[((11 * engine.SIZE) + 6)] === engine.OUTLINE_COLOR,
+      `beetle ${variant.id} ${outlineMode} must retain the front shell contour`,
+    );
+    check(
+      frontStrikeSource[((17 * engine.SIZE) + 10)] === '#f4f4f4'
+        && frontStrikeSource[((17 * engine.SIZE) + 13)] === '#f4f4f4',
+      `beetle ${variant.id} source must retain both approved front-facing eyes`,
+    );
+
+    const sideStrike = renderOutlinedPixels(spec, 'right', 'attack', 1, outlineMode);
+    check(
+      sideStrike[((10 * engine.SIZE) + 23)] === engine.OUTLINE_COLOR,
+      `beetle ${variant.id} ${outlineMode} must retain the side horn-tip contour`,
+    );
+  }
+
+  for (const direction of engine.DIRS) {
+    for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const source = renderPixels(spec, direction, animation.id, frame);
+        const sourceGroups = cardinalPixelComponentGroups(source);
+        check(
+          sourceGroups.length >= 3 && sourceGroups.length <= 6,
+          `beetle ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+            + 'must retain three-to-six authored shell, horn, and leg components',
+        );
+        const smallSourceGroups = sourceGroups.filter((component) => component.length < 3);
+        for (const outlineMode of [
+          engine.OUTLINE_MODE_COMPLETE_B,
+          engine.OUTLINE_MODE_SELECTIVE_C,
+        ]) {
+          const outlined = renderOutlinedPixels(
+            spec,
+            direction,
+            animation.id,
+            frame,
+            outlineMode,
+          );
+          const outlinedGroups = cardinalPixelComponentGroups(outlined);
+          check(
+            outlinedGroups.length === sourceGroups.length,
+            `beetle ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `${outlineMode} must preserve all ${sourceGroups.length} source components`,
+          );
+          check(
+            smallSourceGroups.every((sourceGroup) => {
+              const outlinedGroup = outlinedGroups.find((group) => group.includes(sourceGroup[0]));
+              return (
+                outlinedGroup
+                && outlinedGroup.length === sourceGroup.length
+                && sourceGroup.every((index) => outlinedGroup.includes(index))
+              );
+            }),
+            `beetle ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `${outlineMode} must leave every one- and two-pixel leg component unhaloed`,
           );
         }
       }

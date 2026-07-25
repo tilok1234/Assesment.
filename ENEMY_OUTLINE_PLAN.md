@@ -17,7 +17,8 @@ approved; Beetle frame-safety and directional silhouette repair visually
 approved; Bandit, Kobold, Skeleton, Ratfolk, Elf, and Gnoll hybrid
 component-aware outlines visually approved; Harpy exterior outline expansion
 visually approved; Eye Monster separated-component outline expansion visually
-approved; Crab separated-component outline expansion visually approved.
+approved; Crab separated-component outline expansion visually approved;
+Beetle separated-component outline expansion visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -52,6 +53,7 @@ Hybrid outline group 6 visual approval: 2026-07-25
 Outline rollout group 4 visual approval: 2026-07-25
 Outline rollout group 5 visual approval: 2026-07-25
 Outline rollout group 6 visual approval: 2026-07-25
+Outline rollout group 7 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1044,6 +1046,46 @@ Measured candidate result across the twenty-family outline lane:
 
 This approved group remains limited to Crab. Another family still requires its
 own frame-safety evidence, exhaustive regression pass, and live visual approval.
+
+## Outline Rollout Group 7
+
+Approved after live front, back, and side comparison of Beetle's revised
+outlines in Complete B and Selective C across Scarab, Stag, and Bomber.
+
+Beetle is the next unsupported family after Crab in roster order. Its repaired
+front/back and side silhouettes contain three-to-six authored components. The
+generic contour collapsed every one of the 144 Beetle frames into a single
+mass, which made the thin legs and attack antennae read as black blocks instead
+of separated appendages.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for Scarab, Stag, and Bomber
+  without changing another previously unsupported enemy;
+- preserves the already approved front, back, and mirrored side geometry;
+- contours the connected shell plus the meaningful three-pixel attack
+  antenna/horn-tip components;
+- leaves every one- and two-pixel leg component unhaloed so the legs remain
+  thin and visually separated;
+- preserves each frame's original three-to-six connected source components;
+- changes no Beetle geometry, palette, animation, catalog, saved state, or
+  export schema.
+
+Measured candidate result across the twenty-one-family outline lane:
+
+- 3,600 None-mode parity checks pass;
+- all 10,800 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 3,600 frames;
+- 288 exhaustive Beetle outlined-frame component checks preserve each frame's
+  three-to-six source components;
+- 288 additional outlined-frame checks prove that every one- or two-pixel
+  Beetle leg component remains unhaloed;
+- Beetle contributes 6,432 Complete B and 4,620 Selective C outline pixels
+  across its 144 source frames;
+- zero source-edge frames and zero out-of-bounds writes.
+
+The approved treatment was reviewed structurally and directionally in the live
+assembler across front, back, and side attacks.
 
 ## Treatment
 
