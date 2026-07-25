@@ -1,11 +1,12 @@
 # Enemy Outline Plan
 
 Status: exhaustive assessment complete; three-family pilot visually approved;
-Frog and Jellyfish frame-safety repair visually approved.
+Frog, Jellyfish, and Mole frame-safety repairs visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
 Frame-safety group 1 visual approval: 2026-07-25
+Frame-safety group 2 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -82,6 +83,35 @@ Measured candidate result across all 384 Frog/Jellyfish frames:
 The exhaustive roster total falls from 538 to 506 edge-contact frames and from
 132 to 116 out-of-bounds frames. The remaining failures belong to the other
 nine repair families and remain out of scope for this approval gate.
+
+## Frame-Safety Repair Group 2
+
+Approved after live review of Mole's buried attack, eruption follow-through,
+and shifted hurt pose.
+
+Mole is the smallest remaining out-of-bounds family. Its buried front attack
+wrote an intended eight-pixel mound row below the canvas in all four variants.
+The same family also had eight later attack/hurt frames whose rear claws touched
+the bottom edge.
+
+The candidate repair:
+
+- keeps one pixel of downward impact in the buried attack;
+- places the complete mound row inside the frame instead of discarding it;
+- moves only the edge-touching rear claws inward when the pose shifts down;
+- preserves at least one transparent cell on every side in every Mole frame;
+- does not enable Mole outlines before visual approval.
+
+Measured candidate result across all 192 Mole frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- minimum margins: top 3, right 1, bottom 1, left 1.
+
+The exhaustive roster total falls again from 506 to 494 edge-contact frames and
+from 116 to 112 out-of-bounds frames. The remaining failures belong to Drake,
+Centipede, Carnivorous Plant, Mantis, Moth, Octopus, Scarecrow, and Haunted
+Puppet.
 
 ## Treatment
 

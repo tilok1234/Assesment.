@@ -580,7 +580,7 @@ function renderOutlinedPixels(spec, dir, animId, frame, outlineMode, opts = {}) 
   return pixels;
 }
 
-const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = ['frog', 'jellyfish'];
+const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = ['frog', 'jellyfish', 'mole'];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
   const family = engine.ENEMIES.find((entry) => entry.id === familyId);

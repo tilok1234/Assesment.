@@ -2572,7 +2572,11 @@ function drawMole(g, d, p, f, V, animId) {
   const buried = animId === 'attack' && f === 1;
   const erupt = animId === 'attack' && f === 2;
   const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // The buried front attack used the full two-pixel lunge, placing its final
+  // mound row below the 24x24 cell. Retain one pixel of downward impact while
+  // keeping a transparent bottom row for the later outline.
+  const downLunge = animId === 'attack' ? Math.min(p.lunge, 1) : p.lunge;
+  const oy = d === 'down' ? downLunge : d === 'up' ? -p.lunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const fur = V.fur, belly = V.belly, claw = V.claw, nose = V.nose, eye = V.eye;
@@ -2580,7 +2584,8 @@ function drawMole(g, d, p, f, V, animId) {
   if (buried) {
     R(5, 19, 14, 3, fur[1]); R(7, 17, 10, 2, fur[0]);
     S(4, 21, claw); S(19, 21, claw); S(6, 18, belly); S(17, 18, belly);
-    R(8, 22, 8, 1, fur[1]); S(3, 20, fur[0]); S(20, 20, fur[0]);
+    R(8, d === 'down' ? 21 : 22, 8, 1, fur[1]);
+    S(3, 20, fur[0]); S(20, 20, fur[0]);
     return;
   }
 
@@ -2607,7 +2612,8 @@ function drawMole(g, d, p, f, V, animId) {
     S(5 + gait.left, 20, claw); S(6 + gait.left, 21, claw);
     S(18 + gait.right, 20, claw); S(17 + gait.right, 21, claw);
     R(8 + gait.left, 19, 3, 3, fur[1]); R(13 + gait.right, 19, 3, 3, fur[1]);
-    S(7 + gait.left, 22, claw); S(16 + gait.right, 22, claw);
+    const rearClawY = oy > 0 ? 21 : 22;
+    S(7 + gait.left, rearClawY, claw); S(16 + gait.right, rearClawY, claw);
     if (erupt) { S(4, 18, claw); S(19, 18, claw); S(3, 20, fur[1]); S(20, 20, fur[1]); }
   }
 }
