@@ -2559,8 +2559,17 @@ function drawOctopus(g, d, p, f, V, animId) {
     { x: -1, bob: 1, a: 0, b: 1 },
   ][f] : { x: 0, bob: animId === 'idle' && f === 1 ? 1 : 0, a: 0, b: 0 };
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // Keep a visible first strike and centered recoil while reserving the cell
+  // edge for outlines. Only the bottom tips fold during the two vertical poses
+  // whose whole-rig translation previously pushed them onto the final row.
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const strikeInset = strike && forwardLunge ? 1 : 0;
+  const verticalTipLift = (
+    (d === 'down' && animId === 'attack' && forwardLunge)
+    || (d === 'up' && animId === 'hurt' && p.lunge < 0)
+  ) ? -1 : 0;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const c = V.c, underside = V.underside, ring = V.ring, ink = V.ink, eye = V.eye;
@@ -2573,8 +2582,9 @@ function drawOctopus(g, d, p, f, V, animId) {
     R(9 + gait.b, 17, 5, 2, c[1]); R(8 + gait.b, 20, 6, 2, c[0]); S(7 + gait.b, 22, c[1]);
     R(13 - gait.a, 17, 5, 2, c[1]); R(15 - gait.a, 19, 5, 2, c[0]); S(20 - gait.a, 21, c[1]);
     if (strike) {
-      R(16, 15, 6, 2, c[0]); S(22, 14, c[1]); S(23, 13, ring);
-      S(19, 9, ink); S(21, 8, ink); S(22, 10, ink);
+      R(16, 15, 6, 2, c[0]);
+      S(22 - strikeInset, 14, c[1]); S(22 - strikeInset, 13, ring);
+      S(19, 9, ink); S(21, 8, ink); S(22 - strikeInset, 10, ink);
     }
   } else {
     R(7 + bx, 7 + by, 10, 10 - by, c[0]); R(9 + bx, 5 + by, 6, 3, c[0]);
@@ -2582,11 +2592,16 @@ function drawOctopus(g, d, p, f, V, animId) {
     if (d === 'down') { S(9 + bx, 9 + by, eye); S(14 + bx, 9 + by, eye); S(11 + bx, 12 + by, ring); S(13 + bx, 12 + by, ring); }
     else { S(9 + bx, 8 + by, ring); S(14 + bx, 10 + by, ring); R(10 + bx, 6 + by, 4, 1, c[1]); }
     R(4 + gait.a, 16, 6, 2, c[1]); R(3 + gait.a, 19, 5, 2, c[0]); S(2 + gait.a, 21, c[1]);
-    R(8 + gait.b, 17, 4, 2, c[1]); R(7 + gait.b, 20, 5, 2, c[0]); S(6 + gait.b, 22, c[1]);
-    R(12 - gait.b, 17, 4, 2, c[1]); R(12 - gait.b, 20, 5, 2, c[0]); S(17 - gait.b, 22, c[1]);
+    R(8 + gait.b, 17, 4, 2, c[1]); R(7 + gait.b, 20, 5, 2, c[0]);
+    S(6 + gait.b, 22 + verticalTipLift, c[1]);
+    R(12 - gait.b, 17, 4, 2, c[1]); R(12 - gait.b, 20, 5, 2, c[0]);
+    S(17 - gait.b, 22 + verticalTipLift, c[1]);
     R(14 - gait.a, 16, 6, 2, c[1]); R(16 - gait.a, 19, 5, 2, c[0]); S(21 - gait.a, 21, c[1]);
     if (strike) {
-      if (d === 'down') { R(10, 17, 4, 5, c[0]); S(9, 22, ring); S(14, 22, ring); }
+      if (d === 'down') {
+        R(10, 17, 4, 5, c[0]);
+        S(9, 22 + verticalTipLift, ring); S(14, 22 + verticalTipLift, ring);
+      }
       S(5, 8, ink); S(3, 7, ink); S(19, 9, ink); S(21, 7, ink);
     }
   }

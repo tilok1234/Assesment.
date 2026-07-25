@@ -4,7 +4,8 @@ Status: exhaustive assessment complete; three-family pilot visually approved;
 Frog, Jellyfish, Mole, Scarecrow, and Drake frame-safety repairs visually
 approved; Centipede frame-safety repair visually approved; Carnivorous Plant
 frame-safety repair visually approved; Mantis frame-safety repair visually
-approved; Moth frame-safety repair visually approved.
+approved; Moth frame-safety repair visually approved; Octopus frame-safety
+repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -16,6 +17,7 @@ Frame-safety group 5 visual approval: 2026-07-25
 Frame-safety group 6 visual approval: 2026-07-25
 Frame-safety group 7 visual approval: 2026-07-25
 Frame-safety group 8 visual approval: 2026-07-25
+Frame-safety group 9 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -306,6 +308,41 @@ Measured candidate result across all 192 Moth frames:
 
 The exhaustive roster total falls from 371 to 339 edge-contact frames and from
 52 to 36 out-of-bounds frames. The remaining failures belong to Octopus and
+Haunted Puppet.
+
+## Frame-Safety Repair Group 9
+
+Approved after focused contact-sheet review of all four variants covering both
+side strike frames, mirrored strike, both downward strike frames, and the
+upward hurt flash.
+
+Octopus's generic side strike discarded the reaching tentacle cap and nearest
+ink mote in both strike frames. Its first downward strike discarded four
+bottom tips and placed twelve more pixels on the bottom row; the recoil and
+first upward hurt pose also consumed the bottom margin.
+
+The candidate repair:
+
+- uses a one-pixel strike followed by a centered recoil in every direction;
+- folds only the side strike cap and nearest ink mote inward while preserving
+  all three detached ink motes;
+- lifts only the four bottom tips during the first downward strike and the two
+  central tips during the first upward hurt pose;
+- preserves the complete walking gait, multi-tentacle silhouette, all 80
+  intentional enclosed openings, and every variant palette;
+- reserves at least one transparent cell on every side in every frame;
+- keeps Octopus outline enablement as a separate approval gate.
+
+Measured candidate result across all 192 Octopus frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- enclosed openings unchanged at 72 frames / 80 components, maximum area 8;
+- all 48 previously discarded draw operations now resolve inside the frame;
+- minimum margins: top 4, right 1, bottom 1, left 1.
+
+The exhaustive roster total falls from 339 to 311 edge-contact frames and from
+36 to 16 out-of-bounds frames. The only remaining out-of-bounds family is
 Haunted Puppet.
 
 ## Treatment
