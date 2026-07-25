@@ -2,7 +2,8 @@
 
 Status: exhaustive assessment complete; three-family pilot visually approved;
 Frog, Jellyfish, Mole, Scarecrow, and Drake frame-safety repairs visually
-approved; Centipede frame-safety repair visually approved.
+approved; Centipede frame-safety repair visually approved; Carnivorous Plant
+frame-safety repair visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -11,6 +12,7 @@ Frame-safety group 2 visual approval: 2026-07-25
 Frame-safety group 3 visual approval: 2026-07-25
 Frame-safety group 4 visual approval: 2026-07-25
 Frame-safety group 5 visual approval: 2026-07-25
+Frame-safety group 6 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -203,6 +205,38 @@ Measured candidate result across all 192 Centipede frames:
 The exhaustive roster total falls from 455 to 419 edge-contact frames and from
 92 to 80 out-of-bounds frames. The remaining failures belong to Carnivorous
 Plant, Mantis, Moth, Octopus, and Haunted Puppet.
+
+## Frame-Safety Repair Group 6
+
+Approved after contact-sheet review of all four variants covering the side
+strike/recoil, mirrored strike, downward strike and idle roots, upward attack
+and hurt flash, and walking-root gait.
+
+Carnivorous Plant's generic side/down attack translation discarded one pollen
+mote in each side strike and both root tips in each downward strike. Its
+centered recoil still touched the edge, and the upward hurt recoil pushed the
+roots onto the bottom row.
+
+The candidate repair:
+
+- uses a one-pixel bite followed by a centered recoil in all directions;
+- lifts roots only in the downward strike and upward hurt poses that require it;
+- leaves the authored four-frame walking-root gait unchanged;
+- pulls the side pollen pair inward while preserving two detached diagonal motes;
+- preserves the maw, bloom, cavities, and total occupied-pixel count;
+- reserves at least one transparent cell on every side in every frame;
+- keeps Carnivorous Plant outline enablement as a separate approval gate.
+
+Measured candidate result across all 192 Carnivorous Plant frames:
+
+- zero source-edge contacts;
+- zero out-of-bounds writes;
+- enclosed-opening counts unchanged;
+- minimum margins: top 4, right 1, bottom 1, left 1.
+
+The exhaustive roster total falls from 419 to 391 edge-contact frames and from
+80 to 68 out-of-bounds frames. The remaining failures belong to Mantis, Moth,
+Octopus, and Haunted Puppet.
 
 ## Treatment
 

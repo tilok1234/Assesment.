@@ -2308,21 +2308,26 @@ function drawCarnivorousPlant(g, d, p, f, V, animId) {
   ][f] : { x: 0, bob: 0, lx: 8, ly: 21, rx: 13, ry: 21 };
   const bob = walking ? gait.bob : (animId === 'idle' && f === 1 ? 1 : 0);
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  const forwardLunge = animId === 'attack' ? (p.lunge === 2 ? 1 : 0) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const stem = V.stem, bloom = V.bloom, maw = V.maw, pollen = V.pollen;
   const bx = gait.x;
   const cx = walking ? bx + p.leg : 0;
+  // The walk and centered-recoil roots retain their authored gait. Lift only
+  // the translated vertical poses whose tips would otherwise reach row 23.
+  const rootLift = (d === 'down' && animId === 'attack' && forwardLunge === 1)
+    || (d === 'up' && animId === 'hurt' && p.lunge < 0) ? -1 : 0;
 
   // Bend the whole stalk with the bloom, then alternate the two roots as
   // actual stepping feet. The previous cycle moved only the bloom.
   R(10 + bx, 15 + bob, 4, 6 - bob, stem[0]); R(10 + bx, 19, 4, 2, stem[1]);
   S(9 + bx, 16 + bob, stem[0]); R(6 + bx, 17 + bob, 4, 2, stem[0]); S(6 + bx, 19 + bob, stem[1]);
   S(14 + bx, 15 + bob, stem[0]); R(14 + bx, 16 + bob, 4, 2, stem[0]); S(17 + bx, 18 + bob, stem[1]);
-  R(gait.lx, gait.ly, 3, 1, stem[1]); R(gait.rx, gait.ry, 3, 1, stem[1]);
-  S(gait.lx - 1, Math.min(22, gait.ly + 1), stem[1]); S(gait.rx + 2, Math.min(22, gait.ry + 1), stem[1]);
+  R(gait.lx, gait.ly + rootLift, 3, 1, stem[1]); R(gait.rx, gait.ry + rootLift, 3, 1, stem[1]);
+  S(gait.lx - 1, Math.min(22, gait.ly + 1 + rootLift), stem[1]); S(gait.rx + 2, Math.min(22, gait.ry + 1 + rootLift), stem[1]);
 
   if (d === 'right') {
     R(10 + cx, 8 + bob, 7, 7 - bob, bloom[0]);
@@ -2330,7 +2335,7 @@ function drawCarnivorousPlant(g, d, p, f, V, animId) {
     if (strike) {
       R(15 + cx, 9 + bob, 6, 5, INK); R(17 + cx, 11 + bob, 4, 2, maw);
       S(17 + cx, 9 + bob, '#f4f4f4'); S(19 + cx, 13 + bob, '#f4f4f4');
-      R(18, 17, 3, 1, stem[0]); S(21, 16, pollen); S(22, 15, pollen);
+      R(18, 17, 3, 1, stem[0]); S(21, 16, pollen); S(20, 15, pollen);
     } else {
       S(15 + cx, 10 + bob, pollen); R(16 + cx, 12 + bob, 2, 1, bloom[1]);
     }
