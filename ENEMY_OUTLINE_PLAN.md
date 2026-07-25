@@ -14,8 +14,8 @@ Shroom outline expansion visually approved; shared enemy-staff frame-safety
 repair visually approved; Golem frame-safety repair visually approved; Treant
 frame-safety repair visually approved; Worm frame-safety repair visually
 approved; Beetle frame-safety and directional silhouette repair visually
-approved; Bandit, Kobold, and Skeleton hybrid component-aware outlines visually
-approved.
+approved; Bandit, Kobold, Skeleton, and Ratfolk hybrid component-aware outlines
+visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -44,6 +44,7 @@ Frame-safety group 18 visual approval: 2026-07-25
 Hybrid outline group 1 visual approval: 2026-07-25
 Hybrid outline group 2 visual approval: 2026-07-25
 Hybrid outline group 3 visual approval: 2026-07-25
+Hybrid outline group 4 visual approval: 2026-07-25
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -809,6 +810,44 @@ Measured candidate result across the fourteen-family outline lane:
 - zero source-edge frames and zero out-of-bounds writes.
 
 This approved group remains limited to Skeleton. Another humanoid family still
+requires its own frame-safety evidence, exhaustive regression pass, and live
+visual approval.
+
+## Hybrid Outline Rollout Group 4
+
+Approved after live comparison of None, Complete B, and Selective C across
+Ratfolk's Skulker, Plague, and Blade variants, including the raised staff,
+mirrored side weapon strikes, and independently contoured tail.
+
+Ratfolk adds a new ownership risk: its three-pixel tail belongs to the body
+silhouette while Dagger, Staff, and Sword belong to the weapon owner. The
+Skulker, Plague, and Blade variants all use the compact humanoid rig, and the
+previously approved shared staff repair already reserves the top outline row in
+Plague's raised up-facing attack.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for Ratfolk without changing
+  another previously unsupported enemy;
+- preserves and independently contours every authored tail pixel in front,
+  rear, and mirrored side views;
+- keeps Dagger, Staff, and Sword colored cores intact at direct body/headgear
+  contacts;
+- preserves the Plague hood, snout, eye, rear weapon occlusion, and Selective C
+  breathing room;
+- changes no Ratfolk geometry, palette, animation, equipment placement,
+  catalog, saved state, or export schema.
+
+Measured candidate result across the fifteen-family outline lane:
+
+- 2,688 None-mode parity checks pass;
+- all 8,064 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 2,688 frames;
+- 1,582 validated Ratfolk body-side equipment-contact separator pixels across
+  the two outlined modes;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This approved group remains limited to Ratfolk. Another humanoid family still
 requires its own frame-safety evidence, exhaustive regression pass, and live
 visual approval.
 

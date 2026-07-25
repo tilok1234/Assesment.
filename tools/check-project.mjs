@@ -180,12 +180,12 @@ check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
-      'bandit', 'kobold', 'skeleton', 'scorpion', 'elemental',
+      'bandit', 'kobold', 'skeleton', 'ratfolk', 'scorpion', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the fourteen approval-gated families',
+  'enemy outline support must stay limited to the fifteen approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -598,6 +598,9 @@ for (const [family, variant, separatorX, separatorY] of [
   ['skeleton', 'archer', 17, 12],
   ['skeleton', 'lord', 17, 15],
   ['skeleton', 'lord', 8, 12],
+  ['ratfolk', 'skulker', 15, 13],
+  ['ratfolk', 'plague', 16, 13],
+  ['ratfolk', 'blade', 15, 13],
 ]) {
   const spec = { kind: 'enemy', family, variant };
   const source = renderPixels(spec, 'down', 'idle', 0);
@@ -646,6 +649,34 @@ for (const outlineMode of [
     skeletonGruntSource.every((pixel, index) => !pixel || outlined[index] === pixel),
     `skeleton grunt ${outlineMode} must preserve every unequipped bone/body source pixel`,
   );
+}
+
+for (const variant of ['skulker', 'plague', 'blade']) {
+  const spec = { kind: 'enemy', family: 'ratfolk', variant };
+  const source = renderPixels(spec, 'down', 'idle', 0);
+  const tailIndices = [
+    (20 * engine.SIZE) + 17,
+    (19 * engine.SIZE) + 18,
+    (19 * engine.SIZE) + 19,
+  ];
+  check(
+    tailIndices.every((index) => source[index]),
+    `ratfolk ${variant} down idle must retain all three authored tail pixels`,
+  );
+  for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const outlined = renderOutlinedPixels(spec, 'down', 'idle', 0, outlineMode);
+    check(
+      tailIndices.every((index) => outlined[index] === source[index]),
+      `ratfolk ${variant} ${outlineMode} must preserve the colored tail core`,
+    );
+    check(
+      outlined[(19 * engine.SIZE) + 20] === engine.OUTLINE_COLOR,
+      `ratfolk ${variant} ${outlineMode} must contour the detached tail tip`,
+    );
+  }
 }
 
 const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
