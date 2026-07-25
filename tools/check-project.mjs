@@ -183,8 +183,9 @@ check(
       'bandit', 'scorpion', 'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
+      'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the ten approval-gated families',
+  'enemy outline support must stay limited to the twelve approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(

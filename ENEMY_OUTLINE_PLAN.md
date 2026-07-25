@@ -9,7 +9,8 @@ repair visually approved; Haunted Puppet frame-safety repair visually
 approved; shared quadruped frame-safety repair visually approved; shared
 quadruped outline expansion visually approved; Crocodile, Turtle, and Griffin
 frame-safety repair visually approved; armored beast outline expansion visually
-approved; Slime and Shroom frame-safety repair visually approved.
+approved; Slime and Shroom frame-safety repair visually approved; Slime and
+Shroom outline expansion visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -531,6 +532,32 @@ Measured result across all 528 Slime and Shroom frames:
 - distinct first-strike and recoil frames in every variant and direction;
 - exhaustive roster contacts fall from 208 frames / 776 pixels to
   197 frames / 704 pixels.
+
+## Outline Rollout Group 3
+
+Approved after live comparison of None, Complete B, and Selective C for Slime
+and Shroom.
+
+Following approval of their frame-safety repair, these two compact grounded
+families are the third expansion beyond the original outline pilot. Across all
+528 frames, the candidate must:
+
+- keep None pixel-identical to the direct renderer;
+- preserve every colored source pixel in Complete B and Selective C;
+- add only `#1a1c2c` contour pixels;
+- keep enclosed transparency transparent;
+- leave no source or contour pixel outside the 24x24 frame;
+- keep Complete B and Selective C visibly distinct.
+
+Measured approved result:
+
+- 528 None-mode parity checks pass;
+- all 1,584 None/B/C mode cases preserve their source pixels;
+- Complete B and Selective C differ in all 528 frames;
+- zero source-edge frames and zero out-of-bounds writes.
+
+This candidate does not enable outlines for any of the remaining 45 enemy
+families.
 
 ## Treatment
 
