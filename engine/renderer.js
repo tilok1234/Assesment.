@@ -902,7 +902,9 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
   }
 
   // ---- headgear ----
-  if (includeHeadgear && gear !== 'none') drawGear(S, R, d, u, HT, hx, gear, oc, C);
+  if (includeHeadgear && gear !== 'none') {
+    drawGear(S, R, d, u + (C.headgearVerticalInset || 0), HT, hx, gear, oc, C);
+  }
 
   if (includeEquipment) drawShield(S, R, d, p, C, u, 'front', viewDir);
 
@@ -3041,6 +3043,8 @@ function buildHumanoidC(spec) {
       tail: spec.family === 'ratfolk' ? 'rat' : (spec.family === 'lizardfolk' ? 'lizard' : null),
       wings: V.wing || null,
       small: !!V.small, eye: V.eye || null,
+      headgearVerticalInset:
+        spec.family === 'cultist' && V.id === 'oracle' ? 1 : 0,
       weaponVerticalStrikeInset:
         (
           (spec.family === 'cyclops' && V.id === 'shepherd')

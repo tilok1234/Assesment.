@@ -200,8 +200,9 @@ check(
       'goblin',
       'zombie',
       'imp',
+      'cultist',
     ]),
-  'enemy outline support must stay limited to the forty-nine approval-gated families',
+  'enemy outline support must stay limited to the fifty approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -767,6 +768,7 @@ for (const [familyId, variantIds] of [
   ['goblin', ['scout', 'brute', 'shaman', 'archer', 'chief']],
   ['zombie', ['ghoul', 'rotter', 'brute']],
   ['imp', ['sprite', 'pyro', 'fiend']],
+  ['cultist', ['acolyte', 'zealot', 'oracle']],
 ]) {
   for (const variant of variantIds) {
     const spec = { kind: 'enemy', family: familyId, variant };
@@ -811,6 +813,8 @@ for (const variant of ['warrior', 'king']) {
 for (const [familyId, variantId] of [
   ['ogre', 'magi'],
   ['goblin', 'shaman'],
+  ['cultist', 'zealot'],
+  ['cultist', 'oracle'],
 ]) {
   for (const [direction, frame, expectedComponents] of [
     ['down', 1, 2],
@@ -986,7 +990,7 @@ for (const [direction, layer, expectedSparks] of [
   }
 }
 
-for (const familyId of ['dwarf', 'ogre', 'goblin', 'zombie', 'imp']) {
+for (const familyId of ['dwarf', 'ogre', 'goblin', 'zombie', 'imp', 'cultist']) {
   const cavityFamily = engine.ENEMIES.find((family) => family.id === familyId);
   for (const variant of cavityFamily.variants) {
     const spec = { kind: 'enemy', family: familyId, variant: variant.id };
@@ -1860,6 +1864,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
   'cyclops', 'troll', 'dwarf', 'ogre', 'goblin', 'zombie', 'imp',
+  'cultist',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {

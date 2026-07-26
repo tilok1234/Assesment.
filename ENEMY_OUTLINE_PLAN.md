@@ -40,7 +40,8 @@ cavity-preserving component-aware outline expansion are visually approved.
 Zombie vertical-strike frame-safety repair and cavity-preserving
 component-aware outline expansion are visually approved. Imp vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
-are visually approved.
+are visually approved. Cultist Oracle headgear frame-safety repair and
+cavity-preserving component-aware outline expansion are visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -93,6 +94,7 @@ Outline rollout group 21 visual approval: 2026-07-26
 Outline rollout group 22 visual approval: 2026-07-26
 Outline rollout group 23 visual approval: 2026-07-26
 Outline rollout group 24 visual approval: 2026-07-26
+Outline rollout group 25 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1923,6 +1925,57 @@ detached horn tips, Pyro sparks, held-equipment seams, every preserved source
 opening, all three Imp silhouettes, and both outline modes. The repaired
 margins, cavity-preserving component treatment, thin horn tips, and restrained
 spark treatment are approved.
+
+## Outline Rollout Approved Group 25
+
+Visually approved as a single-family Cultist pass.
+
+After Imp approval, eight enemy families remained outside the outline lane.
+Cultist is the next unsupported family in catalog order. Its only frame-edge
+contact was the Oracle wizard hat: two tip pixels touched the top source row in
+36 idle, walk, attack, and hurt frames, for 72 edge pixels total. No Cultist
+frame attempted an out-of-bounds write.
+
+The Zealot and Oracle staff strikes also carry deliberately detached one-pixel
+spell sparks. Giving those singletons a normal eight-neighbor halo would turn
+their thin magical accents into black boxes.
+
+The candidate:
+
+- gives only the Cultist Oracle's headgear a one-pixel vertical inset, retaining
+  the complete brim, crown, highlight, bob, and attack motion while reserving
+  the top outline row;
+- reduces the full enemy corpus from 130 to 94 source-edge frames and from 518
+  to 446 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Acolyte, Zealot, and Oracle
+  without changing another unsupported family;
+- uses the cavity-preserving component-aware humanoid path so the dagger and
+  staffs retain readable body-side seams;
+- preserves all 122 enclosed openings across 96 source frames and all 13
+  multi-component frames / 30 detached source pixels;
+- leaves the Zealot and Oracle's detached one-pixel staff sparks unhaloed while
+  retaining nearby body, weapon, and contact contours;
+- adds all 144 Cultist frames to the source-margin regression plus focused
+  equipment-separator, staff-spark, halo, and exhaustive cavity checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the fifty-family outline lane:
+
+- 8,544 None-mode parity checks pass against the corrected source renderer;
+- all 25,632 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 8,544 frames;
+- the focused single-family review covers 144 source frames / 432 mode cases,
+  adds 11,440 Complete B plus 9,455 Selective C contour pixels, and retains
+  1,520 body-side equipment separator pixels;
+- the complete lane adds 606,369 Complete B plus 483,193 Selective C contour
+  pixels and retains 19,108 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the repaired Oracle hat margin, the
+Zealot and Oracle spell sparks, held-equipment seams, every preserved source
+opening, all three Cultist silhouettes, and both outline modes. The candidate
+is visually approved.
 
 ## Treatment
 
