@@ -158,6 +158,7 @@ const runtimeSources = {
   'engine/sheets.js': await readFile(path.join(root, 'engine', 'sheets.js'), 'utf8'),
   'engine/weapon-renderer.js': await readFile(path.join(root, 'engine', 'weapon-renderer.js'), 'utf8'),
 };
+const stylesSource = await readFile(path.join(root, 'styles.css'), 'utf8');
 for (const [relativePath, source] of Object.entries(runtimeSources)) {
   check(!/\bnew\s+Function\s*\(/.test(source), `${relativePath}: runtime code generation with new Function is not allowed`);
   check(!/\beval\s*\(/.test(source), `${relativePath}: runtime code generation with eval is not allowed`);
@@ -202,11 +203,43 @@ const productionRerollImports = [
 ].map((match) => match[1]).sort();
 const editableSnapshotSource = runtimeSources['app.js'].slice(
   runtimeSources['app.js'].indexOf('function editableSnapshot('),
+  runtimeSources['app.js'].indexOf('function sanitizeProductionRollSession('),
+);
+const historySnapshotSource = runtimeSources['app.js'].slice(
   runtimeSources['app.js'].indexOf('function historySnapshot('),
+  runtimeSources['app.js'].indexOf('function snapshotsMatch('),
+);
+const setStateSource = runtimeSources['app.js'].slice(
+  runtimeSources['app.js'].indexOf('function setState('),
+  runtimeSources['app.js'].indexOf('function restoreSnapshot('),
+);
+const restoreSnapshotSource = runtimeSources['app.js'].slice(
+  runtimeSources['app.js'].indexOf('function restoreSnapshot('),
+  runtimeSources['app.js'].indexOf('function undo('),
+);
+const optionGroupSource = runtimeSources['app.js'].slice(
+  runtimeSources['app.js'].indexOf('function createOptionGroup('),
+  runtimeSources['app.js'].indexOf('function randomDifferent('),
+);
+const playerGroupsSource = runtimeSources['app.js'].slice(
+  runtimeSources['app.js'].indexOf('function playerGroups('),
+  runtimeSources['app.js'].indexOf('function enemyGroups('),
 );
 const rollProductionSource = runtimeSources['app.js'].slice(
   runtimeSources['app.js'].indexOf('function rollProduction()'),
   runtimeSources['app.js'].indexOf('function randomize()'),
+);
+const compatibleRerollSource = runtimeSources['app.js'].slice(
+  runtimeSources['app.js'].indexOf('function rerollCompatibleCategory('),
+  runtimeSources['app.js'].indexOf('function randomize()'),
+);
+const wildcardRollSource = runtimeSources['app.js'].slice(
+  runtimeSources['app.js'].indexOf('function randomize()'),
+  runtimeSources['app.js'].indexOf('async function triggerDownload('),
+);
+const compatibleFieldSource = runtimeSources['app.js'].slice(
+  runtimeSources['app.js'].indexOf('const PLAYER_COMPATIBLE_REROLL_FIELDS'),
+  runtimeSources['app.js'].indexOf('const historyPast'),
 );
 const productionPersistenceSources = [
   runtimeSources['app.js'].slice(
@@ -256,9 +289,52 @@ check(
   'compatible Production rerolls must remain portable and independent from DOM, canvas, storage, ZIP, renderers, and ambient randomness',
 );
 check(
-  !runtimeSources['app.js'].includes('rerollProductionPlayerCategory')
-    && !runtimeSources['app.js'].includes('PRODUCTION_COMPATIBLE_REROLL'),
-  'compatible Production reroll Slice 1 must not add editor integration',
+  compatibleRerollSource.includes('E.rerollProductionPlayerCategory(')
+    && compatibleRerollSource.includes('E.PRODUCTION_COMPATIBLE_REROLL_CATEGORIES.find('),
+  'compatible Production category actions must use only the stable sprite-engine.js facade API',
+);
+check(
+  optionGroupSource.includes("compatibleButton.className = 'category-compatible'")
+    && optionGroupSource.includes("compatibleButton.textContent = 'C'")
+    && optionGroupSource.includes('`Compatible reroll ${actionName}`')
+    && optionGroupSource.includes('compatibleButton.disabled = !canCompatibleReroll'),
+  'supported Player categories must expose explicit accessible C buttons that stay disabled without Production context',
+);
+check(
+  optionGroupSource.includes('`Wildcard reroll ${label}`')
+    && wildcardRollSource.includes('E.randomPlayer()')
+    && wildcardRollSource.includes('{ productionRoll: null }'),
+  'existing Player randomizers must remain explicit unrestricted Wildcard actions and whole-character Wildcard must clear Production context',
+);
+check(
+  JSON.stringify(
+    [...compatibleFieldSource.matchAll(/^\s{2}(\w+): '(\w+)',$/gm)]
+      .map((match) => [match[1], match[2]]),
+  ) === JSON.stringify([
+    ['outfitTier', 'powerTier'],
+    ['species', 'species'],
+    ['bodyBuild', 'bodyBuild'],
+    ['skin', 'skin'],
+    ['hairStyle', 'hairStyle'],
+    ['hairColor', 'hairColor'],
+    ['expression', 'expression'],
+    ['faceDetail', 'faceDetail'],
+    ['headgear', 'headgear'],
+    ['outfitColor', 'outfitColor'],
+    ['weapon', 'weapon'],
+    ['shield', 'shield'],
+    ['offhand', 'offhand'],
+  ])
+    && !compatibleFieldSource.includes('leftHand')
+    && [...compatibleFieldSource.matchAll(/PLAYER_COMPATIBLE_REROLL_FIELDS\.(\w+)/g)].length === 0
+    && [...playerGroupsSource.matchAll(/PLAYER_COMPATIBLE_REROLL_FIELDS\.(\w+)/g)].length === 13,
+  'the editor must expose only the thirteen explicit uncoupled Player mappings, with armor tier routed to semantic powerTier',
+);
+check(
+  stylesSource.includes('.category-compatible')
+    && stylesSource.includes('.category-compatible:not(:disabled):hover')
+    && stylesSource.includes('.category-compatible:disabled'),
+  'compatible category controls must remain visually distinct and communicate their disabled state',
 );
 check(
   !runtimeSources['engine/production-rolls.js'].includes('Math.random')
@@ -282,6 +358,16 @@ check(
     && runtimeSources['app.js'].includes('previewEffects: source.previewEffects === true')
     && !editableSnapshotSource.includes('previewEffects'),
   'Production Roll history must restore Effects Off without adding effect-preview metadata to presets or comparison snapshots',
+);
+check(
+  historySnapshotSource.includes('productionRoll: sanitizeProductionRollSession(productionRoll)')
+    && restoreSnapshotSource.includes(
+      'lastProductionRoll = sanitizeProductionRollSession(snapshot.productionRoll)',
+    )
+    && setStateSource.includes('historySnapshot(next, nextProductionRoll)')
+    && !editableSnapshotSource.includes('productionRoll')
+    && !editableSnapshotSource.includes('paletteFamily'),
+  'compatible Production context must be undoable in memory while remaining outside persisted, preset, and comparison snapshots',
 );
 check(runtimeSources['engine/sheets.js'].includes('drawAssembledSprite'), 'assembled sheet exports must use the shared assembled-output coordinator');
 check(runtimeSources['app.js'].includes('E.drawAssembledSprite('), 'assembled editor previews must use the shared assembled-output coordinator');
@@ -339,11 +425,22 @@ check(
   'Production Roll must apply frozen Form shading and Effects Off while preserving the current outline treatment',
 );
 check(
-  runtimeSources['app.js'].includes('lastProductionRoll = {')
+  runtimeSources['app.js'].includes('let lastProductionRoll = null')
+    && runtimeSources['app.js'].includes('function sanitizeProductionRollSession(')
     && runtimeSources['app.js'].includes('archetypeName:')
     && runtimeSources['app.js'].includes('powerTierName:')
-    && !runtimeSources['app.js'].includes('productionRoll:'),
-  'the editor must show ephemeral Production archetype and power-tier status without adding roll provenance to stored state',
+    && !editableSnapshotSource.includes('productionRoll'),
+  'the editor must show ephemeral Production context without adding roll provenance to stored state',
+);
+check(
+  compatibleRerollSource.includes('if (!result.changed)')
+    && compatibleRerollSource.includes('renderProductionRollControls();')
+    && compatibleRerollSource.includes('setState({ player }, {')
+    && compatibleRerollSource.includes('preserveCompatibleNotice: true')
+    && !compatibleRerollSource.includes('outlineMode')
+    && !compatibleRerollSource.includes('shadeMode')
+    && !compatibleRerollSource.includes('previewEffects'),
+  'compatible category rerolls must be one undoable Player edit, report no-alternative results, and preserve presentation settings',
 );
 check(
   productionPersistenceSources.every((source) => (

@@ -19,8 +19,9 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
 - Sprite-only undo and redo through the header controls or `Ctrl+Z` / `Ctrl+Y`
-- Explicit Production Roll and Wildcard Roll whole-character actions plus
-  per-category randomization with undo support
+- Explicit Production Roll and Wildcard Roll whole-character actions, thirteen
+  Production-compatible Player category actions, and unrestricted
+  per-category Wildcard rerolls with undo support
 - Persistent character names, live preview labels, and Windows-safe custom PNG filenames
 - Editable skin, hair, and outfit tone pairs with a reusable local palette library
 - Full-sheet, selected-animation, and selected-direction PNG export scopes
@@ -95,6 +96,16 @@ presets, packs, batches, class packs, kits, and exports store the resolved
 character without its seed or audit trail. Production applies Form shading and
 Effects Off in one undoable action while preserving the current outline;
 Wildcard retains the former unrestricted `randomPlayer()` behavior.
+
+After a Production Roll, supported Player categories expose a secondary `C`
+button that selects only Production-compatible alternatives under the known
+class, power-tier, and palette-family context. The existing arrow remains an
+unrestricted Wildcard reroll. Armor's compatible action changes equipped
+armor, weapon, and shield tiers as one coherent power-tier choice; unsupported
+or coupled categories do not receive misleading controls. Context is
+history-only and never enters presets, packs, recipes, exports, or schemas. If
+no compatible alternative exists, the editor reports that result without
+changing the player.
 
 ## Preview controls
 

@@ -3,7 +3,8 @@
 Status: Production v1 policy, balanced review corpus, and live editor
 integration approved on 2026-07-26. Slices 1-5 are complete and pushed at
 `aa77666`. Slice 6 implementation and its technical gates received final
-integration approval on 2026-07-27.
+integration approval on 2026-07-27. The separately planned compatible-category
+follow-up is also complete and approved under `COMPATIBLE_REROLL_PLAN.md`.
 
 This plan defines a curated whole-character roll that favors coherent,
 readable, game-ready player sprites while preserving the existing unrestricted
@@ -32,8 +33,10 @@ baselines, and release artifacts.
   reports no warnings or errors.
 - No fixture or visual baseline was changed, and no release artifact was
   rebuilt.
-- Slices 0-6 are complete and approved. The checkpoint containing this status
-  follows `aa77666`; later deferred follow-ups remain unauthorized.
+- Slices 0-6 are complete and approved. Final Production checkpoint `108b2bb`
+  is followed by compatible pure-policy checkpoint `a571b1e` and the final
+  compatible editor/documentation checkpoint containing this status.
+- Remaining deferred follow-ups remain separately unauthorized.
 
 ## Executive assessment
 
@@ -548,18 +551,25 @@ Exit criteria:
 
 ## Deferred follow-ups
 
-These are useful only after Production v1 is accepted:
+These are useful only after Production v1 is accepted.
 
-1. **Compatible category reroll**, with its pure policy Slice 1 completed
-   under `COMPATIBLE_REROLL_PLAN.md`, that filters one semantic category
-   without silently rewriting unrelated choices.
-2. **Production compatibility inspector** returning Custom/Compatible plus
+Completed follow-up:
+
+- **Compatible category reroll** is complete under
+  `COMPATIBLE_REROLL_PLAN.md`. Its pure policy filters one semantic category
+  without silently rewriting unrelated choices; the approved Player editor
+  exposes thirteen explicit `C` actions while retaining unrestricted Wildcard
+  arrows and history-only context.
+
+Remaining follow-ups:
+
+1. **Production compatibility inspector** returning Custom/Compatible plus
    explainable reasons.
-3. **Seed replay and sharing**.
-4. **Optional provenance metadata** in exported recipes.
-5. **Custom-palette harmony generation**.
-6. **Enemy encounter or roster rolls** using separate family/biome policy.
-7. **Multiple production profiles**, such as grounded, heroic, low-fantasy, or
+2. **Seed replay and sharing**.
+3. **Optional provenance metadata** in exported recipes.
+4. **Custom-palette harmony generation**.
+5. **Enemy encounter or roster rolls** using separate family/biome policy.
+6. **Multiple production profiles**, such as grounded, heroic, low-fantasy, or
    boss-ready.
 
 Each follow-up requires its own scope and compatibility decision.

@@ -1,12 +1,13 @@
 # Project Handoff
 
-Date: 2026-07-26
+Date: 2026-07-27
 
 ## Canonical Continuation
 
-The enemy-outline, Form-shading, Lantern, and Production Roll v1 phases are
-complete. Their rendering, editor, persistence/export compatibility, review,
-and validation boundaries are approved on `codex/form-shading`.
+The enemy-outline, Form-shading, Lantern, Production Roll v1, and compatible
+Production reroll phases are complete. Their rendering, editor,
+persistence/export compatibility, review, and validation boundaries are
+approved on `codex/form-shading`.
 
 The user explicitly approved both the Form algorithm and live integration on
 2026-07-26, then selected Form as the new/reset Player/Enemy editor default.
@@ -38,13 +39,14 @@ and live technical gates pass, and the user gave final integration approval on
 2026-07-27. The completed Production v1 checkpoint is `108b2bb` (`Complete
 production roll integration gate`), pushed to `origin/codex/form-shading`.
 
-The user selected compatible per-category Production rerolls as the next lane
-on 2026-07-27. `COMPATIBLE_REROLL_PLAN.md` is its authority. Slice 1's
-pure-engine boundary is complete and approved for checkpoint commit/push:
-deterministic filtering through the approved Production validator, explicit
-semantic categories, ordinary copied players, and immutable audit metadata.
-It does not add editor controls, persistence, context inference, schemas,
-render changes, or release work.
+Compatible per-category Production rerolls are complete and approved on
+2026-07-27. `COMPATIBLE_REROLL_PLAN.md` is the lane authority. The pure engine
+checkpoint is `a571b1e` (`Add compatible Production reroll policy`). The
+approved editor exposes thirteen explicit Player `C` actions while keeping all
+existing category arrows unrestricted Wildcards. Known class, power-tier, and
+palette context exists only in module state and history; it never enters
+ordinary players, presets, packs, recipes, exports, or schemas. Live history,
+no-alternative, coupled-tier, Wildcard, and cross-mode gates pass.
 
 Do not resume old weapon, shield, transparency, effect-compositor, executable,
 or enemy-outline work unless the user explicitly changes priority. Additional
@@ -60,19 +62,22 @@ off-hand art also requires a new focused plan and visual approval gate.
    git log -5 --oneline
    ```
 
-2. Confirm `codex/form-shading` contains pushed Production checkpoint
-   `108b2bb`, based on policy/editor checkpoint `aa77666`, Lantern/plan
-   checkpoint `01b3f1a`, approved Form checkpoint `a4310ec`, and
-   effects-default checkpoint `2a1111f`.
+2. Confirm `codex/form-shading` contains pure compatible-reroll checkpoint
+   `a571b1e` and the final compatible editor/documentation checkpoint that
+   contains this handoff. Its ancestors include final Production checkpoint
+   `108b2bb`, policy/editor checkpoint `aa77666`, Lantern/plan checkpoint
+   `01b3f1a`, approved Form checkpoint `a4310ec`, and effects-default
+   checkpoint `2a1111f`.
 3. Read `README.md`, `ARCHITECTURE.md`, this file,
    `PRODUCTION_ROLL_PLAN.md`,
    `OUTLINE_RENDERING_PLAN.md`, `ENEMY_OUTLINE_PLAN.md`, and
    `SHADE_RENDERING_PLAN.md`.
-4. Read `COMPATIBLE_REROLL_PLAN.md` and confirm its Slice 1 checkpoint follows
-   `108b2bb` and is aligned with its upstream.
-5. Do not start editor integration without a new explicit request. Persistence,
-   provenance, context inference, enemy Production rolls, effect-compositor,
-   fixture/baseline, release, and Windows-build work remain outside Slice 1.
+4. Read `COMPATIBLE_REROLL_PLAN.md` and treat both its pure policy and editor
+   integration as complete.
+5. No new implementation lane is active. Do not infer authorization for
+   compatibility context inference, persistence/provenance, enemy Production
+   rolls, effect-compositor work, fixtures/baselines, releases, or Windows
+   builds.
 
 ## Git State At Handoff
 
@@ -87,8 +92,11 @@ off-hand art also requires a new focused plan and visual approval gate.
   (`Complete production roll integration gate`)
 - `108b2bb` is pushed to `origin/codex/form-shading`; compatible-reroll Slice 1
   starts from that clean remote-aligned checkpoint.
-- Compatible-reroll Slice 1 was approved for commit/push on 2026-07-27; its
-  checkpoint is the commit containing this handoff and follows `108b2bb`.
+- Compatible-reroll pure-policy checkpoint: `a571b1e`
+  (`Add compatible Production reroll policy`)
+- `a571b1e` is pushed to `origin/codex/form-shading`.
+- The final approved compatible editor/documentation checkpoint is the commit
+  containing this handoff and follows `a571b1e`.
 - Approved Lantern/plan checkpoint: `01b3f1a`
   (`Add approved Lantern off-hand and production roll plan`)
 - `01b3f1a` is an ancestor of `aa77666`.
@@ -226,10 +234,11 @@ baseline.
 
 Production editor integration is Player-only. It applies the resolved player,
 Form shading, and Effects Off in one history entry while preserving the
-current outline. Wildcard and per-category randomizers retain their existing
-behavior. Preset v12, ordinary pack v3, Equipment Variant Batch/Class Pack v3,
-Master Kit v2, and Complete Kit/Pack v12 remain unchanged; all receive only the
-resolved ordinary player specification.
+current outline. Whole-character Wildcard and category-arrow randomizers retain
+their unrestricted behavior; compatible category actions are a separate
+approved follow-up. Preset v12, ordinary pack v3, Equipment Variant Batch/Class
+Pack v3, Master Kit v2, and Complete Kit/Pack v12 remain unchanged; all receive
+only the resolved ordinary player specification.
 
 Slice 6 adds the package review command plus focused persistence-boundary,
 class-pack, equipment-batch, Complete Kit, Wildcard, schema-version, and 48
@@ -240,6 +249,48 @@ preset/pack round-trips, category locality, Player-only mode isolation, and
 export-action smoke with no console warnings or errors. The temporary preset
 and pack entry were removed, and the original Player document plus all 16
 pre-existing enemy pack entries were restored exactly.
+
+## Approved Compatible Production Reroll Slice
+
+`COMPATIBLE_REROLL_PLAN.md` is the authority for the completed compatible
+category lane:
+
+- immutable policy identity is
+  `{ id: 'production-compatible-reroll-v1', version: 1 }`;
+- portable seeds select deterministically from the complete candidate set;
+- every candidate is filtered through `validateProductionPlayer()`;
+- results are ordinary deep-copied players with immutable context and audit
+  metadata;
+- fourteen pure semantic categories include explicit combined left-hand and
+  coherent equipment-power-tier ownership;
+- thirteen Player editor `C` controls expose the uncoupled categories plus
+  one armor-to-power-tier mapping;
+- Outfit, Weapon tier, and Shield tier keep only unrestricted Wildcard arrows;
+- the pure combined left-hand category is not exposed as an ambiguous extra
+  control beneath Shield or Off-hand;
+- known Production context is history-only, undoable, and excluded from every
+  persistence/export schema;
+- whole-character Wildcard and Player document replacement clear context,
+  while category Wildcards and manual edits retain it as Custom;
+- no-compatible-alternative outcomes report without changing the player or
+  adding history;
+- Enemy and Effect modes expose no compatible actions.
+
+The validator passes 4,200 deterministic compatible cases across 300
+Production players and 555 explicit no-alternative cases, plus invalid-input,
+locality, catalog, deep-copy, immutability, dependency, facade, mapping,
+Wildcard, and persistence-boundary checks. Live browser smoke passes
+single-field compatible changes, coherent armor/weapon/shield tier changes,
+no-alternative status, compatible and whole-Wildcard undo/redo, category
+Wildcard context retention, and Enemy/Effect isolation. Form, Complete B,
+Effects Off, Attack/Down/frame 2, 20x/4x, the empty preset library, and all 16
+pre-existing pack entries were restored exactly; the console reported no
+warnings or errors.
+
+No renderer, sprite geometry, component path, fixture, approved baseline,
+effect behavior, schema version, release artifact, or Windows build changed.
+Compatibility inspection for arbitrary saved/manual players remains a
+separate context-inference follow-up.
 
 ## Shade Plan Boundary
 
@@ -411,8 +462,8 @@ until a deliberate approved release checkpoint.
   off-hand boundaries.
 - `PRODUCTION_ROLL_PLAN.md`: completed Production v1 product contract,
   architecture, policy/review/editor slices, and final Slice 6 gate.
-- `COMPATIBLE_REROLL_PLAN.md`: completed compatible per-category reroll Slice 1
-  and later approval-gated editor slices.
+- `COMPATIBLE_REROLL_PLAN.md`: completed pure and editor-compatible
+  per-category reroll lane.
 - `ENEMY_OUTLINE_PLAN.md`: completed enemy rollout evidence.
 - `OUTLINE_RENDERING_PLAN.md`: current player/enemy outline contract.
 - `README.md`: user-facing capabilities and validation commands.

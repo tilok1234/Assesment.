@@ -225,6 +225,20 @@ schema version, renderer, geometry, fixture, baseline, effect compositor,
 release artifact, or Windows build changed. Slice 6's technical compatibility
 gate received final integration approval on 2026-07-27.
 
+The thirty-first Phase 5 slice completes compatible Production category
+rerolls. The pure `production-compatible-reroll-v1` policy deterministically
+filters complete candidate catalogs through the approved Production validator
+and changes only one declared semantic category. Thirteen explicit Player `C`
+buttons coexist with sixteen unchanged unrestricted category-Wildcard arrows;
+armor maps to one coherent power-tier action for equipped armor, weapon, and
+shield. Known class, tier, and palette context is history-only, so compatible
+changes undo/redo without entering ordinary players, presets, packs, recipes,
+exports, or schemas. The full gate passes 4,200 compatible cases, 555 explicit
+no-alternative cases, live single-field and coupled-tier changes,
+whole/category Wildcard boundaries, and Player/Enemy/Effect isolation. No
+renderer, geometry, fixture, baseline, effect behavior, release artifact, or
+Windows build changed.
+
 Candidate additions:
 
 - More body types beyond the completed four-build silhouette foundation

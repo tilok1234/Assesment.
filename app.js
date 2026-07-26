@@ -209,7 +209,24 @@ let selectedPresetId = '';
 let selectedPaletteId = '';
 let selectedLoadoutId = '';
 let productionRollCounter = 0;
+let compatibleRerollCounter = 0;
 let lastProductionRoll = null;
+let compatibleRerollNotice = '';
+const PLAYER_COMPATIBLE_REROLL_FIELDS = Object.freeze({
+  outfitTier: 'powerTier',
+  species: 'species',
+  bodyBuild: 'bodyBuild',
+  skin: 'skin',
+  hairStyle: 'hairStyle',
+  hairColor: 'hairColor',
+  expression: 'expression',
+  faceDetail: 'faceDetail',
+  headgear: 'headgear',
+  outfitColor: 'outfitColor',
+  weapon: 'weapon',
+  shield: 'shield',
+  offhand: 'offhand',
+});
 const historyPast = [];
 const historyFuture = [];
 let lastTime = 0;
@@ -432,10 +449,34 @@ function editableSnapshot(source = state) {
   };
 }
 
-function historySnapshot(source = state) {
+function sanitizeProductionRollSession(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
+  const context = value.context;
+  if (
+    !context
+    || !E.CLASS_TEMPLATES.some((template) => template.id === context.archetype)
+    || !E.OUTFIT_TIERS.some((tier) => tier.id === context.powerTier)
+    || !E.PRODUCTION_PALETTE_FAMILIES.some((family) => family.id === context.paletteFamily)
+  ) return null;
+  const archetype = E.CLASS_TEMPLATES.find((template) => template.id === context.archetype);
+  const tier = E.OUTFIT_TIERS.find((item) => item.id === context.powerTier);
+  return {
+    player: sanitizePlayer(value.player),
+    context: {
+      archetype: context.archetype,
+      powerTier: context.powerTier,
+      paletteFamily: context.paletteFamily,
+    },
+    archetypeName: archetype?.name || context.archetype,
+    powerTierName: tier?.name || context.powerTier,
+  };
+}
+
+function historySnapshot(source = state, productionRoll = lastProductionRoll) {
   return {
     ...editableSnapshot(source),
     previewEffects: source.previewEffects === true,
+    productionRoll: sanitizeProductionRollSession(productionRoll),
   };
 }
 
@@ -448,23 +489,41 @@ function pushHistory(stack, snapshot) {
   if (stack.length > HISTORY_LIMIT) stack.shift();
 }
 
-function setState(patch, { persist = true, render = true, recordHistory = true } = {}) {
+function setState(
+  patch,
+  {
+    persist = true,
+    render = true,
+    recordHistory = true,
+    productionRoll = lastProductionRoll,
+    preserveCompatibleNotice = false,
+  } = {},
+) {
   const tracksSprite = ['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'shadeMode', 'previewEffects', 'characterName', 'exportName']
     .some((key) => Object.prototype.hasOwnProperty.call(patch, key));
   const before = tracksSprite ? historySnapshot() : null;
   const next = { ...state, ...patch };
+  const nextProductionRoll = sanitizeProductionRollSession(productionRoll);
 
-  if (recordHistory && before && !snapshotsMatch(before, historySnapshot(next))) {
+  if (
+    recordHistory
+    && before
+    && !snapshotsMatch(before, historySnapshot(next, nextProductionRoll))
+  ) {
     pushHistory(historyPast, before);
     historyFuture.length = 0;
   }
 
   state = next;
+  lastProductionRoll = nextProductionRoll;
+  if (tracksSprite && !preserveCompatibleNotice) compatibleRerollNotice = '';
   if (persist) persistState();
   if (render) renderUi();
 }
 
 function restoreSnapshot(snapshot) {
+  lastProductionRoll = sanitizeProductionRollSession(snapshot.productionRoll);
+  compatibleRerollNotice = '';
   state = {
     ...state,
     mode: snapshot.mode,
@@ -504,7 +563,9 @@ function resetCurrentDocument() {
       : { effect: sanitizeEffect(DEFAULT_STATE.effect), characterName: '', exportName: '', anim: 'attack', exportAnim: 'attack', frame: 0 };
   selectedPresetId = '';
   elements.presetName.value = '';
-  setState(patch);
+  setState(patch, {
+    productionRoll: state.mode === 'player' ? null : lastProductionRoll,
+  });
   setPresetStatus('Reset to defaults. Undo restores the previous sprite.');
 }
 
@@ -528,7 +589,7 @@ function restoreComparisonCopy() {
   const patch = snapshotPatch(state.comparison);
   if (!patch) return;
   closeComparison();
-  setState(patch);
+  setState(patch, { productionRoll: null });
 }
 
 function replaceComparisonCopy() {
@@ -799,7 +860,9 @@ function loadPackEntry(entryId) {
   patch.exportName = '';
   selectedPresetId = '';
   elements.presetName.value = '';
-  setState(patch);
+  setState(patch, {
+    productionRoll: entry.kind === 'player' ? null : lastProductionRoll,
+  });
   setPackStatus(`Loaded “${entry.name}” into the editor.`);
 }
 
@@ -960,7 +1023,9 @@ function loadSelectedPreset() {
       };
   patch.characterName = preset.characterName;
   patch.exportName = preset.exportName;
-  setState(patch);
+  setState(patch, {
+    productionRoll: preset.kind === 'player' ? null : lastProductionRoll,
+  });
   elements.presetName.value = preset.name;
   setPresetStatus(`Loaded “${preset.name}”.`);
 }
@@ -1089,7 +1154,9 @@ function loadSelectedCombatLoadout() {
   patch.anim = 'attack';
   patch.exportAnim = 'attack';
   patch.frame = 0;
-  setState(patch);
+  setState(patch, {
+    productionRoll: loadout.kind === 'player' ? null : lastProductionRoll,
+  });
   elements.loadoutName.value = loadout.name;
   setLoadoutStatus(`Loaded “${loadout.name}”.`);
 }
@@ -1371,7 +1438,12 @@ function renderProductionRollControls() {
   if (!isPlayer) return;
 
   if (!lastProductionRoll) {
-    elements.productionRollStatus.textContent = 'Production curated · Wildcard unrestricted';
+    elements.productionRollStatus.textContent = 'Production curated · C unlocks compatible rerolls';
+    return;
+  }
+
+  if (compatibleRerollNotice) {
+    elements.productionRollStatus.textContent = compatibleRerollNotice;
     return;
   }
 
@@ -1382,8 +1454,8 @@ function renderProductionRollControls() {
     && state.previewEffects === false;
   const label = `${lastProductionRoll.archetypeName} · ${lastProductionRoll.powerTierName}`;
   elements.productionRollStatus.textContent = exactProductionResult
-    ? label
-    : `Custom · last ${label}`;
+    ? `${label} · C ready`
+    : `Custom · ${label} context`;
 }
 
 function renderOutlineControls() {
@@ -1419,7 +1491,17 @@ function thumbUrl(spec) {
   return thumbCache.get(key);
 }
 
-function createOptionGroup({ label, selectedName, type, options, randomize, canRandomize }) {
+function createOptionGroup({
+  label,
+  selectedName,
+  type,
+  options,
+  randomize,
+  canRandomize,
+  compatibleReroll,
+  canCompatibleReroll,
+  compatibleName,
+}) {
   const group = document.createElement('section');
   group.className = 'option-group';
 
@@ -1436,11 +1518,29 @@ function createOptionGroup({ label, selectedName, type, options, randomize, canR
   randomizeButton.type = 'button';
   randomizeButton.className = 'category-randomize';
   randomizeButton.textContent = '↻';
-  randomizeButton.title = `Randomize ${label}`;
-  randomizeButton.setAttribute('aria-label', `Randomize ${label}`);
+  const randomizeLabel = state.mode === 'player'
+    ? `Wildcard reroll ${label}`
+    : `Randomize ${label}`;
+  randomizeButton.title = randomizeLabel;
+  randomizeButton.setAttribute('aria-label', randomizeLabel);
   randomizeButton.disabled = !canRandomize;
   randomizeButton.addEventListener('click', randomize);
-  headingMeta.append(selection, randomizeButton);
+  headingMeta.append(selection);
+  if (compatibleReroll) {
+    const compatibleButton = document.createElement('button');
+    compatibleButton.type = 'button';
+    compatibleButton.className = 'category-compatible';
+    compatibleButton.textContent = 'C';
+    const actionName = compatibleName || label;
+    compatibleButton.title = canCompatibleReroll
+      ? `Compatible reroll ${actionName}`
+      : `Run Production Roll to unlock compatible ${actionName.toLocaleLowerCase()} rerolls`;
+    compatibleButton.setAttribute('aria-label', `Compatible reroll ${actionName}`);
+    compatibleButton.disabled = !canCompatibleReroll;
+    compatibleButton.addEventListener('click', compatibleReroll);
+    headingMeta.append(compatibleButton);
+  }
+  headingMeta.append(randomizeButton);
   heading.append(title, headingMeta);
   group.append(heading);
 
@@ -1486,7 +1586,16 @@ function randomizeChoice(list, selected, pick) {
   if (choice) pick(choice.id);
 }
 
-function dotGroup(label, list, selected, pick) {
+function compatibleGroupAction(categoryId, name) {
+  if (!categoryId) return {};
+  return {
+    compatibleReroll: () => rerollCompatibleCategory(categoryId),
+    canCompatibleReroll: Boolean(lastProductionRoll),
+    compatibleName: name,
+  };
+}
+
+function dotGroup(label, list, selected, pick, compatibleCategory = null, compatibleName = label) {
   const selectedItem = list.find((item) => item.id === selected) || list[0];
   return {
     label,
@@ -1494,6 +1603,7 @@ function dotGroup(label, list, selected, pick) {
     type: 'dots',
     randomize: () => randomizeChoice(list, selectedItem.id, pick),
     canRandomize: list.length > 1,
+    ...compatibleGroupAction(compatibleCategory, compatibleName),
     options: list.map((item) => ({
       name: item.name,
       color: item.c[0],
@@ -1503,7 +1613,15 @@ function dotGroup(label, list, selected, pick) {
   };
 }
 
-function thumbnailGroup(label, list, selected, pick, specFor) {
+function thumbnailGroup(
+  label,
+  list,
+  selected,
+  pick,
+  specFor,
+  compatibleCategory = null,
+  compatibleName = label,
+) {
   const selectedItem = list.find((item) => item.id === selected) || list[0];
   return {
     label,
@@ -1511,6 +1629,7 @@ function thumbnailGroup(label, list, selected, pick, specFor) {
     type: 'thumbnails',
     randomize: () => randomizeChoice(list, selectedItem.id, pick),
     canRandomize: list.length > 1,
+    ...compatibleGroupAction(compatibleCategory, compatibleName),
     options: list.map((item) => ({
       name: item.name,
       image: thumbUrl(specFor(item)),
@@ -1532,6 +1651,8 @@ function playerGroups() {
     player.outfitTier,
     (value) => setPlayerOption('outfitTier', value),
     (item) => spec({ outfitTier: item.id }),
+    PLAYER_COMPATIBLE_REROLL_FIELDS.outfitTier,
+    'Equipment power tier',
   );
   outfitTierGroup.selectedName = player.outfitTier === 'tier5'
     ? outfit.tier5Name
@@ -1585,6 +1706,7 @@ function playerGroups() {
       player.species,
       (value) => setPlayerOption('species', value),
       (item) => spec({ species: item.id, headgear: 'none' }),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.species,
     ),
     thumbnailGroup(
       'Body build',
@@ -1592,22 +1714,37 @@ function playerGroups() {
       player.bodyBuild,
       (value) => setPlayerOption('bodyBuild', value),
       (item) => spec({ bodyBuild: item.id, headgear: 'none', outfit: 'tunic', outfitTier: 'tier1' }),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.bodyBuild,
     ),
-    dotGroup('Skin', E.SKINS, player.skin, (value) => setPlayerOption('skin', value)),
+    dotGroup(
+      'Skin',
+      E.SKINS,
+      player.skin,
+      (value) => setPlayerOption('skin', value),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.skin,
+    ),
     thumbnailGroup(
       'Hair style',
       E.HAIR_STYLES,
       player.hairStyle,
       (value) => setPlayerOption('hairStyle', value),
       (item) => spec({ hairStyle: item.id, headgear: 'none' }),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.hairStyle,
     ),
-    dotGroup('Hair color', E.HAIR_COLORS, player.hairColor, (value) => setPlayerOption('hairColor', value)),
+    dotGroup(
+      'Hair color',
+      E.HAIR_COLORS,
+      player.hairColor,
+      (value) => setPlayerOption('hairColor', value),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.hairColor,
+    ),
     thumbnailGroup(
       'Expression',
       E.EXPRESSIONS,
       player.expression,
       (value) => setPlayerOption('expression', value),
       (item) => spec({ expression: item.id, faceDetail: 'none', headgear: 'none', hairStyle: 'bald' }),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.expression,
     ),
     thumbnailGroup(
       'Facial detail',
@@ -1615,6 +1752,7 @@ function playerGroups() {
       player.faceDetail,
       (value) => setPlayerOption('faceDetail', value),
       (item) => spec({ faceDetail: item.id, headgear: 'none' }),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.faceDetail,
     ),
     thumbnailGroup(
       'Headgear',
@@ -1622,6 +1760,7 @@ function playerGroups() {
       player.headgear,
       (value) => setPlayerOption('headgear', value),
       (item) => spec({ headgear: item.id }),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.headgear,
     ),
     thumbnailGroup(
       'Outfit',
@@ -1636,6 +1775,7 @@ function playerGroups() {
       E.OUTFIT_COLORS,
       player.outfitColor,
       (value) => setPlayerOption('outfitColor', value),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.outfitColor,
     ),
     thumbnailGroup(
       'Weapon',
@@ -1643,6 +1783,7 @@ function playerGroups() {
       player.weapon,
       (value) => setPlayerOption('weapon', value),
       (item) => spec({ weapon: item.id }),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.weapon,
     ),
     weaponTierGroup,
     thumbnailGroup(
@@ -1655,6 +1796,7 @@ function playerGroups() {
         shieldTier: item.id === 'none' ? 'tier1' : player.shieldTier,
         offhand: 'none',
       }),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.shield,
     ),
     shieldTierGroup,
     thumbnailGroup(
@@ -1667,6 +1809,7 @@ function playerGroups() {
         shieldTier: 'tier1',
         offhand: item.id,
       }),
+      PLAYER_COMPATIBLE_REROLL_FIELDS.offhand,
     ),
   ].filter(Boolean);
 }
@@ -2401,26 +2544,64 @@ function createProductionRollSeed() {
   return `${prefix}:${Math.random().toString(36).slice(2)}`;
 }
 
+function createCompatibleRerollSeed(categoryId) {
+  compatibleRerollCounter += 1;
+  const prefix = `editor-compatible:${categoryId}:${Date.now().toString(36)}:${compatibleRerollCounter.toString(36)}`;
+  if (globalThis.crypto?.getRandomValues) {
+    const entropy = new Uint32Array(2);
+    globalThis.crypto.getRandomValues(entropy);
+    return `${prefix}:${entropy[0].toString(36)}${entropy[1].toString(36)}`;
+  }
+  return `${prefix}:${Math.random().toString(36).slice(2)}`;
+}
+
+function productionRollSession(player, context) {
+  return sanitizeProductionRollSession({ player, context });
+}
+
 function rollProduction() {
   if (state.mode !== 'player') return;
   const result = E.rollProductionPlayer(createProductionRollSeed());
   const player = sanitizePlayer(result.player);
-  const archetype = E.CLASS_TEMPLATES.find((template) => template.id === result.archetype);
-  const tier = E.OUTFIT_TIERS.find((item) => item.id === result.powerTier);
-  lastProductionRoll = {
-    player,
-    archetypeName: archetype?.name || result.archetype,
-    powerTierName: tier?.name || result.powerTier,
-  };
   setState({
     player,
     shadeMode: E.PRODUCTION_ROLL_FREEZE.presentation.shadeMode,
     previewEffects: false,
+  }, {
+    productionRoll: productionRollSession(player, result),
+  });
+}
+
+function rerollCompatibleCategory(categoryId) {
+  if (state.mode !== 'player' || !lastProductionRoll) return;
+  const category = E.PRODUCTION_COMPATIBLE_REROLL_CATEGORIES.find((item) => (
+    item.id === categoryId
+  ));
+  if (!category) return;
+  const result = E.rerollProductionPlayerCategory(
+    state.player,
+    lastProductionRoll.context,
+    category.id,
+    createCompatibleRerollSeed(category.id),
+  );
+  if (!result.changed) {
+    compatibleRerollNotice = `No compatible ${category.name.toLocaleLowerCase()} alternative`;
+    renderProductionRollControls();
+    return;
+  }
+  const player = sanitizePlayer(result.player);
+  const session = productionRollSession(player, result.context);
+  compatibleRerollNotice = `${category.name} compatible · ${session.archetypeName} · ${session.powerTierName}`;
+  setState({ player }, {
+    productionRoll: session,
+    preserveCompatibleNotice: true,
   });
 }
 
 function randomize() {
-  if (state.mode === 'player') setState({ player: sanitizePlayer(E.randomPlayer()) });
+  if (state.mode === 'player') {
+    setState({ player: sanitizePlayer(E.randomPlayer()) }, { productionRoll: null });
+  }
   else if (state.mode === 'enemy') setState({ enemy: E.randomEnemy() });
   else setState({ effect: E.randomEffect(), anim: 'attack', exportAnim: 'attack', frame: 0 });
 }
@@ -2937,7 +3118,7 @@ function applySelectedClassTemplate() {
   if (state.mode !== 'player' || classPackExporting || variantBatchExporting || packExporting || rosterKitExporting || masterKitExporting) return;
   const template = E.CLASS_TEMPLATES.find((item) => item.id === state.classTemplate) || E.CLASS_TEMPLATES[0];
   const player = sanitizePlayer(E.applyClassTemplate(state.player, template.id));
-  setState({ player });
+  setState({ player }, { productionRoll: null });
   elements.classPackStatus.textContent = `Applied ${template.name} defaults. This change can be undone.`;
 }
 

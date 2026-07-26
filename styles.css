@@ -428,7 +428,8 @@ canvas {
   white-space: nowrap;
 }
 
-.category-randomize {
+.category-randomize,
+.category-compatible {
   display: grid;
   width: 22px;
   height: 20px;
@@ -444,9 +445,29 @@ canvas {
   line-height: 1;
 }
 
-.category-randomize:hover {
+.category-compatible {
+  border-color: rgba(29, 123, 91, 0.26);
+  background: rgba(29, 123, 91, 0.08);
+  color: #176e50;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.category-randomize:not(:disabled):hover {
   border-color: var(--accent);
   background: rgba(74, 93, 199, 0.14);
+}
+
+.category-compatible:not(:disabled):hover {
+  border-color: #1d7b5b;
+  background: rgba(29, 123, 91, 0.16);
+}
+
+.category-randomize:disabled,
+.category-compatible:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
 }
 
 .dot-options {
