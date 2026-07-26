@@ -187,8 +187,9 @@ check(
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
       'bat', 'ghost', 'golem', 'snake',
+      'frog', 'jellyfish', 'scarecrow', 'gargoyle',
     ]),
-  'enemy outline support must stay limited to the twenty-eight approval-gated families',
+  'enemy outline support must stay limited to the thirty-two approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -1317,6 +1318,68 @@ for (const familyId of connectedOutlineBatchFamilies) {
               `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
                 + `${outlineMode} must retain one connected silhouette`,
             );
+          }
+        }
+      }
+    }
+  }
+}
+
+const separatedOutlineBatchFamilies = new Map([
+  ['frog', { minimumComponentPixels: 3, maximumComponents: 2 }],
+  ['jellyfish', { minimumComponentPixels: 2, maximumComponents: 4 }],
+  ['scarecrow', { minimumComponentPixels: 2, maximumComponents: 5 }],
+  ['gargoyle', { minimumComponentPixels: 1, maximumComponents: 3 }],
+]);
+for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
+  const family = engine.ENEMIES.find((candidate) => candidate.id === familyId);
+  for (const variant of family.variants) {
+    const spec = { kind: 'enemy', family: familyId, variant: variant.id };
+    for (const direction of engine.DIRS) {
+      for (const animation of engine.ANIMS) {
+        for (let frame = 0; frame < animation.frames; frame++) {
+          const source = renderPixels(spec, direction, animation.id, frame);
+          const sourceGroups = cardinalPixelComponentGroups(source);
+          check(
+            sourceGroups.length >= 1
+              && sourceGroups.length <= familyRules.maximumComponents,
+            `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `must retain no more than ${familyRules.maximumComponents} source components`,
+          );
+          for (const outlineMode of [
+            engine.OUTLINE_MODE_COMPLETE_B,
+            engine.OUTLINE_MODE_SELECTIVE_C,
+          ]) {
+            const outlined = renderOutlinedPixels(
+              spec,
+              direction,
+              animation.id,
+              frame,
+              outlineMode,
+            );
+            const outlinedGroups = cardinalPixelComponentGroups(outlined);
+            check(
+              outlinedGroups.length === sourceGroups.length,
+              `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+                + `${outlineMode} must keep authored components separated`,
+            );
+            for (const sourceGroup of sourceGroups) {
+              const outlinedGroup = outlinedGroups.find((group) => group.includes(sourceGroup[0]));
+              const shouldReceiveOutline =
+                sourceGroup.length >= familyRules.minimumComponentPixels;
+              check(
+                outlinedGroup
+                  && (
+                    shouldReceiveOutline
+                      ? outlinedGroup.length > sourceGroup.length
+                      : outlinedGroup.length === sourceGroup.length
+                  ),
+                `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+                  + `${outlineMode} must ${
+                    shouldReceiveOutline ? 'contour' : 'leave unhaloed'
+                  } its ${sourceGroup.length}-pixel component`,
+              );
+            }
           }
         }
       }

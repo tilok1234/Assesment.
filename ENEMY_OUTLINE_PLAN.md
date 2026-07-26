@@ -22,7 +22,8 @@ Beetle separated-component outline expansion visually approved; Wasp
 separated-component outline expansion visually approved; Mimic exterior
 outline expansion visually approved; Drake outline-native source rework and
 outline expansion visually approved; Bat, Ghost, Golem, and Snake clean
-exterior outline batch visually approved.
+exterior outline batch visually approved; Frog, Jellyfish, Scarecrow, and
+Gargoyle separated-component outline batch visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -62,6 +63,7 @@ Outline rollout group 8 visual approval: 2026-07-25
 Outline rollout group 9 visual approval: 2026-07-25
 Outline rollout group 10 visual approval: 2026-07-26
 Outline rollout group 11 visual approval: 2026-07-26
+Outline rollout group 12 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1288,6 +1290,52 @@ Measured candidate result across the twenty-eight-family outline lane:
 The focused comparison sheet covers every variant in the batch across front,
 back, left, and right attack poses. Its connected silhouettes and both outline
 modes are approved.
+
+## Outline Rollout Approved Group 12
+
+Visually approved as one focused batch covering Frog, Jellyfish, Scarecrow,
+and Gargoyle.
+
+These four families are frame-safe and cavity-free, but some attack poses
+contain deliberately detached source components. A single generic contour
+would either halo tiny attack accents into black blocks or weld physically
+separate anatomy back onto the body. The candidate therefore reuses the
+approved separated-component contour with a minimum meaningful component size
+chosen from the authored geometry of each family.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for all Frog, Jellyfish,
+  Scarecrow, and Gargoyle variants without changing another unsupported
+  family;
+- leaves Frog's detached two-pixel tongue tip unhaloed while contouring every
+  component of three pixels or more;
+- leaves Jellyfish's one-pixel attack sparks and Scarecrow's one-pixel straw
+  flecks unhaloed while contouring components of two pixels or more;
+- outlines Gargoyle's detached eleven-to-seventeen-pixel wings as meaningful
+  anatomy without bridging them onto the body;
+- preserves every authored source component and every None-mode pixel;
+- changes no source art, palette, animation, catalog, saved state, or export
+  schema;
+- adds a focused attack-frame selector to the review generator so frame 3
+  exposes all three tiny-accent cases and the Gargoyle wing separation in one
+  compact comparison sheet.
+
+Measured candidate result across the thirty-two-family outline lane:
+
+- 5,424 None-mode parity checks pass;
+- all 16,272 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 5,424 frames;
+- 1,440 batch-specific outlined-frame checks preserve authored component
+  separation and apply each family's minimum-size rule;
+- the focused four-family review covers 720 source frames / 2,160 mode cases
+  and adds 57,304 Complete B plus 45,944 Selective C contour pixels;
+- zero source-edge frames, zero out-of-bounds writes, and zero enclosed source
+  cavities.
+
+The focused comparison sheet uses attack frame 3 across front, back, left, and
+right directions. The detached attack accents, separated Gargoyle wings, and
+both outline modes are approved.
 
 ## Treatment
 

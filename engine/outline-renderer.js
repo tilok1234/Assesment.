@@ -41,6 +41,10 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'ghost',
   'golem',
   'snake',
+  'frog',
+  'jellyfish',
+  'scarecrow',
+  'gargoyle',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -64,7 +68,20 @@ const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'beetle',
   'wasp',
   'drake',
+  'frog',
+  'jellyfish',
+  'scarecrow',
+  'gargoyle',
 ]);
+const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
+  beetle: 3,
+  crab: 2,
+  wasp: 2,
+  drake: 2,
+  frog: 3,
+  jellyfish: 2,
+  scarecrow: 2,
+});
 
 export function enemySupportsOutline(spec) {
   return spec?.kind === 'enemy' && ENEMY_OUTLINE_FAMILY_SET.has(spec.family);
@@ -759,16 +776,14 @@ export function drawOutlinedSprite(
         // need their own contour. Wasp's detached wings need contours, while
         // its one-pixel stinger and Drake's one-pixel breath spark do not.
         // Drake's rebuilt body, wings, neck, head, and horns form one
-        // outline-native physical component in every direction. Eye Monster
-        // keeps the default because its orbitals are intended to read as
-        // individually outlined floating parts.
-        minimumComponentPixels: spec.family === 'beetle'
-          ? 3
-          : spec.family === 'crab'
-              || spec.family === 'wasp'
-              || spec.family === 'drake'
-            ? 2
-            : 1,
+        // outline-native physical component in every direction. Frog's
+        // two-pixel tongue tip and Jellyfish/Scarecrow's one-pixel attack
+        // accents stay unhaloed; Gargoyle's detached wings are large physical
+        // components and receive normal contours. Eye Monster keeps the
+        // default because its orbitals are intended to read as individually
+        // outlined floating parts.
+        minimumComponentPixels:
+          ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS[spec.family] || 1,
       })
       : outlineMaskForPixels(sourcePixels, mode, SIZE, SIZE);
 
