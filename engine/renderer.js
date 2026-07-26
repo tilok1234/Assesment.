@@ -3044,13 +3044,17 @@ function buildHumanoidC(spec) {
       wings: V.wing || null,
       small: !!V.small, eye: V.eye || null,
       headgearVerticalInset:
-        spec.family === 'cultist' && V.id === 'oracle' ? 1 : 0,
+        (
+          (spec.family === 'cultist' && V.id === 'oracle')
+          || (spec.family === 'orc' && V.id === 'warlord')
+        ) ? 1 : 0,
       weaponVerticalStrikeInset:
         (
           (spec.family === 'cyclops' && V.id === 'shepherd')
           || (spec.family === 'troll' && V.id === 'cave')
           || (spec.family === 'dwarf' && V.id === 'miner')
           || (spec.family === 'ogre' && V.id === 'brute')
+          || (spec.family === 'orc' && V.id === 'berserker')
         ) ? 1 : 0,
     };
   }

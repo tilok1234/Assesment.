@@ -201,8 +201,9 @@ check(
       'zombie',
       'imp',
       'cultist',
+      'orc',
     ]),
-  'enemy outline support must stay limited to the fifty approval-gated families',
+  'enemy outline support must stay limited to the fifty-one approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -769,6 +770,7 @@ for (const [familyId, variantIds] of [
   ['zombie', ['ghoul', 'rotter', 'brute']],
   ['imp', ['sprite', 'pyro', 'fiend']],
   ['cultist', ['acolyte', 'zealot', 'oracle']],
+  ['orc', ['grunt', 'berserker', 'warlord']],
 ]) {
   for (const variant of variantIds) {
     const spec = { kind: 'enemy', family: familyId, variant };
@@ -952,6 +954,57 @@ for (const variant of ['sprite', 'pyro', 'fiend']) {
   }
 }
 
+for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+  for (let frame = 0; frame < animation.frames; frame++) {
+    const spec = { kind: 'enemy', family: 'orc', variant: 'warlord' };
+    const headgear = renderPixels(spec, direction, animation.id, frame, { layer: 'headgear' });
+    const hornTips = cardinalSingletonIndices(headgear)
+      .filter((index) => Math.floor(index / engine.SIZE) < 5);
+    const expectedTips = direction === 'left' || direction === 'right' ? 1 : 2;
+    const source = renderPixels(spec, direction, animation.id, frame);
+    check(
+      hornTips.length === expectedTips,
+      `orc warlord ${direction} ${animation.id}/${frame + 1} `
+        + `must retain ${expectedTips} detached one-pixel horn tip(s)`,
+    );
+    check(
+      hornTips.every((index) => source[index]),
+      `orc warlord ${direction} ${animation.id}/${frame + 1} `
+        + 'must keep every detached horn tip visible in the complete sprite',
+    );
+    check(
+      headgear.slice(0, engine.SIZE).every((pixel) => pixel === null),
+      `orc warlord ${direction} ${animation.id}/${frame + 1} `
+        + 'headgear must reserve the top outline row',
+    );
+    for (const outlineMode of [
+      engine.OUTLINE_MODE_COMPLETE_B,
+      engine.OUTLINE_MODE_SELECTIVE_C,
+    ]) {
+      const outlined = renderOutlinedPixels(
+        spec,
+        direction,
+        animation.id,
+        frame,
+        outlineMode,
+      );
+      for (const hornIndex of hornTips) {
+        check(
+          outlined[hornIndex] === source[hornIndex],
+          `orc warlord ${direction} ${animation.id}/${frame + 1} ${outlineMode} `
+            + 'must preserve each detached horn-tip source pixel',
+        );
+        const adjacentOutline = adjacentOutlinePixelsAround(hornIndex, source, outlined);
+        check(
+          adjacentOutline <= 4,
+          `orc warlord ${direction} ${animation.id}/${frame + 1} ${outlineMode} `
+            + `must keep each detached horn tip out of a boxed halo (found ${adjacentOutline})`,
+        );
+      }
+    }
+  }
+}
+
 for (const [direction, layer, expectedSparks] of [
   ['down', 'weapon-front', 1],
   ['left', 'weapon-back', 2],
@@ -990,7 +1043,7 @@ for (const [direction, layer, expectedSparks] of [
   }
 }
 
-for (const familyId of ['dwarf', 'ogre', 'goblin', 'zombie', 'imp', 'cultist']) {
+for (const familyId of ['dwarf', 'ogre', 'goblin', 'zombie', 'imp', 'cultist', 'orc']) {
   const cavityFamily = engine.ENEMIES.find((family) => family.id === familyId);
   for (const variant of cavityFamily.variants) {
     const spec = { kind: 'enemy', family: familyId, variant: variant.id };
@@ -1864,7 +1917,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
   'cyclops', 'troll', 'dwarf', 'ogre', 'goblin', 'zombie', 'imp',
-  'cultist',
+  'cultist', 'orc',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -1909,6 +1962,7 @@ for (const [familyId, variantId] of [
   ['zombie', 'rotter'],
   ['zombie', 'brute'],
   ['imp', 'fiend'],
+  ['orc', 'berserker'],
 ]) {
   const verticalClubSpec = {
     kind: 'enemy',

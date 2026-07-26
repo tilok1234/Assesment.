@@ -37,6 +37,8 @@ component-aware outline expansion are visually approved. Ogre vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
 are visually approved. Goblin vertical-strike frame-safety repair and
 cavity-preserving component-aware outline expansion are visually approved.
+Orc Berserker vertical-strike and Warlord horned-helm frame-safety repairs with
+cavity-preserving component-aware outlines are visually approved.
 Zombie vertical-strike frame-safety repair and cavity-preserving
 component-aware outline expansion are visually approved. Imp vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
@@ -95,6 +97,7 @@ Outline rollout group 22 visual approval: 2026-07-26
 Outline rollout group 23 visual approval: 2026-07-26
 Outline rollout group 24 visual approval: 2026-07-26
 Outline rollout group 25 visual approval: 2026-07-26
+Outline rollout group 26 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1976,6 +1979,57 @@ across all four directions. They expose the repaired Oracle hat margin, the
 Zealot and Oracle spell sparks, held-equipment seams, every preserved source
 opening, all three Cultist silhouettes, and both outline modes. The candidate
 is visually approved.
+
+## Outline Rollout Approved Group 26
+
+Visually approved as a single-family Orc pass.
+
+After Cultist approval, seven enemy families remained outside the outline lane.
+Orc is the next unsupported family in catalog order. Its 144-frame family had
+22 source-edge frames / 26 edge pixels: the Berserker club supplied eight
+bottom/top pixels across down/up attack frames 2 and 3, while the Warlord's
+detached side-view horn tip supplied one top-row pixel in each of 18 idle,
+walk, attack, and hurt frames. No Orc frame attempted an out-of-bounds write.
+
+The candidate:
+
+- gives only the Orc Berserker's vertical club strike the approved one-pixel
+  inset, retaining distinct strike and recoil frames;
+- lowers only the Orc Warlord's complete horned helm by one pixel, preserving
+  the helmet proportions and original detached horn-tip topology while
+  reserving the top outline row;
+- reduces the full enemy corpus from 94 to 72 source-edge frames and from 446
+  to 420 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Grunt, Berserker, and Warlord
+  without changing another unsupported family;
+- uses the cavity-preserving component-aware humanoid path so the axe, club,
+  sword, and Warlord shield retain readable body-side seams;
+- preserves all 181 enclosed openings across 117 source frames and all 48
+  multi-component frames / 72 detached source pixels;
+- leaves detached Warlord horn tips unhaloed while retaining the nearby helmet,
+  weapon, shield, and contact contours;
+- adds all 144 Orc frames to the source-margin regression plus focused
+  Berserker-club, equipment-separator, Warlord horn-tip, halo, and exhaustive
+  cavity checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the fifty-one-family outline lane:
+
+- 8,688 None-mode parity checks pass against the corrected source renderer;
+- all 26,064 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 8,688 frames;
+- the focused single-family review covers 144 source frames / 432 mode cases,
+  adds 12,136 Complete B plus 10,180 Selective C contour pixels, and retains
+  1,680 body-side equipment separator pixels;
+- the complete lane adds 618,505 Complete B plus 493,373 Selective C contour
+  pixels and retains 20,788 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the repaired Berserker club margins,
+the lowered Warlord horned helm and detached tips, held-equipment seams, every
+preserved source opening, all three Orc silhouettes, and both outline modes.
+The candidate is visually approved.
 
 ## Treatment
 
