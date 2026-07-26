@@ -599,17 +599,27 @@ function drawReadableBlunt(S, R, d, p, C) {
   const tier = straightBladeTier(C);
   const style = readableBluntStyle(weapon, tier);
   const roots = bluntPoseRoots(weapon, tier);
+  const verticalStrikeInset = Math.max(
+    0,
+    Math.min(2, Number.isInteger(C.weaponVerticalStrikeInset)
+      ? C.weaponVerticalStrikeInset
+      : 0),
+  );
   const strike = p.wep === 'strike';
   const wind = p.wep === 'wind';
   const { downX, upX, sideX } = weaponAnchors(C);
 
   if (d === 'down') {
-    const rootY = strike ? roots.downStrike : wind ? roots.wind : roots.hold;
+    const rootY = strike
+      ? roots.downStrike - verticalStrikeInset
+      : wind ? roots.wind : roots.hold;
     if (strike) R(downX, 14, 1, rootY - 13, style.handle); else R(downX, rootY, 1, 15 - rootY, style.handle);
     S(downX, strike ? 15 : Math.min(14, rootY + 2), style.handleDark);
     drawReadableBluntHead(S, downX, rootY, weapon, tier, style, { inverted: strike });
   } else if (d === 'up') {
-    const rootY = strike ? roots.upStrike : wind ? roots.wind : roots.hold;
+    const rootY = strike
+      ? roots.upStrike + verticalStrikeInset
+      : wind ? roots.wind : roots.hold;
     R(upX, rootY, 1, Math.max(1, 11 - rootY), style.handle);
     S(upX, Math.min(10, rootY + 2), style.handleDark);
     drawReadableBluntHead(S, upX, rootY, weapon, tier, style);

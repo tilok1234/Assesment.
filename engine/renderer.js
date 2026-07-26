@@ -3037,6 +3037,8 @@ function buildHumanoidC(spec) {
       tail: spec.family === 'ratfolk' ? 'rat' : (spec.family === 'lizardfolk' ? 'lizard' : null),
       wings: V.wing || null,
       small: !!V.small, eye: V.eye || null,
+      weaponVerticalStrikeInset:
+        spec.family === 'cyclops' && V.id === 'shepherd' ? 1 : 0,
     };
   }
   // skeleton

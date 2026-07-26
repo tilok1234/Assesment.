@@ -29,7 +29,8 @@ and Treant separated-anatomy outline batch visually approved. Centipede and
 Mole cavity-preserving separated-component outline batch visually approved.
 Carnivorous Plant outline-native neck repair and cavity-preserving outline
 expansion visually approved. Octopus separated-component, full-tentacle outline
-expansion visually approved.
+expansion visually approved. Cyclops vertical-strike frame-safety repair and
+exterior outline expansion are visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -75,6 +76,7 @@ Outline rollout group 14 visual approval: 2026-07-26
 Outline rollout group 15 visual approval: 2026-07-26
 Outline rollout group 16 visual approval: 2026-07-26
 Outline rollout group 17 visual approval: 2026-07-26
+Outline rollout group 18 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1568,6 +1570,51 @@ walk frame 1 for detached tentacle groups, walk frame 4 for the narrow
 side-view opening, and attack frame 2 for low tentacle tips and loose ink.
 Their separated contours, complete internal tentacle borders, restrained
 droplets, and both outline modes are approved.
+
+## Outline Rollout Approved Group 18
+
+Visually approved as a single-family Cyclops pass.
+
+After Octopus approval, fifteen enemy families remained outside the outline
+lane. A fresh assessment ranked Cyclops as the smallest clean repair: all 144
+source frames form one connected component, but the Shepherd's club touched
+the bottom or top canvas row in down/up attack frames 2 and 3. Those four
+frames contributed eight edge pixels and had no out-of-bounds writes.
+
+The candidate:
+
+- gives only the Cyclops Shepherd's vertical club strike a one-pixel inset,
+  moving the down strike upward and the up strike downward while preserving
+  distinct strike and recoil frames;
+- reduces the full enemy corpus from 162 to 158 source-edge frames and from
+  582 to 574 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for all three Cyclops variants
+  without changing another unsupported family;
+- uses the exterior-only outline path because every Cyclops source frame is
+  connected; an attempted humanoid component-outline treatment was rejected
+  after it recolored non-contact source pixels;
+- preserves every authored source pixel in both outline modes, including all
+  96 enclosed openings across 91 frames;
+- adds all 144 Cyclops frames to the source-margin regression plus focused
+  weapon-layer checks for both repaired directions and strike phases;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the forty-three-family outline lane:
+
+- 7,392 None-mode parity checks pass against the corrected source renderer;
+- all 22,176 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 7,392 frames;
+- the focused single-family review covers 144 source frames / 432 mode cases
+  and adds 10,621 Complete B plus 9,164 Selective C contour pixels;
+- the complete lane adds 516,279 Complete B plus 407,979 Selective C contour
+  pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Two focused handoff sheets cover attack frames 2 and 3 across front, back,
+left, and right directions. They expose the repaired Shepherd club margins,
+the distinct strike/recoil poses, all three Cyclops silhouettes, and both
+outline modes. The repaired margins and exterior outline treatment are
+approved.
 
 ## Treatment
 
