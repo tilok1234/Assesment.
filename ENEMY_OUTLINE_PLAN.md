@@ -25,7 +25,8 @@ outline expansion visually approved; Bat, Ghost, Golem, and Snake clean
 exterior outline batch visually approved; Frog, Jellyfish, Scarecrow, and
 Gargoyle separated-component outline batch visually approved; Worm, Mantis,
 Moth, and Haunted Puppet tiny-accent outline batch visually approved; Spider
-and Treant separated-anatomy outline batch visually approved.
+and Treant separated-anatomy outline batch visually approved. Centipede and
+Mole cavity-preserving separated-component outline batch visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -68,6 +69,7 @@ Outline rollout group 11 visual approval: 2026-07-26
 Outline rollout group 12 visual approval: 2026-07-26
 Outline rollout group 13 visual approval: 2026-07-26
 Outline rollout group 14 visual approval: 2026-07-26
+Outline rollout group 15 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1424,6 +1426,46 @@ All four Spider attack frames received a separate visual continuity pass. The
 focused handoff sheet uses attack frame 2 across front, back, left, and right
 directions. Spider's thin-leg continuity, Treant's separated canopy, and both
 outline modes are approved.
+
+## Outline Rollout Approved Group 15
+
+Visually approved as one focused batch covering Centipede and Mole.
+
+These are the smallest remaining cavity-bearing families. Both are frame-safe
+after their approved source repairs, but their silhouettes combine a connected
+body with one-pixel detached legs, dirt, or motion accents. Their authored
+transparent holes are sometimes enclosed by more than one source component, so
+per-component contouring must explicitly preserve the combined silhouette's
+cavities.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for all Centipede and Mole variants
+  without changing another unsupported family;
+- contours components of two pixels or more while leaving all one-pixel leg,
+  dirt, and motion accents unhaloed;
+- contours Mole's meaningful detached thirteen-pixel attack claws;
+- preserves all 192 two-pixel Centipede cavities and all 376 one-to-three-pixel
+  Mole cavities in both outline modes;
+- preserves every authored source component and every None-mode pixel;
+- changes no source art, palette, animation, catalog, saved state, or export
+  schema.
+
+Measured candidate result across the forty-family outline lane:
+
+- 6,864 None-mode parity checks pass;
+- all 20,592 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 6,864 frames;
+- 768 batch-specific outlined-frame checks preserve authored component
+  separation, minimum-size rules, and source cavities;
+- the focused two-family review covers 384 source frames / 1,152 mode cases
+  and adds 20,208 Complete B plus 16,032 Selective C contour pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+The focused handoff sheet uses attack frame 3 across front, back, left, and
+right directions so Centipede's repeated openings and Mole's detached attack
+claws can be reviewed together. Their cavity continuity, thin detached accents,
+meaningful attack-claw contours, and both outline modes are approved.
 
 ## Treatment
 

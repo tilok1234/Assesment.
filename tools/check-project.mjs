@@ -190,8 +190,9 @@ check(
       'frog', 'jellyfish', 'scarecrow', 'gargoyle',
       'worm', 'mantis', 'moth', 'puppet',
       'spider', 'treant',
+      'centipede', 'mole',
     ]),
-  'enemy outline support must stay limited to the thirty-eight approval-gated families',
+  'enemy outline support must stay limited to the forty approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -622,6 +623,46 @@ function cardinalPixelComponentGroups(pixels) {
     components.push(component);
   }
   return components;
+}
+
+function cardinalTransparentCavityGroups(pixels) {
+  const seen = new Set();
+  const cavities = [];
+  for (let start = 0; start < pixels.length; start++) {
+    if (pixels[start] || seen.has(start)) continue;
+    const component = [];
+    const queue = [start];
+    let touchesEdge = false;
+    seen.add(start);
+    while (queue.length) {
+      const index = queue.pop();
+      component.push(index);
+      const x = index % engine.SIZE;
+      const y = Math.floor(index / engine.SIZE);
+      if (
+        x === 0
+        || y === 0
+        || x === engine.SIZE - 1
+        || y === engine.SIZE - 1
+      ) touchesEdge = true;
+      for (const [offsetX, offsetY] of [[0, -1], [-1, 0], [1, 0], [0, 1]]) {
+        const nextX = x + offsetX;
+        const nextY = y + offsetY;
+        if (
+          nextX < 0
+          || nextY < 0
+          || nextX >= engine.SIZE
+          || nextY >= engine.SIZE
+        ) continue;
+        const next = (nextY * engine.SIZE) + nextX;
+        if (pixels[next] || seen.has(next)) continue;
+        seen.add(next);
+        queue.push(next);
+      }
+    }
+    if (!touchesEdge) cavities.push(component);
+  }
+  return cavities;
 }
 
 function cardinalPixelComponents(pixels) {
@@ -1338,6 +1379,8 @@ const separatedOutlineBatchFamilies = new Map([
   ['puppet', { minimumComponentPixels: 2, maximumComponents: 8 }],
   ['spider', { minimumComponentPixels: 9, maximumComponents: 11 }],
   ['treant', { minimumComponentPixels: 2, maximumComponents: 5 }],
+  ['centipede', { minimumComponentPixels: 2, maximumComponents: 11 }],
+  ['mole', { minimumComponentPixels: 2, maximumComponents: 11 }],
 ]);
 for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
   const family = engine.ENEMIES.find((candidate) => candidate.id === familyId);
@@ -1348,6 +1391,7 @@ for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
         for (let frame = 0; frame < animation.frames; frame++) {
           const source = renderPixels(spec, direction, animation.id, frame);
           const sourceGroups = cardinalPixelComponentGroups(source);
+          const sourceCavities = cardinalTransparentCavityGroups(source);
           check(
             sourceGroups.length >= 1
               && sourceGroups.length <= familyRules.maximumComponents,
@@ -1386,6 +1430,13 @@ for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
                   + `${outlineMode} must ${
                     shouldReceiveOutline ? 'contour' : 'leave unhaloed'
                   } its ${sourceGroup.length}-pixel component`,
+              );
+            }
+            for (const sourceCavity of sourceCavities) {
+              check(
+                sourceCavity.every((index) => !outlined[index]),
+                `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+                  + `${outlineMode} must preserve its ${sourceCavity.length}-pixel source cavity`,
               );
             }
           }

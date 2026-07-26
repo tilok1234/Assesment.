@@ -51,6 +51,8 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'puppet',
   'spider',
   'treant',
+  'centipede',
+  'mole',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -84,6 +86,8 @@ const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'puppet',
   'spider',
   'treant',
+  'centipede',
+  'mole',
 ]);
 const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   beetle: 3,
@@ -99,7 +103,13 @@ const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   puppet: 2,
   spider: 9,
   treant: 2,
+  centipede: 2,
+  mole: 2,
 });
+const ENEMY_SEPARATED_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
+  'centipede',
+  'mole',
+]);
 
 export function enemySupportsOutline(spec) {
   return spec?.kind === 'enemy' && ENEMY_OUTLINE_FAMILY_SET.has(spec.family);
@@ -111,6 +121,11 @@ function enemyUsesComponentOutline(spec) {
 
 function enemyUsesSeparatedOutline(spec) {
   return spec?.kind === 'enemy' && ENEMY_SEPARATED_OUTLINE_FAMILY_SET.has(spec.family);
+}
+
+function enemyPreservesSeparatedOutlineCavities(spec) {
+  return spec?.kind === 'enemy'
+    && ENEMY_SEPARATED_OUTLINE_PRESERVE_CAVITY_FAMILY_SET.has(spec.family);
 }
 
 // These are ownership groups, not the much finer character-kit component layers.
@@ -351,6 +366,9 @@ function outlineMaskForSeparatedComponents(
   if (components.length <= 1) return outlineMaskForPixels(pixels, mode, width, height);
 
   const minimumComponentPixels = Math.max(1, options.minimumComponentPixels || 1);
+  const combinedExterior = options.preserveSourceCavities
+    ? exteriorTransparency(pixels, width, height)
+    : null;
   const componentMasks = components.map((componentPixels) => {
     const componentSize = componentPixels.reduce((
       count,
@@ -378,6 +396,10 @@ function outlineMaskForSeparatedComponents(
   for (let index = 0; index < outlineOwners.length; index++) {
     const ownerIndex = outlineOwners[index];
     if (ownerIndex < 0) continue;
+    // Per-component contouring sees a cavity enclosed by multiple authored
+    // components as exterior space. For cavity-sensitive families, keep those
+    // combined-silhouette holes transparent instead of closing them with halo.
+    if (combinedExterior && !combinedExterior[index]) continue;
     const x = index % width;
     const y = Math.floor(index / width);
     let touchesAnotherOwner = false;
@@ -797,13 +819,16 @@ export function drawOutlinedSprite(
         // outline-native physical component in every direction. Frog's
         // two-pixel tongue tip, Worm's dirt specks, Mantis/Moth's tiny
         // extremities, and Puppet's one-pixel strings/lights stay unhaloed.
-        // Spider's small leg clusters and Treant's one-pixel leaf tips also
-        // stay thin. Gargoyle's detached wings, Puppet's detached attack arm,
-        // and Treant's canopy are meaningful physical components and receive
-        // normal contours. Eye Monster keeps the default because its orbitals
-        // are intended to read as individually outlined floating parts.
+        // Spider's small leg clusters, Treant's one-pixel leaf tips, and
+        // Centipede/Mole's one-pixel leg and dirt accents also stay thin.
+        // Gargoyle's detached wings, Puppet's detached attack arm, Treant's
+        // canopy, and Mole's detached attack claws are meaningful physical
+        // components and receive normal contours. Eye Monster keeps the
+        // default because its orbitals are intended to read as individually
+        // outlined floating parts.
         minimumComponentPixels:
           ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS[spec.family] || 1,
+        preserveSourceCavities: enemyPreservesSeparatedOutlineCavities(spec),
       })
       : outlineMaskForPixels(sourcePixels, mode, SIZE, SIZE);
 
