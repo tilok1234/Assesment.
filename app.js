@@ -124,7 +124,9 @@ const elements = {
   resetButton: document.querySelector('#reset-button'),
   duplicateButton: document.querySelector('#duplicate-button'),
   compareButton: document.querySelector('#compare-button'),
+  productionRollButton: document.querySelector('#production-roll-button'),
   randomizeButton: document.querySelector('#randomize-button'),
+  productionRollStatus: document.querySelector('#production-roll-status'),
   presetName: document.querySelector('#preset-name'),
   presetSelect: document.querySelector('#preset-select'),
   savePresetButton: document.querySelector('#save-preset-button'),
@@ -206,6 +208,8 @@ let classPackProgress = null;
 let selectedPresetId = '';
 let selectedPaletteId = '';
 let selectedLoadoutId = '';
+let productionRollCounter = 0;
+let lastProductionRoll = null;
 const historyPast = [];
 const historyFuture = [];
 let lastTime = 0;
@@ -428,6 +432,13 @@ function editableSnapshot(source = state) {
   };
 }
 
+function historySnapshot(source = state) {
+  return {
+    ...editableSnapshot(source),
+    previewEffects: source.previewEffects === true,
+  };
+}
+
 function snapshotsMatch(left, right) {
   return JSON.stringify(left) === JSON.stringify(right);
 }
@@ -438,12 +449,12 @@ function pushHistory(stack, snapshot) {
 }
 
 function setState(patch, { persist = true, render = true, recordHistory = true } = {}) {
-  const tracksSprite = ['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'shadeMode', 'characterName', 'exportName']
+  const tracksSprite = ['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'shadeMode', 'previewEffects', 'characterName', 'exportName']
     .some((key) => Object.prototype.hasOwnProperty.call(patch, key));
-  const before = tracksSprite ? editableSnapshot() : null;
+  const before = tracksSprite ? historySnapshot() : null;
   const next = { ...state, ...patch };
 
-  if (recordHistory && before && !snapshotsMatch(before, editableSnapshot(next))) {
+  if (recordHistory && before && !snapshotsMatch(before, historySnapshot(next))) {
     pushHistory(historyPast, before);
     historyFuture.length = 0;
   }
@@ -463,6 +474,7 @@ function restoreSnapshot(snapshot) {
     loadout: E.sanitizeCombatLoadout(snapshot.loadout),
     outlineMode: E.normalizeOutlineMode(snapshot.outlineMode),
     shadeMode: E.normalizeShadeMode(snapshot.shadeMode),
+    previewEffects: snapshot.previewEffects === true,
     characterName: sanitizeText(snapshot.characterName, 48),
     exportName: sanitizeText(snapshot.exportName, 80),
   };
@@ -472,14 +484,14 @@ function restoreSnapshot(snapshot) {
 
 function undo() {
   if (!historyPast.length) return;
-  pushHistory(historyFuture, editableSnapshot());
+  pushHistory(historyFuture, historySnapshot());
   restoreSnapshot(historyPast.pop());
   elements.classPackStatus.textContent = 'Editor history changed. Apply the selected class defaults or export the current character.';
 }
 
 function redo() {
   if (!historyFuture.length) return;
-  pushHistory(historyPast, editableSnapshot());
+  pushHistory(historyPast, historySnapshot());
   restoreSnapshot(historyFuture.pop());
   elements.classPackStatus.textContent = 'Editor history changed. Apply the selected class defaults or export the current character.';
 }
@@ -1346,6 +1358,34 @@ function renderModeButtons() {
   );
 }
 
+function renderProductionRollControls() {
+  const isPlayer = state.mode === 'player';
+  elements.productionRollButton.disabled = !isPlayer;
+  elements.productionRollButton.title = isPlayer
+    ? 'Roll a curated production-v1 player'
+    : 'Production Roll is available in Player mode';
+  elements.randomizeButton.title = isPlayer
+    ? 'Roll an unrestricted player'
+    : `Randomize the current ${state.mode} selection`;
+  elements.productionRollStatus.hidden = !isPlayer;
+  if (!isPlayer) return;
+
+  if (!lastProductionRoll) {
+    elements.productionRollStatus.textContent = 'Production curated · Wildcard unrestricted';
+    return;
+  }
+
+  const exactProductionResult = snapshotsMatch(
+    lastProductionRoll.player,
+    sanitizePlayer(state.player),
+  ) && E.normalizeShadeMode(state.shadeMode) === E.PRODUCTION_ROLL_FREEZE.presentation.shadeMode
+    && state.previewEffects === false;
+  const label = `${lastProductionRoll.archetypeName} · ${lastProductionRoll.powerTierName}`;
+  elements.productionRollStatus.textContent = exactProductionResult
+    ? label
+    : `Custom · last ${label}`;
+}
+
 function renderOutlineControls() {
   const available = state.mode === 'player' || E.enemySupportsOutline(currentSpec());
   elements.outlineControl.hidden = !available;
@@ -2153,6 +2193,7 @@ function renderPaletteControls() {
 
 function renderUi() {
   renderModeButtons();
+  renderProductionRollControls();
   renderOutlineControls();
   renderShadeControls();
   renderPaletteControls();
@@ -2347,6 +2388,35 @@ function chooseDirection(direction) {
   animationTime = clampFrame(state.frame, anim) * anim.ms;
   spinTime = 0;
   setState({ dir: direction, exportDir: direction, spin: false });
+}
+
+function createProductionRollSeed() {
+  productionRollCounter += 1;
+  const prefix = `editor-production:${Date.now().toString(36)}:${productionRollCounter.toString(36)}`;
+  if (globalThis.crypto?.getRandomValues) {
+    const entropy = new Uint32Array(2);
+    globalThis.crypto.getRandomValues(entropy);
+    return `${prefix}:${entropy[0].toString(36)}${entropy[1].toString(36)}`;
+  }
+  return `${prefix}:${Math.random().toString(36).slice(2)}`;
+}
+
+function rollProduction() {
+  if (state.mode !== 'player') return;
+  const result = E.rollProductionPlayer(createProductionRollSeed());
+  const player = sanitizePlayer(result.player);
+  const archetype = E.CLASS_TEMPLATES.find((template) => template.id === result.archetype);
+  const tier = E.OUTFIT_TIERS.find((item) => item.id === result.powerTier);
+  lastProductionRoll = {
+    player,
+    archetypeName: archetype?.name || result.archetype,
+    powerTierName: tier?.name || result.powerTier,
+  };
+  setState({
+    player,
+    shadeMode: E.PRODUCTION_ROLL_FREEZE.presentation.shadeMode,
+    previewEffects: false,
+  });
 }
 
 function randomize() {
@@ -3302,6 +3372,7 @@ elements.keepCurrentButton.addEventListener('click', closeComparison);
 elements.removeCopyButton.addEventListener('click', removeComparisonCopy);
 elements.replaceCopyButton.addEventListener('click', replaceComparisonCopy);
 elements.compareDialog.addEventListener('close', renderComparisonControls);
+elements.productionRollButton.addEventListener('click', rollProduction);
 elements.randomizeButton.addEventListener('click', randomize);
 elements.savePresetButton.addEventListener('click', savePreset);
 elements.loadPresetButton.addEventListener('click', loadSelectedPreset);

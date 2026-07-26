@@ -78,7 +78,7 @@ export const HEADGEAR = [
   { id: 'bandana',  name: 'Bandana' },
   { id: 'circlet',  name: 'Circlet' },
   { id: 'plumed',   name: 'Plumed helm', hideTop: true },
-  { id: 'skullmask', name: 'Skull mask' },
+  { id: 'skullmask', name: 'Skull mask', hideFace: true },
 ];
 export const OUTFITS = [
   { id: 'tunic',   name: 'Tunic',      tier2Name: 'Reinforced Tunic', tier3Name: 'Royal Brigandine',        tier4Name: 'Runebound Battlegarb',  tier5Name: 'Mantle of the First Hero' },

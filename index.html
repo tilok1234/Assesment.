@@ -27,7 +27,13 @@
           <button class="secondary-button compact-action" id="reset-button" type="button">Reset</button>
           <button class="secondary-button compact-action" id="duplicate-button" type="button">Duplicate</button>
           <button class="secondary-button compact-action" id="compare-button" type="button" disabled>Compare</button>
-          <button class="secondary-button" id="randomize-button" type="button">Randomize</button>
+          <div class="roll-actions" aria-label="Whole-character rolls">
+            <div class="roll-buttons">
+              <button class="secondary-button compact-action production-roll-button" id="production-roll-button" type="button" aria-describedby="production-roll-status">Production Roll</button>
+              <button class="secondary-button compact-action" id="randomize-button" type="button">Wildcard Roll</button>
+            </div>
+            <span class="production-roll-status" id="production-roll-status" role="status" aria-live="polite"></span>
+          </div>
         </div>
       </header>
 

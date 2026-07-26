@@ -63,6 +63,7 @@ checkSyntax('engine/catalogs/palettes.js');
 checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/combat-loadouts.js');
 checkSyntax('engine/class-templates.js');
+checkSyntax('engine/production-rolls.js');
 checkSyntax('engine/variant-batches.js');
 checkSyntax('engine/generators.js');
 checkSyntax('engine/effect-renderer.js');
@@ -109,6 +110,7 @@ for (const controlId of [
   'frame-buttons', 'frame-readout', 'playback-speed',
   'outline-control', 'outline-buttons', 'shade-control', 'shade-buttons',
   'reset-button', 'duplicate-button', 'compare-button', 'compare-dialog',
+  'production-roll-button', 'production-roll-status', 'randomize-button',
   'saved-copy-canvas', 'current-copy-canvas', 'restore-copy-button',
   'keep-current-button', 'remove-copy-button', 'replace-copy-button',
   'pack-name', 'pack-summary', 'pack-list', 'pack-status',
@@ -141,6 +143,7 @@ const runtimeSources = {
   'engine/catalogs/player-options.js': await readFile(path.join(root, 'engine', 'catalogs', 'player-options.js'), 'utf8'),
   'engine/combat-loadouts.js': await readFile(path.join(root, 'engine', 'combat-loadouts.js'), 'utf8'),
   'engine/class-templates.js': await readFile(path.join(root, 'engine', 'class-templates.js'), 'utf8'),
+  'engine/production-rolls.js': await readFile(path.join(root, 'engine', 'production-rolls.js'), 'utf8'),
   'engine/variant-batches.js': await readFile(path.join(root, 'engine', 'variant-batches.js'), 'utf8'),
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
   'engine/effect-renderer.js': await readFile(path.join(root, 'engine', 'effect-renderer.js'), 'utf8'),
@@ -165,13 +168,17 @@ const expectedEngineExports = [
   'DIRS', 'DIR_LABELS', 'ENEMIES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OFFHANDS', 'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
   'OUTLINE_MODE_COMPLETE_B', 'OUTLINE_MODE_NONE', 'OUTLINE_MODE_SELECTIVE_C',
+  'PRODUCTION_PALETTE_FAMILIES', 'PRODUCTION_ROLL_FREEZE', 'PRODUCTION_ROLL_MAX_ATTEMPTS', 'PRODUCTION_ROLL_PROFILE',
+  'PRODUCTION_ROLL_REASON_CODES',
   'SHADE_MODES', 'SHADE_MODE_FORM', 'SHADE_MODE_NONE',
   'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
-  'applyClassTemplate', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch',
+  'applyClassTemplate', 'auditProductionRollCatalogs', 'auditProductionRollClassTemplates',
+  'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch',
   'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawAssembledSprite', 'drawOutlinedSprite', 'drawSprite',
   'enemySupportsOutline', 'normalizeAssembledOutlineMode', 'normalizeOutlineMode', 'normalizeShadeMode',
-  'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout', 'sanitizeCombatLoadout', 'thumbURL',
+  'normalizeProductionRollSeed', 'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout',
+  'rollProductionPlayer', 'sanitizeCombatLoadout', 'thumbURL', 'validateProductionPlayer',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
@@ -183,6 +190,35 @@ check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js mu
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
 check(runtimeSources['app.js'].includes("from './character-kit.js'"), 'app.js must use the focused master character-kit planner');
 check(!runtimeSources['character-kit.js'].includes("from './engine/"), 'character-kit.js must consume only the public engine facade');
+const productionRollImports = [...runtimeSources['engine/production-rolls.js'].matchAll(/from\s+['"]([^'"]+)['"]/g)]
+  .map((match) => match[1])
+  .sort();
+const editableSnapshotSource = runtimeSources['app.js'].slice(
+  runtimeSources['app.js'].indexOf('function editableSnapshot('),
+  runtimeSources['app.js'].indexOf('function historySnapshot('),
+);
+const rollProductionSource = runtimeSources['app.js'].slice(
+  runtimeSources['app.js'].indexOf('function rollProduction()'),
+  runtimeSources['app.js'].indexOf('function randomize()'),
+);
+check(
+  JSON.stringify(productionRollImports) === JSON.stringify(['./catalogs.js', './class-templates.js']),
+  'production rolls must depend only on stable catalogs and class-template policy',
+);
+check(
+  !/\b(?:document|window|localStorage|sessionStorage|indexedDB|CanvasRenderingContext2D|drawSprite|renderSprite|buildStoredZip)\b/.test(
+    runtimeSources['engine/production-rolls.js'],
+  ),
+  'production rolls must not depend on DOM, canvas, storage, ZIP, or renderer behavior',
+);
+check(
+  !runtimeSources['engine/production-rolls.js'].includes('Math.random')
+    && !/\bwhile\s*\(/.test(runtimeSources['engine/production-rolls.js'])
+    && runtimeSources['engine/production-rolls.js'].includes(
+      'attempts <= PRODUCTION_ROLL_MAX_ATTEMPTS',
+    ),
+  'Production Roll must use only its portable seed stream and a statically bounded retry loop',
+);
 check(runtimeSources['app.js'].includes("from './zip.js'"), 'app.js must use the standalone ZIP packaging utility');
 check(runtimeSources['app.js'].includes("PRESET_VERSION = 12"), 'app.js must use preset schema v12 for off-hand persistence');
 check(
@@ -191,7 +227,13 @@ check(
 );
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
-check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'shadeMode', 'characterName', 'exportName']"), 'app.js history must include combat loadouts, outlines, and shading while remaining scoped to the editable sprite document');
+check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'shadeMode', 'previewEffects', 'characterName', 'exportName']"), 'app.js history must include combat loadouts, outlines, shading, and Production Roll effect treatment while remaining scoped to the editable sprite document');
+check(
+  runtimeSources['app.js'].includes('function historySnapshot(')
+    && runtimeSources['app.js'].includes('previewEffects: source.previewEffects === true')
+    && !editableSnapshotSource.includes('previewEffects'),
+  'Production Roll history must restore Effects Off without adding effect-preview metadata to presets or comparison snapshots',
+);
 check(runtimeSources['engine/sheets.js'].includes('drawAssembledSprite'), 'assembled sheet exports must use the shared assembled-output coordinator');
 check(runtimeSources['app.js'].includes('E.drawAssembledSprite('), 'assembled editor previews must use the shared assembled-output coordinator');
 check(
@@ -234,6 +276,26 @@ check(
   'enemy preset and ordinary-pack loads must restore their saved shade treatment',
 );
 check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must expose the optional sprite outline selector');
+check(
+  entrySource.includes('>Production Roll</button>')
+    && entrySource.includes('>Wildcard Roll</button>')
+    && runtimeSources['app.js'].includes('function rollProduction()')
+    && runtimeSources['app.js'].includes('E.rollProductionPlayer(createProductionRollSeed())'),
+  'the editor must expose separate Production and Wildcard whole-character actions through the public engine facade',
+);
+check(
+  runtimeSources['app.js'].includes('shadeMode: E.PRODUCTION_ROLL_FREEZE.presentation.shadeMode')
+    && runtimeSources['app.js'].includes('previewEffects: false')
+    && !rollProductionSource.includes('outlineMode:'),
+  'Production Roll must apply frozen Form shading and Effects Off while preserving the current outline treatment',
+);
+check(
+  runtimeSources['app.js'].includes('lastProductionRoll = {')
+    && runtimeSources['app.js'].includes('archetypeName:')
+    && runtimeSources['app.js'].includes('powerTierName:')
+    && !runtimeSources['app.js'].includes('productionRoll:'),
+  'the editor must show ephemeral Production archetype and power-tier status without adding roll provenance to stored state',
+);
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
@@ -651,6 +713,10 @@ const expectedHeadgear = ['none', 'cap', 'helm', 'fullhelm', 'hood', 'crown', 'w
 check(
   JSON.stringify(engine.HEADGEAR.map((gear) => gear.id)) === JSON.stringify(expectedHeadgear),
   'the headgear catalog must preserve its eight legacy ids followed by the four expanded options',
+);
+check(
+  engine.HEADGEAR.find((gear) => gear.id === 'skullmask')?.hideFace === true,
+  'Skull Mask must expose its existing face-covering behavior as shared visibility metadata',
 );
 check(runtimeSources['app.js'].includes('validId(E.HAIR_STYLES, player.hairStyle'), 'saved player specs must validate expanded hairstyles through the stable catalog');
 check(runtimeSources['app.js'].includes('validId(E.HEADGEAR, player.headgear'), 'saved player specs must validate expanded headgear through the stable catalog');
@@ -3391,6 +3457,585 @@ check(
     === JSON.stringify(['warrior', 'guardian', 'ranger', 'rogue', 'mage', 'cleric', 'barbarian', 'necromancer', 'paladin', 'druid']),
   'class templates must retain their six legacy ids followed by the four expanded RPG roles',
 );
+check(
+  Object.isFrozen(engine.PRODUCTION_ROLL_PROFILE)
+    && JSON.stringify(engine.PRODUCTION_ROLL_PROFILE) === JSON.stringify({ id: 'production-v1', version: 1 }),
+  'Production Roll must expose one immutable production-v1 policy identity',
+);
+check(engine.PRODUCTION_ROLL_MAX_ATTEMPTS === 24, 'production-v1 must expose one fixed retry bound');
+const expectedProductionReasonCodes = [
+  'invalid-player', 'invalid-archetype', 'invalid-power-tier', 'invalid-palette-family',
+  'invalid-catalog-id', 'unclassified-catalog-id',
+  'class-outfit', 'class-weapon', 'class-shield', 'class-offhand',
+  'equipment-pair', 'hand-conflict', 'outfit-tier', 'weapon-tier', 'shield-tier',
+  'hidden-expression', 'hidden-face-detail', 'hidden-hair', 'head-identity-covered',
+  'palette-family', 'custom-palette', 'complexity-limit',
+];
+check(
+  Object.isFrozen(engine.PRODUCTION_ROLL_REASON_CODES)
+    && JSON.stringify(Object.values(engine.PRODUCTION_ROLL_REASON_CODES)) === JSON.stringify(expectedProductionReasonCodes)
+    && new Set(Object.values(engine.PRODUCTION_ROLL_REASON_CODES)).size === expectedProductionReasonCodes.length,
+  'production-v1 validation must expose stable unique reason codes',
+);
+check(
+  Object.isFrozen(engine.PRODUCTION_PALETTE_FAMILIES)
+    && JSON.stringify(engine.PRODUCTION_PALETTE_FAMILIES.map((family) => family.id))
+      === JSON.stringify(['grounded', 'royal', 'wilderness', 'arcane', 'divine', 'infernal', 'necromantic'])
+    && engine.PRODUCTION_PALETTE_FAMILIES.every((family) => (
+      Object.isFrozen(family)
+      && Object.isFrozen(family.skins)
+      && Object.isFrozen(family.hair)
+      && Object.isFrozen(family.outfits)
+      && family.skins.every((entry) => Object.isFrozen(entry) && entry.weight > 0 && engine.SKINS.some((item) => item.id === entry.id))
+      && family.hair.every((entry) => Object.isFrozen(entry) && entry.weight > 0 && engine.HAIR_COLORS.some((item) => item.id === entry.id))
+      && family.outfits.every((entry) => Object.isFrozen(entry) && entry.weight > 0 && engine.OUTFIT_COLORS.some((item) => item.id === entry.id))
+    )),
+  'production-v1 palette families must be deeply immutable and reference only catalog colors',
+);
+check(
+  Object.isFrozen(engine.PRODUCTION_ROLL_FREEZE)
+    && engine.PRODUCTION_ROLL_FREEZE.status === 'frozen'
+    && Object.isFrozen(engine.PRODUCTION_ROLL_FREEZE.acceptedCorpus)
+    && JSON.stringify(engine.PRODUCTION_ROLL_FREEZE.acceptedCorpus) === JSON.stringify({
+      format: '8-bit-sprite-assembler-production-roll-review',
+      version: 1,
+      pairs: 120,
+      pairsPerClass: 12,
+      digest: 'af9b620e5ce87f6febf5983487fc163e8b5a4495fb37ced3653e8b5bbbc4ba3f',
+      approved: true,
+      approvedOn: '2026-07-26',
+    })
+    && Object.isFrozen(engine.PRODUCTION_ROLL_FREEZE.presentation)
+    && JSON.stringify(engine.PRODUCTION_ROLL_FREEZE.presentation) === JSON.stringify({
+      shadeMode: 'form',
+      outlineMode: null,
+      effects: 'off',
+    })
+    && Object.isFrozen(engine.PRODUCTION_ROLL_FREEZE.catalogIds)
+    && Object.values(engine.PRODUCTION_ROLL_FREEZE.catalogIds).every(Object.isFrozen)
+    && Object.isFrozen(engine.PRODUCTION_ROLL_FREEZE.classTemplates)
+    && engine.PRODUCTION_ROLL_FREEZE.classTemplates.every((template) => (
+      Object.isFrozen(template)
+      && Object.isFrozen(template.weapons)
+      && Object.isFrozen(template.shields)
+      && Object.isFrozen(template.offhands)
+    )),
+  'production-v1 must expose a deeply immutable accepted corpus and presentation freeze',
+);
+const productionCatalogFreezeAudit = engine.auditProductionRollCatalogs();
+check(
+  productionCatalogFreezeAudit.valid
+    && Object.isFrozen(productionCatalogFreezeAudit)
+    && Object.isFrozen(productionCatalogFreezeAudit.missing)
+    && Object.isFrozen(productionCatalogFreezeAudit.unclassified)
+    && Object.isFrozen(productionCatalogFreezeAudit.duplicates)
+    && productionCatalogFreezeAudit.missing.length === 0
+    && productionCatalogFreezeAudit.unclassified.length === 0
+    && productionCatalogFreezeAudit.duplicates.length === 0,
+  'the frozen production-v1 catalog manifest must exactly cover current stable catalogs',
+);
+const futureProductionCatalogAudit = engine.auditProductionRollCatalogs({
+  species: [...engine.SPECIES, { id: 'future-species' }],
+});
+check(
+  !futureProductionCatalogAudit.valid
+    && futureProductionCatalogAudit.unclassified.includes('species:future-species'),
+  'new catalog ids must remain outside production-v1 until explicitly classified',
+);
+const missingProductionCatalogAudit = engine.auditProductionRollCatalogs({
+  offhands: engine.OFFHANDS.filter((item) => item.id !== 'lantern'),
+});
+check(
+  !missingProductionCatalogAudit.valid
+    && missingProductionCatalogAudit.missing.includes('offhands:lantern'),
+  'removing a frozen production-v1 catalog id must fail the catalog audit',
+);
+const productionClassTemplateFreezeAudit = engine.auditProductionRollClassTemplates();
+check(
+  productionClassTemplateFreezeAudit.valid
+    && Object.isFrozen(productionClassTemplateFreezeAudit)
+    && Object.isFrozen(productionClassTemplateFreezeAudit.changed)
+    && productionClassTemplateFreezeAudit.changed.length === 0,
+  'production-v1 must exactly match the accepted class-template equipment pools',
+);
+const futureProductionClassAudit = engine.auditProductionRollClassTemplates([
+  ...engine.CLASS_TEMPLATES,
+  {
+    id: 'future-class',
+    outfit: 'tunic',
+    weapons: ['sword'],
+    shields: [],
+    offhands: [],
+  },
+]);
+check(
+  !futureProductionClassAudit.valid
+    && futureProductionClassAudit.unclassified.includes('future-class'),
+  'new class templates must remain outside production-v1 until explicitly reviewed',
+);
+const changedProductionClassAudit = engine.auditProductionRollClassTemplates(
+  engine.CLASS_TEMPLATES.map((template) => (
+    template.id === 'warrior'
+      ? { ...template, weapons: [...template.weapons, 'bow'] }
+      : template
+  )),
+);
+check(
+  !changedProductionClassAudit.valid
+    && changedProductionClassAudit.changed.includes('warrior'),
+  'changes to accepted class equipment pools must fail the production-v1 freeze audit',
+);
+check(
+  engine.normalizeProductionRollSeed('  cafe\u0301  ') === 'caf\u00e9',
+  'Production Roll seeds must trim and normalize Unicode deterministically',
+);
+const invalidProductionSeedInputs = [undefined, null, '', '   ', Number.NaN, {}, []];
+const normalizedInvalidProductionSeeds = invalidProductionSeedInputs.map((seed) => (
+  engine.normalizeProductionRollSeed(seed)
+));
+check(
+  new Set(normalizedInvalidProductionSeeds).size === 1,
+  'invalid Production Roll seeds must normalize to one deterministic fallback',
+);
+check(
+  new Set(invalidProductionSeedInputs.map((seed) => JSON.stringify(engine.rollProductionPlayer(seed)))).size === 1,
+  'invalid Production Roll seeds must produce one deterministic fallback result',
+);
+
+const productionGoldenResult = engine.rollProductionPlayer('slice-1-portable-golden');
+const expectedProductionGoldenResult = {
+  profile: 'production-v1',
+  seed: 'slice-1-portable-golden',
+  archetype: 'paladin',
+  powerTier: 'tier5',
+  paletteFamily: 'necromantic',
+  attempts: 1,
+  fallback: false,
+  player: {
+    species: 'human',
+    bodyBuild: 'lean',
+    skin: 'deep',
+    hairStyle: 'spiky',
+    hairColor: 'black',
+    expression: 'surprised',
+    faceDetail: 'glasses',
+    headgear: 'hood',
+    outfit: 'plate',
+    outfitTier: 'tier5',
+    outfitColor: 'purple',
+    weapon: 'sword',
+    weaponTier: 'tier5',
+    shield: 'none',
+    shieldTier: 'tier1',
+    offhand: 'none',
+  },
+  decisions: [
+    { rule: 'archetype-first', choice: 'paladin' },
+    { rule: 'power-band', choice: 'tier5' },
+    { rule: 'palette-family', choice: 'necromantic' },
+    { rule: 'class-equipment', weapon: 'sword', shield: 'none', offhand: 'none' },
+    { rule: 'visibility-normalization', choice: 'none' },
+    { rule: 'silhouette-budget', used: 3, limit: 5, major: 1, majorLimit: 2 },
+    { rule: 'bounded-selection', attempts: 1, limit: 24, fallback: false, retryReasons: [] },
+  ],
+};
+check(
+  JSON.stringify(productionGoldenResult) === JSON.stringify(expectedProductionGoldenResult),
+  'production-v1 must preserve its portable seeded golden result',
+);
+check(
+  JSON.stringify(engine.rollProductionPlayer('slice-1-portable-golden'))
+    === JSON.stringify(productionGoldenResult),
+  'identical Production Roll seeds must produce identical complete results',
+);
+const representativeProductionResults = ['slice-1-alpha', 'slice-1-beta', 'slice-1-gamma']
+  .map((seed) => {
+    const result = engine.rollProductionPlayer(seed);
+    return JSON.stringify({ archetype: result.archetype, player: result.player });
+  });
+check(
+  new Set(representativeProductionResults).size === representativeProductionResults.length,
+  'different representative Production Roll seeds must produce distinct character selections',
+);
+
+const productionCopyA = engine.rollProductionPlayer('slice-1-copy-safety');
+const productionCopyB = engine.rollProductionPlayer('slice-1-copy-safety');
+check(
+  productionCopyA !== productionCopyB
+    && productionCopyA.player !== productionCopyB.player
+    && productionCopyA.decisions !== productionCopyB.decisions
+    && productionCopyA.decisions.every((entry, index) => entry !== productionCopyB.decisions[index]),
+  'Production Roll results must deeply copy player and audit containers',
+);
+check(
+  Object.isFrozen(productionCopyA.decisions)
+    && productionCopyA.decisions.every((entry) => Object.isFrozen(entry))
+    && Object.isFrozen(
+      productionCopyA.decisions.find((entry) => entry.rule === 'bounded-selection').retryReasons,
+    ),
+  'Production Roll decision metadata must be immutable',
+);
+const productionCopyBSpecies = productionCopyB.player.species;
+productionCopyA.player.species = 'copy-safety-probe';
+check(
+  productionCopyB.player.species === productionCopyBSpecies,
+  'mutating one ordinary Production Roll player specification must not change another result',
+);
+
+const expectedProductionPlayerFields = [
+  'bodyBuild', 'expression', 'faceDetail', 'hairColor', 'hairStyle', 'headgear', 'offhand', 'outfit',
+  'outfitColor', 'outfitTier', 'shield', 'shieldTier', 'skin', 'species', 'weapon', 'weaponTier',
+].sort();
+const productionPlayerCatalogs = [
+  ['species', engine.SPECIES],
+  ['bodyBuild', engine.BODY_BUILDS],
+  ['skin', engine.SKINS],
+  ['hairStyle', engine.HAIR_STYLES],
+  ['hairColor', engine.HAIR_COLORS],
+  ['expression', engine.EXPRESSIONS],
+  ['faceDetail', engine.FACIAL_DETAILS],
+  ['headgear', engine.HEADGEAR],
+  ['outfit', engine.OUTFITS],
+  ['outfitTier', engine.OUTFIT_TIERS],
+  ['outfitColor', engine.OUTFIT_COLORS],
+  ['weapon', engine.WEAPONS],
+  ['weaponTier', engine.WEAPON_TIERS],
+  ['shield', engine.SHIELDS],
+  ['shieldTier', engine.SHIELD_TIERS],
+  ['offhand', engine.OFFHANDS],
+];
+const productionClassCoverage = new Set();
+const productionSpeciesCoverage = new Set();
+const productionBodyBuildCoverage = new Set();
+const productionOutfitColorCoverage = new Set();
+const productionOutfitCoverage = new Set();
+const productionWeaponCoverage = new Set();
+const productionShieldCoverage = new Set();
+const productionOffhandCoverage = new Set();
+const productionTierCoverage = new Set();
+const productionPaletteCoverage = new Set();
+const productionEquipmentByClass = new Map(engine.CLASS_TEMPLATES.map((template) => [
+  template.id,
+  { lantern: 0, none: 0, shields: new Map() },
+]));
+let productionFallbackCases = 0;
+let productionRetryCases = 0;
+let productionVisibilityNormalizations = 0;
+let productionRollCases = 0;
+for (let index = 0; index < 1000; index += 1) {
+  const result = engine.rollProductionPlayer(`production-policy-${index}`);
+  const template = engine.CLASS_TEMPLATES.find((item) => item.id === result.archetype);
+  const palette = engine.PRODUCTION_PALETTE_FAMILIES.find((item) => item.id === result.paletteFamily);
+  const validation = engine.validateProductionPlayer(result.player, result);
+  const headgear = engine.HEADGEAR.find((item) => item.id === result.player.headgear);
+  const boundedDecision = result.decisions.find((entry) => entry.rule === 'bounded-selection');
+  const visibilityDecision = result.decisions.find((entry) => entry.rule === 'visibility-normalization');
+  productionRollCases += 1;
+  productionClassCoverage.add(result.archetype);
+  productionSpeciesCoverage.add(result.player.species);
+  productionBodyBuildCoverage.add(result.player.bodyBuild);
+  productionOutfitColorCoverage.add(result.player.outfitColor);
+  productionOutfitCoverage.add(result.player.outfit);
+  productionWeaponCoverage.add(result.player.weapon);
+  if (result.player.shield !== 'none') productionShieldCoverage.add(result.player.shield);
+  if (result.player.offhand !== 'none') productionOffhandCoverage.add(result.player.offhand);
+  productionTierCoverage.add(result.powerTier);
+  productionPaletteCoverage.add(result.paletteFamily);
+  const classEquipment = productionEquipmentByClass.get(result.archetype);
+  if (result.player.offhand === 'lantern') classEquipment.lantern += 1;
+  else if (result.player.shield === 'none') classEquipment.none += 1;
+  else classEquipment.shields.set(
+    result.player.shield,
+    (classEquipment.shields.get(result.player.shield) || 0) + 1,
+  );
+  if (result.fallback) productionFallbackCases += 1;
+  if (result.attempts > 1) productionRetryCases += 1;
+  if (visibilityDecision?.choice !== 'none' && visibilityDecision?.choice !== 'fallback-safe') {
+    productionVisibilityNormalizations += 1;
+  }
+  check(result.profile === engine.PRODUCTION_ROLL_PROFILE.id, 'Production Roll results must retain the immutable profile id');
+  check(
+    validation.valid && validation.reasons.length === 0,
+    `Production Roll ${index} must pass production-v1 validation`,
+  );
+  check(
+    result.attempts >= 1
+      && result.attempts <= engine.PRODUCTION_ROLL_MAX_ATTEMPTS
+      && boundedDecision?.limit === engine.PRODUCTION_ROLL_MAX_ATTEMPTS
+      && boundedDecision?.attempts === result.attempts
+      && boundedDecision?.fallback === result.fallback,
+    `Production Roll ${index} must report its bounded deterministic selection`,
+  );
+  check(
+    JSON.stringify(Object.keys(result.player).sort()) === JSON.stringify(expectedProductionPlayerFields),
+    'Production Roll must return an ordinary player specification without provenance fields',
+  );
+  for (const [field, catalog] of productionPlayerCatalogs) {
+    check(
+      catalog.some((entry) => entry.id === result.player[field]),
+      `Production Roll ${index} must select a catalog-valid ${field}`,
+    );
+  }
+  check(
+    template
+      && result.player.outfit === template.outfit
+      && template.weapons.includes(result.player.weapon)
+      && (result.player.shield === 'none' || template.shields.includes(result.player.shield))
+      && (result.player.offhand === 'none' || template.offhands.includes(result.player.offhand)),
+    `Production Roll ${index} must select equipment only from its class template`,
+  );
+  check(
+    !(result.player.shield !== 'none' && result.player.offhand !== 'none'),
+    `Production Roll ${index} must keep shield and utility off-hand selections mutually exclusive`,
+  );
+  check(
+    result.player.outfitTier === result.powerTier
+      && result.player.weaponTier === result.powerTier
+      && (result.player.shield === 'none'
+        ? result.player.shieldTier === 'tier1'
+        : result.player.shieldTier === result.powerTier),
+    `Production Roll ${index} must keep one coherent equipment power band`,
+  );
+  check(
+    palette
+      && palette.skins.some((entry) => entry.id === result.player.skin)
+      && palette.hair.some((entry) => entry.id === result.player.hairColor)
+      && palette.outfits.some((entry) => entry.id === result.player.outfitColor)
+      && result.player.palette == null,
+    `Production Roll ${index} must use only its fixed catalog palette family`,
+  );
+  check(
+    validation.complexity.used <= validation.complexity.limit
+      && validation.complexity.major <= validation.complexity.majorLimit,
+    `Production Roll ${index} must stay inside the catalog-level silhouette budget`,
+  );
+  if (headgear?.hideAll || headgear?.hideFace) {
+    check(
+      result.player.expression === 'neutral' && result.player.faceDetail === 'none',
+      `Production Roll ${index} must normalize hidden face selections`,
+    );
+  }
+  if (headgear?.hideAll) {
+    check(
+      ['bald', 'short', 'spiky', 'bowl', 'topknot'].includes(result.player.hairStyle),
+      `Production Roll ${index} must retain only fitted or hidden hair beneath a full helmet`,
+    );
+  }
+  if (['elf', 'orc', 'goblin', 'dwarf', 'undead', 'beastkin'].includes(result.player.species)) {
+    check(
+      !(headgear?.hideAll || headgear?.hideFace),
+      `Production Roll ${index} must preserve head-based species identity`,
+    );
+  }
+  check(
+    Object.isFrozen(result.decisions)
+      && result.decisions.every((entry) => Object.isFrozen(entry))
+      && Object.isFrozen(boundedDecision?.retryReasons),
+    `Production Roll ${index} must return immutable audit metadata`,
+  );
+}
+check(
+  engine.CLASS_TEMPLATES.every((template) => productionClassCoverage.has(template.id)),
+  'portable Production Roll selection must be able to reach every class id',
+);
+check(
+  engine.SPECIES.every((item) => productionSpeciesCoverage.has(item.id))
+    && engine.BODY_BUILDS.every((item) => productionBodyBuildCoverage.has(item.id))
+    && engine.OUTFIT_COLORS.every((item) => productionOutfitColorCoverage.has(item.id)),
+  'the 1,000-seed Production Roll audit must cover every species, body build, and outfit color',
+);
+check(
+  new Set(engine.CLASS_TEMPLATES.map((template) => template.outfit)).size === productionOutfitCoverage.size
+    && engine.CLASS_TEMPLATES.every((template) => productionOutfitCoverage.has(template.outfit)),
+  'the 1,000-seed Production Roll audit must cover every class outfit family',
+);
+check(
+  new Set(engine.CLASS_TEMPLATES.flatMap((template) => template.weapons)).size === productionWeaponCoverage.size
+    && engine.CLASS_TEMPLATES.every((template) => template.weapons.every((id) => productionWeaponCoverage.has(id))),
+  'the 1,000-seed Production Roll audit must cover every permitted weapon family',
+);
+check(
+  new Set(engine.CLASS_TEMPLATES.flatMap((template) => template.shields)).size === productionShieldCoverage.size
+    && engine.CLASS_TEMPLATES.every((template) => template.shields.every((id) => productionShieldCoverage.has(id))),
+  'the 1,000-seed Production Roll audit must cover every permitted shield family',
+);
+check(
+  new Set(engine.CLASS_TEMPLATES.flatMap((template) => template.offhands)).size === productionOffhandCoverage.size
+    && engine.CLASS_TEMPLATES.every((template) => template.offhands.every((id) => productionOffhandCoverage.has(id))),
+  'the 1,000-seed Production Roll audit must cover every permitted utility off-hand family',
+);
+check(
+  engine.OUTFIT_TIERS.every((tier) => productionTierCoverage.has(tier.id))
+    && engine.PRODUCTION_PALETTE_FAMILIES.every((family) => productionPaletteCoverage.has(family.id)),
+  'the 1,000-seed Production Roll audit must cover every power tier and palette family',
+);
+check(
+  engine.CLASS_TEMPLATES.every((template) => {
+    const counts = productionEquipmentByClass.get(template.id);
+    if (counts.none === 0) return false;
+    if (!template.offhands.includes('lantern')) return counts.lantern === 0;
+    return counts.lantern > Math.max(0, ...counts.shields.values());
+  }),
+  'Production Roll must retain shieldless results and favor Lantern over each individual shield where permitted',
+);
+check(
+  productionRetryCases > 0
+    && productionFallbackCases > 0
+    && productionFallbackCases < Math.ceil(productionRollCases / 10)
+    && productionVisibilityNormalizations > 0,
+  'the policy audit must exercise bounded retries, safe fallback, and visibility normalization without collapsing variety',
+);
+
+const productionFallbackProbe = engine.rollProductionPlayer('production-policy-34');
+check(
+  productionFallbackProbe.fallback
+    && productionFallbackProbe.attempts === engine.PRODUCTION_ROLL_MAX_ATTEMPTS
+    && engine.validateProductionPlayer(productionFallbackProbe.player, productionFallbackProbe).valid
+    && JSON.stringify(engine.rollProductionPlayer('production-policy-34'))
+      === JSON.stringify(productionFallbackProbe),
+  'production-v1 must exercise a deterministic policy-valid bounded fallback',
+);
+const invalidProductionPlayerValidation = engine.validateProductionPlayer(null, {});
+check(
+  !invalidProductionPlayerValidation.valid
+    && invalidProductionPlayerValidation.reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.INVALID_PLAYER),
+  'Production validation must reject non-object player specifications with a stable reason',
+);
+const invalidProductionContext = engine.validateProductionPlayer(productionGoldenResult.player, {});
+check(
+  !invalidProductionContext.valid
+    && [
+      engine.PRODUCTION_ROLL_REASON_CODES.INVALID_ARCHETYPE,
+      engine.PRODUCTION_ROLL_REASON_CODES.INVALID_POWER_TIER,
+      engine.PRODUCTION_ROLL_REASON_CODES.INVALID_PALETTE_FAMILY,
+    ].every((reason) => invalidProductionContext.reasons.includes(reason)),
+  'Production validation must reject missing policy context with stable reasons',
+);
+const unclassifiedProductionPlayerValidation = engine.validateProductionPlayer({
+  ...productionGoldenResult.player,
+  species: 'future-species',
+}, productionGoldenResult);
+check(
+  !unclassifiedProductionPlayerValidation.valid
+    && unclassifiedProductionPlayerValidation.reasons.includes(
+      engine.PRODUCTION_ROLL_REASON_CODES.INVALID_CATALOG_ID,
+    )
+    && unclassifiedProductionPlayerValidation.reasons.includes(
+      engine.PRODUCTION_ROLL_REASON_CODES.UNCLASSIFIED_CATALOG_ID,
+    ),
+  'Production validation must reject ids outside the frozen production-v1 catalog manifest',
+);
+const productionConflictValidation = engine.validateProductionPlayer({
+  ...productionGoldenResult.player,
+  shield: 'kite',
+  shieldTier: productionGoldenResult.powerTier,
+  offhand: 'lantern',
+}, productionGoldenResult);
+check(
+  productionConflictValidation.reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.HAND_CONFLICT),
+  'Production validation must reject shield and utility off-hand conflicts',
+);
+const productionHiddenFaceValidation = engine.validateProductionPlayer({
+  ...productionGoldenResult.player,
+  hairStyle: 'long',
+  expression: 'angry',
+  faceDetail: 'beard',
+  headgear: 'fullhelm',
+}, productionGoldenResult);
+check(
+  [
+    engine.PRODUCTION_ROLL_REASON_CODES.HIDDEN_EXPRESSION,
+    engine.PRODUCTION_ROLL_REASON_CODES.HIDDEN_FACE_DETAIL,
+    engine.PRODUCTION_ROLL_REASON_CODES.HIDDEN_HAIR,
+  ].every((reason) => productionHiddenFaceValidation.reasons.includes(reason)),
+  'Production validation must reject hidden face and hair metadata',
+);
+const productionHeadIdentityValidation = engine.validateProductionPlayer({
+  ...productionGoldenResult.player,
+  species: 'elf',
+  hairStyle: 'short',
+  expression: 'neutral',
+  faceDetail: 'none',
+  headgear: 'fullhelm',
+}, productionGoldenResult);
+check(
+  productionHeadIdentityValidation.reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.HEAD_IDENTITY_COVERED),
+  'Production validation must preserve head-based species identity',
+);
+check(
+  engine.validateProductionPlayer({
+    ...productionGoldenResult.player,
+    weapon: 'bow',
+  }, productionGoldenResult).reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.CLASS_WEAPON),
+  'Production validation must reject equipment outside the selected class template',
+);
+check(
+  engine.validateProductionPlayer({
+    ...productionGoldenResult.player,
+    outfitTier: 'tier1',
+  }, productionGoldenResult).reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.OUTFIT_TIER),
+  'Production validation must reject mixed power bands',
+);
+const productionEmptyWeaponTierValidation = engine.validateProductionPlayer({
+  ...productionGoldenResult.player,
+  weapon: 'none',
+  weaponTier: 'tier2',
+}, productionGoldenResult);
+check(
+  productionEmptyWeaponTierValidation.reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.WEAPON_TIER),
+  'Production validation must require Tier 1 metadata for an empty weapon slot',
+);
+check(
+  !engine.validateProductionPlayer({
+    ...productionGoldenResult.player,
+    weapon: 'none',
+    weaponTier: 'tier1',
+  }, productionGoldenResult).reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.WEAPON_TIER),
+  'Production validation must accept normalized Tier 1 metadata for an empty weapon slot',
+);
+const productionDruidApexContext = {
+  archetype: 'druid',
+  powerTier: 'tier5',
+  paletteFamily: 'infernal',
+};
+const productionDruidApexShieldValidation = engine.validateProductionPlayer({
+  ...productionFallbackProbe.player,
+  outfit: 'ranger',
+  outfitColor: 'crimson',
+  weapon: 'dagger',
+  shield: 'bone',
+  shieldTier: 'tier5',
+}, productionDruidApexContext);
+check(
+  productionDruidApexShieldValidation.reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.EQUIPMENT_PAIR),
+  'Production validation must reserve apex broad shields for martial or defensive archetypes',
+);
+check(
+  engine.validateProductionPlayer({
+    ...productionGoldenResult.player,
+    skin: 'tan',
+  }, productionGoldenResult).reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.PALETTE_FAMILY),
+  'Production validation must reject colors outside the selected fixed palette family',
+);
+check(
+  engine.validateProductionPlayer({
+    ...productionGoldenResult.player,
+    palette: { skin: ['#123456', '#234567'], hair: ['#345678', '#456789'], outfit: ['#56789a', '#6789ab'] },
+  }, productionGoldenResult).reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.CUSTOM_PALETTE),
+  'production-v1 must reject custom palette overrides',
+);
+check(
+  engine.validateProductionPlayer({
+    ...productionGoldenResult.player,
+    species: 'celestial',
+    hairStyle: 'long',
+    headgear: 'wizard',
+    weapon: 'greatsword',
+    shield: 'tower',
+    shieldTier: 'tier5',
+  }, productionGoldenResult).reasons.includes(engine.PRODUCTION_ROLL_REASON_CODES.COMPLEXITY_LIMIT),
+  'Production validation must reject specifications above the silhouette-complexity budget',
+);
 const classFixturePlayer = {
   ...masterKitPlayer,
   species: 'tiefling',
@@ -4976,6 +5621,8 @@ console.log(`- Enemy families: ${manifest.enemies.length}`);
 console.log(`- Enemy variants: ${enemyRefs.length}`);
 console.log(`- Combat effects: ${effectRefs.length}`);
 console.log(`- Player samples: ${playerRefs.length}`);
+console.log(`- Production Roll policy cases: ${productionRollCases}`);
+console.log(`- Production Roll bounded fallbacks: ${productionFallbackCases}`);
 console.log(`- Shade Core/None player parity cases: ${shadeNonePlayerParityCases}`);
 console.log(`- Shade Core/None enemy parity cases: ${shadeNoneEnemyParityCases}`);
 console.log(`- Shade Core/None enemy outline parity cases: ${shadeNoneEnemyOutlineParityCases}`);

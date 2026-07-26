@@ -124,6 +124,39 @@ canvas {
   margin-left: auto;
 }
 
+.roll-actions {
+  display: grid;
+  gap: 3px;
+}
+
+.roll-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.production-roll-button:not(:disabled) {
+  border-color: rgba(74, 93, 199, 0.38);
+  background: rgba(74, 93, 199, 0.08);
+  color: var(--accent-dark);
+}
+
+.production-roll-button:not(:disabled):hover {
+  background: rgba(74, 93, 199, 0.14);
+}
+
+.production-roll-status {
+  min-height: 11px;
+  max-width: 230px;
+  overflow: hidden;
+  color: var(--muted);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 9px;
+  line-height: 1.15;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 #compare-button.active {
   border-color: var(--accent);
   background: rgba(74, 93, 199, 0.1);
