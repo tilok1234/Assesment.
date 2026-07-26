@@ -35,7 +35,8 @@ frame-safety repair and exterior outline expansion are visually approved.
 Dwarf vertical-strike frame-safety repair and cavity-preserving
 component-aware outline expansion are visually approved. Ogre vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
-are visually approved.
+are visually approved. Goblin vertical-strike frame-safety repair and
+cavity-preserving component-aware outline expansion are visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -85,6 +86,7 @@ Outline rollout group 18 visual approval: 2026-07-26
 Outline rollout group 19 visual approval: 2026-07-26
 Outline rollout group 20 visual approval: 2026-07-26
 Outline rollout group 21 visual approval: 2026-07-26
+Outline rollout group 22 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1762,6 +1764,57 @@ Brute club margins, Magi sparks, every preserved source opening, all three
 Ogre silhouettes, and both outline modes. The repaired margins,
 cavity-preserving component treatment, and restrained spark treatment are
 approved.
+
+## Outline Rollout Approved Group 22
+
+Visually approved as a single-family Goblin pass.
+
+After Ogre approval, eleven enemy families remained outside the outline lane.
+Goblin is the next smallest repair: its 240-frame family has only four
+source-edge frames, all from the Brute's club touching the bottom or top canvas
+row in down/up attack frames 2 and 3. Those frames contribute eight edge pixels
+and have no out-of-bounds writes.
+
+The candidate:
+
+- gives only the Goblin Brute's vertical club strike the approved one-pixel
+  inset, moving the down strike upward and the up strike downward while
+  preserving distinct strike and recoil frames;
+- reduces the full enemy corpus from 146 to 142 source-edge frames and from
+  550 to 542 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Scout, Brute, Shaman, Archer,
+  and Chief without changing another unsupported family;
+- uses the cavity-preserving component-aware humanoid path so each variant's
+  held equipment retains a readable body-side seam;
+- preserves all 212 enclosed openings across 149 corrected source frames and
+  all 56 multi-component frames, including the Archer's detached bow geometry
+  and the Shaman's one-pixel spell sparks;
+- excludes the Shaman's one-pixel spell sparks from casting their own halos,
+  while allowing nearby staff/body contours to remain intact so the sparks
+  stay thin and unboxed;
+- adds all 240 Goblin frames to the source-margin regression plus focused club,
+  equipment-separator, Archer component, Shaman spark, spark-halo, and cavity
+  checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the forty-seven-family outline lane:
+
+- 8,064 None-mode parity checks pass against the corrected source renderer;
+- all 24,192 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 8,064 frames;
+- the focused single-family review covers 240 source frames / 720 mode cases,
+  adds 19,292 Complete B plus 15,871 Selective C contour pixels, and retains
+  2,552 body-side equipment separator pixels;
+- the complete lane adds 569,880 Complete B plus 452,250 Selective C contour
+  pixels and retains 14,590 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the held-equipment seams, repaired
+Brute club margins, Shaman sparks, Archer bow separation, every preserved
+source opening, all five Goblin silhouettes, and both outline modes. The
+repaired margins, cavity-preserving component treatment, detached bow
+separation, and restrained spark treatment are approved.
 
 ## Treatment
 

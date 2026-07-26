@@ -3002,6 +3002,7 @@ function buildHumanoidC(spec) {
       outfit: V.outfit, oc: find(OUTFIT_COLORS, V.oc).c,
       weapon: V.weapon, shield: 'none',
       face: 'goblin', small: V.small,
+      weaponVerticalStrikeInset: V.id === 'brute' ? 1 : 0,
     };
   }
   if (spec.family === 'zombie') {

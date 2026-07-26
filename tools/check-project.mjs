@@ -197,8 +197,9 @@ check(
       'troll',
       'dwarf',
       'ogre',
+      'goblin',
     ]),
-  'enemy outline support must stay limited to the forty-six approval-gated families',
+  'enemy outline support must stay limited to the forty-seven approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -738,6 +739,7 @@ for (const [family, variant, separatorX, separatorY] of [
 for (const [familyId, variantIds] of [
   ['dwarf', ['warrior', 'miner', 'king']],
   ['ogre', ['brute', 'crusher', 'magi']],
+  ['goblin', ['scout', 'brute', 'shaman', 'archer', 'chief']],
 ]) {
   for (const variant of variantIds) {
     const spec = { kind: 'enemy', family: familyId, variant };
@@ -779,68 +781,103 @@ for (const variant of ['warrior', 'king']) {
   }
 }
 
-for (const [direction, frame, expectedComponents] of [
-  ['down', 1, 2],
-  ['down', 2, 2],
-  ['left', 1, 3],
-  ['left', 2, 3],
-  ['right', 1, 3],
-  ['right', 2, 3],
+for (const [familyId, variantId] of [
+  ['ogre', 'magi'],
+  ['goblin', 'shaman'],
 ]) {
-  const spec = { kind: 'enemy', family: 'ogre', variant: 'magi' };
-  const source = renderPixels(spec, direction, 'attack', frame);
-  const sourceGroups = cardinalPixelComponentGroups(source);
-  const sparkGroups = sourceGroups.filter((group) => group.length === 1);
-  check(
-    sourceGroups.length === expectedComponents,
-    `ogre magi ${direction} attack frame ${frame + 1} `
-      + `must retain ${expectedComponents} body and spark components`,
-  );
-  check(
-    sparkGroups.length === expectedComponents - 1,
-    `ogre magi ${direction} attack frame ${frame + 1} `
-      + 'must retain its authored one-pixel spell sparks',
-  );
-  for (const outlineMode of [
-    engine.OUTLINE_MODE_COMPLETE_B,
-    engine.OUTLINE_MODE_SELECTIVE_C,
+  for (const [direction, frame, expectedComponents] of [
+    ['down', 1, 2],
+    ['down', 2, 2],
+    ['left', 1, 3],
+    ['left', 2, 3],
+    ['right', 1, 3],
+    ['right', 2, 3],
   ]) {
-    const outlined = renderOutlinedPixels(spec, direction, 'attack', frame, outlineMode);
+    const spec = { kind: 'enemy', family: familyId, variant: variantId };
+    const source = renderPixels(spec, direction, 'attack', frame);
+    const sourceGroups = cardinalPixelComponentGroups(source);
+    const sparkGroups = sourceGroups.filter((group) => group.length === 1);
     check(
-      sourceGroups.every((group) => group.every((index) => outlined[index])),
-      `ogre magi ${direction} attack frame ${frame + 1} ${outlineMode} `
-        + 'must preserve every detached source pixel',
+      sourceGroups.length === expectedComponents,
+      `${familyId} ${variantId} ${direction} attack frame ${frame + 1} `
+        + `must retain ${expectedComponents} body and spark components`,
     );
-    for (const [sparkIndex] of sparkGroups) {
-      const sparkX = sparkIndex % engine.SIZE;
-      const sparkY = Math.floor(sparkIndex / engine.SIZE);
-      let adjacentOutlinePixels = 0;
-      for (let offsetY = -1; offsetY <= 1; offsetY++) {
-        for (let offsetX = -1; offsetX <= 1; offsetX++) {
-          if (offsetX === 0 && offsetY === 0) continue;
-          const nextX = sparkX + offsetX;
-          const nextY = sparkY + offsetY;
-          if (
-            nextX < 0
-            || nextY < 0
-            || nextX >= engine.SIZE
-            || nextY >= engine.SIZE
-          ) continue;
-          const nextIndex = (nextY * engine.SIZE) + nextX;
-          if (source[nextIndex]) continue;
-          if (outlined[nextIndex] === engine.OUTLINE_COLOR) adjacentOutlinePixels++;
-        }
-      }
+    check(
+      sparkGroups.length === expectedComponents - 1,
+      `${familyId} ${variantId} ${direction} attack frame ${frame + 1} `
+        + 'must retain its authored one-pixel spell sparks',
+    );
+    for (const outlineMode of [
+      engine.OUTLINE_MODE_COMPLETE_B,
+      engine.OUTLINE_MODE_SELECTIVE_C,
+    ]) {
+      const outlined = renderOutlinedPixels(spec, direction, 'attack', frame, outlineMode);
       check(
-        adjacentOutlinePixels <= 3,
-        `ogre magi ${direction} attack frame ${frame + 1} ${outlineMode} `
-          + 'must keep each one-pixel spell spark out of a boxed halo',
+        sourceGroups.every((group) => group.every((index) => outlined[index])),
+        `${familyId} ${variantId} ${direction} attack frame ${frame + 1} ${outlineMode} `
+          + 'must preserve every detached source pixel',
+      );
+      for (const [sparkIndex] of sparkGroups) {
+        const sparkX = sparkIndex % engine.SIZE;
+        const sparkY = Math.floor(sparkIndex / engine.SIZE);
+        let adjacentOutlinePixels = 0;
+        for (let offsetY = -1; offsetY <= 1; offsetY++) {
+          for (let offsetX = -1; offsetX <= 1; offsetX++) {
+            if (offsetX === 0 && offsetY === 0) continue;
+            const nextX = sparkX + offsetX;
+            const nextY = sparkY + offsetY;
+            if (
+              nextX < 0
+              || nextY < 0
+              || nextX >= engine.SIZE
+              || nextY >= engine.SIZE
+            ) continue;
+            const nextIndex = (nextY * engine.SIZE) + nextX;
+            if (source[nextIndex]) continue;
+            if (outlined[nextIndex] === engine.OUTLINE_COLOR) adjacentOutlinePixels++;
+          }
+        }
+        check(
+          adjacentOutlinePixels <= 3,
+          `${familyId} ${variantId} ${direction} attack frame ${frame + 1} ${outlineMode} `
+            + 'must keep each one-pixel spell spark out of a boxed halo',
+        );
+      }
+    }
+  }
+}
+
+for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+  for (let frame = 0; frame < animation.frames; frame++) {
+    const spec = { kind: 'enemy', family: 'goblin', variant: 'archer' };
+    const source = renderPixels(spec, direction, animation.id, frame);
+    const sourceGroups = cardinalPixelComponentGroups(source);
+    check(
+      sourceGroups.length >= 2 && sourceGroups.length <= 4,
+      `goblin archer ${direction} ${animation.id}/${frame + 1} `
+        + 'must retain two-to-four authored body and bow components',
+    );
+    for (const outlineMode of [
+      engine.OUTLINE_MODE_COMPLETE_B,
+      engine.OUTLINE_MODE_SELECTIVE_C,
+    ]) {
+      const outlined = renderOutlinedPixels(
+        spec,
+        direction,
+        animation.id,
+        frame,
+        outlineMode,
+      );
+      check(
+        sourceGroups.every((group) => group.every((index) => outlined[index])),
+        `goblin archer ${direction} ${animation.id}/${frame + 1} ${outlineMode} `
+          + 'must preserve every detached source pixel',
       );
     }
   }
 }
 
-for (const familyId of ['dwarf', 'ogre']) {
+for (const familyId of ['dwarf', 'ogre', 'goblin']) {
   const cavityFamily = engine.ENEMIES.find((family) => family.id === familyId);
   for (const variant of cavityFamily.variants) {
     const spec = { kind: 'enemy', family: familyId, variant: variant.id };
@@ -1713,7 +1750,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'slime', 'shroom',
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
-  'cyclops', 'troll', 'dwarf', 'ogre',
+  'cyclops', 'troll', 'dwarf', 'ogre', 'goblin',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -1754,6 +1791,7 @@ for (const [familyId, variantId] of [
   ['troll', 'cave'],
   ['dwarf', 'miner'],
   ['ogre', 'brute'],
+  ['goblin', 'brute'],
 ]) {
   const verticalClubSpec = {
     kind: 'enemy',
