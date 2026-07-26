@@ -2398,9 +2398,10 @@ function drawCarnivorousPlant(g, d, p, f, V, animId) {
   const rootLift = (d === 'down' && animId === 'attack' && forwardLunge === 1)
     || (d === 'up' && animId === 'hurt' && p.lunge < 0) ? -1 : 0;
 
-  // Bend the whole stalk with the bloom, then alternate the two roots as
-  // actual stepping feet. The previous cycle moved only the bloom.
-  R(10 + bx, 15 + bob, 4, 6 - bob, stem[0]); R(10 + bx, 19, 4, 2, stem[1]);
+  // Bend the stalk with the bloom, but keep its root-anchored center reaching
+  // row 15 while the flower bobs. Starting the center at 15 + bob detached the
+  // whole head for one frame and made an optional contour blink at the neck.
+  R(10 + bx, 15, 4, 6 - bob, stem[0]); R(10 + bx, 19, 4, 2, stem[1]);
   S(9 + bx, 16 + bob, stem[0]); R(6 + bx, 17 + bob, 4, 2, stem[0]); S(6 + bx, 19 + bob, stem[1]);
   S(14 + bx, 15 + bob, stem[0]); R(14 + bx, 16 + bob, 4, 2, stem[0]); S(17 + bx, 18 + bob, stem[1]);
   R(gait.lx, gait.ly + rootLift, 3, 1, stem[1]); R(gait.rx, gait.ry + rootLift, 3, 1, stem[1]);

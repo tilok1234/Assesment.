@@ -53,6 +53,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'treant',
   'centipede',
   'mole',
+  'carniplant',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -88,6 +89,7 @@ const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'treant',
   'centipede',
   'mole',
+  'carniplant',
 ]);
 const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   beetle: 3,
@@ -105,11 +107,16 @@ const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   treant: 2,
   centipede: 2,
   mole: 2,
+  carniplant: 3,
 });
 const ENEMY_SEPARATED_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'centipede',
   'mole',
+  'carniplant',
 ]);
+const ENEMY_SEPARATED_OUTLINE_SINGLE_PIXEL_MINIMUM_Y = Object.freeze({
+  carniplant: 19,
+});
 
 export function enemySupportsOutline(spec) {
   return spec?.kind === 'enemy' && ENEMY_OUTLINE_FAMILY_SET.has(spec.family);
@@ -374,7 +381,14 @@ function outlineMaskForSeparatedComponents(
       count,
       pixel,
     ) => count + (isTransparent(pixel) ? 0 : 1), 0);
-    return componentSize < minimumComponentPixels
+    const outlinesBottomSinglePixel =
+      componentSize === 1
+      && Number.isInteger(options.singlePixelMinimumY)
+      && componentPixels.some((
+        pixel,
+        index,
+      ) => !isTransparent(pixel) && Math.floor(index / width) >= options.singlePixelMinimumY);
+    return componentSize < minimumComponentPixels && !outlinesBottomSinglePixel
       ? new Uint8Array(width * height)
       : outlineMaskForPixels(componentPixels, mode, width, height);
   });
@@ -820,15 +834,21 @@ export function drawOutlinedSprite(
         // two-pixel tongue tip, Worm's dirt specks, Mantis/Moth's tiny
         // extremities, and Puppet's one-pixel strings/lights stay unhaloed.
         // Spider's small leg clusters, Treant's one-pixel leaf tips, and
-        // Centipede/Mole's one-pixel leg and dirt accents also stay thin.
+        // Centipede/Mole's one-pixel leg and dirt accents, plus Carnivorous
+        // Plant's one-pixel pollen, also stay thin. The plant's low one-pixel
+        // root tips are separately opted into a contour so its side-view legs
+        // do not look truncated.
         // Gargoyle's detached wings, Puppet's detached attack arm, Treant's
-        // canopy, and Mole's detached attack claws are meaningful physical
-        // components and receive normal contours. Eye Monster keeps the
-        // default because its orbitals are intended to read as individually
-        // outlined floating parts.
+        // canopy, Mole's detached attack claws, and Carnivorous Plant's
+        // three-pixel-or-larger stepping roots and bobbing body sections are
+        // meaningful physical components and receive normal contours. Eye
+        // Monster keeps the default because its orbitals are intended to read
+        // as individually outlined floating parts.
         minimumComponentPixels:
           ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS[spec.family] || 1,
         preserveSourceCavities: enemyPreservesSeparatedOutlineCavities(spec),
+        singlePixelMinimumY:
+          ENEMY_SEPARATED_OUTLINE_SINGLE_PIXEL_MINIMUM_Y[spec.family],
       })
       : outlineMaskForPixels(sourcePixels, mode, SIZE, SIZE);
 

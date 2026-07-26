@@ -27,6 +27,8 @@ Gargoyle separated-component outline batch visually approved; Worm, Mantis,
 Moth, and Haunted Puppet tiny-accent outline batch visually approved; Spider
 and Treant separated-anatomy outline batch visually approved. Centipede and
 Mole cavity-preserving separated-component outline batch visually approved.
+Carnivorous Plant outline-native neck repair and cavity-preserving outline
+expansion visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -70,6 +72,7 @@ Outline rollout group 12 visual approval: 2026-07-26
 Outline rollout group 13 visual approval: 2026-07-26
 Outline rollout group 14 visual approval: 2026-07-26
 Outline rollout group 15 visual approval: 2026-07-26
+Outline rollout group 16 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1466,6 +1469,55 @@ The focused handoff sheet uses attack frame 3 across front, back, left, and
 right directions so Centipede's repeated openings and Mole's detached attack
 claws can be reviewed together. Their cavity continuity, thin detached accents,
 meaningful attack-claw contours, and both outline modes are approved.
+
+## Outline Rollout Approved Group 16
+
+Visually approved as a single-family Carnivorous Plant pass.
+
+Carnivorous Plant is the smaller of the two frame-safe families left after
+Group 15. Its source uses one-pixel pollen and root tips, meaningful
+three-to-four-pixel stepping roots, and sixteen walk frames with an enclosed
+three-pixel opening. The original bob also moved the center stalk down while
+keeping the flower base stationary, detaching the full head from the body for
+one idle frame and two walk frames per variant/direction. Per-component
+outlining made that neck break visibly blink.
+
+The candidate:
+
+- keeps the flower's vertical bob but extends the root-anchored center stalk to
+  row 15, adding four connecting stem pixels in each of the 48 affected source
+  frames;
+- enables None, Complete B, and Selective C for all four Carnivorous Plant
+  variants without changing another unsupported family;
+- contours components of three pixels or more, including meaningful stepping
+  roots, and also contours low one-pixel root tips so the side-view legs do not
+  look truncated, while leaving one-pixel pollen unhaloed;
+- preserves all sixteen authored three-pixel walk cavities in both outline
+  modes;
+- adds a regression that prevents the plant's head and body from becoming
+  separate large components again;
+- adds an optional comparison-animation selector to the review generator so
+  idle frame 2 and walk frame 4 can be inspected directly instead of relying
+  only on attack poses;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the forty-one-family outline lane:
+
+- 7,056 None-mode parity checks pass against the corrected source renderer;
+- all 21,168 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 7,056 frames;
+- 384 batch-specific outlined-frame checks preserve authored component
+  separation, the three-pixel minimum-size rule plus the low root-tip
+  exception, source cavities, and the connected physical body;
+- the focused single-family review covers 192 source frames / 576 mode cases
+  and adds 15,232 Complete B plus 11,080 Selective C contour pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 2 for neck continuity, walk frame
+4 for the enclosed opening and stepping roots, and attack frame 2 for the open
+maw and pollen accents. The corrected neck continuity, complete side-view root
+outlines, preserved cavities, pollen restraint, and both outline modes are
+approved.
 
 ## Treatment
 

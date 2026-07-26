@@ -21,6 +21,20 @@ const requestedFamilyIds = familiesFlag >= 0
       .map((familyId) => familyId.trim())
       .filter(Boolean))]
   : engine.ENEMY_OUTLINE_PILOT_FAMILIES;
+const comparisonAnimationFlag = process.argv.indexOf('--comparison-animation');
+const comparisonAnimation = comparisonAnimationFlag >= 0
+  ? process.argv[comparisonAnimationFlag + 1]
+  : 'attack';
+const comparisonAnimationSpec = engine.ANIMS.find(
+  (animation) => animation.id === comparisonAnimation,
+);
+if (!comparisonAnimationSpec) {
+  throw new Error(
+    `--comparison-animation must be one of: ${
+      engine.ANIMS.map((animation) => animation.id).join(', ')
+    }.`,
+  );
+}
 const comparisonFrameFlag = process.argv.indexOf('--comparison-frame');
 const comparisonFrameNumber = comparisonFrameFlag >= 0
   ? Number(process.argv[comparisonFrameFlag + 1])
@@ -28,9 +42,13 @@ const comparisonFrameNumber = comparisonFrameFlag >= 0
 if (
   !Number.isInteger(comparisonFrameNumber)
   || comparisonFrameNumber < 1
-  || comparisonFrameNumber > 4
+  || comparisonFrameNumber > comparisonAnimationSpec.frames
 ) {
-  throw new Error('--comparison-frame must be an integer from 1 through 4.');
+  throw new Error(
+    `--comparison-frame must be an integer from 1 through ${
+      comparisonAnimationSpec.frames
+    } for ${comparisonAnimation}.`,
+  );
 }
 const comparisonFrame = comparisonFrameNumber - 1;
 const MODES = [
@@ -227,7 +245,9 @@ async function writeModeComparison() {
   const body = [
     `<rect width="${width}" height="${height}" fill="#131722"/>`,
     checkerDefinition('checker-mode', 20),
-    `<text x="6" y="22" class="title">ENEMY OUTLINE REVIEW - ATTACK FRAME ${comparisonFrameNumber}</text>`,
+    `<text x="6" y="22" class="title">ENEMY OUTLINE REVIEW - ${
+      comparisonAnimation.toUpperCase()
+    } FRAME ${comparisonFrameNumber}</text>`,
   ];
   columns.forEach((column, index) => {
     body.push(
@@ -251,7 +271,7 @@ async function writeModeComparison() {
       const { pixels } = render(
         spec,
         column.direction,
-        'attack',
+        comparisonAnimation,
         comparisonFrame,
         column.mode,
       );
@@ -328,7 +348,7 @@ async function writeAllFrames(family) {
 
 const report = {
   pilots: PILOTS.map((family) => family.id),
-  comparisonAnimation: 'attack',
+  comparisonAnimation,
   comparisonFrame: comparisonFrameNumber,
   frames: 0,
   modeCases: 0,

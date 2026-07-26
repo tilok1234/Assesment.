@@ -191,8 +191,9 @@ check(
       'worm', 'mantis', 'moth', 'puppet',
       'spider', 'treant',
       'centipede', 'mole',
+      'carniplant',
     ]),
-  'enemy outline support must stay limited to the forty approval-gated families',
+  'enemy outline support must stay limited to the forty-one approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -205,7 +206,7 @@ for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   );
 }
 check(
-  !engine.enemySupportsOutline({ kind: 'enemy', family: 'carniplant' }),
+  !engine.enemySupportsOutline({ kind: 'enemy', family: 'octopus' }),
   'unsupported enemies must remain on the original renderer',
 );
 check(
@@ -1381,6 +1382,12 @@ const separatedOutlineBatchFamilies = new Map([
   ['treant', { minimumComponentPixels: 2, maximumComponents: 5 }],
   ['centipede', { minimumComponentPixels: 2, maximumComponents: 11 }],
   ['mole', { minimumComponentPixels: 2, maximumComponents: 11 }],
+  ['carniplant', {
+    minimumComponentPixels: 3,
+    maximumComponents: 6,
+    maximumDetachedComponentPixels: 4,
+    singlePixelMinimumY: 19,
+  }],
 ]);
 for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
   const family = engine.ENEMIES.find((candidate) => candidate.id === familyId);
@@ -1398,6 +1405,16 @@ for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
             `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
               + `must retain no more than ${familyRules.maximumComponents} source components`,
           );
+          if (familyRules.maximumDetachedComponentPixels) {
+            check(
+              sourceGroups
+                .filter((group) => group.length > familyRules.maximumDetachedComponentPixels)
+                .length === 1,
+              `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+                + `must retain exactly one physical body component larger than `
+                + `${familyRules.maximumDetachedComponentPixels} pixels`,
+            );
+          }
           for (const outlineMode of [
             engine.OUTLINE_MODE_COMPLETE_B,
             engine.OUTLINE_MODE_SELECTIVE_C,
@@ -1417,8 +1434,15 @@ for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
             );
             for (const sourceGroup of sourceGroups) {
               const outlinedGroup = outlinedGroups.find((group) => group.includes(sourceGroup[0]));
+              const outlinesBottomSinglePixel =
+                sourceGroup.length === 1
+                && Number.isInteger(familyRules.singlePixelMinimumY)
+                && sourceGroup.some(
+                  (index) => Math.floor(index / engine.SIZE) >= familyRules.singlePixelMinimumY,
+                );
               const shouldReceiveOutline =
-                sourceGroup.length >= familyRules.minimumComponentPixels;
+                sourceGroup.length >= familyRules.minimumComponentPixels
+                || outlinesBottomSinglePixel;
               check(
                 outlinedGroup
                   && (
