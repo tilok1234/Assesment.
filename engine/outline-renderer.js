@@ -54,6 +54,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'centipede',
   'mole',
   'carniplant',
+  'octopus',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -90,6 +91,7 @@ const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'centipede',
   'mole',
   'carniplant',
+  'octopus',
 ]);
 const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   beetle: 3,
@@ -108,14 +110,19 @@ const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   centipede: 2,
   mole: 2,
   carniplant: 3,
+  octopus: 10,
 });
 const ENEMY_SEPARATED_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'centipede',
   'mole',
   'carniplant',
 ]);
+const ENEMY_SEPARATED_OUTLINE_INTERIOR_CAVITY_FAMILY_SET = new Set([
+  'octopus',
+]);
 const ENEMY_SEPARATED_OUTLINE_SINGLE_PIXEL_MINIMUM_Y = Object.freeze({
   carniplant: 19,
+  octopus: 19,
 });
 
 export function enemySupportsOutline(spec) {
@@ -133,6 +140,11 @@ function enemyUsesSeparatedOutline(spec) {
 function enemyPreservesSeparatedOutlineCavities(spec) {
   return spec?.kind === 'enemy'
     && ENEMY_SEPARATED_OUTLINE_PRESERVE_CAVITY_FAMILY_SET.has(spec.family);
+}
+
+function enemyOutlinesSeparatedInteriorCavities(spec) {
+  return spec?.kind === 'enemy'
+    && ENEMY_SEPARATED_OUTLINE_INTERIOR_CAVITY_FAMILY_SET.has(spec.family);
 }
 
 // These are ownership groups, not the much finer character-kit component layers.
@@ -472,6 +484,24 @@ function outlineMaskForSeparatedComponents(
   }
   for (let index = 0; index < mask.length; index++) {
     if (mask[index] && !reachableOutline[index]) mask[index] = 0;
+  }
+  // Octopus tentacles use narrow enclosed transparent channels as authored
+  // separation lines. The full-tentacle treatment deliberately contours those
+  // channels after exterior component ownership has been resolved.
+  if (options.outlineInteriorCavities) {
+    const combinedExteriorMask = exteriorTransparency(pixels, width, height);
+    const combinedInteriorContour = contourMaskForPixels(
+      pixels,
+      mode,
+      width,
+      height,
+      false,
+    );
+    for (let index = 0; index < mask.length; index++) {
+      if (!combinedExteriorMask[index] && combinedInteriorContour[index]) {
+        mask[index] = 1;
+      }
+    }
   }
   return mask;
 }
@@ -835,18 +865,21 @@ export function drawOutlinedSprite(
         // extremities, and Puppet's one-pixel strings/lights stay unhaloed.
         // Spider's small leg clusters, Treant's one-pixel leaf tips, and
         // Centipede/Mole's one-pixel leg and dirt accents, plus Carnivorous
-        // Plant's one-pixel pollen, also stay thin. The plant's low one-pixel
-        // root tips are separately opted into a contour so its side-view legs
-        // do not look truncated.
+        // Plant's one-pixel pollen and Octopus's one- and two-pixel ink
+        // droplets also stay thin. Their low one-pixel root/tentacle tips are
+        // separately opted into contours so physical limbs do not look
+        // truncated.
         // Gargoyle's detached wings, Puppet's detached attack arm, Treant's
-        // canopy, Mole's detached attack claws, and Carnivorous Plant's
-        // three-pixel-or-larger stepping roots and bobbing body sections are
-        // meaningful physical components and receive normal contours. Eye
-        // Monster keeps the default because its orbitals are intended to read
-        // as individually outlined floating parts.
+        // canopy, Mole's detached attack claws, Carnivorous Plant's
+        // three-pixel-or-larger stepping roots, and Octopus's ten-pixel-or-
+        // larger tentacle groups are meaningful physical components and
+        // receive normal contours. Eye Monster keeps the default because its
+        // orbitals are intended to read as individually outlined floating
+        // parts.
         minimumComponentPixels:
           ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS[spec.family] || 1,
         preserveSourceCavities: enemyPreservesSeparatedOutlineCavities(spec),
+        outlineInteriorCavities: enemyOutlinesSeparatedInteriorCavities(spec),
         singlePixelMinimumY:
           ENEMY_SEPARATED_OUTLINE_SINGLE_PIXEL_MINIMUM_Y[spec.family],
       })

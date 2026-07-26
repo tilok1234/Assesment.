@@ -28,6 +28,7 @@ Moth, and Haunted Puppet tiny-accent outline batch visually approved; Spider
 and Treant separated-anatomy outline batch visually approved. Centipede and
 Mole cavity-preserving separated-component outline batch visually approved.
 Carnivorous Plant outline-native neck repair and cavity-preserving outline
+expansion visually approved. Octopus separated-component, full-tentacle outline
 expansion visually approved.
 
 Date: 2026-07-25
@@ -73,6 +74,7 @@ Outline rollout group 13 visual approval: 2026-07-26
 Outline rollout group 14 visual approval: 2026-07-26
 Outline rollout group 15 visual approval: 2026-07-26
 Outline rollout group 16 visual approval: 2026-07-26
+Outline rollout group 17 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1518,6 +1520,54 @@ Three focused handoff sheets cover idle frame 2 for neck continuity, walk frame
 maw and pollen accents. The corrected neck continuity, complete side-view root
 outlines, preserved cavities, pollen restraint, and both outline modes are
 approved.
+
+## Outline Rollout Approved Group 17
+
+Visually approved as a single-family Octopus pass.
+
+Octopus is the final unsupported family whose corrected source is already
+frame-safe. Its animation deliberately separates broad tentacles, tiny low
+tentacle tips, and one-to-two-pixel ink droplets. It also contains eighty
+narrow transparent tentacle gaps across seventy-two frames. The first
+candidate preserved those gaps, but visual review requested a fuller tentacle
+outline, so the revised candidate treats the gaps as internal contour channels.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for all four Octopus variants
+  without changing another unsupported family;
+- contours detached components of ten pixels or more so meaningful exterior
+  tentacle groups receive complete per-component outlines;
+- also contours low one-pixel components at row 19 or below so physical
+  tentacle tips remain readable, while leaving the upper one-to-two-pixel ink
+  droplets unhaloed;
+- fills every two-, five-, and eight-pixel tentacle gap with the selected
+  outline color so the tentacles receive continuous internal borders in both
+  outline modes;
+- adds regressions for detached-part coverage, the ten-pixel threshold, the
+  low tentacle-tip exception, ink restraint, complete tentacle-gap contouring,
+  None parity, and frame safety;
+- changes no source art, palette, catalog, saved state, or export schema.
+
+Measured candidate result across the forty-two-family outline lane:
+
+- 7,248 None-mode parity checks pass against the corrected source renderer;
+- all 21,744 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 7,248 frames;
+- 384 Octopus-specific outlined-frame checks enforce the ten-pixel
+  detached-part rule, the low tentacle-tip exception, ink restraint, and full
+  contours through every narrow tentacle gap;
+- the focused single-family review covers 192 source frames / 576 mode cases
+  and adds 15,608 Complete B plus 12,008 Selective C contour pixels;
+- the complete lane adds 505,658 Complete B plus 398,815 Selective C contour
+  pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Four focused handoff sheets cover idle frame 1 for the broad underside gap,
+walk frame 1 for detached tentacle groups, walk frame 4 for the narrow
+side-view opening, and attack frame 2 for low tentacle tips and loose ink.
+Their separated contours, complete internal tentacle borders, restrained
+droplets, and both outline modes are approved.
 
 ## Treatment
 

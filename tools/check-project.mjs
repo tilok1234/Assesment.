@@ -192,8 +192,9 @@ check(
       'spider', 'treant',
       'centipede', 'mole',
       'carniplant',
+      'octopus',
     ]),
-  'enemy outline support must stay limited to the forty-one approval-gated families',
+  'enemy outline support must stay limited to the forty-two approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -206,7 +207,7 @@ for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   );
 }
 check(
-  !engine.enemySupportsOutline({ kind: 'enemy', family: 'octopus' }),
+  !engine.enemySupportsOutline({ kind: 'enemy', family: 'snail' }),
   'unsupported enemies must remain on the original renderer',
 );
 check(
@@ -1388,6 +1389,12 @@ const separatedOutlineBatchFamilies = new Map([
     maximumDetachedComponentPixels: 4,
     singlePixelMinimumY: 19,
   }],
+  ['octopus', {
+    minimumComponentPixels: 10,
+    maximumComponents: 10,
+    singlePixelMinimumY: 19,
+    outlineInteriorCavities: true,
+  }],
 ]);
 for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
   const family = engine.ENEMIES.find((candidate) => candidate.id === familyId);
@@ -1427,11 +1434,13 @@ for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
               outlineMode,
             );
             const outlinedGroups = cardinalPixelComponentGroups(outlined);
-            check(
-              outlinedGroups.length === sourceGroups.length,
-              `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
-                + `${outlineMode} must keep authored components separated`,
-            );
+            if (!familyRules.outlineInteriorCavities) {
+              check(
+                outlinedGroups.length === sourceGroups.length,
+                `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+                  + `${outlineMode} must keep authored components separated`,
+              );
+            }
             for (const sourceGroup of sourceGroups) {
               const outlinedGroup = outlinedGroups.find((group) => group.includes(sourceGroup[0]));
               const outlinesBottomSinglePixel =
@@ -1457,11 +1466,20 @@ for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
               );
             }
             for (const sourceCavity of sourceCavities) {
-              check(
-                sourceCavity.every((index) => !outlined[index]),
-                `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
-                  + `${outlineMode} must preserve its ${sourceCavity.length}-pixel source cavity`,
-              );
+              if (familyRules.outlineInteriorCavities) {
+                check(
+                  sourceCavity.every((index) => outlined[index]),
+                  `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+                    + `${outlineMode} must contour its full ${sourceCavity.length}-pixel `
+                    + 'tentacle gap',
+                );
+              } else {
+                check(
+                  sourceCavity.every((index) => !outlined[index]),
+                  `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+                    + `${outlineMode} must preserve its ${sourceCavity.length}-pixel source cavity`,
+                );
+              }
             }
           }
         }
