@@ -24,7 +24,8 @@ outline expansion visually approved; Drake outline-native source rework and
 outline expansion visually approved; Bat, Ghost, Golem, and Snake clean
 exterior outline batch visually approved; Frog, Jellyfish, Scarecrow, and
 Gargoyle separated-component outline batch visually approved; Worm, Mantis,
-Moth, and Haunted Puppet tiny-accent outline batch visually approved.
+Moth, and Haunted Puppet tiny-accent outline batch visually approved; Spider
+and Treant separated-anatomy outline batch visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -66,6 +67,7 @@ Outline rollout group 10 visual approval: 2026-07-26
 Outline rollout group 11 visual approval: 2026-07-26
 Outline rollout group 12 visual approval: 2026-07-26
 Outline rollout group 13 visual approval: 2026-07-26
+Outline rollout group 14 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1380,6 +1382,48 @@ Measured candidate result across the thirty-six-family outline lane:
 The focused comparison sheet uses attack frame 2 across front, back, left, and
 right directions. The thin source accents, Puppet's detached attack arm, and
 both outline modes are approved.
+
+## Outline Rollout Approved Group 14
+
+Visually approved as one focused batch covering Spider and Treant.
+
+These are the final unsupported families with zero source-edge contact, zero
+out-of-bounds writes, and zero enclosed transparent cavities. Both use
+meaningful disconnected anatomy, but at opposite scales: Spider alternates
+between many tiny detached leg clusters, while Treant carries a large detached
+canopy plus one-pixel branch and leaf tips.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for all Spider and Treant variants
+  without changing another unsupported family;
+- contours Spider's connected body while leaving every detached one-to-eight
+  pixel leg, fang, and appendage component unhaloed;
+- uses the same nine-pixel Spider threshold through all four attack frames so
+  the alternating two- and eight-pixel leg clusters do not gain and lose
+  halos between poses;
+- contours Treant's detached forty-eight-to-fifty-four-pixel canopy as
+  meaningful anatomy while leaving one-pixel leaf tips unhaloed;
+- preserves every authored source component and every None-mode pixel;
+- changes no source art, palette, animation, catalog, saved state, or export
+  schema.
+
+Measured candidate result across the thirty-eight-family outline lane:
+
+- 6,480 None-mode parity checks pass;
+- all 19,440 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 6,480 frames;
+- 672 batch-specific outlined-frame checks preserve authored component
+  separation and apply each family's minimum-size rule;
+- the focused two-family review covers 336 source frames / 1,008 mode cases
+  and adds 19,972 Complete B plus 16,418 Selective C contour pixels;
+- zero source-edge frames, zero out-of-bounds writes, and zero enclosed source
+  cavities.
+
+All four Spider attack frames received a separate visual continuity pass. The
+focused handoff sheet uses attack frame 2 across front, back, left, and right
+directions. Spider's thin-leg continuity, Treant's separated canopy, and both
+outline modes are approved.
 
 ## Treatment
 

@@ -49,6 +49,8 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'mantis',
   'moth',
   'puppet',
+  'spider',
+  'treant',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -80,6 +82,8 @@ const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'mantis',
   'moth',
   'puppet',
+  'spider',
+  'treant',
 ]);
 const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   beetle: 3,
@@ -93,6 +97,8 @@ const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   mantis: 3,
   moth: 2,
   puppet: 2,
+  spider: 9,
+  treant: 2,
 });
 
 export function enemySupportsOutline(spec) {
@@ -791,10 +797,11 @@ export function drawOutlinedSprite(
         // outline-native physical component in every direction. Frog's
         // two-pixel tongue tip, Worm's dirt specks, Mantis/Moth's tiny
         // extremities, and Puppet's one-pixel strings/lights stay unhaloed.
-        // Gargoyle's detached wings and Puppet's detached attack arm are
-        // meaningful physical components and receive normal contours. Eye
-        // Monster keeps the default because its orbitals are intended to read
-        // as individually outlined floating parts.
+        // Spider's small leg clusters and Treant's one-pixel leaf tips also
+        // stay thin. Gargoyle's detached wings, Puppet's detached attack arm,
+        // and Treant's canopy are meaningful physical components and receive
+        // normal contours. Eye Monster keeps the default because its orbitals
+        // are intended to read as individually outlined floating parts.
         minimumComponentPixels:
           ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS[spec.family] || 1,
       })
