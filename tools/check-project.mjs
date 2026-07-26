@@ -194,8 +194,9 @@ check(
       'carniplant',
       'octopus',
       'cyclops',
+      'troll',
     ]),
-  'enemy outline support must stay limited to the forty-three approval-gated families',
+  'enemy outline support must stay limited to the forty-four approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -1573,7 +1574,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'slime', 'shroom',
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
-  'cyclops',
+  'cyclops', 'troll',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -1609,66 +1610,75 @@ for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
   }
 }
 
-const cyclopsShepherdSpec = {
-  kind: 'enemy',
-  family: 'cyclops',
-  variant: 'shepherd',
-};
-for (const [direction, layer, edgeRow] of [
-  ['down', 'weapon-front', engine.SIZE - 1],
-  ['up', 'weapon-back', 0],
+for (const [familyId, variantId] of [
+  ['cyclops', 'shepherd'],
+  ['troll', 'cave'],
 ]) {
-  const strikeFrames = [1, 2].map((frame) => (
-    renderPixels(cyclopsShepherdSpec, direction, 'attack', frame, { layer })
-  ));
-  for (const [frameIndex, pixels] of strikeFrames.entries()) {
+  const verticalClubSpec = {
+    kind: 'enemy',
+    family: familyId,
+    variant: variantId,
+  };
+  for (const [direction, layer, edgeRow] of [
+    ['down', 'weapon-front', engine.SIZE - 1],
+    ['up', 'weapon-back', 0],
+  ]) {
+    const strikeFrames = [1, 2].map((frame) => (
+      renderPixels(verticalClubSpec, direction, 'attack', frame, { layer })
+    ));
+    for (const [frameIndex, pixels] of strikeFrames.entries()) {
+      check(
+        pixels.slice(edgeRow * engine.SIZE, (edgeRow + 1) * engine.SIZE)
+          .every((pixel) => pixel === null),
+        `${familyId} ${variantId} ${direction} attack frame ${frameIndex + 2} club layer `
+          + 'must reserve its vertical outline row',
+      );
+      check(
+        pixels.some(Boolean),
+        `${familyId} ${variantId} ${direction} attack frame ${frameIndex + 2} `
+          + 'must retain the striking club',
+      );
+    }
     check(
-      pixels.slice(edgeRow * engine.SIZE, (edgeRow + 1) * engine.SIZE)
-        .every((pixel) => pixel === null),
-      `cyclops shepherd ${direction} attack frame ${frameIndex + 2} club layer `
-        + 'must reserve its vertical outline row',
-    );
-    check(
-      pixels.some(Boolean),
-      `cyclops shepherd ${direction} attack frame ${frameIndex + 2} `
-        + 'must retain the striking club',
+      JSON.stringify(strikeFrames[0]) !== JSON.stringify(strikeFrames[1]),
+      `${familyId} ${variantId} ${direction} attack `
+        + 'must retain distinct strike and recoil club frames',
     );
   }
-  check(
-    JSON.stringify(strikeFrames[0]) !== JSON.stringify(strikeFrames[1]),
-    `cyclops shepherd ${direction} attack must retain distinct strike and recoil club frames`,
-  );
 }
 
-const cyclopsFamily = engine.ENEMIES.find((family) => family.id === 'cyclops');
-for (const variant of cyclopsFamily.variants) {
-  const spec = { kind: 'enemy', family: 'cyclops', variant: variant.id };
-  for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
-    for (let frame = 0; frame < animation.frames; frame++) {
-      const source = renderPixels(spec, direction, animation.id, frame);
-      const sourceCavities = cardinalTransparentCavityGroups(source);
-      for (const outlineMode of [
-        engine.OUTLINE_MODE_COMPLETE_B,
-        engine.OUTLINE_MODE_SELECTIVE_C,
-      ]) {
-        const outlined = renderOutlinedPixels(
-          spec,
-          direction,
-          animation.id,
-          frame,
-          outlineMode,
-        );
-        const prefix =
-          `cyclops ${variant.id} ${direction} ${animation.id}/${frame + 1} ${outlineMode}`;
-        check(
-          source.every((pixel, index) => !pixel || outlined[index] === pixel),
-          `${prefix} exterior outline must preserve every authored source pixel`,
-        );
-        for (const cavity of sourceCavities) {
-          check(
-            cavity.every((index) => !outlined[index]),
-            `${prefix} must preserve its ${cavity.length}-pixel source cavity`,
+for (const familyId of ['cyclops', 'troll']) {
+  const exteriorOutlineFamily = engine.ENEMIES.find((family) => family.id === familyId);
+  for (const variant of exteriorOutlineFamily.variants) {
+    const spec = { kind: 'enemy', family: familyId, variant: variant.id };
+    for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const source = renderPixels(spec, direction, animation.id, frame);
+        const sourceCavities = cardinalTransparentCavityGroups(source);
+        for (const outlineMode of [
+          engine.OUTLINE_MODE_COMPLETE_B,
+          engine.OUTLINE_MODE_SELECTIVE_C,
+        ]) {
+          const outlined = renderOutlinedPixels(
+            spec,
+            direction,
+            animation.id,
+            frame,
+            outlineMode,
           );
+          const prefix =
+            `${familyId} ${variant.id} ${direction} `
+            + `${animation.id}/${frame + 1} ${outlineMode}`;
+          check(
+            source.every((pixel, index) => !pixel || outlined[index] === pixel),
+            `${prefix} exterior outline must preserve every authored source pixel`,
+          );
+          for (const cavity of sourceCavities) {
+            check(
+              cavity.every((index) => !outlined[index]),
+              `${prefix} must preserve its ${cavity.length}-pixel source cavity`,
+            );
+          }
         }
       }
     }

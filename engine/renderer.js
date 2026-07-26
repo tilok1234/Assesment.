@@ -3038,7 +3038,10 @@ function buildHumanoidC(spec) {
       wings: V.wing || null,
       small: !!V.small, eye: V.eye || null,
       weaponVerticalStrikeInset:
-        spec.family === 'cyclops' && V.id === 'shepherd' ? 1 : 0,
+        (
+          (spec.family === 'cyclops' && V.id === 'shepherd')
+          || (spec.family === 'troll' && V.id === 'cave')
+        ) ? 1 : 0,
     };
   }
   // skeleton

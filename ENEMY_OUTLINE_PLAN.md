@@ -30,7 +30,8 @@ Mole cavity-preserving separated-component outline batch visually approved.
 Carnivorous Plant outline-native neck repair and cavity-preserving outline
 expansion visually approved. Octopus separated-component, full-tentacle outline
 expansion visually approved. Cyclops vertical-strike frame-safety repair and
-exterior outline expansion are visually approved.
+exterior outline expansion are visually approved. Troll vertical-strike
+frame-safety repair and exterior outline expansion are visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -77,6 +78,7 @@ Outline rollout group 15 visual approval: 2026-07-26
 Outline rollout group 16 visual approval: 2026-07-26
 Outline rollout group 17 visual approval: 2026-07-26
 Outline rollout group 18 visual approval: 2026-07-26
+Outline rollout group 19 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1613,6 +1615,50 @@ Measured candidate result across the forty-three-family outline lane:
 Two focused handoff sheets cover attack frames 2 and 3 across front, back,
 left, and right directions. They expose the repaired Shepherd club margins,
 the distinct strike/recoil poses, all three Cyclops silhouettes, and both
+outline modes. The repaired margins and exterior outline treatment are
+approved.
+
+## Outline Rollout Approved Group 19
+
+Visually approved as a single-family Troll pass.
+
+After Cyclops approval, fourteen enemy families remained outside the outline
+lane. Troll is the next smallest clean repair: all 144 source frames form one
+connected component, but the Cave Troll's club touches the bottom or top
+canvas row in down/up attack frames 2 and 3. Those four frames contribute
+eight edge pixels and have no out-of-bounds writes.
+
+The approved pass:
+
+- gives only the Cave Troll's vertical club strike the same one-pixel inset as
+  the approved Cyclops Shepherd repair, moving the down strike upward and the
+  up strike downward while preserving distinct strike and recoil frames;
+- reduces the full enemy corpus from 158 to 154 source-edge frames and from
+  574 to 566 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for all three Troll variants
+  without changing another unsupported family;
+- uses the exterior-only outline path because every Troll source frame is
+  connected;
+- preserves every authored source pixel in both outline modes, including all
+  149 enclosed openings across 118 frames;
+- adds all 144 Troll frames to the source-margin regression plus focused
+  weapon-layer checks for both repaired directions and strike phases;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured result across the forty-four-family outline lane:
+
+- 7,536 None-mode parity checks pass against the corrected source renderer;
+- all 22,608 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 7,536 frames;
+- the focused single-family review covers 144 source frames / 432 mode cases
+  and adds 11,587 Complete B plus 9,419 Selective C contour pixels;
+- the complete lane adds 527,866 Complete B plus 417,398 Selective C contour
+  pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Two focused handoff sheets cover attack frames 2 and 3 across front, back,
+left, and right directions. They expose the repaired Cave Troll club margins,
+the distinct strike/recoil poses, all three Troll silhouettes, and both
 outline modes. The repaired margins and exterior outline treatment are
 approved.
 
