@@ -38,7 +38,9 @@ frame-safety repair and cavity-preserving component-aware outline expansion
 are visually approved. Goblin vertical-strike frame-safety repair and
 cavity-preserving component-aware outline expansion are visually approved.
 Zombie vertical-strike frame-safety repair and cavity-preserving
-component-aware outline expansion are visually approved.
+component-aware outline expansion are visually approved. Imp vertical-strike
+frame-safety repair and cavity-preserving component-aware outline expansion
+are visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -90,6 +92,7 @@ Outline rollout group 20 visual approval: 2026-07-26
 Outline rollout group 21 visual approval: 2026-07-26
 Outline rollout group 22 visual approval: 2026-07-26
 Outline rollout group 23 visual approval: 2026-07-26
+Outline rollout group 24 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1865,6 +1868,61 @@ margins, held-equipment seams, every preserved source opening, all four Zombie
 silhouettes, and both outline modes. The repaired margins,
 cavity-preserving component treatment, and held-equipment separators are
 approved.
+
+## Outline Rollout Approved Group 24
+
+Visually approved as a single-family Imp pass.
+
+After Zombie approval, nine enemy families remained outside the outline lane.
+Imp is the next unsupported family in catalog order. Its 144-frame family has
+only four source-edge frames, all from the Fiend's club touching the bottom or
+top canvas row in down/up attack frames 2 and 3. Those frames contribute eight
+edge pixels and have no out-of-bounds writes.
+
+Every Imp frame also contains detached one-pixel anatomy: the diagonal horn
+tips are deliberately separated from the head, and the Pyro adds detached
+one-pixel staff sparks during the middle attack frames. Giving each singleton
+a normal eight-neighbor halo would replace their thin read with black boxes.
+
+The candidate:
+
+- gives only the Imp Fiend's vertical club strike the approved one-pixel
+  inset, moving the down strike upward and the up strike downward while
+  preserving distinct strike and recoil frames;
+- reduces the full enemy corpus from 134 to 130 source-edge frames and from
+  526 to 518 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Sprite, Pyro, and Fiend
+  without changing another unsupported family;
+- uses the cavity-preserving component-aware humanoid path so the spear,
+  staff, and club retain readable body-side seams;
+- preserves all 81 enclosed openings across 66 corrected source frames and all
+  144 multi-component frames / 231 detached source pixels;
+- leaves detached one-pixel body tips and Pyro staff sparks unhaloed while
+  retaining nearby body, weapon, and contact contours, so none becomes a boxed
+  black block or disappears under an equipment separator;
+- adds all 144 Imp frames to the source-margin regression plus focused Fiend
+  club, equipment-separator, horn-tip, Pyro spark, halo, and exhaustive cavity
+  checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the forty-nine-family outline lane:
+
+- 8,400 None-mode parity checks pass against the corrected source renderer;
+- all 25,200 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 8,400 frames;
+- the focused single-family review covers 144 source frames / 432 mode cases,
+  adds 10,712 Complete B plus 9,037 Selective C contour pixels, and retains
+  1,718 body-side equipment separator pixels;
+- the complete lane adds 594,929 Complete B plus 473,738 Selective C contour
+  pixels and retains 17,588 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the repaired Fiend club margins,
+detached horn tips, Pyro sparks, held-equipment seams, every preserved source
+opening, all three Imp silhouettes, and both outline modes. The repaired
+margins, cavity-preserving component treatment, thin horn tips, and restrained
+spark treatment are approved.
 
 ## Treatment
 

@@ -61,6 +61,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'ogre',
   'goblin',
   'zombie',
+  'imp',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -78,16 +79,22 @@ const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
   'ogre',
   'goblin',
   'zombie',
+  'imp',
 ]);
 const ENEMY_COMPONENT_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'dwarf',
   'ogre',
   'goblin',
   'zombie',
+  'imp',
 ]);
 const ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_EQUIPMENT_FAMILY_SET = new Set([
   'ogre',
   'goblin',
+  'imp',
+]);
+const ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_BODY_FAMILY_SET = new Set([
+  'imp',
 ]);
 // Orbiting one-pixel parts need their own contour ownership. A normal merged
 // silhouette contour fills the one-cell breathing room and visually welds them
@@ -161,6 +168,12 @@ function enemyPreservesComponentOutlineCavities(spec) {
 function enemyLeavesSinglePixelEquipmentUnhaloed(spec) {
   return spec?.kind === 'enemy'
     && ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_EQUIPMENT_FAMILY_SET
+      .has(spec.family);
+}
+
+function enemyLeavesSinglePixelBodyUnhaloed(spec) {
+  return spec?.kind === 'enemy'
+    && ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_BODY_FAMILY_SET
       .has(spec.family);
 }
 
@@ -954,22 +967,31 @@ export function drawOutlinedSprite(
     ? compositePixels
     : renderSpritePixels(spec, direction, animationId, frame, rendererOptions);
   const contactOutlinePlan = contactOutlinePlanForVisibleLayers(visibleLayers, compositePixels, mode);
-  if (enemyLeavesSinglePixelEquipmentUnhaloed(spec)) {
-    const weaponComponents = connectedSourceComponents(
-      ownerPixels[0],
+  const excludeSingletonOwnerHalos = (ownerIndex) => {
+    const components = connectedSourceComponents(
+      ownerPixels[ownerIndex],
       SIZE,
       SIZE,
     ).components;
-    for (const componentPixels of weaponComponents) {
+    for (const componentPixels of components) {
       const componentSize = componentPixels.reduce((
         count,
         pixel,
       ) => count + (isTransparent(pixel) ? 0 : 1), 0);
       if (componentSize !== 1) continue;
       const singletonIndex = componentPixels.findIndex((pixel) => !isTransparent(pixel));
-      contactOutlinePlan.haloSourceExclusionMasks[0][singletonIndex] = 1;
+      contactOutlinePlan.haloSourceExclusionMasks[ownerIndex][singletonIndex] = 1;
+      if (ownerIndex === BODY_OWNER_INDEX) {
+        // A one-pixel horn, hand, or other body tip cannot also carry an
+        // equipment-contact separator without disappearing from the final
+        // sprite. Preserve the authored color and let the surrounding owners
+        // supply whatever nearby contour remains.
+        contactOutlinePlan.layerContactMask[singletonIndex] = 0;
+      }
     }
-  }
+  };
+  if (enemyLeavesSinglePixelEquipmentUnhaloed(spec)) excludeSingletonOwnerHalos(0);
+  if (enemyLeavesSinglePixelBodyUnhaloed(spec)) excludeSingletonOwnerHalos(BODY_OWNER_INDEX);
 
   // Paint only behind the final composite, then repaint the exact offscreen renderer
   // result above it. No contour can cover assembled artwork.

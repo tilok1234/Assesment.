@@ -3023,6 +3023,7 @@ function buildHumanoidC(spec) {
       outfit: V.outfit, oc: find(OUTFIT_COLORS, V.oc).c,
       weapon: V.weapon, shield: 'none',
       face: 'imp', small: V.small,
+      weaponVerticalStrikeInset: V.id === 'fiend' ? 1 : 0,
     };
   }
   const HUM_FACE = { elf: 'elf', dwarf: 'human', bandit: 'human', cultist: 'human', orc: 'orc', ogre: 'orc', troll: 'orc', kobold: 'snout', gnoll: 'snout', ratfolk: 'snout', lizardfolk: 'snout', minotaur: 'snout', demon: 'imp', cyclops: 'cyclops', harpy: 'human' };
