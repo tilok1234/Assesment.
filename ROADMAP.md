@@ -215,9 +215,10 @@ The next assessed Phase 5 candidate is Production Roll, defined in
 randomizer as Wildcard Roll while adding a seeded, archetype-first curated
 whole-character action with coherent tiers, visibility normalization,
 silhouette budgeting, and palette families. Implementation has not started;
-the plan first requires a safe Lantern checkpoint, pure-policy validation, and
-an explicit Production-versus-Wildcard visual approval gate before any editor
-integration.
+the safe Lantern/plan checkpoint is complete at `01b3f1a`. The next bounded
+work is the pure deterministic policy skeleton, followed by policy validation
+and an explicit Production-versus-Wildcard visual approval gate before any
+editor integration.
 
 Candidate additions:
 

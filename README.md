@@ -281,7 +281,7 @@ Every component shares the same animation grid and has been validated to recompo
 - `ROADMAP.md` - agreed development and Windows release order
 - `HANDOFF.md` - exact branch, validation, known gaps, and continuation state
 - `ENEMY_OUTLINE_PLAN.md` - completed 57-family outline rollout record
-- `SHADE_RENDERING_PLAN.md` - canonical next-phase shade design and approval gates
+- `SHADE_RENDERING_PLAN.md` - canonical completed shade design and approval gates
 - `OFFHAND_ITEMS_PLAN.md` - approved Lantern pilot, public contract, validation, and future off-hand boundaries
 - `PRODUCTION_ROLL_PLAN.md` - assessed Production-versus-Wildcard roll contract and approval-gated implementation slices; runtime work has not started
 

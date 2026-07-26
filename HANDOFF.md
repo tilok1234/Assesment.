@@ -15,12 +15,12 @@ persistence migrations, assembled exports, and pack/recipe metadata. None
 remains the engine compatibility mode and versioned legacy-artwork fallback.
 No new fixture or baseline was accepted, and no release artifact was rebuilt.
 
-The current dirty worktree contains the first fresh Phase 5 content slice: the
-visually approved Lantern and its authorized public non-shield `offhand`
+The first fresh Phase 5 content slice is complete at pushed checkpoint
+`01b3f1a` (`Add approved Lantern off-hand and production roll plan`). It adds
+the visually approved Lantern and its authorized public non-shield `offhand`
 integration. The art review and lighter parchment background were approved on
 2026-07-26. Presets, ordinary packs, class/equipment planners, complete kits,
-the public engine facade, and exact layer recomposition now carry the field.
-This work is not committed or pushed yet.
+the public engine facade, and exact layer recomposition carry the field.
 
 The user then requested a proper assessment and manageable implementation plan
 for curated production-quality character rolls. `PRODUCTION_ROLL_PLAN.md` is
@@ -43,30 +43,31 @@ off-hand art also requires a new focused plan and visual approval gate.
    git log -5 --oneline
    ```
 
-2. Confirm `codex/form-shading` is based on the approved Form checkpoint
-   `a4310ec` and effects-default checkpoint `2a1111f`, which in turn descend
-   from documentation checkpoint `630ddf7` and final enemy-outline commit
-   `ac860aa`.
+2. Confirm `codex/form-shading` contains pushed Lantern/plan checkpoint
+   `01b3f1a`, based on approved Form checkpoint `a4310ec` and effects-default
+   checkpoint `2a1111f`.
 3. Read `README.md`, `ARCHITECTURE.md`, this file,
    `PRODUCTION_ROLL_PLAN.md`,
    `OUTLINE_RENDERING_PLAN.md`, `ENEMY_OUTLINE_PLAN.md`, and
    `SHADE_RENDERING_PLAN.md`.
-4. Inspect the current diff before editing. Do not reset, restore, stash,
+4. Confirm the worktree is clean before editing. Do not reset, restore, stash,
    merge, push, accept baselines, or rebuild release artifacts automatically.
-5. Confirm the Lantern integration diff and this plan, then rerun both the
-   project validator and ignored off-hand review before checkpointing. Do not
-   start Production Roll runtime work until that checkpoint or the user
-   explicitly chooses to proceed without it. The effect/shield compositor is
-   explicitly on ice and its preview defaults to Off. Further content,
+5. Begin only Slice 1, the deterministic policy skeleton, from
+   `PRODUCTION_ROLL_PLAN.md`. Preserve `randomPlayer()` as Wildcard Roll; do
+   not add editor UI or persistence changes yet. The effect/shield compositor
+   is explicitly on ice and its preview defaults to Off. Further content,
    transparency, fixture/baseline, or release work requires a separate user
    choice.
 
 ## Git State At Handoff
 
 - Completed outline branch: `codex/enemy-outlines`
-- Approved shade and active Lantern branch: `codex/form-shading`
-- Current committed HEAD and upstream: `2a1111f`
-  (`Default combat effects preview to off`)
+- Approved shade, Lantern, and Production Roll planning branch:
+  `codex/form-shading`
+- Approved Lantern/plan checkpoint: `01b3f1a`
+  (`Add approved Lantern off-hand and production roll plan`)
+- `01b3f1a` is pushed to `origin/codex/form-shading`; the worktree was clean
+  after the checkpoint. Verify the exact current documentation-only HEAD live.
 - Approved Form commit: `a4310ec` (`Add approved Form shading`)
 - Final approved enemy-outline commit: `ac860aa`
   (`Add approved Porcupine outlines`)
@@ -77,8 +78,6 @@ off-hand art also requires a new focused plan and visual approval gate.
 - Compared with `origin/codex/optional-sprite-outlines` at `f21cbe3`, the
   outline branch is 61 commits ahead and has no remote-only commits.
 - The outline branch has no configured upstream and has not been pushed.
-- The Phase 5 Lantern integration is an intentional uncommitted worktree diff
-  above `2a1111f`; do not reset or discard it.
 - The shade branch was created from detached documentation checkpoint
   `630ddf7` because `codex/enemy-outlines` remained attached to its isolated
   temporary worktree. Core/None, Form, persistence, UI, export, schema,

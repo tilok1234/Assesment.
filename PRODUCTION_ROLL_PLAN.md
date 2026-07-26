@@ -15,18 +15,14 @@ baselines, and release artifacts.
 
 - Workspace: `C:\Users\headc\.codex\worktrees\9f24\8-bit sprite assembler`
 - Branch: `codex/form-shading`
-- Committed HEAD and upstream: `2a1111f`
-  (`Default combat effects preview to off`)
-- The approved Lantern public integration remains an intentional uncommitted
-  worktree diff.
+- Approved Lantern and Production Roll plan checkpoint: `01b3f1a`
+  (`Add approved Lantern off-hand and production roll plan`)
+- `01b3f1a` is committed and pushed to `origin/codex/form-shading`.
 - `npm.cmd run check` currently passes, including 192 frame-safe Lantern cases.
 - `npm.cmd run review:offhands` currently passes 576 assembled treatment cases.
 - No fixture or visual baseline was changed, and no release artifact was
   rebuilt.
-
-Before Production Roll implementation begins, create an explicit safe
-checkpoint for the approved Lantern slice and this planning artifact if the
-user authorizes commit and push.
+- Slice 0 is complete. Runtime Production Roll implementation has not started.
 
 ## Executive assessment
 
@@ -317,17 +313,19 @@ start the next slice while its gate is unresolved.
 
 ### Slice 0 — safe checkpoint and frozen contract
 
-Scope:
+Status: complete at pushed checkpoint `01b3f1a`.
+
+Completed evidence:
 
 - verify the Lantern diff, branch, HEAD, and upstream;
 - rerun the full project and Lantern review gates;
-- checkpoint the approved Lantern integration and this plan only after explicit
+- checkpoint the approved Lantern integration and this plan after explicit
   user authorization;
 - leave release artifacts and baselines unchanged.
 
-Exit criteria:
+Satisfied exit criteria:
 
-- clean, pushed safe checkpoint if authorized;
+- clean, pushed safe checkpoint;
 - `PRODUCTION_ROLL_PLAN.md` is the canonical lane authority;
 - no Production Roll runtime code exists yet.
 
