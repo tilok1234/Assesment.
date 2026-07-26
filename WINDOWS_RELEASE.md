@@ -1,5 +1,11 @@
 # Windows release guide
 
+Current artifact status (2026-07-26): the existing standalone executable and
+July 19 NSIS installer predate the final `ac860aa` enemy-outline checkpoint.
+The current branch has passed the web production build but has not produced or
+approved a new Windows release artifact. Do not distribute either historical
+binary as the current outline/shade build.
+
 The Windows edition packages the same production frontend and procedural engine used by the browser build. Packaging does not freeze the content catalog: outfits, hairstyles, headgear, weapons, enemies, effects, and templates can still be changed normally, then included by rebuilding the application.
 
 ## Local release build

@@ -63,6 +63,12 @@ Edge contact remains advisory. Attempted writes beyond `x=0..23` or `y=0..23` ar
 
 Completed and user-approved on 2026-07-20. The tier-specific correction gives the Apocalypse Engine bright connected recurved limbs, a darker secondary string, and a reinforced stock/grip so it reads as a crossbow rather than a compact firearm. Tiers 1-4 and all placement and animation contracts remain unchanged. The full 3,600-frame audit reports zero discarded pixels, and the project, outline, weapon, and build validators pass.
 
-## Current Continuation
+## Deferred Continuation
 
-The weapon source-art baseline remains accepted. Further item-by-item weapon work is paused until the default assembler view correctly composes modular combat effects with approved shields. That active integration problem is tracked in `HANDOFF.md`; an effects-Off sprite review does not validate it. Crossbow T2 with a shield remains a later composition review rather than a source-art change.
+The weapon source-art baseline remains accepted, and further item-by-item
+weapon work is paused. The default assembler view still composes modular
+combat effects after approved shields; that deferred integration problem is
+tracked in `HANDOFF.md`, and an effects-Off review does not validate it.
+Crossbow T2 with a shield remains a later composition review rather than a
+source-art change. The active next-phase plan is the independent assembled
+shade pass in `SHADE_RENDERING_PLAN.md`.

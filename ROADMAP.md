@@ -105,7 +105,14 @@ Exit criteria:
 
 Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
 
-Current integration gate (2026-07-22): the shield hand/facing work is committed and pushed at `f21cbe3`, but the default effect-enabled assembler preview still composites every resolved effect after the complete character. Effect pixels can therefore overwrite approved shield and equipment pixels. This user-visible compositor issue must be reproduced and approved in all four attack frames and directions before Bone T3, broader equipment review, or another content slice resumes. See `HANDOFF.md`.
+Current visual checkpoint (2026-07-26): the complete 57-family enemy-outline
+rollout is visually approved at local commit `ac860aa`. The 9,696-frame enemy
+source corpus and 29,088 None-B-C cases have zero source-edge frames and zero
+out-of-bounds writes. The canonical next feature is the optional shared
+assembled-sprite shade pass in `SHADE_RENDERING_PLAN.md`; it starts from None
+parity and a small player/enemy pilot rather than another one-family-at-a-time
+rollout. The default effect-after-character shield/equipment occlusion issue
+remains deferred and explicitly outside shade scope. See `HANDOFF.md`.
 
 The second content slice extracts humanoid weapons into a focused renderer with shared direction and pose anchors, while retaining byte-for-byte output for all existing enemy-used weapons. The player catalog grows from eight to sixteen choices with greatsword, scimitar, rapier, mace, warhammer, crossbow, wand, and spellbook additions. Each new weapon is verified across four directions and every animation, follows the animated player hand through idle, walk, attack, and lunge poses, has a distinct side strike, and observes the player face-clearance rule. Player blades also use readable style-specific hilts: compact dagger grips, sword crossguards, broad greatsword guards, scimitar knuckle guards, and rapier baskets.
 
@@ -161,6 +168,16 @@ The twenty-sixth content slice expands the Class Pack Builder from six to ten st
 
 The twenty-seventh content slice expands the playable species roster from six to ten with Dwarf, Undead, Lizardfolk, and Beastkin. Dwarf adds a broad directional head silhouette without moving the shared body or equipment anchors; Undead adds a fixed-color skull and animated bone hands; Lizardfolk adds skin-matched scale crests, slit eyes, a profile snout, and an animated hip-level tail; Beastkin adds hair-matched ears, muzzle, and animated tufted tail. Human remains pixel-identical, every species stays distinct across all directions and animations, full helmets suppress front traits, and all body builds, outfits, weapons, shields, expressions, and hairstyles remain compatible. Complete Kit and Complete Pack schema v10 add 33 deduplicated species sheets for 20 back and 40 front passes overall, raising the shared component library to 1910 PNGs, the standalone kit to 2137 PNGs, and a 24-player Complete Pack to 2160 PNGs. Validation proves palette-axis selection, walk/attack tail motion, stable recipe paths, and pixel-exact recomposition.
 
+The twenty-eighth content slice extends None, Complete B, and Selective C
+outlines from assembled players to every enemy family. It combines connected
+exterior contours, component-aware humanoid equipment separation, and
+family-specific separated-component thresholds with source-geometry repairs
+that reserve one outline cell around every frame. The final lane covers all
+57 families / 202 variants / 9,696 source frames, keeps the two outline modes
+distinct in every frame, and reports zero source-edge frames and zero
+out-of-bounds writes. All rollout groups were visually approved before the
+local `ac860aa` checkpoint; no push or fixture-baseline rewrite was performed.
+
 Candidate additions:
 
 - More body types beyond the completed four-build silhouette foundation
@@ -177,7 +194,16 @@ Content is added through the stable definition and validation workflow establish
 
 ## Phase 6 - Windows release
 
-Progress: active. The release lane now has native Save dialogs for every PNG, JSON, and ZIP export, final product metadata and icons, a current-user NSIS target with an embedded WebView2 bootstrapper, a release-specific validator, and a versioned GitHub draft-release workflow. The local installer builds and passes artifact validation; the standalone packaged app launches, saves valid data through the native dialog in Downloads, and reports cancellation correctly. Full NSIS install/uninstall testing still requires user confirmation. Code signing and automatic updates remain deferred until a stable distribution identity exists. The current standalone executable contains an unapproved effect-direction experiment and is not a release candidate; the NSIS installer was not rebuilt for that worktree state.
+Progress: active. The release lane has native Save dialogs for every PNG, JSON,
+and ZIP export, final product metadata and icons, a current-user NSIS target
+with an embedded WebView2 bootstrapper, a release-specific validator, and a
+versioned GitHub draft-release workflow. Historical installer and standalone
+smoke tests passed their earlier checkpoints. Neither the existing standalone
+executable nor the July 19 NSIS installer was built from the final
+`ac860aa` enemy-outline state, so neither is a release candidate for the
+current branch. Full NSIS install/uninstall testing, code signing, and
+automatic updates remain deferred until a stable distribution identity and a
+deliberate release checkpoint exist.
 
 Goals:
 

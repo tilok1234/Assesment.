@@ -1,6 +1,9 @@
 # Equipment Readability Plan
 
-Status: canonical asset-readability history and rules. Source-art work is currently paused behind the unresolved default combat-effect/shield preview integration tracked in `HANDOFF.md`.
+Status: canonical asset-readability history and rules, reconciled on
+2026-07-26. Source-art work is paused. The unresolved default
+combat-effect/shield preview remains a deferred independent lane; it is not a
+prerequisite for the next planned shade pass.
 
 This plan supersedes any earlier recommendation to keep expanding the general outline algorithm. The current outline work is the baseline. The next problems must be handled according to their actual cause: source art, composition/placement, or a narrowly proven outline defect.
 
@@ -75,7 +78,9 @@ Those figures are the pre-repair baseline. The approved implementation below now
 
 ## Phase 0 - Establish a Safe Baseline
 
-Status: complete. The approved checkpoint is commit `6667c8f` (`Checkpoint equipment readability baseline`), now preserved as an ancestor of the current committed and pushed branch checkpoint `f21cbe3`.
+Status: complete. The approved checkpoint is commit `6667c8f`
+(`Checkpoint equipment readability baseline`), preserved before the pushed
+shield hand/facing checkpoint `f21cbe3` and later local outline work.
 
 1. Inspect the current branch, working tree, and existing checkpoint without changing them.
 2. Separate pre-existing user work from the outline/readability work.
@@ -152,7 +157,9 @@ Accepted result:
 
 The shield work is source-art work. It must not be mixed with outline-algorithm changes.
 
-Status: deferred. A Bone T3 review candidate exists under `shield-review/`, but it is not the current task and must not advance while the effect-enabled assembler preview is unresolved.
+Status: deferred. A Bone T3 review candidate exists under `shield-review/`,
+but it is not the active lane and must not advance without a separate
+effect-enabled assembler review and explicit approval.
 
 Order:
 
@@ -224,9 +231,13 @@ Stop immediately if a change:
 - mixes source-art, outline, and placement changes in one prototype;
 - cannot be demonstrated cleanly against the safe baseline.
 
-## Next Action
+## Deferred Resume Action
 
-The safe-baseline checkpoint, animation frame-safety correction, Crossbow T5 source-art prototype, and shield hand/facing checkpoint are complete. Before any Bone T3 or broader equipment work resumes, resolve the user-visible default combat-effect/shield preview problem described in `HANDOFF.md`:
+The safe-baseline checkpoint, animation frame-safety correction, Crossbow T5
+source-art prototype, and shield hand/facing checkpoint are complete. No
+equipment redesign is currently authorized. If this lane resumes, first
+resolve the user-visible default combat-effect/shield preview problem described
+in `HANDOFF.md`:
 
 1. reproduce the exact assembler state with `Overlay preview` On;
 2. compare the same frames with effects Off only to isolate effect pixels;

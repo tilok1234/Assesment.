@@ -1,6 +1,16 @@
 # Enemy Outline Plan
 
-Status: exhaustive assessment complete; three-family pilot visually approved;
+Status: complete and visually approved across all 57 enemy families / 202
+variants. The final local checkpoint is `ac860aa` on
+`codex/enemy-outlines`. The complete lane covers 9,696 source frames / 29,088
+None-B-C cases with zero source-edge frames and zero out-of-bounds writes.
+This branch has not been pushed.
+
+The sections below are the chronological rollout record. Their per-group
+"remaining family" counts and intermediate measurements are historical
+snapshots, not the current roster status.
+
+Rollout record: exhaustive assessment complete; three-family pilot visually approved;
 Frog, Jellyfish, Mole, Scarecrow, and Drake frame-safety repairs visually
 approved; Centipede frame-safety repair visually approved; Carnivorous Plant
 frame-safety repair visually approved; Mantis frame-safety repair visually
@@ -57,8 +67,9 @@ frame-safety repair and cavity-preserving component-aware outline expansion
 are visually approved. Cultist Oracle headgear frame-safety repair and
 cavity-preserving component-aware outline expansion are visually approved.
 
-Date: 2026-07-25
-User visual approval: 2026-07-25
+Date opened: 2026-07-25
+Final roster approval: 2026-07-26
+Original pilot approval: 2026-07-25
 Frame-safety group 1 visual approval: 2026-07-25
 Frame-safety group 2 visual approval: 2026-07-25
 Frame-safety group 3 visual approval: 2026-07-25
@@ -113,6 +124,9 @@ Outline rollout group 26 visual approval: 2026-07-26
 Outline rollout group 27 visual approval: 2026-07-26
 Outline rollout group 28 visual approval: 2026-07-26
 Outline rollout group 29 visual approval: 2026-07-26
+Outline rollout group 30 visual approval: 2026-07-26
+Outline rollout group 31 visual approval: 2026-07-26
+Outline rollout group 32 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1223,7 +1237,7 @@ Measured candidate result across the twenty-three-family outline lane:
 The approved treatment was reviewed structurally and directionally in the live
 assembler across closed idle frames and open front, back, and side attacks.
 
-## Outline Rollout Candidate Group 10
+## Outline Rollout Approved Group 10
 
 Visually approved after separate live review of the rebuilt side source and the
 front/rear spread- and folded-wing attack frames.
@@ -1301,7 +1315,7 @@ live assembler across front, rear, and side attacks. The stable neck contour,
 connected horn bases, side silhouette, and frame-to-frame outline continuity
 are approved.
 
-## Outline Rollout Candidate Group 11
+## Outline Rollout Approved Group 11
 
 Visually approved as one focused batch covering Bat, Ghost, Golem, and Snake.
 
@@ -2208,7 +2222,7 @@ Duke's shield and sword seams, detached horn tips, Warlock staff sparks and
 occlusion, every preserved source opening, all three Demon silhouettes, and
 both outline modes. The candidate is visually approved.
 
-## Outline Rollout Candidate Group 30
+## Outline Rollout Approved Group 30
 
 Visually approved as a single-family Anglerfish pass.
 
@@ -2259,9 +2273,9 @@ margins, attack-frame motion, separated lure/fin treatment, all four Anglerfish
 silhouettes, and both outline modes. The candidate was kept uncommitted until
 the user explicitly approved it on 2026-07-26.
 
-## Outline Rollout Candidate Group 31
+## Outline Rollout Approved Group 31
 
-Pending visual approval as a single-family Snail pass.
+Visually approved as a single-family Snail pass.
 
 After Anglerfish approval, two enemy families remained outside the outline
 lane. Snail is the next unsupported family in catalog order. Its 192-frame
@@ -2376,11 +2390,12 @@ explicitly approved it on 2026-07-26.
 - Shadows are excluded from the contour source and then composited normally.
 - Detached source components remain detached; each receives only its own exterior contour.
 
-## Approval Gate
+## Final Approval Status
 
-Approved for Bandit, Scorpion, and Elemental after live comparison of None,
-Complete B, and Selective C. This approval does not extend to the remaining
-54 enemy families or to the pre-existing frame-edge failures.
+The original Bandit, Scorpion, and Elemental pilot and every later repair and
+rollout group are visually approved. All 57 registered enemy families support
+None, Complete B, and Selective C. No enemy family remains outside the outline
+lane, and no pre-existing enemy frame-edge failure remains.
 
 Run:
 
@@ -2392,12 +2407,19 @@ npm.cmd run build
 git diff --check
 ```
 
-Then inspect the three pilot families at native size and enlarged nearest-neighbor scale through every direction and animation. Do not commit, push, enable the remaining roster, or repair frame-edge families until the user explicitly approves the pilot.
+For future renderer changes, regenerate both reports and inspect affected
+families at native and enlarged nearest-neighbor scale through every direction
+and animation. Do not accept new baselines or push without explicit approval.
 
-## After Pilot Approval
+## Completed Rollout
 
-1. Checkpoint the generic enemy contour and pilot evidence.
-2. Repair the 11 out-of-bounds families one shared animation signature at a time.
-3. Reassess the remaining 43 edge-contact families for one-cell outline room.
-4. Add families in small silhouette groups with explicit visual approval.
-5. Extend preset/pack persistence only when the enemy outline contract is accepted; the pilot intentionally keeps that schema work out of scope.
+1. The generic contour and original pilot were checkpointed.
+2. Every frame-edge family was repaired by shared animation signature or a
+   narrow family-specific correction.
+3. Families entered the lane in manageable silhouette/component groups with
+   explicit visual approval.
+4. The final Porcupine pass completed the 57-family roster at `ac860aa`.
+5. Enemy preset/pack persistence is still incomplete: the live editor and
+   sheet renderer honor enemy outlines, but current preset and pack
+   sanitization reload enemy entries with None. Resolve that explicitly before
+   the shade plan changes persistence schemas.

@@ -1,6 +1,12 @@
-# Optional Player Outlines
+# Optional Assembled-Sprite Outlines
 
-Status: implemented and committed on `codex/optional-sprite-outlines`. The original outline implementation is `674d926`, the historical assessment checkpoint is `aaa7a89`, and the current committed and pushed branch checkpoint is `f21cbe3`. Combat effects remain explicitly outside the outline treatment; the unresolved default effect/shield preview issue is tracked in `HANDOFF.md` and must not be treated as an outline defect.
+Status: implemented and visually approved for assembled players and all 57
+enemy families. The player implementation began at `674d926`; the enemy
+rollout completed at local checkpoint `ac860aa` on `codex/enemy-outlines`.
+The final branch is not pushed. Combat effects, atomic component sheets, and
+procedural source art remain outside the treatment. The deferred default
+effect/shield preview issue is tracked in `HANDOFF.md` and is not an outline
+defect.
 
 ## Goal
 
@@ -15,6 +21,14 @@ Restore optional outlines without repeating the reverted flattened-character app
 Both outline modes use `#1a1c2c`. The body keeps an exterior-only contour plus the narrow neck-cavity repair. Equipment uses a restrained cardinal contour in both modes so one-pixel shafts and tiny held items retain more colored core. Weapon and shield owners contour only enclosed transparent components of at least five logical pixels: large silhouette-defining openings such as bows remain readable, while one-to-four-pixel construction pockets in bone lattices, crossbows, staff heads, and ornaments do not become dark mazes. When equipment directly shares an up/down/left/right edge with the body and no transparent cell exists between them, the separator follows the renderer's concrete depth pass: back-pass equipment receives the separator on its equipment-side edge, while front-pass equipment normally stays intact and receives the separator on the adjacent character-side edge. If replacing that character pixel would lengthen a cardinally adjacent dark body feature such as an eye or mouth, the body pixel stays unchanged and the separator moves onto the touching front-equipment pixel. If front-pass equipment directly touches the concrete headgear layer, the separator also uses the touching equipment-side pixel while every headgear pixel stays unchanged. At three-way equipment/headgear/body junctions, the equipment-side headgear contour remains continuous while the feature-preserving rule still controls whether the adjacent body-side pixel may change. Diagonal-only proximity never triggers this pixel-replacing contact pass, preventing clipped corners and endcaps.
 
 A source pixel converted into a one-pixel equipment/body contact separator does not cast an additional exterior halo. This prevents body and equipment contours from fusing into thick shelves while preserving the separator itself and legitimate interior equipment openings.
+
+Enemies use the same public modes with approval-gated family routing. Connected
+silhouettes receive an exterior contour; layered humanoids use component-aware
+body/equipment ownership; and disconnected creatures use family-specific
+separated-component thresholds so meaningful anatomy is contoured without
+boxing one-pixel sparks, legs, droplets, or quills. Selected cavity-sensitive
+families preserve or deliberately contour authored internal openings according
+to the approved family contract in `ENEMY_OUTLINE_PLAN.md`.
 
 ## Rendering boundary
 
@@ -31,11 +45,19 @@ The back/front equipment passes are merged into three logical owners: body, weap
 
 Front/back humanoid frames also receive an additive neck-cavity completion pass. It locates the vertically moving transition between the shared eight-pixel head base and two-pixel neck, then adds outline only to transparent cells directly beneath the full head base. The repair is ORed into the completed owner contour: it cannot clear an existing outline pixel or replace assembled artwork.
 
+Enemy routing captures the complete shadowless source frame, generates either
+the connected exterior mask or the approved component-aware/separated mask,
+then paints the untouched source sprite above that contour. Family-specific
+source-geometry repairs live in `engine/renderer.js`; they are independently
+covered by the one-cell frame-margin regression and are not hidden by the
+outline pass.
+
 ## Included surfaces
 
 - Player stage preview and direction/animation preview
+- Enemy stage preview and direction/animation preview
 - Full-sheet preview and full, direction, and animation PNG exports
-- Player presets, undo/redo, saved comparisons, and browser persistence
+- Live player/enemy state, undo/redo, saved comparisons, and browser persistence
 - Saved player pack entries and their assembled thumbnails
 - Equipment batches and class-pack assembled player sheets
 - Complete Character Kit reference preview
@@ -43,13 +65,19 @@ Front/back humanoid frames also receive an additive neck-cavity completion pass.
 
 ## Explicitly excluded
 
-- Enemy rendering and enemy exports
 - Combat-effect rendering and effect exports
 - Procedural source artwork and catalogs
 - Atomic Complete Character Kit component sheets
 - Generic option thumbnails
 
-These exclusions keep the new behavior isolated to assembled player output and preserve runtime-composable component assets.
+These exclusions keep the behavior isolated to complete assembled player/enemy
+output and preserve runtime-composable component assets.
+
+Enemy preset and ordinary-pack reload persistence is a known remaining
+integration gap: live enemy previews and sheets honor the active outline mode,
+but the current sanitizers reload saved enemy entries with None. Do not claim
+enemy persistence is complete until that behavior is explicitly migrated and
+tested.
 
 ## Persistence and compatibility
 
@@ -64,12 +92,27 @@ Run:
 
 ```powershell
 npm run review:outlines
+npm run review:enemy-outlines
+npm run review:enemy-outline-pilots
 npm run check
 npm run build
 ```
 
-The outline review command verifies 6,000 None-mode direct-render parity cases, 2,000 deterministic randomized integrity cases, 11,040 exhaustive outlined equipment cases, 10,656 exhaustive headgear-preservation cases, representative hashes anchored at the safe baseline, cardinal equipment halos, filtered silhouette-defining cavities, the explicit Sword/Tower/Bow/Crossbow/Staff/Dagger/Bone pilot, depth-aware equipment/body separators, feature-preserving equipment-side fallbacks, equipment-side front-equipment/headgear separators, foreground headgear pixel preservation, non-contact body and equipment pixel preservation, randomized neck-cavity completion, ownership isolation, mode distinction, and review examples. `npm run check` covers source contracts and existing project invariants. The browser smoke test must also confirm the selector is Player-only, modes visibly change both stage and sheet preview, selection survives reload, foreground equipment reads at direct body and headgear contact without cutting headgear or extending facial features, random characters retain their artwork, and switching back to None restores the untreated result.
+The outline review command verifies 6,000 None-mode direct-render parity cases, 2,000 deterministic randomized integrity cases, 11,040 exhaustive outlined equipment cases, 10,656 exhaustive headgear-preservation cases, representative hashes anchored at the safe baseline, cardinal equipment halos, filtered silhouette-defining cavities, the explicit Sword/Tower/Bow/Crossbow/Staff/Dagger/Bone pilot, depth-aware equipment/body separators, feature-preserving equipment-side fallbacks, equipment-side front-equipment/headgear separators, foreground headgear pixel preservation, non-contact body and equipment pixel preservation, randomized neck-cavity completion, ownership isolation, mode distinction, and review examples. `npm run check` covers source contracts and existing project invariants. The browser smoke test must also confirm the selector is available for assembled players and enemies but hidden for effects, modes visibly change both stage and sheet preview, foreground player equipment reads at direct body and headgear contact without cutting headgear or extending facial features, random characters retain their artwork, and switching back to None restores the untreated result. Saved enemy outline-mode reload remains a separately documented gap.
+
+The enemy assessment covers all 57 families / 202 variants / 9,696 source
+frames. The completed lane passes 9,696 None-mode parity cases and 29,088
+None-B-C cases, keeps Complete B and Selective C distinct in every frame, and
+reports zero source-edge frames and zero out-of-bounds writes. The browser
+smoke test must confirm the selector appears for Player and Enemies, stays
+hidden for Effects, and preserves every approved component/cavity treatment.
 
 ## Rollback boundary
 
-The feature is isolated behind `engine/outline-renderer.js`, outline options threaded through `engine/sheets.js`, and outline state/UI/export wiring in `app.js`. Removing those option paths and the Player-only selector returns all render callers to their original direct-render behavior; source artwork and committed fixture assets require no rollback.
+The feature is isolated behind `engine/outline-renderer.js`, outline options
+threaded through `engine/sheets.js`, and outline state/UI/export wiring in
+`app.js`. Removing those option paths and the assembled-sprite selector returns
+render callers to their original direct-render behavior. The approved
+family-specific frame-safety repairs in `engine/renderer.js` are source
+corrections and have their own regression boundary; source assets and committed
+fixture sheets require no automatic rollback or baseline rewrite.

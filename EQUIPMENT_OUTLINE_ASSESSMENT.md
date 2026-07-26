@@ -1,10 +1,13 @@
 # Equipment Outline Assessment And Plan
 
-Status: historical assessment, reconciled against the current branch on 2026-07-22.
+Status: historical assessment, reconciled against the current branch on
+2026-07-26. It is not the active implementation plan.
 
 This document records the evidence that led to the current equipment-readability plan. Its earlier recommendation to continue with an outline-algorithm pilot has been completed and is now superseded by `EQUIPMENT_READABILITY_PLAN.md`. The outline implementation above the safe committed checkpoint is frozen while the remaining problems are handled according to their actual cause.
 
-Historical checkpoints: `674d926` introduced the optional outline implementation and `aaa7a89` recorded this assessment. Both are ancestors of the current committed and pushed branch checkpoint, `f21cbe3` (`Fix shield hand attachment and facing`).
+Historical checkpoints: `674d926` introduced the optional outline implementation
+and `aaa7a89` recorded this assessment. Both precede the pushed shield
+hand/facing checkpoint `f21cbe3` and the later local enemy-outline branch.
 
 ## Assessment Scope
 
@@ -70,8 +73,15 @@ For every approved prototype:
 
 Stop if work changes character anatomy or placement, mixes source-art and outline changes, solves only one screenshot, makes a stable control worse, or expands beyond the approved family/tier.
 
-## Historical Outcome And Current Continuation
+## Historical Outcome And Deferred Continuation
 
 The Crossbow T5 source-art prototype, animation frame-safety correction, and shield hand/facing checkpoint were completed after this assessment. The remaining Bone, Arcane, Buckler, and dense-equipment notes are diagnostic history, not permission to redesign those assets.
 
-The immediate blocker is now the default assembler combat-effect preview interacting incorrectly with approved shield pixels. Follow `HANDOFF.md`: reproduce the exact effect-enabled UI state, fix the compositor or effect occlusion rather than the shield artwork, verify every attack frame and direction, and obtain visual approval before returning to Bone T3 or broader equipment work.
+The default assembler combat-effect preview interacting incorrectly with
+approved shield pixels remains unresolved, but it is deferred rather than the
+active lane. The complete enemy-outline rollout is approved at `ac860aa`; the
+next planned feature is `SHADE_RENDERING_PLAN.md`, which explicitly excludes
+effect/shield compositing. If equipment work resumes, follow `HANDOFF.md`,
+reproduce the effect-enabled UI state, change compositor/occlusion behavior
+rather than approved shield art, and obtain visual approval before returning
+to Bone T3 or broader redesigns.

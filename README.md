@@ -24,7 +24,9 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Editable skin, hair, and outfit tone pairs with a reusable local palette library
 - Full-sheet, selected-animation, and selected-direction PNG export scopes
 - Play/pause, 0.5x/1x/2x playback speeds, frame stepping, and direct frame inspection with sheet-column metadata
-- Optional assembled-player outlines with None, Complete B, and Selective C modes; previews, presets, comparisons, sheets, and assembled pack exports preserve the selected treatment while enemies, effects, source art, and atomic component sheets stay unchanged
+- Optional assembled-sprite outlines with None, Complete B, and Selective C
+  modes for players and all 57 enemy families; effects, source art, floor
+  shadows, and atomic component sheets remain untreated
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
 - Six modular expressions—Neutral, Happy, Angry, Sad, Surprised, and Determined—that animate in every visible direction, remain readable beneath glasses, and hide beneath full helmets
@@ -37,7 +39,18 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 
 ## Current integration status
 
-The committed and pushed shield hand/facing checkpoint is `f21cbe3`. The default Combat Loadout preview still draws resolved effects after the complete assembled character, so effect pixels can overwrite otherwise approved shield, equipment, body, or headgear pixels. `Overlay preview` defaults to On, making this an active user-visible compositor problem rather than a shield source-art problem. The current uncommitted effect-direction experiment and exact continuation state are documented in [HANDOFF.md](HANDOFF.md); do not describe the combined preview as fixed until it has been verified with effects On in every attack frame and direction.
+The complete enemy-outline rollout is visually approved at local checkpoint
+`ac860aa` on `codex/enemy-outlines`. All 57 families / 202 variants pass the
+9,696-frame source audit and the 29,088-case None-B-C lane with zero source-edge
+frames and zero out-of-bounds writes. This branch has not been pushed.
+
+The next planned feature is the optional shared assembled-sprite shade pass in
+[SHADE_RENDERING_PLAN.md](SHADE_RENDERING_PLAN.md). No shade implementation,
+schema migration, fixture update, executable rebuild, or baseline acceptance
+has started. The default Combat Loadout preview still draws effects after the
+complete character; its foreground shield/equipment occlusion issue remains a
+separate deferred integration problem and is explicitly excluded from shade
+work. See [HANDOFF.md](HANDOFF.md) for the exact continuation state.
 
 ## Preview controls
 
@@ -88,6 +101,13 @@ The validator checks JavaScript syntax, the engine-to-manifest contract, every r
 Run `npm run review:weapons -- --all-frames` to regenerate the 37 weapon review sheets and the exhaustive 3,600-row CSV/JSON audit. Add `--tier-sheets` to emit four labeled all-weapon/all-frame SVG review sheets per tier plus lightweight PNG inspection grids. The audit records ordinary edge contact separately from discarded pixels, so touching `x=0` or `x=23` remains advisory while attempting to draw outside the 24x24 canvas is a hard failure.
 
 Run `npm run review:outlines` for the outline-specific regression gate. It verifies anchored safe-baseline hashes, 6,000 pixel-exact None-mode parity cases, 2,000 deterministic randomized integrity cases, 11,040 exhaustive outlined equipment cases, and 10,656 exhaustive headgear-preservation cases. The gate covers restrained cardinal equipment halos, silhouette-defining cavities of at least five logical pixels, the explicit equipment pilot, depth-aware equipment/body separators, feature-preserving equipment-side fallbacks, equipment-side front-equipment/headgear separators, foreground headgear and non-contact equipment pixel protection, non-contact body protection, ownership isolation, neck-cavity completion, and review examples. See [OUTLINE_RENDERING_PLAN.md](OUTLINE_RENDERING_PLAN.md) for the supported modes and scope boundary.
+
+Run `npm run review:enemy-outlines` for the complete 57-family source
+assessment, and `npm run review:enemy-outline-pilots` for the full approved
+outline lane. The final lane verifies 9,696 None-mode parity cases, 29,088
+None-B-C cases, mode distinction in every frame, zero source-edge frames, and
+zero out-of-bounds writes. See [ENEMY_OUTLINE_PLAN.md](ENEMY_OUTLINE_PLAN.md)
+for the chronological repair and approval record.
 
 Contact separators remain one pixel thick: pixels converted into separators are prevented from casting a redundant exterior halo, while legitimate interior equipment openings remain outlined. When a foreground weapon or shield directly touches headgear, only the touching equipment pixel becomes the separator; the hat artwork is preserved exactly. If a normal body-side separator would visually lengthen an adjacent dark eye, mouth, or other body feature, that character pixel is preserved and the separator moves onto the touching equipment pixel.
 
@@ -209,6 +229,9 @@ Every component shares the same animation grid and has been validated to recompo
 - `src-tauri/` - Tauri 2 Windows wrapper, permissions, CSP, and icon resources
 - `ARCHITECTURE.md` - engine boundaries, dependency direction, and safe extension points
 - `ROADMAP.md` - agreed development and Windows release order
+- `HANDOFF.md` - exact branch, validation, known gaps, and continuation state
+- `ENEMY_OUTLINE_PLAN.md` - completed 57-family outline rollout record
+- `SHADE_RENDERING_PLAN.md` - canonical next-phase shade design and approval gates
 
 ## Direction
 

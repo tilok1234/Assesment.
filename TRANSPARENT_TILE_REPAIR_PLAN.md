@@ -1,10 +1,16 @@
 # Transparent Tile Repair Plan
 
-Status: first implementation slice visually accepted and checkpointed locally; remaining classification and repair pending.
+Status: first implementation slice visually accepted and checkpointed at
+`690aec0`; remaining advisory classification and mixed-owner work are deferred.
+This is no longer the active continuation plan.
 
 Date: 2026-07-25
 
-This is the canonical plan for repairing unintended transparent checkerboard cells inside assembled player sprites. It covers body construction, equipment-to-body contact, and the interaction with the three supported outline modes: None, Complete B, and Selective C.
+This is the retained plan for repairing unintended transparent checkerboard
+cells inside assembled player sprites. It covers body construction,
+equipment-to-body contact, and the interaction with None, Complete B, and
+Selective C. The current continuation is `HANDOFF.md`; the next planned feature
+is `SHADE_RENDERING_PLAN.md`.
 
 The audit that produced this plan was read-only. The first repair slice was subsequently implemented and explicitly approved on 2026-07-25. The existing dirty attack-animation, effect-direction, and effect-compositor work predates that slice and remains separately reviewable.
 
@@ -313,6 +319,11 @@ Stop and return to diagnosis if a proposed repair:
 - cannot be explained as one named source or contact correction;
 - requires accepting new goldens before visual review.
 
-## Immediate Next Action
+## Deferred Resume Action
 
-Continue Phase 1C by grouping the 1,660 advisory notches by shared outfit/build signature and reviewing one deterministic slice at a time. Preserve leg separation, collar/neck breathing space, and equipment openings unless a specific visual candidate is rejected. Do not begin the broad mixed-owner pass or accept outline goldens until the body-only classifications are complete and reviewed.
+If transparency work resumes, continue Phase 1C by grouping the 1,660 advisory
+notches by shared outfit/build signature and reviewing one deterministic slice
+at a time. Preserve leg separation, collar/neck breathing space, and equipment
+openings unless a specific visual candidate is rejected. Do not fold this work
+into the shade pass, begin the broad mixed-owner pass, or accept outline
+goldens until the body-only classifications are complete and reviewed.
