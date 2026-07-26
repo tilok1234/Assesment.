@@ -32,6 +32,8 @@ expansion visually approved. Octopus separated-component, full-tentacle outline
 expansion visually approved. Cyclops vertical-strike frame-safety repair and
 exterior outline expansion are visually approved. Troll vertical-strike
 frame-safety repair and exterior outline expansion are visually approved.
+Dwarf vertical-strike frame-safety repair and cavity-preserving
+component-aware outline expansion are visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -79,6 +81,7 @@ Outline rollout group 16 visual approval: 2026-07-26
 Outline rollout group 17 visual approval: 2026-07-26
 Outline rollout group 18 visual approval: 2026-07-26
 Outline rollout group 19 visual approval: 2026-07-26
+Outline rollout group 20 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1661,6 +1664,51 @@ left, and right directions. They expose the repaired Cave Troll club margins,
 the distinct strike/recoil poses, all three Troll silhouettes, and both
 outline modes. The repaired margins and exterior outline treatment are
 approved.
+
+## Outline Rollout Approved Group 20
+
+Visually approved as a single-family Dwarf pass.
+
+After Troll approval, thirteen enemy families remained outside the outline lane.
+Dwarf is the next smallest repair: its 144-frame family has only four
+source-edge frames, all from the Miner's club touching the bottom or top
+canvas row in down/up attack frames 2 and 3. Those frames contribute eight
+edge pixels and have no out-of-bounds writes.
+
+The approved pass:
+
+- gives only the Dwarf Miner's vertical club strike the approved one-pixel
+  inset, moving the down strike upward and the up strike downward while
+  preserving distinct strike and recoil frames;
+- reduces the full enemy corpus from 154 to 150 source-edge frames and from
+  566 to 558 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for all three Dwarf variants
+  without changing another unsupported family;
+- uses the component-aware humanoid path so axes, the Miner club, and shields
+  retain readable body-side seams instead of merging into the short body;
+- preserves the two authored detached recoil-weapon frames and all 24 enclosed
+  one-to-three-pixel source openings across 24 frames;
+- adds all 144 Dwarf frames to the source-margin regression plus focused
+  vertical-club, component-separator, detached-source, and cavity checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured result across the forty-five-family outline lane:
+
+- 7,680 None-mode parity checks pass against the corrected source renderer;
+- all 23,040 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 7,680 frames;
+- the focused single-family review covers 144 source frames / 432 mode cases,
+  adds 11,028 Complete B plus 9,167 Selective C contour pixels, and retains
+  1,762 body-side equipment separator pixels;
+- the complete lane adds 538,894 Complete B plus 426,565 Selective C contour
+  pixels and retains 10,508 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the held-equipment seams, the repaired
+Miner club margins, the distinct strike/recoil poses, every preserved source
+opening, all three Dwarf silhouettes, and both outline modes. The repaired
+margins and cavity-preserving component-aware treatment are approved.
 
 ## Treatment
 

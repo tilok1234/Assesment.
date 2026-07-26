@@ -57,6 +57,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'octopus',
   'cyclops',
   'troll',
+  'dwarf',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -70,6 +71,10 @@ const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
   'ratfolk',
   'elf',
   'gnoll',
+  'dwarf',
+]);
+const ENEMY_COMPONENT_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
+  'dwarf',
 ]);
 // Orbiting one-pixel parts need their own contour ownership. A normal merged
 // silhouette contour fills the one-cell breathing room and visually welds them
@@ -133,6 +138,11 @@ export function enemySupportsOutline(spec) {
 
 function enemyUsesComponentOutline(spec) {
   return spec?.kind === 'enemy' && ENEMY_COMPONENT_OUTLINE_FAMILY_SET.has(spec.family);
+}
+
+function enemyPreservesComponentOutlineCavities(spec) {
+  return spec?.kind === 'enemy'
+    && ENEMY_COMPONENT_OUTLINE_PRESERVE_CAVITY_FAMILY_SET.has(spec.family);
 }
 
 function enemyUsesSeparatedOutline(spec) {
@@ -553,6 +563,9 @@ export function outlineMaskForOwnedPixels(
 
   const interiorOwnerIndices = new Set(options.interiorOwnerIndices || []);
   const haloSourceExclusionMasks = options.haloSourceExclusionMasks || [];
+  const compositeExterior = options.preserveSourceCavities
+    ? exteriorTransparency(compositePixels, width, height)
+    : null;
   for (const exclusionMask of haloSourceExclusionMasks) {
     if (exclusionMask && exclusionMask.length !== width * height) {
       throw new Error(`Each halo source exclusion must contain exactly ${width * height} entries.`);
@@ -573,6 +586,7 @@ export function outlineMaskForOwnedPixels(
     // Preserve the complete contour from every logical owner. The only rejection
     // is assembled artwork: an outline may never replace a source pixel.
     if (!isTransparent(compositePixels[index])) continue;
+    if (compositeExterior && !compositeExterior[index]) continue;
     if (ownerMasks.some((ownerMask) => ownerMask[index])) mask[index] = 1;
   }
   return mask;
@@ -934,15 +948,18 @@ export function drawOutlinedSprite(
     {
       interiorOwnerIndices: EQUIPMENT_OWNER_INDICES,
       haloSourceExclusionMasks: contactOutlinePlan.haloSourceExclusionMasks,
+      preserveSourceCavities: enemyPreservesComponentOutlineCavities(spec),
     },
   );
-  const neckCavityMask = humanoidNeckCavityMaskForPixels(
-    ownerPixels[BODY_OWNER_INDEX],
-    compositePixels,
-    direction,
-  );
-  for (let index = 0; index < outlineMask.length; index++) {
-    if (neckCavityMask[index]) outlineMask[index] = 1;
+  if (!enemyPreservesComponentOutlineCavities(spec)) {
+    const neckCavityMask = humanoidNeckCavityMaskForPixels(
+      ownerPixels[BODY_OWNER_INDEX],
+      compositePixels,
+      direction,
+    );
+    for (let index = 0; index < outlineMask.length; index++) {
+      if (neckCavityMask[index]) outlineMask[index] = 1;
+    }
   }
   paintMask(context, outlineMask, color);
   paintPixels(context, finalPixels);

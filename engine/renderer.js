@@ -3041,6 +3041,7 @@ function buildHumanoidC(spec) {
         (
           (spec.family === 'cyclops' && V.id === 'shepherd')
           || (spec.family === 'troll' && V.id === 'cave')
+          || (spec.family === 'dwarf' && V.id === 'miner')
         ) ? 1 : 0,
     };
   }
