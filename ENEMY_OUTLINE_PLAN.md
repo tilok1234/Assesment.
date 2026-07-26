@@ -43,6 +43,8 @@ Marsh vertical-strike repair and segmented-tail-aware, cavity-preserving
 component outlines are visually approved.
 Minotaur Ironhorn vertical-strike repair and horn-tip-aware, cavity-preserving
 component outlines are visually approved.
+Demon Pit Fiend vertical-strike repair and horn/spark-aware, cavity-preserving
+component outlines are visually approved.
 Zombie vertical-strike frame-safety repair and cavity-preserving
 component-aware outline expansion are visually approved. Imp vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
@@ -104,6 +106,7 @@ Outline rollout group 25 visual approval: 2026-07-26
 Outline rollout group 26 visual approval: 2026-07-26
 Outline rollout group 27 visual approval: 2026-07-26
 Outline rollout group 28 visual approval: 2026-07-26
+Outline rollout group 29 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -2145,6 +2148,59 @@ across all four directions. They expose the repaired Ironhorn club margins,
 detached horn tips and shafts, held-equipment seams, every preserved source
 opening, all three Minotaur silhouettes, and both outline modes. The candidate
 is visually approved.
+
+## Outline Rollout Approved Group 29
+
+Visually approved as a single-family Demon pass.
+
+After Minotaur approval, four enemy families remained outside the outline lane.
+Demon is the next unsupported family in catalog order. Its only source-edge
+contact was the Pit Fiend club: two pixels touched the bottom/top source row
+across down/up attack frames 2 and 3, for four frames / eight edge pixels total.
+No Demon frame attempted an out-of-bounds write.
+
+Every Demon frame is multi-component because all three variants retain authored
+detached horn tips. Warlock's middle staff strikes add one or two detached
+one-pixel sparks depending on direction. Its back-facing third-frame spark is
+authored behind a horn and remains correctly occluded rather than receiving a
+visible contour.
+
+The candidate:
+
+- gives only the Demon Pit Fiend's vertical club strike the approved one-pixel
+  inset, retaining distinct strike and recoil frames;
+- reduces the full enemy corpus from 64 to 60 source-edge frames and from 404
+  to 396 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Duke, Pit Fiend, and Warlock
+  without changing another unsupported family;
+- uses the cavity-preserving component-aware humanoid path so Duke's sword and
+  kite shield, the Pit Fiend club, and Warlock staff retain body-side seams;
+- preserves all 127 enclosed openings across 110 source frames and all 144
+  multi-component frames / 233 detached source pixels;
+- leaves detached one-pixel horn tips and visible staff sparks unhaloed while
+  retaining their source colors and the correct hidden-spark occlusion;
+- adds all 144 Demon frames to the source-margin regression plus focused
+  Pit-Fiend-club, equipment-separator, horn-tip, staff-spark, halo, occlusion,
+  and exhaustive cavity checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the fifty-four-family outline lane:
+
+- 9,120 None-mode parity checks pass against the corrected source renderer;
+- all 27,360 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 9,120 frames;
+- the focused single-family review covers 144 source frames / 432 mode cases,
+  adds 11,708 Complete B plus 9,921 Selective C contour pixels, and retains
+  1,802 body-side equipment separator pixels;
+- the complete lane adds 655,926 Complete B plus 524,361 Selective C contour
+  pixels and retains 25,900 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the repaired Pit Fiend club margins,
+Duke's shield and sword seams, detached horn tips, Warlock staff sparks and
+occlusion, every preserved source opening, all three Demon silhouettes, and
+both outline modes. The candidate is visually approved.
 
 ## Treatment
 

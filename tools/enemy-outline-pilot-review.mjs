@@ -72,6 +72,7 @@ const COMPONENT_AWARE_FAMILIES = new Set([
   'orc',
   'lizardfolk',
   'minotaur',
+  'demon',
 ]);
 const COMPONENT_LAYER_ORDER = [
   'weapon-back',

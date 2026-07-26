@@ -204,8 +204,9 @@ check(
       'orc',
       'lizardfolk',
       'minotaur',
+      'demon',
     ]),
-  'enemy outline support must stay limited to the fifty-three approval-gated families',
+  'enemy outline support must stay limited to the fifty-four approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -775,6 +776,7 @@ for (const [familyId, variantIds] of [
   ['orc', ['grunt', 'berserker', 'warlord']],
   ['lizardfolk', ['saurian', 'marsh', 'chromatic']],
   ['minotaur', ['bull', 'ironhorn', 'warden']],
+  ['demon', ['duke', 'pit', 'warlock']],
 ]) {
   for (const variant of variantIds) {
     const spec = { kind: 'enemy', family: familyId, variant };
@@ -1061,6 +1063,48 @@ for (const variant of ['bull', 'ironhorn', 'warden']) {
   }
 }
 
+for (const variant of ['duke', 'pit', 'warlock']) {
+  const spec = { kind: 'enemy', family: 'demon', variant };
+  for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+    for (let frame = 0; frame < animation.frames; frame++) {
+      const body = renderPixels(spec, direction, animation.id, frame, { layer: 'body' });
+      const hornTips = cardinalSingletonIndices(body);
+      const source = renderPixels(spec, direction, animation.id, frame);
+      const visibleHornTips = hornTips.filter((index) => source[index]);
+      check(
+        visibleHornTips.length >= 1 && visibleHornTips.length <= 3,
+        `demon ${variant} ${direction} ${animation.id}/${frame + 1} `
+          + 'must retain one-to-three visible detached one-pixel horn tips',
+      );
+      for (const outlineMode of [
+        engine.OUTLINE_MODE_COMPLETE_B,
+        engine.OUTLINE_MODE_SELECTIVE_C,
+      ]) {
+        const outlined = renderOutlinedPixels(
+          spec,
+          direction,
+          animation.id,
+          frame,
+          outlineMode,
+        );
+        for (const hornIndex of visibleHornTips) {
+          check(
+            outlined[hornIndex] === source[hornIndex],
+            `demon ${variant} ${direction} ${animation.id}/${frame + 1} ${outlineMode} `
+              + 'must preserve each detached horn-tip source pixel',
+          );
+          const adjacentOutline = adjacentOutlinePixelsAround(hornIndex, source, outlined);
+          check(
+            adjacentOutline <= 4,
+            `demon ${variant} ${direction} ${animation.id}/${frame + 1} ${outlineMode} `
+              + `must keep each detached horn tip out of a boxed halo (found ${adjacentOutline})`,
+          );
+        }
+      }
+    }
+  }
+}
+
 for (const [direction, layer, expectedSparks] of [
   ['down', 'weapon-front', 1],
   ['left', 'weapon-back', 2],
@@ -1137,9 +1181,54 @@ for (const [direction, layer, expectedSparks] of [
   }
 }
 
+for (const [direction, layer, expectedSparks] of [
+  ['down', 'weapon-front', 1],
+  ['left', 'weapon-back', 2],
+  ['right', 'weapon-front', 2],
+  ['up', 'weapon-back', 1],
+]) {
+  const spec = { kind: 'enemy', family: 'demon', variant: 'warlock' };
+  for (const frame of [1, 2]) {
+    const equipment = renderPixels(spec, direction, 'attack', frame, { layer });
+    const sparks = cardinalSingletonIndices(equipment);
+    const source = renderPixels(spec, direction, 'attack', frame);
+    const visibleSparks = sparks.filter((index) => source[index] === equipment[index]);
+    const expectedVisibleSparks = direction === 'up' && frame === 2 ? 0 : expectedSparks;
+    check(
+      sparks.length === expectedSparks,
+      `demon warlock ${direction} attack frame ${frame + 1} `
+        + `must retain ${expectedSparks} detached one-pixel staff sparks`,
+    );
+    check(
+      visibleSparks.length === expectedVisibleSparks,
+      `demon warlock ${direction} attack frame ${frame + 1} `
+        + `must retain ${expectedVisibleSparks} visible detached one-pixel staff sparks`,
+    );
+    for (const outlineMode of [
+      engine.OUTLINE_MODE_COMPLETE_B,
+      engine.OUTLINE_MODE_SELECTIVE_C,
+    ]) {
+      const outlined = renderOutlinedPixels(spec, direction, 'attack', frame, outlineMode);
+      for (const sparkIndex of visibleSparks) {
+        check(
+          source[sparkIndex] && outlined[sparkIndex] === source[sparkIndex],
+          `demon warlock ${direction} attack frame ${frame + 1} ${outlineMode} `
+            + 'must preserve each detached staff-spark source pixel',
+        );
+        const adjacentOutline = adjacentOutlinePixelsAround(sparkIndex, source, outlined);
+        check(
+          adjacentOutline <= 4,
+          `demon warlock ${direction} attack frame ${frame + 1} ${outlineMode} `
+            + `must keep each detached staff spark out of a boxed halo (found ${adjacentOutline})`,
+        );
+      }
+    }
+  }
+}
+
 for (const familyId of [
   'dwarf', 'ogre', 'goblin', 'zombie', 'imp', 'cultist', 'orc', 'lizardfolk',
-  'minotaur',
+  'minotaur', 'demon',
 ]) {
   const cavityFamily = engine.ENEMIES.find((family) => family.id === familyId);
   for (const variant of cavityFamily.variants) {
@@ -2069,7 +2158,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
   'cyclops', 'troll', 'dwarf', 'ogre', 'goblin', 'zombie', 'imp',
-  'cultist', 'orc', 'lizardfolk', 'minotaur',
+  'cultist', 'orc', 'lizardfolk', 'minotaur', 'demon',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -2117,6 +2206,7 @@ for (const [familyId, variantId] of [
   ['orc', 'berserker'],
   ['lizardfolk', 'marsh'],
   ['minotaur', 'ironhorn'],
+  ['demon', 'pit'],
 ]) {
   const verticalClubSpec = {
     kind: 'enemy',
