@@ -550,8 +550,9 @@ Exit criteria:
 
 These are useful only after Production v1 is accepted:
 
-1. **Compatible category reroll** that filters one category without silently
-   rewriting unrelated choices.
+1. **Compatible category reroll**, with its pure policy Slice 1 completed
+   under `COMPATIBLE_REROLL_PLAN.md`, that filters one semantic category
+   without silently rewriting unrelated choices.
 2. **Production compatibility inspector** returning Custom/Compatible plus
    explainable reasons.
 3. **Seed replay and sharing**.

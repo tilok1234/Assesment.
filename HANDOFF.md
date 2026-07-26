@@ -35,7 +35,16 @@ archetype, policy, palette-family, or decision metadata.
 
 Slice 6 integration validation and documentation is complete. All automated
 and live technical gates pass, and the user gave final integration approval on
-2026-07-27. The checkpoint containing this handoff follows `aa77666`.
+2026-07-27. The completed Production v1 checkpoint is `108b2bb` (`Complete
+production roll integration gate`), pushed to `origin/codex/form-shading`.
+
+The user selected compatible per-category Production rerolls as the next lane
+on 2026-07-27. `COMPATIBLE_REROLL_PLAN.md` is its authority. Slice 1's
+pure-engine boundary is complete and approved for checkpoint commit/push:
+deterministic filtering through the approved Production validator, explicit
+semantic categories, ordinary copied players, and immutable audit metadata.
+It does not add editor controls, persistence, context inference, schemas,
+render changes, or release work.
 
 Do not resume old weapon, shield, transparency, effect-compositor, executable,
 or enemy-outline work unless the user explicitly changes priority. Additional
@@ -52,17 +61,18 @@ off-hand art also requires a new focused plan and visual approval gate.
    ```
 
 2. Confirm `codex/form-shading` contains pushed Production checkpoint
-   `aa77666`, based on Lantern/plan checkpoint `01b3f1a`, approved Form
-   checkpoint `a4310ec`, and effects-default checkpoint `2a1111f`.
+   `108b2bb`, based on policy/editor checkpoint `aa77666`, Lantern/plan
+   checkpoint `01b3f1a`, approved Form checkpoint `a4310ec`, and
+   effects-default checkpoint `2a1111f`.
 3. Read `README.md`, `ARCHITECTURE.md`, this file,
    `PRODUCTION_ROLL_PLAN.md`,
    `OUTLINE_RENDERING_PLAN.md`, `ENEMY_OUTLINE_PLAN.md`, and
    `SHADE_RENDERING_PLAN.md`.
-4. Confirm the Slice 6 checkpoint containing this handoff follows `aa77666`
-   and is aligned with its upstream before making new changes.
-5. Wait for a new explicit priority. Do not start deferred compatible rerolls,
-   provenance, enemy Production rolls, effect-compositor, fixture/baseline,
-   release, or Windows-build work.
+4. Read `COMPATIBLE_REROLL_PLAN.md` and confirm its Slice 1 checkpoint follows
+   `108b2bb` and is aligned with its upstream.
+5. Do not start editor integration without a new explicit request. Persistence,
+   provenance, context inference, enemy Production rolls, effect-compositor,
+   fixture/baseline, release, and Windows-build work remain outside Slice 1.
 
 ## Git State At Handoff
 
@@ -73,6 +83,12 @@ off-hand art also requires a new focused plan and visual approval gate.
   (`Add production roll workflow`)
 - `aa77666` is pushed to `origin/codex/form-shading`; Slice 6 starts from that
   clean remote-aligned checkpoint.
+- Final approved Production Roll v1 checkpoint: `108b2bb`
+  (`Complete production roll integration gate`)
+- `108b2bb` is pushed to `origin/codex/form-shading`; compatible-reroll Slice 1
+  starts from that clean remote-aligned checkpoint.
+- Compatible-reroll Slice 1 was approved for commit/push on 2026-07-27; its
+  checkpoint is the commit containing this handoff and follows `108b2bb`.
 - Approved Lantern/plan checkpoint: `01b3f1a`
   (`Add approved Lantern off-hand and production roll plan`)
 - `01b3f1a` is an ancestor of `aa77666`.
@@ -395,6 +411,8 @@ until a deliberate approved release checkpoint.
   off-hand boundaries.
 - `PRODUCTION_ROLL_PLAN.md`: completed Production v1 product contract,
   architecture, policy/review/editor slices, and final Slice 6 gate.
+- `COMPATIBLE_REROLL_PLAN.md`: completed compatible per-category reroll Slice 1
+  and later approval-gated editor slices.
 - `ENEMY_OUTLINE_PLAN.md`: completed enemy rollout evidence.
 - `OUTLINE_RENDERING_PLAN.md`: current player/enemy outline contract.
 - `README.md`: user-facing capabilities and validation commands.

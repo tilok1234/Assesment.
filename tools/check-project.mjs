@@ -64,6 +64,7 @@ checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/combat-loadouts.js');
 checkSyntax('engine/class-templates.js');
 checkSyntax('engine/production-rolls.js');
+checkSyntax('engine/production-rerolls.js');
 checkSyntax('engine/variant-batches.js');
 checkSyntax('engine/generators.js');
 checkSyntax('engine/effect-renderer.js');
@@ -144,6 +145,7 @@ const runtimeSources = {
   'engine/combat-loadouts.js': await readFile(path.join(root, 'engine', 'combat-loadouts.js'), 'utf8'),
   'engine/class-templates.js': await readFile(path.join(root, 'engine', 'class-templates.js'), 'utf8'),
   'engine/production-rolls.js': await readFile(path.join(root, 'engine', 'production-rolls.js'), 'utf8'),
+  'engine/production-rerolls.js': await readFile(path.join(root, 'engine', 'production-rerolls.js'), 'utf8'),
   'engine/variant-batches.js': await readFile(path.join(root, 'engine', 'variant-batches.js'), 'utf8'),
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
   'engine/effect-renderer.js': await readFile(path.join(root, 'engine', 'effect-renderer.js'), 'utf8'),
@@ -168,8 +170,9 @@ const expectedEngineExports = [
   'DIRS', 'DIR_LABELS', 'ENEMIES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OFFHANDS', 'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
   'OUTLINE_MODE_COMPLETE_B', 'OUTLINE_MODE_NONE', 'OUTLINE_MODE_SELECTIVE_C',
-  'PRODUCTION_PALETTE_FAMILIES', 'PRODUCTION_ROLL_FREEZE', 'PRODUCTION_ROLL_MAX_ATTEMPTS', 'PRODUCTION_ROLL_PROFILE',
-  'PRODUCTION_ROLL_REASON_CODES',
+  'PRODUCTION_COMPATIBLE_REROLL_CATEGORIES', 'PRODUCTION_COMPATIBLE_REROLL_POLICY',
+  'PRODUCTION_PALETTE_FAMILIES', 'PRODUCTION_ROLL_FREEZE', 'PRODUCTION_ROLL_MAX_ATTEMPTS',
+  'PRODUCTION_ROLL_PROFILE', 'PRODUCTION_ROLL_REASON_CODES',
   'SHADE_MODES', 'SHADE_MODE_FORM', 'SHADE_MODE_NONE',
   'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
@@ -178,7 +181,8 @@ const expectedEngineExports = [
   'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawAssembledSprite', 'drawOutlinedSprite', 'drawSprite',
   'enemySupportsOutline', 'normalizeAssembledOutlineMode', 'normalizeOutlineMode', 'normalizeShadeMode',
   'normalizeProductionRollSeed', 'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout',
-  'rollProductionPlayer', 'sanitizeCombatLoadout', 'thumbURL', 'validateProductionPlayer',
+  'rerollProductionPlayerCategory', 'rollProductionPlayer', 'sanitizeCombatLoadout', 'thumbURL',
+  'validateProductionPlayer',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
@@ -193,6 +197,9 @@ check(!runtimeSources['character-kit.js'].includes("from './engine/"), 'characte
 const productionRollImports = [...runtimeSources['engine/production-rolls.js'].matchAll(/from\s+['"]([^'"]+)['"]/g)]
   .map((match) => match[1])
   .sort();
+const productionRerollImports = [
+  ...runtimeSources['engine/production-rerolls.js'].matchAll(/from\s+['"]([^'"]+)['"]/g),
+].map((match) => match[1]).sort();
 const editableSnapshotSource = runtimeSources['app.js'].slice(
   runtimeSources['app.js'].indexOf('function editableSnapshot('),
   runtimeSources['app.js'].indexOf('function historySnapshot('),
@@ -229,10 +236,29 @@ check(
   'production rolls must depend only on stable catalogs and class-template policy',
 );
 check(
+  JSON.stringify(productionRerollImports) === JSON.stringify([
+    './catalogs.js',
+    './production-rolls.js',
+  ]),
+  'compatible Production rerolls must depend only on stable catalogs and the approved Production policy',
+);
+check(
   !/\b(?:document|window|localStorage|sessionStorage|indexedDB|CanvasRenderingContext2D|drawSprite|renderSprite|buildStoredZip)\b/.test(
     runtimeSources['engine/production-rolls.js'],
   ),
   'production rolls must not depend on DOM, canvas, storage, ZIP, or renderer behavior',
+);
+check(
+  !/\b(?:document|window|localStorage|sessionStorage|indexedDB|CanvasRenderingContext2D|drawSprite|renderSprite|buildStoredZip)\b/.test(
+    runtimeSources['engine/production-rerolls.js'],
+  )
+    && !runtimeSources['engine/production-rerolls.js'].includes('Math.random'),
+  'compatible Production rerolls must remain portable and independent from DOM, canvas, storage, ZIP, renderers, and ambient randomness',
+);
+check(
+  !runtimeSources['app.js'].includes('rerollProductionPlayerCategory')
+    && !runtimeSources['app.js'].includes('PRODUCTION_COMPATIBLE_REROLL'),
+  'compatible Production reroll Slice 1 must not add editor integration',
 );
 check(
   !runtimeSources['engine/production-rolls.js'].includes('Math.random')
@@ -3717,6 +3743,330 @@ const expectedProductionPlayerFields = [
   'bodyBuild', 'expression', 'faceDetail', 'hairColor', 'hairStyle', 'headgear', 'offhand', 'outfit',
   'outfitColor', 'outfitTier', 'shield', 'shieldTier', 'skin', 'species', 'weapon', 'weaponTier',
 ].sort();
+const expectedCompatibleRerollCategoryFields = {
+  species: ['species'],
+  bodyBuild: ['bodyBuild'],
+  skin: ['skin'],
+  hairStyle: ['hairStyle'],
+  hairColor: ['hairColor'],
+  expression: ['expression'],
+  faceDetail: ['faceDetail'],
+  headgear: ['headgear'],
+  outfitColor: ['outfitColor'],
+  weapon: ['weapon', 'weaponTier'],
+  shield: ['shield', 'shieldTier'],
+  offhand: ['offhand'],
+  leftHand: ['shield', 'shieldTier', 'offhand'],
+  powerTier: ['outfitTier', 'weaponTier', 'shieldTier'],
+};
+check(
+  JSON.stringify(engine.PRODUCTION_COMPATIBLE_REROLL_POLICY) === JSON.stringify({
+    id: 'production-compatible-reroll-v1',
+    version: 1,
+    profile: 'production-v1',
+  })
+    && Object.isFrozen(engine.PRODUCTION_COMPATIBLE_REROLL_POLICY),
+  'compatible Production rerolls must expose one immutable versioned policy identity',
+);
+check(
+  JSON.stringify(Object.fromEntries(engine.PRODUCTION_COMPATIBLE_REROLL_CATEGORIES.map((category) => [
+    category.id,
+    category.fields,
+  ]))) === JSON.stringify(expectedCompatibleRerollCategoryFields)
+    && Object.isFrozen(engine.PRODUCTION_COMPATIBLE_REROLL_CATEGORIES)
+    && engine.PRODUCTION_COMPATIBLE_REROLL_CATEGORIES.every((category) => (
+      Object.isFrozen(category) && Object.isFrozen(category.fields)
+    )),
+  'compatible Production rerolls must expose only their explicit immutable semantic categories',
+);
+
+const compatibleRerollGoldenBase = engine.rollProductionPlayer('compatible-reroll-golden-base');
+const compatibleRerollGolden = engine.rerollProductionPlayerCategory(
+  compatibleRerollGoldenBase.player,
+  compatibleRerollGoldenBase,
+  'headgear',
+  'compatible-reroll-golden',
+);
+check(
+  JSON.stringify(compatibleRerollGolden) === JSON.stringify({
+    policy: 'production-compatible-reroll-v1',
+    profile: 'production-v1',
+    seed: 'compatible-reroll-golden',
+    category: 'headgear',
+    changed: true,
+    player: {
+      species: 'beastkin',
+      bodyBuild: 'classic',
+      skin: 'peach',
+      hairStyle: 'mohawk',
+      hairColor: 'blonde',
+      expression: 'determined',
+      faceDetail: 'blush',
+      headgear: 'hood',
+      outfit: 'plate',
+      outfitTier: 'tier1',
+      outfitColor: 'royal',
+      weapon: 'warhammer',
+      weaponTier: 'tier1',
+      shield: 'none',
+      shieldTier: 'tier1',
+      offhand: 'none',
+    },
+    context: {
+      archetype: 'guardian',
+      powerTier: 'tier1',
+      paletteFamily: 'royal',
+    },
+    audit: {
+      reason: 'compatible-selection',
+      candidateCount: 6,
+      candidates: ['none', 'cap', 'helm', 'hood', 'crown', 'circlet'],
+      selected: 'hood',
+      changedFields: ['headgear'],
+      beforeValid: true,
+      beforeReasons: [],
+    },
+  }),
+  'compatible Production rerolls must preserve their portable seeded golden result',
+);
+check(
+  JSON.stringify(engine.rerollProductionPlayerCategory(
+    compatibleRerollGoldenBase.player,
+    compatibleRerollGoldenBase,
+    'headgear',
+    'compatible-reroll-golden',
+  )) === JSON.stringify(compatibleRerollGolden),
+  'identical compatible reroll inputs must produce identical complete results',
+);
+
+const invalidCompatibleRerollSeeds = [undefined, null, '', '   ', Number.NaN, {}, []];
+check(
+  new Set(invalidCompatibleRerollSeeds.map((seed) => JSON.stringify(
+    engine.rerollProductionPlayerCategory(
+      compatibleRerollGoldenBase.player,
+      compatibleRerollGoldenBase,
+      'headgear',
+      seed,
+    ),
+  ))).size === 1,
+  'invalid compatible reroll seeds must normalize to one deterministic fallback result',
+);
+
+let compatibleInvalidPlayerError;
+let compatibleInvalidContextError;
+let compatibleInvalidCategoryError;
+try {
+  engine.rerollProductionPlayerCategory(null, compatibleRerollGoldenBase, 'species', 'invalid');
+} catch (error) {
+  compatibleInvalidPlayerError = error;
+}
+try {
+  engine.rerollProductionPlayerCategory(compatibleRerollGoldenBase.player, null, 'species', 'invalid');
+} catch (error) {
+  compatibleInvalidContextError = error;
+}
+try {
+  engine.rerollProductionPlayerCategory(
+    compatibleRerollGoldenBase.player,
+    compatibleRerollGoldenBase,
+    'not-a-category',
+    'invalid',
+  );
+} catch (error) {
+  compatibleInvalidCategoryError = error;
+}
+check(
+  compatibleInvalidPlayerError instanceof TypeError
+    && compatibleInvalidContextError instanceof TypeError
+    && compatibleInvalidCategoryError instanceof RangeError,
+  'compatible Production rerolls must reject invalid player, context, and category inputs explicitly',
+);
+
+const compatibleInvalidPolicyContext = engine.rerollProductionPlayerCategory(
+  compatibleRerollGoldenBase.player,
+  {},
+  'species',
+  'invalid-policy-context',
+);
+check(
+  !compatibleInvalidPolicyContext.changed
+    && compatibleInvalidPolicyContext.audit.reason === 'no-compatible-alternative'
+    && [
+      engine.PRODUCTION_ROLL_REASON_CODES.INVALID_ARCHETYPE,
+      engine.PRODUCTION_ROLL_REASON_CODES.INVALID_POWER_TIER,
+      engine.PRODUCTION_ROLL_REASON_CODES.INVALID_PALETTE_FAMILY,
+    ].every((reason) => compatibleInvalidPolicyContext.audit.beforeReasons.includes(reason))
+    && JSON.stringify(compatibleInvalidPolicyContext.player)
+      === JSON.stringify(compatibleRerollGoldenBase.player),
+  'compatible Production rerolls must leave the player unchanged when policy context is invalid',
+);
+
+const compatibleNoAlternativeBase = engine.rollProductionPlayer('compatible-base-2');
+const compatibleNoAlternative = engine.rerollProductionPlayerCategory(
+  compatibleNoAlternativeBase.player,
+  compatibleNoAlternativeBase,
+  'shield',
+  'compatible-no-alternative',
+);
+check(
+  !compatibleNoAlternative.changed
+    && compatibleNoAlternative.audit.reason === 'no-compatible-alternative'
+    && compatibleNoAlternative.audit.candidateCount === 0
+    && compatibleNoAlternative.audit.selected === null
+    && compatibleNoAlternative.audit.changedFields.length === 0
+    && JSON.stringify(compatibleNoAlternative.player)
+      === JSON.stringify(compatibleNoAlternativeBase.player)
+    && compatibleNoAlternative.player !== compatibleNoAlternativeBase.player,
+  'compatible Production rerolls must deep-copy an unchanged player when no compatible alternative exists',
+);
+
+const compatibleCopyA = engine.rerollProductionPlayerCategory(
+  compatibleRerollGoldenBase.player,
+  compatibleRerollGoldenBase,
+  'headgear',
+  'compatible-copy-safety',
+);
+const compatibleCopyB = engine.rerollProductionPlayerCategory(
+  compatibleRerollGoldenBase.player,
+  compatibleRerollGoldenBase,
+  'headgear',
+  'compatible-copy-safety',
+);
+check(
+  compatibleCopyA !== compatibleCopyB
+    && compatibleCopyA.player !== compatibleCopyB.player
+    && compatibleCopyA.context !== compatibleCopyB.context
+    && compatibleCopyA.audit !== compatibleCopyB.audit
+    && compatibleCopyA.audit.candidates !== compatibleCopyB.audit.candidates
+    && compatibleCopyA.audit.changedFields !== compatibleCopyB.audit.changedFields
+    && Object.isFrozen(compatibleCopyA.context)
+    && Object.isFrozen(compatibleCopyA.audit)
+    && Object.isFrozen(compatibleCopyA.audit.candidates)
+    && Object.isFrozen(compatibleCopyA.audit.changedFields)
+    && Object.isFrozen(compatibleCopyA.audit.beforeReasons),
+  'compatible Production rerolls must deeply copy players and return immutable context and audit metadata',
+);
+const compatibleCopyBSpecies = compatibleCopyB.player.species;
+compatibleCopyA.player.species = 'copy-safety-probe';
+check(
+  compatibleCopyB.player.species === compatibleCopyBSpecies,
+  'mutating one compatible reroll player must not change another result',
+);
+
+const compatibleRerollChangedCoverage = new Set();
+let compatibleRerollCases = 0;
+let compatibleRerollNoAlternativeCases = 0;
+for (let index = 0; index < 300; index += 1) {
+  const base = engine.rollProductionPlayer(`compatible-base-${index}`);
+  for (const category of engine.PRODUCTION_COMPATIBLE_REROLL_CATEGORIES) {
+    const seed = `compatible-pick-${index}-${category.id}`;
+    const result = engine.rerollProductionPlayerCategory(
+      base.player,
+      base,
+      category.id,
+      seed,
+    );
+    const repeated = engine.rerollProductionPlayerCategory(
+      base.player,
+      base,
+      category.id,
+      seed,
+    );
+    const actualChangedFields = expectedProductionPlayerFields.filter((field) => (
+      JSON.stringify(base.player[field]) !== JSON.stringify(result.player[field])
+    ));
+    compatibleRerollCases += 1;
+    check(
+      JSON.stringify(result) === JSON.stringify(repeated),
+      `compatible reroll ${index}/${category.id} must be deterministic`,
+    );
+    check(
+      result.policy === engine.PRODUCTION_COMPATIBLE_REROLL_POLICY.id
+        && result.profile === engine.PRODUCTION_ROLL_PROFILE.id
+        && result.category === category.id
+        && JSON.stringify(Object.keys(result.player).sort())
+          === JSON.stringify(expectedProductionPlayerFields),
+      `compatible reroll ${index}/${category.id} must return an ordinary player and stable policy identity`,
+    );
+    check(
+      result.context.archetype === base.archetype
+        && result.context.paletteFamily === base.paletteFamily
+        && (
+          category.id === 'powerTier'
+            ? result.context.powerTier !== base.powerTier
+            : result.context.powerTier === base.powerTier
+        ),
+      `compatible reroll ${index}/${category.id} must preserve policy context outside its declared category`,
+    );
+    if (result.changed) {
+      compatibleRerollChangedCoverage.add(category.id);
+      const validation = engine.validateProductionPlayer(result.player, result.context);
+      check(
+        validation.valid && validation.reasons.length === 0,
+        `compatible reroll ${index}/${category.id} must remain production-valid`,
+      );
+      check(
+        actualChangedFields.length > 0
+          && actualChangedFields.every((field) => category.fields.includes(field))
+          && JSON.stringify([...result.audit.changedFields].sort())
+            === JSON.stringify(actualChangedFields)
+          && result.audit.reason === 'compatible-selection'
+          && result.audit.candidateCount > 0
+          && result.audit.candidates.includes(result.audit.selected),
+        `compatible reroll ${index}/${category.id} must change only its declared fields`,
+      );
+    } else {
+      compatibleRerollNoAlternativeCases += 1;
+      check(
+        actualChangedFields.length === 0
+          && JSON.stringify(result.player) === JSON.stringify(base.player)
+          && JSON.stringify(result.context) === JSON.stringify({
+            archetype: base.archetype,
+            powerTier: base.powerTier,
+            paletteFamily: base.paletteFamily,
+          })
+          && result.audit.reason === 'no-compatible-alternative'
+          && result.audit.candidateCount === 0
+          && result.audit.selected === null,
+        `compatible reroll ${index}/${category.id} must report an explicit unchanged outcome`,
+      );
+    }
+  }
+}
+check(
+  engine.PRODUCTION_COMPATIBLE_REROLL_CATEGORIES.every((category) => (
+    compatibleRerollChangedCoverage.has(category.id)
+  )),
+  'the compatible reroll audit must exercise a valid change in every supported category',
+);
+check(
+  compatibleRerollNoAlternativeCases > 0,
+  'the compatible reroll audit must exercise explicit no-compatible-alternative outcomes',
+);
+
+const compatibleStoredPlayer = {
+  ...compatibleRerollGoldenBase.player,
+  palette: null,
+  seed: 'must-not-leak',
+  archetype: 'must-not-leak',
+};
+const compatibleStoredResult = engine.rerollProductionPlayerCategory(
+  compatibleStoredPlayer,
+  compatibleRerollGoldenBase,
+  'hairColor',
+  'compatible-stored-player',
+);
+check(
+  compatibleStoredResult.player.palette === null
+    && !Object.prototype.hasOwnProperty.call(compatibleStoredResult.player, 'seed')
+    && !Object.prototype.hasOwnProperty.call(compatibleStoredResult.player, 'archetype')
+    && engine.validateProductionPlayer(
+      compatibleStoredResult.player,
+      compatibleStoredResult.context,
+    ).valid,
+  'compatible rerolls must preserve the ordinary nullable palette field while stripping provenance-like extras',
+);
+
 const productionStoredPlayer = { ...productionGoldenResult.player, palette: null };
 const expectedStoredPlayerFields = [...expectedProductionPlayerFields, 'palette'].sort();
 const productionIdentityFields = [
@@ -5775,6 +6125,8 @@ console.log(`- Player samples: ${playerRefs.length}`);
 console.log(`- Production Roll policy cases: ${productionRollCases}`);
 console.log(`- Production Roll bounded fallbacks: ${productionFallbackCases}`);
 console.log(`- Production Roll integration render cases: ${productionIntegrationRenderCases}`);
+console.log(`- Compatible Production reroll cases: ${compatibleRerollCases}`);
+console.log(`- Compatible reroll no-alternative cases: ${compatibleRerollNoAlternativeCases}`);
 console.log(`- Shade Core/None player parity cases: ${shadeNonePlayerParityCases}`);
 console.log(`- Shade Core/None enemy parity cases: ${shadeNoneEnemyParityCases}`);
 console.log(`- Shade Core/None enemy outline parity cases: ${shadeNoneEnemyOutlineParityCases}`);

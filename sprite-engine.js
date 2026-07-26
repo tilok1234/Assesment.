@@ -1,5 +1,4 @@
-// Public Sprite Assembler engine API.
-// Keep consumers importing this file while implementation modules evolve independently.
+// Public API: keep consumers here while focused engine modules evolve independently.
 export {
   ANIMS,
   BODY_BUILDS,
@@ -56,3 +55,4 @@ export {
   DEFAULT_CLASS_TEMPLATE,
 } from './engine/class-templates.js';
 export { auditProductionRollCatalogs, auditProductionRollClassTemplates, normalizeProductionRollSeed, PRODUCTION_PALETTE_FAMILIES, PRODUCTION_ROLL_FREEZE, PRODUCTION_ROLL_MAX_ATTEMPTS, PRODUCTION_ROLL_PROFILE, PRODUCTION_ROLL_REASON_CODES, rollProductionPlayer, validateProductionPlayer } from './engine/production-rolls.js';
+export { PRODUCTION_COMPATIBLE_REROLL_CATEGORIES, PRODUCTION_COMPATIBLE_REROLL_POLICY, rerollProductionPlayerCategory } from './engine/production-rerolls.js';
