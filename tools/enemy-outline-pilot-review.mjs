@@ -10,6 +10,17 @@ const output = path.resolve(
   root,
   outputFlag >= 0 ? process.argv[outputFlag + 1] : 'enemy-outline-review',
 );
+const familiesFlag = process.argv.indexOf('--families');
+const familiesArgument = familiesFlag >= 0 ? process.argv[familiesFlag + 1] : '';
+if (familiesFlag >= 0 && (!familiesArgument || familiesArgument.startsWith('--'))) {
+  throw new Error('--families requires a comma-separated list of enabled family ids.');
+}
+const requestedFamilyIds = familiesFlag >= 0
+  ? [...new Set(familiesArgument
+      .split(',')
+      .map((familyId) => familyId.trim())
+      .filter(Boolean))]
+  : engine.ENEMY_OUTLINE_PILOT_FAMILIES;
 const MODES = [
   { id: engine.OUTLINE_MODE_NONE, label: 'NONE' },
   { id: engine.OUTLINE_MODE_COMPLETE_B, label: 'COMPLETE B' },
@@ -34,7 +45,10 @@ const COMPONENT_LAYER_ORDER = [
 const COMPONENT_BODY_LAYERS = new Set(['body', 'headgear']);
 const COMPONENT_FRONT_EQUIPMENT_LAYERS = new Set(['shield-front', 'weapon-front']);
 const CARDINAL_OFFSETS = [[0, -1], [-1, 0], [1, 0], [0, 1]];
-const PILOTS = engine.ENEMY_OUTLINE_PILOT_FAMILIES.map((familyId) => {
+const PILOTS = requestedFamilyIds.map((familyId) => {
+  if (!engine.ENEMY_OUTLINE_PILOT_FAMILIES.includes(familyId)) {
+    throw new Error(`Enemy outline family ${familyId} is not enabled.`);
+  }
   const family = engine.ENEMIES.find((entry) => entry.id === familyId);
   if (!family) throw new Error(`Missing enemy outline family ${familyId}.`);
   return family;
@@ -304,7 +318,10 @@ const report = {
   modeDistinctFrames: 0,
   componentContactSeparatorPixels: 0,
   componentContactSeparatorPixelsByFamily: Object.fromEntries(
-    [...COMPONENT_AWARE_FAMILIES].map((familyId) => [familyId, 0]),
+    PILOTS
+      .map((family) => family.id)
+      .filter((familyId) => COMPONENT_AWARE_FAMILIES.has(familyId))
+      .map((familyId) => [familyId, 0]),
   ),
   sourceEdgeFrames: 0,
   outOfBoundsWrites: 0,
@@ -420,7 +437,9 @@ if (report.modeDistinctFrames !== report.frames) {
     `Complete B and Selective C differ in ${report.modeDistinctFrames}/${report.frames} frames`,
   );
 }
-for (const familyId of COMPONENT_AWARE_FAMILIES) {
+for (const familyId of PILOTS
+  .map((family) => family.id)
+  .filter((familyId) => COMPONENT_AWARE_FAMILIES.has(familyId))) {
   if (!report.componentContactSeparatorPixelsByFamily[familyId]) {
     failures.push(
       `component-aware ${familyId} proof produced no body/equipment contact separators`,

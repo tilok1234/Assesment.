@@ -37,6 +37,10 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'griffin',
   'slime',
   'shroom',
+  'bat',
+  'ghost',
+  'golem',
+  'snake',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,

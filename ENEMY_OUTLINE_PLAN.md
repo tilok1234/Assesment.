@@ -21,7 +21,8 @@ approved; Crab separated-component outline expansion visually approved;
 Beetle separated-component outline expansion visually approved; Wasp
 separated-component outline expansion visually approved; Mimic exterior
 outline expansion visually approved; Drake outline-native source rework and
-outline expansion visually approved.
+outline expansion visually approved; Bat, Ghost, Golem, and Snake clean
+exterior outline batch visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -60,6 +61,7 @@ Outline rollout group 7 visual approval: 2026-07-25
 Outline rollout group 8 visual approval: 2026-07-25
 Outline rollout group 9 visual approval: 2026-07-25
 Outline rollout group 10 visual approval: 2026-07-26
+Outline rollout group 11 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1247,6 +1249,45 @@ The completed source rework was reviewed structurally and directionally in the
 live assembler across front, rear, and side attacks. The stable neck contour,
 connected horn bases, side silhouette, and frame-to-frame outline continuity
 are approved.
+
+## Outline Rollout Candidate Group 11
+
+Visually approved as one focused batch covering Bat, Ghost, Golem, and Snake.
+
+These four families are the clean fast-path group from the remaining roster.
+Across their fourteen variants and 672 source frames, every pose is already one
+cardinally connected component, no source pixel touches the frame edge, no
+write leaves the 24x24 frame, and no enclosed transparent cavity is present.
+They therefore use the normal exterior-only contour without component
+ownership, minimum-size filtering, bridge pixels, repair masks, or source-art
+changes.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for all Bat, Ghost, Golem, and
+  Snake variants without changing another unsupported family;
+- preserves every None-mode pixel and all existing palette, direction,
+  animation, catalog, saved-state, and export behavior;
+- adds no family-specific renderer or outline exception;
+- validates all 672 source frames as a single connected silhouette;
+- adds a focused `--families` filter to the existing review generator so future
+  clean batches can be approved from one compact comparison sheet while the
+  unfiltered exhaustive review continues to protect the complete accepted
+  outline lane.
+
+Measured candidate result across the twenty-eight-family outline lane:
+
+- 4,704 None-mode parity checks pass;
+- all 14,112 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 4,704 frames;
+- 1,344 batch-specific outlined-frame checks retain one connected silhouette;
+- the focused four-family review covers 672 source frames / 2,016 mode cases
+  and adds 39,616 Complete B plus 31,020 Selective C contour pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+The focused comparison sheet covers every variant in the batch across front,
+back, left, and right attack poses. Its connected silhouettes and both outline
+modes are approved.
 
 ## Treatment
 
