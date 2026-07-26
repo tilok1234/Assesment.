@@ -198,8 +198,9 @@ check(
       'dwarf',
       'ogre',
       'goblin',
+      'zombie',
     ]),
-  'enemy outline support must stay limited to the forty-seven approval-gated families',
+  'enemy outline support must stay limited to the forty-eight approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -740,6 +741,7 @@ for (const [familyId, variantIds] of [
   ['dwarf', ['warrior', 'miner', 'king']],
   ['ogre', ['brute', 'crusher', 'magi']],
   ['goblin', ['scout', 'brute', 'shaman', 'archer', 'chief']],
+  ['zombie', ['ghoul', 'rotter', 'brute']],
 ]) {
   for (const variant of variantIds) {
     const spec = { kind: 'enemy', family: familyId, variant };
@@ -877,7 +879,7 @@ for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
   }
 }
 
-for (const familyId of ['dwarf', 'ogre', 'goblin']) {
+for (const familyId of ['dwarf', 'ogre', 'goblin', 'zombie']) {
   const cavityFamily = engine.ENEMIES.find((family) => family.id === familyId);
   for (const variant of cavityFamily.variants) {
     const spec = { kind: 'enemy', family: familyId, variant: variant.id };
@@ -1750,7 +1752,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'slime', 'shroom',
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
-  'cyclops', 'troll', 'dwarf', 'ogre', 'goblin',
+  'cyclops', 'troll', 'dwarf', 'ogre', 'goblin', 'zombie',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -1792,6 +1794,8 @@ for (const [familyId, variantId] of [
   ['dwarf', 'miner'],
   ['ogre', 'brute'],
   ['goblin', 'brute'],
+  ['zombie', 'rotter'],
+  ['zombie', 'brute'],
 ]) {
   const verticalClubSpec = {
     kind: 'enemy',

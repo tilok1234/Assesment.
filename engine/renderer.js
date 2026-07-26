@@ -3012,6 +3012,8 @@ function buildHumanoidC(spec) {
       outfit: V.outfit, oc: find(OUTFIT_COLORS, V.oc).c,
       weapon: V.weapon || 'none', shield: 'none',
       face: 'zombie',
+      weaponVerticalStrikeInset:
+        (V.id === 'rotter' || V.id === 'brute') ? 1 : 0,
     };
   }
   if (spec.family === 'imp') {

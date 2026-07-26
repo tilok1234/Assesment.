@@ -60,6 +60,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'dwarf',
   'ogre',
   'goblin',
+  'zombie',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -76,11 +77,13 @@ const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
   'dwarf',
   'ogre',
   'goblin',
+  'zombie',
 ]);
 const ENEMY_COMPONENT_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'dwarf',
   'ogre',
   'goblin',
+  'zombie',
 ]);
 const ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_EQUIPMENT_FAMILY_SET = new Set([
   'ogre',

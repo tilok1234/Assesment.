@@ -37,6 +37,8 @@ component-aware outline expansion are visually approved. Ogre vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
 are visually approved. Goblin vertical-strike frame-safety repair and
 cavity-preserving component-aware outline expansion are visually approved.
+Zombie vertical-strike frame-safety repair and cavity-preserving
+component-aware outline expansion are visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -87,6 +89,7 @@ Outline rollout group 19 visual approval: 2026-07-26
 Outline rollout group 20 visual approval: 2026-07-26
 Outline rollout group 21 visual approval: 2026-07-26
 Outline rollout group 22 visual approval: 2026-07-26
+Outline rollout group 23 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1815,6 +1818,53 @@ Brute club margins, Shaman sparks, Archer bow separation, every preserved
 source opening, all five Goblin silhouettes, and both outline modes. The
 repaired margins, cavity-preserving component treatment, detached bow
 separation, and restrained spark treatment are approved.
+
+## Outline Rollout Approved Group 23
+
+Visually approved as a single-family Zombie pass.
+
+After Goblin approval, ten enemy families remained outside the outline lane.
+Zombie is the next unsupported family in catalog order. Its 192-frame family
+has only eight source-edge frames: the Rotter and Brute clubs touch the bottom
+or top canvas row in down/up attack frames 2 and 3. Those frames contribute
+sixteen edge pixels and have no out-of-bounds writes.
+
+The candidate:
+
+- gives only the Zombie Rotter and Brute vertical club strikes the approved
+  one-pixel inset, moving down strikes upward and up strikes downward while
+  preserving distinct strike and recoil frames;
+- reduces the full enemy corpus from 142 to 134 source-edge frames and from
+  542 to 526 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Shambler, Ghoul, Rotter, and
+  Brute without changing another unsupported family;
+- uses the cavity-preserving component-aware humanoid path so the Ghoul
+  dagger and both clubs retain readable body-side seams;
+- preserves all 114 enclosed openings across 104 corrected source frames;
+- preserves the single connected source silhouette in all 192 frames, with no
+  detached source components requiring special halo treatment;
+- adds all 192 Zombie frames to the source-margin regression plus focused
+  vertical-club, equipment-separator, and exhaustive cavity checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the forty-eight-family outline lane:
+
+- 8,256 None-mode parity checks pass against the corrected source renderer;
+- all 24,768 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 8,256 frames;
+- the focused single-family review covers 192 source frames / 576 mode cases,
+  adds 14,337 Complete B plus 12,451 Selective C contour pixels, and retains
+  1,280 body-side equipment separator pixels;
+- the complete lane adds 584,217 Complete B plus 464,701 Selective C contour
+  pixels and retains 15,870 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the repaired Rotter and Brute club
+margins, held-equipment seams, every preserved source opening, all four Zombie
+silhouettes, and both outline modes. The repaired margins,
+cavity-preserving component treatment, and held-equipment separators are
+approved.
 
 ## Treatment
 
