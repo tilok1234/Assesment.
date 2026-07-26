@@ -204,6 +204,11 @@ check(
 check(runtimeSources['app.js'].includes('renderShadeControls()'), 'app.js must expose the approved player/enemy shade selector');
 check(runtimeSources['app.js'].includes("state.mode === 'player' || state.mode === 'enemy'"), 'the shade selector must stay hidden for effects');
 check(
+  runtimeSources['app.js'].includes('previewEffects: false')
+    && runtimeSources['app.js'].includes('loaded.previewEffects = false;'),
+  'combat-effect overlays must remain opt-in and return to Off whenever the editor starts',
+);
+check(
   runtimeSources['engine/shade-renderer.js'].includes(
     'shade === SHADE_MODE_NONE && outline === OUTLINE_MODE_NONE',
   ),

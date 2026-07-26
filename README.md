@@ -67,10 +67,13 @@ v11. Missing or invalid shade fields migrate to None. The earlier enemy
 outline preset/ordinary-pack persistence gap remains repaired. The integrated
 editor surface was visually approved on 2026-07-26. The safe shade checkpoint
 does not accept new fixtures or baselines and does not rebuild executables.
-The default Combat Loadout preview still draws effects after the complete
-character; its foreground shield/equipment occlusion issue remains a separate
-deferred integration problem and is explicitly excluded from shade work. See
-[HANDOFF.md](HANDOFF.md) for the exact continuation state.
+Combat Loadout overlays are now disabled by default and return to Off whenever
+the editor starts. They remain available as an explicit preview toggle, but the
+optional legacy preview still draws effects after the complete character and
+can look cluttered or overwrite foreground details. Its final occlusion rule is
+on ice as a separate deferred integration problem and is explicitly excluded
+from approved shade work. See [HANDOFF.md](HANDOFF.md) for the exact
+continuation state.
 
 ## Preview controls
 

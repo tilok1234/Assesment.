@@ -55,7 +55,7 @@ const DEFAULT_STATE = {
   loadout: { ...E.DEFAULT_COMBAT_LOADOUT },
   outlineMode: E.OUTLINE_MODE_NONE,
   shadeMode: DEFAULT_SHADE_MODE,
-  previewEffects: true,
+  previewEffects: false,
   variantBatchSet: E.DEFAULT_VARIANT_BATCH_SET,
   classTemplate: E.DEFAULT_CLASS_TEMPLATE,
   characterName: '',
@@ -386,7 +386,9 @@ function loadState() {
   loaded.exportAnim = listHas(E.ANIMS, loaded.exportAnim) ? loaded.exportAnim : DEFAULT_STATE.exportAnim;
   loaded.exportDir = E.DIRS.includes(loaded.exportDir) ? loaded.exportDir : DEFAULT_STATE.exportDir;
   loaded.spin = loaded.spin !== false;
-  loaded.previewEffects = loaded.previewEffects !== false;
+  // Combat overlays are deliberately opt-in while their final occlusion rule
+  // remains deferred. A reload always returns to the uncluttered base preview.
+  loaded.previewEffects = false;
   loaded.variantBatchSet = E.VARIANT_BATCH_SETS.some((set) => set.id === loaded.variantBatchSet)
     ? loaded.variantBatchSet
     : E.DEFAULT_VARIANT_BATCH_SET;

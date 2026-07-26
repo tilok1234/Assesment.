@@ -38,9 +38,10 @@ or enemy-outline work unless the user explicitly changes priority.
 4. Inspect the current diff before editing. Do not reset, restore, stash,
    merge, push, accept baselines, or rebuild release artifacts automatically.
 5. Confirm the next requested scope. The shade lane is approved and
-   checkpointed. Recommended next work is the independent effect/shield
-   compositor lane; fixture/baseline or release work still requires separate
-   authorization.
+   checkpointed, while the effect/shield compositor is explicitly on ice and
+   its preview defaults to Off. No new feature lane is currently authorized;
+   future content, transparency, equipment, fixture/baseline, or release work
+   requires a separate user choice.
 
 ## Git State At Handoff
 
@@ -245,9 +246,17 @@ These remain real but are not shade work:
 
 ### Effect/shield compositor
 
-The editor still draws resolved effects after the complete character when
-effects are enabled. Effect pixels can overwrite foreground shield, equipment,
-body, or headgear pixels. Fixing that requires an effect-enabled,
+This lane is explicitly on ice as of 2026-07-26. Combat overlays are disabled
+by default and return to Off whenever the editor starts; users may still enable
+the legacy preview manually. That optional path draws resolved effects after
+the complete character, so it can look cluttered and can overwrite foreground
+shield, equipment, body, or headgear pixels.
+
+A foreground-safe effects-first candidate passed exhaustive automated coverage
+and an all-direction pilot review, but it was not visually approved and was
+removed from the live worktree rather than promoted into schemas or
+documentation as final behavior. Resume only if the user explicitly reopens
+the effects lane. Any future attempt still requires an effect-enabled,
 all-direction/all-attack-frame compositor review. Do not redesign approved
 shield art or mix this into shade.
 
