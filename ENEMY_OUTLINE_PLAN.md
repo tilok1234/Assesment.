@@ -23,7 +23,8 @@ separated-component outline expansion visually approved; Mimic exterior
 outline expansion visually approved; Drake outline-native source rework and
 outline expansion visually approved; Bat, Ghost, Golem, and Snake clean
 exterior outline batch visually approved; Frog, Jellyfish, Scarecrow, and
-Gargoyle separated-component outline batch visually approved.
+Gargoyle separated-component outline batch visually approved; Worm, Mantis,
+Moth, and Haunted Puppet tiny-accent outline batch visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -64,6 +65,7 @@ Outline rollout group 9 visual approval: 2026-07-25
 Outline rollout group 10 visual approval: 2026-07-26
 Outline rollout group 11 visual approval: 2026-07-26
 Outline rollout group 12 visual approval: 2026-07-26
+Outline rollout group 13 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1335,6 +1337,48 @@ Measured candidate result across the thirty-two-family outline lane:
 
 The focused comparison sheet uses attack frame 3 across front, back, left, and
 right directions. The detached attack accents, separated Gargoyle wings, and
+both outline modes are approved.
+
+## Outline Rollout Approved Group 13
+
+Visually approved as one focused batch covering Worm, Mantis, Moth, and
+Haunted Puppet.
+
+These four families are frame-safe and cavity-free, but their silhouettes use
+one-pixel source components for dirt, feet, blades, antennae, dust, strings,
+lights, and joints. Haloing those accents would turn the animation's thinnest
+details into black blocks. The candidate reuses the separated-component
+contour while reserving normal outlines for the main body and Puppet's
+meaningful detached attack arm.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for all Worm, Mantis, Moth, and
+  Haunted Puppet variants without changing another unsupported family;
+- leaves Worm's two one-pixel dirt specks unhaloed in every frame;
+- leaves Mantis's one- and two-pixel detached extremities unhaloed while
+  contouring its connected physical body;
+- leaves Moth's one-pixel antenna, foot, and attack-dust components unhaloed;
+- leaves Puppet's one-pixel strings, lights, joints, and slash accents
+  unhaloed while contouring its detached eleven-pixel attack arm;
+- preserves every authored source component and every None-mode pixel;
+- changes no source art, palette, animation, catalog, saved state, or export
+  schema.
+
+Measured candidate result across the thirty-six-family outline lane:
+
+- 6,144 None-mode parity checks pass;
+- all 18,432 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 6,144 frames;
+- 1,440 batch-specific outlined-frame checks preserve authored component
+  separation and apply each family's minimum-size rule;
+- the focused four-family review covers 720 source frames / 2,160 mode cases
+  and adds 52,088 Complete B plus 41,064 Selective C contour pixels;
+- zero source-edge frames, zero out-of-bounds writes, and zero enclosed source
+  cavities.
+
+The focused comparison sheet uses attack frame 2 across front, back, left, and
+right directions. The thin source accents, Puppet's detached attack arm, and
 both outline modes are approved.
 
 ## Treatment

@@ -188,8 +188,9 @@ check(
       'slime', 'shroom',
       'bat', 'ghost', 'golem', 'snake',
       'frog', 'jellyfish', 'scarecrow', 'gargoyle',
+      'worm', 'mantis', 'moth', 'puppet',
     ]),
-  'enemy outline support must stay limited to the thirty-two approval-gated families',
+  'enemy outline support must stay limited to the thirty-six approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -1330,6 +1331,10 @@ const separatedOutlineBatchFamilies = new Map([
   ['jellyfish', { minimumComponentPixels: 2, maximumComponents: 4 }],
   ['scarecrow', { minimumComponentPixels: 2, maximumComponents: 5 }],
   ['gargoyle', { minimumComponentPixels: 1, maximumComponents: 3 }],
+  ['worm', { minimumComponentPixels: 2, maximumComponents: 3 }],
+  ['mantis', { minimumComponentPixels: 3, maximumComponents: 9 }],
+  ['moth', { minimumComponentPixels: 2, maximumComponents: 8 }],
+  ['puppet', { minimumComponentPixels: 2, maximumComponents: 8 }],
 ]);
 for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
   const family = engine.ENEMIES.find((candidate) => candidate.id === familyId);

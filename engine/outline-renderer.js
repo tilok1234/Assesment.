@@ -45,6 +45,10 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'jellyfish',
   'scarecrow',
   'gargoyle',
+  'worm',
+  'mantis',
+  'moth',
+  'puppet',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -72,6 +76,10 @@ const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'jellyfish',
   'scarecrow',
   'gargoyle',
+  'worm',
+  'mantis',
+  'moth',
+  'puppet',
 ]);
 const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   beetle: 3,
@@ -81,6 +89,10 @@ const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   frog: 3,
   jellyfish: 2,
   scarecrow: 2,
+  worm: 2,
+  mantis: 3,
+  moth: 2,
+  puppet: 2,
 });
 
 export function enemySupportsOutline(spec) {
@@ -777,11 +789,12 @@ export function drawOutlinedSprite(
         // its one-pixel stinger and Drake's one-pixel breath spark do not.
         // Drake's rebuilt body, wings, neck, head, and horns form one
         // outline-native physical component in every direction. Frog's
-        // two-pixel tongue tip and Jellyfish/Scarecrow's one-pixel attack
-        // accents stay unhaloed; Gargoyle's detached wings are large physical
-        // components and receive normal contours. Eye Monster keeps the
-        // default because its orbitals are intended to read as individually
-        // outlined floating parts.
+        // two-pixel tongue tip, Worm's dirt specks, Mantis/Moth's tiny
+        // extremities, and Puppet's one-pixel strings/lights stay unhaloed.
+        // Gargoyle's detached wings and Puppet's detached attack arm are
+        // meaningful physical components and receive normal contours. Eye
+        // Monster keeps the default because its orbitals are intended to read
+        // as individually outlined floating parts.
         minimumComponentPixels:
           ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS[spec.family] || 1,
       })
