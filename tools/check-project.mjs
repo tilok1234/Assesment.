@@ -66,6 +66,7 @@ checkSyntax('engine/class-templates.js');
 checkSyntax('engine/variant-batches.js');
 checkSyntax('engine/generators.js');
 checkSyntax('engine/effect-renderer.js');
+checkSyntax('engine/offhand-renderer.js');
 checkSyntax('engine/outline-renderer.js');
 checkSyntax('engine/pixel-buffer.js');
 checkSyntax('engine/renderer.js');
@@ -77,6 +78,7 @@ checkSyntax('tools/build.mjs');
 checkSyntax('tools/dev-server.mjs');
 checkSyntax('tools/generate-shield-placement-audit.mjs');
 checkSyntax('tools/outline-review.mjs');
+checkSyntax('tools/offhand-review.mjs');
 checkSyntax('tools/shade-pilots.mjs');
 checkSyntax('tools/shade-review.mjs');
 checkSyntax('tools/weapon-readability-audit.mjs');
@@ -142,6 +144,7 @@ const runtimeSources = {
   'engine/variant-batches.js': await readFile(path.join(root, 'engine', 'variant-batches.js'), 'utf8'),
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
   'engine/effect-renderer.js': await readFile(path.join(root, 'engine', 'effect-renderer.js'), 'utf8'),
+  'engine/offhand-renderer.js': await readFile(path.join(root, 'engine', 'offhand-renderer.js'), 'utf8'),
   'engine/outline-renderer.js': await readFile(path.join(root, 'engine', 'outline-renderer.js'), 'utf8'),
   'engine/pixel-buffer.js': await readFile(path.join(root, 'engine', 'pixel-buffer.js'), 'utf8'),
   'engine/renderer.js': await readFile(path.join(root, 'engine', 'renderer.js'), 'utf8'),
@@ -160,7 +163,7 @@ const expectedEngineExports = [
   'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_CLASS_TEMPLATE',
   'DEFAULT_COMBAT_LOADOUT', 'DEFAULT_VARIANT_BATCH_SET', 'ENEMY_OUTLINE_PILOT_FAMILIES',
   'DIRS', 'DIR_LABELS', 'ENEMIES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
-  'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
+  'OFFHANDS', 'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
   'OUTLINE_MODE_COMPLETE_B', 'OUTLINE_MODE_NONE', 'OUTLINE_MODE_SELECTIVE_C',
   'SHADE_MODES', 'SHADE_MODE_FORM', 'SHADE_MODE_NONE',
   'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
@@ -181,7 +184,7 @@ check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not de
 check(runtimeSources['app.js'].includes("from './character-kit.js'"), 'app.js must use the focused master character-kit planner');
 check(!runtimeSources['character-kit.js'].includes("from './engine/"), 'character-kit.js must consume only the public engine facade');
 check(runtimeSources['app.js'].includes("from './zip.js'"), 'app.js must use the standalone ZIP packaging utility');
-check(runtimeSources['app.js'].includes("PRESET_VERSION = 11"), 'app.js must use preset schema v11 for shade persistence');
+check(runtimeSources['app.js'].includes("PRESET_VERSION = 12"), 'app.js must use preset schema v12 for off-hand persistence');
 check(
   runtimeSources['app.js'].includes('saved.version > PRESET_VERSION'),
   'app.js must migrate preset libraries from every legacy version through v10',
@@ -306,8 +309,8 @@ check(engine.SHEET_COLS * engine.SIZE === 288 && engine.DIRS.length * engine.SIZ
 check(engine.SHEET_COLS * engine.SIZE === 288 && engine.SIZE === 24, 'native direction-sheet dimensions must remain 288x24 pixels');
 check(engine.ANIMS.every((anim) => anim.frames * engine.SIZE === 48 || anim.frames * engine.SIZE === 96), 'native animation-sheet widths must remain 48 or 96 pixels');
 check(runtimeSources['app.js'].includes("PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1'"), 'character packs must use independent versioned persistence');
-check(runtimeSources['app.js'].includes('PACK_VERSION = 2'), 'ordinary character packs must use schema v2 for shade persistence');
-check(runtimeSources['app.js'].includes('[1, PACK_VERSION].includes(saved.version)'), 'ordinary character packs must migrate stored v1 libraries to v2');
+check(runtimeSources['app.js'].includes('PACK_VERSION = 3'), 'ordinary character packs must use schema v3 for off-hand persistence');
+check(runtimeSources['app.js'].includes('[1, 2, PACK_VERSION].includes(saved.version)'), 'ordinary character packs must migrate stored v1 and v2 libraries to v3');
 check(runtimeSources['app.js'].includes('PACK_ENTRY_LIMIT = 200'), 'character packs must keep a bounded entry count');
 check(runtimeSources['app.js'].includes('function loadPackLibrary(') && runtimeSources['app.js'].includes('function persistPackLibrary('), 'character packs must load and persist their working library');
 check(runtimeSources['app.js'].includes('assembledRenderOptions(spec, entry.outlineMode, entry.shadeMode)'), 'character packs must always export complete sprite sheets with their saved outline and shade treatments');
@@ -332,29 +335,34 @@ check(runtimeSources['app.js'].includes('format: E.CLASS_PACK_FORMAT'), 'class p
 check(runtimeSources['app.js'].includes('classTemplate: { ...plan.template }'), 'class-pack manifests must retain the complete stable template definition');
 check(runtimeSources['app.js'].includes('combatLoadout: manifestCombatLoadoutRecipe(spec, loadout)'), 'ready variant and class sheets must carry their captured modular combat loadouts');
 check(characterKit.MASTER_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-master-character-kit', 'master kits must expose a stable format id');
-check(characterKit.MASTER_CHARACTER_KIT_VERSION === 1, 'master kits must use an explicit versioned schema');
+check(characterKit.MASTER_CHARACTER_KIT_VERSION === 2, 'master kits must use schema v2 for utility off-hand layers');
 check(characterKit.MASTER_CHARACTER_KIT_SCALE === 1, 'master kits must export native logical pixels');
 check(
-  JSON.stringify(characterKit.MASTER_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify(['weapon-back', 'shield-back', 'body', 'shield-front', 'weapon-front']),
+  JSON.stringify(characterKit.MASTER_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
+    'weapon-back', 'shield-back', 'offhand-back', 'body', 'shield-front', 'offhand-front', 'weapon-front',
+  ]),
   'master kits must preserve the renderer draw order across composable layers',
 );
 const masterKitPlayer = {
   species: 'human', bodyBuild: 'classic', skin: 'peach', hairStyle: 'spiky', hairColor: 'brown', expression: 'neutral', faceDetail: 'none', headgear: 'none',
   outfit: 'tunic', outfitTier: 'tier1', outfitColor: 'royal', weapon: 'sword', weaponTier: 'tier1',
-  shield: 'round', shieldTier: 'tier1', palette: null,
+  shield: 'round', shieldTier: 'tier1', offhand: 'none', palette: null,
 };
 const masterKitPlan = characterKit.buildMasterCharacterKitPlan(masterKitPlayer);
 check(masterKitPlan.bodies.length === 756, 'master kits must include every outfit, catalog color, and headgear body combination');
 check(masterKitPlan.weapons.length === 75, 'master kits must include all fifteen weapons at all five tiers');
 check(masterKitPlan.shields.length === 280, 'master kits must include all eight shields at all five tiers and seven catalog colors');
-check(masterKitPlan.counts.totalPngs === 1467, 'standard master kits must contain 1467 native PNG sheets including the assembled preview');
-check(masterKitPlan.bodies.every((entry) => entry.layer === 'body' && entry.spec.weapon === 'none' && entry.spec.shield === 'none'), 'master-kit bodies must not bake weapons or shields');
+check(masterKitPlan.offhands.length === 1, 'master kits must include the Lantern as a dedicated utility off-hand');
+check(masterKitPlan.counts.totalPngs === 1469, 'standard master kits must contain 1469 native PNG sheets including the assembled preview');
+check(masterKitPlan.bodies.every((entry) => entry.layer === 'body' && entry.spec.weapon === 'none' && entry.spec.shield === 'none' && entry.spec.offhand === 'none'), 'master-kit bodies must not bake weapons, shields, or off-hand items');
 check(masterKitPlan.weapons.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit weapon must expose separate back and front layers');
 check(masterKitPlan.shields.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit shield must expose separate back and front layers');
+check(masterKitPlan.offhands.every((entry) => entry.files.back.endsWith('/back.png') && entry.files.front.endsWith('/front.png')), 'every master-kit utility off-hand must expose separate back and front layers');
 const masterKitPaths = [
   ...masterKitPlan.bodies.map((entry) => entry.file),
   ...masterKitPlan.weapons.flatMap((entry) => [entry.files.back, entry.files.front]),
   ...masterKitPlan.shields.flatMap((entry) => [entry.files.back, entry.files.front]),
+  ...masterKitPlan.offhands.flatMap((entry) => [entry.files.back, entry.files.front]),
   'preview/default.png',
 ];
 check(new Set(masterKitPaths).size === masterKitPlan.counts.totalPngs, 'every master-kit PNG path must be unique');
@@ -362,7 +370,7 @@ const customKitPlan = characterKit.buildMasterCharacterKitPlan({
   ...masterKitPlayer,
   palette: { skin: ['#123456', '#234567'], hair: ['#345678', '#456789'], outfit: ['#56789a', '#6789ab'] },
 });
-check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 1655, 'master kits must add the current custom outfit color without replacing catalog colors');
+check(customKitPlan.counts.outfitColors === 8 && customKitPlan.counts.totalPngs === 1657, 'master kits must add the current custom outfit color without replacing catalog colors');
 const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   id: `hero-${index + 1}`,
   name: `Hero ${index + 1}`,
@@ -382,14 +390,14 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   },
 }));
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
-check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 11, 'complete character kits must use schema v11 for assembled shade metadata');
+check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 12, 'complete character kits must use schema v12 for utility off-hand components');
 check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
 check(characterKit.COMPLETE_CHARACTER_PACK_FORMAT === '8-bit-sprite-assembler-complete-character-pack', 'combined complete packs must expose a distinct stable format id');
-check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 11, 'combined complete packs must use schema v11 for assembled shade metadata');
+check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 12, 'combined complete packs must use schema v12 for utility off-hand components');
 check(
   JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
-    'weapon-back', 'shield-back', 'species-back', 'outfit-back', 'outfit', 'skin-body', 'head',
-    'expression', 'species-front', 'face-detail', 'hair', 'headgear', 'shield-front', 'weapon-front',
+    'weapon-back', 'shield-back', 'offhand-back', 'species-back', 'outfit-back', 'outfit', 'skin-body', 'head',
+    'expression', 'species-front', 'face-detail', 'hair', 'headgear', 'shield-front', 'offhand-front', 'weapon-front',
   ]),
   'complete character kits must publish the exact atomic component draw order',
 );
@@ -410,16 +418,16 @@ const shadedCompleteKitPlan = characterKit.buildCompleteCharacterKitPlan([{
 check(
   shadedCompleteKitPlan.recipes[0]?.outlineMode === engine.OUTLINE_MODE_SELECTIVE_C
     && shadedCompleteKitPlan.recipes[0]?.shadeMode === engine.SHADE_MODE_FORM,
-  'Complete Kit schema v11 recipes must retain approved outline and shade metadata',
+  'Complete Kit schema v12 recipes must retain approved outline and shade metadata',
 );
 check(
-  completeKitPlan.counts.componentPngs === 1910
+  completeKitPlan.counts.componentPngs === 1912
     && completeKitPlan.counts.enemyFamilies === 57
     && completeKitPlan.counts.enemySheets === 202
     && completeKitPlan.counts.effectCategories === 4
     && completeKitPlan.counts.effectSheets === 24
-    && completeKitPlan.counts.totalPngs === 2137,
-  'complete character kits must contain 1910 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
+    && completeKitPlan.counts.totalPngs === 2139,
+  'complete character kits must contain 1912 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
@@ -460,6 +468,11 @@ check(completeKitPlan.components.outfits.length === 1020 && completeKitPlan.comp
 check(completeKitPlan.components.headgear.length === 41, 'complete kits must avoid duplicate fixed-color headgear sheets');
 check(completeKitPlan.components.weapons.length === 75 && completeKitPlan.components.shields.length === 326, 'complete kits must store every five-tier weapon and shield family while omitting visually identical color passes');
 check(
+  completeKitPlan.components.offhands.length === 2
+    && completeKitPlan.components.offhands.every((entry) => entry.offhand === 'lantern'),
+  'complete kits must store the Lantern as independent back and front components',
+);
+check(
   completeKitPlan.components.shields.filter((entry) => entry.tier === 'tier5').length === 46
     && completeKitPlan.components.shields.filter((entry) => entry.tier === 'tier5' && entry.color === 'default').length === 11,
   'Tier 5 shield components must collapse the four artifact passes whose colors are fully overwritten',
@@ -499,14 +512,70 @@ const completeKitPaths = [
   ...completeKitPlan.components.headgear.map((entry) => entry.file),
   ...completeKitPlan.components.weapons.flatMap((entry) => [entry.files.back, entry.files.front]),
   ...completeKitPlan.components.shields.map((entry) => entry.file),
+  ...completeKitPlan.components.offhands.map((entry) => entry.file),
   ...completeEnemyEntries.map((entry) => entry.file),
   ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 2137, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 2139, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
+const lanternKitPlan = characterKit.buildCompleteCharacterKitPlan([{
+  id: 'lantern-bearer',
+  name: 'Lantern Bearer',
+  kind: 'player',
+  spec: {
+    ...masterKitPlayer,
+    shield: 'none',
+    shieldTier: 'tier1',
+    offhand: 'lantern',
+  },
+}]);
+check(
+  lanternKitPlan.recipes[0]?.components.offhandBack === 'components/offhands/lantern/back.png'
+    && lanternKitPlan.recipes[0]?.components.offhandFront === 'components/offhands/lantern/front.png'
+    && lanternKitPlan.recipes[0]?.components.shieldBack === null
+    && lanternKitPlan.recipes[0]?.components.shieldFront === null,
+  'Lantern recipes must select independent utility off-hand passes without shield components',
+);
+const malformedOffhandKitPlan = characterKit.buildCompleteCharacterKitPlan([{
+  id: 'malformed-dual-offhand',
+  name: 'Malformed Dual Off-hand',
+  kind: 'player',
+  spec: {
+    ...masterKitPlayer,
+    shield: 'round',
+    shieldTier: 'tier3',
+    offhand: 'lantern',
+  },
+}]);
+check(
+  malformedOffhandKitPlan.recipes[0]?.components.shieldBack
+    && malformedOffhandKitPlan.recipes[0]?.components.shieldFront
+    && malformedOffhandKitPlan.recipes[0]?.components.offhandBack === null
+    && malformedOffhandKitPlan.recipes[0]?.components.offhandFront === null,
+  'malformed Complete Kit recipes must preserve an equipped shield and discard the utility off-hand',
+);
+const partialLanternKitPlan = characterKit.buildCompleteCharacterKitPlan([{
+  id: 'partial-lantern',
+  name: 'Partial Lantern',
+  kind: 'player',
+  spec: {
+    ...masterKitPlayer,
+    shield: undefined,
+    shieldTier: undefined,
+    offhand: 'lantern',
+  },
+}]);
+check(
+  partialLanternKitPlan.recipes[0]?.components.offhandBack === 'components/offhands/lantern/back.png'
+    && partialLanternKitPlan.recipes[0]?.components.offhandFront === 'components/offhands/lantern/front.png'
+    && partialLanternKitPlan.recipes[0]?.components.shieldBack === null
+    && partialLanternKitPlan.recipes[0]?.components.shieldFront === null,
+  'partial Complete Kit recipes must normalize a missing shield to None without dropping a valid Lantern',
+);
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'weapon-front'"), 'the renderer must expose separate weapon occlusion passes');
 check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'shield-front'"), 'the renderer must expose separate shield occlusion passes');
+check(runtimeSources['engine/renderer.js'].includes("renderLayer === 'offhand-back'") && runtimeSources['engine/renderer.js'].includes("renderLayer === 'offhand-front'"), 'the renderer must expose separate utility off-hand occlusion passes');
 check(!runtimeSources['engine/shield-renderer.js'].includes('drawTurnedShield'), 'side shields must not apply a second perspective turn after the character turns');
 check(runtimeSources['engine/shield-renderer.js'].includes('drawFullShield(S, R, originX, originY'), 'shields must reuse the unchanged broad-face artwork at the hand attachment');
 check(!runtimeSources['engine/shield-renderer.js'].includes('SIDE_HANDLE_X'), 'shields must not add a detached connector beyond the body hand');
@@ -637,6 +706,20 @@ check(runtimeSources['engine/shield-renderer.js'].includes("tier === 'tier3'"), 
 check(runtimeSources['engine/shield-renderer.js'].includes("tier === 'tier4'"), 'the shield renderer must apply the mythic Tier 4 upgrade layer');
 check(runtimeSources['engine/shield-renderer.js'].includes("tier === 'tier5'"), 'the shield renderer must apply the artifact Tier 5 upgrade layer');
 check(runtimeSources['engine/shield-renderer.js'].includes("d === 'up' ? 'behind' : 'front'"), 'shield layering must place back-view shields behind the humanoid body');
+check(
+  JSON.stringify(engine.OFFHANDS.map((offhand) => offhand.id)) === JSON.stringify(['none', 'lantern']),
+  'the utility off-hand catalog must expose None and Lantern in stable order',
+);
+check(engine.OFFHANDS.find((offhand) => offhand.id === 'lantern')?.category === 'utility', 'the Lantern must retain utility semantics');
+check(runtimeSources['app.js'].includes('validId(E.OFFHANDS, player.offhand'), 'saved player specs must safely migrate missing or invalid utility off-hands');
+check(runtimeSources['app.js'].includes("const offhand = shield === 'none'"), 'saved malformed player specs must give an equipped shield precedence over a utility off-hand');
+check(runtimeSources['app.js'].includes("'Off-hand item'"), 'the player editor must expose a dedicated utility off-hand control');
+check(runtimeSources['app.js'].includes("key === 'shield' && value !== 'none'"), 'equipping a shield must clear the utility off-hand slot');
+check(runtimeSources['app.js'].includes("key === 'offhand' && value !== 'none'"), 'equipping a utility off-hand must clear the shield slot');
+check(runtimeSources['engine/generators.js'].includes("offhand === 'none' ? rnd(SHIELDS).id : 'none'"), 'random players must keep shields and utility off-hands mutually exclusive');
+check(runtimeSources['engine/renderer.js'].includes("from './offhand-renderer.js'"), 'humanoid rendering must use the focused utility off-hand renderer');
+check(runtimeSources['engine/offhand-renderer.js'].includes("C.offhand !== 'lantern'"), 'the utility off-hand renderer must gate the approved Lantern family');
+check(runtimeSources['engine/offhand-renderer.js'].includes("viewDir === 'left' ? 'front' : 'behind'"), 'the Lantern must preserve direction-aware near/far hand depth');
 
 function renderPixels(spec, dir, animId, frame, opts = {}) {
   const pixels = new Array(engine.SIZE * engine.SIZE).fill(null);
@@ -3301,7 +3384,7 @@ for (const tier of engine.OUTFIT_TIERS) {
 }
 
 check(engine.CLASS_PACK_FORMAT === '8-bit-sprite-assembler-class-pack', 'class packs must expose a stable game-facing format id');
-check(engine.CLASS_PACK_VERSION === 2, 'class packs must use schema v2 for assembled shade metadata');
+check(engine.CLASS_PACK_VERSION === 3, 'class packs must use schema v3 for utility off-hand variants');
 check(engine.DEFAULT_CLASS_TEMPLATE === 'warrior', 'Warrior must remain the safe default class template');
 check(
   JSON.stringify(engine.CLASS_TEMPLATES.map((template) => template.id))
@@ -3324,23 +3407,26 @@ const classFixturePlayer = {
 const expectedClassCounts = new Map([
   ['warrior', 54],
   ['guardian', 54],
-  ['ranger', 29],
+  ['ranger', 30],
   ['rogue', 29],
-  ['mage', 24],
-  ['cleric', 39],
+  ['mage', 25],
+  ['cleric', 40],
   ['barbarian', 24],
-  ['necromancer', 34],
+  ['necromancer', 35],
   ['paladin', 39],
-  ['druid', 34],
+  ['druid', 35],
 ]);
 for (const template of engine.CLASS_TEMPLATES) {
   check(engine.OUTFITS.some((outfit) => outfit.id === template.outfit), `${template.id} must reference a valid outfit`);
   check(template.weapons.includes(template.defaultWeapon), `${template.id} default weapon must belong to its weapon list`);
   check(template.defaultShield === 'none' || template.shields.includes(template.defaultShield), `${template.id} default shield must belong to its shield list`);
+  check(template.defaultOffhand === 'none' || template.offhands.includes(template.defaultOffhand), `${template.id} default utility off-hand must belong to its off-hand list`);
   check(template.weapons.every((id) => engine.WEAPONS.some((weapon) => weapon.id === id && id !== 'none')), `${template.id} must reference only equipped weapon ids`);
   check(template.shields.every((id) => engine.SHIELDS.some((shield) => shield.id === id && id !== 'none')), `${template.id} must reference only equipped shield ids`);
+  check(template.offhands.every((id) => engine.OFFHANDS.some((offhand) => offhand.id === id && id !== 'none')), `${template.id} must reference only equipped utility off-hand ids`);
   check(new Set(template.weapons).size === template.weapons.length, `${template.id} must not repeat weapon families`);
   check(new Set(template.shields).size === template.shields.length, `${template.id} must not repeat shield families`);
+  check(new Set(template.offhands).size === template.offhands.length, `${template.id} must not repeat utility off-hands`);
 
   const applied = engine.applyClassTemplate(classFixturePlayer, template.id);
   check(
@@ -3361,7 +3447,8 @@ for (const template of engine.CLASS_TEMPLATES) {
       && applied.weapon === template.defaultWeapon
       && applied.weaponTier === 'tier1'
       && applied.shield === template.defaultShield
-      && applied.shieldTier === 'tier1',
+      && applied.shieldTier === 'tier1'
+      && applied.offhand === template.defaultOffhand,
     `${template.id} must apply its class outfit and Tier 1 default equipment`,
   );
 
@@ -3374,6 +3461,8 @@ for (const template of engine.CLASS_TEMPLATES) {
     variant.spec.outfit === template.outfit
       && template.weapons.includes(variant.spec.weapon)
       && (variant.spec.shield === 'none' || template.shields.includes(variant.spec.shield))
+      && (variant.spec.offhand === 'none' || template.offhands.includes(variant.spec.offhand))
+      && !(variant.spec.shield !== 'none' && variant.spec.offhand !== 'none')
       && variant.spec.species === classFixturePlayer.species
       && variant.spec.bodyBuild === classFixturePlayer.bodyBuild
       && variant.spec.skin === classFixturePlayer.skin
@@ -3432,11 +3521,11 @@ check(
 );
 
 check(engine.VARIANT_BATCH_FORMAT === '8-bit-sprite-assembler-equipment-variant-batch', 'equipment batches must expose a stable game-facing format id');
-check(engine.VARIANT_BATCH_VERSION === 2, 'equipment batches must use schema v2 for assembled shade metadata');
+check(engine.VARIANT_BATCH_VERSION === 3, 'equipment batches must use schema v3 for utility off-hand variants');
 check(engine.DEFAULT_VARIANT_BATCH_SET === 'rpg-equipment', 'the default equipment batch must be the deduplicated RPG collection');
 check(
   JSON.stringify(engine.VARIANT_BATCH_SETS.map((set) => set.id))
-    === JSON.stringify(['weapon-families', 'current-weapon-tiers', 'weapon-arsenal', 'armor-tiers', 'shield-armory', 'rpg-equipment']),
+    === JSON.stringify(['weapon-families', 'current-weapon-tiers', 'weapon-arsenal', 'armor-tiers', 'shield-armory', 'offhand-items', 'rpg-equipment']),
   'equipment batch presets must retain their stable ids and order',
 );
 const variantBatchPlayer = {
@@ -3449,6 +3538,7 @@ const variantBatchPlayer = {
   weaponTier: 'tier3',
   shield: 'kite',
   shieldTier: 'tier3',
+  offhand: 'none',
 };
 const expectedVariantBatchCounts = new Map([
   ['weapon-families', 16],
@@ -3456,7 +3546,8 @@ const expectedVariantBatchCounts = new Map([
   ['weapon-arsenal', 76],
   ['armor-tiers', 5],
   ['shield-armory', 41],
-  ['rpg-equipment', 120],
+  ['offhand-items', 2],
+  ['rpg-equipment', 121],
 ]);
 for (const set of engine.VARIANT_BATCH_SETS) {
   const batch = engine.buildVariantBatch(variantBatchPlayer, set.id);
@@ -3490,6 +3581,26 @@ const fullVariantEffects = new Set(fullVariantBatch.variants.flatMap((variant) =
 check(fullVariantEffects.has('effects/projectiles/arrow.png'), 'the RPG equipment batch must resolve Bow projectiles');
 check(fullVariantEffects.has('effects/projectiles/fireball.png'), 'the RPG equipment batch must resolve Staff projectiles');
 check(fullVariantEffects.has('effects/trails/shield-block.png'), 'the RPG equipment batch must resolve unarmed shield blocks');
+const utilityVariants = engine.buildVariantBatch(variantBatchPlayer, 'offhand-items').variants;
+check(
+  utilityVariants.some((variant) => variant.spec.offhand === 'lantern')
+    && utilityVariants.every((variant) => variant.spec.shield === 'none' && variant.spec.shieldTier === 'tier1'),
+  'utility off-hand batches must include the Lantern without retaining a shield',
+);
+const malformedOffhandVariants = engine.buildVariantBatch({
+  ...variantBatchPlayer,
+  shield: 'kite',
+  shieldTier: 'tier3',
+  offhand: 'lantern',
+}, 'armor-tiers').variants;
+check(
+  malformedOffhandVariants.every((variant) => (
+    variant.spec.shield === 'kite'
+      && variant.spec.shieldTier === 'tier3'
+      && variant.spec.offhand === 'none'
+  )),
+  'equipment planners must preserve a shield and discard the utility item in malformed dual-equipped input',
+);
 
 check(engine.COMBAT_EFFECTS.length === 4, 'combat effects must expose trails, projectiles, impacts, and statuses');
 const combatEffectEntries = engine.COMBAT_EFFECTS.flatMap((category) => (
@@ -3542,6 +3653,13 @@ for (const weapon of engine.WEAPONS) {
     `${weapon.id} must retain its automatic combat-effect mapping`,
   );
 }
+check(
+  engine.resolveCombatLoadout(
+    { kind: 'player', weapon: 'none', shield: 'none', offhand: 'lantern' },
+    engine.DEFAULT_COMBAT_LOADOUT,
+  ).slots.every((slot) => slot.effect === null),
+  'a Lantern without a weapon or shield must not inherit shield-block combat effects',
+);
 const overrideFixture = engine.resolveCombatLoadout(
   { kind: 'player', weapon: 'sword', shield: 'none' },
   { trail: 'hammer-smash', projectile: 'fireball', impact: 'none', status: 'frozen' },
@@ -3708,6 +3826,7 @@ const armorBase = {
   weaponTier: 'tier1',
   shield: 'none',
   shieldTier: 'tier1',
+  offhand: 'none',
   palette: null,
 };
 for (const outfit of engine.OUTFITS) {
@@ -3760,6 +3879,7 @@ const atomicPlayerSpecs = engine.HEADGEAR.map((headgear, index) => ({
   weaponTier: engine.WEAPON_TIERS[index % engine.WEAPON_TIERS.length].id,
   shield: engine.SHIELDS[1 + (index % (engine.SHIELDS.length - 1))].id,
   shieldTier: engine.SHIELD_TIERS[index % engine.SHIELD_TIERS.length].id,
+  offhand: 'none',
   palette: null,
 }));
 
@@ -3803,9 +3923,13 @@ for (const entry of completeKitPlan.components.weapons) {
 for (const entry of completeKitPlan.components.shields) {
   componentByPath.set(entry.file, { spec: entry.spec, layer: entry.layer });
 }
+for (const entry of completeKitPlan.components.offhands) {
+  componentByPath.set(entry.file, { spec: entry.spec, layer: entry.layer });
+}
 const recipeLayerKeys = {
   'weapon-back': 'weaponBack',
   'shield-back': 'shieldBack',
+  'offhand-back': 'offhandBack',
   'species-back': 'speciesBack',
   'outfit-back': 'outfitBack',
   outfit: 'outfit',
@@ -3817,6 +3941,7 @@ const recipeLayerKeys = {
   hair: 'hair',
   headgear: 'headgear',
   'shield-front': 'shieldFront',
+  'offhand-front': 'offhandFront',
   'weapon-front': 'weaponFront',
 };
 for (const recipe of completeKitPlan.recipes) {
@@ -4372,6 +4497,65 @@ const protectedFaceChanges = (changed, unshielded, direction) => changed.filter(
   if (direction === 'right') return x >= 13 && x <= 17;
   return x >= 6 && x <= 10;
 });
+let frameSafeOffhandCases = 0;
+const offhandBase = {
+  ...shieldBase,
+  shield: 'none',
+  shieldTier: 'tier1',
+  offhand: 'lantern',
+};
+for (const bodyBuild of engine.BODY_BUILDS) {
+  const spec = { ...offhandBase, bodyBuild: bodyBuild.id };
+  const bodySpec = { ...spec, offhand: 'none' };
+  for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+    for (let frame = 0; frame < animation.frames; frame++) {
+      const discardedPixels = [];
+      const offhandBackPixels = renderPixels(spec, direction, animation.id, frame, {
+        layer: 'offhand-back',
+        onOutOfBounds: (pixel) => discardedPixels.push(pixel),
+      });
+      const offhandFrontPixels = renderPixels(spec, direction, animation.id, frame, {
+        layer: 'offhand-front',
+        onOutOfBounds: (pixel) => discardedPixels.push(pixel),
+      });
+      const offhandPixels = compositePixelLayers([offhandBackPixels, offhandFrontPixels]);
+      const bodyPixels = renderPixels(bodySpec, direction, animation.id, frame, { layer: 'body' });
+      const complete = renderPixels(spec, direction, animation.id, frame);
+      const composite = compositePixelLayers([offhandBackPixels, bodyPixels, offhandFrontPixels]);
+      const visibleChanges = changedPixels(complete, bodyPixels);
+      frameSafeOffhandCases++;
+      check(
+        discardedPixels.length === 0,
+        `${bodyBuild.id} Lantern discarded ${discardedPixels.length} pixel(s) outside the 24x24 canvas in ${direction} ${animation.id} frame ${frame}`,
+      );
+      check(
+        minimumPixelDistance(offhandPixels, bodyPixels) <= 1,
+        `${bodyBuild.id} Lantern must stay attached to the body in ${direction} ${animation.id} frame ${frame}`,
+      );
+      check(
+        visibleChanges.length >= 10,
+        `${bodyBuild.id} Lantern must retain at least ten visible pixels after body occlusion in ${direction} ${animation.id} frame ${frame}`,
+      );
+      check(
+        protectedFaceChanges(visibleChanges, bodyPixels, direction).length === 0,
+        `${bodyBuild.id} Lantern must preserve face clearance in ${direction} ${animation.id} frame ${frame}`,
+      );
+      check(
+        offhandFrontPixels.some(Boolean),
+        `${bodyBuild.id} Lantern must export its hand-owning front grip in ${direction} ${animation.id} frame ${frame}`,
+      );
+      if (direction === 'right' || direction === 'up') {
+        check(offhandBackPixels.some(Boolean), `${bodyBuild.id} Lantern must export its far face behind the body in ${direction} ${animation.id} frame ${frame}`);
+      } else {
+        check(offhandBackPixels.every((pixel) => pixel === null), `${bodyBuild.id} Lantern must keep its near face out of the back layer in ${direction} ${animation.id} frame ${frame}`);
+      }
+      check(
+        JSON.stringify(composite) === JSON.stringify(complete),
+        `${bodyBuild.id} Lantern and body layers must rebuild the complete ${direction} ${animation.id} frame ${frame}`,
+      );
+    }
+  }
+}
 let frameSafeShieldCases = 0;
 
 function shieldTestPose(animation, frame) {
@@ -4674,6 +4858,10 @@ check(
   packageJson.scripts?.['review:shades'] === 'node tools/shade-review.mjs',
   'package.json must expose the focused shade review generator',
 );
+check(
+  packageJson.scripts?.['review:offhands'] === 'node tools/offhand-review.mjs',
+  'package.json must expose the focused off-hand review generator',
+);
 check(packageJson.scripts?.['tauri:build'] === 'tauri build --bundles nsis', 'package.json must expose the Windows installer build command');
 check(packageJson.scripts?.['tauri:build:exe'] === 'tauri build --no-bundle', 'package.json must preserve the proof Windows executable command');
 check(packageJson.devDependencies?.['@tauri-apps/cli'] === '^2.11.0', 'Tauri CLI must stay pinned to the approved 2.11 line');
@@ -4800,6 +4988,7 @@ console.log(`- Full enemy Form audit cases: ${formEnemyAuditCases}`);
 console.log(`- Enemy Form/outline integration cases: ${formEnemyCombinedOutlineCases}`);
 console.log(`- Frame-safe weapon cases: ${frameSafeWeaponCases}`);
 console.log(`- Frame-safe shield cases: ${frameSafeShieldCases}`);
+console.log(`- Frame-safe utility off-hand cases: ${frameSafeOffhandCases}`);
 console.log(`- Frame-safe headgear cases: ${frameSafeHeadgearCases}`);
 console.log(`- Frame-safe repaired enemy cases: ${frameSafeEnemyCases}`);
 console.log(`- Frame-safe enemy staff strikes: ${frameSafeEnemyStaffCases}`);

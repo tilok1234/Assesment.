@@ -21,6 +21,7 @@ import {
 } from './catalogs.js';
 import { drawWeapon } from './weapon-renderer.js';
 import { drawShield } from './shield-renderer.js';
+import { drawOffhand } from './offhand-renderer.js';
 import { drawCombatEffect } from './effect-renderer.js';
 
 const find = (list, id) => list.find(x => x.id === id) || list[0];
@@ -514,8 +515,16 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
     drawShield(S, R, d, p, C, u, 'behind', viewDir);
     return;
   }
+  if (renderLayer === 'offhand-back') {
+    drawOffhand(S, R, d, p, C, 'behind', viewDir);
+    return;
+  }
   if (renderLayer === 'shield-front') {
     drawShield(S, R, d, p, C, u, 'front', viewDir);
+    return;
+  }
+  if (renderLayer === 'offhand-front') {
+    drawOffhand(S, R, d, p, C, 'front', viewDir);
     return;
   }
   if (renderLayer === 'weapon-front') {
@@ -545,6 +554,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
   if (includeEquipment && (d === 'up' || sideWeaponIsFar) && hasWeapon) drawWeapon(weaponS, weaponR, d, p, C, u);
 
   if (includeEquipment) drawShield(S, R, d, p, C, u, 'behind', viewDir);
+  if (includeEquipment) drawOffhand(S, R, d, p, C, 'behind', viewDir);
 
   if (includeFullBody) drawPlayerSpeciesBack(S, R, d, p, u, C.species, skin, hair);
 
@@ -907,6 +917,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
   }
 
   if (includeEquipment) drawShield(S, R, d, p, C, u, 'front', viewDir);
+  if (includeEquipment) drawOffhand(S, R, d, p, C, 'front', viewDir);
 
   // ---- weapon (in front) ----
   if (includeEquipment && hasWeapon && d !== 'up' && !sideWeaponIsFar) drawWeapon(weaponS, weaponR, d, p, C, u);
@@ -3009,6 +3020,7 @@ function buildHumanoidC(spec) {
       weaponTier: spec.weaponTier || 'tier1',
       shield: spec.shield,
       shieldTier: spec.shieldTier || 'tier1',
+      offhand: spec.offhand || 'none',
       face: 'human',
       detail: spec.faceDetail || 'none',
       sideWeaponOffset: 3,

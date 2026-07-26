@@ -123,6 +123,14 @@ Combat overlays are now opt-in and return to Off whenever the editor starts.
 The optional effect-after-character shield/equipment occlusion issue remains
 on ice and explicitly outside shade scope. See `HANDOFF.md`.
 
+The first fresh content slice after that checkpoint adds the visually approved
+Lantern through a separate public non-shield `offhand` field. Shields and
+utility off-hands are mutually exclusive, only shields retain five-tier
+progression and shield-block behavior, and legacy specifications migrate to no
+utility item. The Lantern uses direction-aware back/front layers, the animated
+left-hand socket, approved Form shading, and component-aware outlines without
+changing the 24x24 contract or accepted baselines.
+
 The second content slice extracts humanoid weapons into a focused renderer with shared direction and pose anchors, while retaining byte-for-byte output for all existing enemy-used weapons. The player catalog grows from eight to sixteen choices with greatsword, scimitar, rapier, mace, warhammer, crossbow, wand, and spellbook additions. Each new weapon is verified across four directions and every animation, follows the animated player hand through idle, walk, attack, and lunge poses, has a distinct side strike, and observes the player face-clearance rule. Player blades also use readable style-specific hilts: compact dagger grips, sword crossguards, broad greatsword guards, scimitar knuckle guards, and rapier baskets.
 
 The third content slice adds an independent two-level weapon progression system without duplicating the weapon-type catalog. Every equipped weapon has a named Tier 2 form with a stronger silhouette and material treatment, including double axe heads, spiked mace and club profiles, reinforced ranged limbs, expanded arcane focuses, and gilded spellbooks. `None` normalizes to Tier 1, old state and preset schemas migrate safely, Tier 2 participates in thumbnails, per-category and whole-character randomization, undo/redo, comparison, persistence, naming, and every export scope, and all 15 upgrades remain distinct in every direction, animation, and frame while following the hand rig and clearing side faces.
@@ -187,6 +195,30 @@ distinct in every frame, and reports zero source-edge frames and zero
 out-of-bounds writes. All rollout groups were visually approved before the
 local `ac860aa` checkpoint; no push or fixture-baseline rewrite was performed.
 
+The twenty-ninth content slice establishes non-shield utility off-hands with
+one visually approved Lantern. A separate `offhand` catalog avoids pretending
+that utility items are tiered shields; editor selection, randomization,
+history, comparisons, presets, ordinary packs, equipment batches, compatible
+class packs, assembled exports, and Complete Kit recipes preserve the field
+while enforcing mutual exclusion with `shield`. Dedicated `offhand-back` and
+`offhand-front` passes follow the animated left-hand socket and join the
+component-aware off-hand equipment owner. Complete Kit/Pack schema v12 adds two
+stable Lantern component sheets, raising the shared component library to 1912
+PNGs, the standalone kit to 2139 PNGs, and a 24-player Complete Pack to 2162
+PNGs. The validator covers all 192 body-build/direction/animation/frame cases
+with zero discarded pixels, face clearance, layer routing, and exact
+recomposition; no fixture, baseline, release artifact, or effect-compositor
+approval is implied.
+
+The next assessed Phase 5 candidate is Production Roll, defined in
+`PRODUCTION_ROLL_PLAN.md`. It would preserve the current unrestricted
+randomizer as Wildcard Roll while adding a seeded, archetype-first curated
+whole-character action with coherent tiers, visibility normalization,
+silhouette budgeting, and palette families. Implementation has not started;
+the plan first requires a safe Lantern checkpoint, pure-policy validation, and
+an explicit Production-versus-Wildcard visual approval gate before any editor
+integration.
+
 Candidate additions:
 
 - More body types beyond the completed four-build silhouette foundation
@@ -194,7 +226,7 @@ Candidate additions:
 - More hairstyles and headgear beyond the completed 11-style and 12-choice foundation
 - More outfits beyond the completed nine-family foundation; avoid tiny accessory clutter at 24x24
 - More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2/Tier 3/Tier 4/Tier 5 progression finished)
-- Additional off-hand items such as spell foci, lanterns, and quivers (eight-family shield progression through Tier 5 complete)
+- Additional off-hand items beyond the completed Lantern, such as spell foci; quivers require a separate back-slot plan rather than the held-item topology
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants
 - Optional new animations after the existing sheet contract has a versioning plan

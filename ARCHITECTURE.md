@@ -19,6 +19,7 @@ index.html
       -> engine/shade-renderer.js
       -> engine/weapon-renderer.js
       -> engine/shield-renderer.js
+      -> engine/offhand-renderer.js
       -> engine/effect-renderer.js
       -> engine/combat-loadouts.js
       -> engine/sheets.js
@@ -52,6 +53,13 @@ Weapon entries include a broad content category (`blade`, `blunt`, `polearm`, `r
 
 Shield entries likewise keep family and progression independent. `SHIELD_TIERS` exposes stable Tier 1 through Tier 5 ids, producing 41 meaningful off-hand states: none plus eight equipped shields at five tiers. Selecting no shield normalizes the tier to Tier 1, while old saved state and presets gain the backward-compatible Tier 1 default.
 
+`OFFHANDS` is the separate catalog for non-shield held utility items. It
+currently contains `none` and the approved `lantern`; these choices do not use
+shield tiers. The editor and sanitizers enforce one left-hand occupant:
+equipping a utility item clears the shield, equipping a shield clears the
+utility item, and malformed specifications that contain both preserve the
+shield. Missing or invalid legacy values become `none`.
+
 Outfit entries carry player-facing Tier 2 through Tier 5 armor names, while the stable `OUTFIT_TIERS` catalog keeps armor progression independent from outfit family. The catalog now contains nine stable families; Barbarian Furs, Ranger Coat, Cleric Vestments, and Necromancer Robes append to the original five ids without reordering them. Every tier is cumulative inside the animated outfit pass: Tier 2 reinforces shoulders and waist, Tier 3 adds a readable crest, Tier 4 expands the pauldron silhouette, and Tier 5 adds an apex crown and luminous sigil. Legacy state defaults safely to Tier 1.
 
 ### Renderer
@@ -60,7 +68,7 @@ Outfit entries carry player-facing Tier 2 through Tier 5 armor names, while the 
 
 The four expanded outfit families add direction-aware fur, coat-tail, vestment, and deathshroud identity passes plus family-specific tier materials while preserving the shared humanoid rig and the original five families pixel-for-pixel.
 
-`engine/outline-renderer.js` owns the optional assembled-player and enemy outline treatment. For players and layered humanoid enemies, it requests the renderer's existing body, headgear, back/front weapon, and back/front shield layers and merges them into three logical owners: body, weapon, and shield. Headgear remains inside the body owner, while its concrete foreground layer is retained so contact logic can preserve every visible hat pixel. The body receives its mode-specific exterior contour. Equipment uses a cardinal exterior contour in both modes and admits an enclosed transparent component only when its area is at least five logical pixels, preserving large silhouette-defining openings while suppressing tiny construction pockets. A front/back humanoid neck-cavity pass finds the moving eight-pixel head-base/two-pixel-neck transition and ORs outline into only transparent cells directly beneath that head base. The untouched final renderer result is composited above those transparent-space contours, after which a layer-aware contact pass uses each concrete pass identity to place separators on the protected side of direct edge-sharing contact. Back-pass equipment receives an equipment-side separator; at body contact, front-pass equipment normally remains intact while the adjacent character-side boundary receives the separator. If that replacement would cardinally extend an existing dark body feature, the character pixel is preserved and the separator moves to the touching front-equipment pixel. At headgear contact, front-pass equipment receives an equipment-side separator while the hat stays unchanged. Three-way equipment/headgear/body contacts retain the continuous equipment-side headgear edge, with the feature-preserving rule independently deciding whether the body-side candidate remains. Diagonal-only proximity is left to the transparent-space contour so the contact pass cannot clip corners or endcaps. The contact pass does not change procedural source geometry or assets. None mode delegates directly to the original renderer so its pixels remain identical to the safe baseline.
+`engine/outline-renderer.js` owns the optional assembled-player and enemy outline treatment. For players and layered humanoid enemies, it requests the renderer's existing body, headgear, back/front weapon, back/front shield, and back/front utility-off-hand layers and merges them into three logical owners: body, weapon, and mutually exclusive shield/off-hand equipment. Headgear remains inside the body owner, while its concrete foreground layer is retained so contact logic can preserve every visible hat pixel. The body receives its mode-specific exterior contour. Equipment uses a cardinal exterior contour in both modes and admits an enclosed transparent component only when its area is at least five logical pixels, preserving large silhouette-defining openings while suppressing tiny construction pockets. A front/back humanoid neck-cavity pass finds the moving eight-pixel head-base/two-pixel-neck transition and ORs outline into only transparent cells directly beneath that head base. The untouched final renderer result is composited above those transparent-space contours, after which a layer-aware contact pass uses each concrete pass identity to place separators on the protected side of direct edge-sharing contact. Back-pass equipment receives an equipment-side separator; at body contact, front-pass equipment normally remains intact while the adjacent character-side boundary receives the separator. If that replacement would cardinally extend an existing dark body feature, the character pixel is preserved and the separator moves to the touching front-equipment pixel. At headgear contact, front-pass equipment receives an equipment-side separator while the hat stays unchanged. Three-way equipment/headgear/body contacts retain the continuous equipment-side headgear edge, with the feature-preserving rule independently deciding whether the body-side candidate remains. Diagonal-only proximity is left to the transparent-space contour so the contact pass cannot clip corners or endcaps. The contact pass does not change procedural source geometry or assets. None mode delegates directly to the original renderer so its pixels remain identical to the safe baseline.
 
 `engine/pixel-buffer.js` owns the internal 24x24 color-string capture,
 transparency, and run-paint helpers shared by assembled post-processes. It is
@@ -92,6 +100,14 @@ Contact-converted source pixels are excluded only from casting a redundant exter
 
 `engine/shield-renderer.js` owns humanoid shield pixels, eight player shield silhouettes, direction-aware face depth, an equipment-owned hand grip, and shield progression layers. Equipment uses an object-space attachment rule: turning the character never applies a second relative turn to the shield. Every direction reuses the same broad-face artwork attached to the animated shield-hand socket. The ordinary two-by-two hand is replaced by a material-appropriate grip in the front equipment pass; a far shield face can therefore remain behind the reusable body without allowing skin pixels to reappear between arm and shield. The original facing direction survives the renderer's left/right mirror so only screen position and near/far torso occlusion change. Tier growth retains a fixed face origin extending outward from that grip instead of moving the attachment point. Tier 2 expands every Tier 1 silhouette with family-specific reinforcement, ornament, or magic rather than recoloring the base. Tier 3 builds cumulatively on those forms with readable legendary crowns, crests, points, royal bands, antlers, and astral ornaments in the unchanged broad-face view. Tier 4 deliberately expands every family toward the safe frame limits with mythic cores, wider wings and star points, taller crowns, fortress rails, longer fangs, and larger magical projections while retaining the underlying shield identity. Tier 5 branches from the cleaner Tier 3 foundation into eight independent artifact designs, each with a dedicated silhouette and material language rather than stacking another dense overlay on Tier 4. Player shields follow the exact hand socket through idle, walk, attack, recovery, and hurt while preserving visible face features. Humanoid enemies stay on the legacy shield path so expanding player content does not silently redraw established enemy sheets.
 
+`engine/offhand-renderer.js` owns non-shield held utility pixels. The approved
+Lantern follows the same animated left-hand socket while routing its far and
+near geometry through dedicated `offhand-back` and `offhand-front` passes. It
+hangs below and outside the body, does not require a glow effect, does not use
+shield tiers, and yields completely to an equipped shield. Its two passes are
+public atomic components and recompose the complete renderer exactly around
+the reusable body.
+
 `engine/effect-renderer.js` owns the transparent 24x24 trail, projectile, impact, and status geometry. `engine/combat-loadouts.js` maps player equipment and enemy attack styles to those modular effects without baking them into character art. Combat overlays are opt-in: `previewEffects` is false for new/reset state and is forced back to false whenever the editor starts. When manually enabled, the legacy compositor in `app.js` draws the complete character first and then draws every resolved effect with `clear: false`. That optional order can look cluttered and overwrite foreground shield, equipment, body, or headgear pixels, so its final occlusion rule is a deferred issue recorded in `HANDOFF.md`. It is not a reason to redraw approved shield source art, and it must not be documented as final until a future effect-enabled all-direction/all-attack-frame review is explicitly resumed and approved.
 
 ### Sheets and thumbnails
@@ -109,15 +125,15 @@ path.
 
 ### Equipment variant batches
 
-`engine/variant-batches.js` is the pure, deterministic planner for ready-made equipment collections. It preserves one player identity while expanding weapon families, weapon tiers, armor tiers, or shield families and tiers, then deduplicates identical complete specifications. Stable preset ids produce bounded collections of 16 weapon families, up to five current-weapon tiers, 76 weapon-arsenal states, five armor tiers, 41 shield-armory states, or one 120-sheet RPG equipment collection. It imports only catalogs and does not render, package files, access editor state, or touch the DOM.
+`engine/variant-batches.js` is the pure, deterministic planner for ready-made equipment collections. It preserves one player identity while expanding weapon families, weapon tiers, armor tiers, shield families and tiers, or utility off-hands, then deduplicates identical complete specifications. Stable preset ids produce bounded collections of 16 weapon families, up to five current-weapon tiers, 76 weapon-arsenal states, five armor tiers, 41 shield-armory states, two utility-off-hand states, or one 121-sheet RPG equipment collection. It imports only catalogs and does not render, package files, access editor state, or touch the DOM.
 
 ### RPG class templates
 
-`engine/class-templates.js` owns ten stable definitions: Warrior, Guardian, Ranger, Rogue, Mage, Cleric, Barbarian, Necromancer, Paladin, and Druid. The four expanded roles append after the original six ids. Each definition selects one outfit family, Tier 1 editor defaults, permitted weapon families, and permitted shield families. Its pure planner preserves character identity and custom colors, expands permitted weapons, armor, and shields through all five tiers, deduplicates complete specifications, records series membership, and assigns stable variant ids. The bounded results are 54 Warrior, 54 Guardian, 29 Ranger, 29 Rogue, 24 Mage, 39 Cleric, 24 Barbarian, 34 Necromancer, 39 Paladin, and 34 Druid sheets. It imports only public catalog data and does not render, package files, access editor state, or touch the DOM.
+`engine/class-templates.js` owns ten stable definitions: Warrior, Guardian, Ranger, Rogue, Mage, Cleric, Barbarian, Necromancer, Paladin, and Druid. The four expanded roles append after the original six ids. Each definition selects one outfit family, Tier 1 editor defaults, permitted weapon families, permitted shield families, and permitted utility off-hands. Its pure planner preserves character identity and custom colors, expands permitted weapons, armor, shields, and utility items, deduplicates complete specifications, records series membership, and assigns stable variant ids. The bounded results are 54 Warrior, 54 Guardian, 30 Ranger, 29 Rogue, 25 Mage, 40 Cleric, 24 Barbarian, 35 Necromancer, 39 Paladin, and 35 Druid sheets. It imports only public catalog data and does not render, package files, access editor state, or touch the DOM.
 
 ### Complete character kits
 
-`character-kit.js` deterministically expands the player catalogs into one deduplicated component plan: skin-body, head, expression, hair, face-detail, species-back, species-front, outfit-back, outfit, headgear, weapon, and shield passes. It stores 119 hair sheets, six expression sheets, 60 content-unique species passes, and 41 headgear sheets beneath stable component paths. Species paths expand only on the palette axis that changes their pixels: skin for Dwarf and Lizardfolk traits, hair for Beastkin fur, and one fixed path for Undead traits. Short, spiky, bowl, and topknot share one pixel-identical fitted hair path, while outfit-colored headgear expands only the variants whose pixels actually change. Outfit and cape paths include the body-build id because those pixels define the silhouette; all other compatible layers remain shared. The resulting library contains 1020 outfit fronts, 140 cape backs, and 1910 component sheets total. It also expands every enemy family and variation into stable `enemies/<family>/<variation>.png` paths and every combat effect into stable `effects/<category>/<effect>.png` paths for complete native sheets. Up to 24 named players are mapped to lightweight recipes that reference the shared character paths and carry their modular combat-loadout recipes. The standalone kit adds no per-recipe PNGs; the combined Complete Pack adds one assembled native sheet per player for immediate use. The planner owns stable paths, counts, recipe limits, the native export scale, compatibility variants, and the runtime layer order. It imports catalogs only through `sprite-engine.js` and does not access the DOM, canvas, editor state, persistence, or ZIP implementation.
+`character-kit.js` deterministically expands the player catalogs into one deduplicated component plan: skin-body, head, expression, hair, face-detail, species-back, species-front, outfit-back, outfit, headgear, weapon, shield, and utility-off-hand passes. It stores 119 hair sheets, six expression sheets, 60 content-unique species passes, 41 headgear sheets, and two Lantern passes beneath stable component paths. Species paths expand only on the palette axis that changes their pixels: skin for Dwarf and Lizardfolk traits, hair for Beastkin fur, and one fixed path for Undead traits. Short, spiky, bowl, and topknot share one pixel-identical fitted hair path, while outfit-colored headgear expands only the variants whose pixels actually change. Outfit and cape paths include the body-build id because those pixels define the silhouette; all other compatible layers remain shared. The resulting library contains 1020 outfit fronts, 140 cape backs, and 1912 component sheets total. It also expands every enemy family and variation into stable `enemies/<family>/<variation>.png` paths and every combat effect into stable `effects/<category>/<effect>.png` paths for complete native sheets. Up to 24 named players are mapped to lightweight recipes that reference the shared character paths and carry their modular combat-loadout recipes. The standalone kit adds no per-recipe PNGs; the combined Complete Pack adds one assembled native sheet per player for immediate use. The planner owns stable paths, counts, recipe limits, the native export scale, compatibility variants, and the runtime layer order. It imports catalogs only through `sprite-engine.js` and does not access the DOM, canvas, editor state, persistence, or ZIP implementation.
 
 ### Archive packaging
 
@@ -129,18 +145,18 @@ path.
 
 The independently versioned persistence and export formats are:
 
-| Format | Current version | Shade migration |
+| Format | Current version | Compatibility migration |
 | --- | ---: | --- |
-| Named preset library | 11 | accepts v1-v10; missing/invalid shade becomes None |
-| Ordinary sprite-pack storage/manifest | 2 | accepts v1; missing/invalid shade becomes None |
+| Named preset library | 12 | accepts v1-v11; missing/invalid shade becomes None; missing/invalid offhand becomes none |
+| Ordinary sprite-pack storage/manifest | 3 | accepts v1-v2; missing/invalid shade becomes None; missing/invalid offhand becomes none |
 | Palette library | 1 | unchanged; shade is not palette data |
 | Combat Loadout | 1 | unchanged; assembled `baseSprite` metadata records shade |
-| Equipment Variant Batch | 2 | assembled source and every ready variant record shade |
-| Class Pack | 2 | assembled source and every ready variant record shade |
-| Complete Character Kit | 11 | recipes and assembled reference metadata record shade |
-| Complete Character Pack | 11 | recipes and assembled sheets preserve each saved shade |
-| Master Character Kit | 1 | unchanged; atomic component sheets stay untreated |
-| Master Roster Kit | 1 | unchanged |
+| Equipment Variant Batch | 3 | assembled source and every ready variant record shade and offhand |
+| Class Pack | 3 | assembled source and every ready variant record shade and offhand |
+| Complete Character Kit | 12 | recipes and assembled reference metadata record shade and offhand |
+| Complete Character Pack | 12 | recipes and assembled sheets preserve each saved shade and offhand |
+| Master Character Kit | 2 | adds atomic utility-off-hand passes; component sheets stay untreated |
+| Master Roster Kit | 2 | adds shared atomic utility-off-hand passes |
 
 Preset v10 and ordinary pack v1 already carried `outlineMode`; their pre-shade
 sanitizers and load paths were repaired to preserve valid enemy outline values,
@@ -162,7 +178,7 @@ above rather than conflating their contracts.
 - Exported sheets have a transparent background and no baked shadow.
 - Character-pack archives always contain complete full sheets at the selected scale plus a manifest that records their logical and actual dimensions.
 - Class-pack archives preserve one character identity, contain only equipment permitted by their stable class definition, deduplicate complete specifications, and include one resolved modular combat loadout per ready sheet.
-- Complete Character Kits always use native 1x sheets and the draw order `weapon-back`, `shield-back`, `species-back`, `outfit-back`, `outfit`, `skin-body`, `head`, `expression`, `species-front`, `face-detail`, `hair`, `headgear`, `shield-front`, `weapon-front`.
+- Complete Character Kits always use native 1x sheets and the draw order `weapon-back`, `shield-back`, `offhand-back`, `species-back`, `outfit-back`, `outfit`, `skin-body`, `head`, `expression`, `species-front`, `face-detail`, `hair`, `headgear`, `shield-front`, `offhand-front`, `weapon-front`.
 - Combat-effect sheets remain modular and unbaked. The current effects-after-character preview/recipe order is a compatibility fact, not a finalized foreground-equipment occlusion invariant.
 - All 57 enemy families support None, Complete B, and Selective C in live
   assembled rendering; the 9,696-frame enemy source corpus reserves a one-cell
@@ -177,7 +193,7 @@ above rather than conflating their contracts.
 - `sprite-engine.js` remains the public import path.
 - Browser and Windows builds use identical production files.
 
-`npm run check` enforces these invariants against the native export contract, class and equipment planner counts, character-pack ZIP format, Complete Character Kit component matrix, recipe paths, exact pixel recomposition, `asset-pack/manifest.json`, and all 232 committed PNG fixtures. The shade gate adds 288 broad player None-parity cases, exhaustive None parity for all 9,696 enemy source frames, 1,616 sampled enemy None/outline parity cases, 1,728 deterministic Form pilot cases, an exhaustive 9,696-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. The Form matrix verifies source ownership, protected pixels, unchanged outline/contact geometry, finite colors, exact floor shadows and transparent cells, visible changes in every pilot, and 21,086 material-aware pixel differences from the silhouette-only control. Weapon validation also enforces one connected silhouette in every frame, family and tier distinction, casting-family proportions, global Tier 5 pixel-density and bounds budgets relative to Tier 4, exact left/right mirroring, direction-aware front/back layer routing and recomposition, animation-phase diversity, front-view identity retention, catastrophic-detachment protection, zero discarded pixels across all 3,600 weapon frames, all 7,680 shield cases across four body builds, and 528 equipped-headgear cases, plus pixel/order parity for native full, direction, and animation sheet exports. These structural checks do not replace the pending live-editor integration review or the unresolved combined effect/shield visual gate.
+`npm run check` enforces these invariants against the native export contract, class and equipment planner counts, character-pack ZIP format, Complete Character Kit component matrix, recipe paths, exact pixel recomposition, `asset-pack/manifest.json`, and all 232 committed PNG fixtures. The shade gate adds 288 broad player None-parity cases, exhaustive None parity for all 9,696 enemy source frames, 1,616 sampled enemy None/outline parity cases, 1,728 deterministic Form pilot cases, an exhaustive 9,696-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. The Form matrix verifies source ownership, protected pixels, unchanged outline/contact geometry, finite colors, exact floor shadows and transparent cells, visible changes in every pilot, and 21,086 material-aware pixel differences from the silhouette-only control. Weapon validation also enforces one connected silhouette in every frame, family and tier distinction, casting-family proportions, global Tier 5 pixel-density and bounds budgets relative to Tier 4, exact left/right mirroring, direction-aware front/back layer routing and recomposition, animation-phase diversity, front-view identity retention, catastrophic-detachment protection, zero discarded pixels across all 3,600 weapon frames, all 7,680 shield cases across four body builds, all 192 Lantern utility-off-hand cases, and 528 equipped-headgear cases, plus pixel/order parity for native full, direction, and animation sheet exports. The Lantern matrix checks animated hand attachment, face clearance, visible change, near/far routing, mutual exclusion, combat semantics, and exact layer recomposition. These structural checks do not replace explicit visual approval and do not resolve the deferred combined effect/shield compositor.
 
 `tools/weapon-readability-audit.mjs` complements those hard checks with visual evidence. Its standard review matrices are joined by a 3,600-row CSV/JSON audit recording bounds, connected components, edge sides, character distance, expression overlap, discarded-frame count, and discarded-pixel count for every family, tier, direction, animation, and frame. The optional `--all-frames` mode also emits one enlarged and one true-native assembled all-frame sheet per weapon, while `--tier-sheets` emits four labeled all-weapon/all-frame SVG sheets per tier with lightweight PNG inspection grids. Frame-edge contact remains advisory, while any attempted write beyond `x=0..23` or `y=0..23` is a hard frame-contract failure.
 
@@ -199,6 +215,14 @@ Complete B, and Selective C columns at native and nearest-neighbor size on dark
 and parchment backgrounds, with parchment selected by default. The algorithm
 is approved, but this remains review evidence rather than a committed fixture
 or accepted baseline.
+
+`tools/offhand-review.mjs` generates the ignored Lantern integration review
+beneath `offhand-review/`. It renders three representative bearers across all
+144 source frames and 576 assembled outline/Form cases, then verifies exact
+back/body/front recomposition, animated attachment, shield precedence,
+absent-field parity, and zero out-of-bounds writes. The Lantern art is approved;
+the generated page remains review evidence rather than a committed fixture or
+accepted baseline.
 
 ## Adding content safely
 

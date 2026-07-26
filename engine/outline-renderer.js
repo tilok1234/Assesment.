@@ -233,9 +233,11 @@ function enemyOutlinesSeparatedInteriorCavities(spec) {
 export const OUTLINE_LAYER_ORDER = Object.freeze([
   'weapon-back',
   'shield-back',
+  'offhand-back',
   'body',
   'headgear',
   'shield-front',
+  'offhand-front',
   'weapon-front',
 ]);
 
@@ -245,7 +247,7 @@ export const OUTLINE_LAYER_ORDER = Object.freeze([
 // headgear pixels from equipment/body contact replacement.
 const OUTLINE_OWNER_GROUPS = Object.freeze([
   Object.freeze(['weapon-back', 'weapon-front']),
-  Object.freeze(['shield-back', 'shield-front']),
+  Object.freeze(['shield-back', 'shield-front', 'offhand-back', 'offhand-front']),
   Object.freeze(['body']),
 ]);
 
@@ -256,6 +258,7 @@ const OUTLINE_LAYER_INDEX = Object.freeze(Object.fromEntries(
 ));
 const FRONT_EQUIPMENT_LAYER_INDICES = Object.freeze([
   OUTLINE_LAYER_INDEX['shield-front'],
+  OUTLINE_LAYER_INDEX['offhand-front'],
   OUTLINE_LAYER_INDEX['weapon-front'],
 ]);
 const BODY_LAYER_INDEX = OUTLINE_LAYER_INDEX.body;

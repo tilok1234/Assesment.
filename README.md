@@ -4,17 +4,17 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 
 ## Current capabilities
 
-- Player assembly across Human, Elf, Orc, Goblin, Tiefling, Celestial, Dwarf, Undead, Lizardfolk, and Beastkin species; Classic, Lean, Sturdy, and Heroic body builds; plus skin, 11 hairstyles, six expressions, eight facial details, 12 headgear choices, nine outfits across five armor tiers, weapon type and tier, shield, and palette choices
+- Player assembly across Human, Elf, Orc, Goblin, Tiefling, Celestial, Dwarf, Undead, Lizardfolk, and Beastkin species; Classic, Lean, Sturdy, and Heroic body builds; plus skin, 11 hairstyles, six expressions, eight facial details, 12 headgear choices, nine outfits across five armor tiers, weapon type and tier, shield, the Lantern utility off-hand, and palette choices
 - 57 enemy families with 202 predefined variants
 - 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
 - A Combat Loadout Builder that previews those overlays on players and enemies, supplies automatic weapon-aware defaults, supports per-slot overrides, saves named recipes, and exports game-ready JSON
-- An Equipment Variant Batch Builder that turns one character identity into bounded 16-, 5-, 76-, 41-, or 120-sheet equipment collections with per-variant loadouts and only the combat effects they actually reference
-- A Class Pack Builder with ten focused templates—Warrior, Guardian, Ranger, Rogue, Mage, Cleric, Barbarian, Necromancer, Paladin, and Druid—that preserves one character identity while exporting only the outfit, weapon, shield, armor-tier, and equipment-tier combinations appropriate to that RPG role
+- An Equipment Variant Batch Builder that turns one character identity into bounded weapon, armor, shield, utility-off-hand, or 121-sheet RPG equipment collections with per-variant loadouts and only the combat effects they actually reference
+- A Class Pack Builder with ten focused templates—Warrior, Guardian, Ranger, Rogue, Mage, Cleric, Barbarian, Necromancer, Paladin, and Druid—that preserves one character identity while exporting only the outfit, weapon, shield, utility-off-hand, armor-tier, and equipment-tier combinations appropriate to that RPG role
 - Four directions: down, left, right, and up
 - Idle, walk, attack, and hurt animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
 - Persistent named sprite packs that collect player, enemy, and combat-effect designs and download as a ZIP with full PNG sheets and `manifest.json`
-- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 1910 content-unique atomic component sheets, all 202 enemy variations, and all 24 combat effects at native 1x
+- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 1912 content-unique atomic component sheets, all 202 enemy variations, and all 24 combat effects at native 1x
 - A validated asset pack containing 232 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
@@ -40,6 +40,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Five named armor tiers for every outfit: reinforced Tier 2, crested Tier 3, mythic Tier 4 pauldrons, and luminous Tier 5 apex forms that follow all body animations
 - Fifteen equipped weapon choices spanning blades, blunt weapons, polearms, ranged weapons, and magic focuses, each with standard Tier 1, named RPG-style Tier 2, legendary Tier 3, oversized mythic Tier 4, and final artifact Tier 5 forms; all 75 variants use hand-anchored motion and preserve front- and side-face clearance
 - Eight equipped shield choices—round, kite, buckler, heater, tower, oval, bone, and arcane—with five named tiers culminating in Worldsun Disc, Voidwyrm Aegis, Paradox Star, Throneheart Aegis, The Unbroken Gate, Imperial Eternity, Deathking's Reliquary, and Event Horizon; every facing reuses the unchanged broad shield face, the equipment grip owns the animated shield-hand socket instead of leaving ordinary hand pixels visible, and near/far body occlusion is split around the reusable body layer
+- One approved non-shield off-hand item, Lantern, with its own public field, direction-aware back/front passes, mutual exclusion with shields, and animated hand attachment across every body build and frame
 
 ## Current integration status
 
@@ -61,9 +62,7 @@ and the fallback for versioned legacy artwork.
 
 The Player/Enemy selector now participates in history, comparisons, presets,
 ordinary packs, previews, assembled sheets, and export recipes; it is hidden in
-Effects mode. Presets migrate v1-v10 into v11, ordinary packs migrate v1 into
-v2, Variant Batch and Class Pack are v2, and Complete Character Kit/Pack are
-v11. Missing or invalid shade fields migrate to None. The earlier enemy
+Effects mode. Missing or invalid shade fields migrate to None. The earlier enemy
 outline preset/ordinary-pack persistence gap remains repaired. The integrated
 editor surface was visually approved on 2026-07-26. The safe shade checkpoint
 does not accept new fixtures or baselines and does not rebuild executables.
@@ -74,6 +73,17 @@ can look cluttered or overwrite foreground details. Its final occlusion rule is
 on ice as a separate deferred integration problem and is explicitly excluded
 from approved shade work. See [HANDOFF.md](HANDOFF.md) for the exact
 continuation state.
+
+The first fresh Phase 5 content slice adds the visually approved Lantern as a
+separate non-shield `offhand` option. Selecting it clears the shield slot;
+selecting a shield clears it; malformed specifications preserve the shield.
+The field participates in randomization, history, comparisons, presets,
+ordinary packs, equipment batches, compatible class packs, assembled exports,
+and Complete Kit recipes. Presets are now v12, ordinary packs v3, Equipment
+Variant Batch and Class Pack v3, Master Character Kit/Roster Kit v2, and
+Complete Character Kit/Pack v12. Legacy specifications safely default to no
+utility off-hand. Effects remain Off, only shields resolve shield-block
+behavior, and no fixture, baseline, or release artifact changed.
 
 ## Preview controls
 
@@ -119,7 +129,7 @@ Double-click `check-project.bat`, or run:
 npm run check
 ```
 
-The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 3,600 weapon animation cases, 7,680 shield cases across all four body builds, and 528 equipped-headgear cases. The shade gate adds 288 broad player None-parity cases, all 9,696 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 1,728 deterministic Form pilot cases, an exhaustive 9,696-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, visible changes, and 21,086 material-aware differences from a silhouette-only control without accepting a visual baseline.
+The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 3,600 weapon animation cases, 7,680 shield cases across all four body builds, 192 Lantern utility-off-hand cases, and 528 equipped-headgear cases. The shade gate adds 288 broad player None-parity cases, all 9,696 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 1,728 deterministic Form pilot cases, an exhaustive 9,696-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, visible changes, and 21,086 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
 Run `npm run review:shades` to regenerate the ignored interactive Form pilot
 beneath `shade-review/`. It compares untreated output, a silhouette-only
@@ -128,6 +138,13 @@ for 12 diverse specimens across all directions, animations, and frames on
 dark and parchment review backgrounds, with parchment selected by default.
 Effects stay Off. The algorithm is approved, but the generated review remains
 evidence rather than a committed baseline.
+
+Run `npm run review:offhands` to regenerate the ignored Lantern integration
+review beneath `offhand-review/`. It covers three representative bearers,
+every direction, animation, and frame, None/Complete B/Selective C outlines,
+approved Form shading, exact back/body/front recomposition, shield precedence,
+and absent-field parity. The Lantern art was visually approved on 2026-07-26;
+the review remains evidence rather than a committed baseline.
 
 Run `npm run review:weapons -- --all-frames` to regenerate the 37 weapon review sheets and the exhaustive 3,600-row CSV/JSON audit. Add `--tier-sheets` to emit four labeled all-weapon/all-frame SVG review sheets per tier plus lightweight PNG inspection grids. The audit records ordinary edge contact separately from discarded pixels, so touching `x=0` or `x=23` remains advisory while attempting to draw outside the 24x24 canvas is a hard failure.
 
@@ -181,28 +198,29 @@ Use **Equipment variant batch** in Player mode when the game needs ready-made fu
 - **Complete weapon arsenal**: unarmed plus all 15 weapons at every tier (76 sheets)
 - **Armor progression**: the current outfit at all five armor tiers (5 sheets)
 - **Complete shield armory**: no shield plus all eight shields at every tier (41 sheets)
-- **RPG equipment collection**: the weapon arsenal, armor progression, and shield armory merged into 120 unique sheets
+- **Utility off-hand items**: no utility item plus the Lantern (2 sheets)
+- **RPG equipment collection**: the weapon arsenal, armor progression, shield armory, and utility off-hands merged into 121 unique sheets
 
 The ZIP uses the selected Export PNG scale and contains `manifest.json`, `README.txt`, one ready character sheet per unique specification, and one copy of every combat-effect sheet referenced by those variants. Automatic loadouts are resolved separately per weapon, explicit overrides are preserved, and effects remain modular instead of being baked into the character PNGs. Choose **1x Native** for exact `288x96` sheets.
 
 ## RPG class packs
 
-Use **Class pack builder** in Player mode when one character should be ready to play as a focused RPG class instead of receiving the entire 120-sheet equipment collection. Pick a template, then either apply its Tier 1 defaults to the editor or download the full class ZIP immediately:
+Use **Class pack builder** in Player mode when one character should be ready to play as a focused RPG class instead of receiving the entire 121-sheet equipment collection. Pick a template, then either apply its Tier 1 defaults to the editor or download the full class ZIP immediately:
 
 - **Warrior**: plate armor, six melee weapon families, and four martial shield families (54 unique sheets)
 - **Guardian**: plate armor, four defensive weapon families, and six shield families (54 unique sheets)
-- **Ranger**: Ranger Coat, dagger, spear, bow, crossbow, and buckler options (29 unique sheets)
+- **Ranger**: Ranger Coat, dagger, spear, bow, crossbow, buckler, and Lantern options (30 unique sheets)
 - **Rogue**: leather armor, scimitar, rapier, dagger, crossbow, and buckler options (29 unique sheets)
-- **Mage**: robes, staff, wand, spellbook, and arcane shield options (24 unique sheets)
-- **Cleric**: Cleric Vestments, mace, warhammer, staff, wand, and three holy or defensive shield families (39 unique sheets)
+- **Mage**: robes, staff, wand, spellbook, arcane shield, and Lantern options (25 unique sheets)
+- **Cleric**: Cleric Vestments, mace, warhammer, staff, wand, three holy or defensive shield families, and the Lantern (40 unique sheets)
 - **Barbarian**: Barbarian Furs with greatsword, axe, spear, and club progression but no shields (24 unique sheets)
-- **Necromancer**: Necromancer Robes with dagger, staff, wand, spellbook, bone shield, and arcane shield progression (34 unique sheets)
+- **Necromancer**: Necromancer Robes with dagger, staff, wand, spellbook, bone shield, arcane shield, and Lantern progression (35 unique sheets)
 - **Paladin**: plate armor with sword, greatsword, mace, warhammer, and three heavy shield families (39 unique sheets)
-- **Druid**: Ranger Coat with dagger, spear, staff, wand, round shield, and bone shield progression (34 unique sheets)
+- **Druid**: Ranger Coat with dagger, spear, staff, wand, round shield, bone shield, and Lantern progression (35 unique sheets)
 
-Applying a template changes only the class outfit and Tier 1 starting equipment; skin, hair, facial detail, headgear, colors, and custom palette stay intact, and the change can be undone. Export expands every permitted weapon through Tiers 1-5, the class outfit through all five armor tiers, and no shield plus every permitted shield through Tiers 1-5. Identical complete specifications are deduplicated.
+Applying a template changes only the class outfit and Tier 1 starting equipment; skin, hair, facial detail, headgear, colors, and custom palette stay intact, and the change can be undone. Export expands every permitted weapon through Tiers 1-5, the class outfit through all five armor tiers, no shield plus every permitted shield through Tiers 1-5, and each permitted non-shield off-hand. Identical complete specifications are deduplicated.
 
-Each schema-v1 ZIP contains complete character sheets at the selected PNG scale, a resolved combat-loadout recipe for every variant, only the modular effect sheets those loadouts reference, `manifest.json`, and `README.txt`. Files live beneath `classes/<class-id>/characters/<character>/`, so several class archives can be added to a game without path collisions. Choose **1x Native** for exact `288x96` game sheets.
+Each schema-v3 ZIP contains complete character sheets at the selected PNG scale, a resolved combat-loadout recipe for every variant, only the modular effect sheets those loadouts reference, `manifest.json`, and `README.txt`. Files live beneath `classes/<class-id>/characters/<character>/`, so several class archives can be added to a game without path collisions. Choose **1x Native** for exact `288x96` game sheets.
 
 ## Character packs
 
@@ -215,7 +233,7 @@ The working pack stays on the current device. Each downloaded ZIP contains one c
 
 For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes and combat loadouts, the full deduplicated component library, all 57 enemy families with all 202 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
 
-A 24-player Complete Pack contains 1910 shared component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2160 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+A 24-player Complete Pack contains 1912 shared component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2162 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
 
 ## Complete Character Kits
 
@@ -230,17 +248,18 @@ Use **Download Complete Character Kit** in Player mode to export one `8-bit-spri
 - 41 headgear layers covering all 12 choices; fixed-color gear is stored once, while cap, hood, wizard hat, bandana, and plumed helm receive the seven catalog outfit colors
 - 150 weapon layers covering all 15 families at Tiers 1-5 in back/front passes
 - 326 shield layers covering all eight families at Tiers 1-5; a pass gets color variants only when color changes its pixels, including Tier 5 artifact passes that fully replace the underlying accent
+- Two Lantern utility-off-hand layers split into direction-aware back and front passes
 - 202 complete enemy sheets covering every variation in all 57 enemy families, organized beneath `enemies/`
 - 24 transparent combat-effect sheets covering trails, projectiles, impacts, and statuses, organized beneath `effects/`
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
-The standalone kit contains 1910 content-unique component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 2137 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
+The standalone kit contains 1912 content-unique component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 2139 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
 
 Draw the non-null component paths from a recipe in this order:
 
-`weapon-back` → `shield-back` → `species-back` → `outfit-back` → `outfit` → `skin-body` → `head` → `expression` → `species-front` → `face-detail` → `hair` → `headgear` → `shield-front` → `weapon-front`
+`weapon-back` → `shield-back` → `offhand-back` → `species-back` → `outfit-back` → `outfit` → `skin-body` → `head` → `expression` → `species-front` → `face-detail` → `hair` → `headgear` → `shield-front` → `offhand-front` → `weapon-front`
 
-Each schema-v10 recipe records the selected species, body build, expression, hairstyle, headgear, and expanded outfit family and may include a combat loadout with explicit selections, weapon-aware automatic defaults, resolved effect files, and the current draw order. Build-specific outfit and cape paths keep the silhouette modular while skin, head, expression, hair, species, headgear, weapon, and shield layers stay shared. Effect sheets remain separate and use the same animation column, direction row, and 24x24 source rectangle; status effects animate across every animation, while trails, projectiles, and impacts are transparent outside attack. The existing recipe order places effects after the assembled sprite, but that is the current compatibility contract, not a resolved equipment-occlusion rule. Consumers should keep the sheets modular, and the editor's effect/shield compositor must be corrected and approved before its current preview order is treated as final guidance.
+Each schema-v12 recipe records the selected species, body build, expression, hairstyle, headgear, expanded outfit family, and optional utility off-hand, and may include a combat loadout with explicit selections, weapon-aware automatic defaults, resolved effect files, and the current draw order. Build-specific outfit and cape paths keep the silhouette modular while skin, head, expression, hair, species, headgear, weapon, shield, and utility-off-hand layers stay shared. Effect sheets remain separate and use the same animation column, direction row, and 24x24 source rectangle; status effects animate across every animation, while trails, projectiles, and impacts are transparent outside attack. The existing recipe order places effects after the assembled sprite, but that is the current compatibility contract, not a resolved equipment-occlusion rule. Consumers should keep the sheets modular; the optional legacy effect compositor remains on ice and its current preview order must not be treated as final guidance.
 
 Every component shares the same animation grid and has been validated to recompose the complete renderer pixel-for-pixel across all directions and frames. To craft a new character in a game, copy a recipe and change its component paths; no art needs to be duplicated.
 
@@ -252,7 +271,7 @@ Every component shares the same animation grid and has been validated to recompo
 - `character-kit.js` - deterministic component coverage, paths, recipe mapping, counts, and layer-order planning
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
-- `engine/` - focused animation, palette, player-option, enemy, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon and shield, renderer, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
+- `engine/` - focused animation, palette, player-option, enemy, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build
@@ -263,6 +282,8 @@ Every component shares the same animation grid and has been validated to recompo
 - `HANDOFF.md` - exact branch, validation, known gaps, and continuation state
 - `ENEMY_OUTLINE_PLAN.md` - completed 57-family outline rollout record
 - `SHADE_RENDERING_PLAN.md` - canonical next-phase shade design and approval gates
+- `OFFHAND_ITEMS_PLAN.md` - approved Lantern pilot, public contract, validation, and future off-hand boundaries
+- `PRODUCTION_ROLL_PLAN.md` - assessed Production-versus-Wildcard roll contract and approval-gated implementation slices; runtime work has not started
 
 ## Direction
 

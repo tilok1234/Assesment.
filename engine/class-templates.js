@@ -1,4 +1,5 @@
 import {
+  OFFHANDS,
   OUTFITS,
   OUTFIT_TIERS,
   SHIELDS,
@@ -8,7 +9,7 @@ import {
 } from './catalogs.js';
 
 export const CLASS_PACK_FORMAT = '8-bit-sprite-assembler-class-pack';
-export const CLASS_PACK_VERSION = 2;
+export const CLASS_PACK_VERSION = 3;
 
 export const CLASS_TEMPLATES = Object.freeze([
   Object.freeze({
@@ -18,8 +19,10 @@ export const CLASS_TEMPLATES = Object.freeze([
     outfit: 'plate',
     defaultWeapon: 'sword',
     defaultShield: 'round',
+    defaultOffhand: 'none',
     weapons: Object.freeze(['sword', 'greatsword', 'axe', 'mace', 'warhammer', 'spear']),
     shields: Object.freeze(['round', 'kite', 'heater', 'tower']),
+    offhands: Object.freeze([]),
   }),
   Object.freeze({
     id: 'guardian',
@@ -28,8 +31,10 @@ export const CLASS_TEMPLATES = Object.freeze([
     outfit: 'plate',
     defaultWeapon: 'sword',
     defaultShield: 'tower',
+    defaultOffhand: 'none',
     weapons: Object.freeze(['sword', 'mace', 'warhammer', 'spear']),
     shields: Object.freeze(['round', 'kite', 'heater', 'tower', 'oval', 'bone']),
+    offhands: Object.freeze([]),
   }),
   Object.freeze({
     id: 'ranger',
@@ -38,8 +43,10 @@ export const CLASS_TEMPLATES = Object.freeze([
     outfit: 'ranger',
     defaultWeapon: 'bow',
     defaultShield: 'none',
+    defaultOffhand: 'none',
     weapons: Object.freeze(['dagger', 'spear', 'bow', 'crossbow']),
     shields: Object.freeze(['buckler']),
+    offhands: Object.freeze(['lantern']),
   }),
   Object.freeze({
     id: 'rogue',
@@ -48,8 +55,10 @@ export const CLASS_TEMPLATES = Object.freeze([
     outfit: 'leather',
     defaultWeapon: 'dagger',
     defaultShield: 'none',
+    defaultOffhand: 'none',
     weapons: Object.freeze(['scimitar', 'rapier', 'dagger', 'crossbow']),
     shields: Object.freeze(['buckler']),
+    offhands: Object.freeze([]),
   }),
   Object.freeze({
     id: 'mage',
@@ -58,8 +67,10 @@ export const CLASS_TEMPLATES = Object.freeze([
     outfit: 'robe',
     defaultWeapon: 'staff',
     defaultShield: 'none',
+    defaultOffhand: 'none',
     weapons: Object.freeze(['staff', 'wand', 'spellbook']),
     shields: Object.freeze(['arcane']),
+    offhands: Object.freeze(['lantern']),
   }),
   Object.freeze({
     id: 'cleric',
@@ -68,8 +79,10 @@ export const CLASS_TEMPLATES = Object.freeze([
     outfit: 'cleric',
     defaultWeapon: 'mace',
     defaultShield: 'round',
+    defaultOffhand: 'none',
     weapons: Object.freeze(['mace', 'warhammer', 'staff', 'wand']),
     shields: Object.freeze(['round', 'heater', 'arcane']),
+    offhands: Object.freeze(['lantern']),
   }),
   Object.freeze({
     id: 'barbarian',
@@ -78,8 +91,10 @@ export const CLASS_TEMPLATES = Object.freeze([
     outfit: 'barbarian',
     defaultWeapon: 'axe',
     defaultShield: 'none',
+    defaultOffhand: 'none',
     weapons: Object.freeze(['greatsword', 'axe', 'spear', 'club']),
     shields: Object.freeze([]),
+    offhands: Object.freeze([]),
   }),
   Object.freeze({
     id: 'necromancer',
@@ -88,8 +103,10 @@ export const CLASS_TEMPLATES = Object.freeze([
     outfit: 'necromancer',
     defaultWeapon: 'spellbook',
     defaultShield: 'none',
+    defaultOffhand: 'none',
     weapons: Object.freeze(['dagger', 'staff', 'wand', 'spellbook']),
     shields: Object.freeze(['bone', 'arcane']),
+    offhands: Object.freeze(['lantern']),
   }),
   Object.freeze({
     id: 'paladin',
@@ -98,8 +115,10 @@ export const CLASS_TEMPLATES = Object.freeze([
     outfit: 'plate',
     defaultWeapon: 'sword',
     defaultShield: 'heater',
+    defaultOffhand: 'none',
     weapons: Object.freeze(['sword', 'greatsword', 'mace', 'warhammer']),
     shields: Object.freeze(['kite', 'heater', 'tower']),
+    offhands: Object.freeze([]),
   }),
   Object.freeze({
     id: 'druid',
@@ -108,8 +127,10 @@ export const CLASS_TEMPLATES = Object.freeze([
     outfit: 'ranger',
     defaultWeapon: 'staff',
     defaultShield: 'none',
+    defaultOffhand: 'none',
     weapons: Object.freeze(['dagger', 'spear', 'staff', 'wand']),
     shields: Object.freeze(['round', 'bone']),
+    offhands: Object.freeze(['lantern']),
   }),
 ]);
 
@@ -140,6 +161,14 @@ function copyPalette(palette) {
 function copyPlayer(player, patch = {}) {
   const spec = { ...player, ...patch, palette: copyPalette(player.palette) };
   if (spec.weapon === 'none') spec.weaponTier = 'tier1';
+  if (spec.shield && spec.shield !== 'none') {
+    spec.offhand = 'none';
+  } else if (spec.offhand && spec.offhand !== 'none') {
+    spec.shield = 'none';
+    spec.shieldTier = 'tier1';
+  } else {
+    spec.offhand = 'none';
+  }
   if (spec.shield === 'none') spec.shieldTier = 'tier1';
   return spec;
 }
@@ -166,6 +195,7 @@ export function applyClassTemplate(player, templateId = DEFAULT_CLASS_TEMPLATE) 
     weaponTier: 'tier1',
     shield: template.defaultShield,
     shieldTier: 'tier1',
+    offhand: template.defaultOffhand,
   });
 }
 
@@ -200,12 +230,29 @@ export function buildClassPack(player, templateId = DEFAULT_CLASS_TEMPLATE) {
     const shield = catalogItem(SHIELDS, shieldId);
     const tiers = shield.id === 'none' ? SHIELD_TIERS.slice(0, 1) : SHIELD_TIERS;
     for (const tier of tiers) {
-      addVariant(variants, bySpec, baseSpec, { shield: shield.id, shieldTier: tier.id }, {
+      addVariant(variants, bySpec, baseSpec, {
+        shield: shield.id,
+        shieldTier: tier.id,
+        offhand: 'none',
+      }, {
         id: `shield-${shield.id}-${tier.id}`,
         name: itemName(shield, tier.id),
         series: 'class-shields',
       });
     }
+  }
+
+  for (const offhandId of ['none', ...template.offhands]) {
+    const offhand = catalogItem(OFFHANDS, offhandId);
+    addVariant(variants, bySpec, baseSpec, {
+      shield: 'none',
+      shieldTier: 'tier1',
+      offhand: offhand.id,
+    }, {
+      id: `offhand-${offhand.id}`,
+      name: offhand.name,
+      series: 'class-offhands',
+    });
   }
 
   return { template, baseSpec, variants };

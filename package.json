@@ -15,6 +15,7 @@
     "review:weapons": "node tools/weapon-readability-audit.mjs",
     "review:outlines": "node tools/outline-review.mjs",
     "review:shades": "node tools/shade-review.mjs",
+    "review:offhands": "node tools/offhand-review.mjs",
     "check": "node tools/check-project.mjs",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",

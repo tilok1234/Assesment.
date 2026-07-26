@@ -1,4 +1,5 @@
 import {
+  OFFHANDS,
   OUTFITS,
   OUTFIT_TIERS,
   SHIELDS,
@@ -8,7 +9,7 @@ import {
 } from './catalogs.js';
 
 export const VARIANT_BATCH_FORMAT = '8-bit-sprite-assembler-equipment-variant-batch';
-export const VARIANT_BATCH_VERSION = 2;
+export const VARIANT_BATCH_VERSION = 3;
 
 export const VARIANT_BATCH_SETS = Object.freeze([
   {
@@ -37,9 +38,14 @@ export const VARIANT_BATCH_SETS = Object.freeze([
     description: 'No shield plus every shield family at all five tiers.',
   },
   {
+    id: 'offhand-items',
+    name: 'Off-hand items',
+    description: 'An empty utility slot plus every non-shield off-hand item.',
+  },
+  {
     id: 'rpg-equipment',
     name: 'RPG equipment collection',
-    description: 'The complete weapon arsenal, armor progression, and shield armory in one deduplicated pack.',
+    description: 'The complete weapon arsenal, armor progression, shield armory, and non-shield off-hand items in one deduplicated pack.',
   },
 ]);
 
@@ -62,6 +68,14 @@ function copyPlayer(player, patch = {}) {
     } : null,
   };
   if (spec.weapon === 'none') spec.weaponTier = 'tier1';
+  if (spec.shield && spec.shield !== 'none') {
+    spec.offhand = 'none';
+  } else if (spec.offhand && spec.offhand !== 'none') {
+    spec.shield = 'none';
+    spec.shieldTier = 'tier1';
+  } else {
+    spec.offhand = 'none';
+  }
   if (spec.shield === 'none') spec.shieldTier = 'tier1';
   return spec;
 }
@@ -135,12 +149,30 @@ function addShieldArmory(variants, bySpec, player) {
   for (const shield of SHIELDS) {
     const tiers = shield.id === 'none' ? SHIELD_TIERS.slice(0, 1) : SHIELD_TIERS;
     for (const tier of tiers) {
-      addVariant(variants, bySpec, player, { shield: shield.id, shieldTier: tier.id }, {
+      addVariant(variants, bySpec, player, {
+        shield: shield.id,
+        shieldTier: tier.id,
+        offhand: 'none',
+      }, {
         id: `shield-${shield.id}-${tier.id}`,
         name: itemName(shield, tier.id),
         series: 'shield-armory',
       });
     }
+  }
+}
+
+function addOffhandItems(variants, bySpec, player) {
+  for (const offhand of OFFHANDS) {
+    addVariant(variants, bySpec, player, {
+      shield: 'none',
+      shieldTier: 'tier1',
+      offhand: offhand.id,
+    }, {
+      id: `offhand-${offhand.id}`,
+      name: offhand.name,
+      series: 'offhand-items',
+    });
   }
 }
 
@@ -154,10 +186,12 @@ export function buildVariantBatch(player, setId = DEFAULT_VARIANT_BATCH_SET) {
   else if (set.id === 'weapon-arsenal') addWeaponArsenal(variants, bySpec, player);
   else if (set.id === 'armor-tiers') addArmorTiers(variants, bySpec, player);
   else if (set.id === 'shield-armory') addShieldArmory(variants, bySpec, player);
+  else if (set.id === 'offhand-items') addOffhandItems(variants, bySpec, player);
   else {
     addWeaponArsenal(variants, bySpec, player);
     addArmorTiers(variants, bySpec, player);
     addShieldArmory(variants, bySpec, player);
+    addOffhandItems(variants, bySpec, player);
   }
 
   return { set, variants };

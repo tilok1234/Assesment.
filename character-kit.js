@@ -7,6 +7,7 @@ import {
   HAIR_COLORS,
   HAIR_STYLES,
   HEADGEAR,
+  OFFHANDS,
   OUTFITS,
   OUTFIT_COLORS,
   OUTFIT_TIERS,
@@ -19,28 +20,31 @@ import {
 } from './sprite-engine.js';
 
 export const MASTER_CHARACTER_KIT_FORMAT = '8-bit-sprite-assembler-master-character-kit';
-export const MASTER_CHARACTER_KIT_VERSION = 1;
+export const MASTER_CHARACTER_KIT_VERSION = 2;
 export const MASTER_CHARACTER_KIT_SCALE = 1;
 export const MASTER_CHARACTER_KIT_LAYER_ORDER = [
   'weapon-back',
   'shield-back',
+  'offhand-back',
   'body',
   'shield-front',
+  'offhand-front',
   'weapon-front',
 ];
 
 export const MASTER_ROSTER_KIT_FORMAT = '8-bit-sprite-assembler-master-roster-kit';
-export const MASTER_ROSTER_KIT_VERSION = 1;
+export const MASTER_ROSTER_KIT_VERSION = 2;
 export const MASTER_ROSTER_KIT_LIMIT = 24;
 
 export const COMPLETE_CHARACTER_KIT_FORMAT = '8-bit-sprite-assembler-complete-character-kit';
-export const COMPLETE_CHARACTER_KIT_VERSION = 11;
+export const COMPLETE_CHARACTER_KIT_VERSION = 12;
 export const COMPLETE_CHARACTER_KIT_RECIPE_LIMIT = 24;
 export const COMPLETE_CHARACTER_PACK_FORMAT = '8-bit-sprite-assembler-complete-character-pack';
-export const COMPLETE_CHARACTER_PACK_VERSION = 11;
+export const COMPLETE_CHARACTER_PACK_VERSION = 12;
 export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
   'weapon-back',
   'shield-back',
+  'offhand-back',
   'species-back',
   'outfit-back',
   'outfit',
@@ -52,6 +56,7 @@ export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
   'hair',
   'headgear',
   'shield-front',
+  'offhand-front',
   'weapon-front',
 ];
 
@@ -80,15 +85,22 @@ function clonePalette(palette) {
 }
 
 function clonePlayer(player) {
-  return {
+  const cloned = {
     ...player,
     kind: 'player',
     species: player.species || 'human',
     bodyBuild: player.bodyBuild || 'classic',
     expression: player.expression || 'neutral',
     outfitTier: player.outfitTier || 'tier1',
+    weapon: player.weapon || 'none',
+    weaponTier: player.weapon && player.weapon !== 'none' ? (player.weaponTier || 'tier1') : 'tier1',
+    shield: player.shield || 'none',
+    shieldTier: player.shield && player.shield !== 'none' ? (player.shieldTier || 'tier1') : 'tier1',
+    offhand: player.offhand || 'none',
     palette: clonePalette(player.palette),
   };
+  if (cloned.shield !== 'none') cloned.offhand = 'none';
+  return cloned;
 }
 
 function catalogOutfitColorChoices() {
@@ -193,6 +205,7 @@ function buildBodies(base, colors, root = 'bodies') {
           weaponTier: 'tier1',
           shield: 'none',
           shieldTier: 'tier1',
+          offhand: 'none',
           palette: paletteForColor(base, color),
         };
         bodies.push({
@@ -232,6 +245,7 @@ function buildWeapons(base, root = 'weapons') {
           weaponTier: tier.id,
           shield: 'none',
           shieldTier: 'tier1',
+          offhand: 'none',
         },
       });
     }
@@ -263,6 +277,7 @@ function buildShields(base, colors, root = 'shields') {
             weaponTier: 'tier1',
             shield: shield.id,
             shieldTier: tier.id,
+            offhand: 'none',
             palette: paletteForColor(base, color),
           },
         });
@@ -272,12 +287,36 @@ function buildShields(base, colors, root = 'shields') {
   return shields;
 }
 
+function buildOffhands(base, root = 'offhands') {
+  return OFFHANDS
+    .filter((item) => item.id !== 'none')
+    .map((offhand) => ({
+      offhand: offhand.id,
+      offhandName: offhand.name,
+      category: offhand.category,
+      files: {
+        back: `${root}/${offhand.id}/back.png`,
+        front: `${root}/${offhand.id}/front.png`,
+      },
+      spec: {
+        ...clonePlayer(base),
+        weapon: 'none',
+        weaponTier: 'tier1',
+        shield: 'none',
+        shieldTier: 'tier1',
+        offhand: offhand.id,
+      },
+    }));
+}
+
 function countsFor(characterCount, outfitColors) {
   const bodySheets = characterCount * OUTFITS.length * HEADGEAR.length * outfitColors;
   const weaponVariants = (WEAPONS.length - 1) * WEAPON_TIERS.length;
   const shieldVariants = (SHIELDS.length - 1) * SHIELD_TIERS.length * outfitColors;
   const weaponLayers = weaponVariants * 2;
   const shieldLayers = shieldVariants * 2;
+  const offhandVariants = OFFHANDS.length - 1;
+  const offhandLayers = offhandVariants * 2;
   const assembledPreviews = characterCount;
   return {
     characterCount,
@@ -287,8 +326,10 @@ function countsFor(characterCount, outfitColors) {
     weaponLayers,
     shieldVariants,
     shieldLayers,
+    offhandVariants,
+    offhandLayers,
     assembledPreviews,
-    totalPngs: bodySheets + weaponLayers + shieldLayers + assembledPreviews,
+    totalPngs: bodySheets + weaponLayers + shieldLayers + offhandLayers + assembledPreviews,
   };
 }
 
@@ -345,6 +386,7 @@ export function buildMasterCharacterKitPlan(player) {
     bodies: buildBodies(base, colors),
     weapons: buildWeapons(base),
     shields: buildShields(base, colors),
+    offhands: buildOffhands(base),
     counts: masterCharacterKitCounts(base),
   };
 }
@@ -380,12 +422,14 @@ export function buildMasterRosterKitPlan(rawEntries) {
   });
   const weapons = buildWeapons(sharedBase, 'shared/weapons');
   const shields = buildShields(sharedBase, colors, 'shared/shields');
+  const offhands = buildOffhands(sharedBase, 'shared/offhands');
 
   return {
     colors: manifestColors(colors),
     characters,
     weapons,
     shields,
+    offhands,
     counts: {
       ...countsFor(characters.length, colors.length),
       bodySheets: characters.reduce((total, character) => total + character.bodies.length, 0),
@@ -393,9 +437,12 @@ export function buildMasterRosterKitPlan(rawEntries) {
       weaponLayers: weapons.length * 2,
       shieldVariants: shields.length,
       shieldLayers: shields.length * 2,
+      offhandVariants: offhands.length,
+      offhandLayers: offhands.length * 2,
       totalPngs: characters.reduce((total, character) => total + character.bodies.length, 0)
         + (weapons.length * 2)
         + (shields.length * 2)
+        + (offhands.length * 2)
         + characters.length,
     },
   };
@@ -418,6 +465,7 @@ const COMPONENT_BASE_PLAYER = {
   weaponTier: 'tier1',
   shield: 'none',
   shieldTier: 'tier1',
+  offhand: 'none',
   palette: null,
 };
 
@@ -479,6 +527,10 @@ function completeShieldFile(shield, tier, color, pass) {
   return `components/shields/${shield}/${tier}/${pass}/${variant}.png`;
 }
 
+function completeOffhandFile(offhand, pass) {
+  return `components/offhands/${offhand}/${pass}.png`;
+}
+
 function completeRecipeEntries(rawEntries) {
   if (!Array.isArray(rawEntries)) return [];
   return rawEntries.flatMap((raw, index) => {
@@ -515,6 +567,7 @@ function recipeComponents(player) {
   const hairFit = gear.hideTop ? 'under-headgear' : 'full';
   const equippedWeapon = player.weapon !== 'none';
   const equippedShield = player.shield !== 'none';
+  const equippedOffhand = !equippedShield && player.offhand && player.offhand !== 'none';
   const outfitTier = player.outfitTier || 'tier1';
   const gearColor = COLOR_AWARE_HEADGEAR.has(player.headgear) ? player.outfitColor : 'default';
   const species = player.species || 'human';
@@ -539,6 +592,7 @@ function recipeComponents(player) {
   return {
     weaponBack: equippedWeapon ? `components/weapons/${player.weapon}/${player.weaponTier}/back.png` : null,
     shieldBack: equippedShield ? completeShieldFile(player.shield, player.shieldTier, player.outfitColor, 'back') : null,
+    offhandBack: equippedOffhand ? completeOffhandFile(player.offhand, 'back') : null,
     speciesBack,
     outfitBack: player.outfit === 'cape' ? outfitBackFile(player.outfit, outfitTier, player.outfitColor, bodyBuild) : null,
     outfit: outfitFile(player.outfit, outfitTier, player.outfitColor, bodyBuild),
@@ -552,6 +606,7 @@ function recipeComponents(player) {
       : hairFile(player.hairStyle, player.hairColor, hairFit),
     headgear: player.headgear === 'none' ? null : headgearFile(player.headgear, gearColor),
     shieldFront: equippedShield ? completeShieldFile(player.shield, player.shieldTier, player.outfitColor, 'front') : null,
+    offhandFront: equippedOffhand ? completeOffhandFile(player.offhand, 'front') : null,
     weaponFront: equippedWeapon ? `components/weapons/${player.weapon}/${player.weaponTier}/front.png` : null,
   };
 }
@@ -814,6 +869,24 @@ function buildCompleteShieldComponents() {
   return entries;
 }
 
+function buildCompleteOffhandComponents() {
+  return OFFHANDS
+    .filter((entry) => entry.id !== 'none')
+    .flatMap((offhand) => ['back', 'front'].map((pass) => ({
+      offhand: offhand.id,
+      offhandName: offhand.name,
+      category: offhand.category,
+      pass,
+      file: completeOffhandFile(offhand.id, pass),
+      layer: `offhand-${pass}`,
+      spec: componentSpec({
+        shield: 'none',
+        shieldTier: 'tier1',
+        offhand: offhand.id,
+      }),
+    })));
+}
+
 function buildHeadgearComponents() {
   return HEADGEAR
     .filter((gear) => gear.id !== 'none')
@@ -878,8 +951,9 @@ export function completeCharacterKitCounts() {
       ), 0)
     ), 0)
   ), 0);
+  const offhandLayers = (OFFHANDS.length - 1) * 2;
   const componentPngs = skinBodies + heads + hair + expressions + faceDetails + speciesBack + speciesFront + outfitFront + outfitBack
-    + headgear + weaponLayers + shieldLayers;
+    + headgear + weaponLayers + shieldLayers + offhandLayers;
   const enemyFamilies = ENEMIES.length;
   const enemySheets = ENEMIES.reduce((total, family) => total + family.variants.length, 0);
   const effectCategories = COMBAT_EFFECTS.length;
@@ -897,6 +971,7 @@ export function completeCharacterKitCounts() {
     headgear,
     weaponLayers,
     shieldLayers,
+    offhandLayers,
     componentPngs,
     enemyFamilies,
     enemySheets,
@@ -923,6 +998,7 @@ export function buildCompleteCharacterKitPlan(rawRecipes = []) {
   const headgear = buildHeadgearComponents();
   const weapons = buildWeapons(COMPONENT_BASE_PLAYER, 'components/weapons');
   const shields = buildCompleteShieldComponents();
+  const offhands = buildCompleteOffhandComponents();
   const enemies = buildEnemyLibrary();
   const effects = buildEffectLibrary();
   const usedIds = new Set();
@@ -952,6 +1028,7 @@ export function buildCompleteCharacterKitPlan(rawRecipes = []) {
       headgear,
       weapons,
       shields,
+      offhands,
     },
     enemies,
     effects,

@@ -150,3 +150,7 @@ export const SHIELD_TIERS = [
   { id: 'tier4', name: 'Tier 4' },
   { id: 'tier5', name: 'Tier 5' },
 ];
+export const OFFHANDS = [
+  { id: 'none',    name: 'None',    category: 'none' },
+  { id: 'lantern', name: 'Lantern', category: 'utility' },
+];

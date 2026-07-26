@@ -14,11 +14,11 @@ import { buildStoredZip } from './zip.js';
 
 const STORAGE_KEY = 'sprite-assembler-v1';
 const PRESET_STORAGE_KEY = 'sprite-assembler-presets-v1';
-const PRESET_VERSION = 11;
+const PRESET_VERSION = 12;
 const PALETTE_STORAGE_KEY = 'sprite-assembler-palettes-v1';
 const PALETTE_VERSION = 1;
 const PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1';
-const PACK_VERSION = 2;
+const PACK_VERSION = 3;
 const PACK_ENTRY_LIMIT = 200;
 const LOADOUT_STORAGE_KEY = 'sprite-assembler-combat-loadouts-v1';
 const LOADOUT_STORAGE_VERSION = 1;
@@ -48,6 +48,7 @@ const DEFAULT_STATE = {
     weaponTier: 'tier1',
     shield: 'round',
     shieldTier: 'tier1',
+    offhand: 'none',
     palette: null,
   },
   enemy: { family: 'slime', variant: 'lime' },
@@ -278,6 +279,9 @@ function resolvedPlayerPalette(player = state.player) {
 function sanitizePlayer(player = {}) {
   const weapon = validId(E.WEAPONS, player.weapon, DEFAULT_STATE.player.weapon);
   const shield = validId(E.SHIELDS, player.shield, DEFAULT_STATE.player.shield);
+  const offhand = shield === 'none'
+    ? validId(E.OFFHANDS, player.offhand, DEFAULT_STATE.player.offhand)
+    : 'none';
   const sanitized = {
     species: validId(E.SPECIES, player.species, DEFAULT_STATE.player.species),
     bodyBuild: validId(E.BODY_BUILDS, player.bodyBuild, DEFAULT_STATE.player.bodyBuild),
@@ -298,6 +302,7 @@ function sanitizePlayer(player = {}) {
     shieldTier: shield === 'none'
       ? 'tier1'
       : validId(E.SHIELD_TIERS, player.shieldTier, DEFAULT_STATE.player.shieldTier),
+    offhand,
   };
   sanitized.palette = sanitizeCustomPalette(player.palette, sanitized);
   return sanitized;
@@ -691,7 +696,7 @@ function loadPackLibrary() {
     saved = JSON.parse(localStorage.getItem(PACK_STORAGE_KEY) || 'null');
   } catch {}
 
-  if (!saved || ![1, PACK_VERSION].includes(saved.version) || !Array.isArray(saved.entries)) {
+  if (!saved || ![1, 2, PACK_VERSION].includes(saved.version) || !Array.isArray(saved.entries)) {
     return { version: PACK_VERSION, name: 'My Character Pack', entries: [] };
   }
 
@@ -1276,6 +1281,11 @@ function setPlayerOption(key, value) {
   const player = { ...state.player, [key]: value };
   if (key === 'weapon' && value === 'none') player.weaponTier = 'tier1';
   if (key === 'shield' && value === 'none') player.shieldTier = 'tier1';
+  if (key === 'shield' && value !== 'none') player.offhand = 'none';
+  if (key === 'offhand' && value !== 'none') {
+    player.shield = 'none';
+    player.shieldTier = 'tier1';
+  }
   if (state.player.palette) {
     const palette = clonePalette(resolvedPlayerPalette());
     if (key === 'skin') palette.skin = catalogColorPair(E.SKINS, value);
@@ -1600,9 +1610,24 @@ function playerGroups() {
       E.SHIELDS,
       player.shield,
       (value) => setPlayerOption('shield', value),
-      (item) => spec({ shield: item.id }),
+      (item) => spec({
+        shield: item.id,
+        shieldTier: item.id === 'none' ? 'tier1' : player.shieldTier,
+        offhand: 'none',
+      }),
     ),
     shieldTierGroup,
+    thumbnailGroup(
+      'Off-hand item',
+      E.OFFHANDS,
+      player.offhand,
+      (value) => setPlayerOption('offhand', value),
+      (item) => spec({
+        shield: 'none',
+        shieldTier: 'tier1',
+        offhand: item.id,
+      }),
+    ),
   ].filter(Boolean);
 }
 
@@ -1962,8 +1987,9 @@ function renderClassPackControls() {
   const outfitName = E.OUTFITS.find((outfit) => outfit.id === plan.template.outfit)?.name || plan.template.outfit;
   const weaponNames = plan.template.weapons.map((id) => E.WEAPONS.find((weapon) => weapon.id === id)?.name || id);
   const shieldNames = plan.template.shields.map((id) => E.SHIELDS.find((shield) => shield.id === id)?.name || id);
+  const offhandNames = plan.template.offhands.map((id) => E.OFFHANDS.find((offhand) => offhand.id === id)?.name || id);
   elements.classPackDescription.textContent = plan.template.description;
-  elements.classPackEquipment.textContent = `${outfitName} · Weapons: ${weaponNames.join(', ')} · Shields: None, ${shieldNames.join(', ')}`;
+  elements.classPackEquipment.textContent = `${outfitName} · Weapons: ${weaponNames.join(', ')} · Shields: None${shieldNames.length ? `, ${shieldNames.join(', ')}` : ''} · Off-hands: None${offhandNames.length ? `, ${offhandNames.join(', ')}` : ''}`;
   elements.classPackSummary.textContent = `${plan.variants.length} character sheets + ${effectCount} matching effect sheets · ${scaleLabel}`;
 
   const busy = classPackExporting || variantBatchExporting || packExporting || rosterKitExporting || masterKitExporting;
@@ -2519,6 +2545,7 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
       headgear: plan.components.headgear.map(withoutRenderSpec),
       weapons: plan.components.weapons.map(withoutRenderSpec),
       shields: plan.components.shields.map(withoutRenderSpec),
+      offhands: plan.components.offhands.map(withoutRenderSpec),
     },
     enemies: plan.enemies.map((family) => ({
       family: family.family,
@@ -2569,6 +2596,7 @@ function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) 
     + '- outfits: all nine families, four body builds, and five armor tiers as reusable front layers plus separate cape-back layers\n'
     + '- headgear: all 12 choices, with color variants only where the art actually uses outfit colors\n'
     + '- weapons and shields: all five tiers as direction-aware back/front animation layers\n'
+    + '- off-hands: non-shield utility items as independent direction-aware back/front layers\n'
     + '- enemies: every enemy variation as a complete native sheet, organized by family\n'
     + '- effects: weapon trails, projectiles, impacts, and statuses aligned to the same animation columns\n\n'
     + `Runtime draw order: ${COMPLETE_CHARACTER_KIT_LAYER_ORDER.join(' -> ')}.\n`
@@ -2628,6 +2656,10 @@ async function renderCompleteCharacterKitPngs(plan, zipEntries, advance, options
   for (const entry of plan.components.shields) {
     await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
     advance('Rendering shield components.');
+  }
+  for (const entry of plan.components.offhands) {
+    await masterKitPng(zipEntries, entry.file, entry.spec, entry.layer);
+    advance('Rendering off-hand components.');
   }
   for (const family of plan.enemies) {
     for (const entry of family.variants) {
@@ -2817,7 +2849,7 @@ function classPackReadme(manifest) {
   return `${manifest.name}\n\n`
     + `Class template: ${manifest.classTemplate.name}\n`
     + `${manifest.classTemplate.description}\n\n`
-    + `${manifest.counts.characterSheets} ready character sheets cover the class weapon, armor, and shield progressions.\n`
+    + `${manifest.counts.characterSheets} ready character sheets cover the class weapon, armor, shield, and utility off-hand progressions.\n`
     + `${manifest.counts.effectSheets} deduplicated combat-effect sheets are included and referenced by each variant's combatLoadout.\n`
     + `Every PNG uses ${manifest.sheet.frameWidth}x${manifest.sheet.frameHeight} frames in a ${manifest.sheet.width}x${manifest.sheet.height} sheet at ${manifest.exportScale}x scale.\n\n`
     + 'The source character identity is preserved while the class template supplies its outfit family and default equipment.\n'

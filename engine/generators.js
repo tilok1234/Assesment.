@@ -9,6 +9,7 @@ import {
   HAIR_COLORS,
   HAIR_STYLES,
   HEADGEAR,
+  OFFHANDS,
   OUTFITS,
   OUTFIT_COLORS,
   OUTFIT_TIERS,
@@ -25,7 +26,9 @@ const rnd = (arr) => arr[Math.floor(Math.random() * arr.length)];
 export function randomPlayer() {
   const weapons = WEAPONS.filter(w => w.id !== 'none');
   const weapon = Math.random() < 0.85 ? rnd(weapons).id : 'none';
-  const shield = rnd(SHIELDS).id;
+  const equippedOffhands = OFFHANDS.filter((item) => item.id !== 'none');
+  const offhand = Math.random() < 0.2 ? rnd(equippedOffhands).id : 'none';
+  const shield = offhand === 'none' ? rnd(SHIELDS).id : 'none';
   return {
     species: rnd(SPECIES).id,
     bodyBuild: rnd(BODY_BUILDS).id,
@@ -42,6 +45,7 @@ export function randomPlayer() {
     weaponTier: weapon === 'none' ? 'tier1' : rnd(WEAPON_TIERS).id,
     shield,
     shieldTier: shield === 'none' ? 'tier1' : rnd(SHIELD_TIERS).id,
+    offhand,
   };
 }
 export function randomEnemy() {
@@ -65,6 +69,7 @@ export function describe(spec) {
       spec.outfitTier && spec.outfitTier !== 'tier1' ? spec.outfitTier : null,
       spec.weaponTier && spec.weaponTier !== 'tier1' && spec.weapon !== 'none' ? spec.weaponTier : null,
       spec.weapon !== 'none' ? spec.weapon : null,
+      spec.offhand && spec.offhand !== 'none' ? spec.offhand : null,
     ];
     return bits.filter(Boolean).join('-');
   }
