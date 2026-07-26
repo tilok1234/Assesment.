@@ -2819,8 +2819,15 @@ function drawSnail(g, d, p, f, V, animId) {
   ][f] : { slide: 0, bob: animId === 'idle' && f === 1 ? 1 : 0, stretch: 0, stalk: animId === 'idle' && f === 1 ? 1 : 0 };
   const withdrawn = animId === 'attack' && f === 1;
   const rolling = animId === 'attack' && f === 2;
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // The withdrawn shell can keep one cell of forward preparation, while the
+  // rolling pose already moves two cells inside its own rig. Avoid applying a
+  // second lunge to that wide pose, and keep the upward hurt recoil from
+  // pushing the slime trail onto the bottom frame edge.
+  const forwardLunge = withdrawn ? Math.min(p.lunge, 1) : rolling ? 0 : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'up' && animId === 'hurt'
+    ? 0
+    : d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const body = V.body, shell = V.shell, trail = V.trail, eye = V.eye;

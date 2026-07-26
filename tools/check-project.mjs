@@ -206,8 +206,9 @@ check(
       'minotaur',
       'demon',
       'anglerfish',
+      'snail',
     ]),
-  'enemy outline support must stay limited to the fifty-five approval-gated families',
+  'enemy outline support must stay limited to the fifty-six approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -220,7 +221,7 @@ for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   );
 }
 check(
-  !engine.enemySupportsOutline({ kind: 'enemy', family: 'snail' }),
+  !engine.enemySupportsOutline({ kind: 'enemy', family: 'porcupine' }),
   'unsupported enemies must remain on the original renderer',
 );
 check(
@@ -1927,6 +1928,7 @@ const separatedOutlineBatchFamilies = new Map([
     outlineInteriorCavities: true,
   }],
   ['anglerfish', { minimumComponentPixels: 2, maximumComponents: 4 }],
+  ['snail', { minimumComponentPixels: 2, maximumComponents: 5 }],
 ]);
 for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
   const family = engine.ENEMIES.find((candidate) => candidate.id === familyId);
@@ -2053,6 +2055,46 @@ for (const variant of anglerfishFamily.variants) {
       source.slice(engine.SIZE, engine.SIZE * 2).some(Boolean),
       `anglerfish ${variant.id} ${direction} ${animation} frame ${frame + 1} `
         + 'must retain the lure on the first drawable row',
+    );
+  }
+}
+
+const snailFamily = engine.ENEMIES.find((family) => family.id === 'snail');
+for (const variant of snailFamily.variants) {
+  const spec = { kind: 'enemy', family: 'snail', variant: variant.id };
+  const downWithdrawn = renderPixels(spec, 'down', 'attack', 1);
+  check(
+    downWithdrawn.slice(-engine.SIZE).every((pixel) => !pixel),
+    `snail ${variant.id} down attack frame 2 must reserve the bottom outline row`,
+  );
+  check(
+    downWithdrawn.slice(-engine.SIZE * 2, -engine.SIZE).some(Boolean),
+    `snail ${variant.id} down attack frame 2 must retain one cell of forward preparation`,
+  );
+
+  const upHurt = renderPixels(spec, 'up', 'hurt', 0);
+  check(
+    upHurt.slice(-engine.SIZE).every((pixel) => !pixel),
+    `snail ${variant.id} up hurt frame 1 must reserve the bottom outline row`,
+  );
+  check(
+    upHurt.slice(-engine.SIZE * 2, -engine.SIZE).some(Boolean),
+    `snail ${variant.id} up hurt frame 1 must retain the complete slime trail`,
+  );
+
+  for (const direction of ['left', 'right']) {
+    const rolling = renderPixels(spec, direction, 'attack', 2);
+    const edgeX = direction === 'left' ? 0 : engine.SIZE - 1;
+    const insideX = direction === 'left' ? 1 : engine.SIZE - 2;
+    check(
+      rolling.every((pixel, index) => (index % engine.SIZE) !== edgeX || !pixel),
+      `snail ${variant.id} ${direction} attack frame 3 `
+        + 'must reserve the side outline column',
+    );
+    check(
+      rolling.some((pixel, index) => (index % engine.SIZE) === insideX && pixel),
+      `snail ${variant.id} ${direction} attack frame 3 `
+        + 'must retain the full rolling silhouette inside the frame',
     );
   }
 }
@@ -2197,7 +2239,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
   'cyclops', 'troll', 'dwarf', 'ogre', 'goblin', 'zombie', 'imp',
-  'cultist', 'orc', 'lizardfolk', 'minotaur', 'demon', 'anglerfish',
+  'cultist', 'orc', 'lizardfolk', 'minotaur', 'demon', 'anglerfish', 'snail',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {

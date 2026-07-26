@@ -47,6 +47,8 @@ Demon Pit Fiend vertical-strike repair and horn/spark-aware, cavity-preserving
 component outlines are visually approved.
 Anglerfish bite/lure frame-safety repair and separated-component outlines are
 visually approved.
+Snail roll/recoil frame-safety repair and separated-component outlines are
+pending visual approval.
 Zombie vertical-strike frame-safety repair and cavity-preserving
 component-aware outline expansion are visually approved. Imp vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
@@ -2254,6 +2256,61 @@ across all four directions. They expose the repaired top lure and side bite
 margins, attack-frame motion, separated lure/fin treatment, all four Anglerfish
 silhouettes, and both outline modes. The candidate was kept uncommitted until
 the user explicitly approved it on 2026-07-26.
+
+## Outline Rollout Candidate Group 31
+
+Pending visual approval as a single-family Snail pass.
+
+After Anglerfish approval, two enemy families remained outside the outline
+lane. Snail is the next unsupported family in catalog order. Its 192-frame
+family had 20 source-edge frames / 280 edge pixels: each variant's downward
+withdrawn and rolling attack placed the full slime trail on the bottom row,
+the rolling side attack placed the body on the left/right row, and the first
+up-facing hurt frame placed the trail on the bottom row. No Snail frame
+attempted an out-of-bounds write.
+
+Eighty Snail frames are multi-component. Side-view stalk details form
+two-pixel detached components in several poses, while rolling attacks add
+one-pixel trail motes. Across the family, those frames contain 192 detached
+source pixels and no enclosed source openings.
+
+The candidate:
+
+- keeps one cell of forward preparation in the withdrawn attack instead of the
+  generic two-cell lunge;
+- lets the rolling pose's own two-cell internal slide carry the attack motion
+  without applying a second generic lunge;
+- keeps the first up-facing hurt pose centered so its complete slime trail
+  remains inside the frame;
+- reduces the full enemy corpus from 40 to 20 source-edge frames and from 328
+  to 48 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Meadow, Iron Shell, Crystal
+  Slime, and Magma without changing Porcupine;
+- uses separated-component contours with a two-pixel minimum so physical stalk
+  details receive contours while one-pixel rolling trail motes remain
+  unboxed;
+- preserves all 80 multi-component frames / 192 detached source pixels and all
+  zero-cavity source frames;
+- adds all 192 Snail frames to the source-margin regression plus focused
+  withdrawn, rolling, hurt-recoil, component-separation, and halo checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the fifty-six-family outline lane:
+
+- 9,504 None-mode parity checks pass against the corrected source renderer;
+- all 28,512 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 9,504 frames;
+- the focused single-family review covers 192 source frames / 576 mode cases
+  and adds 13,392 Complete B plus 11,472 Selective C contour pixels;
+- the complete lane adds 681,590 Complete B plus 544,849 Selective C contour
+  pixels and retains 25,900 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover attack frames 2 and 3 plus hurt frame 1
+across all four directions. They expose the one-cell withdrawn preparation,
+full rolling silhouette, repaired bottom/side margins, complete slime trail,
+detached stalk/mote treatment, all four Snail palettes, and both outline modes.
+The candidate remains uncommitted until explicit visual approval.
 
 ## Treatment
 

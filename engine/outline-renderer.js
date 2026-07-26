@@ -68,6 +68,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'minotaur',
   'demon',
   'anglerfish',
+  'snail',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -142,6 +143,7 @@ const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'carniplant',
   'octopus',
   'anglerfish',
+  'snail',
 ]);
 const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   beetle: 3,
@@ -162,6 +164,7 @@ const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   carniplant: 3,
   octopus: 10,
   anglerfish: 2,
+  snail: 2,
 });
 const ENEMY_SEPARATED_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'centipede',
