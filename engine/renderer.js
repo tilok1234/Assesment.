@@ -2108,11 +2108,19 @@ function drawDrake(g, d, p, f, V, animId) {
     legH(14 + leg, c[0]); legH(5 - leg, c[0]);
     R(4, 11 + u, 13, 5, c[0]);
     R(4, 14 + u, 13, 2, V.belly);
-    S(3, 10 + u, c[0]); S(2, 9 + u, c[1]); S(2, 8 + u, c[1]);
+    // The side tail follows a cardinal staircase into the torso. The earlier
+    // diagonal singletons forced the outline renderer to choose between
+    // checkerboard gaps and a black knot around the bend.
+    S(2, 8 + u, c[1]); S(2, 9 + u, c[1]); S(3, 9 + u, c[1]);
+    S(3, 10 + u, c[0]); S(4, 10 + u, c[0]); S(5, 10 + u, c[1]);
     R(6, 8 + u, 6, 3, c[1]); S(5, 9 + u, c[1]); S(12, 8 + u, c[1]);
     S(6, 7 + u, c[1]);
     R(14, 6 + u, 4, 4, c[0]);
-    S(14, 5 + u, BONE[0]); S(15, 4 + u, BONE[0]);
+    // A compact L-shaped horn and two-pixel neck keep the head, horn, and body
+    // cardinally connected so both outline modes can use the authored source
+    // directly instead of outline-only bridges.
+    S(14, 5 + u, BONE[0]); S(15, 5 + u, BONE[0]); S(15, 4 + u, BONE[0]);
+    R(14, 10 + u, 2, 1, c[1]);
     R(18, 7 + u, 2, 2, c[0]); S(19, 7 + u, c[1]);
     S(16, 7 + u, eye);
     if (strike) {
@@ -2137,7 +2145,12 @@ function drawDrake(g, d, p, f, V, animId) {
     R(8, 19, 3, leg === 1 ? 2 : 3, c[1]);
     R(13, 19, 3, leg === -1 ? 2 : 3, c[1]);
     R(10, 6 + u, 4, 4, c[0]);
-    S(9, 5 + u, BONE[0]); S(14, 5 + u, BONE[0]);
+    // Connect both horn bases and the neck to the authored silhouette. This
+    // keeps every physical front/rear part in one cardinal component instead
+    // of relying on outline-only pixels that flicker between wing poses.
+    S(9, 5 + u, BONE[0]); S(10, 5 + u, BONE[0]);
+    S(13, 5 + u, BONE[0]); S(14, 5 + u, BONE[0]);
+    R(11, 10 + u, 2, 1, c[1]);
     if (d === 'down') {
       S(10, 8 + u, eye); S(13, 8 + u, eye);
       S(11, 9 + u, c[1]); S(12, 9 + u, c[1]);

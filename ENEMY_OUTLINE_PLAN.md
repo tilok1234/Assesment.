@@ -20,6 +20,7 @@ visually approved; Eye Monster separated-component outline expansion visually
 approved; Crab separated-component outline expansion visually approved;
 Beetle separated-component outline expansion visually approved; Wasp
 separated-component outline expansion visually approved; Mimic exterior
+outline expansion visually approved; Drake outline-native source rework and
 outline expansion visually approved.
 
 Date: 2026-07-25
@@ -58,6 +59,7 @@ Outline rollout group 6 visual approval: 2026-07-25
 Outline rollout group 7 visual approval: 2026-07-25
 Outline rollout group 8 visual approval: 2026-07-25
 Outline rollout group 9 visual approval: 2026-07-25
+Outline rollout group 10 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1167,6 +1169,84 @@ Measured candidate result across the twenty-three-family outline lane:
 
 The approved treatment was reviewed structurally and directionally in the live
 assembler across closed idle frames and open front, back, and side attacks.
+
+## Outline Rollout Candidate Group 10
+
+Visually approved after separate live review of the rebuilt side source and the
+front/rear spread- and folded-wing attack frames.
+
+Drake is the next unsupported family after Mimic in roster order. Its earlier
+frame-safety repair already reserves at least one transparent source cell on
+every side. A fresh post-repair audit confirms zero source-edge contacts, zero
+out-of-bounds writes, zero enclosed transparent pockets, and minimum margins
+of top 4, right 1, bottom 1, and left 1 across all 144 source frames.
+
+Every front/rear Drake frame now uses one cardinally connected physical source
+component. Both horns have authored bases attached to the head, and a two-pixel
+neck joins the head to the torso through every wing pose. This replaces the
+floating head, detached one-pixel horns, shared-outline bridges, and the
+outline-only neck-corner repair that caused visible contour flicker between
+spread and folded attack frames.
+
+The side source required a real geometry rework rather than another outline
+exception. Its tail was split into diagonal two-pixel and one-pixel components,
+its horn tip was diagonally detached, and its head floated above the torso.
+Partially outlining those pieces produced checkerboard gaps; outlining every
+piece produced a chunky black knot. The rebuilt side source uses a cardinal
+staircase from tail into torso, fills the enclosed tail/wing pocket, connects an
+L-shaped horn to the head, and joins the head to the body with a two-pixel
+neck. Body, tail, wing, neck, head, and horn are consequently one physical
+component in every side frame, so both outline modes can contour the authored
+silhouette directly.
+
+The candidate:
+
+- enables None, Complete B, and Selective C for Ember, Frost, and Verdant
+  without changing another previously unsupported enemy;
+- rebuilds the front/rear horn bases and neck as connected source geometry;
+- rebuilds the left/right tail, horn, and neck as connected source geometry
+  with no enclosed transparent pocket;
+- contours every physical Drake pose as one normal source component with no
+  component bridge or family-specific contour repair;
+- leaves only the deliberate one-pixel side breath spark unhaloed;
+- keeps None as a direct render of the intentionally rebuilt source;
+- derives both front/rear neck-corner outlines naturally from the connected
+  source in matching spread and folded attack frames;
+- gives both side directions a normal continuous B/C contour without a
+  family-specific side repair mask;
+- retains the repaired one-pixel strike, centered recoil, and full side-breath
+  contour without reaching outside the 24x24 frame;
+- preserves every rendered source pixel in both outline modes;
+- changes no Drake palette, animation timing, catalog, saved state, or export
+  schema.
+
+Measured candidate result across the twenty-four-family outline lane:
+
+- 4,032 None-mode parity checks pass;
+- all 12,096 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 4,032 frames;
+- 144 exhaustive Drake source-frame checks prove that every physical pose is
+  one cardinal component; only 12 side-attack frames retain the deliberate
+  detached breath spark;
+- 288 exhaustive Drake outlined-frame checks prove that no outline component
+  bridge is needed and that the detached spark remains unhaloed;
+- 48 targeted natural neck-corner assertions cover both outlined modes, both
+  front/rear directions, both spread frames, both corner pixels, and all three
+  variants;
+- 72 exhaustive side-frame checks prove that body, tail, wing, neck, head, and
+  horn remain one physical source component across both mirrored directions,
+  all twelve animation frames, and all three variants;
+- 12 targeted side-idle checks prove the exact rebuilt structural cells and
+  single-component silhouette in both mirrored directions and all variants;
+- Drake contributes 12,837 Complete B and 10,308 Selective C outline pixels
+  across its 144 source frames;
+- zero source-edge frames, zero out-of-bounds writes, and zero enclosed source
+  cavities.
+
+The completed source rework was reviewed structurally and directionally in the
+live assembler across front, rear, and side attacks. The stable neck contour,
+connected horn bases, side silhouette, and frame-to-frame outline continuity
+are approved.
 
 ## Treatment
 

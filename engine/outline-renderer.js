@@ -26,6 +26,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'beetle',
   'wasp',
   'mimic',
+  'drake',
   'elemental',
   'wolf',
   'boar',
@@ -58,6 +59,7 @@ const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'crab',
   'beetle',
   'wasp',
+  'drake',
 ]);
 
 export function enemySupportsOutline(spec) {
@@ -750,13 +752,17 @@ export function drawOutlinedSprite(
         // Crab legs are authored as diagonal chains of isolated one-pixel
         // segments. Beetle legs are similarly delicate one- or two-pixel
         // components, while its three-pixel attack antenna/horn tips still
-        // need their own contour. Wasp's detached wings need a contour, but
-        // its one-pixel stinger chain does not. Eye Monster keeps the default
-        // because its orbitals are intended to read as individually outlined
-        // floating parts.
+        // need their own contour. Wasp's detached wings need contours, while
+        // its one-pixel stinger and Drake's one-pixel breath spark do not.
+        // Drake's rebuilt body, wings, neck, head, and horns form one
+        // outline-native physical component in every direction. Eye Monster
+        // keeps the default because its orbitals are intended to read as
+        // individually outlined floating parts.
         minimumComponentPixels: spec.family === 'beetle'
           ? 3
-          : spec.family === 'crab' || spec.family === 'wasp'
+          : spec.family === 'crab'
+              || spec.family === 'wasp'
+              || spec.family === 'drake'
             ? 2
             : 1,
       })

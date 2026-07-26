@@ -181,12 +181,13 @@ check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
     === JSON.stringify([
       'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'gnoll', 'harpy',
-      'eyemonster', 'scorpion', 'crab', 'beetle', 'wasp', 'mimic', 'elemental',
+      'eyemonster', 'scorpion', 'crab', 'beetle', 'wasp', 'mimic', 'drake',
+      'elemental',
       'wolf', 'boar', 'bear', 'bigcat',
       'crocodile', 'turtle', 'griffin',
       'slime', 'shroom',
     ]),
-  'enemy outline support must stay limited to the twenty-three approval-gated families',
+  'enemy outline support must stay limited to the twenty-four approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -1134,6 +1135,149 @@ for (const variant of mimicOutlineFamily.variants) {
             cardinalPixelComponents(outlined) === 1,
             `mimic ${variant.id} ${direction} ${animation.id}/${frame + 1} `
               + `${outlineMode} must keep the chest silhouette connected`,
+          );
+        }
+      }
+    }
+  }
+}
+
+const drakeOutlineFamily = engine.ENEMIES.find((family) => family.id === 'drake');
+for (const variant of drakeOutlineFamily.variants) {
+  const spec = { kind: 'enemy', family: 'drake', variant: variant.id };
+  const frontIdleSource = renderPixels(spec, 'down', 'idle', 0);
+  const frontIdleGroups = cardinalPixelComponentGroups(frontIdleSource);
+  const frontStructuralCells = [
+    [9, 5], [10, 5], [13, 5], [14, 5],
+    [11, 10], [12, 10],
+  ];
+  check(
+    frontIdleGroups.length === 1 && frontIdleGroups[0].length === 132,
+    `drake ${variant.id} front idle must keep body, wings, neck, head, and horns `
+      + 'in one physical source component',
+  );
+  check(
+    frontStructuralCells.every(([x, y]) => (
+      frontIdleSource[(y * engine.SIZE) + x] !== null
+    )),
+    `drake ${variant.id} front idle must retain both connected horn bases and its neck`,
+  );
+  for (const direction of ['down', 'up']) {
+    for (const frame of [0, 2]) {
+      const source = renderPixels(spec, direction, 'attack', frame);
+      const neckIndices = [(9 * engine.SIZE) + 9, (9 * engine.SIZE) + 14];
+      check(
+        neckIndices.every((index) => source[index] === null),
+        `drake ${variant.id} ${direction} attack/${frame + 1} `
+          + 'must keep the cells beside the neck transparent in None mode',
+      );
+      for (const outlineMode of [
+        engine.OUTLINE_MODE_COMPLETE_B,
+        engine.OUTLINE_MODE_SELECTIVE_C,
+      ]) {
+        const outlined = renderOutlinedPixels(spec, direction, 'attack', frame, outlineMode);
+        check(
+          neckIndices.every((index) => outlined[index] === engine.OUTLINE_COLOR),
+          `drake ${variant.id} ${direction} attack/${frame + 1} ${outlineMode} `
+            + 'must derive both neck-corner outlines from the connected source',
+        );
+      }
+    }
+  }
+  for (const direction of ['left', 'right']) {
+    const source = renderPixels(spec, direction, 'idle', 0);
+    const sourceGroups = cardinalPixelComponentGroups(source);
+    const rightSideStructuralCells = [
+      [2, 8], [2, 9], [3, 9], [3, 10], [4, 10],
+      [5, 10],
+      [14, 10], [15, 10],
+      [14, 5], [15, 5], [15, 4],
+    ];
+    const structuralCells = direction === 'right'
+      ? rightSideStructuralCells
+      : rightSideStructuralCells.map(([x, y]) => [engine.SIZE - 1 - x, y]);
+    check(
+      sourceGroups.length === 1 && sourceGroups[0].length === 157,
+      `drake ${variant.id} ${direction} idle must keep its rebuilt side silhouette `
+        + 'as one physical source component',
+    );
+    check(
+      structuralCells.every(([x, y]) => source[(y * engine.SIZE) + x] !== null),
+      `drake ${variant.id} ${direction} idle must retain its cardinal tail, neck, and horn`,
+    );
+  }
+  for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const frontIdle = renderOutlinedPixels(spec, 'down', 'idle', 0, outlineMode);
+    const sideIdle = renderOutlinedPixels(spec, 'right', 'idle', 0, outlineMode);
+    const sideStrike = renderOutlinedPixels(spec, 'right', 'attack', 1, outlineMode);
+    check(
+      frontStructuralCells.every(([x, y]) => (
+        frontIdle[(y * engine.SIZE) + x] !== null
+      )),
+      `drake ${variant.id} ${outlineMode} must preserve the connected front horns and neck`,
+    );
+    check(
+      frontIdle[(5 * engine.SIZE) + 11] === engine.OUTLINE_COLOR,
+      `drake ${variant.id} ${outlineMode} must contour the space between its horns`,
+    );
+    check(
+      cardinalPixelComponentGroups(sideIdle).length === 1,
+      `drake ${variant.id} ${outlineMode} must keep the rebuilt side silhouette connected`,
+    );
+    check(
+      sideStrike[(7 * engine.SIZE) + 23] === engine.OUTLINE_COLOR,
+      `drake ${variant.id} ${outlineMode} must retain the longest side-breath contour`,
+    );
+  }
+
+  for (const direction of engine.DIRS) {
+    for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const source = renderPixels(spec, direction, animation.id, frame);
+        const sourceGroups = cardinalPixelComponentGroups(source);
+        const physicalGroups = sourceGroups.filter((component) => component.length > 1);
+        check(
+          physicalGroups.length === 1 && physicalGroups[0].length >= 116,
+          `drake ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+            + 'must keep all physical anatomy in one source component',
+        );
+        check(
+          sourceGroups.length >= 1 && sourceGroups.length <= 2,
+          `drake ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+            + 'may separate only its one-pixel side breath spark',
+        );
+        const sourceSingletons = sourceGroups.filter((component) => component.length === 1);
+        for (const outlineMode of [
+          engine.OUTLINE_MODE_COMPLETE_B,
+          engine.OUTLINE_MODE_SELECTIVE_C,
+        ]) {
+          const outlined = renderOutlinedPixels(
+            spec,
+            direction,
+            animation.id,
+            frame,
+            outlineMode,
+          );
+          const outlinedGroups = cardinalPixelComponentGroups(outlined);
+          check(
+            outlinedGroups.length === sourceGroups.length,
+            `drake ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `${outlineMode} must contour the connected anatomy without component bridges`,
+          );
+          check(
+            sourceSingletons.every((sourceGroup) => {
+              const outlinedGroup = outlinedGroups.find((group) => group.includes(sourceGroup[0]));
+              return (
+                outlinedGroup
+                && outlinedGroup.length === 1
+                && outlinedGroup[0] === sourceGroup[0]
+              );
+            }),
+            `drake ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+              + `${outlineMode} must leave the one-pixel side breath spark unhaloed`,
           );
         }
       }
