@@ -33,7 +33,9 @@ expansion visually approved. Cyclops vertical-strike frame-safety repair and
 exterior outline expansion are visually approved. Troll vertical-strike
 frame-safety repair and exterior outline expansion are visually approved.
 Dwarf vertical-strike frame-safety repair and cavity-preserving
-component-aware outline expansion are visually approved.
+component-aware outline expansion are visually approved. Ogre vertical-strike
+frame-safety repair and cavity-preserving component-aware outline expansion
+are visually approved.
 
 Date: 2026-07-25
 User visual approval: 2026-07-25
@@ -82,6 +84,7 @@ Outline rollout group 17 visual approval: 2026-07-26
 Outline rollout group 18 visual approval: 2026-07-26
 Outline rollout group 19 visual approval: 2026-07-26
 Outline rollout group 20 visual approval: 2026-07-26
+Outline rollout group 21 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -1709,6 +1712,56 @@ across all four directions. They expose the held-equipment seams, the repaired
 Miner club margins, the distinct strike/recoil poses, every preserved source
 opening, all three Dwarf silhouettes, and both outline modes. The repaired
 margins and cavity-preserving component-aware treatment are approved.
+
+## Outline Rollout Approved Group 21
+
+Visually approved as a single-family Ogre pass.
+
+After Dwarf approval, twelve enemy families remained outside the outline lane.
+Ogre is the next smallest repair: its 144-frame family has only four
+source-edge frames, all from the Brute's club touching the bottom or top
+canvas row in down/up attack frames 2 and 3. Those frames contribute eight
+edge pixels and have no out-of-bounds writes.
+
+The approved pass:
+
+- gives only the Ogre Brute's vertical club strike the approved one-pixel
+  inset, moving the down strike upward and the up strike downward while
+  preserving distinct strike and recoil frames;
+- reduces the full enemy corpus from 150 to 146 source-edge frames and from
+  558 to 550 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for all three Ogre variants
+  without changing another unsupported family;
+- uses the cavity-preserving component-aware humanoid path so the Brute club,
+  Crusher axe, and Magi staff retain readable body-side seams;
+- preserves all 139 enclosed openings across 116 corrected source frames and
+  all ten detached spark pixels across the Magi's six multi-component attack
+  frames;
+- excludes the Magi's one-pixel spell sparks from casting their own halos,
+  while allowing nearby staff/body contours to remain intact so the sparks
+  stay thin and unboxed;
+- adds all 144 Ogre frames to the source-margin regression plus focused club,
+  component-separator, detached-spark, spark-halo, and cavity checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured result across the forty-six-family outline lane:
+
+- 7,824 None-mode parity checks pass against the corrected source renderer;
+- all 23,472 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 7,824 frames;
+- the focused single-family review covers 144 source frames / 432 mode cases,
+  adds 11,694 Complete B plus 9,814 Selective C contour pixels, and retains
+  1,530 body-side equipment separator pixels;
+- the complete lane adds 550,588 Complete B plus 436,379 Selective C contour
+  pixels and retains 12,038 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the held-equipment seams, repaired
+Brute club margins, Magi sparks, every preserved source opening, all three
+Ogre silhouettes, and both outline modes. The repaired margins,
+cavity-preserving component treatment, and restrained spark treatment are
+approved.
 
 ## Treatment
 

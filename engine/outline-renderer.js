@@ -58,6 +58,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'cyclops',
   'troll',
   'dwarf',
+  'ogre',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -72,9 +73,14 @@ const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
   'elf',
   'gnoll',
   'dwarf',
+  'ogre',
 ]);
 const ENEMY_COMPONENT_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'dwarf',
+  'ogre',
+]);
+const ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_EQUIPMENT_FAMILY_SET = new Set([
+  'ogre',
 ]);
 // Orbiting one-pixel parts need their own contour ownership. A normal merged
 // silhouette contour fills the one-cell breathing room and visually welds them
@@ -143,6 +149,12 @@ function enemyUsesComponentOutline(spec) {
 function enemyPreservesComponentOutlineCavities(spec) {
   return spec?.kind === 'enemy'
     && ENEMY_COMPONENT_OUTLINE_PRESERVE_CAVITY_FAMILY_SET.has(spec.family);
+}
+
+function enemyLeavesSinglePixelEquipmentUnhaloed(spec) {
+  return spec?.kind === 'enemy'
+    && ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_EQUIPMENT_FAMILY_SET
+      .has(spec.family);
 }
 
 function enemyUsesSeparatedOutline(spec) {
@@ -935,6 +947,22 @@ export function drawOutlinedSprite(
     ? compositePixels
     : renderSpritePixels(spec, direction, animationId, frame, rendererOptions);
   const contactOutlinePlan = contactOutlinePlanForVisibleLayers(visibleLayers, compositePixels, mode);
+  if (enemyLeavesSinglePixelEquipmentUnhaloed(spec)) {
+    const weaponComponents = connectedSourceComponents(
+      ownerPixels[0],
+      SIZE,
+      SIZE,
+    ).components;
+    for (const componentPixels of weaponComponents) {
+      const componentSize = componentPixels.reduce((
+        count,
+        pixel,
+      ) => count + (isTransparent(pixel) ? 0 : 1), 0);
+      if (componentSize !== 1) continue;
+      const singletonIndex = componentPixels.findIndex((pixel) => !isTransparent(pixel));
+      contactOutlinePlan.haloSourceExclusionMasks[0][singletonIndex] = 1;
+    }
+  }
 
   // Paint only behind the final composite, then repaint the exact offscreen renderer
   // result above it. No contour can cover assembled artwork.

@@ -196,8 +196,9 @@ check(
       'cyclops',
       'troll',
       'dwarf',
+      'ogre',
     ]),
-  'enemy outline support must stay limited to the forty-five approval-gated families',
+  'enemy outline support must stay limited to the forty-six approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -734,22 +735,27 @@ for (const [family, variant, separatorX, separatorY] of [
   }
 }
 
-for (const variant of ['warrior', 'miner', 'king']) {
-  const spec = { kind: 'enemy', family: 'dwarf', variant };
-  const source = renderPixels(spec, 'down', 'idle', 0);
-  for (const outlineMode of [
-    engine.OUTLINE_MODE_COMPLETE_B,
-    engine.OUTLINE_MODE_SELECTIVE_C,
-  ]) {
-    const outlined = renderOutlinedPixels(spec, 'down', 'idle', 0, outlineMode);
-    const separatorPixels = source.filter((
-      pixel,
-      index,
-    ) => pixel && pixel !== engine.OUTLINE_COLOR && outlined[index] === engine.OUTLINE_COLOR);
-    check(
-      separatorPixels.length > 0,
-      `dwarf ${variant} ${outlineMode} must retain a body-side equipment separator`,
-    );
+for (const [familyId, variantIds] of [
+  ['dwarf', ['warrior', 'miner', 'king']],
+  ['ogre', ['brute', 'crusher', 'magi']],
+]) {
+  for (const variant of variantIds) {
+    const spec = { kind: 'enemy', family: familyId, variant };
+    const source = renderPixels(spec, 'down', 'idle', 0);
+    for (const outlineMode of [
+      engine.OUTLINE_MODE_COMPLETE_B,
+      engine.OUTLINE_MODE_SELECTIVE_C,
+    ]) {
+      const outlined = renderOutlinedPixels(spec, 'down', 'idle', 0, outlineMode);
+      const separatorPixels = source.filter((
+        pixel,
+        index,
+      ) => pixel && pixel !== engine.OUTLINE_COLOR && outlined[index] === engine.OUTLINE_COLOR);
+      check(
+        separatorPixels.length > 0,
+        `${familyId} ${variant} ${outlineMode} must retain a body-side equipment separator`,
+      );
+    }
   }
 }
 
@@ -773,30 +779,93 @@ for (const variant of ['warrior', 'king']) {
   }
 }
 
-const dwarfFamily = engine.ENEMIES.find((family) => family.id === 'dwarf');
-for (const variant of dwarfFamily.variants) {
-  const spec = { kind: 'enemy', family: 'dwarf', variant: variant.id };
-  for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
-    for (let frame = 0; frame < animation.frames; frame++) {
-      const source = renderPixels(spec, direction, animation.id, frame);
-      const sourceCavities = cardinalTransparentCavityGroups(source);
-      for (const outlineMode of [
-        engine.OUTLINE_MODE_COMPLETE_B,
-        engine.OUTLINE_MODE_SELECTIVE_C,
-      ]) {
-        const outlined = renderOutlinedPixels(
-          spec,
-          direction,
-          animation.id,
-          frame,
-          outlineMode,
-        );
-        for (const cavity of sourceCavities) {
-          check(
-            cavity.every((index) => !outlined[index]),
-            `dwarf ${variant.id} ${direction} ${animation.id}/${frame + 1} `
-              + `${outlineMode} must preserve its ${cavity.length}-pixel source cavity`,
+for (const [direction, frame, expectedComponents] of [
+  ['down', 1, 2],
+  ['down', 2, 2],
+  ['left', 1, 3],
+  ['left', 2, 3],
+  ['right', 1, 3],
+  ['right', 2, 3],
+]) {
+  const spec = { kind: 'enemy', family: 'ogre', variant: 'magi' };
+  const source = renderPixels(spec, direction, 'attack', frame);
+  const sourceGroups = cardinalPixelComponentGroups(source);
+  const sparkGroups = sourceGroups.filter((group) => group.length === 1);
+  check(
+    sourceGroups.length === expectedComponents,
+    `ogre magi ${direction} attack frame ${frame + 1} `
+      + `must retain ${expectedComponents} body and spark components`,
+  );
+  check(
+    sparkGroups.length === expectedComponents - 1,
+    `ogre magi ${direction} attack frame ${frame + 1} `
+      + 'must retain its authored one-pixel spell sparks',
+  );
+  for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const outlined = renderOutlinedPixels(spec, direction, 'attack', frame, outlineMode);
+    check(
+      sourceGroups.every((group) => group.every((index) => outlined[index])),
+      `ogre magi ${direction} attack frame ${frame + 1} ${outlineMode} `
+        + 'must preserve every detached source pixel',
+    );
+    for (const [sparkIndex] of sparkGroups) {
+      const sparkX = sparkIndex % engine.SIZE;
+      const sparkY = Math.floor(sparkIndex / engine.SIZE);
+      let adjacentOutlinePixels = 0;
+      for (let offsetY = -1; offsetY <= 1; offsetY++) {
+        for (let offsetX = -1; offsetX <= 1; offsetX++) {
+          if (offsetX === 0 && offsetY === 0) continue;
+          const nextX = sparkX + offsetX;
+          const nextY = sparkY + offsetY;
+          if (
+            nextX < 0
+            || nextY < 0
+            || nextX >= engine.SIZE
+            || nextY >= engine.SIZE
+          ) continue;
+          const nextIndex = (nextY * engine.SIZE) + nextX;
+          if (source[nextIndex]) continue;
+          if (outlined[nextIndex] === engine.OUTLINE_COLOR) adjacentOutlinePixels++;
+        }
+      }
+      check(
+        adjacentOutlinePixels <= 3,
+        `ogre magi ${direction} attack frame ${frame + 1} ${outlineMode} `
+          + 'must keep each one-pixel spell spark out of a boxed halo',
+      );
+    }
+  }
+}
+
+for (const familyId of ['dwarf', 'ogre']) {
+  const cavityFamily = engine.ENEMIES.find((family) => family.id === familyId);
+  for (const variant of cavityFamily.variants) {
+    const spec = { kind: 'enemy', family: familyId, variant: variant.id };
+    for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+      for (let frame = 0; frame < animation.frames; frame++) {
+        const source = renderPixels(spec, direction, animation.id, frame);
+        const sourceCavities = cardinalTransparentCavityGroups(source);
+        for (const outlineMode of [
+          engine.OUTLINE_MODE_COMPLETE_B,
+          engine.OUTLINE_MODE_SELECTIVE_C,
+        ]) {
+          const outlined = renderOutlinedPixels(
+            spec,
+            direction,
+            animation.id,
+            frame,
+            outlineMode,
           );
+          for (const cavity of sourceCavities) {
+            check(
+              cavity.every((index) => !outlined[index]),
+              `${familyId} ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+                + `${outlineMode} must preserve its ${cavity.length}-pixel source cavity`,
+            );
+          }
         }
       }
     }
@@ -1644,7 +1713,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'slime', 'shroom',
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
-  'cyclops', 'troll', 'dwarf',
+  'cyclops', 'troll', 'dwarf', 'ogre',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -1684,6 +1753,7 @@ for (const [familyId, variantId] of [
   ['cyclops', 'shepherd'],
   ['troll', 'cave'],
   ['dwarf', 'miner'],
+  ['ogre', 'brute'],
 ]) {
   const verticalClubSpec = {
     kind: 'enemy',

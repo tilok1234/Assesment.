@@ -64,6 +64,7 @@ const COMPONENT_AWARE_FAMILIES = new Set([
   'elf',
   'gnoll',
   'dwarf',
+  'ogre',
 ]);
 const COMPONENT_LAYER_ORDER = [
   'weapon-back',
