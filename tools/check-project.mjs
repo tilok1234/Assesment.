@@ -205,8 +205,9 @@ check(
       'lizardfolk',
       'minotaur',
       'demon',
+      'anglerfish',
     ]),
-  'enemy outline support must stay limited to the fifty-four approval-gated families',
+  'enemy outline support must stay limited to the fifty-five approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -1925,6 +1926,7 @@ const separatedOutlineBatchFamilies = new Map([
     singlePixelMinimumY: 19,
     outlineInteriorCavities: true,
   }],
+  ['anglerfish', { minimumComponentPixels: 2, maximumComponents: 4 }],
 ]);
 for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
   const family = engine.ENEMIES.find((candidate) => candidate.id === familyId);
@@ -2015,6 +2017,43 @@ for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
         }
       }
     }
+  }
+}
+
+const anglerfishFamily = engine.ENEMIES.find((family) => family.id === 'anglerfish');
+for (const variant of anglerfishFamily.variants) {
+  const spec = { kind: 'enemy', family: 'anglerfish', variant: variant.id };
+  for (const direction of ['left', 'right']) {
+    const firstBite = renderPixels(spec, direction, 'attack', 1);
+    const edgeX = direction === 'left' ? 0 : engine.SIZE - 1;
+    const forwardX = direction === 'left' ? 1 : engine.SIZE - 2;
+    check(
+      firstBite.every((pixel, index) => (index % engine.SIZE) !== edgeX || !pixel),
+      `anglerfish ${variant.id} ${direction} attack frame 2 `
+        + 'must reserve the side outline column',
+    );
+    check(
+      firstBite.some((pixel, index) => (index % engine.SIZE) === forwardX && pixel),
+      `anglerfish ${variant.id} ${direction} attack frame 2 `
+        + 'must retain a visible one-pixel forward bite lunge',
+    );
+  }
+  for (const [direction, animation, frame] of [
+    ['down', 'hurt', 0],
+    ['up', 'attack', 1],
+    ['up', 'attack', 2],
+  ]) {
+    const source = renderPixels(spec, direction, animation, frame);
+    check(
+      source.slice(0, engine.SIZE).every((pixel) => !pixel),
+      `anglerfish ${variant.id} ${direction} ${animation} frame ${frame + 1} `
+        + 'must reserve the top outline row',
+    );
+    check(
+      source.slice(engine.SIZE, engine.SIZE * 2).some(Boolean),
+      `anglerfish ${variant.id} ${direction} ${animation} frame ${frame + 1} `
+        + 'must retain the lure on the first drawable row',
+    );
   }
 }
 
@@ -2158,7 +2197,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
   'cyclops', 'troll', 'dwarf', 'ogre', 'goblin', 'zombie', 'imp',
-  'cultist', 'orc', 'lizardfolk', 'minotaur', 'demon',
+  'cultist', 'orc', 'lizardfolk', 'minotaur', 'demon', 'anglerfish',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {

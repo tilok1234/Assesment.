@@ -2440,8 +2440,15 @@ function drawAnglerfish(g, d, p, f, V, animId) {
   const swim = f % 2 === 0 ? -1 : 0;
   const tail = animId === 'walk' ? (f === 0 ? -1 : f === 2 ? 1 : 0) : 0;
   const strike = animId === 'attack' && (f === 1 || f === 2);
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = (d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0) + swim - 1;
+  // Reserve one source pixel for the optional outline while retaining a
+  // visible first bite lunge and the lure's vertical attack/hurt motion.
+  const forwardLunge = strike ? Math.min(p.lunge, 1) : p.lunge;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const minimumY = d === 'up' && animId === 'attack' && !strike ? -1 : -2;
+  const oy = Math.max(
+    minimumY,
+    (d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0) + swim - 1,
+  );
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const c = V.c, belly = V.belly, lure = V.lure, eye = V.eye;

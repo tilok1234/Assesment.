@@ -45,6 +45,8 @@ Minotaur Ironhorn vertical-strike repair and horn-tip-aware, cavity-preserving
 component outlines are visually approved.
 Demon Pit Fiend vertical-strike repair and horn/spark-aware, cavity-preserving
 component outlines are visually approved.
+Anglerfish bite/lure frame-safety repair and separated-component outlines are
+visually approved.
 Zombie vertical-strike frame-safety repair and cavity-preserving
 component-aware outline expansion are visually approved. Imp vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
@@ -2201,6 +2203,57 @@ across all four directions. They expose the repaired Pit Fiend club margins,
 Duke's shield and sword seams, detached horn tips, Warlock staff sparks and
 occlusion, every preserved source opening, all three Demon silhouettes, and
 both outline modes. The candidate is visually approved.
+
+## Outline Rollout Candidate Group 30
+
+Visually approved as a single-family Anglerfish pass.
+
+After Demon approval, three enemy families remained outside the outline lane.
+Anglerfish is the next unsupported family in catalog order. Its 192-frame
+family had 20 source-edge frames / 68 edge pixels: every variant's first
+left/right bite supplied seven side-row pixels, while each up-facing middle
+attack frame and first down-facing hurt frame put the lure on the top row. No
+Anglerfish frame attempted an out-of-bounds write.
+
+Every Anglerfish frame is multi-component. The front/back silhouettes retain a
+two-pixel lure shaft and detached one-pixel lure; side silhouettes add two
+detached one-pixel fins. Across the family, 192 frames contain 672 detached
+source pixels and no enclosed source openings.
+
+The candidate:
+
+- caps only the middle bite lunge at one pixel, preserving visible forward
+  motion while reserving the left/right outline column;
+- clamps only the extreme upward offset, placing the lure on the first drawable
+  row while keeping approach, strike, recoil, swim, and hurt poses distinct;
+- reduces the full enemy corpus from 60 to 40 source-edge frames and from 396
+  to 328 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Deepglow, Bloodfin, Frostfin,
+  and Voidlight without changing another unsupported family;
+- uses separated-component contours with a two-pixel minimum so the lure shaft
+  is outlined while detached one-pixel lure/fin details remain light and
+  unboxed;
+- preserves all 192 multi-component frames / 672 detached source pixels;
+- adds all 192 Anglerfish frames to the source-margin regression plus focused
+  side-bite, top-lure, motion, separated-component, and halo checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the fifty-five-family outline lane:
+
+- 9,312 None-mode parity checks pass against the corrected source renderer;
+- all 27,936 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 9,312 frames;
+- the focused single-family review covers 192 source frames / 576 mode cases
+  and adds 12,272 Complete B plus 9,016 Selective C contour pixels;
+- the complete lane adds 668,198 Complete B plus 533,377 Selective C contour
+  pixels and retains 25,900 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover hurt frame 1 and attack frames 2 and 3
+across all four directions. They expose the repaired top lure and side bite
+margins, attack-frame motion, separated lure/fin treatment, all four Anglerfish
+silhouettes, and both outline modes. The candidate was kept uncommitted until
+the user explicitly approved it on 2026-07-26.
 
 ## Treatment
 
