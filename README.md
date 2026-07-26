@@ -27,6 +27,10 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Optional assembled-sprite outlines with None, Complete B, and Selective C
   modes for players and all 57 enemy families; effects, source art, floor
   shadows, and atomic component sheets remain untreated
+- Optional assembled-sprite shading with None and the approved material-aware
+  Form mode for players and all 57 enemy families; the selector participates in
+  undo/redo, comparisons, presets, packs, recipes, previews, and assembled
+  exports while effects and atomic component sheets remain untreated
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
 - Six modular expressions—Neutral, Happy, Angry, Sad, Surprised, and Determined—that animate in every visible direction, remain readable beneath glasses, and hide beneath full helmets
@@ -44,13 +48,29 @@ The complete enemy-outline rollout is visually approved at local checkpoint
 9,696-frame source audit and the 29,088-case None-B-C lane with zero source-edge
 frames and zero out-of-bounds writes. This branch has not been pushed.
 
-The next planned feature is the optional shared assembled-sprite shade pass in
-[SHADE_RENDERING_PLAN.md](SHADE_RENDERING_PLAN.md). No shade implementation,
-schema migration, fixture update, executable rebuild, or baseline acceptance
-has started. The default Combat Loadout preview still draws effects after the
-complete character; its foreground shield/equipment occlusion issue remains a
-separate deferred integration problem and is explicitly excluded from shade
-work. See [HANDOFF.md](HANDOFF.md) for the exact continuation state.
+The optional shared assembled-sprite shade pass in
+[SHADE_RENDERING_PLAN.md](SHADE_RENDERING_PLAN.md) has an explicitly approved
+Form algorithm and approved live-editor integration. Shared pixel
+buffers, immutable shade modes, normalization, and one assembled-output
+coordinator apply the deterministic material-aware treatment to complete
+players and enemies. Protected dark features, exact white, tiny accents, floor
+shadows, effects, approved outlines, contact separators, generic thumbnails,
+and atomic component sheets remain untreated. Form is the default for new and
+reset Player/Enemy editor documents; None remains the engine compatibility mode
+and the fallback for versioned legacy artwork.
+
+The Player/Enemy selector now participates in history, comparisons, presets,
+ordinary packs, previews, assembled sheets, and export recipes; it is hidden in
+Effects mode. Presets migrate v1-v10 into v11, ordinary packs migrate v1 into
+v2, Variant Batch and Class Pack are v2, and Complete Character Kit/Pack are
+v11. Missing or invalid shade fields migrate to None. The earlier enemy
+outline preset/ordinary-pack persistence gap remains repaired. The integrated
+editor surface was visually approved on 2026-07-26. The safe shade checkpoint
+does not accept new fixtures or baselines and does not rebuild executables.
+The default Combat Loadout preview still draws effects after the complete
+character; its foreground shield/equipment occlusion issue remains a separate
+deferred integration problem and is explicitly excluded from shade work. See
+[HANDOFF.md](HANDOFF.md) for the exact continuation state.
 
 ## Preview controls
 
@@ -96,7 +116,15 @@ Double-click `check-project.bat`, or run:
 npm run check
 ```
 
-The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 3,600 weapon animation cases, 7,680 shield cases across all four body builds, and 528 equipped-headgear cases.
+The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 3,600 weapon animation cases, 7,680 shield cases across all four body builds, and 528 equipped-headgear cases. The shade gate adds 288 broad player None-parity cases, all 9,696 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 1,728 deterministic Form pilot cases, an exhaustive 9,696-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, visible changes, and 21,086 material-aware differences from a silhouette-only control without accepting a visual baseline.
+
+Run `npm run review:shades` to regenerate the ignored interactive Form pilot
+beneath `shade-review/`. It compares untreated output, a silhouette-only
+control, Form without outlines, Form with Complete B, and Form with Selective C
+for 12 diverse specimens across all directions, animations, and frames on
+dark and parchment review backgrounds, with parchment selected by default.
+Effects stay Off. The algorithm is approved, but the generated review remains
+evidence rather than a committed baseline.
 
 Run `npm run review:weapons -- --all-frames` to regenerate the 37 weapon review sheets and the exhaustive 3,600-row CSV/JSON audit. Add `--tier-sheets` to emit four labeled all-weapon/all-frame SVG review sheets per tier plus lightweight PNG inspection grids. The audit records ordinary edge contact separately from discarded pixels, so touching `x=0` or `x=23` remains advisory while attempting to draw outside the 24x24 canvas is a hard failure.
 
@@ -221,7 +249,7 @@ Every component shares the same animation grid and has been validated to recompo
 - `character-kit.js` - deterministic component coverage, paths, recipe mapping, counts, and layer-order planning
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
-- `engine/` - focused animation, palette, player-option, enemy, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon and shield, renderer, outline, sheet, and generator modules
+- `engine/` - focused animation, palette, player-option, enemy, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon and shield, renderer, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build

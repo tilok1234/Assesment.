@@ -2419,7 +2419,8 @@ and animation. Do not accept new baselines or push without explicit approval.
 3. Families entered the lane in manageable silhouette/component groups with
    explicit visual approval.
 4. The final Porcupine pass completed the 57-family roster at `ac860aa`.
-5. Enemy preset/pack persistence is still incomplete: the live editor and
-   sheet renderer honor enemy outlines, but current preset and pack
-   sanitization reload enemy entries with None. Resolve that explicitly before
-   the shade plan changes persistence schemas.
+5. Enemy preset/pack persistence was repaired as the explicit pre-shade
+   prerequisite: valid enemy modes now survive preset v10 and ordinary-pack v1
+   sanitization and loading, while missing or invalid legacy values migrate to
+   None and effects remain untreated. No stored structure or schema version
+   changed.

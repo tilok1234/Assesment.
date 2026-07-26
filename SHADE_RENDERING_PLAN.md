@@ -1,9 +1,14 @@
 # Shared Assembled-Sprite Shade Pass
 
-Status: canonical next-phase plan; implementation has not started. The
-enemy-outline prerequisite is complete and visually approved. Shade mode must
-default to None, and no fixture, baseline, executable, published asset, or
-existing output may change before its explicit visual approval gate.
+Status: canonical shade-phase authority. The Form algorithm was explicitly
+visually approved on 2026-07-26. Unified Player/Enemy editor state, history,
+previews, persistence, assembled exports, and recipe metadata are implemented
+in the approved shade checkpoint and pass structural validation. The live
+editor integration was explicitly approved on 2026-07-26, and Form is now the
+default for new and reset Player/Enemy editor documents. None remains the
+engine/API compatibility mode and the migration fallback for versioned legacy
+artwork; fixtures, baselines, and release artifacts remain separately
+approval-gated.
 
 Date: 2026-07-26
 
@@ -42,24 +47,76 @@ and 29,088 None-B-C cases pass with zero source-edge frames and zero
 out-of-bounds writes. Anglerfish, Snail, and Porcupine are approved; no enemy
 family remains unsupported.
 
-Create the implementation on a fresh branch or isolated worktree from the clean
-documentation checkpoint that follows `ac860aa`. Preserve the current no-push
-approval workflow. Before changing persistence schemas, explicitly resolve or
-carry forward the known pre-shade gap where saved enemy preset/pack entries
-reload their outline mode as None even though live enemy previews and sheets
-support all three modes.
+The implementation began in the supplied isolated Codex worktree from clean
+documentation checkpoint `630ddf7`, immediately after `ac860aa`. The
+approval-gated workflow was preserved until the user authorized the
+`codex/form-shading` safe checkpoint and push.
+
+The pre-shade enemy preset/ordinary-pack gap is resolved without a schema bump:
+preset v10 and ordinary-pack v1 already stored `outlineMode`; valid enemy values
+now survive sanitization and loading, missing or invalid legacy values migrate
+to None, and effects remain untreated. Direct compatibility assertions cover
+all four cases.
+
+## Core/None Checkpoint
+
+The completed infrastructure slice contains:
+
+- `engine/pixel-buffer.js` for shared internal color-string capture,
+  transparency, and run painting;
+- immutable None/Form ids and `normalizeShadeMode()` in
+  `engine/shade-renderer.js`;
+- `drawAssembledSprite()` as the shared assembled-output coordinator;
+- direct `drawSprite()` delegation when shade and outline are both None;
+- unchanged routing through the approved outline renderer for Complete B and
+  Selective C;
+- no shade state, UI, persistence, Form color algorithm, or visual candidate.
+
+`npm.cmd run check` passes 288 broad player parity cases, all 9,696 enemy
+source frames, and 1,616 sampled enemy outline-combination cases in addition to
+the existing project gates.
+
+## Approved Form Algorithm Checkpoint
+
+The approved pilot introduced:
+
+- deterministic known-material lookup from resolved player and enemy palettes;
+- a bounded fallback for unknown hex colors;
+- top-biased highlights with cooler lower/right shade;
+- exact protection for transparency, INK, exact white, very dark features, and
+  connected one- or two-pixel accents;
+- unchanged effects, floor shadows, atomic layers, approved contours, and
+  direct-contact separators;
+- `tools/shade-pilots.mjs` with six player and six enemy specimens;
+- `tools/shade-review.mjs` and `npm.cmd run review:shades`;
+- an explicit silhouette-only comparison control.
+
+`npm.cmd run check` passes 1,728 Form/outline pilot cases with deterministic
+output, source-ownership enforcement, protected-pixel parity, unchanged
+outline/contact geometry, finite non-INK output colors, exact transparent
+cells and floor shadows, visible changes for every pilot, and 21,086
+material-aware pixel differences from the silhouette-only control.
+
+`npm.cmd run review:shades` validates 576 source frames and generates the
+ignored interactive review beneath `shade-review/`. It shows untreated,
+silhouette-control, Form/None, Form/Complete B, and Form/Selective C columns at
+native and enlarged size on both required backgrounds, with parchment selected
+by default following user review. Effects remain Off. The Form algorithm is
+approved; this generated material remains review evidence, not an accepted
+fixture or baseline.
 
 ## Modes
 
 - `SHADE_MODE_NONE = 'none'`
-  - compatibility default;
+  - engine/API compatibility mode;
   - sanitization target for missing or invalid values;
   - delegates directly to the existing assembled renderer when outline mode is
     also None;
   - must remain pixel-identical to the pre-shade checkpoint.
 - `SHADE_MODE_FORM = 'form'`
   - applies the approved material-aware Form treatment to complete assembled
-    player and enemy source pixels.
+    player and enemy source pixels;
+  - default for new and reset Player/Enemy editor documents.
 
 Expose an immutable `SHADE_MODES` catalog and `normalizeShadeMode()` through
 `sprite-engine.js`.
@@ -68,10 +125,8 @@ Expose an immutable `SHADE_MODES` catalog and `normalizeShadeMode()` through
 
 ### Shared pixel-buffer helpers
 
-The outline renderer currently owns private string-pixel capture and paint
-helpers. Do not duplicate that fake canvas in the shade module. Extract the
-generic pieces into a small internal module such as
-`engine/pixel-buffer.js`:
+The Core/None checkpoint extracts the outline renderer's former private
+string-pixel capture and paint helpers into `engine/pixel-buffer.js`:
 
 - render a sprite or registered layer into a 24x24 array of color strings;
 - test transparent cells;
@@ -83,7 +138,7 @@ The internal module is not a new public import path.
 
 ### Shade module
 
-Add `engine/shade-renderer.js` for:
+Continue `engine/shade-renderer.js` with the Form pilot's:
 
 - shade mode constants and normalization;
 - color parsing, clamping, and deterministic color conversion;
@@ -97,10 +152,11 @@ existing definitions.
 
 ### One assembled-output entry point
 
-Add one engine-level assembled output coordinator, for example
-`drawAssembledSprite()`, and export it through `sprite-engine.js`. Previews,
-comparisons, thumbnails that represent complete assembled output, sheet
-builders, and exports must use this same coordinator.
+`drawAssembledSprite()` now exists as the engine-level assembled output
+coordinator and is exported through `sprite-engine.js`. Existing assembled
+previews and sheet builders use it while the engine-level option continues to
+default to None. Editor state passes its explicit Form default through the same
+coordinator for comparisons, complete assembled thumbnails, and exports.
 
 Keep `drawSprite()` as the procedural source renderer and keep the existing
 outline API available for its direct regression tests.
@@ -283,7 +339,7 @@ stage.
 
 ## Editor State and Persistence
 
-Add `shadeMode` to:
+The approved integration adds `shadeMode` to:
 
 - default state;
 - state loading and sanitization;
@@ -297,22 +353,24 @@ Add `shadeMode` to:
 - Complete Character Kit/Pack assembled-reference metadata.
 
 The shade selector is visible for Player and Enemies and hidden for Effects.
-None remains the default for all missing legacy fields.
+Form is the default for new/reset editor documents and pre-shade unversioned
+editor state. None remains the fallback for missing fields in versioned legacy
+presets, packs, and recipes so stored artwork does not silently change.
 
-Version each affected format deliberately:
+The implemented format versions are:
 
-- preset library: v10 -> v11, accepting and migrating v1 through v10;
-- ordinary character-pack storage: decide and test v1 -> v2 migration rather
-  than silently rejecting old packs;
-- equipment-batch and class-pack schemas: bump only if `shadeMode` enters their
-  serialized recipes;
-- Complete Character Kit/Pack: bump only if their recipe/manifest contract
-  changes;
-- combat-loadout schema: no bump, because shading is not a combat-loadout
-  concern.
+- preset library v11, accepting and migrating v1 through v10;
+- ordinary character-pack storage v2, accepting and migrating v1;
+- equipment Variant Batch v2;
+- Class Pack v2;
+- Complete Character Kit v11;
+- Complete Character Pack v11;
+- combat-loadout schema v1 unchanged; assembled `baseSprite` metadata records
+  the shade mode without changing combat-loadout semantics;
+- palette library, Master Character Kit, and Master Roster Kit remain v1.
 
-Document the final version table in `ARCHITECTURE.md`. Do not use one generic
-"schema v10" statement for these separate formats.
+Missing or invalid legacy shade ids sanitize to None. Effects remain untreated
+and do not replace the current Player/Enemy shade selection when loaded.
 
 ## Validation
 
@@ -397,45 +455,51 @@ pilot.
 
 ## Implementation and Commit Sequence
 
-1. **Core/None checkpoint**
+1. **Core/None checkpoint — implemented and checkpointed**
    - shared pixel-buffer helpers;
    - shade mode catalog and normalization;
-   - public facade exports;
+   - public facade exports and assembled-output coordinator;
    - direct-delegation and None-parity tests;
    - no UI and no Form color changes.
-2. **Form algorithm pilot**
+2. **Form algorithm pilot — implemented, visually approved, and checkpointed**
    - pure material lookup and shade transformation;
    - protection rules;
    - pilot review generator and focused regressions;
-   - visual approval required.
-3. **Unified assembled player surfaces**
+   - approved on parchment and dark review backgrounds on 2026-07-26.
+3. **Unified assembled player surfaces — implemented and visually approved**
    - one assembled coordinator;
    - preview, comparison, sheets, exports, undo/redo;
    - player persistence and migration;
-   - visual approval required.
-4. **Enemy pilot and rollout**
-   - representative pilot first;
-   - full 9,696-frame structural audit;
-   - expand in manageable material/silhouette batches;
-   - avoid another one-family-at-a-time process unless a family is an actual
-     outlier.
-5. **Pack and recipe integration**
+   - live-editor visual check approved on 2026-07-26.
+4. **Enemy pilot and rollout — implemented and approved**
+   - the approved representative pilot precedes the full audit;
+   - all 9,696 enemy source frames pass the Form audit;
+   - all 1,616 enemy Form/outline integration cases preserve approved outline
+     and contact geometry.
+5. **Pack and recipe integration — implemented and checkpointed**
    - ordinary packs, batches, class packs, and complete assembled references;
    - explicit schema/version updates;
    - atomic components remain untreated.
-6. **Documentation**
+6. **Documentation — updated for the integration checkpoint**
    - update `README.md`, `ARCHITECTURE.md`, and the handoff with the accepted
      scope, ordering, version table, exclusions, and rollback boundary.
-7. **Fixtures**
-   - only after final visual approval;
-   - decide whether committed fixtures stay None or gain separate Form
-     fixtures;
+7. **Fixtures — deliberately unchanged**
+   - the approved safe checkpoint keeps committed fixtures on the existing
+     None baseline;
+   - separate Form fixtures remain optional future work;
    - update `asset-pack/manifest.json` only for deliberately added/changed
      files;
    - never rewrite the existing fixture corpus merely because Form exists.
 
 Keep these as focused commits. Do not combine implementation, schema migration,
 enemy rollout, and fixture acceptance in one checkpoint.
+
+The current full validator also proves assembled full-sheet, direction-sheet,
+and animation-sheet forwarding for Form with None, Complete B, and Selective C
+on representative Player and Enemy cases. The browser smoke proves the selector
+is visible for Player/Enemies, hidden for Effects, persists across mode changes,
+and participates in undo/redo. A production build remains intentionally
+deferred with release artifacts.
 
 ## Acceptance
 
@@ -451,8 +515,8 @@ The feature is complete only when:
 - effects, floor shadows, atomic layers, animation timing, and sheet contracts
   remain unchanged;
 - presets and every affected pack/recipe format migrate safely to None;
-- project checks, outline checks, shade checks, production build, and browser
-  smoke tests pass;
+- project, outline, shade, and browser smoke checks pass;
+- production/release builds remain a separate release checkpoint;
 - no baseline, fixture, executable, commit, or push is presented as accepted
   without its corresponding explicit approval.
 

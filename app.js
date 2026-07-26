@@ -14,11 +14,11 @@ import { buildStoredZip } from './zip.js';
 
 const STORAGE_KEY = 'sprite-assembler-v1';
 const PRESET_STORAGE_KEY = 'sprite-assembler-presets-v1';
-const PRESET_VERSION = 10;
+const PRESET_VERSION = 11;
 const PALETTE_STORAGE_KEY = 'sprite-assembler-palettes-v1';
 const PALETTE_VERSION = 1;
 const PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1';
-const PACK_VERSION = 1;
+const PACK_VERSION = 2;
 const PACK_ENTRY_LIMIT = 200;
 const LOADOUT_STORAGE_KEY = 'sprite-assembler-combat-loadouts-v1';
 const LOADOUT_STORAGE_VERSION = 1;
@@ -29,6 +29,7 @@ const PLAYBACK_SPEEDS = [0.5, 1, 2];
 const EXPORT_SCALES = [1, 4, 8, 12];
 const EXPORT_SCOPES = ['full', 'animation', 'direction'];
 const DIRECTION_NAMES = { down: 'Down', left: 'Left', right: 'Right', up: 'Up' };
+const DEFAULT_SHADE_MODE = E.SHADE_MODE_FORM;
 const DEFAULT_STATE = {
   mode: 'player',
   player: {
@@ -53,6 +54,7 @@ const DEFAULT_STATE = {
   effect: { category: 'trails', effect: 'sword-slash' },
   loadout: { ...E.DEFAULT_COMBAT_LOADOUT },
   outlineMode: E.OUTLINE_MODE_NONE,
+  shadeMode: DEFAULT_SHADE_MODE,
   previewEffects: true,
   variantBatchSet: E.DEFAULT_VARIANT_BATCH_SET,
   classTemplate: E.DEFAULT_CLASS_TEMPLATE,
@@ -88,6 +90,8 @@ const elements = {
   animationButtons: document.querySelector('#animation-buttons'),
   outlineControl: document.querySelector('#outline-control'),
   outlineButtons: document.querySelector('#outline-buttons'),
+  shadeControl: document.querySelector('#shade-control'),
+  shadeButtons: document.querySelector('#shade-buttons'),
   previewEffectsButton: document.querySelector('#preview-effects-button'),
   zoomButtons: document.querySelector('#zoom-buttons'),
   cycleButton: document.querySelector('#cycle-button'),
@@ -332,6 +336,7 @@ function sanitizeEditableSnapshot(snapshot) {
     effect: sanitizeEffect(snapshot.effect),
     loadout: E.sanitizeCombatLoadout(snapshot.loadout),
     outlineMode: E.normalizeOutlineMode(snapshot.outlineMode),
+    shadeMode: E.normalizeShadeMode(snapshot.shadeMode),
     characterName: sanitizeText(snapshot.characterName, 48),
     exportName: sanitizeText(snapshot.exportName, 80),
   };
@@ -353,6 +358,9 @@ function loadState() {
     effect: sanitizeEffect(saved.effect),
     loadout: E.sanitizeCombatLoadout(saved.loadout),
     outlineMode: E.normalizeOutlineMode(saved.outlineMode),
+    shadeMode: Object.prototype.hasOwnProperty.call(saved, 'shadeMode')
+      ? E.normalizeShadeMode(saved.shadeMode)
+      : DEFAULT_SHADE_MODE,
   };
 
   loaded.mode = sanitizeMode(loaded.mode);
@@ -407,6 +415,7 @@ function editableSnapshot(source = state) {
     effect: { ...source.effect },
     loadout: E.sanitizeCombatLoadout(source.loadout),
     outlineMode: E.normalizeOutlineMode(source.outlineMode),
+    shadeMode: E.normalizeShadeMode(source.shadeMode),
     characterName: source.characterName,
     exportName: source.exportName,
   };
@@ -422,7 +431,7 @@ function pushHistory(stack, snapshot) {
 }
 
 function setState(patch, { persist = true, render = true, recordHistory = true } = {}) {
-  const tracksSprite = ['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'characterName', 'exportName']
+  const tracksSprite = ['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'shadeMode', 'characterName', 'exportName']
     .some((key) => Object.prototype.hasOwnProperty.call(patch, key));
   const before = tracksSprite ? editableSnapshot() : null;
   const next = { ...state, ...patch };
@@ -446,6 +455,7 @@ function restoreSnapshot(snapshot) {
     effect: sanitizeEffect(snapshot.effect),
     loadout: E.sanitizeCombatLoadout(snapshot.loadout),
     outlineMode: E.normalizeOutlineMode(snapshot.outlineMode),
+    shadeMode: E.normalizeShadeMode(snapshot.shadeMode),
     characterName: sanitizeText(snapshot.characterName, 48),
     exportName: sanitizeText(snapshot.exportName, 80),
   };
@@ -469,9 +479,9 @@ function redo() {
 
 function resetCurrentDocument() {
   const patch = state.mode === 'player'
-    ? { player: sanitizePlayer(DEFAULT_STATE.player), loadout: E.sanitizeCombatLoadout(), outlineMode: E.OUTLINE_MODE_NONE, characterName: '', exportName: '' }
+    ? { player: sanitizePlayer(DEFAULT_STATE.player), loadout: E.sanitizeCombatLoadout(), outlineMode: E.OUTLINE_MODE_NONE, shadeMode: DEFAULT_SHADE_MODE, characterName: '', exportName: '' }
     : state.mode === 'enemy'
-      ? { enemy: sanitizeEnemy(DEFAULT_STATE.enemy), loadout: E.sanitizeCombatLoadout(), characterName: '', exportName: '' }
+      ? { enemy: sanitizeEnemy(DEFAULT_STATE.enemy), loadout: E.sanitizeCombatLoadout(), shadeMode: DEFAULT_SHADE_MODE, characterName: '', exportName: '' }
       : { effect: sanitizeEffect(DEFAULT_STATE.effect), characterName: '', exportName: '', anim: 'attack', exportAnim: 'attack', frame: 0 };
   selectedPresetId = '';
   elements.presetName.value = '';
@@ -520,13 +530,22 @@ function currentSpec() {
 }
 
 function assembledOutlineMode(spec, outlineMode = state.outlineMode) {
-  return spec?.kind === 'player' || E.enemySupportsOutline(spec)
-    ? E.normalizeOutlineMode(outlineMode)
-    : E.OUTLINE_MODE_NONE;
+  return E.normalizeAssembledOutlineMode(spec, outlineMode);
 }
 
-function outlineRenderOptions(spec, outlineMode = state.outlineMode) {
-  return { outlineMode: assembledOutlineMode(spec, outlineMode) };
+function assembledShadeMode(spec, shadeMode = state.shadeMode) {
+  return spec.kind === 'effect' ? E.SHADE_MODE_NONE : E.normalizeShadeMode(shadeMode);
+}
+
+function assembledRenderOptions(
+  spec,
+  outlineMode = state.outlineMode,
+  shadeMode = state.shadeMode,
+) {
+  return {
+    outlineMode: assembledOutlineMode(spec, outlineMode),
+    shadeMode: assembledShadeMode(spec, shadeMode),
+  };
 }
 
 function snapshotSpec(snapshot) {
@@ -547,6 +566,7 @@ function snapshotPatch(snapshot) {
     effect: sanitized.effect,
     loadout: sanitized.loadout,
     outlineMode: sanitized.outlineMode,
+    shadeMode: sanitized.shadeMode,
     characterName: sanitized.characterName,
     exportName: sanitized.exportName,
   };
@@ -559,7 +579,10 @@ function snapshotDisplayName(snapshot) {
 
 function snapshotMeta(snapshot) {
   const kind = snapshot.mode === 'player' ? 'Player' : snapshot.mode === 'enemy' ? 'Enemy' : 'Effect';
-  return `${kind} · ${E.describe(snapshotSpec(snapshot)).replaceAll('-', ' ')}`;
+  const treatment = snapshot.mode === 'effect'
+    ? ''
+    : ` · ${E.normalizeOutlineMode(snapshot.outlineMode)} outline · ${E.normalizeShadeMode(snapshot.shadeMode)} shade`;
+  return `${kind} · ${E.describe(snapshotSpec(snapshot)).replaceAll('-', ' ')}${treatment}`;
 }
 
 function sanitizeFilenameBase(value) {
@@ -621,7 +644,7 @@ function exportDescriptor() {
 }
 
 function buildExportCanvas(spec, scale = 1) {
-  const options = outlineRenderOptions(spec);
+  const options = assembledRenderOptions(spec);
   if (state.exportScope === 'animation') {
     return E.buildAnimationSheet(spec, state.exportAnim, scale, options);
   }
@@ -647,14 +670,14 @@ function sanitizePackEntry(raw) {
   const kind = raw.kind === 'effect' ? 'effect' : raw.kind === 'enemy' ? 'enemy' : raw.kind === 'player' ? 'player' : null;
   const name = sanitizeText(raw.name, 48).trim();
   if (!kind || !name) return null;
+  const spec = sanitizeSpec(kind, raw.spec);
   return {
     id: typeof raw.id === 'string' && raw.id ? raw.id : makePackEntryId(),
     name,
     kind,
-    spec: sanitizeSpec(kind, raw.spec),
-    outlineMode: kind === 'player'
-      ? E.normalizeOutlineMode(raw.outlineMode)
-      : E.OUTLINE_MODE_NONE,
+    spec,
+    outlineMode: assembledOutlineMode({ kind, ...spec }, raw.outlineMode),
+    shadeMode: assembledShadeMode({ kind, ...spec }, raw.shadeMode),
     loadout: kind === 'effect' ? null : E.sanitizeCombatLoadout(raw.loadout),
     createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
   };
@@ -666,7 +689,7 @@ function loadPackLibrary() {
     saved = JSON.parse(localStorage.getItem(PACK_STORAGE_KEY) || 'null');
   } catch {}
 
-  if (!saved || saved.version !== PACK_VERSION || !Array.isArray(saved.entries)) {
+  if (!saved || ![1, PACK_VERSION].includes(saved.version) || !Array.isArray(saved.entries)) {
     return { version: PACK_VERSION, name: 'My Character Pack', entries: [] };
   }
 
@@ -719,6 +742,7 @@ function addCurrentToPack() {
     kind: spec.kind,
     spec: sanitizeSpec(spec.kind, spec),
     outlineMode: assembledOutlineMode(spec),
+    shadeMode: assembledShadeMode(spec),
     loadout: spec.kind === 'effect' ? null : E.sanitizeCombatLoadout(state.loadout),
     createdAt: new Date().toISOString(),
   });
@@ -731,10 +755,26 @@ function loadPackEntry(entryId) {
   const entry = packLibrary.entries.find((item) => item.id === entryId);
   if (!entry || packIsBusy()) return;
   const patch = entry.kind === 'player'
-    ? { mode: 'player', player: sanitizePlayer(entry.spec), outlineMode: E.normalizeOutlineMode(entry.outlineMode) }
+    ? {
+      mode: 'player',
+      player: sanitizePlayer(entry.spec),
+      outlineMode: E.normalizeOutlineMode(entry.outlineMode),
+      shadeMode: E.normalizeShadeMode(entry.shadeMode),
+    }
     : entry.kind === 'enemy'
-      ? { mode: 'enemy', enemy: sanitizeEnemy(entry.spec) }
-      : { mode: 'effect', effect: sanitizeEffect(entry.spec), anim: 'attack', exportAnim: 'attack', frame: 0 };
+      ? {
+        mode: 'enemy',
+        enemy: sanitizeEnemy(entry.spec),
+        outlineMode: assembledOutlineMode({ kind: 'enemy', ...entry.spec }, entry.outlineMode),
+        shadeMode: assembledShadeMode({ kind: 'enemy', ...entry.spec }, entry.shadeMode),
+      }
+      : {
+        mode: 'effect',
+        effect: sanitizeEffect(entry.spec),
+        anim: 'attack',
+        exportAnim: 'attack',
+        frame: 0,
+      };
   if (entry.kind !== 'effect') patch.loadout = E.sanitizeCombatLoadout(entry.loadout);
   patch.characterName = entry.name;
   patch.exportName = '';
@@ -768,15 +808,15 @@ function sanitizePreset(raw) {
   const kind = raw.kind === 'effect' ? 'effect' : raw.kind === 'enemy' ? 'enemy' : raw.kind === 'player' ? 'player' : null;
   const name = typeof raw.name === 'string' ? raw.name.trim().slice(0, 48) : '';
   if (!kind || !name) return null;
+  const spec = sanitizeSpec(kind, raw.spec);
 
   return {
     id: typeof raw.id === 'string' && raw.id ? raw.id : makePresetId(),
     name,
     kind,
-    spec: sanitizeSpec(kind, raw.spec),
-    outlineMode: kind === 'player'
-      ? E.normalizeOutlineMode(raw.outlineMode)
-      : E.OUTLINE_MODE_NONE,
+    spec,
+    outlineMode: assembledOutlineMode({ kind, ...spec }, raw.outlineMode),
+    shadeMode: assembledShadeMode({ kind, ...spec }, raw.shadeMode),
     characterName: sanitizeText(raw.characterName, 48),
     exportName: sanitizeText(raw.exportName, 80),
     createdAt: typeof raw.createdAt === 'string' ? raw.createdAt : new Date().toISOString(),
@@ -790,7 +830,13 @@ function loadPresetLibrary() {
     saved = JSON.parse(localStorage.getItem(PRESET_STORAGE_KEY) || 'null');
   } catch {}
 
-  if (!saved || ![1, 2, 3, 4, 5, 6, 7, 8, 9, PRESET_VERSION].includes(saved.version) || !Array.isArray(saved.presets)) {
+  if (
+    !saved
+    || !Number.isInteger(saved.version)
+    || saved.version < 1
+    || saved.version > PRESET_VERSION
+    || !Array.isArray(saved.presets)
+  ) {
     return { version: PRESET_VERSION, presets: [] };
   }
 
@@ -849,6 +895,7 @@ function savePreset() {
     kind: spec.kind,
     spec: sanitizeSpec(spec.kind, spec),
     outlineMode: assembledOutlineMode(spec),
+    shadeMode: assembledShadeMode(spec),
     characterName: state.characterName,
     exportName: state.exportName,
     createdAt: existing?.createdAt || now,
@@ -872,10 +919,26 @@ function loadSelectedPreset() {
   const preset = selectedPreset();
   if (!preset) return;
   const patch = preset.kind === 'player'
-    ? { mode: 'player', player: sanitizePlayer(preset.spec), outlineMode: E.normalizeOutlineMode(preset.outlineMode) }
+    ? {
+      mode: 'player',
+      player: sanitizePlayer(preset.spec),
+      outlineMode: E.normalizeOutlineMode(preset.outlineMode),
+      shadeMode: E.normalizeShadeMode(preset.shadeMode),
+    }
     : preset.kind === 'enemy'
-      ? { mode: 'enemy', enemy: sanitizeEnemy(preset.spec) }
-      : { mode: 'effect', effect: sanitizeEffect(preset.spec), anim: 'attack', exportAnim: 'attack', frame: 0 };
+      ? {
+        mode: 'enemy',
+        enemy: sanitizeEnemy(preset.spec),
+        outlineMode: assembledOutlineMode({ kind: 'enemy', ...preset.spec }, preset.outlineMode),
+        shadeMode: assembledShadeMode({ kind: 'enemy', ...preset.spec }, preset.shadeMode),
+      }
+      : {
+        mode: 'effect',
+        effect: sanitizeEffect(preset.spec),
+        anim: 'attack',
+        exportAnim: 'attack',
+        frame: 0,
+      };
   patch.characterName = preset.characterName;
   patch.exportName = preset.exportName;
   setState(patch);
@@ -1048,6 +1111,7 @@ function combatLoadoutManifest() {
       name: state.characterName.trim() || null,
       spec: sanitizeSpec(spec.kind, spec),
       outlineMode: assembledOutlineMode(spec),
+      shadeMode: assembledShadeMode(spec),
     },
     layering: {
       drawOrder: ['base-sprite', ...recipe.resolvedEffects.filter((slot) => slot.file).map((slot) => slot.slot)],
@@ -1278,6 +1342,17 @@ function renderOutlineControls() {
     mode.name,
     state.outlineMode === mode.id,
     () => setState({ outlineMode: mode.id }),
+  )));
+}
+
+function renderShadeControls() {
+  const available = state.mode === 'player' || state.mode === 'enemy';
+  elements.shadeControl.hidden = !available;
+  if (!available) return;
+  elements.shadeButtons.replaceChildren(...E.SHADE_MODES.map((mode) => makeButton(
+    mode.name,
+    state.shadeMode === mode.id,
+    () => setState({ shadeMode: mode.id }),
   )));
 }
 
@@ -1701,6 +1776,7 @@ function drawComparisonFrame(animId, direction, frame) {
     anim.id,
     safeFrame,
     state.comparison.outlineMode,
+    state.comparison.shadeMode,
   );
   drawCompositeFrame(
     currentContext,
@@ -1710,6 +1786,7 @@ function drawComparisonFrame(animId, direction, frame) {
     anim.id,
     safeFrame,
     state.outlineMode,
+    state.shadeMode,
   );
   elements.compareContext.textContent = `${anim.name} · ${DIRECTION_NAMES[direction]} · frame ${safeFrame + 1} / ${anim.frames}`;
   elements.savedCopyCanvas.dataset.frame = String(safeFrame + 1);
@@ -1907,9 +1984,10 @@ function renderPackEntry(entry) {
   const context = canvas.getContext('2d');
   context.imageSmoothingEnabled = false;
   const spec = packEntrySpec(entry);
-  E.drawOutlinedSprite(context, spec, 'down', entry.kind === 'effect' ? 'attack' : 'idle', entry.kind === 'effect' ? 1 : 0, {
+  E.drawAssembledSprite(context, spec, 'down', entry.kind === 'effect' ? 'attack' : 'idle', entry.kind === 'effect' ? 1 : 0, {
     shadow: false,
     outlineMode: assembledOutlineMode(spec, entry.outlineMode),
+    shadeMode: assembledShadeMode(spec, entry.shadeMode),
   });
 
   const copy = document.createElement('div');
@@ -1923,7 +2001,9 @@ function renderPackEntry(entry) {
     ? 0
     : E.resolveCombatLoadout(packEntrySpec(entry), entry.loadout).slots.filter((slot) => slot.effect).length;
   meta.textContent = `${kind} · ${E.describe(packEntrySpec(entry)).replaceAll('-', ' ')}`
-    + (entry.kind === 'player' ? ` · ${E.normalizeOutlineMode(entry.outlineMode)} outline` : '')
+    + (entry.kind === 'effect'
+      ? ''
+      : ` · ${E.normalizeOutlineMode(entry.outlineMode)} outline · ${E.normalizeShadeMode(entry.shadeMode)} shade`)
     + (entry.kind === 'effect' ? '' : ` · ${loadoutCount} combat effects`);
   meta.title = meta.textContent;
   copy.append(name, meta);
@@ -2046,6 +2126,7 @@ function renderPaletteControls() {
 function renderUi() {
   renderModeButtons();
   renderOutlineControls();
+  renderShadeControls();
   renderPaletteControls();
   renderOptionGroups();
   renderPlaybackControls();
@@ -2062,10 +2143,20 @@ function renderUi() {
   renderMasterKitControls();
 }
 
-function drawCompositeFrame(context, spec, loadout, direction, animId, frame, outlineMode = state.outlineMode) {
-  E.drawOutlinedSprite(context, spec, direction, animId, frame, {
+function drawCompositeFrame(
+  context,
+  spec,
+  loadout,
+  direction,
+  animId,
+  frame,
+  outlineMode = state.outlineMode,
+  shadeMode = state.shadeMode,
+) {
+  E.drawAssembledSprite(context, spec, direction, animId, frame, {
     shadow: true,
     outlineMode: assembledOutlineMode(spec, outlineMode),
+    shadeMode: assembledShadeMode(spec, shadeMode),
   });
   if (!state.previewEffects || spec.kind === 'effect') return;
   for (const effectSpec of E.combatLoadoutEffectSpecs(spec, loadout)) {
@@ -2080,6 +2171,7 @@ function updateSheet(spec) {
     animation: state.exportAnim,
     direction: state.exportDir,
     outlineMode: assembledOutlineMode(spec),
+    shadeMode: assembledShadeMode(spec),
   });
   if (key === sheetKey) return;
   sheetKey = key;
@@ -2094,11 +2186,29 @@ function updateSheet(spec) {
 
 function drawFrame(animId, direction, frame) {
   const spec = currentSpec();
-  drawCompositeFrame(elements.stageCanvas.getContext('2d'), spec, state.loadout, direction, animId, frame, state.outlineMode);
+  drawCompositeFrame(
+    elements.stageCanvas.getContext('2d'),
+    spec,
+    state.loadout,
+    direction,
+    animId,
+    frame,
+    state.outlineMode,
+    state.shadeMode,
+  );
 
   for (const dir of E.DIRS) {
     const canvas = elements.directionCanvases.get(dir);
-    drawCompositeFrame(canvas.getContext('2d'), spec, state.loadout, dir, animId, frame, state.outlineMode);
+    drawCompositeFrame(
+      canvas.getContext('2d'),
+      spec,
+      state.loadout,
+      dir,
+      animId,
+      frame,
+      state.outlineMode,
+      state.shadeMode,
+    );
   }
 
   const anim = E.ANIMS.find((item) => item.id === animId) || E.ANIMS[0];
@@ -2420,6 +2530,8 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
     })),
     recipes: plan.recipes.map((recipe) => ({
       ...recipe,
+      outlineMode: E.normalizeOutlineMode(recipe.outlineMode),
+      shadeMode: E.normalizeShadeMode(recipe.shadeMode),
       ...(combatLoadoutsBySource.has(recipe.sourceId)
         ? { combatLoadout: combatLoadoutsBySource.get(recipe.sourceId) }
         : {}),
@@ -2430,6 +2542,9 @@ function completeCharacterKitManifest(plan, name, exportedAt, options = {}) {
     referencePreviewOutlineMode: includeReference
       ? E.normalizeOutlineMode(options.referenceOutlineMode)
       : readyCharacters[0]?.outlineMode || E.OUTLINE_MODE_NONE,
+    referencePreviewShadeMode: includeReference
+      ? E.normalizeShadeMode(options.referenceShadeMode)
+      : readyCharacters[0]?.shadeMode || E.SHADE_MODE_NONE,
   };
 }
 
@@ -2531,13 +2646,21 @@ async function renderCompleteCharacterKitPngs(plan, zipEntries, advance, options
       plan.reference.spec,
       'complete',
       options.referenceOutlineMode,
+      options.referenceShadeMode,
     );
     advance('Rendering the assembled reference character.');
   }
 }
 
-async function masterKitPng(zipEntries, file, spec, layer, outlineMode = E.OUTLINE_MODE_NONE) {
-  const canvas = E.buildSheet(spec, MASTER_CHARACTER_KIT_SCALE, { layer, outlineMode });
+async function masterKitPng(
+  zipEntries,
+  file,
+  spec,
+  layer,
+  outlineMode = E.OUTLINE_MODE_NONE,
+  shadeMode = E.SHADE_MODE_NONE,
+) {
+  const canvas = E.buildSheet(spec, MASTER_CHARACTER_KIT_SCALE, { layer, outlineMode, shadeMode });
   zipEntries.push({ name: file, data: await canvasToPngBytes(canvas) });
 }
 
@@ -2591,7 +2714,7 @@ async function downloadEquipmentVariantBatch() {
   try {
     for (const variant of plan.variants) {
       const spec = { kind: 'player', ...variant.spec };
-      const canvas = E.buildSheet(spec, scale, outlineRenderOptions(spec));
+      const canvas = E.buildSheet(spec, scale, assembledRenderOptions(spec));
       const file = `characters/${folder}/${variant.id}@${scale}x.png`;
       zipEntries.push({ name: file, data: await canvasToPngBytes(canvas) });
       manifestVariants.push({
@@ -2603,6 +2726,7 @@ async function downloadEquipmentVariantBatch() {
         height: canvas.height,
         spec: variant.spec,
         outlineMode: assembledOutlineMode(spec),
+        shadeMode: assembledShadeMode(spec),
         combatLoadout: manifestCombatLoadoutRecipe(spec, loadout),
       });
       advance('Rendering character variants.');
@@ -2624,6 +2748,7 @@ async function downloadEquipmentVariantBatch() {
       transparent: true,
       bakedShadow: false,
       outlineMode: E.normalizeOutlineMode(state.outlineMode),
+      shadeMode: E.normalizeShadeMode(state.shadeMode),
       variantSet: { ...plan.set },
       sourceCharacter: {
         name: characterName,
@@ -2746,7 +2871,7 @@ async function downloadClassPack() {
   try {
     for (const variant of plan.variants) {
       const spec = { kind: 'player', ...variant.spec };
-      const canvas = E.buildSheet(spec, scale, outlineRenderOptions(spec));
+      const canvas = E.buildSheet(spec, scale, assembledRenderOptions(spec));
       const file = `classes/${plan.template.id}/characters/${folder}/${variant.id}@${scale}x.png`;
       zipEntries.push({ name: file, data: await canvasToPngBytes(canvas) });
       manifestVariants.push({
@@ -2758,6 +2883,7 @@ async function downloadClassPack() {
         height: canvas.height,
         spec: variant.spec,
         outlineMode: assembledOutlineMode(spec),
+        shadeMode: assembledShadeMode(spec),
         combatLoadout: manifestCombatLoadoutRecipe(spec, loadout),
       });
       advance('Rendering class character variants.');
@@ -2779,6 +2905,7 @@ async function downloadClassPack() {
       transparent: true,
       bakedShadow: false,
       outlineMode: E.normalizeOutlineMode(state.outlineMode),
+      shadeMode: E.normalizeShadeMode(state.shadeMode),
       classTemplate: { ...plan.template },
       sourceCharacter: { name: characterName, spec: player },
       classBase: {
@@ -2846,7 +2973,11 @@ async function renderReadyPackCharacters(entries, plan, zipEntries, advance) {
   const usedPaths = new Set();
   for (const entry of entries) {
     const spec = packEntrySpec(entry);
-    const canvas = E.buildSheet(spec, MASTER_CHARACTER_KIT_SCALE, outlineRenderOptions(spec, entry.outlineMode));
+    const canvas = E.buildSheet(
+      spec,
+      MASTER_CHARACTER_KIT_SCALE,
+      assembledRenderOptions(spec, entry.outlineMode, entry.shadeMode),
+    );
     const file = uniquePackCharacterPath(entry, MASTER_CHARACTER_KIT_SCALE, usedPaths);
     zipEntries.push({ name: file, data: await canvasToPngBytes(canvas) });
     readyCharacters.push({
@@ -2860,6 +2991,7 @@ async function renderReadyPackCharacters(entries, plan, zipEntries, advance) {
       height: canvas.height,
       spec,
       outlineMode: assembledOutlineMode(spec, entry.outlineMode),
+      shadeMode: assembledShadeMode(spec, entry.shadeMode),
       combatLoadout: manifestCombatLoadoutRecipe(spec, entry.loadout),
     });
     advance('Rendering ready character sheets.');
@@ -2883,6 +3015,8 @@ async function downloadMasterCharacterKit() {
     name: characterName,
     kind: 'player',
     spec: player,
+    outlineMode: state.outlineMode,
+    shadeMode: state.shadeMode,
   }]);
   const exportedAt = new Date().toISOString();
   const total = plan.counts.totalPngs;
@@ -2904,6 +3038,7 @@ async function downloadMasterCharacterKit() {
   try {
     await renderCompleteCharacterKitPngs(plan, zipEntries, advance, {
       referenceOutlineMode: state.outlineMode,
+      referenceShadeMode: state.shadeMode,
     });
     const manifest = completeCharacterKitManifest(plan, `${characterName} Complete Kit`, exportedAt, {
       combatLoadouts: [{
@@ -2912,6 +3047,7 @@ async function downloadMasterCharacterKit() {
         recipe: manifestCombatLoadoutRecipe({ kind: 'player', ...player }, state.loadout),
       }],
       referenceOutlineMode: state.outlineMode,
+      referenceShadeMode: state.shadeMode,
     });
     zipEntries.push({
       name: 'manifest.json',
@@ -3049,7 +3185,11 @@ async function downloadCharacterPack() {
     for (const [index, entry] of entries.entries()) {
       setPackStatus(`Rendering ${index + 1} of ${entries.length}: ${entry.name}`);
       const spec = packEntrySpec(entry);
-      const canvas = E.buildSheet(spec, scale, outlineRenderOptions(spec, entry.outlineMode));
+      const canvas = E.buildSheet(
+        spec,
+        scale,
+        assembledRenderOptions(spec, entry.outlineMode, entry.shadeMode),
+      );
       const file = uniquePackCharacterPath(entry, scale, usedPaths);
       zipEntries.push({ name: file, data: await canvasToPngBytes(canvas) });
       manifestCharacters.push({
@@ -3062,6 +3202,7 @@ async function downloadCharacterPack() {
         height: canvas.height,
         spec,
         outlineMode: assembledOutlineMode(spec, entry.outlineMode),
+        shadeMode: assembledShadeMode(spec, entry.shadeMode),
         ...(entry.kind === 'effect' ? {} : { combatLoadout: manifestCombatLoadoutRecipe(spec, entry.loadout) }),
       });
     }

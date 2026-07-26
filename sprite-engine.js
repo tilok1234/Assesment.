@@ -26,7 +26,8 @@ export {
   WEAPON_TIERS,
 } from './engine/catalogs.js';
 export { drawSprite } from './engine/renderer.js';
-export { drawOutlinedSprite, enemySupportsOutline, ENEMY_OUTLINE_PILOT_FAMILIES, normalizeOutlineMode, OUTLINE_COLOR, OUTLINE_LAYER_ORDER, OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_NONE, OUTLINE_MODE_SELECTIVE_C, OUTLINE_MODES } from './engine/outline-renderer.js';
+export { drawOutlinedSprite, enemySupportsOutline, ENEMY_OUTLINE_PILOT_FAMILIES, normalizeAssembledOutlineMode, normalizeOutlineMode, OUTLINE_COLOR, OUTLINE_LAYER_ORDER, OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_NONE, OUTLINE_MODE_SELECTIVE_C, OUTLINE_MODES } from './engine/outline-renderer.js';
+export { drawAssembledSprite, normalizeShadeMode, SHADE_MODE_FORM, SHADE_MODE_NONE, SHADE_MODES } from './engine/shade-renderer.js';
 export { buildAnimationSheet, buildDirectionSheet, buildSheet, thumbURL } from './engine/sheets.js';
 export { describe, randomEffect, randomEnemy, randomPlayer } from './engine/generators.js';
 export {

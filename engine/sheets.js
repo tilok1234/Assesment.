@@ -1,19 +1,11 @@
 // Sprite-sheet assembly and thumbnail generation.
 
 import { ANIMS, DIRS, SHEET_COLS, SIZE } from './catalogs.js';
-import {
-  drawOutlinedSprite,
-  normalizeOutlineMode,
-  OUTLINE_MODE_NONE,
-} from './outline-renderer.js';
 import { drawSprite } from './renderer.js';
+import { drawAssembledSprite } from './shade-renderer.js';
 
 function drawSheetFrame(context, spec, direction, animationId, frame, options) {
-  if (normalizeOutlineMode(options.outlineMode) === OUTLINE_MODE_NONE) {
-    drawSprite(context, spec, direction, animationId, frame, options);
-    return;
-  }
-  drawOutlinedSprite(context, spec, direction, animationId, frame, options);
+  drawAssembledSprite(context, spec, direction, animationId, frame, options);
 }
 
 // ---------------- sheet builder ----------------

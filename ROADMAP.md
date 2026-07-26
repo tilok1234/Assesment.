@@ -108,11 +108,19 @@ Progress: underway. The first validated content slice adds eight facial-detail c
 Current visual checkpoint (2026-07-26): the complete 57-family enemy-outline
 rollout is visually approved at local commit `ac860aa`. The 9,696-frame enemy
 source corpus and 29,088 None-B-C cases have zero source-edge frames and zero
-out-of-bounds writes. The canonical next feature is the optional shared
-assembled-sprite shade pass in `SHADE_RENDERING_PLAN.md`; it starts from None
-parity and a small player/enemy pilot rather than another one-family-at-a-time
-rollout. The default effect-after-character shield/equipment occlusion issue
-remains deferred and explicitly outside shade scope. See `HANDOFF.md`.
+out-of-bounds writes. The optional shared assembled-sprite shade pass in
+`SHADE_RENDERING_PLAN.md` has completed its Form lane: enemy outline
+persistence is repaired, shared buffer/coordinator infrastructure exists, None
+parity passes, and a deterministic material-aware Form transform is validated
+across 12 diverse player/enemy specimens and all three outline modes. The
+Form algorithm was visually approved on 2026-07-26. Player/Enemy shade UI,
+history, comparisons, persistence migrations, assembled exports, and
+pack/recipe metadata are implemented; full enemy Form and Form/outline audits
+pass. The integrated live editor and Form as its new/reset default were
+approved on 2026-07-26 and checkpointed on `codex/form-shading`. The existing
+None fixtures remain unchanged, and there is no new baseline or release build.
+The default effect-after-character shield/equipment occlusion issue remains
+deferred and explicitly outside shade scope. See `HANDOFF.md`.
 
 The second content slice extracts humanoid weapons into a focused renderer with shared direction and pose anchors, while retaining byte-for-byte output for all existing enemy-used weapons. The player catalog grows from eight to sixteen choices with greatsword, scimitar, rapier, mace, warhammer, crossbow, wand, and spellbook additions. Each new weapon is verified across four directions and every animation, follows the animated player hand through idle, walk, attack, and lunge poses, has a distinct side strike, and observes the player face-clearance rule. Player blades also use readable style-specific hilts: compact dagger grips, sword crossguards, broad greatsword guards, scimitar knuckle guards, and rapier baskets.
 

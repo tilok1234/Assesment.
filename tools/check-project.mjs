@@ -45,6 +45,9 @@ function checkSyntax(relativePath) {
 const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
 const engine = await import(`${pathToFileURL(path.join(root, 'sprite-engine.js')).href}?check=${Date.now()}`);
 const internalCatalogs = await import(`${pathToFileURL(path.join(root, 'engine', 'catalogs.js')).href}?check=${Date.now()}`);
+const pixelBuffer = await import(`${pathToFileURL(path.join(root, 'engine', 'pixel-buffer.js')).href}?check=${Date.now()}`);
+const shadeModule = await import(`${pathToFileURL(path.join(root, 'engine', 'shade-renderer.js')).href}?check=${Date.now()}`);
+const { SHADE_PILOTS } = await import(`${pathToFileURL(path.join(root, 'tools', 'shade-pilots.mjs')).href}?check=${Date.now()}`);
 const characterKit = await import(`${pathToFileURL(path.join(root, 'character-kit.js')).href}?check=${Date.now()}`);
 const zipModule = await import(`${pathToFileURL(path.join(root, 'zip.js')).href}?check=${Date.now()}`);
 
@@ -64,7 +67,9 @@ checkSyntax('engine/variant-batches.js');
 checkSyntax('engine/generators.js');
 checkSyntax('engine/effect-renderer.js');
 checkSyntax('engine/outline-renderer.js');
+checkSyntax('engine/pixel-buffer.js');
 checkSyntax('engine/renderer.js');
+checkSyntax('engine/shade-renderer.js');
 checkSyntax('engine/shield-renderer.js');
 checkSyntax('engine/sheets.js');
 checkSyntax('engine/weapon-renderer.js');
@@ -72,6 +77,8 @@ checkSyntax('tools/build.mjs');
 checkSyntax('tools/dev-server.mjs');
 checkSyntax('tools/generate-shield-placement-audit.mjs');
 checkSyntax('tools/outline-review.mjs');
+checkSyntax('tools/shade-pilots.mjs');
+checkSyntax('tools/shade-review.mjs');
 checkSyntax('tools/weapon-readability-audit.mjs');
 checkSyntax('tools/check-windows-release.mjs');
 
@@ -98,7 +105,7 @@ for (const controlId of [
   'sheet-title', 'sheet-contract', 'export-scope',
   'previous-frame-button', 'play-pause-button', 'next-frame-button',
   'frame-buttons', 'frame-readout', 'playback-speed',
-  'outline-control', 'outline-buttons',
+  'outline-control', 'outline-buttons', 'shade-control', 'shade-buttons',
   'reset-button', 'duplicate-button', 'compare-button', 'compare-dialog',
   'saved-copy-canvas', 'current-copy-canvas', 'restore-copy-button',
   'keep-current-button', 'remove-copy-button', 'replace-copy-button',
@@ -136,7 +143,9 @@ const runtimeSources = {
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
   'engine/effect-renderer.js': await readFile(path.join(root, 'engine', 'effect-renderer.js'), 'utf8'),
   'engine/outline-renderer.js': await readFile(path.join(root, 'engine', 'outline-renderer.js'), 'utf8'),
+  'engine/pixel-buffer.js': await readFile(path.join(root, 'engine', 'pixel-buffer.js'), 'utf8'),
   'engine/renderer.js': await readFile(path.join(root, 'engine', 'renderer.js'), 'utf8'),
+  'engine/shade-renderer.js': await readFile(path.join(root, 'engine', 'shade-renderer.js'), 'utf8'),
   'engine/shield-renderer.js': await readFile(path.join(root, 'engine', 'shield-renderer.js'), 'utf8'),
   'engine/sheets.js': await readFile(path.join(root, 'engine', 'sheets.js'), 'utf8'),
   'engine/weapon-renderer.js': await readFile(path.join(root, 'engine', 'weapon-renderer.js'), 'utf8'),
@@ -153,11 +162,13 @@ const expectedEngineExports = [
   'DIRS', 'DIR_LABELS', 'ENEMIES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
   'OUTLINE_MODE_COMPLETE_B', 'OUTLINE_MODE_NONE', 'OUTLINE_MODE_SELECTIVE_C',
+  'SHADE_MODES', 'SHADE_MODE_FORM', 'SHADE_MODE_NONE',
   'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
   'applyClassTemplate', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch',
-  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawOutlinedSprite', 'drawSprite', 'enemySupportsOutline',
-  'normalizeOutlineMode', 'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout', 'sanitizeCombatLoadout', 'thumbURL',
+  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawAssembledSprite', 'drawOutlinedSprite', 'drawSprite',
+  'enemySupportsOutline', 'normalizeAssembledOutlineMode', 'normalizeOutlineMode', 'normalizeShadeMode',
+  'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout', 'sanitizeCombatLoadout', 'thumbURL',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
@@ -170,12 +181,50 @@ check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not de
 check(runtimeSources['app.js'].includes("from './character-kit.js'"), 'app.js must use the focused master character-kit planner');
 check(!runtimeSources['character-kit.js'].includes("from './engine/"), 'character-kit.js must consume only the public engine facade');
 check(runtimeSources['app.js'].includes("from './zip.js'"), 'app.js must use the standalone ZIP packaging utility');
-check(runtimeSources['app.js'].includes("PRESET_VERSION = 10"), 'app.js must keep presets under the current versioned schema');
-check(runtimeSources['app.js'].includes('![1, 2, 3, 4, 5, 6, 7, 8, 9, PRESET_VERSION].includes(saved.version)'), 'app.js must migrate version 1 through 9 preset libraries');
+check(runtimeSources['app.js'].includes("PRESET_VERSION = 11"), 'app.js must use preset schema v11 for shade persistence');
+check(
+  runtimeSources['app.js'].includes('saved.version > PRESET_VERSION'),
+  'app.js must migrate preset libraries from every legacy version through v10',
+);
 check(runtimeSources['app.js'].includes('PALETTE_VERSION = 1'), 'app.js must keep reusable palettes under an explicit versioned schema');
 check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must keep bounded sprite-edit history');
-check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'characterName', 'exportName']"), 'app.js history must include combat loadouts and outlines while remaining scoped to the editable sprite document');
-check(runtimeSources['engine/sheets.js'].includes('drawOutlinedSprite'), 'assembled sheet exports must support optional sprite outlines');
+check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'shadeMode', 'characterName', 'exportName']"), 'app.js history must include combat loadouts, outlines, and shading while remaining scoped to the editable sprite document');
+check(runtimeSources['engine/sheets.js'].includes('drawAssembledSprite'), 'assembled sheet exports must use the shared assembled-output coordinator');
+check(runtimeSources['app.js'].includes('E.drawAssembledSprite('), 'assembled editor previews must use the shared assembled-output coordinator');
+check(
+  runtimeSources['app.js'].includes('const DEFAULT_SHADE_MODE = E.SHADE_MODE_FORM')
+    && runtimeSources['app.js'].match(/shadeMode: DEFAULT_SHADE_MODE/g)?.length === 3,
+  'new and reset Player/Enemy editor documents must default to approved Form shading',
+);
+check(
+  runtimeSources['app.js'].includes("Object.prototype.hasOwnProperty.call(saved, 'shadeMode')")
+    && runtimeSources['app.js'].includes(': DEFAULT_SHADE_MODE,'),
+  'pre-shade editor state must adopt the approved Form default without changing versioned preset/pack migration',
+);
+check(runtimeSources['app.js'].includes('renderShadeControls()'), 'app.js must expose the approved player/enemy shade selector');
+check(runtimeSources['app.js'].includes("state.mode === 'player' || state.mode === 'enemy'"), 'the shade selector must stay hidden for effects');
+check(
+  runtimeSources['engine/shade-renderer.js'].includes(
+    'shade === SHADE_MODE_NONE && outline === OUTLINE_MODE_NONE',
+  ),
+  'shade and outline None must retain a direct renderer delegation branch',
+);
+check(
+  runtimeSources['app.js'].match(/outlineMode: assembledOutlineMode\(\{ kind, \.\.\.spec \}, raw\.outlineMode\)/g)?.length === 2,
+  'preset and ordinary-pack sanitizers must preserve valid assembled enemy outlines',
+);
+check(
+  runtimeSources['app.js'].match(/outlineMode: assembledOutlineMode\(\{ kind: 'enemy', \.\.\./g)?.length === 2,
+  'enemy preset and ordinary-pack loads must restore their saved outline treatment',
+);
+check(
+  runtimeSources['app.js'].match(/shadeMode: assembledShadeMode\(\{ kind, \.\.\.spec \}, raw\.shadeMode\)/g)?.length === 2,
+  'preset and ordinary-pack sanitizers must preserve valid shade modes and migrate missing values to None',
+);
+check(
+  runtimeSources['app.js'].match(/shadeMode: assembledShadeMode\(\{ kind: 'enemy', \.\.\./g)?.length === 2,
+  'enemy preset and ordinary-pack loads must restore their saved shade treatment',
+);
 check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must expose the optional sprite outline selector');
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
@@ -252,9 +301,11 @@ check(engine.SHEET_COLS * engine.SIZE === 288 && engine.DIRS.length * engine.SIZ
 check(engine.SHEET_COLS * engine.SIZE === 288 && engine.SIZE === 24, 'native direction-sheet dimensions must remain 288x24 pixels');
 check(engine.ANIMS.every((anim) => anim.frames * engine.SIZE === 48 || anim.frames * engine.SIZE === 96), 'native animation-sheet widths must remain 48 or 96 pixels');
 check(runtimeSources['app.js'].includes("PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1'"), 'character packs must use independent versioned persistence');
+check(runtimeSources['app.js'].includes('PACK_VERSION = 2'), 'ordinary character packs must use schema v2 for shade persistence');
+check(runtimeSources['app.js'].includes('[1, PACK_VERSION].includes(saved.version)'), 'ordinary character packs must migrate stored v1 libraries to v2');
 check(runtimeSources['app.js'].includes('PACK_ENTRY_LIMIT = 200'), 'character packs must keep a bounded entry count');
 check(runtimeSources['app.js'].includes('function loadPackLibrary(') && runtimeSources['app.js'].includes('function persistPackLibrary('), 'character packs must load and persist their working library');
-check(runtimeSources['app.js'].includes('const canvas = E.buildSheet(spec, scale, outlineRenderOptions(spec, entry.outlineMode))'), 'character packs must always export complete sprite sheets with their saved outline treatment');
+check(runtimeSources['app.js'].includes('assembledRenderOptions(spec, entry.outlineMode, entry.shadeMode)'), 'character packs must always export complete sprite sheets with their saved outline and shade treatments');
 check(runtimeSources['app.js'].includes("format: '8-bit-sprite-assembler-character-pack'"), 'character pack manifests must expose their stable format id');
 check(runtimeSources['app.js'].includes('buildStoredZip(zipEntries'), 'character pack downloads must assemble their PNGs and manifest into a ZIP');
 check(runtimeSources['app.js'].includes("LOADOUT_STORAGE_KEY = 'sprite-assembler-combat-loadouts-v1'"), 'combat loadouts must use independent versioned persistence');
@@ -326,10 +377,10 @@ const rosterKitEntries = Array.from({ length: 24 }, (_, index) => ({
   },
 }));
 check(characterKit.COMPLETE_CHARACTER_KIT_FORMAT === '8-bit-sprite-assembler-complete-character-kit', 'complete character kits must expose a stable format id');
-check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 10, 'complete character kits must use the expanded species component schema');
+check(characterKit.COMPLETE_CHARACTER_KIT_VERSION === 11, 'complete character kits must use schema v11 for assembled shade metadata');
 check(characterKit.COMPLETE_CHARACTER_KIT_RECIPE_LIMIT === 24, 'complete character kits must support up to 24 deduplicated recipes');
 check(characterKit.COMPLETE_CHARACTER_PACK_FORMAT === '8-bit-sprite-assembler-complete-character-pack', 'combined complete packs must expose a distinct stable format id');
-check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 10, 'combined complete packs must use the expanded species component schema');
+check(characterKit.COMPLETE_CHARACTER_PACK_VERSION === 11, 'combined complete packs must use schema v11 for assembled shade metadata');
 check(
   JSON.stringify(characterKit.COMPLETE_CHARACTER_KIT_LAYER_ORDER) === JSON.stringify([
     'weapon-back', 'shield-back', 'species-back', 'outfit-back', 'outfit', 'skin-body', 'head',
@@ -339,6 +390,23 @@ check(
 );
 const completeKitPlan = characterKit.buildCompleteCharacterKitPlan(rosterKitEntries);
 check(completeKitPlan.recipes.length === 24, 'complete character kits must retain 24 saved characters as lightweight recipes');
+check(
+  completeKitPlan.recipes.every((recipe) => (
+    recipe.outlineMode === engine.OUTLINE_MODE_NONE
+      && recipe.shadeMode === engine.SHADE_MODE_NONE
+  )),
+  'legacy Complete Kit recipes must migrate missing outline and shade metadata to None',
+);
+const shadedCompleteKitPlan = characterKit.buildCompleteCharacterKitPlan([{
+  ...rosterKitEntries[0],
+  outlineMode: engine.OUTLINE_MODE_SELECTIVE_C,
+  shadeMode: engine.SHADE_MODE_FORM,
+}]);
+check(
+  shadedCompleteKitPlan.recipes[0]?.outlineMode === engine.OUTLINE_MODE_SELECTIVE_C
+    && shadedCompleteKitPlan.recipes[0]?.shadeMode === engine.SHADE_MODE_FORM,
+  'Complete Kit schema v11 recipes must retain approved outline and shade metadata',
+);
 check(
   completeKitPlan.counts.componentPngs === 1910
     && completeKitPlan.counts.enemyFamilies === 57
@@ -448,7 +516,7 @@ check(runtimeSources['app.js'].includes("advance('Rendering native enemy sheets.
 check(runtimeSources['app.js'].includes("advance('Rendering synchronized combat-effect overlays.')"), 'Complete Character Kits must render the planned combat-effect library');
 check(runtimeSources['app.js'].includes('function renderReadyPackCharacters('), 'Complete Character Packs must include ready-to-use assembled character sheets');
 check(runtimeSources['app.js'].includes('includeReference: false'), 'combined packs must reuse a ready character as the reference instead of duplicating its PNG');
-check(runtimeSources['app.js'].includes('MASTER_CHARACTER_KIT_SCALE, { layer, outlineMode }'), 'Complete Character Kits must render every requested compositing layer at native scale');
+check(runtimeSources['app.js'].includes('MASTER_CHARACTER_KIT_SCALE, { layer, outlineMode, shadeMode }'), 'Complete Character Kits must render every requested compositing layer at native scale while keeping shade options explicit');
 check(runtimeSources['app.js'].includes("-complete-character-kit.zip`"), 'Complete Character Kit downloads must use an unambiguous filename');
 check(runtimeSources['app.js'].includes("-complete-character-pack.zip`"), 'combined Complete Character Pack downloads must use an unambiguous filename');
 check(!runtimeSources['app.js'].includes('buildMasterRosterKitPlan'), 'the app must not expose the duplicate-heavy roster body-matrix exporter');
@@ -607,6 +675,476 @@ function renderOutlinedPixels(spec, dir, animId, frame, outlineMode, opts = {}) 
     outlineMode,
   });
   return pixels;
+}
+
+function renderAssembledPixels(
+  spec,
+  dir,
+  animId,
+  frame,
+  {
+    shadeMode = engine.SHADE_MODE_NONE,
+    outlineMode = engine.OUTLINE_MODE_NONE,
+    shadow = false,
+    ...opts
+  } = {},
+) {
+  const pixels = new Array(engine.SIZE * engine.SIZE).fill(null);
+  let fillStyle = '#000000';
+  const ctx = {
+    clearRect() { pixels.fill(null); },
+    get fillStyle() { return fillStyle; },
+    set fillStyle(value) { fillStyle = value; },
+    fillRect(x, y, width, height) {
+      for (let py = y; py < y + height; py++) {
+        for (let px = x; px < x + width; px++) {
+          if (px >= 0 && py >= 0 && px < engine.SIZE && py < engine.SIZE) {
+            pixels[(py * engine.SIZE) + px] = fillStyle;
+          }
+        }
+      }
+    },
+  };
+  engine.drawAssembledSprite(ctx, spec, dir, animId, frame, {
+    ...opts,
+    shadow,
+    shadeMode,
+    outlineMode,
+  });
+  return pixels;
+}
+
+function pixelsMatch(left, right) {
+  return left.length === right.length && left.every((pixel, index) => pixel === right[index]);
+}
+
+check(
+  JSON.stringify(engine.SHADE_MODES.map((mode) => mode.id)) === JSON.stringify(['none', 'form']),
+  'shade modes must expose stable None and Form ids',
+);
+check(engine.normalizeShadeMode() === engine.SHADE_MODE_NONE, 'missing shade ids must sanitize to None');
+check(engine.normalizeShadeMode('invalid') === engine.SHADE_MODE_NONE, 'invalid shade ids must sanitize to None');
+check(engine.normalizeShadeMode(engine.SHADE_MODE_FORM) === engine.SHADE_MODE_FORM, 'Form must remain a stable shade id');
+check(
+  engine.normalizeAssembledOutlineMode(
+    { kind: 'enemy', family: 'slime', variant: 'lime' },
+    engine.OUTLINE_MODE_COMPLETE_B,
+  ) === engine.OUTLINE_MODE_COMPLETE_B,
+  'legacy enemy preset and ordinary-pack entries must preserve valid outline ids',
+);
+check(
+  engine.normalizeAssembledOutlineMode(
+    { kind: 'enemy', family: 'slime', variant: 'lime' },
+    'invalid',
+  ) === engine.OUTLINE_MODE_NONE,
+  'legacy enemy preset and ordinary-pack entries must migrate invalid outline ids to None',
+);
+check(
+  engine.normalizeAssembledOutlineMode(
+    { kind: 'enemy', family: 'slime', variant: 'lime' },
+  ) === engine.OUTLINE_MODE_NONE,
+  'legacy enemy preset and ordinary-pack entries must migrate missing outline ids to None',
+);
+check(
+  engine.normalizeAssembledOutlineMode(
+    { kind: 'effect', category: 'trails', effect: 'sword-slash' },
+    engine.OUTLINE_MODE_COMPLETE_B,
+  ) === engine.OUTLINE_MODE_NONE,
+  'effect entries must remain outside assembled outline persistence',
+);
+
+const pixelBufferParitySpec = {
+  kind: 'player',
+  species: 'human',
+  bodyBuild: 'classic',
+  skin: 'peach',
+  hairStyle: 'spiky',
+  hairColor: 'brown',
+  expression: 'neutral',
+  faceDetail: 'none',
+  headgear: 'none',
+  outfit: 'tunic',
+  outfitTier: 'tier1',
+  outfitColor: 'charcoal',
+  weapon: 'sword',
+  weaponTier: 'tier1',
+  shield: 'round',
+  shieldTier: 'tier1',
+  palette: null,
+};
+check(
+  pixelsMatch(
+    pixelBuffer.renderSpritePixels(
+      pixelBufferParitySpec,
+      'down',
+      'idle',
+      0,
+      { shadow: false },
+    ),
+    renderPixels(pixelBufferParitySpec, 'down', 'idle', 0),
+  ),
+  'shared pixel-buffer capture must remain pixel-identical to the source renderer',
+);
+check(
+  pixelBuffer.isTransparentPixel(null)
+    && pixelBuffer.isTransparentPixel(undefined)
+    && !pixelBuffer.isTransparentPixel('#000000'),
+  'shared pixel-buffer transparency checks must distinguish only nullish cells',
+);
+
+const shadeNonePlayerParitySpecs = [
+  pixelBufferParitySpec,
+  {
+    ...pixelBufferParitySpec,
+    species: 'elf',
+    bodyBuild: 'sturdy',
+    expression: 'determined',
+    headgear: 'plumed',
+    outfit: 'plate',
+    outfitTier: 'tier5',
+    weapon: 'greatsword',
+    weaponTier: 'tier5',
+    shield: 'kite',
+    shieldTier: 'tier5',
+  },
+  {
+    ...pixelBufferParitySpec,
+    species: 'lizardfolk',
+    bodyBuild: 'lean',
+    skin: 'orc',
+    hairStyle: 'mohawk',
+    hairColor: 'ginger',
+    expression: 'surprised',
+    faceDetail: 'warpaint',
+    outfit: 'ranger',
+    outfitTier: 'tier4',
+    outfitColor: 'forest',
+    weapon: 'spear',
+    weaponTier: 'tier5',
+    shield: 'none',
+  },
+  {
+    ...pixelBufferParitySpec,
+    species: 'tiefling',
+    bodyBuild: 'heroic',
+    skin: 'pale',
+    hairStyle: 'bald',
+    expression: 'angry',
+    outfit: 'robe',
+    outfitTier: 'tier5',
+    outfitColor: 'purple',
+    weapon: 'staff',
+    weaponTier: 'tier5',
+    shield: 'arcane',
+    shieldTier: 'tier5',
+  },
+  {
+    ...pixelBufferParitySpec,
+    species: 'undead',
+    bodyBuild: 'classic',
+    hairStyle: 'bald',
+    outfit: 'necromancer',
+    outfitTier: 'tier3',
+    weapon: 'wand',
+    weaponTier: 'tier4',
+    shield: 'bone',
+    shieldTier: 'tier4',
+  },
+  {
+    ...pixelBufferParitySpec,
+    species: 'dwarf',
+    bodyBuild: 'sturdy',
+    hairStyle: 'braids',
+    hairColor: 'white',
+    expression: 'happy',
+    faceDetail: 'beard',
+    headgear: 'circlet',
+    outfit: 'cleric',
+    outfitTier: 'tier4',
+    outfitColor: 'gold',
+    weapon: 'mace',
+    weaponTier: 'tier5',
+    shield: 'heater',
+    shieldTier: 'tier5',
+    palette: {
+      skin: ['#b56c53', '#7a3f39'],
+      hair: ['#d9c7a5', '#8b765d'],
+      outfit: ['#4f7f70', '#2f4d48'],
+    },
+  },
+];
+let shadeNonePlayerParityCases = 0;
+for (const spec of shadeNonePlayerParitySpecs) for (const direction of engine.DIRS) {
+  for (const animation of engine.ANIMS) for (let frame = 0; frame < animation.frames; frame++) {
+    const source = renderPixels(spec, direction, animation.id, frame);
+    const assembled = renderAssembledPixels(spec, direction, animation.id, frame);
+    check(
+      pixelsMatch(source, assembled),
+      `shade/outline None must preserve sampled player ${direction} ${animation.id}/${frame + 1}`,
+    );
+    for (const outlineMode of [
+      engine.OUTLINE_MODE_COMPLETE_B,
+      engine.OUTLINE_MODE_SELECTIVE_C,
+    ]) {
+      const outlined = renderOutlinedPixels(spec, direction, animation.id, frame, outlineMode);
+      const assembledOutlined = renderAssembledPixels(spec, direction, animation.id, frame, {
+        outlineMode,
+      });
+      check(
+        pixelsMatch(outlined, assembledOutlined),
+        `shade None plus ${outlineMode} must preserve sampled player ${direction} ${animation.id}/${frame + 1}`,
+      );
+    }
+    shadeNonePlayerParityCases++;
+  }
+}
+
+let shadeNoneEnemyParityCases = 0;
+let shadeNoneEnemyOutlineParityCases = 0;
+let formEnemyAuditCases = 0;
+let formEnemyCombinedOutlineCases = 0;
+for (const family of engine.ENEMIES) for (const variant of family.variants) {
+  const spec = { kind: 'enemy', family: family.id, variant: variant.id };
+  for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+    for (let frame = 0; frame < animation.frames; frame++) {
+      const source = renderPixels(spec, direction, animation.id, frame);
+      const assembled = renderAssembledPixels(spec, direction, animation.id, frame);
+      check(
+        pixelsMatch(source, assembled),
+        `shade/outline None must preserve ${family.id}/${variant.id} ${direction} ${animation.id}/${frame + 1}`,
+      );
+      const form = renderAssembledPixels(spec, direction, animation.id, frame, {
+        shadeMode: engine.SHADE_MODE_FORM,
+      });
+      const repeat = renderAssembledPixels(spec, direction, animation.id, frame, {
+        shadeMode: engine.SHADE_MODE_FORM,
+      });
+      const protectedMask = shadeModule.protectedShadeMask(source);
+      const prefix = `${family.id}/${variant.id} ${direction} ${animation.id}/${frame + 1}`;
+      check(pixelsMatch(form, repeat), `${prefix} Form output must be deterministic`);
+      for (let index = 0; index < form.length; index++) {
+        check(
+          form[index] === null || /^#[0-9a-f]{6}$/.test(form[index]),
+          `${prefix} Form must emit only transparent or finite in-gamut hex pixels`,
+        );
+        if (!source[index]) {
+          check(form[index] === null, `${prefix} Form must preserve transparent source cells`);
+        } else {
+          check(form[index] !== internalCatalogs.INK || source[index] === internalCatalogs.INK, `${prefix} Form must not collapse a source pixel to INK`);
+        }
+        if (protectedMask[index]) {
+          check(form[index] === source[index], `${prefix} Form must preserve protected source features`);
+        }
+      }
+      shadeNoneEnemyParityCases++;
+      formEnemyAuditCases++;
+    }
+  }
+  for (const direction of engine.DIRS) for (const outlineMode of [
+    engine.OUTLINE_MODE_COMPLETE_B,
+    engine.OUTLINE_MODE_SELECTIVE_C,
+  ]) {
+    const source = renderPixels(spec, direction, 'attack', 1);
+    const outlined = renderOutlinedPixels(spec, direction, 'attack', 1, outlineMode);
+    const assembledOutlined = renderAssembledPixels(spec, direction, 'attack', 1, {
+      outlineMode,
+    });
+    check(
+      pixelsMatch(outlined, assembledOutlined),
+      `shade None plus ${outlineMode} must preserve ${family.id}/${variant.id} ${direction} attack/2`,
+    );
+    const formOutlined = renderAssembledPixels(spec, direction, 'attack', 1, {
+      shadeMode: engine.SHADE_MODE_FORM,
+      outlineMode,
+    });
+    const prefix = `${family.id}/${variant.id} ${direction} attack/2 ${outlineMode}`;
+    for (let index = 0; index < formOutlined.length; index++) {
+      if (outlined[index] !== source[index]) {
+        check(formOutlined[index] === outlined[index], `${prefix} Form must preserve approved outline/contact pixels`);
+      } else if (formOutlined[index] !== outlined[index]) {
+        check(Boolean(source[index]), `${prefix} Form may change only source-owned pixels`);
+      }
+    }
+    shadeNoneEnemyOutlineParityCases++;
+    formEnemyCombinedOutlineCases++;
+  }
+}
+
+const materialUnitPixels = new Array(25).fill(null);
+for (let y = 1; y <= 3; y++) for (let x = 1; x <= 3; x++) {
+  materialUnitPixels[(y * 5) + x] = '#eab98a';
+}
+const materialUnitLookup = shadeModule.buildShadeMaterialLookup({
+  kind: 'player',
+  skin: 'peach',
+  hairColor: 'brown',
+  outfitColor: 'royal',
+});
+const materialUnitRamp = materialUnitLookup.get('#eab98a').ramp;
+const materialUnitShaded = shadeModule.shadePixels(
+  materialUnitPixels,
+  materialUnitLookup,
+  { width: 5, height: 5 },
+);
+check(
+  materialUnitShaded[6] === materialUnitRamp.highlight,
+  'Form top exposure must use the resolved material highlight',
+);
+check(
+  materialUnitShaded[16] === materialUnitRamp.shadow,
+  'Form bottom exposure must use the resolved material shadow',
+);
+check(
+  materialUnitShaded[13] === materialUnitRamp.side,
+  'Form right exposure must use the resolved material side shade',
+);
+check(
+  materialUnitShaded[12] === '#eab98a',
+  'Form interior material pixels must remain unchanged',
+);
+
+const precedencePixels = new Array(9).fill(null);
+precedencePixels[4] = '#eab98a';
+const precedenceShaded = shadeModule.shadePixels(
+  precedencePixels,
+  materialUnitLookup,
+  { width: 3, height: 3, protectedMask: new Uint8Array(9) },
+);
+check(
+  precedenceShaded[4] === materialUnitRamp.highlight,
+  'Form top exposure must win for a feature exposed on both top and bottom',
+);
+
+const unknownUnitPixels = new Array(25).fill(null);
+for (let y = 1; y <= 3; y++) for (let x = 1; x <= 3; x++) {
+  unknownUnitPixels[(y * 5) + x] = '#668899';
+}
+const unknownUnitShaded = shadeModule.shadePixels(
+  unknownUnitPixels,
+  new Map(),
+  { width: 5, height: 5 },
+);
+check(
+  unknownUnitShaded.every((color) => color === null || /^#[0-9a-f]{6}$/.test(color)),
+  'unknown-color fallback must emit only finite in-gamut hex colors',
+);
+check(
+  !unknownUnitShaded.some((color, index) => color === internalCatalogs.INK && unknownUnitPixels[index] !== color),
+  'unknown-color fallback must not collapse a source color to INK',
+);
+check(
+  Number.isFinite(shadeModule.relativeLuminance('#668899'))
+    && Number.isNaN(shadeModule.relativeLuminance('invalid')),
+  'Form must expose a clearly bounded sRGB relative-luminance calculation',
+);
+
+let shadePilotCases = 0;
+let shadePilotChangedPixels = 0;
+let shadePilotProtectedPixels = 0;
+let shadePilotDeterminismCases = 0;
+let shadePilotMaterialControlDifferences = 0;
+const shadePilotChangedById = new Map(SHADE_PILOTS.map((pilot) => [pilot.id, 0]));
+const shadePilotControlDifferencesById = new Map(SHADE_PILOTS.map((pilot) => [pilot.id, 0]));
+for (const pilot of SHADE_PILOTS) {
+  for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+    for (let frame = 0; frame < animation.frames; frame++) {
+      const source = renderPixels(pilot.spec, direction, animation.id, frame);
+      const protectedMask = shadeModule.protectedShadeMask(source);
+      const materialLookup = shadeModule.buildShadeMaterialLookup(pilot.spec);
+      const materialForm = shadeModule.shadePixels(source, materialLookup, { protectedMask });
+      const silhouetteControl = shadeModule.shadePixels(source, materialLookup, {
+        protectedMask,
+        silhouetteOnly: true,
+      });
+      for (let index = 0; index < source.length; index++) {
+        if (materialForm[index] === silhouetteControl[index]) continue;
+        shadePilotMaterialControlDifferences++;
+        shadePilotControlDifferencesById.set(
+          pilot.id,
+          shadePilotControlDifferencesById.get(pilot.id) + 1,
+        );
+      }
+      for (const outlineMode of [
+        engine.OUTLINE_MODE_NONE,
+        engine.OUTLINE_MODE_COMPLETE_B,
+        engine.OUTLINE_MODE_SELECTIVE_C,
+      ]) {
+        const before = renderAssembledPixels(pilot.spec, direction, animation.id, frame, {
+          outlineMode,
+        });
+        const form = renderAssembledPixels(pilot.spec, direction, animation.id, frame, {
+          shadeMode: engine.SHADE_MODE_FORM,
+          outlineMode,
+        });
+        const repeat = renderAssembledPixels(pilot.spec, direction, animation.id, frame, {
+          shadeMode: engine.SHADE_MODE_FORM,
+          outlineMode,
+        });
+        const prefix = `${pilot.id} ${direction} ${animation.id}/${frame + 1} ${outlineMode}`;
+        check(pixelsMatch(form, repeat), `${prefix} Form output must be deterministic`);
+        for (let index = 0; index < form.length; index++) {
+          check(
+            form[index] === null || /^#[0-9a-f]{6}$/.test(form[index]),
+            `${prefix} must emit only transparent or finite in-gamut hex pixels`,
+          );
+          if (before[index] !== source[index]) {
+            check(
+              form[index] === before[index],
+              `${prefix} must preserve every approved contour/contact separator`,
+            );
+          }
+          if (protectedMask[index]) {
+            check(
+              form[index] === before[index],
+              `${prefix} must preserve protected dark, white, and tiny-accent pixels`,
+            );
+            if (source[index]) shadePilotProtectedPixels++;
+          }
+          if (form[index] !== before[index]) {
+            check(Boolean(source[index]), `${prefix} may change only source-owned pixels`);
+            check(
+              form[index] !== internalCatalogs.INK,
+              `${prefix} must not collapse a changed source pixel to INK`,
+            );
+            shadePilotChangedPixels++;
+            shadePilotChangedById.set(
+              pilot.id,
+              shadePilotChangedById.get(pilot.id) + 1,
+            );
+          }
+        }
+        shadePilotCases++;
+        shadePilotDeterminismCases++;
+      }
+    }
+  }
+  const sourceWithoutShadow = renderPixels(pilot.spec, 'down', 'idle', 0);
+  const sourceWithShadow = pixelBuffer.renderSpritePixels(
+    pilot.spec,
+    'down',
+    'idle',
+    0,
+    { shadow: true },
+  );
+  const formWithShadow = renderAssembledPixels(pilot.spec, 'down', 'idle', 0, {
+    shadeMode: engine.SHADE_MODE_FORM,
+    shadow: true,
+  });
+  check(
+    sourceWithoutShadow.every((
+      color,
+      index,
+    ) => color !== null || formWithShadow[index] === sourceWithShadow[index]),
+    `${pilot.id} Form must preserve the exact floor shadow and transparent background`,
+  );
+  check(
+    shadePilotChangedById.get(pilot.id) > 0,
+    `${pilot.id} must receive a visible Form treatment in the pilot`,
+  );
+  check(
+    shadePilotControlDifferencesById.get(pilot.id) > 0,
+    `${pilot.id} material-region Form must remain distinct from the silhouette-only control`,
+  );
 }
 
 function cardinalPixelComponentGroups(pixels) {
@@ -2758,7 +3296,7 @@ for (const tier of engine.OUTFIT_TIERS) {
 }
 
 check(engine.CLASS_PACK_FORMAT === '8-bit-sprite-assembler-class-pack', 'class packs must expose a stable game-facing format id');
-check(engine.CLASS_PACK_VERSION === 1, 'class packs must use an explicit schema version');
+check(engine.CLASS_PACK_VERSION === 2, 'class packs must use schema v2 for assembled shade metadata');
 check(engine.DEFAULT_CLASS_TEMPLATE === 'warrior', 'Warrior must remain the safe default class template');
 check(
   JSON.stringify(engine.CLASS_TEMPLATES.map((template) => template.id))
@@ -2889,7 +3427,7 @@ check(
 );
 
 check(engine.VARIANT_BATCH_FORMAT === '8-bit-sprite-assembler-equipment-variant-batch', 'equipment batches must expose a stable game-facing format id');
-check(engine.VARIANT_BATCH_VERSION === 1, 'equipment batches must use an explicit schema version');
+check(engine.VARIANT_BATCH_VERSION === 2, 'equipment batches must use schema v2 for assembled shade metadata');
 check(engine.DEFAULT_VARIANT_BATCH_SET === 'rpg-equipment', 'the default equipment batch must be the deduplicated RPG collection');
 check(
   JSON.stringify(engine.VARIANT_BATCH_SETS.map((set) => set.id))
@@ -3764,6 +4302,42 @@ try {
       }
     }
   }
+
+  for (const pilot of [SHADE_PILOTS[0], SHADE_PILOTS[6]]) {
+    for (const outlineMode of [
+      engine.OUTLINE_MODE_NONE,
+      engine.OUTLINE_MODE_COMPLETE_B,
+      engine.OUTLINE_MODE_SELECTIVE_C,
+    ]) {
+      const options = {
+        shadeMode: engine.SHADE_MODE_FORM,
+        outlineMode,
+        shadow: false,
+      };
+      const fullSheet = engine.buildSheet(pilot.spec, 1, options);
+      for (const [directionRow, direction] of engine.DIRS.entries()) {
+        const directionSheet = engine.buildDirectionSheet(pilot.spec, direction, 1, options);
+        let column = 0;
+        for (const animation of engine.ANIMS) {
+          const animationSheet = engine.buildAnimationSheet(pilot.spec, animation.id, 1, options);
+          for (let frame = 0; frame < animation.frames; frame++) {
+            const expected = renderAssembledPixels(
+              pilot.spec,
+              direction,
+              animation.id,
+              frame,
+              options,
+            );
+            const prefix = `${pilot.id} Form ${outlineMode} ${direction} ${animation.id}/${frame + 1}`;
+            checkExportFrame(fullSheet, column, directionRow, expected, `${prefix} full export must match the assembled coordinator`);
+            checkExportFrame(directionSheet, column, 0, expected, `${prefix} direction export must match the assembled coordinator`);
+            checkExportFrame(animationSheet, frame, directionRow, expected, `${prefix} animation export must match the assembled coordinator`);
+            column++;
+          }
+        }
+      }
+    }
+  }
 } finally {
   if (originalDocument === undefined) delete globalThis.document;
   else globalThis.document = originalDocument;
@@ -4091,6 +4665,10 @@ for (const dir of engine.DIRS) {
 
 const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
 check(packageJson.scripts?.build === 'node tools/build.mjs', 'package.json must expose the production build command');
+check(
+  packageJson.scripts?.['review:shades'] === 'node tools/shade-review.mjs',
+  'package.json must expose the focused shade review generator',
+);
 check(packageJson.scripts?.['tauri:build'] === 'tauri build --bundles nsis', 'package.json must expose the Windows installer build command');
 check(packageJson.scripts?.['tauri:build:exe'] === 'tauri build --no-bundle', 'package.json must preserve the proof Windows executable command');
 check(packageJson.devDependencies?.['@tauri-apps/cli'] === '^2.11.0', 'Tauri CLI must stay pinned to the approved 2.11 line');
@@ -4205,6 +4783,16 @@ console.log(`- Enemy families: ${manifest.enemies.length}`);
 console.log(`- Enemy variants: ${enemyRefs.length}`);
 console.log(`- Combat effects: ${effectRefs.length}`);
 console.log(`- Player samples: ${playerRefs.length}`);
+console.log(`- Shade Core/None player parity cases: ${shadeNonePlayerParityCases}`);
+console.log(`- Shade Core/None enemy parity cases: ${shadeNoneEnemyParityCases}`);
+console.log(`- Shade Core/None enemy outline parity cases: ${shadeNoneEnemyOutlineParityCases}`);
+console.log(`- Form pilot cases: ${shadePilotCases}`);
+console.log(`- Form pilot changed pixels: ${shadePilotChangedPixels}`);
+console.log(`- Form pilot protected pixels: ${shadePilotProtectedPixels}`);
+console.log(`- Form pilot determinism cases: ${shadePilotDeterminismCases}`);
+console.log(`- Form/material-control pixel differences: ${shadePilotMaterialControlDifferences}`);
+console.log(`- Full enemy Form audit cases: ${formEnemyAuditCases}`);
+console.log(`- Enemy Form/outline integration cases: ${formEnemyCombinedOutlineCases}`);
 console.log(`- Frame-safe weapon cases: ${frameSafeWeaponCases}`);
 console.log(`- Frame-safe shield cases: ${frameSafeShieldCases}`);
 console.log(`- Frame-safe headgear cases: ${frameSafeHeadgearCases}`);

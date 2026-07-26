@@ -4,12 +4,17 @@ Date: 2026-07-26
 
 ## Canonical Continuation
 
-The enemy-outline phase is complete. The next planned phase is the optional
-shared assembled-sprite shade pass in `SHADE_RENDERING_PLAN.md`.
+The enemy-outline phase is complete. Its persistence prerequisite, shade
+Core/None infrastructure, approved Form algorithm, and unified Player/Enemy
+integration are approved in the safe shade checkpoint on
+`codex/form-shading`, based on documentation checkpoint `630ddf7`.
 
-No shade code exists yet. Start from the clean documentation checkpoint after
-`ac860aa`, read this handoff and the shade plan completely, verify the live
-worktree, and keep the first shade checkpoint pixel-identical.
+The user explicitly approved both the Form algorithm and live integration on
+2026-07-26, then selected Form as the new/reset Player/Enemy editor default.
+The integration adds shade state, history, comparisons, live previews,
+persistence migrations, assembled exports, and pack/recipe metadata. None
+remains the engine compatibility mode and versioned legacy-artwork fallback.
+No new fixture or baseline was accepted, and no release artifact was rebuilt.
 
 Do not resume old weapon, shield, transparency, effect-compositor, executable,
 or enemy-outline work unless the user explicitly changes priority.
@@ -24,19 +29,23 @@ or enemy-outline work unless the user explicitly changes priority.
    git log -5 --oneline
    ```
 
-2. Confirm the branch is based on the documentation checkpoint immediately
-   after `ac860aa` (`Add approved Porcupine outlines`).
+2. Confirm `codex/form-shading` still contains the safe shade checkpoint based
+   on documentation checkpoint `630ddf7`, immediately after `ac860aa`
+   (`Add approved Porcupine outlines`).
 3. Read `README.md`, `ARCHITECTURE.md`, this file,
    `OUTLINE_RENDERING_PLAN.md`, `ENEMY_OUTLINE_PLAN.md`, and
    `SHADE_RENDERING_PLAN.md`.
-4. Preserve a clean worktree. Do not reset, restore, stash, merge, push, accept
-   baselines, or rebuild release artifacts automatically.
-5. Before implementation, tell the user that the first shade step is the
-   Core/None checkpoint and contains no visible color change.
+4. Inspect the current diff before editing. Do not reset, restore, stash,
+   merge, push, accept baselines, or rebuild release artifacts automatically.
+5. Confirm the next requested scope. The shade lane is approved and
+   checkpointed. Recommended next work is the independent effect/shield
+   compositor lane; fixture/baseline or release work still requires separate
+   authorization.
 
 ## Git State At Handoff
 
 - Completed outline branch: `codex/enemy-outlines`
+- Approved shade checkpoint branch: `codex/form-shading`
 - Final approved enemy-outline commit: `ac860aa`
   (`Add approved Porcupine outlines`)
 - Parent transparency checkpoint: `690aec0`
@@ -49,6 +58,10 @@ or enemy-outline work unless the user explicitly changes priority.
 - The documentation checkpoint containing this handoff and
   `SHADE_RENDERING_PLAN.md` should be the clean base for the next worktree.
   Verify its exact HEAD rather than copying a hash from chat.
+- The shade branch was created from detached documentation checkpoint
+  `630ddf7` because `codex/enemy-outlines` remained attached to its isolated
+  temporary worktree. Core/None, Form, persistence, UI, export, schema,
+  validation, and documentation are contained in the shade checkpoint.
 
 ## Completed Enemy-Outline State
 
@@ -94,28 +107,31 @@ final-status sections describe the completed state.
   not outlined.
 - Do not change outline geometry as part of the shade algorithm.
 
-## Known Pre-Shade Integration Gap
+## Resolved Pre-Shade Integration Gap
 
-Enemy outlines are complete in live rendering, previews, comparisons, and
-sheet generation, but persistence is not fully integrated:
+Enemy outline persistence is now integrated across live state, previews,
+comparisons, sheets, presets, and ordinary character packs:
 
-- `app.js` exposes the selector for Player and Enemies;
-- live enemy rendering honors the active outline mode;
-- `sanitizePreset()` and `sanitizePackEntry()` currently preserve
-  `outlineMode` only for player entries;
-- loading an enemy preset or ordinary pack entry therefore restores its
-  outline treatment as None.
+- `normalizeAssembledOutlineMode()` accepts valid modes only for assembled
+  players and approved enemies;
+- `sanitizePreset()` and `sanitizePackEntry()` preserve valid enemy
+  `outlineMode` values;
+- enemy preset and ordinary-pack load paths restore the saved mode;
+- missing or invalid legacy values migrate to None;
+- effects remain untreated.
 
-Do not describe enemy outline persistence as complete. Decide explicitly
-whether to fix this as a small prerequisite checkpoint or migrate it alongside
-shade persistence. Do not silently change schema behavior without direct
-migration tests.
+Preset v10 and ordinary-pack v1 already stored `outlineMode`, so this
+compatibility repair changes no serialized structure and requires no schema
+bump. Direct compatibility assertions cover valid, missing, invalid, and
+effect cases.
 
 ## Shade Plan Boundary
 
-`SHADE_RENDERING_PLAN.md` is planning-only at this checkpoint. The intended
-feature is one optional `Form` treatment for complete assembled players and
-enemies.
+`SHADE_RENDERING_PLAN.md` remains the canonical authority. Core/None, the
+visually approved Form algorithm, review tooling, and unified Player/Enemy
+integration are implemented and visually approved. Form is the new/reset
+editor default. Fixtures, baselines, and release work remain separately
+approval-gated.
 
 The required rendering order is:
 
@@ -135,7 +151,7 @@ Hard requirements:
 - effects and non-complete atomic layers always delegate untreated;
 - no procedural geometry, animation, frame layout, floor shadow, outline
   pixel, contact separator, or atomic component changes;
-- no automatic fixture, baseline, manifest, executable, commit, or push;
+- no automatic fixture, baseline, manifest, or executable change;
 - review effects Off so the deferred effect compositor cannot contaminate the
   visual decision.
 
@@ -145,38 +161,70 @@ Follow the commit sequence in `SHADE_RENDERING_PLAN.md`.
 
 ### 1. Core/None checkpoint
 
-- extract shared internal pixel-buffer helpers;
-- add the shade mode catalog and normalization;
-- expose only the required public facade entries;
-- prove direct delegation and broad None parity;
-- make no visible Form change and add no UI.
+- complete: shared internal pixel-buffer helpers;
+- complete: shade mode catalog and normalization;
+- complete: public facade entries and assembled-output coordinator;
+- complete: direct delegation and broad None parity;
+- complete: no visible Form change and no UI.
 
-This is the safest first implementation slice.
+Current validation passes 288 broad player parity cases, all 9,696 enemy
+source frames, and 1,616 sampled enemy outline-combination cases, in addition
+to the existing full project validator.
 
 ### 2. Form algorithm pilot
 
-- implement a pure deterministic material-aware shade transform;
-- protect INK, exact white hurt flashes, floor shadows, effects, outlines, and
-  approved tiny accents;
-- add `tools/shade-review.mjs`;
-- compare material-region behavior against the silhouette-only control;
-- stop for visual approval.
+- complete and visually approved: pure deterministic material-aware shade
+  transform;
+- complete: INK, exact white hurt flashes, floor shadows, effects, outlines,
+  contact separators, and approved tiny accents are protected;
+- complete: `tools/shade-review.mjs` and `npm.cmd run review:shades`;
+- complete: 12-specimen material-region comparison against the silhouette-only
+  control;
+- approved by the user on 2026-07-26; parchment is now the default review
+  background while dark remains selectable.
+
+The validator passes 1,728 deterministic Form cases with 94,463 changed
+source-owned pixels, 100,335 protected-pixel checks across the three outline
+modes, and 21,086 material/control pixel differences. The generated review
+covers 576 source frames; `shade-review/` is ignored and is not a baseline.
 
 ### 3. Unified player surfaces
 
-Only after the algorithm pilot is approved, route assembled player previews,
-comparisons, sheets, exports, history, and persistence through one coordinator.
+Implemented, approved, and checkpointed:
+
+- new/reset Player/Enemy editor documents default to Form;
+- versioned legacy preset/pack/recipe fields still sanitize missing or invalid
+  shade values to None;
+- Player/Enemy selector, comparisons, history, resets, caches, previews, and
+  assembled exports preserve Form;
+- Effects hides the selector and always delegates untreated;
+- undo/redo and cross-mode retention pass browser smoke;
+- the live Player + Form surface was visually approved on 2026-07-26.
 
 ### 4. Enemy pilot and rollout
 
-Use the small diverse matrix in the shade plan. Do not repeat the
-one-family-at-a-time outline rollout unless a family is a genuine visual
-outlier.
+Implemented, approved, and checkpointed. All 9,696 enemy source frames pass the full Form
+audit, and all 1,616 Form/outline integration cases preserve approved outline
+and direct-contact geometry. The live Enemies selector passes browser smoke.
 
 ### 5. Packs and schemas
 
-Version each affected format deliberately. Atomic component sheets remain
-untreated and must still recompose the original renderer pixel-for-pixel.
+Implemented, approved, and checkpointed:
+
+- preset library v11 migrates v1-v10;
+- ordinary pack v2 migrates v1;
+- Equipment Variant Batch and Class Pack are v2;
+- Complete Character Kit and Complete Character Pack are v11;
+- combat-loadout, palette, Master Character Kit, and Master Roster Kit remain
+  v1;
+- missing/invalid shade values migrate to None;
+- atomic component sheets remain untreated and still recompose the original
+  renderer pixel-for-pixel.
+
+`npm.cmd run check` passes the full project gate, including assembled
+full-sheet, direction-sheet, and animation-sheet shade forwarding. The
+production build was intentionally not run because release artifacts remain
+outside the approved scope.
 
 ## Visual Approval Workflow
 
@@ -187,9 +235,9 @@ untreated and must still recompose the original renderer pixel-for-pixel.
 - Review all directions, animations, and frames for the selected pilot.
 - Use both dark and parchment review backgrounds without baking either into
   exports.
-- Leave the actual candidate open and wait for explicit user approval.
-- Keep unapproved candidates uncommitted unless the user authorizes a safe
-  non-visual checkpoint.
+- Record explicit approval before accepting any visual change.
+- The Form algorithm, integration, editor default, commit, and push were
+  explicitly authorized on 2026-07-26.
 
 ## Deferred Independent Lanes
 

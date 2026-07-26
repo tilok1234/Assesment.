@@ -15,6 +15,8 @@ index.html
         -> engine/catalogs/enemies.js
       -> engine/renderer.js
       -> engine/outline-renderer.js
+        -> engine/pixel-buffer.js
+      -> engine/shade-renderer.js
       -> engine/weapon-renderer.js
       -> engine/shield-renderer.js
       -> engine/effect-renderer.js
@@ -60,6 +62,21 @@ The four expanded outfit families add direction-aware fur, coat-tail, vestment, 
 
 `engine/outline-renderer.js` owns the optional assembled-player and enemy outline treatment. For players and layered humanoid enemies, it requests the renderer's existing body, headgear, back/front weapon, and back/front shield layers and merges them into three logical owners: body, weapon, and shield. Headgear remains inside the body owner, while its concrete foreground layer is retained so contact logic can preserve every visible hat pixel. The body receives its mode-specific exterior contour. Equipment uses a cardinal exterior contour in both modes and admits an enclosed transparent component only when its area is at least five logical pixels, preserving large silhouette-defining openings while suppressing tiny construction pockets. A front/back humanoid neck-cavity pass finds the moving eight-pixel head-base/two-pixel-neck transition and ORs outline into only transparent cells directly beneath that head base. The untouched final renderer result is composited above those transparent-space contours, after which a layer-aware contact pass uses each concrete pass identity to place separators on the protected side of direct edge-sharing contact. Back-pass equipment receives an equipment-side separator; at body contact, front-pass equipment normally remains intact while the adjacent character-side boundary receives the separator. If that replacement would cardinally extend an existing dark body feature, the character pixel is preserved and the separator moves to the touching front-equipment pixel. At headgear contact, front-pass equipment receives an equipment-side separator while the hat stays unchanged. Three-way equipment/headgear/body contacts retain the continuous equipment-side headgear edge, with the feature-preserving rule independently deciding whether the body-side candidate remains. Diagonal-only proximity is left to the transparent-space contour so the contact pass cannot clip corners or endcaps. The contact pass does not change procedural source geometry or assets. None mode delegates directly to the original renderer so its pixels remain identical to the safe baseline.
 
+`engine/pixel-buffer.js` owns the internal 24x24 color-string capture,
+transparency, and run-paint helpers shared by assembled post-processes. It is
+not a public import path. `engine/shade-renderer.js` owns the immutable None and
+Form shade catalog, normalization, and the single assembled-output
+coordinator. None plus outline None delegates directly to `drawSprite()`, and
+existing outline modes route unchanged through the approved outline renderer.
+The approved Form algorithm captures the original complete source without its
+floor shadow, resolves known material ramps from player/enemy specifications,
+applies a deterministic top-highlight/lower-and-right cool-shade transform,
+and repaints only source-owned pixels that were not replaced by approved
+outline or contact-separator geometry. Unknown colors use a bounded fallback;
+INK, exact white, very dark features, transparent cells, and one- or two-pixel
+accent components remain exact. Effects, generic source thumbnails, and
+non-complete atomic layers always delegate untreated.
+
 Non-humanoid enemies route through an approval-gated family registry. Connected
 silhouettes use exterior contours; disconnected creatures use separated
 component ownership with family-specific minimum component sizes; and selected
@@ -82,8 +99,9 @@ Contact-converted source pixels are excluded only from casting a redundant exter
 `engine/sheets.js` assembles renderer frames into the stable 12-column by 4-row
 full sheet, selected-animation sheets with four direction rows,
 selected-direction sheets with all 12 frame columns, and UI thumbnails. Its
-option-aware assembled player/enemy paths accept the selected outline mode;
-effects and ordinary source thumbnails retain the direct-render path.
+option-aware assembled player/enemy paths use the shared assembled-output
+coordinator; effects and ordinary source thumbnails retain the direct-render
+path.
 
 ### Generators
 
@@ -107,7 +125,28 @@ effects and ordinary source thumbnails retain the direct-render path.
 
 ### Editor
 
-`app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, combat-loadout recipes, equipment-batch, class-pack, and sprite-pack exports, Complete Character Kit rendering, and download behavior. It consumes sprite behavior only through the public engine facade, uses `character-kit.js` for deterministic component, enemy, effect, species, body-build, expression, hairstyle, headgear, and outfit coverage plus recipe mapping, and uses `zip.js` for packaging. History snapshots contain the active mode, active assembled outline treatment, player/enemy/effect specifications, active combat loadout, optional player palette, and document names, so preset loads, resets, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, comparison-copy choices remain independent. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. Character preset schema v10 added optional assembled-player outlines and migrates v1 through v9 libraries; schema v9 added expressions, schema v8 added body builds, schema v7 added species, schema v6 added the armor tier, schema v5 added shield tiers, and schema v4 introduced weapon tiers. Live enemy previews and sheets now honor the same outline state, but the current preset and ordinary-pack sanitizers still normalize reloaded enemy entries to None; this is a known integration gap, not completed enemy-outline persistence. The independent palette-library schema stores reusable six-tone player palettes. Combat Loadout schema v1 stores automatic or overridden trail, projectile, impact, and status selections and resolves stable overlay paths without flattening them into the base artwork. Equipment Variant Batch schema v1 stores one source identity, one stable batch definition, ready-sheet paths, every complete variant specification, per-variant combat loadouts, referenced effect files, animation timing, scale, and layering instructions. Class Pack schema v1 stores the complete stable class definition, preserved source identity including species, body build, expression, and outline treatment, applied class base, bounded ready-sheet variants, per-variant combat loadouts, referenced effects, scale, animation timing, and layering instructions beneath a class-specific path. Sprite-pack schema v1 stores named player, enemy, and effect specifications independently from editor history and produces full-sheet ZIP archives with a versioned manifest. Complete Character Kit schema v10 exports 1910 content-unique atomic component sheets, all 202 enemy variations, all 24 combat effects, one outlined or unoutlined reference preview, up to 24 artwork-free recipes, and their combat loadouts. Complete Character Pack schema v10 combines the same shared libraries and recipes with one assembled native sheet per saved player while preserving each saved player's outline treatment.
+`app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, combat-loadout recipes, equipment-batch, class-pack, and sprite-pack exports, Complete Character Kit rendering, and download behavior. It consumes sprite behavior only through the public engine facade, uses `character-kit.js` for deterministic component, enemy, effect, species, body-build, expression, hairstyle, headgear, and outfit coverage plus recipe mapping, and uses `zip.js` for packaging. History snapshots contain the active mode, assembled outline and shade treatments, player/enemy/effect specifications, active combat loadout, optional player palette, and document names, so preset loads, resets, shade changes, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. The shade selector is rendered for Player and Enemies and hidden for Effects; effects neither receive Form nor overwrite the retained Player/Enemy shade choice. New and reset Player/Enemy editor documents use Form, while the engine option still defaults to None and missing/invalid shade metadata in versioned legacy presets, packs, and recipes migrates to None to preserve stored artwork.
+
+The independently versioned persistence and export formats are:
+
+| Format | Current version | Shade migration |
+| --- | ---: | --- |
+| Named preset library | 11 | accepts v1-v10; missing/invalid shade becomes None |
+| Ordinary sprite-pack storage/manifest | 2 | accepts v1; missing/invalid shade becomes None |
+| Palette library | 1 | unchanged; shade is not palette data |
+| Combat Loadout | 1 | unchanged; assembled `baseSprite` metadata records shade |
+| Equipment Variant Batch | 2 | assembled source and every ready variant record shade |
+| Class Pack | 2 | assembled source and every ready variant record shade |
+| Complete Character Kit | 11 | recipes and assembled reference metadata record shade |
+| Complete Character Pack | 11 | recipes and assembled sheets preserve each saved shade |
+| Master Character Kit | 1 | unchanged; atomic component sheets stay untreated |
+| Master Roster Kit | 1 | unchanged |
+
+Preset v10 and ordinary pack v1 already carried `outlineMode`; their pre-shade
+sanitizers and load paths were repaired to preserve valid enemy outline values,
+while missing or invalid legacy values migrate to None and effects remain
+untreated. Shade integration deliberately advances the affected formats listed
+above rather than conflating their contracts.
 
 ### Windows wrapper
 
@@ -128,12 +167,17 @@ effects and ordinary source thumbnails retain the direct-render path.
 - All 57 enemy families support None, Complete B, and Selective C in live
   assembled rendering; the 9,696-frame enemy source corpus reserves a one-cell
   outline margin and performs no out-of-bounds writes.
+- Shade None plus outline None directly delegates to `drawSprite()`. Shade None
+  combined with Complete B or Selective C preserves the approved outline
+  output. Form changes eligible source-owned colors only and is wired through
+  Player/Enemy editor state, persistence, comparisons, previews, and assembled
+  export metadata. Effects and atomic component sheets remain untreated.
 - Complete Character Kit recipes support at most 24 saved players, reference only shared paths, add no PNGs, and must recompose the complete renderer pixel-for-pixel.
 - Combined Complete Character Packs include one assembled native sheet per recipe and reuse the first assembled sheet as the reference preview instead of exporting a duplicate reference PNG.
 - `sprite-engine.js` remains the public import path.
 - Browser and Windows builds use identical production files.
 
-`npm run check` enforces these invariants against the native export contract, class and equipment planner counts, character-pack ZIP format, Complete Character Kit component matrix, recipe paths, exact pixel recomposition, `asset-pack/manifest.json`, and all 232 committed PNG fixtures. Weapon validation also enforces one connected silhouette in every frame, family and tier distinction, casting-family proportions, global Tier 5 pixel-density and bounds budgets relative to Tier 4, exact left/right mirroring, direction-aware front/back layer routing and recomposition, animation-phase diversity, front-view identity retention, catastrophic-detachment protection, zero discarded pixels across all 3,600 weapon frames, all 7,680 shield cases across four body builds, and 528 equipped-headgear cases, plus pixel/order parity for native full, direction, and animation sheet exports. These structural checks do not replace the unresolved combined effect/shield visual gate.
+`npm run check` enforces these invariants against the native export contract, class and equipment planner counts, character-pack ZIP format, Complete Character Kit component matrix, recipe paths, exact pixel recomposition, `asset-pack/manifest.json`, and all 232 committed PNG fixtures. The shade gate adds 288 broad player None-parity cases, exhaustive None parity for all 9,696 enemy source frames, 1,616 sampled enemy None/outline parity cases, 1,728 deterministic Form pilot cases, an exhaustive 9,696-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. The Form matrix verifies source ownership, protected pixels, unchanged outline/contact geometry, finite colors, exact floor shadows and transparent cells, visible changes in every pilot, and 21,086 material-aware pixel differences from the silhouette-only control. Weapon validation also enforces one connected silhouette in every frame, family and tier distinction, casting-family proportions, global Tier 5 pixel-density and bounds budgets relative to Tier 4, exact left/right mirroring, direction-aware front/back layer routing and recomposition, animation-phase diversity, front-view identity retention, catastrophic-detachment protection, zero discarded pixels across all 3,600 weapon frames, all 7,680 shield cases across four body builds, and 528 equipped-headgear cases, plus pixel/order parity for native full, direction, and animation sheet exports. These structural checks do not replace the pending live-editor integration review or the unresolved combined effect/shield visual gate.
 
 `tools/weapon-readability-audit.mjs` complements those hard checks with visual evidence. Its standard review matrices are joined by a 3,600-row CSV/JSON audit recording bounds, connected components, edge sides, character distance, expression overlap, discarded-frame count, and discarded-pixel count for every family, tier, direction, animation, and frame. The optional `--all-frames` mode also emits one enlarged and one true-native assembled all-frame sheet per weapon, while `--tier-sheets` emits four labeled all-weapon/all-frame SVG sheets per tier with lightweight PNG inspection grids. Frame-edge contact remains advisory, while any attempted write beyond `x=0..23` or `y=0..23` is a hard frame-contract failure.
 
@@ -146,6 +190,15 @@ outline modes across the complete roster, currently 29,088 cases with mode
 distinction in every frame, zero source-edge frames, and zero out-of-bounds
 writes. Generated evidence stays ignored beneath `enemy-outline-assessment/`
 and `enemy-outline-review/`.
+
+`tools/shade-review.mjs` generates the ignored interactive Form pilot beneath
+`shade-review/`. It renders 12 diverse player/enemy specimens across all 576
+source frames and 1,728 Form/outline combinations, compares the material-aware
+result with an explicit silhouette-only control, and exposes untreated, None,
+Complete B, and Selective C columns at native and nearest-neighbor size on dark
+and parchment backgrounds, with parchment selected by default. The algorithm
+is approved, but this remains review evidence rather than a committed fixture
+or accepted baseline.
 
 ## Adding content safely
 

@@ -8,7 +8,7 @@ import {
 } from './catalogs.js';
 
 export const CLASS_PACK_FORMAT = '8-bit-sprite-assembler-class-pack';
-export const CLASS_PACK_VERSION = 1;
+export const CLASS_PACK_VERSION = 2;
 
 export const CLASS_TEMPLATES = Object.freeze([
   Object.freeze({

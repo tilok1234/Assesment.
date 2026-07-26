@@ -8,7 +8,7 @@ import {
 } from './catalogs.js';
 
 export const VARIANT_BATCH_FORMAT = '8-bit-sprite-assembler-equipment-variant-batch';
-export const VARIANT_BATCH_VERSION = 1;
+export const VARIANT_BATCH_VERSION = 2;
 
 export const VARIANT_BATCH_SETS = Object.freeze([
   {

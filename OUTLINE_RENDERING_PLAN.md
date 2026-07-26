@@ -73,17 +73,15 @@ outline pass.
 These exclusions keep the behavior isolated to complete assembled player/enemy
 output and preserve runtime-composable component assets.
 
-Enemy preset and ordinary-pack reload persistence is a known remaining
-integration gap: live enemy previews and sheets honor the active outline mode,
-but the current sanitizers reload saved enemy entries with None. Do not claim
-enemy persistence is complete until that behavior is explicitly migrated and
-tested.
-
 ## Persistence and compatibility
 
-- Outline mode is stored as editor state and as part of saved player configurations.
+- Outline mode is stored as editor state and as part of saved player and enemy
+  configurations.
 - Character preset schema v10 migrates older schemas to None.
+- Preset v10 and ordinary character-pack v1 already contain the field, so
+  preserving valid enemy values requires no schema bump.
 - Invalid or missing outline ids sanitize to None.
+- Effects sanitize to None and remain untreated.
 - None uses direct delegation rather than running a nominally disabled post-process.
 
 ## Regression gates
@@ -103,9 +101,13 @@ The outline review command verifies 6,000 None-mode direct-render parity cases, 
 The enemy assessment covers all 57 families / 202 variants / 9,696 source
 frames. The completed lane passes 9,696 None-mode parity cases and 29,088
 None-B-C cases, keeps Complete B and Selective C distinct in every frame, and
-reports zero source-edge frames and zero out-of-bounds writes. The browser
-smoke test must confirm the selector appears for Player and Enemies, stays
-hidden for Effects, and preserves every approved component/cavity treatment.
+reports zero source-edge frames and zero out-of-bounds writes. The Core/None
+validator additionally proves every enemy source frame remains identical
+through the assembled coordinator and directly tests valid, missing, invalid,
+and effect-only persistence normalization. The browser smoke test must confirm
+the selector appears for Player and Enemies, stays hidden for Effects,
+restores saved enemy modes, and preserves every approved component/cavity
+treatment.
 
 ## Rollback boundary
 

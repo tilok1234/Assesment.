@@ -34,10 +34,10 @@ export const MASTER_ROSTER_KIT_VERSION = 1;
 export const MASTER_ROSTER_KIT_LIMIT = 24;
 
 export const COMPLETE_CHARACTER_KIT_FORMAT = '8-bit-sprite-assembler-complete-character-kit';
-export const COMPLETE_CHARACTER_KIT_VERSION = 10;
+export const COMPLETE_CHARACTER_KIT_VERSION = 11;
 export const COMPLETE_CHARACTER_KIT_RECIPE_LIMIT = 24;
 export const COMPLETE_CHARACTER_PACK_FORMAT = '8-bit-sprite-assembler-complete-character-pack';
-export const COMPLETE_CHARACTER_PACK_VERSION = 10;
+export const COMPLETE_CHARACTER_PACK_VERSION = 11;
 export const COMPLETE_CHARACTER_KIT_LAYER_ORDER = [
   'weapon-back',
   'shield-back',
@@ -493,6 +493,8 @@ function completeRecipeEntries(rawEntries) {
       name,
       role: typeof raw.role === 'string' && raw.role.trim() ? raw.role.trim() : null,
       player: clonePlayer(player),
+      outlineMode: typeof raw.outlineMode === 'string' ? raw.outlineMode : 'none',
+      shadeMode: typeof raw.shadeMode === 'string' ? raw.shadeMode : 'none',
     }];
   });
 }
@@ -930,6 +932,8 @@ export function buildCompleteCharacterKitPlan(rawRecipes = []) {
     name: entry.name,
     role: entry.role,
     spec: clonePlayer(entry.player),
+    outlineMode: entry.outlineMode,
+    shadeMode: entry.shadeMode,
     components: recipeComponents(entry.player),
   }));
   const referenceSpec = recipes[0]?.spec || clonePlayer(COMPONENT_BASE_PLAYER);

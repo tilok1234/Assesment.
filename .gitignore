@@ -6,6 +6,7 @@ weapon-review/
 outline-review/
 enemy-outline-assessment/
 enemy-outline-review/
+shade-review/
 src-tauri/gen/
 src-tauri/target/
 *.log

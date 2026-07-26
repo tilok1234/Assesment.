@@ -1,4 +1,11 @@
 import { SIZE } from './catalogs.js';
+import {
+  isTransparentPixel as isTransparent,
+  paintMask,
+  paintPixels,
+  renderLayerPixels,
+  renderSpritePixels,
+} from './pixel-buffer.js';
 import { drawSprite } from './renderer.js';
 
 export const OUTLINE_MODE_NONE = 'none';
@@ -280,8 +287,10 @@ export function normalizeOutlineMode(value) {
   return OUTLINE_MODES.some((mode) => mode.id === value) ? value : OUTLINE_MODE_NONE;
 }
 
-function isTransparent(value) {
-  return value === null || value === undefined;
+export function normalizeAssembledOutlineMode(spec, value) {
+  return spec?.kind === 'player' || enemySupportsOutline(spec)
+    ? normalizeOutlineMode(value)
+    : OUTLINE_MODE_NONE;
 }
 
 function exteriorTransparency(pixels, width, height) {
@@ -828,68 +837,6 @@ export function humanoidNeckCavityMaskForPixels(
     break;
   }
   return mask;
-}
-
-function renderSpritePixels(spec, direction, animationId, frame, options) {
-  const pixels = new Array(SIZE * SIZE).fill(null);
-  let fillStyle = '#000000';
-  const context = {
-    clearRect(x, y, width, height) {
-      for (let py = Math.floor(y); py < y + height; py++) {
-        for (let px = Math.floor(x); px < x + width; px++) {
-          if (px >= 0 && py >= 0 && px < SIZE && py < SIZE) pixels[(py * SIZE) + px] = null;
-        }
-      }
-    },
-    get fillStyle() { return fillStyle; },
-    set fillStyle(value) { fillStyle = value; },
-    fillRect(x, y, width, height) {
-      for (let py = Math.floor(y); py < y + height; py++) {
-        for (let px = Math.floor(x); px < x + width; px++) {
-          if (px >= 0 && py >= 0 && px < SIZE && py < SIZE) pixels[(py * SIZE) + px] = fillStyle;
-        }
-      }
-    },
-  };
-  drawSprite(context, spec, direction, animationId, frame, options);
-  return pixels;
-}
-
-function renderLayerPixels(spec, direction, animationId, frame, layer) {
-  return renderSpritePixels(spec, direction, animationId, frame, { layer, shadow: false });
-}
-
-function paintPixels(context, pixels) {
-  for (let y = 0; y < SIZE; y++) {
-    let x = 0;
-    while (x < SIZE) {
-      const color = pixels[(y * SIZE) + x];
-      if (isTransparent(color)) {
-        x++;
-        continue;
-      }
-      const start = x;
-      while (x < SIZE && pixels[(y * SIZE) + x] === color) x++;
-      context.fillStyle = color;
-      context.fillRect(start, y, x - start, 1);
-    }
-  }
-}
-
-function paintMask(context, mask, color) {
-  context.fillStyle = color;
-  for (let y = 0; y < SIZE; y++) {
-    let x = 0;
-    while (x < SIZE) {
-      if (!mask[(y * SIZE) + x]) {
-        x++;
-        continue;
-      }
-      const start = x;
-      while (x < SIZE && mask[(y * SIZE) + x]) x++;
-      context.fillRect(start, y, x - start, 1);
-    }
-  }
 }
 
 export function drawOutlinedSprite(
