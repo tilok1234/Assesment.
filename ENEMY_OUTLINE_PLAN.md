@@ -48,7 +48,9 @@ component outlines are visually approved.
 Anglerfish bite/lure frame-safety repair and separated-component outlines are
 visually approved.
 Snail roll/recoil frame-safety repair and separated-component outlines are
-pending visual approval.
+visually approved.
+Porcupine quill-flare frame-safety repair and separated-component outlines are
+visually approved.
 Zombie vertical-strike frame-safety repair and cavity-preserving
 component-aware outline expansion are visually approved. Imp vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
@@ -2310,7 +2312,60 @@ Three focused handoff sheets cover attack frames 2 and 3 plus hurt frame 1
 across all four directions. They expose the one-cell withdrawn preparation,
 full rolling silhouette, repaired bottom/side margins, complete slime trail,
 detached stalk/mote treatment, all four Snail palettes, and both outline modes.
-The candidate remains uncommitted until explicit visual approval.
+The candidate was kept uncommitted until the user explicitly approved it on
+2026-07-26.
+
+## Outline Rollout Approved Group 32
+
+Visually approved as a single-family Porcupine pass.
+
+Porcupine is the final enemy family outside the outline lane. Its 192-frame
+family had all 20 remaining source-edge frames / 48 edge pixels in the enemy
+corpus. Down-facing attack frame 2 placed both feet on the bottom row. Left
+and right attack frames 2 and 3 placed the snout or far burst quill on the
+side row. No Porcupine frame attempted an out-of-bounds write.
+
+Every Porcupine frame is multi-component. The connected body is accompanied
+by deliberately detached one- and two-pixel quills; the burst attack reaches
+18 source components. Across the family, those frames contain 1,960 detached
+source pixels and no enclosed source openings. Giving each tiny quill a full
+halo would turn the thin quill rhythm into black boxes.
+
+The candidate:
+
+- caps the enlarged attack silhouette to one cell of whole-rig forward motion
+  so down-facing feet and the side-facing snout retain an outline margin;
+- pulls only the far side-view burst quill one cell inward during attack frame
+  3, preserving the burst spread while reserving the outer outline column;
+- reduces the full enemy corpus from 20 source-edge frames / 48 edge pixels to
+  zero, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Forest, Venom Quill,
+  Frostspine, and Emberback, completing the enemy roster;
+- uses separated-component contours with a three-pixel minimum so the physical
+  body receives a contour while detached one- and two-pixel quills remain thin
+  and unboxed;
+- preserves all 192 multi-component frames / 1,960 detached source pixels and
+  all zero-cavity source frames;
+- adds all 192 Porcupine frames to the source-margin regression plus focused
+  down-lunge, side-snout, burst-quill, component-separation, and halo checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the complete fifty-seven-family outline lane:
+
+- 9,696 None-mode parity checks pass against the corrected source renderer;
+- all 29,088 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 9,696 frames;
+- the focused single-family review covers 192 source frames / 576 mode cases
+  and adds 12,480 Complete B plus 10,152 Selective C contour pixels;
+- the complete lane adds 694,070 Complete B plus 555,001 Selective C contour
+  pixels and retains 25,900 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the normal detached-quill treatment,
+one-cell flare motion, far burst-quill inset, all four Porcupine palettes, and
+both outline modes. The candidate was kept uncommitted until the user
+explicitly approved it on 2026-07-26.
 
 ## Treatment
 

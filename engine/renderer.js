@@ -2874,8 +2874,13 @@ function drawPorcupine(g, d, p, f, V, animId) {
   ][f] : { x: 0, bob: animId === 'idle' && f === 1 ? 1 : 0, front: 0, back: 0 };
   const flare = animId === 'attack' && (f === 1 || f === 2);
   const burst = animId === 'attack' && f === 2;
-  const ox = d === 'right' ? p.lunge : 0;
-  const oy = d === 'down' ? p.lunge : d === 'up' ? -p.lunge : 0;
+  // The raised quills already enlarge the attack silhouette. Cap the whole-rig
+  // lunge at one cell so the feet and side snout keep an outline margin, then
+  // pull only the far burst quill inward during the follow-through.
+  const forwardLunge = animId === 'attack' ? Math.min(p.lunge, 1) : p.lunge;
+  const burstInset = burst && forwardLunge ? 1 : 0;
+  const ox = d === 'right' ? forwardLunge : 0;
+  const oy = d === 'down' ? forwardLunge : d === 'up' ? -forwardLunge : 0;
   const S = (x, y, cc) => g.set(x + ox, y + oy, cc);
   const R = (x, y, w, h, cc) => g.rect(x + ox, y + oy, w, h, cc);
   const fur = V.fur, quill = V.quill, belly = V.belly, eye = V.eye;
@@ -2891,7 +2896,10 @@ function drawPorcupine(g, d, p, f, V, animId) {
       : [[5, 11], [6, 8], [8, 7], [10, 6], [12, 7], [15, 9]];
     for (const [x, y] of spikes) { S(x + bx, y + by, quill[0]); S(x + 1 + bx, y + 1 + by, quill[1]); }
     S(5 + bx, 14 + by, quill[1]); S(4 + bx, 16 + by, quill[0]);
-    if (burst) { S(1, 7, quill[0]); S(2, 3, quill[1]); S(18, 4, quill[0]); S(22, 6, quill[1]); }
+    if (burst) {
+      S(1, 7, quill[0]); S(2, 3, quill[1]); S(18, 4, quill[0]);
+      S(22 - burstInset, 6, quill[1]);
+    }
   } else {
     R(7 + bx, 11 + by, 10, 9 - by, fur[0]); R(9 + bx, 16, 6, 4, belly);
     R(8 + bx, 8 + by, 8, 6, fur[0]);

@@ -69,6 +69,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'demon',
   'anglerfish',
   'snail',
+  'porcupine',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -144,6 +145,7 @@ const ENEMY_SEPARATED_OUTLINE_FAMILY_SET = new Set([
   'octopus',
   'anglerfish',
   'snail',
+  'porcupine',
 ]);
 const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   beetle: 3,
@@ -165,6 +167,7 @@ const ENEMY_SEPARATED_OUTLINE_MINIMUM_COMPONENT_PIXELS = Object.freeze({
   octopus: 10,
   anglerfish: 2,
   snail: 2,
+  porcupine: 3,
 });
 const ENEMY_SEPARATED_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'centipede',
@@ -940,10 +943,10 @@ export function drawOutlinedSprite(
         // extremities, and Puppet's one-pixel strings/lights stay unhaloed.
         // Spider's small leg clusters, Treant's one-pixel leaf tips, and
         // Centipede/Mole's one-pixel leg and dirt accents, plus Carnivorous
-        // Plant's one-pixel pollen and Octopus's one- and two-pixel ink
-        // droplets also stay thin. Their low one-pixel root/tentacle tips are
-        // separately opted into contours so physical limbs do not look
-        // truncated.
+        // Plant's one-pixel pollen, Octopus's one- and two-pixel ink droplets,
+        // and Porcupine's one- and two-pixel detached quills also stay thin.
+        // Low one-pixel root/tentacle tips are separately opted into contours
+        // so physical limbs do not look truncated.
         // Gargoyle's detached wings, Puppet's detached attack arm, Treant's
         // canopy, Mole's detached attack claws, Carnivorous Plant's
         // three-pixel-or-larger stepping roots, and Octopus's ten-pixel-or-

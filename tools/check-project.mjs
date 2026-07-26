@@ -207,8 +207,9 @@ check(
       'demon',
       'anglerfish',
       'snail',
+      'porcupine',
     ]),
-  'enemy outline support must stay limited to the fifty-six approval-gated families',
+  'enemy outline support must stay limited to the fifty-seven approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -221,8 +222,8 @@ for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   );
 }
 check(
-  !engine.enemySupportsOutline({ kind: 'enemy', family: 'porcupine' }),
-  'unsupported enemies must remain on the original renderer',
+  !engine.enemySupportsOutline({ kind: 'enemy', family: 'not-a-family' }),
+  'unknown enemies must remain on the original renderer',
 );
 check(
   !engine.enemySupportsOutline({ kind: 'player', family: 'bandit' }),
@@ -1929,6 +1930,7 @@ const separatedOutlineBatchFamilies = new Map([
   }],
   ['anglerfish', { minimumComponentPixels: 2, maximumComponents: 4 }],
   ['snail', { minimumComponentPixels: 2, maximumComponents: 5 }],
+  ['porcupine', { minimumComponentPixels: 3, maximumComponents: 18 }],
 ]);
 for (const [familyId, familyRules] of separatedOutlineBatchFamilies) {
   const family = engine.ENEMIES.find((candidate) => candidate.id === familyId);
@@ -2099,6 +2101,38 @@ for (const variant of snailFamily.variants) {
   }
 }
 
+const porcupineFamily = engine.ENEMIES.find((family) => family.id === 'porcupine');
+for (const variant of porcupineFamily.variants) {
+  const spec = { kind: 'enemy', family: 'porcupine', variant: variant.id };
+  const downFlare = renderPixels(spec, 'down', 'attack', 1);
+  check(
+    downFlare.slice(-engine.SIZE).every((pixel) => !pixel),
+    `porcupine ${variant.id} down attack frame 2 must reserve the bottom outline row`,
+  );
+  check(
+    downFlare.slice(-engine.SIZE * 2, -engine.SIZE).some(Boolean),
+    `porcupine ${variant.id} down attack frame 2 must retain one cell of forward flare motion`,
+  );
+
+  for (const direction of ['left', 'right']) {
+    const edgeX = direction === 'left' ? 0 : engine.SIZE - 1;
+    const insideX = direction === 'left' ? 1 : engine.SIZE - 2;
+    for (const frame of [1, 2]) {
+      const attack = renderPixels(spec, direction, 'attack', frame);
+      check(
+        attack.every((pixel, index) => (index % engine.SIZE) !== edgeX || !pixel),
+        `porcupine ${variant.id} ${direction} attack frame ${frame + 1} `
+          + 'must reserve the side outline column',
+      );
+      check(
+        attack.some((pixel, index) => (index % engine.SIZE) === insideX && pixel),
+        `porcupine ${variant.id} ${direction} attack frame ${frame + 1} `
+          + 'must retain its forward snout or burst quill inside the frame',
+      );
+    }
+  }
+}
+
 const elfDuelistSpec = { kind: 'enemy', family: 'elf', variant: 'duelist' };
 const elfDuelistSource = renderPixels(elfDuelistSpec, 'down', 'idle', 0);
 const elfEarIndices = [
@@ -2240,6 +2274,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'golem', 'treant', 'worm', 'beetle',
   'cyclops', 'troll', 'dwarf', 'ogre', 'goblin', 'zombie', 'imp',
   'cultist', 'orc', 'lizardfolk', 'minotaur', 'demon', 'anglerfish', 'snail',
+  'porcupine',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
