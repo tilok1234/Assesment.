@@ -202,8 +202,9 @@ check(
       'imp',
       'cultist',
       'orc',
+      'lizardfolk',
     ]),
-  'enemy outline support must stay limited to the fifty-one approval-gated families',
+  'enemy outline support must stay limited to the fifty-two approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -771,6 +772,7 @@ for (const [familyId, variantIds] of [
   ['imp', ['sprite', 'pyro', 'fiend']],
   ['cultist', ['acolyte', 'zealot', 'oracle']],
   ['orc', ['grunt', 'berserker', 'warlord']],
+  ['lizardfolk', ['saurian', 'marsh', 'chromatic']],
 ]) {
   for (const variant of variantIds) {
     const spec = { kind: 'enemy', family: familyId, variant };
@@ -1043,7 +1045,47 @@ for (const [direction, layer, expectedSparks] of [
   }
 }
 
-for (const familyId of ['dwarf', 'ogre', 'goblin', 'zombie', 'imp', 'cultist', 'orc']) {
+for (const [direction, layer, expectedSparks] of [
+  ['down', 'weapon-front', 1],
+  ['left', 'weapon-back', 2],
+  ['right', 'weapon-front', 2],
+  ['up', 'weapon-back', 1],
+]) {
+  const spec = { kind: 'enemy', family: 'lizardfolk', variant: 'chromatic' };
+  for (const frame of [1, 2]) {
+    const equipment = renderPixels(spec, direction, 'attack', frame, { layer });
+    const sparks = cardinalSingletonIndices(equipment);
+    const source = renderPixels(spec, direction, 'attack', frame);
+    check(
+      sparks.length === expectedSparks,
+      `lizardfolk chromatic ${direction} attack frame ${frame + 1} `
+        + `must retain ${expectedSparks} detached one-pixel staff sparks`,
+    );
+    for (const outlineMode of [
+      engine.OUTLINE_MODE_COMPLETE_B,
+      engine.OUTLINE_MODE_SELECTIVE_C,
+    ]) {
+      const outlined = renderOutlinedPixels(spec, direction, 'attack', frame, outlineMode);
+      for (const sparkIndex of sparks) {
+        check(
+          source[sparkIndex] && outlined[sparkIndex] === source[sparkIndex],
+          `lizardfolk chromatic ${direction} attack frame ${frame + 1} ${outlineMode} `
+            + 'must preserve each detached staff-spark source pixel',
+        );
+        const adjacentOutline = adjacentOutlinePixelsAround(sparkIndex, source, outlined);
+        check(
+          adjacentOutline <= 4,
+          `lizardfolk chromatic ${direction} attack frame ${frame + 1} ${outlineMode} `
+            + `must keep each detached staff spark out of a boxed halo (found ${adjacentOutline})`,
+        );
+      }
+    }
+  }
+}
+
+for (const familyId of [
+  'dwarf', 'ogre', 'goblin', 'zombie', 'imp', 'cultist', 'orc', 'lizardfolk',
+]) {
   const cavityFamily = engine.ENEMIES.find((family) => family.id === familyId);
   for (const variant of cavityFamily.variants) {
     const spec = { kind: 'enemy', family: familyId, variant: variant.id };
@@ -1908,6 +1950,61 @@ for (const variant of ['skulker', 'plague', 'blade']) {
   }
 }
 
+const lizardfolkFamily = engine.ENEMIES.find((family) => family.id === 'lizardfolk');
+for (const variant of lizardfolkFamily.variants) {
+  const spec = { kind: 'enemy', family: 'lizardfolk', variant: variant.id };
+  for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+    for (let frame = 0; frame < animation.frames; frame++) {
+      const tailPixels = direction === 'right'
+        ? [[6, 20, variant.skin[0]], [5, 19, variant.skin[0]], [4, 18, variant.skin[1]]]
+        : direction === 'left'
+          ? [[17, 20, variant.skin[0]], [18, 19, variant.skin[0]], [19, 18, variant.skin[1]]]
+          : [[17, 20, variant.skin[0]], [18, 19, variant.skin[0]], [19, 19, variant.skin[1]]];
+      const tailIndices = tailPixels.map(([x, y]) => (y * engine.SIZE) + x);
+      const body = renderPixels(spec, direction, animation.id, frame, { layer: 'body' });
+      const source = renderPixels(spec, direction, animation.id, frame);
+      const flashing = animation.id === 'hurt' && frame === 0;
+      check(
+        tailPixels.every(([x, y, color]) => (
+          body[(y * engine.SIZE) + x] === (flashing ? '#ffffff' : color)
+        )),
+        `lizardfolk ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+          + 'must retain all three authored tail pixels and palette colors',
+      );
+      check(
+        tailIndices.every((index) => source[index]),
+        `lizardfolk ${variant.id} ${direction} ${animation.id}/${frame + 1} `
+          + 'must keep every authored tail pixel visible in the complete sprite',
+      );
+      for (const outlineMode of [
+        engine.OUTLINE_MODE_COMPLETE_B,
+        engine.OUTLINE_MODE_SELECTIVE_C,
+      ]) {
+        const outlined = renderOutlinedPixels(
+          spec,
+          direction,
+          animation.id,
+          frame,
+          outlineMode,
+        );
+        const visibleTailIndices = tailIndices.filter((index) => source[index] === body[index]);
+        check(
+          visibleTailIndices.every((index) => outlined[index] === source[index]),
+          `lizardfolk ${variant.id} ${direction} ${animation.id}/${frame + 1} ${outlineMode} `
+            + 'must preserve every colored tail-core pixel',
+        );
+        check(
+          visibleTailIndices.every((
+            index,
+          ) => adjacentOutlinePixelsAround(index, source, outlined) > 0),
+          `lizardfolk ${variant.id} ${direction} ${animation.id}/${frame + 1} ${outlineMode} `
+            + 'must contour every separated tail segment',
+        );
+      }
+    }
+  }
+}
+
 const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'frog', 'jellyfish', 'mole', 'scarecrow', 'drake', 'centipede', 'carniplant',
   'mantis', 'moth', 'octopus', 'puppet',
@@ -1917,7 +2014,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
   'cyclops', 'troll', 'dwarf', 'ogre', 'goblin', 'zombie', 'imp',
-  'cultist', 'orc',
+  'cultist', 'orc', 'lizardfolk',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -1963,6 +2060,7 @@ for (const [familyId, variantId] of [
   ['zombie', 'brute'],
   ['imp', 'fiend'],
   ['orc', 'berserker'],
+  ['lizardfolk', 'marsh'],
 ]) {
   const verticalClubSpec = {
     kind: 'enemy',

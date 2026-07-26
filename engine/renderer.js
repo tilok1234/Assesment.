@@ -3055,6 +3055,7 @@ function buildHumanoidC(spec) {
           || (spec.family === 'dwarf' && V.id === 'miner')
           || (spec.family === 'ogre' && V.id === 'brute')
           || (spec.family === 'orc' && V.id === 'berserker')
+          || (spec.family === 'lizardfolk' && V.id === 'marsh')
         ) ? 1 : 0,
     };
   }

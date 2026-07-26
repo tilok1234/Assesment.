@@ -64,6 +64,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'imp',
   'cultist',
   'orc',
+  'lizardfolk',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -84,6 +85,7 @@ const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
   'imp',
   'cultist',
   'orc',
+  'lizardfolk',
 ]);
 const ENEMY_COMPONENT_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'dwarf',
@@ -93,12 +95,14 @@ const ENEMY_COMPONENT_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'imp',
   'cultist',
   'orc',
+  'lizardfolk',
 ]);
 const ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_EQUIPMENT_FAMILY_SET = new Set([
   'ogre',
   'goblin',
   'imp',
   'cultist',
+  'lizardfolk',
 ]);
 const ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_BODY_FAMILY_SET = new Set([
   'imp',
@@ -975,6 +979,21 @@ export function drawOutlinedSprite(
     ? compositePixels
     : renderSpritePixels(spec, direction, animationId, frame, rendererOptions);
   const contactOutlinePlan = contactOutlinePlanForVisibleLayers(visibleLayers, compositePixels, mode);
+  if (spec.family === 'lizardfolk') {
+    // The three-pixel tail is deliberately segmented and can pass beside a
+    // front weapon during attacks. Keep those authored body colors instead of
+    // converting a tail core into an equipment-contact separator.
+    const tailCoordinates = direction === 'right'
+      ? [[6, 20], [5, 19], [4, 18]]
+      : direction === 'left'
+        ? [[17, 20], [18, 19], [19, 18]]
+        : [[17, 20], [18, 19], [19, 19]];
+    for (const [x, y] of tailCoordinates) {
+      const index = (y * SIZE) + x;
+      contactOutlinePlan.layerContactMask[index] = 0;
+      contactOutlinePlan.haloSourceExclusionMasks[BODY_OWNER_INDEX][index] = 0;
+    }
+  }
   const excludeSingletonOwnerHalos = (ownerIndex) => {
     const components = connectedSourceComponents(
       ownerPixels[ownerIndex],
@@ -989,6 +1008,16 @@ export function drawOutlinedSprite(
       if (componentSize !== 1) continue;
       const singletonIndex = componentPixels.findIndex((pixel) => !isTransparent(pixel));
       contactOutlinePlan.haloSourceExclusionMasks[ownerIndex][singletonIndex] = 1;
+      if (
+        spec.family === 'lizardfolk'
+        && ownerIndex === EQUIPMENT_OWNER_INDICES[0]
+        && !isTransparent(ownerPixels[BODY_OWNER_INDEX][singletonIndex])
+      ) {
+        // The down-facing Chromatic staff spark crosses an authored tail pixel.
+        // The covered tail source must not cast a second halo around the visible
+        // singleton, or the cyan spark reads as a boxed black block.
+        contactOutlinePlan.haloSourceExclusionMasks[BODY_OWNER_INDEX][singletonIndex] = 1;
+      }
       if (ownerIndex === BODY_OWNER_INDEX) {
         // A one-pixel horn, hand, or other body tip cannot also carry an
         // equipment-contact separator without disappearing from the final
@@ -1024,6 +1053,35 @@ export function drawOutlinedSprite(
     );
     for (let index = 0; index < outlineMask.length; index++) {
       if (neckCavityMask[index]) outlineMask[index] = 1;
+    }
+  }
+  if (spec.family === 'lizardfolk' && direction === 'down') {
+    const equipmentComponents = connectedSourceComponents(
+      ownerPixels[EQUIPMENT_OWNER_INDICES[0]],
+      SIZE,
+      SIZE,
+    ).components;
+    for (const componentPixels of equipmentComponents) {
+      const singletonIndex = componentPixels.findIndex((pixel) => !isTransparent(pixel));
+      if (
+        singletonIndex < 0
+        || componentPixels.some((
+          pixel,
+          index,
+        ) => index !== singletonIndex && !isTransparent(pixel))
+        || isTransparent(ownerPixels[BODY_OWNER_INDEX][singletonIndex])
+      ) continue;
+      const x = singletonIndex % SIZE;
+      const y = Math.floor(singletonIndex / SIZE);
+      // Keep an open upper corner where the Chromatic spark crosses the tail.
+      // The visible tail segments retain their other exterior contour cells.
+      for (const [offsetX, offsetY] of [[-1, -1], [0, -1]]) {
+        const targetX = x + offsetX;
+        const targetY = y + offsetY;
+        if (targetX < 0 || targetY < 0 || targetX >= SIZE || targetY >= SIZE) continue;
+        const targetIndex = (targetY * SIZE) + targetX;
+        if (isTransparent(compositePixels[targetIndex])) outlineMask[targetIndex] = 0;
+      }
     }
   }
   paintMask(context, outlineMask, color);

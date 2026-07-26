@@ -38,7 +38,9 @@ frame-safety repair and cavity-preserving component-aware outline expansion
 are visually approved. Goblin vertical-strike frame-safety repair and
 cavity-preserving component-aware outline expansion are visually approved.
 Orc Berserker vertical-strike and Warlord horned-helm frame-safety repairs with
-cavity-preserving component-aware outlines are visually approved.
+cavity-preserving component-aware outlines are visually approved. Lizardfolk
+Marsh vertical-strike repair and segmented-tail-aware, cavity-preserving
+component outlines are visually approved.
 Zombie vertical-strike frame-safety repair and cavity-preserving
 component-aware outline expansion are visually approved. Imp vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
@@ -98,6 +100,7 @@ Outline rollout group 23 visual approval: 2026-07-26
 Outline rollout group 24 visual approval: 2026-07-26
 Outline rollout group 25 visual approval: 2026-07-26
 Outline rollout group 26 visual approval: 2026-07-26
+Outline rollout group 27 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -2030,6 +2033,62 @@ across all four directions. They expose the repaired Berserker club margins,
 the lowered Warlord horned helm and detached tips, held-equipment seams, every
 preserved source opening, all three Orc silhouettes, and both outline modes.
 The candidate is visually approved.
+
+## Outline Rollout Approved Group 27
+
+Visually approved as a single-family Lizardfolk pass.
+
+After Orc approval, six enemy families remained outside the outline lane.
+Lizardfolk is the next unsupported family in catalog order. Its only source-edge
+contact was the Marsh club: two pixels touched the bottom/top source row across
+down/up attack frames 2 and 3, for four frames / eight edge pixels total. No
+Lizardfolk frame attempted an out-of-bounds write.
+
+The family is otherwise topology-heavy. Its segmented three-pixel tail produces
+140 multi-component frames / 426 detached source pixels, and the Chromatic's
+middle staff strikes add detached one-pixel sparks. In the down strike, the
+visible cyan spark crosses one hidden authored tail pixel, so ordinary
+per-owner contouring nearly boxed the spark with the covered tail's halo.
+
+The candidate:
+
+- gives only the Lizardfolk Marsh's vertical club strike the approved one-pixel
+  inset, retaining distinct strike and recoil frames;
+- reduces the full enemy corpus from 72 to 68 source-edge frames and from 420
+  to 412 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Saurian, Marsh, and Chromatic
+  without changing another unsupported family;
+- uses the cavity-preserving component-aware humanoid path so the spear, club,
+  and staff retain readable body-side seams;
+- preserves all 129 enclosed openings across 112 source frames and all 140
+  multi-component frames / 426 detached source pixels;
+- protects every visible tail-core color from equipment-contact replacement
+  and contours each separated tail segment in both outline modes;
+- isolates Chromatic staff sparks from the weapon layer, leaves their
+  single-pixel source unhaloed, and opens only the two upper contour cells where
+  the down-facing spark crosses the hidden tail pixel;
+- adds all 144 Lizardfolk frames to the source-margin regression plus focused
+  Marsh-club, equipment-separator, segmented-tail, staff-spark, halo, and
+  exhaustive cavity checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the fifty-two-family outline lane:
+
+- 8,832 None-mode parity checks pass against the corrected source renderer;
+- all 26,496 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 8,832 frames;
+- the focused single-family review covers 144 source frames / 432 mode cases,
+  adds 13,386 Complete B plus 10,735 Selective C contour pixels, and retains
+  1,746 body-side equipment separator pixels;
+- the complete lane adds 631,891 Complete B plus 504,108 Selective C contour
+  pixels and retains 22,534 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the repaired Marsh club margins,
+segmented tail treatment, Chromatic staff sparks, held-equipment seams, every
+preserved source opening, all three Lizardfolk silhouettes, and both outline
+modes. The candidate is visually approved.
 
 ## Treatment
 
