@@ -65,6 +65,7 @@ export const ENEMY_OUTLINE_PILOT_FAMILIES = Object.freeze([
   'cultist',
   'orc',
   'lizardfolk',
+  'minotaur',
 ]);
 const ENEMY_OUTLINE_FAMILY_SET = new Set(ENEMY_OUTLINE_PILOT_FAMILIES);
 // Layered humanoid enemies share the player renderer's concrete body,
@@ -86,6 +87,7 @@ const ENEMY_COMPONENT_OUTLINE_FAMILY_SET = new Set([
   'cultist',
   'orc',
   'lizardfolk',
+  'minotaur',
 ]);
 const ENEMY_COMPONENT_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'dwarf',
@@ -96,6 +98,7 @@ const ENEMY_COMPONENT_OUTLINE_PRESERVE_CAVITY_FAMILY_SET = new Set([
   'cultist',
   'orc',
   'lizardfolk',
+  'minotaur',
 ]);
 const ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_EQUIPMENT_FAMILY_SET = new Set([
   'ogre',
@@ -107,6 +110,7 @@ const ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_EQUIPMENT_FAMILY_SET = new S
 const ENEMY_COMPONENT_OUTLINE_UNHALOED_SINGLE_PIXEL_BODY_FAMILY_SET = new Set([
   'imp',
   'orc',
+  'minotaur',
 ]);
 // Orbiting one-pixel parts need their own contour ownership. A normal merged
 // silhouette contour fills the one-cell breathing room and visually welds them

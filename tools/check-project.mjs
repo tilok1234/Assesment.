@@ -203,8 +203,9 @@ check(
       'cultist',
       'orc',
       'lizardfolk',
+      'minotaur',
     ]),
-  'enemy outline support must stay limited to the fifty-two approval-gated families',
+  'enemy outline support must stay limited to the fifty-three approval-gated families',
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -773,6 +774,7 @@ for (const [familyId, variantIds] of [
   ['cultist', ['acolyte', 'zealot', 'oracle']],
   ['orc', ['grunt', 'berserker', 'warlord']],
   ['lizardfolk', ['saurian', 'marsh', 'chromatic']],
+  ['minotaur', ['bull', 'ironhorn', 'warden']],
 ]) {
   for (const variant of variantIds) {
     const spec = { kind: 'enemy', family: familyId, variant };
@@ -1007,6 +1009,58 @@ for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
   }
 }
 
+for (const variant of ['bull', 'ironhorn', 'warden']) {
+  for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
+    for (let frame = 0; frame < animation.frames; frame++) {
+      const spec = { kind: 'enemy', family: 'minotaur', variant };
+      const body = renderPixels(spec, direction, animation.id, frame, { layer: 'body' });
+      const hornTips = cardinalSingletonIndices(body)
+        .filter((index) => Math.floor(index / engine.SIZE) < 4);
+      const source = renderPixels(spec, direction, animation.id, frame);
+      check(
+        hornTips.length === 2,
+        `minotaur ${variant} ${direction} ${animation.id}/${frame + 1} `
+          + 'must retain both detached one-pixel horn tips',
+      );
+      check(
+        hornTips.every((index) => source[index]),
+        `minotaur ${variant} ${direction} ${animation.id}/${frame + 1} `
+          + 'must keep both detached horn tips visible in the complete sprite',
+      );
+      check(
+        body.slice(0, engine.SIZE).every((pixel) => pixel === null),
+        `minotaur ${variant} ${direction} ${animation.id}/${frame + 1} `
+          + 'body must reserve the top outline row',
+      );
+      for (const outlineMode of [
+        engine.OUTLINE_MODE_COMPLETE_B,
+        engine.OUTLINE_MODE_SELECTIVE_C,
+      ]) {
+        const outlined = renderOutlinedPixels(
+          spec,
+          direction,
+          animation.id,
+          frame,
+          outlineMode,
+        );
+        for (const hornIndex of hornTips) {
+          check(
+            outlined[hornIndex] === source[hornIndex],
+            `minotaur ${variant} ${direction} ${animation.id}/${frame + 1} ${outlineMode} `
+              + 'must preserve each detached horn-tip source pixel',
+          );
+          const adjacentOutline = adjacentOutlinePixelsAround(hornIndex, source, outlined);
+          check(
+            adjacentOutline <= 4,
+            `minotaur ${variant} ${direction} ${animation.id}/${frame + 1} ${outlineMode} `
+              + `must keep each detached horn tip out of a boxed halo (found ${adjacentOutline})`,
+          );
+        }
+      }
+    }
+  }
+}
+
 for (const [direction, layer, expectedSparks] of [
   ['down', 'weapon-front', 1],
   ['left', 'weapon-back', 2],
@@ -1085,6 +1139,7 @@ for (const [direction, layer, expectedSparks] of [
 
 for (const familyId of [
   'dwarf', 'ogre', 'goblin', 'zombie', 'imp', 'cultist', 'orc', 'lizardfolk',
+  'minotaur',
 ]) {
   const cavityFamily = engine.ENEMIES.find((family) => family.id === familyId);
   for (const variant of cavityFamily.variants) {
@@ -2014,7 +2069,7 @@ const FRAME_SAFE_ENEMY_REPAIR_FAMILIES = [
   'elf', 'skeleton', 'kobold', 'ratfolk',
   'golem', 'treant', 'worm', 'beetle',
   'cyclops', 'troll', 'dwarf', 'ogre', 'goblin', 'zombie', 'imp',
-  'cultist', 'orc', 'lizardfolk',
+  'cultist', 'orc', 'lizardfolk', 'minotaur',
 ];
 let frameSafeEnemyCases = 0;
 for (const familyId of FRAME_SAFE_ENEMY_REPAIR_FAMILIES) {
@@ -2061,6 +2116,7 @@ for (const [familyId, variantId] of [
   ['imp', 'fiend'],
   ['orc', 'berserker'],
   ['lizardfolk', 'marsh'],
+  ['minotaur', 'ironhorn'],
 ]) {
   const verticalClubSpec = {
     kind: 'enemy',

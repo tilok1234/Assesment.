@@ -41,6 +41,8 @@ Orc Berserker vertical-strike and Warlord horned-helm frame-safety repairs with
 cavity-preserving component-aware outlines are visually approved. Lizardfolk
 Marsh vertical-strike repair and segmented-tail-aware, cavity-preserving
 component outlines are visually approved.
+Minotaur Ironhorn vertical-strike repair and horn-tip-aware, cavity-preserving
+component outlines are visually approved.
 Zombie vertical-strike frame-safety repair and cavity-preserving
 component-aware outline expansion are visually approved. Imp vertical-strike
 frame-safety repair and cavity-preserving component-aware outline expansion
@@ -101,6 +103,7 @@ Outline rollout group 24 visual approval: 2026-07-26
 Outline rollout group 25 visual approval: 2026-07-26
 Outline rollout group 26 visual approval: 2026-07-26
 Outline rollout group 27 visual approval: 2026-07-26
+Outline rollout group 28 visual approval: 2026-07-26
 
 This lane is isolated on `codex/enemy-outlines` from approved player checkpoint `690aec0`. It does not contain the original worktree's uncommitted attack-animation, effect-direction, or effect-compositor experiments.
 
@@ -2089,6 +2092,59 @@ across all four directions. They expose the repaired Marsh club margins,
 segmented tail treatment, Chromatic staff sparks, held-equipment seams, every
 preserved source opening, all three Lizardfolk silhouettes, and both outline
 modes. The candidate is visually approved.
+
+## Outline Rollout Approved Group 28
+
+Visually approved as a single-family Minotaur pass.
+
+After Lizardfolk approval, five enemy families remained outside the outline
+lane. Minotaur is the next unsupported family in catalog order. Its only
+source-edge contact was the Ironhorn club: two pixels touched the bottom/top
+source row across down/up attack frames 2 and 3, for four frames / eight edge
+pixels total. No Minotaur frame attempted an out-of-bounds write.
+
+The family is otherwise horn-topology-heavy. Every frame is multi-component:
+the front and back views contain two detached one-pixel horn tips plus two
+detached two-pixel horn shafts, while each side view retains two detached horn
+tips. Across the family, 144 frames contain 526 detached source pixels and 104
+frames retain 118 enclosed openings.
+
+The candidate:
+
+- gives only the Minotaur Ironhorn's vertical club strike the approved
+  one-pixel inset, retaining distinct strike and recoil frames;
+- reduces the full enemy corpus from 68 to 64 source-edge frames and from 412
+  to 404 source-edge pixels, with out-of-bounds writes remaining zero;
+- enables None, Complete B, and Selective C for Bull, Ironhorn, and Warden
+  without changing another unsupported family;
+- uses the cavity-preserving component-aware humanoid path so the axe, club,
+  and spear retain readable body-side seams;
+- preserves all 118 enclosed openings across 104 source frames and all 144
+  multi-component frames / 526 detached source pixels;
+- leaves every detached one-pixel horn tip unhaloed while contouring the larger
+  horn shafts and nearby body silhouette;
+- adds all 144 Minotaur frames to the source-margin regression plus focused
+  Ironhorn-club, equipment-separator, horn-tip, halo, and exhaustive cavity
+  checks;
+- changes no palette, catalog, saved state, or export schema.
+
+Measured candidate result across the fifty-three-family outline lane:
+
+- 8,976 None-mode parity checks pass against the corrected source renderer;
+- all 26,928 None/B/C cases remain frame-safe;
+- Complete B and Selective C differ in all 8,976 frames;
+- the focused single-family review covers 144 source frames / 432 mode cases,
+  adds 12,327 Complete B plus 10,332 Selective C contour pixels, and retains
+  1,564 body-side equipment separator pixels;
+- the complete lane adds 644,218 Complete B plus 514,440 Selective C contour
+  pixels and retains 24,098 component-contact separator pixels;
+- zero source-edge frames and zero out-of-bounds writes.
+
+Three focused handoff sheets cover idle frame 1 and attack frames 2 and 3
+across all four directions. They expose the repaired Ironhorn club margins,
+detached horn tips and shafts, held-equipment seams, every preserved source
+opening, all three Minotaur silhouettes, and both outline modes. The candidate
+is visually approved.
 
 ## Treatment
 
