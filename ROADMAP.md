@@ -210,15 +210,20 @@ with zero discarded pixels, face clearance, layer routing, and exact
 recomposition; no fixture, baseline, release artifact, or effect-compositor
 approval is implied.
 
-The next assessed Phase 5 candidate is Production Roll, defined in
-`PRODUCTION_ROLL_PLAN.md`. It would preserve the current unrestricted
-randomizer as Wildcard Roll while adding a seeded, archetype-first curated
-whole-character action with coherent tiers, visibility normalization,
-silhouette budgeting, and palette families. Implementation has not started;
-the safe Lantern/plan checkpoint is complete at `01b3f1a`. The next bounded
-work is the pure deterministic policy skeleton, followed by policy validation
-and an explicit Production-versus-Wildcard visual approval gate before any
-editor integration.
+The thirtieth Phase 5 slice completes Production Roll v1. The existing
+unrestricted `randomPlayer()` remains Wildcard Roll, while the new pure policy
+uses portable seeds, ten existing class archetypes, coherent equipment tiers,
+fixed catalog palette families, visibility normalization, and a bounded
+silhouette budget. A balanced 120-pair Production/Wildcard corpus was approved
+on 2026-07-26 with Form shading, Effects Off, and no Production-specific
+outline default. The editor exposes separate whole-character actions,
+Production applies its resolved player and presentation as one undoable
+change, and lightweight archetype/tier status remains ephemeral. The policy,
+review harness, catalog/class freeze, editor integration, and 1,000-seed
+validator were checkpointed and pushed at `aa77666`; no persistence or export
+schema version, renderer, geometry, fixture, baseline, effect compositor,
+release artifact, or Windows build changed. Slice 6's technical compatibility
+gate received final integration approval on 2026-07-27.
 
 Candidate additions:
 

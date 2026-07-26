@@ -16,6 +16,7 @@
     "review:outlines": "node tools/outline-review.mjs",
     "review:shades": "node tools/shade-review.mjs",
     "review:offhands": "node tools/offhand-review.mjs",
+    "review:production-rolls": "node tools/production-roll-review.mjs",
     "check": "node tools/check-project.mjs",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",

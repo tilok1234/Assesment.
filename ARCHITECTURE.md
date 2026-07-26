@@ -24,6 +24,7 @@ index.html
       -> engine/combat-loadouts.js
       -> engine/sheets.js
       -> engine/generators.js
+      -> engine/production-rolls.js
       -> engine/variant-batches.js
       -> engine/class-templates.js
     -> character-kit.js
@@ -121,7 +122,22 @@ path.
 
 ### Generators
 
-`engine/generators.js` creates random valid specifications and safe default export names.
+`engine/generators.js` creates unrestricted random valid specifications and
+safe default export names. Its existing `randomPlayer()` path is the editor's
+Wildcard Roll and remains independent from Production policy.
+
+### Production rolls
+
+`engine/production-rolls.js` is the focused pure policy boundary for immutable
+`production-v1`. It imports only stable catalogs and class-template policy,
+normalizes portable string seeds, uses a deterministic PRNG and statically
+bounded retry loop, validates catalog/class/tier/palette/visibility/silhouette
+rules, and returns an ordinary player specification beside immutable audit
+metadata. The accepted 120-pair review corpus, catalog ids, class equipment
+pools, Form presentation, Effects Off choice, and no-outline-default decision
+are frozen so later catalog drift fails validation until it is explicitly
+classified. The module does not import the DOM, canvas, storage, renderers,
+ZIP packaging, or editor state.
 
 ### Equipment variant batches
 
@@ -141,7 +157,7 @@ path.
 
 ### Editor
 
-`app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, combat-loadout recipes, equipment-batch, class-pack, and sprite-pack exports, Complete Character Kit rendering, and download behavior. It consumes sprite behavior only through the public engine facade, uses `character-kit.js` for deterministic component, enemy, effect, species, body-build, expression, hairstyle, headgear, and outfit coverage plus recipe mapping, and uses `zip.js` for packaging. History snapshots contain the active mode, assembled outline and shade treatments, player/enemy/effect specifications, active combat loadout, optional player palette, and document names, so preset loads, resets, shade changes, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. The shade selector is rendered for Player and Enemies and hidden for Effects; effects neither receive Form nor overwrite the retained Player/Enemy shade choice. New and reset Player/Enemy editor documents use Form, while the engine option still defaults to None and missing/invalid shade metadata in versioned legacy presets, packs, and recipes migrates to None to preserve stored artwork.
+`app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, combat-loadout recipes, equipment-batch, class-pack, and sprite-pack exports, Complete Character Kit rendering, and download behavior. It consumes sprite behavior only through the public engine facade, uses `character-kit.js` for deterministic component, enemy, effect, species, body-build, expression, hairstyle, headgear, and outfit coverage plus recipe mapping, and uses `zip.js` for packaging. History snapshots contain the active mode, assembled outline and shade treatments, player/enemy/effect specifications, active combat loadout, optional player palette, and document names, so preset loads, resets, shade changes, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. Production Roll extends only the history snapshot with the current effect-preview toggle so the resolved player, Form treatment, and Effects Off round-trip in one undoable action; the ordinary editable/preset/comparison snapshots remain unchanged. Its last archetype/tier label is ephemeral module state, not persisted provenance. Wildcard continues to call `randomPlayer()`, category rerolls remain local, and Production is disabled outside Player mode. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. The shade selector is rendered for Player and Enemies and hidden for Effects; effects neither receive Form nor overwrite the retained Player/Enemy shade choice. New and reset Player/Enemy editor documents use Form, while the engine option still defaults to None and missing/invalid shade metadata in versioned legacy presets, packs, and recipes migrates to None to preserve stored artwork.
 
 The independently versioned persistence and export formats are:
 
@@ -163,6 +179,12 @@ sanitizers and load paths were repaired to preserve valid enemy outline values,
 while missing or invalid legacy values migrate to None and effects remain
 untreated. Shade integration deliberately advances the affected formats listed
 above rather than conflating their contracts.
+
+Production Roll changes none of these versions. Every persistence and export
+path receives only the resolved ordinary player specification plus the
+existing outline, shade, name, loadout, and format metadata. Seed, archetype,
+palette-family choice, validation decisions, and policy profile are
+deliberately not serialized.
 
 ### Windows wrapper
 
@@ -190,10 +212,21 @@ above rather than conflating their contracts.
   export metadata. Effects and atomic component sheets remain untreated.
 - Complete Character Kit recipes support at most 24 saved players, reference only shared paths, add no PNGs, and must recompose the complete renderer pixel-for-pixel.
 - Combined Complete Character Packs include one assembled native sheet per recipe and reuse the first assembled sheet as the reference preview instead of exporting a duplicate reference PNG.
+- `production-v1` is seeded, deterministic, bounded, catalog/class frozen, and
+  renderer-independent; its player result contains no provenance fields.
+- Production Roll is a Player-only whole-document action that applies Form and
+  Effects Off while preserving the current outline. Wildcard and per-category
+  randomizers retain their unrestricted behavior.
 - `sprite-engine.js` remains the public import path.
 - Browser and Windows builds use identical production files.
 
 `npm run check` enforces these invariants against the native export contract, class and equipment planner counts, character-pack ZIP format, Complete Character Kit component matrix, recipe paths, exact pixel recomposition, `asset-pack/manifest.json`, and all 232 committed PNG fixtures. The shade gate adds 288 broad player None-parity cases, exhaustive None parity for all 9,696 enemy source frames, 1,616 sampled enemy None/outline parity cases, 1,728 deterministic Form pilot cases, an exhaustive 9,696-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. The Form matrix verifies source ownership, protected pixels, unchanged outline/contact geometry, finite colors, exact floor shadows and transparent cells, visible changes in every pilot, and 21,086 material-aware pixel differences from the silhouette-only control. Weapon validation also enforces one connected silhouette in every frame, family and tier distinction, casting-family proportions, global Tier 5 pixel-density and bounds budgets relative to Tier 4, exact left/right mirroring, direction-aware front/back layer routing and recomposition, animation-phase diversity, front-view identity retention, catastrophic-detachment protection, zero discarded pixels across all 3,600 weapon frames, all 7,680 shield cases across four body builds, all 192 Lantern utility-off-hand cases, and 528 equipped-headgear cases, plus pixel/order parity for native full, direction, and animation sheet exports. The Lantern matrix checks animated hand attachment, face clearance, visible change, near/far routing, mutual exclusion, combat semantics, and exact layer recomposition. These structural checks do not replace explicit visual approval and do not resolve the deferred combined effect/shield compositor.
+
+The Production gate within that command adds 1,000 portable policy cases,
+immutable profile/freeze and reason-code checks, invalid-seed normalization,
+bounded fallback coverage, all-class/tier/palette coverage, Wildcard
+compatibility, schema non-proliferation, resolved class/batch/kit
+compatibility, and 48 deterministic assembled export cases.
 
 `tools/weapon-readability-audit.mjs` complements those hard checks with visual evidence. Its standard review matrices are joined by a 3,600-row CSV/JSON audit recording bounds, connected components, edge sides, character distance, expression overlap, discarded-frame count, and discarded-pixel count for every family, tier, direction, animation, and frame. The optional `--all-frames` mode also emits one enlarged and one true-native assembled all-frame sheet per weapon, while `--tier-sheets` emits four labeled all-weapon/all-frame SVG sheets per tier with lightweight PNG inspection grids. Frame-edge contact remains advisory, while any attempted write beyond `x=0..23` or `y=0..23` is a hard frame-contract failure.
 
@@ -223,6 +256,15 @@ back/body/front recomposition, animated attachment, shield precedence,
 absent-field parity, and zero out-of-bounds writes. The Lantern art is approved;
 the generated page remains review evidence rather than a committed fixture or
 accepted baseline.
+
+`tools/production-roll-review.mjs` generates the ignored balanced
+Production-versus-Wildcard corpus beneath `production-roll-review/`. Its 120
+fixed Production seeds are evenly divided across all ten class archetypes and
+paired with 120 Wildcard controls. The report audits all 11,520 source frames,
+34,560 Form/outline cases, deterministic replay, frame bounds, equipment
+attachments, and policy validity. The accepted digest is
+`af9b620e5ce87f6febf5983487fc163e8b5a4495fb37ced3653e8b5bbbc4ba3f`;
+generated HTML and JSON are evidence, not committed fixtures or baselines.
 
 ## Adding content safely
 

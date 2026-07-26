@@ -201,6 +201,29 @@ const rollProductionSource = runtimeSources['app.js'].slice(
   runtimeSources['app.js'].indexOf('function rollProduction()'),
   runtimeSources['app.js'].indexOf('function randomize()'),
 );
+const productionPersistenceSources = [
+  runtimeSources['app.js'].slice(
+    runtimeSources['app.js'].indexOf('function sanitizePlayer('),
+    runtimeSources['app.js'].indexOf('function sanitizeEnemy('),
+  ),
+  runtimeSources['app.js'].slice(
+    runtimeSources['app.js'].indexOf('function sanitizePackEntry('),
+    runtimeSources['app.js'].indexOf('function loadPackLibrary('),
+  ),
+  runtimeSources['app.js'].slice(
+    runtimeSources['app.js'].indexOf('function addCurrentToPack('),
+    runtimeSources['app.js'].indexOf('function loadPackEntry('),
+  ),
+  runtimeSources['app.js'].slice(
+    runtimeSources['app.js'].indexOf('function sanitizePreset('),
+    runtimeSources['app.js'].indexOf('function loadPresetLibrary('),
+  ),
+  runtimeSources['app.js'].slice(
+    runtimeSources['app.js'].indexOf('function savePreset('),
+    runtimeSources['app.js'].indexOf('function loadSelectedPreset('),
+  ),
+  editableSnapshotSource,
+];
 check(
   JSON.stringify(productionRollImports) === JSON.stringify(['./catalogs.js', './class-templates.js']),
   'production rolls must depend only on stable catalogs and class-template policy',
@@ -295,6 +318,14 @@ check(
     && runtimeSources['app.js'].includes('powerTierName:')
     && !runtimeSources['app.js'].includes('productionRoll:'),
   'the editor must show ephemeral Production archetype and power-tier status without adding roll provenance to stored state',
+);
+check(
+  productionPersistenceSources.every((source) => (
+    !/\b(?:profile|seed|archetype|powerTier|paletteFamily|decisions)\s*:/.test(source)
+      && !source.includes('lastProductionRoll')
+      && !source.includes('rollProductionPlayer')
+  )),
+  'presets, ordinary packs, comparisons, and persisted player specifications must not store Production Roll provenance',
 );
 check(
   JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
@@ -3686,6 +3717,112 @@ const expectedProductionPlayerFields = [
   'bodyBuild', 'expression', 'faceDetail', 'hairColor', 'hairStyle', 'headgear', 'offhand', 'outfit',
   'outfitColor', 'outfitTier', 'shield', 'shieldTier', 'skin', 'species', 'weapon', 'weaponTier',
 ].sort();
+const productionStoredPlayer = { ...productionGoldenResult.player, palette: null };
+const expectedStoredPlayerFields = [...expectedProductionPlayerFields, 'palette'].sort();
+const productionIdentityFields = [
+  'species', 'bodyBuild', 'skin', 'hairStyle', 'hairColor', 'expression',
+  'faceDetail', 'headgear', 'outfitColor', 'palette',
+];
+check(
+  JSON.stringify(Object.keys(productionStoredPlayer).sort()) === JSON.stringify(expectedStoredPlayerFields),
+  'resolved Production players must enter existing persistence and export paths as ordinary schema-v12 player specifications',
+);
+const productionClassPack = engine.buildClassPack(
+  productionStoredPlayer,
+  productionGoldenResult.archetype,
+);
+check(
+  productionClassPack.template.id === productionGoldenResult.archetype
+    && productionIdentityFields.every((field) => (
+      JSON.stringify(productionClassPack.baseSpec[field]) === JSON.stringify(productionStoredPlayer[field])
+    ))
+    && productionClassPack.variants.every((variant) => (
+      JSON.stringify(Object.keys(variant.spec).sort()) === JSON.stringify(expectedStoredPlayerFields)
+    )),
+  'class packs must accept resolved Production players without provenance fields or identity loss',
+);
+const productionVariantBatch = engine.buildVariantBatch(productionStoredPlayer, 'rpg-equipment');
+check(
+  productionVariantBatch.variants.length > 0
+    && productionVariantBatch.variants.every((variant) => (
+      productionIdentityFields.every((field) => (
+        JSON.stringify(variant.spec[field]) === JSON.stringify(productionStoredPlayer[field])
+      ))
+        && JSON.stringify(Object.keys(variant.spec).sort()) === JSON.stringify(expectedStoredPlayerFields)
+    )),
+  'equipment batches must accept resolved Production players without provenance fields or identity loss',
+);
+const productionCompleteKit = characterKit.buildCompleteCharacterKitPlan([{
+  id: 'production-v1-integration',
+  name: 'Production v1 integration',
+  kind: 'player',
+  spec: productionStoredPlayer,
+  outlineMode: engine.OUTLINE_MODE_NONE,
+  shadeMode: engine.SHADE_MODE_FORM,
+}]);
+const productionCompleteKitRecipe = productionCompleteKit.recipes[0];
+check(
+  productionCompleteKitRecipe
+    && productionCompleteKitRecipe.shadeMode === engine.SHADE_MODE_FORM
+    && productionCompleteKitRecipe.outlineMode === engine.OUTLINE_MODE_NONE
+    && productionCompleteKitRecipe.spec.kind === 'player'
+    && JSON.stringify(Object.keys(productionCompleteKitRecipe.spec).sort())
+      === JSON.stringify([...expectedStoredPlayerFields, 'kind'].sort())
+    && Object.entries(productionStoredPlayer).every(([field, value]) => (
+      JSON.stringify(productionCompleteKitRecipe.spec[field]) === JSON.stringify(value)
+    )),
+  'Complete Kit recipes must preserve resolved Production players through the existing schema without roll metadata',
+);
+let productionIntegrationRenderCases = 0;
+for (const direction of engine.DIRS) {
+  for (const animation of engine.ANIMS) {
+    for (let frame = 0; frame < animation.frames; frame += 1) {
+      const spec = { kind: 'player', ...productionStoredPlayer };
+      const rendered = renderAssembledPixels(spec, direction, animation.id, frame, {
+        shadeMode: engine.SHADE_MODE_FORM,
+        outlineMode: engine.OUTLINE_MODE_COMPLETE_B,
+      });
+      const repeated = renderAssembledPixels(spec, direction, animation.id, frame, {
+        shadeMode: engine.SHADE_MODE_FORM,
+        outlineMode: engine.OUTLINE_MODE_COMPLETE_B,
+      });
+      productionIntegrationRenderCases += 1;
+      check(
+        rendered.some(Boolean) && pixelsMatch(rendered, repeated),
+        `resolved Production exports must render deterministically in ${direction} ${animation.id} frame ${frame}`,
+      );
+    }
+  }
+}
+const originalMathRandom = Math.random;
+let wildcardZeroResult;
+try {
+  Math.random = () => 0;
+  wildcardZeroResult = engine.randomPlayer();
+} finally {
+  Math.random = originalMathRandom;
+}
+check(
+  JSON.stringify(wildcardZeroResult) === JSON.stringify({
+    species: 'human',
+    bodyBuild: 'classic',
+    skin: 'pale',
+    hairStyle: 'bald',
+    hairColor: 'black',
+    expression: 'neutral',
+    faceDetail: 'none',
+    headgear: 'none',
+    outfit: 'tunic',
+    outfitTier: 'tier1',
+    outfitColor: 'crimson',
+    weapon: 'sword',
+    weaponTier: 'tier1',
+    shield: 'none',
+    shieldTier: 'tier1',
+    offhand: 'lantern',
+  }),
+  'Wildcard Roll must preserve the existing randomPlayer() selection contract',
+);
 const productionPlayerCatalogs = [
   ['species', engine.SPECIES],
   ['bodyBuild', engine.BODY_BUILDS],
@@ -5507,6 +5644,20 @@ check(
   packageJson.scripts?.['review:offhands'] === 'node tools/offhand-review.mjs',
   'package.json must expose the focused off-hand review generator',
 );
+check(
+  packageJson.scripts?.['review:production-rolls'] === 'node tools/production-roll-review.mjs',
+  'package.json must expose the approved Production-versus-Wildcard review generator',
+);
+check(
+  runtimeSources['app.js'].includes('PRESET_VERSION = 12')
+    && runtimeSources['app.js'].includes('PACK_VERSION = 3')
+    && engine.VARIANT_BATCH_VERSION === 3
+    && engine.CLASS_PACK_VERSION === 3
+    && characterKit.MASTER_CHARACTER_KIT_VERSION === 2
+    && characterKit.COMPLETE_CHARACTER_KIT_VERSION === 12
+    && characterKit.COMPLETE_CHARACTER_PACK_VERSION === 12,
+  'Production Roll integration must not change any existing persistence, pack, batch, class, or kit schema version',
+);
 check(packageJson.scripts?.['tauri:build'] === 'tauri build --bundles nsis', 'package.json must expose the Windows installer build command');
 check(packageJson.scripts?.['tauri:build:exe'] === 'tauri build --no-bundle', 'package.json must preserve the proof Windows executable command');
 check(packageJson.devDependencies?.['@tauri-apps/cli'] === '^2.11.0', 'Tauri CLI must stay pinned to the approved 2.11 line');
@@ -5623,6 +5774,7 @@ console.log(`- Combat effects: ${effectRefs.length}`);
 console.log(`- Player samples: ${playerRefs.length}`);
 console.log(`- Production Roll policy cases: ${productionRollCases}`);
 console.log(`- Production Roll bounded fallbacks: ${productionFallbackCases}`);
+console.log(`- Production Roll integration render cases: ${productionIntegrationRenderCases}`);
 console.log(`- Shade Core/None player parity cases: ${shadeNonePlayerParityCases}`);
 console.log(`- Shade Core/None enemy parity cases: ${shadeNoneEnemyParityCases}`);
 console.log(`- Shade Core/None enemy outline parity cases: ${shadeNoneEnemyOutlineParityCases}`);

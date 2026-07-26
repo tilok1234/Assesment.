@@ -4,9 +4,9 @@ Date: 2026-07-26
 
 ## Canonical Continuation
 
-The enemy-outline and Form-shading phases are complete. Their persistence,
-rendering, editor, and export integration is approved and checkpointed on
-`codex/form-shading`, based on documentation checkpoint `630ddf7`.
+The enemy-outline, Form-shading, Lantern, and Production Roll v1 phases are
+complete. Their rendering, editor, persistence/export compatibility, review,
+and validation boundaries are approved on `codex/form-shading`.
 
 The user explicitly approved both the Form algorithm and live integration on
 2026-07-26, then selected Form as the new/reset Player/Enemy editor default.
@@ -15,19 +15,27 @@ persistence migrations, assembled exports, and pack/recipe metadata. None
 remains the engine compatibility mode and versioned legacy-artwork fallback.
 No new fixture or baseline was accepted, and no release artifact was rebuilt.
 
-The first fresh Phase 5 content slice is complete at pushed checkpoint
+The Lantern Phase 5 content slice is complete at pushed checkpoint
 `01b3f1a` (`Add approved Lantern off-hand and production roll plan`). It adds
 the visually approved Lantern and its authorized public non-shield `offhand`
 integration. The art review and lighter parchment background were approved on
 2026-07-26. Presets, ordinary packs, class/equipment planners, complete kits,
 the public engine facade, and exact layer recomposition carry the field.
 
-The user then requested a proper assessment and manageable implementation plan
-for curated production-quality character rolls. `PRODUCTION_ROLL_PLAN.md` is
-the canonical authority for that next lane. Planning is complete, but runtime
-implementation has not started. The recommended product boundary is an
-explicit **Production Roll** beside the existing **Wildcard Roll**, not a mode
-that locks manual editing.
+Production Roll Slices 1-5 are complete at pushed checkpoint `aa77666` (`Add
+production roll workflow`). The user approved the balanced 120-pair corpus,
+Form/Effects Off presentation, no Production-specific outline default, and the
+live split-action editor integration on 2026-07-26. `production-v1` is a pure
+seeded, deterministic, bounded, immutable policy with catalog/class freeze
+guards. The editor exposes **Production Roll** beside **Wildcard Roll**,
+applies the resolved player/Form/Effects Off state as one undoable action,
+preserves the current outline, and keeps archetype/tier status ephemeral.
+Resolved players remain ordinary specifications without stored seed,
+archetype, policy, palette-family, or decision metadata.
+
+Slice 6 integration validation and documentation is complete. All automated
+and live technical gates pass, and the user gave final integration approval on
+2026-07-27. The checkpoint containing this handoff follows `aa77666`.
 
 Do not resume old weapon, shield, transparency, effect-compositor, executable,
 or enemy-outline work unless the user explicitly changes priority. Additional
@@ -43,31 +51,31 @@ off-hand art also requires a new focused plan and visual approval gate.
    git log -5 --oneline
    ```
 
-2. Confirm `codex/form-shading` contains pushed Lantern/plan checkpoint
-   `01b3f1a`, based on approved Form checkpoint `a4310ec` and effects-default
-   checkpoint `2a1111f`.
+2. Confirm `codex/form-shading` contains pushed Production checkpoint
+   `aa77666`, based on Lantern/plan checkpoint `01b3f1a`, approved Form
+   checkpoint `a4310ec`, and effects-default checkpoint `2a1111f`.
 3. Read `README.md`, `ARCHITECTURE.md`, this file,
    `PRODUCTION_ROLL_PLAN.md`,
    `OUTLINE_RENDERING_PLAN.md`, `ENEMY_OUTLINE_PLAN.md`, and
    `SHADE_RENDERING_PLAN.md`.
-4. Confirm the worktree is clean before editing. Do not reset, restore, stash,
-   merge, push, accept baselines, or rebuild release artifacts automatically.
-5. Begin only Slice 1, the deterministic policy skeleton, from
-   `PRODUCTION_ROLL_PLAN.md`. Preserve `randomPlayer()` as Wildcard Roll; do
-   not add editor UI or persistence changes yet. The effect/shield compositor
-   is explicitly on ice and its preview defaults to Off. Further content,
-   transparency, fixture/baseline, or release work requires a separate user
-   choice.
+4. Confirm the Slice 6 checkpoint containing this handoff follows `aa77666`
+   and is aligned with its upstream before making new changes.
+5. Wait for a new explicit priority. Do not start deferred compatible rerolls,
+   provenance, enemy Production rolls, effect-compositor, fixture/baseline,
+   release, or Windows-build work.
 
 ## Git State At Handoff
 
 - Completed outline branch: `codex/enemy-outlines`
-- Approved shade, Lantern, and Production Roll planning branch:
+- Approved shade, Lantern, and Production Roll branch:
   `codex/form-shading`
+- Approved Production Roll policy/review/editor checkpoint: `aa77666`
+  (`Add production roll workflow`)
+- `aa77666` is pushed to `origin/codex/form-shading`; Slice 6 starts from that
+  clean remote-aligned checkpoint.
 - Approved Lantern/plan checkpoint: `01b3f1a`
   (`Add approved Lantern off-hand and production roll plan`)
-- `01b3f1a` is pushed to `origin/codex/form-shading`; the worktree was clean
-  after the checkpoint. Verify the exact current documentation-only HEAD live.
+- `01b3f1a` is an ancestor of `aa77666`.
 - Approved Form commit: `a4310ec` (`Add approved Form shading`)
 - Final approved enemy-outline commit: `ac860aa`
   (`Add approved Porcupine outlines`)
@@ -174,6 +182,48 @@ hand attachment, face clearance, front/back routing, visible difference, and
 exact recomposition checks. The interactive review covers three representative
 bearers, all four directions, every animation and frame, all outline modes, and
 approved Form shading. The review output is ignored evidence, not a baseline.
+
+## Approved Production Roll Phase 5 Slice
+
+`PRODUCTION_ROLL_PLAN.md` is the authority for the completed Production v1
+lane:
+
+- immutable profile identity is `{ id: 'production-v1', version: 1 }`;
+- portable normalized seeds drive a deterministic PRNG with at most 24
+  attempts and one deterministic safe fallback;
+- ten existing class templates own outfit and equipment pools;
+- one coherent power tier applies to equipped armor, weapon, and shield;
+- seven frozen catalog palette families replace independent color selection;
+- hidden face/hair choices, head-based species identity, mutually exclusive
+  left-hand equipment, and silhouette complexity are validated with stable
+  reason codes;
+- new catalog or class ids fail freeze audits until explicitly classified;
+- `randomPlayer()` remains the unrestricted Wildcard path.
+
+The accepted review contains 120 fixed Production results (12 per class) and
+120 same-label Wildcard controls. It audits 11,520 source frames, 34,560
+Form/outline cases, deterministic replay, attachment, frame bounds, and zero
+discarded writes. The frozen digest is
+`af9b620e5ce87f6febf5983487fc163e8b5a4495fb37ced3653e8b5bbbc4ba3f`.
+Generated HTML/JSON remains ignored evidence, not a committed fixture or
+baseline.
+
+Production editor integration is Player-only. It applies the resolved player,
+Form shading, and Effects Off in one history entry while preserving the
+current outline. Wildcard and per-category randomizers retain their existing
+behavior. Preset v12, ordinary pack v3, Equipment Variant Batch/Class Pack v3,
+Master Kit v2, and Complete Kit/Pack v12 remain unchanged; all receive only the
+resolved ordinary player specification.
+
+Slice 6 adds the package review command plus focused persistence-boundary,
+class-pack, equipment-batch, Complete Kit, Wildcard, schema-version, and 48
+assembled-render compatibility guards. The full validator passes 1,000 policy
+cases and 29 bounded-fallback cases. The balanced review passes its frozen
+120-pair digest. Live browser smoke passes Production/Wildcard history,
+preset/pack round-trips, category locality, Player-only mode isolation, and
+export-action smoke with no console warnings or errors. The temporary preset
+and pack entry were removed, and the original Player document plus all 16
+pre-existing enemy pack entries were restored exactly.
 
 ## Shade Plan Boundary
 
@@ -292,6 +342,10 @@ artifacts remain outside the approved scope.
   explicitly authorized on 2026-07-26.
 - The Lantern art and public integration were explicitly authorized on
   2026-07-26; no additional off-hand family is implied by that approval.
+- The Production/Wildcard corpus, Form/Effects Off presentation,
+  no-outline-default decision, and live editor integration were explicitly
+  authorized on 2026-07-26. Final Slice 6 documentation/compatibility approval
+  was explicitly received on 2026-07-27.
 
 ## Deferred Independent Lanes
 
@@ -339,8 +393,8 @@ until a deliberate approved release checkpoint.
 - `SHADE_RENDERING_PLAN.md`: canonical completed shade design and gates.
 - `OFFHAND_ITEMS_PLAN.md`: current approved Lantern contract and future
   off-hand boundaries.
-- `PRODUCTION_ROLL_PLAN.md`: assessed next-lane product contract, architecture,
-  manageable slices, and visual approval gates; implementation not started.
+- `PRODUCTION_ROLL_PLAN.md`: completed Production v1 product contract,
+  architecture, policy/review/editor slices, and final Slice 6 gate.
 - `ENEMY_OUTLINE_PLAN.md`: completed enemy rollout evidence.
 - `OUTLINE_RENDERING_PLAN.md`: current player/enemy outline contract.
 - `README.md`: user-facing capabilities and validation commands.

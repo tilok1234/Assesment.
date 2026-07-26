@@ -1,7 +1,9 @@
 # Production Roll Plan
 
-Status: assessment and implementation plan approved for preparation on
-2026-07-26. Runtime implementation has not started.
+Status: Production v1 policy, balanced review corpus, and live editor
+integration approved on 2026-07-26. Slices 1-5 are complete and pushed at
+`aa77666`. Slice 6 implementation and its technical gates received final
+integration approval on 2026-07-27.
 
 This plan defines a curated whole-character roll that favors coherent,
 readable, game-ready player sprites while preserving the existing unrestricted
@@ -15,14 +17,23 @@ baselines, and release artifacts.
 
 - Workspace: `C:\Users\headc\.codex\worktrees\9f24\8-bit sprite assembler`
 - Branch: `codex/form-shading`
-- Approved Lantern and Production Roll plan checkpoint: `01b3f1a`
-  (`Add approved Lantern off-hand and production roll plan`)
-- `01b3f1a` is committed and pushed to `origin/codex/form-shading`.
-- `npm.cmd run check` currently passes, including 192 frame-safe Lantern cases.
-- `npm.cmd run review:offhands` currently passes 576 assembled treatment cases.
+- Approved Production Roll policy/review/editor checkpoint: `aa77666`
+  (`Add production roll workflow`)
+- `aa77666` is committed and pushed to `origin/codex/form-shading`.
+- `npm.cmd run check` passes 1,000 Production policy cases in addition to the
+  full existing project matrix, including 29 bounded-fallback cases and 48
+  deterministic integration render cases.
+- The balanced review passes 120 Production and 120 Wildcard cases with frozen
+  digest `af9b620e5ce87f6febf5983487fc163e8b5a4495fb37ced3653e8b5bbbc4ba3f`.
+- The live browser gate passes Production/Wildcard undo and redo, preset and
+  ordinary-pack round-trips, category-randomizer locality, Player-only mode
+  isolation, Effects Off/Form presentation, export-action smoke, and exact
+  restoration of the pre-test editor and 16-entry user pack. The console
+  reports no warnings or errors.
 - No fixture or visual baseline was changed, and no release artifact was
   rebuilt.
-- Slice 0 is complete. Runtime Production Roll implementation has not started.
+- Slices 0-6 are complete and approved. The checkpoint containing this status
+  follows `aa77666`; later deferred follow-ups remain unauthorized.
 
 ## Executive assessment
 

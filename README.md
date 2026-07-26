@@ -19,7 +19,8 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
 - Sprite-only undo and redo through the header controls or `Ctrl+Z` / `Ctrl+Y`
-- Whole-sprite and per-category randomization with undo support
+- Explicit Production Roll and Wildcard Roll whole-character actions plus
+  per-category randomization with undo support
 - Persistent character names, live preview labels, and Windows-safe custom PNG filenames
 - Editable skin, hair, and outfit tone pairs with a reusable local palette library
 - Full-sheet, selected-animation, and selected-direction PNG export scopes
@@ -85,6 +86,16 @@ Complete Character Kit/Pack v12. Legacy specifications safely default to no
 utility off-hand. Effects remain Off, only shields resolve shield-block
 behavior, and no fixture, baseline, or release artifact changed.
 
+Production Roll v1 is approved and integrated beside the renamed Wildcard
+Roll. Production uses a portable seed stream, selects one of the ten existing
+class archetypes, keeps one coherent equipment tier and fixed catalog palette
+family, normalizes hidden identity choices, and enforces a bounded silhouette
+budget. The result is still an ordinary editable player specification:
+presets, packs, batches, class packs, kits, and exports store the resolved
+character without its seed or audit trail. Production applies Form shading and
+Effects Off in one undoable action while preserving the current outline;
+Wildcard retains the former unrestricted `randomPlayer()` behavior.
+
 ## Preview controls
 
 - `Space` plays or pauses the selected animation.
@@ -131,6 +142,13 @@ npm run check
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 3,600 weapon animation cases, 7,680 shield cases across all four body builds, 192 Lantern utility-off-hand cases, and 528 equipped-headgear cases. The shade gate adds 288 broad player None-parity cases, all 9,696 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 1,728 deterministic Form pilot cases, an exhaustive 9,696-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, visible changes, and 21,086 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
+The same command also audits 1,000 deterministic Production v1 seeds,
+catalog/class freeze drift, invalid seeds, bounded retries and fallbacks,
+ordinary-player copy safety, Wildcard compatibility, all ten classes, every
+power tier and palette family, 48 deterministic assembled export frames, and
+resolved-player compatibility with existing class, batch, Complete Kit,
+preset, pack, and schema boundaries.
+
 Run `npm run review:shades` to regenerate the ignored interactive Form pilot
 beneath `shade-review/`. It compares untreated output, a silhouette-only
 control, Form without outlines, Form with Complete B, and Form with Selective C
@@ -145,6 +163,15 @@ every direction, animation, and frame, None/Complete B/Selective C outlines,
 approved Form shading, exact back/body/front recomposition, shield precedence,
 and absent-field parity. The Lantern art was visually approved on 2026-07-26;
 the review remains evidence rather than a committed baseline.
+
+Run `npm run review:production-rolls` to regenerate the ignored balanced
+Production-versus-Wildcard review beneath `production-roll-review/`. It
+contains 120 fixed Production results and 120 Wildcard controls, with 12
+Production seeds per class, all 11,520 source frames, 34,560 Form/outline
+cases, deterministic replay, attachment checks, and the approved corpus digest
+`af9b620e5ce87f6febf5983487fc163e8b5a4495fb37ced3653e8b5bbbc4ba3f`.
+The corpus and Form/Effects Off presentation were approved on 2026-07-26; the
+generated page remains review evidence rather than a committed baseline.
 
 Run `npm run review:weapons -- --all-frames` to regenerate the 37 weapon review sheets and the exhaustive 3,600-row CSV/JSON audit. Add `--tier-sheets` to emit four labeled all-weapon/all-frame SVG review sheets per tier plus lightweight PNG inspection grids. The audit records ordinary edge contact separately from discarded pixels, so touching `x=0` or `x=23` remains advisory while attempting to draw outside the 24x24 canvas is a hard failure.
 
@@ -267,15 +294,16 @@ Every component shares the same animation grid and has been validated to recompo
 
 - `index.html` - standard application entry point
 - `styles.css` - desktop-style responsive interface
-- `app.js` - editor state, sprite history, reset and comparison workflows, presets, combat loadouts, equipment-batch, class-pack, and character-pack exports, Complete Character Kit rendering, naming, playback and frame inspection, and downloads
+- `app.js` - editor state, Production/Wildcard actions, sprite history, reset and comparison workflows, presets, combat loadouts, equipment-batch, class-pack, and character-pack exports, Complete Character Kit rendering, naming, playback and frame inspection, and downloads
 - `character-kit.js` - deterministic component coverage, paths, recipe mapping, counts, and layer-order planning
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
-- `engine/` - focused animation, palette, player-option, enemy, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
+- `engine/` - focused animation, palette, player-option, enemy, production-roll, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build
 - `tools/check-project.mjs` - project and asset validator
+- `tools/production-roll-review.mjs` - deterministic balanced Production/Wildcard review and audit generator
 - `src-tauri/` - Tauri 2 Windows wrapper, permissions, CSP, and icon resources
 - `ARCHITECTURE.md` - engine boundaries, dependency direction, and safe extension points
 - `ROADMAP.md` - agreed development and Windows release order
@@ -283,7 +311,7 @@ Every component shares the same animation grid and has been validated to recompo
 - `ENEMY_OUTLINE_PLAN.md` - completed 57-family outline rollout record
 - `SHADE_RENDERING_PLAN.md` - canonical completed shade design and approval gates
 - `OFFHAND_ITEMS_PLAN.md` - approved Lantern pilot, public contract, validation, and future off-hand boundaries
-- `PRODUCTION_ROLL_PLAN.md` - assessed Production-versus-Wildcard roll contract and approval-gated implementation slices; runtime work has not started
+- `PRODUCTION_ROLL_PLAN.md` - completed Production-versus-Wildcard policy, review, approval, editor integration, and compatibility gates
 
 ## Direction
 
