@@ -9,6 +9,8 @@ enemy-outline-review/
 shade-review/
 offhand-review/
 production-roll-review/
+cast-review/
+death-review/
 src-tauri/gen/
 src-tauri/target/
 *.log

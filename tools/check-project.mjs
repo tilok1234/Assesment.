@@ -47,6 +47,8 @@ const engine = await import(`${pathToFileURL(path.join(root, 'sprite-engine.js')
 const internalCatalogs = await import(`${pathToFileURL(path.join(root, 'engine', 'catalogs.js')).href}?check=${Date.now()}`);
 const pixelBuffer = await import(`${pathToFileURL(path.join(root, 'engine', 'pixel-buffer.js')).href}?check=${Date.now()}`);
 const shadeModule = await import(`${pathToFileURL(path.join(root, 'engine', 'shade-renderer.js')).href}?check=${Date.now()}`);
+const castModule = await import(`${pathToFileURL(path.join(root, 'engine', 'cast-animation.js')).href}?check=${Date.now()}`);
+const deathModule = await import(`${pathToFileURL(path.join(root, 'engine', 'death-animation.js')).href}?check=${Date.now()}`);
 const { SHADE_PILOTS } = await import(`${pathToFileURL(path.join(root, 'tools', 'shade-pilots.mjs')).href}?check=${Date.now()}`);
 const characterKit = await import(`${pathToFileURL(path.join(root, 'character-kit.js')).href}?check=${Date.now()}`);
 const zipModule = await import(`${pathToFileURL(path.join(root, 'zip.js')).href}?check=${Date.now()}`);
@@ -62,7 +64,10 @@ checkSyntax('engine/catalogs/enemies.js');
 checkSyntax('engine/catalogs/palettes.js');
 checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/combat-loadouts.js');
+checkSyntax('engine/cast-animation.js');
+checkSyntax('engine/death-animation.js');
 checkSyntax('engine/class-templates.js');
+checkSyntax('engine/game-pack.js');
 checkSyntax('engine/production-rolls.js');
 checkSyntax('engine/production-rerolls.js');
 checkSyntax('engine/variant-batches.js');
@@ -77,6 +82,8 @@ checkSyntax('engine/shield-renderer.js');
 checkSyntax('engine/sheets.js');
 checkSyntax('engine/weapon-renderer.js');
 checkSyntax('tools/build.mjs');
+checkSyntax('tools/cast-review.mjs');
+checkSyntax('tools/death-review.mjs');
 checkSyntax('tools/dev-server.mjs');
 checkSyntax('tools/generate-shield-placement-audit.mjs');
 checkSyntax('tools/outline-review.mjs');
@@ -143,7 +150,10 @@ const runtimeSources = {
   'engine/catalogs/palettes.js': await readFile(path.join(root, 'engine', 'catalogs', 'palettes.js'), 'utf8'),
   'engine/catalogs/player-options.js': await readFile(path.join(root, 'engine', 'catalogs', 'player-options.js'), 'utf8'),
   'engine/combat-loadouts.js': await readFile(path.join(root, 'engine', 'combat-loadouts.js'), 'utf8'),
+  'engine/cast-animation.js': await readFile(path.join(root, 'engine', 'cast-animation.js'), 'utf8'),
+  'engine/death-animation.js': await readFile(path.join(root, 'engine', 'death-animation.js'), 'utf8'),
   'engine/class-templates.js': await readFile(path.join(root, 'engine', 'class-templates.js'), 'utf8'),
+  'engine/game-pack.js': await readFile(path.join(root, 'engine', 'game-pack.js'), 'utf8'),
   'engine/production-rolls.js': await readFile(path.join(root, 'engine', 'production-rolls.js'), 'utf8'),
   'engine/production-rerolls.js': await readFile(path.join(root, 'engine', 'production-rerolls.js'), 'utf8'),
   'engine/variant-batches.js': await readFile(path.join(root, 'engine', 'variant-batches.js'), 'utf8'),
@@ -177,13 +187,15 @@ const expectedEngineExports = [
   'SHADE_MODES', 'SHADE_MODE_FORM', 'SHADE_MODE_NONE',
   'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
+  'WILDSHOT_GAME_PACK_ACTOR_CATEGORIES', 'WILDSHOT_GAME_PACK_EFFECT_CATEGORIES', 'WILDSHOT_GAME_PACK_POLICY',
   'applyClassTemplate', 'auditProductionRollCatalogs', 'auditProductionRollClassTemplates',
-  'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch',
+  'auditWildshotGamePackRuntime', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet',
+  'buildVariantBatch', 'buildWildshotGamePackManifest',
   'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawAssembledSprite', 'drawOutlinedSprite', 'drawSprite',
   'enemySupportsOutline', 'normalizeAssembledOutlineMode', 'normalizeOutlineMode', 'normalizeShadeMode',
   'normalizeProductionRollSeed', 'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout',
-  'rerollProductionPlayerCategory', 'rollProductionPlayer', 'sanitizeCombatLoadout', 'thumbURL',
-  'validateProductionPlayer',
+  'rerollProductionPlayerCategory', 'rollProductionPlayer', 'sanitizeCombatLoadout',
+  'serializeWildshotGamePackManifest', 'thumbURL', 'validateProductionPlayer', 'validateWildshotGamePackExport',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
@@ -201,6 +213,192 @@ const productionRollImports = [...runtimeSources['engine/production-rolls.js'].m
 const productionRerollImports = [
   ...runtimeSources['engine/production-rerolls.js'].matchAll(/from\s+['"]([^'"]+)['"]/g),
 ].map((match) => match[1]).sort();
+const castImports = [
+  ...runtimeSources['engine/cast-animation.js'].matchAll(/from\s+['"]([^'"]+)['"]/g),
+].map((match) => match[1]).sort();
+const deathImports = [
+  ...runtimeSources['engine/death-animation.js'].matchAll(/from\s+['"]([^'"]+)['"]/g),
+].map((match) => match[1]).sort();
+check(
+  castImports.length === 0,
+  'the isolated Player Cast contract must remain a dependency-free pure module',
+);
+check(
+  !/\b(document|window|localStorage|sessionStorage|canvas|getContext|Math\.random)\b/
+    .test(runtimeSources['engine/cast-animation.js']),
+  'the isolated Player Cast contract must not depend on DOM, storage, canvas, or randomness',
+);
+check(
+  JSON.stringify(engine.ANIMS.map(({ id }) => id))
+    === JSON.stringify(['idle', 'walk', 'attack', 'cast', 'hurt', 'death'])
+    && engine.SHEET_COLS === 20,
+  'approved Player Cast and Death must retain their public order in the 20-column sheet contract',
+);
+check(
+  Object.isFrozen(castModule.PLAYER_CAST_PROFILE)
+    && Object.isFrozen(castModule.PLAYER_CAST_ANIMATION)
+    && castModule.PLAYER_CAST_PROFILE.id === 'player-cast-v1'
+    && castModule.PLAYER_CAST_PROFILE.version === 1
+    && castModule.PLAYER_CAST_PROFILE.animation === castModule.PLAYER_CAST_ANIMATION
+    && JSON.stringify(castModule.PLAYER_CAST_ANIMATION)
+      === JSON.stringify({ id: 'cast', name: 'Cast', frames: 4, ms: 130 }),
+  'the isolated Player Cast profile and animation identity must remain exact and immutable',
+);
+const expectedPlayerCastPoses = [
+  {
+    phase: 'prepare',
+    bodyBob: 1,
+    leg: 0,
+    sideHandReach: 0,
+    weaponHandOffset: -1,
+    offhandHandOffset: 1,
+  },
+  {
+    phase: 'focus',
+    bodyBob: 1,
+    leg: 1,
+    sideHandReach: 1,
+    weaponHandOffset: -1,
+    offhandHandOffset: -1,
+  },
+  {
+    phase: 'release',
+    bodyBob: 0,
+    leg: 1,
+    sideHandReach: 2,
+    weaponHandOffset: 0,
+    offhandHandOffset: -2,
+  },
+  {
+    phase: 'recover',
+    bodyBob: 0,
+    leg: -1,
+    sideHandReach: 1,
+    weaponHandOffset: 0,
+    offhandHandOffset: 1,
+  },
+];
+for (let frame = 0; frame < expectedPlayerCastPoses.length; frame++) {
+  const pose = castModule.playerCastPose(frame);
+  check(
+    Object.isFrozen(pose)
+      && JSON.stringify(pose) === JSON.stringify(expectedPlayerCastPoses[frame]),
+    `Player Cast pose ${frame} must remain exact and immutable`,
+  );
+}
+for (const invalidFrame of [-1, 0.5, 4, Number.NaN]) {
+  let castError = null;
+  try {
+    castModule.playerCastPose(invalidFrame);
+  } catch (error) {
+    castError = error;
+  }
+  check(
+    castError instanceof RangeError,
+    `Player Cast must reject invalid frame ${String(invalidFrame)} with RangeError`,
+  );
+}
+check(
+  runtimeSources['engine/renderer.js'].includes("if (animId === 'cast')")
+    && runtimeSources['engine/renderer.js'].includes('p.castWeaponHand')
+    && runtimeSources['engine/renderer.js'].includes('p.castOffhandHand')
+    && runtimeSources['engine/offhand-renderer.js'].includes('if (p.cast) return p.castOffhandHand')
+    && runtimeSources['engine/shield-renderer.js'].includes('if (p.cast) return p.castOffhandHand'),
+  'the guarded Player Cast pose must keep body, weapon, shield, and Lantern hand sockets registered',
+);
+check(
+  deathImports.length === 0,
+  'the isolated Player Death contract must remain a dependency-free pure module',
+);
+check(
+  !/\b(document|window|localStorage|sessionStorage|canvas|getContext|Math\.random)\b/
+    .test(runtimeSources['engine/death-animation.js']),
+  'the isolated Player Death contract must not depend on DOM, storage, canvas, or randomness',
+);
+check(
+  JSON.stringify(engine.ANIMS.map(({ id }) => id))
+      === JSON.stringify(['idle', 'walk', 'attack', 'cast', 'hurt', 'death'])
+    && engine.SHEET_COLS === 20
+    && !Object.hasOwn(engine, 'PLAYER_DEATH_ANIMATION')
+    && !runtimeSources['sprite-engine.js'].includes('death-animation')
+    && runtimeSources['engine/catalogs/animation.js'].includes("../death-animation.js"),
+  'approved Player Death must be public after Hurt while its focused profile stays internal',
+);
+check(
+  Object.isFrozen(deathModule.PLAYER_DEATH_PROFILE)
+    && Object.isFrozen(deathModule.PLAYER_DEATH_ANIMATION)
+    && deathModule.PLAYER_DEATH_PROFILE.id === 'player-death-v1'
+    && deathModule.PLAYER_DEATH_PROFILE.version === 1
+    && deathModule.PLAYER_DEATH_PROFILE.animation === deathModule.PLAYER_DEATH_ANIMATION
+    && JSON.stringify(deathModule.PLAYER_DEATH_ANIMATION)
+      === JSON.stringify({ id: 'death', name: 'Death', frames: 4, ms: 160 }),
+  'the isolated Player Death profile and animation identity must remain exact and immutable',
+);
+const expectedPlayerDeathPoses = [
+  { phase: 'stagger', bodyBob: 0, leg: -1, arm: -1, quarterTurn: false },
+  { phase: 'buckle', bodyBob: 1, leg: 1, arm: 1, quarterTurn: false },
+  { phase: 'fall', bodyBob: 1, leg: -1, arm: -1, quarterTurn: true },
+  { phase: 'still', bodyBob: 0, leg: 0, arm: 0, quarterTurn: true },
+];
+for (let frame = 0; frame < expectedPlayerDeathPoses.length; frame++) {
+  const pose = deathModule.playerDeathPose(frame);
+  check(
+    Object.isFrozen(pose)
+      && JSON.stringify(pose) === JSON.stringify(expectedPlayerDeathPoses[frame]),
+    `Player Death pose ${frame} must remain exact and immutable`,
+  );
+}
+for (const invalidFrame of [-1, 0.5, 4, Number.NaN]) {
+  let deathError = null;
+  try {
+    deathModule.playerDeathPose(invalidFrame);
+  } catch (error) {
+    deathError = error;
+  }
+  check(
+    deathError instanceof RangeError,
+    `Player Death must reject invalid frame ${String(invalidFrame)} with RangeError`,
+  );
+}
+const deathMarkerPixels = Array.from(
+  { length: engine.SIZE * engine.SIZE },
+  (_, index) => index,
+);
+for (const direction of engine.DIRS) {
+  for (const frame of [2, 3]) {
+    const transformed = deathModule.transformPlayerDeathPixels(
+      deathMarkerPixels,
+      direction,
+      frame,
+      engine.SIZE,
+    );
+    check(
+      transformed !== deathMarkerPixels
+        && transformed.length === deathMarkerPixels.length
+        && new Set(transformed).size === deathMarkerPixels.length
+        && deathMarkerPixels.every((marker) => transformed.includes(marker)),
+      `Player Death ${direction} frame ${frame} must be a deep-copied coordinate permutation`,
+    );
+  }
+}
+check(
+  runtimeSources['engine/renderer.js'].includes("if (animId === 'death')")
+    && runtimeSources['engine/renderer.js'].includes('transformPlayerDeathPixels')
+    && runtimeSources['engine/renderer.js'].includes("spec.kind === 'player' && p.death"),
+  'the isolated Player Death renderer path must remain guarded to Player Death calls',
+);
+const gamePackImports = [
+  ...runtimeSources['engine/game-pack.js'].matchAll(/from\s+['"]([^'"]+)['"]/g),
+].map((match) => match[1]).sort();
+check(
+  JSON.stringify(gamePackImports) === JSON.stringify(['./catalogs.js']),
+  'the Wildshot game-pack policy must depend only on the stable internal catalog facade',
+);
+check(
+  !/\b(document|window|localStorage|sessionStorage|canvas|getContext|buildStoredZip|drawSprite|drawAssembledSprite)\b/
+    .test(runtimeSources['engine/game-pack.js']),
+  'the Wildshot game-pack policy must not depend on DOM, storage, canvas, ZIP, or renderers',
+);
 const editableSnapshotSource = runtimeSources['app.js'].slice(
   runtimeSources['app.js'].indexOf('function editableSnapshot('),
   runtimeSources['app.js'].indexOf('function sanitizeProductionRollSession('),
@@ -521,8 +719,8 @@ check(runtimeSources['app.js'].includes("state.exportScale === 1 ? ' · native' 
 check(runtimeSources['engine/sheets.js'].includes('function buildSheet(spec, scale = 1, opts = {})'), 'full-sheet assembly must retain native 1x as its logical default');
 check(runtimeSources['engine/sheets.js'].includes('function buildAnimationSheet(spec, animId, scale = 1, opts = {})'), 'animation-sheet assembly must retain native 1x as its logical default');
 check(runtimeSources['engine/sheets.js'].includes('function buildDirectionSheet(spec, direction, scale = 1, opts = {})'), 'direction-sheet assembly must retain native 1x as its logical default');
-check(engine.SHEET_COLS * engine.SIZE === 288 && engine.DIRS.length * engine.SIZE === 96, 'native full-sheet dimensions must remain 288x96 pixels');
-check(engine.SHEET_COLS * engine.SIZE === 288 && engine.SIZE === 24, 'native direction-sheet dimensions must remain 288x24 pixels');
+check(engine.SHEET_COLS * engine.SIZE === 480 && engine.DIRS.length * engine.SIZE === 96, 'native full-sheet dimensions must be 480x96 pixels');
+check(engine.SHEET_COLS * engine.SIZE === 480 && engine.SIZE === 24, 'native direction-sheet dimensions must be 480x24 pixels');
 check(engine.ANIMS.every((anim) => anim.frames * engine.SIZE === 48 || anim.frames * engine.SIZE === 96), 'native animation-sheet widths must remain 48 or 96 pixels');
 check(runtimeSources['app.js'].includes("PACK_STORAGE_KEY = 'sprite-assembler-character-pack-v1'"), 'character packs must use independent versioned persistence');
 check(runtimeSources['app.js'].includes('PACK_VERSION = 3'), 'ordinary character packs must use schema v3 for off-hand persistence');
@@ -1211,11 +1409,29 @@ let shadeNoneEnemyParityCases = 0;
 let shadeNoneEnemyOutlineParityCases = 0;
 let formEnemyAuditCases = 0;
 let formEnemyCombinedOutlineCases = 0;
+let enemyCastAliasCases = 0;
+let enemyDeathAliasCases = 0;
 for (const family of engine.ENEMIES) for (const variant of family.variants) {
   const spec = { kind: 'enemy', family: family.id, variant: variant.id };
   for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
     for (let frame = 0; frame < animation.frames; frame++) {
       const source = renderPixels(spec, direction, animation.id, frame);
+      if (animation.id === 'cast') {
+        const attackAlias = renderPixels(spec, direction, 'attack', frame);
+        check(
+          pixelsMatch(source, attackAlias),
+          `${family.id}/${variant.id} ${direction} Cast frame ${frame + 1} must alias Attack exactly`,
+        );
+        enemyCastAliasCases++;
+      }
+      if (animation.id === 'death') {
+        const hurtAlias = renderPixels(spec, direction, 'hurt', Math.min(frame, 1));
+        check(
+          pixelsMatch(source, hurtAlias),
+          `${family.id}/${variant.id} ${direction} Death frame ${frame + 1} must alias Hurt frame ${Math.min(frame, 1) + 1} exactly`,
+        );
+        enemyDeathAliasCases++;
+      }
       const assembled = renderAssembledPixels(spec, direction, animation.id, frame);
       check(
         pixelsMatch(source, assembled),
@@ -3068,7 +3284,7 @@ for (const variant of lizardfolkFamily.variants) {
       const tailIndices = tailPixels.map(([x, y]) => (y * engine.SIZE) + x);
       const body = renderPixels(spec, direction, animation.id, frame, { layer: 'body' });
       const source = renderPixels(spec, direction, animation.id, frame);
-      const flashing = animation.id === 'hurt' && frame === 0;
+      const flashing = (animation.id === 'hurt' || animation.id === 'death') && frame === 0;
       check(
         tailPixels.every(([x, y, color]) => (
           body[(y * engine.SIZE) + x] === (flashing ? '#ffffff' : color)
@@ -3602,6 +3818,237 @@ for (const tier of engine.OUTFIT_TIERS) {
     `cape ${tier.id} must retain four content-distinct body-build back components`,
   );
 }
+
+check(
+  Object.isFrozen(engine.WILDSHOT_GAME_PACK_POLICY)
+    && Object.isFrozen(engine.WILDSHOT_GAME_PACK_POLICY.frameContract)
+    && Object.isFrozen(engine.WILDSHOT_GAME_PACK_POLICY.frameContract.dirs)
+    && Object.isFrozen(engine.WILDSHOT_GAME_PACK_POLICY.frameContract.anims)
+    && engine.WILDSHOT_GAME_PACK_POLICY.frameContract.anims.every(Object.isFrozen)
+    && engine.WILDSHOT_GAME_PACK_POLICY.pack === 'wildshot-assembler'
+    && engine.WILDSHOT_GAME_PACK_POLICY.version === 1
+    && engine.WILDSHOT_GAME_PACK_POLICY.cell === 24
+    && engine.WILDSHOT_GAME_PACK_POLICY.exportScale === 1,
+  'the Wildshot game-pack policy must be deeply immutable and native 1x',
+);
+check(
+  JSON.stringify(engine.WILDSHOT_GAME_PACK_POLICY.frameContract) === JSON.stringify({
+    dirs: ['down', 'left', 'right', 'up'],
+    anims: [
+      { id: 'idle', frames: 2, ms: 420 },
+      { id: 'walk', frames: 4, ms: 150 },
+      { id: 'attack', frames: 4, ms: 115 },
+      { id: 'cast', frames: 4, ms: 130 },
+      { id: 'hurt', frames: 2, ms: 140 },
+      { id: 'death', frames: 4, ms: 160 },
+    ],
+    layout: 'rows = dirs in order; columns = anims in order, frames left to right',
+  }),
+  'the Wildshot v1 direction, animation, timing, and layout contract must remain exact',
+);
+check(
+  JSON.stringify(engine.WILDSHOT_GAME_PACK_ACTOR_CATEGORIES) === JSON.stringify(['player', 'enemy'])
+    && Object.isFrozen(engine.WILDSHOT_GAME_PACK_ACTOR_CATEGORIES)
+    && JSON.stringify(engine.WILDSHOT_GAME_PACK_EFFECT_CATEGORIES)
+      === JSON.stringify(['projectiles', 'impacts', 'trails', 'statuses'])
+    && Object.isFrozen(engine.WILDSHOT_GAME_PACK_EFFECT_CATEGORIES),
+  'the Wildshot v1 actor and effect category folders must remain immutable',
+);
+
+const gamePackRuntimeAudit = engine.auditWildshotGamePackRuntime();
+check(
+  gamePackRuntimeAudit.ready
+    && Object.isFrozen(gamePackRuntimeAudit)
+    && Object.isFrozen(gamePackRuntimeAudit.current)
+    && Object.isFrozen(gamePackRuntimeAudit.required)
+    && Object.isFrozen(gamePackRuntimeAudit.issues)
+    && gamePackRuntimeAudit.current.cell === 24
+    && gamePackRuntimeAudit.current.anims.reduce((sum, animation) => sum + animation.frames, 0) === 20
+    && gamePackRuntimeAudit.issues.length === 0,
+  'the Wildshot runtime must satisfy the approved 20-column Cast and Death contract',
+);
+
+const gamePackPlayerInput = {
+  id: 'hero-one',
+  category: 'player',
+  sheet: 'players/hero-one.png',
+  spec: {
+    kind: 'player',
+    species: 'human',
+    bodyBuild: 'classic',
+    skin: 'peach',
+    hairStyle: 'spiky',
+    hairColor: 'brown',
+    expression: 'neutral',
+    faceDetail: 'none',
+    headgear: 'none',
+    outfit: 'tunic',
+    outfitTier: 'tier1',
+    outfitColor: 'royal',
+    weapon: 'sword',
+    weaponTier: 'tier1',
+    shield: 'round',
+    shieldTier: 'tier1',
+    offhand: 'none',
+    palette: {
+      skin: ['#101010', '#202020'],
+      hair: ['#303030', '#404040'],
+      outfit: ['#505050', '#606060'],
+    },
+  },
+  tags: ['phase-a', 'ranger'],
+};
+const gamePackEnemyInput = {
+  id: 'slime-one',
+  category: 'enemy',
+  sheet: 'enemies/slime-one.png',
+  spec: { kind: 'enemy', family: 'slime', variant: 'lime' },
+};
+const gamePackEffectInput = {
+  id: 'spark-hit',
+  category: 'impacts',
+  sheet: 'effects/impacts/spark-hit.png',
+  frames: 3,
+  ms: 90,
+  anchor: [12, 12],
+  directional: false,
+};
+const gamePackManifest = engine.buildWildshotGamePackManifest({
+  generated: '2026-07-27',
+  toolCommit: 'b7eae05',
+  actors: [gamePackEnemyInput, gamePackPlayerInput],
+  effects: [gamePackEffectInput],
+});
+const gamePackManifestReplay = engine.buildWildshotGamePackManifest({
+  generated: '2026-07-27',
+  toolCommit: 'b7eae05',
+  actors: [gamePackPlayerInput, gamePackEnemyInput],
+  effects: [gamePackEffectInput],
+});
+check(
+  gamePackManifest.export_scale === 1
+    && gamePackManifest.cell === 24
+    && gamePackManifest.tool_commit === 'b7eae05'
+    && JSON.stringify(gamePackManifest.actors.map(({ id }) => id)) === JSON.stringify(['hero-one', 'slime-one'])
+    && JSON.stringify(gamePackManifest.effects.map(({ id }) => id)) === JSON.stringify(['spark-hit'])
+    && JSON.stringify(gamePackManifest) === JSON.stringify(gamePackManifestReplay)
+    && Buffer.compare(
+      Buffer.from(engine.serializeWildshotGamePackManifest(gamePackManifest)),
+      Buffer.from(engine.serializeWildshotGamePackManifest(gamePackManifestReplay)),
+    ) === 0,
+  'Wildshot manifests must be native 1x, stably ordered, and byte-deterministic for identical inputs',
+);
+gamePackPlayerInput.spec.palette.skin[0] = '#ffffff';
+gamePackPlayerInput.tags[0] = 'mutated';
+check(
+  gamePackManifest.actors[0].spec.palette.skin[0] === '#101010'
+    && gamePackManifest.actors[0].tags[0] === 'phase-a',
+  'Wildshot manifests must deep-copy ordinary actor specifications and tags',
+);
+
+const gamePackManifestBytes = engine.serializeWildshotGamePackManifest(gamePackManifest);
+const validGamePackFiles = [
+  { path: 'manifest.json', data: gamePackManifestBytes },
+  {
+    path: 'players/hero-one.png',
+    width: 480,
+    height: 96,
+    binaryAlpha: true,
+    nonEmptyFrame0: ['idle', 'walk', 'attack', 'cast', 'death'],
+  },
+  {
+    path: 'enemies/slime-one.png',
+    width: 480,
+    height: 96,
+    binaryAlpha: true,
+    nonEmptyFrame0: ['idle', 'walk', 'attack', 'cast', 'death'],
+  },
+  {
+    path: 'effects/impacts/spark-hit.png',
+    width: 72,
+    height: 24,
+    binaryAlpha: true,
+  },
+  { path: 'LICENSE', data: new TextEncoder().encode('Approved test license\n') },
+];
+const validGamePackAudit = engine.validateWildshotGamePackExport({
+  manifest: gamePackManifest,
+  files: validGamePackFiles,
+});
+check(
+  validGamePackAudit.valid && validGamePackAudit.issues.length === 0,
+  'a complete native 1x Wildshot v1 export audit must pass',
+);
+
+const invalidGamePackFiles = validGamePackFiles.map((file) => ({
+  ...file,
+  ...(Array.isArray(file.nonEmptyFrame0) ? { nonEmptyFrame0: [...file.nonEmptyFrame0] } : {}),
+}));
+invalidGamePackFiles.find(({ path: filePath }) => filePath === 'manifest.json').data = new Uint8Array([
+  0xef, 0xbb, 0xbf, ...gamePackManifestBytes,
+]);
+const invalidGamePackPlayer = invalidGamePackFiles.find(({ path: filePath }) => filePath === 'players/hero-one.png');
+invalidGamePackPlayer.binaryAlpha = false;
+invalidGamePackPlayer.nonEmptyFrame0 = ['idle', 'walk', 'attack'];
+invalidGamePackFiles.find(({ path: filePath }) => filePath === 'effects/impacts/spark-hit.png').width = 96;
+invalidGamePackFiles.find(({ path: filePath }) => filePath === 'LICENSE').data = new Uint8Array();
+invalidGamePackFiles.push({ path: 'orphan.png', width: 24, height: 24, binaryAlpha: true });
+const invalidGamePackAudit = engine.validateWildshotGamePackExport({
+  manifest: gamePackManifest,
+  files: invalidGamePackFiles,
+});
+check(
+  !invalidGamePackAudit.valid
+    && invalidGamePackAudit.issues.includes('file:orphan:orphan.png')
+    && invalidGamePackAudit.issues.includes('png:alpha:players/hero-one.png')
+    && invalidGamePackAudit.issues.includes('actor:empty:cast:players/hero-one.png')
+    && invalidGamePackAudit.issues.includes('actor:empty:death:players/hero-one.png')
+    && invalidGamePackAudit.issues.includes('effect:dimensions:effects/impacts/spark-hit.png')
+    && invalidGamePackAudit.issues.includes('manifest:bom:manifest.json')
+    && invalidGamePackAudit.issues.includes('license:missing-content:LICENSE'),
+  'the Wildshot export audit must refuse orphan files, invalid dimensions, non-binary alpha, empty Cast/Death, BOM JSON, and empty license text',
+);
+const wrongScaleGamePackManifest = { ...gamePackManifest, export_scale: 4 };
+const wrongScaleGamePackFiles = validGamePackFiles.map((file) => (
+  file.path === 'manifest.json'
+    ? { ...file, data: engine.serializeWildshotGamePackManifest(wrongScaleGamePackManifest) }
+    : file
+));
+check(
+  engine.validateWildshotGamePackExport({
+    manifest: wrongScaleGamePackManifest,
+    files: wrongScaleGamePackFiles,
+  }).issues.includes('manifest:export-scale'),
+  'the Wildshot game-pack validator must refuse every export scale except native 1x',
+);
+let invalidGamePackIdRejected = false;
+try {
+  engine.buildWildshotGamePackManifest({
+    generated: '2026-07-27',
+    toolCommit: 'b7eae05',
+    actors: [{ ...gamePackEnemyInput, id: 'Not Valid', sheet: 'enemies/Not Valid.png' }],
+  });
+} catch {
+  invalidGamePackIdRejected = true;
+}
+check(invalidGamePackIdRejected, 'Wildshot game-pack manifests must reject non-kebab actor ids and filenames');
+let invalidGamePackCatalogRejected = false;
+try {
+  engine.buildWildshotGamePackManifest({
+    generated: '2026-07-27',
+    toolCommit: 'b7eae05',
+    actors: [{
+      ...gamePackManifest.actors[0],
+      spec: { ...gamePackManifest.actors[0].spec, species: 'missing-species' },
+    }],
+  });
+} catch {
+  invalidGamePackCatalogRejected = true;
+}
+check(
+  invalidGamePackCatalogRejected,
+  'Wildshot game-pack manifests must reject actor specifications outside the stable catalogs',
+);
 
 check(engine.CLASS_PACK_FORMAT === '8-bit-sprite-assembler-class-pack', 'class packs must expose a stable game-facing format id');
 check(engine.CLASS_PACK_VERSION === 3, 'class packs must use schema v3 for utility off-hand variants');
@@ -5277,7 +5724,7 @@ const straightBladeBase = {
 const readableWeaponFamilies = ['sword', 'greatsword', 'dagger', 'scimitar', 'rapier', 'axe', 'mace', 'warhammer', 'club', 'spear', 'bow', 'crossbow', 'staff', 'wand', 'spellbook'];
 const weaponLayerFor = (direction) => (direction === 'up' || direction === 'left') ? 'weapon-back' : 'weapon-front';
 const oppositeWeaponLayerFor = (direction) => (direction === 'up' || direction === 'left') ? 'weapon-front' : 'weapon-back';
-const minimumMotionPhases = { idle: 2, walk: 2, attack: 3, hurt: 2 };
+const minimumMotionPhases = { idle: 2, walk: 2, attack: 3, cast: 1, hurt: 2, death: 2 };
 const tierFiveMaximumPixelRatio = 1.6;
 const tierFiveMaximumBoundsRatio = 1.75;
 let frameSafeWeaponCases = 0;
@@ -5574,10 +6021,10 @@ try {
   for (const weapon of readableWeaponFamilies) for (const tier of engine.WEAPON_TIERS) {
     const spec = { ...straightBladeBase, weapon, weaponTier: tier.id };
     const fullSheet = engine.buildSheet(spec);
-    check(fullSheet.width === 288 && fullSheet.height === 96, `${weapon} ${tier.id} full export must remain 288x96 at native scale`);
+    check(fullSheet.width === 480 && fullSheet.height === 96, `${weapon} ${tier.id} full export must be 480x96 at native scale`);
     for (const [directionRow, direction] of engine.DIRS.entries()) {
       const directionSheet = engine.buildDirectionSheet(spec, direction);
-      check(directionSheet.width === 288 && directionSheet.height === 24, `${weapon} ${tier.id} ${direction} export must remain 288x24 at native scale`);
+      check(directionSheet.width === 480 && directionSheet.height === 24, `${weapon} ${tier.id} ${direction} export must be 480x24 at native scale`);
       let column = 0;
       for (const animation of engine.ANIMS) {
         const animationSheet = engine.buildAnimationSheet(spec, animation.id);
@@ -5607,14 +6054,14 @@ try {
         const options = { outlineMode, shadow: false };
         const fullSheet = engine.buildSheet(spec, 1, options);
         check(
-          fullSheet.width === 288 && fullSheet.height === 96,
-          `${familyId} ${variant.id} ${outlineMode} full export must remain 288x96 at native scale`,
+          fullSheet.width === 480 && fullSheet.height === 96,
+          `${familyId} ${variant.id} ${outlineMode} full export must be 480x96 at native scale`,
         );
         for (const [directionRow, direction] of engine.DIRS.entries()) {
           const directionSheet = engine.buildDirectionSheet(spec, direction, 1, options);
           check(
-            directionSheet.width === 288 && directionSheet.height === 24,
-            `${familyId} ${variant.id} ${outlineMode} ${direction} export must remain 288x24 at native scale`,
+            directionSheet.width === 480 && directionSheet.height === 24,
+            `${familyId} ${variant.id} ${outlineMode} ${direction} export must be 480x24 at native scale`,
           );
           let column = 0;
           for (const animation of engine.ANIMS) {
@@ -5717,10 +6164,27 @@ const shieldBase = {
   shieldTier: 'tier1',
 };
 const equippedShields = expectedShields.slice(1);
-const protectedFaceChanges = (changed, unshielded, direction) => changed.filter((index) => {
+const protectedFaceChanges = (
+  changed,
+  unshielded,
+  direction,
+  animation = 'idle',
+  frame = 0,
+) => changed.filter((index) => {
   if (unshielded[index] !== internalCatalogs.INK || direction === 'up') return false;
-  const x = index % engine.SIZE;
-  const y = Math.floor(index / engine.SIZE);
+  let x = index % engine.SIZE;
+  let y = Math.floor(index / engine.SIZE);
+  if (animation === 'death' && frame >= 2) {
+    const renderedX = x;
+    const renderedY = y;
+    if (direction === 'up') {
+      x = engine.SIZE - 1 - renderedY;
+      y = renderedX;
+    } else {
+      x = renderedY;
+      y = engine.SIZE - 1 - renderedX;
+    }
+  }
   if (y < 5 || y > 11) return false;
   if (direction === 'down') return x >= 9 && x <= 14;
   if (direction === 'right') return x >= 13 && x <= 17;
@@ -5766,7 +6230,13 @@ for (const bodyBuild of engine.BODY_BUILDS) {
         `${bodyBuild.id} Lantern must retain at least ten visible pixels after body occlusion in ${direction} ${animation.id} frame ${frame}`,
       );
       check(
-        protectedFaceChanges(visibleChanges, bodyPixels, direction).length === 0,
+        protectedFaceChanges(
+          visibleChanges,
+          bodyPixels,
+          direction,
+          animation.id,
+          frame,
+        ).length === 0,
         `${bodyBuild.id} Lantern must preserve face clearance in ${direction} ${animation.id} frame ${frame}`,
       );
       check(
@@ -5795,6 +6265,12 @@ function shieldTestPose(animation, frame) {
     pose.arm = frame === 0 ? 1 : frame === 2 ? -1 : 0;
   }
   if (animation === 'attack') pose.wep = ['wind', 'strike', 'strike', 'recover'][frame];
+  if (animation === 'cast') {
+    const cast = castModule.playerCastPose(frame);
+    pose.bob = cast.bodyBob;
+    pose.cast = cast.phase;
+    pose.castOffhandHand = cast.offhandHandOffset;
+  }
   return pose;
 }
 
@@ -5839,10 +6315,15 @@ for (const bodyBuild of engine.BODY_BUILDS) for (const shield of equippedShields
         JSON.stringify(composite) === JSON.stringify(complete),
         `${bodyBuild.id} ${shield} ${tier.id} shield and body layers must rebuild the complete ${direction} ${animation.id} frame ${frame}`,
       );
-      if (direction === 'down' || direction === 'left' || direction === 'right' || direction === 'up') {
+        if (
+          animation.id !== 'death'
+          && (direction === 'down' || direction === 'left' || direction === 'right' || direction === 'up')
+        ) {
         const pose = shieldTestPose(animation.id, frame);
         const sideOffset = pose.wep === 'wind' ? -1 : pose.arm;
-        const armOffset = direction === 'down' || direction === 'up' ? -pose.arm : sideOffset;
+        const armOffset = pose.cast
+          ? pose.castOffhandHand
+          : (direction === 'down' || direction === 'up' ? -pose.arm : sideOffset);
         const handY = 15 + pose.bob + armOffset;
         const handXs = direction === 'down' ? [6, 7]
           : direction === 'up' ? [16, 17]
@@ -5869,7 +6350,7 @@ for (const shield of equippedShields) {
         const changed = changedPixels(rendered, empty);
         check(changed.length >= 1, `${shield} shield must remain visible in ${dir} ${anim.id} frame ${frame}`);
         check(
-          protectedFaceChanges(changed, empty, dir).length === 0,
+          protectedFaceChanges(changed, empty, dir, anim.id, frame).length === 0,
           `${shield} shield must not cover the face in ${dir} ${anim.id} frame ${frame}`,
         );
       }
@@ -5924,7 +6405,7 @@ for (const shield of equippedShields) {
         const changed = changedPixels(tier2, tier1);
         check(changed.length >= 1, `${shield} Tier 2 must differ from Tier 1 in ${dir} ${anim.id} frame ${frame}`);
         check(
-          protectedFaceChanges(changed, unshielded, dir).length === 0,
+          protectedFaceChanges(changed, unshielded, dir, anim.id, frame).length === 0,
           `${shield} Tier 2 must preserve face clearance in ${dir} ${anim.id} frame ${frame}`,
         );
       }
@@ -5962,7 +6443,7 @@ for (const shield of equippedShields) {
         const changed = changedPixels(tier3, tier2);
         check(changed.length >= 1, `${shield} Tier 3 must differ from Tier 2 in ${dir} ${anim.id} frame ${frame}`);
         check(
-          protectedFaceChanges(changed, unshielded, dir).length === 0,
+          protectedFaceChanges(changed, unshielded, dir, anim.id, frame).length === 0,
           `${shield} Tier 3 must preserve face clearance in ${dir} ${anim.id} frame ${frame}`,
         );
       }
@@ -6005,7 +6486,7 @@ for (const shield of equippedShields) {
         const tier4 = renderPixels(tier4Spec, dir, anim.id, frame);
         const unshielded = renderPixels({ ...tier3Spec, shield: 'none' }, dir, anim.id, frame);
         const changed = changedPixels(tier4, tier3);
-        const faceChanges = protectedFaceChanges(changed, unshielded, dir);
+        const faceChanges = protectedFaceChanges(changed, unshielded, dir, anim.id, frame);
         check(changed.length >= 1, `${shield} Tier 4 must differ from Tier 3 in ${dir} ${anim.id} frame ${frame}`);
         check(
           faceChanges.length === 0,
@@ -6051,7 +6532,7 @@ for (const shield of equippedShields) {
         const tier5 = renderPixels(tier5Spec, dir, anim.id, frame);
         const unshielded = renderPixels({ ...tier4Spec, shield: 'none' }, dir, anim.id, frame);
         const changed = changedPixels(tier5, tier4);
-        const faceChanges = protectedFaceChanges(changed, unshielded, dir);
+        const faceChanges = protectedFaceChanges(changed, unshielded, dir, anim.id, frame);
         const minimumArtifactChanges = anim.id === 'hurt' ? 1 : 4;
         check(changed.length >= minimumArtifactChanges, `${shield} Tier 5 must be a substantial artifact redesign in ${dir} ${anim.id} frame ${frame}`);
         check(
@@ -6131,12 +6612,19 @@ const referencedSet = new Set(referenced);
 
 check(referencedSet.size === referenced.length, 'Manifest contains duplicate PNG references');
 check(engine.SIZE === manifest.format.frameSize, `Engine frame size ${engine.SIZE} does not match manifest ${manifest.format.frameSize}`);
-check(engine.SHEET_COLS === manifest.format.grid.columns, `Engine sheet columns ${engine.SHEET_COLS} do not match manifest ${manifest.format.grid.columns}`);
 check(JSON.stringify(engine.DIRS) === JSON.stringify(manifest.format.rows), 'Engine directions do not match manifest row order');
 
 const manifestAnims = manifest.format.animations.map(({ id, frames, frameMs }) => ({ id, frames, ms: frameMs }));
-const engineAnims = engine.ANIMS.map(({ id, frames, ms }) => ({ id, frames, ms }));
-check(JSON.stringify(engineAnims) === JSON.stringify(manifestAnims), 'Engine animations do not match manifest animation definitions');
+check(
+  manifest.format.grid.columns === 12
+    && JSON.stringify(manifestAnims) === JSON.stringify([
+      { id: 'idle', frames: 2, ms: 420 },
+      { id: 'walk', frames: 4, ms: 150 },
+      { id: 'attack', frames: 4, ms: 115 },
+      { id: 'hurt', frames: 2, ms: 140 },
+    ]),
+  'the committed 4x asset pack must remain an explicit legacy 12-column fixture',
+);
 
 const manifestFamilies = new Map(manifest.enemies.map((family) => [family.family, family]));
 const engineFamilies = new Map(engine.ENEMIES.map((family) => [family.id, family]));
@@ -6226,6 +6714,8 @@ console.log(`- Compatible Production reroll cases: ${compatibleRerollCases}`);
 console.log(`- Compatible reroll no-alternative cases: ${compatibleRerollNoAlternativeCases}`);
 console.log(`- Shade Core/None player parity cases: ${shadeNonePlayerParityCases}`);
 console.log(`- Shade Core/None enemy parity cases: ${shadeNoneEnemyParityCases}`);
+console.log(`- Enemy Cast-to-Attack alias cases: ${enemyCastAliasCases}`);
+console.log(`- Enemy Death-to-Hurt alias cases: ${enemyDeathAliasCases}`);
 console.log(`- Shade Core/None enemy outline parity cases: ${shadeNoneEnemyOutlineParityCases}`);
 console.log(`- Form pilot cases: ${shadePilotCases}`);
 console.log(`- Form pilot changed pixels: ${shadePilotChangedPixels}`);

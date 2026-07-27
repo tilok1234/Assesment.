@@ -1,4 +1,4 @@
-// Direction-aware combat overlays that share the character 12x4 sheet grid.
+// Direction-aware combat overlays that share the character 16x4 sheet grid.
 
 export const COMBAT_EFFECTS = [
   {

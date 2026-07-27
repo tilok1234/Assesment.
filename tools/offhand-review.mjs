@@ -372,7 +372,7 @@ const html = `<!doctype html>
       <div class="metric"><strong>${report.totals.attachmentCases}</strong><span>body attachments</span></div>
       <div class="metric"><strong>${report.failures.length}</strong><span>automated failures</span></div>
     </section>
-    <div class="scope">Scope: 3 representative bearers × 4 directions × idle/walk/attack/hurt × every frame. Parchment and dark are review-only backgrounds. The lantern has no external glow or combat effect.</div>
+    <div class="scope">Scope: 3 representative bearers × 4 directions × idle/walk/attack/cast/hurt/death × every frame. Parchment and dark are review-only backgrounds. The lantern has no external glow or combat effect.</div>
   </main>
   <script type="module">
     import * as E from '../sprite-engine.js';

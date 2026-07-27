@@ -11,7 +11,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - An Equipment Variant Batch Builder that turns one character identity into bounded weapon, armor, shield, utility-off-hand, or 121-sheet RPG equipment collections with per-variant loadouts and only the combat effects they actually reference
 - A Class Pack Builder with ten focused templates—Warrior, Guardian, Ranger, Rogue, Mage, Cleric, Barbarian, Necromancer, Paladin, and Druid—that preserves one character identity while exporting only the outfit, weapon, shield, utility-off-hand, armor-tier, and equipment-tier combinations appropriate to that RPG role
 - Four directions: down, left, right, and up
-- Idle, walk, attack, and hurt animations
+- Idle, walk, attack, cast, hurt, and death animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
 - Persistent named sprite packs that collect player, enemy, and combat-effect designs and download as a ZIP with full PNG sheets and `manifest.json`
 - One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 1912 content-unique atomic component sheets, all 202 enemy variations, and all 24 combat effects at native 1x
@@ -217,14 +217,14 @@ The setup executable is written beneath `src-tauri/target/release/bundle/nsis/`.
 ## Sprite-sheet contract
 
 - Logical frame: 24x24 pixels
-- Grid: 12 columns by 4 rows
+- Grid: 20 columns by 4 rows
 - Rows: down, left, right, up
-- Columns: idle x2, walk x4, attack x4, hurt x2
+- Columns: idle x2, walk x4, attack x4, cast x4, hurt x2, death x4
 - Animation export: selected animation frames across four direction rows
-- Direction export: all 12 animation frames across one selected direction row
-- Native 1x export sizes: full sheet 288x96, direction sheet 288x24, and animation sheet 48x96 or 96x96 pixels
+- Direction export: all 20 animation frames across one selected direction row
+- Native 1x export sizes: full sheet 480x96, direction sheet 480x24, and animation sheet 48x96 or 96x96 pixels
 - Committed fixture pack scale: 4x
-- Committed fixture sheet size: 1152x384 pixels
+- Committed legacy fixture sheet size: 1152x384 pixels (the preserved pre-Cast 12-column contract)
 - Transparent background with no baked shadow
 
 ## Equipment variant batches
@@ -239,7 +239,7 @@ Use **Equipment variant batch** in Player mode when the game needs ready-made fu
 - **Utility off-hand items**: no utility item plus the Lantern (2 sheets)
 - **RPG equipment collection**: the weapon arsenal, armor progression, shield armory, and utility off-hands merged into 121 unique sheets
 
-The ZIP uses the selected Export PNG scale and contains `manifest.json`, `README.txt`, one ready character sheet per unique specification, and one copy of every combat-effect sheet referenced by those variants. Automatic loadouts are resolved separately per weapon, explicit overrides are preserved, and effects remain modular instead of being baked into the character PNGs. Choose **1x Native** for exact `288x96` sheets.
+The ZIP uses the selected Export PNG scale and contains `manifest.json`, `README.txt`, one ready character sheet per unique specification, and one copy of every combat-effect sheet referenced by those variants. Automatic loadouts are resolved separately per weapon, explicit overrides are preserved, and effects remain modular instead of being baked into the character PNGs. Choose **1x Native** for exact `480x96` sheets.
 
 ## RPG class packs
 
@@ -258,7 +258,7 @@ Use **Class pack builder** in Player mode when one character should be ready to 
 
 Applying a template changes only the class outfit and Tier 1 starting equipment; skin, hair, facial detail, headgear, colors, and custom palette stay intact, and the change can be undone. Export expands every permitted weapon through Tiers 1-5, the class outfit through all five armor tiers, no shield plus every permitted shield through Tiers 1-5, and each permitted non-shield off-hand. Identical complete specifications are deduplicated.
 
-Each schema-v3 ZIP contains complete character sheets at the selected PNG scale, a resolved combat-loadout recipe for every variant, only the modular effect sheets those loadouts reference, `manifest.json`, and `README.txt`. Files live beneath `classes/<class-id>/characters/<character>/`, so several class archives can be added to a game without path collisions. Choose **1x Native** for exact `288x96` game sheets.
+Each schema-v3 ZIP contains complete character sheets at the selected PNG scale, a resolved combat-loadout recipe for every variant, only the modular effect sheets those loadouts reference, `manifest.json`, and `README.txt`. Files live beneath `classes/<class-id>/characters/<character>/`, so several class archives can be added to a game without path collisions. Choose **1x Native** for exact `480x96` game sheets.
 
 ## Character packs
 
@@ -271,7 +271,22 @@ The working pack stays on the current device. Each downloaded ZIP contains one c
 
 For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes and combat loadouts, the full deduplicated component library, all 57 enemy families with all 202 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
 
-A 24-player Complete Pack contains 1912 shared component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2162 native `288x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+A 24-player Complete Pack contains 1912 shared component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2162 native `480x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+
+### Wildshot game-pack status
+
+A separate deterministic `wildshot-assembler` game-pack profile is being
+implemented under [GAME_PACK_EXPORT_PLAN.md](GAME_PACK_EXPORT_PLAN.md). This
+profile is locked to native **1x** with 24x24 cells; it will never use the
+general export-scale selector.
+
+The pure manifest and refusal contract exists, but there is no game-pack
+button or CLI yet. The approved Player Cast and Death animations are public,
+generated sheets are 480x96 (20 columns), and the v1 runtime animation audit
+passes. Every Enemy aliases its matching Attack frame during Cast and uses Hurt
+frames 1, 2, 2, 2 during Death. Approved license text and the compact per-effect
+frame/anchor/direction contract are still required before the first valid game
+pack can be emitted.
 
 ## Complete Character Kits
 
@@ -291,7 +306,7 @@ Use **Download Complete Character Kit** in Player mode to export one `8-bit-spri
 - 24 transparent combat-effect sheets covering trails, projectiles, impacts, and statuses, organized beneath `effects/`
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
-The standalone kit contains 1912 content-unique component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 2139 native `288x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
+The standalone kit contains 1912 content-unique component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 2139 native `480x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
 
 Draw the non-null component paths from a recipe in this order:
 
@@ -309,7 +324,7 @@ Every component shares the same animation grid and has been validated to recompo
 - `character-kit.js` - deterministic component coverage, paths, recipe mapping, counts, and layer-order planning
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
-- `engine/` - focused animation, palette, player-option, enemy, production-roll, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
+- `engine/` - focused animation, palette, player-option, enemy, production-roll, Wildshot game-pack contract, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build

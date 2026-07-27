@@ -46,13 +46,7 @@ export {
   VARIANT_BATCH_SETS,
   VARIANT_BATCH_VERSION,
 } from './engine/variant-batches.js';
-export {
-  applyClassTemplate,
-  buildClassPack,
-  CLASS_PACK_FORMAT,
-  CLASS_PACK_VERSION,
-  CLASS_TEMPLATES,
-  DEFAULT_CLASS_TEMPLATE,
-} from './engine/class-templates.js';
+export { applyClassTemplate, buildClassPack, CLASS_PACK_FORMAT, CLASS_PACK_VERSION, CLASS_TEMPLATES, DEFAULT_CLASS_TEMPLATE } from './engine/class-templates.js';
 export { auditProductionRollCatalogs, auditProductionRollClassTemplates, normalizeProductionRollSeed, PRODUCTION_PALETTE_FAMILIES, PRODUCTION_ROLL_FREEZE, PRODUCTION_ROLL_MAX_ATTEMPTS, PRODUCTION_ROLL_PROFILE, PRODUCTION_ROLL_REASON_CODES, rollProductionPlayer, validateProductionPlayer } from './engine/production-rolls.js';
 export { PRODUCTION_COMPATIBLE_REROLL_CATEGORIES, PRODUCTION_COMPATIBLE_REROLL_POLICY, rerollProductionPlayerCategory } from './engine/production-rerolls.js';
+export { auditWildshotGamePackRuntime, buildWildshotGamePackManifest, serializeWildshotGamePackManifest, validateWildshotGamePackExport, WILDSHOT_GAME_PACK_ACTOR_CATEGORIES, WILDSHOT_GAME_PACK_EFFECT_CATEGORIES, WILDSHOT_GAME_PACK_POLICY } from './engine/game-pack.js';

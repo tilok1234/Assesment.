@@ -8,6 +8,7 @@ const OFFHAND_HAND_X = Object.freeze({
 const OFFHAND_HAND_Y = 15;
 
 function offhandHandOffset(p, d) {
+  if (p.cast) return p.castOffhandHand;
   if (d !== 'right') return -p.arm;
   if (p.wep === 'wind') return -1;
   return p.arm;

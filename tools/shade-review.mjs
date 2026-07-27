@@ -253,7 +253,7 @@ const html = `<!doctype html>
       <div class="metric"><strong id="materials">0</strong><span>registered material colors</span></div>
       <div class="metric"><strong id="control-diff">0</strong><span>material/control differences</span></div>
     </section>
-    <div class="scope">Scope: 12 specimens × 4 directions × idle/walk/attack/hurt × every frame × None/Complete B/Selective C. The cycle control traverses the full selected-specimen sequence.</div>
+    <div class="scope">Scope: 12 specimens × 4 directions × idle/walk/attack/cast/hurt/death × every frame × None/Complete B/Selective C. The cycle control traverses the full selected-specimen sequence.</div>
   </main>
   <script type="module">
     import * as E from '../sprite-engine.js';

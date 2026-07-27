@@ -787,7 +787,7 @@ const html = `<!doctype html>
       <div class="metric"><strong>${report.totals.attachmentChecks}</strong><span>equipment checks</span></div>
       <div class="metric"><strong>${report.failures.length}</strong><span>automated failures</span></div>
     </section>
-    <div class="scope">Scope: 12 pairs per class x 10 classes x Production/Wildcard x 4 directions x idle/walk/attack/hurt x every frame x None/Complete B/Selective C. Parchment and dark are review-only backgrounds.</div>
+    <div class="scope">Scope: 12 pairs per class x 10 classes x Production/Wildcard x 4 directions x idle/walk/attack/cast/hurt/death x every frame x None/Complete B/Selective C. Parchment and dark are review-only backgrounds.</div>
   </main>
   <script type="module">
     import * as E from '../sprite-engine.js';

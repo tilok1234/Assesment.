@@ -19,6 +19,11 @@ import {
   SKINS,
   WOOD,
 } from './catalogs.js';
+import { playerCastPose } from './cast-animation.js';
+import {
+  playerDeathPose,
+  transformPlayerDeathPixels,
+} from './death-animation.js';
 import { drawWeapon } from './weapon-renderer.js';
 import { drawShield } from './shield-renderer.js';
 import { drawOffhand } from './offhand-renderer.js';
@@ -240,6 +245,22 @@ function makePose(animId, f) {
   if (animId === 'hurt') {
     p.flash = f === 0;
     p.lunge = f === 0 ? -1 : 0;
+  }
+  if (animId === 'cast') {
+    const cast = playerCastPose(f);
+    p.cast = cast.phase;
+    p.bob = cast.bodyBob;
+    p.leg = cast.leg;
+    p.castSideHandReach = cast.sideHandReach;
+    p.castWeaponHand = cast.weaponHandOffset;
+    p.castOffhandHand = cast.offhandHandOffset;
+  }
+  if (animId === 'death') {
+    const death = playerDeathPose(f);
+    p.death = death.phase;
+    p.bob = death.bodyBob;
+    p.leg = death.leg;
+    p.arm = death.arm;
   }
   return p;
 }
@@ -487,7 +508,11 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
   // The weapon remains in the right hand: near while facing right, far after
   // the left-facing mirror. This is the depth complement of the left-arm shield.
   const sideWeaponIsFar = d === 'right' && viewDir === 'left' && hasWeapon;
-  const weaponArm = sideWeaponIsFar ? -p.arm : p.arm;
+  const weaponArm = p.death
+    ? 0
+    : p.cast
+      ? p.castWeaponHand
+      : (sideWeaponIsFar ? -p.arm : p.arm);
   const weaponRigY = C.weaponFollowRig ? u + (p.wep === 'hold' ? weaponArm : 0) : 0;
   const weaponPoseShift = p.flash || p.lunge === 2 ? 1 : 0;
   const weaponShiftX = d === 'up' ? weaponPoseShift : (d === 'down' ? -weaponPoseShift : 0);
@@ -710,8 +735,12 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
     let armOffL = -p.arm, armOffR = p.arm;
     if (p.wep === 'wind') armOffR = -1;
     if (p.wep === 'strike') armOffR = 0;
-    const leftScreenOff = d === 'down' ? armOffL : armOffR;
-    const rightScreenOff = d === 'down' ? armOffR : armOffL;
+    const leftScreenOff = p.cast
+      ? (d === 'down' ? p.castOffhandHand : p.castWeaponHand)
+      : (d === 'down' ? armOffL : armOffR);
+    const rightScreenOff = p.cast
+      ? (d === 'down' ? p.castWeaponHand : p.castOffhandHand)
+      : (d === 'down' ? armOffR : armOffL);
     armDU(6, leftScreenOff);
     armDU(16, rightScreenOff);
     // Lean and heroic torsos are one cell narrower on each side than the fixed
@@ -738,13 +767,27 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
     connectArmToTorso(8, build.frontX, leftScreenOff);
     connectArmToTorso(build.frontX + build.frontW, 16, rightScreenOff);
   } else {
-    let off = p.arm;
-    if (C.weaponFollowRig && p.wep === 'wind') off = -1;
+    const sideBodyUsesOffhand = viewDir === 'left';
+    let off = p.cast
+      ? (sideBodyUsesOffhand ? p.castOffhandHand : p.castWeaponHand)
+      : p.arm;
+    if (!p.cast && C.weaponFollowRig && p.wep === 'wind') off = -1;
     if (includeOutfit) R(12, BT + u + off, 2, 3, sleeveC[0]);
     if (includeSkinBody) {
       R(12, BT + u + off + 3, 2, 2, C.bone ? BONE[0] : skin[0]);
       S(12, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
       S(13, BT + u + off + 4, C.bone ? BONE[1] : skin[1]);
+      if (p.cast && p.castSideHandReach > 0) {
+        for (let reach = 1; reach <= p.castSideHandReach; reach++) {
+          S(
+            13 + reach,
+            BT + u + off + 4,
+            C.bone
+              ? (reach === p.castSideHandReach ? BONE[1] : BONE[0])
+              : (reach === p.castSideHandReach ? skin[1] : skin[0]),
+          );
+        }
+      }
     }
   }
 
@@ -3106,6 +3149,9 @@ function buildHumanoidC(spec) {
 }
 
 function shadowFor(spec, animId, f) {
+  if (spec.kind === 'player' && animId === 'death' && f >= 2) {
+    return { x: 1, y: 20, w: 22, a: 0.15 };
+  }
   if (spec.kind === 'enemy') {
     if (spec.family === 'bat' || spec.family === 'ghost' || spec.family === 'elemental' || spec.family === 'eyemonster' || spec.family === 'wasp' || spec.family === 'jellyfish' || spec.family === 'anglerfish' || spec.family === 'moth') return { x: 9, w: 6, a: 0.10 };
     if (spec.family === 'snake' || spec.family === 'worm' || spec.family === 'scorpion' || spec.family === 'crab' || spec.family === 'beetle' || spec.family === 'mimic' || spec.family === 'frog' || spec.family === 'turtle' || spec.family === 'centipede' || spec.family === 'carniplant' || spec.family === 'octopus' || spec.family === 'mole' || spec.family === 'snail') return { x: 7, w: 10, a: 0.15 };
@@ -3120,8 +3166,17 @@ function shadowFor(spec, animId, f) {
 
 export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
   const anim = find(ANIMS, animId);
-  const f = ((frameIdx % anim.frames) + anim.frames) % anim.frames;
-  const p = makePose(anim.id, f);
+  let f = ((frameIdx % anim.frames) + anim.frames) % anim.frames;
+  // Cast and Death are authored for Players. Enemies retain a complete
+  // 20-column public sheet by explicitly aliasing Cast to Attack and Death to
+  // Hurt. The final two Death cells hold Hurt frame 2.
+  let renderedAnimationId = anim.id;
+  if (spec.kind === 'enemy' && anim.id === 'cast') renderedAnimationId = 'attack';
+  if (spec.kind === 'enemy' && anim.id === 'death') {
+    renderedAnimationId = 'hurt';
+    f = Math.min(f, 1);
+  }
+  const p = makePose(renderedAnimationId, f);
   const flip = dir === 'left';
   const d = flip ? 'right' : dir;
   const renderLayer = typeof opts.layer === 'string' ? opts.layer : 'complete';
@@ -3129,10 +3184,11 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
   if (opts.clear !== false) ctx.clearRect(0, 0, SIZE, SIZE);
 
   if (spec.kind !== 'effect' && opts.shadow !== false && (renderLayer === 'complete' || renderLayer === 'body')) {
-    const sh = shadowFor(spec, anim.id, f);
+    const sh = shadowFor(spec, renderedAnimationId, f);
+    const shadowY = Number.isInteger(sh.y) ? sh.y : 22;
     ctx.fillStyle = `rgba(26,28,44,${sh.a})`;
-    ctx.fillRect(sh.x, 22, sh.w, 1);
-    ctx.fillRect(sh.x + 1, 23, sh.w - 2, 1);
+    ctx.fillRect(sh.x, shadowY, sh.w, 1);
+    ctx.fillRect(sh.x + 1, shadowY + 1, sh.w - 2, 1);
   }
 
   const g = makeG(typeof opts.onOutOfBounds === 'function' ? opts.onOutOfBounds : null);
@@ -3140,52 +3196,55 @@ export function drawSprite(ctx, spec, dir, animId, frameIdx, opts = {}) {
   if (spec.kind === 'effect' && (renderLayer === 'complete' || renderLayer === 'body')) {
     const category = find(COMBAT_EFFECTS, spec.category);
     const effect = find(category.effects, spec.effect);
-    drawCombatEffect(g, d, f, effect, anim.id);
+    drawCombatEffect(g, d, f, effect, renderedAnimationId);
   } else if (spec.kind === 'player' || HUMANOID_FAMS.indexOf(spec.family) >= 0) {
     drawHumanoid(g, d, p, buildHumanoidC(spec), renderLayer, dir);
   } else if (renderLayer === 'complete' || renderLayer === 'body') {
     const fam = find(ENEMIES, spec.family);
     const V = find(fam.variants, spec.variant);
-    if (spec.family === 'slime') drawSlime(g, d, p, f, V, anim.id);
-    if (spec.family === 'bat') drawBat(g, d, p, f, V, anim.id);
-    if (spec.family === 'ghost') drawGhost(g, d, p, f, V, anim.id);
-    if (spec.family === 'spider') drawSpider(g, d, p, f, V, anim.id);
-    if (spec.family === 'shroom') drawShroom(g, d, p, f, V, anim.id);
-    if (spec.family === 'wolf' || spec.family === 'boar' || spec.family === 'bear' || spec.family === 'bigcat') drawQuad(g, d, p, f, V, anim.id);
-    if (spec.family === 'golem') drawGolem(g, d, p, f, V, anim.id);
-    if (spec.family === 'elemental') drawElemental(g, d, p, f, V, anim.id);
-    if (spec.family === 'treant') drawTreant(g, d, p, f, V, anim.id);
-    if (spec.family === 'gargoyle') drawGargoyle(g, d, p, f, V, anim.id);
-    if (spec.family === 'snake') drawSnake(g, d, p, f, V, anim.id);
-    if (spec.family === 'worm') drawWorm(g, d, p, f, V, anim.id);
-    if (spec.family === 'eyemonster') drawEyeball(g, d, p, f, V, anim.id);
-    if (spec.family === 'scorpion') drawScorp(g, d, p, f, V, anim.id);
-    if (spec.family === 'crab') drawCrab(g, d, p, f, V, anim.id);
-    if (spec.family === 'beetle') drawBeetle(g, d, p, f, V, anim.id);
-    if (spec.family === 'wasp') drawWasp(g, d, p, f, V, anim.id);
-    if (spec.family === 'mimic') drawMimic(g, d, p, f, V, anim.id);
-    if (spec.family === 'drake') drawDrake(g, d, p, f, V, anim.id);
-    if (spec.family === 'frog') drawFrog(g, d, p, f, V, anim.id);
-    if (spec.family === 'crocodile') drawCrocodile(g, d, p, f, V, anim.id);
-    if (spec.family === 'turtle') drawTurtle(g, d, p, f, V, anim.id);
-    if (spec.family === 'jellyfish') drawJellyfish(g, d, p, f, V, anim.id);
-    if (spec.family === 'centipede') drawCentipede(g, d, p, f, V, anim.id);
-    if (spec.family === 'carniplant') drawCarnivorousPlant(g, d, p, f, V, anim.id);
-    if (spec.family === 'anglerfish') drawAnglerfish(g, d, p, f, V, anim.id);
-    if (spec.family === 'griffin') drawGriffin(g, d, p, f, V, anim.id);
-    if (spec.family === 'mantis') drawMantis(g, d, p, f, V, anim.id);
-    if (spec.family === 'moth') drawMoth(g, d, p, f, V, anim.id);
-    if (spec.family === 'octopus') drawOctopus(g, d, p, f, V, anim.id);
-    if (spec.family === 'mole') drawMole(g, d, p, f, V, anim.id);
-    if (spec.family === 'scarecrow') drawScarecrow(g, d, p, f, V, anim.id);
-    if (spec.family === 'snail') drawSnail(g, d, p, f, V, anim.id);
-    if (spec.family === 'porcupine') drawPorcupine(g, d, p, f, V, anim.id);
-    if (spec.family === 'puppet') drawPuppet(g, d, p, f, V, anim.id);
+    if (spec.family === 'slime') drawSlime(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'bat') drawBat(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'ghost') drawGhost(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'spider') drawSpider(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'shroom') drawShroom(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'wolf' || spec.family === 'boar' || spec.family === 'bear' || spec.family === 'bigcat') drawQuad(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'golem') drawGolem(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'elemental') drawElemental(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'treant') drawTreant(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'gargoyle') drawGargoyle(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'snake') drawSnake(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'worm') drawWorm(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'eyemonster') drawEyeball(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'scorpion') drawScorp(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'crab') drawCrab(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'beetle') drawBeetle(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'wasp') drawWasp(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'mimic') drawMimic(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'drake') drawDrake(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'frog') drawFrog(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'crocodile') drawCrocodile(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'turtle') drawTurtle(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'jellyfish') drawJellyfish(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'centipede') drawCentipede(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'carniplant') drawCarnivorousPlant(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'anglerfish') drawAnglerfish(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'griffin') drawGriffin(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'mantis') drawMantis(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'moth') drawMoth(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'octopus') drawOctopus(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'mole') drawMole(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'scarecrow') drawScarecrow(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'snail') drawSnail(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'porcupine') drawPorcupine(g, d, p, f, V, renderedAnimationId);
+    if (spec.family === 'puppet') drawPuppet(g, d, p, f, V, renderedAnimationId);
   }
 
+  const renderedPixels = spec.kind === 'player' && p.death
+    ? transformPlayerDeathPixels(g.px, dir, f, SIZE)
+    : g.px;
   for (let y = 0; y < SIZE; y++) {
     for (let x = 0; x < SIZE; x++) {
-      const c = g.px[y * SIZE + x];
+      const c = renderedPixels[y * SIZE + x];
       if (!c) continue;
       ctx.fillStyle = p.flash && spec.kind !== 'effect' ? '#ffffff' : c;
       ctx.fillRect(flip ? SIZE - 1 - x : x, y, 1, 1);

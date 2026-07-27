@@ -708,7 +708,7 @@ function exportDescriptor() {
       width: E.SHEET_COLS * E.SIZE,
       height: E.SIZE,
       title: `${directionName} direction`,
-      contract: '12 frame columns · idle, walk, attack, and hurt',
+      contract: '20 frame columns · idle, walk, attack, cast, hurt, and death',
       filenamePart: `${state.exportDir}-direction`,
       buttonLabel: `Download ${directionName.toLocaleLowerCase()} direction`,
     };
@@ -717,7 +717,7 @@ function exportDescriptor() {
     width: E.SHEET_COLS * E.SIZE,
     height: E.DIRS.length * E.SIZE,
     title: 'Full sprite sheet',
-    contract: '12 columns · 4 rows · all animations and directions',
+    contract: '20 columns · 4 rows · all animations and directions',
     filenamePart: 'sheet',
     buttonLabel: 'Download full sheet',
   };
@@ -2836,7 +2836,7 @@ function completeCharacterKitReadme(name, recipeCount, readyCharacterCount = 0) 
     + (readyCharacterCount
       ? `${readyCharacterCount} assembled native sprite sheet${readyCharacterCount === 1 ? '' : 's'} are included in characters/ for immediate game use.\n`
       : '')
-    + `All PNG files are native 288x96 sprite sheets made from 24x24 frames. The enemies/ folder contains all ${counts.enemyFamilies} enemy families and ${counts.enemySheets} variations; effects/ contains ${counts.effectSheets} transparent synchronized overlays across ${counts.effectCategories} groups.\n\n`
+    + `All PNG files are native 480x96 sprite sheets made from 24x24 frames. The enemies/ folder contains all ${counts.enemyFamilies} enemy families and ${counts.enemySheets} variations; effects/ contains ${counts.effectSheets} transparent synchronized overlays across ${counts.effectCategories} groups.\n\n`
     + 'Component groups:\n'
     + '- skin-body: animated hands and neck for each skin tone\n'
     + '- heads: normal and shaded animated heads for each skin tone\n'

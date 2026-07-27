@@ -48,6 +48,48 @@ palette context exists only in module state and history; it never enters
 ordinary players, presets, packs, recipes, exports, or schemas. Live history,
 no-alternative, coupled-tier, Wildcard, and cross-mode gates pass.
 
+The Wildshot game-pack export lane is now active under
+`GAME_PACK_EXPORT_PLAN.md`. The user supplied the draft game-repository
+contract and explicitly required native 1x output on 2026-07-27. Slice 1 adds
+the pure `engine/game-pack.js` contract, stable facade exports, deterministic
+manifest construction, deep-copy boundaries, and refusal validation for
+dimensions, alpha, required actor frames, file parity, UTF-8/no-BOM JSON,
+license content, and export scale. `npm.cmd run check` passes.
+
+Wildshot v1 is not exportable yet. Its runtime animation audit now passes the
+approved 20-column Idle/Walk/Attack/Cast/Hurt/Death contract, but the repository
+has no approved license text and compact effect frame/anchor/direction
+extraction has not been decided.
+
+Game-pack Slice 2 Player Cast is visually approved and public.
+`engine/cast-animation.js` defines the immutable four-frame
+Prepare/Focus/Release/Recover motion; `ANIMS` places Cast before Hurt. Every
+Enemy explicitly aliases its matching Attack frame during Cast. The dedicated review passes 96 source
+frames, 24 distinct four-frame direction sequences, 96 exact layered
+recompositions, 128 equipment-attachment checks, 288 assembled Form/outline
+cases, and zero out-of-bounds writes. The exhaustive validator covers the
+complete equipment catalog and every Enemy alias. The checked-in 4x asset pack
+remains an explicit legacy 12-column fixture. No schema version, approved
+fixture/baseline, effect behavior, release artifact, or Windows build changed.
+
+Player Death is now visually approved and public under
+`DEATH_ANIMATION_PLAN.md`. `engine/death-animation.js` defines immutable
+Stagger/Buckle/Fall/Still poses plus a coordinate-permutation quarter-turn for
+the fallen frames. The guarded renderer path moves every Player layer together
+and uses a low, wide terminal shadow. Public `ANIMS` appends Death after Hurt;
+native full and direction sheets are 480x96 and 480x24. Every Enemy explicitly
+aliases Death to Hurt frames 1, 2, 2, 2 rather than inventing unreviewed art.
+
+The dedicated Death gate passes 96 source frames, 24 distinct four-frame
+direction sequences, 48 horizontal terminal-body checks, 96 exact layered
+recompositions, 128 equipment-attachment checks, 288 assembled Form/outline
+cases, and zero out-of-bounds writes. The user explicitly approved the visual
+result on 2026-07-27. The public integration gate covers exact 20-column export
+dimensions, every Enemy Death alias, the updated Wildshot runtime contract,
+the full validator, and live editor controls/console. Persistence/schema
+versions, fixtures/baselines, effects, release artifacts, and Windows builds
+remain unchanged.
+
 Do not resume old weapon, shield, transparency, effect-compositor, executable,
 or enemy-outline work unless the user explicitly changes priority. Additional
 off-hand art also requires a new focused plan and visual approval gate.
@@ -74,16 +116,21 @@ off-hand art also requires a new focused plan and visual approval gate.
    `SHADE_RENDERING_PLAN.md`.
 4. Read `COMPATIBLE_REROLL_PLAN.md` and treat both its pure policy and editor
    integration as complete.
-5. No new implementation lane is active. Do not infer authorization for
-   compatibility context inference, persistence/provenance, enemy Production
-   rolls, effect-compositor work, fixtures/baselines, releases, or Windows
-   builds.
+5. Read `GAME_PACK_EXPORT_PLAN.md`. Slices 1-2b are the current uncommitted
+   contract/Cast/Death checkpoint. Do not emit or advertise manifest v1 until
+   the approved-license and compact-effect gates are resolved.
+6. Do not infer authorization for compatibility context inference,
+   persistence/provenance, enemy Production rolls, effect-compositor work,
+   fixtures/baselines, releases, or Windows builds.
 
 ## Git State At Handoff
 
 - Completed outline branch: `codex/enemy-outlines`
 - Approved shade, Lantern, and Production Roll branch:
   `codex/form-shading`
+- Wildshot game-pack Slice 1 starts from clean pushed checkpoint `b7eae05`
+  (`Complete compatible Production reroll integration`) and is intentionally
+  uncommitted pending review.
 - Approved Production Roll policy/review/editor checkpoint: `aa77666`
   (`Add production roll workflow`)
 - `aa77666` is pushed to `origin/codex/form-shading`; Slice 6 starts from that
@@ -464,6 +511,8 @@ until a deliberate approved release checkpoint.
   architecture, policy/review/editor slices, and final Slice 6 gate.
 - `COMPATIBLE_REROLL_PLAN.md`: completed pure and editor-compatible
   per-category reroll lane.
+- `DEATH_ANIMATION_PLAN.md`: isolated Player Death candidate, review contract,
+  and post-approval public-integration boundary.
 - `ENEMY_OUTLINE_PLAN.md`: completed enemy rollout evidence.
 - `OUTLINE_RENDERING_PLAN.md`: current player/enemy outline contract.
 - `README.md`: user-facing capabilities and validation commands.

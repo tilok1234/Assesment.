@@ -17,6 +17,8 @@
     "review:shades": "node tools/shade-review.mjs",
     "review:offhands": "node tools/offhand-review.mjs",
     "review:production-rolls": "node tools/production-roll-review.mjs",
+    "review:cast": "node tools/cast-review.mjs",
+    "review:death": "node tools/death-review.mjs",
     "check": "node tools/check-project.mjs",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",

@@ -25,6 +25,8 @@ index.html
       -> engine/sheets.js
       -> engine/generators.js
       -> engine/production-rolls.js
+      -> engine/production-rerolls.js
+      -> engine/game-pack.js
       -> engine/variant-batches.js
       -> engine/class-templates.js
     -> character-kit.js
@@ -113,9 +115,9 @@ the reusable body.
 
 ### Sheets and thumbnails
 
-`engine/sheets.js` assembles renderer frames into the stable 12-column by 4-row
+`engine/sheets.js` assembles renderer frames into the stable 20-column by 4-row
 full sheet, selected-animation sheets with four direction rows,
-selected-direction sheets with all 12 frame columns, and UI thumbnails. Its
+selected-direction sheets with all 20 frame columns, and UI thumbnails. Its
 option-aware assembled player/enemy paths use the shared assembled-output
 coordinator; effects and ordinary source thumbnails retain the direct-render
 path.
@@ -150,6 +152,24 @@ ordinary player plus immutable audit metadata. A no-alternative result returns
 an independent unchanged player. The module imports only stable catalogs and
 the Production policy; it does not access ambient randomness, DOM, canvas,
 storage, renderers, ZIP packaging, or editor state.
+
+### Wildshot game-pack contract
+
+`engine/game-pack.js` is the pure contract and refusal boundary for the
+proposed `wildshot-assembler` manifest v1. It owns the immutable native-1x
+identity, 24px cell, direction/animation/timing layout, lower-kebab actor and
+effect paths, stable manifest ordering, UTF-8 serialization, and validation
+evidence for exact dimensions, binary alpha, required non-empty actor frames,
+manifest/file parity, and license content. It imports only the stable internal
+catalog facade and does not access DOM, canvas, storage, renderers, ZIP
+packaging, filesystem, Tauri, or editor state.
+
+`auditWildshotGamePackRuntime()` now passes the approved public
+Idle/Walk/Attack/Cast/Hurt/Death contract. Players use the authored immutable
+four-frame Cast and Death poses. Every Enemy explicitly aliases Cast to its
+matching Attack frame and Death to Hurt frames 1, 2, 2, 2. Compact effect
+extraction, deterministic folder/ZIP writing, and the one-click editor action
+are later slices governed by `GAME_PACK_EXPORT_PLAN.md`.
 
 ### Equipment variant batches
 
@@ -207,11 +227,15 @@ deliberately not serialized.
 
 - Logical frame size is 24x24 pixels.
 - Directions are ordered down, left, right, up.
-- Each row contains idle x2, walk x4, attack x4, hurt x2.
-- Full sheets are 288x96 logical pixels before export scaling.
+- Each row contains idle x2, walk x4, attack x4, cast x4, hurt x2, death x4.
+- Full sheets are 480x96 logical pixels before export scaling.
 - Export scale 1x preserves those logical pixels exactly; full, animation, and direction exports also support 4x, 8x, and 12x nearest-neighbor scaling.
 - Exported sheets have a transparent background and no baked shadow.
 - Character-pack archives always contain complete full sheets at the selected scale plus a manifest that records their logical and actual dimensions.
+- The proposed Wildshot game-pack profile is separate from those existing
+  exporters and is locked to native 1x. Its 20-column
+  Idle/Walk/Attack/Cast/Hurt/Death runtime gate now passes, while license
+  content and compact effect extraction remain unresolved refusal boundaries.
 - Class-pack archives preserve one character identity, contain only equipment permitted by their stable class definition, deduplicate complete specifications, and include one resolved modular combat loadout per ready sheet.
 - Complete Character Kits always use native 1x sheets and the draw order `weapon-back`, `shield-back`, `offhand-back`, `species-back`, `outfit-back`, `outfit`, `skin-body`, `head`, `expression`, `species-front`, `face-detail`, `hair`, `headgear`, `shield-front`, `offhand-front`, `weapon-front`.
 - Combat-effect sheets remain modular and unbaked. The current effects-after-character preview/recipe order is a compatibility fact, not a finalized foreground-equipment occlusion invariant.

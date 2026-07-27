@@ -489,7 +489,29 @@ function drawFullShield(S, R, x, y, shield, oc, tier) {
   if (tier === 'tier5') drawTier5Full(S, R, x, y, shield);
 }
 
+function drawDeathSafeFullShield(S, R, x, y, shield, oc, tier) {
+  const pixels = [];
+  const bufferedS = (pixelX, pixelY, color) => pixels.push([pixelX, pixelY, color]);
+  const bufferedR = (pixelX, pixelY, width, height, color) => {
+    for (let row = 0; row < height; row++) for (let column = 0; column < width; column++) {
+      bufferedS(pixelX + column, pixelY + row, color);
+    }
+  };
+  drawFullShield(bufferedS, bufferedR, x, y, shield, oc, tier);
+
+  const xs = pixels.map(([pixelX]) => pixelX);
+  const ys = pixels.map(([, pixelY]) => pixelY);
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+  const shiftX = minX < 0 ? -minX : maxX > 23 ? 23 - maxX : 0;
+  const shiftY = minY < 0 ? -minY : maxY > 23 ? 23 - maxY : 0;
+  for (const [pixelX, pixelY, color] of pixels) S(pixelX + shiftX, pixelY + shiftY, color);
+}
+
 function shieldHandOffset(p, d, viewDir) {
+  if (p.cast) return p.castOffhandHand;
   if (d !== 'right') return -p.arm;
   if (p.wep === 'wind') return -1;
   return p.arm;
@@ -506,9 +528,13 @@ export function drawShield(S, R, d, p, C, u, layer = 'front', viewDir = d) {
   const gripOffsetY = SHIELD_GRIP_OFFSET_Y[C.shield];
   if (gripOffsetY === undefined) return;
   const handOffset = shieldHandOffset(p, d, viewDir);
+  // Cast keeps its animated hand socket, while large shield faces stay inside
+  // their established safe canvas band. The front grip still owns the moving
+  // hand pixels, so atomic body + shield exports recompose exactly.
+  const faceHandOffset = p.cast ? -p.bob : handOffset;
   const handX = d === 'right' ? SHIELD_HAND_X.side : SHIELD_HAND_X[d];
   const originX = shieldFaceOriginX(d, C.shield);
-  const originY = SHIELD_HAND_Y + p.bob + handOffset - gripOffsetY;
+  const originY = SHIELD_HAND_Y + p.bob + faceHandOffset - gripOffsetY;
   const handY = SHIELD_HAND_Y + p.bob + handOffset;
 
   if (d === 'right') {
@@ -519,7 +545,11 @@ export function drawShield(S, R, d, p, C, u, layer = 'front', viewDir = d) {
     const faceLayer = nearHand ? 'front' : 'behind';
     if (layer === faceLayer) {
       if (faceLayer === 'front') R(handX - 1, handY, 2, 2, shieldGripColor(C.shield));
-      drawFullShield(S, R, originX, originY, C.shield, C.oc, C.shieldTier);
+      if (p.death) {
+        drawDeathSafeFullShield(S, R, originX, originY, C.shield, C.oc, C.shieldTier);
+      } else {
+        drawFullShield(S, R, originX, originY, C.shield, C.oc, C.shieldTier);
+      }
     }
     // A far-side face sits behind the torso, but its equipment-owned grip still
     // replaces the generic body hand in the front pass.
@@ -532,7 +562,11 @@ export function drawShield(S, R, d, p, C, u, layer = 'front', viewDir = d) {
   const faceLayer = d === 'up' ? 'behind' : 'front';
   if (layer === faceLayer) {
     if (faceLayer === 'front') R(handX - 1, handY, 2, 2, shieldGripColor(C.shield));
-    drawFullShield(S, R, originX, originY, C.shield, C.oc, C.shieldTier);
+    if (p.death) {
+      drawDeathSafeFullShield(S, R, originX, originY, C.shield, C.oc, C.shieldTier);
+    } else {
+      drawFullShield(S, R, originX, originY, C.shield, C.oc, C.shieldTier);
+    }
   }
   if (layer === 'front' && faceLayer === 'behind') {
     R(handX - 1, handY, 2, 2, shieldGripColor(C.shield));
