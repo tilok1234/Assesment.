@@ -1,0 +1,16 @@
+{
+  "file": "ancient-mirejaw-style-v2.png",
+  "width": 48,
+  "height": 48,
+  "logicalGrid": 24,
+  "bounds": [
+    2,
+    2,
+    46,
+    46
+  ],
+  "opaqueColors": 17,
+  "hardAlpha": true,
+  "treatment": "24px logical Form + Complete B, nearest-neighbor 2x",
+  "integrated": false
+}

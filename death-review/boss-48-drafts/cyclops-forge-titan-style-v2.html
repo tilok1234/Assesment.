@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyclops Forge-Titan Style Pilot</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      background: #101319;
+      color: #f4f0e8;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 760px; }
+    header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid #323846;
+      background: #12161d;
+    }
+    h1 { margin: 0 0 5px; font-size: 25px; }
+    .subtitle { color: #aab3c2; font-size: 13px; }
+    .gate {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 9px;
+      border: 1px solid #6c5832;
+      border-radius: 999px;
+      color: #f1c86b;
+      background: #2c2518;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    main {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(320px, 1fr));
+      gap: 20px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    article {
+      overflow: hidden;
+      border: 1px solid #343b49;
+      border-radius: 12px;
+      background: #191e27;
+    }
+    .stage {
+      display: grid;
+      place-items: center;
+      min-height: 360px;
+      background-color: #cdbf9d;
+      background-image:
+        linear-gradient(45deg, #bcae8e 25%, transparent 25%),
+        linear-gradient(-45deg, #bcae8e 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #bcae8e 75%),
+        linear-gradient(-45deg, transparent 75%, #bcae8e 75%);
+      background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+      background-size: 24px 24px;
+    }
+    canvas, .pilot {
+      width: 288px;
+      height: 288px;
+      object-fit: contain;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+    .meta { padding: 16px 18px 18px; }
+    h2 { margin: 0 0 6px; font-size: 18px; }
+    p { margin: 0; color: #aeb7c6; font-size: 13px; line-height: 1.45; }
+    .native-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 13px;
+      color: #aeb7c6;
+      font: 12px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    .native-canvas {
+      width: 24px;
+      height: 24px;
+      outline: 1px solid rgba(255,255,255,.18);
+    }
+    .native-image {
+      width: 48px;
+      height: 48px;
+      image-rendering: pixelated;
+      outline: 1px solid rgba(255,255,255,.18);
+      background: #0d1015;
+    }
+    footer {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px 28px;
+      color: #8d97a7;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cyclops Forge-Titan &middot; Tall-Silhouette Pilot</h1>
+    <div class="subtitle">Current Cyclops Titan control vs. 48&times;48 forge boss &middot; Effects Off</div>
+    <div class="gate">VISUAL GATE &mdash; NOT IN ENGINE OR CATALOG</div>
+  </header>
+  <main>
+    <article>
+      <div class="stage">
+        <canvas id="control" width="24" height="24"></canvas>
+      </div>
+      <div class="meta">
+        <h2>Live Cyclops Titan control</h2>
+        <p>Current cyclops/titan Idle frame with approved Form and Complete-B treatment.</p>
+        <div class="native-row">
+          <canvas class="native-canvas" id="control-native" width="24" height="24"></canvas>
+          current native 24&times;24 cell
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="stage">
+        <img class="pilot" src="./cyclops-forge-titan-style-v2.png" alt="Cyclops Forge-Titan 48x48 style pilot">
+      </div>
+      <div class="meta">
+        <h2>48&times;48 Cyclops Forge-Titan</h2>
+        <p>One bright eye, a massive forge hammer, broad plate armor, and a restrained furnace-core accent.</p>
+        <div class="native-row">
+          <img class="native-image" src="./cyclops-forge-titan-style-v2.png" alt="">
+          <span id="facts">loading measured contract...</span>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer>
+    One-pose tall-silhouette test only. No directions, animations, catalog entry,
+    renderer path, export contract, fixture, baseline, release artifact, or Windows build has changed.
+  </footer>
+  <script type="module">
+    import {
+      drawAssembledSprite,
+      OUTLINE_MODE_COMPLETE_B,
+      SHADE_MODE_FORM,
+    } from '../../sprite-engine.js';
+
+    const spec = { kind: 'enemy', family: 'cyclops', variant: 'titan' };
+    for (const id of ['control', 'control-native']) {
+      const canvas = document.querySelector(`#${id}`);
+      drawAssembledSprite(
+        canvas.getContext('2d'),
+        spec,
+        'down',
+        'idle',
+        0,
+        {
+          shadeMode: SHADE_MODE_FORM,
+          outlineMode: OUTLINE_MODE_COMPLETE_B,
+          shadow: true,
+        },
+      );
+    }
+
+    const response = await fetch('./cyclops-forge-titan-style-v2-manifest.json');
+    const manifest = await response.json();
+    const [left, top, right, bottom] = manifest.bounds;
+    document.querySelector('#facts').textContent =
+      `${manifest.width}x${manifest.height} PNG | ${manifest.logicalGrid}px logical grid | hard alpha | occupied ${right - left}x${bottom - top} @ ${left},${top} | ${manifest.opaqueColors} colors`;
+  </script>
+</body>
+</html>
