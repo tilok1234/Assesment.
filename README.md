@@ -1,5 +1,12 @@
 # 8-bit Sprite Assembler
 
+> **ECOSYSTEM POINTER (2026-07-29, designer-accepted doc 16).** This
+> repo is one of seven in the Wildshot project (it produces the game's
+> actor packs; the binding pack spec is planning docs/14). The shared
+> map — repo ownership, authority docs, hard cross-repo rules — lives
+> at `Wildshot_adventure_final_planning/docs/16-ECOSYSTEM_MAP.md`.
+> Read your repo's row before working here.
+
 A browser-based procedural sprite creator for building 24x24 player characters, enemies, and synchronized combat effects, previewing four-direction animations, and exporting game-ready PNG sprite sheets.
 
 ## Current capabilities
