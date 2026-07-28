@@ -1,7 +1,7 @@
 # Player Death Animation Plan
 
 Date: 2026-07-27
-Status: visually approved and publicly integrated
+Status: visually approved, publicly integrated, and pushed at `d6a56c1`
 
 ## Goal
 

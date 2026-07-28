@@ -1,7 +1,8 @@
 # Phase 5 Off-Hand Items Plan
 
-Status: Lantern pilot visually approved and public integration implemented on
-2026-07-26; validation and live-editor smoke are the remaining checkpoint gates.
+Status: complete, visually approved, integrated, validated, and checkpointed
+on 2026-07-26. The later Cast/Death extension is also covered by the current
+20-column gate.
 
 This is the first focused Phase 5 content slice after the approved Form-shading
 checkpoint. It adds non-shield items carried in the character's left hand
@@ -87,11 +88,11 @@ PNGs, the standalone Complete Character Kit from 2137 to 2139 PNGs, and a
 
 ## Validation gate
 
-The hard validation matrix covers 192 equipped-Lantern cases:
+The current hard validation matrix covers 320 equipped-Lantern cases:
 
 - four body builds;
 - four directions;
-- every idle, walk, attack, and hurt frame;
+- every idle, walk, attack, cast, hurt, and death frame;
 - zero out-of-bounds writes;
 - hand attachment and face-clearance checks;
 - direction-aware front/back routing;

@@ -2,8 +2,8 @@
 
 Status: complete and approved on 2026-07-27. The pure-policy checkpoint is
 `a571b1e` (`Add compatible Production reroll policy`). The final editor,
-documentation, and integration checkpoint containing this status follows
-`a571b1e`.
+documentation, and integration checkpoint is `b7eae05`
+(`Complete compatible Production reroll integration`).
 
 This lane adds deterministic, Production-compatible per-category rerolls
 without weakening the approved `production-v1` policy or changing the existing

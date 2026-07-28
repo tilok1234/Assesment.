@@ -19,7 +19,7 @@
         </div>
         <div class="brand-copy">
           <h1>Sprite Assembler</h1>
-          <p>24x24 · 4 directions · idle / walk / attack / cast / hurt / death</p>
+          <p id="app-subtitle">24x24 · 4 directions · idle / walk / attack / cast / hurt / death</p>
         </div>
         <div class="header-actions" aria-label="Editor actions">
           <button class="secondary-button compact-action" id="undo-button" type="button" disabled>Undo</button>
@@ -105,6 +105,7 @@
 
           <div class="stage-background" id="stage-background">
             <canvas id="stage-canvas" width="24" height="24" aria-label="Current animated sprite"></canvas>
+            <img id="boss-stage-image" width="48" height="48" alt="" hidden>
             <div class="stage-label" id="live-label">WALK · DOWN</div>
           </div>
 
@@ -140,11 +141,68 @@
               <button type="button" data-direction="down" aria-label="Face down">▼</button>
               <span></span>
             </div>
-            <p><strong>Direction</strong><br>Arrow keys work too — choosing one pauses Cycle all.</p>
+            <p id="direction-help"><strong>Direction</strong><br>Arrow keys work too — choosing one pauses Cycle all.</p>
           </div>
         </section>
 
         <aside class="export-panel" aria-label="Sprite sheet and export">
+          <section class="boss-pilot-panel" id="boss-pilot-panel" aria-labelledby="boss-pilot-title" hidden>
+            <div class="boss-pilot-heading">
+              <div>
+                <p class="boss-pilot-kicker" id="boss-pilot-kicker">Review-only 48x48 pilot</p>
+                <h2 id="boss-pilot-title">Boss directions</h2>
+              </div>
+              <span>Effects Off</span>
+            </div>
+            <p class="boss-pilot-description" id="boss-pilot-description"></p>
+            <p class="boss-pilot-warning" id="boss-pilot-warning">Direction pilot, not a fully animated boss. These frames stay separate from Enemy mode, production rolls, presets, packs, and the 24x24 renderer.</p>
+            <label class="boss-export-scope" id="boss-export-scope-control" for="boss-export-scope" hidden>
+              <span>Native export</span>
+              <select id="boss-export-scope">
+                <option value="full">Full animation sheet</option>
+                <option value="animation">Current animation</option>
+                <option value="direction">Current direction</option>
+              </select>
+            </label>
+
+            <div>
+              <h2 id="boss-directions-title">All directions</h2>
+              <div class="boss-direction-previews">
+                <figure>
+                  <div><img width="48" height="48" alt="" data-boss-direction-image="down"></div>
+                  <figcaption>Down</figcaption>
+                </figure>
+                <figure>
+                  <div><img width="48" height="48" alt="" data-boss-direction-image="left"></div>
+                  <figcaption>Left</figcaption>
+                </figure>
+                <figure>
+                  <div><img width="48" height="48" alt="" data-boss-direction-image="right"></div>
+                  <figcaption>Right</figcaption>
+                </figure>
+                <figure>
+                  <div><img width="48" height="48" alt="" data-boss-direction-image="up"></div>
+                  <figcaption>Up</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div>
+              <h2 id="boss-sheet-title">Native direction sheet</h2>
+              <div class="boss-sheet-preview">
+                <img id="boss-sheet-image" width="48" height="192" alt="">
+              </div>
+              <p class="sheet-contract" id="boss-sheet-contract">1 column · 4 rows · Down / Left / Right / Up</p>
+            </div>
+
+            <div class="boss-download-summary">
+              <strong id="boss-download-size">48x192 PNG · native 1x</strong>
+              <span id="boss-download-detail">Hard alpha, transparent background</span>
+            </div>
+            <button class="primary-button" id="download-boss-sheet-button" type="button">Download boss direction sheet</button>
+            <p class="preset-status" id="boss-download-status" role="status" aria-live="polite">Ready for directional game tests.</p>
+          </section>
+
           <section class="preset-panel">
             <h2>Presets</h2>
             <div class="preset-save-row">

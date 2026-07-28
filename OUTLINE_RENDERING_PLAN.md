@@ -2,9 +2,10 @@
 
 Status: implemented and visually approved for assembled players and all 57
 enemy families. The player implementation began at `674d926`; the enemy
-rollout completed at local checkpoint `ac860aa` on `codex/enemy-outlines`.
-The final branch is not pushed. Combat effects, atomic component sheets, and
-procedural source art remain outside the treatment. The deferred default
+rollout completed at historical 12-column checkpoint `ac860aa` on
+`codex/enemy-outlines`. The current 20-column public contract extends that
+approved lane through Cast and Death. Combat effects, atomic component sheets,
+and procedural source art remain outside the treatment. The deferred
 effect/shield preview issue is tracked in `HANDOFF.md` and is not an outline
 defect.
 
@@ -36,12 +37,29 @@ The implementation uses the renderer's existing ownership layers in this order:
 
 1. `weapon-back`
 2. `shield-back`
-3. `body`
-4. `headgear`
-5. `shield-front`
-6. `weapon-front`
+3. `offhand-back`
+4. `body`
+5. `headgear`
+6. `shield-front`
+7. `offhand-front`
+8. `weapon-front`
 
-The back/front equipment passes are merged into three logical owners: body, weapon, and shield. Headgear remains inside the body owner so its contact with the head cannot create an internal outline or replace colored head pixels. Transparent contour candidates are the union of all three owners wherever the final assembled pixel is transparent. The untouched final assembled frame is then composited above that contour. A second layer-aware contact pass retains the concrete `weapon-back`, `shield-back`, `body`, `headgear`, `shield-front`, and `weapon-front` identity of every visible pixel. At direct equipment/body contact, it places the separator on the visually rear object's boundary: the equipment edge for back passes and normally the character edge for front passes. When that front character-side replacement would merge with an existing dark body feature, the separator moves to the touching equipment edge instead. Direct front-equipment/headgear contact also uses the touching equipment pixel so the inner held-item edge reads without cutting the hat. This changes no procedural source geometry, assets, headgear pixels, facial features, or None-mode output.
+The back/front equipment passes are merged into four logical owners: body,
+weapon, shield, and utility off-hand. Shield and utility off-hand remain
+mutually exclusive. Headgear remains inside the body owner so its contact with
+the head cannot create an internal outline or replace colored head pixels.
+Transparent contour candidates are the union of all owners wherever the final
+assembled pixel is transparent. The untouched final assembled frame is then
+composited above that contour. A second layer-aware contact pass retains the
+concrete back/body/headgear/front identity of every visible pixel. At direct
+equipment/body contact, it places the separator on the visually rear object's
+boundary: the equipment edge for back passes and normally the character edge
+for front passes. When that front character-side replacement would merge with
+an existing dark body feature, the separator moves to the touching equipment
+edge instead. Direct front-equipment/headgear contact also uses the touching
+equipment pixel so the inner held-item edge reads without cutting the hat.
+This changes no procedural source geometry, assets, headgear pixels, facial
+features, or None-mode output.
 
 Front/back humanoid frames also receive an additive neck-cavity completion pass. It locates the vertically moving transition between the shared eight-pixel head base and two-pixel neck, then adds outline only to transparent cells directly beneath the full head base. The repair is ORed into the completed owner contour: it cannot clear an existing outline pixel or replace assembled artwork.
 
@@ -96,12 +114,13 @@ npm run check
 npm run build
 ```
 
-The outline review command verifies 6,000 None-mode direct-render parity cases, 2,000 deterministic randomized integrity cases, 11,040 exhaustive outlined equipment cases, 10,656 exhaustive headgear-preservation cases, representative hashes anchored at the safe baseline, cardinal equipment halos, filtered silhouette-defining cavities, the explicit Sword/Tower/Bow/Crossbow/Staff/Dagger/Bone pilot, depth-aware equipment/body separators, feature-preserving equipment-side fallbacks, equipment-side front-equipment/headgear separators, foreground headgear pixel preservation, non-contact body and equipment pixel preservation, randomized neck-cavity completion, ownership isolation, mode distinction, and review examples. `npm run check` covers source contracts and existing project invariants. The browser smoke test must also confirm the selector is available for assembled players and enemies but hidden for effects, modes visibly change both stage and sheet preview, foreground player equipment reads at direct body and headgear contact without cutting headgear or extending facial features, random characters retain their artwork, and switching back to None restores the untreated result. Saved enemy outline-mode reload remains a separately documented gap.
+The outline review command verifies 6,000 None-mode direct-render parity cases, 2,000 deterministic randomized integrity cases, 11,040 exhaustive outlined equipment cases, 10,656 exhaustive headgear-preservation cases, representative hashes anchored at the safe baseline, cardinal equipment halos, filtered silhouette-defining cavities, the explicit Sword/Tower/Bow/Crossbow/Staff/Dagger/Bone pilot, depth-aware equipment/body separators, feature-preserving equipment-side fallbacks, equipment-side front-equipment/headgear separators, foreground headgear pixel preservation, non-contact body and equipment pixel preservation, randomized neck-cavity completion, ownership isolation, mode distinction, and review examples. `npm run check` covers source contracts and existing project invariants. The browser smoke test must also confirm the selector is available for assembled players and enemies but hidden for effects, modes visibly change both stage and sheet preview, foreground player equipment reads at direct body and headgear contact without cutting headgear or extending facial features, random characters retain their artwork, switching back to None restores the untreated result, and saved enemy modes reload correctly.
 
-The enemy assessment covers all 57 families / 202 variants / 9,696 source
-frames. The completed lane passes 9,696 None-mode parity cases and 29,088
-None-B-C cases, keeps Complete B and Selective C distinct in every frame, and
-reports zero source-edge frames and zero out-of-bounds writes. The Core/None
+The historical approval assessment covers all 57 families / 202 variants /
+9,696 source frames under the 12-column contract. The current 20-column gate
+passes 16,160 None-mode parity cases and 48,480 None-B-C cases, keeps Complete
+B and Selective C distinct in every frame, and reports zero source-edge frames
+and zero out-of-bounds writes. The Core/None
 validator additionally proves every enemy source frame remains identical
 through the assembled coordinator and directly tests valid, missing, invalid,
 and effect-only persistence normalization. The browser smoke test must confirm

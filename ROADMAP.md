@@ -105,23 +105,18 @@ Exit criteria:
 
 Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
 
-Current visual checkpoint (2026-07-26): the complete 57-family enemy-outline
-rollout is visually approved at local commit `ac860aa`. The 9,696-frame enemy
-source corpus and 29,088 None-B-C cases have zero source-edge frames and zero
-out-of-bounds writes. The optional shared assembled-sprite shade pass in
-`SHADE_RENDERING_PLAN.md` has completed its Form lane: enemy outline
-persistence is repaired, shared buffer/coordinator infrastructure exists, None
-parity passes, and a deterministic material-aware Form transform is validated
-across 12 diverse player/enemy specimens and all three outline modes. The
-Form algorithm was visually approved on 2026-07-26. Player/Enemy shade UI,
-history, comparisons, persistence migrations, assembled exports, and
-pack/recipe metadata are implemented; full enemy Form and Form/outline audits
-pass. The integrated live editor and Form as its new/reset default were
-approved on 2026-07-26 and checkpointed on `codex/form-shading`. The existing
-None fixtures remain unchanged, and there is no new baseline or release build.
-Combat overlays are now opt-in and return to Off whenever the editor starts.
-The optional effect-after-character shield/equipment occlusion issue remains
-on ice and explicitly outside shade scope. See `HANDOFF.md`.
+Current continuation checkpoint (2026-07-28): the complete 57-family
+enemy-outline rollout remains visually approved. Its historical 12-column
+checkpoint `ac860aa` covered 9,696 source frames / 29,088 None-B-C cases; the
+current 20-column Cast/Death contract extends the structural gate to 16,160 /
+48,480 cases. Form shading, Lantern, Production Roll, compatible category
+rerolls, and the public Cast/Death actor contract are complete. Pushed
+checkpoint `d6a56c1` is followed locally by unpushed boss-direction checkpoint
+`08d1ef7` and an uncommitted isolated Bosses workspace with six animated
+48x48 pilots plus three static fallbacks. Existing None fixtures remain
+unchanged, effects start Off, the effect-after-character shield/equipment
+occlusion issue remains on ice, and no current Windows release build exists.
+See `HANDOFF.md`.
 
 The first fresh content slice after that checkpoint adds the visually approved
 Lantern through a separate public non-shield `offhand` field. Shields and
@@ -141,7 +136,7 @@ The fifth content slice adds oversized mythic Tier 4 forms such as Dawnreaver, C
 
 The sixth content slice completes the progression with final artifact Tier 5 forms such as Eternity's End, The Last Horizon, Heavenrend, Supernova, Axis of Creation, Wings of Genesis, Apocalypse Engine, Pillar of Eternity, and The Final Testament. After visual review, Tier 5 was rebuilt as an independent artifact silhouette over the Tier 3 foundation rather than a dense overlay on Tier 4. Each weapon now has its own material palette and keeps its blade, head, handle, shaft, limbs, mechanism, focus, or book cover readable, with restrained crowns, runes, star points, wing tips, multi-bolts, orbiting shards, page lights, and magic accents supporting the physical form. All 15 artifacts establish a distinct silhouette in every idle direction, differ from Tier 4 in every animation frame, follow the animated hand without edge-sticking, preserve both front eyes and the side face, and use the existing preset, randomization, history, persistence, and export paths without a schema migration.
 
-The seventh content slice establishes the shield foundation. Humanoid shield drawing now lives in a focused renderer with a player-only off-hand rig and a legacy-compatible enemy path. Round, kite, and buckler were rebuilt, while heater, tower, oval, bone, and arcane brought the equipped catalog to eight distinct shield families. The later approved object-space attachment correction at `f21cbe3` keeps the same broad shield face attached to the shield hand in every facing; direction changes screen position and near/far body occlusion rather than applying a second perspective turn. The current validator covers 7,680 equipped-shield cases across four body builds, eight families, five tiers, four directions, and every animation frame.
+The seventh content slice establishes the shield foundation. Humanoid shield drawing now lives in a focused renderer with a player-only off-hand rig and a legacy-compatible enemy path. Round, kite, and buckler were rebuilt, while heater, tower, oval, bone, and arcane brought the equipped catalog to eight distinct shield families. The later approved object-space attachment correction at `f21cbe3` keeps the same broad shield face attached to the shield hand in every facing; direction changes screen position and near/far body occlusion rather than applying a second perspective turn. The current 20-column validator covers 12,800 equipped-shield cases across four body builds, eight families, five tiers, four directions, and every animation frame.
 
 The eighth content slice adds independent Tier 2 progression for all eight equipped shield families. Ironbound Roundshield, Knight's Bulwark, Duelist's Guard, Lionheart Heater, Bastion Wall, Legionnaire Scutum, Ossuary Aegis, and Runebound Ward each expand beyond the Tier 1 silhouette with family-specific bracing, flares, battlements, bands, bone crowns, or floating runes. The schema-v5 `shieldTier` field participates in the editor, named selections, whole-character and per-category randomization, reset, undo/redo, comparison, persistence, presets, and exports; old v1 through v4 presets migrate to Tier 1, and `None` always normalizes to Tier 1. Automated checks prove Tier 2 differs from Tier 1 in every direction, animation, and frame, grows every idle silhouette, remains mutually distinct, follows the off-hand rig, and preserves face clearance.
 
@@ -189,11 +184,12 @@ The twenty-eighth content slice extends None, Complete B, and Selective C
 outlines from assembled players to every enemy family. It combines connected
 exterior contours, component-aware humanoid equipment separation, and
 family-specific separated-component thresholds with source-geometry repairs
-that reserve one outline cell around every frame. The final lane covers all
-57 families / 202 variants / 9,696 source frames, keeps the two outline modes
-distinct in every frame, and reports zero source-edge frames and zero
-out-of-bounds writes. All rollout groups were visually approved before the
-local `ac860aa` checkpoint; no push or fixture-baseline rewrite was performed.
+that reserve one outline cell around every frame. At the historical
+12-column approval checkpoint, the final lane covered all 57 families / 202
+variants / 9,696 source frames, kept the two outline modes distinct in every
+frame, and reported zero source-edge frames and zero out-of-bounds writes. All
+rollout groups were visually approved before local `ac860aa`; no push or
+fixture-baseline rewrite was performed in that dedicated lane.
 
 The twenty-ninth content slice establishes non-shield utility off-hands with
 one visually approved Lantern. A separate `offhand` catalog avoids pretending
@@ -205,9 +201,10 @@ while enforcing mutual exclusion with `shield`. Dedicated `offhand-back` and
 component-aware off-hand equipment owner. Complete Kit/Pack schema v12 adds two
 stable Lantern component sheets, raising the shared component library to 1912
 PNGs, the standalone kit to 2139 PNGs, and a 24-player Complete Pack to 2162
-PNGs. The validator covers all 192 body-build/direction/animation/frame cases
-with zero discarded pixels, face clearance, layer routing, and exact
-recomposition; no fixture, baseline, release artifact, or effect-compositor
+PNGs. The original 12-column validator covered 192
+body-build/direction/animation/frame cases; the current 20-column gate covers
+320 with zero discarded pixels, face clearance, layer routing, and exact
+recomposition. No fixture, baseline, release artifact, or effect-compositor
 approval is implied.
 
 The thirtieth Phase 5 slice completes Production Roll v1. The existing
@@ -239,6 +236,24 @@ whole/category Wildcard boundaries, and Player/Enemy/Effect isolation. No
 renderer, geometry, fixture, baseline, effect behavior, release artifact, or
 Windows build changed.
 
+The thirty-second Phase 5 slice establishes the Wildshot game-pack actor
+contract at pushed checkpoint `d6a56c1`. Native 1x 24x24 actor sheets now use
+the public 20-column Idle/Walk/Attack/Cast/Hurt/Death contract: Players have
+authored Cast and Death motion, Enemy Cast aliases Attack, and Enemy Death
+aliases Hurt frames 1, 2, 2, 2. The pure manifest/refusal boundary is
+implemented, but the pack still refuses emission until license text and the
+compact effect contract are approved; writer, editor, and consumer slices are
+also pending.
+
+The thirty-third Phase 5 slice is an isolated 48x48 Bosses review lane. Nine
+four-direction pilots are checkpointed locally at `08d1ef7`; six currently
+have full 20-column animation corpora and three remain static fallbacks. The
+Bosses workspace is ephemeral and native-1x-only, with no connection to Enemy
+mode, production renderers, persistence, packs, fixtures, release artifacts,
+or Windows builds. The six-boss structural gate passes 480 distinct frames and
+66 native sheets. Goblin War-Crown remains the current visual-review
+candidate, so this follow-up is not yet a commit/push checkpoint.
+
 Candidate additions:
 
 - More body types beyond the completed four-build silhouette foundation
@@ -249,7 +264,8 @@ Candidate additions:
 - Additional off-hand items beyond the completed Lantern, such as spell foci; quivers require a separate back-slot plan rather than the held-item topology
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants
-- Optional new animations after the existing sheet contract has a versioning plan
+- Additional production animations only after the 20-column contract has a
+  versioning plan; review-only boss pilots remain isolated
 
 Content is added through the stable definition and validation workflow established in Phases 2 and 4.
 
@@ -259,12 +275,13 @@ Progress: active. The release lane has native Save dialogs for every PNG, JSON,
 and ZIP export, final product metadata and icons, a current-user NSIS target
 with an embedded WebView2 bootstrapper, a release-specific validator, and a
 versioned GitHub draft-release workflow. Historical installer and standalone
-smoke tests passed their earlier checkpoints. Neither the existing standalone
-executable nor the July 19 NSIS installer was built from the final
-`ac860aa` enemy-outline state, so neither is a release candidate for the
-current branch. Full NSIS install/uninstall testing, code signing, and
-automatic updates remain deferred until a stable distribution identity and a
-deliberate release checkpoint exist.
+smoke tests passed their earlier checkpoints. No existing executable or
+installer was built and approved from pushed actor-contract checkpoint
+`d6a56c1`, local boss checkpoint `08d1ef7`, or the current uncommitted Bosses
+workspace, so none is a release candidate for this branch. Full NSIS
+install/uninstall testing, code signing, and automatic updates remain deferred
+until a stable distribution identity and a deliberate release checkpoint
+exist.
 
 Goals:
 

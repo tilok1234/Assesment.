@@ -76,6 +76,7 @@ const DEFAULT_STATE = {
 };
 
 const elements = {
+  appSubtitle: document.querySelector('#app-subtitle'),
   modeButtons: document.querySelector('#mode-buttons'),
   optionGroups: document.querySelector('#option-groups'),
   paletteEditor: document.querySelector('#palette-editor'),
@@ -103,14 +104,35 @@ const elements = {
   frameReadout: document.querySelector('#frame-readout'),
   playbackSpeed: document.querySelector('#playback-speed'),
   stageCanvas: document.querySelector('#stage-canvas'),
+  bossStageImage: document.querySelector('#boss-stage-image'),
   liveLabel: document.querySelector('#live-label'),
   directionLetter: document.querySelector('#direction-letter'),
+  directionHelp: document.querySelector('#direction-help'),
   directionButtons: [...document.querySelectorAll('[data-direction]')],
   directionCanvases: new Map(
     [...document.querySelectorAll('[data-direction-canvas]')]
       .map((canvas) => [canvas.dataset.directionCanvas, canvas]),
   ),
   sheetCanvas: document.querySelector('#sheet-canvas'),
+  bossPilotPanel: document.querySelector('#boss-pilot-panel'),
+  bossPilotKicker: document.querySelector('#boss-pilot-kicker'),
+  bossPilotTitle: document.querySelector('#boss-pilot-title'),
+  bossPilotDescription: document.querySelector('#boss-pilot-description'),
+  bossPilotWarning: document.querySelector('#boss-pilot-warning'),
+  bossExportScopeControl: document.querySelector('#boss-export-scope-control'),
+  bossExportScope: document.querySelector('#boss-export-scope'),
+  bossDirectionsTitle: document.querySelector('#boss-directions-title'),
+  bossDirectionImages: new Map(
+    [...document.querySelectorAll('[data-boss-direction-image]')]
+      .map((image) => [image.dataset.bossDirectionImage, image]),
+  ),
+  bossSheetTitle: document.querySelector('#boss-sheet-title'),
+  bossSheetImage: document.querySelector('#boss-sheet-image'),
+  bossSheetContract: document.querySelector('#boss-sheet-contract'),
+  bossDownloadSize: document.querySelector('#boss-download-size'),
+  bossDownloadDetail: document.querySelector('#boss-download-detail'),
+  downloadBossSheetButton: document.querySelector('#download-boss-sheet-button'),
+  bossDownloadStatus: document.querySelector('#boss-download-status'),
   sheetTitle: document.querySelector('#sheet-title'),
   sheetContract: document.querySelector('#sheet-contract'),
   exportScope: document.querySelector('#export-scope'),
@@ -191,7 +213,23 @@ const elements = {
 
 const thumbCache = new Map();
 const spinCells = E.ANIMS.flatMap((anim) => E.DIRS.map((dir) => ({ anim, dir })));
+const bossSpinCells = E.BOSS_ANIMATIONS.flatMap((anim) => (
+  E.BOSS_ANIMATION_DIRECTIONS.map((dir) => ({ anim, dir }))
+));
 let state = loadState();
+let workspaceMode = state.mode;
+let selectedBossId = E.BOSS_DIRECTION_PILOTS[0].id;
+let bossDirection = E.BOSS_DIRECTIONS[0];
+let bossAnimation = E.BOSS_ANIMATIONS[0].id;
+let bossFrame = 0;
+let bossPlaying = true;
+let bossPlaybackSpeed = 1;
+let bossZoom = 10;
+let bossCycle = false;
+let bossExportScope = 'full';
+let bossAnimationTime = 0;
+let bossSpinTime = 0;
+let bossSpinIndex = 0;
 let presetLibrary = loadPresetLibrary();
 let paletteLibrary = loadPaletteLibrary();
 let packLibrary = loadPackLibrary();
@@ -1417,11 +1455,65 @@ function makeButton(label, active, onClick, className = 'segment-button') {
   return button;
 }
 
+function selectedBoss() {
+  return E.BOSS_DIRECTION_PILOTS.find((boss) => boss.id === selectedBossId)
+    || E.BOSS_DIRECTION_PILOTS[0];
+}
+
+function selectedBossAnimation() {
+  return E.BOSS_ANIMATION_PILOTS.find((boss) => boss.id === selectedBossId) || null;
+}
+
+function formatDisplayNames(names) {
+  if (names.length < 2) return names[0] || '';
+  return `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`;
+}
+
+function activeBossAnimation(animId = bossAnimation) {
+  return E.BOSS_ANIMATIONS.find((animation) => animation.id === animId)
+    || E.BOSS_ANIMATIONS[0];
+}
+
+function clampBossFrame(frame, animation = activeBossAnimation()) {
+  return Math.max(0, Math.min(
+    animation.frames - 1,
+    Number.isInteger(frame) ? frame : 0,
+  ));
+}
+
+function bossAnimationColumn(animId, frame) {
+  const animation = activeBossAnimation(animId);
+  return animation.column + clampBossFrame(frame, animation);
+}
+
+function findBossSpinIndex() {
+  const index = bossSpinCells.findIndex((cell) => (
+    cell.anim.id === bossAnimation && cell.dir === bossDirection
+  ));
+  return index >= 0 ? index : 0;
+}
+
+function chooseWorkspaceMode(mode) {
+  if (mode === 'boss') {
+    workspaceMode = 'boss';
+    lastTime = 0;
+    renderUi();
+    return;
+  }
+  workspaceMode = sanitizeMode(mode);
+  lastTime = 0;
+  const patch = workspaceMode === 'effect'
+    ? { mode: workspaceMode, anim: 'attack', exportAnim: 'attack', frame: 0 }
+    : { mode: workspaceMode };
+  setState(patch);
+}
+
 function renderModeButtons() {
   elements.modeButtons.replaceChildren(
-    makeButton('Player', state.mode === 'player', () => setState({ mode: 'player' })),
-    makeButton('Enemies', state.mode === 'enemy', () => setState({ mode: 'enemy' })),
-    makeButton('Effects', state.mode === 'effect', () => setState({ mode: 'effect', anim: 'attack', exportAnim: 'attack', frame: 0 })),
+    makeButton('Player', workspaceMode === 'player', () => chooseWorkspaceMode('player')),
+    makeButton('Enemies', workspaceMode === 'enemy', () => chooseWorkspaceMode('enemy')),
+    makeButton('Effects', workspaceMode === 'effect', () => chooseWorkspaceMode('effect')),
+    makeButton('Bosses', workspaceMode === 'boss', () => chooseWorkspaceMode('boss')),
   );
 }
 
@@ -1854,6 +1946,58 @@ function effectGroups() {
   ];
 }
 
+function renderBossOptionGroups() {
+  const current = selectedBoss();
+  const group = document.createElement('section');
+  group.className = 'option-group boss-option-group';
+
+  const heading = document.createElement('div');
+  heading.className = 'option-heading';
+  const title = document.createElement('h2');
+  title.textContent = 'Boss pilot';
+  const selection = document.createElement('span');
+  selection.className = 'option-selection';
+  selection.textContent = current.name;
+  heading.append(title, selection);
+
+  const choices = document.createElement('div');
+  choices.className = 'thumbnail-options boss-thumbnail-options';
+  for (const boss of E.BOSS_DIRECTION_PILOTS) {
+    const active = boss.id === current.id;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = `thumbnail-option boss-thumbnail-option${active ? ' active' : ''}`;
+    button.title = boss.name;
+    button.setAttribute('aria-label', `Boss pilot: ${boss.name}`);
+    button.setAttribute('aria-pressed', String(active));
+    button.addEventListener('click', () => {
+      selectedBossId = boss.id;
+      bossAnimation = E.BOSS_ANIMATIONS[0].id;
+      bossFrame = 0;
+      bossPlaying = Boolean(selectedBossAnimation());
+      bossCycle = false;
+      bossAnimationTime = 0;
+      bossSpinTime = 0;
+      bossSpinIndex = 0;
+      bossExportScope = selectedBossAnimation() ? 'full' : 'direction';
+      elements.bossDownloadStatus.textContent = 'Ready for directional game tests.';
+      renderUi();
+    });
+
+    const thumbnail = document.createElement('span');
+    thumbnail.className = 'thumbnail';
+    thumbnail.style.backgroundImage = `url("${boss.frames.down}")`;
+    const name = document.createElement('span');
+    name.className = 'thumbnail-label';
+    name.textContent = boss.name;
+    button.append(thumbnail, name);
+    choices.append(button);
+  }
+
+  group.append(heading, choices);
+  elements.optionGroups.replaceChildren(group);
+}
+
 function renderOptionGroups() {
   const groups = state.mode === 'player'
     ? playerGroups()
@@ -1922,12 +2066,79 @@ function renderFrameInspection(animId, frame) {
   elements.stageCanvas.dataset.speed = String(state.playbackSpeed);
 }
 
+function renderBossFrameInspection(animId, frame) {
+  const animation = activeBossAnimation(animId);
+  const safeFrame = clampBossFrame(frame, animation);
+  if (elements.frameButtons.dataset.animation === animation.id) {
+    for (const [index, button] of [...elements.frameButtons.children].entries()) {
+      const active = index === safeFrame;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    }
+  }
+  const column = bossAnimationColumn(animation.id, safeFrame);
+  elements.frameReadout.value = `Frame ${safeFrame + 1} / ${animation.frames} · column ${column + 1} / ${E.BOSS_ANIMATION_SHEET_COLUMNS} · ${animation.ms} ms`;
+  elements.frameReadout.title = `${animation.name} frame ${safeFrame + 1} is sheet column ${column + 1} of ${E.BOSS_ANIMATION_SHEET_COLUMNS}`;
+  elements.bossStageImage.dataset.animation = animation.id;
+  elements.bossStageImage.dataset.direction = bossDirection;
+  elements.bossStageImage.dataset.frame = String(safeFrame + 1);
+  elements.bossStageImage.dataset.playing = String(bossPlaying);
+  elements.bossStageImage.dataset.speed = String(bossPlaybackSpeed);
+}
+
+function renderBossPlaybackControls() {
+  const animation = activeBossAnimation();
+  elements.animationButtons.replaceChildren(...E.BOSS_ANIMATIONS.map((item) => makeButton(
+    item.name,
+    bossAnimation === item.id,
+    () => chooseAnimation(item.id),
+  )));
+  elements.zoomButtons.replaceChildren(...ZOOM_LEVELS.map((zoom) => makeButton(
+    `${zoom}x`,
+    bossZoom === zoom,
+    () => {
+      bossZoom = zoom;
+      renderBossWorkspace();
+    },
+  )));
+  elements.cycleButton.classList.toggle('active', bossCycle);
+  elements.cycleButton.setAttribute('aria-pressed', String(bossCycle));
+  elements.previewEffectsButton.hidden = true;
+  elements.outlineControl.hidden = true;
+  elements.shadeControl.hidden = true;
+  elements.playPauseButton.textContent = bossPlaying ? 'Pause' : 'Play';
+  elements.playPauseButton.setAttribute('aria-label', bossPlaying ? 'Pause boss animation' : 'Play boss animation');
+  elements.playPauseButton.setAttribute('aria-pressed', String(bossPlaying));
+  elements.playbackSpeed.value = String(bossPlaybackSpeed);
+  const frameButtons = Array.from({ length: animation.frames }, (_, frame) => makeButton(
+    String(frame + 1),
+    frame === clampBossFrame(bossFrame, animation),
+    () => inspectFrame(frame),
+    'frame-button',
+  ));
+  for (const [frame, button] of frameButtons.entries()) {
+    button.setAttribute('aria-label', `Inspect boss ${animation.name} frame ${frame + 1}`);
+  }
+  elements.frameButtons.dataset.animation = animation.id;
+  elements.frameButtons.replaceChildren(...frameButtons);
+  elements.bossStageImage.style.width = `${E.BOSS_ANIMATION_FRAME_SIZE * bossZoom}px`;
+  renderBossFrameInspection(animation.id, bossFrame);
+}
+
 function renderDirectionControls() {
-  elements.directionLetter.textContent = DIRECTION_NAMES[state.dir][0];
+  const direction = workspaceMode === 'boss' ? bossDirection : state.dir;
+  const animatedBoss = workspaceMode === 'boss' && Boolean(selectedBossAnimation());
+  const spinning = workspaceMode === 'boss' ? animatedBoss && bossCycle : state.spin;
+  elements.directionLetter.textContent = DIRECTION_NAMES[direction][0];
+  elements.directionHelp.innerHTML = workspaceMode === 'boss'
+    ? animatedBoss
+      ? '<strong>Boss direction</strong><br>Arrow keys select a 48x48 view and pause Cycle all.'
+      : '<strong>Direction pilot</strong><br>Arrow keys switch the four static 48x48 views.'
+    : '<strong>Direction</strong><br>Arrow keys work too — choosing one pauses Cycle all.';
   for (const button of elements.directionButtons) {
-    const active = button.dataset.direction === state.dir;
-    button.classList.toggle('active', active && !state.spin);
-    button.classList.toggle('cycling', active && state.spin);
+    const active = button.dataset.direction === direction;
+    button.classList.toggle('active', active && !spinning);
+    button.classList.toggle('cycling', active && spinning);
     button.setAttribute('aria-pressed', String(active));
   }
 }
@@ -2334,8 +2545,142 @@ function renderPaletteControls() {
   elements.deletePaletteButton.disabled = !selectedPaletteId;
 }
 
+function bossExportDescriptor(boss, animationPilot) {
+  if (!animationPilot) {
+    return {
+      asset: boss.sheet,
+      title: 'Native direction sheet',
+      contract: '1 column · 4 rows · Down / Left / Right / Up',
+      width: E.BOSS_DIRECTION_SHEET_WIDTH,
+      height: E.BOSS_DIRECTION_SHEET_HEIGHT,
+      filename: `${boss.id}-directions-v1@1x.png`,
+      detail: 'Hard alpha, transparent background',
+    };
+  }
+  const animation = activeBossAnimation();
+  if (bossExportScope === 'animation') {
+    return {
+      asset: animationPilot.animationSheets[animation.id],
+      title: `${animation.name} animation sheet`,
+      contract: `${animation.frames} columns · 4 rows · Down / Left / Right / Up`,
+      width: animation.frames * E.BOSS_ANIMATION_FRAME_SIZE,
+      height: E.BOSS_ANIMATION_SHEET_HEIGHT,
+      filename: `${boss.id}-animation-v1-${animation.id}@1x.png`,
+      detail: `${animation.name} · ${animation.frames} frames · four directions`,
+    };
+  }
+  if (bossExportScope === 'direction') {
+    return {
+      asset: animationPilot.directionSheets[bossDirection],
+      title: `${DIRECTION_NAMES[bossDirection]} direction sheet`,
+      contract: '20 columns · Idle / Walk / Attack / Cast / Hurt / Death',
+      width: E.BOSS_ANIMATION_SHEET_WIDTH,
+      height: E.BOSS_ANIMATION_FRAME_SIZE,
+      filename: `${boss.id}-animation-v1-${bossDirection}@1x.png`,
+      detail: `${DIRECTION_NAMES[bossDirection]} · all six animations`,
+    };
+  }
+  return {
+    asset: animationPilot.fullSheet,
+    title: 'Full boss animation sheet',
+    contract: '20 columns · 4 rows · Idle / Walk / Attack / Cast / Hurt / Death',
+    width: E.BOSS_ANIMATION_SHEET_WIDTH,
+    height: E.BOSS_ANIMATION_SHEET_HEIGHT,
+    filename: `${boss.id}-animation-v1-full@1x.png`,
+    detail: 'Six animations · four directions · hard alpha',
+  };
+}
+
+function renderBossExport(boss, animationPilot) {
+  const descriptor = bossExportDescriptor(boss, animationPilot);
+  elements.bossSheetTitle.textContent = descriptor.title;
+  elements.bossSheetImage.src = descriptor.asset;
+  elements.bossSheetImage.width = descriptor.width;
+  elements.bossSheetImage.height = descriptor.height;
+  elements.bossSheetImage.alt = `${boss.name} ${descriptor.title.toLocaleLowerCase()}`;
+  elements.bossSheetContract.textContent = descriptor.contract;
+  elements.bossDownloadSize.textContent = `${descriptor.width}x${descriptor.height} PNG · native 1x`;
+  elements.bossDownloadDetail.textContent = descriptor.detail;
+  elements.downloadBossSheetButton.textContent = `Download ${descriptor.title.toLocaleLowerCase()}`;
+}
+
+function drawBossFrame(boss, animationPilot) {
+  const animation = activeBossAnimation();
+  const safeFrame = clampBossFrame(bossFrame, animation);
+  const frameAsset = animationPilot.frames[animation.id][bossDirection][safeFrame];
+  if (elements.bossStageImage.getAttribute('src') !== frameAsset) {
+    elements.bossStageImage.src = frameAsset;
+  }
+  elements.bossStageImage.alt = `${boss.name}, ${animation.name} frame ${safeFrame + 1}, ${DIRECTION_NAMES[bossDirection]} direction`;
+  elements.liveLabel.textContent = `${boss.name} · ${animation.name} · ${DIRECTION_NAMES[bossDirection]}`.toLocaleUpperCase();
+  elements.bossDirectionsTitle.textContent = `${animation.name} frame ${safeFrame + 1} · all directions`;
+  for (const direction of E.BOSS_ANIMATION_DIRECTIONS) {
+    const image = elements.bossDirectionImages.get(direction);
+    const asset = animationPilot.frames[animation.id][direction][safeFrame];
+    if (image.getAttribute('src') !== asset) image.src = asset;
+    image.alt = `${boss.name}, ${animation.name} frame ${safeFrame + 1}, ${DIRECTION_NAMES[direction]} direction`;
+  }
+  renderBossFrameInspection(animation.id, safeFrame);
+}
+
+function renderBossWorkspace() {
+  const boss = selectedBoss();
+  const animationPilot = selectedBossAnimation();
+  document.body.classList.add('boss-workspace');
+  document.body.classList.toggle('boss-animated-workspace', Boolean(animationPilot));
+  elements.paletteEditor.hidden = true;
+  elements.bossPilotPanel.hidden = false;
+  elements.stageCanvas.hidden = true;
+  elements.bossStageImage.hidden = false;
+  renderBossOptionGroups();
+  elements.bossPilotDescription.textContent = boss.note;
+
+  if (animationPilot) {
+    const animatedNames = E.BOSS_ANIMATION_PILOTS.map((pilot) => pilot.name);
+    const staticCount = E.BOSS_DIRECTION_PILOTS.length - E.BOSS_ANIMATION_PILOTS.length;
+    elements.appSubtitle.textContent = '48x48 · 4 directions · idle / walk / attack / cast / hurt / death';
+    elements.bossPilotKicker.textContent = 'Animated 48x48 pilot';
+    elements.bossPilotTitle.textContent = 'Boss animation';
+    elements.bossPilotWarning.textContent = `${boss.name} is one of ${animatedNames.length} full animation pilots. The remaining ${staticCount} bosses stay static direction drafts; all boss assets stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.`;
+    elements.bossExportScopeControl.hidden = false;
+    elements.bossExportScope.value = bossExportScope;
+    renderBossPlaybackControls();
+    drawBossFrame(boss, animationPilot);
+  } else {
+    const animatedNames = E.BOSS_ANIMATION_PILOTS.map((pilot) => pilot.name);
+    elements.appSubtitle.textContent = '48x48 · 4 static directions · review pilot';
+    elements.bossPilotKicker.textContent = 'Review-only 48x48 pilot';
+    elements.bossPilotTitle.textContent = 'Boss directions';
+    elements.bossPilotWarning.textContent = `Static direction pilot, not a fully animated boss. Full animation currently exists for ${formatDisplayNames(animatedNames)}; these frames stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.`;
+    elements.bossExportScopeControl.hidden = true;
+    elements.bossStageImage.style.width = '';
+    elements.bossStageImage.src = boss.frames[bossDirection];
+    elements.bossStageImage.alt = `${boss.name}, ${DIRECTION_NAMES[bossDirection]} direction`;
+    elements.liveLabel.textContent = `${boss.name} · ${DIRECTION_NAMES[bossDirection]} · STATIC PILOT`.toLocaleUpperCase();
+    elements.bossDirectionsTitle.textContent = 'All static directions';
+    for (const direction of E.BOSS_DIRECTIONS) {
+      const image = elements.bossDirectionImages.get(direction);
+      image.src = boss.frames[direction];
+      image.alt = `${boss.name}, ${DIRECTION_NAMES[direction]} direction`;
+    }
+  }
+
+  renderBossExport(boss, animationPilot);
+  renderDirectionControls();
+}
+
 function renderUi() {
   renderModeButtons();
+  if (workspaceMode === 'boss') {
+    renderBossWorkspace();
+    return;
+  }
+  document.body.classList.remove('boss-workspace');
+  document.body.classList.remove('boss-animated-workspace');
+  elements.appSubtitle.textContent = '24x24 · 4 directions · idle / walk / attack / cast / hurt / death';
+  elements.bossPilotPanel.hidden = true;
+  elements.bossStageImage.hidden = true;
+  elements.stageCanvas.hidden = false;
   renderProductionRollControls();
   renderOutlineControls();
   renderShadeControls();
@@ -2434,6 +2779,52 @@ function drawFrame(animId, direction, frame) {
 }
 
 function tick(time) {
+  if (workspaceMode === 'boss') {
+    const boss = selectedBoss();
+    const animationPilot = selectedBossAnimation();
+    if (!animationPilot) {
+      lastTime = 0;
+      requestAnimationFrame(tick);
+      return;
+    }
+    const delta = lastTime ? Math.min(100, time - lastTime) : 0;
+    lastTime = time;
+    let animation = activeBossAnimation();
+    let frame = clampBossFrame(bossFrame, animation);
+
+    if (bossPlaying) {
+      const scaledDelta = delta * bossPlaybackSpeed;
+      if (bossCycle) {
+        bossSpinTime += scaledDelta;
+        let cell = bossSpinCells[bossSpinIndex % bossSpinCells.length];
+        let loops = cell.anim.frames <= 2 ? 2 : 1;
+        let duration = cell.anim.frames * cell.anim.ms * loops;
+        while (bossSpinTime >= duration) {
+          bossSpinTime -= duration;
+          bossSpinIndex = (bossSpinIndex + 1) % bossSpinCells.length;
+          cell = bossSpinCells[bossSpinIndex];
+          loops = cell.anim.frames <= 2 ? 2 : 1;
+          duration = cell.anim.frames * cell.anim.ms * loops;
+          bossAnimation = cell.anim.id;
+          bossDirection = cell.dir;
+          bossFrame = 0;
+          renderBossPlaybackControls();
+          renderDirectionControls();
+          renderBossExport(boss, animationPilot);
+        }
+        animation = cell.anim;
+        frame = Math.floor(bossSpinTime / cell.anim.ms) % cell.anim.frames;
+      } else {
+        bossAnimationTime = (bossAnimationTime + scaledDelta) % (animation.frames * animation.ms);
+        frame = Math.floor(bossAnimationTime / animation.ms) % animation.frames;
+      }
+    }
+
+    if (frame !== bossFrame) bossFrame = frame;
+    drawBossFrame(boss, animationPilot);
+    requestAnimationFrame(tick);
+    return;
+  }
   const delta = lastTime ? Math.min(100, time - lastTime) : 0;
   lastTime = time;
   let animId = state.anim;
@@ -2475,6 +2866,23 @@ function tick(time) {
 }
 
 function toggleCycle() {
+  if (workspaceMode === 'boss') {
+    if (!selectedBossAnimation()) return;
+    bossCycle = !bossCycle;
+    if (bossCycle) {
+      bossSpinIndex = findBossSpinIndex();
+      bossSpinTime = 0;
+      bossAnimationTime = 0;
+      bossPlaying = true;
+      bossFrame = 0;
+    } else {
+      const animation = activeBossAnimation();
+      bossAnimationTime = clampBossFrame(bossFrame, animation) * animation.ms;
+    }
+    lastTime = 0;
+    renderBossWorkspace();
+    return;
+  }
   const spin = !state.spin;
   if (spin) {
     spinIndex = findSpinIndex();
@@ -2491,6 +2899,18 @@ function toggleCycle() {
 }
 
 function chooseAnimation(animId) {
+  if (workspaceMode === 'boss') {
+    if (!selectedBossAnimation()) return;
+    const animation = activeBossAnimation(animId);
+    bossAnimation = animation.id;
+    bossFrame = 0;
+    bossCycle = false;
+    bossAnimationTime = 0;
+    bossSpinTime = 0;
+    lastTime = 0;
+    renderBossWorkspace();
+    return;
+  }
   const anim = activeAnimation(animId);
   animationTime = 0;
   spinTime = 0;
@@ -2498,6 +2918,18 @@ function chooseAnimation(animId) {
 }
 
 function togglePlayback() {
+  if (workspaceMode === 'boss') {
+    if (!selectedBossAnimation()) return;
+    bossPlaying = !bossPlaying;
+    if (bossPlaying) {
+      const animation = activeBossAnimation();
+      bossAnimationTime = clampBossFrame(bossFrame, animation) * animation.ms;
+      if (bossCycle) bossSpinTime = bossAnimationTime;
+      lastTime = 0;
+    }
+    renderBossWorkspace();
+    return;
+  }
   const playing = !state.playing;
   if (playing) {
     const anim = activeAnimation();
@@ -2509,6 +2941,17 @@ function togglePlayback() {
 }
 
 function inspectFrame(frame) {
+  if (workspaceMode === 'boss') {
+    if (!selectedBossAnimation()) return;
+    const animation = activeBossAnimation();
+    bossFrame = ((frame % animation.frames) + animation.frames) % animation.frames;
+    bossAnimationTime = bossFrame * animation.ms;
+    bossSpinTime = 0;
+    bossPlaying = false;
+    bossCycle = false;
+    renderBossWorkspace();
+    return;
+  }
   const anim = activeAnimation();
   const inspectedFrame = ((frame % anim.frames) + anim.frames) % anim.frames;
   animationTime = inspectedFrame * anim.ms;
@@ -2523,10 +2966,23 @@ function inspectFrame(frame) {
 }
 
 function stepFrame(offset) {
-  inspectFrame(state.frame + offset);
+  inspectFrame((workspaceMode === 'boss' ? bossFrame : state.frame) + offset);
 }
 
 function chooseDirection(direction) {
+  if (workspaceMode === 'boss') {
+    bossDirection = E.BOSS_DIRECTIONS.includes(direction) ? direction : E.BOSS_DIRECTIONS[0];
+    const animationPilot = selectedBossAnimation();
+    if (animationPilot) {
+      const animation = activeBossAnimation();
+      bossAnimationTime = clampBossFrame(bossFrame, animation) * animation.ms;
+      bossSpinTime = 0;
+      bossCycle = false;
+    }
+    lastTime = 0;
+    renderBossWorkspace();
+    return;
+  }
   const anim = activeAnimation();
   animationTime = clampFrame(state.frame, anim) * anim.ms;
   spinTime = 0;
@@ -2618,6 +3074,27 @@ async function downloadSheet() {
     await triggerDownload(canvas, exportFilename());
   } catch (error) {
     console.error(error);
+  }
+}
+
+async function downloadBossDirectionSheet() {
+  if (workspaceMode !== 'boss') return;
+  const boss = selectedBoss();
+  const animationPilot = selectedBossAnimation();
+  const descriptor = bossExportDescriptor(boss, animationPilot);
+  elements.bossDownloadStatus.textContent = 'Preparing native 1x PNG…';
+  try {
+    const response = await fetch(descriptor.asset);
+    if (!response.ok) throw new Error(`Boss sheet request failed with ${response.status}.`);
+    const blob = await response.blob();
+    const result = await triggerBlobDownload(
+      new Blob([await blob.arrayBuffer()], { type: 'image/png' }),
+      descriptor.filename,
+    );
+    elements.bossDownloadStatus.textContent = `${exportActionLabel(result)} ${boss.name} at native ${descriptor.width}x${descriptor.height}.`;
+  } catch (error) {
+    console.error(error);
+    elements.bossDownloadStatus.textContent = 'The boss sheet could not be downloaded.';
   }
 }
 
@@ -3540,7 +4017,14 @@ elements.playPauseButton.addEventListener('click', togglePlayback);
 elements.nextFrameButton.addEventListener('click', () => stepFrame(1));
 elements.playbackSpeed.addEventListener('change', () => {
   const playbackSpeed = Number(elements.playbackSpeed.value);
-  if (PLAYBACK_SPEEDS.includes(playbackSpeed)) setState({ playbackSpeed });
+  if (!PLAYBACK_SPEEDS.includes(playbackSpeed)) return;
+  if (workspaceMode === 'boss') {
+    if (!selectedBossAnimation()) return;
+    bossPlaybackSpeed = playbackSpeed;
+    renderBossPlaybackControls();
+    return;
+  }
+  setState({ playbackSpeed });
 });
 elements.undoButton.addEventListener('click', undo);
 elements.redoButton.addEventListener('click', redo);
@@ -3651,6 +4135,14 @@ elements.presetName.addEventListener('keydown', (event) => {
   savePreset();
 });
 elements.downloadButton.addEventListener('click', downloadSheet);
+elements.downloadBossSheetButton.addEventListener('click', downloadBossDirectionSheet);
+elements.bossExportScope.addEventListener('change', () => {
+  if (workspaceMode !== 'boss' || !selectedBossAnimation()) return;
+  bossExportScope = ['full', 'animation', 'direction'].includes(elements.bossExportScope.value)
+    ? elements.bossExportScope.value
+    : 'full';
+  renderBossExport(selectedBoss(), selectedBossAnimation());
+});
 elements.addToPackButton.addEventListener('click', addCurrentToPack);
 elements.clearPackButton.addEventListener('click', clearCharacterPack);
 elements.downloadPackButton.addEventListener('click', downloadCharacterPack);
@@ -3678,6 +4170,42 @@ window.addEventListener('keydown', (event) => {
   const editingText = target instanceof Element
     && target.matches('input, select, textarea, [contenteditable="true"]');
   if (editingText) return;
+
+  if (workspaceMode === 'boss') {
+    const bossDirections = {
+      ArrowUp: 'up',
+      ArrowDown: 'down',
+      ArrowLeft: 'left',
+      ArrowRight: 'right',
+    };
+    const direction = bossDirections[event.key];
+    if (direction) {
+      event.preventDefault();
+      chooseDirection(direction);
+      return;
+    }
+    if (!selectedBossAnimation()) return;
+    if (event.code === 'Space') {
+      event.preventDefault();
+      togglePlayback();
+      return;
+    }
+    if (event.key === '[') {
+      event.preventDefault();
+      stepFrame(-1);
+      return;
+    }
+    if (event.key === ']') {
+      event.preventDefault();
+      stepFrame(1);
+      return;
+    }
+    if (event.key.toLocaleLowerCase() === 'c') {
+      event.preventDefault();
+      toggleCycle();
+    }
+    return;
+  }
 
   const shortcut = (event.ctrlKey || event.metaKey) && !event.altKey;
   const key = event.key.toLocaleLowerCase();

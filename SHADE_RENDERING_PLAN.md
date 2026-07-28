@@ -35,17 +35,19 @@ The pass must:
 - Changing enemy or player catalogs' existing ids.
 - Baking combat effects into assembled character sheets.
 - Shading atomic Complete Character Kit component sheets.
-- Changing the 24x24 frame or 12-column sheet contract.
+- Changing the 24x24 frame or the then-current 12-column sheet contract. Cast
+  and Death later expanded the public contract to 20 columns without changing
+  the shade algorithm.
 - Accepting new fixture hashes or visual baselines automatically.
 - Correcting unrelated effect/shield compositing behavior.
 
 ## Prerequisite
 
-The enemy-outline lane is complete at local checkpoint `ac860aa` on
-`codex/enemy-outlines`: all 57 families / 202 variants, 9,696 source frames,
-and 29,088 None-B-C cases pass with zero source-edge frames and zero
-out-of-bounds writes. Anglerfish, Snail, and Porcupine are approved; no enemy
-family remains unsupported.
+The historical pre-shade enemy-outline lane is complete at local checkpoint
+`ac860aa` on `codex/enemy-outlines`: all 57 families / 202 variants, 9,696
+source frames, and 29,088 None-B-C cases passed with zero source-edge frames
+and zero out-of-bounds writes. Anglerfish, Snail, and Porcupine are approved;
+no enemy family remains unsupported.
 
 The implementation began in the supplied isolated Codex worktree from clean
 documentation checkpoint `630ddf7`, immediately after `ac860aa`. The
@@ -72,9 +74,9 @@ The completed infrastructure slice contains:
   Selective C;
 - no shade state, UI, persistence, Form color algorithm, or visual candidate.
 
-`npm.cmd run check` passes 288 broad player parity cases, all 9,696 enemy
-source frames, and 1,616 sampled enemy outline-combination cases in addition to
-the existing project gates.
+Under the current 20-column contract, `npm.cmd run check` passes 480 broad
+player parity cases, all 16,160 enemy source frames, and 1,616 sampled enemy
+outline-combination cases in addition to the existing project gates.
 
 ## Approved Form Algorithm Checkpoint
 
@@ -91,13 +93,14 @@ The approved pilot introduced:
 - `tools/shade-review.mjs` and `npm.cmd run review:shades`;
 - an explicit silhouette-only comparison control.
 
-`npm.cmd run check` passes 1,728 Form/outline pilot cases with deterministic
+`npm.cmd run check` passes 2,880 Form/outline pilot cases with deterministic
 output, source-ownership enforcement, protected-pixel parity, unchanged
 outline/contact geometry, finite non-INK output colors, exact transparent
-cells and floor shadows, visible changes for every pilot, and 21,086
+cells and floor shadows, 158,872 visible changes, 164,685 protected pixels,
+and 35,333
 material-aware pixel differences from the silhouette-only control.
 
-`npm.cmd run review:shades` validates 576 source frames and generates the
+`npm.cmd run review:shades` validates 960 source frames and generates the
 ignored interactive review beneath `shade-review/`. It shows untreated,
 silhouette-control, Form/None, Form/Complete B, and Form/Selective C columns at
 native and enlarged size on both required backgrounds, with parchment selected
@@ -381,7 +384,7 @@ Extend `npm.cmd run check` with:
 - invalid/missing shade ids sanitize to None;
 - direct delegation when shade and outline are both None;
 - large sampled player None parity against `drawSprite()`;
-- exhaustive enemy None parity across all 9,696 enemy source frames;
+- exhaustive enemy None parity across all 16,160 current enemy source frames;
 - shade None plus each outline mode matches the approved outline checkpoint;
 - deterministic Form output;
 - no out-of-canvas writes introduced by the post-pass;
@@ -419,7 +422,7 @@ Write ignored artifacts beneath `shade-review/`:
 - before/Form pairs;
 - None, Complete B, and Selective C columns;
 - all four directions;
-- idle, walk, attack, and hurt frames;
+- idle, walk, attack, cast, hurt, and death frames;
 - dark `#191b22` and parchment `#e8ddc4` review backgrounds;
 - machine-readable changed-pixel, protected-pixel, palette, and determinism
   summaries.
@@ -473,7 +476,7 @@ pilot.
    - live-editor visual check approved on 2026-07-26.
 4. **Enemy pilot and rollout — implemented and approved**
    - the approved representative pilot precedes the full audit;
-   - all 9,696 enemy source frames pass the Form audit;
+   - all 16,160 current enemy source frames pass the Form audit;
    - all 1,616 enemy Form/outline integration cases preserve approved outline
      and contact geometry.
 5. **Pack and recipe integration — implemented and checkpointed**

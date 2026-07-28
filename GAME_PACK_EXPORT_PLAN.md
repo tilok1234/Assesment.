@@ -4,8 +4,10 @@ Date: 2026-07-27
 
 ## Status
 
-Implementation is active, but `wildshot-assembler` manifest v1 is **not ready
-to emit yet**.
+The pure contract plus public Cast/Death actor-frame integration are complete
+and pushed at `d6a56c1`, but `wildshot-assembler` manifest v1 is **not ready to
+emit yet**. Compact effect packing, approved license text, the deterministic
+writer, editor action, and consumer handoff remain pending.
 
 The attached Wildshot Adventures export proposal is accepted as the product
 direction for a new focused game-pack lane. This plan records the assembler
@@ -79,7 +81,8 @@ The complete required animation order is:
 2. Walk: 4 frames at 150 ms;
 3. Attack: 4 frames at 115 ms;
 4. Cast: 4 frames at 130 ms;
-5. Hurt: 2 frames at 140 ms.
+5. Hurt: 2 frames at 140 ms;
+6. Death: 4 frames at 160 ms.
 
 Rows are Down, Left, Right, Up. Columns are animations in the order above,
 with each animation's frames from left to right.
@@ -107,7 +110,7 @@ A later focused packaging adapter will:
 
 ### Slice 1 - pure contract and refusal skeleton
 
-Status: complete and uncommitted on 2026-07-27.
+Status: complete and pushed as part of `d6a56c1` on 2026-07-27.
 
 - add immutable v1 policy identity;
 - lock 1x, 24px, direction order, animation order, timing, and layout;
@@ -128,7 +131,8 @@ by work outside this slice.
 
 ### Slice 2 - Cast animation design and visual approval
 
-Status: complete and visually approved on 2026-07-27.
+Status: complete, visually approved, and pushed as part of `d6a56c1` on
+2026-07-27.
 
 - define a distinct four-frame Player Cast pose in all directions;
 - decide whether every Enemy aliases Attack or whether selected families need
@@ -140,8 +144,8 @@ Status: complete and visually approved on 2026-07-27.
 - update the animation contract only after explicit visual approval.
 
 `engine/cast-animation.js` owns the immutable Player motion and public `ANIMS`
-places it before Hurt. At this checkpoint generated full and direction sheets
-were 384x96 and 384x24 at native 1x. The review covers six representative Players, all four
+places it before Hurt. At this historical Cast-only checkpoint, generated full
+and direction sheets were 384x96 and 384x24 at native 1x. The review covers six representative Players, all four
 directions, four distinct frames, source/Form/Complete B/Selective C, layer
 recomposition, equipment attachment, deterministic replay, and frame bounds
 with Effects Off. The full validator covers every equipment catalog and
@@ -154,7 +158,8 @@ exporter merely to make validation green.
 
 ### Slice 2b - Death animation design and visual approval
 
-Status: complete and visually approved on 2026-07-27.
+Status: complete, visually approved, and pushed as part of `d6a56c1` on
+2026-07-27.
 
 `engine/death-animation.js` owns the immutable four-frame
 Stagger/Buckle/Fall/Still Player motion. Public `ANIMS` appends Death after

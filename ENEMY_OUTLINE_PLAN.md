@@ -1,10 +1,13 @@
 # Enemy Outline Plan
 
 Status: complete and visually approved across all 57 enemy families / 202
-variants. The final local checkpoint is `ac860aa` on
+variants. The final dedicated-lane checkpoint is `ac860aa` on
 `codex/enemy-outlines`. The complete lane covers 9,696 source frames / 29,088
 None-B-C cases with zero source-edge frames and zero out-of-bounds writes.
-This branch has not been pushed.
+Those are the historical 12-column approval totals. Cast and Death were added
+later without changing the approved outline algorithm or source repairs; the
+current public 20-column regression gate covers 16,160 source frames / 48,480
+None-B-C cases and remains frame-safe.
 
 The sections below are the chronological rollout record. Their per-group
 "remaining family" counts and intermediate measurements are historical

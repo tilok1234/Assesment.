@@ -1,10 +1,10 @@
 # Windows release guide
 
-Current artifact status (2026-07-26): the existing standalone executable and
-July 19 NSIS installer predate the final `ac860aa` enemy-outline checkpoint.
-The current branch has passed the web production build but has not produced or
-approved a new Windows release artifact. Do not distribute either historical
-binary as the current outline/shade build.
+Current artifact status (2026-07-28): no Windows executable or installer has
+been built and approved from pushed actor-contract checkpoint `d6a56c1`, local
+boss-direction checkpoint `08d1ef7`, or the current uncommitted Bosses
+workspace. Existing binaries are historical and must not be represented as a
+current Cast/Death/boss build.
 
 The Windows edition packages the same production frontend and procedural engine used by the browser build. Packaging does not freeze the content catalog: outfits, hairstyles, headgear, weapons, enemies, effects, and templates can still be changed normally, then included by rebuilding the application.
 
@@ -40,7 +40,10 @@ Before publishing a release:
 1. Install the generated setup executable.
 2. Launch **8-Bit Sprite Assembler** from the Start menu.
 3. Change a player option and confirm the preview updates.
-4. With the default combat-effect overlay enabled, inspect a weapon-and-shield attack in all four directions and all four attack frames. Compare the same packaged `dist/` state in the isolated browser when non-intrusive visual QA is required.
+4. Confirm combat effects start Off. Then explicitly enable the legacy overlay,
+   inspect a weapon-and-shield attack in all four directions and all four
+   attack frames, and turn it Off again. Compare the same packaged `dist/`
+   state in the isolated browser when non-intrusive visual QA is required.
 5. Export one PNG, one combat-loadout JSON file, and one ZIP pack. Confirm each action opens a native Save dialog in Downloads and creates a readable file at the chosen location.
 6. Cancel one Save dialog and confirm the app reports cancellation instead of success.
 7. Save a preset, close the app, reopen it, and confirm the preset remains available.

@@ -33,3 +33,14 @@ export {
 } from './catalogs/player-options.js';
 export { ENEMIES } from './catalogs/enemies.js';
 export { COMBAT_EFFECTS } from './catalogs/effects.js';
+export {
+  BOSS_ANIMATION_DIRECTIONS,
+  BOSS_ANIMATION_FRAME_SIZE,
+  BOSS_ANIMATION_PILOTS,
+  BOSS_ANIMATION_PROFILE,
+  BOSS_ANIMATION_SHEET_COLUMNS,
+  BOSS_ANIMATION_SHEET_HEIGHT,
+  BOSS_ANIMATION_SHEET_WIDTH,
+  BOSS_ANIMATIONS,
+} from './catalogs/boss-animations.js';
+export { BOSS_DIRECTION_FRAME_SIZE, BOSS_DIRECTION_PILOT_PROFILE, BOSS_DIRECTION_PILOTS, BOSS_DIRECTION_SHEET_HEIGHT, BOSS_DIRECTION_SHEET_WIDTH, BOSS_DIRECTIONS } from './catalogs/boss-directions.js';

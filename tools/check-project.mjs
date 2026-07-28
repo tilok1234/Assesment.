@@ -59,6 +59,8 @@ checkSyntax('character-kit.js');
 checkSyntax('zip.js');
 checkSyntax('engine/catalogs.js');
 checkSyntax('engine/catalogs/animation.js');
+checkSyntax('engine/catalogs/boss-animations.js');
+checkSyntax('engine/catalogs/boss-directions.js');
 checkSyntax('engine/catalogs/effects.js');
 checkSyntax('engine/catalogs/enemies.js');
 checkSyntax('engine/catalogs/palettes.js');
@@ -82,6 +84,8 @@ checkSyntax('engine/shield-renderer.js');
 checkSyntax('engine/sheets.js');
 checkSyntax('engine/weapon-renderer.js');
 checkSyntax('tools/build.mjs');
+checkSyntax('tools/check-boss-animations.mjs');
+checkSyntax('tools/check-boss-directions.mjs');
 checkSyntax('tools/cast-review.mjs');
 checkSyntax('tools/death-review.mjs');
 checkSyntax('tools/dev-server.mjs');
@@ -92,6 +96,22 @@ checkSyntax('tools/shade-pilots.mjs');
 checkSyntax('tools/shade-review.mjs');
 checkSyntax('tools/weapon-readability-audit.mjs');
 checkSyntax('tools/check-windows-release.mjs');
+
+const bossDirectionCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-boss-directions.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  bossDirectionCheck.status === 0,
+  `Boss direction structural gate failed\n${bossDirectionCheck.stdout.trim()}\n${bossDirectionCheck.stderr.trim()}`,
+);
+
+const bossAnimationCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-boss-animations.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  bossAnimationCheck.status === 0,
+  `Boss animation structural gate failed\n${bossAnimationCheck.stdout.trim()}\n${bossAnimationCheck.stderr.trim()}`,
+);
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
 let entryFile = null;
@@ -133,6 +153,7 @@ for (const controlId of [
   'variant-batch-summary', 'variant-batch-status', 'download-variant-batch-button',
   'class-pack-panel', 'class-template', 'class-pack-description', 'class-pack-equipment',
   'class-pack-summary', 'class-pack-status', 'apply-class-template-button', 'download-class-pack-button',
+  'boss-stage-image', 'boss-pilot-panel', 'boss-export-scope', 'boss-sheet-image', 'download-boss-sheet-button',
 ]) {
   check(entrySource.includes(`id="${controlId}"`), `index.html must expose the ${controlId} editor control`);
 }
@@ -145,6 +166,8 @@ const runtimeSources = {
   'zip.js': await readFile(path.join(root, 'zip.js'), 'utf8'),
   'engine/catalogs.js': await readFile(path.join(root, 'engine', 'catalogs.js'), 'utf8'),
   'engine/catalogs/animation.js': await readFile(path.join(root, 'engine', 'catalogs', 'animation.js'), 'utf8'),
+  'engine/catalogs/boss-animations.js': await readFile(path.join(root, 'engine', 'catalogs', 'boss-animations.js'), 'utf8'),
+  'engine/catalogs/boss-directions.js': await readFile(path.join(root, 'engine', 'catalogs', 'boss-directions.js'), 'utf8'),
   'engine/catalogs/effects.js': await readFile(path.join(root, 'engine', 'catalogs', 'effects.js'), 'utf8'),
   'engine/catalogs/enemies.js': await readFile(path.join(root, 'engine', 'catalogs', 'enemies.js'), 'utf8'),
   'engine/catalogs/palettes.js': await readFile(path.join(root, 'engine', 'catalogs', 'palettes.js'), 'utf8'),
@@ -175,7 +198,12 @@ for (const [relativePath, source] of Object.entries(runtimeSources)) {
 }
 
 const expectedEngineExports = [
-  'ANIMS', 'BODY_BUILDS', 'CLASS_PACK_FORMAT', 'CLASS_PACK_VERSION', 'CLASS_TEMPLATES',
+  'ANIMS', 'BOSS_ANIMATIONS', 'BOSS_ANIMATION_DIRECTIONS', 'BOSS_ANIMATION_FRAME_SIZE',
+  'BOSS_ANIMATION_PILOTS', 'BOSS_ANIMATION_PROFILE', 'BOSS_ANIMATION_SHEET_COLUMNS',
+  'BOSS_ANIMATION_SHEET_HEIGHT', 'BOSS_ANIMATION_SHEET_WIDTH',
+  'BOSS_DIRECTION_FRAME_SIZE', 'BOSS_DIRECTION_PILOT_PROFILE', 'BOSS_DIRECTION_PILOTS',
+  'BOSS_DIRECTION_SHEET_HEIGHT', 'BOSS_DIRECTION_SHEET_WIDTH', 'BOSS_DIRECTIONS',
+  'BODY_BUILDS', 'CLASS_PACK_FORMAT', 'CLASS_PACK_VERSION', 'CLASS_TEMPLATES',
   'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_CLASS_TEMPLATE',
   'DEFAULT_COMBAT_LOADOUT', 'DEFAULT_VARIANT_BATCH_SET', 'ENEMY_OUTLINE_PILOT_FAMILIES',
   'DIRS', 'DIR_LABELS', 'ENEMIES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
@@ -201,8 +229,8 @@ check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
   'sprite-engine.js public exports changed; consumers must keep using the stable facade API',
 );
-check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 60, 'sprite-engine.js must remain a small public facade');
-check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 40, 'engine/catalogs.js must remain a small internal facade');
+check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 75, 'sprite-engine.js must remain a small public facade');
+check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 55, 'engine/catalogs.js must remain a small internal facade');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
 check(runtimeSources['app.js'].includes("from './character-kit.js'"), 'app.js must use the focused master character-kit planner');

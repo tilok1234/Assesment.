@@ -13,6 +13,8 @@ index.html
         -> engine/catalogs/palettes.js
         -> engine/catalogs/player-options.js
         -> engine/catalogs/enemies.js
+        -> engine/catalogs/boss-animations.js
+        -> engine/catalogs/boss-directions.js
       -> engine/renderer.js
       -> engine/outline-renderer.js
         -> engine/pixel-buffer.js
@@ -48,9 +50,25 @@ Sprite-rendering consumers import `sprite-engine.js`. Internal engine module pat
 - `engine/catalogs/palettes.js` owns shared material and renderer colors.
 - `engine/catalogs/player-options.js` owns stable player-facing species, body-build, expression, appearance, and equipment choices.
 - `engine/catalogs/enemies.js` owns enemy families and variants.
+- `engine/catalogs/boss-animations.js` owns the immutable review-only
+  `boss-animation-v1` 48x48/20-column contract and the Ancient Mirejaw, Bone
+  Reliquary King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend
+  Juggernaut, and Goblin War-Crown asset paths.
+- `engine/catalogs/boss-directions.js` owns the immutable review-only
+  `boss-directions-v1` identity and paths for the nine approved 48x48 static
+  direction pilots.
 - `engine/catalogs.js` is the internal catalog facade used by the renderer and helpers.
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
+
+Boss direction and animation assets live beneath `engine/assets/bosses/` so
+the existing runtime `engine/` copy boundary carries them without changing the
+build pipeline. Runtime PNGs are byte-identical to their review checkpoint.
+The boss catalogs are public through `sprite-engine.js`, but they are
+intentionally absent from production generators, procedural renderers, 24x24
+sheet builders, game-pack planners, production rolls, and persistence
+schemas. The editor reads the immutable PNG paths directly; its Boss state is
+ephemeral and never changes the last ordinary Player/Enemy/Effect document.
 
 Weapon entries include a broad content category (`blade`, `blunt`, `polearm`, `ranged`, or `magic`) plus player-facing Tier 2 through Tier 5 names. The separate stable `WEAPON_TIERS` catalog keeps progression independent from weapon type, producing 76 meaningful equipment states: none plus 15 weapons at five tiers. The UI, randomizer, presets, and exports consume both catalogs generically.
 
@@ -191,6 +209,15 @@ are later slices governed by `GAME_PACK_EXPORT_PLAN.md`.
 
 `app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, combat-loadout recipes, equipment-batch, class-pack, and sprite-pack exports, Complete Character Kit rendering, and download behavior. It consumes sprite behavior only through the public engine facade, uses `character-kit.js` for deterministic component, enemy, effect, species, body-build, expression, hairstyle, headgear, and outfit coverage plus recipe mapping, and uses `zip.js` for packaging. History snapshots contain the active mode, assembled outline and shade treatments, player/enemy/effect specifications, active combat loadout, optional player palette, and document names, so preset loads, resets, shade changes, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. Production Roll extends history with the current effect-preview toggle and ephemeral compatible-reroll session so the resolved player, Form treatment, Effects Off, class, power tier, and palette family round-trip as one undoable action; ordinary editable, preset, comparison, persistence, and export snapshots remain unchanged. Thirteen supported Player groups expose an explicit secondary compatible action, while the existing arrows remain unrestricted category Wildcards. Armor routes to one semantic power-tier action; the pure combined left-hand category is not exposed as an ambiguous extra editor control. Category Wildcards and manual edits retain known context, whole-character Wildcard and Player document replacement clear it, and no-alternative results create no history entry. Enemy and Effect modes expose no compatible controls. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. The shade selector is rendered for Player and Enemies and hidden for Effects; effects neither receive Form nor overwrite the retained Player/Enemy shade choice. New and reset Player/Enemy editor documents use Form, while the engine option still defaults to None and missing/invalid shade metadata in versioned legacy presets, packs, and recipes migrates to None to preserve stored artwork.
 
+Bosses use an ephemeral `workspaceMode` layered above the last ordinary
+Player/Enemy/Effect document. Entering Boss does not call `setState()`, add a
+fourth persisted kind, or record history. Pilot, direction, animation, frame,
+speed, and playback are module-only review state. Reload therefore returns to
+the last ordinary mode. Six animated pilots use dedicated 48x48 playback plus
+native 1x full/direction/animation downloads; three static pilots use the
+checkpoint-exact 48x192 direction sheet. Both paths bypass every ordinary
+export/pack route.
+
 The independently versioned persistence and export formats are:
 
 | Format | Current version | Compatibility migration |
@@ -240,8 +267,8 @@ deliberately not serialized.
 - Complete Character Kits always use native 1x sheets and the draw order `weapon-back`, `shield-back`, `offhand-back`, `species-back`, `outfit-back`, `outfit`, `skin-body`, `head`, `expression`, `species-front`, `face-detail`, `hair`, `headgear`, `shield-front`, `offhand-front`, `weapon-front`.
 - Combat-effect sheets remain modular and unbaked. The current effects-after-character preview/recipe order is a compatibility fact, not a finalized foreground-equipment occlusion invariant.
 - All 57 enemy families support None, Complete B, and Selective C in live
-  assembled rendering; the 9,696-frame enemy source corpus reserves a one-cell
-  outline margin and performs no out-of-bounds writes.
+  assembled rendering; all 16,160 current source frames reserve a one-cell
+  outline margin and perform no out-of-bounds writes.
 - Shade None plus outline None directly delegates to `drawSprite()`. Shade None
   combined with Complete B or Selective C preserves the approved outline
   output. Form changes eligible source-owned colors only and is wired through
@@ -258,35 +285,49 @@ deliberately not serialized.
   whole-character Wildcard remain unrestricted; compatible context is
   history-only and never serialized.
 - `sprite-engine.js` remains the public import path.
+- Boss pilots remain a separate 48x48 review contract: nine approved
+  four-direction sets, six full 20-column animation sets, three static
+  fallbacks, Down/Left/Right/Up row order, hard alpha, Effects Off, native 1x
+  export, and no persistence or production-renderer claim.
 - Browser and Windows builds use identical production files.
 
-`npm run check` enforces these invariants against the native export contract, class and equipment planner counts, character-pack ZIP format, Complete Character Kit component matrix, recipe paths, exact pixel recomposition, `asset-pack/manifest.json`, and all 232 committed PNG fixtures. The shade gate adds 288 broad player None-parity cases, exhaustive None parity for all 9,696 enemy source frames, 1,616 sampled enemy None/outline parity cases, 1,728 deterministic Form pilot cases, an exhaustive 9,696-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. The Form matrix verifies source ownership, protected pixels, unchanged outline/contact geometry, finite colors, exact floor shadows and transparent cells, visible changes in every pilot, and 21,086 material-aware pixel differences from the silhouette-only control. Weapon validation also enforces one connected silhouette in every frame, family and tier distinction, casting-family proportions, global Tier 5 pixel-density and bounds budgets relative to Tier 4, exact left/right mirroring, direction-aware front/back layer routing and recomposition, animation-phase diversity, front-view identity retention, catastrophic-detachment protection, zero discarded pixels across all 3,600 weapon frames, all 7,680 shield cases across four body builds, all 192 Lantern utility-off-hand cases, and 528 equipped-headgear cases, plus pixel/order parity for native full, direction, and animation sheet exports. The Lantern matrix checks animated hand attachment, face clearance, visible change, near/far routing, mutual exclusion, combat semantics, and exact layer recomposition. These structural checks do not replace explicit visual approval and do not resolve the deferred combined effect/shield compositor.
+`npm run check` enforces these invariants against the native export contract, class and equipment planner counts, character-pack ZIP format, Complete Character Kit component matrix, recipe paths, exact pixel recomposition, `asset-pack/manifest.json`, and all 232 committed PNG fixtures. The current 20-column shade gate adds 480 broad player None-parity cases, exhaustive None parity for all 16,160 enemy source frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. The Form matrix verifies source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, exact floor shadows and transparent cells, 158,872 visible changes, and 35,333 material-aware pixel differences from the silhouette-only control. Weapon validation also enforces one connected silhouette in every frame, family and tier distinction, casting-family proportions, global Tier 5 pixel-density and bounds budgets relative to Tier 4, exact left/right mirroring, direction-aware front/back layer routing and recomposition, animation-phase diversity, front-view identity retention, catastrophic-detachment protection, zero discarded pixels across all 6,000 weapon frames, all 12,800 shield cases across four body builds, all 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases, plus pixel/order parity for native full, direction, and animation sheet exports. The Lantern matrix checks animated hand attachment, face clearance, visible change, near/far routing, mutual exclusion, combat semantics, and exact layer recomposition. These structural checks do not replace explicit visual approval and do not resolve the deferred combined effect/shield compositor.
+
+The nested boss gates verify nine deeply frozen direction-catalog entries, 36
+checkpoint-exact 48x48 hard-alpha direction frames, nine checkpoint-exact
+48x192 direction sheets, plus six animation-catalog entries, 480 distinct
+48x48 frames, and 66 native full/scoped animation sheets. They also enforce
+Idle-frame control parity, facade immutability, native-only download wiring,
+and absence from production renderer, generator, persistence, game-pack, and
+ordinary sheet dependencies.
 
 The Production gate within that command adds 1,000 portable policy cases,
 immutable profile/freeze and reason-code checks, invalid-seed normalization,
 bounded fallback coverage, all-class/tier/palette coverage, Wildcard
 compatibility, schema non-proliferation, resolved class/batch/kit
-compatibility, and 48 deterministic assembled export cases. The compatible
+compatibility, and 80 deterministic assembled export cases. The compatible
 reroll gate adds 4,200 deterministic category cases, 555 explicit
 no-compatible-alternative cases, semantic-field locality, invalid-input,
 deep-copy, immutability, stable-facade, editor-mapping, history-only context,
 Wildcard, and dependency-boundary checks.
 
-`tools/weapon-readability-audit.mjs` complements those hard checks with visual evidence. Its standard review matrices are joined by a 3,600-row CSV/JSON audit recording bounds, connected components, edge sides, character distance, expression overlap, discarded-frame count, and discarded-pixel count for every family, tier, direction, animation, and frame. The optional `--all-frames` mode also emits one enlarged and one true-native assembled all-frame sheet per weapon, while `--tier-sheets` emits four labeled all-weapon/all-frame SVG sheets per tier with lightweight PNG inspection grids. Frame-edge contact remains advisory, while any attempted write beyond `x=0..23` or `y=0..23` is a hard frame-contract failure.
+`tools/weapon-readability-audit.mjs` complements those hard checks with visual evidence. Its standard review matrices are joined by a 6,000-row CSV/JSON audit recording bounds, connected components, edge sides, character distance, expression overlap, discarded-frame count, and discarded-pixel count for every family, tier, direction, animation, and frame. The optional `--all-frames` mode also emits one enlarged and one true-native assembled all-frame sheet per weapon, while `--tier-sheets` emits four labeled all-weapon/all-frame SVG sheets per tier with lightweight PNG inspection grids. Frame-edge contact remains advisory, while any attempted write beyond `x=0..23` or `y=0..23` is a hard frame-contract failure.
 
 `tools/outline-review.mjs` is the outline-specific regression and visual-review gate. It anchors representative None-mode sheets to the safe baseline, exercises 6,000 direct-render parity cases, 2,000 deterministic randomized outline cases, 11,040 exhaustive outlined equipment cases, and 10,656 exhaustive headgear-preservation cases. It proves that contact separators change only authorized body-side or equipment-side pixels, protects every visible headgear pixel and all non-contact equipment pixels, verifies cardinal equipment halos, filtered large cavities, the explicit equipment pilot, and neck-cavity repair, and writes ignored review artifacts beneath `outline-review/`.
 
 `tools/enemy-outline-assessment.mjs` audits all 57 families / 202 variants /
-9,696 source frames for margins, discarded writes, connected components, and
-cavities. `tools/enemy-outline-pilot-review.mjs` proves None parity and both
-outline modes across the complete roster, currently 29,088 cases with mode
-distinction in every frame, zero source-edge frames, and zero out-of-bounds
-writes. Generated evidence stays ignored beneath `enemy-outline-assessment/`
-and `enemy-outline-review/`.
+16,160 current source frames for margins, discarded writes, connected
+components, and cavities. `tools/enemy-outline-pilot-review.mjs` proves None
+parity and both outline modes across the complete 20-column roster: 48,480
+cases with mode distinction in every frame, zero source-edge frames, and zero
+out-of-bounds writes. `ENEMY_OUTLINE_PLAN.md` retains the chronological 9,696
+/ 29,088 totals for the historical 12-column approval checkpoint. Generated
+evidence stays ignored beneath `enemy-outline-assessment/` and
+`enemy-outline-review/`.
 
 `tools/shade-review.mjs` generates the ignored interactive Form pilot beneath
-`shade-review/`. It renders 12 diverse player/enemy specimens across all 576
-source frames and 1,728 Form/outline combinations, compares the material-aware
+`shade-review/`. It renders 12 diverse player/enemy specimens across all 960
+current source frames and 2,880 Form/outline combinations, compares the material-aware
 result with an explicit silhouette-only control, and exposes untreated, None,
 Complete B, and Selective C columns at native and nearest-neighbor size on dark
 and parchment backgrounds, with parchment selected by default. The algorithm
@@ -295,7 +336,7 @@ or accepted baseline.
 
 `tools/offhand-review.mjs` generates the ignored Lantern integration review
 beneath `offhand-review/`. It renders three representative bearers across all
-144 source frames and 576 assembled outline/Form cases, then verifies exact
+240 current source frames and 960 assembled outline/Form cases, then verifies exact
 back/body/front recomposition, animated attachment, shield precedence,
 absent-field parity, and zero out-of-bounds writes. The Lantern art is approved;
 the generated page remains review evidence rather than a committed fixture or
@@ -304,8 +345,8 @@ accepted baseline.
 `tools/production-roll-review.mjs` generates the ignored balanced
 Production-versus-Wildcard corpus beneath `production-roll-review/`. Its 120
 fixed Production seeds are evenly divided across all ten class archetypes and
-paired with 120 Wildcard controls. The report audits all 11,520 source frames,
-34,560 Form/outline cases, deterministic replay, frame bounds, equipment
+paired with 120 Wildcard controls. The current 20-column report audits all
+19,200 source frames, 57,600 Form/outline cases, deterministic replay, frame bounds, equipment
 attachments, and policy validity. The accepted digest is
 `af9b620e5ce87f6febf5983487fc163e8b5a4495fb37ced3653e8b5bbbc4ba3f`;
 generated HTML and JSON are evidence, not committed fixtures or baselines.

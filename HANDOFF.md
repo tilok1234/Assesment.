@@ -1,526 +1,305 @@
 # Project Handoff
 
-Date: 2026-07-27
+Date: 2026-07-28
 
-## Canonical Continuation
+## Purpose
 
-The enemy-outline, Form-shading, Lantern, Production Roll v1, and compatible
-Production reroll phases are complete. Their rendering, editor,
-persistence/export compatibility, review, and validation boundaries are
-approved on `codex/form-shading`.
+This is the canonical next-chat continuation for the 8-bit Sprite Assembler.
+It records the live Git state, the completed documentation audit, the current
+uncommitted Bosses workspace, its validation evidence, and the approval
+boundary. Historical plan measurements remain in their plan files and are
+explicitly labeled as historical where the public animation contract later
+expanded.
 
-The user explicitly approved both the Form algorithm and live integration on
-2026-07-26, then selected Form as the new/reset Player/Enemy editor default.
-The integration adds shade state, history, comparisons, live previews,
-persistence migrations, assembled exports, and pack/recipe metadata. None
-remains the engine compatibility mode and versioned legacy-artwork fallback.
-No new fixture or baseline was accepted, and no release artifact was rebuilt.
+## Canonical Workspace And Git State
 
-The Lantern Phase 5 content slice is complete at pushed checkpoint
-`01b3f1a` (`Add approved Lantern off-hand and production roll plan`). It adds
-the visually approved Lantern and its authorized public non-shield `offhand`
-integration. The art review and lighter parchment background were approved on
-2026-07-26. Presets, ordinary packs, class/equipment planners, complete kits,
-the public engine facade, and exact layer recomposition carry the field.
+- Worktree:
+  `C:\Users\headc\.codex\worktrees\9f24\8-bit sprite assembler`
+- Branch: `codex/form-shading`
+- Local HEAD: `08d1ef78f4c7011f57e23801f91bd30176527121`
+  (`Checkpoint 48x48 boss direction pilots`)
+- Upstream: `origin/codex/form-shading`
+- Upstream commit: `d6a56c10ae028e95c1aba09c0dba6d1c3449766b`
+  (`Add Wildshot game-pack Cast and Death`)
+- The local branch is one commit ahead of upstream.
+- The worktree is intentionally dirty with the Bosses editor/animation lane
+  and this documentation audit.
+- Nothing in the current dirty lane has been committed or pushed.
+- No Windows artifact has been built for this state.
 
-Production Roll Slices 1-5 are complete at pushed checkpoint `aa77666` (`Add
-production roll workflow`). The user approved the balanced 120-pair corpus,
-Form/Effects Off presentation, no Production-specific outline default, and the
-live split-action editor integration on 2026-07-26. `production-v1` is a pure
-seeded, deterministic, bounded, immutable policy with catalog/class freeze
-guards. The editor exposes **Production Roll** beside **Wildcard Roll**,
-applies the resolved player/Form/Effects Off state as one undoable action,
-preserves the current outline, and keeps archetype/tier status ephemeral.
-Resolved players remain ordinary specifications without stored seed,
-archetype, policy, palette-family, or decision metadata.
+Before making any claim or edit, rerun:
 
-Slice 6 integration validation and documentation is complete. All automated
-and live technical gates pass, and the user gave final integration approval on
-2026-07-27. The completed Production v1 checkpoint is `108b2bb` (`Complete
-production roll integration gate`), pushed to `origin/codex/form-shading`.
+```powershell
+git status --short --branch
+git rev-parse HEAD
+git rev-parse '@{upstream}'
+git log -3 --oneline --decorate
+```
 
-Compatible per-category Production rerolls are complete and approved on
-2026-07-27. `COMPATIBLE_REROLL_PLAN.md` is the lane authority. The pure engine
-checkpoint is `a571b1e` (`Add compatible Production reroll policy`). The
-approved editor exposes thirteen explicit Player `C` actions while keeping all
-existing category arrows unrestricted Wildcards. Known class, power-tier, and
-palette context exists only in module state and history; it never enters
-ordinary players, presets, packs, recipes, exports, or schemas. Live history,
-no-alternative, coupled-tier, Wildcard, and cross-mode gates pass.
+Do not switch to the similarly named checkout beneath `Documents`. Continue
+only in the isolated worktree above, and preserve all intentional dirty work.
 
-The Wildshot game-pack export lane is now active under
-`GAME_PACK_EXPORT_PLAN.md`. The user supplied the draft game-repository
-contract and explicitly required native 1x output on 2026-07-27. Slice 1 adds
-the pure `engine/game-pack.js` contract, stable facade exports, deterministic
-manifest construction, deep-copy boundaries, and refusal validation for
-dimensions, alpha, required actor frames, file parity, UTF-8/no-BOM JSON,
-license content, and export scale. `npm.cmd run check` passes.
+## Required Reading
 
-Wildshot v1 is not exportable yet. Its runtime animation audit now passes the
-approved 20-column Idle/Walk/Attack/Cast/Hurt/Death contract, but the repository
-has no approved license text and compact effect frame/anchor/direction
-extraction has not been decided.
+Read these completely before implementation:
 
-Game-pack Slice 2 Player Cast is visually approved and public.
-`engine/cast-animation.js` defines the immutable four-frame
-Prepare/Focus/Release/Recover motion; `ANIMS` places Cast before Hurt. Every
-Enemy explicitly aliases its matching Attack frame during Cast. The dedicated review passes 96 source
-frames, 24 distinct four-frame direction sequences, 96 exact layered
-recompositions, 128 equipment-attachment checks, 288 assembled Form/outline
-cases, and zero out-of-bounds writes. The exhaustive validator covers the
-complete equipment catalog and every Enemy alias. The checked-in 4x asset pack
-remains an explicit legacy 12-column fixture. No schema version, approved
-fixture/baseline, effect behavior, release artifact, or Windows build changed.
+1. `README.md`
+2. `ARCHITECTURE.md`
+3. `HANDOFF.md`
+4. `ROADMAP.md`
+5. `PRODUCTION_ROLL_PLAN.md`
+6. `COMPATIBLE_REROLL_PLAN.md`
+7. `OFFHAND_ITEMS_PLAN.md`
+8. `OUTLINE_RENDERING_PLAN.md`
+9. `ENEMY_OUTLINE_PLAN.md`
+10. `SHADE_RENDERING_PLAN.md`
+11. `GAME_PACK_EXPORT_PLAN.md`
+12. `DEATH_ANIMATION_PLAN.md`
+13. `WINDOWS_RELEASE.md`
+14. `death-review/boss-48-drafts/README.md`
 
-Player Death is now visually approved and public under
-`DEATH_ANIMATION_PLAN.md`. `engine/death-animation.js` defines immutable
-Stagger/Buckle/Fall/Still poses plus a coordinate-permutation quarter-turn for
-the fallen frames. The guarded renderer path moves every Player layer together
-and uses a low, wide terminal shadow. Public `ANIMS` appends Death after Hurt;
-native full and direction sheets are 480x96 and 480x24. Every Enemy explicitly
-aliases Death to Hurt frames 1, 2, 2, 2 rather than inventing unreviewed art.
+## Stable Public Actor Contract
 
-The dedicated Death gate passes 96 source frames, 24 distinct four-frame
-direction sequences, 48 horizontal terminal-body checks, 96 exact layered
-recompositions, 128 equipment-attachment checks, 288 assembled Form/outline
-cases, and zero out-of-bounds writes. The user explicitly approved the visual
-result on 2026-07-27. The public integration gate covers exact 20-column export
-dimensions, every Enemy Death alias, the updated Wildshot runtime contract,
-the full validator, and live editor controls/console. Persistence/schema
-versions, fixtures/baselines, effects, release artifacts, and Windows builds
-remain unchanged.
+- Logical actor cell: 24x24.
+- Direction rows: Down, Left, Right, Up.
+- Animation columns:
+  - Idle x2 at 420 ms
+  - Walk x4 at 150 ms
+  - Attack x4 at 115 ms
+  - Cast x4 at 130 ms
+  - Hurt x2 at 140 ms
+  - Death x4 at 160 ms
+- Full assembled actor sheet: 20 columns / `480x96` at native 1x.
+- Players use authored Cast and Death motion.
+- Enemy Cast aliases the matching Attack frame.
+- Enemy Death aliases Hurt frames 1, 2, 2, 2.
+- Effects start Off.
+- The legacy effect-after-character compositor remains available only as an
+  explicit preview and remains on ice for foreground shield/equipment
+  occlusion.
 
-Do not resume old weapon, shield, transparency, effect-compositor, executable,
-or enemy-outline work unless the user explicitly changes priority. Additional
-off-hand art also requires a new focused plan and visual approval gate.
+The checked-in 232 PNG fixtures are still the legacy 12-column baseline. Their
+unchanged dimensions are intentional and are not evidence that the public
+runtime contract is still 12 columns.
 
-## First Actions In The Next Task
+## Completed Pushed Work
 
-1. Verify the supplied workspace instead of assuming the old temporary path:
+The upstream checkpoint `d6a56c1` contains:
 
-   ```powershell
-   git status --short
-   git branch --show-current
-   git log -5 --oneline
-   ```
+- approved Form shading and Effects-Off default;
+- the approved Lantern utility off-hand;
+- Production Roll v1 beside the unchanged `randomPlayer()` Wildcard Roll;
+- compatible Production category rerolls;
+- the pure Wildshot game-pack v1 contract/refusal boundary;
+- approved public Player Cast and Death motion;
+- deterministic Enemy Cast and Death aliases;
+- the 20-column / `480x96` actor contract.
 
-2. Confirm `codex/form-shading` contains pure compatible-reroll checkpoint
-   `a571b1e` and the final compatible editor/documentation checkpoint that
-   contains this handoff. Its ancestors include final Production checkpoint
-   `108b2bb`, policy/editor checkpoint `aa77666`, Lantern/plan checkpoint
-   `01b3f1a`, approved Form checkpoint `a4310ec`, and effects-default
-   checkpoint `2a1111f`.
-3. Read `README.md`, `ARCHITECTURE.md`, this file,
-   `PRODUCTION_ROLL_PLAN.md`,
-   `OUTLINE_RENDERING_PLAN.md`, `ENEMY_OUTLINE_PLAN.md`, and
-   `SHADE_RENDERING_PLAN.md`.
-4. Read `COMPATIBLE_REROLL_PLAN.md` and treat both its pure policy and editor
-   integration as complete.
-5. Read `GAME_PACK_EXPORT_PLAN.md`. Slices 1-2b are the current uncommitted
-   contract/Cast/Death checkpoint. Do not emit or advertise manifest v1 until
-   the approved-license and compact-effect gates are resolved.
-6. Do not infer authorization for compatibility context inference,
-   persistence/provenance, enemy Production rolls, effect-compositor work,
-   fixtures/baselines, releases, or Windows builds.
+The Wildshot game-pack is not ready to emit. It still refuses without approved
+license text and a compact effect-pack contract. The deterministic writer,
+editor action, and consumer handoff slices also remain pending.
 
-## Git State At Handoff
+## Local Boss Direction Checkpoint
 
-- Completed outline branch: `codex/enemy-outlines`
-- Approved shade, Lantern, and Production Roll branch:
-  `codex/form-shading`
-- Wildshot game-pack Slice 1 starts from clean pushed checkpoint `b7eae05`
-  (`Complete compatible Production reroll integration`) and is intentionally
-  uncommitted pending review.
-- Approved Production Roll policy/review/editor checkpoint: `aa77666`
-  (`Add production roll workflow`)
-- `aa77666` is pushed to `origin/codex/form-shading`; Slice 6 starts from that
-  clean remote-aligned checkpoint.
-- Final approved Production Roll v1 checkpoint: `108b2bb`
-  (`Complete production roll integration gate`)
-- `108b2bb` is pushed to `origin/codex/form-shading`; compatible-reroll Slice 1
-  starts from that clean remote-aligned checkpoint.
-- Compatible-reroll pure-policy checkpoint: `a571b1e`
-  (`Add compatible Production reroll policy`)
-- `a571b1e` is pushed to `origin/codex/form-shading`.
-- The final approved compatible editor/documentation checkpoint is the commit
-  containing this handoff and follows `a571b1e`.
-- Approved Lantern/plan checkpoint: `01b3f1a`
-  (`Add approved Lantern off-hand and production roll plan`)
-- `01b3f1a` is an ancestor of `aa77666`.
-- Approved Form commit: `a4310ec` (`Add approved Form shading`)
-- Final approved enemy-outline commit: `ac860aa`
-  (`Add approved Porcupine outlines`)
-- Parent transparency checkpoint: `690aec0`
-  (`Fix transparent body and Bone shield gaps`)
-- `codex/enemy-outlines` is 57 commits ahead of the local
-  `codex/optional-sprite-outlines` branch at `690aec0`.
-- Compared with `origin/codex/optional-sprite-outlines` at `f21cbe3`, the
-  outline branch is 61 commits ahead and has no remote-only commits.
-- The outline branch has no configured upstream and has not been pushed.
-- The shade branch was created from detached documentation checkpoint
-  `630ddf7` because `codex/enemy-outlines` remained attached to its isolated
-  temporary worktree. Core/None, Form, persistence, UI, export, schema,
-  validation, and documentation are contained in the shade checkpoint.
+Local commit `08d1ef7` contains nine approved 48x48 direction pilots:
 
-## Completed Enemy-Outline State
+1. Ancient Mirejaw
+2. Bone Reliquary King
+3. Scorpion Empress
+4. Cyclops Forge-Titan
+5. Pit-Fiend Juggernaut
+6. Goblin War-Crown
+7. Lava-Core Colossus
+8. Abyssal Crown-Kraken
+9. Sun-Crown Griffin
 
-All 57 enemy families and 202 variants are visually approved in None,
-Complete B, and Selective C.
+Each direction pilot has checkpoint-exact Down/Left/Right/Up frames and a
+native `48x192` hard-alpha direction sheet. This commit is local and has not
+been pushed.
 
-Final structural evidence:
+## Current Uncommitted Bosses Workspace
 
-- 9,696 enemy source frames;
-- 9,696 None-mode parity cases;
-- 29,088 total None/B/C cases;
-- Complete B and Selective C differ in all 9,696 frames;
-- zero source-edge frames / zero source-edge pixels;
-- zero out-of-bounds frames / zero out-of-bounds writes;
-- 7,536 frame-safe repaired-enemy regression cases;
-- `npm.cmd run check` passed;
-- `npm.cmd run review:enemy-outlines` passed;
-- the complete `tools/enemy-outline-pilot-review.mjs` lane passed;
-- `npm.cmd run build` passed;
-- `git diff --check` passed.
+Six pilots now have complete review-only animation corpora:
 
-The last approved groups were:
+- Ancient Mirejaw
+- Bone Reliquary King
+- Scorpion Empress
+- Cyclops Forge-Titan
+- Pit-Fiend Juggernaut
+- Goblin War-Crown
 
-- Anglerfish: `b34185e`
-- Snail: `e2c1f2a`
-- Porcupine: `ac860aa`
+Each animated pilot contains:
 
-`ENEMY_OUTLINE_PLAN.md` is the chronological evidence record. Intermediate
-"remaining family" counts in that file are historical snapshots; its top and
-final-status sections describe the completed state.
+- 80 distinct 48x48 frames;
+- four directions in Down/Left/Right/Up order;
+- Idle x2, Walk x4, Attack x4, Cast x4, Hurt x2, Death x4;
+- one native `960x192` full sheet;
+- four native `960x48` direction sheets;
+- six native animation sheets;
+- exact Idle-frame-1 parity with the approved direction pilot;
+- hard alpha and a safe transparent frame border.
 
-## Approved Outline Contract
+Lava-Core Colossus, Abyssal Crown-Kraken, and Sun-Crown Griffin remain explicit
+static four-direction fallbacks.
 
-- None delegates to the untreated source renderer.
-- Complete B is the stronger eight-neighbor treatment.
-- Selective C is the lighter four-neighbor treatment.
-- Player and layered humanoid equipment use component ownership and
-  contact-separator rules.
-- Connected enemies use exterior contours.
-- Disconnected enemies use approved family-specific component thresholds and
-  cavity policies.
-- Effects, floor shadows, source art, catalogs, and atomic component sheets are
-  not outlined.
-- Do not change outline geometry as part of the shade algorithm.
+The Bosses UI mirrors useful Player review controls without creating a fourth
+persisted document kind:
 
-## Resolved Pre-Shade Integration Gap
+- pilot and direction selection;
+- animation selection for the six animated pilots;
+- play/pause, frame stepping, 0.5x/1x/2x speed, and Cycle all;
+- native 1x full-sheet, current-animation, and current-direction downloads;
+- static all-direction display/download for the three fallbacks.
 
-Enemy outline persistence is now integrated across live state, previews,
-comparisons, sheets, presets, and ordinary character packs:
+Boss state is ephemeral. It does not enter history, presets, persistence,
+Production/Wildcard rolls, ordinary packs, Complete Kits, Wildshot game packs,
+fixtures, baselines, effects, the 24x24 procedural renderer, release artifacts,
+or Windows builds.
 
-- `normalizeAssembledOutlineMode()` accepts valid modes only for assembled
-  players and approved enemies;
-- `sanitizePreset()` and `sanitizePackEntry()` preserve valid enemy
-  `outlineMode` values;
-- enemy preset and ordinary-pack load paths restore the saved mode;
-- missing or invalid legacy values migrate to None;
-- effects remain untreated.
+## Visual Review State
 
-Preset v10 and ordinary-pack v1 already stored `outlineMode`, so this
-compatibility repair changes no serialized structure and requires no schema
-bump. Direct compatibility assertions cover valid, missing, invalid, and
-effect cases.
+- Ancient Mirejaw, Bone Reliquary King, Scorpion Empress, and Cyclops
+  Forge-Titan were accepted after focused live review.
+- Pit-Fiend Juggernaut was repaired after review with continuous body motion
+  and a non-destructive tower-shield bash.
+- Goblin War-Crown is the current visual-review candidate.
+- Do not describe Goblin War-Crown or the six-boss batch as finally visually
+  approved until the user explicitly accepts that current candidate.
+- Do not begin Lava-Core Colossus, Abyssal Crown-Kraken, or Sun-Crown Griffin
+  animation work without a new one-at-a-time approval.
 
-## Approved Lantern Phase 5 Slice
+## Structural Validation
 
-`OFFHAND_ITEMS_PLAN.md` is the authority for the current content slice. The
-Lantern is a separate non-shield utility item:
+The focused Bosses gates pass:
 
-- public `OFFHANDS` ids are `none` and `lantern`;
-- shields and utility off-hands are mutually exclusive, with shields winning
-  malformed dual-equipped specifications;
-- only shields trigger shield-block combat behavior;
-- missing or invalid legacy fields migrate to `none`;
-- direction-aware `offhand-back` and `offhand-front` passes follow the
-  animated left-hand socket;
-- outline ownership treats mutually exclusive shield/off-hand passes as one
-  logical equipment owner;
-- Complete Kit components live at
-  `components/offhands/lantern/back.png` and
-  `components/offhands/lantern/front.png`.
+```powershell
+node tools/check-boss-directions.mjs
+node tools/check-boss-animations.mjs
+```
 
-Format versions are now preset v12, ordinary pack v3, Equipment Variant Batch
-and Class Pack v3, Master Character Kit/Roster Kit v2, and Complete Character
-Kit/Pack v12. The shared component library is 1912 PNGs, the standalone
-Complete Kit is 2139 PNGs, and a 24-player Complete Pack is 2162 PNGs.
+Current focused totals:
 
-The project validator passes all 192 equipped-Lantern
-body-build/direction/animation/frame cases with zero out-of-bounds writes,
-hand attachment, face clearance, front/back routing, visible difference, and
-exact recomposition checks. The interactive review covers three representative
-bearers, all four directions, every animation and frame, all outline modes, and
-approved Form shading. The review output is ignored evidence, not a baseline.
+- nine direction catalogs;
+- 36 checkpoint-exact 48x48 direction frames;
+- nine checkpoint-exact `48x192` direction sheets;
+- six animation catalogs;
+- 480 distinct animated 48x48 frames;
+- 66 native full/scoped animation sheets;
+- exact control-frame parity;
+- hard alpha, transparent safety borders, immutable facade exports, UI wiring,
+  and dependency isolation.
 
-## Approved Production Roll Phase 5 Slice
+The full structural gate passes:
 
-`PRODUCTION_ROLL_PLAN.md` is the authority for the completed Production v1
-lane:
+```powershell
+npm.cmd run check
+```
 
-- immutable profile identity is `{ id: 'production-v1', version: 1 }`;
-- portable normalized seeds drive a deterministic PRNG with at most 24
-  attempts and one deterministic safe fallback;
-- ten existing class templates own outfit and equipment pools;
-- one coherent power tier applies to equipped armor, weapon, and shield;
-- seven frozen catalog palette families replace independent color selection;
-- hidden face/hair choices, head-based species identity, mutually exclusive
-  left-hand equipment, and silhouette complexity are validated with stable
-  reason codes;
-- new catalog or class ids fail freeze audits until explicitly classified;
-- `randomPlayer()` remains the unrestricted Wildcard path.
+Important current 20-column totals:
 
-The accepted review contains 120 fixed Production results (12 per class) and
-120 same-label Wildcard controls. It audits 11,520 source frames, 34,560
-Form/outline cases, deterministic replay, attachment, frame bounds, and zero
-discarded writes. The frozen digest is
+- 6,000 weapon cases
+- 12,800 shield cases
+- 320 Lantern cases
+- 880 equipped-headgear cases
+- 480 broad Player shade-None parity cases
+- 16,160 Enemy shade-None parity cases
+- 1,616 sampled Enemy outline-parity cases
+- 2,880 Form pilot cases
+- 158,872 changed Form pixels
+- 164,685 protected source pixels
+- 35,333 material/control differences
+- 16,160 exhaustive Enemy Form cases
+- 1,616 Enemy Form/outline integration cases
+- 1,000 Production policy cases
+- 29 bounded Production fallbacks
+- 80 deterministic Production assembled-render cases
+- 4,200 compatible-reroll cases
+- 555 explicit no-compatible-alternative cases
+- 232 committed legacy fixture sheets, all still `1152x384`
+
+The current balanced Production review geometry is 19,200 source frames /
+57,600 Form-outline cases. The frozen selection corpus remains 120 Production
+results plus 120 paired Wildcard controls and retains the approved digest
 `af9b620e5ce87f6febf5983487fc163e8b5a4495fb37ced3653e8b5bbbc4ba3f`.
-Generated HTML/JSON remains ignored evidence, not a committed fixture or
-baseline.
 
-Production editor integration is Player-only. It applies the resolved player,
-Form shading, and Effects Off in one history entry while preserving the
-current outline. Whole-character Wildcard and category-arrow randomizers retain
-their unrestricted behavior; compatible category actions are a separate
-approved follow-up. Preset v12, ordinary pack v3, Equipment Variant Batch/Class
-Pack v3, Master Kit v2, and Complete Kit/Pack v12 remain unchanged; all receive
-only the resolved ordinary player specification.
+Ignored review pages generated before Cast/Death may still embed their
+historical 12-column report totals. They are disposable evidence, not source
+documentation or accepted baselines. Regenerate them only in a writable
+review-output directory; do not rewrite fixtures or accept new baselines.
 
-Slice 6 adds the package review command plus focused persistence-boundary,
-class-pack, equipment-batch, Complete Kit, Wildcard, schema-version, and 48
-assembled-render compatibility guards. The full validator passes 1,000 policy
-cases and 29 bounded-fallback cases. The balanced review passes its frozen
-120-pair digest. Live browser smoke passes Production/Wildcard history,
-preset/pack round-trips, category locality, Player-only mode isolation, and
-export-action smoke with no console warnings or errors. The temporary preset
-and pack entry were removed, and the original Player document plus all 16
-pre-existing enemy pack entries were restored exactly.
+Also run before any proposed checkpoint:
 
-## Approved Compatible Production Reroll Slice
+```powershell
+git diff --check
+git status --short --branch
+```
 
-`COMPATIBLE_REROLL_PLAN.md` is the authority for the completed compatible
-category lane:
+## Documentation Audit Result
 
-- immutable policy identity is
-  `{ id: 'production-compatible-reroll-v1', version: 1 }`;
-- portable seeds select deterministically from the complete candidate set;
-- every candidate is filtered through `validateProductionPlayer()`;
-- results are ordinary deep-copied players with immutable context and audit
-  metadata;
-- fourteen pure semantic categories include explicit combined left-hand and
-  coherent equipment-power-tier ownership;
-- thirteen Player editor `C` controls expose the uncoupled categories plus
-  one armor-to-power-tier mapping;
-- Outfit, Weapon tier, and Shield tier keep only unrestricted Wildcard arrows;
-- the pure combined left-hand category is not exposed as an ambiguous extra
-  control beneath Shield or Off-hand;
-- known Production context is history-only, undoable, and excluded from every
-  persistence/export schema;
-- whole-character Wildcard and Player document replacement clear context,
-  while category Wildcards and manual edits retain it as Custom;
-- no-compatible-alternative outcomes report without changing the player or
-  adding history;
-- Enemy and Effect modes expose no compatible actions.
+The 2026-07-28 audit corrected current-facing drift in:
 
-The validator passes 4,200 deterministic compatible cases across 300
-Production players and 555 explicit no-alternative cases, plus invalid-input,
-locality, catalog, deep-copy, immutability, dependency, facade, mapping,
-Wildcard, and persistence-boundary checks. Live browser smoke passes
-single-field compatible changes, coherent armor/weapon/shield tier changes,
-no-alternative status, compatible and whole-Wildcard undo/redo, category
-Wildcard context retention, and Enemy/Effect isolation. Form, Complete B,
-Effects Off, Attack/Down/frame 2, 20x/4x, the empty preset library, and all 16
-pre-existing pack entries were restored exactly; the console reported no
-warnings or errors.
+- `README.md`
+- `ARCHITECTURE.md`
+- `HANDOFF.md`
+- `ROADMAP.md`
+- `PRODUCTION_ROLL_PLAN.md`
+- `COMPATIBLE_REROLL_PLAN.md`
+- `OFFHAND_ITEMS_PLAN.md`
+- `OUTLINE_RENDERING_PLAN.md`
+- `ENEMY_OUTLINE_PLAN.md`
+- `SHADE_RENDERING_PLAN.md`
+- `GAME_PACK_EXPORT_PLAN.md`
+- `DEATH_ANIMATION_PLAN.md`
+- `WINDOWS_RELEASE.md`
 
-No renderer, sprite geometry, component path, fixture, approved baseline,
-effect behavior, schema version, release artifact, or Windows build changed.
-Compatibility inspection for arbitrary saved/manual players remains a
-separate context-inference follow-up.
+The audit deliberately did not erase chronological evidence. Historical
+9,696 / 29,088 enemy-outline totals, 12-column shade/off-hand measurements,
+Cast-only 16-column dimensions, and earlier release checkpoints remain where
+they are clearly labeled as historical.
 
-## Shade Plan Boundary
+`death-review/boss-48-drafts/README.md` was checked and already describes the
+six animated / three static split and the isolation boundary.
 
-`SHADE_RENDERING_PLAN.md` remains the canonical authority. Core/None, the
-visually approved Form algorithm, review tooling, and unified Player/Enemy
-integration are implemented and visually approved. Form is the new/reset
-editor default. Fixtures, baselines, and release work remain separately
-approval-gated.
+## Frozen Boundaries
 
-The required rendering order is:
+Unless the user explicitly changes scope:
 
-1. render the original complete source sprite without its floor shadow;
-2. preserve unshaded source and ownership buffers;
-3. shade eligible source-owned pixels only when Form is enabled;
-4. derive outline geometry from the original unshaded buffers;
-5. paint the unchanged floor shadow;
-6. paint approved contours and contact separators;
-7. paint shaded source pixels;
-8. preserve authorized direct-contact separators exactly.
+- do not commit or push;
+- do not build or update the executable or installer;
+- do not accept or rewrite fixtures or visual baselines;
+- do not change effects or resume the effect compositor;
+- do not route bosses through Enemy mode or the 24x24 procedural renderer;
+- do not add Boss persistence, schemas, presets, packs, recipes, Production
+  rolls, provenance, or game-pack export;
+- do not change actor geometry, component paths, stable catalog ids, animation
+  timing, or public sheet order;
+- do not start another boss animation in parallel.
 
-Hard requirements:
+## Exact Next Step
 
-- shade None plus outline None directly delegates to `drawSprite()`;
-- shade None plus Complete B/Selective C is pixel-identical to `ac860aa`;
-- effects and non-complete atomic layers always delegate untreated;
-- no procedural geometry, animation, frame layout, floor shadow, outline
-  pixel, contact separator, or atomic component changes;
-- no automatic fixture, baseline, manifest, or executable change;
-- review effects Off so the deferred effect compositor cannot contaminate the
-  visual decision.
+1. Refresh the live assembler and review Goblin War-Crown through every
+   direction and animation at native and enlarged scale with Effects Off.
+2. If the user requests a repair, change only that candidate and rerun both
+   boss gates plus `npm.cmd run check`.
+3. If the user explicitly accepts the candidate, ask whether to:
+   - create a commit/push checkpoint for the complete six-boss workspace and
+     documentation audit; or
+   - keep the work uncommitted and begin exactly one of the three static
+     bosses as a separate animation candidate.
+4. Do not infer approval from structural tests or from acceptance of an older
+   frame.
 
-## Shade Implementation Sequence
+## Current Dirty Scope
 
-Follow the commit sequence in `SHADE_RENDERING_PLAN.md`.
+The intended dirty source scope consists of:
 
-### 1. Core/None checkpoint
+- Bosses UI/state/styles in `index.html`, `app.js`, and `styles.css`;
+- stable boss facade/catalog wiring in `sprite-engine.js`,
+  `engine/catalogs.js`, `engine/catalogs/boss-directions.js`, and
+  `engine/catalogs/boss-animations.js`;
+- runtime boss assets beneath `engine/assets/bosses/`;
+- focused boss validators and deterministic generators beneath `tools/`;
+- current-state documentation listed in the audit section.
 
-- complete: shared internal pixel-buffer helpers;
-- complete: shade mode catalog and normalization;
-- complete: public facade entries and assembled-output coordinator;
-- complete: direct delegation and broad None parity;
-- complete: no visible Form change and no UI.
-
-Current validation passes 288 broad player parity cases, all 9,696 enemy
-source frames, and 1,616 sampled enemy outline-combination cases, in addition
-to the existing full project validator.
-
-### 2. Form algorithm pilot
-
-- complete and visually approved: pure deterministic material-aware shade
-  transform;
-- complete: INK, exact white hurt flashes, floor shadows, effects, outlines,
-  contact separators, and approved tiny accents are protected;
-- complete: `tools/shade-review.mjs` and `npm.cmd run review:shades`;
-- complete: 12-specimen material-region comparison against the silhouette-only
-  control;
-- approved by the user on 2026-07-26; parchment is now the default review
-  background while dark remains selectable.
-
-The validator passes 1,728 deterministic Form cases with 94,463 changed
-source-owned pixels, 100,335 protected-pixel checks across the three outline
-modes, and 21,086 material/control pixel differences. The generated review
-covers 576 source frames; `shade-review/` is ignored and is not a baseline.
-
-### 3. Unified player surfaces
-
-Implemented, approved, and checkpointed:
-
-- new/reset Player/Enemy editor documents default to Form;
-- versioned legacy preset/pack/recipe fields still sanitize missing or invalid
-  shade values to None;
-- Player/Enemy selector, comparisons, history, resets, caches, previews, and
-  assembled exports preserve Form;
-- Effects hides the selector and always delegates untreated;
-- undo/redo and cross-mode retention pass browser smoke;
-- the live Player + Form surface was visually approved on 2026-07-26.
-
-### 4. Enemy pilot and rollout
-
-Implemented, approved, and checkpointed. All 9,696 enemy source frames pass the full Form
-audit, and all 1,616 Form/outline integration cases preserve approved outline
-and direct-contact geometry. The live Enemies selector passes browser smoke.
-
-### 5. Packs and schemas
-
-The approved shade checkpoint originally established:
-
-- preset library v11 migrating v1-v10;
-- ordinary pack v2 migrating v1;
-- Equipment Variant Batch and Class Pack v2;
-- Complete Character Kit and Complete Character Pack v11;
-- combat-loadout and palette v1;
-- missing/invalid shade values migrate to None;
-- atomic component sheets remain untreated and still recompose the original
-  renderer pixel-for-pixel.
-
-The later Lantern integration advances only the formats listed in
-**Approved Lantern Phase 5 Slice**. It does not change shade semantics.
-
-`npm.cmd run check` passes the full project gate, including assembled
-full-sheet, direction-sheet, and animation-sheet shade forwarding and all 192
-Lantern cases. The production build was intentionally not run because release
-artifacts remain outside the approved scope.
-
-## Visual Approval Workflow
-
-- Use the isolated in-app browser for review.
-- Keep effects Off during shade comparisons.
-- Show native and enlarged nearest-neighbor output.
-- Include None, Complete B, and Selective C.
-- Review all directions, animations, and frames for the selected pilot.
-- Use both dark and parchment review backgrounds without baking either into
-  exports.
-- Record explicit approval before accepting any visual change.
-- The Form algorithm, integration, editor default, commit, and push were
-  explicitly authorized on 2026-07-26.
-- The Lantern art and public integration were explicitly authorized on
-  2026-07-26; no additional off-hand family is implied by that approval.
-- The Production/Wildcard corpus, Form/Effects Off presentation,
-  no-outline-default decision, and live editor integration were explicitly
-  authorized on 2026-07-26. Final Slice 6 documentation/compatibility approval
-  was explicitly received on 2026-07-27.
-
-## Deferred Independent Lanes
-
-These remain real but are not shade work:
-
-### Effect/shield compositor
-
-This lane is explicitly on ice as of 2026-07-26. Combat overlays are disabled
-by default and return to Off whenever the editor starts; users may still enable
-the legacy preview manually. That optional path draws resolved effects after
-the complete character, so it can look cluttered and can overwrite foreground
-shield, equipment, body, or headgear pixels.
-
-A foreground-safe effects-first candidate passed exhaustive automated coverage
-and an all-direction pilot review, but it was not visually approved and was
-removed from the live worktree rather than promoted into schemas or
-documentation as final behavior. Resume only if the user explicitly reopens
-the effects lane. Any future attempt still requires an effect-enabled,
-all-direction/all-attack-frame compositor review. Do not redesign approved
-shield art or mix this into shade.
-
-### Transparency follow-up
-
-The accepted `690aec0` slice repaired the proven body/cape and Bone-shield
-gaps. `TRANSPARENT_TILE_REPAIR_PLAN.md` retains 1,660 advisory notches and
-later mixed-owner/openwork phases for a future dedicated review. Do not blanket
-fill them during shade work.
-
-### Equipment source art
-
-Weapon frame safety, Crossbow T5, and shield hand/facing work are accepted.
-Bone/Arcane/Buckler redesign notes and Crossbow T2 dense composition remain
-deferred diagnostics. See the equipment and weapon plans.
-
-### Windows release
-
-The current web build passes. The existing standalone executable and July 19
-NSIS installer predate the final `ac860aa` outline state. Neither is the current
-outline/shade release candidate. Do not rebuild or distribute Windows artifacts
-until a deliberate approved release checkpoint.
-
-## Documentation Authority
-
-- `HANDOFF.md`: exact continuation and known gaps.
-- `SHADE_RENDERING_PLAN.md`: canonical completed shade design and gates.
-- `OFFHAND_ITEMS_PLAN.md`: current approved Lantern contract and future
-  off-hand boundaries.
-- `PRODUCTION_ROLL_PLAN.md`: completed Production v1 product contract,
-  architecture, policy/review/editor slices, and final Slice 6 gate.
-- `COMPATIBLE_REROLL_PLAN.md`: completed pure and editor-compatible
-  per-category reroll lane.
-- `DEATH_ANIMATION_PLAN.md`: isolated Player Death candidate, review contract,
-  and post-approval public-integration boundary.
-- `ENEMY_OUTLINE_PLAN.md`: completed enemy rollout evidence.
-- `OUTLINE_RENDERING_PLAN.md`: current player/enemy outline contract.
-- `README.md`: user-facing capabilities and validation commands.
-- `ARCHITECTURE.md`: engine boundaries and persistence caveat.
-- `ROADMAP.md`: product phase history and current visual checkpoint.
-- Equipment, weapon, and transparency plans: retained historical/deferred
-  lanes, not current authority.
-- `WINDOWS_RELEASE.md`: release procedure and artifact freshness warning.
-
-If documentation and live code disagree, verify the code and tests, update the
-handoff, and do not infer approval from an older plan.
+Treat any additional path as unexpected until explained by a fresh
+`git status` and diff.

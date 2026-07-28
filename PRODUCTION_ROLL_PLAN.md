@@ -22,7 +22,7 @@ baselines, and release artifacts.
   (`Add production roll workflow`)
 - `aa77666` is committed and pushed to `origin/codex/form-shading`.
 - `npm.cmd run check` passes 1,000 Production policy cases in addition to the
-  full existing project matrix, including 29 bounded-fallback cases and 48
+  full existing project matrix, including 29 bounded-fallback cases and 80
   deterministic integration render cases.
 - The balanced review passes 120 Production and 120 Wildcard cases with frozen
   digest `af9b620e5ce87f6febf5983487fc163e8b5a4495fb37ced3653e8b5bbbc4ba3f`.
@@ -34,8 +34,8 @@ baselines, and release artifacts.
 - No fixture or visual baseline was changed, and no release artifact was
   rebuilt.
 - Slices 0-6 are complete and approved. Final Production checkpoint `108b2bb`
-  is followed by compatible pure-policy checkpoint `a571b1e` and the final
-  compatible editor/documentation checkpoint containing this status.
+  is followed by compatible pure-policy checkpoint `a571b1e` and final
+  compatible editor/documentation checkpoint `b7eae05`.
 - Remaining deferred follow-ups remain separately unauthorized.
 
 ## Executive assessment

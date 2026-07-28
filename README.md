@@ -6,6 +6,10 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 
 - Player assembly across Human, Elf, Orc, Goblin, Tiefling, Celestial, Dwarf, Undead, Lizardfolk, and Beastkin species; Classic, Lean, Sturdy, and Heroic body builds; plus skin, 11 hairstyles, six expressions, eight facial details, 12 headgear choices, nine outfits across five armor tiers, weapon type and tier, shield, the Lantern utility off-hand, and palette choices
 - 57 enemy families with 202 predefined variants
+- A separate Boss Directions tab with nine approved 48x48 direction pilots;
+  six now have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
+  native 1x animation-sheet download, while three retain the approved static
+  four-direction fallback
 - 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
 - A Combat Loadout Builder that previews those overlays on players and enemies, supplies automatic weapon-aware defaults, supports per-slot overrides, saves named recipes, and exports game-ready JSON
 - An Equipment Variant Batch Builder that turns one character identity into bounded weapon, armor, shield, utility-off-hand, or 121-sheet RPG equipment collections with per-variant loadouts and only the combat effects they actually reference
@@ -46,10 +50,12 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 
 ## Current integration status
 
-The complete enemy-outline rollout is visually approved at local checkpoint
-`ac860aa` on `codex/enemy-outlines`. All 57 families / 202 variants pass the
-9,696-frame source audit and the 29,088-case None-B-C lane with zero source-edge
-frames and zero out-of-bounds writes. This branch has not been pushed.
+The complete enemy-outline rollout was visually approved at historical
+12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
+covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge
+frames and zero out-of-bounds writes. The current public 20-column
+Idle/Walk/Attack/Cast/Hurt/Death contract extends the same approved lane to
+16,160 source frames / 48,480 None-B-C cases.
 
 The optional shared assembled-sprite shade pass in
 [SHADE_RENDERING_PLAN.md](SHADE_RENDERING_PLAN.md) has an explicitly approved
@@ -107,6 +113,17 @@ history-only and never enters presets, packs, recipes, exports, or schemas. If
 no compatible alternative exists, the editor reports that result without
 changing the player.
 
+The Bosses tab is a deliberately isolated game-test surface for the nine
+approved 48x48 direction pilots. Six pilots—Ancient Mirejaw, Bone Reliquary
+King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut, and Goblin
+War-Crown—also expose the full 20-column animation contract, playback/frame
+inspection, and native full/direction/animation downloads. Lava-Core Colossus,
+Abyssal Crown-Kraken, and Sun-Crown Griffin remain static four-direction
+fallbacks. Boss selection, direction, animation, frame, and speed are
+ephemeral: they do not enter current-document persistence, history, presets,
+Production/Wildcard rolls, ordinary packs, Complete Kits, game-pack exports,
+effects, or the 24x24 procedural renderer.
+
 ## Preview controls
 
 - `Space` plays or pauses the selected animation.
@@ -151,12 +168,12 @@ Double-click `check-project.bat`, or run:
 npm run check
 ```
 
-The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 3,600 weapon animation cases, 7,680 shield cases across all four body builds, 192 Lantern utility-off-hand cases, and 528 equipped-headgear cases. The shade gate adds 288 broad player None-parity cases, all 9,696 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 1,728 deterministic Form pilot cases, an exhaustive 9,696-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, visible changes, and 21,086 material-aware differences from a silhouette-only control without accepting a visual baseline.
+The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
 The same command also audits 1,000 deterministic Production v1 seeds,
 catalog/class freeze drift, invalid seeds, bounded retries and fallbacks,
 ordinary-player copy safety, Wildcard compatibility, all ten classes, every
-power tier and palette family, 48 deterministic assembled export frames, and
+power tier and palette family, 80 deterministic assembled export frames, and
 resolved-player compatibility with existing class, batch, Complete Kit,
 preset, pack, and schema boundaries.
 
@@ -178,22 +195,25 @@ the review remains evidence rather than a committed baseline.
 Run `npm run review:production-rolls` to regenerate the ignored balanced
 Production-versus-Wildcard review beneath `production-roll-review/`. It
 contains 120 fixed Production results and 120 Wildcard controls, with 12
-Production seeds per class, all 11,520 source frames, 34,560 Form/outline
+Production seeds per class, all 19,200 source frames, 57,600 Form/outline
 cases, deterministic replay, attachment checks, and the approved corpus digest
 `af9b620e5ce87f6febf5983487fc163e8b5a4495fb37ced3653e8b5bbbc4ba3f`.
 The corpus and Form/Effects Off presentation were approved on 2026-07-26; the
 generated page remains review evidence rather than a committed baseline.
 
-Run `npm run review:weapons -- --all-frames` to regenerate the 37 weapon review sheets and the exhaustive 3,600-row CSV/JSON audit. Add `--tier-sheets` to emit four labeled all-weapon/all-frame SVG review sheets per tier plus lightweight PNG inspection grids. The audit records ordinary edge contact separately from discarded pixels, so touching `x=0` or `x=23` remains advisory while attempting to draw outside the 24x24 canvas is a hard failure.
+Run `npm run review:weapons -- --all-frames` to regenerate the 37 weapon review sheets and the exhaustive 6,000-row CSV/JSON audit. Add `--tier-sheets` to emit four labeled all-weapon/all-frame SVG review sheets per tier plus lightweight PNG inspection grids. The audit records ordinary edge contact separately from discarded pixels, so touching `x=0` or `x=23` remains advisory while attempting to draw outside the 24x24 canvas is a hard failure.
 
 Run `npm run review:outlines` for the outline-specific regression gate. It verifies anchored safe-baseline hashes, 6,000 pixel-exact None-mode parity cases, 2,000 deterministic randomized integrity cases, 11,040 exhaustive outlined equipment cases, and 10,656 exhaustive headgear-preservation cases. The gate covers restrained cardinal equipment halos, silhouette-defining cavities of at least five logical pixels, the explicit equipment pilot, depth-aware equipment/body separators, feature-preserving equipment-side fallbacks, equipment-side front-equipment/headgear separators, foreground headgear and non-contact equipment pixel protection, non-contact body protection, ownership isolation, neck-cavity completion, and review examples. See [OUTLINE_RENDERING_PLAN.md](OUTLINE_RENDERING_PLAN.md) for the supported modes and scope boundary.
 
 Run `npm run review:enemy-outlines` for the complete 57-family source
 assessment, and `npm run review:enemy-outline-pilots` for the full approved
-outline lane. The final lane verifies 9,696 None-mode parity cases, 29,088
+outline lane. The chronological approval record ends at 9,696 source frames /
+29,088 None-B-C cases under the historical 12-column contract; the current
+20-column regression gate verifies 16,160 None-mode parity cases and 48,480
 None-B-C cases, mode distinction in every frame, zero source-edge frames, and
-zero out-of-bounds writes. See [ENEMY_OUTLINE_PLAN.md](ENEMY_OUTLINE_PLAN.md)
-for the chronological repair and approval record.
+zero out-of-bounds writes. See
+[ENEMY_OUTLINE_PLAN.md](ENEMY_OUTLINE_PLAN.md) for the chronological repair
+and approval record.
 
 Contact separators remain one pixel thick: pixels converted into separators are prevented from casting a redundant exterior halo, while legitimate interior equipment openings remain outlined. When a foreground weapon or shield directly touches headgear, only the touching equipment pixel becomes the separator; the hat artwork is preserved exactly. If a normal body-side separator would visually lengthen an adjacent dark eye, mouth, or other body feature, that character pixel is preserved and the separator moves onto the touching equipment pixel.
 
@@ -316,6 +336,42 @@ Each schema-v12 recipe records the selected species, body build, expression, hai
 
 Every component shares the same animation grid and has been validated to recompose the complete renderer pixel-for-pixel across all directions and frames. To craft a new character in a game, copy a recipe and change its component paths; no art needs to be duplicated.
 
+## Boss animation pilot
+
+The review-only **Bosses** workspace now exposes Ancient Mirejaw, Bone
+Reliquary King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut,
+and Goblin War-Crown as the first six complete 48x48 animation pilots. All six use the
+Player-facing animation names and counts (Idle x2, Walk x4, Attack x4, Cast x4,
+Hurt x2, Death x4), four direction rows, and native 20-column `960x192` full
+sheets. Playback, frame inspection, speed, Cycle all, direction controls, and
+native full/current animation/current direction downloads are available
+without adding Boss to the persisted sprite document.
+
+The other three approved bosses remain static four-direction pilots and are
+labeled that way in the interface. All boss assets remain effects-off and
+outside Enemy mode, procedural renderers, production rolls, presets,
+character/game packs, fixtures, baselines, release artifacts, and Windows
+builds. Ancient Mirejaw, Bone Reliquary King, Scorpion Empress, and Cyclops
+Forge-Titan were accepted in live review; Pit-Fiend Juggernaut was repaired
+after live review, and Goblin War-Crown is the current visual-review candidate.
+
+All six Idle loops use authored breathing or weight-shift silhouettes rather
+than palette-only flashing. Scorpion Empress additionally uses a blink and
+stinger-flick Idle, stable-body leg scuttling, a tail-led strike, stinger
+casting, impact squash, and a weighted armored collapse so each action frame
+changes her readable outline.
+
+Cyclops Forge-Titan uses a weighted upper-body/hammer settle, planted-foot
+stomp cycle, hammer wind-up/slam, furnace-core channel, bright Hurt recoil, and
+four-stage armored fall.
+
+Pit-Fiend Juggernaut uses a wing-and-shield weight shift, alternating armored
+steps, a tower-shield bash, infernal wing flare, bright Hurt recoil, and a
+four-stage wing-folded collapse.
+
+Goblin War-Crown uses a compact commander weight shift, planted march, royal
+shield bash, crown-command pulse, bright Hurt recoil, and banner-led collapse.
+
 ## Project layout
 
 - `index.html` - standard application entry point
@@ -325,10 +381,25 @@ Every component shares the same animation grid and has been validated to recompo
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
 - `engine/` - focused animation, palette, player-option, enemy, production-roll, Wildshot game-pack contract, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
+- `engine/catalogs/boss-directions.js`, `engine/catalogs/boss-animations.js`,
+  and `engine/assets/bosses/` - immutable review-only boss direction and
+  Mirejaw/Bone King/Scorpion Empress/Cyclops Forge-Titan/Pit-Fiend/Goblin animation
+  profiles plus checkpoint-exact runtime PNGs
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build
 - `tools/check-project.mjs` - project and asset validator
+- `tools/check-boss-directions.mjs` - focused boss asset, immutability, facade,
+  native-sheet, and dependency-boundary gate
+- `tools/check-boss-animations.mjs` - focused 480-frame six-boss corpus,
+  full/scoped-sheet, control-frame, immutability, UI, and isolation gate
+- `tools/generate-mirejaw-animation-v1.py`,
+  `tools/generate-bone-king-animation-v1.py`,
+  `tools/generate-scorpion-empress-animation-v1.py`,
+  `tools/generate-cyclops-forge-titan-animation-v1.py`,
+  `tools/generate-pit-fiend-juggernaut-animation-v1.py`, and
+  `tools/generate-goblin-war-crown-animation-v1.py` - deterministic
+  authored-pose generators for the six review/runtime animation pilots
 - `tools/production-roll-review.mjs` - deterministic balanced Production/Wildcard review and audit generator
 - `src-tauri/` - Tauri 2 Windows wrapper, permissions, CSP, and icon resources
 - `ARCHITECTURE.md` - engine boundaries, dependency direction, and safe extension points
