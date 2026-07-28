@@ -5,26 +5,25 @@ Date: 2026-07-28
 ## Purpose
 
 This is the canonical next-chat continuation for the 8-bit Sprite Assembler.
-It records the live Git state, the completed documentation audit, the current
-uncommitted Bosses workspace, its validation evidence, and the approval
-boundary. Historical plan measurements remain in their plan files and are
-explicitly labeled as historical where the public animation contract later
-expanded.
+It records the pushed Bosses checkpoint, the completed documentation audit,
+its validation evidence, and the remaining visual-approval boundary.
+Historical plan measurements remain in their plan files and are explicitly
+labeled as historical where the public animation contract later expanded.
 
 ## Canonical Workspace And Git State
 
 - Worktree:
   `C:\Users\headc\.codex\worktrees\9f24\8-bit sprite assembler`
 - Branch: `codex/form-shading`
-- Local HEAD: `08d1ef78f4c7011f57e23801f91bd30176527121`
-  (`Checkpoint 48x48 boss direction pilots`)
 - Upstream: `origin/codex/form-shading`
-- Upstream commit: `d6a56c10ae028e95c1aba09c0dba6d1c3449766b`
-  (`Add Wildshot game-pack Cast and Death`)
-- The local branch is one commit ahead of upstream.
-- The worktree is intentionally dirty with the Bosses editor/animation lane
-  and this documentation audit.
-- Nothing in the current dirty lane has been committed or pushed.
+- Pushed direction-pilot checkpoint: `08d1ef7`
+  (`Checkpoint 48x48 boss direction pilots`)
+- Pushed animated-workspace checkpoint: `f15a9cf`
+  (`Add animated boss review workspace`)
+- This handoff reconciliation follows `f15a9cf`; use the commands below for
+  the exact self-referential documentation commit rather than freezing its hash
+  inside this file.
+- The branch is expected to be clean and synchronized with upstream.
 - No Windows artifact has been built for this state.
 
 Before making any claim or edit, rerun:
@@ -99,9 +98,9 @@ The Wildshot game-pack is not ready to emit. It still refuses without approved
 license text and a compact effect-pack contract. The deterministic writer,
 editor action, and consumer handoff slices also remain pending.
 
-## Local Boss Direction Checkpoint
+## Pushed Boss Direction Checkpoint
 
-Local commit `08d1ef7` contains nine approved 48x48 direction pilots:
+Pushed commit `08d1ef7` contains nine approved 48x48 direction pilots:
 
 1. Ancient Mirejaw
 2. Bone Reliquary King
@@ -114,12 +113,12 @@ Local commit `08d1ef7` contains nine approved 48x48 direction pilots:
 9. Sun-Crown Griffin
 
 Each direction pilot has checkpoint-exact Down/Left/Right/Up frames and a
-native `48x192` hard-alpha direction sheet. This commit is local and has not
-been pushed.
+native `48x192` hard-alpha direction sheet.
 
-## Current Uncommitted Bosses Workspace
+## Pushed Bosses Workspace
 
-Six pilots now have complete review-only animation corpora:
+Pushed technical checkpoint `f15a9cf` adds complete review-only animation
+corpora for six pilots:
 
 - Ancient Mirejaw
 - Bone Reliquary King
@@ -281,25 +280,17 @@ Unless the user explicitly changes scope:
    direction and animation at native and enlarged scale with Effects Off.
 2. If the user requests a repair, change only that candidate and rerun both
    boss gates plus `npm.cmd run check`.
-3. If the user explicitly accepts the candidate, ask whether to:
-   - create a commit/push checkpoint for the complete six-boss workspace and
-     documentation audit; or
-   - keep the work uncommitted and begin exactly one of the three static
-     bosses as a separate animation candidate.
+3. If the user explicitly accepts the candidate, record that visual approval
+   in a focused documentation checkpoint or begin exactly one of the three
+   static bosses as a separate animation candidate, according to the user's
+   direction.
 4. Do not infer approval from structural tests or from acceptance of an older
    frame.
 
-## Current Dirty Scope
+## Expected Worktree State
 
-The intended dirty source scope consists of:
-
-- Bosses UI/state/styles in `index.html`, `app.js`, and `styles.css`;
-- stable boss facade/catalog wiring in `sprite-engine.js`,
-  `engine/catalogs.js`, `engine/catalogs/boss-directions.js`, and
-  `engine/catalogs/boss-animations.js`;
-- runtime boss assets beneath `engine/assets/bosses/`;
-- focused boss validators and deterministic generators beneath `tools/`;
-- current-state documentation listed in the audit section.
-
-Treat any additional path as unexpected until explained by a fresh
-`git status` and diff.
+The worktree is expected to be clean. The pushed Bosses scope consists of UI
+and styles, stable facade/catalog wiring, runtime assets beneath
+`engine/assets/bosses/`, focused validators and deterministic generators, and
+the audited documentation. Treat any new dirty path as unexpected until
+explained by a fresh `git status` and diff.

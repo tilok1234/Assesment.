@@ -111,12 +111,13 @@ checkpoint `ac860aa` covered 9,696 source frames / 29,088 None-B-C cases; the
 current 20-column Cast/Death contract extends the structural gate to 16,160 /
 48,480 cases. Form shading, Lantern, Production Roll, compatible category
 rerolls, and the public Cast/Death actor contract are complete. Pushed
-checkpoint `d6a56c1` is followed locally by unpushed boss-direction checkpoint
-`08d1ef7` and an uncommitted isolated Bosses workspace with six animated
-48x48 pilots plus three static fallbacks. Existing None fixtures remain
-unchanged, effects start Off, the effect-after-character shield/equipment
-occlusion issue remains on ice, and no current Windows release build exists.
-See `HANDOFF.md`.
+checkpoint `d6a56c1` is followed by pushed boss-direction checkpoint
+`08d1ef7` and pushed animated-workspace checkpoint `f15a9cf`, with six
+animated 48x48 pilots plus three static fallbacks. Goblin War-Crown remains a
+visual-review candidate; the technical checkpoint does not imply final visual
+acceptance. Existing None fixtures remain unchanged, effects start Off, the
+effect-after-character shield/equipment occlusion issue remains on ice, and no
+current Windows release build exists. See `HANDOFF.md`.
 
 The first fresh content slice after that checkpoint adds the visually approved
 Lantern through a separate public non-shield `offhand` field. Shields and
@@ -246,13 +247,14 @@ compact effect contract are approved; writer, editor, and consumer slices are
 also pending.
 
 The thirty-third Phase 5 slice is an isolated 48x48 Bosses review lane. Nine
-four-direction pilots are checkpointed locally at `08d1ef7`; six currently
-have full 20-column animation corpora and three remain static fallbacks. The
-Bosses workspace is ephemeral and native-1x-only, with no connection to Enemy
-mode, production renderers, persistence, packs, fixtures, release artifacts,
-or Windows builds. The six-boss structural gate passes 480 distinct frames and
-66 native sheets. Goblin War-Crown remains the current visual-review
-candidate, so this follow-up is not yet a commit/push checkpoint.
+four-direction pilots are pushed at `08d1ef7`; six full 20-column animation
+corpora plus three static fallbacks are pushed at technical checkpoint
+`f15a9cf`. The Bosses workspace is ephemeral and native-1x-only, with no
+connection to Enemy mode, production renderers, persistence, packs, fixtures,
+release artifacts, or Windows builds. The six-boss structural gate passes 480
+distinct frames and 66 native sheets. Goblin War-Crown remains the current
+visual-review candidate, so the pushed checkpoint must not be described as
+final visual acceptance.
 
 Candidate additions:
 
@@ -277,8 +279,8 @@ with an embedded WebView2 bootstrapper, a release-specific validator, and a
 versioned GitHub draft-release workflow. Historical installer and standalone
 smoke tests passed their earlier checkpoints. No existing executable or
 installer was built and approved from pushed actor-contract checkpoint
-`d6a56c1`, local boss checkpoint `08d1ef7`, or the current uncommitted Bosses
-workspace, so none is a release candidate for this branch. Full NSIS
+`d6a56c1` or pushed Bosses checkpoint `f15a9cf`, so none is a release
+candidate for this branch. Full NSIS
 install/uninstall testing, code signing, and automatic updates remain deferred
 until a stable distribution identity and a deliberate release checkpoint
 exist.

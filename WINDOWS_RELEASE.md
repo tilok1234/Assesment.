@@ -1,10 +1,9 @@
 # Windows release guide
 
 Current artifact status (2026-07-28): no Windows executable or installer has
-been built and approved from pushed actor-contract checkpoint `d6a56c1`, local
-boss-direction checkpoint `08d1ef7`, or the current uncommitted Bosses
-workspace. Existing binaries are historical and must not be represented as a
-current Cast/Death/boss build.
+been built and approved from pushed actor-contract checkpoint `d6a56c1` or
+pushed Bosses checkpoint `f15a9cf`. Existing binaries are historical and must
+not be represented as a current Cast/Death/boss build.
 
 The Windows edition packages the same production frontend and procedural engine used by the browser build. Packaging does not freeze the content catalog: outfits, hairstyles, headgear, weapons, enemies, effects, and templates can still be changed normally, then included by rebuilding the application.
 
