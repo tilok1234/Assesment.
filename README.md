@@ -7,6 +7,12 @@
 > at `Wildshot_adventure_final_planning/docs/16-ECOSYSTEM_MAP.md`.
 > Read your repo's row before working here.
 
+> **SYNC-LOG HOOK (doc 18, ACCEPTED 2026-07-30).** At session end, append
+> a line to planning `tools/sync_log.json` for every cross-repo event this
+> session caused (pack delivered or intaken, ask opened/resolved, incident,
+> pin change). No event, no entry. Protocol: planning
+> `docs/18-AGENT_SYNC_PROTOCOL.md`.
+
 A browser-based procedural sprite creator for building 24x24 player characters, enemies, and synchronized combat effects, previewing four-direction animations, and exporting game-ready PNG sprite sheets.
 
 ## Current capabilities
