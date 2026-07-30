@@ -9,6 +9,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
+from boss_animation_generator_common import planted_body_bob
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ROOT = PROJECT_ROOT / "death-review" / "boss-48-drafts"
@@ -48,6 +50,8 @@ MOTION_COLORS = {
     *GOLD.values(),
 }
 WING_COLORS = {OUTLINE, *CHARCOAL.values()}
+
+
 def source_directions() -> dict[str, Image.Image]:
     left = directions.left_source()
     return {
@@ -82,6 +86,82 @@ def move_matching(
                     if 0 <= target[0] < LOGICAL_SIZE and 0 <= target[1] < LOGICAL_SIZE:
                         layer.putpixel(target, pixel)
     result.alpha_composite(layer)
+    return result
+
+
+def opaque_count(image: Image.Image) -> int:
+    return sum(alpha > 0 for alpha in image.getchannel("A").get_flattened_data())
+
+
+def copy_matching_layer(
+    source: Image.Image,
+    regions: tuple[tuple[int, int, int, int], ...],
+    colors: set[str],
+    dx: int,
+    dy: int,
+    label: str,
+) -> Image.Image:
+    wanted = {hex_rgb(color) for color in colors}
+    layer = Image.new("RGBA", source.size, (0, 0, 0, 0))
+    copied = 0
+    for left, top, right, bottom in regions:
+        for y in range(top, bottom + 1):
+            for x in range(left, right + 1):
+                pixel = source.getpixel((x, y))
+                if not pixel[3] or pixel[:3] not in wanted:
+                    continue
+                target_x = x + dx
+                target_y = y + dy
+                if not (
+                    2 <= target_x <= LOGICAL_SIZE - 3
+                    and 2 <= target_y <= LOGICAL_SIZE - 3
+                ):
+                    raise ValueError(f"{label} moved a Pit-Fiend wing pixel outside the safe area.")
+                layer.putpixel((target_x, target_y), pixel)
+                copied += 1
+    if opaque_count(layer) != copied:
+        raise ValueError(f"{label} overlapped Pit-Fiend wing pixels while building a motion layer.")
+    return layer
+
+
+def assert_preserved_source(
+    result: Image.Image,
+    source: Image.Image,
+    label: str,
+) -> None:
+    for y in range(LOGICAL_SIZE):
+        for x in range(LOGICAL_SIZE):
+            if source.getpixel((x, y))[3] and not result.getpixel((x, y))[3]:
+                raise ValueError(f"{label} punched a transparent hole in the Pit-Fiend body.")
+
+
+def cast_wing_pose(
+    source: Image.Image,
+    wing_left: tuple[tuple[int, int, int, int], ...],
+    wing_right: tuple[tuple[int, int, int, int], ...],
+    left_offset: tuple[int, int],
+    right_offset: tuple[int, int],
+    label: str,
+) -> Image.Image:
+    left_layer = copy_matching_layer(
+        source,
+        wing_left,
+        WING_COLORS,
+        *left_offset,
+        f"{label} left wing",
+    )
+    right_layer = copy_matching_layer(
+        source,
+        wing_right,
+        WING_COLORS,
+        *right_offset,
+        f"{label} right wing",
+    )
+    result = Image.new("RGBA", source.size, (0, 0, 0, 0))
+    result.alpha_composite(left_layer)
+    result.alpha_composite(right_layer)
+    result.alpha_composite(source)
+    assert_preserved_source(result, source, label)
     return result
 
 
@@ -160,17 +240,17 @@ def add_infernal_sparks(image: Image.Image, direction: str, frame: int) -> Image
         "down": {
             1: ((5, 7), (19, 8)),
             2: ((3, 4), (21, 5), (5, 15), (20, 14)),
-            3: ((6, 6), (19, 12)),
+            3: ((2, 20), (21, 20)),
         },
         "left": {
             1: ((4, 7), (18, 8)),
             2: ((2, 5), (20, 5), (4, 15), (18, 14)),
-            3: ((5, 6), (17, 12)),
+            3: ((2, 20), (21, 20)),
         },
         "up": {
             1: ((5, 7), (19, 8)),
             2: ((3, 4), (21, 5), (5, 15), (19, 14)),
-            3: ((6, 6), (18, 12)),
+            3: ((2, 20), (21, 20)),
         },
     }
     points = points_by_direction[direction].get(frame, ())
@@ -326,11 +406,7 @@ def animation_pose(
     if animation == "idle":
         if frame == 0:
             return source.copy()
-        result = squash_pose(source, 19)
-        return replace_region_colors(result, head, {
-            GOLD["base"]: GOLD["shadow"],
-            GOLD["highlight"]: GOLD["base"],
-        })
+        return planted_body_bob(source, 20, f"{direction} pit fiend idle")
 
     if animation == "walk":
         if frame == 0:
@@ -372,19 +448,25 @@ def animation_pose(
     if animation == "cast":
         cast_wings = (
             (((0, 1), (0, 1))),
-            (((-1, -1), (1, -1))),
-            (((-2, -2), (2, -2))),
-            (((-1, 0), (1, 0))),
+            (((0, -1), (0, -1))),
+            (((0, -2), (0, -2))),
+            (((0, 3), (0, 3))),
         )
         if direction == "left":
             cast_wings = (
                 (((0, 1), (0, 1))),
-                (((0, -1), (1, -1))),
-                (((-1, -2), (2, -2))),
-                (((0, 0), (1, 0))),
+                (((0, -1), (0, -1))),
+                (((0, 3), (0, 3))),
+                (((0, 2), (0, 2))),
             )
-        result = move_matching(source, wing_left, WING_COLORS, *cast_wings[frame][0])
-        result = move_matching(result, wing_right, WING_COLORS, *cast_wings[frame][1])
+        result = cast_wing_pose(
+            source,
+            wing_left,
+            wing_right,
+            cast_wings[frame][0],
+            cast_wings[frame][1],
+            f"{direction} cast {frame + 1}",
+        )
         if frame == 0:
             colored = replace_colors(result, {GOLD["highlight"]: "#ffe48a"})
         elif frame == 1:

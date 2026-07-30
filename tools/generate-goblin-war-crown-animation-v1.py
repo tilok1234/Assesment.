@@ -9,6 +9,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
+from boss_animation_generator_common import planted_body_bob
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ROOT = PROJECT_ROOT / "death-review" / "boss-48-drafts"
@@ -228,11 +230,7 @@ def animation_pose(
     if animation == "idle":
         if frame == 0:
             return source.copy()
-        settled = squash_pose(source, 19)
-        return replace_region_colors(settled, crown, {
-            GOLD["highlight"]: GOLD["base"],
-            GOLD["base"]: GOLD["shadow"],
-        })
+        return planted_body_bob(source, 20, f"{direction} goblin idle")
 
     if animation == "walk":
         if frame == 0:

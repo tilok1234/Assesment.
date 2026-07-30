@@ -1,4 +1,4 @@
-// Immutable contract for review-approved 48x48 boss animation pilots.
+// Immutable contract for review-only 48x48 boss animation pilots.
 // This catalog is independent from the procedural 24x24 renderer and sheets.
 
 export const BOSS_ANIMATION_FRAME_SIZE = 48;
@@ -75,4 +75,17 @@ export const BOSS_ANIMATION_PILOTS = Object.freeze([
   animationPilot('cyclops-forge-titan', 'Cyclops Forge-Titan'),
   animationPilot('pit-fiend-juggernaut', 'Pit-Fiend Juggernaut'),
   animationPilot('goblin-war-crown', 'Goblin War-Crown'),
+  animationPilot('lava-core-colossus', 'Lava-Core Colossus'),
+  animationPilot('abyssal-crown-kraken', 'Abyssal Crown-Kraken'),
+  animationPilot('sun-crown-griffin', 'Sun-Crown Griffin'),
+  animationPilot('royal-night-elf-prince', 'Royal Night Elf Prince'),
+  animationPilot('living-pyre', 'The Living Pyre'),
+  animationPilot('tide-man-the-blue', 'Tide Man the Blue'),
+  animationPilot('dryad-of-nature', 'The Dryad of Nature'),
+  animationPilot('fierce-void-dragon', 'Fierce Void Dragon'),
+  animationPilot('dragon-rider-of-the-fallen', 'Dragon Rider of the Fallen'),
+  animationPilot('ogre-brute-king', 'Ogre Brute King'),
+  animationPilot('mecha-deathbot', 'Mecha Deathbot'),
+  animationPilot('flowered-jungle-tribe-beast-man', 'Flowered Jungle Tribe Beast-Man'),
+  animationPilot('chad-the-fantastic-guard', 'Chad the Fantastic Guard'),
 ]);

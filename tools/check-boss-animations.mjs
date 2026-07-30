@@ -131,6 +131,19 @@ const generatorSources = new Map(await Promise.all([
   ['cyclops-forge-titan', 'generate-cyclops-forge-titan-animation-v1.py', 'generate_cyclops_forge_titan_directions_v1'],
   ['pit-fiend-juggernaut', 'generate-pit-fiend-juggernaut-animation-v1.py', 'generate_pit_fiend_juggernaut_directions_v1'],
   ['goblin-war-crown', 'generate-goblin-war-crown-animation-v1.py', 'generate_goblin_war_crown_directions_v1'],
+  ['lava-core-colossus', 'generate-lava-core-colossus-animation-v1.py', 'generate_lava_core_colossus_directions_v1'],
+  ['abyssal-crown-kraken', 'generate-abyssal-crown-kraken-animation-v1.py', 'generate_abyssal_crown_kraken_directions_v1'],
+  ['sun-crown-griffin', 'generate-sun-crown-griffin-animation-v1.py', 'generate_sun_crown_griffin_directions_v1'],
+  ['royal-night-elf-prince', 'generate-royal-night-elf-prince-animation-v1.py', 'generate_royal_night_elf_prince_directions_v1'],
+  ['living-pyre', 'generate-living-pyre-animation-v1.py', 'generate_living_pyre_directions_v1'],
+  ['tide-man-the-blue', 'generate-tide-man-the-blue-animation-v1.py', 'generate_tide_man_the_blue_directions_v1'],
+  ['dryad-of-nature', 'generate-dryad-of-nature-animation-v1.py', 'generate_dryad_of_nature_directions_v1'],
+  ['fierce-void-dragon', 'generate-fierce-void-dragon-animation-v1.py', 'generate_fierce_void_dragon_directions_v1'],
+  ['dragon-rider-of-the-fallen', 'generate-dragon-rider-of-the-fallen-animation-v1.py', 'generate_dragon_rider_of_the_fallen_directions_v1'],
+  ['ogre-brute-king', 'generate-ogre-brute-king-animation-v1.py', 'generate_ogre_brute_king_directions_v1'],
+  ['mecha-deathbot', 'generate-mecha-deathbot-animation-v1.py', 'generate_mecha_deathbot_directions_v1'],
+  ['flowered-jungle-tribe-beast-man', 'generate-flowered-jungle-tribe-beast-man-animation-v1.py', 'generate_flowered_jungle_tribe_beast_man_directions_v1'],
+  ['chad-the-fantastic-guard', 'generate-chad-the-fantastic-guard-animation-v1.py', 'generate_chad_the_fantastic_guard_directions_v1'],
 ].map(async ([id, filename, directionModule]) => [
   id,
   {
@@ -175,7 +188,7 @@ check(
     && engine.BOSS_ANIMATION_PROFILE.effects === false,
   'boss animation profile must stay native 1x, animated, and effects-off',
 );
-check(engine.BOSS_ANIMATION_PILOTS.length === 6, 'exactly six full boss animation pilots may be integrated in this slice');
+check(engine.BOSS_ANIMATION_PILOTS.length === 19, 'exactly nineteen full boss animation pilots must be integrated');
 check(
   JSON.stringify(engine.BOSS_ANIMATION_PILOTS.map(({ id }) => id)) === JSON.stringify([
     'ancient-mirejaw',
@@ -184,16 +197,30 @@ check(
     'cyclops-forge-titan',
     'pit-fiend-juggernaut',
     'goblin-war-crown',
+    'lava-core-colossus',
+    'abyssal-crown-kraken',
+    'sun-crown-griffin',
+    'royal-night-elf-prince',
+    'living-pyre',
+    'tide-man-the-blue',
+    'dryad-of-nature',
+    'fierce-void-dragon',
+    'dragon-rider-of-the-fallen',
+    'ogre-brute-king',
+    'mecha-deathbot',
+    'flowered-jungle-tribe-beast-man',
+    'chad-the-fantastic-guard',
   ]),
-  'full boss animation pilots must remain Ancient Mirejaw, Bone Reliquary King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut, then Goblin War-Crown',
+  'full boss animation pilots must retain the authorized nineteen-boss direction order',
 );
 check(
-  engine.BOSS_DIRECTION_PILOTS.filter(({ id }) => !engine.BOSS_ANIMATION_PILOTS.some((pilot) => pilot.id === id)).length === 3,
-  'the other three boss direction pilots must remain static-only',
+  engine.BOSS_DIRECTION_PILOTS.every(({ id }) => engine.BOSS_ANIMATION_PILOTS.some((pilot) => pilot.id === id)),
+  'every approved boss direction pilot must expose the full animation contract',
 );
 
 const expectedAssetNames = [];
 for (const pilot of engine.BOSS_ANIMATION_PILOTS) {
+  const controlOpaques = new Map();
   const fullRelative = pilot.fullSheet.replace(/^\.\//, '');
   const fullBytes = await readFile(path.join(root, ...fullRelative.split('/')));
   const fullCheckpoint = await readFile(path.join(checkpointRoot, path.basename(fullRelative)));
@@ -268,6 +295,19 @@ for (const pilot of engine.BOSS_ANIMATION_PILOTS) {
         }
         check(opaque > 0, `${label}: frame must not be empty`);
         check(minX >= 2 && minY >= 2 && maxX <= 45 && maxY <= 45, `${label}: frame must keep a two-pixel safety border`);
+        const protectsNonDeathDensity = ['cyclops-forge-titan', 'pit-fiend-juggernaut'].includes(pilot.id);
+        if (protectsNonDeathDensity && animation.id === 'idle' && frameIndex === 0) {
+          controlOpaques.set(direction, opaque);
+        }
+        if (protectsNonDeathDensity && animation.id !== 'death') {
+          const controlOpaque = controlOpaques.get(direction);
+          const minimumRatio = pilot.id === 'cyclops-forge-titan' ? 0.78 : 0.8;
+          check(Number.isInteger(controlOpaque), `${label}: approved boss control density must be available`);
+          check(
+            Number.isInteger(controlOpaque) && opaque / controlOpaque >= minimumRatio,
+            `${label}: non-death frame lost too much of the approved boss silhouette`,
+          );
+        }
         const globalColumn = animation.column + frameIndex;
         cellEquals(fullSheet, globalColumn, directionIndex, frame, `${label} full`);
         cellEquals(animationSheet, frameIndex, directionIndex, frame, `${label} animation`);
@@ -283,7 +323,24 @@ for (const pilot of engine.BOSS_ANIMATION_PILOTS) {
           `${pilot.id}/${direction}: Idle must use authored silhouette motion rather than a color-only pulse`,
         );
       }
-      if (['scorpion-empress', 'cyclops-forge-titan', 'pit-fiend-juggernaut', 'goblin-war-crown'].includes(pilot.id)) {
+      if ([
+        'scorpion-empress',
+        'cyclops-forge-titan',
+        'pit-fiend-juggernaut',
+        'goblin-war-crown',
+        'lava-core-colossus',
+        'abyssal-crown-kraken',
+        'sun-crown-griffin',
+        'living-pyre',
+        'tide-man-the-blue',
+        'dryad-of-nature',
+        'fierce-void-dragon',
+        'dragon-rider-of-the-fallen',
+        'ogre-brute-king',
+        'mecha-deathbot',
+        'flowered-jungle-tribe-beast-man',
+        'chad-the-fantastic-guard',
+      ].includes(pilot.id)) {
         check(
           distinctSilhouettes.size === animation.frames,
           `${pilot.id}/${animation.id}/${direction}: every frame must change the action silhouette`,
@@ -334,7 +391,52 @@ for (const [relativePath, source] of boundarySources) {
 for (const [id, generator] of generatorSources) {
   check(generator.source.includes(generator.directionModule), `${id}: animation generator must derive from its approved direction sources`);
   check(generator.source.includes('apply_engine_treatment.mjs'), `${id}: animation generator must retain the Form + Complete B treatment path`);
+  check(
+    generator.source.includes('boss_animation_generator_common'),
+    `${id}: animation generator must retain the shared deterministic builder`,
+  );
+  const idleBlocks = generator.source
+    .split('if animation == "idle":')
+    .slice(1)
+    .map((block) => block.split('if animation == "walk":')[0]);
+  check(idleBlocks.length > 0, `${id}: animation generator must define Idle`);
+  check(
+    idleBlocks.every((block) => block.includes('planted_body_bob(')),
+    `${id}: every Idle pose must use the planted full-body bob`,
+  );
+  check(
+    idleBlocks.every((block) => !block.includes('squash_pose(')),
+    `${id}: Idle must not regress to whole-sprite squash motion`,
+  );
 }
+for (const id of [
+  'lava-core-colossus',
+  'abyssal-crown-kraken',
+  'sun-crown-griffin',
+  'royal-night-elf-prince',
+  'living-pyre',
+  'tide-man-the-blue',
+  'dryad-of-nature',
+  'fierce-void-dragon',
+  'dragon-rider-of-the-fallen',
+  'ogre-brute-king',
+  'mecha-deathbot',
+  'flowered-jungle-tribe-beast-man',
+  'chad-the-fantastic-guard',
+]) {
+  const generatorSource = generatorSources.get(id)?.source ?? '';
+  check(
+    generatorSource.includes('move_region'),
+    `${id}: animation generator must retain authored region motion`,
+  );
+}
+const cyclopsGenerator = generatorSources.get('cyclops-forge-titan')?.source ?? '';
+check(cyclopsGenerator.includes('assert_preserved_layer'), 'cyclops-forge-titan: generator must retain its body-layer preservation invariant');
+check(!cyclopsGenerator.includes('def move_matching('), 'cyclops-forge-titan: generator must not restore destructive overlapping-region motion');
+const pitFiendGenerator = generatorSources.get('pit-fiend-juggernaut')?.source ?? '';
+const pitFiendCastBlock = pitFiendGenerator.split('if animation == "cast":')[1]?.split('if animation == "hurt":')[0] ?? '';
+check(pitFiendGenerator.includes('assert_preserved_source'), 'pit-fiend-juggernaut: generator must retain its source-preservation invariant');
+check(!pitFiendCastBlock.includes('move_matching('), 'pit-fiend-juggernaut: Cast must not restore destructive wing motion');
 check(!appSource.includes("{ mode: 'boss'"), 'Boss animation workspace must remain outside persisted sprite mode');
 check(appSource.includes("let bossAnimation = E.BOSS_ANIMATIONS[0].id;"), 'Boss animation selection must remain ephemeral editor state');
 check(appSource.includes("workspaceMode === 'boss' ? bossFrame : state.frame"), 'Shared frame stepping must use the ephemeral Boss frame in Boss mode');
@@ -361,4 +463,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('Boss animation structural gate passed: Ancient Mirejaw + Bone Reliquary King + Scorpion Empress + Cyclops Forge-Titan + Pit-Fiend Juggernaut + Goblin War-Crown, 480 distinct 48x48 frames, 66 native 1x sheets, exact control frames, immutable facade, isolated dependencies.');
+console.log('Boss animation structural gate passed: all nineteen review boss pilots, 1520 distinct 48x48 frames, 209 native 1x sheets, exact control frames, immutable facade, isolated dependencies.');

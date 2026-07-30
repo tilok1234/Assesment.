@@ -113,7 +113,7 @@ check(
     && engine.BOSS_DIRECTION_PILOT_PROFILE.effects === false,
   'boss direction pilot policy identity must stay review-only, native 1x, static, and effects-off',
 );
-check(engine.BOSS_DIRECTION_PILOTS.length === 9, 'boss direction catalog must contain the nine approved pilots');
+check(engine.BOSS_DIRECTION_PILOTS.length === 19, 'boss direction catalog must contain the nineteen review pilots');
 
 const ids = engine.BOSS_DIRECTION_PILOTS.map(({ id }) => id);
 check(new Set(ids).size === ids.length, 'boss direction pilot ids must be unique');
@@ -187,7 +187,7 @@ const actualAssetNames = (await readdir(runtimeAssetRoot))
   .sort();
 check(
   JSON.stringify(actualAssetNames) === JSON.stringify(expectedAssetNames.sort()),
-  'runtime boss asset folder must contain exactly the nine static direction sheets and 36 direction frames',
+  'runtime boss asset folder must contain exactly the nineteen static direction sheets and 76 direction frames',
 );
 
 const catalogImports = [...catalogSource.matchAll(/from\s+['"]([^'"]+)['"]/g)];
@@ -220,4 +220,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('Boss direction structural gate passed: 9 pilots, 36 distinct 48x48 frames, 9 native 48x192 sheets, immutable facade, isolated dependencies.');
+console.log('Boss direction structural gate passed: 19 pilots, 76 distinct 48x48 frames, 19 native 48x192 sheets, immutable facade, isolated dependencies.');

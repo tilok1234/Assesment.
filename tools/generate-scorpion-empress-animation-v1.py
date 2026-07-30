@@ -9,6 +9,8 @@ from pathlib import Path
 
 from PIL import Image
 
+from boss_animation_generator_common import planted_body_bob
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ROOT = PROJECT_ROOT / "death-review" / "boss-48-drafts"
@@ -202,12 +204,7 @@ def front_or_back_pose(
     if animation == "idle":
         if frame == 0:
             return source.copy()
-        settled = move_matching(source, tail_tip, MOTION_COLORS, -1, 0)
-        return replace_region_colors(
-            settled,
-            face,
-            {CRIMSON["highlight"]: CRIMSON["shadow"]},
-        )
+        return planted_body_bob(source, 20, "scorpion front/back idle")
 
     if animation == "walk":
         if frame == 0:
@@ -297,12 +294,7 @@ def profile_pose(source: Image.Image, animation: str, frame: int) -> Image.Image
     if animation == "idle":
         if frame == 0:
             return source.copy()
-        settled = move_matching(source, tail_tip, MOTION_COLORS, -1, 0)
-        return replace_region_colors(
-            settled,
-            face,
-            {CRIMSON["highlight"]: CRIMSON["shadow"]},
-        )
+        return planted_body_bob(source, 20, "scorpion profile idle")
 
     if animation == "walk":
         if frame == 0:

@@ -9,6 +9,8 @@ from pathlib import Path
 
 from PIL import Image
 
+from boss_animation_generator_common import planted_body_bob
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ROOT = PROJECT_ROOT / "death-review" / "boss-48-drafts"
@@ -174,7 +176,7 @@ def front_or_back_pose(source: Image.Image, animation: str, frame: int) -> Image
     if animation == "idle":
         if frame == 0:
             return source.copy()
-        return move_box(source, (5, 2, 18, 16), 0, 1)
+        return planted_body_bob(source, 20, "bone king front/back idle")
 
     if animation == "walk":
         if frame == 0:
@@ -249,7 +251,7 @@ def profile_pose(source: Image.Image, animation: str, frame: int) -> Image.Image
     if animation == "idle":
         if frame == 0:
             return source.copy()
-        return move_box(source, (3, 2, 16, 16), 0, 1)
+        return planted_body_bob(source, 20, "bone king profile idle")
 
     if animation == "walk":
         if frame == 0:

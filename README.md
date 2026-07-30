@@ -6,10 +6,9 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 
 - Player assembly across Human, Elf, Orc, Goblin, Tiefling, Celestial, Dwarf, Undead, Lizardfolk, and Beastkin species; Classic, Lean, Sturdy, and Heroic body builds; plus skin, 11 hairstyles, six expressions, eight facial details, 12 headgear choices, nine outfits across five armor tiers, weapon type and tier, shield, the Lantern utility off-hand, and palette choices
 - 57 enemy families with 202 predefined variants
-- A separate Boss Directions tab with nine approved 48x48 direction pilots;
-  six now have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
-  native 1x animation-sheet download, while three retain the approved static
-  four-direction fallback
+- A separate Bosses tab with nineteen review-only 48x48 direction pilots and full
+  Idle/Walk/Attack/Cast/Hurt/Death animation workspaces, including native 1x
+  full, direction, and animation-sheet downloads
 - 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
 - A Combat Loadout Builder that previews those overlays on players and enemies, supplies automatic weapon-aware defaults, supports per-slot overrides, saves named recipes, and exports game-ready JSON
 - An Equipment Variant Batch Builder that turns one character identity into bounded weapon, armor, shield, utility-off-hand, or 121-sheet RPG equipment collections with per-variant loadouts and only the combat effects they actually reference
@@ -113,13 +112,10 @@ history-only and never enters presets, packs, recipes, exports, or schemas. If
 no compatible alternative exists, the editor reports that result without
 changing the player.
 
-The Bosses tab is a deliberately isolated game-test surface for the nine
-approved 48x48 direction pilots. Six pilots—Ancient Mirejaw, Bone Reliquary
-King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut, and Goblin
-War-Crown—also expose the full 20-column animation contract, playback/frame
-inspection, and native full/direction/animation downloads. Lava-Core Colossus,
-Abyssal Crown-Kraken, and Sun-Crown Griffin remain static four-direction
-fallbacks. Boss selection, direction, animation, frame, and speed are
+The Bosses tab is a deliberately isolated game-test surface for nineteen
+review-only 48x48 direction pilots. All nineteen expose the full 20-column animation
+contract, playback/frame inspection, and native full/direction/animation
+downloads. Boss selection, direction, animation, frame, and speed are
 ephemeral: they do not enter current-document persistence, history, presets,
 Production/Wildcard rolls, ordinary packs, Complete Kits, game-pack exports,
 effects, or the 24x24 procedural renderer.
@@ -338,28 +334,45 @@ Every component shares the same animation grid and has been validated to recompo
 
 ## Boss animation pilot
 
-The review-only **Bosses** workspace now exposes Ancient Mirejaw, Bone
-Reliquary King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut,
-and Goblin War-Crown as the first six complete 48x48 animation pilots. All six use the
-Player-facing animation names and counts (Idle x2, Walk x4, Attack x4, Cast x4,
-Hurt x2, Death x4), four direction rows, and native 20-column `960x192` full
-sheets. Playback, frame inspection, speed, Cycle all, direction controls, and
-native full/current animation/current direction downloads are available
-without adding Boss to the persisted sprite document.
+The review-only **Bosses** workspace now exposes all nineteen direction pilots as
+complete 48x48 animation candidates: Ancient Mirejaw, Bone Reliquary King,
+Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut, Goblin War-Crown,
+Lava-Core Colossus, Abyssal Crown-Kraken, Sun-Crown Griffin, Royal Night Elf
+Prince, The Living Pyre, Tide Man the Blue, The Dryad of Nature, and Fierce
+Void Dragon, followed by the unmounted Dragon Rider of the Fallen, the massive
+Ogre Brute King, Mecha Deathbot, Flowered Jungle Tribe Beast-Man, and Chad the
+Fantastic Guard. All nineteen
+use the Player-facing animation
+names and counts (Idle x2,
+Walk x4, Attack x4, Cast x4, Hurt x2, Death x4), four direction rows, and
+native 20-column `960x192` full sheets. Playback, frame inspection, speed,
+Cycle all, direction controls, and native full/current animation/current
+direction downloads are available without adding Boss to the persisted sprite
+document.
 
-The other three approved bosses remain static four-direction pilots and are
-labeled that way in the interface. All boss assets remain effects-off and
-outside Enemy mode, procedural renderers, production rolls, presets,
-character/game packs, fixtures, baselines, release artifacts, and Windows
-builds. Ancient Mirejaw, Bone Reliquary King, Scorpion Empress, and Cyclops
-Forge-Titan were accepted in live review; Pit-Fiend Juggernaut was repaired
-after live review, and Goblin War-Crown is the current visual-review candidate.
+All boss assets remain effects-off and outside Enemy mode, procedural
+renderers, production rolls, presets, character/game packs, fixtures,
+baselines, release artifacts, and Windows builds. Ancient Mirejaw, Bone
+Reliquary King, Scorpion Empress, and Cyclops Forge-Titan were accepted in
+live review; Pit-Fiend Juggernaut was repaired after live review. Goblin
+War-Crown and the three promoted static pilots remain visual-review
+candidates. Royal Night Elf Prince was accepted after its stronger Walk bob,
+and The Living Pyre was accepted after its redder eye-glow pass. The Dryad of
+Nature was accepted after its first full live review. Fierce Void Dragon was
+accepted after its full anatomy rebuild. Dragon Rider of the Fallen was
+accepted after its first complete live review. Tide Man the Blue remains an
+unaccepted visual-review candidate. Ogre Brute King also remains unaccepted.
+Mecha Deathbot was accepted after its completed live review and refined
+reactor-overload effect. Flowered Jungle Tribe Beast-Man was accepted when
+the next-boss continuation began, while Chad the Fantastic Guard is the
+newest current candidate.
 
-All six Idle loops use authored breathing or weight-shift silhouettes rather
-than palette-only flashing. Scorpion Empress additionally uses a blink and
-stinger-flick Idle, stable-body leg scuttling, a tail-led strike, stinger
-casting, impact squash, and a weighted armored collapse so each action frame
-changes her readable outline.
+All nineteen Idle loops use the shared planted-body bob: frame 1 is the exact
+direction pilot and frame 2 translates the connected body mass one logical
+pixel while retaining the ground-contact rows. Scorpion Empress additionally
+uses stable-body leg scuttling, a tail-led strike, stinger casting, impact
+squash, and a weighted armored collapse so each action frame changes her
+readable outline.
 
 Cyclops Forge-Titan uses a weighted upper-body/hammer settle, planted-foot
 stomp cycle, hammer wind-up/slam, furnace-core channel, bright Hurt recoil, and
@@ -372,6 +385,62 @@ four-stage wing-folded collapse.
 Goblin War-Crown uses a compact commander weight shift, planted march, royal
 shield bash, crown-command pulse, bright Hurt recoil, and banner-led collapse.
 
+Lava-Core Colossus uses a heavy molten settle, alternating stone steps, a
+magma slam, core-channel flare, bright Hurt response, and staged collapse.
+
+Abyssal Crown-Kraken uses a tentacle weight shift, alternating crawl, lash
+strike, abyssal crown aura, bright Hurt response, and tentacle-folded collapse.
+
+Sun-Crown Griffin uses a winged settle, alternating stride, talon-dive slash,
+solar crown flare, bright Hurt response, and wing-folded collapse.
+
+Royal Night Elf Prince uses measured duelist steps with full-body contact
+dips, a crescent moonsteel glaive sweep, orbiting lunar cast motes, bright Hurt
+recoil, and a regal cape-led collapse.
+
+The Living Pyre keeps a visible scorched human beneath its flames, with heavy
+contact-dip strides, a burning-fist sweep, orbiting inferno cast, white-hot
+Hurt recoil, and a staged extinguishing collapse.
+
+Tide Man the Blue uses a planted tidal settle, alternating contact-dip strides,
+a coral-steel trident sweep, orbiting water cast droplets, bright Hurt recoil,
+and a staged wave-like collapse.
+
+The Dryad of Nature uses a planted canopy settle, alternating root-foot
+contact dips, a thorn-vine sweep, orbiting leaf-and-bloom casting, bright sap
+Hurt recoil, and a staged withering collapse.
+
+Fierce Void Dragon uses a planted wing-and-chest settle, alternating claw
+strides, a three-rend void slash, orbiting rift motes, bright core Hurt recoil,
+and a wing-folded collapse into inert void armor.
+
+Dragon Rider of the Fallen stays visibly unmounted through separate armored
+legs, clawed sabatons, and planted contact steps. Its broken dragon-lance rend,
+spectral bond-flame cast, bright bone-and-scale Hurt recoil, and torn
+wing-cloak collapse preserve the fallen rider identity in every direction.
+
+Ogre Brute King uses crushing contact-dip stomps, an oversized ironwood-maul
+slam, crown-lit royal roar, bright Hurt recoil, and a heavy mantle-first
+collapse while preserving its battered crown, tusks, belly plate, and huge
+free fist.
+
+Mecha Deathbot uses a servo-weighted planted Idle, alternating piston march,
+crusher-claw cleave, four outward reactor-overload arcs, white-hot damage
+flash, and a staged power-loss collapse while preserving its red visor,
+shoulder cannon, armored core, magnetic feet, and asymmetrical claw.
+
+Flowered Jungle Tribe Beast-Man uses a planted floral-mane breath, prowling
+claw steps with full-body contact dips, a thornwood-spear sweep, an outward
+jungle-bloom cast that keeps the beast readable, bright Hurt recoil, and a
+flower-wilting collapse while preserving its feline-ape muzzle, tusks,
+ceremonial flowers, leaf-fiber armor, and digitigrade claws.
+
+Chad the Fantastic Guard uses a full-cape heroic breath, deliberate parade
+stomps with armored contact dips, a radiant shield-and-halberd bash, an
+outward guard-oath star cast, bright Hurt recoil, and a noble armor-first
+collapse while preserving his blond pompadour, square jaw, cobalt-and-gold
+plate, crimson cape, star shield, and ceremonial halberd.
+
 ## Project layout
 
 - `index.html` - standard application entry point
@@ -383,23 +452,39 @@ shield bash, crown-command pulse, bright Hurt recoil, and banner-led collapse.
 - `engine/` - focused animation, palette, player-option, enemy, production-roll, Wildshot game-pack contract, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
 - `engine/catalogs/boss-directions.js`, `engine/catalogs/boss-animations.js`,
   and `engine/assets/bosses/` - immutable review-only boss direction and
-  Mirejaw/Bone King/Scorpion Empress/Cyclops Forge-Titan/Pit-Fiend/Goblin animation
-  profiles plus checkpoint-exact runtime PNGs
+  nineteen-boss animation profiles plus checkpoint-exact runtime PNGs
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build
 - `tools/check-project.mjs` - project and asset validator
 - `tools/check-boss-directions.mjs` - focused boss asset, immutability, facade,
   native-sheet, and dependency-boundary gate
-- `tools/check-boss-animations.mjs` - focused 480-frame six-boss corpus,
+- `tools/check-boss-animations.mjs` - focused 1520-frame nineteen-boss corpus,
   full/scoped-sheet, control-frame, immutability, UI, and isolation gate
 - `tools/generate-mirejaw-animation-v1.py`,
   `tools/generate-bone-king-animation-v1.py`,
   `tools/generate-scorpion-empress-animation-v1.py`,
   `tools/generate-cyclops-forge-titan-animation-v1.py`,
-  `tools/generate-pit-fiend-juggernaut-animation-v1.py`, and
-  `tools/generate-goblin-war-crown-animation-v1.py` - deterministic
-  authored-pose generators for the six review/runtime animation pilots
+  `tools/generate-pit-fiend-juggernaut-animation-v1.py`,
+  `tools/generate-goblin-war-crown-animation-v1.py`,
+  `tools/generate-lava-core-colossus-animation-v1.py`,
+  `tools/generate-abyssal-crown-kraken-animation-v1.py`,
+  `tools/generate-sun-crown-griffin-animation-v1.py`,
+  `tools/generate-royal-night-elf-prince-animation-v1.py`,
+  `tools/generate-living-pyre-animation-v1.py`,
+  `tools/generate-tide-man-the-blue-animation-v1.py`,
+  `tools/generate-dryad-of-nature-animation-v1.py`,
+  `tools/generate-fierce-void-dragon-animation-v1.py`,
+  `tools/generate-dragon-rider-of-the-fallen-animation-v1.py`,
+  `tools/generate-ogre-brute-king-animation-v1.py`,
+  `tools/generate-mecha-deathbot-animation-v1.py`, and
+  `tools/generate-flowered-jungle-tribe-beast-man-animation-v1.py`, and
+  `tools/generate-chad-the-fantastic-guard-animation-v1.py` - deterministic
+  authored-pose generators for the nineteen review/runtime animation pilots;
+  the newest thirteen
+  share the full builder in `tools/boss_animation_generator_common.py`, while
+  all nineteen share its planted
+  Idle helper
 - `tools/production-roll-review.mjs` - deterministic balanced Production/Wildcard review and audit generator
 - `src-tauri/` - Tauri 2 Windows wrapper, permissions, CSP, and icon resources
 - `ARCHITECTURE.md` - engine boundaries, dependency direction, and safe extension points

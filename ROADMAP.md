@@ -105,7 +105,7 @@ Exit criteria:
 
 Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
 
-Current continuation checkpoint (2026-07-28): the complete 57-family
+Current continuation checkpoint (2026-07-29): the complete 57-family
 enemy-outline rollout remains visually approved. Its historical 12-column
 checkpoint `ac860aa` covered 9,696 source frames / 29,088 None-B-C cases; the
 current 20-column Cast/Death contract extends the structural gate to 16,160 /
@@ -113,9 +113,28 @@ current 20-column Cast/Death contract extends the structural gate to 16,160 /
 rerolls, and the public Cast/Death actor contract are complete. Pushed
 checkpoint `d6a56c1` is followed by pushed boss-direction checkpoint
 `08d1ef7` and pushed animated-workspace checkpoint `f15a9cf`, with six
-animated 48x48 pilots plus three static fallbacks. Goblin War-Crown remains a
-visual-review candidate; the technical checkpoint does not imply final visual
-acceptance. Existing None fixtures remain unchanged, effects start Off, the
+animated 48x48 pilots plus three static fallbacks at that historical point.
+The current uncommitted continuation promotes the final three pushed pilots to
+full animation candidates and adds Royal Night Elf Prince as a tenth
+direction-and-animation candidate, then adds The Living Pyre as an eleventh
+direction-and-animation candidate, Tide Man the Blue as a twelfth, and The
+Dryad of Nature as a thirteenth, followed by Fierce Void Dragon as a
+fourteenth, the unmounted Dragon Rider of the Fallen as a fifteenth, Ogre
+Brute King as a sixteenth, Mecha Deathbot as a seventeenth, Flowered Jungle
+Tribe Beast-Man as an eighteenth, and Chad the Fantastic Guard as a
+nineteenth. All nineteen now expose the review contract.
+Goblin War-Crown, the promoted three, and The Living Pyre remain visual-review
+candidates historically; Royal Night Elf Prince was accepted after its
+stronger Walk bob, The Living Pyre was accepted after its redder eye-glow pass,
+and Tide Man the Blue remains unaccepted; The Dryad of Nature and Dragon Rider
+of the Fallen were accepted after their first complete live reviews, Fierce
+Void Dragon was accepted after its anatomy rebuild; Ogre Brute King remains
+unaccepted; Mecha Deathbot was accepted after its completed live review and
+refined reactor cast; Flowered Jungle Tribe Beast-Man was accepted when the
+next-boss continuation began; and Chad the Fantastic Guard is the newest
+review candidate.
+No technical checkpoint implies final visual acceptance. Existing
+None fixtures remain unchanged, effects start Off, the
 effect-after-character shield/equipment occlusion issue remains on ice, and no
 current Windows release build exists. See `HANDOFF.md`.
 
@@ -254,7 +273,36 @@ connection to Enemy mode, production renderers, persistence, packs, fixtures,
 release artifacts, or Windows builds. The six-boss structural gate passes 480
 distinct frames and 66 native sheets. Goblin War-Crown remains the current
 visual-review candidate, so the pushed checkpoint must not be described as
-final visual acceptance.
+final visual acceptance. Current uncommitted review work promotes Lava-Core
+Colossus, Abyssal Crown-Kraken, and Sun-Crown Griffin to full animation
+candidates, expanding the structural gate to nine catalogs, 720 frames, and
+99 native sheets. It then adds Royal Night Elf Prince as a tenth complete
+candidate, expanding the current gate to ten catalogs, 800 frames, and 110
+native sheets. The Living Pyre follows as the eleventh complete candidate,
+expanding the current gate to eleven catalogs, 880 frames, and 121 native
+sheets. The prince was accepted after its stronger Walk bob; The Living Pyre
+was accepted after its redder eye-glow pass. Tide Man the Blue follows as the
+twelfth complete candidate, expanding the current gate to twelve catalogs, 960
+frames, and 132 native sheets. The Dryad of Nature follows as the thirteenth
+complete candidate, expanding the current gate to thirteen catalogs, 1040
+frames, and 143 native sheets. Fierce Void Dragon follows as the fourteenth
+complete candidate, expanding the current gate to fourteen catalogs, 1120
+frames, and 154 native sheets. Dragon Rider of the Fallen follows as the
+fifteenth complete candidate, expanding the current gate to fifteen catalogs,
+1200 frames, and 165 native sheets. Ogre Brute King follows as the sixteenth
+complete candidate, expanding the current gate to sixteen catalogs, 1280
+frames, and 176 native sheets; Tide Man remains unaccepted, Ogre Brute King is
+also unaccepted, and the Dryad, rebuilt dragon, and unmounted rider were
+accepted after live review. Mecha Deathbot follows as the seventeenth complete
+candidate, expanding the then-current gate to seventeen catalogs, 1360 frames,
+and 187 native sheets; it was accepted after completed live review and a
+refined outward-arc reactor cast. Flowered Jungle Tribe Beast-Man follows as
+the eighteenth complete candidate, expanding the current gate to eighteen
+catalogs, 1440 frames, and 198 native sheets; it was accepted when the
+next-boss continuation began. Chad the Fantastic Guard follows as the
+nineteenth complete candidate, expanding the current gate to nineteen
+catalogs, 1520 frames, and 209 native sheets; he is the newest visual-review
+candidate.
 
 Candidate additions:
 

@@ -1,16 +1,32 @@
 # Boss 48 Pilots
 
-This directory is the review-source checkpoint for nine approved boss
-direction pilots. Checkpoint-exact runtime copies are exposed by the
+This directory is the review-source checkpoint for nineteen boss direction pilots.
+Checkpoint-exact runtime copies are exposed by the
 assembler's review-only Bosses tab, while the pilots remain separate from
 production sprite generation and renderers. Ancient Mirejaw, Bone Reliquary
 King, Scorpion Empress, Cyclops Forge-Titan, and Pit-Fiend Juggernaut are the
 first five full animation pilots, followed by Goblin War-Crown as the sixth;
-the other three bosses remain static.
+Lava-Core Colossus, Abyssal Crown-Kraken, and Sun-Crown Griffin complete the
+pushed nine-boss set, Royal Night Elf Prince is the tenth candidate, The
+Living Pyre is the eleventh, Tide Man the Blue is the twelfth, The Dryad of
+Nature is the thirteenth, and Fierce Void Dragon is the fourteenth current
+review-animation candidate. Dragon Rider of the Fallen is the fifteenth
+candidate, remains visibly unmounted, and was accepted after its first
+complete live review. Ogre Brute King is the sixteenth candidate, with a
+battered crown, tusks, fur-and-chain mantle, and oversized ironwood maul.
+Mecha Deathbot is the seventeenth candidate, with a red sensor visor, reactor
+chest, piston limbs, shoulder cannon, and crusher claw; it was accepted after
+completed live review and a refined outward-arc reactor cast. Flowered Jungle
+Tribe Beast-Man is the eighteenth candidate, with a tawny feline-ape body,
+living flower crown, tusked muzzle, leaf-fiber armor, clawed feet, and a
+thornwood spear; it was accepted when the next-boss continuation began. Chad
+the Fantastic Guard is the nineteenth and newest candidate, with a blond
+pompadour, square jaw, cobalt-and-gold plate, crimson cape, radiant star
+shield, and ceremonial halberd.
 
 ## Current contract
 
-- Nine bosses.
+- Nineteen bosses.
 - Four directions in stable order: Down, Left, Right, Up.
 - One 48x48 hard-alpha frame per direction.
 - One 48x192 native direction sheet per boss.
@@ -43,8 +59,8 @@ either boss through the Player renderer or sheet builder.
 The runtime copies live beneath `engine/assets/bosses/`. Run
 `node tools/check-boss-directions.mjs` to prove byte parity, dimensions, hard
 alpha, direction-sheet assembly, immutability, and dependency isolation.
-Run `node tools/check-boss-animations.mjs` to validate all six 80-frame
-corpora, all 66 assembled sheets, exact control frames, hard alpha, safety
+Run `node tools/check-boss-animations.mjs` to validate all nineteen 80-frame
+corpora, all 209 assembled sheets, exact control frames, hard alpha, safety
 borders, immutable facade, UI contract, and dependency isolation.
 
 Open `boss-directions-review.html` through the local development server for the

@@ -86,12 +86,15 @@ checkSyntax('engine/weapon-renderer.js');
 checkSyntax('tools/build.mjs');
 checkSyntax('tools/check-boss-animations.mjs');
 checkSyntax('tools/check-boss-directions.mjs');
+checkSyntax('tools/check-pack-publisher.mjs');
 checkSyntax('tools/cast-review.mjs');
 checkSyntax('tools/death-review.mjs');
 checkSyntax('tools/dev-server.mjs');
+checkSyntax('tools/export-established-boss-pack.mjs');
 checkSyntax('tools/generate-shield-placement-audit.mjs');
 checkSyntax('tools/outline-review.mjs');
 checkSyntax('tools/offhand-review.mjs');
+checkSyntax('tools/pack-publisher.mjs');
 checkSyntax('tools/shade-pilots.mjs');
 checkSyntax('tools/shade-review.mjs');
 checkSyntax('tools/weapon-readability-audit.mjs');
@@ -111,6 +114,14 @@ const bossAnimationCheck = spawnSync(process.execPath, [path.join(root, 'tools',
 check(
   bossAnimationCheck.status === 0,
   `Boss animation structural gate failed\n${bossAnimationCheck.stdout.trim()}\n${bossAnimationCheck.stderr.trim()}`,
+);
+
+const packPublisherCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-pack-publisher.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  packPublisherCheck.status === 0,
+  `Pack publisher gate failed\n${packPublisherCheck.stdout.trim()}\n${packPublisherCheck.stderr.trim()}`,
 );
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];

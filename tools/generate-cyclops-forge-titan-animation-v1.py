@@ -9,6 +9,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
+from boss_animation_generator_common import planted_body_bob
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ROOT = PROJECT_ROOT / "death-review" / "boss-48-drafts"
@@ -39,7 +41,6 @@ METAL = base.METAL
 ROYAL = base.ROYAL
 WOOD = base.WOOD
 EMBER = base.EMBER
-MOTION_COLORS = {OUTLINE, *SKIN.values(), *METAL.values(), *ROYAL.values(), *WOOD.values(), *EMBER.values(), "#f4f4f4"}
 HAMMER_COLORS = {OUTLINE, *METAL.values(), *ROYAL.values(), *WOOD.values()}
 
 
@@ -57,26 +58,81 @@ def hex_rgb(color: str) -> tuple[int, int, int]:
     return tuple(bytes.fromhex(color.removeprefix("#")))
 
 
-def move_matching(
-    image: Image.Image,
-    regions: tuple[tuple[int, int, int, int], ...],
-    colors: set[str],
-    dx: int,
-    dy: int,
+def opaque_count(image: Image.Image) -> int:
+    return sum(alpha > 0 for alpha in image.getchannel("A").get_flattened_data())
+
+
+def split_hammer(
+    source: Image.Image,
+    hammer_regions: tuple[tuple[int, int, int, int], ...],
+    head_box: tuple[int, int, int, int],
+) -> tuple[Image.Image, Image.Image]:
+    wanted = {hex_rgb(color) for color in HAMMER_COLORS}
+    head_left, head_top, head_right, head_bottom = head_box
+    body = source.copy()
+    hammer = Image.new("RGBA", source.size, (0, 0, 0, 0))
+
+    for y in range(LOGICAL_SIZE):
+        for x in range(LOGICAL_SIZE):
+            pixel = source.getpixel((x, y))
+            if not pixel[3]:
+                continue
+            in_head = head_left <= x <= head_right and head_top <= y <= head_bottom
+            in_shaft = any(
+                left <= x <= right
+                and top <= y <= bottom
+                and pixel[:3] in wanted
+                for left, top, right, bottom in hammer_regions[1:]
+            )
+            if in_head or in_shaft:
+                body.putpixel((x, y), (0, 0, 0, 0))
+                hammer.putpixel((x, y), pixel)
+
+    if opaque_count(body) + opaque_count(hammer) != opaque_count(source):
+        raise ValueError("Cyclops body/hammer split lost source pixels.")
+    return body, hammer
+
+
+def translate_layer(layer: Image.Image, dx: int, dy: int, label: str) -> Image.Image:
+    result = Image.new("RGBA", layer.size, (0, 0, 0, 0))
+    for y in range(LOGICAL_SIZE):
+        for x in range(LOGICAL_SIZE):
+            pixel = layer.getpixel((x, y))
+            if not pixel[3]:
+                continue
+            target_x = x + dx
+            target_y = y + dy
+            if not (0 <= target_x < LOGICAL_SIZE and 0 <= target_y < LOGICAL_SIZE):
+                raise ValueError(f"{label} moved a Cyclops pixel outside the logical frame.")
+            result.putpixel((target_x, target_y), pixel)
+    if opaque_count(result) != opaque_count(layer):
+        raise ValueError(f"{label} lost Cyclops pixels while translating a layer.")
+    return result
+
+
+def assert_preserved_layer(
+    result: Image.Image,
+    required: Image.Image,
+    label: str,
+) -> None:
+    for y in range(LOGICAL_SIZE):
+        for x in range(LOGICAL_SIZE):
+            if required.getpixel((x, y))[3] and not result.getpixel((x, y))[3]:
+                raise ValueError(f"{label} punched a transparent hole in the Cyclops body.")
+
+
+def compose_components(
+    body: Image.Image,
+    hammer: Image.Image,
+    body_offset: tuple[int, int],
+    hammer_offset: tuple[int, int],
+    label: str,
 ) -> Image.Image:
-    wanted = {hex_rgb(color) for color in colors}
-    result = image.copy()
-    layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
-    for left, top, right, bottom in regions:
-        for y in range(top, bottom + 1):
-            for x in range(left, right + 1):
-                pixel = image.getpixel((x, y))
-                if pixel[3] and pixel[:3] in wanted:
-                    result.putpixel((x, y), (0, 0, 0, 0))
-                    target = (x + dx, y + dy)
-                    if 0 <= target[0] < LOGICAL_SIZE and 0 <= target[1] < LOGICAL_SIZE:
-                        layer.putpixel(target, pixel)
-    result.alpha_composite(layer)
+    moved_body = translate_layer(body, *body_offset, f"{label} body")
+    moved_hammer = translate_layer(hammer, *hammer_offset, f"{label} hammer")
+    result = moved_body.copy()
+    result.alpha_composite(moved_hammer)
+    assert_preserved_layer(result, moved_body, label)
     return result
 
 
@@ -86,24 +142,25 @@ def place_hammer(
     head_box: tuple[int, int, int, int],
     head_position: tuple[int, int],
     grip: tuple[int, int],
+    body_offset: tuple[int, int],
+    label: str,
 ) -> Image.Image:
     left, top, right, bottom = head_box
     head = source.crop((left, top, right + 1, bottom + 1))
-    wanted = {hex_rgb(color) for color in HAMMER_COLORS}
-    result = source.copy()
-    for region_left, region_top, region_right, region_bottom in hammer_regions:
-        for y in range(region_top, region_bottom + 1):
-            for x in range(region_left, region_right + 1):
-                pixel = source.getpixel((x, y))
-                if pixel[3] and pixel[:3] in wanted:
-                    result.putpixel((x, y), (0, 0, 0, 0))
+    body, _hammer = split_hammer(source, hammer_regions, head_box)
+    moved_body = translate_layer(body, *body_offset, f"{label} body")
 
     head_x, head_y = head_position
     shaft_end = (head_x + (head.width // 2), head_y + head.height - 2)
-    draw = ImageDraw.Draw(result)
-    draw.line((grip, shaft_end), fill=WOOD["shadow"], width=2)
-    draw.line((grip, shaft_end), fill=WOOD["base"], width=1)
-    result.alpha_composite(head, head_position)
+    hammer = Image.new("RGBA", source.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(hammer)
+    moved_grip = (grip[0] + body_offset[0], grip[1] + body_offset[1])
+    draw.line((moved_grip, shaft_end), fill=WOOD["shadow"], width=2)
+    draw.line((moved_grip, shaft_end), fill=WOOD["base"], width=1)
+    hammer.alpha_composite(head, head_position)
+    result = moved_body.copy()
+    result.alpha_composite(hammer)
+    assert_preserved_layer(result, moved_body, label)
     return result
 
 
@@ -257,67 +314,61 @@ def front_or_back_pose(
         hammer_head = (2, 2, 10, 9)
         hammer_grip = (5, 16)
         attack_positions = ((3, 2), (6, 2), (2, 12), (3, 7))
-        body_regions = ((9, 3, 19, 9), (8, 10, 21, 18))
-        left_leg = (7, 19, 11, 21)
-        right_leg = (14, 19, 18, 21)
         hammer_sign = 1
+        cast_positions = ((3, 2), (5, 2), (7, 2), (5, 3))
     else:
         hammer = ((13, 2, 21, 9), (17, 7, 19, 21))
         hammer_head = (13, 2, 21, 9)
         hammer_grip = (18, 16)
         attack_positions = ((12, 2), (9, 2), (13, 12), (12, 7))
-        body_regions = ((5, 3, 13, 9), (4, 10, 17, 18))
-        left_leg = (6, 19, 10, 21)
-        right_leg = (13, 19, 17, 21)
         hammer_sign = -1
+        cast_positions = ((12, 2), (10, 2), (8, 2), (10, 3))
+
+    body, hammer_layer = split_hammer(source, hammer, hammer_head)
+    body_away = -hammer_sign
 
     if animation == "idle":
         if frame == 0:
             return source.copy()
-        settled = move_matching(source, hammer, HAMMER_COLORS, -hammer_sign, 1)
-        settled = move_matching(settled, body_regions, MOTION_COLORS, 0, 1)
-        return replace_colors(settled, {
-            EMBER["highlight"]: EMBER["base"],
-        })
+        return planted_body_bob(source, 20, f"{direction} cyclops idle")
 
     if animation == "walk":
         body_offsets = (
-            (-hammer_sign, 0),
-            (0, 1),
-            (hammer_sign, 0),
-            (0, 1),
+            (0, -1),
+            (0, 0),
+            (0, -1),
+            (0, 0),
         )
         hammer_offsets = (
-            (hammer_sign, -1),
-            (0, 1),
-            (-hammer_sign, 0),
-            (0, 1),
+            (hammer_sign, 0),
+            (hammer_sign * 2, 0),
+            (0, 0),
+            (hammer_sign, 0),
         )
-        result = move_matching(source, hammer, HAMMER_COLORS, *hammer_offsets[frame])
-        result = move_matching(result, body_regions, MOTION_COLORS, *body_offsets[frame])
-        if frame == 0:
-            return move_matching(result, (right_leg,), MOTION_COLORS, 1, -1)
-        if frame == 1:
-            return move_matching(result, (left_leg,), MOTION_COLORS, -1, 0)
-        if frame == 2:
-            return move_matching(result, (left_leg,), MOTION_COLORS, -1, -1)
-        return move_matching(result, (right_leg,), MOTION_COLORS, 1, 0)
+        return compose_components(
+            body,
+            hammer_layer,
+            body_offsets[frame],
+            hammer_offsets[frame],
+            f"{direction} walk {frame + 1}",
+        )
 
     if animation == "attack":
+        body_offsets = (
+            (0, 0),
+            (body_away, -1),
+            (body_away, 0),
+            (0, -1),
+        )
         result = place_hammer(
             source,
             hammer,
             hammer_head,
             attack_positions[frame],
             hammer_grip,
+            body_offsets[frame],
+            f"{direction} attack {frame + 1}",
         )
-        body_offsets = (
-            (0, 0),
-            (-hammer_sign, -1),
-            (-hammer_sign, 1),
-            (0, 1),
-        )
-        result = move_matching(result, body_regions, MOTION_COLORS, *body_offsets[frame])
         if frame == 2:
             return replace_colors(result, {
                 EMBER["highlight"]: "#fff2b0",
@@ -326,21 +377,21 @@ def front_or_back_pose(
         return result
 
     if animation == "cast":
-        cast_offsets = (
-            (0, -1),
-            (hammer_sign, -2),
-            (hammer_sign * 2, -2),
-            (hammer_sign, -1),
-        )
         body_offsets = (
-            (0, 1),
-            (-hammer_sign, 0),
             (0, -1),
-            (0, 1),
+            (body_away, 0),
+            (0, -1),
+            (body_away, 0),
         )
-        hammer_dx, hammer_dy = cast_offsets[frame]
-        raised = move_matching(source, hammer, HAMMER_COLORS, hammer_dx, hammer_dy)
-        raised = move_matching(raised, body_regions, MOTION_COLORS, *body_offsets[frame])
+        raised = place_hammer(
+            source,
+            hammer,
+            hammer_head,
+            cast_positions[frame],
+            hammer_grip,
+            body_offsets[frame],
+            f"{direction} cast {frame + 1}",
+        )
         if frame == 0:
             colored = replace_colors(raised, {EMBER["highlight"]: "#ffe48a"})
         elif frame == 1:
@@ -364,8 +415,13 @@ def front_or_back_pose(
 
     if animation == "hurt":
         if frame == 0:
-            impact = move_matching(source, hammer, HAMMER_COLORS, -hammer_sign, 1)
-            impact = move_matching(impact, body_regions, MOTION_COLORS, -hammer_sign, -1)
+            impact = compose_components(
+                body,
+                hammer_layer,
+                (body_away, 0),
+                (hammer_sign, 0),
+                f"{direction} hurt {frame + 1}",
+            )
             return replace_colors(impact, {
                 SKIN["base"]: "#ded8cb",
                 SKIN["shadow"]: "#aaa294",
@@ -380,8 +436,13 @@ def front_or_back_pose(
                 EMBER["shadow"]: "#d66a50",
                 EMBER["highlight"]: "#ffffff",
             })
-        recoiling = move_matching(source, hammer, HAMMER_COLORS, -hammer_sign, 1)
-        recoiling = move_matching(recoiling, body_regions, MOTION_COLORS, -hammer_sign, 1)
+        recoiling = compose_components(
+            body,
+            hammer_layer,
+            (body_away, -1),
+            (hammer_sign * 2, 0),
+            f"{direction} hurt {frame + 1}",
+        )
         return replace_colors(recoiling, {
             METAL["highlight"]: METAL["base"],
             EMBER["highlight"]: EMBER["shadow"],
@@ -395,42 +456,36 @@ def profile_pose(source: Image.Image, animation: str, frame: int) -> Image.Image
     hammer_head = (14, 2, 21, 9)
     hammer_grip = (18, 15)
     attack_positions = ((13, 2), (10, 2), (3, 12), (10, 7))
-    body_regions = ((5, 3, 13, 9), (4, 10, 14, 18))
-    near_leg = (6, 19, 10, 21)
-    far_leg = (12, 19, 16, 21)
+    cast_positions = ((13, 2), (10, 2), (7, 2), (10, 3))
+    body, hammer_layer = split_hammer(source, hammer, hammer_head)
 
     if animation == "idle":
         if frame == 0:
             return source.copy()
-        settled = move_matching(source, hammer, HAMMER_COLORS, 1, 1)
-        settled = move_matching(settled, body_regions, MOTION_COLORS, 0, 1)
-        return replace_colors(settled, {
-            EMBER["highlight"]: EMBER["base"],
-        })
+        return planted_body_bob(source, 20, "left cyclops idle")
 
     if animation == "walk":
-        body_offsets = ((-1, 0), (0, 1), (1, 0), (0, 1))
-        hammer_offsets = ((1, -1), (0, 1), (-1, 0), (0, 1))
-        result = move_matching(source, hammer, HAMMER_COLORS, *hammer_offsets[frame])
-        result = move_matching(result, body_regions, MOTION_COLORS, *body_offsets[frame])
-        if frame == 0:
-            return move_matching(result, (far_leg,), MOTION_COLORS, 1, -1)
-        if frame == 1:
-            return move_matching(result, (near_leg,), MOTION_COLORS, -1, 0)
-        if frame == 2:
-            return move_matching(result, (near_leg,), MOTION_COLORS, -1, -1)
-        return move_matching(result, (far_leg,), MOTION_COLORS, 1, 0)
+        body_offsets = ((0, -1), (0, 0), (0, -1), (0, 0))
+        hammer_offsets = ((-1, 0), (-2, 0), (0, 0), (-1, 0))
+        return compose_components(
+            body,
+            hammer_layer,
+            body_offsets[frame],
+            hammer_offsets[frame],
+            f"left walk {frame + 1}",
+        )
 
     if animation == "attack":
+        body_offsets = ((0, 0), (1, -1), (1, 0), (0, -1))
         result = place_hammer(
             source,
             hammer,
             hammer_head,
             attack_positions[frame],
             hammer_grip,
+            body_offsets[frame],
+            f"left attack {frame + 1}",
         )
-        body_offsets = ((0, 0), (1, -1), (-1, 1), (0, 1))
-        result = move_matching(result, body_regions, MOTION_COLORS, *body_offsets[frame])
         if frame == 2:
             return replace_colors(result, {
                 EMBER["highlight"]: "#fff2b0",
@@ -439,11 +494,16 @@ def profile_pose(source: Image.Image, animation: str, frame: int) -> Image.Image
         return result
 
     if animation == "cast":
-        cast_offsets = ((0, -1), (-1, -2), (-2, -2), (-1, -1))
-        body_offsets = ((0, 1), (1, 0), (0, -1), (0, 1))
-        hammer_dx, hammer_dy = cast_offsets[frame]
-        raised = move_matching(source, hammer, HAMMER_COLORS, hammer_dx, hammer_dy)
-        raised = move_matching(raised, body_regions, MOTION_COLORS, *body_offsets[frame])
+        body_offsets = ((0, -1), (1, 0), (0, -1), (1, 0))
+        raised = place_hammer(
+            source,
+            hammer,
+            hammer_head,
+            cast_positions[frame],
+            hammer_grip,
+            body_offsets[frame],
+            f"left cast {frame + 1}",
+        )
         if frame == 0:
             colored = replace_colors(raised, {EMBER["highlight"]: "#ffe48a"})
         elif frame == 1:
@@ -467,8 +527,13 @@ def profile_pose(source: Image.Image, animation: str, frame: int) -> Image.Image
 
     if animation == "hurt":
         if frame == 0:
-            impact = move_matching(source, hammer, HAMMER_COLORS, 1, 1)
-            impact = move_matching(impact, body_regions, MOTION_COLORS, 1, -1)
+            impact = compose_components(
+                body,
+                hammer_layer,
+                (1, 0),
+                (-1, 0),
+                f"left hurt {frame + 1}",
+            )
             return replace_colors(impact, {
                 SKIN["base"]: "#ded8cb",
                 SKIN["shadow"]: "#aaa294",
@@ -483,8 +548,13 @@ def profile_pose(source: Image.Image, animation: str, frame: int) -> Image.Image
                 EMBER["shadow"]: "#d66a50",
                 EMBER["highlight"]: "#ffffff",
             })
-        recoiling = move_matching(source, hammer, HAMMER_COLORS, 1, 1)
-        recoiling = move_matching(recoiling, body_regions, MOTION_COLORS, 1, 1)
+        recoiling = compose_components(
+            body,
+            hammer_layer,
+            (1, -1),
+            (-2, 0),
+            f"left hurt {frame + 1}",
+        )
         return replace_colors(recoiling, {
             METAL["highlight"]: METAL["base"],
             EMBER["highlight"]: EMBER["shadow"],

@@ -2641,7 +2641,10 @@ function renderBossWorkspace() {
     elements.appSubtitle.textContent = '48x48 · 4 directions · idle / walk / attack / cast / hurt / death';
     elements.bossPilotKicker.textContent = 'Animated 48x48 pilot';
     elements.bossPilotTitle.textContent = 'Boss animation';
-    elements.bossPilotWarning.textContent = `${boss.name} is one of ${animatedNames.length} full animation pilots. The remaining ${staticCount} bosses stay static direction drafts; all boss assets stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.`;
+    const isolationNote = 'all boss assets stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.';
+    elements.bossPilotWarning.textContent = staticCount > 0
+      ? `${boss.name} is one of ${animatedNames.length} full animation pilots. The remaining ${staticCount} bosses stay static direction drafts; ${isolationNote}`
+      : `${boss.name} is one of ${animatedNames.length} full animation pilots. Every boss direction pilot now has the full review animation contract; ${isolationNote}`;
     elements.bossExportScopeControl.hidden = false;
     elements.bossExportScope.value = bossExportScope;
     renderBossPlaybackControls();
