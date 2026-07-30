@@ -225,7 +225,16 @@ function makeG(onOutOfBounds = null) {
 
 // ---------------- pose ----------------
 function makePose(animId, f) {
-  const p = { bob: 0, leg: 0, arm: 0, wep: 'hold', flash: false, lunge: 0, f };
+  const p = {
+    bob: 0,
+    leg: 0,
+    arm: 0,
+    attackLeg: 0,
+    wep: 'hold',
+    flash: false,
+    lunge: 0,
+    f,
+  };
   if (animId === 'idle') { p.bob = f === 1 ? 1 : 0; }
   if (animId === 'walk') {
     p.bob = (f === 1 || f === 3) ? 1 : 0;
@@ -235,6 +244,10 @@ function makePose(animId, f) {
   if (animId === 'attack') {
     p.wep = ['wind', 'strike', 'strike', 'recover'][f];
     p.lunge = f === 1 ? 2 : (f === 2 ? 1 : 0);
+    // Player attacks keep the frame-safe fixed body registration, but still
+    // need visible bracing, follow-through, and recovery outside the weapon.
+    // The hands remain on their established equipment sockets.
+    p.attackLeg = [-1, 1, 1, 0][f];
   }
   if (animId === 'hurt') {
     p.flash = f === 0;
@@ -468,6 +481,12 @@ function drawPlayerSpeciesFront(S, R, d, p, u, HT, species, skin, hair, gearDef)
 }
 
 function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
+  const playerAttack = C.weaponFollowRig && p.wep !== 'hold';
+  // Attack footwork animates independently while both hands retain p.arm so
+  // approved weapon and shield sockets cannot drift away from the body.
+  const bodyPose = playerAttack
+    ? { ...p, leg: p.attackLeg }
+    : p;
   const small = !!C.small;
   const HT = small ? 5 : 3;      // head top
   const BT = small ? 13 : 12;    // torso top
@@ -503,6 +522,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
   const robe = ROBE_OUTFITS.has(outfit);
   const pants = C.bone ? BONE : (outfit === 'plate' ? IRONPANTS : PANTS);
   const eyeC = C.eye || INK;
+  const torsoC = outfit === 'plate' ? METAL : (outfit === 'cape' || outfit === 'leather' ? CREAM : oc);
 
   // Character-kit equipment sheets are split around the complete body so a game can
   // preserve the same direction-aware occlusion as the assembled renderer.
@@ -523,11 +543,11 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
     return;
   }
   if (renderLayer === 'species-back') {
-    drawPlayerSpeciesBack(S, R, d, p, u, C.species, skin, hair);
+    drawPlayerSpeciesBack(S, R, d, bodyPose, u, C.species, skin, hair);
     return;
   }
   if (renderLayer === 'species-front') {
-    drawPlayerSpeciesFront(S, R, d, p, u, HT, C.species, skin, hair, gearDef);
+    drawPlayerSpeciesFront(S, R, d, bodyPose, u, HT, C.species, skin, hair, gearDef);
     return;
   }
   const includeEquipment = renderLayer === 'complete';
@@ -546,11 +566,11 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
 
   if (includeEquipment) drawShield(S, R, d, p, C, u, 'behind', viewDir);
 
-  if (includeFullBody) drawPlayerSpeciesBack(S, R, d, p, u, C.species, skin, hair);
+  if (includeFullBody) drawPlayerSpeciesBack(S, R, d, bodyPose, u, C.species, skin, hair);
 
   // ---- cape behind (side view) ----
   if (includeOutfitBack && outfit === 'cape' && d === 'right') {
-    const sway = p.leg !== 0 ? 1 : 0;
+    const sway = bodyPose.leg !== 0 ? 1 : 0;
     const capeX = build.capeSideX - sway;
     // Keep the inner edge attached to the torso while the outer edge sways.
     // The lower rows taper by one cell so the cape flexes instead of becoming
@@ -583,13 +603,13 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
         }
         if (C.bone) S(x0 + 1, 19, INK);
       };
-      legDU(8, p.leg === 1);
-      legDU(13, p.leg === -1);
+      legDU(8, bodyPose.leg === 1);
+      legDU(13, bodyPose.leg === -1);
     } else {
       // side: back leg darker, legs scissor
       let back = 9, front = 12;
-      if (p.leg === 1) { back = 8; front = 13; }
-      if (p.leg === -1) { back = 10; front = 12; }
+      if (bodyPose.leg === 1) { back = 8; front = 13; }
+      if (bodyPose.leg === -1) { back = 10; front = 12; }
       const legS = (x0, dark) => {
         R(x0, 18, 3, 2, dark ? pants[1] : pants[0]);
         R(x0, 20, 3, 1, C.bone ? (dark ? BONE[1] : BONE[0]) : (dark ? BOOTS[1] : BOOTS[0]));
@@ -599,15 +619,24 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
       legS(front, false);
     }
   } else if (includeOutfit) {
-    // robe: boots peeking
-    if (d === 'right') { R(10, 20, 2, 2, BOOTS[1]); R(13, 20, 2, 2, BOOTS[0]); }
-    else { R(9, 20, 2, 2, BOOTS[0]); R(13, 20, 2, 2, BOOTS[0]); }
+    // Robe hems stay grounded while the visible boots still step and brace.
+    if (d === 'right') {
+      const backX = bodyPose.leg === 1 ? 9 : bodyPose.leg === -1 ? 11 : 10;
+      const frontX = bodyPose.leg === 1 ? 14 : bodyPose.leg === -1 ? 12 : 13;
+      R(backX, 20, 2, 2, BOOTS[1]);
+      R(frontX, 20, 2, 2, BOOTS[0]);
+    } else {
+      const leftX = bodyPose.leg === 1 ? 8 : 9;
+      const rightX = bodyPose.leg === -1 ? 14 : 13;
+      R(leftX, 20, 2, 2, BOOTS[0]);
+      R(rightX, 20, 2, 2, BOOTS[0]);
+    }
   }
 
   // ---- harpy wings (behind torso) ----
   if (includeFullBody && C.wings) {
     const w0 = C.wings[0], w1 = C.wings[1];
-    const wu = u - (p.leg !== 0 ? 1 : 0);
+    const wu = u - (bodyPose.leg !== 0 ? 1 : 0);
     if (d === 'down' || d === 'up') {
       R(4, 11 + wu, 3, 1, w0); R(3, 12 + wu, 3, 3, w0); S(3, 15 + wu, w1); S(4, 15 + wu, w1);
       R(17, 11 + wu, 3, 1, w0); R(18, 12 + wu, 3, 3, w0); S(19, 15 + wu, w1); S(20, 15 + wu, w1);
@@ -618,7 +647,6 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
 
   // ---- torso ----
   if (includeOutfit) {
-    const torsoC = outfit === 'plate' ? METAL : (outfit === 'cape' || outfit === 'leather' ? CREAM : oc);
     if (d === 'right') {
       const tw = build.sideW, tx = build.sideX;
       if (robe) {
@@ -789,7 +817,7 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
     if (includeExpression && C.face === 'human' && C.expression) {
       drawFacialExpression(S, R, d, u, HT, C.expression, eyeC);
     }
-    if (includeFullBody) drawPlayerSpeciesFront(S, R, d, p, u, HT, C.species, skin, hair, gearDef);
+    if (includeFullBody) drawPlayerSpeciesFront(S, R, d, bodyPose, u, HT, C.species, skin, hair, gearDef);
     if (includeFaceDetail && C.face === 'human' && C.detail && C.detail !== 'none') {
       drawFacialDetail(S, R, d, u, HT, C.detail, hair, skin, oc, eyeC);
     }

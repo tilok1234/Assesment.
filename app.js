@@ -2069,7 +2069,7 @@ function drawCompositeFrame(context, spec, loadout, direction, animId, frame, ou
   });
   if (!state.previewEffects || spec.kind === 'effect') return;
   for (const effectSpec of E.combatLoadoutEffectSpecs(spec, loadout)) {
-    E.drawSprite(context, effectSpec, direction, animId, frame, { shadow: false, clear: false });
+    E.drawOccludedCombatEffect(context, spec, effectSpec, direction, animId, frame);
   }
 }
 

@@ -59,6 +59,7 @@ checkSyntax('engine/catalogs/enemies.js');
 checkSyntax('engine/catalogs/palettes.js');
 checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/combat-loadouts.js');
+checkSyntax('engine/effect-compositor.js');
 checkSyntax('engine/class-templates.js');
 checkSyntax('engine/variant-batches.js');
 checkSyntax('engine/generators.js');
@@ -98,7 +99,7 @@ for (const controlId of [
   'sheet-title', 'sheet-contract', 'export-scope',
   'previous-frame-button', 'play-pause-button', 'next-frame-button',
   'frame-buttons', 'frame-readout', 'playback-speed',
-  'outline-control', 'outline-buttons',
+  'outline-control', 'outline-buttons', 'preview-effects-button',
   'reset-button', 'duplicate-button', 'compare-button', 'compare-dialog',
   'saved-copy-canvas', 'current-copy-canvas', 'restore-copy-button',
   'keep-current-button', 'remove-copy-button', 'replace-copy-button',
@@ -120,6 +121,7 @@ for (const controlId of [
 
 const runtimeSources = {
   'index.html': entrySource,
+  'styles.css': await readFile(path.join(root, 'styles.css'), 'utf8'),
   'app.js': await readFile(path.join(root, 'app.js'), 'utf8'),
   'sprite-engine.js': await readFile(path.join(root, 'sprite-engine.js'), 'utf8'),
   'character-kit.js': await readFile(path.join(root, 'character-kit.js'), 'utf8'),
@@ -131,6 +133,7 @@ const runtimeSources = {
   'engine/catalogs/palettes.js': await readFile(path.join(root, 'engine', 'catalogs', 'palettes.js'), 'utf8'),
   'engine/catalogs/player-options.js': await readFile(path.join(root, 'engine', 'catalogs', 'player-options.js'), 'utf8'),
   'engine/combat-loadouts.js': await readFile(path.join(root, 'engine', 'combat-loadouts.js'), 'utf8'),
+  'engine/effect-compositor.js': await readFile(path.join(root, 'engine', 'effect-compositor.js'), 'utf8'),
   'engine/class-templates.js': await readFile(path.join(root, 'engine', 'class-templates.js'), 'utf8'),
   'engine/variant-batches.js': await readFile(path.join(root, 'engine', 'variant-batches.js'), 'utf8'),
   'engine/generators.js': await readFile(path.join(root, 'engine', 'generators.js'), 'utf8'),
@@ -156,7 +159,7 @@ const expectedEngineExports = [
   'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
   'applyClassTemplate', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet', 'buildVariantBatch',
-  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawOutlinedSprite', 'drawSprite',
+  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawOccludedCombatEffect', 'drawOutlinedSprite', 'drawSprite',
   'normalizeOutlineMode', 'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout', 'sanitizeCombatLoadout', 'thumbURL',
 ].sort();
 check(
@@ -177,6 +180,10 @@ check(runtimeSources['app.js'].includes('HISTORY_LIMIT = 100'), 'app.js must kee
 check(runtimeSources['app.js'].includes("['mode', 'player', 'enemy', 'effect', 'loadout', 'outlineMode', 'characterName', 'exportName']"), 'app.js history must include combat loadouts and outlines while remaining scoped to the editable sprite document');
 check(runtimeSources['engine/sheets.js'].includes('drawOutlinedSprite'), 'assembled sheet exports must support optional player outlines');
 check(runtimeSources['app.js'].includes('renderOutlineControls()'), 'app.js must expose the optional player outline selector');
+check(runtimeSources['app.js'].includes("elements.previewEffectsButton.addEventListener('click', togglePreviewEffects)"), 'the main preview toolbar must expose an effects on/off toggle');
+check(runtimeSources['app.js'].includes("state.previewEffects ? 'Effects On' : 'Effects Off'"), 'the main effect toggle must show its current state clearly');
+check(runtimeSources['app.js'].includes("elements.previewEffectsButton.hidden = state.mode === 'effect'"), 'the main effect toggle must hide when the editor is already showing an effect asset');
+check(runtimeSources['styles.css'].includes('#preview-effects-button[hidden]'), 'the effect toggle hidden state must override its flex-button display rule');
 check(runtimeSources['app.js'].includes("makeButton('Effects'"), 'app.js must expose combat effects as a first-class editor mode');
 check(runtimeSources['app.js'].includes("key === 'z'"), 'app.js must expose the undo keyboard shortcut');
 check(runtimeSources['app.js'].includes("key === 'y'"), 'app.js must expose the redo keyboard shortcut');
@@ -209,7 +216,10 @@ check(runtimeSources['app.js'].includes('columnIndexBase: 0'), 'combat loadout J
 check(runtimeSources['app.js'].includes('manifestCombatLoadoutRecipe(spec, entry.loadout)'), 'regular sprite packs must preserve resolved combat recipes beside modular sheets');
 check(runtimeSources['app.js'].includes('combatLoadoutsBySource.has(recipe.sourceId)'), 'Complete Kit recipes must carry their matching combat loadouts');
 check(runtimeSources['app.js'].includes('E.combatLoadoutEffectSpecs(spec, loadout)'), 'combined previews must resolve modular effect overlays through the public engine facade');
-check(runtimeSources['app.js'].includes('{ shadow: false, clear: false }'), 'combined previews must layer effects without clearing the base sprite');
+check(runtimeSources['app.js'].includes('E.drawOccludedCombatEffect(context, spec, effectSpec'), 'combined previews must apply component-aware foreground shield occlusion');
+check(runtimeSources['engine/effect-compositor.js'].includes("['trails', 'projectiles', 'impacts']"), 'transient combat effects must respect foreground shield ownership');
+check(runtimeSources['engine/effect-compositor.js'].includes("['shield-back', 'shield-front']"), 'effect compositing must derive occlusion from both renderer shield passes');
+check(runtimeSources['engine/effect-compositor.js'].includes('{ shadow: false, clear: false }'), 'status overlays must remain a non-clearing foreground pass');
 check(runtimeSources['engine/renderer.js'].includes("if (opts.clear !== false) ctx.clearRect"), 'the renderer must support non-clearing modular overlay passes');
 check(runtimeSources['app.js'].includes('function downloadEquipmentVariantBatch('), 'the editor must expose the equipment-variant ZIP workflow');
 check(runtimeSources['app.js'].includes('variantBatchEffectEntries(plan)'), 'variant batches must deduplicate the combat effects actually referenced by their generated characters');
@@ -525,6 +535,107 @@ function renderPixels(spec, dir, animId, frame, opts = {}) {
     },
   };
   engine.drawSprite(ctx, spec, dir, animId, frame, { ...opts, shadow: false });
+  return pixels;
+}
+
+function regionPixelSignature(pixels, minimumY) {
+  return pixels
+    .flatMap((pixel, index) => Math.floor(index / engine.SIZE) >= minimumY ? [pixel || '.'] : [])
+    .join(',');
+}
+
+const animationMotionProbe = {
+  kind: 'player', species: 'human', bodyBuild: 'classic', skin: 'peach', hairStyle: 'short', hairColor: 'brown',
+  expression: 'neutral', faceDetail: 'none', headgear: 'none', outfit: 'tunic', outfitTier: 'tier1', outfitColor: 'royal',
+  weapon: 'none', weaponTier: 'tier1', shield: 'none', shieldTier: 'tier1', palette: null,
+};
+for (const outfit of engine.OUTFITS) for (const bodyBuild of engine.BODY_BUILDS) for (const direction of engine.DIRS) {
+  const footSignatures = Array.from({ length: 4 }, (_, frame) => regionPixelSignature(renderPixels(
+    { ...animationMotionProbe, outfit: outfit.id, bodyBuild: bodyBuild.id },
+    direction,
+    'walk',
+    frame,
+    { layer: 'body' },
+  ), 18));
+  check(
+    new Set(footSignatures).size >= 3,
+    `${outfit.id} ${bodyBuild.id} walk must show at least three distinct foot poses while facing ${direction}`,
+  );
+}
+for (const weapon of engine.WEAPONS) for (const direction of engine.DIRS) {
+  const bodyFrames = Array.from({ length: 4 }, (_, frame) => renderPixels(
+    { ...animationMotionProbe, weapon: weapon.id },
+    direction,
+    'attack',
+    frame,
+    { layer: 'body' },
+  ));
+  check(
+    new Set(bodyFrames.map((pixels) => pixels.join(','))).size >= 3,
+    `${weapon.id} attack must use at least three distinct body poses while facing ${direction}`,
+  );
+  check(
+    new Set(bodyFrames.map((pixels) => regionPixelSignature(pixels, 18))).size >= 3,
+    `${weapon.id} attack must show at least three distinct foot poses while facing ${direction}`,
+  );
+}
+for (const outfit of engine.OUTFITS) for (const bodyBuild of ['lean', 'heroic']) {
+  for (const direction of ['down', 'up']) for (const animation of engine.ANIMS) {
+    for (let frame = 0; frame < animation.frames; frame++) {
+      const bodyPixels = renderPixels(
+        { ...animationMotionProbe, outfit: outfit.id, bodyBuild },
+        direction,
+        animation.id,
+        frame,
+        { layer: 'body' },
+      );
+      for (const gapX of [8, 15]) {
+        let transparentRun = 0;
+        let longestTransparentRun = 0;
+        for (const y of Array.from({ length: 4 }, (_, offset) => 14 + offset)) {
+          const index = (y * engine.SIZE) + gapX;
+          if (bodyPixels[index]) {
+            transparentRun = 0;
+            continue;
+          }
+          const neighbors = [
+            bodyPixels[index - engine.SIZE],
+            bodyPixels[index - 1],
+            bodyPixels[index + 1],
+            bodyPixels[index + engine.SIZE],
+          ];
+          const occupiedNeighbors = neighbors.filter(Boolean).length;
+          const isBridgeCell = occupiedNeighbors >= 3
+            || (neighbors[1] && neighbors[2])
+            || (neighbors[0] && neighbors[3]);
+          transparentRun = isBridgeCell ? transparentRun + 1 : 0;
+          longestTransparentRun = Math.max(longestTransparentRun, transparentRun);
+        }
+        check(
+          longestTransparentRun < 2,
+          `${outfit.id} ${bodyBuild} ${direction} ${animation.id} frame ${frame} must not leave a transparent arm-to-torso tunnel at x=${gapX}`,
+        );
+      }
+    }
+  }
+}
+
+function drawOccludedEffectPixels(basePixels, ownerSpec, effectSpec, dir, animId, frame) {
+  const pixels = [...basePixels];
+  let fillStyle = '#000000';
+  const ctx = {
+    clearRect() { pixels.fill(null); },
+    get fillStyle() { return fillStyle; },
+    set fillStyle(value) { fillStyle = value; },
+    fillRect(x, y, width, height) {
+      for (let py = y; py < y + height; py++) {
+        for (let px = x; px < x + width; px++) {
+          if (px >= 0 && py >= 0 && px < engine.SIZE && py < engine.SIZE) pixels[(py * engine.SIZE) + px] = fillStyle;
+        }
+      }
+    },
+  };
+  engine.drawOccludedCombatEffect(ctx, ownerSpec, effectSpec, dir, animId, frame);
   return pixels;
 }
 
@@ -1118,6 +1229,89 @@ for (const { category, effect } of combatEffectEntries) {
     }
   }
 }
+
+const effectShieldProbe = {
+  kind: 'player', species: 'human', bodyBuild: 'classic', skin: 'peach', hairStyle: 'braids', hairColor: 'white',
+  expression: 'determined', faceDetail: 'scar', headgear: 'none', outfit: 'tunic', outfitTier: 'tier1', outfitColor: 'royal',
+  weapon: 'warhammer', weaponTier: 'tier1', shield: 'tower', shieldTier: 'tier1', palette: null,
+};
+const transientEffectSpecs = engine.combatLoadoutEffectSpecs(effectShieldProbe, engine.DEFAULT_COMBAT_LOADOUT);
+check(
+  JSON.stringify(transientEffectSpecs.map((spec) => spec.category)) === JSON.stringify(['trails', 'impacts']),
+  'the effect/shield regression fixture must retain the default Warhammer trail and impact',
+);
+let effectShieldOverlapCases = 0;
+for (const shield of expectedShields.slice(1)) for (const tier of engine.SHIELD_TIERS) for (const direction of engine.DIRS) for (let frame = 0; frame < 4; frame++) {
+  const spec = { ...effectShieldProbe, shield, shieldTier: tier.id };
+  const basePixels = renderPixels(spec, direction, 'attack', frame);
+  const shieldPixels = compositePixelLayers([
+    renderPixels(spec, direction, 'attack', frame, { layer: 'shield-back' }),
+    renderPixels(spec, direction, 'attack', frame, { layer: 'shield-front' }),
+  ]);
+  const rawEffectPixels = compositePixelLayers(transientEffectSpecs.map((effectSpec) => (
+    renderPixels(effectSpec, direction, 'attack', frame)
+  )));
+  const overlap = rawEffectPixels.some((pixel, index) => pixel != null && shieldPixels[index] != null);
+  if (overlap) effectShieldOverlapCases++;
+  const compositePixels = transientEffectSpecs.reduce((pixels, effectSpec) => (
+    drawOccludedEffectPixels(pixels, spec, effectSpec, direction, 'attack', frame)
+  ), basePixels);
+  check(
+    shieldPixels.every((pixel, index) => pixel == null || compositePixels[index] === basePixels[index]),
+    `${shield} ${tier.id} pixels must survive transient effects in ${direction} attack frame ${frame}`,
+  );
+  check(
+    rawEffectPixels.some((pixel, index) => pixel != null && shieldPixels[index] == null && compositePixels[index] !== basePixels[index]),
+    `${shield} ${tier.id} compositing must keep transient effects visible outside the shield in ${direction} attack frame ${frame}`,
+  );
+}
+check(effectShieldOverlapCases >= 1, 'the effect/shield regression must exercise a real transient-effect overlap');
+
+const statusEffectSpec = { kind: 'effect', category: 'statuses', effect: 'frozen' };
+const statusBasePixels = renderPixels(effectShieldProbe, 'up', 'attack', 3);
+check(
+  JSON.stringify(drawOccludedEffectPixels(statusBasePixels, effectShieldProbe, statusEffectSpec, 'up', 'attack', 3))
+    === JSON.stringify(compositePixelLayers([statusBasePixels, renderPixels(statusEffectSpec, 'up', 'attack', 3)])),
+  'status overlays must remain an unmasked foreground pass',
+);
+
+function effectPixelBounds(pixels) {
+  const points = pixels.flatMap((pixel, index) => pixel ? [[index % engine.SIZE, Math.floor(index / engine.SIZE)]] : []);
+  return {
+    minX: Math.min(...points.map(([x]) => x)),
+    maxX: Math.max(...points.map(([x]) => x)),
+    minY: Math.min(...points.map(([, y]) => y)),
+    maxY: Math.max(...points.map(([, y]) => y)),
+  };
+}
+
+const thrustDirectionBounds = Object.fromEntries(engine.DIRS.map((direction) => [
+  direction,
+  effectPixelBounds(renderPixels(
+    { kind: 'effect', category: 'trails', effect: 'spear-thrust' },
+    direction,
+    'attack',
+    2,
+  )),
+]));
+check(thrustDirectionBounds.right.minX > 12, 'right-facing effects must travel right');
+check(thrustDirectionBounds.down.minY > 12, 'down-facing effects must travel down');
+check(thrustDirectionBounds.left.maxX < 12, 'left-facing effects must travel left instead of up');
+check(thrustDirectionBounds.up.maxY < 12, 'up-facing effects must travel up instead of left');
+
+const impactDirectionBounds = Object.fromEntries(engine.DIRS.map((direction) => [
+  direction,
+  effectPixelBounds(renderPixels(
+    { kind: 'effect', category: 'impacts', effect: 'armor-impact' },
+    direction,
+    'attack',
+    0,
+  )),
+]));
+check(impactDirectionBounds.right.minX >= 15, 'right-facing impacts must stay on the right side');
+check(impactDirectionBounds.down.minY >= 16, 'down-facing impacts must stay on the lower side');
+check(impactDirectionBounds.left.maxX <= 9, 'left-facing impacts must stay on the left side instead of above the sprite');
+check(impactDirectionBounds.up.maxY <= 8, 'up-facing impacts must stay above the sprite');
 
 for (const category of engine.COMBAT_EFFECTS) {
   const signatures = category.effects.map((effect) => renderPixels(
@@ -1867,6 +2061,11 @@ for (const bodyBuild of engine.BODY_BUILDS) for (const shield of equippedShields
   }
 }
 
+const renderShieldLayers = (spec, direction, animation, frame) => compositePixelLayers([
+  renderPixels(spec, direction, animation, frame, { layer: 'shield-back' }),
+  renderPixels(spec, direction, animation, frame, { layer: 'shield-front' }),
+]);
+
 for (const shield of equippedShields) {
   const spec = { ...shieldBase, shield };
   const emptySpec = { ...shieldBase, shield: 'none' };
@@ -1884,12 +2083,12 @@ for (const shield of equippedShields) {
       }
     }
 
-    const walkStart = changeSignature(renderPixels(spec, dir, 'walk', 0), renderPixels(emptySpec, dir, 'walk', 0));
-    const walkReturn = changeSignature(renderPixels(spec, dir, 'walk', 2), renderPixels(emptySpec, dir, 'walk', 2));
+    const walkStart = renderShieldLayers(spec, dir, 'walk', 0).join(',');
+    const walkReturn = renderShieldLayers(spec, dir, 'walk', 2).join(',');
     check(walkStart !== walkReturn, `${shield} shield must follow the off-hand walk swing in ${dir}`);
 
-    const attackWind = changeSignature(renderPixels(spec, dir, 'attack', 0), renderPixels(emptySpec, dir, 'attack', 0));
-    const attackRecover = changeSignature(renderPixels(spec, dir, 'attack', 3), renderPixels(emptySpec, dir, 'attack', 3));
+    const attackWind = renderShieldLayers(spec, dir, 'attack', 0).join(',');
+    const attackRecover = renderShieldLayers(spec, dir, 'attack', 3).join(',');
     check(
       dir === 'left' || dir === 'right' ? attackWind !== attackRecover : attackWind === attackRecover,
       `${shield} shield must follow only its hand socket during attacks in ${dir}`,
@@ -1984,12 +2183,24 @@ for (const shield of equippedShields) {
       `${shield} Tier 3 must expand beyond its Tier 2 ${dir} idle silhouette`,
     );
 
-    const walkStart = changeSignature(renderPixels(tier3Spec, dir, 'walk', 0), renderPixels(tier2Spec, dir, 'walk', 0));
-    const walkReturn = changeSignature(renderPixels(tier3Spec, dir, 'walk', 2), renderPixels(tier2Spec, dir, 'walk', 2));
+    const walkStart = changeSignature(
+      renderShieldLayers(tier3Spec, dir, 'walk', 0),
+      renderShieldLayers(tier2Spec, dir, 'walk', 0),
+    );
+    const walkReturn = changeSignature(
+      renderShieldLayers(tier3Spec, dir, 'walk', 2),
+      renderShieldLayers(tier2Spec, dir, 'walk', 2),
+    );
     check(walkStart !== walkReturn, `${shield} Tier 3 additions must follow the off-hand walk swing in ${dir}`);
 
-    const attackWind = changeSignature(renderPixels(tier3Spec, dir, 'attack', 0), renderPixels(tier2Spec, dir, 'attack', 0));
-    const attackRecover = changeSignature(renderPixels(tier3Spec, dir, 'attack', 3), renderPixels(tier2Spec, dir, 'attack', 3));
+    const attackWind = changeSignature(
+      renderShieldLayers(tier3Spec, dir, 'attack', 0),
+      renderShieldLayers(tier2Spec, dir, 'attack', 0),
+    );
+    const attackRecover = changeSignature(
+      renderShieldLayers(tier3Spec, dir, 'attack', 3),
+      renderShieldLayers(tier2Spec, dir, 'attack', 3),
+    );
     check(
       dir === 'left' || dir === 'right' ? attackWind !== attackRecover : attackWind === attackRecover,
       `${shield} Tier 3 additions must follow only the shield-hand socket during attacks in ${dir}`,
@@ -2030,12 +2241,24 @@ for (const shield of equippedShields) {
       `${shield} Tier 4 must expand beyond its Tier 3 ${dir} idle silhouette`,
     );
 
-    const walkStart = changeSignature(renderPixels(tier4Spec, dir, 'walk', 0), renderPixels(tier3Spec, dir, 'walk', 0));
-    const walkReturn = changeSignature(renderPixels(tier4Spec, dir, 'walk', 2), renderPixels(tier3Spec, dir, 'walk', 2));
+    const walkStart = changeSignature(
+      renderShieldLayers(tier4Spec, dir, 'walk', 0),
+      renderShieldLayers(tier3Spec, dir, 'walk', 0),
+    );
+    const walkReturn = changeSignature(
+      renderShieldLayers(tier4Spec, dir, 'walk', 2),
+      renderShieldLayers(tier3Spec, dir, 'walk', 2),
+    );
     check(walkStart !== walkReturn, `${shield} Tier 4 additions must follow the off-hand walk swing in ${dir}`);
 
-    const attackWind = changeSignature(renderPixels(tier4Spec, dir, 'attack', 0), renderPixels(tier3Spec, dir, 'attack', 0));
-    const attackRecover = changeSignature(renderPixels(tier4Spec, dir, 'attack', 3), renderPixels(tier3Spec, dir, 'attack', 3));
+    const attackWind = changeSignature(
+      renderShieldLayers(tier4Spec, dir, 'attack', 0),
+      renderShieldLayers(tier3Spec, dir, 'attack', 0),
+    );
+    const attackRecover = changeSignature(
+      renderShieldLayers(tier4Spec, dir, 'attack', 3),
+      renderShieldLayers(tier3Spec, dir, 'attack', 3),
+    );
     check(
       dir === 'left' || dir === 'right' ? attackWind !== attackRecover : attackWind === attackRecover,
       `${shield} Tier 4 additions must follow only the shield-hand socket during attacks in ${dir}`,
@@ -2070,12 +2293,24 @@ for (const shield of equippedShields) {
       }
     }
 
-    const walkStart = changeSignature(renderPixels(tier5Spec, dir, 'walk', 0), renderPixels(tier4Spec, dir, 'walk', 0));
-    const walkReturn = changeSignature(renderPixels(tier5Spec, dir, 'walk', 2), renderPixels(tier4Spec, dir, 'walk', 2));
+    const walkStart = changeSignature(
+      renderShieldLayers(tier5Spec, dir, 'walk', 0),
+      renderShieldLayers(tier4Spec, dir, 'walk', 0),
+    );
+    const walkReturn = changeSignature(
+      renderShieldLayers(tier5Spec, dir, 'walk', 2),
+      renderShieldLayers(tier4Spec, dir, 'walk', 2),
+    );
     check(walkStart !== walkReturn, `${shield} Tier 5 artifact form must follow the off-hand walk swing in ${dir}`);
 
-    const attackWind = changeSignature(renderPixels(tier5Spec, dir, 'attack', 0), renderPixels(tier4Spec, dir, 'attack', 0));
-    const attackRecover = changeSignature(renderPixels(tier5Spec, dir, 'attack', 3), renderPixels(tier4Spec, dir, 'attack', 3));
+    const attackWind = changeSignature(
+      renderShieldLayers(tier5Spec, dir, 'attack', 0),
+      renderShieldLayers(tier4Spec, dir, 'attack', 0),
+    );
+    const attackRecover = changeSignature(
+      renderShieldLayers(tier5Spec, dir, 'attack', 3),
+      renderShieldLayers(tier4Spec, dir, 'attack', 3),
+    );
     check(
       dir === 'left' || dir === 'right' ? attackWind !== attackRecover : attackWind === attackRecover,
       `${shield} Tier 5 artifact form must follow only the shield-hand socket during attacks in ${dir}`,

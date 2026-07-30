@@ -4,6 +4,7 @@ function directionalPlot(g, direction) {
   return (forward, lateral, color) => {
     if (direction === 'right') g.set(12 + forward, 12 + lateral, color);
     else if (direction === 'down') g.set(12 + lateral, 12 + forward, color);
+    else if (direction === 'left') g.set(12 - forward, 12 - lateral, color);
     else g.set(12 - lateral, 12 - forward, color);
   };
 }
@@ -99,6 +100,7 @@ function drawProjectile(g, d, frame, effect) {
 function impactCenter(d) {
   if (d === 'right') return [16, 12];
   if (d === 'down') return [12, 16];
+  if (d === 'left') return [8, 12];
   return [12, 8];
 }
 

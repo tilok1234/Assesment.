@@ -1,0 +1,352 @@
+[
+  {
+    "weapon": "dagger",
+    "tier": "tier1",
+    "averagePixels": 8,
+    "averageBoundsArea": 18,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "dagger",
+    "tier": "tier2",
+    "averagePixels": 12,
+    "averageBoundsArea": 21,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "dagger",
+    "tier": "tier3",
+    "averagePixels": 12,
+    "averageBoundsArea": 21,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "dagger",
+    "tier": "tier4",
+    "averagePixels": 15,
+    "averageBoundsArea": 27,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "dagger",
+    "tier": "tier5",
+    "averagePixels": 19,
+    "averageBoundsArea": 45,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "axe",
+    "tier": "tier1",
+    "averagePixels": 16.25,
+    "averageBoundsArea": 27.75,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "axe",
+    "tier": "tier2",
+    "averagePixels": 22.25,
+    "averageBoundsArea": 46.25,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "axe",
+    "tier": "tier3",
+    "averagePixels": 27.5,
+    "averageBoundsArea": 61.5,
+    "maximumComponents": 1,
+    "edgeDirections": 4,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "axe",
+    "tier": "tier4",
+    "averagePixels": 31.5,
+    "averageBoundsArea": 71.75,
+    "maximumComponents": 1,
+    "edgeDirections": 4,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "axe",
+    "tier": "tier5",
+    "averagePixels": 41.5,
+    "averageBoundsArea": 81,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "warhammer",
+    "tier": "tier1",
+    "averagePixels": 22.25,
+    "averageBoundsArea": 71.75,
+    "maximumComponents": 1,
+    "edgeDirections": 4,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "warhammer",
+    "tier": "tier2",
+    "averagePixels": 28.25,
+    "averageBoundsArea": 71.75,
+    "maximumComponents": 1,
+    "edgeDirections": 4,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "warhammer",
+    "tier": "tier3",
+    "averagePixels": 32.25,
+    "averageBoundsArea": 92.25,
+    "maximumComponents": 1,
+    "edgeDirections": 4,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "warhammer",
+    "tier": "tier4",
+    "averagePixels": 39.25,
+    "averageBoundsArea": 92.25,
+    "maximumComponents": 1,
+    "edgeDirections": 4,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "warhammer",
+    "tier": "tier5",
+    "averagePixels": 42.25,
+    "averageBoundsArea": 92.25,
+    "maximumComponents": 1,
+    "edgeDirections": 4,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "bow",
+    "tier": "tier1",
+    "averagePixels": 24.5,
+    "averageBoundsArea": 66,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "bow",
+    "tier": "tier2",
+    "averagePixels": 26.5,
+    "averageBoundsArea": 78,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "bow",
+    "tier": "tier3",
+    "averagePixels": 28.5,
+    "averageBoundsArea": 78,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "bow",
+    "tier": "tier4",
+    "averagePixels": 34.5,
+    "averageBoundsArea": 105,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "bow",
+    "tier": "tier5",
+    "averagePixels": 41.5,
+    "averageBoundsArea": 127.5,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "staff",
+    "tier": "tier1",
+    "averagePixels": 13.75,
+    "averageBoundsArea": 39,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "staff",
+    "tier": "tier2",
+    "averagePixels": 18.75,
+    "averageBoundsArea": 41.5,
+    "maximumComponents": 1,
+    "edgeDirections": 2,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "staff",
+    "tier": "tier3",
+    "averagePixels": 20.75,
+    "averageBoundsArea": 61.25,
+    "maximumComponents": 1,
+    "edgeDirections": 2,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "staff",
+    "tier": "tier4",
+    "averagePixels": 24,
+    "averageBoundsArea": 73.5,
+    "maximumComponents": 1,
+    "edgeDirections": 2,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "staff",
+    "tier": "tier5",
+    "averagePixels": 32,
+    "averageBoundsArea": 73.5,
+    "maximumComponents": 1,
+    "edgeDirections": 2,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "wand",
+    "tier": "tier1",
+    "averagePixels": 10,
+    "averageBoundsArea": 23.25,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "wand",
+    "tier": "tier2",
+    "averagePixels": 13,
+    "averageBoundsArea": 25.5,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "wand",
+    "tier": "tier3",
+    "averagePixels": 15,
+    "averageBoundsArea": 42.5,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "wand",
+    "tier": "tier4",
+    "averagePixels": 17.5,
+    "averageBoundsArea": 45,
+    "maximumComponents": 1,
+    "edgeDirections": 2,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "wand",
+    "tier": "tier5",
+    "averagePixels": 21.5,
+    "averageBoundsArea": 45,
+    "maximumComponents": 1,
+    "edgeDirections": 2,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "spellbook",
+    "tier": "tier1",
+    "averagePixels": 12,
+    "averageBoundsArea": 16,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "spellbook",
+    "tier": "tier2",
+    "averagePixels": 16,
+    "averageBoundsArea": 20,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "spellbook",
+    "tier": "tier3",
+    "averagePixels": 27,
+    "averageBoundsArea": 36,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "spellbook",
+    "tier": "tier4",
+    "averagePixels": 32,
+    "averageBoundsArea": 42,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  },
+  {
+    "weapon": "spellbook",
+    "tier": "tier5",
+    "averagePixels": 40,
+    "averageBoundsArea": 56,
+    "maximumComponents": 1,
+    "edgeDirections": 0,
+    "discardedFrames": 0,
+    "discardedPixels": 0
+  }
+]
