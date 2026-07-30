@@ -1,32 +1,44 @@
 # Project Handoff
 
-Date: 2026-07-28
+Date: 2026-07-30
 
 ## Purpose
 
 This is the canonical next-chat continuation for the 8-bit Sprite Assembler.
-It records the pushed Bosses checkpoint, the completed documentation audit,
-its validation evidence, and the remaining visual-approval boundary.
+It records the ruled `main` mainline, the normal-work worktree, the parked
+19-boss review state, the pushed Bosses checkpoint, the completed documentation
+audit, its validation evidence, and the remaining visual-approval boundary.
 Historical plan measurements remain in their plan files and are explicitly
 labeled as historical where the public animation contract later expanded.
 
 ## Canonical Workspace And Git State
 
-- Worktree:
-  `C:\Users\headc\.codex\worktrees\9f24\8-bit sprite assembler`
-- Branch: `codex/form-shading`
-- Upstream: `origin/codex/form-shading`
+- Normal-work worktree:
+  `C:\Users\headc\Documents\8-bit-sprite-assembler-main`
+- Mainline branch: `main`
+- Upstream: `origin/main`
+- Current synchronized main checkpoint when this correction began: `e5ecdea`
+  (`Sync-log hook in the README (doc 18 accepted 2026-07-30)`).
+- Consolidation checkpoint: `c6dcdc5`. It contains all four former Codex
+  development lines, including the game-pack source commit `b7eae05f`.
+- `codex/form-shading` is fully merged and archive-tagged as
+  `archive/codex/form-shading`; its deleted remote branch is not a continuation
+  target.
+- The archived checkout at
+  `C:\Users\headc\Documents\8-bit sprite assembler` is review-only. Its entire
+  former dirty state is parked on local branch `wip/19-boss-review` at
+  `fb4b664` (`Park 19-boss review state`), branched from unchanged archived
+  checkpoint `9b7f4bf`.
+- That parked commit contains the five tracked modifications,
+  `engine/effect-compositor.js`, and both generated review directories. The
+  branch remains local because the parked review payload is about 60.9 MB.
 - Pushed direction-pilot checkpoint: `08d1ef7`
-  (`Checkpoint 48x48 boss direction pilots`)
+  (`Checkpoint 48x48 boss direction pilots`).
 - Pushed animated-workspace checkpoint: `f15a9cf`
-  (`Add animated boss review workspace`)
-- This handoff reconciliation follows `f15a9cf`; use the commands below for
-  the exact self-referential documentation commit rather than freezing its hash
-  inside this file.
-- The branch is expected to be clean and synchronized with upstream.
+  (`Add animated boss review workspace`).
 - No Windows artifact has been built for this state.
 
-Before making any claim or edit, rerun:
+Before making any claim or normal edit in the main worktree, rerun:
 
 ```powershell
 git status --short --branch
@@ -35,8 +47,9 @@ git rev-parse '@{upstream}'
 git log -3 --oneline --decorate
 ```
 
-Do not switch to the similarly named checkout beneath `Documents`. Continue
-only in the isolated worktree above, and preserve all intentional dirty work.
+Normal work happens only in the `main` worktree above. Do not modify, clean,
+reset, rebase, or repurpose the archived review checkout unless the designer
+first resolves its open review call.
 
 ## Required Reading
 
@@ -115,6 +128,14 @@ Pushed commit `08d1ef7` contains nine approved 48x48 direction pilots:
 Each direction pilot has checkpoint-exact Down/Left/Right/Up frames and a
 native `48x192` hard-alpha direction sheet.
 
+The current main worktree appends the user-approved Cruel Catgirl Templar of
+the Brutes as the tenth direction pilot, followed by the user-approved Divine
+Armored Templar Astro Knight as the eleventh and the user-approved Gunslinger
+Boar Rider as the thirteenth. Furious Depraved Rhino was previously approved
+as the twelfth, but its new low quadruped redesign remains a four-direction
+candidate. Eclipse Unicorn Sovereign is the fourteenth entry and a second
+four-direction candidate.
+
 ## Pushed Bosses Workspace
 
 Pushed technical checkpoint `f15a9cf` adds complete review-only animation
@@ -135,20 +156,26 @@ Each animated pilot contains:
 - one native `960x192` full sheet;
 - four native `960x48` direction sheets;
 - six native animation sheets;
-- exact Idle-frame-1 parity with the approved direction pilot;
+- exact Idle-frame-1 parity with the current direction control;
 - hard alpha and a safe transparent frame border.
 
-Lava-Core Colossus, Abyssal Crown-Kraken, and Sun-Crown Griffin remain explicit
-static four-direction fallbacks.
+The current main worktree appends Cruel Catgirl Templar of the Brutes as the
+seventh 80-frame animation corpus and Divine Armored Templar Astro Knight as
+the eighth. Both are visually accepted. Furious Depraved Rhino is the ninth
+80-frame corpus and Gunslinger Boar Rider is the tenth; both are explicit
+animation candidates awaiting live visual review. Lava-Core Colossus, Abyssal
+Crown-Kraken, and Sun-Crown Griffin remain the three approved static
+four-direction fallbacks. Eclipse Unicorn Sovereign remains static until its
+direction design is approved.
 
 The Bosses UI mirrors useful Player review controls without creating a fourth
 persisted document kind:
 
 - pilot and direction selection;
-- animation selection for the six animated pilots;
+- animation selection for the ten animated pilots;
 - play/pause, frame stepping, 0.5x/1x/2x speed, and Cycle all;
 - native 1x full-sheet, current-animation, and current-direction downloads;
-- static all-direction display/download for the three fallbacks.
+- static all-direction display/download for the three approved fallbacks.
 
 Boss state is ephemeral. It does not enter history, presets, persistence,
 Production/Wildcard rolls, ordinary packs, Complete Kits, Wildshot game packs,
@@ -161,9 +188,53 @@ or Windows builds.
   Forge-Titan were accepted after focused live review.
 - Pit-Fiend Juggernaut was repaired after review with continuous body motion
   and a non-destructive tower-shield bash.
-- Goblin War-Crown is the current visual-review candidate.
-- Do not describe Goblin War-Crown or the six-boss batch as finally visually
-  approved until the user explicitly accepts that current candidate.
+- Goblin War-Crown's animation checkpoint does not gain implicit visual
+  approval from later work.
+- Cruel Catgirl Templar of the Brutes has an explicitly approved
+  four-direction design and its repaired full animation was accepted when the
+  user responded "awesome" and moved to the next boss.
+- Its weapon-depth repair keeps the ready hammer and visible gauntlet grip in
+  front; attack lifts split the hammer head behind the body while the near shaft
+  and grip stay visible in front, then the full hammer comes forward for the slam.
+- Divine Armored Templar Astro Knight has an explicitly approved
+  four-direction design: sealed celestial plate, a distinct domed helm with
+  narrow radiant T-visor, astrolabe halo, star-lance, constellation cloak, and
+  orbit shield.
+- Its isolated 80-frame animation corpus uses armored idle, heavy march,
+  shield-braced star-lance thrust, astral halo cast, radiant recoil, and staged
+  celestial collapse motion while keeping both relics in the foreground.
+- The Astro Knight animation was explicitly accepted when the user responded
+  "very good!" and moved to the next boss.
+- Furious Depraved Rhino's earlier upright brute design was accepted when the
+  user responded "very good", then explicitly reopened when the user requested
+  a more readable quadruped rhino.
+- Its current repaired direction candidate is a low, long four-legged charge
+  beast with a shoulder hump, separated front/rear hoof columns, a forward
+  head, dominant nasal horn, scarred grey hide, broken restraints, crimson
+  rage brand, and corrupted flesh patches.
+- The follow-up side-view repair reduces the profile head to the front third,
+  extends a clean shoulder/ribcage/rump and belly line, and places two
+  forelegs plus two hindlegs at four distinct horizontal positions; Right
+  remains the exact mirror of Left.
+- Gunslinger Boar Rider has an explicitly approved four-direction design: a
+  wide-brim outlaw with foregrounded twin revolvers, red bandana, split duster,
+  armored saddle, and a massive bristled boar with red eyes and paired tusks.
+- The Boar Rider directions were explicitly accepted when the user responded
+  "nice" and requested animation for the last bosses.
+- The regenerated Rhino animation candidate applies heavy breathing,
+  four-legged stamp/charge motion, a horn-led lunge, corruption roar, bright
+  recoil, and staged collapse to the quadruped controls.
+- The Boar Rider animation candidate uses mounted breathing, gallop motion,
+  dual-revolver fire/recoil, a Deadeye powder-sigil cast, mounted hurt recoil,
+  and a staged rider-and-boar collapse.
+- Eclipse Unicorn Sovereign is a new four-direction candidate: a pearl-white
+  war-unicorn with a long striped sunhorn, luminous cyan eyes, flowing violet
+  eclipse mane and tail, crescent barding, and four separated hoof columns.
+  Right is the exact horizontal mirror of Left; animation is not yet
+  authorized.
+- Both new 80-frame animation corpora are structurally integrated but remain
+  visual candidates. Goblin War-Crown also retains its unresolved
+  animation-candidate status.
 - Do not begin Lava-Core Colossus, Abyssal Crown-Kraken, or Sun-Crown Griffin
   animation work without a new one-at-a-time approval.
 
@@ -178,12 +249,12 @@ node tools/check-boss-animations.mjs
 
 Current focused totals:
 
-- nine direction catalogs;
-- 36 checkpoint-exact 48x48 direction frames;
-- nine checkpoint-exact `48x192` direction sheets;
-- six animation catalogs;
-- 480 distinct animated 48x48 frames;
-- 66 native full/scoped animation sheets;
+- twelve approved direction catalogs plus Rhino and Unicorn candidates;
+- 56 checkpoint-exact 48x48 direction frames;
+- fourteen checkpoint-exact `48x192` direction sheets;
+- ten animation catalogs;
+- 800 distinct animated 48x48 frames;
+- 110 native full/scoped animation sheets;
 - exact control-frame parity;
 - hard alpha, transparent safety borders, immutable facade exports, UI wiring,
   and dependency isolation.
@@ -256,8 +327,9 @@ The audit deliberately did not erase chronological evidence. Historical
 Cast-only 16-column dimensions, and earlier release checkpoints remain where
 they are clearly labeled as historical.
 
-`death-review/boss-48-drafts/README.md` was checked and already describes the
-six animated / three static split and the isolation boundary.
+`death-review/boss-48-drafts/README.md` describes the ten animated entries,
+three approved static fallbacks, the Unicorn direction candidate, the Rhino,
+Boar Rider, and Goblin animation candidates, and the isolation boundary.
 
 ## Frozen Boundaries
 
@@ -276,21 +348,27 @@ Unless the user explicitly changes scope:
 
 ## Exact Next Step
 
-1. Refresh the live assembler and review Goblin War-Crown through every
-   direction and animation at native and enlarged scale with Effects Off.
-2. If the user requests a repair, change only that candidate and rerun both
-   boss gates plus `npm.cmd run check`.
-3. If the user explicitly accepts the candidate, record that visual approval
-   in a focused documentation checkpoint or begin exactly one of the three
-   static bosses as a separate animation candidate, according to the user's
-   direction.
-4. Do not infer approval from structural tests or from acceptance of an older
-   frame.
+1. Refresh the live assembler and review Eclipse Unicorn Sovereign across
+   Down/Left/Right/Up at native and enlarged scale with Effects Off.
+2. If the user requests a repair, change only the Unicorn direction candidate
+   and rerun both boss gates plus `npm.cmd run check`.
+3. Do not begin its 80-frame animation corpus before explicit direction
+   approval, and do not infer approval from structural tests.
 
 ## Expected Worktree State
 
-The worktree is expected to be clean. The pushed Bosses scope consists of UI
-and styles, stable facade/catalog wiring, runtime assets beneath
-`engine/assets/bosses/`, focused validators and deterministic generators, and
-the audited documentation. Treat any new dirty path as unexpected until
-explained by a fresh `git status` and diff.
+The normal-work `main` worktree is expected to be clean at the local
+crash-safe Bosses checkpoint created from base `origin/main` at `e5ecdea`. That
+checkpoint contains the approved Catgirl and Astro Knight direction/animation
+work, the repaired quadruped Furious Depraved Rhino direction/animation
+candidates, the approved Gunslinger Boar Rider directions plus animation
+candidate, and the Eclipse Unicorn Sovereign direction candidate. It is local
+until the designer separately authorizes a push.
+
+The parked checkout is expected to remain clean on `wip/19-boss-review` at
+`fb4b664`.
+
+The pushed Bosses scope consists of UI and styles, stable facade/catalog
+wiring, runtime assets beneath `engine/assets/bosses/`, focused validators and
+deterministic generators, and the audited documentation. Treat any other new
+dirty path as unexpected until explained by a fresh `git status` and diff.

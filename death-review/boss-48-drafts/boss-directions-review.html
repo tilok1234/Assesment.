@@ -160,16 +160,16 @@
 <body>
   <header>
     <h1>Boss Direction Roster &middot; Combined Visual Gate</h1>
-    <div class="subtitle">Nine review-only bosses &middot; Down, Left, Right, Up &middot; 48&times;48 native cells &middot; Effects Off</div>
-    <div class="gate">VISUAL GATE &mdash; NOT IN ENGINE OR CATALOG</div>
-    <div class="summary" id="summary">Loading nine manifests and 36 direction frames...</div>
+    <div class="subtitle">Twelve approved bosses plus Rhino and Unicorn candidates &middot; Down, Left, Right, Up &middot; 48&times;48 native cells &middot; Effects Off</div>
+    <div class="gate">VISUAL GATE &mdash; NOT IN ENEMY OR PRODUCTION CATALOGS</div>
+    <div class="summary" id="summary">Loading fourteen manifests and 56 direction frames...</div>
   </header>
   <nav id="jump-links" aria-label="Boss jump links"></nav>
   <main id="roster"></main>
   <footer>
-    Combined comparison surface only. It reads the nine existing direction manifests and introduces no new
-    sprite geometry. No animations, catalog entries, renderer paths, export contracts, fixtures, baselines,
-    release artifacts, or Windows builds have changed.
+    Combined comparison surface for twelve approved direction pilots plus Rhino and Unicorn candidates. Boss assets remain outside Enemy-mode
+    integration, production rendering, persistence, packs, fixtures, baselines, release artifacts, and
+    Windows builds.
   </footer>
   <script type="module">
     const bosses = [
@@ -227,6 +227,39 @@
         note: 'Approved v4 front, hooked-beak profiles, low wings, lion body, and rear crest.',
         review: './sun-crown-griffin-directions-v1.html',
       },
+      {
+        slug: 'cruel-catgirl-templar-of-the-brutes',
+        name: 'Cruel Catgirl Templar of the Brutes',
+        note: 'Approved direction design with exposed feline ears, armored tail, broken-cross tabard, and execution hammer.',
+        review: './cruel-catgirl-templar-of-the-brutes-directions-v1.html',
+      },
+      {
+        slug: 'divine-armored-templar-astro-knight',
+        name: 'Divine Armored Templar Astro Knight',
+        note: 'Distinct domed helm, narrow radiant T-visor, astrolabe halo, star-lance, constellation cloak, and orbit shield.',
+        review: './boss-directions-review.html#divine-armored-templar-astro-knight',
+      },
+      {
+        slug: 'furious-depraved-rhino',
+        name: 'Furious Depraved Rhino',
+        note: 'Low quadrupedal charge beast with a dominant nasal horn, shoulder hump, four separated legs and hooves, scarred grey hide, broken restraints, rage brand, and corrupted flesh patches.',
+        status: 'candidate',
+        review: './boss-directions-review.html#furious-depraved-rhino',
+      },
+      {
+        slug: 'gunslinger-boar-rider',
+        name: 'Gunslinger Boar Rider',
+        note: 'Mounted outlaw with a wide-brim hat, red bandana, foregrounded twin revolvers, split duster, armored saddle, and a massive bristled boar with red eyes and paired tusks.',
+        status: 'approved',
+        review: './boss-directions-review.html#gunslinger-boar-rider',
+      },
+      {
+        slug: 'eclipse-unicorn-sovereign',
+        name: 'Eclipse Unicorn Sovereign',
+        note: 'Majestic war-unicorn with a long striped sunhorn, luminous cyan eyes, flowing eclipse mane and tail, crescent barding, and four separated hoof columns.',
+        status: 'candidate',
+        review: './boss-directions-review.html#eclipse-unicorn-sovereign',
+      },
     ];
 
     const jumpLinks = document.querySelector('#jump-links');
@@ -250,13 +283,16 @@
       let frameCount = 0;
       for (const [index, boss] of bosses.entries()) {
         const manifest = manifests[index];
-        const lockKey = Object.keys(manifest).find((key) => key.startsWith('downMatchesApproved'));
+        const status = boss.status ?? 'approved';
+        const lockPrefix = status === 'candidate' ? 'downMatchesCandidate' : 'downMatchesApproved';
+        const lockKey = Object.keys(manifest).find((key) => key.startsWith(lockPrefix));
         if (
           manifest.width !== 48 ||
           manifest.height !== 192 ||
           manifest.cell !== 48 ||
           manifest.hardAlpha !== true ||
           manifest.integrated !== false ||
+          (status === 'candidate' && manifest.reviewStatus !== 'candidate') ||
           !lockKey ||
           manifest[lockKey] !== true ||
           manifest.frames.length !== 4
@@ -274,6 +310,7 @@
               <div class="boss-note">${boss.note}</div>
             </div>
             <div class="boss-facts">
+              ${status === 'candidate' ? 'UNAPPROVED CANDIDATE' : 'APPROVED PILOT'}<br>
               48&times;192 sheet &middot; hard alpha &middot; Down locked<br>
               <a class="boss-link" href="${boss.review}">open individual review</a>
             </div>

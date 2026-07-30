@@ -113,16 +113,26 @@ check(
     && engine.BOSS_DIRECTION_PILOT_PROFILE.effects === false,
   'boss direction pilot policy identity must stay review-only, native 1x, static, and effects-off',
 );
-check(engine.BOSS_DIRECTION_PILOTS.length === 9, 'boss direction catalog must contain the nine approved pilots');
+check(engine.BOSS_DIRECTION_PILOTS.length === 14, 'boss direction catalog must contain twelve approved pilots plus Rhino and Unicorn candidates');
 
 const ids = engine.BOSS_DIRECTION_PILOTS.map(({ id }) => id);
 check(new Set(ids).size === ids.length, 'boss direction pilot ids must be unique');
 check(ids.every((id) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)), 'boss direction pilot ids must use portable lower-kebab-case');
+check(
+  engine.BOSS_DIRECTION_PILOTS.filter(({ status }) => status === 'approved').length === 12,
+  'boss direction catalog must retain exactly twelve approved pilots',
+);
+check(
+  JSON.stringify(engine.BOSS_DIRECTION_PILOTS.filter(({ status }) => status === 'candidate').map(({ id }) => id))
+    === JSON.stringify(['furious-depraved-rhino', 'eclipse-unicorn-sovereign']),
+  'Furious Depraved Rhino and Eclipse Unicorn Sovereign must remain explicit direction candidates',
+);
 
 const expectedAssetNames = [];
 for (const boss of engine.BOSS_DIRECTION_PILOTS) {
   check(typeof boss.name === 'string' && boss.name.length > 0, `${boss.id}: missing display name`);
   check(typeof boss.note === 'string' && boss.note.length > 0, `${boss.id}: missing review note`);
+  check(['approved', 'candidate'].includes(boss.status), `${boss.id}: invalid review status`);
   check(
     boss.sheet === `./engine/assets/bosses/${boss.id}-directions-v1.png`,
     `${boss.id}: sheet path escaped the immutable runtime asset convention`,
@@ -134,7 +144,7 @@ for (const boss of engine.BOSS_DIRECTION_PILOTS) {
   const checkpointSheetPath = path.join(checkpointRoot, `${boss.id}-directions-v1.png`);
   const runtimeSheetBytes = await readFile(runtimeSheetPath);
   const checkpointSheetBytes = await readFile(checkpointSheetPath);
-  check(runtimeSheetBytes.equals(checkpointSheetBytes), `${boss.id}: runtime sheet must be byte-identical to the approved checkpoint`);
+  check(runtimeSheetBytes.equals(checkpointSheetBytes), `${boss.id}: runtime sheet must be byte-identical to the review checkpoint`);
   const sheet = png(runtimeSheetBytes, relativeSheet);
   check(sheet?.width === 48 && sheet?.height === 192, `${boss.id}: runtime sheet must be 48x192`);
   expectedAssetNames.push(path.basename(runtimeSheetPath));
@@ -152,7 +162,7 @@ for (const boss of engine.BOSS_DIRECTION_PILOTS) {
     const checkpointFramePath = path.join(checkpointRoot, `${boss.id}-directions-v1-${direction}.png`);
     const runtimeFrameBytes = await readFile(runtimeFramePath);
     const checkpointFrameBytes = await readFile(checkpointFramePath);
-    check(runtimeFrameBytes.equals(checkpointFrameBytes), `${boss.id}/${direction}: runtime frame must be byte-identical to the approved checkpoint`);
+    check(runtimeFrameBytes.equals(checkpointFrameBytes), `${boss.id}/${direction}: runtime frame must be byte-identical to the review checkpoint`);
     const frame = png(runtimeFrameBytes, relativeFrame);
     check(frame?.width === 48 && frame?.height === 48, `${boss.id}/${direction}: runtime frame must be 48x48`);
     distinctFrames.add(runtimeFrameBytes.toString('base64'));
@@ -187,7 +197,7 @@ const actualAssetNames = (await readdir(runtimeAssetRoot))
   .sort();
 check(
   JSON.stringify(actualAssetNames) === JSON.stringify(expectedAssetNames.sort()),
-  'runtime boss asset folder must contain exactly the nine static direction sheets and 36 direction frames',
+  'runtime boss asset folder must contain exactly fourteen static direction sheets and 56 direction frames',
 );
 
 const catalogImports = [...catalogSource.matchAll(/from\s+['"]([^'"]+)['"]/g)];
@@ -220,4 +230,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('Boss direction structural gate passed: 9 pilots, 36 distinct 48x48 frames, 9 native 48x192 sheets, immutable facade, isolated dependencies.');
+console.log('Boss direction structural gate passed: 12 approved pilots plus Rhino and Unicorn candidates, 56 distinct 48x48 frames, 14 native 48x192 sheets, immutable facade, isolated dependencies.');

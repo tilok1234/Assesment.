@@ -19,10 +19,13 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 
 - Player assembly across Human, Elf, Orc, Goblin, Tiefling, Celestial, Dwarf, Undead, Lizardfolk, and Beastkin species; Classic, Lean, Sturdy, and Heroic body builds; plus skin, 11 hairstyles, six expressions, eight facial details, 12 headgear choices, nine outfits across five armor tiers, weapon type and tier, shield, the Lantern utility off-hand, and palette choices
 - 57 enemy families with 202 predefined variants
-- A separate Boss Directions tab with nine approved 48x48 direction pilots;
-  six now have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
-  native 1x animation-sheet download, while three retain the approved static
-  four-direction fallback
+- A separate Bosses tab with twelve approved 48x48 direction pilots plus
+  repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
+  bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
+  native 1x animation-sheet download. Cruel Catgirl Templar of the Brutes and
+  Divine Armored Templar Astro Knight are accepted, while Goblin War-Crown,
+  Furious Depraved Rhino, and Gunslinger Boar Rider retain separate
+  animation-candidate status
 - 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
 - A Combat Loadout Builder that previews those overlays on players and enemies, supplies automatic weapon-aware defaults, supports per-slot overrides, saves named recipes, and exports game-ready JSON
 - An Equipment Variant Batch Builder that turns one character identity into bounded weapon, armor, shield, utility-off-hand, or 121-sheet RPG equipment collections with per-variant loadouts and only the combat effects they actually reference
@@ -126,13 +129,20 @@ history-only and never enters presets, packs, recipes, exports, or schemas. If
 no compatible alternative exists, the editor reports that result without
 changing the player.
 
-The Bosses tab is a deliberately isolated game-test surface for the nine
-approved 48x48 direction pilots. Six pilots—Ancient Mirejaw, Bone Reliquary
-King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut, and Goblin
-War-Crown—also expose the full 20-column animation contract, playback/frame
-inspection, and native full/direction/animation downloads. Lava-Core Colossus,
-Abyssal Crown-Kraken, and Sun-Crown Griffin remain static four-direction
-fallbacks. Boss selection, direction, animation, frame, and speed are
+The Bosses tab is a deliberately isolated game-test surface for twelve
+approved 48x48 direction pilots plus repaired quadruped Rhino and Eclipse
+Unicorn Sovereign direction candidates. Ten pilots—Ancient Mirejaw, Bone Reliquary
+King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut, Goblin
+War-Crown, Cruel Catgirl Templar of the Brutes, Divine Armored Templar Astro
+Knight, Furious Depraved Rhino, and Gunslinger Boar Rider—also expose the full
+20-column animation contract, playback/frame inspection, and native
+full/direction/animation downloads. Lava-Core Colossus, Abyssal Crown-Kraken,
+and Sun-Crown Griffin remain approved static four-direction fallbacks. Eclipse
+Unicorn Sovereign is a static four-direction candidate. Goblin
+War-Crown, Furious Depraved Rhino, and Gunslinger Boar Rider remain animation
+visual candidates; the Rhino's repaired direction controls also await visual
+approval. The repaired catgirl-templar and Astro Knight animations are
+accepted. Boss selection, direction, animation, frame, and speed are
 ephemeral: they do not enter current-document persistence, history, presets,
 Production/Wildcard rolls, ordinary packs, Complete Kits, game-pack exports,
 effects, or the 24x24 procedural renderer.
@@ -353,22 +363,29 @@ Every component shares the same animation grid and has been validated to recompo
 
 The review-only **Bosses** workspace now exposes Ancient Mirejaw, Bone
 Reliquary King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut,
-and Goblin War-Crown as the first six complete 48x48 animation pilots. All six use the
-Player-facing animation names and counts (Idle x2, Walk x4, Attack x4, Cast x4,
+Goblin War-Crown, Cruel Catgirl Templar of the Brutes, Divine Armored Templar
+Astro Knight, Furious Depraved Rhino, and Gunslinger Boar Rider as ten complete
+48x48 animation pilots. All ten use the Player-facing animation names and
+counts (Idle x2, Walk x4, Attack x4, Cast x4,
 Hurt x2, Death x4), four direction rows, and native 20-column `960x192` full
 sheets. Playback, frame inspection, speed, Cycle all, direction controls, and
 native full/current animation/current direction downloads are available
 without adding Boss to the persisted sprite document.
 
-The other three approved bosses remain static four-direction pilots and are
-labeled that way in the interface. All boss assets remain effects-off and
+The other three approved bosses and the Eclipse Unicorn Sovereign candidate
+remain static four-direction entries. All boss assets remain effects-off and
 outside Enemy mode, procedural renderers, production rolls, presets,
 character/game packs, fixtures, baselines, release artifacts, and Windows
 builds. Ancient Mirejaw, Bone Reliquary King, Scorpion Empress, and Cyclops
 Forge-Titan were accepted in live review; Pit-Fiend Juggernaut was repaired
-after live review, and Goblin War-Crown is the current visual-review candidate.
+after live review. Cruel Catgirl Templar of the Brutes is accepted after its
+foreground-grip and attack-lift depth repair. Divine Armored Templar Astro
+Knight is accepted after its sealed-helmet direction repair and full motion
+review. Goblin War-Crown, Furious Depraved Rhino, and Gunslinger Boar Rider
+remain full-animation visual candidates; the Rhino's low quadruped direction
+redesign is also a visual candidate.
 
-All six Idle loops use authored breathing or weight-shift silhouettes rather
+All ten Idle loops use authored breathing or weight-shift silhouettes rather
 than palette-only flashing. Scorpion Empress additionally uses a blink and
 stinger-flick Idle, stable-body leg scuttling, a tail-led strike, stinger
 casting, impact squash, and a weighted armored collapse so each action frame
@@ -385,6 +402,26 @@ four-stage wing-folded collapse.
 Goblin War-Crown uses a compact commander weight shift, planted march, royal
 shield bash, crown-command pulse, bright Hurt recoil, and banner-led collapse.
 
+Cruel Catgirl Templar of the Brutes uses an armored weight shift, planted
+march, foreground-held execution-hammer wind-up and ground slam, crimson
+templar-sigil cast, bright recoil, and a four-stage directional collapse.
+
+Divine Armored Templar Astro Knight uses armored idle, heavy march,
+shield-braced star-lance thrust, astral halo cast, radiant recoil, and staged
+celestial collapse motion while keeping its lance and orbit shield in front.
+
+Furious Depraved Rhino now has repaired quadruped direction controls and a
+regenerated 80-frame animation corpus. Both remain explicit visual candidates.
+
+Gunslinger Boar Rider has approved direction controls and a full mounted
+gallop/dual-revolver animation corpus that remains an explicit visual
+candidate.
+
+Eclipse Unicorn Sovereign is direction-only: a pearl-white war-unicorn with a
+long striped sunhorn, luminous cyan eyes, flowing violet eclipse mane and tail,
+crescent barding, and four separated hoof columns. Its four-direction design
+awaits explicit visual approval before any animation work.
+
 ## Project layout
 
 - `index.html` - standard application entry point
@@ -396,23 +433,23 @@ shield bash, crown-command pulse, bright Hurt recoil, and banner-led collapse.
 - `engine/` - focused animation, palette, player-option, enemy, production-roll, Wildshot game-pack contract, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
 - `engine/catalogs/boss-directions.js`, `engine/catalogs/boss-animations.js`,
   and `engine/assets/bosses/` - immutable review-only boss direction and
-  Mirejaw/Bone King/Scorpion Empress/Cyclops Forge-Titan/Pit-Fiend/Goblin animation
-  profiles plus checkpoint-exact runtime PNGs
+  eight-pilot animation profiles plus checkpoint-exact runtime PNGs
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build
 - `tools/check-project.mjs` - project and asset validator
 - `tools/check-boss-directions.mjs` - focused boss asset, immutability, facade,
   native-sheet, and dependency-boundary gate
-- `tools/check-boss-animations.mjs` - focused 480-frame six-boss corpus,
+- `tools/check-boss-animations.mjs` - focused 640-frame eight-boss corpus,
   full/scoped-sheet, control-frame, immutability, UI, and isolation gate
 - `tools/generate-mirejaw-animation-v1.py`,
   `tools/generate-bone-king-animation-v1.py`,
   `tools/generate-scorpion-empress-animation-v1.py`,
   `tools/generate-cyclops-forge-titan-animation-v1.py`,
-  `tools/generate-pit-fiend-juggernaut-animation-v1.py`, and
-  `tools/generate-goblin-war-crown-animation-v1.py` - deterministic
-  authored-pose generators for the six review/runtime animation pilots
+  `tools/generate-pit-fiend-juggernaut-animation-v1.py`,
+  `tools/generate-goblin-war-crown-animation-v1.py`, and
+  `tools/generate-cruel-catgirl-templar-animation-v1.py` - deterministic
+  authored-pose generators for the seven review/runtime animation pilots
 - `tools/production-roll-review.mjs` - deterministic balanced Production/Wildcard review and audit generator
 - `src-tauri/` - Tauri 2 Windows wrapper, permissions, CSP, and icon resources
 - `ARCHITECTURE.md` - engine boundaries, dependency direction, and safe extension points

@@ -53,10 +53,13 @@ Sprite-rendering consumers import `sprite-engine.js`. Internal engine module pat
 - `engine/catalogs/boss-animations.js` owns the immutable review-only
   `boss-animation-v1` 48x48/20-column contract and the Ancient Mirejaw, Bone
   Reliquary King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend
-  Juggernaut, and Goblin War-Crown asset paths.
+  Juggernaut, Goblin War-Crown, Cruel Catgirl Templar of the Brutes, Divine
+  Armored Templar Astro Knight, Furious Depraved Rhino, and Gunslinger Boar
+  Rider asset paths.
 - `engine/catalogs/boss-directions.js` owns the immutable review-only
-  `boss-directions-v1` identity and paths for the nine approved 48x48 static
-  direction pilots.
+  `boss-directions-v1` identity and paths for twelve approved 48x48 direction
+  pilots plus repaired quadruped Rhino and Eclipse Unicorn Sovereign
+  candidates.
 - `engine/catalogs.js` is the internal catalog facade used by the renderer and helpers.
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
@@ -213,9 +216,11 @@ Bosses use an ephemeral `workspaceMode` layered above the last ordinary
 Player/Enemy/Effect document. Entering Boss does not call `setState()`, add a
 fourth persisted kind, or record history. Pilot, direction, animation, frame,
 speed, and playback are module-only review state. Reload therefore returns to
-the last ordinary mode. Six animated pilots use dedicated 48x48 playback plus
-native 1x full/direction/animation downloads; three static pilots use the
-checkpoint-exact 48x192 direction sheet. Both paths bypass every ordinary
+  the last ordinary mode. Ten animated pilots use dedicated 48x48 playback
+  plus native 1x full/direction/animation downloads; four static entries use
+the checkpoint-exact 48x192 direction sheet. Goblin War-Crown, Furious
+Depraved Rhino, and Gunslinger Boar Rider remain explicit animation
+candidates. Both animated and static paths bypass every ordinary
 export/pack route.
 
 The independently versioned persistence and export formats are:
@@ -285,18 +290,20 @@ deliberately not serialized.
   whole-character Wildcard remain unrestricted; compatible context is
   history-only and never serialized.
 - `sprite-engine.js` remains the public import path.
-- Boss pilots remain a separate 48x48 review contract: nine approved
-  four-direction sets, six full 20-column animation sets, three static
-  fallbacks, Down/Left/Right/Up row order, hard alpha, Effects Off, native 1x
-  export, and no persistence or production-renderer claim.
+- Boss pilots remain a separate 48x48 review contract: twelve approved
+  four-direction sets plus Rhino and Unicorn candidates, ten full 20-column
+  animation sets,
+  four static entries, Down/Left/Right/Up row order, hard
+  alpha, Effects Off, native 1x export, and no persistence or
+  production-renderer claim.
 - Browser and Windows builds use identical production files.
 
 `npm run check` enforces these invariants against the native export contract, class and equipment planner counts, character-pack ZIP format, Complete Character Kit component matrix, recipe paths, exact pixel recomposition, `asset-pack/manifest.json`, and all 232 committed PNG fixtures. The current 20-column shade gate adds 480 broad player None-parity cases, exhaustive None parity for all 16,160 enemy source frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. The Form matrix verifies source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, exact floor shadows and transparent cells, 158,872 visible changes, and 35,333 material-aware pixel differences from the silhouette-only control. Weapon validation also enforces one connected silhouette in every frame, family and tier distinction, casting-family proportions, global Tier 5 pixel-density and bounds budgets relative to Tier 4, exact left/right mirroring, direction-aware front/back layer routing and recomposition, animation-phase diversity, front-view identity retention, catastrophic-detachment protection, zero discarded pixels across all 6,000 weapon frames, all 12,800 shield cases across four body builds, all 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases, plus pixel/order parity for native full, direction, and animation sheet exports. The Lantern matrix checks animated hand attachment, face clearance, visible change, near/far routing, mutual exclusion, combat semantics, and exact layer recomposition. These structural checks do not replace explicit visual approval and do not resolve the deferred combined effect/shield compositor.
 
-The nested boss gates verify nine deeply frozen direction-catalog entries, 36
-checkpoint-exact 48x48 hard-alpha direction frames, nine checkpoint-exact
-48x192 direction sheets, plus six animation-catalog entries, 480 distinct
-48x48 frames, and 66 native full/scoped animation sheets. They also enforce
+The nested boss gates verify fourteen deeply frozen direction-catalog entries,
+56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
+48x192 direction sheets, plus ten animation-catalog entries, 800 distinct
+48x48 frames, and 110 native full/scoped animation sheets. They also enforce
 Idle-frame control parity, facade immutability, native-only download wiring,
 and absence from production renderer, generator, persistence, game-pack, and
 ordinary sheet dependencies.

@@ -32,11 +32,12 @@ export const BOSS_ANIMATION_PROFILE = Object.freeze({
 
 const ASSET_ROOT = './engine/assets/bosses';
 
-function animationPilot(id, name) {
+function animationPilot(id, name, reviewStatus = 'reviewed') {
   const base = `${ASSET_ROOT}/${id}-animation-v1`;
   return Object.freeze({
     id,
     name,
+    reviewStatus,
     profileId: BOSS_ANIMATION_PROFILE.id,
     fullSheet: `${base}-full.png`,
     directionSheets: Object.freeze(Object.fromEntries(
@@ -74,5 +75,23 @@ export const BOSS_ANIMATION_PILOTS = Object.freeze([
   animationPilot('scorpion-empress', 'Scorpion Empress'),
   animationPilot('cyclops-forge-titan', 'Cyclops Forge-Titan'),
   animationPilot('pit-fiend-juggernaut', 'Pit-Fiend Juggernaut'),
-  animationPilot('goblin-war-crown', 'Goblin War-Crown'),
+  animationPilot('goblin-war-crown', 'Goblin War-Crown', 'candidate'),
+  animationPilot(
+    'cruel-catgirl-templar-of-the-brutes',
+    'Cruel Catgirl Templar of the Brutes',
+  ),
+  animationPilot(
+    'divine-armored-templar-astro-knight',
+    'Divine Armored Templar Astro Knight',
+  ),
+  animationPilot(
+    'furious-depraved-rhino',
+    'Furious Depraved Rhino',
+    'candidate',
+  ),
+  animationPilot(
+    'gunslinger-boar-rider',
+    'Gunslinger Boar Rider',
+    'candidate',
+  ),
 ]);

@@ -2638,20 +2638,35 @@ function renderBossWorkspace() {
   if (animationPilot) {
     const animatedNames = E.BOSS_ANIMATION_PILOTS.map((pilot) => pilot.name);
     const staticCount = E.BOSS_DIRECTION_PILOTS.length - E.BOSS_ANIMATION_PILOTS.length;
+    const isAnimationCandidate = animationPilot.reviewStatus === 'candidate';
+    const isDirectionCandidate = boss.status === 'candidate';
     elements.appSubtitle.textContent = '48x48 · 4 directions · idle / walk / attack / cast / hurt / death';
-    elements.bossPilotKicker.textContent = 'Animated 48x48 pilot';
+    elements.bossPilotKicker.textContent = isAnimationCandidate
+      ? isDirectionCandidate
+        ? 'Direction repair + animation candidate · visual approval required'
+        : 'Animation candidate · visual approval required'
+      : 'Animated 48x48 pilot';
     elements.bossPilotTitle.textContent = 'Boss animation';
-    elements.bossPilotWarning.textContent = `${boss.name} is one of ${animatedNames.length} full animation pilots. The remaining ${staticCount} bosses stay static direction drafts; all boss assets stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.`;
+    elements.bossPilotWarning.textContent = isAnimationCandidate
+      ? isDirectionCandidate
+        ? `${boss.name} has a repaired four-direction quadruped design and a regenerated full animation candidate; both await explicit visual approval. The remaining ${staticCount} bosses stay static direction pilots; all boss assets stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.`
+        : `${boss.name} has an approved direction design and a full animation candidate awaiting explicit visual approval. The remaining ${staticCount} bosses stay static direction pilots; all boss assets stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.`
+      : `${boss.name} is one of ${animatedNames.length} full animation pilots. The remaining ${staticCount} bosses stay static direction drafts; all boss assets stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.`;
     elements.bossExportScopeControl.hidden = false;
     elements.bossExportScope.value = bossExportScope;
     renderBossPlaybackControls();
     drawBossFrame(boss, animationPilot);
   } else {
     const animatedNames = E.BOSS_ANIMATION_PILOTS.map((pilot) => pilot.name);
+    const isCandidate = boss.status === 'candidate';
     elements.appSubtitle.textContent = '48x48 · 4 static directions · review pilot';
-    elements.bossPilotKicker.textContent = 'Review-only 48x48 pilot';
+    elements.bossPilotKicker.textContent = isCandidate
+      ? 'Candidate · visual approval required'
+      : 'Review-only 48x48 pilot';
     elements.bossPilotTitle.textContent = 'Boss directions';
-    elements.bossPilotWarning.textContent = `Static direction pilot, not a fully animated boss. Full animation currently exists for ${formatDisplayNames(animatedNames)}; these frames stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.`;
+    elements.bossPilotWarning.textContent = isCandidate
+      ? `${boss.name} is a four-direction visual candidate awaiting explicit approval, not a fully animated boss. These frames stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.`
+      : `Static direction pilot, not a fully animated boss. Full animation currently exists for ${formatDisplayNames(animatedNames)}; these frames stay separate from Enemy mode, production rolls, presets, packs, effects, and the 24x24 renderer.`;
     elements.bossExportScopeControl.hidden = true;
     elements.bossStageImage.style.width = '';
     elements.bossStageImage.src = boss.frames[bossDirection];

@@ -131,6 +131,10 @@ const generatorSources = new Map(await Promise.all([
   ['cyclops-forge-titan', 'generate-cyclops-forge-titan-animation-v1.py', 'generate_cyclops_forge_titan_directions_v1'],
   ['pit-fiend-juggernaut', 'generate-pit-fiend-juggernaut-animation-v1.py', 'generate_pit_fiend_juggernaut_directions_v1'],
   ['goblin-war-crown', 'generate-goblin-war-crown-animation-v1.py', 'generate_goblin_war_crown_directions_v1'],
+  ['cruel-catgirl-templar-of-the-brutes', 'generate-cruel-catgirl-templar-animation-v1.py', 'generate_cruel_catgirl_templar_directions_v1'],
+  ['divine-armored-templar-astro-knight', 'generate-divine-armored-templar-astro-knight-animation-v1.py', 'generate_divine_armored_templar_astro_knight_directions_v1'],
+  ['furious-depraved-rhino', 'generate-furious-depraved-rhino-animation-v1.py', 'generate_furious_depraved_rhino_directions_v1'],
+  ['gunslinger-boar-rider', 'generate-gunslinger-boar-rider-animation-v1.py', 'generate_gunslinger_boar_rider_directions_v1'],
 ].map(async ([id, filename, directionModule]) => [
   id,
   {
@@ -175,7 +179,7 @@ check(
     && engine.BOSS_ANIMATION_PROFILE.effects === false,
   'boss animation profile must stay native 1x, animated, and effects-off',
 );
-check(engine.BOSS_ANIMATION_PILOTS.length === 6, 'exactly six full boss animation pilots may be integrated in this slice');
+check(engine.BOSS_ANIMATION_PILOTS.length === 10, 'exactly ten full boss animation pilots may be integrated in this slice');
 check(
   JSON.stringify(engine.BOSS_ANIMATION_PILOTS.map(({ id }) => id)) === JSON.stringify([
     'ancient-mirejaw',
@@ -184,12 +188,25 @@ check(
     'cyclops-forge-titan',
     'pit-fiend-juggernaut',
     'goblin-war-crown',
+    'cruel-catgirl-templar-of-the-brutes',
+    'divine-armored-templar-astro-knight',
+    'furious-depraved-rhino',
+    'gunslinger-boar-rider',
   ]),
-  'full boss animation pilots must remain Ancient Mirejaw, Bone Reliquary King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut, then Goblin War-Crown',
+  'full boss animation pilots must retain the eight existing entries and append Furious Depraved Rhino then Gunslinger Boar Rider',
 );
 check(
-  engine.BOSS_DIRECTION_PILOTS.filter(({ id }) => !engine.BOSS_ANIMATION_PILOTS.some((pilot) => pilot.id === id)).length === 3,
-  'the other three boss direction pilots must remain static-only',
+  engine.BOSS_DIRECTION_PILOTS.filter(({ id }) => !engine.BOSS_ANIMATION_PILOTS.some((pilot) => pilot.id === id)).length === 4,
+  'the three approved fallbacks plus the Unicorn candidate must remain static-only',
+);
+check(
+  engine.BOSS_ANIMATION_PILOTS.every(({ reviewStatus }) => ['reviewed', 'candidate'].includes(reviewStatus)),
+  'boss animation pilots must carry a review status',
+);
+check(
+  JSON.stringify(engine.BOSS_ANIMATION_PILOTS.filter(({ reviewStatus }) => reviewStatus === 'candidate').map(({ id }) => id))
+    === JSON.stringify(['goblin-war-crown', 'furious-depraved-rhino', 'gunslinger-boar-rider']),
+  'Goblin War-Crown, Furious Depraved Rhino, and Gunslinger Boar Rider must remain explicit animation candidates',
 );
 
 const expectedAssetNames = [];
@@ -283,7 +300,7 @@ for (const pilot of engine.BOSS_ANIMATION_PILOTS) {
           `${pilot.id}/${direction}: Idle must use authored silhouette motion rather than a color-only pulse`,
         );
       }
-      if (['scorpion-empress', 'cyclops-forge-titan', 'pit-fiend-juggernaut', 'goblin-war-crown'].includes(pilot.id)) {
+      if (['scorpion-empress', 'cyclops-forge-titan', 'pit-fiend-juggernaut', 'goblin-war-crown', 'cruel-catgirl-templar-of-the-brutes', 'divine-armored-templar-astro-knight', 'furious-depraved-rhino', 'gunslinger-boar-rider'].includes(pilot.id)) {
         check(
           distinctSilhouettes.size === animation.frames,
           `${pilot.id}/${animation.id}/${direction}: every frame must change the action silhouette`,
@@ -309,7 +326,7 @@ for (const pilot of engine.BOSS_ANIMATION_PILOTS) {
     const staticAsset = `engine/assets/bosses/${pilot.id}-directions-v1-${direction}.png`;
     const idle = png(await readFile(path.join(root, ...idleAsset.split('/'))), idleAsset);
     const approved = png(await readFile(path.join(root, ...staticAsset.split('/'))), staticAsset);
-    check(idle?.pixels.equals(approved?.pixels), `${pilot.id}/${direction}: Idle frame 1 must exactly preserve the approved static direction pilot`);
+    check(idle?.pixels.equals(approved?.pixels), `${pilot.id}/${direction}: Idle frame 1 must exactly preserve the current static direction control`);
   }
 }
 
@@ -332,7 +349,7 @@ for (const [relativePath, source] of boundarySources) {
   check(!/\bBOSS_ANIMATION|\bboss-animations\b/.test(source), `${relativePath}: boss animation pilots must not enter production generation, rendering, sheets, rolls, or game packs`);
 }
 for (const [id, generator] of generatorSources) {
-  check(generator.source.includes(generator.directionModule), `${id}: animation generator must derive from its approved direction sources`);
+  check(generator.source.includes(generator.directionModule), `${id}: animation generator must derive from its current direction sources`);
   check(generator.source.includes('apply_engine_treatment.mjs'), `${id}: animation generator must retain the Form + Complete B treatment path`);
 }
 check(!appSource.includes("{ mode: 'boss'"), 'Boss animation workspace must remain outside persisted sprite mode');
@@ -361,4 +378,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('Boss animation structural gate passed: Ancient Mirejaw + Bone Reliquary King + Scorpion Empress + Cyclops Forge-Titan + Pit-Fiend Juggernaut + Goblin War-Crown, 480 distinct 48x48 frames, 66 native 1x sheets, exact control frames, immutable facade, isolated dependencies.');
+console.log('Boss animation structural gate passed: ten pilots including Furious Depraved Rhino and Gunslinger Boar Rider, 800 distinct 48x48 frames, 110 native 1x sheets, exact control frames, immutable facade, isolated dependencies.');

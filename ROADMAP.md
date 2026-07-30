@@ -113,9 +113,17 @@ current 20-column Cast/Death contract extends the structural gate to 16,160 /
 rerolls, and the public Cast/Death actor contract are complete. Pushed
 checkpoint `d6a56c1` is followed by pushed boss-direction checkpoint
 `08d1ef7` and pushed animated-workspace checkpoint `f15a9cf`, with six
-animated 48x48 pilots plus three static fallbacks. Goblin War-Crown remains a
-visual-review candidate; the technical checkpoint does not imply final visual
-acceptance. Existing None fixtures remain unchanged, effects start Off, the
+animated 48x48 pilots plus three approved static fallbacks. The main worktree
+now also carries Cruel Catgirl Templar of the Brutes as a user-approved
+direction design and seventh full-animation corpus; its repaired animation is
+now accepted. Divine Armored Templar Astro Knight follows as the eighth
+accepted full-animation corpus. Furious Depraved Rhino now carries repaired
+quadruped direction and animation candidates. Gunslinger Boar Rider has
+approved directions plus a separate animation candidate. Eclipse Unicorn
+Sovereign is the next isolated static direction candidate, while Goblin
+War-Crown retains its unresolved animation-candidate status. Existing None
+fixtures remain unchanged, effects
+start Off, the
 effect-after-character shield/equipment occlusion issue remains on ice, and no
 current Windows release build exists. See `HANDOFF.md`.
 
@@ -254,7 +262,20 @@ connection to Enemy mode, production renderers, persistence, packs, fixtures,
 release artifacts, or Windows builds. The six-boss structural gate passes 480
 distinct frames and 66 native sheets. Goblin War-Crown remains the current
 visual-review candidate, so the pushed checkpoint must not be described as
-final visual acceptance.
+final visual acceptance. The later Cruel Catgirl Templar of the Brutes
+direction design was explicitly approved, and its seventh 80-frame animation
+corpus was accepted after its foreground-grip and attack-lift depth repair.
+Divine Armored Templar Astro Knight was then accepted as the eighth 80-frame
+animation corpus after its sealed-helmet direction repair and full motion
+review. Furious Depraved Rhino then became the twelfth approved
+four-direction pilot, followed by Gunslinger Boar Rider as the thirteenth.
+The Rhino was subsequently reopened for a low quadruped silhouette repair, so
+its four regenerated direction controls and dependent ninth 80-frame corpus
+are again visual candidates. The Boar Rider's tenth 80-frame
+gallop/dual-revolver corpus remains a separate animation candidate. Neither
+candidate gains implicit visual acceptance from structural validation.
+Eclipse Unicorn Sovereign follows as a fourteenth direction-catalog entry and
+second direction candidate; animation remains approval-gated.
 
 Candidate additions:
 
