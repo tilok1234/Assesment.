@@ -1,9 +1,9 @@
 # Enemy Expansion Plan
 
 - Status: approved plan; EN-F00 checkpoint `73ad73a` is accepted, EN-E01's
-  exact four-direction Idle candidate is visually approved, and the complete
-  15-variant private candidate is ready for completed-slice visual approval
-  with zero public catalog additions
+  exact Idle and completed-slice reviews are visually approved, and registration
+  checkpoint `b43ed6a` exposes exactly five EN-E01 families / 15 variants through
+  the stable public expansion registry
 - Recorded: 2026-08-02
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -18,10 +18,11 @@ is registered.
 The designer explicitly authorized EN-F00 and then separately authorized the
 EN-E01 common-baseline Idle gate on 2026-08-02. After approving its exact Idle
 artifact, the designer separately authorized full three-variant animation
-production plus normal commit/push handling. That authorization does **not**
-include public registration, EN-E02 or later slices, Boss work, separate effect
-assets, a release, or publication of unfinished runtime IDs. Completed-slice
-visual approval remains the next explicit gate.
+production plus normal commit/push handling. The designer then accepted the
+completed-slice review and authorized public registration. That authorization
+does **not** include legacy editor/selector/pack integration, EN-E02 or later
+slices, Boss work, separate effect assets, a release, or publication of
+unfinished runtime IDs.
 
 ## Intake Assessment
 
@@ -150,9 +151,9 @@ Implemented evidence:
   ledger, lifecycle states, renderer/chassis registration contract, family and
   variant normalization, deterministic family/slice Idle review plans, renderer
   dispatch facade, and completed-sheet validator;
-- the built-in registry contains zero expansion families and exposes zero public
-  families, so the unchanged `ENEMIES` array remains the sole selector/pack
-  catalog;
+- the isolated EN-F00 foundation registry contains zero families; the stable
+  public composition registry now contains only approved EN-E01, while the
+  unchanged `ENEMIES` array remains the sole legacy selector/pack catalog;
 - planned families cannot be registered; implemented families remain internal;
   only explicitly approved registrations can enter the registry's public view;
 - `npm.cmd run check:enemy-expansion` rejects duplicate/colliding ids, missing
@@ -171,9 +172,9 @@ chassis needed by many later proposals. Complete only one slice at a time.
 
 ### EN-E01 - Humanoid threat pilot
 
-- Status: `implemented-private-candidate`; four-direction common-baseline Idle
-  is visually approved, all 15 variants and standard animations are complete,
-  and public registration remains blocked on completed-slice visual approval
+- Status: `approved-public-registration`; four-direction common-baseline Idle
+  and the complete 15-variant slice are visually approved and registered through
+  the stable public expansion boundary at `b43ed6a`
 - Families: Witch, Fallen Knight, Pirate, Necromancer, Alchemist
 - Priority-first: Witch, Fallen Knight, Pirate
 
@@ -194,7 +195,7 @@ Attack tells must remain readable without baked muzzle flashes, bombs, potion
 splashes, familiars, skeletons, or spell effects. Those are separate effect or
 child-asset contracts.
 
-Current candidate evidence at implementation checkpoint `230a9a3`:
+Approved implementation and registration evidence:
 
 - five immutable contract cards record stable ID, 24x24 scale, locomotion,
   attack tell, three variant briefs, and external effect/mechanic boundaries;
@@ -203,9 +204,13 @@ Current candidate evidence at implementation checkpoint `230a9a3`:
   selected from renderer data rather than family-ID branches;
 - every variant supplies Idle x2, Walk x4, Attack x4, Hurt x2, pixel-identical
   Enemy Cast-to-Attack aliases, and Death-to-Hurt 1, 2, 2, 2 aliases;
-- the candidate registry reports five internal implemented families, 15
-  internal variants, and zero approved/public families; the built-in registry
-  and legacy `ENEMIES` catalog remain unchanged;
+- implementation checkpoint `230a9a3` freezes five internal families / 15
+  reviewed variants before registration;
+- completed-slice approval records the exact overview and review-manifest
+  SHA-256 values plus the reviewed implementation commit;
+- registration checkpoint `b43ed6a` exposes five approved/public families / 15
+  variants through `ENEMY_EXPANSION_REGISTRY`, while the legacy `ENEMIES`
+  catalog remains unchanged;
 - `npm.cmd run check:enemy-expansion-en-e01` validates 40 deterministic Idle
   frames with hard alpha, one-cell margins, no out-of-bounds writes, distinct
   silhouettes, correct direction/frame ordering, and the locked digest;
@@ -225,8 +230,12 @@ Current candidate evidence at implementation checkpoint `230a9a3`:
   overview, five all-motion family boards, 15 native sheets, and review JSON.
   The overview SHA-256 is
   `0b38f2737b5215d37a08e0ae3f7e25f82e88bb17a97641e33b0ee9ef9c0e8fb7`.
-  Internal native/4x inspection found no repair-level defect; designer visual
-  approval is still pending.
+  Internal native/4x inspection found no repair-level defect and the designer
+  accepted the completed slice; and
+- `npm.cmd run check:enemy-expansion-en-e01-registration` proves five approved
+  families / 15 public variants, 15 complete sheets, stable-facade routing,
+  two-approved/twenty-planned ledger state, unchanged 57-family / 202-variant
+  legacy catalog, and exact candidate/public parity across all 1,200 frames.
 
 ### EN-E02 - Humanoid culture variants
 
@@ -536,7 +545,7 @@ counts as an upgrade; the three Boss candidates do not enter the Enemy totals.
 | EN-E18 | Pumpkin Monster; Moss Beast; Kelp Beast; Coral Colony | 4 |
 | **Total** |  | **80** |
 
-## Next Approval Gate
+## Next Authorization Boundary
 
 The authorized production sequence is complete:
 
@@ -546,9 +555,10 @@ The authorized production sequence is complete:
    effect boundaries; and
 4. focused all-variant/all-animation evidence has been generated and inspected.
 
-The next decision is explicit completed-slice visual approval or a targeted
-revision request. Do not publicly register EN-E01, begin EN-E02, or create
-separate effect assets until that decision is recorded.
+Completed-slice approval and bounded public registration are now recorded. Do
+not implicitly merge expansion families into the legacy editor/randomizer/kit/
+pack consumers, begin EN-E02, or create separate effect assets. Each is a
+separate next-step decision.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,

@@ -122,11 +122,13 @@ Player-built NPC looks and was verified by the game intake. The approved
 eighteen standard Enemy slices, and three separately blocked Boss micro-slices.
 EN-F00 is accepted at isolated checkpoint `73ad73a` on `codex/en-f00`. The
 separately authorized `codex/en-e01` branch preserves its approved five-common
-Idle evidence and contains a complete private candidate at `230a9a3`: five
+Idle evidence and contains a complete reviewed candidate at `230a9a3`: five
 families / 15 common-specialist-elite variants with standard Enemy motion and
-aliases through the same shared renderer. Exhaustive validation and internal
-visual inspection pass; designer completed-slice review and registration remain
-separately gated, with zero expansion families exposed to selectors or packs.
+aliases through the same shared renderer. The designer approved the completed
+slice and checkpoint `b43ed6a` registers all five families / 15 variants through
+the stable public expansion API with exact candidate parity. The legacy editor,
+selectors, randomization, kits, and packs remain on the unchanged 57-family /
+202-variant catalog pending a separate consumer-integration decision.
 The latest pushed source
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
@@ -297,9 +299,9 @@ Candidate additions:
 - Additional off-hand items beyond the completed Lantern, such as spell foci; quivers require a separate back-slot plan rather than the held-item topology
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants only through the approved planning
-  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01's complete private
-  15-variant candidate awaits designer visual approval, while no public
-  registration starts implicitly
+  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01 is approved and
+  registered through the expansion API, while EN-E02 and legacy-consumer
+  integration do not start implicitly
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 

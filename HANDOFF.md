@@ -5,12 +5,11 @@ Date: 2026-08-02
 ## Purpose
 
 This is the canonical new-chat continuation for the 8-bit Sprite Assembler.
-The active lane is EN-E01 completed-slice visual review, not a continuation of
-the long Boss-production conversation. This handoff records the accepted
-EN-F00 foundation, the complete private 15-variant EN-E01 candidate, unchanged
-legacy Enemy corpus, shipped NPC artifact, local Windows proof, unresolved Boss
-and publisher boundaries, the exact approved Idle artifact, and the designer
-approval still required before public registration.
+EN-E01's completed-slice review and bounded public registration are complete;
+no next production lane starts implicitly. This handoff records the accepted
+EN-F00 foundation, approved/public 15-variant EN-E01 slice, unchanged legacy
+Enemy corpus, shipped NPC artifact, local Windows proof, and unresolved
+consumer-integration, Boss, and publisher boundaries.
 
 ## Canonical Workspace And Git State
 
@@ -27,6 +26,7 @@ approval still required before public registration.
 - EN-E01 branch: `codex/en-e01`, based exactly on accepted EN-F00 `73ad73a`.
 - Approved EN-E01 Idle checkpoint: `73dbec9`.
 - Complete private EN-E01 implementation checkpoint: `230a9a3`.
+- Approved EN-E01 public-registration checkpoint: `b43ed6a`.
 - Verified synchronized base before EN-F00:
   `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`
   (`Document enemy expansion and refresh handoff`).
@@ -56,10 +56,10 @@ git log -5 --oneline --decorate
 
 Expected state around this checkpoint: clean `codex/en-f00` at `73ad73a`;
 `codex/en-e01` containing approved Idle checkpoint `73dbec9`, private full-
-candidate checkpoint `230a9a3`, and this documentation reconciliation; and
-`main` still equal to `origin/main` at verified base `f5476a2`. Public
-registration and completed-slice visual approval remain separate actions. Do
-not modify, clean, reset, rebase, or repurpose the archived review checkout.
+candidate checkpoint `230a9a3`, public-registration checkpoint `b43ed6a`, and
+this documentation reconciliation; and `main` still equal to `origin/main` at
+verified base `f5476a2`. Do not modify, clean, reset, rebase, or repurpose the
+archived review checkout.
 
 ## Exact Next Lane
 
@@ -74,12 +74,13 @@ not modify, clean, reset, rebase, or repurpose the archived review checkout.
   and three Boss candidates.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
-artifact, and then authorized its full private production on 2026-08-02.
+artifact, authorized its full private production, accepted the completed-slice
+review, and authorized bounded public registration on 2026-08-02.
 EN-E01 now contains five immutable contract cards and all 15 common,
 specialist, and elite briefs for Witch, Fallen Knight, Pirate, Necromancer, and
 Alchemist. All variants render through one shared humanoid handler and implement
-the standard 20-column Enemy contract in Down, Left, Right, and Up. The built-
-in registry and public family view remain empty.
+the standard 20-column Enemy contract in Down, Left, Right, and Up. The stable
+public expansion registry now exposes all five families / 15 variants.
 
 The designer approved exact Idle PNG SHA-256
 `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`
@@ -87,9 +88,10 @@ and 40-frame digest
 `339c5ff809d3b17aec20b3ec953c8217470cde026fc743cde0cd3854ed5c3323`.
 Those approved Idle pixels remain exact. Walk/Attack/Hurt, Enemy Cast/Death
 aliases, all specialist/elite briefs, exhaustive structural checks, and focused
-review evidence are complete. The existing 57 families / 202 variants and all
-public selectors/packs remain unchanged. The next gate is the designer's
-completed-slice visual approval before registration.
+review evidence are complete. The public registry is pixel-identical to the
+reviewed candidate across all 1,200 frames. The existing legacy 57 families /
+202 variants and its editor selectors/packs remain unchanged; merging them with
+the expansion registry is a separate authorization boundary.
 
 EN-E01 does not authorize all later waves. The three new Boss proposals remain
 blocked behind the current Boss review queue unless the designer explicitly
@@ -150,12 +152,12 @@ runtime contract and must not be rewritten merely to match it.
   modes with no source-edge or out-of-bounds failures.
 - The expansion projection is approximately 132 standard Enemy families / 427
   variants if every planned slice is later approved and completed.
-- Fifteen EN-E01 common/specialist/elite variants are registered only in the
-  private candidate registry; no proposed expansion family or runtime ID is
-  registered publicly.
-- The EN-F00 built-in expansion registry and public-family view are both empty;
-  the EN-E01 candidate registry reports five internal families / 15 variants
-  and zero public families.
+- The frozen EN-E01 candidate registry retains five internal families / 15
+  reviewed variants as pre-registration evidence.
+- The stable public expansion registry exposes exactly five approved EN-E01
+  families / 15 variants; no later slice is registered.
+- The legacy `ENEMIES` catalog remains 57 families / 202 variants and remains
+  the sole source for existing editor selectors, randomization, kits, and packs.
 - The complete legacy 20-column corpus retains SHA-256 pixel digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Effects, projectiles, summons, telegraphs, attachments, and environment
@@ -313,6 +315,7 @@ Run from the isolated EN-E01 worktree on 2026-08-02:
 npm.cmd run check:enemy-expansion
 npm.cmd run check:enemy-expansion-en-e01
 npm.cmd run check:enemy-expansion-en-e01-full
+npm.cmd run check:enemy-expansion-en-e01-registration
 npm.cmd run review:enemy-expansion-en-e01
 npm.cmd run review:enemy-expansion-en-e01-full
 npm.cmd run check
@@ -325,7 +328,7 @@ Recorded EN-F00 and focused EN-E01 results:
   review-targeting, sheet-contract, and negative-path assertions;
 - all 57 legacy families / 202 sheets / 16,160 frames match the locked pixel
   digest above;
-- EN-E01's frozen Idle gate passes five immutable contract cards, five internal
+- EN-E01's frozen pre-registration Idle gate passes five immutable contract cards, five internal
   common baselines, 40 deterministic Idle frames, four-direction/two-frame
   ordering, hard alpha, one-cell margins, no clipping, distinct silhouettes,
   and zero public-family exposure;
@@ -333,7 +336,7 @@ Recorded EN-F00 and focused EN-E01 results:
   `339c5ff809d3b17aec20b3ec953c8217470cde026fc743cde0cd3854ed5c3323`;
 - exact review PNG SHA-256:
   `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`;
-- the full gate passes five internal families / 15 variants, 15 complete
+- the frozen pre-registration full gate passes five internal families / 15 variants, 15 complete
   `480x96` sheets, all 1,200 frames, deterministic direction and motion,
   Cast-to-Attack and Death-to-Hurt aliases, hard alpha, strict margins, and zero
   public families;
@@ -354,8 +357,11 @@ Recorded EN-F00 and focused EN-E01 results:
 - review JSON SHA-256:
   `129f3f2b81318df08edf2b0b1dc2183fc8494450027e91ceea04a2248208e398`;
 - all review artifacts are ignored evidence; internal native/4x/Aseprite
-  inspection accepted the candidate, but that does not replace designer visual
-  approval;
+  inspection accepted the candidate and the designer approved the completed
+  slice;
+- the registration gate passes five approved/public families, 15 variants, 15
+  complete `480x96` sheets, stable-facade routing, two-approved/twenty-planned
+  lifecycle counts, and exact public/candidate parity across all 1,200 frames;
 - the full project validator passes with all existing catalog, renderer,
   outline, Form-shade, Cast/Death alias, equipment, Boss, 232-fixture, pack,
   and release-configuration gates unchanged; and
@@ -388,9 +394,9 @@ as historical evidence rather than live continuation instructions.
 
 Unless the designer explicitly changes scope:
 
-- preserve the exact approved common-baseline Idle frames and the complete
-  private candidate while completed-slice review is pending;
-- do not publicly register EN-E01 before completed-slice visual approval;
+- preserve the exact approved common-baseline Idle and completed-slice pixels;
+- do not merge EN-E01 into legacy editor selectors, randomization, kits, packs,
+  schemas, or `ENEMIES` without explicit consumer-integration authorization;
 - do not pre-register unfinished families, IDs, variants, selectors, or packs;
 - do not modify the archived `wip/19-boss-review` checkout;
 - do not accept the Rhino/Unicorn direction candidates or the three animation
@@ -409,12 +415,11 @@ Unless the designer explicitly changes scope:
 
 The safest opening request for the next chat is:
 
-> Review the exact EN-E01 full overview and five family motion boards from
-> private checkpoint `230a9a3`. If they are accepted, explicitly authorize the
-> separate public-registration step; otherwise name the family, direction, and
-> animation that needs revision.
+> EN-E01 is approved and publicly registered through the stable expansion API
+> at `b43ed6a`. Before changing anything, verify the clean synchronized branch
+> and ask whether the next lane is legacy editor/pack consumer integration,
+> EN-E02 contract planning, or another explicitly named task.
 
-EN-F00 and EN-E01's Idle gate are approved. Full private EN-E01 production is
-complete and internally accepted, but technical validation and internal
-inspection do not replace the designer's completed-slice visual approval
-before registration.
+EN-F00 and EN-E01 are approved. EN-E01's stable public registry contains five
+families / 15 variants with exact reviewed pixels; no later slice or legacy
+consumer integration is authorized implicitly.

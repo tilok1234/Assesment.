@@ -68,22 +68,25 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 
 The EN-F00 Enemy-expansion foundation is accepted at isolated checkpoint
 `73ad73a` on `codex/en-f00`. The separately authorized `codex/en-e01` branch
-passed its four-direction Idle visual gate on 2026-08-02 and now has a complete
-private implementation checkpoint at `230a9a3`. Five immutable contract cards
-produce 15 internal variants (common, specialist, and elite for Witch, Fallen
-Knight, Pirate, Necromancer, and Alchemist) through one data-driven humanoid
-chassis. Every variant has the standard 20-column Idle/Walk/Attack/Cast/Hurt/
-Death sheet; Enemy Cast aliases Attack and Death aliases Hurt 1, 2, 2, 2. The
-approved common Idle PNG remains locked at SHA-256
+passed its four-direction Idle and completed-slice visual gates on 2026-08-02.
+The reviewed implementation is checkpoint `230a9a3`; public registration is
+checkpoint `b43ed6a`. Five immutable contract cards produce 15 approved variants
+(common, specialist, and elite for Witch, Fallen Knight, Pirate, Necromancer,
+and Alchemist) through one data-driven humanoid chassis. Every variant has the
+standard 20-column Idle/Walk/Attack/Cast/Hurt/Death sheet; Enemy Cast aliases
+Attack and Death aliases Hurt 1, 2, 2, 2. The stable public
+`ENEMY_EXPANSION_REGISTRY` exposes all five families / 15 variants and routes
+them through `renderEnemyExpansionFrame()`. The approved common Idle PNG remains
+locked at SHA-256
 `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`
 and its 40-frame digest remains
 `339c5ff809d3b17aec20b3ec953c8217470cde026fc743cde0cd3854ed5c3323`.
-The full 1,200-frame candidate digest is
+The reviewed and registered 1,200-frame digest is
 `addcf8055a80a0a6266be0eff8cd6b8235092c6ba366bc9c020bd5feb90ae173`.
-It exposes zero public families: the built-in registry, selectors,
-randomization, packs, schemas, and existing 57-family / 202-variant corpus are
-unchanged. Public registration remains blocked on completed-slice visual
-approval.
+Registration does not rewrite the legacy `ENEMIES` array: existing editor
+selectors, randomization, kits, packs, schemas, and the 57-family / 202-variant
+corpus remain unchanged. Merging approved expansion families into those legacy
+consumers is a separate integration decision.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
@@ -231,8 +234,13 @@ overview, five family motion boards, 15 native `480x96` sheets, and JSON review
 manifest under `enemy-expansion-review/en-e01-full/`. The full gate exhausts
 all 1,200 frames, validates each complete sheet, checks deterministic motion
 and direction reads, proves Cast/Death alias pixels, preserves the approved
-Idle digest, and keeps all 15 variants out of the public registry. Technical
-and internal visual inspection do not replace designer approval.
+Idle digest, and preserves the exact reviewed pre-registration candidate.
+
+Run `npm run check:enemy-expansion-en-e01-registration` for the approved public
+boundary. It verifies the immutable completed-slice approval record, five
+approved/public families, 15 variants, two-approved/twenty-planned ledger,
+stable-facade routing, 15 complete sheets, and pixel parity for every one of the
+1,200 candidate/public frames while keeping the legacy catalog unchanged.
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
@@ -498,9 +506,11 @@ awaits explicit visual approval before any animation work.
 - `engine/` - focused animation, palette, player-option, enemy, production-roll, Wildshot game-pack contract, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
 - `engine/enemy-expansion.js` - pure EN-F00 registry/renderer facade, lifecycle
   ledger, deterministic review planning, and completed standard-sheet contract
+- `engine/enemy-expansion-public.js` - stable approved-registry composition and
+  current-ledger default used by the public facade
 - `engine/enemy-expansion-en-e01.js` and
-  `engine/enemy-expansion-humanoid.js` - private EN-E01 contract cards, frozen
-  approved-Idle registry, complete 15-variant candidate registry, and shared
+  `engine/enemy-expansion-humanoid.js` - EN-E01 contract/approval evidence,
+  frozen reviewed registries, five-family approved registry, and shared
   standard-animation humanoid renderer
 - `tools/check-enemy-expansion.mjs` - focused legacy-equivalence, registry,
   review-targeting, and malformed-sheet gate
@@ -510,6 +520,9 @@ awaits explicit visual approval before any animation work.
 - `tools/check-enemy-expansion-en-e01-full.mjs` and
   `tools/enemy-expansion-en-e01-full-review.mjs` - exhaustive 1,200-frame
   private-candidate gate and completed-slice review bundle generator
+- `tools/check-enemy-expansion-en-e01-registration.mjs` - exhaustive approved-
+  registry, stable-facade, ledger, legacy-isolation, and candidate/public pixel-
+  parity gate
 - `engine/catalogs/boss-directions.js`, `engine/catalogs/boss-animations.js`,
   and `engine/assets/bosses/` - immutable review-only boss direction and
   ten-pilot animation profiles plus checkpoint-exact runtime PNGs

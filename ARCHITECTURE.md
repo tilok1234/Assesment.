@@ -29,7 +29,10 @@ index.html
       -> engine/production-rolls.js
       -> engine/production-rerolls.js
       -> engine/game-pack.js
-      -> engine/enemy-expansion.js
+      -> engine/enemy-expansion-public.js
+        -> engine/enemy-expansion.js
+        -> engine/enemy-expansion-en-e01.js
+          -> engine/enemy-expansion-humanoid.js
       -> engine/variant-batches.js
       -> engine/class-templates.js
     -> character-kit.js
@@ -65,7 +68,7 @@ Sprite-rendering consumers import `sprite-engine.js`. Internal engine module pat
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
 
-### Enemy expansion foundation and private candidates
+### Enemy expansion foundation and approved registrations
 
 `engine/enemy-expansion.js` is the pure EN-F00 boundary. It owns the immutable
 `enemy-expansion-v1` frame/baseline profile, the 22-slice/80-proposal lifecycle
@@ -75,27 +78,38 @@ and completed `480x96` hard-alpha sheet validation. It imports only the stable
 internal catalog facade and does not access the DOM, canvas, storage, packs,
 filesystem, or editor state.
 
-The built-in expansion registry deliberately contains no families or renderer
-handlers. The legacy `ENEMIES` array remains unchanged and continues to be the
-only catalog consumed by selectors, randomization, kits, packs, and exports.
-Planned families cannot enter a registry; implemented entries remain internal;
-only an explicitly approved registration can appear in a public family view.
+The isolated EN-F00 foundation registry deliberately contains no families or
+renderer handlers. `engine/enemy-expansion-public.js` composes only explicitly
+approved slice registries and supplies the current default ledger report to the
+stable facade. Its current immutable registry contains the five approved EN-E01
+families / 15 variants. Planned families cannot enter any registry; implemented
+entries remain internal; only an approved registration can appear in the public
+family view.
 
-The private EN-E01 candidate lives behind that boundary.
+The legacy `ENEMIES` array remains unchanged and continues to be the only
+catalog consumed by existing editor selectors, randomization, kits, packs, and
+exports. Public expansion consumers instead use `ENEMY_EXPANSION_REGISTRY`
+with `renderEnemyExpansionFrame()`. Merging the two catalog paths is a separate
+consumer-integration change, not an implicit side effect of registration.
+
+The approved EN-E01 implementation lives behind that boundary.
 `engine/enemy-expansion-en-e01.js` owns five immutable contract cards, a frozen
 common-only registry for the exact approved Idle evidence, and a separate full
-candidate registry containing 15 internal common/specialist/elite variants.
+candidate registry containing 15 reviewed common/specialist/elite variants. It
+also owns the immutable completed-slice approval record and a five-family
+approved registry consumed only by `engine/enemy-expansion-public.js`.
 `engine/enemy-expansion-humanoid.js` owns one `humanoid-threat-v1` handler on
 the `humanoid-v1` chassis. The handler reuses the proven player humanoid rig,
 derives Idle/Walk/Attack/Hurt poses generically, maps Enemy Cast to Attack and
 Death to Hurt 1, 2, 2, 2, and applies identity overlays selected by renderer
 data rather than family-id branches. The frozen registry keeps the approved
 common Idle pixels byte-identical while the full registry exercises complete
-`480x96` sheets. `sprite-engine.js`, `ENEMIES`, the built-in registry,
-selectors, schemas, packs, and exports do not import the candidate module. The
-ignored baseline and full-slice review generators capture their respective
-private registries directly; public registration remains a later approval
-step.
+`480x96` sheets. `sprite-engine.js` exports only the generic public boundary and
+does not expose slice-specific symbols; `ENEMIES`, selectors, schemas, packs,
+and legacy exports do not import the slice module. The ignored baseline and
+full-slice review generators continue to capture their frozen evidence
+registries directly. Registration checkpoint `b43ed6a` proves all 1,200 public
+frames are pixel-identical to the reviewed candidate.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -325,10 +339,11 @@ deliberately not serialized.
 - All 57 enemy families support None, Complete B, and Selective C in live
   assembled rendering; all 16,160 current source frames reserve a one-cell
   outline margin and perform no out-of-bounds writes.
-- The EN-F00 built-in registry remains separate from `ENEMIES`; EN-E01 has five
-  internal families / 15 private variants and zero public families, so no
-  unfinished expansion family enters selectors or packs. The 57-family /
-  202-sheet / 16,160-frame legacy corpus retains locked SHA-256 pixel digest
+- The EN-F00 foundation registry remains empty and separate from `ENEMIES`;
+  the stable public registry contains exactly five approved EN-E01 families /
+  15 variants. Existing selectors and packs remain on the unchanged 57-family /
+  202-sheet / 16,160-frame legacy corpus, which retains locked SHA-256 pixel
+  digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Shade None plus outline None directly delegates to `drawSprite()`. Shade None
   combined with Complete B or Selective C preserves the approved outline
@@ -447,12 +462,12 @@ For face-bound content, verify front and both side views, confirm the rear view 
 4. Verify all directions and animations before publishing.
 
 For the proposed 80-enemy expansion, do not use this legacy one-family path.
-EN-F00's data-driven facade now exists, and the built-in registry remains
-empty. EN-E01 demonstrates the intended private candidate path with five
-implemented families / 15 variants and a real shared renderer handler. Follow
+EN-F00's data-driven foundation and stable public composition boundary now
+exist. EN-E01 demonstrates the complete lifecycle with five approved/public
+families / 15 variants and a real shared renderer handler. Follow
 `ENEMY_EXPANSION_PLAN.md`: keep candidates out of the public view, stop for
-four-direction baseline approval before full production, and stop again for
-completed-slice approval before public registration advances.
+four-direction baseline approval before full production, stop again for
+completed-slice approval, and register only the explicitly approved slice.
 
 ### Change the sheet contract
 
