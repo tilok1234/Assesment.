@@ -1,8 +1,10 @@
 # Enemy Expansion Plan
 
-- Status: approved planning artifact; implementation has not started
+- Status: approved plan; EN-F00 is implemented and technically validated on
+  `codex/en-f00`, with no family art or public catalog additions; final EN-F00
+  checkpoint acceptance and all EN-E01 work remain separately approval-gated
 - Recorded: 2026-08-02
-- Assessment baseline: clean synchronized `main` at `bf6269c`
+- Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
 
 ## Purpose
@@ -12,9 +14,10 @@ the 8-bit Sprite Assembler. It fixes the accounting, collision rulings,
 production order, review gates, and technical boundaries before any new family
 is registered.
 
-This is a planning artifact only. It does **not** authorize implementation,
-catalog changes, Boss work, effect work, export changes, a release, a commit, or
-a push. Each implementation slice still requires an explicit designer go-ahead.
+The designer explicitly authorized EN-F00 on 2026-08-02. That authorization
+does **not** authorize EN-E01, family art, catalog changes, Boss work, effect
+work, export changes, a release, or a push. Every later implementation slice
+still requires its own explicit designer go-ahead.
 
 ## Intake Assessment
 
@@ -115,7 +118,8 @@ attack readability, and variant distinction.
 
 ### EN-F00 - Expansion renderer foundation
 
-- Status: `implementation-candidate` after explicit approval
+- Status: `implemented`; focused and full structural gates pass; final
+  checkpoint acceptance remains explicit
 - Contains no new family art
 
 Before adding 75 families, introduce the smallest data-driven expansion facade
@@ -136,6 +140,26 @@ Required outcomes:
 
 EN-F00 must pass independently before EN-E01 begins.
 
+Implemented evidence:
+
+- `engine/enemy-expansion.js` owns the immutable profile, 22-slice/80-proposal
+  ledger, lifecycle states, renderer/chassis registration contract, family and
+  variant normalization, deterministic family/slice Idle review plans, renderer
+  dispatch facade, and completed-sheet validator;
+- the built-in registry contains zero expansion families and exposes zero public
+  families, so the unchanged `ENEMIES` array remains the sole selector/pack
+  catalog;
+- planned families cannot be registered; implemented families remain internal;
+  only explicitly approved registrations can enter the registry's public view;
+- `npm.cmd run check:enemy-expansion` rejects duplicate/colliding ids, missing
+  renderers, planned-family pre-registration, empty frames, out-of-bounds
+  writes, non-binary alpha, wrong direction/frame order, and dimensions other
+  than `480x96`;
+- all 57 legacy families / 202 sheets / 16,160 frames retain SHA-256 pixel
+  digest `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`;
+  and
+- the complete existing `npm.cmd run check` matrix passes unchanged.
+
 ## Wave 1 - Highest Reuse And Fastest Learning
 
 Wave 1 establishes the shared humanoid, large-body, serpentine, and undead
@@ -143,7 +167,8 @@ chassis needed by many later proposals. Complete only one slice at a time.
 
 ### EN-E01 - Humanoid threat pilot
 
-- Status: `implementation-candidate` after EN-F00 and explicit approval
+- Status: `implementation-candidate` after EN-F00 checkpoint acceptance and a
+  separate explicit EN-E01 approval
 - Families: Witch, Fallen Knight, Pirate, Necromancer, Alchemist
 - Priority-first: Witch, Fallen Knight, Pirate
 
@@ -474,11 +499,13 @@ counts as an upgrade; the three Boss candidates do not enter the Enemy totals.
 
 ## Recommended Next Authorization
 
-When the designer is ready to resume Enemy work, authorize exactly this sequence:
+When the designer is ready to resume Enemy work, use exactly this sequence:
 
-1. EN-F00 - expansion renderer foundation;
-2. EN-E01 - five-family humanoid threat pilot; and
-3. stop for visual review and an evidence-backed architecture checkpoint.
+1. review and explicitly accept the isolated EN-F00 checkpoint;
+2. separately authorize EN-E01, beginning with contract cards and baseline
+   variants only; and
+3. stop at the four-direction Idle visual gate before registration or full
+   animation/variant work.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,

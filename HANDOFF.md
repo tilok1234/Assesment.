@@ -5,11 +5,11 @@ Date: 2026-08-02
 ## Purpose
 
 This is the canonical new-chat continuation for the 8-bit Sprite Assembler.
-The next intended lane is the planning-approved 80-proposal Enemy expansion,
-not a continuation of the long Boss-production conversation. This handoff
-records the live mainline, completed documentation audit, shipped NPC artifact,
-local Windows proof, unresolved Boss and publisher boundaries, and the exact
-approval gate before implementation begins.
+The active lane is the isolated EN-F00 Enemy-expansion foundation, not a
+continuation of the long Boss-production conversation. This handoff records the
+live mainline, implemented-but-not-final-approved foundation, unchanged legacy
+Enemy corpus, shipped NPC artifact, local Windows proof, unresolved Boss and
+publisher boundaries, and the separate gate before EN-E01 can begin.
 
 ## Canonical Workspace And Git State
 
@@ -17,12 +17,15 @@ approval gate before implementation begins.
   `C:\Users\headc\Documents\8-bit-sprite-assembler-main`
 - Mainline branch: `main`
 - Upstream: `origin/main`
-- Verified synchronized base before this documentation checkpoint:
-  `bf6269ca6fc07b3d95a826c95ec6c9c29c6daf53`
-  (`Adopt the pack-publish gate from the salvage checkpoint`).
-- The documentation checkpoint containing this handoff follows `bf6269c` on
-  `main`; always verify the live HEAD and upstream rather than copying a
-  self-referential hash from this file.
+- Isolated EN-F00 implementation worktree:
+  `C:\tmp\8-bit-sprite-assembler-en-f00`
+- EN-F00 branch: `codex/en-f00`, based on synchronized `main` at `f5476a2`.
+- Verified synchronized base before EN-F00:
+  `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`
+  (`Document enemy expansion and refresh handoff`).
+- The isolated EN-F00 checkpoint follows `f5476a2`; always verify the live HEAD,
+  branch, and upstream rather than copying a self-referential hash from this
+  file.
 - The planning repository's `tools/ecosystem.lock.json` rules the assembler
   mainline as `main`.
 - `codex/form-shading` is fully merged and archive-tagged as
@@ -44,14 +47,15 @@ git rev-parse '@{upstream}'
 git log -5 --oneline --decorate
 ```
 
-Expected state after this handoff commit is pushed: clean `main`, with local
-HEAD equal to `origin/main`. Do not modify, clean, reset, rebase, or repurpose
-the archived review checkout.
+Expected state after the local EN-F00 checkpoint: clean `codex/en-f00`, with
+`main` still equal to `origin/main` at the verified base. Push, merge, and
+EN-E01 remain separate approvals. Do not modify, clean, reset, rebase, or
+repurpose the archived review checkout.
 
 ## Exact Next Lane
 
-`ENEMY_EXPANSION_PLAN.md` is the accepted decomposition of the designer's 80
-additional proposals. It resolves them into:
+`ENEMY_EXPANSION_PLAN.md` remains the accepted decomposition of the designer's
+80 additional proposals. It resolves them into:
 
 - EN-F00, one renderer/registry foundation slice with no new family art;
 - EN-E01 through EN-E18, eighteen standard 24x24 Enemy slices;
@@ -60,18 +64,20 @@ additional proposals. It resolves them into:
 - 75 new standard families, one Ghoul upgrade, one two-proposal Armor merge,
   and three Boss candidates.
 
-The document is planning-approved but implementation has **not** started. The
-next chat must not infer implementation authorization from the accepted plan or
-from this handoff.
+The designer explicitly authorized EN-F00 on 2026-08-02. Its isolated
+implementation now provides the immutable expansion profile and ledger,
+renderer/chassis registration contract, deterministic family/slice review
+planning, renderer dispatch facade, completed-sheet validator, and focused
+legacy-equivalence gate. It contains no family art, no registered expansion
+families, and no public selector or pack additions.
 
-When the designer explicitly says to begin:
+The next gate is:
 
-1. authorize and implement EN-F00 only;
-2. prove the existing 57 families / 202 variants remain unchanged;
-3. checkpoint EN-F00 independently;
-4. begin EN-E01 only after a separate go-ahead;
-5. build baseline variants before full animation/variant expansion; and
-6. stop at the four-direction Idle visual gate before registering or advancing
+1. review and explicitly accept the isolated EN-F00 checkpoint;
+2. keep the existing 57 families / 202 variants unchanged;
+3. begin EN-E01 only after a separate go-ahead;
+4. build baseline variants before full animation/variant expansion; and
+5. stop at the four-direction Idle visual gate before registering or advancing
    a family.
 
 EN-E01 contains Witch, Fallen Knight, Pirate, Necromancer, and Alchemist. It
@@ -135,6 +141,9 @@ runtime contract and must not be rewritten merely to match it.
 - The expansion projection is approximately 132 standard Enemy families / 427
   variants if every planned slice is later approved and completed.
 - No proposed expansion family or runtime ID is currently registered.
+- The EN-F00 built-in expansion registry and public-family view are both empty.
+- The complete legacy 20-column corpus retains SHA-256 pixel digest
+  `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Effects, projectiles, summons, telegraphs, attachments, and environment
   states remain separate asset/runtime contracts; they are not baked into new
   actors to make a proposal appear complete.
@@ -284,6 +293,27 @@ The documentation audit additionally verifies:
 - the NPC archive hash matches its archive record; and
 - the standalone executable hash matches the recorded value.
 
+Run from the isolated EN-F00 worktree on 2026-08-02:
+
+```powershell
+npm.cmd run check:enemy-expansion
+npm.cmd run check
+git diff --check
+```
+
+Recorded EN-F00 results:
+
+- the focused foundation gate passes its registry, ledger, renderer-key,
+  review-targeting, sheet-contract, and negative-path assertions;
+- all 57 legacy families / 202 sheets / 16,160 frames match the locked pixel
+  digest above;
+- zero expansion families are registered or public;
+- the full project validator passes with all existing catalog, renderer,
+  outline, shade, equipment, Boss, fixture, pack, and release-configuration
+  counts unchanged; and
+- no fixture, baseline, schema, UI, family art, Boss asset, release artifact,
+  or archived review payload is modified.
+
 ## Documentation Audit Result
 
 The 2026-08-02 audit covered all Required Reading documents and reconciled
@@ -310,7 +340,7 @@ as historical evidence rather than live continuation instructions.
 
 Unless the designer explicitly changes scope:
 
-- do not begin EN-F00 or any Enemy art from plan approval alone;
+- do not extend EN-F00 or begin EN-E01/Enemy art from this implementation alone;
 - do not pre-register unfinished families, IDs, variants, selectors, or packs;
 - do not modify the archived `wip/19-boss-review` checkout;
 - do not accept the Rhino/Unicorn direction candidates or the three animation
@@ -329,8 +359,10 @@ Unless the designer explicitly changes scope:
 
 The safest opening request for the next chat is:
 
-> Read `HANDOFF.md` and `ENEMY_EXPANSION_PLAN.md`, verify clean synchronized
-> `main`, and wait for my explicit approval before implementing EN-F00.
+> Review the isolated EN-F00 checkpoint and its validation evidence, verify the
+> legacy Enemy corpus is unchanged, and wait for my explicit approval before
+> beginning EN-E01.
 
-Once that approval is given, EN-F00 is the entire implementation scope. Stop
-after its validation and checkpoint; do not roll directly into EN-E01.
+EN-F00 implementation does not authorize EN-E01. After EN-F00 checkpoint
+acceptance, EN-E01 still requires its own explicit go-ahead and must stop at
+the four-direction Idle visual gate.

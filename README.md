@@ -66,6 +66,15 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 
 ## Current integration status
 
+The EN-F00 Enemy-expansion foundation is implemented on the isolated
+`codex/en-f00` branch without adding family art or modifying the legacy
+catalog. `engine/enemy-expansion.js` provides an immutable 22-slice/80-proposal
+ledger, renderer/chassis registration boundary, deterministic family/slice Idle
+review plans, and a strict completed-sheet validator. The built-in expansion
+registry and its public-family view are empty, so selectors, randomization,
+packs, schemas, and the existing 57-family / 202-variant corpus remain
+unchanged. EN-E01 still requires separate authorization.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge
@@ -190,6 +199,13 @@ Double-click `check-project.bat`, or run:
 ```powershell
 npm run check
 ```
+
+Run `npm run check:enemy-expansion` for the focused EN-F00 gate. It locks all
+57 legacy families / 202 sheets / 16,160 frames to their synchronized-main
+pixel digest, checks the 22-slice/80-proposal ledger, exercises deterministic
+family/slice review targeting and renderer-key dispatch, and proves malformed
+registrations or completed sheets are rejected without exposing planned
+families as shipped content.
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
@@ -453,6 +469,10 @@ awaits explicit visual approval before any animation work.
 - `zip.js` - dependency-free ZIP archive writer used by character-pack and Master Character Kit export
 - `sprite-engine.js` - stable public engine API
 - `engine/` - focused animation, palette, player-option, enemy, production-roll, Wildshot game-pack contract, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
+- `engine/enemy-expansion.js` - pure EN-F00 registry/renderer facade, lifecycle
+  ledger, deterministic review planning, and completed standard-sheet contract
+- `tools/check-enemy-expansion.mjs` - focused legacy-equivalence, registry,
+  review-targeting, and malformed-sheet gate
 - `engine/catalogs/boss-directions.js`, `engine/catalogs/boss-animations.js`,
   and `engine/assets/bosses/` - immutable review-only boss direction and
   ten-pilot animation profiles plus checkpoint-exact runtime PNGs

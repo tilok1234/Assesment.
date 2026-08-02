@@ -29,6 +29,7 @@ index.html
       -> engine/production-rolls.js
       -> engine/production-rerolls.js
       -> engine/game-pack.js
+      -> engine/enemy-expansion.js
       -> engine/variant-batches.js
       -> engine/class-templates.js
     -> character-kit.js
@@ -63,6 +64,25 @@ Sprite-rendering consumers import `sprite-engine.js`. Internal engine module pat
 - `engine/catalogs.js` is the internal catalog facade used by the renderer and helpers.
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
+
+### Enemy expansion foundation
+
+`engine/enemy-expansion.js` is the pure EN-F00 boundary. It owns the immutable
+`enemy-expansion-v1` frame/baseline profile, the 22-slice/80-proposal lifecycle
+ledger, renderer/chassis registration validation, implemented-versus-approved
+family views, deterministic family/slice Idle review plans, renderer dispatch,
+and completed `480x96` hard-alpha sheet validation. It imports only the stable
+internal catalog facade and does not access the DOM, canvas, storage, packs,
+filesystem, or editor state.
+
+The built-in expansion registry deliberately contains no families or renderer
+handlers. The legacy `ENEMIES` array remains unchanged and continues to be the
+only catalog consumed by selectors, randomization, kits, packs, and exports.
+Planned families cannot enter the registry; implemented entries remain
+internal; only an explicitly approved registration can appear in its public
+family view. A later authorized production slice supplies actual renderer
+handlers and family definitions without extending the legacy renderer's
+family-id conditional chain.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -292,6 +312,10 @@ deliberately not serialized.
 - All 57 enemy families support None, Complete B, and Selective C in live
   assembled rendering; all 16,160 current source frames reserve a one-cell
   outline margin and perform no out-of-bounds writes.
+- The EN-F00 registry remains separate from `ENEMIES`; zero unfinished
+  expansion families enter selectors or packs, and the 57-family / 202-sheet /
+  16,160-frame legacy corpus retains locked SHA-256 pixel digest
+  `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Shade None plus outline None directly delegates to `drawSprite()`. Shade None
   combined with Complete B or Selective C preserves the approved outline
   output. Form changes eligible source-owned colors only and is wired through
@@ -317,6 +341,12 @@ deliberately not serialized.
 - Browser and Windows builds use identical production files.
 
 `npm run check` enforces these invariants against the native export contract, class and equipment planner counts, character-pack ZIP format, Complete Character Kit component matrix, recipe paths, exact pixel recomposition, `asset-pack/manifest.json`, and all 232 committed PNG fixtures. The current 20-column shade gate adds 480 broad player None-parity cases, exhaustive None parity for all 16,160 enemy source frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. The Form matrix verifies source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, exact floor shadows and transparent cells, 158,872 visible changes, and 35,333 material-aware pixel differences from the silhouette-only control. Weapon validation also enforces one connected silhouette in every frame, family and tier distinction, casting-family proportions, global Tier 5 pixel-density and bounds budgets relative to Tier 4, exact left/right mirroring, direction-aware front/back layer routing and recomposition, animation-phase diversity, front-view identity retention, catastrophic-detachment protection, zero discarded pixels across all 6,000 weapon frames, all 12,800 shield cases across four body builds, all 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases, plus pixel/order parity for native full, direction, and animation sheet exports. The Lantern matrix checks animated hand attachment, face clearance, visible change, near/far routing, mutual exclusion, combat semantics, and exact layer recomposition. These structural checks do not replace explicit visual approval and do not resolve the deferred combined effect/shield compositor.
+
+The nested `npm run check:enemy-expansion` gate additionally proves registry
+immutability, duplicate/collision and missing-renderer refusal, planned-family
+exclusion, deterministic family/slice review plans, exact legacy pixel parity,
+and rejection of empty, clipped, translucent, reordered, or incorrectly sized
+completed standard Enemy sheets.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
@@ -402,11 +432,12 @@ For face-bound content, verify front and both side views, confirm the rear view 
 3. Export and register every fixture.
 4. Verify all directions and animations before publishing.
 
-For the proposed 80-enemy expansion, this legacy one-family path is not the
-starting instruction. Follow `ENEMY_EXPANSION_PLAN.md`: explicitly authorize
-and complete EN-F00's data-driven expansion facade first, keep unfinished
-families out of public selectors and packs, then stop for four-direction
-baseline approval before registering each production slice.
+For the proposed 80-enemy expansion, do not use this legacy one-family path.
+EN-F00's data-driven facade now exists, but the built-in registry remains
+empty. Follow `ENEMY_EXPANSION_PLAN.md`: obtain separate slice authorization,
+register only implemented definitions with a real renderer handler, keep them
+out of the public view until approval, and stop for four-direction baseline
+approval before registration or full animation/variant work advances.
 
 ### Change the sheet contract
 

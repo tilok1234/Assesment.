@@ -49,6 +49,7 @@ const pixelBuffer = await import(`${pathToFileURL(path.join(root, 'engine', 'pix
 const shadeModule = await import(`${pathToFileURL(path.join(root, 'engine', 'shade-renderer.js')).href}?check=${Date.now()}`);
 const castModule = await import(`${pathToFileURL(path.join(root, 'engine', 'cast-animation.js')).href}?check=${Date.now()}`);
 const deathModule = await import(`${pathToFileURL(path.join(root, 'engine', 'death-animation.js')).href}?check=${Date.now()}`);
+const enemyExpansionModule = await import(`${pathToFileURL(path.join(root, 'engine', 'enemy-expansion.js')).href}?check=${Date.now()}`);
 const { SHADE_PILOTS } = await import(`${pathToFileURL(path.join(root, 'tools', 'shade-pilots.mjs')).href}?check=${Date.now()}`);
 const characterKit = await import(`${pathToFileURL(path.join(root, 'character-kit.js')).href}?check=${Date.now()}`);
 const zipModule = await import(`${pathToFileURL(path.join(root, 'zip.js')).href}?check=${Date.now()}`);
@@ -68,6 +69,7 @@ checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/combat-loadouts.js');
 checkSyntax('engine/cast-animation.js');
 checkSyntax('engine/death-animation.js');
+checkSyntax('engine/enemy-expansion.js');
 checkSyntax('engine/class-templates.js');
 checkSyntax('engine/game-pack.js');
 checkSyntax('engine/production-rolls.js');
@@ -88,6 +90,7 @@ checkSyntax('tools/check-boss-animations.mjs');
 checkSyntax('tools/check-boss-directions.mjs');
 checkSyntax('tools/cast-review.mjs');
 checkSyntax('tools/death-review.mjs');
+checkSyntax('tools/check-enemy-expansion.mjs');
 checkSyntax('tools/dev-server.mjs');
 checkSyntax('tools/generate-shield-placement-audit.mjs');
 checkSyntax('tools/outline-review.mjs');
@@ -111,6 +114,14 @@ const bossAnimationCheck = spawnSync(process.execPath, [path.join(root, 'tools',
 check(
   bossAnimationCheck.status === 0,
   `Boss animation structural gate failed\n${bossAnimationCheck.stdout.trim()}\n${bossAnimationCheck.stderr.trim()}`,
+);
+
+const enemyExpansionCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionCheck.status === 0,
+  `Enemy expansion foundation gate failed\n${enemyExpansionCheck.stdout.trim()}\n${enemyExpansionCheck.stderr.trim()}`,
 );
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
@@ -175,6 +186,7 @@ const runtimeSources = {
   'engine/combat-loadouts.js': await readFile(path.join(root, 'engine', 'combat-loadouts.js'), 'utf8'),
   'engine/cast-animation.js': await readFile(path.join(root, 'engine', 'cast-animation.js'), 'utf8'),
   'engine/death-animation.js': await readFile(path.join(root, 'engine', 'death-animation.js'), 'utf8'),
+  'engine/enemy-expansion.js': await readFile(path.join(root, 'engine', 'enemy-expansion.js'), 'utf8'),
   'engine/class-templates.js': await readFile(path.join(root, 'engine', 'class-templates.js'), 'utf8'),
   'engine/game-pack.js': await readFile(path.join(root, 'engine', 'game-pack.js'), 'utf8'),
   'engine/production-rolls.js': await readFile(path.join(root, 'engine', 'production-rolls.js'), 'utf8'),
@@ -206,7 +218,8 @@ const expectedEngineExports = [
   'BODY_BUILDS', 'CLASS_PACK_FORMAT', 'CLASS_PACK_VERSION', 'CLASS_TEMPLATES',
   'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_CLASS_TEMPLATE',
   'DEFAULT_COMBAT_LOADOUT', 'DEFAULT_VARIANT_BATCH_SET', 'ENEMY_OUTLINE_PILOT_FAMILIES',
-  'DIRS', 'DIR_LABELS', 'ENEMIES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
+  'DIRS', 'DIR_LABELS', 'ENEMIES', 'ENEMY_EXPANSION_LEDGER', 'ENEMY_EXPANSION_PROFILE', 'ENEMY_EXPANSION_REGISTRY',
+  'ENEMY_EXPANSION_STATES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OFFHANDS', 'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
   'OUTLINE_MODE_COMPLETE_B', 'OUTLINE_MODE_NONE', 'OUTLINE_MODE_SELECTIVE_C',
   'PRODUCTION_COMPATIBLE_REROLL_CATEGORIES', 'PRODUCTION_COMPATIBLE_REROLL_POLICY',
@@ -217,13 +230,14 @@ const expectedEngineExports = [
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
   'WILDSHOT_GAME_PACK_ACTOR_CATEGORIES', 'WILDSHOT_GAME_PACK_EFFECT_CATEGORIES', 'WILDSHOT_GAME_PACK_POLICY',
   'applyClassTemplate', 'auditProductionRollCatalogs', 'auditProductionRollClassTemplates',
-  'auditWildshotGamePackRuntime', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet',
+  'auditWildshotGamePackRuntime', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildEnemyExpansionLedgerReport',
+  'buildEnemyExpansionReviewPlan', 'buildSheet',
   'buildVariantBatch', 'buildWildshotGamePackManifest',
-  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawAssembledSprite', 'drawOutlinedSprite', 'drawSprite',
+  'combatLoadoutEffectSpecs', 'createEnemyExpansionRegistry', 'defaultCombatLoadout', 'describe', 'drawAssembledSprite', 'drawOutlinedSprite', 'drawSprite',
   'enemySupportsOutline', 'normalizeAssembledOutlineMode', 'normalizeOutlineMode', 'normalizeShadeMode',
   'normalizeProductionRollSeed', 'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout',
-  'rerollProductionPlayerCategory', 'rollProductionPlayer', 'sanitizeCombatLoadout',
-  'serializeWildshotGamePackManifest', 'thumbURL', 'validateProductionPlayer', 'validateWildshotGamePackExport',
+  'renderEnemyExpansionFrame', 'rerollProductionPlayerCategory', 'rollProductionPlayer', 'sanitizeCombatLoadout',
+  'serializeWildshotGamePackManifest', 'thumbURL', 'validateEnemyExpansionSheet', 'validateProductionPlayer', 'validateWildshotGamePackExport',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
@@ -231,6 +245,13 @@ check(
 );
 check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 75, 'sprite-engine.js must remain a small public facade');
 check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 55, 'engine/catalogs.js must remain a small internal facade');
+check(
+  JSON.stringify([...runtimeSources['engine/enemy-expansion.js'].matchAll(/from\s+['"]([^'"]+)['"]/g)].map((match) => match[1]))
+    === JSON.stringify(['./catalogs.js']),
+  'the Enemy expansion foundation may depend only on the stable internal catalog facade',
+);
+check(!/\b(document|window|localStorage|sessionStorage)\b/.test(runtimeSources['engine/enemy-expansion.js']), 'the Enemy expansion foundation must remain independent from DOM and browser state');
+check(enemyExpansionModule.ENEMY_EXPANSION_REGISTRY.families.length === 0, 'EN-F00 must leave the built-in expansion registry empty');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
 check(runtimeSources['app.js'].includes("from './character-kit.js'"), 'app.js must use the focused master character-kit planner');
