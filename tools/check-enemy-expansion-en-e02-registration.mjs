@@ -17,6 +17,8 @@ import { captureEnemyExpansionFrame } from './enemy-expansion-review-pixels.mjs'
 
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const errors = [];
+const requireArtifacts = process.argv.includes('--require-artifacts');
+let verifiedArtifacts = 0;
 
 function check(condition, message) {
   if (!condition) errors.push(message);
@@ -24,6 +26,16 @@ function check(condition, message) {
 
 async function fileSha256(relativePath) {
   return createHash('sha256').update(await readFile(path.join(root, relativePath))).digest('hex');
+}
+
+async function checkArtifact(relativePath, expectedSha256, label) {
+  try {
+    check(await fileSha256(relativePath) === expectedSha256, 'the exact approved EN-E02 ' + label + ' bytes drifted');
+    verifiedArtifacts++;
+  } catch (error) {
+    if (error?.code !== 'ENOENT') throw error;
+    check(!requireArtifacts, 'the exact approved EN-E02 ' + label + ' is missing; regenerate the ignored review bundle');
+  }
 }
 
 const expectedFamilies = ['catfolk', 'desert-raider', 'fanatic-monk', 'goatfolk', 'plague-doctor'];
@@ -58,17 +70,20 @@ check(EN_E02_COMPLETED_SLICE_GATE.reviewManifestSha256 === '0a135fbed3eeeaf69400
 check(EN_E02_COMPLETED_SLICE_GATE.candidateFrameDigest === 'f4667a1ccefb3026c6df3604e114393fdaae619dab0c68bec969203986cb35bf', 'completed-slice frame digest drifted');
 check(Object.isFrozen(EN_E02_COMPLETED_SLICE_GATE), 'completed-slice approval evidence must be immutable');
 
-check(
-  await fileSha256(EN_E02_COMPLETED_SLICE_GATE.artifact) === EN_E02_COMPLETED_SLICE_GATE.artifactSha256,
-  'the exact approved EN-E02 overview bytes drifted',
+await checkArtifact(
+  EN_E02_COMPLETED_SLICE_GATE.artifact,
+  EN_E02_COMPLETED_SLICE_GATE.artifactSha256,
+  'overview',
 );
-check(
-  await fileSha256(EN_E02_COMPLETED_SLICE_GATE.presentationArtifact) === EN_E02_COMPLETED_SLICE_GATE.presentationArtifactSha256,
-  'the exact approved EN-E02 outline/Form presentation bytes drifted',
+await checkArtifact(
+  EN_E02_COMPLETED_SLICE_GATE.presentationArtifact,
+  EN_E02_COMPLETED_SLICE_GATE.presentationArtifactSha256,
+  'outline/Form presentation',
 );
-check(
-  await fileSha256(EN_E02_COMPLETED_SLICE_GATE.reviewManifest) === EN_E02_COMPLETED_SLICE_GATE.reviewManifestSha256,
-  'the exact approved EN-E02 review-manifest bytes drifted',
+await checkArtifact(
+  EN_E02_COMPLETED_SLICE_GATE.reviewManifest,
+  EN_E02_COMPLETED_SLICE_GATE.reviewManifestSha256,
+  'review manifest',
 );
 
 check(EN_E02_CANDIDATE_REGISTRY.families.length === 5, 'the reviewed candidate must retain five evidence families');
@@ -205,5 +220,6 @@ console.log('- Approved registry: 10 families / 30 variants across EN-E01 and EN
 console.log('- Registered EN-E02 sheets: 15 (480x96)');
 console.log('- Candidate/registered parity frames: 1,200');
 console.log('- Consumer catalog held at 62 families / 217 variants (EN-E01 only)');
+console.log('- Ignored review artifact bytes: ' + (verifiedArtifacts === 3 ? '3 / 3 verified' : 'not present; immutable hash locks verified'));
 console.log('- Approved EN-E02 Idle digest: ' + registeredIdleDigest);
 console.log('- Approved EN-E02 full-candidate digest: ' + registeredFrameDigest);
