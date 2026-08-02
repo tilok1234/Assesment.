@@ -71,7 +71,7 @@ check(!facadeSource.includes('EN_E01_'), 'the stable facade must not expose slic
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport();
 check(ledgerReport.counts.slices === 22 && ledgerReport.counts.proposals === 80, 'public registration must preserve the 22-slice / 80-proposal ledger');
-check(ledgerReport.counts.approved === 2 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 20, 'current ledger lifecycle counts must be two approved and twenty planned');
+check(ledgerReport.counts.approved === 2 && ledgerReport.counts.implemented === 1 && ledgerReport.counts.planned === 19, 'current ledger lifecycle counts must be two approved, one implemented, and nineteen planned');
 check(ledgerReport.counts.registeredFamilies === 5 && ledgerReport.counts.publicFamilies === 5, 'current ledger must report five registered and public EN-E01 families');
 const enE01Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E01');
 check(enE01Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED, 'EN-E01 ledger state must be approved');

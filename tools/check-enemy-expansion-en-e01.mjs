@@ -160,7 +160,7 @@ rejects(
 );
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E01_IDLE_REGISTRY);
-check(ledgerReport.counts.approved === 2 && ledgerReport.counts.implemented === 0, 'current ledger must report approved EN-F00 and EN-E01');
+check(ledgerReport.counts.approved === 2 && ledgerReport.counts.implemented === 1, 'current ledger must report approved EN-F00/EN-E01 plus the implemented EN-E02 Idle candidate');
 check(ledgerReport.counts.registeredFamilies === 5 && ledgerReport.counts.publicFamilies === 0, 'candidate ledger evidence must report five internal and zero public families');
 const enE01Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E01');
 check(enE01Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED && enE01Slice?.registeredFamilies === 5 && enE01Slice?.publicFamilies === 0, 'frozen Idle evidence must retain five internal baselines while the current ledger records EN-E01 approval');

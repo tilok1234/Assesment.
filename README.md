@@ -101,6 +101,16 @@ approved enemy outline modes and material-aware Form shading without changing
 that raw dispatcher boundary. No schema version changed because Enemy specs retain the existing
 `{ kind, family, variant }` shape.
 
+The separately authorized `codex/en-e02` branch now contains five immutable
+EN-E02 contract cards and five common-only Idle baselines: Field Chirurgeon,
+Dune Reaver, Ash Disciple, Alley Prowler, and Crag Skirmisher. Its exact
+40-frame candidate remains internal and awaiting visual approval; no EN-E02 ID
+appears in selectors, randomization, packs, exports, the public registry, or the
+62-family / 217-variant public catalog. The ignored review PNG SHA-256 is
+`c224258139c7c810c7a122ea9e95061f3dd1697864913765fe9d11e09f4eca50`
+and its frame digest is
+`00d71d7e8f1904c275bfe84ec6cec746fb314fab4d27ce182d72e286a846d02b`.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge
@@ -271,9 +281,18 @@ Idle digest, and preserves the exact reviewed pre-registration candidate.
 
 Run `npm run check:enemy-expansion-en-e01-registration` for the approved public
 boundary. It verifies the immutable completed-slice approval record, five
-approved/public families, 15 variants, two-approved/twenty-planned ledger,
-stable-facade routing, 15 complete sheets, and pixel parity for every one of the
-1,200 candidate/public frames while keeping the legacy catalog unchanged.
+approved/public families, 15 variants, the current two-approved/one-implemented/
+nineteen-planned ledger, stable-facade routing, 15 complete sheets, and pixel
+parity for every one of the 1,200 candidate/public frames while keeping the
+legacy catalog unchanged.
+
+Run `npm run check:enemy-expansion-en-e02` for the authorized common-baseline
+gate and `npm run review:enemy-expansion-en-e02` to regenerate its exact ignored
+PNG/JSON under `enemy-expansion-review/en-e02/`. The gate covers five internal
+common variants / 40 Idle frames, four-direction ordering, hard alpha,
+one-cell margins, deterministic rendering, distinct silhouettes, mirrored side
+occupancy, and zero EN-E02 public exposure. It does not authorize full motion or
+the ten specialist/elite briefs.
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
@@ -546,15 +565,18 @@ awaits explicit visual approval before any animation work.
   ledger, deterministic review planning, and completed standard-sheet contract
 - `engine/enemy-expansion-public.js` - stable approved-registry composition and
   current-ledger default used by the public facade
-- `engine/enemy-expansion-en-e01.js` and
-  `engine/enemy-expansion-humanoid.js` - EN-E01 contract/approval evidence,
-  frozen reviewed registries, five-family approved registry, and shared
+- `engine/enemy-expansion-en-e01.js`, `engine/enemy-expansion-en-e02.js`, and
+  `engine/enemy-expansion-humanoid.js` - EN-E01 approval/public evidence,
+  private common-only EN-E02 candidate evidence, and the shared data-selected
   standard-animation humanoid renderer
 - `tools/check-enemy-expansion.mjs` - focused legacy-equivalence, registry,
   review-targeting, and malformed-sheet gate
 - `tools/check-enemy-expansion-en-e01.mjs` and
   `tools/enemy-expansion-en-e01-review.mjs` - focused candidate gate and exact
   four-direction Idle review evidence generator
+- `tools/check-enemy-expansion-en-e02.mjs` and
+  `tools/enemy-expansion-en-e02-review.mjs` - common-only EN-E02 structural gate
+  and exact four-direction Idle review evidence generator
 - `tools/check-enemy-expansion-en-e01-full.mjs` and
   `tools/enemy-expansion-en-e01-full-review.mjs` - exhaustive 1,200-frame
   private-candidate gate and completed-slice review bundle generator

@@ -351,6 +351,162 @@ function mutagenHarness(paint, direction, pose, colors) {
   paint(14, 16 + pose.bob, 1, 1, serumAlt);
 }
 
+function plagueBeak(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const cloth = assertColor(colors[0], 'Plague hood cloth');
+  const shade = assertColor(colors[1], 'Plague mask shade');
+  const lens = assertColor(colors[2], 'Plague mask lens');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(9, 5 + bob, 6, 2, cloth);
+    paint(10, 7 + bob, 6, 3, shade);
+    paint(14, 7 + bob, 1, 1, lens);
+    paint(15, 8 + bob, 3, 1, cloth);
+    paint(17, 9 + bob, 2, 1, shade);
+    return;
+  }
+  if (view === 'up') {
+    paint(8, 5 + bob, 8, 2, cloth);
+    paint(7, 7 + bob, 10, 3, shade);
+    paint(8, 9 + bob, 8, 1, cloth);
+    return;
+  }
+  paint(8, 5 + bob, 8, 2, cloth);
+  paint(9, 7 + bob, 6, 3, shade);
+  paint(10, 7 + bob, 1, 1, lens);
+  paint(13, 7 + bob, 1, 1, lens);
+  paint(10, 9 + bob, 4, 2, cloth);
+  paint(11, 11 + bob, 2, 1, shade);
+}
+
+function desertWrap(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const cloth = assertColor(colors[0], 'Desert wrap cloth');
+  const shade = assertColor(colors[1], 'Desert wrap shade');
+  const accent = assertColor(colors[2], 'Desert wrap accent');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(9, 4 + bob, 7, 2, cloth);
+    paint(10, 6 + bob, 6, 2, shade);
+    paint(13, 8 + bob, 4, 2, cloth);
+    paint(10, 12 + bob, 6, 2, cloth);
+    paint(9, 13 + bob, 2, 4, accent);
+    return;
+  }
+  paint(8, 4 + bob, 8, 2, cloth);
+  paint(7, 6 + bob, 10, 2, shade);
+  if (view === 'up') {
+    paint(8, 8 + bob, 8, 2, cloth);
+    paint(8, 12 + bob, 8, 2, accent);
+    paint(15, 14 + bob, 2, 3, cloth);
+    return;
+  }
+  paint(9, 8 + bob, 6, 2, cloth);
+  paint(7, 12 + bob, 10, 2, accent);
+  paint(7, 14 + bob, 2, 3, cloth);
+}
+
+function monkBeads(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const bead = assertColor(colors[0], 'Monk prayer bead');
+  const cord = assertColor(colors[1], 'Monk prayer cord');
+  const wrap = assertColor(colors[2], 'Monk arm wrap');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(11, 12 + bob, 1, 1, cord);
+    paint(12, 13 + bob, 1, 1, bead);
+    paint(13, 14 + bob, 1, 1, bead);
+    paint(14, 15 + bob, 1, 1, cord);
+    paint(15, 14 + bob, 2, 2, wrap);
+    return;
+  }
+  if (view === 'up') {
+    paint(9, 12 + bob, 6, 1, cord);
+    paint(9, 13 + bob, 1, 1, bead);
+    paint(14, 13 + bob, 1, 1, bead);
+    paint(7, 14 + bob, 2, 2, wrap);
+    paint(15, 14 + bob, 2, 2, wrap);
+    return;
+  }
+  paint(9, 12 + bob, 1, 1, cord);
+  paint(10, 13 + bob, 1, 1, bead);
+  paint(11, 14 + bob, 1, 1, bead);
+  paint(12, 15 + bob, 1, 1, cord);
+  paint(13, 14 + bob, 1, 1, bead);
+  paint(14, 13 + bob, 1, 1, bead);
+  paint(6, 14 + bob, 2, 2, wrap);
+  paint(16, 14 + bob, 2, 2, wrap);
+}
+
+function plainQuarterstaff(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const wood = assertColor(colors[0], 'Quarterstaff wood');
+  const shade = assertColor(colors[1], 'Quarterstaff shade');
+  const wrap = assertColor(colors[2], 'Quarterstaff grip wrap');
+  const x = view === 'up' ? 6 : view === 'right' ? 16 : 17;
+  const y = 8 + pose.bob;
+  paint(x, y, 1, 13, shade);
+  paint(x + 1, y, 1, 12, wood);
+  paint(x, 13 + pose.bob, 2, 2, wrap);
+}
+
+function catfolkTraits(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const fur = assertColor(colors[0], 'Catfolk fur');
+  const shade = assertColor(colors[1], 'Catfolk fur shade');
+  const inner = assertColor(colors[2], 'Catfolk ear accent');
+  const bob = pose.bob;
+  const tailLift = pose.frame === 1 ? -1 : 0;
+  if (view === 'right') {
+    paint(11, 4 + bob, 2, 3, fur);
+    paint(12, 5 + bob, 1, 1, inner);
+    paint(14, 15 + bob, 3, 2, fur);
+    paint(16, 16 + bob + tailLift, 3, 2, fur);
+    paint(18, 15 + bob + tailLift, 2, 1, shade);
+    paint(9, 20 + bob, 2, 2, shade);
+    paint(13, 20 + bob, 2, 2, shade);
+    return;
+  }
+  paint(8, 4 + bob, 2, 3, fur);
+  paint(14, 4 + bob, 2, 3, fur);
+  paint(9, 5 + bob, 1, 1, inner);
+  paint(14, 5 + bob, 1, 1, inner);
+  const tailX = view === 'up' ? 6 : 16;
+  paint(tailX, 15 + bob, 2, 3, fur);
+  paint(tailX + (view === 'up' ? -1 : 2), 14 + bob + tailLift, 2, 2, shade);
+  paint(7, 20 + bob, 3, 2, shade);
+  paint(14, 20 + bob, 3, 2, shade);
+}
+
+function goatfolkTraits(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const fur = assertColor(colors[0], 'Goatfolk fur');
+  const horn = assertColor(colors[1], 'Goatfolk horn');
+  const accent = assertColor(colors[2], 'Goatfolk accent');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(10, 3 + bob, 2, 3, fur);
+    paint(11, 1 + bob, 1, 3, horn);
+    paint(12, 2 + bob, 2, 1, horn);
+    paint(14, 6 + bob, 3, 1, accent);
+    paint(9, 20 + bob, 2, 2, horn);
+    paint(13, 20 + bob, 2, 2, horn);
+    return;
+  }
+  paint(8, 4 + bob, 2, 3, fur);
+  paint(14, 4 + bob, 2, 3, fur);
+  paint(6, 2 + bob, 2, 2, horn);
+  paint(7, 1 + bob, 2, 2, horn);
+  paint(16, 2 + bob, 2, 2, horn);
+  paint(15, 1 + bob, 2, 2, horn);
+  paint(7, 7 + bob, 2, 1, accent);
+  paint(15, 7 + bob, 2, 1, accent);
+  if (view === 'up') paint(11, 8 + bob, 2, 2, accent);
+  else paint(11, 10 + bob, 2, 2, fur);
+  paint(7, 20 + bob, 3, 2, horn);
+  paint(14, 20 + bob, 3, 2, horn);
+}
+
 const IDENTITY_OVERLAYS = Object.freeze({
   'crooked-hat': crookedHat,
   'ragged-tabard': raggedTabard,
@@ -365,6 +521,12 @@ const IDENTITY_OVERLAYS = Object.freeze({
   'throwing-glove': throwingGlove,
   respirator,
   'mutagen-harness': mutagenHarness,
+  'plague-beak': plagueBeak,
+  'desert-wrap': desertWrap,
+  'monk-beads': monkBeads,
+  'plain-quarterstaff': plainQuarterstaff,
+  'catfolk-traits': catfolkTraits,
+  'goatfolk-traits': goatfolkTraits,
 });
 
 function playerSpec(rendererData) {

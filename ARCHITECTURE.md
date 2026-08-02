@@ -139,6 +139,15 @@ presentation integration exhaustively verifies the same 1,200 raw frames plus
 live combined treatment on 2026-08-02; registry approval and raw-pixel identity
 remain separate contracts.
 
+`engine/enemy-expansion-en-e02.js` is the next isolated private boundary. It
+contains five immutable contract cards and only one common Idle baseline per
+family. Its registry reuses the existing `humanoid-threat-v1` handler while new
+mask, wrap, bead/staff, feline, and caprine identity treatments remain selected
+by renderer data. EN-E02 is not imported by `sprite-engine.js` or
+`engine/enemy-expansion-public.js`; therefore the public registry remains the
+five approved EN-E01 families and `PUBLIC_ENEMIES` remains 62/217 while the
+EN-E02 visual gate is unresolved.
+
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
 build pipeline. Runtime PNGs are byte-identical to their review checkpoint.
