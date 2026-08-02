@@ -60,7 +60,7 @@ export const ENEMY_EXPANSION_LEDGER = deepFreeze([
   ledgerEntry('EN-F00', 'Expansion renderer foundation', 'foundation', 0, ENEMY_EXPANSION_STATES.APPROVED, 'accepted-2026-08-02'),
   ledgerEntry('EN-E01', 'Humanoid threat pilot', 'standard', 5, ENEMY_EXPANSION_STATES.APPROVED, 'completed-slice-approved-2026-08-02'),
   ledgerEntry('EN-E02', 'Humanoid culture variants', 'standard', 5, ENEMY_EXPANSION_STATES.APPROVED, 'completed-slice-approved-2026-08-02'),
-  ledgerEntry('EN-E03', 'Large and hybrid walkers', 'standard', 3, ENEMY_EXPANSION_STATES.PLANNED, 'queued'),
+  ledgerEntry('EN-E03', 'Large and hybrid walkers', 'standard', 3, ENEMY_EXPANSION_STATES.PLANNED, 'idle-authorized-2026-08-03'),
   ledgerEntry('EN-E04', 'Serpentine and aquatic peoples', 'standard', 3, ENEMY_EXPANSION_STATES.PLANNED, 'queued'),
   ledgerEntry('EN-E05', 'Undead humanoids', 'standard', 5, ENEMY_EXPANSION_STATES.PLANNED, 'queued'),
   ledgerEntry('EN-E06', 'Fey and folklore', 'standard', 5, ENEMY_EXPANSION_STATES.PLANNED, 'queued'),

@@ -72,8 +72,11 @@ checkSyntax('engine/death-animation.js');
 checkSyntax('engine/enemy-expansion.js');
 checkSyntax('engine/enemy-expansion-en-e01.js');
 checkSyntax('engine/enemy-expansion-en-e02.js');
+checkSyntax('engine/enemy-expansion-en-e03.js');
 checkSyntax('engine/enemy-expansion-humanoid.js');
+checkSyntax('engine/enemy-expansion-large-hybrid.js');
 checkSyntax('engine/enemy-expansion-public.js');
+checkSyntax('engine/enemy-expansion-repairs.js');
 checkSyntax('engine/public-renderer.js');
 checkSyntax('engine/class-templates.js');
 checkSyntax('engine/game-pack.js');
@@ -105,10 +108,13 @@ checkSyntax('tools/check-enemy-expansion-en-e02.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02-full.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02-registration.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02-consumers.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e03.mjs');
+checkSyntax('tools/check-enemy-expansion-repairs.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-full-review.mjs');
 checkSyntax('tools/enemy-expansion-en-e02-review.mjs');
 checkSyntax('tools/enemy-expansion-en-e02-full-review.mjs');
+checkSyntax('tools/enemy-expansion-en-e03-review.mjs');
 checkSyntax('tools/enemy-expansion-candidate-presentation.mjs');
 checkSyntax('tools/enemy-expansion-review-pixels.mjs');
 checkSyntax('tools/dev-server.mjs');
@@ -198,6 +204,22 @@ const enemyExpansionEnE02RegistrationCheck = spawnSync(process.execPath, [path.j
 check(
   enemyExpansionEnE02RegistrationCheck.status === 0,
   `EN-E02 approved registration gate failed\n${enemyExpansionEnE02RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE02RegistrationCheck.stderr.trim()}`,
+);
+
+const enemyExpansionRepairCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-repairs.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionRepairCheck.status === 0,
+  `Approved enemy repair gate failed\n${enemyExpansionRepairCheck.stdout.trim()}\n${enemyExpansionRepairCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE03Check = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e03.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE03Check.status === 0,
+  `EN-E03 common-only Idle candidate gate failed\n${enemyExpansionEnE03Check.stdout.trim()}\n${enemyExpansionEnE03Check.stderr.trim()}`,
 );
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
