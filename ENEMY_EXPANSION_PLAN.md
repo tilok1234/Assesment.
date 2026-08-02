@@ -7,9 +7,9 @@
   the 67-family / 232-variant public catalog. On 2026-08-03 the designer
   reopened seven specific family presentations for walk/seam repair. The exact
   repair candidate at checkpoint `6400dd5` was visually approved on 2026-08-03
-  and promoted without further pixel changes; the pre-repair registry remains
-  immutable comparison evidence. EN-E03 common-only Idle is now the authorized
-  next gate
+  and promoted without further pixel changes at checkpoint `8eb0f99`; the
+  pre-repair registry remains immutable comparison evidence. EN-E03 common-only
+  Idle is now the authorized next gate
 - Recorded: 2026-08-03
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -411,6 +411,8 @@ Isolated repair-candidate evidence (2026-08-03):
 
 - implementation checkpoint `6400dd5` (`Create enemy walk and seam repair
   candidate`) contains the bounded candidate and its regression harness;
+- approval-promotion checkpoint `8eb0f99` routes that exact reviewed object
+  through both stable and consumer boundaries;
 - the internal `ENEMY_EXPANSION_PRE_REPAIR_REGISTRY` retains the exact prior
   EN-E01/EN-E02 pixels and both locked 1,200-frame digests;
 - `ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY` changes exactly 18 renderer-data
