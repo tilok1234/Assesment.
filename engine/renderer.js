@@ -231,7 +231,7 @@ function makeG(onOutOfBounds = null) {
 
 // ---------------- pose ----------------
 function makePose(animId, f) {
-  const p = { bob: 0, leg: 0, arm: 0, wep: 'hold', flash: false, lunge: 0, f };
+  const p = { animation: animId, bob: 0, leg: 0, arm: 0, wep: 'hold', flash: false, lunge: 0, f };
   if (animId === 'idle') { p.bob = f === 1 ? 1 : 0; }
   if (animId === 'walk') {
     p.bob = (f === 1 || f === 3) ? 1 : 0;
@@ -609,12 +609,16 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
       const legDU = (x0, raised) => {
         if (raised) {
           R(x0, 18, 3, 1, pants[0]);
-          R(x0, 19, 3, 1, C.bone ? BONE[0] : BOOTS[0]);
-          R(x0, 20, 3, 1, C.bone ? BONE[1] : BOOTS[1]);
+          if (!C.customFeet) {
+            R(x0, 19, 3, 1, C.bone ? BONE[0] : BOOTS[0]);
+            R(x0, 20, 3, 1, C.bone ? BONE[1] : BOOTS[1]);
+          }
         } else {
           R(x0, 18, 3, 2, pants[0]);
-          R(x0, 20, 3, 1, C.bone ? BONE[0] : BOOTS[0]);
-          R(x0, 21, 3, 1, C.bone ? BONE[1] : BOOTS[1]);
+          if (!C.customFeet) {
+            R(x0, 20, 3, 1, C.bone ? BONE[0] : BOOTS[0]);
+            R(x0, 21, 3, 1, C.bone ? BONE[1] : BOOTS[1]);
+          }
         }
         if (C.bone) S(x0 + 1, 19, INK);
       };
@@ -627,16 +631,37 @@ function drawHumanoid(g, d, p, C, renderLayer = 'complete', viewDir = d) {
       if (p.leg === -1) { back = 10; front = 12; }
       const legS = (x0, dark) => {
         R(x0, 18, 3, 2, dark ? pants[1] : pants[0]);
-        R(x0, 20, 3, 1, C.bone ? (dark ? BONE[1] : BONE[0]) : (dark ? BOOTS[1] : BOOTS[0]));
-        R(x0, 21, 3, 1, C.bone ? BONE[1] : BOOTS[1]);
+        if (!C.customFeet) {
+          R(x0, 20, 3, 1, C.bone ? (dark ? BONE[1] : BONE[0]) : (dark ? BOOTS[1] : BOOTS[0]));
+          R(x0, 21, 3, 1, C.bone ? BONE[1] : BOOTS[1]);
+        }
       };
       legS(back, true);
       legS(front, false);
     }
   } else if (includeOutfit) {
     // robe: boots peeking
-    if (d === 'right') { R(10, 20, 2, 2, BOOTS[1]); R(13, 20, 2, 2, BOOTS[0]); }
-    else { R(9, 20, 2, 2, BOOTS[0]); R(13, 20, 2, 2, BOOTS[0]); }
+    if (C.animatedRobeWalk && p.animation === 'walk') {
+      const frontFrames = [
+        [[8, 20], [13, 19]],
+        [[9, 21], [13, 20]],
+        [[9, 19], [14, 20]],
+        [[9, 20], [13, 21]],
+      ];
+      const sideFrames = [
+        [[9, 20], [14, 19]],
+        [[10, 21], [13, 20]],
+        [[11, 19], [12, 20]],
+        [[10, 20], [13, 21]],
+      ];
+      const contacts = (d === 'right' ? sideFrames : frontFrames)[p.f] || frontFrames[0];
+      R(contacts[0][0], contacts[0][1], 2, 2, BOOTS[1]);
+      R(contacts[1][0], contacts[1][1], 2, 2, BOOTS[0]);
+    } else if (d === 'right') {
+      R(10, 20, 2, 2, BOOTS[1]); R(13, 20, 2, 2, BOOTS[0]);
+    } else {
+      R(9, 20, 2, 2, BOOTS[0]); R(13, 20, 2, 2, BOOTS[0]);
+    }
   }
 
   // ---- harpy wings (behind torso) ----
@@ -3070,6 +3095,8 @@ function buildHumanoidC(spec) {
       weaponFollowRig: true,
       shieldFollowRig: true,
       enhancedHilts: true,
+      animatedRobeWalk: spec.animatedRobeWalk === true,
+      customFeet: spec.customFeet === true,
     };
   }
   const fam = find(ENEMIES, spec.family);

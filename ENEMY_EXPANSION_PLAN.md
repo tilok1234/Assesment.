@@ -1,14 +1,14 @@
 # Enemy Expansion Plan
 
-- Status: approved plan; EN-F00 checkpoint `73ad73a` is accepted; EN-E01 is
-  approved, registered, and consumer-integrated; and EN-E02's exact Idle and
-  completed-slice artifacts are visually approved. Registration checkpoint
-  `7b6e448` composes EN-E01 plus EN-E02 into the stable ten-family / 30-variant
-  approved registry. The separately authorized consumer checkpoint `8ab1837`
-  routes that exact cumulative registry through the 67-family / 232-variant
-  public catalog; technical and live smoke validation pass, while designer
-  acceptance of the live EN-E02 consumer presentation remains pending
-- Recorded: 2026-08-02
+- Status: approved plan; EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
+  EN-E02 are approved, registered, and consumer-integrated. Registration
+  checkpoint `7b6e448` composes both slices into the stable ten-family /
+  30-variant approved registry, and consumer checkpoint `8ab1837` established
+  the 67-family / 232-variant public catalog. On 2026-08-03 the designer
+  reopened seven specific family presentations for walk/seam repair. The
+  approved registry remains immutable comparison evidence while an isolated
+  consumer repair candidate awaits explicit visual approval
+- Recorded: 2026-08-03
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
 
@@ -49,8 +49,11 @@ randomizer, kit, pack, thumbnail, export, outline, and Form paths for the five
 approved families / 15 variants. It does **not** authorize new effect assets, a
 release, EN-E03, or a later slice. Checkpoint `8ab1837` implements that bounded
 scope; exhaustive technical validation and the live Plague Doctor / Field
-Chirurgeon Complete B + Form smoke pass. Explicit designer acceptance of that
-live consumer presentation remains the next gate.
+Chirurgeon Complete B + Form smoke passed and the designer continued. On
+2026-08-03 the designer reported narrow defects in Catfolk, Desert Raider,
+Fallen Knight, Fanatic Monk, Goatfolk, Necromancer, and Witch. That report
+authorizes only the bounded repair candidate described below; it does not
+authorize EN-E03, separate effects, release, or acceptance of the new pixels.
 
 ## Intake Assessment
 
@@ -85,9 +88,9 @@ below.
   review call remains unresolved, unless the designer explicitly reprioritizes.
 - `complete`: art, animation, validation, and visual approval are all done.
 
-EN-E01 is complete through its accepted consumer presentation. EN-E02 family
-art and registration are approved; its consumer integration is currently an
-`acceptance-candidate`.
+EN-E01 and EN-E02 remain historically complete through their accepted consumer
+presentations. Their isolated seven-family walk/seam correction is currently an
+`acceptance-candidate`; the repair does not rewrite the stable approved registry.
 
 ## Non-Negotiable Production Contract
 
@@ -265,8 +268,9 @@ Approved implementation and registration evidence:
   overview, five all-motion family boards, 15 native sheets, and review JSON.
   The overview SHA-256 is
   `0b38f2737b5215d37a08e0ae3f7e25f82e88bb17a97641e33b0ee9ef9c0e8fb7`.
-  Internal native/4x inspection found no repair-level defect and the designer
-  accepted the completed slice; and
+  Internal native/4x inspection accepted the completed slice at that checkpoint;
+  later live review reopened Witch, Fallen Knight, and Necromancer for the
+  bounded repair candidate without rewriting this historical artifact; and
 - `npm.cmd run check:enemy-expansion-en-e01-registration` proves five approved
   families / 15 public variants, 15 complete sheets, stable-facade routing,
   the current three-approved/zero-implemented/nineteen-planned ledger state,
@@ -285,10 +289,11 @@ Approved implementation and registration evidence:
 
 ### EN-E02 - Humanoid culture variants
 
-- Status: `acceptance-candidate`; common-only Idle and exact completed-slice
-  artifacts are visually approved, bounded registration completed at `7b6e448`,
-  and explicitly authorized consumer integration is implemented and technically
-  validated at `8ab1837`; live consumer-presentation acceptance remains pending
+- Status: `approved-consumer-integrated`; common-only Idle and exact
+  completed-slice artifacts are visually approved, bounded registration
+  completed at `7b6e448`, and consumer integration is implemented at `8ab1837`.
+  A later seven-family correction spanning EN-E01/EN-E02 is a separate
+  `acceptance-candidate`
 - Families: Plague Doctor, Desert Raider, Fanatic Monk, Catfolk, Goatfolk
 
 Shared leverage: EN-E01 humanoid poses plus masks, wrapped cloth, martial robes,
@@ -398,9 +403,32 @@ Authorized consumer-integration evidence:
   / Field Chirurgeon with Complete B + Form, the expected export filename, and
   no console errors.
 
-Stop at explicit designer acceptance of the live EN-E02 consumer presentation.
-Do not record that acceptance, add separate effects, release the slice, or start
-EN-E03 without the next explicit gate.
+Isolated repair-candidate evidence (2026-08-03):
+
+- `ENEMY_EXPANSION_REGISTRY` still renders the exact approved EN-E01/EN-E02
+  pixels and retains both locked 1,200-frame digests;
+- `ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY` changes exactly 18 renderer-data
+  records across the seven reported families while leaving Alchemist, Pirate,
+  and Plague Doctor pixel-identical across all 720 unaffected frames;
+- Catfolk and Goatfolk receive four-phase paw/hoof contacts; Witch,
+  Necromancer, Ash Disciple, and Bell Abbot receive opt-in robe-foot strides;
+- Catfolk's white pseudo-transparent mouth band is replaced by a fur muzzle,
+  and the reported Desert Raider, Shieldbearer, and Goatfolk checkerboard seams
+  are filled through data-selected repair overlays;
+- `npm.cmd run check:enemy-expansion-repairs` validates 1,680 affected-family
+  frames, binary alpha, one-cell margins, zero clipping, deterministic output,
+  alternating stride extremes, and the exact reported seam coordinates;
+- repair review evidence lives under
+  `enemy-expansion-review/repair-candidate/`, with EN-E01/EN-E02 repair digests
+  `48e2f05ec345f5680305019827b2ad6d7dff1bc506b109ab101b92975ef96916`
+  and `50310c36ca165cf7ccd941183a5e087cec2fcb5140068e99ab7e24633d6096d5`;
+  and
+- the live assembler exercises all four Walk frames at 20x with Complete B
+  outline and Form shading for every reported family.
+
+Stop at explicit designer acceptance of this repair candidate. Do not promote
+its pixels into the approved registry, add separate effects, release the slice,
+or start EN-E03 without the next explicit gate.
 
 ### EN-E03 - Large and hybrid walkers
 
@@ -711,15 +739,14 @@ The EN-E01 authorized production sequence is complete:
    effect boundaries; and
 4. focused all-variant/all-animation evidence has been generated and inspected.
 
-EN-E01 completed-slice approval, bounded registration, and accepted consumer
-integration are recorded. EN-E02 contract planning, exact Idle, completed-slice
-review, bounded registration, and separately authorized consumer implementation
-are also recorded. Registration checkpoint `7b6e448` preserves all reviewed
-pixels; consumer checkpoint `8ab1837` exposes those same approved records through
-the generic 67/232 public boundary. The current gate is the designer's explicit
-acceptance or rejection of the live Plague Doctor / Field Chirurgeon Complete B
-+ Form consumer view. Do not add separate effect assets, release it, or start
-EN-E03 without a later explicit gate.
+EN-E01/EN-E02 completed-slice approval, bounded registration, and consumer
+integration are recorded. Registration checkpoint `7b6e448` and the stable
+registry preserve all reviewed pixels; consumer checkpoint `8ab1837` established
+the generic 67/232 boundary. The current consumer branch intentionally routes an
+isolated correction while retaining the stable registry as exact comparison.
+The next gate is the designer's explicit acceptance or rejection of the seven-
+family repair boards/live Walk view. Do not promote the correction, add separate
+effect assets, release it, or start EN-E03 without that explicit decision.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -728,4 +755,4 @@ stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
 Again, this recommendation does not authorize implementation beyond the current
-EN-E02 consumer-acceptance boundary.
+EN-E01/EN-E02 repair-acceptance boundary.

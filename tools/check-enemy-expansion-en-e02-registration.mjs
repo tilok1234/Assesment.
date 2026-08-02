@@ -4,6 +4,10 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import * as engine from '../sprite-engine.js';
 import {
+  ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE,
+  ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY,
+} from '../engine/enemy-expansion-repairs.js';
+import {
   EN_E02_APPROVED_FAMILIES,
   EN_E02_CANDIDATE_REGISTRY,
   EN_E02_COMPLETED_SLICE_GATE,
@@ -116,7 +120,9 @@ check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 10, 'the stable 
 check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 1, 'the composed approved registry must deduplicate the shared renderer');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed approved registry must be immutable');
 
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later authorized consumer gate must reuse the exact approved registry');
+check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'awaiting-designer-approval', 'the repair consumer boundary must remain explicitly pending visual approval');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the consumer boundary must expose the isolated repair candidate');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'the repair candidate must not overwrite the exact approved registry');
 check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 10, 'consumer routing must contain the ten approved EN-E01/EN-E02 families');
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 check(engine.PUBLIC_ENEMIES.length === 67 && publicVariants === 232, 'the later consumer gate must expose the 67-family / 232-variant catalog');

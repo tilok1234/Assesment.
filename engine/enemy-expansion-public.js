@@ -10,6 +10,10 @@ import {
 } from './enemy-expansion.js';
 import { EN_E01_PUBLIC_REGISTRY } from './enemy-expansion-en-e01.js';
 import { EN_E02_PUBLIC_REGISTRY } from './enemy-expansion-en-e02.js';
+import {
+  ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE,
+  ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY,
+} from './enemy-expansion-repairs.js';
 import { ENEMIES } from './catalogs.js';
 
 export {
@@ -17,6 +21,8 @@ export {
   createEnemyExpansionRegistry,
   ENEMY_EXPANSION_LEDGER,
   ENEMY_EXPANSION_PROFILE,
+  ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE,
+  ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY,
   ENEMY_EXPANSION_STATES,
   renderEnemyExpansionFrame,
   validateEnemyExpansionSheet,
@@ -31,10 +37,10 @@ export const ENEMY_EXPANSION_REGISTRY = createEnemyExpansionRegistry({
   ],
 });
 
-// Consumer integration is separately authorized per slice. EN-E01 and EN-E02
-// have now both crossed that gate, so the consumer view can reuse the exact
-// immutable approved registry without copying or rewriting family records.
-export const ENEMY_EXPANSION_CONSUMER_REGISTRY = ENEMY_EXPANSION_REGISTRY;
+// The stable registry remains the exact approved comparison. The isolated
+// consumer registry carries only the explicitly reported repair candidate so
+// live editor review cannot rewrite historical acceptance evidence.
+export const ENEMY_EXPANSION_CONSUMER_REGISTRY = ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY;
 
 // Approved expansion families join the public consumer catalog without
 // rewriting the locked legacy ENEMIES array or its historical fixtures.

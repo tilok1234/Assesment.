@@ -10,6 +10,7 @@ import {
   EN_E02_CONTRACT_CARDS,
   EN_E02_IDLE_GATE,
 } from '../engine/enemy-expansion-en-e02.js';
+import { ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY } from '../engine/enemy-expansion-repairs.js';
 import {
   captureEnemyExpansionFrame,
   encodeRgbaPng,
@@ -20,7 +21,11 @@ import {
 } from './enemy-expansion-candidate-presentation.mjs';
 
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
-const output = path.join(root, 'enemy-expansion-review', 'en-e02-full');
+const repairCandidate = process.argv.includes('--repair-candidate');
+const reviewRegistry = repairCandidate ? ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY : EN_E02_CANDIDATE_REGISTRY;
+const output = repairCandidate
+  ? path.join(root, 'enemy-expansion-review', 'repair-candidate', 'en-e02')
+  : path.join(root, 'enemy-expansion-review', 'en-e02-full');
 
 const FONT = Object.freeze({
   ' ': [0, 0, 0, 0, 0, 0, 0],
@@ -139,7 +144,7 @@ for (const card of EN_E02_CONTRACT_CARDS) for (const variant of card.variantBrie
   const spec = { kind: 'enemy', family: card.id, variant: variant.id };
   for (const direction of directions) for (const animation of animations) {
     for (let frame = 0; frame < animation.frames; frame++) {
-      const captured = captureEnemyExpansionFrame(EN_E02_CANDIDATE_REGISTRY, spec, direction, animation.id, frame);
+      const captured = captureEnemyExpansionFrame(reviewRegistry, spec, direction, animation.id, frame);
       frames.set([card.id, variant.id, direction, animation.id, frame].join('/'), captured);
       frameRecords.push({
         family: card.id,
@@ -234,7 +239,7 @@ for (let column = 0; column < presentationColumns.length; column++) {
 for (let rowIndex = 0; rowIndex < variantRows.length; rowIndex++) {
   const { card, variant } = variantRows[rowIndex];
   const rowTop = presentationHeader + (rowIndex * presentationRowHeight);
-  const rendererData = EN_E02_CANDIDATE_REGISTRY.families
+  const rendererData = reviewRegistry.families
     .find((family) => family.id === card.id).variants
     .find((entry) => entry.id === variant.id).rendererData;
   presentation.fillRect(presentationMargin, rowTop + 4, presentationWidth - (presentationMargin * 2), presentationRowHeight - 8, rowIndex % 2 === 0 ? COLORS.panel : COLORS.panelAlt);
@@ -343,7 +348,7 @@ for (const card of EN_E02_CONTRACT_CARDS) for (const variant of card.variantBrie
 const report = {
   format: 'enemy-expansion-full-review-v1',
   sliceId: 'EN-E02',
-  state: 'full-production-candidate',
+  state: repairCandidate ? 'repair-candidate-awaiting-designer-approval' : 'full-production-candidate',
   approvedIdleGate: EN_E02_IDLE_GATE,
   fullFrameDigest,
   counts: {
@@ -351,7 +356,7 @@ const report = {
     variants: 15,
     completeSheets: 15,
     frames: frameRecords.length,
-    publicFamilies: EN_E02_CANDIDATE_REGISTRY.publicFamilies.length,
+    publicFamilies: reviewRegistry.publicFamilies.length,
   },
   aliases: {
     cast: 'attack',
@@ -362,11 +367,11 @@ const report = {
 };
 await writeFile(path.join(output, 'en-e02-full-review.json'), JSON.stringify(report, null, 2) + '\n');
 
-console.log('Generated EN-E02 full-production review evidence.');
-console.log('- Overview: ' + posix(path.join('enemy-expansion-review', 'en-e02-full', overviewName)) + ' (' + overviewWidth + 'x' + overviewHeight + ')');
-console.log('- Presentation: ' + posix(path.join('enemy-expansion-review', 'en-e02-full', presentationName)) + ' (' + presentationWidth + 'x' + presentationHeight + ')');
+console.log('Generated EN-E02 ' + (repairCandidate ? 'repair-candidate' : 'full-production') + ' review evidence.');
+console.log('- Overview: ' + posix(path.relative(root, path.join(output, overviewName))) + ' (' + overviewWidth + 'x' + overviewHeight + ')');
+console.log('- Presentation: ' + posix(path.relative(root, path.join(output, presentationName))) + ' (' + presentationWidth + 'x' + presentationHeight + ')');
 console.log('- Family motion reviews: 5');
 console.log('- Native complete sheets: 15 (480x96)');
 console.log('- Frames: ' + frameRecords.length);
-console.log('- Public expansion families: 0');
+console.log('- Public expansion families: ' + reviewRegistry.publicFamilies.length);
 console.log('- Full candidate frame digest: ' + fullFrameDigest);

@@ -406,6 +406,28 @@ function desertWrap(paint, direction, pose, colors) {
   paint(7, 14 + bob, 2, 3, cloth);
 }
 
+function desertWrapV2(paint, direction, pose, colors) {
+  desertWrap(paint, direction, pose, colors);
+  const view = direction === 'left' ? 'right' : direction;
+  const cloth = assertColor(colors[0], 'Repaired desert wrap cloth');
+  const shade = assertColor(colors[1], 'Repaired desert wrap shade');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(8, 5 + bob, 1, 1, cloth);
+    paint(13, 11 + bob, 4, 1, shade);
+    paint(16, 12 + bob, 1, 2, shade);
+    return;
+  }
+  if (view === 'up') {
+    paint(7, 8 + bob, 1, 3, cloth);
+    paint(7, 11 + bob, 4, 1, shade);
+    return;
+  }
+  paint(16, 5 + bob, 1, 1, cloth);
+  paint(16, 8 + bob, 1, 3, cloth);
+  paint(13, 11 + bob, 4, 1, shade);
+}
+
 function monkBeads(paint, direction, pose, colors) {
   const view = direction === 'left' ? 'right' : direction;
   const bead = assertColor(colors[0], 'Monk prayer bead');
@@ -485,6 +507,62 @@ function catfolkTraits(paint, direction, pose, colors) {
   paint(14, 20 + bob, 3, 2, shade);
 }
 
+function walkingContacts(view, pose) {
+  const side = view === 'right';
+  if (pose.animation !== 'walk') return side
+    ? [[9, 20], [13, 20]]
+    : [[7, 20], [14, 20]];
+  const frames = side
+    ? [
+      [[8, 20], [14, 19]],
+      [[9, 21], [13, 20]],
+      [[10, 19], [12, 20]],
+      [[9, 20], [13, 21]],
+    ]
+    : [
+      [[6, 20], [14, 19]],
+      [[7, 21], [14, 20]],
+      [[7, 19], [15, 20]],
+      [[7, 20], [14, 21]],
+    ];
+  return frames[pose.frame] || frames[0];
+}
+
+function catfolkTraitsV2(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const fur = assertColor(colors[0], 'Repaired Catfolk fur');
+  const shade = assertColor(colors[1], 'Repaired Catfolk fur shade');
+  const inner = assertColor(colors[2], 'Repaired Catfolk ear accent');
+  const bob = pose.bob;
+  const tailLift = pose.animation === 'walk'
+    ? (pose.frame === 1 ? -1 : pose.frame === 3 ? 1 : 0)
+    : 0;
+  if (view === 'right') {
+    paint(11, 4 + bob, 2, 3, fur);
+    paint(12, 5 + bob, 1, 1, inner);
+    paint(14, 10 + bob, 2, 1, inner);
+    paint(15, 10 + bob, 1, 1, shade);
+    paint(14, 15 + bob, 3, 2, fur);
+    paint(16, 16 + bob + tailLift, 3, 2, fur);
+    paint(18, 15 + bob + tailLift, 2, 1, shade);
+  } else {
+    paint(8, 4 + bob, 2, 3, fur);
+    paint(14, 4 + bob, 2, 3, fur);
+    paint(9, 5 + bob, 1, 1, inner);
+    paint(14, 5 + bob, 1, 1, inner);
+    if (view === 'down') {
+      paint(10, 10 + bob, 4, 1, inner);
+      paint(11, 10 + bob, 2, 1, shade);
+    }
+    const tailX = view === 'up' ? 6 : 16;
+    paint(tailX, 15 + bob, 2, 3, fur);
+    paint(tailX + (view === 'up' ? -1 : 2), 14 + bob + tailLift, 2, 2, shade);
+  }
+  const contacts = walkingContacts(view, pose);
+  const width = view === 'right' ? 2 : 3;
+  for (const [x, y] of contacts) paint(x, y, width, 2, shade);
+}
+
 function goatfolkTraits(paint, direction, pose, colors) {
   const view = direction === 'left' ? 'right' : direction;
   const fur = assertColor(colors[0], 'Goatfolk fur');
@@ -512,6 +590,62 @@ function goatfolkTraits(paint, direction, pose, colors) {
   else paint(11, 10 + bob, 2, 2, fur);
   paint(7, 20 + bob, 3, 2, horn);
   paint(14, 20 + bob, 3, 2, horn);
+}
+
+function goatfolkTraitsV2(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const fur = assertColor(colors[0], 'Repaired Goatfolk fur');
+  const horn = assertColor(colors[1], 'Repaired Goatfolk horn');
+  const accent = assertColor(colors[2], 'Repaired Goatfolk accent');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(10, 3 + bob, 2, 3, fur);
+    paint(11, 1 + bob, 1, 3, horn);
+    paint(12, 2 + bob, 2, 1, horn);
+    paint(14, 6 + bob, 3, 1, accent);
+    paint(13, 11 + bob, 4, 1, fur);
+    paint(16, 8 + bob, 1, 4, fur);
+  } else {
+    paint(8, 4 + bob, 2, 3, fur);
+    paint(14, 4 + bob, 2, 3, fur);
+    paint(6, 2 + bob, 2, 2, horn);
+    paint(7, 1 + bob, 2, 2, horn);
+    paint(16, 2 + bob, 2, 2, horn);
+    paint(15, 1 + bob, 2, 2, horn);
+    paint(7, 7 + bob, 2, 1, accent);
+    paint(15, 7 + bob, 2, 1, accent);
+    if (view === 'up') {
+      paint(11, 8 + bob, 2, 2, accent);
+      paint(7, 6 + bob, 1, 1, accent);
+      paint(7, 8 + bob, 1, 4, fur);
+      paint(7, 11 + bob, 4, 1, fur);
+    } else {
+      paint(11, 10 + bob, 2, 2, fur);
+      paint(16, 4 + bob, 1, 1, fur);
+      paint(16, 6 + bob, 1, 1, accent);
+      paint(16, 8 + bob, 1, 4, fur);
+      paint(13, 11 + bob, 4, 1, fur);
+    }
+  }
+  const contacts = walkingContacts(view, pose);
+  const width = view === 'right' ? 2 : 3;
+  for (const [x, y] of contacts) {
+    paint(x, y, width, 1, horn);
+    paint(x, y + 1, 1, 1, horn);
+    paint(x + width - 1, y + 1, 1, 1, horn);
+  }
+}
+
+function fallenKnightSeamsV2(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const plate = assertColor(colors[0], 'Fallen Knight seam plate');
+  const shade = assertColor(colors[1], 'Fallen Knight seam shade');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(13, 11 + bob, 4, 1, plate);
+    return;
+  }
+  if (view === 'down') paint(8, 11 + bob, 3, 1, shade);
 }
 
 function plagueSatchel(paint, direction, pose, colors) {
@@ -789,10 +923,14 @@ const IDENTITY_OVERLAYS = Object.freeze({
   'mutagen-harness': mutagenHarness,
   'plague-beak': plagueBeak,
   'desert-wrap': desertWrap,
+  'desert-wrap-v2': desertWrapV2,
   'monk-beads': monkBeads,
   'plain-quarterstaff': plainQuarterstaff,
   'catfolk-traits': catfolkTraits,
+  'catfolk-traits-v2': catfolkTraitsV2,
   'goatfolk-traits': goatfolkTraits,
+  'goatfolk-traits-v2': goatfolkTraitsV2,
+  'fallen-knight-seams-v2': fallenKnightSeamsV2,
   'plague-satchel': plagueSatchel,
   'plague-mantle': plagueMantle,
   'desert-quiver': desertQuiver,

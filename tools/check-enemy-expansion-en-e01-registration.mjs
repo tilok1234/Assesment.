@@ -4,6 +4,10 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import * as engine from '../sprite-engine.js';
 import {
+  ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE,
+  ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY,
+} from '../engine/enemy-expansion-repairs.js';
+import {
   EN_E01_APPROVED_FAMILIES,
   EN_E01_CANDIDATE_REGISTRY,
   EN_E01_COMPLETED_SLICE_GATE,
@@ -42,7 +46,9 @@ check(
   JSON.stringify(engine.ENEMY_EXPANSION_REGISTRY.families.filter((family) => family.sliceId === 'EN-E01').map((family) => family.id)) === JSON.stringify(expectedFamilies),
   'the cumulative stable registry must retain all five approved EN-E01 families',
 );
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the current authorized consumer boundary must expose the exact cumulative approved registry');
+check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'awaiting-designer-approval', 'the repair consumer boundary must remain explicitly pending visual approval');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the consumer boundary must expose the isolated repair candidate');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'the repair candidate must not overwrite the cumulative approved registry');
 check(EN_E01_APPROVED_FAMILIES.length === 5, 'public EN-E01 registration needs exactly five approved families');
 check(JSON.stringify(EN_E01_PUBLIC_REGISTRY.families.map((family) => family.id)) === JSON.stringify(expectedFamilies), 'public EN-E01 family order must be deterministic');
 check(EN_E01_PUBLIC_REGISTRY.families.every((family) => family.state === engine.ENEMY_EXPANSION_STATES.APPROVED), 'every registered EN-E01 family must be approved');
