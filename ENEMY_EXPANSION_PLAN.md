@@ -469,6 +469,8 @@ Initial variant briefs:
 
 Current common-only Idle evidence:
 
+- implementation checkpoint `50ad516bdf338842e47ae9c22cd7cd293adef498`
+  (`Create EN-E03 common Idle candidate`) freezes this bounded candidate;
 - three immutable contract cards define 24x24 scale, distinct large-bipedal /
   hybrid-quadrupedal / digitigrade locomotion, attack tells, variant briefs,
   and external effect/mechanic boundaries;

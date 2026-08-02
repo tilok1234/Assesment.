@@ -63,6 +63,9 @@ and unresolved Boss and publisher boundaries.
   `C:\tmp\8-bit-sprite-assembler-en-e03`
 - EN-E03 review branch: `codex/en-e03`, based exactly on approved repair
   documentation checkpoint `2a8a7a2`.
+- EN-E03 common-only Idle implementation checkpoint:
+  `50ad516bdf338842e47ae9c22cd7cd293adef498`
+  (`Create EN-E03 common Idle candidate`).
 - Verified synchronized base before EN-F00:
   `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`
   (`Document enemy expansion and refresh handoff`).
@@ -532,6 +535,9 @@ Recorded EN-F00, EN-E01, and current EN-E02 results:
   `c24f36eac5dedd10a1c931b7d59b52f379c3113e4c80fb8aa73bc71514e1e7c8`;
 - live browser smoke advances Walk frames 1-4 for all seven reported baseline
   variants at 20x with Complete B and Form active;
+- EN-E03 implementation checkpoint
+  `50ad516bdf338842e47ae9c22cd7cd293adef498` freezes the isolated common-only
+  Idle candidate before this documentation-only follow-up;
 - `check:enemy-expansion-en-e03` passes all 24 Giant/Centaur/Satyr common Idle
   frames, one connected silhouette per frame, binary alpha, one-cell margins,
   zero clipping, exact side mirroring, distinct direction/family silhouettes,
