@@ -503,6 +503,16 @@ export const EN_E02_COMPLETED_SLICE_GATE = deepFreeze({
   nextGate: 'Register only EN-E02 through the stable expansion registry; consumer integration remains separately gated.',
 });
 
+export const EN_E02_CONSUMER_INTEGRATION_GATE = deepFreeze({
+  status: 'authorized',
+  authorizedOn: '2026-08-02',
+  registrationCommit: '7b6e448fb1d44176bbf9ecee6798c52abb6e914e',
+  artifactGateCommit: 'be44af7b52d199befab3689450c44bc34665dd67',
+  scope: 'Five approved EN-E02 families and 15 variants through existing generic editor, randomizer, kit, pack, thumbnail, export, outline, and Form consumers.',
+  exclusions: ['separate effect assets', 'release', 'EN-E03', 'later slices'],
+  nextGate: 'Technical and live consumer validation before recording integration acceptance or advancing to EN-E03.',
+});
+
 function familyDefinition(card, variants, notes, state = ENEMY_EXPANSION_STATES.IMPLEMENTED) {
   return {
     id: card.id,

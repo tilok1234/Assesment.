@@ -23,8 +23,6 @@ export {
 };
 
 // The stable approved registry records every completed, registered slice.
-// Consumer integration remains an explicit later gate, so consumers retain a
-// separately frozen subset until that routing is authorized and validated.
 export const ENEMY_EXPANSION_REGISTRY = createEnemyExpansionRegistry({
   renderers: EN_E01_PUBLIC_REGISTRY.renderers,
   families: [
@@ -33,7 +31,10 @@ export const ENEMY_EXPANSION_REGISTRY = createEnemyExpansionRegistry({
   ],
 });
 
-export const ENEMY_EXPANSION_CONSUMER_REGISTRY = EN_E01_PUBLIC_REGISTRY;
+// Consumer integration is separately authorized per slice. EN-E01 and EN-E02
+// have now both crossed that gate, so the consumer view can reuse the exact
+// immutable approved registry without copying or rewriting family records.
+export const ENEMY_EXPANSION_CONSUMER_REGISTRY = ENEMY_EXPANSION_REGISTRY;
 
 // Approved expansion families join the public consumer catalog without
 // rewriting the locked legacy ENEMIES array or its historical fixtures.

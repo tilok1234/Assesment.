@@ -3,7 +3,6 @@ import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import * as engine from '../sprite-engine.js';
-import { EN_E01_PUBLIC_REGISTRY } from '../engine/enemy-expansion-en-e01.js';
 import {
   EN_E02_APPROVED_FAMILIES,
   EN_E02_CANDIDATE_REGISTRY,
@@ -117,12 +116,12 @@ check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 10, 'the stable 
 check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 1, 'the composed approved registry must deduplicate the shared renderer');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed approved registry must be immutable');
 
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === EN_E01_PUBLIC_REGISTRY, 'registration alone must retain EN-E01 as the exact consumer-integrated registry');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 5, 'consumer routing must remain limited to five EN-E01 families');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later authorized consumer gate must reuse the exact approved registry');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 10, 'consumer routing must contain the ten approved EN-E01/EN-E02 families');
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
-check(engine.PUBLIC_ENEMIES.length === 62 && publicVariants === 217, 'registration alone must preserve the 62-family / 217-variant consumer catalog');
-check(EN_E02_CONTRACT_CARDS.every((card) => !engine.PUBLIC_ENEMIES.some((family) => family.id === card.id)), 'EN-E02 must not enter selectors, randomization, packs, or exports through PUBLIC_ENEMIES');
-check(EN_E02_CONTRACT_CARDS.every((card) => !engine.isPublicEnemyExpansionSpec({ kind: 'enemy', family: card.id, variant: card.baseline.variantId })), 'EN-E02 must not route through the consumer renderer before its separate gate');
+check(engine.PUBLIC_ENEMIES.length === 67 && publicVariants === 232, 'the later consumer gate must expose the 67-family / 232-variant catalog');
+check(EN_E02_CONTRACT_CARDS.every((card) => engine.PUBLIC_ENEMIES.some((family) => family.id === card.id)), 'authorized EN-E02 families must enter generic consumers through PUBLIC_ENEMIES');
+check(EN_E02_CONTRACT_CARDS.every((card) => engine.isPublicEnemyExpansionSpec({ kind: 'enemy', family: card.id, variant: card.baseline.variantId })), 'authorized EN-E02 families must route through the public consumer renderer');
 check(engine.ENEMIES.length === 57, 'EN-E02 registration must not rewrite the 57-family legacy catalog');
 
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
@@ -219,7 +218,7 @@ console.log('EN-E02 registration validation passed.');
 console.log('- Approved registry: 10 families / 30 variants across EN-E01 and EN-E02');
 console.log('- Registered EN-E02 sheets: 15 (480x96)');
 console.log('- Candidate/registered parity frames: 1,200');
-console.log('- Consumer catalog held at 62 families / 217 variants (EN-E01 only)');
+console.log('- Consumer catalog: 67 families / 232 variants (EN-E01 + EN-E02)');
 console.log('- Ignored review artifact bytes: ' + (verifiedArtifacts === 3 ? '3 / 3 verified' : 'not present; immutable hash locks verified'));
 console.log('- Approved EN-E02 Idle digest: ' + registeredIdleDigest);
 console.log('- Approved EN-E02 full-candidate digest: ' + registeredFrameDigest);

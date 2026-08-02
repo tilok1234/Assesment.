@@ -104,6 +104,7 @@ checkSyntax('tools/check-enemy-expansion-en-e01-consumers.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02-full.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02-registration.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e02-consumers.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-full-review.mjs');
 checkSyntax('tools/enemy-expansion-en-e02-review.mjs');
@@ -167,12 +168,12 @@ check(
   `EN-E01 public registration gate failed\n${enemyExpansionEnE01RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE01RegistrationCheck.stderr.trim()}`,
 );
 
-const enemyExpansionEnE01ConsumerCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e01-consumers.mjs')], {
+const enemyExpansionConsumerCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e02-consumers.mjs')], {
   encoding: 'utf8',
 });
 check(
-  enemyExpansionEnE01ConsumerCheck.status === 0,
-  `EN-E01 consumer integration gate failed\n${enemyExpansionEnE01ConsumerCheck.stdout.trim()}\n${enemyExpansionEnE01ConsumerCheck.stderr.trim()}`,
+  enemyExpansionConsumerCheck.status === 0,
+  `EN-E01/EN-E02 consumer integration gate failed\n${enemyExpansionConsumerCheck.stdout.trim()}\n${enemyExpansionConsumerCheck.stderr.trim()}`,
 );
 
 const enemyExpansionEnE02Check = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e02.mjs')], {
@@ -960,12 +961,12 @@ check(
 );
 check(
   completeKitPlan.counts.componentPngs === 1912
-    && completeKitPlan.counts.enemyFamilies === 62
-    && completeKitPlan.counts.enemySheets === 217
+    && completeKitPlan.counts.enemyFamilies === 67
+    && completeKitPlan.counts.enemySheets === 232
     && completeKitPlan.counts.effectCategories === 4
     && completeKitPlan.counts.effectSheets === 24
-    && completeKitPlan.counts.totalPngs === 2154,
-  'complete character kits must contain 1912 content-unique components, 217 public enemies, 24 synchronized effects, and one reference preview',
+    && completeKitPlan.counts.totalPngs === 2169,
+  'complete character kits must contain 1912 content-unique components, 232 public enemies, 24 synchronized effects, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
@@ -1016,7 +1017,7 @@ check(
   'Tier 5 shield components must collapse the four artifact passes whose colors are fully overwritten',
 );
 const completeEnemyEntries = completeKitPlan.enemies.flatMap((family) => family.variants);
-check(completeKitPlan.enemies.length === 62 && completeEnemyEntries.length === 217, 'complete kits must plan every public enemy family and variation');
+check(completeKitPlan.enemies.length === 67 && completeEnemyEntries.length === 232, 'complete kits must plan every public enemy family and variation');
 check(
   completeKitPlan.enemies.every((family) => family.variants.every((entry) => (
     entry.file === `enemies/${family.family}/${entry.id}.png`
@@ -1055,7 +1056,7 @@ const completeKitPaths = [
   ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 2154, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 2169, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 const lanternKitPlan = characterKit.buildCompleteCharacterKitPlan([{
   id: 'lantern-bearer',

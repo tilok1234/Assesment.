@@ -6,6 +6,7 @@ import { buildCompleteCharacterKitPlan, completeCharacterKitCounts } from '../ch
 import { capturePixels } from '../engine/pixel-buffer.js';
 import { drawSprite as drawLegacySprite } from '../engine/renderer.js';
 import { buildShadeMaterialLookup, protectedShadeMask } from '../engine/shade-renderer.js';
+import { EN_E02_CONSUMER_INTEGRATION_GATE } from '../engine/enemy-expansion-en-e02.js';
 import { captureEnemyExpansionFrame } from './enemy-expansion-review-pixels.mjs';
 
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -132,25 +133,40 @@ class ValidationCanvasContext {
   }
 }
 
-const expectedExpansionFamilies = ['alchemist', 'fallen-knight', 'necromancer', 'pirate', 'witch'];
+const expectedExpansionFamilies = [
+  'alchemist',
+  'catfolk',
+  'desert-raider',
+  'fallen-knight',
+  'fanatic-monk',
+  'goatfolk',
+  'necromancer',
+  'pirate',
+  'plague-doctor',
+  'witch',
+];
 const legacyVariants = engine.ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 
+check(EN_E02_CONSUMER_INTEGRATION_GATE.status === 'authorized', 'EN-E02 consumer integration needs explicit authorization');
+check(EN_E02_CONSUMER_INTEGRATION_GATE.authorizedOn === '2026-08-02', 'EN-E02 consumer authorization must record its date');
+check(Object.isFrozen(EN_E02_CONSUMER_INTEGRATION_GATE) && Object.isFrozen(EN_E02_CONSUMER_INTEGRATION_GATE.exclusions), 'EN-E02 consumer authorization must be deeply immutable');
 check(engine.ENEMIES.length === 57 && legacyVariants === 202, 'consumer integration must not rewrite the 57-family / 202-variant legacy catalog');
-check(engine.PUBLIC_ENEMIES.length === 62 && publicVariants === 217, 'the public consumer catalog must expose 62 families / 217 variants');
+check(engine.PUBLIC_ENEMIES.length === 67 && publicVariants === 232, 'the public consumer catalog must expose 67 families / 232 variants');
 check(Object.isFrozen(engine.PUBLIC_ENEMIES), 'the public consumer catalog must be immutable');
 check(
   engine.PUBLIC_ENEMIES.slice(0, engine.ENEMIES.length).every((family, index) => family === engine.ENEMIES[index]),
   'the public consumer catalog must retain the legacy catalog unchanged and in order',
 );
 check(
-  JSON.stringify(engine.PUBLIC_ENEMIES.slice(-5).map((family) => family.id)) === JSON.stringify(expectedExpansionFamilies),
-  'the public consumer catalog must append exactly the five approved EN-E01 families',
+  JSON.stringify(engine.PUBLIC_ENEMIES.slice(-10).map((family) => family.id)) === JSON.stringify(expectedExpansionFamilies),
+  'the public consumer catalog must append exactly the ten approved EN-E01/EN-E02 families',
 );
 check(
-  engine.PUBLIC_ENEMIES.slice(-5).every((family, index) => family === engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies[index]),
+  engine.PUBLIC_ENEMIES.slice(-10).every((family, index) => family === engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies[index]),
   'the public consumer catalog must use the stable registry public-family view',
 );
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'authorized EN-E02 integration must expose the exact approved registry without a divergent copy');
 
 const appSource = await readFile(path.join(root, 'app.js'), 'utf8');
 check(!appSource.includes('E.ENEMIES'), 'editor enemy sanitization and selectors must not remain on the legacy-only catalog');
@@ -163,6 +179,11 @@ try {
     JSON.stringify(engine.randomEnemy()) === JSON.stringify({ family: 'witch', variant: 'cauldron-brewer' }),
     'the randomizer must be able to select the appended approved expansion catalog',
   );
+  Math.random = () => 58.1 / 67;
+  check(
+    JSON.stringify(engine.randomEnemy()) === JSON.stringify({ family: 'catfolk', variant: 'pride-champion' }),
+    'the randomizer must be able to select an approved EN-E02 family and variant',
+  );
 } finally {
   Math.random = originalRandom;
 }
@@ -170,30 +191,30 @@ try {
 const kitCounts = completeCharacterKitCounts();
 const kitPlan = buildCompleteCharacterKitPlan();
 check(
-  kitCounts.enemyFamilies === 62 && kitCounts.enemySheets === 217 && kitCounts.totalPngs === 2154,
-  'Complete Character Kit counts must include all 15 approved EN-E01 sheets',
+  kitCounts.enemyFamilies === 67 && kitCounts.enemySheets === 232 && kitCounts.totalPngs === 2169,
+  'Complete Character Kit counts must include all 30 approved EN-E01/EN-E02 sheets',
 );
 check(
-  kitPlan.enemies.length === 62
-    && kitPlan.enemies.flatMap((family) => family.variants).length === 217
+  kitPlan.enemies.length === 67
+    && kitPlan.enemies.flatMap((family) => family.variants).length === 232
     && expectedExpansionFamilies.every((familyId) => kitPlan.enemies.some((family) => family.family === familyId)),
-  'Complete Character Kit planning must include every approved EN-E01 family and variant',
+  'Complete Character Kit planning must include every approved EN-E01/EN-E02 family and variant',
 );
 
 const packManifest = engine.buildWildshotGamePackManifest({
   generated: '2026-08-02',
   toolCommit: 'b368f80',
   actors: [{
-    id: 'approved-witch',
+    id: 'approved-catfolk',
     category: 'enemy',
-    sheet: 'enemies/approved-witch.png',
-    spec: { kind: 'enemy', family: 'witch', variant: 'hexer' },
+    sheet: 'enemies/approved-catfolk.png',
+    spec: { kind: 'enemy', family: 'catfolk', variant: 'pride-champion' },
   }],
 });
-check(packManifest.actors[0]?.spec.family === 'witch', 'Wildshot pack validation must accept approved expansion enemy specs');
+check(packManifest.actors[0]?.spec.family === 'catfolk', 'Wildshot pack validation must accept approved EN-E02 enemy specs');
 check(
-  engine.defaultCombatLoadout({ kind: 'enemy', family: 'fallen-knight', variant: 'shieldbearer' }).trail === 'sword-slash',
-  'expansion combat defaults must resolve nested approved actor equipment metadata',
+  engine.defaultCombatLoadout({ kind: 'enemy', family: 'goatfolk', variant: 'ramguard-chieftain' }).trail === 'axe-cleave',
+  'expansion combat defaults must resolve nested approved EN-E02 actor equipment metadata',
 );
 
 const legacySpec = { kind: 'enemy', family: 'slime', variant: 'lime' };
@@ -396,7 +417,7 @@ try {
     }
   }
 
-  const representative = { kind: 'enemy', family: 'witch', variant: 'hexer' };
+  const representative = { kind: 'enemy', family: 'plague-doctor', variant: 'field-chirurgeon' };
   for (const direction of engine.DIRS) {
     const sheet = engine.buildDirectionSheet(representative, direction, 1, { shadow: false });
     check(sheet.width === 480 && sheet.height === 24, `approved expansion ${direction} export must be 480x24`);
@@ -414,29 +435,30 @@ try {
   else globalThis.document = originalDocument;
 }
 
-check(frameCount === 1200, 'consumer integration must verify all 1,200 approved EN-E01 frames');
-check(sheetCount === 15, 'consumer integration must verify all 15 approved EN-E01 full sheets');
-check(outlineModeCases === 3600, 'consumer integration must verify 3,600 EN-E01 None/B/C frame cases');
-check(completeOutlinePixels > selectiveOutlinePixels, 'Complete B must remain stronger than Selective C across EN-E01');
-check(shadeModeCases === 3600, 'consumer integration must verify Form with all 3 outline modes across 3,600 EN-E01 frame cases');
-check(shadeChangedPixels > 0, 'Form shading must change source-owned EN-E01 pixels');
-check(protectedShadePixels > 0, 'Form shading must exercise protected EN-E01 feature pixels');
-check(expansionPaletteColors >= 90, 'Form shading must resolve the published EN-E01 renderer palettes');
+check(frameCount === 2400, 'consumer integration must verify all 2,400 approved EN-E01/EN-E02 frames');
+check(sheetCount === 30, 'consumer integration must verify all 30 approved EN-E01/EN-E02 full sheets');
+check(outlineModeCases === 7200, 'consumer integration must verify 7,200 EN-E01/EN-E02 None/B/C frame cases');
+check(completeOutlinePixels === 207162, 'Complete B aggregate changed across the approved EN-E01/EN-E02 corpus');
+check(selectiveOutlinePixels === 164487, 'Selective C aggregate changed across the approved EN-E01/EN-E02 corpus');
+check(shadeModeCases === 7200, 'consumer integration must verify Form with all 3 outline modes across 7,200 frame cases');
+check(shadeChangedPixels === 174917, 'Form shading aggregate changed across the approved EN-E01/EN-E02 corpus');
+check(protectedShadePixels === 146687, 'Form protected-pixel coverage changed across the approved EN-E01/EN-E02 corpus');
+check(expansionPaletteColors === 180, 'Form shading must resolve all published EN-E01/EN-E02 renderer palette colors');
 
 if (errors.length) {
-  console.error('EN-E01 consumer integration validation failed:');
+  console.error('EN-E01/EN-E02 consumer integration validation failed:');
   for (const error of errors) console.error('- ' + error);
   process.exit(1);
 }
 
-console.log('EN-E01 consumer integration validation passed.');
+console.log('EN-E01/EN-E02 consumer integration validation passed.');
 console.log('- Legacy catalog: 57 families / 202 variants (unchanged)');
-console.log('- Public consumer catalog: 62 families / 217 variants');
-console.log('- Approved adapter parity: 1,200 / 1,200 frames');
-console.log('- Native expansion sheets: 15 / 15 at 480x96');
-console.log(`- EN-E01 None/B/C outline cases: ${outlineModeCases.toLocaleString('en-US')}`);
+console.log('- Public consumer catalog: 67 families / 232 variants');
+console.log('- Approved adapter parity: 2,400 / 2,400 frames');
+console.log('- Native expansion sheets: 30 / 30 at 480x96');
+console.log(`- EN-E01/EN-E02 None/B/C outline cases: ${outlineModeCases.toLocaleString('en-US')}`);
 console.log(`- Added outline pixels: ${completeOutlinePixels.toLocaleString('en-US')} Complete B / ${selectiveOutlinePixels.toLocaleString('en-US')} Selective C`);
-console.log(`- EN-E01 Form shade cases: ${shadeModeCases.toLocaleString('en-US')} across None/B/C outlines`);
+console.log(`- EN-E01/EN-E02 Form shade cases: ${shadeModeCases.toLocaleString('en-US')} across None/B/C outlines`);
 console.log(`- Form shade changes: ${shadeChangedPixels.toLocaleString('en-US')} source-owned pixels; ${protectedShadePixels.toLocaleString('en-US')} protected pixels preserved`);
 console.log(`- Expansion palette colors resolved: ${expansionPaletteColors.toLocaleString('en-US')}`);
 console.log('- Editor, randomizer, Complete Kit, Wildshot pack, thumbnails, and export scopes: enabled');

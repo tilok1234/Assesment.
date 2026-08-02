@@ -42,7 +42,7 @@ check(
   JSON.stringify(engine.ENEMY_EXPANSION_REGISTRY.families.filter((family) => family.sliceId === 'EN-E01').map((family) => family.id)) === JSON.stringify(expectedFamilies),
   'the cumulative stable registry must retain all five approved EN-E01 families',
 );
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === EN_E01_PUBLIC_REGISTRY, 'the authorized consumer boundary must retain the exact EN-E01 registry');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the current authorized consumer boundary must expose the exact cumulative approved registry');
 check(EN_E01_APPROVED_FAMILIES.length === 5, 'public EN-E01 registration needs exactly five approved families');
 check(JSON.stringify(EN_E01_PUBLIC_REGISTRY.families.map((family) => family.id)) === JSON.stringify(expectedFamilies), 'public EN-E01 family order must be deterministic');
 check(EN_E01_PUBLIC_REGISTRY.families.every((family) => family.state === engine.ENEMY_EXPANSION_STATES.APPROVED), 'every registered EN-E01 family must be approved');

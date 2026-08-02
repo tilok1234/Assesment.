@@ -78,9 +78,9 @@ check(EN_E02_IDLE_REGISTRY.publicFamilies.length === 0, 'EN-E02 Idle evidence mu
 check(EN_E02_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E02 Idle evidence must not claim family approval');
 check(Object.isFrozen(EN_E02_IDLE_REGISTRY), 'the EN-E02 Idle registry must be immutable');
 check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 10, 'the cumulative registry must contain approved EN-E01 and EN-E02');
-check(engine.PUBLIC_ENEMIES.length === 62, 'the consumer catalog must remain at 62 families before EN-E02 consumer integration');
+check(engine.PUBLIC_ENEMIES.length === 67, 'the consumer catalog must contain 67 families after authorized EN-E02 integration');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
-check(cardOrder.every((id) => !engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'EN-E02 candidates must not leak into public selectors or packs');
+check(cardOrder.every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'approved EN-E02 families must enter public consumers only after the separate integration gate');
 
 for (const family of EN_E02_IDLE_REGISTRY.families) {
   check(family.state === engine.ENEMY_EXPANSION_STATES.IMPLEMENTED, 'Candidate ' + family.id + ' must remain implemented, not approved');
@@ -189,5 +189,5 @@ console.log('- Contract cards: 5');
 console.log('- Internal baseline families: 5');
 console.log('- Implemented variants: 5 common / 0 specialist / 0 elite');
 console.log('- Reviewed frames: ' + frameRecords.length + ' (4 directions x 2 Idle frames x 5 families)');
-console.log('- Stable registry: 5 approved EN-E02 families; consumer catalog: 0 EN-E02');
+console.log('- Frozen Idle evidence view: 0 approved/public EN-E02 families');
 console.log('- Candidate frame digest: ' + candidateDigest);
