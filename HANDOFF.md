@@ -10,12 +10,13 @@ its explicitly authorized consumer integration is also complete. The current
 consumer branch additionally carries the authorized optional outline/Form
 presentation extension, with exhaustive technical validation and live visual
 approval complete on 2026-08-02. The separately authorized EN-E02 contract and
-common Idle gate is implemented and visually approved as of 2026-08-02. No later
-production lane starts implicitly. This handoff records the accepted EN-F00
-foundation, approved/public 15-variant EN-E01 slice, 62-family / 217-variant
-public consumer catalog, unchanged legacy Enemy corpus, internal EN-E02
-candidate, shipped NPC artifact, local Windows proof, and unresolved Boss and
-publisher boundaries.
+common Idle gate is visually approved. Full private EN-E02 production is now
+separately authorized, implemented, technically validated, and awaiting exact
+completed-slice visual review. No later production lane starts implicitly. This
+handoff records the accepted EN-F00 foundation, approved/public 15-variant EN-E01
+slice, 62-family / 217-variant public consumer catalog, unchanged legacy Enemy
+corpus, internal EN-E02 candidate, shipped NPC artifact, local Windows proof,
+and unresolved Boss and publisher boundaries.
 
 ## Canonical Workspace And Git State
 
@@ -72,7 +73,8 @@ git log -5 --oneline --decorate
 Expected state around this checkpoint: clean `codex/en-f00` at `73ad73a`;
 `codex/en-e01` containing the approved review and public-registration history;
 `codex/en-e01-consumers` containing approved presentation checkpoint `5196c0a`;
-`codex/en-e02` containing only the authorized internal common-Idle candidate;
+`codex/en-e02` containing the approved common-Idle evidence plus the authorized
+internal 15-variant full-production candidate;
 and `main` still equal to `origin/main` at
 verified base `f5476a2`. Do not modify, clean, reset, rebase, or repurpose the
 archived review checkout.
@@ -89,12 +91,11 @@ archived review checkout.
 - 75 new standard families, one Ghoul upgrade, one two-proposal Armor merge,
   and three Boss candidates.
 
-The current stop point is the separate EN-E02 full-production authorization
-gate. Five contract cards and five common Idle variants are implemented
-internally and their exact review artifact is visually approved; ten
-specialist/elite briefs, full motion, registration, consumer exposure, and
-effects remain unimplemented. Obtain explicit authorization before implementing
-anything beyond the approved Idle baseline.
+The current stop point is exact EN-E02 completed-slice visual review. Five
+contract cards, 15 common/specialist/elite variants, and all standard motion are
+implemented internally across 15 complete sheets / 1,200 frames. The approved
+common Idle pixels remain exact. Registration, consumer exposure, separate
+effects, release, and later slices remain unimplemented and unauthorized.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -194,10 +195,13 @@ runtime contract and must not be rewritten merely to match it.
   reviewed variants as pre-registration evidence.
 - The stable public expansion registry exposes exactly five approved EN-E01
   families / 15 variants; no later slice is registered.
-- The private EN-E02 registry contains five implemented common baselines / 40
-  Idle frames and zero approved or public EN-E02 families.
+- The frozen EN-E02 Idle registry retains five approved common baselines / 40
+  exact Idle frames; the separate private candidate registry contains five
+  implemented families / 15 variants / 1,200 frames and zero approved or public
+  EN-E02 families.
 - Current lifecycle ledger: two approved slices, one implemented slice with an
-  approved common Idle baseline, and nineteen planned slices.
+  approved common Idle baseline plus a full private candidate awaiting visual
+  approval, and nineteen planned slices.
 - The immutable `PUBLIC_ENEMIES` catalog appends those approved families to the
   unchanged legacy entries and is the source for editor selectors,
   randomization, kits, packs, thumbnails, and exports.
@@ -364,9 +368,11 @@ npm.cmd run check:enemy-expansion-en-e01-full
 npm.cmd run check:enemy-expansion-en-e01-registration
 npm.cmd run check:enemy-expansion-en-e01-consumers
 npm.cmd run check:enemy-expansion-en-e02
+npm.cmd run check:enemy-expansion-en-e02-full
 npm.cmd run review:enemy-expansion-en-e01
 npm.cmd run review:enemy-expansion-en-e01-full
 npm.cmd run review:enemy-expansion-en-e02
+npm.cmd run review:enemy-expansion-en-e02-full
 npm.cmd run check
 git diff --check
 ```
@@ -393,7 +399,33 @@ Recorded EN-F00, EN-E01, and current EN-E02 results:
   `00d71d7e8f1904c275bfe84ec6cec746fb314fab4d27ce182d72e286a846d02b`;
 - EN-E02 review PNG SHA-256:
   `c224258139c7c810c7a122ea9e95061f3dd1697864913765fe9d11e09f4eca50`;
-- the frozen pre-registration full gate passes five internal families / 15 variants, 15 complete
+- EN-E02's full private gate passes five implemented families / 15 variants, 15
+  complete `480x96` sheets, all 1,200 frames, deterministic full motion,
+  Cast-to-Attack and Death-to-Hurt aliases, hard alpha, strict margins,
+  within-family silhouette distinction, exact approved-Idle preservation, and
+  zero public families;
+- the private presentation proof passes 2,400 Complete B/Selective C outline
+  cases and 3,600 Form-with-None/B/C cases, adding 103,077 Complete B and 81,840
+  Selective C pixels while preserving 77,597 protected pixels;
+- EN-E02 full candidate frame digest:
+  `f4667a1ccefb3026c6df3604e114393fdaae619dab0c68bec969203986cb35bf`;
+- EN-E02 full overview PNG SHA-256:
+  `21f3175600377eaf75206f9fcb65856731da28eafb6715687821f782f41da6a8`;
+- EN-E02 Complete B/Form presentation PNG SHA-256:
+  `211e9ace3eb965f243724249c73927567568e2f22f181f5448ba398ddab4a094`;
+- EN-E02 motion-board SHA-256 values: Catfolk
+  `c73d0b7b2ffea9c8a5aa061460403b4cfa66099b3ed66baef950872bf4bd8c2c`,
+  Desert Raider
+  `a5102c40d41c9bd69aecc9940f5ac42e208fdfc9a215ea8998c73010ebe523e9`,
+  Fanatic Monk
+  `d248943af3fe590a396de3610891f494da2ee3ed79b1d29f48140595a0549441`,
+  Goatfolk
+  `ea3348595aa761695e2419b6656631e2f760c81948aa1c481f0999455e423e83`,
+  and Plague Doctor
+  `039efe503a31888ec23a0855838f6a46deb79ddc0676befaca4f2bbb6fac7c5b`;
+- EN-E02 review JSON SHA-256:
+  `0a135fbed3eeeaf69400a3700d113af67a0c2a75043f95ab2a392711cd6b0afa`;
+- the frozen EN-E01 pre-registration full gate passes five internal families / 15 variants, 15 complete
   `480x96` sheets, all 1,200 frames, deterministic direction and motion,
   Cast-to-Attack and Death-to-Hurt aliases, hard alpha, strict margins, and zero
   public families;
@@ -469,8 +501,8 @@ Unless the designer explicitly changes scope:
 - preserve the merged `PUBLIC_ENEMIES` consumer boundary without mutating the
   locked legacy `ENEMIES` array;
 - do not pre-register unfinished families, IDs, variants, selectors, or packs;
-- do not advance EN-E02 beyond its five approved common Idle baselines without
-  explicit full-production authorization;
+- do not approve, register, expose, or publish the EN-E02 full candidate without
+  exact completed-slice visual review and the corresponding explicit gate;
 - do not modify the archived `wip/19-boss-review` checkout;
 - do not accept the Rhino/Unicorn direction candidates or the three animation
   candidates without direct visual review;
@@ -490,12 +522,13 @@ The safest opening request for the next chat is:
 
 > EN-E01 is approved and publicly registered through the stable expansion API,
 > including its consumer outline/Form presentation. EN-E02 now has five
-> approved internal common-only Idle baselines on `codex/en-e02`. Verify their
-> frozen hashes and obtain explicit authorization before adding full motion or
-> specialist/elite variants.
+> approved common Idle baselines plus a technically validated private 15-variant
+> full-production candidate on `codex/en-e02`. Open the exact full overview and
+> family motion boards for completed-slice visual approval before registration.
 
 EN-F00 and EN-E01 are approved. EN-E01's stable public registry contains five
 families / 15 variants with exact reviewed pixels, and the public consumer
 catalog is 62 families / 217 variants. EN-E02's exact common Idle baseline is
-approved, but the slice remains internal, incomplete, and non-public. No later
-gate or slice is authorized implicitly.
+approved and its full private candidate is implemented, but the slice remains
+unapproved and non-public pending exact visual review. No later gate or slice is
+authorized implicitly.

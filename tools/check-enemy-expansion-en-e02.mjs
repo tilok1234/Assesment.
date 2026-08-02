@@ -166,7 +166,7 @@ rejects(
     { clearRect() {}, fillRect() {}, fillStyle: '#000000' },
   ),
   'is not implemented',
-  'pre-approval specialist rendering',
+  'Idle-snapshot specialist rendering',
 );
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E02_IDLE_REGISTRY);

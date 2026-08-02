@@ -443,11 +443,18 @@ function plainQuarterstaff(paint, direction, pose, colors) {
   const wood = assertColor(colors[0], 'Quarterstaff wood');
   const shade = assertColor(colors[1], 'Quarterstaff shade');
   const wrap = assertColor(colors[2], 'Quarterstaff grip wrap');
-  const x = view === 'up' ? 6 : view === 'right' ? 16 : 17;
-  const y = 8 + pose.bob;
+  let x = view === 'up' ? 6 : view === 'right' ? 16 : 17;
+  let y = 8 + pose.bob;
+  if (pose.attackPhase === 'wind') {
+    x = view === 'up' ? 8 : 14;
+    y = 6 + pose.bob;
+  } else if (pose.attackPhase === 'strike') {
+    x = view === 'up' ? 3 : view === 'right' ? 18 : 19;
+    y = 9 + pose.bob;
+  }
   paint(x, y, 1, 13, shade);
   paint(x + 1, y, 1, 12, wood);
-  paint(x, 13 + pose.bob, 2, 2, wrap);
+  paint(x, y + 5, 2, 2, wrap);
 }
 
 function catfolkTraits(paint, direction, pose, colors) {
@@ -507,6 +514,265 @@ function goatfolkTraits(paint, direction, pose, colors) {
   paint(14, 20 + bob, 3, 2, horn);
 }
 
+function plagueSatchel(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const leather = assertColor(colors[0], 'Plague satchel leather');
+  const shade = assertColor(colors[1], 'Plague satchel shade');
+  const clasp = assertColor(colors[2], 'Plague satchel clasp');
+  const bob = pose.bob;
+  const sway = pose.animation === 'walk' ? pose.arm : pose.attackPhase === 'strike' ? 1 : 0;
+  if (view === 'right') {
+    paint(9, 11 + bob, 1, 6, shade);
+    paint(7, 15 + bob + sway, 4, 4, leather);
+    paint(8, 16 + bob + sway, 3, 1, clasp);
+    return;
+  }
+  if (view === 'up') {
+    paint(9, 11 + bob, 6, 1, shade);
+    paint(14, 14 + bob + sway, 4, 4, leather);
+    paint(15, 15 + bob + sway, 2, 1, clasp);
+    return;
+  }
+  paint(9, 11 + bob, 1, 1, shade);
+  paint(10, 12 + bob, 1, 1, shade);
+  paint(11, 13 + bob, 1, 1, shade);
+  paint(6, 15 + bob + sway, 4, 4, leather);
+  paint(7, 16 + bob + sway, 2, 1, clasp);
+}
+
+function plagueMantle(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const cloth = assertColor(colors[0], 'Plague mantle cloth');
+  const shade = assertColor(colors[1], 'Plague mantle shade');
+  const trim = assertColor(colors[2], 'Plague mantle trim');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(7, 10 + bob, 9, 3, shade);
+    paint(8, 9 + bob, 6, 2, cloth);
+    paint(8, 12 + bob, 8, 1, trim);
+    paint(7, 13 + bob, 2, 3, cloth);
+    return;
+  }
+  paint(6, 10 + bob, 5, 3, shade);
+  paint(13, 10 + bob, 5, 3, shade);
+  paint(8, 9 + bob, 8, 2, cloth);
+  paint(7, 12 + bob, 10, 1, trim);
+  if (view === 'up') paint(10, 13 + bob, 4, 2, shade);
+  else paint(11, 11 + bob, 2, 3, trim);
+}
+
+function desertQuiver(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const leather = assertColor(colors[0], 'Desert quiver leather');
+  const shade = assertColor(colors[1], 'Desert quiver shade');
+  const fletching = assertColor(colors[2], 'Desert quiver fletching');
+  const bob = pose.bob;
+  const sway = pose.animation === 'walk' ? pose.arm : 0;
+  if (view === 'right') {
+    paint(7, 9 + bob + sway, 3, 8, leather);
+    paint(8, 7 + bob + sway, 1, 3, shade);
+    paint(6, 6 + bob + sway, 1, 3, fletching);
+    paint(8, 5 + bob + sway, 1, 2, fletching);
+    return;
+  }
+  const x = view === 'up' ? 15 : 6;
+  paint(x, 10 + bob + sway, 3, 7, leather);
+  paint(x + 1, 7 + bob + sway, 1, 4, shade);
+  paint(x, 6 + bob + sway, 1, 2, fletching);
+  paint(x + 2, 7 + bob + sway, 1, 2, fletching);
+}
+
+function sandbow(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const wood = assertColor(colors[0], 'Sandbow wood');
+  const shade = assertColor(colors[1], 'Sandbow shade');
+  const string = assertColor(colors[2], 'Sandbow string');
+  const bob = pose.bob;
+  let x = view === 'up' ? 5 : 16;
+  let y = 8 + bob;
+  let pull = 1;
+  if (pose.attackPhase === 'wind') {
+    x = view === 'up' ? 7 : 14;
+    y = 7 + bob;
+    pull = 3;
+  } else if (pose.attackPhase === 'strike') {
+    x = view === 'up' ? 3 : 18;
+    y = 9 + bob;
+    pull = 1;
+  }
+  paint(x + 1, y, 1, 2, wood);
+  paint(x, y + 2, 1, 6, wood);
+  paint(x + 1, y + 8, 1, 2, wood);
+  paint(x + 2, y + 1, 1, 1, shade);
+  paint(x + 2, y + 8, 1, 1, shade);
+  paint(x + 2, y + 2, 1, 6, string);
+  if (pull > 1) {
+    paint(x + 3, y + 3, 1, 1, string);
+    paint(x + 4, y + 4, 1, 2, string);
+    paint(x + 3, y + 6, 1, 1, string);
+  }
+}
+
+function sunscarCommand(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const cloth = assertColor(colors[0], 'Sunscar command cloth');
+  const shade = assertColor(colors[1], 'Sunscar command shade');
+  const gold = assertColor(colors[2], 'Sunscar command trim');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(8, 10 + bob, 8, 2, shade);
+    paint(8, 11 + bob, 2, 4, cloth);
+    paint(10, 13 + bob, 6, 1, gold);
+    paint(14, 14 + bob, 2, 4, cloth);
+    return;
+  }
+  paint(5, 11 + bob, 5, 2, shade);
+  paint(14, 11 + bob, 5, 2, shade);
+  paint(7, 12 + bob, 10, 1, gold);
+  paint(8, 13 + bob, 2, 5, cloth);
+  paint(14, 13 + bob, 2, 5, cloth);
+  if (view !== 'up') paint(10, 14 + bob, 4, 1, gold);
+}
+
+function penitentBindings(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const iron = assertColor(colors[0], 'Penitent binding iron');
+  const shade = assertColor(colors[1], 'Penitent binding shade');
+  const wrap = assertColor(colors[2], 'Penitent binding wrap');
+  const bob = pose.bob;
+  const arm = pose.animation === 'walk' ? pose.arm : pose.attackPhase === 'wind' ? -1 : pose.attackPhase === 'strike' ? 1 : 0;
+  if (view === 'right') {
+    paint(9, 12 + bob, 7, 1, shade);
+    paint(10, 13 + bob, 1, 1, iron);
+    paint(12, 14 + bob, 1, 1, iron);
+    paint(14, 15 + bob, 1, 1, iron);
+    paint(15, 14 + bob + arm, 3, 2, wrap);
+    return;
+  }
+  paint(8, 12 + bob, 8, 1, shade);
+  paint(9, 13 + bob, 1, 1, iron);
+  paint(11, 14 + bob, 1, 1, iron);
+  paint(13, 15 + bob, 1, 1, iron);
+  paint(15, 16 + bob, 1, 1, iron);
+  paint(5, 14 + bob - arm, 3, 2, wrap);
+  paint(16, 14 + bob + arm, 3, 2, wrap);
+  if (view === 'up') paint(10, 16 + bob, 4, 1, shade);
+}
+
+function bellAbbotRegalia(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const cloth = assertColor(colors[0], 'Bell Abbot mantle cloth');
+  const shade = assertColor(colors[1], 'Bell Abbot mantle shade');
+  const bell = assertColor(colors[2], 'Bell Abbot bell');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(7, 10 + bob, 9, 3, shade);
+    paint(8, 9 + bob, 7, 2, cloth);
+  } else {
+    paint(6, 10 + bob, 5, 3, shade);
+    paint(13, 10 + bob, 5, 3, shade);
+    paint(8, 9 + bob, 8, 2, cloth);
+  }
+  let x = view === 'up' ? 6 : 16;
+  let y = 14 + bob;
+  if (pose.attackPhase === 'wind') {
+    x = view === 'up' ? 8 : 14;
+    y = 10 + bob;
+  } else if (pose.attackPhase === 'strike') {
+    x = view === 'up' ? 4 : 18;
+    y = 12 + bob;
+  }
+  paint(x + 1, y, 1, 3, shade);
+  paint(x, y + 2, 3, 3, bell);
+  paint(x + 1, y + 5, 1, 1, shade);
+}
+
+function moonclawTail(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const fur = assertColor(colors[0], 'Moonclaw tail fur');
+  const shade = assertColor(colors[1], 'Moonclaw tail shade');
+  const accent = assertColor(colors[2], 'Moonclaw sash accent');
+  const bob = pose.bob;
+  const lift = pose.animation === 'walk' ? -Math.abs(pose.leg) : pose.attackPhase === 'wind' ? -1 : 0;
+  if (view === 'right') {
+    paint(17, 15 + bob, 3, 2, fur);
+    paint(19, 13 + bob + lift, 2, 3, fur);
+    paint(20, 11 + bob + lift, 2, 3, shade);
+    paint(9, 13 + bob, 7, 1, accent);
+    return;
+  }
+  const tailX = view === 'up' ? 4 : 17;
+  paint(tailX, 15 + bob, 3, 2, fur);
+  paint(tailX + (view === 'up' ? -1 : 2), 13 + bob + lift, 2, 3, shade);
+  paint(8, 13 + bob, 8, 1, accent);
+  paint(view === 'up' ? 8 : 14, 14 + bob, 2, 3, accent);
+}
+
+function prideMane(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const mane = assertColor(colors[0], 'Pride mane');
+  const shade = assertColor(colors[1], 'Pride mane shade');
+  const clasp = assertColor(colors[2], 'Pride mane clasp');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(8, 5 + bob, 7, 2, shade);
+    paint(7, 7 + bob, 9, 4, mane);
+    paint(8, 10 + bob, 8, 3, shade);
+    paint(14, 11 + bob, 2, 1, clasp);
+    return;
+  }
+  paint(7, 5 + bob, 10, 2, shade);
+  paint(6, 7 + bob, 4, 5, mane);
+  paint(14, 7 + bob, 4, 5, mane);
+  paint(8, 10 + bob, 8, 3, shade);
+  paint(11, 11 + bob, 2, 1, clasp);
+  if (view === 'up') paint(9, 6 + bob, 6, 4, mane);
+}
+
+function hornSeerRegalia(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const gold = assertColor(colors[0], 'Horn-Seer gold');
+  const cloth = assertColor(colors[1], 'Horn-Seer cloth');
+  const inset = assertColor(colors[2], 'Horn-Seer inset');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(11, 2 + bob, 2, 1, gold);
+    paint(13, 3 + bob, 2, 1, inset);
+    paint(9, 12 + bob, 7, 1, gold);
+    paint(10, 13 + bob, 2, 5, cloth);
+    paint(14, 14 + bob, 1, 3, inset);
+    return;
+  }
+  paint(7, 2 + bob, 2, 1, gold);
+  paint(15, 2 + bob, 2, 1, gold);
+  paint(6, 3 + bob, 2, 1, inset);
+  paint(16, 3 + bob, 2, 1, inset);
+  paint(8, 12 + bob, 8, 1, gold);
+  paint(10, 13 + bob, 4, 5, cloth);
+  paint(11, 14 + bob, 2, 3, inset);
+}
+
+function ramguardMantle(paint, direction, pose, colors) {
+  const view = direction === 'left' ? 'right' : direction;
+  const armor = assertColor(colors[0], 'Ramguard mantle armor');
+  const shade = assertColor(colors[1], 'Ramguard mantle shade');
+  const bronze = assertColor(colors[2], 'Ramguard mantle bronze');
+  const bob = pose.bob;
+  if (view === 'right') {
+    paint(6, 10 + bob, 11, 3, shade);
+    paint(7, 9 + bob, 4, 3, armor);
+    paint(13, 9 + bob, 4, 3, armor);
+    paint(8, 12 + bob, 8, 1, bronze);
+    return;
+  }
+  paint(5, 10 + bob, 6, 3, shade);
+  paint(13, 10 + bob, 6, 3, shade);
+  paint(6, 9 + bob, 4, 3, armor);
+  paint(14, 9 + bob, 4, 3, armor);
+  paint(7, 12 + bob, 10, 1, bronze);
+  paint(10, 13 + bob, 4, 2, shade);
+}
+
 const IDENTITY_OVERLAYS = Object.freeze({
   'crooked-hat': crookedHat,
   'ragged-tabard': raggedTabard,
@@ -527,6 +793,17 @@ const IDENTITY_OVERLAYS = Object.freeze({
   'plain-quarterstaff': plainQuarterstaff,
   'catfolk-traits': catfolkTraits,
   'goatfolk-traits': goatfolkTraits,
+  'plague-satchel': plagueSatchel,
+  'plague-mantle': plagueMantle,
+  'desert-quiver': desertQuiver,
+  sandbow,
+  'sunscar-command': sunscarCommand,
+  'penitent-bindings': penitentBindings,
+  'bell-abbot-regalia': bellAbbotRegalia,
+  'moonclaw-tail': moonclawTail,
+  'pride-mane': prideMane,
+  'horn-seer-regalia': hornSeerRegalia,
+  'ramguard-mantle': ramguardMantle,
 });
 
 function playerSpec(rendererData) {

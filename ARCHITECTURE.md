@@ -140,15 +140,21 @@ live combined treatment on 2026-08-02; registry approval and raw-pixel identity
 remain separate contracts.
 
 `engine/enemy-expansion-en-e02.js` is the next isolated private boundary. It
-contains five immutable contract cards and only one common Idle baseline per
-family. Its registry reuses the existing `humanoid-threat-v1` handler while new
-mask, wrap, bead/staff, feline, and caprine identity treatments remain selected
-by renderer data. EN-E02 is not imported by `sprite-engine.js` or
-`engine/enemy-expansion-public.js`; therefore the public registry remains the
-five approved EN-E01 families and `PUBLIC_ENEMIES` remains 62/217 while the
-exact EN-E02 common Idle gate is visually approved. Its five family records
-remain private and `implemented`, so Idle approval does not imply completed-slice
-approval, public registration, full motion, or specialist/elite production.
+contains five immutable contract cards, a frozen common-only registry for the
+exact approved Idle evidence, and a separate full candidate registry containing
+15 common/specialist/elite variants. Both registries reuse the existing
+`humanoid-threat-v1` handler while masks, satchels, wraps, bows, bindings, bell
+regalia, feline tails/manes, and caprine regalia remain selected by renderer
+data. Walk/Attack/Hurt use the shared humanoid motion contract; Cast aliases
+Attack and Death aliases Hurt 1, 2, 2, 2. A private pixel-level compatibility
+proof applies the shared Complete B, Selective C, and Form algorithms without
+adding EN-E02 to the public dispatcher. EN-E02 is not imported by
+`sprite-engine.js` or `engine/enemy-expansion-public.js`; therefore the public
+registry remains the five approved EN-E01 families and `PUBLIC_ENEMIES` remains
+62/217 while the exact EN-E02 common Idle gate stays visually approved. Its five
+full-candidate family records remain private and `implemented`, so production
+completion does not imply completed-slice approval, public registration,
+consumer exposure, or effect ownership.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the

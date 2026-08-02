@@ -3,8 +3,9 @@
 - Status: approved plan; EN-F00 checkpoint `73ad73a` is accepted, EN-E01's
   exact Idle and completed-slice reviews are visually approved, and registration
   checkpoint `b43ed6a` exposes exactly five EN-E01 families / 15 variants through
-  the stable public expansion registry; the authorized EN-E02 common-baseline
-  Idle artifact is implemented and visually approved
+  the stable public expansion registry; EN-E02's common Idle artifact is visually
+  approved and its separately authorized 15-variant full private candidate is
+  implemented and awaiting exact visual approval
 - Recorded: 2026-08-02
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -22,15 +23,17 @@ artifact, the designer separately authorized full three-variant animation
 production plus normal commit/push handling. The designer then accepted the
 completed-slice review, public registration, consumer integration, and the live
 outline/Form presentation. The designer next authorized the EN-E02 contract
-cards and common-only Idle gate. That latest authorization does **not** include
+cards and common-only Idle gate. That Idle authorization did **not** include
 specialist/elite renderer data, Walk/Attack/Hurt production, public
 registration, consumer exposure, separate effect assets, a release, or any
 later slice.
 
-The designer approved the exact EN-E02 common-only Idle artifact on 2026-08-02.
-That approval freezes only the five common baselines; it does not authorize full
-motion, the ten specialist/elite variants, registration, consumer exposure,
-effects, a release, or any later slice.
+The designer approved the exact EN-E02 common-only Idle artifact on 2026-08-02,
+then separately authorized full three-variant standard-animation production.
+That latest authorization includes the ten specialist/elite renderer payloads,
+Walk/Attack/Hurt, and standard Enemy Cast/Death aliases. It does **not** include
+public registration, consumer exposure, separate effect assets, a release, or
+any later slice.
 
 ## Intake Assessment
 
@@ -260,9 +263,10 @@ Approved implementation and registration evidence:
 
 ### EN-E02 - Humanoid culture variants
 
-- Status: `idle-baseline-approved`; contract cards and common-only Idle baseline
-  authorized, implemented on `codex/en-e02`, and visually approved on 2026-08-02;
-  the slice remains private and `implemented`, not completed or public
+- Status: `full-production-candidate`; common-only Idle baseline visually
+  approved, full private production separately authorized and implemented on
+  `codex/en-e02`, awaiting exact completed-slice visual approval; the slice
+  remains private and `implemented`, not approved or public
 - Families: Plague Doctor, Desert Raider, Fanatic Monk, Catfolk, Goatfolk
 
 Shared leverage: EN-E01 humanoid poses plus masks, wrapped cloth, martial robes,
@@ -305,9 +309,35 @@ Approved Idle evidence:
 - internal visual inspection replaced the Ash Disciple's inherited crystal
   focus with a plain wooden quarterstaff before presenting the candidate.
 
-The exact common-only Idle artifact is approved. Stop here for separate full-
-production authorization; do not implement the ten specialist/elite variants,
-full motion, registration, selectors, packs, or effects from Idle approval alone.
+Full private candidate evidence:
+
+- all ten specialist/elite renderer payloads are implemented alongside the five
+  exact approved common baselines in a separate immutable candidate registry;
+- all 15 variants supply Idle x2, Walk x4, Attack x4, Hurt x2, pixel-identical
+  Cast-to-Attack aliases, and Death-to-Hurt 1, 2, 2, 2 aliases;
+- `npm.cmd run check:enemy-expansion-en-e02-full` validates 15 complete
+  `480x96` sheets / 1,200 deterministic frames, hard alpha, one-cell margins,
+  three-direction readability, within-family common/specialist/elite silhouette
+  distinction, zero public exposure, the unchanged approved Idle digest, 2,400
+  private Complete B/Selective C cases, and 3,600 private Form-with-outline cases;
+- full candidate frame digest:
+  `f4667a1ccefb3026c6df3604e114393fdaae619dab0c68bec969203986cb35bf`;
+- `npm.cmd run review:enemy-expansion-en-e02-full` generates the ignored exact
+  `1148x1984` overview, `1124x1992` Complete B/Form presentation board, five
+  family motion boards, 15 native sheets, and review manifest under
+  `enemy-expansion-review/en-e02-full/`; overview PNG SHA-256:
+  `21f3175600377eaf75206f9fcb65856731da28eafb6715687821f782f41da6a8`,
+  `1124x1992` Complete B/Form presentation PNG SHA-256:
+  `211e9ace3eb965f243724249c73927567568e2f22f181f5448ba398ddab4a094`,
+  review JSON SHA-256:
+  `0a135fbed3eeeaf69400a3700d113af67a0c2a75043f95ab2a392711cd6b0afa`;
+- internal visual inspection added Attack-only staff motion without changing the
+  approved Ash Disciple Idle pixels and replaced Sandbow Stalker's stock released
+  arrow with an actor-owned bow/string treatment so projectiles remain external.
+
+Stop here for exact completed-slice visual approval. Do not register EN-E02,
+expose it to consumers, add separate effects, release it, or start another slice
+from technical validation alone.
 
 ### EN-E03 - Large and hybrid walkers
 
@@ -620,9 +650,10 @@ The EN-E01 authorized production sequence is complete:
 
 Completed-slice approval, bounded public registration, and the separately
 authorized consumer integration are now recorded. EN-E02 contract planning and
-its common Idle artifact are separately authorized, implemented, and visually
-approved; do not advance to full motion, additional variants, registration, or
-separate effect assets without the next explicit approval.
+its common Idle artifact are approved. Its separately authorized full private
+production candidate is implemented and technically validated; do not advance
+to completed-slice approval, registration, consumer integration, or separate
+effect assets without exact visual approval and the next explicit gate.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -630,5 +661,5 @@ and non-baked attack tells. The largest unresolved risks are multi-form assets,
 stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
-Again, this recommendation does not authorize implementation beyond the approved
-EN-E02 common-only Idle baseline.
+Again, this recommendation does not authorize implementation beyond the current
+private EN-E02 full-production candidate.
