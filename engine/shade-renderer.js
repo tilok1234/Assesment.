@@ -2,7 +2,6 @@ import {
   BONE,
   BOOTS,
   CREAM,
-  ENEMIES,
   GOLD,
   HAIR_COLORS,
   INK,
@@ -14,6 +13,7 @@ import {
   SKINS,
   WOOD,
 } from './catalogs.js';
+import { PUBLIC_ENEMIES } from './enemy-expansion-public.js';
 import {
   drawOutlinedSprite,
   enemySupportsOutline,
@@ -198,7 +198,7 @@ export function buildShadeMaterialLookup(spec) {
         : catalogPair(OUTFIT_COLORS, spec.outfitColor),
     );
   } else if (spec?.kind === 'enemy') {
-    const family = ENEMIES.find((entry) => entry.id === spec.family) || ENEMIES[0];
+    const family = PUBLIC_ENEMIES.find((entry) => entry.id === spec.family);
     const variant = family?.variants.find((entry) => entry.id === spec.variant)
       || family?.variants[0];
     addNestedVariantRamps(lookup, variant, `${family?.id || 'enemy'}.${variant?.id || 'variant'}`);

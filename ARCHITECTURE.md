@@ -103,6 +103,17 @@ around the reviewed renderer. `engine/public-game-pack.js` similarly injects
 `PUBLIC_ENEMIES` into the catalog-parameterized manifest builder, leaving the
 core game-pack policy renderer-free and dependent only on `catalogs.js`.
 
+The assembled presentation boundary also consumes the public registry.
+`engine/outline-renderer.js` recognizes approved expansion specifications via
+the stable public dispatcher and applies the source-preserving exterior contour
+path for Complete B or Selective C. `engine/shade-renderer.js` resolves enemy
+materials from `PUBLIC_ENEMIES`, so EN-E01 uses the nested skin, hair, outfit,
+and identity palette ramps published by its renderer data instead of falling
+back to an unrelated legacy family. None/None still delegates directly to the
+raw dispatcher; Form and outlines alter only complete assembled output, preserve
+protected features and outline geometry, and do not mutate registry pixels or
+atomic component sheets.
+
 The approved EN-E01 implementation lives behind that boundary.
 `engine/enemy-expansion-en-e01.js` owns five immutable contract cards, a frozen
 common-only registry for the exact approved Idle evidence, and a separate full
@@ -122,7 +133,10 @@ module. The ignored baseline and
 full-slice review generators continue to capture their frozen evidence
 registries directly. Registration checkpoint `b43ed6a` proves all 1,200 public
 frames are pixel-identical to the reviewed candidate; consumer checkpoint
-`e0be273` proves the editor/export adapter retains that parity.
+`e0be273` proves the editor/export adapter retains that parity. The later
+presentation integration exhaustively verifies the same 1,200 raw frames plus
+3,600 outline and 3,600 Form/outline assembled cases; exact visual acceptance
+of those optional treatments remains separate from registry approval.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the

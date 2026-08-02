@@ -5,6 +5,7 @@ import * as engine from '../sprite-engine.js';
 import { buildCompleteCharacterKitPlan, completeCharacterKitCounts } from '../character-kit.js';
 import { capturePixels } from '../engine/pixel-buffer.js';
 import { drawSprite as drawLegacySprite } from '../engine/renderer.js';
+import { buildShadeMaterialLookup, protectedShadeMask } from '../engine/shade-renderer.js';
 import { captureEnemyExpansionFrame } from './enemy-expansion-review-pixels.mjs';
 
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -16,6 +17,52 @@ function check(condition, message) {
 
 function samePixels(left, right) {
   return JSON.stringify(left) === JSON.stringify(right);
+}
+
+function outlineReport(source, outlined) {
+  let addedPixels = 0;
+  let sourcePreserved = true;
+  let outlineColorOnly = true;
+  for (let index = 0; index < source.length; index++) {
+    if (source[index] !== null) {
+      if (outlined[index] !== source[index]) sourcePreserved = false;
+    } else if (outlined[index] !== null) {
+      addedPixels++;
+      if (outlined[index] !== engine.OUTLINE_COLOR) outlineColorOnly = false;
+    }
+  }
+  return { addedPixels, sourcePreserved, outlineColorOnly };
+}
+
+const HEX_COLOR_PATTERN = /^#[0-9a-f]{6}$/;
+
+function shadeReport(source, before, shaded, protectedMask) {
+  let changedPixels = 0;
+  let validColors = true;
+  let sourceOwnedChanges = true;
+  let protectedPixelsPreserved = true;
+  let outlinePixelsPreserved = true;
+  let inkSafe = true;
+  for (let index = 0; index < source.length; index++) {
+    const sourceColor = source[index];
+    const beforeColor = before[index];
+    const shadedColor = shaded[index];
+    if (shadedColor !== null && !HEX_COLOR_PATTERN.test(shadedColor)) validColors = false;
+    if (beforeColor !== sourceColor && shadedColor !== beforeColor) outlinePixelsPreserved = false;
+    if (shadedColor === beforeColor) continue;
+    changedPixels++;
+    if (sourceColor === null) sourceOwnedChanges = false;
+    if (protectedMask[index]) protectedPixelsPreserved = false;
+    if (sourceColor !== engine.OUTLINE_COLOR && shadedColor === engine.OUTLINE_COLOR) inkSafe = false;
+  }
+  return {
+    changedPixels,
+    validColors,
+    sourceOwnedChanges,
+    protectedPixelsPreserved,
+    outlinePixelsPreserved,
+    inkSafe,
+  };
 }
 
 function canvasFrame(canvas, column, row) {
@@ -156,6 +203,13 @@ check(samePixels(legacyPublicPixels, legacyDirectPixels), 'the public dispatcher
 
 let frameCount = 0;
 let sheetCount = 0;
+let outlineModeCases = 0;
+let completeOutlinePixels = 0;
+let selectiveOutlinePixels = 0;
+let shadeModeCases = 0;
+let shadeChangedPixels = 0;
+let protectedShadePixels = 0;
+let expansionPaletteColors = 0;
 const originalDocument = globalThis.document;
 try {
   globalThis.document = { createElement: (tag) => tag === 'canvas' ? new ValidationCanvas() : null };
@@ -163,6 +217,19 @@ try {
     for (const variant of family.variants) {
       const spec = { kind: 'enemy', family: family.id, variant: variant.id };
       check(engine.isPublicEnemyExpansionSpec(spec), `${family.id}/${variant.id} must route through the public expansion dispatcher`);
+      check(engine.enemySupportsOutline(spec), `${family.id}/${variant.id} must expose the approved enemy outline modes`);
+      const materialLookup = buildShadeMaterialLookup(spec);
+      const rendererRamps = Object.entries(variant.actor?.palette || {})
+        .filter(([, colors]) => Array.isArray(colors) && colors.length >= 2);
+      check(rendererRamps.length > 0, `${family.id}/${variant.id} must publish renderer palette ramps for Form shading`);
+      for (const [rampName, colors] of rendererRamps) for (const color of colors) {
+        check(
+          materialLookup.has(color.toLowerCase()),
+          `${family.id}/${variant.id} Form material lookup is missing ${rampName} color ${color}`,
+        );
+        expansionPaletteColors++;
+      }
+      let variantShadeChangedPixels = 0;
       const fullSheet = engine.buildSheet(spec, 1, {
         shadow: false,
         shadeMode: engine.SHADE_MODE_FORM,
@@ -189,7 +256,91 @@ try {
             frame,
             { shadow: false, onOutOfBounds: (write) => outOfBoundsWrites.push(write) },
           ));
-          const assembled = capturePixels((context) => engine.drawAssembledSprite(
+          const assembledNone = capturePixels((context) => engine.drawAssembledSprite(
+            context,
+            spec,
+            direction,
+            animation.id,
+            frame,
+            {
+              shadow: false,
+              shadeMode: engine.SHADE_MODE_NONE,
+              outlineMode: engine.OUTLINE_MODE_NONE,
+            },
+          ));
+          const outlinedComplete = capturePixels((context) => engine.drawAssembledSprite(
+            context,
+            spec,
+            direction,
+            animation.id,
+            frame,
+            {
+              shadow: false,
+              shadeMode: engine.SHADE_MODE_NONE,
+              outlineMode: engine.OUTLINE_MODE_COMPLETE_B,
+            },
+          ));
+          const outlinedSelective = capturePixels((context) => engine.drawAssembledSprite(
+            context,
+            spec,
+            direction,
+            animation.id,
+            frame,
+            {
+              shadow: false,
+              shadeMode: engine.SHADE_MODE_NONE,
+              outlineMode: engine.OUTLINE_MODE_SELECTIVE_C,
+            },
+          ));
+          const formNone = capturePixels((context) => engine.drawAssembledSprite(
+            context,
+            spec,
+            direction,
+            animation.id,
+            frame,
+            {
+              shadow: false,
+              shadeMode: engine.SHADE_MODE_FORM,
+              outlineMode: engine.OUTLINE_MODE_NONE,
+            },
+          ));
+          const formComplete = capturePixels((context) => engine.drawAssembledSprite(
+            context,
+            spec,
+            direction,
+            animation.id,
+            frame,
+            {
+              shadow: false,
+              shadeMode: engine.SHADE_MODE_FORM,
+              outlineMode: engine.OUTLINE_MODE_COMPLETE_B,
+            },
+          ));
+          const formSelective = capturePixels((context) => engine.drawAssembledSprite(
+            context,
+            spec,
+            direction,
+            animation.id,
+            frame,
+            {
+              shadow: false,
+              shadeMode: engine.SHADE_MODE_FORM,
+              outlineMode: engine.OUTLINE_MODE_SELECTIVE_C,
+            },
+          ));
+          const formNoneRepeat = capturePixels((context) => engine.drawAssembledSprite(
+            context,
+            spec,
+            direction,
+            animation.id,
+            frame,
+            {
+              shadow: false,
+              shadeMode: engine.SHADE_MODE_FORM,
+              outlineMode: engine.OUTLINE_MODE_NONE,
+            },
+          ));
+          const formSelectiveRepeat = capturePixels((context) => engine.drawAssembledSprite(
             context,
             spec,
             direction,
@@ -202,14 +353,45 @@ try {
             },
           ));
           const prefix = `${family.id}/${variant.id}/${direction}/${animation.id}/${frame}`;
+          const completeReport = outlineReport(reviewed.pixels, outlinedComplete);
+          const selectiveReport = outlineReport(reviewed.pixels, outlinedSelective);
+          const protectedMask = protectedShadeMask(reviewed.pixels);
+          const formReports = [
+            ['None', shadeReport(reviewed.pixels, assembledNone, formNone, protectedMask)],
+            ['Complete B', shadeReport(reviewed.pixels, outlinedComplete, formComplete, protectedMask)],
+            ['Selective C', shadeReport(reviewed.pixels, outlinedSelective, formSelective, protectedMask)],
+          ];
           check(samePixels(dispatched, reviewed.pixels), `${prefix} public dispatcher pixels differ from the approved registry`);
-          check(samePixels(assembled, reviewed.pixels), `${prefix} assembled editor pixels differ from the approved registry`);
-          check(samePixels(canvasFrame(fullSheet, column, row), reviewed.pixels), `${prefix} full-sheet export pixels differ from the approved registry`);
+          check(samePixels(assembledNone, reviewed.pixels), `${prefix} None outline/shade must preserve approved registry pixels`);
+          check(completeReport.sourcePreserved && completeReport.outlineColorOnly && completeReport.addedPixels > 0, `${prefix} Complete B must add only approved contour pixels`);
+          check(selectiveReport.sourcePreserved && selectiveReport.outlineColorOnly && selectiveReport.addedPixels > 0, `${prefix} Selective C must add only approved contour pixels`);
+          check(!samePixels(outlinedComplete, outlinedSelective), `${prefix} Complete B and Selective C must remain visibly distinct`);
+          check(samePixels(formNone, formNoneRepeat), `${prefix} Form without outline must be deterministic`);
+          check(samePixels(formSelective, formSelectiveRepeat), `${prefix} Form plus Selective C must be deterministic`);
+          for (const [modeName, report] of formReports) {
+            check(report.validColors, `${prefix} Form + ${modeName} emitted a non-canonical color`);
+            check(report.sourceOwnedChanges, `${prefix} Form + ${modeName} changed sprite geometry`);
+            check(report.protectedPixelsPreserved, `${prefix} Form + ${modeName} changed a protected feature pixel`);
+            check(report.outlinePixelsPreserved, `${prefix} Form + ${modeName} changed outline geometry`);
+            check(report.inkSafe, `${prefix} Form + ${modeName} collapsed a source pixel to outline ink`);
+          }
+          check(samePixels(canvasFrame(fullSheet, column, row), formSelective), `${prefix} full-sheet export must retain Form + Selective C pixels`);
           check(outOfBoundsWrites.length === 0, `${prefix} public dispatcher attempted out-of-bounds drawing`);
+          completeOutlinePixels += completeReport.addedPixels;
+          selectiveOutlinePixels += selectiveReport.addedPixels;
+          outlineModeCases += 3;
+          const frameShadeChanges = formReports[0][1].changedPixels;
+          variantShadeChangedPixels += frameShadeChanges;
+          shadeChangedPixels += frameShadeChanges;
+          protectedShadePixels += protectedMask.reduce((total, value, index) => (
+            total + (value && reviewed.pixels[index] !== null ? 1 : 0)
+          ), 0);
+          shadeModeCases += 3;
           frameCount++;
           column++;
         }
       }
+      check(variantShadeChangedPixels > 0, `${family.id}/${variant.id} Form shading must visibly affect its approved frame corpus`);
       sheetCount++;
     }
   }
@@ -234,6 +416,12 @@ try {
 
 check(frameCount === 1200, 'consumer integration must verify all 1,200 approved EN-E01 frames');
 check(sheetCount === 15, 'consumer integration must verify all 15 approved EN-E01 full sheets');
+check(outlineModeCases === 3600, 'consumer integration must verify 3,600 EN-E01 None/B/C frame cases');
+check(completeOutlinePixels > selectiveOutlinePixels, 'Complete B must remain stronger than Selective C across EN-E01');
+check(shadeModeCases === 3600, 'consumer integration must verify Form with all 3 outline modes across 3,600 EN-E01 frame cases');
+check(shadeChangedPixels > 0, 'Form shading must change source-owned EN-E01 pixels');
+check(protectedShadePixels > 0, 'Form shading must exercise protected EN-E01 feature pixels');
+check(expansionPaletteColors >= 90, 'Form shading must resolve the published EN-E01 renderer palettes');
 
 if (errors.length) {
   console.error('EN-E01 consumer integration validation failed:');
@@ -246,4 +434,9 @@ console.log('- Legacy catalog: 57 families / 202 variants (unchanged)');
 console.log('- Public consumer catalog: 62 families / 217 variants');
 console.log('- Approved adapter parity: 1,200 / 1,200 frames');
 console.log('- Native expansion sheets: 15 / 15 at 480x96');
+console.log(`- EN-E01 None/B/C outline cases: ${outlineModeCases.toLocaleString('en-US')}`);
+console.log(`- Added outline pixels: ${completeOutlinePixels.toLocaleString('en-US')} Complete B / ${selectiveOutlinePixels.toLocaleString('en-US')} Selective C`);
+console.log(`- EN-E01 Form shade cases: ${shadeModeCases.toLocaleString('en-US')} across None/B/C outlines`);
+console.log(`- Form shade changes: ${shadeChangedPixels.toLocaleString('en-US')} source-owned pixels; ${protectedShadePixels.toLocaleString('en-US')} protected pixels preserved`);
+console.log(`- Expansion palette colors resolved: ${expansionPaletteColors.toLocaleString('en-US')}`);
 console.log('- Editor, randomizer, Complete Kit, Wildshot pack, thumbnails, and export scopes: enabled');

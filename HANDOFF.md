@@ -6,8 +6,10 @@ Date: 2026-08-02
 
 This is the canonical new-chat continuation for the 8-bit Sprite Assembler.
 EN-E01's completed-slice review and bounded public registration are complete;
-its explicitly authorized consumer integration is also complete, and no next
-production lane starts implicitly. This handoff records the accepted EN-F00
+its explicitly authorized consumer integration is also complete. The current
+consumer branch additionally carries the authorized optional outline/Form
+presentation extension, with exhaustive technical validation complete and live
+visual sign-off still separate. No next production lane starts implicitly. This handoff records the accepted EN-F00
 foundation, approved/public 15-variant EN-E01 slice, 62-family / 217-variant
 public consumer catalog, unchanged legacy Enemy corpus, shipped NPC artifact,
 local Windows proof, and unresolved EN-E02, Boss, and publisher boundaries.
@@ -102,6 +104,13 @@ selectors and sanitization, persisted Enemy specs, randomization, combat
 defaults, thumbnails, ordinary/Wildshot packs, full/animation/direction
 exports, and Complete Kits now consume 62 families / 217 variants. The legacy
 `ENEMIES` array and all 16,160 locked legacy frames remain unchanged.
+Optional assembled EN-E01 output now supports Complete B, Selective C, and Form
+using each variant's published renderer palette ramps. Raw/None output remains
+pixel-identical to the approved registry. The focused consumer gate exhausts
+3,600 outline and 3,600 Form/outline cases across all 1,200 frames; it records
+74,029 source-owned Form changes while preserving 69,090 protected pixels and
+all added outline geometry. This technical result is not a claim of designer
+visual acceptance for the new optional presentation.
 
 EN-E01 does not authorize all later waves. The three new Boss proposals remain
 blocked behind the current Boss review queue unless the designer explicitly
@@ -158,9 +167,12 @@ runtime contract and must not be rewritten merely to match it.
 - Locked legacy catalog: 57 families / 202 variants.
 - Live public consumer catalog: 62 families / 217 variants.
 - Current locked legacy audit: 16,160 source frames.
-- None/Complete B/Selective C outline gate: 48,480 cases.
-- All existing families support approved Form shading and all three outline
-  modes with no source-edge or out-of-bounds failures.
+- Legacy None/Complete B/Selective C outline gate: 48,480 cases; the focused
+  EN-E01 extension adds 3,600 source-preserving outline cases.
+- All 62 public families support Form shading and all three outline modes at the
+  assembled-output boundary with no source ownership or outline-geometry
+  failures; EN-E01's exact optional presentation still awaits live visual
+  sign-off.
 - The expansion projection is approximately 132 standard Enemy families / 427
   variants if every planned slice is later approved and completed.
 - The frozen EN-E01 candidate registry retains five internal families / 15
@@ -170,8 +182,9 @@ runtime contract and must not be rewritten merely to match it.
 - The immutable `PUBLIC_ENEMIES` catalog appends those approved families to the
   unchanged legacy entries and is the source for editor selectors,
   randomization, kits, packs, thumbnails, and exports.
-- Approved EN-E01 frames retain their reviewed raw pixels; they do not
-  implicitly enter the separately approved legacy Form/outline algorithms.
+- Approved EN-E01 frames retain their reviewed raw pixels; the optional
+  assembled-output boundary now explicitly applies the shared Form/outline
+  algorithms without changing those registry pixels.
 - The complete legacy 20-column corpus retains SHA-256 pixel digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Effects, projectiles, summons, telegraphs, attachments, and environment
@@ -380,17 +393,21 @@ Recorded EN-F00 and focused EN-E01 results:
 - the consumer gate passes unchanged 57/202 legacy locks, immutable 62/217
   public composition, editor persistence/selectors, randomization, combat
   defaults, Complete Kits, Wildshot validation, thumbnails, all export scopes,
-  1,200/1,200 adapter frames, and 15/15 native full sheets;
+  1,200/1,200 adapter frames, 15/15 native full sheets, 3,600 source-preserving
+  None/B/C outline cases, and 3,600 deterministic Form/outline cases with all
+  90 renderer palette colors resolved;
 - live browser smoke confirms all five approved families appear after the
-  legacy selector entries; Witch/Familiar-Keeper renders in the animated
-  preview and `480x96` sheet, produces the expected filename, survives reload,
-  and emits no console errors;
+  legacy selector entries. Witch/Hexer exposes and toggles None/Form plus
+  None/Complete B/Selective C, renders the combined Complete B + Form preview
+  and `480x96` sheet, produces the expected filename, survives reload, and
+  emits no console errors;
 - the full project validator passes with all existing catalog, renderer,
   outline, Form-shade, Cast/Death alias, equipment, Boss, 232-fixture, pack,
   and release-configuration gates unchanged; and
 - no legacy fixture, visual baseline, schema version, Boss asset, release
-  artifact, or archived review payload is modified; the UI change is limited to
-  exposing approved EN-E01 families through existing generic Enemy controls.
+  artifact, archived review payload, or approved EN-E01 source pixel is
+  modified; the UI and engine changes stay within existing generic Enemy and
+  assembled presentation controls.
 
 ## Documentation Audit Result
 

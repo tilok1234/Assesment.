@@ -49,14 +49,16 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Full-sheet, selected-animation, and selected-direction PNG export scopes
 - Play/pause, 0.5x/1x/2x playback speeds, frame stepping, and direct frame inspection with sheet-column metadata
 - Optional assembled-sprite outlines with None, Complete B, and Selective C
-  modes for players and all 57 legacy enemy families; the 15 approved EN-E01
-  variants retain their reviewed raw pixels, while effects, source art, floor
-  shadows, and atomic component sheets remain untreated
+  modes for players and all 62 public enemy families; the 15 approved EN-E01
+  variants retain their reviewed raw pixels and gain outlines only in assembled
+  output, while effects, source art, floor shadows, and atomic component sheets
+  remain untreated
 - Optional assembled-sprite shading with None and the approved material-aware
-  Form mode for players and all 57 legacy enemy families; the selector
-  participates in undo/redo, comparisons, presets, packs, recipes, previews,
-  and assembled exports, while approved EN-E01 pixels, effects, and atomic
-  component sheets remain untreated
+  Form mode for players and all 62 public enemy families; approved EN-E01
+  variants resolve their own published renderer palette ramps rather than a
+  legacy-family fallback. The selector participates in undo/redo, comparisons,
+  presets, packs, recipes, previews, and assembled exports, while raw source
+  pixels, effects, and atomic component sheets remain untreated
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
 - Six modular expressions—Neutral, Happy, Angry, Sad, Surprised, and Determined—that animate in every visible direction, remain readable beneath glasses, and hide beneath full helmets
@@ -93,8 +95,10 @@ families. Editor sanitization and selectors, persistence, Enemy randomization,
 thumbnails, full/animation/direction exports, ordinary packs, Wildshot manifest
 validation, combat defaults, and Complete Kits now consume 62 families / 217
 variants through a public dispatcher. All 1,200 consumer-rendered frames and
-all 15 native sheets remain pixel-identical to the approved registry. No
-schema version changed because Enemy specs retain the existing
+all 15 native sheets remain pixel-identical to the approved registry when
+assembled presentation is None. Optional assembled output now supports both
+approved enemy outline modes and material-aware Form shading without changing
+that raw dispatcher boundary. No schema version changed because Enemy specs retain the existing
 `{ kind, family, variant }` shape.
 
 The complete enemy-outline rollout was visually approved at historical
@@ -103,6 +107,11 @@ covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge
 frames and zero out-of-bounds writes. The current public 20-column
 Idle/Walk/Attack/Cast/Hurt/Death contract extends the same approved lane to
 16,160 source frames / 48,480 None-B-C cases.
+The focused EN-E01 presentation gate adds 1,200 raw source frames / 3,600
+None-B-C outline cases, with 104,085 Complete B and 82,647 Selective C contour
+pixels added without changing source-owned pixels. Technical validation is
+complete; visual sign-off for this EN-E01 presentation extension remains a
+separate live-editor review.
 
 The optional shared assembled-sprite shade pass in
 [SHADE_RENDERING_PLAN.md](SHADE_RENDERING_PLAN.md) has an explicitly approved
@@ -114,6 +123,11 @@ shadows, effects, approved outlines, contact separators, generic thumbnails,
 and atomic component sheets remain untreated. Form is the default for new and
 reset Player/Enemy editor documents; None remains the engine compatibility mode
 and the fallback for versioned legacy artwork.
+Approved expansion variants participate through their nested renderer palette
+ramps. The focused EN-E01 gate exercises 3,600 Form/outline combinations,
+changes 74,029 source-owned pixels, preserves 69,090 protected pixels, and
+resolves all 90 published palette colors without accepting a new visual
+baseline.
 
 The Player/Enemy selector now participates in history, comparisons, presets,
 ordinary packs, previews, assembled sheets, and export recipes; it is hidden in
@@ -240,9 +254,12 @@ absent clipping, and zero public-family exposure.
 Run `npm run check:enemy-expansion-en-e01-consumers` for the approved consumer
 gate. It proves the 57/202 legacy catalog is unchanged, the immutable public
 catalog is exactly 62/217, all 1,200 dispatcher/editor frames and all 15 native
-full sheets match the approved registry, and selectors, persistence,
-randomization, thumbnails, export scopes, Complete Kits, combat defaults, and
-Wildshot pack validation accept the approved families.
+full sheets match the approved registry in raw/None mode, and selectors,
+persistence, randomization, thumbnails, export scopes, Complete Kits, combat
+defaults, and Wildshot pack validation accept the approved families. It also
+exhausts 3,600 None/B/C outline cases and 3,600 Form-with-outline cases while
+checking deterministic shading, variant palette resolution, protected features,
+source ownership, and unchanged outline geometry.
 
 Run `npm run check:enemy-expansion-en-e01-full` for the complete private
 candidate gate and `npm run review:enemy-expansion-en-e01-full` for the ignored
@@ -259,6 +276,11 @@ stable-facade routing, 15 complete sheets, and pixel parity for every one of the
 1,200 candidate/public frames while keeping the legacy catalog unchanged.
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
+
+The EN-E01 consumer extension adds exhaustive checks for all 1,200 approved raw
+frames, 3,600 outline cases, and 3,600 Form/outline cases. It records 74,029
+source-owned Form changes while preserving 69,090 protected pixels and all
+added outline geometry.
 
 The same command also audits 1,000 deterministic Production v1 seeds,
 catalog/class freeze drift, invalid seeds, bounded retries and fallbacks,

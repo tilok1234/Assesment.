@@ -241,7 +241,12 @@ Approved implementation and registration evidence:
 - `npm.cmd run check:enemy-expansion-en-e01-consumers` proves immutable 62-family
   / 217-variant public composition, unchanged legacy pixels, generic
   editor/persistence/randomizer/kit/pack/thumbnail/export routing, 1,200-frame
-  adapter parity, and all 15 native `480x96` sheet exports.
+  adapter parity, and all 15 native `480x96` sheet exports. The authorized
+  presentation extension also exhausts 3,600 None/B/C outline cases and 3,600
+  Form-with-outline cases, resolves all 90 EN-E01 renderer palette colors,
+  records 74,029 source-owned shade changes, and preserves 69,090 protected
+  pixels plus all outline geometry. These are technical gates; exact live-editor
+  visual acceptance of the optional presentation remains a separate decision.
 
 ### EN-E02 - Humanoid culture variants
 

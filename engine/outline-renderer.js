@@ -6,7 +6,10 @@ import {
   renderLayerPixels,
   renderSpritePixels,
 } from './pixel-buffer.js';
-import { drawPublicSprite as drawSprite } from './public-renderer.js';
+import {
+  drawPublicSprite as drawSprite,
+  isPublicEnemyExpansionSpec,
+} from './public-renderer.js';
 
 export const OUTLINE_MODE_NONE = 'none';
 export const OUTLINE_MODE_COMPLETE_B = 'complete-b';
@@ -190,7 +193,8 @@ const ENEMY_SEPARATED_OUTLINE_SINGLE_PIXEL_MINIMUM_Y = Object.freeze({
 });
 
 export function enemySupportsOutline(spec) {
-  return spec?.kind === 'enemy' && ENEMY_OUTLINE_FAMILY_SET.has(spec.family);
+  return spec?.kind === 'enemy'
+    && (ENEMY_OUTLINE_FAMILY_SET.has(spec.family) || isPublicEnemyExpansionSpec(spec));
 }
 
 function enemyUsesComponentOutline(spec) {
