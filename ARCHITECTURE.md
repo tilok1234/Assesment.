@@ -139,22 +139,29 @@ presentation integration exhaustively verifies the same 1,200 raw frames plus
 live combined treatment on 2026-08-02; registry approval and raw-pixel identity
 remain separate contracts.
 
-`engine/enemy-expansion-en-e02.js` is the next isolated private boundary. It
+`engine/enemy-expansion-en-e02.js` owns the approved second art slice. It
 contains five immutable contract cards, a frozen common-only registry for the
-exact approved Idle evidence, and a separate full candidate registry containing
-15 common/specialist/elite variants. Both registries reuse the existing
+exact approved Idle evidence, a separate pre-registration candidate registry
+containing 15 common/specialist/elite variants, an immutable completed-slice
+approval record, and a five-family approved slice registry. These registries
+reuse the existing
 `humanoid-threat-v1` handler while masks, satchels, wraps, bows, bindings, bell
 regalia, feline tails/manes, and caprine regalia remain selected by renderer
 data. Walk/Attack/Hurt use the shared humanoid motion contract; Cast aliases
 Attack and Death aliases Hurt 1, 2, 2, 2. A private pixel-level compatibility
 proof applies the shared Complete B, Selective C, and Form algorithms without
-adding EN-E02 to the public dispatcher. EN-E02 is not imported by
-`sprite-engine.js` or `engine/enemy-expansion-public.js`; therefore the public
-registry remains the five approved EN-E01 families and `PUBLIC_ENEMIES` remains
-62/217 while the exact EN-E02 common Idle gate stays visually approved. Its five
-full-candidate family records remain private and `implemented`, so production
-completion does not imply completed-slice approval, public registration,
-consumer exposure, or effect ownership.
+adding EN-E02 to the public dispatcher. Registration checkpoint `7b6e448`
+composes EN-E01 and EN-E02 into the stable approved
+`ENEMY_EXPANSION_REGISTRY` at ten families / 30 variants. A distinct
+`ENEMY_EXPANSION_CONSUMER_REGISTRY` remains exactly the five-family EN-E01
+registry, so `PUBLIC_ENEMIES` remains 62/217 and selectors, randomization,
+packs, exports, outline/Form routing, and the standard dispatcher cannot consume
+EN-E02 before a separate integration gate. `sprite-engine.js` still imports
+only the generic stable boundary and exposes no slice-specific symbols. The
+five pre-registration candidate records remain immutable `implemented`
+evidence; the approved records are separate, so registration does not
+retroactively rewrite the reviewed snapshot or authorize effects, release, or
+EN-E03.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the

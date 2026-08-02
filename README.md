@@ -80,9 +80,9 @@ checkpoint `b43ed6a`. Five immutable contract cards produce 15 approved variants
 (common, specialist, and elite for Witch, Fallen Knight, Pirate, Necromancer,
 and Alchemist) through one data-driven humanoid chassis. Every variant has the
 standard 20-column Idle/Walk/Attack/Cast/Hurt/Death sheet; Enemy Cast aliases
-Attack and Death aliases Hurt 1, 2, 2, 2. The stable public
-`ENEMY_EXPANSION_REGISTRY` exposes all five families / 15 variants and routes
-them through `renderEnemyExpansionFrame()`. The approved common Idle PNG remains
+Attack and Death aliases Hurt 1, 2, 2, 2. The EN-E01 slice registry exposes all
+five families / 15 variants through `renderEnemyExpansionFrame()`. The approved
+common Idle PNG remains
 locked at SHA-256
 `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`
 and its 40-frame digest remains
@@ -101,9 +101,11 @@ approved enemy outline modes and material-aware Form shading without changing
 that raw dispatcher boundary. No schema version changed because Enemy specs retain the existing
 `{ kind, family, variant }` shape.
 
-The separately authorized `codex/en-e02` branch now contains five immutable
-EN-E02 contract cards, the frozen approved common-Idle registry, and a separate
-full private candidate with all 15 common/specialist/elite variants. The exact
+The separately authorized `codex/en-e02` branch now records exact completed-
+slice approval and bounded registration at checkpoint `7b6e448`. Five immutable
+EN-E02 contract cards retain the frozen approved common-Idle registry and a
+separate pre-registration candidate snapshot with all 15
+common/specialist/elite variants. The exact
 40-frame Idle artifact remains locked at SHA-256
 `c224258139c7c810c7a122ea9e95061f3dd1697864913765fe9d11e09f4eca50`
 and frame digest
@@ -115,9 +117,14 @@ and its exact `1148x1984` overview PNG SHA-256 is
 `21f3175600377eaf75206f9fcb65856731da28eafb6715687821f782f41da6a8`.
 The private `1124x1992` Complete B/Form presentation board is SHA-256
 `211e9ace3eb965f243724249c73927567568e2f22f181f5448ba398ddab4a094`.
-The full slice is awaiting exact visual approval; no EN-E02 ID appears in
-selectors, randomization, packs, exports, the public registry, or the unchanged
-62-family / 217-variant public catalog.
+The designer approved the exact completed-slice overview and authorized the
+bounded registration gate on 2026-08-02. The cumulative stable
+`ENEMY_EXPANSION_REGISTRY` now contains ten approved EN-E01/EN-E02 families / 30
+variants. A separate `ENEMY_EXPANSION_CONSUMER_REGISTRY` remains pinned to the
+five EN-E01 families, so no EN-E02 ID appears in selectors, randomization,
+packs, exports, outline/Form consumer routing, or the unchanged 62-family /
+217-variant `PUBLIC_ENEMIES` catalog. Consumer integration, separate effects,
+release, and EN-E03 remain separately gated.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
@@ -289,7 +296,7 @@ Idle digest, and preserves the exact reviewed pre-registration candidate.
 
 Run `npm run check:enemy-expansion-en-e01-registration` for the approved public
 boundary. It verifies the immutable completed-slice approval record, five
-approved/public families, 15 variants, the current two-approved/one-implemented/
+approved families, 15 variants, the current three-approved/zero-implemented/
 nineteen-planned ledger, stable-facade routing, 15 complete sheets, and pixel
 parity for every one of the 1,200 candidate/public frames while keeping the
 legacy catalog unchanged.
@@ -299,7 +306,7 @@ gate and `npm run review:enemy-expansion-en-e02` to regenerate its exact ignored
 PNG/JSON under `enemy-expansion-review/en-e02/`. The gate covers five internal
 common variants with 40 approved Idle frames, four-direction ordering, hard alpha,
 one-cell margins, deterministic rendering, distinct silhouettes, mirrored side
-occupancy, and zero EN-E02 public exposure.
+occupancy, and zero EN-E02 consumer exposure from the frozen Idle snapshot.
 
 Run `npm run check:enemy-expansion-en-e02-full` for the separately authorized
 private production gate and `npm run review:enemy-expansion-en-e02-full` to
@@ -310,7 +317,15 @@ proves 15 variants / 1,200 deterministic frames, complete standard motion,
 Cast-to-Attack and Death-to-Hurt aliases, hard alpha, one-cell margins, distinct
 family-variant silhouettes, exact approved-Idle preservation, 2,400 private
 Complete B/Selective C cases, 3,600 private Form-with-outline cases, and zero
-public exposure. Registration, consumer integration, effects, and release
+consumer exposure in its frozen candidate snapshot.
+
+Run `npm run check:enemy-expansion-en-e02-registration` for the approved
+registration boundary. It locks the exact overview, Complete B/Form
+presentation, review manifest, reviewed implementation commit, Idle digest, and
+full 1,200-frame digest; proves candidate/registered parity across all 15
+`480x96` sheets; composes the ten-family / 30-variant approved registry; and
+proves the consumer registry and `PUBLIC_ENEMIES` remain limited to EN-E01 at
+62 families / 217 variants. Consumer integration, effects, release, and EN-E03
 remain separate gates.
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
@@ -582,12 +597,12 @@ awaits explicit visual approval before any animation work.
 - `engine/` - focused animation, palette, player-option, enemy, production-roll, Wildshot game-pack contract, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
 - `engine/enemy-expansion.js` - pure EN-F00 registry/renderer facade, lifecycle
   ledger, deterministic review planning, and completed standard-sheet contract
-- `engine/enemy-expansion-public.js` - stable approved-registry composition and
-  current-ledger default used by the public facade
+- `engine/enemy-expansion-public.js` - stable approved-registry composition,
+  separately gated consumer-registry composition, and current-ledger default
 - `engine/enemy-expansion-en-e01.js`, `engine/enemy-expansion-en-e02.js`, and
-  `engine/enemy-expansion-humanoid.js` - EN-E01 approval/public evidence,
-  frozen EN-E02 Idle evidence, the private 15-variant EN-E02 full candidate, and
-  the shared data-selected standard-animation humanoid renderer
+  `engine/enemy-expansion-humanoid.js` - EN-E01 approval evidence, frozen EN-E02
+  Idle/full candidate evidence, EN-E02 completed-slice/registration evidence,
+  and the shared data-selected standard-animation humanoid renderer
 - `tools/check-enemy-expansion.mjs` - focused legacy-equivalence, registry,
   review-targeting, and malformed-sheet gate
 - `tools/check-enemy-expansion-en-e01.mjs` and
@@ -599,6 +614,9 @@ awaits explicit visual approval before any animation work.
 - `tools/check-enemy-expansion-en-e02-full.mjs` and
   `tools/enemy-expansion-en-e02-full-review.mjs` - exhaustive EN-E02 1,200-frame
   private-candidate gate and full review-bundle generator
+- `tools/check-enemy-expansion-en-e02-registration.mjs` - exhaustive approved-
+  registry composition, artifact lock, ledger, candidate/registered parity,
+  and consumer non-exposure gate
 - `tools/check-enemy-expansion-en-e01-full.mjs` and
   `tools/enemy-expansion-en-e01-full-review.mjs` - exhaustive 1,200-frame
   private-candidate gate and completed-slice review bundle generator

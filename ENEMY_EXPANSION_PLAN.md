@@ -1,11 +1,11 @@
 # Enemy Expansion Plan
 
-- Status: approved plan; EN-F00 checkpoint `73ad73a` is accepted, EN-E01's
-  exact Idle and completed-slice reviews are visually approved, and registration
-  checkpoint `b43ed6a` exposes exactly five EN-E01 families / 15 variants through
-  the stable public expansion registry; EN-E02's common Idle artifact is visually
-  approved and its separately authorized 15-variant full private candidate is
-  implemented and awaiting exact visual approval
+- Status: approved plan; EN-F00 checkpoint `73ad73a` is accepted; EN-E01 is
+  approved, registered, and consumer-integrated; and EN-E02's exact Idle and
+  completed-slice artifacts are visually approved. Registration checkpoint
+  `7b6e448` composes EN-E01 plus EN-E02 into the stable ten-family / 30-variant
+  approved registry while keeping EN-E02 outside the separately gated consumer
+  registry and unchanged 62-family / 217-variant consumer catalog
 - Recorded: 2026-08-02
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -30,10 +30,16 @@ later slice.
 
 The designer approved the exact EN-E02 common-only Idle artifact on 2026-08-02,
 then separately authorized full three-variant standard-animation production.
-That latest authorization includes the ten specialist/elite renderer payloads,
+That production authorization included the ten specialist/elite renderer payloads,
 Walk/Attack/Hurt, and standard Enemy Cast/Death aliases. It does **not** include
 public registration, consumer exposure, separate effect assets, a release, or
 any later slice.
+
+After reviewing the exact completed-slice overview and the outline/Form
+presentation, the designer approved the EN-E02 slice and explicitly authorized
+the next bounded registration gate on 2026-08-02. That registration does **not**
+authorize editor selectors, randomization, packs, exports, outline/Form consumer
+routing, separate effects, release, EN-E03, or any other later slice.
 
 ## Intake Assessment
 
@@ -247,7 +253,7 @@ Approved implementation and registration evidence:
   accepted the completed slice; and
 - `npm.cmd run check:enemy-expansion-en-e01-registration` proves five approved
   families / 15 public variants, 15 complete sheets, stable-facade routing,
-  the current two-approved/one-implemented/nineteen-planned ledger state,
+  the current three-approved/zero-implemented/nineteen-planned ledger state,
   unchanged 57-family / 202-variant legacy catalog, and exact candidate/public
   parity across all 1,200 frames.
 - `npm.cmd run check:enemy-expansion-en-e01-consumers` proves immutable 62-family
@@ -263,10 +269,9 @@ Approved implementation and registration evidence:
 
 ### EN-E02 - Humanoid culture variants
 
-- Status: `full-production-candidate`; common-only Idle baseline visually
-  approved, full private production separately authorized and implemented on
-  `codex/en-e02`, awaiting exact completed-slice visual approval; the slice
-  remains private and `implemented`, not approved or public
+- Status: `approved-registered`; common-only Idle and exact completed-slice
+  artifacts visually approved, with bounded registration completed at
+  `7b6e448`; consumer integration remains separately gated
 - Families: Plague Doctor, Desert Raider, Fanatic Monk, Catfolk, Goatfolk
 
 Shared leverage: EN-E01 humanoid poses plus masks, wrapped cloth, martial robes,
@@ -289,7 +294,7 @@ Approved Idle evidence:
   and only the five common baseline renderer payloads;
 - the internal registry reuses `humanoid-threat-v1` / `humanoid-v1` and remains
   implemented rather than approved, with five internal families and zero
-  public EN-E02 families;
+  approved/public families in that frozen snapshot;
 - five data-selected identity treatments provide the Plague Doctor beak/hood,
   Desert Raider wraps, Fanatic Monk beads/plain quarterstaff, Catfolk
   ears/tail/paws, and Goatfolk horns/ears/hooves;
@@ -318,7 +323,8 @@ Full private candidate evidence:
 - `npm.cmd run check:enemy-expansion-en-e02-full` validates 15 complete
   `480x96` sheets / 1,200 deterministic frames, hard alpha, one-cell margins,
   three-direction readability, within-family common/specialist/elite silhouette
-  distinction, zero public exposure, the unchanged approved Idle digest, 2,400
+  distinction, zero approved/public families in the candidate snapshot, the
+  unchanged approved Idle digest, 2,400
   private Complete B/Selective C cases, and 3,600 private Form-with-outline cases;
 - full candidate frame digest:
   `f4667a1ccefb3026c6df3604e114393fdaae619dab0c68bec969203986cb35bf`;
@@ -335,9 +341,27 @@ Full private candidate evidence:
   approved Ash Disciple Idle pixels and replaced Sandbow Stalker's stock released
   arrow with an actor-owned bow/string treatment so projectiles remain external.
 
-Stop here for exact completed-slice visual approval. Do not register EN-E02,
-expose it to consumers, add separate effects, release it, or start another slice
-from technical validation alone.
+Completed-slice approval and registration evidence:
+
+- `EN_E02_COMPLETED_SLICE_GATE` locks reviewed implementation commit
+  `b2c1283c33dbfd6b2c307fc4d2288877a149c9df`, the exact overview,
+  Complete B/Form presentation, review manifest, approved Idle digest, and full
+  1,200-frame digest;
+- `EN_E02_PUBLIC_REGISTRY` contains five approved families / 15 variants while
+  the separate candidate registry remains immutable `implemented` evidence;
+- cumulative `ENEMY_EXPANSION_REGISTRY` composition is ten approved families /
+  30 variants across EN-E01 and EN-E02;
+- `ENEMY_EXPANSION_CONSUMER_REGISTRY` remains exactly EN-E01, keeping
+  `PUBLIC_ENEMIES` at 62 families / 217 variants with zero EN-E02 consumer IDs;
+  and
+- `npm.cmd run check:enemy-expansion-en-e02-registration` verifies the exact
+  artifact hashes, three-approved/zero-implemented/nineteen-planned ledger,
+  all 15 registered sheets, and candidate/registered parity across 1,200 frames.
+
+Stop before EN-E02 consumer integration. Do not add EN-E02 to selectors,
+randomization, kits, packs, thumbnails, exports, outline/Form consumer routing,
+or the public dispatcher; do not add separate effects, release it, or start
+EN-E03 without the next explicit gate.
 
 ### EN-E03 - Large and hybrid walkers
 
@@ -648,12 +672,13 @@ The EN-E01 authorized production sequence is complete:
    effect boundaries; and
 4. focused all-variant/all-animation evidence has been generated and inspected.
 
-Completed-slice approval, bounded public registration, and the separately
-authorized consumer integration are now recorded. EN-E02 contract planning and
-its common Idle artifact are approved. Its separately authorized full private
-production candidate is implemented and technically validated; do not advance
-to completed-slice approval, registration, consumer integration, or separate
-effect assets without exact visual approval and the next explicit gate.
+EN-E01 completed-slice approval, bounded registration, and separately authorized
+consumer integration are recorded. EN-E02 contract planning, exact Idle,
+completed-slice review, and bounded registration are now also approved and
+recorded. Registration checkpoint `7b6e448` preserves all reviewed pixels and
+keeps the consumer registry at EN-E01 only. Do not advance EN-E02 into consumer
+integration, add separate effect assets, release it, or start EN-E03 without the
+next explicit gate.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -662,4 +687,4 @@ stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
 Again, this recommendation does not authorize implementation beyond the current
-private EN-E02 full-production candidate.
+approved EN-E02 registry boundary.
