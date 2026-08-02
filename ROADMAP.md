@@ -129,8 +129,13 @@ slice and checkpoint `b43ed6a` registers all five families / 15 variants through
 the stable public expansion API with exact candidate parity. Consumer
 checkpoint `e0be273` adds immutable `PUBLIC_ENEMIES` and routes the existing
 editor, persistence, randomization, thumbnail, kit, pack, combat-default, and
-sheet-export consumers through 62 families / 217 variants while preserving the
-unchanged 57-family / 202-variant legacy catalog and pixel locks.
+sheet-export consumers through the first approved slice. EN-E02 registration
+checkpoint `7b6e448` adds five more approved families / 15 variants, and the
+separately authorized consumer checkpoint `8ab1837` routes both slices through
+the same generic boundary at 67 families / 232 variants while preserving the
+unchanged 57-family / 202-variant legacy catalog and pixel locks. EN-E02's live
+Complete B + Form consumer view is technically validated and awaits designer
+acceptance.
 The latest pushed source
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
@@ -301,9 +306,9 @@ Candidate additions:
 - Additional off-hand items beyond the completed Lantern, such as spell foci; quivers require a separate back-slot plan rather than the held-item topology
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants only through the approved planning
-  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01 is approved and
-  consumer-integrated through the expansion API, while EN-E02 does not start
-  implicitly
+  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01 is accepted through
+  consumer integration, EN-E02 is at its explicit live consumer-acceptance
+  gate, and EN-E03 does not start implicitly
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 

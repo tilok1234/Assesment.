@@ -4,8 +4,10 @@
   approved, registered, and consumer-integrated; and EN-E02's exact Idle and
   completed-slice artifacts are visually approved. Registration checkpoint
   `7b6e448` composes EN-E01 plus EN-E02 into the stable ten-family / 30-variant
-  approved registry while keeping EN-E02 outside the separately gated consumer
-  registry and unchanged 62-family / 217-variant consumer catalog
+  approved registry. The separately authorized consumer checkpoint `8ab1837`
+  routes that exact cumulative registry through the 67-family / 232-variant
+  public catalog; technical and live smoke validation pass, while designer
+  acceptance of the live EN-E02 consumer presentation remains pending
 - Recorded: 2026-08-02
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -41,6 +43,15 @@ the next bounded registration gate on 2026-08-02. That registration does **not**
 authorize editor selectors, randomization, packs, exports, outline/Form consumer
 routing, separate effects, release, EN-E03, or any other later slice.
 
+The designer then separately authorized the bounded EN-E02 consumer step on
+2026-08-02. That scope includes the existing generic editor, persistence,
+randomizer, kit, pack, thumbnail, export, outline, and Form paths for the five
+approved families / 15 variants. It does **not** authorize new effect assets, a
+release, EN-E03, or a later slice. Checkpoint `8ab1837` implements that bounded
+scope; exhaustive technical validation and the live Plague Doctor / Field
+Chirurgeon Complete B + Form smoke pass. Explicit designer acceptance of that
+live consumer presentation remains the next gate.
+
 ## Intake Assessment
 
 The live Enemy catalog at the assessment baseline contains 57 families and 202
@@ -66,13 +77,17 @@ below.
 
 - `implementation-candidate`: recommended next work after explicit approval;
   it is not authorization by itself.
+- `acceptance-candidate`: the bounded implementation is complete and
+  technically validated, but explicit designer acceptance is still pending.
 - `queued`: sequenced, but later than the current candidate.
 - `architecture-gated`: requires a contract decision before sprite production.
 - `boss-review-blocked`: cannot enter the isolated Boss lane while its current
   review call remains unresolved, unless the designer explicitly reprioritizes.
 - `complete`: art, animation, validation, and visual approval are all done.
 
-No family in this document is currently `complete`.
+EN-E01 is complete through its accepted consumer presentation. EN-E02 family
+art and registration are approved; its consumer integration is currently an
+`acceptance-candidate`.
 
 ## Non-Negotiable Production Contract
 
@@ -169,9 +184,10 @@ Implemented evidence:
   variant normalization, deterministic family/slice Idle review plans, renderer
   dispatch facade, and completed-sheet validator;
 - the isolated EN-F00 foundation registry contains zero families; the stable
-  public composition registry now contains only approved EN-E01, while the
-  unchanged `ENEMIES` array remains the locked legacy catalog and immutable
-  `PUBLIC_ENEMIES` appends only approved EN-E01 for consumers;
+  public composition registry now contains approved EN-E01 plus EN-E02, while
+  the unchanged `ENEMIES` array remains the locked legacy catalog and immutable
+  `PUBLIC_ENEMIES` appends only the ten separately consumer-authorized expansion
+  families;
 - planned families cannot be registered; implemented families remain internal;
   only explicitly approved registrations can enter the registry's public view;
 - `npm.cmd run check:enemy-expansion` rejects duplicate/colliding ids, missing
@@ -256,22 +272,23 @@ Approved implementation and registration evidence:
   the current three-approved/zero-implemented/nineteen-planned ledger state,
   unchanged 57-family / 202-variant legacy catalog, and exact candidate/public
   parity across all 1,200 frames.
-- `npm.cmd run check:enemy-expansion-en-e01-consumers` proves immutable 62-family
-  / 217-variant public composition, unchanged legacy pixels, generic
-  editor/persistence/randomizer/kit/pack/thumbnail/export routing, 1,200-frame
-  adapter parity, and all 15 native `480x96` sheet exports. The authorized
-  presentation extension also exhausts 3,600 None/B/C outline cases and 3,600
-  Form-with-outline cases, resolves all 90 EN-E01 renderer palette colors,
-  records 74,029 source-owned shade changes, and preserves 69,090 protected
-  pixels plus all outline geometry. The designer accepted the exact live
-  Witch/Hexer Complete B + Form presentation on 2026-08-02 and then authorized
-  continuation into the next contract-first step.
+- at checkpoint `e0be273`, the EN-E01 consumer gate proved the then-current
+  immutable 62-family / 217-variant public composition, unchanged legacy
+  pixels, generic editor/persistence/randomizer/kit/pack/thumbnail/export
+  routing, 1,200-frame adapter parity, and all 15 native `480x96` sheet exports.
+  Its authorized presentation extension exhausted 3,600 None/B/C outline cases
+  and 3,600 Form-with-outline cases, resolved all 90 EN-E01 renderer palette
+  colors, recorded 74,029 source-owned shade changes, and preserved 69,090
+  protected pixels plus all outline geometry. The designer accepted the exact
+  live Witch/Hexer Complete B + Form presentation on 2026-08-02 and then
+  authorized continuation into the next contract-first step.
 
 ### EN-E02 - Humanoid culture variants
 
-- Status: `approved-registered`; common-only Idle and exact completed-slice
-  artifacts visually approved, with bounded registration completed at
-  `7b6e448`; consumer integration remains separately gated
+- Status: `acceptance-candidate`; common-only Idle and exact completed-slice
+  artifacts are visually approved, bounded registration completed at `7b6e448`,
+  and explicitly authorized consumer integration is implemented and technically
+  validated at `8ab1837`; live consumer-presentation acceptance remains pending
 - Families: Plague Doctor, Desert Raider, Fanatic Monk, Catfolk, Goatfolk
 
 Shared leverage: EN-E01 humanoid poses plus masks, wrapped cloth, martial robes,
@@ -351,9 +368,10 @@ Completed-slice approval and registration evidence:
   the separate candidate registry remains immutable `implemented` evidence;
 - cumulative `ENEMY_EXPANSION_REGISTRY` composition is ten approved families /
   30 variants across EN-E01 and EN-E02;
-- `ENEMY_EXPANSION_CONSUMER_REGISTRY` remains exactly EN-E01, keeping
-  `PUBLIC_ENEMIES` at 62 families / 217 variants with zero EN-E02 consumer IDs;
-  and
+- at registration checkpoint `7b6e448`, `ENEMY_EXPANSION_CONSUMER_REGISTRY`
+  remained exactly EN-E01 and `PUBLIC_ENEMIES` remained 62 families / 217
+  variants; that is historical registration evidence rather than the current
+  post-authorization consumer boundary; and
 - `npm.cmd run check:enemy-expansion-en-e02-registration` verifies the exact
   artifact hashes, three-approved/zero-implemented/nineteen-planned ledger,
   all 15 registered sheets, and candidate/registered parity across 1,200 frames.
@@ -362,9 +380,26 @@ Completed-slice approval and registration evidence:
   `check:enemy-expansion-en-e02-registration:artifacts` strictly requires and
   re-hashes all three local review files.
 
-Stop before EN-E02 consumer integration. Do not add EN-E02 to selectors,
-randomization, kits, packs, thumbnails, exports, outline/Form consumer routing,
-or the public dispatcher; do not add separate effects, release it, or start
+Authorized consumer-integration evidence:
+
+- immutable `EN_E02_CONSUMER_INTEGRATION_GATE` records the designer's
+  2026-08-02 authorization, registration/artifact checkpoints, exact generic
+  consumer scope, exclusions, and next acceptance gate;
+- checkpoint `8ab1837` makes `ENEMY_EXPANSION_CONSUMER_REGISTRY` reuse the exact
+  cumulative approved registry, producing 67 public families / 232 variants
+  without changing the locked 57/202 legacy catalog;
+- `npm.cmd run check:enemy-expansion-en-e02-consumers` verifies selectors,
+  persistence, randomization, combat defaults, Complete Kits, Wildshot packs,
+  thumbnails, all export scopes, all 2,400 dispatcher frames, all 30 native
+  sheets, 7,200 None/B/C outline cases, 7,200 Form/outline cases, all 180
+  published palette colors, 174,917 source-owned Form changes, and 146,687
+  protected pixels; and
+- live browser smoke exposes all 67 selector families and renders Plague Doctor
+  / Field Chirurgeon with Complete B + Form, the expected export filename, and
+  no console errors.
+
+Stop at explicit designer acceptance of the live EN-E02 consumer presentation.
+Do not record that acceptance, add separate effects, release the slice, or start
 EN-E03 without the next explicit gate.
 
 ### EN-E03 - Large and hybrid walkers
@@ -676,13 +711,15 @@ The EN-E01 authorized production sequence is complete:
    effect boundaries; and
 4. focused all-variant/all-animation evidence has been generated and inspected.
 
-EN-E01 completed-slice approval, bounded registration, and separately authorized
-consumer integration are recorded. EN-E02 contract planning, exact Idle,
-completed-slice review, and bounded registration are now also approved and
-recorded. Registration checkpoint `7b6e448` preserves all reviewed pixels and
-keeps the consumer registry at EN-E01 only. Do not advance EN-E02 into consumer
-integration, add separate effect assets, release it, or start EN-E03 without the
-next explicit gate.
+EN-E01 completed-slice approval, bounded registration, and accepted consumer
+integration are recorded. EN-E02 contract planning, exact Idle, completed-slice
+review, bounded registration, and separately authorized consumer implementation
+are also recorded. Registration checkpoint `7b6e448` preserves all reviewed
+pixels; consumer checkpoint `8ab1837` exposes those same approved records through
+the generic 67/232 public boundary. The current gate is the designer's explicit
+acceptance or rejection of the live Plague Doctor / Field Chirurgeon Complete B
++ Form consumer view. Do not add separate effect assets, release it, or start
+EN-E03 without a later explicit gate.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -691,4 +728,4 @@ stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
 Again, this recommendation does not authorize implementation beyond the current
-approved EN-E02 registry boundary.
+EN-E02 consumer-acceptance boundary.
