@@ -103,13 +103,15 @@ that raw dispatcher boundary. No schema version changed because Enemy specs reta
 
 The separately authorized `codex/en-e02` branch now contains five immutable
 EN-E02 contract cards and five common-only Idle baselines: Field Chirurgeon,
-Dune Reaver, Ash Disciple, Alley Prowler, and Crag Skirmisher. Its exact
-40-frame candidate remains internal and awaiting visual approval; no EN-E02 ID
-appears in selectors, randomization, packs, exports, the public registry, or the
+Dune Reaver, Ash Disciple, Alley Prowler, and Crag Skirmisher. The designer
+approved its exact 40-frame Idle artifact on 2026-08-02; the baselines remain
+internal, and no EN-E02 ID appears in selectors, randomization, packs, exports,
+the public registry, or the
 62-family / 217-variant public catalog. The ignored review PNG SHA-256 is
 `c224258139c7c810c7a122ea9e95061f3dd1697864913765fe9d11e09f4eca50`
 and its frame digest is
 `00d71d7e8f1904c275bfe84ec6cec746fb314fab4d27ce182d72e286a846d02b`.
+Full motion and the ten specialist/elite variants require separate authorization.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
@@ -289,7 +291,7 @@ legacy catalog unchanged.
 Run `npm run check:enemy-expansion-en-e02` for the authorized common-baseline
 gate and `npm run review:enemy-expansion-en-e02` to regenerate its exact ignored
 PNG/JSON under `enemy-expansion-review/en-e02/`. The gate covers five internal
-common variants / 40 Idle frames, four-direction ordering, hard alpha,
+common variants with 40 approved Idle frames, four-direction ordering, hard alpha,
 one-cell margins, deterministic rendering, distinct silhouettes, mirrored side
 occupancy, and zero EN-E02 public exposure. It does not authorize full motion or
 the ten specialist/elite briefs.

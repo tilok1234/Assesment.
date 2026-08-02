@@ -239,11 +239,14 @@ export const EN_E02_CONTRACT_CARDS = deepFreeze([
 ]);
 
 export const EN_E02_IDLE_GATE = deepFreeze({
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   authorizedOn: '2026-08-02',
+  approvedOn: '2026-08-02',
   artifact: 'enemy-expansion-review/en-e02/en-e02-idle-review.png',
-  scope: 'Five common baselines, four directions, and two Idle frames only.',
-  nextGate: 'Explicit designer visual approval before specialist/elite variants or full motion.',
+  artifactSha256: 'c224258139c7c810c7a122ea9e95061f3dd1697864913765fe9d11e09f4eca50',
+  candidateFrameDigest: '00d71d7e8f1904c275bfe84ec6cec746fb314fab4d27ce182d72e286a846d02b',
+  scope: 'Five approved common baselines, four directions, and two Idle frames only.',
+  nextGate: 'Explicit authorization for full three-variant animation production before any implementation beyond Idle.',
 });
 
 function baselineFamily(card) {

@@ -10,7 +10,7 @@ its explicitly authorized consumer integration is also complete. The current
 consumer branch additionally carries the authorized optional outline/Form
 presentation extension, with exhaustive technical validation and live visual
 approval complete on 2026-08-02. The separately authorized EN-E02 contract and
-common Idle gate is now implemented and awaiting exact visual review. No later
+common Idle gate is implemented and visually approved as of 2026-08-02. No later
 production lane starts implicitly. This handoff records the accepted EN-F00
 foundation, approved/public 15-variant EN-E01 slice, 62-family / 217-variant
 public consumer catalog, unchanged legacy Enemy corpus, internal EN-E02
@@ -89,11 +89,12 @@ archived review checkout.
 - 75 new standard families, one Ghoul upgrade, one two-proposal Armor merge,
   and three Boss candidates.
 
-The current stop point is the EN-E02 common-baseline visual gate. Five contract
-cards and five common Idle variants are implemented internally; ten
+The current stop point is the separate EN-E02 full-production authorization
+gate. Five contract cards and five common Idle variants are implemented
+internally and their exact review artifact is visually approved; ten
 specialist/elite briefs, full motion, registration, consumer exposure, and
-effects remain unimplemented. Review the exact EN-E02 PNG before authorizing
-anything beyond this gate.
+effects remain unimplemented. Obtain explicit authorization before implementing
+anything beyond the approved Idle baseline.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -195,8 +196,8 @@ runtime contract and must not be rewritten merely to match it.
   families / 15 variants; no later slice is registered.
 - The private EN-E02 registry contains five implemented common baselines / 40
   Idle frames and zero approved or public EN-E02 families.
-- Current lifecycle ledger: two approved slices, one implemented slice awaiting
-  visual approval, and nineteen planned slices.
+- Current lifecycle ledger: two approved slices, one implemented slice with an
+  approved common Idle baseline, and nineteen planned slices.
 - The immutable `PUBLIC_ENEMIES` catalog appends those approved families to the
   unchanged legacy entries and is the source for editor selectors,
   randomization, kits, packs, thumbnails, and exports.
@@ -384,7 +385,7 @@ Recorded EN-F00, EN-E01, and current EN-E02 results:
   `339c5ff809d3b17aec20b3ec953c8217470cde026fc743cde0cd3854ed5c3323`;
 - exact review PNG SHA-256:
   `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`;
-- EN-E02's unapproved common-only gate passes five immutable cards, five
+- EN-E02's approved common-only Idle gate passes five immutable cards, five
   internal variants / 40 deterministic Idle frames, four-direction ordering,
   hard alpha, one-cell margins, distinct silhouettes, mirrored side occupancy,
   and zero EN-E02 public exposure;
@@ -468,8 +469,8 @@ Unless the designer explicitly changes scope:
 - preserve the merged `PUBLIC_ENEMIES` consumer boundary without mutating the
   locked legacy `ENEMIES` array;
 - do not pre-register unfinished families, IDs, variants, selectors, or packs;
-- do not advance EN-E02 beyond its five common Idle baselines without exact
-  visual approval;
+- do not advance EN-E02 beyond its five approved common Idle baselines without
+  explicit full-production authorization;
 - do not modify the archived `wip/19-boss-review` checkout;
 - do not accept the Rhino/Unicorn direction candidates or the three animation
   candidates without direct visual review;
@@ -489,10 +490,12 @@ The safest opening request for the next chat is:
 
 > EN-E01 is approved and publicly registered through the stable expansion API,
 > including its consumer outline/Form presentation. EN-E02 now has five
-> internal common-only Idle baselines on `codex/en-e02`. Verify the exact review
-> PNG and approval state before adding full motion or specialist/elite variants.
+> approved internal common-only Idle baselines on `codex/en-e02`. Verify their
+> frozen hashes and obtain explicit authorization before adding full motion or
+> specialist/elite variants.
 
 EN-F00 and EN-E01 are approved. EN-E01's stable public registry contains five
 families / 15 variants with exact reviewed pixels, and the public consumer
-catalog is 62 families / 217 variants. EN-E02 remains internal and unapproved;
-no later gate or slice is authorized implicitly.
+catalog is 62 families / 217 variants. EN-E02's exact common Idle baseline is
+approved, but the slice remains internal, incomplete, and non-public. No later
+gate or slice is authorized implicitly.

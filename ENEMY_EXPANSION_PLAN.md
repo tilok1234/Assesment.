@@ -4,7 +4,7 @@
   exact Idle and completed-slice reviews are visually approved, and registration
   checkpoint `b43ed6a` exposes exactly five EN-E01 families / 15 variants through
   the stable public expansion registry; the authorized EN-E02 common-baseline
-  Idle candidate is implemented and awaiting visual approval
+  Idle artifact is implemented and visually approved
 - Recorded: 2026-08-02
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -26,6 +26,11 @@ cards and common-only Idle gate. That latest authorization does **not** include
 specialist/elite renderer data, Walk/Attack/Hurt production, public
 registration, consumer exposure, separate effect assets, a release, or any
 later slice.
+
+The designer approved the exact EN-E02 common-only Idle artifact on 2026-08-02.
+That approval freezes only the five common baselines; it does not authorize full
+motion, the ten specialist/elite variants, registration, consumer exposure,
+effects, a release, or any later slice.
 
 ## Intake Assessment
 
@@ -255,9 +260,9 @@ Approved implementation and registration evidence:
 
 ### EN-E02 - Humanoid culture variants
 
-- Status: `implementation-candidate`; contract cards and common-only Idle
-  baseline authorized on 2026-08-02, implemented on `codex/en-e02`, and awaiting
-  exact visual approval
+- Status: `idle-baseline-approved`; contract cards and common-only Idle baseline
+  authorized, implemented on `codex/en-e02`, and visually approved on 2026-08-02;
+  the slice remains private and `implemented`, not completed or public
 - Families: Plague Doctor, Desert Raider, Fanatic Monk, Catfolk, Goatfolk
 
 Shared leverage: EN-E01 humanoid poses plus masks, wrapped cloth, martial robes,
@@ -274,7 +279,7 @@ Authorized variant briefs:
 | Catfolk | Alley Prowler | Moonclaw Duelist | Pride Champion |
 | Goatfolk | Crag Skirmisher | Horn-Seer | Ramguard Chieftain |
 
-Current candidate evidence:
+Approved Idle evidence:
 
 - `engine/enemy-expansion-en-e02.js` freezes five contract cards, all 15 briefs,
   and only the five common baseline renderer payloads;
@@ -300,9 +305,9 @@ Current candidate evidence:
 - internal visual inspection replaced the Ash Disciple's inherited crystal
   focus with a plain wooden quarterstaff before presenting the candidate.
 
-Stop here for exact visual approval. Do not implement the ten specialist/elite
-variants, full motion, registration, selectors, packs, or effects from this
-candidate alone.
+The exact common-only Idle artifact is approved. Stop here for separate full-
+production authorization; do not implement the ten specialist/elite variants,
+full motion, registration, selectors, packs, or effects from Idle approval alone.
 
 ### EN-E03 - Large and hybrid walkers
 
@@ -615,9 +620,9 @@ The EN-E01 authorized production sequence is complete:
 
 Completed-slice approval, bounded public registration, and the separately
 authorized consumer integration are now recorded. EN-E02 contract planning and
-its common Idle candidate are separately authorized and implemented; do not
-advance to full motion, additional variants, registration, or separate effect
-assets without the next explicit approval.
+its common Idle artifact are separately authorized, implemented, and visually
+approved; do not advance to full motion, additional variants, registration, or
+separate effect assets without the next explicit approval.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -625,5 +630,5 @@ and non-baked attack tells. The largest unresolved risks are multi-form assets,
 stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
-Again, this recommendation does not authorize implementation beyond the current
-EN-E02 common-only Idle candidate.
+Again, this recommendation does not authorize implementation beyond the approved
+EN-E02 common-only Idle baseline.

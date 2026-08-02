@@ -44,9 +44,11 @@ const expectedBaselines = {
 check(JSON.stringify(EN_E02_CONTRACT_CARDS.map((card) => card.id)) === JSON.stringify(cardOrder), 'contract cards must retain the authorized EN-E02 review order');
 check(Object.isFrozen(EN_E02_CONTRACT_CARDS) && EN_E02_CONTRACT_CARDS.every(Object.isFrozen), 'EN-E02 contract cards must be deeply immutable');
 check(EN_E02_CONTRACT_CARDS.length === 5, 'EN-E02 needs exactly five contract cards');
-check(EN_E02_IDLE_GATE.status === 'awaiting-visual-approval', 'the EN-E02 Idle gate must remain unapproved');
+check(EN_E02_IDLE_GATE.status === 'approved', 'the EN-E02 Idle gate must record visual approval');
 check(EN_E02_IDLE_GATE.authorizedOn === '2026-08-02', 'the EN-E02 Idle gate must record its authorization date');
-check(!('artifactSha256' in EN_E02_IDLE_GATE) && !('candidateFrameDigest' in EN_E02_IDLE_GATE), 'unapproved EN-E02 evidence must not freeze acceptance hashes');
+check(EN_E02_IDLE_GATE.approvedOn === '2026-08-02', 'the EN-E02 Idle gate must record its approval date');
+check(EN_E02_IDLE_GATE.artifactSha256 === 'c224258139c7c810c7a122ea9e95061f3dd1697864913765fe9d11e09f4eca50', 'the EN-E02 Idle gate must freeze the approved artifact hash');
+check(EN_E02_IDLE_GATE.candidateFrameDigest === '00d71d7e8f1904c275bfe84ec6cec746fb314fab4d27ce182d72e286a846d02b', 'the EN-E02 Idle gate must freeze the approved frame digest');
 check(Object.isFrozen(EN_E02_IDLE_GATE), 'the EN-E02 Idle gate record must be immutable');
 
 for (const card of EN_E02_CONTRACT_CARDS) {
@@ -76,7 +78,7 @@ check(EN_E02_IDLE_REGISTRY.publicFamilies.length === 0, 'EN-E02 Idle evidence mu
 check(EN_E02_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E02 Idle evidence must not claim family approval');
 check(Object.isFrozen(EN_E02_IDLE_REGISTRY), 'the EN-E02 Idle registry must be immutable');
 check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 5, 'the public registry must remain limited to approved EN-E01');
-check(engine.PUBLIC_ENEMIES.length === 62, 'the public catalog must remain at 62 families before EN-E02 approval');
+check(engine.PUBLIC_ENEMIES.length === 62, 'the public catalog must remain at 62 families before EN-E02 registration');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(cardOrder.every((id) => !engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'EN-E02 candidates must not leak into public selectors or packs');
 
@@ -174,6 +176,7 @@ const enE02Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E02');
 check(enE02Slice?.state === engine.ENEMY_EXPANSION_STATES.IMPLEMENTED && enE02Slice?.registeredFamilies === 5 && enE02Slice?.publicFamilies === 0, 'EN-E02 must report five internal baselines and zero public families');
 
 const candidateDigest = createHash('sha256').update(JSON.stringify(frameRecords)).digest('hex');
+check(candidateDigest === EN_E02_IDLE_GATE.candidateFrameDigest, 'approved EN-E02 Idle frame digest drifted');
 
 if (errors.length) {
   console.error('EN-E02 Idle candidate validation failed:');
@@ -181,7 +184,7 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('EN-E02 Idle candidate validation passed.');
+console.log('EN-E02 approved Idle baseline validation passed.');
 console.log('- Contract cards: 5');
 console.log('- Internal baseline families: 5');
 console.log('- Implemented variants: 5 common / 0 specialist / 0 elite');

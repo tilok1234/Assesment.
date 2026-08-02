@@ -146,7 +146,9 @@ mask, wrap, bead/staff, feline, and caprine identity treatments remain selected
 by renderer data. EN-E02 is not imported by `sprite-engine.js` or
 `engine/enemy-expansion-public.js`; therefore the public registry remains the
 five approved EN-E01 families and `PUBLIC_ENEMIES` remains 62/217 while the
-EN-E02 visual gate is unresolved.
+exact EN-E02 common Idle gate is visually approved. Its five family records
+remain private and `implemented`, so Idle approval does not imply completed-slice
+approval, public registration, full motion, or specialist/elite production.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
