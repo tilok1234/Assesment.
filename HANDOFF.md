@@ -52,6 +52,8 @@ artifact, local Windows proof, and unresolved Boss and publisher boundaries.
   `be44af7b52d199befab3689450c44bc34665dd67`.
 - EN-E02 consumer implementation checkpoint:
   `8ab1837` (`Integrate approved EN-E02 consumers`).
+- Seven-family repair-candidate implementation checkpoint:
+  `6400dd5` (`Create enemy walk and seam repair candidate`).
 - Verified synchronized base before EN-F00:
   `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`
   (`Document enemy expansion and refresh handoff`).
@@ -85,7 +87,7 @@ Expected state around this checkpoint: clean `codex/en-f00` at `73ad73a`;
 `codex/en-e02` containing the approved common-Idle/completed-slice evidence,
 the frozen 15-variant candidate snapshot, registration checkpoint `7b6e448`,
 clone-safe artifact gate `be44af7`, and consumer implementation checkpoint
-`8ab1837`;
+`8ab1837`, plus pending repair-candidate checkpoint `6400dd5`;
 and `main` still equal to `origin/main` at
 verified base `f5476a2`. Do not modify, clean, reset, rebase, or repurpose the
 archived review checkout.

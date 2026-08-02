@@ -7,7 +7,8 @@
   the 67-family / 232-variant public catalog. On 2026-08-03 the designer
   reopened seven specific family presentations for walk/seam repair. The
   approved registry remains immutable comparison evidence while an isolated
-  consumer repair candidate awaits explicit visual approval
+  consumer repair candidate at checkpoint `6400dd5` awaits explicit visual
+  approval
 - Recorded: 2026-08-03
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -405,6 +406,8 @@ Authorized consumer-integration evidence:
 
 Isolated repair-candidate evidence (2026-08-03):
 
+- implementation checkpoint `6400dd5` (`Create enemy walk and seam repair
+  candidate`) contains the bounded candidate and its regression harness;
 - `ENEMY_EXPANSION_REGISTRY` still renders the exact approved EN-E01/EN-E02
   pixels and retains both locked 1,200-frame digests;
 - `ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY` changes exactly 18 renderer-data
