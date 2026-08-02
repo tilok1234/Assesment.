@@ -5,12 +5,12 @@ Date: 2026-08-02
 ## Purpose
 
 This is the canonical new-chat continuation for the 8-bit Sprite Assembler.
-The active lane is the authorized EN-E01 full three-variant animation step, not a
-continuation of the long Boss-production conversation. This handoff records the
-accepted EN-F00 foundation, private common-only EN-E01 candidates, unchanged
+The active lane is EN-E01 completed-slice visual review, not a continuation of
+the long Boss-production conversation. This handoff records the accepted
+EN-F00 foundation, the complete private 15-variant EN-E01 candidate, unchanged
 legacy Enemy corpus, shipped NPC artifact, local Windows proof, unresolved Boss
-and publisher boundaries, the exact approved Idle artifact, and the completed-
-slice visual approval still required before public registration.
+and publisher boundaries, the exact approved Idle artifact, and the designer
+approval still required before public registration.
 
 ## Canonical Workspace And Git State
 
@@ -24,8 +24,9 @@ slice visual approval still required before public registration.
   `73ad73a354738d21e8d3f33f2cbbc50315f64050`.
 - Isolated EN-E01 candidate worktree:
   `C:\tmp\8-bit-sprite-assembler-en-e01`
-- EN-E01 branch: `codex/en-e01`, based exactly on accepted EN-F00 `73ad73a`;
-  keep its visual-gate changes uncommitted until explicit designer approval.
+- EN-E01 branch: `codex/en-e01`, based exactly on accepted EN-F00 `73ad73a`.
+- Approved EN-E01 Idle checkpoint: `73dbec9`.
+- Complete private EN-E01 implementation checkpoint: `230a9a3`.
 - Verified synchronized base before EN-F00:
   `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`
   (`Document enemy expansion and refresh handoff`).
@@ -54,11 +55,11 @@ git log -5 --oneline --decorate
 ```
 
 Expected state around this checkpoint: clean `codex/en-f00` at `73ad73a`;
-`codex/en-e01` based on that checkpoint with the approved Idle evidence safely
-committed before full-production edits resume; and `main` still equal to
-`origin/main` at verified base `f5476a2`. Public registration and completed-
-slice visual approval remain separate actions. Do not modify, clean, reset,
-rebase, or repurpose the archived review checkout.
+`codex/en-e01` containing approved Idle checkpoint `73dbec9`, private full-
+candidate checkpoint `230a9a3`, and this documentation reconciliation; and
+`main` still equal to `origin/main` at verified base `f5476a2`. Public
+registration and completed-slice visual approval remain separate actions. Do
+not modify, clean, reset, rebase, or repurpose the archived review checkout.
 
 ## Exact Next Lane
 
@@ -72,26 +73,23 @@ rebase, or repurpose the archived review checkout.
 - 75 new standard families, one Ghoul upgrade, one two-proposal Armor merge,
   and three Boss candidates.
 
-The designer accepted EN-F00 and separately authorized EN-E01 on 2026-08-02.
-EN-E01 now contains immutable contract cards and one private common baseline
-for Witch/Hexer, Fallen Knight/Shieldbearer, Pirate/Deckhand,
-Necromancer/Bone Caller, and Alchemist/Flask Thrower. All five render through
-one shared humanoid handler and implement only two-frame Idle in Down, Left,
-Right, and Up. The built-in registry and public family view remain empty.
+The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
+artifact, and then authorized its full private production on 2026-08-02.
+EN-E01 now contains five immutable contract cards and all 15 common,
+specialist, and elite briefs for Witch, Fallen Knight, Pirate, Necromancer, and
+Alchemist. All variants render through one shared humanoid handler and implement
+the standard 20-column Enemy contract in Down, Left, Right, and Up. The built-
+in registry and public family view remain empty.
 
 The designer approved exact Idle PNG SHA-256
 `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`
 and 40-frame digest
 `339c5ff809d3b17aec20b3ec953c8217470cde026fc743cde0cd3854ed5c3323`.
-The next gate is:
-
-1. preserve those approved common Idle pixels while implementing
-   Walk/Attack/Hurt and Enemy Cast/Death aliases;
-2. add the specialist and elite brief for every EN-E01 family;
-3. generate and inspect focused all-variant/all-animation review evidence;
-4. keep the existing 57 families / 202 variants and all public selectors/packs
-   unchanged; and
-5. stop for completed-slice visual approval before registration.
+Those approved Idle pixels remain exact. Walk/Attack/Hurt, Enemy Cast/Death
+aliases, all specialist/elite briefs, exhaustive structural checks, and focused
+review evidence are complete. The existing 57 families / 202 variants and all
+public selectors/packs remain unchanged. The next gate is the designer's
+completed-slice visual approval before registration.
 
 EN-E01 does not authorize all later waves. The three new Boss proposals remain
 blocked behind the current Boss review queue unless the designer explicitly
@@ -152,10 +150,12 @@ runtime contract and must not be rewritten merely to match it.
   modes with no source-edge or out-of-bounds failures.
 - The expansion projection is approximately 132 standard Enemy families / 427
   variants if every planned slice is later approved and completed.
-- Five EN-E01 common baselines are registered only in the private candidate
-  registry; no proposed expansion family or runtime ID is registered publicly.
+- Fifteen EN-E01 common/specialist/elite variants are registered only in the
+  private candidate registry; no proposed expansion family or runtime ID is
+  registered publicly.
 - The EN-F00 built-in expansion registry and public-family view are both empty;
-  the EN-E01 candidate registry reports five internal and zero public families.
+  the EN-E01 candidate registry reports five internal families / 15 variants
+  and zero public families.
 - The complete legacy 20-column corpus retains SHA-256 pixel digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Effects, projectiles, summons, telegraphs, attachments, and environment
@@ -312,7 +312,9 @@ Run from the isolated EN-E01 worktree on 2026-08-02:
 ```powershell
 npm.cmd run check:enemy-expansion
 npm.cmd run check:enemy-expansion-en-e01
+npm.cmd run check:enemy-expansion-en-e01-full
 npm.cmd run review:enemy-expansion-en-e01
+npm.cmd run review:enemy-expansion-en-e01-full
 npm.cmd run check
 git diff --check
 ```
@@ -323,15 +325,36 @@ Recorded EN-F00 and focused EN-E01 results:
   review-targeting, sheet-contract, and negative-path assertions;
 - all 57 legacy families / 202 sheets / 16,160 frames match the locked pixel
   digest above;
-- EN-E01's focused gate passes five immutable contract cards, five internal
-  common baselines, 40 deterministic Idle frames, four-direction and two-frame
+- EN-E01's frozen Idle gate passes five immutable contract cards, five internal
+  common baselines, 40 deterministic Idle frames, four-direction/two-frame
   ordering, hard alpha, one-cell margins, no clipping, distinct silhouettes,
-  and zero specialist/elite or public-family implementation;
+  and zero public-family exposure;
 - candidate frame digest:
   `339c5ff809d3b17aec20b3ec953c8217470cde026fc743cde0cd3854ed5c3323`;
 - exact review PNG SHA-256:
   `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`;
-- the EN-E01 review artifact is ignored and remains evidence, not visual
+- the full gate passes five internal families / 15 variants, 15 complete
+  `480x96` sheets, all 1,200 frames, deterministic direction and motion,
+  Cast-to-Attack and Death-to-Hurt aliases, hard alpha, strict margins, and zero
+  public families;
+- full candidate frame digest:
+  `addcf8055a80a0a6266be0eff8cd6b8235092c6ba366bc9c020bd5feb90ae173`;
+- full overview PNG SHA-256:
+  `0b38f2737b5215d37a08e0ae3f7e25f82e88bb17a97641e33b0ee9ef9c0e8fb7`;
+- motion-board SHA-256 values: Witch
+  `a6a15cba3fbbcf342533491836a700fdbb5965301e6872d2e07c9535c249c0a9`,
+  Fallen Knight
+  `6e688f2f3da3781608d555510d85be08b3df6b7a8e06cdc4e48937247de186b5`,
+  Pirate
+  `4aa570b3f52866d42814950677ca6c65346f4a458552041e021ec1b6c16ab81a`,
+  Necromancer
+  `379efc15f29ed991ac307308038bbcdbf2802e6cdc12015a8be3668413379abe`,
+  and Alchemist
+  `c07fe982683926583336062a5a97040cf038b6d592bccf9aafeb390bb2010056`;
+- review JSON SHA-256:
+  `129f3f2b81318df08edf2b0b1dc2183fc8494450027e91ceea04a2248208e398`;
+- all review artifacts are ignored evidence; internal native/4x/Aseprite
+  inspection accepted the candidate, but that does not replace designer visual
   approval;
 - the full project validator passes with all existing catalog, renderer,
   outline, Form-shade, Cast/Death alias, equipment, Boss, 232-fixture, pack,
@@ -365,8 +388,8 @@ as historical evidence rather than live continuation instructions.
 
 Unless the designer explicitly changes scope:
 
-- preserve the exact approved common-baseline Idle frames while implementing
-  the now-authorized full motion and specialist/elite variants;
+- preserve the exact approved common-baseline Idle frames and the complete
+  private candidate while completed-slice review is pending;
 - do not publicly register EN-E01 before completed-slice visual approval;
 - do not pre-register unfinished families, IDs, variants, selectors, or packs;
 - do not modify the archived `wip/19-boss-review` checkout;
@@ -386,11 +409,12 @@ Unless the designer explicitly changes scope:
 
 The safest opening request for the next chat is:
 
-> Continue the authorized EN-E01 full-production step from the exact approved
-> Idle checkpoint, preserve its locked common-baseline pixels, complete all
-> three variants and standard Enemy animations, and stop at completed-slice
-> visual review before public registration.
+> Review the exact EN-E01 full overview and five family motion boards from
+> private checkpoint `230a9a3`. If they are accepted, explicitly authorize the
+> separate public-registration step; otherwise name the family, direction, and
+> animation that needs revision.
 
-EN-F00 and EN-E01's Idle gate are approved. Full EN-E01 production is
-authorized, but technical validation and internal inspection do not replace
-the designer's completed-slice visual approval before registration.
+EN-F00 and EN-E01's Idle gate are approved. Full private EN-E01 production is
+complete and internally accepted, but technical validation and internal
+inspection do not replace the designer's completed-slice visual approval
+before registration.

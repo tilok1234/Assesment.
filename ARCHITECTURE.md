@@ -81,16 +81,21 @@ only catalog consumed by selectors, randomization, kits, packs, and exports.
 Planned families cannot enter a registry; implemented entries remain internal;
 only an explicitly approved registration can appear in a public family view.
 
-The authorized EN-E01 Idle candidate lives behind that boundary.
-`engine/enemy-expansion-en-e01.js` owns five immutable contract cards and a
-private common-only registry; `engine/enemy-expansion-humanoid.js` owns one
-`humanoid-threat-v1` handler on the `humanoid-v1` chassis. The handler reuses
-the proven player humanoid rig, applies identity overlays selected by renderer
-data rather than family-id branches. At the approved Idle checkpoint it rejects
-every animation other than Idle; the separately authorized full-production
-step expands that same handler before completed-slice review. `sprite-engine.js`, `ENEMIES`, the built-in
-registry, selectors, schemas, packs, and exports do not import the candidate
-module. The ignored review generator captures the private registry directly.
+The private EN-E01 candidate lives behind that boundary.
+`engine/enemy-expansion-en-e01.js` owns five immutable contract cards, a frozen
+common-only registry for the exact approved Idle evidence, and a separate full
+candidate registry containing 15 internal common/specialist/elite variants.
+`engine/enemy-expansion-humanoid.js` owns one `humanoid-threat-v1` handler on
+the `humanoid-v1` chassis. The handler reuses the proven player humanoid rig,
+derives Idle/Walk/Attack/Hurt poses generically, maps Enemy Cast to Attack and
+Death to Hurt 1, 2, 2, 2, and applies identity overlays selected by renderer
+data rather than family-id branches. The frozen registry keeps the approved
+common Idle pixels byte-identical while the full registry exercises complete
+`480x96` sheets. `sprite-engine.js`, `ENEMIES`, the built-in registry,
+selectors, schemas, packs, and exports do not import the candidate module. The
+ignored baseline and full-slice review generators capture their respective
+private registries directly; public registration remains a later approval
+step.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -321,9 +326,9 @@ deliberately not serialized.
   assembled rendering; all 16,160 current source frames reserve a one-cell
   outline margin and perform no out-of-bounds writes.
 - The EN-F00 built-in registry remains separate from `ENEMIES`; EN-E01 has five
-  internal common-only candidates and zero public families, so no unfinished
-  expansion family enters selectors or packs. The 57-family / 202-sheet /
-  16,160-frame legacy corpus retains locked SHA-256 pixel digest
+  internal families / 15 private variants and zero public families, so no
+  unfinished expansion family enters selectors or packs. The 57-family /
+  202-sheet / 16,160-frame legacy corpus retains locked SHA-256 pixel digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Shade None plus outline None directly delegates to `drawSprite()`. Shade None
   combined with Complete B or Selective C preserves the approved outline
@@ -444,10 +449,10 @@ For face-bound content, verify front and both side views, confirm the rear view 
 For the proposed 80-enemy expansion, do not use this legacy one-family path.
 EN-F00's data-driven facade now exists, and the built-in registry remains
 empty. EN-E01 demonstrates the intended private candidate path with five
-implemented common baselines and a real shared renderer handler. Follow
-`ENEMY_EXPANSION_PLAN.md`: keep candidates out of the public view until
-approval and stop for four-direction baseline approval before Walk, Attack,
-Hurt, specialist/elite variants, or public registration advances.
+implemented families / 15 variants and a real shared renderer handler. Follow
+`ENEMY_EXPANSION_PLAN.md`: keep candidates out of the public view, stop for
+four-direction baseline approval before full production, and stop again for
+completed-slice approval before public registration advances.
 
 ### Change the sheet contract
 

@@ -121,10 +121,11 @@ Player-built NPC looks and was verified by the game intake. The approved
 `ENEMY_EXPANSION_PLAN.md` decomposes 80 additional proposals into EN-F00,
 eighteen standard Enemy slices, and three separately blocked Boss micro-slices.
 EN-F00 is accepted at isolated checkpoint `73ad73a` on `codex/en-f00`. The
-separately authorized `codex/en-e01` branch contains five private common-only
-humanoid baselines whose exact four-direction Idle review is now visually
-approved. Full animation plus specialist/elite production is authorized through
-the same shared renderer; completed-slice review and registration remain
+separately authorized `codex/en-e01` branch preserves its approved five-common
+Idle evidence and contains a complete private candidate at `230a9a3`: five
+families / 15 common-specialist-elite variants with standard Enemy motion and
+aliases through the same shared renderer. Exhaustive validation and internal
+visual inspection pass; designer completed-slice review and registration remain
 separately gated, with zero expansion families exposed to selectors or packs.
 The latest pushed source
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
@@ -296,8 +297,8 @@ Candidate additions:
 - Additional off-hand items beyond the completed Lantern, such as spell foci; quivers require a separate back-slot plan rather than the held-item topology
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants only through the approved planning
-  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01's common-baseline
-  Idle gate is approved and full production is active, while no public
+  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01's complete private
+  15-variant candidate awaits designer visual approval, while no public
   registration starts implicitly
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated

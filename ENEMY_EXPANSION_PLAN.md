@@ -1,9 +1,9 @@
 # Enemy Expansion Plan
 
 - Status: approved plan; EN-F00 checkpoint `73ad73a` is accepted, EN-E01's
-  exact four-direction Idle candidate is visually approved, and full
-  three-variant animation production is separately authorized with zero public
-  catalog additions until completed-slice review
+  exact four-direction Idle candidate is visually approved, and the complete
+  15-variant private candidate is ready for completed-slice visual approval
+  with zero public catalog additions
 - Recorded: 2026-08-02
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -15,12 +15,13 @@ the 8-bit Sprite Assembler. It fixes the accounting, collision rulings,
 production order, review gates, and technical boundaries before any new family
 is registered.
 
-The designer explicitly authorized EN-F00 and then separately authorized
-EN-E01 on 2026-08-02. EN-E01 authorization covers only contract cards, five
-common baselines, and their four-direction Idle review gate. It does **not**
-authorize full animation, specialist/elite variants, catalog changes, Boss
-work, effect work, export changes, a release, or a push. Every later step or
-implementation slice still requires its own explicit designer go-ahead.
+The designer explicitly authorized EN-F00 and then separately authorized the
+EN-E01 common-baseline Idle gate on 2026-08-02. After approving its exact Idle
+artifact, the designer separately authorized full three-variant animation
+production plus normal commit/push handling. That authorization does **not**
+include public registration, EN-E02 or later slices, Boss work, separate effect
+assets, a release, or publication of unfinished runtime IDs. Completed-slice
+visual approval remains the next explicit gate.
 
 ## Intake Assessment
 
@@ -170,9 +171,9 @@ chassis needed by many later proposals. Complete only one slice at a time.
 
 ### EN-E01 - Humanoid threat pilot
 
-- Status: `implementation-candidate`; four-direction common-baseline Idle is
-  visually approved and full three-variant animation production is authorized,
-  while public registration remains blocked on completed-slice review
+- Status: `implemented-private-candidate`; four-direction common-baseline Idle
+  is visually approved, all 15 variants and standard animations are complete,
+  and public registration remains blocked on completed-slice visual approval
 - Families: Witch, Fallen Knight, Pirate, Necromancer, Alchemist
 - Priority-first: Witch, Fallen Knight, Pirate
 
@@ -193,26 +194,39 @@ Attack tells must remain readable without baked muzzle flashes, bombs, potion
 splashes, familiars, skeletons, or spell effects. Those are separate effect or
 child-asset contracts.
 
-Current candidate evidence:
+Current candidate evidence at implementation checkpoint `230a9a3`:
 
 - five immutable contract cards record stable ID, 24x24 scale, locomotion,
   attack tell, three variant briefs, and external effect/mechanic boundaries;
-- only Hexer, Shieldbearer, Deckhand, Bone Caller, and Flask Thrower are
-  implemented, one common baseline per family;
-- all five use the private `humanoid-threat-v1` renderer on `humanoid-v1`, with
-  identity overlays selected from renderer data rather than family-ID branches;
-- the candidate registry reports five internal implemented families and zero
-  approved/public families; the built-in registry and legacy `ENEMIES` catalog
-  remain unchanged;
+- all 15 common/specialist/elite briefs are implemented through the private
+  `humanoid-threat-v1` renderer on `humanoid-v1`, with identity overlays
+  selected from renderer data rather than family-ID branches;
+- every variant supplies Idle x2, Walk x4, Attack x4, Hurt x2, pixel-identical
+  Enemy Cast-to-Attack aliases, and Death-to-Hurt 1, 2, 2, 2 aliases;
+- the candidate registry reports five internal implemented families, 15
+  internal variants, and zero approved/public families; the built-in registry
+  and legacy `ENEMIES` catalog remain unchanged;
 - `npm.cmd run check:enemy-expansion-en-e01` validates 40 deterministic Idle
   frames with hard alpha, one-cell margins, no out-of-bounds writes, distinct
-  silhouettes, and correct direction/frame ordering; and
+  silhouettes, correct direction/frame ordering, and the locked digest;
 - `npm.cmd run review:enemy-expansion-en-e01` generates the exact enlarged and
   native-size review PNG. The designer approved exact PNG SHA-256
   `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`
   and 40-frame digest
   `339c5ff809d3b17aec20b3ec953c8217470cde026fc743cde0cd3854ed5c3323`
-  on 2026-08-02.
+  on 2026-08-02;
+- `npm.cmd run check:enemy-expansion-en-e01-full` exhausts 15 complete
+  `480x96` sheets / 1,200 frames, hard alpha, strict margins, deterministic
+  motion, direction/variant distinction, aliases, and zero public exposure;
+- the full candidate frame digest is
+  `addcf8055a80a0a6266be0eff8cd6b8235092c6ba366bc9c020bd5feb90ae173`;
+  and
+- `npm.cmd run review:enemy-expansion-en-e01-full` generates the all-variant
+  overview, five all-motion family boards, 15 native sheets, and review JSON.
+  The overview SHA-256 is
+  `0b38f2737b5215d37a08e0ae3f7e25f82e88bb17a97641e33b0ee9ef9c0e8fb7`.
+  Internal native/4x inspection found no repair-level defect; designer visual
+  approval is still pending.
 
 ### EN-E02 - Humanoid culture variants
 
@@ -522,16 +536,19 @@ counts as an upgrade; the three Boss candidates do not enter the Enemy totals.
 | EN-E18 | Pumpkin Monster; Moss Beast; Kelp Beast; Coral Colony | 4 |
 | **Total** |  | **80** |
 
-## Recommended Next Authorization
+## Next Approval Gate
 
-The current production sequence is:
+The authorized production sequence is complete:
 
-1. preserve the exact approved common-baseline Idle pixels while adding
-   Walk/Attack/Hurt motion and Enemy Cast/Death aliases;
-2. implement the specialist and elite brief for each family through the same
-   shared renderer and external-effect boundaries;
-3. generate and inspect focused all-variant/all-animation review evidence; and
-4. stop for completed-slice visual approval before any public registration.
+1. the approved common-baseline Idle pixels remain exact;
+2. Walk/Attack/Hurt plus Enemy Cast/Death aliases are implemented;
+3. every specialist and elite brief uses the same shared renderer and external-
+   effect boundaries; and
+4. focused all-variant/all-animation evidence has been generated and inspected.
+
+The next decision is explicit completed-slice visual approval or a targeted
+revision request. Do not publicly register EN-E01, begin EN-E02, or create
+separate effect assets until that decision is recorded.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
