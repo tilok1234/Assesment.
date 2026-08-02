@@ -47,6 +47,8 @@ boundaries.
   `b2c1283c33dbfd6b2c307fc4d2288877a149c9df`.
 - Approved EN-E02 registration code checkpoint:
   `7b6e448fb1d44176bbf9ecee6798c52abb6e914e`.
+- Clean-clone-safe registration artifact-gate checkpoint:
+  `be44af7b52d199befab3689450c44bc34665dd67`.
 - Verified synchronized base before EN-F00:
   `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`
   (`Document enemy expansion and refresh handoff`).
@@ -380,6 +382,7 @@ npm.cmd run check:enemy-expansion-en-e01-consumers
 npm.cmd run check:enemy-expansion-en-e02
 npm.cmd run check:enemy-expansion-en-e02-full
 npm.cmd run check:enemy-expansion-en-e02-registration
+npm.cmd run check:enemy-expansion-en-e02-registration:artifacts
 npm.cmd run review:enemy-expansion-en-e01
 npm.cmd run review:enemy-expansion-en-e01-full
 npm.cmd run review:enemy-expansion-en-e02
@@ -444,6 +447,10 @@ Recorded EN-F00, EN-E01, and current EN-E02 results:
   and full digest; verifies 15 registered `480x96` sheets and exact
   candidate/registered parity across all 1,200 frames; and keeps the consumer
   registry at EN-E01 only with `PUBLIC_ENEMIES` unchanged at 62/217;
+- clone-safety checkpoint `be44af7` passes the default registration gate in a
+  fresh detached worktree without ignored artifacts, while strict artifact mode
+  correctly rejects their absence; the local strict run re-hashes all three
+  reviewed files successfully;
 - the frozen EN-E01 pre-registration full gate passes five internal families / 15 variants, 15 complete
   `480x96` sheets, all 1,200 frames, deterministic direction and motion,
   Cast-to-Attack and Death-to-Hurt aliases, hard alpha, strict margins, and zero

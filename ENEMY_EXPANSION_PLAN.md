@@ -357,6 +357,10 @@ Completed-slice approval and registration evidence:
 - `npm.cmd run check:enemy-expansion-en-e02-registration` verifies the exact
   artifact hashes, three-approved/zero-implemented/nineteen-planned ledger,
   all 15 registered sheets, and candidate/registered parity across 1,200 frames.
+- checkpoint `be44af7` makes ignored-artifact verification clean-clone safe by
+  default while
+  `check:enemy-expansion-en-e02-registration:artifacts` strictly requires and
+  re-hashes all three local review files.
 
 Stop before EN-E02 consumer integration. Do not add EN-E02 to selectors,
 randomization, kits, packs, thumbnails, exports, outline/Form consumer routing,

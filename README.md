@@ -328,6 +328,14 @@ proves the consumer registry and `PUBLIC_ENEMIES` remain limited to EN-E01 at
 62 families / 217 variants. Consumer integration, effects, release, and EN-E03
 remain separate gates.
 
+The default registration command is clean-clone safe because the review bundle
+is intentionally ignored. When the local review bundle is present it re-hashes
+all three files; use
+`npm run check:enemy-expansion-en-e02-registration:artifacts` to require those
+files and fail if any are absent. Clone-safety checkpoint `be44af7` proves the
+default mode passes in a fresh detached worktree while strict mode rejects the
+missing ignored artifacts.
+
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
 The EN-E01 consumer extension adds exhaustive checks for all 1,200 approved raw
