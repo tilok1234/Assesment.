@@ -1,15 +1,15 @@
 # Project Handoff
 
-Date: 2026-07-30
+Date: 2026-08-02
 
 ## Purpose
 
-This is the canonical next-chat continuation for the 8-bit Sprite Assembler.
-It records the ruled `main` mainline, the normal-work worktree, the parked
-19-boss review state, the pushed Bosses checkpoint, the completed documentation
-audit, its validation evidence, and the remaining visual-approval boundary.
-Historical plan measurements remain in their plan files and are explicitly
-labeled as historical where the public animation contract later expanded.
+This is the canonical new-chat continuation for the 8-bit Sprite Assembler.
+The next intended lane is the planning-approved 80-proposal Enemy expansion,
+not a continuation of the long Boss-production conversation. This handoff
+records the live mainline, completed documentation audit, shipped NPC artifact,
+local Windows proof, unresolved Boss and publisher boundaries, and the exact
+approval gate before implementation begins.
 
 ## Canonical Workspace And Git State
 
@@ -17,39 +17,67 @@ labeled as historical where the public animation contract later expanded.
   `C:\Users\headc\Documents\8-bit-sprite-assembler-main`
 - Mainline branch: `main`
 - Upstream: `origin/main`
-- Current synchronized main checkpoint when this correction began: `e5ecdea`
-  (`Sync-log hook in the README (doc 18 accepted 2026-07-30)`).
-- Consolidation checkpoint: `c6dcdc5`. It contains all four former Codex
-  development lines, including the game-pack source commit `b7eae05f`.
+- Verified synchronized base before this documentation checkpoint:
+  `bf6269ca6fc07b3d95a826c95ec6c9c29c6daf53`
+  (`Adopt the pack-publish gate from the salvage checkpoint`).
+- The documentation checkpoint containing this handoff follows `bf6269c` on
+  `main`; always verify the live HEAD and upstream rather than copying a
+  self-referential hash from this file.
+- The planning repository's `tools/ecosystem.lock.json` rules the assembler
+  mainline as `main`.
 - `codex/form-shading` is fully merged and archive-tagged as
   `archive/codex/form-shading`; its deleted remote branch is not a continuation
   target.
 - The archived checkout at
-  `C:\Users\headc\Documents\8-bit sprite assembler` is review-only. Its entire
-  former dirty state is parked on local branch `wip/19-boss-review` at
-  `fb4b664` (`Park 19-boss review state`), branched from unchanged archived
-  checkpoint `9b7f4bf`.
-- That parked commit contains the five tracked modifications,
-  `engine/effect-compositor.js`, and both generated review directories. The
-  branch remains local because the parked review payload is about 60.9 MB.
-- Pushed direction-pilot checkpoint: `08d1ef7`
-  (`Checkpoint 48x48 boss direction pilots`).
-- Pushed animated-workspace checkpoint: `f15a9cf`
-  (`Add animated boss review workspace`).
-- No Windows artifact has been built for this state.
+  `C:\Users\headc\Documents\8-bit sprite assembler` remains review-only on
+  local `wip/19-boss-review` at `fb4b664`. Its 60.9 MB review payload is parked
+  safely and was intentionally not pushed.
+- The older `codex/clean-clone-check` and `salvage/19-boss-continuation`
+  worktrees are historical/support lanes, not normal implementation targets.
 
-Before making any claim or normal edit in the main worktree, rerun:
+Before making a claim or edit in a new chat, run:
 
 ```powershell
 git status --short --branch
 git rev-parse HEAD
 git rev-parse '@{upstream}'
-git log -3 --oneline --decorate
+git log -5 --oneline --decorate
 ```
 
-Normal work happens only in the `main` worktree above. Do not modify, clean,
-reset, rebase, or repurpose the archived review checkout unless the designer
-first resolves its open review call.
+Expected state after this handoff commit is pushed: clean `main`, with local
+HEAD equal to `origin/main`. Do not modify, clean, reset, rebase, or repurpose
+the archived review checkout.
+
+## Exact Next Lane
+
+`ENEMY_EXPANSION_PLAN.md` is the accepted decomposition of the designer's 80
+additional proposals. It resolves them into:
+
+- EN-F00, one renderer/registry foundation slice with no new family art;
+- EN-E01 through EN-E18, eighteen standard 24x24 Enemy slices;
+- EN-B01 through EN-B03, isolated 48x48 Hydra, Chimera, and Roc direction
+  pilots; and
+- 75 new standard families, one Ghoul upgrade, one two-proposal Armor merge,
+  and three Boss candidates.
+
+The document is planning-approved but implementation has **not** started. The
+next chat must not infer implementation authorization from the accepted plan or
+from this handoff.
+
+When the designer explicitly says to begin:
+
+1. authorize and implement EN-F00 only;
+2. prove the existing 57 families / 202 variants remain unchanged;
+3. checkpoint EN-F00 independently;
+4. begin EN-E01 only after a separate go-ahead;
+5. build baseline variants before full animation/variant expansion; and
+6. stop at the four-direction Idle visual gate before registering or advancing
+   a family.
+
+EN-E01 contains Witch, Fallen Knight, Pirate, Necromancer, and Alchemist. It
+does not authorize all later waves. The three new Boss proposals remain blocked
+behind the current Boss review queue unless the designer explicitly changes
+priority.
 
 ## Required Reading
 
@@ -59,16 +87,20 @@ Read these completely before implementation:
 2. `ARCHITECTURE.md`
 3. `HANDOFF.md`
 4. `ROADMAP.md`
-5. `PRODUCTION_ROLL_PLAN.md`
-6. `COMPATIBLE_REROLL_PLAN.md`
-7. `OFFHAND_ITEMS_PLAN.md`
-8. `OUTLINE_RENDERING_PLAN.md`
-9. `ENEMY_OUTLINE_PLAN.md`
-10. `SHADE_RENDERING_PLAN.md`
-11. `GAME_PACK_EXPORT_PLAN.md`
-12. `DEATH_ANIMATION_PLAN.md`
-13. `WINDOWS_RELEASE.md`
-14. `death-review/boss-48-drafts/README.md`
+5. `ENEMY_EXPANSION_PLAN.md`
+6. `ENEMY_OUTLINE_PLAN.md`
+7. `OUTLINE_RENDERING_PLAN.md`
+8. `SHADE_RENDERING_PLAN.md`
+9. `PRODUCTION_ROLL_PLAN.md`
+10. `COMPATIBLE_REROLL_PLAN.md`
+11. `OFFHAND_ITEMS_PLAN.md`
+12. `GAME_PACK_EXPORT_PLAN.md`
+13. `DEATH_ANIMATION_PLAN.md`
+14. `WINDOWS_RELEASE.md`
+15. `death-review/boss-48-drafts/README.md`
+
+The order deliberately puts the active expansion authority before the
+chronological completed-lane records.
 
 ## Stable Public Actor Contract
 
@@ -86,289 +118,219 @@ Read these completely before implementation:
 - Enemy Cast aliases the matching Attack frame.
 - Enemy Death aliases Hurt frames 1, 2, 2, 2.
 - Effects start Off.
-- The legacy effect-after-character compositor remains available only as an
-  explicit preview and remains on ice for foreground shield/equipment
-  occlusion.
+- The legacy effect-after-character compositor remains an explicit optional
+  preview only; its foreground equipment occlusion rule remains on ice.
 
-The checked-in 232 PNG fixtures are still the legacy 12-column baseline. Their
-unchanged dimensions are intentional and are not evidence that the public
-runtime contract is still 12 columns.
+The 232 committed PNG fixtures are a deliberate legacy 12-column baseline.
+Their `1152x384` 4x dimensions do not change the current public 20-column
+runtime contract and must not be rewritten merely to match it.
 
-## Completed Pushed Work
+## Current Enemy And Expansion State
 
-The upstream checkpoint `d6a56c1` contains:
+- Live catalog: 57 families / 202 variants.
+- Current full public audit: 16,160 source frames.
+- None/Complete B/Selective C outline gate: 48,480 cases.
+- All existing families support approved Form shading and all three outline
+  modes with no source-edge or out-of-bounds failures.
+- The expansion projection is approximately 132 standard Enemy families / 427
+  variants if every planned slice is later approved and completed.
+- No proposed expansion family or runtime ID is currently registered.
+- Effects, projectiles, summons, telegraphs, attachments, and environment
+  states remain separate asset/runtime contracts; they are not baked into new
+  actors to make a proposal appear complete.
 
-- approved Form shading and Effects-Off default;
-- the approved Lantern utility off-hand;
-- Production Roll v1 beside the unchanged `randomPlayer()` Wildcard Roll;
-- compatible Production category rerolls;
-- the pure Wildshot game-pack v1 contract/refusal boundary;
-- approved public Player Cast and Death motion;
-- deterministic Enemy Cast and Death aliases;
-- the 20-column / `480x96` actor contract.
+## Current Boss Review State
 
-The Wildshot game-pack is not ready to emit. It still refuses without approved
-license text and a compact effect-pack contract. The deterministic writer,
-editor action, and consumer handoff slices also remain pending.
+The isolated Bosses workspace contains fourteen direction entries:
 
-## Pushed Boss Direction Checkpoint
+- twelve approved direction designs;
+- Furious Depraved Rhino's repaired quadruped direction candidate; and
+- Eclipse Unicorn Sovereign's direction candidate.
 
-Pushed commit `08d1ef7` contains nine approved 48x48 direction pilots:
-
-1. Ancient Mirejaw
-2. Bone Reliquary King
-3. Scorpion Empress
-4. Cyclops Forge-Titan
-5. Pit-Fiend Juggernaut
-6. Goblin War-Crown
-7. Lava-Core Colossus
-8. Abyssal Crown-Kraken
-9. Sun-Crown Griffin
-
-Each direction pilot has checkpoint-exact Down/Left/Right/Up frames and a
-native `48x192` hard-alpha direction sheet.
-
-The current main worktree appends the user-approved Cruel Catgirl Templar of
-the Brutes as the tenth direction pilot, followed by the user-approved Divine
-Armored Templar Astro Knight as the eleventh and the user-approved Gunslinger
-Boar Rider as the thirteenth. Furious Depraved Rhino was previously approved
-as the twelfth, but its new low quadruped redesign remains a four-direction
-candidate. Eclipse Unicorn Sovereign is the fourteenth entry and a second
-four-direction candidate.
-
-## Pushed Bosses Workspace
-
-Pushed technical checkpoint `f15a9cf` adds complete review-only animation
-corpora for six pilots:
+Ten entries have full 80-frame animation corpora. Seven are reviewed/accepted:
 
 - Ancient Mirejaw
 - Bone Reliquary King
 - Scorpion Empress
 - Cyclops Forge-Titan
 - Pit-Fiend Juggernaut
+- Cruel Catgirl Templar of the Brutes
+- Divine Armored Templar Astro Knight
+
+Three animation corpora remain candidates:
+
 - Goblin War-Crown
+- Furious Depraved Rhino
+- Gunslinger Boar Rider
 
-Each animated pilot contains:
+Lava-Core Colossus, Abyssal Crown-Kraken, and Sun-Crown Griffin remain approved
+static fallbacks; Unicorn remains a static candidate. Do not start another Boss
+animation or treat structural checks as visual acceptance. Boss state remains
+ephemeral and outside Enemy mode, the 24x24 renderer, persistence, ordinary
+packs, schemas, Production rolls, fixtures, and Windows builds.
 
-- 80 distinct 48x48 frames;
-- four directions in Down/Left/Right/Up order;
-- Idle x2, Walk x4, Attack x4, Cast x4, Hurt x2, Death x4;
-- one native `960x192` full sheet;
-- four native `960x48` direction sheets;
-- six native animation sheets;
-- exact Idle-frame-1 parity with the current direction control;
-- hard alpha and a safe transparent frame border.
+## Delivered Wildshot NPC Slice
 
-The current main worktree appends Cruel Catgirl Templar of the Brutes as the
-seventh 80-frame animation corpus and Divine Armored Templar Astro Knight as
-the eighth. Both are visually accepted. Furious Depraved Rhino is the ninth
-80-frame corpus and Gunslinger Boar Rider is the tenth; both are explicit
-animation candidates awaiting live visual review. Lava-Core Colossus, Abyssal
-Crown-Kraken, and Sun-Crown Griffin remain the three approved static
-four-direction fallbacks. Eclipse Unicorn Sovereign remains static until its
-direction design is approved.
+The completed `wildshot-npc-slice-v1@bf6269c` delivery contains 32 Player-built
+NPC looks:
 
-The Bosses UI mirrors useful Player review controls without creating a fourth
-persisted document kind:
+- 13 named roles;
+- 10 zone quest-givers; and
+- nine ambient villagers.
 
-- pilot and direction selection;
-- animation selection for the ten animated pilots;
-- play/pause, frame stepping, 0.5x/1x/2x speed, and Cycle all;
-- native 1x full-sheet, current-animation, and current-direction downloads;
-- static all-direction display/download for the three approved fallbacks.
+Artifact facts:
 
-Boss state is ephemeral. It does not enter history, presets, persistence,
-Production/Wildcard rolls, ordinary packs, Complete Kits, Wildshot game packs,
-fixtures, baselines, effects, the 24x24 procedural renderer, release artifacts,
-or Windows builds.
+- native 1x `480x96` sheets using the public 20-column contract;
+- 2,560 runtime frames across 32 full sheets;
+- Form shading, no outline, Effects Off, no baked shadow, and binary alpha;
+- 70 ZIP entries / 301,736 bytes;
+- SHA-256
+  `548e0c9608a190983ac9705b6e1c9c36f29c2390022ebe55d85dc74919c23607`;
+- consumer intake was verified and recorded by planning; and
+- manifest marks `publicGamePackRelease: false`.
 
-## Visual Review State
+The local ignored archive, contact sheet, and archive record remain under
+`dist/`. This is a delivered NPC intake artifact, not 32 new assembler catalog
+options and not the still-blocked `wildshot-assembler` public game pack.
 
-- Ancient Mirejaw, Bone Reliquary King, Scorpion Empress, and Cyclops
-  Forge-Titan were accepted after focused live review.
-- Pit-Fiend Juggernaut was repaired after review with continuous body motion
-  and a non-destructive tower-shield bash.
-- Goblin War-Crown's animation checkpoint does not gain implicit visual
-  approval from later work.
-- Cruel Catgirl Templar of the Brutes has an explicitly approved
-  four-direction design and its repaired full animation was accepted when the
-  user responded "awesome" and moved to the next boss.
-- Its weapon-depth repair keeps the ready hammer and visible gauntlet grip in
-  front; attack lifts split the hammer head behind the body while the near shaft
-  and grip stay visible in front, then the full hammer comes forward for the slam.
-- Divine Armored Templar Astro Knight has an explicitly approved
-  four-direction design: sealed celestial plate, a distinct domed helm with
-  narrow radiant T-visor, astrolabe halo, star-lance, constellation cloak, and
-  orbit shield.
-- Its isolated 80-frame animation corpus uses armored idle, heavy march,
-  shield-braced star-lance thrust, astral halo cast, radiant recoil, and staged
-  celestial collapse motion while keeping both relics in the foreground.
-- The Astro Knight animation was explicitly accepted when the user responded
-  "very good!" and moved to the next boss.
-- Furious Depraved Rhino's earlier upright brute design was accepted when the
-  user responded "very good", then explicitly reopened when the user requested
-  a more readable quadruped rhino.
-- Its current repaired direction candidate is a low, long four-legged charge
-  beast with a shoulder hump, separated front/rear hoof columns, a forward
-  head, dominant nasal horn, scarred grey hide, broken restraints, crimson
-  rage brand, and corrupted flesh patches.
-- The follow-up side-view repair reduces the profile head to the front third,
-  extends a clean shoulder/ribcage/rump and belly line, and places two
-  forelegs plus two hindlegs at four distinct horizontal positions; Right
-  remains the exact mirror of Left.
-- Gunslinger Boar Rider has an explicitly approved four-direction design: a
-  wide-brim outlaw with foregrounded twin revolvers, red bandana, split duster,
-  armored saddle, and a massive bristled boar with red eyes and paired tusks.
-- The Boar Rider directions were explicitly accepted when the user responded
-  "nice" and requested animation for the last bosses.
-- The regenerated Rhino animation candidate applies heavy breathing,
-  four-legged stamp/charge motion, a horn-led lunge, corruption roar, bright
-  recoil, and staged collapse to the quadruped controls.
-- The Boar Rider animation candidate uses mounted breathing, gallop motion,
-  dual-revolver fire/recoil, a Deadeye powder-sigil cast, mounted hurt recoil,
-  and a staged rider-and-boar collapse.
-- Eclipse Unicorn Sovereign is a new four-direction candidate: a pearl-white
-  war-unicorn with a long striped sunhorn, luminous cyan eyes, flowing violet
-  eclipse mane and tail, crescent barding, and four separated hoof columns.
-  Right is the exact horizontal mirror of Left; animation is not yet
-  authorized.
-- Both new 80-frame animation corpora are structurally integrated but remain
-  visual candidates. Goblin War-Crown also retains its unresolved
-  animation-candidate status.
-- Do not begin Lava-Core Colossus, Abyssal Crown-Kraken, or Sun-Crown Griffin
-  animation work without a new one-at-a-time approval.
+## Pack-Publish Gate And Known Compatibility Gap
 
-## Structural Validation
+Pushed checkpoint `bf6269c` adds:
 
-The focused Bosses gates pass:
+- `tools/pack-publisher.mjs`;
+- `tools/export-established-boss-pack.mjs`;
+- `tools/check-pack-publisher.mjs`;
+- `npm run check:pack-publish`; and
+- the frozen `established-boss-pack-13-v1` release identity.
 
-```powershell
-node tools/check-boss-directions.mjs
-node tools/check-boss-animations.mjs
-```
+The safety harness correctly tests dirty-tree refusal, pushed-HEAD discovery,
+remote/auth/tag readiness, and GitHub release invocation. It does **not** prove
+that the frozen roster exists in the current Boss catalogs.
 
-Current focused totals:
+The live compatibility audit found:
 
-- twelve approved direction catalogs plus Rhino and Unicorn candidates;
-- 56 checkpoint-exact 48x48 direction frames;
-- fourteen checkpoint-exact `48x192` direction sheets;
-- ten animation catalogs;
-- 800 distinct animated 48x48 frames;
-- 110 native full/scoped animation sheets;
-- exact control-frame parity;
-- hard alpha, transparent safety borders, immutable facade exports, UI wiring,
-  and dependency isolation.
+- missing direction entries: Royal Night Elf Prince, Living Pyre, Tide Man the
+  Blue, and Dryad of Nature; and
+- missing animation entries: those four plus Lava-Core Colossus, Abyssal
+  Crown-Kraken, and Sun-Crown Griffin.
 
-The full structural gate passes:
+Therefore `npm run check:pack-publish` passing does not make
+`npm run export:bosses:13` runnable or publishable. Do not invoke the publish
+command until the roster contract is reconciled and a direct roster/asset gate
+is added and passes. The already-delivered external Boss pack does not prove
+reproducibility from this mainline command.
+
+## Wildshot Public Game-Pack Boundary
+
+The pure `wildshot-assembler` v1 actor contract and Cast/Death audit are
+complete at `d6a56c1`, but the public game pack still refuses emission. It
+requires:
+
+- approved license text;
+- the compact effect frame/anchor/direction contract;
+- a deterministic writer;
+- an editor action; and
+- a consumer handoff slice.
+
+The NPC slice and frozen Boss transport do not satisfy or bypass these refusal
+conditions.
+
+## Windows Artifact State
+
+A local standalone proof executable exists at:
+
+`src-tauri/target/release/sprite-assembler.exe`
+
+It was built on 2026-08-01 from the `bf6269c` worktree state, is 5,306,880
+bytes, and has SHA-256
+`f2186000a911dff55495915c00a22df0098900b5ef491da2d489c1f92142bbd7`.
+
+It is ignored, uncommitted, not an NSIS installer, and has no recorded packaged
+smoke-test or release approval. No setup executable exists beneath
+`src-tauri/target/release/bundle/nsis/`; there is no approved Windows release
+candidate. `npm run check:release -- --require-artifact` intentionally requires
+the NSIS installer and is not satisfied by the standalone proof.
+
+## Validation Evidence For This Handoff
+
+Run from the canonical main worktree on 2026-08-02:
 
 ```powershell
 npm.cmd run check
-```
-
-Important current 20-column totals:
-
-- 6,000 weapon cases
-- 12,800 shield cases
-- 320 Lantern cases
-- 880 equipped-headgear cases
-- 480 broad Player shade-None parity cases
-- 16,160 Enemy shade-None parity cases
-- 1,616 sampled Enemy outline-parity cases
-- 2,880 Form pilot cases
-- 158,872 changed Form pixels
-- 164,685 protected source pixels
-- 35,333 material/control differences
-- 16,160 exhaustive Enemy Form cases
-- 1,616 Enemy Form/outline integration cases
-- 1,000 Production policy cases
-- 29 bounded Production fallbacks
-- 80 deterministic Production assembled-render cases
-- 4,200 compatible-reroll cases
-- 555 explicit no-compatible-alternative cases
-- 232 committed legacy fixture sheets, all still `1152x384`
-
-The current balanced Production review geometry is 19,200 source frames /
-57,600 Form-outline cases. The frozen selection corpus remains 120 Production
-results plus 120 paired Wildcard controls and retains the approved digest
-`af9b620e5ce87f6febf5983487fc163e8b5a4495fb37ced3653e8b5bbbc4ba3f`.
-
-Ignored review pages generated before Cast/Death may still embed their
-historical 12-column report totals. They are disposable evidence, not source
-documentation or accepted baselines. Regenerate them only in a writable
-review-output directory; do not rewrite fixtures or accept new baselines.
-
-Also run before any proposed checkpoint:
-
-```powershell
+npm.cmd run check:pack-publish
+npm.cmd run check:release
 git diff --check
-git status --short --branch
 ```
+
+Recorded results before commit:
+
+- full project validation passed;
+- 57 Enemy families / 202 variants;
+- 16,160 Enemy None-parity cases;
+- 3,232 Enemy Cast aliases and 3,232 Enemy Death aliases;
+- 16,160 exhaustive Enemy Form cases;
+- 12,560 repaired-Enemy frame-safety cases;
+- 232 legacy fixture sheets validated;
+- pack publisher harness passed eight assertion groups; and
+- Windows release configuration passed 35 assertions, with no NSIS installer
+  artifact found or claimed.
+
+The documentation audit additionally verifies:
+
+- all 80 proposals occur exactly once in the expansion accounting;
+- EN-F00, EN-E01 through EN-E18, and EN-B01 through EN-B03 are present;
+- the handoff names the expansion plan as the active lane authority;
+- current Boss counts match the live catalogs;
+- the NPC archive hash matches its archive record; and
+- the standalone executable hash matches the recorded value.
 
 ## Documentation Audit Result
 
-The 2026-07-28 audit corrected current-facing drift in:
+The 2026-08-02 audit covered all Required Reading documents and reconciled
+current state against Git, live catalogs, package scripts, local artifacts,
+and the planning mainline ruling.
 
-- `README.md`
-- `ARCHITECTURE.md`
-- `HANDOFF.md`
-- `ROADMAP.md`
-- `PRODUCTION_ROLL_PLAN.md`
-- `COMPATIBLE_REROLL_PLAN.md`
-- `OFFHAND_ITEMS_PLAN.md`
-- `OUTLINE_RENDERING_PLAN.md`
-- `ENEMY_OUTLINE_PLAN.md`
-- `SHADE_RENDERING_PLAN.md`
-- `GAME_PACK_EXPORT_PLAN.md`
-- `DEATH_ANIMATION_PLAN.md`
-- `WINDOWS_RELEASE.md`
+Current-facing drift was corrected in:
 
-The audit deliberately did not erase chronological evidence. Historical
-9,696 / 29,088 enemy-outline totals, 12-column shade/off-hand measurements,
-Cast-only 16-column dimensions, and earlier release checkpoints remain where
-they are clearly labeled as historical.
+- `README.md`;
+- `ARCHITECTURE.md`;
+- `HANDOFF.md`;
+- `ROADMAP.md`;
+- `PRODUCTION_ROLL_PLAN.md`;
+- `DEATH_ANIMATION_PLAN.md`;
+- `WINDOWS_RELEASE.md`; and
+- `death-review/boss-48-drafts/README.md`.
 
-`death-review/boss-48-drafts/README.md` describes the ten animated entries,
-three approved static fallbacks, the Unicorn direction candidate, the Rhino,
-Boar Rider, and Goblin animation candidates, and the isolation boundary.
+`ENEMY_EXPANSION_PLAN.md` is added as the new active planning authority. The
+remaining audited plans retain accurate completion/refusal state and clearly
+label their older branch names, 12-column measurements, or release exclusions
+as historical evidence rather than live continuation instructions.
 
 ## Frozen Boundaries
 
-Unless the user explicitly changes scope:
+Unless the designer explicitly changes scope:
 
-- do not commit or push;
-- do not build or update the executable or installer;
-- do not accept or rewrite fixtures or visual baselines;
-- do not change effects or resume the effect compositor;
-- do not route bosses through Enemy mode or the 24x24 procedural renderer;
-- do not add Boss persistence, schemas, presets, packs, recipes, Production
-  rolls, provenance, or game-pack export;
-- do not change actor geometry, component paths, stable catalog ids, animation
-  timing, or public sheet order;
-- do not start another boss animation in parallel.
+- do not begin EN-F00 or any Enemy art from plan approval alone;
+- do not pre-register unfinished families, IDs, variants, selectors, or packs;
+- do not modify the archived `wip/19-boss-review` checkout;
+- do not accept the Rhino/Unicorn direction candidates or the three animation
+  candidates without direct visual review;
+- do not start Hydra, Chimera, Roc, or another Boss animation in parallel;
+- do not resume or alter the legacy effect compositor;
+- do not bake effects, projectiles, summons, or environment states into actor
+  sheets;
+- do not rewrite fixtures or visual baselines;
+- do not invoke the incompatible 13-Boss publish command;
+- do not call the standalone executable a release candidate; and
+- do not change actor geometry, animation timing/order, stable IDs, public
+  schemas, or the 20-column sheet contract incidentally.
 
-## Exact Next Step
+## New-Chat Opening
 
-1. Refresh the live assembler and review Eclipse Unicorn Sovereign across
-   Down/Left/Right/Up at native and enlarged scale with Effects Off.
-2. If the user requests a repair, change only the Unicorn direction candidate
-   and rerun both boss gates plus `npm.cmd run check`.
-3. Do not begin its 80-frame animation corpus before explicit direction
-   approval, and do not infer approval from structural tests.
+The safest opening request for the next chat is:
 
-## Expected Worktree State
+> Read `HANDOFF.md` and `ENEMY_EXPANSION_PLAN.md`, verify clean synchronized
+> `main`, and wait for my explicit approval before implementing EN-F00.
 
-The normal-work `main` worktree is expected to be clean at the local
-crash-safe Bosses checkpoint created from base `origin/main` at `e5ecdea`. That
-checkpoint contains the approved Catgirl and Astro Knight direction/animation
-work, the repaired quadruped Furious Depraved Rhino direction/animation
-candidates, the approved Gunslinger Boar Rider directions plus animation
-candidate, and the Eclipse Unicorn Sovereign direction candidate. It is local
-until the designer separately authorizes a push.
-
-The parked checkout is expected to remain clean on `wip/19-boss-review` at
-`fb4b664`.
-
-The pushed Bosses scope consists of UI and styles, stable facade/catalog
-wiring, runtime assets beneath `engine/assets/bosses/`, focused validators and
-deterministic generators, and the audited documentation. Treat any other new
-dirty path as unexpected until explained by a fresh `git status` and diff.
+Once that approval is given, EN-F00 is the entire implementation scope. Stop
+after its validation and checkpoint; do not roll directly into EN-E01.

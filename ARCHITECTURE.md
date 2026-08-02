@@ -208,6 +208,24 @@ are later slices governed by `GAME_PACK_EXPORT_PLAN.md`.
 
 `zip.js` builds stored ZIP archives with UTF-8 paths and CRC-32 checksums. It accepts already-rendered files and has no knowledge of editor state, sprite specifications, or rendering internals.
 
+### Gated release transport
+
+`tools/pack-publisher.mjs` is an isolated GitHub-release safety boundary. It
+refuses a dirty worktree, resolves the exact pushed source commit and remote,
+checks GitHub authentication, and refuses a reused artifact tag before a
+caller may publish immutable assets. `tools/check-pack-publisher.mjs` tests
+those gates directly; it is intentionally separate from `npm run check`.
+
+`tools/export-established-boss-pack.mjs` is a frozen 13-Boss transport command,
+not an ordinary editor exporter and not part of the Wildshot actor game-pack
+contract. At `bf6269c`, its publisher gate is present but its roster is not
+compatible with the live Boss catalogs: Royal Night Elf Prince, Living Pyre,
+Tide Man the Blue, and Dryad of Nature lack direction entries, and those four
+plus Lava-Core Colossus, Abyssal Crown-Kraken, and Sun-Crown Griffin lack
+animation entries. The command is therefore not release-ready even though
+`npm run check:pack-publish` passes. Roster compatibility needs its own direct
+gate before publication is allowed.
+
 ### Editor
 
 `app.js` owns UI state, controls, animation playback and frame inspection, reset and comparison workflows, browser persistence, editable-document history, versioned named presets, character/export naming, reusable palette presets, combat-loadout recipes, equipment-batch, class-pack, and sprite-pack exports, Complete Character Kit rendering, and download behavior. It consumes sprite behavior only through the public engine facade, uses `character-kit.js` for deterministic component, enemy, effect, species, body-build, expression, hairstyle, headgear, and outfit coverage plus recipe mapping, and uses `zip.js` for packaging. History snapshots contain the active mode, assembled outline and shade treatments, player/enemy/effect specifications, active combat loadout, optional player palette, and document names, so preset loads, resets, shade changes, and saved-copy restores undo coherently while preview frame, direction, animation, cycle, speed, export-view, and comparison-copy choices remain independent. Production Roll extends history with the current effect-preview toggle and ephemeral compatible-reroll session so the resolved player, Form treatment, Effects Off, class, power tier, and palette family round-trip as one undoable action; ordinary editable, preset, comparison, persistence, and export snapshots remain unchanged. Thirteen supported Player groups expose an explicit secondary compatible action, while the existing arrows remain unrestricted category Wildcards. Armor routes to one semantic power-tier action; the pure combined left-hand category is not exposed as an ambiguous extra editor control. Category Wildcards and manual edits retain known context, whole-character Wildcard and Player document replacement clear it, and no-alternative results create no history entry. Enemy and Effect modes expose no compatible controls. The optional sanitized comparison snapshot persists locally with editor state but does not enter document history unless it is restored into the editor. The shade selector is rendered for Player and Enemies and hidden for Effects; effects neither receive Form nor overwrite the retained Player/Enemy shade choice. New and reset Player/Enemy editor documents use Form, while the engine option still defaults to None and missing/invalid shade metadata in versioned legacy presets, packs, and recipes migrates to None to preserve stored artwork.
@@ -383,6 +401,12 @@ For face-bound content, verify front and both side views, confirm the rear view 
 2. Add its procedural drawing function and dispatch in `engine/renderer.js`.
 3. Export and register every fixture.
 4. Verify all directions and animations before publishing.
+
+For the proposed 80-enemy expansion, this legacy one-family path is not the
+starting instruction. Follow `ENEMY_EXPANSION_PLAN.md`: explicitly authorize
+and complete EN-F00's data-driven expansion facade first, keep unfinished
+families out of public selectors and packs, then stop for four-direction
+baseline approval before registering each production slice.
 
 ### Change the sheet contract
 

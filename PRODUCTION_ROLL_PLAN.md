@@ -14,13 +14,18 @@ The plan is intentionally separate from rendering, sprite-sheet geometry,
 approved outlines and Form shading, the deferred effect compositor, fixtures,
 baselines, and release artifacts.
 
-## Current checkpoint
+## Historical lane checkpoint and current integration
 
-- Workspace: `C:\Users\headc\.codex\worktrees\9f24\8-bit sprite assembler`
-- Branch: `codex/form-shading`
+- The original implementation worktree was
+  `C:\Users\headc\.codex\worktrees\9f24\8-bit sprite assembler` on
+  `codex/form-shading`.
 - Approved Production Roll policy/review/editor checkpoint: `aa77666`
-  (`Add production roll workflow`)
-- `aa77666` is committed and pushed to `origin/codex/form-shading`.
+  (`Add production roll workflow`).
+- That development line is fully merged into `main` and archive-tagged as
+  `archive/codex/form-shading`; neither the worktree nor the deleted remote
+  branch is a continuation target.
+- Normal work now happens in
+  `C:\Users\headc\Documents\8-bit-sprite-assembler-main` on `main`.
 - `npm.cmd run check` passes 1,000 Production policy cases in addition to the
   full existing project matrix, including 29 bounded-fallback cases and 80
   deterministic integration render cases.
@@ -35,7 +40,8 @@ baselines, and release artifacts.
   rebuilt.
 - Slices 0-6 are complete and approved. Final Production checkpoint `108b2bb`
   is followed by compatible pure-policy checkpoint `a571b1e` and final
-  compatible editor/documentation checkpoint `b7eae05`.
+  compatible editor/documentation checkpoint `b7eae05`; all are ancestors of
+  the consolidated mainline.
 - Remaining deferred follow-ups remain separately unauthorized.
 
 ## Executive assessment

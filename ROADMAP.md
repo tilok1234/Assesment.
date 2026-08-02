@@ -105,27 +105,29 @@ Exit criteria:
 
 Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
 
-Current continuation checkpoint (2026-07-28): the complete 57-family
-enemy-outline rollout remains visually approved. Its historical 12-column
-checkpoint `ac860aa` covered 9,696 source frames / 29,088 None-B-C cases; the
-current 20-column Cast/Death contract extends the structural gate to 16,160 /
-48,480 cases. Form shading, Lantern, Production Roll, compatible category
-rerolls, and the public Cast/Death actor contract are complete. Pushed
-checkpoint `d6a56c1` is followed by pushed boss-direction checkpoint
-`08d1ef7` and pushed animated-workspace checkpoint `f15a9cf`, with six
-animated 48x48 pilots plus three approved static fallbacks. The main worktree
-now also carries Cruel Catgirl Templar of the Brutes as a user-approved
-direction design and seventh full-animation corpus; its repaired animation is
-now accepted. Divine Armored Templar Astro Knight follows as the eighth
-accepted full-animation corpus. Furious Depraved Rhino now carries repaired
-quadruped direction and animation candidates. Gunslinger Boar Rider has
-approved directions plus a separate animation candidate. Eclipse Unicorn
-Sovereign is the next isolated static direction candidate, while Goblin
-War-Crown retains its unresolved animation-candidate status. Existing None
-fixtures remain unchanged, effects
-start Off, the
-effect-after-character shield/equipment occlusion issue remains on ice, and no
-current Windows release build exists. See `HANDOFF.md`.
+Current continuation checkpoint (2026-08-02): `main` is synchronized with
+`origin/main` at `bf6269c` before this documentation checkpoint. The complete
+57-family / 202-variant Enemy catalog remains visually approved; its current
+20-column gate covers 16,160 source frames / 48,480 None-B-C cases. Form
+shading, Lantern, Production Roll, compatible category rerolls, and the public
+Cast/Death actor contract are complete. The isolated Boss workspace contains
+fourteen direction entries (twelve approved plus Rhino and Unicorn candidates)
+and ten animation entries. Catgirl Templar and Astro Knight are accepted;
+Goblin War-Crown, Rhino, and Boar Rider animations remain candidates, as do
+the repaired Rhino and Unicorn direction designs.
+
+The deterministic `wildshot-npc-slice-v1@bf6269c` delivery contains 32
+Player-built NPC looks and was verified by the game intake. The approved
+`ENEMY_EXPANSION_PLAN.md` now decomposes 80 additional proposals into EN-F00,
+eighteen standard Enemy slices, and three separately blocked Boss micro-slices;
+it is planning-only and authorizes no implementation. The latest pushed source
+also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
+gate, but its frozen roster currently lacks four direction and seven animation
+catalog entries, so the command is not release-ready. Existing fixtures remain
+unchanged, Effects start Off, and the effect-after-character equipment
+occlusion issue remains on ice. A local standalone executable exists from
+`bf6269c`, but no NSIS installer or approved Windows release candidate exists.
+See `HANDOFF.md`.
 
 The first fresh content slice after that checkpoint adds the visually approved
 Lantern through a separate public non-shield `offhand` field. Shields and
@@ -257,11 +259,12 @@ also pending.
 The thirty-third Phase 5 slice is an isolated 48x48 Bosses review lane. Nine
 four-direction pilots are pushed at `08d1ef7`; six full 20-column animation
 corpora plus three static fallbacks are pushed at technical checkpoint
-`f15a9cf`. The Bosses workspace is ephemeral and native-1x-only, with no
-connection to Enemy mode, production renderers, persistence, packs, fixtures,
-release artifacts, or Windows builds. The six-boss structural gate passes 480
-distinct frames and 66 native sheets. Goblin War-Crown remains the current
-visual-review candidate, so the pushed checkpoint must not be described as
+`f15a9cf`. At that checkpoint the Bosses workspace is ephemeral and
+native-1x-only, with no connection to Enemy mode, production renderers,
+persistence, ordinary packs, fixtures, or Windows builds. The later frozen
+Boss-pack transport remains a separate gated lane. The six-boss structural
+gate passes 480 distinct frames and 66 native sheets. Goblin War-Crown remains
+the current visual-review candidate, so the pushed checkpoint must not be described as
 final visual acceptance. The later Cruel Catgirl Templar of the Brutes
 direction design was explicitly approved, and its seventh 80-frame animation
 corpus was accepted after its foreground-grip and attack-lift depth repair.
@@ -286,7 +289,9 @@ Candidate additions:
 - More melee, ranged, and magical weapons (first eight-weapon expansion and complete Tier 2/Tier 3/Tier 4/Tier 5 progression finished)
 - Additional off-hand items beyond the completed Lantern, such as spell foci; quivers require a separate back-slot plan rather than the held-item topology
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
-- Additional enemy families and variants
+- Additional enemy families and variants only through the approved planning
+  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-F00 is the first
+  authorization candidate and no family art is started implicitly
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 
@@ -298,10 +303,10 @@ Progress: active. The release lane has native Save dialogs for every PNG, JSON,
 and ZIP export, final product metadata and icons, a current-user NSIS target
 with an embedded WebView2 bootstrapper, a release-specific validator, and a
 versioned GitHub draft-release workflow. Historical installer and standalone
-smoke tests passed their earlier checkpoints. No existing executable or
-installer was built and approved from pushed actor-contract checkpoint
-`d6a56c1` or pushed Bosses checkpoint `f15a9cf`, so none is a release
-candidate for this branch. Full NSIS
+smoke tests passed their earlier checkpoints. A new local standalone proof was
+built from the `bf6269c` worktree state on 2026-08-01, but it has no recorded
+packaged smoke approval and is not an installer. No NSIS setup executable
+currently exists, so there is still no approved release candidate. Full NSIS
 install/uninstall testing, code signing, and automatic updates remain deferred
 until a stable distribution identity and a deliberate release checkpoint
 exist.

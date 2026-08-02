@@ -91,7 +91,8 @@ This work does not:
 - change renderers outside the guarded Player Death path;
 - change component paths, fixtures, approved baselines, effects behavior,
   release artifacts, or Windows builds;
-- commit or push.
+- commit or push the isolated pilot before visual approval; the approved
+  public integration was later checkpointed at `d6a56c1`.
 
 ## Approval Gate
 

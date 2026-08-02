@@ -200,6 +200,11 @@ power tier and palette family, 80 deterministic assembled export frames, and
 resolved-player compatibility with existing class, batch, Complete Kit,
 preset, pack, and schema boundaries.
 
+Run `npm run check:pack-publish` separately for the GitHub release-transport
+safety harness. It proves clean-tree, pushed-HEAD, remote, authentication, tag,
+and release-call behavior; it does not validate the frozen 13-Boss roster or
+make that currently incompatible export command release-ready.
+
 Run `npm run review:shades` to regenerate the ignored interactive Form pilot
 beneath `shade-review/`. It compares untreated output, a silhouette-only
 control, Form without outlines, Form with Complete B, and Form with Selective C
@@ -331,6 +336,17 @@ frames 1, 2, 2, 2 during Death. Approved license text and the compact per-effect
 frame/anchor/direction contract are still required before the first valid game
 pack can be emitted.
 
+### Wildshot NPC slice status
+
+The separately delivered `wildshot-npc-slice-v1@bf6269c` contains 32
+Player-built NPC looks: 13 named roles, 10 zone quest-givers, and nine ambient
+villagers. Its native 1x sheets use Form, no outline, Effects Off, hard alpha,
+and the public 20-column `480x96` actor contract. The deterministic archive has
+SHA-256
+`548e0c9608a190983ac9705b6e1c9c36f29c2390022ebe55d85dc74919c23607`.
+It is an NPC intake artifact, not 32 new Player catalog options and not the
+still-blocked public `wildshot-assembler` game pack.
+
 ## Complete Character Kits
 
 Use **Download Complete Character Kit** in Player mode to export one `8-bit-sprite-assembler-complete-character-kit` archive containing the entire reusable player library:
@@ -375,9 +391,15 @@ without adding Boss to the persisted sprite document.
 The other three approved bosses and the Eclipse Unicorn Sovereign candidate
 remain static four-direction entries. All boss assets remain effects-off and
 outside Enemy mode, procedural renderers, production rolls, presets,
-character/game packs, fixtures, baselines, release artifacts, and Windows
-builds. Ancient Mirejaw, Bone Reliquary King, Scorpion Empress, and Cyclops
-Forge-Titan were accepted in live review; Pit-Fiend Juggernaut was repaired
+ordinary character/game packs, fixtures, baselines, and Windows builds.
+The separately frozen `established-boss-pack-13-v1` transport is the only
+exception, and it does not authorize ordinary Boss integration. At `bf6269c`,
+its clean-tree/pushed-HEAD/GitHub-release gate is tested, but the command is not
+ready to run against `main`: four frozen roster ids lack direction catalogs and
+seven lack animation catalogs. Do not publish it until roster compatibility is
+reconciled and directly tested. Ancient Mirejaw, Bone Reliquary King,
+Scorpion Empress, and Cyclops Forge-Titan were accepted in live review;
+Pit-Fiend Juggernaut was repaired
 after live review. Cruel Catgirl Templar of the Brutes is accepted after its
 foreground-grip and attack-lift depth repair. Divine Armored Templar Astro
 Knight is accepted after its sealed-helmet direction repair and full motion
@@ -433,29 +455,29 @@ awaits explicit visual approval before any animation work.
 - `engine/` - focused animation, palette, player-option, enemy, production-roll, Wildshot game-pack contract, combat-loadout and combat-effect rendering, equipment-variant and RPG-class planning, humanoid weapon, shield, and utility-off-hand renderers, shared pixel-buffer, assembled-output shade/outline coordination, sheet, and generator modules
 - `engine/catalogs/boss-directions.js`, `engine/catalogs/boss-animations.js`,
   and `engine/assets/bosses/` - immutable review-only boss direction and
-  eight-pilot animation profiles plus checkpoint-exact runtime PNGs
+  ten-pilot animation profiles plus checkpoint-exact runtime PNGs
 - `asset-pack/` - validated enemy and example player sheets
 - `tools/dev-server.mjs` - dependency-free local development server
 - `tools/build.mjs` - dependency-free production build
 - `tools/check-project.mjs` - project and asset validator
 - `tools/check-boss-directions.mjs` - focused boss asset, immutability, facade,
   native-sheet, and dependency-boundary gate
-- `tools/check-boss-animations.mjs` - focused 640-frame eight-boss corpus,
+- `tools/check-boss-animations.mjs` - focused 800-frame ten-boss corpus,
   full/scoped-sheet, control-frame, immutability, UI, and isolation gate
-- `tools/generate-mirejaw-animation-v1.py`,
-  `tools/generate-bone-king-animation-v1.py`,
-  `tools/generate-scorpion-empress-animation-v1.py`,
-  `tools/generate-cyclops-forge-titan-animation-v1.py`,
-  `tools/generate-pit-fiend-juggernaut-animation-v1.py`,
-  `tools/generate-goblin-war-crown-animation-v1.py`, and
-  `tools/generate-cruel-catgirl-templar-animation-v1.py` - deterministic
-  authored-pose generators for the seven review/runtime animation pilots
+- `tools/generate-*-animation-v1.py` - deterministic authored-pose generators
+  for all ten review/runtime animation pilots
+- `tools/pack-publisher.mjs`, `tools/export-established-boss-pack.mjs`, and
+  `tools/check-pack-publisher.mjs` - isolated release-transport gate, frozen
+  Boss-pack command, and direct gate harness; the current roster mismatch is
+  documented above and in `HANDOFF.md`
 - `tools/production-roll-review.mjs` - deterministic balanced Production/Wildcard review and audit generator
 - `src-tauri/` - Tauri 2 Windows wrapper, permissions, CSP, and icon resources
 - `ARCHITECTURE.md` - engine boundaries, dependency direction, and safe extension points
 - `ROADMAP.md` - agreed development and Windows release order
 - `HANDOFF.md` - exact branch, validation, known gaps, and continuation state
 - `ENEMY_OUTLINE_PLAN.md` - completed 57-family outline rollout record
+- `ENEMY_EXPANSION_PLAN.md` - approved planning-only decomposition of the 80
+  proposed Enemy additions into gated production slices
 - `SHADE_RENDERING_PLAN.md` - canonical completed shade design and approval gates
 - `OFFHAND_ITEMS_PLAN.md` - approved Lantern pilot, public contract, validation, and future off-hand boundaries
 - `PRODUCTION_ROLL_PLAN.md` - completed Production-versus-Wildcard policy, review, approval, editor integration, and compatibility gates

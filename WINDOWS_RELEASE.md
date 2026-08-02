@@ -1,9 +1,14 @@
 # Windows release guide
 
-Current artifact status (2026-07-28): no Windows executable or installer has
-been built and approved from pushed actor-contract checkpoint `d6a56c1` or
-pushed Bosses checkpoint `f15a9cf`. Existing binaries are historical and must
-not be represented as a current Cast/Death/boss build.
+Current artifact status (2026-08-02): a local standalone proof executable was
+built on 2026-08-01 from the `bf6269c` main-worktree state at
+`src-tauri/target/release/sprite-assembler.exe`. It is 5,306,880 bytes with
+SHA-256
+`f2186000a911dff55495915c00a22df0098900b5ef491da2d489c1f92142bbd7`.
+It is not committed, not a distributable NSIS installer, and has no recorded
+packaged smoke-test or release approval. No NSIS setup executable currently
+exists under `src-tauri/target/release/bundle/nsis/`, so there is still no
+approved Windows release candidate.
 
 The Windows edition packages the same production frontend and procedural engine used by the browser build. Packaging does not freeze the content catalog: outfits, hairstyles, headgear, weapons, enemies, effects, and templates can still be changed normally, then included by rebuilding the application.
 
@@ -31,6 +36,8 @@ The distributable setup executable is written beneath `src-tauri/target/release/
 For a quick standalone executable without building an installer, use `npm run tauri:build:exe`.
 
 The standalone executable and NSIS installer are separate artifacts. Rebuilding one does not update the other. After any frontend or renderer change, verify the artifact timestamp and hash and run `npm run check:release`; an existing installer passing structural validation does not prove that it embeds the latest `dist/` build.
+The `--require-artifact` release check specifically requires an NSIS setup
+executable; the standalone proof executable does not satisfy that release gate.
 
 ## Packaged smoke test
 

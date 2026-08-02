@@ -42,11 +42,18 @@ nearest-neighbor scaling.
 ## Explicitly not integrated
 
 These pilots are not entries in the enemy catalog, do not use the production
-24x24 renderer, and are not part of persistence, game-pack exports, fixtures,
-baselines, release artifacts, or Windows builds. Their immutable
-`boss-directions-v1` and `boss-animation-v1` path catalogs are review-surface
-contracts only. Sharing the 20-column animation names/counts does not route
-either boss through the Player renderer or sheet builder.
+24x24 renderer, and are not part of persistence, ordinary game-pack exports,
+fixtures, baselines, or Windows builds. Their immutable `boss-directions-v1`
+and `boss-animation-v1` path catalogs are review-surface contracts only.
+Sharing the 20-column animation names/counts does not route a boss through the
+Player renderer or sheet builder.
+
+The separately frozen `established-boss-pack-13-v1` release-transport command
+is the only export exception. It is not ordinary Boss integration and does not
+include newer review candidates. At `bf6269c`, its publish-safety harness
+passes but the command is not runnable against the live catalogs because four
+frozen roster ids lack direction entries and seven lack animation entries.
+Do not publish it until that compatibility gap has a direct gate and passes.
 
 The runtime copies live beneath `engine/assets/bosses/`. Run
 `node tools/check-boss-directions.mjs` to prove byte parity, dimensions, hard
