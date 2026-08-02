@@ -38,7 +38,7 @@ export {
   WEAPONS,
   WEAPON_TIERS,
 } from './engine/catalogs.js';
-export { drawSprite } from './engine/renderer.js';
+export { drawPublicSprite, drawPublicSprite as drawSprite, isPublicEnemyExpansionSpec } from './engine/public-renderer.js';
 export { drawOutlinedSprite, enemySupportsOutline, ENEMY_OUTLINE_PILOT_FAMILIES, normalizeAssembledOutlineMode, normalizeOutlineMode, OUTLINE_COLOR, OUTLINE_LAYER_ORDER, OUTLINE_MODE_COMPLETE_B, OUTLINE_MODE_NONE, OUTLINE_MODE_SELECTIVE_C, OUTLINE_MODES } from './engine/outline-renderer.js';
 export { drawAssembledSprite, normalizeShadeMode, SHADE_MODE_FORM, SHADE_MODE_NONE, SHADE_MODES } from './engine/shade-renderer.js';
 export { buildAnimationSheet, buildDirectionSheet, buildSheet, thumbURL } from './engine/sheets.js';
@@ -63,5 +63,6 @@ export {
 export { applyClassTemplate, buildClassPack, CLASS_PACK_FORMAT, CLASS_PACK_VERSION, CLASS_TEMPLATES, DEFAULT_CLASS_TEMPLATE } from './engine/class-templates.js';
 export { auditProductionRollCatalogs, auditProductionRollClassTemplates, normalizeProductionRollSeed, PRODUCTION_PALETTE_FAMILIES, PRODUCTION_ROLL_FREEZE, PRODUCTION_ROLL_MAX_ATTEMPTS, PRODUCTION_ROLL_PROFILE, PRODUCTION_ROLL_REASON_CODES, rollProductionPlayer, validateProductionPlayer } from './engine/production-rolls.js';
 export { PRODUCTION_COMPATIBLE_REROLL_CATEGORIES, PRODUCTION_COMPATIBLE_REROLL_POLICY, rerollProductionPlayerCategory } from './engine/production-rerolls.js';
-export { auditWildshotGamePackRuntime, buildWildshotGamePackManifest, serializeWildshotGamePackManifest, validateWildshotGamePackExport, WILDSHOT_GAME_PACK_ACTOR_CATEGORIES, WILDSHOT_GAME_PACK_EFFECT_CATEGORIES, WILDSHOT_GAME_PACK_POLICY } from './engine/game-pack.js';
-export { buildEnemyExpansionLedgerReport, buildEnemyExpansionReviewPlan, createEnemyExpansionRegistry, ENEMY_EXPANSION_LEDGER, ENEMY_EXPANSION_PROFILE, ENEMY_EXPANSION_REGISTRY, ENEMY_EXPANSION_STATES, renderEnemyExpansionFrame, validateEnemyExpansionSheet } from './engine/enemy-expansion-public.js';
+export { auditWildshotGamePackRuntime, serializeWildshotGamePackManifest, validateWildshotGamePackExport, WILDSHOT_GAME_PACK_ACTOR_CATEGORIES, WILDSHOT_GAME_PACK_EFFECT_CATEGORIES, WILDSHOT_GAME_PACK_POLICY } from './engine/game-pack.js';
+export { buildWildshotGamePackManifest } from './engine/public-game-pack.js';
+export { buildEnemyExpansionLedgerReport, buildEnemyExpansionReviewPlan, createEnemyExpansionRegistry, ENEMY_EXPANSION_LEDGER, ENEMY_EXPANSION_PROFILE, ENEMY_EXPANSION_REGISTRY, ENEMY_EXPANSION_STATES, PUBLIC_ENEMIES, renderEnemyExpansionFrame, validateEnemyExpansionSheet } from './engine/enemy-expansion-public.js';

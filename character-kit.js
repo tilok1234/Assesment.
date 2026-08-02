@@ -1,7 +1,6 @@
 import {
   BODY_BUILDS,
   COMBAT_EFFECTS,
-  ENEMIES,
   EXPRESSIONS,
   FACIAL_DETAILS,
   HAIR_COLORS,
@@ -15,6 +14,7 @@ import {
   SHIELD_TIERS,
   SKINS,
   SPECIES,
+  PUBLIC_ENEMIES,
   WEAPONS,
   WEAPON_TIERS,
 } from './sprite-engine.js';
@@ -905,7 +905,7 @@ function buildHeadgearComponents() {
 }
 
 function buildEnemyLibrary() {
-  return ENEMIES.map((family) => ({
+  return PUBLIC_ENEMIES.map((family) => ({
     family: family.id,
     name: family.name,
     variants: family.variants.map((variant) => ({
@@ -954,8 +954,8 @@ export function completeCharacterKitCounts() {
   const offhandLayers = (OFFHANDS.length - 1) * 2;
   const componentPngs = skinBodies + heads + hair + expressions + faceDetails + speciesBack + speciesFront + outfitFront + outfitBack
     + headgear + weaponLayers + shieldLayers + offhandLayers;
-  const enemyFamilies = ENEMIES.length;
-  const enemySheets = ENEMIES.reduce((total, family) => total + family.variants.length, 0);
+  const enemyFamilies = PUBLIC_ENEMIES.length;
+  const enemySheets = PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
   const effectCategories = COMBAT_EFFECTS.length;
   const effectSheets = COMBAT_EFFECTS.reduce((total, category) => total + category.effects.length, 0);
   return {

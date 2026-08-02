@@ -1,7 +1,7 @@
 // Sprite-sheet assembly and thumbnail generation.
 
 import { ANIMS, DIRS, SHEET_COLS, SIZE } from './catalogs.js';
-import { drawSprite } from './renderer.js';
+import { drawPublicSprite as drawSprite } from './public-renderer.js';
 import { drawAssembledSprite } from './shade-renderer.js';
 
 function drawSheetFrame(context, spec, direction, animationId, frame, options) {

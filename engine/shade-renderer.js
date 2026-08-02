@@ -27,7 +27,7 @@ import {
   paintPixels,
   renderSpritePixels,
 } from './pixel-buffer.js';
-import { drawSprite } from './renderer.js';
+import { drawPublicSprite as drawSprite } from './public-renderer.js';
 
 export const SHADE_MODE_NONE = 'none';
 export const SHADE_MODE_FORM = 'form';

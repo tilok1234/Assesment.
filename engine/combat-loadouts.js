@@ -1,4 +1,5 @@
-import { COMBAT_EFFECTS, ENEMIES } from './catalogs.js';
+import { COMBAT_EFFECTS } from './catalogs.js';
+import { PUBLIC_ENEMIES } from './enemy-expansion-public.js';
 
 export const COMBAT_LOADOUT_FORMAT = '8-bit-sprite-assembler-combat-loadout';
 export const COMBAT_LOADOUT_VERSION = 1;
@@ -66,12 +67,13 @@ function keywordEnemyProfile(familyId, variantId) {
 }
 
 function enemyProfile(spec) {
-  const family = ENEMIES.find((item) => item.id === spec.family) || ENEMIES[0];
+  const family = PUBLIC_ENEMIES.find((item) => item.id === spec.family) || PUBLIC_ENEMIES[0];
   const variant = family.variants.find((item) => item.id === spec.variant) || family.variants[0];
   const elemental = keywordEnemyProfile(family.id, variant.id);
+  const actor = variant.actor || variant;
   if (elemental) return elemental;
-  if (variant.weapon && variant.weapon !== 'none') return weaponProfile(variant.weapon, variant.shield || 'none');
-  if (variant.shield && variant.shield !== 'none') return weaponProfile('none', variant.shield);
+  if (actor.weapon && actor.weapon !== 'none') return weaponProfile(actor.weapon, actor.shield || 'none');
+  if (actor.shield && actor.shield !== 'none') return weaponProfile('none', actor.shield);
   if (venomEnemyFamilies.has(family.id)) return profile(null, 'poison-glob', 'blood-hit');
   if (spectralEnemyFamilies.has(family.id)) return profile(null, 'shadow-shot', 'arcane-burst');
   if (heavyEnemyFamilies.has(family.id)) return profile('hammer-smash', null, 'armor-impact');

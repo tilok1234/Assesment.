@@ -1,5 +1,5 @@
 import { SIZE } from './catalogs.js';
-import { drawSprite } from './renderer.js';
+import { drawPublicSprite as drawSprite } from './public-renderer.js';
 
 export function isTransparentPixel(value) {
   return value === null || value === undefined;

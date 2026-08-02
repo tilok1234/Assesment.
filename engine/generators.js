@@ -3,7 +3,6 @@
 import {
   BODY_BUILDS,
   COMBAT_EFFECTS,
-  ENEMIES,
   EXPRESSIONS,
   FACIAL_DETAILS,
   HAIR_COLORS,
@@ -20,6 +19,7 @@ import {
   WEAPONS,
   WEAPON_TIERS,
 } from './catalogs.js';
+import { PUBLIC_ENEMIES } from './enemy-expansion-public.js';
 
 // ---------------- random + naming ----------------
 const rnd = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -49,7 +49,7 @@ export function randomPlayer() {
   };
 }
 export function randomEnemy() {
-  const fam = rnd(ENEMIES);
+  const fam = rnd(PUBLIC_ENEMIES);
   return { family: fam.id, variant: rnd(fam.variants).id };
 }
 export function randomEffect() {

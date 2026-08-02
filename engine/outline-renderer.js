@@ -6,7 +6,7 @@ import {
   renderLayerPixels,
   renderSpritePixels,
 } from './pixel-buffer.js';
-import { drawSprite } from './renderer.js';
+import { drawPublicSprite as drawSprite } from './public-renderer.js';
 
 export const OUTLINE_MODE_NONE = 'none';
 export const OUTLINE_MODE_COMPLETE_B = 'complete-b';

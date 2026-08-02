@@ -73,8 +73,10 @@ checkSyntax('engine/enemy-expansion.js');
 checkSyntax('engine/enemy-expansion-en-e01.js');
 checkSyntax('engine/enemy-expansion-humanoid.js');
 checkSyntax('engine/enemy-expansion-public.js');
+checkSyntax('engine/public-renderer.js');
 checkSyntax('engine/class-templates.js');
 checkSyntax('engine/game-pack.js');
+checkSyntax('engine/public-game-pack.js');
 checkSyntax('engine/production-rolls.js');
 checkSyntax('engine/production-rerolls.js');
 checkSyntax('engine/variant-batches.js');
@@ -97,6 +99,7 @@ checkSyntax('tools/check-enemy-expansion.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e01.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e01-full.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e01-registration.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e01-consumers.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-full-review.mjs');
 checkSyntax('tools/enemy-expansion-review-pixels.mjs');
@@ -155,6 +158,14 @@ const enemyExpansionEnE01RegistrationCheck = spawnSync(process.execPath, [path.j
 check(
   enemyExpansionEnE01RegistrationCheck.status === 0,
   `EN-E01 public registration gate failed\n${enemyExpansionEnE01RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE01RegistrationCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE01ConsumerCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e01-consumers.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE01ConsumerCheck.status === 0,
+  `EN-E01 consumer integration gate failed\n${enemyExpansionEnE01ConsumerCheck.stdout.trim()}\n${enemyExpansionEnE01ConsumerCheck.stderr.trim()}`,
 );
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
@@ -256,7 +267,7 @@ const expectedEngineExports = [
   'OFFHANDS', 'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
   'OUTLINE_MODE_COMPLETE_B', 'OUTLINE_MODE_NONE', 'OUTLINE_MODE_SELECTIVE_C',
   'PRODUCTION_COMPATIBLE_REROLL_CATEGORIES', 'PRODUCTION_COMPATIBLE_REROLL_POLICY',
-  'PRODUCTION_PALETTE_FAMILIES', 'PRODUCTION_ROLL_FREEZE', 'PRODUCTION_ROLL_MAX_ATTEMPTS',
+  'PRODUCTION_PALETTE_FAMILIES', 'PRODUCTION_ROLL_FREEZE', 'PRODUCTION_ROLL_MAX_ATTEMPTS', 'PUBLIC_ENEMIES',
   'PRODUCTION_ROLL_PROFILE', 'PRODUCTION_ROLL_REASON_CODES',
   'SHADE_MODES', 'SHADE_MODE_FORM', 'SHADE_MODE_NONE',
   'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
@@ -266,8 +277,8 @@ const expectedEngineExports = [
   'auditWildshotGamePackRuntime', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildEnemyExpansionLedgerReport',
   'buildEnemyExpansionReviewPlan', 'buildSheet',
   'buildVariantBatch', 'buildWildshotGamePackManifest',
-  'combatLoadoutEffectSpecs', 'createEnemyExpansionRegistry', 'defaultCombatLoadout', 'describe', 'drawAssembledSprite', 'drawOutlinedSprite', 'drawSprite',
-  'enemySupportsOutline', 'normalizeAssembledOutlineMode', 'normalizeOutlineMode', 'normalizeShadeMode',
+  'combatLoadoutEffectSpecs', 'createEnemyExpansionRegistry', 'defaultCombatLoadout', 'describe', 'drawAssembledSprite', 'drawOutlinedSprite', 'drawPublicSprite', 'drawSprite',
+  'enemySupportsOutline', 'isPublicEnemyExpansionSpec', 'normalizeAssembledOutlineMode', 'normalizeOutlineMode', 'normalizeShadeMode',
   'normalizeProductionRollSeed', 'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout',
   'renderEnemyExpansionFrame', 'rerollProductionPlayerCategory', 'rollProductionPlayer', 'sanitizeCombatLoadout',
   'serializeWildshotGamePackManifest', 'thumbURL', 'validateEnemyExpansionSheet', 'validateProductionPlayer', 'validateWildshotGamePackExport',
@@ -918,12 +929,12 @@ check(
 );
 check(
   completeKitPlan.counts.componentPngs === 1912
-    && completeKitPlan.counts.enemyFamilies === 57
-    && completeKitPlan.counts.enemySheets === 202
+    && completeKitPlan.counts.enemyFamilies === 62
+    && completeKitPlan.counts.enemySheets === 217
     && completeKitPlan.counts.effectCategories === 4
     && completeKitPlan.counts.effectSheets === 24
-    && completeKitPlan.counts.totalPngs === 2139,
-  'complete character kits must contain 1912 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
+    && completeKitPlan.counts.totalPngs === 2154,
+  'complete character kits must contain 1912 content-unique components, 217 public enemies, 24 synchronized effects, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
@@ -974,7 +985,7 @@ check(
   'Tier 5 shield components must collapse the four artifact passes whose colors are fully overwritten',
 );
 const completeEnemyEntries = completeKitPlan.enemies.flatMap((family) => family.variants);
-check(completeKitPlan.enemies.length === 57 && completeEnemyEntries.length === 202, 'complete kits must plan every enemy family and variation');
+check(completeKitPlan.enemies.length === 62 && completeEnemyEntries.length === 217, 'complete kits must plan every public enemy family and variation');
 check(
   completeKitPlan.enemies.every((family) => family.variants.every((entry) => (
     entry.file === `enemies/${family.family}/${entry.id}.png`
@@ -1013,7 +1024,7 @@ const completeKitPaths = [
   ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 2139, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 2154, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 const lanternKitPlan = characterKit.buildCompleteCharacterKitPlan([{
   id: 'lantern-bearer',
