@@ -135,8 +135,9 @@ registries directly. Registration checkpoint `b43ed6a` proves all 1,200 public
 frames are pixel-identical to the reviewed candidate; consumer checkpoint
 `e0be273` proves the editor/export adapter retains that parity. The later
 presentation integration exhaustively verifies the same 1,200 raw frames plus
-3,600 outline and 3,600 Form/outline assembled cases; exact visual acceptance
-of those optional treatments remains separate from registry approval.
+3,600 outline and 3,600 Form/outline assembled cases. The designer accepted the
+live combined treatment on 2026-08-02; registry approval and raw-pixel identity
+remain separate contracts.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the

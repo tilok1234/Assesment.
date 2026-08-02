@@ -245,8 +245,9 @@ Approved implementation and registration evidence:
   presentation extension also exhausts 3,600 None/B/C outline cases and 3,600
   Form-with-outline cases, resolves all 90 EN-E01 renderer palette colors,
   records 74,029 source-owned shade changes, and preserves 69,090 protected
-  pixels plus all outline geometry. These are technical gates; exact live-editor
-  visual acceptance of the optional presentation remains a separate decision.
+  pixels plus all outline geometry. The designer accepted the exact live
+  Witch/Hexer Complete B + Form presentation on 2026-08-02 and then authorized
+  continuation into the next contract-first step.
 
 ### EN-E02 - Humanoid culture variants
 

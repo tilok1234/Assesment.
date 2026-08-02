@@ -110,8 +110,8 @@ Idle/Walk/Attack/Cast/Hurt/Death contract extends the same approved lane to
 The focused EN-E01 presentation gate adds 1,200 raw source frames / 3,600
 None-B-C outline cases, with 104,085 Complete B and 82,647 Selective C contour
 pixels added without changing source-owned pixels. Technical validation is
-complete; visual sign-off for this EN-E01 presentation extension remains a
-separate live-editor review.
+complete, and the designer accepted the live Witch/Hexer Complete B + Form
+presentation on 2026-08-02 before advancing to EN-E02 planning.
 
 The optional shared assembled-sprite shade pass in
 [SHADE_RENDERING_PLAN.md](SHADE_RENDERING_PLAN.md) has an explicitly approved

@@ -8,8 +8,8 @@ This is the canonical new-chat continuation for the 8-bit Sprite Assembler.
 EN-E01's completed-slice review and bounded public registration are complete;
 its explicitly authorized consumer integration is also complete. The current
 consumer branch additionally carries the authorized optional outline/Form
-presentation extension, with exhaustive technical validation complete and live
-visual sign-off still separate. No next production lane starts implicitly. This handoff records the accepted EN-F00
+presentation extension, with exhaustive technical validation and live visual
+approval complete on 2026-08-02. No next production lane starts implicitly. This handoff records the accepted EN-F00
 foundation, approved/public 15-variant EN-E01 slice, 62-family / 217-variant
 public consumer catalog, unchanged legacy Enemy corpus, shipped NPC artifact,
 local Windows proof, and unresolved EN-E02, Boss, and publisher boundaries.
@@ -109,8 +109,8 @@ using each variant's published renderer palette ramps. Raw/None output remains
 pixel-identical to the approved registry. The focused consumer gate exhausts
 3,600 outline and 3,600 Form/outline cases across all 1,200 frames; it records
 74,029 source-owned Form changes while preserving 69,090 protected pixels and
-all added outline geometry. This technical result is not a claim of designer
-visual acceptance for the new optional presentation.
+all added outline geometry. The designer accepted the live Witch/Hexer
+Complete B + Form result on 2026-08-02 before authorizing continuation.
 
 EN-E01 does not authorize all later waves. The three new Boss proposals remain
 blocked behind the current Boss review queue unless the designer explicitly
@@ -171,8 +171,7 @@ runtime contract and must not be rewritten merely to match it.
   EN-E01 extension adds 3,600 source-preserving outline cases.
 - All 62 public families support Form shading and all three outline modes at the
   assembled-output boundary with no source ownership or outline-geometry
-  failures; EN-E01's exact optional presentation still awaits live visual
-  sign-off.
+  failures; EN-E01's exact optional presentation is visually approved.
 - The expansion projection is approximately 132 standard Enemy families / 427
   variants if every planned slice is later approved and completed.
 - The frozen EN-E01 candidate registry retains five internal families / 15
