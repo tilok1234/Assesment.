@@ -1,6 +1,8 @@
 import { createHash } from 'node:crypto';
 import * as engine from '../sprite-engine.js';
 import {
+  ENEMY_EXPANSION_PRE_REPAIR_REGISTRY,
+  ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY,
   ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE,
   ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY,
 } from '../engine/enemy-expansion-repairs.js';
@@ -78,18 +80,21 @@ function footAlpha(rendered) {
   return Array.from(rendered.alpha.slice(start, end)).join('');
 }
 
-check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'awaiting-designer-approval', 'repair gate must remain pending explicit designer approval');
+check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved', 'repair gate must record explicit designer approval');
 check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.authorizedOn === '2026-08-03', 'repair gate must record the authorization date');
+check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.approvedOn === '2026-08-03', 'repair gate must record the approval date');
 check(JSON.stringify(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.affectedFamilies) === JSON.stringify(affectedFamilies), 'repair gate affected-family scope drifted');
 check(Object.isFrozen(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE), 'repair gate must be immutable');
 check(Object.isFrozen(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.affectedFamilies), 'repair gate affected-family scope must be deeply immutable');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'generic consumers must use the repair candidate');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'repair consumer review must not replace approved evidence');
+check(ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'approved repair must alias the exact reviewed candidate object');
+check(engine.ENEMY_EXPANSION_REGISTRY === ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY, 'stable registry must use the exact approved repair object');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'generic consumers must use the stable approved repair registry');
+check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_PRE_REPAIR_REGISTRY, 'approved repair must remain distinct from pre-repair comparison evidence');
 check(Object.isFrozen(ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY), 'repair registry must be immutable');
 check(ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY.publicFamilies.length === 10, 'repair registry must retain all ten approved families');
 
 let actualChangedVariants = 0;
-for (const stableFamily of engine.ENEMY_EXPANSION_REGISTRY.families) {
+for (const stableFamily of ENEMY_EXPANSION_PRE_REPAIR_REGISTRY.families) {
   const repairFamily = ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY.families.find((family) => family.id === stableFamily.id);
   check(Boolean(repairFamily), stableFamily.id + ' is missing from the repair registry');
   if (!repairFamily) continue;
@@ -109,11 +114,11 @@ for (const stableFamily of engine.ENEMY_EXPANSION_REGISTRY.families) {
 check(actualChangedVariants === changedVariants.size, 'repair registry must change exactly 18 variant renderer records');
 
 for (const familyId of ['alchemist', 'pirate', 'plague-doctor']) {
-  const stableFamily = engine.ENEMY_EXPANSION_REGISTRY.families.find((family) => family.id === familyId);
+  const stableFamily = ENEMY_EXPANSION_PRE_REPAIR_REGISTRY.families.find((family) => family.id === familyId);
   for (const variant of stableFamily.variants) {
     for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
       for (let frame = 0; frame < animation.frames; frame++) {
-        const stable = capture(engine.ENEMY_EXPANSION_REGISTRY, familyId, variant.id, direction, animation.id, frame);
+        const stable = capture(ENEMY_EXPANSION_PRE_REPAIR_REGISTRY, familyId, variant.id, direction, animation.id, frame);
         const repaired = capture(ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, familyId, variant.id, direction, animation.id, frame);
         check(stable.digest === repaired.digest, familyId + '/' + variant.id + '/' + direction + '/' + animation.id + '/' + frame + ' drifted outside repair scope');
       }
@@ -236,7 +241,8 @@ if (errors.length) {
 }
 
 console.log('Enemy expansion repair validation passed.');
-console.log('- Stable approved registry preserved: 10 families / 30 variants');
+console.log('- Approved repair registry promoted: 10 families / 30 variants');
+console.log('- Pre-repair registry preserved as immutable comparison evidence');
 console.log('- Repair renderer-data changes: 18 variants across 7 affected families');
 console.log('- Deterministic affected-family frames: ' + validatedFrames);
 console.log('- Walk checks: alternating stride extremes with at least three foot-contact silhouettes');

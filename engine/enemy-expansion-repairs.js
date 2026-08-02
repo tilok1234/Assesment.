@@ -75,7 +75,7 @@ function repairRendererData(familyId, variant) {
 function repairFamily(family) {
   const review = cloneData(family.review);
   if (REPAIR_FAMILIES.has(family.id)) {
-    review.notes += ' Isolated ' + REPAIR_ID + ' consumer candidate; prior approved pixels remain in the stable registry.';
+    review.notes += ' Approved ' + REPAIR_ID + ' correction; pre-repair pixels remain in the internal comparison registry.';
   }
   return {
     ...cloneData(family),
@@ -87,12 +87,22 @@ function repairFamily(family) {
   };
 }
 
+export const ENEMY_EXPANSION_PRE_REPAIR_REGISTRY = createEnemyExpansionRegistry({
+  renderers: EN_E01_PUBLIC_REGISTRY.renderers,
+  families: [
+    ...EN_E01_PUBLIC_REGISTRY.families,
+    ...EN_E02_PUBLIC_REGISTRY.families,
+  ],
+});
+
 export const ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE = deepFreeze({
   id: REPAIR_ID,
-  status: 'awaiting-designer-approval',
+  status: 'approved',
   authorizedOn: '2026-08-03',
+  approvedOn: '2026-08-03',
+  approvalEvidence: 'Designer accepted the live Complete B + Form Walk review: nice thats better lets keep going.',
   affectedFamilies: REPAIR_FAMILY_IDS,
-  scope: 'Repair reported walk readability and enclosed transparency seams while retaining the approved EN-E01/EN-E02 registry as immutable comparison evidence.',
+  scope: 'Accept the reviewed walk-readability and enclosed-transparency repairs while retaining the pre-repair EN-E01/EN-E02 registry as immutable comparison evidence.',
   exclusions: ['EN-E03', 'new families', 'new variants', 'external effects', 'release acceptance'],
 });
 
@@ -103,3 +113,5 @@ export const ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY = createEnemyExpansionReg
     ...EN_E02_PUBLIC_REGISTRY.families.map(repairFamily),
   ],
 });
+
+export const ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY = ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY;

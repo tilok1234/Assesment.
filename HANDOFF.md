@@ -11,13 +11,14 @@ are also complete. EN-E02's common Idle, completed slice, registration at
 `7b6e448`, and consumer integration at `8ab1837` are complete. On 2026-08-03 the
 designer reopened seven family presentations for narrow walk/seam corrections:
 Catfolk, Desert Raider, Fallen Knight, Fanatic Monk, Goatfolk, Necromancer, and
-Witch. The stable approved registry remains exact historical evidence; the live
-consumer path now carries an isolated repair candidate awaiting explicit visual
-approval. No later production lane starts implicitly. This handoff records the
-accepted EN-F00 foundation, ten approved EN-E01/EN-E02 families / 30 variants,
-the unchanged 67-family / 232-variant public catalog, the separated repair lane,
-unchanged legacy Enemy corpus, frozen pre-registration evidence, shipped NPC
-artifact, local Windows proof, and unresolved Boss and publisher boundaries.
+Witch. The designer accepted that exact candidate on 2026-08-03 and authorized
+continuation. The repaired registry is now the stable/public result, while the
+pre-repair registry remains immutable internal comparison evidence. EN-E03
+contract cards plus common-only Idle are the current bounded lane. This handoff
+records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02 families / 30
+variants, the unchanged 67-family / 232-variant public catalog, unchanged legacy
+Enemy corpus, frozen pre-registration evidence, shipped NPC artifact, local
+Windows proof, and unresolved Boss and publisher boundaries.
 
 ## Canonical Workspace And Git State
 
@@ -87,7 +88,7 @@ Expected state around this checkpoint: clean `codex/en-f00` at `73ad73a`;
 `codex/en-e02` containing the approved common-Idle/completed-slice evidence,
 the frozen 15-variant candidate snapshot, registration checkpoint `7b6e448`,
 clone-safe artifact gate `be44af7`, and consumer implementation checkpoint
-`8ab1837`, plus pending repair-candidate checkpoint `6400dd5`;
+`8ab1837`, plus visually approved repair checkpoint `6400dd5`;
 and `main` still equal to `origin/main` at
 verified base `f5476a2`. Do not modify, clean, reset, rebase, or repurpose the
 archived review checkout.
@@ -104,13 +105,14 @@ archived review checkout.
 - 75 new standard families, one Ghoul upgrade, one two-proposal Armor merge,
   and three Boss candidates.
 
-The current stop point is explicit designer acceptance of the seven-family
-EN-E01/EN-E02 repair candidate. The previously approved common Idle and
-completed-slice pixels remain exact in `ENEMY_EXPANSION_REGISTRY`. The isolated
-consumer candidate changes 18 renderer-data records to add real foot strides,
+The seven-family EN-E01/EN-E02 repair is explicitly approved. The accepted
+registry changes exactly 18 renderer-data records to add real foot strides,
 replace Catfolk's white pseudo-transparent mouth band, and close the reported
-Desert Raider, Fallen Knight, and Goatfolk checkerboard seams. Separate effects,
-release, approved-registry promotion, and later slices remain unauthorized.
+Desert Raider, Fallen Knight, and Goatfolk checkerboard seams. The pre-repair
+pixels remain exact in an internal comparison registry. The current stop point
+is EN-E03 contract cards plus common-only four-direction Idle for Giant, Centaur,
+and Satyr; later motion, variants, registration, effects, and release remain
+unauthorized.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -122,9 +124,9 @@ Alchemist. All variants render through one shared humanoid handler and implement
 the standard 20-column Enemy contract in Down, Left, Right, and Up. The EN-E01
 slice registry contains all five families / 15 variants. The cumulative stable
 approved registry now contains EN-E01 plus EN-E02 at ten families / 30 variants.
-The consumer catalog retains those exact IDs and counts, but this isolated
-branch routes the pending repair registry for live review while keeping the
-approved registry separately addressable.
+The consumer catalog retains those exact IDs and counts and routes the approved
+repair registry. The pre-repair registry remains separately addressable only as
+historical regression evidence.
 
 The designer approved exact Idle PNG SHA-256
 `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`
@@ -209,17 +211,17 @@ runtime contract and must not be rewritten merely to match it.
   EN-E01/EN-E02 extension adds 7,200 source-preserving outline cases.
 - All 67 public families support Form shading and all three outline modes at the
   assembled-output boundary with no source ownership or outline-geometry
-  failures. EN-E01/EN-E02 consumer integration is accepted historically; the
-  later seven-family repair presentation awaits designer acceptance.
+  failures. EN-E01/EN-E02 consumer integration and the later seven-family
+  repair presentation are explicitly accepted.
 - The expansion projection is approximately 132 standard Enemy families / 427
   variants if every planned slice is later approved and completed.
 - The frozen EN-E01 candidate registry retains five internal families / 15
   reviewed variants as pre-registration evidence.
 - The stable approved expansion registry exposes exactly ten EN-E01/EN-E02
-  families / 30 variants.
-- The live consumer expansion registry currently uses the isolated ten-family /
-  30-variant repair candidate; the stable approved registry remains immutable
-  comparison evidence with exact historical pixels.
+  families / 30 variants using the accepted repair pixels.
+- The live consumer expansion registry is the exact same stable object; the
+  internal pre-repair registry preserves the historical pixels for regression
+  comparison.
 - The frozen EN-E02 Idle registry retains five approved common baselines / 40
   exact Idle frames; the separate pre-registration candidate registry contains
   five immutable implemented-snapshot families / 15 variants / 1,200 frames.
@@ -229,9 +231,9 @@ runtime contract and must not be rewritten merely to match it.
 - The immutable `PUBLIC_ENEMIES` catalog appends the consumer-integrated
   EN-E01/EN-E02 families to the unchanged legacy entries and is the source for
   editor selectors, randomization, kits, packs, thumbnails, and exports.
-- Approved EN-E01/EN-E02 frames retain their reviewed raw pixels in the stable
-  registry. The repair candidate is separate and the assembled-output boundary
-  applies the same shared Form/outline algorithms to either registry.
+- Approved EN-E01/EN-E02 frames now include the exact accepted repair pixels in
+  the stable registry. The internal pre-repair comparison uses the same shared
+  Form/outline algorithms without entering public consumers.
 - The complete legacy 20-column corpus retains SHA-256 pixel digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Effects, projectiles, summons, telegraphs, attachments, and environment
@@ -498,9 +500,10 @@ Recorded EN-F00, EN-E01, and current EN-E02 results:
   thumbnails, all export scopes, 2,400/2,400 adapter frames, 30/30 native full
   sheets, 7,200 source-preserving None/B/C outline cases, and 7,200
   deterministic Form/outline cases with all 180 renderer palette colors
-  resolved. The stable approved aggregate remains 207,162 Complete B pixels,
-  164,487 Selective C pixels, 174,917 source-owned Form changes, and 146,687
-  protected pixels. The repair consumer aggregate is 207,356 Complete B,
+  resolved. The historical pre-repair aggregate remains 207,162 Complete B
+  pixels, 164,487 Selective C pixels, 174,917 source-owned Form changes, and
+  146,687 protected pixels. The accepted stable/consumer repair aggregate is
+  207,356 Complete B,
   163,843 Selective C, 175,878 Form changes, and 145,528 protected pixels;
 - `check:enemy-expansion-repairs` passes 1,680 affected-family frames, exactly
   18 authorized renderer-data changes, alternating stride extremes, at least
@@ -514,9 +517,9 @@ Recorded EN-F00, EN-E01, and current EN-E02 results:
 - the full project validator passes with all existing catalog, renderer,
   outline, Form-shade, Cast/Death alias, equipment, Boss, 232-fixture, pack,
   and release-configuration gates unchanged; and
-- no legacy fixture, approved visual baseline, schema version, Boss asset,
-  release artifact, archived review payload, or stable approved EN-E01/EN-E02
-  source pixel is modified; the repair remains a separate consumer candidate.
+- no legacy fixture, schema version, Boss asset, release artifact, or archived
+  review payload is modified; only the exact visually accepted repair registry
+  replaces the pre-repair registry at the stable/public boundary.
 
 ## Documentation Audit Result
 
@@ -549,8 +552,10 @@ Unless the designer explicitly changes scope:
 - preserve the merged 67-family / 232-variant `PUBLIC_ENEMIES` consumer
   boundary without mutating the locked legacy `ENEMIES` array;
 - do not pre-register unfinished families, IDs, variants, selectors, or packs;
-- do not promote or record acceptance of the seven-family repair candidate, or
-  advance to EN-E03, without an explicit designer response to the live review;
+- preserve the approved seven-family repair registry and its pre-repair
+  comparison evidence;
+- limit EN-E03 to contract cards plus common-only four-direction Idle until the
+  designer explicitly approves that exact review artifact;
 - do not modify the archived `wip/19-boss-review` checkout;
 - do not accept the Rhino/Unicorn direction candidates or the three animation
   candidates without direct visual review;
@@ -568,15 +573,14 @@ Unless the designer explicitly changes scope:
 
 The safest opening request for the next chat is:
 
-> EN-E01 and EN-E02 are approved, registered, and consumer-integrated. A
-> 2026-08-03 repair candidate corrects Catfolk, Desert Raider, Fallen Knight,
-> Fanatic Monk, Goatfolk, Necromancer, and Witch while preserving the exact
-> stable approved registry. Verify the clean synced branch and 67/232 public
-> boundary, then open the repair boards/live Walk preview with Complete B + Form
-> and wait for explicit designer acceptance before promotion or EN-E03.
+> EN-E01 and EN-E02 are approved, registered, consumer-integrated, and include
+> the visually accepted 2026-08-03 seven-family repair. Verify the clean synced
+> branch and exact 67/232 stable/public boundary, then continue only with EN-E03
+> contract cards and common-only four-direction Idle for Giant, Centaur, and
+> Satyr. Generate the exact review artifact and wait for explicit designer
+> approval before later variants, motion, registration, effects, or release.
 
-EN-F00, EN-E01, and EN-E02 are approved. The stable registry contains ten
-EN-E01/EN-E02 families / 30 variants with exact reviewed pixels. The live
-consumer registry carries an isolated repair of the same IDs/counts through 67
-public families / 232 variants. Repair acceptance, effects, release, and EN-E03
-are not authorized implicitly.
+EN-F00, EN-E01, EN-E02, and the seven-family repair are approved. The stable and
+consumer registries are the same ten-family / 30-variant repaired object through
+67 public families / 232 variants; the pre-repair pixels remain internal
+evidence. Only EN-E03 contract cards plus common-only Idle are authorized next.

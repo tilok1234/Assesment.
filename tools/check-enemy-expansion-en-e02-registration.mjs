@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import * as engine from '../sprite-engine.js';
 import {
+  ENEMY_EXPANSION_PRE_REPAIR_REGISTRY,
   ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE,
   ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY,
 } from '../engine/enemy-expansion-repairs.js';
@@ -120,9 +121,9 @@ check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 10, 'the stable 
 check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 1, 'the composed approved registry must deduplicate the shared renderer');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed approved registry must be immutable');
 
-check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'awaiting-designer-approval', 'the repair consumer boundary must remain explicitly pending visual approval');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the consumer boundary must expose the isolated repair candidate');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'the repair candidate must not overwrite the exact approved registry');
+check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved', 'the repair boundary must record explicit visual approval');
+check(engine.ENEMY_EXPANSION_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the stable registry must expose the exact approved repair candidate');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the consumer boundary must expose the exact stable approved registry');
 check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 10, 'consumer routing must contain the ten approved EN-E01/EN-E02 families');
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 check(engine.PUBLIC_ENEMIES.length === 67 && publicVariants === 232, 'the later consumer gate must expose the 67-family / 232-variant catalog');
@@ -166,7 +167,7 @@ for (const card of EN_E02_CONTRACT_CARDS) for (const variantBrief of card.varian
   for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
     for (let frame = 0; frame < animation.frames; frame++) {
       const candidate = captureEnemyExpansionFrame(EN_E02_CANDIDATE_REGISTRY, spec, direction, animation.id, frame, engine.SIZE);
-      const registered = captureEnemyExpansionFrame(engine.ENEMY_EXPANSION_REGISTRY, spec, direction, animation.id, frame, engine.SIZE);
+      const registered = captureEnemyExpansionFrame(ENEMY_EXPANSION_PRE_REPAIR_REGISTRY, spec, direction, animation.id, frame, engine.SIZE);
       const prefix = [card.id, variantBrief.id, direction, animation.id, frame].join('/');
       check(registered.digest === candidate.digest, prefix + ' registered pixels differ from the reviewed candidate');
       check(registered.alphaDigest === candidate.alphaDigest, prefix + ' registered alpha differs from the reviewed candidate');

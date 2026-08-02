@@ -10,7 +10,10 @@ import {
   EN_E02_CONTRACT_CARDS,
   EN_E02_IDLE_GATE,
 } from '../engine/enemy-expansion-en-e02.js';
-import { ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY } from '../engine/enemy-expansion-repairs.js';
+import {
+  ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE,
+  ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY,
+} from '../engine/enemy-expansion-repairs.js';
 import {
   captureEnemyExpansionFrame,
   encodeRgbaPng,
@@ -348,7 +351,9 @@ for (const card of EN_E02_CONTRACT_CARDS) for (const variant of card.variantBrie
 const report = {
   format: 'enemy-expansion-full-review-v1',
   sliceId: 'EN-E02',
-  state: repairCandidate ? 'repair-candidate-awaiting-designer-approval' : 'full-production-candidate',
+  state: repairCandidate
+    ? (ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved' ? 'approved-repair' : 'repair-candidate-awaiting-designer-approval')
+    : 'full-production-candidate',
   approvedIdleGate: EN_E02_IDLE_GATE,
   fullFrameDigest,
   counts: {
@@ -367,7 +372,7 @@ const report = {
 };
 await writeFile(path.join(output, 'en-e02-full-review.json'), JSON.stringify(report, null, 2) + '\n');
 
-console.log('Generated EN-E02 ' + (repairCandidate ? 'repair-candidate' : 'full-production') + ' review evidence.');
+console.log('Generated EN-E02 ' + (repairCandidate ? 'approved-repair' : 'full-production') + ' review evidence.');
 console.log('- Overview: ' + posix(path.relative(root, path.join(output, overviewName))) + ' (' + overviewWidth + 'x' + overviewHeight + ')');
 console.log('- Presentation: ' + posix(path.relative(root, path.join(output, presentationName))) + ' (' + presentationWidth + 'x' + presentationHeight + ')');
 console.log('- Family motion reviews: 5');

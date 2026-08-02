@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import * as engine from '../sprite-engine.js';
 import {
+  ENEMY_EXPANSION_PRE_REPAIR_REGISTRY,
   ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE,
   ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY,
 } from '../engine/enemy-expansion-repairs.js';
@@ -171,9 +172,10 @@ check(
   engine.PUBLIC_ENEMIES.slice(-10).every((family, index) => family === engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies[index]),
   'the public consumer catalog must use the stable registry public-family view',
 );
-check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'awaiting-designer-approval', 'the consumer repair candidate must remain explicitly pending visual approval');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'generic consumers must route through the isolated repair candidate');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'generic repair review must not mutate the approved comparison registry');
+check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved', 'the consumer repair boundary must record explicit visual approval');
+check(engine.ENEMY_EXPANSION_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the stable registry must route through the exact approved repair candidate');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'generic consumers must route through the stable approved registry');
+check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_PRE_REPAIR_REGISTRY, 'pre-repair comparison evidence must remain isolated from generic consumers');
 
 const appSource = await readFile(path.join(root, 'app.js'), 'utf8');
 check(!appSource.includes('E.ENEMIES'), 'editor enemy sanitization and selectors must not remain on the legacy-only catalog');
@@ -280,7 +282,7 @@ try {
             engine.SIZE,
           );
           const stableReviewed = captureEnemyExpansionFrame(
-            engine.ENEMY_EXPANSION_REGISTRY,
+            ENEMY_EXPANSION_PRE_REPAIR_REGISTRY,
             spec,
             direction,
             animation.id,
@@ -467,13 +469,13 @@ try {
 check(frameCount === 2400, 'consumer integration must verify all 2,400 approved EN-E01/EN-E02 frames');
 check(sheetCount === 30, 'consumer integration must verify all 30 approved EN-E01/EN-E02 full sheets');
 check(outlineModeCases === 7200, 'consumer integration must verify 7,200 EN-E01/EN-E02 None/B/C frame cases');
-check(stableCompleteOutlinePixels === 207162, 'Complete B aggregate changed across the stable approved EN-E01/EN-E02 corpus');
-check(stableSelectiveOutlinePixels === 164487, 'Selective C aggregate changed across the stable approved EN-E01/EN-E02 corpus');
+check(stableCompleteOutlinePixels === 207162, 'Complete B aggregate changed across the historical pre-repair EN-E01/EN-E02 corpus');
+check(stableSelectiveOutlinePixels === 164487, 'Selective C aggregate changed across the historical pre-repair EN-E01/EN-E02 corpus');
 check(completeOutlinePixels === 207356, 'repair-candidate Complete B aggregate drifted');
 check(selectiveOutlinePixels === 163843, 'repair-candidate Selective C aggregate drifted');
 check(shadeModeCases === 7200, 'consumer integration must verify Form with all 3 outline modes across 7,200 frame cases');
-check(stableShadeChangedPixels === 174917, 'Form shading aggregate changed across the stable approved EN-E01/EN-E02 corpus');
-check(stableProtectedShadePixels === 146687, 'Form protected-pixel coverage changed across the stable approved EN-E01/EN-E02 corpus');
+check(stableShadeChangedPixels === 174917, 'Form shading aggregate changed across the historical pre-repair EN-E01/EN-E02 corpus');
+check(stableProtectedShadePixels === 146687, 'Form protected-pixel coverage changed across the historical pre-repair EN-E01/EN-E02 corpus');
 check(shadeChangedPixels === 175878, 'repair-candidate Form shading aggregate drifted');
 check(protectedShadePixels === 145528, 'repair-candidate Form protected-pixel coverage drifted');
 check(expansionPaletteColors === 180, 'Form shading must resolve all published EN-E01/EN-E02 renderer palette colors');
@@ -487,8 +489,8 @@ if (errors.length) {
 console.log('EN-E01/EN-E02 consumer integration validation passed.');
 console.log('- Legacy catalog: 57 families / 202 variants (unchanged)');
 console.log('- Public consumer catalog: 67 families / 232 variants');
-console.log('- Repair-candidate adapter parity: 2,400 / 2,400 frames');
-console.log('- Stable approved outline/Form aggregates: preserved');
+console.log('- Approved-repair adapter parity: 2,400 / 2,400 frames');
+console.log('- Historical pre-repair outline/Form aggregates: preserved');
 console.log('- Native expansion sheets: 30 / 30 at 480x96');
 console.log(`- EN-E01/EN-E02 None/B/C outline cases: ${outlineModeCases.toLocaleString('en-US')}`);
 console.log(`- Added outline pixels: ${completeOutlinePixels.toLocaleString('en-US')} Complete B / ${selectiveOutlinePixels.toLocaleString('en-US')} Selective C`);

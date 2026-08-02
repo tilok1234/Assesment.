@@ -5,10 +5,11 @@
   checkpoint `7b6e448` composes both slices into the stable ten-family /
   30-variant approved registry, and consumer checkpoint `8ab1837` established
   the 67-family / 232-variant public catalog. On 2026-08-03 the designer
-  reopened seven specific family presentations for walk/seam repair. The
-  approved registry remains immutable comparison evidence while an isolated
-  consumer repair candidate at checkpoint `6400dd5` awaits explicit visual
-  approval
+  reopened seven specific family presentations for walk/seam repair. The exact
+  repair candidate at checkpoint `6400dd5` was visually approved on 2026-08-03
+  and promoted without further pixel changes; the pre-repair registry remains
+  immutable comparison evidence. EN-E03 common-only Idle is now the authorized
+  next gate
 - Recorded: 2026-08-03
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -53,8 +54,10 @@ scope; exhaustive technical validation and the live Plague Doctor / Field
 Chirurgeon Complete B + Form smoke passed and the designer continued. On
 2026-08-03 the designer reported narrow defects in Catfolk, Desert Raider,
 Fallen Knight, Fanatic Monk, Goatfolk, Necromancer, and Witch. That report
-authorizes only the bounded repair candidate described below; it does not
-authorize EN-E03, separate effects, release, or acceptance of the new pixels.
+authorized only the bounded repair candidate described below. The designer then
+accepted the exact live candidate with “nice thats better” and authorized the
+next documented step. That continuation authorizes EN-E03 contract cards plus
+common-only Idle, not later motion, variants, registration, effects, or release.
 
 ## Intake Assessment
 
@@ -89,9 +92,9 @@ below.
   review call remains unresolved, unless the designer explicitly reprioritizes.
 - `complete`: art, animation, validation, and visual approval are all done.
 
-EN-E01 and EN-E02 remain historically complete through their accepted consumer
-presentations. Their isolated seven-family walk/seam correction is currently an
-`acceptance-candidate`; the repair does not rewrite the stable approved registry.
+EN-E01 and EN-E02 remain complete through their accepted consumer presentations.
+Their isolated seven-family walk/seam correction is also approved and promoted;
+the pre-repair registry remains available only as immutable comparison evidence.
 
 ## Non-Negotiable Production Contract
 
@@ -271,7 +274,7 @@ Approved implementation and registration evidence:
   `0b38f2737b5215d37a08e0ae3f7e25f82e88bb17a97641e33b0ee9ef9c0e8fb7`.
   Internal native/4x inspection accepted the completed slice at that checkpoint;
   later live review reopened Witch, Fallen Knight, and Necromancer for the
-  bounded repair candidate without rewriting this historical artifact; and
+  now-approved bounded repair without rewriting this historical artifact; and
 - `npm.cmd run check:enemy-expansion-en-e01-registration` proves five approved
   families / 15 public variants, 15 complete sheets, stable-facade routing,
   the current three-approved/zero-implemented/nineteen-planned ledger state,
@@ -293,8 +296,8 @@ Approved implementation and registration evidence:
 - Status: `approved-consumer-integrated`; common-only Idle and exact
   completed-slice artifacts are visually approved, bounded registration
   completed at `7b6e448`, and consumer integration is implemented at `8ab1837`.
-  A later seven-family correction spanning EN-E01/EN-E02 is a separate
-  `acceptance-candidate`
+  The later seven-family correction spanning EN-E01/EN-E02 is visually approved
+  and promoted at the stable/public boundary
 - Families: Plague Doctor, Desert Raider, Fanatic Monk, Catfolk, Goatfolk
 
 Shared leverage: EN-E01 humanoid poses plus masks, wrapped cloth, martial robes,
@@ -408,8 +411,8 @@ Isolated repair-candidate evidence (2026-08-03):
 
 - implementation checkpoint `6400dd5` (`Create enemy walk and seam repair
   candidate`) contains the bounded candidate and its regression harness;
-- `ENEMY_EXPANSION_REGISTRY` still renders the exact approved EN-E01/EN-E02
-  pixels and retains both locked 1,200-frame digests;
+- the internal `ENEMY_EXPANSION_PRE_REPAIR_REGISTRY` retains the exact prior
+  EN-E01/EN-E02 pixels and both locked 1,200-frame digests;
 - `ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY` changes exactly 18 renderer-data
   records across the seven reported families while leaving Alchemist, Pirate,
   and Plague Doctor pixel-identical across all 720 unaffected frames;
@@ -427,15 +430,20 @@ Isolated repair-candidate evidence (2026-08-03):
   and `50310c36ca165cf7ccd941183a5e087cec2fcb5140068e99ab7e24633d6096d5`;
   and
 - the live assembler exercises all four Walk frames at 20x with Complete B
-  outline and Form shading for every reported family.
+  outline and Form shading for every reported family; and
+- the designer accepted that exact live candidate with “nice thats better” and
+  authorized continuation. The exact reviewed object is now both the stable and
+  consumer registry; the pre-repair registry remains internal.
 
-Stop at explicit designer acceptance of this repair candidate. Do not promote
-its pixels into the approved registry, add separate effects, release the slice,
-or start EN-E03 without the next explicit gate.
+The repair gate is complete. EN-E03 contract cards and common-only Idle may now
+begin. Do not implement EN-E03 specialist/elite variants, Walk/Attack/Hurt,
+registration, consumer routing, separate effects, or release work before the
+new exact Idle review is explicitly approved.
 
 ### EN-E03 - Large and hybrid walkers
 
-- Status: `queued`
+- Status: `idle-authorized`; contract cards plus common-only four-direction
+  Idle may be implemented for review, with all later production still gated
 - Families: Giant, Centaur, Satyr
 - Priority-first: Giant, Centaur
 
@@ -742,14 +750,14 @@ The EN-E01 authorized production sequence is complete:
    effect boundaries; and
 4. focused all-variant/all-animation evidence has been generated and inspected.
 
-EN-E01/EN-E02 completed-slice approval, bounded registration, and consumer
-integration are recorded. Registration checkpoint `7b6e448` and the stable
-registry preserve all reviewed pixels; consumer checkpoint `8ab1837` established
-the generic 67/232 boundary. The current consumer branch intentionally routes an
-isolated correction while retaining the stable registry as exact comparison.
-The next gate is the designer's explicit acceptance or rejection of the seven-
-family repair boards/live Walk view. Do not promote the correction, add separate
-effect assets, release it, or start EN-E03 without that explicit decision.
+EN-E01/EN-E02 completed-slice approval, bounded registration, consumer
+integration, and the later seven-family repair approval are recorded.
+Registration checkpoint `7b6e448` and consumer checkpoint `8ab1837` established
+the generic 67/232 boundary; the exact repair pixels from `6400dd5` are now the
+stable/public result, with the pre-repair registry retained internally. The next
+gate is explicit review of EN-E03 common-only four-direction Idle for Giant,
+Centaur, and Satyr. Do not add later motion, variants, registration, separate
+effect assets, or release work before that decision.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -758,4 +766,4 @@ stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
 Again, this recommendation does not authorize implementation beyond the current
-EN-E01/EN-E02 repair-acceptance boundary.
+EN-E03 common-only Idle review boundary.
