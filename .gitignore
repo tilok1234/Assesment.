@@ -11,6 +11,7 @@ offhand-review/
 production-roll-review/
 cast-review/
 death-review/
+enemy-expansion-review/
 src-tauri/gen/
 src-tauri/target/
 *.log

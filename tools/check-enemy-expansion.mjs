@@ -70,8 +70,8 @@ check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the built-in expansion 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport();
 check(ledgerReport.counts.slices === 22, 'the expansion ledger must contain EN-F00, EN-E01..18, and EN-B01..03');
 check(ledgerReport.counts.proposals === 80, 'the expansion ledger must account for all 80 intake proposals');
-check(ledgerReport.counts.implemented === 1, 'only EN-F00 may report implemented in this slice');
-check(ledgerReport.counts.approved === 0, 'EN-F00 implementation must not claim final approval');
+check(ledgerReport.counts.implemented === 1, 'EN-E01 must be the only implemented expansion slice at its Idle visual gate');
+check(ledgerReport.counts.approved === 1, 'accepted EN-F00 must be the only approved expansion slice');
 check(ledgerReport.counts.publicFamilies === 0, 'planned content must never be reported as shipped');
 check(Object.isFrozen(ledgerReport) && Object.isFrozen(ledgerReport.slices), 'the expansion ledger report must be deeply immutable');
 
@@ -225,7 +225,7 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('Enemy expansion foundation validation passed.');
+console.log('Enemy expansion foundation validation passed at the EN-E01 Idle gate.');
 console.log(`- Legacy families: ${legacy.families}`);
 console.log(`- Legacy sheets: ${legacy.sheets}`);
 console.log(`- Legacy frames: ${legacy.frames}`);

@@ -65,7 +65,7 @@ Sprite-rendering consumers import `sprite-engine.js`. Internal engine module pat
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
 
-### Enemy expansion foundation
+### Enemy expansion foundation and private candidates
 
 `engine/enemy-expansion.js` is the pure EN-F00 boundary. It owns the immutable
 `enemy-expansion-v1` frame/baseline profile, the 22-slice/80-proposal lifecycle
@@ -78,11 +78,19 @@ filesystem, or editor state.
 The built-in expansion registry deliberately contains no families or renderer
 handlers. The legacy `ENEMIES` array remains unchanged and continues to be the
 only catalog consumed by selectors, randomization, kits, packs, and exports.
-Planned families cannot enter the registry; implemented entries remain
-internal; only an explicitly approved registration can appear in its public
-family view. A later authorized production slice supplies actual renderer
-handlers and family definitions without extending the legacy renderer's
-family-id conditional chain.
+Planned families cannot enter a registry; implemented entries remain internal;
+only an explicitly approved registration can appear in a public family view.
+
+The authorized EN-E01 Idle candidate lives behind that boundary.
+`engine/enemy-expansion-en-e01.js` owns five immutable contract cards and a
+private common-only registry; `engine/enemy-expansion-humanoid.js` owns one
+`humanoid-threat-v1` handler on the `humanoid-v1` chassis. The handler reuses
+the proven player humanoid rig, applies identity overlays selected by renderer
+data rather than family-id branches. At the approved Idle checkpoint it rejects
+every animation other than Idle; the separately authorized full-production
+step expands that same handler before completed-slice review. `sprite-engine.js`, `ENEMIES`, the built-in
+registry, selectors, schemas, packs, and exports do not import the candidate
+module. The ignored review generator captures the private registry directly.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -312,8 +320,9 @@ deliberately not serialized.
 - All 57 enemy families support None, Complete B, and Selective C in live
   assembled rendering; all 16,160 current source frames reserve a one-cell
   outline margin and perform no out-of-bounds writes.
-- The EN-F00 registry remains separate from `ENEMIES`; zero unfinished
-  expansion families enter selectors or packs, and the 57-family / 202-sheet /
+- The EN-F00 built-in registry remains separate from `ENEMIES`; EN-E01 has five
+  internal common-only candidates and zero public families, so no unfinished
+  expansion family enters selectors or packs. The 57-family / 202-sheet /
   16,160-frame legacy corpus retains locked SHA-256 pixel digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Shade None plus outline None directly delegates to `drawSprite()`. Shade None
@@ -433,11 +442,12 @@ For face-bound content, verify front and both side views, confirm the rear view 
 4. Verify all directions and animations before publishing.
 
 For the proposed 80-enemy expansion, do not use this legacy one-family path.
-EN-F00's data-driven facade now exists, but the built-in registry remains
-empty. Follow `ENEMY_EXPANSION_PLAN.md`: obtain separate slice authorization,
-register only implemented definitions with a real renderer handler, keep them
-out of the public view until approval, and stop for four-direction baseline
-approval before registration or full animation/variant work advances.
+EN-F00's data-driven facade now exists, and the built-in registry remains
+empty. EN-E01 demonstrates the intended private candidate path with five
+implemented common baselines and a real shared renderer handler. Follow
+`ENEMY_EXPANSION_PLAN.md`: keep candidates out of the public view until
+approval and stop for four-direction baseline approval before Walk, Attack,
+Hurt, specialist/elite variants, or public registration advances.
 
 ### Change the sheet contract
 

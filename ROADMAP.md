@@ -120,12 +120,13 @@ The deterministic `wildshot-npc-slice-v1@bf6269c` delivery contains 32
 Player-built NPC looks and was verified by the game intake. The approved
 `ENEMY_EXPANSION_PLAN.md` decomposes 80 additional proposals into EN-F00,
 eighteen standard Enemy slices, and three separately blocked Boss micro-slices.
-EN-F00 is now implemented and technically validated on isolated
-`codex/en-f00`: its immutable registry/renderer facade, lifecycle ledger,
-deterministic review targeting, completed-sheet validator, and locked legacy
-pixel digest add no family art and expose no expansion family to public
-selectors or packs. Final EN-F00 checkpoint acceptance and EN-E01 authorization
-remain explicit. The latest pushed source
+EN-F00 is accepted at isolated checkpoint `73ad73a` on `codex/en-f00`. The
+separately authorized `codex/en-e01` branch contains five private common-only
+humanoid baselines whose exact four-direction Idle review is now visually
+approved. Full animation plus specialist/elite production is authorized through
+the same shared renderer; completed-slice review and registration remain
+separately gated, with zero expansion families exposed to selectors or packs.
+The latest pushed source
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
 catalog entries, so the command is not release-ready. Existing fixtures remain
@@ -295,9 +296,9 @@ Candidate additions:
 - Additional off-hand items beyond the completed Lantern, such as spell foci; quivers require a separate back-slot plan rather than the held-item topology
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants only through the approved planning
-  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01 is the next
-  separately gated candidate after EN-F00 checkpoint acceptance, and no family
-  art is started implicitly
+  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01's common-baseline
+  Idle gate is approved and full production is active, while no public
+  registration starts implicitly
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 

@@ -1,8 +1,9 @@
 # Enemy Expansion Plan
 
-- Status: approved plan; EN-F00 is implemented and technically validated on
-  `codex/en-f00`, with no family art or public catalog additions; final EN-F00
-  checkpoint acceptance and all EN-E01 work remain separately approval-gated
+- Status: approved plan; EN-F00 checkpoint `73ad73a` is accepted, EN-E01's
+  exact four-direction Idle candidate is visually approved, and full
+  three-variant animation production is separately authorized with zero public
+  catalog additions until completed-slice review
 - Recorded: 2026-08-02
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -14,10 +15,12 @@ the 8-bit Sprite Assembler. It fixes the accounting, collision rulings,
 production order, review gates, and technical boundaries before any new family
 is registered.
 
-The designer explicitly authorized EN-F00 on 2026-08-02. That authorization
-does **not** authorize EN-E01, family art, catalog changes, Boss work, effect
-work, export changes, a release, or a push. Every later implementation slice
-still requires its own explicit designer go-ahead.
+The designer explicitly authorized EN-F00 and then separately authorized
+EN-E01 on 2026-08-02. EN-E01 authorization covers only contract cards, five
+common baselines, and their four-direction Idle review gate. It does **not**
+authorize full animation, specialist/elite variants, catalog changes, Boss
+work, effect work, export changes, a release, or a push. Every later step or
+implementation slice still requires its own explicit designer go-ahead.
 
 ## Intake Assessment
 
@@ -118,8 +121,8 @@ attack readability, and variant distinction.
 
 ### EN-F00 - Expansion renderer foundation
 
-- Status: `implemented`; focused and full structural gates pass; final
-  checkpoint acceptance remains explicit
+- Status: `approved`; accepted checkpoint `73ad73a` retains passing focused and
+  full structural gates
 - Contains no new family art
 
 Before adding 75 families, introduce the smallest data-driven expansion facade
@@ -167,8 +170,9 @@ chassis needed by many later proposals. Complete only one slice at a time.
 
 ### EN-E01 - Humanoid threat pilot
 
-- Status: `implementation-candidate` after EN-F00 checkpoint acceptance and a
-  separate explicit EN-E01 approval
+- Status: `implementation-candidate`; four-direction common-baseline Idle is
+  visually approved and full three-variant animation production is authorized,
+  while public registration remains blocked on completed-slice review
 - Families: Witch, Fallen Knight, Pirate, Necromancer, Alchemist
 - Priority-first: Witch, Fallen Knight, Pirate
 
@@ -188,6 +192,27 @@ Initial variant briefs:
 Attack tells must remain readable without baked muzzle flashes, bombs, potion
 splashes, familiars, skeletons, or spell effects. Those are separate effect or
 child-asset contracts.
+
+Current candidate evidence:
+
+- five immutable contract cards record stable ID, 24x24 scale, locomotion,
+  attack tell, three variant briefs, and external effect/mechanic boundaries;
+- only Hexer, Shieldbearer, Deckhand, Bone Caller, and Flask Thrower are
+  implemented, one common baseline per family;
+- all five use the private `humanoid-threat-v1` renderer on `humanoid-v1`, with
+  identity overlays selected from renderer data rather than family-ID branches;
+- the candidate registry reports five internal implemented families and zero
+  approved/public families; the built-in registry and legacy `ENEMIES` catalog
+  remain unchanged;
+- `npm.cmd run check:enemy-expansion-en-e01` validates 40 deterministic Idle
+  frames with hard alpha, one-cell margins, no out-of-bounds writes, distinct
+  silhouettes, and correct direction/frame ordering; and
+- `npm.cmd run review:enemy-expansion-en-e01` generates the exact enlarged and
+  native-size review PNG. The designer approved exact PNG SHA-256
+  `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`
+  and 40-frame digest
+  `339c5ff809d3b17aec20b3ec953c8217470cde026fc743cde0cd3854ed5c3323`
+  on 2026-08-02.
 
 ### EN-E02 - Humanoid culture variants
 
@@ -499,13 +524,14 @@ counts as an upgrade; the three Boss candidates do not enter the Enemy totals.
 
 ## Recommended Next Authorization
 
-When the designer is ready to resume Enemy work, use exactly this sequence:
+The current production sequence is:
 
-1. review and explicitly accept the isolated EN-F00 checkpoint;
-2. separately authorize EN-E01, beginning with contract cards and baseline
-   variants only; and
-3. stop at the four-direction Idle visual gate before registration or full
-   animation/variant work.
+1. preserve the exact approved common-baseline Idle pixels while adding
+   Walk/Attack/Hurt motion and Enemy Cast/Death aliases;
+2. implement the specialist and elite brief for each family through the same
+   shared renderer and external-effect boundaries;
+3. generate and inspect focused all-variant/all-animation review evidence; and
+4. stop for completed-slice visual approval before any public registration.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,

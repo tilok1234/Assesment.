@@ -70,6 +70,8 @@ checkSyntax('engine/combat-loadouts.js');
 checkSyntax('engine/cast-animation.js');
 checkSyntax('engine/death-animation.js');
 checkSyntax('engine/enemy-expansion.js');
+checkSyntax('engine/enemy-expansion-en-e01.js');
+checkSyntax('engine/enemy-expansion-humanoid.js');
 checkSyntax('engine/class-templates.js');
 checkSyntax('engine/game-pack.js');
 checkSyntax('engine/production-rolls.js');
@@ -91,6 +93,9 @@ checkSyntax('tools/check-boss-directions.mjs');
 checkSyntax('tools/cast-review.mjs');
 checkSyntax('tools/death-review.mjs');
 checkSyntax('tools/check-enemy-expansion.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e01.mjs');
+checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
+checkSyntax('tools/enemy-expansion-review-pixels.mjs');
 checkSyntax('tools/dev-server.mjs');
 checkSyntax('tools/generate-shield-placement-audit.mjs');
 checkSyntax('tools/outline-review.mjs');
@@ -122,6 +127,14 @@ const enemyExpansionCheck = spawnSync(process.execPath, [path.join(root, 'tools'
 check(
   enemyExpansionCheck.status === 0,
   `Enemy expansion foundation gate failed\n${enemyExpansionCheck.stdout.trim()}\n${enemyExpansionCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE01Check = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e01.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE01Check.status === 0,
+  `EN-E01 Idle candidate gate failed\n${enemyExpansionEnE01Check.stdout.trim()}\n${enemyExpansionEnE01Check.stderr.trim()}`,
 );
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
