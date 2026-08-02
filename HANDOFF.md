@@ -6,10 +6,11 @@ Date: 2026-08-02
 
 This is the canonical new-chat continuation for the 8-bit Sprite Assembler.
 EN-E01's completed-slice review and bounded public registration are complete;
-no next production lane starts implicitly. This handoff records the accepted
-EN-F00 foundation, approved/public 15-variant EN-E01 slice, unchanged legacy
-Enemy corpus, shipped NPC artifact, local Windows proof, and unresolved
-consumer-integration, Boss, and publisher boundaries.
+its explicitly authorized consumer integration is also complete, and no next
+production lane starts implicitly. This handoff records the accepted EN-F00
+foundation, approved/public 15-variant EN-E01 slice, 62-family / 217-variant
+public consumer catalog, unchanged legacy Enemy corpus, shipped NPC artifact,
+local Windows proof, and unresolved EN-E02, Boss, and publisher boundaries.
 
 ## Canonical Workspace And Git State
 
@@ -23,10 +24,14 @@ consumer-integration, Boss, and publisher boundaries.
   `73ad73a354738d21e8d3f33f2cbbc50315f64050`.
 - Isolated EN-E01 candidate worktree:
   `C:\tmp\8-bit-sprite-assembler-en-e01`
-- EN-E01 branch: `codex/en-e01`, based exactly on accepted EN-F00 `73ad73a`.
+- EN-E01 review/registration branch: `codex/en-e01`, based exactly on accepted
+  EN-F00 `73ad73a`.
+- EN-E01 consumer-integration branch: `codex/en-e01-consumers`, based exactly
+  on synchronized public-registration/docs checkpoint `b368f80`.
 - Approved EN-E01 Idle checkpoint: `73dbec9`.
 - Complete private EN-E01 implementation checkpoint: `230a9a3`.
 - Approved EN-E01 public-registration checkpoint: `b43ed6a`.
+- Approved EN-E01 consumer implementation checkpoint: `e0be273`.
 - Verified synchronized base before EN-F00:
   `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`
   (`Document enemy expansion and refresh handoff`).
@@ -55,8 +60,8 @@ git log -5 --oneline --decorate
 ```
 
 Expected state around this checkpoint: clean `codex/en-f00` at `73ad73a`;
-`codex/en-e01` containing approved Idle checkpoint `73dbec9`, private full-
-candidate checkpoint `230a9a3`, public-registration checkpoint `b43ed6a`, and
+`codex/en-e01` containing the approved review and public-registration history;
+`codex/en-e01-consumers` containing implementation checkpoint `e0be273` plus
 this documentation reconciliation; and `main` still equal to `origin/main` at
 verified base `f5476a2`. Do not modify, clean, reset, rebase, or repurpose the
 archived review checkout.
@@ -75,7 +80,8 @@ archived review checkout.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
-review, and authorized bounded public registration on 2026-08-02.
+review, authorized bounded public registration, and then explicitly authorized
+legacy consumer integration on 2026-08-02.
 EN-E01 now contains five immutable contract cards and all 15 common,
 specialist, and elite briefs for Witch, Fallen Knight, Pirate, Necromancer, and
 Alchemist. All variants render through one shared humanoid handler and implement
@@ -89,9 +95,13 @@ and 40-frame digest
 Those approved Idle pixels remain exact. Walk/Attack/Hurt, Enemy Cast/Death
 aliases, all specialist/elite briefs, exhaustive structural checks, and focused
 review evidence are complete. The public registry is pixel-identical to the
-reviewed candidate across all 1,200 frames. The existing legacy 57 families /
-202 variants and its editor selectors/packs remain unchanged; merging them with
-the expansion registry is a separate authorization boundary.
+reviewed candidate across all 1,200 frames. Consumer checkpoint `e0be273`
+publishes immutable `PUBLIC_ENEMIES`: the unchanged 57-family / 202-variant
+legacy entries followed by the five approved families / 15 variants. Editor
+selectors and sanitization, persisted Enemy specs, randomization, combat
+defaults, thumbnails, ordinary/Wildshot packs, full/animation/direction
+exports, and Complete Kits now consume 62 families / 217 variants. The legacy
+`ENEMIES` array and all 16,160 locked legacy frames remain unchanged.
 
 EN-E01 does not authorize all later waves. The three new Boss proposals remain
 blocked behind the current Boss review queue unless the designer explicitly
@@ -145,8 +155,9 @@ runtime contract and must not be rewritten merely to match it.
 
 ## Current Enemy And Expansion State
 
-- Live catalog: 57 families / 202 variants.
-- Current full public audit: 16,160 source frames.
+- Locked legacy catalog: 57 families / 202 variants.
+- Live public consumer catalog: 62 families / 217 variants.
+- Current locked legacy audit: 16,160 source frames.
 - None/Complete B/Selective C outline gate: 48,480 cases.
 - All existing families support approved Form shading and all three outline
   modes with no source-edge or out-of-bounds failures.
@@ -156,8 +167,11 @@ runtime contract and must not be rewritten merely to match it.
   reviewed variants as pre-registration evidence.
 - The stable public expansion registry exposes exactly five approved EN-E01
   families / 15 variants; no later slice is registered.
-- The legacy `ENEMIES` catalog remains 57 families / 202 variants and remains
-  the sole source for existing editor selectors, randomization, kits, and packs.
+- The immutable `PUBLIC_ENEMIES` catalog appends those approved families to the
+  unchanged legacy entries and is the source for editor selectors,
+  randomization, kits, packs, thumbnails, and exports.
+- Approved EN-E01 frames retain their reviewed raw pixels; they do not
+  implicitly enter the separately approved legacy Form/outline algorithms.
 - The complete legacy 20-column corpus retains SHA-256 pixel digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Effects, projectiles, summons, telegraphs, attachments, and environment
@@ -316,6 +330,7 @@ npm.cmd run check:enemy-expansion
 npm.cmd run check:enemy-expansion-en-e01
 npm.cmd run check:enemy-expansion-en-e01-full
 npm.cmd run check:enemy-expansion-en-e01-registration
+npm.cmd run check:enemy-expansion-en-e01-consumers
 npm.cmd run review:enemy-expansion-en-e01
 npm.cmd run review:enemy-expansion-en-e01-full
 npm.cmd run check
@@ -362,11 +377,20 @@ Recorded EN-F00 and focused EN-E01 results:
 - the registration gate passes five approved/public families, 15 variants, 15
   complete `480x96` sheets, stable-facade routing, two-approved/twenty-planned
   lifecycle counts, and exact public/candidate parity across all 1,200 frames;
+- the consumer gate passes unchanged 57/202 legacy locks, immutable 62/217
+  public composition, editor persistence/selectors, randomization, combat
+  defaults, Complete Kits, Wildshot validation, thumbnails, all export scopes,
+  1,200/1,200 adapter frames, and 15/15 native full sheets;
+- live browser smoke confirms all five approved families appear after the
+  legacy selector entries; Witch/Familiar-Keeper renders in the animated
+  preview and `480x96` sheet, produces the expected filename, survives reload,
+  and emits no console errors;
 - the full project validator passes with all existing catalog, renderer,
   outline, Form-shade, Cast/Death alias, equipment, Boss, 232-fixture, pack,
   and release-configuration gates unchanged; and
-- no legacy fixture, visual baseline, schema, UI, Boss asset, release artifact,
-  or archived review payload is modified.
+- no legacy fixture, visual baseline, schema version, Boss asset, release
+  artifact, or archived review payload is modified; the UI change is limited to
+  exposing approved EN-E01 families through existing generic Enemy controls.
 
 ## Documentation Audit Result
 
@@ -395,9 +419,10 @@ as historical evidence rather than live continuation instructions.
 Unless the designer explicitly changes scope:
 
 - preserve the exact approved common-baseline Idle and completed-slice pixels;
-- do not merge EN-E01 into legacy editor selectors, randomization, kits, packs,
-  schemas, or `ENEMIES` without explicit consumer-integration authorization;
+- preserve the merged `PUBLIC_ENEMIES` consumer boundary without mutating the
+  locked legacy `ENEMIES` array;
 - do not pre-register unfinished families, IDs, variants, selectors, or packs;
+- do not start EN-E02 contract planning or implementation implicitly;
 - do not modify the archived `wip/19-boss-review` checkout;
 - do not accept the Rhino/Unicorn direction candidates or the three animation
   candidates without direct visual review;
@@ -416,10 +441,10 @@ Unless the designer explicitly changes scope:
 The safest opening request for the next chat is:
 
 > EN-E01 is approved and publicly registered through the stable expansion API
-> at `b43ed6a`. Before changing anything, verify the clean synchronized branch
-> and ask whether the next lane is legacy editor/pack consumer integration,
-> EN-E02 contract planning, or another explicitly named task.
+> at `b43ed6a`, and its approved consumers are integrated at `e0be273`. Before
+> changing anything, verify the clean synchronized branch and ask whether the
+> next lane is EN-E02 contract planning or another explicitly named task.
 
 EN-F00 and EN-E01 are approved. EN-E01's stable public registry contains five
-families / 15 variants with exact reviewed pixels; no later slice or legacy
-consumer integration is authorized implicitly.
+families / 15 variants with exact reviewed pixels, and the public consumer
+catalog is 62 families / 217 variants. No later slice is authorized implicitly.

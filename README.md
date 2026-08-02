@@ -18,7 +18,9 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 ## Current capabilities
 
 - Player assembly across Human, Elf, Orc, Goblin, Tiefling, Celestial, Dwarf, Undead, Lizardfolk, and Beastkin species; Classic, Lean, Sturdy, and Heroic body builds; plus skin, 11 hairstyles, six expressions, eight facial details, 12 headgear choices, nine outfits across five armor tiers, weapon type and tier, shield, the Lantern utility off-hand, and palette choices
-- 57 enemy families with 202 predefined variants
+- 62 selectable public enemy families with 217 predefined variants: the locked
+  57-family / 202-variant legacy catalog plus 5 approved EN-E01 families / 15
+  variants
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -34,7 +36,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Idle, walk, attack, cast, hurt, and death animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
 - Persistent named sprite packs that collect player, enemy, and combat-effect designs and download as a ZIP with full PNG sheets and `manifest.json`
-- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 1912 content-unique atomic component sheets, all 202 enemy variations, and all 24 combat effects at native 1x
+- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 1912 content-unique atomic component sheets, all 217 public enemy variations, and all 24 combat effects at native 1x
 - A validated asset pack containing 232 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
@@ -47,12 +49,14 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Full-sheet, selected-animation, and selected-direction PNG export scopes
 - Play/pause, 0.5x/1x/2x playback speeds, frame stepping, and direct frame inspection with sheet-column metadata
 - Optional assembled-sprite outlines with None, Complete B, and Selective C
-  modes for players and all 57 enemy families; effects, source art, floor
+  modes for players and all 57 legacy enemy families; the 15 approved EN-E01
+  variants retain their reviewed raw pixels, while effects, source art, floor
   shadows, and atomic component sheets remain untreated
 - Optional assembled-sprite shading with None and the approved material-aware
-  Form mode for players and all 57 enemy families; the selector participates in
-  undo/redo, comparisons, presets, packs, recipes, previews, and assembled
-  exports while effects and atomic component sheets remain untreated
+  Form mode for players and all 57 legacy enemy families; the selector
+  participates in undo/redo, comparisons, presets, packs, recipes, previews,
+  and assembled exports, while approved EN-E01 pixels, effects, and atomic
+  component sheets remain untreated
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
 - Six modular expressions—Neutral, Happy, Angry, Sad, Surprised, and Determined—that animate in every visible direction, remain readable beneath glasses, and hide beneath full helmets
@@ -83,10 +87,15 @@ and its 40-frame digest remains
 `339c5ff809d3b17aec20b3ec953c8217470cde026fc743cde0cd3854ed5c3323`.
 The reviewed and registered 1,200-frame digest is
 `addcf8055a80a0a6266be0eff8cd6b8235092c6ba366bc9c020bd5feb90ae173`.
-Registration does not rewrite the legacy `ENEMIES` array: existing editor
-selectors, randomization, kits, packs, schemas, and the 57-family / 202-variant
-corpus remain unchanged. Merging approved expansion families into those legacy
-consumers is a separate integration decision.
+Consumer checkpoint `e0be273` adds an immutable `PUBLIC_ENEMIES` catalog that
+keeps the legacy `ENEMIES` entries unchanged and appends the five approved
+families. Editor sanitization and selectors, persistence, Enemy randomization,
+thumbnails, full/animation/direction exports, ordinary packs, Wildshot manifest
+validation, combat defaults, and Complete Kits now consume 62 families / 217
+variants through a public dispatcher. All 1,200 consumer-rendered frames and
+all 15 native sheets remain pixel-identical to the approved registry. No
+schema version changed because Enemy specs retain the existing
+`{ kind, family, variant }` shape.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
@@ -228,6 +237,13 @@ approved common pixels remain deterministic, with four-direction geometry,
 two-frame Idle motion, one-cell margins, hard alpha, distinct silhouettes,
 absent clipping, and zero public-family exposure.
 
+Run `npm run check:enemy-expansion-en-e01-consumers` for the approved consumer
+gate. It proves the 57/202 legacy catalog is unchanged, the immutable public
+catalog is exactly 62/217, all 1,200 dispatcher/editor frames and all 15 native
+full sheets match the approved registry, and selectors, persistence,
+randomization, thumbnails, export scopes, Complete Kits, combat defaults, and
+Wildshot pack validation accept the approved families.
+
 Run `npm run check:enemy-expansion-en-e01-full` for the complete private
 candidate gate and `npm run review:enemy-expansion-en-e01-full` for the ignored
 overview, five family motion boards, 15 native `480x96` sheets, and JSON review
@@ -368,9 +384,9 @@ Each schema-v3 ZIP contains complete character sheets at the selected PNG scale,
 
 The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per sprite plus a versioned `manifest.json` with the exact specifications, animation contract, dimensions, file paths, and the saved combat-loadout recipe for every player or enemy.
 
-For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes and combat loadouts, the full deduplicated component library, all 57 enemy families with all 202 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
+For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes and combat loadouts, the full deduplicated component library, all 62 public enemy families with all 217 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
 
-A 24-player Complete Pack contains 1912 shared component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2162 native `480x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+A 24-player Complete Pack contains 1912 shared component sheets, 217 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2177 native `480x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
 
 ### Wildshot game-pack status
 
@@ -412,11 +428,11 @@ Use **Download Complete Character Kit** in Player mode to export one `8-bit-spri
 - 150 weapon layers covering all 15 families at Tiers 1-5 in back/front passes
 - 326 shield layers covering all eight families at Tiers 1-5; a pass gets color variants only when color changes its pixels, including Tier 5 artifact passes that fully replace the underlying accent
 - Two Lantern utility-off-hand layers split into direction-aware back and front passes
-- 202 complete enemy sheets covering every variation in all 57 enemy families, organized beneath `enemies/`
+- 217 complete enemy sheets covering every variation in all 62 public enemy families, organized beneath `enemies/`
 - 24 transparent combat-effect sheets covering trails, projectiles, impacts, and statuses, organized beneath `effects/`
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
-The standalone kit contains 1912 content-unique component sheets, 202 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 2139 native `480x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
+The standalone kit contains 1912 content-unique component sheets, 217 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 2154 native `480x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
 
 Draw the non-null component paths from a recipe in this order:
 

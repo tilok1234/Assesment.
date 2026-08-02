@@ -106,7 +106,7 @@ Exit criteria:
 Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
 
 Current continuation checkpoint (2026-08-02): `main` is synchronized with
-`origin/main` at `bf6269c` before this documentation checkpoint. The complete
+`origin/main` at `f5476a2` before the isolated expansion branches. The complete
 57-family / 202-variant Enemy catalog remains visually approved; its current
 20-column gate covers 16,160 source frames / 48,480 None-B-C cases. Form
 shading, Lantern, Production Roll, compatible category rerolls, and the public
@@ -126,9 +126,11 @@ Idle evidence and contains a complete reviewed candidate at `230a9a3`: five
 families / 15 common-specialist-elite variants with standard Enemy motion and
 aliases through the same shared renderer. The designer approved the completed
 slice and checkpoint `b43ed6a` registers all five families / 15 variants through
-the stable public expansion API with exact candidate parity. The legacy editor,
-selectors, randomization, kits, and packs remain on the unchanged 57-family /
-202-variant catalog pending a separate consumer-integration decision.
+the stable public expansion API with exact candidate parity. Consumer
+checkpoint `e0be273` adds immutable `PUBLIC_ENEMIES` and routes the existing
+editor, persistence, randomization, thumbnail, kit, pack, combat-default, and
+sheet-export consumers through 62 families / 217 variants while preserving the
+unchanged 57-family / 202-variant legacy catalog and pixel locks.
 The latest pushed source
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
@@ -220,8 +222,8 @@ while enforcing mutual exclusion with `shield`. Dedicated `offhand-back` and
 `offhand-front` passes follow the animated left-hand socket and join the
 component-aware off-hand equipment owner. Complete Kit/Pack schema v12 adds two
 stable Lantern component sheets, raising the shared component library to 1912
-PNGs, the standalone kit to 2139 PNGs, and a 24-player Complete Pack to 2162
-PNGs. The original 12-column validator covered 192
+PNGs, the standalone kit at that pre-EN-E01 consumer checkpoint to 2139 PNGs,
+and a 24-player Complete Pack to 2162 PNGs. The original 12-column validator covered 192
 body-build/direction/animation/frame cases; the current 20-column gate covers
 320 with zero discarded pixels, face clearance, layer routing, and exact
 recomposition. No fixture, baseline, release artifact, or effect-compositor
@@ -300,8 +302,8 @@ Candidate additions:
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants only through the approved planning
   and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01 is approved and
-  registered through the expansion API, while EN-E02 and legacy-consumer
-  integration do not start implicitly
+  consumer-integrated through the expansion API, while EN-E02 does not start
+  implicitly
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 

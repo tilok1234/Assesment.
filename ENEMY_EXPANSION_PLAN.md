@@ -153,7 +153,8 @@ Implemented evidence:
   dispatch facade, and completed-sheet validator;
 - the isolated EN-F00 foundation registry contains zero families; the stable
   public composition registry now contains only approved EN-E01, while the
-  unchanged `ENEMIES` array remains the sole legacy selector/pack catalog;
+  unchanged `ENEMIES` array remains the locked legacy catalog and immutable
+  `PUBLIC_ENEMIES` appends only approved EN-E01 for consumers;
 - planned families cannot be registered; implemented families remain internal;
   only explicitly approved registrations can enter the registry's public view;
 - `npm.cmd run check:enemy-expansion` rejects duplicate/colliding ids, missing
@@ -172,9 +173,10 @@ chassis needed by many later proposals. Complete only one slice at a time.
 
 ### EN-E01 - Humanoid threat pilot
 
-- Status: `approved-public-registration`; four-direction common-baseline Idle
-  and the complete 15-variant slice are visually approved and registered through
-  the stable public expansion boundary at `b43ed6a`
+- Status: `approved-consumer-integrated`; four-direction common-baseline Idle
+  and the complete 15-variant slice are visually approved, registered through
+  the stable public expansion boundary at `b43ed6a`, and integrated into public
+  consumers at `e0be273`
 - Families: Witch, Fallen Knight, Pirate, Necromancer, Alchemist
 - Priority-first: Witch, Fallen Knight, Pirate
 
@@ -236,6 +238,10 @@ Approved implementation and registration evidence:
   families / 15 public variants, 15 complete sheets, stable-facade routing,
   two-approved/twenty-planned ledger state, unchanged 57-family / 202-variant
   legacy catalog, and exact candidate/public parity across all 1,200 frames.
+- `npm.cmd run check:enemy-expansion-en-e01-consumers` proves immutable 62-family
+  / 217-variant public composition, unchanged legacy pixels, generic
+  editor/persistence/randomizer/kit/pack/thumbnail/export routing, 1,200-frame
+  adapter parity, and all 15 native `480x96` sheet exports.
 
 ### EN-E02 - Humanoid culture variants
 
@@ -555,10 +561,10 @@ The authorized production sequence is complete:
    effect boundaries; and
 4. focused all-variant/all-animation evidence has been generated and inspected.
 
-Completed-slice approval and bounded public registration are now recorded. Do
-not implicitly merge expansion families into the legacy editor/randomizer/kit/
-pack consumers, begin EN-E02, or create separate effect assets. Each is a
-separate next-step decision.
+Completed-slice approval, bounded public registration, and the separately
+authorized consumer integration are now recorded. Do not implicitly begin
+EN-E02 or create separate effect assets. Each remains a separate next-step
+decision.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
