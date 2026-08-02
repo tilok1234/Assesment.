@@ -71,6 +71,7 @@ checkSyntax('engine/cast-animation.js');
 checkSyntax('engine/death-animation.js');
 checkSyntax('engine/enemy-expansion.js');
 checkSyntax('engine/enemy-expansion-en-e01.js');
+checkSyntax('engine/enemy-expansion-en-e02.js');
 checkSyntax('engine/enemy-expansion-humanoid.js');
 checkSyntax('engine/enemy-expansion-public.js');
 checkSyntax('engine/public-renderer.js');
@@ -100,8 +101,14 @@ checkSyntax('tools/check-enemy-expansion-en-e01.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e01-full.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e01-registration.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e01-consumers.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e02.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e02-full.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e02-registration.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-full-review.mjs');
+checkSyntax('tools/enemy-expansion-en-e02-review.mjs');
+checkSyntax('tools/enemy-expansion-en-e02-full-review.mjs');
+checkSyntax('tools/enemy-expansion-candidate-presentation.mjs');
 checkSyntax('tools/enemy-expansion-review-pixels.mjs');
 checkSyntax('tools/dev-server.mjs');
 checkSyntax('tools/generate-shield-placement-audit.mjs');
@@ -166,6 +173,30 @@ const enemyExpansionEnE01ConsumerCheck = spawnSync(process.execPath, [path.join(
 check(
   enemyExpansionEnE01ConsumerCheck.status === 0,
   `EN-E01 consumer integration gate failed\n${enemyExpansionEnE01ConsumerCheck.stdout.trim()}\n${enemyExpansionEnE01ConsumerCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE02Check = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e02.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE02Check.status === 0,
+  `EN-E02 approved Idle evidence gate failed\n${enemyExpansionEnE02Check.stdout.trim()}\n${enemyExpansionEnE02Check.stderr.trim()}`,
+);
+
+const enemyExpansionEnE02FullCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e02-full.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE02FullCheck.status === 0,
+  `EN-E02 full candidate evidence gate failed\n${enemyExpansionEnE02FullCheck.stdout.trim()}\n${enemyExpansionEnE02FullCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE02RegistrationCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e02-registration.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE02RegistrationCheck.status === 0,
+  `EN-E02 approved registration gate failed\n${enemyExpansionEnE02RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE02RegistrationCheck.stderr.trim()}`,
 );
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
@@ -262,7 +293,7 @@ const expectedEngineExports = [
   'BODY_BUILDS', 'CLASS_PACK_FORMAT', 'CLASS_PACK_VERSION', 'CLASS_TEMPLATES',
   'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_CLASS_TEMPLATE',
   'DEFAULT_COMBAT_LOADOUT', 'DEFAULT_VARIANT_BATCH_SET', 'ENEMY_OUTLINE_PILOT_FAMILIES',
-  'DIRS', 'DIR_LABELS', 'ENEMIES', 'ENEMY_EXPANSION_LEDGER', 'ENEMY_EXPANSION_PROFILE', 'ENEMY_EXPANSION_REGISTRY',
+  'DIRS', 'DIR_LABELS', 'ENEMIES', 'ENEMY_EXPANSION_CONSUMER_REGISTRY', 'ENEMY_EXPANSION_LEDGER', 'ENEMY_EXPANSION_PROFILE', 'ENEMY_EXPANSION_REGISTRY',
   'ENEMY_EXPANSION_STATES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OFFHANDS', 'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
   'OUTLINE_MODE_COMPLETE_B', 'OUTLINE_MODE_NONE', 'OUTLINE_MODE_SELECTIVE_C',

@@ -38,7 +38,11 @@ check(EN_E01_COMPLETED_SLICE_GATE.reviewManifestSha256 === '129f3f2b81318df08edf
 check(EN_E01_COMPLETED_SLICE_GATE.candidateFrameDigest === 'addcf8055a80a0a6266be0eff8cd6b8235092c6ba366bc9c020bd5feb90ae173', 'completed-slice frame digest drifted');
 check(Object.isFrozen(EN_E01_COMPLETED_SLICE_GATE), 'completed-slice approval evidence must be immutable');
 
-check(engine.ENEMY_EXPANSION_REGISTRY === EN_E01_PUBLIC_REGISTRY, 'the stable public facade must expose the exact approved EN-E01 registry');
+check(
+  JSON.stringify(engine.ENEMY_EXPANSION_REGISTRY.families.filter((family) => family.sliceId === 'EN-E01').map((family) => family.id)) === JSON.stringify(expectedFamilies),
+  'the cumulative stable registry must retain all five approved EN-E01 families',
+);
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === EN_E01_PUBLIC_REGISTRY, 'the authorized consumer boundary must retain the exact EN-E01 registry');
 check(EN_E01_APPROVED_FAMILIES.length === 5, 'public EN-E01 registration needs exactly five approved families');
 check(JSON.stringify(EN_E01_PUBLIC_REGISTRY.families.map((family) => family.id)) === JSON.stringify(expectedFamilies), 'public EN-E01 family order must be deterministic');
 check(EN_E01_PUBLIC_REGISTRY.families.every((family) => family.state === engine.ENEMY_EXPANSION_STATES.APPROVED), 'every registered EN-E01 family must be approved');
@@ -71,12 +75,12 @@ check(!facadeSource.includes('EN_E01_'), 'the stable facade must not expose slic
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport();
 check(ledgerReport.counts.slices === 22 && ledgerReport.counts.proposals === 80, 'public registration must preserve the 22-slice / 80-proposal ledger');
-check(ledgerReport.counts.approved === 2 && ledgerReport.counts.implemented === 1 && ledgerReport.counts.planned === 19, 'current ledger lifecycle counts must be two approved, one implemented, and nineteen planned');
-check(ledgerReport.counts.registeredFamilies === 5 && ledgerReport.counts.publicFamilies === 5, 'current ledger must report five registered and public EN-E01 families');
+check(ledgerReport.counts.approved === 3 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 19, 'current ledger lifecycle counts must be three approved, zero implemented, and nineteen planned');
+check(ledgerReport.counts.registeredFamilies === 10 && ledgerReport.counts.publicFamilies === 10, 'current ledger must report ten registered EN-E01/EN-E02 families');
 const enE01Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E01');
 check(enE01Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED, 'EN-E01 ledger state must be approved');
 check(enE01Slice?.registeredFamilies === 5 && enE01Slice?.publicFamilies === 5, 'EN-E01 ledger row must report all five public families');
-check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => slice.id === 'EN-E01'), 'no later expansion slice may become public implicitly');
+check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => slice.id === 'EN-E01' || slice.id === 'EN-E02'), 'no unapproved later expansion slice may become registered implicitly');
 
 const frameRecords = [];
 let sheets = 0;

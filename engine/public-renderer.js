@@ -1,12 +1,12 @@
 import { SIZE } from './catalogs.js';
 import {
-  ENEMY_EXPANSION_REGISTRY,
+  ENEMY_EXPANSION_CONSUMER_REGISTRY,
   renderEnemyExpansionFrame,
 } from './enemy-expansion-public.js';
 import { drawSprite as drawLegacySprite } from './renderer.js';
 
 const publicExpansionFamilyIds = new Set(
-  ENEMY_EXPANSION_REGISTRY.publicFamilies.map((family) => family.id),
+  ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.map((family) => family.id),
 );
 
 export function isPublicEnemyExpansionSpec(spec) {
@@ -62,7 +62,7 @@ export function drawPublicSprite(context, spec, direction, animationId, frame, o
   if (options.shadow !== false) drawExpansionShadow(context);
 
   return renderEnemyExpansionFrame(
-    ENEMY_EXPANSION_REGISTRY,
+    ENEMY_EXPANSION_CONSUMER_REGISTRY,
     spec,
     direction,
     animationId,

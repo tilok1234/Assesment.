@@ -148,7 +148,7 @@ check(
   'the public consumer catalog must append exactly the five approved EN-E01 families',
 );
 check(
-  engine.PUBLIC_ENEMIES.slice(-5).every((family, index) => family === engine.ENEMY_EXPANSION_REGISTRY.publicFamilies[index]),
+  engine.PUBLIC_ENEMIES.slice(-5).every((family, index) => family === engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies[index]),
   'the public consumer catalog must use the stable registry public-family view',
 );
 
@@ -213,7 +213,7 @@ let expansionPaletteColors = 0;
 const originalDocument = globalThis.document;
 try {
   globalThis.document = { createElement: (tag) => tag === 'canvas' ? new ValidationCanvas() : null };
-  for (const family of engine.ENEMY_EXPANSION_REGISTRY.publicFamilies) {
+  for (const family of engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies) {
     for (const variant of family.variants) {
       const spec = { kind: 'enemy', family: family.id, variant: variant.id };
       check(engine.isPublicEnemyExpansionSpec(spec), `${family.id}/${variant.id} must route through the public expansion dispatcher`);
@@ -240,7 +240,7 @@ try {
         let column = 0;
         for (const animation of engine.ANIMS) for (let frame = 0; frame < animation.frames; frame++) {
           const reviewed = captureEnemyExpansionFrame(
-            engine.ENEMY_EXPANSION_REGISTRY,
+            engine.ENEMY_EXPANSION_CONSUMER_REGISTRY,
             spec,
             direction,
             animation.id,

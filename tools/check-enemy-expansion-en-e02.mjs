@@ -77,8 +77,8 @@ check(EN_E02_IDLE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'EN-E02 must 
 check(EN_E02_IDLE_REGISTRY.publicFamilies.length === 0, 'EN-E02 Idle evidence must not enter the public family view');
 check(EN_E02_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E02 Idle evidence must not claim family approval');
 check(Object.isFrozen(EN_E02_IDLE_REGISTRY), 'the EN-E02 Idle registry must be immutable');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 5, 'the public registry must remain limited to approved EN-E01');
-check(engine.PUBLIC_ENEMIES.length === 62, 'the public catalog must remain at 62 families before EN-E02 registration');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 10, 'the cumulative registry must contain approved EN-E01 and EN-E02');
+check(engine.PUBLIC_ENEMIES.length === 62, 'the consumer catalog must remain at 62 families before EN-E02 consumer integration');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(cardOrder.every((id) => !engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'EN-E02 candidates must not leak into public selectors or packs');
 
@@ -170,10 +170,10 @@ rejects(
 );
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E02_IDLE_REGISTRY);
-check(ledgerReport.counts.approved === 2 && ledgerReport.counts.implemented === 1 && ledgerReport.counts.planned === 19, 'current ledger must report two approved, one implemented, and nineteen planned slices');
+check(ledgerReport.counts.approved === 3 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 19, 'current ledger must report three approved, zero implemented, and nineteen planned slices');
 check(ledgerReport.counts.registeredFamilies === 5 && ledgerReport.counts.publicFamilies === 0, 'candidate ledger evidence must report five internal and zero public families');
 const enE02Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E02');
-check(enE02Slice?.state === engine.ENEMY_EXPANSION_STATES.IMPLEMENTED && enE02Slice?.registeredFamilies === 5 && enE02Slice?.publicFamilies === 0, 'EN-E02 must report five internal baselines and zero public families');
+check(enE02Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED && enE02Slice?.registeredFamilies === 5 && enE02Slice?.publicFamilies === 0, 'the frozen EN-E02 Idle evidence must retain five internal baselines while the ledger records completed-slice approval');
 
 const candidateDigest = createHash('sha256').update(JSON.stringify(frameRecords)).digest('hex');
 check(candidateDigest === EN_E02_IDLE_GATE.candidateFrameDigest, 'approved EN-E02 Idle frame digest drifted');
@@ -189,5 +189,5 @@ console.log('- Contract cards: 5');
 console.log('- Internal baseline families: 5');
 console.log('- Implemented variants: 5 common / 0 specialist / 0 elite');
 console.log('- Reviewed frames: ' + frameRecords.length + ' (4 directions x 2 Idle frames x 5 families)');
-console.log('- Public expansion families: 0 EN-E02 / 5 approved EN-E01');
+console.log('- Stable registry: 5 approved EN-E02 families; consumer catalog: 0 EN-E02');
 console.log('- Candidate frame digest: ' + candidateDigest);

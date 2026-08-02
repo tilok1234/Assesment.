@@ -74,8 +74,8 @@ check(EN_E01_IDLE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'EN-E01 must 
 check(EN_E01_IDLE_REGISTRY.publicFamilies.length === 0, 'Idle evidence must not enter the public family view');
 check(EN_E01_IDLE_REGISTRY.approvedFamilies.length === 0, 'Idle approval must not claim completed-family approval');
 check(Object.isFrozen(EN_E01_IDLE_REGISTRY), 'the approved EN-E01 Idle registry must be immutable');
-check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 5, 'the current public expansion registry must contain the five approved EN-E01 families');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 5, 'the current public expansion view must contain the five approved EN-E01 families');
+check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 10, 'the cumulative expansion registry must contain the ten approved EN-E01/EN-E02 families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 10, 'the cumulative expansion view must contain ten approved EN-E01/EN-E02 families');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(cardOrder.every((id) => !engine.ENEMIES.some((family) => family.id === id)), 'EN-E01 registration must not rewrite the legacy Enemy catalog');
 
@@ -160,7 +160,7 @@ rejects(
 );
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E01_IDLE_REGISTRY);
-check(ledgerReport.counts.approved === 2 && ledgerReport.counts.implemented === 1, 'current ledger must report approved EN-F00/EN-E01 plus the implemented EN-E02 Idle candidate');
+check(ledgerReport.counts.approved === 3 && ledgerReport.counts.implemented === 0, 'current ledger must report approved EN-F00/EN-E01/EN-E02');
 check(ledgerReport.counts.registeredFamilies === 5 && ledgerReport.counts.publicFamilies === 0, 'candidate ledger evidence must report five internal and zero public families');
 const enE01Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E01');
 check(enE01Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED && enE01Slice?.registeredFamilies === 5 && enE01Slice?.publicFamilies === 0, 'frozen Idle evidence must retain five internal baselines while the current ledger records EN-E01 approval');
@@ -179,5 +179,5 @@ console.log('- Internal baseline families: 5');
 console.log('- Implemented variants: 5 common / 0 specialist / 0 elite');
 console.log('- Reviewed frames: ' + frameRecords.length + ' (4 directions x 2 Idle frames x 5 families)');
 console.log('- Public expansion families: 0');
-console.log('- Current approved public families: 5');
+console.log('- Approved EN-E01 registry families: 5');
 console.log('- Candidate frame digest: ' + candidateDigest);

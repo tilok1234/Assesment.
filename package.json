@@ -30,6 +30,7 @@
     "check:enemy-expansion-en-e01-consumers": "node tools/check-enemy-expansion-en-e01-consumers.mjs",
     "check:enemy-expansion-en-e02": "node tools/check-enemy-expansion-en-e02.mjs",
     "check:enemy-expansion-en-e02-full": "node tools/check-enemy-expansion-en-e02-full.mjs",
+    "check:enemy-expansion-en-e02-registration": "node tools/check-enemy-expansion-en-e02-registration.mjs",
     "export:bosses:13": "node tools/export-established-boss-pack.mjs",
     "check:pack-publish": "node tools/check-pack-publisher.mjs",
     "check": "node tools/check-project.mjs",

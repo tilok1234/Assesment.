@@ -488,13 +488,28 @@ export const EN_E02_FULL_PRODUCTION_GATE = deepFreeze({
   nextGate: 'Exact full-slice visual approval before registration or consumer integration.',
 });
 
-function familyDefinition(card, variants, notes) {
+export const EN_E02_COMPLETED_SLICE_GATE = deepFreeze({
+  status: 'approved',
+  approvedOn: '2026-08-02',
+  implementationCommit: 'b2c1283c33dbfd6b2c307fc4d2288877a149c9df',
+  artifact: 'enemy-expansion-review/en-e02-full/en-e02-full-overview.png',
+  artifactSha256: '21f3175600377eaf75206f9fcb65856731da28eafb6715687821f782f41da6a8',
+  presentationArtifact: 'enemy-expansion-review/en-e02-full/en-e02-presentation-review.png',
+  presentationArtifactSha256: '211e9ace3eb965f243724249c73927567568e2f22f181f5448ba398ddab4a094',
+  reviewManifest: 'enemy-expansion-review/en-e02-full/en-e02-full-review.json',
+  reviewManifestSha256: '0a135fbed3eeeaf69400a3700d113af67a0c2a75043f95ab2a392711cd6b0afa',
+  candidateFrameDigest: 'f4667a1ccefb3026c6df3604e114393fdaae619dab0c68bec969203986cb35bf',
+  scope: 'Five approved families, 15 variants, four directions, and all 1,200 standard Enemy frames.',
+  nextGate: 'Register only EN-E02 through the stable expansion registry; consumer integration remains separately gated.',
+});
+
+function familyDefinition(card, variants, notes, state = ENEMY_EXPANSION_STATES.IMPLEMENTED) {
   return {
     id: card.id,
     name: card.name,
     sliceId: card.sliceId,
     rendererKey: EN_E01_HUMANOID_RENDERER.key,
-    state: ENEMY_EXPANSION_STATES.IMPLEMENTED,
+    state,
     variants,
     rendererData: {
       contractCard: card.id,
@@ -539,6 +554,15 @@ function productionFamily(card) {
   return familyDefinition(card, productionVariants(card), 'Frozen full common/specialist/elite candidate awaiting exact visual review.');
 }
 
+function approvedFamily(card) {
+  return familyDefinition(
+    card,
+    productionVariants(card),
+    'Designer-approved common/specialist/elite family registered after completed-slice review.',
+    ENEMY_EXPANSION_STATES.APPROVED,
+  );
+}
+
 export const EN_E02_IDLE_FAMILIES = deepFreeze(EN_E02_CONTRACT_CARDS.map(baselineFamily));
 
 export const EN_E02_IDLE_REGISTRY = createEnemyExpansionRegistry({
@@ -551,4 +575,11 @@ export const EN_E02_CANDIDATE_FAMILIES = deepFreeze(EN_E02_CONTRACT_CARDS.map(pr
 export const EN_E02_CANDIDATE_REGISTRY = createEnemyExpansionRegistry({
   renderers: [EN_E01_HUMANOID_RENDERER],
   families: EN_E02_CANDIDATE_FAMILIES,
+});
+
+export const EN_E02_APPROVED_FAMILIES = deepFreeze(EN_E02_CONTRACT_CARDS.map(approvedFamily));
+
+export const EN_E02_PUBLIC_REGISTRY = createEnemyExpansionRegistry({
+  renderers: [EN_E01_HUMANOID_RENDERER],
+  families: EN_E02_APPROVED_FAMILIES,
 });

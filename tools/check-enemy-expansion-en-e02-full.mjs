@@ -84,7 +84,7 @@ check(EN_E02_CANDIDATE_REGISTRY.renderers[0].key === 'humanoid-threat-v1', 'full
 check(EN_E02_CANDIDATE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'full EN-E02 must retain the approved chassis');
 check(EN_E02_CANDIDATE_REGISTRY.publicFamilies.length === 0, 'full EN-E02 candidates must remain outside the public family view');
 check(EN_E02_CANDIDATE_REGISTRY.approvedFamilies.length === 0, 'full EN-E02 candidates must not claim completed-family approval');
-check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 5, 'the public expansion registry must remain limited to approved EN-E01');
+check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 10, 'the cumulative expansion registry must contain approved EN-E01 and EN-E02');
 check(engine.PUBLIC_ENEMIES.length === 62, 'the public consumer catalog must remain at 62 families');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(Object.isFrozen(EN_E02_CANDIDATE_REGISTRY), 'the full EN-E02 registry must be immutable');
@@ -257,7 +257,7 @@ check(approvedIdleDigest === EN_E02_IDLE_GATE.candidateFrameDigest, 'full produc
 const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E02_CANDIDATE_REGISTRY);
 check(ledgerReport.counts.registeredFamilies === 5 && ledgerReport.counts.publicFamilies === 0, 'full EN-E02 ledger evidence must report five internal and zero public families');
 const enE02Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E02');
-check(enE02Slice?.state === engine.ENEMY_EXPANSION_STATES.IMPLEMENTED && enE02Slice?.registeredFamilies === 5 && enE02Slice?.publicFamilies === 0, 'EN-E02 must remain an implemented private slice');
+check(enE02Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED && enE02Slice?.registeredFamilies === 5 && enE02Slice?.publicFamilies === 0, 'the frozen full candidate must remain private evidence while the ledger records completed-slice approval');
 const fullFrameDigest = createHash('sha256').update(JSON.stringify(frameRecords)).digest('hex');
 
 if (errors.length) {
@@ -275,7 +275,7 @@ console.log('- Private Complete B / Selective C outline cases: ' + outlineModeCa
 console.log('- Added outline pixels: ' + completeOutlinePixels.toLocaleString('en-US') + ' Complete B / ' + selectiveOutlinePixels.toLocaleString('en-US') + ' Selective C');
 console.log('- Private Form shade cases: ' + shadeModeCases.toLocaleString('en-US') + ' across None/B/C outlines');
 console.log('- Form shade changes: ' + shadeChangedPixels.toLocaleString('en-US') + ' source-owned pixels; ' + protectedShadePixels.toLocaleString('en-US') + ' protected pixels preserved');
-console.log('- Public EN-E02 families: 0');
+console.log('- Stable registry: 5 approved EN-E02 families; consumer catalog: 0 EN-E02');
 console.log('- Public consumer catalog: 62 families / 217 variants');
 console.log('- Approved Idle digest: ' + approvedIdleDigest);
 console.log('- Full candidate frame digest: ' + fullFrameDigest);

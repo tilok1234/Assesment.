@@ -37,8 +37,8 @@ check(EN_E01_CANDIDATE_REGISTRY.renderers[0].key === 'humanoid-threat-v1', 'full
 check(EN_E01_CANDIDATE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'full EN-E01 must retain the approved chassis');
 check(EN_E01_CANDIDATE_REGISTRY.publicFamilies.length === 0, 'full EN-E01 candidates must remain outside the public family view');
 check(EN_E01_CANDIDATE_REGISTRY.approvedFamilies.length === 0, 'full EN-E01 candidates must not claim completed-family approval');
-check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 5, 'the current public expansion registry must contain the five approved EN-E01 families');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 5, 'the current public expansion view must contain five approved EN-E01 families');
+check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 10, 'the cumulative expansion registry must contain ten approved EN-E01/EN-E02 families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 10, 'the cumulative expansion view must contain ten approved EN-E01/EN-E02 families');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(Object.isFrozen(EN_E01_CANDIDATE_REGISTRY), 'the full EN-E01 registry must be immutable');
 
@@ -172,6 +172,6 @@ console.log('- Internal variants: 15 (5 common / 5 specialist / 5 elite)');
 console.log('- Complete sheets: 15 (480x96)');
 console.log('- Reviewed frames: 1,200');
 console.log('- Public expansion families: 0');
-console.log('- Current approved public families: 5');
+console.log('- Approved EN-E01 registry families: 5');
 console.log('- Approved Idle digest: ' + approvedIdleDigest);
 console.log('- Full candidate frame digest: ' + fullFrameDigest);
