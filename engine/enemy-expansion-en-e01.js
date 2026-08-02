@@ -64,6 +64,49 @@ export const EN_E01_CONTRACT_CARDS = deepFreeze([
         },
       },
     },
+    additionalVariants: [
+      {
+        variantId: 'familiar-keeper',
+        rendererData: {
+          actor: {
+            bodyBuild: 'classic', skin: 'tan', hairStyle: 'long', hairColor: 'white',
+            expression: 'determined', faceDetail: 'none', headgear: 'hood',
+            outfit: 'robe', outfitColor: 'teal', outfitTier: 'tier1',
+            weapon: 'wand', weaponTier: 'tier1', shield: 'none', shieldTier: 'tier1', offhand: 'none',
+            palette: {
+              skin: ['#d29a62', '#a86e3f'],
+              hair: ['#d8d5cf', '#9b9da4'],
+              outfit: ['#326f72', '#21464d'],
+            },
+          },
+          identity: {
+            overlays: [{ id: 'keeper-cuff', colors: ['#4b2d61', '#d5a94b'] }],
+          },
+        },
+      },
+      {
+        variantId: 'cauldron-brewer',
+        rendererData: {
+          actor: {
+            bodyBuild: 'sturdy', skin: 'deep', hairStyle: 'messy', hairColor: 'ginger',
+            expression: 'angry', faceDetail: 'warpaint', headgear: 'none',
+            outfit: 'robe', outfitColor: 'forest', outfitTier: 'tier2',
+            weapon: 'mace', weaponTier: 'tier1', shield: 'none', shieldTier: 'tier1', offhand: 'none',
+            palette: {
+              skin: ['#6f452c', '#4f2f1e'],
+              hair: ['#b75a31', '#74351f'],
+              outfit: ['#496d3d', '#2b4528'],
+            },
+          },
+          identity: {
+            overlays: [
+              { id: 'crooked-hat', colors: ['#526d3f', '#283621', '#b98545'] },
+              { id: 'brewer-apron', colors: ['#b39a73', '#746147', '#d4aa48'] },
+            ],
+          },
+        },
+      },
+    ],
   },
   {
     id: 'fallen-knight',
@@ -106,6 +149,46 @@ export const EN_E01_CONTRACT_CARDS = deepFreeze([
         },
       },
     },
+    additionalVariants: [
+      {
+        variantId: 'banner-lancer',
+        rendererData: {
+          actor: {
+            bodyBuild: 'classic', skin: 'tan', hairStyle: 'short', hairColor: 'brown',
+            expression: 'determined', faceDetail: 'scar', headgear: 'helm',
+            outfit: 'cape', outfitColor: 'crimson', outfitTier: 'tier1',
+            weapon: 'spear', weaponTier: 'tier1', shield: 'none', shieldTier: 'tier1', offhand: 'none',
+            palette: {
+              skin: ['#d29a62', '#a86e3f'],
+              hair: ['#60402a', '#382619'],
+              outfit: ['#913438', '#57242b'],
+            },
+          },
+          identity: {
+            overlays: [{ id: 'ragged-tabard', colors: ['#304f87', '#213352'] }],
+          },
+        },
+      },
+      {
+        variantId: 'blackguard',
+        rendererData: {
+          actor: {
+            bodyBuild: 'sturdy', skin: 'deep', hairStyle: 'bald', hairColor: 'black',
+            expression: 'angry', faceDetail: 'none', headgear: 'fullhelm',
+            outfit: 'plate', outfitColor: 'charcoal', outfitTier: 'tier2',
+            weapon: 'greatsword', weaponTier: 'tier2', shield: 'none', shieldTier: 'tier1', offhand: 'none',
+            palette: {
+              skin: ['#6f452c', '#4f2f1e'],
+              hair: ['#2e2e38', '#1c1c24'],
+              outfit: ['#3d3f49', '#23252c'],
+            },
+          },
+          identity: {
+            overlays: [{ id: 'ragged-tabard', colors: ['#57316f', '#301d42'] }],
+          },
+        },
+      },
+    ],
   },
   {
     id: 'pirate',
@@ -148,6 +231,52 @@ export const EN_E01_CONTRACT_CARDS = deepFreeze([
         },
       },
     },
+    additionalVariants: [
+      {
+        variantId: 'gunner',
+        rendererData: {
+          actor: {
+            bodyBuild: 'lean', skin: 'deep', hairStyle: 'short', hairColor: 'black',
+            expression: 'determined', faceDetail: 'scar', headgear: 'cap',
+            outfit: 'ranger', outfitColor: 'charcoal', outfitTier: 'tier1',
+            weapon: 'none', weaponTier: 'tier1', shield: 'none', shieldTier: 'tier1', offhand: 'none',
+            palette: {
+              skin: ['#6f452c', '#4f2f1e'],
+              hair: ['#2e2e38', '#1c1c24'],
+              outfit: ['#46515d', '#29323c'],
+            },
+          },
+          identity: {
+            overlays: [
+              { id: 'pirate-sash', colors: ['#315f83', '#213e58', '#d7aa45'] },
+              { id: 'pistol', colors: ['#aeb6bd', '#6c452c', '#e5d9b4'] },
+            ],
+          },
+        },
+      },
+      {
+        variantId: 'bomb-bosun',
+        rendererData: {
+          actor: {
+            bodyBuild: 'sturdy', skin: 'tan', hairStyle: 'messy', hairColor: 'ginger',
+            expression: 'angry', faceDetail: 'eyepatch', headgear: 'bandana',
+            outfit: 'barbarian', outfitColor: 'umber', outfitTier: 'tier1',
+            weapon: 'none', weaponTier: 'tier1', shield: 'none', shieldTier: 'tier1', offhand: 'none',
+            palette: {
+              skin: ['#d29a62', '#a86e3f'],
+              hair: ['#c06434', '#7e3a20'],
+              outfit: ['#76513a', '#4d3326'],
+            },
+          },
+          identity: {
+            overlays: [
+              { id: 'bosun-belt', colors: ['#4a3021', '#725035', '#d7aa45'] },
+              { id: 'throwing-glove', colors: ['#7b4b2b', '#d7aa45'] },
+            ],
+          },
+        },
+      },
+    ],
   },
   {
     id: 'necromancer',
@@ -190,6 +319,46 @@ export const EN_E01_CONTRACT_CARDS = deepFreeze([
         },
       },
     },
+    additionalVariants: [
+      {
+        variantId: 'grave-binder',
+        rendererData: {
+          actor: {
+            species: 'undead', bodyBuild: 'classic', skin: 'pale', hairStyle: 'bald', hairColor: 'white',
+            expression: 'neutral', faceDetail: 'none', headgear: 'hood',
+            outfit: 'necromancer', outfitColor: 'teal', outfitTier: 'tier1',
+            weapon: 'staff', weaponTier: 'tier1', shield: 'none', shieldTier: 'tier1', offhand: 'none',
+            palette: {
+              skin: ['#d8cfbf', '#9b948b'],
+              hair: ['#d8d5cf', '#9b9da4'],
+              outfit: ['#315f62', '#203d42'],
+            },
+          },
+          identity: {
+            overlays: [{ id: 'grave-chain', colors: ['#aeb5b7', '#646c73', '#72d5c1'] }],
+          },
+        },
+      },
+      {
+        variantId: 'ossuary-master',
+        rendererData: {
+          actor: {
+            species: 'undead', bodyBuild: 'sturdy', skin: 'pale', hairStyle: 'bald', hairColor: 'white',
+            expression: 'neutral', faceDetail: 'none', headgear: 'crown',
+            outfit: 'necromancer', outfitColor: 'purple', outfitTier: 'tier2',
+            weapon: 'staff', weaponTier: 'tier2', shield: 'bone', shieldTier: 'tier1', offhand: 'none',
+            palette: {
+              skin: ['#e3d7b6', '#a99c7d'],
+              hair: ['#d8d5cf', '#9b9da4'],
+              outfit: ['#643f83', '#38274f'],
+            },
+          },
+          identity: {
+            overlays: [{ id: 'bone-charms', colors: ['#f0e1bb', '#b4a17c'] }],
+          },
+        },
+      },
+    ],
   },
   {
     id: 'alchemist',
@@ -232,6 +401,52 @@ export const EN_E01_CONTRACT_CARDS = deepFreeze([
         },
       },
     },
+    additionalVariants: [
+      {
+        variantId: 'smoke-brewer',
+        rendererData: {
+          actor: {
+            bodyBuild: 'lean', skin: 'tan', hairStyle: 'short', hairColor: 'black',
+            expression: 'determined', faceDetail: 'none', headgear: 'hood',
+            outfit: 'ranger', outfitColor: 'charcoal', outfitTier: 'tier1',
+            weapon: 'none', weaponTier: 'tier1', shield: 'none', shieldTier: 'tier1', offhand: 'none',
+            palette: {
+              skin: ['#d29a62', '#a86e3f'],
+              hair: ['#2e2e38', '#1c1c24'],
+              outfit: ['#4a5358', '#2b3238'],
+            },
+          },
+          identity: {
+            overlays: [
+              { id: 'flask-kit', colors: ['#c4d2d0', '#d3b64a', '#7c5739', '#9ba3a0', '#5f696a'] },
+              { id: 'respirator', colors: ['#777f83', '#d3b64a', '#383f43'] },
+            ],
+          },
+        },
+      },
+      {
+        variantId: 'mutagenist',
+        rendererData: {
+          actor: {
+            bodyBuild: 'sturdy', skin: 'deep', hairStyle: 'spiky', hairColor: 'blue',
+            expression: 'angry', faceDetail: 'glasses', headgear: 'none',
+            outfit: 'leather', outfitColor: 'forest', outfitTier: 'tier2',
+            weapon: 'none', weaponTier: 'tier1', shield: 'none', shieldTier: 'tier1', offhand: 'none',
+            palette: {
+              skin: ['#6f452c', '#4f2f1e'],
+              hair: ['#4a6fd4', '#31509f'],
+              outfit: ['#3d7049', '#25452e'],
+            },
+          },
+          identity: {
+            overlays: [
+              { id: 'flask-kit', colors: ['#c2a8df', '#a65de2', '#8b5a37', '#9aaa7f', '#5c6a4c'] },
+              { id: 'mutagen-harness', colors: ['#39283f', '#aeb6bd', '#a65de2', '#5ed184'] },
+            ],
+          },
+        },
+      },
+    ],
   },
 ]);
 
@@ -245,20 +460,14 @@ export const EN_E01_IDLE_GATE = deepFreeze({
   nextGate: 'Full three-variant animation review before public registration.',
 });
 
-function candidateFamily(card) {
-  const baselineBrief = card.variantBriefs.find((variant) => variant.id === card.baseline.variantId);
+function familyDefinition(card, variants, notes) {
   return {
     id: card.id,
     name: card.name,
     sliceId: card.sliceId,
     rendererKey: EN_E01_HUMANOID_RENDERER.key,
     state: ENEMY_EXPANSION_STATES.IMPLEMENTED,
-    variants: [{
-      id: baselineBrief.id,
-      name: baselineBrief.name,
-      brief: baselineBrief.brief,
-      rendererData: card.baseline.rendererData,
-    }],
+    variants,
     rendererData: {
       contractCard: card.id,
       intendedScale: card.intendedScale,
@@ -266,12 +475,47 @@ function candidateFamily(card) {
     review: {
       baselineVariant: card.baseline.variantId,
       scale: card.baseline.reviewScale,
-      notes: 'Four-direction two-frame Idle candidate only; not public and not full-animation approved.',
+      notes,
     },
   };
 }
 
-export const EN_E01_CANDIDATE_FAMILIES = deepFreeze(EN_E01_CONTRACT_CARDS.map(candidateFamily));
+function baselineFamily(card) {
+  const baselineBrief = card.variantBriefs.find((variant) => variant.id === card.baseline.variantId);
+  return familyDefinition(card, [{
+      id: baselineBrief.id,
+      name: baselineBrief.name,
+      brief: baselineBrief.brief,
+      rendererData: card.baseline.rendererData,
+    }], 'Exact approved four-direction common-baseline Idle evidence.');
+}
+
+function productionFamily(card) {
+  const rendererDataByVariant = new Map([
+    [card.baseline.variantId, card.baseline.rendererData],
+    ...card.additionalVariants.map((variant) => [variant.variantId, variant.rendererData]),
+  ]);
+  const variants = card.variantBriefs.map((brief) => {
+    const rendererData = rendererDataByVariant.get(brief.id);
+    if (!rendererData) throw new TypeError('EN-E01 variant ' + card.id + '/' + brief.id + ' needs renderer data.');
+    return {
+      id: brief.id,
+      name: brief.name,
+      brief: brief.brief,
+      rendererData,
+    };
+  });
+  return familyDefinition(card, variants, 'Full common/specialist/elite animation candidate; not public before completed-slice review.');
+}
+
+export const EN_E01_IDLE_FAMILIES = deepFreeze(EN_E01_CONTRACT_CARDS.map(baselineFamily));
+
+export const EN_E01_IDLE_REGISTRY = createEnemyExpansionRegistry({
+  renderers: [EN_E01_HUMANOID_RENDERER],
+  families: EN_E01_IDLE_FAMILIES,
+});
+
+export const EN_E01_CANDIDATE_FAMILIES = deepFreeze(EN_E01_CONTRACT_CARDS.map(productionFamily));
 
 export const EN_E01_CANDIDATE_REGISTRY = createEnemyExpansionRegistry({
   renderers: [EN_E01_HUMANOID_RENDERER],

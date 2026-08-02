@@ -94,7 +94,9 @@ checkSyntax('tools/cast-review.mjs');
 checkSyntax('tools/death-review.mjs');
 checkSyntax('tools/check-enemy-expansion.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e01.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e01-full.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
+checkSyntax('tools/enemy-expansion-en-e01-full-review.mjs');
 checkSyntax('tools/enemy-expansion-review-pixels.mjs');
 checkSyntax('tools/dev-server.mjs');
 checkSyntax('tools/generate-shield-placement-audit.mjs');
@@ -135,6 +137,14 @@ const enemyExpansionEnE01Check = spawnSync(process.execPath, [path.join(root, 't
 check(
   enemyExpansionEnE01Check.status === 0,
   `EN-E01 Idle candidate gate failed\n${enemyExpansionEnE01Check.stdout.trim()}\n${enemyExpansionEnE01Check.stderr.trim()}`,
+);
+
+const enemyExpansionEnE01FullCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e01-full.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE01FullCheck.status === 0,
+  `EN-E01 full private candidate gate failed\n${enemyExpansionEnE01FullCheck.stdout.trim()}\n${enemyExpansionEnE01FullCheck.stderr.trim()}`,
 );
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];

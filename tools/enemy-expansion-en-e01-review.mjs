@@ -7,9 +7,9 @@ import {
   ENEMY_EXPANSION_PROFILE,
 } from '../engine/enemy-expansion.js';
 import {
-  EN_E01_CANDIDATE_REGISTRY,
   EN_E01_CONTRACT_CARDS,
   EN_E01_IDLE_GATE,
+  EN_E01_IDLE_REGISTRY,
 } from '../engine/enemy-expansion-en-e01.js';
 import {
   captureEnemyExpansionFrame,
@@ -165,7 +165,7 @@ for (let familyIndex = 0; familyIndex < EN_E01_CONTRACT_CARDS.length; familyInde
     const direction = directions[directionIndex];
     const x = pairX(directionIndex);
     for (let frame = 0; frame < 2; frame++) {
-      const captured = captureEnemyExpansionFrame(EN_E01_CANDIDATE_REGISTRY, spec, direction, 'idle', frame);
+      const captured = captureEnemyExpansionFrame(EN_E01_IDLE_REGISTRY, spec, direction, 'idle', frame);
       const key = [card.id, direction, frame].join('/');
       frames.set(key, captured);
       frameRecords.push({
@@ -214,7 +214,7 @@ const candidateFrameDigest = createHash('sha256').update(JSON.stringify(frameRec
   opaquePixels: record.opaquePixels,
   bounds: record.bounds,
 })))).digest('hex');
-const reviewPlan = buildEnemyExpansionReviewPlan(EN_E01_CANDIDATE_REGISTRY, { sliceId: 'EN-E01' });
+const reviewPlan = buildEnemyExpansionReviewPlan(EN_E01_IDLE_REGISTRY, { sliceId: 'EN-E01' });
 const report = {
   format: 'enemy-expansion-idle-review-v1',
   sliceId: 'EN-E01',
@@ -227,9 +227,9 @@ const report = {
   reviewPlan,
   frames: frameRecords,
   guarantees: {
-    internalFamilies: EN_E01_CANDIDATE_REGISTRY.families.length,
-    publicFamilies: EN_E01_CANDIDATE_REGISTRY.publicFamilies.length,
-    implementedVariants: EN_E01_CANDIDATE_REGISTRY.families.reduce((count, family) => count + family.variants.length, 0),
+    internalFamilies: EN_E01_IDLE_REGISTRY.families.length,
+    publicFamilies: EN_E01_IDLE_REGISTRY.publicFamilies.length,
+    implementedVariants: EN_E01_IDLE_REGISTRY.families.reduce((count, family) => count + family.variants.length, 0),
     specialistVariantsImplemented: 0,
     eliteVariantsImplemented: 0,
     animationsRendered: ['idle'],

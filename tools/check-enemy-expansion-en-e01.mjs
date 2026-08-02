@@ -4,10 +4,10 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import * as engine from '../sprite-engine.js';
 import {
-  EN_E01_CANDIDATE_FAMILIES,
-  EN_E01_CANDIDATE_REGISTRY,
   EN_E01_CONTRACT_CARDS,
   EN_E01_IDLE_GATE,
+  EN_E01_IDLE_FAMILIES,
+  EN_E01_IDLE_REGISTRY,
 } from '../engine/enemy-expansion-en-e01.js';
 import {
   alphaDigest,
@@ -66,19 +66,19 @@ for (const card of EN_E01_CONTRACT_CARDS) {
   check(card.variantBriefs[0].id === card.baseline?.variantId, prefix + ' must implement only its common brief first');
 }
 
-check(EN_E01_CANDIDATE_FAMILIES.length === 5, 'the candidate family definitions must contain five families');
-check(JSON.stringify(EN_E01_CANDIDATE_REGISTRY.families.map((family) => family.id)) === JSON.stringify(registryOrder), 'the candidate registry must use deterministic family-id order');
-check(EN_E01_CANDIDATE_REGISTRY.renderers.length === 1, 'EN-E01 must share one humanoid renderer');
-check(EN_E01_CANDIDATE_REGISTRY.renderers[0].key === 'humanoid-threat-v1', 'EN-E01 must use the versioned shared humanoid renderer');
-check(EN_E01_CANDIDATE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'EN-E01 must declare the humanoid-v1 chassis');
-check(EN_E01_CANDIDATE_REGISTRY.publicFamilies.length === 0, 'Idle candidates must not enter the public family view');
-check(EN_E01_CANDIDATE_REGISTRY.approvedFamilies.length === 0, 'Idle candidates must not claim family approval');
-check(Object.isFrozen(EN_E01_CANDIDATE_REGISTRY), 'the EN-E01 candidate registry must be immutable');
+check(EN_E01_IDLE_FAMILIES.length === 5, 'the approved Idle family definitions must contain five families');
+check(JSON.stringify(EN_E01_IDLE_REGISTRY.families.map((family) => family.id)) === JSON.stringify(registryOrder), 'the approved Idle registry must use deterministic family-id order');
+check(EN_E01_IDLE_REGISTRY.renderers.length === 1, 'EN-E01 must share one humanoid renderer');
+check(EN_E01_IDLE_REGISTRY.renderers[0].key === 'humanoid-threat-v1', 'EN-E01 must use the versioned shared humanoid renderer');
+check(EN_E01_IDLE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'EN-E01 must declare the humanoid-v1 chassis');
+check(EN_E01_IDLE_REGISTRY.publicFamilies.length === 0, 'Idle evidence must not enter the public family view');
+check(EN_E01_IDLE_REGISTRY.approvedFamilies.length === 0, 'Idle approval must not claim completed-family approval');
+check(Object.isFrozen(EN_E01_IDLE_REGISTRY), 'the approved EN-E01 Idle registry must be immutable');
 check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 0, 'the built-in public-facing expansion registry must remain empty');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(cardOrder.every((id) => !engine.ENEMIES.some((family) => family.id === id)), 'EN-E01 families must not be added to the legacy catalog before visual approval');
 
-for (const family of EN_E01_CANDIDATE_REGISTRY.families) {
+for (const family of EN_E01_IDLE_REGISTRY.families) {
   check(family.state === engine.ENEMY_EXPANSION_STATES.IMPLEMENTED, 'Candidate ' + family.id + ' must remain implemented, not approved');
   check(family.variants.length === 1, 'Candidate ' + family.id + ' must register only its baseline variant');
   check(family.variants[0].id === expectedBaselines[family.id], 'Candidate ' + family.id + ' registered the wrong baseline');
@@ -88,7 +88,7 @@ const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8')
 check(!facadeSource.includes('enemy-expansion-en-e01'), 'the public sprite-engine facade must not export the unapproved EN-E01 registry');
 check(!facadeSource.includes('EN_E01_'), 'the public sprite-engine facade must not expose EN-E01 candidate symbols');
 
-const reviewPlan = engine.buildEnemyExpansionReviewPlan(EN_E01_CANDIDATE_REGISTRY, { sliceId: 'EN-E01' });
+const reviewPlan = engine.buildEnemyExpansionReviewPlan(EN_E01_IDLE_REGISTRY, { sliceId: 'EN-E01' });
 check(JSON.stringify(reviewPlan.families.map((family) => family.id)) === JSON.stringify(registryOrder), 'slice review targeting must select the five candidates deterministically');
 check(reviewPlan.families.every((family) => family.state === engine.ENEMY_EXPANSION_STATES.IMPLEMENTED), 'review-plan families must remain implemented candidates');
 check(reviewPlan.frames.length === 8, 'the EN-E01 gate must contain two Idle frames in four directions');
@@ -99,7 +99,7 @@ check(
   ])),
   'the EN-E01 review frame order must be Down, Left, Right, Up with two Idle frames each',
 );
-check(JSON.stringify(reviewPlan) === JSON.stringify(engine.buildEnemyExpansionReviewPlan(EN_E01_CANDIDATE_REGISTRY, { sliceId: 'EN-E01' })), 'the EN-E01 review plan must be deterministic');
+check(JSON.stringify(reviewPlan) === JSON.stringify(engine.buildEnemyExpansionReviewPlan(EN_E01_IDLE_REGISTRY, { sliceId: 'EN-E01' })), 'the EN-E01 review plan must be deterministic');
 
 const frameRecords = [];
 for (const card of EN_E01_CONTRACT_CARDS) {
@@ -108,8 +108,8 @@ for (const card of EN_E01_CONTRACT_CARDS) {
   for (const direction of engine.DIRS) {
     const idleFrames = [];
     for (let frame = 0; frame < 2; frame++) {
-      const rendered = captureEnemyExpansionFrame(EN_E01_CANDIDATE_REGISTRY, spec, direction, 'idle', frame, engine.SIZE);
-      const repeated = captureEnemyExpansionFrame(EN_E01_CANDIDATE_REGISTRY, spec, direction, 'idle', frame, engine.SIZE);
+      const rendered = captureEnemyExpansionFrame(EN_E01_IDLE_REGISTRY, spec, direction, 'idle', frame, engine.SIZE);
+      const repeated = captureEnemyExpansionFrame(EN_E01_IDLE_REGISTRY, spec, direction, 'idle', frame, engine.SIZE);
       const prefix = card.id + '/' + direction + '/idle/' + frame;
       check(rendered.digest === repeated.digest, prefix + ' must render deterministically');
       check(rendered.opaquePixels > 0, prefix + ' must not be empty');
@@ -129,8 +129,8 @@ for (const card of EN_E01_CONTRACT_CARDS) {
 
 for (const card of EN_E01_CONTRACT_CARDS) for (let frame = 0; frame < 2; frame++) {
   const spec = { kind: 'enemy', family: card.id, variant: card.baseline.variantId };
-  const right = captureEnemyExpansionFrame(EN_E01_CANDIDATE_REGISTRY, spec, 'right', 'idle', frame, engine.SIZE);
-  const left = captureEnemyExpansionFrame(EN_E01_CANDIDATE_REGISTRY, spec, 'left', 'idle', frame, engine.SIZE);
+  const right = captureEnemyExpansionFrame(EN_E01_IDLE_REGISTRY, spec, 'right', 'idle', frame, engine.SIZE);
+  const left = captureEnemyExpansionFrame(EN_E01_IDLE_REGISTRY, spec, 'left', 'idle', frame, engine.SIZE);
   const mirroredRightMask = alphaDigest(mirrorPixels(right.pixels, engine.SIZE));
   check(mirroredRightMask === left.alphaDigest, card.id + '/idle/' + frame + ' left silhouette must mirror the right silhouette while preserving equipment handedness');
   check(right.opaquePixels === left.opaquePixels, card.id + '/idle/' + frame + ' side views must retain equal occupied area');
@@ -139,26 +139,14 @@ for (const card of EN_E01_CONTRACT_CARDS) for (let frame = 0; frame < 2; frame++
 for (const direction of engine.DIRS) for (let frame = 0; frame < 2; frame++) {
   const silhouettes = EN_E01_CONTRACT_CARDS.map((card) => {
     const spec = { kind: 'enemy', family: card.id, variant: card.baseline.variantId };
-    return alphaDigest(captureEnemyExpansionFrame(EN_E01_CANDIDATE_REGISTRY, spec, direction, 'idle', frame, engine.SIZE).pixels);
+    return alphaDigest(captureEnemyExpansionFrame(EN_E01_IDLE_REGISTRY, spec, direction, 'idle', frame, engine.SIZE).pixels);
   });
   check(new Set(silhouettes).size === EN_E01_CONTRACT_CARDS.length, direction + '/idle/' + frame + ' must keep all five baseline silhouettes distinct');
 }
 
 rejects(
   () => engine.renderEnemyExpansionFrame(
-    EN_E01_CANDIDATE_REGISTRY,
-    { kind: 'enemy', family: 'witch', variant: 'hexer' },
-    'down',
-    'attack',
-    0,
-    { clearRect() {}, fillRect() {}, fillStyle: '#000000' },
-  ),
-  'Idle-only',
-  'pre-approval EN-E01 Attack rendering',
-);
-rejects(
-  () => engine.renderEnemyExpansionFrame(
-    EN_E01_CANDIDATE_REGISTRY,
+    EN_E01_IDLE_REGISTRY,
     { kind: 'enemy', family: 'witch', variant: 'familiar-keeper' },
     'down',
     'idle',
@@ -169,7 +157,7 @@ rejects(
   'pre-approval specialist rendering',
 );
 
-const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E01_CANDIDATE_REGISTRY);
+const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E01_IDLE_REGISTRY);
 check(ledgerReport.counts.approved === 1 && ledgerReport.counts.implemented === 1, 'ledger must report accepted EN-F00 and implemented EN-E01');
 check(ledgerReport.counts.registeredFamilies === 5 && ledgerReport.counts.publicFamilies === 0, 'candidate ledger evidence must report five internal and zero public families');
 const enE01Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E01');
