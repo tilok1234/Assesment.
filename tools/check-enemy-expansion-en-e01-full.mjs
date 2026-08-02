@@ -37,7 +37,8 @@ check(EN_E01_CANDIDATE_REGISTRY.renderers[0].key === 'humanoid-threat-v1', 'full
 check(EN_E01_CANDIDATE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'full EN-E01 must retain the approved chassis');
 check(EN_E01_CANDIDATE_REGISTRY.publicFamilies.length === 0, 'full EN-E01 candidates must remain outside the public family view');
 check(EN_E01_CANDIDATE_REGISTRY.approvedFamilies.length === 0, 'full EN-E01 candidates must not claim completed-family approval');
-check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 0, 'the built-in expansion registry must remain empty');
+check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 5, 'the current public expansion registry must contain the five approved EN-E01 families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 5, 'the current public expansion view must contain five approved EN-E01 families');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(Object.isFrozen(EN_E01_CANDIDATE_REGISTRY), 'the full EN-E01 registry must be immutable');
 
@@ -45,7 +46,7 @@ for (const card of EN_E01_CONTRACT_CARDS) {
   const family = EN_E01_CANDIDATE_REGISTRY.families.find((entry) => entry.id === card.id);
   check(Boolean(family), 'missing full candidate family ' + card.id);
   if (!family) continue;
-  check(family.state === engine.ENEMY_EXPANSION_STATES.IMPLEMENTED, card.id + ' must remain implemented, not approved');
+  check(family.state === engine.ENEMY_EXPANSION_STATES.IMPLEMENTED, card.id + ' frozen candidate evidence must retain its implemented snapshot state');
   check(card.additionalVariants?.length === 2, card.id + ' needs exactly specialist and elite renderer data');
   check(JSON.stringify(family.variants.map((variant) => variant.id)) === JSON.stringify(expectedVariants[card.id]), card.id + ' must register common, specialist, elite in approved brief order');
   check(JSON.stringify(card.variantBriefs.map((variant) => variant.role)) === JSON.stringify(['common', 'specialist', 'elite']), card.id + ' roles must remain common, specialist, elite');
@@ -54,8 +55,9 @@ for (const card of EN_E01_CONTRACT_CARDS) {
 }
 
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
-check(!facadeSource.includes('enemy-expansion-en-e01'), 'the public facade must not import the unapproved full EN-E01 candidate');
-check(!facadeSource.includes('EN_E01_'), 'the public facade must not expose full EN-E01 candidate symbols');
+check(facadeSource.includes('enemy-expansion-public.js'), 'the public facade must route through the approved expansion boundary');
+check(!facadeSource.includes('enemy-expansion-en-e01'), 'the public facade must not import EN-E01 implementation details directly');
+check(!facadeSource.includes('EN_E01_'), 'the public facade must not expose EN-E01 implementation symbols');
 
 const frameByKey = new Map();
 const frameRecords = [];
@@ -170,5 +172,6 @@ console.log('- Internal variants: 15 (5 common / 5 specialist / 5 elite)');
 console.log('- Complete sheets: 15 (480x96)');
 console.log('- Reviewed frames: 1,200');
 console.log('- Public expansion families: 0');
+console.log('- Current approved public families: 5');
 console.log('- Approved Idle digest: ' + approvedIdleDigest);
 console.log('- Full candidate frame digest: ' + fullFrameDigest);

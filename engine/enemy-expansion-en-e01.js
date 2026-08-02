@@ -460,13 +460,26 @@ export const EN_E01_IDLE_GATE = deepFreeze({
   nextGate: 'Full three-variant animation review before public registration.',
 });
 
-function familyDefinition(card, variants, notes) {
+export const EN_E01_COMPLETED_SLICE_GATE = deepFreeze({
+  status: 'approved',
+  approvedOn: '2026-08-02',
+  implementationCommit: '230a9a39fecc56104f2dd18fce5cef5517658146',
+  artifact: 'enemy-expansion-review/en-e01-full/en-e01-full-overview.png',
+  artifactSha256: '0b38f2737b5215d37a08e0ae3f7e25f82e88bb17a97641e33b0ee9ef9c0e8fb7',
+  reviewManifest: 'enemy-expansion-review/en-e01-full/en-e01-full-review.json',
+  reviewManifestSha256: '129f3f2b81318df08edf2b0b1dc2183fc8494450027e91ceea04a2248208e398',
+  candidateFrameDigest: 'addcf8055a80a0a6266be0eff8cd6b8235092c6ba366bc9c020bd5feb90ae173',
+  scope: 'Five approved families, 15 variants, four directions, and all 1,200 standard Enemy frames.',
+  nextGate: 'Register only EN-E01 through the stable public expansion facade; later slices remain separately gated.',
+});
+
+function familyDefinition(card, variants, notes, state = ENEMY_EXPANSION_STATES.IMPLEMENTED) {
   return {
     id: card.id,
     name: card.name,
     sliceId: card.sliceId,
     rendererKey: EN_E01_HUMANOID_RENDERER.key,
-    state: ENEMY_EXPANSION_STATES.IMPLEMENTED,
+    state,
     variants,
     rendererData: {
       contractCard: card.id,
@@ -490,12 +503,12 @@ function baselineFamily(card) {
     }], 'Exact approved four-direction common-baseline Idle evidence.');
 }
 
-function productionFamily(card) {
+function productionVariants(card) {
   const rendererDataByVariant = new Map([
     [card.baseline.variantId, card.baseline.rendererData],
     ...card.additionalVariants.map((variant) => [variant.variantId, variant.rendererData]),
   ]);
-  const variants = card.variantBriefs.map((brief) => {
+  return card.variantBriefs.map((brief) => {
     const rendererData = rendererDataByVariant.get(brief.id);
     if (!rendererData) throw new TypeError('EN-E01 variant ' + card.id + '/' + brief.id + ' needs renderer data.');
     return {
@@ -505,7 +518,19 @@ function productionFamily(card) {
       rendererData,
     };
   });
-  return familyDefinition(card, variants, 'Full common/specialist/elite animation candidate; not public before completed-slice review.');
+}
+
+function productionFamily(card) {
+  return familyDefinition(card, productionVariants(card), 'Frozen full common/specialist/elite candidate reviewed before public registration.');
+}
+
+function approvedFamily(card) {
+  return familyDefinition(
+    card,
+    productionVariants(card),
+    'Designer-approved common/specialist/elite family registered after completed-slice review.',
+    ENEMY_EXPANSION_STATES.APPROVED,
+  );
 }
 
 export const EN_E01_IDLE_FAMILIES = deepFreeze(EN_E01_CONTRACT_CARDS.map(baselineFamily));
@@ -520,4 +545,11 @@ export const EN_E01_CANDIDATE_FAMILIES = deepFreeze(EN_E01_CONTRACT_CARDS.map(pr
 export const EN_E01_CANDIDATE_REGISTRY = createEnemyExpansionRegistry({
   renderers: [EN_E01_HUMANOID_RENDERER],
   families: EN_E01_CANDIDATE_FAMILIES,
+});
+
+export const EN_E01_APPROVED_FAMILIES = deepFreeze(EN_E01_CONTRACT_CARDS.map(approvedFamily));
+
+export const EN_E01_PUBLIC_REGISTRY = createEnemyExpansionRegistry({
+  renderers: [EN_E01_HUMANOID_RENDERER],
+  families: EN_E01_APPROVED_FAMILIES,
 });

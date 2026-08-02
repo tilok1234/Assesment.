@@ -72,6 +72,7 @@ checkSyntax('engine/death-animation.js');
 checkSyntax('engine/enemy-expansion.js');
 checkSyntax('engine/enemy-expansion-en-e01.js');
 checkSyntax('engine/enemy-expansion-humanoid.js');
+checkSyntax('engine/enemy-expansion-public.js');
 checkSyntax('engine/class-templates.js');
 checkSyntax('engine/game-pack.js');
 checkSyntax('engine/production-rolls.js');
@@ -95,6 +96,7 @@ checkSyntax('tools/death-review.mjs');
 checkSyntax('tools/check-enemy-expansion.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e01.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e01-full.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e01-registration.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-full-review.mjs');
 checkSyntax('tools/enemy-expansion-review-pixels.mjs');
@@ -145,6 +147,14 @@ const enemyExpansionEnE01FullCheck = spawnSync(process.execPath, [path.join(root
 check(
   enemyExpansionEnE01FullCheck.status === 0,
   `EN-E01 full private candidate gate failed\n${enemyExpansionEnE01FullCheck.stdout.trim()}\n${enemyExpansionEnE01FullCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE01RegistrationCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e01-registration.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE01RegistrationCheck.status === 0,
+  `EN-E01 public registration gate failed\n${enemyExpansionEnE01RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE01RegistrationCheck.stderr.trim()}`,
 );
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];

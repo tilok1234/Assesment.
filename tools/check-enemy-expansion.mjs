@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import * as engine from '../sprite-engine.js';
+import { ENEMY_EXPANSION_REGISTRY as ENEMY_EXPANSION_FOUNDATION_REGISTRY } from '../engine/enemy-expansion.js';
 
 const errors = [];
 
@@ -63,16 +64,16 @@ check(
   legacy.digest === engine.ENEMY_EXPANSION_PROFILE.legacyBaseline.pixelDigest,
   `the legacy Enemy corpus digest changed: ${legacy.digest}`,
 );
-check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 0, 'EN-F00 must not pre-register unfinished expansion families');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 0, 'EN-F00 must not expose expansion families to public selectors or packs');
-check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the built-in expansion registry must be immutable');
+check(ENEMY_EXPANSION_FOUNDATION_REGISTRY.families.length === 0, 'EN-F00 must not pre-register unfinished expansion families');
+check(ENEMY_EXPANSION_FOUNDATION_REGISTRY.publicFamilies.length === 0, 'the EN-F00 foundation registry must remain empty');
+check(Object.isFrozen(ENEMY_EXPANSION_FOUNDATION_REGISTRY), 'the EN-F00 foundation registry must be immutable');
 
-const ledgerReport = engine.buildEnemyExpansionLedgerReport();
+const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, ENEMY_EXPANSION_FOUNDATION_REGISTRY);
 check(ledgerReport.counts.slices === 22, 'the expansion ledger must contain EN-F00, EN-E01..18, and EN-B01..03');
 check(ledgerReport.counts.proposals === 80, 'the expansion ledger must account for all 80 intake proposals');
-check(ledgerReport.counts.implemented === 1, 'EN-E01 must be the only implemented expansion slice at its Idle visual gate');
-check(ledgerReport.counts.approved === 1, 'accepted EN-F00 must be the only approved expansion slice');
-check(ledgerReport.counts.publicFamilies === 0, 'planned content must never be reported as shipped');
+check(ledgerReport.counts.implemented === 0, 'no approved expansion slice may remain in the implemented lifecycle state');
+check(ledgerReport.counts.approved === 2, 'EN-F00 and EN-E01 must be the only approved expansion slices');
+check(ledgerReport.counts.publicFamilies === 0, 'the isolated EN-F00 foundation registry must remain empty');
 check(Object.isFrozen(ledgerReport) && Object.isFrozen(ledgerReport.slices), 'the expansion ledger report must be deeply immutable');
 
 const renderCalls = [];
@@ -225,7 +226,7 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('Enemy expansion foundation validation passed at the EN-E01 Idle gate.');
+console.log('Enemy expansion foundation validation passed after EN-E01 approval.');
 console.log(`- Legacy families: ${legacy.families}`);
 console.log(`- Legacy sheets: ${legacy.sheets}`);
 console.log(`- Legacy frames: ${legacy.frames}`);
