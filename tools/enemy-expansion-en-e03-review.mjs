@@ -227,9 +227,11 @@ const assembledBoard = renderBoard({
 const rawHash = createHash('sha256').update(rawBoard.png).digest('hex');
 const assembledHash = createHash('sha256').update(assembledBoard.png).digest('hex');
 const candidateFrameDigest = createHash('sha256').update(JSON.stringify(frameRecords)).digest('hex');
-if (rawHash !== EN_E03_IDLE_GATE.artifactSha256) throw new Error('EN-E03 raw review PNG drifted from the frozen gate hash.');
-if (assembledHash !== EN_E03_IDLE_GATE.assembledArtifactSha256) throw new Error('EN-E03 Complete B + Form review PNG drifted from the frozen gate hash.');
-if (candidateFrameDigest !== EN_E03_IDLE_GATE.candidateFrameDigest) throw new Error('EN-E03 Idle frame digest drifted from the frozen gate hash.');
+const drift = [];
+if (rawHash !== EN_E03_IDLE_GATE.artifactSha256) drift.push('raw review expected ' + EN_E03_IDLE_GATE.artifactSha256 + ' but rendered ' + rawHash);
+if (assembledHash !== EN_E03_IDLE_GATE.assembledArtifactSha256) drift.push('Complete B + Form review expected ' + EN_E03_IDLE_GATE.assembledArtifactSha256 + ' but rendered ' + assembledHash);
+if (candidateFrameDigest !== EN_E03_IDLE_GATE.candidateFrameDigest) drift.push('frame digest expected ' + EN_E03_IDLE_GATE.candidateFrameDigest + ' but rendered ' + candidateFrameDigest);
+if (drift.length) throw new Error('EN-E03 review evidence drifted from the frozen gate:\n- ' + drift.join('\n- '));
 const reviewPlan = buildEnemyExpansionReviewPlan(EN_E03_IDLE_REGISTRY, { sliceId: 'EN-E03' });
 const report = {
   format: 'enemy-expansion-idle-review-v2',

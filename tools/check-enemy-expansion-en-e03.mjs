@@ -81,8 +81,10 @@ check(EN_E03_CONTRACT_CARDS.length === 3, 'EN-E03 needs exactly three contract c
 check(EN_E03_IDLE_GATE.status === 'awaiting-designer-approval', 'the EN-E03 Idle gate must remain pending explicit visual approval');
 check(EN_E03_IDLE_GATE.authorizedOn === '2026-08-03', 'the EN-E03 Idle gate must record the authorization date');
 check(EN_E03_IDLE_GATE.artifact === 'enemy-expansion-review/en-e03/en-e03-idle-review.png', 'the EN-E03 Idle gate must use the isolated review artifact path');
-check(EN_E03_IDLE_GATE.artifactSha256 === 'e2022aa7038b6a23c702b5f0533188a94dcf0c3c7bcddd09c380c253a25fca61', 'the EN-E03 Idle gate must freeze the exact raw review hash');
-check(EN_E03_IDLE_GATE.assembledArtifactSha256 === '17ff9e8056875cbfcc6de7f4e64ade8fef6b18bdc920e1e22f5bbcc41ffc6ac7', 'the EN-E03 Idle gate must freeze the exact Complete B + Form review hash');
+check(EN_E03_IDLE_GATE.revision === 'v2-roster-style-rebuild', 'the EN-E03 Idle gate must identify the roster-style rebuild');
+check(EN_E03_IDLE_GATE.replacesRejectedCandidate?.candidateFrameDigest === 'd7ed44c51002873fb12045317af13f16b76cbdeed647a2968537b017f5e933ad', 'the EN-E03 Idle gate must retain the rejected v1 digest as historical evidence');
+check(EN_E03_IDLE_GATE.artifactSha256 === '059f7c4945cffacf4e53e2d9435566479adf08ec754ed8f0faca520958908aa2', 'the EN-E03 Idle gate must freeze the exact rebuilt raw review hash');
+check(EN_E03_IDLE_GATE.assembledArtifactSha256 === '2835b044868cd948fbb7327675f5821adfe499507a08d0e8350f83cff5e2ab89', 'the EN-E03 Idle gate must freeze the exact rebuilt Complete B + Form review hash');
 check(EN_E03_IDLE_GATE.exclusions.includes('Walk') && EN_E03_IDLE_GATE.exclusions.includes('registration'), 'the EN-E03 Idle gate must exclude later motion and registration');
 check(Object.isFrozen(EN_E03_IDLE_GATE) && Object.isFrozen(EN_E03_IDLE_GATE.exclusions), 'the EN-E03 Idle gate must be deeply immutable');
 
@@ -111,8 +113,8 @@ for (const card of EN_E03_CONTRACT_CARDS) {
 check(EN_E03_IDLE_FAMILIES.length === 3, 'the EN-E03 Idle definitions must contain three internal families');
 check(JSON.stringify(EN_E03_IDLE_REGISTRY.families.map((family) => family.id)) === JSON.stringify(registryOrder), 'the EN-E03 Idle registry must use deterministic family-id order');
 check(EN_E03_IDLE_REGISTRY.renderers.length === 1, 'EN-E03 must use one large-hybrid renderer');
-check(EN_E03_IDLE_REGISTRY.renderers[0].key === 'large-hybrid-v1', 'EN-E03 must use the versioned large-hybrid renderer');
-check(EN_E03_IDLE_REGISTRY.renderers[0].chassis === 'large-hybrid-v1', 'EN-E03 must declare the large-hybrid-v1 chassis');
+check(EN_E03_IDLE_REGISTRY.renderers[0].key === 'large-hybrid-v2', 'EN-E03 must use the versioned large-hybrid renderer');
+check(EN_E03_IDLE_REGISTRY.renderers[0].chassis === 'large-hybrid-v2', 'EN-E03 must declare the large-hybrid-v2 chassis');
 check(EN_E03_IDLE_REGISTRY.publicFamilies.length === 0 && EN_E03_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E03 Idle evidence must not enter the public family view');
 check(Object.isFrozen(EN_E03_IDLE_REGISTRY), 'the EN-E03 Idle registry must be immutable');
 check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 10, 'EN-E03 Idle work must not alter the ten approved EN-E01/EN-E02 families');
@@ -216,7 +218,7 @@ for (const direction of engine.DIRS) for (let frame = 0; frame < 2; frame++) {
 
 const centaurSide = captureEnemyExpansionFrame(EN_E03_IDLE_REGISTRY, { kind: 'enemy', family: 'centaur', variant: 'steppe-hunter' }, 'right', 'idle', 0, engine.SIZE);
 for (const x of [5, 9, 16, 19]) check(pixelAt(centaurSide, x, 22) !== null, 'Centaur right Idle must expose all four grounded hoof contacts');
-check(centaurSide.bounds.minX === 1 && centaurSide.bounds.maxX === 21, 'Centaur right Idle must use a long horizontal hybrid silhouette');
+check(centaurSide.bounds.minX === 1 && centaurSide.bounds.maxX === 22, 'Centaur right Idle must use a long horizontal hybrid silhouette');
 check(pixelAt(centaurSide, 13, 11) !== null && pixelAt(centaurSide, 13, 12) !== null, 'Centaur human/horse join must remain opaque at the withers');
 
 const giantDown = captureEnemyExpansionFrame(EN_E03_IDLE_REGISTRY, { kind: 'enemy', family: 'giant', variant: 'hill-breaker' }, 'down', 'idle', 0, engine.SIZE);
@@ -224,7 +226,7 @@ check(giantDown.bounds.minY === 2 && giantDown.bounds.maxY === 22, 'Giant Down I
 check(occupancy.get('giant') > occupancy.get('satyr'), 'Giant must remain materially broader/heavier than Satyr across the Idle corpus');
 
 const satyrDown = captureEnemyExpansionFrame(EN_E03_IDLE_REGISTRY, { kind: 'enemy', family: 'satyr', variant: 'briar-reveler' }, 'down', 'idle', 0, engine.SIZE);
-for (const x of [4, 9, 14, 19]) check(pixelAt(satyrDown, x, 22) !== null, 'Satyr Down Idle must expose split digitigrade hoof contacts');
+for (const x of [6, 8, 15, 17]) check(pixelAt(satyrDown, x, 22) !== null, 'Satyr Down Idle must expose split digitigrade hoof contacts');
 
 rejects(
   () => engine.renderEnemyExpansionFrame(

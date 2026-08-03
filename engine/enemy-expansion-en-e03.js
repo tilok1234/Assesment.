@@ -48,14 +48,14 @@ export const EN_E03_CONTRACT_CARDS = deepFreeze([
           palette: {
             skin: ['#c58b5b', '#7a4b35'],
             hair: ['#50372b', '#2b211c'],
-            outfit: ['#80583b', '#4c3628'],
+            outfit: ['#6f713d', '#42452b'],
           },
         },
         materials: {
-          hide: ['#6f4b32', '#3d2c22'],
+          hide: ['#6a4a33', '#3d2b23'],
           hoof: ['#3c302b', '#201a18'],
           wood: ['#8b5b37', '#4d3425'],
-          accent: ['#c28b43', '#754b2a'],
+          accent: ['#c4964c', '#7a542e'],
         },
       },
     },
@@ -163,14 +163,22 @@ export const EN_E03_CONTRACT_CARDS = deepFreeze([
 export const EN_E03_IDLE_GATE = deepFreeze({
   status: 'awaiting-designer-approval',
   authorizedOn: '2026-08-03',
+  revision: 'v2-roster-style-rebuild',
+  replacesRejectedCandidate: {
+    rejectedOn: '2026-08-03',
+    reason: 'The first candidate used a separate boxed visual language with baked silhouette ink and did not match the approved Enemy roster.',
+    artifactSha256: 'e2022aa7038b6a23c702b5f0533188a94dcf0c3c7bcddd09c380c253a25fca61',
+    assembledArtifactSha256: '17ff9e8056875cbfcc6de7f4e64ade8fef6b18bdc920e1e22f5bbcc41ffc6ac7',
+    candidateFrameDigest: 'd7ed44c51002873fb12045317af13f16b76cbdeed647a2968537b017f5e933ad',
+  },
   artifact: 'enemy-expansion-review/en-e03/en-e03-idle-review.png',
-  artifactSha256: 'e2022aa7038b6a23c702b5f0533188a94dcf0c3c7bcddd09c380c253a25fca61',
+  artifactSha256: '059f7c4945cffacf4e53e2d9435566479adf08ec754ed8f0faca520958908aa2',
   assembledArtifact: 'enemy-expansion-review/en-e03/en-e03-idle-complete-b-form-review.png',
-  assembledArtifactSha256: '17ff9e8056875cbfcc6de7f4e64ade8fef6b18bdc920e1e22f5bbcc41ffc6ac7',
-  candidateFrameDigest: 'd7ed44c51002873fb12045317af13f16b76cbdeed647a2968537b017f5e933ad',
+  assembledArtifactSha256: '2835b044868cd948fbb7327675f5821adfe499507a08d0e8350f83cff5e2ab89',
+  candidateFrameDigest: '8339d3d4a2380f8e9d9bf6ecb3fa1a5f0faddafc0bf6ce43c3ce12c515a1a059',
   scope: 'Three common baselines, four directions, two Idle frames, and raw plus Complete B + Form review only.',
   exclusions: ['specialist variants', 'elite variants', 'Walk', 'Attack', 'Hurt', 'Cast', 'Death', 'registration', 'consumer exposure', 'effects', 'release'],
-  nextGate: 'Explicit visual approval of the exact EN-E03 Idle artifact before any later production.',
+  nextGate: 'Explicit visual approval of the exact rebuilt EN-E03 Idle artifacts before any later production.',
 });
 
 function baselineFamily(card) {
