@@ -136,13 +136,17 @@ Fallen Knight, Fanatic Monk, Goatfolk, Necromancer, and Witch. The repaired
 registry is now the stable and consumer boundary; the pre-repair registry is
 retained only as immutable internal comparison evidence.
 
-The isolated `codex/en-e03` branch at checkpoint `50ad516` adds immutable
-contract cards and only the Hill Breaker, Steppe Hunter, and Briar Reveler
-common Idle baselines for Giant, Centaur, and Satyr. All 24 frames pass the
-focused structural gate and have exact raw plus Complete B + Form review
-artifacts. No EN-E03 family is approved, selectable, or public. Explicit visual
-approval of those exact boards is required before later motion, specialist or
-elite variants, registration, effects, or release work.
+The isolated `codex/en-e03` branch first produced checkpoint `50ad516`, but the
+designer rejected those Giant, Centaur, and Satyr common Idle boards because
+their boxed construction and baked silhouette ink did not match the approved
+Enemy roster. Replacement checkpoint `6104eae` keeps the same immutable
+contract cards and common-only scope while rebuilding Hill Breaker, Steppe
+Hunter, and Briar Reveler in the roster's palette-first source style. All 24 v2
+frames pass the focused structural gate and have new exact raw review artifacts
+plus Complete B + Form presentation boards. No EN-E03 family is approved,
+selectable, or public.
+Explicit visual approval of the rebuilt boards is required before later motion,
+specialist or elite variants, registration, effects, or release work.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

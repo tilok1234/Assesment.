@@ -13,11 +13,13 @@ designer reopened seven family presentations for narrow walk/seam corrections:
 Catfolk, Desert Raider, Fallen Knight, Fanatic Monk, Goatfolk, Necromancer, and
 Witch. The designer accepted that exact candidate on 2026-08-03 and authorized
 continuation. The repaired registry is now the stable/public result, while the
-pre-repair registry remains immutable internal comparison evidence. EN-E03
-contract cards plus common-only Idle are now implemented as an isolated visual
-candidate for Giant, Centaur, and Satyr. The exact raw and Complete B + Form
-boards await explicit designer approval. This handoff records the accepted
-EN-F00 foundation, ten approved EN-E01/EN-E02 families / 30 variants, the
+pre-repair registry remains immutable internal comparison evidence. The
+designer rejected EN-E03 v1 because its boxed, pre-inked construction did not
+match the approved Enemy roster. EN-E03 v2 rebuilds the same contract cards and
+common-only Idle scope for Giant, Centaur, and Satyr. The exact replacement raw
+and Complete B + Form boards await explicit designer approval. This handoff
+records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02 families /
+30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
 frozen pre-registration evidence, shipped NPC artifact, local Windows proof,
 and unresolved Boss and publisher boundaries.
@@ -74,9 +76,12 @@ continuation text has been reconciled to EN-E03.
   `8eb0f99` (`Promote approved enemy repairs`).
 - EN-E03 review branch lineage: `codex/en-e03`, based exactly on approved
   repair documentation checkpoint `2a8a7a2`.
-- EN-E03 common-only Idle implementation checkpoint:
+- Rejected EN-E03 v1 common-only Idle checkpoint:
   `50ad516bdf338842e47ae9c22cd7cd293adef498`
   (`Create EN-E03 common Idle candidate`).
+- Current EN-E03 v2 roster-style replacement checkpoint:
+  `6104eaedce62c4514cdd5061bd58c8c79eeb0341`
+  (`Rebuild EN-E03 Idle candidate in roster style`).
 - Verified synchronized base before EN-F00:
   `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`
   (`Document enemy expansion and refresh handoff`).
@@ -112,10 +117,10 @@ the frozen 15-variant candidate snapshot, registration checkpoint `7b6e448`,
 clone-safe artifact gate `be44af7`, and consumer implementation checkpoint
 `8ab1837`, visually approved repair checkpoint `6400dd5`, and promotion
 checkpoint `8eb0f99`;
-`codex/en-e03` based exactly on `2a8a7a2`, containing the bounded common-Idle
-candidate at `50ad516`, its synchronized pre-audit documentation checkpoint at
-`6c12448`, and this documentation refresh; verify its live HEAD equals its
-upstream because a handoff cannot safely name its own commit;
+`codex/en-e03` based exactly on `2a8a7a2`, containing rejected v1 at `50ad516`,
+documentation checkpoint `59f4f1e`, the current v2 replacement at `6104eae`,
+and this follow-up; verify its live HEAD equals its upstream because a handoff
+cannot safely name its own commit;
 and `main` still equal to `origin/main` at
 verified base `f5476a2`. Do not modify, clean, reset, rebase, or repurpose the
 archived review checkout.
@@ -136,10 +141,11 @@ The seven-family EN-E01/EN-E02 repair is explicitly approved. The accepted
 registry changes exactly 18 renderer-data records to add real foot strides,
 replace Catfolk's white pseudo-transparent mouth band, and close the reported
 Desert Raider, Fallen Knight, and Goatfolk checkerboard seams. The pre-repair
-pixels remain exact in an internal comparison registry. EN-E03 now contains
-three contract cards and only the Hill Breaker, Steppe Hunter, and Briar Reveler
-common Idle baselines. The current stop point is explicit visual approval of
-their exact raw and Complete B + Form boards; later motion, variants,
+pixels remain exact in an internal comparison registry. EN-E03 v1 is rejected;
+v2 contains the same three contract cards and only the rebuilt Hill Breaker,
+Steppe Hunter, and Briar Reveler common Idle baselines. The current stop point
+is explicit visual approval of their exact replacement raw and Complete B +
+Form boards; later motion, variants,
 registration, effects, and release remain unauthorized.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
@@ -580,19 +586,20 @@ Recorded expansion results through the current EN-E03 gate:
   `c24f36eac5dedd10a1c931b7d59b52f379c3113e4c80fb8aa73bc71514e1e7c8`;
 - live browser smoke advances Walk frames 1-4 for all seven reported baseline
   variants at 20x with Complete B and Form active;
-- EN-E03 implementation checkpoint
-  `50ad516bdf338842e47ae9c22cd7cd293adef498` freezes the isolated common-only
-  Idle candidate before this documentation-only follow-up;
+- EN-E03 v1 checkpoint `50ad516bdf338842e47ae9c22cd7cd293adef498`
+  and its original hashes remain rejected historical evidence; v2 checkpoint
+  `6104eaedce62c4514cdd5061bd58c8c79eeb0341` freezes the roster-style
+  replacement candidate;
 - `check:enemy-expansion-en-e03` passes all 24 Giant/Centaur/Satyr common Idle
   frames, one connected silhouette per frame, binary alpha, one-cell margins,
   zero clipping, exact side mirroring, distinct direction/family silhouettes,
-  2,337 Complete B additions, and 1,673 Form-shaded source pixels;
+  2,916 Complete B additions, and 2,579 Form-shaded source pixels;
 - EN-E03 raw artifact SHA-256 is
-  `e2022aa7038b6a23c702b5f0533188a94dcf0c3c7bcddd09c380c253a25fca61`,
+  `059f7c4945cffacf4e53e2d9435566479adf08ec754ed8f0faca520958908aa2`,
   Complete B + Form artifact SHA-256 is
-  `17ff9e8056875cbfcc6de7f4e64ade8fef6b18bdc920e1e22f5bbcc41ffc6ac7`,
+  `2835b044868cd948fbb7327675f5821adfe499507a08d0e8350f83cff5e2ab89`,
   and the locked 24-frame digest is
-  `d7ed44c51002873fb12045317af13f16b76cbdeed647a2968537b017f5e933ad`;
+  `8339d3d4a2380f8e9d9bf6ecb3fa1a5f0faddafc0bf6ce43c3ce12c515a1a059`;
 - EN-E03 remains internal at three common variants / zero public families, with
   specialist/elite data, later motion, registration, consumers, effects, and
   release explicitly absent;
@@ -600,8 +607,8 @@ Recorded expansion results through the current EN-E03 gate:
   outline, Form-shade, Cast/Death alias, equipment, Boss, 232-fixture, pack,
   and release-configuration gates unchanged; and
 - no legacy fixture, schema version, Boss asset, release artifact, or archived
-  review payload is modified; only the exact visually accepted repair registry
-  replaces the pre-repair registry at the stable/public boundary.
+  review payload is modified; the exact visually accepted repair registry
+  remains the only public replacement, while EN-E03 v2 stays isolated evidence.
 
 ## Documentation Audit Result
 
@@ -609,7 +616,8 @@ The 2026-08-03 audit covered all 20 tracked Markdown documents and reconciled
 their current-facing claims against the clean synchronized EN-E03 branch, live
 module graph, package scripts, public/internal registries, review hashes,
 validation totals, local standalone executable, absent NSIS directory, and the
-planning mainline ruling.
+planning mainline ruling. The later same-day v1 rejection and v2 replacement
+were then reconciled into the five active documents named below.
 
 Current-facing drift or ambiguity was corrected in:
 
@@ -619,6 +627,8 @@ Current-facing drift or ambiguity was corrected in:
   EN-E03 renderer/review dependency boundary;
 - `ROADMAP.md` — replaces the obsolete EN-E02-pending/EN-E03-not-started
   continuation with the exact current gate;
+- `ENEMY_EXPANSION_PLAN.md` — records rejected v1 evidence, the exact v2
+  replacement checkpoint/hashes, and the unchanged approval stop;
 - `HANDOFF.md` — refreshes branch, validation, artifact, reading, audit, and
   new-chat state;
 - `EQUIPMENT_OUTLINE_ASSESSMENT.md`, `EQUIPMENT_READABILITY_PLAN.md`,
@@ -631,11 +641,10 @@ Current-facing drift or ambiguity was corrected in:
   locked historical 12-column fixture corpus rather than current 20-column
   exports.
 
-No current-state correction was required in:
+No current-state correction was required in the remaining documents:
 
 - `COMPATIBLE_REROLL_PLAN.md`;
 - `DEATH_ANIMATION_PLAN.md`;
-- `ENEMY_EXPANSION_PLAN.md`;
 - `ENEMY_OUTLINE_PLAN.md`;
 - `GAME_PACK_EXPORT_PLAN.md`;
 - `OFFHAND_ITEMS_PLAN.md`;
@@ -681,14 +690,15 @@ The safest opening request for the next chat is:
 
 > EN-E01 and EN-E02 are approved, registered, consumer-integrated, and include
 > the visually accepted 2026-08-03 seven-family repair. Verify the clean synced
-> branch and exact 67/232 stable/public boundary. EN-E03 now has isolated
-> Giant/Centaur/Satyr common-only Idle raw and Complete B + Form boards. Open
-> those exact artifacts and wait for explicit designer approval before later
+> branch and exact 67/232 stable/public boundary. EN-E03 v1 was rejected for a
+> roster-style mismatch; v2 at `6104eae` has isolated Giant/Centaur/Satyr
+> common-only Idle raw and Complete B + Form replacement boards. Open those
+> exact artifacts and wait for explicit designer approval before later
 > variants, motion, registration, effects, or release.
 
 EN-F00, EN-E01, EN-E02, and the seven-family repair are approved. The stable and
 consumer registries are the same ten-family / 30-variant repaired object through
 67 public families / 232 variants; the pre-repair pixels remain internal
 evidence. Only EN-E03 contract cards plus common-only Idle were authorized and
-that bounded candidate is now implemented but not visually approved; no EN-E03
-family is public.
+the v2 replacement candidate is now implemented but not visually approved; no
+EN-E03 family is public.

@@ -173,12 +173,14 @@ through `ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY` while the pre-repair object
 remains internal. That repair did not authorize effects or release.
 
 `engine/enemy-expansion-en-e03.js` is a separate, non-public evidence module.
-It owns three immutable Giant/Centaur/Satyr contract cards, the exact raw and
-Complete B + Form artifact hashes, and an internal registry containing only the
-Hill Breaker, Steppe Hunter, and Briar Reveler common variants. Its
-`large-hybrid-v1` renderer lives in
-`engine/enemy-expansion-large-hybrid.js` and rejects every animation except
-Idle. Review tooling imports this module directly for 24 deterministic frames;
+It owns three immutable Giant/Centaur/Satyr contract cards, the exact current
+raw and Complete B + Form artifact hashes, rejected-v1 hash evidence, and an
+internal registry containing only the Hill Breaker, Steppe Hunter, and Briar
+Reveler common variants. Its `large-hybrid-v2` renderer lives in
+`engine/enemy-expansion-large-hybrid.js`, removes v1's baked silhouette cage in
+favor of the roster's palette-first source clusters, and rejects every
+animation except Idle. Review tooling imports this module directly for 24
+deterministic frames;
 `sprite-engine.js`, `engine/enemy-expansion-public.js`, `PUBLIC_ENEMIES`, editor
 selectors, persistence, packs, kits, and exports do not import or expose it.
 Visual approval must precede later motion, specialist/elite implementation, or

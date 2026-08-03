@@ -107,8 +107,8 @@ Progress: underway. The first validated content slice adds eight facial-detail c
 
 Current continuation checkpoint (2026-08-03): synchronized `main` remains the
 pre-expansion base at `f5476a2`, while active bounded work is isolated on
-`codex/en-e03`. That branch is clean and synchronized with its remote at
-`6c12448` before this documentation audit. The complete 57-family / 202-variant
+`codex/en-e03`. Documentation checkpoint `59f4f1e` precedes the current v2
+implementation at `6104eae`. The complete 57-family / 202-variant
 legacy Enemy catalog remains visually approved; its current 20-column gate
 covers 16,160 source frames / 48,480 None-B-C cases. Form shading, Lantern,
 Production Roll, compatible category rerolls, and the public Cast/Death actor
@@ -139,10 +139,13 @@ unchanged 57-family / 202-variant legacy catalog and pixel locks. The designer
 accepted EN-E02's live Complete B + Form consumer view and later approved the
 exact seven-family walk/seam repair. That repaired registry is now both the
 stable and consumer boundary; the pre-repair registry remains internal.
-EN-E03 checkpoint `50ad516` adds only Giant, Centaur, and Satyr contract cards
-plus three common four-direction/two-frame Idle baselines. Its raw and Complete
-B + Form boards are technically validated but await explicit visual approval;
-no EN-E03 family is public and no later motion or variants are authorized.
+The designer rejected EN-E03 v1 checkpoint `50ad516` because its boxed visual
+language did not match the approved roster. Replacement checkpoint `6104eae`
+keeps only the Giant, Centaur, and Satyr contract cards plus three common
+four-direction/two-frame Idle baselines, rebuilt without baked silhouette ink.
+Its new raw and Complete B + Form boards are technically validated but await
+explicit visual approval; no EN-E03 family is public and no later motion or
+variants are authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

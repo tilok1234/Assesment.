@@ -8,9 +8,11 @@
   reopened seven specific family presentations for walk/seam repair. The exact
   repair candidate at checkpoint `6400dd5` was visually approved on 2026-08-03
   and promoted without further pixel changes at checkpoint `8eb0f99`; the
-  pre-repair registry remains immutable comparison evidence. EN-E03 now has an
-  isolated Giant/Centaur/Satyr common-only Idle candidate with raw and Complete
-  B + Form evidence awaiting explicit visual approval
+  pre-repair registry remains immutable comparison evidence. The designer
+  rejected EN-E03 v1 for using a visual language unlike the approved roster;
+  replacement checkpoint `6104eae` now supplies new isolated
+  Giant/Centaur/Satyr common-only Idle raw and Complete B + Form evidence
+  awaiting explicit visual approval
 - Recorded: 2026-08-03
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -59,8 +61,9 @@ authorized only the bounded repair candidate described below. The designer then
 accepted the exact live candidate with “nice thats better” and authorized the
 next documented step. That continuation authorizes EN-E03 contract cards plus
 common-only Idle, not later motion, variants, registration, effects, or release.
-That bounded EN-E03 implementation is now complete and technically validated;
-its exact visual artifact remains unapproved.
+The first bounded EN-E03 implementation was rejected visually. Its v2
+replacement is complete and technically validated; the exact rebuilt artifacts
+remain unapproved.
 
 ## Intake Assessment
 
@@ -98,7 +101,8 @@ below.
 EN-E01 and EN-E02 remain complete through their accepted consumer presentations.
 Their isolated seven-family walk/seam correction is also approved and promoted;
 the pre-repair registry remains available only as immutable comparison evidence.
-EN-E03 common-only Idle is an `acceptance-candidate`.
+EN-E03 v1 common-only Idle is rejected historical evidence. The roster-style
+v2 replacement is the current `acceptance-candidate`.
 
 ## Non-Negotiable Production Contract
 
@@ -469,34 +473,40 @@ Initial variant briefs:
 
 Current common-only Idle evidence:
 
-- implementation checkpoint `50ad516bdf338842e47ae9c22cd7cd293adef498`
-  (`Create EN-E03 common Idle candidate`) freezes this bounded candidate;
+- v1 implementation checkpoint `50ad516bdf338842e47ae9c22cd7cd293adef498`
+  is rejected historical evidence. The designer found that its large boxed
+  shapes, baked silhouette ink, proportions, and directional construction did
+  not look like the approved Enemy roster;
+- v2 implementation checkpoint `6104eaedce62c4514cdd5061bd58c8c79eeb0341`
+  (`Rebuild EN-E03 Idle candidate in roster style`) freezes the replacement;
 - three immutable contract cards define 24x24 scale, distinct large-bipedal /
   hybrid-quadrupedal / digitigrade locomotion, attack tells, variant briefs,
   and external effect/mechanic boundaries;
-- one data-driven `large-hybrid-v1` renderer implements only Hill Breaker,
+- one data-driven `large-hybrid-v2` renderer implements only Hill Breaker,
   Steppe Hunter, and Briar Reveler through separate Giant, Centaur, and Satyr
-  archetype data; non-Idle rendering is rejected at this gate;
+  archetype data. It uses palette-first source clusters and leaves the exterior
+  contour to Complete B instead of baking an ink cage into raw pixels; non-Idle
+  rendering remains rejected at this gate;
 - the Centaur uses a true four-hoof body with readable torso-to-horse joins in
   front, rear, and exact-mirrored side views; Giant remains a near-full-cell
   heavy biped; Satyr keeps horns, tail, hocks, and split hooves distinct;
 - `npm.cmd run check:enemy-expansion-en-e03` validates all 24 Idle frames,
   deterministic pixels, binary alpha, one-cell margins, zero clipping, exact
   side mirroring, one connected silhouette per frame, direction/family
-  distinction, 2,337 Complete B outline pixels, and 1,673 Form-shaded pixels;
+  distinction, 2,916 Complete B outline pixels, and 2,579 Form-shaded pixels;
 - raw artifact `enemy-expansion-review/en-e03/en-e03-idle-review.png` is
   `1528x880`, SHA-256
-  `e2022aa7038b6a23c702b5f0533188a94dcf0c3c7bcddd09c380c253a25fca61`;
+  `059f7c4945cffacf4e53e2d9435566479adf08ec754ed8f0faca520958908aa2`;
 - assembled Complete B + Form artifact
   `enemy-expansion-review/en-e03/en-e03-idle-complete-b-form-review.png` is
   `1528x880`, SHA-256
-  `17ff9e8056875cbfcc6de7f4e64ade8fef6b18bdc920e1e22f5bbcc41ffc6ac7`;
+  `2835b044868cd948fbb7327675f5821adfe499507a08d0e8350f83cff5e2ab89`;
   and
 - the 24-frame candidate digest is
-  `d7ed44c51002873fb12045317af13f16b76cbdeed647a2968537b017f5e933ad`.
+  `8339d3d4a2380f8e9d9bf6ecb3fa1a5f0faddafc0bf6ce43c3ce12c515a1a059`.
 
-Stop at explicit designer approval or rejection of those exact EN-E03 Idle
-artifacts. Do not implement specialist/elite variants, Walk/Attack/Hurt,
+Stop at explicit designer approval or rejection of those exact rebuilt EN-E03
+Idle artifacts. Do not implement specialist/elite variants, Walk/Attack/Hurt,
 Cast/Death aliases, registration, consumer routing, effects, or release work.
 
 ### EN-E04 - Serpentine and aquatic peoples
@@ -803,10 +813,10 @@ integration, and the later seven-family repair approval are recorded.
 Registration checkpoint `7b6e448` and consumer checkpoint `8ab1837` established
 the generic 67/232 boundary; the exact repair pixels from `6400dd5` are now the
 stable/public result, with the pre-repair registry retained internally. The
-current gate is explicit review of the exact EN-E03 raw and Complete B + Form
-common-only Idle artifacts for Giant, Centaur, and Satyr. Do not add later
-motion, variants, registration, separate effect assets, or release work before
-that decision.
+current gate is explicit review of the exact rebuilt EN-E03 v2 raw and Complete
+B + Form common-only Idle artifacts for Giant, Centaur, and Satyr. Do not add
+later motion, variants, registration, separate effect assets, or release work
+before that decision.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
