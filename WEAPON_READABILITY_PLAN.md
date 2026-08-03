@@ -70,5 +70,6 @@ weapon work is paused. The default assembler view still composes modular
 combat effects after approved shields; that deferred integration problem is
 tracked in `HANDOFF.md`, and an effects-Off review does not validate it.
 Crossbow T2 with a shield remains a later composition review rather than a
-source-art change. The active next-phase plan is the independent assembled
-shade pass in `SHADE_RENDERING_PLAN.md`.
+source-art change. The independent assembled shade pass later completed; the
+current approval-gated enemy-expansion continuation is recorded in
+`HANDOFF.md` and does not authorize weapon work.

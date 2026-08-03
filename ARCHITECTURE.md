@@ -31,8 +31,11 @@ index.html
       -> engine/game-pack.js
       -> engine/enemy-expansion-public.js
         -> engine/enemy-expansion.js
-        -> engine/enemy-expansion-en-e01.js
-          -> engine/enemy-expansion-humanoid.js
+        -> engine/enemy-expansion-repairs.js
+          -> engine/enemy-expansion-en-e01.js
+            -> engine/enemy-expansion-humanoid.js
+          -> engine/enemy-expansion-en-e02.js
+            -> engine/enemy-expansion-humanoid.js
       -> engine/variant-batches.js
       -> engine/class-templates.js
     -> character-kit.js
@@ -68,7 +71,7 @@ Sprite-rendering consumers import `sprite-engine.js`. Internal engine module pat
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
 
-### Enemy expansion foundation and approved registrations
+### Enemy expansion foundation, approved registrations, and isolated candidates
 
 `engine/enemy-expansion.js` is the pure EN-F00 boundary. It owns the immutable
 `enemy-expansion-v1` frame/baseline profile, the 22-slice/80-proposal lifecycle
@@ -80,11 +83,13 @@ filesystem, or editor state.
 
 The isolated EN-F00 foundation registry deliberately contains no families or
 renderer handlers. `engine/enemy-expansion-public.js` composes only explicitly
-approved slice registries and supplies the current default ledger report to the
-stable facade. Its current immutable registry contains ten approved EN-E01 and
-EN-E02 families / 30 variants. Planned families cannot enter any registry;
-implemented entries remain internal; only an approved registration can appear
-in the public family view.
+approved content and supplies the current default ledger report to the stable
+facade. It imports the approved repaired boundary from
+`engine/enemy-expansion-repairs.js`, whose immutable registry contains ten
+approved EN-E01 and EN-E02 families / 30 variants. The same module retains the
+exact pre-repair registry as internal comparison evidence. Planned families
+cannot enter the stable/public registry; implemented candidates remain
+internal; only an approved registration can appear in the public family view.
 
 The legacy `ENEMIES` array remains unchanged as the 57-family / 202-variant
 regression and fixture boundary. `engine/enemy-expansion-public.js` also exports
@@ -162,7 +167,22 @@ standard-dispatcher paths consume EN-E02 without slice-specific branches.
 `sprite-engine.js` still imports only the generic stable boundary and exposes no
 slice-specific symbols. The five pre-registration candidate records remain
 immutable `implemented` evidence; consumer integration does not retroactively
-rewrite that reviewed snapshot or authorize effects, release, or EN-E03.
+rewrite that reviewed snapshot. The designer later approved an exact
+seven-family walk/seam repair, so both stable and consumer composition now route
+through `ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY` while the pre-repair object
+remains internal. That repair did not authorize effects or release.
+
+`engine/enemy-expansion-en-e03.js` is a separate, non-public evidence module.
+It owns three immutable Giant/Centaur/Satyr contract cards, the exact raw and
+Complete B + Form artifact hashes, and an internal registry containing only the
+Hill Breaker, Steppe Hunter, and Briar Reveler common variants. Its
+`large-hybrid-v1` renderer lives in
+`engine/enemy-expansion-large-hybrid.js` and rejects every animation except
+Idle. Review tooling imports this module directly for 24 deterministic frames;
+`sprite-engine.js`, `engine/enemy-expansion-public.js`, `PUBLIC_ENEMIES`, editor
+selectors, persistence, packs, kits, and exports do not import or expose it.
+Visual approval must precede later motion, specialist/elite implementation, or
+registration.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -404,6 +424,10 @@ deliberately not serialized.
   and None/None dispatcher boundary. Optional assembled rendering may apply the
   shared Form/outline algorithms; exports remain shadow-free, while the live
   preview may add only the standard non-baked floor shadow.
+- EN-E03 remains an isolated common-only Idle review registry with three
+  implemented variants, 24 review frames, and zero approved/public families.
+  Its non-Idle refusal and absence from the public facade are invariants until
+  an explicit later approval changes that boundary.
 - Shade None plus outline None directly delegates to `drawSprite()`. Shade None
   combined with Complete B or Selective C preserves the approved outline
   output. Form changes eligible source-owned colors only and is wired through
@@ -444,6 +468,15 @@ all export scopes, and approved pixel parity across all 2,400 editor/dispatcher
 frames and all 30 native `480x96` sheets. It also exhausts 7,200 None/B/C
 outline cases and 7,200 Form/outline cases across all 180 published expansion
 palette colors.
+
+The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
+approved 18 renderer-data records differ from the pre-repair registry and locks
+the seven affected families' Walk contacts, hard alpha, margins, clipping, and
+reported seam coordinates. The nested
+`npm run check:enemy-expansion-en-e03` gate validates three internal common
+variants / 24 Idle frames, connected and distinct silhouettes, true four-hoof
+Centaur contacts, Giant/Satyr scale distinctions, exact side mirroring,
+Complete B/Form ownership, non-Idle refusal, and zero public exposure.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
@@ -531,11 +564,14 @@ For face-bound content, verify front and both side views, confirm the rear view 
 
 For the proposed 80-enemy expansion, do not use this legacy one-family path.
 EN-F00's data-driven foundation and stable public composition boundary now
-exist. EN-E01 demonstrates the complete lifecycle with five approved/public
-families / 15 variants and a real shared renderer handler. Follow
-`ENEMY_EXPANSION_PLAN.md`: keep candidates out of the public view, stop for
-four-direction baseline approval before full production, stop again for
-completed-slice approval, and register only the explicitly approved slice.
+exist. EN-E01 and EN-E02 demonstrate the complete lifecycle with ten
+approved/public families / 30 variants and a shared renderer handler; the later
+approved repair remains a separate immutable registry layer. EN-E03 is the
+current counterexample that proves implemented evidence can stay non-public:
+only three common Idle baselines exist. Follow `ENEMY_EXPANSION_PLAN.md`: keep
+candidates out of the public view, stop for four-direction baseline approval
+before full production, stop again for completed-slice approval, and register
+only an explicitly approved slice.
 
 ### Change the sheet contract
 

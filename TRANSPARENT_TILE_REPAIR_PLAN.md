@@ -9,8 +9,9 @@ Date: 2026-07-25
 This is the retained plan for repairing unintended transparent checkerboard
 cells inside assembled player sprites. It covers body construction,
 equipment-to-body contact, and the interaction with None, Complete B, and
-Selective C. The current continuation is `HANDOFF.md`; the next planned feature
-is `SHADE_RENDERING_PLAN.md`.
+Selective C. The former shade phase later completed. The current continuation
+is the approval-gated enemy-expansion lane in `HANDOFF.md` and
+`ENEMY_EXPANSION_PLAN.md`; it does not authorize another transparency slice.
 
 The audit that produced this plan was read-only. The first repair slice was subsequently implemented and explicitly approved on 2026-07-25. The existing dirty attack-animation, effect-direction, and effect-compositor work predates that slice and remains separately reviewable.
 
@@ -325,5 +326,6 @@ If transparency work resumes, continue Phase 1C by grouping the 1,660 advisory
 notches by shared outfit/build signature and reviewing one deterministic slice
 at a time. Preserve leg separation, collar/neck breathing space, and equipment
 openings unless a specific visual candidate is rejected. Do not fold this work
-into the shade pass, begin the broad mixed-owner pass, or accept outline
+into the current enemy-expansion lane, the deferred effect compositor, or a
+release checkpoint; do not begin the broad mixed-owner pass or accept outline
 goldens until the body-only classifications are complete and reviewed.

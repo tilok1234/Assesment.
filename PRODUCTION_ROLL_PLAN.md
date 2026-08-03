@@ -24,8 +24,10 @@ baselines, and release artifacts.
 - That development line is fully merged into `main` and archive-tagged as
   `archive/codex/form-shading`; neither the worktree nor the deleted remote
   branch is a continuation target.
-- Normal work now happens in
-  `C:\Users\headc\Documents\8-bit-sprite-assembler-main` on `main`.
+- The consolidated baseline remains
+  `C:\Users\headc\Documents\8-bit-sprite-assembler-main` on `main`; bounded
+  later slices use isolated worktrees named by `HANDOFF.md`. The historical
+  Production worktree is not a continuation target.
 - `npm.cmd run check` passes 1,000 Production policy cases in addition to the
   full existing project matrix, including 29 bounded-fallback cases and 80
   deterministic integration render cases.

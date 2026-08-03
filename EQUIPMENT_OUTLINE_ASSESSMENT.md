@@ -79,9 +79,11 @@ The Crossbow T5 source-art prototype, animation frame-safety correction, and shi
 
 The default assembler combat-effect preview interacting incorrectly with
 approved shield pixels remains unresolved, but it is deferred rather than the
-active lane. The complete enemy-outline rollout is approved at `ac860aa`; the
-next planned feature is `SHADE_RENDERING_PLAN.md`, which explicitly excludes
-effect/shield compositing. If equipment work resumes, follow `HANDOFF.md`,
+active lane. The complete enemy-outline rollout is approved at `ac860aa`, and
+the later Form-shading lane is also complete. The current continuation is the
+approval-gated enemy-expansion lane recorded in `HANDOFF.md` and
+`ENEMY_EXPANSION_PLAN.md`; it does not authorize equipment work. If equipment
+work resumes, follow `HANDOFF.md`,
 reproduce the effect-enabled UI state, change compositor/occlusion behavior
 rather than approved shield art, and obtain visual approval before returning
 to Bone T3 or broader redesigns.

@@ -105,16 +105,18 @@ Exit criteria:
 
 Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
 
-Current continuation checkpoint (2026-08-02): `main` is synchronized with
-`origin/main` at `f5476a2` before the isolated expansion branches. The complete
-57-family / 202-variant Enemy catalog remains visually approved; its current
-20-column gate covers 16,160 source frames / 48,480 None-B-C cases. Form
-shading, Lantern, Production Roll, compatible category rerolls, and the public
-Cast/Death actor contract are complete. The isolated Boss workspace contains
-fourteen direction entries (twelve approved plus Rhino and Unicorn candidates)
-and ten animation entries. Catgirl Templar and Astro Knight are accepted;
-Goblin War-Crown, Rhino, and Boar Rider animations remain candidates, as do
-the repaired Rhino and Unicorn direction designs.
+Current continuation checkpoint (2026-08-03): synchronized `main` remains the
+pre-expansion base at `f5476a2`, while active bounded work is isolated on
+`codex/en-e03`. That branch is clean and synchronized with its remote at
+`6c12448` before this documentation audit. The complete 57-family / 202-variant
+legacy Enemy catalog remains visually approved; its current 20-column gate
+covers 16,160 source frames / 48,480 None-B-C cases. Form shading, Lantern,
+Production Roll, compatible category rerolls, and the public Cast/Death actor
+contract are complete. The isolated Boss workspace contains fourteen direction
+entries (twelve approved plus Rhino and Unicorn candidates) and ten animation
+entries. Catgirl Templar and Astro Knight are accepted; Goblin War-Crown,
+Rhino, and Boar Rider animations remain candidates, as do the repaired Rhino
+and Unicorn direction designs.
 
 The deterministic `wildshot-npc-slice-v1@bf6269c` delivery contains 32
 Player-built NPC looks and was verified by the game intake. The approved
@@ -133,10 +135,15 @@ sheet-export consumers through the first approved slice. EN-E02 registration
 checkpoint `7b6e448` adds five more approved families / 15 variants, and the
 separately authorized consumer checkpoint `8ab1837` routes both slices through
 the same generic boundary at 67 families / 232 variants while preserving the
-unchanged 57-family / 202-variant legacy catalog and pixel locks. EN-E02's live
-Complete B + Form consumer view is technically validated and awaits designer
-acceptance.
-The latest pushed source
+unchanged 57-family / 202-variant legacy catalog and pixel locks. The designer
+accepted EN-E02's live Complete B + Form consumer view and later approved the
+exact seven-family walk/seam repair. That repaired registry is now both the
+stable and consumer boundary; the pre-repair registry remains internal.
+EN-E03 checkpoint `50ad516` adds only Giant, Centaur, and Satyr contract cards
+plus three common four-direction/two-frame Idle baselines. Its raw and Complete
+B + Form boards are technically validated but await explicit visual approval;
+no EN-E03 family is public and no later motion or variants are authorized.
+The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
 catalog entries, so the command is not release-ready. Existing fixtures remain
@@ -306,9 +313,9 @@ Candidate additions:
 - Additional off-hand items beyond the completed Lantern, such as spell foci; quivers require a separate back-slot plan rather than the held-item topology
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants only through the approved planning
-  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01 is accepted through
-  consumer integration, EN-E02 is at its explicit live consumer-acceptance
-  gate, and EN-E03 does not start implicitly
+  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01 and EN-E02 are
+  accepted through repaired consumer integration, while EN-E03 is stopped at
+  explicit visual approval of its three common-only Idle boards
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 

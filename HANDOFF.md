@@ -22,9 +22,22 @@ unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
 frozen pre-registration evidence, shipped NPC artifact, local Windows proof,
 and unresolved Boss and publisher boundaries.
 
+This handoff was re-audited on 2026-08-03 against the live branch, all 20
+tracked Markdown documents, the public and internal expansion boundaries, the
+current validation scripts, exact review hashes, and the local Windows artifact
+state. Historical measurements remain where explicitly labeled; current-facing
+continuation text has been reconciled to EN-E03.
+
 ## Canonical Workspace And Git State
 
-- Normal-work worktree:
+- Active continuation worktree:
+  `C:\tmp\8-bit-sprite-assembler-en-e03`
+- Active branch and upstream: `codex/en-e03` tracking
+  `origin/codex/en-e03`.
+- Clean synchronized pre-audit HEAD:
+  `6c1244885c11a6e2b026ab2c3d8ad5dc5eb84a7d`
+  (`Record EN-E03 Idle checkpoint`).
+- Normal baseline worktree:
   `C:\Users\headc\Documents\8-bit-sprite-assembler-main`
 - Mainline branch: `main`
 - Upstream: `origin/main`
@@ -59,10 +72,8 @@ and unresolved Boss and publisher boundaries.
   `6400dd5` (`Create enemy walk and seam repair candidate`).
 - Approved seven-family repair promotion checkpoint:
   `8eb0f99` (`Promote approved enemy repairs`).
-- Isolated EN-E03 candidate worktree:
-  `C:\tmp\8-bit-sprite-assembler-en-e03`
-- EN-E03 review branch: `codex/en-e03`, based exactly on approved repair
-  documentation checkpoint `2a8a7a2`.
+- EN-E03 review branch lineage: `codex/en-e03`, based exactly on approved
+  repair documentation checkpoint `2a8a7a2`.
 - EN-E03 common-only Idle implementation checkpoint:
   `50ad516bdf338842e47ae9c22cd7cd293adef498`
   (`Create EN-E03 common Idle candidate`).
@@ -101,8 +112,10 @@ the frozen 15-variant candidate snapshot, registration checkpoint `7b6e448`,
 clone-safe artifact gate `be44af7`, and consumer implementation checkpoint
 `8ab1837`, visually approved repair checkpoint `6400dd5`, and promotion
 checkpoint `8eb0f99`;
-`codex/en-e03` based exactly on `2a8a7a2` and containing only the bounded
-common-Idle candidate;
+`codex/en-e03` based exactly on `2a8a7a2`, containing the bounded common-Idle
+candidate at `50ad516`, its synchronized pre-audit documentation checkpoint at
+`6c12448`, and this documentation refresh; verify its live HEAD equals its
+upstream because a handoff cannot safely name its own commit;
 and `main` still equal to `origin/main` at
 verified base `f5476a2`. Do not modify, clean, reset, rebase, or repurpose the
 archived review checkout.
@@ -188,11 +201,17 @@ Read these completely before implementation:
 11. `OFFHAND_ITEMS_PLAN.md`
 12. `GAME_PACK_EXPORT_PLAN.md`
 13. `DEATH_ANIMATION_PLAN.md`
-14. `WINDOWS_RELEASE.md`
-15. `death-review/boss-48-drafts/README.md`
+14. `EQUIPMENT_OUTLINE_ASSESSMENT.md`
+15. `EQUIPMENT_READABILITY_PLAN.md`
+16. `WEAPON_READABILITY_PLAN.md`
+17. `TRANSPARENT_TILE_REPAIR_PLAN.md`
+18. `WINDOWS_RELEASE.md`
+19. `asset-pack/README.md`
+20. `death-review/boss-48-drafts/README.md`
 
 The order deliberately puts the active expansion authority before the
-chronological completed-lane records.
+chronological completed-lane records. Historical plans do not authorize work;
+their current headers and closing notices route continuation back here.
 
 ## Stable Public Actor Contract
 
@@ -359,23 +378,48 @@ conditions.
 
 ## Windows Artifact State
 
-A local standalone proof executable exists at:
+A local standalone proof executable remains verified in the normal baseline
+worktree at:
 
-`src-tauri/target/release/sprite-assembler.exe`
+`C:\Users\headc\Documents\8-bit-sprite-assembler-main\src-tauri\target\release\sprite-assembler.exe`
 
 It was built on 2026-08-01 from the `bf6269c` worktree state, is 5,306,880
 bytes, and has SHA-256
 `f2186000a911dff55495915c00a22df0098900b5ef491da2d489c1f92142bbd7`.
 
 It is ignored, uncommitted, not an NSIS installer, and has no recorded packaged
-smoke-test or release approval. No setup executable exists beneath
-`src-tauri/target/release/bundle/nsis/`; there is no approved Windows release
-candidate. `npm run check:release -- --require-artifact` intentionally requires
-the NSIS installer and is not satisfied by the standalone proof.
+smoke-test or release approval. No setup executable exists beneath that
+worktree's `src-tauri/target/release/bundle/nsis/`; there is no approved Windows
+release candidate. `npm run check:release -- --require-artifact` intentionally
+requires the NSIS installer and is not satisfied by the standalone proof.
 
 ## Validation Evidence For This Handoff
 
-Run from the canonical main worktree on 2026-08-02:
+Current revalidation from the active EN-E03 worktree on 2026-08-03:
+
+```powershell
+npm.cmd run check:enemy-expansion-repairs
+npm.cmd run check:enemy-expansion-en-e02-consumers
+npm.cmd run check:enemy-expansion-en-e03
+npm.cmd run review:enemy-expansion-en-e03
+npm.cmd run check
+git diff --check
+```
+
+Current results:
+
+- the approved repair, cumulative public-consumer, and isolated EN-E03 gates
+  pass;
+- the raw and Complete B + Form EN-E03 artifacts reproduce their frozen
+  SHA-256 values and 24-frame digest exactly;
+- full project validation passes all catalog, renderer, animation, outline,
+  shade, expansion, equipment, Boss, pack, release-configuration, and 232 PNG
+  fixture gates;
+- documentation-only changes introduce no source, fixture, schema, artifact,
+  or approval-boundary changes; and
+- `git diff --check` passes.
+
+Historical base validation from the canonical main worktree on 2026-08-02:
 
 ```powershell
 npm.cmd run check
@@ -406,7 +450,8 @@ The documentation audit additionally verifies:
 - the NPC archive hash matches its archive record; and
 - the standalone executable hash matches the recorded value.
 
-Run from the isolated EN-E02 worktree on 2026-08-02:
+Historical EN-E01/EN-E02 approval evidence, inherited unchanged by the EN-E03
+branch, was run from the isolated EN-E02 worktree on 2026-08-02:
 
 ```powershell
 npm.cmd run check:enemy-expansion
@@ -427,7 +472,7 @@ npm.cmd run check
 git diff --check
 ```
 
-Recorded EN-F00, EN-E01, and current EN-E02 results:
+Recorded expansion results through the current EN-E03 gate:
 
 - the focused foundation gate passes its registry, ledger, renderer-key,
   review-targeting, sheet-contract, and negative-path assertions;
@@ -560,25 +605,49 @@ Recorded EN-F00, EN-E01, and current EN-E02 results:
 
 ## Documentation Audit Result
 
-The 2026-08-02 audit covered all Required Reading documents and reconciled
-current state against Git, live catalogs, package scripts, local artifacts,
-and the planning mainline ruling.
+The 2026-08-03 audit covered all 20 tracked Markdown documents and reconciled
+their current-facing claims against the clean synchronized EN-E03 branch, live
+module graph, package scripts, public/internal registries, review hashes,
+validation totals, local standalone executable, absent NSIS directory, and the
+planning mainline ruling.
 
-Current-facing drift was corrected in:
+Current-facing drift or ambiguity was corrected in:
 
-- `README.md`;
-- `ARCHITECTURE.md`;
-- `HANDOFF.md`;
-- `ROADMAP.md`;
-- `PRODUCTION_ROLL_PLAN.md`;
+- `README.md` — records accepted EN-E02 presentation/repairs, the isolated
+  EN-E03 gate, its commands, and its modules;
+- `ARCHITECTURE.md` — records the approved repair registry and the non-public
+  EN-E03 renderer/review dependency boundary;
+- `ROADMAP.md` — replaces the obsolete EN-E02-pending/EN-E03-not-started
+  continuation with the exact current gate;
+- `HANDOFF.md` — refreshes branch, validation, artifact, reading, audit, and
+  new-chat state;
+- `EQUIPMENT_OUTLINE_ASSESSMENT.md`, `EQUIPMENT_READABILITY_PLAN.md`,
+  `WEAPON_READABILITY_PLAN.md`, and `TRANSPARENT_TILE_REPAIR_PLAN.md` — retain
+  their historical evidence while removing obsolete claims that shade work is
+  still next;
+- `PRODUCTION_ROLL_PLAN.md` — distinguishes the consolidated baseline worktree
+  from later isolated slice worktrees; and
+- `asset-pack/README.md` — explicitly labels the 232 committed PNGs as the
+  locked historical 12-column fixture corpus rather than current 20-column
+  exports.
+
+No current-state correction was required in:
+
+- `COMPATIBLE_REROLL_PLAN.md`;
 - `DEATH_ANIMATION_PLAN.md`;
-- `WINDOWS_RELEASE.md`; and
+- `ENEMY_EXPANSION_PLAN.md`;
+- `ENEMY_OUTLINE_PLAN.md`;
+- `GAME_PACK_EXPORT_PLAN.md`;
+- `OFFHAND_ITEMS_PLAN.md`;
+- `OUTLINE_RENDERING_PLAN.md`;
+- `SHADE_RENDERING_PLAN.md`;
+- `WINDOWS_RELEASE.md`; or
 - `death-review/boss-48-drafts/README.md`.
 
-`ENEMY_EXPANSION_PLAN.md` is added as the new active planning authority. The
-remaining audited plans retain accurate completion/refusal state and clearly
-label their older branch names, 12-column measurements, or release exclusions
-as historical evidence rather than live continuation instructions.
+Older branch names, interim counts, and 12-column measurements remain only
+where their sections explicitly identify them as historical evidence. The
+active implementation and approval authority remains `ENEMY_EXPANSION_PLAN.md`
+plus this handoff.
 
 ## Frozen Boundaries
 

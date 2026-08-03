@@ -3,7 +3,8 @@
 Status: canonical asset-readability history and rules, reconciled on
 2026-07-26. Source-art work is paused. The unresolved default
 combat-effect/shield preview remains a deferred independent lane; it is not a
-prerequisite for the next planned shade pass.
+prerequisite for current enemy-expansion work. The former shade pass is
+complete; live continuation authority is `HANDOFF.md`.
 
 This plan supersedes any earlier recommendation to keep expanding the general outline algorithm. The current outline work is the baseline. The next problems must be handled according to their actual cause: source art, composition/placement, or a narrowly proven outline defect.
 
