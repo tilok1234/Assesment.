@@ -172,19 +172,21 @@ seven-family walk/seam repair, so both stable and consumer composition now route
 through `ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY` while the pre-repair object
 remains internal. That repair did not authorize effects or release.
 
-`engine/enemy-expansion-en-e03.js` is a separate, non-public evidence module.
-It owns three immutable Giant/Centaur/Satyr contract cards, the exact current
+`engine/enemy-expansion-en-e03.js` is a separate, non-public historical evidence
+module. It owns three immutable Giant/Centaur/Satyr contract cards, the exact v2
 raw and Complete B + Form artifact hashes, rejected-v1 hash evidence, and an
 internal registry containing only the Hill Breaker, Steppe Hunter, and Briar
 Reveler common variants. Its `large-hybrid-v2` renderer lives in
 `engine/enemy-expansion-large-hybrid.js`, removes v1's baked silhouette cage in
-favor of the roster's palette-first source clusters, and rejects every
-animation except Idle. Review tooling imports this module directly for 24
-deterministic frames;
+favor of palette-first source clusters, and rejects every animation except Idle.
+V2 passes its structural/reproducibility gate but is also visually rejected; it
+is not an approved style baseline or active acceptance candidate. Review tooling
+imports this module directly for 24 deterministic frames;
 `sprite-engine.js`, `engine/enemy-expansion-public.js`, `PUBLIC_ENEMIES`, editor
-selectors, persistence, packs, kits, and exports do not import or expose it.
-Visual approval must precede later motion, specialist/elite implementation, or
-registration.
+selectors, persistence, packs, kits, and exports do not import or expose it. A
+third implementation requires explicit authorization of the reference-first
+calibration gate in `ENEMY_EXPANSION_PLAN.md`; later motion, specialist/elite
+implementation, and registration remain blocked.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -426,10 +428,11 @@ deliberately not serialized.
   and None/None dispatcher boundary. Optional assembled rendering may apply the
   shared Form/outline algorithms; exports remain shadow-free, while the live
   preview may add only the standard non-baked floor shadow.
-- EN-E03 remains an isolated common-only Idle review registry with three
-  implemented variants, 24 review frames, and zero approved/public families.
-  Its non-Idle refusal and absence from the public facade are invariants until
-  an explicit later approval changes that boundary.
+- EN-E03 remains an isolated common-only Idle evidence registry with three
+  rejected implemented variants, 24 review frames, and zero approved/public
+  families. Its non-Idle refusal and absence from the public facade are
+  invariants; neither rejected implementation may be extended without a newly
+  authorized calibration gate.
 - Shade None plus outline None directly delegates to `drawSprite()`. Shade None
   combined with Complete B or Selective C preserves the approved outline
   output. Form changes eligible source-owned colors only and is wired through
@@ -569,8 +572,9 @@ EN-F00's data-driven foundation and stable public composition boundary now
 exist. EN-E01 and EN-E02 demonstrate the complete lifecycle with ten
 approved/public families / 30 variants and a shared renderer handler; the later
 approved repair remains a separate immutable registry layer. EN-E03 is the
-current counterexample that proves implemented evidence can stay non-public:
-only three common Idle baselines exist. Follow `ENEMY_EXPANSION_PLAN.md`: keep
+current counterexample that proves rejected implemented evidence can stay
+non-public: only three common Idle baselines exist. Follow
+`ENEMY_EXPANSION_PLAN.md`: keep
 candidates out of the public view, stop for four-direction baseline approval
 before full production, stop again for completed-slice approval, and register
 only an explicitly approved slice.

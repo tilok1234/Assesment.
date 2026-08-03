@@ -106,9 +106,9 @@ Exit criteria:
 Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
 
 Current continuation checkpoint (2026-08-03): synchronized `main` remains the
-pre-expansion base at `f5476a2`, while active bounded work is isolated on
-`codex/en-e03`. Documentation checkpoint `59f4f1e` precedes the current v2
-implementation at `6104eae`. The complete 57-family / 202-variant
+pre-expansion base at `f5476a2`, while the paused EN-E03 lane is isolated on
+`codex/en-e03`. Documentation checkpoint `59f4f1e` precedes rejected v2
+implementation `6104eae`. The complete 57-family / 202-variant
 legacy Enemy catalog remains visually approved; its current 20-column gate
 covers 16,160 source frames / 48,480 None-B-C cases. Form shading, Lantern,
 Production Roll, compatible category rerolls, and the public Cast/Death actor
@@ -140,12 +140,13 @@ accepted EN-E02's live Complete B + Form consumer view and later approved the
 exact seven-family walk/seam repair. That repaired registry is now both the
 stable and consumer boundary; the pre-repair registry remains internal.
 The designer rejected EN-E03 v1 checkpoint `50ad516` because its boxed visual
-language did not match the approved roster. Replacement checkpoint `6104eae`
-keeps only the Giant, Centaur, and Satyr contract cards plus three common
-four-direction/two-frame Idle baselines, rebuilt without baked silhouette ink.
-Its new raw and Complete B + Form boards are technically validated but await
-explicit visual approval; no EN-E03 family is public and no later motion or
-variants are authorized.
+language did not match the approved roster, then rejected replacement checkpoint
+`6104eae` as still far from that style. V2 keeps only the Giant, Centaur, and
+Satyr contract cards plus three common four-direction/two-frame Idle baselines.
+Its raw and Complete B + Form boards are technically validated but visually
+rejected; no EN-E03 family is public and no acceptance candidate is active. The
+lane is paused until a smaller, reference-first, one-family calibration gate is
+explicitly authorized. No later motion or variants are authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
@@ -317,8 +318,8 @@ Candidate additions:
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants only through the approved planning
   and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01 and EN-E02 are
-  accepted through repaired consumer integration, while EN-E03 is stopped at
-  explicit visual approval of its three common-only Idle boards
+  accepted through repaired consumer integration, while both EN-E03 common-Idle
+  attempts are rejected and the lane is paused before a reference-first restart
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 

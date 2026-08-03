@@ -15,9 +15,12 @@ Witch. The designer accepted that exact candidate on 2026-08-03 and authorized
 continuation. The repaired registry is now the stable/public result, while the
 pre-repair registry remains immutable internal comparison evidence. The
 designer rejected EN-E03 v1 because its boxed, pre-inked construction did not
-match the approved Enemy roster. EN-E03 v2 rebuilds the same contract cards and
-common-only Idle scope for Giant, Centaur, and Satyr. The exact replacement raw
-and Complete B + Form boards await explicit designer approval. This handoff
+match the approved Enemy roster. EN-E03 v2 rebuilt the same contract cards and
+common-only Idle scope for Giant, Centaur, and Satyr, but on 2026-08-03 the
+designer also rejected those exact raw and Complete B + Form boards as still
+far from the established roster style. Both implementations remain reproducible
+technical evidence only; neither is an approved visual baseline or an active
+acceptance candidate. EN-E03 is paused before any third art pass. This handoff
 records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02 families /
 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -28,7 +31,8 @@ This handoff was re-audited on 2026-08-03 against the live branch, all 20
 tracked Markdown documents, the public and internal expansion boundaries, the
 current validation scripts, exact review hashes, and the local Windows artifact
 state. Historical measurements remain where explicitly labeled; current-facing
-continuation text has been reconciled to EN-E03.
+continuation text has been reconciled to the second EN-E03 visual rejection and
+the paused lane.
 
 ## Canonical Workspace And Git State
 
@@ -36,9 +40,9 @@ continuation text has been reconciled to EN-E03.
   `C:\tmp\8-bit-sprite-assembler-en-e03`
 - Active branch and upstream: `codex/en-e03` tracking
   `origin/codex/en-e03`.
-- Clean synchronized pre-audit HEAD:
-  `6c1244885c11a6e2b026ab2c3d8ad5dc5eb84a7d`
-  (`Record EN-E03 Idle checkpoint`).
+- Clean synchronized pre-handoff HEAD:
+  `55fbcc51b2b8c0de23e7456bd5c61cd87d4fdf22`
+  (`Record EN-E03 v2 visual gate`).
 - Normal baseline worktree:
   `C:\Users\headc\Documents\8-bit-sprite-assembler-main`
 - Mainline branch: `main`
@@ -79,7 +83,7 @@ continuation text has been reconciled to EN-E03.
 - Rejected EN-E03 v1 common-only Idle checkpoint:
   `50ad516bdf338842e47ae9c22cd7cd293adef498`
   (`Create EN-E03 common Idle candidate`).
-- Current EN-E03 v2 roster-style replacement checkpoint:
+- Rejected EN-E03 v2 roster-style replacement checkpoint:
   `6104eaedce62c4514cdd5061bd58c8c79eeb0341`
   (`Rebuild EN-E03 Idle candidate in roster style`).
 - Verified synchronized base before EN-F00:
@@ -118,8 +122,8 @@ clone-safe artifact gate `be44af7`, and consumer implementation checkpoint
 `8ab1837`, visually approved repair checkpoint `6400dd5`, and promotion
 checkpoint `8eb0f99`;
 `codex/en-e03` based exactly on `2a8a7a2`, containing rejected v1 at `50ad516`,
-documentation checkpoint `59f4f1e`, the current v2 replacement at `6104eae`,
-and this follow-up; verify its live HEAD equals its upstream because a handoff
+documentation checkpoint `59f4f1e`, rejected v2 at `6104eae`, and this
+follow-up; verify its live HEAD equals its upstream because a handoff
 cannot safely name its own commit;
 and `main` still equal to `origin/main` at
 verified base `f5476a2`. Do not modify, clean, reset, rebase, or repurpose the
@@ -141,12 +145,18 @@ The seven-family EN-E01/EN-E02 repair is explicitly approved. The accepted
 registry changes exactly 18 renderer-data records to add real foot strides,
 replace Catfolk's white pseudo-transparent mouth band, and close the reported
 Desert Raider, Fallen Knight, and Goatfolk checkerboard seams. The pre-repair
-pixels remain exact in an internal comparison registry. EN-E03 v1 is rejected;
-v2 contains the same three contract cards and only the rebuilt Hill Breaker,
-Steppe Hunter, and Briar Reveler common Idle baselines. The current stop point
-is explicit visual approval of their exact replacement raw and Complete B +
-Form boards; later motion, variants,
-registration, effects, and release remain unauthorized.
+pixels remain exact in an internal comparison registry. EN-E03 v1 and v2 are
+both visually rejected. V2 contains the same three contract cards and only the
+rebuilt Hill Breaker, Steppe Hunter, and Briar Reveler common Idle baselines;
+its passing structural gate did not make it stylistically acceptable. There is
+no active EN-E03 acceptance candidate. Preserve both attempts as historical
+evidence and wait for explicit authorization of a reference-first calibration
+gate before changing the renderer or producing more art. The recommended next
+gate is one Giant / Hill Breaker first-Idle pose across four directions, shown
+raw and with Complete B + Form beside exact approved EN-E01/EN-E02 references.
+Do not produce the second Idle frame, Centaur, Satyr, later motion, variants,
+registration, effects, or release until that smaller study is explicitly
+approved.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -266,9 +276,10 @@ runtime contract and must not be rewritten merely to match it.
   exact Idle frames; the separate pre-registration candidate registry contains
   five immutable implemented-snapshot families / 15 variants / 1,200 frames.
   Its five approved records live separately in the registered slice boundary.
-- The isolated EN-E03 Idle registry contains exactly three implemented common
+- The isolated EN-E03 Idle registry contains exactly three rejected common
   baselines / 24 Idle frames and zero approved/public families. Its renderer
-  rejects every non-Idle animation before visual approval.
+  rejects every non-Idle animation. This technically valid implementation is
+  historical evidence, not a visual baseline for a third attempt.
 - Giant uses the large-biped archetype, Centaur uses a true four-hoof hybrid
   archetype with readable withers joins, and Satyr uses the horned digitigrade
   archetype with tail, hocks, and split-hoof contacts.
@@ -418,6 +429,8 @@ Current results:
   pass;
 - the raw and Complete B + Form EN-E03 artifacts reproduce their frozen
   SHA-256 values and 24-frame digest exactly;
+- both EN-E03 implementations are visually rejected; these technical results
+  prove reproducibility and boundary safety, not visual acceptance;
 - full project validation passes all catalog, renderer, animation, outline,
   shade, expansion, equipment, Boss, pack, release-configuration, and 232 PNG
   fixture gates;
@@ -478,7 +491,7 @@ npm.cmd run check
 git diff --check
 ```
 
-Recorded expansion results through the current EN-E03 gate:
+Recorded expansion results through the rejected EN-E03 v2 technical gate:
 
 - the focused foundation gate passes its registry, ledger, renderer-key,
   review-targeting, sheet-contract, and negative-path assertions;
@@ -588,8 +601,9 @@ Recorded expansion results through the current EN-E03 gate:
   variants at 20x with Complete B and Form active;
 - EN-E03 v1 checkpoint `50ad516bdf338842e47ae9c22cd7cd293adef498`
   and its original hashes remain rejected historical evidence; v2 checkpoint
-  `6104eaedce62c4514cdd5061bd58c8c79eeb0341` freezes the roster-style
-  replacement candidate;
+  `6104eaedce62c4514cdd5061bd58c8c79eeb0341` freezes the second rejected
+  implementation after the designer found it still far from the established
+  roster style;
 - `check:enemy-expansion-en-e03` passes all 24 Giant/Centaur/Satyr common Idle
   frames, one connected silhouette per frame, binary alpha, one-cell margins,
   zero clipping, exact side mirroring, distinct direction/family silhouettes,
@@ -600,7 +614,8 @@ Recorded expansion results through the current EN-E03 gate:
   `2835b044868cd948fbb7327675f5821adfe499507a08d0e8350f83cff5e2ab89`,
   and the locked 24-frame digest is
   `8339d3d4a2380f8e9d9bf6ecb3fa1a5f0faddafc0bf6ce43c3ce12c515a1a059`;
-- EN-E03 remains internal at three common variants / zero public families, with
+- EN-E03 remains internal at three rejected common variants / zero public
+  families, with
   specialist/elite data, later motion, registration, consumers, effects, and
   release explicitly absent;
 - the full project validator passes with all existing catalog, renderer,
@@ -608,7 +623,8 @@ Recorded expansion results through the current EN-E03 gate:
   and release-configuration gates unchanged; and
 - no legacy fixture, schema version, Boss asset, release artifact, or archived
   review payload is modified; the exact visually accepted repair registry
-  remains the only public replacement, while EN-E03 v2 stays isolated evidence.
+  remains the only public replacement, while both EN-E03 attempts stay isolated
+  rejected evidence.
 
 ## Documentation Audit Result
 
@@ -616,19 +632,20 @@ The 2026-08-03 audit covered all 20 tracked Markdown documents and reconciled
 their current-facing claims against the clean synchronized EN-E03 branch, live
 module graph, package scripts, public/internal registries, review hashes,
 validation totals, local standalone executable, absent NSIS directory, and the
-planning mainline ruling. The later same-day v1 rejection and v2 replacement
-were then reconciled into the five active documents named below.
+planning mainline ruling. The later same-day rejection of both EN-E03 attempts
+and the resulting pause were then reconciled into the five active documents
+named below.
 
 Current-facing drift or ambiguity was corrected in:
 
-- `README.md` — records accepted EN-E02 presentation/repairs, the isolated
-  EN-E03 gate, its commands, and its modules;
+- `README.md` — records accepted EN-E02 presentation/repairs, both rejected
+  EN-E03 attempts, its historical validation commands, and its modules;
 - `ARCHITECTURE.md` — records the approved repair registry and the non-public
   EN-E03 renderer/review dependency boundary;
-- `ROADMAP.md` — replaces the obsolete EN-E02-pending/EN-E03-not-started
-  continuation with the exact current gate;
-- `ENEMY_EXPANSION_PLAN.md` — records rejected v1 evidence, the exact v2
-  replacement checkpoint/hashes, and the unchanged approval stop;
+- `ROADMAP.md` — records the paused EN-E03 lane and reference-first restart
+  gate;
+- `ENEMY_EXPANSION_PLAN.md` — records both rejected attempts, the exact v2
+  checkpoint/hashes, and the smaller calibration gate required before a restart;
 - `HANDOFF.md` — refreshes branch, validation, artifact, reading, audit, and
   new-chat state;
 - `EQUIPMENT_OUTLINE_ASSESSMENT.md`, `EQUIPMENT_READABILITY_PLAN.md`,
@@ -669,8 +686,12 @@ Unless the designer explicitly changes scope:
 - do not pre-register unfinished families, IDs, variants, selectors, or packs;
 - preserve the approved seven-family repair registry and its pre-repair
   comparison evidence;
-- limit EN-E03 to contract cards plus common-only four-direction Idle until the
-  designer explicitly approves that exact review artifact;
+- treat EN-E03 v1 and v2 as rejected historical evidence, not approved style
+  references or candidates to extend;
+- do not begin a third EN-E03 implementation without explicit authorization of
+  a reference-first calibration gate; once authorized, stop after one Giant /
+  Hill Breaker first-Idle pose across four directions and its raw plus Complete
+  B + Form comparison board;
 - do not modify the archived `wip/19-boss-review` checkout;
 - do not accept the Rhino/Unicorn direction candidates or the three animation
   candidates without direct visual review;
@@ -690,15 +711,18 @@ The safest opening request for the next chat is:
 
 > EN-E01 and EN-E02 are approved, registered, consumer-integrated, and include
 > the visually accepted 2026-08-03 seven-family repair. Verify the clean synced
-> branch and exact 67/232 stable/public boundary. EN-E03 v1 was rejected for a
-> roster-style mismatch; v2 at `6104eae` has isolated Giant/Centaur/Satyr
-> common-only Idle raw and Complete B + Form replacement boards. Open those
-> exact artifacts and wait for explicit designer approval before later
-> variants, motion, registration, effects, or release.
+> branch and exact 67/232 stable/public boundary. EN-E03 v1 at `50ad516` and v2
+> at `6104eae` were both visually rejected; neither is approved or public. Do
+> not produce a third 24-frame set or extend either renderer. First read the
+> rejection record, select exact approved EN-E01/EN-E02 roster references, and
+> propose a one-family, first-Idle-pose, four-direction raw plus Complete B +
+> Form calibration gate. Wait for explicit authorization before implementing
+> even that smaller study.
 
 EN-F00, EN-E01, EN-E02, and the seven-family repair are approved. The stable and
 consumer registries are the same ten-family / 30-variant repaired object through
 67 public families / 232 variants; the pre-repair pixels remain internal
-evidence. Only EN-E03 contract cards plus common-only Idle were authorized and
-the v2 replacement candidate is now implemented but not visually approved; no
-EN-E03 family is public.
+evidence. EN-E03 contract cards and two common-only Idle attempts exist, but
+both art passes are visually rejected and no active acceptance candidate
+remains. No EN-E03 family is public; the lane is paused before a reference-first
+restart decision.

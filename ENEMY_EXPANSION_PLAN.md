@@ -9,10 +9,10 @@
   repair candidate at checkpoint `6400dd5` was visually approved on 2026-08-03
   and promoted without further pixel changes at checkpoint `8eb0f99`; the
   pre-repair registry remains immutable comparison evidence. The designer
-  rejected EN-E03 v1 for using a visual language unlike the approved roster;
-  replacement checkpoint `6104eae` now supplies new isolated
-  Giant/Centaur/Satyr common-only Idle raw and Complete B + Form evidence
-  awaiting explicit visual approval
+  rejected EN-E03 v1 for using a visual language unlike the approved roster and
+  then rejected replacement checkpoint `6104eae` as still far from that style.
+  Both Giant/Centaur/Satyr common-only Idle implementations are non-public
+  historical evidence. EN-E03 is paused with no active acceptance candidate
 - Recorded: 2026-08-03
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
@@ -62,8 +62,8 @@ accepted the exact live candidate with “nice thats better” and authorized th
 next documented step. That continuation authorizes EN-E03 contract cards plus
 common-only Idle, not later motion, variants, registration, effects, or release.
 The first bounded EN-E03 implementation was rejected visually. Its v2
-replacement is complete and technically validated; the exact rebuilt artifacts
-remain unapproved.
+replacement is complete and technically validated, but the designer also
+rejected the exact rebuilt artifacts. No third art pass is authorized.
 
 ## Intake Assessment
 
@@ -92,7 +92,11 @@ below.
   it is not authorization by itself.
 - `acceptance-candidate`: the bounded implementation is complete and
   technically validated, but explicit designer acceptance is still pending.
-- `queued`: sequenced, but later than the current candidate.
+- `rejected`: retained for exact technical/history evidence but explicitly not
+  accepted as a visual baseline or public content.
+- `paused`: no implementation candidate is active; a newly bounded gate needs
+  explicit authorization before work resumes.
+- `queued`: sequenced behind the current active lane or next authorized gate.
 - `architecture-gated`: requires a contract decision before sprite production.
 - `boss-review-blocked`: cannot enter the isolated Boss lane while its current
   review call remains unresolved, unless the designer explicitly reprioritizes.
@@ -101,8 +105,8 @@ below.
 EN-E01 and EN-E02 remain complete through their accepted consumer presentations.
 Their isolated seven-family walk/seam correction is also approved and promoted;
 the pre-repair registry remains available only as immutable comparison evidence.
-EN-E03 v1 common-only Idle is rejected historical evidence. The roster-style
-v2 replacement is the current `acceptance-candidate`.
+EN-E03 v1 and v2 common-only Idle are rejected historical evidence. The EN-E03
+lane is `paused`; no acceptance candidate is active.
 
 ## Non-Negotiable Production Contract
 
@@ -446,16 +450,17 @@ Isolated repair-candidate evidence (2026-08-03):
   consumer registry; the pre-repair registry remains internal.
 
 The repair gate is complete. Its continuation authorization produced the EN-E03
-contract cards and common-only Idle candidate below. Do not implement EN-E03
+contract cards and two common-only Idle attempts below; both were visually
+rejected. Do not produce a third full candidate or implement EN-E03
 specialist/elite variants, Walk/Attack/Hurt, registration, consumer routing,
-separate effects, or release work before the new exact Idle review is explicitly
-approved.
+separate effects, or release work. A smaller reference-calibration gate must be
+explicitly authorized first.
 
 ### EN-E03 - Large and hybrid walkers
 
-- Status: `acceptance-candidate`; contract cards and common-only four-direction
-  Idle are implemented and technically validated, but exact visual approval is
-  still pending and all later production remains gated
+- Status: `rejected` / `paused`; contract cards and two common-only
+  four-direction Idle attempts are technically reproducible, but both art
+  passes were visually rejected and all further production remains gated
 - Families: Giant, Centaur, Satyr
 - Priority-first: Giant, Centaur
 
@@ -478,7 +483,10 @@ Current common-only Idle evidence:
   shapes, baked silhouette ink, proportions, and directional construction did
   not look like the approved Enemy roster;
 - v2 implementation checkpoint `6104eaedce62c4514cdd5061bd58c8c79eeb0341`
-  (`Rebuild EN-E03 Idle candidate in roster style`) freezes the replacement;
+  (`Rebuild EN-E03 Idle candidate in roster style`) freezes the second rejected
+  implementation. The designer found the resulting boards still far from the
+  established Enemy style; its technical improvements did not close the visual
+  gap;
 - three immutable contract cards define 24x24 scale, distinct large-bipedal /
   hybrid-quadrupedal / digitigrade locomotion, attack tells, variant briefs,
   and external effect/mechanic boundaries;
@@ -505,9 +513,15 @@ Current common-only Idle evidence:
 - the 24-frame candidate digest is
   `8339d3d4a2380f8e9d9bf6ecb3fa1a5f0faddafc0bf6ce43c3ce12c515a1a059`.
 
-Stop at explicit designer approval or rejection of those exact rebuilt EN-E03
-Idle artifacts. Do not implement specialist/elite variants, Walk/Attack/Hurt,
-Cast/Death aliases, registration, consumer routing, effects, or release work.
+Those exact rebuilt EN-E03 Idle artifacts are rejected. Preserve v1 and v2 only
+as historical/diagnostic evidence; neither is an approved seed for later work.
+Before any third implementation, explicitly authorize a reference-first
+calibration gate using exact approved EN-E01/EN-E02 roster examples. The
+recommended maximum first study is Hill Breaker's first Idle pose across Down,
+Left, Right, and Up, reviewed raw and with Complete B + Form. Do not implement
+its second Idle frame, Centaur, Satyr, specialist/elite variants,
+Walk/Attack/Hurt, Cast/Death aliases, registration, consumer routing, effects,
+or release work before that smaller study is explicitly approved.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
@@ -813,10 +827,12 @@ integration, and the later seven-family repair approval are recorded.
 Registration checkpoint `7b6e448` and consumer checkpoint `8ab1837` established
 the generic 67/232 boundary; the exact repair pixels from `6400dd5` are now the
 stable/public result, with the pre-repair registry retained internally. The
-current gate is explicit review of the exact rebuilt EN-E03 v2 raw and Complete
-B + Form common-only Idle artifacts for Giant, Centaur, and Satyr. Do not add
-later motion, variants, registration, separate effect assets, or release work
-before that decision.
+exact rebuilt EN-E03 v2 raw and Complete B + Form common-only Idle artifacts for
+Giant, Centaur, and Satyr are rejected, so no current art candidate exists. The
+next gate is planning and explicit authorization of the one-family
+reference-calibration study described above. Do not add or revise art, later
+motion, variants, registration, separate effect assets, or release work before
+that authorization.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -824,5 +840,5 @@ and non-baked attack tells. The largest unresolved risks are multi-form assets,
 stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
-Again, this recommendation does not authorize implementation beyond the current
-EN-E03 common-only Idle review boundary.
+Again, this recommendation does not authorize any new EN-E03 implementation;
+the lane is paused at reference selection and gate definition.

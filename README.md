@@ -21,9 +21,9 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - 67 selectable public enemy families with 232 predefined variants: the locked
   57-family / 202-variant legacy catalog plus 10 approved EN-E01/EN-E02
   families / 30 variants
-- An isolated, non-public EN-E03 review candidate containing common-only Idle
-  baselines for Giant, Centaur, and Satyr; its raw and Complete B + Form boards
-  are approval evidence, not selectable consumer content
+- Isolated, non-public EN-E03 historical evidence containing two visually
+  rejected common-only Idle attempts for Giant, Centaur, and Satyr; neither is
+  an approved baseline or selectable consumer content
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -141,12 +141,14 @@ designer rejected those Giant, Centaur, and Satyr common Idle boards because
 their boxed construction and baked silhouette ink did not match the approved
 Enemy roster. Replacement checkpoint `6104eae` keeps the same immutable
 contract cards and common-only scope while rebuilding Hill Breaker, Steppe
-Hunter, and Briar Reveler in the roster's palette-first source style. All 24 v2
-frames pass the focused structural gate and have new exact raw review artifacts
-plus Complete B + Form presentation boards. No EN-E03 family is approved,
-selectable, or public.
-Explicit visual approval of the rebuilt boards is required before later motion,
-specialist or elite variants, registration, effects, or release work.
+Hunter, and Briar Reveler with a palette-first source treatment. All 24 v2
+frames pass the focused structural gate and have exact raw plus Complete B +
+Form presentation boards, but on 2026-08-03 the designer rejected that pass as
+still far from the established roster style. No EN-E03 family is approved,
+selectable, or public, and no acceptance candidate is active. A third art pass
+requires explicit authorization of a smaller reference-first calibration gate;
+later motion, specialist or elite variants, registration, effects, and release
+remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
@@ -352,8 +354,9 @@ full 1,200-frame digest; proves candidate/registered parity across all 15
 `480x96` sheets; composes the ten-family / 30-variant approved registry; and at
 the current head confirms the separately authorized consumer registry and
 `PUBLIC_ENEMIES` expose both approved slices at 67 families / 232 variants.
-Effects and release remain separate gates. EN-E03 is a later, separately
-authorized common-Idle review candidate and is not part of this registration.
+Effects and release remain separate gates. EN-E03 is a later, isolated lane
+whose two common-Idle attempts were visually rejected; it is not part of this
+registration.
 
 The default registration command is clean-clone safe because the review bundle
 is intentionally ignored. When the local review bundle is present it re-hashes
@@ -368,12 +371,14 @@ seven-family renderer-data delta, pre-repair comparison boundary, Walk contact
 motion, hard alpha, margins, clipping, and reported seam coordinates.
 
 Run `npm run check:enemy-expansion-en-e03` for the isolated Giant, Centaur, and
-Satyr common-only Idle gate. It validates three immutable contract cards, 24
+Satyr common-only Idle evidence. It validates three immutable contract cards, 24
 deterministic frames, one connected silhouette per frame, exact side mirroring,
 binary alpha, one-cell margins, Complete B/Form behavior, rejection of non-Idle
 or unimplemented variants, and zero public EN-E03 families. Run
 `npm run review:enemy-expansion-en-e03` to reproduce the exact ignored raw and
-Complete B + Form boards beneath `enemy-expansion-review/en-e03/`.
+Complete B + Form boards beneath `enemy-expansion-review/en-e03/`. Passing this
+gate proves reproducibility and isolation only; both rendered art attempts are
+visually rejected.
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
@@ -652,7 +657,8 @@ awaits explicit visual approval before any animation work.
   evidence plus the shared data-selected standard-animation humanoid renderer
 - `engine/enemy-expansion-en-e03.js` and
   `engine/enemy-expansion-large-hybrid.js` - isolated, non-public EN-E03
-  common-Idle contract cards and the Idle-only Giant/Centaur/Satyr chassis
+  common-Idle contract cards and rejected Idle-only Giant/Centaur/Satyr
+  implementation evidence
 - `tools/check-enemy-expansion.mjs` - focused legacy-equivalence, registry,
   review-targeting, and malformed-sheet gate
 - `tools/check-enemy-expansion-en-e01.mjs` and
