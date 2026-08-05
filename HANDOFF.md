@@ -1,6 +1,70 @@
 # Project Handoff
 
-Date: 2026-08-02
+Date: 2026-08-05
+
+## 2026-08-05 Consolidation Update (read first)
+
+This update supersedes the workspace-layout and enemy-lane-status claims in
+the sections below it. The designer authorized a full repository and
+workspace consolidation on 2026-08-05. Everything else below — the actor
+contract, Required Reading, Boss review state, pack-publish gate gap,
+Wildshot boundaries, Windows artifact facts, and the remaining frozen
+boundaries — stays in force.
+
+### Canonical workspace
+
+- The only canonical checkout is now
+  `C:\Users\headc\Documents\8-bit-sprite-assembler` (a fresh clone of
+  `origin/main`, validated with a green `npm run check` on 2026-08-05).
+- Retired: the previous normal-work worktree
+  `C:\Users\headc\Documents\8-bit-sprite-assembler-main`, the old primary
+  checkout `C:\Users\headc\Documents\8-bit sprite assembler` (which held the
+  repository's actual `.git` and the archived review state), the five
+  `C:\tmp\8-bit-sprite-assembler-*` expansion worktrees, and the
+  `.codex` salvage worktree. Create new worktrees on demand with
+  `git worktree add`; do not resurrect the old paths.
+- Everything formerly local-only is now on origin: `wip/19-boss-review`
+  (the parked review payload, formerly the deliberately unpushed archived
+  checkout), `codex/en-f00`, `codex/clean-clone-check` (its uncommitted
+  clean-clone checker fix candidate preserved at `125b0b3`, unvalidated),
+  and the EN-E03 approval lane preserved at `8ea019b` on `codex/en-e03`.
+  All archive tags are on origin. Nothing unique remains outside Git.
+- Migrated local ignored artifacts now live in this checkout: `dist/` with
+  the delivered `wildshot-npc-slice-v1` archive, contact sheet, and archive
+  record; the standalone proof executable at
+  `src-tauri/target/release/sprite-assembler.exe` (SHA-256 re-verified
+  `f2186000a911dff55495915c00a22df0098900b5ef491da2d489c1f92142bbd7`);
+  the `death-review/boss-48-drafts/` PNG corpus the current checker still
+  reads; and the EN-E03 lane's `enemy-expansion-review/` exact review PNGs.
+
+### Enemy-expansion lane status (supersedes "implementation has not started")
+
+- EN-F00 is implemented and accepted at `73ad73a` (`codex/en-f00`, pushed).
+- EN-E01 is approved, publicly registered, and consumer-integrated
+  (`codex/en-e01`, `codex/en-e01-consumers`; presentation checkpoint
+  `5196c0a`).
+- EN-E02 is approved through registration, the clean-clone artifact gate,
+  consumer integration, and the visually accepted seven-family repair
+  promotion (`codex/en-e02` at `2a8a7a2`). The public consumer boundary is
+  67 families / 232 variants.
+- EN-E03: candidates v1 `50ad516` and v2 `6104eae` were visually rejected
+  and are historical. The Hill Breaker, Steppe Hunter, and Briar Reveler
+  F1/F2 Idle baselines are visually approved and hash-frozen. The only
+  active gate is the internal, unapproved Hill Breaker common Walk W1-W4
+  candidate. The complete approval lane — previously uncommitted dirty
+  files in a `C:\tmp` worktree — is preserved byte-exact at `8ea019b` on
+  `codex/en-e03`. That branch's own `HANDOFF.md` (re-audited 2026-08-04)
+  is the lane authority and its frozen boundaries remain in force.
+- The preservation commits change no pixels and approve nothing; they only
+  move previously uncommitted state into Git.
+- `main` has not adopted any EN work; whether to advance the mainline to an
+  approved EN checkpoint (EN-E02 tip `2a8a7a2` is the last fully approved
+  point) remains an open designer ruling.
+
+The former boundary "do not modify the archived `wip/19-boss-review`
+checkout" is superseded: the branch is pushed to origin and the folder is
+retired. The parked review state remains available via
+`git worktree add <path> wip/19-boss-review`.
 
 ## Purpose
 

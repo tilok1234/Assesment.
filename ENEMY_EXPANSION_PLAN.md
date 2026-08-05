@@ -1,6 +1,8 @@
 # Enemy Expansion Plan
 
-- Status: approved planning artifact; implementation has not started
+- Status: approved planning artifact; implementation underway on the
+  `codex/en-*` branches (EN-F00 through EN-E03) — see the 2026-08-05
+  consolidation update in `HANDOFF.md` for the live lane state
 - Recorded: 2026-08-02
 - Assessment baseline: clean synchronized `main` at `bf6269c`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
