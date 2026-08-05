@@ -12,8 +12,18 @@
   rejected EN-E03 v1 for using a visual language unlike the approved roster and
   then rejected replacement checkpoint `6104eae` as still far from that style.
   Both Giant/Centaur/Satyr common-only Idle implementations are non-public
-  historical evidence. EN-E03 is paused with no active acceptance candidate
-- Recorded: 2026-08-03
+  historical evidence. A later reference-first Hill Breaker F1 study was
+  visually approved on 2026-08-03; its bounded F2-only continuation was then
+  approved as the exact internal two-frame Idle baseline. The next explicitly
+  authorized Steppe Hunter F1-only gate was also visually approved across four
+  directions and remains non-public. Its separately authorized F2-only
+  continuation was approved on its exact boards with `Approved lets keep going.`
+  Only Briar Reveler F1 across four directions was authorized next; its exact
+  raw and Complete B + Form boards were approved with `looks good.` The designer
+  then authorized only Briar Reveler F2 with `lets go next`; its exact F1/F2
+  boards were visually approved on 2026-08-04 with `approved`. They are now the
+  third exact internal two-frame Idle baseline; no later EN-E03 gate is active
+- Recorded: 2026-08-04
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
 
@@ -63,7 +73,11 @@ next documented step. That continuation authorizes EN-E03 contract cards plus
 common-only Idle, not later motion, variants, registration, effects, or release.
 The first bounded EN-E03 implementation was rejected visually. Its v2
 replacement is complete and technically validated, but the designer also
-rejected the exact rebuilt artifacts. No third art pass is authorized.
+rejected the exact rebuilt artifacts. A later reference-first Hill Breaker F1
+calibration and its F2-only continuation were separately authorized and
+visually approved. Steppe Hunter F1/F2 and Briar Reveler F1/F2 were then
+separately authorized and visually approved as exact internal two-frame Idle
+baselines. No later EN-E03 implementation gate is active.
 
 ## Intake Assessment
 
@@ -106,7 +120,10 @@ EN-E01 and EN-E02 remain complete through their accepted consumer presentations.
 Their isolated seven-family walk/seam correction is also approved and promoted;
 the pre-repair registry remains available only as immutable comparison evidence.
 EN-E03 v1 and v2 common-only Idle are rejected historical evidence. The EN-E03
-lane is `paused`; no acceptance candidate is active.
+lane now has three visually approved internal two-frame Idle baselines across
+four directions: Hill Breaker, Steppe Hunter, and Briar Reveler. Every later
+pose, variant, animation, consumer, effect, and release step remains gated; a
+new explicitly bounded designer authorization is required before continuation.
 
 ## Non-Negotiable Production Contract
 
@@ -451,18 +468,25 @@ Isolated repair-candidate evidence (2026-08-03):
 
 The repair gate is complete. Its continuation authorization produced the EN-E03
 contract cards and two common-only Idle attempts below; both were visually
-rejected. Do not produce a third full candidate or implement EN-E03
+rejected. The later smaller reference-calibration gate was explicitly authorized
+and its Hill Breaker first pose and bounded F2 continuation were visually
+approved. The later Steppe Hunter F1 calibration was also visually approved.
+The designer then explicitly authorized its F2-only continuation and approved
+the exact resulting F1/F2 boards with `Approved lets keep going.` That approval
+authorized only Briar Reveler F1 across four directions. The designer approved
+that exact F1 raw and Complete B + Form pair with `looks good.`, then authorized
+only its F2 continuation with `lets go next`. The designer approved the exact
+resulting F1/F2 boards on 2026-08-04 with `approved`. Do not implement
 specialist/elite variants, Walk/Attack/Hurt, registration, consumer routing,
-separate effects, or release work. A smaller reference-calibration gate must be
-explicitly authorized first.
+separate effects, release work, or any later EN-E03 step without another
+authorization.
 
 ### EN-E03 - Large and hybrid walkers
 
-- Status: `rejected` / `paused`; contract cards and two common-only
-  four-direction Idle attempts are technically reproducible, but both art
-  passes were visually rejected and all further production remains gated
+- Status: v1/v2 `rejected`; Hill Breaker, Steppe Hunter, and Briar Reveler
+  two-frame Idle baselines `approved` and internal; all later production gated
 - Families: Giant, Centaur, Satyr
-- Priority-first: Giant, Centaur
+- Active gate: none; a new explicitly bounded designer authorization is required
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -515,13 +539,85 @@ Current common-only Idle evidence:
 
 Those exact rebuilt EN-E03 Idle artifacts are rejected. Preserve v1 and v2 only
 as historical/diagnostic evidence; neither is an approved seed for later work.
-Before any third implementation, explicitly authorize a reference-first
-calibration gate using exact approved EN-E01/EN-E02 roster examples. The
-recommended maximum first study is Hill Breaker's first Idle pose across Down,
-Left, Right, and Up, reviewed raw and with Complete B + Form. Do not implement
-its second Idle frame, Centaur, Satyr, specialist/elite variants,
-Walk/Attack/Hurt, Cast/Death aliases, registration, consumer routing, effects,
-or release work before that smaller study is explicitly approved.
+The separately authorized reference-first study rebuilt Hill Breaker's first
+Idle pose on the approved humanoid roster chassis and compared all four
+directions raw and with Complete B + Form against exact accepted EN-E01/EN-E02
+references. The designer approved those exact boards on 2026-08-03 with
+`much better lets move onm`. Their raw SHA-256 is
+`4dae138234132d6249f36783dcb753716e6556791051c60c7ef92d6e73956e95`,
+assembled SHA-256 is
+`70fce189859c2c86d102b2db9f3b3ea5bac47b9f5f32c172adc70a612eafa605`,
+and four-frame digest is
+`019ec9d11daac3d626d1c33693dc707ba98c6ade1c7647f82a5dc5a5a7fa2602`.
+
+The bounded F2 gate added only Hill Breaker F2 across the same directions. The
+designer approved those exact F1/F2 boards on 2026-08-03 with `approved`. Their
+raw SHA-256 is
+`21cb2a314b6fa5866ea4d708570513506c69c02befca739338df1b908fefc686`,
+assembled SHA-256 is
+`2bcad3208b2571764f1938f0be52383d1cb4128a191b74ed7d669fd8e8c48faf`,
+and eight-frame digest is
+`2ae3904669508afbabed0742d72d4d334f37cdee360ba4f4d1a11767d22ee5ab`.
+That exact two-frame Hill Breaker Idle baseline is approved and remains
+internal. The separately authorized reference-first Steppe Hunter gate contains
+only F1 across Down, Left, Right, and Up. The designer approved those exact raw
+and Complete B + Form boards on 2026-08-03 with `Approved`. Their raw SHA-256 is
+`f4c462ffd9242684d7335c28c238db0fb59cecd5e168f069da03cc6f40753480`,
+its Complete B + Form SHA-256 is
+`dc7ccd766c736dcb1581b817f950b6be8541bacb26411c2281a42535bbf82f52`,
+and its four-frame digest is
+`53ea78549da26eccc2b8292672f693384d8551660d68bdd5e3827bb1d21f55cb`.
+That exact Steppe Hunter F1 seed is approved and remains internal. The designer
+then authorized only F2 across those same four directions. The internal registry
+delegates F1 to the frozen calibration renderer and adds a planted-hoof F2 with
+a one-pixel rider/spear dip plus direction-aware tail motion. The focused gate
+validates eight connected hybrid silhouettes, four separated hoof contacts in
+every frame, exact preservation of the four approved F1 records and bottom three
+contact rows, exact mirrored profiles, hard alpha, one-cell margins, 1,016
+Complete B additions, 1,068 Form-shaded source pixels, and zero public families.
+The raw F1/F2 board SHA-256 is
+`256b9be67407ada1caad58b6dc68d426ecbeb73b5f2032f13187e337d900c235`,
+its Complete B + Form SHA-256 is
+`e98d2e7d570c8777238cb187caaac15caff9c9000af0b322c651623e8e0ff7dd`,
+and its eight-frame digest is
+`3c88471b25fc27397a0a11d6495cd27c641a6715ff33429f5d0d2c81f184ae49`.
+The designer approved those exact boards on 2026-08-03 with
+`Approved lets keep going.` They are now the accepted internal Steppe Hunter
+two-frame Idle baseline.
+
+That approval authorized only a reference-first Briar Reveler F1 study across
+Down, Left, Right, and Up. Its isolated one-family registry reuses the approved
+lean humanoid chassis and Goatfolk horn/ear grammar, replaces the lower stance
+with digitigrade legs and four split-hoof contact tips, and adds a
+direction-aware tail plus crooked staff. The focused gate validates four
+connected hard-alpha horned silhouettes, exact mirrored profiles, one-cell
+margins, four distinct directions, 559 Complete B additions, 535 Form-shaded
+source pixels, and zero public families. The raw F1 board SHA-256 is
+`1272f52186c4f0df8666e845392eec6338d31aa161222d2064ed27625acc4405`,
+its Complete B + Form SHA-256 is
+`aa516c5d4e53b7d89b8dc2a935f7d41c8e36260950b771b8f094093e4fd9a5a1`,
+and its four-frame digest is
+`b8335de4e6794e84de0be10a3c437fab024db8310262e1c1deb484bd6b9add6b`.
+The designer approved those exact boards on 2026-08-03 with `looks good.` This
+exact F1 seed is visually approved and remains internal. The designer then
+authorized only F2 across the same directions with `lets go next`. The new
+internal registry delegates F1 to the frozen calibration renderer and adds an
+F2 idle settle with inward hock motion, a direction-aware tail flick, and a
+one-pixel staff dip. The focused gate validates eight connected hard-alpha
+horned digitigrade silhouettes, exact preservation of all four approved F1
+frames, four split-hoof contact tips in every frame, exact mirrored profiles,
+one-cell margins, 356 changed F2 alpha pixels, 1,026 Complete B additions, 1,072
+Form-shaded source pixels, and zero public families. The raw F1/F2 board SHA-256
+is `8d3a960d62683e19694e28572f15117314fde9ccb7dd898ea9065d64da058204`,
+its Complete B + Form SHA-256 is
+`4257e63a25a23631ff861b3752e03da0897a6ceaf5ef8cef6efccbd575f6b51e`,
+and its eight-frame digest is
+`0d5599dcd452351903e5d56289596d2e75f59caf5c0b7a5525c7e375c39b36fa`.
+The designer approved those exact F1/F2 boards on 2026-08-04 with `approved`.
+They are now the accepted internal Briar Reveler two-frame Idle baseline. Do
+not implement specialist/elite variants, Walk/Attack/Hurt, Cast/Death aliases,
+registration, consumer routing, effects, release, or any later EN-E03 step
+without another explicitly bounded authorization.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
@@ -827,12 +923,16 @@ integration, and the later seven-family repair approval are recorded.
 Registration checkpoint `7b6e448` and consumer checkpoint `8ab1837` established
 the generic 67/232 boundary; the exact repair pixels from `6400dd5` are now the
 stable/public result, with the pre-repair registry retained internally. The
-exact rebuilt EN-E03 v2 raw and Complete B + Form common-only Idle artifacts for
-Giant, Centaur, and Satyr are rejected, so no current art candidate exists. The
-next gate is planning and explicit authorization of the one-family
-reference-calibration study described above. Do not add or revise art, later
-motion, variants, registration, separate effect assets, or release work before
-that authorization.
+  exact rebuilt EN-E03 v2 raw and Complete B + Form common-only Idle artifacts for
+  Giant, Centaur, and Satyr are rejected. The separate Hill Breaker F1
+  reference-calibration study and its F2-only continuation are now visually
+  approved as an exact internal two-frame Idle baseline. The later Steppe Hunter
+  F1 calibration and bounded F2-only continuation are also visually approved as
+  an exact internal two-frame Idle baseline. The separately authorized Briar
+  Reveler F1 calibration and bounded F2-only continuation are also visually
+  approved as an exact internal two-frame Idle baseline. Do not begin later
+  motion, variants, registration, separate effect assets, release work, or any
+  later EN-E03 step without a new explicit gate.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -840,5 +940,6 @@ and non-baked attack tells. The largest unresolved risks are multi-form assets,
 stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
-Again, this recommendation does not authorize any new EN-E03 implementation;
-the lane is paused at reference selection and gate definition.
+There is no current EN-E03 implementation authorization. The exact Hill Breaker,
+Steppe Hunter, and Briar Reveler F1/F2 baselines are approved and internal; any
+continuation requires a new explicitly bounded designer authorization.

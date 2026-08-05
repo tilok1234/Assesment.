@@ -105,10 +105,14 @@ Exit criteria:
 
 Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
 
-Current continuation checkpoint (2026-08-03): synchronized `main` remains the
-pre-expansion base at `f5476a2`, while the paused EN-E03 lane is isolated on
+Current continuation checkpoint (2026-08-04): synchronized `main` remains the
+pre-expansion base at `f5476a2`, while the EN-E03 approval lane is isolated on
 `codex/en-e03`. Documentation checkpoint `59f4f1e` precedes rejected v2
-implementation `6104eae`. The complete 57-family / 202-variant
+implementation `6104eae`; the later approved Hill Breaker F1 calibration and
+approved F2 continuation, approved Steppe Hunter F1/F2 Idle baseline, and
+approved Briar Reveler F1/F2 Idle baseline are
+currently uncommitted. The
+complete 57-family / 202-variant
 legacy Enemy catalog remains visually approved; its current 20-column gate
 covers 16,160 source frames / 48,480 None-B-C cases. Form shading, Lantern,
 Production Roll, compatible category rerolls, and the public Cast/Death actor
@@ -143,10 +147,23 @@ The designer rejected EN-E03 v1 checkpoint `50ad516` because its boxed visual
 language did not match the approved roster, then rejected replacement checkpoint
 `6104eae` as still far from that style. V2 keeps only the Giant, Centaur, and
 Satyr contract cards plus three common four-direction/two-frame Idle baselines.
-Its raw and Complete B + Form boards are technically validated but visually
-rejected; no EN-E03 family is public and no acceptance candidate is active. The
-lane is paused until a smaller, reference-first, one-family calibration gate is
-explicitly authorized. No later motion or variants are authorized.
+  Its raw and Complete B + Form boards are technically validated but visually
+rejected. A separate reference-first Hill Breaker F1 study was then authorized
+and visually approved on 2026-08-03. Its F2-only continuation was also visually
+approved that day; the exact eight source frames are the accepted Hill Breaker
+Idle baseline. The later Steppe Hunter F1-only calibration was also visually
+approved across four directions. The designer then authorized only Steppe
+Hunter F2 across those directions and approved the exact F1/F2 boards on
+2026-08-03 with `Approved lets keep going.` That exact eight-frame result is now
+the accepted internal Steppe Hunter Idle baseline. Only the reference-first
+Briar Reveler F1 gate was authorized next; its exact four-direction raw and
+Complete B + Form boards were visually approved on 2026-08-03 with `looks good.`
+Those four frames are now an approved internal F1 seed. The designer then
+authorized only F2 with `lets go next`; the exact F1/F2 boards were visually
+approved on 2026-08-04 with `approved`. Those eight frames are now the accepted
+internal Briar Reveler Idle baseline. No EN-E03 family is public; later motion,
+variants, registration, effects, and release remain blocked, and no later
+implementation gate is active.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
@@ -318,8 +335,12 @@ Candidate additions:
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants only through the approved planning
   and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01 and EN-E02 are
-  accepted through repaired consumer integration, while both EN-E03 common-Idle
-  attempts are rejected and the lane is paused before a reference-first restart
+  accepted through repaired consumer integration. Both EN-E03 common-Idle v1/v2
+  attempts are rejected; the later Hill Breaker F1 calibration is visually
+  approved together with its F2-only continuation as an internal two-frame Idle
+  baseline; Steppe Hunter F1/F2 is also an approved internal two-frame Idle
+  baseline; Briar Reveler F1/F2 is the third approved internal two-frame Idle
+  baseline, with no later EN-E03 implementation gate active
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 

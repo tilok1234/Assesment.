@@ -183,10 +183,28 @@ V2 passes its structural/reproducibility gate but is also visually rejected; it
 is not an approved style baseline or active acceptance candidate. Review tooling
 imports this module directly for 24 deterministic frames;
 `sprite-engine.js`, `engine/enemy-expansion-public.js`, `PUBLIC_ENEMIES`, editor
-selectors, persistence, packs, kits, and exports do not import or expose it. A
-third implementation requires explicit authorization of the reference-first
-calibration gate in `ENEMY_EXPANSION_PLAN.md`; later motion, specialist/elite
-implementation, and registration remain blocked.
+selectors, persistence, packs, kits, and exports do not import or expose it.
+`engine/enemy-expansion-en-e03-calibration.js` separately freezes the visually
+approved four-direction Hill Breaker F1 seed on the shared `humanoid-v1`
+chassis. `engine/enemy-expansion-en-e03-giant-idle.js` composes that exact seed
+with the visually approved F2 to form the exact two-frame Idle baseline. Both
+approval records remain internal. The separately imported
+`engine/enemy-expansion-en-e03-centaur-calibration.js` reuses only the approved
+`humanoid-v1` upper chassis, replaces its lower body with a bounded four-hoof
+horse form, and freezes one visually approved Steppe Hunter F1 seed in its own
+internal registry. `engine/enemy-expansion-en-e03-centaur-idle.js` delegates F1
+back to that frozen renderer and adds the visually approved planted-hoof F2 as
+an internal two-frame Idle baseline. The separate
+`engine/enemy-expansion-en-e03-satyr-calibration.js` registry reuses the
+approved humanoid chassis and approved Goatfolk horn/ear overlay grammar,
+replaces the lower stance with bounded digitigrade legs and split hooves, and
+adds a direction-aware tail plus crooked staff for the Briar Reveler F1
+approved seed. `engine/enemy-expansion-en-e03-satyr-idle.js` delegates F1 back
+to that frozen renderer and adds the visually approved F2 inward-hock settle,
+tail flick, and one-pixel staff dip as an internal two-frame Idle baseline.
+`sprite-engine.js` imports none of these EN-E03 approval modules. Later motion,
+specialist/elite implementation, registration, and consumers remain blocked;
+no later EN-E03 implementation gate is active.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the

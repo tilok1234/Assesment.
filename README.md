@@ -144,11 +144,25 @@ contract cards and common-only scope while rebuilding Hill Breaker, Steppe
 Hunter, and Briar Reveler with a palette-first source treatment. All 24 v2
 frames pass the focused structural gate and have exact raw plus Complete B +
 Form presentation boards, but on 2026-08-03 the designer rejected that pass as
-still far from the established roster style. No EN-E03 family is approved,
-selectable, or public, and no acceptance candidate is active. A third art pass
-requires explicit authorization of a smaller reference-first calibration gate;
-later motion, specialist or elite variants, registration, effects, and release
-remain unauthorized.
+still far from the established roster style. A later smaller reference-first
+Hill Breaker F1 study reused the approved humanoid chassis and was visually
+approved on 2026-08-03. The bounded F2-only continuation was then approved on
+the same date; those eight exact frames form the accepted Hill Breaker Idle
+baseline. The later reference-first Steppe Hunter F1 gate was also visually
+approved on the exact four-direction raw and Complete B + Form boards. The
+designer then authorized only Steppe Hunter F2 across those same directions and
+approved the resulting exact eight-frame F1/F2 boards on 2026-08-03 with
+`Approved lets keep going.` Those frames now form the accepted internal Steppe
+Hunter Idle baseline. That approval authorized only a reference-first Briar
+Reveler F1 gate across Down, Left, Right, and Up. The designer approved its exact
+raw and Complete B + Form boards on 2026-08-03 with `looks good.` Those four
+frames are now the accepted internal Briar Reveler F1 seed. The designer then
+said `lets go next`, authorizing only Briar Reveler F2 across the same four
+directions. The designer approved the exact F1/F2 raw and Complete B + Form
+boards on 2026-08-04 with `approved`. Those eight frames now form the accepted
+internal Briar Reveler Idle baseline. No EN-E03 family is selectable or public;
+no later implementation gate is active, and later motion, specialist or elite
+variants, registration, effects, and release remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
@@ -163,7 +177,10 @@ adds 207,356 Complete B and 163,843 Selective C contour pixels, records 175,878
 source-owned Form changes, and preserves 145,528 protected pixels without
 changing the raw registry contract. EN-E03 uses the same presentation
 algorithms only inside its isolated review evidence and has not entered the
-public boundary.
+public boundary. The approved Hill Breaker F1/F2 and Steppe Hunter F1/F2 Idle
+boards use those same presentation algorithms in separate internal registries.
+The approved Briar Reveler F1 seed and approved F1/F2 Idle baseline are isolated
+in two Satyr-only registries.
 
 The optional shared assembled-sprite shade pass in
 [SHADE_RENDERING_PLAN.md](SHADE_RENDERING_PLAN.md) has an explicitly approved
@@ -379,6 +396,36 @@ or unimplemented variants, and zero public EN-E03 families. Run
 Complete B + Form boards beneath `enemy-expansion-review/en-e03/`. Passing this
 gate proves reproducibility and isolation only; both rendered art attempts are
 visually rejected.
+
+Run `npm run check:enemy-expansion-en-e03-calibration` and
+`npm run review:enemy-expansion-en-e03-calibration` to reproduce the exact
+visually approved Hill Breaker F1 seed. Run
+`npm run check:enemy-expansion-en-e03-giant-idle` and
+`npm run review:enemy-expansion-en-e03-giant-idle` for the approved F1/F2 gate.
+That check preserves all four approved F1 frames and their planted contact rows,
+validates four approved F2 frames, and keeps Giant absent from public consumers.
+Run `npm run check:enemy-expansion-en-e03-centaur-calibration` and
+`npm run review:enemy-expansion-en-e03-centaur-calibration` for the approved
+Steppe Hunter F1 seed. Its checker requires four connected hybrid
+silhouettes, four separated hoof contacts per direction, exact mirrored side
+profiles, one-cell margins, and zero public exposure. Run
+`npm run check:enemy-expansion-en-e03-centaur-idle` and
+`npm run review:enemy-expansion-en-e03-centaur-idle` for the approved F1/F2
+baseline. That checker preserves all four approved F1 frames, validates the
+four approved F2 poses with exact planted contact rows, requires eight connected
+four-hoof silhouettes, and keeps Centaur absent from public consumers. Run
+`npm run check:enemy-expansion-en-e03-satyr-calibration` and
+`npm run review:enemy-expansion-en-e03-satyr-calibration` for the Briar Reveler
+F1 approved seed. Its checker requires four connected horned
+digitigrade silhouettes, four split-hoof contact tips per direction, exact
+mirrored side profiles, one-cell margins, Complete B/Form behavior, and zero
+public exposure while freezing the exact approval evidence and artifact hashes.
+Run `npm run check:enemy-expansion-en-e03-satyr-idle` and
+`npm run review:enemy-expansion-en-e03-satyr-idle` for the approved F1/F2
+baseline. That checker freezes the approval metadata and exact artifact hashes,
+preserves all four approved F1 frames, validates the four approved F2 poses,
+requires eight connected horned digitigrade silhouettes and four split-hoof
+contact tips per frame, and keeps Satyr absent from public consumers.
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
@@ -659,6 +706,18 @@ awaits explicit visual approval before any animation work.
   `engine/enemy-expansion-large-hybrid.js` - isolated, non-public EN-E03
   common-Idle contract cards and rejected Idle-only Giant/Centaur/Satyr
   implementation evidence
+- `engine/enemy-expansion-en-e03-calibration.js`,
+  `engine/enemy-expansion-en-e03-giant-idle.js`, and
+  `engine/enemy-expansion-en-e03-centaur-calibration.js` - approved Hill
+  Breaker F1/F2 evidence plus the isolated approved Steppe Hunter F1 calibration
+- `engine/enemy-expansion-en-e03-centaur-idle.js` - approved internal Steppe
+  Hunter F1/F2 Idle baseline; F1 delegates to the frozen calibration and F2
+  preserves the accepted planted-hoof continuation
+- `engine/enemy-expansion-en-e03-satyr-calibration.js` - bounded internal Briar
+  Reveler F1 approved seed; it reuses the approved humanoid and Goatfolk grammar
+- `engine/enemy-expansion-en-e03-satyr-idle.js` - approved internal Briar
+  Reveler F1/F2 Idle baseline; F1 delegates to the frozen calibration while F2
+  preserves the accepted planted-hock, tail-flick, and staff-dip continuation
 - `tools/check-enemy-expansion.mjs` - focused legacy-equivalence, registry,
   review-targeting, and malformed-sheet gate
 - `tools/check-enemy-expansion-en-e01.mjs` and

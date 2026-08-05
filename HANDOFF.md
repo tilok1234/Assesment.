@@ -1,6 +1,6 @@
 # Project Handoff
 
-Date: 2026-08-03
+Date: 2026-08-04
 
 ## Purpose
 
@@ -19,20 +19,46 @@ match the approved Enemy roster. EN-E03 v2 rebuilt the same contract cards and
 common-only Idle scope for Giant, Centaur, and Satyr, but on 2026-08-03 the
 designer also rejected those exact raw and Complete B + Form boards as still
 far from the established roster style. Both implementations remain reproducible
-technical evidence only; neither is an approved visual baseline or an active
-acceptance candidate. EN-E03 is paused before any third art pass. This handoff
+  technical evidence only; neither is an approved visual baseline. The designer
+  then explicitly authorized a reference-first Hill Breaker first-pose study,
+  approved its exact raw and Complete B + Form boards on 2026-08-03 with
+  `much better lets move onm`, and authorized the bounded second Idle pose. That
+  F2-only continuation was approved on the exact raw and Complete B + Form
+  boards with `approved`. The eight-frame Hill Breaker Idle baseline became the
+  first accepted EN-E03 art seed. The designer then said `lets do next`,
+  authorizing only a reference-first Steppe Hunter F1 calibration across four
+  directions, then approved its exact raw plus Complete B + Form boards with
+  `Approved`. Steppe Hunter F1 is the second accepted internal EN-E03 seed. The
+  designer next authorized only the recommended Steppe Hunter F2 continuation
+  with `Let's do that`, then approved its exact F1/F2 raw and Complete B + Form
+  boards with `Approved lets keep going.` The eight frames now form the accepted
+  internal Steppe Hunter Idle baseline, and the approval authorized only a
+  reference-first Briar Reveler F1 study across four directions. Its exact raw
+  and Complete B + Form boards were visually approved on 2026-08-03 with
+  `looks good.` Those four frames are now the accepted internal Briar Reveler F1
+  seed. The designer then said `lets go next`, authorizing only Briar Reveler F2
+  across the same directions. The designer approved its exact F1/F2 raw and
+  Complete B + Form boards on 2026-08-04 with `approved`. Those eight frames
+  are now the third accepted internal EN-E03 two-frame Idle baseline. The
+  designer then again said `lets do next`, explicitly authorizing only a bounded
+  Hill Breaker common Walk candidate: four Walk frames in Down, Left, Right,
+  and Up while preserving the approved Idle frames exactly. That implementation
+  candidate and its review boards now exist, but they have not completed exact
+  Aseprite MCP inspection, focused validation, or designer approval. No later
+  EN-E03 gate is authorized. This handoff
 records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02 families /
 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
 frozen pre-registration evidence, shipped NPC artifact, local Windows proof,
 and unresolved Boss and publisher boundaries.
 
-This handoff was re-audited on 2026-08-03 against the live branch, all 20
-tracked Markdown documents, the public and internal expansion boundaries, the
-current validation scripts, exact review hashes, and the local Windows artifact
-state. Historical measurements remain where explicitly labeled; current-facing
-continuation text has been reconciled to the second EN-E03 visual rejection and
-the paused lane.
+This handoff was re-audited on 2026-08-04 against the live branch, dirty state,
+public and internal expansion boundaries, current validation scripts, exact
+review hashes, and local Windows/Aseprite state. Historical measurements remain
+where explicitly labeled. This file now records the active Hill Breaker Walk
+candidate; `README.md`, `ARCHITECTURE.md`, `ROADMAP.md`, and
+`ENEMY_EXPANSION_PLAN.md` still describe the immediately preceding closed Idle
+checkpoint and require reconciliation if this candidate advances.
 
 ## Canonical Workspace And Git State
 
@@ -40,9 +66,9 @@ the paused lane.
   `C:\tmp\8-bit-sprite-assembler-en-e03`
 - Active branch and upstream: `codex/en-e03` tracking
   `origin/codex/en-e03`.
-- Clean synchronized pre-handoff HEAD:
-  `55fbcc51b2b8c0de23e7456bd5c61cd87d4fdf22`
-  (`Record EN-E03 v2 visual gate`).
+- Verified live HEAD before the uncommitted approval lane:
+  `402f76d944d53895b7700052514c365cbcc8a15f`
+  (`Record EN-E03 visual rejection handoff`).
 - Normal baseline worktree:
   `C:\Users\headc\Documents\8-bit-sprite-assembler-main`
 - Mainline branch: `main`
@@ -86,6 +112,12 @@ the paused lane.
 - Rejected EN-E03 v2 roster-style replacement checkpoint:
   `6104eaedce62c4514cdd5061bd58c8c79eeb0341`
   (`Rebuild EN-E03 Idle candidate in roster style`).
+- Current uncommitted EN-E03 approval lane: approved Hill Breaker, Steppe
+  Hunter, and Briar Reveler two-frame Idle baselines plus one authorized Hill
+  Breaker common Walk implementation-candidate. The Walk scope is four frames
+  across four directions only. It is internal and unapproved; no other motion,
+  variant, registration, consumer, effect, release, or public-promotion work is
+  authorized.
 - Verified synchronized base before EN-F00:
   `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`
   (`Document enemy expansion and refresh handoff`).
@@ -148,15 +180,71 @@ Desert Raider, Fallen Knight, and Goatfolk checkerboard seams. The pre-repair
 pixels remain exact in an internal comparison registry. EN-E03 v1 and v2 are
 both visually rejected. V2 contains the same three contract cards and only the
 rebuilt Hill Breaker, Steppe Hunter, and Briar Reveler common Idle baselines;
-its passing structural gate did not make it stylistically acceptable. There is
-no active EN-E03 acceptance candidate. Preserve both attempts as historical
-evidence and wait for explicit authorization of a reference-first calibration
-gate before changing the renderer or producing more art. The recommended next
-gate is one Giant / Hill Breaker first-Idle pose across four directions, shown
-raw and with Complete B + Form beside exact approved EN-E01/EN-E02 references.
-Do not produce the second Idle frame, Centaur, Satyr, later motion, variants,
-registration, effects, or release until that smaller study is explicitly
-approved.
+its passing structural gate did not make it stylistically acceptable. Preserve
+both attempts as historical evidence. The later reference-first Hill Breaker F1
+study reuses the exact approved humanoid chassis, adds only an asymmetric Giant
+identity treatment, and was visually approved on 2026-08-03. Its four source
+frames are now an immutable seed. The bounded continuation added Hill Breaker F2
+across the same four directions for raw and Complete B + Form review. The
+designer approved that exact board on 2026-08-03, closing the candidate gate.
+The resulting two-frame Idle baseline is immutable and internal. The next
+explicit authorization added only Steppe Hunter F1 across four directions for
+raw and Complete B + Form review. The designer approved that exact board on
+2026-08-03, making the F1 seed immutable and internal, then authorized only its
+F2 continuation with `Let's do that`. The designer approved the exact F1/F2
+boards on 2026-08-03 with `Approved lets keep going.`, making that two-frame
+Idle baseline immutable and internal. That approval authorized only Briar
+Reveler F1 across four directions. The designer approved its exact raw and
+Complete B + Form boards on 2026-08-03 with `looks good.`, making the F1 seed
+immutable and internal, then authorized only its F2 continuation with
+`lets go next`. The designer approved the exact F1/F2 raw and Complete B + Form
+boards on 2026-08-04 with `approved`, making that two-frame Idle baseline
+immutable and internal. The designer then again said `lets do next`, authorizing
+only Hill Breaker common Walk W1-W4 across Down, Left, Right, and Up. The
+approved Hill Breaker Idle baseline must remain byte-exact context. Do not add
+Centaur, Satyr, specialist/elite variants, Attack, Hurt, Cast, Death,
+registration, consumers, effects, release, or any later EN-E03 step.
+
+### Active Hill Breaker Walk Implementation Candidate
+
+- Gate ID: `en-e03-hill-breaker-walk-v1`; current status:
+  `implementation-candidate`, not visually approved.
+- Candidate source:
+  `engine/enemy-expansion-en-e03-giant-walk.js`.
+- Review generator:
+  `tools/enemy-expansion-en-e03-giant-walk-review.mjs`.
+- Raw board:
+  `enemy-expansion-review/en-e03-giant-walk/en-e03-hill-breaker-walk-raw.png`,
+  `1950x744`, SHA-256
+  `bc6302036e4b3c8f45c59195659726408721d3dbdac3b1b670f2543d46213420`.
+- Complete B + Form board:
+  `enemy-expansion-review/en-e03-giant-walk/en-e03-hill-breaker-walk-complete-b-form.png`,
+  `1950x744`, SHA-256
+  `19ce1476461bf623e5dc909216021e64c61b40f168ec175cb0a60dcf3e338339`.
+- Candidate 16-frame digest:
+  `9f41b2b90b245fe7d6302f87ddcd9313cdedc5360ddc245a4d61c8beab958622`.
+- Delegated approved Idle digest remains exact at
+  `2ae3904669508afbabed0742d72d4d334f37cdee360ba4f4d1a11767d22ee5ab`.
+- Generated metadata records 16 hard-alpha Walk frames, four directions, four
+  frame indices, `179-203` opaque pixels per frame, occupied bounds within
+  `x=4/5..18/19` and `y=1/2..21`, effects off, and zero public candidate
+  families. W2/W4 currently share the passing pose in each direction; final
+  motion judgment still requires exact visual review.
+- Syntax checks for the new renderer and review generator passed, and both exact
+  PNGs were generated and hash-verified. A local direct-image inspection was
+  performed, but the required Aseprite MCP tab inspection was not completed.
+- Still missing: a focused Walk checker, package scripts, frozen gate hashes,
+  `awaiting-designer-approval` status, predecessor authorization reconciliation,
+  remaining project-doc updates, focused/full regression runs, and designer
+  approval of the exact boards.
+- No commit or push was made. Preserve every existing dirty/untracked EN-E03
+  approval-lane file.
+- Aseprite operating note: extra read-only Trailblazer processes were gracefully
+  closed at handoff, leaving one responding Aseprite instance. This Codex MCP
+  bridge is configured on port `6519`, but `list_open_sprites` had not succeeded
+  before the cleanup. Resume with Aseprite's `Help -> MCP Pro: Reconnect`, then
+  use `list_open_sprites` and `open_sprite` for both exact PNG paths in that one
+  instance. Do not use Computer Use or launch one Aseprite process per file.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -280,6 +368,23 @@ runtime contract and must not be rewritten merely to match it.
   baselines / 24 Idle frames and zero approved/public families. Its renderer
   rejects every non-Idle animation. This technically valid implementation is
   historical evidence, not a visual baseline for a third attempt.
+- The separate reference-first approval lane contains one visually approved
+  Hill Breaker F1/F2 Idle baseline / eight frames / four directions. It remains
+  one internal family / one common variant / zero
+  public families and does not import into generic consumers.
+- The approved Steppe Hunter calibration is a second isolated internal registry
+  containing one Centaur family / one common variant / four frozen F1 directions
+  / zero public families. Its bounded F1/F2 registry delegates those exact F1
+  frames and adds four visually approved F2 directions with a planted four-hoof
+  base. Neither registry imports into public consumers.
+- The Briar Reveler calibration is a third isolated internal registry containing
+  one Satyr family / one common variant / four F1 directions / zero public
+  families. Its exact F1 boards are visually approved, and it rejects F2 plus
+  every non-Idle animation.
+- Its bounded approved F1/F2 registry delegates those exact F1 frames and adds
+  four visually approved F2 directions with inward hock motion, a tail flick,
+  and a one-pixel staff dip. Neither Satyr registry imports into public
+  consumers.
 - Giant uses the large-biped archetype, Centaur uses a true four-hoof hybrid
   archetype with readable withers joins, and Satyr uses the horned digitigrade
   archetype with tail, hocks, and split-hoof contacts.
@@ -412,13 +517,26 @@ requires the NSIS installer and is not satisfied by the standalone proof.
 
 ## Validation Evidence For This Handoff
 
-Current revalidation from the active EN-E03 worktree on 2026-08-03:
+Current revalidation through the approved Idle checkpoint from the active
+EN-E03 worktree on 2026-08-04:
 
 ```powershell
 npm.cmd run check:enemy-expansion-repairs
 npm.cmd run check:enemy-expansion-en-e02-consumers
 npm.cmd run check:enemy-expansion-en-e03
 npm.cmd run review:enemy-expansion-en-e03
+npm.cmd run check:enemy-expansion-en-e03-calibration
+npm.cmd run review:enemy-expansion-en-e03-calibration
+npm.cmd run check:enemy-expansion-en-e03-giant-idle
+npm.cmd run review:enemy-expansion-en-e03-giant-idle
+npm.cmd run check:enemy-expansion-en-e03-centaur-calibration
+npm.cmd run review:enemy-expansion-en-e03-centaur-calibration
+npm.cmd run check:enemy-expansion-en-e03-centaur-idle
+npm.cmd run review:enemy-expansion-en-e03-centaur-idle
+npm.cmd run check:enemy-expansion-en-e03-satyr-calibration
+npm.cmd run review:enemy-expansion-en-e03-satyr-calibration
+npm.cmd run check:enemy-expansion-en-e03-satyr-idle
+npm.cmd run review:enemy-expansion-en-e03-satyr-idle
 npm.cmd run check
 git diff --check
 ```
@@ -427,16 +545,43 @@ Current results:
 
 - the approved repair, cumulative public-consumer, and isolated EN-E03 gates
   pass;
-- the raw and Complete B + Form EN-E03 artifacts reproduce their frozen
+- the rejected v2 raw and Complete B + Form artifacts reproduce their frozen
   SHA-256 values and 24-frame digest exactly;
-- both EN-E03 implementations are visually rejected; these technical results
-  prove reproducibility and boundary safety, not visual acceptance;
-- full project validation passes all catalog, renderer, animation, outline,
+- both historical EN-E03 v1/v2 implementations remain visually rejected;
+- the approved Hill Breaker F1 board reproduces both frozen SHA-256 values and
+  its four-frame digest exactly, while the approved F1/F2 board reproduces both
+  frozen SHA-256 values and its eight-frame digest exactly;
+- the approved Steppe Hunter F1 board reproduces both frozen SHA-256 values and
+  its four-frame digest exactly, with four connected hybrid silhouettes and four
+  separated hoof contacts in every direction;
+- the approved Steppe Hunter F1/F2 board reproduces both frozen SHA-256 values
+  and its eight-frame digest exactly; all four approved F1 frames and their
+  contact rows remain exact while four accepted F2 poses retain connected hybrid
+  silhouettes and four separated hoof contacts;
+- the approved Briar Reveler F1 board reproduces both frozen SHA-256 values and
+  its four-frame digest exactly, with four connected horned
+  digitigrade silhouettes and four split-hoof contact tips per direction;
+- the approved Briar Reveler F1/F2 board reproduces both frozen SHA-256 values
+  and its eight-frame digest exactly; all four approved F1 frames remain exact
+  while four accepted F2 poses retain connected horned digitigrade silhouettes
+  and four split-hoof contact tips;
+- full project validation passed all catalog, renderer, animation, outline,
   shade, expansion, equipment, Boss, pack, release-configuration, and 232 PNG
-  fixture gates;
-- documentation-only changes introduce no source, fixture, schema, artifact,
-  or approval-boundary changes; and
+  fixture gates before the later Hill Breaker Walk candidate was added;
+- the bounded Hill Breaker, Steppe Hunter, and Briar Reveler F1/F2 source
+  changes introduce no legacy fixture, schema, public catalog, consumer,
+  effect, release-artifact, or archived-review change; and
 - `git diff --check` passes.
+
+Hill Breaker Walk candidate evidence at this handoff is narrower:
+
+- `node --check` passed for the new renderer and review generator;
+- the review generator completed and produced the exact hashes and frame digest
+  recorded in `Active Hill Breaker Walk Implementation Candidate`;
+- the approved Hill Breaker Idle digest remained exact in generated metadata;
+- no focused Walk checker or package script exists yet; and
+- the focused Walk gate and full `npm.cmd run check` have not been run after the
+  Walk additions. Do not reuse the earlier full-suite pass as candidate proof.
 
 Historical base validation from the canonical main worktree on 2026-08-02:
 
@@ -618,13 +763,72 @@ Recorded expansion results through the rejected EN-E03 v2 technical gate:
   families, with
   specialist/elite data, later motion, registration, consumers, effects, and
   release explicitly absent;
+- the approved Hill Breaker F1 calibration raw artifact SHA-256 is
+  `4dae138234132d6249f36783dcb753716e6556791051c60c7ef92d6e73956e95`,
+  its Complete B + Form SHA-256 is
+  `70fce189859c2c86d102b2db9f3b3ea5bac47b9f5f32c172adc70a612eafa605`,
+  and its four-frame digest is
+  `019ec9d11daac3d626d1c33693dc707ba98c6ade1c7647f82a5dc5a5a7fa2602`;
+- `check:enemy-expansion-en-e03-giant-idle` validates the approved F1/F2 lane at
+  eight connected hard-alpha frames, exact preservation of all four approved F1
+  frames and their bottom contact rows, 726 Complete B additions, 852
+  Form-shaded source pixels, and zero public families;
+- the approved Hill Breaker F1/F2 raw SHA-256 is
+  `21cb2a314b6fa5866ea4d708570513506c69c02befca739338df1b908fefc686`,
+  its Complete B + Form SHA-256 is
+  `2bcad3208b2571764f1938f0be52383d1cb4128a191b74ed7d669fd8e8c48faf`,
+  and its eight-frame digest is
+  `2ae3904669508afbabed0742d72d4d334f37cdee360ba4f4d1a11767d22ee5ab`;
+- `check:enemy-expansion-en-e03-centaur-calibration` validates four connected
+  Steppe Hunter F1 hybrid silhouettes, four separated hoof contacts per
+  direction, exact mirrored side profiles, hard alpha, one-cell margins, 511
+  Complete B additions, 550 Form-shaded source pixels, and zero public families;
+- the approved Steppe Hunter F1 raw SHA-256 is
+  `f4c462ffd9242684d7335c28c238db0fb59cecd5e168f069da03cc6f40753480`,
+  its Complete B + Form SHA-256 is
+  `dc7ccd766c736dcb1581b817f950b6be8541bacb26411c2281a42535bbf82f52`,
+  and its four-frame digest is
+  `53ea78549da26eccc2b8292672f693384d8551660d68bdd5e3827bb1d21f55cb`;
+- `check:enemy-expansion-en-e03-centaur-idle` validates the approved F1/F2 lane
+  at eight connected hard-alpha hybrid frames, exact preservation of all four
+  approved F1 records and bottom contact rows, four separated hoof contacts in
+  every frame, exact mirrored profiles, 1,016 Complete B additions, 1,068
+  Form-shaded source pixels, and zero public families;
+- the approved Steppe Hunter F1/F2 raw SHA-256 is
+  `256b9be67407ada1caad58b6dc68d426ecbeb73b5f2032f13187e337d900c235`,
+  its Complete B + Form SHA-256 is
+  `e98d2e7d570c8777238cb187caaac15caff9c9000af0b322c651623e8e0ff7dd`,
+  and its eight-frame digest is
+  `3c88471b25fc27397a0a11d6495cd27c641a6715ff33429f5d0d2c81f184ae49`;
+- `check:enemy-expansion-en-e03-satyr-calibration` validates the approved Briar
+  Reveler F1 lane at four connected hard-alpha horned digitigrade frames, four
+  split-hoof contact tips per direction, exact mirrored side profiles, 559
+  Complete B additions, 535 Form-shaded source pixels, and zero public families;
+- the approved Briar Reveler F1 raw SHA-256 is
+  `1272f52186c4f0df8666e845392eec6338d31aa161222d2064ed27625acc4405`,
+  its Complete B + Form SHA-256 is
+  `aa516c5d4e53b7d89b8dc2a935f7d41c8e36260950b771b8f094093e4fd9a5a1`,
+  and its four-frame digest is
+  `b8335de4e6794e84de0be10a3c437fab024db8310262e1c1deb484bd6b9add6b`;
+- `check:enemy-expansion-en-e03-satyr-idle` validates the approved F1/F2 lane at
+  eight connected hard-alpha horned digitigrade frames, exact preservation of
+  all four approved F1 frames, four split-hoof contact tips in every frame, exact
+  mirrored profiles, 356 changed F2 alpha pixels, 1,026 Complete B additions,
+  1,072 Form-shaded source pixels, and zero public families;
+- the approved Briar Reveler F1/F2 raw SHA-256 is
+  `8d3a960d62683e19694e28572f15117314fde9ccb7dd898ea9065d64da058204`,
+  its Complete B + Form SHA-256 is
+  `4257e63a25a23631ff861b3752e03da0897a6ceaf5ef8cef6efccbd575f6b51e`,
+  and its eight-frame digest is
+  `0d5599dcd452351903e5d56289596d2e75f59caf5c0b7a5525c7e375c39b36fa`;
 - the full project validator passes with all existing catalog, renderer,
   outline, Form-shade, Cast/Death alias, equipment, Boss, 232-fixture, pack,
   and release-configuration gates unchanged; and
 - no legacy fixture, schema version, Boss asset, release artifact, or archived
   review payload is modified; the exact visually accepted repair registry
-  remains the only public replacement, while both EN-E03 attempts stay isolated
-  rejected evidence.
+  remains the only public replacement. Historical EN-E03 v1/v2 stay isolated
+  rejected evidence, while the approved Hill Breaker and Steppe Hunter F1/F2
+  lanes and approved Briar Reveler F1/F2 lane are also internal.
 
 ## Documentation Audit Result
 
@@ -632,20 +836,22 @@ The 2026-08-03 audit covered all 20 tracked Markdown documents and reconciled
 their current-facing claims against the clean synchronized EN-E03 branch, live
 module graph, package scripts, public/internal registries, review hashes,
 validation totals, local standalone executable, absent NSIS directory, and the
-planning mainline ruling. The later same-day rejection of both EN-E03 attempts
-and the resulting pause were then reconciled into the five active documents
-named below.
+planning mainline ruling. The later rejection of both EN-E03 attempts and the
+subsequent Hill Breaker, Steppe Hunter, and Briar Reveler F1/F2 approvals were
+reconciled through 2026-08-04 into the five active documents named below.
 
 Current-facing drift or ambiguity was corrected in:
 
 - `README.md` — records accepted EN-E02 presentation/repairs, both rejected
-  EN-E03 attempts, its historical validation commands, and its modules;
+  EN-E03 attempts, all three approved internal F1/F2 baselines, and their
+  validation commands and modules;
 - `ARCHITECTURE.md` — records the approved repair registry and the non-public
   EN-E03 renderer/review dependency boundary;
-- `ROADMAP.md` — records the paused EN-E03 lane and reference-first restart
-  gate;
-- `ENEMY_EXPANSION_PLAN.md` — records both rejected attempts, the exact v2
-  checkpoint/hashes, and the smaller calibration gate required before a restart;
+- `ROADMAP.md` — records all three approved internal F1/F2 Idle baselines and
+  the absence of a later active gate;
+- `ENEMY_EXPANSION_PLAN.md` — records both rejected attempts, exact v2
+  checkpoint/hashes, all three approved two-frame baselines, and the closed
+  Satyr F2 review gate;
 - `HANDOFF.md` — refreshes branch, validation, artifact, reading, audit, and
   new-chat state;
 - `EQUIPMENT_OUTLINE_ASSESSMENT.md`, `EQUIPMENT_READABILITY_PLAN.md`,
@@ -675,6 +881,13 @@ where their sections explicitly identify them as historical evidence. The
 active implementation and approval authority remains `ENEMY_EXPANSION_PLAN.md`
 plus this handoff.
 
+Post-audit handoff-only update: the authorized Hill Breaker Walk candidate was
+created after the documented closed-Idle checkpoint. This handoff is the only
+active document updated for that candidate so far. Reconcile
+`ENEMY_EXPANSION_PLAN.md`, `README.md`, `ARCHITECTURE.md`, and `ROADMAP.md` only
+after the exact candidate has been inspected and its gate state is known; do not
+silently treat their current `no active gate` text as the newer live state.
+
 ## Frozen Boundaries
 
 Unless the designer explicitly changes scope:
@@ -688,10 +901,16 @@ Unless the designer explicitly changes scope:
   comparison evidence;
 - treat EN-E03 v1 and v2 as rejected historical evidence, not approved style
   references or candidates to extend;
-- do not begin a third EN-E03 implementation without explicit authorization of
-  a reference-first calibration gate; once authorized, stop after one Giant /
-  Hill Breaker first-Idle pose across four directions and its raw plus Complete
-  B + Form comparison board;
+- preserve the exact approved Hill Breaker F1/F2 Idle hashes and pixels;
+- preserve the exact approved Steppe Hunter F1/F2 Idle hashes and pixels;
+- preserve the exact approved Briar Reveler F1/F2 Idle hashes and pixels;
+- the only active EN-E03 implementation authorization is Hill Breaker common
+  Walk W1-W4 across Down, Left, Right, and Up. Preserve the approved Idle bytes,
+  keep the candidate internal, and do not call it approved before exact raw and
+  Complete B + Form Aseprite MCP review plus direct designer approval;
+- do not begin Centaur/Satyr motion, Attack, Hurt, Cast, Death, variants,
+  registration, consumers, effects, release, or any later EN-E03 work without
+  another explicit gate;
 - do not modify the archived `wip/19-boss-review` checkout;
 - do not accept the Rhino/Unicorn direction candidates or the three animation
   candidates without direct visual review;
@@ -712,17 +931,31 @@ The safest opening request for the next chat is:
 > EN-E01 and EN-E02 are approved, registered, consumer-integrated, and include
 > the visually accepted 2026-08-03 seven-family repair. Verify the clean synced
 > branch and exact 67/232 stable/public boundary. EN-E03 v1 at `50ad516` and v2
-> at `6104eae` were both visually rejected; neither is approved or public. Do
-> not produce a third 24-frame set or extend either renderer. First read the
-> rejection record, select exact approved EN-E01/EN-E02 roster references, and
-> propose a one-family, first-Idle-pose, four-direction raw plus Complete B +
-> Form calibration gate. Wait for explicit authorization before implementing
-> even that smaller study.
+> at `6104eae` were both visually rejected and remain historical. The later
+> four-direction Hill Breaker F1/F2 Idle baseline is visually approved and hash
+> frozen. The four-direction Steppe Hunter F1/F2 Idle baseline is also visually
+> approved and hash frozen. The Briar Reveler F1/F2 Idle baseline was visually
+> approved on 2026-08-04 and is also hash frozen. All three baselines remain
+> internal and non-public. The only active gate is the unapproved Hill Breaker
+> common Walk implementation-candidate: four frames across four directions with
+> approved Idle delegated exactly. Read its dedicated handoff section, preserve
+> the dirty lane, reconnect the one Aseprite instance to MCP port 6519, and open
+> the exact raw and Complete B + Form PNGs through `open_sprite` tabs. Do not use
+> Computer Use or launch per-file Aseprite processes. Finish focused validation,
+> hash freezing, remaining docs, and full regression only within this bounded
+> gate. Do not begin any later EN-E03 work without new authorization.
 
 EN-F00, EN-E01, EN-E02, and the seven-family repair are approved. The stable and
 consumer registries are the same ten-family / 30-variant repaired object through
 67 public families / 232 variants; the pre-repair pixels remain internal
 evidence. EN-E03 contract cards and two common-only Idle attempts exist, but
-both art passes are visually rejected and no active acceptance candidate
-remains. No EN-E03 family is public; the lane is paused before a reference-first
-restart decision.
+both full art passes are visually rejected. The separate Hill Breaker F1
+calibration and F2-only continuation form the visually approved internal
+two-frame Idle baseline. Steppe Hunter F1 and its F2-only continuation form a
+second visually approved internal two-frame Idle baseline. Briar Reveler F1 and
+its F2-only continuation form the third visually approved internal two-frame
+Idle baseline. One internal Hill Breaker four-direction/four-frame Walk
+implementation-candidate is active but not visually approved or public. Its
+focused checker, frozen hashes, complete documentation reconciliation, exact
+Aseprite MCP inspection, full regression, and designer approval remain open.
+Every later EN-E03 step remains gated.
