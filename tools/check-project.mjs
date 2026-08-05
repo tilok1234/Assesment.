@@ -108,6 +108,11 @@ check(
 const bossAnimationCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-boss-animations.mjs')], {
   encoding: 'utf8',
 });
+for (const notice of bossAnimationCheck.stdout
+  .split(/\r?\n/)
+  .filter((line) => line.startsWith('NOTICE:'))) {
+  console.log(notice);
+}
 check(
   bossAnimationCheck.status === 0,
   `Boss animation structural gate failed\n${bossAnimationCheck.stdout.trim()}\n${bossAnimationCheck.stderr.trim()}`,

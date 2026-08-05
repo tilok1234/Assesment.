@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { inflateSync } from 'node:zlib';
@@ -11,6 +12,14 @@ const errors = [];
 
 function check(condition, message) {
   if (!condition) errors.push(message);
+}
+
+async function checkReviewCheckpoint(runtimeBytes, relativePath, message) {
+  if (!reviewCheckpointsAvailable) return;
+  const checkpoint = await readFile(
+    path.join(checkpointRoot, path.basename(relativePath)),
+  );
+  check(runtimeBytes.equals(checkpoint), message);
 }
 
 function png(buffer, relativePath) {
@@ -124,6 +133,37 @@ const internalCatalogs = await import(`${pathToFileURL(path.join(root, 'engine',
 const catalogSource = await readFile(catalogPath, 'utf8');
 const appSource = await readFile(path.join(root, 'app.js'), 'utf8');
 const entrySource = await readFile(path.join(root, 'index.html'), 'utf8');
+const expectedReviewCheckpointPaths = [...new Set(
+  engine.BOSS_ANIMATION_PILOTS.flatMap((pilot) => [
+    pilot.fullSheet,
+    ...Object.values(pilot.directionSheets),
+    ...Object.values(pilot.animationSheets),
+    ...engine.BOSS_ANIMATIONS.flatMap((animation) => (
+      engine.BOSS_ANIMATION_DIRECTIONS.flatMap(
+        (direction) => pilot.frames[animation.id][direction],
+      )
+    )),
+  ]).map((asset) => path.join(checkpointRoot, path.basename(asset))),
+)];
+const presentReviewCheckpointCount = expectedReviewCheckpointPaths
+  .filter((checkpointPath) => existsSync(checkpointPath))
+  .length;
+const reviewCheckpointsAvailable = (
+  presentReviewCheckpointCount === expectedReviewCheckpointPaths.length
+);
+if (presentReviewCheckpointCount === 0) {
+  console.log(
+    'NOTICE: Optional boss animation review-draft PNG checkpoints are absent; '
+    + 'skipping only review-draft byte-parity checks. Runtime boss validation remains strict.',
+  );
+} else {
+  check(
+    reviewCheckpointsAvailable,
+    'boss animation review-draft PNG checkpoints are partially present: '
+      + `found ${presentReviewCheckpointCount} of ${expectedReviewCheckpointPaths.length}; `
+      + 'restore the complete checkpoint corpus or remove the partial local copies',
+  );
+}
 const generatorSources = new Map(await Promise.all([
   ['ancient-mirejaw', 'generate-mirejaw-animation-v1.py', 'generate_mirejaw_directions_v1'],
   ['bone-reliquary-king', 'generate-bone-king-animation-v1.py', 'generate_bone_king_directions_v1'],
@@ -196,8 +236,11 @@ const expectedAssetNames = [];
 for (const pilot of engine.BOSS_ANIMATION_PILOTS) {
   const fullRelative = pilot.fullSheet.replace(/^\.\//, '');
   const fullBytes = await readFile(path.join(root, ...fullRelative.split('/')));
-  const fullCheckpoint = await readFile(path.join(checkpointRoot, path.basename(fullRelative)));
-  check(fullBytes.equals(fullCheckpoint), `${pilot.id}: runtime full animation sheet must be byte-identical to the review checkpoint`);
+  await checkReviewCheckpoint(
+    fullBytes,
+    fullRelative,
+    `${pilot.id}: runtime full animation sheet must be byte-identical to the review checkpoint`,
+  );
   const fullSheet = png(fullBytes, fullRelative);
   check(fullSheet?.width === 960 && fullSheet?.height === 192, `${pilot.id}: full animation sheet must be 960x192`);
   expectedAssetNames.push(path.basename(fullRelative));
@@ -206,8 +249,11 @@ for (const pilot of engine.BOSS_ANIMATION_PILOTS) {
   for (const [direction, asset] of Object.entries(pilot.directionSheets)) {
     const relative = asset.replace(/^\.\//, '');
     const bytes = await readFile(path.join(root, ...relative.split('/')));
-    const checkpoint = await readFile(path.join(checkpointRoot, path.basename(relative)));
-    check(bytes.equals(checkpoint), `${pilot.id}/${direction}: runtime direction animation sheet must match the review checkpoint`);
+    await checkReviewCheckpoint(
+      bytes,
+      relative,
+      `${pilot.id}/${direction}: runtime direction animation sheet must match the review checkpoint`,
+    );
     const image = png(bytes, relative);
     check(image?.width === 960 && image?.height === 48, `${pilot.id}/${direction}: direction animation sheet must be 960x48`);
     directionSheets.set(direction, image);
@@ -219,8 +265,11 @@ for (const pilot of engine.BOSS_ANIMATION_PILOTS) {
     const asset = pilot.animationSheets[animation.id];
     const relative = asset.replace(/^\.\//, '');
     const bytes = await readFile(path.join(root, ...relative.split('/')));
-    const checkpoint = await readFile(path.join(checkpointRoot, path.basename(relative)));
-    check(bytes.equals(checkpoint), `${pilot.id}/${animation.id}: runtime animation sheet must match the review checkpoint`);
+    await checkReviewCheckpoint(
+      bytes,
+      relative,
+      `${pilot.id}/${animation.id}: runtime animation sheet must match the review checkpoint`,
+    );
     const image = png(bytes, relative);
     check(
       image?.width === animation.frames * 48 && image?.height === 192,
@@ -243,8 +292,11 @@ for (const pilot of engine.BOSS_ANIMATION_PILOTS) {
         check(!asset.includes('\\') && !asset.includes('..'), `${label}: frame path must remain portable`);
         const relative = asset.replace(/^\.\//, '');
         const bytes = await readFile(path.join(root, ...relative.split('/')));
-        const checkpoint = await readFile(path.join(checkpointRoot, path.basename(relative)));
-        check(bytes.equals(checkpoint), `${label}: runtime frame must match the review checkpoint`);
+        await checkReviewCheckpoint(
+          bytes,
+          relative,
+          `${label}: runtime frame must match the review checkpoint`,
+        );
         const frame = png(bytes, relative);
         check(frame?.width === 48 && frame?.height === 48, `${label}: frame must be 48x48`);
         let opaque = 0;
