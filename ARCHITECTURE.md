@@ -202,9 +202,17 @@ adds a direction-aware tail plus crooked staff for the Briar Reveler F1
 approved seed. `engine/enemy-expansion-en-e03-satyr-idle.js` delegates F1 back
 to that frozen renderer and adds the visually approved F2 inward-hock settle,
 tail flick, and one-pixel staff dip as an internal two-frame Idle baseline.
-`sprite-engine.js` imports none of these EN-E03 approval modules. Later motion,
-specialist/elite implementation, registration, and consumers remain blocked;
-no later EN-E03 implementation gate is active.
+`engine/enemy-expansion-en-e03-giant-walk.js` is the separately authorized
+Hill Breaker common Walk implementation-candidate. It delegates both approved
+Idle frames exactly, adds only W1-W4 for Down/Left/Right/Up, rejects Attack and
+every other family, and keeps an empty approved/public family view. Its focused
+checker freezes the approved Idle digest, both candidate PNG hashes, and the
+16-frame Walk digest while enforcing connected hard-alpha silhouettes, planted
+contact, three foot-contact silhouettes per direction, and the deliberate
+W2/W4 shared passing pose. `sprite-engine.js` imports none of these EN-E03
+approval/candidate modules. The Walk candidate remains internal and visually
+unapproved; Centaur/Satyr motion, additional Giant motion, specialist/elite
+implementation, registration, and consumers remain blocked.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -500,6 +508,12 @@ reported seam coordinates. The nested
 variants / 24 Idle frames, connected and distinct silhouettes, true four-hoof
 Centaur contacts, Giant/Satyr scale distinctions, exact side mirroring,
 Complete B/Form ownership, non-Idle refusal, and zero public exposure.
+The nested `npm run check:enemy-expansion-en-e03-giant-walk` gate validates the
+active Hill Breaker candidate across 16 Walk frames, preserves all eight
+approved Idle frames exactly, freezes both review hashes and the candidate
+digest, and proves zero facade/public exposure. Its paired review generator
+reproduces the ignored raw and Complete B + Form boards. These structural gates
+do not grant visual approval.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
@@ -508,6 +522,13 @@ The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 Idle-frame control parity, facade immutability, native-only download wiring,
 and absence from production renderer, generator, persistence, game-pack, and
 ordinary sheet dependencies.
+
+At `8ea019b`, the full `npm run check` also expects a complete ignored local
+Boss review-checkpoint corpus. It passes when that 1,064-file corpus is present,
+but a fresh worktree currently stops in the two Boss subprocesses because 965
+optional checkpoint PNGs are absent. The separate `codex/clean-clone-check`
+candidate at `125b0b3` is unvalidated and is not part of this architecture
+checkpoint.
 
 The Production gate within that command adds 1,000 portable policy cases,
 immutable profile/freeze and reason-code checks, invalid-seed normalization,
@@ -591,7 +612,9 @@ exist. EN-E01 and EN-E02 demonstrate the complete lifecycle with ten
 approved/public families / 30 variants and a shared renderer handler; the later
 approved repair remains a separate immutable registry layer. EN-E03 is the
 current counterexample that proves rejected implemented evidence can stay
-non-public: only three common Idle baselines exist. Follow
+non-public: three internal Idle baselines are visually approved, while the
+separately authorized Hill Breaker Walk candidate remains internal and
+unapproved. Follow
 `ENEMY_EXPANSION_PLAN.md`: keep
 candidates out of the public view, stop for four-direction baseline approval
 before full production, stop again for completed-slice approval, and register

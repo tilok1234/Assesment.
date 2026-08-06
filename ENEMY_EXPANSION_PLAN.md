@@ -22,9 +22,16 @@
   raw and Complete B + Form boards were approved with `looks good.` The designer
   then authorized only Briar Reveler F2 with `lets go next`; its exact F1/F2
   boards were visually approved on 2026-08-04 with `approved`. They are now the
-  third exact internal two-frame Idle baseline; no later EN-E03 gate is active
+  third exact internal two-frame Idle baseline. The designer then again said
+  `lets do next`, authorizing only Hill Breaker common Walk W1-W4 across all
+  four directions. Preservation checkpoint `8ea019b` commits and pushes that
+  internal implementation-candidate, focused checker, deterministic review
+  generator, and frozen hashes without granting visual approval. Exact Aseprite
+  MCP inspection and designer approval remain open; no later gate is authorized
 - Recorded: 2026-08-04
+- Post-cleanup reconciliation: 2026-08-06
 - Assessment baseline: clean synchronized `main` at `f5476a2`
+- Preserved implementation checkpoint: `codex/en-e03` at `8ea019b`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
 
 ## Purpose
@@ -77,7 +84,10 @@ rejected the exact rebuilt artifacts. A later reference-first Hill Breaker F1
 calibration and its F2-only continuation were separately authorized and
 visually approved. Steppe Hunter F1/F2 and Briar Reveler F1/F2 were then
 separately authorized and visually approved as exact internal two-frame Idle
-baselines. No later EN-E03 implementation gate is active.
+baselines. The only later authorization is the bounded Hill Breaker common Walk
+W1-W4 implementation-candidate preserved at `8ea019b`. Its focused automated
+gate passes, but its exact boards are not visually approved and no subsequent
+EN-E03 step is authorized.
 
 ## Intake Assessment
 
@@ -102,8 +112,9 @@ below.
 
 ## Status Vocabulary
 
-- `implementation-candidate`: recommended next work after explicit approval;
-  it is not authorization by itself.
+- `implementation-candidate`: a bounded implementation exists under explicit
+  authorization, but technical completion does not imply visual acceptance;
+  plan text alone never grants authorization.
 - `acceptance-candidate`: the bounded implementation is complete and
   technically validated, but explicit designer acceptance is still pending.
 - `rejected`: retained for exact technical/history evidence but explicitly not
@@ -121,9 +132,12 @@ Their isolated seven-family walk/seam correction is also approved and promoted;
 the pre-repair registry remains available only as immutable comparison evidence.
 EN-E03 v1 and v2 common-only Idle are rejected historical evidence. The EN-E03
 lane now has three visually approved internal two-frame Idle baselines across
-four directions: Hill Breaker, Steppe Hunter, and Briar Reveler. Every later
-pose, variant, animation, consumer, effect, and release step remains gated; a
-new explicitly bounded designer authorization is required before continuation.
+four directions: Hill Breaker, Steppe Hunter, and Briar Reveler. One separately
+authorized Hill Breaker common Walk W1-W4 implementation-candidate is active,
+internal, technically reproducible, and visually unapproved. Every other later
+pose, family motion, variant, consumer, effect, and release step remains gated;
+a new explicitly bounded designer authorization is required before any work
+beyond the candidate's exact review/approval gate.
 
 ## Non-Negotiable Production Contract
 
@@ -477,16 +491,18 @@ authorized only Briar Reveler F1 across four directions. The designer approved
 that exact F1 raw and Complete B + Form pair with `looks good.`, then authorized
 only its F2 continuation with `lets go next`. The designer approved the exact
 resulting F1/F2 boards on 2026-08-04 with `approved`. Do not implement
-specialist/elite variants, Walk/Attack/Hurt, registration, consumer routing,
-separate effects, release work, or any later EN-E03 step without another
-authorization.
+specialist/elite variants, any Walk beyond the bounded Hill Breaker candidate,
+Attack/Hurt, registration, consumer routing, separate effects, release work, or
+any later EN-E03 step without another authorization.
 
 ### EN-E03 - Large and hybrid walkers
 
 - Status: v1/v2 `rejected`; Hill Breaker, Steppe Hunter, and Briar Reveler
-  two-frame Idle baselines `approved` and internal; all later production gated
+  two-frame Idle baselines `approved` and internal; Hill Breaker Walk W1-W4
+  `implementation-candidate`, internal and visually unapproved
 - Families: Giant, Centaur, Satyr
-- Active gate: none; a new explicitly bounded designer authorization is required
+- Active gate: exact raw and Complete B + Form review of the already authorized
+  Hill Breaker common Walk candidate; no code/art expansion is authorized
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -500,7 +516,7 @@ Initial variant briefs:
 | Centaur | Steppe Hunter | Sun Lancer | Banner Khan |
 | Satyr | Briar Reveler | Reed Charmer | Wildwood Hornlord |
 
-Current common-only Idle evidence:
+Current EN-E03 evidence:
 
 - v1 implementation checkpoint `50ad516bdf338842e47ae9c22cd7cd293adef498`
   is rejected historical evidence. The designer found that its large boxed
@@ -614,10 +630,49 @@ its Complete B + Form SHA-256 is
 and its eight-frame digest is
 `0d5599dcd452351903e5d56289596d2e75f59caf5c0b7a5525c7e375c39b36fa`.
 The designer approved those exact F1/F2 boards on 2026-08-04 with `approved`.
-They are now the accepted internal Briar Reveler two-frame Idle baseline. Do
-not implement specialist/elite variants, Walk/Attack/Hurt, Cast/Death aliases,
-registration, consumer routing, effects, release, or any later EN-E03 step
-without another explicitly bounded authorization.
+They are now the accepted internal Briar Reveler two-frame Idle baseline.
+
+#### Active Hill Breaker Walk implementation-candidate
+
+The designer then said `lets do next`, authorizing only Hill Breaker common
+Walk W1-W4 across Down, Left, Right, and Up while preserving the approved Idle
+baseline exactly. Repository-consolidation checkpoint `8ea019b` commits and
+pushes that previously dirty lane without changing pixels, accepting the
+candidate, or advancing a gate.
+
+- Gate ID: `en-e03-hill-breaker-walk-v1`; status:
+  `implementation-candidate`, not visually approved.
+- Source: `engine/enemy-expansion-en-e03-giant-walk.js`.
+- Focused checker and package command:
+  `tools/check-enemy-expansion-en-e03-giant-walk.mjs` and
+  `npm.cmd run check:enemy-expansion-en-e03-giant-walk`.
+- Review generator and package command:
+  `tools/enemy-expansion-en-e03-giant-walk-review.mjs` and
+  `npm.cmd run review:enemy-expansion-en-e03-giant-walk`.
+- Raw board: `1950x744`, SHA-256
+  `bc6302036e4b3c8f45c59195659726408721d3dbdac3b1b670f2543d46213420`.
+- Complete B + Form board: `1950x744`, SHA-256
+  `19ce1476461bf623e5dc909216021e64c61b40f168ec175cb0a60dcf3e338339`.
+- Candidate 16-frame digest:
+  `9f41b2b90b245fe7d6302f87ddcd9313cdedc5360ddc245a4d61c8beab958622`.
+- Delegated approved Idle digest:
+  `2ae3904669508afbabed0742d72d4d334f37cdee360ba4f4d1a11767d22ee5ab`.
+- The 2026-08-06 focused run passes 16 connected hard-alpha Walk frames,
+  preserves all eight approved Idle frames, retains planted contact and three
+  distinct foot-contact silhouettes per direction with only W2/W4 shared, adds
+  1,453 Complete B pixels, changes 1,697 Form source pixels, reproduces both
+  PNG hashes and the candidate digest, and exposes zero public EN-E03 families.
+- The full project gate passes with the complete preserved local Boss
+  review-checkpoint corpus. A fresh worktree currently fails only the two Boss
+  subprocesses because 965 ignored checkpoint PNGs are absent; unvalidated
+  clean-clone candidate `125b0b3` remains separate from this lane.
+- Exact Aseprite MCP tab inspection of both PNGs and direct designer approval
+  remain required. Structural validation is not visual acceptance.
+
+Do not implement Centaur/Satyr Walk, additional Giant motion, specialist/elite
+variants, Attack/Hurt, Cast/Death aliases, registration, consumer routing,
+effects, release, or any later EN-E03 step without another explicitly bounded
+authorization.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
@@ -930,9 +985,12 @@ stable/public result, with the pre-repair registry retained internally. The
   F1 calibration and bounded F2-only continuation are also visually approved as
   an exact internal two-frame Idle baseline. The separately authorized Briar
   Reveler F1 calibration and bounded F2-only continuation are also visually
-  approved as an exact internal two-frame Idle baseline. Do not begin later
-  motion, variants, registration, separate effect assets, release work, or any
-  later EN-E03 step without a new explicit gate.
+  approved as an exact internal two-frame Idle baseline. The only active EN-E03
+  gate is exact visual review of the already implemented, focused-gate-passing
+  Hill Breaker common Walk W1-W4 candidate preserved at `8ea019b`. Do not begin
+  Centaur/Satyr motion, additional Giant motion, variants, registration,
+  separate effect assets, release work, or any later EN-E03 step without a new
+  explicit gate.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -940,6 +998,9 @@ and non-baked attack tells. The largest unresolved risks are multi-form assets,
 stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
-There is no current EN-E03 implementation authorization. The exact Hill Breaker,
-Steppe Hunter, and Briar Reveler F1/F2 baselines are approved and internal; any
-continuation requires a new explicitly bounded designer authorization.
+The current authorization stops at exact raw and Complete B + Form inspection
+and direct designer judgment of Hill Breaker Walk W1-W4. The Hill Breaker,
+Steppe Hunter, and Briar Reveler F1/F2 baselines remain approved and internal;
+the Walk candidate remains internal and unapproved. Any code/art continuation
+beyond that exact review requires a new explicitly bounded designer
+authorization.

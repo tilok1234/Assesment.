@@ -105,14 +105,14 @@ Exit criteria:
 
 Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
 
-Current continuation checkpoint (2026-08-04): synchronized `main` remains the
-pre-expansion base at `f5476a2`, while the EN-E03 approval lane is isolated on
-`codex/en-e03`. Documentation checkpoint `59f4f1e` precedes rejected v2
-implementation `6104eae`; the later approved Hill Breaker F1 calibration and
-approved F2 continuation, approved Steppe Hunter F1/F2 Idle baseline, and
-approved Briar Reveler F1/F2 Idle baseline are
-currently uncommitted. The
-complete 57-family / 202-variant
+Current continuation checkpoint (2026-08-06): synchronized `main` remains the
+pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and
+pushed on `codex/en-e03` at `8ea019b`; that checkpoint contains rejected v1/v2,
+the approved internal Hill Breaker, Steppe Hunter, and Briar Reveler F1/F2 Idle
+baselines, and one authorized but visually unapproved Hill Breaker Walk W1-W4
+implementation-candidate. The docs-only reconciliation is isolated on
+`codex/en-e03-handoff-reconcile` and changes no code, pixels, public content, or
+approval state. The complete 57-family / 202-variant
 legacy Enemy catalog remains visually approved; its current 20-column gate
 covers 16,160 source frames / 48,480 None-B-C cases. Form shading, Lantern,
 Production Roll, compatible category rerolls, and the public Cast/Death actor
@@ -161,9 +161,17 @@ Complete B + Form boards were visually approved on 2026-08-03 with `looks good.`
 Those four frames are now an approved internal F1 seed. The designer then
 authorized only F2 with `lets go next`; the exact F1/F2 boards were visually
 approved on 2026-08-04 with `approved`. Those eight frames are now the accepted
-internal Briar Reveler Idle baseline. No EN-E03 family is public; later motion,
-variants, registration, effects, and release remain blocked, and no later
-implementation gate is active.
+internal Briar Reveler Idle baseline. The designer then authorized only Hill
+Breaker common Walk W1-W4 across all four directions. Preservation checkpoint
+`8ea019b` contains that internal implementation-candidate, focused checker,
+package scripts, deterministic review generator, and frozen hashes. The focused
+gate passes all 16 Walk frames while preserving all eight approved Idle frames
+and zero public exposure. Exact Aseprite MCP inspection and designer approval
+remain open. No EN-E03 family is public; Centaur/Satyr motion, additional Giant
+motion, variants, registration, effects, release, and every later gate remain
+blocked. The full project gate passes with the complete preserved local Boss
+review-checkpoint corpus; fresh-worktree clone safety remains a separate
+unvalidated candidate at `125b0b3`.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
@@ -340,7 +348,8 @@ Candidate additions:
   approved together with its F2-only continuation as an internal two-frame Idle
   baseline; Steppe Hunter F1/F2 is also an approved internal two-frame Idle
   baseline; Briar Reveler F1/F2 is the third approved internal two-frame Idle
-  baseline, with no later EN-E03 implementation gate active
+  baseline; the only active EN-E03 gate is the internal, visually unapproved
+  Hill Breaker Walk W1-W4 candidate at `8ea019b`
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 

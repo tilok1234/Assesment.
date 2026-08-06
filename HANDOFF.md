@@ -1,6 +1,6 @@
 # Project Handoff
 
-Date: 2026-08-04
+Date: 2026-08-06
 
 ## Purpose
 
@@ -43,42 +43,46 @@ far from the established roster style. Both implementations remain reproducible
   designer then again said `lets do next`, explicitly authorizing only a bounded
   Hill Breaker common Walk candidate: four Walk frames in Down, Left, Right,
   and Up while preserving the approved Idle frames exactly. That implementation
-  candidate and its review boards now exist, but they have not completed exact
-  Aseprite MCP inspection, focused validation, or designer approval. No later
-  EN-E03 gate is authorized. This handoff
-records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02 families /
-30 variants, the
+  candidate and its review boards now exist. Focused automated validation and
+  deterministic review generation pass, but exact Aseprite MCP inspection and
+  designer approval have not occurred. No later EN-E03 gate is authorized.
+This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
+families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
 frozen pre-registration evidence, shipped NPC artifact, local Windows proof,
 and unresolved Boss and publisher boundaries.
 
-This handoff was re-audited on 2026-08-04 against the live branch, dirty state,
-public and internal expansion boundaries, current validation scripts, exact
-review hashes, and local Windows/Aseprite state. Historical measurements remain
-where explicitly labeled. This file now records the active Hill Breaker Walk
-candidate; `README.md`, `ARCHITECTURE.md`, `ROADMAP.md`, and
-`ENEMY_EXPANSION_PLAN.md` still describe the immediately preceding closed Idle
-checkpoint and require reconciliation if this candidate advances.
+This handoff was reconciled on 2026-08-06 after the repository cleanup against
+the live refs, surviving worktrees, preserved implementation checkpoint,
+public/internal expansion boundaries, current validation scripts, exact review
+hashes, and the separate clean-clone-check candidate. Historical measurements
+remain where explicitly labeled. `README.md`, `ARCHITECTURE.md`, `ROADMAP.md`,
+`ENEMY_EXPANSION_PLAN.md`, and this file now agree that the bounded Hill Breaker
+Walk implementation-candidate is active, internal, technically reproducible,
+and not visually approved.
 
 ## Canonical Workspace And Git State
 
-- Active continuation worktree:
-  `C:\tmp\8-bit-sprite-assembler-en-e03`
-- Active branch and upstream: `codex/en-e03` tracking
-  `origin/codex/en-e03`.
-- Verified live HEAD before the uncommitted approval lane:
-  `402f76d944d53895b7700052514c365cbcc8a15f`
-  (`Record EN-E03 visual rejection handoff`).
+- Documentation-reconciliation worktree:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-handoff-reconcile`
+- Documentation branch: `codex/en-e03-handoff-reconcile`, created exactly from
+  preserved EN-E03 checkpoint `8ea019b`. This branch changes documentation
+  only. Verify its local HEAD and same-named upstream are equal before resuming.
+- Preserved implementation branch and upstream: local `codex/en-e03` and
+  `origin/codex/en-e03` both resolve to
+  `8ea019b10befb083b793e35d58ca5763c8cfd67e`
+  (`Preserve EN-E03 approval-lane dirty state (designer-authorized checkpoint)`).
+  That cleanup checkpoint committed and pushed the previously deliberate dirty
+  lane without changing pixels, approving the Walk candidate, or advancing a
+  gate. It supersedes every older instruction to preserve that lane uncommitted.
 - Normal baseline worktree:
-  `C:\Users\headc\Documents\8-bit-sprite-assembler-main`
-- Mainline branch: `main`
-- Upstream: `origin/main`
-- Isolated EN-F00 implementation worktree:
-  `C:\tmp\8-bit-sprite-assembler-en-f00`
+  `C:\Users\headc\Documents\8-bit-sprite-assembler-main`, clean `main` at
+  `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`, equal to `origin/main`.
+- The former EN-F00, EN-E01, EN-E02, and EN-E03 temporary implementation
+  worktrees were removed during cleanup. Their branch/checkpoint history was
+  preserved; do not recreate an old worktree path and assume it is current.
 - Accepted EN-F00 branch: `codex/en-f00` at
   `73ad73a354738d21e8d3f33f2cbbc50315f64050`.
-- Isolated EN-E01 candidate worktree:
-  `C:\tmp\8-bit-sprite-assembler-en-e01`
 - EN-E01 review/registration branch: `codex/en-e01`, based exactly on accepted
   EN-F00 `73ad73a`.
 - EN-E01 consumer-integration branch: `codex/en-e01-consumers`, based exactly
@@ -88,8 +92,6 @@ checkpoint and require reconciliation if this candidate advances.
 - Approved EN-E01 public-registration checkpoint: `b43ed6a`.
 - Approved EN-E01 consumer implementation checkpoint: `e0be273`.
 - Approved EN-E01 presentation checkpoint: `5196c0a`.
-- Isolated EN-E02 candidate worktree:
-  `C:\tmp\8-bit-sprite-assembler-en-e02`
 - EN-E02 approval/registration branch: `codex/en-e02`, based exactly on
   approved EN-E01 presentation checkpoint `5196c0a`.
 - Reviewed EN-E02 full-candidate implementation checkpoint:
@@ -112,12 +114,12 @@ checkpoint and require reconciliation if this candidate advances.
 - Rejected EN-E03 v2 roster-style replacement checkpoint:
   `6104eaedce62c4514cdd5061bd58c8c79eeb0341`
   (`Rebuild EN-E03 Idle candidate in roster style`).
-- Current uncommitted EN-E03 approval lane: approved Hill Breaker, Steppe
-  Hunter, and Briar Reveler two-frame Idle baselines plus one authorized Hill
-  Breaker common Walk implementation-candidate. The Walk scope is four frames
-  across four directions only. It is internal and unapproved; no other motion,
-  variant, registration, consumer, effect, release, or public-promotion work is
-  authorized.
+- Preserved EN-E03 approval lane: approved Hill Breaker, Steppe Hunter, and
+  Briar Reveler two-frame Idle baselines plus one authorized Hill Breaker common
+  Walk implementation-candidate. The Walk scope is four frames across four
+  directions only. It is committed and pushed at `8ea019b`, but remains
+  internal and visually unapproved; no other motion, variant, registration,
+  consumer, effect, release, or public-promotion work is authorized.
 - Verified synchronized base before EN-F00:
   `f5476a2c962fde1fa9e736aafce4ad01fae0ef99`
   (`Document enemy expansion and refresh handoff`).
@@ -131,35 +133,37 @@ checkpoint and require reconciliation if this candidate advances.
   target.
 - The archived checkout at
   `C:\Users\headc\Documents\8-bit sprite assembler` remains review-only on
-  local `wip/19-boss-review` at `fb4b664`. Its 60.9 MB review payload is parked
-  safely and was intentionally not pushed.
-- The older `codex/clean-clone-check` and `salvage/19-boss-continuation`
-  worktrees are historical/support lanes, not normal implementation targets.
+  `wip/19-boss-review` at `fb4b664`, equal to
+  `origin/wip/19-boss-review`. Its review payload is parked safely and the
+  checkout must not be repurposed.
+- `codex/clean-clone-check` equals `origin/codex/clean-clone-check` at
+  `125b0b3`. It is a separately preserved, explicitly unvalidated candidate for
+  optional Boss review-checkpoint handling, not an accepted fix and not part of
+  this documentation branch.
+- `salvage/19-boss-continuation` remains a historical/support branch, not a
+  normal implementation target. Its former worktree was removed.
+- Cleanup verification found no stash, no local commit unreachable from remote
+  refs or tags, no stale worktree-prune entry, and no Git object-integrity error.
 
 Before making a claim or edit in a new chat, run:
 
 ```powershell
 git status --short --branch
 git rev-parse HEAD
-git rev-parse '@{upstream}'
+git branch -vv
+git worktree list --porcelain
 git log -5 --oneline --decorate
 ```
 
-Expected state around this checkpoint: clean `codex/en-f00` at `73ad73a`;
-`codex/en-e01` containing the approved review and public-registration history;
-`codex/en-e01-consumers` containing approved presentation checkpoint `5196c0a`;
-`codex/en-e02` containing the approved common-Idle/completed-slice evidence,
-the frozen 15-variant candidate snapshot, registration checkpoint `7b6e448`,
-clone-safe artifact gate `be44af7`, and consumer implementation checkpoint
-`8ab1837`, visually approved repair checkpoint `6400dd5`, and promotion
-checkpoint `8eb0f99`;
-`codex/en-e03` based exactly on `2a8a7a2`, containing rejected v1 at `50ad516`,
-documentation checkpoint `59f4f1e`, rejected v2 at `6104eae`, and this
-follow-up; verify its live HEAD equals its upstream because a handoff
-cannot safely name its own commit;
-and `main` still equal to `origin/main` at
-verified base `f5476a2`. Do not modify, clean, reset, rebase, or repurpose the
-archived review checkout.
+Expected state after the documentation checkpoint is published:
+`codex/en-e03-handoff-reconcile` has a same-named upstream, its worktree is
+clean, and its diff from `8ea019b` contains only the five active Markdown
+documents; local `codex/en-e03` equals its upstream at `8ea019b`; `main` equals
+`origin/main` at `f5476a2`; and the archived review checkout equals its upstream
+at `fb4b664`. The ignored deterministic review boards and copied local Boss
+checkpoint corpus in the reconciliation worktree are validation evidence, not
+tracked changes. Do not modify, clean, reset, rebase, or repurpose the archived
+review checkout.
 
 ## Exact Next Lane
 
@@ -211,8 +215,12 @@ registration, consumers, effects, release, or any later EN-E03 step.
   `implementation-candidate`, not visually approved.
 - Candidate source:
   `engine/enemy-expansion-en-e03-giant-walk.js`.
+- Focused checker:
+  `tools/check-enemy-expansion-en-e03-giant-walk.mjs` via
+  `npm.cmd run check:enemy-expansion-en-e03-giant-walk`.
 - Review generator:
-  `tools/enemy-expansion-en-e03-giant-walk-review.mjs`.
+  `tools/enemy-expansion-en-e03-giant-walk-review.mjs` via
+  `npm.cmd run review:enemy-expansion-en-e03-giant-walk`.
 - Raw board:
   `enemy-expansion-review/en-e03-giant-walk/en-e03-hill-breaker-walk-raw.png`,
   `1950x744`, SHA-256
@@ -230,21 +238,26 @@ registration, consumers, effects, release, or any later EN-E03 step.
   `x=4/5..18/19` and `y=1/2..21`, effects off, and zero public candidate
   families. W2/W4 currently share the passing pose in each direction; final
   motion judgment still requires exact visual review.
-- Syntax checks for the new renderer and review generator passed, and both exact
-  PNGs were generated and hash-verified. A local direct-image inspection was
-  performed, but the required Aseprite MCP tab inspection was not completed.
-- Still missing: a focused Walk checker, package scripts, frozen gate hashes,
-  `awaiting-designer-approval` status, predecessor authorization reconciliation,
-  remaining project-doc updates, focused/full regression runs, and designer
-  approval of the exact boards.
-- No commit or push was made. Preserve every existing dirty/untracked EN-E03
-  approval-lane file.
-- Aseprite operating note: extra read-only Trailblazer processes were gracefully
-  closed at handoff, leaving one responding Aseprite instance. This Codex MCP
-  bridge is configured on port `6519`, but `list_open_sprites` had not succeeded
-  before the cleanup. Resume with Aseprite's `Help -> MCP Pro: Reconnect`, then
-  use `list_open_sprites` and `open_sprite` for both exact PNG paths in that one
-  instance. Do not use Computer Use or launch one Aseprite process per file.
+- Syntax checks for the renderer, focused checker, and review generator pass.
+  The focused gate passes all 16 Walk frames, preserves all eight approved Idle
+  frames exactly, freezes both PNG hashes and the candidate digest, and proves
+  zero public EN-E03 exposure. The review generator reproduces both exact PNGs.
+- The complete project gate passes when the preserved 1,064-file local Boss
+  review-checkpoint corpus is present. A fresh worktree without the 965 ignored
+  local additions fails only the two Boss structural subprocesses because those
+  optional checkpoints are absent. The separately preserved `125b0b3` candidate
+  was intended to address related clone-safety behavior, but remains unvalidated
+  and does not prove a fix for the current EN-E03 branch.
+- Still missing: exact Aseprite MCP tab inspection of both PNGs and direct
+  designer approval of the candidate. Automated validation is not visual
+  acceptance, and the gate status remains `implementation-candidate`.
+- The complete approval lane was committed and pushed unchanged at `8ea019b`.
+  This documentation reconciliation changes no candidate source or pixels and
+  grants no approval.
+- The 2026-08-04 Aseprite process/port note is historical, not confirmed-current
+  process state. Before visual review, verify the live MCP connection, then use
+  `list_open_sprites` and `open_sprite` for both exact PNG paths. Do not launch
+  one Aseprite process per file or substitute structural checks for tab review.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -517,7 +530,45 @@ requires the NSIS installer and is not satisfied by the standalone proof.
 
 ## Validation Evidence For This Handoff
 
-Current revalidation through the approved Idle checkpoint from the active
+Post-cleanup revalidation from the isolated documentation worktree on
+2026-08-06:
+
+```powershell
+node --check engine/enemy-expansion-en-e03-giant-walk.js
+node --check tools/check-enemy-expansion-en-e03-giant-walk.mjs
+node --check tools/enemy-expansion-en-e03-giant-walk-review.mjs
+npm.cmd run check:enemy-expansion-en-e03-giant-walk
+npm.cmd run review:enemy-expansion-en-e03-giant-walk
+npm.cmd run check
+git diff --check
+```
+
+Current Hill Breaker Walk results:
+
+- the focused gate passes one internal family / one variant / 16 Walk frames;
+- all 16 frames are connected hard-alpha silhouettes with planted contact and
+  12 distinct silhouettes; only the deliberate W2/W4 passing pose is shared in
+  each direction;
+- all eight approved Hill Breaker Idle frames remain exact;
+- Complete B adds 1,453 outline pixels and Form changes 1,697 source pixels;
+- the candidate digest and both generated PNG hashes reproduce the frozen
+  values recorded above;
+- public EN-E03 families remain zero;
+- an initial full `npm.cmd run check` in the fresh worktree stopped only at the
+  Boss direction and animation subprocesses because ignored local review
+  checkpoints were absent;
+- after copying only the 965 missing ignored Boss review PNGs from the preserved
+  main-worktree corpus, the same full gate passed, including 57 legacy Enemy
+  families / 202 variants, 16,160 Enemy Form cases, 12,560 repaired-Enemy
+  frame-safety cases, and all 232 committed fixture sheets; and
+- the clean-clone behavior remains a separate unresolved candidate at
+  `125b0b3`; this docs-only lane does not adopt or validate that code change.
+
+These results establish structural reproducibility, not visual acceptance. The
+exact raw and Complete B + Form PNGs still require Aseprite MCP tab inspection
+and direct designer approval.
+
+Historical revalidation through the approved Idle checkpoint from the active
 EN-E03 worktree on 2026-08-04:
 
 ```powershell
@@ -573,15 +624,8 @@ Current results:
   effect, release-artifact, or archived-review change; and
 - `git diff --check` passes.
 
-Hill Breaker Walk candidate evidence at this handoff is narrower:
-
-- `node --check` passed for the new renderer and review generator;
-- the review generator completed and produced the exact hashes and frame digest
-  recorded in `Active Hill Breaker Walk Implementation Candidate`;
-- the approved Hill Breaker Idle digest remained exact in generated metadata;
-- no focused Walk checker or package script exists yet; and
-- the focused Walk gate and full `npm.cmd run check` have not been run after the
-  Walk additions. Do not reuse the earlier full-suite pass as candidate proof.
+The 2026-08-06 focused and conditional full-suite results above supersede the
+older pre-Walk limitation. They do not supersede the visual approval gate.
 
 Historical base validation from the canonical main worktree on 2026-08-02:
 
@@ -832,28 +876,28 @@ Recorded expansion results through the rejected EN-E03 v2 technical gate:
 
 ## Documentation Audit Result
 
-The 2026-08-03 audit covered all 20 tracked Markdown documents and reconciled
-their current-facing claims against the clean synchronized EN-E03 branch, live
-module graph, package scripts, public/internal registries, review hashes,
-validation totals, local standalone executable, absent NSIS directory, and the
-planning mainline ruling. The later rejection of both EN-E03 attempts and the
-subsequent Hill Breaker, Steppe Hunter, and Briar Reveler F1/F2 approvals were
-reconciled through 2026-08-04 into the five active documents named below.
+The historical 2026-08-03/04 audit covered all 20 tracked Markdown documents.
+The 2026-08-06 post-cleanup reconciliation then compared its five active
+documents with live refs/worktrees, preservation commit `8ea019b`, the actual
+module/package graph, focused Walk output, the fresh-worktree failure, and the
+conditional full-suite pass.
 
-Current-facing drift or ambiguity was corrected in:
+Current-facing drift was corrected in exactly these five documents:
 
-- `README.md` — records accepted EN-E02 presentation/repairs, both rejected
-  EN-E03 attempts, all three approved internal F1/F2 baselines, and their
-  validation commands and modules;
-- `ARCHITECTURE.md` — records the approved repair registry and the non-public
-  EN-E03 renderer/review dependency boundary;
-- `ROADMAP.md` — records all three approved internal F1/F2 Idle baselines and
-  the absence of a later active gate;
-- `ENEMY_EXPANSION_PLAN.md` — records both rejected attempts, exact v2
-  checkpoint/hashes, all three approved two-frame baselines, and the closed
-  Satyr F2 review gate;
-- `HANDOFF.md` — refreshes branch, validation, artifact, reading, audit, and
-  new-chat state;
+- `README.md` — records the preserved active Walk candidate, focused commands,
+  exact technical result, and remaining visual gate;
+- `ARCHITECTURE.md` — records the isolated Giant Walk registry/check boundary
+  and continued absence from the public facade and consumers;
+- `ROADMAP.md` — replaces the obsolete uncommitted/no-active-gate state with
+  the pushed, internal, still-unapproved candidate at `8ea019b`;
+- `ENEMY_EXPANSION_PLAN.md` — records the exact bounded Walk authorization,
+  hashes, focused gate, exclusions, and next approval boundary; and
+- `HANDOFF.md` — reconciles worktrees, refs, cleanup preservation, validation,
+  clean-clone caveat, frozen boundaries, and new-chat state.
+
+The earlier audit had also reconciled these historical/current-routing docs;
+they remain unchanged in this five-file pass:
+
 - `EQUIPMENT_OUTLINE_ASSESSMENT.md`, `EQUIPMENT_READABILITY_PLAN.md`,
   `WEAPON_READABILITY_PLAN.md`, and `TRANSPARENT_TILE_REPAIR_PLAN.md` — retain
   their historical evidence while removing obsolete claims that shade work is
@@ -879,14 +923,10 @@ No current-state correction was required in the remaining documents:
 Older branch names, interim counts, and 12-column measurements remain only
 where their sections explicitly identify them as historical evidence. The
 active implementation and approval authority remains `ENEMY_EXPANSION_PLAN.md`
-plus this handoff.
-
-Post-audit handoff-only update: the authorized Hill Breaker Walk candidate was
-created after the documented closed-Idle checkpoint. This handoff is the only
-active document updated for that candidate so far. Reconcile
-`ENEMY_EXPANSION_PLAN.md`, `README.md`, `ARCHITECTURE.md`, and `ROADMAP.md` only
-after the exact candidate has been inspected and its gate state is known; do not
-silently treat their current `no active gate` text as the newer live state.
+plus this handoff. All five active documents now agree: the bounded Hill Breaker
+Walk candidate is authorized, implemented, committed/pushed at `8ea019b`,
+focused-gate reproducible, internal, and not visually approved. No code, art,
+public registry, approval status, or later gate changed in this reconciliation.
 
 ## Frozen Boundaries
 
@@ -939,11 +979,15 @@ The safest opening request for the next chat is:
 > internal and non-public. The only active gate is the unapproved Hill Breaker
 > common Walk implementation-candidate: four frames across four directions with
 > approved Idle delegated exactly. Read its dedicated handoff section, preserve
-> the dirty lane, reconnect the one Aseprite instance to MCP port 6519, and open
-> the exact raw and Complete B + Form PNGs through `open_sprite` tabs. Do not use
-> Computer Use or launch per-file Aseprite processes. Finish focused validation,
-> hash freezing, remaining docs, and full regression only within this bounded
-> gate. Do not begin any later EN-E03 work without new authorization.
+> the `8ea019b` implementation checkpoint, and verify the docs-only
+> reconciliation branch contains no code or art changes. The focused checker
+> and review hashes already pass. A fresh worktree still needs the optional
+> ignored Boss checkpoint corpus for the current full suite; `125b0b3` is only
+> an unvalidated separate fix candidate. Verify the live Aseprite MCP state and
+> open the exact raw and Complete B + Form PNGs through `open_sprite` tabs. Do
+> not launch per-file Aseprite processes. The only remaining Walk gate is exact
+> visual inspection and direct designer approval. Do not begin any later EN-E03
+> work without new authorization.
 
 EN-F00, EN-E01, EN-E02, and the seven-family repair are approved. The stable and
 consumer registries are the same ten-family / 30-variant repaired object through
@@ -956,6 +1000,7 @@ second visually approved internal two-frame Idle baseline. Briar Reveler F1 and
 its F2-only continuation form the third visually approved internal two-frame
 Idle baseline. One internal Hill Breaker four-direction/four-frame Walk
 implementation-candidate is active but not visually approved or public. Its
-focused checker, frozen hashes, complete documentation reconciliation, exact
-Aseprite MCP inspection, full regression, and designer approval remain open.
-Every later EN-E03 step remains gated.
+focused checker, frozen hashes, deterministic review generation, documentation
+reconciliation, and conditional full regression now pass. Exact Aseprite MCP
+inspection and designer approval remain open. Every later EN-E03 step remains
+gated.

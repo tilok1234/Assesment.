@@ -21,9 +21,11 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - 67 selectable public enemy families with 232 predefined variants: the locked
   57-family / 202-variant legacy catalog plus 10 approved EN-E01/EN-E02
   families / 30 variants
-- Isolated, non-public EN-E03 historical evidence containing two visually
-  rejected common-only Idle attempts for Giant, Centaur, and Satyr; neither is
-  an approved baseline or selectable consumer content
+- Isolated, non-public EN-E03 evidence containing two visually rejected
+  common-only Idle attempts, three separately approved internal F1/F2 Idle
+  baselines for Hill Breaker, Steppe Hunter, and Briar Reveler, and one active
+  but visually unapproved Hill Breaker four-frame Walk candidate; none is
+  selectable consumer content
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -160,9 +162,18 @@ frames are now the accepted internal Briar Reveler F1 seed. The designer then
 said `lets go next`, authorizing only Briar Reveler F2 across the same four
 directions. The designer approved the exact F1/F2 raw and Complete B + Form
 boards on 2026-08-04 with `approved`. Those eight frames now form the accepted
-internal Briar Reveler Idle baseline. No EN-E03 family is selectable or public;
-no later implementation gate is active, and later motion, specialist or elite
-variants, registration, effects, and release remain unauthorized.
+internal Briar Reveler Idle baseline. The designer then said `lets do next`,
+authorizing only Hill Breaker common Walk W1-W4 across Down, Left, Right, and
+Up while preserving the approved Idle frames exactly. Preservation checkpoint
+`8ea019b` commits and pushes that internal implementation-candidate, its focused
+checker, package scripts, deterministic review generator, frozen hashes, and
+documentation state without granting visual approval. The focused gate passes
+all 16 Walk frames, preserves all eight approved Idle frames, and proves zero
+public EN-E03 exposure. No EN-E03 family is selectable or public; exact
+Aseprite MCP inspection and designer approval of the two Walk boards remain
+open. Centaur/Satyr motion, additional Giant motion, specialist or elite
+variants, registration, effects, release, and every later gate remain
+unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
@@ -305,6 +316,13 @@ Double-click `check-project.bat`, or run:
 npm run check
 ```
 
+At preserved EN-E03 checkpoint `8ea019b`, the full command passes when the
+complete local Boss review-checkpoint corpus is present. A fresh worktree lacks
+965 ignored checkpoint PNGs and currently stops only in the Boss direction and
+animation subprocesses. `codex/clean-clone-check` at `125b0b3` is a separately
+preserved, explicitly unvalidated fix candidate; it is not part of the active
+EN-E03 lane. See `HANDOFF.md` for the exact 2026-08-06 evidence.
+
 Run `npm run check:enemy-expansion` for the focused EN-F00 gate. It locks all
 57 legacy families / 202 sheets / 16,160 frames to their synchronized-main
 pixel digest, checks the 22-slice/80-proposal ledger, exercises deterministic
@@ -404,6 +422,14 @@ visually approved Hill Breaker F1 seed. Run
 `npm run review:enemy-expansion-en-e03-giant-idle` for the approved F1/F2 gate.
 That check preserves all four approved F1 frames and their planted contact rows,
 validates four approved F2 frames, and keeps Giant absent from public consumers.
+Run `npm run check:enemy-expansion-en-e03-giant-walk` and
+`npm run review:enemy-expansion-en-e03-giant-walk` for the active, internal,
+visually unapproved Hill Breaker Walk candidate. The checker validates 16
+connected hard-alpha frames, three distinct foot-contact silhouettes per
+direction with only W2/W4 shared, exact delegation of all eight approved Idle
+frames, frozen PNG/digest values, and zero public exposure. Passing it proves
+structure and reproducibility only; it does not replace exact Aseprite MCP tab
+inspection or designer approval.
 Run `npm run check:enemy-expansion-en-e03-centaur-calibration` and
 `npm run review:enemy-expansion-en-e03-centaur-calibration` for the approved
 Steppe Hunter F1 seed. Its checker requires four connected hybrid
@@ -710,6 +736,9 @@ awaits explicit visual approval before any animation work.
   `engine/enemy-expansion-en-e03-giant-idle.js`, and
   `engine/enemy-expansion-en-e03-centaur-calibration.js` - approved Hill
   Breaker F1/F2 evidence plus the isolated approved Steppe Hunter F1 calibration
+- `engine/enemy-expansion-en-e03-giant-walk.js` - active internal Hill Breaker
+  Walk W1-W4 implementation-candidate; it delegates approved Idle exactly,
+  rejects later motion/families, and is absent from the public facade
 - `engine/enemy-expansion-en-e03-centaur-idle.js` - approved internal Steppe
   Hunter F1/F2 Idle baseline; F1 delegates to the frozen calibration and F2
   preserves the accepted planted-hoof continuation
@@ -739,6 +768,10 @@ awaits explicit visual approval before any animation work.
 - `tools/check-enemy-expansion-en-e03.mjs` and
   `tools/enemy-expansion-en-e03-review.mjs` - isolated 24-frame common-Idle
   structural gate and exact raw/Complete B + Form evidence generator
+- `tools/check-enemy-expansion-en-e03-giant-walk.mjs` and
+  `tools/enemy-expansion-en-e03-giant-walk-review.mjs` - focused 16-frame Walk
+  gate and deterministic raw/Complete B + Form candidate evidence; passing is
+  not visual approval
 - `tools/check-enemy-expansion-en-e01-full.mjs` and
   `tools/enemy-expansion-en-e01-full-review.mjs` - exhaustive 1,200-frame
   private-candidate gate and completed-slice review bundle generator
