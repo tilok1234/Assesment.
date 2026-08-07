@@ -452,6 +452,8 @@ The adapter does not import or expose incomplete EN-E03 registries, write
 fixtures, alter public catalogs, or act as a release publisher. The exact
 approved delivery contains 696 PNGs and has ZIP SHA-256
 `fd03895d8657b96293be14fbddbdb193ce62678c068023b58015410fc7f92b9c`.
+The bounded tooling/docs checkpoint is committed and pushed at
+`71fb59479626b757f112be3f9e56b92f24085208`.
 
 ### Gated release transport
 

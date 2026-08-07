@@ -1281,7 +1281,8 @@ and no new sprite pixels or public integration are authorized.
 #### Approved full public-Enemy three-treatment export side lane
 
 - Gate ID: `all-enemy-three-outline-modes-v1`; status: `approved` local
-  delivery/tooling checkpoint.
+  delivery/tooling checkpoint, committed and pushed at
+  `71fb59479626b757f112be3f9e56b92f24085208`.
 - Source art commit:
   `9c89077f79ef8eab06dc4e7a725edefe5b9bbb97`; branch/worktree:
   `codex/all-enemy-outline-export` at

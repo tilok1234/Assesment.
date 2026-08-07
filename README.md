@@ -321,7 +321,8 @@ manifest hashes, ZIP entry bytes, and sidecar. The exact approved delivery ZIP
 is 2,440,823 bytes with SHA-256
 `fd03895d8657b96293be14fbddbdb193ce62678c068023b58015410fc7f92b9c`.
 The designer accepted that delivered package with `awesome lets do next in
-plan` on 2026-08-07.
+plan` on 2026-08-07. The approved exporter/checker and documentation are
+committed and pushed at `71fb59479626b757f112be3f9e56b92f24085208`.
 
 This local package intentionally excludes incomplete/non-public EN-E03 work,
 Bosses, players, effects, floor shadows, projectiles, release binaries, and

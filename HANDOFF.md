@@ -964,7 +964,9 @@ exactly. The subsequent `Cool let's keep going` authorizes only Steppe Hunter
 ### Full Public-Enemy Three-Treatment Export Approved
 
 - Gate ID: `all-enemy-three-outline-modes-v1`; status: `approved`, local
-  delivery/tooling checkpoint, with no catalog or sprite-source change.
+  delivery/tooling checkpoint, committed and pushed at
+  `71fb59479626b757f112be3f9e56b92f24085208`, with no catalog or sprite-source
+  change.
 - Approval evidence: after receiving the exact ZIP and validation summary, the
   designer said `awesome lets do next in plan` on 2026-08-07.
 - Source art checkpoint:
