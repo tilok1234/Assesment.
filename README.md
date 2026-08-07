@@ -23,9 +23,10 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
   families / 30 variants
 - Isolated, non-public EN-E03 evidence containing two visually rejected
   common-only Idle attempts, three separately approved internal F1/F2 Idle
-  baselines for Hill Breaker, Steppe Hunter, and Briar Reveler, and one active
-  but visually unapproved Hill Breaker four-frame Walk candidate; none is
-  selectable consumer content
+  baselines for Hill Breaker, Steppe Hunter, and Briar Reveler, the approved
+  internal Hill Breaker, Steppe Hunter, and Briar Reveler four-frame Walks, plus
+  the approved Hill Breaker common Attack A1-A4 baseline; none is selectable
+  consumer content
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -74,6 +75,22 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Fifteen equipped weapon choices spanning blades, blunt weapons, polearms, ranged weapons, and magic focuses, each with standard Tier 1, named RPG-style Tier 2, legendary Tier 3, oversized mythic Tier 4, and final artifact Tier 5 forms; all 75 variants use hand-anchored motion and preserve front- and side-face clearance
 - Eight equipped shield choices—round, kite, buckler, heater, tower, oval, bone, and arcane—with five named tiers culminating in Worldsun Disc, Voidwyrm Aegis, Paradox Star, Throneheart Aegis, The Unbroken Gate, Imperial Eternity, Deathking's Reliquary, and Event Horizon; every facing reuses the unchanged broad shield face, the equipment grip owns the animated shield-hand socket instead of leaving ordinary hand pixels visible, and near/far body occlusion is split around the reusable body layer
 - One approved non-shield off-hand item, Lantern, with its own public field, direction-aware back/front passes, mutual exclusion with shields, and animated hand attachment across every body build and frame
+
+## Visual review presentation contract
+
+Unless the designer explicitly requests a narrow inspection, every sprite or
+actor review shown for approval must display all four labeled directionsâ€”Down,
+Left, Right, and Upâ€”and include both the raw/no-outline animation and the
+outlined project presentation (currently Complete B + Form in this lane) in the
+same review response. Do not send side-only, unlabeled, or single-mode evidence
+as a normal approval surface. Reviews may be narrower only when the requested
+scope is a specific direction, frame, layer, outline mode, or isolated defect;
+name that exception explicitly.
+
+Approval publication rule: after the designer explicitly approves the exact
+review surface, stage only that bounded approval lane, commit it, and push its
+branch before beginning another gate. Do not publish an unapproved lane; an
+explicit hold instruction overrides this default.
 
 ## Current integration status
 
@@ -165,15 +182,47 @@ boards on 2026-08-04 with `approved`. Those eight frames now form the accepted
 internal Briar Reveler Idle baseline. The designer then said `lets do next`,
 authorizing only Hill Breaker common Walk W1-W4 across Down, Left, Right, and
 Up while preserving the approved Idle frames exactly. Preservation checkpoint
-`8ea019b` commits and pushes that internal implementation-candidate, its focused
-checker, package scripts, deterministic review generator, frozen hashes, and
-documentation state without granting visual approval. The focused gate passes
-all 16 Walk frames, preserves all eight approved Idle frames, and proves zero
-public EN-E03 exposure. No EN-E03 family is selectable or public; exact
-Aseprite MCP inspection and designer approval of the two Walk boards remain
-open. Centaur/Satyr motion, additional Giant motion, specialist or elite
-variants, registration, effects, release, and every later gate remain
-unauthorized.
+`8ea019b` preserves those exact candidate pixels. The designer reviewed the
+exact raw and Complete B + Form boards and approved Hill Breaker Walk on
+2026-08-06 with `yes sir seems fine to me approved`. That approval authorized
+only Steppe Hunter common Walk W1-W4 across the same directions. Its isolated
+implementation delegates all eight approved Idle frames byte-for-byte and
+passes its 16-frame focused gate with zero public exposure. The designer
+reviewed the exact raw and Complete B + Form animations and approved them on
+2026-08-06 with `approved`. The designer then said `awesome lets do next`,
+authorizing only Briar Reveler common Walk W1-W4. That isolated candidate now
+passes its focused 16-frame gate while preserving all eight approved Idle
+frames and zero public exposure. Its Up frames explicitly suppress the shared
+front-expression pixel so the rear head does not show a side eye. The designer
+reviewed the corrected raw and Complete B + Form animations and approved them
+on 2026-08-06 with `greeat lets move on`. That approval authorizes only Hill
+Breaker common Attack A1-A4 across the same four directions while preserving
+its approved Idle and Walk frames byte-for-byte. The isolated Attack baseline
+now exists with 16 connected, distinct four-direction poses, planted contact,
+one-cell margins, exact approved Idle/Walk delegation, and zero public exposure.
+After review feedback that more of the body should move, A1 now braces the
+torso. The resulting overlay-only slide was explicitly rejected as `not a good
+animation`, so it was discarded. The replacement privately composes the full
+upper body, Giant identity, and front/back club layers: A1 coils backward, A2
+releases from center, A3 moves forward and drops into impact, and A4 recovers
+over anchored legs and feet. After the follow-up request to use front and back
+too, the Down/Up poses now carry that motion through the hips and upper legs;
+both foot anchors remain exact through all four phases. The designer reviewed
+the exact labeled four-direction raw and Complete B + Form animations and said
+`Very good approved` on 2026-08-07. Hill Breaker Attack is now an approved
+internal baseline. The designer then said `Cool let's keep going`, authorizing
+only Steppe Hunter common Attack A1-A4 across Down, Left, Right, and Up while
+preserving its approved Idle and Walk frames byte-for-byte. That isolated
+baseline passes its focused 16-frame gate with connected
+horse-rider-spear silhouettes, planted hoof contact, four distinct poses and at
+least three horse-body weight phases per direction, true Down/Up attacks, exact
+side mirroring, frozen raw and Complete B + Form evidence, and zero public
+exposure. The designer reviewed both exact labeled four-direction GIFs together
+and said `Approved` on 2026-08-07. Steppe Hunter Attack is now an approved
+internal baseline. No EN-E03 family is selectable or public. Hurt, additional
+Giant/Centaur/Satyr motion beyond this bounded approval,
+specialist or elite variants, registration, effects, release, and every later
+gate remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
@@ -316,12 +365,15 @@ Double-click `check-project.bat`, or run:
 npm run check
 ```
 
-At preserved EN-E03 checkpoint `8ea019b`, the full command passes when the
-complete local Boss review-checkpoint corpus is present. A fresh worktree lacks
-965 ignored checkpoint PNGs and currently stops only in the Boss direction and
-animation subprocesses. `codex/clean-clone-check` at `125b0b3` is a separately
-preserved, explicitly unvalidated fix candidate; it is not part of the active
-EN-E03 lane. See `HANDOFF.md` for the exact 2026-08-06 evidence.
+On both the approved Hill Breaker Attack branch and the approved Steppe Hunter
+Attack branch, the full command passes when the complete local Boss
+review-checkpoint corpus is present. A fresh worktree lacks 965 ignored
+checkpoint PNGs and stops only in the Boss direction and animation subprocesses;
+copying only those missing ignored files from the preserved corpus brings the
+temporary worktree to 1,064 PNGs and makes the full gate pass.
+`codex/clean-clone-check` at `125b0b3` is a separately preserved, explicitly
+unvalidated fix candidate; it is not part of the active EN-E03 lane. See
+`HANDOFF.md` for the exact 2026-08-06 evidence.
 
 Run `npm run check:enemy-expansion` for the focused EN-F00 gate. It locks all
 57 legacy families / 202 sheets / 16,160 frames to their synchronized-main
@@ -423,13 +475,25 @@ visually approved Hill Breaker F1 seed. Run
 That check preserves all four approved F1 frames and their planted contact rows,
 validates four approved F2 frames, and keeps Giant absent from public consumers.
 Run `npm run check:enemy-expansion-en-e03-giant-walk` and
-`npm run review:enemy-expansion-en-e03-giant-walk` for the active, internal,
-visually unapproved Hill Breaker Walk candidate. The checker validates 16
+`npm run review:enemy-expansion-en-e03-giant-walk` for the approved, internal
+Hill Breaker Walk baseline. The checker validates 16
 connected hard-alpha frames, three distinct foot-contact silhouettes per
 direction with only W2/W4 shared, exact delegation of all eight approved Idle
 frames, frozen PNG/digest values, and zero public exposure. Passing it proves
-structure and reproducibility only; it does not replace exact Aseprite MCP tab
-inspection or designer approval.
+structure and reproducibility; the separate gate metadata records the direct
+2026-08-06 designer approval.
+Run `npm run check:enemy-expansion-en-e03-giant-attack` and
+`npm run review:enemy-expansion-en-e03-giant-attack` for the approved internal
+Hill Breaker Attack baseline. The checker preserves all 8 approved Idle and 16
+approved Walk frames byte-for-byte, validates 16 connected hard-alpha Attack
+poses with distinct silhouettes, planted contacts and one-cell margins, freezes
+the exact raw/Complete B + Form boards and frame digest, requires at least three
+torso-and-hip motion phases per direction, proves that the approved shared
+humanoid renderer remains unchanged, requires at least three Down/Up hip-and-
+upper-leg phases with exact foot anchors, and keeps Giant absent from public
+consumers. Passing proves structure and reproducibility; separate gate metadata
+records the exact labeled four-direction raw and Complete B + Form approval on
+2026-08-07.
 Run `npm run check:enemy-expansion-en-e03-centaur-calibration` and
 `npm run review:enemy-expansion-en-e03-centaur-calibration` for the approved
 Steppe Hunter F1 seed. Its checker requires four connected hybrid
@@ -440,6 +504,25 @@ profiles, one-cell margins, and zero public exposure. Run
 baseline. That checker preserves all four approved F1 frames, validates the
 four approved F2 poses with exact planted contact rows, requires eight connected
 four-hoof silhouettes, and keeps Centaur absent from public consumers. Run
+`npm run check:enemy-expansion-en-e03-centaur-walk` and
+`npm run review:enemy-expansion-en-e03-centaur-walk` for the approved, internal
+Steppe Hunter Walk baseline. The checker validates 16
+connected hard-alpha hybrid frames, two planted hoof contacts, three distinct
+hoof-contact silhouettes per direction with only W2/W4 shared, exact side
+mirroring, exact delegation of all eight approved Idle frames, frozen
+PNG/digest values, and zero public exposure. Passing it proves structure and
+reproducibility; separate gate metadata records the designer's exact raw and
+Complete B + Form animation approval on 2026-08-06. Run
+`npm run check:enemy-expansion-en-e03-centaur-attack` and
+`npm run review:enemy-expansion-en-e03-centaur-attack` for the approved internal
+Steppe Hunter Attack baseline. The checker preserves all 8 approved Idle and
+16 approved Walk frames byte-for-byte, validates 16 connected hard-alpha
+horse-rider-spear silhouettes with planted contacts, four distinct poses and at
+least three horse-body weight phases per direction, exact side mirroring, true
+Down/Up attacks, one-cell margins, frozen evidence hashes, and zero facade or
+public exposure. Passing proves structure and reproducibility; separate gate
+metadata records the exact labeled Down, Left, Right, and Up raw/no-outline and
+Complete B + Form approval on 2026-08-07. Run
 `npm run check:enemy-expansion-en-e03-satyr-calibration` and
 `npm run review:enemy-expansion-en-e03-satyr-calibration` for the Briar Reveler
 F1 approved seed. Its checker requires four connected horned
@@ -452,6 +535,14 @@ baseline. That checker freezes the approval metadata and exact artifact hashes,
 preserves all four approved F1 frames, validates the four approved F2 poses,
 requires eight connected horned digitigrade silhouettes and four split-hoof
 contact tips per frame, and keeps Satyr absent from public consumers.
+Run `npm run check:enemy-expansion-en-e03-satyr-walk` and
+`npm run review:enemy-expansion-en-e03-satyr-walk` for the approved internal
+Briar Reveler Walk baseline. The checker validates 16 connected hard-alpha
+horned frames, split-hoof contacts, three distinct contact/silhouette poses per
+direction with only W2/W4 shared, exact side mirroring, exact delegation of all
+eight approved Idle frames, the no-eye rear-head pixel in all four Up frames,
+frozen PNG/digest values, and zero public exposure. Its gate metadata records
+the corrected animation approval on 2026-08-06.
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
@@ -736,17 +827,26 @@ awaits explicit visual approval before any animation work.
   `engine/enemy-expansion-en-e03-giant-idle.js`, and
   `engine/enemy-expansion-en-e03-centaur-calibration.js` - approved Hill
   Breaker F1/F2 evidence plus the isolated approved Steppe Hunter F1 calibration
-- `engine/enemy-expansion-en-e03-giant-walk.js` - active internal Hill Breaker
-  Walk W1-W4 implementation-candidate; it delegates approved Idle exactly,
-  rejects later motion/families, and is absent from the public facade
+- `engine/enemy-expansion-en-e03-giant-walk.js` - approved internal Hill Breaker
+  Walk W1-W4 baseline; it delegates approved Idle exactly, rejects later
+  motion/families, and is absent from the public facade
+- `engine/enemy-expansion-en-e03-giant-attack.js` - approved internal Hill Breaker
+  Attack A1-A4 baseline; it delegates approved Idle and Walk exactly, rejects
+  later motion/families, and is absent from the public facade
 - `engine/enemy-expansion-en-e03-centaur-idle.js` - approved internal Steppe
   Hunter F1/F2 Idle baseline; F1 delegates to the frozen calibration and F2
   preserves the accepted planted-hoof continuation
+- `engine/enemy-expansion-en-e03-centaur-walk.js` - approved internal Steppe
+  Hunter Walk W1-W4 baseline; it delegates approved Idle
+  exactly, rejects later motion/families, and is absent from the public facade
 - `engine/enemy-expansion-en-e03-satyr-calibration.js` - bounded internal Briar
   Reveler F1 approved seed; it reuses the approved humanoid and Goatfolk grammar
 - `engine/enemy-expansion-en-e03-satyr-idle.js` - approved internal Briar
   Reveler F1/F2 Idle baseline; F1 delegates to the frozen calibration while F2
   preserves the accepted planted-hock, tail-flick, and staff-dip continuation
+- `engine/enemy-expansion-en-e03-satyr-walk.js` - approved internal Briar
+  Reveler Walk W1-W4 baseline; it delegates approved Idle exactly,
+  rejects later motion/families, and is absent from the public facade
 - `tools/check-enemy-expansion.mjs` - focused legacy-equivalence, registry,
   review-targeting, and malformed-sheet gate
 - `tools/check-enemy-expansion-en-e01.mjs` and
@@ -770,8 +870,20 @@ awaits explicit visual approval before any animation work.
   structural gate and exact raw/Complete B + Form evidence generator
 - `tools/check-enemy-expansion-en-e03-giant-walk.mjs` and
   `tools/enemy-expansion-en-e03-giant-walk-review.mjs` - focused 16-frame Walk
-  gate and deterministic raw/Complete B + Form candidate evidence; passing is
-  not visual approval
+  gate and deterministic raw/Complete B + Form evidence for the approved
+  internal Hill Breaker baseline
+- `tools/check-enemy-expansion-en-e03-giant-attack.mjs` and
+  `tools/enemy-expansion-en-e03-giant-attack-review.mjs` - focused 16-frame
+  Attack gate and deterministic raw/Complete B + Form evidence for the approved
+  internal Hill Breaker baseline
+- `tools/check-enemy-expansion-en-e03-centaur-walk.mjs` and
+  `tools/enemy-expansion-en-e03-centaur-walk-review.mjs` - focused 16-frame
+  hybrid Walk gate and deterministic evidence for the approved internal Steppe
+  Hunter baseline
+- `tools/check-enemy-expansion-en-e03-satyr-walk.mjs` and
+  `tools/enemy-expansion-en-e03-satyr-walk-review.mjs` - focused 16-frame
+  split-hoof Walk gate and deterministic raw/Complete B + Form evidence for the
+  approved internal Briar Reveler baseline
 - `tools/check-enemy-expansion-en-e01-full.mjs` and
   `tools/enemy-expansion-en-e01-full-review.mjs` - exhaustive 1,200-frame
   private-candidate gate and completed-slice review bundle generator

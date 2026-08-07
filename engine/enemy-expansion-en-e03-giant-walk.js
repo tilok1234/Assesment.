@@ -25,9 +25,11 @@ function deepFreeze(value) {
 
 export const EN_E03_GIANT_WALK_GATE = deepFreeze({
   id: 'en-e03-hill-breaker-walk-v1',
-  status: 'implementation-candidate',
+  status: 'approved',
   authorizedOn: '2026-08-04',
   authorizationEvidence: 'Designer approved the next bounded EN-E03 gate and said: lets do next.',
+  approvedOn: '2026-08-06',
+  approvalEvidence: 'Designer reviewed the exact Hill Breaker Walk raw and Complete B + Form boards and said: yes sir seems fine to me approved.',
   approvedIdle: {
     gateId: EN_E03_GIANT_IDLE_GATE.id,
     artifactSha256: EN_E03_GIANT_IDLE_GATE.artifactSha256,
@@ -55,7 +57,7 @@ export const EN_E03_GIANT_WALK_GATE = deepFreeze({
     'effects',
     'release',
   ],
-  nextGate: 'Explicit designer review of the exact Hill Breaker Walk raw and Complete B + Form boards; no later EN-E03 implementation is authorized.',
+  nextGate: 'Authorized on 2026-08-06: Steppe Hunter common Walk W1-W4 across Down, Left, Right, and Up, preserving the approved two-frame Idle baseline byte-for-byte.',
 });
 
 function renderGiantWalk(args) {
@@ -88,7 +90,7 @@ export const EN_E03_GIANT_WALK_FAMILY = deepFreeze({
   variants: [{
     id: 'hill-breaker',
     name: 'Hill Breaker',
-    brief: 'Approved two-frame Idle baseline plus one bounded four-frame Walk candidate with alternating weight, club counter-swing, and planted Giant contacts.',
+    brief: 'Approved two-frame Idle baseline plus an approved four-frame Walk with alternating weight, club counter-swing, and planted Giant contacts.',
     rendererData: EN_E03_HILL_BREAKER_CALIBRATION_DATA,
   }],
   rendererData: {
@@ -99,7 +101,7 @@ export const EN_E03_GIANT_WALK_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'hill-breaker',
     scale: 8,
-    notes: 'One-family Walk acceptance lane; approved Idle remains exact, while Walk requires explicit visual approval.',
+    notes: 'Visually approved one-family Walk lane; approved Idle remains exact and the family stays internal and non-public.',
   },
 });
 

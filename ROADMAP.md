@@ -105,14 +105,42 @@ Exit criteria:
 
 Progress: underway. The first validated content slice adds eight facial-detail choices—none, beard, mustache, scar, eyepatch, glasses, blush, and war paint—without changing the 24x24 frame or sheet contract. Old state and presets migrate to `none`; facial hair follows the selected hair tones, war paint follows the outfit palette, rear views remain unmarked, and full helmets suppress face details. The controls participate in thumbnails, whole-character and per-category randomization, presets, reset, undo/redo, comparison, persistence, naming, and every export scope.
 
-Current continuation checkpoint (2026-08-06): synchronized `main` remains the
+Review presentation rule: unless the designer explicitly requests a narrow
+direction/frame/layer/defect inspection, every sprite approval review must show
+labeled Down, Left, Right, and Up animations in both raw/no-outline and outlined
+project-presentation form (currently Complete B + Form). Both versions belong
+in the same review response; side-only, unlabeled, or single-mode evidence is
+not a complete normal review.
+
+Approval publication rule: each explicit visual approval is followed by an
+intentional bounded commit and branch push before the next gate begins, unless
+the designer explicitly says to hold publication. Unapproved lanes are never
+published under this rule.
+
+Current continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and
 pushed on `codex/en-e03` at `8ea019b`; that checkpoint contains rejected v1/v2,
 the approved internal Hill Breaker, Steppe Hunter, and Briar Reveler F1/F2 Idle
-baselines, and one authorized but visually unapproved Hill Breaker Walk W1-W4
-implementation-candidate. The docs-only reconciliation is isolated on
-`codex/en-e03-handoff-reconcile` and changes no code, pixels, public content, or
-approval state. The complete 57-family / 202-variant
+baselines, and the exact Hill Breaker Walk W1-W4 pixels later visually approved
+on 2026-08-06. The separately approved Steppe Hunter Walk baseline remains
+preserved in its isolated source worktree. The approved Briar Reveler Walk
+W1-W4 source branch on `codex/en-e03-satyr-walk`, created from clean reconciled
+checkpoint `ec525b6` and populated with the exact approved Steppe continuation,
+passes its focused gate. Its corrected rear view was visually approved on
+2026-08-06. The resulting bounded Hill Breaker Attack A1-A4 source lane on
+`codex/en-e03-hill-breaker-attack` preserves approved Idle/Walk exactly and
+remains internal and non-public. Both exact approved source lanes are included
+in and published through the consolidated Steppe Hunter Attack branch.
+The designer approved its exact labeled four-direction raw and Complete B +
+Form animations on 2026-08-07 with `Very good approved`. The designer then
+said `Cool let's keep going`, authorizing only Steppe Hunter common Attack
+A1-A4. Its isolated baseline on `codex/en-e03-steppe-hunter-attack` preserves
+the approved Steppe Idle/Walk baselines exactly, passes its 16-frame focused
+gate, and remains internal/non-public. The designer reviewed both
+exact labeled four-direction raw/no-outline and Complete B + Form GIFs together
+and said `Approved` on 2026-08-07; the consolidated bounded lane is committed
+and pushed under the approval-publication contract. The complete
+57-family / 202-variant
 legacy Enemy catalog remains visually approved; its current 20-column gate
 covers 16,160 source frames / 48,480 None-B-C cases. Form shading, Lantern,
 Production Roll, compatible category rerolls, and the public Cast/Death actor
@@ -163,15 +191,36 @@ authorized only F2 with `lets go next`; the exact F1/F2 boards were visually
 approved on 2026-08-04 with `approved`. Those eight frames are now the accepted
 internal Briar Reveler Idle baseline. The designer then authorized only Hill
 Breaker common Walk W1-W4 across all four directions. Preservation checkpoint
-`8ea019b` contains that internal implementation-candidate, focused checker,
-package scripts, deterministic review generator, and frozen hashes. The focused
-gate passes all 16 Walk frames while preserving all eight approved Idle frames
-and zero public exposure. Exact Aseprite MCP inspection and designer approval
-remain open. No EN-E03 family is public; Centaur/Satyr motion, additional Giant
-motion, variants, registration, effects, release, and every later gate remain
-blocked. The full project gate passes with the complete preserved local Boss
-review-checkpoint corpus; fresh-worktree clone safety remains a separate
-unvalidated candidate at `125b0b3`.
+`8ea019b` preserves those exact pixels, focused checker, package scripts,
+deterministic review generator, and frozen hashes. The designer approved the
+exact Hill Breaker raw and Complete B + Form boards on 2026-08-06 with
+`yes sir seems fine to me approved`, authorizing only Steppe Hunter common Walk
+W1-W4 next. The designer then reviewed the exact Steppe Hunter raw and Complete
+B + Form animations and said `approved` on 2026-08-06. That approved Steppe
+baseline passes its 16-frame focused gate while preserving all eight approved
+Idle frames and zero public exposure. The designer then authorized only Briar
+Reveler common Walk W1-W4 with `awesome lets do next`. Its 16-frame candidate
+passes connected-silhouette, split-hoof, gait-cycle, mirror, approved-Idle,
+rear-head no-eye, frozen-hash, and zero-public-exposure checks. The designer
+approved the corrected raw and Complete B + Form animations on 2026-08-06 with
+`greeat lets move on`, authorizing only Hill Breaker common Attack A1-A4. That
+candidate now passes its 16-frame focused gate with exact approved Idle/Walk
+delegation, connected distinct silhouettes, one-cell margins, planted contact,
+at least three torso-and-hip phases per direction, frozen review hashes, and
+zero public exposure. The first overlay-slide response to the request for more
+body movement was rejected as `not a good animation` and removed. The current
+replacement uses one layered upper-body/club rig with a backward coil, centered
+release, forward impact drop, and recovery over anchored legs. The follow-up
+front/back revision extends Down/Up motion through hips and upper legs while
+retaining byte-identical planted-foot anchors. The designer approved the exact
+labeled four-direction raw and Complete B + Form animations on 2026-08-07 with
+`Very good approved`.
+No EN-E03 family is public; Steppe Hunter Attack is visually approved, and
+Hurt, additional Giant/Centaur/Satyr motion beyond that bounded approval,
+variants, registration, effects, release, and every later gate remain blocked. The full
+project gate passes with
+the complete preserved local Boss review-checkpoint corpus; fresh-worktree clone
+safety remains a separate unvalidated candidate at `125b0b3`.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
@@ -348,8 +397,11 @@ Candidate additions:
   approved together with its F2-only continuation as an internal two-frame Idle
   baseline; Steppe Hunter F1/F2 is also an approved internal two-frame Idle
   baseline; Briar Reveler F1/F2 is the third approved internal two-frame Idle
-  baseline; the only active EN-E03 gate is the internal, visually unapproved
-  Hill Breaker Walk W1-W4 candidate at `8ea019b`
+  baseline; Hill Breaker Walk W1-W4 and Steppe Hunter Walk W1-W4 are also
+  approved and internal; Briar Reveler Walk W1-W4 is also approved and internal;
+  Hill Breaker common Attack A1-A4 is also visually approved, internal, and
+  non-public; Steppe Hunter common Attack A1-A4 is also visually approved,
+  internal, and non-public; no later EN-E03 gate is currently authorized
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 

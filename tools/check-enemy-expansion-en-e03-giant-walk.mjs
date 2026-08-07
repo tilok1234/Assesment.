@@ -73,9 +73,11 @@ function footContactAlpha(captured) {
 }
 
 check(EN_E03_GIANT_IDLE_GATE.status === 'approved', 'the Hill Breaker two-frame Idle baseline must remain visually approved');
-check(EN_E03_GIANT_WALK_GATE.status === 'implementation-candidate', 'the Hill Breaker Walk gate must remain unapproved until exact designer review');
+check(EN_E03_GIANT_WALK_GATE.status === 'approved', 'the Hill Breaker Walk gate must remain visually approved');
 check(EN_E03_GIANT_WALK_GATE.authorizedOn === '2026-08-04', 'the Hill Breaker Walk gate must record its authorization date');
 check(EN_E03_GIANT_WALK_GATE.authorizationEvidence === 'Designer approved the next bounded EN-E03 gate and said: lets do next.', 'the Hill Breaker Walk gate must retain exact authorization evidence');
+check(EN_E03_GIANT_WALK_GATE.approvedOn === '2026-08-06', 'the Hill Breaker Walk gate must record its visual approval date');
+check(EN_E03_GIANT_WALK_GATE.approvalEvidence === 'Designer reviewed the exact Hill Breaker Walk raw and Complete B + Form boards and said: yes sir seems fine to me approved.', 'the Hill Breaker Walk gate must retain exact approval evidence');
 check(EN_E03_GIANT_WALK_GATE.approvedIdle.gateId === EN_E03_GIANT_IDLE_GATE.id, 'the Walk gate must identify the approved Idle baseline');
 check(EN_E03_GIANT_WALK_GATE.approvedIdle.artifactSha256 === EN_E03_GIANT_IDLE_GATE.artifactSha256, 'the Walk gate must retain the approved raw Idle hash');
 check(EN_E03_GIANT_WALK_GATE.approvedIdle.assembledArtifactSha256 === EN_E03_GIANT_IDLE_GATE.assembledArtifactSha256, 'the Walk gate must retain the approved assembled Idle hash');
@@ -87,7 +89,7 @@ check(EN_E03_GIANT_WALK_GATE.scope.includes('four Walk frames across Down, Left,
 check(EN_E03_GIANT_WALK_GATE.exclusions.includes('Idle pixel changes'), 'the Walk gate must protect the approved Idle pixels');
 check(EN_E03_GIANT_WALK_GATE.exclusions.includes('Centaur') && EN_E03_GIANT_WALK_GATE.exclusions.includes('Satyr'), 'the Walk gate must exclude the other EN-E03 families');
 check(EN_E03_GIANT_WALK_GATE.exclusions.includes('Attack') && EN_E03_GIANT_WALK_GATE.exclusions.includes('registration'), 'the Walk gate must exclude later motion and public routing');
-check(EN_E03_GIANT_WALK_GATE.nextGate.includes('Explicit designer review'), 'the Walk gate must stop at explicit designer review');
+check(EN_E03_GIANT_WALK_GATE.nextGate.includes('Steppe Hunter common Walk W1-W4'), 'the Walk gate must record the authorized Steppe Hunter continuation');
 check(Object.isFrozen(EN_E03_GIANT_WALK_GATE) && Object.isFrozen(EN_E03_GIANT_WALK_GATE.approvedIdle) && Object.isFrozen(EN_E03_GIANT_WALK_GATE.exclusions), 'the Walk gate must be deeply immutable');
 
 check(EN_E03_IDLE_GATE.artifactSha256 === '059f7c4945cffacf4e53e2d9435566479adf08ec754ed8f0faca520958908aa2', 'the rejected v2 raw review hash must remain frozen');
@@ -98,7 +100,7 @@ check(EN_E03_GIANT_WALK_REGISTRY.families.length === 1, 'the Walk registry must 
 check(EN_E03_GIANT_WALK_REGISTRY.families[0].id === 'giant', 'the Walk registry must contain only Giant');
 check(EN_E03_GIANT_WALK_REGISTRY.families[0].variants.length === 1, 'the Walk registry must contain exactly one variant');
 check(EN_E03_GIANT_WALK_REGISTRY.families[0].variants[0].id === 'hill-breaker', 'the Walk registry must contain only Hill Breaker');
-check(EN_E03_GIANT_WALK_REGISTRY.publicFamilies.length === 0 && EN_E03_GIANT_WALK_REGISTRY.approvedFamilies.length === 0, 'the Walk candidate must remain internal and unapproved');
+check(EN_E03_GIANT_WALK_REGISTRY.publicFamilies.length === 0 && EN_E03_GIANT_WALK_REGISTRY.approvedFamilies.length === 0, 'the visually approved Walk baseline must remain internal and outside registry approval/public routing');
 check(EN_E03_GIANT_WALK_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'the Walk renderer must retain the approved roster chassis');
 check(Object.isFrozen(EN_E03_GIANT_WALK_REGISTRY) && Object.isFrozen(EN_E03_GIANT_WALK_FAMILY), 'the Walk registry and family must be immutable');
 

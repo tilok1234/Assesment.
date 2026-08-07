@@ -47,6 +47,21 @@ Sprite-rendering consumers import `sprite-engine.js`. Internal engine module pat
 
 ## Module responsibilities
 
+### Visual review evidence
+
+Review generators and handoff surfaces have a presentation contract separate
+from structural validation. Unless the designer explicitly asks for a narrow
+direction/frame/layer/defect inspection, every sprite approval review must show
+all four labeled directionsâ€”Down, Left, Right, and Upâ€”and provide both the raw
+render with outlines disabled and the outlined project presentation (currently
+Complete B + Form for EN-E03). Both versions must be shown together; side-only,
+unlabeled, or single-mode output is incomplete normal review evidence. Narrow
+reviews must state their reduced scope explicitly.
+
+Explicit visual approval also closes the Git publication gate: stage only the
+bounded approved lane, commit it, and push its branch before starting another
+gate. Never publish an unapproved lane, and honor an explicit designer hold.
+
 ### Public facade
 
 `sprite-engine.js` re-exports the supported engine API. It stays small so internal files can move without forcing UI or integration changes.
@@ -202,17 +217,58 @@ adds a direction-aware tail plus crooked staff for the Briar Reveler F1
 approved seed. `engine/enemy-expansion-en-e03-satyr-idle.js` delegates F1 back
 to that frozen renderer and adds the visually approved F2 inward-hock settle,
 tail flick, and one-pixel staff dip as an internal two-frame Idle baseline.
-`engine/enemy-expansion-en-e03-giant-walk.js` is the separately authorized
-Hill Breaker common Walk implementation-candidate. It delegates both approved
+`engine/enemy-expansion-en-e03-giant-walk.js` is the separately authorized and
+visually approved Hill Breaker common Walk baseline. It delegates both approved
 Idle frames exactly, adds only W1-W4 for Down/Left/Right/Up, rejects Attack and
 every other family, and keeps an empty approved/public family view. Its focused
 checker freezes the approved Idle digest, both candidate PNG hashes, and the
 16-frame Walk digest while enforcing connected hard-alpha silhouettes, planted
 contact, three foot-contact silhouettes per direction, and the deliberate
-W2/W4 shared passing pose. `sprite-engine.js` imports none of these EN-E03
-approval/candidate modules. The Walk candidate remains internal and visually
-unapproved; Centaur/Satyr motion, additional Giant motion, specialist/elite
-implementation, registration, and consumers remain blocked.
+W2/W4 shared passing pose.
+`engine/enemy-expansion-en-e03-centaur-walk.js` delegates both approved
+Steppe Hunter Idle frames byte-for-byte, adds only W1-W4 for the same four
+directions, and draws three deterministic diagonal hoof-contact silhouettes,
+rider/spear weight shift, and direction-aware tail response. Its focused gate
+enforces connected hard-alpha hybrid silhouettes, two planted hoof contacts,
+exact side mirroring, the deliberate W2/W4 passing pose, frozen board hashes,
+and zero public exposure. `sprite-engine.js` imports none of these EN-E03
+approval/candidate modules. Hill Breaker Walk and Steppe Hunter Walk are both
+approved and internal. The approved
+`engine/enemy-expansion-en-e03-satyr-walk.js` baseline delegates the approved
+Briar Reveler F1/F2 Idle baseline exactly and adds only common W1-W4 with
+reverse-jointed leg alternation, split-hoof contacts, tail response, and staff
+counter-swing while covering the shared humanoid front-expression pixel in Up
+so the rear head does not read as showing a side eye. Its focused gate enforces
+16 connected hard-alpha horned
+silhouettes, three contact/silhouette poses per direction with W2/W4 shared,
+exact side mirroring, frozen boards/digest, and zero public exposure. The
+bounded Hill Breaker common Attack A1-A4 continuation is now visually approved.
+`engine/enemy-expansion-en-e03-giant-attack.js` implements that approved
+internal baseline by delegating every approved Idle and Walk frame
+byte-for-byte, then
+adding only A1-A4 through the same sturdy humanoid/club chassis and Hill Breaker
+identity overlay. An interim overlay-only body shift was rejected because it
+read as sliding/jitter rather than animation. The replacement leaves the shared
+humanoid renderer untouched and privately calls its `drawSprite` layer contract:
+the body layer and Giant identity are assembled in a 24x24 buffer, the complete
+upper rig is posed over anchored lower-body rows, and the club's back/front
+layers retain their correct depth. A1 coils backward with the club, A2 releases
+from center, A3 follows through and drops into impact, and A4 recovers. The
+front/back extension carries the same transform through hip and upper-leg rows
+while clamping above row 20, then restores the row-19 seam; both boot anchors
+therefore remain exact even when the Down club passes in front of one boot. Side
+poses retain their higher row-18 leg anchor. Its
+strike cleanup trims only the generic attack's outermost
+top/bottom overshoot so all 16 candidate frames retain the EN-E03 one-cell
+margin. The focused gate requires 16 connected, distinct hard-alpha silhouettes,
+planted contact, at least three torso-and-hip phases per direction, matched
+side-profile bounds and visual weight, at least three front/back hip-and-upper-
+leg phases, exact front/back foot anchors, frozen raw/Complete B + Form boards
+and digest, and zero public exposure. Its gate also freezes the exact labeled
+four-direction raw and Complete B + Form GIFs approved by the designer on
+2026-08-07. Additional
+Giant/Centaur/Satyr motion, specialist/elite implementation, registration, and
+consumers remain blocked.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -509,11 +565,32 @@ variants / 24 Idle frames, connected and distinct silhouettes, true four-hoof
 Centaur contacts, Giant/Satyr scale distinctions, exact side mirroring,
 Complete B/Form ownership, non-Idle refusal, and zero public exposure.
 The nested `npm run check:enemy-expansion-en-e03-giant-walk` gate validates the
-active Hill Breaker candidate across 16 Walk frames, preserves all eight
+approved Hill Breaker Walk baseline across 16 frames, preserves all eight
 approved Idle frames exactly, freezes both review hashes and the candidate
 digest, and proves zero facade/public exposure. Its paired review generator
-reproduces the ignored raw and Complete B + Form boards. These structural gates
-do not grant visual approval.
+reproduces the ignored raw and Complete B + Form boards; the separate gate
+metadata records the 2026-08-06 designer approval. The nested
+`npm run check:enemy-expansion-en-e03-centaur-walk` gate validates the approved
+Steppe Hunter baseline across 16 Walk frames, preserves all eight approved
+Idle frames exactly, enforces connected hard-alpha hybrid silhouettes, three
+hoof-contact poses per direction, exact side mirroring, and zero facade/public
+exposure, and freezes both review hashes and the candidate digest. Its paired
+review generator reproduces the exact ignored raw and Complete B + Form boards;
+separate gate metadata records its direct visual approval.
+
+The nested `npm run check:enemy-expansion-en-e03-centaur-attack` gate validates
+the approved Steppe Hunter Attack baseline across 16 A1-A4 frames while
+delegating all 8 approved Idle and 16 approved Walk frames byte-for-byte. The
+private renderer reuses the approved humanoid upper chassis and exported
+Steppe horse-body helper, adds only a four-direction spear-lunge layer, retains
+one connected horse-rider-spear silhouette and planted hoof contacts in every
+frame, requires four distinct Attack silhouettes and at least three horse-body
+weight phases per direction, preserves exact left/right mirroring and true
+Down/Up depth attacks, and remains absent from `sprite-engine.js` and every
+public registry. Its deterministic review generator freezes the raw and
+Complete B + Form boards. The separately hashed `192x224` labeled GIF pair was
+the direct visual-review surface approved on 2026-08-07; technical checks remain
+structural evidence rather than the source of that approval.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
@@ -523,12 +600,13 @@ Idle-frame control parity, facade immutability, native-only download wiring,
 and absence from production renderer, generator, persistence, game-pack, and
 ordinary sheet dependencies.
 
-At `8ea019b`, the full `npm run check` also expects a complete ignored local
-Boss review-checkpoint corpus. It passes when that 1,064-file corpus is present,
-but a fresh worktree currently stops in the two Boss subprocesses because 965
-optional checkpoint PNGs are absent. The separate `codex/clean-clone-check`
-candidate at `125b0b3` is unvalidated and is not part of this architecture
-checkpoint.
+The full `npm run check` also expects a complete ignored local Boss
+review-checkpoint corpus. It passes on both the approved Hill Breaker Attack
+branch and the approved Steppe Hunter Attack branch when that 1,064-file
+corpus is present, but a fresh worktree stops in the two Boss subprocesses
+because 965 optional checkpoint PNGs are absent. The separate
+`codex/clean-clone-check` candidate at `125b0b3` is unvalidated and is not part
+of this architecture checkpoint.
 
 The Production gate within that command adds 1,000 portable policy cases,
 immutable profile/freeze and reason-code checks, invalid-seed normalization,
@@ -611,10 +689,11 @@ EN-F00's data-driven foundation and stable public composition boundary now
 exist. EN-E01 and EN-E02 demonstrate the complete lifecycle with ten
 approved/public families / 30 variants and a shared renderer handler; the later
 approved repair remains a separate immutable registry layer. EN-E03 is the
-current counterexample that proves rejected implemented evidence can stay
-non-public: three internal Idle baselines are visually approved, while the
-separately authorized Hill Breaker Walk candidate remains internal and
-unapproved. Follow
+current counterexample that proves approved implemented evidence can stay
+non-public: three internal Idle baselines plus all three common Walk baselines
+are visually approved while remaining internal, and the bounded Hill Breaker
+common Attack A1-A4 baseline is likewise visually approved, internal, and
+non-public. Follow
 `ENEMY_EXPANSION_PLAN.md`: keep
 candidates out of the public view, stop for four-direction baseline approval
 before full production, stop again for completed-slice approval, and register
