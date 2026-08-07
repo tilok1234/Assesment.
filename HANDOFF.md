@@ -136,7 +136,14 @@ far from the established roster style. Both implementations remain reproducible
   together and said `approved` on 2026-08-07. Its focused gate and the full
   project gate pass. The bounded approval implementation is committed and
   pushed at `d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`; it does not
-  authorize later EN-E03 work.
+  authorize later EN-E03 work. The designer then said `lets do next`; following
+  the documented EN-E03 family order, Codex bounded that continuation only to
+  Sun Lancer specialist Idle F1-F2 across Down, Left, Right, and Up. The
+  isolated `codex/en-e03-sun-lancer-idle` lane now contains that exact
+  acceptance candidate, its deterministic raw and Complete B + Form evidence,
+  and both required labeled all-four-direction GIFs. Its focused gate and full
+  project gate pass. The designer reviewed both exact GIFs together and said
+  `approved` on 2026-08-07. Publication is bounded to this approved lane only.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -163,9 +170,10 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   approved, internal, non-public, and published. The separate full public-Enemy
   three-treatment export is also approved and publication-bounded. Storm-Clan
   Jarl elite Idle F1-F2 is now visually approved, internal, non-public, and
-  publication-bounded after the side-pauldron repair; every other variant,
-  animation, registration, consumer, effect, release, and later EN-E03 step
-  remains unauthorized.
+  publication-bounded after the side-pauldron repair. Sun Lancer specialist
+  Idle F1-F2 is now visually approved, internal, non-public, and bounded to this
+  approval publication; every other variant, animation, registration, consumer,
+  effect, release, and later EN-E03 step remains unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -1066,6 +1074,55 @@ release, and later work remain separately gated.
   `d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`. Do not begin another animation
   or variant, register, integrate, add effects, release, or start later EN-E03
   work without separate explicit authorization.
+
+### Sun Lancer Specialist Idle Approved
+
+- Gate ID: `en-e03-sun-lancer-idle-v1`; status: `approved`, internal,
+  non-public, and bounded to Idle F1-F2 only.
+- Authorization evidence: after approving the corrected Storm-Clan Jarl Idle
+  gate, the designer said `lets do next`. Following the documented EN-E03
+  family order, Codex explicitly bounded the next smallest gate to Sun Lancer
+  specialist Idle F1-F2 across all four directions.
+- Isolated branch/worktree: `codex/en-e03-sun-lancer-idle` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-sun-lancer-idle`, based exactly on
+  published Storm handoff checkpoint
+  `79a24ae3d1951780c2c29c8509fbe6310cb74c1b`.
+- Approval evidence: the designer reviewed both exact labeled
+  all-four-direction raw and Complete B + Form GIFs together and said
+  `approved` on 2026-08-07.
+- Scope: Sun Lancer specialist Idle F1-F2 only across Down, Left, Right, and Up.
+  The approved Steppe Hunter chestnut four-hoof chassis is preserved while
+  sun-gold rider armor, a red-gold saddle cloth, and a bright direction-aware
+  lance pennant establish the specialist identity. Charge dust, spear trails,
+  hoof shock rings, and every other movement effect remain external.
+- Review command: `npm.cmd run review:enemy-expansion-en-e03-sun-lancer-idle`.
+  It deterministically produces both labeled `192x224`, two-frame, `480ms`
+  all-four-direction GIFs plus raw and Complete B + Form comparison boards
+  beside the approved Steppe Hunter baseline.
+- Raw board SHA-256:
+  `e1bb41a818953dbcd1e11074da5fe1f115f83377697354493dd0ac730c247e47`;
+  Complete B + Form board SHA-256:
+  `64057dfab7bb6d7eebbf2b3de6838e82c3f0b95d7923f7eedf303b1f5154a493`.
+- Raw GIF SHA-256:
+  `2d6198eba203f013fbbf2813cc6ef030995cbce566e1e845b25444b1ec9e513e`;
+  Complete B + Form GIF SHA-256:
+  `a8122bd75f6e3761c2215f499ee9c505107e0eb1ee5d2aeebf78514ff6ffae90`.
+- Candidate eight-frame digest:
+  `c195ab452409e722a9b6a9ca14a58b657033ba4c65943ea99fb03c5f180b394e`.
+- Focused validation command:
+  `npm.cmd run check:enemy-expansion-en-e03-sun-lancer-idle`; it preserves all
+  8/8 approved Steppe Hunter and 8/8 Storm-Clan Jarl Idle frames byte-exact,
+  validates 8/8 connected hard-alpha candidate silhouettes, eight four-hoof
+  contact rows, four exact side mirrors, distinct Down/Up and F1/F2 poses,
+  one-cell margins, 40 pennant pixels, 308 sun-gold armor pixels, 192 red-gold
+  cloth pixels, 972 Complete B additions, 1,172 Form source changes, zero baked
+  effect pixels, and zero public EN-E03 families.
+- With the complete local Boss checkpoint corpus present, the full
+  `npm.cmd run check` passes in 186.9 seconds and all 232 public fixture sheets
+  remain unchanged.
+- Required publication action: commit and push only this bounded approved lane.
+  Do not begin another animation or variant, register, integrate, add effects,
+  release, or start later EN-E03 work without separate explicit authorization.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

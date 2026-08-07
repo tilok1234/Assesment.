@@ -757,9 +757,20 @@ exact mirrored side views. The designer reviewed both corrected labeled
 all-four-direction raw and Complete B + Form GIFs together and said `approved`
 on 2026-08-07. The bounded implementation is committed and pushed at
 `d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`. All other animation, variants,
-registration, consumers, effects, release, and later work remain gated. With
-the complete ignored Boss checkpoint corpus present, the full project gate also
-passes without changing any of the 232 public fixture sheets.
+registration, consumers, effects, release, and later work remained gated at
+that checkpoint. The designer then said `lets do next`; following documented
+EN-E03 family order, the isolated
+`enemy-expansion-en-e03-centaur-specialist-idle.js` module now implements only
+Sun Lancer Idle F1-F2 as an internal, non-public acceptance candidate. It
+delegates the approved Steppe Hunter rider-horse-lance chassis, then adds
+direction-aware sun-gold armor, red-gold saddle tack, and a bright lance
+pennant. The lower horse and all four hoof contacts remain byte-exact; charge
+dust, spear trails, and hoof shock rings remain external. Focused and full gates
+pass without changing any of the 232 public fixture sheets. The designer
+approved both exact all-four-direction raw and Complete B + Form GIFs together
+on 2026-08-07; publication is bounded to this Idle lane. All other animation,
+variants, registration, consumers, effects, release, and later work remain
+gated.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

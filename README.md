@@ -347,6 +347,21 @@ EN-E03 families. The designer reviewed both corrected GIFs together and said
 another animation, variant, registration, consumer integration, effect,
 release, or later gate.
 
+## Approved Sun Lancer specialist Idle baseline
+
+Run `npm.cmd run review:enemy-expansion-en-e03-sun-lancer-idle` to reproduce
+the exact raw/no-outline and Complete B + Form comparison boards and two
+labeled all-four-direction `192x224` GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e03-sun-lancer-idle` to verify the frozen
+candidate hashes, all eight connected hard-alpha Centaur frames, four fixed
+hoof contacts, exact side mirrors, preserved Steppe Hunter and Storm-Clan Jarl
+baselines, zero baked charge/trail/shock effects, and zero public exposure. The
+candidate uses sun-gold rider armor, a red-gold saddle cloth, and a bright lance
+pennant over the approved chestnut Steppe Hunter chassis. The designer approved
+both exact GIFs together on 2026-08-07. Publication is bounded to this Idle lane;
+no other animation, variant, registration, consumer integration, effect,
+release, or later gate is authorized.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge

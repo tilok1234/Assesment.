@@ -300,7 +300,15 @@ designer reviewed both exact all-four-direction raw and Complete B + Form GIFs
 together and said `approved` on 2026-08-07. The bounded implementation is
 committed and pushed at `d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`. No
 other variant or animation, registration, integration, effect, release, or
-later gate is authorized.
+later gate was authorized at that checkpoint. The designer then said `lets do
+next`; following EN-E03 family order, only Sun Lancer specialist Idle F1-F2 is
+authorized. Its internal/non-public baseline preserves the approved Steppe
+Hunter four-hoof chassis, adds sun-gold armor, red-gold saddle tack, and a bright
+lance pennant, and keeps charge/trail/shock effects external. The designer
+reviewed both required all-four-direction raw and Complete B + Form GIFs together
+and said `approved` on 2026-08-07; focused and full gates pass, and publication
+is bounded to this Idle lane. No other variant or animation, registration,
+integration, effect, release, or later gate is authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
