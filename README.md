@@ -342,8 +342,10 @@ approved evidence hashes, all eight connected hard-alpha candidate frames,
 exact side mirrors, one-cell margins, preserved Hill Breaker and Boulder Hurler
 Idle baselines, zero baked storm/lightning/impact pixels, and zero public
 EN-E03 families. The designer reviewed both corrected GIFs together and said
-`approved` on 2026-08-07. This approval does not authorize another animation,
-variant, registration, consumer integration, effect, release, or later gate.
+`approved` on 2026-08-07; the bounded implementation is committed and pushed at
+`d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`. This approval does not authorize
+another animation, variant, registration, consumer integration, effect,
+release, or later gate.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

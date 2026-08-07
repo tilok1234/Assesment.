@@ -1311,6 +1311,9 @@ and no new sprite pixels or public integration are authorized.
 - Isolated branch/worktree: `codex/en-e03-storm-clan-jarl-idle` at
   `C:\tmp\8-bit-sprite-assembler-en-e03-storm-clan-jarl-idle`, based on
   approved checkpoint `088b03f1e2b2fd3cf2391c8536a920fca5c9bb86`.
+- Approved implementation checkpoint:
+  `d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`, committed and pushed after the
+  exact corrected paired-GIF approval.
 - Scope: only Idle F1-F2 across Down, Left, Right, and Up.
 - Identity: layered storm-dark plate, broad steel pauldrons, heavy bracers, and
   a bright cyan cloth clan sash; no baked storm arc, lightning, impact crack,

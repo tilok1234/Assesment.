@@ -134,8 +134,9 @@ far from the established roster style. Both implementations remain reproducible
   required labeled all-four-direction GIFs. After identifying and receiving a
   repaired side-pauldron placement, the designer reviewed both corrected GIFs
   together and said `approved` on 2026-08-07. Its focused gate and the full
-  project gate pass. The bounded approval is being published on that isolated
-  branch; it does not authorize later EN-E03 work.
+  project gate pass. The bounded approval implementation is committed and
+  pushed at `d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`; it does not
+  authorize later EN-E03 work.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -1021,6 +1022,9 @@ release, and later work remain separately gated.
   `C:\tmp\8-bit-sprite-assembler-en-e03-storm-clan-jarl-idle`, based exactly
   on approved handoff/export reconciliation checkpoint
   `088b03f1e2b2fd3cf2391c8536a920fca5c9bb86`.
+- Approved implementation checkpoint:
+  `d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`, committed and pushed on the
+  isolated branch after the exact corrected paired-GIF approval.
 - Scope: Storm-Clan Jarl elite Idle F1-F2 only across Down, Left, Right, and Up.
   Layered storm-dark plate, broad steel pauldrons, heavy bracers, and a bright
   cyan cloth clan sash establish the leader identity. No lightning, storm arc,
@@ -1058,10 +1062,10 @@ release, and later work remain separately gated.
 - With the complete local Boss checkpoint corpus present, the full
   `npm.cmd run check` passes in 178.4 seconds and all 232 public fixture sheets
   remain unchanged.
-- Publication action: commit and push only this approved bounded lane, then
-  reconcile the exact checkpoint here. Do not begin another animation or
-  variant, register, integrate, add effects, release, or start later EN-E03 work
-  without separate explicit authorization.
+- Publication is complete at approved implementation checkpoint
+  `d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`. Do not begin another animation
+  or variant, register, integrate, add effects, release, or start later EN-E03
+  work without separate explicit authorization.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

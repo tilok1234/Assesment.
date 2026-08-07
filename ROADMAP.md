@@ -297,8 +297,10 @@ to Storm-Clan Jarl elite Idle F1-F2 across four directions. Its corrected
 armored Giant/clan-band baseline now passes the focused and full gates with all
 storm/lightning/impact effects external; after the side-pauldron repair, the
 designer reviewed both exact all-four-direction raw and Complete B + Form GIFs
-together and said `approved` on 2026-08-07. No other variant or animation,
-registration, integration, effect, release, or later gate is authorized.
+together and said `approved` on 2026-08-07. The bounded implementation is
+committed and pushed at `d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`. No
+other variant or animation, registration, integration, effect, release, or
+later gate is authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

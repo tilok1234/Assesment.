@@ -755,10 +755,11 @@ After the designer identified a misplaced side shoulder, the forward pauldron
 was seated one row lower and one pixel back over the upper-arm joint in both
 exact mirrored side views. The designer reviewed both corrected labeled
 all-four-direction raw and Complete B + Form GIFs together and said `approved`
-on 2026-08-07. All other animation, variants, registration, consumers, effects,
-release, and later work remain gated. With the complete ignored Boss checkpoint
-corpus present, the full project gate also passes without changing any of the
-232 public fixture sheets.
+on 2026-08-07. The bounded implementation is committed and pushed at
+`d9c3dedf521a1a1a6ad0b82f458bf38cf8fa9533`. All other animation, variants,
+registration, consumers, effects, release, and later work remain gated. With
+the complete ignored Boss checkpoint corpus present, the full project gate also
+passes without changing any of the 232 public fixture sheets.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
