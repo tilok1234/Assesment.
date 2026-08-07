@@ -631,10 +631,14 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   exported in Form + Complete B, Form + Selective C, and Form + None folders;
   incomplete EN-E03 work remains excluded
 - Latest visual approval: both exact raw and Complete B + Form labeled Banner
-  Khan r3 GIFs were approved together on 2026-08-07. The internal, non-public
-  Idle baseline is committed and pushed at
-  `55143049b4153e34fcdaad0ea434932ba0f2d0fd`. Other motion, variants,
-  registration, consumers, effects, release, and later work remain gated
+  Khan grouped-motion GIFs were approved together on 2026-08-08. The internal,
+  non-public motion lane is approved; only bounded publication and handoff
+  reconciliation remain. The preceding Idle baseline is committed and pushed
+  at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`
+- Active approved publication lane: after the designer said `lets keep going`,
+  one grouped Banner Khan Walk/Attack/Hurt/Cast/Death pass was completed across
+  all four directions and then visually approved; registration, consumers,
+  effects, release, other variants, and later work remain gated
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1461,6 +1465,57 @@ and no new sprite pixels or public integration are authorized.
 - Exclusions: Walk, Attack, Hurt, Cast/Death aliases, other EN-E03 variants,
   registration, consumers, effects, release, and later work.
 
+#### Banner Khan elite grouped motion approved
+
+- Gate ID: `en-e03-banner-khan-motion-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed pending bounded publication.
+- Authorization evidence: after the exact Banner Khan Idle r3 baseline was
+  approved, published, and reconciled, the designer said `lets keep going`.
+  This satisfies the documented separate continuation for one grouped remaining
+  Banner Khan motion pass.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form motion-suite GIFs together and said
+  `approved` on 2026-08-08. The approval applies to the frozen hashes below and
+  authorizes only bounded publication of this internal, non-public lane.
+- Isolated branch/worktree: `codex/en-e03-banner-khan-motion` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-motion`, based exactly on
+  clean published Idle handoff `a3754a1a26219c3b494289b1cf71da07d5495aa2`.
+- Scope: Walk W1-W4, Attack A1-A4, Hurt H1-H2, Cast C1-C4, and Death D1-D4
+  across Down, Left, Right, and Up. Approved Idle F1-F2 remains byte-exact.
+- Motion sources: approved Steppe Hunter Walk, Attack, and Hurt rigs remain
+  byte-exact and supply the four-hoof gait, spear lunge, and full-hybrid recoil.
+  The approved Banner Khan identity follows those poses, Walk adds alternating
+  horse-torso response, and a saddle standard keeps the flag connected while
+  the separate lance attacks.
+- Alias contract: Cast C1-C4 equals Banner Khan Attack A1-A4 frame-for-frame;
+  Death D1-D4 equals Banner Khan Hurt H1,H2,H2,H2. No Cast/Death sprite pixels
+  are authored.
+- Preservation: focused validation confirms Banner Khan Idle `8/8`, Steppe
+  Walk `16/16`, Steppe Attack `16/16`, and Steppe Hurt `8/8` exact; candidate
+  frames `80/80`, connected hard-alpha silhouettes `80/80`, side mirrors
+  `20/20`, Cast aliases `16/16`, Death aliases `16/16`, and public EN-E03
+  families `0`.
+- Frozen candidate evidence: raw board
+  `9c7c46c88ab06d799d0fb4f59ed1befad1e3cc404b37e52f78c9f8494344f233`,
+  Complete B + Form board
+  `d55d32032589fdcbf3587b65aa395dbcf2d68f19c2fb6ec9813465fbac6113d9`,
+  raw GIF
+  `0c875b122fd3d567f7abb779e4ae589250a7e6cdce7546abc0d21afb11fc941f`,
+  Complete B + Form GIF
+  `a3aa055e19301a1b6586d5ba8fcda32f96b8ecce01f9c693cbb678779a903e6d`,
+  and 80-frame digest
+  `0dbd24f50ad7825d9d7860e114ec585b9fd716047c3c993f70f95b26c7bfccc0`.
+- Approval presentation: both exact labeled all-four-direction `640x672`
+  four-phase GIFs were shown together: raw/no-outline and Complete B + Form.
+  Focused and full repository gates pass; the full gate completed in `186.3`
+  seconds with all 232 public fixture sheets unchanged.
+- Required next action: publish only this bounded approved lane, verify its
+  upstream, and reconcile the handoff with the published commit. No later gate
+  is authorized by this approval.
+- Exclusions: approved Idle changes, Steppe source changes, other variants,
+  registration, consumers, baked command/banner/hoof effects, release, and
+  later EN-E03 work.
+
 ### EN-E04 - Serpentine and aquatic peoples
 
 - Status: `queued`
@@ -1801,7 +1856,9 @@ and separately gated.
 
 Visual approval is complete through all three common Idle, Walk, Attack, Hurt,
 Cast, and Death baselines, Boulder Hurler specialist Idle F1-F2, corrected
-Storm-Clan Jarl elite Idle F1-F2, Sun Lancer specialist Idle F1-F2, and Banner
-Khan elite Idle F1-F2. Banner Khan publication is complete at
-`55143049b4153e34fcdaad0ea434932ba0f2d0fd`; any other code or art work requires
-separate explicit designer authorization.
+Storm-Clan Jarl elite Idle F1-F2, Sun Lancer specialist Idle F1-F2, Banner Khan
+elite Idle F1-F2, and Banner Khan grouped Walk/Attack/Hurt/Cast/Death. Banner
+Khan Idle publication is complete at
+`55143049b4153e34fcdaad0ea434932ba0f2d0fd`; only bounded publication and handoff
+reconciliation remain for the grouped motion lane. Any other code or art work
+requires separate explicit designer authorization.

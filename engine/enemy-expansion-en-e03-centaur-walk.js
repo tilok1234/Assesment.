@@ -72,6 +72,8 @@ const WALK_PHASES = deepFreeze([
   { stride: 0, bob: 1 },
 ]);
 
+export const EN_E03_CENTAUR_WALK_PHASES = WALK_PHASES;
+
 function createPainter(context, direction) {
   const mirrored = direction === 'left';
   const view = mirrored ? 'right' : direction;
@@ -300,6 +302,11 @@ function drawSpear(paint, colors, phase) {
   }
 }
 
+export function drawSteppeHunterWalkSpear(context, direction, frame) {
+  assert(Number.isInteger(frame) && frame >= 0 && frame < WALK_PHASES.length, 'Steppe Hunter Walk spear requires W1-W4.');
+  drawSpear(createPainter(context, direction), steppeHunterColors(), WALK_PHASES[frame]);
+}
+
 function steppeHunterColors() {
   const data = EN_E03_STEPPE_HUNTER_CALIBRATION_DATA;
   return {
@@ -324,11 +331,9 @@ export function drawSteppeHunterCentaurBody(context, direction, phase) {
 }
 
 function drawCentaurWalkIdentity(context, direction, frame) {
-  const colors = steppeHunterColors();
   const phase = WALK_PHASES[frame];
-  const paint = createPainter(context, direction);
   drawSteppeHunterCentaurBody(context, direction, phase);
-  drawSpear(paint, colors, phase);
+  drawSteppeHunterWalkSpear(context, direction, frame);
 }
 
 function renderCentaurWalk(args) {

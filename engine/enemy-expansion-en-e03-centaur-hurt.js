@@ -254,7 +254,7 @@ function createHurtPainter(context, direction, shift, flash) {
   };
 }
 
-function drawHurtSpear(context, direction, frame, shift, flash) {
+export function drawHurtSpear(context, direction, frame, shift, flash) {
   const paint = createHurtPainter(context, direction, shift, flash);
   const pose = HURT_SPEAR_POSES[paint.view][frame];
   paint.line(...pose.shaft, paint.colors.wood[1]);
@@ -262,7 +262,7 @@ function drawHurtSpear(context, direction, frame, shift, flash) {
   for (const [x, y, shade] of pose.head) paint.dot(x, y, paint.colors.spearhead[shade]);
 }
 
-function drawHurtHands(context, direction, frame, shift, flash) {
+export function drawHurtHands(context, direction, frame, shift, flash) {
   const paint = createHurtPainter(context, direction, shift, flash);
   const pose = HURT_SPEAR_POSES[paint.view][frame];
   for (const [x, y, shade] of pose.hands) paint.dot(x, y, paint.colors.skin[shade]);

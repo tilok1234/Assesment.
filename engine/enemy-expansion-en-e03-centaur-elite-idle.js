@@ -210,7 +210,7 @@ function drawSideTack({ rect, dot }) {
   dot(16, 16, trim[0]);
 }
 
-function drawBannerKhanHorseIdleMotion(context, direction, phase) {
+export function drawBannerKhanHorseIdleMotion(context, direction, phase) {
   if (phase === 0) return;
   const paint = createPainter(context, direction);
   const { rect, clear, dot } = paint;
@@ -283,7 +283,7 @@ function drawSideRider({ rect, clear, dot }, phase) {
   dot(16, 4 + bob, trim[0]);
 }
 
-function drawBannerKhanIdentity(context, direction, phase) {
+export function drawBannerKhanIdentity(context, direction, phase) {
   const paint = createPainter(context, direction);
   if (paint.view === 'up') {
     drawUpStandard(paint, phase);

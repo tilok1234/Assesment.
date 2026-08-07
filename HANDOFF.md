@@ -1,83 +1,81 @@
 # Project Handoff
 
-Date: 2026-08-07
+Date: 2026-08-08
 
-## Immediate Continuation Checkpoint - Banner Khan Idle Approved And Published
+## Immediate Continuation Checkpoint - Banner Khan Grouped Motion Approved, Publication Pending
 
-Start here in a new task. Banner Khan elite Idle F1-F2 is visually approved
-against the exact r3 paired GIFs below. Its bounded approval implementation is
-committed and pushed at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`. No later
-art or integration gate is authorized.
+Start here in a new task. Banner Khan Walk, Attack, Hurt, Cast, and Death are
+visually approved against the exact paired motion-suite GIFs below. The only
+remaining action in this gate is bounded publication and handoff reconciliation;
+no later art or integration gate is authorized.
 
-- Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-idle` on
-  branch `codex/en-e03-banner-khan-idle` at
-  `55143049b4153e34fcdaad0ea434932ba0f2d0fd`, tracking the matching origin
-  branch. It was based on published Sun Lancer handoff checkpoint
-  `97787113ba3883e8cec41051fc9bdefe00684e95`.
-- The bounded approval commit contains modifications to:
-  `ARCHITECTURE.md`, `ENEMY_EXPANSION_PLAN.md`, `HANDOFF.md`, `README.md`,
-  `ROADMAP.md`, and `package.json`. New candidate files:
-  `engine/enemy-expansion-en-e03-centaur-elite-idle.js`,
-  `tools/enemy-expansion-en-e03-banner-khan-idle-review.mjs`,
-  `tools/build-enemy-expansion-en-e03-banner-khan-idle-gifs.py`, and
-  `tools/check-enemy-expansion-en-e03-banner-khan-idle.mjs`. Review artifacts
-  remain ignored. The checkout is synchronized with its upstream after this
-  docs-only reconciliation.
-- Gate: `en-e03-banner-khan-idle-v1`, status `approved`. Scope is only Banner
-  Khan Idle F1-F2 in Down,
-  Left, Right, and Up. It is internal and non-public. Walk, Attack, Hurt,
-  Cast/Death, other variants, registration, consumers, effects, release, and
-  later EN-E03 work remain unauthorized.
-- Candidate history: the first blocky overlay was called weird; its targeted
-  repair was still judged to have too much wrong, so both were discarded. The
-  active candidate was rebuilt from the approved Steppe Hunter chassis. The
-  designer then rejected the straight-line side face, so only the mirrored
-  Left/Right profiles gained a stepped forehead, nose, eye, cheek, and tapered
-  jaw. The follow-up mouth feedback reduced it to exactly one front pixel,
-  separated from the shaded cheek by a skin-tone jaw pixel. The latest feedback
-  identified the pale horizontal side-profile streak: it was the six-pixel
-  light fur collar, not the mouth. Only the mirrored side collars now use a
-  compact stepped two-tone shape with a two-pixel pale highlight; the mouth
-  remains unchanged. The latest feedback requested horse-body motion. Banner
-  Khan F2 now lifts the side rump and settles the chest while Down/Up lift both
-  outer flanks; every leg and hoof pixel and both approved reference registries
-  remain byte-exact.
-- Approval evidence: the designer reviewed both exact labeled all-four-
-  direction r3 GIFs together and said `approved` on 2026-08-07. This approval
-  applies to the hashes below and authorizes only bounded publication of this
-  internal, non-public Idle baseline.
-- Required review presentation: always show both exact labeled all-four-
-  direction GIFs together unless the designer explicitly requests a narrow
-  inspection:
+- Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-motion` on
+  branch `codex/en-e03-banner-khan-motion` at
+  `a3754a1a26219c3b494289b1cf71da07d5495aa2`. The branch has no upstream and is
+  based exactly on the clean published Banner Khan Idle handoff.
+- Git state contains the approved bounded lane and remains uncommitted and
+  unpushed pending publication. Existing source changes expose only frozen draw
+  helpers in the approved Banner Khan Idle and Steppe Hunter Walk/Attack/Hurt
+  modules; their approved frame digests remain exact. The bounded new files are
+  `engine/enemy-expansion-en-e03-centaur-elite-motion.js`,
+  `tools/enemy-expansion-en-e03-banner-khan-motion-review.mjs`,
+  `tools/build-enemy-expansion-en-e03-banner-khan-motion-gifs.py`, and
+  `tools/check-enemy-expansion-en-e03-banner-khan-motion.mjs`, plus package and
+  documentation updates. Do not reset, clean, stash, or switch this lane. Stage
+  and publish only these bounded files under the approval-publication contract.
+- Gate: `en-e03-banner-khan-motion-v1`, status `approved`, internal and
+  non-public. Scope is Banner Khan
+  Walk W1-W4, Attack A1-A4, Hurt H1-H2, Cast C1-C4, and Death D1-D4 in Down,
+  Left, Right, and Up. Approved Idle F1-F2 remains byte-exact.
+- Authorization evidence: after the exact Idle r3 baseline was approved,
+  published, and reconciled, the designer said `lets keep going`. This matches
+  the documented option to group all remaining Banner Khan motion into one
+  larger follow-up review.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form motion-suite GIFs together and said
+  `approved` on 2026-08-08. This approval applies only to the frozen hashes below
+  and authorizes bounded publication of this internal, non-public motion lane.
+- Motion contract: Walk reuses the approved alternating four-hoof gait and adds
+  elite rider, collar, tack, standard response, and alternating horse-torso
+  motion. Attack reuses the four-phase spear brace/release/follow-through/
+  recovery and adds a connected saddle standard. Hurt uses the approved full-
+  hybrid white recoil and colored recovery. Cast aliases Attack exactly; Death
+  aliases Hurt as H1,H2,H2,H2. Command aura, banner flare, hoof shock rings, and
+  every other effect remain external.
+- Required review presentation: show both exact labeled all-four-direction
+  motion-suite GIFs together:
   - raw/no outline:
-    `enemy-expansion-review/en-e03-banner-khan-idle/en-e03-banner-khan-idle-r3-four-directions-labeled.gif`
+    `enemy-expansion-review/en-e03-banner-khan-motion/en-e03-banner-khan-motion-suite-four-directions-labeled.gif`
   - Complete B + Form:
-    `enemy-expansion-review/en-e03-banner-khan-idle/en-e03-banner-khan-idle-r3-four-directions-labeled-complete-b-form.gif`
-  Both are `192x224`, contain two `240ms` frames, and loop continuously.
-- Frozen latest evidence: raw board SHA-256
-  `6221555094b9876ff1aad5f04b7a20327ea4f79bde7d06116f2f95f07a2836e1`;
+    `enemy-expansion-review/en-e03-banner-khan-motion/en-e03-banner-khan-motion-suite-four-directions-labeled-complete-b-form.gif`
+  Both are `640x672`, contain four `180ms` phases, and show approved Idle
+  context plus Walk, Attack, Cast, Hurt, and Death simultaneously.
+- Frozen candidate evidence: raw board SHA-256
+  `9c7c46c88ab06d799d0fb4f59ed1befad1e3cc404b37e52f78c9f8494344f233`;
   Complete B + Form board SHA-256
-  `f4420a5c827762b699fa0007e168a484247fc0cb1a82623ec18c5cf510cc9b92`;
+  `d55d32032589fdcbf3587b65aa395dbcf2d68f19c2fb6ec9813465fbac6113d9`;
   raw GIF SHA-256
-  `1b93946a596213cb02460624fd3c4e5c0640f5202e86783fbdbbe34e73d15a10`;
+  `0c875b122fd3d567f7abb779e4ae589250a7e6cdce7546abc0d21afb11fc941f`;
   Complete B + Form GIF SHA-256
-  `298ad981961f9025c46fbcc3a255345ac8127fc2ce052303106b3606610e9e97`;
-  eight-frame candidate digest
-  `61c80740b96c2a35ccd8382335299c6521049f139c1c4df57e4852480663b3d6`.
-- Validation is current. Run
-  `npm.cmd run check:enemy-expansion-en-e03-banner-khan-idle` for the focused
-  gate and `npm.cmd run check` for the repository gate. Both passed after the
-  planted horse-torso motion repair; the full gate completed in `191.2` seconds and kept
-  all 232 public fixture sheets unchanged. `git diff --check` also passed.
-- Review output and the copied local Boss checkpoint corpus under
-  `death-review/boss-48-drafts` are ignored support artifacts. They are needed
-  to reproduce the full local gate but are not candidate source changes.
-- Next action: stop and wait for a separate explicit designer continuation.
-  Do not begin another Banner Khan animation or variant, register, integrate,
-  add effects, release, or start later EN-E03 work from this approval alone.
+  `a3aa055e19301a1b6586d5ba8fcda32f96b8ecce01f9c693cbb678779a903e6d`;
+  80-frame candidate digest
+  `0dbd24f50ad7825d9d7860e114ec585b9fd716047c3c993f70f95b26c7bfccc0`.
+- Focused validation passes: approved Banner Khan Idle `8/8`, approved Steppe
+  sources Walk `16/16`, Attack `16/16`, Hurt `8/8`, candidate suite `80/80`,
+  connected hard-alpha silhouettes `80/80`, exact side mirrors `20/20`, Cast
+  aliases `16/16`, Death aliases `16/16`, and public EN-E03 families `0`.
+  The full repository gate passes in `186.3` seconds and all 232 public fixture
+  sheets remain unchanged. `git diff --check` also passes.
+- Review output and the local Boss checkpoint corpus are ignored support
+  artifacts; they are not candidate source changes.
+- Next action: rerun focused and full validation, stage only the bounded files
+  listed above, commit and push the branch under the standing
+  approval-publication rule, verify the upstream, and reconcile this handoff
+  with the published commit. Stop there. Do not begin another variant,
+  register, integrate, add effects, release, or start later EN-E03 work.
 
 The detailed historical and technical evidence remains in
-[Banner Khan Elite Idle Approved](#banner-khan-elite-idle-approved).
+[Banner Khan Grouped Motion Approved](#banner-khan-grouped-motion-approved).
 
 ## Purpose
 
@@ -242,7 +240,13 @@ far from the established roster style. Both implementations remain reproducible
   Banner Khan-only planted horse-torso shift while every leg and hoof pixel
   remains byte-exact. The designer reviewed both exact labeled r3 GIFs together
   and said `approved` on 2026-08-07. The bounded implementation is committed and
-  pushed at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`.
+  pushed at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`. The designer then said
+  `lets keep going`, explicitly satisfying the published continuation boundary
+  for one grouped Banner Khan Walk/Attack/Hurt/Cast/Death pass. The isolated
+  `codex/en-e03-banner-khan-motion` lane now contains that internal/non-public
+  80-frame suite, deterministic paired raw and Complete B + Form boards/GIFs,
+  and a passing focused gate. It remains uncommitted and unpushed pending paired
+  visual review.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -274,8 +278,11 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   its matching approval branch. Banner Khan elite Idle F1-F2 is visually
   approved against the exact r3 pair, internal, non-public, and published on its
   matching approval branch at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`.
-  Every other variant, animation, registration, consumer, effect, release, and
-  later EN-E03 step remains unauthorized.
+  Banner Khan grouped Walk/Attack/Hurt/Cast/Death is visually approved against
+  the exact paired motion-suite GIFs, internal, and non-public; only its bounded
+  commit, push, and handoff reconciliation remain. Every other variant,
+  registration, consumer, effect, release, and later EN-E03 step remains
+  unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -1307,6 +1314,67 @@ release, and later work remain separately gated.
   If it is approved and the designer explicitly continues, the remaining
   Banner Khan Walk, Attack, Hurt, and Cast/Death work may be grouped into one
   larger follow-up review instead of separate motion-by-motion gates.
+
+### Banner Khan Grouped Motion Approved
+
+- Gate ID: `en-e03-banner-khan-motion-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed pending bounded publication.
+- Authorization evidence: after the approved Banner Khan Idle implementation
+  was published and reconciled, the designer said `lets keep going`. This is the
+  separate explicit continuation required by the Idle pass-size guidance and
+  authorizes one grouped Banner Khan motion review only.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form motion-suite GIFs together and said
+  `approved` on 2026-08-08. Technical validation supports but does not substitute
+  for this direct visual approval. The approval applies to the frozen hashes
+  below and authorizes only bounded publication of this internal lane.
+- Isolated branch/worktree: `codex/en-e03-banner-khan-motion` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-motion`, based exactly on
+  clean published Banner Khan Idle handoff
+  `a3754a1a26219c3b494289b1cf71da07d5495aa2`. It has no upstream.
+- Scope: Banner Khan Walk W1-W4, Attack A1-A4, Hurt H1-H2, Cast C1-C4, and
+  Death D1-D4 across Down, Left, Right, and Up. Approved Idle F1-F2 delegates
+  byte-for-byte to `en-e03-banner-khan-idle-v1`.
+- Source preservation: only draw helpers are exposed from the approved Banner
+  Khan Idle and Steppe Hunter Walk/Attack/Hurt modules. Their rendered pixels
+  remain frozen: Banner Khan Idle `8/8`, Steppe Walk `16/16`, Steppe Attack
+  `16/16`, and Steppe Hurt `8/8` exact.
+- Motion: Walk retains three hoof-contact cycles with W2/W4 shared and adds an
+  alternating elite horse-torso shift. Attack uses four distinct spear/body
+  phases and a connected saddle standard so the crimson flag never floats when
+  the lance leaves its upright pose. Hurt flashes the complete elite silhouette
+  white in H1 and uses a colored braced H2 with fixed ground anchors. Cast is
+  pixel-identical to Attack; Death maps exactly to Hurt H1,H2,H2,H2.
+- Effect boundary: command aura, banner flare, hoof shock rings, projectiles,
+  and every other combat or movement effect remain external with zero baked
+  effect pixels.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e03-banner-khan-motion`; it creates the
+  raw and Complete B + Form `1428x760` contact sheets plus two labeled
+  all-four-direction `640x672`, four-phase, `720ms` GIFs showing Idle context,
+  Walk, Attack, Cast, Hurt, and Death together.
+- Raw board SHA-256:
+  `9c7c46c88ab06d799d0fb4f59ed1befad1e3cc404b37e52f78c9f8494344f233`;
+  Complete B + Form board SHA-256:
+  `d55d32032589fdcbf3587b65aa395dbcf2d68f19c2fb6ec9813465fbac6113d9`.
+- Raw GIF SHA-256:
+  `0c875b122fd3d567f7abb779e4ae589250a7e6cdce7546abc0d21afb11fc941f`;
+  Complete B + Form GIF SHA-256:
+  `a3aa055e19301a1b6586d5ba8fcda32f96b8ecce01f9c693cbb678779a903e6d`.
+- Candidate 80-frame digest:
+  `0dbd24f50ad7825d9d7860e114ec585b9fd716047c3c993f70f95b26c7bfccc0`.
+- Focused validation command:
+  `npm.cmd run check:enemy-expansion-en-e03-banner-khan-motion`; it validates
+  all `80/80` suite frames, `80/80` connected hard-alpha silhouettes, `20/20`
+  exact side mirrors, `16/16` Cast aliases, `16/16` Death aliases, one-cell
+  margins, horse-torso motion, fixed Hurt anchors, frozen evidence, and zero
+  public EN-E03 families. With the complete ignored Boss checkpoint corpus, the
+  full `npm.cmd run check` passes in `186.3` seconds and all 232 public fixture
+  sheets remain unchanged.
+- Required next action: publish only this bounded approved lane, verify its
+  upstream, and reconcile the handoff with the published commit. Do not begin
+  another variant, register, integrate, add effects, release, or start later
+  EN-E03 work without separate explicit designer authorization.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

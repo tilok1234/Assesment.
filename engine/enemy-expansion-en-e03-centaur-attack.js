@@ -119,6 +119,8 @@ const ATTACK_PHASES = deepFreeze({
   ],
 });
 
+export const EN_E03_CENTAUR_ATTACK_PHASES = ATTACK_PHASES;
+
 const SPEAR_POSES = deepFreeze({
   down: [
     {
@@ -284,7 +286,7 @@ function spearPose(direction, frame) {
   return SPEAR_POSES[view][frame];
 }
 
-function drawAttackSpear(context, direction, frame) {
+export function drawAttackSpear(context, direction, frame) {
   const paint = createAttackPainter(context, direction);
   const colors = attackColors();
   const pose = spearPose(direction, frame);
@@ -293,7 +295,7 @@ function drawAttackSpear(context, direction, frame) {
   for (const [x, y, shade] of pose.head) paint.dot(x, y, colors.spearhead[shade]);
 }
 
-function drawAttackHands(context, direction, frame) {
+export function drawAttackHands(context, direction, frame) {
   const paint = createAttackPainter(context, direction);
   const colors = attackColors();
   const pose = spearPose(direction, frame);

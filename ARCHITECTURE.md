@@ -796,6 +796,27 @@ and pushed at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`. All other animation,
 variants, registration, consumers, effects, release, and later work remain
 gated.
 
+After the designer separately said `lets keep going`, the isolated
+`engine/enemy-expansion-en-e03-centaur-elite-motion.js` module now composes the
+approved Banner Khan Idle renderer and approved Steppe Hunter Walk, Attack, and
+Hurt motion sources into one internal/non-public approved grouped motion lane.
+Idle delegates byte-for-byte. Walk retains the three-contact four-hoof cycle and
+adds an alternating Banner Khan torso response. Attack moves the elite identity
+with the approved spear/body phases and adds a saddle pole so the tapered war
+standard stays connected while the lance attacks. Hurt applies the complete
+white flash and colored recovery to the elite silhouette with fixed ground
+anchors. Cast aliases Attack frame-for-frame; Death aliases Hurt H1,H2,H2,H2.
+Only non-rendering helper exports were added to approved source modules, and
+their frozen frame digests remain exact. The focused gate validates all 80 suite
+frames, 80 connected hard-alpha silhouettes, 20 exact side mirrors, exact
+aliases, deterministic raw/Complete B + Form boards and paired grouped GIFs,
+and zero facade/public exposure. The full repository gate also passes without
+changing any of the 232 public fixture sheets. The designer reviewed the exact
+paired raw/no-outline and Complete B + Form all-four-direction GIFs together and
+said `approved` on 2026-08-08. The approved lane remains uncommitted and unpushed
+only until bounded publication and handoff reconciliation; other variants,
+registration, consumers, effects, release, and later work remain gated.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

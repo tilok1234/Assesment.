@@ -392,6 +392,28 @@ baseline is committed and pushed at
 registration, consumer integration, effect, release, or later gate is
 authorized.
 
+## Approved Banner Khan grouped motion
+
+After the published Idle handoff, the designer said `lets keep going`,
+authorizing the documented grouped Banner Khan Walk/Attack/Hurt/Cast/Death
+follow-up. Run `npm.cmd run review:enemy-expansion-en-e03-banner-khan-motion`
+to reproduce the exact raw/no-outline and Complete B + Form `1428x760` boards
+and paired labeled all-four-direction `640x672` motion-suite GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e03-banner-khan-motion` to verify all 80
+suite frames, byte-exact approved Idle and Steppe motion sources, connected
+hard-alpha silhouettes, exact side mirrors, alternating horse-torso response,
+four distinct spear Attack phases, fixed Hurt anchors, exact Cast/Death aliases,
+frozen hashes, and zero public exposure. Walk, Attack, Cast, Hurt, and Death are
+shown simultaneously across four GIF phases; approved Idle is included only as
+frozen context. Command aura, banner flare, hoof shock rings, and all other
+effects remain external. Focused validation and the full `npm.cmd run check`
+pass, with all 232 public fixture sheets unchanged. The designer reviewed both
+exact labeled all-four-direction GIFs together and said `approved` on
+2026-08-08. The internal, non-public motion lane remains uncommitted and
+unpushed only until bounded publication and handoff reconciliation; no other
+variant, registration, consumer integration, effect, release, or later gate is
+authorized.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge
