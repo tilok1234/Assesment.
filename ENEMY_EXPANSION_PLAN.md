@@ -593,10 +593,11 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   which the designer approved and the matching branch published. The designer
   then said `awesome lets do next`; Codex bounded Briar Reveler Hurt H1-H2,
   whose exact paired GIFs the designer approved with `approved lets do next`.
-  After this approval branch publishes, only the separate common Cast/Death
-  alias gate across all three approved common variants is authorized. Do not
-  implement other family motion, specialist/elite variants, registration,
-  consumer routing, separate effects, release work, or later EN-E03 steps.
+  That approval branch is published. The separately isolated common Cast/Death
+  alias candidate across all three approved common variants now passes its
+  focused and full gates and awaits four-GIF review. Do not implement other
+  family motion, specialist/elite variants, registration, consumer routing,
+  separate effects, release work, or later EN-E03 steps.
 
 ### EN-E03 - Large and hybrid walkers
 
@@ -609,9 +610,9 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   `approved` and internal; Steppe Hunter Hurt H1-H2 `approved` and internal;
   Briar Reveler Hurt H1-H2 `approved` and internal
 - Families: Giant, Centaur, Satyr
-- Active gate: after the approved Briar Hurt branch publishes, common
-  Cast-to-Attack and Death-to-Hurt aliases for the three approved common
-  variants only; no new sprite pixels or public integration are authorized
+- Latest completed gate: approved common Cast-to-Attack and Death-to-Hurt
+  aliases for the three approved common variants only; the four required GIFs
+  were approved together and no new sprite pixels or public integration exist
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1163,6 +1164,55 @@ mandatory raw plus Complete B + Form review before any commit or push.
   Codex explicitly bounded only the separate common Cast/Death alias gate for
   Hill Breaker, Steppe Hunter, and Briar Reveler. Other family motion, variants,
   registration, consumers, effects, release, and later work remain excluded.
+
+#### Common Cast/Death alias approved baseline
+
+The designer approved both exact Briar Reveler Hurt GIFs with `approved lets do
+next`. After publishing that branch, Codex explicitly bounded only common
+Cast/Death aliases across the approved Hill Breaker, Steppe Hunter, and Briar
+Reveler baselines: Cast equals Attack A1-A4, Death equals Hurt H1,H2,H2,H2,
+and no new sprite pixels or public integration are authorized.
+
+- Gate ID: `en-e03-common-cast-death-aliases-v1`; status: `approved`, internal,
+  non-public, committed, and pushed.
+- Approval evidence: the designer reviewed the exact labeled all-four-direction
+  Cast raw, Cast Complete B + Form, Death raw, and Death Complete B + Form GIFs
+  together and said `approved` on 2026-08-07.
+- Worktree/branch:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-cast-death-aliases` on
+  `codex/en-e03-cast-death-aliases`, created exactly from approved pushed Briar
+  Hurt checkpoint `892a0034652c98f99b4f75ab9fdb58210927b98c`.
+- Source: `engine/enemy-expansion-en-e03-common-aliases.js`; three wrappers
+  delegate all 144 approved Idle/Walk/Attack/Hurt context frames exactly and
+  add only alias routing metadata.
+- Checker: `tools/check-enemy-expansion-en-e03-common-aliases.mjs` via
+  `npm.cmd run check:enemy-expansion-en-e03-common-aliases`.
+- Review generator: `tools/enemy-expansion-en-e03-common-aliases-review.mjs`
+  via `npm.cmd run review:enemy-expansion-en-e03-common-aliases`.
+- Cast raw GIF: `576x224`, four `120ms` frames, SHA-256
+  `e7340c687b8b4febc9852d56afaeed8d2545a37f9c3a816cfa3fa3fc25600d85`.
+- Cast Complete B + Form GIF: `576x224`, four `120ms` frames, SHA-256
+  `26594c7f08b61de870bde6046bca8a0d276cb24b6b7c9f87387546bd934c68c3`.
+- Death raw GIF: `576x224`, four `120ms` frames, SHA-256
+  `438d31742ddd372018af80d96b84f20aec47246967a092b2f98684fe7580dae4`.
+- Death Complete B + Form GIF: `576x224`, four `120ms` frames, SHA-256
+  `b4adbb78be7ab2d5f8d7c47b207dba99938b0b3c108799aa651f56b1fcbb93f0`.
+- Raw `1120x562` board SHA-256:
+  `1353962c4861960683c99a1e608654685b093fd101a6534c4777c5687e3f3b89`.
+- Complete B + Form `1120x562` board SHA-256:
+  `0ab28ed6467e798e5f24a8f19e6a4d2a522cba5d6ad7d045ea865b8953942575`.
+- Ninety-six-frame alias digest:
+  `be86cf5677286e745d76f7744a49462ba22d4deeb63bc92026160a5ca84b8d89`.
+- The focused gate passes 144/144 approved context frames, 48/48 Cast aliases,
+  48/48 Death aliases, zero new pixels, hard alpha, one-cell margins, 10,249
+  Complete B additions, 9,535 Form source changes, and zero public families.
+- After copying only the 965 missing ignored Boss checkpoints from the approved
+  Briar lane, the full `npm.cmd run check` passes against the complete
+  1,064-file local corpus; all 232 public fixture sheets remain unchanged.
+- Direct review of all four exact labeled GIFs is complete and the bounded
+  branch is published under the approval contract. New pixels, variants,
+  registration, consumers, effects, release, and later work remain excluded
+  without separate explicit authorization.
 
 ### EN-E04 - Serpentine and aquatic peoples
 

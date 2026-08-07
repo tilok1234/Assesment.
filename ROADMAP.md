@@ -253,9 +253,16 @@ Briar frames and passes eight connected full-body horned goatfolk/staff,
 fixed-split-hoof, exact-mirror, rear-head/no-side-eye, one-cell-margin,
 frozen-evidence, and zero-public-exposure checks. The designer said `approved
 lets do next`; only a separately isolated common Cast/Death alias gate across
-the three approved EN-E03 common variants is authorized next. The full project gate
+the three approved EN-E03 common variants is authorized next. That
+candidate preserves 144/144 approved context frames,
+passes 48/48 Cast-to-Attack and 48/48 Death-to-Hurt aliases with zero new sprite
+pixels and zero public families, and has four required labeled three-family/
+all-direction raw and Complete B + Form GIFs. The designer reviewed all four
+exact GIFs together and said `approved` on 2026-08-07; the bounded branch is
+committed and pushed under the publication contract. Its focused and full
+project gates pass with all 232 public fixture sheets unchanged. The full project gate
 passes with the complete 1,064-file local Boss checkpoint corpus and all 232
-public fixture sheets unchanged. Outside that bounded alias lane, additional
+public fixture sheets unchanged. No later EN-E03 gate is authorized. Additional
 Giant/Centaur/Satyr
 motion, variants, registration, effects, release, and every later gate remain
 blocked. The full project gate passes with

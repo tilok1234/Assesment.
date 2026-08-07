@@ -105,7 +105,9 @@ far from the established roster style. Both implementations remain reproducible
   next` on 2026-08-07. Briar Reveler Hurt is now an approved internal baseline;
   its bounded lane is committed and pushed. Only the separate common
   Cast/Death alias gate across the three approved EN-E03 common variants is
-  authorized next.
+  authorized next. That isolated candidate, its focused/full gates, frozen
+  boards, and four required labeled three-family/all-direction GIFs now pass;
+  direct review is pending.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -127,8 +129,9 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   visually approved, internal, non-public, and published on its matching
   approval branch. Briar Reveler Hurt H1-H2 is likewise visually approved,
   internal, non-public, and published on its matching branch. The separate
-  common Cast/Death alias gate is authorized next; variants, registration,
-  consumers, effects, release, and later EN-E03 work remain unauthorized.
+  common Cast/Death aliases are visually approved, internal, non-public, and
+  published on their matching branch; variants, registration, consumers,
+  effects, release, and later EN-E03 work remain unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -827,6 +830,53 @@ exactly. The subsequent `Cool let's keep going` authorizes only Steppe Hunter
   a separate common Cast/Death alias gate across the three approved EN-E03
   common variants. Do not broaden it into variants, registration, consumers,
   effects, or release.
+
+### Common Cast/Death Alias Approved Baseline
+
+- Gate ID: `en-e03-common-cast-death-aliases-v1`; current status:
+  `approved`, internal, non-public, committed, and pushed.
+- Authorization evidence: the designer approved both exact Briar Reveler Hurt
+  GIFs with `approved lets do next`; after publishing that lane, Codex bounded
+  only common Cast/Death aliases for Hill Breaker, Steppe Hunter, and Briar
+  Reveler with no new sprite pixels.
+- Approval evidence: the designer reviewed the exact labeled all-four-direction
+  Cast raw, Cast Complete B + Form, Death raw, and Death Complete B + Form GIFs
+  together and said `approved` on 2026-08-07.
+- Worktree and branch:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-cast-death-aliases` on
+  `codex/en-e03-cast-death-aliases`, created exactly from approved pushed
+  checkpoint `892a0034652c98f99b4f75ab9fdb58210927b98c`.
+- Source: `engine/enemy-expansion-en-e03-common-aliases.js`; Cast C1-C4 maps to
+  approved Attack A1-A4 and Death D1-D4 maps to approved Hurt H1,H2,H2,H2.
+- Focused checker:
+  `tools/check-enemy-expansion-en-e03-common-aliases.mjs` via
+  `npm.cmd run check:enemy-expansion-en-e03-common-aliases`.
+- Review generator:
+  `tools/enemy-expansion-en-e03-common-aliases-review.mjs` via
+  `npm.cmd run review:enemy-expansion-en-e03-common-aliases`.
+- Cast raw / Complete B + Form GIF SHA-256 values:
+  `e7340c687b8b4febc9852d56afaeed8d2545a37f9c3a816cfa3fa3fc25600d85` /
+  `26594c7f08b61de870bde6046bca8a0d276cb24b6b7c9f87387546bd934c68c3`.
+- Death raw / Complete B + Form GIF SHA-256 values:
+  `438d31742ddd372018af80d96b84f20aec47246967a092b2f98684fe7580dae4` /
+  `b4adbb78be7ab2d5f8d7c47b207dba99938b0b3c108799aa651f56b1fcbb93f0`.
+- All four GIFs are `576x224`, four `120ms` frames, and show all three families
+  plus Down, Left, Right, and Up together.
+- Raw / Complete B + Form `1120x562` board SHA-256 values:
+  `1353962c4861960683c99a1e608654685b093fd101a6534c4777c5687e3f3b89` /
+  `0ab28ed6467e798e5f24a8f19e6a4d2a522cba5d6ad7d045ea865b8953942575`.
+- Ninety-six-frame alias digest:
+  `be86cf5677286e745d76f7744a49462ba22d4deeb63bc92026160a5ca84b8d89`.
+- Focused results: 144/144 context frames preserved, 48/48 Cast aliases,
+  48/48 Death aliases, zero new sprite pixels, 10,249 Complete B additions,
+  9,535 Form changes, and zero public EN-E03 families.
+- After copying only the 965 missing ignored Boss checkpoints from the approved
+  Briar lane, the full `npm.cmd run check` passes against the complete
+  1,064-file local corpus and all 232 public fixture sheets remain unchanged.
+- Direct review of all four exact GIFs is complete and the bounded branch is
+  published under the approval contract. Do not add pixels or variants,
+  register, integrate, release, or begin later work without separate explicit
+  authorization.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -1788,10 +1838,15 @@ The safest opening request for the next chat is:
 > approved pushed checkpoint `374d0b73c171c9f9f35b6d71f2f9e85f4dcdd7c1`.
 > Its focused and full gates pass and both exact labeled raw and Complete B +
 > Form GIFs were approved with `approved lets do next` on 2026-08-07. The
-> bounded branch is committed and pushed. Continue only with a separate common
-> Cast-to-Attack / Death-to-Hurt alias gate across Hill Breaker, Steppe Hunter,
-> and Briar Reveler. Do not add new pixels, variants, registration, consumers,
-> effects, release, or later EN-E03 work.
+> bounded branch is committed and pushed. Resume the separate common alias
+> candidate on `codex/en-e03-cast-death-aliases` in
+> `C:\tmp\8-bit-sprite-assembler-en-e03-cast-death-aliases`, created exactly
+> from approved pushed checkpoint `892a0034652c98f99b4f75ab9fdb58210927b98c`.
+> Its focused/full gates pass: Cast maps to Attack A1-A4, Death maps to Hurt
+> H1,H2,H2,H2, and zero new pixels/public families exist. Four labeled
+> three-family/all-direction raw and Complete B + Form GIFs await direct review.
+> Do not commit, push, add variants, register, integrate, release, or begin
+> later work before approval.
 
 EN-F00, EN-E01, EN-E02, and the seven-family repair are approved. The stable and
 consumer registries are the same ten-family / 30-variant repaired object through

@@ -681,6 +681,30 @@ committed and pushed under the publication contract.
 With the complete ignored 1,064-file Boss checkpoint corpus present, the full
 `npm run check` also passes without changing the 232 public fixture sheets.
 
+`engine/enemy-expansion-en-e03-common-aliases.js` is the isolated
+approved common Cast/Death alias boundary for Hill Breaker, Steppe
+Hunter, and Briar Reveler. Three family-specific wrapper renderers delegate
+Idle, Walk, Attack, and Hurt directly to their approved Hurt registries. Cast
+C1-C4 remaps to approved Attack A1-A4 frame-for-frame; Death D1-D4 remaps to
+approved Hurt H1,H2,H2,H2. The wrappers change only requested/rendered frame
+metadata after the approved source renderer paints, so they author zero sprite
+pixels. All families remain `implemented`, internal, and absent from the public
+facade, selectors, packs, persistence, consumers, effects, and release paths.
+
+The nested `npm run check:enemy-expansion-en-e03-common-aliases` gate proves
+byte-exact delegation of 144 approved context frames, 48/48 Cast aliases,
+48/48 Death aliases, hard alpha, one-cell margins, frozen board/GIF hashes,
+Complete B/Form behavior, zero new sprite pixels, and zero public families.
+Its deterministic review generator writes paired `1120x562` boards and sixteen
+`576x224` animation frames used by four required GIFs: Cast raw, Cast Complete
+B + Form, Death raw, and Death Complete B + Form. Every GIF shows all three
+families and all four labeled directions. Passing remains technical evidence.
+The designer separately reviewed all four exact GIFs together and said
+`approved` on 2026-08-07; the bounded branch is committed and pushed under the
+publication contract. No later EN-E03 gate is authorized.
+With the complete ignored 1,064-file Boss corpus present, the full project gate
+also passes without changing any of the 232 public fixture sheets.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

@@ -27,7 +27,8 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
   internal Hill Breaker, Steppe Hunter, and Briar Reveler four-frame Walks, plus
   the approved Hill Breaker, Steppe Hunter, and Briar Reveler common Attack
   A1-A4 baselines, and the approved Hill Breaker, Steppe Hunter, and Briar
-  Reveler Hurt H1-H2 baselines; none is selectable consumer content
+  Reveler Hurt H1-H2 baselines, plus the approved common Cast/Death aliases for
+  those three variants; none is selectable consumer content
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -260,11 +261,18 @@ reviewed both exact GIFs together and said `approved lets do next` on
 bounded branch is committed and pushed under the publication contract. With
 the 965 missing ignored Boss checkpoints copied from the approved Steppe lane,
 the complete 1,064-file local corpus also passes the full `npm.cmd run check`;
-all 232 public fixture sheets remain unchanged. The only authorized next lane
-is the separately isolated common Cast/Death alias gate for the three approved
-EN-E03 common variants.
-No EN-E03 family is selectable or public. Outside that bounded alias lane,
-other family motion,
+all 232 public fixture sheets remain unchanged. The separately isolated common
+Cast/Death alias gate for the three approved EN-E03 common variants now passes
+its focused gate: all 144
+approved Idle/Walk/Attack/Hurt context frames remain exact, 48 Cast frames
+alias Attack frame-for-frame, 48 Death frames alias Hurt H1,H2,H2,H2, no new
+sprite pixels exist, and all three families remain internal. Its four labeled
+three-family/all-four-direction review GIFs are ready together in raw and
+Complete B + Form modes. With the complete 1,064-file local Boss corpus, the
+full `npm.cmd run check` also passes and all 232 public sheets remain unchanged.
+The designer reviewed all four exact GIFs together and said `approved` on
+2026-08-07; the bounded branch is committed and pushed under the publication
+contract. No EN-E03 family is selectable or public. Other family motion,
 specialist or elite variants, registration, effects, release, and every later
 gate remain unauthorized.
 
