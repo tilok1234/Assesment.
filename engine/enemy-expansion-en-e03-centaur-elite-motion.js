@@ -58,9 +58,11 @@ export const EN_E03_BANNER_KHAN_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
 
 export const EN_E03_BANNER_KHAN_MOTION_GATE = deepFreeze({
   id: 'en-e03-banner-khan-motion-v1',
-  status: 'awaiting-designer-approval',
+  status: 'approved',
   authorizedOn: '2026-08-07',
   authorizationEvidence: 'After the exact Banner Khan Idle r3 baseline was approved, committed, pushed, and reconciled, the designer said: lets keep going. The published pass-size guidance explicitly groups the remaining Banner Khan Walk, Attack, Hurt, and Cast/Death work into one larger follow-up review.',
+  approvedOn: '2026-08-08',
+  approvalEvidence: 'Designer reviewed both exact labeled all-four-direction raw and Complete B + Form Banner Khan motion-suite GIFs together and said: approved.',
   approvedIdle: {
     gateId: EN_E03_BANNER_KHAN_IDLE_GATE.id,
     artifactSha256: EN_E03_BANNER_KHAN_IDLE_GATE.artifactSha256,
@@ -127,7 +129,7 @@ export const EN_E03_BANNER_KHAN_MOTION_GATE = deepFreeze({
     'release',
     'later EN-E03 work',
   ],
-  nextGate: 'Show both exact paired motion-suite review surfaces and wait for explicit designer approval. Do not commit, push, register, integrate, add effects, release, or begin later EN-E03 work before that visual gate resolves.',
+  nextGate: 'Visual approval and bounded publication are complete for this Banner Khan motion lane. No later animation, variant, registration, integration, effect, release, or EN-E03 work is authorized without a separate explicit continuation.',
 });
 
 function clampPixel(value) {

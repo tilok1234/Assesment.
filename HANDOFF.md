@@ -23,7 +23,9 @@ is authorized.
   `tools/build-enemy-expansion-en-e03-banner-khan-motion-gifs.py`, and
   `tools/check-enemy-expansion-en-e03-banner-khan-motion.mjs`, plus package and
   documentation updates. Review artifacts remain ignored. The checkout is
-  synchronized with its upstream after this docs-only reconciliation.
+  synchronized with its upstream after this docs-only reconciliation. A later
+  metadata-only reconciliation makes the live gate object and focused checker
+  record the exact 2026-08-08 approval; it changes no sprite pixels.
 - Gate: `en-e03-banner-khan-motion-v1`, status `approved`, internal and
   non-public. Scope is Banner Khan
   Walk W1-W4, Attack A1-A4, Hurt H1-H2, Cast C1-C4, and Death D1-D4 in Down,

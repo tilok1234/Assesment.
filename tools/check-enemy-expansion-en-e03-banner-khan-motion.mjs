@@ -119,9 +119,11 @@ function pixelsEqual(first, second) {
   return JSON.stringify(first.pixels) === JSON.stringify(second.pixels);
 }
 
-check(EN_E03_BANNER_KHAN_MOTION_GATE.status === 'awaiting-designer-approval', 'the grouped Banner Khan motion gate must remain pending explicit visual approval');
+check(EN_E03_BANNER_KHAN_MOTION_GATE.status === 'approved', 'the grouped Banner Khan motion gate must retain exact visual approval');
 check(EN_E03_BANNER_KHAN_MOTION_GATE.authorizedOn === '2026-08-07', 'the grouped motion gate must retain its authorization date');
 check(EN_E03_BANNER_KHAN_MOTION_GATE.authorizationEvidence.includes('lets keep going') && EN_E03_BANNER_KHAN_MOTION_GATE.authorizationEvidence.includes('one larger follow-up review'), 'the gate must retain the exact continuation evidence and grouped-pass boundary');
+check(EN_E03_BANNER_KHAN_MOTION_GATE.approvedOn === '2026-08-08', 'the grouped Banner Khan motion approval date must remain frozen');
+check(EN_E03_BANNER_KHAN_MOTION_GATE.approvalEvidence === 'Designer reviewed both exact labeled all-four-direction raw and Complete B + Form Banner Khan motion-suite GIFs together and said: approved.', 'the grouped gate must retain the exact paired-GIF approval evidence');
 check(EN_E03_BANNER_KHAN_MOTION_GATE.approvedIdle.gateId === EN_E03_BANNER_KHAN_IDLE_GATE.id, 'the grouped gate must identify the approved Banner Khan Idle baseline');
 check(EN_E03_BANNER_KHAN_MOTION_GATE.approvedIdle.frameDigest === EN_E03_BANNER_KHAN_IDLE_GATE.candidateFrameDigest, 'the grouped gate must freeze the approved Banner Khan Idle digest');
 check(EN_E03_BANNER_KHAN_MOTION_GATE.approvedIdle.publishedCheckpoint === '55143049b4153e34fcdaad0ea434932ba0f2d0fd', 'the grouped gate must retain the published Banner Khan Idle checkpoint');
@@ -131,7 +133,7 @@ check(EN_E03_BANNER_KHAN_MOTION_GATE.approvedMotionSources.hurt.gateId === EN_E0
 check(EN_E03_BANNER_KHAN_MOTION_GATE.scope.includes('Walk W1-W4') && EN_E03_BANNER_KHAN_MOTION_GATE.scope.includes('Death D1-D4') && EN_E03_BANNER_KHAN_MOTION_GATE.scope.includes('Idle F1-F2 delegated byte-for-byte'), 'the grouped gate must state the exact complete motion scope and protected Idle context');
 check(EN_E03_BANNER_KHAN_MOTION_GATE.animationContract.includes('Cast aliases the Banner Khan Attack frame-for-frame') && EN_E03_BANNER_KHAN_MOTION_GATE.animationContract.includes('Death aliases Banner Khan Hurt H1,H2,H2,H2'), 'the grouped gate must retain exact Cast and Death alias contracts');
 check(EN_E03_BANNER_KHAN_MOTION_GATE.exclusions.includes('approved Banner Khan Idle pixel changes') && EN_E03_BANNER_KHAN_MOTION_GATE.exclusions.includes('new Cast pixels') && EN_E03_BANNER_KHAN_MOTION_GATE.exclusions.includes('new Death pixels') && EN_E03_BANNER_KHAN_MOTION_GATE.exclusions.includes('registration') && EN_E03_BANNER_KHAN_MOTION_GATE.exclusions.includes('release'), 'the grouped gate must exclude approved-pixel changes, new alias pixels, integration, and release');
-check(EN_E03_BANNER_KHAN_MOTION_GATE.nextGate.includes('wait for explicit designer approval') && EN_E03_BANNER_KHAN_MOTION_GATE.nextGate.includes('Do not commit, push'), 'the grouped gate must stop at paired visual review before publication or later work');
+check(EN_E03_BANNER_KHAN_MOTION_GATE.nextGate.includes('Visual approval and bounded publication are complete') && EN_E03_BANNER_KHAN_MOTION_GATE.nextGate.includes('No later animation, variant, registration, integration, effect, release, or EN-E03 work is authorized'), 'the approved grouped gate must stop before later work without a separate continuation');
 check(Object.isFrozen(EN_E03_BANNER_KHAN_MOTION_GATE) && Object.isFrozen(EN_E03_BANNER_KHAN_MOTION_GATE.approvedMotionSources) && Object.isFrozen(EN_E03_BANNER_KHAN_MOTION_GATE.exclusions), 'the grouped gate must be deeply immutable');
 
 check(EN_E03_BANNER_KHAN_MOTION_REGISTRY.families.length === 1, 'the grouped registry must contain exactly one family');
