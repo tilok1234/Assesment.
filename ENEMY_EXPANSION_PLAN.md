@@ -39,19 +39,29 @@
   The resulting bounded Hill Breaker common Attack A1-A4 implementation was
   approved on the exact labeled four-direction raw and Complete B + Form
   animations on 2026-08-07 with `Very good approved`. The designer then said
-  `Cool let's keep going`, authorizing only Steppe Hunter common Attack A1-A4,
-  and approved both exact labeled all-four-direction raw/no-outline and
-  Complete B + Form GIFs together on 2026-08-07 with `Approved`.
+   `Cool let's keep going`, authorizing only Steppe Hunter common Attack A1-A4,
+   and approved both exact labeled all-four-direction raw/no-outline and
+   Complete B + Form GIFs together on 2026-08-07 with `Approved`. After that
+   bounded lane was committed and pushed, the designer said `lets keep going`,
+   authorizing only Briar Reveler common Attack A1-A4 across all four directions.
+   That isolated review candidate, focused checker, deterministic boards, and
+   dual labeled GIFs now exist and pass. The designer reviewed both exact
+   labeled all-four-direction raw and Complete B + Form animations together and
+   said `very good! approved` on 2026-08-07. The exact bounded lane is approved,
+   internal, non-public, committed, and pushed; no later EN-E03 gate is
+   authorized.
 - Recorded: 2026-08-04
 - Post-cleanup reconciliation: 2026-08-07
 - Assessment baseline: clean synchronized `main` at `f5476a2`
 - Preserved implementation checkpoint: `codex/en-e03` at `8ea019b`
-- Latest bounded continuation: `codex/en-e03-steppe-hunter-attack`, created from
-  clean
-  reconciled checkpoint `ec525b658c2e7d061bc511858b9102cd026c6be0` and
-  populated with the exact approved EN-E03 continuation lane before adding only
-  Steppe Hunter Attack A1-A4; visually approved, internal, committed, and pushed
-  under the approval-publication contract; later continuation remains gated
+- Preceding approved checkpoint: `codex/en-e03-steppe-hunter-attack` at
+  `c567a426fa6d5175395c2b035f65b12b5a5dd1cb`; visually approved, internal,
+  committed, and pushed under the approval-publication contract
+- Current approved branch: `codex/en-e03-briar-reveler-attack`, created
+  exactly from `c567a426fa6d5175395c2b035f65b12b5a5dd1cb` and adding only Briar
+  Reveler Attack A1-A4; visually approved, internal, non-public, committed, and
+  pushed under the approval-publication contract, with no later continuation
+  authorized
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
 
 ## Purpose
@@ -121,7 +131,10 @@ Complete B + Form animations on 2026-08-07 with `Very good approved`, then said
 That isolated candidate and its mandatory dual four-direction review evidence
 pass technically. The designer reviewed both exact labeled all-four-direction
 raw/no-outline and Complete B + Form GIFs together and said `Approved` on
-2026-08-07. No later gate is authorized.
+2026-08-07. After that bounded lane was committed and pushed, `lets keep going`
+authorized only Briar Reveler common Attack A1-A4. Its focused gate and exact
+dual labeled animations pass, and the designer reviewed both together and said
+`very good! approved` on 2026-08-07. No later EN-E03 gate is authorized.
 
 ## Intake Assessment
 
@@ -537,10 +550,11 @@ authorized only Briar Reveler F1 across four directions. The designer approved
 that exact F1 raw and Complete B + Form pair with `looks good.`, then authorized
 only its F2 continuation with `lets go next`. The designer approved the exact
 resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
-approved all three common Walk baselines, Hill Breaker common Attack A1-A4, and
-then Steppe Hunter common Attack A1-A4. Do not implement Hurt, other family
-motion, specialist/elite variants, registration, consumer routing, separate
-effects, release work, or any later EN-E03 step.
+  approved all three common Walk baselines, Hill Breaker common Attack A1-A4, and
+  then Steppe Hunter common Attack A1-A4. The subsequent `lets keep going`
+  authorizes only Briar Reveler common Attack A1-A4. Do not implement Hurt,
+  other family motion, specialist/elite variants, registration, consumer
+  routing, separate effects, release work, or any later EN-E03 step.
 
 ### EN-E03 - Large and hybrid walkers
 
@@ -548,10 +562,12 @@ effects, release work, or any later EN-E03 step.
   two-frame Idle baselines `approved` and internal; Hill Breaker Walk W1-W4
   `approved` and internal; Steppe Hunter Walk W1-W4 `approved` and internal;
   Briar Reveler Walk W1-W4 `approved` and internal; Hill Breaker Attack A1-A4
-  `approved` and internal; Steppe Hunter Attack A1-A4 `approved` and internal
+  `approved` and internal; Steppe Hunter Attack A1-A4 `approved` and internal;
+  Briar Reveler Attack A1-A4 `approved` and internal
 - Families: Giant, Centaur, Satyr
-- Active gate: none; the next bounded EN-E03 gate requires explicit designer
-  authorization
+- Active gate: none; Briar Reveler common Attack A1-A4 completed direct review
+  on both labeled raw and Complete B + Form GIFs, and no later EN-E03 gate is
+  authorized
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -910,6 +926,58 @@ routing, effects, release, and every later EN-E03 step remain unauthorized.
   remains mandatory for future normal reviews. Commit and push this bounded
   approved lane under the standing publication rule; do not register or begin
   any later EN-E03 gate without separate authorization.
+
+#### Approved Briar Reveler Attack baseline
+
+The designer's `lets keep going`, given after the approved Steppe Hunter Attack
+lane was committed and pushed, authorizes only Briar Reveler common Attack A1-A4
+across Down, Left, Right, and Up while preserving every approved Briar Reveler
+Idle and Walk frame byte-for-byte.
+
+- Gate ID: `en-e03-briar-reveler-attack-v1`; status: `approved` on 2026-08-07
+  and internal/non-public.
+- Approval evidence: the designer reviewed both exact labeled
+  all-four-direction raw and Complete B + Form animations together and said
+  `very good! approved`.
+- Worktree and branch:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-briar-reveler-attack` on
+  `codex/en-e03-briar-reveler-attack`, created exactly from pushed approved
+  checkpoint `c567a426fa6d5175395c2b035f65b12b5a5dd1cb`.
+- Source: `engine/enemy-expansion-en-e03-satyr-attack.js`.
+- Focused checker and package command:
+  `tools/check-enemy-expansion-en-e03-satyr-attack.mjs` and
+  `npm.cmd run check:enemy-expansion-en-e03-satyr-attack`.
+- Review generator and package command:
+  `tools/enemy-expansion-en-e03-satyr-attack-review.mjs` and
+  `npm.cmd run review:enemy-expansion-en-e03-satyr-attack`.
+- Labeled raw review animation: `192x224`, four `120ms` frames, SHA-256
+  `1625c6db6759cb4a20ea4521ef1a4b04199813f2dc75e2e0db2fa5e4a54241d9`.
+- Labeled Complete B + Form review animation: `192x224`, four `120ms` frames,
+  SHA-256
+  `5efb83b879f1cbe130075db722f9d26762180b4e00945941465d0dbb8304886a`.
+- Raw board: `1950x870`, SHA-256
+  `ac7ca315dfdd65b378c5db42623bf4013b961c0ebf1f22c0045803f14dcb9abb`.
+- Complete B + Form board: `1950x870`, SHA-256
+  `4d97b61111bcf293d024a01201677fb10ba54bdf496fa0264df5abb78f5a54ab`.
+- Candidate 16-frame digest:
+  `9545779f0d39c16f1fedaf581ad1f5dee8b6ce0b79d35ce23a66e81375c32270`;
+  delegated Idle digest
+  `0d5599dcd452351903e5d56289596d2e75f59caf5c0b7a5525c7e375c39b36fa`;
+  delegated Walk digest
+  `409b08eb3bd121dec5e8234c49e2fe11d374b73bf501648852adae2ae4ab5755`.
+- A1 braces/draws back, A2 lifts, A3 drives a diagonal whole-body strike, and
+  A4 recovers to guard. The focused gate passes 16 connected hard-alpha
+  body-and-staff silhouettes, planted split-hoof anchors, four distinct poses
+  per direction, exact side mirroring, distinct Down/Up depth, 2,030 Complete B
+  additions, 1,922 Form source changes, exact approved Idle/Walk delegation,
+  and zero public exposure.
+- With the 965 missing ignored Boss checkpoints copied from the approved Steppe
+  Hunter lane, the full `npm.cmd run check` passes against the exact 1,064-file
+  local corpus; the 57-family / 202-variant legacy catalog and all 232 fixture
+  sheets remain unchanged.
+- The exact bounded approval branch is committed and pushed under the standing
+  publication rule. Do not implement Hurt, add variants, register, expose, or
+  begin a later EN-E03 gate without separate explicit authorization.
 
 ### EN-E04 - Serpentine and aquatic peoples
 

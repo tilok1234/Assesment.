@@ -266,9 +266,23 @@ side-profile bounds and visual weight, at least three front/back hip-and-upper-
 leg phases, exact front/back foot anchors, frozen raw/Complete B + Form boards
 and digest, and zero public exposure. Its gate also freezes the exact labeled
 four-direction raw and Complete B + Form GIFs approved by the designer on
-2026-08-07. Additional
-Giant/Centaur/Satyr motion, specialist/elite implementation, registration, and
-consumers remain blocked.
+2026-08-07. The active
+`engine/enemy-expansion-en-e03-satyr-attack.js` continuation delegates the
+approved Briar Reveler Idle and Walk registries byte-for-byte and adds only
+common A1-A4. It renders the native humanoid Attack upper body into a private
+24x24 buffer, replaces only the lower stance with four planted split-hoof/hock
+poses, and composes a cardinally connected crooked staff plus counter-sweeping
+tail. A1 braces and draws back, A2 lifts, A3 moves torso and hocks into a
+diagonal strike, and A4 returns to guard. Down and Up use separate staff-depth
+routing, Up explicitly covers the shared front-expression pixel, and Left is an
+exact mirror of Right. Its frozen approved gate enforces 16 connected
+hard-alpha body-and-staff silhouettes, four distinct poses per direction, exact
+hoof anchors, at least three body/lower-identity phases, one-cell margins,
+deterministic raw/Complete B + Form boards and labeled GIFs, and zero public
+exposure. Separate gate metadata records the designer's direct approval of both
+exact labeled all-four-direction raw and Complete B + Form animations on
+2026-08-07. Hurt, other Giant/Centaur/Satyr motion, specialist/elite
+implementation, registration, and consumers remain blocked.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -592,6 +606,18 @@ Complete B + Form boards. The separately hashed `192x224` labeled GIF pair was
 the direct visual-review surface approved on 2026-08-07; technical checks remain
 structural evidence rather than the source of that approval.
 
+The nested `npm run check:enemy-expansion-en-e03-satyr-attack` gate validates
+the approved Briar Reveler Attack baseline across 16 A1-A4 frames while
+delegating all 8 approved Idle and 16 approved Walk frames byte-for-byte. It
+requires one connected body-and-staff silhouette, planted split-hoof anchors,
+four distinct staff/silhouette poses per direction, at least three torso/hock/
+tail phases, exact side mirroring, distinct Down/Up depth, one-cell margins,
+binary alpha, frozen board/GIF hashes, and zero facade/public exposure. Its
+paired generator reproduces both deterministic `1950x870` boards and the eight
+`192x224` labeled animation-panel PNGs used for the required raw and Complete B
++ Form GIF pair. Passing remains structural evidence; the exact GIF pair was
+separately approved by the designer on 2026-08-07 with `very good! approved`.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct
@@ -601,9 +627,9 @@ and absence from production renderer, generator, persistence, game-pack, and
 ordinary sheet dependencies.
 
 The full `npm run check` also expects a complete ignored local Boss
-review-checkpoint corpus. It passes on both the approved Hill Breaker Attack
-branch and the approved Steppe Hunter Attack branch when that 1,064-file
-corpus is present, but a fresh worktree stops in the two Boss subprocesses
+review-checkpoint corpus. It passes on the approved Hill Breaker, Steppe Hunter
+Attack, and Briar Reveler Attack branches when
+that 1,064-file corpus is present, but a fresh worktree stops in the two Boss subprocesses
 because 965 optional checkpoint PNGs are absent. The separate
 `codex/clean-clone-check` candidate at `125b0b3` is unvalidated and is not part
 of this architecture checkpoint.

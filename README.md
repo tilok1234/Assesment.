@@ -25,8 +25,8 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
   common-only Idle attempts, three separately approved internal F1/F2 Idle
   baselines for Hill Breaker, Steppe Hunter, and Briar Reveler, the approved
   internal Hill Breaker, Steppe Hunter, and Briar Reveler four-frame Walks, plus
-  the approved Hill Breaker common Attack A1-A4 baseline; none is selectable
-  consumer content
+  the approved Hill Breaker, Steppe Hunter, and Briar Reveler common Attack
+  A1-A4 baselines; none is selectable consumer content
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -219,10 +219,19 @@ least three horse-body weight phases per direction, true Down/Up attacks, exact
 side mirroring, frozen raw and Complete B + Form evidence, and zero public
 exposure. The designer reviewed both exact labeled four-direction GIFs together
 and said `Approved` on 2026-08-07. Steppe Hunter Attack is now an approved
-internal baseline. No EN-E03 family is selectable or public. Hurt, additional
-Giant/Centaur/Satyr motion beyond this bounded approval,
-specialist or elite variants, registration, effects, release, and every later
-gate remain unauthorized.
+internal baseline and its branch is committed and pushed. The designer then
+said `lets keep going`, authorizing only Briar Reveler common Attack A1-A4 across
+Down, Left, Right, and Up while preserving approved Idle and Walk byte-for-byte.
+That isolated review candidate passes its focused 16-frame gate with connected
+body-and-staff silhouettes, planted split hooves, four distinct phases per
+direction, full torso/hock/tail/staff motion, exact side mirroring, distinct
+front/back depth, frozen dual-presentation evidence, and zero public exposure.
+The designer reviewed both exact labeled all-four-direction raw and Complete B
++ Form animations together and said `very good! approved` on 2026-08-07. Briar
+Reveler Attack is now an approved internal baseline and its matching branch is
+committed and pushed under the approval-publication contract. No EN-E03 family
+is selectable or public. Hurt, additional motion, specialist or elite variants,
+registration, effects, release, and every later gate remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
@@ -365,8 +374,8 @@ Double-click `check-project.bat`, or run:
 npm run check
 ```
 
-On both the approved Hill Breaker Attack branch and the approved Steppe Hunter
-Attack branch, the full command passes when the complete local Boss
+On the approved Hill Breaker, Steppe Hunter Attack, and Briar Reveler Attack
+branches, the full command passes when the complete local Boss
 review-checkpoint corpus is present. A fresh worktree lacks 965 ignored
 checkpoint PNGs and stops only in the Boss direction and animation subprocesses;
 copying only those missing ignored files from the preserved corpus brings the
@@ -542,7 +551,17 @@ horned frames, split-hoof contacts, three distinct contact/silhouette poses per
 direction with only W2/W4 shared, exact side mirroring, exact delegation of all
 eight approved Idle frames, the no-eye rear-head pixel in all four Up frames,
 frozen PNG/digest values, and zero public exposure. Its gate metadata records
-the corrected animation approval on 2026-08-06.
+the corrected animation approval on 2026-08-06. Run
+`npm run check:enemy-expansion-en-e03-satyr-attack` and
+`npm run review:enemy-expansion-en-e03-satyr-attack` for the approved internal
+Briar Reveler Attack baseline. It preserves all 8 approved Idle and 16
+approved Walk frames byte-for-byte, validates 16 connected hard-alpha
+body-and-staff silhouettes with planted split-hoof anchors, four distinct poses
+per direction, exact side mirroring, distinct Down/Up depth, frozen board/GIF
+hashes, and zero facade or public exposure. Passing proves structure and
+reproducibility; its gate metadata separately freezes the direct designer
+approval of both exact labeled all-four-direction raw and Complete B + Form
+GIFs on 2026-08-07.
 
 The validator checks JavaScript syntax, the engine-to-manifest contract, every referenced asset, unexpected PNG files, exact native export dimensions, character-pack ZIP structure, Master Character Kit coverage and layer order, the dimensions of all committed sheets, zero out-of-canvas writes across all 6,000 weapon animation cases, 12,800 shield cases across all four body builds, 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases. The shade gate adds 480 broad player None-parity cases, all 16,160 enemy None-parity frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. These cases verify source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, floor-shadow parity, 158,872 visible Form changes, and 35,333 material-aware differences from a silhouette-only control without accepting a visual baseline.
 
@@ -847,6 +866,9 @@ awaits explicit visual approval before any animation work.
 - `engine/enemy-expansion-en-e03-satyr-walk.js` - approved internal Briar
   Reveler Walk W1-W4 baseline; it delegates approved Idle exactly,
   rejects later motion/families, and is absent from the public facade
+- `engine/enemy-expansion-en-e03-satyr-attack.js` - approved internal Briar
+  Reveler Attack A1-A4 baseline; it delegates approved Idle and Walk
+  exactly, rejects later motion/families, and is absent from the public facade
 - `tools/check-enemy-expansion.mjs` - focused legacy-equivalence, registry,
   review-targeting, and malformed-sheet gate
 - `tools/check-enemy-expansion-en-e01.mjs` and
@@ -884,6 +906,10 @@ awaits explicit visual approval before any animation work.
   `tools/enemy-expansion-en-e03-satyr-walk-review.mjs` - focused 16-frame
   split-hoof Walk gate and deterministic raw/Complete B + Form evidence for the
   approved internal Briar Reveler baseline
+- `tools/check-enemy-expansion-en-e03-satyr-attack.mjs` and
+  `tools/enemy-expansion-en-e03-satyr-attack-review.mjs` - focused 16-frame
+  body-and-staff Attack gate plus deterministic labeled raw and Complete B +
+  Form review evidence for the approved internal Briar Reveler baseline
 - `tools/check-enemy-expansion-en-e01-full.mjs` and
   `tools/enemy-expansion-en-e01-full-review.mjs` - exhaustive 1,200-frame
   private-candidate gate and completed-slice review bundle generator

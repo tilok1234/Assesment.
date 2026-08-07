@@ -70,8 +70,16 @@ far from the established roster style. Both implementations remain reproducible
   implementation candidate, checker, deterministic boards, and required dual
   labeled review GIFs now exist and pass the focused gate. The designer reviewed
   both exact labeled all-four-direction GIFs together and said `Approved` on
-  2026-08-07. Steppe Hunter Attack is now an approved internal baseline; no
-  later EN-E03 gate is authorized.
+  2026-08-07. Steppe Hunter Attack is now an approved internal baseline. After
+  that exact lane was committed and pushed, the designer said `lets keep going`,
+  authorizing only Briar Reveler common Attack A1-A4 across Down, Left, Right,
+  and Up while preserving its approved Idle and Walk byte-for-byte. That
+  isolated candidate, focused checker, deterministic boards, and required dual
+  labeled GIFs now exist and pass. The designer reviewed both exact labeled
+  all-four-direction raw and Complete B + Form animations and said `very good!
+  approved` on 2026-08-07. Briar Reveler Attack is now an approved internal
+  baseline; this bounded lane is committed and pushed under the standing
+  approval-publication contract. No later EN-E03 gate is authorized.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -85,8 +93,10 @@ hashes, and the separate clean-clone-check candidate. Historical measurements
 remain where explicitly labeled. `README.md`, `ARCHITECTURE.md`, `ROADMAP.md`,
 `ENEMY_EXPANSION_PLAN.md`, and this file now agree that all three common Walk
 baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
-and non-public. Steppe Hunter common Attack A1-A4 is also visually approved,
-internal, and non-public. No later EN-E03 gate is currently authorized.
+  and non-public. Steppe Hunter common Attack A1-A4 is also visually approved,
+  internal, and non-public. Briar Reveler common Attack A1-A4 is also visually
+  approved, internal, non-public, and published on its matching approval branch.
+  No Hurt, variants, registration, or later EN-E03 work is authorized.
 
 ## Visual Review Presentation Contract
 
@@ -112,6 +122,14 @@ explicitly says to hold publication, that narrower instruction wins.
 
 ## Canonical Workspace And Git State
 
+- Approved Briar Reveler Attack worktree:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-briar-reveler-attack`
+- Approval branch: `codex/en-e03-briar-reveler-attack`, created exactly from
+  pushed approved Steppe Hunter checkpoint
+  `c567a426fa6d5175395c2b035f65b12b5a5dd1cb`. It contains only the bounded
+  Briar Reveler Attack continuation, records its exact direct visual approval,
+  and is committed and pushed to the matching origin branch under the standing
+  approval-publication contract.
 - Approved Steppe Hunter Attack worktree:
   `C:\tmp\8-bit-sprite-assembler-en-e03-steppe-hunter-attack`
 - Approval branch: `codex/en-e03-steppe-hunter-attack`, created exactly from
@@ -295,9 +313,12 @@ A1-A4. The designer then approved the exact labeled four-direction raw and
 Complete B + Form Hill Breaker Attack animations on 2026-08-07 with `Very good
 approved`. Preserve all approved Idle, Walk, and Hill Breaker Attack baselines
 exactly. The subsequent `Cool let's keep going` authorizes only Steppe Hunter
-common Attack A1-A4, now visually approved as an exact internal baseline. Hurt,
-later Giant/Centaur/Satyr motion, specialist/elite variants, registration,
-consumers, effects, release, and every later gate remain unauthorized.
+  common Attack A1-A4, now visually approved as an exact internal baseline. The
+  subsequent `lets keep going` authorizes only Briar Reveler common Attack A1-A4
+  across the same four directions while preserving approved Idle and Walk
+  byte-for-byte. Hurt, other Giant/Centaur/Satyr motion, specialist/elite
+  variants, registration, consumers, effects, release, and every later gate
+  remain unauthorized.
 
 ### Approved Hill Breaker Walk Baseline
 
@@ -538,6 +559,61 @@ consumers, effects, release, and every later gate remain unauthorized.
   remains mandatory for future normal reviews. Commit and push this bounded
   approved lane under the standing publication rule; do not register it or
   begin a later gate without separate authorization.
+
+### Approved Briar Reveler Attack Baseline
+
+- Gate ID: `en-e03-briar-reveler-attack-v1`; current status:
+  `approved`, internal, and non-public on 2026-08-07.
+- Authorization evidence: after the approved Steppe Hunter Attack lane was
+  committed and pushed, the designer said `lets keep going` on 2026-08-07.
+- Approval evidence: the designer reviewed both exact labeled
+  all-four-direction raw and Complete B + Form animations together and said
+  `very good! approved` on 2026-08-07.
+- Scope: Briar Reveler common Attack A1-A4 across Down, Left, Right, and Up
+  only, with all 8 approved Idle and 16 approved Walk frames delegated
+  byte-for-byte.
+- Worktree and branch:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-briar-reveler-attack` on
+  `codex/en-e03-briar-reveler-attack`, created exactly from pushed checkpoint
+  `c567a426fa6d5175395c2b035f65b12b5a5dd1cb`.
+- Source: `engine/enemy-expansion-en-e03-satyr-attack.js`.
+- Focused checker:
+  `tools/check-enemy-expansion-en-e03-satyr-attack.mjs` via
+  `npm.cmd run check:enemy-expansion-en-e03-satyr-attack`.
+- Review generator:
+  `tools/enemy-expansion-en-e03-satyr-attack-review.mjs` via
+  `npm.cmd run review:enemy-expansion-en-e03-satyr-attack`.
+- Labeled raw animation:
+  `enemy-expansion-review/en-e03-satyr-attack/en-e03-briar-reveler-attack-four-directions-labeled-v1.gif`,
+  `192x224`, four `120ms` frames / `0.48s` loop, SHA-256
+  `1625c6db6759cb4a20ea4521ef1a4b04199813f2dc75e2e0db2fa5e4a54241d9`.
+- Labeled Complete B + Form animation:
+  `enemy-expansion-review/en-e03-satyr-attack/en-e03-briar-reveler-attack-four-directions-labeled-complete-b-form-v1.gif`,
+  `192x224`, four `120ms` frames / `0.48s` loop, SHA-256
+  `5efb83b879f1cbe130075db722f9d26762180b4e00945941465d0dbb8304886a`.
+- Raw board:
+  `enemy-expansion-review/en-e03-satyr-attack/en-e03-briar-reveler-attack-raw.png`,
+  `1950x870`, SHA-256
+  `ac7ca315dfdd65b378c5db42623bf4013b961c0ebf1f22c0045803f14dcb9abb`.
+- Complete B + Form board:
+  `enemy-expansion-review/en-e03-satyr-attack/en-e03-briar-reveler-attack-complete-b-form.png`,
+  `1950x870`, SHA-256
+  `4d97b61111bcf293d024a01201677fb10ba54bdf496fa0264df5abb78f5a54ab`.
+- Candidate 16-frame digest:
+  `9545779f0d39c16f1fedaf581ad1f5dee8b6ce0b79d35ce23a66e81375c32270`.
+- Delegated approved Idle digest remains exact at
+  `0d5599dcd452351903e5d56289596d2e75f59caf5c0b7a5525c7e375c39b36fa`;
+  delegated approved Walk digest remains exact at
+  `409b08eb3bd121dec5e8234c49e2fe11d374b73bf501648852adae2ae4ab5755`.
+- A1 braces and draws the crooked staff back, A2 lifts through torso and hocks,
+  A3 drives a diagonal full-body strike, and A4 settles to guard. The focused
+  gate passes 16 connected hard-alpha body-and-staff silhouettes, exact side
+  mirroring, planted split-hoof anchors, four distinct poses per direction,
+  front/back depth distinction, 2,030 Complete B additions, 1,922 Form source
+  changes, exact approved Idle/Walk delegation, and zero public exposure.
+- Visual approval is complete and the bounded branch is published. Stop here:
+  do not implement Hurt, add variants, register, expose, or begin a later
+  EN-E03 gate without separate explicit authorization.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -816,6 +892,39 @@ release candidate. `npm run check:release -- --require-artifact` intentionally
 requires the NSIS installer and is not satisfied by the standalone proof.
 
 ## Validation Evidence For This Handoff
+
+Current focused validation from the isolated Briar Reveler Attack worktree on
+2026-08-07:
+
+```powershell
+node --check engine/enemy-expansion-en-e03-satyr-attack.js
+node --check tools/check-enemy-expansion-en-e03-satyr-attack.mjs
+node --check tools/enemy-expansion-en-e03-satyr-attack-review.mjs
+npm.cmd run review:enemy-expansion-en-e03-satyr-attack
+npm.cmd run check:enemy-expansion-en-e03-satyr-attack
+git diff --check
+```
+
+Current Briar Reveler Attack results:
+
+- one internal family / one variant / 16 Attack frames;
+- 16/16 connected hard-alpha body-and-staff silhouettes, planted split-hoof
+  checks, distinct directional silhouettes, and one-cell margins;
+- four distinct staff poses and at least three torso/hock/tail phases per
+  direction, exact left/right mirroring, and distinct Down/Up depth silhouettes;
+- all 8 approved Briar Reveler Idle and 16 approved Walk frames remain exact;
+- Complete B adds 2,030 pixels and Form changes 1,922 source pixels;
+- both deterministic `1950x870` board hashes and the 16-frame digest reproduce;
+- both required labeled `192x224` four-direction GIFs use four `120ms` frames
+  and reproduce the frozen hashes recorded above; and
+- public EN-E03 families remain zero;
+- after copying only the 965 missing ignored Boss review PNGs from the approved
+  Steppe Hunter worktree, the full `npm.cmd run check` passes with the exact
+  1,064-file corpus, including 57 legacy Enemy families / 202 variants, 16,160
+  Enemy Form cases, 12,560 repaired-Enemy frame-safety cases, and all 232
+  committed fixture sheets; and
+- the exact raw and Complete B + Form GIF pair received direct designer approval
+  on 2026-08-07 with `very good! approved`.
 
 Current focused revalidation from the isolated Steppe Hunter Attack worktree on
 2026-08-07:
@@ -1333,8 +1442,10 @@ Hunter, and Briar Reveler Walk are approved, hash-frozen, internal, and
 non-public. Hill Breaker common Attack A1-A4 is also approved, hash-frozen,
 internal, and non-public. Steppe Hunter common Attack A1-A4 is also approved,
 hash-frozen, internal, and non-public. Their exact bounded state is published
-through `codex/en-e03-steppe-hunter-attack`; no later EN-E03 gate is authorized
-and no public registry changed.
+through `codex/en-e03-steppe-hunter-attack`. Briar Reveler common Attack A1-A4
+is also approved, hash-frozen, internal, and non-public; its exact bounded state
+is published through `codex/en-e03-briar-reveler-attack`. No later EN-E03 gate
+is authorized and no public registry changed.
 
 ## Frozen Boundaries
 
@@ -1360,9 +1471,12 @@ Unless the designer explicitly changes scope:
 - preserve the exact approved Steppe Hunter common Attack A1-A4 hashes, pixels,
   and raw/Complete B + Form review evidence while keeping approved Idle and
   Walk byte-for-byte;
-- do not begin Hurt, other Giant/Centaur/Satyr motion beyond the approved
-  Attack baselines, Cast, Death, variants, registration, consumers, effects,
-  release, or any later EN-E03 work without another explicit gate;
+- preserve the exact approved Briar Reveler common Attack A1-A4 hashes, pixels,
+  and raw/Complete B + Form review evidence while keeping approved Idle and
+  Walk byte-for-byte;
+- do not begin Hurt, other Giant/Centaur/Satyr motion, Cast, Death, variants,
+  registration, consumers, effects, release, or any later EN-E03 work without
+  another explicit gate;
 - do not modify the archived `wip/19-boss-review` checkout;
 - do not accept the Rhino/Unicorn direction candidates or the three animation
   candidates without direct visual review;
@@ -1406,10 +1520,16 @@ The safest opening request for the next chat is:
 > `C:\tmp\8-bit-sprite-assembler-en-e03-steppe-hunter-attack`; its focused
 > gate, deterministic boards, and labeled all-four-direction raw/Complete B +
 > Form GIFs pass. The designer reviewed both exact GIFs together and said
-> `Approved` on 2026-08-07. Do not begin Hurt, variants,
-> registration, effects, release, or later EN-E03 work. The approved branch
-> is committed and pushed under the approval-publication contract; no new gate
-> has been authorized.
+> `Approved` on 2026-08-07. The approved branch is committed and pushed under
+> the approval-publication contract. The designer then said `lets keep going`,
+> authorizing only Briar Reveler common Attack A1-A4. Resume
+> `codex/en-e03-briar-reveler-attack` in
+> `C:\tmp\8-bit-sprite-assembler-en-e03-briar-reveler-attack`; its focused gate,
+> deterministic boards, and labeled all-four-direction raw/Complete B + Form
+> GIFs pass. The designer reviewed both exact GIFs together and said `very good!
+> approved` on 2026-08-07. The bounded approval branch is committed and pushed.
+> Stop until the designer explicitly authorizes another gate; do not begin Hurt,
+> variants, registration, effects, release, or later EN-E03 work.
 
 EN-F00, EN-E01, EN-E02, and the seven-family repair are approved. The stable and
 consumer registries are the same ten-family / 30-variant repaired object through
@@ -1427,5 +1547,6 @@ internal, and non-public. Briar Reveler four-direction/four-frame Walk is also
 visually approved, hash-frozen, internal, and non-public after the corrected
 rear-view review. Hill Breaker common Attack A1-A4 is also visually approved,
 hash-frozen, internal, and non-public. Steppe Hunter common Attack A1-A4 is
-likewise visually approved, hash-frozen, internal, and non-public. No later
-EN-E03 gate is authorized; every later step remains gated.
+likewise visually approved, hash-frozen, internal, and non-public. Briar Reveler
+common Attack A1-A4 is likewise visually approved, hash-frozen, internal, and
+non-public. Every later step remains gated.
