@@ -97,6 +97,15 @@ far from the established roster style. Both implementations remain reproducible
   together and said `approved` on 2026-08-07. Steppe Hunter Hurt is now an
   approved internal/non-public baseline, and its bounded lane is committed and
   pushed under the approval-publication contract.
+  The designer then said `awesome lets do next`. Codex explicitly bounded that
+  continuation as Briar Reveler Hurt H1-H2 across all four directions while
+  preserving its 40 approved Idle/Walk/Attack frames. The focused gate, exact
+  raw and Complete B + Form boards, and both labeled four-direction GIFs pass.
+  The designer reviewed both exact GIFs together and said `approved lets do
+  next` on 2026-08-07. Briar Reveler Hurt is now an approved internal baseline;
+  its bounded lane is committed and pushed. Only the separate common
+  Cast/Death alias gate across the three approved EN-E03 common variants is
+  authorized next.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -116,8 +125,10 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   Hill Breaker Hurt H1-H2 is also visually approved, internal, non-public, and
   published on its matching approval branch. Steppe Hunter Hurt H1-H2 is also
   visually approved, internal, non-public, and published on its matching
-  approval branch. Other Hurt, variants,
-  Cast/Death aliases, registration, and later EN-E03 work remain unauthorized.
+  approval branch. Briar Reveler Hurt H1-H2 is likewise visually approved,
+  internal, non-public, and published on its matching branch. The separate
+  common Cast/Death alias gate is authorized next; variants, registration,
+  consumers, effects, release, and later EN-E03 work remain unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -760,6 +771,62 @@ exactly. The subsequent `Cool let's keep going` authorizes only Steppe Hunter
 - Both exact labeled all-four-direction GIFs are approved and the bounded
   branch is published. Cast/Death aliases, registration, other Hurt, variants,
   consumers, effects, release, and later EN-E03 work remain separately gated.
+
+### Approved Briar Reveler Hurt Baseline
+
+- Gate ID: `en-e03-briar-reveler-hurt-v1`; current status:
+  `approved`, internal, and non-public on 2026-08-07.
+- Authorization evidence: after both exact Steppe Hunter Hurt GIFs were
+  approved and that lane was committed and pushed, the designer said
+  `awesome lets do next`. Codex explicitly bounded the continuation as Briar
+  Reveler H1-H2 across Down, Left, Right, and Up, preserving all approved
+  Idle/Walk/Attack pixels and stopping for the paired review.
+- Approval evidence: the designer reviewed both exact labeled
+  all-four-direction raw and Complete B + Form animations together and said
+  `approved lets do next`.
+- Worktree and branch:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-briar-reveler-hurt` on
+  `codex/en-e03-briar-reveler-hurt`, created exactly from approved pushed
+  checkpoint `374d0b73c171c9f9f35b6d71f2f9e85f4dcdd7c1`.
+- Source: `engine/enemy-expansion-en-e03-satyr-hurt.js`; all 8 approved Idle,
+  16 approved Walk, and 16 approved Attack frames delegate byte-for-byte.
+- Focused checker:
+  `tools/check-enemy-expansion-en-e03-satyr-hurt.mjs` via
+  `npm.cmd run check:enemy-expansion-en-e03-satyr-hurt`.
+- Review generator:
+  `tools/enemy-expansion-en-e03-satyr-hurt-review.mjs` via
+  `npm.cmd run review:enemy-expansion-en-e03-satyr-hurt`.
+- Labeled raw animation:
+  `enemy-expansion-review/en-e03-satyr-hurt/en-e03-briar-reveler-hurt-four-directions-labeled.gif`,
+  `192x224`, two `140ms` frames / `0.28s` loop, SHA-256
+  `438056d9d9c195aff1ab429ead9164f9b98bfd89cf916ff8936d353ce3f713f9`.
+- Labeled Complete B + Form animation:
+  `enemy-expansion-review/en-e03-satyr-hurt/en-e03-briar-reveler-hurt-four-directions-labeled-complete-b-form.gif`,
+  `192x224`, two `140ms` frames / `0.28s` loop, SHA-256
+  `8b73e3f44c0a7ff94df0cdb8b167d44d32e20e0273275d824844045de0cddce1`.
+- Raw board:
+  `enemy-expansion-review/en-e03-satyr-hurt/en-e03-briar-reveler-hurt-raw.png`,
+  `1134x744`, SHA-256
+  `0b5cd11212e272ab29bdac3336155e7546b3e1e28299c7ce70c0a7232b6ba44d`.
+- Complete B + Form board:
+  `enemy-expansion-review/en-e03-satyr-hurt/en-e03-briar-reveler-hurt-complete-b-form.png`,
+  `1134x744`, SHA-256
+  `78bec5bc888515bad74578b4d08f381f4c25842e88e3b76c74697d3da48fdb74`.
+- Candidate eight-frame digest:
+  `3bc6bbd29189d8155784fa7499b355af1b826c44d0caf60b37db198cb7625030`.
+- The focused gate passes 8/8 connected distinct hard-alpha full-body Hurt
+  silhouettes, four fixed split-hoof tips, exact Left/Right mirrors, true
+  Down/Up depth, one-cell margins, the approved rear-head/no-side-eye treatment,
+  945 Complete B additions, 417 Form source changes, exact delegation of all
+  40 approved frames, and zero public EN-E03 families.
+- After copying only the 965 missing ignored Boss checkpoints from the approved
+  Steppe lane, the full `npm.cmd run check` passes against the complete
+  1,064-file local corpus and all 232 public fixture sheets remain unchanged.
+- Both exact labeled GIFs are approved and the bounded branch is committed and
+  pushed. The designer authorized continuation; Codex explicitly bounded only
+  a separate common Cast/Death alias gate across the three approved EN-E03
+  common variants. Do not broaden it into variants, registration, consumers,
+  effects, or release.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -1714,10 +1781,17 @@ The safest opening request for the next chat is:
 > mirroring, and its labeled all-four-direction raw and Complete B + Form GIFs
 > are ready together. The designer reviewed both exact GIFs together and said
 > `approved` on 2026-08-07. The bounded approval branch is committed and pushed.
-> Stop until the designer explicitly authorizes the next gate; do not begin
-> Cast/Death aliases,
-> other Hurt,
-> variants, registration, effects, release, or later EN-E03 work.
+> The designer then said `awesome lets do next`, authorizing the explicitly
+> bounded Briar Reveler Hurt H1-H2 lane. Resume
+> `codex/en-e03-briar-reveler-hurt` in
+> `C:\tmp\8-bit-sprite-assembler-en-e03-briar-reveler-hurt`, based exactly on
+> approved pushed checkpoint `374d0b73c171c9f9f35b6d71f2f9e85f4dcdd7c1`.
+> Its focused and full gates pass and both exact labeled raw and Complete B +
+> Form GIFs were approved with `approved lets do next` on 2026-08-07. The
+> bounded branch is committed and pushed. Continue only with a separate common
+> Cast-to-Attack / Death-to-Hurt alias gate across Hill Breaker, Steppe Hunter,
+> and Briar Reveler. Do not add new pixels, variants, registration, consumers,
+> effects, release, or later EN-E03 work.
 
 EN-F00, EN-E01, EN-E02, and the seven-family repair are approved. The stable and
 consumer registries are the same ten-family / 30-variant repaired object through

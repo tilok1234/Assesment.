@@ -654,6 +654,33 @@ paired generator reproduces both deterministic `1950x870` boards and the eight
 + Form GIF pair. Passing remains structural evidence; the exact GIF pair was
 separately approved by the designer on 2026-08-07 with `very good! approved`.
 
+`engine/enemy-expansion-en-e03-satyr-hurt.js` is the approved isolated Briar
+Reveler H1-H2 baseline. It delegates all 8 approved Idle, 16 approved
+Walk, and 16 approved Attack frames through the approved Satyr renderer chain,
+then authors only two Hurt frames. H1 flashes the complete connected horned
+body, tail, hands, staff, reverse-jointed legs, and split hooves white while
+recoiling around fixed ground contacts. H2 drops into a colored brace with a
+new torso, hock, tail, grip, horn, and crooked-staff pose. Right is composed
+once and mirrored exactly for Left. The Up head replaces the generic Hurt
+face patch with the already approved Briar rear-depth construction, then
+explicitly suppresses the shared front/side eye pixel. Cast/Death aliases,
+facade exports, public registries, selectors, packs, persistence, consumers,
+effects, and release remain absent.
+
+The nested `npm run check:enemy-expansion-en-e03-satyr-hurt` gate proves exact
+delegation of all 40 approved context frames; eight connected, distinct,
+hard-alpha Hurt silhouettes; four fixed split-hoof tips per frame; exact side
+mirroring; distinct Down/Up depth; one-cell margins; rear-head eye suppression;
+frozen board/GIF hashes; Complete B/Form behavior; and zero facade/public
+exposure. Its deterministic review generator writes two `1134x744` comparison
+boards plus four `192x224` labeled animation panels used by the required raw
+and Complete B + Form two-frame GIF pair. Passing remains technical evidence
+rather than visual approval. The designer separately reviewed both exact GIFs
+together and said `approved lets do next` on 2026-08-07; the bounded branch is
+committed and pushed under the publication contract.
+With the complete ignored 1,064-file Boss checkpoint corpus present, the full
+`npm run check` also passes without changing the 232 public fixture sheets.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

@@ -590,10 +590,13 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   the designer accepted the explicitly bounded Hill Breaker Hurt H1-H2 gate
   with `lets go for it` and approved both exact GIFs. The designer then said
   `nice lets do nexrt`; Codex explicitly bounded only Steppe Hunter Hurt H1-H2,
-  whose technical candidate is now awaiting dual-GIF review. Do not implement
-  Cast/Death aliases, other Hurt/family
-  motion, specialist/elite variants, registration, consumer routing, separate
-  effects, release work, or any later EN-E03 step.
+  which the designer approved and the matching branch published. The designer
+  then said `awesome lets do next`; Codex bounded Briar Reveler Hurt H1-H2,
+  whose exact paired GIFs the designer approved with `approved lets do next`.
+  After this approval branch publishes, only the separate common Cast/Death
+  alias gate across all three approved common variants is authorized. Do not
+  implement other family motion, specialist/elite variants, registration,
+  consumer routing, separate effects, release work, or later EN-E03 steps.
 
 ### EN-E03 - Large and hybrid walkers
 
@@ -603,11 +606,12 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   Briar Reveler Walk W1-W4 `approved` and internal; Hill Breaker Attack A1-A4
   `approved` and internal; Steppe Hunter Attack A1-A4 `approved` and internal;
   Briar Reveler Attack A1-A4 `approved` and internal; Hill Breaker Hurt H1-H2
-  `approved` and internal; Steppe Hunter Hurt H1-H2 `approved` and internal
+  `approved` and internal; Steppe Hunter Hurt H1-H2 `approved` and internal;
+  Briar Reveler Hurt H1-H2 `approved` and internal
 - Families: Giant, Centaur, Satyr
-- Active gate: none; Steppe Hunter common Hurt H1-H2 completed direct review on
-  both exact labeled raw and Complete B + Form GIFs, and this approval
-  authorizes no later EN-E03 work
+- Active gate: after the approved Briar Hurt branch publishes, common
+  Cast-to-Attack and Death-to-Hurt aliases for the three approved common
+  variants only; no new sprite pixels or public integration are authorized
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1109,6 +1113,56 @@ byte-for-byte and stopping for the mandatory dual-presentation review.
 - Both exact labeled all-four-direction GIFs are approved and the bounded
   branch is published. Cast/Death aliases, other Hurt, variants, registration,
   consumers, effects, release, and later EN-E03 work remain separately gated.
+
+#### Approved Briar Reveler Hurt baseline
+
+After the approved Steppe Hunter Hurt lane was committed and pushed, the
+designer said `awesome lets do next`. Codex explicitly bounded the next gate
+as Briar Reveler Hurt H1-H2 across Down, Left, Right, and Up, preserving all
+approved Briar Reveler Idle, Walk, and Attack pixels and stopping for the
+mandatory raw plus Complete B + Form review before any commit or push.
+
+- Gate ID: `en-e03-briar-reveler-hurt-v1`; status: `approved`, internal, and
+  non-public on 2026-08-07.
+- Approval evidence: the designer reviewed both exact labeled
+  all-four-direction raw and Complete B + Form animations together and said
+  `approved lets do next`.
+- Worktree/branch:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-briar-reveler-hurt` on
+  `codex/en-e03-briar-reveler-hurt`, created exactly from approved pushed
+  Steppe Hurt checkpoint `374d0b73c171c9f9f35b6d71f2f9e85f4dcdd7c1`.
+- Source: `engine/enemy-expansion-en-e03-satyr-hurt.js`; it delegates all 8
+  approved Idle, 16 approved Walk, and 16 approved Attack frames exactly.
+- Checker: `tools/check-enemy-expansion-en-e03-satyr-hurt.mjs` via
+  `npm.cmd run check:enemy-expansion-en-e03-satyr-hurt`.
+- Review generator: `tools/enemy-expansion-en-e03-satyr-hurt-review.mjs` via
+  `npm.cmd run review:enemy-expansion-en-e03-satyr-hurt`.
+- Raw labeled GIF: `192x224`, two `140ms` frames, SHA-256
+  `438056d9d9c195aff1ab429ead9164f9b98bfd89cf916ff8936d353ce3f713f9`.
+- Complete B + Form labeled GIF: `192x224`, two `140ms` frames, SHA-256
+  `8b73e3f44c0a7ff94df0cdb8b167d44d32e20e0273275d824844045de0cddce1`.
+- Raw `1134x744` board SHA-256:
+  `0b5cd11212e272ab29bdac3336155e7546b3e1e28299c7ce70c0a7232b6ba44d`.
+- Complete B + Form `1134x744` board SHA-256:
+  `78bec5bc888515bad74578b4d08f381f4c25842e88e3b76c74697d3da48fdb74`.
+- Eight-frame digest:
+  `3bc6bbd29189d8155784fa7499b355af1b826c44d0caf60b37db198cb7625030`.
+- H1 flashes the complete connected horned body, tail, hands, crooked staff,
+  reverse-jointed legs, and split hooves white. H2 is the colored full-body
+  brace. The four split-hoof tips remain exact across both phases.
+- The focused gate passes all eight connected distinct hard-alpha silhouettes,
+  exact side mirrors, true Down/Up depth, one-cell margins, fixed hoof anchors,
+  approved rear-head/no-side-eye treatment, 945 Complete B additions, 417 Form
+  source changes, exact preservation of all 40 approved frames, and zero public
+  exposure.
+- With the 965 missing ignored Boss checkpoints copied from the approved Steppe
+  lane, the full `npm.cmd run check` passes against the exact 1,064-file local
+  corpus; all 232 public fixture sheets remain unchanged.
+- Both exact labeled all-four-direction GIFs are approved and the bounded
+  branch is committed and pushed. The designer authorized continuation, and
+  Codex explicitly bounded only the separate common Cast/Death alias gate for
+  Hill Breaker, Steppe Hunter, and Briar Reveler. Other family motion, variants,
+  registration, consumers, effects, release, and later work remain excluded.
 
 ### EN-E04 - Serpentine and aquatic peoples
 

@@ -26,8 +26,8 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
   baselines for Hill Breaker, Steppe Hunter, and Briar Reveler, the approved
   internal Hill Breaker, Steppe Hunter, and Briar Reveler four-frame Walks, plus
   the approved Hill Breaker, Steppe Hunter, and Briar Reveler common Attack
-  A1-A4 baselines and the approved Hill Breaker and Steppe Hunter Hurt H1-H2
-  baselines; none is selectable consumer content
+  A1-A4 baselines, and the approved Hill Breaker, Steppe Hunter, and Briar
+  Reveler Hurt H1-H2 baselines; none is selectable consumer content
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -247,8 +247,24 @@ labeled all-four-direction raw and Complete B + Form GIFs are ready together,
 and the designer reviewed both exact GIFs together and said `approved` on
 2026-08-07. Steppe Hunter Hurt is now an approved internal baseline and its
 bounded branch is committed and pushed under the approval-publication contract.
-No EN-E03 family is selectable or public. Cast/Death aliases,
-other Hurt or family motion,
+The designer then said `awesome lets do next`; Codex explicitly bounded the
+continuation as Briar Reveler Hurt H1-H2 across all four directions, preserving
+all 40 approved Briar Idle/Walk/Attack frames and stopping before commit or
+push for the mandatory paired review. That isolated candidate now passes its
+focused eight-frame gate with connected full-body horned goatfolk/staff
+silhouettes, four fixed split-hoof tips, exact side mirrors, true Down/Up depth,
+one-cell margins, hard alpha, a rear-facing Up head with no side eye, frozen
+raw and Complete B + Form evidence, and zero public exposure. The designer
+reviewed both exact GIFs together and said `approved lets do next` on
+2026-08-07. Briar Reveler Hurt is now an approved internal baseline and its
+bounded branch is committed and pushed under the publication contract. With
+the 965 missing ignored Boss checkpoints copied from the approved Steppe lane,
+the complete 1,064-file local corpus also passes the full `npm.cmd run check`;
+all 232 public fixture sheets remain unchanged. The only authorized next lane
+is the separately isolated common Cast/Death alias gate for the three approved
+EN-E03 common variants.
+No EN-E03 family is selectable or public. Outside that bounded alias lane,
+other family motion,
 specialist or elite variants, registration, effects, release, and every later
 gate remain unauthorized.
 

@@ -247,8 +247,16 @@ planted-contact, mirror, one-cell-margin, frozen-evidence, and zero-public-
 exposure checks. Steppe Hunter Hurt H1-H2 is also visually approved and
 published; it preserves all 40 approved Steppe frames and passes eight
 connected full-hybrid, fixed-four-hoof, exact-mirror, one-cell-margin,
-frozen-evidence, and zero-public-exposure checks. Cast/Death aliases, other
-Hurt, additional Giant/Centaur/Satyr
+frozen-evidence, and zero-public-exposure checks. Briar Reveler Hurt H1-H2 is
+also visually approved and published; it preserves all 40 approved
+Briar frames and passes eight connected full-body horned goatfolk/staff,
+fixed-split-hoof, exact-mirror, rear-head/no-side-eye, one-cell-margin,
+frozen-evidence, and zero-public-exposure checks. The designer said `approved
+lets do next`; only a separately isolated common Cast/Death alias gate across
+the three approved EN-E03 common variants is authorized next. The full project gate
+passes with the complete 1,064-file local Boss checkpoint corpus and all 232
+public fixture sheets unchanged. Outside that bounded alias lane, additional
+Giant/Centaur/Satyr
 motion, variants, registration, effects, release, and every later gate remain
 blocked. The full project gate passes with
 the complete preserved local Boss review-checkpoint corpus; fresh-worktree clone
@@ -437,8 +445,9 @@ Candidate additions:
   internal, and non-public; Briar Reveler common Attack A1-A4 is also visually
   approved, internal, and non-public; Hill Breaker Hurt H1-H2 is also visually
   approved, internal, and non-public; Steppe Hunter Hurt H1-H2 is also visually
-  approved, internal, and non-public; no additional EN-E03 gate is currently
-  authorized
+  approved, internal, and non-public; Briar Reveler Hurt H1-H2 is also visually
+  approved, internal, and non-public; only the common Cast/Death alias gate
+  across those three approved common variants is currently authorized
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 
