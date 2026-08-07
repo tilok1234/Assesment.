@@ -262,10 +262,11 @@ exact GIFs together and said `approved` on 2026-08-07; the bounded branch is
 committed and pushed under the publication contract. Its focused and full
 project gates pass with all 232 public fixture sheets unchanged. The full project gate
 passes with the complete 1,064-file local Boss checkpoint corpus and all 232
-public fixture sheets unchanged. No later EN-E03 gate is authorized. Additional
-Giant/Centaur/Satyr
-motion, variants, registration, effects, release, and every later gate remain
-blocked. The full project gate passes with
+public fixture sheets unchanged. The designer then said `good lets do next`;
+only Boulder Hurler specialist Idle F1-F2 across four directions is authorized,
+with no baked boulder/projectile. Additional Giant/Centaur/Satyr motion, other
+variants, registration, effects, release, and every later gate remain blocked.
+The full project gate passes with
 the complete preserved local Boss review-checkpoint corpus; fresh-worktree clone
 safety remains a separate unvalidated candidate at `125b0b3`.
 The current branch history

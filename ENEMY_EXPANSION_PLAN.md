@@ -166,7 +166,9 @@ labeled all-four-direction raw and Complete B + Form GIFs together, and said
 The designer then said `nice lets do nexrt`; Codex explicitly bounded Steppe
 Hunter Hurt H1-H2 across all four directions. That technical candidate now
 passes, and the designer reviewed both required GIFs together and said
-`approved` on 2026-08-07. No later EN-E03 gate is authorized.
+`approved` on 2026-08-07. Briar Reveler Hurt and the common Cast/Death aliases
+were subsequently approved and published. The designer then said `good lets do
+next`; only Boulder Hurler Idle F1-F2 is authorized now.
 
 ## Intake Assessment
 
@@ -613,6 +615,9 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
 - Latest completed gate: approved common Cast-to-Attack and Death-to-Hurt
   aliases for the three approved common variants only; the four required GIFs
   were approved together and no new sprite pixels or public integration exist
+- Active gate: Boulder Hurler specialist Idle F1-F2 only across four directions;
+  no baked boulder/projectile, other variant, motion, registration, consumer,
+  effect, release, or later work is authorized
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1211,8 +1216,9 @@ and no new sprite pixels or public integration are authorized.
   1,064-file local corpus; all 232 public fixture sheets remain unchanged.
 - Direct review of all four exact labeled GIFs is complete and the bounded
   branch is published under the approval contract. New pixels, variants,
-  registration, consumers, effects, release, and later work remain excluded
-  without separate explicit authorization.
+  registration, consumers, effects, release, and later work were excluded from
+  that gate. The designer then said `good lets do next`; Codex explicitly
+  bounded the continuation to Boulder Hurler Idle F1-F2 across four directions.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
@@ -1518,7 +1524,7 @@ integration, and the later seven-family repair approval are recorded.
 Registration checkpoint `7b6e448` and consumer checkpoint `8ab1837` established
 the generic 67/232 boundary; the exact repair pixels from `6400dd5` are now the
 stable/public result, with the pre-repair registry retained internally. The
-  exact rebuilt EN-E03 v2 raw and Complete B + Form common-only Idle artifacts for
+The exact rebuilt EN-E03 v2 raw and Complete B + Form common-only Idle artifacts for
   Giant, Centaur, and Satyr are rejected. The separate Hill Breaker F1
   reference-calibration study and its F2-only continuation are now visually
   approved as an exact internal two-frame Idle baseline. The later Steppe Hunter
@@ -1533,10 +1539,12 @@ stable/public result, with the pre-repair registry retained internally. The
   hash-frozen. Briar Reveler common Attack A1-A4 is also visually approved and
   hash-frozen. Hill Breaker Hurt H1-H2 is also visually approved and
   hash-frozen. Steppe Hunter Hurt H1-H2 is also visually approved and
-  hash-frozen. Do not begin other Hurt,
-  additional Giant/Centaur/Satyr motion beyond this bounded candidate, variants,
-  registration, separate effect assets, release work, or any later EN-E03 step
-  without a new explicit gate and direct acceptance of the current review.
+  hash-frozen. Briar Reveler Hurt H1-H2 and the common Cast/Death aliases are
+  also visually approved, hash-frozen, internal, non-public, and published.
+  The designer then said `good lets do next`. That new authorization is bounded
+  only to Boulder Hurler specialist Idle F1-F2 across Down, Left, Right, and Up,
+  with its boulder/projectile kept external. All other variants, animations,
+  registration, consumer routing, effects, release, and later work remain gated.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -1544,8 +1552,7 @@ and non-baked attack tells. The largest unresolved risks are multi-form assets,
 stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
-Visual approval is complete through all three bounded common Attack A1-A4
-baselines and Hill Breaker Hurt H1-H2. All three F1/F2 Idle and common Walk
-baselines remain approved and internal. Steppe Hunter Hurt H1-H2 is also
-visually approved and internal. Stop here; any later code/art continuation
-requires a new explicitly bounded designer authorization.
+Visual approval is complete through all three common Idle, Walk, Attack, Hurt,
+Cast, and Death baselines. The only active continuation is the bounded Boulder
+Hurler Idle F1-F2 gate. Stop at its mandatory dual-presentation review; any
+other code or art continuation requires separate explicit authorization.

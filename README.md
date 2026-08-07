@@ -272,9 +272,11 @@ Complete B + Form modes. With the complete 1,064-file local Boss corpus, the
 full `npm.cmd run check` also passes and all 232 public sheets remain unchanged.
 The designer reviewed all four exact GIFs together and said `approved` on
 2026-08-07; the bounded branch is committed and pushed under the publication
-contract. No EN-E03 family is selectable or public. Other family motion,
-specialist or elite variants, registration, effects, release, and every later
-gate remain unauthorized.
+contract. The designer then said `good lets do next`; only a Boulder Hurler
+two-frame Idle baseline across four directions is authorized next, with its
+boulder/projectile kept external. No EN-E03 family is selectable or public.
+Other variants or motion, registration, effects, release, and every later gate
+remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

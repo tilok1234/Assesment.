@@ -103,11 +103,16 @@ far from the established roster style. Both implementations remain reproducible
   raw and Complete B + Form boards, and both labeled four-direction GIFs pass.
   The designer reviewed both exact GIFs together and said `approved lets do
   next` on 2026-08-07. Briar Reveler Hurt is now an approved internal baseline;
-  its bounded lane is committed and pushed. Only the separate common
-  Cast/Death alias gate across the three approved EN-E03 common variants is
-  authorized next. That isolated candidate, its focused/full gates, frozen
-  boards, and four required labeled three-family/all-direction GIFs now pass;
-  direct review is pending.
+  its bounded lane is committed and pushed. The separate common Cast/Death
+  aliases across the three approved EN-E03 common variants also pass their
+  focused/full gates and preserve zero-new-pixel routing. The designer reviewed
+  all four exact labeled three-family/all-direction GIFs together and said
+  `approved` on 2026-08-07; checkpoint
+  `d3f78f7fc924123a95c6dc140e5288525bf3f322` is pushed. The designer then said
+  `good lets do next`. Codex bounds that continuation only to a Boulder Hurler
+  two-frame Idle baseline across Down, Left, Right, and Up, with no baked
+  boulder/projectile and no other variant, animation, integration, effect, or
+  release work.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -130,8 +135,9 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   approval branch. Briar Reveler Hurt H1-H2 is likewise visually approved,
   internal, non-public, and published on its matching branch. The separate
   common Cast/Death aliases are visually approved, internal, non-public, and
-  published on their matching branch; variants, registration, consumers,
-  effects, release, and later EN-E03 work remain unauthorized.
+  published on their matching branch. Only the Boulder Hurler two-frame Idle
+  baseline is authorized next; all other variants, animation, registration,
+  consumers, effects, release, and later EN-E03 work remain unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -874,9 +880,10 @@ exactly. The subsequent `Cool let's keep going` authorizes only Steppe Hunter
   Briar lane, the full `npm.cmd run check` passes against the complete
   1,064-file local corpus and all 232 public fixture sheets remain unchanged.
 - Direct review of all four exact GIFs is complete and the bounded branch is
-  published under the approval contract. Do not add pixels or variants,
-  register, integrate, release, or begin later work without separate explicit
-  authorization.
+  published under the approval contract. The designer then said `good lets do
+  next`; that continuation is explicitly bounded to Boulder Hurler Idle F1-F2
+  across four directions. Do not begin any other variant, animation,
+  registration, integration, effect, release, or later work.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -1838,15 +1845,17 @@ The safest opening request for the next chat is:
 > approved pushed checkpoint `374d0b73c171c9f9f35b6d71f2f9e85f4dcdd7c1`.
 > Its focused and full gates pass and both exact labeled raw and Complete B +
 > Form GIFs were approved with `approved lets do next` on 2026-08-07. The
-> bounded branch is committed and pushed. Resume the separate common alias
-> candidate on `codex/en-e03-cast-death-aliases` in
-> `C:\tmp\8-bit-sprite-assembler-en-e03-cast-death-aliases`, created exactly
-> from approved pushed checkpoint `892a0034652c98f99b4f75ab9fdb58210927b98c`.
-> Its focused/full gates pass: Cast maps to Attack A1-A4, Death maps to Hurt
-> H1,H2,H2,H2, and zero new pixels/public families exist. Four labeled
-> three-family/all-direction raw and Complete B + Form GIFs await direct review.
-> Do not commit, push, add variants, register, integrate, release, or begin
-> later work before approval.
+> bounded branch is committed and pushed. The separate common alias gate on
+> `codex/en-e03-cast-death-aliases` maps Cast to Attack A1-A4 and Death to Hurt
+> H1,H2,H2,H2 with zero new pixels/public families. The designer reviewed all
+> four exact labeled three-family/all-direction raw and Complete B + Form GIFs
+> together and said `approved` on 2026-08-07. Its focused/full gates pass and
+> pushed checkpoint `d3f78f7fc924123a95c6dc140e5288525bf3f322` is the exact
+> continuation base. The designer then said `good lets do next`. Begin only a
+> Boulder Hurler two-frame Idle baseline across all four directions. Keep the
+> boulder/projectile external and stop for the mandatory raw plus Complete B +
+> Form review before commit or push. Do not add other variants or animation,
+> register, integrate, add effects, release, or begin later work.
 
 EN-F00, EN-E01, EN-E02, and the seven-family repair are approved. The stable and
 consumer registries are the same ten-family / 30-variant repaired object through
@@ -1868,4 +1877,7 @@ likewise visually approved, hash-frozen, internal, and non-public. Briar Reveler
 common Attack A1-A4 is likewise visually approved, hash-frozen, internal, and
 non-public. Hill Breaker Hurt H1-H2 is also visually approved, hash-frozen,
 internal, and non-public. Steppe Hunter Hurt H1-H2 is also visually approved,
-hash-frozen, internal, and non-public. Every later step remains gated.
+hash-frozen, internal, and non-public. Briar Reveler Hurt H1-H2 and the common
+Cast/Death aliases are also visually approved, hash-frozen, internal, and
+non-public. Only the bounded Boulder Hurler Idle F1-F2 gate is active; every
+other later step remains gated.

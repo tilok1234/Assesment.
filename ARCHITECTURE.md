@@ -701,7 +701,10 @@ B + Form, Death raw, and Death Complete B + Form. Every GIF shows all three
 families and all four labeled directions. Passing remains technical evidence.
 The designer separately reviewed all four exact GIFs together and said
 `approved` on 2026-08-07; the bounded branch is committed and pushed under the
-publication contract. No later EN-E03 gate is authorized.
+publication contract. The designer then said `good lets do next`; only the
+Boulder Hurler two-frame Idle baseline is authorized next. Its boulder remains
+an external projectile boundary, and every other variant, animation,
+integration, effect, release, and later EN-E03 gate remains closed.
 With the complete ignored 1,064-file Boss corpus present, the full project gate
 also passes without changing any of the 232 public fixture sheets.
 
