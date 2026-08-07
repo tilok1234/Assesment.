@@ -615,9 +615,10 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
 - Latest completed gate: approved common Cast-to-Attack and Death-to-Hurt
   aliases for the three approved common variants only; the four required GIFs
   were approved together and no new sprite pixels or public integration exist
-- Active gate: Boulder Hurler specialist Idle F1-F2 only across four directions;
-  no baked boulder/projectile, other variant, motion, registration, consumer,
-  effect, release, or later work is authorized
+- Latest completed variant gate: Boulder Hurler specialist Idle F1-F2 is
+  approved, internal, and non-public across four directions; no active
+  continuation, other variant, motion, registration, consumer, effect, release,
+  or later work is authorized
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1220,6 +1221,53 @@ and no new sprite pixels or public integration are authorized.
   that gate. The designer then said `good lets do next`; Codex explicitly
   bounded the continuation to Boulder Hurler Idle F1-F2 across four directions.
 
+#### Approved Boulder Hurler specialist Idle baseline
+
+- Gate ID: `en-e03-boulder-hurler-idle-v1`; status: `approved`, internal,
+  non-public, committed, and pushed.
+- Approval evidence: the designer reviewed both exact improved labeled
+  all-four-direction raw and Complete B + Form GIFs together and said `approved`
+  on 2026-08-07.
+- Worktree/branch:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-boulder-hurler-idle` on
+  `codex/en-e03-boulder-hurler-idle`, created exactly from reconciled approved
+  alias checkpoint `8fff98f775687a6d0d07b5b9e58a7ec57e1988dd`.
+- Source: `engine/enemy-expansion-en-e03-giant-specialist-idle.js`; one
+  Giant/Boulder Hurler variant renders only Idle F1-F2 across four directions.
+- Identity: long bare throwing arms, heavy wrist wraps, a diagonal sling
+  harness, and a cool slate hide palette. The actor is unarmed and the boulder
+  remains an external projectile with zero baked actor pixels.
+- Checker: `tools/check-enemy-expansion-en-e03-boulder-hurler-idle.mjs` via
+  `npm.cmd run check:enemy-expansion-en-e03-boulder-hurler-idle`.
+- Review generator:
+  `tools/enemy-expansion-en-e03-boulder-hurler-idle-review.mjs` via
+  `npm.cmd run review:enemy-expansion-en-e03-boulder-hurler-idle`.
+- Raw `1528x650` board SHA-256:
+  `f3a9b41fbec9127f3414c3a414b2e64d1a9cae3c2f86c81b31f6dcda0ccda54f`.
+- Complete B + Form `1528x650` board SHA-256:
+  `bbaf966cbd33a807372c45622112f0fe523dc8e9cb3f52a36cc139777f82be91`.
+- Raw labeled four-direction GIF: `192x224`, two `240ms` frames, SHA-256
+  `8ee6a17eee4e4428cbfab8fad2fef942dba436803bae398d5ea02b4afbfaad56`.
+- Complete B + Form labeled four-direction GIF: `192x224`, two `240ms` frames,
+  SHA-256
+  `2c081db2c8cb553f70374e70ab234814d4b1c64aa8c11227b85e9971cf058701`.
+- Eight-frame candidate digest:
+  `d8f3b04d54a55d7fe20e3dfdf0c3cb9c68ffb65722b07a5b0f416e18335795a0`.
+- Revised motion uses a slower grounded stance cycle: F2 lowers the shoulders
+  and harness while the hands lag, move inward, and bend into a throwing-ready
+  side pose rather than translating the whole upper overlay together.
+- The focused gate preserves all 8/8 approved Hill Breaker Idle frames and
+  validates 8/8 connected hard-alpha specialist frames, four exact side
+  mirrors, distinct Down/Up views and F1/F2 poses, one-cell margins, 694
+  Complete B additions, 872 Form source changes, zero baked projectile pixels,
+  and zero public EN-E03 families.
+- With the complete local Boss checkpoint corpus present, the full
+  `npm.cmd run check` passes and all 232 public fixture sheets remain unchanged.
+- Direct review of both exact labeled all-four-direction GIFs is complete and
+  the bounded branch is published under the approval contract. Do not add
+  motion or another variant, register, integrate, add effects, release, or begin
+  later work without separate explicit authorization.
+
 ### EN-E04 - Serpentine and aquatic peoples
 
 - Status: `queued`
@@ -1553,6 +1601,6 @@ stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
 Visual approval is complete through all three common Idle, Walk, Attack, Hurt,
-Cast, and Death baselines. The only active continuation is the bounded Boulder
-Hurler Idle F1-F2 gate. Stop at its mandatory dual-presentation review; any
-other code or art continuation requires separate explicit authorization.
+Cast, and Death baselines plus Boulder Hurler specialist Idle F1-F2. No active
+continuation is authorized; any later code or art work requires separate
+explicit designer authorization.

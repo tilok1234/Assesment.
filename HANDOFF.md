@@ -112,7 +112,11 @@ far from the established roster style. Both implementations remain reproducible
   `good lets do next`. Codex bounds that continuation only to a Boulder Hurler
   two-frame Idle baseline across Down, Left, Right, and Up, with no baked
   boulder/projectile and no other variant, animation, integration, effect, or
-  release work.
+  release work. That isolated candidate, focused checker, deterministic raw and
+  Complete B + Form boards, and both required labeled all-four-direction GIFs
+  now exist and pass technically. The designer reviewed both exact improved
+  GIFs together and said `approved` on 2026-08-07; the bounded branch is
+  committed and pushed under the publication contract.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -136,8 +140,9 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   internal, non-public, and published on its matching branch. The separate
   common Cast/Death aliases are visually approved, internal, non-public, and
   published on their matching branch. Only the Boulder Hurler two-frame Idle
-  baseline is authorized next; all other variants, animation, registration,
-  consumers, effects, release, and later EN-E03 work remain unauthorized.
+  baseline is now visually approved, internal, non-public, and published on its
+  matching branch; all other variants, animation, registration, consumers,
+  effects, release, and later EN-E03 work remain unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -884,6 +889,55 @@ exactly. The subsequent `Cool let's keep going` authorizes only Steppe Hunter
   next`; that continuation is explicitly bounded to Boulder Hurler Idle F1-F2
   across four directions. Do not begin any other variant, animation,
   registration, integration, effect, release, or later work.
+
+### Boulder Hurler Specialist Idle Approved Baseline
+
+- Gate ID: `en-e03-boulder-hurler-idle-v1`; current status:
+  `approved`, internal, non-public, committed, and pushed.
+- Authorization evidence: after approving all four exact common Cast/Death
+  alias GIFs, the designer said `good lets do next`; Codex explicitly bounded
+  the continuation to Boulder Hurler Idle F1-F2 across all four directions.
+- Approval evidence: the designer reviewed both exact improved labeled
+  all-four-direction raw and Complete B + Form GIFs together and said `approved`
+  on 2026-08-07.
+- Worktree and branch:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-boulder-hurler-idle` on
+  `codex/en-e03-boulder-hurler-idle`, created exactly from reconciled approved
+  alias checkpoint `8fff98f775687a6d0d07b5b9e58a7ec57e1988dd`.
+- Source: `engine/enemy-expansion-en-e03-giant-specialist-idle.js`; only
+  Giant/Boulder Hurler Idle F1-F2 is implemented.
+- Identity: long bare throwing arms, heavy wrist wraps, a diagonal sling
+  harness, and a cool slate hide palette. The actor uses no weapon pixels and
+  the boulder remains an external projectile boundary.
+- Focused checker:
+  `tools/check-enemy-expansion-en-e03-boulder-hurler-idle.mjs` via
+  `npm.cmd run check:enemy-expansion-en-e03-boulder-hurler-idle`.
+- Review generator:
+  `tools/enemy-expansion-en-e03-boulder-hurler-idle-review.mjs` via
+  `npm.cmd run review:enemy-expansion-en-e03-boulder-hurler-idle`.
+- Raw / Complete B + Form `1528x650` board SHA-256 values:
+  `f3a9b41fbec9127f3414c3a414b2e64d1a9cae3c2f86c81b31f6dcda0ccda54f` /
+  `bbaf966cbd33a807372c45622112f0fe523dc8e9cb3f52a36cc139777f82be91`.
+- Raw / Complete B + Form labeled four-direction GIF SHA-256 values:
+  `8ee6a17eee4e4428cbfab8fad2fef942dba436803bae398d5ea02b4afbfaad56` /
+  `2c081db2c8cb553f70374e70ab234814d4b1c64aa8c11227b85e9971cf058701`.
+- Both GIFs are `192x224`, contain two `240ms` frames, and show Down, Left,
+  Right, and Up together.
+- Eight-frame candidate digest:
+  `d8f3b04d54a55d7fe20e3dfdf0c3cb9c68ffb65722b07a5b0f416e18335795a0`.
+- Revised motion: a slower grounded stance cycle lowers the shoulders and
+  harness in F2 while the hands lag, move inward, and bend into a
+  throwing-ready side pose instead of translating the whole overlay together.
+- Focused results: 8/8 approved Hill Breaker Idle frames preserved, 8/8
+  connected hard-alpha candidate frames, four exact side mirrors, distinct
+  Down/Up views and F1/F2 poses, one-cell margins, 694 Complete B additions,
+  872 Form changes, zero baked projectile pixels, and zero public families.
+- With the complete local Boss checkpoint corpus present, the full
+  `npm.cmd run check` passes and all 232 public fixture sheets remain unchanged.
+- Direct review of both exact GIFs is complete and the bounded branch is
+  published under the approval contract. Do not add motion or another variant,
+  register, integrate, add effects, release, or begin later work without
+  separate explicit authorization.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
@@ -1851,11 +1905,18 @@ The safest opening request for the next chat is:
 > four exact labeled three-family/all-direction raw and Complete B + Form GIFs
 > together and said `approved` on 2026-08-07. Its focused/full gates pass and
 > pushed checkpoint `d3f78f7fc924123a95c6dc140e5288525bf3f322` is the exact
-> continuation base. The designer then said `good lets do next`. Begin only a
-> Boulder Hurler two-frame Idle baseline across all four directions. Keep the
-> boulder/projectile external and stop for the mandatory raw plus Complete B +
-> Form review before commit or push. Do not add other variants or animation,
-> register, integrate, add effects, release, or begin later work.
+> approved alias checkpoint; the reconciled handoff checkpoint is
+> `8fff98f775687a6d0d07b5b9e58a7ec57e1988dd`. The designer then said `good
+> lets do next`. The bounded Boulder Hurler two-frame Idle baseline on
+> `codex/en-e03-boulder-hurler-idle` in
+> `C:\tmp\8-bit-sprite-assembler-en-e03-boulder-hurler-idle`. Its focused gate
+> preserves 8/8 approved Hill Breaker Idle frames and validates 8/8 connected
+> hard-alpha candidate frames, exact side mirrors, one-cell margins, zero baked
+> projectile pixels, and zero public families. The designer reviewed both exact
+> improved labeled all-four-direction raw and Complete B + Form GIFs together
+> and said `approved` on 2026-08-07. The bounded branch is committed and pushed.
+> Do not add other variants or animation, register, integrate, add effects,
+> release, or begin later work without separate explicit authorization.
 
 EN-F00, EN-E01, EN-E02, and the seven-family repair are approved. The stable and
 consumer registries are the same ten-family / 30-variant repaired object through
@@ -1879,5 +1940,6 @@ non-public. Hill Breaker Hurt H1-H2 is also visually approved, hash-frozen,
 internal, and non-public. Steppe Hunter Hurt H1-H2 is also visually approved,
 hash-frozen, internal, and non-public. Briar Reveler Hurt H1-H2 and the common
 Cast/Death aliases are also visually approved, hash-frozen, internal, and
-non-public. Only the bounded Boulder Hurler Idle F1-F2 gate is active; every
-other later step remains gated.
+non-public. The bounded Boulder Hurler Idle F1-F2 baseline is visually approved,
+hash-frozen, internal, non-public, committed, and pushed; every other later step
+remains gated.

@@ -28,7 +28,8 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
   the approved Hill Breaker, Steppe Hunter, and Briar Reveler common Attack
   A1-A4 baselines, and the approved Hill Breaker, Steppe Hunter, and Briar
   Reveler Hurt H1-H2 baselines, plus the approved common Cast/Death aliases for
-  those three variants; none is selectable consumer content
+  those three variants, and the approved Boulder Hurler specialist Idle F1-F2
+  baseline; none is selectable consumer content
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -277,6 +278,22 @@ two-frame Idle baseline across four directions is authorized next, with its
 boulder/projectile kept external. No EN-E03 family is selectable or public.
 Other variants or motion, registration, effects, release, and every later gate
 remain unauthorized.
+
+The isolated Boulder Hurler baseline implements only specialist Idle F1-F2
+across Down, Left, Right, and Up. Its long bare throwing arms, wrist wraps,
+diagonal sling harness, and cool slate hide palette distinguish it from the
+approved Hill Breaker common baseline; the boulder remains an external
+projectile and contributes zero actor pixels. Its revised `480ms` Idle loop
+uses a grounded shoulder drop, lagging inward hands, and a bent throwing-ready
+side pose instead of translating the whole overlay together. Its focused gate preserves all
+8/8 approved Hill Breaker Idle frames, validates 8/8 connected hard-alpha
+candidate frames, four exact side mirrors, one-cell margins, frozen raw and
+Complete B + Form boards/GIFs, and zero public families. The designer reviewed
+both exact improved labeled all-four-direction GIFs together and said
+`approved` on 2026-08-07; the bounded branch is committed and pushed under the
+publication contract. With
+the complete local Boss checkpoint corpus present, the full `npm.cmd run check`
+also passes and all 232 public fixture sheets remain unchanged.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

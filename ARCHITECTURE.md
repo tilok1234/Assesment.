@@ -708,6 +708,31 @@ integration, effect, release, and later EN-E03 gate remains closed.
 With the complete ignored 1,064-file Boss corpus present, the full project gate
 also passes without changing any of the 232 public fixture sheets.
 
+`engine/enemy-expansion-en-e03-giant-specialist-idle.js` is the isolated,
+approved Boulder Hurler specialist baseline. It reuses the approved
+humanoid chassis but exposes only Giant/Boulder Hurler Idle F1-F2 internally.
+The actor is explicitly unarmed: long throwing arms, wrist wraps, a diagonal
+sling harness, and a cool slate hide palette carry the identity while the
+boulder remains outside the actor as a future projectile boundary. No approved
+Hill Breaker, Steppe Hunter, Briar Reveler, alias, public facade, selector,
+consumer, effect, persistence, pack, or release path is modified.
+F1-F2 now forms a slow `480ms` grounded stance cycle: the shared chassis keeps
+the lower body controlled while F2 lowers the shoulders/harness, lets the hands
+lag and move inward, and bends the side-view throwing hand toward the torso.
+
+The nested `npm run check:enemy-expansion-en-e03-boulder-hurler-idle` gate
+proves exact preservation of all eight approved Hill Breaker Idle frames,
+eight connected hard-alpha candidate silhouettes, exact side mirroring,
+distinct Down/Up views and F1/F2 poses, one-cell margins, deterministic frozen
+boards/GIFs, zero baked projectile pixels, and zero public families. Its review
+generator writes paired `1528x650` boards and two `192x224` labeled animation
+frames for each raw and Complete B + Form GIF. Passing remains technical
+evidence. The designer separately reviewed both exact improved GIFs together
+and said `approved` on 2026-08-07; the bounded branch is committed and pushed
+under the publication contract. No later EN-E03 gate is authorized. With the complete ignored Boss checkpoint corpus
+present, the full project gate also passes without changing any of the 232
+public fixture sheets.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

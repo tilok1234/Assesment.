@@ -269,6 +269,19 @@ variants, registration, effects, release, and every later gate remain blocked.
 The full project gate passes with
 the complete preserved local Boss review-checkpoint corpus; fresh-worktree clone
 safety remains a separate unvalidated candidate at `125b0b3`.
+
+The bounded Boulder Hurler specialist Idle F1-F2 baseline exists on
+`codex/en-e03-boulder-hurler-idle`. Its focused gate preserves 8/8 approved
+Hill Breaker Idle frames and validates 8/8 connected hard-alpha specialist
+frames, four exact side mirrors, distinct Down/Up views, one-cell margins, 694
+Complete B additions, 872 Form changes, zero baked projectile pixels, and zero
+public families. Both labeled all-four-direction raw and Complete B + Form GIFs
+now use the revised slower grounded shoulder/arm cycle and are frozen. The
+designer reviewed both exact improved GIFs together and said `approved` on
+2026-08-07; the bounded branch is committed and pushed under the publication
+contract. Its full project gate also passes with the complete local Boss corpus
+and all 232 public fixture sheets unchanged. No other variant or animation,
+registration, integration, effect, release, or later gate is authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
