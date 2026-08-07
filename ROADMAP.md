@@ -153,7 +153,15 @@ approved checkpoint `68d913c`, preserves every approved Giant Idle/Walk/Attack
 frame, passes its eight-frame focused gate, and has the required labeled
 all-four-direction raw and Complete B + Form GIFs ready together. The designer
 reviewed both exact GIFs together and said `approved` on 2026-08-07. The bounded
-lane is approved, committed, pushed, internal, and non-public. The complete
+lane is approved, committed, pushed, internal, and non-public. The designer
+then said `nice lets do nexrt`; Codex explicitly bounded only Steppe Hunter
+Hurt H1-H2 across Down, Left, Right, and Up. Its isolated lane on
+`codex/en-e03-steppe-hunter-hurt`, created exactly from approved pushed
+checkpoint `3e0d98b`, preserves all approved Steppe Idle/Walk/Attack frames,
+passes its eight-frame full-hybrid/fixed-hoof/mirror gate, and has both required
+labeled all-four-direction raw and Complete B + Form GIFs ready together. It
+was directly approved on both exact GIFs together on 2026-08-07; the bounded
+lane is approved, internal, non-public, committed, and pushed. The complete
 57-family / 202-variant
 legacy Enemy catalog remains visually approved; its current 20-column gate
 covers 16,160 source frames / 48,480 None-B-C cases. Form shading, Lantern,
@@ -236,7 +244,11 @@ whole-body-phase, mirror, front/back-depth, frozen-evidence, and zero-public-
 exposure checks. Hill Breaker Hurt H1-H2 is also visually approved and
 published; it preserves all 40 approved Giant frames and passes eight connected/distinct,
 planted-contact, mirror, one-cell-margin, frozen-evidence, and zero-public-
-exposure checks. Cast/Death aliases, other Hurt, additional Giant/Centaur/Satyr
+exposure checks. Steppe Hunter Hurt H1-H2 is also visually approved and
+published; it preserves all 40 approved Steppe frames and passes eight
+connected full-hybrid, fixed-four-hoof, exact-mirror, one-cell-margin,
+frozen-evidence, and zero-public-exposure checks. Cast/Death aliases, other
+Hurt, additional Giant/Centaur/Satyr
 motion, variants, registration, effects, release, and every later gate remain
 blocked. The full project gate passes with
 the complete preserved local Boss review-checkpoint corpus; fresh-worktree clone
@@ -424,6 +436,7 @@ Candidate additions:
   non-public; Steppe Hunter common Attack A1-A4 is also visually approved,
   internal, and non-public; Briar Reveler common Attack A1-A4 is also visually
   approved, internal, and non-public; Hill Breaker Hurt H1-H2 is also visually
+  approved, internal, and non-public; Steppe Hunter Hurt H1-H2 is also visually
   approved, internal, and non-public; no additional EN-E03 gate is currently
   authorized
 - Additional production animations only after the 20-column contract has a

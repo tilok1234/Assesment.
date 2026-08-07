@@ -618,6 +618,30 @@ Complete B + Form boards. The separately hashed `192x224` labeled GIF pair was
 the direct visual-review surface approved on 2026-08-07; technical checks remain
 structural evidence rather than the source of that approval.
 
+`engine/enemy-expansion-en-e03-centaur-hurt.js` is the approved isolated
+Steppe Hunter H1-H2 baseline. It delegates all approved
+Idle, Walk, and Attack frames through the approved Attack renderer, then adds
+only two Hurt frames. H1 paints the complete horse-rider-spear silhouette as a
+white direction-aware recoil; H2 uses the source palette for a braced spear
+recovery. A buffered whole-hybrid transform moves rider, spear, and horse mass
+above four fixed lower hoof anchors, restores the connection seam, preserves
+one-cell margins, and mirrors the complete Right profile exactly for Left. Up
+draws its spear behind the rider and retains the rear-facing head treatment.
+The module remains absent from `sprite-engine.js`, public registries, selectors,
+packs, persistence, exports, and consumers; Cast and Death aliases are refused.
+
+The nested `npm run check:enemy-expansion-en-e03-centaur-hurt` gate proves
+byte-exact delegation of 8 Idle, 16 Walk, and 16 Attack frames; eight connected,
+distinct hard-alpha horse-rider-spear Hurt silhouettes; fixed four-hoof anchors;
+exact side mirroring; true Down/Up depth distinction; one-cell margins; frozen
+board/GIF hashes; Complete B/Form behavior; and zero facade/public exposure.
+Its deterministic review generator writes two `1134x744` comparison boards and
+four labeled `192x224` animation-panel PNGs used by the raw and Complete B +
+Form GIF pair. Passing remains structural evidence rather than visual
+acceptance. The designer directly
+approved both exact labeled all-four-direction GIFs together on 2026-08-07;
+the bounded branch is committed and pushed under the publication contract.
+
 The nested `npm run check:enemy-expansion-en-e03-satyr-attack` gate validates
 the approved Briar Reveler Attack baseline across 16 A1-A4 frames while
 delegating all 8 approved Idle and 16 approved Walk frames byte-for-byte. It

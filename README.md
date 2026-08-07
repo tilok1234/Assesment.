@@ -26,8 +26,8 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
   baselines for Hill Breaker, Steppe Hunter, and Briar Reveler, the approved
   internal Hill Breaker, Steppe Hunter, and Briar Reveler four-frame Walks, plus
   the approved Hill Breaker, Steppe Hunter, and Briar Reveler common Attack
-  A1-A4 baselines and the approved Hill Breaker Hurt H1-H2 baseline;
-  none is selectable consumer content
+  A1-A4 baselines and the approved Hill Breaker and Steppe Hunter Hurt H1-H2
+  baselines; none is selectable consumer content
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -237,8 +237,18 @@ Attack frames byte-for-byte, passes its focused structural gate, and has both
 required labeled all-four-direction raw and Complete B + Form GIFs ready for
 direct review. The designer reviewed both exact GIFs together and said
 `approved` on 2026-08-07. Hill Breaker Hurt is now an approved internal
-baseline and its bounded branch is committed and pushed. No EN-E03 family is
-selectable or public. Cast/Death aliases, other Hurt or family motion,
+baseline and its bounded branch is committed and pushed. The designer then
+said `nice lets do nexrt`; Codex explicitly bounded only Steppe Hunter Hurt
+H1-H2 across all four directions. That isolated candidate preserves all 40
+approved Steppe Idle/Walk/Attack frames byte-for-byte and passes eight-frame
+connected-hybrid, fixed-four-hoof-anchor, mirror, hard-alpha, one-cell-margin,
+frozen-evidence, Complete B/Form, and zero-public-exposure checks. Both exact
+labeled all-four-direction raw and Complete B + Form GIFs are ready together,
+and the designer reviewed both exact GIFs together and said `approved` on
+2026-08-07. Steppe Hunter Hurt is now an approved internal baseline and its
+bounded branch is committed and pushed under the approval-publication contract.
+No EN-E03 family is selectable or public. Cast/Death aliases,
+other Hurt or family motion,
 specialist or elite variants, registration, effects, release, and every later
 gate remain unauthorized.
 
@@ -552,6 +562,17 @@ Down/Up attacks, one-cell margins, frozen evidence hashes, and zero facade or
 public exposure. Passing proves structure and reproducibility; separate gate
 metadata records the exact labeled Down, Left, Right, and Up raw/no-outline and
 Complete B + Form approval on 2026-08-07. Run
+`npm run check:enemy-expansion-en-e03-centaur-hurt` and
+`npm run review:enemy-expansion-en-e03-centaur-hurt` for the approved internal
+Steppe Hunter Hurt H1-H2 baseline. The checker preserves all 8 approved Idle,
+16 approved Walk, and 16 approved Attack frames byte-for-byte; validates eight
+connected, distinct hard-alpha horse-rider-spear silhouettes, fixed four-hoof
+anchors, exact Left/Right mirroring, true Down/Up depth, one-cell margins,
+frozen board/GIF hashes, Complete B/Form behavior, and zero facade/public
+exposure. H1 is the full white hybrid recoil and H2 the colored braced spear
+recovery. Passing is technical evidence only; both exact labeled
+all-four-direction raw/no-outline and Complete B + Form GIFs were directly
+approved together on 2026-08-07, as recorded by separate gate metadata. Run
 `npm run check:enemy-expansion-en-e03-satyr-calibration` and
 `npm run review:enemy-expansion-en-e03-satyr-calibration` for the Briar Reveler
 F1 approved seed. Its checker requires four connected horned
