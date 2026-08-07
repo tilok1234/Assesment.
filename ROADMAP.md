@@ -306,9 +306,10 @@ authorized. Its internal/non-public baseline preserves the approved Steppe
 Hunter four-hoof chassis, adds sun-gold armor, red-gold saddle tack, and a bright
 lance pennant, and keeps charge/trail/shock effects external. The designer
 reviewed both required all-four-direction raw and Complete B + Form GIFs together
-and said `approved` on 2026-08-07; focused and full gates pass, and publication
-is bounded to this Idle lane. No other variant or animation, registration,
-integration, effect, release, or later gate is authorized.
+and said `approved` on 2026-08-07; focused and full gates pass. The bounded
+implementation is committed and pushed at
+`f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`. No other variant or animation,
+registration, integration, effect, release, or later gate is authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

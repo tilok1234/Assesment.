@@ -358,9 +358,10 @@ hoof contacts, exact side mirrors, preserved Steppe Hunter and Storm-Clan Jarl
 baselines, zero baked charge/trail/shock effects, and zero public exposure. The
 candidate uses sun-gold rider armor, a red-gold saddle cloth, and a bright lance
 pennant over the approved chestnut Steppe Hunter chassis. The designer approved
-both exact GIFs together on 2026-08-07. Publication is bounded to this Idle lane;
-no other animation, variant, registration, consumer integration, effect,
-release, or later gate is authorized.
+both exact GIFs together on 2026-08-07. The bounded approval implementation is
+committed and pushed at `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`; no
+other animation, variant, registration, consumer integration, effect, release,
+or later gate is authorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

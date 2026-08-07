@@ -143,7 +143,9 @@ far from the established roster style. Both implementations remain reproducible
   acceptance candidate, its deterministic raw and Complete B + Form evidence,
   and both required labeled all-four-direction GIFs. Its focused gate and full
   project gate pass. The designer reviewed both exact GIFs together and said
-  `approved` on 2026-08-07. Publication is bounded to this approved lane only.
+  `approved` on 2026-08-07. The bounded approval implementation is committed
+  and pushed at `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`; it does not
+  authorize later EN-E03 work.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -171,9 +173,9 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   three-treatment export is also approved and publication-bounded. Storm-Clan
   Jarl elite Idle F1-F2 is now visually approved, internal, non-public, and
   publication-bounded after the side-pauldron repair. Sun Lancer specialist
-  Idle F1-F2 is now visually approved, internal, non-public, and bounded to this
-  approval publication; every other variant, animation, registration, consumer,
-  effect, release, and later EN-E03 step remains unauthorized.
+  Idle F1-F2 is now visually approved, internal, non-public, and published on
+  its matching approval branch; every other variant, animation, registration,
+  consumer, effect, release, and later EN-E03 step remains unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -1087,6 +1089,9 @@ release, and later work remain separately gated.
   `C:\tmp\8-bit-sprite-assembler-en-e03-sun-lancer-idle`, based exactly on
   published Storm handoff checkpoint
   `79a24ae3d1951780c2c29c8509fbe6310cb74c1b`.
+- Approved implementation checkpoint:
+  `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`, committed and pushed on the
+  isolated branch after the exact paired-GIF approval.
 - Approval evidence: the designer reviewed both exact labeled
   all-four-direction raw and Complete B + Form GIFs together and said
   `approved` on 2026-08-07.
@@ -1120,9 +1125,10 @@ release, and later work remain separately gated.
 - With the complete local Boss checkpoint corpus present, the full
   `npm.cmd run check` passes in 186.9 seconds and all 232 public fixture sheets
   remain unchanged.
-- Required publication action: commit and push only this bounded approved lane.
-  Do not begin another animation or variant, register, integrate, add effects,
-  release, or start later EN-E03 work without separate explicit authorization.
+- Publication is complete at approved implementation checkpoint
+  `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`. Do not begin another animation
+  or variant, register, integrate, add effects, release, or start later EN-E03
+  work without separate explicit authorization.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

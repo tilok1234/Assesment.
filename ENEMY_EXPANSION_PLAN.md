@@ -631,9 +631,10 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   exported in Form + Complete B, Form + Selective C, and Form + None folders;
   incomplete EN-E03 work remains excluded
 - Latest visual approval: both exact raw and Complete B + Form labeled Sun
-  Lancer GIFs were approved together on 2026-08-07. Only publication of this
-  bounded lane is authorized; other motion, variants, registration, consumers,
-  effects, release, and later work remain gated
+  Lancer GIFs were approved together on 2026-08-07; the bounded implementation
+  is committed and pushed at `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`.
+  Other motion, variants, registration, consumers, effects, release, and later
+  work remain gated
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1362,6 +1363,9 @@ and no new sprite pixels or public integration are authorized.
 - Isolated branch/worktree: `codex/en-e03-sun-lancer-idle` at
   `C:\tmp\8-bit-sprite-assembler-en-e03-sun-lancer-idle`, based on published
   checkpoint `79a24ae3d1951780c2c29c8509fbe6310cb74c1b`.
+- Approved implementation checkpoint:
+  `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`, committed and pushed on the
+  isolated approval branch.
 - Approval evidence: the designer reviewed both exact labeled
   all-four-direction raw/no-outline and Complete B + Form GIFs together and
   said `approved` on 2026-08-07.
@@ -1387,8 +1391,9 @@ and no new sprite pixels or public integration are authorized.
   `c195ab452409e722a9b6a9ca14a58b657033ba4c65943ea99fb03c5f180b394e`.
 - Validation: focused gate passes; with the complete local Boss corpus, the full
   `npm.cmd run check` passes and all 232 public fixture sheets remain unchanged.
-- Publication boundary: commit and push only this approved Idle lane. No later
-  work is authorized by the visual approval.
+- Publication is complete at approved implementation checkpoint
+  `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`. No later work is authorized by
+  the visual approval.
 - Exclusions: Banner Khan, Walk, Attack, Hurt, Cast/Death aliases, other EN-E03
   variants, registration, consumers, effects, release, and later work.
 

@@ -768,9 +768,9 @@ pennant. The lower horse and all four hoof contacts remain byte-exact; charge
 dust, spear trails, and hoof shock rings remain external. Focused and full gates
 pass without changing any of the 232 public fixture sheets. The designer
 approved both exact all-four-direction raw and Complete B + Form GIFs together
-on 2026-08-07; publication is bounded to this Idle lane. All other animation,
-variants, registration, consumers, effects, release, and later work remain
-gated.
+on 2026-08-07. The bounded implementation is committed and pushed at
+`f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`. All other animation, variants,
+registration, consumers, effects, release, and later work remain gated.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
