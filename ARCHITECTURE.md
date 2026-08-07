@@ -746,13 +746,19 @@ evidence. The designer separately reviewed both exact improved GIFs together
 and said `approved` on 2026-08-07; the bounded branch is committed and pushed
 under the publication contract. The later public-roster-only three-treatment
 export was delivered and approved with `awesome lets do next in plan`; it does
-not change any sprite source or registry boundary. That statement authorizes
-only Storm-Clan Jarl elite Idle F1-F2 across four directions next. The elite
-must read as an armored Giant leader with a bright clan band while storm arcs,
-lightning, and impact cracks remain external. All other animation, variants,
-registration, consumers, effects, release, and later work remain gated. With
-the complete ignored Boss checkpoint corpus present, the full project gate also
-passes without changing any of the 232 public fixture sheets.
+not change any sprite source or registry boundary. That statement authorized
+only Storm-Clan Jarl elite Idle F1-F2 across four directions. The isolated
+`enemy-expansion-en-e03-giant-elite-idle.js` module now implements that exact
+internal, non-public, two-frame renderer with layered plate and a bright cyan
+cloth clan sash while storm arcs, lightning, and impact cracks remain external.
+After the designer identified a misplaced side shoulder, the forward pauldron
+was seated one row lower and one pixel back over the upper-arm joint in both
+exact mirrored side views. The designer reviewed both corrected labeled
+all-four-direction raw and Complete B + Form GIFs together and said `approved`
+on 2026-08-07. All other animation, variants, registration, consumers, effects,
+release, and later work remain gated. With the complete ignored Boss checkpoint
+corpus present, the full project gate also passes without changing any of the
+232 public fixture sheets.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

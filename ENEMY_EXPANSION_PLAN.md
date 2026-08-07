@@ -621,14 +621,16 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
 - Latest completed gate: approved common Cast-to-Attack and Death-to-Hurt
   aliases for the three approved common variants only; the four required GIFs
   were approved together and no new sprite pixels or public integration exist
-- Latest completed variant gate: Boulder Hurler specialist Idle F1-F2 is
-  approved, internal, and non-public across four directions
+- Latest completed variant gate: Storm-Clan Jarl elite Idle F1-F2 is approved,
+  internal, non-public, and effect-free across four directions after the
+  requested side-pauldron repair; Boulder Hurler specialist Idle remains the
+  approved predecessor
 - Approved side lane: the complete 67-family / 232-variant public catalog was
   exported in Form + Complete B, Form + Selective C, and Form + None folders;
   incomplete EN-E03 work remains excluded
-- Active authorization: Storm-Clan Jarl elite Idle F1-F2 across four directions
-  only; other motion, variants, registration, consumers, effects, release, and
-  later work remain gated
+- Active authorization: none after the bounded Storm-Clan Jarl Idle approval.
+  Other motion, variants, registration, consumers, effects, release, and later
+  work remain gated
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1302,17 +1304,45 @@ and no new sprite pixels or public integration are authorized.
 - Approval evidence: the designer received the package and said `awesome lets
   do next in plan` on 2026-08-07.
 
-#### Authorized Storm-Clan Jarl elite Idle gate
+#### Approved Storm-Clan Jarl elite Idle gate
 
-- Gate ID: `en-e03-storm-clan-jarl-idle-v1`; status: `authorized`, internal,
-  non-public, and not yet visually approved.
+- Gate ID: `en-e03-storm-clan-jarl-idle-v1`; status: `approved`, internal,
+  non-public, and bounded to Idle F1-F2 only.
+- Isolated branch/worktree: `codex/en-e03-storm-clan-jarl-idle` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-storm-clan-jarl-idle`, based on
+  approved checkpoint `088b03f1e2b2fd3cf2391c8536a920fca5c9bb86`.
 - Scope: only Idle F1-F2 across Down, Left, Right, and Up.
-- Identity: armored Giant leader with a bright clan band; no baked storm arc,
-  lightning, impact crack, projectile, aura, or environmental effect.
+- Identity: layered storm-dark plate, broad steel pauldrons, heavy bracers, and
+  a bright cyan cloth clan sash; no baked storm arc, lightning, impact crack,
+  projectile, aura, or environmental effect.
+- Revision: the designer identified the forward shoulder as misplaced in the
+  first side frames. The corrected candidate seats that pauldron one row lower
+  and one pixel back over the upper-arm joint in both exact mirrored sides; the
+  frozen evidence below refers only to the corrected revision.
+- Approval evidence: the designer reviewed both exact corrected labeled
+  all-four-direction raw and Complete B + Form GIFs together and said
+  `approved` on 2026-08-07.
 - Preservation: approved Hill Breaker and Boulder Hurler Giant Idle frames must
-  remain byte-exact, with all public catalog and fixture content unchanged.
-- Required review: both labeled all-four-direction raw/no-outline and Complete
-  B + Form GIFs together.
+  remain byte-exact, with all public catalog and fixture content unchanged. The
+  focused gate confirms 8/8 plus 8/8 approved frames exact, 8/8 connected
+  candidate silhouettes, four exact side mirrors, one-cell margins, hard
+  alpha, 106 sash-color pixels, 682 Complete B additions, 684 Form source
+  changes, zero baked-effect pixels, and zero public EN-E03 families.
+- Frozen candidate evidence: raw board
+  `776c57e70b20f7c0f0ab07ea344fab3e31082c028c08621498cf8b58d0b07c50`,
+  Complete B + Form board
+  `e0fd514dd9a9c26b50c221a5484f2832cee67e64e7a75eb08be56674f54c7768`,
+  raw GIF
+  `dad3d5b8deaf07ca565165a7db9f2f6159af399b107215a9e7c9f459103f6183`,
+  Complete B + Form GIF
+  `3f173f215ad354fde8b387a6c507127bb15507e73f575bd843d1b82d55e25bdc`,
+  and eight-frame digest
+  `3aebd8218877e0da9752b20df1256da4af2710927389006011a37479a5d14894`.
+- Validation: focused gate passes; with the complete local Boss corpus, the full
+  `npm.cmd run check` passes and all 232 public fixture sheets remain unchanged.
+- Required review is complete for both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form GIFs together. Commit and push only this
+  bounded approved lane; no later work is authorized.
 - Exclusions: Walk, Attack, Hurt, Cast/Death aliases, every other EN-E03
   variant, registration, consumers, effects, release, and later work.
 

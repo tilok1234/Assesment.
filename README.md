@@ -327,9 +327,23 @@ committed and pushed at `71fb59479626b757f112be3f9e56b92f24085208`.
 This local package intentionally excludes incomplete/non-public EN-E03 work,
 Bosses, players, effects, floor shadows, projectiles, release binaries, and
 invented license text. It is not the separately gated Wildshot game-pack
-release. The approval authorizes only Storm-Clan Jarl elite Idle F1-F2 next;
-other EN-E03 motion, variants, registration, consumers, effects, and release
-remain gated.
+release. That bounded continuation is now complete: Storm-Clan Jarl elite Idle
+F1-F2 is visually approved, internal, non-public, and effect-free after its
+side-pauldron repair. Other EN-E03 motion, variants, registration, consumers,
+effects, release, and later work remain gated.
+
+## Approved Storm-Clan Jarl elite Idle baseline
+
+Run `npm.cmd run review:enemy-expansion-en-e03-storm-clan-jarl-idle` to
+reproduce the exact corrected raw/no-outline and Complete B + Form review
+boards and the two labeled all-four-direction `192x224` GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e03-storm-clan-jarl-idle` to verify the
+approved evidence hashes, all eight connected hard-alpha candidate frames,
+exact side mirrors, one-cell margins, preserved Hill Breaker and Boulder Hurler
+Idle baselines, zero baked storm/lightning/impact pixels, and zero public
+EN-E03 families. The designer reviewed both corrected GIFs together and said
+`approved` on 2026-08-07. This approval does not authorize another animation,
+variant, registration, consumer integration, effect, release, or later gate.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

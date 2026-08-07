@@ -292,11 +292,13 @@ is 2,440,823 bytes with SHA-256
 The full project gate passes and no sprite source, public catalog, or fixture
 changed. The designer accepted the package with `awesome lets do next in plan`
 on 2026-08-07; the bounded tooling/docs checkpoint is committed and pushed at
-`71fb59479626b757f112be3f9e56b92f24085208`. That continuation is bounded only
-to Storm-Clan Jarl elite Idle F1-F2 across four directions, with a readable
-armored Giant/clan-band identity and all storm/lightning/impact effects
-external. No other variant or animation, registration, integration, effect,
-release, or later gate is authorized.
+`71fb59479626b757f112be3f9e56b92f24085208`. That continuation was bounded only
+to Storm-Clan Jarl elite Idle F1-F2 across four directions. Its corrected
+armored Giant/clan-band baseline now passes the focused and full gates with all
+storm/lightning/impact effects external; after the side-pauldron repair, the
+designer reviewed both exact all-four-direction raw and Complete B + Form GIFs
+together and said `approved` on 2026-08-07. No other variant or animation,
+registration, integration, effect, release, or later gate is authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

@@ -128,7 +128,14 @@ far from the established roster style. Both implementations remain reproducible
   reviewed that delivered package and said `awesome lets do next in plan`,
   approving the bounded export checkpoint. That same statement authorizes only
   Storm-Clan Jarl elite Idle F1-F2 across Down, Left, Right, and Up next, with
-  storm arcs/lightning and impact cracks remaining external.
+  storm arcs/lightning and impact cracks remaining external. The isolated
+  `codex/en-e03-storm-clan-jarl-idle` lane now contains that exact acceptance
+  candidate, its deterministic raw and Complete B + Form evidence, and both
+  required labeled all-four-direction GIFs. After identifying and receiving a
+  repaired side-pauldron placement, the designer reviewed both corrected GIFs
+  together and said `approved` on 2026-08-07. Its focused gate and the full
+  project gate pass. The bounded approval is being published on that isolated
+  branch; it does not authorize later EN-E03 work.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -153,8 +160,9 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   common Cast/Death aliases are visually approved, internal, non-public, and
   published on their matching branch. Boulder Hurler Idle F1-F2 is visually
   approved, internal, non-public, and published. The separate full public-Enemy
-  three-treatment export is also approved and publication-bounded. Only
-  Storm-Clan Jarl elite Idle F1-F2 is authorized next; every other variant,
+  three-treatment export is also approved and publication-bounded. Storm-Clan
+  Jarl elite Idle F1-F2 is now visually approved, internal, non-public, and
+  publication-bounded after the side-pauldron repair; every other variant,
   animation, registration, consumer, effect, release, and later EN-E03 step
   remains unauthorized.
 
@@ -1004,6 +1012,56 @@ read as an armored Giant leader with a bright clan band, and keep storm arcs,
 lightning, impact cracks, and every other effect external. Walk, Attack, Hurt,
 Cast/Death aliases, other EN-E03 variants, registration, consumers, effects,
 release, and later work remain separately gated.
+
+### Storm-Clan Jarl Elite Idle Approved
+
+- Gate ID: `en-e03-storm-clan-jarl-idle-v1`; status: `approved`, internal,
+  non-public, and bounded to Idle F1-F2 only.
+- Isolated branch/worktree: `codex/en-e03-storm-clan-jarl-idle` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-storm-clan-jarl-idle`, based exactly
+  on approved handoff/export reconciliation checkpoint
+  `088b03f1e2b2fd3cf2391c8536a920fca5c9bb86`.
+- Scope: Storm-Clan Jarl elite Idle F1-F2 only across Down, Left, Right, and Up.
+  Layered storm-dark plate, broad steel pauldrons, heavy bracers, and a bright
+  cyan cloth clan sash establish the leader identity. No lightning, storm arc,
+  impact crack, projectile, aura, or environmental-effect pixels are baked in.
+- Revision evidence: after reviewing the first paired candidate, the designer
+  said `his shoulder is kind of in wrong place in the side frames`. The forward
+  side pauldron is now one row lower and one pixel back over the upper-arm joint
+  in both exact mirrored side directions; all hashes below identify this
+  corrected candidate only.
+- Approval evidence: the designer reviewed both exact corrected labeled
+  all-four-direction raw and Complete B + Form GIFs together and said
+  `approved` on 2026-08-07.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e03-storm-clan-jarl-idle`.
+  It deterministically produces both labeled `192x224`, two-frame, `480ms`
+  all-four-direction GIFs plus comparison boards beside the approved Boulder
+  Hurler and Hill Breaker Idle baselines.
+- Raw board SHA-256:
+  `776c57e70b20f7c0f0ab07ea344fab3e31082c028c08621498cf8b58d0b07c50`;
+  Complete B + Form board SHA-256:
+  `e0fd514dd9a9c26b50c221a5484f2832cee67e64e7a75eb08be56674f54c7768`.
+- Raw GIF SHA-256:
+  `dad3d5b8deaf07ca565165a7db9f2f6159af399b107215a9e7c9f459103f6183`;
+  Complete B + Form GIF SHA-256:
+  `3f173f215ad354fde8b387a6c507127bb15507e73f575bd843d1b82d55e25bdc`.
+- Candidate eight-frame digest:
+  `3aebd8218877e0da9752b20df1256da4af2710927389006011a37479a5d14894`.
+- Focused validation command:
+  `npm.cmd run check:enemy-expansion-en-e03-storm-clan-jarl-idle`; it preserves
+  all 8/8 Hill Breaker and 8/8 Boulder Hurler Idle frames byte-exact, validates
+  8/8 connected hard-alpha candidate silhouettes, four exact side mirrors,
+  distinct Down/Up and F1/F2 poses, one-cell margins, 106 bright clan-sash
+  pixels, 682 Complete B additions, 684 Form source changes, zero baked effect
+  pixels, and zero public EN-E03 families.
+- With the complete local Boss checkpoint corpus present, the full
+  `npm.cmd run check` passes in 178.4 seconds and all 232 public fixture sheets
+  remain unchanged.
+- Publication action: commit and push only this approved bounded lane, then
+  reconcile the exact checkpoint here. Do not begin another animation or
+  variant, register, integrate, add effects, release, or start later EN-E03 work
+  without separate explicit authorization.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
