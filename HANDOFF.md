@@ -2,28 +2,27 @@
 
 Date: 2026-08-07
 
-## Immediate Continuation Checkpoint - Banner Khan Idle Approved, Publication Pending
+## Immediate Continuation Checkpoint - Banner Khan Idle Approved And Published
 
 Start here in a new task. Banner Khan elite Idle F1-F2 is visually approved
-against the exact r3 paired GIFs below. The only remaining action in this gate
-is bounded publication and handoff reconciliation; no later art or integration
-gate is authorized.
+against the exact r3 paired GIFs below. Its bounded approval implementation is
+committed and pushed at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`. No later
+art or integration gate is authorized.
 
 - Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-idle` on
   branch `codex/en-e03-banner-khan-idle` at
-  `97787113ba3883e8cec41051fc9bdefe00684e95`. Until bounded publication, the
-  branch has no upstream and remains based on the published Sun Lancer handoff
-  checkpoint.
-- Git state contains the approved bounded lane and remains uncommitted and
-  unpushed pending publication. Modified files:
+  `55143049b4153e34fcdaad0ea434932ba0f2d0fd`, tracking the matching origin
+  branch. It was based on published Sun Lancer handoff checkpoint
+  `97787113ba3883e8cec41051fc9bdefe00684e95`.
+- The bounded approval commit contains modifications to:
   `ARCHITECTURE.md`, `ENEMY_EXPANSION_PLAN.md`, `HANDOFF.md`, `README.md`,
   `ROADMAP.md`, and `package.json`. New candidate files:
   `engine/enemy-expansion-en-e03-centaur-elite-idle.js`,
   `tools/enemy-expansion-en-e03-banner-khan-idle-review.mjs`,
   `tools/build-enemy-expansion-en-e03-banner-khan-idle-gifs.py`, and
-  `tools/check-enemy-expansion-en-e03-banner-khan-idle.mjs`. Do not reset,
-  clean, stash, or switch this lane. Stage and publish only these bounded files
-  under the approval-publication contract.
+  `tools/check-enemy-expansion-en-e03-banner-khan-idle.mjs`. Review artifacts
+  remain ignored. The checkout is synchronized with its upstream after this
+  docs-only reconciliation.
 - Gate: `en-e03-banner-khan-idle-v1`, status `approved`. Scope is only Banner
   Khan Idle F1-F2 in Down,
   Left, Right, and Up. It is internal and non-public. Walk, Attack, Hurt,
@@ -68,16 +67,14 @@ gate is authorized.
 - Validation is current. Run
   `npm.cmd run check:enemy-expansion-en-e03-banner-khan-idle` for the focused
   gate and `npm.cmd run check` for the repository gate. Both passed after the
-  planted horse-torso motion repair; the full gate completed in `186.8` seconds and kept
+  planted horse-torso motion repair; the full gate completed in `191.2` seconds and kept
   all 232 public fixture sheets unchanged. `git diff --check` also passed.
 - Review output and the copied local Boss checkpoint corpus under
   `death-review/boss-48-drafts` are ignored support artifacts. They are needed
   to reproduce the full local gate but are not candidate source changes.
-- Next action: rerun focused and full validation, stage only the bounded files
-  listed above, commit and push the branch under the standing
-  approval-publication rule, verify the upstream, and reconcile this handoff
-  with the published commit. Stop there. Only a separate explicit continuation
-  may authorize another Banner Khan animation or any later gate.
+- Next action: stop and wait for a separate explicit designer continuation.
+  Do not begin another Banner Khan animation or variant, register, integrate,
+  add effects, release, or start later EN-E03 work from this approval alone.
 
 The detailed historical and technical evidence remains in
 [Banner Khan Elite Idle Approved](#banner-khan-elite-idle-approved).
@@ -244,7 +241,8 @@ far from the established roster style. Both implementations remain reproducible
   mirrored collar now uses a compact stepped two-tone shape. F2 also adds a
   Banner Khan-only planted horse-torso shift while every leg and hoof pixel
   remains byte-exact. The designer reviewed both exact labeled r3 GIFs together
-  and said `approved` on 2026-08-07. Bounded publication remains pending.
+  and said `approved` on 2026-08-07. The bounded implementation is committed and
+  pushed at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -274,10 +272,10 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   publication-bounded after the side-pauldron repair. Sun Lancer specialist
   Idle F1-F2 is now visually approved, internal, non-public, and published on
   its matching approval branch. Banner Khan elite Idle F1-F2 is visually
-  approved against the exact r3 pair, internal, and non-public; only its bounded
-  commit, push, and handoff reconciliation remain. Every other variant,
-  animation, registration, consumer, effect, release, and later EN-E03 step
-  remains unauthorized.
+  approved against the exact r3 pair, internal, non-public, and published on its
+  matching approval branch at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`.
+  Every other variant, animation, registration, consumer, effect, release, and
+  later EN-E03 step remains unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -1235,14 +1233,17 @@ release, and later work remain separately gated.
 ### Banner Khan Elite Idle Approved
 
 - Gate ID: `en-e03-banner-khan-idle-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed pending bounded publication.
+  non-public, committed, and pushed at
+  `55143049b4153e34fcdaad0ea434932ba0f2d0fd`.
 - Authorization evidence: after approving and publishing Sun Lancer Idle, the
   designer said `lets do next`. Following the documented Centaur role order,
   Codex bounded only Banner Khan elite Idle F1-F2 across four directions.
 - Isolated branch/worktree: `codex/en-e03-banner-khan-idle` at
   `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-idle`, based exactly on
   published Sun Lancer handoff checkpoint
-  `97787113ba3883e8cec41051fc9bdefe00684e95`.
+  `97787113ba3883e8cec41051fc9bdefe00684e95`; it now tracks the matching origin
+  branch with the bounded approval implementation at
+  `55143049b4153e34fcdaad0ea434932ba0f2d0fd`.
 - Scope: Banner Khan elite Idle F1-F2 only across Down, Left, Right, and Up. The
   approved chestnut Steppe Hunter rider-horse-lance chassis is preserved while
   a visible khan face, compact conical steel helm, segmented blue-steel lamellar
@@ -1295,12 +1296,13 @@ release, and later work remain separately gated.
   Complete B additions, 1,011 Form source changes, zero baked effect pixels,
   and zero public EN-E03 families.
 - With the complete local Boss checkpoint corpus present, the full
-  `npm.cmd run check` passes in 186.8 seconds and all 232 public fixture sheets
+  `npm.cmd run check` passes in 191.2 seconds and all 232 public fixture sheets
   remain unchanged.
-- Required next action: publish only this bounded approved lane, verify its
-  upstream, and reconcile the handoff with the published commit. Do not begin
-  another animation or variant, register, integrate, add effects, release, or
-  start later EN-E03 work without separate explicit designer authorization.
+- Publication is complete at approved implementation checkpoint
+  `55143049b4153e34fcdaad0ea434932ba0f2d0fd`.
+- Required next action: stop and wait. Do not begin another animation or
+  variant, register, integrate, add effects, release, or start later EN-E03 work
+  without separate explicit designer authorization.
 - Pass-size guidance: this small Idle gate calibrates the new elite identity.
   If it is approved and the designer explicitly continues, the remaining
   Banner Khan Walk, Attack, Hurt, and Cast/Death work may be grouped into one

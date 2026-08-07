@@ -387,9 +387,10 @@ two-tone shape with a two-pixel pale highlight. The latest revision adds a
 Banner Khan-only planted horse-torso shift in F2 while every leg and hoof pixel
 remains byte-exact. The designer reviewed both exact labeled all-four-direction
 r3 GIFs together and said `approved` on 2026-08-07. The internal, non-public
-baseline remains uncommitted and unpushed only until bounded publication and
-handoff reconciliation; no other animation, variant, registration, consumer
-integration, effect, release, or later gate is authorized.
+baseline is committed and pushed at
+`55143049b4153e34fcdaad0ea434932ba0f2d0fd`; no other animation, variant,
+registration, consumer integration, effect, release, or later gate is
+authorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

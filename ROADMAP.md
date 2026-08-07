@@ -328,9 +328,9 @@ adds a Banner Khan-only planted horse-torso shift in F2 while every leg and
 hoof pixel remains byte-exact. Both required
 all-four-direction raw and Complete B + Form r3 GIFs were reviewed together;
 the designer said `approved` on 2026-08-07, and focused and full gates pass.
-Only the bounded commit, push, and handoff reconciliation remain. No other
-variant or animation, registration, integration, effect, release, or later gate
-is authorized.
+The bounded implementation is committed and pushed at
+`55143049b4153e34fcdaad0ea434932ba0f2d0fd`. No other variant or animation,
+registration, integration, effect, release, or later gate is authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

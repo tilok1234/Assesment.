@@ -632,9 +632,9 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   incomplete EN-E03 work remains excluded
 - Latest visual approval: both exact raw and Complete B + Form labeled Banner
   Khan r3 GIFs were approved together on 2026-08-07. The internal, non-public
-  Idle baseline is approved; only bounded publication and handoff
-  reconciliation remain. Other motion, variants, registration, consumers,
-  effects, release, and later work remain gated
+  Idle baseline is committed and pushed at
+  `55143049b4153e34fcdaad0ea434932ba0f2d0fd`. Other motion, variants,
+  registration, consumers, effects, release, and later work remain gated
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1400,7 +1400,8 @@ and no new sprite pixels or public integration are authorized.
 #### Banner Khan elite Idle approved baseline
 
 - Gate ID: `en-e03-banner-khan-idle-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed pending bounded publication.
+  non-public, committed, and pushed at
+  `55143049b4153e34fcdaad0ea434932ba0f2d0fd`.
 - Authorization evidence: after approving and publishing Sun Lancer Idle, the
   designer said `lets do next`; following the documented Centaur role order,
   Codex bounded only Banner Khan elite Idle F1-F2 across four directions.
@@ -1449,9 +1450,10 @@ and no new sprite pixels or public integration are authorized.
   `61c80740b96c2a35ccd8382335299c6521049f139c1c4df57e4852480663b3d6`.
 - Validation: focused gate passes; with the complete local Boss corpus, the full
   `npm.cmd run check` passes and all 232 public fixture sheets remain unchanged.
-- Required next action: publish only this bounded approved lane, verify its
-  upstream, and reconcile the handoff with the published commit. No later gate
-  is authorized.
+- Publication is complete at approved implementation checkpoint
+  `55143049b4153e34fcdaad0ea434932ba0f2d0fd`.
+- Required next action: stop and wait for separate explicit designer
+  authorization. No later gate is authorized by this approval.
 - Pass-size guidance: use this Idle gate to calibrate the new elite identity.
   After approval and a separate explicit continuation, the remaining Banner
   Khan Walk, Attack, Hurt, and Cast/Death motion may be reviewed as one larger
@@ -1800,6 +1802,6 @@ and separately gated.
 Visual approval is complete through all three common Idle, Walk, Attack, Hurt,
 Cast, and Death baselines, Boulder Hurler specialist Idle F1-F2, corrected
 Storm-Clan Jarl elite Idle F1-F2, Sun Lancer specialist Idle F1-F2, and Banner
-Khan elite Idle F1-F2. Only bounded Banner Khan publication and handoff
-reconciliation remain; any other code or art work requires separate explicit
-designer authorization.
+Khan elite Idle F1-F2. Banner Khan publication is complete at
+`55143049b4153e34fcdaad0ea434932ba0f2d0fd`; any other code or art work requires
+separate explicit designer authorization.
