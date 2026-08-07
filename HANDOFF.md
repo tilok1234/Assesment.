@@ -117,6 +117,18 @@ far from the established roster style. Both implementations remain reproducible
   now exist and pass technically. The designer reviewed both exact improved
   GIFs together and said `approved` on 2026-08-07; the bounded branch is
   committed and pushed under the publication contract.
+  Before starting another EN-E03 art gate, the designer requested one full
+  export of every complete public Enemy in three treatment folders. The
+  isolated `codex/all-enemy-outline-export` lane generated 67 families / 232
+  variants in `outlined`, `semi-outlined`, and `without-outlines`, for 696
+  native `480x96` PNGs plus a manifest, README, deterministic stored ZIP, and
+  SHA-256 sidecar. The exact ZIP is 2,440,823 bytes with SHA-256
+  `fd03895d8657b96293be14fbddbdb193ce62678c068023b58015410fc7f92b9c`.
+  Its focused package validator and the full project gate pass. The designer
+  reviewed that delivered package and said `awesome lets do next in plan`,
+  approving the bounded export checkpoint. That same statement authorizes only
+  Storm-Clan Jarl elite Idle F1-F2 across Down, Left, Right, and Up next, with
+  storm arcs/lightning and impact cracks remaining external.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -139,10 +151,12 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   approval branch. Briar Reveler Hurt H1-H2 is likewise visually approved,
   internal, non-public, and published on its matching branch. The separate
   common Cast/Death aliases are visually approved, internal, non-public, and
-  published on their matching branch. Only the Boulder Hurler two-frame Idle
-  baseline is now visually approved, internal, non-public, and published on its
-  matching branch; all other variants, animation, registration, consumers,
-  effects, release, and later EN-E03 work remain unauthorized.
+  published on their matching branch. Boulder Hurler Idle F1-F2 is visually
+  approved, internal, non-public, and published. The separate full public-Enemy
+  three-treatment export is also approved and publication-bounded. Only
+  Storm-Clan Jarl elite Idle F1-F2 is authorized next; every other variant,
+  animation, registration, consumer, effect, release, and later EN-E03 step
+  remains unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -168,6 +182,14 @@ explicitly says to hold publication, that narrower instruction wins.
 
 ## Canonical Workspace And Git State
 
+- Approved all-enemy export worktree:
+  `C:\tmp\8-bit-sprite-assembler-all-enemy-outline-export`
+- Approval branch: `codex/all-enemy-outline-export`, created exactly from
+  approved and pushed Boulder Hurler Idle checkpoint
+  `9c89077f79ef8eab06dc4e7a725edefe5b9bbb97`. It contains only the reusable
+  local exporter/checker, two package commands, approval documentation, and
+  generated ignored delivery artifacts. No sprite source, registry, selector,
+  fixture, release, or public catalog entry changed.
 - Approved Steppe Hunter Hurt worktree:
   `C:\tmp\8-bit-sprite-assembler-en-e03-steppe-hunter-hurt`
 - Approval branch: `codex/en-e03-steppe-hunter-hurt`, created exactly from
@@ -938,6 +960,48 @@ exactly. The subsequent `Cool let's keep going` authorizes only Steppe Hunter
   published under the approval contract. Do not add motion or another variant,
   register, integrate, add effects, release, or begin later work without
   separate explicit authorization.
+
+### Full Public-Enemy Three-Treatment Export Approved
+
+- Gate ID: `all-enemy-three-outline-modes-v1`; status: `approved`, local
+  delivery/tooling checkpoint, with no catalog or sprite-source change.
+- Approval evidence: after receiving the exact ZIP and validation summary, the
+  designer said `awesome lets do next in plan` on 2026-08-07.
+- Source art checkpoint:
+  `9c89077f79ef8eab06dc4e7a725edefe5b9bbb97`; the manifest records clean engine
+  files and exporter SHA-256
+  `6d934d164df8d7b76491bb9b8f547385562381773ac74bee748c3762f23e1b21`.
+- Export command: `npm.cmd run export:enemies:all-outlines` through
+  `tools/export-all-enemy-outline-pack.mjs`.
+- Validation command: `npm.cmd run check:export:enemies:all-outlines` through
+  `tools/check-all-enemy-outline-pack.mjs`.
+- Folder contract:
+  - `outlined/<family>/<variant>.png`: Form + Complete B;
+  - `semi-outlined/<family>/<variant>.png`: Form + Selective C; and
+  - `without-outlines/<family>/<variant>.png`: Form + None.
+- Coverage: all 67 complete public families / 232 variants in each treatment,
+  696 native `480x96` hard-alpha PNGs, 698 unpacked files, and 698 ZIP entries.
+- Exact ZIP: `8-bit-sprite-assembler-all-enemies-3-outline-modes-v1.zip`,
+  2,440,823 bytes, SHA-256
+  `fd03895d8657b96293be14fbddbdb193ce62678c068023b58015410fc7f92b9c`.
+- The focused checker validates every PNG dimension, all 80 non-empty actor
+  cells, binary alpha, treatment placement and distinction, per-file hashes,
+  directory parity, ZIP entry bytes, and archive sidecar. The full
+  `npm.cmd run check` also passes with all 232 committed fixtures unchanged.
+- Incomplete/non-public EN-E03 candidates, including Boulder Hurler's
+  Idle-only internal baseline, remain excluded from the complete public-roster
+  package. Bosses, players, effects, floor shadows, projectiles, release
+  binaries, and invented license text are also excluded.
+- The package is a local delivery artifact, not the separately gated Wildshot
+  game-pack release or a public release transport.
+
+The designer's approval plus `lets do next in plan` authorizes only a
+Storm-Clan Jarl elite Idle F1-F2 baseline across all four labeled directions.
+It must preserve the approved Hill Breaker and Boulder Hurler Giant Idle pixels,
+read as an armored Giant leader with a bright clan band, and keep storm arcs,
+lightning, impact cracks, and every other effect external. Walk, Attack, Hurt,
+Cast/Death aliases, other EN-E03 variants, registration, consumers, effects,
+release, and later work remain separately gated.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

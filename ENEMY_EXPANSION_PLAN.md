@@ -167,8 +167,11 @@ The designer then said `nice lets do nexrt`; Codex explicitly bounded Steppe
 Hunter Hurt H1-H2 across all four directions. That technical candidate now
 passes, and the designer reviewed both required GIFs together and said
 `approved` on 2026-08-07. Briar Reveler Hurt and the common Cast/Death aliases
-were subsequently approved and published. The designer then said `good lets do
-next`; only Boulder Hurler Idle F1-F2 is authorized now.
+were subsequently approved and published. Boulder Hurler specialist Idle F1-F2
+was then approved and published. The separate 67-family / 232-variant public-
+Enemy three-treatment export was delivered and approved when the designer said
+`awesome lets do next in plan`. Only Storm-Clan Jarl elite Idle F1-F2 is
+authorized now.
 
 ## Intake Assessment
 
@@ -217,11 +220,14 @@ four directions: Hill Breaker, Steppe Hunter, and Briar Reveler. Hill Breaker
 common Walk W1-W4, Steppe Hunter common Walk W1-W4, and Briar Reveler common
 Walk W1-W4 are also visually approved and internal. Hill Breaker, Steppe Hunter,
 and Briar Reveler common Attack A1-A4 are likewise visually approved, internal,
-and non-public. Hill Breaker Hurt H1-H2 is likewise visually approved, internal,
-and non-public. Steppe Hunter Hurt H1-H2 is likewise visually approved,
-internal, and non-public. Other Hurt, later family motion,
-variants, consumer work,
-effects, release, and subsequent EN-E03 gates remain unauthorized.
+and non-public. Hill Breaker, Steppe Hunter, and Briar Reveler Hurt H1-H2 plus
+their common Cast/Death aliases are visually approved, internal, non-public,
+and published. Boulder Hurler specialist Idle F1-F2 is also visually approved,
+internal, non-public, and published. The public-roster-only three-treatment
+export side lane is approved without changing EN-E03 art or registration.
+Storm-Clan Jarl elite Idle F1-F2 is the only active EN-E03 gate; other family
+motion, variants, consumer work, effects, release, and subsequent gates remain
+unauthorized.
 
 ## Non-Negotiable Production Contract
 
@@ -616,9 +622,13 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   aliases for the three approved common variants only; the four required GIFs
   were approved together and no new sprite pixels or public integration exist
 - Latest completed variant gate: Boulder Hurler specialist Idle F1-F2 is
-  approved, internal, and non-public across four directions; no active
-  continuation, other variant, motion, registration, consumer, effect, release,
-  or later work is authorized
+  approved, internal, and non-public across four directions
+- Approved side lane: the complete 67-family / 232-variant public catalog was
+  exported in Form + Complete B, Form + Selective C, and Form + None folders;
+  incomplete EN-E03 work remains excluded
+- Active authorization: Storm-Clan Jarl elite Idle F1-F2 across four directions
+  only; other motion, variants, registration, consumers, effects, release, and
+  later work remain gated
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1268,6 +1278,43 @@ and no new sprite pixels or public integration are authorized.
   motion or another variant, register, integrate, add effects, release, or begin
   later work without separate explicit authorization.
 
+#### Approved full public-Enemy three-treatment export side lane
+
+- Gate ID: `all-enemy-three-outline-modes-v1`; status: `approved` local
+  delivery/tooling checkpoint.
+- Source art commit:
+  `9c89077f79ef8eab06dc4e7a725edefe5b9bbb97`; branch/worktree:
+  `codex/all-enemy-outline-export` at
+  `C:\tmp\8-bit-sprite-assembler-all-enemy-outline-export`.
+- `tools/export-all-enemy-outline-pack.mjs` renders all 67 public families / 232
+  variants as native `480x96` sheets into three top-level folders: Form +
+  Complete B (`outlined`), Form + Selective C (`semi-outlined`), and Form + None
+  (`without-outlines`). Incomplete/non-public EN-E03 candidates are excluded.
+- `tools/check-all-enemy-outline-pack.mjs` validates all 696 PNGs, 698 unpacked
+  files, and 698 stored-ZIP entries, including every frame, hard alpha, hashes,
+  treatment distinction, and directory/archive parity.
+- Exact approved ZIP: 2,440,823 bytes, SHA-256
+  `fd03895d8657b96293be14fbddbdb193ce62678c068023b58015410fc7f92b9c`.
+- The full `npm.cmd run check` passes and all 232 committed fixture sheets remain
+  unchanged. This side lane does not register EN-E03 or alter the 80-plan art
+  sequence.
+- Approval evidence: the designer received the package and said `awesome lets
+  do next in plan` on 2026-08-07.
+
+#### Authorized Storm-Clan Jarl elite Idle gate
+
+- Gate ID: `en-e03-storm-clan-jarl-idle-v1`; status: `authorized`, internal,
+  non-public, and not yet visually approved.
+- Scope: only Idle F1-F2 across Down, Left, Right, and Up.
+- Identity: armored Giant leader with a bright clan band; no baked storm arc,
+  lightning, impact crack, projectile, aura, or environmental effect.
+- Preservation: approved Hill Breaker and Boulder Hurler Giant Idle frames must
+  remain byte-exact, with all public catalog and fixture content unchanged.
+- Required review: both labeled all-four-direction raw/no-outline and Complete
+  B + Form GIFs together.
+- Exclusions: Walk, Attack, Hurt, Cast/Death aliases, every other EN-E03
+  variant, registration, consumers, effects, release, and later work.
+
 ### EN-E04 - Serpentine and aquatic peoples
 
 - Status: `queued`
@@ -1589,9 +1636,12 @@ The exact rebuilt EN-E03 v2 raw and Complete B + Form common-only Idle artifacts
   hash-frozen. Steppe Hunter Hurt H1-H2 is also visually approved and
   hash-frozen. Briar Reveler Hurt H1-H2 and the common Cast/Death aliases are
   also visually approved, hash-frozen, internal, non-public, and published.
-  The designer then said `good lets do next`. That new authorization is bounded
-  only to Boulder Hurler specialist Idle F1-F2 across Down, Left, Right, and Up,
-  with its boulder/projectile kept external. All other variants, animations,
+  The designer then said `good lets do next`; Boulder Hurler specialist Idle
+  F1-F2 was bounded, approved, and published with its projectile external. The
+  later approved public-roster three-treatment export does not alter EN-E03 art
+  scope. The designer's `awesome lets do next in plan` authorizes only
+  Storm-Clan Jarl elite Idle F1-F2 across Down, Left, Right, and Up, with storm
+  arcs/lightning and impact cracks external. All other variants, animations,
   registration, consumer routing, effects, release, and later work remain gated.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
@@ -1601,6 +1651,6 @@ stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
 Visual approval is complete through all three common Idle, Walk, Attack, Hurt,
-Cast, and Death baselines plus Boulder Hurler specialist Idle F1-F2. No active
-continuation is authorized; any later code or art work requires separate
-explicit designer authorization.
+Cast, and Death baselines plus Boulder Hurler specialist Idle F1-F2. Only the
+bounded Storm-Clan Jarl elite Idle F1-F2 gate is active; any other code or art
+work requires separate explicit designer authorization.

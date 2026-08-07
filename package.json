@@ -71,6 +71,8 @@
     "check:enemy-expansion-en-e03-common-aliases": "node tools/check-enemy-expansion-en-e03-common-aliases.mjs",
     "check:enemy-expansion-en-e03-boulder-hurler-idle": "node tools/check-enemy-expansion-en-e03-boulder-hurler-idle.mjs",
     "check:enemy-expansion-repairs": "node tools/check-enemy-expansion-repairs.mjs",
+    "export:enemies:all-outlines": "node tools/export-all-enemy-outline-pack.mjs",
+    "check:export:enemies:all-outlines": "node tools/check-all-enemy-outline-pack.mjs",
     "export:bosses:13": "node tools/export-established-boss-pack.mjs",
     "check:pack-publish": "node tools/check-pack-publisher.mjs",
     "check": "node tools/check-project.mjs",

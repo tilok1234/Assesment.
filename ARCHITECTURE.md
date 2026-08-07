@@ -440,6 +440,19 @@ are later slices governed by `GAME_PACK_EXPORT_PLAN.md`.
 
 `zip.js` builds stored ZIP archives with UTF-8 paths and CRC-32 checksums. It accepts already-rendered files and has no knowledge of editor state, sprite specifications, or rendering internals.
 
+`tools/export-all-enemy-outline-pack.mjs` is a local, public-roster-only CLI
+adapter over `PUBLIC_ENEMIES`, `buildSheet()`, Form shading, and the approved
+outline modes. It emits three stable top-level treesâ€”`outlined`,
+`semi-outlined`, and `without-outlines`â€”with one native `480x96` complete sheet
+for every public family/variant, plus a manifest, README, stored ZIP, and SHA-256
+sidecar. `tools/check-all-enemy-outline-pack.mjs` independently decodes all PNGs
+and the stored ZIP, checks the 67/232 catalog boundary, all 80 non-empty cells,
+hard alpha, per-treatment geometry order, hashes, and directory/archive parity.
+The adapter does not import or expose incomplete EN-E03 registries, write
+fixtures, alter public catalogs, or act as a release publisher. The exact
+approved delivery contains 696 PNGs and has ZIP SHA-256
+`fd03895d8657b96293be14fbddbdb193ce62678c068023b58015410fc7f92b9c`.
+
 ### Gated release transport
 
 `tools/pack-publisher.mjs` is an isolated GitHub-release safety boundary. It
@@ -729,9 +742,15 @@ generator writes paired `1528x650` boards and two `192x224` labeled animation
 frames for each raw and Complete B + Form GIF. Passing remains technical
 evidence. The designer separately reviewed both exact improved GIFs together
 and said `approved` on 2026-08-07; the bounded branch is committed and pushed
-under the publication contract. No later EN-E03 gate is authorized. With the complete ignored Boss checkpoint corpus
-present, the full project gate also passes without changing any of the 232
-public fixture sheets.
+under the publication contract. The later public-roster-only three-treatment
+export was delivered and approved with `awesome lets do next in plan`; it does
+not change any sprite source or registry boundary. That statement authorizes
+only Storm-Clan Jarl elite Idle F1-F2 across four directions next. The elite
+must read as an armored Giant leader with a bright clan band while storm arcs,
+lightning, and impact cracks remain external. All other animation, variants,
+registration, consumers, effects, release, and later work remain gated. With
+the complete ignored Boss checkpoint corpus present, the full project gate also
+passes without changing any of the 232 public fixture sheets.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

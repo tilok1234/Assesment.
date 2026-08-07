@@ -263,9 +263,10 @@ committed and pushed under the publication contract. Its focused and full
 project gates pass with all 232 public fixture sheets unchanged. The full project gate
 passes with the complete 1,064-file local Boss checkpoint corpus and all 232
 public fixture sheets unchanged. The designer then said `good lets do next`;
-only Boulder Hurler specialist Idle F1-F2 across four directions is authorized,
-with no baked boulder/projectile. Additional Giant/Centaur/Satyr motion, other
-variants, registration, effects, release, and every later gate remain blocked.
+at that checkpoint, only Boulder Hurler specialist Idle F1-F2 across four
+directions was authorized, with no baked boulder/projectile. Additional
+Giant/Centaur/Satyr motion, other variants, registration, effects, release, and
+every later gate remained blocked until separately authorized.
 The full project gate passes with
 the complete preserved local Boss review-checkpoint corpus; fresh-worktree clone
 safety remains a separate unvalidated candidate at `125b0b3`.
@@ -280,7 +281,19 @@ now use the revised slower grounded shoulder/arm cycle and are frozen. The
 designer reviewed both exact improved GIFs together and said `approved` on
 2026-08-07; the bounded branch is committed and pushed under the publication
 contract. Its full project gate also passes with the complete local Boss corpus
-and all 232 public fixture sheets unchanged. No other variant or animation,
+and all 232 public fixture sheets unchanged.
+
+Before the next art gate, a separate local export lane generated all 67 public
+Enemy families / 232 variants in three complete native treatment trees: Form +
+Complete B, Form + Selective C, and Form + None. The package contains 696 PNGs,
+698 files/ZIP entries, and a strict independent validator; its exact stored ZIP
+is 2,440,823 bytes with SHA-256
+`fd03895d8657b96293be14fbddbdb193ce62678c068023b58015410fc7f92b9c`.
+The full project gate passes and no sprite source, public catalog, or fixture
+changed. The designer accepted the package with `awesome lets do next in plan`
+on 2026-08-07. That continuation is bounded only to Storm-Clan Jarl elite Idle
+F1-F2 across four directions, with a readable armored Giant/clan-band identity
+and all storm/lightning/impact effects external. No other variant or animation,
 registration, integration, effect, release, or later gate is authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish

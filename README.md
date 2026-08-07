@@ -68,6 +68,10 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
   than a legacy-family fallback. The selector participates in undo/redo,
   comparisons, presets, packs, recipes, previews, and assembled exports, while
   raw source pixels, effects, and atomic component sheets remain untreated
+- A validated local full-public-Enemy exporter with three top-level treatment
+  folders: Form + Complete B, Form + Selective C, and Form + None. It produces
+  232 native complete sheets per folder / 696 PNGs total plus a manifest,
+  README, stored ZIP, and SHA-256 sidecar
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
 - Six modular expressions—Neutral, Happy, Angry, Sad, Surprised, and Determined—that animate in every visible direction, remain readable beneath glasses, and hide beneath full helmets
@@ -274,10 +278,9 @@ full `npm.cmd run check` also passes and all 232 public sheets remain unchanged.
 The designer reviewed all four exact GIFs together and said `approved` on
 2026-08-07; the bounded branch is committed and pushed under the publication
 contract. The designer then said `good lets do next`; only a Boulder Hurler
-two-frame Idle baseline across four directions is authorized next, with its
-boulder/projectile kept external. No EN-E03 family is selectable or public.
-Other variants or motion, registration, effects, release, and every later gate
-remain unauthorized.
+two-frame Idle baseline across four directions was authorized at that
+checkpoint, with its boulder/projectile kept external. It is now approved and
+published. No EN-E03 family is selectable or public.
 
 The isolated Boulder Hurler baseline implements only specialist Idle F1-F2
 across Down, Left, Right, and Up. Its long bare throwing arms, wrist wraps,
@@ -294,6 +297,38 @@ both exact improved labeled all-four-direction GIFs together and said
 publication contract. With
 the complete local Boss checkpoint corpus present, the full `npm.cmd run check`
 also passes and all 232 public fixture sheets remain unchanged.
+
+## Full public-Enemy three-treatment export
+
+Run `npm.cmd run export:enemies:all-outlines` to generate one local package for
+all 67 complete public Enemy families / 232 variants. The package has exactly
+three top-level art folders:
+
+- `outlined/<family>/<variant>.png` for Form + Complete B;
+- `semi-outlined/<family>/<variant>.png` for Form + Selective C; and
+- `without-outlines/<family>/<variant>.png` for Form + None.
+
+Every file is a native `480x96` hard-alpha sheet containing all four directions
+and the 20-column Idle/Walk/Attack/Cast/Hurt/Death contract. The package has 232
+sheets in each folder / 696 PNGs total. `manifest.json` records the catalog,
+frame contract, treatment mapping, per-file dimensions, opaque-pixel counts,
+byte sizes, and SHA-256 hashes. `README.md`, the deterministic stored ZIP, and a
+ZIP SHA-256 sidecar are included.
+
+Run `npm.cmd run check:export:enemies:all-outlines` to verify every PNG, every
+non-empty actor cell, binary alpha, treatment distinction, directory contents,
+manifest hashes, ZIP entry bytes, and sidecar. The exact approved delivery ZIP
+is 2,440,823 bytes with SHA-256
+`fd03895d8657b96293be14fbddbdb193ce62678c068023b58015410fc7f92b9c`.
+The designer accepted that delivered package with `awesome lets do next in
+plan` on 2026-08-07.
+
+This local package intentionally excludes incomplete/non-public EN-E03 work,
+Bosses, players, effects, floor shadows, projectiles, release binaries, and
+invented license text. It is not the separately gated Wildshot game-pack
+release. The approval authorizes only Storm-Clan Jarl elite Idle F1-F2 next;
+other EN-E03 motion, variants, registration, consumers, effects, and release
+remain gated.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
