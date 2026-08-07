@@ -341,9 +341,9 @@ horse-torso response; aliases Cast to Attack and Death to Hurt H1,H2,H2,H2; and
 keeps command/banner/hoof effects external. Both exact labeled four-direction
 raw and Complete B + Form grouped GIFs were reviewed together; the designer
 said `approved` on 2026-08-08, and both focused and full gates pass with all 232
-public fixture sheets unchanged. Only the bounded commit, push, and handoff
-reconciliation remain. Registration, integration, other variants, effects,
-release, and later gates remain unauthorized.
+public fixture sheets unchanged. The bounded implementation is committed and
+pushed at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. Registration, integration,
+other variants, effects, release, and later gates remain unauthorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

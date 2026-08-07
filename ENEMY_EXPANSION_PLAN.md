@@ -632,13 +632,13 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   incomplete EN-E03 work remains excluded
 - Latest visual approval: both exact raw and Complete B + Form labeled Banner
   Khan grouped-motion GIFs were approved together on 2026-08-08. The internal,
-  non-public motion lane is approved; only bounded publication and handoff
-  reconciliation remain. The preceding Idle baseline is committed and pushed
-  at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`
-- Active approved publication lane: after the designer said `lets keep going`,
+  non-public motion lane is committed and pushed at
+  `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. The preceding Idle baseline is
+  committed and pushed at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`
+- Latest approved implementation: after the designer said `lets keep going`,
   one grouped Banner Khan Walk/Attack/Hurt/Cast/Death pass was completed across
-  all four directions and then visually approved; registration, consumers,
-  effects, release, other variants, and later work remain gated
+  all four directions, visually approved, and published; registration,
+  consumers, effects, release, other variants, and later work remain gated
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1468,7 +1468,8 @@ and no new sprite pixels or public integration are authorized.
 #### Banner Khan elite grouped motion approved
 
 - Gate ID: `en-e03-banner-khan-motion-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed pending bounded publication.
+  non-public, committed, and pushed at
+  `8e73cd038d50037a40cad27ee9f2e37b6e363b69`.
 - Authorization evidence: after the exact Banner Khan Idle r3 baseline was
   approved, published, and reconciled, the designer said `lets keep going`.
   This satisfies the documented separate continuation for one grouped remaining
@@ -1479,7 +1480,9 @@ and no new sprite pixels or public integration are authorized.
   authorizes only bounded publication of this internal, non-public lane.
 - Isolated branch/worktree: `codex/en-e03-banner-khan-motion` at
   `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-motion`, based exactly on
-  clean published Idle handoff `a3754a1a26219c3b494289b1cf71da07d5495aa2`.
+  clean published Idle handoff `a3754a1a26219c3b494289b1cf71da07d5495aa2`;
+  it now tracks the matching origin branch with the bounded approval
+  implementation at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`.
 - Scope: Walk W1-W4, Attack A1-A4, Hurt H1-H2, Cast C1-C4, and Death D1-D4
   across Down, Left, Right, and Up. Approved Idle F1-F2 remains byte-exact.
 - Motion sources: approved Steppe Hunter Walk, Attack, and Hurt rigs remain
@@ -1509,9 +1512,10 @@ and no new sprite pixels or public integration are authorized.
   four-phase GIFs were shown together: raw/no-outline and Complete B + Form.
   Focused and full repository gates pass; the full gate completed in `186.3`
   seconds with all 232 public fixture sheets unchanged.
-- Required next action: publish only this bounded approved lane, verify its
-  upstream, and reconcile the handoff with the published commit. No later gate
-  is authorized by this approval.
+- Publication is complete at approved implementation checkpoint
+  `8e73cd038d50037a40cad27ee9f2e37b6e363b69`.
+- Required next action: stop and wait for separate explicit designer
+  authorization. No later gate is authorized by this approval.
 - Exclusions: approved Idle changes, Steppe source changes, other variants,
   registration, consumers, baked command/banner/hoof effects, release, and
   later EN-E03 work.
@@ -1859,6 +1863,6 @@ Cast, and Death baselines, Boulder Hurler specialist Idle F1-F2, corrected
 Storm-Clan Jarl elite Idle F1-F2, Sun Lancer specialist Idle F1-F2, Banner Khan
 elite Idle F1-F2, and Banner Khan grouped Walk/Attack/Hurt/Cast/Death. Banner
 Khan Idle publication is complete at
-`55143049b4153e34fcdaad0ea434932ba0f2d0fd`; only bounded publication and handoff
-reconciliation remain for the grouped motion lane. Any other code or art work
+`55143049b4153e34fcdaad0ea434932ba0f2d0fd`; grouped motion publication is
+complete at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. Any other code or art work
 requires separate explicit designer authorization.

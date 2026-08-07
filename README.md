@@ -409,10 +409,9 @@ frozen context. Command aura, banner flare, hoof shock rings, and all other
 effects remain external. Focused validation and the full `npm.cmd run check`
 pass, with all 232 public fixture sheets unchanged. The designer reviewed both
 exact labeled all-four-direction GIFs together and said `approved` on
-2026-08-08. The internal, non-public motion lane remains uncommitted and
-unpushed only until bounded publication and handoff reconciliation; no other
-variant, registration, consumer integration, effect, release, or later gate is
-authorized.
+2026-08-08. The internal, non-public motion lane is committed and pushed at
+`8e73cd038d50037a40cad27ee9f2e37b6e363b69`; no other variant, registration,
+consumer integration, effect, release, or later gate is authorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

@@ -813,9 +813,9 @@ aliases, deterministic raw/Complete B + Form boards and paired grouped GIFs,
 and zero facade/public exposure. The full repository gate also passes without
 changing any of the 232 public fixture sheets. The designer reviewed the exact
 paired raw/no-outline and Complete B + Form all-four-direction GIFs together and
-said `approved` on 2026-08-08. The approved lane remains uncommitted and unpushed
-only until bounded publication and handoff reconciliation; other variants,
-registration, consumers, effects, release, and later work remain gated.
+said `approved` on 2026-08-08. The approved lane is committed and pushed at
+`8e73cd038d50037a40cad27ee9f2e37b6e363b69`; other variants, registration,
+consumers, effects, release, and later work remain gated.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
