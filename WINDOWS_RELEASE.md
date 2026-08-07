@@ -1,14 +1,20 @@
 # Windows release guide
 
-Current artifact status (2026-08-02): a local standalone proof executable was
-built on 2026-08-01 from the `bf6269c` main-worktree state at
-`src-tauri/target/release/sprite-assembler.exe`. It is 5,306,880 bytes with
-SHA-256
-`f2186000a911dff55495915c00a22df0098900b5ef491da2d489c1f92142bbd7`.
-It is not committed, not a distributable NSIS installer, and has no recorded
-packaged smoke-test or release approval. No NSIS setup executable currently
-exists under `src-tauri/target/release/bundle/nsis/`, so there is still no
-approved Windows release candidate.
+Current artifact status (2026-08-07): a local standalone proof executable was
+built from exact pushed checkpoint
+`4bea4102b0ddf94b020d5b7c66f1f9af806aab8f` at
+`C:\tmp\8-bit-sprite-assembler-en-e03-briar-reveler-attack\src-tauri\target\release\sprite-assembler.exe`.
+It is 5,375,488 bytes with SHA-256
+`a303a0e83f54466d44dc312444e8f41883834f7d40b3ef01dd74bb87972502b4`.
+The packaged Briar Reveler Attack module is byte-identical to source at SHA-256
+`5500b1342ad448bd43e084ba2777554587807bf74839d9fc1d91444eb64b5288`.
+The executable is version `0.1.0`, unsigned, ignored, and uncommitted. A direct
+startup/render smoke opened the assembler, showed the expected Effects Off UI,
+and remained responsive, but the full packaged-smoke checklist and release
+approval are still outstanding. It is not a distributable NSIS installer. No
+NSIS setup executable exists under this worktree's
+`src-tauri/target/release/bundle/nsis/`, so there is still no approved Windows
+release candidate. The older 2026-08-01 `bf6269c` standalone is historical.
 
 The Windows edition packages the same production frontend and procedural engine used by the browser build. Packaging does not freeze the content catalog: outfits, hairstyles, headgear, weapons, enemies, effects, and templates can still be changed normally, then included by rebuilding the application.
 

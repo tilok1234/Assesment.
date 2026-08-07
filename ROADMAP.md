@@ -235,9 +235,10 @@ also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
 catalog entries, so the command is not release-ready. Existing fixtures remain
 unchanged, Effects start Off, and the effect-after-character equipment
-occlusion issue remains on ice. A local standalone executable exists from
-`bf6269c`, but no NSIS installer or approved Windows release candidate exists.
-See `HANDOFF.md`.
+occlusion issue remains on ice. A current local standalone executable was built
+and startup/render-smoked from approved checkpoint `4bea410` on 2026-08-07, but
+no NSIS installer or approved Windows release candidate exists. See
+`HANDOFF.md`.
 
 The first fresh content slice after that checkpoint adds the visually approved
 Lantern through a separate public non-shield `offhand` field. Shields and
@@ -424,13 +425,14 @@ Progress: active. The release lane has native Save dialogs for every PNG, JSON,
 and ZIP export, final product metadata and icons, a current-user NSIS target
 with an embedded WebView2 bootstrapper, a release-specific validator, and a
 versioned GitHub draft-release workflow. Historical installer and standalone
-smoke tests passed their earlier checkpoints. A new local standalone proof was
-built from the `bf6269c` worktree state on 2026-08-01, but it has no recorded
-packaged smoke approval and is not an installer. No NSIS setup executable
-currently exists, so there is still no approved release candidate. Full NSIS
-install/uninstall testing, code signing, and automatic updates remain deferred
-until a stable distribution identity and a deliberate release checkpoint
-exist.
+smoke tests passed their earlier checkpoints. The current local standalone
+proof was built from exact approved checkpoint `4bea410` on 2026-08-07 and
+passed a direct startup/render smoke, including a responsive assembler UI with
+Effects Off visible. It remains unsigned, has not completed the full packaged-
+smoke checklist, and is not an installer. No NSIS setup executable currently
+exists, so there is still no approved release candidate. Full NSIS install/
+uninstall testing, code signing, and automatic updates remain deferred until a
+stable distribution identity and a deliberate release checkpoint exist.
 
 Goals:
 

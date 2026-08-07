@@ -876,20 +876,28 @@ conditions.
 
 ## Windows Artifact State
 
-A local standalone proof executable remains verified in the normal baseline
-worktree at:
+A current local standalone proof executable was built in the approved Briar
+Reveler worktree at:
 
-`C:\Users\headc\Documents\8-bit-sprite-assembler-main\src-tauri\target\release\sprite-assembler.exe`
+`C:\tmp\8-bit-sprite-assembler-en-e03-briar-reveler-attack\src-tauri\target\release\sprite-assembler.exe`
 
-It was built on 2026-08-01 from the `bf6269c` worktree state, is 5,306,880
-bytes, and has SHA-256
-`f2186000a911dff55495915c00a22df0098900b5ef491da2d489c1f92142bbd7`.
+It was built on 2026-08-07 from exact pushed checkpoint
+`4bea4102b0ddf94b020d5b7c66f1f9af806aab8f`, is 5,375,488 bytes, and has
+SHA-256
+`a303a0e83f54466d44dc312444e8f41883834f7d40b3ef01dd74bb87972502b4`.
+The packaged Briar Reveler Attack module is byte-identical to source at SHA-256
+`5500b1342ad448bd43e084ba2777554587807bf74839d9fc1d91444eb64b5288`
+and retains the exact approved gate metadata. Windows release configuration
+passes 35 assertions. A direct startup/render smoke opened the executable,
+rendered the assembler UI with Effects Off visible, and remained responsive;
+this is technical smoke evidence, not full packaged-smoke or release approval.
 
-It is ignored, uncommitted, not an NSIS installer, and has no recorded packaged
-smoke-test or release approval. No setup executable exists beneath that
-worktree's `src-tauri/target/release/bundle/nsis/`; there is no approved Windows
-release candidate. `npm run check:release -- --require-artifact` intentionally
-requires the NSIS installer and is not satisfied by the standalone proof.
+The executable is version `0.1.0`, unsigned, ignored, uncommitted, and not an
+NSIS installer. No setup executable exists beneath this worktree's
+`src-tauri/target/release/bundle/nsis/`; there is no approved Windows release
+candidate. `npm run check:release -- --require-artifact` intentionally fails
+because it requires the separate NSIS installer and is not satisfied by the
+standalone proof. The older 2026-08-01 `bf6269c` proof remains historical only.
 
 ## Validation Evidence For This Handoff
 
@@ -1147,8 +1155,9 @@ Recorded results before commit:
 - 12,560 repaired-Enemy frame-safety cases;
 - 232 legacy fixture sheets validated;
 - pack publisher harness passed eight assertion groups; and
-- Windows release configuration passed 35 assertions, with no NSIS installer
-  artifact found or claimed.
+- Windows release configuration passed 35 assertions; the current standalone
+  proof was built and startup/render-smoked, while no NSIS installer artifact
+  was found or claimed.
 
 The documentation audit additionally verifies:
 
@@ -1157,7 +1166,8 @@ The documentation audit additionally verifies:
 - the handoff names the expansion plan as the active lane authority;
 - current Boss counts match the live catalogs;
 - the NPC archive hash matches its archive record; and
-- the standalone executable hash matches the recorded value.
+- the current standalone executable and packaged Briar module hashes match the
+  recorded values.
 
 Historical EN-E01/EN-E02 approval evidence, inherited unchanged by the EN-E03
 branch, was run from the isolated EN-E02 worktree on 2026-08-02:
