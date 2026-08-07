@@ -2,6 +2,86 @@
 
 Date: 2026-08-07
 
+## Immediate Continuation Checkpoint - Banner Khan Idle Approved, Publication Pending
+
+Start here in a new task. Banner Khan elite Idle F1-F2 is visually approved
+against the exact r3 paired GIFs below. The only remaining action in this gate
+is bounded publication and handoff reconciliation; no later art or integration
+gate is authorized.
+
+- Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-idle` on
+  branch `codex/en-e03-banner-khan-idle` at
+  `97787113ba3883e8cec41051fc9bdefe00684e95`. Until bounded publication, the
+  branch has no upstream and remains based on the published Sun Lancer handoff
+  checkpoint.
+- Git state contains the approved bounded lane and remains uncommitted and
+  unpushed pending publication. Modified files:
+  `ARCHITECTURE.md`, `ENEMY_EXPANSION_PLAN.md`, `HANDOFF.md`, `README.md`,
+  `ROADMAP.md`, and `package.json`. New candidate files:
+  `engine/enemy-expansion-en-e03-centaur-elite-idle.js`,
+  `tools/enemy-expansion-en-e03-banner-khan-idle-review.mjs`,
+  `tools/build-enemy-expansion-en-e03-banner-khan-idle-gifs.py`, and
+  `tools/check-enemy-expansion-en-e03-banner-khan-idle.mjs`. Do not reset,
+  clean, stash, or switch this lane. Stage and publish only these bounded files
+  under the approval-publication contract.
+- Gate: `en-e03-banner-khan-idle-v1`, status `approved`. Scope is only Banner
+  Khan Idle F1-F2 in Down,
+  Left, Right, and Up. It is internal and non-public. Walk, Attack, Hurt,
+  Cast/Death, other variants, registration, consumers, effects, release, and
+  later EN-E03 work remain unauthorized.
+- Candidate history: the first blocky overlay was called weird; its targeted
+  repair was still judged to have too much wrong, so both were discarded. The
+  active candidate was rebuilt from the approved Steppe Hunter chassis. The
+  designer then rejected the straight-line side face, so only the mirrored
+  Left/Right profiles gained a stepped forehead, nose, eye, cheek, and tapered
+  jaw. The follow-up mouth feedback reduced it to exactly one front pixel,
+  separated from the shaded cheek by a skin-tone jaw pixel. The latest feedback
+  identified the pale horizontal side-profile streak: it was the six-pixel
+  light fur collar, not the mouth. Only the mirrored side collars now use a
+  compact stepped two-tone shape with a two-pixel pale highlight; the mouth
+  remains unchanged. The latest feedback requested horse-body motion. Banner
+  Khan F2 now lifts the side rump and settles the chest while Down/Up lift both
+  outer flanks; every leg and hoof pixel and both approved reference registries
+  remain byte-exact.
+- Approval evidence: the designer reviewed both exact labeled all-four-
+  direction r3 GIFs together and said `approved` on 2026-08-07. This approval
+  applies to the hashes below and authorizes only bounded publication of this
+  internal, non-public Idle baseline.
+- Required review presentation: always show both exact labeled all-four-
+  direction GIFs together unless the designer explicitly requests a narrow
+  inspection:
+  - raw/no outline:
+    `enemy-expansion-review/en-e03-banner-khan-idle/en-e03-banner-khan-idle-r3-four-directions-labeled.gif`
+  - Complete B + Form:
+    `enemy-expansion-review/en-e03-banner-khan-idle/en-e03-banner-khan-idle-r3-four-directions-labeled-complete-b-form.gif`
+  Both are `192x224`, contain two `240ms` frames, and loop continuously.
+- Frozen latest evidence: raw board SHA-256
+  `6221555094b9876ff1aad5f04b7a20327ea4f79bde7d06116f2f95f07a2836e1`;
+  Complete B + Form board SHA-256
+  `f4420a5c827762b699fa0007e168a484247fc0cb1a82623ec18c5cf510cc9b92`;
+  raw GIF SHA-256
+  `1b93946a596213cb02460624fd3c4e5c0640f5202e86783fbdbbe34e73d15a10`;
+  Complete B + Form GIF SHA-256
+  `298ad981961f9025c46fbcc3a255345ac8127fc2ce052303106b3606610e9e97`;
+  eight-frame candidate digest
+  `61c80740b96c2a35ccd8382335299c6521049f139c1c4df57e4852480663b3d6`.
+- Validation is current. Run
+  `npm.cmd run check:enemy-expansion-en-e03-banner-khan-idle` for the focused
+  gate and `npm.cmd run check` for the repository gate. Both passed after the
+  planted horse-torso motion repair; the full gate completed in `186.8` seconds and kept
+  all 232 public fixture sheets unchanged. `git diff --check` also passed.
+- Review output and the copied local Boss checkpoint corpus under
+  `death-review/boss-48-drafts` are ignored support artifacts. They are needed
+  to reproduce the full local gate but are not candidate source changes.
+- Next action: rerun focused and full validation, stage only the bounded files
+  listed above, commit and push the branch under the standing
+  approval-publication rule, verify the upstream, and reconcile this handoff
+  with the published commit. Stop there. Only a separate explicit continuation
+  may authorize another Banner Khan animation or any later gate.
+
+The detailed historical and technical evidence remains in
+[Banner Khan Elite Idle Approved](#banner-khan-elite-idle-approved).
+
 ## Purpose
 
 This is the canonical new-chat continuation for the 8-bit Sprite Assembler.
@@ -145,7 +225,26 @@ far from the established roster style. Both implementations remain reproducible
   project gate pass. The designer reviewed both exact GIFs together and said
   `approved` on 2026-08-07. The bounded approval implementation is committed
   and pushed at `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`; it does not
-  authorize later EN-E03 work.
+  authorize later EN-E03 work. The designer then said `lets do next`; following
+  the documented Centaur role order, Codex bounded that continuation only to
+  Banner Khan elite Idle F1-F2 across Down, Left, Right, and Up. The isolated
+  `codex/en-e03-banner-khan-idle` lane contains that exact acceptance candidate,
+  both required labeled raw and Complete B + Form GIFs, and passing focused and
+  full gates. The designer found the first version weird, then found the targeted
+  repair still had too much wrong and requested a from-scratch rebuild. Both
+  earlier identities are discarded. The active candidate delegates only the
+  approved Steppe Hunter chassis and redraws the entire elite identity with a
+  visible face, compact conical helm, segmented lamellar armor, limited crimson
+  saddle drape, and separated tapered standard. After the designer identified
+  the side face as straight lines, only the mirrored Left/Right profiles were
+  rebuilt with a stepped forehead, protruding nose, visible eye, cheek, and
+  tapered jaw. The follow-up mouth-length critique reduces the mouth to one
+  front pixel and separates it from the shaded cheek with a skin-tone jaw pixel.
+  The later pale horizontal streak was the six-pixel fur collar; only the
+  mirrored collar now uses a compact stepped two-tone shape. F2 also adds a
+  Banner Khan-only planted horse-torso shift while every leg and hoof pixel
+  remains byte-exact. The designer reviewed both exact labeled r3 GIFs together
+  and said `approved` on 2026-08-07. Bounded publication remains pending.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -174,8 +273,11 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   Jarl elite Idle F1-F2 is now visually approved, internal, non-public, and
   publication-bounded after the side-pauldron repair. Sun Lancer specialist
   Idle F1-F2 is now visually approved, internal, non-public, and published on
-  its matching approval branch; every other variant, animation, registration,
-  consumer, effect, release, and later EN-E03 step remains unauthorized.
+  its matching approval branch. Banner Khan elite Idle F1-F2 is visually
+  approved against the exact r3 pair, internal, and non-public; only its bounded
+  commit, push, and handoff reconciliation remain. Every other variant,
+  animation, registration, consumer, effect, release, and later EN-E03 step
+  remains unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -1129,6 +1231,80 @@ release, and later work remain separately gated.
   `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`. Do not begin another animation
   or variant, register, integrate, add effects, release, or start later EN-E03
   work without separate explicit authorization.
+
+### Banner Khan Elite Idle Approved
+
+- Gate ID: `en-e03-banner-khan-idle-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed pending bounded publication.
+- Authorization evidence: after approving and publishing Sun Lancer Idle, the
+  designer said `lets do next`. Following the documented Centaur role order,
+  Codex bounded only Banner Khan elite Idle F1-F2 across four directions.
+- Isolated branch/worktree: `codex/en-e03-banner-khan-idle` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-idle`, based exactly on
+  published Sun Lancer handoff checkpoint
+  `97787113ba3883e8cec41051fc9bdefe00684e95`.
+- Scope: Banner Khan elite Idle F1-F2 only across Down, Left, Right, and Up. The
+  approved chestnut Steppe Hunter rider-horse-lance chassis is preserved while
+  a visible khan face, compact conical steel helm, segmented blue-steel lamellar
+  armor, crimson command sash, limited saddle drape, and separated tapered war
+  standard establish the elite identity. Command aura, banner flare, hoof shock
+  rings, and every other movement effect remain external.
+- Revision evidence: the designer said `this one was weird` about the first
+  paired candidate, then said the targeted repair still had `so much wrong` and
+  requested a from-scratch rebuild. Both earlier overlay identities are rejected
+  and discarded. The active version delegates only the approved Steppe Hunter
+  chassis and redraws the complete elite identity. The designer then said the
+  side-frame face was bad because it was `just straigth lines`; the active
+  revision changes only the exact mirrored side faces, adding a stepped
+  forehead, protruding nose, visible eye, cheek, and tapered jaw while preserving
+  Down, Up, and the chassis. The designer then said the side mouth was too long;
+  the active revision reduces it to one front pixel and separates the cheek and
+  jaw tones. The latest feedback identified a pale horizontal side-profile
+  streak; it was the six-pixel light fur collar rather than the mouth. Only the
+  mirrored side collar was replaced with a compact stepped two-tone shape and
+  two-pixel pale highlight. The designer then requested horse-body motion. F2
+  now adds a Banner Khan-only planted torso shift: the side rump lifts while the
+  chest settles, and Down/Up lift both outer flanks. Every leg and hoof pixel
+  remains delegated byte-exact. All hashes below identify only this repaired
+  from-scratch candidate.
+- Approval evidence: the designer reviewed both exact labeled all-four-
+  direction raw and Complete B + Form r3 GIFs together and said `approved` on
+  2026-08-07. Technical validation supports but does not substitute for that
+  direct visual approval.
+- Review command: `npm.cmd run review:enemy-expansion-en-e03-banner-khan-idle`.
+  It deterministically produces both labeled `192x224`, two-frame, `480ms`
+  all-four-direction GIFs plus raw and Complete B + Form comparison boards
+  beside the approved Sun Lancer and Steppe Hunter baselines.
+- Raw board SHA-256:
+  `6221555094b9876ff1aad5f04b7a20327ea4f79bde7d06116f2f95f07a2836e1`;
+  Complete B + Form board SHA-256:
+  `f4420a5c827762b699fa0007e168a484247fc0cb1a82623ec18c5cf510cc9b92`.
+- Raw GIF SHA-256:
+  `1b93946a596213cb02460624fd3c4e5c0640f5202e86783fbdbbe34e73d15a10`;
+  Complete B + Form GIF SHA-256:
+  `298ad981961f9025c46fbcc3a255345ac8127fc2ce052303106b3606610e9e97`.
+- Candidate eight-frame digest:
+  `61c80740b96c2a35ccd8382335299c6521049f139c1c4df57e4852480663b3d6`.
+- Focused validation command:
+  `npm.cmd run check:enemy-expansion-en-e03-banner-khan-idle`; it preserves all
+  8/8 approved Steppe Hunter and 8/8 Sun Lancer Idle frames byte-exact,
+  validates 8/8 connected hard-alpha candidate silhouettes, eight four-hoof
+  contact rows, four exact side mirrors, distinct Down/Up and F1/F2 poses,
+  one-cell margins, 76 banner pixels, 256 blue-steel lamellar pixels, 152
+  crimson-cloth pixels, 50 bronze-trim pixels, 48 fur-collar pixels, 983
+  Complete B additions, 1,011 Form source changes, zero baked effect pixels,
+  and zero public EN-E03 families.
+- With the complete local Boss checkpoint corpus present, the full
+  `npm.cmd run check` passes in 186.8 seconds and all 232 public fixture sheets
+  remain unchanged.
+- Required next action: publish only this bounded approved lane, verify its
+  upstream, and reconcile the handoff with the published commit. Do not begin
+  another animation or variant, register, integrate, add effects, release, or
+  start later EN-E03 work without separate explicit designer authorization.
+- Pass-size guidance: this small Idle gate calibrates the new elite identity.
+  If it is approved and the designer explicitly continues, the remaining
+  Banner Khan Walk, Attack, Hurt, and Cast/Death work may be grouped into one
+  larger follow-up review instead of separate motion-by-motion gates.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

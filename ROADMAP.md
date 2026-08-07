@@ -310,6 +310,27 @@ and said `approved` on 2026-08-07; focused and full gates pass. The bounded
 implementation is committed and pushed at
 `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`. No other variant or animation,
 registration, integration, effect, release, or later gate is authorized.
+The designer then said `lets do next`; following the Centaur role order, only
+Banner Khan elite Idle F1-F2 was authorized. Its internal/non-public baseline
+preserves the approved four-hoof chassis and keeps
+command-aura/banner-flare/hoof-shock effects external. The first blocky overlay
+and its targeted repair are both rejected. The from-scratch candidate delegates
+only the approved Steppe Hunter chassis and uses a visible face, compact conical
+steel helm, segmented blue-steel lamellar armor, crimson command cloth, limited
+saddle drape, and a separated tapered war standard. The latest repair changes
+only the exact mirrored side faces, replacing the rejected straight-line profile
+with a stepped forehead, protruding nose, visible eye, cheek, and tapered jaw;
+the follow-up reduces the side mouth to one front pixel and separates it from
+the shaded cheek. The later pale horizontal side-profile streak was the
+six-pixel light fur collar; only that mirrored collar now uses a compact
+stepped two-tone shape with a two-pixel pale highlight. The latest revision
+adds a Banner Khan-only planted horse-torso shift in F2 while every leg and
+hoof pixel remains byte-exact. Both required
+all-four-direction raw and Complete B + Form r3 GIFs were reviewed together;
+the designer said `approved` on 2026-08-07, and focused and full gates pass.
+Only the bounded commit, push, and handoff reconciliation remain. No other
+variant or animation, registration, integration, effect, release, or later gate
+is authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

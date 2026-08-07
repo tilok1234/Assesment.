@@ -772,6 +772,30 @@ on 2026-08-07. The bounded implementation is committed and pushed at
 `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`. All other animation, variants,
 registration, consumers, effects, release, and later work remain gated.
 
+The designer then said `lets do next`; following the documented Centaur role
+order, the isolated `enemy-expansion-en-e03-centaur-elite-idle.js` module now
+implements only Banner Khan Idle F1-F2 as an internal, non-public approved
+baseline. Its first Sun-Lancer-derived overlay and targeted repair are both
+rejected. The from-scratch implementation delegates only the approved Steppe
+Hunter renderer, preserving the four-hoof chassis and all lower horse pixels,
+then draws a new elite identity with a visible face, compact conical steel helm,
+segmented blue-steel lamellar armor, crimson command cloth, limited saddle
+drape, and a separated tapered war standard. Command aura, banner flare, and
+hoof shock rings remain external. The latest bounded revision replaces only the
+exact mirrored side-face pixels with a stepped forehead, protruding nose,
+visible eye, cheek, and tapered jaw, then reduces the side mouth to one front
+pixel with a skin-tone jaw separator. The later pale horizontal side-profile
+streak was the six-pixel light fur collar; only that mirrored collar now uses a
+compact stepped two-tone shape with a two-pixel pale highlight. The latest
+revision adds a Banner Khan-only planted horse-torso shift in F2 while every
+leg and hoof pixel remains delegated byte-exact.
+Focused and full gates pass without changing any of the 232 public fixture
+sheets. The designer reviewed both exact labeled all-four-direction r3 GIFs
+together and said `approved` on 2026-08-07. The approved baseline remains
+uncommitted and unpushed only until bounded publication and handoff
+reconciliation. All other animation, variants, registration, consumers,
+effects, release, and later work remain gated.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

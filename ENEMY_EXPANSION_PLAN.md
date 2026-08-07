@@ -630,11 +630,11 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
 - Approved side lane: the complete 67-family / 232-variant public catalog was
   exported in Form + Complete B, Form + Selective C, and Form + None folders;
   incomplete EN-E03 work remains excluded
-- Latest visual approval: both exact raw and Complete B + Form labeled Sun
-  Lancer GIFs were approved together on 2026-08-07; the bounded implementation
-  is committed and pushed at `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`.
-  Other motion, variants, registration, consumers, effects, release, and later
-  work remain gated
+- Latest visual approval: both exact raw and Complete B + Form labeled Banner
+  Khan r3 GIFs were approved together on 2026-08-07. The internal, non-public
+  Idle baseline is approved; only bounded publication and handoff
+  reconciliation remain. Other motion, variants, registration, consumers,
+  effects, release, and later work remain gated
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1397,6 +1397,68 @@ and no new sprite pixels or public integration are authorized.
 - Exclusions: Banner Khan, Walk, Attack, Hurt, Cast/Death aliases, other EN-E03
   variants, registration, consumers, effects, release, and later work.
 
+#### Banner Khan elite Idle approved baseline
+
+- Gate ID: `en-e03-banner-khan-idle-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed pending bounded publication.
+- Authorization evidence: after approving and publishing Sun Lancer Idle, the
+  designer said `lets do next`; following the documented Centaur role order,
+  Codex bounded only Banner Khan elite Idle F1-F2 across four directions.
+- Isolated branch/worktree: `codex/en-e03-banner-khan-idle` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-idle`, based on published
+  checkpoint `97787113ba3883e8cec41051fc9bdefe00684e95`.
+- Identity: the approved chestnut Steppe Hunter chassis gains a visible khan
+  face, compact conical steel helm, segmented blue-steel lamellar armor,
+  crimson command sash, limited saddle drape, and a separated direction-aware
+  tapered war standard; command aura, banner flare, hoof shock rings, and other
+  movement effects remain external.
+- Revision evidence: the designer found the first paired candidate weird, then
+  found the targeted repair still had too much wrong and requested a from-scratch
+  rebuild. Both earlier overlay identities are rejected and discarded. The
+  active candidate delegates only the approved Steppe Hunter chassis and redraws
+  the complete elite identity. The designer then rejected the straight-line side
+  face; only the mirrored Left/Right profiles were rebuilt with a stepped
+  forehead, protruding nose, visible eye, cheek, and tapered jaw. Down, Up, and
+  the approved chassis remain unchanged. The designer then said the side mouth
+  was too long; it is now one front pixel, separated from the shaded cheek by a
+  skin-tone jaw pixel. The latest feedback identified the pale horizontal
+  side-profile streak as the six-pixel light fur collar. Only the mirrored side
+  collars now use a compact stepped two-tone shape with a two-pixel pale
+  highlight; the one-pixel mouth remains unchanged. The designer then requested
+  horse-body motion. Banner Khan F2 now lifts the side rump while settling the
+  chest and lifts both Down/Up outer flanks; every leg and hoof pixel remains
+  delegated byte-exact from the approved Steppe Hunter chassis.
+- Approval evidence: the designer reviewed both exact labeled all-four-
+  direction raw/no-outline and Complete B + Form r3 GIFs together and said
+  `approved` on 2026-08-07. The approval applies to the frozen hashes below.
+- Preservation: the focused gate confirms all 8/8 Steppe Hunter and 8/8 Sun
+  Lancer Idle frames byte-exact, 8/8 connected candidate silhouettes, eight
+  four-hoof contact rows, four exact side mirrors, one-cell margins, hard alpha,
+  76 banner pixels, 256 lamellar pixels, 152 cloth pixels, 50 bronze-trim
+  pixels, 48 fur-collar pixels, 983 Complete B additions, 1,011 Form source
+  changes, zero baked-effect pixels, and zero public EN-E03 families.
+- Frozen candidate evidence: raw board
+  `6221555094b9876ff1aad5f04b7a20327ea4f79bde7d06116f2f95f07a2836e1`,
+  Complete B + Form board
+  `f4420a5c827762b699fa0007e168a484247fc0cb1a82623ec18c5cf510cc9b92`,
+  raw GIF
+  `1b93946a596213cb02460624fd3c4e5c0640f5202e86783fbdbbe34e73d15a10`,
+  Complete B + Form GIF
+  `298ad981961f9025c46fbcc3a255345ac8127fc2ce052303106b3606610e9e97`,
+  and eight-frame digest
+  `61c80740b96c2a35ccd8382335299c6521049f139c1c4df57e4852480663b3d6`.
+- Validation: focused gate passes; with the complete local Boss corpus, the full
+  `npm.cmd run check` passes and all 232 public fixture sheets remain unchanged.
+- Required next action: publish only this bounded approved lane, verify its
+  upstream, and reconcile the handoff with the published commit. No later gate
+  is authorized.
+- Pass-size guidance: use this Idle gate to calibrate the new elite identity.
+  After approval and a separate explicit continuation, the remaining Banner
+  Khan Walk, Attack, Hurt, and Cast/Death motion may be reviewed as one larger
+  follow-up pass.
+- Exclusions: Walk, Attack, Hurt, Cast/Death aliases, other EN-E03 variants,
+  registration, consumers, effects, release, and later work.
+
 ### EN-E04 - Serpentine and aquatic peoples
 
 - Status: `queued`
@@ -1737,6 +1799,7 @@ and separately gated.
 
 Visual approval is complete through all three common Idle, Walk, Attack, Hurt,
 Cast, and Death baselines, Boulder Hurler specialist Idle F1-F2, corrected
-Storm-Clan Jarl elite Idle F1-F2, and Sun Lancer specialist Idle F1-F2. No later
-gate is active; any other code or art work requires separate explicit designer
-authorization.
+Storm-Clan Jarl elite Idle F1-F2, Sun Lancer specialist Idle F1-F2, and Banner
+Khan elite Idle F1-F2. Only bounded Banner Khan publication and handoff
+reconciliation remain; any other code or art work requires separate explicit
+designer authorization.

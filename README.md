@@ -363,6 +363,34 @@ committed and pushed at `f5057497bc0b9ee62b79c5d8a94efecfd49c0ec9`; no
 other animation, variant, registration, consumer integration, effect, release,
 or later gate is authorized.
 
+## Approved Banner Khan elite Idle baseline
+
+Run `npm.cmd run review:enemy-expansion-en-e03-banner-khan-idle` to reproduce
+the exact raw/no-outline and Complete B + Form comparison boards and two
+labeled all-four-direction `192x224` GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e03-banner-khan-idle` to verify the frozen
+candidate hashes, all eight connected hard-alpha Centaur frames, four fixed
+hoof contacts, exact side mirrors, preserved Steppe Hunter and Sun Lancer
+baselines, zero baked command-aura/banner-flare/shock effects, and zero public
+exposure. The first blocky overlay and its targeted repair are both rejected.
+The from-scratch candidate delegates only the approved Steppe Hunter chassis
+and redraws the elite identity with a visible face, compact conical steel helm,
+segmented blue-steel lamellar armor, crimson command cloth, limited saddle
+drape, and a separated tapered war standard. After the side face was rejected
+as straight lines, only its exact mirrored Left/Right profiles were rebuilt with
+a stepped forehead, protruding nose, visible eye, cheek, and tapered jaw; Down,
+Up and the approved chassis were unchanged by that face repair. The follow-up
+mouth correction reduces it to one front pixel and separates it from the shaded
+cheek. The later pale horizontal side-profile streak was the light fur collar
+rather than the mouth; only that mirrored collar now uses a compact stepped
+two-tone shape with a two-pixel pale highlight. The latest revision adds a
+Banner Khan-only planted horse-torso shift in F2 while every leg and hoof pixel
+remains byte-exact. The designer reviewed both exact labeled all-four-direction
+r3 GIFs together and said `approved` on 2026-08-07. The internal, non-public
+baseline remains uncommitted and unpushed only until bounded publication and
+handoff reconciliation; no other animation, variant, registration, consumer
+integration, effect, release, or later gate is authorized.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge
