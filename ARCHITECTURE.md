@@ -281,8 +281,20 @@ hoof anchors, at least three body/lower-identity phases, one-cell margins,
 deterministic raw/Complete B + Form boards and labeled GIFs, and zero public
 exposure. Separate gate metadata records the designer's direct approval of both
 exact labeled all-four-direction raw and Complete B + Form animations on
-2026-08-07. Hurt, other Giant/Centaur/Satyr motion, specialist/elite
-implementation, registration, and consumers remain blocked.
+2026-08-07. The newly authorized
+`engine/enemy-expansion-en-e03-giant-hurt.js` candidate composes only Hill
+Breaker H1-H2 on top of that approved Giant chain. Idle, Walk, and Attack are
+delegated byte-for-byte to their frozen renderers. H1 flashes and moves the
+upper body and club together through a direction-aware recoil while fixed lower
+rows preserve planted feet; H2 settles into a colored braced recovery. Its
+focused gate requires eight connected, distinct hard-alpha silhouettes, exact
+left/right visual weight, exact Down/Up foot anchors, one-cell margins, frozen
+raw/Complete B + Form evidence, and zero public exposure. The designer approved
+both exact labeled Down/Left/Right/Up raw and Complete B + Form GIFs together on
+2026-08-07 with `approved`; the bounded branch is committed and pushed under
+the approval-publication contract while remaining internal. Cast/Death aliases,
+other Giant/Centaur/Satyr Hurt work, specialist/elite implementation,
+registration, consumers, and later gates remain blocked.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -716,10 +728,10 @@ exist. EN-E01 and EN-E02 demonstrate the complete lifecycle with ten
 approved/public families / 30 variants and a shared renderer handler; the later
 approved repair remains a separate immutable registry layer. EN-E03 is the
 current counterexample that proves approved implemented evidence can stay
-non-public: three internal Idle baselines plus all three common Walk baselines
-are visually approved while remaining internal, and the bounded Hill Breaker
-common Attack A1-A4 baseline is likewise visually approved, internal, and
-non-public. Follow
+non-public: three internal Idle baselines plus all three common Walk and Attack
+baselines are visually approved while remaining internal. Hill Breaker H1-H2
+is also a visually approved internal baseline with every approved prior frame
+delegated exactly; it is not public. Follow
 `ENEMY_EXPANSION_PLAN.md`: keep
 candidates out of the public view, stop for four-direction baseline approval
 before full production, stop again for completed-slice approval, and register

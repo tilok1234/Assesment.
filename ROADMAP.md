@@ -146,7 +146,14 @@ from pushed checkpoint `c567a42`, preserves approved Briar Idle/Walk exactly and
 passes its focused 16-frame body-and-staff gate. The designer reviewed both
 required labeled all-four-direction raw and Complete B + Form GIFs together and
 said `very good! approved` on 2026-08-07. The exact lane is approved, internal,
-non-public, committed, and pushed; no later EN-E03 gate is authorized. The complete
+non-public, committed, and pushed. The designer then accepted the explicitly
+proposed Hill Breaker Hurt H1-H2 continuation with `lets go for it`. Its
+isolated lane on `codex/en-e03-hill-breaker-hurt`, based exactly on synchronized
+approved checkpoint `68d913c`, preserves every approved Giant Idle/Walk/Attack
+frame, passes its eight-frame focused gate, and has the required labeled
+all-four-direction raw and Complete B + Form GIFs ready together. The designer
+reviewed both exact GIFs together and said `approved` on 2026-08-07. The bounded
+lane is approved, committed, pushed, internal, and non-public. The complete
 57-family / 202-variant
 legacy Enemy catalog remains visually approved; its current 20-column gate
 covers 16,160 source frames / 48,480 None-B-C cases. Form shading, Lantern,
@@ -226,8 +233,12 @@ No EN-E03 family is public; Steppe Hunter Attack and Briar Reveler Attack are
 visually approved and published. The approved Briar Reveler baseline preserves
 Idle/Walk exactly and passes 16 connected body-and-staff, planted-hoof,
 whole-body-phase, mirror, front/back-depth, frozen-evidence, and zero-public-
-exposure checks. Hurt, additional Giant/Centaur/Satyr motion, variants,
-registration, effects, release, and every later gate remain blocked. The full project gate passes with
+exposure checks. Hill Breaker Hurt H1-H2 is also visually approved and
+published; it preserves all 40 approved Giant frames and passes eight connected/distinct,
+planted-contact, mirror, one-cell-margin, frozen-evidence, and zero-public-
+exposure checks. Cast/Death aliases, other Hurt, additional Giant/Centaur/Satyr
+motion, variants, registration, effects, release, and every later gate remain
+blocked. The full project gate passes with
 the complete preserved local Boss review-checkpoint corpus; fresh-worktree clone
 safety remains a separate unvalidated candidate at `125b0b3`.
 The current branch history
@@ -412,7 +423,8 @@ Candidate additions:
   Hill Breaker common Attack A1-A4 is also visually approved, internal, and
   non-public; Steppe Hunter common Attack A1-A4 is also visually approved,
   internal, and non-public; Briar Reveler common Attack A1-A4 is also visually
-  approved, internal, and non-public; no later EN-E03 gate is currently
+  approved, internal, and non-public; Hill Breaker Hurt H1-H2 is also visually
+  approved, internal, and non-public; no additional EN-E03 gate is currently
   authorized
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated

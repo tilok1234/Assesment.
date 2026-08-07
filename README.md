@@ -26,7 +26,8 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
   baselines for Hill Breaker, Steppe Hunter, and Briar Reveler, the approved
   internal Hill Breaker, Steppe Hunter, and Briar Reveler four-frame Walks, plus
   the approved Hill Breaker, Steppe Hunter, and Briar Reveler common Attack
-  A1-A4 baselines; none is selectable consumer content
+  A1-A4 baselines and the approved Hill Breaker Hurt H1-H2 baseline;
+  none is selectable consumer content
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -229,9 +230,17 @@ front/back depth, frozen dual-presentation evidence, and zero public exposure.
 The designer reviewed both exact labeled all-four-direction raw and Complete B
 + Form animations together and said `very good! approved` on 2026-08-07. Briar
 Reveler Attack is now an approved internal baseline and its matching branch is
-committed and pushed under the approval-publication contract. No EN-E03 family
-is selectable or public. Hurt, additional motion, specialist or elite variants,
-registration, effects, release, and every later gate remain unauthorized.
+committed and pushed under the approval-publication contract. The designer then
+accepted the explicitly proposed Hill Breaker Hurt H1-H2 gate with `lets go for
+it`. Its isolated eight-frame candidate preserves all approved Idle, Walk, and
+Attack frames byte-for-byte, passes its focused structural gate, and has both
+required labeled all-four-direction raw and Complete B + Form GIFs ready for
+direct review. The designer reviewed both exact GIFs together and said
+`approved` on 2026-08-07. Hill Breaker Hurt is now an approved internal
+baseline and its bounded branch is committed and pushed. No EN-E03 family is
+selectable or public. Cast/Death aliases, other Hurt or family motion,
+specialist or elite variants, registration, effects, release, and every later
+gate remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
@@ -503,6 +512,17 @@ upper-leg phases with exact foot anchors, and keeps Giant absent from public
 consumers. Passing proves structure and reproducibility; separate gate metadata
 records the exact labeled four-direction raw and Complete B + Form approval on
 2026-08-07.
+Run `npm run check:enemy-expansion-en-e03-giant-hurt` and
+`npm run review:enemy-expansion-en-e03-giant-hurt` for the approved internal
+Hill Breaker Hurt H1-H2 baseline. The checker preserves all 8 approved Idle,
+16 approved Walk, and 16 approved Attack frames byte-for-byte; validates eight
+connected, distinct hard-alpha Hurt silhouettes with planted contact, one-cell
+margins, exact side visual weight and exact Down/Up foot anchors; freezes the
+raw/Complete B + Form boards, dual labeled GIFs, and eight-frame digest; and
+keeps Giant absent from public consumers. H1 is the bright unified recoil and
+H2 the colored braced recovery. Passing proves structure and reproducibility,
+while gate metadata records direct approval of both exact all-four-direction
+GIFs together on 2026-08-07.
 Run `npm run check:enemy-expansion-en-e03-centaur-calibration` and
 `npm run review:enemy-expansion-en-e03-centaur-calibration` for the approved
 Steppe Hunter F1 seed. Its checker requires four connected hybrid
@@ -852,6 +872,10 @@ awaits explicit visual approval before any animation work.
 - `engine/enemy-expansion-en-e03-giant-attack.js` - approved internal Hill Breaker
   Attack A1-A4 baseline; it delegates approved Idle and Walk exactly, rejects
   later motion/families, and is absent from the public facade
+- `engine/enemy-expansion-en-e03-giant-hurt.js` - approved internal Hill Breaker
+  Hurt H1-H2 baseline; it delegates approved Idle, Walk, and Attack
+  exactly, rejects Cast/Death and other families, and is absent from the public
+  facade
 - `engine/enemy-expansion-en-e03-centaur-idle.js` - approved internal Steppe
   Hunter F1/F2 Idle baseline; F1 delegates to the frozen calibration and F2
   preserves the accepted planted-hoof continuation
@@ -898,6 +922,10 @@ awaits explicit visual approval before any animation work.
   `tools/enemy-expansion-en-e03-giant-attack-review.mjs` - focused 16-frame
   Attack gate and deterministic raw/Complete B + Form evidence for the approved
   internal Hill Breaker baseline
+- `tools/check-enemy-expansion-en-e03-giant-hurt.mjs` and
+  `tools/enemy-expansion-en-e03-giant-hurt-review.mjs` - focused eight-frame
+  Hurt gate plus deterministic labeled all-four-direction raw and Complete B +
+  Form evidence for the approved internal Hill Breaker baseline
 - `tools/check-enemy-expansion-en-e03-centaur-walk.mjs` and
   `tools/enemy-expansion-en-e03-centaur-walk-review.mjs` - focused 16-frame
   hybrid Walk gate and deterministic evidence for the approved internal Steppe

@@ -48,8 +48,13 @@
    dual labeled GIFs now exist and pass. The designer reviewed both exact
    labeled all-four-direction raw and Complete B + Form animations together and
    said `very good! approved` on 2026-08-07. The exact bounded lane is approved,
-   internal, non-public, committed, and pushed; no later EN-E03 gate is
-   authorized.
+   internal, non-public, committed, and pushed. The designer then agreed to
+   continue the 80 plan and accepted the explicitly proposed Hill Breaker Hurt
+   H1-H2 scope with `lets go for it`. That isolated eight-frame candidate now
+   passes its focused technical gate and has deterministic labeled
+   all-four-direction raw and Complete B + Form review GIFs. The designer
+   reviewed both exact GIFs together and said `approved` on 2026-08-07. The
+   bounded lane is approved, internal, non-public, committed, and pushed.
 - Recorded: 2026-08-04
 - Post-cleanup reconciliation: 2026-08-07
 - Assessment baseline: clean synchronized `main` at `f5476a2`
@@ -60,8 +65,14 @@
 - Current approved branch: `codex/en-e03-briar-reveler-attack`, created
   exactly from `c567a426fa6d5175395c2b035f65b12b5a5dd1cb` and adding only Briar
   Reveler Attack A1-A4; visually approved, internal, non-public, committed, and
-  pushed under the approval-publication contract, with no later continuation
-  authorized
+  pushed under the approval-publication contract; later work requires separate
+  explicit authorization
+- Current approved Hurt branch: `codex/en-e03-hill-breaker-hurt` in
+  `C:\tmp\8-bit-sprite-assembler-en-e03-hill-breaker-hurt`, created exactly
+  from approved synchronized checkpoint
+  `68d913ccfd00f76f15dcac308338c9e686a4f171`; it contains only the approved
+  Hill Breaker H1-H2 continuation and tracks its matching origin branch under
+  the approval-publication contract
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
 
 ## Purpose
@@ -134,7 +145,11 @@ raw/no-outline and Complete B + Form GIFs together and said `Approved` on
 2026-08-07. After that bounded lane was committed and pushed, `lets keep going`
 authorized only Briar Reveler common Attack A1-A4. Its focused gate and exact
 dual labeled animations pass, and the designer reviewed both together and said
-`very good! approved` on 2026-08-07. No later EN-E03 gate is authorized.
+`very good! approved` on 2026-08-07. The designer then accepted the explicitly
+bounded Hill Breaker Hurt H1-H2 gate with `lets go for it`, reviewed both exact
+labeled all-four-direction raw and Complete B + Form GIFs together, and said
+`approved` on 2026-08-07. That internal/non-public lane is committed and pushed.
+No later EN-E03 gate is authorized.
 
 ## Intake Assessment
 
@@ -181,10 +196,11 @@ EN-E03 v1 and v2 common-only Idle are rejected historical evidence. The EN-E03
 lane now has three visually approved internal two-frame Idle baselines across
 four directions: Hill Breaker, Steppe Hunter, and Briar Reveler. Hill Breaker
 common Walk W1-W4, Steppe Hunter common Walk W1-W4, and Briar Reveler common
-Walk W1-W4 are also visually approved and internal. Hill Breaker and Steppe
-Hunter common Attack A1-A4 are likewise visually approved, internal, and
-non-public. No Hurt, later family motion, variant, consumer, effect, release,
-or subsequent EN-E03 gate is authorized.
+Walk W1-W4 are also visually approved and internal. Hill Breaker, Steppe Hunter,
+and Briar Reveler common Attack A1-A4 are likewise visually approved, internal,
+and non-public. Hill Breaker Hurt H1-H2 is likewise visually approved, internal,
+and non-public. Other Hurt, later family motion, variants, consumer work,
+effects, release, and subsequent EN-E03 gates remain unauthorized.
 
 ## Non-Negotiable Production Contract
 
@@ -550,11 +566,12 @@ authorized only Briar Reveler F1 across four directions. The designer approved
 that exact F1 raw and Complete B + Form pair with `looks good.`, then authorized
 only its F2 continuation with `lets go next`. The designer approved the exact
 resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
-  approved all three common Walk baselines, Hill Breaker common Attack A1-A4, and
-  then Steppe Hunter common Attack A1-A4. The subsequent `lets keep going`
-  authorizes only Briar Reveler common Attack A1-A4. Do not implement Hurt,
-  other family motion, specialist/elite variants, registration, consumer
-  routing, separate effects, release work, or any later EN-E03 step.
+  approved all three common Walk baselines and all three common Attack A1-A4
+  baselines. After the Briar Reveler Attack branch was approved and published,
+  the designer accepted the explicitly bounded Hill Breaker Hurt H1-H2 gate
+  with `lets go for it`. Do not implement Cast/Death aliases, other Hurt/family
+  motion, specialist/elite variants, registration, consumer routing, separate
+  effects, release work, or any later EN-E03 step.
 
 ### EN-E03 - Large and hybrid walkers
 
@@ -563,11 +580,12 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   `approved` and internal; Steppe Hunter Walk W1-W4 `approved` and internal;
   Briar Reveler Walk W1-W4 `approved` and internal; Hill Breaker Attack A1-A4
   `approved` and internal; Steppe Hunter Attack A1-A4 `approved` and internal;
-  Briar Reveler Attack A1-A4 `approved` and internal
+  Briar Reveler Attack A1-A4 `approved` and internal; Hill Breaker Hurt H1-H2
+  `approved` and internal
 - Families: Giant, Centaur, Satyr
-- Active gate: none; Briar Reveler common Attack A1-A4 completed direct review
-  on both labeled raw and Complete B + Form GIFs, and no later EN-E03 gate is
-  authorized
+- Active gate: none; Hill Breaker common Hurt H1-H2 completed direct review on
+  both exact labeled raw and Complete B + Form GIFs, and this approval
+  authorizes no later EN-E03 work
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -976,8 +994,57 @@ Idle and Walk frame byte-for-byte.
   local corpus; the 57-family / 202-variant legacy catalog and all 232 fixture
   sheets remain unchanged.
 - The exact bounded approval branch is committed and pushed under the standing
-  publication rule. Do not implement Hurt, add variants, register, expose, or
-  begin a later EN-E03 gate without separate explicit authorization.
+  publication rule. The only authorized continuation is the separately bounded
+  Hill Breaker Hurt candidate below.
+
+#### Approved Hill Breaker Hurt baseline
+
+After the approved Briar Reveler Attack lane was committed and pushed, the
+designer agreed to continue the 80 plan. Codex proposed exactly Hill Breaker
+Hurt H1-H2 across Down, Left, Right, and Up, preserving approved Idle, Walk, and
+Attack byte-for-byte and stopping for dual-presentation review; the designer
+accepted that scope with `lets go for it` on 2026-08-07.
+
+- Gate ID: `en-e03-hill-breaker-hurt-v1`; status: `approved` on 2026-08-07,
+  internal, and non-public.
+- Approval evidence: the designer reviewed both exact labeled
+  all-four-direction raw and Complete B + Form animations together and said
+  `approved`.
+- Worktree and branch:
+  `C:\tmp\8-bit-sprite-assembler-en-e03-hill-breaker-hurt` on
+  `codex/en-e03-hill-breaker-hurt`, created exactly from synchronized approved
+  checkpoint `68d913ccfd00f76f15dcac308338c9e686a4f171`; the bounded approved lane is
+  committed and pushed to its matching origin branch.
+- Source: `engine/enemy-expansion-en-e03-giant-hurt.js`; Idle, Walk, and Attack
+  delegate to the exact approved Giant renderer chain.
+- Focused checker and package command:
+  `tools/check-enemy-expansion-en-e03-giant-hurt.mjs` and
+  `npm.cmd run check:enemy-expansion-en-e03-giant-hurt`.
+- Review generator and package command:
+  `tools/enemy-expansion-en-e03-giant-hurt-review.mjs` and
+  `npm.cmd run review:enemy-expansion-en-e03-giant-hurt`.
+- Labeled raw review animation: `192x224`, two `140ms` frames, SHA-256
+  `ebc7e3e1fcfad73aa0b8114e270dae2a699933aedc23b306a73edeec9214e5b6`.
+- Labeled Complete B + Form review animation: `192x224`, two `140ms` frames,
+  SHA-256
+  `f2034dd87706e196f1eece15f08db86dfb6e32a5437c18cdfe08e89b778ba3f4`.
+- Raw board: `1134x744`, SHA-256
+  `e621d1ed2898efdf9e49488aa367f7857b1c96f3b2ea1d9dd0dcd75dba2bcf02`.
+- Complete B + Form board: `1134x744`, SHA-256
+  `201f7c3246c0a924426201d1ad43b6f90849d9f4cd934b591b7d5a8bd6d9161c`.
+- Candidate eight-frame digest:
+  `92c18dc1dd0699e52f5f31a0900be1c6e46974c6f5bc3347fc7a7c7b65432340`.
+- The focused gate preserves 8/8 Idle, 16/16 Walk, and 16/16 Attack frames
+  byte-for-byte; validates eight connected, distinct hard-alpha Hurt
+  silhouettes, planted contact, one-cell margins, exact side visual weight,
+  exact Down/Up foot anchors, 714 Complete B additions, 418 Form source
+  changes, and zero public EN-E03 families.
+- H1 is a bright direction-aware recoil with the upper body and club moving as
+  one rig over planted feet; H2 is the colored braced recovery.
+- Both exact labeled review GIFs are approved and the branch is published.
+  Cast and Death aliases, other Hurt work, variants, registration, consumers,
+  effects, release, and every later gate remain excluded until separately
+  authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
@@ -1295,8 +1362,10 @@ stable/public result, with the pre-repair registry retained internally. The
   hash-frozen. Briar Reveler common Walk W1-W4 is also visually approved and
   hash-frozen. Hill Breaker common Attack A1-A4 is also visually approved and
   hash-frozen. Steppe Hunter common Attack A1-A4 is also visually approved and
-  hash-frozen. Do not begin Hurt, additional Giant/Centaur/Satyr motion beyond
-  those approved baselines, variants,
+  hash-frozen. Briar Reveler common Attack A1-A4 is also visually approved and
+  hash-frozen. Hill Breaker Hurt H1-H2 is also visually approved and
+  hash-frozen. Do not begin other Hurt,
+  additional Giant/Centaur/Satyr motion beyond this bounded candidate, variants,
   registration, separate effect assets, release work, or any later EN-E03 step
   without a new explicit gate and direct acceptance of the current review.
 
@@ -1306,7 +1375,7 @@ and non-baked attack tells. The largest unresolved risks are multi-form assets,
 stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
-Visual approval is complete through the bounded Hill Breaker and Steppe Hunter
-common Attack A1-A4 baselines. All three F1/F2 Idle and common Walk baselines
-remain approved and internal. Stop here; any later code/art continuation
-requires a new explicitly bounded designer authorization.
+Visual approval is complete through all three bounded common Attack A1-A4
+baselines and Hill Breaker Hurt H1-H2. All three F1/F2 Idle and common Walk
+baselines remain approved and internal. Stop here; any later code/art
+continuation requires a new explicitly bounded designer authorization.
