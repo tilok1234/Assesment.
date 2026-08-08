@@ -18,9 +18,13 @@ missing capability instead of implementing it here.
 2. Renderer edits are NOT normally needed. Only if the variant needs bespoke
    geometry does `engine/renderer.js` get a `V.id === '...'` special case
    (existing examples near L3084-3138) — avoid if possible.
-3. `npm run export:fixtures -- --family <family>` — writes the legacy
-   1152x384 fixture PNG(s) into `asset-pack/enemies/` and regenerates
+3. `npm run export:fixtures -- --family <family> --variant <new-id>` — writes
+   the new legacy 1152x384 fixture PNG into `asset-pack/enemies/` and updates
    `asset-pack/manifest.json` from the catalog. Never hand-edit either.
+   The exporter skips up-to-date fixtures and REFUSES to overwrite existing
+   ones whose pixels differ from the current engine (166 published fixtures
+   are intentionally stale); that requires `--accept-drift` and designer
+   approval.
 4. `npm run check:fast` (~2 min). Golden counts derive from the catalog — no
    checker edits.
 5. Show the designer ONLY this variant (app preview or the new fixture). Do not
@@ -50,6 +54,8 @@ missing capability instead of implementing it here.
 ## Never
 
 - Never hand-produce fixture PNGs or hand-edit `asset-pack/manifest.json`.
+- Never pass `--accept-drift` to the exporter without explicit designer
+  approval — it rewrites published art that downstream game repos consume.
 - Never bump counts inside `tools/check-project.mjs` — they derive from the catalog.
 - Never run `review:enemy-outlines`/`review:outlines` for a single-family change.
 - Never read `docs/archive/*` to figure out this workflow — this file is current.

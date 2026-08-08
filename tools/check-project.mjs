@@ -949,11 +949,6 @@ check(
     && shadedCompleteKitPlan.recipes[0]?.shadeMode === engine.SHADE_MODE_FORM,
   'Complete Kit schema v12 recipes must retain approved outline and shade metadata',
 );
-// Enemy-driven counts derive from the catalog so adding a family or variant
-// no longer requires editing golden literals here; the player-component and
-// effect totals stay frozen because they do not scale with the enemy roster.
-const catalogEnemyFamilyCount = engine.ENEMIES.length;
-const catalogEnemyVariantCount = engine.ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 // Complete Kits plan the PUBLIC catalog (legacy families plus approved
 // expansion slices), so kit counts derive from PUBLIC_ENEMIES — registering
 // the next slice needs no golden bumps here.
@@ -1059,7 +1054,11 @@ const completeKitPaths = [
   ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 2169, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === completeKitPaths.length, 'every Complete Character Kit PNG path must be unique');
+check(
+  completeKitPaths.length === 1912 + publicEnemyVariantCount + 24 + 1,
+  'the Complete Character Kit path list must cover every component, enemy sheet, effect, and the reference preview',
+);
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 const lanternKitPlan = characterKit.buildCompleteCharacterKitPlan([{
   id: 'lantern-bearer',

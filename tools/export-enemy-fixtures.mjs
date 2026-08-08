@@ -3,16 +3,24 @@
 // The committed pack is an explicit legacy 12-column 4x fixture (1152x384,
 // idle/walk/attack/hurt) that the in-app 20-column exporter cannot produce.
 // This tool renders any enemy variant straight from the engine catalogs to
-// that exact contract — verified pixel-identical to the committed corpus —
-// and regenerates asset-pack/manifest.json from engine/catalogs/enemies.js
-// so neither the PNG nor the 1,358-line manifest is ever hand-made again.
+// that exact contract and regenerates asset-pack/manifest.json from
+// engine/catalogs/enemies.js, so neither the PNG nor the 1,358-line manifest
+// is ever hand-made again.
+//
+// IMPORTANT: much of the committed corpus predates later approved engine art
+// changes (as of 2026-08-08, 166 of 202 sheets are stale — run --verify for
+// the live list). Updating published art is a designer decision, so write
+// mode NEVER overwrites an existing fixture whose pixels differ from the
+// current engine render unless --accept-drift is passed. Up-to-date fixtures
+// are left byte-untouched.
 //
 // Usage:
-//   node tools/export-enemy-fixtures.mjs --all                    re-export every variant
-//   node tools/export-enemy-fixtures.mjs --family slime           one family
+//   node tools/export-enemy-fixtures.mjs --all                    export every variant (drift-guarded)
+//   node tools/export-enemy-fixtures.mjs --family slime           one family (drift-guarded)
 //   node tools/export-enemy-fixtures.mjs --family slime --variant lime
 //   node tools/export-enemy-fixtures.mjs --missing                only variants without a PNG
 //   node tools/export-enemy-fixtures.mjs --verify [--family X]    compare renders against disk, write nothing
+//   Add --accept-drift to update stale published fixtures (designer decision).
 //   Add --no-manifest to skip the manifest rewrite.
 
 import { readFile, writeFile, access } from 'node:fs/promises';
@@ -48,9 +56,10 @@ const variantFilter = argValue('--variant');
 const exportAll = args.includes('--all');
 const onlyMissing = args.includes('--missing');
 const verifyOnly = args.includes('--verify');
+const acceptDrift = args.includes('--accept-drift');
 const writeManifest = !args.includes('--no-manifest');
 
-if (!familyFilter && !exportAll && !onlyMissing && !verifyOnly) {
+if (!familyFilter && !variantFilter && !exportAll && !onlyMissing && !verifyOnly) {
   console.error('Nothing selected. Use --all, --missing, --verify, or --family <id> [--variant <id>].');
   process.exit(1);
 }
@@ -204,8 +213,8 @@ for (const family of engine.ENEMIES) {
     selected.push({ family, variant });
   }
 }
-if (familyFilter && selected.length === 0) {
-  console.error(`No catalog match for --family ${familyFilter}${variantFilter ? ` --variant ${variantFilter}` : ''}.`);
+if ((familyFilter || variantFilter) && selected.length === 0) {
+  console.error(`No catalog match for${familyFilter ? ` --family ${familyFilter}` : ''}${variantFilter ? ` --variant ${variantFilter}` : ''}.`);
   process.exit(1);
 }
 
@@ -213,7 +222,9 @@ if (familyFilter && selected.length === 0) {
 let written = 0;
 let verified = 0;
 let skipped = 0;
+let upToDate = 0;
 const mismatches = [];
+const driftBlocked = [];
 for (const { family, variant } of selected) {
   const relativeFile = `enemies/${family.id}-${variant.id}.png`;
   const filePath = path.join(assetRoot, relativeFile);
@@ -228,29 +239,38 @@ for (const { family, variant } of selected) {
   }
 
   const rgba = renderFixtureRgba(spec);
+  let existing = null;
+  try {
+    existing = decodePng(await readFile(filePath));
+  } catch {}
+  const matchesExisting = existing
+    && existing.width === sheetWidth
+    && existing.height === sheetHeight
+    && existing.pixels.equals(rgba);
+
   if (verifyOnly) {
-    let existing;
-    try {
-      existing = decodePng(await readFile(filePath));
-    } catch {
-      mismatches.push(`${relativeFile}: missing from disk`);
-      continue;
-    }
-    if (existing.width !== sheetWidth || existing.height !== sheetHeight || !existing.pixels.equals(rgba)) {
-      mismatches.push(`${relativeFile}: rendered pixels differ from the committed fixture`);
-    } else {
-      verified++;
-    }
+    if (!existing) mismatches.push(`${relativeFile}: missing from disk`);
+    else if (!matchesExisting) mismatches.push(`${relativeFile}: rendered pixels differ from the committed fixture`);
+    else verified++;
     continue;
   }
 
+  if (matchesExisting) {
+    upToDate++;
+    continue;
+  }
+  if (existing && !acceptDrift) {
+    driftBlocked.push(relativeFile);
+    continue;
+  }
   await writeFile(filePath, encodePng(sheetWidth, sheetHeight, rgba));
   written++;
 }
 
 // ---------------- manifest ----------------
+let manifestWritten = false;
 if (!verifyOnly && writeManifest) {
-  manifest.enemies = engine.ENEMIES.map((family) => ({
+  const newEnemies = engine.ENEMIES.map((family) => ({
     family: family.id,
     name: family.name,
     variants: family.variants.map((variant) => ({
@@ -259,13 +279,22 @@ if (!verifyOnly && writeManifest) {
       file: `enemies/${family.id}-${variant.id}.png`,
     })),
   }));
-  manifest.counts = {
+  const newCounts = {
     ...manifest.counts,
-    enemyFamilies: manifest.enemies.length,
-    enemySheets: manifest.enemies.reduce((total, family) => total + family.variants.length, 0),
+    enemyFamilies: newEnemies.length,
+    enemySheets: newEnemies.reduce((total, family) => total + family.variants.length, 0),
   };
-  manifest.generated = new Date().toISOString().slice(0, 10);
-  await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
+  // Only touch the manifest when its content actually changed — a run that
+  // wrote nothing must not churn tracked files or bump the generated date.
+  const contentChanged = JSON.stringify({ enemies: manifest.enemies, counts: manifest.counts })
+    !== JSON.stringify({ enemies: newEnemies, counts: newCounts });
+  if (contentChanged) {
+    manifest.enemies = newEnemies;
+    manifest.counts = newCounts;
+    manifest.generated = new Date().toISOString().slice(0, 10);
+    await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
+    manifestWritten = true;
+  }
 }
 
 if (verifyOnly) {
@@ -274,7 +303,21 @@ if (verifyOnly) {
     for (const mismatch of mismatches) console.error(`- ${mismatch}`);
     process.exit(1);
   }
+  if (verified === 0) {
+    console.error('Fixture verification matched zero sheets — check the filters.');
+    process.exit(1);
+  }
   console.log(`Fixture verification passed: ${verified} sheet${verified === 1 ? '' : 's'} match the engine render exactly.`);
 } else {
-  console.log(`Exported ${written} fixture sheet${written === 1 ? '' : 's'} (${sheetWidth}x${sheetHeight}, legacy ${legacyColumns}-column ${scale}x contract)${skipped ? `, ${skipped} already present` : ''}${writeManifest ? '; manifest.json regenerated from the catalog' : ''}.`);
+  const parts = [`Exported ${written} fixture sheet${written === 1 ? '' : 's'} (${sheetWidth}x${sheetHeight}, legacy ${legacyColumns}-column ${scale}x contract)`];
+  if (upToDate) parts.push(`${upToDate} already up to date (untouched)`);
+  if (skipped) parts.push(`${skipped} skipped (--missing)`);
+  parts.push(manifestWritten ? 'manifest.json regenerated from the catalog' : 'manifest.json unchanged');
+  console.log(`${parts.join('; ')}.`);
+  if (driftBlocked.length) {
+    console.warn(`NOT overwritten — ${driftBlocked.length} existing fixture${driftBlocked.length === 1 ? '' : 's'} differ from the current engine render (published art is a designer decision):`);
+    for (const file of driftBlocked) console.warn(`- ${file}`);
+    console.warn('Re-run with --accept-drift to update published art, or `--verify` to audit the full corpus.');
+    if (written === 0) process.exit(1);
+  }
 }
