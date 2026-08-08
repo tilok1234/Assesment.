@@ -185,7 +185,12 @@ that`. The designer then located Temple Rajah in the bottom `R IDLE` row,
 reviewed both exact combined GIFs, and said
 `oh right sorry i had to scroll down approved`; bounded publication of that
 exact internal lane is complete at
-`4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`.
+`4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`. The designer then said
+`very good lets do another similar sized slice`; that continuation activates
+only the comparable 80-frame Temple Rajah complete-motion candidate now
+visually approved and awaiting bounded publication on
+`codex/en-e04-rajah-motion`. The same approval authorizes the next slice as one
+complete enemy with all standard animations.
 
 ## Intake Assessment
 
@@ -255,7 +260,10 @@ complete motion with Temple Rajah Idle F1-F2. It is technically validated,
 visually approved, internal, non-public, committed, and pushed at
 `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`. Temple Rajah motion, Merfolk,
 Birdfolk, registration, consumer work, effects, release, and subsequent gates
-remain unauthorized.
+remained unauthorized until the designer's later same-sized-slice request. That
+request activates Temple Rajah complete motion only; Merfolk, Birdfolk,
+registration, consumer work, effects, release, and subsequent gates remain
+unauthorized.
 
 ## Non-Negotiable Production Contract
 
@@ -1758,12 +1766,13 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `approved - combined Venom motion plus Temple Rajah Idle published`
+- Status: `approved - Temple Rajah complete motion publication pending`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
 - Approved gate: Naga Coilguard complete motion across Down, Left, Right, and Up
-- Active gate: combined Naga Venom Oracle complete motion plus Temple Rajah Idle F1-F2 across Down, Left, Right, and Up
+- Approved gate: combined Naga Venom Oracle complete motion plus Temple Rajah Idle F1-F2 across Down, Left, Right, and Up
+- Approved gate: Temple Rajah complete motion across Down, Left, Right, and Up; publication pending
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -1956,6 +1965,57 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Required next action: stop before Rajah motion, Merfolk/Birdfolk,
   registration, integration, effects, release, or broader EN-E04 work. Any
   continuation requires a new explicit authorization.
+
+#### Temple Rajah complete motion approved, publication pending
+
+- Gate ID: `en-e04-temple-rajah-motion-v1`; status:
+  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
+  publication.
+- Live branch: `codex/en-e04-rajah-motion` in the current v2 checkout, based
+  exactly on clean combined-slice reconciliation
+  `c92ee12339f38fd99e8fa87e202b50f69b89c187`; the approved implementation it
+  extends remains frozen at `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`.
+- Authorization: after approving the combined pair, the designer said
+  `very good lets do another similar sized slice` on 2026-08-08. Codex bounded
+  that continuation to one comparable 80-frame Temple Rajah suite rather than
+  crossing into a new Merfolk anatomy.
+- Approval: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form Temple Rajah motion-suite GIFs together
+  and said `approved, lets keep going with slices like this,, maybe a full enemy
+  with all its animations is a good spot` on 2026-08-08.
+- Scope: approved Temple Rajah Idle `8/8` delegates byte-for-byte. The candidate
+  adds Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast aliases, and exact Death
+  aliases `H1,H2,H2,H2` across all four directions.
+- Motion/identity: the approved planted Naga choreography carries Rajah's tall
+  crimson-and-gold crown, broad gilded pauldrons, ivory chest plate, and royal
+  sash through slither, brace, rise, strike, recovery, and Hurt phases. The
+  crown retains a one-cell ceiling and tail rows 17-23 remain byte-exact with
+  the matching approved Coilguard motion source.
+- External effects: command auras, royal sigils, sun flares, temple wards, coil
+  impacts, and all other effects remain outside actor pixels; baked effects are
+  empty.
+- Exclusions: approved Rajah Idle, Coilguard, and Venom Oracle pixel changes;
+  Merfolk; Birdfolk; new Cast/Death pixels; registration; consumers;
+  integration; effects; release; and broader EN-E04 work.
+- Frozen candidate evidence: raw / Complete B + Form boards
+  `be72a70e3965675b409ebf736e1448596d9cbeaf9fc2a59b97c8018f0430917b` /
+  `eed016625754ca5d675bd34eaa3936de3eeaaca73d7652d01dd52e06910a25ea`;
+  raw / Complete B + Form GIFs
+  `8396d98941c7abd8419758d13988acdfdeacc0f8567fae2f6ac42cfb094898ec` /
+  `c3199fecb9d20b969a1a23f3fa4b9892268a9f606604dc22f6b044a58b2fcf21`;
+  80-frame digest
+  `9f240fde4224597a94146448a698a57e573eebf966165fddbf2bd51c6d39fe2f`.
+- Focused validation passes approved Idle `8/8`, suite frames `80/80`, connected
+  silhouettes `80/80`, hard-alpha frames `80/80`, continuous no-feet rows
+  `640/640`, exact side mirrors `20/20`, Cast aliases `16/16`, Death aliases
+  `16/16`, 7,644 Complete B additions, 10,633 Form changes, and zero public
+  EN-E04 families. All four protected predecessor gates also pass.
+- The cleaned v2 fast and full gates pass with all 232 public PNG sheets
+  unchanged.
+- Required next action: publish only this exact approved Temple Rajah lane and
+  reconcile its clean pushed checkpoint. Then the same approval authorizes one
+  separate full-enemy, all-animation slice; registration, integration, effects,
+  release, and broader multi-enemy work remain outside.
 
 ### EN-E05 - Undead humanoids
 
@@ -2320,4 +2380,11 @@ non-public, committed, and pushed at
 `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30` on
 `codex/en-e04-venom-motion-rajah-idle`. Temple Rajah motion, Merfolk, Birdfolk,
 registration, integration, effects, release, and broader work remain
-unauthorized.
+unauthorized at that checkpoint. The designer's later `very good lets do
+another similar sized slice` activates only the 80-frame Temple Rajah
+complete-motion candidate on `codex/en-e04-rajah-motion`. It is hash-frozen,
+technically focused/protected/fast/full validated, visually approved, internal,
+non-public, uncommitted, and unpushed pending bounded publication. The same
+approval authorizes the next slice as one complete enemy with all standard
+animations; registration, integration, effects, release, and broader
+multi-enemy work remain unauthorized.

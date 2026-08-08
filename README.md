@@ -615,6 +615,35 @@ Rajah in the bottom `R IDLE` row and said
 `oh right sorry i had to scroll down approved` on 2026-08-08. Bounded
 publication is complete at `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`.
 
+## Temple Rajah complete motion approved, publication pending
+
+Branch `codex/en-e04-rajah-motion` owns one internal, non-public, uncommitted
+80-frame Temple Rajah motion candidate based exactly on clean combined-slice
+handoff `c92ee12`. The eight approved Idle frames delegate byte-for-byte. Walk,
+Attack, and Hurt inherit the approved planted Naga choreography while the tall
+crimson-and-gold crown, broad gilded pauldrons, ivory chest plate, and royal
+sash move through every phase. Cast aliases Attack exactly; Death aliases Hurt
+as `H1,H2,H2,H2`. Merfolk, Birdfolk, registration, integration, effects,
+release, and later work remain outside.
+
+Run `npm.cmd run review:enemy-expansion-en-e04-rajah-motion` to reproduce paired
+raw/no-outline and Complete B + Form `1428x760` boards plus paired labeled
+`640x672`, four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e04-rajah-motion` to verify all 80
+connected hard-alpha frames, 640 continuous no-feet rows, 20 exact side
+mirrors, exact Cast/Death aliases, approved Rajah Idle delegation, approved
+Naga tail preservation, frozen evidence, external effects, and zero public
+exposure. The candidate digest is
+`9f240fde4224597a94146448a698a57e573eebf966165fddbf2bd51c6d39fe2f`.
+
+Gate `en-e04-temple-rajah-motion-v1` is `approved` after the designer reviewed
+the exact raw and Complete B + Form GIF pair and said `approved, lets keep going
+with slices like this,, maybe a full enemy with all its animations is a good
+spot` on 2026-08-08. Focused, all four protected EN-E04 gates, and the v2
+fast/full gates pass with all 232 public PNG sheets unchanged. Bounded
+publication is pending; the same approval separately authorizes one complete
+enemy with all standard animations as the next slice.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge

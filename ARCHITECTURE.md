@@ -975,6 +975,29 @@ designer reviewed both exact combined GIFs, located Rajah in the bottom
 2026-08-08. Temple Rajah motion, Merfolk, Birdfolk, registration, consumers,
 effects, and release stay outside.
 
+The isolated `engine/enemy-expansion-en-e04-rajah-motion.js` module composes the
+next authorized elite gate without modifying the approved Rajah Idle or Naga
+motion sources. Idle delegates the approved eight frames byte-for-byte. Motion
+renders the approved Coilguard planted-slither/strike/Hurt source, then layers
+the connected Rajah crown and armor identity through the same direction-aware
+phase transform; tall-crown upward/recoil movement is clamped to the one-cell
+ceiling. Cast is an exact Attack alias and Death is the exact Hurt sequence
+`H1,H2,H2,H2`.
+
+Gate `en-e04-temple-rajah-motion-v1` is visually approved, internal, non-public,
+uncommitted, and unpushed pending bounded publication. The designer reviewed
+both exact paired GIFs and said `approved, lets keep going with slices like
+this,, maybe a full enemy with all its animations is a good spot` on 2026-08-08.
+Its lane-local registry contains only Temple Rajah and remains absent from
+`sprite-engine.js`. Frozen
+`1428x760` boards, `640x672` four-phase paired GIFs, an 80-frame digest, exact
+approved-Idle delegation, continuous rows, exact mirrors/aliases, tail-source
+locks, Complete B/Form presentation, and zero public exposure define the gate.
+Focused, all four protected EN-E04, and fast/full repository gates pass with all
+232 public sheets unchanged. Merfolk, Birdfolk, registration, consumers,
+effects, release, and broader work remain outside this gate. The approval
+separately authorizes one complete-enemy/all-animation slice next.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

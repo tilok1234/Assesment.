@@ -15,7 +15,67 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Expanded Naga Slice Approved And Published
+## Immediate Continuation Checkpoint - Temple Rajah Motion Approved, Publication Pending
+
+Start here in a new task. After the combined Venom Oracle complete-motion plus
+Temple Rajah Idle slice was approved, published, and reconciled, the designer
+said `very good lets do another similar sized slice` on 2026-08-08. Codex
+bounded that continuation to one comparable 80-frame Temple Rajah complete
+motion suite; it does not cross into a new Merfolk anatomy.
+
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-rajah-motion`, based exactly on clean reconciled combined-slice
+  handoff `c92ee12339f38fd99e8fa87e202b50f69b89c187`; the approved
+  implementation it extends remains frozen at
+  `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`.
+- Gate: `en-e04-temple-rajah-motion-v1`; status
+  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
+  publication.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form Temple Rajah motion-suite GIFs together
+  and said `approved, lets keep going with slices like this,, maybe a full enemy
+  with all its animations is a good spot` on 2026-08-08.
+- Scope: 80 Temple Rajah suite frames across Down, Left, Right, and Up. The
+  approved Idle F1-F2 frames delegate byte-for-byte; the candidate adds Walk
+  W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Motion/identity: the approved planted Naga slither, coil brace, cobra rise,
+  forward strike, recovery, and complete-silhouette Hurt choreography carry the
+  tall crimson-and-gold crown, gilded pauldrons, ivory chest plate, and royal
+  sash through each phase. Upward/recoil phases retain the one-cell crown
+  ceiling; rows 17-23 remain byte-exact with approved Naga motion tails.
+- Effects/exclusions: command auras, royal sigils, sun flares, temple wards,
+  coil impacts, and all other effects remain external. Merfolk, Birdfolk, new
+  Cast/Death pixels, registration, consumers, integration, release, and broader
+  EN-E04 work remain outside.
+- Review command: `npm.cmd run review:enemy-expansion-en-e04-rajah-motion`; it
+  reproduces paired raw/no-outline and Complete B + Form `1428x760` boards plus
+  exact labeled `640x672`, four-phase, `720ms` looping GIFs.
+- Raw / Complete B + Form board SHA-256 values:
+  `be72a70e3965675b409ebf736e1448596d9cbeaf9fc2a59b97c8018f0430917b` /
+  `eed016625754ca5d675bd34eaa3936de3eeaaca73d7652d01dd52e06910a25ea`.
+- Raw / Complete B + Form GIF SHA-256 values:
+  `8396d98941c7abd8419758d13988acdfdeacc0f8567fae2f6ac42cfb094898ec` /
+  `c3199fecb9d20b969a1a23f3fa4b9892268a9f606604dc22f6b044a58b2fcf21`.
+- Candidate 80-frame digest:
+  `9f240fde4224597a94146448a698a57e573eebf966165fddbf2bd51c6d39fe2f`.
+- Focused validation passes: approved Rajah Idle `8/8`; suite `80/80`;
+  connected silhouettes `80/80`; hard-alpha frames `80/80`; continuous
+  lower-body rows `640/640`; exact side mirrors `20/20`; Cast aliases `16/16`;
+  Death aliases `16/16`; opaque range 191-249; 7,644 Complete B additions;
+  10,633 Form changes; public EN-E04 families `0`.
+- Protected Naga Idle, Coilguard motion, Venom Oracle Idle, and combined
+  Venom-motion/Rajah-Idle gates pass unchanged. The cleaned v2 fast and full
+  gates pass with all 232 public PNG sheets unchanged.
+- Required next action: publish only this exact approved Temple Rajah lane and
+  reconcile its clean pushed checkpoint. The same approval separately
+  authorizes one full-enemy, all-animation slice after publication; do not
+  register, integrate, add effects, release, or broaden to multiple enemies.
+
+The approved preceding combined checkpoint follows for provenance.
+
+## Approved Source Checkpoint - Expanded Naga Slice Approved And Published
 
 Start here in a new task. After approving and publishing Venom Oracle Idle, the
 designer asked to try bigger slices. Codex proposed one combined 88-frame review
