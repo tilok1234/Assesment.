@@ -413,6 +413,29 @@ exact labeled all-four-direction GIFs together and said `approved` on
 `8e73cd038d50037a40cad27ee9f2e37b6e363b69`; no other variant, registration,
 consumer integration, effect, release, or later gate is authorized.
 
+## Reed Charmer specialist Idle approved
+
+After the published Banner Khan motion handoff, the designer said
+`cool lets do next`, advancing the documented EN-E03 family/role order only to
+Reed Charmer Idle F1-F2. The designer reviewed the exact paired labeled
+all-four-direction raw/no-outline and Complete B + Form GIFs together and said
+`Approved` on 2026-08-08. Run
+`npm.cmd run review:enemy-expansion-en-e03-reed-charmer-idle` to reproduce the
+exact raw/no-outline and Complete B + Form `1528x650` comparison boards plus
+paired labeled all-four-direction `192x224` GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e03-reed-charmer-idle` to verify the
+frozen hashes, all eight connected hard-alpha specialist frames, exact approved
+Briar Reveler preservation, four split-hoof contact rows, exact side mirrors,
+visible F1/F2 playing motion, and zero public exposure. The focused gate and
+full `npm.cmd run check` pass; the full gate finished in `184` seconds with
+all 232 public fixture sheets unchanged. Reed Charmer preserves
+the approved horns, tail, digitigrade legs, and hooves, replaces the crooked
+staff with a compact panpipe and connected hands, and adds a teal woven vest
+with gold sash. Music notes, pollen, charm rings, and all other control effects
+remain external. The candidate is internal, uncommitted, and unpushed pending
+bounded publication; Wildwood Hornlord, later motion, registration, consumer
+integration, effects, release, and later gates remain unauthorized.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge

@@ -2,81 +2,77 @@
 
 Date: 2026-08-08
 
-## Immediate Continuation Checkpoint - Banner Khan Grouped Motion Approved And Published
+## Immediate Continuation Checkpoint - Reed Charmer Idle Approved
 
-Start here in a new task. Banner Khan Walk, Attack, Hurt, Cast, and Death are
-visually approved against the exact paired motion-suite GIFs below. The bounded
-approval implementation is committed and pushed at
-`8e73cd038d50037a40cad27ee9f2e37b6e363b69`. No later art or integration gate
-is authorized.
+Start here in a new task. The designer reviewed the exact paired Reed Charmer
+specialist Idle F1-F2 all-four-direction GIFs and said `Approved` on 2026-08-08.
+Only bounded publication of this internal lane is authorized; there is no next
+active art gate.
 
-- Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-banner-khan-motion` on
-  branch `codex/en-e03-banner-khan-motion` at
-  `8e73cd038d50037a40cad27ee9f2e37b6e363b69`, tracking the matching origin
-  branch. It was based exactly on clean published Banner Khan Idle handoff
-  `a3754a1a26219c3b494289b1cf71da07d5495aa2`.
-- The bounded approval commit exposes only frozen draw helpers in the approved
-  Banner Khan Idle and Steppe Hunter Walk/Attack/Hurt modules; their approved
-  frame digests remain exact. Its new files are
-  `engine/enemy-expansion-en-e03-centaur-elite-motion.js`,
-  `tools/enemy-expansion-en-e03-banner-khan-motion-review.mjs`,
-  `tools/build-enemy-expansion-en-e03-banner-khan-motion-gifs.py`, and
-  `tools/check-enemy-expansion-en-e03-banner-khan-motion.mjs`, plus package and
-  documentation updates. Review artifacts remain ignored. The checkout is
-  synchronized with its upstream after this docs-only reconciliation. A later
-  metadata-only reconciliation makes the live gate object and focused checker
-  record the exact 2026-08-08 approval; it changes no sprite pixels.
-- Gate: `en-e03-banner-khan-motion-v1`, status `approved`, internal and
-  non-public. Scope is Banner Khan
-  Walk W1-W4, Attack A1-A4, Hurt H1-H2, Cast C1-C4, and Death D1-D4 in Down,
-  Left, Right, and Up. Approved Idle F1-F2 remains byte-exact.
-- Authorization evidence: after the exact Idle r3 baseline was approved,
-  published, and reconciled, the designer said `lets keep going`. This matches
-  the documented option to group all remaining Banner Khan motion into one
-  larger follow-up review.
+- Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-reed-charmer-idle` on
+  branch `codex/en-e03-reed-charmer-idle` at
+  `c324e44`, with no upstream. It is based exactly on the corrected, published
+  Banner Khan grouped-motion handoff.
+- Git state is intentionally dirty, uncommitted, and unpushed while the exact
+  approved lane is prepared for bounded publication. Approved helper
+  changes only add an opt-out for the Briar Reveler crooked staff; default
+  rendering remains byte-exact. The bounded new files are
+  `engine/enemy-expansion-en-e03-satyr-specialist-idle.js`,
+  `tools/enemy-expansion-en-e03-reed-charmer-idle-review.mjs`,
+  `tools/build-enemy-expansion-en-e03-reed-charmer-idle-gifs.py`, and
+  `tools/check-enemy-expansion-en-e03-reed-charmer-idle.mjs`, plus package and
+  documentation updates. Do not reset, clean, stash, or switch this lane;
+  approval authorizes committing and pushing only this exact bounded diff.
+- Gate: `en-e03-reed-charmer-idle-v1`, status
+  `approved`, internal and non-public. Scope is only Reed
+  Charmer Idle F1-F2 in Down, Left, Right, and Up.
+- Authorization evidence: after approving and publishing Banner Khan grouped
+  motion, the designer said `cool lets do next`. Following the documented EN-E03
+  family/role order, this authorizes Reed Charmer specialist Idle F1-F2 only.
 - Approval evidence: the designer reviewed both exact labeled all-four-direction
-  raw/no-outline and Complete B + Form motion-suite GIFs together and said
-  `approved` on 2026-08-08. This approval applies only to the frozen hashes below
-  and authorizes bounded publication of this internal, non-public motion lane.
-- Motion contract: Walk reuses the approved alternating four-hoof gait and adds
-  elite rider, collar, tack, standard response, and alternating horse-torso
-  motion. Attack reuses the four-phase spear brace/release/follow-through/
-  recovery and adds a connected saddle standard. Hurt uses the approved full-
-  hybrid white recoil and colored recovery. Cast aliases Attack exactly; Death
-  aliases Hurt as H1,H2,H2,H2. Command aura, banner flare, hoof shock rings, and
-  every other effect remain external.
-- Required review presentation: show both exact labeled all-four-direction
-  motion-suite GIFs together:
+  raw/no-outline and Complete B + Form GIFs together and said `Approved` on
+  2026-08-08. Approval applies only to the frozen hashes below.
+- Identity and motion contract: the approved Briar Reveler horns, tail,
+  digitigrade legs, split hooves, and two-frame settle remain the chassis. Reed
+  Charmer replaces the crooked staff with a compact direction-aware panpipe,
+  connected playing hands, a teal woven vest, and gold sash. F2 lowers the
+  torso, instrument, and hands one row while the approved tail/hock motion and
+  grounded hoof contacts continue. Music notes, pollen motes, charm rings, and
+  every other control effect remain external.
+- Required review presentation: show both exact labeled all-four-direction GIFs
+  together:
   - raw/no outline:
-    `enemy-expansion-review/en-e03-banner-khan-motion/en-e03-banner-khan-motion-suite-four-directions-labeled.gif`
+    `enemy-expansion-review/en-e03-reed-charmer-idle/en-e03-reed-charmer-idle-four-directions-labeled.gif`
   - Complete B + Form:
-    `enemy-expansion-review/en-e03-banner-khan-motion/en-e03-banner-khan-motion-suite-four-directions-labeled-complete-b-form.gif`
-  Both are `640x672`, contain four `180ms` phases, and show approved Idle
-  context plus Walk, Attack, Cast, Hurt, and Death simultaneously.
+    `enemy-expansion-review/en-e03-reed-charmer-idle/en-e03-reed-charmer-idle-four-directions-labeled-complete-b-form.gif`
+  Both are `192x224`, contain two `240ms` frames, and loop continuously.
 - Frozen candidate evidence: raw board SHA-256
-  `9c7c46c88ab06d799d0fb4f59ed1befad1e3cc404b37e52f78c9f8494344f233`;
+  `a3459b3ed67dbe795bc2af3b55dd837aa91c4d880c941a3eedc0e791807e9b3a`;
   Complete B + Form board SHA-256
-  `d55d32032589fdcbf3587b65aa395dbcf2d68f19c2fb6ec9813465fbac6113d9`;
+  `a8fb2c1af35060551d6c66dde7137ace9736291beea57f9413d588faa75eb0b0`;
   raw GIF SHA-256
-  `0c875b122fd3d567f7abb779e4ae589250a7e6cdce7546abc0d21afb11fc941f`;
+  `603ac763a9c739728132d96fa30b2cfaf5ee9fe363568da841605526f40f01ca`;
   Complete B + Form GIF SHA-256
-  `a3aa055e19301a1b6586d5ba8fcda32f96b8ecce01f9c693cbb678779a903e6d`;
-  80-frame candidate digest
-  `0dbd24f50ad7825d9d7860e114ec585b9fd716047c3c993f70f95b26c7bfccc0`.
-- Focused validation passes: approved Banner Khan Idle `8/8`, approved Steppe
-  sources Walk `16/16`, Attack `16/16`, Hurt `8/8`, candidate suite `80/80`,
-  connected hard-alpha silhouettes `80/80`, exact side mirrors `20/20`, Cast
-  aliases `16/16`, Death aliases `16/16`, and public EN-E03 families `0`.
-  The full repository gate passes in `186.3` seconds and all 232 public fixture
-  sheets remain unchanged. `git diff --check` also passes.
+  `0acdf25022c8cae2ffa456780f5497fbcc19b54feefd3aa7fbf908ec1698afa3`;
+  eight-frame candidate digest
+  `b9ade755388cbfaad742dd0323c9c11f3ac0e5943bbe2608f146a520f606dfbf`.
+- Focused validation passes: approved Briar Reveler `8/8`, candidate `8/8`,
+  connected hard-alpha silhouettes `8/8`, four split-hoof contact rows `8/8`,
+  exact side mirrors `4/4`, 185 changed-alpha pixels, 164 reed/sash pixels, 112
+  teal-vest pixels, 888 Complete B additions, 984 Form changes, zero baked
+  music/pollen/charm pixels, and public EN-E03 families `0`.
+- The complete ignored Boss checkpoint corpus contains 1,222 files. The full
+  `npm.cmd run check` passes in `184` seconds and all 232 public fixture sheets
+  remain unchanged. `git diff --check` also passes.
 - Review output and the local Boss checkpoint corpus are ignored support
   artifacts; they are not candidate source changes.
-- Next action: stop and wait for a separate explicit designer continuation. Do
-  not begin another variant, register, integrate, add effects, release, or start
-  later EN-E03 work from this approval alone.
+- Next action: rerun focused and full validation, commit and push only this exact
+  approved lane, reconcile its published checkpoint, and stop. Do not begin
+  Wildwood Hornlord, register, integrate, add effects, release, or start later
+  EN-E03 work without separate explicit authorization.
 
 The detailed historical and technical evidence remains in
-[Banner Khan Grouped Motion Approved](#banner-khan-grouped-motion-approved).
+[Reed Charmer Specialist Idle Approved](#reed-charmer-specialist-idle-approved).
 
 ## Purpose
 
@@ -248,7 +244,12 @@ far from the established roster style. Both implementations remain reproducible
   80-frame suite, deterministic paired raw and Complete B + Form boards/GIFs,
   and passing focused/full gates. The designer reviewed both exact GIFs together
   and said `approved` on 2026-08-08; the bounded implementation is committed and
-  pushed at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`.
+  pushed at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. The designer then said
+  `cool lets do next`; following the EN-E03 family/role order, Codex bounded
+  only Reed Charmer specialist Idle F1-F2. Its isolated internal/non-public
+  candidate, paired raw and Complete B + Form boards/GIFs, and focused gate are
+  complete. The designer reviewed both exact GIFs together and said `Approved`
+  on 2026-08-08; bounded publication is now in progress.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -283,8 +284,10 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   Banner Khan grouped Walk/Attack/Hurt/Cast/Death is visually approved against
   the exact paired motion-suite GIFs, internal, non-public, and published on its
   matching approval branch at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`.
-  Every other variant, registration, consumer, effect, release, and later EN-E03
-  step remains unauthorized.
+  Reed Charmer specialist Idle F1-F2 is visually approved against the exact
+  paired all-four-direction GIFs and is awaiting bounded publication. Every
+  other variant, registration, consumer, effect, release, and later EN-E03 step
+  remains unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -1381,6 +1384,65 @@ release, and later work remain separately gated.
 - Required next action: stop and wait. Do not begin another variant, register,
   integrate, add effects, release, or start later EN-E03 work without separate
   explicit designer authorization.
+
+### Reed Charmer Specialist Idle Approved
+
+- Gate ID: `en-e03-reed-charmer-idle-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed while bounded publication completes.
+- Authorization evidence: after Banner Khan grouped motion was approved,
+  published, and reconciled, the designer said `cool lets do next`. Following
+  the documented EN-E03 family and role order, Codex bounded only Reed Charmer
+  specialist Idle F1-F2 across four directions.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form GIFs together and said `Approved` on
+  2026-08-08. Technical validation supports but does not substitute for this
+  direct visual approval. Approval applies only to the frozen hashes below.
+- Isolated branch/worktree: `codex/en-e03-reed-charmer-idle` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-reed-charmer-idle`, based exactly on
+  corrected published Banner Khan handoff `c324e44`; it has no upstream.
+- Scope: Reed Charmer Idle F1-F2 only across Down, Left, Right, and Up. The
+  approved Briar Reveler common Satyr remains byte-exact and non-public.
+- Source preservation: the approved calibration and Idle modules only expose
+  their existing Satyr identity helpers with a default-on crooked-staff option.
+  Their rendered Briar Reveler pixels remain exact `8/8`; Reed Charmer invokes
+  the same helpers with the staff disabled and replaces it with its panpipe.
+- Identity: approved horns, ears, tail, digitigrade legs, split hooves, skin,
+  and hair are retained. A teal woven vest, gold sash, compact asymmetric
+  panpipe, and connected playing hands distinguish the specialist from Briar
+  Reveler without adding an oversized prop or a second silhouette.
+- Motion: F1/F2 inherit the approved breathing settle, tail flick, inward hock
+  articulation, and grounded four-tip split-hoof contact. The vest, pipe, and
+  hands follow the F2 one-row torso settle. Music notes, pollen motes, charm
+  rings, and every other controller effect remain external.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e03-reed-charmer-idle`; it creates raw
+  and Complete B + Form `1528x650` comparison boards beside approved Briar
+  Reveler plus two labeled all-four-direction `192x224`, two-frame, `480ms`
+  looping GIFs.
+- Raw board SHA-256:
+  `a3459b3ed67dbe795bc2af3b55dd837aa91c4d880c941a3eedc0e791807e9b3a`;
+  Complete B + Form board SHA-256:
+  `a8fb2c1af35060551d6c66dde7137ace9736291beea57f9413d588faa75eb0b0`.
+- Raw GIF SHA-256:
+  `603ac763a9c739728132d96fa30b2cfaf5ee9fe363568da841605526f40f01ca`;
+  Complete B + Form GIF SHA-256:
+  `0acdf25022c8cae2ffa456780f5497fbcc19b54feefd3aa7fbf908ec1698afa3`.
+- Candidate eight-frame digest:
+  `b9ade755388cbfaad742dd0323c9c11f3ac0e5943bbe2608f146a520f606dfbf`.
+- Focused validation command:
+  `npm.cmd run check:enemy-expansion-en-e03-reed-charmer-idle`; it validates
+  approved Briar Reveler `8/8`, Reed Charmer `8/8`, connected hard-alpha
+  silhouettes `8/8`, four split-hoof contact rows `8/8`, exact side mirrors
+  `4/4`, 185 changed-alpha pixels, 164 reed/sash pixels, 112 teal-vest pixels,
+  888 Complete B additions, 984 Form changes, zero baked music/pollen/charm
+  pixels, and zero public EN-E03 families.
+- Full validation: `npm.cmd run check` passes in `184` seconds with the
+  complete ignored 1,222-file Boss corpus, and all 232 public fixture sheets
+  remain unchanged. `git diff --check` also passes.
+- Required next action: commit and push only this exact approved internal lane,
+  reconcile the published checkpoint, and stop. Do not begin Wildwood Hornlord,
+  register, integrate, add effects, release, or start later work without a
+  separate explicit continuation.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

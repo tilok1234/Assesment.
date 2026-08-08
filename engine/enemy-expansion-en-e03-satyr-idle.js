@@ -196,7 +196,7 @@ function drawHornCurlsF2(paint, colors) {
   dot(17, 5, horn[1]);
 }
 
-function drawSatyrIdleF2Identity(context, direction) {
+export function drawSatyrIdleF2Identity(context, direction, { includeStaff = true } = {}) {
   const data = EN_E03_BRIAR_REVELER_CALIBRATION_DATA;
   const colors = {
     skin: data.actor.palette.skin,
@@ -206,15 +206,15 @@ function drawSatyrIdleF2Identity(context, direction) {
   if (paint.view === 'up') {
     drawUpTailF2(paint, colors);
     drawDownLegsF2(paint, colors, true);
-    drawUpStaffF2(paint, colors);
+    if (includeStaff) drawUpStaffF2(paint, colors);
   } else if (paint.view === 'right') {
     drawSideTailF2(paint, colors);
     drawSideLegsF2(paint, colors);
-    drawSideStaffF2(paint, colors);
+    if (includeStaff) drawSideStaffF2(paint, colors);
   } else {
     drawDownTailF2(paint, colors);
     drawDownLegsF2(paint, colors, false);
-    drawDownStaffF2(paint, colors);
+    if (includeStaff) drawDownStaffF2(paint, colors);
   }
   drawHornCurlsF2(paint, colors);
 }

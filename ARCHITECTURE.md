@@ -817,6 +817,24 @@ said `approved` on 2026-08-08. The approved lane is committed and pushed at
 `8e73cd038d50037a40cad27ee9f2e37b6e363b69`; other variants, registration,
 consumers, effects, release, and later work remain gated.
 
+The separate `engine/enemy-expansion-en-e03-satyr-specialist-idle.js` module
+now composes the approved humanoid renderer with the exact Briar Reveler Satyr
+identity helpers for one internal/non-public Reed Charmer Idle lane. The
+approved helper defaults remain unchanged; the specialist alone
+suppresses the crooked staff, preserving horns, tail, digitigrade legs, and
+split-hoof contacts before adding a compact direction-aware panpipe, connected
+playing hands, teal woven vest, and gold sash. F2 retains the approved hock/tail
+settle and moves the vest, pipe, and hands with the torso. Music notes, pollen,
+charm rings, and all controller effects stay outside actor pixels. The focused
+gate validates eight connected hard-alpha frames, four exact side mirrors,
+frozen Briar Reveler pixels and evidence, deterministic raw/Complete B + Form
+boards and paired GIFs, and zero facade/public exposure. The designer reviewed
+both exact GIFs together and said `Approved` on 2026-08-08; the lane is
+uncommitted while bounded publication completes. The full gate also passes in
+`184` seconds without changing any of the 232 public fixture sheets;
+Wildwood Hornlord, later motion, registration, consumers, effects, release, and
+later work remain gated.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

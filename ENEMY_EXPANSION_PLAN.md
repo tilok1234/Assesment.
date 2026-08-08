@@ -171,9 +171,13 @@ were subsequently approved and published. Boulder Hurler specialist Idle F1-F2
 was then approved and published. The separate 67-family / 232-variant public-
 Enemy three-treatment export was delivered and approved when the designer said
 `awesome lets do next in plan`. Storm-Clan Jarl elite Idle F1-F2 was then
-approved and published after its side-pauldron repair. The designer next said
-`lets do next`; following the documented EN-E03 family order, only Sun Lancer
-specialist Idle F1-F2 is authorized now.
+approved and published after its side-pauldron repair. Sun Lancer specialist
+Idle, Banner Khan elite Idle, and Banner Khan grouped motion were subsequently
+approved and published. The designer then said `cool lets do next`; following
+the documented EN-E03 family and role order, only Reed Charmer specialist Idle
+F1-F2 was authorized. The designer reviewed both exact paired GIFs and said
+`Approved` on 2026-08-08; bounded publication of that internal lane is now in
+progress, and no later gate is authorized.
 
 ## Intake Assessment
 
@@ -639,6 +643,12 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   one grouped Banner Khan Walk/Attack/Hurt/Cast/Death pass was completed across
   all four directions, visually approved, and published; registration,
   consumers, effects, release, other variants, and later work remain gated
+- Latest approved implementation: after the designer said `cool lets do next`,
+  the documented family/role order advanced only to Reed Charmer specialist
+  Idle F1-F2. The exact paired raw and Complete B + Form GIFs were visually
+  approved on 2026-08-08; bounded publication is in progress. Wildwood
+  Hornlord, later motion, registration, consumers, effects, release, and later
+  work remain gated
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1520,6 +1530,54 @@ and no new sprite pixels or public integration are authorized.
   registration, consumers, baked command/banner/hoof effects, release, and
   later EN-E03 work.
 
+#### Reed Charmer specialist Idle approved
+
+- Gate ID: `en-e03-reed-charmer-idle-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed while bounded publication completes.
+- Authorization evidence: after Banner Khan grouped motion was approved,
+  published, and reconciled, the designer said `cool lets do next`. Following
+  the documented family and role order, this authorizes Reed Charmer specialist
+  Idle F1-F2 only.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form GIFs together and said `Approved` on
+  2026-08-08. Approval applies only to the frozen hashes below and authorizes
+  bounded publication of this internal lane, not later work.
+- Isolated branch/worktree: `codex/en-e03-reed-charmer-idle` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-reed-charmer-idle`, based exactly on
+  corrected published Banner Khan checkpoint `c324e44`.
+- Scope: Idle F1-F2 across Down, Left, Right, and Up. Approved Briar Reveler
+  remains byte-exact and supplies the horned head, tail, digitigrade legs,
+  split-hoof contacts, and two-frame settle.
+- Identity: the crooked staff is omitted only for the specialist. A compact
+  direction-aware panpipe, connected playing hands, teal woven vest, and gold
+  sash create the Reed Charmer read without music-note or charm-radius pixels.
+- Motion: F2 moves the torso, vest, instrument, and hands down one row while the
+  approved tail flick, hock articulation, and four grounded split-hoof tips
+  continue. Music notes, pollen motes, charm rings, and all controller effects
+  remain external.
+- Preservation: focused validation confirms approved Briar Reveler `8/8`, Reed
+  Charmer `8/8`, connected hard-alpha silhouettes `8/8`, split-hoof contact rows
+  `8/8`, exact side mirrors `4/4`, 185 changed-alpha pixels, 164 reed/sash
+  pixels, 112 teal-vest pixels, 888 Complete B additions, 984 Form changes,
+  zero baked effects, and public EN-E03 families `0`.
+- Frozen candidate evidence: raw board
+  `a3459b3ed67dbe795bc2af3b55dd837aa91c4d880c941a3eedc0e791807e9b3a`,
+  Complete B + Form board
+  `a8fb2c1af35060551d6c66dde7137ace9736291beea57f9413d588faa75eb0b0`,
+  raw GIF
+  `603ac763a9c739728132d96fa30b2cfaf5ee9fe363568da841605526f40f01ca`,
+  Complete B + Form GIF
+  `0acdf25022c8cae2ffa456780f5497fbcc19b54feefd3aa7fbf908ec1698afa3`,
+  and eight-frame digest
+  `b9ade755388cbfaad742dd0323c9c11f3ac0e5943bbe2608f146a520f606dfbf`.
+- Approval and validation: both exact labeled all-four-direction `192x224`,
+  two-frame raw/no-outline and Complete B + Form GIFs were reviewed together.
+  The focused gate and full `npm.cmd run check` pass; the full gate finished in
+  `184` seconds with all 232 public fixture sheets unchanged.
+- Exclusions: Briar Reveler pixel changes, Wildwood Hornlord, later animation,
+  Giant/Centaur changes, baked music/pollen/charm effects, registration,
+  consumers, release, and later EN-E03 work.
+
 ### EN-E04 - Serpentine and aquatic peoples
 
 - Status: `queued`
@@ -1864,5 +1922,7 @@ Storm-Clan Jarl elite Idle F1-F2, Sun Lancer specialist Idle F1-F2, Banner Khan
 elite Idle F1-F2, and Banner Khan grouped Walk/Attack/Hurt/Cast/Death. Banner
 Khan Idle publication is complete at
 `55143049b4153e34fcdaad0ea434932ba0f2d0fd`; grouped motion publication is
-complete at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. Any other code or art work
-requires separate explicit designer authorization.
+complete at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. Reed Charmer specialist Idle
+F1-F2 is visually approved and awaiting bounded publication; there is no next
+active art gate. Any other code or art work requires separate explicit designer
+authorization.

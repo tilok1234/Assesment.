@@ -344,6 +344,18 @@ said `approved` on 2026-08-08, and both focused and full gates pass with all 232
 public fixture sheets unchanged. The bounded implementation is committed and
 pushed at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. Registration, integration,
 other variants, effects, release, and later gates remain unauthorized.
+The designer then said `cool lets do next`; following the EN-E03 family/role
+order, only Reed Charmer specialist Idle F1-F2 was activated. Its isolated
+internal/non-public candidate keeps the approved Briar Reveler horns, tail,
+digitigrade legs, split-hoof contacts, and two-frame settle byte-exact while
+replacing the crooked staff with a compact direction-aware panpipe, connected
+playing hands, teal woven vest, and gold sash. Both exact labeled four-direction
+raw and Complete B + Form GIFs are ready. The focused and full gates pass, with
+all 232 public fixture sheets unchanged. Music
+notes, pollen, charm rings, Wildwood Hornlord, later motion, registration,
+integration, effects, release, and later gates remain unauthorized. The
+designer reviewed both exact GIFs together and said `Approved` on 2026-08-08;
+bounded publication of this internal lane is in progress.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
