@@ -646,7 +646,7 @@ publication is complete at `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`;
 the same approval separately authorizes one complete enemy with all standard
 animations as the next slice.
 
-## Merfolk Tideguard full enemy approved; publication authorized
+## Merfolk Tideguard full enemy approved and published
 
 Branch `codex/en-e04-merfolk-tideguard` owns the resulting isolated full-enemy
 slice. It is based exactly on clean Rajah handoff `b9e597fa` and contains one
@@ -672,9 +672,10 @@ All five protected predecessor gates, the fast gate, and full
 
 Gate `en-e04-merfolk-tideguard-full-v1` is `approved`: the designer reviewed
 the exact raw plus Complete B + Form GIF pair together and said `approved` on
-2026-08-09. Bounded publication of the exact ten-file lane is authorized.
-Merfolk specialist/elite, Birdfolk, registration, integration, effects,
-release, and broader multi-enemy work remain outside.
+2026-08-09. Bounded publication of the exact ten-file lane is complete at
+`622b00f0c40eed552f61b30bd207b5ad8478836e`. Merfolk specialist/elite,
+Birdfolk, registration, integration, effects, release, and broader multi-enemy
+work remain outside.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

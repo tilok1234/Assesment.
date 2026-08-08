@@ -1,6 +1,6 @@
 # Project Handoff
 
-Date: 2026-08-08
+Date: 2026-08-09
 
 ## V2 Repository And Workflow Note
 
@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Merfolk Tideguard Approved, Publication Authorized
+## Immediate Continuation Checkpoint - Merfolk Tideguard Approved And Published
 
 Start here in a new task. While approving the exact Temple Rajah raw plus
 Complete B + Form motion pair, the designer said `approved, lets keep going
@@ -33,8 +33,9 @@ and Complete B + Form full-suite GIFs together and said `approved` on
   implementation remains frozen at
   `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`.
 - Gate: `en-e04-merfolk-tideguard-full-v1`; status
-  `approved`, internal, non-public, with bounded publication of the exact
-  ten-file lane authorized. Generated review artifacts remain ignored.
+  `approved`, internal, non-public, committed, and pushed at
+  `622b00f0c40eed552f61b30bd207b5ad8478836e`. Generated review artifacts
+  remain ignored.
 - Scope: one common Tideguard and 80 frames across Down, Left, Right, and Up:
   Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack
   aliases, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
@@ -75,9 +76,12 @@ and Complete B + Form full-suite GIFs together and said `approved` on
   v2 fast gate passes, and final pre-commit `npm.cmd run check` passes in
   `121.2s` with all
   232 public PNG sheets unchanged.
-- Required next action: commit and push only this exact ten-file lane, then
-  reconcile the publication checkpoint in these docs. Do not start another
-  role/family, register, integrate, add effects, release, or broaden EN-E04.
+- Publication checkpoint: bounded publication of the exact approved ten-file
+  lane is complete at `622b00f0c40eed552f61b30bd207b5ad8478836e` on the
+  tracked origin branch.
+- Required next action: stop at this clean published checkpoint. Do not start
+  another role/family, register, integrate, add effects, release, or broaden
+  EN-E04 without a separate explicit continuation.
 
 The approved preceding Rajah checkpoint follows for provenance.
 

@@ -454,9 +454,10 @@ Form boards/GIFs and 80-frame digest are hash-frozen; the focused gate, all five
 protected EN-E04 gates, and fast/full repository gates pass with all 232 public
 sheets unchanged. The designer reviewed the exact paired GIFs and said
 `approved` on 2026-08-09. Gate `en-e04-merfolk-tideguard-full-v1` is now
-visually approved, internal, and non-public, with bounded publication of the
-exact ten-file lane authorized. Later Merfolk roles, Birdfolk, registration,
-integration, effects, release, and broader work remain gated.
+visually approved, internal, and non-public. Bounded publication of the exact
+ten-file lane is complete at `622b00f0c40eed552f61b30bd207b5ad8478836e`.
+Later Merfolk roles, Birdfolk, registration, integration, effects, release,
+and broader work remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

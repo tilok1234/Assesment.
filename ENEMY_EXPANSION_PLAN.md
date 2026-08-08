@@ -193,7 +193,8 @@ visually approved and published at
 `codex/en-e04-rajah-motion`. That approval now activates exactly one separate
 80-frame Merfolk Tideguard full-enemy candidate on
 `codex/en-e04-merfolk-tideguard`; it is hash-frozen and technically validated
-and is now visually approved, but remains internal and non-public.
+and is now visually approved, internal, non-public, committed, and pushed at
+`622b00f0c40eed552f61b30bd207b5ad8478836e`.
 
 ## Intake Assessment
 
@@ -2020,15 +2021,17 @@ upright avian person rather than collapse into the existing Harpy identity.
   all-animation slice. Keep it internal and approval-gated; registration,
   integration, effects, release, and broader multi-enemy work remain outside.
 
-#### Merfolk Tideguard full enemy approved; publication authorized
+#### Merfolk Tideguard full enemy approved and published
 
 - Gate ID: `en-e04-merfolk-tideguard-full-v1`; status:
-  `approved`, internal, non-public, with bounded publication authorized.
+  `approved`, internal, non-public, committed, and pushed.
 - Live branch: `codex/en-e04-merfolk-tideguard` in the current v2 checkout,
   based exactly on clean Rajah reconciliation
   `b9e597fa53b0da32633cec8cdc3c46348b92562f`; the approved Rajah
   implementation remains frozen at
-  `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`.
+  `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`. The approved Tideguard
+  implementation is committed and pushed at
+  `622b00f0c40eed552f61b30bd207b5ad8478836e`.
 - Authorization: while approving the exact Rajah raw plus Complete B + Form
   pair, the designer said `approved, lets keep going with slices like this,,
   maybe a full enemy with all its animations is a good spot` on 2026-08-08.
@@ -2067,9 +2070,10 @@ upright avian person rather than collapse into the existing Harpy identity.
 - The v2 fast gate passes; final pre-commit `npm.cmd run check` passes in
   `121.2s` with all
   232 public PNG sheets unchanged.
-- Required next action: commit and push only the exact ten-file approved lane,
-  then reconcile its publication checkpoint. Later roles/families,
-  registration, integration, effects, release, and broader work remain gated.
+- Publication is complete at approved implementation checkpoint
+  `622b00f0c40eed552f61b30bd207b5ad8478836e`.
+- Required next action: stop. Later roles/families, registration, integration,
+  effects, release, and broader work require separate explicit authorization.
 
 ### EN-E05 - Undead humanoids
 
@@ -2443,7 +2447,7 @@ non-public, committed, and pushed at
 80-frame Merfolk Tideguard full-enemy candidate on
 `codex/en-e04-merfolk-tideguard`. Its evidence is hash-frozen and all focused,
 protected, fast, and full gates pass. The designer reviewed the exact paired
-GIFs and said `approved` on 2026-08-09; it remains internal and non-public.
-Later
-Merfolk roles, Birdfolk, registration, integration, effects, release, and
-broader multi-enemy work remain unauthorized.
+GIFs and said `approved` on 2026-08-09. The internal, non-public lane is
+committed and pushed at `622b00f0c40eed552f61b30bd207b5ad8478836e`.
+Later Merfolk roles, Birdfolk, registration, integration, effects, release,
+and broader multi-enemy work remain unauthorized.

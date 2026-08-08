@@ -1019,7 +1019,8 @@ B/Form presentation, external effects, and zero public exposure define the
 gate. All five protected EN-E04 gates and fast/full repository validation pass
 with all 232 public sheets unchanged. The designer reviewed the exact raw and
 Complete B + Form GIFs together and said `approved` on 2026-08-09; bounded
-publication of the ten-file lane is authorized. Later Merfolk roles, Birdfolk,
+publication of the ten-file lane is complete at
+`622b00f0c40eed552f61b30bd207b5ad8478836e`. Later Merfolk roles, Birdfolk,
 registration, integration, effects, release, and broader work remain outside.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
