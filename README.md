@@ -514,9 +514,9 @@ public exposure.
 
 The F2 breathing pose lowers the hood and torso one row and compresses the
 direction-aware serpent coil without introducing ordinary legs, paired feet,
-or a body-to-tail seam. Coilguard is the only implemented role; Venom Oracle
-specialist and Temple Rajah elite remain plan entries only, while Merfolk and
-Birdfolk are untouched. The focused gate passes, and post-approval full
+or a body-to-tail seam. Coilguard remains the only implemented role inside this
+approved source module; the separate private Venom Oracle candidate is described
+below, while Temple Rajah, Merfolk, and Birdfolk remain untouched. The focused gate passes, and post-approval full
 `npm.cmd run check` passes in `241s` with all 232 public PNG sheets unchanged. Both exact frozen
 boards were opened in Aseprite at original resolution. The designer reviewed
 both exact paired GIFs together and said `Approved` on 2026-08-08. The
@@ -548,9 +548,38 @@ boards were opened in Aseprite at original resolution.
 The designer reviewed both exact paired presentations together and said
 `approved` on 2026-08-08. Gate `en-e04-naga-coilguard-motion-v1` is now
 `approved`; the internal implementation is committed and pushed at
-`f47e1691208236f5d245a1f3b9b15355ad479790`. No art gate is active.
-Registration, integration, effects, release, other roles/families, and broader
-EN-E04 work remain gated.
+`f47e1691208236f5d245a1f3b9b15355ad479790`. Its approval does not authorize
+registration, integration, effects, release, or broader EN-E04 work. The later
+`lets do next` activates only the specialist Idle gate below.
+
+## Naga Venom Oracle specialist Idle approved, publication pending
+
+Branch `codex/en-e04-venom-oracle-idle` owns one internal, non-public,
+uncommitted candidate: Venom Oracle Idle F1-F2 across Down, Left, Right, and Up.
+It preserves the approved Naga hood and continuous planted coil, including the
+Coilguard tail region from rows 17-23 byte-for-byte, then adds a connected
+ritual crown/jewel, violet mantle, gold sigil, and venom-bright eyes/sigil. Venom
+spit, miasma, ritual circles, prophecy marks, impacts, and other effects remain
+external.
+
+Run `npm.cmd run review:enemy-expansion-en-e04-venom-oracle-idle` to reproduce
+the raw/no-outline and Complete B + Form `1548x420` boards and paired labeled
+`192x224`, two-frame GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e04-venom-oracle-idle` to verify all eight
+connected hard-alpha frames, 64 continuous lower-body rows, approved-tail
+preservation, exact side mirrors, specialist identity pixels, frozen hashes,
+external effects, and zero public exposure. The candidate digest is
+`2df5c53f3b6636f2918d4620a3419ee0465ecc57f68d5f8506b5c9e79e862228`.
+
+The candidate and both protected Coilguard gates pass. The cleaned v2 fast gate
+passes in `67.1s`, and full `npm.cmd run check` passes in `133.5s` with all 232
+public PNG sheets unchanged. Both exact boards were opened in Aseprite and both
+GIF phases were inspected directly. The designer reviewed both exact paired
+presentations and said `ye approved` on 2026-08-08. Gate
+`en-e04-venom-oracle-idle-v1` is `approved`; bounded publication is pending.
+Venom Oracle motion, Temple Rajah,
+Merfolk, Birdfolk, registration, integration, effects, release, and later work
+remain gated.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

@@ -891,8 +891,9 @@ direction-aware cobra hood plus one continuous belly-plated serpent tail and
 ground coil. Left is generated as the exact mirror of Right. F2 moves the hood
 and upper body down one row while compressing the coil; a fixed connector keeps
 the entire silhouette joined. The deeply frozen Naga contract card records
-Coilguard common as the only implemented Idle candidate and Venom Oracle /
-Temple Rajah as planned specialist/elite roles only. The dedicated focused gate
+Coilguard common as the only implemented Idle candidate within that approved
+module and Venom Oracle / Temple Rajah as planned specialist/elite roles there.
+The dedicated focused gate
 freezes paired raw and Complete B + Form boards/GIFs, all eight frames, all 64
 lower-body continuity rows, single-run ground contacts, exact side mirrors,
 external venom/miasma/coil-impact effects, and zero facade/public exposure.
@@ -922,6 +923,29 @@ at `f47e1691208236f5d245a1f3b9b15355ad479790`. It passes the focused, fast, and
 full repository gates without changing any of the 232 public sheets. Approval
 and publication do not authorize another role, family, registration, consumer
 integration, effects, or release.
+
+The separate `engine/enemy-expansion-en-e04-naga-specialist-idle.js` module owns
+the newly authorized Venom Oracle acceptance candidate without modifying either
+approved Coilguard module. It delegates the approved Naga Idle anatomy, keeps
+rows 17-23 byte-exact with the matching Coilguard frame, and overlays only the
+specialist's connected ritual crown/jewel, violet mantle, gold oracle sigil,
+and venom-bright eyes/sigil. Only Idle frames 0-1 are accepted; other
+animations, variants, and families are refused. Left remains the exact mirror
+of Right. Venom, miasma, ritual-circle, prophecy, and impact effects remain
+external.
+
+The focused gate freezes all eight candidate frames, the paired raw and Complete
+B + Form evidence hashes, the eight-frame digest, all 64 continuous lower-body
+rows, approved-tail preservation, connected hard alpha, one-cell margins,
+specialist distinction, exact side mirrors, and zero facade/public exposure.
+Both protected Coilguard gates, the cleaned v2 fast matrix, and the full
+repository matrix pass with all 232 public sheets unchanged. Both exact boards
+were opened in Aseprite and both GIF phases were inspected directly. Gate
+`en-e04-venom-oracle-idle-v1` is now visually approved, internal, non-public,
+uncommitted, and unpushed pending bounded publication; the designer reviewed
+both exact paired GIFs and said `ye approved` on 2026-08-08. Approval does not
+authorize motion, Temple Rajah, another family, registration, consumers,
+effects, or release.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

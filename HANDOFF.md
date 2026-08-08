@@ -15,7 +15,69 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Naga Coilguard Motion Approved And Published
+## Immediate Continuation Checkpoint - Venom Oracle Idle Approved, Publication Pending
+
+Start here in a new task. After the approved Coilguard motion implementation
+and handoff were published, the designer said `lets do next` on 2026-08-08.
+Following the documented Naga role order, that continuation activates only the
+Venom Oracle specialist Idle F1-F2 gate across Down, Left, Right, and Up.
+
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-venom-oracle-idle`, based on clean reconciled Coilguard motion
+  handoff `eddc243e7711f357cb62e40920c83cf066dfc790`. The approved Coilguard
+  implementation remains frozen at
+  `f47e1691208236f5d245a1f3b9b15355ad479790`.
+- Gate: `en-e04-venom-oracle-idle-v1`; status
+  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
+  publication.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form Venom Oracle Idle GIFs together and said
+  `ye approved` on 2026-08-08.
+- Scope: one specialist, two Idle frames, and four directions. The module
+  reuses the approved Naga anatomy, preserves the Coilguard tail from rows
+  17-23 byte-for-byte, and adds a violet ritual mantle, connected crown/jewel,
+  gold oracle sigil, and venom-bright eyes/sigil. F2 settles the complete upper
+  identity without breaking the hood-to-tail connection or grounded coil.
+- Effects contract: venom spit, miasma, ritual circles, prophecy marks, impact
+  pixels, and every other controller effect stay external; baked-effect pixels
+  are `0`.
+- Exclusions: Coilguard pixel changes, Venom Oracle Walk/Attack/Hurt/Cast/Death,
+  Temple Rajah, Merfolk, Birdfolk, registration, consumers, effects, release,
+  and later EN-E04 work.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e04-venom-oracle-idle`; it reproduces
+  raw/no-outline and Complete B + Form `1548x420` boards plus exact paired
+  labeled `192x224`, two-frame, `480ms` looping GIFs.
+- Raw / Complete B + Form board SHA-256 values:
+  `5181c4f209fcde7a941cc49c9ce9388ff30898a75810c5a83be58447db1eb661` /
+  `54b68a4433daf84cb5ccbe4a7b9c0b4656d5b1a903b8e3a0f7cb8925af1f7862`.
+- Raw / Complete B + Form GIF SHA-256 values:
+  `c031f6ac6260e98bc10ccda3101262fbb1f61471fdccccd53cbb1fd72ee474d4` /
+  `ec27da68fecfb8612adb35e29b51f624ce3a7b6bd25635b01ab954cb37077ac1`.
+- Candidate eight-frame digest:
+  `2df5c53f3b6636f2918d4620a3419ee0465ecc57f68d5f8506b5c9e79e862228`.
+- Focused validation passes: candidate frames `8/8`; connected hard-alpha
+  silhouettes `8/8`; continuous lower-body rows `64/64`; approved Coilguard
+  tail preservation `8/8`; exact side mirrors `4/4`; 490 specialist-changed
+  pixels; 90 connected crown additions; opaque range 187-215; 758 Complete B
+  additions; 953 Form changes; public EN-E04 families `0`.
+- Protected Coilguard Idle and complete-motion gates pass unchanged. The v2
+  fast gate passes in `67.1s`; full `npm.cmd run check` passes in `133.5s`, with
+  all 232 public PNG sheets unchanged.
+- Exact artifact inspection: both two-frame GIF phases were inspected directly,
+  and both hash-frozen boards were opened in Aseprite at original resolution.
+  Crown, hood, mantle, torso, and coil stay connected and readable without
+  clipping, seam, phase pop, fake feet, or side-direction mismatch.
+- Required next action: publish only this exact approved Idle lane, reconcile its
+  clean pushed checkpoint, then stop. The request to try larger slices does not
+  by itself select a specific expanded implementation boundary; do not begin
+  Venom Oracle motion, Temple Rajah, registration, integration, effects,
+  release, or broader EN-E04 work until that boundary is explicitly recorded.
+
+The approved source checkpoint follows for provenance.
+
+## Approved Source Checkpoint - Naga Coilguard Motion Approved And Published
 
 Start here in a new task. The approved Coilguard Idle baseline remains frozen at
 `bd920c206d692bcc5e7b043614dcf6a03db2174c`. On the isolated continuation

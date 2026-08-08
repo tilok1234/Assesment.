@@ -172,7 +172,12 @@ reconciliation, the designer said `Let's do next`. EN-E04 lists Naga
 priority-first, so only the common Coilguard Idle F1-F2 gate was activated
 across four directions. The designer approved both exact paired GIFs on
 2026-08-08; bounded publication is complete at
-`bd920c206d692bcc5e7b043614dcf6a03db2174c`.
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. The separately continued
+Coilguard complete-motion suite was then approved and published at
+`f47e1691208236f5d245a1f3b9b15355ad479790`. After its clean handoff, the
+designer said `lets do next`; following the Naga role order, only Venom Oracle
+specialist Idle F1-F2 was activated. The designer reviewed both exact paired
+GIFs and said `ye approved` on 2026-08-08; bounded publication is pending.
 
 ## Intake Assessment
 
@@ -233,9 +238,12 @@ Coilguard common Idle F1-F2 is visually approved and published internally at
 `bd920c206d692bcc5e7b043614dcf6a03db2174c`. The explicitly continued,
 isolated Coilguard complete-motion suite is visually approved as an internal,
 non-public lane and published at
-`f47e1691208236f5d245a1f3b9b15355ad479790`. No art gate is active. Venom
-Oracle, Temple Rajah, Merfolk, Birdfolk, registration, consumer work, effects,
-release, and subsequent gates remain unauthorized.
+`f47e1691208236f5d245a1f3b9b15355ad479790`. The designer's later `lets do
+next` activated only Venom Oracle specialist Idle F1-F2. Its internal paired
+candidate is technically validated and visually approved; bounded publication
+is pending.
+Temple Rajah, Venom Oracle motion, Merfolk, Birdfolk, registration, consumer
+work, effects, release, and subsequent gates remain unauthorized.
 
 ## Non-Negotiable Production Contract
 
@@ -1738,11 +1746,12 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `paused - Coilguard complete motion approved and published`
+- Status: `approved - Venom Oracle specialist Idle F1-F2 publication pending`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
 - Approved gate: Naga Coilguard complete motion across Down, Left, Right, and Up
+- Active gate: Naga Venom Oracle specialist Idle F1-F2 across Down, Left, Right, and Up
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -1839,9 +1848,52 @@ upright avian person rather than collapse into the existing Harpy identity.
   registration, consumers, effects, release, and later EN-E04 work.
 - Publication is complete at approved implementation checkpoint
   `f47e1691208236f5d245a1f3b9b15355ad479790`.
-- Required next action: stop and wait. Registration, integration, effects,
-  release, another role/family, and broader EN-E04 work remain unauthorized
-  without separate explicit continuation.
+- The prior stop boundary was superseded only by the designer's later `lets do
+  next`; that continuation is bounded to the Venom Oracle specialist Idle gate
+  below.
+
+#### Naga Venom Oracle specialist Idle approved, publication pending
+
+- Gate ID: `en-e04-venom-oracle-idle-v1`; status:
+  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
+  publication.
+- Live branch: `codex/en-e04-venom-oracle-idle` in the current v2 checkout,
+  based on clean reconciled Coilguard motion handoff
+  `eddc243e7711f357cb62e40920c83cf066dfc790`.
+- Authorization: after Coilguard complete motion was approved, published, and
+  reconciled, the designer said `lets do next` on 2026-08-08. Naga role order
+  bounds this gate to Venom Oracle specialist Idle F1-F2 only.
+- Approval: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form Venom Oracle Idle GIFs together and said
+  `ye approved` on 2026-08-08.
+- Contract: approved Naga hood, continuous serpent body, and planted coil are
+  preserved. A connected ritual crown/jewel, violet mantle, gold oracle sigil,
+  and venom-bright eyes/sigil distinguish the specialist without baking venom,
+  miasma, ritual-circle, prophecy, or impact effects into actor pixels.
+- Scope: two Idle frames across Down, Left, Right, and Up. Coilguard motion,
+  Venom Oracle motion, Temple Rajah, Merfolk, Birdfolk, registration, consumers,
+  effects, release, and later EN-E04 work are excluded.
+- Frozen candidate evidence: raw / Complete B + Form boards
+  `5181c4f209fcde7a941cc49c9ce9388ff30898a75810c5a83be58447db1eb661` /
+  `54b68a4433daf84cb5ccbe4a7b9c0b4656d5b1a903b8e3a0f7cb8925af1f7862`;
+  raw / Complete B + Form GIFs
+  `c031f6ac6260e98bc10ccda3101262fbb1f61471fdccccd53cbb1fd72ee474d4` /
+  `ec27da68fecfb8612adb35e29b51f624ce3a7b6bd25635b01ab954cb37077ac1`;
+  eight-frame digest
+  `2df5c53f3b6636f2918d4620a3419ee0465ecc57f68d5f8506b5c9e79e862228`.
+- Focused validation passes all eight connected hard-alpha frames, all 64
+  continuous lower-body rows, eight byte-exact approved Coilguard tail regions,
+  four exact side mirrors, 490 specialist-changed pixels, 90 connected crown
+  additions, 758 Complete B additions, 953 Form changes, zero baked effects,
+  and zero public EN-E04 families. Both protected Coilguard gates also pass.
+- The cleaned v2 fast gate passes in `67.1s`; full `npm.cmd run check` passes in
+  `133.5s`, with all 232 public PNG sheets unchanged. Both exact boards were
+  opened in Aseprite and both GIF phases were inspected directly.
+- Required next action: publish only this exact approved Idle lane and reconcile
+  its pushed checkpoint. Then stop before motion, Temple Rajah, another family,
+  registration, integration, effects, release, or broader EN-E04 work. The
+  designer's request to try larger slices requires one explicit bounded next
+  scope before implementation begins.
 
 ### EN-E05 - Undead humanoids
 
@@ -2194,6 +2246,9 @@ continue request activates only the isolated Coilguard complete-motion gate.
 Its hash-frozen 80-frame paired suite passes focused, fast, and full validation;
 the designer approved both exact presentations on 2026-08-08, authorizing only
 bounded publication. Publication is complete at
-`f47e1691208236f5d245a1f3b9b15355ad479790`; no art gate is active. Other roles,
-Merfolk, Birdfolk, registration, integration, effects, release, and broader work
-remain unauthorized.
+`f47e1691208236f5d245a1f3b9b15355ad479790`. The designer's later `lets do next`
+activates only Venom Oracle specialist Idle F1-F2. Its exact paired candidate is
+hash-frozen, technically validated, visually approved, internal, and awaiting
+bounded publication on `codex/en-e04-venom-oracle-idle`. Venom
+Oracle motion, Temple Rajah, Merfolk, Birdfolk, registration, integration,
+effects, release, and broader work remain unauthorized.
