@@ -638,26 +638,18 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
 - Approved side lane: the complete 67-family / 232-variant public catalog was
   exported in Form + Complete B, Form + Selective C, and Form + None folders;
   incomplete EN-E03 work remains excluded
-- Latest visual approval: both exact raw and Complete B + Form labeled Banner
-  Khan grouped-motion GIFs were approved together on 2026-08-08. The internal,
-  non-public motion lane is committed and pushed at
-  `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. The preceding Idle baseline is
-  committed and pushed at `55143049b4153e34fcdaad0ea434932ba0f2d0fd`
-- Latest approved implementation: after the designer said `lets keep going`,
-  one grouped Banner Khan Walk/Attack/Hurt/Cast/Death pass was completed across
-  all four directions, visually approved, and published; registration,
-  consumers, effects, release, other variants, and later work remain gated
-- Latest approved implementation: after the designer said `cool lets do next`,
-  the documented family/role order advanced only to Reed Charmer specialist
-  Idle F1-F2. The exact paired raw and Complete B + Form GIFs were visually
-  approved on 2026-08-08 and published at
-  `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. Wildwood Hornlord, later motion,
-  registration, consumers, effects, release, and later work remain gated
-- Active acceptance candidate: the designer authorized one safe larger slice
-  with `Sure lets go for it one complete motion suite we can try atleast`.
-  Reed Charmer Walk/Attack/Hurt/Cast/Death is now complete as one internal,
-  non-public 80-frame suite with frozen paired evidence and passing focused
-  validation; Wildwood Hornlord and every later boundary remain gated
+- Latest visual approval: both exact raw/no-outline and Complete B + Form
+  labeled Reed Charmer complete-motion GIFs were approved together on
+  2026-08-08. The internal, non-public 80-frame lane is committed and pushed at
+  `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`.
+- Latest approved implementation: after the designer authorized one safe larger
+  slice with `Sure lets go for it one complete motion suite we can try atleast`,
+  Reed Charmer Walk/Attack/Hurt/Cast/Death was completed across all four
+  directions, visually approved, and published while approved Idle and Briar
+  sources remained exact.
+- Active acceptance candidate: none. Wildwood Hornlord, registration,
+  consumers, effects, release, and every later boundary remain gated until a
+  separate explicit continuation.
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
