@@ -998,6 +998,30 @@ Focused, all four protected EN-E04, and fast/full repository gates pass with all
 effects, release, and broader work remain outside this gate. The approval
 separately authorizes one complete-enemy/all-animation slice next.
 
+The isolated `engine/enemy-expansion-en-e04-merfolk-tideguard.js` module owns
+that full-enemy slice without changing any approved Naga source or the public
+facade. It composes the existing humanoid upper-body renderer with a lane-local
+direction-aware Tideguard identity, clears the ordinary lower body, and draws
+one continuous eight-row scaled tail ending in one broad connected fluke.
+Idle, Walk, Attack, and Hurt own their bounded phase tables; Cast delegates
+Attack exactly and Death delegates Hurt as `H1,H2,H2,H2`. A transformed
+context moves the upper body while the planted tail remains frame-safe, and a
+forced-white context makes H1 cover the complete silhouette. All water effects
+stay outside the actor renderer.
+
+Gate `en-e04-merfolk-tideguard-full-v1` is hash-frozen, technically validated,
+visually `approved`, internal, and non-public on
+`codex/en-e04-merfolk-tideguard`. Its lane-local registry contains only common
+Tideguard and remains absent from `sprite-engine.js`. Frozen `1428x760` boards,
+`640x672` paired four-phase GIFs, an 80-frame digest, one connected silhouette,
+continuous fused-tail rows, broad flukes, exact mirrors/aliases, Complete
+B/Form presentation, external effects, and zero public exposure define the
+gate. All five protected EN-E04 gates and fast/full repository validation pass
+with all 232 public sheets unchanged. The designer reviewed the exact raw and
+Complete B + Form GIFs together and said `approved` on 2026-08-09; bounded
+publication of the ten-file lane is authorized. Later Merfolk roles, Birdfolk,
+registration, integration, effects, release, and broader work remain outside.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

@@ -190,8 +190,10 @@ exact internal lane is complete at
 only the comparable 80-frame Temple Rajah complete-motion candidate now
 visually approved and published at
 `38b56f316a3fa12443b5b9fb003e74dc7e8059aa` on
-`codex/en-e04-rajah-motion`. The same approval authorizes the next slice as one
-complete enemy with all standard animations.
+`codex/en-e04-rajah-motion`. That approval now activates exactly one separate
+80-frame Merfolk Tideguard full-enemy candidate on
+`codex/en-e04-merfolk-tideguard`; it is hash-frozen and technically validated
+and is now visually approved, but remains internal and non-public.
 
 ## Intake Assessment
 
@@ -2018,6 +2020,57 @@ upright avian person rather than collapse into the existing Harpy identity.
   all-animation slice. Keep it internal and approval-gated; registration,
   integration, effects, release, and broader multi-enemy work remain outside.
 
+#### Merfolk Tideguard full enemy approved; publication authorized
+
+- Gate ID: `en-e04-merfolk-tideguard-full-v1`; status:
+  `approved`, internal, non-public, with bounded publication authorized.
+- Live branch: `codex/en-e04-merfolk-tideguard` in the current v2 checkout,
+  based exactly on clean Rajah reconciliation
+  `b9e597fa53b0da32633cec8cdc3c46348b92562f`; the approved Rajah
+  implementation remains frozen at
+  `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`.
+- Authorization: while approving the exact Rajah raw plus Complete B + Form
+  pair, the designer said `approved, lets keep going with slices like this,,
+  maybe a full enemy with all its animations is a good spot` on 2026-08-08.
+  Codex bounded the continuation to one 80-frame common Tideguard only.
+- Approval: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form Merfolk Tideguard full-suite GIFs
+  together and said `approved` on 2026-08-09.
+- Scope: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast aliases,
+  and exact Death aliases `H1,H2,H2,H2` across Down, Left, Right, and Up.
+- Anatomy/identity: one continuous humanoid-to-piscine silhouette, one fused
+  scaled tail, one broad connected fluke, no ordinary legs or paired feet;
+  sea-green skin/scales, dark-blue tide armor and fins, coral knots, bronze
+  shell fittings, pale belly plates, and a pearl highlight define Tideguard.
+- Motion: two planted Idle breaths, four distinct grounded fluke sweeps, four
+  full-body brace/rise/lunge/recovery Attack phases, and two planted Hurt
+  phases. H1 flashes the complete silhouette white. Cast/Death introduce no
+  new actor pixels beyond their exact aliases.
+- External effects: water bolts, tide arcs, bubbles, foam, splashes, undertow
+  rings, and impacts remain outside actor pixels; baked effects are empty.
+- Exclusions: Merfolk specialist/elite, Birdfolk, new Cast/Death pixels,
+  registration, consumers, integration, effects, release, later EN-E04 work,
+  and every multi-enemy expansion.
+- Frozen candidate evidence: raw / Complete B + Form boards
+  `1cf9fabcbde77969f1d8d64ad31c3f788544b7ae082a1bd6f8c2db3c67bc67a6` /
+  `0b5fe262f65ea45627fb50723049c560ae9675a0005a1dd963fa46d3049fdf0f`;
+  raw / Complete B + Form GIFs
+  `f01c7c11a541aa45685bbb4f607efbaa3098b44bfb4b0f105ce2bcfddf72045e` /
+  `acbf6b73c88770edbafd95470173344b0321d6075ea3e90675a4e11d59bd32d4`;
+  80-frame digest
+  `a0ebbb04e5d9a47959be09231fe2ac37e8c5ec0ec278d6434b1732d712eaac90`.
+- Focused validation passes suite frames `80/80`, connected hard-alpha
+  silhouettes `80/80`, continuous fused-tail rows `640/640`, broad connected
+  flukes `80/80`, exact side mirrors `20/20`, Cast aliases `16/16`, Death
+  aliases `16/16`, 7,058 Complete B additions, 6,113 Form changes, and zero
+  public EN-E04 families. All five protected predecessor gates also pass.
+- The v2 fast gate passes; final pre-commit `npm.cmd run check` passes in
+  `121.2s` with all
+  232 public PNG sheets unchanged.
+- Required next action: commit and push only the exact ten-file approved lane,
+  then reconcile its publication checkpoint. Later roles/families,
+  registration, integration, effects, release, and broader work remain gated.
+
 ### EN-E05 - Undead humanoids
 
 - Status: `queued`
@@ -2386,7 +2439,11 @@ another similar sized slice` activates only the 80-frame Temple Rajah
 complete-motion candidate on `codex/en-e04-rajah-motion`. It is hash-frozen,
 technically focused/protected/fast/full validated, visually approved, internal,
 non-public, committed, and pushed at
-`38b56f316a3fa12443b5b9fb003e74dc7e8059aa`. The same approval authorizes the
-next slice as one complete enemy with all standard animations; registration,
-integration, effects, release, and broader multi-enemy work remain
-unauthorized.
+`38b56f316a3fa12443b5b9fb003e74dc7e8059aa`. That approval activates only one
+80-frame Merfolk Tideguard full-enemy candidate on
+`codex/en-e04-merfolk-tideguard`. Its evidence is hash-frozen and all focused,
+protected, fast, and full gates pass. The designer reviewed the exact paired
+GIFs and said `approved` on 2026-08-09; it remains internal and non-public.
+Later
+Merfolk roles, Birdfolk, registration, integration, effects, release, and
+broader multi-enemy work remain unauthorized.

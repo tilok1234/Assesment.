@@ -646,6 +646,36 @@ publication is complete at `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`;
 the same approval separately authorizes one complete enemy with all standard
 animations as the next slice.
 
+## Merfolk Tideguard full enemy approved; publication authorized
+
+Branch `codex/en-e04-merfolk-tideguard` owns the resulting isolated full-enemy
+slice. It is based exactly on clean Rajah handoff `b9e597fa` and contains one
+internal, non-public common Merfolk Tideguard: 80 frames spanning Idle, Walk,
+Attack, Cast, Hurt, and Death in all four directions. The silhouette replaces
+ordinary legs and paired feet with one continuous scaled tail and one broad
+connected fluke. Sea-green scales, dark-blue tide armor, coral knots, bronze
+shell fittings, pale belly plates, finned ears, and a pearl highlight carry
+through the full motion suite. Water bolts, tide arcs, bubbles, foam, splashes,
+undertow rings, and impacts remain external.
+
+Run `npm.cmd run review:enemy-expansion-en-e04-merfolk-tideguard` to reproduce
+the paired raw/no-outline and Complete B + Form `1428x760` boards and labeled
+`640x672`, four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e04-merfolk-tideguard` to verify the
+exact 80-frame digest, 80 connected hard-alpha silhouettes, 640 continuous
+fused-tail rows, 80 broad flukes, 20 exact side mirrors, exact Cast/Death
+aliases, bounded presentation changes, external effects, and zero public
+exposure. The frozen digest is
+`a0ebbb04e5d9a47959be09231fe2ac37e8c5ec0ec278d6434b1732d712eaac90`.
+All five protected predecessor gates, the fast gate, and full
+`npm.cmd run check` pass with all 232 public PNG sheets unchanged.
+
+Gate `en-e04-merfolk-tideguard-full-v1` is `approved`: the designer reviewed
+the exact raw plus Complete B + Form GIF pair together and said `approved` on
+2026-08-09. Bounded publication of the exact ten-file lane is authorized.
+Merfolk specialist/elite, Birdfolk, registration, integration, effects,
+release, and broader multi-enemy work remain outside.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge

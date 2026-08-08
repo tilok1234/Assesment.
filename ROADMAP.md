@@ -445,6 +445,18 @@ slices use one complete enemy with all animations as the target size. Bounded
 Rajah publication is complete at
 `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`; registration, integration,
 effects, release, and broader multi-enemy work remain gated.
+The authorized full-enemy target is now implemented as one isolated common
+Merfolk Tideguard on `codex/en-e04-merfolk-tideguard`. Its complete 80-frame
+Idle/Walk/Attack/Cast/Hurt/Death suite uses one fused scaled tail and one broad
+connected fluke in every direction, keeps all water effects external, and
+remains absent from public consumers. The exact paired raw plus Complete B +
+Form boards/GIFs and 80-frame digest are hash-frozen; the focused gate, all five
+protected EN-E04 gates, and fast/full repository gates pass with all 232 public
+sheets unchanged. The designer reviewed the exact paired GIFs and said
+`approved` on 2026-08-09. Gate `en-e04-merfolk-tideguard-full-v1` is now
+visually approved, internal, and non-public, with bounded publication of the
+exact ten-file lane authorized. Later Merfolk roles, Birdfolk, registration,
+integration, effects, release, and broader work remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
