@@ -226,26 +226,15 @@ changes priority.
 
 ## Required Reading
 
-Read these completely before implementation:
+Superseded on 2026-08-08: `CLAUDE.md` is the single session entry point.
+Read `CLAUDE.md`, this file's top consolidation section, and the active plan
+for your lane (`ENEMY_EXPANSION_PLAN.md` or `GAME_PACK_EXPORT_PLAN.md`).
+Everything else is reference material, read on demand:
 
-1. `README.md`
-2. `ARCHITECTURE.md`
-3. `HANDOFF.md`
-4. `ROADMAP.md`
-5. `ENEMY_EXPANSION_PLAN.md`
-6. `ENEMY_OUTLINE_PLAN.md`
-7. `OUTLINE_RENDERING_PLAN.md`
-8. `SHADE_RENDERING_PLAN.md`
-9. `PRODUCTION_ROLL_PLAN.md`
-10. `COMPATIBLE_REROLL_PLAN.md`
-11. `OFFHAND_ITEMS_PLAN.md`
-12. `GAME_PACK_EXPORT_PLAN.md`
-13. `DEATH_ANIMATION_PLAN.md`
-14. `WINDOWS_RELEASE.md`
-15. `death-review/boss-48-drafts/README.md`
-
-The order deliberately puts the active expansion authority before the
-chronological completed-lane records.
+- `README.md`, `ARCHITECTURE.md`, `ROADMAP.md` — product/architecture reference
+- `WINDOWS_RELEASE.md` — release runs only
+- `death-review/boss-48-drafts/README.md` — boss lane only
+- `docs/archive/*.md` — completed historical plan records; never required
 
 ## Stable Public Actor Contract
 
@@ -601,8 +590,8 @@ Current-facing drift was corrected in:
 - `ARCHITECTURE.md`;
 - `HANDOFF.md`;
 - `ROADMAP.md`;
-- `PRODUCTION_ROLL_PLAN.md`;
-- `DEATH_ANIMATION_PLAN.md`;
+- `docs/archive/PRODUCTION_ROLL_PLAN.md`;
+- `docs/archive/DEATH_ANIMATION_PLAN.md`;
 - `WINDOWS_RELEASE.md`; and
 - `death-review/boss-48-drafts/README.md`.
 

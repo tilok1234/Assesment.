@@ -1,0 +1,93 @@
+{
+  "directions": {
+    "approved": [
+      "ancient-mirejaw",
+      "bone-reliquary-king",
+      "scorpion-empress",
+      "cyclops-forge-titan",
+      "pit-fiend-juggernaut",
+      "goblin-war-crown",
+      "lava-core-colossus",
+      "abyssal-crown-kraken",
+      "sun-crown-griffin",
+      "cruel-catgirl-templar-of-the-brutes",
+      "divine-armored-templar-astro-knight",
+      "gunslinger-boar-rider"
+    ],
+    "candidate": [
+      "furious-depraved-rhino",
+      "eclipse-unicorn-sovereign"
+    ]
+  },
+  "animations": {
+    "pilots": [
+      "ancient-mirejaw",
+      "bone-reliquary-king",
+      "scorpion-empress",
+      "cyclops-forge-titan",
+      "pit-fiend-juggernaut",
+      "goblin-war-crown",
+      "cruel-catgirl-templar-of-the-brutes",
+      "divine-armored-templar-astro-knight",
+      "furious-depraved-rhino",
+      "gunslinger-boar-rider"
+    ],
+    "candidates": [
+      "goblin-war-crown",
+      "furious-depraved-rhino",
+      "gunslinger-boar-rider"
+    ],
+    "silhouetteStrict": [
+      "scorpion-empress",
+      "cyclops-forge-titan",
+      "pit-fiend-juggernaut",
+      "goblin-war-crown",
+      "cruel-catgirl-templar-of-the-brutes",
+      "divine-armored-templar-astro-knight",
+      "furious-depraved-rhino",
+      "gunslinger-boar-rider"
+    ],
+    "generators": {
+      "ancient-mirejaw": {
+        "animationScript": "generate-mirejaw-animation-v1.py",
+        "directionModule": "generate_mirejaw_directions_v1"
+      },
+      "bone-reliquary-king": {
+        "animationScript": "generate-bone-king-animation-v1.py",
+        "directionModule": "generate_bone_king_directions_v1"
+      },
+      "scorpion-empress": {
+        "animationScript": "generate-scorpion-empress-animation-v1.py",
+        "directionModule": "generate_scorpion_empress_directions_v1"
+      },
+      "cyclops-forge-titan": {
+        "animationScript": "generate-cyclops-forge-titan-animation-v1.py",
+        "directionModule": "generate_cyclops_forge_titan_directions_v1"
+      },
+      "pit-fiend-juggernaut": {
+        "animationScript": "generate-pit-fiend-juggernaut-animation-v1.py",
+        "directionModule": "generate_pit_fiend_juggernaut_directions_v1"
+      },
+      "goblin-war-crown": {
+        "animationScript": "generate-goblin-war-crown-animation-v1.py",
+        "directionModule": "generate_goblin_war_crown_directions_v1"
+      },
+      "cruel-catgirl-templar-of-the-brutes": {
+        "animationScript": "generate-cruel-catgirl-templar-animation-v1.py",
+        "directionModule": "generate_cruel_catgirl_templar_directions_v1"
+      },
+      "divine-armored-templar-astro-knight": {
+        "animationScript": "generate-divine-armored-templar-astro-knight-animation-v1.py",
+        "directionModule": "generate_divine_armored_templar_astro_knight_directions_v1"
+      },
+      "furious-depraved-rhino": {
+        "animationScript": "generate-furious-depraved-rhino-animation-v1.py",
+        "directionModule": "generate_furious_depraved_rhino_directions_v1"
+      },
+      "gunslinger-boar-rider": {
+        "animationScript": "generate-gunslinger-boar-rider-animation-v1.py",
+        "directionModule": "generate_gunslinger_boar_rider_directions_v1"
+      }
+    }
+  }
+}

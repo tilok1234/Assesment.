@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(death-review/**/*-source.json)",
+      "Read(death-review/**/*-treated.json)",
+      "Read(death-review/**/*.html)"
+    ]
+  }
+}
