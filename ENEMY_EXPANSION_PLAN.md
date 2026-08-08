@@ -188,7 +188,8 @@ exact internal lane is complete at
 `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`. The designer then said
 `very good lets do another similar sized slice`; that continuation activates
 only the comparable 80-frame Temple Rajah complete-motion candidate now
-visually approved and awaiting bounded publication on
+visually approved and published at
+`38b56f316a3fa12443b5b9fb003e74dc7e8059aa` on
 `codex/en-e04-rajah-motion`. The same approval authorizes the next slice as one
 complete enemy with all standard animations.
 
@@ -1766,13 +1767,13 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `approved - Temple Rajah complete motion publication pending`
+- Status: `approved - Temple Rajah complete motion published; one full enemy authorized next`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
 - Approved gate: Naga Coilguard complete motion across Down, Left, Right, and Up
 - Approved gate: combined Naga Venom Oracle complete motion plus Temple Rajah Idle F1-F2 across Down, Left, Right, and Up
-- Approved gate: Temple Rajah complete motion across Down, Left, Right, and Up; publication pending
+- Approved gate: Temple Rajah complete motion across Down, Left, Right, and Up; published
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -1966,11 +1967,10 @@ upright avian person rather than collapse into the existing Harpy identity.
   registration, integration, effects, release, or broader EN-E04 work. Any
   continuation requires a new explicit authorization.
 
-#### Temple Rajah complete motion approved, publication pending
+#### Temple Rajah complete motion approved and published
 
 - Gate ID: `en-e04-temple-rajah-motion-v1`; status:
-  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
-  publication.
+  `approved`, internal, non-public, committed, and pushed.
 - Live branch: `codex/en-e04-rajah-motion` in the current v2 checkout, based
   exactly on clean combined-slice reconciliation
   `c92ee12339f38fd99e8fa87e202b50f69b89c187`; the approved implementation it
@@ -2012,10 +2012,11 @@ upright avian person rather than collapse into the existing Harpy identity.
   EN-E04 families. All four protected predecessor gates also pass.
 - The cleaned v2 fast and full gates pass with all 232 public PNG sheets
   unchanged.
-- Required next action: publish only this exact approved Temple Rajah lane and
-  reconcile its clean pushed checkpoint. Then the same approval authorizes one
-  separate full-enemy, all-animation slice; registration, integration, effects,
-  release, and broader multi-enemy work remain outside.
+- Publication is complete at approved implementation checkpoint
+  `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`.
+- Required next action: the same approval authorizes one separate full-enemy,
+  all-animation slice. Keep it internal and approval-gated; registration,
+  integration, effects, release, and broader multi-enemy work remain outside.
 
 ### EN-E05 - Undead humanoids
 
@@ -2384,7 +2385,8 @@ unauthorized at that checkpoint. The designer's later `very good lets do
 another similar sized slice` activates only the 80-frame Temple Rajah
 complete-motion candidate on `codex/en-e04-rajah-motion`. It is hash-frozen,
 technically focused/protected/fast/full validated, visually approved, internal,
-non-public, uncommitted, and unpushed pending bounded publication. The same
-approval authorizes the next slice as one complete enemy with all standard
-animations; registration, integration, effects, release, and broader
-multi-enemy work remain unauthorized.
+non-public, committed, and pushed at
+`38b56f316a3fa12443b5b9fb003e74dc7e8059aa`. The same approval authorizes the
+next slice as one complete enemy with all standard animations; registration,
+integration, effects, release, and broader multi-enemy work remain
+unauthorized.

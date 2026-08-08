@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Temple Rajah Motion Approved, Publication Pending
+## Immediate Continuation Checkpoint - Temple Rajah Motion Approved And Published
 
 Start here in a new task. After the combined Venom Oracle complete-motion plus
 Temple Rajah Idle slice was approved, published, and reconciled, the designer
@@ -28,10 +28,11 @@ motion suite; it does not cross into a new Merfolk anatomy.
   `codex/en-e04-rajah-motion`, based exactly on clean reconciled combined-slice
   handoff `c92ee12339f38fd99e8fa87e202b50f69b89c187`; the approved
   implementation it extends remains frozen at
-  `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`.
+  `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`. The approved Temple Rajah
+  implementation is committed and pushed at
+  `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`.
 - Gate: `en-e04-temple-rajah-motion-v1`; status
-  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
-  publication.
+  `approved`, internal, non-public, committed, and pushed.
 - Approval evidence: the designer reviewed both exact labeled all-four-direction
   raw/no-outline and Complete B + Form Temple Rajah motion-suite GIFs together
   and said `approved, lets keep going with slices like this,, maybe a full enemy
@@ -68,10 +69,13 @@ motion suite; it does not cross into a new Merfolk anatomy.
 - Protected Naga Idle, Coilguard motion, Venom Oracle Idle, and combined
   Venom-motion/Rajah-Idle gates pass unchanged. The cleaned v2 fast and full
   gates pass with all 232 public PNG sheets unchanged.
-- Required next action: publish only this exact approved Temple Rajah lane and
-  reconcile its clean pushed checkpoint. The same approval separately
-  authorizes one full-enemy, all-animation slice after publication; do not
-  register, integrate, add effects, release, or broaden to multiple enemies.
+- Publication checkpoint: bounded publication of the exact ten-file lane is
+  complete at `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`; generated review
+  artifacts remain ignored.
+- Required next action: the same approval authorizes one separate full-enemy,
+  all-animation slice from this clean handoff. Keep it internal and
+  approval-gated; do not register, integrate, add effects, release, or broaden
+  to multiple enemies.
 
 The approved preceding combined checkpoint follows for provenance.
 

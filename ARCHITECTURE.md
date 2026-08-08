@@ -985,11 +985,11 @@ ceiling. Cast is an exact Attack alias and Death is the exact Hurt sequence
 `H1,H2,H2,H2`.
 
 Gate `en-e04-temple-rajah-motion-v1` is visually approved, internal, non-public,
-uncommitted, and unpushed pending bounded publication. The designer reviewed
-both exact paired GIFs and said `approved, lets keep going with slices like
-this,, maybe a full enemy with all its animations is a good spot` on 2026-08-08.
-Its lane-local registry contains only Temple Rajah and remains absent from
-`sprite-engine.js`. Frozen
+committed, and pushed at `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`.
+The designer reviewed both exact paired GIFs and said `approved, lets keep going
+with slices like this,, maybe a full enemy with all its animations is a good
+spot` on 2026-08-08. Its lane-local registry contains only Temple Rajah and
+remains absent from `sprite-engine.js`. Frozen
 `1428x760` boards, `640x672` four-phase paired GIFs, an 80-frame digest, exact
 approved-Idle delegation, continuous rows, exact mirrors/aliases, tail-source
 locks, Complete B/Form presentation, and zero public exposure define the gate.

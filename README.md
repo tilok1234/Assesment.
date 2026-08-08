@@ -615,11 +615,12 @@ Rajah in the bottom `R IDLE` row and said
 `oh right sorry i had to scroll down approved` on 2026-08-08. Bounded
 publication is complete at `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`.
 
-## Temple Rajah complete motion approved, publication pending
+## Temple Rajah complete motion approved and published
 
-Branch `codex/en-e04-rajah-motion` owns one internal, non-public, uncommitted
-80-frame Temple Rajah motion candidate based exactly on clean combined-slice
-handoff `c92ee12`. The eight approved Idle frames delegate byte-for-byte. Walk,
+Branch `codex/en-e04-rajah-motion` owns one internal, non-public, approved
+80-frame Temple Rajah motion implementation committed and pushed at
+`38b56f316a3fa12443b5b9fb003e74dc7e8059aa`. It is based exactly on clean
+combined-slice handoff `c92ee12`. The eight approved Idle frames delegate byte-for-byte. Walk,
 Attack, and Hurt inherit the approved planted Naga choreography while the tall
 crimson-and-gold crown, broad gilded pauldrons, ivory chest plate, and royal
 sash move through every phase. Cast aliases Attack exactly; Death aliases Hurt
@@ -641,8 +642,9 @@ the exact raw and Complete B + Form GIF pair and said `approved, lets keep going
 with slices like this,, maybe a full enemy with all its animations is a good
 spot` on 2026-08-08. Focused, all four protected EN-E04 gates, and the v2
 fast/full gates pass with all 232 public PNG sheets unchanged. Bounded
-publication is pending; the same approval separately authorizes one complete
-enemy with all standard animations as the next slice.
+publication is complete at `38b56f316a3fa12443b5b9fb003e74dc7e8059aa`;
+the same approval separately authorizes one complete enemy with all standard
+animations as the next slice.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

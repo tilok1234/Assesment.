@@ -439,11 +439,12 @@ bounded to the 80-frame Temple Rajah complete-motion suite on
 Walk, Attack, Hurt, exact Cast aliases, and exact Death aliases inherit the
 approved planted Naga choreography. The candidate is hash-frozen, focused and
 protected validated, fast/full-gate clean with all 232 public sheets unchanged,
-internal, non-public, uncommitted, and unpushed. The designer approved the exact
+internal, non-public, committed, and pushed. The designer approved the exact
 paired raw plus Complete B + Form GIFs on 2026-08-08 and requested that future
 slices use one complete enemy with all animations as the target size. Bounded
-Rajah publication is pending; registration, integration, effects, release, and
-broader multi-enemy work remain gated.
+Rajah publication is complete at
+`38b56f316a3fa12443b5b9fb003e74dc7e8059aa`; registration, integration,
+effects, release, and broader multi-enemy work remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
