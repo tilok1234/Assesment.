@@ -865,9 +865,10 @@ and Complete B + Form evidence, exact side mirroring and hoof-contact rows,
 hard-alpha connectivity, external thorn/leaf/root effects, and zero facade
 exposure. The full repository gate passes in `187.6s` with all 232 validated
 PNG sheets unchanged. The designer approved both exact paired GIFs together on
-2026-08-08. Bounded Idle publication is authorized; the same message requests
-the next isolated Wildwood art gate while registration, consumers, baked
-effects, release, and broader work remain outside this module.
+2026-08-08. The approved internal implementation is committed and pushed at
+`aa96e170c41cbcb49c7ac1bd979114b3b5bfa7e4`; the same message requests the next
+isolated Wildwood art gate while registration, consumers, baked effects,
+release, and broader work remain outside this module.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

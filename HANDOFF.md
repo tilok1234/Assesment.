@@ -5,21 +5,22 @@ Date: 2026-08-08
 ## Immediate Continuation Checkpoint - Approved Wildwood Hornlord Idle
 
 Start here in a new task. Wildwood Hornlord elite Idle F1-F2 across Down, Left,
-Right, and Up is visually approved. Bounded publication of the internal
-eight-frame lane is the current action; the same approval message requests the
-next documented Wildwood art gate after publication closes.
+Right, and Up is visually approved and published internally at
+`aa96e170c41cbcb49c7ac1bd979114b3b5bfa7e4`. The same approval message requests
+the next documented Wildwood complete-motion art gate.
 
 - Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-wildwood-hornlord-idle`
-  on branch `codex/en-e03-wildwood-hornlord-idle` at
-  `629bccd1fefe5e98731dcfbf87049e7517dbca2e`, with no upstream. It is based
-  exactly on the clean, published Reed Charmer complete-motion handoff.
-- Git state is intentionally dirty, uncommitted, and unpushed. The approved new
+  on branch `codex/en-e03-wildwood-hornlord-idle`, tracking its matching origin
+  branch. Its approved implementation checkpoint is
+  `aa96e170c41cbcb49c7ac1bd979114b3b5bfa7e4`, based exactly on the clean,
+  published Reed Charmer complete-motion handoff.
+- Git state is clean and synchronized after this docs-only reconciliation. The
+  approved new
   files are `engine/enemy-expansion-en-e03-satyr-elite-idle.js`,
   `tools/enemy-expansion-en-e03-wildwood-hornlord-idle-review.mjs`,
   `tools/build-enemy-expansion-en-e03-wildwood-hornlord-idle-gifs.py`, and
   `tools/check-enemy-expansion-en-e03-wildwood-hornlord-idle.mjs`, plus package
-  and documentation updates. Stage only this bounded lane; do not reset, clean,
-  stash, or switch it while publication closes.
+  and documentation updates. Review artifacts remain ignored.
 - Gate: `en-e03-wildwood-hornlord-idle-v1`, status `approved`, internal and
   non-public.
 - Authorization evidence: after the Reed Charmer complete-motion lane was
@@ -66,10 +67,9 @@ next documented Wildwood art gate after publication closes.
   sheets.
 - Review output, approved review evidence, and the local Boss checkpoint corpus
   are ignored support artifacts; they are not candidate source changes.
-- Next action: commit and push only this approved Idle lane, reconcile the exact
-  implementation checkpoint, then open an isolated Wildwood complete-motion
-  art gate from that clean base. Registration, integration, baked effects,
-  release, and broader EN-E03 work remain excluded.
+- Next action: open an isolated Wildwood complete-motion art gate from this
+  clean published handoff. Registration, integration, baked effects, release,
+  and broader EN-E03 work remain excluded.
 
 The detailed historical and technical evidence remains in
 [Wildwood Hornlord Idle Approved](#wildwood-hornlord-idle-approved).
@@ -1509,7 +1509,7 @@ release, and later work remain separately gated.
 ### Wildwood Hornlord Idle Approved
 
 - Gate ID: `en-e03-wildwood-hornlord-idle-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed pending bounded publication.
+  non-public, committed, and pushed.
 - Authorization evidence: after Reed Charmer complete motion was approved,
   published, and reconciled, the designer said `Awesome let's do next`.
   Following the documented Satyr role order, Codex bounded only Wildwood
@@ -1519,7 +1519,8 @@ release, and later work remain separately gated.
   lets do next` on 2026-08-08.
 - Isolated branch/worktree: `codex/en-e03-wildwood-hornlord-idle` at
   `C:\tmp\8-bit-sprite-assembler-en-e03-wildwood-hornlord-idle`, based exactly
-  on clean published Reed handoff `629bccd`; it has no upstream.
+  on clean published Reed handoff `629bccd`; it tracks the matching origin
+  branch.
 - Scope: two Idle frames across all four directions. Briar Reveler and Reed
   Charmer remain frozen; later Wildwood motion, registration, consumers,
   effects, release, and later work remain excluded.
@@ -1552,10 +1553,11 @@ release, and later work remain separately gated.
 - Full `npm.cmd run check` validation passes in `187.6s`, including all 232
   validated PNG sheets; the complete ignored Boss checkpoint corpus contains
   1,222 files.
-- Required next action: publish only this approved Idle lane, reconcile its
-  exact checkpoint, then begin the next isolated Wildwood complete-motion art
-  gate. Registration, consumers, baked effects, release, and broader EN-E03
-  work remain excluded.
+- Publication is complete at approved implementation checkpoint
+  `aa96e170c41cbcb49c7ac1bd979114b3b5bfa7e4`.
+- Required next action: begin the next isolated Wildwood complete-motion art
+  gate requested by the same approval message. Registration, consumers, baked
+  effects, release, and broader EN-E03 work remain excluded.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

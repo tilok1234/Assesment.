@@ -470,9 +470,10 @@ branching antler/bark/moss identity, frozen hashes, external thorn/leaf/root
 effects, and zero public exposure. The full repository gate passes in `187.6s`
 with all 232 validated PNG sheets unchanged. The designer reviewed both exact
 paired GIFs together and said `Approved lets do next` on 2026-08-08. The
-internal, non-public lane awaits bounded publication; the same message requests
-the next isolated Wildwood art gate. Registration, integration, baked effects,
-release, and broader EN-E03 work remain unauthorized.
+internal, non-public lane is committed and pushed at
+`aa96e170c41cbcb49c7ac1bd979114b3b5bfa7e4`; the same message requests the next
+isolated Wildwood art gate. Registration, integration, baked effects, release,
+and broader EN-E03 work remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
