@@ -15,7 +15,77 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Venom Oracle Idle Approved And Published
+## Immediate Continuation Checkpoint - Expanded Naga Slice Approved, Publication Pending
+
+Start here in a new task. After approving and publishing Venom Oracle Idle, the
+designer asked to try bigger slices. Codex proposed one combined 88-frame review
+boundary containing Venom Oracle complete motion plus Temple Rajah Idle F1-F2;
+the designer said `sure lets do that` on 2026-08-08.
+
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-venom-motion-rajah-idle`, based exactly on clean reconciled
+  Venom Oracle Idle handoff `2e14485`. The approved specialist implementation
+  remains frozen at `3365d9915ed0ac1e506470604ed1e83c84606181`.
+- Gate: `en-e04-venom-motion-rajah-idle-v1`; status
+  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
+  publication.
+- Approval evidence: the designer reviewed both exact combined labeled
+  all-four-direction raw/no-outline and Complete B + Form GIFs, located Temple
+  Rajah in the bottom `R IDLE` row, and said
+  `oh right sorry i had to scroll down approved` on 2026-08-08.
+- Combined scope: 80 Venom Oracle suite frames plus 8 Temple Rajah Idle frames.
+  The Venom suite delegates approved Idle F1-F2 byte-for-byte, adds Walk W1-W4,
+  Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases `H1,H2,H2,H2` across all four directions. Temple Rajah
+  receives only Idle F1-F2 across those directions.
+- Venom motion contract: approved planted slither, coil strike, and Hurt
+  choreography carry the violet mantle, venom jewel, gold sigil, and crown.
+  Upward attack/recoil phases brace the tall crown at the one-cell ceiling while
+  the approved hood/body motion continues underneath.
+- Temple Rajah identity: the approved continuous Naga anatomy gains a tall
+  crimson-and-gold temple crown, broad gilded pauldrons, ivory chest plate, and
+  royal sash jewel. F2 settles the crown, armor, and torso while rows 17-23 stay
+  byte-exact with the matching approved Coilguard tail.
+- Effects contract: venom orbs, miasma, ritual sigils, prophecy motes, command
+  auras, royal sigils, sun flares, temple wards, and coil impacts all remain
+  external; baked-effect arrays are empty.
+- Exclusions: approved Coilguard and Venom Idle changes, Temple Rajah motion,
+  Merfolk, Birdfolk, new Venom Cast/Death pixels, registration, consumers,
+  effects, release, and later EN-E04 work.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e04-venom-motion-rajah-idle`; it
+  reproduces paired raw/no-outline and Complete B + Form `1428x868` boards plus
+  exact paired labeled `640x776`, four-phase, `720ms` looping GIFs.
+- Raw / Complete B + Form board SHA-256 values:
+  `9221b2b10230b9de58f26b0548eac445921e8531baec59b404a9bd04227c5ba5` /
+  `da4d837e6d25a110fd6e2297687fda852d8a71b024d6748674c299eaacb26594`.
+- Raw / Complete B + Form GIF SHA-256 values:
+  `0be77ec47d6e3bdc701034b8d69aa3e1597b6b92cf8c51a1d1d725c330ce0f4b` /
+  `272bc1b139d51fac8383a1a103c0aa545ca97893bf1774fadd6adaeba88deb6c`.
+- Candidate 88-frame digest:
+  `81a087b81df560f7676024484114b550d02ce5c6424f040f4c1765f2231a4e77`.
+- Focused validation passes: approved Venom Idle `8/8`; Venom suite `80/80`;
+  Rajah Idle `8/8`; connected hard-alpha silhouettes `88/88`; continuous
+  lower-body rows `704/704`; exact side mirrors `22/22`; Cast aliases `16/16`;
+  Death aliases `16/16`; opaque range 187-249; 8,400 Complete B additions;
+  10,478 Form changes; public EN-E04 families `0`.
+- Protected Coilguard Idle, Coilguard motion, and Venom Idle gates pass
+  unchanged. The cleaned v2 fast gate passes in `65s`; full
+  `npm.cmd run check` passes in `153.2s`, with all 232 public PNG sheets
+  unchanged.
+- Exact artifact inspection: all four phases were inspected directly in raw and
+  Complete B + Form, and both exact frozen boards were opened in Aseprite at
+  original resolution. No clipping, disconnected crown/armor, phase pop, fake
+  feet, tail jitter, alias drift, or direction mismatch remains.
+- Required next action: publish only this exact approved combined lane,
+  reconcile its clean pushed checkpoint, then stop. Do not begin Temple Rajah
+  motion, advance Merfolk or Birdfolk, register, integrate, add effects,
+  release, or broaden EN-E04.
+
+The approved source checkpoint follows for provenance.
+
+## Approved Source Checkpoint - Venom Oracle Idle Approved And Published
 
 Start here in a new task. After the approved Coilguard motion implementation
 and handoff were published, the designer said `lets do next` on 2026-08-08.

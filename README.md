@@ -579,9 +579,39 @@ GIF phases were inspected directly. The designer reviewed both exact paired
 presentations and said `ye approved` on 2026-08-08. Gate
 `en-e04-venom-oracle-idle-v1` is `approved`; bounded publication is complete at
 `3365d9915ed0ac1e506470604ed1e83c84606181`.
-Venom Oracle motion, Temple Rajah,
-Merfolk, Birdfolk, registration, integration, effects, release, and later work
-remain gated.
+The later `sure lets do that` activates only the combined larger slice below.
+
+## Expanded Naga Venom motion plus Temple Rajah Idle approved, publication pending
+
+Branch `codex/en-e04-venom-motion-rajah-idle` owns one internal, non-public,
+uncommitted 88-frame review candidate. It preserves all eight approved Venom
+Oracle Idle frames exactly, completes the 80-frame specialist suite with Walk,
+Attack, Hurt, exact Cast aliases, and exact Death aliases, and adds only Temple
+Rajah Idle F1-F2 across four directions. Rajah motion, Merfolk, Birdfolk,
+registration, integration, effects, release, and later work remain outside.
+
+Run `npm.cmd run review:enemy-expansion-en-e04-venom-motion-rajah-idle` to
+reproduce paired raw/no-outline and Complete B + Form `1428x868` boards and
+paired labeled `640x776`, four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e04-venom-motion-rajah-idle` to verify all
+88 connected hard-alpha frames, 704 continuous no-feet rows, 22 exact side
+mirrors, exact Cast/Death aliases, approved Venom Idle delegation, Rajah tail
+preservation, frozen evidence, external effects, and zero public exposure. The
+candidate digest is
+`81a087b81df560f7676024484114b550d02ce5c6424f040f4c1765f2231a4e77`.
+
+Venom carries its violet mantle, jewel, crown, and sigil through the approved
+planted Naga choreography; upward phases brace the tall crown at the one-cell
+ceiling. Temple Rajah adds a crimson-and-gold crown, gilded pauldrons, ivory
+chest plate, and royal sash jewel over the approved planted coil. The focused
+and all three protected Naga gates pass; the v2 fast gate passes in `65s`, and
+full `npm.cmd run check` passes in `153.2s` with all 232 public PNG sheets
+unchanged. Both exact boards were opened in Aseprite and all four phases were
+inspected in raw and Complete B + Form. Gate
+`en-e04-venom-motion-rajah-idle-v1` is `approved` after the designer located
+Rajah in the bottom `R IDLE` row and said
+`oh right sorry i had to scroll down approved` on 2026-08-08. Bounded
+publication is pending; the lane remains uncommitted and unpushed.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

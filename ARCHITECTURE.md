@@ -947,6 +947,34 @@ designer reviewed both exact paired GIFs and said `ye approved` on 2026-08-08.
 Approval and publication do not authorize motion, Temple Rajah, another family,
 registration, consumers, effects, or release.
 
+The separately authorized
+`engine/enemy-expansion-en-e04-venom-motion-rajah-idle.js` module composes one
+larger private review boundary without modifying any approved Naga source. For
+Venom Oracle Idle it delegates the approved specialist renderer byte-for-byte.
+For Walk/Attack/Hurt and the exact Cast/Death aliases it delegates the approved
+Coilguard choreography, then applies the specialist crown, mantle, jewel, and
+sigil through a phase-aware transformed context. Upward attack/recoil phases
+clamp that taller identity overlay to the one-cell crown margin while the
+approved underlying body and coil motion continue. Temple Rajah is a separate
+Idle-only dispatch on the approved Naga anatomy; it adds a connected
+crimson-and-gold crown, gilded pauldrons, ivory chest plate, and royal sash
+jewel, while rows 17-23 remain byte-exact with Coilguard.
+
+The combined registry contains exactly Venom Oracle and Temple Rajah, refuses
+Rajah motion and every other role/family, and remains absent from the public
+facade. Its focused gate freezes 88 frames, 704 continuous lower-body rows, 22
+exact side mirrors, exact Venom Cast/Death aliases, approved Venom Idle
+delegation, Rajah distinction/tail preservation, paired raw and Complete B +
+Form hashes, and zero public exposure. All three protected Naga gates plus the
+fast and full repository matrices pass with all 232 public sheets unchanged.
+Both boards were opened in Aseprite and all four phases inspected. Gate
+`en-e04-venom-motion-rajah-idle-v1` is visually approved, internal, non-public,
+uncommitted, and unpushed pending bounded publication. The designer reviewed
+both exact combined GIFs, located Rajah in the bottom `R IDLE` row, and said
+`oh right sorry i had to scroll down approved` on 2026-08-08. Temple Rajah
+motion, Merfolk, Birdfolk, registration, consumers, effects, and release stay
+outside.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct
