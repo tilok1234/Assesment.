@@ -13,7 +13,8 @@ HANDOFF.md (state), ENEMY_EXPANSION_PLAN.md + GAME_PACK_EXPORT_PLAN.md (active p
 
 | Path | Owns | Size warning |
 |---|---|---|
-| `engine/catalogs/enemies.js` | enemy family/variant data (data-driven, ~1 line per variant) | small |
+| `engine/catalogs/enemies.js` | LEGACY enemy family/variant data (~1 line per variant) | small |
+| `engine/enemy-expansion*.js` | EN-expansion facade: registry, slices, repairs, `PUBLIC_ENEMIES` composed catalog | small each |
 | `engine/catalogs/player-options.js` | player option catalogs | small |
 | `engine/catalogs/animation.js` | frozen frame contract: 24px, 4 dirs, 20 cols (idle2/walk4/attack4/cast4/hurt2/death4) | small |
 | `engine/renderer.js` | per-family draw functions + dispatch if-chain (L~3205) + HUMANOID_FAMS (L~3195) | 141KB — read sections, not whole |
@@ -84,8 +85,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 
 ## Known state (2026-08-08)
 
-- 57 families / 202 variants live on main; the EN-expansion lane (67/232) exists
-  only on the ORIGINAL repo's codex/* branches, not here.
+- Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
+  asset-pack). Public consumer catalog: 67 families / 232 variants via the
+  enemy-expansion facade (EN-F00..EN-E02 adopted on this branch;
+  `engine.PUBLIC_ENEMIES` is the composed roster). EN-E03 stays parked on
+  codex/en-e03 until its Hill Breaker Walk gate is approved.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;

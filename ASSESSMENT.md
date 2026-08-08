@@ -1,5 +1,11 @@
 # Workflow Assessment — 8-Bit Sprite Assembler
 
+> **Context on this branch:** this assessment was written against pre-adoption
+> `main` (57/202, no EN work). The branch you are reading it on already merges
+> the approved EN-E02 checkpoint (public catalog 67/232) and ports every fix
+> described in Part 3 — roadmap item 4's "adopt the EN lane" half is done here;
+> the renderer split half remains open.
+
 **Date:** 2026-08-08 · **Scope:** why adding sprites is slow, where Claude Code tokens go, and what to change.
 **Method:** six parallel analysis agents read the full repo (evidence cited as `file:line`), every load-bearing claim was re-verified by executing the actual tools, and the highest-leverage fixes are already implemented on this branch.
 
