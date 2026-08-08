@@ -14,70 +14,66 @@ workflow. The approved EN-E04 source checkpoint remains
 `codex/en-e04-naga-idle` at `26151e1`; new work proceeds on an isolated
 continuation branch without rewriting that checkpoint.
 
-## Immediate Continuation Checkpoint - Naga Coilguard Idle Approved
+## Immediate Continuation Checkpoint - Naga Coilguard Motion Approved
 
-Start here in a new task. The first EN-E04 Naga anatomy baseline is visually
-approved, technically complete, and published internally at
-`bd920c206d692bcc5e7b043614dcf6a03db2174c`. It contains only Coilguard common
-Idle F1-F2 across Down, Left, Right, and Up. No art gate is active.
+Start here in a new task. The approved Coilguard Idle baseline remains frozen at
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. On the isolated continuation
+branch `codex/en-e04-naga-motion`, the complete Coilguard motion suite is now a
+visually approved internal/non-public lane. The approval authorizes only its
+bounded publication; it does not authorize registration or consumer exposure.
 
-- Approved source branch: `codex/en-e04-naga-idle`, tracking its matching
-  origin branch. It is based exactly on clean published Wildwood Hornlord handoff
-  `8c4edba3fa9460d1afdd4409239f35c6078a7534`; the approved Naga implementation
-  checkpoint is `bd920c206d692bcc5e7b043614dcf6a03db2174c`.
-- Git state is clean and synchronized after this docs-only reconciliation. The
-  bounded source/tool files are `engine/enemy-expansion-en-e04-naga-idle.js`,
-  `tools/enemy-expansion-en-e04-naga-idle-review.mjs`,
-  `tools/build-enemy-expansion-en-e04-naga-idle-gifs.py`, and
-  `tools/check-enemy-expansion-en-e04-naga-idle.mjs`, plus package and five-doc
-  reconciliation changes. Review artifacts and the copied checkpoint corpus
-  remain ignored support evidence.
-- Gate: `en-e04-naga-idle-v1`, status `approved`, internal and non-public.
-- Authorization evidence: after the exact Wildwood Hornlord complete-motion
-  lane was approved, published, and reconciled, the designer said `Let's do
-  next`. The documented EN-E04 priority order starts with Naga, so Codex bounded
-  this continuation to one common Coilguard Idle pair only.
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-naga-motion`. The approved source branch remains
+  `codex/en-e04-naga-idle` at `26151e1`; v2 workflow integration is preserved in
+  local checkpoint `a81d324`.
+- Gate: `en-e04-naga-coilguard-motion-v1`, status
+  `approved`, internal and non-public.
+- Authorization evidence: the designer explicitly asked Codex to check out
+  `codex/en-e04-naga-idle` and continue the enemy-expansion lane, then clarified
+  that `tilok1234/Assesment` is the current v2 repository. This activates one
+  bounded Coilguard complete-motion gate only.
 - Approval evidence: the designer reviewed both exact labeled all-four-direction
-  raw/no-outline and Complete B + Form Coilguard Idle GIFs together and said
-  `Approved` on 2026-08-08.
-- Contract card: Coilguard is the active common role; Venom Oracle specialist
-  and Temple Rajah elite are recorded as planned names only and have no renderer
-  exposure.
-- Anatomy and motion: a jade cobra hood, amber eyes, bronze torque, temple
-  cloth, belly plates, and one continuous direction-aware serpent body replace
-  the inherited humanoid lower body. F2 settles the hood/torso one row and
-  compresses the planted coil. Every lower-body row remains one connected run;
-  no side frame contains paired legs, feet, or detached foot-like islands.
-- Scope exclusions: Venom Oracle, Temple Rajah, Merfolk, Birdfolk,
-  Walk/Attack/Cast/Hurt/Death, baked venom/miasma/coil-impact pixels,
-  registration, consumers, effects, release, and later EN-E04 work.
-- Review command: `npm.cmd run review:enemy-expansion-en-e04-naga-idle`; it
-  creates paired raw/no-outline and Complete B + Form `1548x420` boards plus two
-  exact labeled `192x224`, two-frame, `480ms` looping GIFs.
+  raw/no-outline and Complete B + Form Coilguard motion-suite GIFs together and
+  said `approved` on 2026-08-08.
+- Scope: approved Idle F1-F2 is delegated byte-for-byte. Approved new art is
+  Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases `H1,H2,H2,H2`, all across Down, Left, Right, and Up.
+- Motion: Walk uses four planted slither phases; Attack uses coil brace, cobra
+  rise, forward strike, and recovery; Hurt uses a complete-silhouette white
+  recoil followed by a colored braced recovery. Every row from 15 through 22 is
+  one continuous lower-body run with no ordinary legs, paired feet, or detached
+  islands.
+- Scope exclusions: approved Idle pixel changes, Venom Oracle, Temple Rajah,
+  Merfolk, Birdfolk, new Cast/Death pixels, baked venom/miasma/coil-impact
+  pixels, registration, consumers, effects, release, and later EN-E04 work.
+- Review command: `npm.cmd run review:enemy-expansion-en-e04-naga-motion`; it
+  reproduces paired raw/no-outline and Complete B + Form `1428x760` boards plus
+  exact paired labeled `640x672`, four-phase, `720ms` looping GIFs.
 - Raw / Complete B + Form board SHA-256 values:
-  `14edaceb75bce787da88b065ac435e611dd3b03b1eaf07320f0f6b476021c211` /
-  `d4af682862093704497f285e4163e5e7b36a056fadd16e5079a4dd89b4f63bc0`.
+  `c07dd2284c86e4ded62afb9f7124003d471445a7ee910ca746d55e41c7ac6e54` /
+  `e8d5d915cfcc4ca3688ded2b61d2d32a11edfb6976b874a1300cf789d3e829ab`.
 - Raw / Complete B + Form GIF SHA-256 values:
-  `70a85f3ab1b94b6207acb161d2a2de93e4ec925748c399b2c1ce6a0075db69ea` /
-  `ded49cd18d9706c741315ec61b9a219012e4e39d50618a79b60ea91bc592528b`.
-- Eight-frame candidate digest:
-  `037ed99a5c9d126d175fe3339fdb9f6443e092d0c0faf6bea6aa5f5c8a72c128`.
-- Focused validation passes: candidate `8/8`; connected hard-alpha silhouettes
-  `8/8`; continuous lower-body rows `64/64`; broad single-coil contacts `8/8`;
-  side mirrors `4/4`; F1/F2 changed alpha pixels `158`; opaque range 176-205;
-  764 Complete B additions; 1,172 Form changes; baked effects `0`; public
-  EN-E04 families `0`.
-- The complete ignored Boss checkpoint corpus contains 1,222 files. Full
-  post-approval repository validation passes in `241s`, including all 232 validated PNG
-  sheets.
-- Exact board inspection: both frozen PNGs were opened in Aseprite and checked
-  at original resolution. The repaired F2 body-to-tail junction is continuous;
-  no clipping, label defect, seam, or fake paired-foot island remains.
-- Required next action: stop and wait. Do not begin another role/family,
-  register, integrate, add effects, release, or start later EN-E04 work without
-  separate explicit authorization.
+  `74732f35384ecaef63e9131082d95444f401ebb498e1e2a37b82e16c770a1dc0` /
+  `b5a7f20bcf88adefe82d17459b1663b8841ea17aba71cad2a7a1eb81fa455dca`.
+- Approved 80-frame digest:
+  `f94b2c647275c9ab7d79433e29fa37f37285c2a203ad87be6631efbb02642c0b`.
+- Focused validation passes: suite `80/80`; approved Idle preserved `8/8`;
+  connected hard-alpha silhouettes `80/80`; continuous lower-body rows
+  `640/640`; exact side mirrors `20/20`; Cast aliases `16/16`; Death aliases
+  `16/16`; opaque range 176-249; 7,714 Complete B additions; 11,232 Form
+  changes; public EN-E04 families `0`.
+- The cleaned v2 `npm.cmd run check:fast` gate passes, and full
+  `npm.cmd run check` passes in `121.9s`, with all 232 public PNG sheets
+  unchanged.
+- Exact board inspection: both hash-frozen boards were inspected directly and
+  opened in Aseprite at original resolution. The four synchronized phases read
+  distinctly across all directions without clipping, seams, or fake feet.
+- Required next action: create and push only the bounded approved checkpoint,
+  reconcile this handoff with its exact commit, then stop. Do not register,
+  integrate, add effects, release, or start another role/family.
 
-The detailed current evidence is in
+The approved source evidence remains in
 [Naga Coilguard Idle Approved](#naga-coilguard-idle-approved).
 
 ## Previous Checkpoint - Approved Wildwood Hornlord Complete Motion

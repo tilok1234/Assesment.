@@ -904,6 +904,24 @@ implementation is committed and pushed at
 gate. Later motion/roles, Merfolk, Birdfolk, registration, consumers, effects,
 release, and broader EN-E04 work remain outside this module.
 
+The isolated `engine/enemy-expansion-en-e04-naga-motion.js` module composes the
+next authorized Coilguard gate without modifying the approved Idle renderer.
+Idle calls delegate directly to `EN_E04_NAGA_IDLE_RENDERER`; all other poses
+reuse only the existing humanoid upper-body foundation, clear its inherited
+lower body, and attach one authored planted-coil shape. Walk owns four slither
+phases. Attack shifts the upper rig through brace, rise, strike, and recovery
+while the coil remains grounded. Hurt forces the entire connected silhouette
+white for H1 and returns to a colored braced H2. Cast routes to Attack and Death
+routes to Hurt source frames `[0, 1, 1, 1]`, so neither alias owns new pixels.
+The accompanying 80-frame review/check boundary freezes paired raw and Complete
+B + Form evidence, exact side mirrors, all 640 single-run lower-body rows,
+external effects, and zero facade/public exposure. This module remains an
+internal, non-public boundary; the designer approved both exact paired review
+presentations on 2026-08-08, authorizing only bounded publication. It passes the
+focused, fast, and full repository gates without changing any of the 232 public
+sheets. Approval does not authorize another role, family, registration,
+consumer integration, effects, or release.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

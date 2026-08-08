@@ -400,8 +400,16 @@ boards/GIFs are frozen, the focused eight-frame gate passes, both boards were
 opened in Aseprite, and post-approval full validation passes in `241s` with all 232 public
 PNG sheets unchanged. The designer reviewed both exact paired GIFs and said
 `Approved` on 2026-08-08; Coilguard is committed and pushed at
-`bd920c206d692bcc5e7b043614dcf6a03db2174c`. No art gate is active. Venom
-Oracle, Temple Rajah, later Naga motion, Merfolk, Birdfolk, registration,
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. At that checkpoint no art gate was
+active. The designer's later explicit request to check out the approved Naga
+branch and continue activates only Coilguard complete motion on
+`codex/en-e04-naga-motion`. Its 80-frame paired candidate preserves all eight
+Idle pixels, adds four planted Walk and Attack phases plus two Hurt phases, and
+uses exact Cast/Death aliases across four directions. Focused, cleaned v2 fast,
+and full validation pass with all 232 public sheets unchanged; both frozen
+boards were opened in Aseprite. The designer reviewed both exact paired GIFs and
+said `approved` on 2026-08-08, authorizing only the bounded Coilguard publication
+checkpoint. Venom Oracle, Temple Rajah, Merfolk, Birdfolk, registration,
 integration, effects, release, and later gates remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish

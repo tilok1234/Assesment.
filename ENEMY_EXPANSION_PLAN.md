@@ -230,8 +230,10 @@ Storm-Clan Jarl, Sun Lancer, Banner Khan Idle/grouped motion, Reed Charmer
 Idle/grouped motion, and Wildwood Hornlord Idle/grouped motion are approved and
 published internally. EN-E03 is no longer the active art lane. EN-E04 Naga
 Coilguard common Idle F1-F2 is visually approved and published internally at
-`bd920c206d692bcc5e7b043614dcf6a03db2174c`. No art gate is active. Later Naga
-roles/motion, Merfolk, Birdfolk, registration, consumer work, effects, release,
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. The explicitly continued,
+isolated Coilguard complete-motion suite is visually approved as an internal,
+non-public lane; only its bounded publication is authorized. Venom Oracle,
+Temple Rajah, Merfolk, Birdfolk, registration, consumer work, effects, release,
 and subsequent gates remain unauthorized.
 
 ## Non-Negotiable Production Contract
@@ -1735,10 +1737,11 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `paused`
+- Status: `approved - Coilguard complete-motion bounded publication pending`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
+- Approved gate: Naga Coilguard complete motion across Down, Left, Right, and Up
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -1788,9 +1791,54 @@ upright avian person rather than collapse into the existing Harpy identity.
   resolution after the F2 junction repair.
 - Publication is complete at approved implementation checkpoint
   `bd920c206d692bcc5e7b043614dcf6a03db2174c`.
-- Required next action: stop and wait. Do not start later roles/motion, advance
-  to Merfolk/Birdfolk, register, integrate, add effects, release, or broaden
-  EN-E04 without separate explicit authorization.
+- The prior stop boundary was superseded only by the designer's explicit request
+  to check out `codex/en-e04-naga-idle` and continue this lane. That continuation
+  is bounded to the Coilguard complete-motion gate below.
+
+#### Naga Coilguard complete motion approved
+
+- Gate ID: `en-e04-naga-coilguard-motion-v1`; status:
+  `approved`, internal and non-public; bounded publication is authorized.
+- Live branch: `codex/en-e04-naga-motion` in the current v2 checkout. Approved
+  source `codex/en-e04-naga-idle` remains frozen at `26151e1`; local checkpoint
+  `a81d324` contains only the v2 workflow integration.
+- Authorization: the designer explicitly asked Codex to check out the approved
+  Naga Idle branch and continue the enemy-expansion lane, then identified
+  `tilok1234/Assesment` as the current v2 repository. This activates one complete
+  Coilguard motion suite only.
+- Approval: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form motion-suite GIFs together and said
+  `approved` on 2026-08-08.
+- Scope: approved Idle F1-F2 delegates byte-for-byte. The approved suite adds Walk
+  W1-W4, Attack A1-A4, Hurt H1-H2, Cast as an exact Attack alias, and Death as
+  exact Hurt aliases `H1,H2,H2,H2` across all four directions.
+- Motion contract: four planted slither phases; coil brace, cobra rise, forward
+  strike, and recovery; then a complete-silhouette white Hurt recoil and colored
+  braced recovery. All 640 lower-body scanlines remain single continuous runs,
+  with no legs, paired feet, or detached islands.
+- Frozen candidate evidence: raw / Complete B + Form boards
+  `c07dd2284c86e4ded62afb9f7124003d471445a7ee910ca746d55e41c7ac6e54` /
+  `e8d5d915cfcc4ca3688ded2b61d2d32a11edfb6976b874a1300cf789d3e829ab`;
+  raw / Complete B + Form GIFs
+  `74732f35384ecaef63e9131082d95444f401ebb498e1e2a37b82e16c770a1dc0` /
+  `b5a7f20bcf88adefe82d17459b1663b8841ea17aba71cad2a7a1eb81fa455dca`;
+  80-frame digest
+  `f94b2c647275c9ab7d79433e29fa37f37285c2a203ad87be6631efbb02642c0b`.
+- Focused validation passes all 80 connected hard-alpha frames, all 640
+  continuous lower-body rows, 20 exact side mirrors, 16 Cast aliases, 16 Death
+  aliases, 7,714 Complete B additions, 11,232 Form changes, and zero public
+  EN-E04 families. The cleaned v2 fast gate passes with all 232 public PNG
+  sheets unchanged.
+- Both exact boards were inspected and opened in Aseprite at original
+  resolution. Full `npm.cmd run check` also passes in `121.9s` with all 232
+  public PNG sheets unchanged.
+- Exclusions: approved Idle pixel changes, Venom Oracle, Temple Rajah, Merfolk,
+  Birdfolk, new Cast/Death pixels, baked venom/miasma/coil-impact pixels,
+  registration, consumers, effects, release, and later EN-E04 work.
+- Required next action: commit and push only this bounded approved suite,
+  reconcile the exact publication checkpoint, then stop. Registration,
+  integration, effects, release, another role/family, and broader EN-E04 work
+  remain unauthorized.
 
 ### EN-E05 - Undead humanoids
 
@@ -2138,6 +2186,9 @@ message activates only the isolated Wildwood complete-motion art gate. Its
 activates only EN-E04 Naga Coilguard common Idle F1-F2. Its eight-frame paired
 candidate passes focused and full validation, and the designer approved both
 exact GIFs with `Approved` on 2026-08-08. Bounded publication is complete at
-`bd920c206d692bcc5e7b043614dcf6a03db2174c`. No art gate is active; later
-roles/motion, Merfolk, Birdfolk, registration, integration, effects, release,
-and broader work remain unauthorized.
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. The later explicit checkout-and-
+continue request activates only the isolated Coilguard complete-motion gate.
+Its hash-frozen 80-frame paired suite passes focused, fast, and full validation;
+the designer approved both exact presentations on 2026-08-08, authorizing only
+bounded publication. Other roles, Merfolk, Birdfolk, registration, integration,
+effects, release, and broader work remain unauthorized.

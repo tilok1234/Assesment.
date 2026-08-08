@@ -521,9 +521,34 @@ Birdfolk are untouched. The focused gate passes, and post-approval full
 boards were opened in Aseprite at original resolution. The designer reviewed
 both exact paired GIFs together and said `Approved` on 2026-08-08. The
 internal, non-public lane is committed and pushed at
-`bd920c206d692bcc5e7b043614dcf6a03db2174c`. No art gate is active; later
-roles/motion, registration, integration, effects, release, and broader EN-E04
-work remain unauthorized.
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. At that publication checkpoint no
+art gate was active. The later explicit checkout-and-continue request activates
+only the bounded Coilguard complete-motion lane below.
+
+## Naga Coilguard complete motion approved
+
+On `codex/en-e04-naga-motion`, the current v2 workflow now owns one internal,
+non-public Coilguard motion suite. Approved Idle F1-F2 delegates byte-for-byte;
+the approved suite adds four-frame Walk and Attack, two-frame Hurt,
+Cast as an exact Attack alias, and Death as exact Hurt aliases `H1,H2,H2,H2`
+across all four directions. Venom Oracle, Temple Rajah, Merfolk, Birdfolk,
+registration, consumers, effects, and release remain outside this gate.
+
+Run `npm.cmd run review:enemy-expansion-en-e04-naga-motion` to reproduce the
+paired raw/no-outline and Complete B + Form `1428x760` boards and labeled
+`640x672`, four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e04-naga-motion` to verify all 80 frames,
+approved Idle delegation, one connected hard-alpha serpent silhouette per
+frame, all 640 continuous lower-body rows, exact side mirrors, exact
+Cast/Death aliases, frozen evidence hashes, external effects, and zero public
+exposure. The focused and cleaned v2 fast gates pass; full `npm.cmd run check`
+also passes in `121.9s` with all 232 public PNG sheets unchanged. Both exact
+boards were opened in Aseprite at original resolution.
+
+The designer reviewed both exact paired presentations together and said
+`approved` on 2026-08-08. Gate `en-e04-naga-coilguard-motion-v1` is now
+`approved`; only bounded publication is authorized. Registration, integration,
+effects, release, other roles/families, and broader EN-E04 work remain gated.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
