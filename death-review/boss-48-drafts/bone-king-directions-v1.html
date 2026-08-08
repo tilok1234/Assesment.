@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bone Reliquary King Direction Pilot v1</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      background: #101319;
+      color: #f4f0e8;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 960px; }
+    header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid #323846;
+      background: #12161d;
+    }
+    h1 { margin: 0 0 5px; font-size: 25px; }
+    .subtitle { color: #aab3c2; font-size: 13px; }
+    .gate {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 9px;
+      border: 1px solid #6c5832;
+      border-radius: 999px;
+      color: #f1c86b;
+      background: #2c2518;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    main {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(210px, 1fr));
+      gap: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    article {
+      overflow: hidden;
+      border: 1px solid #343b49;
+      border-radius: 12px;
+      background: #191e27;
+    }
+    .stage {
+      display: grid;
+      place-items: center;
+      min-height: 300px;
+      background-color: #cdbf9d;
+      background-image:
+        linear-gradient(45deg, #bcae8e 25%, transparent 25%),
+        linear-gradient(-45deg, #bcae8e 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #bcae8e 75%),
+        linear-gradient(-45deg, transparent 75%, #bcae8e 75%);
+      background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+      background-size: 24px 24px;
+    }
+    .pilot {
+      width: 252px;
+      height: 252px;
+      object-fit: contain;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+    .meta { padding: 14px 16px 16px; }
+    h2 { margin: 0 0 5px; font-size: 18px; }
+    p { min-height: 38px; margin: 0; color: #aeb7c6; font-size: 12px; line-height: 1.45; }
+    .native-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      color: #aeb7c6;
+      font: 11px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    canvas, .native-image {
+      width: 48px;
+      height: 48px;
+      image-rendering: pixelated;
+      outline: 1px solid rgba(255,255,255,.18);
+      background: #0d1015;
+    }
+    footer {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px 28px;
+      color: #8d97a7;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bone Reliquary King &middot; Four-Direction Pilot v1</h1>
+    <div class="subtitle">Direction order: Down, Left, Right, Up &middot; 48&times;48 cells &middot; Effects Off</div>
+    <div class="gate">VISUAL GATE &mdash; NOT IN ENGINE OR CATALOG</div>
+  </header>
+  <main id="directions"></main>
+  <footer>
+    Direction-pose test only. The Down frame is pixel-identical to the approved v2 candidate.
+    No animations, catalog entry, renderer path, export contract, fixture, baseline, release artifact,
+    or Windows build has changed.
+  </footer>
+  <script type="module">
+    import {
+      drawAssembledSprite,
+      OUTLINE_MODE_COMPLETE_B,
+      SHADE_MODE_FORM,
+    } from '../../sprite-engine.js';
+
+    const descriptions = {
+      down: 'Approved front pose retained without pixel drift.',
+      left: 'Axe trails behind; lantern, single eye socket, jaw, and ribs turn left.',
+      right: 'Mirrored equipment and profile geometry turn right.',
+      up: 'Eyes, teeth, ribs, and red lantern window are replaced by rear surfaces.',
+    };
+    const response = await fetch('./bone-reliquary-king-directions-v1-manifest.json');
+    const manifest = await response.json();
+    const host = document.querySelector('#directions');
+    for (const frame of manifest.frames) {
+      const article = document.createElement('article');
+      article.innerHTML = `
+        <div class="stage">
+          <img class="pilot" src="./${frame.file}" alt="Bone Reliquary King ${frame.direction} direction">
+        </div>
+        <div class="meta">
+          <h2>${frame.direction[0].toUpperCase()}${frame.direction.slice(1)}</h2>
+          <p>${descriptions[frame.direction]}</p>
+          <div class="native-row">
+            <canvas width="24" height="24" data-control="${frame.direction}"></canvas>
+            <img class="native-image" src="./${frame.file}" alt="">
+            <span>${frame.opaqueColors} colors</span>
+          </div>
+        </div>
+      `;
+      host.append(article);
+    }
+
+    const spec = { kind: 'enemy', family: 'skeleton', variant: 'lord' };
+    for (const canvas of document.querySelectorAll('[data-control]')) {
+      drawAssembledSprite(
+        canvas.getContext('2d'),
+        spec,
+        canvas.dataset.control,
+        'idle',
+        0,
+        {
+          shadeMode: SHADE_MODE_FORM,
+          outlineMode: OUTLINE_MODE_COMPLETE_B,
+          shadow: true,
+        },
+      );
+    }
+  </script>
+</body>
+</html>

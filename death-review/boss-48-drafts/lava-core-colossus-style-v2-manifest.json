@@ -1,0 +1,16 @@
+{
+  "file": "lava-core-colossus-style-v2.png",
+  "width": 48,
+  "height": 48,
+  "logicalGrid": 24,
+  "bounds": [
+    2,
+    4,
+    46,
+    46
+  ],
+  "opaqueColors": 8,
+  "hardAlpha": true,
+  "treatment": "24px logical Form + Complete B, nearest-neighbor 2x",
+  "integrated": false
+}

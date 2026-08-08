@@ -1,0 +1,62 @@
+{
+  "file": "ancient-mirejaw-directions-v1.png",
+  "width": 48,
+  "height": 192,
+  "cell": 48,
+  "directionOrder": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "hardAlpha": true,
+  "downMatchesApprovedV2": true,
+  "treatment": "24px logical Form + Complete B, nearest-neighbor 2x",
+  "integrated": false,
+  "frames": [
+    {
+      "direction": "down",
+      "file": "ancient-mirejaw-directions-v1-down.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ],
+      "opaqueColors": 17
+    },
+    {
+      "direction": "left",
+      "file": "ancient-mirejaw-directions-v1-left.png",
+      "bounds": [
+        4,
+        2,
+        46,
+        46
+      ],
+      "opaqueColors": 16
+    },
+    {
+      "direction": "right",
+      "file": "ancient-mirejaw-directions-v1-right.png",
+      "bounds": [
+        2,
+        2,
+        44,
+        46
+      ],
+      "opaqueColors": 17
+    },
+    {
+      "direction": "up",
+      "file": "ancient-mirejaw-directions-v1-up.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ],
+      "opaqueColors": 10
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+.thumbnail
+uploads/
+node_modules/
+dist/
+weapon-review/
+outline-review/
+enemy-outline-assessment/
+enemy-outline-review/
+shade-review/
+offhand-review/
+production-roll-review/
+cast-review/
+death-review/
+src-tauri/gen/
+src-tauri/target/
+*.log
+.DS_Store

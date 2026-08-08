@@ -1,0 +1,66 @@
+# Windows release guide
+
+Current artifact status (2026-08-02): a local standalone proof executable was
+built on 2026-08-01 from the `bf6269c` main-worktree state at
+`src-tauri/target/release/sprite-assembler.exe`. It is 5,306,880 bytes with
+SHA-256
+`f2186000a911dff55495915c00a22df0098900b5ef491da2d489c1f92142bbd7`.
+It is not committed, not a distributable NSIS installer, and has no recorded
+packaged smoke-test or release approval. No NSIS setup executable currently
+exists under `src-tauri/target/release/bundle/nsis/`, so there is still no
+approved Windows release candidate.
+
+The Windows edition packages the same production frontend and procedural engine used by the browser build. Packaging does not freeze the content catalog: outfits, hairstyles, headgear, weapons, enemies, effects, and templates can still be changed normally, then included by rebuilding the application.
+
+## Local release build
+
+Prerequisites:
+
+- Node.js 18 or newer
+- Rust stable
+- Microsoft C++ Build Tools with the desktop C++ workload
+- WebView2 for development
+
+From the repository root:
+
+```powershell
+npm ci
+npm run check
+npm run check:release
+npm run tauri:build
+npm run check:release -- --require-artifact
+```
+
+The distributable setup executable is written beneath `src-tauri/target/release/bundle/nsis/`. The default installer is current-user only, so it does not require administrator access. It embeds Microsoft's small WebView2 bootstrapper so Windows can install the runtime when needed.
+
+For a quick standalone executable without building an installer, use `npm run tauri:build:exe`.
+
+The standalone executable and NSIS installer are separate artifacts. Rebuilding one does not update the other. After any frontend or renderer change, verify the artifact timestamp and hash and run `npm run check:release`; an existing installer passing structural validation does not prove that it embeds the latest `dist/` build.
+The `--require-artifact` release check specifically requires an NSIS setup
+executable; the standalone proof executable does not satisfy that release gate.
+
+## Packaged smoke test
+
+Before publishing a release:
+
+1. Install the generated setup executable.
+2. Launch **8-Bit Sprite Assembler** from the Start menu.
+3. Change a player option and confirm the preview updates.
+4. Confirm combat effects start Off. Then explicitly enable the legacy overlay,
+   inspect a weapon-and-shield attack in all four directions and all four
+   attack frames, and turn it Off again. Compare the same packaged `dist/`
+   state in the isolated browser when non-intrusive visual QA is required.
+5. Export one PNG, one combat-loadout JSON file, and one ZIP pack. Confirm each action opens a native Save dialog in Downloads and creates a readable file at the chosen location.
+6. Cancel one Save dialog and confirm the app reports cancellation instead of success.
+7. Save a preset, close the app, reopen it, and confirm the preset remains available.
+8. Uninstall the app and confirm user-exported PNG, JSON, and ZIP files remain untouched.
+
+## Versioned GitHub release
+
+Keep the version synchronized in `package.json`, `src-tauri/tauri.conf.json`, and `src-tauri/Cargo.toml`; `npm run check:release` enforces this. After the intended commit is on the release branch, push a matching tag such as `v0.1.0`, or start the **Windows Release** workflow manually. The workflow validates the project, builds the NSIS installer, verifies the executable, and creates a draft GitHub release for human review.
+
+The first installer remains unsigned. Configure a trusted Windows code-signing certificate before changing a draft into a broadly distributed public release. Automatic updates are intentionally deferred until releases have a stable public download location and signing identity.
+
+## Content and migration safety
+
+Adding content after packaging is not harder. Keep stable option IDs, advance any changed preset or pack schema version, retain migrations for older saved data, run `npm run check`, and rebuild the installer. Existing local presets live in the WebView profile and should be covered by the packaged smoke test whenever a schema changes.

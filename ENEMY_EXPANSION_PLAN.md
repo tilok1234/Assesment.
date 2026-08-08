@@ -1,0 +1,491 @@
+# Enemy Expansion Plan
+
+- Status: approved planning artifact; implementation underway on the
+  `codex/en-*` branches (EN-F00 through EN-E03) — see the 2026-08-05
+  consolidation update in `HANDOFF.md` for the live lane state
+- Recorded: 2026-08-02
+- Assessment baseline: clean synchronized `main` at `bf6269c`
+- Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
+
+## Purpose
+
+This document turns the 80-proposal intake into bounded production slices for
+the 8-bit Sprite Assembler. It fixes the accounting, collision rulings,
+production order, review gates, and technical boundaries before any new family
+is registered.
+
+This is a planning artifact only. It does **not** authorize implementation,
+catalog changes, Boss work, effect work, export changes, a release, a commit, or
+a push. Each implementation slice still requires an explicit designer go-ahead.
+
+## Intake Assessment
+
+The live Enemy catalog at the assessment baseline contains 57 families and 202
+variants. The 80 submitted proposals resolve to:
+
+- 75 new standard 24x24 Enemy families;
+- one upgrade to the existing `zombie/ghoul` material;
+- one consolidation of Haunted Armor and Animated Armor into a single
+  `animated-armor` family;
+- three isolated 48x48 Boss candidates: Hydra, Chimera, and Roc; and
+- 225 new standard Enemy variants at the default three-variant budget.
+
+If every standard slice is approved and completed, the projected Enemy catalog
+is approximately 132 families and 427 variants. The three Boss candidates are
+not included in those Enemy totals.
+
+The supplied intake ended abruptly after `Families that may wor...`, so any
+missing closing qualifications must be recovered from the designer before they
+are treated as requirements. The proposal roster itself is fully accounted for
+below.
+
+## Status Vocabulary
+
+- `implementation-candidate`: recommended next work after explicit approval;
+  it is not authorization by itself.
+- `queued`: sequenced, but later than the current candidate.
+- `architecture-gated`: requires a contract decision before sprite production.
+- `boss-review-blocked`: cannot enter the isolated Boss lane while its current
+  review call remains unresolved, unless the designer explicitly reprioritizes.
+- `complete`: art, animation, validation, and visual approval are all done.
+
+No family in this document is currently `complete`.
+
+## Non-Negotiable Production Contract
+
+Standard Enemy additions must preserve the current public actor contract:
+
+- logical cell: 24x24;
+- direction rows: Down, Left, Right, Up;
+- animation columns: Idle x2, Walk x4, Attack x4, Cast x4, Hurt x2, Death x4;
+- assembled sheet: 20 columns / `480x96` at native 1x;
+- Enemy Cast aliases the matching Attack frame;
+- Enemy Death aliases Hurt frames 1, 2, 2, 2;
+- Effects start Off; projectiles, telegraphs, trails, summoning circles, and
+  similar effects are separate future assets and are not baked into actors;
+- no family enters the runtime catalog before its baseline four-direction Idle
+  silhouette is visually approved; and
+- no slice may introduce private column counts or a family-specific sheet
+  version.
+
+Hydra, Chimera, and Roc are 48x48 Boss candidates. They stay outside Enemy
+mode, Enemy randomization, Enemy packs, Enemy persistence, and the standard
+24x24 contract.
+
+## Collision And Identity Rulings
+
+These rulings prevent accidental duplicates while preserving useful gameplay
+identities:
+
+| Proposal | Ruling |
+| --- | --- |
+| Ghoul | Upgrade the existing `zombie/ghoul` presentation; do not register a second Ghoul family. |
+| Haunted Armor + Animated Armor | Merge into one `animated-armor` family; use haunted and constructed identities as variants. |
+| Vampire | Add a humanoid Vampire family while retaining the existing `bat/vampire` variant. |
+| Rhino | Keep as an ordinary quadruped Enemy only if its silhouette and scale remain distinct from the approved Furious Depraved Rhino Boss. |
+| Birdfolk + Harpy | Birdfolk is an upright avian people chassis; Harpy remains the taloned winged-monster identity. |
+| Witch + Hag | Witch uses an equipped humanoid caster read; Hag uses a feral fey/monster read. |
+| Pirate + Desert Raider + Bandit | Reuse humanoid construction where useful, but keep all three as visually distinct family identities. |
+| Changeling + Doppelganger | Keep separate gameplay identities while sharing morph-language research; true copying belongs to runtime gameplay, not the sprite sheet. |
+| Dryad + Treant | Dryad is humanoid/fey scale; Treant remains the large tree-creature identity. |
+| Nymph + Elemental | Nymph is a character silhouette; Elemental remains an embodied mass/material silhouette. |
+
+## Standard Slice Workflow
+
+Every standard Enemy slice follows the same stop-and-review loop:
+
+1. Write one contract card per family: stable ID, intended scale, locomotion,
+   attack tell, three variant briefs, and any external effects or mechanics.
+2. Build only the baseline variant first.
+3. Produce a four-direction Idle review PNG at a readable review scale while
+   retaining native-pixel inspection.
+4. Stop for explicit visual approval.
+5. After approval, add Walk, Attack, and Hurt motion under the existing contract;
+   Cast and Death remain the standard Enemy aliases.
+6. Add no more than three initial variants: common, specialist, and elite.
+7. Generate the focused slice review sheet and inspect every direction and
+   required animation.
+8. Run focused checks, the full repository check, and deterministic export
+   comparison.
+9. Reach a clean, documented checkpoint before starting another slice.
+
+The designer should never need to review all 20 raw columns for every variant.
+Review surfaces should foreground silhouette, four-direction consistency,
+attack readability, and variant distinction.
+
+## Foundation Slice
+
+### EN-F00 - Expansion renderer foundation
+
+- Status: `implementation-candidate` after explicit approval
+- Contains no new family art
+
+Before adding 75 families, introduce the smallest data-driven expansion facade
+that can register a family ID, renderer/chassis key, variant briefs, and review
+metadata without rewriting the 57-family legacy catalog. Avoid growing another
+75-family chain of family-specific conditionals.
+
+Required outcomes:
+
+- legacy 202 Enemy sheets remain byte- or pixel-equivalent;
+- unfinished families are not pre-registered in public selectors or packs;
+- review generation can target one family or one slice deterministically;
+- the checker rejects duplicate IDs, absent renderers, empty frames,
+  out-of-bounds drawing, non-binary alpha, wrong direction order, and dimensions
+  other than `480x96` for completed standard Enemy sheets; and
+- the expansion ledger can report planned, implemented, and approved states
+  without presenting plans as shipped content.
+
+EN-F00 must pass independently before EN-E01 begins.
+
+## Wave 1 - Highest Reuse And Fastest Learning
+
+Wave 1 establishes the shared humanoid, large-body, serpentine, and undead
+chassis needed by many later proposals. Complete only one slice at a time.
+
+### EN-E01 - Humanoid threat pilot
+
+- Status: `implementation-candidate` after EN-F00 and explicit approval
+- Families: Witch, Fallen Knight, Pirate, Necromancer, Alchemist
+- Priority-first: Witch, Fallen Knight, Pirate
+
+Shared leverage: humanoid anatomy, held-item anchors, robes/coats, hats/helms,
+one-handed weapons, thrown-object poses, and readable off-hand silhouettes.
+
+Initial variant briefs:
+
+| Family | Common | Specialist | Elite |
+| --- | --- | --- | --- |
+| Witch | Hexer | Familiar-Keeper | Cauldron Brewer |
+| Fallen Knight | Shieldbearer | Banner Lancer | Blackguard |
+| Pirate | Deckhand | Gunner | Bomb-Bosun |
+| Necromancer | Bone Caller | Grave Binder | Ossuary Master |
+| Alchemist | Flask Thrower | Smoke Brewer | Mutagenist |
+
+Attack tells must remain readable without baked muzzle flashes, bombs, potion
+splashes, familiars, skeletons, or spell effects. Those are separate effect or
+child-asset contracts.
+
+### EN-E02 - Humanoid culture variants
+
+- Status: `queued`
+- Families: Plague Doctor, Desert Raider, Fanatic Monk, Catfolk, Goatfolk
+
+Shared leverage: EN-E01 humanoid poses plus masks, wrapped cloth, martial robes,
+ears, tails, horns, and altered leg/foot silhouettes. This slice tests how far
+the humanoid chassis can flex before species anatomy needs its own renderer.
+
+### EN-E03 - Large and hybrid walkers
+
+- Status: `queued`
+- Families: Giant, Centaur, Satyr
+- Priority-first: Giant, Centaur
+
+Shared leverage: large-body scale studies, long strides, hoof contacts, and
+front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
+approval must prove readable front, back, and side joins before animation.
+
+### EN-E04 - Serpentine and aquatic peoples
+
+- Status: `queued`
+- Families: Naga, Merfolk, Birdfolk
+- Priority-first: Naga
+
+Shared leverage: non-human lower bodies and upright equipment anchors. Naga and
+Merfolk must not fake ordinary feet in side views. Birdfolk must remain an
+upright avian person rather than collapse into the existing Harpy identity.
+
+### EN-E05 - Undead humanoids
+
+- Status: `queued`
+- Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
+- Priority-first: Ghoul upgrade, Mummy, Vampire
+
+Shared leverage: broken posture, wrappings, capes, exposed bone, floating hems,
+and necrotic palette families. The Ghoul change is an explicit upgrade to the
+existing material and requires a before/after regression review; it must not
+silently alter unrelated Zombie variants.
+
+Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
+all existing legacy families still validate, and the humanoid renderer has not
+become a catch-all that erases species silhouettes.
+
+## Wave 2 - Fey, Spectral, Possessed, And Constructed
+
+Wave 2 exercises transparency, hovering, asymmetry, detached components, and
+stateful identities while effects remain outside the base actor.
+
+### EN-E06 - Fey and folklore
+
+- Status: `queued`
+- Families: Fairy, Hag, Dryad, Redcap, Nymph
+- Priority-first: Fairy, Hag
+
+Shared leverage: small bodies, wings, plant anatomy, exaggerated hats, and
+hovering poses. Fairy wings are body parts; glow and particle trails are effects.
+Dryad must remain humanoid/fey scale rather than overlap Treant.
+
+### EN-E07 - Shapeshifters and apparitions
+
+- Status: `queued`
+- Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
+- Priority-first: Living Shadow, Doppelganger
+
+Shared leverage: controlled negative space, unstable edges, silhouette swaps,
+and spectral motion. Doppelganger and Changeling receive authored default forms;
+copying another actor is a runtime/gameplay feature and is not promised by the
+assembler.
+
+### EN-E08 - Possessed equipment
+
+- Status: `architecture-gated`
+- Families/proposals: Haunted Armor + Animated Armor merged as
+  `animated-armor`, Headless Rider, Possessed Mask, Living Weapon
+- Priority-first: `animated-armor`
+
+Shared leverage: hollow silhouettes, floating components, rider/mount joins,
+and equipment acting as a body. Before art begins, decide whether the head,
+mount, mask, or weapon is baked into one actor or exported as a deterministic
+child/state asset. Do not solve that decision with incidental per-frame offsets.
+
+### EN-E09 - Arcane constructs
+
+- Status: `queued`
+- Families: Clockwork Automaton, Living Book, Runic Idol, Crystal Beast
+- Priority-first: Clockwork Automaton, Living Book
+
+Shared leverage: rigid rotations, hinges, page motion, rune-bearing surfaces,
+and faceted masses. Gear sparks, loose pages, rune flares, and crystal volleys
+remain effects rather than permanent body pixels.
+
+Wave 2 exit gate: transparency and detached-part policy are documented, each
+family remains legible with Effects Off, and EN-E08's child/state contract is
+settled before its animation phase.
+
+## Wave 3 - Beasts, Avians, And Mythic Scale
+
+Wave 3 builds quadruped and bird motion deliberately before proposing any new
+Boss animation.
+
+### EN-E10 - Heavy quadrupeds
+
+- Status: `queued`
+- Families: Hyena, Ram, Stag, Mammoth, Rhino
+- Priority-first: Rhino only after its Boss distinction is approved
+
+Shared leverage: four-foot contact timing, side-view body length, horn/tusk
+anchors, and weight shifts. Front and back views must still show four-footed
+stance. Ordinary Rhino must not read as a reduced copy of the Furious Depraved
+Rhino Boss.
+
+### EN-E11 - Birds
+
+- Status: `queued`
+- Families: Peacock, Cockatrice, Raven, Owl, Phoenix
+- Priority-first: Peacock
+
+Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
+contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
+state-asset decision; fire and embers remain effects.
+
+### EN-E12 - Mythic composite creatures
+
+- Status: `queued`
+- Families: Basilisk, Manticore, Sphinx
+- Priority-first: Basilisk
+
+Shared leverage: composite anatomy and long-body directional readability. This
+slice is the final standard-size proof before the isolated 48x48 Boss pilots.
+If a family cannot remain readable at 24x24, stop and request a scale ruling
+rather than quietly moving it into the Boss lane.
+
+### EN-B01 - Hydra direction pilot
+
+- Status: `boss-review-blocked`
+- Scope: one 48x48 four-direction Idle design review only
+
+### EN-B02 - Chimera direction pilot
+
+- Status: `boss-review-blocked`
+- Scope: one 48x48 four-direction Idle design review only
+
+### EN-B03 - Roc direction pilot
+
+- Status: `boss-review-blocked`
+- Scope: one 48x48 four-direction Idle design review only
+
+Each Boss micro-slice follows: directions only, designer approval, separate
+animation authorization, validation, then stop. The three Bosses are never
+treated as one batch. They remain blocked while the existing Boss review queue
+is unresolved unless the designer explicitly changes priority.
+
+Wave 3 exit gate: the standard quadruped and avian chassis are approved; each
+Boss direction pilot, if separately authorized, has its own review and decision.
+
+## Wave 4 - Swarms, Aquatics, And Environmental Creatures
+
+Wave 4 comes last because its small silhouettes, attachment mechanics, and
+environmental states need the strongest review tooling and clearest child-asset
+rules.
+
+### EN-E13 - Ground insects
+
+- Status: `queued`
+- Families: Ant, Termite, Fly, Locust
+- Priority-first: Ant
+
+Shared leverage: tiny multi-leg bodies, wing/no-wing variants, swarm-ready
+silhouettes, and restrained motion. Termite-built walls are environment assets,
+not actor frames.
+
+### EN-E14 - Parasites and wetland insects
+
+- Status: `queued`
+- Families: Mosquito, Dragonfly, Tick, Leech
+- Priority-first: Mosquito
+
+Shared leverage: hovering insects and small elongated bodies. Tick attachment
+to another actor requires a runtime overlay/attachment contract; the base Tick
+sheet only supplies its independent form.
+
+### EN-E15 - Fast aquatic predators
+
+- Status: `queued`
+- Families: Shark, Eel, Piranha, Swordfish
+- Priority-first: Shark
+
+Shared leverage: swimming direction language, long bodies, fins, and bite/thrust
+attacks. Water wake, bubbles, and impact splashes remain effects.
+
+### EN-E16 - Benthic and unusual aquatics
+
+- Status: `queued`
+- Families: Stingray, Clam, Lamprey, Sea Urchin
+- Priority-first: Stingray, Clam
+
+Shared leverage: flat, radial, hinged, and suction-based silhouettes. The Clam
+must have a readable open/close attack without changing the public frame count.
+
+### EN-E17 - Dry-land plant creatures
+
+- Status: `queued`
+- Families: Mandrake, Bramble Beast, Cactus, Tumbleweed
+- Priority-first: Mandrake
+
+Shared leverage: root contacts, thorny masses, rolling motion, and plant
+asymmetry. Projected thorns and dust clouds are effects.
+
+### EN-E18 - Seasonal and wet plant creatures
+
+- Status: `queued`
+- Families: Pumpkin Monster, Moss Beast, Kelp Beast, Coral Colony
+
+Shared leverage: squat plant bodies, trailing fronds, soft masses, and colony
+silhouettes. Coral growth stages or spawned polyps require a separate state or
+child-asset contract rather than hidden sheet extensions.
+
+Wave 4 exit gate: small-form silhouettes survive native-size review, all
+attachment and colony behavior is owned by explicit runtime contracts, and no
+environmental effect has leaked into the actor sheets.
+
+## Stateful And Multi-Asset Architecture Gates
+
+The following ideas may proceed only after their asset ownership is explicit:
+
+- EN-E08: head, rider/mount, mask, and living-weapon child assets;
+- Phoenix: egg, ash, or resurrection state;
+- Tick: attachment overlay and host anchoring;
+- Coral Colony: growth stages or spawned colony pieces;
+- Changeling/Doppelganger: runtime copying or disguise selection;
+- Termite: constructed walls or mounds; and
+- thrown heads, summoned creatures, projectiles, telegraphs, glow, trails,
+  splashes, and impact effects across any family.
+
+Until those contracts exist, create only the self-contained base actor and note
+the deferred mechanic. Effects remain separate from character rendering.
+
+## Validation And Review Gates
+
+A slice can advance only when all applicable gates pass:
+
+- the exact four-direction review PNG is inspected at native and readable zoom;
+- baseline and variants have distinct silhouettes, not palette-only differences;
+- Attack has a readable wind-up and release in all four directions;
+- held items and body parts preserve intended front/behind layering;
+- no projectile, telegraph, aura, trail, impact, or environmental effect is
+  baked into the actor;
+- drawing remains within the 24x24 cell;
+- output uses hard/binary alpha;
+- the completed standard sheet is exactly `480x96`;
+- identical seeds produce identical output;
+- the pre-expansion 202-sheet corpus remains unchanged except for the explicitly
+  approved Ghoul upgrade;
+- the focused slice checker passes;
+- `npm.cmd run check` passes;
+- `git diff --check` passes; and
+- family/variant counts and pack manifests are reconciled at every wave boundary.
+
+Structural checks are necessary but are not visual approval. No slice is
+accepted, merged, published, or used as the basis for the next slice until its
+required designer review is explicit.
+
+## Scale And Capacity Forecast
+
+| Measure | Current baseline | Full standard expansion projection |
+| --- | ---: | ---: |
+| Enemy families | 57 | approximately 132 |
+| Enemy variants | 202 | approximately 427 |
+| Actor cells at 80 cells/sheet | 16,160 | approximately 34,160 |
+
+The Enemy export and test corpus will roughly double. Record full-pack duration,
+archive size, deterministic digest, and manifest counts at every wave boundary.
+The initial budget is three variants per new standard family; queens, admirals,
+named champions, and other exceptional identities should be proposed later as
+elite or Boss work instead of silently expanding these slices.
+
+## Proposal Accounting
+
+All 80 submitted proposals appear exactly once in the accounting below. The
+merged Armor pair counts as two intake proposals but one planned family; Ghoul
+counts as an upgrade; the three Boss candidates do not enter the Enemy totals.
+
+| Slice | Intake proposals | Count |
+| --- | --- | ---: |
+| EN-E01 | Witch; Fallen Knight; Pirate; Necromancer; Alchemist | 5 |
+| EN-E02 | Plague Doctor; Desert Raider; Fanatic Monk; Catfolk; Goatfolk | 5 |
+| EN-E03 | Giant; Centaur; Satyr | 3 |
+| EN-E04 | Naga; Merfolk; Birdfolk | 3 |
+| EN-E05 | Ghoul; Mummy; Vampire; Revenant; Lich | 5 |
+| EN-E06 | Fairy; Hag; Dryad; Redcap; Nymph | 5 |
+| EN-E07 | Living Shadow; Doppelganger; Will-o'-Wisp; Changeling; Kelpie | 5 |
+| EN-E08 | Haunted Armor; Animated Armor; Headless Rider; Possessed Mask; Living Weapon | 5 |
+| EN-E09 | Clockwork Automaton; Living Book; Runic Idol; Crystal Beast | 4 |
+| EN-E10 | Hyena; Ram; Stag; Mammoth; Rhino | 5 |
+| EN-E11 | Peacock; Cockatrice; Raven; Owl; Phoenix | 5 |
+| EN-E12 | Basilisk; Manticore; Sphinx | 3 |
+| EN-B01 | Hydra | 1 |
+| EN-B02 | Chimera | 1 |
+| EN-B03 | Roc | 1 |
+| EN-E13 | Ant; Termite; Fly; Locust | 4 |
+| EN-E14 | Mosquito; Dragonfly; Tick; Leech | 4 |
+| EN-E15 | Shark; Eel; Piranha; Swordfish | 4 |
+| EN-E16 | Stingray; Clam; Lamprey; Sea Urchin | 4 |
+| EN-E17 | Mandrake; Bramble Beast; Cactus; Tumbleweed | 4 |
+| EN-E18 | Pumpkin Monster; Moss Beast; Kelp Beast; Coral Colony | 4 |
+| **Total** |  | **80** |
+
+## Recommended Next Authorization
+
+When the designer is ready to resume Enemy work, authorize exactly this sequence:
+
+1. EN-F00 - expansion renderer foundation;
+2. EN-E01 - five-family humanoid threat pilot; and
+3. stop for visual review and an evidence-backed architecture checkpoint.
+
+EN-E01 is the strongest first art slice because it yields five recognizable
+families while stress-testing reusable humanoid equipment, held-item layering,
+and non-baked attack tells. The largest unresolved risks are multi-form assets,
+stateful attachments, and Boss-scale direction/animation work; those stay later
+and separately gated.
+
+Again, this recommendation does not authorize implementation.

@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Sprite Assembler</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+        <div class="brand-copy">
+          <h1>Sprite Assembler</h1>
+          <p id="app-subtitle">24x24 · 4 directions · idle / walk / attack / cast / hurt / death</p>
+        </div>
+        <div class="header-actions" aria-label="Editor actions">
+          <button class="secondary-button compact-action" id="undo-button" type="button" disabled>Undo</button>
+          <button class="secondary-button compact-action" id="redo-button" type="button" disabled>Redo</button>
+          <button class="secondary-button compact-action" id="reset-button" type="button">Reset</button>
+          <button class="secondary-button compact-action" id="duplicate-button" type="button">Duplicate</button>
+          <button class="secondary-button compact-action" id="compare-button" type="button" disabled>Compare</button>
+          <div class="roll-actions" aria-label="Whole-character rolls">
+            <div class="roll-buttons">
+              <button class="secondary-button compact-action production-roll-button" id="production-roll-button" type="button" aria-describedby="production-roll-status">Production Roll</button>
+              <button class="secondary-button compact-action" id="randomize-button" type="button">Wildcard Roll</button>
+            </div>
+            <span class="production-roll-status" id="production-roll-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <aside class="options-panel" aria-label="Sprite options">
+          <div class="segmented-control mode-control" id="mode-buttons"></div>
+          <details class="palette-editor" id="palette-editor">
+            <summary>
+              <span>Palette editor</span>
+              <small id="palette-summary">Catalog colors</small>
+            </summary>
+            <div class="palette-editor-body">
+              <div class="palette-color-grid">
+                <div class="palette-color-row">
+                  <strong>Skin</strong>
+                  <label><input type="color" data-palette-color="skin.0" value="#eab98a"><span>Base</span></label>
+                  <label><input type="color" data-palette-color="skin.1" value="#c98a56"><span>Shadow</span></label>
+                </div>
+                <div class="palette-color-row">
+                  <strong>Hair</strong>
+                  <label><input type="color" data-palette-color="hair.0" value="#6b4327"><span>Base</span></label>
+                  <label><input type="color" data-palette-color="hair.1" value="#4a2c18"><span>Shadow</span></label>
+                </div>
+                <div class="palette-color-row">
+                  <strong>Outfit</strong>
+                  <label><input type="color" data-palette-color="outfit.0" value="#3b62c4"><span>Base</span></label>
+                  <label><input type="color" data-palette-color="outfit.1" value="#27448f"><span>Shadow</span></label>
+                </div>
+              </div>
+              <button class="secondary-button compact-action" id="reset-palette-button" type="button" disabled>Use catalog colors</button>
+              <div class="palette-save-row">
+                <label class="sr-only" for="palette-name">Palette preset name</label>
+                <input id="palette-name" type="text" maxlength="48" placeholder="Palette preset name">
+                <button class="secondary-button compact-action" id="save-palette-button" type="button">Save</button>
+              </div>
+              <label class="sr-only" for="palette-select">Saved palette presets</label>
+              <select id="palette-select" aria-label="Saved palette presets">
+                <option value="">No palettes saved</option>
+              </select>
+              <div class="palette-action-row">
+                <button class="secondary-button compact-action" id="load-palette-button" type="button" disabled>Load</button>
+                <button class="secondary-button compact-action danger-action" id="delete-palette-button" type="button" disabled>Delete</button>
+              </div>
+              <p class="palette-status" id="palette-status" role="status" aria-live="polite">Reusable across player presets.</p>
+            </div>
+          </details>
+          <div id="option-groups"></div>
+        </aside>
+
+        <section class="preview-panel" aria-label="Animated sprite preview">
+          <div class="preview-toolbar">
+            <div class="segmented-control" id="animation-buttons"></div>
+            <div class="outline-control" id="outline-control">
+              <span>Outline</span>
+              <div class="segmented-control compact" id="outline-buttons" aria-label="Sprite outline style"></div>
+            </div>
+            <div class="outline-control" id="shade-control">
+              <span>Shade</span>
+              <div class="segmented-control compact" id="shade-buttons" aria-label="Sprite shade style"></div>
+            </div>
+            <button class="cycle-button" id="preview-effects-button" type="button" aria-pressed="true" title="Show or hide combat effects in the combined preview">Effects On</button>
+            <button class="cycle-button" id="cycle-button" type="button">
+              <span class="cycle-status" aria-hidden="true"></span>
+              Cycle all
+            </button>
+            <div class="toolbar-spacer"></div>
+            <div class="segmented-control compact" id="zoom-buttons" aria-label="Preview zoom"></div>
+          </div>
+
+          <div class="stage-background" id="stage-background">
+            <canvas id="stage-canvas" width="24" height="24" aria-label="Current animated sprite"></canvas>
+            <img id="boss-stage-image" width="48" height="48" alt="" hidden>
+            <div class="stage-label" id="live-label">WALK · DOWN</div>
+          </div>
+
+          <div class="playback-inspector" aria-label="Playback and frame inspection">
+            <div class="playback-actions">
+              <button class="playback-control-button" id="previous-frame-button" type="button" aria-label="Previous frame" title="Previous frame ([)">◀</button>
+              <button class="playback-control-button play-pause-button" id="play-pause-button" type="button" aria-label="Pause animation" title="Play or pause (Space)">Pause</button>
+              <button class="playback-control-button" id="next-frame-button" type="button" aria-label="Next frame" title="Next frame (])">▶</button>
+            </div>
+            <div class="frame-inspection">
+              <div class="frame-buttons" id="frame-buttons" aria-label="Inspect animation frame"></div>
+              <output class="frame-readout" id="frame-readout">Frame 1 / 4 · column 3 / 12 · 150 ms</output>
+            </div>
+            <label class="speed-control" for="playback-speed">
+              <span>Speed</span>
+              <select id="playback-speed" aria-label="Playback speed">
+                <option value="0.5">0.5x</option>
+                <option value="1" selected>1x</option>
+                <option value="2">2x</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="direction-controls">
+            <div class="direction-pad" aria-label="Preview direction">
+              <span></span>
+              <button type="button" data-direction="up" aria-label="Face up">▲</button>
+              <span></span>
+              <button type="button" data-direction="left" aria-label="Face left">◀</button>
+              <span class="direction-letter" id="direction-letter">D</span>
+              <button type="button" data-direction="right" aria-label="Face right">▶</button>
+              <span></span>
+              <button type="button" data-direction="down" aria-label="Face down">▼</button>
+              <span></span>
+            </div>
+            <p id="direction-help"><strong>Direction</strong><br>Arrow keys work too — choosing one pauses Cycle all.</p>
+          </div>
+        </section>
+
+        <aside class="export-panel" aria-label="Sprite sheet and export">
+          <section class="boss-pilot-panel" id="boss-pilot-panel" aria-labelledby="boss-pilot-title" hidden>
+            <div class="boss-pilot-heading">
+              <div>
+                <p class="boss-pilot-kicker" id="boss-pilot-kicker">Review-only 48x48 pilot</p>
+                <h2 id="boss-pilot-title">Boss directions</h2>
+              </div>
+              <span>Effects Off</span>
+            </div>
+            <p class="boss-pilot-description" id="boss-pilot-description"></p>
+            <p class="boss-pilot-warning" id="boss-pilot-warning">Direction pilot, not a fully animated boss. These frames stay separate from Enemy mode, production rolls, presets, packs, and the 24x24 renderer.</p>
+            <label class="boss-export-scope" id="boss-export-scope-control" for="boss-export-scope" hidden>
+              <span>Native export</span>
+              <select id="boss-export-scope">
+                <option value="full">Full animation sheet</option>
+                <option value="animation">Current animation</option>
+                <option value="direction">Current direction</option>
+              </select>
+            </label>
+
+            <div>
+              <h2 id="boss-directions-title">All directions</h2>
+              <div class="boss-direction-previews">
+                <figure>
+                  <div><img width="48" height="48" alt="" data-boss-direction-image="down"></div>
+                  <figcaption>Down</figcaption>
+                </figure>
+                <figure>
+                  <div><img width="48" height="48" alt="" data-boss-direction-image="left"></div>
+                  <figcaption>Left</figcaption>
+                </figure>
+                <figure>
+                  <div><img width="48" height="48" alt="" data-boss-direction-image="right"></div>
+                  <figcaption>Right</figcaption>
+                </figure>
+                <figure>
+                  <div><img width="48" height="48" alt="" data-boss-direction-image="up"></div>
+                  <figcaption>Up</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div>
+              <h2 id="boss-sheet-title">Native direction sheet</h2>
+              <div class="boss-sheet-preview">
+                <img id="boss-sheet-image" width="48" height="192" alt="">
+              </div>
+              <p class="sheet-contract" id="boss-sheet-contract">1 column · 4 rows · Down / Left / Right / Up</p>
+            </div>
+
+            <div class="boss-download-summary">
+              <strong id="boss-download-size">48x192 PNG · native 1x</strong>
+              <span id="boss-download-detail">Hard alpha, transparent background</span>
+            </div>
+            <button class="primary-button" id="download-boss-sheet-button" type="button">Download boss direction sheet</button>
+            <p class="preset-status" id="boss-download-status" role="status" aria-live="polite">Ready for directional game tests.</p>
+          </section>
+
+          <section class="preset-panel">
+            <h2>Presets</h2>
+            <div class="preset-save-row">
+              <label class="sr-only" for="preset-name">Preset name</label>
+              <input id="preset-name" type="text" maxlength="48" placeholder="Name this sprite">
+              <button class="secondary-button compact-action" id="save-preset-button" type="button">Save</button>
+            </div>
+            <label class="sr-only" for="preset-select">Saved presets</label>
+            <select id="preset-select" aria-label="Saved presets">
+              <option value="">No presets saved</option>
+            </select>
+            <div class="preset-action-row">
+              <button class="secondary-button compact-action" id="load-preset-button" type="button" disabled>Load</button>
+              <button class="secondary-button compact-action danger-action" id="delete-preset-button" type="button" disabled>Delete</button>
+            </div>
+            <p class="preset-status" id="preset-status" role="status" aria-live="polite">Presets stay on this device.</p>
+          </section>
+
+          <section class="combat-loadout-panel" id="combat-loadout-panel" aria-labelledby="combat-loadout-title">
+            <div class="combat-loadout-heading">
+              <div>
+                <p class="combat-loadout-kicker">Game-ready effect recipe</p>
+                <h2 id="combat-loadout-title">Combat loadout</h2>
+              </div>
+              <button class="secondary-button compact-action loadout-preview-button active" id="loadout-preview-button" type="button" aria-pressed="true">Overlay preview: On</button>
+            </div>
+            <p class="combat-loadout-summary" id="loadout-summary">Automatic effects follow the equipped weapon.</p>
+            <div class="combat-loadout-grid">
+              <label for="loadout-trail"><span>Weapon trail</span><select id="loadout-trail" data-loadout-slot="trail"></select></label>
+              <label for="loadout-projectile"><span>Projectile</span><select id="loadout-projectile" data-loadout-slot="projectile"></select></label>
+              <label for="loadout-impact"><span>Impact</span><select id="loadout-impact" data-loadout-slot="impact"></select></label>
+              <label for="loadout-status-overlay"><span>Status overlay</span><select id="loadout-status-overlay" data-loadout-slot="status"></select></label>
+            </div>
+            <p class="combat-loadout-note">The combined animation is preview-only. JSON export keeps the base sprite and transparent effect sheets modular for the game.</p>
+            <div class="loadout-save-row">
+              <label class="sr-only" for="loadout-name">Combat loadout name</label>
+              <input id="loadout-name" type="text" maxlength="48" placeholder="Name this loadout">
+              <button class="secondary-button compact-action" id="save-loadout-button" type="button">Save</button>
+            </div>
+            <label class="sr-only" for="loadout-library-select">Saved combat loadouts</label>
+            <select id="loadout-library-select" aria-label="Saved combat loadouts">
+              <option value="">No loadouts saved</option>
+            </select>
+            <div class="loadout-action-row">
+              <button class="secondary-button compact-action" id="load-loadout-button" type="button" disabled>Load</button>
+              <button class="secondary-button compact-action danger-action" id="delete-loadout-button" type="button" disabled>Delete</button>
+            </div>
+            <button class="primary-button loadout-download-button" id="download-loadout-button" type="button">Download loadout JSON</button>
+            <p class="preset-status" id="loadout-status" role="status" aria-live="polite">Auto follows the current weapon or enemy attack style.</p>
+          </section>
+
+          <section>
+            <h2>All directions</h2>
+            <div class="direction-previews">
+              <figure>
+                <div><canvas width="24" height="24" data-direction-canvas="down"></canvas></div>
+                <figcaption>Down</figcaption>
+              </figure>
+              <figure>
+                <div><canvas width="24" height="24" data-direction-canvas="left"></canvas></div>
+                <figcaption>Left</figcaption>
+              </figure>
+              <figure>
+                <div><canvas width="24" height="24" data-direction-canvas="right"></canvas></div>
+                <figcaption>Right</figcaption>
+              </figure>
+              <figure>
+                <div><canvas width="24" height="24" data-direction-canvas="up"></canvas></div>
+                <figcaption>Up</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section>
+            <div class="sheet-heading-row">
+              <h2 id="sheet-title">Full sprite sheet</h2>
+              <label class="sr-only" for="export-scope">Export scope</label>
+              <select id="export-scope" aria-label="Export scope">
+                <option value="full">Full sheet</option>
+                <option value="animation">Selected animation</option>
+                <option value="direction">Selected direction</option>
+              </select>
+            </div>
+            <div class="sheet-preview">
+              <canvas id="sheet-canvas" width="288" height="96" aria-label="Complete sprite sheet"></canvas>
+            </div>
+            <p class="sheet-contract" id="sheet-contract">20 columns · 4 rows · all animations and directions</p>
+          </section>
+
+          <section>
+            <h2>Export PNG</h2>
+            <div class="export-name-fields">
+              <label for="character-name">
+                <span>Character name</span>
+                <input id="character-name" type="text" maxlength="48" placeholder="Optional display name">
+              </label>
+              <label for="export-name">
+                <span>File name override</span>
+                <input id="export-name" type="text" maxlength="80" placeholder="Automatic">
+              </label>
+              <p class="export-filename">Saves as <code id="export-filename-preview">sprite-sheet@8x.png</code></p>
+            </div>
+            <div class="export-scale-row">
+              <div class="segmented-control compact" id="scale-buttons" aria-label="Export scale"></div>
+              <span id="size-label">2304x768px</span>
+            </div>
+            <button class="primary-button" id="download-button" type="button">Download sprite sheet</button>
+              <p class="export-note">Transparent background, no baked shadow — choose 1x Native for exact logical pixel dimensions.</p>
+          </section>
+
+          <section class="variant-batch-panel" id="variant-batch-panel" aria-labelledby="variant-batch-title">
+            <div class="variant-batch-heading">
+              <div>
+                <p class="variant-batch-kicker">One identity, complete equipment</p>
+                <h2 id="variant-batch-title">Equipment variant batch</h2>
+              </div>
+              <span>Game-ready ZIP</span>
+            </div>
+            <label class="variant-batch-field" for="variant-batch-set">
+              <span>Variant set</span>
+              <select id="variant-batch-set" aria-label="Equipment variant set"></select>
+            </label>
+            <p class="variant-batch-description" id="variant-batch-description">Builds a bounded set of ready character sheets from the current appearance.</p>
+            <p class="variant-batch-summary" id="variant-batch-summary">120 character sheets + matching effect sheets</p>
+            <button class="primary-button variant-batch-download-button" id="download-variant-batch-button" type="button">Download equipment batch ZIP</button>
+            <p class="preset-status" id="variant-batch-status" role="status" aria-live="polite">The current character identity and combat overrides will be preserved.</p>
+            <p class="export-note">Every character includes a loadout recipe; only the deduplicated effect sheets it actually needs are added. Uses the Export PNG scale selected above.</p>
+          </section>
+
+          <section class="class-pack-panel" id="class-pack-panel" aria-labelledby="class-pack-title">
+            <div class="class-pack-heading">
+              <div>
+                <p class="class-pack-kicker">Curated RPG equipment rules</p>
+                <h2 id="class-pack-title">Class pack builder</h2>
+              </div>
+              <span>Named template</span>
+            </div>
+            <label class="class-pack-field" for="class-template">
+              <span>Class template</span>
+              <select id="class-template" aria-label="Class template"></select>
+            </label>
+            <p class="class-pack-description" id="class-pack-description">Build a focused game-ready class library from the current character identity.</p>
+            <p class="class-pack-equipment" id="class-pack-equipment">Plate · Weapons and shields chosen by the class.</p>
+            <p class="class-pack-summary" id="class-pack-summary">54 character sheets + matching effect sheets</p>
+            <div class="class-pack-actions">
+              <button class="secondary-button" id="apply-class-template-button" type="button">Apply class defaults</button>
+              <button class="primary-button class-pack-download-button" id="download-class-pack-button" type="button">Download class pack ZIP</button>
+            </div>
+            <p class="preset-status" id="class-pack-status" role="status" aria-live="polite">Export directly, or apply the defaults to preview the class in the editor.</p>
+            <p class="export-note">Appearance and custom colors stay yours. The template chooses its outfit family, default gear, allowed progression, and per-weapon combat effects.</p>
+          </section>
+
+          <section class="character-pack-panel" aria-labelledby="character-pack-title">
+            <h2 id="character-pack-title">Sprite pack</h2>
+            <label class="pack-name-field" for="pack-name">
+              <span>Pack name</span>
+              <input id="pack-name" type="text" maxlength="64" placeholder="My Character Pack">
+            </label>
+            <div class="pack-heading-row">
+              <p id="pack-summary">0 sprites · 8x full sheets</p>
+              <button class="secondary-button compact-action" id="add-to-pack-button" type="button">Add current</button>
+            </div>
+            <ol class="pack-list" id="pack-list" aria-label="Sprites in pack">
+              <li class="pack-empty">No sprites added yet.</li>
+            </ol>
+            <div class="pack-action-row">
+              <button class="secondary-button compact-action danger-action" id="clear-pack-button" type="button" disabled>Clear pack</button>
+              <button class="primary-button pack-download-button" id="download-pack-button" type="button" disabled>Download pack ZIP</button>
+            </div>
+            <div class="pack-master-kit-action">
+              <p id="pack-master-kit-summary">Regular packs accept up to 200 sprites; Complete Packs support up to 24 player recipes.</p>
+              <button class="secondary-button pack-master-kit-button" id="download-pack-master-kit-button" type="button" disabled>Download Complete Pack</button>
+            </div>
+            <p class="preset-status" id="pack-status" role="status" aria-live="polite">The working pack stays on this device.</p>
+            <p class="export-note">The Complete Pack combines ready-made character sheets, recipes and their combat loadouts, reusable components, every enemy variation, and all synchronized combat-effect overlays at native 1x. Shared artwork is stored only once.</p>
+          </section>
+
+          <section class="master-kit-panel" aria-labelledby="master-kit-title">
+            <div class="master-kit-heading">
+              <div>
+                <p class="master-kit-kicker">One complete game-sprite library</p>
+                <h2 id="master-kit-title">Complete character kit</h2>
+              </div>
+              <span>1x Native</span>
+            </div>
+            <p class="master-kit-description">Exports atomic character pieces, every enemy variation, and transparent weapon-trail, projectile, impact, and status overlays aligned to the same animation grid.</p>
+            <p class="master-kit-summary" id="master-kit-summary">1910 content-unique components · 202 native enemies · 24 combat effects · 1 reference · 2137 PNGs</p>
+            <button class="primary-button master-kit-download-button" id="download-master-kit-button" type="button">Download Complete Character Kit</button>
+            <p class="preset-status" id="master-kit-status" role="status" aria-live="polite">Each component is stored once and shares the same animation grid.</p>
+            <p class="export-note">The current player and combat loadout are included only as a lightweight reference recipe; they do not duplicate component artwork.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <dialog class="compare-dialog" id="compare-dialog" aria-labelledby="compare-title">
+      <div class="compare-dialog-header">
+        <div>
+          <p class="compare-kicker">A/B workspace</p>
+          <h2 id="compare-title">Compare sprites</h2>
+          <p id="compare-context">Walk · Down · frame 1 / 4</p>
+        </div>
+        <button class="dialog-close-button" id="close-compare-button" type="button" aria-label="Close comparison">×</button>
+      </div>
+      <div class="compare-grid">
+        <article class="compare-card saved-copy-card">
+          <div class="compare-card-heading">
+            <span>A</span>
+            <div>
+              <h3>Saved copy</h3>
+              <p id="saved-copy-name">Sprite copy</p>
+            </div>
+          </div>
+          <div class="compare-canvas-wrap">
+            <canvas id="saved-copy-canvas" width="24" height="24" aria-label="Saved comparison copy"></canvas>
+          </div>
+          <p class="compare-card-meta" id="saved-copy-meta">Player</p>
+          <button class="secondary-button compare-card-action" id="restore-copy-button" type="button">Use saved copy</button>
+        </article>
+        <article class="compare-card current-copy-card">
+          <div class="compare-card-heading">
+            <span>B</span>
+            <div>
+              <h3>Current editor</h3>
+              <p id="current-copy-name">Current sprite</p>
+            </div>
+          </div>
+          <div class="compare-canvas-wrap">
+            <canvas id="current-copy-canvas" width="24" height="24" aria-label="Current editor sprite"></canvas>
+          </div>
+          <p class="compare-card-meta" id="current-copy-meta">Player</p>
+          <button class="secondary-button compare-card-action" id="keep-current-button" type="button">Keep current</button>
+        </article>
+      </div>
+      <div class="compare-dialog-actions">
+        <button class="secondary-button compact-action danger-action" id="remove-copy-button" type="button">Remove saved copy</button>
+        <button class="secondary-button compact-action" id="replace-copy-button" type="button">Replace copy with current</button>
+      </div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boss Direction Roster Review</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      background: #0e1117;
+      color: #f4f0e8;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-width: 980px; }
+    header {
+      padding: 22px 28px 18px;
+      border-bottom: 1px solid #323846;
+      background: #12161d;
+    }
+    h1 { margin: 0 0 6px; font-size: 28px; }
+    .subtitle { color: #aab3c2; font-size: 13px; }
+    .gate {
+      display: inline-block;
+      margin-top: 11px;
+      padding: 5px 9px;
+      border: 1px solid #6c5832;
+      border-radius: 999px;
+      color: #f1c86b;
+      background: #2c2518;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .summary {
+      margin-top: 10px;
+      color: #8fd6ad;
+      font: 12px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      padding: 10px 28px;
+      border-bottom: 1px solid #2b313d;
+      background: rgba(14, 17, 23, .94);
+      backdrop-filter: blur(8px);
+    }
+    nav a {
+      padding: 5px 8px;
+      border: 1px solid #353d4b;
+      border-radius: 999px;
+      color: #bac4d4;
+      background: #181d26;
+      font-size: 11px;
+      text-decoration: none;
+    }
+    nav a:hover { border-color: #7c6436; color: #f1c86b; }
+    main {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 24px 28px 8px;
+    }
+    section {
+      scroll-margin-top: 62px;
+      margin-bottom: 24px;
+      overflow: hidden;
+      border: 1px solid #343b49;
+      border-radius: 14px;
+      background: #161b23;
+    }
+    .boss-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 18px;
+      border-bottom: 1px solid #303744;
+      background: #191f29;
+    }
+    h2 { margin: 0 0 4px; font-size: 20px; }
+    .boss-note { color: #9fa9b9; font-size: 12px; }
+    .boss-facts {
+      color: #9fa9b9;
+      font: 11px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .boss-link { color: #f1c86b; text-decoration: none; }
+    .directions {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(210px, 1fr));
+    }
+    article {
+      min-width: 0;
+      border-right: 1px solid #303744;
+      background: #181d26;
+    }
+    article:last-child { border-right: 0; }
+    .stage {
+      display: grid;
+      place-items: center;
+      min-height: 230px;
+      background-color: #cdbf9d;
+      background-image:
+        linear-gradient(45deg, #bcae8e 25%, transparent 25%),
+        linear-gradient(-45deg, #bcae8e 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #bcae8e 75%),
+        linear-gradient(-45deg, transparent 75%, #bcae8e 75%);
+      background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+      background-size: 24px 24px;
+    }
+    .pilot {
+      width: 196px;
+      height: 196px;
+      object-fit: contain;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 64px;
+      padding: 9px 12px 11px;
+    }
+    .native {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 auto;
+      image-rendering: pixelated;
+      outline: 1px solid rgba(255,255,255,.16);
+      background: #0d1015;
+    }
+    h3 { margin: 0 0 3px; font-size: 15px; text-transform: capitalize; }
+    .frame-facts {
+      color: #929cad;
+      font: 10px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    footer {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 28px 30px;
+      color: #8d97a7;
+      font-size: 12px;
+    }
+    .error {
+      margin: 24px;
+      padding: 16px;
+      border: 1px solid #713f45;
+      border-radius: 10px;
+      color: #ffc0c0;
+      background: #2b181b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Boss Direction Roster &middot; Combined Visual Gate</h1>
+    <div class="subtitle">Twelve approved bosses plus Rhino and Unicorn candidates &middot; Down, Left, Right, Up &middot; 48&times;48 native cells &middot; Effects Off</div>
+    <div class="gate">VISUAL GATE &mdash; NOT IN ENEMY OR PRODUCTION CATALOGS</div>
+    <div class="summary" id="summary">Loading fourteen manifests and 56 direction frames...</div>
+  </header>
+  <nav id="jump-links" aria-label="Boss jump links"></nav>
+  <main id="roster"></main>
+  <footer>
+    Combined comparison surface for twelve approved direction pilots plus Rhino and Unicorn candidates. Boss assets remain outside Enemy-mode
+    integration, production rendering, persistence, packs, fixtures, baselines, release artifacts, and
+    Windows builds.
+  </footer>
+  <script type="module">
+    const bosses = [
+      {
+        slug: 'ancient-mirejaw',
+        name: 'Ancient Mirejaw',
+        note: 'Horned swamp brute with a heavy jaw and rear skull plate.',
+        review: './mirejaw-directions-v1.html',
+      },
+      {
+        slug: 'bone-reliquary-king',
+        name: 'Bone Reliquary King',
+        note: 'Crowned undead ruler with lantern, ribs, cloak, and ceremonial axe.',
+        review: './bone-king-directions-v1.html',
+      },
+      {
+        slug: 'scorpion-empress',
+        name: 'Scorpion Empress',
+        note: 'Layered pincers, crown, low legs, armored abdomen, and raised stinger.',
+        review: './scorpion-empress-directions-v1.html',
+      },
+      {
+        slug: 'cyclops-forge-titan',
+        name: 'Cyclops Forge-Titan',
+        note: 'Single bright eye, massive forge hammer, planted armor, and furnace core.',
+        review: './cyclops-forge-titan-directions-v1.html',
+      },
+      {
+        slug: 'pit-fiend-juggernaut',
+        name: 'Pit-Fiend Juggernaut',
+        note: 'Horned infernal heavy with dark wings and a dominant tower shield.',
+        review: './pit-fiend-juggernaut-directions-v1.html',
+      },
+      {
+        slug: 'goblin-war-crown',
+        name: 'Goblin War-Crown',
+        note: 'Compact commander with corrected eyes, oversized crown, banner, and royal shield.',
+        review: './goblin-war-crown-directions-v1.html',
+      },
+      {
+        slug: 'lava-core-colossus',
+        name: 'Lava-Core Colossus',
+        note: 'Irregular boulder construct with oversized fists and a dominant molten core.',
+        review: './lava-core-colossus-directions-v1.html',
+      },
+      {
+        slug: 'abyssal-crown-kraken',
+        name: 'Abyssal Crown-Kraken',
+        note: 'Crowned mantle with luminous mask, side fins, and separated radial tentacles.',
+        review: './abyssal-crown-kraken-directions-v1.html',
+      },
+      {
+        slug: 'sun-crown-griffin',
+        name: 'Sun-Crown Griffin',
+        note: 'Approved v4 front, hooked-beak profiles, low wings, lion body, and rear crest.',
+        review: './sun-crown-griffin-directions-v1.html',
+      },
+      {
+        slug: 'cruel-catgirl-templar-of-the-brutes',
+        name: 'Cruel Catgirl Templar of the Brutes',
+        note: 'Approved direction design with exposed feline ears, armored tail, broken-cross tabard, and execution hammer.',
+        review: './cruel-catgirl-templar-of-the-brutes-directions-v1.html',
+      },
+      {
+        slug: 'divine-armored-templar-astro-knight',
+        name: 'Divine Armored Templar Astro Knight',
+        note: 'Distinct domed helm, narrow radiant T-visor, astrolabe halo, star-lance, constellation cloak, and orbit shield.',
+        review: './boss-directions-review.html#divine-armored-templar-astro-knight',
+      },
+      {
+        slug: 'furious-depraved-rhino',
+        name: 'Furious Depraved Rhino',
+        note: 'Low quadrupedal charge beast with a dominant nasal horn, shoulder hump, four separated legs and hooves, scarred grey hide, broken restraints, rage brand, and corrupted flesh patches.',
+        status: 'candidate',
+        review: './boss-directions-review.html#furious-depraved-rhino',
+      },
+      {
+        slug: 'gunslinger-boar-rider',
+        name: 'Gunslinger Boar Rider',
+        note: 'Mounted outlaw with a wide-brim hat, red bandana, foregrounded twin revolvers, split duster, armored saddle, and a massive bristled boar with red eyes and paired tusks.',
+        status: 'approved',
+        review: './boss-directions-review.html#gunslinger-boar-rider',
+      },
+      {
+        slug: 'eclipse-unicorn-sovereign',
+        name: 'Eclipse Unicorn Sovereign',
+        note: 'Majestic war-unicorn with a long striped sunhorn, luminous cyan eyes, flowing eclipse mane and tail, crescent barding, and four separated hoof columns.',
+        status: 'candidate',
+        review: './boss-directions-review.html#eclipse-unicorn-sovereign',
+      },
+    ];
+
+    const jumpLinks = document.querySelector('#jump-links');
+    for (const boss of bosses) {
+      const link = document.createElement('a');
+      link.href = `#${boss.slug}`;
+      link.textContent = boss.name;
+      jumpLinks.append(link);
+    }
+
+    try {
+      const manifests = await Promise.all(
+        bosses.map(async (boss) => {
+          const response = await fetch(`./${boss.slug}-directions-v1-manifest.json`);
+          if (!response.ok) throw new Error(`${boss.name}: manifest HTTP ${response.status}`);
+          return response.json();
+        }),
+      );
+
+      const roster = document.querySelector('#roster');
+      let frameCount = 0;
+      for (const [index, boss] of bosses.entries()) {
+        const manifest = manifests[index];
+        const status = boss.status ?? 'approved';
+        const lockPrefix = status === 'candidate' ? 'downMatchesCandidate' : 'downMatchesApproved';
+        const lockKey = Object.keys(manifest).find((key) => key.startsWith(lockPrefix));
+        if (
+          manifest.width !== 48 ||
+          manifest.height !== 192 ||
+          manifest.cell !== 48 ||
+          manifest.hardAlpha !== true ||
+          manifest.integrated !== false ||
+          (status === 'candidate' && manifest.reviewStatus !== 'candidate') ||
+          !lockKey ||
+          manifest[lockKey] !== true ||
+          manifest.frames.length !== 4
+        ) {
+          throw new Error(`${boss.name}: manifest contract mismatch`);
+        }
+        frameCount += manifest.frames.length;
+
+        const section = document.createElement('section');
+        section.id = boss.slug;
+        section.innerHTML = `
+          <div class="boss-header">
+            <div>
+              <h2>${index + 1}. ${boss.name}</h2>
+              <div class="boss-note">${boss.note}</div>
+            </div>
+            <div class="boss-facts">
+              ${status === 'candidate' ? 'UNAPPROVED CANDIDATE' : 'APPROVED PILOT'}<br>
+              48&times;192 sheet &middot; hard alpha &middot; Down locked<br>
+              <a class="boss-link" href="${boss.review}">open individual review</a>
+            </div>
+          </div>
+          <div class="directions"></div>
+        `;
+        const directionHost = section.querySelector('.directions');
+        for (const frame of manifest.frames) {
+          const [left, top, right, bottom] = frame.bounds;
+          const card = document.createElement('article');
+          card.innerHTML = `
+            <div class="stage">
+              <img class="pilot" src="./${frame.file}" alt="${boss.name} ${frame.direction} direction">
+            </div>
+            <div class="meta">
+              <img class="native" src="./${frame.file}" alt="">
+              <div>
+                <h3>${frame.direction}</h3>
+                <div class="frame-facts">${frame.opaqueColors} colors &middot; ${right - left}&times;${bottom - top} occupied</div>
+              </div>
+            </div>
+          `;
+          directionHost.append(card);
+        }
+        roster.append(section);
+      }
+
+      document.querySelector('#summary').textContent =
+        `${bosses.length} manifests loaded | ${frameCount} unique direction frames | 48x48 cells | hard alpha | review-only`;
+      document.body.dataset.reviewState = 'ready';
+    } catch (error) {
+      document.querySelector('#summary').textContent = 'Combined review failed to load.';
+      document.querySelector('#roster').innerHTML = `<div class="error">${error.message}</div>`;
+      document.body.dataset.reviewState = 'error';
+      throw error;
+    }
+  </script>
+</body>
+</html>
