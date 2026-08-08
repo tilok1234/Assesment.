@@ -176,8 +176,12 @@ Idle, Banner Khan elite Idle, and Banner Khan grouped motion were subsequently
 approved and published. The designer then said `cool lets do next`; following
 the documented EN-E03 family and role order, only Reed Charmer specialist Idle
 F1-F2 was authorized. The designer reviewed both exact paired GIFs and said
-`Approved` on 2026-08-08; bounded publication of that internal lane is now in
-progress, and no later gate is authorized.
+`Approved` on 2026-08-08; bounded publication of that internal lane is now
+complete at `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. The designer then
+authorized the discussed larger slice with `Sure lets go for it one complete
+motion suite we can try atleast`. The designer approved both exact paired Reed
+Charmer complete-motion GIFs on 2026-08-08; bounded publication is the only
+current action, and no later gate is authorized.
 
 ## Intake Assessment
 
@@ -649,6 +653,11 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   approved on 2026-08-08 and published at
   `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. Wildwood Hornlord, later motion,
   registration, consumers, effects, release, and later work remain gated
+- Active acceptance candidate: the designer authorized one safe larger slice
+  with `Sure lets go for it one complete motion suite we can try atleast`.
+  Reed Charmer Walk/Attack/Hurt/Cast/Death is now complete as one internal,
+  non-public 80-frame suite with frozen paired evidence and passing focused
+  validation; Wildwood Hornlord and every later boundary remain gated
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1583,6 +1592,49 @@ and no new sprite pixels or public integration are authorized.
   Giant/Centaur changes, baked music/pollen/charm effects, registration,
   consumers, release, and later EN-E03 work.
 
+#### Reed Charmer complete motion acceptance candidate
+
+- Gate ID: `en-e03-reed-charmer-motion-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed while bounded publication closes.
+- Authorization evidence: after the exact Reed Idle pair was approved,
+  published, and reconciled, the designer said `Sure lets go for it one complete
+  motion suite we can try atleast`. This authorizes one Reed Charmer suite only.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form motion-suite GIFs together and said
+  `Approved` on 2026-08-08.
+- Isolated branch/worktree: `codex/en-e03-reed-charmer-motion` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-reed-charmer-motion`, based exactly on
+  clean published Reed Idle handoff `ef98e7c`.
+- Scope: approved Idle F1-F2 plus Walk W1-W4, Attack A1-A4, Cast C1-C4, Hurt
+  H1-H2, and Death D1-D4 across all four directions. Idle delegates exact; Cast
+  aliases Attack frame-for-frame; Death aliases Hurt H1,H2,H2,H2.
+- Motion and identity: approved Satyr gait, attack shifts, Hurt recoil, horns,
+  tail, hocks, and split hooves combine with the frozen Reed pipe, connected
+  hands, teal vest, and gold sash. The torso, pipe, vest, hands, legs, and tail
+  participate; music notes, pollen, charm rings, and controller effects remain
+  external.
+- Preservation: approved Reed Idle `8/8`, Briar Walk `16/16`, Attack `16/16`,
+  and Hurt `8/8` remain exact. The candidate validates `80/80` connected
+  hard-alpha frames, `20/20` side mirrors, `16/16` Cast aliases, `16/16` Death
+  aliases, 1,476 reed-pipe pixels, 1,008 teal-wrap pixels, 9,157 Complete B
+  additions, 8,062 Form changes, and public EN-E03 families `0`.
+- Frozen evidence: raw board
+  `7908c42c852e3cde553152a56d1678241559f1aab693f5919f33d97a23ea74f7`,
+  Complete B + Form board
+  `8b114f22f590c00eb3604d1eb61198e2fb7a6137dccd96aaa2fa3109e9dec104`,
+  raw GIF
+  `b1d62bd3ba846b819ff331b568713f07b4c5170dec56cb68e7fbf759d69e9266`,
+  Complete B + Form GIF
+  `6e509894fb8ba34faa2c31cd20abc328b5cd738b6b017cee9f82858d74079182`,
+  and 80-frame digest
+  `031b4e419e339c416fb43be36641048f89cdfbb255e01d7e6306555c3dc50231`.
+- Approved review: both exact paired `640x672`, four-phase raw/no-outline and
+  Complete B + Form motion-suite GIFs were reviewed together. Full repository
+  validation passes in `187.1s`, including all 232 validated PNG sheets.
+- Exclusions: approved Reed Idle changes, Briar changes, Wildwood Hornlord,
+  Giant/Centaur changes, new Cast/Death pixels, baked music/pollen/charm effects,
+  registration, consumers, release, and later EN-E03 work.
+
 ### EN-E04 - Serpentine and aquatic peoples
 
 - Status: `queued`
@@ -1929,5 +1981,6 @@ Khan Idle publication is complete at
 `55143049b4153e34fcdaad0ea434932ba0f2d0fd`; grouped motion publication is
 complete at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. Reed Charmer specialist Idle
 F1-F2 is visually approved and published at
-`070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`; there is no next active art gate.
-Any other code or art work requires separate explicit designer authorization.
+`070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. Reed Charmer complete motion is
+visually approved and bounded publication is the only current action; any other
+code or art work requires separate explicit designer authorization.

@@ -836,6 +836,23 @@ sheets;
 Wildwood Hornlord, later motion, registration, consumers, effects, release, and
 later work remain gated.
 
+The separate `engine/enemy-expansion-en-e03-satyr-specialist-motion.js` module
+composes the approved Reed Idle renderer and narrow default-preserving Briar
+Walk/Attack/Hurt helpers into one internal/non-public complete motion suite.
+Idle delegates byte-for-byte; Walk carries the pipe identity through the body
+bob; Attack applies the frozen pipe/vest/hands identity to four participating
+body shifts; Hurt adds that identity before the complete-silhouette flash; Cast
+and Death are exact Attack/Hurt aliases. Deterministic `1428x760` boards,
+`640x672` four-phase paired GIFs, an 80-frame digest, exact source locks, mirror
+checks, hard-alpha connectivity, full-body motion checks, external-effect
+boundaries, and zero facade exposure define the frozen visual gate. The
+designer approved both exact paired GIFs on 2026-08-08; bounded publication
+does not expand that gate. Wildwood Hornlord, consumers, registration, effects,
+release, and later work stay out.
+The focused gate preserves every approved Reed/Briar source digest, and the
+full repository gate passes in `187.1s` with all 232 validated PNG sheets
+unchanged.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

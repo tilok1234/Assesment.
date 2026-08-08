@@ -313,13 +313,7 @@ function paintFinishedFrame(context, pixels, flash) {
   }
 }
 
-function renderSatyrHurt(args) {
-  assert(args.family.id === 'satyr', 'The EN-E03 Satyr Hurt renderer is restricted to Satyr.');
-  assert(args.variant.id === 'briar-reveler', 'The EN-E03 Satyr Hurt renderer is restricted to Briar Reveler.');
-  if (args.animation.id === 'idle' || args.animation.id === 'walk' || args.animation.id === 'attack') {
-    return EN_E03_SATYR_ATTACK_RENDERER.render(args);
-  }
-  assert(args.animation.id === 'hurt' && args.frame >= 0 && args.frame < 2, 'The EN-E03 Satyr Hurt renderer authorizes only approved Idle, Walk, and Attack plus two Hurt frames.');
+export function drawSatyrHurtMotion(args, { includeStaff = true, drawIdentity = null } = {}) {
   const shift = EN_E03_SATYR_HURT_BODY_SHIFTS[args.direction][args.frame];
   const palette = colors();
   const base = createPixelBuffer();
@@ -328,15 +322,27 @@ function renderSatyrHurt(args) {
   const composed = createPixelBuffer();
   const paint = createPainter(composed.context, args.direction);
   drawHurtTail(paint, palette, args.frame);
-  if (paint.view === 'up') drawStaffShaft(paint, palette, args.frame);
+  if (includeStaff && paint.view === 'up') drawStaffShaft(paint, palette, args.frame);
   paintUpperBody(composed.context, base.pixels, args.direction, shift);
   drawHurtLegs(paint, palette, args.frame);
-  if (paint.view !== 'up') drawStaffShaft(paint, palette, args.frame);
-  drawStaffGrip(paint, palette, args.frame);
+  if (includeStaff && paint.view !== 'up') drawStaffShaft(paint, palette, args.frame);
+  if (includeStaff) drawStaffGrip(paint, palette, args.frame);
   drawHornCurls(paint, palette, shift);
   if (paint.view === 'up') paint.dot(9 + shift.x, 9 + shift.y, palette.skin[0]);
+  if (drawIdentity) drawIdentity(composed.context, shift);
   args.context.clearRect(0, 0, SIZE, SIZE);
   paintFinishedFrame(args.context, composed.pixels, args.frame === 0);
+  return shift;
+}
+
+function renderSatyrHurt(args) {
+  assert(args.family.id === 'satyr', 'The EN-E03 Satyr Hurt renderer is restricted to Satyr.');
+  assert(args.variant.id === 'briar-reveler', 'The EN-E03 Satyr Hurt renderer is restricted to Briar Reveler.');
+  if (args.animation.id === 'idle' || args.animation.id === 'walk' || args.animation.id === 'attack') {
+    return EN_E03_SATYR_ATTACK_RENDERER.render(args);
+  }
+  assert(args.animation.id === 'hurt' && args.frame >= 0 && args.frame < 2, 'The EN-E03 Satyr Hurt renderer authorizes only approved Idle, Walk, and Attack plus two Hurt frames.');
+  const shift = drawSatyrHurtMotion(args);
   return Object.freeze({
     family: args.family.id,
     variant: args.variant.id,

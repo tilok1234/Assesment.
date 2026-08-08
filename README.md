@@ -437,6 +437,23 @@ remain external. The approved internal lane is committed and pushed at
 registration, consumer integration, effects, release, and later gates remain
 unauthorized.
 
+## Reed Charmer complete motion suite approved
+
+The designer authorized one safe larger slice with `Sure lets go for it one
+complete motion suite we can try atleast`. Run
+`npm.cmd run review:enemy-expansion-en-e03-reed-charmer-motion` to reproduce the
+exact raw/no-outline and Complete B + Form `1428x760` boards plus paired labeled
+`640x672`, four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e03-reed-charmer-motion` to verify all 80
+Idle/Walk/Attack/Cast/Hurt/Death frames, exact approved Idle and Briar source
+preservation, connected hard alpha, exact side mirrors, full-body movement,
+Cast-to-Attack and Death-to-Hurt aliases, frozen hashes, external effects, and
+zero public exposure. The full repository gate also passes in `187.1s`, with
+all 232 validated PNG sheets unchanged. The designer reviewed both exact paired
+GIFs and said `Approved` on 2026-08-08. The internal, non-public bounded
+publication is closing; Wildwood Hornlord, registration, integration, effects,
+release, and later work remain unauthorized.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge

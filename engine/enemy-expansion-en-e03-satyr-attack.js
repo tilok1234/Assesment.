@@ -91,7 +91,7 @@ export const EN_E03_SATYR_ATTACK_GATE = deepFreeze({
   nextGate: 'Visual approval is complete. Stop until the designer explicitly selects and authorizes the next bounded EN-E03 gate; no later EN-E03 work is authorized yet.',
 });
 
-const ATTACK_PHASES = deepFreeze({
+export const EN_E03_SATYR_ATTACK_PHASES = deepFreeze({
   down: [
     { bodyX: -1, bodyY: 0, legs: 0, tail: 0, staff: 0, name: 'brace' },
     { bodyX: 0, bodyY: 0, legs: 1, tail: 1, staff: 1, name: 'lift' },
@@ -344,15 +344,9 @@ function drawHornCurls(paint, palette, phase) {
   dot(17 + x, 5 + y, palette.horn[1]);
 }
 
-function renderSatyrAttack(args) {
-  assert(args.family.id === 'satyr', 'The EN-E03 Satyr Attack renderer is restricted to Satyr.');
-  assert(args.variant.id === 'briar-reveler', 'The EN-E03 Satyr Attack renderer is restricted to Briar Reveler.');
-  if (args.animation.id === 'idle' || args.animation.id === 'walk') {
-    return EN_E03_SATYR_WALK_RENDERER.render(args);
-  }
-  assert(args.animation.id === 'attack' && args.frame >= 0 && args.frame < 4, 'The EN-E03 Satyr Attack renderer authorizes only approved Idle and Walk plus four Attack frames.');
+export function drawSatyrAttackMotion(args, { includeStaff = true } = {}) {
   const view = args.direction === 'left' ? 'right' : args.direction;
-  const phase = ATTACK_PHASES[view][args.frame];
+  const phase = EN_E03_SATYR_ATTACK_PHASES[view][args.frame];
   const palette = colors();
   const base = createPixelBuffer();
   EN_E01_HUMANOID_RENDERER.render({ ...args, context: base.context });
@@ -360,13 +354,24 @@ function renderSatyrAttack(args) {
   args.context.clearRect(0, 0, SIZE, SIZE);
   const paint = createPainter(args.context, args.direction);
   drawAttackTail(paint, palette, phase);
-  if (paint.view === 'up') drawStaffShaft(paint, palette, phase);
+  if (includeStaff && paint.view === 'up') drawStaffShaft(paint, palette, phase);
   paintUpperBody(args.context, base.pixels, args.direction, phase);
   drawAttackLegs(paint, palette, phase);
-  if (paint.view !== 'up') drawStaffShaft(paint, palette, phase);
-  drawStaffGrip(paint, palette, phase);
+  if (includeStaff && paint.view !== 'up') drawStaffShaft(paint, palette, phase);
+  if (includeStaff) drawStaffGrip(paint, palette, phase);
   drawHornCurls(paint, palette, phase);
   if (paint.view === 'up') paint.dot(9 + phase.bodyX, 9 + phase.bodyY, palette.skin[0]);
+  return phase;
+}
+
+function renderSatyrAttack(args) {
+  assert(args.family.id === 'satyr', 'The EN-E03 Satyr Attack renderer is restricted to Satyr.');
+  assert(args.variant.id === 'briar-reveler', 'The EN-E03 Satyr Attack renderer is restricted to Briar Reveler.');
+  if (args.animation.id === 'idle' || args.animation.id === 'walk') {
+    return EN_E03_SATYR_WALK_RENDERER.render(args);
+  }
+  assert(args.animation.id === 'attack' && args.frame >= 0 && args.frame < 4, 'The EN-E03 Satyr Attack renderer authorizes only approved Idle and Walk plus four Attack frames.');
+  const phase = drawSatyrAttackMotion(args);
 
   return Object.freeze({
     family: args.family.id,

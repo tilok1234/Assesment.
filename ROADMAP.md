@@ -357,6 +357,14 @@ integration, effects, release, and later gates remain unauthorized. The
 designer reviewed both exact GIFs together and said `Approved` on 2026-08-08;
 the bounded internal implementation is committed and pushed at
 `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`.
+The designer then authorized one safe larger slice with `Sure lets go for it one
+complete motion suite we can try atleast`. Reed Charmer Walk/Attack/Hurt plus
+exact Cast/Death aliases now form one internal/non-public 80-frame candidate.
+Approved Idle and Briar sources remain exact, both paired suite GIFs are frozen,
+and both focused and full gates pass with all 232 validated PNG sheets
+unchanged. The designer reviewed both exact paired GIFs and said `Approved` on
+2026-08-08; bounded publication is closing. Wildwood Hornlord, registration,
+integration, effects, release, and later gates remain unauthorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

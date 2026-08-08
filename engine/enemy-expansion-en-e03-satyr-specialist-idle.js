@@ -198,7 +198,7 @@ function drawSpecialistTunic({ view, rect, dot }, phase) {
   dot(view === 'up' ? 14 : 9, 12 + bob, sash[0]);
 }
 
-function drawReedCharmerIdentity(context, direction, phase) {
+export function drawReedCharmerIdentity(context, direction, phase) {
   const paint = createPainter(context, direction);
   drawSpecialistTunic(paint, phase);
   if (paint.view === 'right') drawSidePipe(paint, phase);

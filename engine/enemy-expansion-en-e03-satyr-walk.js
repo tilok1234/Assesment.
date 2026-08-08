@@ -65,7 +65,7 @@ export const EN_E03_SATYR_WALK_GATE = deepFreeze({
   nextGate: 'Authorized on 2026-08-06: Hill Breaker common Attack A1-A4 across Down, Left, Right, and Up, preserving approved Hill Breaker Idle and Walk byte-for-byte.',
 });
 
-const WALK_PHASES = deepFreeze([
+export const EN_E03_SATYR_WALK_PHASES = deepFreeze([
   { stride: 1, bob: 0, staff: -1 },
   { stride: 0, bob: 1, staff: 0 },
   { stride: -1, bob: 0, staff: 1 },
@@ -238,18 +238,18 @@ function drawHornCurls(paint, colors, bob) {
   dot(17, 5 + bob, colors.horn[1]);
 }
 
-function drawSatyrWalkIdentity(context, direction, frame) {
+export function drawSatyrWalkIdentity(context, direction, frame, { includeStaff = true } = {}) {
   const data = EN_E03_BRIAR_REVELER_CALIBRATION_DATA;
   const colors = {
     skin: data.actor.palette.skin,
     ...data.satyr,
   };
-  const phase = WALK_PHASES[frame];
+  const phase = EN_E03_SATYR_WALK_PHASES[frame];
   const paint = createPainter(context, direction);
   if (paint.view === 'up') {
     drawUpTail(paint, colors, phase.stride);
     for (const leg of downLegs({ ...phase, stride: -phase.stride }, true)) drawSplitHoofLeg(paint, colors, leg);
-    drawUpStaff(paint, colors, phase);
+    if (includeStaff) drawUpStaff(paint, colors, phase);
     // The shared humanoid Walk leaves one front-expression pixel on the rear
     // profile. Cover it with the surrounding skin ramp so Up reads as a back
     // view rather than an eye glancing sideways.
@@ -257,11 +257,11 @@ function drawSatyrWalkIdentity(context, direction, frame) {
   } else if (paint.view === 'right') {
     drawSideTail(paint, colors, phase.stride);
     for (const leg of sideLegs(phase)) drawSplitHoofLeg(paint, colors, leg);
-    drawSideStaff(paint, colors, phase);
+    if (includeStaff) drawSideStaff(paint, colors, phase);
   } else {
     drawDownTail(paint, colors, phase.stride);
     for (const leg of downLegs(phase, false)) drawSplitHoofLeg(paint, colors, leg);
-    drawDownStaff(paint, colors, phase);
+    if (includeStaff) drawDownStaff(paint, colors, phase);
   }
   drawHornCurls(paint, colors, phase.bob);
 }
