@@ -658,7 +658,9 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
 - Latest approved implementation: Wildwood Hornlord Walk/Attack/Hurt/Cast/Death
   across four directions forms one internal, non-public 80-frame suite. Approved
   Idle delegates byte-for-byte, Cast/Death are exact aliases, paired evidence is
-  frozen, and the designer approved both exact GIFs together on 2026-08-08.
+  frozen, and the designer approved both exact GIFs together on 2026-08-08. The
+  bounded implementation is committed and pushed at
+  `d9cb0faa3dff204106598876fe38db5f4ee3237a`.
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1692,10 +1694,10 @@ and no new sprite pixels or public integration are authorized.
 - Required next action: open the next isolated Wildwood complete-motion art gate
   requested by the same approval message.
 
-#### Wildwood Hornlord complete motion approved
+#### Wildwood Hornlord complete motion approved and published
 
 - Gate ID: `en-e03-wildwood-hornlord-motion-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed while bounded publication closes.
+  non-public, committed, and pushed.
 - Authorization evidence: after approving the exact paired Wildwood Idle GIFs,
   the designer said `Approved lets do next`. Following the accepted grouped
   motion pattern, this authorizes one complete Wildwood suite only.
@@ -1704,7 +1706,8 @@ and no new sprite pixels or public integration are authorized.
   `Approved` on 2026-08-08.
 - Isolated branch/worktree: `codex/en-e03-wildwood-hornlord-motion` at
   `C:\tmp\8-bit-sprite-assembler-en-e03-wildwood-hornlord-motion`, based exactly
-  on clean published Wildwood Idle handoff `4c59c32`.
+  on clean published Wildwood Idle handoff `4c59c32`, tracking the matching
+  origin branch.
 - Scope: exact approved Idle F1-F2 plus Walk W1-W4, Attack A1-A4, Cast C1-C4,
   Hurt H1-H2, and Death D1-D4 across Down, Left, Right, and Up. Cast aliases
   Attack; Death aliases Hurt H1,H2,H2,H2.
@@ -1733,8 +1736,10 @@ and no new sprite pixels or public integration are authorized.
 - Exclusions: approved Wildwood Idle/Briar/Reed changes, new Cast/Death pixels,
   baked thorn/leaf/root effects, registration, consumers, release, and later
   EN-E03 work.
-- Required next action: bounded publication only, then stop. No later gate is
-  authorized by this approval.
+- Publication is complete at approved implementation checkpoint
+  `d9cb0faa3dff204106598876fe38db5f4ee3237a`.
+- Required next action: stop and wait. No later gate is authorized by this
+  approval.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
@@ -2087,6 +2092,7 @@ visually approved and published at `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`.
 Wildwood Hornlord elite Idle F1-F2 is visually approved and published at
 `aa96e170c41cbcb49c7ac1bd979114b3b5bfa7e4`. The same `Approved lets do next`
 message activates only the isolated Wildwood complete-motion art gate. Its
-80-frame paired candidate is visually approved and bounded publication is the
-only current action; registration, integration, effects, release, and broader
-work remain unauthorized.
+80-frame paired candidate is visually approved and published at
+`d9cb0faa3dff204106598876fe38db5f4ee3237a`. No art gate is active;
+registration, integration, effects, release, and broader work remain
+unauthorized.

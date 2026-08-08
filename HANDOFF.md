@@ -5,21 +5,21 @@ Date: 2026-08-08
 ## Immediate Continuation Checkpoint - Approved Wildwood Hornlord Complete Motion
 
 Start here in a new task. Wildwood Hornlord Walk/Attack/Hurt/Cast/Death across
-Down, Left, Right, and Up is visually approved. Bounded publication of the
-internal 80-frame suite is the current action; no later art gate is authorized.
+Down, Left, Right, and Up is visually approved and published internally at
+`d9cb0faa3dff204106598876fe38db5f4ee3237a`. No art gate is active or authorized.
 
 - Live checkout:
   `C:\tmp\8-bit-sprite-assembler-en-e03-wildwood-hornlord-motion` on branch
-  `codex/en-e03-wildwood-hornlord-motion` at
-  `4c59c321ae9133d04bdbdb37a833f462c4849ef1`, with no upstream. It is based
-  exactly on the clean, published Wildwood Hornlord Idle handoff.
-- Git state is intentionally dirty, uncommitted, and unpushed. The approved new
-  files are `engine/enemy-expansion-en-e03-satyr-elite-motion.js`,
+  `codex/en-e03-wildwood-hornlord-motion`, tracking its matching origin branch.
+  Its approved implementation checkpoint is
+  `d9cb0faa3dff204106598876fe38db5f4ee3237a`, based exactly on the clean,
+  published Wildwood Hornlord Idle handoff.
+- Git state is clean and synchronized after this docs-only reconciliation. The
+  approved files are `engine/enemy-expansion-en-e03-satyr-elite-motion.js`,
   `tools/enemy-expansion-en-e03-wildwood-hornlord-motion-review.mjs`,
   `tools/build-enemy-expansion-en-e03-wildwood-hornlord-motion-gifs.py`, and
   `tools/check-enemy-expansion-en-e03-wildwood-hornlord-motion.mjs`, plus
-  package and documentation updates. Do not reset, clean, stash, commit, push,
-  or switch this lane while publication closes.
+  package and documentation updates. Review artifacts remain ignored.
 - Gate: `en-e03-wildwood-hornlord-motion-v1`, status `approved`, internal and
   non-public.
 - Authorization evidence: after reviewing the exact paired Wildwood Idle GIFs,
@@ -70,9 +70,9 @@ internal 80-frame suite is the current action; no later art gate is authorized.
 - Exact board inspection: both frozen PNGs were opened in Aseprite and
   cross-checked at original resolution. Crown and mantle motion remain inside
   the cell, all directions/rows are labeled, and no white seam artifact appears.
-- Next action: make and push the bounded approval commit, reconcile this handoff
-  to its immutable checkpoint, then stop. Do not register, integrate, add
-  effects, release, or start later work without separate explicit authorization.
+- Next action: stop and wait. Do not register, integrate, add effects, release,
+  start another variant, or begin later EN-E03 work without separate explicit
+  authorization.
 
 The detailed historical and technical evidence remains in
 [Wildwood Hornlord Complete Motion Approved](#wildwood-hornlord-complete-motion-approved).
@@ -1565,7 +1565,7 @@ release, and later work remain separately gated.
 ### Wildwood Hornlord Complete Motion Approved
 
 - Gate ID: `en-e03-wildwood-hornlord-motion-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed while bounded publication closes.
+  non-public, committed, and pushed.
 - Authorization evidence: after the exact paired Wildwood Idle GIFs were
   approved, the designer said `Approved lets do next`. Codex bounded the same
   accepted larger-slice pattern to one complete Wildwood suite only.
@@ -1574,7 +1574,8 @@ release, and later work remain separately gated.
   `Approved` on 2026-08-08.
 - Isolated branch/worktree: `codex/en-e03-wildwood-hornlord-motion` at
   `C:\tmp\8-bit-sprite-assembler-en-e03-wildwood-hornlord-motion`, based exactly
-  on clean published Wildwood Idle handoff `4c59c32`; it has no upstream.
+  on clean published Wildwood Idle handoff `4c59c32`; it tracks the matching
+  origin branch.
 - Scope: approved Idle F1-F2 plus Walk W1-W4, Attack A1-A4, Cast C1-C4, Hurt
   H1-H2, and Death D1-D4 across four directions. Idle delegates exact; Cast
   aliases Attack; Death aliases Hurt H1,H2,H2,H2.
@@ -1608,9 +1609,10 @@ release, and later work remain separately gated.
 - Exact board inspection: both frozen PNGs were opened in Aseprite and
   cross-checked at original resolution; no crown clipping, label defect, or
   white seam artifact was found.
-- Required next action: make and push the bounded approval commit, reconcile
-  this handoff to its immutable checkpoint, then stop. Do not register,
-  integrate, add effects, release, or start later work without a separate
+- Publication is complete at approved implementation checkpoint
+  `d9cb0faa3dff204106598876fe38db5f4ee3237a`.
+- Required next action: stop and wait. Do not register, integrate, add effects,
+  release, start another variant, or begin later work without a separate
   explicit continuation.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle

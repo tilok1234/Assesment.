@@ -488,8 +488,9 @@ full-body Walk/Attack/Hurt motion, exact Cast/Death aliases, frozen hashes,
 external thorn/leaf/root effects, and zero public exposure. The full repository
 gate passes in `203.7s` with all 232 validated PNG sheets unchanged. The
 designer reviewed both exact paired GIFs and said `Approved` on 2026-08-08.
-Bounded publication of the internal lane is closing; registration, integration,
-effects, release, and later work remain unauthorized.
+The internal, non-public implementation is committed and pushed at
+`d9cb0faa3dff204106598876fe38db5f4ee3237a`. Registration, integration, effects,
+release, and later work remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

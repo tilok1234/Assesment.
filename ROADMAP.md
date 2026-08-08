@@ -386,8 +386,9 @@ candidate. Crown, armor, mantle, torso, tail, hocks, and hooves participate in
 the motion; thorn aura, leaf swirl, and root burst remain external. Both paired
 suite GIFs are frozen, focused validation passes, and the full repository gate
 passes with all 232 validated PNG sheets unchanged. The designer reviewed both
-exact paired GIFs and said `Approved` on 2026-08-08; bounded publication is
-closing. Registration, integration, effects, release, and later work stay gated.
+exact paired GIFs and said `Approved` on 2026-08-08; the bounded implementation
+is committed and pushed at `d9cb0faa3dff204106598876fe38db5f4ee3237a`.
+Registration, integration, effects, release, and later work stay gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
