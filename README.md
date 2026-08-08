@@ -581,14 +581,16 @@ presentations and said `ye approved` on 2026-08-08. Gate
 `3365d9915ed0ac1e506470604ed1e83c84606181`.
 The later `sure lets do that` activates only the combined larger slice below.
 
-## Expanded Naga Venom motion plus Temple Rajah Idle approved, publication pending
+## Expanded Naga Venom motion plus Temple Rajah Idle approved and published
 
 Branch `codex/en-e04-venom-motion-rajah-idle` owns one internal, non-public,
-uncommitted 88-frame review candidate. It preserves all eight approved Venom
-Oracle Idle frames exactly, completes the 80-frame specialist suite with Walk,
-Attack, Hurt, exact Cast aliases, and exact Death aliases, and adds only Temple
-Rajah Idle F1-F2 across four directions. Rajah motion, Merfolk, Birdfolk,
-registration, integration, effects, release, and later work remain outside.
+approved 88-frame review implementation committed and pushed at
+`4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`. It preserves all eight approved
+Venom Oracle Idle frames exactly, completes the 80-frame specialist suite with
+Walk, Attack, Hurt, exact Cast aliases, and exact Death aliases, and adds only
+Temple Rajah Idle F1-F2 across four directions. Rajah motion, Merfolk,
+Birdfolk, registration, integration, effects, release, and later work remain
+outside.
 
 Run `npm.cmd run review:enemy-expansion-en-e04-venom-motion-rajah-idle` to
 reproduce paired raw/no-outline and Complete B + Form `1428x868` boards and
@@ -611,7 +613,7 @@ inspected in raw and Complete B + Form. Gate
 `en-e04-venom-motion-rajah-idle-v1` is `approved` after the designer located
 Rajah in the bottom `R IDLE` row and said
 `oh right sorry i had to scroll down approved` on 2026-08-08. Bounded
-publication is pending; the lane remains uncommitted and unpushed.
+publication is complete at `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

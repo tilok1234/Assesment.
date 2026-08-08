@@ -181,10 +181,11 @@ GIFs and said `ye approved` on 2026-08-08; bounded publication is complete at
 `3365d9915ed0ac1e506470604ed1e83c84606181`. The designer then asked to try
 bigger slices. Codex proposed the combined Venom Oracle complete-motion plus
 Temple Rajah Idle 88-frame review boundary, and the designer said `sure lets do
-that`; this exact internal candidate is now technically validated and awaiting
-paired visual approval. The designer then located Temple Rajah in the bottom
-`R IDLE` row, reviewed both exact combined GIFs, and said
-`oh right sorry i had to scroll down approved`; bounded publication is pending.
+that`. The designer then located Temple Rajah in the bottom `R IDLE` row,
+reviewed both exact combined GIFs, and said
+`oh right sorry i had to scroll down approved`; bounded publication of that
+exact internal lane is complete at
+`4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`.
 
 ## Intake Assessment
 
@@ -251,9 +252,10 @@ candidate is technically validated and visually approved; bounded publication
 is complete at `3365d9915ed0ac1e506470604ed1e83c84606181`.
 The separately authorized larger-slice candidate now combines Venom Oracle
 complete motion with Temple Rajah Idle F1-F2. It is technically validated,
-visually approved, internal, non-public, uncommitted, and awaiting bounded
-publication. Temple Rajah motion, Merfolk, Birdfolk, registration, consumer
-work, effects, release, and subsequent gates remain unauthorized.
+visually approved, internal, non-public, committed, and pushed at
+`4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`. Temple Rajah motion, Merfolk,
+Birdfolk, registration, consumer work, effects, release, and subsequent gates
+remain unauthorized.
 
 ## Non-Negotiable Production Contract
 
@@ -1756,7 +1758,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `approved - combined Venom motion plus Temple Rajah Idle publication pending`
+- Status: `approved - combined Venom motion plus Temple Rajah Idle published`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1903,11 +1905,10 @@ upright avian person rather than collapse into the existing Harpy identity.
 - The prior stop boundary was superseded only by the designer's explicit `sure
   lets do that`, authorizing the combined Venom-motion and Rajah-Idle gate below.
 
-#### Expanded Naga Venom motion plus Temple Rajah Idle approved, publication pending
+#### Expanded Naga Venom motion plus Temple Rajah Idle approved and published
 
 - Gate ID: `en-e04-venom-motion-rajah-idle-v1`; status:
-  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
-  publication.
+  `approved`, internal, non-public, committed, and pushed.
 - Live branch: `codex/en-e04-venom-motion-rajah-idle` in the current v2 checkout,
   based exactly on clean Venom Oracle Idle reconciliation `2e14485`; the
   approved specialist implementation remains frozen at
@@ -1950,10 +1951,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 - The cleaned v2 fast gate passes in `65s`; full `npm.cmd run check` passes in
   `153.2s`, with all 232 public PNG sheets unchanged. All four raw/Complete
   phases were inspected, and both exact boards were opened in Aseprite.
-- Required next action: publish only this exact approved combined lane and
-  reconcile its pushed checkpoint. Then stop before Rajah motion,
-  Merfolk/Birdfolk, registration, integration, effects, release, or broader
-  EN-E04 work.
+- Publication is complete at approved implementation checkpoint
+  `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`.
+- Required next action: stop before Rajah motion, Merfolk/Birdfolk,
+  registration, integration, effects, release, or broader EN-E04 work. Any
+  continuation requires a new explicit authorization.
 
 ### EN-E05 - Undead humanoids
 
@@ -2314,7 +2316,8 @@ at `3365d9915ed0ac1e506470604ed1e83c84606181` on
 designer's `sure lets do that` activate exactly one combined 88-frame gate:
 Venom Oracle complete motion plus Temple Rajah Idle F1-F2. Its hash-frozen
 paired candidate is technically validated, visually approved, internal,
-non-public, uncommitted, and awaiting bounded publication on
+non-public, committed, and pushed at
+`4fd887f0a174169d47f9f3bee3f98d92c2ffaf30` on
 `codex/en-e04-venom-motion-rajah-idle`. Temple Rajah motion, Merfolk, Birdfolk,
 registration, integration, effects, release, and broader work remain
 unauthorized.

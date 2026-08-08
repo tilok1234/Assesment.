@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Expanded Naga Slice Approved, Publication Pending
+## Immediate Continuation Checkpoint - Expanded Naga Slice Approved And Published
 
 Start here in a new task. After approving and publishing Venom Oracle Idle, the
 designer asked to try bigger slices. Codex proposed one combined 88-frame review
@@ -25,11 +25,12 @@ the designer said `sure lets do that` on 2026-08-08.
 - Repository/branch: current v2 checkout
   `C:\Users\headc\Documents\sprite-assembler-v2` on
   `codex/en-e04-venom-motion-rajah-idle`, based exactly on clean reconciled
-  Venom Oracle Idle handoff `2e14485`. The approved specialist implementation
-  remains frozen at `3365d9915ed0ac1e506470604ed1e83c84606181`.
+  Venom Oracle Idle handoff `2e14485`. The approved combined implementation is
+  committed and pushed at `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`; the
+  approved specialist implementation it preserves remains frozen at
+  `3365d9915ed0ac1e506470604ed1e83c84606181`.
 - Gate: `en-e04-venom-motion-rajah-idle-v1`; status
-  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
-  publication.
+  `approved`, internal, non-public, committed, and pushed.
 - Approval evidence: the designer reviewed both exact combined labeled
   all-four-direction raw/no-outline and Complete B + Form GIFs, located Temple
   Rajah in the bottom `R IDLE` row, and said
@@ -78,10 +79,12 @@ the designer said `sure lets do that` on 2026-08-08.
   Complete B + Form, and both exact frozen boards were opened in Aseprite at
   original resolution. No clipping, disconnected crown/armor, phase pop, fake
   feet, tail jitter, alias drift, or direction mismatch remains.
-- Required next action: publish only this exact approved combined lane,
-  reconcile its clean pushed checkpoint, then stop. Do not begin Temple Rajah
-  motion, advance Merfolk or Birdfolk, register, integrate, add effects,
-  release, or broaden EN-E04.
+- Publication checkpoint: bounded publication of the exact ten-file lane is
+  complete at `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`; generated review
+  artifacts remain ignored.
+- Required next action: stop at this clean published checkpoint. Do not begin
+  Temple Rajah motion, advance Merfolk or Birdfolk, register, integrate, add
+  effects, release, or broaden EN-E04 without a separate explicit continuation.
 
 The approved source checkpoint follows for provenance.
 

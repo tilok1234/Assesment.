@@ -969,11 +969,11 @@ Form hashes, and zero public exposure. All three protected Naga gates plus the
 fast and full repository matrices pass with all 232 public sheets unchanged.
 Both boards were opened in Aseprite and all four phases inspected. Gate
 `en-e04-venom-motion-rajah-idle-v1` is visually approved, internal, non-public,
-uncommitted, and unpushed pending bounded publication. The designer reviewed
-both exact combined GIFs, located Rajah in the bottom `R IDLE` row, and said
-`oh right sorry i had to scroll down approved` on 2026-08-08. Temple Rajah
-motion, Merfolk, Birdfolk, registration, consumers, effects, and release stay
-outside.
+committed, and pushed at `4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`. The
+designer reviewed both exact combined GIFs, located Rajah in the bottom
+`R IDLE` row, and said `oh right sorry i had to scroll down approved` on
+2026-08-08. Temple Rajah motion, Merfolk, Birdfolk, registration, consumers,
+effects, and release stay outside.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

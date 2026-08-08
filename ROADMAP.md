@@ -429,8 +429,10 @@ inspected. The designer then located Temple Rajah in the bottom `R IDLE` row,
 reviewed both exact labeled all-four-direction raw/no-outline and Complete B +
 Form GIFs, and approved the pair on 2026-08-08 with `oh right sorry i had to
 scroll down approved`. It remains internal and non-public; bounded publication
-of the exact ten-file lane is pending. Temple Rajah motion, Merfolk, Birdfolk,
-registration, integration, effects, release, and later gates remain gated.
+of the exact ten-file lane is complete at
+`4fd887f0a174169d47f9f3bee3f98d92c2ffaf30`. Temple Rajah motion, Merfolk,
+Birdfolk, registration, integration, effects, release, and later gates remain
+gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
