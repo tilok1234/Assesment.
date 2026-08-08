@@ -898,10 +898,11 @@ lower-body continuity rows, single-run ground contacts, exact side mirrors,
 external venom/miasma/coil-impact effects, and zero facade/public exposure.
 Post-approval full repository validation passes in `241s` with all 232 public PNG sheets
 unchanged, and both exact boards were opened in Aseprite. The designer reviewed
-both exact paired GIFs and said `Approved` on 2026-08-08. The gate is approved
-and awaits bounded publication; later motion/roles, Merfolk, Birdfolk,
-registration, consumers, effects, release, and broader EN-E04 work remain
-outside this module.
+both exact paired GIFs and said `Approved` on 2026-08-08. The approved internal
+implementation is committed and pushed at
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`; publication does not expand the
+gate. Later motion/roles, Merfolk, Birdfolk, registration, consumers, effects,
+release, and broader EN-E04 work remain outside this module.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

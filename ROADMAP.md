@@ -399,7 +399,8 @@ and compresses the grounded coil. The exact paired raw and Complete B + Form
 boards/GIFs are frozen, the focused eight-frame gate passes, both boards were
 opened in Aseprite, and post-approval full validation passes in `241s` with all 232 public
 PNG sheets unchanged. The designer reviewed both exact paired GIFs and said
-`Approved` on 2026-08-08; Coilguard now awaits bounded publication. Venom
+`Approved` on 2026-08-08; Coilguard is committed and pushed at
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. No art gate is active. Venom
 Oracle, Temple Rajah, later Naga motion, Merfolk, Birdfolk, registration,
 integration, effects, release, and later gates remain gated.
 The current branch history

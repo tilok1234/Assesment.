@@ -513,10 +513,11 @@ specialist and Temple Rajah elite remain plan entries only, while Merfolk and
 Birdfolk are untouched. The focused gate passes, and post-approval full
 `npm.cmd run check` passes in `241s` with all 232 public PNG sheets unchanged. Both exact frozen
 boards were opened in Aseprite at original resolution. The designer reviewed
-both exact paired GIFs together and said `Approved` on 2026-08-08. This
-internal, non-public lane now awaits bounded publication under the standing
-approval rule; later roles/motion, registration, integration, effects, release,
-and broader EN-E04 work remain unauthorized.
+both exact paired GIFs together and said `Approved` on 2026-08-08. The
+internal, non-public lane is committed and pushed at
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. No art gate is active; later
+roles/motion, registration, integration, effects, release, and broader EN-E04
+work remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

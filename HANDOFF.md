@@ -5,16 +5,17 @@ Date: 2026-08-08
 ## Immediate Continuation Checkpoint - Naga Coilguard Idle Approved
 
 Start here in a new task. The first EN-E04 Naga anatomy baseline is visually
-approved and technically complete. Bounded publication is now required under
-the standing approval-publication contract. It contains only Coilguard common
-Idle F1-F2 across Down, Left, Right, and Up.
+approved, technically complete, and published internally at
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. It contains only Coilguard common
+Idle F1-F2 across Down, Left, Right, and Up. No art gate is active.
 
 - Live checkout:
-  `C:\tmp\8-bit-sprite-assembler-en-e04-naga-idle` on local branch
-  `codex/en-e04-naga-idle`, based exactly on clean published Wildwood Hornlord
-  handoff `8c4edba3fa9460d1afdd4409239f35c6078a7534` and approved implementation
-  `d9cb0faa3dff204106598876fe38db5f4ee3237a`.
-- Git state intentionally contains the approved, not-yet-published lane. The
+  `C:\tmp\8-bit-sprite-assembler-en-e04-naga-idle` on branch
+  `codex/en-e04-naga-idle`, tracking its matching origin branch. It is based
+  exactly on clean published Wildwood Hornlord handoff
+  `8c4edba3fa9460d1afdd4409239f35c6078a7534`; the approved Naga implementation
+  checkpoint is `bd920c206d692bcc5e7b043614dcf6a03db2174c`.
+- Git state is clean and synchronized after this docs-only reconciliation. The
   bounded source/tool files are `engine/enemy-expansion-en-e04-naga-idle.js`,
   `tools/enemy-expansion-en-e04-naga-idle-review.mjs`,
   `tools/build-enemy-expansion-en-e04-naga-idle-gifs.py`, and
@@ -62,9 +63,9 @@ Idle F1-F2 across Down, Left, Right, and Up.
 - Exact board inspection: both frozen PNGs were opened in Aseprite and checked
   at original resolution. The repaired F2 body-to-tail junction is continuous;
   no clipping, label defect, seam, or fake paired-foot island remains.
-- Required next action: commit and push only this approved bounded lane, then
-  reconcile the exact implementation and handoff checkpoints. Do not begin
-  another role/family, register, integrate, add effects, or release first.
+- Required next action: stop and wait. Do not begin another role/family,
+  register, integrate, add effects, release, or start later EN-E04 work without
+  separate explicit authorization.
 
 The detailed current evidence is in
 [Naga Coilguard Idle Approved](#naga-coilguard-idle-approved).
@@ -1687,14 +1688,15 @@ release, and later work remain separately gated.
 ### Naga Coilguard Idle Approved
 
 - Gate ID: `en-e04-naga-idle-v1`; status: `approved`, internal, non-public,
-  and awaiting bounded publication.
+  committed, and pushed.
 - Authorization evidence: after the Wildwood Hornlord complete-motion lane was
   approved, published, and reconciled, the designer said `Let's do next` on
   2026-08-08. EN-E04 names Naga priority-first; this gate is bounded to the
   common Coilguard Idle F1-F2 pair across four directions.
 - Isolated branch/worktree: `codex/en-e04-naga-idle` at
   `C:\tmp\8-bit-sprite-assembler-en-e04-naga-idle`, based exactly on clean
-  published Wildwood handoff `8c4edba3fa9460d1afdd4409239f35c6078a7534`.
+  published Wildwood handoff `8c4edba3fa9460d1afdd4409239f35c6078a7534`;
+  it tracks the matching origin branch.
 - Approval evidence: the designer reviewed both exact labeled all-four-direction
   raw/no-outline and Complete B + Form Coilguard Idle GIFs together and said
   `Approved` on 2026-08-08.
@@ -1725,12 +1727,14 @@ release, and later work remain separately gated.
   Form changes, baked effects `0`, public EN-E04 families `0`.
 - Post-approval full `npm.cmd run check` passes in `241s`, including all 232 public PNG
   sheets, with the complete 1,222-file ignored Boss checkpoint corpus present.
+- Publication is complete at approved implementation checkpoint
+  `bd920c206d692bcc5e7b043614dcf6a03db2174c`.
 - Both frozen boards are open in Aseprite and were checked at original
   resolution after the F2 junction repair; no clipping, seam, label defect, or
   fake paired-foot island remains.
-- Required next action: publish this exact bounded lane and reconcile the
-  resulting checkpoint. Approval does not authorize later Naga roles/motion,
-  Merfolk, Birdfolk, registration, effects, integration, or release.
+- Required next action: stop and wait. Approval does not authorize later Naga
+  roles/motion, Merfolk, Birdfolk, registration, effects, integration, release,
+  or broader EN-E04 work.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

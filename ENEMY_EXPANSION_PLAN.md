@@ -187,7 +187,8 @@ EN-E03 art at `d9cb0faa3dff204106598876fe38db5f4ee3237a`. After the clean handof
 reconciliation, the designer said `Let's do next`. EN-E04 lists Naga
 priority-first, so only the common Coilguard Idle F1-F2 gate was activated
 across four directions. The designer approved both exact paired GIFs on
-2026-08-08; bounded publication is now required.
+2026-08-08; bounded publication is complete at
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`.
 
 ## Intake Assessment
 
@@ -244,9 +245,10 @@ export side lane is approved without changing EN-E03 art or registration.
 Storm-Clan Jarl, Sun Lancer, Banner Khan Idle/grouped motion, Reed Charmer
 Idle/grouped motion, and Wildwood Hornlord Idle/grouped motion are approved and
 published internally. EN-E03 is no longer the active art lane. EN-E04 Naga
-Coilguard common Idle F1-F2 is visually approved and awaiting bounded
-publication. Its later roles, later motion, Merfolk, Birdfolk, registration,
-consumer work, effects, release, and subsequent gates remain unauthorized.
+Coilguard common Idle F1-F2 is visually approved and published internally at
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. No art gate is active. Later Naga
+roles/motion, Merfolk, Birdfolk, registration, consumer work, effects, release,
+and subsequent gates remain unauthorized.
 
 ## Non-Negotiable Production Contract
 
@@ -1749,7 +1751,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `approved-publication-pending`
+- Status: `paused`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1764,8 +1766,8 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 #### Naga Coilguard common Idle approved
 
-- Gate ID: `en-e04-naga-idle-v1`; status: `approved`, internal, non-public, and
-  awaiting bounded publication.
+- Gate ID: `en-e04-naga-idle-v1`; status: `approved`, internal, non-public,
+  committed, and pushed.
 - Authorization: after Wildwood Hornlord complete motion was approved,
   published, and reconciled, the designer said `Let's do next` on 2026-08-08.
   The EN-E04 priority order bounds that continuation to Naga first; Codex
@@ -1800,9 +1802,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Post-approval full `npm.cmd run check` passes in `241s`, including all 232 public PNG
   sheets. Both exact frozen boards were opened in Aseprite at original
   resolution after the F2 junction repair.
-- Required next action: commit and push only this exact approved lane, then
-  reconcile the published checkpoint. Do not start later roles/motion, advance
-  to Merfolk/Birdfolk, register, integrate, add effects, or release first.
+- Publication is complete at approved implementation checkpoint
+  `bd920c206d692bcc5e7b043614dcf6a03db2174c`.
+- Required next action: stop and wait. Do not start later roles/motion, advance
+  to Merfolk/Birdfolk, register, integrate, add effects, release, or broaden
+  EN-E04 without separate explicit authorization.
 
 ### EN-E05 - Undead humanoids
 
@@ -2149,6 +2153,7 @@ message activates only the isolated Wildwood complete-motion art gate. Its
 `d9cb0faa3dff204106598876fe38db5f4ee3237a`. The later `Let's do next` message
 activates only EN-E04 Naga Coilguard common Idle F1-F2. Its eight-frame paired
 candidate passes focused and full validation, and the designer approved both
-exact GIFs with `Approved` on 2026-08-08. Bounded publication is authorized;
-later roles/motion, Merfolk, Birdfolk, registration, integration, effects,
-release, and broader work remain unauthorized.
+exact GIFs with `Approved` on 2026-08-08. Bounded publication is complete at
+`bd920c206d692bcc5e7b043614dcf6a03db2174c`. No art gate is active; later
+roles/motion, Merfolk, Birdfolk, registration, integration, effects, release,
+and broader work remain unauthorized.
