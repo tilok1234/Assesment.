@@ -473,6 +473,21 @@ side-eye pixels were repaired to coral red, internal, and non-public. Bounded
 publication of the exact ten-file lane is complete at
 `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`. Merfolk elite, Birdfolk,
 registration, integration, effects, release, and broader work remain gated.
+The designer then said `lets do next`; that continuation activates exactly one
+complete Merfolk elite on `codex/en-e04-merfolk-pearl-regent`. Pearl Regent
+delegates all 80 approved Reefcaller motion frames, preserves tail rows 16-23,
+and adds a connected pearl-and-gold diadem, broad shell pauldrons,
+deep-crimson royal mantle, nacre breastplate, luminous regalia marks, and twin
+coral-red side eyes while keeping royal tide effects external. Its exact raw
+plus Complete B + Form boards/GIFs and 80-frame digest are hash-frozen; the
+focused gate, all seven protected predecessors, and fast/full repository gates
+pass with all 232 public sheets unchanged. Gate
+`en-e04-merfolk-pearl-regent-full-v1` is visually `approved`, internal, and
+non-public. The designer reviewed the exact hash-frozen raw plus Complete B +
+Form pair with both visible side-eye pixels coral-red and said `approved` on
+2026-08-09; bounded publication of the exact ten-file lane is authorized.
+Birdfolk, additional Merfolk variants, registration, integration, effects,
+release, and broader work remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

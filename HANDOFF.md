@@ -15,7 +15,73 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Merfolk Reefcaller Approved And Published
+## Immediate Continuation Checkpoint - Merfolk Pearl Regent Approved, Publication Authorized
+
+Start here in a new task. After approving, publishing, and reconciling the
+complete Merfolk Reefcaller, the designer said `lets do next` on 2026-08-09.
+EN-E04 advances through Merfolk common, specialist, and elite before Birdfolk;
+Codex bounded this continuation to one complete 80-frame Merfolk Pearl Regent
+elite enemy only.
+The designer reviewed the exact hash-frozen raw/no-outline and Complete B +
+Form pair with both visible side-eye pixels coral-red and said `approved` on
+2026-08-09.
+
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-merfolk-pearl-regent`, based exactly on clean Reefcaller handoff
+  `e54807be33020d23ab0ff5b32938804bd83fcbb5`; the approved Reefcaller
+  implementation remains frozen at
+  `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`.
+- Gate: `en-e04-merfolk-pearl-regent-full-v1`; status
+  `approved`, internal, non-public, with bounded publication of this exact
+  ten-file lane authorized. Generated review artifacts remain ignored.
+- Scope: one elite Pearl Regent and 80 frames across Down, Left, Right, and Up:
+  Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack
+  aliases, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Source/anatomy: every frame delegates approved Reefcaller full-body motion.
+  Tail rows 16-23 remain byte-exact in all `80/80` frames; every lower row
+  stays continuous and ends in the approved single broad connected fluke.
+- Elite identity: a connected pearl-and-gold diadem, broad shell pauldrons,
+  deep-crimson royal mantle, nacre breastplate, luminous aqua regalia marks,
+  and twin coral-red side eyes distinguish Pearl Regent. Crown rise/recoil
+  braces at the one-cell ceiling; both side-eye pixels remain red in all 36
+  colored Left/Right frames (`72/72` eye pixels).
+- Effects/exclusions: royal tide auras, command rings, pearl flares, current
+  spirals, coral growth, water bolts, foam, splashes, undertow rings, and
+  impacts remain external. Birdfolk, additional Merfolk variants, new
+  Cast/Death pixels, registration, consumers, integration, effects, release,
+  and broader EN-E04 work remain outside.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e04-merfolk-pearl-regent`; it
+  reproduces paired raw/no-outline and Complete B + Form `1428x760` boards plus
+  exact labeled `640x672`, four-phase, `720ms` looping GIFs.
+- Focused command:
+  `npm.cmd run check:enemy-expansion-en-e04-merfolk-pearl-regent`.
+- Raw / Complete B + Form board SHA-256 values:
+  `cfbab3f4d9c45a2c61d1e0109f5f55a7f05e3b7831d9374fd6ea93ddfc6821ef` /
+  `5ca9014b4308a7fcaaa33a960d12774ff9edc3df525dc8a703e6563833b2cc1f`.
+- Raw / Complete B + Form GIF SHA-256 values:
+  `835e00665636bef438d369092c67450512bf4340bb632db1b1cbb38e38a3db88` /
+  `a85744e15763d935d6f2d31113249eaf849bf63f4e1252975a06b192afd563c0`.
+- Candidate 80-frame digest:
+  `30f2e8e40db3fc39b60351c350d58e841a4f2a87d7f57e914ea86a60375cd0b6`.
+- Focused validation passes: suite `80/80`; connected silhouettes `80/80`;
+  hard-alpha frames `80/80`; continuous fused-tail rows `640/640`; broad
+  connected flukes `80/80`; approved Reefcaller tail locks `80/80`; exact side
+  mirrors `20/20`; both coral-red side eyes `36/36` (`72/72` eye pixels); Cast
+  aliases `16/16`; Death aliases `16/16`; opaque range 173-228; 8,302
+  elite-changed pixels; 7,320 Complete B additions; 7,819 Form changes; public
+  EN-E04 families `0`.
+- All seven protected predecessor gates and the v2 fast gate pass. Full
+  `npm.cmd run check` passes in `115.1s` with all 232 public PNG sheets
+  unchanged.
+- Required next action: commit and push only this exact approved ten-file lane,
+  then reconcile its publication checkpoint in these docs. Do not begin
+  Birdfolk, register, integrate, add effects, release, or broaden EN-E04.
+
+The approved preceding Reefcaller checkpoint follows for provenance.
+
+## Approved Source Checkpoint - Merfolk Reefcaller Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the
 complete Merfolk Tideguard, the designer said `lets do next` on 2026-08-09.

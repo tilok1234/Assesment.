@@ -1050,6 +1050,31 @@ on 2026-08-09; bounded publication of this exact ten-file lane is complete at
 `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`. Merfolk elite, Birdfolk,
 registration, integration, effects, release, and broader work remain outside.
 
+The isolated `engine/enemy-expansion-en-e04-merfolk-pearl-regent.js` module
+owns the next authorized Merfolk elite without modifying the approved
+Reefcaller source or public facade. It delegates each standard frame to the
+Reefcaller renderer, then applies one direction-aware connected royal overlay
+through the same motion transforms. The overlay adds a pearl-and-gold diadem,
+broad shell pauldrons, deep-crimson mantle, nacre breastplate, luminous regalia
+marks, and twin coral-red side eyes. Its vertical transform braces at the
+one-cell crown ceiling. Tail rows 16-23 therefore remain byte-exact across all
+80 frames. Cast and Death retain exact Attack/Hurt aliases, including the
+complete-silhouette white flash, while all royal tide effects stay external.
+
+Gate `en-e04-merfolk-pearl-regent-full-v1` is hash-frozen, technically
+validated, visually `approved`, internal, and non-public on
+`codex/en-e04-merfolk-pearl-regent`. Its lane-local registry contains only elite
+Pearl Regent and remains absent from `sprite-engine.js`. Frozen `1428x760`
+boards, `640x672` paired four-phase GIFs, an 80-frame digest, connected
+silhouettes, exact Reefcaller tail locks, mirrors/aliases, 72/72 coral-red side
+eye pixels, Complete B/Form presentation, external effects, and zero public
+exposure define the gate. All seven protected predecessor gates and fast/full
+validation pass with all 232 public sheets unchanged. The designer reviewed the
+exact hash-frozen raw and Complete B + Form pair with both visible side-eye
+pixels coral-red and said `approved` on 2026-08-09; bounded publication of this
+exact ten-file lane is authorized. Birdfolk, additional Merfolk variants,
+registration, integration, effects, release, and broader work remain outside.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

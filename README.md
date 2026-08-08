@@ -709,6 +709,37 @@ publication of this exact ten-file lane is complete at
 `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`. Merfolk elite, Birdfolk,
 registration, integration, effects, release, and broader work remain outside.
 
+## Merfolk Pearl Regent full elite approved; publication authorized
+
+Branch `codex/en-e04-merfolk-pearl-regent` owns the next isolated full-enemy
+slice, based exactly on clean Reefcaller handoff `e54807b`. It contains one
+internal, non-public Merfolk elite: Pearl Regent, with all 80 standard
+Idle/Walk/Attack/Cast/Hurt/Death frames across four directions. Every frame
+delegates approved Reefcaller motion and preserves tail rows 16-23 exactly.
+A connected pearl-and-gold diadem, broad shell pauldrons, deep-crimson royal
+mantle, nacre breastplate, luminous aqua regalia marks, and twin coral-red side
+eyes distinguish the elite while all royal tide effects remain external.
+
+Run `npm.cmd run review:enemy-expansion-en-e04-merfolk-pearl-regent` to
+reproduce paired raw/no-outline and Complete B + Form `1428x760` boards and
+labeled `640x672`, four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e04-merfolk-pearl-regent` to verify the
+frozen 80-frame digest, 80 connected hard-alpha silhouettes, 640 continuous
+tail rows, 80 approved Reefcaller tail locks, 20 exact side mirrors, exact
+Cast/Death aliases, both red side-eye pixels in 36/36 colored side frames,
+bounded presentation changes, external effects, and zero public exposure. The
+frozen digest is
+`30f2e8e40db3fc39b60351c350d58e841a4f2a87d7f57e914ea86a60375cd0b6`.
+All seven protected predecessor gates, the fast gate, and full
+`npm.cmd run check` pass with all 232 public PNG sheets unchanged.
+
+Gate `en-e04-merfolk-pearl-regent-full-v1` is `approved`: the designer reviewed
+the exact hash-frozen raw plus Complete B + Form GIF pair with both visible
+side-eye pixels coral-red and said `approved` on 2026-08-09. Bounded
+publication of this exact ten-file lane is authorized. Birdfolk, additional
+Merfolk variants, registration, integration, effects, release, and broader
+work remain outside.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge
