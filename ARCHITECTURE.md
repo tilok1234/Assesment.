@@ -917,10 +917,11 @@ The accompanying 80-frame review/check boundary freezes paired raw and Complete
 B + Form evidence, exact side mirrors, all 640 single-run lower-body rows,
 external effects, and zero facade/public exposure. This module remains an
 internal, non-public boundary; the designer approved both exact paired review
-presentations on 2026-08-08, authorizing only bounded publication. It passes the
-focused, fast, and full repository gates without changing any of the 232 public
-sheets. Approval does not authorize another role, family, registration,
-consumer integration, effects, or release.
+presentations on 2026-08-08. The bounded implementation is committed and pushed
+at `f47e1691208236f5d245a1f3b9b15355ad479790`. It passes the focused, fast, and
+full repository gates without changing any of the 232 public sheets. Approval
+and publication do not authorize another role, family, registration, consumer
+integration, effects, or release.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

@@ -10,25 +10,29 @@ This checkout is the current v2 repository at
 `C:\tmp\8-bit-sprite-assembler-*` paths below are historical provenance only;
 do not recreate or treat them as live workspaces. `CLAUDE.md` and the
 repo-local `add-enemy` runbook define the current authoring and verification
-workflow. The approved EN-E04 source checkpoint remains
-`codex/en-e04-naga-idle` at `26151e1`; new work proceeds on an isolated
-continuation branch without rewriting that checkpoint.
+workflow. The approved EN-E04 Idle source remains
+`codex/en-e04-naga-idle` at `26151e1`; the approved motion continuation is
+published separately on `codex/en-e04-naga-motion` without rewriting that
+baseline.
 
-## Immediate Continuation Checkpoint - Naga Coilguard Motion Approved
+## Immediate Continuation Checkpoint - Naga Coilguard Motion Approved And Published
 
 Start here in a new task. The approved Coilguard Idle baseline remains frozen at
 `bd920c206d692bcc5e7b043614dcf6a03db2174c`. On the isolated continuation
 branch `codex/en-e04-naga-motion`, the complete Coilguard motion suite is now a
-visually approved internal/non-public lane. The approval authorizes only its
-bounded publication; it does not authorize registration or consumer exposure.
+visually approved internal/non-public lane published at
+`f47e1691208236f5d245a1f3b9b15355ad479790`. Approval and publication do not
+authorize registration or consumer exposure.
 
 - Repository/branch: current v2 checkout
   `C:\Users\headc\Documents\sprite-assembler-v2` on
   `codex/en-e04-naga-motion`. The approved source branch remains
   `codex/en-e04-naga-idle` at `26151e1`; v2 workflow integration is preserved in
-  local checkpoint `a81d324`.
+  checkpoint `a81d324`, and the approved motion implementation checkpoint is
+  `f47e1691208236f5d245a1f3b9b15355ad479790`. The branch tracks its matching
+  origin branch.
 - Gate: `en-e04-naga-coilguard-motion-v1`, status
-  `approved`, internal and non-public.
+  `approved`, internal, non-public, committed, and pushed.
 - Authorization evidence: the designer explicitly asked Codex to check out
   `codex/en-e04-naga-idle` and continue the enemy-expansion lane, then clarified
   that `tilok1234/Assesment` is the current v2 repository. This activates one
@@ -69,9 +73,9 @@ bounded publication; it does not authorize registration or consumer exposure.
 - Exact board inspection: both hash-frozen boards were inspected directly and
   opened in Aseprite at original resolution. The four synchronized phases read
   distinctly across all directions without clipping, seams, or fake feet.
-- Required next action: create and push only the bounded approved checkpoint,
-  reconcile this handoff with its exact commit, then stop. Do not register,
-  integrate, add effects, release, or start another role/family.
+- Required next action: stop and wait. Do not register, integrate, add effects,
+  release, start another role/family, or broaden EN-E04 without a separate
+  explicit continuation.
 
 The approved source evidence remains in
 [Naga Coilguard Idle Approved](#naga-coilguard-idle-approved).

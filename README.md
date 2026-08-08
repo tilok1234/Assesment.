@@ -547,8 +547,10 @@ boards were opened in Aseprite at original resolution.
 
 The designer reviewed both exact paired presentations together and said
 `approved` on 2026-08-08. Gate `en-e04-naga-coilguard-motion-v1` is now
-`approved`; only bounded publication is authorized. Registration, integration,
-effects, release, other roles/families, and broader EN-E04 work remain gated.
+`approved`; the internal implementation is committed and pushed at
+`f47e1691208236f5d245a1f3b9b15355ad479790`. No art gate is active.
+Registration, integration, effects, release, other roles/families, and broader
+EN-E04 work remain gated.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

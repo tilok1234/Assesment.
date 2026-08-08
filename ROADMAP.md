@@ -408,9 +408,10 @@ Idle pixels, adds four planted Walk and Attack phases plus two Hurt phases, and
 uses exact Cast/Death aliases across four directions. Focused, cleaned v2 fast,
 and full validation pass with all 232 public sheets unchanged; both frozen
 boards were opened in Aseprite. The designer reviewed both exact paired GIFs and
-said `approved` on 2026-08-08, authorizing only the bounded Coilguard publication
-checkpoint. Venom Oracle, Temple Rajah, Merfolk, Birdfolk, registration,
-integration, effects, release, and later gates remain gated.
+said `approved` on 2026-08-08. The bounded Coilguard implementation is committed
+and pushed at `f47e1691208236f5d245a1f3b9b15355ad479790`; no art gate is active.
+Venom Oracle, Temple Rajah, Merfolk, Birdfolk, registration, integration,
+effects, release, and later gates remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

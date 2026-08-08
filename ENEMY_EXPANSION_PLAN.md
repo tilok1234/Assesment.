@@ -232,9 +232,10 @@ published internally. EN-E03 is no longer the active art lane. EN-E04 Naga
 Coilguard common Idle F1-F2 is visually approved and published internally at
 `bd920c206d692bcc5e7b043614dcf6a03db2174c`. The explicitly continued,
 isolated Coilguard complete-motion suite is visually approved as an internal,
-non-public lane; only its bounded publication is authorized. Venom Oracle,
-Temple Rajah, Merfolk, Birdfolk, registration, consumer work, effects, release,
-and subsequent gates remain unauthorized.
+non-public lane and published at
+`f47e1691208236f5d245a1f3b9b15355ad479790`. No art gate is active. Venom
+Oracle, Temple Rajah, Merfolk, Birdfolk, registration, consumer work, effects,
+release, and subsequent gates remain unauthorized.
 
 ## Non-Negotiable Production Contract
 
@@ -1737,7 +1738,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `approved - Coilguard complete-motion bounded publication pending`
+- Status: `paused - Coilguard complete motion approved and published`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1798,10 +1799,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 #### Naga Coilguard complete motion approved
 
 - Gate ID: `en-e04-naga-coilguard-motion-v1`; status:
-  `approved`, internal and non-public; bounded publication is authorized.
+  `approved`, internal, non-public, committed, and pushed.
 - Live branch: `codex/en-e04-naga-motion` in the current v2 checkout. Approved
-  source `codex/en-e04-naga-idle` remains frozen at `26151e1`; local checkpoint
-  `a81d324` contains only the v2 workflow integration.
+  source `codex/en-e04-naga-idle` remains frozen at `26151e1`; checkpoint
+  `a81d324` contains only the v2 workflow integration, and the branch tracks its
+  matching origin branch.
 - Authorization: the designer explicitly asked Codex to check out the approved
   Naga Idle branch and continue the enemy-expansion lane, then identified
   `tilok1234/Assesment` as the current v2 repository. This activates one complete
@@ -1835,10 +1837,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Exclusions: approved Idle pixel changes, Venom Oracle, Temple Rajah, Merfolk,
   Birdfolk, new Cast/Death pixels, baked venom/miasma/coil-impact pixels,
   registration, consumers, effects, release, and later EN-E04 work.
-- Required next action: commit and push only this bounded approved suite,
-  reconcile the exact publication checkpoint, then stop. Registration,
-  integration, effects, release, another role/family, and broader EN-E04 work
-  remain unauthorized.
+- Publication is complete at approved implementation checkpoint
+  `f47e1691208236f5d245a1f3b9b15355ad479790`.
+- Required next action: stop and wait. Registration, integration, effects,
+  release, another role/family, and broader EN-E04 work remain unauthorized
+  without separate explicit continuation.
 
 ### EN-E05 - Undead humanoids
 
@@ -2190,5 +2193,7 @@ exact GIFs with `Approved` on 2026-08-08. Bounded publication is complete at
 continue request activates only the isolated Coilguard complete-motion gate.
 Its hash-frozen 80-frame paired suite passes focused, fast, and full validation;
 the designer approved both exact presentations on 2026-08-08, authorizing only
-bounded publication. Other roles, Merfolk, Birdfolk, registration, integration,
-effects, release, and broader work remain unauthorized.
+bounded publication. Publication is complete at
+`f47e1691208236f5d245a1f3b9b15355ad479790`; no art gate is active. Other roles,
+Merfolk, Birdfolk, registration, integration, effects, release, and broader work
+remain unauthorized.
