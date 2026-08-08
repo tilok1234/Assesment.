@@ -53,8 +53,11 @@ sheet builder is browser-DOM-bound and hardcodes the current 20-column contract
 the app UI, hand-cropping 1920→1152, and hand-editing the 32KB manifest in exact catalog order.
 
 **Fixed here:** `tools/export-enemy-fixtures.mjs` renders any variant headlessly to the exact
-legacy contract — validated **pixel-identical** against the committed corpus — and regenerates
-`manifest.json` from `engine/catalogs/enemies.js`. `--verify` doubles as a drift detector.
+legacy contract — validated **pixel-identical** against the non-drifted committed corpus — and
+regenerates `manifest.json` from `engine/catalogs/enemies.js` when its content actually changes.
+`--verify` doubles as a drift detector, up-to-date fixtures are left byte-untouched, and
+overwriting a stale published fixture requires an explicit `--accept-drift` (adversarially
+reviewed: the first version would have let the documented runbook silently rewrite published art).
 
 ### 3. Discovered along the way: 166 of 202 published fixtures are stale
 

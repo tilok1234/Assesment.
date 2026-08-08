@@ -957,7 +957,11 @@ const completeKitPaths = [
   ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 2139, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === completeKitPaths.length, 'every Complete Character Kit PNG path must be unique');
+check(
+  completeKitPaths.length === 1912 + catalogEnemyVariantCount + 24 + 1,
+  'the Complete Character Kit path list must cover every component, enemy sheet, effect, and the reference preview',
+);
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 const lanternKitPlan = characterKit.buildCompleteCharacterKitPlan([{
   id: 'lantern-bearer',

@@ -45,8 +45,11 @@ on the designer's machine; `check:bosses:strict` enforces it there).
 ## Add an enemy variant (~5 min)
 
 1. Add one variant line under the family in `engine/catalogs/enemies.js`.
-2. `npm run export:fixtures -- --family <family>` — renders the legacy fixture
-   PNG(s) and regenerates `asset-pack/manifest.json` from the catalog.
+2. `npm run export:fixtures -- --family <family> --variant <new-id>` — renders
+   the new fixture PNG and updates `asset-pack/manifest.json` from the catalog.
+   (The exporter never overwrites existing published fixtures whose pixels
+   differ from the current engine; that needs `--accept-drift`, which is a
+   designer decision — see Known state.)
 3. `npm run check:fast`. Done. (Golden counts derive from the catalog now.)
 
 ## Add an enemy family
@@ -85,6 +88,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   only on the ORIGINAL repo's codex/* branches, not here.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
-  lists them; regenerating is a designer decision (downstream repos consume the pack).
+  lists them. The exporter refuses to overwrite them without `--accept-drift`;
+  regenerating is a designer decision (downstream repos consume the pack) —
+  never pass `--accept-drift` on your own initiative.
 - `review:outlines` is stale (expects 240/720 cases, actual 400/1200) — do not
   trust its 31 errors until its counts and baseline hashes are recaptured.
