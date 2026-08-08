@@ -389,6 +389,19 @@ passes with all 232 validated PNG sheets unchanged. The designer reviewed both
 exact paired GIFs and said `Approved` on 2026-08-08; the bounded implementation
 is committed and pushed at `d9cb0faa3dff204106598876fe38db5f4ee3237a`.
 Registration, integration, effects, release, and later work stay gated.
+After that clean publication was reconciled, `Let's do next` activated EN-E04
+Naga priority-first. The approved isolated lane is deliberately
+small because it establishes new anatomy: Coilguard common Idle F1-F2 only,
+across all four directions. Its custom cobra hood and continuous belly-plated
+serpent coil replace the complete humanoid lower body; every lower-body row is
+one connected run and no side pose fakes paired feet. F2 settles the upper body
+and compresses the grounded coil. The exact paired raw and Complete B + Form
+boards/GIFs are frozen, the focused eight-frame gate passes, both boards were
+opened in Aseprite, and post-approval full validation passes in `241s` with all 232 public
+PNG sheets unchanged. The designer reviewed both exact paired GIFs and said
+`Approved` on 2026-08-08; Coilguard now awaits bounded publication. Venom
+Oracle, Temple Rajah, later Naga motion, Merfolk, Birdfolk, registration,
+integration, effects, release, and later gates remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

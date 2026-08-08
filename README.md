@@ -492,6 +492,32 @@ The internal, non-public implementation is committed and pushed at
 `d9cb0faa3dff204106598876fe38db5f4ee3237a`. Registration, integration, effects,
 release, and later work remain unauthorized.
 
+## Naga Coilguard common Idle approved
+
+After the approved Wildwood Hornlord suite was published and reconciled, the
+designer said `Let's do next`. EN-E04 lists Naga priority-first, so the isolated
+candidate implements only Coilguard common Idle F1-F2 across Down, Left, Right,
+and Up. Run `npm.cmd run review:enemy-expansion-en-e04-naga-idle` to reproduce
+the exact raw/no-outline and Complete B + Form `1548x420` boards and paired
+labeled `192x224`, two-frame GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e04-naga-idle` to verify all eight
+connected hard-alpha frames, 64 continuous lower-body scanlines, broad
+single-coil ground contacts, exact side mirrors, the cobra-hood/belly-plate
+identity, frozen hashes, external venom/miasma/coil-impact effects, and zero
+public exposure.
+
+The F2 breathing pose lowers the hood and torso one row and compresses the
+direction-aware serpent coil without introducing ordinary legs, paired feet,
+or a body-to-tail seam. Coilguard is the only implemented role; Venom Oracle
+specialist and Temple Rajah elite remain plan entries only, while Merfolk and
+Birdfolk are untouched. The focused gate passes, and post-approval full
+`npm.cmd run check` passes in `241s` with all 232 public PNG sheets unchanged. Both exact frozen
+boards were opened in Aseprite at original resolution. The designer reviewed
+both exact paired GIFs together and said `Approved` on 2026-08-08. This
+internal, non-public lane now awaits bounded publication under the standing
+approval rule; later roles/motion, registration, integration, effects, release,
+and broader EN-E04 work remain unauthorized.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge

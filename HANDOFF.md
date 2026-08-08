@@ -2,11 +2,80 @@
 
 Date: 2026-08-08
 
-## Immediate Continuation Checkpoint - Approved Wildwood Hornlord Complete Motion
+## Immediate Continuation Checkpoint - Naga Coilguard Idle Approved
+
+Start here in a new task. The first EN-E04 Naga anatomy baseline is visually
+approved and technically complete. Bounded publication is now required under
+the standing approval-publication contract. It contains only Coilguard common
+Idle F1-F2 across Down, Left, Right, and Up.
+
+- Live checkout:
+  `C:\tmp\8-bit-sprite-assembler-en-e04-naga-idle` on local branch
+  `codex/en-e04-naga-idle`, based exactly on clean published Wildwood Hornlord
+  handoff `8c4edba3fa9460d1afdd4409239f35c6078a7534` and approved implementation
+  `d9cb0faa3dff204106598876fe38db5f4ee3237a`.
+- Git state intentionally contains the approved, not-yet-published lane. The
+  bounded source/tool files are `engine/enemy-expansion-en-e04-naga-idle.js`,
+  `tools/enemy-expansion-en-e04-naga-idle-review.mjs`,
+  `tools/build-enemy-expansion-en-e04-naga-idle-gifs.py`, and
+  `tools/check-enemy-expansion-en-e04-naga-idle.mjs`, plus package and five-doc
+  reconciliation changes. Review artifacts and the copied checkpoint corpus
+  remain ignored support evidence.
+- Gate: `en-e04-naga-idle-v1`, status `approved`, internal and non-public.
+- Authorization evidence: after the exact Wildwood Hornlord complete-motion
+  lane was approved, published, and reconciled, the designer said `Let's do
+  next`. The documented EN-E04 priority order starts with Naga, so Codex bounded
+  this continuation to one common Coilguard Idle pair only.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form Coilguard Idle GIFs together and said
+  `Approved` on 2026-08-08.
+- Contract card: Coilguard is the active common role; Venom Oracle specialist
+  and Temple Rajah elite are recorded as planned names only and have no renderer
+  exposure.
+- Anatomy and motion: a jade cobra hood, amber eyes, bronze torque, temple
+  cloth, belly plates, and one continuous direction-aware serpent body replace
+  the inherited humanoid lower body. F2 settles the hood/torso one row and
+  compresses the planted coil. Every lower-body row remains one connected run;
+  no side frame contains paired legs, feet, or detached foot-like islands.
+- Scope exclusions: Venom Oracle, Temple Rajah, Merfolk, Birdfolk,
+  Walk/Attack/Cast/Hurt/Death, baked venom/miasma/coil-impact pixels,
+  registration, consumers, effects, release, and later EN-E04 work.
+- Review command: `npm.cmd run review:enemy-expansion-en-e04-naga-idle`; it
+  creates paired raw/no-outline and Complete B + Form `1548x420` boards plus two
+  exact labeled `192x224`, two-frame, `480ms` looping GIFs.
+- Raw / Complete B + Form board SHA-256 values:
+  `14edaceb75bce787da88b065ac435e611dd3b03b1eaf07320f0f6b476021c211` /
+  `d4af682862093704497f285e4163e5e7b36a056fadd16e5079a4dd89b4f63bc0`.
+- Raw / Complete B + Form GIF SHA-256 values:
+  `70a85f3ab1b94b6207acb161d2a2de93e4ec925748c399b2c1ce6a0075db69ea` /
+  `ded49cd18d9706c741315ec61b9a219012e4e39d50618a79b60ea91bc592528b`.
+- Eight-frame candidate digest:
+  `037ed99a5c9d126d175fe3339fdb9f6443e092d0c0faf6bea6aa5f5c8a72c128`.
+- Focused validation passes: candidate `8/8`; connected hard-alpha silhouettes
+  `8/8`; continuous lower-body rows `64/64`; broad single-coil contacts `8/8`;
+  side mirrors `4/4`; F1/F2 changed alpha pixels `158`; opaque range 176-205;
+  764 Complete B additions; 1,172 Form changes; baked effects `0`; public
+  EN-E04 families `0`.
+- The complete ignored Boss checkpoint corpus contains 1,222 files. Full
+  post-approval repository validation passes in `241s`, including all 232 validated PNG
+  sheets.
+- Exact board inspection: both frozen PNGs were opened in Aseprite and checked
+  at original resolution. The repaired F2 body-to-tail junction is continuous;
+  no clipping, label defect, seam, or fake paired-foot island remains.
+- Required next action: commit and push only this approved bounded lane, then
+  reconcile the exact implementation and handoff checkpoints. Do not begin
+  another role/family, register, integrate, add effects, or release first.
+
+The detailed current evidence is in
+[Naga Coilguard Idle Approved](#naga-coilguard-idle-approved).
+
+## Previous Checkpoint - Approved Wildwood Hornlord Complete Motion
 
 Start here in a new task. Wildwood Hornlord Walk/Attack/Hurt/Cast/Death across
 Down, Left, Right, and Up is visually approved and published internally at
-`d9cb0faa3dff204106598876fe38db5f4ee3237a`. No art gate is active or authorized.
+`d9cb0faa3dff204106598876fe38db5f4ee3237a`. At that published checkpoint no
+later art gate was active; the separately authorized Naga gate above supersedes
+that continuation state.
 
 - Live checkout:
   `C:\tmp\8-bit-sprite-assembler-en-e03-wildwood-hornlord-motion` on branch
@@ -1614,6 +1683,54 @@ release, and later work remain separately gated.
 - Required next action: stop and wait. Do not register, integrate, add effects,
   release, start another variant, or begin later work without a separate
   explicit continuation.
+
+### Naga Coilguard Idle Approved
+
+- Gate ID: `en-e04-naga-idle-v1`; status: `approved`, internal, non-public,
+  and awaiting bounded publication.
+- Authorization evidence: after the Wildwood Hornlord complete-motion lane was
+  approved, published, and reconciled, the designer said `Let's do next` on
+  2026-08-08. EN-E04 names Naga priority-first; this gate is bounded to the
+  common Coilguard Idle F1-F2 pair across four directions.
+- Isolated branch/worktree: `codex/en-e04-naga-idle` at
+  `C:\tmp\8-bit-sprite-assembler-en-e04-naga-idle`, based exactly on clean
+  published Wildwood handoff `8c4edba3fa9460d1afdd4409239f35c6078a7534`.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form Coilguard Idle GIFs together and said
+  `Approved` on 2026-08-08.
+- Role contract: Coilguard common is implemented only for this acceptance pair;
+  Venom Oracle specialist and Temple Rajah elite are names/plans only. Merfolk
+  and Birdfolk remain untouched.
+- Anatomy contract: the humanoid upper-body foundation flows into a custom
+  cobra hood and a single belly-plated serpent tail. Each lower-body scanline
+  contains one continuous run through a broad ground coil and tapered tip;
+  ordinary legs, paired feet, and detached foot-like islands are forbidden.
+- Motion contract: F2 settles the hood and torso one row and compresses/shifts
+  the coil without losing the planted ground contact. Venom spit, miasma,
+  coil-impact, and all other effects remain external.
+- Review command: `npm.cmd run review:enemy-expansion-en-e04-naga-idle`; it
+  generates raw and Complete B + Form `1548x420` boards and exact paired
+  `192x224`, two-frame, `480ms` labeled GIFs.
+- Raw / Complete B + Form board SHA-256 values:
+  `14edaceb75bce787da88b065ac435e611dd3b03b1eaf07320f0f6b476021c211` /
+  `d4af682862093704497f285e4163e5e7b36a056fadd16e5079a4dd89b4f63bc0`.
+- Raw / Complete B + Form GIF SHA-256 values:
+  `70a85f3ab1b94b6207acb161d2a2de93e4ec925748c399b2c1ce6a0075db69ea` /
+  `ded49cd18d9706c741315ec61b9a219012e4e39d50618a79b60ea91bc592528b`.
+- Candidate eight-frame digest:
+  `037ed99a5c9d126d175fe3339fdb9f6443e092d0c0faf6bea6aa5f5c8a72c128`.
+- Focused gate: candidate `8/8`, connected silhouettes `8/8`, continuous
+  lower-body rows `64/64`, single broad coils `8/8`, side mirrors `4/4`, 158
+  changed-alpha pixels, opaque range 176-205, 764 Complete B additions, 1,172
+  Form changes, baked effects `0`, public EN-E04 families `0`.
+- Post-approval full `npm.cmd run check` passes in `241s`, including all 232 public PNG
+  sheets, with the complete 1,222-file ignored Boss checkpoint corpus present.
+- Both frozen boards are open in Aseprite and were checked at original
+  resolution after the F2 junction repair; no clipping, seam, label defect, or
+  fake paired-foot island remains.
+- Required next action: publish this exact bounded lane and reconcile the
+  resulting checkpoint. Approval does not authorize later Naga roles/motion,
+  Merfolk, Birdfolk, registration, effects, integration, or release.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

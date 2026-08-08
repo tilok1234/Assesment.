@@ -181,9 +181,13 @@ complete at `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. The designer then
 authorized the discussed larger slice with `Sure lets go for it one complete
 motion suite we can try atleast`. The designer approved both exact paired Reed
 Charmer complete-motion GIFs on 2026-08-08. Bounded publication is complete at
-`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`. The designer then said `Awesome
-let's do next`; following the documented Satyr role order, only Wildwood
-Hornlord elite Idle F1-F2 across four directions is active.
+`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`. Wildwood Hornlord elite Idle and
+its grouped complete-motion suite were then approved and published, ending
+EN-E03 art at `d9cb0faa3dff204106598876fe38db5f4ee3237a`. After the clean handoff
+reconciliation, the designer said `Let's do next`. EN-E04 lists Naga
+priority-first, so only the common Coilguard Idle F1-F2 gate was activated
+across four directions. The designer approved both exact paired GIFs on
+2026-08-08; bounded publication is now required.
 
 ## Intake Assessment
 
@@ -237,10 +241,12 @@ their common Cast/Death aliases are visually approved, internal, non-public,
 and published. Boulder Hurler specialist Idle F1-F2 is also visually approved,
 internal, non-public, and published. The public-roster-only three-treatment
 export side lane is approved without changing EN-E03 art or registration.
-Storm-Clan Jarl elite Idle F1-F2 is approved and published. Sun Lancer
-specialist Idle F1-F2 is the only active EN-E03 acceptance candidate; other
-family motion, variants, consumer work, effects, release, and subsequent gates
-remain unauthorized.
+Storm-Clan Jarl, Sun Lancer, Banner Khan Idle/grouped motion, Reed Charmer
+Idle/grouped motion, and Wildwood Hornlord Idle/grouped motion are approved and
+published internally. EN-E03 is no longer the active art lane. EN-E04 Naga
+Coilguard common Idle F1-F2 is visually approved and awaiting bounded
+publication. Its later roles, later motion, Merfolk, Birdfolk, registration,
+consumer work, effects, release, and subsequent gates remain unauthorized.
 
 ## Non-Negotiable Production Contract
 
@@ -1743,13 +1749,60 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `queued`
+- Status: `approved-publication-pending`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
+- Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
+
+| Family | Common | Specialist | Elite |
+| --- | --- | --- | --- |
+| Naga | Coilguard | Venom Oracle | Temple Rajah |
 
 Shared leverage: non-human lower bodies and upright equipment anchors. Naga and
 Merfolk must not fake ordinary feet in side views. Birdfolk must remain an
 upright avian person rather than collapse into the existing Harpy identity.
+
+#### Naga Coilguard common Idle approved
+
+- Gate ID: `en-e04-naga-idle-v1`; status: `approved`, internal, non-public, and
+  awaiting bounded publication.
+- Authorization: after Wildwood Hornlord complete motion was approved,
+  published, and reconciled, the designer said `Let's do next` on 2026-08-08.
+  The EN-E04 priority order bounds that continuation to Naga first; Codex
+  further bounded the first new-anatomy gate to common Coilguard Idle F1-F2.
+- Approval: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form Coilguard Idle GIFs together and said
+  `Approved` on 2026-08-08.
+- Worktree/branch: `C:\tmp\8-bit-sprite-assembler-en-e04-naga-idle` on
+  `codex/en-e04-naga-idle`, based exactly on clean published Wildwood handoff
+  `8c4edba3fa9460d1afdd4409239f35c6078a7534`.
+- Contract: a humanoid upper-body foundation flows into a jade cobra hood,
+  plated serpent body, and one continuous direction-aware ground coil. Every
+  lower-body scanline remains a single run; ordinary legs, paired feet, and
+  detached foot-like islands are forbidden.
+- Motion: F2 settles the hood/torso one row and visibly compresses the planted
+  coil without separating the body. Venom spit, miasma, coil-impact, and all
+  other effects stay external.
+- Planned only: Venom Oracle specialist and Temple Rajah elite have names and
+  briefs but no candidate renderer. Merfolk and Birdfolk remain untouched.
+- Frozen evidence: raw / Complete B + Form boards
+  `14edaceb75bce787da88b065ac435e611dd3b03b1eaf07320f0f6b476021c211` /
+  `d4af682862093704497f285e4163e5e7b36a056fadd16e5079a4dd89b4f63bc0`;
+  raw / Complete B + Form GIFs
+  `70a85f3ab1b94b6207acb161d2a2de93e4ec925748c399b2c1ce6a0075db69ea` /
+  `ded49cd18d9706c741315ec61b9a219012e4e39d50618a79b60ea91bc592528b`;
+  eight-frame digest
+  `037ed99a5c9d126d175fe3339fdb9f6443e092d0c0faf6bea6aa5f5c8a72c128`.
+- Focused gate passes all eight connected frames, all 64 lower-body continuity
+  rows, eight broad single-coil contacts, four exact side mirrors, 158 changed
+  alpha pixels, 764 Complete B additions, 1,172 Form changes, zero baked
+  effects, and zero public EN-E04 families.
+- Post-approval full `npm.cmd run check` passes in `241s`, including all 232 public PNG
+  sheets. Both exact frozen boards were opened in Aseprite at original
+  resolution after the F2 junction repair.
+- Required next action: commit and push only this exact approved lane, then
+  reconcile the published checkpoint. Do not start later roles/motion, advance
+  to Merfolk/Birdfolk, register, integrate, add effects, or release first.
 
 ### EN-E05 - Undead humanoids
 
@@ -2093,6 +2146,9 @@ Wildwood Hornlord elite Idle F1-F2 is visually approved and published at
 `aa96e170c41cbcb49c7ac1bd979114b3b5bfa7e4`. The same `Approved lets do next`
 message activates only the isolated Wildwood complete-motion art gate. Its
 80-frame paired candidate is visually approved and published at
-`d9cb0faa3dff204106598876fe38db5f4ee3237a`. No art gate is active;
-registration, integration, effects, release, and broader work remain
-unauthorized.
+`d9cb0faa3dff204106598876fe38db5f4ee3237a`. The later `Let's do next` message
+activates only EN-E04 Naga Coilguard common Idle F1-F2. Its eight-frame paired
+candidate passes focused and full validation, and the designer approved both
+exact GIFs with `Approved` on 2026-08-08. Bounded publication is authorized;
+later roles/motion, Merfolk, Birdfolk, registration, integration, effects,
+release, and broader work remain unauthorized.

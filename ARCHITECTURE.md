@@ -884,6 +884,25 @@ on 2026-08-08. The approved internal implementation is committed and pushed at
 gate. Registration, consumers, baked effects, release, and later work remain
 outside.
 
+The separate `engine/enemy-expansion-en-e04-naga-idle.js` module owns the first
+EN-E04 internal/non-public anatomy candidate. It delegates only the humanoid
+upper-body foundation, clears the full inherited lower body, and composes a
+direction-aware cobra hood plus one continuous belly-plated serpent tail and
+ground coil. Left is generated as the exact mirror of Right. F2 moves the hood
+and upper body down one row while compressing the coil; a fixed connector keeps
+the entire silhouette joined. The deeply frozen Naga contract card records
+Coilguard common as the only implemented Idle candidate and Venom Oracle /
+Temple Rajah as planned specialist/elite roles only. The dedicated focused gate
+freezes paired raw and Complete B + Form boards/GIFs, all eight frames, all 64
+lower-body continuity rows, single-run ground contacts, exact side mirrors,
+external venom/miasma/coil-impact effects, and zero facade/public exposure.
+Post-approval full repository validation passes in `241s` with all 232 public PNG sheets
+unchanged, and both exact boards were opened in Aseprite. The designer reviewed
+both exact paired GIFs and said `Approved` on 2026-08-08. The gate is approved
+and awaits bounded publication; later motion/roles, Merfolk, Birdfolk,
+registration, consumers, effects, release, and broader EN-E04 work remain
+outside this module.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct
