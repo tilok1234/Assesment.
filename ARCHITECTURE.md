@@ -1023,6 +1023,33 @@ publication of the ten-file lane is complete at
 `622b00f0c40eed552f61b30bd207b5ad8478836e`. Later Merfolk roles, Birdfolk,
 registration, integration, effects, release, and broader work remain outside.
 
+The isolated `engine/enemy-expansion-en-e04-merfolk-reefcaller.js` module owns
+the next authorized specialist without modifying the approved Tideguard source
+or public facade. It delegates each standard frame to the Tideguard renderer,
+then applies one direction-aware connected identity overlay through the same
+motion transforms. The overlay adds a branching coral crown, violet mantle,
+pearl sigil, gold clasps, and luminous fin marks; its vertical transform braces
+at a one-cell crown ceiling, and its side transform preserves both visible eye
+pixels in coral red across all 36 colored Left/Right frames. Tail rows 16-23
+therefore remain byte-exact across all 80 frames. Cast and Death retain exact
+Attack/Hurt aliases, including the complete-silhouette white flash, while all
+ritual and water effects stay external.
+
+Gate `en-e04-merfolk-reefcaller-full-v1` is hash-frozen, technically validated,
+visually `approved`, internal, and non-public on
+`codex/en-e04-merfolk-reefcaller`. Its lane-local registry contains only
+specialist Reefcaller and remains absent from `sprite-engine.js`. Frozen
+`1428x760` boards, `640x672` paired four-phase GIFs, an 80-frame digest,
+connected silhouettes, exact Tideguard tail locks, mirrors/aliases, both
+coral-red side eyes in 36/36 colored side frames (`72/72` eye pixels), Complete
+B/Form presentation, external effects, and zero public exposure define the
+gate. All six protected predecessor gates and fast/full validation pass with
+all 232 public sheets unchanged. After requiring both visible side-eye pixels
+to be coral-red, the designer reviewed the final exact pair and said `approved`
+on 2026-08-09; bounded publication of this exact ten-file lane is authorized.
+Merfolk elite, Birdfolk, registration, integration, effects, release, and
+broader work remain outside.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

@@ -458,6 +458,21 @@ visually approved, internal, and non-public. Bounded publication of the exact
 ten-file lane is complete at `622b00f0c40eed552f61b30bd207b5ad8478836e`.
 Later Merfolk roles, Birdfolk, registration, integration, effects, release,
 and broader work remain gated.
+The designer then said `lets do next`; that continuation activates exactly one
+complete Merfolk specialist on `codex/en-e04-merfolk-reefcaller`. Reefcaller
+delegates all 80 approved Tideguard motion frames, preserves tail rows 16-23,
+and adds a connected coral crown, violet reef mantle, pearl sigil, gold clasps,
+and luminous fin marks while keeping ritual/water effects external. Its
+repaired side treatment retains both visible eye pixels in coral red across all
+36 colored Left/Right frames (`72/72` eye pixels). Its exact raw plus Complete B
++ Form boards/GIFs and 80-frame digest are hash-frozen; the focused gate, all
+six protected predecessors, and fast/full repository gates pass with all 232
+public sheets unchanged. Gate
+`en-e04-merfolk-reefcaller-full-v1` is visually `approved` after both visible
+side-eye pixels were repaired to coral red, internal, and non-public, with
+bounded publication of the exact ten-file lane authorized. Merfolk elite,
+Birdfolk, registration, integration, effects, release, and broader work remain
+gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

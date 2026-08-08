@@ -15,7 +15,76 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Merfolk Tideguard Approved And Published
+## Immediate Continuation Checkpoint - Merfolk Reefcaller Approved, Publication Authorized
+
+Start here in a new task. After approving, publishing, and reconciling the
+complete Merfolk Tideguard, the designer said `lets do next` on 2026-08-09.
+EN-E04 advances through Merfolk common, specialist, and elite before Birdfolk;
+the plan did not pre-name the specialist, so Codex bounded this continuation to
+one complete 80-frame Merfolk Reefcaller specialist enemy only.
+After first identifying one missing red side-eye pixel and then the remaining
+black source-eye pixel, the designer reviewed the final regenerated raw and
+Complete B + Form pair with both visible side-eye pixels coral-red and said
+`approved` on 2026-08-09.
+
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-merfolk-reefcaller`, based exactly on clean Tideguard handoff
+  `6594b2e01bd639997ace424c6a8427ac307196b4`; the approved Tideguard
+  implementation remains frozen at
+  `622b00f0c40eed552f61b30bd207b5ad8478836e`.
+- Gate: `en-e04-merfolk-reefcaller-full-v1`; status
+  `approved`, internal, non-public, with bounded publication of this exact
+  ten-file lane authorized. Generated review artifacts remain ignored.
+- Scope: one specialist Reefcaller and 80 frames across Down, Left, Right, and
+  Up: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact
+  Cast-to-Attack aliases, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Source/anatomy: every frame delegates approved Tideguard full-body motion.
+  Tail rows 16-23 remain byte-exact in all `80/80` frames; every lower row
+  stays continuous and ends in the approved single broad connected fluke.
+- Specialist identity: a connected branching coral crown, violet reef mantle,
+  pearl chest/crown sigil, gold shell clasps, luminous aqua fin marks, and the
+  approved sea-green tail distinguish Reefcaller. Tall-crown rise/recoil
+  braces at the one-cell ceiling after the pre-freeze edge-contact repair. The
+  side-eye repair keeps both visible eye pixels coral-red in all 36 colored
+  Left/Right frames (`72/72` eye pixels).
+- Effects/exclusions: healing currents, reef sigils, bubble spirals, coral
+  growth, water bolts, tide arcs, foam, splashes, undertow rings, and impacts
+  remain external. Merfolk elite, Birdfolk, new Cast/Death pixels,
+  registration, consumers, integration, effects, release, and broader EN-E04
+  work remain outside.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e04-merfolk-reefcaller`; it reproduces
+  paired raw/no-outline and Complete B + Form `1428x760` boards plus exact
+  labeled `640x672`, four-phase, `720ms` looping GIFs.
+- Focused command:
+  `npm.cmd run check:enemy-expansion-en-e04-merfolk-reefcaller`.
+- Raw / Complete B + Form board SHA-256 values:
+  `c9d3097c543d407f4c700a9631d9046e7ff1e756ab91fb930b51af931326c5fe` /
+  `2df2948b30c3efb89aff386fb558126fe3f478d157d83390cdd3a02adcd88c43`.
+- Raw / Complete B + Form GIF SHA-256 values:
+  `7d57aeaceca0ce5bc85b7a0b1fbafc9ff5889c1add9a946f4a7b8a2b8eb075c8` /
+  `f79945414fd1357b328a2d1af5685517d20c1a7f706a0c1939231b07a446cd24`.
+- Candidate 80-frame digest:
+  `fc223d0b944152c18481acfe4a775936b5da5659666edb0d35726eef5c6228f7`.
+- Focused validation passes: suite `80/80`; connected silhouettes `80/80`;
+  hard-alpha frames `80/80`; continuous fused-tail rows `640/640`; broad
+  connected flukes `80/80`; approved Tideguard tail locks `80/80`; exact side
+  mirrors `20/20`; both coral-red side eyes `36/36` (`72/72` eye pixels); Cast
+  aliases `16/16`; Death aliases `16/16`; opaque range 157-211; 6,338
+  specialist-changed pixels; 7,144 Complete B additions; 8,103 Form changes;
+  public EN-E04 families `0`.
+- All six protected predecessor gates and the v2 fast gate pass. Full
+  `npm.cmd run check` passes in `123.7s` with all 232 public PNG sheets
+  unchanged.
+- Required next action: commit and push only this exact approved ten-file lane,
+  then reconcile its publication checkpoint in these docs. Do not begin
+  Merfolk elite/Birdfolk, register, integrate, add effects, release, or broaden
+  EN-E04.
+
+The approved preceding Tideguard checkpoint follows for provenance.
+
+## Approved Source Checkpoint - Merfolk Tideguard Approved And Published
 
 Start here in a new task. While approving the exact Temple Rajah raw plus
 Complete B + Form motion pair, the designer said `approved, lets keep going

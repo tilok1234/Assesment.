@@ -677,6 +677,37 @@ the exact raw plus Complete B + Form GIF pair together and said `approved` on
 Birdfolk, registration, integration, effects, release, and broader multi-enemy
 work remain outside.
 
+## Merfolk Reefcaller full specialist approved; publication authorized
+
+Branch `codex/en-e04-merfolk-reefcaller` owns the next isolated full-enemy
+slice, based exactly on clean Tideguard handoff `6594b2e`. It contains one
+internal, non-public Merfolk specialist: Reefcaller, with all 80 standard
+Idle/Walk/Attack/Cast/Hurt/Death frames across four directions. Every frame
+delegates approved Tideguard motion and preserves tail rows 16-23 exactly.
+A connected coral crown, violet reef mantle, pearl sigil, gold shell clasps,
+and luminous aqua fin marks distinguish the specialist. All 36 colored side
+frames retain both visible eye pixels in coral red (`72/72` eye pixels), while
+all healing, reef, bubble, coral-growth, and water effects remain external.
+
+Run `npm.cmd run review:enemy-expansion-en-e04-merfolk-reefcaller` to
+reproduce paired raw/no-outline and Complete B + Form `1428x760` boards and
+labeled `640x672`, four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e04-merfolk-reefcaller` to verify the
+frozen 80-frame digest, 80 connected hard-alpha silhouettes, 640 continuous
+tail rows, 80 approved Tideguard tail locks, 20 exact side mirrors, exact
+Cast/Death aliases, both coral-red side eyes in 36/36 colored side frames,
+bounded presentation changes, external effects, and zero public exposure. The
+frozen digest is
+`fc223d0b944152c18481acfe4a775936b5da5659666edb0d35726eef5c6228f7`.
+All six protected predecessor gates, the fast gate, and full
+`npm.cmd run check` pass with all 232 public PNG sheets unchanged.
+
+Gate `en-e04-merfolk-reefcaller-full-v1` is `approved`: after requiring both
+visible side-eye pixels to be coral-red, the designer reviewed the final exact
+raw plus Complete B + Form pair and said `approved` on 2026-08-09. Bounded
+publication of this exact ten-file lane is authorized. Merfolk elite, Birdfolk,
+registration, integration, effects, release, and broader work remain outside.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge

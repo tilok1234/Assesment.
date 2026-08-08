@@ -195,6 +195,10 @@ visually approved and published at
 `codex/en-e04-merfolk-tideguard`; it is hash-frozen and technically validated
 and is now visually approved, internal, non-public, committed, and pushed at
 `622b00f0c40eed552f61b30bd207b5ad8478836e`.
+The designer's later `lets do next` activates exactly one 80-frame Merfolk
+Reefcaller specialist on `codex/en-e04-merfolk-reefcaller`; its paired evidence
+is hash-frozen, technically validated, and visually approved after both visible
+side-eye pixels were repaired to coral red.
 
 ## Intake Assessment
 
@@ -1770,17 +1774,20 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `approved - Temple Rajah complete motion published; one full enemy authorized next`
+- Status: `active - Tideguard published; Reefcaller specialist approved for bounded publication`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
 - Approved gate: Naga Coilguard complete motion across Down, Left, Right, and Up
 - Approved gate: combined Naga Venom Oracle complete motion plus Temple Rajah Idle F1-F2 across Down, Left, Right, and Up
 - Approved gate: Temple Rajah complete motion across Down, Left, Right, and Up; published
+- Approved gate: Merfolk Tideguard complete motion across Down, Left, Right, and Up; published
+- Approved gate: Merfolk Reefcaller complete specialist motion across Down, Left, Right, and Up; publication authorized
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
 | Naga | Coilguard | Venom Oracle | Temple Rajah |
+| Merfolk | Tideguard | Reefcaller | Planned |
 
 Shared leverage: non-human lower bodies and upright equipment anchors. Naga and
 Merfolk must not fake ordinary feet in side views. Birdfolk must remain an
@@ -2074,6 +2081,58 @@ upright avian person rather than collapse into the existing Harpy identity.
   `622b00f0c40eed552f61b30bd207b5ad8478836e`.
 - Required next action: stop. Later roles/families, registration, integration,
   effects, release, and broader work require separate explicit authorization.
+
+#### Merfolk Reefcaller full specialist approved; publication authorized
+
+- Gate ID: `en-e04-merfolk-reefcaller-full-v1`; status:
+  `approved`, internal, non-public, with bounded publication authorized.
+- Live branch: `codex/en-e04-merfolk-reefcaller`, based exactly on clean
+  Tideguard reconciliation `6594b2e01bd639997ace424c6a8427ac307196b4`;
+  approved Tideguard remains frozen at
+  `622b00f0c40eed552f61b30bd207b5ad8478836e`.
+- Authorization: after Tideguard approval/publication, the designer said
+  `lets do next` on 2026-08-09. EN-E04 role order advances common to specialist;
+  Codex named and bounded one complete Reefcaller specialist only.
+- Approval: after first identifying one missing red side-eye pixel and then the
+  remaining black source-eye pixel, the designer reviewed the final regenerated
+  raw and Complete B + Form pair with both visible eye pixels coral-red and said
+  `approved` on 2026-08-09.
+- Scope: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast aliases,
+  and exact Death aliases `H1,H2,H2,H2` across Down, Left, Right, and Up.
+- Source/anatomy: all motion delegates approved Tideguard. Tail rows 16-23 are
+  byte-exact in `80/80` frames; all lower rows remain one connected fused-tail
+  run ending in the approved broad fluke.
+- Identity: connected coral crown, violet reef mantle, pearl chest/crown sigil,
+  gold shell clasps, luminous aqua fin marks, and approved sea-green tail. A
+  one-cell ceiling brace repairs the tall crown during rise/recoil; the
+  side-eye repair preserves both visible eye pixels in coral red across all 36
+  colored Left/Right frames (`72/72` eye pixels).
+- External effects: healing currents, reef sigils, bubble spirals, coral
+  growth, water bolts, tide arcs, foam, splashes, undertow rings, and impacts
+  remain outside actor pixels; baked effects are empty.
+- Exclusions: approved Tideguard changes, Merfolk elite, Birdfolk, new
+  Cast/Death pixels, registration, consumers, integration, effects, release,
+  later EN-E04 work, and every multi-enemy expansion.
+- Frozen candidate evidence: raw / Complete B + Form boards
+  `c9d3097c543d407f4c700a9631d9046e7ff1e756ab91fb930b51af931326c5fe` /
+  `2df2948b30c3efb89aff386fb558126fe3f478d157d83390cdd3a02adcd88c43`;
+  raw / Complete B + Form GIFs
+  `7d57aeaceca0ce5bc85b7a0b1fbafc9ff5889c1add9a946f4a7b8a2b8eb075c8` /
+  `f79945414fd1357b328a2d1af5685517d20c1a7f706a0c1939231b07a446cd24`;
+  80-frame digest
+  `fc223d0b944152c18481acfe4a775936b5da5659666edb0d35726eef5c6228f7`.
+- Focused validation passes suite frames `80/80`, connected hard-alpha
+  silhouettes `80/80`, continuous fused-tail rows `640/640`, broad flukes
+  `80/80`, approved Tideguard tail locks `80/80`, exact side mirrors `20/20`,
+  both coral-red side eyes `36/36` (`72/72` eye pixels), Cast aliases `16/16`,
+  Death aliases `16/16`, 6,338 specialist-changed pixels, 7,144 Complete B
+  additions, 8,103 Form changes, and zero public EN-E04 families. All six
+  protected predecessor gates also pass.
+- The v2 fast gate passes; full `npm.cmd run check` passes in `123.7s` with all
+  232 public PNG sheets unchanged.
+- Required next action: commit and push only the exact approved ten-file lane,
+  then reconcile its publication checkpoint. Merfolk elite/Birdfolk,
+  registration, integration, effects, release, and broader work remain gated.
 
 ### EN-E05 - Undead humanoids
 
@@ -2451,3 +2510,11 @@ GIFs and said `approved` on 2026-08-09. The internal, non-public lane is
 committed and pushed at `622b00f0c40eed552f61b30bd207b5ad8478836e`.
 Later Merfolk roles, Birdfolk, registration, integration, effects, release,
 and broader multi-enemy work remain unauthorized.
+The designer's later `lets do next` activates only one full 80-frame Merfolk
+Reefcaller specialist on `codex/en-e04-merfolk-reefcaller`. Its paired evidence
+is hash-frozen and focused/protected/fast/full validated. After both visible
+side-eye pixels were repaired to coral red, the designer reviewed the final
+exact pair and said `approved` on 2026-08-09. The lane remains internal and
+non-public with bounded publication authorized. Merfolk elite, Birdfolk,
+registration, integration, effects, release, and broader work remain
+unauthorized.
