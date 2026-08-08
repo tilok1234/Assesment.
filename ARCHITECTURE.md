@@ -1046,9 +1046,9 @@ B/Form presentation, external effects, and zero public exposure define the
 gate. All six protected predecessor gates and fast/full validation pass with
 all 232 public sheets unchanged. After requiring both visible side-eye pixels
 to be coral-red, the designer reviewed the final exact pair and said `approved`
-on 2026-08-09; bounded publication of this exact ten-file lane is authorized.
-Merfolk elite, Birdfolk, registration, integration, effects, release, and
-broader work remain outside.
+on 2026-08-09; bounded publication of this exact ten-file lane is complete at
+`b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`. Merfolk elite, Birdfolk,
+registration, integration, effects, release, and broader work remain outside.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

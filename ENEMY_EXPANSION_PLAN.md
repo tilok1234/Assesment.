@@ -198,7 +198,8 @@ and is now visually approved, internal, non-public, committed, and pushed at
 The designer's later `lets do next` activates exactly one 80-frame Merfolk
 Reefcaller specialist on `codex/en-e04-merfolk-reefcaller`; its paired evidence
 is hash-frozen, technically validated, and visually approved after both visible
-side-eye pixels were repaired to coral red.
+side-eye pixels were repaired to coral red. The internal, non-public lane is
+committed and pushed at `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`.
 
 ## Intake Assessment
 
@@ -1774,7 +1775,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `active - Tideguard published; Reefcaller specialist approved for bounded publication`
+- Status: `active - Tideguard and Reefcaller published; next gate requires explicit authorization`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1782,7 +1783,7 @@ and no new sprite pixels or public integration are authorized.
 - Approved gate: combined Naga Venom Oracle complete motion plus Temple Rajah Idle F1-F2 across Down, Left, Right, and Up
 - Approved gate: Temple Rajah complete motion across Down, Left, Right, and Up; published
 - Approved gate: Merfolk Tideguard complete motion across Down, Left, Right, and Up; published
-- Approved gate: Merfolk Reefcaller complete specialist motion across Down, Left, Right, and Up; publication authorized
+- Approved gate: Merfolk Reefcaller complete specialist motion across Down, Left, Right, and Up; published
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -2082,14 +2083,16 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Required next action: stop. Later roles/families, registration, integration,
   effects, release, and broader work require separate explicit authorization.
 
-#### Merfolk Reefcaller full specialist approved; publication authorized
+#### Merfolk Reefcaller full specialist approved and published
 
 - Gate ID: `en-e04-merfolk-reefcaller-full-v1`; status:
-  `approved`, internal, non-public, with bounded publication authorized.
+  `approved`, internal, non-public, committed, and pushed.
 - Live branch: `codex/en-e04-merfolk-reefcaller`, based exactly on clean
   Tideguard reconciliation `6594b2e01bd639997ace424c6a8427ac307196b4`;
   approved Tideguard remains frozen at
-  `622b00f0c40eed552f61b30bd207b5ad8478836e`.
+  `622b00f0c40eed552f61b30bd207b5ad8478836e`. The approved Reefcaller
+  implementation is committed and pushed at
+  `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`.
 - Authorization: after Tideguard approval/publication, the designer said
   `lets do next` on 2026-08-09. EN-E04 role order advances common to specialist;
   Codex named and bounded one complete Reefcaller specialist only.
@@ -2130,9 +2133,11 @@ upright avian person rather than collapse into the existing Harpy identity.
   protected predecessor gates also pass.
 - The v2 fast gate passes; full `npm.cmd run check` passes in `123.7s` with all
   232 public PNG sheets unchanged.
-- Required next action: commit and push only the exact approved ten-file lane,
-  then reconcile its publication checkpoint. Merfolk elite/Birdfolk,
-  registration, integration, effects, release, and broader work remain gated.
+- Publication is complete at approved implementation checkpoint
+  `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`.
+- Required next action: stop. Merfolk elite/Birdfolk, registration,
+  integration, effects, release, and broader work require separate explicit
+  authorization.
 
 ### EN-E05 - Undead humanoids
 
@@ -2515,6 +2520,7 @@ Reefcaller specialist on `codex/en-e04-merfolk-reefcaller`. Its paired evidence
 is hash-frozen and focused/protected/fast/full validated. After both visible
 side-eye pixels were repaired to coral red, the designer reviewed the final
 exact pair and said `approved` on 2026-08-09. The lane remains internal and
-non-public with bounded publication authorized. Merfolk elite, Birdfolk,
+non-public, committed, and pushed at
+`b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`. Merfolk elite, Birdfolk,
 registration, integration, effects, release, and broader work remain
 unauthorized.

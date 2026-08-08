@@ -469,10 +469,10 @@ repaired side treatment retains both visible eye pixels in coral red across all
 six protected predecessors, and fast/full repository gates pass with all 232
 public sheets unchanged. Gate
 `en-e04-merfolk-reefcaller-full-v1` is visually `approved` after both visible
-side-eye pixels were repaired to coral red, internal, and non-public, with
-bounded publication of the exact ten-file lane authorized. Merfolk elite,
-Birdfolk, registration, integration, effects, release, and broader work remain
-gated.
+side-eye pixels were repaired to coral red, internal, and non-public. Bounded
+publication of the exact ten-file lane is complete at
+`b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`. Merfolk elite, Birdfolk,
+registration, integration, effects, release, and broader work remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

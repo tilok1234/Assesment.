@@ -677,7 +677,7 @@ the exact raw plus Complete B + Form GIF pair together and said `approved` on
 Birdfolk, registration, integration, effects, release, and broader multi-enemy
 work remain outside.
 
-## Merfolk Reefcaller full specialist approved; publication authorized
+## Merfolk Reefcaller full specialist approved and published
 
 Branch `codex/en-e04-merfolk-reefcaller` owns the next isolated full-enemy
 slice, based exactly on clean Tideguard handoff `6594b2e`. It contains one
@@ -705,7 +705,8 @@ All six protected predecessor gates, the fast gate, and full
 Gate `en-e04-merfolk-reefcaller-full-v1` is `approved`: after requiring both
 visible side-eye pixels to be coral-red, the designer reviewed the final exact
 raw plus Complete B + Form pair and said `approved` on 2026-08-09. Bounded
-publication of this exact ten-file lane is authorized. Merfolk elite, Birdfolk,
+publication of this exact ten-file lane is complete at
+`b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`. Merfolk elite, Birdfolk,
 registration, integration, effects, release, and broader work remain outside.
 
 The complete enemy-outline rollout was visually approved at historical
