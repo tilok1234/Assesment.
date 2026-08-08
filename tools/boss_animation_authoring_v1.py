@@ -84,6 +84,27 @@ def squash_pose(source: Image.Image, target_height: int, offset_x: int = 0) -> I
     return result
 
 
+def _finalize_treated_pose(base: object, treated: dict, key: str) -> Image.Image:
+    logical = base.image_from_pixels(
+        treated["width"],
+        treated["height"],
+        treated["pixels"],
+    )
+    output = logical.resize((FRAME_SIZE, FRAME_SIZE), Image.Resampling.NEAREST)
+    alpha_values = set(output.getchannel("A").get_flattened_data())
+    if not alpha_values <= {0, 255}:
+        raise ValueError(f"{key} contains intermediate alpha: {sorted(alpha_values)}")
+    bounds = output.getchannel("A").getbbox()
+    if bounds is None or not (
+        bounds[0] >= 2
+        and bounds[1] >= 2
+        and bounds[2] <= FRAME_SIZE - 2
+        and bounds[3] <= FRAME_SIZE - 2
+    ):
+        raise ValueError(f"{key} lacks a two-pixel safety border: {bounds}")
+    return output
+
+
 def treat_source(
     source: Image.Image,
     *,
@@ -116,24 +137,57 @@ def treat_source(
         cwd=checkpoint_root,
     )
     treated = json.loads(treated_path.read_text(encoding="utf-8"))
-    logical = base.image_from_pixels(
-        treated["width"],
-        treated["height"],
-        treated["pixels"],
+    return _finalize_treated_pose(base, treated, key)
+
+
+def treat_sources_batch(
+    items: list[tuple[str, Image.Image]],
+    *,
+    base: object,
+    checkpoint_root: Path,
+    temporary_root: Path,
+) -> dict[str, Image.Image]:
+    """Treat many poses with a single Node invocation.
+
+    Identical per-pose behavior to treat_source, but a whole 80-frame build
+    pays one Node startup + engine module parse instead of ~80.
+    """
+    ramps = base.treatment_ramps()
+    input_path = temporary_root / "batch-source.json"
+    treated_path = temporary_root / "batch-treated.json"
+    input_path.write_text(
+        json.dumps(
+            {
+                "poses": [
+                    {
+                        "key": key,
+                        "width": LOGICAL_SIZE,
+                        "height": LOGICAL_SIZE,
+                        "pixels": base.pixels_from_image(source),
+                        "ramps": ramps,
+                    }
+                    for key, source in items
+                ]
+            }
+        ),
+        encoding="utf-8",
     )
-    output = logical.resize((FRAME_SIZE, FRAME_SIZE), Image.Resampling.NEAREST)
-    alpha_values = set(output.getchannel("A").get_flattened_data())
-    if not alpha_values <= {0, 255}:
-        raise ValueError(f"{key} contains intermediate alpha: {sorted(alpha_values)}")
-    bounds = output.getchannel("A").getbbox()
-    if bounds is None or not (
-        bounds[0] >= 2
-        and bounds[1] >= 2
-        and bounds[2] <= FRAME_SIZE - 2
-        and bounds[3] <= FRAME_SIZE - 2
-    ):
-        raise ValueError(f"{key} lacks a two-pixel safety border: {bounds}")
-    return output
+    subprocess.run(
+        [
+            "node",
+            str(checkpoint_root / "apply_engine_treatment.mjs"),
+            "--batch",
+            str(input_path),
+            str(treated_path),
+        ],
+        check=True,
+        cwd=checkpoint_root,
+    )
+    output = json.loads(treated_path.read_text(encoding="utf-8"))
+    return {
+        pose["key"]: _finalize_treated_pose(base, pose, pose["key"])
+        for pose in output["poses"]
+    }
 
 
 def save_asset(
@@ -163,31 +217,36 @@ def build_assets(
 
     with tempfile.TemporaryDirectory(prefix=temporary_prefix) as temporary_directory:
         temporary_root = Path(temporary_directory)
+        pose_order: list[tuple[str, str, str, int]] = []
+        pose_items: list[tuple[str, Image.Image]] = []
         for animation in ANIMATIONS:
             animation_id = str(animation["id"])
             for direction in DIRECTION_ORDER:
                 for frame in range(int(animation["frames"])):
                     key = f"{animation_id}-{direction}-{frame + 1}"
                     source = animation_source(sources, animation_id, direction, frame)
-                    output = treat_source(
-                        fit_to_safe_area(source),
-                        base=base,
-                        checkpoint_root=checkpoint_root,
-                        temporary_root=temporary_root,
-                        key=key,
-                    )
-                    filename = f"{asset_prefix}-{key}.png"
-                    save_asset(output, filename, output_roots)
-                    frames[(animation_id, direction, frame)] = output
-                    frame_facts.append(
-                        {
-                            "animation": animation_id,
-                            "direction": direction,
-                            "frame": frame + 1,
-                            "file": filename,
-                            "bounds": list(output.getchannel("A").getbbox()),
-                        }
-                    )
+                    pose_order.append((key, animation_id, direction, frame))
+                    pose_items.append((key, fit_to_safe_area(source)))
+        treated_by_key = treat_sources_batch(
+            pose_items,
+            base=base,
+            checkpoint_root=checkpoint_root,
+            temporary_root=temporary_root,
+        )
+        for key, animation_id, direction, frame in pose_order:
+            output = treated_by_key[key]
+            filename = f"{asset_prefix}-{key}.png"
+            save_asset(output, filename, output_roots)
+            frames[(animation_id, direction, frame)] = output
+            frame_facts.append(
+                {
+                    "animation": animation_id,
+                    "direction": direction,
+                    "frame": frame + 1,
+                    "file": filename,
+                    "bounds": list(output.getchannel("A").getbbox()),
+                }
+            )
 
     full_sheet = Image.new(
         "RGBA",
@@ -244,9 +303,13 @@ def build_assets(
         animation_sheets[animation_id] = filename
 
     for direction in DIRECTION_ORDER:
-        approved = Image.open(
-            checkpoint_root / f"{base.SLUG}-directions-v1-{direction}.png"
-        ).convert("RGBA")
+        # Prefer the review checkpoint; fall back to the committed runtime
+        # asset so the drift gate also works on a fresh clone (the checkpoint
+        # corpus is only partially committed).
+        approved_path = checkpoint_root / f"{base.SLUG}-directions-v1-{direction}.png"
+        if not approved_path.exists():
+            approved_path = runtime_root / f"{base.SLUG}-directions-v1-{direction}.png"
+        approved = Image.open(approved_path).convert("RGBA")
         if frames[("idle", direction, 0)].tobytes() != approved.tobytes():
             raise ValueError(
                 f"{direction} Idle frame 1 drifted from the approved direction pilot."

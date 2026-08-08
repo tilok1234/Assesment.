@@ -1,3 +1,6 @@
+> **STATUS: HISTORICAL — completed/closed record.** Do not read as part of session orientation;
+> consult only when researching how this feature was built. Live guidance lives in `CLAUDE.md`.
+
 # Equipment Outline Assessment And Plan
 
 Status: historical assessment, reconciled against the current branch on

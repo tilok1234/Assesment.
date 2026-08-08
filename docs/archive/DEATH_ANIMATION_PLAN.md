@@ -1,3 +1,6 @@
+> **STATUS: HISTORICAL — completed/closed record.** Do not read as part of session orientation;
+> consult only when researching how this feature was built. Live guidance lives in `CLAUDE.md`.
+
 # Player Death Animation Plan
 
 Date: 2026-07-27

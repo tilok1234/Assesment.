@@ -345,7 +345,7 @@ Wildcard, and dependency-boundary checks.
 components, and cavities. `tools/enemy-outline-pilot-review.mjs` proves None
 parity and both outline modes across the complete 20-column roster: 48,480
 cases with mode distinction in every frame, zero source-edge frames, and zero
-out-of-bounds writes. `ENEMY_OUTLINE_PLAN.md` retains the chronological 9,696
+out-of-bounds writes. `docs/archive/ENEMY_OUTLINE_PLAN.md` retains the chronological 9,696
 / 29,088 totals for the historical 12-column approval checkpoint. Generated
 evidence stays ignored beneath `enemy-outline-assessment/` and
 `enemy-outline-review/`.

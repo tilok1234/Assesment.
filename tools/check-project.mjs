@@ -8,6 +8,14 @@ const assetRoot = path.join(root, 'asset-pack');
 const manifestPath = path.join(assetRoot, 'manifest.json');
 const errors = [];
 
+// Check tiers: the default run is the full release gate. --fast skips the two
+// boss structural gates and the exhaustive export-parity audit for quick
+// inner-loop iteration; --skip-bosses skips only the boss gates (they can be
+// run alone via `npm run check:bosses`).
+const cliArguments = new Set(process.argv.slice(2));
+const FAST_MODE = cliArguments.has('--fast');
+const SKIP_BOSS_GATES = FAST_MODE || cliArguments.has('--skip-bosses');
+
 function check(condition, message) {
   if (!condition) errors.push(message);
 }
@@ -97,21 +105,30 @@ checkSyntax('tools/shade-review.mjs');
 checkSyntax('tools/weapon-readability-audit.mjs');
 checkSyntax('tools/check-windows-release.mjs');
 
-const bossDirectionCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-boss-directions.mjs')], {
-  encoding: 'utf8',
-});
-check(
-  bossDirectionCheck.status === 0,
-  `Boss direction structural gate failed\n${bossDirectionCheck.stdout.trim()}\n${bossDirectionCheck.stderr.trim()}`,
-);
+if (!SKIP_BOSS_GATES) {
+  const bossDirectionCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-boss-directions.mjs')], {
+    encoding: 'utf8',
+  });
+  if (bossDirectionCheck.status !== 0) {
+    // Fail loudly now instead of only in the summary minutes later.
+    console.error('Boss direction structural gate failed (full details in the final report).');
+  }
+  check(
+    bossDirectionCheck.status === 0,
+    `Boss direction structural gate failed\n${bossDirectionCheck.stdout.trim()}\n${bossDirectionCheck.stderr.trim()}`,
+  );
 
-const bossAnimationCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-boss-animations.mjs')], {
-  encoding: 'utf8',
-});
-check(
-  bossAnimationCheck.status === 0,
-  `Boss animation structural gate failed\n${bossAnimationCheck.stdout.trim()}\n${bossAnimationCheck.stderr.trim()}`,
-);
+  const bossAnimationCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-boss-animations.mjs')], {
+    encoding: 'utf8',
+  });
+  if (bossAnimationCheck.status !== 0) {
+    console.error('Boss animation structural gate failed (full details in the final report).');
+  }
+  check(
+    bossAnimationCheck.status === 0,
+    `Boss animation structural gate failed\n${bossAnimationCheck.stdout.trim()}\n${bossAnimationCheck.stderr.trim()}`,
+  );
+}
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
 let entryFile = null;
@@ -676,39 +693,12 @@ check(
   )),
   'presets, ordinary packs, comparisons, and persisted player specifications must not store Production Roll provenance',
 );
+const approvedOutlineFamilies = JSON.parse(
+  await readFile(path.join(root, 'tools', 'fixtures', 'approved-outline-families.json'), 'utf8'),
+);
 check(
-  JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES)
-    === JSON.stringify([
-      'bandit', 'kobold', 'skeleton', 'ratfolk', 'elf', 'gnoll', 'harpy',
-      'eyemonster', 'scorpion', 'crab', 'beetle', 'wasp', 'mimic', 'drake',
-      'elemental',
-      'wolf', 'boar', 'bear', 'bigcat',
-      'crocodile', 'turtle', 'griffin',
-      'slime', 'shroom',
-      'bat', 'ghost', 'golem', 'snake',
-      'frog', 'jellyfish', 'scarecrow', 'gargoyle',
-      'worm', 'mantis', 'moth', 'puppet',
-      'spider', 'treant',
-      'centipede', 'mole',
-      'carniplant',
-      'octopus',
-      'cyclops',
-      'troll',
-      'dwarf',
-      'ogre',
-      'goblin',
-      'zombie',
-      'imp',
-      'cultist',
-      'orc',
-      'lizardfolk',
-      'minotaur',
-      'demon',
-      'anglerfish',
-      'snail',
-      'porcupine',
-    ]),
-  'enemy outline support must stay limited to the fifty-seven approval-gated families',
+  JSON.stringify(engine.ENEMY_OUTLINE_PILOT_FAMILIES) === JSON.stringify(approvedOutlineFamilies),
+  `enemy outline support must stay limited to the ${approvedOutlineFamilies.length} approval-gated families recorded in tools/fixtures/approved-outline-families.json (append the id there when a new family's outline is approved)`,
 );
 for (const familyId of engine.ENEMY_OUTLINE_PILOT_FAMILIES) {
   check(
@@ -862,14 +852,19 @@ check(
     && shadedCompleteKitPlan.recipes[0]?.shadeMode === engine.SHADE_MODE_FORM,
   'Complete Kit schema v12 recipes must retain approved outline and shade metadata',
 );
+// Enemy-driven counts derive from the catalog so adding a family or variant
+// no longer requires editing golden literals here; the player-component and
+// effect totals stay frozen because they do not scale with the enemy roster.
+const catalogEnemyFamilyCount = engine.ENEMIES.length;
+const catalogEnemyVariantCount = engine.ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 check(
   completeKitPlan.counts.componentPngs === 1912
-    && completeKitPlan.counts.enemyFamilies === 57
-    && completeKitPlan.counts.enemySheets === 202
+    && completeKitPlan.counts.enemyFamilies === catalogEnemyFamilyCount
+    && completeKitPlan.counts.enemySheets === catalogEnemyVariantCount
     && completeKitPlan.counts.effectCategories === 4
     && completeKitPlan.counts.effectSheets === 24
-    && completeKitPlan.counts.totalPngs === 2139,
-  'complete character kits must contain 1912 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
+    && completeKitPlan.counts.totalPngs === 1912 + catalogEnemyVariantCount + 24 + 1,
+  `complete character kits must contain 1912 content-unique components, ${catalogEnemyVariantCount} enemies, 24 synchronized effects, and one reference preview`,
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
@@ -920,7 +915,10 @@ check(
   'Tier 5 shield components must collapse the four artifact passes whose colors are fully overwritten',
 );
 const completeEnemyEntries = completeKitPlan.enemies.flatMap((family) => family.variants);
-check(completeKitPlan.enemies.length === 57 && completeEnemyEntries.length === 202, 'complete kits must plan every enemy family and variation');
+check(
+  completeKitPlan.enemies.length === catalogEnemyFamilyCount && completeEnemyEntries.length === catalogEnemyVariantCount,
+  'complete kits must plan every enemy family and variation',
+);
 check(
   completeKitPlan.enemies.every((family) => family.variants.every((entry) => (
     entry.file === `enemies/${family.family}/${entry.id}.png`
@@ -6044,22 +6042,30 @@ function checkExportFrame(canvas, column, row, expected, message) {
 }
 
 const originalDocument = globalThis.document;
+if (!FAST_MODE) {
 try {
   globalThis.document = { createElement: (tag) => tag === 'canvas' ? new ValidationCanvas() : null };
   for (const weapon of readableWeaponFamilies) for (const tier of engine.WEAPON_TIERS) {
     const spec = { ...straightBladeBase, weapon, weaponTier: tier.id };
     const fullSheet = engine.buildSheet(spec);
     check(fullSheet.width === 480 && fullSheet.height === 96, `${weapon} ${tier.id} full export must be 480x96 at native scale`);
+    // Animation sheets do not vary by direction (each holds all four rows), so
+    // build them once per spec instead of once per direction: same coverage,
+    // one quarter of the sheet-assembly work.
+    const animationSheets = new Map(engine.ANIMS.map((animation) => {
+      const animationSheet = engine.buildAnimationSheet(spec, animation.id);
+      check(
+        animationSheet.width === animation.frames * engine.SIZE && animationSheet.height === 96,
+        `${weapon} ${tier.id} ${animation.id} export must retain its native frame dimensions`,
+      );
+      return [animation.id, animationSheet];
+    }));
     for (const [directionRow, direction] of engine.DIRS.entries()) {
       const directionSheet = engine.buildDirectionSheet(spec, direction);
       check(directionSheet.width === 480 && directionSheet.height === 24, `${weapon} ${tier.id} ${direction} export must be 480x24 at native scale`);
       let column = 0;
       for (const animation of engine.ANIMS) {
-        const animationSheet = engine.buildAnimationSheet(spec, animation.id);
-        check(
-          animationSheet.width === animation.frames * engine.SIZE && animationSheet.height === 96,
-          `${weapon} ${tier.id} ${animation.id} export must retain its native frame dimensions`,
-        );
+        const animationSheet = animationSheets.get(animation.id);
         for (let frame = 0; frame < animation.frames; frame++) {
           const expected = renderPixels(spec, direction, animation.id, frame);
           checkExportFrame(fullSheet, column, directionRow, expected, `${weapon} ${tier.id} full export must preserve ${direction} ${animation.id} frame ${frame}`);
@@ -6085,6 +6091,15 @@ try {
           fullSheet.width === 480 && fullSheet.height === 96,
           `${familyId} ${variant.id} ${outlineMode} full export must be 480x96 at native scale`,
         );
+        const animationSheets = new Map(engine.ANIMS.map((animation) => {
+          const animationSheet = engine.buildAnimationSheet(spec, animation.id, 1, options);
+          check(
+            animationSheet.width === animation.frames * engine.SIZE
+              && animationSheet.height === 96,
+            `${familyId} ${variant.id} ${outlineMode} ${animation.id} export must retain its native frame dimensions`,
+          );
+          return [animation.id, animationSheet];
+        }));
         for (const [directionRow, direction] of engine.DIRS.entries()) {
           const directionSheet = engine.buildDirectionSheet(spec, direction, 1, options);
           check(
@@ -6093,12 +6108,7 @@ try {
           );
           let column = 0;
           for (const animation of engine.ANIMS) {
-            const animationSheet = engine.buildAnimationSheet(spec, animation.id, 1, options);
-            check(
-              animationSheet.width === animation.frames * engine.SIZE
-                && animationSheet.height === 96,
-              `${familyId} ${variant.id} ${outlineMode} ${animation.id} export must retain its native frame dimensions`,
-            );
+            const animationSheet = animationSheets.get(animation.id);
             for (let frame = 0; frame < animation.frames; frame++) {
               const expected = renderOutlinedPixels(
                 spec,
@@ -6149,11 +6159,14 @@ try {
         shadow: false,
       };
       const fullSheet = engine.buildSheet(pilot.spec, 1, options);
+      const animationSheets = new Map(engine.ANIMS.map((animation) => (
+        [animation.id, engine.buildAnimationSheet(pilot.spec, animation.id, 1, options)]
+      )));
       for (const [directionRow, direction] of engine.DIRS.entries()) {
         const directionSheet = engine.buildDirectionSheet(pilot.spec, direction, 1, options);
         let column = 0;
         for (const animation of engine.ANIMS) {
-          const animationSheet = engine.buildAnimationSheet(pilot.spec, animation.id, 1, options);
+          const animationSheet = animationSheets.get(animation.id);
           for (let frame = 0; frame < animation.frames; frame++) {
             const expected = renderAssembledPixels(
               pilot.spec,
@@ -6175,6 +6188,7 @@ try {
 } finally {
   if (originalDocument === undefined) delete globalThis.document;
   else globalThis.document = originalDocument;
+}
 }
 
 const shieldBase = {
@@ -6728,7 +6742,7 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('Project validation passed.');
+console.log(`Project validation passed${FAST_MODE ? ' (fast tier: boss gates and export-parity audit skipped — run the full `npm run check` before release)' : SKIP_BOSS_GATES ? ' (boss gates skipped — run `npm run check:bosses` separately)' : ''}.`);
 console.log(`- Entry point: ${entryFile}`);
 console.log(`- Player combinations: ${combinations.toLocaleString('en-US')}`);
 console.log(`- Enemy families: ${manifest.enemies.length}`);
