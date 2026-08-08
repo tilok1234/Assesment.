@@ -1,3 +1,6 @@
+> **STATUS: HISTORICAL — completed/closed record.** Do not read as part of session orientation;
+> consult only when researching how this feature was built. Live guidance lives in `CLAUDE.md`.
+
 # Weapon Readability Plan
 
 The weapon library contains 15 families and five RPG tiers per family. Work proceeds in three-family passes so every redraw can be reviewed at native scale before the next group changes.

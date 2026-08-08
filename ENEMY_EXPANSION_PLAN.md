@@ -66,27 +66,11 @@
 - Recorded: 2026-08-04
 - Post-cleanup reconciliation: 2026-08-07
 - Assessment baseline: clean synchronized `main` at `f5476a2`
-- Preserved implementation checkpoint: `codex/en-e03` at `8ea019b`
-- Preceding approved checkpoint: `codex/en-e03-steppe-hunter-attack` at
-  `c567a426fa6d5175395c2b035f65b12b5a5dd1cb`; visually approved, internal,
-  committed, and pushed under the approval-publication contract
-- Current approved branch: `codex/en-e03-briar-reveler-attack`, created
-  exactly from `c567a426fa6d5175395c2b035f65b12b5a5dd1cb` and adding only Briar
-  Reveler Attack A1-A4; visually approved, internal, non-public, committed, and
-  pushed under the approval-publication contract; later work requires separate
-  explicit authorization
-- Current approved Hurt branch: `codex/en-e03-hill-breaker-hurt` in
-  `C:\tmp\8-bit-sprite-assembler-en-e03-hill-breaker-hurt`, created exactly
-  from approved synchronized checkpoint
-  `68d913ccfd00f76f15dcac308338c9e686a4f171`; it contains only the approved
-  Hill Breaker H1-H2 continuation and tracks its matching origin branch under
-  the approval-publication contract
-- Current approved Steppe Hunter Hurt branch: `codex/en-e03-steppe-hunter-hurt` in
-  `C:\tmp\8-bit-sprite-assembler-en-e03-steppe-hunter-hurt`, created exactly
-  from approved pushed checkpoint
-  `3e0d98bd48b30cd6ddf35cbd87b424c3c3fd3b5c`; it contains only the bounded
-  approved Steppe Hunter H1-H2 continuation and tracks its matching origin
-  branch under the approval-publication contract
+- Lane state authority: `CLAUDE.md`, the v2 workflow note in `HANDOFF.md`, and
+  this document's latest EN-E04 gate record.
+- Preserved approval source: `codex/en-e04-naga-idle` at `26151e1`, whose
+  approved Naga implementation checkpoint is `bd920c2`; later work proceeds on
+  a separate continuation branch without rewriting those pixels.
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
 
 ## Purpose

@@ -1,11 +1,17 @@
 # 8-bit Sprite Assembler
 
+> **AI / Claude Code sessions: start at [`CLAUDE.md`](CLAUDE.md).** It holds the
+> file map, the add-a-sprite runbooks, and the verification tiers. Orientation
+> does not require the archived plans in `docs/archive/`.
+
 > **ECOSYSTEM POINTER (2026-07-29, designer-accepted doc 16).** This
 > repo is one of seven in the Wildshot project (it produces the game's
 > actor packs; the binding pack spec is planning docs/14). The shared
 > map — repo ownership, authority docs, hard cross-repo rules — lives
 > at `Wildshot_adventure_final_planning/docs/16-ECOSYSTEM_MAP.md`.
-> Read your repo's row before working here.
+> Read your repo's row before working here — when that planning repo is
+> present beside this checkout. Skip both planning-repo hooks when it is
+> absent (e.g. a cloud session on this repo alone).
 
 > **SYNC-LOG HOOK (doc 18, ACCEPTED 2026-07-30).** At session end, append
 > a line to planning `tools/sync_log.json` for every cross-repo event this
@@ -538,7 +544,7 @@ The approved Briar Reveler F1 seed and approved F1/F2 Idle baseline are isolated
 in two Satyr-only registries.
 
 The optional shared assembled-sprite shade pass in
-[SHADE_RENDERING_PLAN.md](SHADE_RENDERING_PLAN.md) has an explicitly approved
+[docs/archive/SHADE_RENDERING_PLAN.md](docs/archive/SHADE_RENDERING_PLAN.md) has an explicitly approved
 Form algorithm and approved live-editor integration. Shared pixel
 buffers, immutable shade modes, normalization, and one assembled-output
 coordinator apply the deterministic material-aware treatment to complete
@@ -916,7 +922,7 @@ generated page remains review evidence rather than a committed baseline.
 
 Run `npm run review:weapons -- --all-frames` to regenerate the 37 weapon review sheets and the exhaustive 6,000-row CSV/JSON audit. Add `--tier-sheets` to emit four labeled all-weapon/all-frame SVG review sheets per tier plus lightweight PNG inspection grids. The audit records ordinary edge contact separately from discarded pixels, so touching `x=0` or `x=23` remains advisory while attempting to draw outside the 24x24 canvas is a hard failure.
 
-Run `npm run review:outlines` for the outline-specific regression gate. It verifies anchored safe-baseline hashes, 6,000 pixel-exact None-mode parity cases, 2,000 deterministic randomized integrity cases, 11,040 exhaustive outlined equipment cases, and 10,656 exhaustive headgear-preservation cases. The gate covers restrained cardinal equipment halos, silhouette-defining cavities of at least five logical pixels, the explicit equipment pilot, depth-aware equipment/body separators, feature-preserving equipment-side fallbacks, equipment-side front-equipment/headgear separators, foreground headgear and non-contact equipment pixel protection, non-contact body protection, ownership isolation, neck-cavity completion, and review examples. See [OUTLINE_RENDERING_PLAN.md](OUTLINE_RENDERING_PLAN.md) for the supported modes and scope boundary.
+Run `npm run review:outlines` for the outline-specific regression gate. It verifies anchored safe-baseline hashes, 6,000 pixel-exact None-mode parity cases, 2,000 deterministic randomized integrity cases, 11,040 exhaustive outlined equipment cases, and 10,656 exhaustive headgear-preservation cases. The gate covers restrained cardinal equipment halos, silhouette-defining cavities of at least five logical pixels, the explicit equipment pilot, depth-aware equipment/body separators, feature-preserving equipment-side fallbacks, equipment-side front-equipment/headgear separators, foreground headgear and non-contact equipment pixel protection, non-contact body protection, ownership isolation, neck-cavity completion, and review examples. See [docs/archive/OUTLINE_RENDERING_PLAN.md](docs/archive/OUTLINE_RENDERING_PLAN.md) for the supported modes and scope boundary.
 
 Run `npm run review:enemy-outlines` for the complete 57-family source
 assessment, and `npm run review:enemy-outline-pilots` for the full approved
@@ -925,7 +931,7 @@ outline lane. The chronological approval record ends at 9,696 source frames /
 20-column regression gate verifies 16,160 None-mode parity cases and 48,480
 None-B-C cases, mode distinction in every frame, zero source-edge frames, and
 zero out-of-bounds writes. See
-[ENEMY_OUTLINE_PLAN.md](ENEMY_OUTLINE_PLAN.md) for the chronological repair
+[docs/archive/ENEMY_OUTLINE_PLAN.md](docs/archive/ENEMY_OUTLINE_PLAN.md) for the chronological repair
 and approval record.
 
 Contact separators remain one pixel thick: pixels converted into separators are prevented from casting a redundant exterior halo, while legitimate interior equipment openings remain outlined. When a foreground weapon or shield directly touches headgear, only the touching equipment pixel becomes the separator; the hat artwork is preserved exactly. If a normal body-side separator would visually lengthen an adjacent dark eye, mouth, or other body feature, that character pixel is preserved and the separator moves onto the touching equipment pixel.
@@ -1254,12 +1260,12 @@ awaits explicit visual approval before any animation work.
 - `ARCHITECTURE.md` - engine boundaries, dependency direction, and safe extension points
 - `ROADMAP.md` - agreed development and Windows release order
 - `HANDOFF.md` - exact branch, validation, known gaps, and continuation state
-- `ENEMY_OUTLINE_PLAN.md` - completed 57-family outline rollout record
-- `ENEMY_EXPANSION_PLAN.md` - accepted decomposition of the 80 proposed Enemy
+- `docs/archive/ENEMY_OUTLINE_PLAN.md` - completed 57-family outline rollout record
+- `ENEMY_EXPANSION_PLAN.md` - approved decomposition of the 80 proposed Enemy
   additions plus the live approval-gated execution record
-- `SHADE_RENDERING_PLAN.md` - canonical completed shade design and approval gates
-- `OFFHAND_ITEMS_PLAN.md` - approved Lantern pilot, public contract, validation, and future off-hand boundaries
-- `PRODUCTION_ROLL_PLAN.md` - completed Production-versus-Wildcard policy, review, approval, editor integration, and compatibility gates
+- `docs/archive/SHADE_RENDERING_PLAN.md` - canonical completed shade design and approval gates
+- `docs/archive/OFFHAND_ITEMS_PLAN.md` - approved Lantern pilot, public contract, validation, and future off-hand boundaries
+- `docs/archive/PRODUCTION_ROLL_PLAN.md` - completed Production-versus-Wildcard policy, review, approval, editor integration, and compatibility gates
 
 ## Direction
 

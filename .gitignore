@@ -16,3 +16,4 @@ src-tauri/gen/
 src-tauri/target/
 *.log
 .DS_Store
+__pycache__/

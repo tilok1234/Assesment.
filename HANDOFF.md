@@ -2,6 +2,18 @@
 
 Date: 2026-08-08
 
+## V2 Repository And Workflow Note
+
+This checkout is the current v2 repository at
+`C:\Users\headc\Documents\sprite-assembler-v2`, using
+`https://github.com/tilok1234/Assesment.` as `origin`. The old
+`C:\tmp\8-bit-sprite-assembler-*` paths below are historical provenance only;
+do not recreate or treat them as live workspaces. `CLAUDE.md` and the
+repo-local `add-enemy` runbook define the current authoring and verification
+workflow. The approved EN-E04 source checkpoint remains
+`codex/en-e04-naga-idle` at `26151e1`; new work proceeds on an isolated
+continuation branch without rewriting that checkpoint.
+
 ## Immediate Continuation Checkpoint - Naga Coilguard Idle Approved
 
 Start here in a new task. The first EN-E04 Naga anatomy baseline is visually
@@ -9,10 +21,8 @@ approved, technically complete, and published internally at
 `bd920c206d692bcc5e7b043614dcf6a03db2174c`. It contains only Coilguard common
 Idle F1-F2 across Down, Left, Right, and Up. No art gate is active.
 
-- Live checkout:
-  `C:\tmp\8-bit-sprite-assembler-en-e04-naga-idle` on branch
-  `codex/en-e04-naga-idle`, tracking its matching origin branch. It is based
-  exactly on clean published Wildwood Hornlord handoff
+- Approved source branch: `codex/en-e04-naga-idle`, tracking its matching
+  origin branch. It is based exactly on clean published Wildwood Hornlord handoff
   `8c4edba3fa9460d1afdd4409239f35c6078a7534`; the approved Naga implementation
   checkpoint is `bd920c206d692bcc5e7b043614dcf6a03db2174c`.
 - Git state is clean and synchronized after this docs-only reconciliation. The
@@ -1780,32 +1790,15 @@ changes priority.
 
 ## Required Reading
 
-Read these completely before implementation:
+Superseded on 2026-08-08: `CLAUDE.md` is the single session entry point.
+Read `CLAUDE.md`, this file's top consolidation section, and the active plan
+for your lane (`ENEMY_EXPANSION_PLAN.md` or `GAME_PACK_EXPORT_PLAN.md`).
+Everything else is reference material, read on demand:
 
-1. `README.md`
-2. `ARCHITECTURE.md`
-3. `HANDOFF.md`
-4. `ROADMAP.md`
-5. `ENEMY_EXPANSION_PLAN.md`
-6. `ENEMY_OUTLINE_PLAN.md`
-7. `OUTLINE_RENDERING_PLAN.md`
-8. `SHADE_RENDERING_PLAN.md`
-9. `PRODUCTION_ROLL_PLAN.md`
-10. `COMPATIBLE_REROLL_PLAN.md`
-11. `OFFHAND_ITEMS_PLAN.md`
-12. `GAME_PACK_EXPORT_PLAN.md`
-13. `DEATH_ANIMATION_PLAN.md`
-14. `EQUIPMENT_OUTLINE_ASSESSMENT.md`
-15. `EQUIPMENT_READABILITY_PLAN.md`
-16. `WEAPON_READABILITY_PLAN.md`
-17. `TRANSPARENT_TILE_REPAIR_PLAN.md`
-18. `WINDOWS_RELEASE.md`
-19. `asset-pack/README.md`
-20. `death-review/boss-48-drafts/README.md`
-
-The order deliberately puts the active expansion authority before the
-chronological completed-lane records. Historical plans do not authorize work;
-their current headers and closing notices route continuation back here.
+- `README.md`, `ARCHITECTURE.md`, `ROADMAP.md` — product/architecture reference
+- `WINDOWS_RELEASE.md` — release runs only
+- `death-review/boss-48-drafts/README.md` — boss lane only
+- `docs/archive/*.md` — completed historical plan records; never required
 
 ## Stable Public Actor Contract
 
@@ -2529,40 +2522,13 @@ fresh-worktree Boss-corpus boundary, and the corpus-complete full-suite pass.
 
 Current-facing drift was corrected in exactly these five documents:
 
-- `README.md` — records all three approved Walk baselines plus the approved Hill
-  Breaker and Steppe Hunter Attack commands/results;
-- `ARCHITECTURE.md` — records exact Idle/Walk delegation, the private
-  horse-rider-spear boundary, focused gate, and continued facade isolation;
-- `ROADMAP.md` — records both bounded Attack approvals and the consolidated
-  published approval branch;
-- `ENEMY_EXPANSION_PLAN.md` — records the exact approved Steppe hashes, focused
-  gate, exclusions, and closed dual-GIF visual-review boundary; and
-- `HANDOFF.md` — reconciles worktrees, refs, validation, clean-clone caveat,
-  frozen boundaries, and new-chat state.
-
-The earlier audit had also reconciled these historical/current-routing docs;
-they remain unchanged in this five-file pass:
-
-- `EQUIPMENT_OUTLINE_ASSESSMENT.md`, `EQUIPMENT_READABILITY_PLAN.md`,
-  `WEAPON_READABILITY_PLAN.md`, and `TRANSPARENT_TILE_REPAIR_PLAN.md` — retain
-  their historical evidence while removing obsolete claims that shade work is
-  still next;
-- `PRODUCTION_ROLL_PLAN.md` — distinguishes the consolidated baseline worktree
-  from later isolated slice worktrees; and
-- `asset-pack/README.md` — explicitly labels the 232 committed PNGs as the
-  locked historical 12-column fixture corpus rather than current 20-column
-  exports.
-
-No current-state correction was required in the remaining documents:
-
-- `COMPATIBLE_REROLL_PLAN.md`;
-- `DEATH_ANIMATION_PLAN.md`;
-- `ENEMY_OUTLINE_PLAN.md`;
-- `GAME_PACK_EXPORT_PLAN.md`;
-- `OFFHAND_ITEMS_PLAN.md`;
-- `OUTLINE_RENDERING_PLAN.md`;
-- `SHADE_RENDERING_PLAN.md`;
-- `WINDOWS_RELEASE.md`; or
+- `README.md`;
+- `ARCHITECTURE.md`;
+- `HANDOFF.md`;
+- `ROADMAP.md`;
+- `docs/archive/PRODUCTION_ROLL_PLAN.md`;
+- `docs/archive/DEATH_ANIMATION_PLAN.md`;
+- `WINDOWS_RELEASE.md`; and
 - `death-review/boss-48-drafts/README.md`.
 
 Older branch names, interim counts, and 12-column measurements remain only
