@@ -646,9 +646,9 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
 - Latest approved implementation: after the designer said `cool lets do next`,
   the documented family/role order advanced only to Reed Charmer specialist
   Idle F1-F2. The exact paired raw and Complete B + Form GIFs were visually
-  approved on 2026-08-08; bounded publication is in progress. Wildwood
-  Hornlord, later motion, registration, consumers, effects, release, and later
-  work remain gated
+  approved on 2026-08-08 and published at
+  `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. Wildwood Hornlord, later motion,
+  registration, consumers, effects, release, and later work remain gated
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1533,7 +1533,8 @@ and no new sprite pixels or public integration are authorized.
 #### Reed Charmer specialist Idle approved
 
 - Gate ID: `en-e03-reed-charmer-idle-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed while bounded publication completes.
+  non-public, committed, and pushed at
+  `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`.
 - Authorization evidence: after Banner Khan grouped motion was approved,
   published, and reconciled, the designer said `cool lets do next`. Following
   the documented family and role order, this authorizes Reed Charmer specialist
@@ -1574,6 +1575,10 @@ and no new sprite pixels or public integration are authorized.
   two-frame raw/no-outline and Complete B + Form GIFs were reviewed together.
   The focused gate and full `npm.cmd run check` pass; the full gate finished in
   `184` seconds with all 232 public fixture sheets unchanged.
+- Publication is complete at approved implementation checkpoint
+  `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`.
+- Required next action: stop and wait for separate explicit designer
+  authorization. No later gate is authorized by this approval.
 - Exclusions: Briar Reveler pixel changes, Wildwood Hornlord, later animation,
   Giant/Centaur changes, baked music/pollen/charm effects, registration,
   consumers, release, and later EN-E03 work.
@@ -1923,6 +1928,6 @@ elite Idle F1-F2, and Banner Khan grouped Walk/Attack/Hurt/Cast/Death. Banner
 Khan Idle publication is complete at
 `55143049b4153e34fcdaad0ea434932ba0f2d0fd`; grouped motion publication is
 complete at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. Reed Charmer specialist Idle
-F1-F2 is visually approved and awaiting bounded publication; there is no next
-active art gate. Any other code or art work requires separate explicit designer
-authorization.
+F1-F2 is visually approved and published at
+`070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`; there is no next active art gate.
+Any other code or art work requires separate explicit designer authorization.

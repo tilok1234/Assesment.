@@ -829,9 +829,10 @@ charm rings, and all controller effects stay outside actor pixels. The focused
 gate validates eight connected hard-alpha frames, four exact side mirrors,
 frozen Briar Reveler pixels and evidence, deterministic raw/Complete B + Form
 boards and paired GIFs, and zero facade/public exposure. The designer reviewed
-both exact GIFs together and said `Approved` on 2026-08-08; the lane is
-uncommitted while bounded publication completes. The full gate also passes in
-`184` seconds without changing any of the 232 public fixture sheets;
+both exact GIFs together and said `Approved` on 2026-08-08; the internal lane is
+committed and pushed at `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. The full
+gate also passes in `184` seconds without changing any of the 232 public fixture
+sheets;
 Wildwood Hornlord, later motion, registration, consumers, effects, release, and
 later work remain gated.
 

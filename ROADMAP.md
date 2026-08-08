@@ -355,7 +355,8 @@ all 232 public fixture sheets unchanged. Music
 notes, pollen, charm rings, Wildwood Hornlord, later motion, registration,
 integration, effects, release, and later gates remain unauthorized. The
 designer reviewed both exact GIFs together and said `Approved` on 2026-08-08;
-bounded publication of this internal lane is in progress.
+the bounded internal implementation is committed and pushed at
+`070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

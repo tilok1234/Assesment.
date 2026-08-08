@@ -432,9 +432,10 @@ all 232 public fixture sheets unchanged. Reed Charmer preserves
 the approved horns, tail, digitigrade legs, and hooves, replaces the crooked
 staff with a compact panpipe and connected hands, and adds a teal woven vest
 with gold sash. Music notes, pollen, charm rings, and all other control effects
-remain external. The candidate is internal, uncommitted, and unpushed pending
-bounded publication; Wildwood Hornlord, later motion, registration, consumer
-integration, effects, release, and later gates remain unauthorized.
+remain external. The approved internal lane is committed and pushed at
+`070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`; Wildwood Hornlord, later motion,
+registration, consumer integration, effects, release, and later gates remain
+unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

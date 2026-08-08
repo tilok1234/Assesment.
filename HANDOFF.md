@@ -2,27 +2,26 @@
 
 Date: 2026-08-08
 
-## Immediate Continuation Checkpoint - Reed Charmer Idle Approved
+## Immediate Continuation Checkpoint - Reed Charmer Idle Published
 
 Start here in a new task. The designer reviewed the exact paired Reed Charmer
 specialist Idle F1-F2 all-four-direction GIFs and said `Approved` on 2026-08-08.
-Only bounded publication of this internal lane is authorized; there is no next
-active art gate.
+The bounded internal implementation is committed and pushed at
+`070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`; there is no next active art gate.
 
 - Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-reed-charmer-idle` on
-  branch `codex/en-e03-reed-charmer-idle` at
-  `c324e44`, with no upstream. It is based exactly on the corrected, published
-  Banner Khan grouped-motion handoff.
-- Git state is intentionally dirty, uncommitted, and unpushed while the exact
-  approved lane is prepared for bounded publication. Approved helper
-  changes only add an opt-out for the Briar Reveler crooked staff; default
-  rendering remains byte-exact. The bounded new files are
+  branch `codex/en-e03-reed-charmer-idle`, tracking the matching origin branch.
+  Its approved implementation checkpoint is
+  `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`, based exactly on corrected,
+  published Banner Khan grouped-motion handoff `c324e44`.
+- Git state is clean and pushed after this docs-only reconciliation. Approved
+  helper changes only add an opt-out for the Briar Reveler crooked staff;
+  default rendering remains byte-exact. The bounded new files are
   `engine/enemy-expansion-en-e03-satyr-specialist-idle.js`,
   `tools/enemy-expansion-en-e03-reed-charmer-idle-review.mjs`,
   `tools/build-enemy-expansion-en-e03-reed-charmer-idle-gifs.py`, and
   `tools/check-enemy-expansion-en-e03-reed-charmer-idle.mjs`, plus package and
-  documentation updates. Do not reset, clean, stash, or switch this lane;
-  approval authorizes committing and pushing only this exact bounded diff.
+  documentation updates.
 - Gate: `en-e03-reed-charmer-idle-v1`, status
   `approved`, internal and non-public. Scope is only Reed
   Charmer Idle F1-F2 in Down, Left, Right, and Up.
@@ -66,10 +65,9 @@ active art gate.
   remain unchanged. `git diff --check` also passes.
 - Review output and the local Boss checkpoint corpus are ignored support
   artifacts; they are not candidate source changes.
-- Next action: rerun focused and full validation, commit and push only this exact
-  approved lane, reconcile its published checkpoint, and stop. Do not begin
-  Wildwood Hornlord, register, integrate, add effects, release, or start later
-  EN-E03 work without separate explicit authorization.
+- Next action: stop and wait. Do not begin Wildwood Hornlord, register,
+  integrate, add effects, release, or start later EN-E03 work without separate
+  explicit authorization.
 
 The detailed historical and technical evidence remains in
 [Reed Charmer Specialist Idle Approved](#reed-charmer-specialist-idle-approved).
@@ -249,7 +247,8 @@ far from the established roster style. Both implementations remain reproducible
   only Reed Charmer specialist Idle F1-F2. Its isolated internal/non-public
   candidate, paired raw and Complete B + Form boards/GIFs, and focused gate are
   complete. The designer reviewed both exact GIFs together and said `Approved`
-  on 2026-08-08; bounded publication is now in progress.
+  on 2026-08-08; the bounded implementation is committed and pushed at
+  `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`.
 This handoff records the accepted EN-F00 foundation, ten approved EN-E01/EN-E02
 families / 30 variants, the
 unchanged 67-family / 232-variant public catalog, unchanged legacy Enemy corpus,
@@ -285,9 +284,10 @@ baselines and Hill Breaker common Attack A1-A4 are visually approved, internal,
   the exact paired motion-suite GIFs, internal, non-public, and published on its
   matching approval branch at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`.
   Reed Charmer specialist Idle F1-F2 is visually approved against the exact
-  paired all-four-direction GIFs and is awaiting bounded publication. Every
-  other variant, registration, consumer, effect, release, and later EN-E03 step
-  remains unauthorized.
+  paired all-four-direction GIFs and published on its matching branch at
+  `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. Every other variant,
+  registration, consumer, effect, release, and later EN-E03 step remains
+  unauthorized.
 
 ## Visual Review Presentation Contract
 
@@ -1388,7 +1388,8 @@ release, and later work remain separately gated.
 ### Reed Charmer Specialist Idle Approved
 
 - Gate ID: `en-e03-reed-charmer-idle-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed while bounded publication completes.
+  non-public, committed, and pushed at
+  `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`.
 - Authorization evidence: after Banner Khan grouped motion was approved,
   published, and reconciled, the designer said `cool lets do next`. Following
   the documented EN-E03 family and role order, Codex bounded only Reed Charmer
@@ -1399,7 +1400,8 @@ release, and later work remain separately gated.
   direct visual approval. Approval applies only to the frozen hashes below.
 - Isolated branch/worktree: `codex/en-e03-reed-charmer-idle` at
   `C:\tmp\8-bit-sprite-assembler-en-e03-reed-charmer-idle`, based exactly on
-  corrected published Banner Khan handoff `c324e44`; it has no upstream.
+  corrected published Banner Khan handoff `c324e44`; it tracks the matching
+  origin branch.
 - Scope: Reed Charmer Idle F1-F2 only across Down, Left, Right, and Up. The
   approved Briar Reveler common Satyr remains byte-exact and non-public.
 - Source preservation: the approved calibration and Idle modules only expose
@@ -1439,10 +1441,11 @@ release, and later work remain separately gated.
 - Full validation: `npm.cmd run check` passes in `184` seconds with the
   complete ignored 1,222-file Boss corpus, and all 232 public fixture sheets
   remain unchanged. `git diff --check` also passes.
-- Required next action: commit and push only this exact approved internal lane,
-  reconcile the published checkpoint, and stop. Do not begin Wildwood Hornlord,
-  register, integrate, add effects, release, or start later work without a
-  separate explicit continuation.
+- Publication is complete at approved implementation checkpoint
+  `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`.
+- Required next action: stop and wait. Do not begin Wildwood Hornlord, register,
+  integrate, add effects, release, or start later work without a separate
+  explicit continuation.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice
