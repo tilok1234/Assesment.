@@ -414,7 +414,8 @@ the designer said `lets do next`; following Naga role order, only Venom Oracle
 specialist Idle F1-F2 is active on `codex/en-e04-venom-oracle-idle`. Its paired
 eight-frame candidate is hash-frozen, technically validated, internal,
 non-public, and visually approved after the designer reviewed both exact paired
-GIFs and said `ye approved` on 2026-08-08; bounded publication is pending. Both protected Coilguard
+GIFs and said `ye approved` on 2026-08-08. Bounded publication is complete at
+`3365d9915ed0ac1e506470604ed1e83c84606181`. Both protected Coilguard
 gates, the cleaned v2 fast gate, and the full repository gate pass with all 232
 public sheets unchanged; both boards were opened in Aseprite and both GIF
 phases were inspected. Venom Oracle motion, Temple Rajah, Merfolk, Birdfolk,

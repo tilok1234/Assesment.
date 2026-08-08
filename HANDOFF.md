@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Venom Oracle Idle Approved, Publication Pending
+## Immediate Continuation Checkpoint - Venom Oracle Idle Approved And Published
 
 Start here in a new task. After the approved Coilguard motion implementation
 and handoff were published, the designer said `lets do next` on 2026-08-08.
@@ -29,8 +29,7 @@ Venom Oracle specialist Idle F1-F2 gate across Down, Left, Right, and Up.
   implementation remains frozen at
   `f47e1691208236f5d245a1f3b9b15355ad479790`.
 - Gate: `en-e04-venom-oracle-idle-v1`; status
-  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
-  publication.
+  `approved`, internal, non-public, committed, and pushed.
 - Approval evidence: the designer reviewed both exact labeled all-four-direction
   raw/no-outline and Complete B + Form Venom Oracle Idle GIFs together and said
   `ye approved` on 2026-08-08.
@@ -63,17 +62,20 @@ Venom Oracle specialist Idle F1-F2 gate across Down, Left, Right, and Up.
   pixels; 90 connected crown additions; opaque range 187-215; 758 Complete B
   additions; 953 Form changes; public EN-E04 families `0`.
 - Protected Coilguard Idle and complete-motion gates pass unchanged. The v2
-  fast gate passes in `67.1s`; full `npm.cmd run check` passes in `133.5s`, with
+  fast gate passes in `67.1s`; final pre-commit `npm.cmd run check` passes in
+  `148.4s`, with
   all 232 public PNG sheets unchanged.
+- Bounded publication is complete at approved implementation checkpoint
+  `3365d9915ed0ac1e506470604ed1e83c84606181` on the matching tracked origin
+  branch.
 - Exact artifact inspection: both two-frame GIF phases were inspected directly,
   and both hash-frozen boards were opened in Aseprite at original resolution.
   Crown, hood, mantle, torso, and coil stay connected and readable without
   clipping, seam, phase pop, fake feet, or side-direction mismatch.
-- Required next action: publish only this exact approved Idle lane, reconcile its
-  clean pushed checkpoint, then stop. The request to try larger slices does not
-  by itself select a specific expanded implementation boundary; do not begin
-  Venom Oracle motion, Temple Rajah, registration, integration, effects,
-  release, or broader EN-E04 work until that boundary is explicitly recorded.
+- Required next action: stop. The request to try larger slices does not by itself
+  select a specific expanded implementation boundary; do not begin Venom Oracle
+  motion, Temple Rajah, registration, integration, effects, release, or broader
+  EN-E04 work until that boundary is explicitly recorded.
 
 The approved source checkpoint follows for provenance.
 

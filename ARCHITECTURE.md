@@ -942,10 +942,10 @@ Both protected Coilguard gates, the cleaned v2 fast matrix, and the full
 repository matrix pass with all 232 public sheets unchanged. Both exact boards
 were opened in Aseprite and both GIF phases were inspected directly. Gate
 `en-e04-venom-oracle-idle-v1` is now visually approved, internal, non-public,
-uncommitted, and unpushed pending bounded publication; the designer reviewed
-both exact paired GIFs and said `ye approved` on 2026-08-08. Approval does not
-authorize motion, Temple Rajah, another family, registration, consumers,
-effects, or release.
+committed, and pushed at `3365d9915ed0ac1e506470604ed1e83c84606181`; the
+designer reviewed both exact paired GIFs and said `ye approved` on 2026-08-08.
+Approval and publication do not authorize motion, Temple Rajah, another family,
+registration, consumers, effects, or release.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

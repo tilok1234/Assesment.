@@ -552,10 +552,10 @@ The designer reviewed both exact paired presentations together and said
 registration, integration, effects, release, or broader EN-E04 work. The later
 `lets do next` activates only the specialist Idle gate below.
 
-## Naga Venom Oracle specialist Idle approved, publication pending
+## Naga Venom Oracle specialist Idle approved and published
 
-Branch `codex/en-e04-venom-oracle-idle` owns one internal, non-public,
-uncommitted candidate: Venom Oracle Idle F1-F2 across Down, Left, Right, and Up.
+Branch `codex/en-e04-venom-oracle-idle` owns one approved internal, non-public
+baseline: Venom Oracle Idle F1-F2 across Down, Left, Right, and Up.
 It preserves the approved Naga hood and continuous planted coil, including the
 Coilguard tail region from rows 17-23 byte-for-byte, then adds a connected
 ritual crown/jewel, violet mantle, gold sigil, and venom-bright eyes/sigil. Venom
@@ -572,11 +572,13 @@ external effects, and zero public exposure. The candidate digest is
 `2df5c53f3b6636f2918d4620a3419ee0465ecc57f68d5f8506b5c9e79e862228`.
 
 The candidate and both protected Coilguard gates pass. The cleaned v2 fast gate
-passes in `67.1s`, and full `npm.cmd run check` passes in `133.5s` with all 232
+passes in `67.1s`, and final pre-commit `npm.cmd run check` passes in `148.4s`
+with all 232
 public PNG sheets unchanged. Both exact boards were opened in Aseprite and both
 GIF phases were inspected directly. The designer reviewed both exact paired
 presentations and said `ye approved` on 2026-08-08. Gate
-`en-e04-venom-oracle-idle-v1` is `approved`; bounded publication is pending.
+`en-e04-venom-oracle-idle-v1` is `approved`; bounded publication is complete at
+`3365d9915ed0ac1e506470604ed1e83c84606181`.
 Venom Oracle motion, Temple Rajah,
 Merfolk, Birdfolk, registration, integration, effects, release, and later work
 remain gated.

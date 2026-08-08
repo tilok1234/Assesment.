@@ -177,7 +177,8 @@ Coilguard complete-motion suite was then approved and published at
 `f47e1691208236f5d245a1f3b9b15355ad479790`. After its clean handoff, the
 designer said `lets do next`; following the Naga role order, only Venom Oracle
 specialist Idle F1-F2 was activated. The designer reviewed both exact paired
-GIFs and said `ye approved` on 2026-08-08; bounded publication is pending.
+GIFs and said `ye approved` on 2026-08-08; bounded publication is complete at
+`3365d9915ed0ac1e506470604ed1e83c84606181`.
 
 ## Intake Assessment
 
@@ -241,7 +242,7 @@ non-public lane and published at
 `f47e1691208236f5d245a1f3b9b15355ad479790`. The designer's later `lets do
 next` activated only Venom Oracle specialist Idle F1-F2. Its internal paired
 candidate is technically validated and visually approved; bounded publication
-is pending.
+is complete at `3365d9915ed0ac1e506470604ed1e83c84606181`.
 Temple Rajah, Venom Oracle motion, Merfolk, Birdfolk, registration, consumer
 work, effects, release, and subsequent gates remain unauthorized.
 
@@ -1746,7 +1747,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `approved - Venom Oracle specialist Idle F1-F2 publication pending`
+- Status: `paused - Venom Oracle specialist Idle approved and published`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1852,11 +1853,10 @@ upright avian person rather than collapse into the existing Harpy identity.
   next`; that continuation is bounded to the Venom Oracle specialist Idle gate
   below.
 
-#### Naga Venom Oracle specialist Idle approved, publication pending
+#### Naga Venom Oracle specialist Idle approved and published
 
 - Gate ID: `en-e04-venom-oracle-idle-v1`; status:
-  `approved`, internal, non-public, uncommitted, and unpushed pending bounded
-  publication.
+  `approved`, internal, non-public, committed, and pushed.
 - Live branch: `codex/en-e04-venom-oracle-idle` in the current v2 checkout,
   based on clean reconciled Coilguard motion handoff
   `eddc243e7711f357cb62e40920c83cf066dfc790`.
@@ -1886,11 +1886,12 @@ upright avian person rather than collapse into the existing Harpy identity.
   four exact side mirrors, 490 specialist-changed pixels, 90 connected crown
   additions, 758 Complete B additions, 953 Form changes, zero baked effects,
   and zero public EN-E04 families. Both protected Coilguard gates also pass.
-- The cleaned v2 fast gate passes in `67.1s`; full `npm.cmd run check` passes in
-  `133.5s`, with all 232 public PNG sheets unchanged. Both exact boards were
+- The cleaned v2 fast gate passes in `67.1s`; final pre-commit
+  `npm.cmd run check` passes in `148.4s`, with all 232 public PNG sheets unchanged. Both exact boards were
   opened in Aseprite and both GIF phases were inspected directly.
-- Required next action: publish only this exact approved Idle lane and reconcile
-  its pushed checkpoint. Then stop before motion, Temple Rajah, another family,
+- Publication is complete at approved implementation checkpoint
+  `3365d9915ed0ac1e506470604ed1e83c84606181`.
+- Required next action: stop before motion, Temple Rajah, another family,
   registration, integration, effects, release, or broader EN-E04 work. The
   designer's request to try larger slices requires one explicit bounded next
   scope before implementation begins.
@@ -2248,7 +2249,8 @@ the designer approved both exact presentations on 2026-08-08, authorizing only
 bounded publication. Publication is complete at
 `f47e1691208236f5d245a1f3b9b15355ad479790`. The designer's later `lets do next`
 activates only Venom Oracle specialist Idle F1-F2. Its exact paired candidate is
-hash-frozen, technically validated, visually approved, internal, and awaiting
-bounded publication on `codex/en-e04-venom-oracle-idle`. Venom
+hash-frozen, technically validated, visually approved, internal, and published
+at `3365d9915ed0ac1e506470604ed1e83c84606181` on
+`codex/en-e04-venom-oracle-idle`. Venom
 Oracle motion, Temple Rajah, Merfolk, Birdfolk, registration, integration,
 effects, release, and broader work remain unauthorized.
