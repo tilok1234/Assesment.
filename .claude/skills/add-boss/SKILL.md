@@ -46,6 +46,15 @@ Boss source modules live in `death-review/boss-48-drafts/` (gitignored-but-track
 hurt2/death4), binary alpha, 2px safety border, right = mirrored left,
 Idle frame 1 byte-equals the approved static direction frame.
 
+## Cleaning up after test builds
+
+A build writes checkpoint copies into the gitignored drafts directory, where
+they are INVISIBLE to `git status` and survive plain `git clean -f`. Stray
+copies from a machine with a different Pillow version make the byte-parity
+gate fail confusingly. Remove them with
+`git clean -fx death-review/boss-48-drafts/` — the tracked corpus is safe;
+only untracked leftovers go.
+
 ## Never
 
 - Never edit count/name literals in `tools/check-boss-*.mjs` — rosters live in
