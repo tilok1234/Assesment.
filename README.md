@@ -709,7 +709,7 @@ publication of this exact ten-file lane is complete at
 `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`. Merfolk elite, Birdfolk,
 registration, integration, effects, release, and broader work remain outside.
 
-## Merfolk Pearl Regent full elite approved; publication authorized
+## Merfolk Pearl Regent full elite approved and published
 
 Branch `codex/en-e04-merfolk-pearl-regent` owns the next isolated full-enemy
 slice, based exactly on clean Reefcaller handoff `e54807b`. It contains one
@@ -736,9 +736,10 @@ All seven protected predecessor gates, the fast gate, and full
 Gate `en-e04-merfolk-pearl-regent-full-v1` is `approved`: the designer reviewed
 the exact hash-frozen raw plus Complete B + Form GIF pair with both visible
 side-eye pixels coral-red and said `approved` on 2026-08-09. Bounded
-publication of this exact ten-file lane is authorized. Birdfolk, additional
-Merfolk variants, registration, integration, effects, release, and broader
-work remain outside.
+publication of this exact ten-file lane is complete at
+`ef0ab54b73718b62f8db99f601020f7ef14090f8`. Birdfolk, additional Merfolk
+variants, registration, integration, effects, release, and broader work remain
+outside.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

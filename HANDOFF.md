@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Merfolk Pearl Regent Approved, Publication Authorized
+## Immediate Continuation Checkpoint - Merfolk Pearl Regent Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the
 complete Merfolk Reefcaller, the designer said `lets do next` on 2026-08-09.
@@ -33,8 +33,9 @@ Form pair with both visible side-eye pixels coral-red and said `approved` on
   implementation remains frozen at
   `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`.
 - Gate: `en-e04-merfolk-pearl-regent-full-v1`; status
-  `approved`, internal, non-public, with bounded publication of this exact
-  ten-file lane authorized. Generated review artifacts remain ignored.
+  `approved`, internal, non-public, committed, and pushed at
+  `ef0ab54b73718b62f8db99f601020f7ef14090f8`. Generated review artifacts
+  remain ignored.
 - Scope: one elite Pearl Regent and 80 frames across Down, Left, Right, and Up:
   Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack
   aliases, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
@@ -75,9 +76,12 @@ Form pair with both visible side-eye pixels coral-red and said `approved` on
 - All seven protected predecessor gates and the v2 fast gate pass. Full
   `npm.cmd run check` passes in `115.1s` with all 232 public PNG sheets
   unchanged.
-- Required next action: commit and push only this exact approved ten-file lane,
-  then reconcile its publication checkpoint in these docs. Do not begin
-  Birdfolk, register, integrate, add effects, release, or broaden EN-E04.
+- Publication checkpoint: bounded publication of the exact approved ten-file
+  lane is complete at `ef0ab54b73718b62f8db99f601020f7ef14090f8` on the
+  tracked origin branch.
+- Required next action: stop at this clean published checkpoint. Do not begin
+  Birdfolk, register, integrate, add effects, release, or broaden EN-E04
+  without a separate explicit continuation.
 
 The approved preceding Reefcaller checkpoint follows for provenance.
 

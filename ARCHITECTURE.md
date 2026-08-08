@@ -1072,8 +1072,10 @@ exposure define the gate. All seven protected predecessor gates and fast/full
 validation pass with all 232 public sheets unchanged. The designer reviewed the
 exact hash-frozen raw and Complete B + Form pair with both visible side-eye
 pixels coral-red and said `approved` on 2026-08-09; bounded publication of this
-exact ten-file lane is authorized. Birdfolk, additional Merfolk variants,
-registration, integration, effects, release, and broader work remain outside.
+exact ten-file lane is complete at
+`ef0ab54b73718b62f8db99f601020f7ef14090f8`. Birdfolk, additional Merfolk
+variants, registration, integration, effects, release, and broader work remain
+outside.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

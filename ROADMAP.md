@@ -485,9 +485,10 @@ pass with all 232 public sheets unchanged. Gate
 `en-e04-merfolk-pearl-regent-full-v1` is visually `approved`, internal, and
 non-public. The designer reviewed the exact hash-frozen raw plus Complete B +
 Form pair with both visible side-eye pixels coral-red and said `approved` on
-2026-08-09; bounded publication of the exact ten-file lane is authorized.
-Birdfolk, additional Merfolk variants, registration, integration, effects,
-release, and broader work remain gated.
+2026-08-09; bounded publication of the exact ten-file lane is complete at
+`ef0ab54b73718b62f8db99f601020f7ef14090f8`. Birdfolk, additional Merfolk
+variants, registration, integration, effects, release, and broader work remain
+gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

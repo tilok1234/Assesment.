@@ -1778,7 +1778,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine and aquatic peoples
 
-- Status: `active - Pearl Regent elite approved for bounded publication`
+- Status: `active - all three Merfolk roles published; next gate requires explicit authorization`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1787,7 +1787,7 @@ and no new sprite pixels or public integration are authorized.
 - Approved gate: Temple Rajah complete motion across Down, Left, Right, and Up; published
 - Approved gate: Merfolk Tideguard complete motion across Down, Left, Right, and Up; published
 - Approved gate: Merfolk Reefcaller complete specialist motion across Down, Left, Right, and Up; published
-- Approved gate: Merfolk Pearl Regent complete elite motion across Down, Left, Right, and Up; publication authorized
+- Approved gate: Merfolk Pearl Regent complete elite motion across Down, Left, Right, and Up; published
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -2143,14 +2143,16 @@ upright avian person rather than collapse into the existing Harpy identity.
   integration, effects, release, and broader work require separate explicit
   authorization.
 
-#### Merfolk Pearl Regent full elite approved; publication authorized
+#### Merfolk Pearl Regent full elite approved and published
 
 - Gate ID: `en-e04-merfolk-pearl-regent-full-v1`; status:
-  `approved`, internal, non-public, with bounded publication authorized.
+  `approved`, internal, non-public, committed, and pushed.
 - Live branch: `codex/en-e04-merfolk-pearl-regent`, based exactly on clean
   Reefcaller reconciliation `e54807be33020d23ab0ff5b32938804bd83fcbb5`;
   approved Reefcaller remains frozen at
-  `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`.
+  `b315a32aa48d8881efe23e9d5b8553e6c0fb6b79`. The approved Pearl Regent
+  implementation is committed and pushed at
+  `ef0ab54b73718b62f8db99f601020f7ef14090f8`.
 - Authorization: after Reefcaller approval/publication, the designer said
   `lets do next` on 2026-08-09. EN-E04 role order advances specialist to elite
   before Birdfolk; Codex named and bounded one complete Pearl Regent elite only.
@@ -2190,9 +2192,10 @@ upright avian person rather than collapse into the existing Harpy identity.
   protected predecessor gates also pass.
 - The v2 fast gate passes; full `npm.cmd run check` passes in `115.1s` with all
   232 public PNG sheets unchanged.
-- Required next action: commit and push only the exact approved ten-file lane,
-  then reconcile its publication checkpoint. Birdfolk, registration,
-  integration, effects, release, and broader work remain gated.
+- Publication is complete at approved implementation checkpoint
+  `ef0ab54b73718b62f8db99f601020f7ef14090f8`.
+- Required next action: stop. Birdfolk, registration, integration, effects,
+  release, and broader work require separate explicit authorization.
 
 ### EN-E05 - Undead humanoids
 
@@ -2582,7 +2585,8 @@ unauthorized.
 The designer's next `lets do next` activates only one full 80-frame Merfolk
 Pearl Regent elite on `codex/en-e04-merfolk-pearl-regent`. Its paired evidence
 is hash-frozen and focused/protected/fast/full validated. The designer reviewed
-the exact pair and said `approved` on 2026-08-09; the lane remains internal and
-non-public with bounded publication authorized. Birdfolk, additional Merfolk
+the exact pair and said `approved` on 2026-08-09. The lane remains internal and
+non-public, committed, and pushed at
+`ef0ab54b73718b62f8db99f601020f7ef14090f8`. Birdfolk, additional Merfolk
 variants, registration, integration, effects, release, and broader work remain
 unauthorized.
