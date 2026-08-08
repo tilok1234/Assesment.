@@ -363,7 +363,8 @@ exact Cast/Death aliases now form one internal/non-public 80-frame candidate.
 Approved Idle and Briar sources remain exact, both paired suite GIFs are frozen,
 and both focused and full gates pass with all 232 validated PNG sheets
 unchanged. The designer reviewed both exact paired GIFs and said `Approved` on
-2026-08-08; bounded publication is closing. Wildwood Hornlord, registration,
+2026-08-08; the bounded implementation is committed and pushed at
+`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`. Wildwood Hornlord, registration,
 integration, effects, release, and later gates remain unauthorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish

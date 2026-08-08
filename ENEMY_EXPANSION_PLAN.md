@@ -180,8 +180,8 @@ F1-F2 was authorized. The designer reviewed both exact paired GIFs and said
 complete at `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. The designer then
 authorized the discussed larger slice with `Sure lets go for it one complete
 motion suite we can try atleast`. The designer approved both exact paired Reed
-Charmer complete-motion GIFs on 2026-08-08; bounded publication is the only
-current action, and no later gate is authorized.
+Charmer complete-motion GIFs on 2026-08-08. Bounded publication is complete at
+`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`; no later gate is authorized.
 
 ## Intake Assessment
 
@@ -1592,10 +1592,10 @@ and no new sprite pixels or public integration are authorized.
   Giant/Centaur changes, baked music/pollen/charm effects, registration,
   consumers, release, and later EN-E03 work.
 
-#### Reed Charmer complete motion acceptance candidate
+#### Reed Charmer complete motion approved and published
 
 - Gate ID: `en-e03-reed-charmer-motion-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed while bounded publication closes.
+  non-public, committed, and pushed.
 - Authorization evidence: after the exact Reed Idle pair was approved,
   published, and reconciled, the designer said `Sure lets go for it one complete
   motion suite we can try atleast`. This authorizes one Reed Charmer suite only.
@@ -1604,7 +1604,8 @@ and no new sprite pixels or public integration are authorized.
   `Approved` on 2026-08-08.
 - Isolated branch/worktree: `codex/en-e03-reed-charmer-motion` at
   `C:\tmp\8-bit-sprite-assembler-en-e03-reed-charmer-motion`, based exactly on
-  clean published Reed Idle handoff `ef98e7c`.
+  clean published Reed Idle handoff `ef98e7c`, tracking the matching origin
+  branch.
 - Scope: approved Idle F1-F2 plus Walk W1-W4, Attack A1-A4, Cast C1-C4, Hurt
   H1-H2, and Death D1-D4 across all four directions. Idle delegates exact; Cast
   aliases Attack frame-for-frame; Death aliases Hurt H1,H2,H2,H2.
@@ -1631,6 +1632,10 @@ and no new sprite pixels or public integration are authorized.
 - Approved review: both exact paired `640x672`, four-phase raw/no-outline and
   Complete B + Form motion-suite GIFs were reviewed together. Full repository
   validation passes in `187.1s`, including all 232 validated PNG sheets.
+- Publication is complete at approved implementation checkpoint
+  `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`.
+- Required next action: stop and wait for separate explicit designer
+  authorization. No later gate is authorized by this approval.
 - Exclusions: approved Reed Idle changes, Briar changes, Wildwood Hornlord,
   Giant/Centaur changes, new Cast/Death pixels, baked music/pollen/charm effects,
   registration, consumers, release, and later EN-E03 work.
@@ -1982,5 +1987,6 @@ Khan Idle publication is complete at
 complete at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. Reed Charmer specialist Idle
 F1-F2 is visually approved and published at
 `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. Reed Charmer complete motion is
-visually approved and bounded publication is the only current action; any other
-code or art work requires separate explicit designer authorization.
+visually approved and published at `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`.
+No art gate is active; any other code or art work requires separate explicit
+designer authorization.

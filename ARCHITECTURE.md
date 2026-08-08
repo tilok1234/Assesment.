@@ -849,6 +849,8 @@ boundaries, and zero facade exposure define the frozen visual gate. The
 designer approved both exact paired GIFs on 2026-08-08; bounded publication
 does not expand that gate. Wildwood Hornlord, consumers, registration, effects,
 release, and later work stay out.
+The approved internal implementation is committed and pushed at
+`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`; no later gate is opened by publication.
 The focused gate preserves every approved Reed/Briar source digest, and the
 full repository gate passes in `187.1s` with all 232 validated PNG sheets
 unchanged.

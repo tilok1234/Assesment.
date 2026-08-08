@@ -5,23 +5,24 @@ Date: 2026-08-08
 ## Immediate Continuation Checkpoint - Approved Reed Charmer Complete Motion
 
 Start here in a new task. Reed Charmer specialist Walk/Attack/Hurt/Cast/Death
-across all four directions is visually approved. Bounded publication of the
-internal 80-frame suite is the current action; no later art gate is authorized.
+across all four directions is visually approved and published internally at
+`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`. No art gate is active or authorized.
 
 - Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-reed-charmer-motion` on
-  branch `codex/en-e03-reed-charmer-motion` at
-  `ef98e7ce576205872410029d35b0da7921438a4e`, with no upstream. It is based
-  exactly on the clean, published Reed Charmer Idle handoff.
-- Git state is intentionally dirty, uncommitted, and unpushed. The approved
-  Satyr Walk/Attack/Hurt modules only expose narrow draw helpers with crooked
-  staff rendering default-on, so all Briar Reveler source pixels remain exact.
+  branch `codex/en-e03-reed-charmer-motion`, tracking its matching origin
+  branch. Its approved implementation checkpoint is
+  `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`, based exactly on the clean,
+  published Reed Charmer Idle handoff.
+- Git state is clean and synchronized after this docs-only reconciliation. The
+  approved Satyr Walk/Attack/Hurt modules only expose narrow draw helpers with
+  crooked staff rendering default-on, so all Briar Reveler source pixels remain
+  exact.
   The bounded new files are
   `engine/enemy-expansion-en-e03-satyr-specialist-motion.js`,
   `tools/enemy-expansion-en-e03-reed-charmer-motion-review.mjs`,
   `tools/build-enemy-expansion-en-e03-reed-charmer-motion-gifs.py`, and
   `tools/check-enemy-expansion-en-e03-reed-charmer-motion.mjs`, plus package and
-  documentation updates. Stage only this bounded lane; do not reset, clean,
-  stash, or switch it while publication closes.
+  documentation updates. Review artifacts remain ignored.
 - Gate: `en-e03-reed-charmer-motion-v1`, status `approved`, internal and
   non-public.
 - Authorization evidence: after discussing a safe larger slice, the designer
@@ -66,10 +67,9 @@ internal 80-frame suite is the current action; no later art gate is authorized.
   sheets.
 - Review output, approved review evidence, and the local Boss checkpoint corpus
   are ignored support artifacts; they are not candidate source changes.
-- Next action: make and push the bounded approval commit, reconcile this handoff
-  to its immutable checkpoint, then stop. Do not begin Wildwood Hornlord,
-  register, integrate, add effects, release, or start later EN-E03 work without
-  a separate explicit continuation.
+- Next action: stop and wait. Do not begin Wildwood Hornlord, register,
+  integrate, add effects, release, or start later EN-E03 work without a separate
+  explicit continuation.
 
 The detailed historical and technical evidence remains in
 [Reed Charmer Complete Motion Approved](#reed-charmer-complete-motion-approved).
@@ -1452,7 +1452,7 @@ release, and later work remain separately gated.
 ### Reed Charmer Complete Motion Approved
 
 - Gate ID: `en-e03-reed-charmer-motion-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed while bounded publication closes.
+  non-public, committed, and pushed.
 - Authorization evidence: after Reed Charmer Idle was approved, published, and
   reconciled, the designer authorized the discussed larger slice with
   `Sure lets go for it one complete motion suite we can try atleast`. Codex
@@ -1462,7 +1462,8 @@ release, and later work remain separately gated.
   `Approved` on 2026-08-08.
 - Isolated branch/worktree: `codex/en-e03-reed-charmer-motion` at
   `C:\tmp\8-bit-sprite-assembler-en-e03-reed-charmer-motion`, based exactly on
-  clean published Reed Idle handoff `ef98e7c`; it has no upstream.
+  clean published Reed Idle handoff `ef98e7c`; it tracks the matching origin
+  branch.
 - Scope: approved Idle F1-F2 plus Walk W1-W4, Attack A1-A4, Cast C1-C4, Hurt
   H1-H2, and Death D1-D4 across Down, Left, Right, and Up. Idle delegates exact;
   Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2.
@@ -1499,10 +1500,11 @@ release, and later work remain separately gated.
 - Full `npm.cmd run check` validation passes in `187.1s`, including all 232
   validated PNG sheets; the complete ignored Boss checkpoint corpus contains
   1,222 files.
-- Required next action: make and push the bounded approval commit, reconcile
-  this handoff to its immutable checkpoint, then stop. Do not begin Wildwood
-  Hornlord, register, integrate, add effects, release, or start later work
-  without a separate explicit continuation.
+- Publication is complete at approved implementation checkpoint
+  `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`.
+- Required next action: stop and wait. Do not begin Wildwood Hornlord,
+  register, integrate, add effects, release, or start later work without a
+  separate explicit continuation.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

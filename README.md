@@ -451,8 +451,9 @@ Cast-to-Attack and Death-to-Hurt aliases, frozen hashes, external effects, and
 zero public exposure. The full repository gate also passes in `187.1s`, with
 all 232 validated PNG sheets unchanged. The designer reviewed both exact paired
 GIFs and said `Approved` on 2026-08-08. The internal, non-public bounded
-publication is closing; Wildwood Hornlord, registration, integration, effects,
-release, and later work remain unauthorized.
+implementation is committed and pushed at `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`.
+Wildwood Hornlord, registration, integration, effects, release, and later work
+remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
