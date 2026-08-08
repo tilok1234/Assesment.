@@ -142,19 +142,19 @@ function validatePlayerSpec(spec, actorId) {
   validateCustomPalette(spec.palette, actorId);
 }
 
-function validateEnemySpec(spec, actorId) {
-  const family = ENEMIES.find((entry) => entry.id === spec.family);
+function validateEnemySpec(spec, actorId, enemyFamilies) {
+  const family = enemyFamilies.find((entry) => entry.id === spec.family);
   assert(family, `Actor ${actorId} has an invalid enemy family id.`);
   assert(catalogHas(family.variants, spec.variant), `Actor ${actorId} has an invalid enemy variant id.`);
 }
 
-function validateActorSpec(actor) {
+function validateActorSpec(actor, enemyFamilies) {
   assert(actor.spec.kind === actor.category, `Actor ${actor.id} specification kind must match its category.`);
   if (actor.category === 'player') validatePlayerSpec(actor.spec, actor.id);
-  else validateEnemySpec(actor.spec, actor.id);
+  else validateEnemySpec(actor.spec, actor.id, enemyFamilies);
 }
 
-function normalizeActor(actor) {
+function normalizeActor(actor, enemyFamilies) {
   assert(actor && typeof actor === 'object', 'Every actor must be an object.');
   validateId(actor.id, 'Actor id');
   assert(
@@ -162,7 +162,7 @@ function normalizeActor(actor) {
     `Actor ${actor.id} has an invalid category.`,
   );
   assert(actor.spec && typeof actor.spec === 'object' && !Array.isArray(actor.spec), `Actor ${actor.id} needs a specification.`);
-  validateActorSpec(actor);
+  validateActorSpec(actor, enemyFamilies);
   const expectedSheet = actorPath(actor.category, actor.id);
   assert(actor.sheet === expectedSheet, `Actor ${actor.id} must use ${expectedSheet}.`);
   return {
@@ -252,13 +252,14 @@ export function buildWildshotGamePackManifest({
   toolCommit,
   actors = [],
   effects = [],
-} = {}) {
+} = {}, { enemyFamilies = ENEMIES } = {}) {
   assert(typeof generated === 'string' && DATE_PATTERN.test(generated), 'generated must use YYYY-MM-DD.');
   assert(typeof toolCommit === 'string' && COMMIT_PATTERN.test(toolCommit), 'toolCommit must be a 7-40 character lowercase Git hash.');
   assert(Array.isArray(actors) && actors.length > 0, 'A game pack needs at least one actor.');
   assert(Array.isArray(effects), 'effects must be an array.');
+  assert(Array.isArray(enemyFamilies) && enemyFamilies.length > 0, 'enemyFamilies must be a non-empty array.');
 
-  const normalizedActors = actors.map(normalizeActor);
+  const normalizedActors = actors.map((actor) => normalizeActor(actor, enemyFamilies));
   const normalizedEffects = effects.map(normalizeEffect);
   assertUniqueIds(normalizedActors, 'Actor');
   assertUniqueIds(normalizedEffects, 'Effect');

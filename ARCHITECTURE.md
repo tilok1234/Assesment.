@@ -29,6 +29,10 @@ index.html
       -> engine/production-rolls.js
       -> engine/production-rerolls.js
       -> engine/game-pack.js
+      -> engine/enemy-expansion-public.js
+        -> engine/enemy-expansion.js
+        -> engine/enemy-expansion-en-e01.js
+          -> engine/enemy-expansion-humanoid.js
       -> engine/variant-batches.js
       -> engine/class-templates.js
     -> character-kit.js
@@ -63,6 +67,102 @@ Sprite-rendering consumers import `sprite-engine.js`. Internal engine module pat
 - `engine/catalogs.js` is the internal catalog facade used by the renderer and helpers.
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
+
+### Enemy expansion foundation and approved registrations
+
+`engine/enemy-expansion.js` is the pure EN-F00 boundary. It owns the immutable
+`enemy-expansion-v1` frame/baseline profile, the 22-slice/80-proposal lifecycle
+ledger, renderer/chassis registration validation, implemented-versus-approved
+family views, deterministic family/slice Idle review plans, renderer dispatch,
+and completed `480x96` hard-alpha sheet validation. It imports only the stable
+internal catalog facade and does not access the DOM, canvas, storage, packs,
+filesystem, or editor state.
+
+The isolated EN-F00 foundation registry deliberately contains no families or
+renderer handlers. `engine/enemy-expansion-public.js` composes only explicitly
+approved slice registries and supplies the current default ledger report to the
+stable facade. Its current immutable registry contains ten approved EN-E01 and
+EN-E02 families / 30 variants. Planned families cannot enter any registry;
+implemented entries remain internal; only an approved registration can appear
+in the public family view.
+
+The legacy `ENEMIES` array remains unchanged as the 57-family / 202-variant
+regression and fixture boundary. `engine/enemy-expansion-public.js` also exports
+immutable `PUBLIC_ENEMIES`, which preserves those legacy entries in order and
+appends the ten consumer-authorized EN-E01/EN-E02 families, yielding the current
+67-family / 232-variant consumer catalog. Editor selectors and sanitizers,
+persistence, randomization, combat defaults, kits, packs, thumbnails, and
+exports consume that merged view without mutating `ENEMIES`.
+
+`engine/public-renderer.js` is the stable dispatcher used by the public
+`drawSprite()` facade and assembled/pixel/sheet helpers. It delegates every
+legacy specification to the unchanged renderer and sends only approved
+expansion family IDs through `renderEnemyExpansionFrame()`. It owns clear,
+composition, generic preview-shadow, layer, and out-of-bounds callback semantics
+around the reviewed renderer. `engine/public-game-pack.js` similarly injects
+`PUBLIC_ENEMIES` into the catalog-parameterized manifest builder, leaving the
+core game-pack policy renderer-free and dependent only on `catalogs.js`.
+
+The assembled presentation boundary also consumes the public registry.
+`engine/outline-renderer.js` recognizes approved expansion specifications via
+the stable public dispatcher and applies the source-preserving exterior contour
+path for Complete B or Selective C. `engine/shade-renderer.js` resolves enemy
+materials from `PUBLIC_ENEMIES`, so EN-E01 uses the nested skin, hair, outfit,
+and identity palette ramps published by its renderer data instead of falling
+back to an unrelated legacy family. EN-E02 reaches the same palette-aware path
+through its approved renderer data. None/None still delegates directly to the
+raw dispatcher; Form and outlines alter only complete assembled output,
+preserve protected features and outline geometry, and do not mutate registry
+pixels or atomic component sheets.
+
+The approved EN-E01 implementation lives behind that boundary.
+`engine/enemy-expansion-en-e01.js` owns five immutable contract cards, a frozen
+common-only registry for the exact approved Idle evidence, and a separate full
+candidate registry containing 15 reviewed common/specialist/elite variants. It
+also owns the immutable completed-slice approval record and a five-family
+approved registry consumed only by `engine/enemy-expansion-public.js`.
+`engine/enemy-expansion-humanoid.js` owns one `humanoid-threat-v1` handler on
+the `humanoid-v1` chassis. The handler reuses the proven player humanoid rig,
+derives Idle/Walk/Attack/Hurt poses generically, maps Enemy Cast to Attack and
+Death to Hurt 1, 2, 2, 2, and applies identity overlays selected by renderer
+data rather than family-id branches. The frozen registry keeps the approved
+common Idle pixels byte-identical while the full registry exercises complete
+`480x96` sheets. `sprite-engine.js` exports only the generic public boundary and
+does not expose slice-specific symbols; consumers reach EN-E01 through
+`PUBLIC_ENEMIES` and the public dispatcher rather than importing the slice
+module. The ignored baseline and
+full-slice review generators continue to capture their frozen evidence
+registries directly. Registration checkpoint `b43ed6a` proves all 1,200 public
+frames are pixel-identical to the reviewed candidate; consumer checkpoint
+`e0be273` proves the editor/export adapter retains that parity. The later
+presentation integration exhaustively verifies the same 1,200 raw frames plus
+3,600 outline and 3,600 Form/outline assembled cases. The designer accepted the
+live combined treatment on 2026-08-02; registry approval and raw-pixel identity
+remain separate contracts.
+
+`engine/enemy-expansion-en-e02.js` owns the approved second art slice. It
+contains five immutable contract cards, a frozen common-only registry for the
+exact approved Idle evidence, a separate pre-registration candidate registry
+containing 15 common/specialist/elite variants, an immutable completed-slice
+approval record, and a five-family approved slice registry. These registries
+reuse the existing
+`humanoid-threat-v1` handler while masks, satchels, wraps, bows, bindings, bell
+regalia, feline tails/manes, and caprine regalia remain selected by renderer
+data. Walk/Attack/Hurt use the shared humanoid motion contract; Cast aliases
+Attack and Death aliases Hurt 1, 2, 2, 2. A private pixel-level compatibility
+proof applies the shared Complete B, Selective C, and Form algorithms without
+adding EN-E02 to the public dispatcher before authorization. Registration
+checkpoint `7b6e448` composes EN-E01 and EN-E02 into the stable approved
+`ENEMY_EXPANSION_REGISTRY` at ten families / 30 variants. The later explicit
+consumer gate is recorded by immutable `EN_E02_CONSUMER_INTEGRATION_GATE`;
+checkpoint `8ab1837` makes `ENEMY_EXPANSION_CONSUMER_REGISTRY` reuse that exact
+cumulative approved registry. `PUBLIC_ENEMIES` is therefore 67/232, and the
+existing selectors, randomizer, kit, pack, thumbnail, export, outline/Form, and
+standard-dispatcher paths consume EN-E02 without slice-specific branches.
+`sprite-engine.js` still imports only the generic stable boundary and exposes no
+slice-specific symbols. The five pre-registration candidate records remain
+immutable `implemented` evidence; consumer integration does not retroactively
+rewrite that reviewed snapshot or authorize effects, release, or EN-E03.
 
 Boss direction and animation assets live beneath `engine/assets/bosses/` so
 the existing runtime `engine/` copy boundary carries them without changing the
@@ -202,7 +302,7 @@ are later slices governed by `GAME_PACK_EXPORT_PLAN.md`.
 
 ### Complete character kits
 
-`character-kit.js` deterministically expands the player catalogs into one deduplicated component plan: skin-body, head, expression, hair, face-detail, species-back, species-front, outfit-back, outfit, headgear, weapon, shield, and utility-off-hand passes. It stores 119 hair sheets, six expression sheets, 60 content-unique species passes, 41 headgear sheets, and two Lantern passes beneath stable component paths. Species paths expand only on the palette axis that changes their pixels: skin for Dwarf and Lizardfolk traits, hair for Beastkin fur, and one fixed path for Undead traits. Short, spiky, bowl, and topknot share one pixel-identical fitted hair path, while outfit-colored headgear expands only the variants whose pixels actually change. Outfit and cape paths include the body-build id because those pixels define the silhouette; all other compatible layers remain shared. The resulting library contains 1020 outfit fronts, 140 cape backs, and 1912 component sheets total. It also expands every enemy family and variation into stable `enemies/<family>/<variation>.png` paths and every combat effect into stable `effects/<category>/<effect>.png` paths for complete native sheets. Up to 24 named players are mapped to lightweight recipes that reference the shared character paths and carry their modular combat-loadout recipes. The standalone kit adds no per-recipe PNGs; the combined Complete Pack adds one assembled native sheet per player for immediate use. The planner owns stable paths, counts, recipe limits, the native export scale, compatibility variants, and the runtime layer order. It imports catalogs only through `sprite-engine.js` and does not access the DOM, canvas, editor state, persistence, or ZIP implementation.
+`character-kit.js` deterministically expands the player catalogs into one deduplicated component plan: skin-body, head, expression, hair, face-detail, species-back, species-front, outfit-back, outfit, headgear, weapon, shield, and utility-off-hand passes. It stores 119 hair sheets, six expression sheets, 60 content-unique species passes, 41 headgear sheets, and two Lantern passes beneath stable component paths. Species paths expand only on the palette axis that changes their pixels: skin for Dwarf and Lizardfolk traits, hair for Beastkin fur, and one fixed path for Undead traits. Short, spiky, bowl, and topknot share one pixel-identical fitted hair path, while outfit-colored headgear expands only the variants whose pixels actually change. Outfit and cape paths include the body-build id because those pixels define the silhouette; all other compatible layers remain shared. The resulting library contains 1020 outfit fronts, 140 cape backs, and 1912 component sheets total. It also expands all 67 public enemy families / 232 variants into stable `enemies/<family>/<variation>.png` paths and every combat effect into stable `effects/<category>/<effect>.png` paths for complete native sheets. Up to 24 named players are mapped to lightweight recipes that reference the shared character paths and carry their modular combat-loadout recipes. The standalone kit adds no per-recipe PNGs and contains 2169 PNGs total; the combined Complete Pack adds one assembled native sheet per player for immediate use and contains 2192 PNGs at the 24-player limit. The planner owns stable paths, counts, recipe limits, the native export scale, compatibility variants, and the runtime layer order. It imports catalogs only through `sprite-engine.js` and does not access the DOM, canvas, editor state, persistence, or ZIP implementation.
 
 ### Archive packaging
 
@@ -289,9 +389,21 @@ deliberately not serialized.
 - Class-pack archives preserve one character identity, contain only equipment permitted by their stable class definition, deduplicate complete specifications, and include one resolved modular combat loadout per ready sheet.
 - Complete Character Kits always use native 1x sheets and the draw order `weapon-back`, `shield-back`, `offhand-back`, `species-back`, `outfit-back`, `outfit`, `skin-body`, `head`, `expression`, `species-front`, `face-detail`, `hair`, `headgear`, `shield-front`, `offhand-front`, `weapon-front`.
 - Combat-effect sheets remain modular and unbaked. The current effects-after-character preview/recipe order is a compatibility fact, not a finalized foreground-equipment occlusion invariant.
-- All 57 enemy families support None, Complete B, and Selective C in live
-  assembled rendering; all 16,160 current source frames reserve a one-cell
-  outline margin and perform no out-of-bounds writes.
+- All 67 public enemy families support None, Complete B, and Selective C in live
+  assembled rendering. The locked 57-family legacy gate covers 16,160 source
+  frames; the cumulative expansion gate adds all 2,400 approved EN-E01/EN-E02
+  frames with the same source-ownership and bounds guarantees.
+- The EN-F00 foundation registry remains empty and separate from `ENEMIES`;
+  the stable approved and consumer registries contain exactly ten EN-E01/EN-E02
+  families / 30 variants. `PUBLIC_ENEMIES` is exactly 67 families / 232 variants
+  and is the editor, randomizer, kit, pack, thumbnail, and export catalog. The
+  underlying 57-family / 202-sheet / 16,160-frame legacy corpus remains
+  unchanged and retains locked SHA-256 pixel digest
+  `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
+- The 30 expansion variants retain their reviewed raw pixels at the registry
+  and None/None dispatcher boundary. Optional assembled rendering may apply the
+  shared Form/outline algorithms; exports remain shadow-free, while the live
+  preview may add only the standard non-baked floor shadow.
 - Shade None plus outline None directly delegates to `drawSprite()`. Shade None
   combined with Complete B or Selective C preserves the approved outline
   output. Form changes eligible source-owned colors only and is wired through
@@ -317,6 +429,21 @@ deliberately not serialized.
 - Browser and Windows builds use identical production files.
 
 `npm run check` enforces these invariants against the native export contract, class and equipment planner counts, character-pack ZIP format, Complete Character Kit component matrix, recipe paths, exact pixel recomposition, `asset-pack/manifest.json`, and all 232 committed PNG fixtures. The current 20-column shade gate adds 480 broad player None-parity cases, exhaustive None parity for all 16,160 enemy source frames, 1,616 sampled enemy None/outline parity cases, 2,880 deterministic Form pilot cases, an exhaustive 16,160-frame enemy Form audit, 1,616 enemy Form/outline integration cases, and assembled full/direction/animation export forwarding checks. The Form matrix verifies source ownership, 164,685 protected pixels, unchanged outline/contact geometry, finite colors, exact floor shadows and transparent cells, 158,872 visible changes, and 35,333 material-aware pixel differences from the silhouette-only control. Weapon validation also enforces one connected silhouette in every frame, family and tier distinction, casting-family proportions, global Tier 5 pixel-density and bounds budgets relative to Tier 4, exact left/right mirroring, direction-aware front/back layer routing and recomposition, animation-phase diversity, front-view identity retention, catastrophic-detachment protection, zero discarded pixels across all 6,000 weapon frames, all 12,800 shield cases across four body builds, all 320 Lantern utility-off-hand cases, and 880 equipped-headgear cases, plus pixel/order parity for native full, direction, and animation sheet exports. The Lantern matrix checks animated hand attachment, face clearance, visible change, near/far routing, mutual exclusion, combat semantics, and exact layer recomposition. These structural checks do not replace explicit visual approval and do not resolve the deferred combined effect/shield compositor.
+
+The nested `npm run check:enemy-expansion` gate additionally proves registry
+immutability, duplicate/collision and missing-renderer refusal, planned-family
+exclusion, deterministic family/slice review plans, exact legacy pixel parity,
+and rejection of empty, clipped, translucent, reordered, or incorrectly sized
+completed standard Enemy sheets.
+
+The nested `npm run check:enemy-expansion-en-e02-consumers` gate proves exact
+57/202 legacy preservation, immutable 67/232 public composition, selectors and
+persistence wiring, deterministic expansion randomization, nested actor combat
+metadata, Wildshot validation, 232-sheet Complete Kit planning, thumbnails and
+all export scopes, and approved pixel parity across all 2,400 editor/dispatcher
+frames and all 30 native `480x96` sheets. It also exhausts 7,200 None/B/C
+outline cases and 7,200 Form/outline cases across all 180 published expansion
+palette colors.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
@@ -402,11 +529,13 @@ For face-bound content, verify front and both side views, confirm the rear view 
 3. Export and register every fixture.
 4. Verify all directions and animations before publishing.
 
-For the proposed 80-enemy expansion, this legacy one-family path is not the
-starting instruction. Follow `ENEMY_EXPANSION_PLAN.md`: explicitly authorize
-and complete EN-F00's data-driven expansion facade first, keep unfinished
-families out of public selectors and packs, then stop for four-direction
-baseline approval before registering each production slice.
+For the proposed 80-enemy expansion, do not use this legacy one-family path.
+EN-F00's data-driven foundation and stable public composition boundary now
+exist. EN-E01 demonstrates the complete lifecycle with five approved/public
+families / 15 variants and a real shared renderer handler. Follow
+`ENEMY_EXPANSION_PLAN.md`: keep candidates out of the public view, stop for
+four-direction baseline approval before full production, stop again for
+completed-slice approval, and register only the explicitly approved slice.
 
 ### Change the sheet contract
 

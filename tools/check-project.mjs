@@ -49,6 +49,7 @@ const pixelBuffer = await import(`${pathToFileURL(path.join(root, 'engine', 'pix
 const shadeModule = await import(`${pathToFileURL(path.join(root, 'engine', 'shade-renderer.js')).href}?check=${Date.now()}`);
 const castModule = await import(`${pathToFileURL(path.join(root, 'engine', 'cast-animation.js')).href}?check=${Date.now()}`);
 const deathModule = await import(`${pathToFileURL(path.join(root, 'engine', 'death-animation.js')).href}?check=${Date.now()}`);
+const enemyExpansionModule = await import(`${pathToFileURL(path.join(root, 'engine', 'enemy-expansion.js')).href}?check=${Date.now()}`);
 const { SHADE_PILOTS } = await import(`${pathToFileURL(path.join(root, 'tools', 'shade-pilots.mjs')).href}?check=${Date.now()}`);
 const characterKit = await import(`${pathToFileURL(path.join(root, 'character-kit.js')).href}?check=${Date.now()}`);
 const zipModule = await import(`${pathToFileURL(path.join(root, 'zip.js')).href}?check=${Date.now()}`);
@@ -68,8 +69,15 @@ checkSyntax('engine/catalogs/player-options.js');
 checkSyntax('engine/combat-loadouts.js');
 checkSyntax('engine/cast-animation.js');
 checkSyntax('engine/death-animation.js');
+checkSyntax('engine/enemy-expansion.js');
+checkSyntax('engine/enemy-expansion-en-e01.js');
+checkSyntax('engine/enemy-expansion-en-e02.js');
+checkSyntax('engine/enemy-expansion-humanoid.js');
+checkSyntax('engine/enemy-expansion-public.js');
+checkSyntax('engine/public-renderer.js');
 checkSyntax('engine/class-templates.js');
 checkSyntax('engine/game-pack.js');
+checkSyntax('engine/public-game-pack.js');
 checkSyntax('engine/production-rolls.js');
 checkSyntax('engine/production-rerolls.js');
 checkSyntax('engine/variant-batches.js');
@@ -88,6 +96,21 @@ checkSyntax('tools/check-boss-animations.mjs');
 checkSyntax('tools/check-boss-directions.mjs');
 checkSyntax('tools/cast-review.mjs');
 checkSyntax('tools/death-review.mjs');
+checkSyntax('tools/check-enemy-expansion.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e01.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e01-full.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e01-registration.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e01-consumers.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e02.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e02-full.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e02-registration.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e02-consumers.mjs');
+checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
+checkSyntax('tools/enemy-expansion-en-e01-full-review.mjs');
+checkSyntax('tools/enemy-expansion-en-e02-review.mjs');
+checkSyntax('tools/enemy-expansion-en-e02-full-review.mjs');
+checkSyntax('tools/enemy-expansion-candidate-presentation.mjs');
+checkSyntax('tools/enemy-expansion-review-pixels.mjs');
 checkSyntax('tools/dev-server.mjs');
 checkSyntax('tools/generate-shield-placement-audit.mjs');
 checkSyntax('tools/outline-review.mjs');
@@ -111,6 +134,70 @@ const bossAnimationCheck = spawnSync(process.execPath, [path.join(root, 'tools',
 check(
   bossAnimationCheck.status === 0,
   `Boss animation structural gate failed\n${bossAnimationCheck.stdout.trim()}\n${bossAnimationCheck.stderr.trim()}`,
+);
+
+const enemyExpansionCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionCheck.status === 0,
+  `Enemy expansion foundation gate failed\n${enemyExpansionCheck.stdout.trim()}\n${enemyExpansionCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE01Check = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e01.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE01Check.status === 0,
+  `EN-E01 Idle candidate gate failed\n${enemyExpansionEnE01Check.stdout.trim()}\n${enemyExpansionEnE01Check.stderr.trim()}`,
+);
+
+const enemyExpansionEnE01FullCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e01-full.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE01FullCheck.status === 0,
+  `EN-E01 full private candidate gate failed\n${enemyExpansionEnE01FullCheck.stdout.trim()}\n${enemyExpansionEnE01FullCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE01RegistrationCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e01-registration.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE01RegistrationCheck.status === 0,
+  `EN-E01 public registration gate failed\n${enemyExpansionEnE01RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE01RegistrationCheck.stderr.trim()}`,
+);
+
+const enemyExpansionConsumerCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e02-consumers.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionConsumerCheck.status === 0,
+  `EN-E01/EN-E02 consumer integration gate failed\n${enemyExpansionConsumerCheck.stdout.trim()}\n${enemyExpansionConsumerCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE02Check = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e02.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE02Check.status === 0,
+  `EN-E02 approved Idle evidence gate failed\n${enemyExpansionEnE02Check.stdout.trim()}\n${enemyExpansionEnE02Check.stderr.trim()}`,
+);
+
+const enemyExpansionEnE02FullCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e02-full.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE02FullCheck.status === 0,
+  `EN-E02 full candidate evidence gate failed\n${enemyExpansionEnE02FullCheck.stdout.trim()}\n${enemyExpansionEnE02FullCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE02RegistrationCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e02-registration.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE02RegistrationCheck.status === 0,
+  `EN-E02 approved registration gate failed\n${enemyExpansionEnE02RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE02RegistrationCheck.stderr.trim()}`,
 );
 
 const entryCandidates = ['index.html', 'Sprite Assembler.dc.html'];
@@ -175,6 +262,7 @@ const runtimeSources = {
   'engine/combat-loadouts.js': await readFile(path.join(root, 'engine', 'combat-loadouts.js'), 'utf8'),
   'engine/cast-animation.js': await readFile(path.join(root, 'engine', 'cast-animation.js'), 'utf8'),
   'engine/death-animation.js': await readFile(path.join(root, 'engine', 'death-animation.js'), 'utf8'),
+  'engine/enemy-expansion.js': await readFile(path.join(root, 'engine', 'enemy-expansion.js'), 'utf8'),
   'engine/class-templates.js': await readFile(path.join(root, 'engine', 'class-templates.js'), 'utf8'),
   'engine/game-pack.js': await readFile(path.join(root, 'engine', 'game-pack.js'), 'utf8'),
   'engine/production-rolls.js': await readFile(path.join(root, 'engine', 'production-rolls.js'), 'utf8'),
@@ -206,24 +294,26 @@ const expectedEngineExports = [
   'BODY_BUILDS', 'CLASS_PACK_FORMAT', 'CLASS_PACK_VERSION', 'CLASS_TEMPLATES',
   'COMBAT_EFFECTS', 'COMBAT_LOADOUT_FORMAT', 'COMBAT_LOADOUT_SLOTS', 'COMBAT_LOADOUT_VERSION', 'DEFAULT_CLASS_TEMPLATE',
   'DEFAULT_COMBAT_LOADOUT', 'DEFAULT_VARIANT_BATCH_SET', 'ENEMY_OUTLINE_PILOT_FAMILIES',
-  'DIRS', 'DIR_LABELS', 'ENEMIES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
+  'DIRS', 'DIR_LABELS', 'ENEMIES', 'ENEMY_EXPANSION_CONSUMER_REGISTRY', 'ENEMY_EXPANSION_LEDGER', 'ENEMY_EXPANSION_PROFILE', 'ENEMY_EXPANSION_REGISTRY',
+  'ENEMY_EXPANSION_STATES', 'EXPRESSIONS', 'FACIAL_DETAILS', 'HAIR_COLORS', 'HAIR_STYLES', 'HEADGEAR',
   'OFFHANDS', 'OUTFITS', 'OUTFIT_COLORS', 'OUTFIT_TIERS', 'OUTLINE_COLOR', 'OUTLINE_LAYER_ORDER', 'OUTLINE_MODES',
   'OUTLINE_MODE_COMPLETE_B', 'OUTLINE_MODE_NONE', 'OUTLINE_MODE_SELECTIVE_C',
   'PRODUCTION_COMPATIBLE_REROLL_CATEGORIES', 'PRODUCTION_COMPATIBLE_REROLL_POLICY',
-  'PRODUCTION_PALETTE_FAMILIES', 'PRODUCTION_ROLL_FREEZE', 'PRODUCTION_ROLL_MAX_ATTEMPTS',
+  'PRODUCTION_PALETTE_FAMILIES', 'PRODUCTION_ROLL_FREEZE', 'PRODUCTION_ROLL_MAX_ATTEMPTS', 'PUBLIC_ENEMIES',
   'PRODUCTION_ROLL_PROFILE', 'PRODUCTION_ROLL_REASON_CODES',
   'SHADE_MODES', 'SHADE_MODE_FORM', 'SHADE_MODE_NONE',
   'SHEET_COLS', 'SHIELDS', 'SHIELD_TIERS', 'SIZE', 'SKINS', 'SPECIES', 'WEAPONS', 'WEAPON_TIERS',
   'VARIANT_BATCH_FORMAT', 'VARIANT_BATCH_SETS', 'VARIANT_BATCH_VERSION',
   'WILDSHOT_GAME_PACK_ACTOR_CATEGORIES', 'WILDSHOT_GAME_PACK_EFFECT_CATEGORIES', 'WILDSHOT_GAME_PACK_POLICY',
   'applyClassTemplate', 'auditProductionRollCatalogs', 'auditProductionRollClassTemplates',
-  'auditWildshotGamePackRuntime', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildSheet',
+  'auditWildshotGamePackRuntime', 'buildAnimationSheet', 'buildClassPack', 'buildDirectionSheet', 'buildEnemyExpansionLedgerReport',
+  'buildEnemyExpansionReviewPlan', 'buildSheet',
   'buildVariantBatch', 'buildWildshotGamePackManifest',
-  'combatLoadoutEffectSpecs', 'defaultCombatLoadout', 'describe', 'drawAssembledSprite', 'drawOutlinedSprite', 'drawSprite',
-  'enemySupportsOutline', 'normalizeAssembledOutlineMode', 'normalizeOutlineMode', 'normalizeShadeMode',
+  'combatLoadoutEffectSpecs', 'createEnemyExpansionRegistry', 'defaultCombatLoadout', 'describe', 'drawAssembledSprite', 'drawOutlinedSprite', 'drawPublicSprite', 'drawSprite',
+  'enemySupportsOutline', 'isPublicEnemyExpansionSpec', 'normalizeAssembledOutlineMode', 'normalizeOutlineMode', 'normalizeShadeMode',
   'normalizeProductionRollSeed', 'randomEffect', 'randomEnemy', 'randomPlayer', 'resolveCombatLoadout',
-  'rerollProductionPlayerCategory', 'rollProductionPlayer', 'sanitizeCombatLoadout',
-  'serializeWildshotGamePackManifest', 'thumbURL', 'validateProductionPlayer', 'validateWildshotGamePackExport',
+  'renderEnemyExpansionFrame', 'rerollProductionPlayerCategory', 'rollProductionPlayer', 'sanitizeCombatLoadout',
+  'serializeWildshotGamePackManifest', 'thumbURL', 'validateEnemyExpansionSheet', 'validateProductionPlayer', 'validateWildshotGamePackExport',
 ].sort();
 check(
   JSON.stringify(Object.keys(engine).sort()) === JSON.stringify(expectedEngineExports),
@@ -231,6 +321,13 @@ check(
 );
 check(runtimeSources['sprite-engine.js'].split(/\r?\n/).length < 75, 'sprite-engine.js must remain a small public facade');
 check(runtimeSources['engine/catalogs.js'].split(/\r?\n/).length < 55, 'engine/catalogs.js must remain a small internal facade');
+check(
+  JSON.stringify([...runtimeSources['engine/enemy-expansion.js'].matchAll(/from\s+['"]([^'"]+)['"]/g)].map((match) => match[1]))
+    === JSON.stringify(['./catalogs.js']),
+  'the Enemy expansion foundation may depend only on the stable internal catalog facade',
+);
+check(!/\b(document|window|localStorage|sessionStorage)\b/.test(runtimeSources['engine/enemy-expansion.js']), 'the Enemy expansion foundation must remain independent from DOM and browser state');
+check(enemyExpansionModule.ENEMY_EXPANSION_REGISTRY.families.length === 0, 'EN-F00 must leave the built-in expansion registry empty');
 check(runtimeSources['app.js'].includes("from './sprite-engine.js'"), 'app.js must consume the public engine facade');
 check(!runtimeSources['app.js'].includes("from './engine/"), 'app.js must not depend on internal engine modules');
 check(runtimeSources['app.js'].includes("from './character-kit.js'"), 'app.js must use the focused master character-kit planner');
@@ -864,12 +961,12 @@ check(
 );
 check(
   completeKitPlan.counts.componentPngs === 1912
-    && completeKitPlan.counts.enemyFamilies === 57
-    && completeKitPlan.counts.enemySheets === 202
+    && completeKitPlan.counts.enemyFamilies === 67
+    && completeKitPlan.counts.enemySheets === 232
     && completeKitPlan.counts.effectCategories === 4
     && completeKitPlan.counts.effectSheets === 24
-    && completeKitPlan.counts.totalPngs === 2139,
-  'complete character kits must contain 1912 content-unique components, 202 enemies, 24 synchronized effects, and one reference preview',
+    && completeKitPlan.counts.totalPngs === 2169,
+  'complete character kits must contain 1912 content-unique components, 232 public enemies, 24 synchronized effects, and one reference preview',
 );
 check(completeKitPlan.components.skinBodies.length === 6, 'complete kits must store each skin-body component once');
 check(completeKitPlan.components.heads.length === 12, 'complete kits must store normal and shaded heads for all six skins');
@@ -920,7 +1017,7 @@ check(
   'Tier 5 shield components must collapse the four artifact passes whose colors are fully overwritten',
 );
 const completeEnemyEntries = completeKitPlan.enemies.flatMap((family) => family.variants);
-check(completeKitPlan.enemies.length === 57 && completeEnemyEntries.length === 202, 'complete kits must plan every enemy family and variation');
+check(completeKitPlan.enemies.length === 67 && completeEnemyEntries.length === 232, 'complete kits must plan every public enemy family and variation');
 check(
   completeKitPlan.enemies.every((family) => family.variants.every((entry) => (
     entry.file === `enemies/${family.family}/${entry.id}.png`
@@ -959,7 +1056,7 @@ const completeKitPaths = [
   ...completeEffectEntries.map((entry) => entry.file),
   completeKitPlan.reference.file,
 ];
-check(new Set(completeKitPaths).size === 2139, 'every Complete Character Kit PNG path must be unique');
+check(new Set(completeKitPaths).size === 2169, 'every Complete Character Kit PNG path must be unique');
 check(completeKitPlan.recipes.every((recipe) => !Object.values(recipe.components).some((file) => file && !completeKitPaths.includes(file))), 'every saved recipe must reference only shared component paths');
 const lanternKitPlan = characterKit.buildCompleteCharacterKitPlan([{
   id: 'lantern-bearer',

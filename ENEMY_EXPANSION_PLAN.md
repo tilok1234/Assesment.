@@ -1,10 +1,18 @@
 # Enemy Expansion Plan
 
-- Status: approved planning artifact; implementation underway on the
-  `codex/en-*` branches (EN-F00 through EN-E03) — see the 2026-08-05
-  consolidation update in `HANDOFF.md` for the live lane state
-- Recorded: 2026-08-02
-- Assessment baseline: clean synchronized `main` at `bf6269c`
+- Status: approved plan; EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
+  EN-E02 are approved, registered, and consumer-integrated. Registration
+  checkpoint `7b6e448` composes both slices into the stable ten-family /
+  30-variant approved registry, and consumer checkpoint `8ab1837` established
+  the 67-family / 232-variant public catalog. On 2026-08-03 the designer
+  reopened seven specific family presentations for walk/seam repair. The exact
+  repair candidate at checkpoint `6400dd5` was visually approved on 2026-08-03
+  and promoted without further pixel changes at checkpoint `8eb0f99`; the
+  pre-repair registry remains immutable comparison evidence. EN-E03 common-only
+  Idle is now the authorized next gate
+- Recorded: 2026-08-03
+- Assessment baseline: clean synchronized `main` at `f5476a2`
+- Lane state authority: the 2026-08-05 consolidation update in `HANDOFF.md`
 - Source: the designer's 2026-08-02 intake of 80 additional enemy proposals
 
 ## Purpose
@@ -14,9 +22,43 @@ the 8-bit Sprite Assembler. It fixes the accounting, collision rulings,
 production order, review gates, and technical boundaries before any new family
 is registered.
 
-This is a planning artifact only. It does **not** authorize implementation,
-catalog changes, Boss work, effect work, export changes, a release, a commit, or
-a push. Each implementation slice still requires an explicit designer go-ahead.
+The designer explicitly authorized EN-F00 and then separately authorized the
+EN-E01 common-baseline Idle gate on 2026-08-02. After approving its exact Idle
+artifact, the designer separately authorized full three-variant animation
+production plus normal commit/push handling. The designer then accepted the
+completed-slice review, public registration, consumer integration, and the live
+outline/Form presentation. The designer next authorized the EN-E02 contract
+cards and common-only Idle gate. That Idle authorization did **not** include
+specialist/elite renderer data, Walk/Attack/Hurt production, public
+registration, consumer exposure, separate effect assets, a release, or any
+later slice.
+
+The designer approved the exact EN-E02 common-only Idle artifact on 2026-08-02,
+then separately authorized full three-variant standard-animation production.
+That production authorization included the ten specialist/elite renderer payloads,
+Walk/Attack/Hurt, and standard Enemy Cast/Death aliases. It does **not** include
+public registration, consumer exposure, separate effect assets, a release, or
+any later slice.
+
+After reviewing the exact completed-slice overview and the outline/Form
+presentation, the designer approved the EN-E02 slice and explicitly authorized
+the next bounded registration gate on 2026-08-02. That registration does **not**
+authorize editor selectors, randomization, packs, exports, outline/Form consumer
+routing, separate effects, release, EN-E03, or any other later slice.
+
+The designer then separately authorized the bounded EN-E02 consumer step on
+2026-08-02. That scope includes the existing generic editor, persistence,
+randomizer, kit, pack, thumbnail, export, outline, and Form paths for the five
+approved families / 15 variants. It does **not** authorize new effect assets, a
+release, EN-E03, or a later slice. Checkpoint `8ab1837` implements that bounded
+scope; exhaustive technical validation and the live Plague Doctor / Field
+Chirurgeon Complete B + Form smoke passed and the designer continued. On
+2026-08-03 the designer reported narrow defects in Catfolk, Desert Raider,
+Fallen Knight, Fanatic Monk, Goatfolk, Necromancer, and Witch. That report
+authorized only the bounded repair candidate described below. The designer then
+accepted the exact live candidate with “nice thats better” and authorized the
+next documented step. That continuation authorizes EN-E03 contract cards plus
+common-only Idle, not later motion, variants, registration, effects, or release.
 
 ## Intake Assessment
 
@@ -43,13 +85,17 @@ below.
 
 - `implementation-candidate`: recommended next work after explicit approval;
   it is not authorization by itself.
+- `acceptance-candidate`: the bounded implementation is complete and
+  technically validated, but explicit designer acceptance is still pending.
 - `queued`: sequenced, but later than the current candidate.
 - `architecture-gated`: requires a contract decision before sprite production.
 - `boss-review-blocked`: cannot enter the isolated Boss lane while its current
   review call remains unresolved, unless the designer explicitly reprioritizes.
 - `complete`: art, animation, validation, and visual approval are all done.
 
-No family in this document is currently `complete`.
+EN-E01 and EN-E02 remain complete through their accepted consumer presentations.
+Their isolated seven-family walk/seam correction is also approved and promoted;
+the pre-repair registry remains available only as immutable comparison evidence.
 
 ## Non-Negotiable Production Contract
 
@@ -117,7 +163,8 @@ attack readability, and variant distinction.
 
 ### EN-F00 - Expansion renderer foundation
 
-- Status: `implementation-candidate` after explicit approval
+- Status: `approved`; accepted checkpoint `73ad73a` retains passing focused and
+  full structural gates
 - Contains no new family art
 
 Before adding 75 families, introduce the smallest data-driven expansion facade
@@ -138,6 +185,28 @@ Required outcomes:
 
 EN-F00 must pass independently before EN-E01 begins.
 
+Implemented evidence:
+
+- `engine/enemy-expansion.js` owns the immutable profile, 22-slice/80-proposal
+  ledger, lifecycle states, renderer/chassis registration contract, family and
+  variant normalization, deterministic family/slice Idle review plans, renderer
+  dispatch facade, and completed-sheet validator;
+- the isolated EN-F00 foundation registry contains zero families; the stable
+  public composition registry now contains approved EN-E01 plus EN-E02, while
+  the unchanged `ENEMIES` array remains the locked legacy catalog and immutable
+  `PUBLIC_ENEMIES` appends only the ten separately consumer-authorized expansion
+  families;
+- planned families cannot be registered; implemented families remain internal;
+  only explicitly approved registrations can enter the registry's public view;
+- `npm.cmd run check:enemy-expansion` rejects duplicate/colliding ids, missing
+  renderers, planned-family pre-registration, empty frames, out-of-bounds
+  writes, non-binary alpha, wrong direction/frame order, and dimensions other
+  than `480x96`;
+- all 57 legacy families / 202 sheets / 16,160 frames retain SHA-256 pixel
+  digest `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`;
+  and
+- the complete existing `npm.cmd run check` matrix passes unchanged.
+
 ## Wave 1 - Highest Reuse And Fastest Learning
 
 Wave 1 establishes the shared humanoid, large-body, serpentine, and undead
@@ -145,7 +214,10 @@ chassis needed by many later proposals. Complete only one slice at a time.
 
 ### EN-E01 - Humanoid threat pilot
 
-- Status: `implementation-candidate` after EN-F00 and explicit approval
+- Status: `approved-consumer-integrated`; four-direction common-baseline Idle
+  and the complete 15-variant slice are visually approved, registered through
+  the stable public expansion boundary at `b43ed6a`, and integrated into public
+  consumers at `e0be273`
 - Families: Witch, Fallen Knight, Pirate, Necromancer, Alchemist
 - Priority-first: Witch, Fallen Knight, Pirate
 
@@ -166,18 +238,215 @@ Attack tells must remain readable without baked muzzle flashes, bombs, potion
 splashes, familiars, skeletons, or spell effects. Those are separate effect or
 child-asset contracts.
 
+Approved implementation and registration evidence:
+
+- five immutable contract cards record stable ID, 24x24 scale, locomotion,
+  attack tell, three variant briefs, and external effect/mechanic boundaries;
+- all 15 common/specialist/elite briefs are implemented through the private
+  `humanoid-threat-v1` renderer on `humanoid-v1`, with identity overlays
+  selected from renderer data rather than family-ID branches;
+- every variant supplies Idle x2, Walk x4, Attack x4, Hurt x2, pixel-identical
+  Enemy Cast-to-Attack aliases, and Death-to-Hurt 1, 2, 2, 2 aliases;
+- implementation checkpoint `230a9a3` freezes five internal families / 15
+  reviewed variants before registration;
+- completed-slice approval records the exact overview and review-manifest
+  SHA-256 values plus the reviewed implementation commit;
+- registration checkpoint `b43ed6a` exposes five approved/public families / 15
+  variants through `ENEMY_EXPANSION_REGISTRY`, while the legacy `ENEMIES`
+  catalog remains unchanged;
+- `npm.cmd run check:enemy-expansion-en-e01` validates 40 deterministic Idle
+  frames with hard alpha, one-cell margins, no out-of-bounds writes, distinct
+  silhouettes, correct direction/frame ordering, and the locked digest;
+- `npm.cmd run review:enemy-expansion-en-e01` generates the exact enlarged and
+  native-size review PNG. The designer approved exact PNG SHA-256
+  `2d710ab54a845c4805d428c428cfa9e1cda09f4adee886c5deafbafee831b7ee`
+  and 40-frame digest
+  `339c5ff809d3b17aec20b3ec953c8217470cde026fc743cde0cd3854ed5c3323`
+  on 2026-08-02;
+- `npm.cmd run check:enemy-expansion-en-e01-full` exhausts 15 complete
+  `480x96` sheets / 1,200 frames, hard alpha, strict margins, deterministic
+  motion, direction/variant distinction, aliases, and zero public exposure;
+- the full candidate frame digest is
+  `addcf8055a80a0a6266be0eff8cd6b8235092c6ba366bc9c020bd5feb90ae173`;
+  and
+- `npm.cmd run review:enemy-expansion-en-e01-full` generates the all-variant
+  overview, five all-motion family boards, 15 native sheets, and review JSON.
+  The overview SHA-256 is
+  `0b38f2737b5215d37a08e0ae3f7e25f82e88bb17a97641e33b0ee9ef9c0e8fb7`.
+  Internal native/4x inspection accepted the completed slice at that checkpoint;
+  later live review reopened Witch, Fallen Knight, and Necromancer for the
+  now-approved bounded repair without rewriting this historical artifact; and
+- `npm.cmd run check:enemy-expansion-en-e01-registration` proves five approved
+  families / 15 public variants, 15 complete sheets, stable-facade routing,
+  the current three-approved/zero-implemented/nineteen-planned ledger state,
+  unchanged 57-family / 202-variant legacy catalog, and exact candidate/public
+  parity across all 1,200 frames.
+- at checkpoint `e0be273`, the EN-E01 consumer gate proved the then-current
+  immutable 62-family / 217-variant public composition, unchanged legacy
+  pixels, generic editor/persistence/randomizer/kit/pack/thumbnail/export
+  routing, 1,200-frame adapter parity, and all 15 native `480x96` sheet exports.
+  Its authorized presentation extension exhausted 3,600 None/B/C outline cases
+  and 3,600 Form-with-outline cases, resolved all 90 EN-E01 renderer palette
+  colors, recorded 74,029 source-owned shade changes, and preserved 69,090
+  protected pixels plus all outline geometry. The designer accepted the exact
+  live Witch/Hexer Complete B + Form presentation on 2026-08-02 and then
+  authorized continuation into the next contract-first step.
+
 ### EN-E02 - Humanoid culture variants
 
-- Status: `queued`
+- Status: `approved-consumer-integrated`; common-only Idle and exact
+  completed-slice artifacts are visually approved, bounded registration
+  completed at `7b6e448`, and consumer integration is implemented at `8ab1837`.
+  The later seven-family correction spanning EN-E01/EN-E02 is visually approved
+  and promoted at the stable/public boundary
 - Families: Plague Doctor, Desert Raider, Fanatic Monk, Catfolk, Goatfolk
 
 Shared leverage: EN-E01 humanoid poses plus masks, wrapped cloth, martial robes,
 ears, tails, horns, and altered leg/foot silhouettes. This slice tests how far
 the humanoid chassis can flex before species anatomy needs its own renderer.
 
+Authorized variant briefs:
+
+| Family | Common baseline | Specialist | Elite |
+| --- | --- | --- | --- |
+| Plague Doctor | Field Chirurgeon | Leech Warden | Pestilent Magister |
+| Desert Raider | Dune Reaver | Sandbow Stalker | Sunscar Captain |
+| Fanatic Monk | Ash Disciple | Chain Penitent | Bell Abbot |
+| Catfolk | Alley Prowler | Moonclaw Duelist | Pride Champion |
+| Goatfolk | Crag Skirmisher | Horn-Seer | Ramguard Chieftain |
+
+Approved Idle evidence:
+
+- `engine/enemy-expansion-en-e02.js` freezes five contract cards, all 15 briefs,
+  and only the five common baseline renderer payloads;
+- the internal registry reuses `humanoid-threat-v1` / `humanoid-v1` and remains
+  implemented rather than approved, with five internal families and zero
+  approved/public families in that frozen snapshot;
+- five data-selected identity treatments provide the Plague Doctor beak/hood,
+  Desert Raider wraps, Fanatic Monk beads/plain quarterstaff, Catfolk
+  ears/tail/paws, and Goatfolk horns/ears/hooves;
+- effects and mechanics remain external: miasma/vials, sand/dust, sacred or
+  bell waves, pounce/claw trails, and charge/seer effects are not baked in;
+- `npm.cmd run check:enemy-expansion-en-e02` validates five immutable cards,
+  five common-only variants, 40 deterministic Idle frames, hard alpha,
+  one-cell margins, distinct front/profile/rear silhouettes, mirrored side
+  occupancy, and zero public-catalog exposure;
+- candidate frame digest:
+  `00d71d7e8f1904c275bfe84ec6cec746fb314fab4d27ce182d72e286a846d02b`;
+- `npm.cmd run review:enemy-expansion-en-e02` generates the ignored exact
+  `1528x1340` labeled/native review surface at
+  `enemy-expansion-review/en-e02/en-e02-idle-review.png`, SHA-256
+  `c224258139c7c810c7a122ea9e95061f3dd1697864913765fe9d11e09f4eca50`;
+  and
+- internal visual inspection replaced the Ash Disciple's inherited crystal
+  focus with a plain wooden quarterstaff before presenting the candidate.
+
+Full private candidate evidence:
+
+- all ten specialist/elite renderer payloads are implemented alongside the five
+  exact approved common baselines in a separate immutable candidate registry;
+- all 15 variants supply Idle x2, Walk x4, Attack x4, Hurt x2, pixel-identical
+  Cast-to-Attack aliases, and Death-to-Hurt 1, 2, 2, 2 aliases;
+- `npm.cmd run check:enemy-expansion-en-e02-full` validates 15 complete
+  `480x96` sheets / 1,200 deterministic frames, hard alpha, one-cell margins,
+  three-direction readability, within-family common/specialist/elite silhouette
+  distinction, zero approved/public families in the candidate snapshot, the
+  unchanged approved Idle digest, 2,400
+  private Complete B/Selective C cases, and 3,600 private Form-with-outline cases;
+- full candidate frame digest:
+  `f4667a1ccefb3026c6df3604e114393fdaae619dab0c68bec969203986cb35bf`;
+- `npm.cmd run review:enemy-expansion-en-e02-full` generates the ignored exact
+  `1148x1984` overview, `1124x1992` Complete B/Form presentation board, five
+  family motion boards, 15 native sheets, and review manifest under
+  `enemy-expansion-review/en-e02-full/`; overview PNG SHA-256:
+  `21f3175600377eaf75206f9fcb65856731da28eafb6715687821f782f41da6a8`,
+  `1124x1992` Complete B/Form presentation PNG SHA-256:
+  `211e9ace3eb965f243724249c73927567568e2f22f181f5448ba398ddab4a094`,
+  review JSON SHA-256:
+  `0a135fbed3eeeaf69400a3700d113af67a0c2a75043f95ab2a392711cd6b0afa`;
+- internal visual inspection added Attack-only staff motion without changing the
+  approved Ash Disciple Idle pixels and replaced Sandbow Stalker's stock released
+  arrow with an actor-owned bow/string treatment so projectiles remain external.
+
+Completed-slice approval and registration evidence:
+
+- `EN_E02_COMPLETED_SLICE_GATE` locks reviewed implementation commit
+  `b2c1283c33dbfd6b2c307fc4d2288877a149c9df`, the exact overview,
+  Complete B/Form presentation, review manifest, approved Idle digest, and full
+  1,200-frame digest;
+- `EN_E02_PUBLIC_REGISTRY` contains five approved families / 15 variants while
+  the separate candidate registry remains immutable `implemented` evidence;
+- cumulative `ENEMY_EXPANSION_REGISTRY` composition is ten approved families /
+  30 variants across EN-E01 and EN-E02;
+- at registration checkpoint `7b6e448`, `ENEMY_EXPANSION_CONSUMER_REGISTRY`
+  remained exactly EN-E01 and `PUBLIC_ENEMIES` remained 62 families / 217
+  variants; that is historical registration evidence rather than the current
+  post-authorization consumer boundary; and
+- `npm.cmd run check:enemy-expansion-en-e02-registration` verifies the exact
+  artifact hashes, three-approved/zero-implemented/nineteen-planned ledger,
+  all 15 registered sheets, and candidate/registered parity across 1,200 frames.
+- checkpoint `be44af7` makes ignored-artifact verification clean-clone safe by
+  default while
+  `check:enemy-expansion-en-e02-registration:artifacts` strictly requires and
+  re-hashes all three local review files.
+
+Authorized consumer-integration evidence:
+
+- immutable `EN_E02_CONSUMER_INTEGRATION_GATE` records the designer's
+  2026-08-02 authorization, registration/artifact checkpoints, exact generic
+  consumer scope, exclusions, and next acceptance gate;
+- checkpoint `8ab1837` makes `ENEMY_EXPANSION_CONSUMER_REGISTRY` reuse the exact
+  cumulative approved registry, producing 67 public families / 232 variants
+  without changing the locked 57/202 legacy catalog;
+- `npm.cmd run check:enemy-expansion-en-e02-consumers` verifies selectors,
+  persistence, randomization, combat defaults, Complete Kits, Wildshot packs,
+  thumbnails, all export scopes, all 2,400 dispatcher frames, all 30 native
+  sheets, 7,200 None/B/C outline cases, 7,200 Form/outline cases, all 180
+  published palette colors, 174,917 source-owned Form changes, and 146,687
+  protected pixels; and
+- live browser smoke exposes all 67 selector families and renders Plague Doctor
+  / Field Chirurgeon with Complete B + Form, the expected export filename, and
+  no console errors.
+
+Isolated repair-candidate evidence (2026-08-03):
+
+- implementation checkpoint `6400dd5` (`Create enemy walk and seam repair
+  candidate`) contains the bounded candidate and its regression harness;
+- approval-promotion checkpoint `8eb0f99` routes that exact reviewed object
+  through both stable and consumer boundaries;
+- the internal `ENEMY_EXPANSION_PRE_REPAIR_REGISTRY` retains the exact prior
+  EN-E01/EN-E02 pixels and both locked 1,200-frame digests;
+- `ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY` changes exactly 18 renderer-data
+  records across the seven reported families while leaving Alchemist, Pirate,
+  and Plague Doctor pixel-identical across all 720 unaffected frames;
+- Catfolk and Goatfolk receive four-phase paw/hoof contacts; Witch,
+  Necromancer, Ash Disciple, and Bell Abbot receive opt-in robe-foot strides;
+- Catfolk's white pseudo-transparent mouth band is replaced by a fur muzzle,
+  and the reported Desert Raider, Shieldbearer, and Goatfolk checkerboard seams
+  are filled through data-selected repair overlays;
+- `npm.cmd run check:enemy-expansion-repairs` validates 1,680 affected-family
+  frames, binary alpha, one-cell margins, zero clipping, deterministic output,
+  alternating stride extremes, and the exact reported seam coordinates;
+- repair review evidence lives under
+  `enemy-expansion-review/repair-candidate/`, with EN-E01/EN-E02 repair digests
+  `48e2f05ec345f5680305019827b2ad6d7dff1bc506b109ab101b92975ef96916`
+  and `50310c36ca165cf7ccd941183a5e087cec2fcb5140068e99ab7e24633d6096d5`;
+  and
+- the live assembler exercises all four Walk frames at 20x with Complete B
+  outline and Form shading for every reported family; and
+- the designer accepted that exact live candidate with “nice thats better” and
+  authorized continuation. The exact reviewed object is now both the stable and
+  consumer registry; the pre-repair registry remains internal.
+
+The repair gate is complete. EN-E03 contract cards and common-only Idle may now
+begin. Do not implement EN-E03 specialist/elite variants, Walk/Attack/Hurt,
+registration, consumer routing, separate effects, or release work before the
+new exact Idle review is explicitly approved.
+
 ### EN-E03 - Large and hybrid walkers
 
-- Status: `queued`
+- Status: `idle-authorized`; contract cards plus common-only four-direction
+  Idle may be implemented for review, with all later production still gated
 - Families: Giant, Centaur, Satyr
 - Priority-first: Giant, Centaur
 
@@ -474,13 +743,24 @@ counts as an upgrade; the three Boss candidates do not enter the Enemy totals.
 | EN-E18 | Pumpkin Monster; Moss Beast; Kelp Beast; Coral Colony | 4 |
 | **Total** |  | **80** |
 
-## Recommended Next Authorization
+## Next Authorization Boundary
 
-When the designer is ready to resume Enemy work, authorize exactly this sequence:
+The EN-E01 authorized production sequence is complete:
 
-1. EN-F00 - expansion renderer foundation;
-2. EN-E01 - five-family humanoid threat pilot; and
-3. stop for visual review and an evidence-backed architecture checkpoint.
+1. the approved common-baseline Idle pixels remain exact;
+2. Walk/Attack/Hurt plus Enemy Cast/Death aliases are implemented;
+3. every specialist and elite brief uses the same shared renderer and external-
+   effect boundaries; and
+4. focused all-variant/all-animation evidence has been generated and inspected.
+
+EN-E01/EN-E02 completed-slice approval, bounded registration, consumer
+integration, and the later seven-family repair approval are recorded.
+Registration checkpoint `7b6e448` and consumer checkpoint `8ab1837` established
+the generic 67/232 boundary; the exact repair pixels from `6400dd5` are now the
+stable/public result, with the pre-repair registry retained internally. The next
+gate is explicit review of EN-E03 common-only four-direction Idle for Giant,
+Centaur, and Satyr. Do not add later motion, variants, registration, separate
+effect assets, or release work before that decision.
 
 EN-E01 is the strongest first art slice because it yields five recognizable
 families while stress-testing reusable humanoid equipment, held-item layering,
@@ -488,4 +768,5 @@ and non-baked attack tells. The largest unresolved risks are multi-form assets,
 stateful attachments, and Boss-scale direction/animation work; those stay later
 and separately gated.
 
-Again, this recommendation does not authorize implementation.
+Again, this recommendation does not authorize implementation beyond the current
+EN-E03 common-only Idle review boundary.

@@ -368,7 +368,7 @@ function sanitizePlayer(player = {}) {
 }
 
 function sanitizeEnemy(enemy = {}) {
-  const family = E.ENEMIES.find((item) => item.id === enemy.family) || E.ENEMIES[0];
+  const family = E.PUBLIC_ENEMIES.find((item) => item.id === enemy.family) || E.PUBLIC_ENEMIES[0];
   const variant = validId(family.variants, enemy.variant, family.variants[0].id);
   return { family: family.id, variant };
 }
@@ -1387,7 +1387,7 @@ function deleteSelectedPalette() {
 }
 
 function currentFamily() {
-  return E.ENEMIES.find((family) => family.id === state.enemy.family) || E.ENEMIES[0];
+  return E.PUBLIC_ENEMIES.find((family) => family.id === state.enemy.family) || E.PUBLIC_ENEMIES[0];
 }
 
 function currentEffectCategory() {
@@ -1414,7 +1414,7 @@ function setPlayerOption(key, value) {
 }
 
 function setEnemyFamily(familyId) {
-  const family = E.ENEMIES.find((item) => item.id === familyId) || E.ENEMIES[0];
+  const family = E.PUBLIC_ENEMIES.find((item) => item.id === familyId) || E.PUBLIC_ENEMIES[0];
   setState({ enemy: { family: family.id, variant: family.variants[0].id } });
 }
 
@@ -1911,7 +1911,7 @@ function enemyGroups() {
   return [
     thumbnailGroup(
       'Family',
-      E.ENEMIES,
+      E.PUBLIC_ENEMIES,
       family.id,
       setEnemyFamily,
       (item) => ({ kind: 'enemy', family: item.id, variant: item.variants[0].id }),
