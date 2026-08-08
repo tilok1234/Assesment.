@@ -2,77 +2,77 @@
 
 Date: 2026-08-08
 
-## Immediate Continuation Checkpoint - Approved Reed Charmer Complete Motion
+## Immediate Continuation Checkpoint - Approved Wildwood Hornlord Idle
 
-Start here in a new task. Reed Charmer specialist Walk/Attack/Hurt/Cast/Death
-across all four directions is visually approved and published internally at
-`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`. No art gate is active or authorized.
+Start here in a new task. Wildwood Hornlord elite Idle F1-F2 across Down, Left,
+Right, and Up is visually approved. Bounded publication of the internal
+eight-frame lane is the current action; the same approval message requests the
+next documented Wildwood art gate after publication closes.
 
-- Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-reed-charmer-motion` on
-  branch `codex/en-e03-reed-charmer-motion`, tracking its matching origin
-  branch. Its approved implementation checkpoint is
-  `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`, based exactly on the clean,
-  published Reed Charmer Idle handoff.
-- Git state is clean and synchronized after this docs-only reconciliation. The
-  approved Satyr Walk/Attack/Hurt modules only expose narrow draw helpers with
-  crooked staff rendering default-on, so all Briar Reveler source pixels remain
-  exact.
-  The bounded new files are
-  `engine/enemy-expansion-en-e03-satyr-specialist-motion.js`,
-  `tools/enemy-expansion-en-e03-reed-charmer-motion-review.mjs`,
-  `tools/build-enemy-expansion-en-e03-reed-charmer-motion-gifs.py`, and
-  `tools/check-enemy-expansion-en-e03-reed-charmer-motion.mjs`, plus package and
-  documentation updates. Review artifacts remain ignored.
-- Gate: `en-e03-reed-charmer-motion-v1`, status `approved`, internal and
+- Live checkout: `C:\tmp\8-bit-sprite-assembler-en-e03-wildwood-hornlord-idle`
+  on branch `codex/en-e03-wildwood-hornlord-idle` at
+  `629bccd1fefe5e98731dcfbf87049e7517dbca2e`, with no upstream. It is based
+  exactly on the clean, published Reed Charmer complete-motion handoff.
+- Git state is intentionally dirty, uncommitted, and unpushed. The approved new
+  files are `engine/enemy-expansion-en-e03-satyr-elite-idle.js`,
+  `tools/enemy-expansion-en-e03-wildwood-hornlord-idle-review.mjs`,
+  `tools/build-enemy-expansion-en-e03-wildwood-hornlord-idle-gifs.py`, and
+  `tools/check-enemy-expansion-en-e03-wildwood-hornlord-idle.mjs`, plus package
+  and documentation updates. Stage only this bounded lane; do not reset, clean,
+  stash, or switch it while publication closes.
+- Gate: `en-e03-wildwood-hornlord-idle-v1`, status `approved`, internal and
   non-public.
-- Authorization evidence: after discussing a safe larger slice, the designer
-  said `Sure lets go for it one complete motion suite we can try atleast`.
-  Codex bounded that continuation to this one Reed Charmer suite only.
+- Authorization evidence: after the Reed Charmer complete-motion lane was
+  approved, published, and reconciled, the designer said `Awesome let's do
+  next`. Following the documented Satyr role order, Codex bounded only
+  Wildwood Hornlord elite Idle F1-F2 across four directions.
 - Approval evidence: the designer reviewed both exact labeled all-four-direction
-  raw/no-outline and Complete B + Form motion-suite GIFs together and said
-  `Approved` on 2026-08-08.
-- Scope: Walk W1-W4, Attack A1-A4, Hurt H1-H2, Cast C1-C4, and Death D1-D4 in
-  Down, Left, Right, and Up. The eight approved Idle pixels delegate
-  byte-for-byte. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.
-- Motion contract: Walk carries the approved reverse-jointed gait through the
-  torso, pipe, vest, hands, hocks, tail, and hooves. Attack uses brace, lift,
-  forward-drive, and recovery phases with whole-body weight change. Hurt flashes
-  the complete connected silhouette before a colored brace. Music notes,
-  pollen, charm rings, and every other control effect remain external.
-- Approved review presentation comprised both exact labeled all-four-direction
-  motion-suite GIFs:
+  raw/no-outline and Complete B + Form Idle GIFs together and said `Approved
+  lets do next` on 2026-08-08.
+- Scope: Idle F1-F2 only in Down, Left, Right, and Up. Briar Reveler and Reed
+  Charmer pixels remain frozen; Walk, Attack, Cast, Hurt, Death, registration,
+  consumers, effects, release, and later EN-E03 work remain excluded.
+- Identity and motion: the approved horned digitigrade Satyr chassis gains an
+  oversized branching antler crown, sculpted bark pauldrons, a moss mantle,
+  root-brown bracers, and an amber torque. F2 settles the crown, mantle, torso,
+  and bracers one row while the approved tail, hocks, and split-hoof contacts
+  animate. Thorn aura, leaf swirl, root burst, and all other effects remain
+  external.
+- Required review presentation: show both exact labeled all-four-direction
+  Idle GIFs together:
   - raw/no outline:
-    `enemy-expansion-review/en-e03-reed-charmer-motion/en-e03-reed-charmer-motion-suite-four-directions-labeled.gif`
+    `enemy-expansion-review/en-e03-wildwood-hornlord-idle/en-e03-wildwood-hornlord-idle-four-directions-labeled.gif`
   - Complete B + Form:
-    `enemy-expansion-review/en-e03-reed-charmer-motion/en-e03-reed-charmer-motion-suite-four-directions-labeled-complete-b-form.gif`
-  Both are `640x672`, contain four `180ms` phases, and loop continuously. The
-  corresponding raw and Complete B + Form boards are `1428x760`.
+    `enemy-expansion-review/en-e03-wildwood-hornlord-idle/en-e03-wildwood-hornlord-idle-four-directions-labeled-complete-b-form.gif`
+  Both are `192x224`, contain two `240ms` frames, and loop continuously. The
+  corresponding raw and Complete B + Form comparison boards are `1548x650`.
 - Frozen candidate evidence: raw board SHA-256
-  `7908c42c852e3cde553152a56d1678241559f1aab693f5919f33d97a23ea74f7`;
+  `7f3a1280c40652ca183dffd73379d3c43807248b6a40af866d91fd6420d1e2d3`;
   Complete B + Form board SHA-256
-  `8b114f22f590c00eb3604d1eb61198e2fb7a6137dccd96aaa2fa3109e9dec104`;
+  `b62244e9c953517c4af58ef22040754df9e6911f5a16d95ac42ac467d51fc779`;
   raw GIF SHA-256
-  `b1d62bd3ba846b819ff331b568713f07b4c5170dec56cb68e7fbf759d69e9266`;
+  `ee5f3eb354b4ca5080b2d8f4e2a05f6e50e6b87ebe7af3026309f32c092bbeef`;
   Complete B + Form GIF SHA-256
-  `6e509894fb8ba34faa2c31cd20abc328b5cd738b6b017cee9f82858d74079182`;
-  80-frame candidate digest
-  `031b4e419e339c416fb43be36641048f89cdfbb255e01d7e6306555c3dc50231`.
-- Focused validation passes: approved Reed Idle `8/8`; approved Briar source
-  Walk `16/16`, Attack `16/16`, Hurt `8/8`; suite `80/80`; connected hard-alpha
-  silhouettes `80/80`; exact side mirrors `20/20`; Cast aliases `16/16`; Death
-  aliases `16/16`; 1,476 reed-pipe pixels, 1,008 teal-wrap pixels, 9,157
-  Complete B additions, 8,062 Form changes, and public EN-E03 families `0`.
+  `890d249db2e398da3332f1b9d07ade758964fb530830c57c0d2c6d2fcb757b72`;
+  eight-frame candidate digest
+  `a8cebf48ac2506321a546c17293cae5035f8c856139136b63b393bcfbd59207a`.
+- Focused validation passes: approved Briar Idle `8/8`; candidate `8/8`;
+  connected hard-alpha silhouettes `8/8`; exact hoof-contact rows `8/8`; side
+  mirrors `4/4`; 219 changed-alpha pixels; 132 antler, 188 moss, and 268
+  bark/torque pixels; 980 Complete B additions; 991 Form changes; baked
+  thorn/leaf/root pixels `0`; public EN-E03 families `0`.
 - The complete ignored Boss checkpoint corpus contains 1,222 files. Full
-  repository validation passes in `187.1s`, including all 232 validated PNG
+  repository validation passes in `187.6s`, including all 232 validated PNG
   sheets.
 - Review output, approved review evidence, and the local Boss checkpoint corpus
   are ignored support artifacts; they are not candidate source changes.
-- Next action: stop and wait. Do not begin Wildwood Hornlord, register,
-  integrate, add effects, release, or start later EN-E03 work without a separate
-  explicit continuation.
+- Next action: commit and push only this approved Idle lane, reconcile the exact
+  implementation checkpoint, then open an isolated Wildwood complete-motion
+  art gate from that clean base. Registration, integration, baked effects,
+  release, and broader EN-E03 work remain excluded.
 
 The detailed historical and technical evidence remains in
-[Reed Charmer Complete Motion Approved](#reed-charmer-complete-motion-approved).
+[Wildwood Hornlord Idle Approved](#wildwood-hornlord-idle-approved).
 
 ## Purpose
 
@@ -1505,6 +1505,57 @@ release, and later work remain separately gated.
 - Required next action: stop and wait. Do not begin Wildwood Hornlord,
   register, integrate, add effects, release, or start later work without a
   separate explicit continuation.
+
+### Wildwood Hornlord Idle Approved
+
+- Gate ID: `en-e03-wildwood-hornlord-idle-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed pending bounded publication.
+- Authorization evidence: after Reed Charmer complete motion was approved,
+  published, and reconciled, the designer said `Awesome let's do next`.
+  Following the documented Satyr role order, Codex bounded only Wildwood
+  Hornlord elite Idle F1-F2 across Down, Left, Right, and Up.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form Idle GIFs together and said `Approved
+  lets do next` on 2026-08-08.
+- Isolated branch/worktree: `codex/en-e03-wildwood-hornlord-idle` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-wildwood-hornlord-idle`, based exactly
+  on clean published Reed handoff `629bccd`; it has no upstream.
+- Scope: two Idle frames across all four directions. Briar Reveler and Reed
+  Charmer remain frozen; later Wildwood motion, registration, consumers,
+  effects, release, and later work remain excluded.
+- Identity and motion: an oversized connected branching antler crown, sculpted
+  bark pauldrons, moss mantle, bracers, and amber torque compose over the
+  approved Satyr tail, hocks, digitigrade legs, and split-hoof contacts. F2
+  settles the crown/mantle/torso one row while the approved lower-body cycle
+  remains grounded. Thorn aura, leaf swirl, and root burst stay external.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e03-wildwood-hornlord-idle`; it creates
+  raw and Complete B + Form `1548x650` comparison boards plus two labeled
+  `192x224`, two-frame, `480ms` looping GIFs.
+- Raw board SHA-256:
+  `7f3a1280c40652ca183dffd73379d3c43807248b6a40af866d91fd6420d1e2d3`;
+  Complete B + Form board SHA-256:
+  `b62244e9c953517c4af58ef22040754df9e6911f5a16d95ac42ac467d51fc779`.
+- Raw GIF SHA-256:
+  `ee5f3eb354b4ca5080b2d8f4e2a05f6e50e6b87ebe7af3026309f32c092bbeef`;
+  Complete B + Form GIF SHA-256:
+  `890d249db2e398da3332f1b9d07ade758964fb530830c57c0d2c6d2fcb757b72`.
+- Candidate eight-frame digest:
+  `a8cebf48ac2506321a546c17293cae5035f8c856139136b63b393bcfbd59207a`.
+- Focused validation command:
+  `npm.cmd run check:enemy-expansion-en-e03-wildwood-hornlord-idle`; it
+  validates approved Briar Idle `8/8`, candidate `8/8`, connected hard-alpha
+  silhouettes `8/8`, exact hoof-contact rows `8/8`, side mirrors `4/4`, 219
+  changed-alpha pixels, 132 antler pixels, 188 moss pixels, 268 bark/torque
+  pixels, opaque range 186-239, 980 Complete B additions, 991 Form changes,
+  baked effects `0`, public EN-E03 families `0`, and the frozen digest/hashes.
+- Full `npm.cmd run check` validation passes in `187.6s`, including all 232
+  validated PNG sheets; the complete ignored Boss checkpoint corpus contains
+  1,222 files.
+- Required next action: publish only this approved Idle lane, reconcile its
+  exact checkpoint, then begin the next isolated Wildwood complete-motion art
+  gate. Registration, consumers, baked effects, release, and broader EN-E03
+  work remain excluded.
 
 The designer accepted EN-F00, approved EN-E01's exact common-baseline Idle
 artifact, authorized its full private production, accepted the completed-slice

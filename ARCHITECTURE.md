@@ -847,13 +847,27 @@ and Death are exact Attack/Hurt aliases. Deterministic `1428x760` boards,
 checks, hard-alpha connectivity, full-body motion checks, external-effect
 boundaries, and zero facade exposure define the frozen visual gate. The
 designer approved both exact paired GIFs on 2026-08-08; bounded publication
-does not expand that gate. Wildwood Hornlord, consumers, registration, effects,
-release, and later work stay out.
+does not itself expand that gate to Wildwood Hornlord, consumers, registration,
+effects, release, or later work.
 The approved internal implementation is committed and pushed at
 `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`; no later gate is opened by publication.
 The focused gate preserves every approved Reed/Briar source digest, and the
 full repository gate passes in `187.1s` with all 232 validated PNG sheets
 unchanged.
+
+The separate `engine/enemy-expansion-en-e03-satyr-elite-idle.js` module owns
+the internal/non-public Wildwood Hornlord elite Idle candidate. It renders an
+elite actor through the approved humanoid chassis, reuses the exact Briar
+F1/F2 tail, digitigrade-leg, split-hoof, and horn-root helpers with staff off,
+then composes a direction-aware branching antler crown, bark pauldrons, moss
+mantle, bracers, and amber torque. Its two-frame focused gate freezes paired raw
+and Complete B + Form evidence, exact side mirroring and hoof-contact rows,
+hard-alpha connectivity, external thorn/leaf/root effects, and zero facade
+exposure. The full repository gate passes in `187.6s` with all 232 validated
+PNG sheets unchanged. The designer approved both exact paired GIFs together on
+2026-08-08. Bounded Idle publication is authorized; the same message requests
+the next isolated Wildwood art gate while registration, consumers, baked
+effects, release, and broader work remain outside this module.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

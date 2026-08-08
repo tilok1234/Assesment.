@@ -181,7 +181,9 @@ complete at `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. The designer then
 authorized the discussed larger slice with `Sure lets go for it one complete
 motion suite we can try atleast`. The designer approved both exact paired Reed
 Charmer complete-motion GIFs on 2026-08-08. Bounded publication is complete at
-`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`; no later gate is authorized.
+`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`. The designer then said `Awesome
+let's do next`; following the documented Satyr role order, only Wildwood
+Hornlord elite Idle F1-F2 across four directions is active.
 
 ## Intake Assessment
 
@@ -647,9 +649,11 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   Reed Charmer Walk/Attack/Hurt/Cast/Death was completed across all four
   directions, visually approved, and published while approved Idle and Briar
   sources remained exact.
-- Active acceptance candidate: none. Wildwood Hornlord, registration,
-  consumers, effects, release, and every later boundary remain gated until a
-  separate explicit continuation.
+- Latest visual approval: Wildwood Hornlord elite Idle F1-F2 across four
+  directions was approved with `Approved lets do next`. Its exact paired
+  evidence is frozen and all technical gates pass. Bounded publication closes
+  first; the same message requests the next isolated Wildwood art gate while
+  registration, consumers, effects, release, and broader scope remain gated.
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1632,6 +1636,55 @@ and no new sprite pixels or public integration are authorized.
   Giant/Centaur changes, new Cast/Death pixels, baked music/pollen/charm effects,
   registration, consumers, release, and later EN-E03 work.
 
+#### Wildwood Hornlord elite Idle approved
+
+- Gate ID: `en-e03-wildwood-hornlord-idle-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed pending bounded publication.
+- Authorization evidence: after Reed Charmer complete motion was approved,
+  published, and reconciled, the designer said `Awesome let's do next`.
+  Following the Satyr common/specialist/elite role order, this authorizes only
+  Wildwood Hornlord Idle F1-F2 across four directions.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form Idle GIFs together and said `Approved
+  lets do next` on 2026-08-08.
+- Isolated branch/worktree: `codex/en-e03-wildwood-hornlord-idle` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-wildwood-hornlord-idle`, based exactly
+  on clean published Reed handoff `629bccd`.
+- Scope: Idle F1-F2 in Down, Left, Right, and Up. Briar Reveler and Reed Charmer
+  remain exact; Walk/Attack/Cast/Hurt/Death are rejected by the candidate
+  registry.
+- Identity and motion: the approved Satyr horns, tail, hocks, digitigrade legs,
+  and split hooves combine with an oversized branching antler crown, sculpted
+  bark pauldrons, a moss mantle, bracers, and amber torque. F2 settles the elite
+  upper identity one row while the approved tail/hock/hoof cycle remains
+  grounded. Thorn aura, leaf swirl, root burst, and controller effects stay
+  external.
+- Preservation and focused gate: approved Briar Idle `8/8`; candidate `8/8`;
+  connected hard-alpha silhouettes `8/8`; exact hoof-contact rows `8/8`; side
+  mirrors `4/4`; 219 changed-alpha pixels; 132 branching-antler pixels; 188
+  moss pixels; 268 bark/torque pixels; 980 Complete B additions; 991 Form
+  changes; baked effects `0`; public EN-E03 families `0`.
+- Frozen evidence: raw board
+  `7f3a1280c40652ca183dffd73379d3c43807248b6a40af866d91fd6420d1e2d3`,
+  Complete B + Form board
+  `b62244e9c953517c4af58ef22040754df9e6911f5a16d95ac42ac467d51fc779`,
+  raw GIF
+  `ee5f3eb354b4ca5080b2d8f4e2a05f6e50e6b87ebe7af3026309f32c092bbeef`,
+  Complete B + Form GIF
+  `890d249db2e398da3332f1b9d07ade758964fb530830c57c0d2c6d2fcb757b72`,
+  and eight-frame digest
+  `a8cebf48ac2506321a546c17293cae5035f8c856139136b63b393bcfbd59207a`.
+- Approval record: the exact paired `192x224`, two-frame raw/no-outline and
+  Complete B + Form all-four-direction GIFs were reviewed together. Full
+  repository validation passes in `187.6s`, including all 232 validated PNG
+  sheets, and exact Aseprite board inspection is complete.
+- Exclusions: approved Briar/Reed changes, later Wildwood motion, baked
+  thorn/leaf/root effects, registration, consumers, release, and later EN-E03
+  work.
+- Required next action: publish this Idle lane, reconcile its exact checkpoint,
+  then open the next isolated Wildwood complete-motion art gate requested by
+  the same approval message.
+
 ### EN-E04 - Serpentine and aquatic peoples
 
 - Status: `queued`
@@ -1980,5 +2033,7 @@ complete at `8e73cd038d50037a40cad27ee9f2e37b6e363b69`. Reed Charmer specialist 
 F1-F2 is visually approved and published at
 `070f85b20c4ea77a75e35eb6d9eefd697f4b0b47`. Reed Charmer complete motion is
 visually approved and published at `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`.
-No art gate is active; any other code or art work requires separate explicit
-designer authorization.
+Wildwood Hornlord elite Idle F1-F2 is visually approved and awaiting bounded
+publication. The same `Approved lets do next` message requests the next
+isolated Wildwood art gate after that clean checkpoint; registration,
+integration, effects, release, and broader work remain unauthorized.

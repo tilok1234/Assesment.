@@ -452,8 +452,27 @@ zero public exposure. The full repository gate also passes in `187.1s`, with
 all 232 validated PNG sheets unchanged. The designer reviewed both exact paired
 GIFs and said `Approved` on 2026-08-08. The internal, non-public bounded
 implementation is committed and pushed at `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`.
-Wildwood Hornlord, registration, integration, effects, release, and later work
-remain unauthorized.
+That Reed approval did not authorize Wildwood Hornlord, registration,
+integration, effects, release, or later work; the separate Wildwood Idle gate
+is recorded below.
+
+## Wildwood Hornlord elite Idle approved
+
+After the published Reed Charmer suite, the designer said `Awesome let's do
+next`. Following the documented Satyr role order, the bounded internal candidate
+implements only Wildwood Hornlord Idle F1-F2 across four directions. Run
+`npm.cmd run review:enemy-expansion-en-e03-wildwood-hornlord-idle` to reproduce
+the exact paired raw/no-outline and Complete B + Form `1548x650` boards and
+labeled `192x224` two-frame GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e03-wildwood-hornlord-idle` to verify all
+eight connected frames, exact Briar hoof-contact rows, side mirrors, the
+branching antler/bark/moss identity, frozen hashes, external thorn/leaf/root
+effects, and zero public exposure. The full repository gate passes in `187.6s`
+with all 232 validated PNG sheets unchanged. The designer reviewed both exact
+paired GIFs together and said `Approved lets do next` on 2026-08-08. The
+internal, non-public lane awaits bounded publication; the same message requests
+the next isolated Wildwood art gate. Registration, integration, baked effects,
+release, and broader EN-E03 work remain unauthorized.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

@@ -364,8 +364,20 @@ Approved Idle and Briar sources remain exact, both paired suite GIFs are frozen,
 and both focused and full gates pass with all 232 validated PNG sheets
 unchanged. The designer reviewed both exact paired GIFs and said `Approved` on
 2026-08-08; the bounded implementation is committed and pushed at
-`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`. Wildwood Hornlord, registration,
-integration, effects, release, and later gates remain unauthorized.
+`f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`. That Reed approval did not itself
+authorize Wildwood Hornlord, registration, integration, effects, release, or
+later gates.
+The designer then said `Awesome let's do next`, activating only Wildwood
+Hornlord elite Idle F1-F2 across all four directions. Its internal/non-public
+candidate retains the approved Satyr lower body and replaces the common staff
+identity with an oversized branching antler crown, sculpted bark armor, moss
+mantle, bracers, and amber torque. The paired GIFs are frozen and the focused
+eight-frame gate passes. The full repository gate also passes with all 232
+validated PNG sheets unchanged. The designer reviewed both exact paired GIFs
+together and said `Approved lets do next` on 2026-08-08. Bounded Idle
+publication closes first, then the same message requests the next isolated
+Wildwood art gate; effects, registration, integration, release, and broader
+work remain unauthorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
