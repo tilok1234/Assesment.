@@ -379,6 +379,15 @@ Idle implementation is committed and pushed at
 `aa96e170c41cbcb49c7ac1bd979114b3b5bfa7e4`. The same message requests the next
 isolated Wildwood art gate; effects, registration, integration, release, and
 broader work remain unauthorized.
+That continuation is now bounded to one complete Wildwood Hornlord suite:
+approved Idle delegates byte-for-byte while Walk, Attack, Hurt, and exact
+Cast/Death aliases span four directions in an internal/non-public 80-frame
+candidate. Crown, armor, mantle, torso, tail, hocks, and hooves participate in
+the motion; thorn aura, leaf swirl, and root burst remain external. Both paired
+suite GIFs are frozen, focused validation passes, and the full repository gate
+passes with all 232 validated PNG sheets unchanged. The designer reviewed both
+exact paired GIFs and said `Approved` on 2026-08-08; bounded publication is
+closing. Registration, integration, effects, release, and later work stay gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

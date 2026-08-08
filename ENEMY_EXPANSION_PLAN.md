@@ -655,6 +655,10 @@ resulting F1/F2 boards on 2026-08-04 with `approved`. Subsequent explicit gates
   published at `aa96e170c41cbcb49c7ac1bd979114b3b5bfa7e4`. The same message
   requests the next isolated Wildwood art gate while registration, consumers,
   effects, release, and broader scope remain gated.
+- Latest approved implementation: Wildwood Hornlord Walk/Attack/Hurt/Cast/Death
+  across four directions forms one internal, non-public 80-frame suite. Approved
+  Idle delegates byte-for-byte, Cast/Death are exact aliases, paired evidence is
+  frozen, and the designer approved both exact GIFs together on 2026-08-08.
 
 Shared leverage: large-body scale studies, long strides, hoof contacts, and
 front/back torso-to-leg alignment. Centaur is the four-legged hybrid pilot;
@@ -1688,6 +1692,50 @@ and no new sprite pixels or public integration are authorized.
 - Required next action: open the next isolated Wildwood complete-motion art gate
   requested by the same approval message.
 
+#### Wildwood Hornlord complete motion approved
+
+- Gate ID: `en-e03-wildwood-hornlord-motion-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed while bounded publication closes.
+- Authorization evidence: after approving the exact paired Wildwood Idle GIFs,
+  the designer said `Approved lets do next`. Following the accepted grouped
+  motion pattern, this authorizes one complete Wildwood suite only.
+- Approval evidence: the designer reviewed both exact labeled all-four-direction
+  raw/no-outline and Complete B + Form motion-suite GIFs together and said
+  `Approved` on 2026-08-08.
+- Isolated branch/worktree: `codex/en-e03-wildwood-hornlord-motion` at
+  `C:\tmp\8-bit-sprite-assembler-en-e03-wildwood-hornlord-motion`, based exactly
+  on clean published Wildwood Idle handoff `4c59c32`.
+- Scope: exact approved Idle F1-F2 plus Walk W1-W4, Attack A1-A4, Cast C1-C4,
+  Hurt H1-H2, and Death D1-D4 across Down, Left, Right, and Up. Cast aliases
+  Attack; Death aliases Hurt H1,H2,H2,H2.
+- Motion: reverse-jointed Walk moves the crown, armor, mantle, torso, tail,
+  hocks, and hooves. Attack has brace, lift, forward-drive, and recovery phases.
+  Hurt flashes the complete silhouette and returns to a planted colored brace.
+- Preservation and focused gate: approved Idle `8/8`; approved Briar Walk
+  `16/16`, Attack `16/16`, Hurt `8/8`; candidate `80/80`; connected hard-alpha
+  silhouettes `80/80`; side mirrors `20/20`; Cast/Death aliases `16/16` each;
+  opaque range 177-239; public EN-E03 families `0`.
+- Frozen evidence: raw board
+  `95f92b325d4b7a465ffd50e5dbf11c1b07c3fd941f5bf778433e31872d896f48`,
+  Complete B + Form board
+  `a129d01a91160bf73d999f39379fc379c4da8312da5cccdd17072af1917a131f`,
+  raw GIF
+  `22845dd24a64c9674fed979ebf91ee7505818fdad5c80c292b7195c0ea371a0b`,
+  Complete B + Form GIF
+  `eba94e2f22522fa352204ba8c944fa9b87773b07895e9afeae2efdaaad7fa747`,
+  and 80-frame digest
+  `a0ac53b0ba66feeda9ef5251aa10b1aac962af4428a6f09ba84051fa630989b3`.
+- Approved review: the exact paired `640x672`, four-phase raw/no-outline and
+  Complete B + Form all-four-direction GIFs were reviewed together. Full
+  repository validation passes in `203.7s`, including all 232 validated PNG
+  sheets. Both exact boards were opened in Aseprite and cross-checked at
+  original resolution.
+- Exclusions: approved Wildwood Idle/Briar/Reed changes, new Cast/Death pixels,
+  baked thorn/leaf/root effects, registration, consumers, release, and later
+  EN-E03 work.
+- Required next action: bounded publication only, then stop. No later gate is
+  authorized by this approval.
+
 ### EN-E04 - Serpentine and aquatic peoples
 
 - Status: `queued`
@@ -2038,6 +2086,7 @@ F1-F2 is visually approved and published at
 visually approved and published at `f77c8a88b25cb59f5bdbe82708a620e5cae3fe9d`.
 Wildwood Hornlord elite Idle F1-F2 is visually approved and published at
 `aa96e170c41cbcb49c7ac1bd979114b3b5bfa7e4`. The same `Approved lets do next`
-message requests the next isolated Wildwood complete-motion art gate;
-registration, integration, effects, release, and broader work remain
-unauthorized.
+message activates only the isolated Wildwood complete-motion art gate. Its
+80-frame paired candidate is visually approved and bounded publication is the
+only current action; registration, integration, effects, release, and broader
+work remain unauthorized.

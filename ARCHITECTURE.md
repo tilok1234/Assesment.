@@ -870,6 +870,18 @@ PNG sheets unchanged. The designer approved both exact paired GIFs together on
 isolated Wildwood art gate while registration, consumers, baked effects,
 release, and broader work remain outside this module.
 
+The separate `engine/enemy-expansion-en-e03-satyr-elite-motion.js` module owns
+the internal/non-public Wildwood Hornlord complete-motion candidate. It
+delegates approved Idle byte-for-byte, composes the elite crown/armor/mantle
+identity over approved Satyr Walk/Attack/Hurt draw helpers with staff off, and
+maps Cast to Attack plus Death to Hurt H1,H2,H2,H2. The 80-frame focused gate
+freezes source digests, all-four-direction side mirrors, connected hard alpha,
+full-body motion, external thorn/leaf/root effects, paired evidence, and zero
+facade exposure. The full repository gate passes in `203.7s` with all 232
+validated PNG sheets unchanged. The designer approved both exact paired GIFs
+on 2026-08-08; bounded publication does not expand the gate. Registration,
+consumers, baked effects, release, and later work remain outside.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

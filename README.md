@@ -475,6 +475,22 @@ internal, non-public lane is committed and pushed at
 isolated Wildwood art gate. Registration, integration, baked effects, release,
 and broader EN-E03 work remain unauthorized.
 
+## Wildwood Hornlord complete motion approved
+
+After the approved Idle pair, `Approved lets do next` activates one complete
+Wildwood Hornlord suite only. Run
+`npm.cmd run review:enemy-expansion-en-e03-wildwood-hornlord-motion` to
+reproduce the exact paired raw/no-outline and Complete B + Form `1428x760`
+boards plus labeled `640x672`, four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e03-wildwood-hornlord-motion` to verify
+exact approved Idle delegation, all 80 connected frames, side mirrors,
+full-body Walk/Attack/Hurt motion, exact Cast/Death aliases, frozen hashes,
+external thorn/leaf/root effects, and zero public exposure. The full repository
+gate passes in `203.7s` with all 232 validated PNG sheets unchanged. The
+designer reviewed both exact paired GIFs and said `Approved` on 2026-08-08.
+Bounded publication of the internal lane is closing; registration, integration,
+effects, release, and later work remain unauthorized.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge
