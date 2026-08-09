@@ -77,12 +77,12 @@ gate. Never publish an unapproved lane, and honor an explicit designer hold.
   `boss-animation-v1` 48x48/20-column contract and the Ancient Mirejaw, Bone
   Reliquary King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend
   Juggernaut, Goblin War-Crown, Cruel Catgirl Templar of the Brutes, Divine
-  Armored Templar Astro Knight, Furious Depraved Rhino, and Gunslinger Boar
-  Rider asset paths.
+  Armored Templar Astro Knight, Furious Depraved Rhino, Gunslinger Boar Rider,
+  Lava-Core Colossus, Abyssal Crown-Kraken, Sun-Crown Griffin, and Eclipse
+  Unicorn Sovereign asset paths.
 - `engine/catalogs/boss-directions.js` owns the immutable review-only
-  `boss-directions-v1` identity and paths for twelve approved 48x48 direction
-  pilots plus repaired quadruped Rhino and Eclipse Unicorn Sovereign
-  candidates.
+  `boss-directions-v1` identity and paths for thirteen approved 48x48 direction
+  pilots plus the repaired quadruped Rhino candidate.
 - `engine/catalogs.js` is the internal catalog facade used by the renderer and helpers.
 
 Catalog files describe content. They do not touch the DOM, canvas, editor state, or persistence.
@@ -499,11 +499,11 @@ Bosses use an ephemeral `workspaceMode` layered above the last ordinary
 Player/Enemy/Effect document. Entering Boss does not call `setState()`, add a
 fourth persisted kind, or record history. Pilot, direction, animation, frame,
 speed, and playback are module-only review state. Reload therefore returns to
-  the last ordinary mode. Thirteen animated pilots use dedicated 48x48 playback
-  plus native 1x full/direction/animation downloads; one static entry uses
-the checkpoint-exact 48x192 direction sheet. Goblin War-Crown, Furious
-Depraved Rhino, and Gunslinger Boar Rider remain explicit animation candidates.
-Both animated and static paths bypass every ordinary
+the last ordinary mode. Fourteen animated pilots use dedicated 48x48 playback
+plus native 1x full/direction/animation downloads; no static entry remains.
+Goblin War-Crown, Furious Depraved Rhino, and Gunslinger Boar Rider remain
+explicit animation candidates. All Boss paths bypass
+every ordinary
 export/pack route.
 
 The independently versioned persistence and export formats are:
@@ -591,10 +591,9 @@ deliberately not serialized.
   whole-character Wildcard remain unrestricted; compatible context is
   history-only and never serialized.
 - `sprite-engine.js` remains the public import path.
-- Boss pilots remain a separate 48x48 review contract: twelve approved
-  four-direction sets plus Rhino and Unicorn candidates, thirteen full 20-column
-  animation sets,
-  one static entry, Down/Left/Right/Up row order, hard
+- Boss pilots remain a separate 48x48 review contract: thirteen approved
+  four-direction sets plus the Rhino candidate, fourteen full 20-column
+  animation sets, zero static entries, Down/Left/Right/Up row order, hard
   alpha, Effects Off, native 1x export, and no persistence or
   production-renderer claim.
 - Browser and Windows builds use identical production files.
@@ -1281,14 +1280,16 @@ The bounded implementation is published at checkpoint `cedc774`.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
-48x192 direction sheets, plus thirteen animation-catalog entries, 1,040 distinct
-48x48 frames, and 143 native full/scoped animation sheets. They also enforce
+48x192 direction sheets, plus fourteen animation-catalog entries, 1,120 distinct
+48x48 frames, and 154 native full/scoped animation sheets. They also enforce
 Idle-frame control parity, facade immutability, native-only download wiring,
 and absence from production renderer, generator, persistence, game-pack, and
 ordinary sheet dependencies. Kraken's accepted implementation is published at
 checkpoint `82938c7`; the later Sun-Crown Griffin corpus is a deterministic,
-accepted suite with the full repository gate and all 232 fixture PNG checks
-passing. Its isolated implementation checkpoint is `dad05aa`.
+accepted suite whose full repository gate passes with all 232 fixture PNGs; its
+isolated implementation checkpoint is `dad05aa`. Eclipse Unicorn Sovereign is
+the accepted fourteenth animation suite at isolated implementation checkpoint
+`bc67e8a`.
 
 The standard full `npm run check` is fresh-clone safe. Missing optional local
 Boss review checkpoints are warnings, and byte parity runs for every checkpoint

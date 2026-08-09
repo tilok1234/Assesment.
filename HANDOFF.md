@@ -15,25 +15,86 @@ verification workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Published Approved Sun-Crown Griffin Animation
+## Immediate Continuation Checkpoint - Published Approved Eclipse Unicorn Sovereign Direction + Animation
 
 Start here in a new task. This is the only active continuation section in this
-file; the published Kraken and Lava checkpoints and everything below
+file; the published Griffin, Kraken, and Lava checkpoints and everything below
 `Historical Handoff Archive` are provenance.
+
+- Repository/worktree: isolated branch
+  `codex/boss-eclipse-unicorn-sovereign-animation` at
+  `C:\Users\headc\Documents\sprite-assembler-v2\death-review\boss-worktrees\eclipse-unicorn-sovereign-animation`,
+  based exactly on reconciled published Griffin checkpoint
+  `eb23a2d169f907858e25ab84000b0a842d20c03c`. The accepted implementation is
+  published at `bc67e8a5c64bdbb4eca9327230629cee876938c3`.
+- Parallel-lane firewall: the separate unapproved Petalcrown Duelist worktree
+  remains untouched. The preceding Lava, Kraken, and Griffin branches remain
+  clean and match their upstream branches; none is included in this checkpoint.
+- Authorization: after reviewing Griffin's exact full sheet and live Cycle All
+  playback, the designer replied `good letgs move on` on 2026-08-09. After the
+  exact Unicorn sheet and motion review, the designer replied `approved lets do
+  next`, explicitly approving the direction repair and animation together.
+- Gate/status: accepted repaired `boss-directions-v1` and dependent
+  `boss-animation-v1` suite for `eclipse-unicorn-sovereign`; internal,
+  review-only, effects-off, and published on its isolated branch.
+- Scope: one complete 80-frame native `48x48` suite across Down, Left, Right,
+  and Up: Idle x2, Walk x4, Attack x4, Cast x4, Hurt x2, and Death x4. Right is
+  the exact mirror of Left and every Idle frame 1 is byte-identical to the
+  approved direction control.
+- Motion identity: sovereign breathing, a four-beat arcane prance, committed
+  sunhorn charge, expanding cyan-violet eclipse corona, radiant recoil, and a
+  graceful four-stage fall.
+- Authoring boundary: `tools/generate-eclipse-unicorn-sovereign-animation-v1.py`
+  derives from the approved direction sources and uses the shared
+  batched `boss_animation_authoring_v1.py` treatment path. No
+  checker literals, frame contracts, shared renderer code, production paths,
+  persistence, ordinary packs, schemas, effects, or Windows build paths change.
+- Integration: append one accepted pilot to
+  `engine/catalogs/boss-animations.js` and data-owned
+  `tools/fixtures/boss-roster.json`; generate exactly 80 runtime frames plus
+  eleven native sheets and matching ignored review checkpoints.
+- Deterministic evidence: exact native `960x192` full sheet SHA-256
+  `627ef1818fd02c9035e9cffa2f6594893f9aa9afb4977669d24854810820d535`
+  reproduced byte-for-byte on consecutive builds.
+- Focused result: `npm.cmd run check:bosses` passes fourteen direction pilots,
+  fourteen animation pilots, 1,120 distinct hard-alpha frames, 154 native
+  sheets, exact direction controls, mirrored side silhouettes, immutable
+  facade, and isolated dependencies. Missing unrelated review checkpoints
+  remain warnings on this clone; all present checkpoints and all runtime assets
+  validate.
+- Live review result: the isolated local Bosses tab reports fourteen full
+  animation pilots and zero static entries. All 24 Unicorn action/direction
+  combinations load, Cycle All plays, every image is complete, and the browser
+  error log is empty. The exact full sheet was opened in Aseprite.
+- Validation state: focused Boss and full repository gates pass with the public
+  Enemy catalog still 74/245 and all 232 fixture PNGs unchanged.
+- Fulfilled continuation: the accepted implementation and all forced review
+  checkpoints are published. All fourteen Bosses-tab entries now have complete
+  animation workspaces and zero static entries. Remaining visual-review lanes
+  are Goblin War-Crown animation, Furious Depraved Rhino direction plus
+  animation, and Gunslinger Boar Rider animation; opening any of them remains a
+  separate bounded pass. Do not run the frozen `export:bosses:13` command.
+
+## Published Preceding Checkpoint - Approved Sun-Crown Griffin Animation
+
+This clean published checkpoint is the source for the active Unicorn lane. Its
+prior continuation instruction has been fulfilled and is historical.
 
 - Repository/worktree: isolated branch
   `codex/boss-sun-crown-griffin-animation` at
   `C:\Users\headc\Documents\sprite-assembler-v2\death-review\boss-worktrees\sun-crown-griffin-animation`,
   based exactly on reconciled published Kraken checkpoint
   `caa5929f0142406ae66c7031a4669db062800564`. The accepted implementation is
-  committed at `dad05aafb62407fd4cf9afb8be009643a3caa260`.
+  committed at `dad05aafb62407fd4cf9afb8be009643a3caa260`; its reconciled and
+  published branch head is `eb23a2d169f907858e25ab84000b0a842d20c03c`.
 - Parallel-lane firewall: the separate unapproved Petalcrown Duelist worktree
   remains untouched. The preceding Lava and Kraken branches remain clean and
-  match their upstream branches; neither lane is included in this candidate.
+  match their upstream branches; neither lane is included in this checkpoint.
 - Authorization: after reviewing Kraken's exact full sheet and live Cycle All
   playback, the designer replied `approved` and then requested `next` on
-  2026-08-09. The bounded one-boss cadence opens only approved-direction
-  Sun-Crown Griffin; Eclipse Unicorn Sovereign remains closed.
+  2026-08-09. The bounded one-boss cadence opened only approved-direction
+  Sun-Crown Griffin. The designer approved its exact full sheet and visible
+  motion with `good letgs move on` on 2026-08-09.
 - Gate/status: accepted `boss-animation-v1` for `sun-crown-griffin`; internal,
   review-only, effects-off, explicitly visually approved, and published on its
   isolated branch.
@@ -49,7 +110,7 @@ file; the published Kraken and Lava checkpoints and everything below
   uses the shared batched `boss_animation_authoring_v1.py` treatment path. No
   checker literals, frame contracts, shared renderer code, production paths,
   persistence, ordinary packs, schemas, effects, or Windows build paths change.
-- Integration: append one candidate pilot to
+- Integration: append one accepted pilot to
   `engine/catalogs/boss-animations.js` and data-owned
   `tools/fixtures/boss-roster.json`; generate exactly 80 runtime frames plus
   eleven native sheets and matching ignored review checkpoints.
@@ -62,18 +123,17 @@ file; the published Kraken and Lava checkpoints and everything below
   facade, and isolated dependencies. Missing unrelated review checkpoints
   remain warnings on this clone; all present checkpoints and all runtime assets
   validate.
-- Live review result: the isolated local Bosses tab reports thirteen full
+- Live review result: the isolated local Bosses tab reported thirteen full
   animation pilots and one static entry. All six Griffin actions load in all
   four directions, Cycle All plays, every image is complete, and the browser
-  error log is empty. The designer approved the exact full sheet and visible
-  motion with `good letgs move on` on 2026-08-09.
+  error log is empty.
 - Validation state: focused Boss and full repository gates pass with the public
   Enemy catalog still 74/245 and all 232 fixture PNGs unchanged; the accepted
   full gate completes in `128s`.
 - Fulfilled continuation: the implementation and documentation reconciliation
   are pushed and clean upstream parity is verified. Eclipse Unicorn Sovereign
-  may now open as the final isolated one-boss candidate lane. Do not run the
-  frozen `export:bosses:13` command.
+  is now the final isolated one-boss candidate lane. Do not run the frozen
+  `export:bosses:13` command.
 
 ## Published Preceding Checkpoint - Approved Abyssal Crown-Kraken Animation
 
