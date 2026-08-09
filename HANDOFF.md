@@ -15,6 +15,79 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
+## Immediate Continuation Checkpoint - Birdfolk Aerie Scout Approved
+
+Start here in a new task. After approving, publishing, and reconciling the
+complete Merfolk Pearl Regent, the designer said `next` on 2026-08-09. The live
+EN-E04 plan now advances to the untouched Birdfolk family and defines its
+upright-avian-person anatomy without pre-naming its roles, so Codex named and
+bounded this continuation to one complete 80-frame Birdfolk Aerie Scout common
+enemy only. The designer reviewed the exact hash-frozen raw/no-outline and
+Complete B + Form pair and said `very good approved` on 2026-08-09. They paused
+only to restart Codex for a new MCP setup, then resumed this bounded workflow
+with `ok lets keep going`; the new Aseprite MCP call succeeded and both exact
+`1428x760` boards are open in Aseprite.
+
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-birdfolk-aerie-scout`, based exactly on clean Pearl Regent
+  handoff `3a5ff4fdd2709731cb1c673c84ce0956057541e1`; the approved Pearl Regent
+  implementation remains frozen at
+  `ef0ab54b73718b62f8db99f601020f7ef14090f8`.
+- Gate: `en-e04-birdfolk-aerie-scout-full-v1`; status `approved`, internal,
+  non-public, uncommitted, and unpushed. Bounded publication of the exact
+  ten-file lane is authorized; generated review artifacts remain ignored.
+- Scope: one common Aerie Scout and 80 frames across Down, Left, Right, and Up:
+  Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack
+  aliases, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Anatomy: one upright feathered torso joins a beaked head and connected crest,
+  two shoulder-rooted wing-arms, two digitigrade legs with broad gold talons,
+  and one connected tail fan. Every frame is one connected hard-alpha
+  silhouette with a one-cell canvas margin and no human hair/face, ordinary
+  boot blocks, floating wing islands, or exposed-human Harpy identity.
+- Common identity: slate-blue plumage, cream throat bib, rust flight-feather
+  tips, bronze scout harness, teal sash marks, amber eyes, gold beak/talons,
+  and a compact tail fan. All 36 colored side frames retain the two-pixel eye
+  treatment; all 18 colored rear frames remain eye-free.
+- Motion: Idle breathes and settles the crest; Walk owns four distinct
+  digitigrade strides; Attack braces, raises the wings, drives a forward
+  wing-and-talon rake, and recovers. Hurt H1 flashes the complete silhouette
+  white before the colored recovery.
+- Effects/exclusions: wind streaks, loose feathers, dust puffs, dive trails,
+  gust rings, air blades, and impacts remain external. Birdfolk specialist and
+  elite roles, additional variants, new Cast/Death pixels, registration,
+  consumers, integration, effects, release, and broader EN-E04 work remain
+  outside.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e04-birdfolk-aerie-scout`; it
+  reproduces paired raw/no-outline and Complete B + Form `1428x760` boards plus
+  exact labeled `640x672`, four-phase, `720ms` looping GIFs.
+- Focused command:
+  `npm.cmd run check:enemy-expansion-en-e04-birdfolk-aerie-scout`.
+- Raw / Complete B + Form board SHA-256 values:
+  `e1d6bd053edeab115ae354383ba39b5ed0698aecc445985cfd5ea06bc67b3b47` /
+  `b7bb2f42c79868a1f311340e3df4ecf22d166170a4eb279c0cc293532de3e9b9`.
+- Raw / Complete B + Form GIF SHA-256 values:
+  `f50d8b6768eca83561aef0f44576cebcd64f399ec3294a90585972ba7e41d81b` /
+  `4ef54ceb8050955b8c6611a3ef1c57124012f315220276283879a021b3d59c4a`.
+- Candidate 80-frame digest:
+  `afff790c5f60684561752ff7fe9f8f4312c5b46679477cc88d29764379ca41c8`.
+- Focused validation passes: suite `80/80`; connected silhouettes `80/80`;
+  hard-alpha frames `80/80`; colored crest/wing-arm/tail-fan/broad-talon
+  anatomy `72/72`; exact side mirrors `20/20`; colored side eyes `36/36`;
+  eye-free colored rear frames `18/18`; Cast aliases `16/16`; Death aliases
+  `16/16`; opaque range 179-231; 7,614 Complete B additions; 7,107 Form
+  changes; public EN-E04 families `0`.
+- All eight protected predecessor gates pass. The final post-approval v2 fast
+  gate passes in `52.9s`; full `npm.cmd run check` passes in `106.3s`, with all
+  232 public PNG sheets unchanged.
+- Required next action: commit and push the exact approved ten-file lane, then
+  reconcile the live handoff. Do not begin later Birdfolk roles, register,
+  integrate, add effects, release, or broaden the lane; those remain outside
+  this approval.
+
+The approved preceding Pearl Regent checkpoint follows for provenance.
+
 ## Immediate Continuation Checkpoint - Merfolk Pearl Regent Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the

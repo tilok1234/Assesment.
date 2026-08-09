@@ -1077,6 +1077,37 @@ exact ten-file lane is complete at
 variants, registration, integration, effects, release, and broader work remain
 outside.
 
+The isolated `engine/enemy-expansion-en-e04-birdfolk-aerie-scout.js` module
+owns the next authorized Birdfolk common without modifying Pearl Regent, the
+legacy Harpy renderer, shared schemas, or the public facade. Its lane-local
+renderer authors one upright avian person directly: beaked crested head,
+shoulder-rooted wing-arms, feathered torso and scout harness, two digitigrade
+talon legs, and one connected tail fan. Direction-aware transforms provide four
+distinct strides and a brace/rise/wing-and-talon-rake/recovery attack; Cast
+aliases Attack and Death aliases Hurt `H1,H2,H2,H2` exactly. The white Hurt
+phase recolors the complete silhouette, while all wind and impact effects stay
+external.
+
+Gate `en-e04-birdfolk-aerie-scout-full-v1` is hash-frozen, technically focused
+and predecessor-validated, visually `approved`, internal, and non-public on
+`codex/en-e04-birdfolk-aerie-scout`. Its
+lane-local registry contains only common Aerie Scout and remains absent from
+`sprite-engine.js`. Frozen `1428x760` boards, `640x672` paired four-phase GIFs,
+an 80-frame digest, 80 connected hard-alpha silhouettes, one-cell margins,
+20 exact side mirrors, exact aliases, 36/36 two-pixel colored side eyes, 18/18
+eye-free colored rear views, Complete B/Form presentation, external effects,
+and zero public exposure define the gate. All eight protected predecessor gates
+pass; the final post-approval fast gate passes in `52.9s` and the full
+repository gate passes in `106.3s`, with all 232 public sheets unchanged. Exact
+paired visual approval is recorded below. Birdfolk specialist/elite roles,
+registration, integration, effects, release, and broader work remain outside.
+
+The designer reviewed the exact raw/no-outline and Complete B + Form pair and
+said `very good approved` on 2026-08-09. After the requested Codex/MCP restart,
+the working Aseprite MCP opened both exact `1428x760` boards and the designer
+said `ok lets keep going`. That approval authorizes only bounded commit, push,
+and publication of this exact ten-file Aerie Scout lane.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

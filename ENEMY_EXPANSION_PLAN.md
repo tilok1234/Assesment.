@@ -1776,9 +1776,9 @@ and no new sprite pixels or public integration are authorized.
 - Required next action: stop and wait. No later gate is authorized by this
   approval.
 
-### EN-E04 - Serpentine and aquatic peoples
+### EN-E04 - Serpentine, aquatic, and avian peoples
 
-- Status: `active - all three Merfolk roles published; next gate requires explicit authorization`
+- Status: `active - Aerie Scout common approved; bounded publication authorized`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1788,11 +1788,13 @@ and no new sprite pixels or public integration are authorized.
 - Approved gate: Merfolk Tideguard complete motion across Down, Left, Right, and Up; published
 - Approved gate: Merfolk Reefcaller complete specialist motion across Down, Left, Right, and Up; published
 - Approved gate: Merfolk Pearl Regent complete elite motion across Down, Left, Right, and Up; published
+- Approved gate: Birdfolk Aerie Scout complete common motion across Down, Left, Right, and Up; bounded publication authorized
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
 | Naga | Coilguard | Venom Oracle | Temple Rajah |
 | Merfolk | Tideguard | Reefcaller | Pearl Regent |
+| Birdfolk | Aerie Scout | Not named | Not named |
 
 Shared leverage: non-human lower bodies and upright equipment anchors. Naga and
 Merfolk must not fake ordinary feet in side views. Birdfolk must remain an
@@ -2197,6 +2199,62 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Required next action: stop. Birdfolk, registration, integration, effects,
   release, and broader work require separate explicit authorization.
 
+#### Birdfolk Aerie Scout full common approved, awaiting bounded publication
+
+- Gate ID: `en-e04-birdfolk-aerie-scout-full-v1`; status: `approved`, internal,
+  non-public, uncommitted, and unpushed.
+- Live branch: `codex/en-e04-birdfolk-aerie-scout`, based exactly on clean
+  Pearl Regent reconciliation `3a5ff4fdd2709731cb1c673c84ce0956057541e1`;
+  approved Pearl Regent remains frozen at
+  `ef0ab54b73718b62f8db99f601020f7ef14090f8`.
+- Authorization/naming: after Pearl Regent approval/publication, the designer
+  said `next` on 2026-08-09. EN-E04 advances to Birdfolk, whose live anatomy
+  contract exists without role names; Codex named and bounded one complete
+  common Aerie Scout only. Specialist and elite names remain deliberately open.
+- Approval: the designer reviewed both exact hash-frozen all-four-direction
+  raw/no-outline and Complete B + Form GIFs together and said `very good
+  approved` on 2026-08-09. They paused only for a Codex/MCP restart, then said
+  `ok lets keep going`; the working MCP opened both exact `1428x760` boards in
+  Aseprite after restart.
+- Scope: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast aliases,
+  and exact Death aliases `H1,H2,H2,H2` across Down, Left, Right, and Up.
+- Anatomy: one upright feathered torso joins a beaked crested head, two
+  shoulder-rooted wing-arms, two digitigrade legs with broad talons, and one
+  connected tail fan. Every frame is one hard-alpha component within a one-cell
+  margin; human hair/face, ordinary boot blocks, detached wing islands, and the
+  exposed-human Harpy identity are forbidden.
+- Identity: slate-blue plumage, cream throat bib, rust flight-feather tips,
+  bronze harness, teal sash marks, amber eyes, and gold beak/talons. All 36
+  colored side frames retain two eye pixels; all 18 colored rear frames remain
+  eye-free.
+- External effects: wind streaks, loose feathers, dust puffs, dive trails,
+  gust rings, air blades, and impacts stay outside actor pixels; baked effects
+  are empty.
+- Exclusions: approved Pearl Regent changes, Birdfolk specialist/elite roles,
+  additional variants, new Cast/Death pixels, registration, consumers,
+  integration, effects, release, later EN-E04 work, and multi-enemy expansion.
+- Frozen candidate evidence: raw / Complete B + Form boards
+  `e1d6bd053edeab115ae354383ba39b5ed0698aecc445985cfd5ea06bc67b3b47` /
+  `b7bb2f42c79868a1f311340e3df4ecf22d166170a4eb279c0cc293532de3e9b9`;
+  raw / Complete B + Form GIFs
+  `f50d8b6768eca83561aef0f44576cebcd64f399ec3294a90585972ba7e41d81b` /
+  `4ef54ceb8050955b8c6611a3ef1c57124012f315220276283879a021b3d59c4a`;
+  80-frame digest
+  `afff790c5f60684561752ff7fe9f8f4312c5b46679477cc88d29764379ca41c8`.
+- Focused validation passes suite frames `80/80`, connected/hard-alpha frames
+  `80/80`, complete colored crest/wing-arm/tail-fan/talon anatomy `72/72`,
+  exact side mirrors `20/20`, colored side eyes `36/36`, eye-free colored rear
+  frames `18/18`, Cast aliases `16/16`, Death aliases `16/16`, opaque range
+  179-231, 7,614 Complete B additions, 7,107 Form changes, and zero public
+  EN-E04 families. All eight protected predecessor gates also pass.
+- The final post-approval v2 fast gate passes in `52.9s`; full
+  `npm.cmd run check` passes in `106.3s`, with all 232 public PNG sheets
+  unchanged.
+- Required next action: commit and push the exact approved ten-file lane, then
+  reconcile the live handoff. No later Birdfolk role, registration,
+  integration, effects, release, or broader work is authorized by this
+  approval.
+
 ### EN-E05 - Undead humanoids
 
 - Status: `queued`
@@ -2590,3 +2648,13 @@ non-public, committed, and pushed at
 `ef0ab54b73718b62f8db99f601020f7ef14090f8`. Birdfolk, additional Merfolk
 variants, registration, integration, effects, release, and broader work remain
 unauthorized.
+The designer's next `next` activates only one full 80-frame Birdfolk Aerie
+Scout common on `codex/en-e04-birdfolk-aerie-scout`. Because Birdfolk roles were
+not pre-named, this lane names only the common and leaves later roles open. Its
+paired evidence is hash-frozen and focused/protected/fast/full validated. The
+designer reviewed the exact pair and said `very good approved` on 2026-08-09;
+after the requested Codex/MCP restart, both exact boards opened successfully in
+Aseprite and the designer said `ok lets keep going`. The lane remains internal,
+non-public, uncommitted, and unpushed with bounded publication authorized.
+Later Birdfolk roles, registration, integration, effects, release, and broader
+work remain unauthorized.

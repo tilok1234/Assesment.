@@ -741,6 +741,42 @@ publication of this exact ten-file lane is complete at
 variants, registration, integration, effects, release, and broader work remain
 outside.
 
+## Birdfolk Aerie Scout full common approved, awaiting bounded publication
+
+Branch `codex/en-e04-birdfolk-aerie-scout` owns the next isolated full-enemy
+slice, based exactly on clean Pearl Regent handoff `3a5ff4f`. Because the live
+plan defines Birdfolk anatomy without pre-naming its roles, this lane names and
+contains one internal, non-public common: Aerie Scout, with all 80 standard
+Idle/Walk/Attack/Cast/Hurt/Death frames across four directions.
+
+Aerie Scout is an upright avian person rather than an exposed-human Harpy: a
+beaked crested head, shoulder-rooted wing-arms, slate-and-cream plumage, rust
+flight-feather tips, bronze harness, teal sash, two digitigrade talon legs, and
+a connected tail fan remain one silhouette in every frame. All wind, feather,
+dust, dive, gust, air-blade, and impact effects remain external.
+
+Run `npm.cmd run review:enemy-expansion-en-e04-birdfolk-aerie-scout` to
+reproduce paired raw/no-outline and Complete B + Form `1428x760` boards and
+labeled `640x672`, four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e04-birdfolk-aerie-scout` to verify the
+frozen 80-frame digest, connected hard-alpha anatomy, one-cell margins, exact
+side mirrors and aliases, readable crest/wing-arm/talon/tail identity, 36/36
+colored side-eye frames, 18/18 eye-free colored rear frames, external effects,
+and zero public exposure. The frozen digest is
+`afff790c5f60684561752ff7fe9f8f4312c5b46679477cc88d29764379ca41c8`.
+The focused gate and all eight protected predecessors pass. The final
+post-approval v2 fast gate passes in `52.9s`; full `npm.cmd run check` passes in
+`106.3s`, with all 232 public PNG sheets unchanged.
+
+Gate `en-e04-birdfolk-aerie-scout-full-v1` is `approved`: the designer reviewed
+the exact hash-frozen raw plus Complete B + Form GIF pair and said `very good
+approved` on 2026-08-09. After the requested Codex/MCP restart, both exact
+`1428x760` boards were opened successfully through Aseprite MCP and the designer
+said `ok lets keep going`. Bounded commit/push of this exact ten-file lane is
+authorized; it is currently uncommitted and unpushed. Birdfolk
+specialist/elite roles, additional variants, registration, integration,
+effects, release, and broader work remain outside.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge

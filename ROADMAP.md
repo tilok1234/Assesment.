@@ -489,6 +489,23 @@ Form pair with both visible side-eye pixels coral-red and said `approved` on
 `ef0ab54b73718b62f8db99f601020f7ef14090f8`. Birdfolk, additional Merfolk
 variants, registration, integration, effects, release, and broader work remain
 gated.
+The designer then said `next`; that continuation activates exactly one complete
+Birdfolk common on `codex/en-e04-birdfolk-aerie-scout`. Because the live plan
+defines the upright-avian-person boundary without role names, the lane names
+only Aerie Scout and leaves specialist/elite names open. The 80-frame candidate
+owns a connected beaked crest, shoulder-rooted wing-arms, slate-and-cream
+plumage, bronze/teal scout harness, digitigrade gold talons, and connected tail
+fan while keeping all wind/feather/dust/gust/impact effects external. Its exact
+raw plus Complete B + Form boards/GIFs and 80-frame digest are hash-frozen; the
+focused gate and all eight protected predecessors pass. Gate
+`en-e04-birdfolk-aerie-scout-full-v1` remains
+visually `approved`, internal, non-public, uncommitted, and unpushed; fast/full
+repository validation passes with all 232 public sheets unchanged. The designer
+reviewed the exact pair and said `very good approved` on 2026-08-09. After the
+requested Codex/MCP restart, both exact boards opened successfully in Aseprite
+and the designer said `ok lets keep going`. Bounded publication of the exact
+ten-file lane is authorized; later Birdfolk roles, registration, integration,
+effects, release, and broader work remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
