@@ -148,14 +148,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
   The exact boards and GIFs were visually approved on 2026-08-09 and the
   bounded implementation is recorded at `3d96fed`, with published approval
-  handoff `4c49f27`. The private Spore Cantor candidate on
+  handoff `4c49f27`. The approved private Spore Cantor suite on
   `codex/en-e06-dryad-spore-cantor` passes 80/80 connected, bounded, grounded,
   Treant-distinct, and Grove-distinct frames at digest
   `b22585e7b055f4ae43eb1293741967c1d76ec9bd3b842320880f2038c0cf62ef`.
   Its fungal crown, gills, shelves, and fruiting bodies remain connected while
-  spore clouds and motes stay external. It is uncommitted and unpushed pending
-  exact-board visual approval; registration, fixtures, Heartwood Warden,
-  effects, and broader Wave 2 work remain closed.
+  spore clouds and motes stay external. The exact raw and outlined review
+  packet was visually approved on 2026-08-09; implementation `46d1dc9` and
+  approval record `61d1fa4` are published. Registration, fixtures, Heartwood
+  Warden, effects, and broader Wave 2 work remain closed.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate
@@ -190,8 +191,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   board and GIF, and Complete B + Form board and GIF are hash-frozen. Its exact
   approved variant is registered and now exposed through the generic EN-E05
   consumer layer. At that checkpoint fixtures, effects, and Wave 2 remained
-  gated; approved Bramblewing and Thistle plus the unapproved Petalcrown
-  candidate above are the only Wave 2 work.
+  gated; at that historical checkpoint, approved Bramblewing and Thistle plus
+  the then-unapproved Petalcrown candidate were the only Wave 2 work. Current
+  EN-E06 state is governed by the published Fairy, Hag, and Dryad records above.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;

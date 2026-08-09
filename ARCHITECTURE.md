@@ -792,16 +792,18 @@ evidence, and approved implementation digest
 `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
 The exact boards and GIFs were visually approved on 2026-08-09 and the bounded
 implementation is recorded at `3d96fed`, with published approval handoff
-`4c49f27`. `engine/enemy-expansion-en-e06-dryad-spore-cantor.js` now forms a
-second private Dryad boundary on `codex/en-e06-dryad-spore-cantor`: it derives
-from the immutable Grove renderer, remaps its material planes, and attaches a
-connected fungal crown, gill collar, shelves, fruiting bodies, and canting
-attack geometry. Its hash-frozen 80-frame candidate passes 80/80 connected,
+`4c49f27`. `engine/enemy-expansion-en-e06-dryad-spore-cantor.js` forms the
+second approved private Dryad boundary on `codex/en-e06-dryad-spore-cantor`:
+it derives from the immutable Grove renderer, remaps its material planes, and
+attaches a connected fungal crown, gill collar, shelves, fruiting bodies, and
+canting attack geometry. Its hash-frozen 80-frame suite passes 80/80 connected,
 bounded, grounded, Treant-distinct, and Grove-distinct gates at digest
 `b22585e7b055f4ae43eb1293741967c1d76ec9bd3b842320880f2038c0cf62ef`.
-Spore clouds and motes remain external; the lane is uncommitted and unpushed
-pending visual approval. Registration, fixtures, Heartwood Warden, effects,
-release, and broader Wave 2 work stay closed.
+The exact raw and Complete B + Form boards, comparison board, and paired GIFs
+were visually approved on 2026-08-09. The bounded implementation is published
+at `46d1dc9`, with approval record `61d1fa4`. Spore clouds and motes remain
+external. Registration, fixtures, Heartwood Warden, effects, release, and
+broader Wave 2 work stay closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

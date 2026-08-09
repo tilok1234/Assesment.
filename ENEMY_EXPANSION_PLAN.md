@@ -3168,11 +3168,11 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 - Publication: bounded implementation `3d96fed` and approval record `4c49f27`
   are published on `codex/en-e06-dryad-grove-tender`.
 
-#### Candidate Dryad Spore Cantor complete suite
+#### Approved Dryad Spore Cantor complete suite
 
-- Gate ID: `en-e06-dryad-spore-cantor-full-v1`; status: `candidate`, internal,
-  uncommitted, and unpushed on `codex/en-e06-dryad-spore-cantor`, based exactly
-  on clean Grove Tender publication handoff `4c49f27`.
+- Gate ID: `en-e06-dryad-spore-cantor-full-v1`; status: `approved`, internal,
+  and published on `codex/en-e06-dryad-spore-cantor`, based exactly on clean
+  Grove Tender publication handoff `4c49f27`.
 - Authorization: after approving Grove Tender, the designer replied
   `approved lets do nexrt` and explicitly confirmed its exact push on
   2026-08-09. This opens only one complete specialist Spore Cantor.
@@ -3195,11 +3195,16 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 - Focused validation: 80/80 connected, one-cell-bounded, grounded frames;
   80/80 pixel and alpha-silhouette distinctions from public Treant and approved
   Grove Tender; 72/72 colored fungal-crowned frames; 8/8 white flashes; opaque
-  range 224-262; 8,963 Complete B additions; 9,030 Form changes; candidate
+  range 224-262; 8,963 Complete B additions; 9,030 Form changes; approved
   digest `b22585e7b055f4ae43eb1293741967c1d76ec9bd3b842320880f2038c0cf62ef`.
-- Stop gate: show the exact three PNGs and paired GIFs for explicit visual
-  approval. Do not commit, push, register Dryad, generate fixtures, start
-  Heartwood Warden, add effects, release, or broaden Wave 2 before approval.
+- Approval: the exact raw, Complete B + Form, and comparison PNGs were opened
+  in Aseprite and presented with both GIFs. After specifically requiring the
+  outlined presentation, the designer approved the exact packet on 2026-08-09.
+- Publication: bounded implementation `46d1dc9` and approval record `61d1fa4`
+  are published on `codex/en-e06-dryad-spore-cantor`.
+- Stop gate: no new enemy implementation is authorized. Do not register Dryad,
+  generate fixtures, start Heartwood Warden, add effects, release, or broaden
+  Wave 2 without a new explicit gate.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3458,17 +3463,15 @@ identical at 17 families / 43 variants, `PUBLIC_ENEMIES` remains 74/245, the
 Complete Kit remains 2,182 PNGs, and public `zombie/ghoul` plus all 232
 committed fixtures remain unchanged.
 
-Wave 2 is authorized only through private Spore Cantor visual-candidate gate
+Wave 2 is published through approved private Spore Cantor gate
 `en-e06-dryad-spore-cantor-full-v1` on
-`codex/en-e06-dryad-spore-cantor`, based exactly on clean published Grove
-Tender handoff `4c49f27`. The designer's Grove approval plus exact-push
-confirmation opens this one complete specialist Dryad pass. Its frozen 80-frame
-suite is technically validated, internal, non-public, uncommitted, and
-unpushed. Explicit visual approval of the exact raw, Complete B + Form, and
-Treant/Grove/Spore comparison boards plus paired GIFs is required before
-publication. Heartwood Warden, Redcap, Nymph, EN-E07, public Dryad registration,
-fixtures, effects, and release remain separate closed gates; authorization must
-not be broadened past this one complete-sprite pass.
+`codex/en-e06-dryad-spore-cantor`. The exact raw and outlined packet was
+visually approved on 2026-08-09; bounded implementation `46d1dc9` and approval
+record `61d1fa4` are published. The designer then authorized only a live
+documentation audit and proper handoff. No enemy implementation gate is
+currently active. Heartwood Warden, Redcap, Nymph, EN-E07, public Dryad
+registration, fixtures, effects, and release remain separate closed gates;
+authorization must not be inferred from the completed Spore Cantor pass.
 
 ### Historical Authorization Chronology
 
