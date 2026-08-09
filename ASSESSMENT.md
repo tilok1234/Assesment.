@@ -196,10 +196,15 @@ later `cool next please` opened only common Dryad Grove Tender. Its private
 Blackthorn at digest
 `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
 The exact boards and GIFs were visually approved on 2026-08-09 and the bounded
-implementation is recorded at `3d96fed`. Only one complete private Spore Cantor
-specialist pass is authorized next; fixture regeneration, Heartwood Warden,
-the legacy renderer split, boss consolidation, and the Wildshot writer remain
-separate decisions.
+implementation is recorded at `3d96fed`, with published approval handoff
+`4c49f27`. The private Spore Cantor candidate on
+`codex/en-e06-dryad-spore-cantor` passes 80/80 connected, bounded, grounded,
+Treant-distinct, and Grove-distinct frames at digest
+`b22585e7b055f4ae43eb1293741967c1d76ec9bd3b842320880f2038c0cf62ef`.
+Its crown, gills, shelves, and fruiting bodies remain connected while spore
+clouds and motes stay external. It is uncommitted and unpushed pending visual
+approval; fixture regeneration, Heartwood Warden, the legacy renderer split,
+boss consolidation, and the Wildshot writer remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`
    lists the 166 stale sheets. If downstream should get the repaired art: `--all` + commit.

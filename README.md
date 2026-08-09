@@ -1014,9 +1014,20 @@ frames, comparison distinctions, approved-lane preservation, and public and
 fixture firewalls. Approved implementation digest:
 `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
 The exact boards and GIFs were visually approved on 2026-08-09 and the bounded
-implementation is recorded at `3d96fed`. Only one complete private Spore Cantor
-specialist pass is authorized next. Do not register Dryad, regenerate fixtures,
-start Heartwood Warden, add effects, or advance broader Wave 2 work.
+implementation is recorded at `3d96fed`, with published approval handoff
+`4c49f27`.
+
+Spore Cantor is a slim specialist Dryad with a connected violet fungal crown,
+pale gill collar, teal mycelium, asymmetric shelf fungi, connected fruiting
+bodies, and a canting branch attack. Run
+`npm.cmd run review:enemy-expansion-en-e06-dryad-spore-cantor` for the raw,
+Complete B + Form, and Treant/Grove/Spore comparison boards plus paired GIFs;
+run `npm.cmd run check:enemy-expansion-en-e06-dryad-spore-cantor` for all 80
+frames, predecessor preservation, and public/fixture firewalls. Candidate
+digest: `b22585e7b055f4ae43eb1293741967c1d76ec9bd3b842320880f2038c0cf62ef`.
+The candidate is uncommitted and unpushed pending visual approval. Spore clouds
+and motes remain external; do not register Dryad, regenerate fixtures, start
+Heartwood Warden, add effects, or advance broader Wave 2 work.
 
 ## EN-E05 assembler consumer integration implemented
 

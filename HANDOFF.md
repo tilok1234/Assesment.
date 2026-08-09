@@ -15,73 +15,74 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E06 Dryad Spore Cantor Authorized
+## Immediate Continuation Checkpoint - EN-E06 Dryad Spore Cantor Candidate
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
 
-- Repository/branch: publish `codex/en-e06-dryad-grove-tender`, then branch
-  `codex/en-e06-dryad-spore-cantor` from that exact clean head. Grove Tender's
-  approved implementation is `3d96fedc6127b09949befd06a5d177890f45dc05`,
-  based on clean published Blackthorn Matron handoff
-  `8e56ec2eb9a9d28c8702ea243dd4690e7746b6a9`. All earlier approved Fairy and
-  Hag pixels remain exact.
-- Authorization: after Blackthorn approval and publication, the designer said
-  `cool next please` on 2026-08-09. The frozen family order advances from Hag
-  to Dryad and opens only common `grove-tender` under the one-sprite cadence.
+- Repository/branch: `codex/en-e06-dryad-spore-cantor`, based exactly on clean
+  published Grove Tender handoff `4c49f2788a662a77a063477d5321b34c543e6f97`.
+  Grove Tender's approved implementation is
+  `3d96fedc6127b09949befd06a5d177890f45dc05`. All earlier approved Fairy, Hag,
+  and Grove Tender pixels remain exact.
+- Authorization: after approving Grove Tender, the designer replied
+  `approved lets do nexrt` and then explicitly confirmed its exact push on
+  2026-08-09. This opens only one complete specialist `spore-cantor` under the
+  one-sprite cadence.
 - Grove gate: `en-e06-dryad-grove-tender-full-v1`; status `approved`. The exact
   three PNG boards were opened in Aseprite and presented with both GIFs; the
   designer replied `approved lets do nexrt` on 2026-08-09.
-- Next scope: after the bounded Grove publication, create one private 80-frame
-  specialist Dryad `spore-cantor` across Idle, Walk, Attack, Cast, Hurt, and
-  Death in Down, Left, Right, and Up. Heartwood Warden, Redcap, Nymph,
+- Spore gate: `en-e06-dryad-spore-cantor-full-v1`; status `candidate`, private,
+  uncommitted, and unpushed pending explicit visual approval. Scope is one
+  complete 80-frame specialist Dryad across Idle, Walk, Attack, Cast, Hurt,
+  and Death in Down, Left, Right, and Up. Heartwood Warden, Redcap, Nymph,
   registration, fixtures, effects, release, and broader Wave 2 work remain
   closed.
-- Identity: slim ordinary-height living-wood fey with warm bark skin, narrow
-  heartwood torso, green leaf crown and mantle, pale sapwood joints, small
-  blossoms, amber eyes, connected root hems, and one visibly forked branch arm.
-- Separation: the actor remains humanoid-fey rather than a broad trunk-bodied
-  Treant and stays upright rather than using the stooped Hag silhouette.
+- Identity: slim ordinary-height living-wood fey with cool bark, violet
+  connected mushroom crown, pale gill collar, teal mycelium, asymmetric coral
+  shelf fungi, amber eyes, connected fruiting bodies, and split root hems.
+- Separation: the broad fungal crown and shelves differ from approved Grove
+  Tender's leaf mantle in every frame and remain humanoid-fey rather than a
+  broad trunk-bodied public Treant.
 - Transparency/effect boundary: binary alpha, one connected silhouette, and a
-  one-cell margin are exact. Vines, spores, root eruptions, leaf trails,
-  detached leaves, pollen, summoned plants, branch trails, projectiles, and
-  impacts remain external.
-- Animation contract: two mantle-settle Idle poses, four rooted-looking mobile
-  Walk phases, four branch draw/fork/sweep/recovery Attack phases, exact
-  Cast-to-Attack aliases, white-recoil and colored-sapwood Hurt, and exact Death
-  aliases H1,H2,H2,H2. Left is the exact mirror of Right.
-- Review command: `npm.cmd run review:enemy-expansion-en-e06-dryad-grove-tender`.
-- Focused command: `npm.cmd run check:enemy-expansion-en-e06-dryad-grove-tender`.
+  one-cell margin are exact. Spore clouds, drifting motes, loose spores,
+  pollen, detached caps, summoned fungi, vines, roots, trails, projectiles,
+  impacts, and glows remain external.
+- Animation contract: two crown/gill-breath Idle poses, four rooted-looking
+  mobile Walk phases, four crown-and-arm draw/chorus-rise/sweep/recovery Attack
+  phases, exact Cast-to-Attack aliases, white-recoil and colored-mycelium Hurt,
+  and exact Death aliases H1,H2,H2,H2. Left is the exact mirror of Right.
+- Review command: `npm.cmd run review:enemy-expansion-en-e06-dryad-spore-cantor`.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e06-dryad-spore-cantor`.
 - Review hashes: raw / Complete B + Form `1428x760` boards
-  `ea4bd10e6346a47e89f0af71c0e853ec044a45ec3319364a4f835e25971ab32e` /
-  `4b38f46649936e41061c95cc74509cec3d2b804d11ca24d3fa070fca0d5d02d0`;
-  Treant / Blackthorn / Grove `1192x548` comparison
-  `3d4b44be63e87e55aef0b2c1cb36fc8b65e7960a0740029a1b10852bce3cdf40`;
+  `8d1ef13a9967ca442139435ab52e5ade356aed328affa640c394426fd6df623a` /
+  `dd7be56b97571c1c203e32f1ccccbd99a30476482d1c881b4596b8301f750d81`;
+  Treant / Grove / Spore `1192x548` comparison
+  `d923c4f60da5e1a59cbd363713b72e47d526a26f5f0c7266a3cb76bb2fa562cc`;
   raw / Complete B + Form `640x672` GIFs
-  `917b5df1871998cceb05329aef8b7a32c351beaf2b2da66524e6b5a4e3ba4aa2` /
-  `d573b892daab216446e5c5e4f45f6eeda2c803126ee835fbc871e5759dfeeadb`.
+  `835fab9de60ff4a39cc4235a6dc620ae88a6cf3009999420029f589bc15d40ed` /
+  `843d3cc7bdbb9d224503c5d658b14c7bfc19bc7327c2724be8ea25e3b572d9ef`.
 - Focused result: 80/80 connected, one-cell-bounded, grounded frames; all 80
   pixel frames and alpha silhouettes differ from public Treant and approved
-  Blackthorn; 72/72 colored living-wood frames; 8/8 exact white alias flashes;
-  opaque range 213-257; 8,763 Complete B additions; 8,690 Form changes.
-  Candidate digest: `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
-- Protected result: all three Fairy and all three Hag 80-frame digests remain
-  exact; public remains 74/245; no fixture was generated or modified.
+  Grove Tender; 72/72 colored fungal-crowned frames; 8/8 exact white alias
+  flashes; opaque range 224-262; 8,963 Complete B additions; 9,030 Form changes.
+  Candidate digest: `b22585e7b055f4ae43eb1293741967c1d76ec9bd3b842320880f2038c0cf62ef`.
+- Protected result: all three Fairy, all three Hag, and approved Grove Tender
+  80-frame digests remain exact; public remains 74/245; no fixture was generated
+  or modified.
 - Firewall: no public registration, facade import, shared renderer/schema
   change, asset-pack entry, selector/persistence route, pack/export change,
   fixture regeneration, effect, or release.
-- Required next gate: publish the exact two bounded Grove Tender commits, branch
-  cleanly, implement one complete Spore Cantor with its fungal crown connected
-  to the body while spore clouds and drifting motes remain external, generate
-  its exact boards and GIFs, open the exact PNGs in Aseprite, and stop for
-  explicit visual approval before commit or push.
+- Required next gate: open the exact three hash-frozen Spore Cantor PNGs in
+  Aseprite and present them with both GIFs. Stop for explicit visual approval;
+  do not commit, push, register Dryad, start Heartwood Warden, or add effects.
 
 Suggested opening request for the next chat:
 
-> Continue from published Grove Tender on
-> `codex/en-e06-dryad-spore-cantor`; create only the complete specialist Spore
-> Cantor, preserve all approved Fairy, Hag, and Grove Tender pixels, keep spores
-> external, and stop at the exact-board visual gate before publication.
+> Continue the exact Spore Cantor candidate on
+> `codex/en-e06-dryad-spore-cantor`; inspect the three frozen boards and paired
+> GIFs, preserve all approved Fairy, Hag, and Grove Tender pixels, and stop at
+> visual approval before publication or Heartwood Warden.
 
 # Historical Handoff Archive
 

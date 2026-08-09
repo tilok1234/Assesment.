@@ -75,7 +75,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
     externalEffects: ['vines', 'spores', 'root eruptions', 'leaf trails', 'summoned plants'],
     variants: [
       { id: 'grove-tender', name: 'Grove Tender', role: 'common', status: 'implemented-full-approved', brief: 'Young bark-limbed Dryad with a leaf mantle and narrow humanoid trunk line.' },
-      { id: 'spore-cantor', name: 'Spore Cantor', role: 'specialist', status: 'planned', brief: 'Fungal-crowned Dryad whose spore clouds remain separate effects.' },
+      { id: 'spore-cantor', name: 'Spore Cantor', role: 'specialist', status: 'implemented-full-candidate', brief: 'Fungal-crowned Dryad whose spore clouds remain separate effects.' },
       { id: 'heartwood-warden', name: 'Heartwood Warden', role: 'elite', status: 'planned', brief: 'Dense heartwood guardian with branch pauldrons while retaining fey rather than Treant scale.' },
     ],
   }),

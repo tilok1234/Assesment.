@@ -150,10 +150,14 @@ connected, bounded, grounded, alias, mirror, and 80/80 pixel plus alpha
 distinction gates against public Treant and approved Blackthorn at digest
 `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
 The exact boards and GIFs were visually approved on 2026-08-09 and the bounded
-implementation is recorded at `3d96fed`. Only one complete private Spore Cantor
-specialist pass is authorized next; Heartwood Warden, EN-E07, registration,
-fixtures, shared renderer/schema changes, effects, and release remain separate
-gates.
+implementation is recorded at `3d96fed`, with published approval handoff
+`4c49f27`. The hash-frozen private Spore Cantor candidate on
+`codex/en-e06-dryad-spore-cantor` passes 80/80 connected, bounded, grounded,
+Treant-distinct, and Grove-distinct gates at digest
+`b22585e7b055f4ae43eb1293741967c1d76ec9bd3b842320880f2038c0cf62ef`.
+It is uncommitted and unpushed pending visual approval; Heartwood Warden,
+EN-E07, registration, fixtures, shared renderer/schema changes, effects, and
+release remain separate gates.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and
