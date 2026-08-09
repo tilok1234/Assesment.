@@ -1131,7 +1131,8 @@ packet was opened together in Aseprite and visually approved on 2026-08-10. The
 frozen implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval
 record `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
 tracked branch. No subsequent art gate is active; Nymph, EN-E07, registration
-changes, fixtures, effects, and release remain closed.
+changes, fixtures, effects, and release remained closed until the separately
+authorized Spring Dancer gate below.
 
 The separately authorized Spring Dancer is the first private Nymph: a slender
 humanoid fey with flowing willow hair, pointed ears, a leaf-fastened spring
@@ -1143,8 +1144,12 @@ Complete B + Form, Elf/Fairy/Grove/Dancer comparison, and paired GIFs; run
 structural and firewall gate. It passes at digest
 `b68906d962e16611384e419610324c6a9934d63ab329963f0734e83255dabe8c`,
 with 80/80 connected, bounded, grounded frames and 72/72 colored identity
-frames. The exact packet is frozen for visual approval. No commit, publication,
-registration, later Nymph, fixture, effect, release, or EN-E07 work is open.
+frames. The exact packet was opened together in Aseprite and visually approved
+on 2026-08-10. Frozen implementation
+`9d6366b0c5456704137aadfbbec9a67eccb5fd7c` and approval record
+`eae49376fd7bc4dd315168cb2989293de4a73f55` are committed and pushed on the
+tracked branch. It remains private. No registration, later Nymph, fixture,
+effect, release, or EN-E07 work is open.
 
 ## Approved enemy backlog integration published
 

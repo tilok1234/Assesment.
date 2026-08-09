@@ -15,11 +15,10 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Spring Dancer Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Spring Dancer Approved And Published
 
-Start here in a new task. This is the current stopping checkpoint; the exact
-private candidate is frozen for review and must not be committed or published
-before explicit visual approval.
+Start here in a new task. This is the current clean stopping checkpoint; the
+exact private candidate was visually approved, committed, and pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-nymph-spring-dancer`, based exactly on clean pushed
@@ -57,19 +56,21 @@ before explicit visual approval.
 - Protected state: all thirteen approved Fairy, Hag, Dryad, and Redcap digests
   remain exact; public catalog remains 80/259 with no public Nymph; all 232
   committed fixtures remain untouched.
-- Publication state: no Spring Dancer implementation or approval commit exists;
-  review artifacts remain ignored evidence.
-- Visual evidence: the three exact PNG boards are open together in Aseprite for
-  direct review.
-- Required next action: present those boards and both GIFs, and await explicit
-  approval. Do not commit,
-  publish, register Nymph, generate fixtures, begin Mist Weaver or Rivercrown
-  Muse, add effects, release, or open EN-E07.
+- Visual approval: the three exact PNG boards were opened together in Aseprite,
+  both GIFs were presented, and the designer replied `approved` on 2026-08-10.
+  Approval applies only to the frozen digest and hashes above.
+- Publication state: frozen implementation
+  `9d6366b0c5456704137aadfbbec9a67eccb5fd7c` and approval record
+  `eae49376fd7bc4dd315168cb2989293de4a73f55` are committed and pushed on the
+  tracked branch; review artifacts remain ignored evidence.
+- Required next action: stop at this clean published checkpoint. Do not register
+  Nymph, generate fixtures, begin Mist Weaver or Rivercrown Muse, add effects,
+  release, or open EN-E07 without another explicit authorization.
 
 ## Approved Preceding Checkpoint - Bloodcap Reaver Published
 
-This records the clean published predecessor for the active Spring Dancer
-visual-review gate. Later sections are historical provenance.
+This records the clean published predecessor for the approved Spring Dancer
+checkpoint. Later sections are historical provenance.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-redcap-bloodcap-reaver`, based exactly on clean pushed

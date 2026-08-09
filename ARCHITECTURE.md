@@ -883,9 +883,12 @@ complete common Nymph in a private one-family registry. Its flowing hair,
 ribbon dress, open arms, and dance steps pass 80/80 pixel and alpha distinctions
 from Elf Mage, Bramblewing Scout, and Grove Tender at digest
 `b68906d962e16611384e419610324c6a9934d63ab329963f0734e83255dabe8c`.
-All 80 frames are connected, bounded, grounded, and hard-alpha; the five exact
-artifacts are frozen at the preapproval gate. It is not committed or public.
-Later Nymphs, registration, fixtures, effects, release, and Wave 2 stay closed.
+All 80 frames are connected, bounded, grounded, and hard-alpha. The five exact
+artifacts were opened together in Aseprite and visually approved on 2026-08-10.
+Frozen implementation `9d6366b0c5456704137aadfbbec9a67eccb5fd7c` and approval
+record `eae49376fd7bc4dd315168cb2989293de4a73f55` are committed and pushed on
+the tracked branch. It remains private. Later Nymphs, registration, fixtures,
+effects, release, and Wave 2 stay closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
