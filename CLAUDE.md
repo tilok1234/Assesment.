@@ -111,10 +111,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   generate fixtures; Revenant requires a later explicit continuation.
 - The next isolated EN-E05 lane is one visually approved full-suite Revenant
   Grave Oathkeeper on `codex/en-e05-revenant`, based exactly on reconciled
-  Vampire handoff `16f5876`. It is internal and non-public; its 80 frames,
-  paired raw and Complete B + Form evidence, and approved-Vampire comparison
-  are hash-frozen. Bounded publication is authorized. Do not register
-  Revenant, generate fixtures, or begin Lich without a later explicit gate.
+  Vampire handoff `16f5876`, committed and pushed at `7434578`. It is internal
+  and non-public; its 80 frames, paired raw and Complete B + Form evidence, and
+  approved-Vampire comparison are hash-frozen. Do not register Revenant or
+  generate fixtures; Lich requires a later explicit continuation.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;

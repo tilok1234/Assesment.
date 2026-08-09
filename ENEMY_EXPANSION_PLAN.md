@@ -2449,11 +2449,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `active - Revenant Grave Oathkeeper visually approved; bounded publication authorized`
+- Status: `active - Revenant Grave Oathkeeper visually approved and published at 7434578`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
 - Priority-first: Ghoul upgrade, Mummy, Vampire, Revenant
-- Active gate: one complete common Revenant Grave Oathkeeper candidate across
-  all 80 standard frames; registration, fixtures, and Lich remain gated
+- Active gate: none; stop at the clean published Revenant checkpoint while
+  registration, fixtures, and Lich remain gated
 
 Shared leverage: broken posture, wrappings, capes, exposed bone, floating hems,
 and necrotic palette families. The Ghoul change is an explicit upgrade to the
@@ -2630,7 +2630,8 @@ silently alter unrelated Zombie variants.
 #### Revenant Grave Oathkeeper full-suite approved internal lane
 
 - Gate ID: `en-e05-revenant-grave-oathkeeper-full-v1`; status:
-  `approved`, internal, non-public, uncommitted, and unpushed on
+  `approved`, internal, non-public, committed, and pushed at
+  `7434578d5af8f3e7355add884cf0d33e3f312288` on
   `codex/en-e05-revenant`, based exactly on clean reconciled Vampire handoff
   `16f58760be6483ba463e0b5acf88cdaa4592943b`.
 - Authorization: after approving, publishing, and reconciling the complete
@@ -2677,9 +2678,12 @@ silently alter unrelated Zombie variants.
   check` passes in `98s` with all 232 frozen fixtures unchanged.
 - Exclusions: Revenant registration, fixture generation, additional Revenant
   variants, Lich, effects, release, and later EN-E05 work.
-- Required next action: commit and push only this bounded approved ten-file
-  lane. Keep Revenant registration and fixtures excluded, then stop at the
-  clean published checkpoint; Lich requires a later explicit continuation.
+- Publication: the exact approved ten-file implementation is committed and
+  pushed at `7434578d5af8f3e7355add884cf0d33e3f312288`; generated review artifacts
+  remain ignored.
+- Required next action: stop at this clean published checkpoint. Keep
+  Revenant registration and fixtures excluded; Lich requires a later explicit
+  continuation.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not

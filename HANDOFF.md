@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Revenant Full-Suite Approved
+## Immediate Continuation Checkpoint - EN-E05 Revenant Full-Suite Approved And Published
 
 Start here in a new task. After the exact Vampire full-suite candidate was
 approved, published, and reconciled, the designer said `awesome lets do next`
@@ -26,7 +26,8 @@ Oathkeeper.
   exactly on clean reconciled Vampire handoff
   `16f58760be6483ba463e0b5acf88cdaa4592943b`.
 - Gate: `en-e05-revenant-grave-oathkeeper-full-v1`; status `approved`,
-  internal, non-public, uncommitted, and unpushed.
+  internal, non-public, committed, and pushed at
+  `7434578d5af8f3e7355add884cf0d33e3f312288`.
 - Approval evidence: after the exact approved-Vampire comparison and labeled
   all-four-direction raw/no-outline and Complete B + Form review surfaces were
   presented together, the designer replied `awesome very good approved` on
@@ -66,9 +67,13 @@ Oathkeeper.
   consumer gates pass; fast validation passes in `46.6s`; full `npm.cmd run
   check` passes in `98s` with the public 70/241 catalog and all 232 frozen
   fixtures unchanged.
-- Required next action: commit and push only the bounded approved ten-file
-  lane. Do not register Revenant or generate fixtures. Stop at the clean
-  published checkpoint; Lich requires a later explicit continuation.
+- Publication checkpoint: the exact approved ten-file implementation is pushed
+  on the tracked origin branch at
+  `7434578d5af8f3e7355add884cf0d33e3f312288`; generated review artifacts remain
+  ignored.
+- Required next action: stop at this clean published checkpoint. Do not
+  register Revenant or generate fixtures; Lich requires a later explicit
+  continuation.
 
 ## Approved Preceding Checkpoint - EN-E05 Vampire Full-Suite Published
 

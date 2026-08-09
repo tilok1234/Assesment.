@@ -890,7 +890,8 @@ catalog and all 232 fixtures unchanged. After the exact approved-Vampire
 comparison and paired labeled review surfaces were presented together, the
 designer replied `awesome very good approved` on 2026-08-09. This authorizes
 only bounded publication of the hash-frozen internal lane. Revenant
-registration, fixtures, Lich, and broader EN-E05 work remain excluded.
+registration, fixtures, Lich, and broader EN-E05 work remain excluded. The
+exact approved implementation is committed and pushed at `7434578`.
 
 ## EN-E05 Vampire Night Noble full-suite approved internal lane
 
