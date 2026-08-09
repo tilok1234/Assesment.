@@ -517,14 +517,14 @@ sky rune, ice-blue eyes, and gold beak/talons while keeping all wind/omen effect
 external. Its exact raw plus Complete B + Form boards/GIFs and 80-frame digest
 are hash-frozen; the focused gate passes. Gate
 `en-e04-birdfolk-gale-augur-full-v1` is visually `approved`, internal,
-non-public, uncommitted, and unpushed;
-all nine protected predecessor gates pass, the final post-approval fast gate
-passes in `50.8s`, and full validation passes in `106.4s` with all 232 public
-PNG sheets unchanged.
+non-public, committed, and pushed;
+all nine protected predecessor gates pass, the final post-reconciliation fast
+gate passes in `49.3s`, and full validation passes in `98.0s` with all 232
+public PNG sheets unchanged.
 The designer reviewed the exact pair and said `awesome looks good approved` on
-2026-08-09. Bounded publication of the exact ten-file lane is authorized;
-Birdfolk elite, registration, integration, effects, release, and broader work
-remain gated.
+2026-08-09. Bounded publication of the exact ten-file lane is complete at
+`ad57f25d47415625540ea36ff16d2a884a421576`; Birdfolk elite, registration,
+integration, effects, release, and broader work remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

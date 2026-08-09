@@ -777,7 +777,7 @@ complete at `a0910312e510ee57b603ee981a279c1f372d6fad` on the tracked origin
 branch. Birdfolk specialist/elite roles, additional variants, registration,
 integration, effects, release, and broader work remain outside.
 
-## Birdfolk Gale Augur full specialist approved, awaiting bounded publication
+## Birdfolk Gale Augur full specialist approved and published
 
 Branch `codex/en-e04-birdfolk-gale-augur` owns the next isolated full-enemy
 slice, based exactly on clean Aerie Scout handoff `60df011`. Because the live
@@ -801,15 +801,15 @@ identity frames, 36/36 colored side-eye frames, 18/18 eye-free colored rear
 frames, external effects, and zero public exposure. The frozen digest is
 `4495c4f91c77f411a7b0639ac68e3b8bf94318632d0191f0034a4373f32de9d4`.
 Focused validation and all nine protected predecessor gates pass. The final
-post-approval v2 fast gate passes in `50.8s`; full `npm.cmd run check` passes in
-`106.4s`, with all 232 public PNG sheets unchanged.
+post-reconciliation v2 fast gate passes in `49.3s`; full `npm.cmd run check`
+passes in `98.0s`, with all 232 public PNG sheets unchanged.
 
 Gate `en-e04-birdfolk-gale-augur-full-v1` is `approved`: the designer reviewed
 the exact hash-frozen raw plus Complete B + Form GIF pair and said `awesome
 looks good approved` on 2026-08-09. Bounded commit/push of this exact ten-file
-lane is authorized; it is currently uncommitted and unpushed. Birdfolk elite,
-additional variants, registration, integration, effects, release, and broader
-work remain outside.
+lane is complete at `ad57f25d47415625540ea36ff16d2a884a421576` on the
+tracked origin branch. Birdfolk elite, additional variants, registration,
+integration, effects, release, and broader work remain outside.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

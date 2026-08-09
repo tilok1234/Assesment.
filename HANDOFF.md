@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Birdfolk Gale Augur Approved
+## Immediate Continuation Checkpoint - Birdfolk Gale Augur Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the
 complete Birdfolk Aerie Scout common, the designer said `awesome lets keep
@@ -30,11 +30,13 @@ exact hash-frozen raw/no-outline and Complete B + Form pair together and said
   `codex/en-e04-birdfolk-gale-augur`, based exactly on clean Aerie Scout
   reconciliation `60df011f86f2bce93e54a7bcd071d53b1ae3497e`; the approved
   Aerie Scout implementation remains frozen at
-  `a0910312e510ee57b603ee981a279c1f372d6fad`.
+  `a0910312e510ee57b603ee981a279c1f372d6fad`. The approved Gale Augur
+  implementation is committed and pushed at
+  `ad57f25d47415625540ea36ff16d2a884a421576`.
 - Gate: `en-e04-birdfolk-gale-augur-full-v1`; status
-  `approved`, internal, non-public, uncommitted, and unpushed. Bounded
-  publication of the exact ten-file lane is authorized; generated review
-  artifacts remain ignored.
+  `approved`, internal, non-public, committed, and pushed. Bounded publication
+  of the exact ten-file lane is complete; generated review artifacts remain
+  ignored.
 - Scope: one specialist Gale Augur and 80 frames across Down, Left, Right, and
   Up: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack
   aliases, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
@@ -79,13 +81,15 @@ exact hash-frozen raw/no-outline and Complete B + Form pair together and said
 - Visual evidence: all four raw phases and all four Complete B + Form phases
   were inspected directly. Both exact frozen boards opened successfully through
   the working Aseprite MCP after inspection.
-- All nine protected predecessor gates pass. The final post-approval v2 fast
-  gate passes in `50.8s`; full `npm.cmd run check` passes in `106.4s`, with all
-  232 public PNG sheets unchanged.
-- Required next action: commit and push the exact approved ten-file lane, then
-  reconcile the live handoff. Do not
-  begin Birdfolk elite, register, integrate, add effects, release, or broaden
-  the lane; those remain outside this approval.
+- All nine protected predecessor gates pass. The final post-reconciliation v2
+  fast gate passes in `49.3s`; full `npm.cmd run check` passes in `98.0s`, with
+  all 232 public PNG sheets unchanged.
+- Publication checkpoint: bounded publication of the exact approved ten-file
+  lane is complete at `ad57f25d47415625540ea36ff16d2a884a421576` on the
+  tracked origin branch.
+- Required next action: stop at this clean published checkpoint. Do not begin
+  Birdfolk elite, register, integrate, add effects, release, or broaden EN-E04
+  without a separate explicit continuation.
 
 The approved preceding Aerie Scout checkpoint follows for provenance.
 

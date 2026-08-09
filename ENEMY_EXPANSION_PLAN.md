@@ -1778,7 +1778,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine, aquatic, and avian peoples
 
-- Status: `active - Gale Augur specialist approved; bounded publication authorized`
+- Status: `paused - Gale Augur specialist approved and published; Birdfolk elite requires explicit authorization`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1789,7 +1789,7 @@ and no new sprite pixels or public integration are authorized.
 - Approved gate: Merfolk Reefcaller complete specialist motion across Down, Left, Right, and Up; published
 - Approved gate: Merfolk Pearl Regent complete elite motion across Down, Left, Right, and Up; published
 - Approved gate: Birdfolk Aerie Scout complete common motion across Down, Left, Right, and Up; published
-- Approved gate: Birdfolk Gale Augur complete specialist motion across Down, Left, Right, and Up; bounded publication authorized
+- Approved gate: Birdfolk Gale Augur complete specialist motion across Down, Left, Right, and Up; published
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -2259,14 +2259,16 @@ upright avian person rather than collapse into the existing Harpy identity.
   integration, effects, release, or broader work is authorized by this
   approval.
 
-#### Birdfolk Gale Augur full specialist approved, awaiting bounded publication
+#### Birdfolk Gale Augur full specialist approved and published
 
 - Gate ID: `en-e04-birdfolk-gale-augur-full-v1`; status:
-  `approved`, internal, non-public, uncommitted, and unpushed.
+  `approved`, internal, non-public, committed, and pushed.
 - Live branch: `codex/en-e04-birdfolk-gale-augur`, based exactly on clean Aerie
   Scout reconciliation `60df011f86f2bce93e54a7bcd071d53b1ae3497e`; approved
   Aerie Scout remains frozen at
-  `a0910312e510ee57b603ee981a279c1f372d6fad`.
+  `a0910312e510ee57b603ee981a279c1f372d6fad`. The approved Gale Augur
+  implementation is committed and pushed at
+  `ad57f25d47415625540ea36ff16d2a884a421576`.
 - Authorization/naming: after Aerie Scout approval/publication, the designer
   said `awesome lets keep going` on 2026-08-09. The Birdfolk role order advances
   from common to specialist; Codex named and bounded one complete Gale Augur
@@ -2302,13 +2304,13 @@ upright avian person rather than collapse into the existing Harpy identity.
   frames `18/18`, Cast aliases `16/16`, Death aliases `16/16`, opaque range
   188-237, 15,022 specialist-changed pixels, 7,650 Complete B additions, 8,133
   Form changes, and zero public EN-E04 families.
-- All nine protected predecessor gates pass. The final post-approval v2 fast
-  gate passes in `50.8s`; full `npm.cmd run check` passes in `106.4s`, with all
-  232 public PNG sheets unchanged.
-- Required next action: commit and push the exact approved ten-file lane, then
-  reconcile the live handoff. No
-  Birdfolk elite, registration, integration, effects, release, or broader work
-  is authorized by this approval.
+- All nine protected predecessor gates pass. The final post-reconciliation v2
+  fast gate passes in `49.3s`; full `npm.cmd run check` passes in `98.0s`, with
+  all 232 public PNG sheets unchanged.
+- Publication is complete at approved implementation checkpoint
+  `ad57f25d47415625540ea36ff16d2a884a421576`.
+- Required next action: stop. No Birdfolk elite, registration, integration,
+  effects, release, or broader work is authorized by this approval.
 
 ### EN-E05 - Undead humanoids
 
@@ -2720,6 +2722,6 @@ the specialist was not pre-named, this lane names only Gale Augur and leaves the
 elite open. Its exact paired evidence is hash-frozen and
 focused/protected/fast/full validated. The designer reviewed the exact pair and
 said `awesome looks good approved` on 2026-08-09. The lane remains internal,
-non-public, uncommitted, and unpushed with bounded publication authorized.
-Birdfolk elite, registration, integration, effects, release, and broader work
-remain unauthorized.
+non-public, committed, and pushed at
+`ad57f25d47415625540ea36ff16d2a884a421576`. Birdfolk elite, registration,
+integration, effects, release, and broader work remain unauthorized.
