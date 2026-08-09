@@ -2449,7 +2449,7 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `active - Ghoul full-suite candidate visually approved; bounded publication authorized`
+- Status: `active - Ghoul full-suite candidate visually approved and published at 88d32e9`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
 - Priority-first: Ghoul upgrade, Mummy, Vampire
 - Active gate: one complete approved existing-Ghoul replacement candidate
@@ -2464,7 +2464,8 @@ silently alter unrelated Zombie variants.
 #### Existing Ghoul full-suite upgrade approved internal lane
 
 - Gate ID: `en-e05-ghoul-upgrade-full-v1`; status: `approved`, internal, and
-  non-public on
+  non-public, committed, and pushed at
+  `88d32e951441b9ce8f89eb6e3ab279bfc037a497` on
   `codex/en-e05-ghoul-upgrade`, based exactly on clean published EN-E04
   integration handoff `8b1ef2e`.
 - Authorization: after reviewing the 80-proposal accounting, the designer said
@@ -2507,9 +2508,12 @@ silently alter unrelated Zombie variants.
 - Protected validation: the EN-E04 public consumer gate passes; the fast gate
   passes in `52.3s`; full `npm.cmd run check` passes in `114.6s` with 70/241
   public catalog entries and all 232 frozen fixtures unchanged.
-- Required next action: commit and push only this bounded approved lane. Keep
-  public `zombie/ghoul`, the frozen fixture, and Mummy unchanged until later
-  explicit gates.
+- Publication: the exact approved ten-file implementation is committed and
+  pushed at `88d32e951441b9ce8f89eb6e3ab279bfc037a497`; generated review artifacts
+  remain ignored.
+- Required next action: stop at this clean published checkpoint. Keep public
+  `zombie/ghoul`, the frozen fixture, and Mummy unchanged until later explicit
+  gates.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not

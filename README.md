@@ -881,8 +881,9 @@ pass with the public 70/241 catalog and 232 frozen fixtures unchanged.
 After the exact before/after plus labeled all-four-direction raw/no-outline and
 Complete B + Form evidence was presented together, the designer said
 `approved` on 2026-08-09. That approval authorizes bounded publication of this
-isolated lane only. Replacing public `zombie/ghoul`, regenerating any fixture,
-or starting Mummy requires a later explicit gate.
+isolated lane only. The exact implementation is committed and pushed at
+`88d32e9`. Replacing public `zombie/ghoul`, regenerating any fixture, or
+starting Mummy requires a later explicit gate.
 
 ## Birdfolk Stormcrown Exarch full elite approved and published
 

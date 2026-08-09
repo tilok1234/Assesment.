@@ -572,8 +572,9 @@ identity colors, treatment metrics, Zombie sibling locks, and the unchanged
 legacy fixture. Protected, fast, and full repository validation also pass.
 The designer reviewed the exact before/after plus labeled all-four-direction
 raw/no-outline and Complete B + Form evidence together and said `approved` on
-2026-08-09. Bounded publication of the isolated candidate is authorized;
-public routing, fixture replacement, Mummy, and effects remain separate gates.
+2026-08-09. Bounded publication of the isolated candidate is complete at
+`88d32e9`. Public routing, fixture
+replacement, Mummy, and effects remain separate gates.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

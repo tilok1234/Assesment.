@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Ghoul Full-Suite Approved
+## Immediate Continuation Checkpoint - EN-E05 Ghoul Full-Suite Approved And Published
 
 Start here in a new task. After the complete EN-E04 roster entered the
 assembler, the designer requested a cadence of one complete sprite with every
@@ -26,7 +26,8 @@ public or fixture replacement.
 - Repository/branch: current v2 checkout on `codex/en-e05-ghoul-upgrade`, based
   exactly on clean published EN-E04 integration handoff `8b1ef2e`.
 - Gate: `en-e05-ghoul-upgrade-full-v1`; status `approved`, internal, non-public,
-  and authorized for bounded publication.
+  committed, and pushed at
+  `88d32e951441b9ce8f89eb6e3ab279bfc037a497`.
 - Approval evidence: after the exact before/after board plus labeled
   all-four-direction raw/no-outline and Complete B + Form full-suite boards and
   GIFs were presented together, the designer said `approved` on 2026-08-09.
@@ -61,9 +62,13 @@ public or fixture replacement.
 - Protected result: the EN-E04 public gate passes; fast validation passes in
   `52.3s`; full `npm.cmd run check` passes in `114.6s` with the 70/241 public
   catalog and all 232 frozen fixtures unchanged.
-- Required next action: commit and push only the bounded approved ten-file
-  lane. Do not replace public Ghoul pixels, regenerate fixtures, or begin Mummy;
-  each requires a later explicit gate.
+- Publication checkpoint: the exact approved ten-file implementation is pushed
+  on the tracked origin branch at
+  `88d32e951441b9ce8f89eb6e3ab279bfc037a497`; generated review artifacts remain
+  ignored.
+- Required next action: stop at this clean published checkpoint. Do not replace
+  public Ghoul pixels, regenerate fixtures, or begin Mummy; each requires a
+  later explicit gate.
 
 ## Immediate Continuation Checkpoint - EN-E04 Assembler Integration Published
 

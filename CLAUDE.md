@@ -92,10 +92,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   70 families / 241 variants. EN-E03 remains isolated historical evidence and
   is not registered.
 - EN-E05 currently has one isolated, visually approved full-suite Ghoul
-  upgrade lane on `codex/en-e05-ghoul-upgrade`. Approval applies only to the
-  exact hash-frozen 80-frame candidate and bounded branch publication. Public
-  `zombie/ghoul`, all Zombie siblings, and the frozen legacy fixture remain
-  unchanged; replacement and fixture regeneration require separate gates.
+  upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
+  `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate
+  and bounded branch publication. Public `zombie/ghoul`, all Zombie siblings,
+  and the frozen legacy fixture remain unchanged; replacement and fixture
+  regeneration require separate gates.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;
