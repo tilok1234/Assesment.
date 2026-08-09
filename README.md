@@ -854,6 +854,8 @@ render bridge suppresses only a renderer's full-frame reset and forwards
 deliberate regional clears, preserving the approved Merfolk and Temple Rajah
 lower-body pixels during generic assembled rendering. The frozen 232-sheet
 legacy `asset-pack/` remains unchanged.
+The bounded implementation is committed and pushed at `cedc774` on
+`codex/en-e04-assembler-integration`.
 
 ## Birdfolk Stormcrown Exarch full elite approved and published
 

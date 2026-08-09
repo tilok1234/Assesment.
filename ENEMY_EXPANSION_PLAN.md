@@ -1778,7 +1778,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine, aquatic, and avian peoples
 
-- Status: `active - assembler consumer integration implemented; bounded publication pending`
+- Status: `active - assembler consumer integration published; wait for the next authorized slice`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -2410,7 +2410,8 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 - Gate ID: `en-e04-assembler-consumers-v1`; status: `authorized` and
   implemented on `codex/en-e04-assembler-integration`, based exactly on clean
-  registration handoff `3bc380a`. Bounded publication is pending.
+  registration handoff `3bc380a`. Bounded publication is complete at
+  `cedc774`.
 - Authorization: the designer's `sure lets do 123` on 2026-08-09 authorized
   Stormcrown publication, nine-enemy registration, and then this generic
   assembler integration.
@@ -2434,14 +2435,17 @@ upright avian person rather than collapse into the existing Harpy identity.
   `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
 - Compatibility: the historical EN-E01/EN-E02 2,400-frame / 30-sheet consumer
   matrix and all focused EN-E04 gates remain green. Full `npm.cmd run check`
-  passes in `101.4s` before documentation reconciliation.
+  passes after integration and documentation reconciliation.
 - Fixture firewall: the 232 committed `asset-pack/` PNGs remain the frozen
   legacy fixture corpus. They are not regenerated, accepted as a new baseline,
   or expanded by this consumer gate.
 - Exclusions: reviewed source pixels, schema versions, effects, EN-E03
   adoption, fixture regeneration, release artifacts, and broader enemy work.
-- Required next action: run the final focused/build/full gates, publish the
-  bounded integration checkpoint, then reconcile this handoff to its commit.
+- Publication: implementation checkpoint `cedc774` is pushed on the tracked
+  integration branch.
+- Required next action: stop and wait for the next designer-authorized slice.
+  Do not infer effects, release, fixture regeneration, or additional enemies
+  from this completed integration gate.
 
 ### EN-E05 - Undead humanoids
 

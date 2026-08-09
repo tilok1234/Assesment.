@@ -15,19 +15,19 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E04 Assembler Integration Implemented
+## Immediate Continuation Checkpoint - EN-E04 Assembler Integration Published
 
 Start here in a new task. The designer authorized the three-part sequence with
-`sure lets do 123` on 2026-08-09. Stormcrown publication and nine-enemy stable
-registration are already pushed. The third step is now implemented and
-technically green; bounded commit/push and final handoff reconciliation remain.
+`sure lets do 123` on 2026-08-09. Stormcrown publication, nine-enemy stable
+registration, and the third-step assembler integration are now pushed and
+technically green.
 
 - Repository/branch: current v2 checkout
   `C:\Users\headc\Documents\sprite-assembler-v2` on
   `codex/en-e04-assembler-integration`, based exactly on clean published
   registration handoff `3bc380a`.
 - Gate: `en-e04-assembler-consumers-v1`; status `authorized` and implemented,
-  with bounded publication pending.
+  committed, and pushed at `cedc774`.
 - Public boundary: `ENEMY_EXPANSION_CONSUMER_REGISTRY` reuses the exact stable
   13-family / 39-variant registry. `PUBLIC_ENEMIES` is now 70 families / 241
   variants; legacy `ENEMIES` remains 57/202.
@@ -50,14 +50,14 @@ technically green; bounded commit/push and final handoff reconciliation remain.
   enemy sheets / 2,178 PNGs; all nine EN-E04 Wildshot specs are accepted.
 - Protected result: the historical EN-E01/EN-E02 2,400-frame / 30-sheet matrix,
   EN-E04 registration and Stormcrown gates, and all other protected checks pass.
-  Full `npm.cmd run check` passed in `101.4s` before doc reconciliation.
+  The production build and full `npm.cmd run check` pass after integration.
 - Fixture firewall: the 232 committed `asset-pack/` PNGs remain frozen legacy
   fixtures. This slice does not regenerate them, accept drift, or publish a new
   outline ZIP/release artifact.
-- Required next action: run focused/build/full validation after documentation,
-  publish the bounded integration commit, reconcile this section to the exact
-  pushed checkpoint, and stop. Effects, EN-E03 adoption, fixture regeneration,
-  release, and broader content remain outside.
+- Publication checkpoint: `cedc774` on the tracked origin branch.
+- Required next action: stop and wait for the next designer-authorized slice.
+  Effects, EN-E03 adoption, fixture regeneration, release, and broader content
+  remain outside.
 
 ## Immediate Continuation Checkpoint - EN-E04 Registration Approved And Published
 

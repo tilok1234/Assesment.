@@ -1200,6 +1200,7 @@ randomization, persistence, and exports now cover 70 families / 241 variants.
 Its exhaustive 720-frame consumer check preserves the same aggregate digest and
 verifies nine full sheets, all scoped routes, outline/Form treatment, Complete
 Kits/Packs, and Wildshot acceptance without slice-specific consumer branches.
+The bounded implementation is published at checkpoint `cedc774`.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

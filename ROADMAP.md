@@ -560,8 +560,9 @@ bridge now forwards deliberate regional clears while still suppressing a
 delegated full-frame reset, preserving Merfolk and Temple Rajah composition.
 The approved aggregate digest remains
 `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`;
-the frozen 232-sheet legacy fixture pack remains untouched. Bounded publication
-and final handoff reconciliation are pending.
+the frozen 232-sheet legacy fixture pack remains untouched. The bounded
+implementation is published at `cedc774`, and current-state documentation is
+reconciled to that checkpoint.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
