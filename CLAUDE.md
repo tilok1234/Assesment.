@@ -109,11 +109,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   from public Goblin Scout, public Hobgoblin, and approved Mire Crone at digest
   `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
-  was visually approved on 2026-08-10. The frozen implementation is committed
-  at `c3544dc4ec06e06afb15ea699333119342a8946f`; only its bounded approval-record
-  commit and branch publication are authorized. Public Redcap remains absent
-  within 80/259. After push, stop before registration, fixtures, Ironboot
-  Trapper/Bloodcap Reaver/Nymph/EN-E07, effects, or release.
+  was visually approved on 2026-08-10. The frozen implementation
+  `c3544dc4ec06e06afb15ea699333119342a8946f` and approval record
+  `8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
+  tracked branch. Public Redcap remains absent within 80/259. No subsequent art
+  gate is active; stop before registration, fixtures, Ironboot Trapper/Bloodcap
+  Reaver/Nymph/EN-E07, effects, or release.
 - The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved

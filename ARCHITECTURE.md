@@ -853,11 +853,12 @@ common Redcap in a private one-family registry. Its cap-heavy, hook-connected,
 iron-boot silhouette passes 80/80 pixel and alpha distinctions from public
 Goblin Scout, public Hobgoblin, and approved Mire Crone at digest
 `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
-The exact five-artifact packet was visually approved on 2026-08-10 and its
-frozen implementation is committed at
-`c3544dc4ec06e06afb15ea699333119342a8946f`. Only the bounded approval-record
-commit and branch publication are authorized; registration changes, fixtures,
-later Redcaps, Nymph, effects, release, and later Wave 2 work remain closed.
+The exact five-artifact packet was visually approved on 2026-08-10. Its frozen
+implementation `c3544dc4ec06e06afb15ea699333119342a8946f` and approval record
+`8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
+tracked branch. No subsequent art gate is active; registration changes,
+fixtures, later Redcaps, Nymph, effects, release, and later Wave 2 work remain
+closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

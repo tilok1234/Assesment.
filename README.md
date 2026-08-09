@@ -1089,11 +1089,12 @@ GIFs; run `npm.cmd run check:enemy-expansion-en-e06-redcap-barrow-stalker` for
 the 80-frame structural, distinction, predecessor, artifact, and public/
 fixture firewalls. The focused gate passes at digest
 `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
-The exact packet was visually approved on 2026-08-10, and its frozen
-implementation is committed at `c3544dc4ec06e06afb15ea699333119342a8946f`.
-Only the bounded approval-record commit and branch publication are authorized.
-Ironboot Trapper, Bloodcap Reaver, Nymph, EN-E07, registration changes,
-fixtures, effects, and release remain closed.
+The exact packet was visually approved on 2026-08-10. Its frozen implementation
+`c3544dc4ec06e06afb15ea699333119342a8946f` and approval record
+`8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
+tracked branch. No subsequent art gate is active. Ironboot Trapper, Bloodcap
+Reaver, Nymph, EN-E07, registration changes, fixtures, effects, and release
+remain closed.
 
 ## Approved enemy backlog integration published
 

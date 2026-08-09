@@ -22,10 +22,11 @@
   public Hobgoblin, and approved Mire Crone at digest
   `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
-  was visually approved on 2026-08-10. The frozen implementation is committed
-  at `c3544dc4ec06e06afb15ea699333119342a8946f`. Bounded approval-record commit
-  and branch publication are authorized. Later Redcaps, Nymph, EN-E07,
-  fixtures, effects, registration changes, and release remain closed.
+  was visually approved on 2026-08-10. The frozen implementation
+  `c3544dc4ec06e06afb15ea699333119342a8946f` and approval record
+  `8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
+  tracked branch. No subsequent art gate is active. Later Redcaps, Nymph,
+  EN-E07, fixtures, effects, registration changes, and release remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3328,11 +3329,13 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   raw GIF `550b963d530de716f3cb5fc067bc459a0dce4c2f3492b984fee9b1db7a8bd33f`;
   Complete B + Form GIF
   `669f64872e063696a7cdcc3ac1072e28818282c7906db60d7dce510e9730406a`.
-- Implementation: the exact frozen candidate is committed at
-  `c3544dc4ec06e06afb15ea699333119342a8946f`.
-- Required next action: commit and push the bounded approval record, then stop.
-  Do not register Redcap, begin Ironboot Trapper, Bloodcap Reaver, or Nymph,
-  generate fixtures, add effects, release, or open EN-E07.
+- Publication: the exact frozen implementation
+  `c3544dc4ec06e06afb15ea699333119342a8946f` and approval record
+  `8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
+  tracked branch.
+- Required next action: stop at this clean published checkpoint. Do not
+  register Redcap, begin Ironboot Trapper, Bloodcap Reaver, or Nymph, generate
+  fixtures, add effects, release, or open EN-E07.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3603,10 +3606,11 @@ record `d8c13bb008e3a186daa73a37eec87c707f30365f` committed and pushed.
 The later isolated Barrow Stalker suite on
 `codex/en-e06-redcap-barrow-stalker` is visually approved and technically
 frozen at digest
-`1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`
-with implementation `c3544dc4ec06e06afb15ea699333119342a8946f` committed.
-Only its bounded approval-record commit and branch publication are authorized.
-Later Redcaps, Nymph, EN-E07, the three EN-E03 Idle-only variants,
+`1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
+Its implementation `c3544dc4ec06e06afb15ea699333119342a8946f` and approval
+record `8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
+tracked branch. No subsequent art gate is active. Later Redcaps, Nymph, EN-E07,
+the three EN-E03 Idle-only variants,
 public-registration changes, fixtures, effects, and release remain separate
 closed gates.
 
