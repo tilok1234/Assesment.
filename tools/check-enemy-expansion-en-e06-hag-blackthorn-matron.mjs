@@ -36,19 +36,21 @@ function countColors(pixels, colors) { return pixels.reduce((sum, color) => sum 
 async function sha256File(relativePath) { return createHash('sha256').update(await readFile(path.join(root, relativePath))).digest('hex'); }
 function rejects(action, label) { try { action(); errors.push(`${label} must reject`); } catch (error) { check(String(error.message).includes('is not implemented'), `${label} rejected unexpectedly: ${error.message}`); } }
 
-check(EN_E06_BLACKTHORN_MATRON_GATE.status === 'candidate' && EN_E06_BLACKTHORN_MATRON_GATE.approvedOn === null && EN_E06_BLACKTHORN_MATRON_GATE.publishedImplementation === null, 'Blackthorn Matron must remain an unpublished visual candidate');
+check(EN_E06_BLACKTHORN_MATRON_GATE.status === 'approved' && EN_E06_BLACKTHORN_MATRON_GATE.approvedOn === '2026-08-09', 'Blackthorn Matron must retain its explicit visual approval');
+check(EN_E06_BLACKTHORN_MATRON_GATE.approvalEvidence.includes('designer replied: approved') && EN_E06_BLACKTHORN_MATRON_GATE.approvalEvidence.includes('three exact PNGs were opened directly in Aseprite'), 'exact approval evidence drifted');
+check(EN_E06_BLACKTHORN_MATRON_GATE.publishedImplementation === '8ce2f2a5189c9498e1ace39aab70b9827a4ff0ae', 'published implementation checkpoint drifted');
 check(EN_E06_BLACKTHORN_MATRON_GATE.authorizationEvidence.includes('approved lets do next') && EN_E06_BLACKTHORN_MATRON_GATE.authorizationEvidence.includes('one complete Blackthorn Matron'), 'authorization evidence drifted');
 check(EN_E06_BLACKTHORN_MATRON_GATE.precedingApproval.gateId === EN_E06_CAULDRON_HEXER_GATE.id && EN_E06_BLACKTHORN_MATRON_GATE.precedingApproval.publishedImplementation === EN_E06_CAULDRON_HEXER_GATE.publishedImplementation, 'approved Cauldron Hexer predecessor drifted');
 check(EN_E06_BLACKTHORN_MATRON_GATE.scope.includes('complete 80-frame Blackthorn Matron') && EN_E06_BLACKTHORN_MATRON_GATE.animationContract.includes('broad reinforced claw rake'), 'full-suite or motion contract drifted');
 check(EN_E06_BLACKTHORN_MATRON_GATE.exclusions.includes('changes to approved Cauldron Hexer source or pixels') && EN_E06_BLACKTHORN_MATRON_GATE.exclusions.includes('asset-pack fixture generation or regeneration') && EN_E06_BLACKTHORN_MATRON_GATE.exclusions.includes('detached thorns'), 'scope exclusions drifted');
-check(EN_E06_BLACKTHORN_MATRON_GATE.nextGate.includes('explicit visual approval') && EN_E06_BLACKTHORN_MATRON_GATE.nextGate.includes('Do not commit'), 'candidate stop gate drifted');
+check(EN_E06_BLACKTHORN_MATRON_GATE.nextGate.includes('approved Blackthorn Matron implementation') && EN_E06_BLACKTHORN_MATRON_GATE.nextGate.includes('separate continuation'), 'approved stop gate drifted');
 check(Object.isFrozen(EN_E06_BLACKTHORN_MATRON_GATE) && Object.isFrozen(EN_E06_BLACKTHORN_MATRON_DATA), 'gate and data must be deeply immutable');
 check(EN_E06_BLACKTHORN_MATRON_CONTRACT.family === 'hag' && EN_E06_BLACKTHORN_MATRON_CONTRACT.variant === 'blackthorn-matron' && EN_E06_BLACKTHORN_MATRON_CONTRACT.role === 'elite', 'candidate contract drifted');
 check(EN_E06_BLACKTHORN_MATRON_CONTRACT.identity.includes('asymmetrical thorn crown') && EN_E06_BLACKTHORN_MATRON_CONTRACT.effectBoundary.includes('remain external'), 'elite identity/effect boundary drifted');
-check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'hag-blackthorn-matron-full-candidate-2026-08-09', 'ledger must identify the isolated Blackthorn Matron candidate');
+check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'hag-blackthorn-matron-full-published-2026-08-09', 'ledger must identify the published Blackthorn Matron gate');
 
 check(EN_E06_CONTRACT_CARDS[0].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Fairies must remain approved');
-check(EN_E06_CONTRACT_CARDS[1].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/implemented-full-candidate', 'Hag role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[1].variants.every(({ status }) => status === 'implemented-full-approved'), 'all three Hag roles must remain approved');
 for (const card of EN_E06_CONTRACT_CARDS.slice(2)) check(card.variants.every(({ status }) => status === 'planned'), `${card.id} must remain contract-only`);
 check(EN_E06_BLACKTHORN_MATRON_REGISTRY.families.length === 1 && EN_E06_BLACKTHORN_MATRON_REGISTRY.publicFamilies.length === 0 && EN_E06_BLACKTHORN_MATRON_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);

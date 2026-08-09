@@ -139,9 +139,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   80/80 connected, bounded, grounded frames and differs from both approved
   Hags in every pixel frame and alpha silhouette at digest
   `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
-  It is uncommitted and unpushed pending exact-board visual approval;
-  registration, fixtures, Dryad, effects, and broader Wave 2 work remain
-  closed.
+  Its exact boards and GIFs were visually approved on 2026-08-09 and the
+  bounded implementation is published at `8ce2f2a`; registration, fixtures,
+  Dryad, effects, and broader Wave 2 work remain closed.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate

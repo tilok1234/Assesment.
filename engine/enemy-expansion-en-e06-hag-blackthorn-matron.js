@@ -39,7 +39,7 @@ export const EN_E06_BLACKTHORN_MATRON_CONTRACT = deepFreeze({
   family: 'hag',
   variant: 'blackthorn-matron',
   role: 'elite',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'stooped-feral-fey-humanoid-v1',
   silhouette: 'The approved feral-Hag chassis becomes a heavier elder through a body-connected hooked blackthorn crown, broad briar pauldrons, plated shawl mass, and reinforced raking claws while retaining the low head, crooked back, long forearms, and planted claw feet.',
   identity: 'Bark-olive skin, black-plum rope hair, blood-briar armor, ember eyes, bone claws, and an asymmetrical thorn crown establish the elite Matron without detached branches or curse effects.',
@@ -62,12 +62,12 @@ export const EN_E06_BLACKTHORN_MATRON_DATA = deepFreeze({
 
 export const EN_E06_BLACKTHORN_MATRON_GATE = deepFreeze({
   id: 'en-e06-hag-blackthorn-matron-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-09',
   authorizationEvidence: 'After approving the complete Cauldron Hexer boards and GIFs, the designer said: approved lets do next. The approved Cauldron publication record explicitly opens only one complete Blackthorn Matron elite Hag pass.',
-  approvedOn: null,
-  approvalEvidence: null,
-  publishedImplementation: null,
+  approvedOn: '2026-08-09',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline, Complete B + Form, and three-Hag comparison Blackthorn Matron boards plus the paired full-suite GIFs were presented, and the three exact PNGs were opened directly in Aseprite, the designer replied: approved. This approves only the frozen 80-frame Blackthorn Matron candidate and authorizes its bounded commit and branch publication; registration, fixtures, Dryad, effects, release, and broader Wave 2 work remain separate gates.',
+  publishedImplementation: '8ce2f2a5189c9498e1ace39aab70b9827a4ff0ae',
   precedingApproval: {
     gateId: EN_E06_CAULDRON_HEXER_GATE.id,
     artifactSha256: EN_E06_CAULDRON_HEXER_GATE.artifactSha256,
@@ -103,7 +103,7 @@ export const EN_E06_BLACKTHORN_MATRON_GATE = deepFreeze({
     'thrown charms', 'cauldron fumes', 'summoned familiars', 'claw trails', 'impact flashes',
     'effects', 'release', 'later EN-E06 sprites', 'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Stop for explicit visual approval of the exact frozen Blackthorn Matron candidate. Do not commit, publish, register Hag, generate fixtures, start Dryad, add effects, release, or broaden Wave 2 before that approval.',
+  nextGate: 'The exact approved Blackthorn Matron implementation is recorded at 8ce2f2a5189c9498e1ace39aab70b9827a4ff0ae. Stop for a separate continuation after branch publication; do not register Hag, generate fixtures, start Dryad, add effects, release, or broaden Wave 2 without explicit authorization.',
 });
 
 export const EN_E06_BLACKTHORN_MATRON_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

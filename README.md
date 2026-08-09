@@ -997,9 +997,10 @@ Complete B + Form, three-Hag comparison boards and paired GIFs; run
 frames, both approved-Hag distinctions, predecessor preservation, and public
 and fixture firewalls. Candidate digest:
 `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
-This exact candidate is uncommitted and unpushed pending visual approval. Do
-not register Hag, regenerate fixtures, start Dryad, add effects, or advance
-Wave 2 before that approval.
+The exact boards and paired GIFs were visually approved on 2026-08-09 and the
+bounded implementation is published at `8ce2f2a`. Do not register Hag,
+regenerate fixtures, start Dryad, add effects, or advance Wave 2 without a
+separate continuation.
 
 ## EN-E05 assembler consumer integration implemented
 

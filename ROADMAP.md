@@ -142,9 +142,10 @@ only one complete Blackthorn Matron lane on
 connected, bounded, grounded, alias, mirror, and 80/80 pixel plus alpha
 distinction gates against both approved Hags at digest
 `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
-It is internal, uncommitted, and unpushed pending visual approval. Dryad,
-EN-E07, registration, fixtures, shared renderer/schema changes, effects, and
-release remain separate gates.
+The exact packet was visually approved on 2026-08-09 and the bounded
+implementation is published at `8ce2f2a`. Dryad, EN-E07, registration,
+fixtures, shared renderer/schema changes, effects, and release remain separate
+gates.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and

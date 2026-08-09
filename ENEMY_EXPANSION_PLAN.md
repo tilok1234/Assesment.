@@ -3094,10 +3094,11 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   reply opens only Blackthorn Matron after publication. Registration, fixtures,
   Dryad, effects, and broader Wave 2 remain separate gates.
 
-#### Candidate Hag Blackthorn Matron complete suite
+#### Approved Hag Blackthorn Matron complete suite
 
-- Gate ID: `en-e06-hag-blackthorn-matron-full-v1`; status: `candidate`,
-  internal, uncommitted, and unpushed on
+- Gate ID: `en-e06-hag-blackthorn-matron-full-v1`; status: `approved`,
+  internal, committed at `8ce2f2a5189c9498e1ace39aab70b9827a4ff0ae`,
+  and published on
   `codex/en-e06-hag-blackthorn-matron`, based exactly on clean Cauldron
   publication handoff `0a096fa`.
 - Authorization: the designer's `approved lets do next` approved Cauldron and
@@ -3123,9 +3124,12 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   72/72 colored briar frames; 8/8 white flashes; opaque range 246-266;
   9,368 Complete B additions; 6,023 Form changes; candidate digest
   `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
-- Stop gate: show the exact three PNGs and paired GIFs for explicit visual
-  approval. Do not commit, push, register Hag, generate fixtures, start Dryad,
-  add effects, release, or broaden Wave 2 before approval.
+- Approval/publication: the exact three PNGs were opened in Aseprite and
+  presented with the paired GIFs. The designer replied `approved` on
+  2026-08-09. The bounded implementation is published at `8ce2f2a`.
+- Stop gate: wait for a separate continuation. Do not register Hag, generate
+  fixtures, start Dryad, add effects, release, or broaden Wave 2 without
+  explicit authorization.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3384,17 +3388,17 @@ identical at 17 families / 43 variants, `PUBLIC_ENEMIES` remains 74/245, the
 Complete Kit remains 2,182 PNGs, and public `zombie/ghoul` plus all 232
 committed fixtures remain unchanged.
 
-Wave 2 is authorized only through the private Blackthorn Matron visual-candidate
+Wave 2 is complete only through the private approved Blackthorn Matron
 gate `en-e06-hag-blackthorn-matron-full-v1` on
 `codex/en-e06-hag-blackthorn-matron`, based exactly on clean published
 Cauldron handoff `0a096fa`. The designer's `approved lets do next` approved
 Cauldron and opened this one complete elite Hag pass. Its frozen 80-frame suite
-is technically validated, internal, non-public, uncommitted, and unpushed.
-Explicit visual approval of the exact raw, Complete B + Form, and three-Hag
-comparison boards plus paired GIFs is required before publication. Dryad,
+is technically validated, internal, non-public, visually approved, and
+published at `8ce2f2a`. The exact raw, Complete B + Form, and three-Hag
+comparison boards plus paired GIFs are hash-frozen. Dryad,
 Redcap, Nymph, EN-E07, public Hag registration, fixtures, effects, and release
-remain separate closed gates; authorization must not be broadened past this
-one complete-sprite pass.
+remain separate closed gates; authorization must not be broadened without a
+new explicit continuation.
 
 ### Historical Authorization Chronology
 

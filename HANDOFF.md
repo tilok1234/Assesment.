@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E06 Hag Blackthorn Matron Candidate
+## Immediate Continuation Checkpoint - Published Approved EN-E06 Hag Blackthorn Matron
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
@@ -28,8 +28,9 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Authorization: after approving Cauldron Hexer, the designer said
   `approved lets do next` on 2026-08-09. Under the one-complete-sprite cadence,
   this opens only elite Hag `blackthorn-matron`.
-- Gate: `en-e06-hag-blackthorn-matron-full-v1`; status `candidate`, internal,
-  uncommitted, and unpushed pending explicit visual approval.
+- Gate: `en-e06-hag-blackthorn-matron-full-v1`; status `approved`, internal,
+  committed at `8ce2f2a5189c9498e1ace39aab70b9827a4ff0ae`, and published on its
+  isolated branch.
 - Scope: one private 80-frame elite Hag across Idle, Walk, Attack, Cast, Hurt,
   and Death in Down, Left, Right, and Up. Dryad, Redcap, Nymph, registration,
   fixtures, effects, release, and broader Wave 2 work remain closed.
@@ -63,16 +64,19 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Firewall: no public registration, facade import, shared renderer/schema
   change, asset-pack entry, selector/persistence route, pack/export change,
   fixture regeneration, effect, or release.
-- Required next gate: open the exact three hash-frozen PNGs in Aseprite and
-  present them with both GIFs. Stop for explicit visual approval; do not commit,
-  push, register Hag, start Dryad, or add effects before that approval.
+- Approval/publication: the exact three hash-frozen PNGs were opened in
+  Aseprite and presented with both GIFs. The designer replied `approved` on
+  2026-08-09. The bounded implementation is published at `8ce2f2a`.
+- Next gate: stop for a separate continuation. Do not register Hag, generate
+  fixtures, start Dryad, add effects, release, or broaden Wave 2 without
+  explicit authorization.
 
 Suggested opening request for the next chat:
 
-> Continue the exact Blackthorn Matron candidate on
-> `codex/en-e06-hag-blackthorn-matron`; inspect the three frozen boards and two
-> GIFs, preserve both approved Hags and all three Fairies, and stop at visual
-> approval before publication or any later family.
+> Continue from the approved Blackthorn Matron publication on
+> `codex/en-e06-hag-blackthorn-matron` at `8ce2f2a`; preserve all three
+> approved Hags and all three Fairies exactly, and wait for an explicit next
+> gate before registration, Dryad, fixtures, effects, or later Wave 2 work.
 
 # Historical Handoff Archive
 

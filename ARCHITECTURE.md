@@ -770,8 +770,9 @@ connected bounded grounded structure, exact aliases/mirrors, 80/80 pixel and
 alpha distinctions from both Hags, unchanged public 74/245 state,
 deterministic five-artifact evidence, and candidate digest
 `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
-The lane remains an uncommitted, unpushed visual candidate; registration,
-fixtures, effects, Dryad, release, and broader Wave 2 work stay closed.
+The exact packet passed visual approval on 2026-08-09 and the bounded
+implementation is published at `8ce2f2a`. Registration, fixtures, effects,
+Dryad, release, and broader Wave 2 work stay closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

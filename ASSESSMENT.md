@@ -188,9 +188,10 @@ same reply opened only one complete Blackthorn Matron lane. Its private
 80-frame candidate passes 80/80 connected, bounded, grounded structure and
 80/80 pixel plus alpha-silhouette distinctions from both approved Hags at
 digest `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
-The candidate is uncommitted and unpushed pending visual approval. Dryad,
-fixture regeneration, the legacy renderer split, boss consolidation, and the
-Wildshot writer remain separate decisions.
+The exact packet was visually approved on 2026-08-09 and its bounded
+implementation is published at `8ce2f2a`. Dryad, fixture regeneration, the
+legacy renderer split, boss consolidation, and the Wildshot writer remain
+separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`
    lists the 166 stale sheets. If downstream should get the repaired art: `--all` + commit.
