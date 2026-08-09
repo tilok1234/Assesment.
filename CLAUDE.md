@@ -125,10 +125,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   gate passes 80/80 connected, bounded, ground-clear frames at candidate digest
   `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
   The designer approved the exact full suite with `approved` on 2026-08-09. It
-  is internal, approved, uncommitted, unpushed, and absent from the public
-  facade/catalog and fixtures. Publish only this bounded lane under the
-  approval-publication rule; do not add Fairy variants, begin Hag, register
-  EN-E06, generate fixtures, or broaden Wave 2 without a separate continuation.
+  is internal, approved, committed, and pushed at `cc92ca9`, and remains absent
+  from the public facade/catalog and fixtures. No next content lane is active;
+  do not add Fairy variants, begin Hag, register EN-E06, generate fixtures, or
+  broaden Wave 2 without a separate continuation.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate

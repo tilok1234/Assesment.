@@ -904,8 +904,7 @@ Scout identity and Idle baseline, then corrected the cadence to all animations
 for one sprite per pass. Only that common Fairy is implemented: one complete
 80-frame Idle/Walk/Attack/Cast/Hurt/Death suite across Down, Left, Right, and
 Up. The designer approved the exact full suite with `approved` on 2026-08-09.
-It remains internal, approved, uncommitted, unpushed, and non-public while its
-bounded branch publication is completed.
+It remains internal and non-public and is committed and pushed at `cc92ca9`.
 
 The compact Fairy has plum hair, pointed ears, a leaf-green dress, gold
 fasteners, and paired pale-mint open-lattice wings. The wings are connected
@@ -935,8 +934,8 @@ opaque range 132-159, with 6,362 Complete B additions and 5,274 Form changes.
 Protected EN-E05 consumers remain exact at 74/245 and 320/320 frames;
 approval-state fast validation passes in `52.7s` and full validation in
 `102.5s`, with all 232
-fixtures unchanged. The exact full suite is visually approved and bounded
-branch publication is authorized. Fairy specialist/elite variants,
+fixtures unchanged. The exact full suite is visually approved and published;
+no next content lane is active. Fairy specialist/elite variants,
 Hag/Dryad/Redcap/Nymph art, EN-E06
 registration/consumers, fixture work, effects, release, EN-E07, and later Wave
 2 work remain excluded.

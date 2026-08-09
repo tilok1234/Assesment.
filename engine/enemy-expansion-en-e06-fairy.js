@@ -40,6 +40,7 @@ export const EN_E06_FAIRY_GATE = deepFreeze({
   authorizationEvidence: 'After reviewing the exact Bramblewing Scout four-direction Idle evidence, the designer said: very good,. but lately we been doing all animations for 1 sprite each pass. This approves the Fairy identity and Idle baseline, corrects the active cadence to one complete sprite per pass, and authorizes only the remaining Bramblewing Scout motion suite.',
   approvedOn: '2026-08-09',
   approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form Bramblewing Scout full-suite boards and GIFs were presented together and opened directly in Aseprite, the designer replied: approved. This approves only the frozen 80-frame candidate and authorizes its bounded commit and branch publication; another Fairy variant, Hag, registration, fixtures, effects, release, and later Wave 2 work remain separate gates.',
+  publishedImplementation: 'cc92ca9bb14f9fa7937a7e1e746d55fb754d9653',
   precedingApproval: {
     gateId: EN_E06_FAIRY_IDLE_GATE.id,
     approvedOn: EN_E06_FAIRY_IDLE_GATE.approvedOn,
@@ -92,7 +93,7 @@ export const EN_E06_FAIRY_GATE = deepFreeze({
     'later EN-E06 sprites',
     'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Bounded commit, push, and publication of this exact seventeen-file approved Fairy lane are authorized. After clean publication, stop for a separate continuation; do not register Fairy, generate fixtures, add another Fairy variant, begin Hag, or broaden Wave 2 without explicit authorization.',
+  nextGate: 'The exact seventeen-file approved Fairy lane is published at cc92ca9bb14f9fa7937a7e1e746d55fb754d9653. Stop for a separate continuation; do not register Fairy, generate fixtures, add another Fairy variant, begin Hag, or broaden Wave 2 without explicit authorization.',
 });
 
 export const EN_E06_FAIRY_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

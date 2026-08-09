@@ -173,9 +173,10 @@ through one private, approved EN-E06 Fairy Bramblewing Scout complete 80-frame
 lane. The designer approved its identity and Idle baseline, then corrected the
 cadence to all animations for one sprite per pass; the eight approved Idle
 frames remain byte-identical inside the complete suite. The exact full suite is
-now approved for bounded branch publication and does not alter public counts or
+approved and published at `cc92ca9`; it does not alter public counts or
 fixtures. The active handoff starts with that one authoritative checkpoint above
-an explicitly marked historical archive. Another sprite, fixture regeneration,
+an explicitly marked historical archive. No next content lane is active;
+another sprite, fixture regeneration,
 the legacy renderer split, boss-generator consolidation, and the Wildshot writer
 remain separate decisions.
 

@@ -123,15 +123,16 @@ Bramblewing Scout identity and Idle baseline, the designer corrected the
 cadence to all animations for one sprite per pass. The only active gate is
 `en-e06-fairy-bramblewing-scout-full-v1` on
 `codex/en-e06-fairy-full`: five EN-E06 family contract cards plus one internal,
-approved, non-public complete common Fairy across all four directions. Its
+approved, non-public complete common Fairy across all four directions. The
+bounded implementation is published at `cc92ca9`. Its
 80 connected, bounded, hard-alpha, ground-clear frames preserve all eight Idle
 frames byte-for-byte and pass focused validation at candidate digest
 `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
 The published runtime boundary remains 17/43 expansion and 74/245 public with a
 2,182-PNG Complete Kit; public `zombie/ghoul`, all 232 committed fixtures,
 effects, release state, and EN-E03 isolation remain unchanged. The designer
-approved the exact full suite with `approved`; only its bounded branch
-publication is authorized. Fairy specialist/elite variants, Hag and later
+approved the exact full suite with `approved`; no next content lane is active.
+Fairy specialist/elite variants, Hag and later
 EN-E06 art, EN-E07, registration, fixtures, effects, and release each require a
 separate continuation.
 
@@ -697,8 +698,8 @@ Complete B/Form treatment, exposes zero public families, and freezes candidate
 digest `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
 Protected EN-E05 consumers pass at 74/245 and 320/320 frames; approval-state
 fast (`52.7s`) and full (`102.5s`) validation pass with all 232 fixtures unchanged. The
-complete Fairy is approved, uncommitted, unpushed, internal, and non-public;
-bounded branch publication is authorized.
+complete Fairy is approved, committed, pushed at `cc92ca9`, internal, and
+non-public. A separate continuation is required for any next lane.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

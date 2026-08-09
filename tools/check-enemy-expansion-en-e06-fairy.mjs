@@ -138,7 +138,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Fairy suite must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public frame digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-full-approved-2026-08-09', 'the EN-E06 ledger must identify the approved Fairy full-suite gate');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-full-published-2026-08-09', 'the EN-E06 ledger must identify the published approved Fairy full-suite gate');
 
 check(EN_E06_FAIRY_IDLE_GATE.status === 'approved', 'the Fairy Idle predecessor must retain exact designer approval');
 check(EN_E06_FAIRY_IDLE_GATE.approvedOn === '2026-08-09', 'the Fairy Idle approval date drifted');
@@ -151,12 +151,13 @@ check(EN_E06_FAIRY_GATE.authorizedOn === '2026-08-09', 'the Fairy full-suite aut
 check(EN_E06_FAIRY_GATE.authorizationEvidence.includes('all animations for 1 sprite each pass'), 'the full gate must retain the corrected one-complete-sprite cadence');
 check(EN_E06_FAIRY_GATE.approvedOn === '2026-08-09', 'the Fairy full-suite approval date drifted');
 check(EN_E06_FAIRY_GATE.approvalEvidence.includes('the designer replied: approved') && EN_E06_FAIRY_GATE.approvalEvidence.includes('frozen 80-frame candidate'), 'the full gate must retain the exact designer approval and bounded publication evidence');
+check(EN_E06_FAIRY_GATE.publishedImplementation === 'cc92ca9bb14f9fa7937a7e1e746d55fb754d9653', 'the exact published Fairy implementation checkpoint drifted');
 check(EN_E06_FAIRY_GATE.precedingApproval.gateId === EN_E06_FAIRY_IDLE_GATE.id, 'the full gate must identify the approved Idle predecessor');
 check(EN_E06_FAIRY_GATE.precedingApproval.candidateFrameDigest === EN_E06_FAIRY_IDLE_GATE.candidateFrameDigest, 'the full gate must freeze the approved Idle digest');
 check(EN_E06_FAIRY_GATE.scope.includes('complete 80-frame Bramblewing Scout') && EN_E06_FAIRY_GATE.scope.includes('Cast-to-Attack') && EN_E06_FAIRY_GATE.scope.includes('Death-to-Hurt'), 'the full gate must retain the complete suite and exact alias scope');
 check(EN_E06_FAIRY_GATE.animationContract.includes('byte-identical') && EN_E06_FAIRY_GATE.animationContract.includes('attached thorn-needle thrust'), 'the animation contract must preserve Idle and the body-held attack tell');
 check(EN_E06_FAIRY_GATE.exclusions.includes('Thistle Hexer implementation') && EN_E06_FAIRY_GATE.exclusions.includes('Hag implementation') && EN_E06_FAIRY_GATE.exclusions.includes('asset-pack fixture generation or regeneration') && EN_E06_FAIRY_GATE.exclusions.includes('public Fairy registration'), 'the full gate must exclude other sprites, fixtures, and registration');
-check(EN_E06_FAIRY_GATE.nextGate.includes('Bounded commit, push, and publication') && EN_E06_FAIRY_GATE.nextGate.includes('stop for a separate continuation'), 'the approved full gate must authorize bounded publication and stop before another sprite');
+check(EN_E06_FAIRY_GATE.nextGate.includes('published at cc92ca9bb14f9fa7937a7e1e746d55fb754d9653') && EN_E06_FAIRY_GATE.nextGate.includes('Stop for a separate continuation'), 'the approved full gate must retain the published checkpoint and stop before another sprite');
 check(Object.isFrozen(EN_E06_FAIRY_GATE) && Object.isFrozen(EN_E06_FAIRY_GATE.precedingApproval) && Object.isFrozen(EN_E06_FAIRY_GATE.exclusions), 'the Fairy full gate must be deeply immutable');
 
 check(EN_E06_FAIRY_CONTRACT.family === 'fairy' && EN_E06_FAIRY_CONTRACT.variant === 'bramblewing-scout', 'the full contract must remain one Fairy/Bramblewing Scout');

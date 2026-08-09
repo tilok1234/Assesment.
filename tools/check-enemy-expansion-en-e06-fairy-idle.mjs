@@ -115,7 +115,7 @@ function frameRecord(captured, direction, frame) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Wave 2 predecessor must remain the exact EN-E05 consumer gate');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public frame digest must remain frozen');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-full-approved-2026-08-09', 'the expansion ledger must advance from the approved Idle baseline to the approved Fairy full-suite gate');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-full-published-2026-08-09', 'the expansion ledger must advance from the approved Idle baseline to the published approved Fairy full-suite gate');
 check(EN_E06_FAIRY_IDLE_GATE.status === 'approved', 'the Fairy Idle gate must retain exact designer approval');
 check(EN_E06_FAIRY_IDLE_GATE.authorizedOn === '2026-08-09', 'the Wave 2 authorization date must remain frozen');
 check(EN_E06_FAIRY_IDLE_GATE.authorizationEvidence.includes('designer said: very good. wave 2') && EN_E06_FAIRY_IDLE_GATE.authorizationEvidence.includes('baseline Fairy four-direction Idle gate'), 'the gate must retain the explicit Wave 2 authorization and bounded first gate');

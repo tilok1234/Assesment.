@@ -659,9 +659,10 @@ connected, bounded, ground-clear frames, exact Idle preservation, side mirrors,
 Cast/Death aliases, hard-alpha wing windows, deterministic raw/Complete B +
 Form evidence, unchanged 74/245 public state, and candidate digest
 `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
-The designer approved the exact hash-frozen full suite on 2026-08-09. Bounded
-branch publication is authorized; another Fairy variant, Hag art,
-registration, fixtures, effects, and later Wave 2 work remain separate gates.
+The designer approved the exact hash-frozen full suite on 2026-08-09. The
+bounded implementation is published at `cc92ca9`; another Fairy variant, Hag
+art, registration, fixtures, effects, and later Wave 2 work remain separate
+gates.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

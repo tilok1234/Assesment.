@@ -2838,7 +2838,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `approved internal - Fairy Bramblewing Scout complete 80-frame lane awaiting bounded publication`
+- Status: `approved internal - Fairy Bramblewing Scout complete 80-frame lane published at cc92ca9`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -2849,7 +2849,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 #### Approved Fairy Bramblewing Scout complete suite
 
 - Gate ID: `en-e06-fairy-bramblewing-scout-full-v1`; status:
-  `approved`, internal, uncommitted, and unpushed on
+  `approved`, internal, committed, and pushed at `cc92ca9` on
   `codex/en-e06-fairy-full`, based exactly on clean documentation handoff
   `4b2f49dfb80c3c39b6e49672a2c594746f6c030a`.
 - Authorization: after the clean EN-E05 audit handoff named Wave 2 as a separate
@@ -2901,9 +2901,9 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 - Exclusions: Fairy specialist/elite art, Hag/Dryad/Redcap/Nymph art,
   registration, consumers, fixture work, effects, release, EN-E07, and later
   Wave 2 work.
-- Publication state: exact approval is recorded. Commit and push only this
-  bounded seventeen-file lane, then stop; do not begin Hag or another sprite
-  without a separate continuation.
+- Publication state: the exact approved seventeen-file implementation is
+  published at `cc92ca9`. Stop; do not begin Hag or another sprite without a
+  separate continuation.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3168,8 +3168,8 @@ animations for 1 sprite each pass` approves the Bramblewing Scout identity and
 Idle baseline and advances only that sprite to gate
 `en-e06-fairy-bramblewing-scout-full-v1`. The designer subsequently replied
 `approved` to the exact full-suite evidence. The active lane is one internal,
-approved, non-public complete 80-frame common Fairy; bounded branch publication
-is authorized. Fairy specialist/elite variants,
+approved, non-public complete 80-frame common Fairy published at `cc92ca9`.
+No next content lane is active. Fairy specialist/elite variants,
 Hag/Dryad/Redcap/Nymph art, EN-E07, public Ghoul replacement, fixture work,
 EN-E03 adoption, effects, and release remain separate closed gates; Wave 2
 authorization must not be broadened past this one-complete-sprite pass.

@@ -15,14 +15,16 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Approved EN-E06 Fairy Publication
+## Immediate Continuation Checkpoint - Published Approved EN-E06 Fairy
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
 
 - Repository/branch: current v2 checkout on
   `codex/en-e06-fairy-full`, created from clean published documentation handoff
-  `4b2f49dfb80c3c39b6e49672a2c594746f6c030a`.
+  `4b2f49dfb80c3c39b6e49672a2c594746f6c030a`; exact approved implementation
+  `cc92ca9bb14f9fa7937a7e1e746d55fb754d9653` is pushed to the matching origin
+  branch.
 - Authorization: after that handoff required an explicit next choice, the
   designer replied `very good. wave 2` on 2026-08-09. After the exact Fairy
   Idle evidence was presented, the designer replied `very good,. but lately we
@@ -30,8 +32,8 @@ file; everything below `Historical Handoff Archive` is provenance.
   freezes the eight Idle frames and authorizes only the rest of Bramblewing
   Scout as one complete-sprite pass.
 - Gate: `en-e06-fairy-bramblewing-scout-full-v1`; status `approved`, internal,
-  uncommitted, and unpushed. The designer approved the exact full-suite boards
-  and GIFs with `approved` on 2026-08-09.
+  committed, and pushed at `cc92ca9`. The designer approved the exact
+  full-suite boards and GIFs with `approved` on 2026-08-09.
 - Scope: five immutable contract cards for Fairy, Hag, Dryad, Redcap, and Nymph;
   only common Fairy `bramblewing-scout` is implemented. Its complete 80-frame
   suite covers approved Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast
@@ -68,18 +70,17 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Required reading: `CLAUDE.md`, this section, the EN-E06 candidate subsection,
   and `Current Authorization Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not use
   `docs/archive/` or the historical body below as current workflow.
-- Required next action: commit and push only this bounded seventeen-file
-  approved lane under the approval-publication rule, reconcile the published
-  checkpoint, and stop. Do not add Fairy variants, begin Hag, register EN-E06,
+- Required next action: stop at this clean published checkpoint. No next
+  content lane is active. Do not add Fairy variants, begin Hag, register EN-E06,
   generate fixtures, or broaden Wave 2 without a separate continuation.
 
 Suggested opening request for the next chat:
 
 > Read `CLAUDE.md`, the active top section of `HANDOFF.md`, and the EN-E06 plus
 > current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Continue only the
-> approved complete Fairy Bramblewing Scout publication gate on
-> `codex/en-e06-fairy-full`; publish only the frozen lane, reconcile its clean
-> handoff, and do not begin another sprite/Hag without explicit continuation.
+> published approved Fairy Bramblewing Scout checkpoint on
+> `codex/en-e06-fairy-full` at `cc92ca9`; do not begin another sprite/Hag
+> without explicit continuation.
 
 # Historical Handoff Archive
 
