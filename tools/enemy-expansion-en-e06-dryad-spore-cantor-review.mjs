@@ -143,4 +143,3 @@ for (let phase = 0; phase < 4; phase++) { await writeFile(path.join(animationOut
 await writeFile(path.join(output, 'en-e06-dryad-spore-cantor-full-review.json'), `${JSON.stringify(report, null, 2)}\n`);
 console.log('Generated the bounded EN-E06 Dryad Spore Cantor full-enemy evidence.');
 console.log(`- Raw PNG SHA-256: ${rawHash}`); console.log(`- Complete B + Form PNG SHA-256: ${assembledHash}`); console.log(`- Dryad comparison PNG SHA-256: ${comparisonHash}`); console.log(`- Candidate frame digest: ${candidateFrameDigest}`); console.log(`- Public Treant frame digest: ${treantFrameDigest}`); console.log(`- Approved Grove Tender frame digest: ${groveFrameDigest}`);
-

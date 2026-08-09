@@ -138,7 +138,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Fairy suite must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public frame digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-candidate-2026-08-09', 'the EN-E06 ledger must preserve Bramblewing while identifying candidate Spore Cantor');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-published-2026-08-09', 'the EN-E06 ledger must preserve Bramblewing while identifying published Spore Cantor');
 
 check(EN_E06_FAIRY_IDLE_GATE.status === 'approved', 'the Fairy Idle predecessor must retain exact designer approval');
 check(EN_E06_FAIRY_IDLE_GATE.approvedOn === '2026-08-09', 'the Fairy Idle approval date drifted');
@@ -174,7 +174,7 @@ check(EN_E06_FAIRY_CONTRACT_CARD.variants[2].status === 'implemented-full-approv
 check(EN_E06_CONTRACT_CARDS[1].variants[0].status === 'implemented-full-approved', 'the later approved Mire Crone lane must remain visible without changing the approved Bramblewing gate');
 check(EN_E06_CONTRACT_CARDS[1].variants[1].status === 'implemented-full-approved', 'the later approved Cauldron Hexer must remain visible without changing the approved Bramblewing gate');
 check(EN_E06_CONTRACT_CARDS[1].variants[2].status === 'implemented-full-approved', 'Blackthorn Matron must retain its full approval');
-check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-candidate/planned', 'Dryad role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/planned', 'Dryad role-order status drifted');
 for (const card of EN_E06_CONTRACT_CARDS.slice(3)) check(card.variants.every((variant) => variant.status === 'planned'), `${card.id} must remain contract-only`);
 
 check(EN_E06_FAIRY_REGISTRY.families.length === 1, 'the full candidate registry must contain exactly one family');

@@ -36,4 +36,3 @@ assembled_hash = build_gif("complete-b-form", "en-e06-dryad-spore-cantor-full-su
 print("Generated the two exact labeled EN-E06 Dryad Spore Cantor full-suite GIFs.")
 print(f"- Raw GIF SHA-256: {raw_hash}")
 print(f"- Complete B + Form GIF SHA-256: {assembled_hash}")
-

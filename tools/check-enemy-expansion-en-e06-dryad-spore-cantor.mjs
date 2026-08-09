@@ -56,20 +56,21 @@ function captureLegacyFrame(spec, direction, animation, frame) {
   return Object.freeze({ pixels: Object.freeze(pixels), alpha: Uint8Array.from(pixels, (color) => color === null ? 0 : 255), opaquePixels: occupied.length, bounds: bounds && Object.freeze(bounds), outOfBoundsWrites: Object.freeze(outOfBoundsWrites), digest: pixelDigest(pixels), alphaDigest: alphaDigest(pixels) });
 }
 
-check(EN_E06_SPORE_CANTOR_GATE.status === 'candidate' && EN_E06_SPORE_CANTOR_GATE.approvedOn === null && EN_E06_SPORE_CANTOR_GATE.publishedImplementation === null, 'Spore Cantor must remain an unpublished visual candidate');
+check(EN_E06_SPORE_CANTOR_GATE.status === 'approved' && EN_E06_SPORE_CANTOR_GATE.approvedOn === '2026-08-09' && EN_E06_SPORE_CANTOR_GATE.publishedImplementation === '46d1dc9e24297aade917c8e7268e64a1030aa151', 'Spore Cantor approval record drifted');
+check(EN_E06_SPORE_CANTOR_GATE.approvalEvidence.includes('outlined presentation') && EN_E06_SPORE_CANTOR_GATE.approvalEvidence.includes('approved. after comitting and pushing') && EN_E06_SPORE_CANTOR_GATE.approvalEvidence.includes('current-state project-document audit and proper handoff'), 'approval evidence drifted');
 check(EN_E06_SPORE_CANTOR_GATE.authorizationEvidence.includes('approved lets do nexrt') && EN_E06_SPORE_CANTOR_GATE.authorizationEvidence.includes('explicitly confirmed the exact Grove Tender push') && EN_E06_SPORE_CANTOR_GATE.authorizationEvidence.includes('one complete private specialist Spore Cantor'), 'authorization evidence drifted');
 check(EN_E06_SPORE_CANTOR_GATE.precedingApproval.gateId === EN_E06_GROVE_TENDER_GATE.id && EN_E06_SPORE_CANTOR_GATE.precedingApproval.publishedImplementation === EN_E06_GROVE_TENDER_GATE.publishedImplementation && EN_E06_SPORE_CANTOR_GATE.precedingApproval.publishedHandoff === '4c49f2788a662a77a063477d5321b34c543e6f97', 'approved Grove Tender predecessor drifted');
 check(EN_E06_SPORE_CANTOR_GATE.scope.includes('complete 80-frame Spore Cantor') && EN_E06_SPORE_CANTOR_GATE.animationContract.includes('connected caps') && EN_E06_SPORE_CANTOR_GATE.animationContract.includes('Cast aliases Attack exactly'), 'full-suite or motion contract drifted');
 check(EN_E06_SPORE_CANTOR_GATE.exclusions.includes('asset-pack fixture generation or regeneration') && EN_E06_SPORE_CANTOR_GATE.exclusions.includes('Heartwood Warden implementation') && EN_E06_SPORE_CANTOR_GATE.exclusions.includes('spore clouds') && EN_E06_SPORE_CANTOR_GATE.exclusions.includes('drifting motes'), 'scope exclusions drifted');
-check(EN_E06_SPORE_CANTOR_GATE.nextGate.includes('explicit visual approval') && EN_E06_SPORE_CANTOR_GATE.nextGate.includes('Do not commit'), 'candidate stop gate drifted');
+check(EN_E06_SPORE_CANTOR_GATE.nextGate.includes('audit all active project documents') && EN_E06_SPORE_CANTOR_GATE.nextGate.includes('proper canonical handoff') && EN_E06_SPORE_CANTOR_GATE.nextGate.includes('Do not start Heartwood Warden'), 'approved documentation gate drifted');
 check(Object.isFrozen(EN_E06_SPORE_CANTOR_GATE) && Object.isFrozen(EN_E06_SPORE_CANTOR_DATA), 'gate and data must be deeply immutable');
 check(EN_E06_SPORE_CANTOR_CONTRACT.family === 'dryad' && EN_E06_SPORE_CANTOR_CONTRACT.variant === 'spore-cantor' && EN_E06_SPORE_CANTOR_CONTRACT.role === 'specialist', 'candidate contract drifted');
 check(EN_E06_SPORE_CANTOR_CONTRACT.silhouette.includes('connected broad fungal crown') && EN_E06_SPORE_CANTOR_CONTRACT.effectBoundary.includes('Spore clouds') && EN_E06_SPORE_CANTOR_CONTRACT.effectBoundary.includes('remain external'), 'Dryad identity/effect boundary drifted');
-check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-candidate-2026-08-09', 'ledger must identify the isolated Spore Cantor candidate');
+check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-published-2026-08-09', 'ledger must identify the published Spore Cantor lane');
 
 check(EN_E06_CONTRACT_CARDS[0].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Fairies must remain approved');
 check(EN_E06_CONTRACT_CARDS[1].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Hags must remain approved');
-check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-candidate/planned', 'Dryad role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/planned', 'Dryad role-order status drifted');
 for (const card of EN_E06_CONTRACT_CARDS.slice(3)) check(card.variants.every(({ status }) => status === 'planned'), `${card.id} must remain contract-only`);
 check(EN_E06_SPORE_CANTOR_REGISTRY.families.length === 1 && EN_E06_SPORE_CANTOR_REGISTRY.publicFamilies.length === 0 && EN_E06_SPORE_CANTOR_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
@@ -119,4 +120,3 @@ console.log(`- Identity: ${colored}/72 colored fungal-crowned frames; ${flashes}
 console.log(`- Presentation: Complete B +${completeB}; Form changes ${formChanges}`);
 console.log('- Protected: all three Fairies, all three Hags, and approved Grove Tender exact; public 74/245; fixtures unchanged');
 console.log(`- Candidate digest: ${candidateDigest}`);
-

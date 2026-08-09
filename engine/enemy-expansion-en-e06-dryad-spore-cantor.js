@@ -39,7 +39,7 @@ export const EN_E06_SPORE_CANTOR_CONTRACT = deepFreeze({
   family: 'dryad',
   variant: 'spore-cantor',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'fungal-crowned-living-wood-fey-humanoid-v1',
   silhouette: 'A slim upright living-wood fey with a connected broad fungal crown, pale gill collar, asymmetric shelf fungi, flexible branch arms, split root hems, and ordinary humanoid height. The body remains distinct from both the leaf-crowned Grove Tender and broad public Treant.',
   identity: 'Cool bark, violet mushroom caps, pale gills, teal mycelium, coral shelf fungi, amber eyes, and a connected canting crown establish a fungal specialist without baking any cloud or mote.',
@@ -62,12 +62,12 @@ export const EN_E06_SPORE_CANTOR_DATA = deepFreeze({
 
 export const EN_E06_SPORE_CANTOR_GATE = deepFreeze({
   id: 'en-e06-dryad-spore-cantor-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-09',
   authorizationEvidence: 'After the exact Grove Tender boards and paired GIFs were approved, the designer replied: approved lets do nexrt, then explicitly confirmed the exact Grove Tender push. This separately authorizes only one complete private specialist Spore Cantor 80-frame pass after publication.',
-  approvedOn: null,
-  approvalEvidence: null,
-  publishedImplementation: null,
+  approvedOn: '2026-08-09',
+  approvalEvidence: 'The exact raw, Complete B + Form outlined, and Treant/Grove Tender/Spore Cantor comparison boards plus both synchronized raw and outlined GIFs were presented; the three exact PNG review boards were opened together in Aseprite. After specifically requesting the outlined presentation, the designer replied: approved. after comitting and pushing lets go ahead and go over project docs and make sure nothing is stale and then write a proper handoff. This approves only the frozen 80-frame Spore Cantor, its bounded implementation and approval commits, and branch publication. The next authorized work is a current-state project-document audit and proper handoff; Heartwood Warden, registration, fixtures, effects, release, Redcap, and broader Wave 2 remain separate.',
+  publishedImplementation: '46d1dc9e24297aade917c8e7268e64a1030aa151',
   precedingApproval: {
     gateId: EN_E06_GROVE_TENDER_GATE.id,
     artifactSha256: EN_E06_GROVE_TENDER_GATE.artifactSha256,
@@ -103,7 +103,7 @@ export const EN_E06_SPORE_CANTOR_GATE = deepFreeze({
     'detached caps', 'summoned fungi', 'vines', 'root eruptions', 'trails', 'projectiles', 'impacts', 'glows',
     'effects', 'release', 'later EN-E06 sprites', 'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Stop for explicit visual approval of the exact frozen Spore Cantor candidate. Do not commit, publish, register Dryad, generate fixtures, start Heartwood Warden, begin Redcap, add effects, release, or broaden Wave 2 before that approval.',
+  nextGate: 'The exact Spore Cantor implementation is approved and recorded for branch publication. After that push, audit all active project documents against live Git and validation evidence and write a proper canonical handoff. Do not start Heartwood Warden, register Dryad, generate fixtures, begin Redcap, add effects, release, or broaden Wave 2 without separate authorization.',
 });
 
 export const EN_E06_SPORE_CANTOR_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

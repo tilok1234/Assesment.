@@ -64,11 +64,11 @@ check(EN_E06_GROVE_TENDER_GATE.nextGate.includes('only one complete Spore Cantor
 check(Object.isFrozen(EN_E06_GROVE_TENDER_GATE) && Object.isFrozen(EN_E06_GROVE_TENDER_DATA), 'gate and data must be deeply immutable');
 check(EN_E06_GROVE_TENDER_CONTRACT.family === 'dryad' && EN_E06_GROVE_TENDER_CONTRACT.variant === 'grove-tender' && EN_E06_GROVE_TENDER_CONTRACT.role === 'common', 'candidate contract drifted');
 check(EN_E06_GROVE_TENDER_CONTRACT.silhouette.includes('distinct from the broad trunk-bodied public Treant') && EN_E06_GROVE_TENDER_CONTRACT.effectBoundary.includes('remain external'), 'Dryad identity/effect boundary drifted');
-check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-candidate-2026-08-09', 'ledger must preserve published Grove Tender while identifying candidate Spore Cantor');
+check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-published-2026-08-09', 'ledger must preserve published Grove Tender while identifying published Spore Cantor');
 
 check(EN_E06_CONTRACT_CARDS[0].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Fairies must remain approved');
 check(EN_E06_CONTRACT_CARDS[1].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Hags must remain approved');
-check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-candidate/planned', 'Dryad role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/planned', 'Dryad role-order status drifted');
 for (const card of EN_E06_CONTRACT_CARDS.slice(3)) check(card.variants.every(({ status }) => status === 'planned'), `${card.id} must remain contract-only`);
 check(EN_E06_GROVE_TENDER_REGISTRY.families.length === 1 && EN_E06_GROVE_TENDER_REGISTRY.publicFamilies.length === 0 && EN_E06_GROVE_TENDER_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
