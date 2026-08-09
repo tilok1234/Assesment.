@@ -129,10 +129,11 @@ from public Witch/Hexer; candidate digest is
 `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
 The published runtime boundary remains 17/43 expansion and 74/245 public with a
 2,182-PNG Complete Kit; public `zombie/ghoul`, all 232 committed fixtures,
-effects, release state, and EN-E03 isolation remain unchanged. Mire Crone is
-unapproved, uncommitted, and unpushed. Later Hags, Dryad, EN-E07, registration,
-fixtures, shared renderer/schema changes, effects, and release each require a
-separate continuation.
+effects, release state, and EN-E03 isolation remain unchanged. The exact Mire
+Crone boards and GIFs were approved on 2026-08-09 and its bounded implementation
+is published at `25f67d4`. Later Hags, Dryad, EN-E07, registration, fixtures,
+shared renderer/schema changes, effects, and release each require a separate
+continuation.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and

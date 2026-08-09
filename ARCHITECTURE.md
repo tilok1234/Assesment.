@@ -733,8 +733,10 @@ side mirrors and Cast/Death aliases, 80/80 pixel and alpha-silhouette
 distinctions from Witch, deterministic raw/Complete B + Form/comparison
 evidence, unchanged 74/245 public state, and candidate digest
 `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
-The lane remains unapproved, uncommitted, unpushed, and absent from registration,
-fixtures, effects, and release until the exact review packet passes the visual gate.
+The exact review packet passed the visual gate on 2026-08-09 and the bounded
+implementation is published at `25f67d4`. The lane remains absent from
+registration, fixtures, effects, and release; later Hags and families stay
+separate gates.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

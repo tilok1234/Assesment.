@@ -78,16 +78,18 @@ function rejects(action, expected, label) {
   catch (error) { check(String(error.message).includes(expected), `${label} rejected with unexpected message: ${error.message}`); }
 }
 
-check(EN_E06_MIRE_CRONE_GATE.status === 'candidate', 'Mire Crone must remain an unapproved candidate');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'hag-mire-crone-full-candidate-2026-08-09', 'EN-E06 ledger must identify the active Mire Crone candidate');
-check(EN_E06_MIRE_CRONE_GATE.approvedOn === null && EN_E06_MIRE_CRONE_GATE.publishedImplementation === null, 'candidate must have no approval or publication claim');
+check(EN_E06_MIRE_CRONE_GATE.status === 'approved', 'Mire Crone must retain its explicit visual approval');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'hag-mire-crone-full-published-2026-08-09', 'EN-E06 ledger must identify the published Mire Crone gate');
+check(EN_E06_MIRE_CRONE_GATE.approvedOn === '2026-08-09', 'Mire Crone approval date drifted');
+check(EN_E06_MIRE_CRONE_GATE.approvalEvidence.includes('designer replied: approved') && EN_E06_MIRE_CRONE_GATE.approvalEvidence.includes('three exact PNGs were opened directly in Aseprite') && EN_E06_MIRE_CRONE_GATE.approvalEvidence.includes('bounded commit and branch publication'), 'Mire Crone gate must retain the exact visual approval evidence');
+check(EN_E06_MIRE_CRONE_GATE.publishedImplementation === '25f67d4014437841f855ace2055de32abfeeaeeb', 'exact published Mire Crone implementation checkpoint drifted');
 check(EN_E06_MIRE_CRONE_GATE.authorizationEvidence.includes('lets do nextr') && EN_E06_MIRE_CRONE_GATE.authorizationEvidence.includes('only one complete common Mire Crone 80-frame variant pass'), 'authorization evidence must retain the exact continuation and one-sprite scope');
 check(EN_E06_MIRE_CRONE_GATE.precedingApproval.gateId === EN_E06_PETALCROWN_DUELIST_GATE.id, 'Mire Crone must retain Petalcrown as its approved predecessor');
 check(EN_E06_MIRE_CRONE_GATE.precedingApproval.candidateFrameDigest === EN_E06_PETALCROWN_DUELIST_GATE.candidateFrameDigest, 'approved Petalcrown digest drifted at the Mire Crone gate');
 check(EN_E06_MIRE_CRONE_GATE.scope.includes('complete 80-frame Mire Crone') && EN_E06_MIRE_CRONE_GATE.scope.includes('Cast-to-Attack') && EN_E06_MIRE_CRONE_GATE.scope.includes('Death-to-Hurt'), 'candidate gate must retain the full suite and alias scope');
 check(EN_E06_MIRE_CRONE_GATE.animationContract.includes('leading arm') && EN_E06_MIRE_CRONE_GATE.animationContract.includes('broad connected claw rake'), 'candidate attack contract must retain coil and connected rake phases');
 check(EN_E06_MIRE_CRONE_GATE.exclusions.includes('public Hag registration') && EN_E06_MIRE_CRONE_GATE.exclusions.includes('asset-pack fixture generation or regeneration') && EN_E06_MIRE_CRONE_GATE.exclusions.includes('Cauldron Hexer implementation'), 'candidate exclusions must protect registration, fixtures, and the next Hag');
-check(EN_E06_MIRE_CRONE_GATE.nextGate.includes('Stop for explicit visual approval') && EN_E06_MIRE_CRONE_GATE.nextGate.includes('Do not commit'), 'candidate gate must stop before commit and publication');
+check(EN_E06_MIRE_CRONE_GATE.nextGate.includes('published at 25f67d4014437841f855ace2055de32abfeeaeeb') && EN_E06_MIRE_CRONE_GATE.nextGate.includes('Stop for a separate continuation'), 'approved gate must retain the exact publication checkpoint and stop before another lane');
 check(Object.isFrozen(EN_E06_MIRE_CRONE_GATE) && Object.isFrozen(EN_E06_MIRE_CRONE_GATE.exclusions), 'Mire Crone gate must be deeply immutable');
 
 check(EN_E06_MIRE_CRONE_CONTRACT.family === 'hag' && EN_E06_MIRE_CRONE_CONTRACT.variant === 'mire-crone', 'candidate contract must remain Hag/Mire Crone');
@@ -98,7 +100,7 @@ check(Object.isFrozen(EN_E06_MIRE_CRONE_CONTRACT) && Object.isFrozen(EN_E06_MIRE
 
 check(EN_E06_CONTRACT_CARDS.length === 5, 'EN-E06 must retain all five family contract cards');
 check(EN_E06_CONTRACT_CARDS[0].variants.every((variant) => variant.status === 'implemented-full-approved'), 'all three Fairy variants must remain approved');
-check(EN_E06_CONTRACT_CARDS[1].id === 'hag' && EN_E06_CONTRACT_CARDS[1].variants[0].status === 'implemented-full-candidate', 'Mire Crone must be the only active Hag candidate');
+check(EN_E06_CONTRACT_CARDS[1].id === 'hag' && EN_E06_CONTRACT_CARDS[1].variants[0].status === 'implemented-full-approved', 'Mire Crone must retain its approved full-suite status');
 check(EN_E06_CONTRACT_CARDS[1].variants.slice(1).every((variant) => variant.status === 'planned'), 'later Hag variants must remain planned');
 for (const card of EN_E06_CONTRACT_CARDS.slice(2)) check(card.variants.every((variant) => variant.status === 'planned'), `${card.id} must remain contract-only`);
 

@@ -894,7 +894,7 @@ below later exposes only the four new families; at that point public Ghoul
 replacement, fixture work, effects, release, EN-E03 adoption, and Wave 2 were
 still closed.
 
-## EN-E06 approved Fairy sequence and active Hag Mire Crone candidate
+## EN-E06 approved Fairy sequence and approved Hag Mire Crone
 
 Approved common Fairy Bramblewing Scout and specialist Thistle Hexer remain
 internal, non-public, exact, and published at `cc92ca9` and `3dc68cb`. After
@@ -967,9 +967,9 @@ frames, connected grounded hard-alpha silhouettes, exact mirrors and aliases,
 Witch distinction, approved-Fairy preservation, frozen hashes, and the public
 and fixture firewall. Candidate digest:
 `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
-The candidate is unapproved, uncommitted, and unpushed; do not publish it or
-begin another Hag, Dryad, registration, fixtures, effects, or later Wave 2 work
-before explicit visual approval.
+The exact boards and GIFs were approved on 2026-08-09 and the bounded
+implementation is published at `25f67d4`. Do not begin another Hag, Dryad,
+registration, fixtures, effects, or later Wave 2 work without a separate gate.
 
 ## EN-E05 assembler consumer integration implemented
 

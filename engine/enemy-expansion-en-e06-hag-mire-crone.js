@@ -33,7 +33,7 @@ export const EN_E06_MIRE_CRONE_CONTRACT = deepFreeze({
   family: 'hag',
   variant: 'mire-crone',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'stooped-feral-fey-humanoid-v1',
   silhouette: 'A low hooked head, rope hair, crooked shoulder shelf, long clawed forearms, bowed shawl torso, and planted splayed feet make a grounded feral-fey silhouette distinct from the equipped humanoid Witch.',
   identity: 'Moss skin, amber eyes, rope-gray hair, a mud-dark shawl, swamp dress, and pale hooked claws establish the bog Hag identity without a staff, hat, robe, familiar, or cauldron.',
@@ -72,12 +72,12 @@ export const EN_E06_MIRE_CRONE_DATA = deepFreeze({
 
 export const EN_E06_MIRE_CRONE_GATE = deepFreeze({
   id: 'en-e06-hag-mire-crone-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-09',
   authorizationEvidence: 'After approving the preceding complete Petalcrown Duelist lane, the designer said: lets do nextr. The frozen EN-E06 family order advances from Fairy to Hag and authorizes only one complete common Mire Crone 80-frame variant pass.',
-  approvedOn: null,
-  approvalEvidence: null,
-  publishedImplementation: null,
+  approvedOn: '2026-08-09',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline, Complete B + Form, and public-Witch comparison Mire Crone boards plus the paired full-suite GIFs were presented, and the three exact PNGs were opened directly in Aseprite, the designer replied: approved. This approves only the frozen 80-frame Mire Crone candidate and authorizes its bounded commit and branch publication; later Hags, Dryad, registration, fixtures, effects, release, and later Wave 2 work remain separate gates.',
+  publishedImplementation: '25f67d4014437841f855ace2055de32abfeeaeeb',
   precedingApproval: {
     gateId: EN_E06_PETALCROWN_DUELIST_GATE.id,
     artifactSha256: EN_E06_PETALCROWN_DUELIST_GATE.artifactSha256,
@@ -136,7 +136,7 @@ export const EN_E06_MIRE_CRONE_GATE = deepFreeze({
     'later EN-E06 sprites',
     'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Stop for explicit visual approval of the exact frozen Mire Crone candidate. Do not commit, publish, register Hag, generate fixtures, start another Hag variant, begin Dryad, or broaden Wave 2 before that approval.',
+  nextGate: 'The exact approved Mire Crone implementation is published at 25f67d4014437841f855ace2055de32abfeeaeeb. Stop for a separate continuation; do not register Hag, generate fixtures, start Cauldron Hexer, begin Dryad, or broaden Wave 2 without explicit authorization.',
 });
 
 export const EN_E06_MIRE_CRONE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -427,7 +427,7 @@ export const EN_E06_MIRE_CRONE_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mire-crone',
     scale: 8,
-    notes: 'Review the complete grounded Mire Crone suite against the public equipped Witch silhouette before any commit, publication, later Hag variant, Dryad, registration, fixtures, or later Wave 2 work.',
+    notes: 'The complete grounded Mire Crone suite was approved against the public equipped Witch silhouette. Keep later Hags, Dryad, registration, fixtures, effects, and later Wave 2 work separate.',
   },
 });
 

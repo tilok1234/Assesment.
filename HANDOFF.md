@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E06 Hag Mire Crone Candidate Review
+## Immediate Continuation Checkpoint - Published Approved EN-E06 Hag Mire Crone
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
@@ -28,8 +28,9 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Authorization: after the approved Petalcrown lane was published, the
   designer said `lets do nextr` on 2026-08-09. Under the confirmed one-complete-
   sprite cadence, this opens only common Hag `mire-crone`.
-- Gate: `en-e06-hag-mire-crone-full-v1`; status `candidate`, internal,
-  uncommitted, unpushed, and awaiting explicit visual approval.
+- Gate: `en-e06-hag-mire-crone-full-v1`; status `approved`, internal,
+  committed at `25f67d4014437841f855ace2055de32abfeeaeeb`, and published on its
+  isolated branch.
 - Scope: one private 80-frame common Hag across Idle, Walk, Attack, Cast, Hurt,
   and Death in Down, Left, Right, and Up. All three approved Fairy suites remain
   exact. Cauldron Hexer, Blackthorn Matron, Dryad, Redcap, and Nymph stay closed.
@@ -65,22 +66,24 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Firewall: the lane adds no public registration, facade import, shared
   renderer/schema/interface change, asset-pack entry, selector/persistence
   route, pack/export change, fixture regeneration, effect, or release.
-- Review state: technical and local visual inspection pass. The exact three
-  hash-frozen PNGs still need to be opened directly in Aseprite and presented
-  with the paired GIFs for the designer's explicit approval.
+- Review state: the exact hash-frozen raw, Complete B + Form, and Witch
+  comparison PNGs were opened directly in Aseprite and presented with the
+  paired GIFs. The designer replied `approved` on 2026-08-09.
 - Required reading: `CLAUDE.md`, this section, the EN-E06 candidate subsection,
   and `Current Authorization Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not use
   `docs/archive/` or the historical body below as current workflow.
-- Active stop: do not commit, push, register Hag, generate fixtures, start a
-  second Hag, begin Dryad, or broaden Wave 2 before explicit Mire Crone approval.
+- Fulfilled continuation: the exact approved Mire Crone implementation is
+  published. Stop here. Do not register Hag, generate fixtures, start Cauldron
+  Hexer, begin Dryad, or broaden Wave 2 without a separate continuation.
 
 Suggested opening request for the next chat:
 
 > Read `CLAUDE.md`, the active top section of `HANDOFF.md`, and the EN-E06 plus
-> current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Review only the
-> hash-frozen Mire Crone candidate on `codex/en-e06-hag-mire-crone`, based at
-> `5c9363e`; preserve all three approved Fairies exactly and do not commit, push,
-> register, generate fixtures, or begin another sprite before visual approval.
+> current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Continue from the
+> approved Mire Crone publication on `codex/en-e06-hag-mire-crone` at
+> `25f67d4`; preserve all three Fairies and Mire Crone exactly, and stop before
+> registration, fixtures, Cauldron Hexer, Dryad, or broader Wave 2 work without
+> explicit authorization.
 
 # Historical Handoff Archive
 

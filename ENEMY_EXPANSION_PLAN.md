@@ -2838,7 +2838,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `candidate internal - Hag Mire Crone complete 80-frame lane awaiting visual approval`
+- Status: `approved internal - Hag Mire Crone complete 80-frame lane published at 25f67d4`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3020,11 +3020,12 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   at `b265e972e719d6b697c99085503a1f2ea341da61`. Stop before Hag, Fairy
   registration, fixtures, or broader Wave 2 work; each requires a separate continuation.
 
-#### Candidate Hag Mire Crone complete suite
+#### Approved Hag Mire Crone complete suite
 
-- Gate ID: `en-e06-hag-mire-crone-full-v1`; status: `candidate`, internal,
-  uncommitted, and unpushed on `codex/en-e06-hag-mire-crone`, based exactly on
-  clean Petalcrown publication record `5c9363e`.
+- Gate ID: `en-e06-hag-mire-crone-full-v1`; status: `approved`, internal, and
+  published at `25f67d4014437841f855ace2055de32abfeeaeeb` on
+  `codex/en-e06-hag-mire-crone`, based exactly on clean Petalcrown publication
+  record `5c9363e`.
 - Authorization: after the exact Petalcrown lane was approved and published,
   the designer said `lets do nextr` on 2026-08-09. This opens only common Hag
   Mire Crone under the one-complete-sprite cadence.
@@ -3053,10 +3054,10 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   72/72 colored identity frames; 8/8 exact white flashes; opaque range 224-246;
   7,692 Complete B additions; 8,406 Form changes; candidate digest
   `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
-- Review state: technical and local visual inspection pass. The three exact
-  PNGs must be opened directly in Aseprite and presented with the paired GIFs.
-  Stop for explicit approval; do not commit, push, register, generate fixtures,
-  or begin Cauldron Hexer before that approval.
+- Approval/publication: the three exact PNGs were opened directly in Aseprite
+  and presented with the paired GIFs. The designer replied `approved` on
+  2026-08-09. The bounded implementation is published at `25f67d4`. Stop before
+  registration, fixture work, Cauldron Hexer, Dryad, effects, or broader Wave 2.
 
 ### EN-E07 - Shapeshifters and apparitions
 

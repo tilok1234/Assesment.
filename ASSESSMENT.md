@@ -176,10 +176,11 @@ common Hag Mire Crone. Its private 80-frame candidate passes connected,
 bounded, grounded, alias, mirror, public-Witch distinction, and approved-Fairy
 preservation gates at digest
 `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
-The active handoff starts with that unapproved review lane above an explicitly
-marked historical archive. Later Hags, Dryad, fixture regeneration, the legacy
-renderer split, boss-generator consolidation, and the Wildshot writer remain
-separate decisions.
+The exact boards and paired GIFs were approved on 2026-08-09 and the bounded
+implementation is published at `25f67d4`. The active handoff starts with that
+approved lane above an explicitly marked historical archive. Later Hags, Dryad,
+fixture regeneration, the legacy renderer split, boss-generator consolidation,
+and the Wildshot writer remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`
    lists the 166 stale sheets. If downstream should get the repaired art: `--all` + commit.
