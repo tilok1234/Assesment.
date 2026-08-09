@@ -15,11 +15,61 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Heartwood Warden Approved And Published
+## Immediate Continuation Checkpoint - Barrow Stalker Awaiting Visual Approval
 
-Start here in a new task. This is the current stopping checkpoint; later
-sections are historical provenance. No subsequent art, registration, fixture,
-effect, release, or broader Wave 2 gate is active.
+Start here in a new task. This is the only active continuation section; later
+sections are historical provenance.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e06-redcap-barrow-stalker`, based exactly on clean pushed
+  Heartwood Warden handoff `72c5d7cad80d55b9e48924c4ff7fb44a578dfadb`.
+- Authorization: after the exact Heartwood Warden lane was approved, committed,
+  pushed, and reconciled, the designer said `cool lets do next` on 2026-08-10.
+  Under the documented EN-E06 family order and one-complete-sprite cadence,
+  this opens only common Redcap Barrow Stalker.
+- Scope: one private 80-frame common Redcap across Idle F1-F2, Walk W1-W4,
+  Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
+- Identity: a very short broad grave-ambusher with an oversized drooping
+  blood-red cap, long fey ears, compact brown coat, connected hooked hand bill,
+  and two massive planted iron boots.
+- Effects firewall: blood spray, ground chips, weapon trails, trap markers,
+  snare lines, grave dust, impact flashes, and detached hook glints remain
+  external.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded hard-alpha
+  frames; 80/80 pixel and alpha-silhouette distinctions from public Goblin
+  Scout, public Hobgoblin, and approved Mire Crone; 72/72 colored identity
+  frames; 8/8 exact white flashes; opaque range 243-288; 7,556 Complete B
+  additions; 10,196 Form changes.
+- Frozen candidate digest:
+  `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `caaacab0cf2f96c7f9b6832417998662bffdb4d348999d6b212e839cc232bb14` /
+  `861574fad545675f022450d2d0975914952ac25898dee81e056d87d015fb44b6`;
+  Goblin Scout/Hobgoblin/Mire/Barrow `1520x548` comparison
+  `0995d0e4d9919648fee443e433a11bcd512e6c5ae176e38dd26e0f802a239d8f`;
+  raw / Complete B + Form `640x672` GIFs
+  `550b963d530de716f3cb5fc067bc459a0dce4c2f3492b984fee9b1db7a8bd33f` /
+  `669f64872e063696a7cdcc3ac1072e28818282c7906db60d7dce510e9730406a`.
+- Protected state: all approved Fairy, Hag, and Dryad digests remain exact;
+  public catalog remains 80 families / 259 variants with no public Redcap; all
+  232 committed fixtures remain untouched.
+- Required next action: present the exact raw, Complete B + Form, comparison,
+  and paired GIF evidence and open the three exact PNGs together in Aseprite.
+  Do not commit, push, register Redcap, generate fixtures, begin Ironboot
+  Trapper or Nymph, add effects, release, or open EN-E07 before explicit visual
+  approval.
+
+Suggested approval prompt:
+
+> Review the exact Barrow Stalker raw, Complete B + Form, four-way comparison,
+> and paired GIF evidence. Approve, request a narrow repair, or reject this
+> frozen 80-frame candidate only.
+
+## Approved Preceding Checkpoint - Heartwood Warden Published
+
+This records the clean published predecessor for the active Barrow Stalker
+gate. Later checkpoints are historical provenance.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-dryad-heartwood-warden`, based exactly on clean pushed

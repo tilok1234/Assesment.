@@ -102,20 +102,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   byte-unchanged, including the intentionally historical Ghoul fixture. Source
   and documentation are committed and pushed at
   `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
-- Current private art checkpoint: `codex/en-e06-dryad-heartwood-warden`, based exactly
-  on `90ac018923fbaa9906cd47cdc9ef22f0db77336a`, contains one complete elite
-  Heartwood Warden approved suite. Its 80 frames pass connected, one-cell-bounded,
-  grounded, hard-alpha, alias, mirror, and 80/80 pixel plus alpha-silhouette
-  distinction gates from public Treant, approved Grove Tender, and approved
-  Spore Cantor at digest
-  `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
-  The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-  was visually approved on 2026-08-09. The frozen implementation
-  `8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval record
-  `d8c13bb008e3a186daa73a37eec87c707f30365f` are committed and pushed on the
-  tracked branch. Public Dryad remains exactly two variants within 80/259. No
-  subsequent art gate is active; stop before registration changes,
-  Redcap/Nymph/EN-E07, fixtures, effects, or release.
+- Current private art gate: `codex/en-e06-redcap-barrow-stalker`, based exactly
+  on published Heartwood handoff `72c5d7c`, contains one complete common Redcap
+  candidate. Its 80 frames pass connected, one-cell-bounded, grounded,
+  hard-alpha, alias, mirror, and 80/80 pixel plus alpha-silhouette distinctions
+  from public Goblin Scout, public Hobgoblin, and approved Mire Crone at digest
+  `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
+  The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
+  awaits visual approval. Public Redcap remains absent within 80/259. Do not
+  commit, push, register, generate fixtures, begin Ironboot Trapper/Nymph/
+  EN-E07, add effects, or release before explicit approval.
 - The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved

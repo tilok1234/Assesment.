@@ -848,8 +848,14 @@ boundaries, deterministic five-artifact evidence, and candidate digest
 The exact packet was visually approved on 2026-08-09. Its frozen implementation
 `8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval record
 `d8c13bb008e3a186daa73a37eec87c707f30365f` are committed and pushed on the
-tracked branch. No subsequent art gate is active; registration changes,
-fixtures, Redcap, Nymph, effects, release, and later Wave 2 work remain closed.
+tracked branch. The later isolated Barrow Stalker module keeps one complete
+common Redcap in a private one-family registry. Its cap-heavy, hook-connected,
+iron-boot silhouette passes 80/80 pixel and alpha distinctions from public
+Goblin Scout, public Hobgoblin, and approved Mire Crone at digest
+`1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
+The exact five-artifact packet awaits visual approval; registration changes,
+fixtures, later Redcaps, Nymph, effects, release, and later Wave 2 work remain
+closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

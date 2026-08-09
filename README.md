@@ -1075,8 +1075,23 @@ plus alpha distinctions from all three comparison actors at candidate digest
 The exact packet was visually approved on 2026-08-09. Its frozen implementation
 `8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval record
 `d8c13bb008e3a186daa73a37eec87c707f30365f` are committed and pushed on the
-tracked branch. No subsequent art gate is active. Redcap, Nymph, EN-E07,
-registration changes, fixtures, effects, and release remain closed.
+tracked branch. The later `cool lets do next` opens only the private common
+Redcap Barrow Stalker candidate below.
+
+Barrow Stalker is a very short broad grave-ambusher with an oversized drooping
+blood-red cap, long fey ears, a compact brown coat, connected hooked hand bill,
+and massive planted iron boots. Blood spray, ground chips, weapon trails, trap
+markers, snare lines, grave dust, impact flashes, and detached hook glints
+remain external. Run
+`npm.cmd run review:enemy-expansion-en-e06-redcap-barrow-stalker` for the raw,
+Complete B + Form, Goblin Scout/Hobgoblin/Mire/Barrow comparison, and paired
+GIFs; run `npm.cmd run check:enemy-expansion-en-e06-redcap-barrow-stalker` for
+the 80-frame structural, distinction, predecessor, artifact, and public/
+fixture firewalls. The focused gate passes at digest
+`1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
+This candidate awaits visual approval and is not committed, pushed, registered,
+or fixture-exported. Ironboot Trapper, Bloodcap Reaver, Nymph, EN-E07, effects,
+and release remain closed.
 
 ## Approved enemy backlog integration published
 

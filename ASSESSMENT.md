@@ -219,8 +219,14 @@ Its exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
 was visually approved on 2026-08-09. The frozen implementation
 `8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval record
 `d8c13bb008e3a186daa73a37eec87c707f30365f` are committed and pushed on the
-tracked branch. No subsequent art gate is active.
-Fixture regeneration, Redcap/Nymph, the legacy renderer split, boss
+tracked branch. The later isolated common Redcap Barrow Stalker candidate on
+`codex/en-e06-redcap-barrow-stalker` passes 80/80 connected, bounded, grounded,
+hard-alpha, Goblin Scout/Hobgoblin/Mire pixel, and alpha-silhouette distinction
+gates at digest
+`1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
+Its exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
+awaits visual approval; it is not committed, pushed, registered, or exported.
+Fixture regeneration, later Redcaps/Nymph, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`

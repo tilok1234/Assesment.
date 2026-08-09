@@ -13,19 +13,18 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current art checkpoint (2026-08-10): the designer's `hey lets keep going with
-  the 80 enemies plan` opened only the third Dryad role, one complete elite
-  Heartwood Warden on `codex/en-e06-dryad-heartwood-warden`. Its frozen
-  80-frame approved suite passes connected, one-cell-bounded, grounded, hard-alpha,
-  alias, mirror, and 80/80 pixel plus alpha-silhouette distinction gates
-  against public Treant and both approved Dryads at digest
-  `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
-  The exact raw, Complete B + Form, and four-way comparison packet was visually
-  approved on 2026-08-09. The frozen implementation
-  `8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval record
-  `d8c13bb008e3a186daa73a37eec87c707f30365f` are committed and pushed on the
-  tracked branch. No subsequent art gate is active. Redcap, Nymph, EN-E07,
-  fixtures, effects, registration changes, and release remain closed.
+- Current art gate (2026-08-10): after Heartwood Warden was approved and
+  published, the designer's `cool lets do next` opened only the first Redcap
+  role, one complete common Barrow Stalker on
+  `codex/en-e06-redcap-barrow-stalker`. Its frozen 80-frame candidate passes
+  connected, one-cell-bounded, grounded, hard-alpha, alias, mirror, and 80/80
+  pixel plus alpha-silhouette distinction gates against public Goblin Scout,
+  public Hobgoblin, and approved Mire Crone at digest
+  `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
+  The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
+  awaits visual approval. It is not committed, pushed, registered, or exported.
+  Later Redcaps, Nymph, EN-E07, fixtures, effects, registration changes, and
+  release remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -2865,7 +2864,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `Heartwood Warden complete 80-frame suite approved and published; stop gate active`
+- Status: `Barrow Stalker complete 80-frame suite awaiting visual approval`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3287,6 +3286,45 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   registration, start Redcap or Nymph, generate fixtures, add effects, release,
   or open EN-E07 without another explicit authorization.
 
+#### Redcap Barrow Stalker complete suite awaiting visual approval
+
+- Gate ID: `en-e06-redcap-barrow-stalker-full-v1`; status:
+  `awaiting-visual-approval` on `codex/en-e06-redcap-barrow-stalker`, based
+  exactly on published Heartwood handoff `72c5d7c`.
+- Authorization: after Heartwood Warden was approved, committed, pushed, and
+  reconciled, the designer said `cool lets do next` on 2026-08-10. Under the
+  frozen EN-E06 family order this opens only common Redcap Barrow Stalker.
+- Scope: one private complete 80-frame common Redcap. Ironboot Trapper,
+  Bloodcap Reaver, Nymph, registration, fixtures, effects, release, and EN-E07
+  remain closed.
+- Identity: a very short broad grave-ambusher with an oversized drooping
+  blood-red cap, long fey ears, compact brown coat, connected hooked hand bill,
+  and two massive planted iron boots.
+- Effects firewall: blood spray, ground chips, weapon trails, trap markers,
+  snare lines, grave dust, impact flashes, and detached hook glints remain
+  external.
+- Motion: two cap/hook Idle poses; four iron-boot Walk stomps; four connected
+  shoulder-drop, hook-draw, upward-cleave, and low-recovery Attack poses; exact
+  Cast-to-Attack aliases; white-recoil and colored-brace Hurt; exact Death
+  aliases H1,H2,H2,H2; exact side mirrors.
+- Focused validation: 80/80 connected, bounded, grounded hard-alpha frames;
+  80/80 pixel and alpha distinctions from public Goblin Scout, public
+  Hobgoblin, and approved Mire Crone; 72/72 colored identity frames; 8/8 exact
+  white flashes; opaque range 243-288; Complete B +7,556; Form changes 10,196.
+- Candidate digest:
+  `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
+- Evidence SHA-256: raw
+  `caaacab0cf2f96c7f9b6832417998662bffdb4d348999d6b212e839cc232bb14`;
+  Complete B + Form
+  `861574fad545675f022450d2d0975914952ac25898dee81e056d87d015fb44b6`;
+  comparison
+  `0995d0e4d9919648fee443e433a11bcd512e6c5ae176e38dd26e0f802a239d8f`;
+  raw GIF `550b963d530de716f3cb5fc067bc459a0dce4c2f3492b984fee9b1db7a8bd33f`;
+  Complete B + Form GIF
+  `669f64872e063696a7cdcc3ac1072e28818282c7906db60d7dce510e9730406a`.
+- Required next action: present the exact packet and open all three PNGs in
+  Aseprite. Do not commit or push before explicit visual approval.
+
 ### EN-E07 - Shapeshifters and apparitions
 
 - Status: `queued`
@@ -3553,9 +3591,13 @@ exact 80-frame evidence is hash-frozen and technically validated at digest
 `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`,
 with implementation `8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval
 record `d8c13bb008e3a186daa73a37eec87c707f30365f` committed and pushed.
-No subsequent art gate is active. Redcap, Nymph, EN-E07, the three EN-E03
-Idle-only variants, public-registration changes, fixtures, effects, and release
-remain separate closed gates.
+The later isolated Barrow Stalker candidate on
+`codex/en-e06-redcap-barrow-stalker` is technically frozen at digest
+`1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`
+and awaits visual approval. It is not committed, pushed, registered, or
+exported. Later Redcaps, Nymph, EN-E07, the three EN-E03 Idle-only variants,
+public-registration changes, fixtures, effects, and release remain separate
+closed gates.
 
 ### Historical Authorization Chronology
 
