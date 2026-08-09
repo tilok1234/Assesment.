@@ -168,10 +168,16 @@ old one did — minus nothing — it just also passes from a clean checkout.
 ## Part 4 — Historical recommendations and current status
 
 Update for 2026-08-09: EN adoption is complete through EN-E05 assembler
-integration, the live catalog is 74/245, and the active handoff now starts with
-one authoritative current checkpoint plus an explicitly marked historical
-archive. Fixture regeneration, the legacy renderer split, boss-generator
-consolidation, and the Wildshot writer remain separate decisions.
+integration and the live catalog remains 74/245. Wave 2 is now active only
+through one private, approved EN-E06 Fairy Bramblewing Scout complete 80-frame
+lane. The designer approved its identity and Idle baseline, then corrected the
+cadence to all animations for one sprite per pass; the eight approved Idle
+frames remain byte-identical inside the complete suite. The exact full suite is
+now approved for bounded branch publication and does not alter public counts or
+fixtures. The active handoff starts with that one authoritative checkpoint above
+an explicitly marked historical archive. Another sprite, fixture regeneration,
+the legacy renderer split, boss-generator consolidation, and the Wildshot writer
+remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`
    lists the 166 stale sheets. If downstream should get the repaired art: `--all` + commit.

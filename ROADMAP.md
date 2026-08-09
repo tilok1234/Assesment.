@@ -117,14 +117,23 @@ intentional bounded commit and branch push before the next gate begins, unless
 the designer explicitly says to hold publication. Unapproved lanes are never
 published under this rule.
 
-Current continuation checkpoint (2026-08-09): EN-E05 assembler integration is
-published on `codex/en-e05-assembler-integration` at `773cfad`, with reconciled
-handoff `7ffbb04`. The stable and consumer expansion registries are identical
-at 17 families / 43 variants, producing 74 public families / 245 variants and
-a 2,182-PNG Complete Kit. Public `zombie/ghoul`, all 232 committed fixtures,
-effects, release state, and EN-E03 isolation remain unchanged. No later content
-gate is currently authorized; public Ghoul replacement, fixture work, EN-E03
-adoption, effects, release, and Wave 2 each require an explicit future choice.
+Current continuation checkpoint (2026-08-09): the designer explicitly selected
+Wave 2 after clean documentation handoff `4b2f49d`. After approving the exact
+Bramblewing Scout identity and Idle baseline, the designer corrected the
+cadence to all animations for one sprite per pass. The only active gate is
+`en-e06-fairy-bramblewing-scout-full-v1` on
+`codex/en-e06-fairy-full`: five EN-E06 family contract cards plus one internal,
+approved, non-public complete common Fairy across all four directions. Its
+80 connected, bounded, hard-alpha, ground-clear frames preserve all eight Idle
+frames byte-for-byte and pass focused validation at candidate digest
+`0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
+The published runtime boundary remains 17/43 expansion and 74/245 public with a
+2,182-PNG Complete Kit; public `zombie/ghoul`, all 232 committed fixtures,
+effects, release state, and EN-E03 isolation remain unchanged. The designer
+approved the exact full suite with `approved`; only its bounded branch
+publication is authorized. Fairy specialist/elite variants, Hag and later
+EN-E06 art, EN-E07, registration, fixtures, effects, and release each require a
+separate continuation.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and
@@ -644,7 +653,7 @@ lower-robe panels were replaced with tapered folds and the exact regenerated
 review was presented, the designer replied `approved` on 2026-08-09,
 authorizing only bounded publication. The Lich remains internal, non-public,
 and fixture-free. Registration, fixtures, effects, EN-E05 registration, and
-Wave 2 require later explicit gates. The exact Lich implementation is
+Wave 2 required later explicit gates at that Lich checkpoint. The exact Lich implementation is
 published at `4cebc7b`.
 The clean reconciled Lich handoff is `c0e438b`. The designer then said `lets do
 next`, which authorized the separate stable-only EN-E05 registration dependency
@@ -676,9 +685,20 @@ Kit is 74 families / 245 enemy sheets / 2,182 PNGs, and all four Wildshot specs
 are accepted. Public Ghoul and its frozen fixture remain exact, and all 232 PNG
 fixtures stay untouched. Fast validation passes in `52.7s`; full validation
 passes in `103.1s`. The bounded implementation is published at `773cfad`.
-Public Ghoul replacement, fixture generation, regeneration, or acceptance,
-effects, release, EN-E03 adoption, and Wave 2 still require separate explicit
-authorization.
+At that consumer checkpoint, public Ghoul replacement, fixture generation,
+regeneration or acceptance, effects, release, EN-E03 adoption, and Wave 2 still
+required separate explicit authorization. Wave 2 was later opened through the
+bounded EN-E06 Fairy lane. The exact Bramblewing Scout identity and Idle pair
+were approved, then the designer corrected the cadence to one complete sprite
+per pass. Its active full-suite gate passes 80/80 connected, bounded,
+ground-clear frames, preserves all 8/8 approved Idle frames, enforces exact
+mirrors and aliases, retains binary-alpha open-lattice wing windows, supports
+Complete B/Form treatment, exposes zero public families, and freezes candidate
+digest `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
+Protected EN-E05 consumers pass at 74/245 and 320/320 frames; approval-state
+fast (`52.7s`) and full (`102.5s`) validation pass with all 232 fixtures unchanged. The
+complete Fairy is approved, uncommitted, unpushed, internal, and non-public;
+bounded branch publication is authorized.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
@@ -853,9 +873,11 @@ Candidate additions:
   and review sequence in `ENEMY_EXPANSION_PLAN.md`. EN-E01, EN-E02, EN-E04,
   and the four new EN-E05 families are registered and consumer-integrated at
   17 expansion families / 43 variants and 74/245 public. The separate EN-E05
-  Ghoul upgrade and all EN-E03 evidence remain internal. No next content gate
-  is currently authorized; public Ghoul replacement, fixture work, EN-E03
-  adoption, effects, release, and Wave 2 remain separate choices.
+  Ghoul upgrade and all EN-E03 evidence remain internal. Wave 2 is active only
+  through the approved complete 80-frame EN-E06 Fairy Bramblewing Scout gate;
+  Fairy specialist/elite variants, later EN-E06 families, EN-E07, public Ghoul
+  replacement, fixture work, EN-E03 adoption, effects, and release remain
+  separately gated.
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 

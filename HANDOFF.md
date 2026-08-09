@@ -15,50 +15,71 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Live Documentation Audit Published
+## Immediate Continuation Checkpoint - Approved EN-E06 Fairy Publication
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
 
 - Repository/branch: current v2 checkout on
-  `codex/en-e05-doc-audit-handoff`, based exactly on clean published EN-E05
-  integration handoff `7ffbb0464f766f7ed29d64cd59f3613a3cfd1834`.
-- Audit evidence: all live project documentation outside `docs/archive/` was
-  checked against Git, code, package scripts, filesystem artifacts, and current
-  validators. The bounded audit implementation is committed at
-  `4ba29e2a3fbe9ec584107994c0a324364d8f9240`.
-- Canonical runtime state: legacy remains 57 families / 202 variants; stable
-  and consumer expansion registries are identical at 17/43; public is 74/245;
-  Complete Kit is 2,182 PNGs; a 24-player Complete Pack is 2,205 PNGs; the
-  three-treatment public export target is 735 PNGs.
-- EN-E05 state: exact Mummy Tomb Walker, Vampire Night Noble, Revenant Grave
-  Oathkeeper, and Lich Soul Regent are generic public consumers. All 320 frames
-  retain digest
-  `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`.
-- Frozen boundaries: public `zombie/ghoul` is unchanged; the separate Ghoul
-  upgrade remains internal; all 202 Enemy fixtures and all 232 committed PNG
-  fixtures remain untouched. No sprite source, runtime code, schema, fixture,
-  baseline, effect, or release artifact changed in this documentation lane.
-- Verified open blockers: no repository `LICENSE`, deterministic Wildshot
-  writer/editor action, or NSIS artifact exists. These are accurately recorded
-  as pending, not silently opened by this audit.
-- Validation: release structure passes 35 assertions; the focused EN-E05 gate
-  passes 320/320 frames; fast validation passes in `51.3s`; full validation
-  passes in `97.7s`; all 232 fixtures validate.
-- Required reading: `CLAUDE.md`, this section, and the `Current Authorization
-  Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not read `docs/archive/` for the
-  active workflow and do not resume a lane from the historical body below.
-- Required next action: verify this branch is clean and equals its upstream,
-  then stop. No next content gate is authorized. Ask the designer to choose
-  explicitly among public Ghoul replacement, fixture work, EN-E03 adoption,
-  effects, release, or Wave 2; do not infer any one of them.
+  `codex/en-e06-fairy-full`, created from clean published documentation handoff
+  `4b2f49dfb80c3c39b6e49672a2c594746f6c030a`.
+- Authorization: after that handoff required an explicit next choice, the
+  designer replied `very good. wave 2` on 2026-08-09. After the exact Fairy
+  Idle evidence was presented, the designer replied `very good,. but lately we
+  been doing all animations for 1 sprite each pass`. That response approves and
+  freezes the eight Idle frames and authorizes only the rest of Bramblewing
+  Scout as one complete-sprite pass.
+- Gate: `en-e06-fairy-bramblewing-scout-full-v1`; status `approved`, internal,
+  uncommitted, and unpushed. The designer approved the exact full-suite boards
+  and GIFs with `approved` on 2026-08-09.
+- Scope: five immutable contract cards for Fairy, Hag, Dryad, Redcap, and Nymph;
+  only common Fairy `bramblewing-scout` is implemented. Its complete 80-frame
+  suite covers approved Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast
+  aliases, Hurt H1-H2, and exact Death aliases across Down, Left, Right, and Up.
+  Fairy specialist/elite variants and all other EN-E06 art remain absent.
+- Identity: compact plum-haired pointed-ear fey, leaf-green dress, gold
+  fasteners, and paired pale-mint open-lattice wings. The wings are connected
+  body parts and the complete actor remains visibly clear of the ground.
+- Transparency/effect boundary: binary alpha remains exact. Connected opaque
+  wing rims/veins surround transparent negative-space windows; partial-alpha
+  membranes, glow, pollen, sparkles, trails, and impact light are not baked in.
+- Review command: `npm.cmd run review:enemy-expansion-en-e06-fairy`.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e06-fairy`; the older
+  `check:enemy-expansion-en-e06-fairy-idle` remains the frozen predecessor gate.
+- Review hashes: raw / Complete B + Form `1428x760` boards
+  `b154d3023c75bb06bb6c7312aa4327aa935723cdd7a0ea1d0165a851d3c20200` /
+  `3349fe0ebd8ce719b172d64dccaf940bf0e842679e4ee13700fa7182cdf5a650`;
+  raw / Complete B + Form `640x672` labeled GIFs
+  `9812b570435f45a8efad77fcdf380f6ec159f73ad950967ed5d1889148958efa` /
+  `662af552ce31a84761001f86b95de3db6149419111b7ff592dca22aa8d57cb57`.
+- Focused result: 80/80 connected, bounded, ground-clear frames; 8/8 approved
+  Idle frames byte-identical; 72/72 colored hard-alpha wing-window frames; 8/8
+  exact white alias flashes; exact side mirrors and Cast/Death aliases; opaque
+  range 132-159; 6,362 Complete B additions; 5,274 Form changes. Candidate
+  digest: `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
+- Protected result: EN-E05 consumers remain exact at 74 public families / 245
+  variants and 320/320 frames; approval-state fast validation passes in
+  `52.7s`; full validation passes in `102.5s`; all 232 PNG fixtures remain
+  frozen.
+- Firewall: `fairy` remains absent from `PUBLIC_ENEMIES`, `sprite-engine.js`,
+  the asset-pack manifest, selectors, persistence, packs, exports, and fixtures.
+- Review state: the exact final raw and Complete B + Form full-suite PNGs were
+  opened directly in Aseprite and explicitly approved.
+- Required reading: `CLAUDE.md`, this section, the EN-E06 candidate subsection,
+  and `Current Authorization Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not use
+  `docs/archive/` or the historical body below as current workflow.
+- Required next action: commit and push only this bounded seventeen-file
+  approved lane under the approval-publication rule, reconcile the published
+  checkpoint, and stop. Do not add Fairy variants, begin Hag, register EN-E06,
+  generate fixtures, or broaden Wave 2 without a separate continuation.
 
 Suggested opening request for the next chat:
 
-> Read `CLAUDE.md`, the active top section of `HANDOFF.md`, and the current
-> authorization boundary in `ENEMY_EXPANSION_PLAN.md`. Verify clean synced HEAD
-> on `codex/en-e05-doc-audit-handoff` and the 74/245 public boundary. No content
-> lane is open; wait for my explicit choice before changing sprites or fixtures.
+> Read `CLAUDE.md`, the active top section of `HANDOFF.md`, and the EN-E06 plus
+> current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Continue only the
+> approved complete Fairy Bramblewing Scout publication gate on
+> `codex/en-e06-fairy-full`; publish only the frozen lane, reconcile its clean
+> handoff, and do not begin another sprite/Hag without explicit continuation.
 
 # Historical Handoff Archive
 
@@ -66,6 +87,19 @@ Everything below this heading is point-in-time provenance. Words such as
 "current", "next", "immediate", and "required" apply only to the historical
 checkpoint in which they appear. A new chat must use the current checkpoint at
 the top of this file and must not resume a lane from this archive.
+
+## Published Preceding Checkpoint - Live Documentation Audit
+
+After EN-E05 assembler integration was published and reconciled, every live
+project document outside `docs/archive/` was checked against Git, runtime code,
+package scripts, filesystem artifacts, and validators. The complete audit is
+published on `codex/en-e05-doc-audit-handoff` at `4ba29e2`; its concise handoff
+is `4b2f49d`. That clean checkpoint established the exact 17/43 expansion,
+74/245 public, 2,182-PNG Complete Kit, 2,205-PNG maximum Complete Pack, and
+735-PNG three-treatment export boundaries, with all 232 fixtures unchanged.
+It opened no content lane and required a later explicit choice; the designer's
+subsequent `very good. wave 2` opened the Fairy lane, and the later cadence
+correction advanced only that same Bramblewing Scout to the full-suite gate above.
 
 ## Approved Preceding Checkpoint - EN-E05 Assembler Integration Published
 

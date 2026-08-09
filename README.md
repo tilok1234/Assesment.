@@ -890,8 +890,56 @@ remain exact. Fast validation passes in `51.6s`; full validation passes in
 committed and pushed at `7d273ef`.
 
 That registration checkpoint excluded assembler consumers. The separate gate
-below later exposes only the four new families; public Ghoul replacement,
-fixture work, effects, release, EN-E03 adoption, and Wave 2 remain closed.
+below later exposes only the four new families; at that point public Ghoul
+replacement, fixture work, effects, release, EN-E03 adoption, and Wave 2 were
+still closed.
+
+## EN-E06 Fairy Bramblewing Scout complete-suite acceptance candidate
+
+Branch `codex/en-e06-fairy-full`, based exactly on clean documentation handoff
+`4b2f49d`, contains the first explicitly authorized Wave 2 sprite. Five
+immutable contract cards define Fairy, Hag, Dryad, Redcap, and Nymph
+common/specialist/elite roles. The designer approved the exact Bramblewing
+Scout identity and Idle baseline, then corrected the cadence to all animations
+for one sprite per pass. Only that common Fairy is implemented: one complete
+80-frame Idle/Walk/Attack/Cast/Hurt/Death suite across Down, Left, Right, and
+Up. The designer approved the exact full suite with `approved` on 2026-08-09.
+It remains internal, approved, uncommitted, unpushed, and non-public while its
+bounded branch publication is completed.
+
+The compact Fairy has plum hair, pointed ears, a leaf-green dress, gold
+fasteners, and paired pale-mint open-lattice wings. The wings are connected
+body parts, and every frame remains visibly above the ground. Binary alpha is
+exact: translucent wing character comes from opaque rims and veins surrounding
+transparent negative-space windows, never partial-alpha membrane pixels. Glow,
+pollen, sparkles, trails, and impact light remain external effects.
+
+Run `npm.cmd run review:enemy-expansion-en-e06-fairy` to reproduce the exact
+raw/no-outline and Complete B + Form `1428x760` boards plus the paired
+`640x672` four-phase labeled GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e06-fairy` to validate all 80 frames,
+8/8 byte-identical approved Idle frames, hard alpha, connected ground-clear
+silhouettes, open-lattice windows, mirrors, exact Cast/Death aliases,
+deterministic hashes, and the public/fixture firewall. Raw / Complete B + Form
+board hashes are
+`b154d3023c75bb06bb6c7312aa4327aa935723cdd7a0ea1d0165a851d3c20200` /
+`3349fe0ebd8ce719b172d64dccaf940bf0e842679e4ee13700fa7182cdf5a650`;
+raw / Complete B + Form GIF hashes are
+`9812b570435f45a8efad77fcdf380f6ec159f73ad950967ed5d1889148958efa` /
+`662af552ce31a84761001f86b95de3db6149419111b7ff592dca22aa8d57cb57`;
+candidate digest is
+`0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
+
+Focused validation passes 80/80 connected, bounded, ground-clear frames at
+opaque range 132-159, with 6,362 Complete B additions and 5,274 Form changes.
+Protected EN-E05 consumers remain exact at 74/245 and 320/320 frames;
+approval-state fast validation passes in `52.7s` and full validation in
+`102.5s`, with all 232
+fixtures unchanged. The exact full suite is visually approved and bounded
+branch publication is authorized. Fairy specialist/elite variants,
+Hag/Dryad/Redcap/Nymph art, EN-E06
+registration/consumers, fixture work, effects, release, EN-E07, and later Wave
+2 work remain excluded.
 
 ## EN-E05 assembler consumer integration implemented
 
@@ -918,9 +966,12 @@ frozen Ghoul fixture remains SHA-256
 `a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2`,
 and all 232 committed PNG fixtures remain untouched. Fast validation passes in
 `52.7s`; full validation passes in `103.1s`. This integration needs no new
-visual approval because it reuses exact approved and registered pixels. Public
-Ghoul replacement, fixture generation, regeneration, or acceptance, effects,
-release, EN-E03 adoption, and Wave 2 require later explicit authorization.
+visual approval because it reuses exact approved and registered pixels. At
+that checkpoint public Ghoul replacement, fixture generation, regeneration or
+acceptance, effects, release, EN-E03 adoption, and Wave 2 still required later
+explicit authorization. Wave 2 was subsequently opened through the bounded
+EN-E06 Fairy lane and is currently limited to the complete Bramblewing Scout
+acceptance candidate above.
 
 ## EN-E05 Lich Soul Regent full-suite approved internal lane
 

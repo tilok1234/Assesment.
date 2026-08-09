@@ -334,12 +334,16 @@ Every standard Enemy slice follows the same stop-and-review loop:
 
 1. Write one contract card per family: stable ID, intended scale, locomotion,
    attack tell, three variant briefs, and any external effects or mechanics.
-2. Build only the baseline variant first.
-3. Produce a four-direction Idle review PNG at a readable review scale while
-   retaining native-pixel inspection.
+2. Build exactly one sprite per pass, starting with the baseline variant, and
+   complete its standard 80-frame suite: Idle, Walk, Attack, Cast aliases,
+   Hurt, and Death aliases across all four directions.
+3. Produce labeled four-direction raw/no-outline and Complete B + Form
+   full-suite review boards and synchronized GIFs while retaining native-pixel
+   inspection.
 4. Stop for explicit visual approval.
-5. After approval, add Walk, Attack, and Hurt motion under the existing contract;
-   Cast and Death remain the standard Enemy aliases.
+5. After approval and the bounded publication checkpoint, start at most one
+   next sprite as another complete-suite pass. Do not fall back to an Idle-only
+   pass unless the designer explicitly requests a calibration gate.
 6. Add no more than three initial variants: common, specialist, and elite.
 7. Generate the focused slice review sheet and inspect every direction and
    required animation.
@@ -2818,9 +2822,10 @@ silently alter unrelated Zombie variants.
   affected source and historical gates, fast validation (`52.7s`), and full
   validation (`103.1s`) pass. No visual review is needed because the gate
   reuses exact approved and registered pixels.
-- Required next action: stop. Public Ghoul replacement, fixture generation,
-  regeneration, or acceptance, schema or pixel changes, effects, release,
-  EN-E03 adoption, and Wave 2 require later explicit authorization.
+- Historical next action at that checkpoint: stop. Public Ghoul replacement,
+  fixture generation, regeneration, or acceptance, schema or pixel changes,
+  effects, release, EN-E03 adoption, and Wave 2 then required later explicit
+  authorization. The active Wave 2 boundary is now the Fairy gate below.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not
@@ -2833,13 +2838,72 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `queued`
+- Status: `approved internal - Fairy Bramblewing Scout complete 80-frame lane awaiting bounded publication`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
 Shared leverage: small bodies, wings, plant anatomy, exaggerated hats, and
 hovering poses. Fairy wings are body parts; glow and particle trails are effects.
 Dryad must remain humanoid/fey scale rather than overlap Treant.
+
+#### Approved Fairy Bramblewing Scout complete suite
+
+- Gate ID: `en-e06-fairy-bramblewing-scout-full-v1`; status:
+  `approved`, internal, uncommitted, and unpushed on
+  `codex/en-e06-fairy-full`, based exactly on clean documentation handoff
+  `4b2f49dfb80c3c39b6e49672a2c594746f6c030a`.
+- Authorization: after the clean EN-E05 audit handoff named Wave 2 as a separate
+  closed choice, the designer replied `very good. wave 2` on 2026-08-09. After
+  reviewing the exact Fairy Idle evidence, the designer then said
+  `very good,. but lately we been doing all animations for 1 sprite each pass`.
+  That response approves and freezes the eight Idle pixels and corrects the
+  active cadence to one complete sprite, authorizing only the remaining motion
+  for Bramblewing Scout.
+- Approval: after the exact labeled all-four-direction raw/no-outline and
+  Complete B + Form full-suite boards and GIFs were presented together and
+  opened in Aseprite, the designer replied `approved` on 2026-08-09. This
+  approves only the frozen 80-frame candidate and authorizes bounded branch
+  publication.
+- Contract cards: Fairy (`bramblewing-scout`, `thistle-hexer`,
+  `petalcrown-duelist`), Hag (`mire-crone`, `cauldron-hexer`,
+  `blackthorn-matron`), Dryad (`grove-tender`, `spore-cantor`,
+  `heartwood-warden`), Redcap (`barrow-stalker`, `ironboot-trapper`,
+  `bloodcap-reaver`), and Nymph (`spring-dancer`, `mist-weaver`,
+  `rivercrown-muse`). Only Bramblewing Scout is implemented; every other variant
+  and family remains contract-only.
+- Identity: a compact plum-haired, pointed-ear fey with leaf-green dress
+  planes, small gold fasteners, and paired pale-mint open-lattice wings. The
+  body remains clear of the ground and the wings remain connected body parts.
+- Transparency policy: the standard binary-alpha contract is unchanged.
+  Translucency is suggested with connected opaque rim/vein pixels around
+  deliberate transparent negative-space windows; there is no partial-alpha
+  membrane. Glow, pollen, sparkles, trails, and impact light remain external.
+- Animation scope: exact approved Idle F1-F2, four distinct hover-travel Walk
+  frames, four attached thorn-needle Attack poses, exact Cast-to-Attack aliases,
+  white-recoil/colored-brace Hurt H1-H2, and exact Death aliases H1,H2,H2,H2.
+- Review evidence: raw / Complete B + Form `1428x760` boards
+  `b154d3023c75bb06bb6c7312aa4327aa935723cdd7a0ea1d0165a851d3c20200` /
+  `3349fe0ebd8ce719b172d64dccaf940bf0e842679e4ee13700fa7182cdf5a650`;
+  raw / Complete B + Form `640x672` labeled four-phase GIFs
+  `9812b570435f45a8efad77fcdf380f6ec159f73ad950967ed5d1889148958efa` /
+  `662af552ce31a84761001f86b95de3db6149419111b7ff592dca22aa8d57cb57`.
+- Focused validation passes 80/80 connected, bounded, ground-clear frames;
+  preserves all 8/8 approved Idle frames byte-for-byte; retains 72/72 colored
+  hard-alpha wing-window frames and 8/8 exact white alias flashes; enforces
+  side mirrors and Cast/Death aliases; and measures opaque range 132-159,
+  6,362 Complete B additions, and 5,274 Form changes. Candidate digest:
+  `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
+- Protected EN-E05 consumers pass at 74/245 and 320/320 frames; approval-state
+  fast validation passes in `52.7s`; full validation passes in `102.5s`; all
+  232 committed PNG fixtures remain frozen.
+- Firewall: the candidate registry exposes zero public families; `fairy` is
+  absent from `PUBLIC_ENEMIES`, `sprite-engine.js`, and the asset-pack manifest.
+- Exclusions: Fairy specialist/elite art, Hag/Dryad/Redcap/Nymph art,
+  registration, consumers, fixture work, effects, release, EN-E07, and later
+  Wave 2 work.
+- Publication state: exact approval is recorded. Commit and push only this
+  bounded seventeen-file lane, then stop; do not begin Hag or another sprite
+  without a separate continuation.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3092,17 +3156,23 @@ counts as an upgrade; the three Boss candidates do not enter the Enemy totals.
 
 ## Current Authorization Boundary
 
-EN-E05 assembler integration is complete and published at `773cfad` with its
-reconciled handoff at `7ffbb04`. Stable and consumer expansion registries are
-identical at 17 families / 43 variants, `PUBLIC_ENEMIES` is 74/245, the
-Complete Kit contains 2,182 PNGs, and public `zombie/ghoul` plus all 232
+EN-E05 assembler integration remains complete and published at `773cfad` with
+reconciled handoff `7ffbb04`. Stable and consumer expansion registries remain
+identical at 17 families / 43 variants, `PUBLIC_ENEMIES` remains 74/245, the
+Complete Kit remains 2,182 PNGs, and public `zombie/ghoul` plus all 232
 committed fixtures remain unchanged.
 
-No next content gate is currently authorized. Public Ghoul replacement,
-fixture generation, regeneration, or acceptance, EN-E03 adoption, effects,
-release, and Wave 2 each require a separate explicit decision. A new chat must
-verify the clean published handoff and wait for the designer to choose one of
-those boundaries; it must not infer Wave 2 from completion of EN-E05.
+Wave 2 is explicitly authorized by the designer's `very good. wave 2` on
+2026-08-09. The later correction `very good,. but lately we been doing all
+animations for 1 sprite each pass` approves the Bramblewing Scout identity and
+Idle baseline and advances only that sprite to gate
+`en-e06-fairy-bramblewing-scout-full-v1`. The designer subsequently replied
+`approved` to the exact full-suite evidence. The active lane is one internal,
+approved, non-public complete 80-frame common Fairy; bounded branch publication
+is authorized. Fairy specialist/elite variants,
+Hag/Dryad/Redcap/Nymph art, EN-E07, public Ghoul replacement, fixture work,
+EN-E03 adoption, effects, and release remain separate closed gates; Wave 2
+authorization must not be broadened past this one-complete-sprite pass.
 
 ### Historical Authorization Chronology
 

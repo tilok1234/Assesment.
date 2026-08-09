@@ -102,8 +102,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   frames match; aggregate digest is
   `732c6097b237131e85bdf435112c2bed7ec1f8bf8317dee4e42605f0c1730d32`.
   That checkpoint was stable-only; the later consumer gate below exposes only
-  the four new families. Do not replace public Ghoul, regenerate fixtures, or
-  begin Wave 2 without another explicit gate.
+  the four new families. At the registration checkpoint, public Ghoul,
+  fixtures, and Wave 2 were still separate closed gates.
 - The separate EN-E05 consumer gate `en-e05-assembler-consumers-v1` is
   published on `codex/en-e05-assembler-integration` at `773cfad`. It exposes
   exact `mummy/tomb-walker`, `vampire/night-noble`,
@@ -114,6 +114,21 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`;
   the Complete Kit is 74 families / 245 enemy sheets / 2,182 PNGs. This gate
   creates no new sprite pixels and does not alter fixtures.
+- Wave 2 is active only through
+  `en-e06-fairy-bramblewing-scout-full-v1` on
+  `codex/en-e06-fairy-full`, based exactly on documentation handoff `4b2f49d`.
+  Five EN-E06 family contract cards are frozen. The designer approved the exact
+  Bramblewing Scout identity and Idle baseline, then corrected the cadence to
+  all animations for one sprite per pass. Only that common Fairy is implemented:
+  one private 80-frame Idle/Walk/Attack/Cast/Hurt/Death suite across four
+  directions, with all eight approved Idle frames byte-identical. Its focused
+  gate passes 80/80 connected, bounded, ground-clear frames at candidate digest
+  `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
+  The designer approved the exact full suite with `approved` on 2026-08-09. It
+  is internal, approved, uncommitted, unpushed, and absent from the public
+  facade/catalog and fixtures. Publish only this bounded lane under the
+  approval-publication rule; do not add Fairy variants, begin Hag, register
+  EN-E06, generate fixtures, or broaden Wave 2 without a separate continuation.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate
@@ -147,7 +162,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   connected and bounded frames, approved-Revenant comparison, raw/no-outline
   board and GIF, and Complete B + Form board and GIF are hash-frozen. Its exact
   approved variant is registered and now exposed through the generic EN-E05
-  consumer layer; fixtures, effects, and Wave 2 remain gated.
+  consumer layer. At that checkpoint fixtures, effects, and Wave 2 remained
+  gated; the later bounded complete Bramblewing Scout gate above is the only
+  active Wave 2 work.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;

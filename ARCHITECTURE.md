@@ -631,6 +631,38 @@ source pixels, the 2,182-PNG Complete Kit, all four Wildshot specs, unchanged
 public `zombie/ghoul`, unchanged fixtures, and frozen digest
 `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`.
 
+`engine/enemy-expansion-en-e06-fairy-idle.js` owns the first private Wave 2
+identity boundary. It freezes five EN-E06 family contract cards and the exact
+approved Bramblewing Scout Idle F1-F2 pixels. Its dedicated
+`small-winged-fey-v1` renderer paints a compact ground-clear body and connected
+leaf-veined wings directly under the standard 24x24 binary-alpha contract.
+Suggested translucency comes only from transparent negative-space windows
+inside opaque connected wing rims and veins; partial alpha and glow, pollen,
+sparkle, trail, or impact pixels remain absent.
+
+`engine/enemy-expansion-en-e06-fairy.js` is the separate private motion layer
+for that same one-sprite pass. Idle delegates to the approved source path and
+is checked byte-for-byte across all eight direction/frame cases. Walk adds four
+hover-travel phases; Attack adds four poses with a connected body-held thorn
+needle; Cast aliases Attack exactly; Hurt supplies white recoil plus colored
+brace; Death aliases Hurt H1,H2,H2,H2. Left is rendered as the exact mirror of
+Right. The full registry still contains only Bramblewing Scout and exposes zero
+public families. Neither Fairy module is imported by `sprite-engine.js`; the
+stable registry, `PUBLIC_ENEMIES`, selectors, persistence, packs, exports, and
+fixtures remain unchanged.
+
+The nested `npm run check:enemy-expansion-en-e06-fairy-idle` gate retains the
+approved eight-frame identity digest
+`017464b22419f24d2bec6988effe1e36695da0ded04e31d84954eb9941e7893f`.
+The nested `npm run check:enemy-expansion-en-e06-fairy` gate proves 80/80
+connected, bounded, ground-clear frames, exact Idle preservation, side mirrors,
+Cast/Death aliases, hard-alpha wing windows, deterministic raw/Complete B +
+Form evidence, unchanged 74/245 public state, and candidate digest
+`0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
+The designer approved the exact hash-frozen full suite on 2026-08-09. Bounded
+branch publication is authorized; another Fairy variant, Hag art,
+registration, fixtures, effects, and later Wave 2 work remain separate gates.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and
