@@ -70,9 +70,10 @@ file; the published Kraken and Lava checkpoints and everything below
 - Validation state: focused Boss and full repository gates pass with the public
   Enemy catalog still 74/245 and all 232 fixture PNGs unchanged; the accepted
   full gate completes in `128s`.
-- Required next action: push this documentation reconciliation, verify clean
-  upstream parity, and only then open Eclipse Unicorn Sovereign as the final
-  one-boss candidate lane. Do not run the frozen `export:bosses:13` command.
+- Fulfilled continuation: the implementation and documentation reconciliation
+  are pushed and clean upstream parity is verified. Eclipse Unicorn Sovereign
+  may now open as the final isolated one-boss candidate lane. Do not run the
+  frozen `export:bosses:13` command.
 
 ## Published Preceding Checkpoint - Approved Abyssal Crown-Kraken Animation
 
