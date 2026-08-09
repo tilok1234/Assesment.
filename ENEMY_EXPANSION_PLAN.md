@@ -2415,9 +2415,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Authorization: the designer's `sure lets do 123` on 2026-08-09 authorized
   Stormcrown publication, nine-enemy registration, and then this generic
   assembler integration.
-- Public boundary: `ENEMY_EXPANSION_CONSUMER_REGISTRY` now aliases the exact
-  13-family / 39-variant stable registry. `PUBLIC_ENEMIES` is therefore 70
-  families / 241 variants while legacy `ENEMIES` remains 57/202.
+- Public boundary at that checkpoint: `ENEMY_EXPANSION_CONSUMER_REGISTRY`
+  aliased the exact 13-family / 39-variant EN-E04 stable registry.
+  `PUBLIC_ENEMIES` therefore became 70 families / 241 variants while legacy
+  `ENEMIES` remained 57/202. The later EN-E05 registration extends only stable
+  state to 17/43 and deliberately leaves this consumer boundary unchanged.
 - Generic coverage: editor selectors and sanitizers, persistence, Enemy
   randomization, thumbnails, full/animation/direction sheets, ordinary packs,
   Complete Character Kits and Packs, Wildshot validation, None/Complete B/
@@ -2449,11 +2451,12 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `active - Lich Soul Regent visually approved and published at 4cebc7b`
+- Status: `registered stable-only at 7d273ef; assembler integration not authorized`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
 - Priority-first: Ghoul upgrade, Mummy, Vampire, Revenant, Lich
-- Active gate: none; stop at the clean published Lich checkpoint while
-  registration, fixtures, and Wave 2 remain gated
+- Active gate: none; stop at the clean published registration checkpoint while
+  consumer integration, public Ghoul replacement, fixtures, and Wave 2 remain
+  gated
 
 Shared leverage: broken posture, wrappings, capes, exposed bone, floating hems,
 and necrotic palette families. The Ghoul change is an explicit upgrade to the
@@ -2743,9 +2746,46 @@ silently alter unrelated Zombie variants.
 - Publication: the exact approved ten-file implementation is committed and
   pushed at `4cebc7b09f979913d73330d275ac3e4729511465`; generated review artifacts
   remain ignored.
-- Required next action: stop at this clean published checkpoint. Keep Lich
-  registration and fixtures excluded; EN-E05 registration and Wave 2 require
-  later explicit continuation.
+- Required next action at this historical lane: stop at the clean published
+  Lich checkpoint. The designer's later `lets do next` authorizes only the
+  separate stable-registration gate below; fixtures and Wave 2 remain excluded.
+
+#### Five-undead stable registration checkpoint
+
+- Gate ID: `en-e05-five-undead-registration-v1`; status: `authorized`,
+  implemented, committed, and pushed at
+  `7d273ef52960e5bd4568ce3d47148c1b68fdcf44` on
+  `codex/en-e05-registration`, based exactly on clean published Lich handoff
+  `c0e438ba25de3f0adc063e6b294cba6c7b5182be`.
+- Authorization: after the final repaired Lich was approved, published, and
+  reconciled, the designer said `lets do next` on 2026-08-09. The Lich handoff
+  explicitly separated EN-E05 registration from Wave 2, so only the
+  registration dependency is open.
+- Exact scope: register approved `mummy/tomb-walker`,
+  `vampire/night-noble`, `revenant/grave-oathkeeper`, and
+  `lich/soul-regent` as four stable families. Record approved
+  `ghoul-upgrade/ghoul` separately as the proposed replacement for legacy
+  `zombie/ghoul`; do not collide with or rewrite the legacy Zombie family.
+- Parity: five complete 80-frame sheets pass. All 400 candidate/registered
+  frames match, and all 320 new-family frames match through the composed stable
+  registry. Frozen registration digest:
+  `732c6097b237131e85bdf435112c2bed7ec1f8bf8317dee4e42605f0c1730d32`.
+- Registry boundary: stable expansion state advances from 13/39 to 17/43.
+  `ENEMY_EXPANSION_CONSUMER_REGISTRY` remains the exact EN-E04 13/39 boundary,
+  and `PUBLIC_ENEMIES` remains 70/241. Legacy `ENEMIES` remains 57/202.
+- Ghoul/fixture firewall: public `zombie/ghoul` retains exact object and
+  80-frame pixel identity; its committed fixture remains SHA-256
+  `a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2`.
+  All 232 frozen PNG fixtures remain untouched.
+- Validation: the new focused gate, all five approved EN-E05 source gates, all
+  affected historical expansion gates, fast validation (`51.6s`), and full
+  validation (`101.2s`) pass.
+- Exclusions: assembler consumer exposure, selectors, random generation,
+  persistence, public Ghoul replacement, packs, fixture generation or
+  regeneration, schema or reviewed-pixel changes, effects, release, and Wave 2.
+- Required next action: stop at this clean published registration checkpoint.
+  Consumer integration, public Ghoul replacement, fixtures, and Wave 2 each
+  require later explicit authorization.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not

@@ -549,10 +549,11 @@ nine approved EN-E04 enemies as Naga, Merfolk, and Birdfolk common/specialist/
 elite families. All 720 candidate/registered frames match at aggregate digest
 `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
 The bounded registration checkpoint is published at `6f228fb`.
-The stable registry reaches 13 families / 39 variants. The separately
-authorized assembler consumer-integration checkpoint is now implemented on
-`codex/en-e04-assembler-integration`: the consumer registry reuses that exact
-stable object and the generic public catalog reaches 70 families / 241 variants.
+At the EN-E04 checkpoint the stable registry reached 13 families / 39 variants.
+The separately authorized assembler consumer-integration checkpoint is
+implemented on `codex/en-e04-assembler-integration`: the consumer registry
+reused that exact EN-E04 object and the generic public catalog reached 70
+families / 241 variants.
 All 720 EN-E04 public frames, nine full sheets, scoped exports, thumbnails,
 randomization, persistence, Complete Kits/Packs, Wildshot intake, outline modes,
 and Form shading pass without family-specific consumer branches. The renderer
@@ -635,6 +636,23 @@ authorizing only bounded publication. The Lich remains internal, non-public,
 and fixture-free. Registration, fixtures, effects, EN-E05 registration, and
 Wave 2 require later explicit gates. The exact Lich implementation is
 published at `4cebc7b`.
+The clean reconciled Lich handoff is `c0e438b`. The designer then said `lets do
+next`, which authorizes the separate stable-only EN-E05 registration dependency
+without opening consumer integration or Wave 2. Gate
+`en-e05-five-undead-registration-v1` on `codex/en-e05-registration` registers
+exact approved Mummy, Vampire, Revenant, and Lich families plus a separate
+internal Ghoul replacement record targeting legacy `zombie/ghoul`. Five
+complete sheets, 400 candidate/registered parity frames, and 320 composed
+stable-registry parity frames pass at aggregate digest
+`732c6097b237131e85bdf435112c2bed7ec1f8bf8317dee4e42605f0c1730d32`.
+Stable expansion state advances to 17 families / 43 variants while assembler
+consumers remain on the exact EN-E04 13/39 boundary and the public catalog
+remains 70/241. Public Ghoul and its frozen fixture remain exact; all 232 PNG
+fixtures are untouched. Fast validation passes in `51.6s` and full validation
+passes in `101.2s`. The bounded implementation is published at `7d273ef`.
+Consumer exposure, public Ghoul replacement, fixture generation or
+regeneration, effects, release, and Wave 2 still require separate explicit
+authorization.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

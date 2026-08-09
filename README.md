@@ -835,10 +835,11 @@ the later authorized assembler integration below now exposes the same exact
 ## EN-E04 assembler consumer integration implemented
 
 Branch `codex/en-e04-assembler-integration` activates gate
-`en-e04-assembler-consumers-v1`. `ENEMY_EXPANSION_CONSUMER_REGISTRY` now aliases
-the exact stable registry, so the generic public catalog is 70 families / 241
-variants and adds Naga, Merfolk, and Birdfolk without family-specific editor or
-export branches. Selectors, sanitization, persistence, randomization,
+`en-e04-assembler-consumers-v1`. At that checkpoint,
+`ENEMY_EXPANSION_CONSUMER_REGISTRY` aliased the exact 13-family stable registry,
+so the generic public catalog became 70 families / 241 variants and added Naga,
+Merfolk, and Birdfolk without family-specific editor or export branches.
+Selectors, sanitization, persistence, randomization,
 thumbnails, full/animation/direction sheets, ordinary packs, Complete Kits and
 Packs, Wildshot validation, None/Complete B/Selective C outlines, and Form
 shading all consume the same public facade.
@@ -856,6 +857,36 @@ lower-body pixels during generic assembled rendering. The frozen 232-sheet
 legacy `asset-pack/` remains unchanged.
 The bounded implementation is committed and pushed at `cedc774` on
 `codex/en-e04-assembler-integration`.
+
+The later EN-E05 stable-registration checkpoint deliberately separates the
+boundaries again: assembler consumers stay on this exact 13-family / 39-variant
+EN-E04 registry while stable registration advances independently to 17/43.
+
+## EN-E05 stable registration checkpoint
+
+Branch `codex/en-e05-registration`, based exactly on clean Lich handoff
+`c0e438b`, activates `en-e05-five-undead-registration-v1`. It registers the
+exact approved Mummy Tomb Walker, Vampire Night Noble, Revenant Grave
+Oathkeeper, and Lich Soul Regent as four stable one-variant families. The
+approved Ghoul upgrade is recorded separately as an internal replacement record
+targeting legacy `zombie/ghoul`; it is not exposed as a duplicate public family.
+
+Run `npm.cmd run check:enemy-expansion-en-e05-registration` to validate five
+complete 80-frame sheets, all 400 candidate/registered parity frames, and all
+320 new-family frames through the composed stable registry. The frozen
+aggregate digest is
+`732c6097b237131e85bdf435112c2bed7ec1f8bf8317dee4e42605f0c1730d32`.
+Stable expansion state is now 17 families / 43 variants, but the assembler
+consumer registry remains 13/39 and the generic public catalog remains 70/241.
+Public `zombie/ghoul`, its 80-frame pixels, Zombie siblings, and the frozen
+Ghoul fixture SHA-256
+`a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2`
+remain exact. Fast validation passes in `51.6s`; full validation passes in
+`101.2s`; all 232 frozen PNG fixtures remain unchanged. The implementation is
+committed and pushed at `7d273ef`.
+
+Assembler consumer exposure, public Ghoul replacement, fixture generation or
+regeneration, effects, release, and Wave 2 remain separate explicit gates.
 
 ## EN-E05 Lich Soul Regent full-suite approved internal lane
 
@@ -890,10 +921,12 @@ validation passes in `52.4s` and full validation passes in `104.7s`, with
 the public 70/241 catalog and all 232 fixtures unchanged. After requesting that
 the repeated square lower-robe panels be replaced with tapered folds, the
 designer reviewed the regenerated exact comparison and paired labeled surfaces
-and replied `approved` on 2026-08-09. This authorizes only bounded publication
-of the hash-frozen internal lane. Lich registration, fixture generation,
-EN-E05 registration, Wave 2, effects, and broader work remain excluded. The
-exact approved implementation is committed and pushed at `4cebc7b`.
+and replied `approved` on 2026-08-09. That lane authorized only bounded
+publication of the hash-frozen internal candidate. The later separate
+registration checkpoint above now registers its exact pixels stable-only;
+consumer exposure, fixture generation, Wave 2, effects, and broader work remain
+excluded. The exact approved Lich implementation is committed and pushed at
+`4cebc7b`.
 
 ## EN-E05 Revenant Grave Oathkeeper full-suite approved internal lane
 

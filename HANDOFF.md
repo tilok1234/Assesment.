@@ -15,7 +15,52 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Lich Full-Suite Approved And Published
+## Immediate Continuation Checkpoint - EN-E05 Stable Registration Published
+
+Start here in a new task. After the repaired Lich Soul Regent was approved,
+published, and reconciled, the designer said `lets do next` on 2026-08-09. The
+clean Lich handoff named EN-E05 registration and Wave 2 as separate later gates,
+so this continuation authorizes only the stable registration dependency.
+
+- Repository/branch: current v2 checkout on `codex/en-e05-registration`, based
+  exactly on clean published Lich handoff
+  `c0e438ba25de3f0adc063e6b294cba6c7b5182be`.
+- Gate: `en-e05-five-undead-registration-v1`; status `authorized`, implemented,
+  committed, and pushed at
+  `7d273ef52960e5bd4568ce3d47148c1b68fdcf44`.
+- Registration shape: exact approved `mummy/tomb-walker`,
+  `vampire/night-noble`, `revenant/grave-oathkeeper`, and
+  `lich/soul-regent` enter the stable registry. Approved
+  `ghoul-upgrade/ghoul` is recorded in a separate internal replacement
+  registry targeting legacy `zombie/ghoul`, because the expansion registry may
+  not collide with legacy family IDs.
+- Pixel evidence: five complete 80-frame sheets validate; all 400
+  candidate/registered frames match, and all 320 new-family frames match again
+  through the composed stable registry. Frozen aggregate digest:
+  `732c6097b237131e85bdf435112c2bed7ec1f8bf8317dee4e42605f0c1730d32`.
+- Registry firewall: stable expansion state is 17 families / 43 variants across
+  EN-E01, EN-E02, EN-E04, and EN-E05. The assembler consumer registry remains
+  the exact EN-E04 13-family / 39-variant boundary, and the generic public
+  catalog remains 70 families / 241 variants. Legacy stays 57/202.
+- Ghoul firewall: public `zombie/ghoul` retains exact object identity and its
+  raw 80-frame digest
+  `2eee0fd08ce8d22cc2d5dc3433746d54b64983216d4b800f93119f9ebec5f735`;
+  `asset-pack/enemies/zombie-ghoul.png` remains SHA-256
+  `a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2`.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e05-registration`.
+  It passes five sheet contracts, 400 source-parity frames, 320 stable-parity
+  frames, deterministic registration provenance, registry counts, facade
+  isolation, and the unchanged public/fixture boundaries.
+- Protected result: all five approved EN-E05 source gates and every affected
+  EN-F00/EN-E01/EN-E02/EN-E03/EN-E04 historical registration or consumer gate
+  pass. Fast validation passes in `51.6s`; full `npm.cmd run check` passes in
+  `101.2s`; all 232 frozen PNG fixtures remain unchanged.
+- Required next action: stop at this clean published registration checkpoint.
+  Do not expose EN-E05 through assembler consumers, replace public Ghoul,
+  regenerate or accept fixtures, change reviewed pixels, add effects, release,
+  or begin Wave 2. Each requires a later explicit authorization.
+
+## Approved Preceding Checkpoint - EN-E05 Lich Full-Suite Approved And Published
 
 Start here in a new task. After the exact Revenant full-suite candidate was
 approved, published, and reconciled, the designer said `cool lets do next` on
