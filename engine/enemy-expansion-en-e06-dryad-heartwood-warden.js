@@ -39,7 +39,7 @@ export const EN_E06_HEARTWOOD_WARDEN_CONTRACT = deepFreeze({
   family: 'dryad',
   variant: 'heartwood-warden',
   role: 'elite',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'branch-pauldron-heartwood-fey-guardian-v1',
   silhouette: 'A dense ordinary-height living-wood fey with connected branch pauldrons, a ringed heartwood breastplate, short crown prongs, reinforced root greaves, and one visibly forking warding arm. The frame remains upright and fey-scaled rather than broad or trunk-shaped like a Treant.',
   identity: 'Deep red heartwood, warm cambium seams, evergreen crown leaves, amber growth rings, dark ironwood plates, and broad body-connected branch armor establish the elite guardian without introducing a separate shield or environmental state.',
@@ -62,12 +62,12 @@ export const EN_E06_HEARTWOOD_WARDEN_DATA = deepFreeze({
 
 export const EN_E06_HEARTWOOD_WARDEN_GATE = deepFreeze({
   id: 'en-e06-dryad-heartwood-warden-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-09',
   authorizationEvidence: 'After the approved-enemy assembler integration and Complete B actor export were committed and pushed at 90ac018923fbaa9906cd47cdc9ef22f0db77336a, the designer said: hey lets keep going with the 80 enemies plan. Following the documented EN-E06 Dryad role order, this authorizes only one complete private elite Heartwood Warden 80-frame pass.',
-  approvedOn: null,
-  approvalEvidence: null,
-  publishedImplementation: null,
+  approvedOn: '2026-08-09',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite animations plus the Treant/Grove Tender/Spore Cantor/Heartwood Warden comparison were presented, and the three exact PNG review boards were opened together in Aseprite. The designer replied: approved. This approves only the frozen 80-frame Heartwood Warden, bounded implementation 8a790e3f0d02cf64763733f83d17890c79ce83fc, its approval record, and branch publication. Redcap, Nymph, EN-E07, public-registration changes, fixtures, effects, and release remain separate.',
+  publishedImplementation: '8a790e3f0d02cf64763733f83d17890c79ce83fc',
   baseCheckpoint: '90ac018923fbaa9906cd47cdc9ef22f0db77336a',
   precedingApproval: {
     gateId: EN_E06_SPORE_CANTOR_GATE.id,
@@ -106,7 +106,7 @@ export const EN_E06_HEARTWOOD_WARDEN_GATE = deepFreeze({
     'shield blooms', 'summoned plants', 'trails', 'projectiles', 'impacts', 'ground cracks',
     'effects', 'release', 'later EN-E06 sprites', 'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Stop for explicit visual approval of the exact frozen Heartwood Warden candidate. Do not commit, publish, change public Dryad registration, generate fixtures, start Redcap or Nymph, add effects, release, or broaden Wave 2 before that approval.',
+  nextGate: 'The exact Heartwood Warden implementation is visually approved at 8a790e3f0d02cf64763733f83d17890c79ce83fc and authorized for bounded branch publication. After push, stop. Do not change public Dryad registration, generate fixtures, start Redcap or Nymph, add effects, release, open EN-E07, or broaden Wave 2 without another explicit gate.',
 });
 
 export const EN_E06_HEARTWOOD_WARDEN_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

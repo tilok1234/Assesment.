@@ -59,13 +59,14 @@ function captureLegacyFrame(spec, direction, animation, frame) {
   return Object.freeze({ pixels: Object.freeze(pixels), alpha: Uint8Array.from(pixels, (color) => color === null ? 0 : 255), opaquePixels: occupied.length, bounds: bounds && Object.freeze(bounds), outOfBoundsWrites: Object.freeze(outOfBoundsWrites), digest: pixelDigest(pixels), alphaDigest: alphaDigest(pixels) });
 }
 
-check(EN_E06_HEARTWOOD_WARDEN_GATE.status === 'candidate' && EN_E06_HEARTWOOD_WARDEN_GATE.approvedOn === null && EN_E06_HEARTWOOD_WARDEN_GATE.publishedImplementation === null, 'Heartwood Warden must remain an unpublished visual candidate');
+check(EN_E06_HEARTWOOD_WARDEN_GATE.status === 'approved' && EN_E06_HEARTWOOD_WARDEN_GATE.approvedOn === '2026-08-09' && EN_E06_HEARTWOOD_WARDEN_GATE.publishedImplementation === '8a790e3f0d02cf64763733f83d17890c79ce83fc', 'Heartwood Warden approval record drifted');
+check(EN_E06_HEARTWOOD_WARDEN_GATE.approvalEvidence.includes('three exact PNG review boards were opened together in Aseprite') && EN_E06_HEARTWOOD_WARDEN_GATE.approvalEvidence.includes('designer replied: approved') && EN_E06_HEARTWOOD_WARDEN_GATE.approvalEvidence.includes('Redcap, Nymph, EN-E07'), 'approval evidence drifted');
 check(EN_E06_HEARTWOOD_WARDEN_GATE.authorizedOn === '2026-08-09' && EN_E06_HEARTWOOD_WARDEN_GATE.authorizationEvidence.includes('hey lets keep going with the 80 enemies plan') && EN_E06_HEARTWOOD_WARDEN_GATE.authorizationEvidence.includes('one complete private elite Heartwood Warden'), 'authorization evidence drifted');
 check(EN_E06_HEARTWOOD_WARDEN_GATE.baseCheckpoint === '90ac018923fbaa9906cd47cdc9ef22f0db77336a', 'candidate base checkpoint drifted');
 check(EN_E06_HEARTWOOD_WARDEN_GATE.precedingApproval.gateId === EN_E06_SPORE_CANTOR_GATE.id && EN_E06_HEARTWOOD_WARDEN_GATE.precedingApproval.publishedImplementation === EN_E06_SPORE_CANTOR_GATE.publishedImplementation && EN_E06_HEARTWOOD_WARDEN_GATE.precedingApproval.publishedApprovalRecord === '61d1fa4d9083ccd3c20951ff2a360a653d408b6c', 'approved Spore Cantor predecessor drifted');
 check(EN_E06_HEARTWOOD_WARDEN_GATE.scope.includes('complete 80-frame Heartwood Warden') && EN_E06_HEARTWOOD_WARDEN_GATE.animationContract.includes('connected fork') && EN_E06_HEARTWOOD_WARDEN_GATE.animationContract.includes('Cast aliases Attack exactly'), 'full-suite or motion contract drifted');
 check(EN_E06_HEARTWOOD_WARDEN_GATE.exclusions.includes('asset-pack fixture generation or regeneration') && EN_E06_HEARTWOOD_WARDEN_GATE.exclusions.includes('Redcap implementation') && EN_E06_HEARTWOOD_WARDEN_GATE.exclusions.includes('protective auras') && EN_E06_HEARTWOOD_WARDEN_GATE.exclusions.includes('bark shards'), 'scope exclusions drifted');
-check(EN_E06_HEARTWOOD_WARDEN_GATE.nextGate.includes('explicit visual approval') && EN_E06_HEARTWOOD_WARDEN_GATE.nextGate.includes('Do not commit'), 'candidate stop gate drifted');
+check(EN_E06_HEARTWOOD_WARDEN_GATE.nextGate.includes('visually approved') && EN_E06_HEARTWOOD_WARDEN_GATE.nextGate.includes('After push, stop') && EN_E06_HEARTWOOD_WARDEN_GATE.nextGate.includes('without another explicit gate'), 'approved stop gate drifted');
 check(Object.isFrozen(EN_E06_HEARTWOOD_WARDEN_GATE) && Object.isFrozen(EN_E06_HEARTWOOD_WARDEN_DATA), 'gate and data must be deeply immutable');
 check(EN_E06_HEARTWOOD_WARDEN_CONTRACT.family === 'dryad' && EN_E06_HEARTWOOD_WARDEN_CONTRACT.variant === 'heartwood-warden' && EN_E06_HEARTWOOD_WARDEN_CONTRACT.role === 'elite', 'candidate contract drifted');
 check(EN_E06_HEARTWOOD_WARDEN_CONTRACT.silhouette.includes('connected branch pauldrons') && EN_E06_HEARTWOOD_WARDEN_CONTRACT.effectBoundary.includes('Protective auras') && EN_E06_HEARTWOOD_WARDEN_CONTRACT.effectBoundary.includes('remain external'), 'Dryad identity/effect boundary drifted');
@@ -73,7 +74,7 @@ check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'eight-
 
 check(EN_E06_CONTRACT_CARDS[0].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Fairies must remain approved');
 check(EN_E06_CONTRACT_CARDS[1].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Hags must remain approved');
-check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/implemented-full-candidate', 'Dryad role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/implemented-full-approved', 'Dryad role-order status drifted');
 for (const card of EN_E06_CONTRACT_CARDS.slice(3)) check(card.variants.every(({ status }) => status === 'planned'), `${card.id} must remain contract-only`);
 check(EN_E06_HEARTWOOD_WARDEN_REGISTRY.families.length === 1 && EN_E06_HEARTWOOD_WARDEN_REGISTRY.publicFamilies.length === 0 && EN_E06_HEARTWOOD_WARDEN_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);

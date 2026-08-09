@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Heartwood Warden Candidate Ready
+## Immediate Continuation Checkpoint - Heartwood Warden Approved
 
 Start here in a new task. This is the only active continuation section in this
 file; later checkpoints are historical provenance.
@@ -28,6 +28,10 @@ file; later checkpoints are historical provenance.
   said `hey lets keep going with the 80 enemies plan`. Following the documented
   EN-E06 Dryad role order, this opens only one complete elite Heartwood Warden
   80-frame candidate.
+- Approval: the exact raw/no-outline and Complete B + Form animations plus the
+  Treant/Grove/Spore/Heartwood comparison were presented, and all three exact
+  PNG boards were opened together in Aseprite. The designer replied `approved`
+  on 2026-08-09. Approval applies only to the frozen candidate digest below.
 - Candidate scope: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact
   Cast-to-Attack aliases, and exact Death-to-Hurt aliases H1,H2,H2,H2 across
   Down, Left, Right, and Up.
@@ -60,17 +64,18 @@ file; later checkpoints are historical provenance.
 - Protected state: every approved Fairy, Hag, Grove Tender, and Spore Cantor
   digest remains exact; public catalog remains 80 families / 259 variants with
   exactly two public Dryads; all 232 committed fixtures remain untouched.
-- Publication state: candidate source and documentation are intentionally
-  uncommitted and unpushed. Review artifacts are ignored evidence. Stop for the
-  designer's explicit visual decision before commit, push, public-registration
-  changes, Redcap, Nymph, EN-E07, fixtures, effects, or release.
+- Publication state: the exact approved implementation is committed at
+  `8a790e3f0d02cf64763733f83d17890c79ce83fc`. The approval record is ready for
+  bounded commit and branch push; review artifacts remain ignored evidence.
+  After publication, stop before public-registration changes, Redcap, Nymph,
+  EN-E07, fixtures, effects, or release.
 
 Suggested opening request for the next chat:
 
 > Resume `codex/en-e06-dryad-heartwood-warden` from the exact candidate gate in
-> `HANDOFF.md`. Re-run its focused checker, open the raw, Complete B + Form, and
-> four-way comparison PNGs in Aseprite, and wait for explicit visual approval
-> before committing or pushing.
+> `HANDOFF.md`. Verify implementation `8a790e3`, commit and push the exact
+> approval record, then stop. Do not infer Redcap, Nymph, registration,
+> fixtures, effects, release, or EN-E07 authorization.
 
 ## Historical Integration And Actor Export Checkpoint
 

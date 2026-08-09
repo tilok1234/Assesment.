@@ -110,10 +110,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Spore Cantor at digest
   `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-  is ready for visual review. Candidate source is uncommitted and unpushed;
-  public Dryad remains exactly two variants within 80/259. Do not commit, push,
-  change registration, start Redcap/Nymph/EN-E07, generate fixtures, add
-  effects, or release before explicit approval.
+  was visually approved on 2026-08-09. The frozen implementation is committed
+  at `8a790e3f0d02cf64763733f83d17890c79ce83fc`; only its bounded approval-record
+  commit and branch publication are authorized. Public Dryad remains exactly
+  two variants within 80/259. After push, stop before registration changes,
+  Redcap/Nymph/EN-E07, fixtures, effects, or release.
 - The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved

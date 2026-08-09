@@ -1072,9 +1072,11 @@ frames, approved-source preservation, and the public/fixture firewall. The
 focused gate passes 80/80 connected, bounded, grounded frames and 80/80 pixel
 plus alpha distinctions from all three comparison actors at candidate digest
 `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
-This candidate is private, uncommitted, and unpushed pending exact visual
-approval. Redcap, Nymph, EN-E07, registration changes, fixtures, effects, and
-release remain closed.
+The exact packet was visually approved on 2026-08-09, and its frozen
+implementation is committed at `8a790e3f0d02cf64763733f83d17890c79ce83fc`.
+Only the bounded approval-record commit and branch publication are authorized.
+Redcap, Nymph, EN-E07, registration changes, fixtures, effects, and release
+remain closed.
 
 ## Approved enemy backlog integration published
 

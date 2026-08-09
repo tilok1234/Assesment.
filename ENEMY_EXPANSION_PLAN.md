@@ -20,9 +20,11 @@
   alias, mirror, and 80/80 pixel plus alpha-silhouette distinction gates
   against public Treant and both approved Dryads at digest
   `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
-  It remains private and unapproved. Stop for exact raw, Complete B + Form, and
-  four-way comparison review before commit or push. Redcap, Nymph, EN-E07,
-  fixtures, effects, registration changes, and release remain closed.
+  The exact raw, Complete B + Form, and four-way comparison packet was visually
+  approved on 2026-08-09, and the frozen implementation is committed at
+  `8a790e3f0d02cf64763733f83d17890c79ce83fc`. Bounded approval-record commit
+  and branch publication are authorized. Redcap, Nymph, EN-E07, fixtures,
+  effects, registration changes, and release remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -2862,7 +2864,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `active - Heartwood Warden complete 80-frame candidate ready for visual review`
+- Status: `Heartwood Warden complete 80-frame suite approved; bounded publication authorized`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3229,16 +3231,22 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 - Historical stop gate: that approval did not authorize Heartwood Warden. The
   designer's later continuation below opens it separately.
 
-#### Dryad Heartwood Warden complete-suite candidate
+#### Dryad Heartwood Warden complete suite approved
 
-- Gate ID: `en-e06-dryad-heartwood-warden-full-v1`; status: `candidate`,
-  internal, uncommitted, and unpushed on
+- Gate ID: `en-e06-dryad-heartwood-warden-full-v1`; status: `approved`,
+  internal, with implementation committed at
+  `8a790e3f0d02cf64763733f83d17890c79ce83fc` on
   `codex/en-e06-dryad-heartwood-warden`, based exactly on clean pushed
   integration/export checkpoint
   `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
 - Authorization: after that checkpoint was published, the designer said `hey
   lets keep going with the 80 enemies plan`. Following the documented Dryad
   role order, this opens only one complete elite Heartwood Warden.
+- Approval: the exact labeled raw/no-outline and Complete B + Form animations
+  plus the four-way comparison were presented, and all three exact PNG boards
+  were opened together in Aseprite. The designer replied `approved` on
+  2026-08-09. Approval applies only to the frozen 80-frame digest below and
+  authorizes its bounded approval record and branch publication.
 - Identity: dense ordinary-height living-wood fey with deep red heartwood,
   warm cambium seams, evergreen crown leaves, connected branch pauldrons,
   ringed breastplate, short crown prongs, reinforced root greaves, and one
@@ -3271,10 +3279,9 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 - Broader validation: all nine affected EN-E06 predecessor gates, the exact
   1,200-frame approved-integration gate, `check:fast`, and the full project
   suite pass; the full run completes in 121.5s with all 232 fixtures valid.
-- Required next action: review the exact raw, Complete B + Form, and four-way
-  comparison artifacts together. Do not commit, push, alter registration,
-  start Redcap or Nymph, generate fixtures, add effects, release, or open EN-E07
-  without explicit visual approval.
+- Required next action: commit and push the bounded approval record, then stop.
+  Do not alter registration, start Redcap or Nymph, generate fixtures, add
+  effects, release, or open EN-E07 without another explicit authorization.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3536,11 +3543,12 @@ remain unchanged. Focused, fast, and full validation pass. The implementation
 and reconciled documentation are committed and pushed at
 `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
 
-The only active enemy-art gate is the isolated private Heartwood Warden
-complete-suite candidate on `codex/en-e06-dryad-heartwood-warden`. Its exact
+The isolated private Heartwood Warden complete suite on
+`codex/en-e06-dryad-heartwood-warden` is visually approved. Its exact
 80-frame evidence is hash-frozen and technically validated at digest
 `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`,
-but visual approval is pending. Do not commit or push it before that decision.
+and implementation `8a790e3f0d02cf64763733f83d17890c79ce83fc` is committed.
+Only its bounded approval-record commit and branch publication are authorized.
 Redcap, Nymph, EN-E07, the three EN-E03 Idle-only variants, public-registration
 changes, fixtures, effects, and release remain separate closed gates.
 

@@ -138,7 +138,9 @@ candidate passes 80/80 connected, bounded, grounded, hard-alpha, Treant/Grove/
 Spore pixel, and Treant/Grove/Spore alpha-silhouette distinction gates at
 digest `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
 The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-is ready for visual review. It is intentionally uncommitted and unpushed.
+was visually approved on 2026-08-09. The frozen implementation is committed at
+`8a790e3f0d02cf64763733f83d17890c79ce83fc`; only the bounded approval record
+and branch publication are authorized.
 Redcap, Nymph, EN-E07, registration changes, fixtures, shared renderer/schema
 changes, effects, and release remain closed.
 

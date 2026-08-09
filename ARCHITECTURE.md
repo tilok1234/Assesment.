@@ -845,9 +845,11 @@ structure, exact aliases and mirrors, 80/80 pixel and alpha distinctions from
 all three comparison actors, unchanged public 80/259 and two-variant Dryad
 boundaries, deterministic five-artifact evidence, and candidate digest
 `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
-The candidate remains private, uncommitted, and unpushed pending exact visual
-approval; registration changes, fixtures, Redcap, Nymph, effects, release, and
-later Wave 2 work remain closed.
+The exact packet was visually approved on 2026-08-09 and its frozen
+implementation is committed at `8a790e3f0d02cf64763733f83d17890c79ce83fc`.
+Only the bounded approval-record commit and branch publication are authorized;
+registration changes, fixtures, Redcap, Nymph, effects, release, and later Wave
+2 work remain closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
