@@ -246,8 +246,13 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   was opened together in Aseprite and visually approved on 2026-08-10. The
   frozen implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval
   record `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
-  tracked branch. No subsequent art gate is active.
-Fixture regeneration, Nymph, the legacy renderer split, boss
+  tracked branch. The later common Nymph Spring Dancer candidate on
+  `codex/en-e06-nymph-spring-dancer` passes 80/80 connected, bounded, grounded,
+  hard-alpha, Elf/Fairy/Grove pixel, and alpha-silhouette distinction gates at
+  digest `b68906d962e16611384e419610324c6a9934d63ab329963f0734e83255dabe8c`.
+  Its exact five-artifact packet is frozen for visual approval; no commit or
+  publication is authorized.
+Fixture regeneration, later Nymphs, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`

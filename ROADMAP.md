@@ -145,9 +145,14 @@ The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
 was opened together in Aseprite and visually approved on 2026-08-10. The frozen
 implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval record
 `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
-tracked branch. No subsequent art gate is active. Nymph, EN-E07, registration
-changes, fixtures, shared renderer/schema changes, effects, and release remain
-closed.
+tracked branch. The designer's later `lets do next` opens only common Nymph
+Spring Dancer on `codex/en-e06-nymph-spring-dancer`. Its private hash-frozen
+80-frame candidate passes 80/80 connected, bounded, grounded, hard-alpha,
+Elf/Fairy/Grove pixel, and alpha-silhouette distinctions at digest
+`b68906d962e16611384e419610324c6a9934d63ab329963f0734e83255dabe8c`.
+The exact five-artifact packet is frozen for visual approval. No candidate
+commit or publication is authorized. Later Nymphs, EN-E07, registration,
+fixtures, shared renderer/schema changes, effects, and release remain closed.
 
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,

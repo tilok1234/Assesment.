@@ -169,7 +169,7 @@ check(EN_E06_CONTRACT_CARDS[1].variants[1].status === 'implemented-full-approved
 check(EN_E06_CONTRACT_CARDS[1].variants[2].status === 'implemented-full-approved', 'Blackthorn Matron must retain its full approval');
 check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/implemented-full-approved', 'Dryad role-order status drifted');
   check(EN_E06_CONTRACT_CARDS[3].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Redcap role-order statuses must remain approved');
-check(EN_E06_CONTRACT_CARDS[4].variants.every(({ status }) => status === 'planned'), 'Nymph must remain contract-only');
+check(EN_E06_CONTRACT_CARDS[4].variants.map(({ status }) => status).join('/') === 'implemented-full-candidate/planned/planned', 'Nymph role-order status drifted');
 
 check(EN_E06_PETALCROWN_DUELIST_DATA.alphaPolicy === 'binary-crown-wing-negative-space', 'the elite renderer data must retain its hard-alpha crown-wing policy');
 check(EN_E06_PETALCROWN_DUELIST_DATA.effectBoundary.includes('external-dash-trails') && EN_E06_PETALCROWN_DUELIST_DATA.bakedEffects.length === 0, 'dash trails and later effects must remain external');

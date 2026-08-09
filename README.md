@@ -1133,6 +1133,19 @@ record `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on th
 tracked branch. No subsequent art gate is active; Nymph, EN-E07, registration
 changes, fixtures, effects, and release remain closed.
 
+The separately authorized Spring Dancer is the first private Nymph: a slender
+humanoid fey with flowing willow hair, pointed ears, a leaf-fastened spring
+dress, connected rose ribbon hem, and light dance steps. Petals, mist, water
+ribbons, sparkles, and detached trails remain external. Run
+`npm.cmd run review:enemy-expansion-en-e06-nymph-spring-dancer` for the raw,
+Complete B + Form, Elf/Fairy/Grove/Dancer comparison, and paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e06-nymph-spring-dancer` for the 80-frame
+structural and firewall gate. It passes at digest
+`b68906d962e16611384e419610324c6a9934d63ab329963f0734e83255dabe8c`,
+with 80/80 connected, bounded, grounded frames and 72/72 colored identity
+frames. The exact packet is frozen for visual approval. No commit, publication,
+registration, later Nymph, fixture, effect, release, or EN-E07 work is open.
+
 ## Approved enemy backlog integration published
 
 Branch `codex/approved-enemy-assembler-integration` composes three explicit

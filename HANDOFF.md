@@ -15,11 +15,61 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Bloodcap Reaver Approved And Published
+## Immediate Continuation Checkpoint - Spring Dancer Awaiting Visual Approval
 
-Start here in a new task. This is the current clean published stopping
-checkpoint; later sections are published or historical provenance, and no
-follow-on art gate is active.
+Start here in a new task. This is the current stopping checkpoint; the exact
+private candidate is frozen for review and must not be committed or published
+before explicit visual approval.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e06-nymph-spring-dancer`, based exactly on clean pushed
+  Bloodcap handoff `f4ac500d39da0ac2ecd033c939ac582d06c2d052`.
+- Authorization: after Bloodcap Reaver was approved, committed, pushed, and
+  reconciled, the designer said `lets do next` on 2026-08-10. Under the EN-E06
+  family order, Nymph role order, and one-complete-sprite cadence, this opens
+  only common Spring Dancer.
+- Scope: one private 80-frame common Nymph across Idle F1-F2, Walk W1-W4,
+  Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
+- Identity: a clear slender humanoid fey with willow-green flowing hair,
+  pointed ears, open arms, leaf-fastened spring dress, rose ribbon edging, gold
+  accents, and light split-foot sandals.
+- Effects firewall: petals, pollen, mist, water ribbons, detached cloth trails,
+  sparkles, impact flashes, and ground motes remain external.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded hard-alpha
+  frames; 80/80 pixel and alpha-silhouette distinctions from public Elf Mage,
+  approved Bramblewing Scout, and approved Grove Tender; 72/72 colored identity
+  frames; 8/8 exact white flashes; opaque range 266-304; 7,925 Complete B
+  additions; 11,050 Form changes.
+- Broader validation: all fourteen EN-E06 focused gates and the frozen
+  1,200-frame approved-integration gate pass; `check:fast` passes in 57.2s and
+  full `check` in 107.6s with all 232 fixtures valid and untouched.
+- Frozen candidate digest:
+  `b68906d962e16611384e419610324c6a9934d63ab329963f0734e83255dabe8c`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `164692c6da7c4a13c727b604f685822ea840933f1e2806252e34c5cf9032ee49` /
+  `7642821fc8b740a5611bb0ae7746bfd5f1197b209193b74513760ccc9f7d9ab9`;
+  Elf/Fairy/Grove/Dancer `1520x548` comparison
+  `02c05bddc2a5a53e5441a28899318142f715e3a45c5895e7e3c2bcf561b22dc0`;
+  raw / Complete B + Form `640x672` GIFs
+  `b9bb2cd24936d5cf9e82ce4f683793e5df935821d2d455aedd52778cdcbff391` /
+  `67525a5e02a599a8ff1b7885b86ab42b0f2ec1ebd90811cf8b3ee5537c8f6f17`.
+- Protected state: all thirteen approved Fairy, Hag, Dryad, and Redcap digests
+  remain exact; public catalog remains 80/259 with no public Nymph; all 232
+  committed fixtures remain untouched.
+- Publication state: no Spring Dancer implementation or approval commit exists;
+  review artifacts remain ignored evidence.
+- Visual evidence: the three exact PNG boards are open together in Aseprite for
+  direct review.
+- Required next action: present those boards and both GIFs, and await explicit
+  approval. Do not commit,
+  publish, register Nymph, generate fixtures, begin Mist Weaver or Rivercrown
+  Muse, add effects, release, or open EN-E07.
+
+## Approved Preceding Checkpoint - Bloodcap Reaver Published
+
+This records the clean published predecessor for the active Spring Dancer
+visual-review gate. Later sections are historical provenance.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-redcap-bloodcap-reaver`, based exactly on clean pushed
