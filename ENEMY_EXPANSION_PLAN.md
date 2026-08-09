@@ -1778,7 +1778,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine, aquatic, and avian peoples
 
-- Status: `active - Stormcrown Exarch approved; publication, EN-E04 registration, and assembler integration authorized in order`
+- Status: `active - Stormcrown Exarch published; complete EN-E04 registration is next`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1790,7 +1790,7 @@ and no new sprite pixels or public integration are authorized.
 - Approved gate: Merfolk Pearl Regent complete elite motion across Down, Left, Right, and Up; published
 - Approved gate: Birdfolk Aerie Scout complete common motion across Down, Left, Right, and Up; published
 - Approved gate: Birdfolk Gale Augur complete specialist motion across Down, Left, Right, and Up; published
-- Approved gate: Birdfolk Stormcrown Exarch complete elite motion across Down, Left, Right, and Up; bounded publication authorized
+- Approved gate: Birdfolk Stormcrown Exarch complete elite motion across Down, Left, Right, and Up; published
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -2313,14 +2313,15 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Required next action: stop. No Birdfolk elite, registration, integration,
   effects, release, or broader work is authorized by this approval.
 
-#### Birdfolk Stormcrown Exarch full elite approved, awaiting bounded publication
+#### Birdfolk Stormcrown Exarch full elite approved and published
 
 - Gate ID: `en-e04-birdfolk-stormcrown-exarch-full-v1`; status:
-  `approved`, internal, non-public, uncommitted, and unpushed.
+  `approved`, internal, non-public, committed, and pushed.
 - Live branch: `codex/en-e04-birdfolk-stormcrown-exarch`, based exactly on clean
   Gale Augur reconciliation `aaf59dff8a14226bd46edbe48979dd2eb87c3faa`;
   approved Gale Augur remains frozen at
-  `ad57f25d47415625540ea36ff16d2a884a421576`.
+  `ad57f25d47415625540ea36ff16d2a884a421576`. The approved Stormcrown
+  implementation is committed and pushed at `da8c089`.
 - Authorization/naming: after Gale Augur approval/publication, the designer
   said `lets do next` on 2026-08-09. The Birdfolk role order advances from
   specialist to elite; Codex named and bounded one complete Stormcrown Exarch
@@ -2363,11 +2364,10 @@ upright avian person rather than collapse into the existing Harpy identity.
 - All ten protected predecessor gates pass. The v2 fast gate passes in
   `50.4s`; full `npm.cmd run check` passes in `103.0s`, with all 232 public PNG
   sheets unchanged.
-- Required next action: commit and push the exact approved ten-file lane, then
-  reconcile the publication handoff. After clean publication, advance through
-  the separately bounded EN-E04 registration and assembler consumer-integration
-  checkpoints in that order. Additional variants, effects, release, and broader
-  work remain outside.
+- Publication is complete at approved implementation checkpoint `da8c089`.
+- Required next action: complete the separately authorized nine-enemy EN-E04
+  registration checkpoint, then the assembler consumer-integration checkpoint.
+  Additional variants, effects, release, and broader work remain outside.
 
 ### EN-E05 - Undead humanoids
 
@@ -2786,9 +2786,9 @@ The designer's later `lets do next` activates only one full 80-frame Birdfolk
 Stormcrown Exarch elite on `codex/en-e04-birdfolk-stormcrown-exarch`. Because
 the elite was not pre-named, this lane names only Stormcrown Exarch and does not
 open additional Birdfolk variants. Its exact paired evidence is hash-frozen and
-focused/protected/fast/full validated, but the lane remains internal,
-non-public, uncommitted, and unpushed. The designer reviewed the exact pair and
-said `sure lets do 123` on 2026-08-09, approving the lane and authorizing
-bounded publication followed by separate complete EN-E04 registration and
-assembler consumer-integration checkpoints. Effects, release, and broader work
-remain unauthorized.
+focused/protected/fast/full validated. The designer reviewed the exact pair and
+said `sure lets do 123` on 2026-08-09, approving the lane and authorizing the
+three-gate sequence. The lane remains internal and non-public, but bounded
+publication is complete at `da8c089`; complete EN-E04 registration and
+assembler consumer integration follow as separate checkpoints. Effects,
+release, and broader work remain unauthorized.

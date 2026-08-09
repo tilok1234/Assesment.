@@ -535,13 +535,14 @@ sigil, white-blue eyes, and a burnished beak/talons while keeping all lightning
 and thunder effects external. Its exact raw plus Complete B + Form boards/GIFs
 and 80-frame digest are hash-frozen; the focused gate passes. Gate
 `en-e04-birdfolk-stormcrown-exarch-full-v1` is `approved`, internal,
-non-public, uncommitted, and unpushed;
+non-public, committed, and pushed;
 all ten protected predecessor gates pass, the fast gate passes in `50.4s`, and
 full validation passes in `103.0s` with all 232 public PNG sheets unchanged.
 The designer reviewed the exact pair and said `sure lets do 123` on 2026-08-09.
-Bounded Stormcrown publication, then separate complete EN-E04 registration and
-assembler consumer-integration checkpoints are authorized in that order;
-additional variants, effects, release, and broader work remain gated.
+Bounded Stormcrown publication is complete at `da8c089`; separate complete
+EN-E04 registration and assembler consumer-integration checkpoints are
+authorized next in that order. Additional variants, effects, release, and
+broader work remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

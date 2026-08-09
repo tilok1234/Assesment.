@@ -811,7 +811,7 @@ lane is complete at `ad57f25d47415625540ea36ff16d2a884a421576` on the
 tracked origin branch. Birdfolk elite, additional variants, registration,
 integration, effects, release, and broader work remain outside.
 
-## Birdfolk Stormcrown Exarch full elite approved, awaiting bounded publication
+## Birdfolk Stormcrown Exarch full elite approved and published
 
 Branch `codex/en-e04-birdfolk-stormcrown-exarch` owns the next isolated
 full-enemy slice, based exactly on clean Gale Augur handoff `aaf59df`. Because
@@ -841,11 +841,10 @@ gate passes in `50.4s`; full `npm.cmd run check` passes in `103.0s`, with all
 
 Gate `en-e04-birdfolk-stormcrown-exarch-full-v1` is `approved`: after reviewing
 the exact raw plus Complete B + Form GIF pair, the designer said `sure lets do
-123` on 2026-08-09. This lane is uncommitted and unpushed with bounded
-publication authorized. One complete EN-E04 registration checkpoint and one
-assembler consumer-integration checkpoint are separately authorized to follow
-publication. Additional Birdfolk variants, effects, release, and broader work
-remain outside.
+123` on 2026-08-09. Bounded publication is complete at `da8c089` on the
+tracked origin branch. One complete EN-E04 registration checkpoint and one
+assembler consumer-integration checkpoint are separately authorized to follow.
+Additional Birdfolk variants, effects, release, and broader work remain outside.
 
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint

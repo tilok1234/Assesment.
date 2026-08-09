@@ -1151,7 +1151,7 @@ through the same body transform. Cast aliases Attack and Death aliases Hurt
 `H1,H2,H2,H2` exactly; lightning and thunder effects remain external.
 
 Gate `en-e04-birdfolk-stormcrown-exarch-full-v1` is hash-frozen, focused
-validated, internal, non-public, uncommitted, unpushed, and
+validated, internal, non-public, committed, pushed, and
 `approved` on
 `codex/en-e04-birdfolk-stormcrown-exarch`. Its lane-local registry contains
 only elite Stormcrown Exarch and remains absent from `sprite-engine.js`. Frozen
@@ -1163,10 +1163,11 @@ Complete B/Form presentation, external effects, and zero public exposure define
 the gate. All ten protected predecessor gates pass; the fast gate passes in
 `50.4s` and full repository validation passes in `103.0s`, with all 232 public
 PNG sheets unchanged. Exact paired visual approval is recorded with the
-designer's `sure lets do 123` on 2026-08-09. That approval authorizes bounded
-publication of this exact ten-file lane, followed by separate complete EN-E04
-registration and assembler consumer-integration checkpoints. Additional
-Birdfolk variants, effects, release, and broader work remain outside.
+designer's `sure lets do 123` on 2026-08-09. Bounded publication of this exact
+ten-file lane is complete at approved implementation checkpoint
+`da8c089`. The separately authorized next gates are complete EN-E04
+registration followed by assembler consumer integration. Additional Birdfolk
+variants, effects, release, and broader work remain outside.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Birdfolk Stormcrown Exarch Approved
+## Immediate Continuation Checkpoint - Birdfolk Stormcrown Exarch Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the
 complete Birdfolk Gale Augur specialist, the designer said `lets do next` on
@@ -31,11 +31,12 @@ enemies would enter the assembler, the designer said `sure lets do 123` on
   `codex/en-e04-birdfolk-stormcrown-exarch`, based exactly on clean Gale Augur
   reconciliation `aaf59dff8a14226bd46edbe48979dd2eb87c3faa`; the approved
   Gale Augur implementation remains frozen at
-  `ad57f25d47415625540ea36ff16d2a884a421576`.
+  `ad57f25d47415625540ea36ff16d2a884a421576`. The approved Stormcrown
+  implementation is committed and pushed at `da8c089`.
 - Gate: `en-e04-birdfolk-stormcrown-exarch-full-v1`; status
-  `approved`, internal, non-public, uncommitted, and unpushed. Bounded
-  publication of the exact ten-file lane is authorized; generated review
-  artifacts remain ignored.
+  `approved`, internal, non-public, committed, and pushed. Bounded publication
+  of the exact ten-file lane is complete; generated review artifacts remain
+  ignored.
 - Scope: one elite Stormcrown Exarch and 80 frames across Down, Left, Right,
   and Up: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact
   Cast-to-Attack aliases, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
@@ -84,11 +85,12 @@ enemies would enter the assembler, the designer said `sure lets do 123` on
 - All ten protected predecessor gates pass. The v2 fast gate passes in
   `50.4s`; full `npm.cmd run check` passes in `103.0s`, with all 232 public PNG
   sheets unchanged.
-- Required next action: commit and push the exact approved ten-file lane, then
-  reconcile the publication handoff. After clean publication, complete the
-  separately authorized nine-enemy EN-E04 registration checkpoint and then the
-  assembler consumer-integration checkpoint. Do not add further variants,
-  effects, release work, or broader scope.
+- Publication checkpoint: bounded publication of the exact approved ten-file
+  lane is complete at `da8c089` on the tracked origin branch.
+- Required next action: complete the separately authorized nine-enemy EN-E04
+  registration checkpoint and then the assembler consumer-integration
+  checkpoint. Do not add further variants, effects, release work, or broader
+  scope.
 
 The approved preceding Gale Augur checkpoint follows for provenance.
 
