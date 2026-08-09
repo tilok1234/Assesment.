@@ -2449,11 +2449,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `active - Lich Soul Regent visually approved; bounded publication authorized`
+- Status: `active - Lich Soul Regent visually approved and published at 4cebc7b`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
 - Priority-first: Ghoul upgrade, Mummy, Vampire, Revenant, Lich
-- Active gate: one complete elite Lich Soul Regent candidate across all 80
-  standard frames; registration, fixtures, and Wave 2 remain gated
+- Active gate: none; stop at the clean published Lich checkpoint while
+  registration, fixtures, and Wave 2 remain gated
 
 Shared leverage: broken posture, wrappings, capes, exposed bone, floating hems,
 and necrotic palette families. The Ghoul change is an explicit upgrade to the
@@ -2688,7 +2688,8 @@ silently alter unrelated Zombie variants.
 #### Lich Soul Regent full-suite approved internal lane
 
 - Gate ID: `en-e05-lich-soul-regent-full-v1`; status:
-  `approved`, internal, non-public, uncommitted, and unpushed on
+  `approved`, internal, non-public, committed, and pushed at
+  `4cebc7b09f979913d73330d275ac3e4729511465` on
   `codex/en-e05-lich`, based exactly on clean reconciled Revenant handoff
   `97db37e151e04f42367c517955c88826c4ed7f51`.
 - Authorization: after approving, publishing, and reconciling the complete
@@ -2739,10 +2740,12 @@ silently alter unrelated Zombie variants.
   unchanged.
 - Exclusions: Lich registration, fixture generation, additional Lich variants,
   effects, release, EN-E05 registration, Wave 2, and later expansion work.
-- Required next action: commit and push only this bounded approved ten-file
-  lane. Keep Lich registration and fixtures excluded, then stop at the clean
-  published checkpoint; EN-E05 registration and Wave 2 require later explicit
-  gates.
+- Publication: the exact approved ten-file implementation is committed and
+  pushed at `4cebc7b09f979913d73330d275ac3e4729511465`; generated review artifacts
+  remain ignored.
+- Required next action: stop at this clean published checkpoint. Keep Lich
+  registration and fixtures excluded; EN-E05 registration and Wave 2 require
+  later explicit continuation.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not

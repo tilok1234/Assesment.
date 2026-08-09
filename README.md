@@ -892,7 +892,8 @@ the repeated square lower-robe panels be replaced with tapered folds, the
 designer reviewed the regenerated exact comparison and paired labeled surfaces
 and replied `approved` on 2026-08-09. This authorizes only bounded publication
 of the hash-frozen internal lane. Lich registration, fixture generation,
-EN-E05 registration, Wave 2, effects, and broader work remain excluded.
+EN-E05 registration, Wave 2, effects, and broader work remain excluded. The
+exact approved implementation is committed and pushed at `4cebc7b`.
 
 ## EN-E05 Revenant Grave Oathkeeper full-suite approved internal lane
 

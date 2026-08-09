@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Lich Full-Suite Approved
+## Immediate Continuation Checkpoint - EN-E05 Lich Full-Suite Approved And Published
 
 Start here in a new task. After the exact Revenant full-suite candidate was
 approved, published, and reconciled, the designer said `cool lets do next` on
@@ -26,7 +26,8 @@ established one-full-sprite cadence.
   on clean reconciled Revenant handoff
   `97db37e151e04f42367c517955c88826c4ed7f51`.
 - Gate: `en-e05-lich-soul-regent-full-v1`; status `approved`, internal,
-  non-public, uncommitted, and unpushed.
+  non-public, committed, and pushed at
+  `4cebc7b09f979913d73330d275ac3e4729511465`.
 - Approval evidence: after the exact approved-Revenant comparison and labeled
   all-four-direction raw/no-outline and Complete B + Form review surfaces were
   presented together, the designer requested the repeated square lower-robe
@@ -67,9 +68,13 @@ established one-full-sprite cadence.
   public consumer gates pass; fast validation passes in `52.4s`; full
   `npm.cmd run check` passes in `104.7s` with all 232 frozen fixtures
   unchanged.
-- Required next action: commit and push only the bounded approved ten-file
-  lane. Do not register Lich or generate fixtures. Stop at the clean published
-  checkpoint; EN-E05 registration and Wave 2 require later explicit gates.
+- Publication checkpoint: the exact approved ten-file implementation is pushed
+  on the tracked origin branch at
+  `4cebc7b09f979913d73330d275ac3e4729511465`; generated review artifacts remain
+  ignored.
+- Required next action: stop at this clean published checkpoint. Do not
+  register Lich or generate fixtures; EN-E05 registration and Wave 2 require
+  later explicit continuation.
 
 ## Approved Preceding Checkpoint - EN-E05 Revenant Full-Suite Published
 

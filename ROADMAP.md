@@ -632,8 +632,9 @@ public catalog and all 232 fixtures unchanged. After the repeated square
 lower-robe panels were replaced with tapered folds and the exact regenerated
 review was presented, the designer replied `approved` on 2026-08-09,
 authorizing only bounded publication. The Lich remains internal, non-public,
-uncommitted, and unpushed. Registration, fixtures, effects, EN-E05
-registration, and Wave 2 require later explicit gates.
+and fixture-free. Registration, fixtures, effects, EN-E05 registration, and
+Wave 2 require later explicit gates. The exact Lich implementation is
+published at `4cebc7b`.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
