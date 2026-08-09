@@ -857,6 +857,41 @@ legacy `asset-pack/` remains unchanged.
 The bounded implementation is committed and pushed at `cedc774` on
 `codex/en-e04-assembler-integration`.
 
+## EN-E05 Revenant Grave Oathkeeper full-suite approved internal lane
+
+Branch `codex/en-e05-revenant` contains one visually approved isolated common
+Revenant named Grave Oathkeeper, based exactly on reconciled Vampire handoff
+`16f5876`. It remains internal and non-public. The sprite uses a split-crested dented helm,
+broad mismatched pauldrons, battered cold-blue plate, exposed corpse-gray
+hands, a faded oath-red tabard, old rust, brass fasteners, cyan oathfire eyes,
+heavy boots, and a connected broken greatblade. Soul flame, grave mist,
+spectral chains, rune glow, trails, sparks, dust, blood, afterimages, ground
+cracks, and detached debris remain external.
+
+Run `npm.cmd run review:enemy-expansion-en-e05-revenant` to reproduce the exact
+approved-Vampire comparison, raw/no-outline and Complete B + Form `1428x760`
+full-suite boards, and paired `640x672` four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e05-revenant` to exhaust all 80 frames,
+approved-Vampire distinction, connected hard-alpha anatomy, one-cell margins,
+directional eyes, mirrors, aliases, motion phases, presentation treatment, and
+public/fixture firewalls. Candidate digest:
+`f53fa853e7fb7aebc232e3ca1903d8a4d1d717de02576c51fe81f4c4d5b90079`.
+Raw / Complete B + Form board hashes are
+`010fc811c0495406025a6f3efd4e6f97393f9e6e0ccc64e92ce8dcd610063afe` /
+`037ffb153c64f2542f42377ec70222947149d2d46205605728f3004dc41eb3c6`;
+the Vampire comparison is
+`ba4debce379e44e6d7c5d5e865a3cf06f029efafba4bdf928174c111d2294d96`;
+raw / Complete B + Form GIF hashes are
+`41154eb09cd907b1fd128673dcc9baff5f947990641f2c1a42010fa7ac6f7920` /
+`58d05f0640b94b3e55c5b16d92e785d4637a24664bec3f7a004e364e3b5c860a`.
+The protected Vampire, Mummy, Ghoul, and EN-E04 gates pass; fast validation
+passes in `46.6s` and full validation passes in `98s`, with the public 70/241
+catalog and all 232 fixtures unchanged. After the exact approved-Vampire
+comparison and paired labeled review surfaces were presented together, the
+designer replied `awesome very good approved` on 2026-08-09. This authorizes
+only bounded publication of the hash-frozen internal lane. Revenant
+registration, fixtures, Lich, and broader EN-E05 work remain excluded.
+
 ## EN-E05 Vampire Night Noble full-suite approved internal lane
 
 Branch `codex/en-e05-vampire` contains one visually approved isolated common

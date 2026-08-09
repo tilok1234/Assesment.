@@ -2449,11 +2449,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `active - Vampire Night Noble visually approved and published at 6a7cce2`
+- Status: `active - Revenant Grave Oathkeeper visually approved; bounded publication authorized`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
-- Priority-first: Ghoul upgrade, Mummy, Vampire
-- Active gate: none; stop at the clean published Vampire checkpoint while
-  registration, fixtures, and Revenant remain gated
+- Priority-first: Ghoul upgrade, Mummy, Vampire, Revenant
+- Active gate: one complete common Revenant Grave Oathkeeper candidate across
+  all 80 standard frames; registration, fixtures, and Lich remain gated
 
 Shared leverage: broken posture, wrappings, capes, exposed bone, floating hems,
 and necrotic palette families. The Ghoul change is an explicit upgrade to the
@@ -2623,9 +2623,63 @@ silently alter unrelated Zombie variants.
 - Publication: the exact approved ten-file implementation is committed and
   pushed at `6a7cce2f84f86f7836b583341f56a1ae7e9c7a51`; generated review artifacts
   remain ignored.
-- Required next action: stop at this clean published checkpoint. Keep Vampire
-  registration and fixtures excluded; Revenant requires a later explicit
-  continuation.
+- Required next action: the designer's later `awesome lets do next` activates
+  exactly one separate complete Revenant candidate below. Keep Vampire
+  registration, fixtures, effects, and Lich outside that gate.
+
+#### Revenant Grave Oathkeeper full-suite approved internal lane
+
+- Gate ID: `en-e05-revenant-grave-oathkeeper-full-v1`; status:
+  `approved`, internal, non-public, uncommitted, and unpushed on
+  `codex/en-e05-revenant`, based exactly on clean reconciled Vampire handoff
+  `16f58760be6483ba463e0b5acf88cdaa4592943b`.
+- Authorization: after approving, publishing, and reconciling the complete
+  Vampire, the designer said `awesome lets do next` on 2026-08-09. This
+  activates one separate complete Revenant under the established
+  one-full-sprite cadence.
+- Approval: after the exact approved-Vampire comparison and paired labeled
+  all-four-direction raw/no-outline and Complete B + Form Revenant review
+  surfaces were presented together, the designer replied `awesome very good
+  approved` on 2026-08-09. Approval applies only to this hash-frozen candidate
+  and its bounded branch publication; it does not authorize Lich.
+- Exact scope: one common `revenant/grave-oathkeeper`; 80 frames across Down,
+  Left, Right, and Up with Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast
+  aliases, Hurt H1-H2, and exact Death aliases H1,H2,H2,H2.
+- Identity: corpse-gray bone, cold blue dented iron, old rust, a faded
+  oath-red tabard, worn brass fasteners, chipped steel, black helm cavities,
+  two cyan oathfire eyes, split crest, mismatched pauldrons, heavy boots, and a
+  connected broken greatblade.
+- Motion: sealed vigil and armor heave; four-step grave march with boot plants,
+  blade drag, and tabard movement; oathblade guard, shoulder hoist, broad
+  full-body cleave, and grounded recovery; complete white iron stagger plus
+  colored oath brace. Effects remain external.
+- Review evidence: raw / Complete B + Form full-suite boards
+  `010fc811c0495406025a6f3efd4e6f97393f9e6e0ccc64e92ce8dcd610063afe` /
+  `037ffb153c64f2542f42377ec70222947149d2d46205605728f3004dc41eb3c6`;
+  approved-Vampire comparison
+  `ba4debce379e44e6d7c5d5e865a3cf06f029efafba4bdf928174c111d2294d96`;
+  raw / Complete B + Form GIFs
+  `41154eb09cd907b1fd128673dcc9baff5f947990641f2c1a42010fa7ac6f7920` /
+  `58d05f0640b94b3e55c5b16d92e785d4637a24664bec3f7a004e364e3b5c860a`.
+- Focused validation passes 80/80 distinct-from-Vampire pixel frames and alpha
+  silhouettes, 80/80 connected silhouettes, 80/80 one-cell margins, 72/72
+  colored identity frames, exact directional eyes, mirrors, and aliases,
+  opaque range 208-266, 7,286 Complete B additions, and 9,522 Form changes.
+  Candidate digest:
+  `f53fa853e7fb7aebc232e3ca1903d8a4d1d717de02576c51fe81f4c4d5b90079`;
+  approved Vampire digest remains
+  `b3943802e450e454d707f118a58fb81cdf43b3869d02da999b7232d8a0aab4ba`.
+- Firewall: public catalog remains 70/241; Zombie siblings and the frozen
+  legacy Ghoul fixture remain exact. Revenant has zero public families and no
+  fixture.
+- Protected validation: the approved Vampire, Mummy, Ghoul, and EN-E04 public
+  consumer gates pass; the fast gate passes in `46.6s`; full `npm.cmd run
+  check` passes in `98s` with all 232 frozen fixtures unchanged.
+- Exclusions: Revenant registration, fixture generation, additional Revenant
+  variants, Lich, effects, release, and later EN-E05 work.
+- Required next action: commit and push only this bounded approved ten-file
+  lane. Keep Revenant registration and fixtures excluded, then stop at the
+  clean published checkpoint; Lich requires a later explicit continuation.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not

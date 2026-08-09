@@ -603,6 +603,20 @@ fixtures, Revenant, and effects require later explicit gates. The approved
 Mummy, Ghoul, and EN-E04 public gates, fast validation, and full validation pass
 with the 70/241 public catalog and all 232 fixtures unchanged. The exact
 Vampire implementation is published at `6a7cce2`.
+The reconciled Vampire handoff is `16f5876`. The designer then said `awesome
+lets do next`, authorizing one separate common Revenant Grave Oathkeeper on
+`codex/en-e05-revenant`. Its 80-frame broken-knight suite, approved-Vampire
+comparison, raw board, Complete B + Form board, paired GIFs, and candidate
+digest are hash-frozen. The focused gate passes all frames, distinct
+silhouettes, connected/bounded armor and greatblade anatomy, directional cyan
+eyes, mirrors, aliases, identity colors, treatment metrics, approved-Vampire
+preservation, public catalog locks, and the unchanged legacy fixture. It
+remains internal, non-public, uncommitted, and unpushed. After the exact paired
+review, the designer replied `awesome very good approved` on 2026-08-09,
+authorizing only bounded publication of the frozen lane. Registration,
+fixtures, Lich, and effects require later explicit gates. The approved Vampire,
+Mummy, Ghoul, and EN-E04 public gates, fast validation, and full validation pass
+with the 70/241 public catalog and all 232 fixtures unchanged.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

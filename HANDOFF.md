@@ -15,7 +15,62 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Vampire Full-Suite Approved And Published
+## Immediate Continuation Checkpoint - EN-E05 Revenant Full-Suite Approved
+
+Start here in a new task. After the exact Vampire full-suite candidate was
+approved, published, and reconciled, the designer said `awesome lets do next`
+on 2026-08-09. The live EN-E05 lane advances to one common Revenant named Grave
+Oathkeeper.
+
+- Repository/branch: current v2 checkout on `codex/en-e05-revenant`, based
+  exactly on clean reconciled Vampire handoff
+  `16f58760be6483ba463e0b5acf88cdaa4592943b`.
+- Gate: `en-e05-revenant-grave-oathkeeper-full-v1`; status `approved`,
+  internal, non-public, uncommitted, and unpushed.
+- Approval evidence: after the exact approved-Vampire comparison and labeled
+  all-four-direction raw/no-outline and Complete B + Form review surfaces were
+  presented together, the designer replied `awesome very good approved` on
+  2026-08-09. Approval applies only to the frozen Revenant and its bounded
+  branch publication; it does not authorize Lich.
+- Scope: one complete 80-frame common Revenant across Down, Left, Right, and
+  Up: Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast-to-Attack aliases, Hurt
+  H1-H2, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Identity/motion: split-crested dented helm, broad mismatched pauldrons,
+  corpse-gray hands, cold-blue plate, old rust, faded oath-red tabard, brass
+  fasteners, cyan oathfire eyes, heavy boots, a connected broken greatblade,
+  armor heave, four-step grave march, guard, hoist, broad cleave, white stagger,
+  and colored brace.
+- Effect boundary: soul flame, grave mist, spectral chains, rune glow, weapon
+  trails, sparks, dust, blood, afterimages, ground cracks, and detached armor
+  debris remain external.
+- Review command: `npm.cmd run review:enemy-expansion-en-e05-revenant`.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e05-revenant`.
+- Focused result: 80/80 pixel frames and alpha silhouettes differ from approved
+  Vampire; 80/80 connected and bounded; 72/72 colored identity frames; exact
+  front/side/rear eye rules, mirrors, and aliases; opaque range 208-266; 7,286
+  Complete B additions; 9,522 Form changes. Candidate digest:
+  `f53fa853e7fb7aebc232e3ca1903d8a4d1d717de02576c51fe81f4c4d5b90079`.
+- Review hashes: raw / Complete B + Form boards
+  `010fc811c0495406025a6f3efd4e6f97393f9e6e0ccc64e92ce8dcd610063afe` /
+  `037ffb153c64f2542f42377ec70222947149d2d46205605728f3004dc41eb3c6`;
+  approved-Vampire comparison
+  `ba4debce379e44e6d7c5d5e865a3cf06f029efafba4bdf928174c111d2294d96`;
+  raw / Complete B + Form GIFs
+  `41154eb09cd907b1fd128673dcc9baff5f947990641f2c1a42010fa7ac6f7920` /
+  `58d05f0640b94b3e55c5b16d92e785d4637a24664bec3f7a004e364e3b5c860a`.
+- Firewall: approved Vampire digest remains
+  `b3943802e450e454d707f118a58fb81cdf43b3869d02da999b7232d8a0aab4ba`;
+  public catalog remains 70/241; Zombie siblings and frozen legacy Ghoul
+  fixture remain unchanged; Revenant has zero public families and no fixture.
+- Protected result: the approved Vampire, Mummy, Ghoul, and EN-E04 public
+  consumer gates pass; fast validation passes in `46.6s`; full `npm.cmd run
+  check` passes in `98s` with the public 70/241 catalog and all 232 frozen
+  fixtures unchanged.
+- Required next action: commit and push only the bounded approved ten-file
+  lane. Do not register Revenant or generate fixtures. Stop at the clean
+  published checkpoint; Lich requires a later explicit continuation.
+
+## Approved Preceding Checkpoint - EN-E05 Vampire Full-Suite Published
 
 Start here in a new task. After the exact Mummy full-suite candidate was
 approved, published, and reconciled, its same direct approval response
