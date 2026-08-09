@@ -486,8 +486,8 @@ not an ordinary editor exporter and not part of the Wildshot actor game-pack
 contract. At `bf6269c`, its publisher gate is present but its roster is not
 compatible with the live Boss catalogs: Royal Night Elf Prince, Living Pyre,
 Tide Man the Blue, and Dryad of Nature lack direction entries, and those four
-plus Lava-Core Colossus, Abyssal Crown-Kraken, and Sun-Crown Griffin lack
-animation entries. The command is therefore not release-ready even though
+plus Sun-Crown Griffin lack animation entries. The command is therefore not
+release-ready even though
 `npm run check:pack-publish` passes. Roster compatibility needs its own direct
 gate before publication is allowed.
 
@@ -499,11 +499,11 @@ Bosses use an ephemeral `workspaceMode` layered above the last ordinary
 Player/Enemy/Effect document. Entering Boss does not call `setState()`, add a
 fourth persisted kind, or record history. Pilot, direction, animation, frame,
 speed, and playback are module-only review state. Reload therefore returns to
-  the last ordinary mode. Ten animated pilots use dedicated 48x48 playback
-  plus native 1x full/direction/animation downloads; four static entries use
+  the last ordinary mode. Twelve animated pilots use dedicated 48x48 playback
+  plus native 1x full/direction/animation downloads; two static entries use
 the checkpoint-exact 48x192 direction sheet. Goblin War-Crown, Furious
-Depraved Rhino, and Gunslinger Boar Rider remain explicit animation
-candidates. Both animated and static paths bypass every ordinary
+Depraved Rhino, and Gunslinger Boar Rider remain explicit animation candidates.
+Both animated and static paths bypass every ordinary
 export/pack route.
 
 The independently versioned persistence and export formats are:
@@ -592,9 +592,9 @@ deliberately not serialized.
   history-only and never serialized.
 - `sprite-engine.js` remains the public import path.
 - Boss pilots remain a separate 48x48 review contract: twelve approved
-  four-direction sets plus Rhino and Unicorn candidates, ten full 20-column
+  four-direction sets plus Rhino and Unicorn candidates, twelve full 20-column
   animation sets,
-  four static entries, Down/Left/Right/Up row order, hard
+  two static entries, Down/Left/Right/Up row order, hard
   alpha, Effects Off, native 1x export, and no persistence or
   production-renderer claim.
 - Browser and Windows builds use identical production files.
@@ -1281,12 +1281,12 @@ The bounded implementation is published at checkpoint `cedc774`.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
-48x192 direction sheets, plus eleven animation-catalog entries, 880 distinct
-48x48 frames, and 121 native full/scoped animation sheets. They also enforce
+48x192 direction sheets, plus twelve animation-catalog entries, 960 distinct
+48x48 frames, and 132 native full/scoped animation sheets. They also enforce
 Idle-frame control parity, facade immutability, native-only download wiring,
 and absence from production renderer, generator, persistence, game-pack, and
-ordinary sheet dependencies. With the Lava animation accepted, the full
-repository gate passes in `99.8s` with all 232 fixture PNGs unchanged.
+ordinary sheet dependencies. With the Kraken animation accepted, the full
+repository gate passes in `122.9s` with all 232 fixture PNGs unchanged.
 
 The standard full `npm run check` is fresh-clone safe. Missing optional local
 Boss review checkpoints are warnings, and byte parity runs for every checkpoint

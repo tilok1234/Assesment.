@@ -31,7 +31,8 @@
       "divine-armored-templar-astro-knight",
       "furious-depraved-rhino",
       "gunslinger-boar-rider",
-      "lava-core-colossus"
+      "lava-core-colossus",
+      "abyssal-crown-kraken"
     ],
     "candidates": [
       "goblin-war-crown",
@@ -47,7 +48,8 @@
       "divine-armored-templar-astro-knight",
       "furious-depraved-rhino",
       "gunslinger-boar-rider",
-      "lava-core-colossus"
+      "lava-core-colossus",
+      "abyssal-crown-kraken"
     ],
     "generators": {
       "ancient-mirejaw": {
@@ -93,6 +95,10 @@
       "lava-core-colossus": {
         "animationScript": "generate-lava-core-colossus-animation-v1.py",
         "directionModule": "generate_lava_core_colossus_directions_v1"
+      },
+      "abyssal-crown-kraken": {
+        "animationScript": "generate-abyssal-crown-kraken-animation-v1.py",
+        "directionModule": "generate_abyssal_crown_kraken_directions_v1"
       }
     }
   }

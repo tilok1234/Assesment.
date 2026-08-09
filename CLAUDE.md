@@ -79,7 +79,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 - Boss runtime assets live flat in `engine/assets/bosses/` with frozen naming.
 - Imports from outside the engine go through `sprite-engine.js` only.
 - Never run `export:bosses:13` — its frozen roster currently lacks four
-  direction and six animation catalog entries.
+  direction and five animation catalog entries.
 - Don't edit checker roster literals — they live in `tools/fixtures/*.json`.
 - Scope reviews to the changed family/boss; whole-roster review packets are
   release-time only.

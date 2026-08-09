@@ -95,4 +95,5 @@ export const BOSS_ANIMATION_PILOTS = Object.freeze([
     'candidate',
   ),
   animationPilot('lava-core-colossus', 'Lava-Core Colossus'),
+  animationPilot('abyssal-crown-kraken', 'Abyssal Crown-Kraken'),
 ]);
