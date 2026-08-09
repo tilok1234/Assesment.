@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E06 Hag Cauldron Hexer Candidate Review
+## Immediate Continuation Checkpoint - Published Approved EN-E06 Hag Cauldron Hexer
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
@@ -28,8 +28,9 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Authorization: after Mire Crone approval and publication, the designer said
   `next` on 2026-08-09. Under the confirmed one-complete-sprite cadence, this
   opens only specialist Hag `cauldron-hexer`.
-- Gate: `en-e06-hag-cauldron-hexer-full-v1`; status `candidate`, internal,
-  uncommitted, unpushed, and awaiting explicit visual approval.
+- Gate: `en-e06-hag-cauldron-hexer-full-v1`; status `approved`, internal,
+  committed at `4b59b4098caf6397719fba6d21c27c5f8dcd82b0`, and published on its
+  isolated branch.
 - Scope: one private 80-frame specialist Hag across Idle, Walk, Attack, Cast,
   Hurt, and Death in Down, Left, Right, and Up. Approved Mire Crone and all
   three Fairies remain exact. Blackthorn Matron, Dryad, Redcap, and Nymph stay closed.
@@ -64,23 +65,25 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Firewall: the lane adds no public registration, facade import, shared
   renderer/schema/interface change, asset-pack entry, selector/persistence
   route, pack/export change, fixture regeneration, effect, or release.
-- Review state: technical and local visual inspection pass. The exact three
-  hash-frozen PNGs still need to be opened directly in Aseprite and presented
-  with the paired GIFs for explicit approval.
+- Review state: the exact three hash-frozen PNGs were opened directly in
+  Aseprite and presented with the paired GIFs. The designer replied
+  `approved lets do next` on 2026-08-09.
 - Required reading: `CLAUDE.md`, this section, the EN-E06 candidate subsection,
   and `Current Authorization Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not use
   `docs/archive/` or the historical body below as current workflow.
-- Active stop: do not commit, push, register Hag, generate fixtures, start
-  Blackthorn Matron, begin Dryad, or broaden Wave 2 before explicit approval.
+- Fulfilled continuation: the exact approved Cauldron Hexer implementation is
+  published. The same reply separately authorizes only one complete Blackthorn
+  Matron elite Hag after publication; registration, fixtures, Dryad, effects,
+  and broader Wave 2 work remain closed.
 
 Suggested opening request for the next chat:
 
 > Read `CLAUDE.md`, the active top section of `HANDOFF.md`, and the EN-E06 plus
-> current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Review only the
-> hash-frozen Cauldron Hexer candidate on
-> `codex/en-e06-hag-cauldron-hexer`, based at `b4ad5cd`; preserve Mire Crone and
-> all three Fairies exactly, and do not commit, push, register, generate
-> fixtures, or begin another sprite before visual approval.
+> current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Continue from
+> the approved Cauldron Hexer publication on
+> `codex/en-e06-hag-cauldron-hexer` at `4b59b40`; preserve both approved Hags
+> and all three Fairies exactly, and open only the Blackthorn Matron one-sprite
+> lane before another visual approval gate.
 
 # Historical Handoff Archive
 

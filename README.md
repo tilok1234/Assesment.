@@ -894,7 +894,7 @@ below later exposes only the four new families; at that point public Ghoul
 replacement, fixture work, effects, release, EN-E03 adoption, and Wave 2 were
 still closed.
 
-## EN-E06 approved Fairies/Mire Crone and active Cauldron Hexer candidate
+## EN-E06 approved Fairies, Mire Crone, and Cauldron Hexer
 
 Approved common Fairy Bramblewing Scout and specialist Thistle Hexer remain
 internal, non-public, exact, and published at `cc92ca9` and `3dc68cb`. After
@@ -981,8 +981,10 @@ three boards and paired GIFs, and run
 `npm.cmd run check:enemy-expansion-en-e06-hag-cauldron-hexer` for the complete
 80-frame structural, Mire-distinction, predecessor, public, and fixture gates.
 Candidate digest: `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
-It is unapproved, uncommitted, and unpushed; stop before Blackthorn Matron,
-Dryad, registration, fixtures, effects, or later Wave 2 work.
+The exact packet was approved on 2026-08-09 and the bounded implementation is
+published at `4b59b40`. The approval reply also opens only the next one-sprite
+Blackthorn Matron lane; Dryad, registration, fixtures, effects, and broader
+Wave 2 work remain closed.
 
 ## EN-E05 assembler consumer integration implemented
 

@@ -2838,7 +2838,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `candidate internal - Hag Cauldron Hexer complete 80-frame lane awaiting visual approval`
+- Status: `approved internal - Hag Cauldron Hexer complete 80-frame lane published at 4b59b40`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3059,11 +3059,12 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   2026-08-09. The bounded implementation is published at `25f67d4`. Stop before
   registration, fixture work, Cauldron Hexer, Dryad, effects, or broader Wave 2.
 
-#### Candidate Hag Cauldron Hexer complete suite
+#### Approved Hag Cauldron Hexer complete suite
 
-- Gate ID: `en-e06-hag-cauldron-hexer-full-v1`; status: `candidate`, internal,
-  uncommitted, and unpushed on `codex/en-e06-hag-cauldron-hexer`, based exactly
-  on clean Mire Crone publication handoff `b4ad5cd`.
+- Gate ID: `en-e06-hag-cauldron-hexer-full-v1`; status: `approved`, internal,
+  and published at `4b59b4098caf6397719fba6d21c27c5f8dcd82b0` on
+  `codex/en-e06-hag-cauldron-hexer`, based exactly on clean Mire Crone handoff
+  `b4ad5cd`.
 - Authorization: after Mire Crone approval and publication, the designer said
   `next` on 2026-08-09. This opens only specialist Hag Cauldron Hexer under the
   one-complete-sprite cadence.
@@ -3087,9 +3088,11 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   72/72 colored brewer frames; 8/8 white flashes; opaque range 228-251;
   7,764 Complete B additions; 6,575 Form changes; candidate digest
   `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
-- Review state: stop for the exact three PNGs and paired GIFs to receive explicit
-  approval. Do not commit, push, register, generate fixtures, start Blackthorn
-  Matron, or begin Dryad before that approval.
+- Approval/publication: the exact three PNGs were opened in Aseprite and
+  presented with the paired GIFs. The designer replied `approved lets do next`
+  on 2026-08-09. The bounded implementation is published at `4b59b40`; the same
+  reply opens only Blackthorn Matron after publication. Registration, fixtures,
+  Dryad, effects, and broader Wave 2 remain separate gates.
 
 ### EN-E07 - Shapeshifters and apparitions
 

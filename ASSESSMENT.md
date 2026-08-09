@@ -182,9 +182,10 @@ only specialist Cauldron Hexer. Its private 80-frame candidate passes all
 structural gates and differs from Mire Crone in every pixel frame and alpha
 silhouette at digest
 `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
-The active handoff starts with that unapproved review lane. Blackthorn Matron,
-Dryad, fixture regeneration, the legacy renderer split, boss consolidation,
-and the Wildshot writer remain separate decisions.
+The exact Cauldron Hexer packet was approved on 2026-08-09 and its bounded
+implementation is published at `4b59b40`. The same reply opens only one complete
+Blackthorn Matron lane. Dryad, fixture regeneration, the legacy renderer split,
+boss consolidation, and the Wildshot writer remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`
    lists the 166 stale sheets. If downstream should get the repaired art: `--all` + commit.

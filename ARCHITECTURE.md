@@ -752,7 +752,9 @@ proves connected bounded grounded structure, exact aliases/mirrors, 80/80 Mire
 pixel and alpha distinctions, unchanged public 74/245 state, deterministic
 five-artifact evidence, and candidate digest
 `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
-The candidate remains uncommitted and unpushed until visual approval.
+The exact packet passed visual approval on 2026-08-09 and the bounded
+implementation is published at `4b59b40`. The later Blackthorn Matron remains a
+separate content-only gate; registration, fixtures, effects, and Dryad stay closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

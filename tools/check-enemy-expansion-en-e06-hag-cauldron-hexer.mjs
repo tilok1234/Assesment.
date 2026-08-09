@@ -34,19 +34,21 @@ function countColors(pixels, colors) { return pixels.reduce((sum, color) => sum 
 async function sha256File(relativePath) { return createHash('sha256').update(await readFile(path.join(root, relativePath))).digest('hex'); }
 function rejects(action, label) { try { action(); errors.push(`${label} must reject`); } catch (error) { check(String(error.message).includes('is not implemented'), `${label} rejected unexpectedly: ${error.message}`); } }
 
-check(EN_E06_CAULDRON_HEXER_GATE.status === 'candidate' && EN_E06_CAULDRON_HEXER_GATE.approvedOn === null && EN_E06_CAULDRON_HEXER_GATE.publishedImplementation === null, 'Cauldron Hexer must remain an unapproved candidate');
-check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'hag-cauldron-hexer-full-candidate-2026-08-09', 'ledger must identify the active Cauldron Hexer candidate');
+check(EN_E06_CAULDRON_HEXER_GATE.status === 'approved' && EN_E06_CAULDRON_HEXER_GATE.approvedOn === '2026-08-09', 'Cauldron Hexer must retain its explicit visual approval');
+check(EN_E06_CAULDRON_HEXER_GATE.approvalEvidence.includes('approved lets do next') && EN_E06_CAULDRON_HEXER_GATE.approvalEvidence.includes('three exact PNGs were opened directly in Aseprite'), 'exact approval evidence drifted');
+check(EN_E06_CAULDRON_HEXER_GATE.publishedImplementation === '4b59b4098caf6397719fba6d21c27c5f8dcd82b0', 'published implementation checkpoint drifted');
+check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'hag-cauldron-hexer-full-published-2026-08-09', 'ledger must identify the published Cauldron Hexer gate');
 check(EN_E06_CAULDRON_HEXER_GATE.authorizationEvidence.includes('designer said: next') && EN_E06_CAULDRON_HEXER_GATE.authorizationEvidence.includes('only this one complete 80-frame variant pass'), 'authorization evidence drifted');
 check(EN_E06_CAULDRON_HEXER_GATE.precedingApproval.gateId === EN_E06_MIRE_CRONE_GATE.id && EN_E06_CAULDRON_HEXER_GATE.precedingApproval.publishedImplementation === EN_E06_MIRE_CRONE_GATE.publishedImplementation, 'approved Mire Crone predecessor drifted');
 check(EN_E06_CAULDRON_HEXER_GATE.scope.includes('complete 80-frame Cauldron Hexer') && EN_E06_CAULDRON_HEXER_GATE.animationContract.includes('broad connected sweep'), 'full-suite or motion contract drifted');
 check(EN_E06_CAULDRON_HEXER_GATE.exclusions.includes('changes to approved Mire Crone source or pixels') && EN_E06_CAULDRON_HEXER_GATE.exclusions.includes('Blackthorn Matron implementation') && EN_E06_CAULDRON_HEXER_GATE.exclusions.includes('cauldron geometry') && EN_E06_CAULDRON_HEXER_GATE.exclusions.includes('asset-pack fixture generation or regeneration'), 'scope exclusions drifted');
-check(EN_E06_CAULDRON_HEXER_GATE.nextGate.includes('Stop for explicit visual approval') && EN_E06_CAULDRON_HEXER_GATE.nextGate.includes('Do not commit'), 'candidate must stop before commit and publication');
+check(EN_E06_CAULDRON_HEXER_GATE.nextGate.includes('published at 4b59b4098caf6397719fba6d21c27c5f8dcd82b0') && EN_E06_CAULDRON_HEXER_GATE.nextGate.includes('Blackthorn Matron'), 'approved gate must retain publication and next-role authorization');
 check(Object.isFrozen(EN_E06_CAULDRON_HEXER_GATE) && Object.isFrozen(EN_E06_CAULDRON_HEXER_DATA), 'gate and data must be deeply immutable');
 check(EN_E06_CAULDRON_HEXER_CONTRACT.family === 'hag' && EN_E06_CAULDRON_HEXER_CONTRACT.variant === 'cauldron-hexer' && EN_E06_CAULDRON_HEXER_CONTRACT.role === 'specialist', 'candidate contract drifted');
 check(EN_E06_CAULDRON_HEXER_CONTRACT.identity.includes('without baking in a cauldron') && EN_E06_CAULDRON_HEXER_CONTRACT.effectBoundary.includes('remain external'), 'specialist identity/effect boundary drifted');
 
 check(EN_E06_CONTRACT_CARDS[0].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Fairies must remain approved');
-check(EN_E06_CONTRACT_CARDS[1].variants[0].status === 'implemented-full-approved' && EN_E06_CONTRACT_CARDS[1].variants[1].status === 'implemented-full-candidate' && EN_E06_CONTRACT_CARDS[1].variants[2].status === 'planned', 'Hag role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[1].variants[0].status === 'implemented-full-approved' && EN_E06_CONTRACT_CARDS[1].variants[1].status === 'implemented-full-approved' && EN_E06_CONTRACT_CARDS[1].variants[2].status === 'planned', 'Hag role-order status drifted');
 for (const card of EN_E06_CONTRACT_CARDS.slice(2)) check(card.variants.every(({ status }) => status === 'planned'), `${card.id} must remain contract-only`);
 check(EN_E06_CAULDRON_HEXER_REGISTRY.families.length === 1 && EN_E06_CAULDRON_HEXER_REGISTRY.publicFamilies.length === 0 && EN_E06_CAULDRON_HEXER_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);

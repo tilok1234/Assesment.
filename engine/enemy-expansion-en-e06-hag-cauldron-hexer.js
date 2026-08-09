@@ -39,7 +39,7 @@ export const EN_E06_CAULDRON_HEXER_CONTRACT = deepFreeze({
   family: 'hag',
   variant: 'cauldron-hexer',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'stooped-feral-fey-humanoid-v1',
   silhouette: 'The approved Mire Crone feral-Hag chassis gains a connected hooked copper ladle, bottle-heavy belt, and tied brewer apron while retaining the low head, crooked shoulders, long forearms, bowed trunk, and planted claw feet.',
   identity: 'Moss-gold skin, charcoal rope hair, plum shawl, teal brewer apron, luminous bottle glass, and a body-connected copper ladle establish a specialist field brewer without baking in a cauldron.',
@@ -62,12 +62,12 @@ export const EN_E06_CAULDRON_HEXER_DATA = deepFreeze({
 
 export const EN_E06_CAULDRON_HEXER_GATE = deepFreeze({
   id: 'en-e06-hag-cauldron-hexer-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-09',
   authorizationEvidence: 'After approving and publishing the complete Mire Crone lane, the designer said: next. The frozen Hag role order advances from common Mire Crone to specialist Cauldron Hexer and authorizes only this one complete 80-frame variant pass.',
-  approvedOn: null,
-  approvalEvidence: null,
-  publishedImplementation: null,
+  approvedOn: '2026-08-09',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline, Complete B + Form, and approved-Mire comparison Cauldron Hexer boards plus the paired full-suite GIFs were presented, and the three exact PNGs were opened directly in Aseprite, the designer replied: approved lets do next. This approves only the frozen 80-frame Cauldron Hexer candidate, authorizes its bounded commit and branch publication, and separately authorizes the next one-sprite Hag role after publication; registration, fixtures, effects, release, and later families remain separate gates.',
+  publishedImplementation: '4b59b4098caf6397719fba6d21c27c5f8dcd82b0',
   precedingApproval: {
     gateId: EN_E06_MIRE_CRONE_GATE.id,
     artifactSha256: EN_E06_MIRE_CRONE_GATE.artifactSha256,
@@ -103,7 +103,7 @@ export const EN_E06_CAULDRON_HEXER_GATE = deepFreeze({
     'hex bursts', 'bottle projectiles', 'familiars', 'curse auras', 'claw trails', 'impact flashes',
     'effects', 'release', 'later EN-E06 sprites', 'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Stop for explicit visual approval of the exact frozen Cauldron Hexer candidate. Do not commit, publish, register Hag, generate fixtures, start Blackthorn Matron, begin Dryad, or broaden Wave 2 before that approval.',
+  nextGate: 'The exact approved Cauldron Hexer implementation is published at 4b59b4098caf6397719fba6d21c27c5f8dcd82b0. The designer also said lets do next, authorizing only one complete Blackthorn Matron elite Hag after this branch publication. Registration, fixtures, Dryad, effects, release, and broader Wave 2 work remain closed.',
 });
 
 export const EN_E06_CAULDRON_HEXER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

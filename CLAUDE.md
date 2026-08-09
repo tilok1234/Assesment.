@@ -131,9 +131,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   passes connected, bounded, grounded, alias, mirror, and 80/80 Mire alpha-
   distinction gates at digest
   `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
-  It remains absent from the public facade, catalog, and fixtures. Do not
-  commit, push, register Hag, generate fixtures, start Blackthorn Matron or
-  Dryad, or broaden Wave 2 before explicit Cauldron Hexer approval.
+  Its exact packet was approved on 2026-08-09 and the bounded implementation is
+  published at `4b59b40`. It remains absent from the public facade, catalog,
+  and fixtures. The approval reply opens only one complete Blackthorn Matron
+  lane after publication; registration, fixtures, Dryad, effects, and broader
+  Wave 2 work remain closed.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate
