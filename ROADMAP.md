@@ -142,10 +142,12 @@ Goblin Scout/Hobgoblin/Barrow/Ironboot pixel, and alpha-silhouette distinction
 gates at digest
 `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`.
 The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-is generated, inspected, and opened together in Aseprite for explicit visual
-approval. No Bloodcap commit or publication is authorized. Nymph, EN-E07,
-registration changes, fixtures,
-shared renderer/schema changes, effects, and release remain closed.
+was opened together in Aseprite and visually approved on 2026-08-10. The frozen
+implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval record
+`5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
+tracked branch. No subsequent art gate is active. Nymph, EN-E07, registration
+changes, fixtures, shared renderer/schema changes, effects, and release remain
+closed.
 
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,

@@ -874,10 +874,12 @@ and alpha distinctions from public Goblin Scout, public Hobgoblin, approved
 Barrow Stalker, and approved Ironboot Trapper at digest
 `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`.
 All 80 frames are connected, bounded, grounded, and hard-alpha; the exact
-five-artifact packet is frozen at the preapproval visual gate, with its three
-exact PNG boards opened together in Aseprite. It is not committed or public.
-Nymph, registration, fixtures, effects, release, and later
-Wave 2 work remain closed.
+five-artifact packet was visually approved on 2026-08-10 after its three exact
+PNG boards were opened together in Aseprite. Its frozen implementation
+`1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval record
+`5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
+tracked branch. It remains private. No subsequent art gate is active; Nymph,
+registration, fixtures, effects, release, and later Wave 2 work remain closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

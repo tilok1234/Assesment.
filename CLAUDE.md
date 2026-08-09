@@ -110,12 +110,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   approved Ironboot Trapper at digest
   `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
-  is generated and frozen for explicit visual approval, with the three exact
-  PNG boards opened together in Aseprite. Fast validation passes
-  in 54.6s and full validation in 103.6s on the exact frozen pixels with all 232
-  fixtures valid. Public Redcap remains absent within 80/259. No Bloodcap commit
-  or publication is authorized; stop before registration, fixtures, Nymph,
-  EN-E07, effects, or release.
+  was opened together in Aseprite and visually approved on 2026-08-10. The
+  frozen implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval
+  record `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
+  tracked branch. Approval-state fast validation passes in 56.3s and full
+  validation in 106.4s with all 232 fixtures valid. Public Redcap remains absent
+  within 80/259. No subsequent art gate is active; stop before registration,
+  fixtures, Nymph, EN-E07, effects, or release.
 - The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved

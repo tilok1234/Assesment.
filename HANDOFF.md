@@ -15,11 +15,11 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Bloodcap Reaver Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Bloodcap Reaver Approved And Published
 
-Start here in a new task. This is the current stopping checkpoint; the exact
-private candidate is frozen for review and must not be committed or published
-before explicit visual approval.
+Start here in a new task. This is the current clean published stopping
+checkpoint; later sections are published or historical provenance, and no
+follow-on art gate is active.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-redcap-bloodcap-reaver`, based exactly on clean pushed
@@ -28,6 +28,10 @@ before explicit visual approval.
   reconciled, the designer said `cool lets do nexrt` on 2026-08-10. Under the
   documented Redcap role order and one-complete-sprite cadence, this opens only
   elite Bloodcap Reaver.
+- Approval: the exact raw/no-outline and Complete B + Form animations plus the
+  Hobgoblin/Barrow/Ironboot/Reaver comparison were presented, and all three
+  exact PNG boards were opened together in Aseprite. The designer replied
+  `approved` on 2026-08-10. Approval applies only to the frozen digest below.
 - Scope: one private 80-frame elite Redcap across Idle F1-F2, Walk W1-W4,
   Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
   Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
@@ -45,8 +49,8 @@ before explicit visual approval.
   Trapper; 72/72 colored identity frames; 8/8 exact white flashes; opaque range
   300-338; 7,241 Complete B additions; 7,126 Form changes.
 - Broader validation: all thirteen EN-E06 focused gates and the frozen
-  1,200-frame approved-integration gate pass; `check:fast` passes in 54.6s and
-  full `check` in 103.6s with all 232 fixtures valid and untouched.
+  1,200-frame approved-integration gate pass; approval-state `check:fast` passes
+  in 56.3s and full `check` in 106.4s with all 232 fixtures valid and untouched.
 - Frozen candidate digest:
   `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`.
 - Review artifacts: raw / Complete B + Form `1428x760` boards
@@ -62,20 +66,21 @@ before explicit visual approval.
 - Protected state: all approved Fairy, Hag, Dryad, Barrow, and Ironboot digests
   remain exact; public catalog remains 80 families / 259 variants with no public
   Redcap; all 232 committed fixtures remain untouched.
-- Publication state: no Bloodcap implementation or approval commit exists; the
-  working tree remains at the preapproval visual gate and review artifacts are
-  ignored evidence.
-- Required next action: present the three exact PNG boards and both GIFs and
-  await explicit approval. Do not commit,
-  publish, register Redcap, generate fixtures, begin Nymph, add effects, release,
-  or open EN-E07.
+- Publication state: the exact approved implementation
+  `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval record
+  `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
+  tracked branch; review artifacts remain ignored evidence.
+- Required next action: stop at this clean published checkpoint. Do not
+  register Redcap, generate fixtures, begin Nymph, add effects, release, open
+  EN-E07, or infer another art gate without explicit authorization.
 
 Suggested opening request for the next chat:
 
-> Resume `codex/en-e06-redcap-bloodcap-reaver` from the exact frozen candidate
-> in `HANDOFF.md`. Verify digest `e9a41fd` and stop for explicit visual approval
-> of the three boards already opened in Aseprite. Do not commit or infer Nymph,
-> registration, fixtures, effects, release, or EN-E07 authorization.
+> Resume `codex/en-e06-redcap-bloodcap-reaver` from the clean published
+> checkpoint in `HANDOFF.md`. Verify implementation `1a1ba00` and approval
+> record `5c55af2`, then stop unless the designer explicitly selects a new
+> isolated gate. Do not infer Nymph, registration, fixtures, effects, release,
+> or EN-E07 authorization.
 
 ## Approved Preceding Checkpoint - Ironboot Trapper Published
 

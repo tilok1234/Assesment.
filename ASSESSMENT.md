@@ -243,8 +243,10 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   alpha-silhouette distinction gates at digest
   `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`.
   Its exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-  is generated and frozen for visual approval, with the three exact PNG boards
-  opened together in Aseprite. No Bloodcap commit or publication is authorized.
+  was opened together in Aseprite and visually approved on 2026-08-10. The
+  frozen implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval
+  record `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
+  tracked branch. No subsequent art gate is active.
 Fixture regeneration, Nymph, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 

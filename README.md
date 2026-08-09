@@ -1127,10 +1127,11 @@ fixture firewalls. The focused gate passes at digest
 `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`,
 with 80/80 connected, bounded, grounded frames, 72/72 colored identity frames,
 8/8 exact white flashes, and opaque range 300-338. The exact five-artifact
-packet is frozen for explicit visual approval, with the three exact PNG boards
-opened together in Aseprite. No Bloodcap commit or publication is authorized;
-Nymph, EN-E07, registration changes, fixtures, effects, and
-release remain closed.
+packet was opened together in Aseprite and visually approved on 2026-08-10. The
+frozen implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval
+record `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
+tracked branch. No subsequent art gate is active; Nymph, EN-E07, registration
+changes, fixtures, effects, and release remain closed.
 
 ## Approved enemy backlog integration published
 
