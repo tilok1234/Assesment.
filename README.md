@@ -1092,9 +1092,24 @@ fixture firewalls. The focused gate passes at digest
 The exact packet was visually approved on 2026-08-10. Its frozen implementation
 `c3544dc4ec06e06afb15ea699333119342a8946f` and approval record
 `8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
-tracked branch. No subsequent art gate is active. Ironboot Trapper, Bloodcap
-Reaver, Nymph, EN-E07, registration changes, fixtures, effects, and release
-remain closed.
+tracked branch. At that published checkpoint Ironboot Trapper, Bloodcap Reaver,
+Nymph, EN-E07, registration changes, fixtures, effects, and release remained
+closed.
+
+The separately authorized Ironboot Trapper specialist is a short broad Redcap
+with a flat riveted rust-red cap, long ears, moss coat, asymmetric buckle
+harness, leather apron, connected trap-setting tongs, and enormous square iron
+boots. Placed traps, trap markers, snares, chains, blood, trails, chips, dust,
+flashes, and detached glints remain external. Run
+`npm.cmd run review:enemy-expansion-en-e06-redcap-ironboot-trapper` for the raw,
+Complete B + Form, Goblin Scout/Hobgoblin/Barrow/Ironboot comparison, and paired
+GIFs; run `npm.cmd run check:enemy-expansion-en-e06-redcap-ironboot-trapper` for
+the 80-frame structural, distinction, predecessor, artifact, and public/fixture
+firewalls. The focused gate passes at digest
+`31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
+The exact packet is hash-frozen and opened together in Aseprite; designer visual
+approval is pending. Bloodcap Reaver, Nymph, EN-E07, registration changes,
+fixtures, effects, and release remain closed.
 
 ## Approved enemy backlog integration published
 

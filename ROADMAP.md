@@ -131,19 +131,19 @@ Heartwood Warden, Redcap, Nymph, EN-E07, effects, fixture regeneration, and
 release remain outside this integration. The integration source and docs are
 committed and pushed at `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
 
-Current EN-E06 art checkpoint (2026-08-10): after Heartwood Warden was approved
-and published, the designer's `cool lets do next` opened only common Redcap
-Barrow Stalker on `codex/en-e06-redcap-barrow-stalker`. Its private hash-frozen
-80-frame candidate passes 80/80 connected, bounded, grounded, hard-alpha,
-Goblin Scout/Hobgoblin/Mire pixel, and alpha-silhouette distinction gates at
-digest `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
+Current EN-E06 art checkpoint (2026-08-10): Barrow Stalker is approved and
+published at implementation `c3544dc4ec06e06afb15ea699333119342a8946f` plus
+approval record `8e2054236a49ab06b7cac404cda8b12bb440085c`. The designer's
+later `next` opens only specialist Ironboot Trapper on
+`codex/en-e06-redcap-ironboot-trapper`. Its private hash-frozen 80-frame
+candidate passes 80/80 connected, bounded, grounded, hard-alpha,
+Goblin Scout/Hobgoblin/Barrow pixel, and alpha-silhouette distinction gates at
+digest `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
 The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-was visually approved on 2026-08-10. The frozen implementation
-`c3544dc4ec06e06afb15ea699333119342a8946f` and approval record
-`8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
-tracked branch. No subsequent art gate is active. Ironboot Trapper, Bloodcap
-Reaver, Nymph, EN-E07, registration changes, fixtures, shared renderer/schema
-changes, effects, and release remain closed.
+is generated and all three PNG boards were opened together in Aseprite.
+Designer visual approval is pending. Bloodcap Reaver, Nymph, EN-E07,
+registration changes, fixtures, shared renderer/schema changes, effects, and
+release remain closed.
 
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,

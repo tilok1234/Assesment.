@@ -15,10 +15,64 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Barrow Stalker Approved And Published
+## Immediate Continuation Checkpoint - Ironboot Trapper Awaiting Visual Approval
 
-Start here in a new task. This is the current stopping checkpoint; later
-sections are historical provenance, and no follow-on art gate is active.
+Start here in a new task. This is the only active continuation section; later
+sections are published or historical provenance.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e06-redcap-ironboot-trapper`, based exactly on clean pushed
+  Barrow handoff `3cb794da9078056d51eaa23137cf67c9782aa77d`.
+- Authorization: after Barrow Stalker was approved, committed, pushed, and
+  reconciled, the designer said `next` on 2026-08-10. Under the documented
+  Redcap role order and one-complete-sprite cadence, this opens only specialist
+  Ironboot Trapper.
+- Scope: one private 80-frame specialist Redcap across Idle F1-F2, Walk W1-W4,
+  Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
+- Identity: a short broad trapper with a flat riveted rust-red cap, long fey
+  ears, moss-dark coat, asymmetric buckle harness, leather apron, connected
+  trap-setting tongs, and enormous square-toed iron boots.
+- Effects firewall: blood spray, ground chips, weapon trails, placed traps,
+  trap markers, snare lines, loose chains, grave dust, impact flashes, and
+  detached tong glints remain external.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded hard-alpha
+  frames; 80/80 pixel and alpha-silhouette distinctions from public Goblin
+  Scout, public Hobgoblin, and approved Barrow Stalker; 72/72 colored identity
+  frames; 8/8 exact white flashes; opaque range 268-303; 7,918 Complete B
+  additions; 11,251 Form changes.
+- Broader validation: all twelve EN-E06 focused gates and the frozen
+  1,200-frame approved-integration gate pass; `check:fast` passes in 55.4s and
+  full `check` in 105.5s with all 232 fixtures valid and untouched.
+- Frozen candidate digest:
+  `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `139776b84be26585b3bc3d23118a0c55f2f6cdac176b0747b070e10f2f88e8ed` /
+  `dd606da11e8c9718c35c02b16dbd630f6715514d6def26b1527e8188300d4609`;
+  Goblin Scout/Hobgoblin/Barrow/Ironboot `1520x548` comparison
+  `bd4b88450b0edb8fc3559049ec0013024573f8cc85ca3a3f33a5cc0142b4e5f7`;
+  raw / Complete B + Form `640x672` GIFs
+  `a38ca4cc31e178299096d67df27a54fbcb4ec1eab8c71438786cc9931b550a17` /
+  `83b71e030b9f2fe61526c0014a350d43c8e5b68c7a89675890ec1dc148b9c927`.
+- Visual evidence: all three exact PNG boards were opened together in Aseprite.
+- Protected state: all approved Fairy, Hag, Dryad, and Barrow digests remain
+  exact; public catalog remains 80 families / 259 variants with no public
+  Redcap; all 232 committed fixtures remain untouched.
+- Required next action: review the exact packet and wait for explicit designer
+  approval. Do not commit, publish, register Redcap, generate fixtures, begin
+  Bloodcap Reaver or Nymph, add effects, release, or open EN-E07.
+
+Suggested opening request for the next chat:
+
+> Resume `codex/en-e06-redcap-ironboot-trapper` from the exact visual gate in
+> `HANDOFF.md`. Present the raw, Complete B + Form, comparison, and paired GIF
+> evidence and wait for explicit approval. Do not commit, publish, register,
+> begin Bloodcap Reaver/Nymph, add effects, release, or open EN-E07.
+
+## Approved Preceding Checkpoint - Barrow Stalker Published
+
+This records the clean published predecessor for the active Ironboot Trapper
+gate. Later sections are historical provenance.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-redcap-barrow-stalker`, based exactly on clean pushed

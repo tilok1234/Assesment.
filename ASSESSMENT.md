@@ -228,7 +228,13 @@ Its exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
 was visually approved on 2026-08-10. The frozen implementation
 `c3544dc4ec06e06afb15ea699333119342a8946f` and approval record
 `8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
-tracked branch. No subsequent art gate is active.
+tracked branch. The later authorized specialist Redcap Ironboot Trapper
+candidate on `codex/en-e06-redcap-ironboot-trapper` passes 80/80 connected,
+bounded, grounded, hard-alpha, Goblin Scout/Hobgoblin/Barrow pixel, and
+alpha-silhouette distinction gates at digest
+`31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
+Its exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
+is frozen and opened together in Aseprite; designer visual approval is pending.
 Fixture regeneration, later Redcaps/Nymph, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 

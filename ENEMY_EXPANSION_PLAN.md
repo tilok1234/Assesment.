@@ -13,20 +13,18 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current art gate (2026-08-10): after Heartwood Warden was approved and
-  published, the designer's `cool lets do next` opened only the first Redcap
-  role, one complete common Barrow Stalker on
-  `codex/en-e06-redcap-barrow-stalker`. Its frozen 80-frame candidate passes
+- Current art gate (2026-08-10): after Barrow Stalker was approved, committed,
+  pushed, and reconciled, the designer's `next` opened only the second Redcap
+  role, one complete specialist Ironboot Trapper on
+  `codex/en-e06-redcap-ironboot-trapper`. Its frozen 80-frame candidate passes
   connected, one-cell-bounded, grounded, hard-alpha, alias, mirror, and 80/80
   pixel plus alpha-silhouette distinction gates against public Goblin Scout,
-  public Hobgoblin, and approved Mire Crone at digest
-  `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
+  public Hobgoblin, and approved Barrow Stalker at digest
+  `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
-  was visually approved on 2026-08-10. The frozen implementation
-  `c3544dc4ec06e06afb15ea699333119342a8946f` and approval record
-  `8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
-  tracked branch. No subsequent art gate is active. Later Redcaps, Nymph,
-  EN-E07, fixtures, effects, registration changes, and release remain closed.
+  is hash-frozen, and all three exact PNG boards were opened together in
+  Aseprite. Designer visual approval is pending. Bloodcap Reaver, Nymph, EN-E07,
+  fixtures, effects, registration changes, and release remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -2866,7 +2864,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `Barrow Stalker complete 80-frame suite approved; bounded publication authorized`
+- Status: `Ironboot Trapper complete 80-frame candidate awaiting visual approval`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3337,6 +3335,48 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   register Redcap, begin Ironboot Trapper, Bloodcap Reaver, or Nymph, generate
   fixtures, add effects, release, or open EN-E07.
 
+#### Redcap Ironboot Trapper complete suite candidate
+
+- Gate ID: `en-e06-redcap-ironboot-trapper-full-v1`; status: `candidate` on
+  `codex/en-e06-redcap-ironboot-trapper`, based exactly on clean published
+  Barrow handoff `3cb794da9078056d51eaa23137cf67c9782aa77d`.
+- Authorization: after Barrow Stalker was approved, committed, pushed, and
+  reconciled, the designer said `next` on 2026-08-10. Under the frozen Redcap
+  role order this opens only specialist Ironboot Trapper.
+- Scope: one private complete 80-frame specialist Redcap. Bloodcap Reaver,
+  Nymph, registration, fixtures, effects, release, and EN-E07 remain closed.
+- Identity: a short broad trapper with a flat riveted rust-red cap, long fey
+  ears, moss-dark coat, asymmetric ochre buckle harness, leather apron,
+  connected trap-setting tongs, and enormous square-toed iron boots.
+- Effects firewall: blood spray, ground chips, weapon trails, placed traps,
+  trap markers, snare lines, loose chains, grave dust, impact flashes, and
+  detached tong glints remain external.
+- Motion: two cap/tong Idle poses; four heavy square-boot Walk stomps; four
+  connected brace, jaw-open, downward-clamp, and closed-recovery Attack poses;
+  exact Cast-to-Attack aliases; white-recoil and colored-brace Hurt; exact Death
+  aliases H1,H2,H2,H2; exact side mirrors.
+- Focused validation: 80/80 connected, bounded, grounded hard-alpha frames;
+  80/80 pixel and alpha distinctions from public Goblin Scout, public
+  Hobgoblin, and approved Barrow Stalker; 72/72 colored identity frames; 8/8
+  exact white flashes; opaque range 268-303; Complete B +7,918; Form changes
+  11,251. All twelve EN-E06 gates and the exact 1,200-frame approved-integration
+  gate pass; `check:fast` passes in 55.4s and full `check` in 105.5s with all
+  232 fixtures valid.
+- Candidate digest:
+  `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
+- Evidence SHA-256: raw
+  `139776b84be26585b3bc3d23118a0c55f2f6cdac176b0747b070e10f2f88e8ed`;
+  Complete B + Form
+  `dd606da11e8c9718c35c02b16dbd630f6715514d6def26b1527e8188300d4609`;
+  comparison
+  `bd4b88450b0edb8fc3559049ec0013024573f8cc85ca3a3f33a5cc0142b4e5f7`;
+  raw GIF `a38ca4cc31e178299096d67df27a54fbcb4ec1eab8c71438786cc9931b550a17`;
+  Complete B + Form GIF
+  `83b71e030b9f2fe61526c0014a350d43c8e5b68c7a89675890ec1dc148b9c927`.
+- Required next action: review the exact packet and wait for explicit designer
+  approval. Do not commit, publish, register Redcap, begin Bloodcap Reaver or
+  Nymph, generate fixtures, add effects, release, or open EN-E07.
+
 ### EN-E07 - Shapeshifters and apparitions
 
 - Status: `queued`
@@ -3609,8 +3649,11 @@ frozen at digest
 `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
 Its implementation `c3544dc4ec06e06afb15ea699333119342a8946f` and approval
 record `8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
-tracked branch. No subsequent art gate is active. Later Redcaps, Nymph, EN-E07,
-the three EN-E03 Idle-only variants,
+tracked branch. The later isolated Ironboot Trapper suite on
+`codex/en-e06-redcap-ironboot-trapper` is technically complete and hash-frozen
+at digest `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`;
+designer visual approval is pending. Bloodcap Reaver, Nymph, EN-E07, the three
+EN-E03 Idle-only variants,
 public-registration changes, fixtures, effects, and release remain separate
 closed gates.
 

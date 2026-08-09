@@ -856,9 +856,17 @@ Goblin Scout, public Hobgoblin, and approved Mire Crone at digest
 The exact five-artifact packet was visually approved on 2026-08-10. Its frozen
 implementation `c3544dc4ec06e06afb15ea699333119342a8946f` and approval record
 `8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on the
-tracked branch. No subsequent art gate is active; registration changes,
-fixtures, later Redcaps, Nymph, effects, release, and later Wave 2 work remain
-closed.
+tracked branch. At that published checkpoint, registration changes, fixtures,
+later Redcaps, Nymph, effects, release, and later Wave 2 work remained closed.
+The separately authorized Ironboot Trapper
+module keeps one complete specialist Redcap in another private one-family
+registry. Its flat riveted cap, buckle harness, connected setting tongs,
+leather apron, and square iron boots pass 80/80 pixel and alpha distinctions
+from public Goblin Scout, public Hobgoblin, and approved Barrow Stalker at
+digest `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
+The candidate is hash-frozen and technically complete but awaits designer
+visual approval; Bloodcap Reaver, Nymph, registration, fixtures, effects,
+release, and later Wave 2 work remain closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
