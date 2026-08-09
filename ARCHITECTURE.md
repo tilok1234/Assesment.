@@ -110,8 +110,8 @@ internal; only an approved registration can appear in the public family view.
 The legacy `ENEMIES` array remains unchanged as the 57-family / 202-variant
 regression and fixture boundary. `engine/enemy-expansion-public.js` also exports
 immutable `PUBLIC_ENEMIES`, which preserves those legacy entries in order and
-appends the thirteen consumer-authorized EN-E01/EN-E02/EN-E04 families, yielding
-the current 70-family / 241-variant consumer catalog. Editor selectors and sanitizers,
+appends the seventeen consumer-authorized EN-E01/EN-E02/EN-E04/EN-E05 families,
+yielding the current 74-family / 245-variant consumer catalog. Editor selectors and sanitizers,
 persistence, randomization, combat defaults, kits, packs, thumbnails, and
 exports consume that merged view without mutating `ENEMIES`.
 
@@ -130,9 +130,9 @@ the stable public dispatcher and applies the source-preserving exterior contour
 path for Complete B or Selective C. `engine/shade-renderer.js` resolves enemy
 materials from `PUBLIC_ENEMIES`, so EN-E01 uses the nested skin, hair, outfit,
 and identity palette ramps published by its renderer data instead of falling
-back to an unrelated legacy family. EN-E02 reaches the same palette-aware path
-through its approved renderer data. None/None still delegates directly to the
-raw dispatcher; Form and outlines alter only complete assembled output,
+back to an unrelated legacy family. EN-E02, EN-E04, and EN-E05 reach the same
+palette-aware path through their approved renderer data. None/None still
+delegates directly to the raw dispatcher; Form and outlines alter only complete assembled output,
 preserve protected features and outline geometry, and do not mutate registry
 pixels or atomic component sheets.
 
@@ -187,10 +187,22 @@ rewrite that reviewed snapshot. The designer later approved an exact
 seven-family walk/seam repair, so both stable and consumer composition now route
 through `ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY` at the EN-E01/EN-E02
 boundary while the pre-repair object remains internal. The later EN-E04
-registration composes three additional approved family dispatchers into the
-stable registry, and its separately authorized consumer gate now makes the
-consumer registry reuse that exact 13-family / 39-variant stable object. That
-repair and integration did not authorize effects or release.
+registration composes three additional approved family dispatchers, and EN-E05
+adds four more. Their separately authorized consumer gates now make the
+consumer registry reuse the exact 17-family / 43-variant stable object. Those
+repairs and integrations did not authorize effects or release.
+
+`engine/enemy-expansion-en-e05.js` owns the five-undead registration provenance
+and the later assembler-consumer authorization. Exact approved Mummy Tomb
+Walker, Vampire Night Noble, Revenant Grave Oathkeeper, and Lich Soul Regent
+enter the stable and consumer registries as four one-variant families. The
+approved Ghoul upgrade remains a separate internal replacement record targeting
+legacy `zombie/ghoul`; it does not collide with or replace that public legacy
+entry. The generic consumer boundary covers selectors, sanitization,
+persistence, randomization, dispatch, scoped sheets, thumbnails, ordinary
+packs, Complete Kit, and Wildshot without family-specific branches. All 320
+public frames retain the registered digest
+`947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`.
 
 `engine/enemy-expansion-en-e03.js` is a separate, non-public historical evidence
 module. It owns three immutable Giant/Centaur/Satyr contract cards, the exact v2
@@ -439,7 +451,7 @@ are later slices governed by `GAME_PACK_EXPORT_PLAN.md`.
 
 ### Complete character kits
 
-`character-kit.js` deterministically expands the player catalogs into one deduplicated component plan: skin-body, head, expression, hair, face-detail, species-back, species-front, outfit-back, outfit, headgear, weapon, shield, and utility-off-hand passes. It stores 119 hair sheets, six expression sheets, 60 content-unique species passes, 41 headgear sheets, and two Lantern passes beneath stable component paths. Species paths expand only on the palette axis that changes their pixels: skin for Dwarf and Lizardfolk traits, hair for Beastkin fur, and one fixed path for Undead traits. Short, spiky, bowl, and topknot share one pixel-identical fitted hair path, while outfit-colored headgear expands only the variants whose pixels actually change. Outfit and cape paths include the body-build id because those pixels define the silhouette; all other compatible layers remain shared. The resulting library contains 1020 outfit fronts, 140 cape backs, and 1912 component sheets total. It also expands all 70 public enemy families / 241 variants into stable `enemies/<family>/<variation>.png` paths and every combat effect into stable `effects/<category>/<effect>.png` paths for complete native sheets. Up to 24 named players are mapped to lightweight recipes that reference the shared character paths and carry their modular combat-loadout recipes. The standalone kit adds no per-recipe PNGs and contains 2178 PNGs total; the combined Complete Pack adds one assembled native sheet per player for immediate use and contains 2201 PNGs at the 24-player limit. The planner owns stable paths, counts, recipe limits, the native export scale, compatibility variants, and the runtime layer order. It imports catalogs only through `sprite-engine.js` and does not access the DOM, canvas, editor state, persistence, or ZIP implementation.
+`character-kit.js` deterministically expands the player catalogs into one deduplicated component plan: skin-body, head, expression, hair, face-detail, species-back, species-front, outfit-back, outfit, headgear, weapon, shield, and utility-off-hand passes. It stores 119 hair sheets, six expression sheets, 60 content-unique species passes, 41 headgear sheets, and two Lantern passes beneath stable component paths. Species paths expand only on the palette axis that changes their pixels: skin for Dwarf and Lizardfolk traits, hair for Beastkin fur, and one fixed path for Undead traits. Short, spiky, bowl, and topknot share one pixel-identical fitted hair path, while outfit-colored headgear expands only the variants whose pixels actually change. Outfit and cape paths include the body-build id because those pixels define the silhouette; all other compatible layers remain shared. The resulting library contains 1020 outfit fronts, 140 cape backs, and 1912 component sheets total. It also expands all 74 public enemy families / 245 variants into stable `enemies/<family>/<variation>.png` paths and every combat effect into stable `effects/<category>/<effect>.png` paths for complete native sheets. Up to 24 named players are mapped to lightweight recipes that reference the shared character paths and carry their modular combat-loadout recipes. The standalone kit adds no per-recipe PNGs and contains 2182 PNGs total; the combined Complete Pack adds one assembled native sheet per player for immediate use and contains 2205 PNGs at the 24-player limit. The planner owns stable paths, counts, recipe limits, the native export scale, compatibility variants, and the runtime layer order. It imports catalogs only through `sprite-engine.js` and does not access the DOM, canvas, editor state, persistence, or ZIP implementation.
 
 ### Archive packaging
 
@@ -451,11 +463,11 @@ outline modes. It emits three stable top-level treesâ€”`outlined`,
 `semi-outlined`, and `without-outlines`â€”with one native `480x96` complete sheet
 for every public family/variant, plus a manifest, README, stored ZIP, and SHA-256
 sidecar. `tools/check-all-enemy-outline-pack.mjs` independently decodes all PNGs
-and the stored ZIP, checks the current 70/241 catalog boundary, all 80 non-empty cells,
+and the stored ZIP, checks the current 74/245 catalog boundary, all 80 non-empty cells,
 hard alpha, per-treatment geometry order, hashes, and directory/archive parity.
 The adapter does not import or expose incomplete EN-E03 registries, write
 fixtures, alter public catalogs, or act as a release publisher. The current
-export target contains 723 PNGs. The exact previously approved historical
+export target contains 735 PNGs. The exact previously approved historical
 67/232 delivery contains 696 PNGs and has ZIP SHA-256
 `fd03895d8657b96293be14fbddbdb193ce62678c068023b58015410fc7f92b9c`.
 The bounded tooling/docs checkpoint is committed and pushed at
@@ -542,28 +554,27 @@ deliberately not serialized.
 - Class-pack archives preserve one character identity, contain only equipment permitted by their stable class definition, deduplicate complete specifications, and include one resolved modular combat loadout per ready sheet.
 - Complete Character Kits always use native 1x sheets and the draw order `weapon-back`, `shield-back`, `offhand-back`, `species-back`, `outfit-back`, `outfit`, `skin-body`, `head`, `expression`, `species-front`, `face-detail`, `hair`, `headgear`, `shield-front`, `offhand-front`, `weapon-front`.
 - Combat-effect sheets remain modular and unbaked. The current effects-after-character preview/recipe order is a compatibility fact, not a finalized foreground-equipment occlusion invariant.
-- All 70 public enemy families support None, Complete B, and Selective C in live
+- All 74 public enemy families support None, Complete B, and Selective C in live
   assembled rendering. The locked 57-family legacy gate covers 16,160 source
   frames; the cumulative expansion gate adds all 2,400 approved EN-E01/EN-E02
-  frames plus all 720 approved EN-E04 frames with the same source-ownership and
-  bounds guarantees.
+  frames, all 720 approved EN-E04 frames, and all 320 approved EN-E05 public
+  frames with the same source-ownership and bounds guarantees.
 - The EN-F00 foundation registry remains empty and separate from `ENEMIES`;
-  the stable approved and consumer registries contain exactly thirteen
-  EN-E01/EN-E02/EN-E04 families / 39 variants. `PUBLIC_ENEMIES` is exactly 70
-  families / 241 variants
+  the stable approved and consumer registries contain exactly seventeen
+  EN-E01/EN-E02/EN-E04/EN-E05 families / 43 variants. `PUBLIC_ENEMIES` is
+  exactly 74 families / 245 variants
   and is the editor, randomizer, kit, pack, thumbnail, and export catalog. The
   underlying 57-family / 202-sheet / 16,160-frame legacy corpus remains
   unchanged and retains locked SHA-256 pixel digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
-- The 39 expansion variants retain their reviewed raw pixels at the registry
+- The 43 expansion variants retain their reviewed raw pixels at the registry
   and None/None dispatcher boundary. Optional assembled rendering may apply the
   shared Form/outline algorithms; exports remain shadow-free, while the live
   preview may add only the standard non-baked floor shadow.
-- EN-E03 remains an isolated common-only Idle evidence registry with three
-  rejected implemented variants, 24 review frames, and zero approved/public
-  families. Its non-Idle refusal and absence from the public facade are
-  invariants; neither rejected implementation may be extended without a newly
-  authorized calibration gate.
+- The original EN-E03 v1/v2 common-only registry remains rejected historical
+  evidence with 24 review frames. Later approved calibration and motion modules
+  remain isolated evidence with zero public families. No EN-E03 module enters
+  the stable or consumer facade without a newly authorized adoption gate.
 - Shade None plus outline None directly delegates to `drawSprite()`. Shade None
   combined with Complete B or Selective C preserves the approved outline
   output. Form changes eligible source-owned colors only and is wired through
@@ -597,7 +608,7 @@ and rejection of empty, clipped, translucent, reordered, or incorrectly sized
 completed standard Enemy sheets.
 
 The nested `npm run check:enemy-expansion-en-e02-consumers` gate proves exact
-57/202 legacy preservation, current 70/241 public composition, and protected
+57/202 legacy preservation, current 74/245 public composition, and protected
 approved pixel parity across all 2,400 EN-E01/EN-E02 editor/dispatcher frames
 and all 30 native `480x96` sheets. It also exhausts 7,200 None/B/C
 outline cases and 7,200 Form/outline cases across all 180 published expansion
@@ -607,10 +618,18 @@ The nested `npm run check:enemy-expansion-en-e04-consumers` gate proves generic
 selector, persistence, randomizer, thumbnail, export, Kit/Pack, combat-default,
 and Wildshot routing for Naga, Merfolk, and Birdfolk. It checks all 720 public
 dispatcher frames, nine full sheets plus scoped sheet routes, 67,440 Complete B
-additions, 64,380 Form-changed source pixels, 2,178 Complete Kit PNGs, all nine
+additions, 64,380 Form-changed source pixels, 2,182 Complete Kit PNGs, all nine
 Wildshot specs, and the frozen approved aggregate digest. The generic renderer
 bridge suppresses full-frame resets but forwards deliberate regional clears so
 Merfolk and Temple Rajah lower-body replacement pixels remain exact.
+
+The nested `npm run check:enemy-expansion-en-e05-consumers` gate proves generic
+routing for Mummy Tomb Walker, Vampire Night Noble, Revenant Grave Oathkeeper,
+and Lich Soul Regent. It checks all 320 public dispatcher frames, four full
+sheets plus scoped routes, 29,795 Complete B additions, 27,338 Form-changed
+source pixels, the 2,182-PNG Complete Kit, all four Wildshot specs, unchanged
+public `zombie/ghoul`, unchanged fixtures, and frozen digest
+`947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
@@ -1180,9 +1199,9 @@ the gate. All ten protected predecessor gates pass; the fast gate passes in
 PNG sheets unchanged. Exact paired visual approval is recorded with the
 designer's `sure lets do 123` on 2026-08-09. Bounded publication of this exact
 ten-file lane is complete at approved implementation checkpoint
-`da8c089`. The separately authorized next gates are complete EN-E04
-registration followed by assembler consumer integration. Additional Birdfolk
-variants, effects, release, and broader work remain outside.
+`da8c089`. The subsequently authorized EN-E04 registration and assembler
+consumer gates are also complete. Additional Birdfolk variants, effects,
+release, and broader work remain outside that historical lane.
 
 `engine/enemy-expansion-en-e04.js` owns the complete approved EN-E04
 registration boundary. It composes Naga, Merfolk, and Birdfolk as three
@@ -1193,10 +1212,10 @@ catalog entry is rewritten. Gate `en-e04-nine-enemy-registration-v1` verifies
 all nine native `480x96` sheets and 720 candidate/registered frames at aggregate
 digest `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
 The validated registration checkpoint is published at `6f228fb`.
-The stable registry is now 13 families / 39 variants with four renderers. Gate
-`en-e04-assembler-consumers-v1` is separately authorized and makes the consumer
+At that checkpoint the stable registry reached 13 families / 39 variants with
+four renderers. Gate `en-e04-assembler-consumers-v1` then made the consumer
 registry reuse that exact stable object, so `PUBLIC_ENEMIES`, editor paths,
-randomization, persistence, and exports now cover 70 families / 241 variants.
+randomization, persistence, and exports covered 70 families / 241 variants.
 Its exhaustive 720-frame consumer check preserves the same aggregate digest and
 verifies nine full sheets, all scoped routes, outline/Form treatment, Complete
 Kits/Packs, and Wildshot acceptance without slice-specific consumer branches.
@@ -1210,13 +1229,10 @@ Idle-frame control parity, facade immutability, native-only download wiring,
 and absence from production renderer, generator, persistence, game-pack, and
 ordinary sheet dependencies.
 
-The full `npm run check` also expects a complete ignored local Boss
-review-checkpoint corpus. It passes on the approved Hill Breaker, Steppe Hunter
-Attack, and Briar Reveler Attack branches when
-that 1,064-file corpus is present, but a fresh worktree stops in the two Boss subprocesses
-because 965 optional checkpoint PNGs are absent. The separate
-`codex/clean-clone-check` candidate at `125b0b3` is unvalidated and is not part
-of this architecture checkpoint.
+The standard full `npm run check` is fresh-clone safe. Missing optional local
+Boss review checkpoints are warnings, and byte parity runs for every checkpoint
+that is present. `npm run check:bosses:strict` is the separate designer-machine
+gate that requires the complete ignored 1,064-file review corpus.
 
 The Production gate within that command adds 1,000 portable policy cases,
 immutable profile/freeze and reason-code checks, invalid-seed normalization,
@@ -1282,28 +1298,32 @@ For face-bound content, verify front and both side views, confirm the rear view 
 
 ### Add an enemy variant
 
+Follow `.claude/skills/add-enemy/SKILL.md` as the current runbook:
+
 1. Add the variant beneath its family in `engine/catalogs/enemies.js`.
-2. Re-export its fixture into `asset-pack/enemies/`.
-3. Register the file in `asset-pack/manifest.json`.
-4. Run `npm run check` to catch definition, registration, or dimension drift.
+2. Run `npm run export:fixtures -- --family <family> --variant <variant>`; the
+   exporter writes the legacy-format PNG and regenerates the manifest.
+3. Run `npm run check:fast`, review only the changed variant, and run the full
+   gate before the bounded commit.
+
+Never hand-edit `asset-pack/manifest.json` or pass `--accept-drift` without the
+designer's explicit fixture-regeneration approval.
 
 ### Add an enemy family
 
 1. Add the family and variants in `engine/catalogs/enemies.js`.
 2. Add its procedural drawing function and dispatch in `engine/renderer.js`.
-3. Export and register every fixture.
-4. Verify all directions and animations before publishing.
+3. Add outline registry support only when that treatment is approved.
+4. Run `npm run export:fixtures -- --family <id>`; do not hand-register files.
+5. Run `npm run check:fast`, review one four-direction Idle sheet for this
+   family, and run the full gate before publishing.
 
 For the proposed 80-enemy expansion, do not use this legacy one-family path.
-EN-F00's data-driven foundation and stable public composition boundary now
-exist. EN-E01 and EN-E02 demonstrate the complete lifecycle with ten
-approved/public families / 30 variants and a shared renderer handler; the later
-approved repair remains a separate immutable registry layer. EN-E03 is the
-current counterexample that proves approved implemented evidence can stay
-non-public: three internal Idle baselines plus all three common Walk and Attack
-baselines are visually approved while remaining internal. Hill Breaker H1-H2
-is also a visually approved internal baseline with every approved prior frame
-delegated exactly; it is not public. Follow
+EN-F00's data-driven foundation and stable public composition boundary exist.
+EN-E01, EN-E02, EN-E04, and the four new EN-E05 families demonstrate the
+complete lifecycle with 17 approved/public families / 43 variants. The EN-E05
+Ghoul upgrade remains an internal replacement proposal, and EN-E03 remains
+isolated evidence rather than a public slice. Follow
 `ENEMY_EXPANSION_PLAN.md`: keep
 candidates out of the public view, stop for four-direction baseline approval
 before full production, stop again for completed-slice approval, and register

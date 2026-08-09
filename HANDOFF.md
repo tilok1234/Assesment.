@@ -59,6 +59,13 @@ four registered new families.
   reviewed pixels, add effects, release, adopt EN-E03, or begin Wave 2 without
   later explicit authorization.
 
+# Historical Handoff Archive
+
+Everything below this heading is point-in-time provenance. Words such as
+"current", "next", "immediate", and "required" apply only to the historical
+checkpoint in which they appear. A new chat must use the current checkpoint at
+the top of this file and must not resume a lane from this archive.
+
 ## Approved Preceding Checkpoint - EN-E05 Stable Registration Published
 
 Start here in a new task. After the repaired Lich Soul Regent was approved,
@@ -397,7 +404,7 @@ public or fixture replacement.
   public Ghoul pixels, regenerate fixtures, or begin Mummy; each requires a
   later explicit gate.
 
-## Immediate Continuation Checkpoint - EN-E04 Assembler Integration Published
+## Historical Checkpoint - EN-E04 Assembler Integration Published
 
 Start here in a new task. The designer authorized the three-part sequence with
 `sure lets do 123` on 2026-08-09. Stormcrown publication, nine-enemy stable
@@ -441,7 +448,7 @@ technically green.
   Effects, EN-E03 adoption, fixture regeneration, release, and broader content
   remain outside.
 
-## Immediate Continuation Checkpoint - EN-E04 Registration Approved And Published
+## Historical Checkpoint - EN-E04 Registration Approved And Published
 
 Start here in a new task. The designer approved Stormcrown Exarch and the full
 three-step sequence by saying `sure lets do 123` on 2026-08-09. Step 1 is
@@ -483,7 +490,7 @@ EN-E04 roster into the stable registry without exposing it to consumers.
 
 The approved and published Stormcrown checkpoint follows for provenance.
 
-## Immediate Continuation Checkpoint - Birdfolk Stormcrown Exarch Approved And Published
+## Historical Checkpoint - Birdfolk Stormcrown Exarch Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the
 complete Birdfolk Gale Augur specialist, the designer said `lets do next` on
@@ -562,7 +569,7 @@ enemies would enter the assembler, the designer said `sure lets do 123` on
 
 The approved preceding Gale Augur checkpoint follows for provenance.
 
-## Immediate Continuation Checkpoint - Birdfolk Gale Augur Approved And Published
+## Historical Checkpoint - Birdfolk Gale Augur Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the
 complete Birdfolk Aerie Scout common, the designer said `awesome lets keep
@@ -640,7 +647,7 @@ exact hash-frozen raw/no-outline and Complete B + Form pair together and said
 
 The approved preceding Aerie Scout checkpoint follows for provenance.
 
-## Immediate Continuation Checkpoint - Birdfolk Aerie Scout Approved And Published
+## Historical Checkpoint - Birdfolk Aerie Scout Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the
 complete Merfolk Pearl Regent, the designer said `next` on 2026-08-09. The live
@@ -717,7 +724,7 @@ with `ok lets keep going`; the new Aseprite MCP call succeeded and both exact
 
 The approved preceding Pearl Regent checkpoint follows for provenance.
 
-## Immediate Continuation Checkpoint - Merfolk Pearl Regent Approved And Published
+## Historical Checkpoint - Merfolk Pearl Regent Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the
 complete Merfolk Reefcaller, the designer said `lets do next` on 2026-08-09.
@@ -1511,7 +1518,7 @@ that bounded approval lane, commit it, and push its branch before beginning
 another gate. Do not commit or push an unapproved lane. If the designer
 explicitly says to hold publication, that narrower instruction wins.
 
-## Canonical Workspace And Git State
+## Historical Canonical Workspace And Git State
 
 - Approved all-enemy export worktree:
   `C:\tmp\8-bit-sprite-assembler-all-enemy-outline-export`
@@ -1679,7 +1686,7 @@ deterministic review boards and copied local Boss checkpoint corpus in the
 Steppe worktree are validation evidence, not tracked changes. Do not modify,
 clean, reset, rebase, or repurpose the archived review checkout.
 
-## Exact Next Lane
+## Historical Exact Next Lane (Superseded)
 
 `ENEMY_EXPANSION_PLAN.md` remains the accepted decomposition of the designer's
 80 additional proposals. It resolves them into:
@@ -2903,7 +2910,7 @@ EN-E01 does not authorize all later waves. The three new Boss proposals remain
 blocked behind the current Boss review queue unless the designer explicitly
 changes priority.
 
-## Required Reading
+## Historical Required Reading (Superseded)
 
 Superseded on 2026-08-08: `CLAUDE.md` is the single session entry point.
 Read `CLAUDE.md`, this file's top consolidation section, and the active plan
@@ -2938,7 +2945,7 @@ The 232 committed PNG fixtures are a deliberate legacy 12-column baseline.
 Their `1152x384` 4x dimensions do not change the current public 20-column
 runtime contract and must not be rewritten merely to match it.
 
-## Current Enemy And Expansion State
+## Historical Enemy And Expansion State
 
 - Locked legacy catalog: 57 families / 202 variants.
 - Live public consumer catalog: 67 families / 232 variants.
@@ -3008,7 +3015,7 @@ runtime contract and must not be rewritten merely to match it.
   states remain separate asset/runtime contracts; they are not baked into new
   actors to make a proposal appear complete.
 
-## Current Boss Review State
+## Historical Boss Review State
 
 The isolated Bosses workspace contains fourteen direction entries:
 
@@ -3626,7 +3633,7 @@ Recorded expansion results through the rejected EN-E03 v2 technical gate:
   rejected evidence, while the approved Hill Breaker and Steppe Hunter F1/F2
   lanes and approved Briar Reveler F1/F2 lane are also internal.
 
-## Documentation Audit Result
+## Historical Documentation Audit Result
 
 The historical 2026-08-03/04 audit covered all 20 tracked Markdown documents.
 The 2026-08-06 post-cleanup reconciliation compared its five active documents
@@ -3664,7 +3671,7 @@ H1-H2 is also approved, hash-frozen, internal, and non-public; its exact bounded
 state is published through `codex/en-e03-steppe-hunter-hurt`. No later EN-E03
 gate is authorized, and no public registry changed.
 
-## Frozen Boundaries
+## Historical Frozen Boundaries
 
 Unless the designer explicitly changes scope:
 
@@ -3713,7 +3720,7 @@ Unless the designer explicitly changes scope:
 - do not change actor geometry, animation timing/order, stable IDs, public
   schemas, or the 20-column sheet contract incidentally.
 
-## New-Chat Opening
+## Historical New-Chat Opening (Superseded)
 
 The safest opening request for the next chat is:
 

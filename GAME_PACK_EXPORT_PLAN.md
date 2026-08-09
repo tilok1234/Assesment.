@@ -9,6 +9,9 @@ and pushed at `d6a56c1`, but `wildshot-assembler` manifest v1 is **not ready to
 emit yet**. Compact effect packing, approved license text, the deterministic
 writer, editor action, and consumer handoff remain pending.
 
+Re-audited on 2026-08-09: the repository still has no `LICENSE`, deterministic
+Wildshot writer, or editor export action, so this status remains current.
+
 The attached Wildshot Adventures export proposal is accepted as the product
 direction for a new focused game-pack lane. This plan records the assembler
 side of that contract. It does not amend or implement a separate game

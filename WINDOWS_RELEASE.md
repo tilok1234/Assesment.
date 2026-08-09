@@ -1,6 +1,6 @@
 # Windows release guide
 
-Current artifact status (2026-08-07): a local standalone proof executable was
+Latest verified artifact snapshot (2026-08-07): a local standalone proof executable was
 built from exact pushed checkpoint
 `4bea4102b0ddf94b020d5b7c66f1f9af806aab8f` at
 `C:\tmp\8-bit-sprite-assembler-en-e03-briar-reveler-attack\src-tauri\target\release\sprite-assembler.exe`.
@@ -15,6 +15,9 @@ approval are still outstanding. It is not a distributable NSIS installer. No
 NSIS setup executable exists under this worktree's
 `src-tauri/target/release/bundle/nsis/`, so there is still no approved Windows
 release candidate. The older 2026-08-01 `bf6269c` standalone is historical.
+
+Re-audited on 2026-08-09: the current checkout still contains no NSIS artifact;
+no newer executable has been promoted or approved by this documentation lane.
 
 The Windows edition packages the same production frontend and procedural engine used by the browser build. Packaging does not freeze the content catalog: outfits, hairstyles, headgear, weapons, enemies, effects, and templates can still be changed normally, then included by rebuilding the application.
 

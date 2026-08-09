@@ -1,10 +1,11 @@
 # Workflow Assessment — 8-Bit Sprite Assembler
 
-> **Context on this branch:** this assessment was written against pre-adoption
-> `main` (57/202, no EN work). The branch you are reading it on already merges
-> the approved EN-E02 checkpoint (public catalog 67/232) and ports every fix
-> described in Part 3 — roadmap item 4's "adopt the EN lane" half is done here;
-> the renderer split half remains open.
+> **Historical snapshot:** this assessment was written against pre-adoption
+> `main` (57/202, no EN work) and first published on an EN-E02 checkout. The
+> current repository has since integrated EN-E01, EN-E02, EN-E04, and four new
+> EN-E05 families at 74 public families / 245 variants. Measurements and branch
+> wording below describe the 2026-08-08 assessment point unless a later update
+> is explicitly noted; they are evidence, not the current handoff.
 
 **Date:** 2026-08-08 · **Scope:** why adding sprites is slow, where Claude Code tokens go, and what to change.
 **Method:** six parallel analysis agents read the full repo (evidence cited as `file:line`), every load-bearing claim was re-verified by executing the actual tools, and the highest-leverage fixes are already implemented on this branch.
@@ -150,7 +151,7 @@ Top sinks, ranked:
 
 ---
 
-## Part 3 — What's on this branch (all verified)
+## Part 3 — What was on the assessed branch (all verified then)
 
 | Change | Proof |
 |---|---|
@@ -164,7 +165,13 @@ Not changed (deliberately): sprite art, the frame contract, the app, the legacy 
 anything the six sibling repos consume. The full `npm run check` still validates everything the
 old one did — minus nothing — it just also passes from a clean checkout.
 
-## Part 4 — Recommended next steps (in order)
+## Part 4 — Historical recommendations and current status
+
+Update for 2026-08-09: EN adoption is complete through EN-E05 assembler
+integration, the live catalog is 74/245, and the active handoff now starts with
+one authoritative current checkpoint plus an explicitly marked historical
+archive. Fixture regeneration, the legacy renderer split, boss-generator
+consolidation, and the Wildshot writer remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`
    lists the 166 stale sheets. If downstream should get the repaired art: `--all` + commit.
@@ -174,13 +181,15 @@ old one did — minus nothing — it just also passes from a clean checkout.
 3. **Make the boss library spec-driven** (medium): the 10 scripts encode the same motion grammar
    (squash cycles, palette glow, white-flash hurt, rotate+dim death) with different constants —
    turn a boss into ~150 lines of spec + optional custom poses. Biggest per-boss cut remaining.
-4. **Split `renderer.js` along its 14 existing section banners** into `engine/families/*.js` with
-   a registry map instead of the 35-branch if-chain (medium) — or, on the original repo, adopt
-   your already-accepted EN-F00 facade from `codex/en-f00`, which solved this and reached
-   67 families / 232 variants on `codex/en-e02`. Those branches aren't in this repo; merging them
-   is a decision only you can make on the original.
-5. **Rewrite HANDOFF.md as a <100-line current-state doc** (small): one authoritative catalog
-   count, live lane, open blockers; move the consolidation narrative to `docs/history/`.
+4. **EN adoption completed; legacy renderer split remains optional** (medium):
+   EN-F00 plus EN-E01/EN-E02/EN-E04/EN-E05 now provide the accepted expansion
+   facade at 17 expansion families / 43 variants. Splitting the legacy
+   `renderer.js` along its existing section banners remains a separate forge-
+   engineering decision, not an enemy-content prerequisite.
+5. **Keep the active HANDOFF entry concise** (completed 2026-08-09): the top
+   now contains only the authoritative current/preceding checkpoints, and the
+   long consolidation narrative is explicitly scoped beneath a historical-
+   archive heading so it cannot be mistaken for the next lane.
 6. **Split `check-project.mjs` into per-domain modules with data files** (medium): enables
    `--family <id>` targeted audits (seconds per family) and makes failures navigable.
 7. **Boss asset diet** (medium): for bosses #11+, commit only the full sheet + manifest and derive

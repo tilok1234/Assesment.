@@ -64,19 +64,19 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Full-sheet, selected-animation, and selected-direction PNG export scopes
 - Play/pause, 0.5x/1x/2x playback speeds, frame stepping, and direct frame inspection with sheet-column metadata
 - Optional assembled-sprite outlines with None, Complete B, and Selective C
-  modes for players and all 70 public enemy families; the 39 approved
-  EN-E01/EN-E02/EN-E04 variants retain their reviewed raw pixels and gain
+  modes for players and all 74 public enemy families; the 43 approved
+  EN-E01/EN-E02/EN-E04/EN-E05 variants retain their reviewed raw pixels and gain
   outlines only in assembled output, while effects, source art, floor shadows,
   and atomic component sheets remain untreated
 - Optional assembled-sprite shading with None and the approved material-aware
-  Form mode for players and all 70 public enemy families; approved EN-E01,
-  EN-E02, and EN-E04 variants resolve their own published renderer palette
+  Form mode for players and all 74 public enemy families; approved EN-E01,
+  EN-E02, EN-E04, and EN-E05 variants resolve their own published renderer palette
   ramps rather than a legacy-family fallback. The selector participates in undo/redo,
   comparisons, presets, packs, recipes, previews, and assembled exports, while
   raw source pixels, effects, and atomic component sheets remain untreated
 - A validated local full-public-Enemy exporter with three top-level treatment
   folders: Form + Complete B, Form + Selective C, and Form + None. Its current
-  catalog target is 241 native complete sheets per folder / 723 PNGs total plus
+  catalog target is 245 native complete sheets per folder / 735 PNGs total plus
   a manifest, README, stored ZIP, and SHA-256 sidecar
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
@@ -1630,9 +1630,9 @@ Each schema-v3 ZIP contains complete character sheets at the selected PNG scale,
 
 The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per sprite plus a versioned `manifest.json` with the exact specifications, animation contract, dimensions, file paths, and the saved combat-loadout recipe for every player or enemy.
 
-For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes and combat loadouts, the full deduplicated component library, all 70 public enemy families with all 241 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
+For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes and combat loadouts, the full deduplicated component library, all 74 public enemy families with all 245 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
 
-A 24-player Complete Pack contains 1912 shared component sheets, 241 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2201 native `480x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+A 24-player Complete Pack contains 1912 shared component sheets, 245 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2205 native `480x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
 
 ### Wildshot game-pack status
 

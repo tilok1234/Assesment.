@@ -25,8 +25,8 @@ missing capability instead of implementing it here.
    ones whose pixels differ from the current engine (166 published fixtures
    are intentionally stale); that requires `--accept-drift` and designer
    approval.
-4. `npm run check:fast` (~2 min). Golden counts derive from the catalog — no
-   checker edits.
+4. `npm run check:fast` (~1 min in the latest verified run). Golden counts
+   derive from the catalog — no checker edits.
 5. Show the designer ONLY this variant (app preview or the new fixture). Do not
    generate whole-roster review packs.
 

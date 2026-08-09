@@ -22,7 +22,7 @@ HANDOFF.md (state), ENEMY_EXPANSION_PLAN.md + GAME_PACK_EXPORT_PLAN.md (active p
 | `engine/shade-renderer.js` | Form shading (derives from catalog colors — no per-family edits) | 12KB |
 | `engine/sheets.js` | sheet builders (browser-only, 20-col contract) | small |
 | `app.js` | entire editor UI (catalog-driven — no per-enemy edits) | 168KB — grep, don't read |
-| `tools/check-project.mjs` | the master gate | 319KB — never read whole |
+| `tools/check-project.mjs` | the master gate | 322KB — never read whole |
 | `tools/export-enemy-fixtures.mjs` | headless legacy fixture exporter + manifest regen | small |
 | `tools/fixtures/*.json` | approval rosters the checkers compare against | small |
 | `asset-pack/` | published legacy pack: 12-col 4x 1152x384 fixtures (frozen LEGACY format — the engine's live format is 20-col; do not "fix" this) | binary |
@@ -33,10 +33,10 @@ HANDOFF.md (state), ENEMY_EXPANSION_PLAN.md + GAME_PACK_EXPORT_PLAN.md (active p
 
 | Change | Command | Cost |
 |---|---|---|
-| One enemy variant/family iteration | `npm run check:fast` | ~2 min |
+| One enemy variant/family iteration | `npm run check:fast` | ~1 min recent |
 | Boss catalog/asset work | `npm run check:bosses` | ~3s |
 | Fixture export sanity | `npm run export:fixtures -- --verify --family <id>` | seconds |
-| Pre-commit / checkpoint | `npm run check` (full) | ~4.5 min |
+| Pre-commit / checkpoint | `npm run check` (full) | ~2 min recent |
 | Release | `npm run check && npm run check:release` | full |
 
 `npm run check` passes on a fresh clone; missing boss review checkpoints are
@@ -78,7 +78,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 - `asset-pack/` PNGs must stay 1152x384 legacy 12-col format (the exporter does this).
 - Boss runtime assets live flat in `engine/assets/bosses/` with frozen naming.
 - Imports from outside the engine go through `sprite-engine.js` only.
-- Never run `export:bosses:13` — frozen against a roster with 4 nonexistent bosses.
+- Never run `export:bosses:13` — its frozen roster currently lacks four
+  direction and seven animation catalog entries.
 - Don't edit checker roster literals — they live in `tools/fixtures/*.json`.
 - Scope reviews to the changed family/boss; whole-roster review packets are
   release-time only.

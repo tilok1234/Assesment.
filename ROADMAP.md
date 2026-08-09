@@ -117,7 +117,16 @@ intentional bounded commit and branch push before the next gate begins, unless
 the designer explicitly says to hold publication. Unapproved lanes are never
 published under this rule.
 
-Current continuation checkpoint (2026-08-07): synchronized `main` remains the
+Current continuation checkpoint (2026-08-09): EN-E05 assembler integration is
+published on `codex/en-e05-assembler-integration` at `773cfad`, with reconciled
+handoff `7ffbb04`. The stable and consumer expansion registries are identical
+at 17 families / 43 variants, producing 74 public families / 245 variants and
+a 2,182-PNG Complete Kit. Public `zombie/ghoul`, all 232 committed fixtures,
+effects, release state, and EN-E03 isolation remain unchanged. No later content
+gate is currently authorized; public Ghoul replacement, fixture work, EN-E03
+adoption, effects, release, and Wave 2 each require an explicit future choice.
+
+Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and
 pushed on `codex/en-e03` at `8ea019b`; that checkpoint contains rejected v1/v2,
 the approved internal Hill Breaker, Steppe Hunter, and Briar Reveler F1/F2 Idle
@@ -191,9 +200,10 @@ separately authorized consumer checkpoint `8ab1837` routes both slices through
 the same generic boundary at 67 families / 232 variants while preserving the
 unchanged 57-family / 202-variant legacy catalog and pixel locks. The designer
 accepted EN-E02's live Complete B + Form consumer view and later approved the
-exact seven-family walk/seam repair. That repaired registry is now both the
-EN-E01/EN-E02 source and current consumer boundary; the stable registry now
-composes approved EN-E04 while the pre-repair registry remains internal.
+exact seven-family walk/seam repair. That repaired registry remains the
+EN-E01/EN-E02 source while the pre-repair registry stays internal. Later
+approved EN-E04 and EN-E05 registration and consumer gates bring the current
+expansion boundary to 17/43 and the public catalog to 74/245.
 The designer rejected EN-E03 v1 checkpoint `50ad516` because its boxed visual
 language did not match the approved roster, then rejected replacement checkpoint
 `6104eae` as still far from that style. V2 keeps only the Giant, Centaur, and
@@ -840,22 +850,12 @@ Candidate additions:
 - Additional off-hand items beyond the completed Lantern, such as spell foci; quivers require a separate back-slot plan rather than the held-item topology
 - More species-specific features beyond the completed ten-species ears, tusks, horns, skulls, muzzles, scales, wings, halo, and tail foundation
 - Additional enemy families and variants only through the approved planning
-  and review sequence in `ENEMY_EXPANSION_PLAN.md`; EN-E01 and EN-E02 are
-  accepted through repaired consumer integration. Both EN-E03 common-Idle v1/v2
-  attempts are rejected; the later Hill Breaker F1 calibration is visually
-  approved together with its F2-only continuation as an internal two-frame Idle
-  baseline; Steppe Hunter F1/F2 is also an approved internal two-frame Idle
-  baseline; Briar Reveler F1/F2 is the third approved internal two-frame Idle
-  baseline; Hill Breaker Walk W1-W4 and Steppe Hunter Walk W1-W4 are also
-  approved and internal; Briar Reveler Walk W1-W4 is also approved and internal;
-  Hill Breaker common Attack A1-A4 is also visually approved, internal, and
-  non-public; Steppe Hunter common Attack A1-A4 is also visually approved,
-  internal, and non-public; Briar Reveler common Attack A1-A4 is also visually
-  approved, internal, and non-public; Hill Breaker Hurt H1-H2 is also visually
-  approved, internal, and non-public; Steppe Hunter Hurt H1-H2 is also visually
-  approved, internal, and non-public; Briar Reveler Hurt H1-H2 is also visually
-  approved, internal, and non-public; only the common Cast/Death alias gate
-  across those three approved common variants is currently authorized
+  and review sequence in `ENEMY_EXPANSION_PLAN.md`. EN-E01, EN-E02, EN-E04,
+  and the four new EN-E05 families are registered and consumer-integrated at
+  17 expansion families / 43 variants and 74/245 public. The separate EN-E05
+  Ghoul upgrade and all EN-E03 evidence remain internal. No next content gate
+  is currently authorized; public Ghoul replacement, fixture work, EN-E03
+  adoption, effects, release, and Wave 2 remain separate choices.
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 
@@ -867,7 +867,7 @@ Progress: active. The release lane has native Save dialogs for every PNG, JSON,
 and ZIP export, final product metadata and icons, a current-user NSIS target
 with an embedded WebView2 bootstrapper, a release-specific validator, and a
 versioned GitHub draft-release workflow. Historical installer and standalone
-smoke tests passed their earlier checkpoints. The current local standalone
+smoke tests passed their earlier checkpoints. The latest verified local standalone
 proof was built from exact approved checkpoint `4bea410` on 2026-08-07 and
 passed a direct startup/render smoke, including a responsive assembler UI with
 Effects Off visible. It remains unsigned, has not completed the full packaged-

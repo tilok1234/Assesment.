@@ -3090,7 +3090,24 @@ counts as an upgrade; the three Boss candidates do not enter the Enemy totals.
 | EN-E18 | Pumpkin Monster; Moss Beast; Kelp Beast; Coral Colony | 4 |
 | **Total** |  | **80** |
 
-## Next Authorization Boundary
+## Current Authorization Boundary
+
+EN-E05 assembler integration is complete and published at `773cfad` with its
+reconciled handoff at `7ffbb04`. Stable and consumer expansion registries are
+identical at 17 families / 43 variants, `PUBLIC_ENEMIES` is 74/245, the
+Complete Kit contains 2,182 PNGs, and public `zombie/ghoul` plus all 232
+committed fixtures remain unchanged.
+
+No next content gate is currently authorized. Public Ghoul replacement,
+fixture generation, regeneration, or acceptance, EN-E03 adoption, effects,
+release, and Wave 2 each require a separate explicit decision. A new chat must
+verify the clean published handoff and wait for the designer to choose one of
+those boundaries; it must not infer Wave 2 from completion of EN-E05.
+
+### Historical Authorization Chronology
+
+Everything below this subheading records point-in-time authorization and is
+not a current instruction.
 
 The EN-E01 authorized production sequence is complete:
 
