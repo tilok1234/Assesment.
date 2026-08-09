@@ -1097,7 +1097,7 @@ an 80-frame digest, 80 connected hard-alpha silhouettes, one-cell margins,
 20 exact side mirrors, exact aliases, 36/36 two-pixel colored side eyes, 18/18
 eye-free colored rear views, Complete B/Form presentation, external effects,
 and zero public exposure define the gate. All eight protected predecessor gates
-pass; the final post-approval fast gate passes in `52.9s` and the full
+pass; the final post-reconciliation fast gate passes in `54.5s` and the full
 repository gate passes in `106.3s`, with all 232 public sheets unchanged. Exact
 paired visual approval is recorded below. Birdfolk specialist/elite roles,
 registration, integration, effects, release, and broader work remain outside.
@@ -1106,7 +1106,10 @@ The designer reviewed the exact raw/no-outline and Complete B + Form pair and
 said `very good approved` on 2026-08-09. After the requested Codex/MCP restart,
 the working Aseprite MCP opened both exact `1428x760` boards and the designer
 said `ok lets keep going`. That approval authorizes only bounded commit, push,
-and publication of this exact ten-file Aerie Scout lane.
+and publication of this exact ten-file Aerie Scout lane. Bounded publication is
+complete at approved implementation checkpoint
+`a0910312e510ee57b603ee981a279c1f372d6fad`; no later gate is opened by that
+publication.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact

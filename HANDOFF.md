@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Birdfolk Aerie Scout Approved
+## Immediate Continuation Checkpoint - Birdfolk Aerie Scout Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the
 complete Merfolk Pearl Regent, the designer said `next` on 2026-08-09. The live
@@ -33,10 +33,12 @@ with `ok lets keep going`; the new Aseprite MCP call succeeded and both exact
   `codex/en-e04-birdfolk-aerie-scout`, based exactly on clean Pearl Regent
   handoff `3a5ff4fdd2709731cb1c673c84ce0956057541e1`; the approved Pearl Regent
   implementation remains frozen at
-  `ef0ab54b73718b62f8db99f601020f7ef14090f8`.
+  `ef0ab54b73718b62f8db99f601020f7ef14090f8`. The approved Aerie Scout
+  implementation is committed and pushed at
+  `a0910312e510ee57b603ee981a279c1f372d6fad`.
 - Gate: `en-e04-birdfolk-aerie-scout-full-v1`; status `approved`, internal,
-  non-public, uncommitted, and unpushed. Bounded publication of the exact
-  ten-file lane is authorized; generated review artifacts remain ignored.
+  non-public, committed, and pushed. Bounded publication of the exact ten-file
+  lane is complete; generated review artifacts remain ignored.
 - Scope: one common Aerie Scout and 80 frames across Down, Left, Right, and Up:
   Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack
   aliases, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
@@ -78,13 +80,15 @@ with `ok lets keep going`; the new Aseprite MCP call succeeded and both exact
   eye-free colored rear frames `18/18`; Cast aliases `16/16`; Death aliases
   `16/16`; opaque range 179-231; 7,614 Complete B additions; 7,107 Form
   changes; public EN-E04 families `0`.
-- All eight protected predecessor gates pass. The final post-approval v2 fast
-  gate passes in `52.9s`; full `npm.cmd run check` passes in `106.3s`, with all
-  232 public PNG sheets unchanged.
-- Required next action: commit and push the exact approved ten-file lane, then
-  reconcile the live handoff. Do not begin later Birdfolk roles, register,
-  integrate, add effects, release, or broaden the lane; those remain outside
-  this approval.
+- All eight protected predecessor gates pass. The final post-reconciliation v2
+  fast gate passes in `54.5s`; full `npm.cmd run check` passes in `106.3s`, with
+  all 232 public PNG sheets unchanged.
+- Publication checkpoint: bounded publication of the exact approved ten-file
+  lane is complete at `a0910312e510ee57b603ee981a279c1f372d6fad` on the
+  tracked origin branch.
+- Required next action: stop at this clean published checkpoint. Do not begin
+  later Birdfolk roles, register, integrate, add effects, release, or broaden
+  EN-E04 without a separate explicit continuation.
 
 The approved preceding Pearl Regent checkpoint follows for provenance.
 

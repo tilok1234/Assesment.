@@ -1778,7 +1778,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine, aquatic, and avian peoples
 
-- Status: `active - Aerie Scout common approved; bounded publication authorized`
+- Status: `paused - Aerie Scout common approved and published; later Birdfolk roles require explicit authorization`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1788,7 +1788,7 @@ and no new sprite pixels or public integration are authorized.
 - Approved gate: Merfolk Tideguard complete motion across Down, Left, Right, and Up; published
 - Approved gate: Merfolk Reefcaller complete specialist motion across Down, Left, Right, and Up; published
 - Approved gate: Merfolk Pearl Regent complete elite motion across Down, Left, Right, and Up; published
-- Approved gate: Birdfolk Aerie Scout complete common motion across Down, Left, Right, and Up; bounded publication authorized
+- Approved gate: Birdfolk Aerie Scout complete common motion across Down, Left, Right, and Up; published
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -2199,14 +2199,16 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Required next action: stop. Birdfolk, registration, integration, effects,
   release, and broader work require separate explicit authorization.
 
-#### Birdfolk Aerie Scout full common approved, awaiting bounded publication
+#### Birdfolk Aerie Scout full common approved and published
 
 - Gate ID: `en-e04-birdfolk-aerie-scout-full-v1`; status: `approved`, internal,
-  non-public, uncommitted, and unpushed.
+  non-public, committed, and pushed.
 - Live branch: `codex/en-e04-birdfolk-aerie-scout`, based exactly on clean
   Pearl Regent reconciliation `3a5ff4fdd2709731cb1c673c84ce0956057541e1`;
   approved Pearl Regent remains frozen at
-  `ef0ab54b73718b62f8db99f601020f7ef14090f8`.
+  `ef0ab54b73718b62f8db99f601020f7ef14090f8`. The approved Aerie Scout
+  implementation is committed and pushed at
+  `a0910312e510ee57b603ee981a279c1f372d6fad`.
 - Authorization/naming: after Pearl Regent approval/publication, the designer
   said `next` on 2026-08-09. EN-E04 advances to Birdfolk, whose live anatomy
   contract exists without role names; Codex named and bounded one complete
@@ -2247,11 +2249,12 @@ upright avian person rather than collapse into the existing Harpy identity.
   frames `18/18`, Cast aliases `16/16`, Death aliases `16/16`, opaque range
   179-231, 7,614 Complete B additions, 7,107 Form changes, and zero public
   EN-E04 families. All eight protected predecessor gates also pass.
-- The final post-approval v2 fast gate passes in `52.9s`; full
+- The final post-reconciliation v2 fast gate passes in `54.5s`; full
   `npm.cmd run check` passes in `106.3s`, with all 232 public PNG sheets
   unchanged.
-- Required next action: commit and push the exact approved ten-file lane, then
-  reconcile the live handoff. No later Birdfolk role, registration,
+- Publication is complete at approved implementation checkpoint
+  `a0910312e510ee57b603ee981a279c1f372d6fad`.
+- Required next action: stop. No later Birdfolk role, registration,
   integration, effects, release, or broader work is authorized by this
   approval.
 
@@ -2655,6 +2658,7 @@ paired evidence is hash-frozen and focused/protected/fast/full validated. The
 designer reviewed the exact pair and said `very good approved` on 2026-08-09;
 after the requested Codex/MCP restart, both exact boards opened successfully in
 Aseprite and the designer said `ok lets keep going`. The lane remains internal,
-non-public, uncommitted, and unpushed with bounded publication authorized.
-Later Birdfolk roles, registration, integration, effects, release, and broader
-work remain unauthorized.
+non-public, committed, and pushed at
+`a0910312e510ee57b603ee981a279c1f372d6fad`. Later Birdfolk roles,
+registration, integration, effects, release, and broader work remain
+unauthorized.
