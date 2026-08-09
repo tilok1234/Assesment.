@@ -15,10 +15,11 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Ironboot Trapper Approved
+## Immediate Continuation Checkpoint - Ironboot Trapper Approved And Published
 
-Start here in a new task. This is the only active continuation section; later
-sections are published or historical provenance.
+Start here in a new task. This is the current stopping checkpoint; later
+sections are published or historical provenance, and no follow-on art gate is
+active.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-redcap-ironboot-trapper`, based exactly on clean pushed
@@ -62,19 +63,21 @@ sections are published or historical provenance.
 - Protected state: all approved Fairy, Hag, Dryad, and Barrow digests remain
   exact; public catalog remains 80 families / 259 variants with no public
   Redcap; all 232 committed fixtures remain untouched.
-- Publication state: the exact approved implementation is committed at
-  `98865936244b94860985210fcaf9a044b0ca228a`. The bounded approval record and
-  branch publication are authorized; review artifacts remain ignored evidence.
-- Required next action: commit and push the exact approval record, then stop.
-  Do not register Redcap, generate fixtures, begin Bloodcap Reaver or Nymph,
-  add effects, release, or open EN-E07.
+- Publication state: the exact approved implementation
+  `98865936244b94860985210fcaf9a044b0ca228a` and approval record
+  `00a9876f963522c88b9cd77f809bec3674d72b19` are committed and pushed on the
+  tracked branch; review artifacts remain ignored evidence.
+- Required next action: stop at this clean published checkpoint. Do not
+  register Redcap, generate fixtures, begin Bloodcap Reaver or Nymph, add
+  effects, release, or open EN-E07.
 
 Suggested opening request for the next chat:
 
-> Resume `codex/en-e06-redcap-ironboot-trapper` from the exact approved gate in
-> `HANDOFF.md`. Verify implementation `9886593`, commit and push the bounded
-> approval record, then stop. Do not infer Bloodcap Reaver, Nymph, registration,
-> fixtures, effects, release, or EN-E07 authorization.
+> Resume `codex/en-e06-redcap-ironboot-trapper` from the clean published
+> checkpoint in `HANDOFF.md`. Verify implementation `9886593` and approval
+> record `00a9876`, then stop unless the designer explicitly selects a new
+> isolated gate. Do not infer Bloodcap Reaver, Nymph, registration, fixtures,
+> effects, release, or EN-E07 authorization.
 
 ## Approved Preceding Checkpoint - Barrow Stalker Published
 

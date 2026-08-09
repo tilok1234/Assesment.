@@ -23,10 +23,10 @@
   `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
   was opened together in Aseprite and visually approved on 2026-08-10. The
-  frozen implementation is committed at
-  `98865936244b94860985210fcaf9a044b0ca228a`. Bounded approval-record commit
-  and branch publication are authorized. Bloodcap Reaver, Nymph, EN-E07,
-  fixtures, effects, registration changes, and release remain closed.
+  frozen implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval
+  record `00a9876f963522c88b9cd77f809bec3674d72b19` are committed and pushed on the
+  tracked branch. No subsequent art gate is active. Bloodcap Reaver, Nymph,
+  EN-E07, fixtures, effects, registration changes, and release remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -2866,7 +2866,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `Ironboot Trapper complete 80-frame suite approved; bounded publication authorized`
+- Status: `Ironboot Trapper complete 80-frame suite approved and published; stop gate active`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3380,11 +3380,13 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   raw GIF `a38ca4cc31e178299096d67df27a54fbcb4ec1eab8c71438786cc9931b550a17`;
   Complete B + Form GIF
   `83b71e030b9f2fe61526c0014a350d43c8e5b68c7a89675890ec1dc148b9c927`.
-- Implementation: the exact frozen candidate is committed at
-  `98865936244b94860985210fcaf9a044b0ca228a`.
-- Required next action: commit and push the bounded approval record, then stop.
-  Do not register Redcap, begin Bloodcap Reaver or Nymph, generate fixtures,
-  add effects, release, or open EN-E07.
+- Publication: the exact frozen implementation
+  `98865936244b94860985210fcaf9a044b0ca228a` and approval record
+  `00a9876f963522c88b9cd77f809bec3674d72b19` are committed and pushed on the
+  tracked branch.
+- Required next action: stop at this clean published checkpoint. Do not
+  register Redcap, begin Bloodcap Reaver or Nymph, generate fixtures, add
+  effects, release, or open EN-E07.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3661,9 +3663,10 @@ record `8e2054236a49ab06b7cac404cda8b12bb440085c` are committed and pushed on th
 tracked branch. The later isolated Ironboot Trapper suite on
 `codex/en-e06-redcap-ironboot-trapper` is technically complete and hash-frozen
 at digest `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`;
-its implementation `98865936244b94860985210fcaf9a044b0ca228a` is committed.
-Only its bounded approval-record commit and branch publication are authorized.
-Bloodcap Reaver, Nymph, EN-E07, the three EN-E03 Idle-only variants,
+its implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval
+record `00a9876f963522c88b9cd77f809bec3674d72b19` are committed and pushed on the
+tracked branch. No subsequent art gate is active. Bloodcap Reaver, Nymph,
+EN-E07, the three EN-E03 Idle-only variants,
 public-registration changes, fixtures, effects, and release remain separate
 closed gates.
 

@@ -864,10 +864,10 @@ registry. Its flat riveted cap, buckle harness, connected setting tongs,
 leather apron, and square iron boots pass 80/80 pixel and alpha distinctions
 from public Goblin Scout, public Hobgoblin, and approved Barrow Stalker at
 digest `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
-The exact five-artifact packet was visually approved on 2026-08-10 and its
-frozen implementation is committed at
-`98865936244b94860985210fcaf9a044b0ca228a`. Only the bounded approval-record
-commit and branch publication are authorized; Bloodcap Reaver, Nymph,
+The exact five-artifact packet was visually approved on 2026-08-10. Its frozen
+implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
+`00a9876f963522c88b9cd77f809bec3674d72b19` are committed and pushed on the
+tracked branch. No subsequent art gate is active; Bloodcap Reaver, Nymph,
 registration, fixtures, effects, release, and later Wave 2 work remain closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
