@@ -890,7 +890,8 @@ After the exact comparison and paired review surfaces were presented, the
 designer replied `lets do nextg` on 2026-08-09; in its direct context this is
 recorded as approval plus authorization to publish Mummy before beginning one
 separate Vampire candidate. Mummy registration, fixtures, and broader EN-E05
-work remain excluded from this lane.
+work remain excluded from this lane. The exact approved implementation is
+committed and pushed at `85f1ed7`.
 
 ## EN-E05 Ghoul full-suite upgrade approved internal lane
 

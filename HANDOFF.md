@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Mummy Full-Suite Approved
+## Immediate Continuation Checkpoint - EN-E05 Mummy Full-Suite Approved And Published
 
 Start here in a new task. After the exact Ghoul full-suite candidate was
 approved, published, and reconciled, the designer said `lets do next`. The live
@@ -26,7 +26,8 @@ the established one-full-sprite cadence.
   on clean published Ghoul handoff
   `1aa733c1cd47c60538e9fa8ff621987867e451e3`.
 - Gate: `en-e05-mummy-tomb-walker-full-v1`; status `approved`, internal,
-  non-public, uncommitted, and unpushed.
+  non-public, committed, and pushed at
+  `85f1ed77b34d7aa300e6ef7454b85f5295ad1da1`.
 - Approval evidence: after the exact approved-Ghoul comparison and labeled
   all-four-direction raw/no-outline and Complete B + Form review surfaces were
   presented together, the designer replied `lets do nextg` on 2026-08-09. In
@@ -65,9 +66,13 @@ the established one-full-sprite cadence.
 - Protected result: the approved Ghoul and EN-E04 public consumer gates pass;
   fast validation passes in `55.4s`; full `npm.cmd run check` passes in
   `107.2s` with the public 70/241 catalog and all 232 frozen fixtures unchanged.
-- Required next action: commit and push only the bounded approved ten-file
-  lane. Do not register Mummy or generate fixtures. Begin one complete Vampire
-  candidate only on a separate branch after clean publication.
+- Publication checkpoint: the exact approved ten-file implementation is pushed
+  on the tracked origin branch at
+  `85f1ed77b34d7aa300e6ef7454b85f5295ad1da1`; generated review artifacts remain
+  ignored.
+- Required next action: create a separate branch from the reconciled Mummy
+  handoff for one complete Vampire candidate. Do not register Mummy, generate
+  fixtures, add effects, or begin Revenant/Lich.
 
 ## Approved Preceding Checkpoint - EN-E05 Ghoul Full-Suite Published
 

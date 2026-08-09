@@ -99,10 +99,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   regeneration require separate gates.
 - The next isolated EN-E05 lane is one visually approved full-suite Mummy Tomb
   Walker on `codex/en-e05-mummy`, based exactly on the published Ghoul handoff
-  `1aa733c`. It is internal and non-public; its 80 frames, paired raw and
-  Complete B + Form evidence, and approved-Ghoul comparison are hash-frozen.
-  Bounded publication is authorized. Do not register Mummy or generate
-  fixtures; begin Vampire only on a separate branch after clean publication.
+  `1aa733c`, committed and pushed at `85f1ed7`. It is internal and non-public;
+  its 80 frames, paired raw and Complete B + Form evidence, and approved-Ghoul
+  comparison are hash-frozen. Do not register Mummy or generate fixtures; the
+  next authorized lane is one separate complete Vampire candidate.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;

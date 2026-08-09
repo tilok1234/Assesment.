@@ -2449,7 +2449,7 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `active - Mummy Tomb Walker visually approved; bounded publication authorized`
+- Status: `active - Mummy Tomb Walker visually approved and published at 85f1ed7`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
 - Priority-first: Ghoul upgrade, Mummy, Vampire
 - Active gate: one complete common Mummy Tomb Walker candidate across all 80
@@ -2517,7 +2517,8 @@ silently alter unrelated Zombie variants.
 #### Mummy Tomb Walker full-suite approved internal lane
 
 - Gate ID: `en-e05-mummy-tomb-walker-full-v1`; status:
-  `approved`, internal, non-public, uncommitted, and unpushed on
+  `approved`, internal, non-public, committed, and pushed at
+  `85f1ed77b34d7aa300e6ef7454b85f5295ad1da1` on
   `codex/en-e05-mummy`, based exactly on clean published Ghoul handoff
   `1aa733c1cd47c60538e9fa8ff621987867e451e3`.
 - Authorization: after approving and publishing the complete Ghoul upgrade,
@@ -2563,9 +2564,12 @@ silently alter unrelated Zombie variants.
 - Exclusions: Mummy registration, fixture generation, additional Mummy
   variants, Vampire on this branch, Revenant, Lich, effects, release, and later
   EN-E05 work.
-- Required next action: commit and push only this bounded approved lane. After
-  clean publication, create a separate branch for one complete Vampire
-  candidate.
+- Publication: the exact approved ten-file implementation is committed and
+  pushed at `85f1ed77b34d7aa300e6ef7454b85f5295ad1da1`; generated review artifacts
+  remain ignored.
+- Required next action: create a separate branch from the reconciled Mummy
+  handoff for one complete Vampire candidate. Keep registration, fixtures,
+  effects, Revenant, and Lich outside that gate.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not

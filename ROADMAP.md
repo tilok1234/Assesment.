@@ -582,12 +582,13 @@ digest are hash-frozen. The focused gate passes all frames, distinct
 silhouettes, connected/bounded anatomy, directional eyes, mirrors, aliases,
 identity colors, treatment metrics, approved-Ghoul preservation, public
 catalog locks, and the unchanged legacy fixture. It remains internal,
-non-public, uncommitted, and unpushed. The designer replied `lets do nextg`
+non-public, and fixture-free. The designer replied `lets do nextg`
 after the exact review; in direct context this approves bounded Mummy
 publication and authorizes one separate Vampire candidate afterward.
 Registration, fixtures, and effects remain separate gates. The
 approved Ghoul and EN-E04 public gates, fast validation, and full validation
-pass with the 70/241 public catalog and all 232 fixtures unchanged.
+pass with the 70/241 public catalog and all 232 fixtures unchanged. The exact
+Mummy implementation is published at `85f1ed7`.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
