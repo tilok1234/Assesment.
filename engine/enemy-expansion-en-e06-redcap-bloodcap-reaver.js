@@ -35,7 +35,7 @@ export const EN_E06_BLOODCAP_REAVER_CONTRACT = deepFreeze({
   family: 'redcap',
   variant: 'bloodcap-reaver',
   role: 'elite',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'short-broad-torncap-reaver-fey-v1',
   silhouette: 'A short, unusually broad fey with a high torn crimson cap, long ears, layered shoulder and chest armor, reinforced boots, and a connected broad cleaver. The peaked cap, armored upper mass, and cleaving poses must differ from Barrow Stalker, Ironboot Trapper, and public Goblins in every frame.',
   identity: 'Ash-red skin, a ragged blood-crimson cap, blackened steel armor, dark leather, brass fastenings, pale cleaver steel, yellow eyes, and reinforced boots establish the final elite Redcap without baking in blood, trails, chips, dust, or flashes.',
@@ -74,13 +74,13 @@ export const EN_E06_BLOODCAP_REAVER_DATA = deepFreeze({
 
 export const EN_E06_BLOODCAP_REAVER_GATE = deepFreeze({
   id: 'en-e06-redcap-bloodcap-reaver-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: 'dc6d524ec2d7d980b5407de75a33c00af7819de7',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After Ironboot Trapper was visually approved, committed, pushed, and reconciled at a clean published checkpoint, the designer said: cool lets do nexrt. Under the documented EN-E06 Redcap role order and one-complete-sprite cadence, this authorizes only one private elite Redcap Bloodcap Reaver 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the Hobgoblin plus approved Barrow Stalker and Ironboot Trapper comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
-  publishedImplementation: null,
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Hobgoblin plus approved Barrow Stalker and Ironboot Trapper comparison, and paired GIF evidence were presented, and the three exact PNG review boards were opened together in Aseprite, the designer replied: approved. Approval applies only to candidate digest e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff and authorizes its bounded approval-record commit and branch publication; Nymph, registration, fixtures, effects, release, EN-E07, and later work remain separate gates.',
+  publishedImplementation: '1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a',
   precedingApproval: {
     gateId: EN_E06_IRONBOOT_TRAPPER_GATE.id,
     artifactSha256: EN_E06_IRONBOOT_TRAPPER_GATE.artifactSha256,
@@ -140,7 +140,7 @@ export const EN_E06_BLOODCAP_REAVER_GATE = deepFreeze({
     'later EN-E06 sprites',
     'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Stop at the exact frozen Bloodcap Reaver candidate review. Do not commit, publish, register Redcap, generate fixtures, begin Nymph, add effects, release, start EN-E07, or broaden Wave 2 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact Bloodcap Reaver candidate is visually approved and committed at 1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a. Only its bounded approval-record commit and branch publication are authorized. After push, stop; do not register Redcap, generate fixtures, begin Nymph, add effects, release, start EN-E07, or broaden Wave 2 without another explicit gate.',
 });
 
 export const EN_E06_BLOODCAP_REAVER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
