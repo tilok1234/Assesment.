@@ -87,7 +87,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
     attackTell: 'The weapon shoulder drops low before an upward cleave or hooked swing; blood spray and ground chips remain external.',
     externalEffects: ['blood spray', 'ground chips', 'weapon trails', 'trap markers'],
     variants: [
-      { id: 'barrow-stalker', name: 'Barrow Stalker', role: 'common', status: 'implemented-full-candidate', brief: 'Low red-capped ambusher with iron-dark boots and a hooked hand weapon.' },
+      { id: 'barrow-stalker', name: 'Barrow Stalker', role: 'common', status: 'implemented-full-approved', brief: 'Low red-capped ambusher with iron-dark boots and a hooked hand weapon.' },
       { id: 'ironboot-trapper', name: 'Ironboot Trapper', role: 'specialist', status: 'planned', brief: 'Heavy-footed trapper whose snares and trap markers remain external assets.' },
       { id: 'bloodcap-reaver', name: 'Bloodcap Reaver', role: 'elite', status: 'planned', brief: 'Broad-shouldered Redcap raider with a torn crimson cap and heavier cleaving read.' },
     ],

@@ -225,7 +225,9 @@ hard-alpha, Goblin Scout/Hobgoblin/Mire pixel, and alpha-silhouette distinction
 gates at digest
 `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
 Its exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-awaits visual approval; it is not committed, pushed, registered, or exported.
+was visually approved on 2026-08-10, and the frozen implementation is committed
+at `c3544dc4ec06e06afb15ea699333119342a8946f`. Only bounded approval-record
+publication is authorized.
 Fixture regeneration, later Redcaps/Nymph, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 

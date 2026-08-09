@@ -22,9 +22,10 @@
   public Hobgoblin, and approved Mire Crone at digest
   `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
-  awaits visual approval. It is not committed, pushed, registered, or exported.
-  Later Redcaps, Nymph, EN-E07, fixtures, effects, registration changes, and
-  release remain closed.
+  was visually approved on 2026-08-10. The frozen implementation is committed
+  at `c3544dc4ec06e06afb15ea699333119342a8946f`. Bounded approval-record commit
+  and branch publication are authorized. Later Redcaps, Nymph, EN-E07,
+  fixtures, effects, registration changes, and release remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -2864,7 +2865,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `Barrow Stalker complete 80-frame suite awaiting visual approval`
+- Status: `Barrow Stalker complete 80-frame suite approved; bounded publication authorized`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3286,14 +3287,19 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   registration, start Redcap or Nymph, generate fixtures, add effects, release,
   or open EN-E07 without another explicit authorization.
 
-#### Redcap Barrow Stalker complete suite awaiting visual approval
+#### Redcap Barrow Stalker complete suite approved
 
-- Gate ID: `en-e06-redcap-barrow-stalker-full-v1`; status:
-  `awaiting-visual-approval` on `codex/en-e06-redcap-barrow-stalker`, based
+- Gate ID: `en-e06-redcap-barrow-stalker-full-v1`; status: `approved` on
+  `codex/en-e06-redcap-barrow-stalker`, based
   exactly on published Heartwood handoff `72c5d7c`.
 - Authorization: after Heartwood Warden was approved, committed, pushed, and
   reconciled, the designer said `cool lets do next` on 2026-08-10. Under the
   frozen EN-E06 family order this opens only common Redcap Barrow Stalker.
+- Approval: the exact labeled raw/no-outline and Complete B + Form animations
+  plus the four-way comparison were presented, and all three exact PNG boards
+  were opened together in Aseprite. The designer replied `approved` on
+  2026-08-10. Approval applies only to the frozen digest below and authorizes
+  its bounded approval record and branch publication.
 - Scope: one private complete 80-frame common Redcap. Ironboot Trapper,
   Bloodcap Reaver, Nymph, registration, fixtures, effects, release, and EN-E07
   remain closed.
@@ -3322,8 +3328,11 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   raw GIF `550b963d530de716f3cb5fc067bc459a0dce4c2f3492b984fee9b1db7a8bd33f`;
   Complete B + Form GIF
   `669f64872e063696a7cdcc3ac1072e28818282c7906db60d7dce510e9730406a`.
-- Required next action: present the exact packet and open all three PNGs in
-  Aseprite. Do not commit or push before explicit visual approval.
+- Implementation: the exact frozen candidate is committed at
+  `c3544dc4ec06e06afb15ea699333119342a8946f`.
+- Required next action: commit and push the bounded approval record, then stop.
+  Do not register Redcap, begin Ironboot Trapper, Bloodcap Reaver, or Nymph,
+  generate fixtures, add effects, release, or open EN-E07.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3591,11 +3600,13 @@ exact 80-frame evidence is hash-frozen and technically validated at digest
 `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`,
 with implementation `8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval
 record `d8c13bb008e3a186daa73a37eec87c707f30365f` committed and pushed.
-The later isolated Barrow Stalker candidate on
-`codex/en-e06-redcap-barrow-stalker` is technically frozen at digest
+The later isolated Barrow Stalker suite on
+`codex/en-e06-redcap-barrow-stalker` is visually approved and technically
+frozen at digest
 `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`
-and awaits visual approval. It is not committed, pushed, registered, or
-exported. Later Redcaps, Nymph, EN-E07, the three EN-E03 Idle-only variants,
+with implementation `c3544dc4ec06e06afb15ea699333119342a8946f` committed.
+Only its bounded approval-record commit and branch publication are authorized.
+Later Redcaps, Nymph, EN-E07, the three EN-E03 Idle-only variants,
 public-registration changes, fixtures, effects, and release remain separate
 closed gates.
 

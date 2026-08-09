@@ -60,13 +60,14 @@ function captureLegacyFrame(spec, direction, animation, frame) {
   return Object.freeze({ pixels: Object.freeze(pixels), alpha: Uint8Array.from(pixels, (color) => color === null ? 0 : 255), opaquePixels: occupied.length, bounds: bounds && Object.freeze(bounds), outOfBoundsWrites: Object.freeze(outOfBoundsWrites), digest: pixelDigest(pixels), alphaDigest: alphaDigest(pixels) });
 }
 
-check(EN_E06_BARROW_STALKER_GATE.status === 'awaiting-visual-approval' && EN_E06_BARROW_STALKER_GATE.approvedOn === null && EN_E06_BARROW_STALKER_GATE.publishedImplementation === null, 'candidate approval state drifted');
+check(EN_E06_BARROW_STALKER_GATE.status === 'approved' && EN_E06_BARROW_STALKER_GATE.approvedOn === '2026-08-10' && EN_E06_BARROW_STALKER_GATE.publishedImplementation === 'c3544dc4ec06e06afb15ea699333119342a8946f', 'candidate approval state drifted');
+check(EN_E06_BARROW_STALKER_GATE.approvalEvidence.includes('three exact PNG review boards were opened together in Aseprite') && EN_E06_BARROW_STALKER_GATE.approvalEvidence.includes('designer replied: approved') && EN_E06_BARROW_STALKER_GATE.approvalEvidence.includes('Ironboot Trapper, Bloodcap Reaver, Nymph'), 'approval evidence drifted');
 check(EN_E06_BARROW_STALKER_GATE.authorizedOn === '2026-08-10' && EN_E06_BARROW_STALKER_GATE.authorizationEvidence.includes('cool lets do next') && EN_E06_BARROW_STALKER_GATE.authorizationEvidence.includes('only one private common Redcap Barrow Stalker'), 'authorization evidence drifted');
 check(EN_E06_BARROW_STALKER_GATE.baseCheckpoint === '72c5d7cad80d55b9e48924c4ff7fb44a578dfadb', 'candidate base checkpoint drifted');
 check(EN_E06_BARROW_STALKER_GATE.precedingApproval.gateId === EN_E06_HEARTWOOD_WARDEN_GATE.id && EN_E06_BARROW_STALKER_GATE.precedingApproval.publishedImplementation === EN_E06_HEARTWOOD_WARDEN_GATE.publishedImplementation && EN_E06_BARROW_STALKER_GATE.precedingApproval.publishedHandoff === '72c5d7cad80d55b9e48924c4ff7fb44a578dfadb', 'approved Heartwood predecessor drifted');
 check(EN_E06_BARROW_STALKER_GATE.scope.includes('complete 80-frame Barrow Stalker') && EN_E06_BARROW_STALKER_GATE.animationContract.includes('upward cleave') && EN_E06_BARROW_STALKER_GATE.animationContract.includes('Cast aliases Attack exactly'), 'full-suite or motion contract drifted');
 check(EN_E06_BARROW_STALKER_GATE.exclusions.includes('asset-pack fixture generation or regeneration') && EN_E06_BARROW_STALKER_GATE.exclusions.includes('Ironboot Trapper implementation') && EN_E06_BARROW_STALKER_GATE.exclusions.includes('blood spray') && EN_E06_BARROW_STALKER_GATE.exclusions.includes('trap markers'), 'scope exclusions drifted');
-check(EN_E06_BARROW_STALKER_GATE.nextGate.includes('visual approval') && EN_E06_BARROW_STALKER_GATE.nextGate.includes('Do not commit, push') && EN_E06_BARROW_STALKER_GATE.nextGate.includes('Nymph'), 'candidate stop gate drifted');
+check(EN_E06_BARROW_STALKER_GATE.nextGate.includes('visually approved') && EN_E06_BARROW_STALKER_GATE.nextGate.includes('After push, stop') && EN_E06_BARROW_STALKER_GATE.nextGate.includes('without another explicit gate'), 'approved stop gate drifted');
 check(Object.isFrozen(EN_E06_BARROW_STALKER_GATE) && Object.isFrozen(EN_E06_BARROW_STALKER_DATA), 'gate and data must be deeply immutable');
 check(EN_E06_BARROW_STALKER_CONTRACT.family === 'redcap' && EN_E06_BARROW_STALKER_CONTRACT.variant === 'barrow-stalker' && EN_E06_BARROW_STALKER_CONTRACT.role === 'common', 'candidate contract drifted');
 check(EN_E06_BARROW_STALKER_CONTRACT.silhouette.includes('oversized drooping red cap') && EN_E06_BARROW_STALKER_CONTRACT.effectBoundary.includes('Blood spray') && EN_E06_BARROW_STALKER_CONTRACT.effectBoundary.includes('remain external'), 'Redcap identity/effect boundary drifted');
@@ -75,7 +76,7 @@ check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'eight-
 check(EN_E06_CONTRACT_CARDS[0].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Fairies must remain approved');
 check(EN_E06_CONTRACT_CARDS[1].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Hags must remain approved');
 check(EN_E06_CONTRACT_CARDS[2].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Dryads must remain approved');
-check(EN_E06_CONTRACT_CARDS[3].variants.map(({ status }) => status).join('/') === 'implemented-full-candidate/planned/planned', 'Redcap role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[3].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/planned/planned', 'Redcap role-order status drifted');
 check(EN_E06_CONTRACT_CARDS[4].variants.every(({ status }) => status === 'planned'), 'Nymph must remain contract-only');
 check(EN_E06_BARROW_STALKER_REGISTRY.families.length === 1 && EN_E06_BARROW_STALKER_REGISTRY.publicFamilies.length === 0 && EN_E06_BARROW_STALKER_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);

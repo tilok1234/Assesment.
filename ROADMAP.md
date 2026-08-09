@@ -138,9 +138,11 @@ Barrow Stalker on `codex/en-e06-redcap-barrow-stalker`. Its private hash-frozen
 Goblin Scout/Hobgoblin/Mire pixel, and alpha-silhouette distinction gates at
 digest `1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1`.
 The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-awaits visual approval. It is not committed, pushed, registered, or exported.
-Ironboot Trapper, Bloodcap Reaver, Nymph, EN-E07, registration changes,
-fixtures, shared renderer/schema changes, effects, and release remain closed.
+was visually approved on 2026-08-10. The frozen implementation is committed at
+`c3544dc4ec06e06afb15ea699333119342a8946f`; only the bounded approval record
+and branch publication are authorized. Ironboot Trapper, Bloodcap Reaver,
+Nymph, EN-E07, registration changes, fixtures, shared renderer/schema changes,
+effects, and release remain closed.
 
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,

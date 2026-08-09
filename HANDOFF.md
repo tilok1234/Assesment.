@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Barrow Stalker Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Barrow Stalker Approved
 
 Start here in a new task. This is the only active continuation section; later
 sections are historical provenance.
@@ -27,6 +27,10 @@ sections are historical provenance.
   pushed, and reconciled, the designer said `cool lets do next` on 2026-08-10.
   Under the documented EN-E06 family order and one-complete-sprite cadence,
   this opens only common Redcap Barrow Stalker.
+- Approval: the exact raw/no-outline and Complete B + Form animations plus the
+  Goblin Scout/Hobgoblin/Mire/Barrow comparison were presented, and all three
+  exact PNG boards were opened together in Aseprite. The designer replied
+  `approved` on 2026-08-10. Approval applies only to the frozen digest below.
 - Scope: one private 80-frame common Redcap across Idle F1-F2, Walk W1-W4,
   Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
   Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
@@ -54,17 +58,19 @@ sections are historical provenance.
 - Protected state: all approved Fairy, Hag, and Dryad digests remain exact;
   public catalog remains 80 families / 259 variants with no public Redcap; all
   232 committed fixtures remain untouched.
-- Required next action: present the exact raw, Complete B + Form, comparison,
-  and paired GIF evidence and open the three exact PNGs together in Aseprite.
-  Do not commit, push, register Redcap, generate fixtures, begin Ironboot
-  Trapper or Nymph, add effects, release, or open EN-E07 before explicit visual
-  approval.
+- Publication state: the exact approved implementation is committed at
+  `c3544dc4ec06e06afb15ea699333119342a8946f`. The bounded approval record and
+  branch publication are authorized; review artifacts remain ignored evidence.
+- Required next action: commit and push the exact approval record, then stop.
+  Do not register Redcap, generate fixtures, begin Ironboot Trapper, Bloodcap
+  Reaver, Nymph, add effects, release, or open EN-E07.
 
-Suggested approval prompt:
+Suggested opening request for the next chat:
 
-> Review the exact Barrow Stalker raw, Complete B + Form, four-way comparison,
-> and paired GIF evidence. Approve, request a narrow repair, or reject this
-> frozen 80-frame candidate only.
+> Resume `codex/en-e06-redcap-barrow-stalker` from the exact approved gate in
+> `HANDOFF.md`. Verify implementation `c3544dc`, commit and push the bounded
+> approval record, then stop. Do not infer Ironboot Trapper, Bloodcap Reaver,
+> Nymph, registration, fixtures, effects, release, or EN-E07 authorization.
 
 ## Approved Preceding Checkpoint - Heartwood Warden Published
 

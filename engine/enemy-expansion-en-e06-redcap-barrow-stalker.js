@@ -34,7 +34,7 @@ export const EN_E06_BARROW_STALKER_CONTRACT = deepFreeze({
   family: 'redcap',
   variant: 'barrow-stalker',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'short-stocky-cap-heavy-fey-v1',
   silhouette: 'A very short broad fey with an oversized drooping red cap, long ears, a compact coat, one connected hooked hand weapon, and two massive planted iron boots. The cap-to-boot stack must remain distinct from public Goblins and the approved feral Hag.',
   identity: 'Ruddy ash skin, a blood-red cap, barrow-brown coat and leather, iron-dark boots, yellow eyes, and a pale iron hook establish a grave-ambusher identity without traps, blood spray, ground chips, or detached weapon trails.',
@@ -73,13 +73,13 @@ export const EN_E06_BARROW_STALKER_DATA = deepFreeze({
 
 export const EN_E06_BARROW_STALKER_GATE = deepFreeze({
   id: 'en-e06-redcap-barrow-stalker-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '72c5d7cad80d55b9e48924c4ff7fb44a578dfadb',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After the exact Heartwood Warden lane was approved, committed, pushed, and reconciled, the designer said: cool lets do next. Under the documented EN-E06 family order and one-complete-sprite cadence, this authorizes only one private common Redcap Barrow Stalker 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: null,
-  publishedImplementation: null,
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, public Goblin Scout/Hobgoblin plus approved Mire Crone comparison, and paired GIF evidence were presented, and the three exact PNG review boards were opened together in Aseprite, the designer replied: approved. Approval applies only to candidate digest 1719f8611f212cfbacf041fc8459d3f52390b05aa73e0a1d50203554845051f1 and authorizes its bounded approval-record commit and branch publication; Ironboot Trapper, Bloodcap Reaver, Nymph, registration, fixtures, effects, release, EN-E07, and later work remain separate gates.',
+  publishedImplementation: 'c3544dc4ec06e06afb15ea699333119342a8946f',
   precedingApproval: {
     gateId: EN_E06_HEARTWOOD_WARDEN_GATE.id,
     artifactSha256: EN_E06_HEARTWOOD_WARDEN_GATE.artifactSha256,
@@ -140,7 +140,7 @@ export const EN_E06_BARROW_STALKER_GATE = deepFreeze({
     'later EN-E06 sprites',
     'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Present the exact hash-frozen raw/no-outline, Complete B + Form, public Goblin and approved Mire comparison, and paired GIF evidence for visual approval. Do not commit, push, register Redcap, generate fixtures, begin Ironboot Trapper or Nymph, add effects, release, or broaden Wave 2 without explicit authorization.',
+  nextGate: 'The exact Barrow Stalker candidate is visually approved and committed at c3544dc4ec06e06afb15ea699333119342a8946f. Only its bounded approval-record commit and branch publication are authorized. After push, stop; do not register Redcap, generate fixtures, begin Ironboot Trapper, Bloodcap Reaver, Nymph, EN-E07, add effects, release, or broaden Wave 2 without another explicit gate.',
 });
 
 export const EN_E06_BARROW_STALKER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

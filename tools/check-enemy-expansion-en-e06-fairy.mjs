@@ -175,7 +175,7 @@ check(EN_E06_CONTRACT_CARDS[1].variants[0].status === 'implemented-full-approved
 check(EN_E06_CONTRACT_CARDS[1].variants[1].status === 'implemented-full-approved', 'the later approved Cauldron Hexer must remain visible without changing the approved Bramblewing gate');
 check(EN_E06_CONTRACT_CARDS[1].variants[2].status === 'implemented-full-approved', 'Blackthorn Matron must retain its full approval');
 check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/implemented-full-approved', 'Dryad role-order status drifted');
-check(EN_E06_CONTRACT_CARDS[3].variants.map(({ status }) => status).join('/') === 'implemented-full-candidate/planned/planned', 'Redcap role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[3].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/planned/planned', 'Redcap role-order status drifted');
 check(EN_E06_CONTRACT_CARDS[4].variants.every(({ status }) => status === 'planned'), 'Nymph must remain contract-only');
 
 check(EN_E06_FAIRY_REGISTRY.families.length === 1, 'the full candidate registry must contain exactly one family');
