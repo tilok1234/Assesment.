@@ -3131,6 +3131,41 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   fixtures, start Dryad, add effects, release, or broaden Wave 2 without
   explicit authorization.
 
+#### Candidate Dryad Grove Tender complete suite
+
+- Gate ID: `en-e06-dryad-grove-tender-full-v1`; status: `candidate`, internal,
+  uncommitted, and unpushed on `codex/en-e06-dryad-grove-tender`, based exactly
+  on clean Blackthorn publication handoff `8e56ec2`.
+- Authorization: after Blackthorn approval and publication, the designer said
+  `cool next please` on 2026-08-09. This opens only one complete common Grove
+  Tender under the one-sprite cadence.
+- Identity: an ordinary-height slim living-wood fey with warm bark skin,
+  narrow heartwood torso, green leaf crown and mantle, pale sapwood joints,
+  small blossoms, amber eyes, root hems, and one connected forked branch arm.
+  It remains humanoid-fey rather than a broad reduced Treant.
+- Animation/effect policy: two mantle-settle Idle poses, four rooted-looking
+  mobile Walk phases, four branch draw/fork/sweep/recovery Attack phases, exact
+  Cast and Death aliases, and exact side mirroring. Vines, spores, roots,
+  detached leaves, pollen, summoned plants, trails, projectiles, and impacts
+  remain external.
+- Review hashes: raw / Complete B + Form boards
+  `ea4bd10e6346a47e89f0af71c0e853ec044a45ec3319364a4f835e25971ab32e` /
+  `4b38f46649936e41061c95cc74509cec3d2b804d11ca24d3fa070fca0d5d02d0`;
+  Treant / Blackthorn / Grove comparison
+  `3d4b44be63e87e55aef0b2c1cb36fc8b65e7960a0740029a1b10852bce3cdf40`;
+  raw / Complete B + Form GIFs
+  `917b5df1871998cceb05329aef8b7a32c351beaf2b2da66524e6b5a4e3ba4aa2` /
+  `d573b892daab216446e5c5e4f45f6eeda2c803126ee835fbc871e5759dfeeadb`.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded frames;
+  80/80 pixel and alpha-silhouette distinctions from public Treant and
+  approved Blackthorn; 72/72 colored living-wood frames; 8/8 white flashes;
+  opaque range 213-257; 8,763 Complete B additions; 8,690 Form changes;
+  candidate digest
+  `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
+- Stop gate: show the exact three PNGs and paired GIFs for explicit visual
+  approval. Do not commit, push, register Dryad, generate fixtures, start
+  Spore Cantor, add effects, release, or broaden Wave 2 before approval.
+
 ### EN-E07 - Shapeshifters and apparitions
 
 - Status: `queued`
@@ -3388,17 +3423,17 @@ identical at 17 families / 43 variants, `PUBLIC_ENEMIES` remains 74/245, the
 Complete Kit remains 2,182 PNGs, and public `zombie/ghoul` plus all 232
 committed fixtures remain unchanged.
 
-Wave 2 is complete only through the private approved Blackthorn Matron
-gate `en-e06-hag-blackthorn-matron-full-v1` on
-`codex/en-e06-hag-blackthorn-matron`, based exactly on clean published
-Cauldron handoff `0a096fa`. The designer's `approved lets do next` approved
-Cauldron and opened this one complete elite Hag pass. Its frozen 80-frame suite
-is technically validated, internal, non-public, visually approved, and
-published at `8ce2f2a`. The exact raw, Complete B + Form, and three-Hag
-comparison boards plus paired GIFs are hash-frozen. Dryad,
-Redcap, Nymph, EN-E07, public Hag registration, fixtures, effects, and release
-remain separate closed gates; authorization must not be broadened without a
-new explicit continuation.
+Wave 2 is authorized only through private Grove Tender visual-candidate gate
+`en-e06-dryad-grove-tender-full-v1` on
+`codex/en-e06-dryad-grove-tender`, based exactly on clean published Blackthorn
+handoff `8e56ec2`. The designer's `cool next please` advances from the three
+approved Hags to this one complete common Dryad pass. Its frozen 80-frame suite
+is technically validated, internal, non-public, uncommitted, and unpushed.
+Explicit visual approval of the exact raw, Complete B + Form, and
+Treant/Blackthorn/Grove comparison boards plus paired GIFs is required before
+publication. Spore Cantor, Heartwood Warden, Redcap, Nymph, EN-E07, public
+Dryad registration, fixtures, effects, and release remain separate closed
+gates; authorization must not be broadened past this one complete-sprite pass.
 
 ### Historical Authorization Chronology
 

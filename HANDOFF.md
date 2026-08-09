@@ -15,68 +15,68 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Published Approved EN-E06 Hag Blackthorn Matron
+## Immediate Continuation Checkpoint - EN-E06 Dryad Grove Tender Candidate
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
 
 - Repository/branch: current v2 checkout on
-  `codex/en-e06-hag-blackthorn-matron`, based exactly on clean published
-  Cauldron Hexer handoff `0a096fa46ab48e45d7b838e116d8285b4b871235`.
-  Approved Cauldron implementation `4b59b4098caf6397719fba6d21c27c5f8dcd82b0`,
-  approved Mire Crone, and all three approved Fairies remain exact.
-- Authorization: after approving Cauldron Hexer, the designer said
-  `approved lets do next` on 2026-08-09. Under the one-complete-sprite cadence,
-  this opens only elite Hag `blackthorn-matron`.
-- Gate: `en-e06-hag-blackthorn-matron-full-v1`; status `approved`, internal,
-  committed at `8ce2f2a5189c9498e1ace39aab70b9827a4ff0ae`, and published on its
-  isolated branch.
-- Scope: one private 80-frame elite Hag across Idle, Walk, Attack, Cast, Hurt,
-  and Death in Down, Left, Right, and Up. Dryad, Redcap, Nymph, registration,
-  fixtures, effects, release, and broader Wave 2 work remain closed.
-- Identity: bark-olive skin, black-plum rope hair, blood-briar armor, ember
-  eyes, bone claws, a connected asymmetrical hooked crown, broad pauldrons,
-  and plated shawl mass on the approved stooped feral-Hag chassis.
+  `codex/en-e06-dryad-grove-tender`, based exactly on clean published
+  Blackthorn Matron handoff `8e56ec2eb9a9d28c8702ea243dd4690e7746b6a9`.
+  Approved Blackthorn implementation `8ce2f2a5189c9498e1ace39aab70b9827a4ff0ae`,
+  both earlier Hags, and all three approved Fairies remain exact.
+- Authorization: after Blackthorn approval and publication, the designer said
+  `cool next please` on 2026-08-09. The frozen family order advances from Hag
+  to Dryad and opens only common `grove-tender` under the one-sprite cadence.
+- Gate: `en-e06-dryad-grove-tender-full-v1`; status `candidate`, internal,
+  uncommitted, and unpushed pending explicit visual approval.
+- Scope: one private 80-frame common Dryad across Idle, Walk, Attack, Cast,
+  Hurt, and Death in Down, Left, Right, and Up. Spore Cantor, Heartwood Warden,
+  Redcap, Nymph, registration, fixtures, effects, release, and broader Wave 2
+  work remain closed.
+- Identity: slim ordinary-height living-wood fey with warm bark skin, narrow
+  heartwood torso, green leaf crown and mantle, pale sapwood joints, small
+  blossoms, amber eyes, connected root hems, and one visibly forked branch arm.
+- Separation: the actor remains humanoid-fey rather than a broad trunk-bodied
+  Treant and stays upright rather than using the stooped Hag silhouette.
 - Transparency/effect boundary: binary alpha, one connected silhouette, and a
-  one-cell margin are exact. Detached thorns, briar trails, curse motes, hexes,
-  charms, fumes, familiars, claw trails, and impacts remain external.
-- Animation contract: two crown-settle Idle poses, four heavy grounded Walk
-  phases, four armored claw coil/rise/rake/recovery Attack phases, exact
-  Cast-to-Attack aliases, white-recoil and colored-briar Hurt, and exact Death
+  one-cell margin are exact. Vines, spores, root eruptions, leaf trails,
+  detached leaves, pollen, summoned plants, branch trails, projectiles, and
+  impacts remain external.
+- Animation contract: two mantle-settle Idle poses, four rooted-looking mobile
+  Walk phases, four branch draw/fork/sweep/recovery Attack phases, exact
+  Cast-to-Attack aliases, white-recoil and colored-sapwood Hurt, and exact Death
   aliases H1,H2,H2,H2. Left is the exact mirror of Right.
-- Review command: `npm.cmd run review:enemy-expansion-en-e06-hag-blackthorn-matron`.
-- Focused command: `npm.cmd run check:enemy-expansion-en-e06-hag-blackthorn-matron`.
+- Review command: `npm.cmd run review:enemy-expansion-en-e06-dryad-grove-tender`.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e06-dryad-grove-tender`.
 - Review hashes: raw / Complete B + Form `1428x760` boards
-  `6f2ed670a65ac2215c818afb95d7f7a3f7183af7781506705be459962aa63315` /
-  `2f93b79eeadca993f6e6b18921942d5a51d8d7cf3ec5a43bab1ac4665011aa37`;
-  three-Hag `1192x548` comparison
-  `cd423efc081d32cc6979a192a3dbedceab7c94431737d3a32dc4cb2abce2eb2c`;
+  `ea4bd10e6346a47e89f0af71c0e853ec044a45ec3319364a4f835e25971ab32e` /
+  `4b38f46649936e41061c95cc74509cec3d2b804d11ca24d3fa070fca0d5d02d0`;
+  Treant / Blackthorn / Grove `1192x548` comparison
+  `3d4b44be63e87e55aef0b2c1cb36fc8b65e7960a0740029a1b10852bce3cdf40`;
   raw / Complete B + Form `640x672` GIFs
-  `35c42c7916bdec51264544e43fe468551d0c8111d9d4d896c766ce25bf1b1c46` /
-  `d9ccd666b71575748cc513f0ffae1faeeea0d7e90ded104fced891359189e7dc`.
+  `917b5df1871998cceb05329aef8b7a32c351beaf2b2da66524e6b5a4e3ba4aa2` /
+  `d573b892daab216446e5c5e4f45f6eeda2c803126ee835fbc871e5759dfeeadb`.
 - Focused result: 80/80 connected, one-cell-bounded, grounded frames; all 80
-  pixel frames and alpha silhouettes differ from both approved Hags; 72/72
-  colored briar frames; 8/8 exact white alias flashes; opaque range 246-266;
-  9,368 Complete B additions; 6,023 Form changes. Candidate digest:
-  `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
-- Protected result: all three Fairy and both approved Hag 80-frame digests are
+  pixel frames and alpha silhouettes differ from public Treant and approved
+  Blackthorn; 72/72 colored living-wood frames; 8/8 exact white alias flashes;
+  opaque range 213-257; 8,763 Complete B additions; 8,690 Form changes.
+  Candidate digest: `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
+- Protected result: all three Fairy and all three Hag 80-frame digests remain
   exact; public remains 74/245; no fixture was generated or modified.
 - Firewall: no public registration, facade import, shared renderer/schema
   change, asset-pack entry, selector/persistence route, pack/export change,
   fixture regeneration, effect, or release.
-- Approval/publication: the exact three hash-frozen PNGs were opened in
-  Aseprite and presented with both GIFs. The designer replied `approved` on
-  2026-08-09. The bounded implementation is published at `8ce2f2a`.
-- Next gate: stop for a separate continuation. Do not register Hag, generate
-  fixtures, start Dryad, add effects, release, or broaden Wave 2 without
-  explicit authorization.
+- Required next gate: open the exact three hash-frozen PNGs in Aseprite and
+  present them with both GIFs. Stop for explicit visual approval; do not commit,
+  push, register Dryad, start Spore Cantor, or add effects before approval.
 
 Suggested opening request for the next chat:
 
-> Continue from the approved Blackthorn Matron publication on
-> `codex/en-e06-hag-blackthorn-matron` at `8ce2f2a`; preserve all three
-> approved Hags and all three Fairies exactly, and wait for an explicit next
-> gate before registration, Dryad, fixtures, effects, or later Wave 2 work.
+> Continue the exact Grove Tender candidate on
+> `codex/en-e06-dryad-grove-tender`; inspect the three frozen boards and paired
+> GIFs, preserve all approved Fairies and Hags, and stop at visual approval
+> before publication or another Dryad role.
 
 # Historical Handoff Archive
 

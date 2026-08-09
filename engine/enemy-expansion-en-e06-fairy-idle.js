@@ -74,7 +74,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
     attackTell: 'One branch arm draws back and visibly forks before a sweeping lash; vines, spores, and roots remain external.',
     externalEffects: ['vines', 'spores', 'root eruptions', 'leaf trails', 'summoned plants'],
     variants: [
-      { id: 'grove-tender', name: 'Grove Tender', role: 'common', status: 'planned', brief: 'Young bark-limbed Dryad with a leaf mantle and narrow humanoid trunk line.' },
+      { id: 'grove-tender', name: 'Grove Tender', role: 'common', status: 'implemented-full-candidate', brief: 'Young bark-limbed Dryad with a leaf mantle and narrow humanoid trunk line.' },
       { id: 'spore-cantor', name: 'Spore Cantor', role: 'specialist', status: 'planned', brief: 'Fungal-crowned Dryad whose spore clouds remain separate effects.' },
       { id: 'heartwood-warden', name: 'Heartwood Warden', role: 'elite', status: 'planned', brief: 'Dense heartwood guardian with branch pauldrons while retaining fey rather than Treant scale.' },
     ],
@@ -109,6 +109,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
 
 export const EN_E06_FAIRY_CONTRACT_CARD = EN_E06_CONTRACT_CARDS[0];
 export const EN_E06_HAG_CONTRACT_CARD = EN_E06_CONTRACT_CARDS[1];
+export const EN_E06_DRYAD_CONTRACT_CARD = EN_E06_CONTRACT_CARDS[2];
 
 export const EN_E06_FAIRY_IDLE_GATE = deepFreeze({
   id: 'en-e06-fairy-bramblewing-scout-idle-v1',

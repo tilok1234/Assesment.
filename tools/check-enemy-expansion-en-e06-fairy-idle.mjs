@@ -115,7 +115,7 @@ function frameRecord(captured, direction, frame) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Wave 2 predecessor must remain the exact EN-E05 consumer gate');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public frame digest must remain frozen');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'hag-blackthorn-matron-full-published-2026-08-09', 'the expansion ledger must preserve the approved Idle baseline while identifying published Blackthorn Matron');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'dryad-grove-tender-full-candidate-2026-08-09', 'the expansion ledger must preserve the approved Idle baseline while identifying candidate Grove Tender');
 check(EN_E06_FAIRY_IDLE_GATE.status === 'approved', 'the Fairy Idle gate must retain exact designer approval');
 check(EN_E06_FAIRY_IDLE_GATE.authorizedOn === '2026-08-09', 'the Wave 2 authorization date must remain frozen');
 check(EN_E06_FAIRY_IDLE_GATE.authorizationEvidence.includes('designer said: very good. wave 2') && EN_E06_FAIRY_IDLE_GATE.authorizationEvidence.includes('baseline Fairy four-direction Idle gate'), 'the gate must retain the explicit Wave 2 authorization and bounded first gate');
@@ -155,7 +155,8 @@ check(EN_E06_FAIRY_CONTRACT_CARD.variants[2].id === 'petalcrown-duelist' && EN_E
 check(EN_E06_CONTRACT_CARDS[1].variants[0].status === 'implemented-full-approved', 'the later approved Mire Crone lane must remain visible without changing this historical Idle gate');
 check(EN_E06_CONTRACT_CARDS[1].variants[1].status === 'implemented-full-approved', 'the later approved Cauldron Hexer must remain visible without changing this historical Idle gate');
 check(EN_E06_CONTRACT_CARDS[1].variants[2].status === 'implemented-full-approved', 'Blackthorn Matron must retain its full approval');
-for (const card of EN_E06_CONTRACT_CARDS.slice(2)) check(card.variants.every((variant) => variant.status === 'planned'), card.id + ' must remain contract-only');
+check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-candidate/planned/planned', 'Dryad role-order status drifted');
+for (const card of EN_E06_CONTRACT_CARDS.slice(3)) check(card.variants.every((variant) => variant.status === 'planned'), card.id + ' must remain contract-only');
 
 check(EN_E06_FAIRY_IDLE_DATA.alphaPolicy === 'binary-open-lattice-negative-space', 'the Fairy renderer data must retain the hard-alpha open-lattice policy');
 check(EN_E06_FAIRY_IDLE_DATA.effectBoundary === 'external-glow-pollen-sparkles-trails-and-impact-light' && EN_E06_FAIRY_IDLE_DATA.bakedEffects.length === 0, 'Fairy glow, pollen, sparkles, trails, and impact light must remain external');
