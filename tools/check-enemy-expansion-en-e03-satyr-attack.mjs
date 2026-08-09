@@ -144,9 +144,9 @@ check(EN_E03_SATYR_ATTACK_REGISTRY.publicFamilies.length === 0 && EN_E03_SATYR_A
 check(EN_E03_SATYR_ATTACK_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'the Attack renderer must retain the approved roster chassis');
 check(Object.isFrozen(EN_E03_SATYR_ATTACK_REGISTRY) && Object.isFrozen(EN_E03_SATYR_ATTACK_FAMILY), 'the Attack registry and family must be immutable');
 
-check(engine.PUBLIC_ENEMIES.length === 74, 'the Attack candidate must not alter the later 74-family public catalog');
+check(engine.PUBLIC_ENEMIES.length === 80, 'the Attack source must coexist with the later 80-family public catalog');
 check(engine.ENEMIES.length === 57, 'the Attack candidate must not alter the 57-family legacy catalog');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'satyr'), 'Satyr must remain absent from public consumers');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'satyr'), 'the later approved adoption must expose Satyr in public consumers');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e03-satyr-attack'), 'the public facade must not import the Satyr Attack candidate module');
 check(!facadeSource.includes('EN_E03_SATYR_ATTACK'), 'the public facade must not expose Satyr Attack candidate symbols');

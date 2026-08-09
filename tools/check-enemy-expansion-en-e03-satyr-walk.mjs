@@ -115,9 +115,9 @@ check(EN_E03_SATYR_WALK_REGISTRY.publicFamilies.length === 0 && EN_E03_SATYR_WAL
 check(EN_E03_SATYR_WALK_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'the Walk renderer must retain the approved humanoid upper chassis');
 check(Object.isFrozen(EN_E03_SATYR_WALK_REGISTRY) && Object.isFrozen(EN_E03_SATYR_WALK_FAMILY), 'the Walk registry and family must be immutable');
 
-check(engine.PUBLIC_ENEMIES.length === 74, 'the Walk candidate must not alter the later 74-family public catalog');
+check(engine.PUBLIC_ENEMIES.length === 80, 'the Walk source must coexist with the later 80-family public catalog');
 check(engine.ENEMIES.length === 57, 'the Walk candidate must not alter the 57-family legacy catalog');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'satyr'), 'Satyr must remain absent from public consumers');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'satyr'), 'the later approved adoption must expose Satyr in public consumers');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e03-satyr-walk'), 'the public facade must not import the Satyr Walk candidate module');
 check(!facadeSource.includes('EN_E03_SATYR_WALK'), 'the public facade must not expose Satyr Walk candidate symbols');

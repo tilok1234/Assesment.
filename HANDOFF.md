@@ -15,10 +15,90 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E06 Published Through Spore Cantor
+## Immediate Continuation Checkpoint - Integration And Actor Export Ready
 
 Start here in a new task. This is the only active continuation section in this
-file; everything below `Historical Handoff Archive` is provenance.
+file; later checkpoints are historical provenance.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/approved-enemy-assembler-integration`, based on clean
+  `b331e54d10dc1f653714511a95729a883ba96bfd`.
+- Authorization: after the completed-sprite audit, the designer said `sure lets
+  go ahead and add them in as you reccomend`.
+- Exact integration: register all eight approved EN-E06 suites; adopt the six
+  completed EN-E03 suites; route public `zombie/ghoul` through approved
+  `ghoul-upgrade/ghoul` without a duplicate selector family.
+- Catalog boundary: legacy remains 57 families / 202 variants; stable and
+  consumer expansion registries are identical at 23 families / 57 variants;
+  `PUBLIC_ENEMIES` is 80 families / 259 variants.
+- Included EN-E03: Giant/Hill Breaker; Centaur/Steppe Hunter and Banner Khan;
+  Satyr/Briar Reveler, Reed Charmer, and Wildwood Hornlord.
+- Included EN-E06: Fairy/Bramblewing Scout, Thistle Hexer, Petalcrown Duelist;
+  Hag/Mire Crone, Cauldron Hexer, Blackthorn Matron; Dryad/Grove Tender and
+  Spore Cantor.
+- Excluded incomplete content: Boulder Hurler, Storm-Clan Jarl, and Sun Lancer
+  remain internal Idle-only EN-E03 variants. Heartwood Warden, Redcap, Nymph,
+  EN-E07, new sprite art, effects, fixture regeneration, and release remain out
+  of scope.
+- Ghoul boundary: the public runtime uses the approved replacement; other
+  Zombie variants remain raw-legacy exact. No `ghoul-upgrade` selector family
+  exists. Frozen `asset-pack/enemies/zombie-ghoul.png` remains SHA-256
+  `a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2`.
+- Focused evidence: 15 suites / 1,200 frames exactly match their approved
+  source registries and pass 1,200 None/Complete B/Form presentation triplets.
+  Frozen integration digest:
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`.
+- Consumer/export evidence: selectors, sanitization, persistence,
+  randomization, public rendering, outlines, Form, all sheet scopes, ordinary
+  packs, Complete Kit, and Wildshot validation use the generic catalog paths.
+  Complete Kit is 80/259/2,196 PNGs; the 24-player Complete Pack maximum is
+  2,219 PNGs; the three-treatment export target is 777 PNGs.
+- Validation: `npm.cmd run check:approved-enemy-assembler-integration` passes;
+  every EN-E05 and EN-E06 approved source gate passes; `npm.cmd run check:fast`
+  passes; full `npm.cmd run check` passes in 104.5s with all 232 frozen fixture
+  PNGs valid and untouched.
+- Local artifact note: two optional ignored EN-E03 review PNGs are absent from
+  this checkout, so their artifact-requirement source gates cannot hash those
+  files. The current integration gate directly exhausts the live EN-E03 source
+  renderers, so this is not a pixel, routing, or project-validation failure.
+- Documentation audit: all ten active Markdown documents were reconciled to
+  the live 80/259 state. Historical checkpoint counts remain as provenance and
+  are labeled historical rather than rewritten.
+- Complete B actor package: the designer then requested a local export containing
+  varied players, many Player-derived NPCs, every public enemy variation, and
+  every boss with all animations. `npm.cmd run export:actors:complete-b` now
+  produces 16 players, 96 NPCs across 16 roles, all 259 enemies across 80
+  families, and all 10 complete-animation bosses: 381 native full-sheet PNGs.
+- Package treatment: players, NPCs, and enemies use Form + Complete B; bosses
+  preserve approved source colors and receive a per-frame Complete B exterior
+  contour. The sheets are transparent hard-alpha output with no shadows or
+  baked effects. The three candidate-status bosses remain labeled as candidates
+  in the manifest; exporting them does not record visual acceptance.
+- Package artifact: ignored directory
+  `dist/8-bit-sprite-assembler-complete-b-actor-pack-v1/`, ZIP
+  `dist/8-bit-sprite-assembler-complete-b-actor-pack-v1.zip`, 2,002,338 bytes,
+  SHA-256
+  `b406918d04cddfc729d5d47cacb8a8b10ec7350a80d834a29ac65536336220b7`,
+  with a matching `.zip.sha256` sidecar.
+- Package evidence: `npm.cmd run check:export:actors:complete-b` reopens all 381
+  sheets and verifies the exact live rosters, 80 nonempty cells per sheet,
+  dimensions, hard alpha, 2,527,744 Complete B contour additions, file hashes,
+  archive hash, and sidecar. Representative Player, NPC, Enemy, and Boss sheets
+  were also inspected at original resolution and are correctly composed.
+- Publication state: implementation and docs are complete but not yet committed
+  or pushed. The generated package is intentionally ignored by Git. Stop here
+  for designer review/approval before publication.
+
+Suggested opening request for the next chat:
+
+> Resume `codex/approved-enemy-assembler-integration`, verify the cleanly scoped
+> integration diff and the Complete B actor-package artifact, then commit and
+> push the source and documentation only after explicit approval.
+
+## Historical Art Completion Checkpoint - EN-E06 Published Through Spore Cantor
+
+This section records the art-completion state before the later integration
+authorization. It is provenance, not an active continuation instruction.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Repository/branch: `https://github.com/tilok1234/Assesment.` on
@@ -74,12 +154,12 @@ file; everything below `Historical Handoff Archive` is provenance.
   `GAME_PACK_EXPORT_PLAN.md`, and `asset-pack/README.md` were already current.
   This reconciliation updates `ARCHITECTURE.md`, `ASSESSMENT.md`, `CLAUDE.md`,
   `README.md`, `ROADMAP.md`, `ENEMY_EXPANSION_PLAN.md`, and this handoff.
-- Current authorization: the approved request ends with this documentation
+- Historical authorization at that checkpoint: the approved request ended with this documentation
   audit and handoff. No content implementation gate is active. Stop and ask the
   designer what to authorize next; do not infer Heartwood Warden from family
   order or from the completed Spore Cantor approval.
 
-Suggested opening request for the next chat:
+Historical opening request at that checkpoint:
 
 > Resume from clean published `codex/en-e06-dryad-spore-cantor`. Read
 > `HANDOFF.md` and the active docs, verify live HEAD/upstream, and preserve all

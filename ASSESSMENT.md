@@ -2,8 +2,10 @@
 
 > **Historical snapshot:** this assessment was written against pre-adoption
 > `main` (57/202, no EN work) and first published on an EN-E02 checkout. The
-> current repository has since integrated EN-E01, EN-E02, EN-E04, and four new
-> EN-E05 families at 74 public families / 245 variants. Measurements and branch
+> current repository has since integrated 23 expansion families / 57 variants
+> across EN-E01 through EN-E06, producing 80 public families / 259 variants;
+> public `zombie/ghoul` uses the approved replacement renderer while the legacy
+> fixture remains frozen. Measurements and branch
 > wording below describe the 2026-08-08 assessment point unless a later update
 > is explicitly noted; they are evidence, not the current handoff.
 
@@ -167,10 +169,14 @@ old one did — minus nothing — it just also passes from a clean checkout.
 
 ## Part 4 — Historical recommendations and current status
 
-Update for 2026-08-09: EN adoption is complete through EN-E05 assembler
-integration and the live catalog remains 74/245. Approved EN-E06 Fairies
-Bramblewing Scout, Thistle Hexer, and Petalcrown Duelist remain exact,
-internal, non-public, and published at `cc92ca9`, `3dc68cb`, and `b265e97`.
+Update for 2026-08-09: the approved backlog integration now composes 23
+expansion families / 57 variants and a live 80/259 public catalog. It includes
+the six completed EN-E03 suites, all eight completed EN-E06 suites, and the
+Ghoul Upgrade replacement route; the focused, fast, and full gates pass without
+fixture or sprite-art changes. The production chronology below records the
+earlier private source checkpoints. Approved EN-E06 Fairies Bramblewing Scout,
+Thistle Hexer, and Petalcrown Duelist remain exact and were originally
+published at `cc92ca9`, `3dc68cb`, and `b265e97`.
 After Petalcrown publication, the designer said `lets do nextr`, opening only
 common Hag Mire Crone. Its private 80-frame candidate passes connected,
 bounded, grounded, alias, mirror, public-Witch distinction, and approved-Fairy

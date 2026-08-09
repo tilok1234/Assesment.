@@ -117,10 +117,10 @@ check(EN_E03_IDLE_REGISTRY.renderers[0].key === 'large-hybrid-v2', 'EN-E03 must 
 check(EN_E03_IDLE_REGISTRY.renderers[0].chassis === 'large-hybrid-v2', 'EN-E03 must declare the large-hybrid-v2 chassis');
 check(EN_E03_IDLE_REGISTRY.publicFamilies.length === 0 && EN_E03_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E03 Idle evidence must not enter the public family view');
 check(Object.isFrozen(EN_E03_IDLE_REGISTRY), 'the EN-E03 Idle registry must be immutable');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 17, 'EN-E03 Idle work must remain excluded while later EN-E05 registration brings the stable registry to seventeen approved families');
-check(engine.PUBLIC_ENEMIES.length === 74, 'EN-E03 Idle work must remain excluded from the later 74-family consumer catalog');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 23, 'later approved adoption must bring the stable registry to twenty-three approved families');
+check(engine.PUBLIC_ENEMIES.length === 80, 'later approved adoption must bring the public consumer catalog to eighty families');
 check(engine.ENEMIES.length === 57, 'EN-E03 Idle work must not alter the legacy Enemy catalog');
-check(cardOrder.every((id) => !engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'EN-E03 families must remain absent from generic consumers');
+check(cardOrder.every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'the later EN-E03 adoption must expose all three approved families generically');
 
 for (const family of EN_E03_IDLE_REGISTRY.families) {
   check(family.state === engine.ENEMY_EXPANSION_STATES.IMPLEMENTED, 'Candidate ' + family.id + ' must remain implemented, not approved');
@@ -254,10 +254,10 @@ rejects(
 );
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E03_IDLE_REGISTRY);
-check(ledgerReport.counts.approved === 5 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 17, 'current ledger must retain five approved, zero implemented, and seventeen planned slices');
+check(ledgerReport.counts.approved === 7 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 15, 'current ledger must report seven approved, zero implemented, and fifteen planned slices');
 check(ledgerReport.counts.registeredFamilies === 3 && ledgerReport.counts.publicFamilies === 0, 'EN-E03 evidence must report three internal and zero public families');
 const enE03Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E03');
-check(enE03Slice?.state === engine.ENEMY_EXPANSION_STATES.PLANNED && enE03Slice?.gate === 'idle-authorized-2026-08-03', 'the EN-E03 ledger entry must remain planned but record Idle authorization');
+check(enE03Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED && enE03Slice?.gate === 'six-enemy-adoption-authorized-2026-08-09', 'the EN-E03 ledger entry must record the approved six-enemy adoption');
 check(enE03Slice?.registeredFamilies === 3 && enE03Slice?.publicFamilies === 0, 'the EN-E03 ledger evidence must expose only three internal common baselines');
 
 const candidateDigest = createHash('sha256').update(JSON.stringify(frameRecords)).digest('hex');

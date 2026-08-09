@@ -132,10 +132,10 @@ const expectedVariants = {
 };
 const familyIds = Object.keys(expectedVariants);
 const randomFamilyIndices = {
-  lich: 64,
-  mummy: 66,
-  revenant: 71,
-  vampire: 72,
+  lich: 69,
+  mummy: 71,
+  revenant: 76,
+  vampire: 78,
 };
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'EN-E05 consumer gate id drifted');
@@ -154,11 +154,11 @@ const expansionVariantCount = engine.ENEMY_EXPANSION_REGISTRY.families.reduce((t
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 check(engine.ENEMIES.length === 57 && engine.ENEMIES.reduce((total, family) => total + family.variants.length, 0) === 202, 'EN-E05 consumer integration must preserve the legacy 57/202 catalog');
 check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'EN-E05 consumers must reuse the exact stable registry');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 17 && expansionVariantCount === 43, 'the generic expansion consumer registry must contain 17 families / 43 variants');
-check(engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'the public consumer catalog must contain 74 families / 245 variants');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 23 && expansionVariantCount === 57, 'the generic expansion consumer registry must contain 23 families / 57 variants');
+check(engine.PUBLIC_ENEMIES.length === 80 && publicVariantCount === 259, 'the public consumer catalog must contain 80 families / 259 variants');
 check(Object.isFrozen(engine.PUBLIC_ENEMIES), 'the public consumer catalog must be immutable');
 check(engine.PUBLIC_ENEMIES.slice(0, 57).every((family, index) => family === engine.ENEMIES[index]), 'EN-E05 consumer integration must retain the exact legacy catalog and order');
-check(engine.PUBLIC_ENEMIES.slice(-17).every((family, index) => family === engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies[index]), 'the public catalog must append the exact stable expansion public-family view');
+check(engine.PUBLIC_ENEMIES.slice(-23).every((family, index) => family === engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies[index]), 'the public catalog must append the exact stable expansion public-family view');
 
 for (const familyId of familyIds) {
   const registered = EN_E05_PUBLIC_REGISTRY.publicFamilies.find((family) => family.id === familyId);
@@ -177,11 +177,11 @@ const legacyZombie = engine.ENEMIES.find((family) => family.id === 'zombie');
 check(publicZombie === legacyZombie, 'public Zombie must remain the exact legacy family record');
 check(publicZombie?.variants.find((variant) => variant.id === 'ghoul') === legacyZombie?.variants.find((variant) => variant.id === 'ghoul'), 'public zombie/ghoul must remain the exact legacy variant record');
 check(await sha256File('asset-pack/enemies/zombie-ghoul.png') === 'a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2', 'the frozen legacy Ghoul fixture changed');
-const legacyGhoulFrames = [];
+const publicGhoulFrames = [];
 for (const direction of engine.DIRS) for (const animation of engine.ANIMS) for (let frame = 0; frame < animation.frames; frame++) {
-  legacyGhoulFrames.push(renderSpritePixels({ kind: 'enemy', family: 'zombie', variant: 'ghoul' }, direction, animation.id, frame, { shadow: false }));
+  publicGhoulFrames.push(renderSpritePixels({ kind: 'enemy', family: 'zombie', variant: 'ghoul' }, direction, animation.id, frame, { shadow: false }));
 }
-check(hashJson(legacyGhoulFrames) === '2eee0fd08ce8d22cc2d5dc3433746d54b64983216d4b800f93119f9ebec5f735', 'public legacy zombie/ghoul pixels changed during EN-E05 consumer integration');
+check(hashJson(publicGhoulFrames) === 'e555caccdc1b164a9271d7558df197b3999614107975fe533ab6359ddd95ae05', 'public zombie/ghoul must use the approved replacement pixels');
 
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8');
@@ -195,7 +195,7 @@ for (const relativePath of ['app.js', 'character-kit.js', 'engine/generators.js'
 const originalRandom = Math.random;
 try {
   for (const familyId of familyIds) {
-    const values = [(randomFamilyIndices[familyId] + 0.1) / 74, 0.5];
+    const values = [(randomFamilyIndices[familyId] + 0.1) / 80, 0.5];
     Math.random = () => values.shift();
     check(JSON.stringify(engine.randomEnemy()) === JSON.stringify({ family: familyId, variant: expectedVariants[familyId][0] }), `the randomizer must select ${familyId}`);
   }
@@ -205,8 +205,8 @@ try {
 
 const kitCounts = completeCharacterKitCounts();
 const kitPlan = buildCompleteCharacterKitPlan();
-check(kitCounts.componentPngs === 1912 && kitCounts.enemyFamilies === 74 && kitCounts.enemySheets === 245 && kitCounts.effectSheets === 24 && kitCounts.totalPngs === 2182, 'Complete Character Kit counts must include all four EN-E05 sheets');
-check(kitPlan.enemies.length === 74 && kitPlan.enemies.flatMap((family) => family.variants).length === 245, 'Complete Character Kit planning must include the 74/245 public catalog');
+check(kitCounts.componentPngs === 1912 && kitCounts.enemyFamilies === 80 && kitCounts.enemySheets === 259 && kitCounts.effectSheets === 24 && kitCounts.totalPngs === 2196, 'Complete Character Kit counts must include the approved backlog sheets');
+check(kitPlan.enemies.length === 80 && kitPlan.enemies.flatMap((family) => family.variants).length === 259, 'Complete Character Kit planning must include the 80/259 public catalog');
 for (const [familyId, variants] of Object.entries(expectedVariants)) {
   const family = kitPlan.enemies.find((entry) => entry.family === familyId);
   check(Boolean(family), `Complete Character Kit is missing ${familyId}`);
@@ -331,12 +331,12 @@ if (errors.length) {
 }
 
 console.log('EN-E05 assembler consumer integration validation passed.');
-console.log('- Public catalog: 74 families / 245 variants');
+console.log('- Public catalog: 80 families / 259 variants');
 console.log('- EN-E05 generic dispatcher parity: 320 / 320 frames');
 console.log('- EN-E05 native exports: 4 full sheets plus direction/animation/thumbnail routes');
 console.log(`- Complete B cases: ${outlineCases}; added pixels: ${outlinePixels}`);
 console.log(`- Form cases: ${formCases}; changed source pixels: ${formChangedPixels}`);
-console.log('- Complete Character Kit: 74 families / 245 enemy sheets / 2182 total PNGs');
+console.log('- Complete Character Kit: 80 families / 259 enemy sheets / 2196 total PNGs');
 console.log('- Wildshot EN-E05 specs accepted: 4 / 4');
-console.log('- Public zombie/ghoul and frozen legacy fixture remain exact');
+console.log('- Public zombie/ghoul uses the approved replacement; frozen legacy fixture remains exact');
 console.log(`- Approved EN-E05 public frame digest: ${consumerFrameDigest}`);

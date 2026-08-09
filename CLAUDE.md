@@ -87,11 +87,19 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 ## Known state (2026-08-09)
 
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
-  asset-pack). The stable expansion registry contains 17 families / 43 variants
-  across approved EN-E01, EN-E02, EN-E04, and EN-E05. The separately
-  authorized assembler consumer registry now reuses that exact 17-family /
-  43-variant registry, so `engine.PUBLIC_ENEMIES` is 74 families / 245
-  variants. EN-E03 remains isolated historical evidence and is not registered.
+  the frozen asset pack). The stable and consumer expansion registries now
+  contain 23 families / 57 variants across approved EN-E01 through EN-E06, so
+  `engine.PUBLIC_ENEMIES` is 80 families / 259 variants. EN-E03 contributes
+  only its six completed full suites; Boulder Hurler, Storm-Clan Jarl, and Sun
+  Lancer remain internal Idle-only evidence.
+- Current integration gate: `codex/approved-enemy-assembler-integration`
+  registers all eight completed EN-E06 suites, adopts the six completed EN-E03
+  suites, and routes public `zombie/ghoul` through the approved Ghoul Upgrade
+  without adding a duplicate selector family. Focused digest:
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`.
+  The Complete Kit is 80 families / 259 enemy sheets / 2,196 PNGs; the
+  24-player Complete Pack maximum is 2,219 PNGs. All 232 legacy fixtures stay
+  byte-unchanged, including the intentionally historical Ghoul fixture.
 - The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved
@@ -112,9 +120,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   thumbnail, pack, Complete Kit, and Wildshot routes. All 320 public frames
   match the registered sources at digest
   `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`;
-  the Complete Kit is 74 families / 245 enemy sheets / 2,182 PNGs. This gate
+  at that checkpoint the Complete Kit was 74 families / 245 enemy sheets /
+  2,182 PNGs. This historical gate
   creates no new sprite pixels and does not alter fixtures.
-- Wave 2 is active only through private Hag gate
+- Historical Wave 2 source checkpoint: the work was once active only through private Hag gate
   `en-e06-hag-mire-crone-full-v1` on `codex/en-e06-hag-mire-crone`, based
   exactly on clean Petalcrown publication record `5c9363e`. Approved
   Bramblewing Scout, Thistle Hexer, and Petalcrown Duelist remain exact and

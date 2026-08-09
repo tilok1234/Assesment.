@@ -260,7 +260,7 @@ function buildReadme({ source, generatedOn, pngCount }) {
     '- `semi-outlined/`: Form shading + Selective C, the lighter approved outline.',
     '- `without-outlines/`: Form shading + None, with outline geometry disabled.',
     '',
-    'Each folder contains `family-id/variant-id.png` paths for all 245 variants. The three treatments vary only the outline mode; Form shading remains enabled in all three.',
+    'Each folder contains `family-id/variant-id.png` paths for all 259 variants. The three treatments vary only the outline mode; Form shading remains enabled in all three.',
     '',
     '## Sheet contract',
     '',

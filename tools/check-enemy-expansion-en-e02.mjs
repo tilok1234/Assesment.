@@ -77,8 +77,8 @@ check(EN_E02_IDLE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'EN-E02 must 
 check(EN_E02_IDLE_REGISTRY.publicFamilies.length === 0, 'EN-E02 Idle evidence must not enter the public family view');
 check(EN_E02_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E02 Idle evidence must not claim family approval');
 check(Object.isFrozen(EN_E02_IDLE_REGISTRY), 'the EN-E02 Idle registry must be immutable');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 17, 'the later EN-E05 registration must extend the cumulative stable registry to seventeen approved families');
-check(engine.PUBLIC_ENEMIES.length === 74, 'the later EN-E05 consumer gate must expose 74 public families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 23, 'the approved backlog integration must extend the cumulative stable registry to twenty-three approved families');
+check(engine.PUBLIC_ENEMIES.length === 80, 'the approved backlog integration must expose 80 public families');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(cardOrder.every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'approved EN-E02 families must enter public consumers only after the separate integration gate');
 
@@ -170,7 +170,7 @@ rejects(
 );
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E02_IDLE_REGISTRY);
-check(ledgerReport.counts.approved === 5 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 17, 'current ledger must report five approved, zero implemented, and seventeen planned slices');
+check(ledgerReport.counts.approved === 7 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 15, 'current ledger must report seven approved, zero implemented, and fifteen planned slices');
 check(ledgerReport.counts.registeredFamilies === 5 && ledgerReport.counts.publicFamilies === 0, 'candidate ledger evidence must report five internal and zero public families');
 const enE02Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E02');
 check(enE02Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED && enE02Slice?.registeredFamilies === 5 && enE02Slice?.publicFamilies === 0, 'the frozen EN-E02 Idle evidence must retain five internal baselines while the ledger records completed-slice approval');

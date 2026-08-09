@@ -150,20 +150,20 @@ const stableVariantCount = engine.ENEMY_EXPANSION_REGISTRY.families.reduce((tota
 const consumerVariantCount = engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.families.reduce((total, family) => total + family.variants.length, 0);
 const stableFamilyIds = engine.ENEMY_EXPANSION_REGISTRY.families.map((family) => family.id);
 const consumerFamilyIds = engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.families.map((family) => family.id);
-check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 17 && stableVariantCount === 43, 'the stable registry must contain 17 families / 43 variants after EN-E05 registration');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 17, 'the stable registry must expose 17 approved family records');
-check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 8, 'the stable registry must contain the repaired renderer, three EN-E04 dispatchers, and four EN-E05 renderers');
+check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 23 && stableVariantCount === 57, 'the stable registry must contain 23 families / 57 variants after approved backlog integration');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 23, 'the stable registry must expose 23 approved family records');
+check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 14, 'the stable registry must contain fourteen bounded family renderers');
 check(['lich', 'mummy', 'revenant', 'vampire'].every((id) => stableFamilyIds.includes(id)), 'the stable registry is missing an approved EN-E05 family');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed EN-E05 stable registry must be immutable');
 
 check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 consumer gate must reuse the exact registered stable object');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.families.length === 17 && consumerVariantCount === 43, 'the later assembler consumer registry must contain the complete 17/43 stable boundary');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.families.length === 23 && consumerVariantCount === 57, 'the assembler consumer registry must contain the complete 23/57 stable boundary');
 check(['lich', 'mummy', 'revenant', 'vampire'].every((id) => consumerFamilyIds.includes(id)) && !consumerFamilyIds.includes('ghoul-upgrade'), 'the later consumer gate must expose only the four registered new families and keep the Ghoul replacement separate');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY), 'the authorized EN-E05 consumer registry must remain immutable');
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 check(engine.ENEMIES.length === 57 && engine.ENEMIES.reduce((total, family) => total + family.variants.length, 0) === 202, 'EN-E05 registration must not rewrite the legacy 57/202 catalog');
-check(engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'the later EN-E05 consumer gate must expose the public 74/245 catalog');
+check(engine.PUBLIC_ENEMIES.length === 80 && publicVariantCount === 259, 'the approved backlog integration must expose the public 80/259 catalog');
 check(engine.PUBLIC_ENEMIES.slice(0, 57).every((family, index) => family === engine.ENEMIES[index]), 'EN-E05 registration must retain the exact legacy family records');
 check(['lich', 'mummy', 'revenant', 'vampire'].every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)) && !engine.PUBLIC_ENEMIES.some((family) => family.id === 'ghoul-upgrade'), 'the later consumer gate must expose the four new families without exposing the Ghoul replacement record');
 check(sourceEntries.filter((entry) => entry.kind === 'family').every((entry) => engine.isPublicEnemyExpansionSpec(entry.registeredSpec)), 'the later EN-E05 consumer gate must route all four new families through the public dispatcher');
@@ -174,13 +174,13 @@ check(publicZombie === legacyZombie, 'public Zombie must remain the exact legacy
 check(publicZombie?.variants.find((variant) => variant.id === 'ghoul') === legacyZombie?.variants.find((variant) => variant.id === 'ghoul'), 'public zombie/ghoul must remain the exact legacy variant record');
 check(await sha256File('asset-pack/enemies/zombie-ghoul.png') === 'a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2', 'the frozen legacy Ghoul fixture changed');
 
-const legacyGhoulFrames = [];
+const publicGhoulFrames = [];
 for (const direction of engine.DIRS) for (const animation of engine.ANIMS) {
   for (let frame = 0; frame < animation.frames; frame++) {
-    legacyGhoulFrames.push(renderSpritePixels({ kind: 'enemy', family: 'zombie', variant: 'ghoul' }, direction, animation.id, frame, { shadow: false }));
+    publicGhoulFrames.push(renderSpritePixels({ kind: 'enemy', family: 'zombie', variant: 'ghoul' }, direction, animation.id, frame, { shadow: false }));
   }
 }
-check(hashJson(legacyGhoulFrames) === '2eee0fd08ce8d22cc2d5dc3433746d54b64983216d4b800f93119f9ebec5f735', 'public legacy zombie/ghoul pixels changed during registration');
+check(hashJson(publicGhoulFrames) === 'e555caccdc1b164a9271d7558df197b3999614107975fe533ab6359ddd95ae05', 'public zombie/ghoul must use the approved replacement pixels');
 
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8');
@@ -192,13 +192,13 @@ check(publicSource.includes('export const ENEMY_EXPANSION_CONSUMER_REGISTRY = EN
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport();
 check(ledgerReport.counts.slices === 22 && ledgerReport.counts.proposals === 80, 'EN-E05 registration must preserve the 22-slice / 80-proposal ledger');
-check(ledgerReport.counts.approved === 5 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 17, 'ledger lifecycle counts must be five approved and seventeen planned slices');
-check(ledgerReport.counts.registeredFamilies === 17 && ledgerReport.counts.publicFamilies === 17, 'ledger must report seventeen stable registered/public families');
+check(ledgerReport.counts.approved === 7 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 15, 'ledger lifecycle counts must be seven approved and fifteen planned slices');
+check(ledgerReport.counts.registeredFamilies === 23 && ledgerReport.counts.publicFamilies === 23, 'ledger must report twenty-three stable registered/public families');
 const enE05Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E05');
 check(enE05Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED, 'EN-E05 ledger state must be approved');
 check(enE05Slice?.gate === 'five-undead-registration-authorized-2026-08-09', 'EN-E05 ledger gate drifted');
 check(enE05Slice?.registeredFamilies === 4 && enE05Slice?.publicFamilies === 4, 'EN-E05 ledger row must report four new registered families; Ghoul remains a separate replacement record');
-check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => ['EN-E01', 'EN-E02', 'EN-E04', 'EN-E05'].includes(slice.id)), 'no unapproved expansion slice may become registered implicitly');
+check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => ['EN-E01', 'EN-E02', 'EN-E03', 'EN-E04', 'EN-E05', 'EN-E06'].includes(slice.id)), 'no unapproved expansion slice may become registered implicitly');
 
 const frameRecords = [];
 let sheets = 0;
@@ -268,6 +268,6 @@ console.log('EN-E05 registration validation passed.');
 console.log('- Stable registry: 17 families / 43 variants across EN-E01, EN-E02, EN-E04, and EN-E05');
 console.log('- Registered EN-E05 sheets: 5 (four new families plus one Ghoul replacement record)');
 console.log('- Candidate/registered parity frames: 400; composed stable parity frames: 320');
-console.log('- Later consumer boundary: 17 expansion families / public catalog 74 families / 245 variants');
-console.log('- Public zombie/ghoul and frozen legacy fixture remain exact');
+console.log('- Current consumer boundary: 23 expansion families / public catalog 80 families / 259 variants');
+console.log('- Public zombie/ghoul uses the approved replacement; frozen legacy fixture remains exact');
 console.log(`- Approved EN-E05 aggregate digest: ${registeredFrameDigest}`);

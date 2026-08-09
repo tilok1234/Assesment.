@@ -82,6 +82,9 @@ checkSyntax('engine/enemy-expansion-en-e01.js');
 checkSyntax('engine/enemy-expansion-en-e02.js');
 checkSyntax('engine/enemy-expansion-en-e03.js');
 checkSyntax('engine/enemy-expansion-en-e05.js');
+checkSyntax('engine/enemy-expansion-en-e03-adoption.js');
+checkSyntax('engine/enemy-expansion-en-e05-ghoul-public.js');
+checkSyntax('engine/enemy-expansion-en-e06-public.js');
 checkSyntax('engine/enemy-expansion-humanoid.js');
 checkSyntax('engine/enemy-expansion-large-hybrid.js');
 checkSyntax('engine/enemy-expansion-public.js');
@@ -121,6 +124,10 @@ checkSyntax('tools/check-enemy-expansion-en-e04-registration.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e04-consumers.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e05-registration.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e05-consumers.mjs');
+checkSyntax('tools/check-approved-enemy-assembler-integration.mjs');
+checkSyntax('tools/complete-b-actor-pack-pixels.mjs');
+checkSyntax('tools/export-complete-b-actor-pack.mjs');
+checkSyntax('tools/check-complete-b-actor-pack.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e03.mjs');
 checkSyntax('tools/check-enemy-expansion-repairs.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
@@ -258,6 +265,15 @@ const enemyExpansionEnE05ConsumerCheck = spawnSync(process.execPath, [path.join(
 check(
   enemyExpansionEnE05ConsumerCheck.status === 0,
   `EN-E05 assembler consumer integration gate failed\n${enemyExpansionEnE05ConsumerCheck.stdout.trim()}\n${enemyExpansionEnE05ConsumerCheck.stderr.trim()}`,
+);
+
+const approvedEnemyAssemblerIntegrationCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-approved-enemy-assembler-integration.mjs')], {
+  cwd: root,
+  encoding: 'utf8',
+});
+check(
+  approvedEnemyAssemblerIntegrationCheck.status === 0,
+  `Approved enemy assembler integration gate failed\n${approvedEnemyAssemblerIntegrationCheck.stdout.trim()}\n${approvedEnemyAssemblerIntegrationCheck.stderr.trim()}`,
 );
 
 const enemyExpansionRepairCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-repairs.mjs')], {
@@ -2021,7 +2037,7 @@ for (const [familyId, variantIds] of [
   ['dwarf', ['warrior', 'miner', 'king']],
   ['ogre', ['brute', 'crusher', 'magi']],
   ['goblin', ['scout', 'brute', 'shaman', 'archer', 'chief']],
-  ['zombie', ['ghoul', 'rotter', 'brute']],
+  ['zombie', ['rotter', 'brute']],
   ['imp', ['sprite', 'pyro', 'fiend']],
   ['cultist', ['acolyte', 'zealot', 'oracle']],
   ['orc', ['grunt', 'berserker', 'warlord']],

@@ -131,7 +131,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Petalcrown lane must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-published-2026-08-09', 'the EN-E06 ledger must preserve Petalcrown while identifying published Spore Cantor');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'eight-enemy-registration-authorized-2026-08-09', 'the EN-E06 ledger must preserve Petalcrown while recording the eight-enemy registration');
 
 check(EN_E06_FAIRY_GATE.status === 'approved' && EN_E06_FAIRY_GATE.publishedImplementation === 'cc92ca9bb14f9fa7937a7e1e746d55fb754d9653', 'the published Bramblewing predecessor drifted');
 check(EN_E06_THISTLE_HEXER_GATE.status === 'approved', 'the Thistle Hexer predecessor must retain exact approval');
@@ -176,8 +176,8 @@ check(EN_E06_PETALCROWN_DUELIST_REGISTRY.families.length === 1 && EN_E06_PETALCR
 check(EN_E06_PETALCROWN_DUELIST_FAMILY.variants.length === 1 && EN_E06_PETALCROWN_DUELIST_FAMILY.variants[0].id === 'petalcrown-duelist', 'the candidate registry must contain only Petalcrown Duelist');
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'the private elite must retain the 57 legacy and 74/245 public boundaries');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'fairy'), 'Fairy must remain absent from the public catalog');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 80 && publicVariantCount === 259, 'the elite source must retain the 57/202 legacy and current 80/259 public boundaries');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'fairy'), 'the later approved registration must expose Fairy in the public catalog');
 check(engine.EN_E06_PETALCROWN_DUELIST_REGISTRY === undefined && engine.EN_E06_PETALCROWN_DUELIST_GATE === undefined, 'Petalcrown must not leak through the public engine facade');
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
@@ -351,6 +351,6 @@ console.log(`- Structure: ${connectedFrames}/80 connected; ${boundedFrames}/80 o
 console.log(`- Identity: ${coloredIdentityFrames}/72 colored crown-wing frames; ${flashFrames}/8 exact white alias flashes`);
 console.log('- Motion: 2 Idle, 4 Walk, 4 Attack, 2 Hurt frames distinct per direction; Cast/Death aliases exact');
 console.log(`- Presentation: Complete B +${completeBAddedPixels} outline pixels; Form changes ${formChangedPixels} source pixels`);
-console.log('- Protected boundaries: Bramblewing, Thistle, and approved Petalcrown exact; Mire Crone is a later private lane; public catalog 74/245; fixtures unchanged');
+console.log('- Protected boundaries: all approved Fairy sources exact; public catalog 80/259; fixtures unchanged');
 console.log('- Review artifacts: 5/5 present and hash-verified');
 console.log(`- Candidate digest: ${candidateFrameDigest}`);

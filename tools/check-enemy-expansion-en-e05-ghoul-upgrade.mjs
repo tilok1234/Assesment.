@@ -3,7 +3,8 @@ import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import * as engine from '../sprite-engine.js';
-import { renderSpritePixels } from '../engine/pixel-buffer.js';
+import { capturePixels } from '../engine/pixel-buffer.js';
+import { drawSprite as drawLegacySprite } from '../engine/renderer.js';
 import {
   EN_E05_GHOUL_DEATH_SOURCE_FRAMES,
   EN_E05_GHOUL_UPGRADE_CONTRACT,
@@ -139,7 +140,7 @@ check(EN_E05_GHOUL_UPGRADE_REGISTRY.publicFamilies.length === 0, 'the approved i
 check(EN_E05_GHOUL_UPGRADE_FAMILY.variants.length === 1 && EN_E05_GHOUL_UPGRADE_FAMILY.variants[0].id === 'ghoul', 'the candidate lane must contain only the Ghoul replacement');
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'the candidate must not change the 57-family legacy or later 74/245 public catalog boundaries');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 80 && publicVariantCount === 259, 'the source gate must retain the 57/202 legacy and current 80/259 public catalog boundaries');
 const zombieFamily = engine.ENEMIES.find((family) => family.id === 'zombie');
 check(Boolean(zombieFamily), 'the legacy Zombie family is missing');
 check(JSON.stringify(zombieFamily?.variants.map((variant) => variant.id)) === JSON.stringify(['shambler', 'ghoul', 'rotter', 'brute']), 'the legacy Zombie variant order must remain unchanged');
@@ -155,10 +156,10 @@ const siblingPixelFrames = new Map();
 for (const variant of ['shambler', 'ghoul', 'rotter', 'brute']) {
   const frames = [];
   for (const direction of directions) for (const animation of animations) for (let frame = 0; frame < animation.frames; frame++) {
-    frames.push(renderSpritePixels({ kind: 'enemy', family: 'zombie', variant }, direction, animation.id, frame, { shadow: false }));
+    frames.push(capturePixels((context) => drawLegacySprite(context, { kind: 'enemy', family: 'zombie', variant }, direction, animation.id, frame, { shadow: false })));
   }
   siblingPixelFrames.set(variant, frames);
-  check(hashJson(frames) === expectedZombieDigests[variant], `public zombie/${variant} pixels changed during the isolated Ghoul candidate`);
+  check(hashJson(frames) === expectedZombieDigests[variant], `raw legacy zombie/${variant} pixels changed during the isolated Ghoul candidate`);
 }
 
 const captures = new Map();
@@ -185,7 +186,7 @@ const ragColors = new Set([...ghoulColors.rag, ...ghoulColors.leather]);
 for (const animation of animations) for (const direction of directions) for (let frame = 0; frame < animation.frames; frame++) {
   const key = frameKey(direction, animation.id, frame);
   const captured = captureEnemyExpansionFrame(EN_E05_GHOUL_UPGRADE_REGISTRY, candidateSpec, direction, animation.id, frame);
-  const legacy = renderSpritePixels(legacySpec, direction, animation.id, frame, { shadow: false });
+  const legacy = capturePixels((context) => drawLegacySprite(context, legacySpec, direction, animation.id, frame, { shadow: false }));
   captures.set(key, captured);
   legacyCaptures.set(key, legacy);
   candidateRecords.push(candidateFrameRecord(captured, direction, animation.id, frame));
@@ -290,7 +291,7 @@ if (errors.length) {
 
 console.log('EN-E05 Ghoul upgrade focused gate passed.');
 console.log('- Exact scope: existing zombie/ghoul replacement candidate / 80 frames / 4 directions / 6 animation rows');
-console.log(`- Candidate vs legacy: ${candidateLegacyDifferences}/80 frames changed; public replacement remains unapplied`);
+console.log(`- Candidate vs legacy: ${candidateLegacyDifferences}/80 frames changed; public replacement is validated by its separate integration gate`);
 console.log(`- Structure: ${connectedFrames}/80 connected; ${boundedFrames}/80 one-cell margins; opaque range ${minOpaquePixels}-${maxOpaquePixels}`);
 console.log(`- Identity: ${coloredIdentityFrames}/72 colored frames; ${sideEyeFrames}/36 side eyes; ${rearEyeFrames}/18 eye-free rear frames`);
 console.log('- Motion: 2 Idle, 4 Walk, 4 Attack, 2 Hurt frames distinct per direction; Cast/Death aliases exact');

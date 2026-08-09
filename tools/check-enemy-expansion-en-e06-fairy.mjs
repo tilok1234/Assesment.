@@ -138,7 +138,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Fairy suite must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public frame digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-published-2026-08-09', 'the EN-E06 ledger must preserve Bramblewing while identifying published Spore Cantor');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'eight-enemy-registration-authorized-2026-08-09', 'the EN-E06 ledger must preserve Bramblewing while recording the eight-enemy registration');
 
 check(EN_E06_FAIRY_IDLE_GATE.status === 'approved', 'the Fairy Idle predecessor must retain exact designer approval');
 check(EN_E06_FAIRY_IDLE_GATE.approvedOn === '2026-08-09', 'the Fairy Idle approval date drifted');
@@ -184,8 +184,8 @@ check(EN_E06_FAIRY_REGISTRY.renderers[0].chassis === 'small-winged-fey-v1', 'the
 check(EN_E06_FAIRY_IDLE_DATA.bakedEffects.length === 0, 'the Fairy source must retain zero baked effects');
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'the private Fairy suite must retain the 57 legacy and 74/245 public catalog boundaries');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'fairy'), 'Fairy must remain absent from the public catalog');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 80 && publicVariantCount === 259, 'the Fairy source suite must retain the 57/202 legacy and current 80/259 public catalog boundaries');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'fairy'), 'the later approved registration must expose Fairy in the public catalog');
 check(engine.EN_E06_FAIRY_REGISTRY === undefined && engine.EN_E06_FAIRY_GATE === undefined, 'the full Fairy candidate must not leak through the public engine facade');
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
@@ -331,6 +331,6 @@ console.log(`- Structure: ${connectedFrames}/80 connected; ${boundedFrames}/80 o
 console.log(`- Identity: ${coloredIdentityFrames}/72 colored frames with hard-alpha wing windows; ${flashFrames}/8 exact white alias flashes`);
 console.log('- Motion: 2 Idle, 4 Walk, 4 Attack, 2 Hurt frames distinct per direction; Cast/Death aliases exact');
 console.log(`- Presentation: Complete B +${completeBAddedPixels} outline pixels; Form changes ${formChangedPixels} source pixels`);
-console.log('- Protected boundaries: Hag and later sprites closed; public catalog 74/245; fixtures and registration unchanged');
+console.log('- Protected boundaries: source pixels exact; public catalog 80/259; fixtures unchanged');
 console.log('- Review artifacts: 4/4 present and hash-verified');
 console.log(`- Candidate digest: ${candidateFrameDigest}`);

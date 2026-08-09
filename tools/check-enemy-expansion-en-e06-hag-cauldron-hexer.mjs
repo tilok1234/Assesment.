@@ -37,7 +37,7 @@ function rejects(action, label) { try { action(); errors.push(`${label} must rej
 check(EN_E06_CAULDRON_HEXER_GATE.status === 'approved' && EN_E06_CAULDRON_HEXER_GATE.approvedOn === '2026-08-09', 'Cauldron Hexer must retain its explicit visual approval');
 check(EN_E06_CAULDRON_HEXER_GATE.approvalEvidence.includes('approved lets do next') && EN_E06_CAULDRON_HEXER_GATE.approvalEvidence.includes('three exact PNGs were opened directly in Aseprite'), 'exact approval evidence drifted');
 check(EN_E06_CAULDRON_HEXER_GATE.publishedImplementation === '4b59b4098caf6397719fba6d21c27c5f8dcd82b0', 'published implementation checkpoint drifted');
-check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-published-2026-08-09', 'ledger must preserve published Cauldron Hexer while identifying published Spore Cantor');
+check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'eight-enemy-registration-authorized-2026-08-09', 'ledger must preserve published Cauldron Hexer while recording the eight-enemy registration');
 check(EN_E06_CAULDRON_HEXER_GATE.authorizationEvidence.includes('designer said: next') && EN_E06_CAULDRON_HEXER_GATE.authorizationEvidence.includes('only this one complete 80-frame variant pass'), 'authorization evidence drifted');
 check(EN_E06_CAULDRON_HEXER_GATE.precedingApproval.gateId === EN_E06_MIRE_CRONE_GATE.id && EN_E06_CAULDRON_HEXER_GATE.precedingApproval.publishedImplementation === EN_E06_MIRE_CRONE_GATE.publishedImplementation, 'approved Mire Crone predecessor drifted');
 check(EN_E06_CAULDRON_HEXER_GATE.scope.includes('complete 80-frame Cauldron Hexer') && EN_E06_CAULDRON_HEXER_GATE.animationContract.includes('broad connected sweep'), 'full-suite or motion contract drifted');
@@ -53,7 +53,7 @@ check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') ==
 for (const card of EN_E06_CONTRACT_CARDS.slice(3)) check(card.variants.every(({ status }) => status === 'planned'), `${card.id} must remain contract-only`);
 check(EN_E06_CAULDRON_HEXER_REGISTRY.families.length === 1 && EN_E06_CAULDRON_HEXER_REGISTRY.publicFamilies.length === 0 && EN_E06_CAULDRON_HEXER_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245 && !engine.PUBLIC_ENEMIES.some(({ id }) => id === 'hag'), 'private specialist must retain public 74/245 with no Hag');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 80 && publicVariantCount === 259 && engine.PUBLIC_ENEMIES.some(({ id }) => id === 'hag'), 'the specialist source must coexist with the later public 80/259 Hag registration');
 check(engine.EN_E06_CAULDRON_HEXER_REGISTRY === undefined, 'candidate must not leak through the facade');
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8'), facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8'), manifest = await readFile(path.join(root, 'asset-pack', 'manifest.json'), 'utf8');
 check(!publicSource.includes('enemy-expansion-en-e06-hag-cauldron-hexer') && !facadeSource.includes('enemy-expansion-en-e06-hag-cauldron-hexer') && !manifest.includes('cauldron-hexer'), 'public or fixture firewall drifted');
@@ -93,5 +93,5 @@ console.log(`- Mire distinction: ${mireDifferences}/80 pixel frames and ${mireAl
 console.log(`- Structure: ${connected}/80 connected; ${bounded}/80 bounded; ${grounded}/80 grounded; opaque range ${minOpaque}-${maxOpaque}`);
 console.log(`- Identity: ${colored}/72 colored brewer frames; ${flashes}/8 exact white flashes`);
 console.log(`- Presentation: Complete B +${completeB}; Form changes ${formChanges}`);
-console.log('- Protected: all three Fairies and approved Mire Crone exact; public 74/245; fixtures unchanged');
+console.log('- Protected: approved Fairy and Hag sources exact; public 80/259; fixtures unchanged');
 console.log(`- Candidate digest: ${candidateDigest}`);

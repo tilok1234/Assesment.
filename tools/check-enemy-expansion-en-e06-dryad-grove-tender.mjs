@@ -64,7 +64,7 @@ check(EN_E06_GROVE_TENDER_GATE.nextGate.includes('only one complete Spore Cantor
 check(Object.isFrozen(EN_E06_GROVE_TENDER_GATE) && Object.isFrozen(EN_E06_GROVE_TENDER_DATA), 'gate and data must be deeply immutable');
 check(EN_E06_GROVE_TENDER_CONTRACT.family === 'dryad' && EN_E06_GROVE_TENDER_CONTRACT.variant === 'grove-tender' && EN_E06_GROVE_TENDER_CONTRACT.role === 'common', 'candidate contract drifted');
 check(EN_E06_GROVE_TENDER_CONTRACT.silhouette.includes('distinct from the broad trunk-bodied public Treant') && EN_E06_GROVE_TENDER_CONTRACT.effectBoundary.includes('remain external'), 'Dryad identity/effect boundary drifted');
-check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-published-2026-08-09', 'ledger must preserve published Grove Tender while identifying published Spore Cantor');
+check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'eight-enemy-registration-authorized-2026-08-09', 'ledger must preserve published Grove Tender while recording the eight-enemy registration');
 
 check(EN_E06_CONTRACT_CARDS[0].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Fairies must remain approved');
 check(EN_E06_CONTRACT_CARDS[1].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Hags must remain approved');
@@ -72,7 +72,7 @@ check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') ==
 for (const card of EN_E06_CONTRACT_CARDS.slice(3)) check(card.variants.every(({ status }) => status === 'planned'), `${card.id} must remain contract-only`);
 check(EN_E06_GROVE_TENDER_REGISTRY.families.length === 1 && EN_E06_GROVE_TENDER_REGISTRY.publicFamilies.length === 0 && EN_E06_GROVE_TENDER_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245 && !engine.PUBLIC_ENEMIES.some(({ id }) => id === 'dryad'), 'private Dryad must retain public 74/245 with no Dryad');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 80 && publicVariantCount === 259 && engine.PUBLIC_ENEMIES.some(({ id }) => id === 'dryad'), 'the Dryad source must coexist with the later public 80/259 Dryad registration');
 check(engine.EN_E06_GROVE_TENDER_REGISTRY === undefined, 'candidate must not leak through the facade');
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8'), facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8'), manifest = await readFile(path.join(root, 'asset-pack', 'manifest.json'), 'utf8');
 check(!publicSource.includes('enemy-expansion-en-e06-dryad-grove-tender') && !facadeSource.includes('enemy-expansion-en-e06-dryad-grove-tender') && !manifest.includes('grove-tender'), 'public or fixture firewall drifted');
@@ -116,5 +116,5 @@ console.log(`- Blackthorn distinction: ${blackthornDifferences}/80 pixel frames 
 console.log(`- Structure: ${connected}/80 connected; ${bounded}/80 bounded; ${grounded}/80 grounded; opaque range ${minOpaque}-${maxOpaque}`);
 console.log(`- Identity: ${colored}/72 colored living-wood frames; ${flashes}/8 exact white flashes`);
 console.log(`- Presentation: Complete B +${completeB}; Form changes ${formChanges}`);
-console.log('- Protected: all three Fairies and all three Hags exact; public 74/245; fixtures unchanged');
+console.log('- Protected: all approved Fairy, Hag, and Dryad sources exact; public 80/259; fixtures unchanged');
 console.log(`- Candidate digest: ${candidateDigest}`);

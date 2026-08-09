@@ -183,7 +183,7 @@ check(JSON.stringify(EN_E04_MERFOLK_REEFCALLER_FAMILY.variants.map((variant) => 
 check(EN_E04_MERFOLK_REEFCALLER_REGISTRY.publicFamilies.length === 0 && EN_E04_MERFOLK_REEFCALLER_REGISTRY.approvedFamilies.length === 0, 'the Reefcaller candidate must remain internal and non-public');
 check(EN_E04_MERFOLK_REEFCALLER_DATA.bakedEffects.length === 0, 'all Reefcaller healing and water effects must remain external');
 check(engine.EN_E04_MERFOLK_REEFCALLER_REGISTRY === undefined && engine.EN_E04_MERFOLK_REEFCALLER_GATE === undefined, 'the Reefcaller candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 74 && engine.ENEMIES.length === 57, 'the Reefcaller candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.length === 80 && engine.ENEMIES.length === 57, 'the Reefcaller source must retain current public and legacy Enemy counts');
 check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'merfolk'), 'the later approved registry/consumer gates must expose Merfolk generically');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e04-merfolk-reefcaller') && !facadeSource.includes('EN_E04_MERFOLK_REEFCALLER'), 'the public facade must not import or expose the Reefcaller candidate');

@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import * as engine from '../sprite-engine.js';
 import { ENEMY_EXPANSION_REGISTRY as ENEMY_EXPANSION_FOUNDATION_REGISTRY } from '../engine/enemy-expansion.js';
+import { drawSprite as drawLegacySprite } from '../engine/renderer.js';
 
 const errors = [];
 
@@ -32,7 +33,7 @@ function renderPixels(spec, direction, animationId, frame) {
       }
     },
   };
-  engine.drawSprite(context, spec, direction, animationId, frame, { shadow: false });
+  drawLegacySprite(context, spec, direction, animationId, frame, { shadow: false });
   return pixels;
 }
 
@@ -71,8 +72,8 @@ check(Object.isFrozen(ENEMY_EXPANSION_FOUNDATION_REGISTRY), 'the EN-F00 foundati
 const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, ENEMY_EXPANSION_FOUNDATION_REGISTRY);
 check(ledgerReport.counts.slices === 22, 'the expansion ledger must contain EN-F00, EN-E01..18, and EN-B01..03');
 check(ledgerReport.counts.proposals === 80, 'the expansion ledger must account for all 80 intake proposals');
-check(ledgerReport.counts.implemented === 0, 'no expansion slice may remain implemented after EN-E02 completed-slice approval');
-check(ledgerReport.counts.approved === 5, 'EN-F00, EN-E01, EN-E02, EN-E04, and EN-E05 must be the approved expansion slices');
+check(ledgerReport.counts.implemented === 0, 'no expansion slice may remain implemented after the approved backlog integration');
+check(ledgerReport.counts.approved === 7, 'EN-F00, EN-E01, EN-E02, EN-E03, EN-E04, EN-E05, and EN-E06 must be the approved expansion slices');
 check(ledgerReport.counts.publicFamilies === 0, 'the isolated EN-F00 foundation registry must remain empty');
 check(Object.isFrozen(ledgerReport) && Object.isFrozen(ledgerReport.slices), 'the expansion ledger report must be deeply immutable');
 

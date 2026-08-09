@@ -1,16 +1,12 @@
 import { SIZE } from './catalogs.js';
 import {
-  ENEMY_EXPANSION_CONSUMER_REGISTRY,
   renderEnemyExpansionFrame,
+  resolvePublicEnemyExpansionRoute,
 } from './enemy-expansion-public.js';
 import { drawSprite as drawLegacySprite } from './renderer.js';
 
-const publicExpansionFamilyIds = new Set(
-  ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.map((family) => family.id),
-);
-
 export function isPublicEnemyExpansionSpec(spec) {
-  return spec?.kind === 'enemy' && publicExpansionFamilyIds.has(spec.family);
+  return Boolean(resolvePublicEnemyExpansionRoute(spec));
 }
 
 function drawExpansionShadow(context) {
@@ -56,7 +52,8 @@ function bridgedExpansionContext(context, spec, onOutOfBounds) {
 }
 
 export function drawPublicSprite(context, spec, direction, animationId, frame, options = {}) {
-  if (!isPublicEnemyExpansionSpec(spec)) {
+  const route = resolvePublicEnemyExpansionRoute(spec);
+  if (!route) {
     return drawLegacySprite(context, spec, direction, animationId, frame, options);
   }
 
@@ -66,8 +63,8 @@ export function drawPublicSprite(context, spec, direction, animationId, frame, o
   if (options.shadow !== false) drawExpansionShadow(context);
 
   return renderEnemyExpansionFrame(
-    ENEMY_EXPANSION_CONSUMER_REGISTRY,
-    spec,
+    route.registry,
+    route.spec,
     direction,
     animationId,
     frame,

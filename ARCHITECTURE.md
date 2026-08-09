@@ -37,6 +37,9 @@ index.html
           -> engine/enemy-expansion-en-e02.js
             -> engine/enemy-expansion-humanoid.js
         -> engine/enemy-expansion-en-e04.js
+        -> engine/enemy-expansion-en-e06-public.js
+        -> engine/enemy-expansion-en-e03-adoption.js
+        -> engine/enemy-expansion-en-e05-ghoul-public.js
       -> engine/variant-batches.js
       -> engine/class-templates.js
     -> character-kit.js
@@ -110,15 +113,24 @@ internal; only an approved registration can appear in the public family view.
 The legacy `ENEMIES` array remains unchanged as the 57-family / 202-variant
 regression and fixture boundary. `engine/enemy-expansion-public.js` also exports
 immutable `PUBLIC_ENEMIES`, which preserves those legacy entries in order and
-appends the seventeen consumer-authorized EN-E01/EN-E02/EN-E04/EN-E05 families,
-yielding the current 74-family / 245-variant consumer catalog. Editor selectors and sanitizers,
+appends 23 consumer-authorized EN-E01/EN-E02/EN-E03/EN-E04/EN-E05/EN-E06
+families, yielding the current 80-family / 259-variant consumer catalog. Editor selectors and sanitizers,
 persistence, randomization, combat defaults, kits, packs, thumbnails, and
 exports consume that merged view without mutating `ENEMIES`.
 
+`engine/enemy-expansion-en-e06-public.js` registers the exact eight approved
+Fairy, Hag, and Dryad suites. `engine/enemy-expansion-en-e03-adoption.js`
+registers only the six completed Giant, Centaur, and Satyr suites; the three
+Idle-only EN-E03 variants remain internal. `engine/enemy-expansion-en-e05-ghoul-public.js`
+owns the one replacement route from public `zombie/ghoul` to the approved
+`ghoul-upgrade/ghoul` renderer. That route does not add a duplicate selector
+family or change the frozen legacy `ENEMIES` object/fixture boundary.
+
 `engine/public-renderer.js` is the stable dispatcher used by the public
 `drawSprite()` facade and assembled/pixel/sheet helpers. It delegates every
-legacy specification to the unchanged renderer and sends only approved
-expansion family IDs through `renderEnemyExpansionFrame()`. It owns clear,
+ordinary legacy specifications to the unchanged renderer, sends approved
+expansion family IDs through `renderEnemyExpansionFrame()`, and translates the
+single approved `zombie/ghoul` replacement through its explicit route. It owns clear,
 composition, generic preview-shadow, layer, and out-of-bounds callback semantics
 around the reviewed renderer. `engine/public-game-pack.js` similarly injects
 `PUBLIC_ENEMIES` into the catalog-parameterized manifest builder, leaving the
@@ -130,8 +142,10 @@ the stable public dispatcher and applies the source-preserving exterior contour
 path for Complete B or Selective C. `engine/shade-renderer.js` resolves enemy
 materials from `PUBLIC_ENEMIES`, so EN-E01 uses the nested skin, hair, outfit,
 and identity palette ramps published by its renderer data instead of falling
-back to an unrelated legacy family. EN-E02, EN-E04, and EN-E05 reach the same
-palette-aware path through their approved renderer data. None/None still
+back to an unrelated legacy family. EN-E02 through EN-E06 reach the same
+palette-aware path through their approved renderer data. The replacement Ghoul
+uses the expansion exterior-contour path because its approved source has no
+legacy component/equipment layer contract. None/None still
 delegates directly to the raw dispatcher; Form and outlines alter only complete assembled output,
 preserve protected features and outline geometry, and do not mutate registry
 pixels or atomic component sheets.
@@ -451,7 +465,7 @@ are later slices governed by `GAME_PACK_EXPORT_PLAN.md`.
 
 ### Complete character kits
 
-`character-kit.js` deterministically expands the player catalogs into one deduplicated component plan: skin-body, head, expression, hair, face-detail, species-back, species-front, outfit-back, outfit, headgear, weapon, shield, and utility-off-hand passes. It stores 119 hair sheets, six expression sheets, 60 content-unique species passes, 41 headgear sheets, and two Lantern passes beneath stable component paths. Species paths expand only on the palette axis that changes their pixels: skin for Dwarf and Lizardfolk traits, hair for Beastkin fur, and one fixed path for Undead traits. Short, spiky, bowl, and topknot share one pixel-identical fitted hair path, while outfit-colored headgear expands only the variants whose pixels actually change. Outfit and cape paths include the body-build id because those pixels define the silhouette; all other compatible layers remain shared. The resulting library contains 1020 outfit fronts, 140 cape backs, and 1912 component sheets total. It also expands all 74 public enemy families / 245 variants into stable `enemies/<family>/<variation>.png` paths and every combat effect into stable `effects/<category>/<effect>.png` paths for complete native sheets. Up to 24 named players are mapped to lightweight recipes that reference the shared character paths and carry their modular combat-loadout recipes. The standalone kit adds no per-recipe PNGs and contains 2182 PNGs total; the combined Complete Pack adds one assembled native sheet per player for immediate use and contains 2205 PNGs at the 24-player limit. The planner owns stable paths, counts, recipe limits, the native export scale, compatibility variants, and the runtime layer order. It imports catalogs only through `sprite-engine.js` and does not access the DOM, canvas, editor state, persistence, or ZIP implementation.
+`character-kit.js` deterministically expands the player catalogs into one deduplicated component plan: skin-body, head, expression, hair, face-detail, species-back, species-front, outfit-back, outfit, headgear, weapon, shield, and utility-off-hand passes. It stores 119 hair sheets, six expression sheets, 60 content-unique species passes, 41 headgear sheets, and two Lantern passes beneath stable component paths. Species paths expand only on the palette axis that changes their pixels: skin for Dwarf and Lizardfolk traits, hair for Beastkin fur, and one fixed path for Undead traits. Short, spiky, bowl, and topknot share one pixel-identical fitted hair path, while outfit-colored headgear expands only the variants whose pixels actually change. Outfit and cape paths include the body-build id because those pixels define the silhouette; all other compatible layers remain shared. The resulting library contains 1020 outfit fronts, 140 cape backs, and 1912 component sheets total. It also expands all 80 public enemy families / 259 variants into stable `enemies/<family>/<variation>.png` paths and every combat effect into stable `effects/<category>/<effect>.png` paths for complete native sheets. Up to 24 named players are mapped to lightweight recipes that reference the shared character paths and carry their modular combat-loadout recipes. The standalone kit adds no per-recipe PNGs and contains 2196 PNGs total; the combined Complete Pack adds one assembled native sheet per player for immediate use and contains 2219 PNGs at the 24-player limit. The planner owns stable paths, counts, recipe limits, the native export scale, compatibility variants, and the runtime layer order. It imports catalogs only through `sprite-engine.js` and does not access the DOM, canvas, editor state, persistence, or ZIP implementation.
 
 ### Archive packaging
 
@@ -463,7 +477,7 @@ outline modes. It emits three stable top-level treesâ€”`outlined`,
 `semi-outlined`, and `without-outlines`â€”with one native `480x96` complete sheet
 for every public family/variant, plus a manifest, README, stored ZIP, and SHA-256
 sidecar. `tools/check-all-enemy-outline-pack.mjs` independently decodes all PNGs
-and the stored ZIP, checks the current 74/245 catalog boundary, all 80 non-empty cells,
+and the stored ZIP, checks the current 80/259 catalog boundary, all 80 non-empty cells,
 hard alpha, per-treatment geometry order, hashes, and directory/archive parity.
 The adapter does not import or expose incomplete EN-E03 registries, write
 fixtures, alter public catalogs, or act as a release publisher. The current
@@ -554,27 +568,28 @@ deliberately not serialized.
 - Class-pack archives preserve one character identity, contain only equipment permitted by their stable class definition, deduplicate complete specifications, and include one resolved modular combat loadout per ready sheet.
 - Complete Character Kits always use native 1x sheets and the draw order `weapon-back`, `shield-back`, `offhand-back`, `species-back`, `outfit-back`, `outfit`, `skin-body`, `head`, `expression`, `species-front`, `face-detail`, `hair`, `headgear`, `shield-front`, `offhand-front`, `weapon-front`.
 - Combat-effect sheets remain modular and unbaked. The current effects-after-character preview/recipe order is a compatibility fact, not a finalized foreground-equipment occlusion invariant.
-- All 74 public enemy families support None, Complete B, and Selective C in live
+- All 80 public enemy families support None, Complete B, and Selective C in live
   assembled rendering. The locked 57-family legacy gate covers 16,160 source
   frames; the cumulative expansion gate adds all 2,400 approved EN-E01/EN-E02
-  frames, all 720 approved EN-E04 frames, and all 320 approved EN-E05 public
-  frames with the same source-ownership and bounds guarantees.
+  frames, all 480 adopted EN-E03 frames, all 720 approved EN-E04 frames, all
+  320 approved EN-E05 new-family frames, and all 640 EN-E06 frames with the
+  same source-ownership and bounds guarantees. The replacement Ghoul is routed
+  separately and checked against both its approved source and raw legacy target.
 - The EN-F00 foundation registry remains empty and separate from `ENEMIES`;
-  the stable approved and consumer registries contain exactly seventeen
-  EN-E01/EN-E02/EN-E04/EN-E05 families / 43 variants. `PUBLIC_ENEMIES` is
-  exactly 74 families / 245 variants
+  the stable approved and consumer registries contain exactly 23 expansion
+  families / 57 variants. `PUBLIC_ENEMIES` is exactly 80 families / 259 variants
   and is the editor, randomizer, kit, pack, thumbnail, and export catalog. The
   underlying 57-family / 202-sheet / 16,160-frame legacy corpus remains
   unchanged and retains locked SHA-256 pixel digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
-- The 43 expansion variants retain their reviewed raw pixels at the registry
+- The 57 expansion variants retain their reviewed raw pixels at the registry
   and None/None dispatcher boundary. Optional assembled rendering may apply the
   shared Form/outline algorithms; exports remain shadow-free, while the live
   preview may add only the standard non-baked floor shadow.
 - The original EN-E03 v1/v2 common-only registry remains rejected historical
-  evidence with 24 review frames. Later approved calibration and motion modules
-  remain isolated evidence with zero public families. No EN-E03 module enters
-  the stable or consumer facade without a newly authorized adoption gate.
+  evidence with 24 review frames. The authorized adoption gate exposes only six
+  completed full suites; Boulder Hurler, Storm-Clan Jarl, Sun Lancer, and the
+  rejected studies remain isolated internal evidence.
 - Shade None plus outline None directly delegates to `drawSprite()`. Shade None
   combined with Complete B or Selective C preserves the approved outline
   output. Form changes eligible source-owned colors only and is wired through
@@ -608,7 +623,7 @@ and rejection of empty, clipped, translucent, reordered, or incorrectly sized
 completed standard Enemy sheets.
 
 The nested `npm run check:enemy-expansion-en-e02-consumers` gate proves exact
-57/202 legacy preservation, current 74/245 public composition, and protected
+57/202 legacy preservation, current 80/259 public composition, and protected
 approved pixel parity across all 2,400 EN-E01/EN-E02 editor/dispatcher frames
 and all 30 native `480x96` sheets. It also exhausts 7,200 None/B/C
 outline cases and 7,200 Form/outline cases across all 180 published expansion
@@ -618,7 +633,7 @@ The nested `npm run check:enemy-expansion-en-e04-consumers` gate proves generic
 selector, persistence, randomizer, thumbnail, export, Kit/Pack, combat-default,
 and Wildshot routing for Naga, Merfolk, and Birdfolk. It checks all 720 public
 dispatcher frames, nine full sheets plus scoped sheet routes, 67,440 Complete B
-additions, 64,380 Form-changed source pixels, 2,182 Complete Kit PNGs, all nine
+additions, 64,380 Form-changed source pixels, 2,196 Complete Kit PNGs, all nine
 Wildshot specs, and the frozen approved aggregate digest. The generic renderer
 bridge suppresses full-frame resets but forwards deliberate regional clears so
 Merfolk and Temple Rajah lower-body replacement pixels remain exact.
@@ -627,9 +642,17 @@ The nested `npm run check:enemy-expansion-en-e05-consumers` gate proves generic
 routing for Mummy Tomb Walker, Vampire Night Noble, Revenant Grave Oathkeeper,
 and Lich Soul Regent. It checks all 320 public dispatcher frames, four full
 sheets plus scoped routes, 29,795 Complete B additions, 27,338 Form-changed
-source pixels, the 2,182-PNG Complete Kit, all four Wildshot specs, unchanged
-public `zombie/ghoul`, unchanged fixtures, and frozen digest
+source pixels, the current 2,196-PNG Complete Kit, all four Wildshot specs,
+the separately routed public Ghoul replacement, unchanged fixtures, and frozen digest
 `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`.
+
+The nested `npm run check:approved-enemy-assembler-integration` gate owns the
+current composition proof. It verifies all 15 newly exposed suites / 1,200
+approved source frames, 1,200 None/Complete B/Form presentation triplets,
+23/57 stable-consumer identity, 80/259 public composition, partial EN-E03
+exclusion, explicit Ghoul replacement routing, sibling-Zombie preservation,
+the frozen legacy Ghoul fixture, Complete Kit/Wildshot coverage, and digest
+`74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`.
 
 `engine/enemy-expansion-en-e06-fairy-idle.js` owns the first private Wave 2
 identity boundary. It freezes five EN-E06 family contract cards and the exact
@@ -658,7 +681,7 @@ approved eight-frame identity digest
 The nested `npm run check:enemy-expansion-en-e06-fairy` gate proves 80/80
 connected, bounded, ground-clear frames, exact Idle preservation, side mirrors,
 Cast/Death aliases, hard-alpha wing windows, deterministic raw/Complete B +
-Form evidence, unchanged 74/245 public state, and candidate digest
+Form evidence, the historical source-checkpoint 74/245 public state, and candidate digest
 `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
 The designer approved the exact hash-frozen full suite on 2026-08-09. The
 bounded implementation is published at `cc92ca9`; another Fairy variant, Hag
@@ -681,7 +704,7 @@ The nested
 candidate frames and the 80 approved Bramblewing comparison frames. It proves
 80/80 pixel and alpha-silhouette distinctions, connected one-cell-bounded
 ground-clear structure, exact aliases/mirrors, deterministic raw/Complete B +
-Form/comparison evidence, unchanged 74/245 public state, and candidate digest
+Form/comparison evidence, the historical source-checkpoint 74/245 public state, and candidate digest
 `675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
 The module remains outside `sprite-engine.js`; at its publication checkpoint,
 Petalcrown Duelist, Hag, registration, fixtures, effects, and release remained
@@ -708,7 +731,7 @@ all 80 candidate frames plus both 80-frame approved Fairy suites. It proves
 80/80 pixel and alpha-silhouette distinctions from Thistle and again from
 Bramblewing, connected one-cell-bounded ground-clear structure, exact aliases
 and mirrors, 72/72 colored crown-wing frames, 8/8 white flashes, deterministic
-raw/Complete B + Form/three-Fairy comparison evidence, unchanged 74/245 public
+raw/Complete B + Form/three-Fairy comparison evidence, the historical source-checkpoint 74/245 public
 state, and candidate digest
 `69de53e0b10aa80ef10afa7e3e8b6a9d913af81a365535f52e3f4be71945bd5c`.
 The gate is an approved internal lane published at bounded implementation
@@ -731,7 +754,7 @@ all 80 candidate frames plus the public Witch comparison and all three approved
 Fairy suites. It proves connected one-cell-bounded grounded structure, exact
 side mirrors and Cast/Death aliases, 80/80 pixel and alpha-silhouette
 distinctions from Witch, deterministic raw/Complete B + Form/comparison
-evidence, unchanged 74/245 public state, and candidate digest
+evidence, the historical source-checkpoint 74/245 public state, and candidate digest
 `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
 The exact review packet passed the visual gate on 2026-08-09 and the bounded
 implementation is published at `25f67d4`. The lane remains absent from
@@ -749,7 +772,7 @@ cauldron and every brew/fume/projectile effect remain external.
 `npm run check:enemy-expansion-en-e06-hag-cauldron-hexer` exhausts all 80
 candidate frames, approved Mire Crone, and the three approved Fairy suites. It
 proves connected bounded grounded structure, exact aliases/mirrors, 80/80 Mire
-pixel and alpha distinctions, unchanged public 74/245 state, deterministic
+pixel and alpha distinctions, the historical source-checkpoint public 74/245 state, deterministic
 five-artifact evidence, and candidate digest
 `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
 The exact packet passed visual approval on 2026-08-09 and the bounded
@@ -767,7 +790,7 @@ fume, familiar, and impact remain external.
 `npm run check:enemy-expansion-en-e06-hag-blackthorn-matron` exhausts all 80
 candidate frames, both approved Hags, and all three approved Fairies. It proves
 connected bounded grounded structure, exact aliases/mirrors, 80/80 pixel and
-alpha distinctions from both Hags, unchanged public 74/245 state,
+alpha distinctions from both Hags, the historical source-checkpoint public 74/245 state,
 deterministic five-artifact evidence, and candidate digest
 `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
 The exact packet passed visual approval on 2026-08-09 and the bounded
@@ -787,7 +810,7 @@ projectiles, and impacts remain external.
 approved frames, public Treant, approved Blackthorn Matron, all three approved
 Hags, and all three approved Fairies. It proves connected bounded grounded
 structure, exact aliases/mirrors, 80/80 pixel and alpha distinctions from both
-comparison actors, unchanged public 74/245 state, deterministic five-artifact
+comparison actors, the historical source-checkpoint public 74/245 state, deterministic five-artifact
 evidence, and approved implementation digest
 `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
 The exact boards and GIFs were visually approved on 2026-08-09 and the bounded

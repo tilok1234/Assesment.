@@ -143,10 +143,15 @@ const expectedExpansionFamilies = [
   'alchemist',
   'birdfolk',
   'catfolk',
+  'centaur',
   'desert-raider',
+  'dryad',
+  'fairy',
   'fallen-knight',
   'fanatic-monk',
+  'giant',
   'goatfolk',
+  'hag',
   'lich',
   'merfolk',
   'mummy',
@@ -155,6 +160,7 @@ const expectedExpansionFamilies = [
   'pirate',
   'plague-doctor',
   'revenant',
+  'satyr',
   'vampire',
   'witch',
 ];
@@ -165,18 +171,18 @@ check(EN_E02_CONSUMER_INTEGRATION_GATE.status === 'authorized', 'EN-E02 consumer
 check(EN_E02_CONSUMER_INTEGRATION_GATE.authorizedOn === '2026-08-02', 'EN-E02 consumer authorization must record its date');
 check(Object.isFrozen(EN_E02_CONSUMER_INTEGRATION_GATE) && Object.isFrozen(EN_E02_CONSUMER_INTEGRATION_GATE.exclusions), 'EN-E02 consumer authorization must be deeply immutable');
 check(engine.ENEMIES.length === 57 && legacyVariants === 202, 'consumer integration must not rewrite the 57-family / 202-variant legacy catalog');
-check(engine.PUBLIC_ENEMIES.length === 74 && publicVariants === 245, 'the later EN-E05 consumer gate must expose 74 families / 245 variants');
+check(engine.PUBLIC_ENEMIES.length === 80 && publicVariants === 259, 'the approved backlog integration must expose 80 families / 259 variants');
 check(Object.isFrozen(engine.PUBLIC_ENEMIES), 'the public consumer catalog must be immutable');
 check(
   engine.PUBLIC_ENEMIES.slice(0, engine.ENEMIES.length).every((family, index) => family === engine.ENEMIES[index]),
   'the public consumer catalog must retain the legacy catalog unchanged and in order',
 );
 check(
-  JSON.stringify(engine.PUBLIC_ENEMIES.slice(-17).map((family) => family.id)) === JSON.stringify(expectedExpansionFamilies),
-  'the public consumer catalog must append exactly the seventeen approved EN-E01/EN-E02/EN-E04/EN-E05 families',
+  JSON.stringify(engine.PUBLIC_ENEMIES.slice(-23).map((family) => family.id)) === JSON.stringify(expectedExpansionFamilies),
+  'the public consumer catalog must append exactly the twenty-three approved expansion families',
 );
 check(
-  engine.PUBLIC_ENEMIES.slice(-17).every((family, index) => family === engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies[index]),
+  engine.PUBLIC_ENEMIES.slice(-23).every((family, index) => family === engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies[index]),
   'the public consumer catalog must use the stable registry public-family view',
 );
 check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved', 'the consumer repair boundary must record explicit visual approval');
@@ -195,7 +201,7 @@ try {
     JSON.stringify(engine.randomEnemy()) === JSON.stringify({ family: 'witch', variant: 'cauldron-brewer' }),
     'the randomizer must be able to select the appended approved expansion catalog',
   );
-  Math.random = () => 59.1 / 74;
+  Math.random = () => 59.1 / 80;
   check(
     JSON.stringify(engine.randomEnemy()) === JSON.stringify({ family: 'catfolk', variant: 'pride-champion' }),
     'the randomizer must be able to select an approved EN-E02 family and variant',
@@ -207,12 +213,12 @@ try {
 const kitCounts = completeCharacterKitCounts();
 const kitPlan = buildCompleteCharacterKitPlan();
 check(
-  kitCounts.enemyFamilies === 74 && kitCounts.enemySheets === 245 && kitCounts.totalPngs === 2182,
-  'Complete Character Kit counts must include all 43 approved EN-E01/EN-E02/EN-E04/EN-E05 sheets',
+  kitCounts.enemyFamilies === 80 && kitCounts.enemySheets === 259 && kitCounts.totalPngs === 2196,
+  'Complete Character Kit counts must include all 57 approved expansion sheets',
 );
 check(
-  kitPlan.enemies.length === 74
-    && kitPlan.enemies.flatMap((family) => family.variants).length === 245
+  kitPlan.enemies.length === 80
+    && kitPlan.enemies.flatMap((family) => family.variants).length === 259
     && expectedExpansionFamilies.every((familyId) => kitPlan.enemies.some((family) => family.family === familyId)),
   'Complete Character Kit planning must include every approved EN-E01/EN-E02/EN-E04/EN-E05 family and variant',
 );
@@ -495,7 +501,7 @@ if (errors.length) {
 
 console.log('EN-E01/EN-E02 consumer integration validation passed.');
 console.log('- Legacy catalog: 57 families / 202 variants (unchanged)');
-console.log('- Public consumer catalog: 74 families / 245 variants');
+console.log('- Public consumer catalog: 80 families / 259 variants');
 console.log('- Approved-repair adapter parity: 2,400 / 2,400 frames');
 console.log('- Historical pre-repair outline/Form aggregates: preserved');
 console.log('- Native expansion sheets: 30 / 30 at 480x96');

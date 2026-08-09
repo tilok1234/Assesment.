@@ -3,7 +3,8 @@ import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import * as engine from '../sprite-engine.js';
-import { renderSpritePixels } from '../engine/pixel-buffer.js';
+import { capturePixels, renderSpritePixels } from '../engine/pixel-buffer.js';
+import { drawSprite as drawLegacySprite } from '../engine/renderer.js';
 import {
   EN_E05_MUMMY_GATE,
   EN_E05_MUMMY_REGISTRY,
@@ -144,7 +145,7 @@ check(EN_E05_VAMPIRE_REGISTRY.publicFamilies.length === 0, 'the unapproved Vampi
 check(EN_E05_VAMPIRE_FAMILY.variants.length === 1 && EN_E05_VAMPIRE_FAMILY.variants[0].id === 'night-noble', 'the candidate lane must contain only Night Noble');
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'the candidate must not change the 57-family legacy or later 74/245 public catalog boundaries');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 80 && publicVariantCount === 259, 'the source gate must retain the 57/202 legacy and current 80/259 public catalog boundaries');
 check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'vampire'), 'the later EN-E05 consumer gate must expose the registered Vampire family');
 check(engine.isPublicEnemyExpansionSpec(candidateSpec), 'the later EN-E05 consumer gate must route Vampire through the public expansion dispatcher');
 check(EN_E05_MUMMY_GATE.status === 'approved', 'the preceding Mummy approval must remain exact');
@@ -157,9 +158,9 @@ check(await sha256File('asset-pack/enemies/zombie-ghoul.png') === 'a6f69caac95fa
 for (const variant of ['shambler', 'ghoul', 'rotter', 'brute']) {
   const frames = [];
   for (const direction of directions) for (const animation of animations) for (let frame = 0; frame < animation.frames; frame++) {
-    frames.push(renderSpritePixels({ kind: 'enemy', family: 'zombie', variant }, direction, animation.id, frame, { shadow: false }));
+    frames.push(capturePixels((context) => drawLegacySprite(context, { kind: 'enemy', family: 'zombie', variant }, direction, animation.id, frame, { shadow: false })));
   }
-  check(hashJson(frames) === expectedZombieDigests[variant], `public zombie/${variant} pixels changed during the isolated Vampire candidate`);
+  check(hashJson(frames) === expectedZombieDigests[variant], `raw legacy zombie/${variant} pixels changed during the isolated Vampire candidate`);
 }
 
 const captures = new Map();
@@ -311,7 +312,7 @@ console.log(`- Structure: ${connectedFrames}/80 connected; ${boundedFrames}/80 o
 console.log(`- Identity: ${coloredIdentityFrames}/72 colored frames; ${frontEyeFrames}/18 front-eye frames; ${sideEyeFrames}/36 side-eye frames; ${rearEyeFrames}/18 eye-free rear frames`);
 console.log('- Motion: 2 Idle, 4 Walk, 4 Attack, 2 Hurt frames distinct per direction; Cast/Death aliases exact');
 console.log(`- Presentation: Complete B +${completeBAddedPixels} outline pixels; Form changes ${formChangedPixels} source pixels`);
-console.log('- Protected boundaries: approved Mummy exact; public catalog 74/245; Zombie siblings and legacy Ghoul fixture unchanged');
+console.log('- Protected boundaries: approved Mummy exact; public catalog 80/259; Zombie siblings and legacy Ghoul fixture unchanged');
 console.log(`- Review artifacts: ${verifiedArtifacts}/5 present and hash-verified`);
 console.log(`- Candidate digest: ${candidateFrameDigest}`);
 console.log(`- Approved Mummy digest: ${mummyFrameDigest}`);

@@ -84,9 +84,9 @@ check(EN_E03_HILL_BREAKER_CALIBRATION_DATA.actor.bodyBuild === 'sturdy', 'Hill B
 check(EN_E03_HILL_BREAKER_CALIBRATION_DATA.actor.outfit === 'barbarian', 'Hill Breaker must use the approved rough outfit grammar');
 check(EN_E03_HILL_BREAKER_CALIBRATION_DATA.actor.weapon === 'club', 'Hill Breaker must use the approved club renderer');
 
-check(engine.PUBLIC_ENEMIES.length === 74, 'the calibration must not alter the later 74-family public catalog');
+check(engine.PUBLIC_ENEMIES.length === 80, 'the calibration source must coexist with the later 80-family public catalog');
 check(engine.ENEMIES.length === 57, 'the calibration must not alter the 57-family legacy catalog');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'giant'), 'Giant must remain absent from public consumers');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'giant'), 'the later approved adoption must expose Giant in public consumers');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e03-calibration'), 'the public facade must not import the calibration module');
 check(!facadeSource.includes('EN_E03_GIANT_CALIBRATION'), 'the public facade must not expose calibration symbols');

@@ -18,6 +18,10 @@ release candidate. The older 2026-08-01 `bf6269c` standalone is historical.
 
 Re-audited on 2026-08-09: the current checkout still contains no NSIS artifact;
 no newer executable has been promoted or approved by this documentation lane.
+The approved 80-family / 259-variant enemy integration has passed source-level
+and full project validation, but no Windows executable or installer has been
+rebuilt from that working branch. The artifact snapshot above therefore remains
+historical and must not be represented as containing the new catalog.
 
 The Windows edition packages the same production frontend and procedural engine used by the browser build. Packaging does not freeze the content catalog: outfits, hairstyles, headgear, weapons, enemies, effects, and templates can still be changed normally, then included by rebuilding the application.
 

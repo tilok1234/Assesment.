@@ -10,6 +10,7 @@ import {
   drawPublicSprite as drawSprite,
   isPublicEnemyExpansionSpec,
 } from './public-renderer.js';
+import { resolvePublicEnemyExpansionRoute } from './enemy-expansion-public.js';
 
 export const OUTLINE_MODE_NONE = 'none';
 export const OUTLINE_MODE_COMPLETE_B = 'complete-b';
@@ -198,7 +199,9 @@ export function enemySupportsOutline(spec) {
 }
 
 function enemyUsesComponentOutline(spec) {
-  return spec?.kind === 'enemy' && ENEMY_COMPONENT_OUTLINE_FAMILY_SET.has(spec.family);
+  return spec?.kind === 'enemy'
+    && ENEMY_COMPONENT_OUTLINE_FAMILY_SET.has(spec.family)
+    && !resolvePublicEnemyExpansionRoute(spec)?.replacementGate;
 }
 
 function enemyPreservesComponentOutlineCavities(spec) {

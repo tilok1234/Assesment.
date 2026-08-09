@@ -24,10 +24,11 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 ## Current capabilities
 
 - Player assembly across Human, Elf, Orc, Goblin, Tiefling, Celestial, Dwarf, Undead, Lizardfolk, and Beastkin species; Classic, Lean, Sturdy, and Heroic body builds; plus skin, 11 hairstyles, six expressions, eight facial details, 12 headgear choices, nine outfits across five armor tiers, weapon type and tier, shield, the Lantern utility off-hand, and palette choices
-- 70 selectable public enemy families with 241 predefined variants: the locked
-  57-family / 202-variant legacy catalog plus 13 approved EN-E01/EN-E02/EN-E04
-  families / 39 variants
-- Isolated, non-public EN-E03 evidence containing two visually rejected
+- 80 selectable public enemy families with 259 predefined variants: the locked
+  57-family / 202-variant legacy catalog plus 23 approved expansion families /
+  57 variants across EN-E01 through EN-E06; public `zombie/ghoul` uses the
+  approved Ghoul Upgrade renderer without adding a duplicate family
+- EN-E03 evidence containing two visually rejected
   common-only Idle attempts, three separately approved internal F1/F2 Idle
   baselines for Hill Breaker, Steppe Hunter, and Briar Reveler, the approved
   internal Hill Breaker, Steppe Hunter, and Briar Reveler four-frame Walks, plus
@@ -35,7 +36,8 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
   A1-A4 baselines, and the approved Hill Breaker, Steppe Hunter, and Briar
   Reveler Hurt H1-H2 baselines, plus the approved common Cast/Death aliases for
   those three variants, and the approved Boulder Hurler specialist Idle F1-F2
-  baseline; none is selectable consumer content
+  baseline. The six completed full suites are selectable consumer content;
+  Boulder Hurler, Storm-Clan Jarl, and Sun Lancer remain internal Idle-only work
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
   repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; ten
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
@@ -51,7 +53,7 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Idle, walk, attack, cast, hurt, and death animations
 - Transparent PNG sprite-sheet export at native 1x, 4x, 8x, or 12x scale
 - Persistent named sprite packs that collect player, enemy, and combat-effect designs and download as a ZIP with full PNG sheets and `manifest.json`
-- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 1912 content-unique atomic component sheets, all 241 public enemy variations, and all 24 combat effects at native 1x
+- One-click Complete Character Packs combining up to 24 assembled native sheets, matching recipes, 1912 content-unique atomic component sheets, all 259 public enemy variations, and all 24 combat effects at native 1x
 - A validated frozen legacy fixture pack containing 232 exported sheets
 - Local browser persistence for the current configuration
 - Versioned, named player and enemy presets stored on the current device
@@ -64,19 +66,19 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Full-sheet, selected-animation, and selected-direction PNG export scopes
 - Play/pause, 0.5x/1x/2x playback speeds, frame stepping, and direct frame inspection with sheet-column metadata
 - Optional assembled-sprite outlines with None, Complete B, and Selective C
-  modes for players and all 74 public enemy families; the 43 approved
-  EN-E01/EN-E02/EN-E04/EN-E05 variants retain their reviewed raw pixels and gain
+  modes for players and all 80 public enemy families; the 57 approved
+  expansion variants retain their reviewed raw pixels and gain
   outlines only in assembled output, while effects, source art, floor shadows,
   and atomic component sheets remain untreated
 - Optional assembled-sprite shading with None and the approved material-aware
-  Form mode for players and all 74 public enemy families; approved EN-E01,
-  EN-E02, EN-E04, and EN-E05 variants resolve their own published renderer palette
+  Form mode for players and all 80 public enemy families; approved expansion
+  variants resolve their own published renderer palette
   ramps rather than a legacy-family fallback. The selector participates in undo/redo,
   comparisons, presets, packs, recipes, previews, and assembled exports, while
   raw source pixels, effects, and atomic component sheets remain untreated
 - A validated local full-public-Enemy exporter with three top-level treatment
   folders: Form + Complete B, Form + Selective C, and Form + None. Its current
-  catalog target is 245 native complete sheets per folder / 735 PNGs total plus
+  catalog target is 259 native complete sheets per folder / 777 PNGs total plus
   a manifest, README, stored ZIP, and SHA-256 sidecar
 - Undoable player/enemy reset plus a persistent saved copy for animated side-by-side A/B comparison
 - Facial detail choices for none, beard, mustache, scar, eyepatch, glasses, blush, and war paint; details follow character colors, respect rear views, and hide beneath full helmets
@@ -88,6 +90,28 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
 - Fifteen equipped weapon choices spanning blades, blunt weapons, polearms, ranged weapons, and magic focuses, each with standard Tier 1, named RPG-style Tier 2, legendary Tier 3, oversized mythic Tier 4, and final artifact Tier 5 forms; all 75 variants use hand-anchored motion and preserve front- and side-face clearance
 - Eight equipped shield choices—round, kite, buckler, heater, tower, oval, bone, and arcane—with five named tiers culminating in Worldsun Disc, Voidwyrm Aegis, Paradox Star, Throneheart Aegis, The Unbroken Gate, Imperial Eternity, Deathking's Reliquary, and Event Horizon; every facing reuses the unchanged broad shield face, the equipment grip owns the animated shield-hand socket instead of leaving ordinary hand pixels visible, and near/far body occlusion is split around the reusable body layer
 - One approved non-shield off-hand item, Lantern, with its own public field, direction-aware back/front passes, mutual exclusion with shields, and animated hand attachment across every body build and frame
+
+## Complete B actor package
+
+Run `npm.cmd run export:actors:complete-b` to create the deterministic local
+package at `dist/8-bit-sprite-assembler-complete-b-actor-pack-v1/` and its
+matching `.zip` plus `.zip.sha256` sidecar. The package contains 16 distinct
+playable heroes, 96 Player-assembler-derived NPCs across 16 recognizable roles,
+all 259 public enemy variations across 80 families, and all 10 bosses with a
+complete 20-column animation suite: 381 transparent native full-sheet PNGs.
+
+Players, NPCs, and enemies use Form shading plus the Complete B outline. Bosses
+retain their approved source colors and receive a per-frame Complete B exterior
+contour. Standard actor sheets are `480x96` with `24x24` cells; boss sheets are
+`960x192` with `48x48` cells. All use Down/Left/Right/Up rows and
+Idle/Walk/Attack/Cast/Hurt/Death columns, hard alpha, no floor shadow, and no
+baked combat effects. Candidate-status bosses are included because they have
+complete animation suites; their review status is preserved in `manifest.json`
+rather than being promoted by the export.
+
+Run `npm.cmd run check:export:actors:complete-b` to reopen and validate every
+PNG, exact roster, dimensions, hard alpha, outline evidence, per-cell content,
+file hashes, directory contents, ZIP hash, and checksum sidecar.
 
 ## Visual review presentation contract
 
@@ -128,12 +152,14 @@ Consumer checkpoint `e0be273` first established an immutable `PUBLIC_ENEMIES`
 catalog without changing the legacy `ENEMIES` entries. EN-E02 consumer
 checkpoint `8ab1837` extended that generic boundary, and the separately
 authorized EN-E04 consumer gate first reused the exact 13-family / 39-variant
-approved registry. The later EN-E05 consumer gate now reuses the exact
-17-family / 43-variant registry. Editor sanitization and selectors, persistence, Enemy
-randomization, thumbnails, full/animation/direction exports, ordinary packs,
-Wildshot manifest validation, combat defaults, and Complete Kits now consume 74
-families / 245 variants through the same public dispatcher. All 3,440 approved
-expansion frames and all 43 native sheets remain pixel-identical to their
+approved registry. The later EN-E05, EN-E06, and EN-E03 adoption gates now
+reuse the exact 23-family / 57-variant registry. Editor sanitization and
+selectors, persistence, Enemy randomization, thumbnails,
+full/animation/direction exports, ordinary packs, Wildshot manifest validation,
+combat defaults, and Complete Kits now consume 80 families / 259 variants
+through the same public dispatcher. The dedicated Ghoul replacement route maps
+`zombie/ghoul` to the approved upgrade without a duplicate selector family.
+All 4,560 approved expansion frames and all 57 native sheets remain pixel-identical to their
 registries when assembled presentation is None. Optional assembled output
 supports both approved enemy outline modes and material-aware Form shading
 without changing that raw dispatcher boundary. No schema version changed
@@ -169,9 +195,9 @@ and a clean console. The designer accepted that consumer presentation and later
 approved the exact seven-family walk/seam repair for Catfolk, Desert Raider,
 Fallen Knight, Fanatic Monk, Goatfolk, Necromancer, and Witch. That repaired
 ten-family registry remains the immutable EN-E01/EN-E02 comparison source. The
-current stable and consumer registries additionally compose the approved EN-E04
-and EN-E05 registrations, reaching 17 families / 43 variants and a 74/245
-public catalog.
+current stable and consumer registries additionally compose the approved
+EN-E03, EN-E04, EN-E05, and EN-E06 registrations, reaching 23 families / 57
+variants and an 80/259 public catalog.
 
 The isolated `codex/en-e03` branch first produced checkpoint `50ad516`, but the
 designer rejected those Giant, Centaur, and Satyr common Idle boards because
@@ -312,7 +338,7 @@ also passes and all 232 public fixture sheets remain unchanged.
 ## Full public-Enemy three-treatment export
 
 Run `npm.cmd run export:enemies:all-outlines` to generate one local package for
-all 74 complete public Enemy families / 245 variants. The package has exactly
+all 80 complete public Enemy families / 259 variants. The package has exactly
 three top-level art folders:
 
 - `outlined/<family>/<variant>.png` for Form + Complete B;
@@ -321,7 +347,7 @@ three top-level art folders:
 
 Every file is a native `480x96` hard-alpha sheet containing all four directions
 and the 20-column Idle/Walk/Attack/Cast/Hurt/Death contract. The current package
-target is 245 sheets in each folder / 735 PNGs total. `manifest.json` records the catalog,
+target is 259 sheets in each folder / 777 PNGs total. `manifest.json` records the catalog,
 frame contract, treatment mapping, per-file dimensions, opaque-pixel counts,
 byte sizes, and SHA-256 hashes. `README.md`, the deterministic stored ZIP, and a
 ZIP SHA-256 sidecar are included.
@@ -947,7 +973,7 @@ frames at opaque range 193-236, with 6,266 Complete B additions and 9,279 Form
 changes. All 80 pixel frames and alpha silhouettes differ from both approved
 Fairies; 72/72 colored frames and 8/8 white alias flashes pass. Approved
 Bramblewing full/Idle and Thistle full gates remain exact. Protected EN-E05
-consumers remain 74/245 and 320/320; candidate-state fast validation passes in
+consumers at that historical source checkpoint remained 74/245 and 320/320; candidate-state fast validation passes in
 `50.4s`, full validation passes in `106.2s`, and all 232 fixtures remain
 unchanged. Petalcrown was subsequently approved and published at `b265e97`.
 
@@ -1030,6 +1056,26 @@ The exact raw and Complete B + Form presentations were visually approved on
 published. Spore clouds and motes remain external; Dryad registration, fixture
 regeneration, Heartwood Warden, effects, and broader Wave 2 work are not
 authorized by that approval.
+
+## Approved enemy backlog integration ready for publication
+
+Branch `codex/approved-enemy-assembler-integration` composes three explicit
+lanes without changing reviewed sprite pixels: all eight completed EN-E06
+suites, the six completed full EN-E03 suites, and the approved Ghoul Upgrade as
+the public `zombie/ghoul` renderer. The stable and consumer expansion registries
+are the same 23 families / 57 variants; legacy remains 57/202; the merged
+public catalog is 80/259. Boulder Hurler, Storm-Clan Jarl, and Sun Lancer remain
+internal Idle-only evidence, and Heartwood Warden, Redcap, Nymph, EN-E07,
+effects, fixture regeneration, and release remain outside this gate.
+
+`npm run check:approved-enemy-assembler-integration` exhausts 15 suites / 1,200
+source-parity frames and 1,200 None/Complete B/Form presentation triplets. The
+frozen integration digest is
+`74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`.
+The standalone Complete Kit is 2,196 PNGs and the 24-player Complete Pack
+maximum is 2,219 PNGs. The committed 232-file legacy fixture pack remains
+untouched; its `zombie-ghoul.png` intentionally stays the historical sprite
+until a separate fixture-regeneration approval.
 
 ## EN-E05 assembler consumer integration implemented
 
@@ -1442,7 +1488,7 @@ absent clipping, and zero public-family exposure.
 Run `npm run check:enemy-expansion-en-e02-consumers` for the protected
 EN-E01/EN-E02 consumer matrix. The historical EN-E01 command intentionally
 reaches the same matrix. It proves the 57/202 legacy catalog is unchanged, the
-current immutable public catalog is 74/245, and all 2,400 EN-E01/EN-E02
+current immutable public catalog is 80/259, and all 2,400 EN-E01/EN-E02
 dispatcher/editor frames and all 30 native full sheets still match the approved
 registry in raw/None mode. It also
 exhausts 7,200 None/B/C outline cases and 7,200 Form-with-outline cases while
@@ -1454,15 +1500,24 @@ consumer slice within the current public boundary. It proves generic selectors,
 persistence, randomization,
 thumbnails, all export scopes, Complete Kits, combat defaults, and Wildshot
 validation accept Naga, Merfolk, and Birdfolk; checks public parity for all 720
-EN-E04 frames and nine native sheets; and locks the 74/245 catalog, 2,182-file
+EN-E04 frames and nine native sheets; and locks the 80/259 catalog, 2,196-file
 Complete Kit, outline/Form metrics, and approved aggregate digest.
 
-Run `npm run check:enemy-expansion-en-e05-consumers` for the current public
-integration gate. It proves the exact four EN-E05 new families remain generic
+Run `npm run check:enemy-expansion-en-e05-consumers` for the historical EN-E05
+consumer slice within the current public boundary. It proves the exact four EN-E05 new families remain generic
 across selectors, persistence, randomization, dispatcher and export routes,
 Complete Kit, and Wildshot; exhausts all 320 public frames; and locks the
-17/43 stable/consumer registry, 74/245 public catalog, 2,182-file Complete Kit,
+23/57 stable/consumer registry, 80/259 public catalog, 2,196-file Complete Kit,
 outline/Form metrics, unchanged public Ghoul, and unchanged fixtures.
+
+Run `npm run check:approved-enemy-assembler-integration` for the current
+integration boundary. It verifies the exact six completed EN-E03 suites, all
+eight approved EN-E06 suites, and the EN-E05 Ghoul replacement across 1,200
+source-parity frames and 1,200 None/Complete B/Form presentation triplets. It
+also proves the three EN-E03 Idle-only variants remain excluded, no duplicate
+Ghoul family enters selectors, all other Zombie pixels remain legacy-exact,
+the frozen Ghoul fixture is unchanged, Complete Kit is 80/259/2,196, and all
+15 integrated specs pass Wildshot manifest validation.
 
 Run `npm run check:enemy-expansion-en-e01-full` for the complete private
 candidate gate and `npm run review:enemy-expansion-en-e01-full` for the ignored
@@ -1474,8 +1529,8 @@ Idle digest, and preserves the exact reviewed pre-registration candidate.
 
 Run `npm run check:enemy-expansion-en-e01-registration` for the approved public
 boundary. It verifies the immutable completed-slice approval record, five
-approved families, 15 variants, the current five-approved/zero-implemented/
-seventeen-planned ledger, stable-facade routing, 15 complete sheets, and pixel
+approved families, 15 variants, the current seven-approved/zero-implemented/
+fifteen-planned ledger, stable-facade routing, 15 complete sheets, and pixel
 parity for every one of the 1,200 candidate/public frames while keeping the
 legacy catalog unchanged.
 
@@ -1504,10 +1559,9 @@ full 1,200-frame digest; proves candidate/registered parity across all 15
 `480x96` sheets; composes the ten-family / 30-variant approved registry; and at
 its historical consumer checkpoint exposed those two slices at 67 families /
 232 variants. The current head additionally composes separately authorized
-EN-E04 and EN-E05, so `PUBLIC_ENEMIES` is now 74/245. Effects and release remain
-separate gates. EN-E03 is a later, isolated lane
-whose two common-Idle attempts were visually rejected; it is not part of this
-registration.
+EN-E03 through EN-E06, so `PUBLIC_ENEMIES` is now 80/259. Effects and release
+remain separate gates. Only the six completed EN-E03 suites are adopted; its
+rejected studies and three Idle-only variants remain internal evidence.
 
 The default registration command is clean-clone safe because the review bundle
 is intentionally ignored. When the local review bundle is present it re-hashes
@@ -1771,9 +1825,9 @@ Each schema-v3 ZIP contains complete character sheets at the selected PNG scale,
 
 The working pack stays on the current device. Each downloaded ZIP contains one complete full sheet per sprite plus a versioned `manifest.json` with the exact specifications, animation contract, dimensions, file paths, and the saved combat-loadout recipe for every player or enemy.
 
-For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes and combat loadouts, the full deduplicated component library, all 74 public enemy families with all 245 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
+For a reusable game asset pack, add up to 24 player characters and select **Download Complete Pack**. That single ZIP combines every assembled native character sheet, the matching lightweight recipes and combat loadouts, the full deduplicated component library, all 80 public enemy families with all 259 variations in `enemies/<family>/<variation>.png`, and all 24 synchronized overlays in `effects/<category>/<effect>.png`. Enemy and effect sheets in the Complete Pack are always native 1x, independently of the regular pack export-scale selector.
 
-A 24-player Complete Pack contains 1912 shared component sheets, 245 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2205 native `480x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
+A 24-player Complete Pack contains 1912 shared component sheets, 259 ready enemy sheets, 24 combat-effect sheets, and 24 ready character sheets: 2219 native `480x96` PNGs. The first ready character also serves as the manifest reference preview, so no extra duplicate reference PNG is added.
 
 ### Wildshot game-pack status
 
@@ -1815,11 +1869,11 @@ Use **Download Complete Character Kit** in Player mode to export one `8-bit-spri
 - 150 weapon layers covering all 15 families at Tiers 1-5 in back/front passes
 - 326 shield layers covering all eight families at Tiers 1-5; a pass gets color variants only when color changes its pixels, including Tier 5 artifact passes that fully replace the underlying accent
 - Two Lantern utility-off-hand layers split into direction-aware back and front passes
-- 245 complete enemy sheets covering every variation in all 74 public enemy families, organized beneath `enemies/`
+- 259 complete enemy sheets covering every variation in all 80 public enemy families, organized beneath `enemies/`
 - 24 transparent combat-effect sheets covering trails, projectiles, impacts, and statuses, organized beneath `effects/`
 - One assembled reference sheet, `manifest.json`, and `README.txt`
 
-The standalone kit contains 1912 content-unique component sheets, 245 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 2182 native `480x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
+The standalone kit contains 1912 content-unique component sheets, 259 ready enemy sheets, 24 combat-effect sheets, and one reference preview: 2196 native `480x96` PNGs total. The combined Complete Pack instead adds one ready sheet per saved player and reuses its first character as the reference.
 
 Draw the non-null component paths from a recipe in this order:
 

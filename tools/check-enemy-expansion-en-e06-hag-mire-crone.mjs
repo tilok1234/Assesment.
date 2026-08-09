@@ -79,7 +79,7 @@ function rejects(action, expected, label) {
 }
 
 check(EN_E06_MIRE_CRONE_GATE.status === 'approved', 'Mire Crone must retain its explicit visual approval');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-published-2026-08-09', 'EN-E06 ledger must preserve Mire Crone while identifying published Spore Cantor');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'eight-enemy-registration-authorized-2026-08-09', 'EN-E06 ledger must preserve Mire Crone while recording the eight-enemy registration');
 check(EN_E06_MIRE_CRONE_GATE.approvedOn === '2026-08-09', 'Mire Crone approval date drifted');
 check(EN_E06_MIRE_CRONE_GATE.approvalEvidence.includes('designer replied: approved') && EN_E06_MIRE_CRONE_GATE.approvalEvidence.includes('three exact PNGs were opened directly in Aseprite') && EN_E06_MIRE_CRONE_GATE.approvalEvidence.includes('bounded commit and branch publication'), 'Mire Crone gate must retain the exact visual approval evidence');
 check(EN_E06_MIRE_CRONE_GATE.publishedImplementation === '25f67d4014437841f855ace2055de32abfeeaeeb', 'exact published Mire Crone implementation checkpoint drifted');
@@ -112,8 +112,8 @@ check(EN_E06_MIRE_CRONE_REGISTRY.families.length === 1 && EN_E06_MIRE_CRONE_REGI
 check(EN_E06_MIRE_CRONE_FAMILY.variants.length === 1 && EN_E06_MIRE_CRONE_FAMILY.variants[0].id === 'mire-crone', 'candidate registry must contain only Mire Crone');
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'private Hag must retain the 57 legacy and 74/245 public boundaries');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'hag'), 'Hag must remain absent from the public catalog');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 80 && publicVariantCount === 259, 'the Hag source must retain the 57/202 legacy and current 80/259 public boundaries');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'hag'), 'the later approved registration must expose Hag in the public catalog');
 check(engine.EN_E06_MIRE_CRONE_REGISTRY === undefined && engine.EN_E06_MIRE_CRONE_GATE === undefined, 'Mire Crone must not leak through the public engine facade');
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
@@ -246,6 +246,6 @@ console.log(`- Structure: ${connectedFrames}/80 connected; ${boundedFrames}/80 o
 console.log(`- Identity: ${coloredFrames}/72 colored feral-Hag frames; ${flashFrames}/8 exact white alias flashes`);
 console.log('- Motion: 2 Idle, 4 Walk, 4 Attack, 2 Hurt frames distinct per direction; Cast/Death aliases exact');
 console.log(`- Presentation: Complete B +${completeBAddedPixels} outline pixels; Form changes ${formChangedPixels} source pixels`);
-console.log('- Protected boundaries: all three approved Fairies and Mire Crone exact; Cauldron Hexer is a later private lane; public catalog 74/245; fixtures unchanged');
+console.log('- Protected boundaries: approved Fairy and Hag sources exact; public catalog 80/259; fixtures unchanged');
 console.log('- Review artifacts: 5/5 present and hash-verified');
 console.log(`- Candidate digest: ${candidateFrameDigest}`);

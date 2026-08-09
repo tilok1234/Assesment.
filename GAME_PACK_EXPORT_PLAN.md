@@ -11,6 +11,10 @@ writer, editor action, and consumer handoff remain pending.
 
 Re-audited on 2026-08-09: the repository still has no `LICENSE`, deterministic
 Wildshot writer, or editor export action, so this status remains current.
+The approved enemy backlog integration raises the generic actor catalog to
+80 families / 259 variants and accepts all 15 newly exposed specifications;
+it does not resolve the license, compact-effect, writer, or editor-action
+blockers and therefore does not make this separate pack profile emit-ready.
 
 The attached Wildshot Adventures export proposal is accepted as the product
 direction for a new focused game-pack lane. This plan records the assembler

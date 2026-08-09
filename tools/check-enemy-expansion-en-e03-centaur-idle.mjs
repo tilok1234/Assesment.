@@ -108,9 +108,9 @@ check(EN_E03_CENTAUR_IDLE_REGISTRY.publicFamilies.length === 0 && EN_E03_CENTAUR
 check(EN_E03_CENTAUR_IDLE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'the Steppe Hunter Idle renderer must retain the approved humanoid upper chassis');
 check(Object.isFrozen(EN_E03_CENTAUR_IDLE_REGISTRY) && Object.isFrozen(EN_E03_CENTAUR_IDLE_FAMILY), 'the Steppe Hunter Idle registry and family must be immutable');
 
-check(engine.PUBLIC_ENEMIES.length === 74, 'the Steppe Hunter Idle candidate must not alter the later 74-family public catalog');
+check(engine.PUBLIC_ENEMIES.length === 80, 'the Steppe Hunter Idle source must coexist with the later 80-family public catalog');
 check(engine.ENEMIES.length === 57, 'the Steppe Hunter Idle candidate must not alter the 57-family legacy catalog');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'centaur'), 'Centaur must remain absent from public consumers');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'centaur'), 'the later approved adoption must expose Centaur in public consumers');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e03-centaur-idle'), 'the public facade must not import the Steppe Hunter Idle candidate module');
 check(!facadeSource.includes('EN_E03_CENTAUR_IDLE'), 'the public facade must not expose Steppe Hunter Idle candidate symbols');

@@ -115,7 +115,7 @@ function frameRecord(captured, direction, frame) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Wave 2 predecessor must remain the exact EN-E05 consumer gate');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public frame digest must remain frozen');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'dryad-spore-cantor-full-published-2026-08-09', 'the expansion ledger must preserve the approved Idle baseline while identifying published Spore Cantor');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'eight-enemy-registration-authorized-2026-08-09', 'the expansion ledger must preserve the approved Idle baseline while recording the eight-enemy registration');
 check(EN_E06_FAIRY_IDLE_GATE.status === 'approved', 'the Fairy Idle gate must retain exact designer approval');
 check(EN_E06_FAIRY_IDLE_GATE.authorizedOn === '2026-08-09', 'the Wave 2 authorization date must remain frozen');
 check(EN_E06_FAIRY_IDLE_GATE.authorizationEvidence.includes('designer said: very good. wave 2') && EN_E06_FAIRY_IDLE_GATE.authorizationEvidence.includes('baseline Fairy four-direction Idle gate'), 'the gate must retain the explicit Wave 2 authorization and bounded first gate');
@@ -165,8 +165,8 @@ check(EN_E06_FAIRY_IDLE_REGISTRY.publicFamilies.length === 0, 'the Fairy candida
 check(EN_E06_FAIRY_IDLE_FAMILY.variants.length === 1 && EN_E06_FAIRY_IDLE_FAMILY.variants[0].id === 'bramblewing-scout', 'the candidate registry must implement only Bramblewing Scout');
 check(EN_E06_FAIRY_IDLE_REGISTRY.renderers[0].chassis === 'small-winged-fey-v1', 'the candidate must use the explicit small winged fey chassis');
 check(engine.EN_E06_FAIRY_IDLE_REGISTRY === undefined && engine.EN_E06_FAIRY_IDLE_GATE === undefined, 'the Fairy candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 74 && engine.ENEMIES.length === 57, 'the Fairy candidate must retain current public and legacy Enemy counts');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'fairy'), 'Fairy must remain absent from the public catalog before registration');
+check(engine.PUBLIC_ENEMIES.length === 80 && engine.ENEMIES.length === 57, 'the Fairy source must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'fairy'), 'the later approved registration must expose Fairy in the public catalog');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e06-fairy-idle') && !facadeSource.includes('EN_E06_FAIRY_IDLE'), 'the public facade must not import or expose Fairy candidate symbols');
 const assetManifest = await readFile(path.join(root, 'asset-pack', 'manifest.json'), 'utf8');

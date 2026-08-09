@@ -117,7 +117,20 @@ intentional bounded commit and branch push before the next gate begins, unless
 the designer explicitly says to hold publication. Unapproved lanes are never
 published under this rule.
 
-Current continuation checkpoint (2026-08-09): approved Fairies Bramblewing
+Current integration checkpoint (2026-08-09): branch
+`codex/approved-enemy-assembler-integration` brings all completed approved
+backlog suites into the assembler without editing their pixels. It registers
+eight EN-E06 variants across Fairy, Hag, and Dryad; adopts six completed EN-E03
+variants across Giant, Centaur, and Satyr; and routes `zombie/ghoul` through
+the approved Ghoul Upgrade without a duplicate family. The stable/consumer
+registry is 23/57, the public catalog is 80/259, the Complete Kit is 2,196
+PNGs, and the 24-player Complete Pack maximum is 2,219 PNGs. The focused
+1,200-frame integration gate, fast gate, and full project gate pass. All 232
+legacy fixtures remain unchanged. Three EN-E03 Idle-only variants,
+Heartwood Warden, Redcap, Nymph, EN-E07, effects, fixture regeneration, and
+release remain outside this integration.
+
+Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,
 and published at `cc92ca9`, `3dc68cb`, and `b265e97`. After Petalcrown
 publication, the designer said `lets do nextr`, opening only common Hag Mire
@@ -127,7 +140,7 @@ Crone gate `en-e06-hag-mire-crone-full-v1` on
 hard-alpha, grounded checks; all 80 pixel frames and alpha silhouettes differ
 from public Witch/Hexer; candidate digest is
 `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
-The published runtime boundary remains 17/43 expansion and 74/245 public with a
+At that historical point the published runtime boundary remained 17/43 expansion and 74/245 public with a
 2,182-PNG Complete Kit; public `zombie/ghoul`, all 232 committed fixtures,
 effects, release state, and EN-E03 isolation remain unchanged. The exact Mire
 Crone boards and GIFs were approved on 2026-08-09 and its bounded implementation
@@ -236,8 +249,9 @@ unchanged 57-family / 202-variant legacy catalog and pixel locks. The designer
 accepted EN-E02's live Complete B + Form consumer view and later approved the
 exact seven-family walk/seam repair. That repaired registry remains the
 EN-E01/EN-E02 source while the pre-repair registry stays internal. Later
-approved EN-E04 and EN-E05 registration and consumer gates bring the current
-expansion boundary to 17/43 and the public catalog to 74/245.
+approved EN-E03 through EN-E06 integration gates bring the current expansion
+boundary to 23/57 and the public catalog to 80/259, with the Ghoul Upgrade
+routed as a replacement rather than a duplicate family.
 The designer rejected EN-E03 v1 checkpoint `50ad516` because its boxed visual
 language did not match the approved roster, then rejected replacement checkpoint
 `6104eae` as still far from that style. V2 keeps only the Giant, Centaur, and

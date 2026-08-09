@@ -1,6 +1,18 @@
 # Enemy Expansion Plan
 
-- Status: approved plan; EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
+- Current integration status (2026-08-09): the approved assembler backlog gate
+  on `codex/approved-enemy-assembler-integration` composes 23 expansion
+  families / 57 variants and 80 public families / 259 variants. It registers
+  all eight completed EN-E06 suites, adopts only the six completed full EN-E03
+  suites, and maps public `zombie/ghoul` to the approved Ghoul Upgrade without
+  adding a duplicate family. The focused gate exhausts 1,200 source-parity
+  frames and 1,200 None/Complete B/Form presentation triplets at digest
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`.
+  Boulder Hurler, Storm-Clan Jarl, Sun Lancer, Heartwood Warden, Redcap, Nymph,
+  EN-E07, effects, fixture regeneration, and release remain outside the gate.
+  All 232 legacy fixtures remain unchanged.
+
+- Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
   checkpoint `7b6e448` composes both slices into the stable ten-family /
   30-variant approved registry, and consumer checkpoint `8ab1837` established
@@ -3457,21 +3469,19 @@ counts as an upgrade; the three Boss candidates do not enter the Enemy totals.
 
 ## Current Authorization Boundary
 
-EN-E05 assembler integration remains complete and published at `773cfad` with
-reconciled handoff `7ffbb04`. Stable and consumer expansion registries remain
-identical at 17 families / 43 variants, `PUBLIC_ENEMIES` remains 74/245, the
-Complete Kit remains 2,182 PNGs, and public `zombie/ghoul` plus all 232
-committed fixtures remain unchanged.
+The designer authorized the completed-sprite assembler integration on
+2026-08-09. Branch `codex/approved-enemy-assembler-integration` now composes
+23 expansion families / 57 variants and `PUBLIC_ENEMIES` 80/259, including the
+six completed EN-E03 suites, all eight completed EN-E06 suites, and the public
+Ghoul Upgrade route. Complete Kit is 2,196 PNGs; all 232 committed fixtures
+remain unchanged. Focused, fast, and full validation pass. The implementation
+and reconciled documentation are ready for designer review but are not yet
+committed or pushed.
 
-Wave 2 is published through approved private Spore Cantor gate
-`en-e06-dryad-spore-cantor-full-v1` on
-`codex/en-e06-dryad-spore-cantor`. The exact raw and outlined packet was
-visually approved on 2026-08-09; bounded implementation `46d1dc9` and approval
-record `61d1fa4` are published. The designer then authorized only a live
-documentation audit and proper handoff. No enemy implementation gate is
-currently active. Heartwood Warden, Redcap, Nymph, EN-E07, public Dryad
-registration, fixtures, effects, and release remain separate closed gates;
-authorization must not be inferred from the completed Spore Cantor pass.
+No additional enemy-art, fixture, effect, or release gate is active.
+Heartwood Warden, Redcap, Nymph, EN-E07, and the three EN-E03 Idle-only variants
+remain separate. Publication of this bounded integration requires explicit
+designer approval.
 
 ### Historical Authorization Chronology
 
