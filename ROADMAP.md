@@ -140,10 +140,11 @@ candidate passes 80/80 connected, bounded, grounded, hard-alpha,
 Goblin Scout/Hobgoblin/Barrow pixel, and alpha-silhouette distinction gates at
 digest `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
 The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-is generated and all three PNG boards were opened together in Aseprite.
-Designer visual approval is pending. Bloodcap Reaver, Nymph, EN-E07,
-registration changes, fixtures, shared renderer/schema changes, effects, and
-release remain closed.
+was opened together in Aseprite and visually approved on 2026-08-10. The frozen
+implementation is committed at `98865936244b94860985210fcaf9a044b0ca228a`;
+only the bounded approval record and branch publication are authorized.
+Bloodcap Reaver, Nymph, EN-E07, registration changes, fixtures, shared
+renderer/schema changes, effects, and release remain closed.
 
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,

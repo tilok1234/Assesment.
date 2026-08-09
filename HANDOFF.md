@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Ironboot Trapper Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Ironboot Trapper Approved
 
 Start here in a new task. This is the only active continuation section; later
 sections are published or historical provenance.
@@ -27,6 +27,10 @@ sections are published or historical provenance.
   reconciled, the designer said `next` on 2026-08-10. Under the documented
   Redcap role order and one-complete-sprite cadence, this opens only specialist
   Ironboot Trapper.
+- Approval: the exact raw/no-outline and Complete B + Form animations plus the
+  Goblin Scout/Hobgoblin/Barrow/Ironboot comparison were presented, and all
+  three exact PNG boards were opened together in Aseprite. The designer replied
+  `approved` on 2026-08-10. Approval applies only to the frozen digest below.
 - Scope: one private 80-frame specialist Redcap across Idle F1-F2, Walk W1-W4,
   Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
   Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
@@ -58,16 +62,19 @@ sections are published or historical provenance.
 - Protected state: all approved Fairy, Hag, Dryad, and Barrow digests remain
   exact; public catalog remains 80 families / 259 variants with no public
   Redcap; all 232 committed fixtures remain untouched.
-- Required next action: review the exact packet and wait for explicit designer
-  approval. Do not commit, publish, register Redcap, generate fixtures, begin
-  Bloodcap Reaver or Nymph, add effects, release, or open EN-E07.
+- Publication state: the exact approved implementation is committed at
+  `98865936244b94860985210fcaf9a044b0ca228a`. The bounded approval record and
+  branch publication are authorized; review artifacts remain ignored evidence.
+- Required next action: commit and push the exact approval record, then stop.
+  Do not register Redcap, generate fixtures, begin Bloodcap Reaver or Nymph,
+  add effects, release, or open EN-E07.
 
 Suggested opening request for the next chat:
 
-> Resume `codex/en-e06-redcap-ironboot-trapper` from the exact visual gate in
-> `HANDOFF.md`. Present the raw, Complete B + Form, comparison, and paired GIF
-> evidence and wait for explicit approval. Do not commit, publish, register,
-> begin Bloodcap Reaver/Nymph, add effects, release, or open EN-E07.
+> Resume `codex/en-e06-redcap-ironboot-trapper` from the exact approved gate in
+> `HANDOFF.md`. Verify implementation `9886593`, commit and push the bounded
+> approval record, then stop. Do not infer Bloodcap Reaver, Nymph, registration,
+> fixtures, effects, release, or EN-E07 authorization.
 
 ## Approved Preceding Checkpoint - Barrow Stalker Published
 

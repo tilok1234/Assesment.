@@ -109,11 +109,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   from public Goblin Scout, public Hobgoblin, and approved Barrow Stalker at
   digest `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
-  is hash-frozen, and all three exact PNG boards were opened together in
-  Aseprite. Fast validation passes in 55.4s and full validation in 105.5s with
-  all 232 fixtures valid. Public Redcap remains absent within 80/259. Stop for
-  designer visual approval before commit, publication, registration, fixtures,
-  Bloodcap Reaver/Nymph/EN-E07, effects, or release.
+  was opened together in Aseprite and visually approved on 2026-08-10. The
+  frozen implementation is committed at
+  `98865936244b94860985210fcaf9a044b0ca228a`; only its bounded approval-record
+  commit and branch publication are authorized. Fast validation passes in
+  55.4s and full validation in 105.5s with all 232 fixtures valid. Public
+  Redcap remains absent within 80/259. After push, stop before registration,
+  fixtures, Bloodcap Reaver/Nymph/EN-E07, effects, or release.
 - The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved

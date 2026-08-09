@@ -34,7 +34,7 @@ export const EN_E06_IRONBOOT_TRAPPER_CONTRACT = deepFreeze({
   family: 'redcap',
   variant: 'ironboot-trapper',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'short-stocky-flatcap-trapper-fey-v1',
   silhouette: 'A short broad fey with a flat reinforced red cap, long ears, an asymmetric buckle harness, connected trap-setting tongs, a leather apron, and two enormous square-toed iron boots. The flat cap, tong jaws, and boot-heavy stance must differ from Barrow Stalker and public Goblins in every frame.',
   identity: 'Weathered umber skin, a riveted rust-red cap, moss-dark coat, ochre leather harness, brass buckles, steel tongs, yellow eyes, and blocky iron boots establish a practical specialist without baking in traps, snares, chains, or markers.',
@@ -73,13 +73,13 @@ export const EN_E06_IRONBOOT_TRAPPER_DATA = deepFreeze({
 
 export const EN_E06_IRONBOOT_TRAPPER_GATE = deepFreeze({
   id: 'en-e06-redcap-ironboot-trapper-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: '3cb794da9078056d51eaa23137cf67c9782aa77d',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After Barrow Stalker was visually approved, committed, pushed, and reconciled at a clean published checkpoint, the designer said: next. Under the documented EN-E06 Redcap role order and one-complete-sprite cadence, this authorizes only one private specialist Redcap Ironboot Trapper 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending designer review of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, public Goblin Scout/Hobgoblin plus approved Barrow Stalker comparison, paired GIF evidence, and the three exact PNG boards opened together in Aseprite.',
-  publishedImplementation: null,
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, public Goblin Scout/Hobgoblin plus approved Barrow Stalker comparison, and paired GIF evidence were presented, and the three exact PNG review boards were opened together in Aseprite, the designer replied: approved. Approval applies only to candidate digest 31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1 and authorizes its bounded approval-record commit and branch publication; Bloodcap Reaver, Nymph, registration, fixtures, effects, release, EN-E07, and later work remain separate gates.',
+  publishedImplementation: '98865936244b94860985210fcaf9a044b0ca228a',
   precedingApproval: {
     gateId: EN_E06_BARROW_STALKER_GATE.id,
     artifactSha256: EN_E06_BARROW_STALKER_GATE.artifactSha256,
@@ -142,7 +142,7 @@ export const EN_E06_IRONBOOT_TRAPPER_GATE = deepFreeze({
     'later EN-E06 sprites',
     'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Stop for designer visual approval of this exact hash-frozen Ironboot Trapper candidate. Do not commit, publish, register Redcap, generate fixtures, begin Bloodcap Reaver or Nymph, open EN-E07, add effects, release, or broaden Wave 2 before that review.',
+  nextGate: 'The exact Ironboot Trapper candidate is visually approved and committed at 98865936244b94860985210fcaf9a044b0ca228a. Only its bounded approval-record commit and branch publication are authorized. After push, stop; do not register Redcap, generate fixtures, begin Bloodcap Reaver, Nymph, EN-E07, add effects, release, or broaden Wave 2 without another explicit gate.',
 });
 
 export const EN_E06_IRONBOOT_TRAPPER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

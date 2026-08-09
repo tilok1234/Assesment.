@@ -1107,9 +1107,11 @@ GIFs; run `npm.cmd run check:enemy-expansion-en-e06-redcap-ironboot-trapper` for
 the 80-frame structural, distinction, predecessor, artifact, and public/fixture
 firewalls. The focused gate passes at digest
 `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
-The exact packet is hash-frozen and opened together in Aseprite; designer visual
-approval is pending. Bloodcap Reaver, Nymph, EN-E07, registration changes,
-fixtures, effects, and release remain closed.
+The exact packet was opened together in Aseprite and visually approved on
+2026-08-10. Its frozen implementation is committed at
+`98865936244b94860985210fcaf9a044b0ca228a`. Only the bounded approval-record
+commit and branch publication are authorized. Bloodcap Reaver, Nymph, EN-E07,
+registration changes, fixtures, effects, and release remain closed.
 
 ## Approved enemy backlog integration published
 

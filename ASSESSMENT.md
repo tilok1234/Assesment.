@@ -234,7 +234,9 @@ bounded, grounded, hard-alpha, Goblin Scout/Hobgoblin/Barrow pixel, and
 alpha-silhouette distinction gates at digest
 `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
 Its exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-is frozen and opened together in Aseprite; designer visual approval is pending.
+was opened together in Aseprite and visually approved on 2026-08-10. The frozen
+implementation is committed at `98865936244b94860985210fcaf9a044b0ca228a`;
+only bounded approval-record publication is authorized.
 Fixture regeneration, later Redcaps/Nymph, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 
