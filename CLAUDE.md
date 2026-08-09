@@ -124,10 +124,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   bounded, grounded frames; all 80 pixel frames and alpha silhouettes differ
   from public Witch/Hexer; candidate digest is
   `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
-  The exact boards and paired GIFs were approved on 2026-08-09 and the bounded
-  implementation is published at `25f67d4`. It remains absent from the public
-  facade, catalog, and fixtures. Do not register Hag, generate fixtures, start
-  another Hag or Dryad, or broaden Wave 2 without a separate continuation.
+  The exact Mire Crone boards and paired GIFs were approved on 2026-08-09 and
+  its bounded implementation is published at `25f67d4`. The later designer
+  `next` opens only private specialist Cauldron Hexer on
+  `codex/en-e06-hag-cauldron-hexer`, based at `b4ad5cd`. Its 80-frame candidate
+  passes connected, bounded, grounded, alias, mirror, and 80/80 Mire alpha-
+  distinction gates at digest
+  `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
+  It remains absent from the public facade, catalog, and fixtures. Do not
+  commit, push, register Hag, generate fixtures, start Blackthorn Matron or
+  Dryad, or broaden Wave 2 before explicit Cauldron Hexer approval.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate

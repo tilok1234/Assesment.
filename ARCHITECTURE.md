@@ -738,6 +738,22 @@ implementation is published at `25f67d4`. The lane remains absent from
 registration, fixtures, effects, and release; later Hags and families stay
 separate gates.
 
+`engine/enemy-expansion-en-e06-hag-cauldron-hexer.js` is the separately
+authorized specialist Hag boundary. It derives from the exact approved Mire
+Crone pixels without modifying that source, recolors the material planes, and
+adds a connected copper ladle, bottle belt, and brewer apron. Orthogonally
+rasterized tool bends and a connected specialist edge cue guarantee one true
+four-neighbor silhouette and 80/80 alpha distinctions from Mire Crone. The
+cauldron and every brew/fume/projectile effect remain external.
+
+`npm run check:enemy-expansion-en-e06-hag-cauldron-hexer` exhausts all 80
+candidate frames, approved Mire Crone, and the three approved Fairy suites. It
+proves connected bounded grounded structure, exact aliases/mirrors, 80/80 Mire
+pixel and alpha distinctions, unchanged public 74/245 state, deterministic
+five-artifact evidence, and candidate digest
+`17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
+The candidate remains uncommitted and unpushed until visual approval.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

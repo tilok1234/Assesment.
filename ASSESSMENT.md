@@ -176,10 +176,14 @@ common Hag Mire Crone. Its private 80-frame candidate passes connected,
 bounded, grounded, alias, mirror, public-Witch distinction, and approved-Fairy
 preservation gates at digest
 `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
-The exact boards and paired GIFs were approved on 2026-08-09 and the bounded
-implementation is published at `25f67d4`. The active handoff starts with that
-approved lane above an explicitly marked historical archive. Later Hags, Dryad,
-fixture regeneration, the legacy renderer split, boss-generator consolidation,
+The exact Mire Crone boards and paired GIFs were approved on 2026-08-09 and its
+bounded implementation is published at `25f67d4`. The subsequent `next` opens
+only specialist Cauldron Hexer. Its private 80-frame candidate passes all
+structural gates and differs from Mire Crone in every pixel frame and alpha
+silhouette at digest
+`17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
+The active handoff starts with that unapproved review lane. Blackthorn Matron,
+Dryad, fixture regeneration, the legacy renderer split, boss consolidation,
 and the Wildshot writer remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`

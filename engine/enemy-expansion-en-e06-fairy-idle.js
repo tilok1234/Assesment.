@@ -62,7 +62,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
     externalEffects: ['hex bursts', 'thrown charms', 'cauldron fumes', 'summoned familiars'],
     variants: [
       { id: 'mire-crone', name: 'Mire Crone', role: 'common', status: 'implemented-full-approved', brief: 'Feral bog Hag with rope hair, hooked nose, long claws, and a mud-dark shawl.' },
-      { id: 'cauldron-hexer', name: 'Cauldron Hexer', role: 'specialist', status: 'planned', brief: 'Charm-brewing Hag with a ladle-like hand tool; fumes and thrown brews remain external.' },
+      { id: 'cauldron-hexer', name: 'Cauldron Hexer', role: 'specialist', status: 'implemented-full-candidate', brief: 'Charm-brewing Hag with a ladle-like hand tool; fumes and thrown brews remain external.' },
       { id: 'blackthorn-matron', name: 'Blackthorn Matron', role: 'elite', status: 'planned', brief: 'Briar-armored elder Hag with a crown of hooked blackthorn and a heavier raking silhouette.' },
     ],
   }),

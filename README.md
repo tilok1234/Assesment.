@@ -894,7 +894,7 @@ below later exposes only the four new families; at that point public Ghoul
 replacement, fixture work, effects, release, EN-E03 adoption, and Wave 2 were
 still closed.
 
-## EN-E06 approved Fairy sequence and approved Hag Mire Crone
+## EN-E06 approved Fairies/Mire Crone and active Cauldron Hexer candidate
 
 Approved common Fairy Bramblewing Scout and specialist Thistle Hexer remain
 internal, non-public, exact, and published at `cc92ca9` and `3dc68cb`. After
@@ -970,6 +970,19 @@ and fixture firewall. Candidate digest:
 The exact boards and GIFs were approved on 2026-08-09 and the bounded
 implementation is published at `25f67d4`. Do not begin another Hag, Dryad,
 registration, fixtures, effects, or later Wave 2 work without a separate gate.
+
+The subsequent `next` opens only specialist Hag Cauldron Hexer on
+`codex/en-e06-hag-cauldron-hexer`. It adds a connected copper hooked ladle,
+luminous bottle belt, teal brewer apron, plum shawl, moss-gold skin, and
+charcoal rope hair while keeping the cauldron, fumes, thrown brews, liquid arcs,
+projectiles, and other effects external. Run
+`npm.cmd run review:enemy-expansion-en-e06-hag-cauldron-hexer` for its exact
+three boards and paired GIFs, and run
+`npm.cmd run check:enemy-expansion-en-e06-hag-cauldron-hexer` for the complete
+80-frame structural, Mire-distinction, predecessor, public, and fixture gates.
+Candidate digest: `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
+It is unapproved, uncommitted, and unpushed; stop before Blackthorn Matron,
+Dryad, registration, fixtures, effects, or later Wave 2 work.
 
 ## EN-E05 assembler consumer integration implemented
 

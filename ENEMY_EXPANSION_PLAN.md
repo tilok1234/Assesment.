@@ -2838,7 +2838,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `approved internal - Hag Mire Crone complete 80-frame lane published at 25f67d4`
+- Status: `candidate internal - Hag Cauldron Hexer complete 80-frame lane awaiting visual approval`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3058,6 +3058,38 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   and presented with the paired GIFs. The designer replied `approved` on
   2026-08-09. The bounded implementation is published at `25f67d4`. Stop before
   registration, fixture work, Cauldron Hexer, Dryad, effects, or broader Wave 2.
+
+#### Candidate Hag Cauldron Hexer complete suite
+
+- Gate ID: `en-e06-hag-cauldron-hexer-full-v1`; status: `candidate`, internal,
+  uncommitted, and unpushed on `codex/en-e06-hag-cauldron-hexer`, based exactly
+  on clean Mire Crone publication handoff `b4ad5cd`.
+- Authorization: after Mire Crone approval and publication, the designer said
+  `next` on 2026-08-09. This opens only specialist Hag Cauldron Hexer under the
+  one-complete-sprite cadence.
+- Identity: the approved stooped feral-Hag chassis gains moss-gold skin,
+  charcoal rope hair, plum shawl, teal brewer apron, luminous bottle belt, and
+  a connected copper hooked ladle. The cauldron is not part of the sprite.
+- Animation/effect policy: two brewer Idle poses, four grounded shuffle Walk
+  phases, four connected ladle coil/rise/sweep/recovery Attack phases, exact
+  Cast-to-Attack and Death-to-Hurt aliases, and side mirroring. Cauldron, fumes,
+  thrown brews, liquid arcs, projectiles, familiars, auras, trails, and impacts
+  remain external.
+- Review hashes: raw / Complete B + Form boards
+  `92e6961d04ee9232179e4b080937247ac5eb8eb26fcad80308f5ceaca8a2fe43` /
+  `aaa2a749a45b7ab5e2b0e54bd30a4e2b1510c05f28686b8795849be02760adfa`;
+  Mire comparison `ab12e7ca5e6ffdf0066357dacf8a9d88182affe3dfcd990f483cd0a5ba0de913`;
+  raw / Complete B + Form GIFs
+  `2d95a1eb19edf91a694f699bcb377c3f54110dfb24e0d13b55a3718fe2dd2b24` /
+  `4af1ac19b43566de6043f1dc20282d085968d1cae317dc6c7a2942fc38902577`.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded frames;
+  80/80 pixel and alpha-silhouette distinctions from approved Mire Crone;
+  72/72 colored brewer frames; 8/8 white flashes; opaque range 228-251;
+  7,764 Complete B additions; 6,575 Form changes; candidate digest
+  `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
+- Review state: stop for the exact three PNGs and paired GIFs to receive explicit
+  approval. Do not commit, push, register, generate fixtures, start Blackthorn
+  Matron, or begin Dryad before that approval.
 
 ### EN-E07 - Shapeshifters and apparitions
 

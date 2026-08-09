@@ -131,9 +131,13 @@ The published runtime boundary remains 17/43 expansion and 74/245 public with a
 2,182-PNG Complete Kit; public `zombie/ghoul`, all 232 committed fixtures,
 effects, release state, and EN-E03 isolation remain unchanged. The exact Mire
 Crone boards and GIFs were approved on 2026-08-09 and its bounded implementation
-is published at `25f67d4`. Later Hags, Dryad, EN-E07, registration, fixtures,
-shared renderer/schema changes, effects, and release each require a separate
-continuation.
+is published at `25f67d4`. The later `next` opens only specialist Cauldron Hexer
+on `codex/en-e06-hag-cauldron-hexer`; its hash-frozen 80-frame candidate passes
+connected, bounded, grounded, alias, mirror, and 80/80 Mire distinction gates
+at digest `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
+It remains unapproved, uncommitted, and unpushed. Blackthorn Matron, Dryad,
+EN-E07, registration, fixtures, shared renderer/schema changes, effects, and
+release each require a separate continuation.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and
