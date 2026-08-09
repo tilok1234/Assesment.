@@ -1,7 +1,8 @@
 # Enemy Expansion Plan
 
 - Current integration status (2026-08-09): the approved assembler backlog gate
-  on `codex/approved-enemy-assembler-integration` composes 23 expansion
+  on `codex/approved-enemy-assembler-integration` is committed and pushed at
+  `90ac018923fbaa9906cd47cdc9ef22f0db77336a`. It composes 23 expansion
   families / 57 variants and 80 public families / 259 variants. It registers
   all eight completed EN-E06 suites, adopts only the six completed full EN-E03
   suites, and maps public `zombie/ghoul` to the approved Ghoul Upgrade without
@@ -9,8 +10,19 @@
   frames and 1,200 None/Complete B/Form presentation triplets at digest
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`.
   Boulder Hurler, Storm-Clan Jarl, Sun Lancer, Heartwood Warden, Redcap, Nymph,
-  EN-E07, effects, fixture regeneration, and release remain outside the gate.
-  All 232 legacy fixtures remain unchanged.
+  EN-E07, effects, fixture regeneration, and release remain outside that
+  published integration. All 232 legacy fixtures remain unchanged.
+
+- Current art gate (2026-08-09): the designer's `hey lets keep going with the
+  80 enemies plan` opens only the third Dryad role, one complete elite
+  Heartwood Warden on `codex/en-e06-dryad-heartwood-warden`. Its frozen
+  80-frame candidate passes connected, one-cell-bounded, grounded, hard-alpha,
+  alias, mirror, and 80/80 pixel plus alpha-silhouette distinction gates
+  against public Treant and both approved Dryads at digest
+  `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
+  It remains private and unapproved. Stop for exact raw, Complete B + Form, and
+  four-way comparison review before commit or push. Redcap, Nymph, EN-E07,
+  fixtures, effects, registration changes, and release remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -2850,7 +2862,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `approved internal - Hag Cauldron Hexer complete 80-frame lane published at 4b59b40`
+- Status: `active - Heartwood Warden complete 80-frame candidate ready for visual review`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3214,9 +3226,55 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   outlined presentation, the designer approved the exact packet on 2026-08-09.
 - Publication: bounded implementation `46d1dc9` and approval record `61d1fa4`
   are published on `codex/en-e06-dryad-spore-cantor`.
-- Stop gate: no new enemy implementation is authorized. Do not register Dryad,
-  generate fixtures, start Heartwood Warden, add effects, release, or broaden
-  Wave 2 without a new explicit gate.
+- Historical stop gate: that approval did not authorize Heartwood Warden. The
+  designer's later continuation below opens it separately.
+
+#### Dryad Heartwood Warden complete-suite candidate
+
+- Gate ID: `en-e06-dryad-heartwood-warden-full-v1`; status: `candidate`,
+  internal, uncommitted, and unpushed on
+  `codex/en-e06-dryad-heartwood-warden`, based exactly on clean pushed
+  integration/export checkpoint
+  `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
+- Authorization: after that checkpoint was published, the designer said `hey
+  lets keep going with the 80 enemies plan`. Following the documented Dryad
+  role order, this opens only one complete elite Heartwood Warden.
+- Identity: dense ordinary-height living-wood fey with deep red heartwood,
+  warm cambium seams, evergreen crown leaves, connected branch pauldrons,
+  ringed breastplate, short crown prongs, reinforced root greaves, and one
+  visibly forking warding arm. It remains upright and fey-scaled rather than a
+  broad public Treant.
+- Animation/effect policy: pauldron-and-crown-settle Idle, heavy rooted Walk,
+  heartplate brace/warding-bough draw/connected-fork guard/recovery Attack,
+  exact Cast and Death aliases, and exact side mirroring. Protective auras, sap
+  glow, bark shards, detached leaves, acorns, vines, root eruptions, shield
+  blooms, summoned plants, trails, projectiles, impacts, and ground cracks
+  remain external.
+- Review hashes: raw / Complete B + Form `1428x760` boards
+  `da3f003a61494a3414fe6c87e5f926c9257cb6c8b52e466cb5e82d9306467447` /
+  `488014aaaedc10c7c43ba8db12e3f2d302d482d477ba2c2272dbeddfbdaca1da`;
+  Treant / Grove / Spore / Heartwood `1520x548` comparison
+  `75bbdd038bf0af049fa533ab8ae2e1fd372ff2b177d60c6f6bc7789f5550a603`;
+  raw / Complete B + Form `640x672` GIFs
+  `3d10b4482f09eec6ca4f190068773c0ee5a8b92e8cd49c7e3ca180b8bd1cad0f` /
+  `99ab8665236d9d8b43f692f5ca49322f04de0313109852fbf500d8871f01a995`.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded hard-alpha
+  frames; 80/80 pixel and alpha-silhouette distinctions from public Treant,
+  approved Grove Tender, and approved Spore Cantor; 72/72 colored
+  branch-armored frames; 8/8 exact white flashes; opaque range 236-270; 9,551
+  Complete B additions; 6,643 Form changes; candidate digest
+  `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
+- Protected boundaries: all eight previously approved EN-E06 suites remain
+  exact; public catalog stays 80/259 with two public Dryad variants; all 232
+  committed fixtures remain untouched; the candidate is absent from public
+  facade, selectors, packs, manifest, and exports.
+- Broader validation: all nine affected EN-E06 predecessor gates, the exact
+  1,200-frame approved-integration gate, `check:fast`, and the full project
+  suite pass; the full run completes in 121.5s with all 232 fixtures valid.
+- Required next action: review the exact raw, Complete B + Form, and four-way
+  comparison artifacts together. Do not commit, push, alter registration,
+  start Redcap or Nymph, generate fixtures, add effects, release, or open EN-E07
+  without explicit visual approval.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3475,13 +3533,16 @@ The designer authorized the completed-sprite assembler integration on
 six completed EN-E03 suites, all eight completed EN-E06 suites, and the public
 Ghoul Upgrade route. Complete Kit is 2,196 PNGs; all 232 committed fixtures
 remain unchanged. Focused, fast, and full validation pass. The implementation
-and reconciled documentation are ready for designer review but are not yet
-committed or pushed.
+and reconciled documentation are committed and pushed at
+`90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
 
-No additional enemy-art, fixture, effect, or release gate is active.
-Heartwood Warden, Redcap, Nymph, EN-E07, and the three EN-E03 Idle-only variants
-remain separate. Publication of this bounded integration requires explicit
-designer approval.
+The only active enemy-art gate is the isolated private Heartwood Warden
+complete-suite candidate on `codex/en-e06-dryad-heartwood-warden`. Its exact
+80-frame evidence is hash-frozen and technically validated at digest
+`fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`,
+but visual approval is pending. Do not commit or push it before that decision.
+Redcap, Nymph, EN-E07, the three EN-E03 Idle-only variants, public-registration
+changes, fixtures, effects, and release remain separate closed gates.
 
 ### Historical Authorization Chronology
 

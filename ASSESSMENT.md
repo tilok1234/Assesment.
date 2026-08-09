@@ -210,9 +210,15 @@ Treant-distinct, and Grove-distinct frames at digest
 Its crown, gills, shelves, and fruiting bodies remain connected while spore
 clouds and motes stay external. The exact raw and outlined review packet was
 visually approved on 2026-08-09; implementation `46d1dc9` and approval record
-`61d1fa4` are published. Fixture regeneration, Heartwood Warden, the legacy
-renderer split, boss consolidation, and the Wildshot writer remain separate
-decisions.
+`61d1fa4` are published. The later isolated Heartwood Warden elite Dryad
+candidate on `codex/en-e06-dryad-heartwood-warden` passes 80/80 connected,
+bounded, grounded, hard-alpha, Treant/Grove/Spore pixel, and Treant/Grove/Spore
+alpha-silhouette distinction gates at digest
+`fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
+Its exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
+is ready for visual review; candidate source remains uncommitted and unpushed.
+Fixture regeneration, Redcap/Nymph, the legacy renderer split, boss
+consolidation, and the Wildshot writer remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`
    lists the 166 stale sheets. If downstream should get the repaired art: `--all` + commit.

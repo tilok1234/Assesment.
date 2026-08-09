@@ -15,10 +15,67 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Integration And Actor Export Ready
+## Immediate Continuation Checkpoint - Heartwood Warden Candidate Ready
 
 Start here in a new task. This is the only active continuation section in this
 file; later checkpoints are historical provenance.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e06-dryad-heartwood-warden`, based exactly on clean pushed
+  integration/export checkpoint
+  `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
+- Authorization: after that checkpoint was committed and pushed, the designer
+  said `hey lets keep going with the 80 enemies plan`. Following the documented
+  EN-E06 Dryad role order, this opens only one complete elite Heartwood Warden
+  80-frame candidate.
+- Candidate scope: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact
+  Cast-to-Attack aliases, and exact Death-to-Hurt aliases H1,H2,H2,H2 across
+  Down, Left, Right, and Up.
+- Identity: dense ordinary-height living-wood fey with connected branch
+  pauldrons, ringed heartwood breastplate, short crown prongs, reinforced root
+  greaves, and one visibly forking warding arm. It remains fey-scaled rather
+  than broad or trunk-shaped like public Treant.
+- Effects firewall: protective auras, sap glow, bark shards, detached leaves,
+  acorns, vines, root eruptions, shield blooms, summoned plants, trails,
+  projectiles, impacts, and ground cracks remain external.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded hard-alpha
+  frames; 80/80 pixel and alpha-silhouette distinctions from public Treant,
+  approved Grove Tender, and approved Spore Cantor; 72/72 colored identity
+  frames; 8/8 exact white flashes; opaque range 236-270; 9,551 Complete B
+  additions; 6,643 Form changes.
+- Broader validation: all nine affected EN-E06 predecessor gates pass, the
+  1,200-frame approved-integration gate remains exact, `check:fast` passes in
+  61.7s, and full `npm.cmd run check` passes in 121.5s with all 232 committed
+  fixtures valid and untouched.
+- Frozen candidate digest:
+  `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `da3f003a61494a3414fe6c87e5f926c9257cb6c8b52e466cb5e82d9306467447` /
+  `488014aaaedc10c7c43ba8db12e3f2d302d482d477ba2c2272dbeddfbdaca1da`;
+  four-way Treant/Grove/Spore/Heartwood `1520x548` comparison
+  `75bbdd038bf0af049fa533ab8ae2e1fd372ff2b177d60c6f6bc7789f5550a603`;
+  raw / Complete B + Form `640x672` GIFs
+  `3d10b4482f09eec6ca4f190068773c0ee5a8b92e8cd49c7e3ca180b8bd1cad0f` /
+  `99ab8665236d9d8b43f692f5ca49322f04de0313109852fbf500d8871f01a995`.
+- Protected state: every approved Fairy, Hag, Grove Tender, and Spore Cantor
+  digest remains exact; public catalog remains 80 families / 259 variants with
+  exactly two public Dryads; all 232 committed fixtures remain untouched.
+- Publication state: candidate source and documentation are intentionally
+  uncommitted and unpushed. Review artifacts are ignored evidence. Stop for the
+  designer's explicit visual decision before commit, push, public-registration
+  changes, Redcap, Nymph, EN-E07, fixtures, effects, or release.
+
+Suggested opening request for the next chat:
+
+> Resume `codex/en-e06-dryad-heartwood-warden` from the exact candidate gate in
+> `HANDOFF.md`. Re-run its focused checker, open the raw, Complete B + Form, and
+> four-way comparison PNGs in Aseprite, and wait for explicit visual approval
+> before committing or pushing.
+
+## Historical Integration And Actor Export Checkpoint
+
+This section records the preceding integration and actor-export checkpoint. It
+is historical provenance; use the Heartwood Warden section above.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/approved-enemy-assembler-integration`, based on clean
@@ -85,11 +142,11 @@ file; later checkpoints are historical provenance.
   dimensions, hard alpha, 2,527,744 Complete B contour additions, file hashes,
   archive hash, and sidecar. Representative Player, NPC, Enemy, and Boss sheets
   were also inspected at original resolution and are correctly composed.
-- Publication state: implementation and docs are complete but not yet committed
-  or pushed. The generated package is intentionally ignored by Git. Stop here
-  for designer review/approval before publication.
+- Publication state: source and documentation were committed and pushed at
+  `90ac018923fbaa9906cd47cdc9ef22f0db77336a`. The generated package remains
+  intentionally ignored by Git.
 
-Suggested opening request for the next chat:
+Historical opening request at that checkpoint:
 
 > Resume `codex/approved-enemy-assembler-integration`, verify the cleanly scoped
 > integration diff and the Complete B actor-package artifact, then commit and

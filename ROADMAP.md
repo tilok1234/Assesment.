@@ -128,7 +128,19 @@ PNGs, and the 24-player Complete Pack maximum is 2,219 PNGs. The focused
 1,200-frame integration gate, fast gate, and full project gate pass. All 232
 legacy fixtures remain unchanged. Three EN-E03 Idle-only variants,
 Heartwood Warden, Redcap, Nymph, EN-E07, effects, fixture regeneration, and
-release remain outside this integration.
+release remain outside this integration. The integration source and docs are
+committed and pushed at `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
+
+Current EN-E06 art checkpoint (2026-08-09): the designer's `hey lets keep going
+with the 80 enemies plan` opens only one complete elite Dryad Heartwood Warden
+on `codex/en-e06-dryad-heartwood-warden`. Its private hash-frozen 80-frame
+candidate passes 80/80 connected, bounded, grounded, hard-alpha, Treant/Grove/
+Spore pixel, and Treant/Grove/Spore alpha-silhouette distinction gates at
+digest `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
+The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
+is ready for visual review. It is intentionally uncommitted and unpushed.
+Redcap, Nymph, EN-E07, registration changes, fixtures, shared renderer/schema
+changes, effects, and release remain closed.
 
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,
@@ -170,8 +182,8 @@ Treant-distinct, and Grove-distinct gates at digest
 `b22585e7b055f4ae43eb1293741967c1d76ec9bd3b842320880f2038c0cf62ef`.
 The exact raw and outlined review packet was visually approved on 2026-08-09;
 implementation `46d1dc9` and approval record `61d1fa4` are published.
-Heartwood Warden, EN-E07, registration, fixtures, shared renderer/schema
-changes, effects, and release remain separate, unauthorized gates.
+At that historical checkpoint Heartwood Warden, EN-E07, registration, fixtures,
+shared renderer/schema changes, effects, and release remained separate gates.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and

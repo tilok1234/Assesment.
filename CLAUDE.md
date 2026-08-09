@@ -99,7 +99,21 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`.
   The Complete Kit is 80 families / 259 enemy sheets / 2,196 PNGs; the
   24-player Complete Pack maximum is 2,219 PNGs. All 232 legacy fixtures stay
-  byte-unchanged, including the intentionally historical Ghoul fixture.
+  byte-unchanged, including the intentionally historical Ghoul fixture. Source
+  and documentation are committed and pushed at
+  `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
+- Current private art gate: `codex/en-e06-dryad-heartwood-warden`, based exactly
+  on `90ac018923fbaa9906cd47cdc9ef22f0db77336a`, contains one complete elite
+  Heartwood Warden candidate. Its 80 frames pass connected, one-cell-bounded,
+  grounded, hard-alpha, alias, mirror, and 80/80 pixel plus alpha-silhouette
+  distinction gates from public Treant, approved Grove Tender, and approved
+  Spore Cantor at digest
+  `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
+  The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
+  is ready for visual review. Candidate source is uncommitted and unpushed;
+  public Dryad remains exactly two variants within 80/259. Do not commit, push,
+  change registration, start Redcap/Nymph/EN-E07, generate fixtures, add
+  effects, or release before explicit approval.
 - The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved
@@ -164,8 +178,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Its fungal crown, gills, shelves, and fruiting bodies remain connected while
   spore clouds and motes stay external. The exact raw and outlined review
   packet was visually approved on 2026-08-09; implementation `46d1dc9` and
-  approval record `61d1fa4` are published. Registration, fixtures, Heartwood
-  Warden, effects, and broader Wave 2 work remain closed.
+  approval record `61d1fa4` are published. At that historical checkpoint,
+  registration, fixtures, Heartwood Warden, effects, and broader Wave 2 work
+  remained closed; the later current gate above authorizes Heartwood separately.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate

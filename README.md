@@ -1054,10 +1054,29 @@ digest: `b22585e7b055f4ae43eb1293741967c1d76ec9bd3b842320880f2038c0cf62ef`.
 The exact raw and Complete B + Form presentations were visually approved on
 2026-08-09. Implementation `46d1dc9` and approval record `61d1fa4` are
 published. Spore clouds and motes remain external; Dryad registration, fixture
-regeneration, Heartwood Warden, effects, and broader Wave 2 work are not
-authorized by that approval.
+regeneration, Heartwood Warden, effects, and broader Wave 2 work were not
+authorized by that approval. The designer's later `hey lets keep going with the
+80 enemies plan` opens the separate Heartwood Warden gate below.
 
-## Approved enemy backlog integration ready for publication
+Heartwood Warden is the dense elite Dryad: an ordinary-height living-wood fey
+with connected branch pauldrons, a ringed heartwood breastplate, short crown
+prongs, reinforced root greaves, and one visibly forking warding arm. Protective
+auras, sap glow, bark shards, detached leaves, acorns, vines, root eruptions,
+shield blooms, summoned plants, trails, projectiles, impacts, and ground cracks
+remain external. Run
+`npm.cmd run review:enemy-expansion-en-e06-dryad-heartwood-warden` for the raw,
+Complete B + Form, four-way Treant/Grove/Spore/Heartwood comparison board, and
+paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e06-dryad-heartwood-warden` for all 80
+frames, approved-source preservation, and the public/fixture firewall. The
+focused gate passes 80/80 connected, bounded, grounded frames and 80/80 pixel
+plus alpha distinctions from all three comparison actors at candidate digest
+`fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
+This candidate is private, uncommitted, and unpushed pending exact visual
+approval. Redcap, Nymph, EN-E07, registration changes, fixtures, effects, and
+release remain closed.
+
+## Approved enemy backlog integration published
 
 Branch `codex/approved-enemy-assembler-integration` composes three explicit
 lanes without changing reviewed sprite pixels: all eight completed EN-E06
@@ -1075,7 +1094,8 @@ frozen integration digest is
 The standalone Complete Kit is 2,196 PNGs and the 24-player Complete Pack
 maximum is 2,219 PNGs. The committed 232-file legacy fixture pack remains
 untouched; its `zombie-ghoul.png` intentionally stays the historical sprite
-until a separate fixture-regeneration approval.
+until a separate fixture-regeneration approval. Source and documentation are
+committed and pushed at `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
 
 ## EN-E05 assembler consumer integration implemented
 

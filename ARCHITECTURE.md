@@ -825,8 +825,29 @@ bounded, grounded, Treant-distinct, and Grove-distinct gates at digest
 The exact raw and Complete B + Form boards, comparison board, and paired GIFs
 were visually approved on 2026-08-09. The bounded implementation is published
 at `46d1dc9`, with approval record `61d1fa4`. Spore clouds and motes remain
-external. Registration, fixtures, Heartwood Warden, effects, release, and
-broader Wave 2 work stay closed.
+external. At that checkpoint registration, fixtures, Heartwood Warden, effects,
+release, and broader Wave 2 work stayed closed.
+
+`engine/enemy-expansion-en-e06-dryad-heartwood-warden.js` is the later isolated
+elite Dryad candidate boundary. It derives deterministic motion from the
+immutable Grove renderer, remaps the material planes to deep heartwood, warm
+cambium, evergreen leaves, ironwood plates, and amber growth rings, then adds
+connected branch pauldrons, crown prongs, heartplate, root greaves, and a
+forking warding arm. Dynamic opaque anchors keep every authored armor and branch
+pixel attached inside the one-cell margin. Protective auras, sap glow, bark
+shards, detached leaves, acorns, vines, roots, shield blooms, summoned plants,
+trails, projectiles, impacts, and ground cracks remain external.
+
+`npm run check:enemy-expansion-en-e06-dryad-heartwood-warden` exhausts the exact
+80-frame candidate, public Treant, both approved Dryads, and all earlier
+approved EN-E06 sources. It proves connected bounded grounded hard-alpha
+structure, exact aliases and mirrors, 80/80 pixel and alpha distinctions from
+all three comparison actors, unchanged public 80/259 and two-variant Dryad
+boundaries, deterministic five-artifact evidence, and candidate digest
+`fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
+The candidate remains private, uncommitted, and unpushed pending exact visual
+approval; registration changes, fixtures, Redcap, Nymph, effects, release, and
+later Wave 2 work remain closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
