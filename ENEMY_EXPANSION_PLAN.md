@@ -13,18 +13,19 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current art gate (2026-08-09): the designer's `hey lets keep going with the
-  80 enemies plan` opens only the third Dryad role, one complete elite
+- Current art checkpoint (2026-08-10): the designer's `hey lets keep going with
+  the 80 enemies plan` opened only the third Dryad role, one complete elite
   Heartwood Warden on `codex/en-e06-dryad-heartwood-warden`. Its frozen
-  80-frame candidate passes connected, one-cell-bounded, grounded, hard-alpha,
+  80-frame approved suite passes connected, one-cell-bounded, grounded, hard-alpha,
   alias, mirror, and 80/80 pixel plus alpha-silhouette distinction gates
   against public Treant and both approved Dryads at digest
   `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
   The exact raw, Complete B + Form, and four-way comparison packet was visually
-  approved on 2026-08-09, and the frozen implementation is committed at
-  `8a790e3f0d02cf64763733f83d17890c79ce83fc`. Bounded approval-record commit
-  and branch publication are authorized. Redcap, Nymph, EN-E07, fixtures,
-  effects, registration changes, and release remain closed.
+  approved on 2026-08-09. The frozen implementation
+  `8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval record
+  `d8c13bb008e3a186daa73a37eec87c707f30365f` are committed and pushed on the
+  tracked branch. No subsequent art gate is active. Redcap, Nymph, EN-E07,
+  fixtures, effects, registration changes, and release remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -2864,7 +2865,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `Heartwood Warden complete 80-frame suite approved; bounded publication authorized`
+- Status: `Heartwood Warden complete 80-frame suite approved and published; stop gate active`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3279,9 +3280,12 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 - Broader validation: all nine affected EN-E06 predecessor gates, the exact
   1,200-frame approved-integration gate, `check:fast`, and the full project
   suite pass; the full run completes in 121.5s with all 232 fixtures valid.
-- Required next action: commit and push the bounded approval record, then stop.
-  Do not alter registration, start Redcap or Nymph, generate fixtures, add
-  effects, release, or open EN-E07 without another explicit authorization.
+- Publication: implementation `8a790e3f0d02cf64763733f83d17890c79ce83fc`
+  and approval record `d8c13bb008e3a186daa73a37eec87c707f30365f` are
+  committed and pushed on the tracked branch.
+- Required next action: stop at this clean published checkpoint. Do not alter
+  registration, start Redcap or Nymph, generate fixtures, add effects, release,
+  or open EN-E07 without another explicit authorization.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3544,13 +3548,14 @@ and reconciled documentation are committed and pushed at
 `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
 
 The isolated private Heartwood Warden complete suite on
-`codex/en-e06-dryad-heartwood-warden` is visually approved. Its exact
-80-frame evidence is hash-frozen and technically validated at digest
+`codex/en-e06-dryad-heartwood-warden` is visually approved and published. Its
+exact 80-frame evidence is hash-frozen and technically validated at digest
 `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`,
-and implementation `8a790e3f0d02cf64763733f83d17890c79ce83fc` is committed.
-Only its bounded approval-record commit and branch publication are authorized.
-Redcap, Nymph, EN-E07, the three EN-E03 Idle-only variants, public-registration
-changes, fixtures, effects, and release remain separate closed gates.
+with implementation `8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval
+record `d8c13bb008e3a186daa73a37eec87c707f30365f` committed and pushed.
+No subsequent art gate is active. Redcap, Nymph, EN-E07, the three EN-E03
+Idle-only variants, public-registration changes, fixtures, effects, and release
+remain separate closed gates.
 
 ### Historical Authorization Chronology
 

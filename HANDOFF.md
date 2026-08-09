@@ -1,6 +1,6 @@
 # Project Handoff
 
-Date: 2026-08-09
+Date: 2026-08-10
 
 ## V2 Repository And Workflow Note
 
@@ -15,10 +15,11 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Heartwood Warden Approved
+## Immediate Continuation Checkpoint - Heartwood Warden Approved And Published
 
-Start here in a new task. This is the only active continuation section in this
-file; later checkpoints are historical provenance.
+Start here in a new task. This is the current stopping checkpoint; later
+sections are historical provenance. No subsequent art, registration, fixture,
+effect, release, or broader Wave 2 gate is active.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-dryad-heartwood-warden`, based exactly on clean pushed
@@ -26,7 +27,7 @@ file; later checkpoints are historical provenance.
   `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
 - Authorization: after that checkpoint was committed and pushed, the designer
   said `hey lets keep going with the 80 enemies plan`. Following the documented
-  EN-E06 Dryad role order, this opens only one complete elite Heartwood Warden
+  EN-E06 Dryad role order, this opened only one complete elite Heartwood Warden
   80-frame candidate.
 - Approval: the exact raw/no-outline and Complete B + Form animations plus the
   Treant/Grove/Spore/Heartwood comparison were presented, and all three exact
@@ -64,18 +65,21 @@ file; later checkpoints are historical provenance.
 - Protected state: every approved Fairy, Hag, Grove Tender, and Spore Cantor
   digest remains exact; public catalog remains 80 families / 259 variants with
   exactly two public Dryads; all 232 committed fixtures remain untouched.
-- Publication state: the exact approved implementation is committed at
-  `8a790e3f0d02cf64763733f83d17890c79ce83fc`. The approval record is ready for
-  bounded commit and branch push; review artifacts remain ignored evidence.
-  After publication, stop before public-registration changes, Redcap, Nymph,
-  EN-E07, fixtures, effects, or release.
+- Publication state: the exact approved implementation
+  `8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval record
+  `d8c13bb008e3a186daa73a37eec87c707f30365f` are committed and pushed on the
+  tracked origin branch; review artifacts remain ignored evidence.
+- Required next action: stop at this clean published checkpoint. Do not infer
+  public-registration changes, Redcap, Nymph, EN-E07, fixtures, effects,
+  release, or another art lane without separate explicit authorization.
 
 Suggested opening request for the next chat:
 
-> Resume `codex/en-e06-dryad-heartwood-warden` from the exact candidate gate in
-> `HANDOFF.md`. Verify implementation `8a790e3`, commit and push the exact
-> approval record, then stop. Do not infer Redcap, Nymph, registration,
-> fixtures, effects, release, or EN-E07 authorization.
+> Resume `codex/en-e06-dryad-heartwood-warden` from the clean published
+> checkpoint in `HANDOFF.md`. Verify implementation `8a790e3` and approval
+> record `d8c13bb`, then stop unless the designer explicitly selects a new
+> isolated gate. Do not infer Redcap, Nymph, registration, fixtures, effects,
+> release, or EN-E07 authorization.
 
 ## Historical Integration And Actor Export Checkpoint
 

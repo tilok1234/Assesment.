@@ -131,18 +131,19 @@ Heartwood Warden, Redcap, Nymph, EN-E07, effects, fixture regeneration, and
 release remain outside this integration. The integration source and docs are
 committed and pushed at `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
 
-Current EN-E06 art checkpoint (2026-08-09): the designer's `hey lets keep going
-with the 80 enemies plan` opens only one complete elite Dryad Heartwood Warden
+Current EN-E06 art checkpoint (2026-08-10): the designer's `hey lets keep going
+with the 80 enemies plan` opened only one complete elite Dryad Heartwood Warden
 on `codex/en-e06-dryad-heartwood-warden`. Its private hash-frozen 80-frame
-candidate passes 80/80 connected, bounded, grounded, hard-alpha, Treant/Grove/
+approved suite passes 80/80 connected, bounded, grounded, hard-alpha, Treant/Grove/
 Spore pixel, and Treant/Grove/Spore alpha-silhouette distinction gates at
 digest `fb7b50a0fefda66995c5e81f3e07c0c080893902a33d304066e79fb8181cd97c`.
 The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-was visually approved on 2026-08-09. The frozen implementation is committed at
-`8a790e3f0d02cf64763733f83d17890c79ce83fc`; only the bounded approval record
-and branch publication are authorized.
-Redcap, Nymph, EN-E07, registration changes, fixtures, shared renderer/schema
-changes, effects, and release remain closed.
+was visually approved on 2026-08-09. The frozen implementation
+`8a790e3f0d02cf64763733f83d17890c79ce83fc` and approval record
+`d8c13bb008e3a186daa73a37eec87c707f30365f` are committed and pushed on the
+tracked branch. No subsequent art gate is active. Redcap, Nymph, EN-E07,
+registration changes, fixtures, shared renderer/schema changes, effects, and
+release remain closed.
 
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,
