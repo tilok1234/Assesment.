@@ -1000,7 +1000,7 @@ and fixture firewalls. Candidate digest:
 The exact boards and paired GIFs were visually approved on 2026-08-09 and the
 bounded implementation is published at `8ce2f2a`. Do not register Hag,
 regenerate fixtures, or add effects without a separate continuation. The later
-`cool next please` opens only common Dryad Grove Tender on
+`cool next please` opened only common Dryad Grove Tender on
 `codex/en-e06-dryad-grove-tender`.
 
 Grove Tender is a slim ordinary-height living-wood fey with a connected leaf
@@ -1011,11 +1011,12 @@ upright against the stooped Hag. Run
 Complete B + Form, Treant/Blackthorn/Grove comparison boards and paired GIFs;
 run `npm.cmd run check:enemy-expansion-en-e06-dryad-grove-tender` for all 80
 frames, comparison distinctions, approved-lane preservation, and public and
-fixture firewalls. Candidate digest:
+fixture firewalls. Approved implementation digest:
 `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
-This exact candidate is uncommitted and unpushed pending visual approval. Do
-not register Dryad, regenerate fixtures, start Spore Cantor, add effects, or
-advance Wave 2 before that approval.
+The exact boards and GIFs were visually approved on 2026-08-09 and the bounded
+implementation is recorded at `3d96fed`. Only one complete private Spore Cantor
+specialist pass is authorized next. Do not register Dryad, regenerate fixtures,
+start Heartwood Warden, add effects, or advance broader Wave 2 work.
 
 ## EN-E05 assembler consumer integration implemented
 

@@ -144,14 +144,16 @@ distinction gates against both approved Hags at digest
 `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
 The exact packet was visually approved on 2026-08-09 and the bounded
 implementation is published at `8ce2f2a`, with clean handoff `8e56ec2`. The
-later `cool next please` opens only common Dryad Grove Tender on
-`codex/en-e06-dryad-grove-tender`. Its hash-frozen 80-frame candidate passes
+later `cool next please` opened only common Dryad Grove Tender on
+`codex/en-e06-dryad-grove-tender`. Its hash-frozen 80-frame suite passes
 connected, bounded, grounded, alias, mirror, and 80/80 pixel plus alpha
 distinction gates against public Treant and approved Blackthorn at digest
 `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
-It is internal, uncommitted, and unpushed pending visual approval. Spore
-Cantor, EN-E07, registration, fixtures, shared renderer/schema changes,
-effects, and release remain separate gates.
+The exact boards and GIFs were visually approved on 2026-08-09 and the bounded
+implementation is recorded at `3d96fed`. Only one complete private Spore Cantor
+specialist pass is authorized next; Heartwood Warden, EN-E07, registration,
+fixtures, shared renderer/schema changes, effects, and release remain separate
+gates.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and

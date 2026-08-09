@@ -190,14 +190,16 @@ same reply opened only one complete Blackthorn Matron lane. Its private
 digest `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
 The exact packet was visually approved on 2026-08-09 and its bounded
 implementation is published at `8ce2f2a`, with clean handoff `8e56ec2`. The
-later `cool next please` opens only common Dryad Grove Tender. Its private
-80-frame candidate passes 80/80 connected, bounded, grounded structure and
+later `cool next please` opened only common Dryad Grove Tender. Its private
+80-frame suite passes 80/80 connected, bounded, grounded structure and
 80/80 pixel plus alpha-silhouette distinctions from public Treant and approved
 Blackthorn at digest
 `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
-The candidate is uncommitted and unpushed pending visual approval. Spore
-Cantor, fixture regeneration, the legacy renderer split, boss consolidation,
-and the Wildshot writer remain separate decisions.
+The exact boards and GIFs were visually approved on 2026-08-09 and the bounded
+implementation is recorded at `3d96fed`. Only one complete private Spore Cantor
+specialist pass is authorized next; fixture regeneration, Heartwood Warden,
+the legacy renderer split, boss consolidation, and the Wildshot writer remain
+separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`
    lists the 166 stale sheets. If downstream should get the repaired art: `--all` + commit.

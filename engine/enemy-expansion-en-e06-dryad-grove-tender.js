@@ -36,7 +36,7 @@ export const EN_E06_GROVE_TENDER_CONTRACT = deepFreeze({
   family: 'dryad',
   variant: 'grove-tender',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'slim-living-wood-fey-humanoid-v1',
   silhouette: 'A slim upright humanoid-fey with a narrow trunk waist, living-wood limbs, connected leaf mantle, branch-like forearms, split root hems, and ordinary humanoid height. The form stays distinct from the broad trunk-bodied public Treant and the stooped feral Hag.',
   identity: 'Warm bark skin, dark heartwood torso, green leaf crown and shoulders, pale sapwood joints, small peach blossoms, amber sap eyes, and a visibly forked connected leading arm establish a young grove caretaker.',
@@ -59,12 +59,12 @@ export const EN_E06_GROVE_TENDER_DATA = deepFreeze({
 
 export const EN_E06_GROVE_TENDER_GATE = deepFreeze({
   id: 'en-e06-dryad-grove-tender-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-09',
   authorizationEvidence: 'After approving and publishing the complete Blackthorn Matron lane, the designer said: cool next please. The frozen EN-E06 family order advances from Hag to Dryad and authorizes only this one complete common Grove Tender 80-frame variant pass.',
-  approvedOn: null,
-  approvalEvidence: null,
-  publishedImplementation: null,
+  approvedOn: '2026-08-09',
+  approvalEvidence: 'The exact raw, Complete B + Form, and Treant/Blackthorn Matron/Grove Tender comparison boards plus both synchronized GIFs were presented, and the three exact PNG review boards were opened in Aseprite. The designer replied: approved lets do nexrt. This approves only the frozen 80-frame Grove Tender, its bounded implementation and approval commits, branch publication, and one separately isolated complete Spore Cantor specialist Dryad pass after publication. Registration, fixtures, effects, release, Heartwood Warden, Redcap, and broader Wave 2 work remain separate.',
+  publishedImplementation: '3d96fedc6127b09949befd06a5d177890f45dc05',
   precedingApproval: {
     gateId: EN_E06_BLACKTHORN_MATRON_GATE.id,
     artifactSha256: EN_E06_BLACKTHORN_MATRON_GATE.artifactSha256,
@@ -100,7 +100,7 @@ export const EN_E06_GROVE_TENDER_GATE = deepFreeze({
     'detached leaves', 'pollen', 'summoned plants', 'branch trails', 'projectiles', 'impact flashes',
     'effects', 'release', 'later EN-E06 sprites', 'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Stop for explicit visual approval of the exact frozen Grove Tender candidate. Do not commit, publish, register Dryad, generate fixtures, start Spore Cantor, begin Redcap, add effects, release, or broaden Wave 2 before that approval.',
+  nextGate: 'The exact Grove Tender implementation is approved and recorded for branch publication. The designer separately authorizes only one complete Spore Cantor specialist Dryad pass after that publication; Heartwood Warden, Dryad registration, fixtures, Redcap, effects, release, and broader Wave 2 work remain closed.',
 });
 
 export const EN_E06_GROVE_TENDER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

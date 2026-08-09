@@ -132,7 +132,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Thistle Hexer lane must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'dryad-grove-tender-full-candidate-2026-08-09', 'the EN-E06 ledger must preserve Thistle while identifying candidate Grove Tender');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'dryad-grove-tender-full-published-2026-08-09', 'the EN-E06 ledger must preserve Thistle while identifying published Grove Tender');
 
 check(EN_E06_FAIRY_GATE.status === 'approved', 'the Bramblewing Scout predecessor must retain exact approval');
 check(EN_E06_FAIRY_GATE.publishedImplementation === 'cc92ca9bb14f9fa7937a7e1e746d55fb754d9653', 'the published Bramblewing implementation drifted');
@@ -164,7 +164,7 @@ check(EN_E06_FAIRY_CONTRACT_CARD.variants[2].id === 'petalcrown-duelist' && EN_E
 check(EN_E06_CONTRACT_CARDS[1].variants[0].status === 'implemented-full-approved', 'the later approved Mire Crone lane must remain visible without changing the approved Thistle gate');
 check(EN_E06_CONTRACT_CARDS[1].variants[1].status === 'implemented-full-approved', 'the later approved Cauldron Hexer must remain visible without changing the approved Thistle gate');
 check(EN_E06_CONTRACT_CARDS[1].variants[2].status === 'implemented-full-approved', 'Blackthorn Matron must retain its full approval');
-check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-candidate/planned/planned', 'Dryad role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/planned/planned', 'Dryad role-order status drifted');
 for (const card of EN_E06_CONTRACT_CARDS.slice(3)) check(card.variants.every((variant) => variant.status === 'planned'), `${card.id} must remain contract-only`);
 
 check(EN_E06_THISTLE_HEXER_DATA.alphaPolicy === 'binary-folded-petal-negative-space', 'the specialist renderer data must retain its hard-alpha folded-wing policy');

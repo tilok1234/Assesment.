@@ -54,20 +54,21 @@ function captureLegacyFrame(spec, direction, animation, frame) {
   return Object.freeze({ pixels: Object.freeze(pixels), alpha: Uint8Array.from(pixels, (color) => color === null ? 0 : 255), opaquePixels: occupied.length, bounds: bounds && Object.freeze(bounds), outOfBoundsWrites: Object.freeze(outOfBoundsWrites), digest: pixelDigest(pixels), alphaDigest: alphaDigest(pixels) });
 }
 
-check(EN_E06_GROVE_TENDER_GATE.status === 'candidate' && EN_E06_GROVE_TENDER_GATE.approvedOn === null && EN_E06_GROVE_TENDER_GATE.publishedImplementation === null, 'Grove Tender must remain an unpublished visual candidate');
+check(EN_E06_GROVE_TENDER_GATE.status === 'approved' && EN_E06_GROVE_TENDER_GATE.approvedOn === '2026-08-09' && EN_E06_GROVE_TENDER_GATE.publishedImplementation === '3d96fedc6127b09949befd06a5d177890f45dc05', 'Grove Tender approval record drifted');
+check(EN_E06_GROVE_TENDER_GATE.approvalEvidence.includes('approved lets do nexrt') && EN_E06_GROVE_TENDER_GATE.approvalEvidence.includes('three exact PNG review boards were opened in Aseprite') && EN_E06_GROVE_TENDER_GATE.approvalEvidence.includes('one separately isolated complete Spore Cantor'), 'approval evidence drifted');
 check(EN_E06_GROVE_TENDER_GATE.authorizationEvidence.includes('cool next please') && EN_E06_GROVE_TENDER_GATE.authorizationEvidence.includes('one complete common Grove Tender'), 'authorization evidence drifted');
 check(EN_E06_GROVE_TENDER_GATE.precedingApproval.gateId === EN_E06_BLACKTHORN_MATRON_GATE.id && EN_E06_GROVE_TENDER_GATE.precedingApproval.publishedImplementation === EN_E06_BLACKTHORN_MATRON_GATE.publishedImplementation, 'approved Blackthorn Matron predecessor drifted');
 check(EN_E06_GROVE_TENDER_GATE.scope.includes('complete 80-frame Grove Tender') && EN_E06_GROVE_TENDER_GATE.animationContract.includes('visibly forks'), 'full-suite or motion contract drifted');
 check(EN_E06_GROVE_TENDER_GATE.exclusions.includes('asset-pack fixture generation or regeneration') && EN_E06_GROVE_TENDER_GATE.exclusions.includes('Spore Cantor implementation') && EN_E06_GROVE_TENDER_GATE.exclusions.includes('detached leaves'), 'scope exclusions drifted');
-check(EN_E06_GROVE_TENDER_GATE.nextGate.includes('explicit visual approval') && EN_E06_GROVE_TENDER_GATE.nextGate.includes('Do not commit'), 'candidate stop gate drifted');
+check(EN_E06_GROVE_TENDER_GATE.nextGate.includes('only one complete Spore Cantor') && EN_E06_GROVE_TENDER_GATE.nextGate.includes('Heartwood Warden') && EN_E06_GROVE_TENDER_GATE.nextGate.includes('remain closed'), 'approved continuation gate drifted');
 check(Object.isFrozen(EN_E06_GROVE_TENDER_GATE) && Object.isFrozen(EN_E06_GROVE_TENDER_DATA), 'gate and data must be deeply immutable');
 check(EN_E06_GROVE_TENDER_CONTRACT.family === 'dryad' && EN_E06_GROVE_TENDER_CONTRACT.variant === 'grove-tender' && EN_E06_GROVE_TENDER_CONTRACT.role === 'common', 'candidate contract drifted');
 check(EN_E06_GROVE_TENDER_CONTRACT.silhouette.includes('distinct from the broad trunk-bodied public Treant') && EN_E06_GROVE_TENDER_CONTRACT.effectBoundary.includes('remain external'), 'Dryad identity/effect boundary drifted');
-check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'dryad-grove-tender-full-candidate-2026-08-09', 'ledger must identify the isolated Grove Tender candidate');
+check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'dryad-grove-tender-full-published-2026-08-09', 'ledger must identify the published Grove Tender lane');
 
 check(EN_E06_CONTRACT_CARDS[0].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Fairies must remain approved');
 check(EN_E06_CONTRACT_CARDS[1].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Hags must remain approved');
-check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-candidate/planned/planned', 'Dryad role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/planned/planned', 'Dryad role-order status drifted');
 for (const card of EN_E06_CONTRACT_CARDS.slice(3)) check(card.variants.every(({ status }) => status === 'planned'), `${card.id} must remain contract-only`);
 check(EN_E06_GROVE_TENDER_REGISTRY.families.length === 1 && EN_E06_GROVE_TENDER_REGISTRY.publicFamilies.length === 0 && EN_E06_GROVE_TENDER_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);

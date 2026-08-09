@@ -15,25 +15,28 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E06 Dryad Grove Tender Candidate
+## Immediate Continuation Checkpoint - EN-E06 Dryad Spore Cantor Authorized
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
 
-- Repository/branch: current v2 checkout on
-  `codex/en-e06-dryad-grove-tender`, based exactly on clean published
-  Blackthorn Matron handoff `8e56ec2eb9a9d28c8702ea243dd4690e7746b6a9`.
-  Approved Blackthorn implementation `8ce2f2a5189c9498e1ace39aab70b9827a4ff0ae`,
-  both earlier Hags, and all three approved Fairies remain exact.
+- Repository/branch: publish `codex/en-e06-dryad-grove-tender`, then branch
+  `codex/en-e06-dryad-spore-cantor` from that exact clean head. Grove Tender's
+  approved implementation is `3d96fedc6127b09949befd06a5d177890f45dc05`,
+  based on clean published Blackthorn Matron handoff
+  `8e56ec2eb9a9d28c8702ea243dd4690e7746b6a9`. All earlier approved Fairy and
+  Hag pixels remain exact.
 - Authorization: after Blackthorn approval and publication, the designer said
   `cool next please` on 2026-08-09. The frozen family order advances from Hag
   to Dryad and opens only common `grove-tender` under the one-sprite cadence.
-- Gate: `en-e06-dryad-grove-tender-full-v1`; status `candidate`, internal,
-  uncommitted, and unpushed pending explicit visual approval.
-- Scope: one private 80-frame common Dryad across Idle, Walk, Attack, Cast,
-  Hurt, and Death in Down, Left, Right, and Up. Spore Cantor, Heartwood Warden,
-  Redcap, Nymph, registration, fixtures, effects, release, and broader Wave 2
-  work remain closed.
+- Grove gate: `en-e06-dryad-grove-tender-full-v1`; status `approved`. The exact
+  three PNG boards were opened in Aseprite and presented with both GIFs; the
+  designer replied `approved lets do nexrt` on 2026-08-09.
+- Next scope: after the bounded Grove publication, create one private 80-frame
+  specialist Dryad `spore-cantor` across Idle, Walk, Attack, Cast, Hurt, and
+  Death in Down, Left, Right, and Up. Heartwood Warden, Redcap, Nymph,
+  registration, fixtures, effects, release, and broader Wave 2 work remain
+  closed.
 - Identity: slim ordinary-height living-wood fey with warm bark skin, narrow
   heartwood torso, green leaf crown and mantle, pale sapwood joints, small
   blossoms, amber eyes, connected root hems, and one visibly forked branch arm.
@@ -67,16 +70,18 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Firewall: no public registration, facade import, shared renderer/schema
   change, asset-pack entry, selector/persistence route, pack/export change,
   fixture regeneration, effect, or release.
-- Required next gate: open the exact three hash-frozen PNGs in Aseprite and
-  present them with both GIFs. Stop for explicit visual approval; do not commit,
-  push, register Dryad, start Spore Cantor, or add effects before approval.
+- Required next gate: publish the exact two bounded Grove Tender commits, branch
+  cleanly, implement one complete Spore Cantor with its fungal crown connected
+  to the body while spore clouds and drifting motes remain external, generate
+  its exact boards and GIFs, open the exact PNGs in Aseprite, and stop for
+  explicit visual approval before commit or push.
 
 Suggested opening request for the next chat:
 
-> Continue the exact Grove Tender candidate on
-> `codex/en-e06-dryad-grove-tender`; inspect the three frozen boards and paired
-> GIFs, preserve all approved Fairies and Hags, and stop at visual approval
-> before publication or another Dryad role.
+> Continue from published Grove Tender on
+> `codex/en-e06-dryad-spore-cantor`; create only the complete specialist Spore
+> Cantor, preserve all approved Fairy, Hag, and Grove Tender pixels, keep spores
+> external, and stop at the exact-board visual gate before publication.
 
 # Historical Handoff Archive
 

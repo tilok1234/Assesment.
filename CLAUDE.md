@@ -141,14 +141,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
   Its exact boards and GIFs were visually approved on 2026-08-09 and the
   bounded implementation is published at `8ce2f2a`, with clean handoff
-  `8e56ec2`. The later `cool next please` opens only common Dryad Grove Tender
-  on `codex/en-e06-dryad-grove-tender`. Its private 80-frame candidate passes
+  `8e56ec2`. The later `cool next please` opened only common Dryad Grove Tender
+  on `codex/en-e06-dryad-grove-tender`. Its private 80-frame suite passes
   80/80 connected, bounded, grounded frames and differs from public Treant and
   approved Blackthorn in every pixel frame and alpha silhouette at digest
   `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
-  It is uncommitted and unpushed pending exact-board visual approval;
-  registration, fixtures, Spore Cantor, effects, and broader Wave 2 work remain
-  closed.
+  The exact boards and GIFs were visually approved on 2026-08-09 and the
+  bounded implementation is recorded at `3d96fed`. Only one complete private
+  Spore Cantor specialist pass is authorized next; registration, fixtures,
+  Heartwood Warden, effects, and broader Wave 2 work remain closed.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate

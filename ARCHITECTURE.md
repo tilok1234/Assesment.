@@ -772,7 +772,7 @@ deterministic five-artifact evidence, and candidate digest
 `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
 The exact packet passed visual approval on 2026-08-09 and the bounded
 implementation is published at `8ce2f2a`. Registration, fixtures, effects,
-and release stay closed. The later `cool next please` opens only Grove Tender.
+and release stay closed. The later `cool next please` opened only Grove Tender.
 
 `engine/enemy-expansion-en-e06-dryad-grove-tender.js` is the first private
 Dryad boundary. It derives deterministic upright motion from an existing
@@ -784,14 +784,16 @@ Vines, spores, roots, detached leaves, pollen, summoned plants, trails,
 projectiles, and impacts remain external.
 
 `npm run check:enemy-expansion-en-e06-dryad-grove-tender` exhausts all 80
-candidate frames, public Treant, approved Blackthorn Matron, all three approved
+approved frames, public Treant, approved Blackthorn Matron, all three approved
 Hags, and all three approved Fairies. It proves connected bounded grounded
 structure, exact aliases/mirrors, 80/80 pixel and alpha distinctions from both
 comparison actors, unchanged public 74/245 state, deterministic five-artifact
-evidence, and candidate digest
+evidence, and approved implementation digest
 `18fedaf06c457c8a280b3c5518b0763be48de3b3cb5bd29113f0fd5d183e3a21`.
-The lane remains an uncommitted, unpushed visual candidate; registration,
-fixtures, Spore Cantor, effects, release, and broader Wave 2 work stay closed.
+The exact boards and GIFs were visually approved on 2026-08-09 and the bounded
+implementation is recorded at `3d96fed`. Only one complete private Spore Cantor
+specialist pass is authorized next; registration, fixtures, Heartwood Warden,
+effects, release, and broader Wave 2 work stay closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
