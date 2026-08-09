@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Vampire Full-Suite Approved
+## Immediate Continuation Checkpoint - EN-E05 Vampire Full-Suite Approved And Published
 
 Start here in a new task. After the exact Mummy full-suite candidate was
 approved, published, and reconciled, its same direct approval response
@@ -26,7 +26,8 @@ priority advances to one common Vampire named Night Noble.
   exactly on clean reconciled Mummy handoff
   `3387bf2fd465e6e861450ba6e69ed2de31fd45ad`.
 - Gate: `en-e05-vampire-night-noble-full-v1`; status `approved`, internal,
-  non-public, uncommitted, and unpushed.
+  non-public, committed, and pushed at
+  `6a7cce2f84f86f7836b583341f56a1ae7e9c7a51`.
 - Approval evidence: after the exact approved-Mummy comparison and labeled
   all-four-direction raw/no-outline and Complete B + Form review surfaces were
   presented together, the designer replied `approved` on 2026-08-09. Approval
@@ -64,9 +65,13 @@ priority advances to one common Vampire named Night Noble.
 - Protected result: the approved Mummy, Ghoul, and EN-E04 public consumer gates
   pass; fast validation passes in `52.5s`; full `npm.cmd run check` passes in
   `102.6s` with the public 70/241 catalog and all 232 frozen fixtures unchanged.
-- Required next action: commit and push only the bounded approved ten-file
-  lane. Do not register Vampire or generate fixtures. Stop at the clean
-  published checkpoint; Revenant requires a later explicit continuation.
+- Publication checkpoint: the exact approved ten-file implementation is pushed
+  on the tracked origin branch at
+  `6a7cce2f84f86f7836b583341f56a1ae7e9c7a51`; generated review artifacts remain
+  ignored.
+- Required next action: stop at this clean published checkpoint. Do not
+  register Vampire or generate fixtures; Revenant requires a later explicit
+  continuation.
 
 ## Approved Preceding Checkpoint - EN-E05 Mummy Full-Suite Published
 

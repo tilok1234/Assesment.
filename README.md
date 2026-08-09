@@ -890,6 +890,7 @@ After the exact approved-Mummy comparison and paired labeled review surfaces
 were presented together, the designer replied `approved` on 2026-08-09. This
 authorizes only bounded publication of the hash-frozen internal lane. Vampire
 registration, fixtures, Revenant, Lich, and broader EN-E05 work remain excluded.
+The exact approved implementation is committed and pushed at `6a7cce2`.
 
 ## EN-E05 Mummy Tomb Walker full-suite approved internal lane
 

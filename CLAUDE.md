@@ -105,10 +105,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   next authorized lane is one separate complete Vampire candidate.
 - The next isolated EN-E05 lane is one visually approved full-suite Vampire
   Night Noble on `codex/en-e05-vampire`, based exactly on reconciled Mummy
-  handoff `3387bf2`. It is internal and non-public; its 80 frames, paired raw
-  and Complete B + Form evidence, and approved-Mummy comparison are
-  hash-frozen. Bounded publication is authorized. Do not register Vampire,
-  generate fixtures, or begin Revenant without a later explicit continuation.
+  handoff `3387bf2`, committed and pushed at `6a7cce2`. It is internal and
+  non-public; its 80 frames, paired raw and Complete B + Form evidence, and
+  approved-Mummy comparison are hash-frozen. Do not register Vampire or
+  generate fixtures; Revenant requires a later explicit continuation.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;

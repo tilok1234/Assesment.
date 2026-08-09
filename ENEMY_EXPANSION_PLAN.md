@@ -2449,11 +2449,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `active - Vampire Night Noble visually approved; bounded publication authorized`
+- Status: `active - Vampire Night Noble visually approved and published at 6a7cce2`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
 - Priority-first: Ghoul upgrade, Mummy, Vampire
-- Active gate: one complete common Vampire Night Noble candidate across all 80
-  standard frames; registration, fixtures, and Revenant remain gated
+- Active gate: none; stop at the clean published Vampire checkpoint while
+  registration, fixtures, and Revenant remain gated
 
 Shared leverage: broken posture, wrappings, capes, exposed bone, floating hems,
 and necrotic palette families. The Ghoul change is an explicit upgrade to the
@@ -2574,7 +2574,8 @@ silently alter unrelated Zombie variants.
 #### Vampire Night Noble full-suite approved internal lane
 
 - Gate ID: `en-e05-vampire-night-noble-full-v1`; status:
-  `approved`, internal, non-public, uncommitted, and unpushed on
+  `approved`, internal, non-public, committed, and pushed at
+  `6a7cce2f84f86f7836b583341f56a1ae7e9c7a51` on
   `codex/en-e05-vampire`, based exactly on clean reconciled Mummy handoff
   `3387bf2fd465e6e861450ba6e69ed2de31fd45ad`.
 - Authorization: after reviewing Mummy, the designer replied `lets do nextg`
@@ -2619,9 +2620,12 @@ silently alter unrelated Zombie variants.
   in `102.6s` with all 232 frozen fixtures unchanged.
 - Exclusions: Vampire registration, fixture generation, additional Vampire
   variants, Revenant, Lich, effects, release, and later EN-E05 work.
-- Required next action: commit and push only this bounded approved ten-file
-  lane. Keep Vampire registration and fixtures excluded, then stop at the clean
-  published checkpoint; Revenant requires a later explicit continuation.
+- Publication: the exact approved ten-file implementation is committed and
+  pushed at `6a7cce2f84f86f7836b583341f56a1ae7e9c7a51`; generated review artifacts
+  remain ignored.
+- Required next action: stop at this clean published checkpoint. Keep Vampire
+  registration and fixtures excluded; Revenant requires a later explicit
+  continuation.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not
