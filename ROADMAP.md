@@ -563,6 +563,17 @@ The approved aggregate digest remains
 the frozen 232-sheet legacy fixture pack remains untouched. The bounded
 implementation is published at `cedc774`, and current-state documentation is
 reconciled to that checkpoint.
+The next authorized one-sprite cadence starts EN-E05 with one isolated full
+`zombie/ghoul` replacement candidate on `codex/en-e05-ghoul-upgrade`. Its
+80-frame weaponless hunched-corpse suite, direct legacy comparison, raw board,
+Complete B + Form board, and paired labeled GIFs are hash-frozen. The focused
+gate passes all frames, mirror/alias contracts, connected/bounded anatomy,
+identity colors, treatment metrics, Zombie sibling locks, and the unchanged
+legacy fixture. Protected, fast, and full repository validation also pass.
+The designer reviewed the exact before/after plus labeled all-four-direction
+raw/no-outline and Complete B + Form evidence together and said `approved` on
+2026-08-09. Bounded publication of the isolated candidate is authorized;
+public routing, fixture replacement, Mummy, and effects remain separate gates.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

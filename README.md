@@ -857,6 +857,33 @@ legacy `asset-pack/` remains unchanged.
 The bounded implementation is committed and pushed at `cedc774` on
 `codex/en-e04-assembler-integration`.
 
+## EN-E05 Ghoul full-suite upgrade approved internal lane
+
+Branch `codex/en-e05-ghoul-upgrade` contains one visually approved isolated
+replacement candidate
+for existing `zombie/ghoul`. It does not add a second Ghoul family and does not
+change the current public catalog, legacy renderer, Zombie siblings, or frozen
+fixture. The candidate replaces the generic dagger humanoid read with a
+weaponless hunched corpse predator: long connected claw arms, a hooked side
+jaw, exposed rear spine and bone, torn grave leathers, ash-green flesh,
+corpse-yellow eyes, and a four-step stalking gait.
+
+Run `npm.cmd run review:enemy-expansion-en-e05-ghoul-upgrade` to reproduce the
+exact `910x548` before/after board, paired raw/no-outline and Complete B + Form
+`1428x760` full-suite boards, and paired `640x672` four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e05-ghoul-upgrade` to exhaust all 80
+frames, exact side mirrors and aliases, connected hard-alpha anatomy, one-cell
+margins, identity colors, legacy/public isolation, Zombie sibling locks, Form
+and Complete B treatment, and artifact hashes. The approved frame digest is
+`9f24d575dd7685afd0ca6411f23d6de2b05f90634ef9802d431881d046394477`.
+The protected EN-E04 gate, fast project gate, and full `npm.cmd run check` all
+pass with the public 70/241 catalog and 232 frozen fixtures unchanged.
+After the exact before/after plus labeled all-four-direction raw/no-outline and
+Complete B + Form evidence was presented together, the designer said
+`approved` on 2026-08-09. That approval authorizes bounded publication of this
+isolated lane only. Replacing public `zombie/ghoul`, regenerating any fixture,
+or starting Mummy requires a later explicit gate.
+
 ## Birdfolk Stormcrown Exarch full elite approved and published
 
 Branch `codex/en-e04-birdfolk-stormcrown-exarch` owns the next isolated

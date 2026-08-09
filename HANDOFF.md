@@ -15,6 +15,56 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
+## Immediate Continuation Checkpoint - EN-E05 Ghoul Full-Suite Approved
+
+Start here in a new task. After the complete EN-E04 roster entered the
+assembler, the designer requested a cadence of one complete sprite with every
+animation per run. The live plan advances to EN-E05 priority one: an explicit
+upgrade of existing `zombie/ghoul`, with before/after review required before any
+public or fixture replacement.
+
+- Repository/branch: current v2 checkout on `codex/en-e05-ghoul-upgrade`, based
+  exactly on clean published EN-E04 integration handoff `8b1ef2e`.
+- Gate: `en-e05-ghoul-upgrade-full-v1`; status `approved`, internal, non-public,
+  and authorized for bounded publication.
+- Approval evidence: after the exact before/after board plus labeled
+  all-four-direction raw/no-outline and Complete B + Form full-suite boards and
+  GIFs were presented together, the designer said `approved` on 2026-08-09.
+  The approval is limited to the frozen hashes below and does not authorize
+  public replacement or fixture regeneration.
+- Scope: one complete 80-frame replacement candidate across Down, Left, Right,
+  and Up: Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast-to-Attack aliases,
+  Hurt H1-H2, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Identity/motion: a weaponless hunched corpse predator with ash-green flesh,
+  long connected claws, a hooked profile jaw, exposed bone and rear spine,
+  torn grave leathers, corpse-yellow eyes, low corpse breathing, a four-step
+  stalking gait, full-body claw coil/rise/rake/recovery, and white hurt recoil.
+- Effect boundary: blood spray, rot motes, grave dust, claw trails, impacts,
+  necrotic mist, and debris remain external.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e05-ghoul-upgrade`.
+- Focused result: 80/80 frames differ from legacy; 80/80 connected and bounded;
+  72/72 colored identity frames; 36/36 colored side eyes; 18/18 eye-free rear
+  frames; exact mirrors and aliases; opaque range 170-209; 7,381 Complete B
+  additions; 6,381 Form changes. Candidate digest:
+  `9f24d575dd7685afd0ca6411f23d6de2b05f90634ef9802d431881d046394477`.
+- Review hashes: raw / Complete B + Form boards
+  `d1c94649e8520ff9dba6168caf06f6324ff473783b46d166fa2ab5bd4532003e` /
+  `2ffdeb527ffe097976b350602bf08db67fb95bb53f2a553ffa011047155d4570`;
+  before/after board
+  `2e6766dffa8600f2137df2f911996328a429eb56d1465429049f3193fa7c2144`;
+  raw / Complete B + Form GIFs
+  `a9bc8d2ec7413a399134e5ddb9f12f5a029b1393373c99aea74061b39ffb2f7c` /
+  `13c0bd1e514e5c077938129776cbc6c9e3524822a05a0b195abc855c06041d71`.
+- Firewall: public catalog remains 70/241. Public `zombie/ghoul` and all three
+  Zombie siblings retain exact 80-frame baselines; frozen fixture SHA-256 is
+  `a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2`.
+- Protected result: the EN-E04 public gate passes; fast validation passes in
+  `52.3s`; full `npm.cmd run check` passes in `114.6s` with the 70/241 public
+  catalog and all 232 frozen fixtures unchanged.
+- Required next action: commit and push only the bounded approved ten-file
+  lane. Do not replace public Ghoul pixels, regenerate fixtures, or begin Mummy;
+  each requires a later explicit gate.
+
 ## Immediate Continuation Checkpoint - EN-E04 Assembler Integration Published
 
 Start here in a new task. The designer authorized the three-part sequence with

@@ -2449,14 +2449,67 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `queued`
+- Status: `active - Ghoul full-suite candidate visually approved; bounded publication authorized`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
 - Priority-first: Ghoul upgrade, Mummy, Vampire
+- Active gate: one complete approved existing-Ghoul replacement candidate
+  across all 80 standard frames; public replacement and fixture regeneration
+  remain separate gates
 
 Shared leverage: broken posture, wrappings, capes, exposed bone, floating hems,
 and necrotic palette families. The Ghoul change is an explicit upgrade to the
 existing material and requires a before/after regression review; it must not
 silently alter unrelated Zombie variants.
+
+#### Existing Ghoul full-suite upgrade approved internal lane
+
+- Gate ID: `en-e05-ghoul-upgrade-full-v1`; status: `approved`, internal, and
+  non-public on
+  `codex/en-e05-ghoul-upgrade`, based exactly on clean published EN-E04
+  integration handoff `8b1ef2e`.
+- Authorization: after reviewing the 80-proposal accounting, the designer said
+  `nice lets do 1 full sprite with all animations each run` on 2026-08-09.
+  The live EN-E05 priority order selects the existing Ghoul upgrade first.
+- Approval: after the exact before/after board plus both labeled
+  all-four-direction raw/no-outline and Complete B + Form full-suite review
+  surfaces were presented together, the designer said `approved` on
+  2026-08-09. Approval applies only to this hash-frozen candidate and its
+  bounded publication.
+- Exact scope: one replacement candidate for `zombie/ghoul`; 80 frames across
+  Down, Left, Right, and Up with Idle F1-F2, Walk W1-W4, Attack A1-A4, exact
+  Cast aliases, Hurt H1-H2, and exact Death aliases H1,H2,H2,H2.
+- Identity: ash-green corpse flesh, exposed ivory bone, wine-dark wounds,
+  corpse-yellow eyes, torn grave leathers, a low hooked side jaw, hunched
+  shoulder shelf, long connected claws, exposed rear spine, uneven legs, and a
+  weaponless stalking gait. Blood, rot motes, dust, trails, impacts, mist, and
+  debris remain external.
+- Review evidence: raw / Complete B + Form full-suite boards
+  `d1c94649e8520ff9dba6168caf06f6324ff473783b46d166fa2ab5bd4532003e` /
+  `2ffdeb527ffe097976b350602bf08db67fb95bb53f2a553ffa011047155d4570`;
+  before/after board
+  `2e6766dffa8600f2137df2f911996328a429eb56d1465429049f3193fa7c2144`;
+  raw / Complete B + Form GIFs
+  `a9bc8d2ec7413a399134e5ddb9f12f5a029b1393373c99aea74061b39ffb2f7c` /
+  `13c0bd1e514e5c077938129776cbc6c9e3524822a05a0b195abc855c06041d71`.
+- Focused validation passes 80/80 changed-from-legacy frames, 80/80 connected
+  silhouettes, 80/80 one-cell margins, 72/72 colored identity frames, 36/36
+  colored side eyes, 18/18 eye-free colored rear frames, exact mirrors and
+  aliases, opaque range 170-209, 7,381 Complete B additions, and 6,381 Form
+  changes. Candidate digest:
+  `9f24d575dd7685afd0ca6411f23d6de2b05f90634ef9802d431881d046394477`.
+- Firewall: public `zombie/ghoul`, `zombie/shambler`, `zombie/rotter`, and
+  `zombie/brute` retain exact 80-frame digests; the committed Ghoul fixture
+  remains SHA-256
+  `a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2`.
+- Exclusions: public replacement in this approval-publication gate, fixture
+  regeneration, Mummy, Vampire,
+  Revenant, Lich, effects, release, and later EN-E05 work.
+- Protected validation: the EN-E04 public consumer gate passes; the fast gate
+  passes in `52.3s`; full `npm.cmd run check` passes in `114.6s` with 70/241
+  public catalog entries and all 232 frozen fixtures unchanged.
+- Required next action: commit and push only this bounded approved lane. Keep
+  public `zombie/ghoul`, the frozen fixture, and Mummy unchanged until later
+  explicit gates.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not
