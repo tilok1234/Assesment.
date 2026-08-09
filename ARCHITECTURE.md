@@ -1180,6 +1180,7 @@ lane renderers. No source renderer, candidate frame, public schema, or legacy
 catalog entry is rewritten. Gate `en-e04-nine-enemy-registration-v1` verifies
 all nine native `480x96` sheets and 720 candidate/registered frames at aggregate
 digest `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
+The validated registration checkpoint is published at `6f228fb`.
 The stable registry is now 13 families / 39 variants with four renderers; the
 consumer registry deliberately remains the repaired EN-E01/EN-E02 ten-family
 object, so `PUBLIC_ENEMIES`, editor paths, randomization, persistence, and

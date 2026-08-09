@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E04 Registration Implemented
+## Immediate Continuation Checkpoint - EN-E04 Registration Approved And Published
 
 Start here in a new task. The designer approved Stormcrown Exarch and the full
 three-step sequence by saying `sure lets do 123` on 2026-08-09. Step 1 is
@@ -26,8 +26,8 @@ EN-E04 roster into the stable registry without exposing it to consumers.
   `C:\Users\headc\Documents\sprite-assembler-v2` on
   `codex/en-e04-registration`, based exactly on clean Stormcrown handoff
   `6f81c92`.
-- Gate: `en-e04-nine-enemy-registration-v1`; status `approved`, implemented,
-  uncommitted, and unpushed.
+- Gate: `en-e04-nine-enemy-registration-v1`; status `approved`, committed, and
+  pushed at `6f228fb`.
 - Scope: three families / nine variants / nine complete `480x96` sheets / 720
   frames: Naga Coilguard, Venom Oracle, Temple Rajah; Merfolk Tideguard,
   Reefcaller, Pearl Regent; Birdfolk Aerie Scout, Gale Augur, Stormcrown Exarch.
@@ -48,10 +48,11 @@ EN-E04 roster into the stable registry without exposing it to consumers.
   `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
 - Protected result: foundation, EN-E01, EN-E02, repair, consumer, and EN-E03
   historical gates remain green after the stable-registry composition.
-- Required next action: run the full repository gate, commit and push the
-  bounded registration checkpoint, reconcile the handoff, then begin the
-  separately authorized assembler consumer-integration gate. Do not add
-  effects, later slices, or rewrite any approved pixels.
+- Publication checkpoint: `6f228fb` on the tracked origin branch; the focused
+  and full repository gates pass.
+- Required next action: begin the separately authorized assembler
+  consumer-integration gate. Do not add effects, later slices, or rewrite any
+  approved pixels.
 
 The approved and published Stormcrown checkpoint follows for provenance.
 

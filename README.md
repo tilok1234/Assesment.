@@ -819,7 +819,8 @@ integration, effects, release, and broader work remain outside.
 Branch `codex/en-e04-registration` composes the nine approved EN-E04 enemies
 into three stable families without changing their reviewed pixels. Naga,
 Merfolk, and Birdfolk each retain common, specialist, and elite variants through
-one family-local dispatcher in `engine/enemy-expansion-en-e04.js`.
+one family-local dispatcher in `engine/enemy-expansion-en-e04.js`. The bounded
+registration checkpoint is published at `6f228fb`.
 
 Run `npm.cmd run check:enemy-expansion-en-e04-registration` to exhaust all nine
 native `480x96` sheets and 720 candidate/registered frames. The frozen aggregate

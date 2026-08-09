@@ -548,6 +548,7 @@ The registration checkpoint on `codex/en-e04-registration` now composes all
 nine approved EN-E04 enemies as Naga, Merfolk, and Birdfolk common/specialist/
 elite families. All 720 candidate/registered frames match at aggregate digest
 `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
+The bounded registration checkpoint is published at `6f228fb`.
 The stable registry reaches 13 families / 39 variants, while the consumer
 firewall deliberately remains 67 families / 232 variants through EN-E02. The
 separately authorized assembler consumer-integration checkpoint is next.

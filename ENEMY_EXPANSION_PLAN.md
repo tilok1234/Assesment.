@@ -1778,7 +1778,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine, aquatic, and avian peoples
 
-- Status: `active - complete EN-E04 stable registration implemented; assembler consumer integration is next`
+- Status: `active - complete EN-E04 stable registration published; assembler consumer integration is next`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -2370,12 +2370,12 @@ upright avian person rather than collapse into the existing Harpy identity.
   registration checkpoint, then the assembler consumer-integration checkpoint.
   Additional variants, effects, release, and broader work remain outside.
 
-#### Complete EN-E04 nine-enemy registration implemented
+#### Complete EN-E04 nine-enemy registration approved and published
 
 - Gate ID: `en-e04-nine-enemy-registration-v1`; status: `approved` and
   implemented on `codex/en-e04-registration`, based exactly on clean published
-  Stormcrown handoff `6f81c92`. The registration work is currently uncommitted
-  and unpushed.
+  Stormcrown handoff `6f81c92`. The registration implementation is committed
+  and pushed at `6f228fb`.
 - Authorization: after Stormcrown review, the designer said `sure lets do 123`
   on 2026-08-09, authorizing publication, then registration, then assembler
   consumer integration as separate checkpoints.
@@ -2403,8 +2403,8 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Exclusions: consumer exposure, editor-specific branches, schema changes,
   effects, release, EN-E03 adoption, later slices, and any reviewed pixel
   changes.
-- Required next action: commit and push this bounded registration checkpoint,
-  reconcile its handoff, then complete the separately authorized assembler
+- Publication is complete at registration checkpoint `6f228fb`.
+- Required next action: complete the separately authorized assembler
   consumer-integration gate.
 
 ### EN-E05 - Undead humanoids
