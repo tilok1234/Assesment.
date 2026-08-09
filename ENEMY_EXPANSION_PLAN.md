@@ -2449,12 +2449,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `active - Ghoul full-suite candidate visually approved and published at 88d32e9`
+- Status: `active - Mummy Tomb Walker visually approved; bounded publication authorized`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
 - Priority-first: Ghoul upgrade, Mummy, Vampire
-- Active gate: one complete approved existing-Ghoul replacement candidate
-  across all 80 standard frames; public replacement and fixture regeneration
-  remain separate gates
+- Active gate: one complete common Mummy Tomb Walker candidate across all 80
+  standard frames; registration, fixtures, and Vampire remain gated
 
 Shared leverage: broken posture, wrappings, capes, exposed bone, floating hems,
 and necrotic palette families. The Ghoul change is an explicit upgrade to the
@@ -2512,8 +2511,61 @@ silently alter unrelated Zombie variants.
   pushed at `88d32e951441b9ce8f89eb6e3ab279bfc037a497`; generated review artifacts
   remain ignored.
 - Required next action: stop at this clean published checkpoint. Keep public
-  `zombie/ghoul`, the frozen fixture, and Mummy unchanged until later explicit
-  gates.
+  `zombie/ghoul` and the frozen fixture unchanged. The designer's later
+  `lets do next` activates only the separate Mummy candidate below.
+
+#### Mummy Tomb Walker full-suite approved internal lane
+
+- Gate ID: `en-e05-mummy-tomb-walker-full-v1`; status:
+  `approved`, internal, non-public, uncommitted, and unpushed on
+  `codex/en-e05-mummy`, based exactly on clean published Ghoul handoff
+  `1aa733c1cd47c60538e9fa8ff621987867e451e3`.
+- Authorization: after approving and publishing the complete Ghoul upgrade,
+  the designer said `lets do next` on 2026-08-09. The EN-E05 priority order
+  advances to Mummy under the established one-full-sprite cadence.
+- Approval: after the exact approved-Ghoul comparison and paired labeled
+  all-four-direction Mummy review surfaces were presented, the designer replied
+  `lets do nextg` on 2026-08-09. In its direct response context this is recorded
+  as approval of the frozen Mummy plus authorization to publish it before one
+  separate Vampire candidate.
+- Exact scope: one common `mummy/tomb-walker`; 80 frames across Down, Left,
+  Right, and Up with Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast aliases,
+  Hurt H1-H2, and exact Death aliases H1,H2,H2,H2.
+- Identity: sun-bleached ivory and papyrus linen, sepia shadow wraps, exposed
+  embalmed umber flesh, black tomb cavities, aged-gold bindings, turquoise
+  curse eyes and seal, a coffin-stiff wrapped head, asymmetric bound arms,
+  connected torn linen skirt, and dragging block feet.
+- Motion: rigid tomb sway and linen settle; four-step stiff drag; binding coil,
+  raised-arm threat, two-handed curse grasp, and full-body reseal; complete
+  white recoil plus colored rebind. Effects remain external.
+- Review evidence: raw / Complete B + Form full-suite boards
+  `6d652c60c88c8b892eaf6c6f70db03c1f1642f2df8ba35aa2a68c2b1645d891f` /
+  `67e36714906f6898381e74504b2e97ac2873e76828adc30b9b683ac0493aad3a`;
+  approved-Ghoul comparison
+  `0ccf489dfa662e9d61f9d2adc19d5de342ccedff12d37a6fd99cfd0e629c2ab4`;
+  raw / Complete B + Form GIFs
+  `df6e0a9319e510049f6e6fa11f267cbd42980fb45a3f8c1147c95a869e3fd194` /
+  `72279b6d39630d67264a901e9835013ba99470af3c139296ac28d56c68440b04`.
+- Focused validation passes 80/80 distinct-from-Ghoul pixel frames and alpha
+  silhouettes, 80/80 connected silhouettes, 80/80 one-cell margins, 72/72
+  colored identity frames, exact directional eyes, mirrors, and aliases,
+  opaque range 187-223, 7,518 Complete B additions, and 7,994 Form changes.
+  Candidate digest:
+  `321c5c7f05a55a6502b03d3876521c3b799c8156c2197efc3833c4af68a556fd`;
+  approved Ghoul digest remains
+  `9f24d575dd7685afd0ca6411f23d6de2b05f90634ef9802d431881d046394477`.
+- Firewall: public catalog remains 70/241; Zombie siblings and the frozen
+  legacy Ghoul fixture remain exact. Mummy has zero public families and no
+  fixture.
+- Protected validation: the approved Ghoul and EN-E04 public consumer gates
+  pass; the fast gate passes in `55.4s`; full `npm.cmd run check` passes in
+  `107.2s` with all 232 frozen fixtures unchanged.
+- Exclusions: Mummy registration, fixture generation, additional Mummy
+  variants, Vampire on this branch, Revenant, Lich, effects, release, and later
+  EN-E05 work.
+- Required next action: commit and push only this bounded approved lane. After
+  clean publication, create a separate branch for one complete Vampire
+  candidate.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not

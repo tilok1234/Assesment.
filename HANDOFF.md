@@ -15,7 +15,61 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Ghoul Full-Suite Approved And Published
+## Immediate Continuation Checkpoint - EN-E05 Mummy Full-Suite Approved
+
+Start here in a new task. After the exact Ghoul full-suite candidate was
+approved, published, and reconciled, the designer said `lets do next`. The live
+EN-E05 priority advances to one complete common Mummy named Tomb Walker under
+the established one-full-sprite cadence.
+
+- Repository/branch: current v2 checkout on `codex/en-e05-mummy`, based exactly
+  on clean published Ghoul handoff
+  `1aa733c1cd47c60538e9fa8ff621987867e451e3`.
+- Gate: `en-e05-mummy-tomb-walker-full-v1`; status `approved`, internal,
+  non-public, uncommitted, and unpushed.
+- Approval evidence: after the exact approved-Ghoul comparison and labeled
+  all-four-direction raw/no-outline and Complete B + Form review surfaces were
+  presented together, the designer replied `lets do nextg` on 2026-08-09. In
+  its direct response to the approval request, this is recorded as approval of
+  the frozen Mummy and authorization for bounded publication before one
+  separate Vampire candidate.
+- Scope: one complete 80-frame common Mummy across Down, Left, Right, and Up:
+  Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast-to-Attack aliases, Hurt
+  H1-H2, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Identity/motion: coffin-stiff wrapped head, asymmetric bound arms, narrow
+  bound waist, connected torn linen skirt, dragging block feet, parchment and
+  sepia linen, embalmed umber gaps, black tomb cavities, aged-gold bindings,
+  turquoise curse eyes, rigid sway, stiff four-step drag, two-handed grasp,
+  white recoil, and colored rebind.
+- Effect boundary: sand wakes, curse wisps, detached ribbons, scarab swarms,
+  dust, impacts, tomb glyphs, and necrotic auras remain external.
+- Review command: `npm.cmd run review:enemy-expansion-en-e05-mummy`.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e05-mummy`.
+- Focused result: 80/80 pixel frames and alpha silhouettes differ from approved
+  Ghoul; 80/80 connected and bounded; 72/72 colored identity frames; exact
+  front/side/rear eye rules, mirrors, and aliases; opaque range 187-223; 7,518
+  Complete B additions; 7,994 Form changes. Candidate digest:
+  `321c5c7f05a55a6502b03d3876521c3b799c8156c2197efc3833c4af68a556fd`.
+- Review hashes: raw / Complete B + Form boards
+  `6d652c60c88c8b892eaf6c6f70db03c1f1642f2df8ba35aa2a68c2b1645d891f` /
+  `67e36714906f6898381e74504b2e97ac2873e76828adc30b9b683ac0493aad3a`;
+  approved-Ghoul comparison
+  `0ccf489dfa662e9d61f9d2adc19d5de342ccedff12d37a6fd99cfd0e629c2ab4`;
+  raw / Complete B + Form GIFs
+  `df6e0a9319e510049f6e6fa11f267cbd42980fb45a3f8c1147c95a869e3fd194` /
+  `72279b6d39630d67264a901e9835013ba99470af3c139296ac28d56c68440b04`.
+- Firewall: approved Ghoul digest remains
+  `9f24d575dd7685afd0ca6411f23d6de2b05f90634ef9802d431881d046394477`;
+  public catalog remains 70/241; Zombie siblings and frozen legacy Ghoul
+  fixture remain unchanged; Mummy has zero public families and no fixture.
+- Protected result: the approved Ghoul and EN-E04 public consumer gates pass;
+  fast validation passes in `55.4s`; full `npm.cmd run check` passes in
+  `107.2s` with the public 70/241 catalog and all 232 frozen fixtures unchanged.
+- Required next action: commit and push only the bounded approved ten-file
+  lane. Do not register Mummy or generate fixtures. Begin one complete Vampire
+  candidate only on a separate branch after clean publication.
+
+## Approved Preceding Checkpoint - EN-E05 Ghoul Full-Suite Published
 
 Start here in a new task. After the complete EN-E04 roster entered the
 assembler, the designer requested a cadence of one complete sprite with every

@@ -574,7 +574,20 @@ The designer reviewed the exact before/after plus labeled all-four-direction
 raw/no-outline and Complete B + Form evidence together and said `approved` on
 2026-08-09. Bounded publication of the isolated candidate is complete at
 `88d32e9`. Public routing, fixture
-replacement, Mummy, and effects remain separate gates.
+replacement, and effects remain separate gates. The designer then said
+`lets do next`, activating exactly one common Mummy Tomb Walker on
+`codex/en-e05-mummy`. Its 80-frame coffin-stiff wrapped suite, approved-Ghoul
+comparison, raw board, Complete B + Form board, paired GIFs, and candidate
+digest are hash-frozen. The focused gate passes all frames, distinct
+silhouettes, connected/bounded anatomy, directional eyes, mirrors, aliases,
+identity colors, treatment metrics, approved-Ghoul preservation, public
+catalog locks, and the unchanged legacy fixture. It remains internal,
+non-public, uncommitted, and unpushed. The designer replied `lets do nextg`
+after the exact review; in direct context this approves bounded Mummy
+publication and authorizes one separate Vampire candidate afterward.
+Registration, fixtures, and effects remain separate gates. The
+approved Ghoul and EN-E04 public gates, fast validation, and full validation
+pass with the 70/241 public catalog and all 232 fixtures unchanged.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

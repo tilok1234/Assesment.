@@ -857,6 +857,41 @@ legacy `asset-pack/` remains unchanged.
 The bounded implementation is committed and pushed at `cedc774` on
 `codex/en-e04-assembler-integration`.
 
+## EN-E05 Mummy Tomb Walker full-suite approved internal lane
+
+Branch `codex/en-e05-mummy` contains one visually approved isolated common
+Mummy named Tomb Walker, based exactly on the published Ghoul handoff
+`1aa733c`. It remains internal and non-public. The sprite uses a coffin-stiff wrapped head,
+asymmetric bound arms, a narrow linen waist and connected torn skirt, dragging
+block feet, parchment/sepia wrappings, embalmed umber gaps, aged-gold bindings,
+and turquoise curse eyes. Sand, curse wisps, detached ribbons, scarabs, dust,
+impacts, glyphs, and auras remain external.
+
+Run `npm.cmd run review:enemy-expansion-en-e05-mummy` to reproduce the exact
+approved-Ghoul comparison, raw/no-outline and Complete B + Form `1428x760`
+full-suite boards, and paired `640x672` four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e05-mummy` to exhaust all 80 frames,
+approved-Ghoul distinction, connected hard-alpha anatomy, one-cell margins,
+directional eyes, mirrors, aliases, motion phases, presentation treatment, and
+public/fixture firewalls. Candidate digest:
+`321c5c7f05a55a6502b03d3876521c3b799c8156c2197efc3833c4af68a556fd`.
+Raw / Complete B + Form board hashes are
+`6d652c60c88c8b892eaf6c6f70db03c1f1642f2df8ba35aa2a68c2b1645d891f` /
+`67e36714906f6898381e74504b2e97ac2873e76828adc30b9b683ac0493aad3a`;
+the Ghoul comparison is
+`0ccf489dfa662e9d61f9d2adc19d5de342ccedff12d37a6fd99cfd0e629c2ab4`;
+raw / Complete B + Form GIF hashes are
+`df6e0a9319e510049f6e6fa11f267cbd42980fb45a3f8c1147c95a869e3fd194` /
+`72279b6d39630d67264a901e9835013ba99470af3c139296ac28d56c68440b04`.
+The protected Ghoul and EN-E04 gates pass; fast validation passes in `55.4s`
+and full validation passes in `107.2s`, with the public 70/241 catalog and all
+232 fixtures unchanged.
+After the exact comparison and paired review surfaces were presented, the
+designer replied `lets do nextg` on 2026-08-09; in its direct context this is
+recorded as approval plus authorization to publish Mummy before beginning one
+separate Vampire candidate. Mummy registration, fixtures, and broader EN-E05
+work remain excluded from this lane.
+
 ## EN-E05 Ghoul full-suite upgrade approved internal lane
 
 Branch `codex/en-e05-ghoul-upgrade` contains one visually approved isolated
