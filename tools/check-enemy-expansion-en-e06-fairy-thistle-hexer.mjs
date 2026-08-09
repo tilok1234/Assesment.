@@ -132,7 +132,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Thistle Hexer lane must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-petalcrown-duelist-full-approved-2026-08-09', 'the EN-E06 ledger must preserve published Thistle Hexer while identifying the approved Petalcrown Duelist gate');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-petalcrown-duelist-full-published-2026-08-09', 'the EN-E06 ledger must preserve published Thistle Hexer while identifying the published Petalcrown Duelist gate');
 
 check(EN_E06_FAIRY_GATE.status === 'approved', 'the Bramblewing Scout predecessor must retain exact approval');
 check(EN_E06_FAIRY_GATE.publishedImplementation === 'cc92ca9bb14f9fa7937a7e1e746d55fb754d9653', 'the published Bramblewing implementation drifted');

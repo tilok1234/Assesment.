@@ -130,10 +130,10 @@ silhouettes differ from both approved Fairies; candidate digest is
 The published runtime boundary remains 17/43 expansion and 74/245 public with a
 2,182-PNG Complete Kit; public `zombie/ghoul`, all 232 committed fixtures,
   effects, release state, and EN-E03 isolation remain unchanged. The designer
-  approved the exact Petalcrown boards and paired GIFs on 2026-08-09, authorizing
-  only bounded commit and branch publication; approval-state fast validation
-  passes in `50.4s` and full
-validation in `106.2s`. Hag and later EN-E06 art, EN-E07, registration, fixtures, shared
+  approved the exact Petalcrown boards and paired GIFs on 2026-08-09; the bounded
+  implementation is published at `b265e97`. Approval-state fast validation
+  passes in `54.9s` and full validation in `107.2s`. Hag and later EN-E06 art,
+  EN-E07, registration, fixtures, shared
 renderer/schema changes, effects, and release each require a separate
 continuation.
 

@@ -2838,7 +2838,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `approved internal - Fairy Petalcrown Duelist complete 80-frame lane authorized for bounded publication`
+- Status: `approved internal - Fairy Petalcrown Duelist complete 80-frame lane published at b265e97`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -2969,7 +2969,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 #### Approved Fairy Petalcrown Duelist complete suite
 
 - Gate ID: `en-e06-fairy-petalcrown-duelist-full-v1`; status:
-  `approved`, internal, with bounded commit and push authorized on
+  `approved`, internal, and published at `b265e97` on
   `codex/en-e06-fairy-petalcrown-duelist`, based exactly on clean published
   Thistle reconciliation `581bff99e2a99fc99b77402baffe2911b5a2ee47`.
 - Authorization: after the exact Thistle Hexer lane was approved and published,
@@ -3011,14 +3011,14 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 - Protected boundaries: approved Bramblewing full/Idle and Thistle full gates
   pass unchanged; EN-E05 consumers remain 74/245 and 320/320; all 232 fixtures
   remain frozen; `fairy` remains absent from the public catalog, engine facade,
-  and asset-pack manifest. Approval-state fast validation passes in `50.4s`
-  and full validation passes in `106.2s`.
+  and asset-pack manifest. Approval-state fast validation passes in `54.9s`
+  and full validation passes in `107.2s`.
 - Exclusions: Hag/Dryad/Redcap/Nymph art, registration, consumers, fixture work,
   shared renderer/schema/interface changes, effects, release, EN-E07, and later
   Wave 2 work.
-- Required next action: commit and push only the exact approved Petalcrown lane,
-  reconcile its implementation checkpoint, then stop. Do not begin Hag, register
-  Fairy, generate fixtures, or broaden Wave 2 without a separate continuation.
+- Publication state: the exact approved Petalcrown implementation is published
+  at `b265e972e719d6b697c99085503a1f2ea341da61`. Stop before Hag, Fairy
+  registration, fixtures, or broader Wave 2 work; each requires a separate continuation.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3284,7 +3284,7 @@ said `lets do next`, advancing only to elite Fairy Petalcrown Duelist gate
 `en-e06-fairy-petalcrown-duelist-full-v1` on
 `codex/en-e06-fairy-petalcrown-duelist`, based at clean reconciliation
   `581bff9`. Its hash-frozen 80-frame suite is technically validated, internal,
-  non-public, and explicitly visually approved for bounded publication. Hag,
+  non-public, visually approved, and published at `b265e97`. Hag,
 Dryad, Redcap, Nymph, EN-E07, public Ghoul replacement, fixture work, EN-E03
 adoption, effects, and release remain separate closed gates; authorization must
 not be broadened past this one complete-sprite pass.

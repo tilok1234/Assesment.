@@ -138,7 +138,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Fairy suite must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public frame digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-petalcrown-duelist-full-approved-2026-08-09', 'the EN-E06 ledger must preserve published Bramblewing while identifying the approved Petalcrown Duelist gate');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-petalcrown-duelist-full-published-2026-08-09', 'the EN-E06 ledger must preserve published Bramblewing while identifying the published Petalcrown Duelist gate');
 
 check(EN_E06_FAIRY_IDLE_GATE.status === 'approved', 'the Fairy Idle predecessor must retain exact designer approval');
 check(EN_E06_FAIRY_IDLE_GATE.approvedOn === '2026-08-09', 'the Fairy Idle approval date drifted');

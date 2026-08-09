@@ -904,7 +904,8 @@ Thistle publication, the designer said `lets do next`, opening only one complete
   Thistle reconciliation `581bff9`. Petalcrown is technically validated,
   internal, and non-public. Its exact hash-frozen review surfaces were opened
   directly in Aseprite, and the designer approved the three PNG boards plus
-  paired GIFs on 2026-08-09, authorizing bounded commit and branch publication.
+  paired GIFs on 2026-08-09. The bounded implementation is published at
+  `b265e97`.
 
 The approved compact Bramblewing Fairy has plum hair, pointed ears, a leaf-green dress, gold
 fasteners, and paired pale-mint open-lattice wings. The wings are connected

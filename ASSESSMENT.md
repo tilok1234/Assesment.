@@ -173,8 +173,9 @@ Bramblewing Scout and Thistle Hexer remain exact, internal, non-public, and
 published at `cc92ca9` and `3dc68cb`. After Thistle publication, the designer
 said `lets do next`, opening only elite Fairy Petalcrown Duelist. Its private
  80-frame suite passes focused structural and two-predecessor distinction gates.
- The designer approved its exact boards and paired GIFs on 2026-08-09, authorizing
- bounded commit and branch publication only. The active handoff starts with that approved lane above an
+ The designer approved its exact boards and paired GIFs on 2026-08-09; the
+ bounded implementation is published at `b265e97`. The active handoff starts
+ with that approved lane above an
 explicitly marked historical archive. Hag, fixture regeneration, the legacy
 renderer split, boss-generator consolidation, and the Wildshot writer remain
 separate decisions.

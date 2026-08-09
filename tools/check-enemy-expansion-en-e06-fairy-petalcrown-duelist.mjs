@@ -131,7 +131,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Petalcrown lane must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-petalcrown-duelist-full-approved-2026-08-09', 'the EN-E06 ledger must identify the approved Petalcrown Duelist gate');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-petalcrown-duelist-full-published-2026-08-09', 'the EN-E06 ledger must identify the published Petalcrown Duelist gate');
 
 check(EN_E06_FAIRY_GATE.status === 'approved' && EN_E06_FAIRY_GATE.publishedImplementation === 'cc92ca9bb14f9fa7937a7e1e746d55fb754d9653', 'the published Bramblewing predecessor drifted');
 check(EN_E06_THISTLE_HEXER_GATE.status === 'approved', 'the Thistle Hexer predecessor must retain exact approval');
@@ -144,6 +144,7 @@ check(EN_E06_PETALCROWN_DUELIST_GATE.authorizedOn === '2026-08-09', 'the Petalcr
 check(EN_E06_PETALCROWN_DUELIST_GATE.authorizationEvidence.includes('designer said: lets do next') && EN_E06_PETALCROWN_DUELIST_GATE.authorizationEvidence.includes('one complete 80-frame variant pass'), 'the gate must retain the explicit next-variant authorization and one-sprite cadence');
 check(EN_E06_PETALCROWN_DUELIST_GATE.approvedOn === '2026-08-09', 'the Petalcrown approval date drifted');
 check(EN_E06_PETALCROWN_DUELIST_GATE.approvalEvidence.includes('designer replied: approved') && EN_E06_PETALCROWN_DUELIST_GATE.approvalEvidence.includes('frozen 80-frame Petalcrown Duelist candidate') && EN_E06_PETALCROWN_DUELIST_GATE.approvalEvidence.includes('bounded commit and branch publication'), 'the gate must retain the exact designer approval and bounded publication evidence');
+check(EN_E06_PETALCROWN_DUELIST_GATE.publishedImplementation === 'b265e972e719d6b697c99085503a1f2ea341da61', 'the exact published Petalcrown Duelist implementation checkpoint drifted');
 check(EN_E06_PETALCROWN_DUELIST_GATE.precedingApproval.gateId === EN_E06_THISTLE_HEXER_GATE.id, 'the gate must identify Thistle Hexer as its approved predecessor');
 check(EN_E06_PETALCROWN_DUELIST_GATE.precedingApproval.candidateFrameDigest === EN_E06_THISTLE_HEXER_GATE.candidateFrameDigest, 'the gate must retain the approved Thistle digest');
 check(EN_E06_PETALCROWN_DUELIST_GATE.precedingApproval.publishedImplementation === EN_E06_THISTLE_HEXER_GATE.publishedImplementation && EN_E06_PETALCROWN_DUELIST_GATE.precedingApproval.publishedHandoff === '581bff9', 'the gate must retain the exact published Thistle implementation and handoff');
@@ -151,7 +152,7 @@ check(EN_E06_PETALCROWN_DUELIST_GATE.bramblewingApproval.candidateFrameDigest ==
 check(EN_E06_PETALCROWN_DUELIST_GATE.scope.includes('complete 80-frame Petalcrown Duelist') && EN_E06_PETALCROWN_DUELIST_GATE.scope.includes('Cast-to-Attack') && EN_E06_PETALCROWN_DUELIST_GATE.scope.includes('Death-to-Hurt'), 'the gate must retain the complete suite and alias scope');
 check(EN_E06_PETALCROWN_DUELIST_GATE.animationContract.includes('wide crown-wing guard') && EN_E06_PETALCROWN_DUELIST_GATE.animationContract.includes('attached lunge'), 'the elite motion contract must retain the crown-wing guard and attached lunge');
 check(EN_E06_PETALCROWN_DUELIST_GATE.exclusions.includes('changes to approved Bramblewing Scout source or pixels') && EN_E06_PETALCROWN_DUELIST_GATE.exclusions.includes('changes to approved Thistle Hexer source or pixels') && EN_E06_PETALCROWN_DUELIST_GATE.exclusions.includes('Hag implementation') && EN_E06_PETALCROWN_DUELIST_GATE.exclusions.includes('asset-pack fixture generation or regeneration'), 'the gate must protect earlier Fairies and exclude Hag and fixtures');
-check(EN_E06_PETALCROWN_DUELIST_GATE.nextGate.includes('Bounded commit, push, and publication') && EN_E06_PETALCROWN_DUELIST_GATE.nextGate.includes('stop for a separate continuation'), 'the approved Petalcrown lane must authorize only bounded publication and stop before Hag');
+check(EN_E06_PETALCROWN_DUELIST_GATE.nextGate.includes('published at b265e972e719d6b697c99085503a1f2ea341da61') && EN_E06_PETALCROWN_DUELIST_GATE.nextGate.includes('Stop for a separate continuation'), 'the published Petalcrown lane must retain its exact checkpoint and stop before Hag');
 check(Object.isFrozen(EN_E06_PETALCROWN_DUELIST_GATE) && Object.isFrozen(EN_E06_PETALCROWN_DUELIST_GATE.precedingApproval) && Object.isFrozen(EN_E06_PETALCROWN_DUELIST_GATE.exclusions), 'the Petalcrown gate must be deeply immutable');
 
 check(EN_E06_PETALCROWN_DUELIST_CONTRACT.family === 'fairy' && EN_E06_PETALCROWN_DUELIST_CONTRACT.variant === 'petalcrown-duelist', 'the candidate contract must remain one Fairy/Petalcrown Duelist');

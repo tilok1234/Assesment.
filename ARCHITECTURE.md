@@ -711,9 +711,9 @@ and mirrors, 72/72 colored crown-wing frames, 8/8 white flashes, deterministic
 raw/Complete B + Form/three-Fairy comparison evidence, unchanged 74/245 public
 state, and candidate digest
 `69de53e0b10aa80ef10afa7e3e8b6a9d913af81a365535f52e3f4be71945bd5c`.
-The gate is an approved internal lane authorized only for bounded commit and
-branch publication. Approval-state fast validation passes in `50.4s`
-and full validation passes in `106.2s`, with all 232 fixture sheets unchanged.
+The gate is an approved internal lane published at bounded implementation
+checkpoint `b265e97`. Approval-state fast validation passes in `54.9s`
+and full validation passes in `107.2s`, with all 232 fixture sheets unchanged.
 Hag, registration, fixtures, effects, release, and later Wave 2 work remain
 closed.
 

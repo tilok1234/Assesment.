@@ -125,9 +125,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   differ from both approved Fairies; candidate digest is
   `69de53e0b10aa80ef10afa7e3e8b6a9d913af81a365535f52e3f4be71945bd5c`.
   The designer approved the exact raw, Complete B + Form, and three-Fairy
-  comparison boards plus paired GIFs on 2026-08-09. This authorizes bounded
-  commit and branch publication only; the lane remains absent from the public
-  facade/catalog and fixtures. Do not begin Hag, register EN-E06, generate
+  comparison boards plus paired GIFs on 2026-08-09. The bounded implementation
+  is published at `b265e97`; the lane remains absent from the public facade,
+  catalog, and fixtures. Do not begin Hag, register EN-E06, generate
   fixtures, or broaden Wave 2.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at

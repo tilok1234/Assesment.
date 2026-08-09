@@ -79,6 +79,7 @@ export const EN_E06_PETALCROWN_DUELIST_GATE = deepFreeze({
   authorizationEvidence: 'After approving and publishing the complete Thistle Hexer, the designer said: lets do next. The frozen EN-E06 Fairy role order advances from common Bramblewing Scout and specialist Thistle Hexer to elite Petalcrown Duelist and authorizes only this one complete 80-frame variant pass.',
   approvedOn: '2026-08-09',
   approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline, Complete B + Form, and three-Fairy comparison Petalcrown Duelist boards plus the paired full-suite GIFs were presented, and the three exact PNGs were opened directly in Aseprite, the designer replied: approved. This approves only the frozen 80-frame Petalcrown Duelist candidate and authorizes its bounded commit and branch publication; Hag, registration, fixtures, effects, release, and later Wave 2 work remain separate gates.',
+  publishedImplementation: 'b265e972e719d6b697c99085503a1f2ea341da61',
   precedingApproval: {
     gateId: EN_E06_THISTLE_HEXER_GATE.id,
     artifactSha256: EN_E06_THISTLE_HEXER_GATE.artifactSha256,
@@ -140,7 +141,7 @@ export const EN_E06_PETALCROWN_DUELIST_GATE = deepFreeze({
     'later EN-E06 sprites',
     'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Bounded commit, push, and publication of this exact approved Petalcrown Duelist lane are authorized. After clean publication, reconcile the exact implementation commit and stop for a separate continuation; do not register Fairy, generate fixtures, begin Hag, or broaden Wave 2 without explicit authorization.',
+  nextGate: 'The exact approved Petalcrown Duelist lane is published at b265e972e719d6b697c99085503a1f2ea341da61. Stop for a separate continuation; do not register Fairy, generate fixtures, begin Hag, or broaden Wave 2 without explicit authorization.',
 });
 
 export const EN_E06_PETALCROWN_DUELIST_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

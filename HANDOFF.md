@@ -15,7 +15,7 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Approved EN-E06 Fairy Petalcrown Duelist Publication Authorized
+## Immediate Continuation Checkpoint - Published Approved EN-E06 Fairy Petalcrown Duelist
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
@@ -23,6 +23,8 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Repository/branch: current v2 checkout on
   `codex/en-e06-fairy-petalcrown-duelist`, based exactly on clean published
   Thistle reconciliation `581bff99e2a99fc99b77402baffe2911b5a2ee47`.
+  The approved Petalcrown implementation is published at
+  `b265e972e719d6b697c99085503a1f2ea341da61`.
   Approved Thistle Hexer implementation
   `3dc68cbae16acd2564d81607ac5a1ca1d569fbee` and approved Bramblewing Scout
   implementation `cc92ca9bb14f9fa7937a7e1e746d55fb754d9653` remain exact.
@@ -32,7 +34,7 @@ file; everything below `Historical Handoff Archive` is provenance.
   later variants/families remain closed. After the exact Petalcrown evidence was
   presented, the designer replied `approved` on 2026-08-09.
 - Gate: `en-e06-fairy-petalcrown-duelist-full-v1`; status
-  `approved`, internal, with bounded commit and branch publication authorized.
+  `approved`, internal, committed, and pushed on its isolated branch.
 - Scope: one private 80-frame elite Fairy across Idle, Walk, Attack, Cast,
   Hurt, and Death in Down, Left, Right, and Up. Approved Bramblewing Scout and
   Thistle Hexer source/pixels remain exact. Hag/Dryad/Redcap/Nymph art is absent.
@@ -69,7 +71,7 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Protected result: approved Bramblewing full/Idle and Thistle full gates pass
   unchanged; EN-E05 consumers remain exact at 74/245 and 320/320; all five
   review artifacts are present and hash-verified; approval-state fast
-  validation passes in `50.4s`, full validation passes in `106.2s`, and all 232
+  validation passes in `54.9s`, full validation passes in `107.2s`, and all 232
   fixtures remain frozen.
 - Firewall: the lane adds no public registration, facade import, shared
   renderer/schema/interface change, asset-pack entry, selector/persistence
@@ -80,9 +82,9 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Required reading: `CLAUDE.md`, this section, the EN-E06 candidate subsection,
   and `Current Authorization Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not use
   `docs/archive/` or the historical body below as current workflow.
-- Required next action: commit and push only the exact approved Petalcrown lane,
-  reconcile its implementation checkpoint, then stop. Do not register EN-E06,
-  generate fixtures, begin Hag, or broaden Wave 2.
+- Fulfilled continuation: the exact approved Petalcrown implementation and its
+  publication record are pushed. Stop here. Do not register EN-E06, generate
+  fixtures, begin Hag, or broaden Wave 2 without a separate continuation.
 
 Suggested opening request for the next chat:
 
@@ -90,8 +92,8 @@ Suggested opening request for the next chat:
 > current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Continue only the
 > approved Petalcrown Duelist lane on
 > `codex/en-e06-fairy-petalcrown-duelist`, based at `581bff9`; preserve
-> Bramblewing and Thistle exactly, publish only the bounded Petalcrown lane,
-> reconcile its checkpoint, and stop before Hag or registration.
+> Bramblewing and Thistle exactly, verify Petalcrown at published checkpoint
+> `b265e97`, and stop before Hag or registration without new authorization.
 
 # Historical Handoff Archive
 
