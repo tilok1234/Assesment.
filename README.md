@@ -857,6 +857,40 @@ legacy `asset-pack/` remains unchanged.
 The bounded implementation is committed and pushed at `cedc774` on
 `codex/en-e04-assembler-integration`.
 
+## EN-E05 Vampire Night Noble full-suite approved internal lane
+
+Branch `codex/en-e05-vampire` contains one visually approved isolated common
+Vampire named Night Noble, based exactly on reconciled Mummy handoff `3387bf2`.
+It remains internal and non-public. The sprite uses an upright widow-peaked head,
+connected wing collar, black-violet coat and cape, blood-crimson lining,
+ivory formal shirt, antique-gold clasp, pallid claw hands, ember-red eyes,
+split tailcoat, and long booted legs. Bats, blood, charm motes, shadow mist,
+afterimages, auras, projectiles, impacts, and ground fog remain external.
+
+Run `npm.cmd run review:enemy-expansion-en-e05-vampire` to reproduce the exact
+approved-Mummy comparison, raw/no-outline and Complete B + Form `1428x760`
+full-suite boards, and paired `640x672` four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e05-vampire` to exhaust all 80 frames,
+approved-Mummy distinction, connected hard-alpha anatomy, one-cell margins,
+directional eyes, mirrors, aliases, motion phases, presentation treatment, and
+public/fixture firewalls. Candidate digest:
+`b3943802e450e454d707f118a58fb81cdf43b3869d02da999b7232d8a0aab4ba`.
+Raw / Complete B + Form board hashes are
+`25a6944fa51889c6a09735ef47530a31591610b3c4ef4260aa88318d42d6239e` /
+`02bb524d6ef49a52026037a7f5ef1faf66d0f987c7e792c3b0599d7eb79776d0`;
+the Mummy comparison is
+`2862b5d4601eaef873a723100f5b462db1d6d0714fdf61b974bb2bc1b3c4fcb8`;
+raw / Complete B + Form GIF hashes are
+`7075df50690e8a00ed5f599a4b28f9095d5f010708d2dff269b9d4b5ed691101` /
+`d7c01c725c8d91896791bbe3a0144f597f27827e4f856824023f4dfcd0f69b22`.
+The protected Mummy, Ghoul, and EN-E04 gates pass; fast validation passes in
+`52.5s` and full validation passes in `102.6s`, with the public 70/241 catalog
+and all 232 fixtures unchanged.
+After the exact approved-Mummy comparison and paired labeled review surfaces
+were presented together, the designer replied `approved` on 2026-08-09. This
+authorizes only bounded publication of the hash-frozen internal lane. Vampire
+registration, fixtures, Revenant, Lich, and broader EN-E05 work remain excluded.
+
 ## EN-E05 Mummy Tomb Walker full-suite approved internal lane
 
 Branch `codex/en-e05-mummy` contains one visually approved isolated common

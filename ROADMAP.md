@@ -589,6 +589,19 @@ Registration, fixtures, and effects remain separate gates. The
 approved Ghoul and EN-E04 public gates, fast validation, and full validation
 pass with the 70/241 public catalog and all 232 fixtures unchanged. The exact
 Mummy implementation is published at `85f1ed7`.
+The reconciled Mummy handoff is `3387bf2`. Its approval response also authorizes
+one separate common Vampire Night Noble on `codex/en-e05-vampire`. The
+80-frame high-collared night-undead suite, approved-Mummy comparison, raw board,
+Complete B + Form board, paired GIFs, and candidate digest are hash-frozen. The
+focused gate passes all frames, distinct silhouettes, connected/bounded cape
+anatomy, directional ember eyes, mirrors, aliases, identity colors, treatment
+metrics, approved-Mummy preservation, public catalog locks, and the unchanged
+legacy fixture. It remains internal, non-public, uncommitted, and unpushed.
+After the exact paired review, the designer replied `approved` on 2026-08-09,
+authorizing only bounded publication of the frozen lane. Registration,
+fixtures, Revenant, and effects require later explicit gates. The approved
+Mummy, Ghoul, and EN-E04 public gates, fast validation, and full validation pass
+with the 70/241 public catalog and all 232 fixtures unchanged.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

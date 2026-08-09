@@ -15,7 +15,60 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Mummy Full-Suite Approved And Published
+## Immediate Continuation Checkpoint - EN-E05 Vampire Full-Suite Approved
+
+Start here in a new task. After the exact Mummy full-suite candidate was
+approved, published, and reconciled, its same direct approval response
+`lets do nextg` authorized one separate complete Vampire. The live EN-E05
+priority advances to one common Vampire named Night Noble.
+
+- Repository/branch: current v2 checkout on `codex/en-e05-vampire`, based
+  exactly on clean reconciled Mummy handoff
+  `3387bf2fd465e6e861450ba6e69ed2de31fd45ad`.
+- Gate: `en-e05-vampire-night-noble-full-v1`; status `approved`, internal,
+  non-public, uncommitted, and unpushed.
+- Approval evidence: after the exact approved-Mummy comparison and labeled
+  all-four-direction raw/no-outline and Complete B + Form review surfaces were
+  presented together, the designer replied `approved` on 2026-08-09. Approval
+  applies only to the frozen Vampire and its bounded branch publication; it
+  does not authorize Revenant.
+- Scope: one complete 80-frame common Vampire across Down, Left, Right, and Up:
+  Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast-to-Attack aliases, Hurt
+  H1-H2, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Identity/motion: widow-peaked head, connected crimson wing collar,
+  black-violet coat and cape, ivory shirt, gold clasp, pallid claw hands,
+  ember-red eyes, split tailcoat, long boots, controlled breath, four-step
+  predatory glide, cape coil, high claw flare, long rake, white recoil, and
+  colored composure.
+- Effect boundary: bats, blood, charm motes, shadow mist, teleport afterimages,
+  red auras, projectiles, bite impacts, and ground fog remain external.
+- Review command: `npm.cmd run review:enemy-expansion-en-e05-vampire`.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e05-vampire`.
+- Focused result: 80/80 pixel frames and alpha silhouettes differ from approved
+  Mummy; 80/80 connected and bounded; 72/72 colored identity frames; exact
+  front/side/rear eye rules, mirrors, and aliases; opaque range 194-239; 7,307
+  Complete B additions; 6,793 Form changes. Candidate digest:
+  `b3943802e450e454d707f118a58fb81cdf43b3869d02da999b7232d8a0aab4ba`.
+- Review hashes: raw / Complete B + Form boards
+  `25a6944fa51889c6a09735ef47530a31591610b3c4ef4260aa88318d42d6239e` /
+  `02bb524d6ef49a52026037a7f5ef1faf66d0f987c7e792c3b0599d7eb79776d0`;
+  approved-Mummy comparison
+  `2862b5d4601eaef873a723100f5b462db1d6d0714fdf61b974bb2bc1b3c4fcb8`;
+  raw / Complete B + Form GIFs
+  `7075df50690e8a00ed5f599a4b28f9095d5f010708d2dff269b9d4b5ed691101` /
+  `d7c01c725c8d91896791bbe3a0144f597f27827e4f856824023f4dfcd0f69b22`.
+- Firewall: approved Mummy digest remains
+  `321c5c7f05a55a6502b03d3876521c3b799c8156c2197efc3833c4af68a556fd`;
+  public catalog remains 70/241; Zombie siblings and frozen legacy Ghoul
+  fixture remain unchanged; Vampire has zero public families and no fixture.
+- Protected result: the approved Mummy, Ghoul, and EN-E04 public consumer gates
+  pass; fast validation passes in `52.5s`; full `npm.cmd run check` passes in
+  `102.6s` with the public 70/241 catalog and all 232 frozen fixtures unchanged.
+- Required next action: commit and push only the bounded approved ten-file
+  lane. Do not register Vampire or generate fixtures. Stop at the clean
+  published checkpoint; Revenant requires a later explicit continuation.
+
+## Approved Preceding Checkpoint - EN-E05 Mummy Full-Suite Published
 
 Start here in a new task. After the exact Ghoul full-suite candidate was
 approved, published, and reconciled, the designer said `lets do next`. The live
