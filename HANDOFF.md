@@ -15,7 +15,7 @@ verification workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Approved Abyssal Crown-Kraken Publication
+## Immediate Continuation Checkpoint - Published Approved Abyssal Crown-Kraken Animation
 
 Start here in a new task. This is the only active continuation section in this
 file; the published Lava checkpoint and everything below `Historical Handoff
@@ -25,7 +25,8 @@ Archive` are provenance.
   `codex/boss-abyssal-crown-kraken-animation` at
   `C:\Users\headc\Documents\sprite-assembler-v2\death-review\boss-worktrees\abyssal-crown-kraken-animation`,
   based exactly on reconciled published Lava checkpoint
-  `1154bb5d2f1f12acfa8c1c805af30ac7c999c1ef`.
+  `1154bb5d2f1f12acfa8c1c805af30ac7c999c1ef`. The accepted implementation is
+  published at `82938c75fb1fd9416d529e158bfe010cde92bf39`.
 - Parallel-lane firewall: the separate unapproved Petalcrown Duelist worktree
   remains untouched. The preceding Lava branch is clean and matches origin;
   neither lane is included in this Kraken branch.
@@ -35,8 +36,8 @@ Archive` are provenance.
   and visible Cycle All playback, the designer replied `approved`; Griffin and
   Unicorn remain closed.
 - Gate/status: accepted `boss-animation-v1` for `abyssal-crown-kraken`;
-  internal, review-only, effects-off, visually approved, and authorized for
-  publication.
+  internal, review-only, effects-off, visually approved, and published on its
+  isolated branch.
 - Scope: one complete 80-frame native `48x48` suite across Down, Left, Right,
   and Up: Idle x2, Walk x4, Attack x4, Cast x4, Hurt x2, and Death x4. Right is
   the exact mirror of Left and every Idle frame 1 is byte-identical to the
@@ -68,9 +69,9 @@ Archive` are provenance.
 - Validation state: the accepted-state `npm.cmd run check:bosses` and full
   `npm.cmd run check` pass; the full gate completes in `122.9s`
   with the public Enemy catalog still 74/245 and all 232 fixture PNGs unchanged.
-- Required next action: publish only this isolated Kraken lane, verify clean
-  upstream parity, and stop. Do not start Griffin or run the frozen
-  `export:bosses:13` command.
+- Required next action: publish this documentation reconciliation, verify clean
+  upstream parity, and stop. Griffin and Unicorn remain closed; do not run the
+  frozen `export:bosses:13` command.
 
 ## Published Preceding Checkpoint - Approved Lava-Core Colossus Animation
 

@@ -192,7 +192,8 @@ entries. Catgirl Templar and Astro Knight are accepted; Goblin War-Crown,
 Rhino, and Boar Rider animations remain candidates, as do the repaired Rhino and
 Unicorn direction designs. Lava-Core Colossus and Abyssal Crown-Kraken are
 accepted after exact-sheet and live Cycle All review. Kraken's accepted-state
-full repository gate passes in `122.9s` with all 232 fixture PNGs unchanged.
+full repository gate passes in `122.9s` with all 232 fixture PNGs unchanged;
+its isolated implementation is published at `82938c7`.
 
 The deterministic `wildshot-npc-slice-v1@bf6269c` delivery contains 32
 Player-built NPC looks and was verified by the game intake. The approved

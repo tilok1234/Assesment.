@@ -1287,6 +1287,7 @@ Idle-frame control parity, facade immutability, native-only download wiring,
 and absence from production renderer, generator, persistence, game-pack, and
 ordinary sheet dependencies. With the Kraken animation accepted, the full
 repository gate passes in `122.9s` with all 232 fixture PNGs unchanged.
+The accepted implementation is published at checkpoint `82938c7`.
 
 The standard full `npm run check` is fresh-clone safe. Missing optional local
 Boss review checkpoints are warnings, and byte parity runs for every checkpoint

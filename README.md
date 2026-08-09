@@ -1831,7 +1831,8 @@ sheet SHA-256 is
 `2614750da67925b666130f78c0aafbf5a3480690b2a3c105313ea9a9a100a78f`.
 The accepted-state full repository gate passes in `122.9s` with all 232 fixture
 PNGs unchanged. The designer approved the exact sheet and live Bosses-tab Cycle
-All playback on 2026-08-09.
+All playback on 2026-08-09. The isolated implementation is published at
+checkpoint `82938c7`.
 
 Eclipse Unicorn Sovereign is direction-only: a pearl-white war-unicorn with a
 long striped sunhorn, luminous cyan eyes, flowing violet eclipse mane and tail,
