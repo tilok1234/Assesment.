@@ -36,7 +36,7 @@ export const EN_E06_SPRING_DANCER_CONTRACT = deepFreeze({
   family: 'nymph',
   variant: 'spring-dancer',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'slender-flowing-hair-ribbon-dress-nymph-v1',
   silhouette: 'A clear slender humanoid fey with long flowing hair, pointed ears, open arms, a leaf-fastened ribbon-edged dress, and light split-foot dance steps. Hair fall, flared skirt, and sweeping arm poses must differ from public Elves, approved Fairies, and approved Dryads in every frame.',
   identity: 'Warm spring skin, willow-green hair, fresh-leaf dress planes, rose ribbon edging, leaf accents, gold fasteners, and light sandals establish a grounded common Nymph without baking in petals, mist, water, pollen, sparkles, or detached trails.',
@@ -75,13 +75,13 @@ export const EN_E06_SPRING_DANCER_DATA = deepFreeze({
 
 export const EN_E06_SPRING_DANCER_GATE = deepFreeze({
   id: 'en-e06-nymph-spring-dancer-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: 'f4ac500d39da0ac2ecd033c939ac582d06c2d052',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After Bloodcap Reaver was visually approved, committed, pushed, and reconciled at a clean published checkpoint, the designer said: lets do next. Under the documented EN-E06 family order, Nymph role order, and one-complete-sprite cadence, this authorizes only one private common Nymph Spring Dancer 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Elf plus approved Bramblewing Scout and Grove Tender comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
-  publishedImplementation: null,
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Elf Mage plus approved Bramblewing Scout and Grove Tender comparison, and paired GIF evidence were presented, and the three exact PNG review boards were opened together in Aseprite, the designer replied: approved. Approval applies only to candidate digest b68906d962e16611384e419610324c6a9934d63ab329963f0734e83255dabe8c and authorizes its bounded approval-record commit and branch publication; Mist Weaver, Rivercrown Muse, Nymph registration, fixtures, effects, release, EN-E07, and later work remain separate gates.',
+  publishedImplementation: '9d6366b0c5456704137aadfbbec9a67eccb5fd7c',
   precedingApproval: {
     gateId: EN_E06_BLOODCAP_REAVER_GATE.id,
     artifactSha256: EN_E06_BLOODCAP_REAVER_GATE.artifactSha256,
@@ -145,7 +145,7 @@ export const EN_E06_SPRING_DANCER_GATE = deepFreeze({
     'later EN-E06 sprites',
     'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Stop at the exact frozen Spring Dancer candidate review. Do not commit, publish, register Nymph, generate fixtures, begin Mist Weaver or Rivercrown Muse, add effects, release, start EN-E07, or broaden Wave 2 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact Spring Dancer candidate is visually approved and committed at 9d6366b0c5456704137aadfbbec9a67eccb5fd7c. Only its bounded approval-record commit and branch publication are authorized. After push, stop; do not register Nymph, generate fixtures, begin Mist Weaver or Rivercrown Muse, add effects, release, start EN-E07, or broaden Wave 2 without another explicit gate.',
 });
 
 export const EN_E06_SPRING_DANCER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
