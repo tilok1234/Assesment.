@@ -867,8 +867,17 @@ digest `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
 The exact five-artifact packet was visually approved on 2026-08-10. Its frozen
 implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
 `00a9876f963522c88b9cd77f809bec3674d72b19` are committed and pushed on the
-tracked branch. No subsequent art gate is active; Bloodcap Reaver, Nymph,
-registration, fixtures, effects, release, and later Wave 2 work remain closed.
+tracked branch. The later authorized Bloodcap Reaver module keeps one complete
+elite Redcap in a third private one-family registry. Its torn high cap, plated
+shoulder mass, reinforced boots, and connected broad cleaver pass 80/80 pixel
+and alpha distinctions from public Goblin Scout, public Hobgoblin, approved
+Barrow Stalker, and approved Ironboot Trapper at digest
+`e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`.
+All 80 frames are connected, bounded, grounded, and hard-alpha; the exact
+five-artifact packet is frozen at the preapproval visual gate, with its three
+exact PNG boards opened together in Aseprite. It is not committed or public.
+Nymph, registration, fixtures, effects, release, and later
+Wave 2 work remain closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

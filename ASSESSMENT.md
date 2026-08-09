@@ -237,8 +237,15 @@ Its exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
 was opened together in Aseprite and visually approved on 2026-08-10. The frozen
 implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
 `00a9876f963522c88b9cd77f809bec3674d72b19` are committed and pushed on the
-tracked branch. No subsequent art gate is active.
-Fixture regeneration, later Redcaps/Nymph, the legacy renderer split, boss
+  tracked branch. The later authorized elite Redcap Bloodcap Reaver candidate
+  on `codex/en-e06-redcap-bloodcap-reaver` passes 80/80 connected, bounded,
+  grounded, hard-alpha, Goblin Scout/Hobgoblin/Barrow/Ironboot pixel, and
+  alpha-silhouette distinction gates at digest
+  `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`.
+  Its exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
+  is generated and frozen for visual approval, with the three exact PNG boards
+  opened together in Aseprite. No Bloodcap commit or publication is authorized.
+Fixture regeneration, Nymph, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`

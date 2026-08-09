@@ -131,21 +131,21 @@ Heartwood Warden, Redcap, Nymph, EN-E07, effects, fixture regeneration, and
 release remain outside this integration. The integration source and docs are
 committed and pushed at `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
 
-Current EN-E06 art checkpoint (2026-08-10): Barrow Stalker is approved and
-published at implementation `c3544dc4ec06e06afb15ea699333119342a8946f` plus
-approval record `8e2054236a49ab06b7cac404cda8b12bb440085c`. The designer's
-later `next` opens only specialist Ironboot Trapper on
-`codex/en-e06-redcap-ironboot-trapper`. Its private hash-frozen 80-frame
+Current EN-E06 art checkpoint (2026-08-10): Ironboot Trapper is approved and
+published at implementation `98865936244b94860985210fcaf9a044b0ca228a` plus
+approval record `00a9876f963522c88b9cd77f809bec3674d72b19`, with reconciled
+handoff `dc6d524ec2d7d980b5407de75a33c00af7819de7`. The designer's later
+`cool lets do nexrt` opens only elite Bloodcap Reaver on
+`codex/en-e06-redcap-bloodcap-reaver`. Its private hash-frozen 80-frame
 candidate passes 80/80 connected, bounded, grounded, hard-alpha,
-Goblin Scout/Hobgoblin/Barrow pixel, and alpha-silhouette distinction gates at
-digest `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
+Goblin Scout/Hobgoblin/Barrow/Ironboot pixel, and alpha-silhouette distinction
+gates at digest
+`e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`.
 The exact raw, Complete B + Form, four-way comparison, and paired GIF evidence
-was opened together in Aseprite and visually approved on 2026-08-10. The frozen
-implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
-`00a9876f963522c88b9cd77f809bec3674d72b19` are committed and pushed on the
-tracked branch. No subsequent art gate is active. Bloodcap Reaver, Nymph,
-EN-E07, registration changes, fixtures, shared renderer/schema changes,
-effects, and release remain closed.
+is generated, inspected, and opened together in Aseprite for explicit visual
+approval. No Bloodcap commit or publication is authorized. Nymph, EN-E07,
+registration changes, fixtures,
+shared renderer/schema changes, effects, and release remain closed.
 
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,

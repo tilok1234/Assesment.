@@ -15,11 +15,72 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Ironboot Trapper Approved And Published
+## Immediate Continuation Checkpoint - Bloodcap Reaver Awaiting Visual Approval
 
-Start here in a new task. This is the current stopping checkpoint; later
-sections are published or historical provenance, and no follow-on art gate is
-active.
+Start here in a new task. This is the current stopping checkpoint; the exact
+private candidate is frozen for review and must not be committed or published
+before explicit visual approval.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e06-redcap-bloodcap-reaver`, based exactly on clean pushed
+  Ironboot handoff `dc6d524ec2d7d980b5407de75a33c00af7819de7`.
+- Authorization: after Ironboot Trapper was approved, committed, pushed, and
+  reconciled, the designer said `cool lets do nexrt` on 2026-08-10. Under the
+  documented Redcap role order and one-complete-sprite cadence, this opens only
+  elite Bloodcap Reaver.
+- Scope: one private 80-frame elite Redcap across Idle F1-F2, Walk W1-W4,
+  Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
+- Identity: a short heavy elite with a high torn blood-crimson cap, long fey
+  ears, layered blackened-steel shoulders and chest, dark leather, reinforced
+  boots, and a connected broad cleaver.
+- Motion: cap/cleaver Idle settle; four heavy armored Walk stomps; shoulder
+  windup, overhead rise, downward hew, and low recoil Attack; exact Cast and
+  Death aliases; white recoil and colored armored Hurt brace.
+- Effects firewall: blood spray, weapon trails, ground chips, grave dust,
+  impact flashes, and detached cleaver glints remain external.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded hard-alpha
+  frames; 80/80 pixel and alpha-silhouette distinctions from public Goblin
+  Scout, public Hobgoblin, approved Barrow Stalker, and approved Ironboot
+  Trapper; 72/72 colored identity frames; 8/8 exact white flashes; opaque range
+  300-338; 7,241 Complete B additions; 7,126 Form changes.
+- Broader validation: all thirteen EN-E06 focused gates and the frozen
+  1,200-frame approved-integration gate pass; `check:fast` passes in 54.6s and
+  full `check` in 103.6s with all 232 fixtures valid and untouched.
+- Frozen candidate digest:
+  `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `4a6a8f756af4992812a2884302e859da2ed0bc80feeb1810f465bae52beeee84` /
+  `1b3bfcf8ada4aa9c45deb163ec80595f98598f4b5604954d5f59ed24074f9042`;
+  Hobgoblin/Barrow/Ironboot/Reaver `1520x548` comparison
+  `884fcc0fc3fc6ef4c700623eb1e189b6db7d9e29b426602f0a79087d2ca18b13`;
+  raw / Complete B + Form `640x672` GIFs
+  `2f4d7aeb3d6be6399e25de7e7cf2a48ad1dd971e27bf2ac29fa382a63e2ce25a` /
+  `f1adf9f61c4adf3e62bff9b44e37dce5f84c054cbba6fbd6a5fba2d7e5e4640b`.
+- Visual evidence: the three exact PNG boards were generated, inspected, and
+  opened together in Aseprite for the approval request.
+- Protected state: all approved Fairy, Hag, Dryad, Barrow, and Ironboot digests
+  remain exact; public catalog remains 80 families / 259 variants with no public
+  Redcap; all 232 committed fixtures remain untouched.
+- Publication state: no Bloodcap implementation or approval commit exists; the
+  working tree remains at the preapproval visual gate and review artifacts are
+  ignored evidence.
+- Required next action: present the three exact PNG boards and both GIFs and
+  await explicit approval. Do not commit,
+  publish, register Redcap, generate fixtures, begin Nymph, add effects, release,
+  or open EN-E07.
+
+Suggested opening request for the next chat:
+
+> Resume `codex/en-e06-redcap-bloodcap-reaver` from the exact frozen candidate
+> in `HANDOFF.md`. Verify digest `e9a41fd` and stop for explicit visual approval
+> of the three boards already opened in Aseprite. Do not commit or infer Nymph,
+> registration, fixtures, effects, release, or EN-E07 authorization.
+
+## Approved Preceding Checkpoint - Ironboot Trapper Published
+
+This records the clean published predecessor for the active Bloodcap Reaver
+visual-review gate. Later sections are historical provenance.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-redcap-ironboot-trapper`, based exactly on clean pushed
@@ -81,8 +142,8 @@ Suggested opening request for the next chat:
 
 ## Approved Preceding Checkpoint - Barrow Stalker Published
 
-This records the clean published predecessor for the active Ironboot Trapper
-gate. Later sections are historical provenance.
+This records the clean published predecessor for the then-active Ironboot
+Trapper gate. Later sections are historical provenance.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-redcap-barrow-stalker`, based exactly on clean pushed

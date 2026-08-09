@@ -89,7 +89,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
     variants: [
       { id: 'barrow-stalker', name: 'Barrow Stalker', role: 'common', status: 'implemented-full-approved', brief: 'Low red-capped ambusher with iron-dark boots and a hooked hand weapon.' },
       { id: 'ironboot-trapper', name: 'Ironboot Trapper', role: 'specialist', status: 'implemented-full-approved', brief: 'Heavy-footed trapper whose snares and trap markers remain external assets.' },
-      { id: 'bloodcap-reaver', name: 'Bloodcap Reaver', role: 'elite', status: 'planned', brief: 'Broad-shouldered Redcap raider with a torn crimson cap and heavier cleaving read.' },
+      { id: 'bloodcap-reaver', name: 'Bloodcap Reaver', role: 'elite', status: 'implemented-full-candidate', brief: 'Broad-shouldered Redcap raider with a torn crimson cap and heavier cleaving read.' },
     ],
   }),
   contractCard({

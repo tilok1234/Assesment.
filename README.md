@@ -1111,8 +1111,26 @@ The exact packet was opened together in Aseprite and visually approved on
 2026-08-10. Its frozen implementation is committed at
 `98865936244b94860985210fcaf9a044b0ca228a`, and approval record
 `00a9876f963522c88b9cd77f809bec3674d72b19` is committed and pushed on the
-tracked branch. No subsequent art gate is active. Bloodcap Reaver, Nymph,
-EN-E07, registration changes, fixtures, effects, and release remain closed.
+tracked branch. At that published checkpoint Bloodcap Reaver, Nymph, EN-E07,
+registration changes, fixtures, effects, and release remained closed.
+
+The separately authorized Bloodcap Reaver elite is the final private Redcap
+role: a short heavy raider with a high torn blood-crimson cap, long ears,
+layered blackened-steel shoulder and chest armor, reinforced boots, and a
+connected broad cleaver. Blood, trails, chips, dust, flashes, and detached
+glints remain external. Run
+`npm.cmd run review:enemy-expansion-en-e06-redcap-bloodcap-reaver` for the raw,
+Complete B + Form, Hobgoblin/Barrow/Ironboot/Reaver comparison, and paired GIFs;
+run `npm.cmd run check:enemy-expansion-en-e06-redcap-bloodcap-reaver` for the
+80-frame structural, four-actor distinction, predecessor, artifact, and public/
+fixture firewalls. The focused gate passes at digest
+`e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`,
+with 80/80 connected, bounded, grounded frames, 72/72 colored identity frames,
+8/8 exact white flashes, and opaque range 300-338. The exact five-artifact
+packet is frozen for explicit visual approval, with the three exact PNG boards
+opened together in Aseprite. No Bloodcap commit or publication is authorized;
+Nymph, EN-E07, registration changes, fixtures, effects, and
+release remain closed.
 
 ## Approved enemy backlog integration published
 

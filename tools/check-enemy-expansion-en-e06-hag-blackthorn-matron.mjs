@@ -52,7 +52,7 @@ check(ENEMY_EXPANSION_LEDGER.find(({ id }) => id === 'EN-E06')?.gate === 'eight-
 check(EN_E06_CONTRACT_CARDS[0].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Fairies must remain approved');
 check(EN_E06_CONTRACT_CARDS[1].variants.every(({ status }) => status === 'implemented-full-approved'), 'all three Hag roles must remain approved');
 check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/implemented-full-approved', 'Dryad role-order status drifted');
-check(EN_E06_CONTRACT_CARDS[3].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/planned', 'Redcap role-order status drifted');
+  check(EN_E06_CONTRACT_CARDS[3].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/implemented-full-candidate', 'Redcap role-order status drifted');
 check(EN_E06_CONTRACT_CARDS[4].variants.every(({ status }) => status === 'planned'), 'Nymph must remain contract-only');
 check(EN_E06_BLACKTHORN_MATRON_REGISTRY.families.length === 1 && EN_E06_BLACKTHORN_MATRON_REGISTRY.publicFamilies.length === 0 && EN_E06_BLACKTHORN_MATRON_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);

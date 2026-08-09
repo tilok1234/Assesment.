@@ -102,21 +102,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   byte-unchanged, including the intentionally historical Ghoul fixture. Source
   and documentation are committed and pushed at
   `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
-- Current private art gate: `codex/en-e06-redcap-ironboot-trapper`, based exactly
-  on clean published Barrow handoff `3cb794d`, contains one complete specialist
+- Current private art gate: `codex/en-e06-redcap-bloodcap-reaver`, based exactly
+  on clean published Ironboot handoff `dc6d524`, contains one complete elite
   Redcap candidate. Its 80 frames pass connected, one-cell-bounded, grounded,
   hard-alpha, alias, mirror, and 80/80 pixel plus alpha-silhouette distinctions
-  from public Goblin Scout, public Hobgoblin, and approved Barrow Stalker at
-  digest `31c37fd25d688bd295c2fb84bdb437141149cf43986b6edcc4141467bc32bdf1`.
+  from public Goblin Scout, public Hobgoblin, approved Barrow Stalker, and
+  approved Ironboot Trapper at digest
+  `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
-  was opened together in Aseprite and visually approved on 2026-08-10. The
-  frozen implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval
-  record `00a9876f963522c88b9cd77f809bec3674d72b19` are committed and pushed on the
-  tracked branch. Fast validation passes in 56.9s in approval state; full
-  validation passed in 105.5s on the exact frozen pixels with all 232 fixtures
-  valid. Public Redcap remains absent within 80/259. No subsequent art gate is
-  active; stop before registration, fixtures, Bloodcap Reaver/Nymph/EN-E07,
-  effects, or release.
+  is generated and frozen for explicit visual approval, with the three exact
+  PNG boards opened together in Aseprite. Fast validation passes
+  in 54.6s and full validation in 103.6s on the exact frozen pixels with all 232
+  fixtures valid. Public Redcap remains absent within 80/259. No Bloodcap commit
+  or publication is authorized; stop before registration, fixtures, Nymph,
+  EN-E07, effects, or release.
 - The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved
