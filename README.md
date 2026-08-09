@@ -1842,7 +1842,7 @@ four-stage wing-folded collapse. Its exact native full sheet SHA-256 is
 reproduces byte-for-byte on consecutive builds. The focused Boss gate, full
 repository gate, and all 24 live action/direction combinations pass with no
 browser errors. The designer approved the exact sheet and visible motion on
-2026-08-09.
+2026-08-09. The isolated accepted implementation is checkpoint `dad05aa`.
 
 Eclipse Unicorn Sovereign is direction-only: a pearl-white war-unicorn with a
 long striped sunhorn, luminous cyan eyes, flowing violet eclipse mane and tail,

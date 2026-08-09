@@ -1288,7 +1288,7 @@ and absence from production renderer, generator, persistence, game-pack, and
 ordinary sheet dependencies. Kraken's accepted implementation is published at
 checkpoint `82938c7`; the later Sun-Crown Griffin corpus is a deterministic,
 accepted suite with the full repository gate and all 232 fixture PNG checks
-passing.
+passing. Its isolated implementation checkpoint is `dad05aa`.
 
 The standard full `npm run check` is fresh-clone safe. Missing optional local
 Boss review checkpoints are warnings, and byte parity runs for every checkpoint

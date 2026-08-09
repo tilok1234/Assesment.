@@ -194,8 +194,8 @@ repaired Rhino and Unicorn direction designs. Lava-Core Colossus and Abyssal Cro
 accepted after exact-sheet and live Cycle All review. Kraken's accepted-state
 full repository gate passes in `122.9s` with all 232 fixture PNGs unchanged;
 its isolated implementation is published at `82938c7`. Griffin's deterministic,
-approved suite adds the thirteenth 80-frame corpus while Eclipse Unicorn Sovereign
-remains the only static entry.
+approved suite adds the thirteenth 80-frame corpus at isolated checkpoint
+`dad05aa`, while Eclipse Unicorn Sovereign remains the only static entry.
 
 The deterministic `wildshot-npc-slice-v1@bf6269c` delivery contains 32
 Player-built NPC looks and was verified by the game intake. The approved

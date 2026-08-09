@@ -15,7 +15,7 @@ verification workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Approved Sun-Crown Griffin Animation Pending Publish
+## Immediate Continuation Checkpoint - Published Approved Sun-Crown Griffin Animation
 
 Start here in a new task. This is the only active continuation section in this
 file; the published Kraken and Lava checkpoints and everything below
@@ -25,7 +25,8 @@ file; the published Kraken and Lava checkpoints and everything below
   `codex/boss-sun-crown-griffin-animation` at
   `C:\Users\headc\Documents\sprite-assembler-v2\death-review\boss-worktrees\sun-crown-griffin-animation`,
   based exactly on reconciled published Kraken checkpoint
-  `caa5929f0142406ae66c7031a4669db062800564`.
+  `caa5929f0142406ae66c7031a4669db062800564`. The accepted implementation is
+  committed at `dad05aafb62407fd4cf9afb8be009643a3caa260`.
 - Parallel-lane firewall: the separate unapproved Petalcrown Duelist worktree
   remains untouched. The preceding Lava and Kraken branches remain clean and
   match their upstream branches; neither lane is included in this candidate.
@@ -34,8 +35,8 @@ file; the published Kraken and Lava checkpoints and everything below
   2026-08-09. The bounded one-boss cadence opens only approved-direction
   Sun-Crown Griffin; Eclipse Unicorn Sovereign remains closed.
 - Gate/status: accepted `boss-animation-v1` for `sun-crown-griffin`; internal,
-  review-only, effects-off, and explicitly visually approved. Publication on
-  its isolated branch is the remaining action.
+  review-only, effects-off, explicitly visually approved, and published on its
+  isolated branch.
 - Scope: one complete 80-frame native `48x48` suite across Down, Left, Right,
   and Up: Idle x2, Walk x4, Attack x4, Cast x4, Hurt x2, and Death x4. Right is
   the exact mirror of Left and every Idle frame 1 is byte-identical to the
@@ -67,11 +68,11 @@ file; the published Kraken and Lava checkpoints and everything below
   error log is empty. The designer approved the exact full sheet and visible
   motion with `good letgs move on` on 2026-08-09.
 - Validation state: focused Boss and full repository gates pass with the public
-  Enemy catalog still 74/245 and all 232 fixture PNGs unchanged.
-- Required next action: commit the isolated runtime/checkpoint/docs scope, push
-  its matching branch, reconcile the published handoff, verify clean upstream
-  parity, and only then open Eclipse Unicorn Sovereign as the final one-boss
-  candidate lane. Do not run the frozen `export:bosses:13` command.
+  Enemy catalog still 74/245 and all 232 fixture PNGs unchanged; the accepted
+  full gate completes in `128s`.
+- Required next action: push this documentation reconciliation, verify clean
+  upstream parity, and only then open Eclipse Unicorn Sovereign as the final
+  one-boss candidate lane. Do not run the frozen `export:bosses:13` command.
 
 ## Published Preceding Checkpoint - Approved Abyssal Crown-Kraken Animation
 
