@@ -986,6 +986,21 @@ published at `4b59b40`. The approval reply also opens only the next one-sprite
 Blackthorn Matron lane; Dryad, registration, fixtures, effects, and broader
 Wave 2 work remain closed.
 
+That authorized elite lane now exists only on
+`codex/en-e06-hag-blackthorn-matron`. It adds a body-connected asymmetrical
+blackthorn crown, broad briar pauldrons, plated shawl mass, ember eyes, and
+reinforced bone claws while detached thorns, briar trails, curse motes, and
+other effects remain external. Run
+`npm.cmd run review:enemy-expansion-en-e06-hag-blackthorn-matron` for the raw,
+Complete B + Form, three-Hag comparison boards and paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e06-hag-blackthorn-matron` for all 80
+frames, both approved-Hag distinctions, predecessor preservation, and public
+and fixture firewalls. Candidate digest:
+`d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
+This exact candidate is uncommitted and unpushed pending visual approval. Do
+not register Hag, regenerate fixtures, start Dryad, add effects, or advance
+Wave 2 before that approval.
+
 ## EN-E05 assembler consumer integration implemented
 
 Branch `codex/en-e05-assembler-integration`, based exactly on clean published

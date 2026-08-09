@@ -756,6 +756,23 @@ The exact packet passed visual approval on 2026-08-09 and the bounded
 implementation is published at `4b59b40`. The later Blackthorn Matron remains a
 separate content-only gate; registration, fixtures, effects, and Dryad stay closed.
 
+`engine/enemy-expansion-en-e06-hag-blackthorn-matron.js` is that isolated elite
+Hag boundary. It derives from approved Mire Crone motion without changing the
+source, then recolors the material planes and adds body-connected hooked crown,
+briar pauldron, torso-plate, and reinforced-claw geometry. Dynamic opaque-edge
+anchors keep every authored thorn attached across all poses while clamped to the
+standard one-cell margin. Detached thorns and every trail, mote, hex, charm,
+fume, familiar, and impact remain external.
+
+`npm run check:enemy-expansion-en-e06-hag-blackthorn-matron` exhausts all 80
+candidate frames, both approved Hags, and all three approved Fairies. It proves
+connected bounded grounded structure, exact aliases/mirrors, 80/80 pixel and
+alpha distinctions from both Hags, unchanged public 74/245 state,
+deterministic five-artifact evidence, and candidate digest
+`d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
+The lane remains an uncommitted, unpushed visual candidate; registration,
+fixtures, effects, Dryad, release, and broader Wave 2 work stay closed.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

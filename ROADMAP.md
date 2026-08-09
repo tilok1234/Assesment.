@@ -136,9 +136,15 @@ on `codex/en-e06-hag-cauldron-hexer`; its hash-frozen 80-frame candidate passes
 connected, bounded, grounded, alias, mirror, and 80/80 Mire distinction gates
 at digest `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
 The exact packet was approved on 2026-08-09 and its bounded implementation is
-published at `4b59b40`. The approval reply opens only one complete Blackthorn
-Matron lane after publication. Dryad, EN-E07, registration, fixtures, shared
-renderer/schema changes, effects, and release remain separate gates.
+published at `4b59b40`, with clean handoff `0a096fa`. The approval reply opened
+only one complete Blackthorn Matron lane on
+`codex/en-e06-hag-blackthorn-matron`. Its hash-frozen 80-frame candidate passes
+connected, bounded, grounded, alias, mirror, and 80/80 pixel plus alpha
+distinction gates against both approved Hags at digest
+`d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
+It is internal, uncommitted, and unpushed pending visual approval. Dryad,
+EN-E07, registration, fixtures, shared renderer/schema changes, effects, and
+release remain separate gates.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and

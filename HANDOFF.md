@@ -15,75 +15,64 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Published Approved EN-E06 Hag Cauldron Hexer
+## Immediate Continuation Checkpoint - EN-E06 Hag Blackthorn Matron Candidate
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
 
 - Repository/branch: current v2 checkout on
-  `codex/en-e06-hag-cauldron-hexer`, based exactly on clean published Mire
-  Crone handoff `b4ad5cd8036b739441b1b2039313adff9474a6d1`. Approved Mire Crone
-  implementation `25f67d4014437841f855ace2055de32abfeeaeeb` and all three approved
-  Fairies remain exact.
-- Authorization: after Mire Crone approval and publication, the designer said
-  `next` on 2026-08-09. Under the confirmed one-complete-sprite cadence, this
-  opens only specialist Hag `cauldron-hexer`.
-- Gate: `en-e06-hag-cauldron-hexer-full-v1`; status `approved`, internal,
-  committed at `4b59b4098caf6397719fba6d21c27c5f8dcd82b0`, and published on its
-  isolated branch.
-- Scope: one private 80-frame specialist Hag across Idle, Walk, Attack, Cast,
-  Hurt, and Death in Down, Left, Right, and Up. Approved Mire Crone and all
-  three Fairies remain exact. Blackthorn Matron, Dryad, Redcap, and Nymph stay closed.
-- Identity: moss-gold skin, charcoal rope hair, plum shawl, teal tied brewer
-  apron, luminous bottle belt, and a connected copper hooked ladle on the
-  approved stooped feral-Hag chassis. The cauldron itself remains external.
-- Transparency/effect boundary: binary alpha and one connected silhouette are
-  exact. Cauldron geometry, fumes, thrown brews, liquid arcs, hex bursts,
-  bottle projectiles, familiars, auras, trails, and impacts remain external.
-- Animation contract: two ladle-and-bottle Idle poses, four grounded brewer
-  Walk phases, four connected ladle coil/rise/sweep/recovery Attack phases,
-  exact Cast-to-Attack aliases, white-recoil and colored-brace Hurt, and exact
-  Death aliases H1,H2,H2,H2. Left is the exact mirror of Right.
-- Review command: `npm.cmd run review:enemy-expansion-en-e06-hag-cauldron-hexer`.
-- Focused command: `npm.cmd run check:enemy-expansion-en-e06-hag-cauldron-hexer`.
+  `codex/en-e06-hag-blackthorn-matron`, based exactly on clean published
+  Cauldron Hexer handoff `0a096fa46ab48e45d7b838e116d8285b4b871235`.
+  Approved Cauldron implementation `4b59b4098caf6397719fba6d21c27c5f8dcd82b0`,
+  approved Mire Crone, and all three approved Fairies remain exact.
+- Authorization: after approving Cauldron Hexer, the designer said
+  `approved lets do next` on 2026-08-09. Under the one-complete-sprite cadence,
+  this opens only elite Hag `blackthorn-matron`.
+- Gate: `en-e06-hag-blackthorn-matron-full-v1`; status `candidate`, internal,
+  uncommitted, and unpushed pending explicit visual approval.
+- Scope: one private 80-frame elite Hag across Idle, Walk, Attack, Cast, Hurt,
+  and Death in Down, Left, Right, and Up. Dryad, Redcap, Nymph, registration,
+  fixtures, effects, release, and broader Wave 2 work remain closed.
+- Identity: bark-olive skin, black-plum rope hair, blood-briar armor, ember
+  eyes, bone claws, a connected asymmetrical hooked crown, broad pauldrons,
+  and plated shawl mass on the approved stooped feral-Hag chassis.
+- Transparency/effect boundary: binary alpha, one connected silhouette, and a
+  one-cell margin are exact. Detached thorns, briar trails, curse motes, hexes,
+  charms, fumes, familiars, claw trails, and impacts remain external.
+- Animation contract: two crown-settle Idle poses, four heavy grounded Walk
+  phases, four armored claw coil/rise/rake/recovery Attack phases, exact
+  Cast-to-Attack aliases, white-recoil and colored-briar Hurt, and exact Death
+  aliases H1,H2,H2,H2. Left is the exact mirror of Right.
+- Review command: `npm.cmd run review:enemy-expansion-en-e06-hag-blackthorn-matron`.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e06-hag-blackthorn-matron`.
 - Review hashes: raw / Complete B + Form `1428x760` boards
-  `92e6961d04ee9232179e4b080937247ac5eb8eb26fcad80308f5ceaca8a2fe43` /
-  `aaa2a749a45b7ab5e2b0e54bd30a4e2b1510c05f28686b8795849be02760adfa`;
-  Hag comparison `910x548` board
-  `ab12e7ca5e6ffdf0066357dacf8a9d88182affe3dfcd990f483cd0a5ba0de913`;
-  raw / Complete B + Form `640x672` labeled GIFs
-  `2d95a1eb19edf91a694f699bcb377c3f54110dfb24e0d13b55a3718fe2dd2b24` /
-  `4af1ac19b43566de6043f1dc20282d085968d1cae317dc6c7a2942fc38902577`.
+  `6f2ed670a65ac2215c818afb95d7f7a3f7183af7781506705be459962aa63315` /
+  `2f93b79eeadca993f6e6b18921942d5a51d8d7cf3ec5a43bab1ac4665011aa37`;
+  three-Hag `1192x548` comparison
+  `cd423efc081d32cc6979a192a3dbedceab7c94431737d3a32dc4cb2abce2eb2c`;
+  raw / Complete B + Form `640x672` GIFs
+  `35c42c7916bdec51264544e43fe468551d0c8111d9d4d896c766ce25bf1b1c46` /
+  `d9ccd666b71575748cc513f0ffae1faeeea0d7e90ded104fced891359189e7dc`.
 - Focused result: 80/80 connected, one-cell-bounded, grounded frames; all 80
-  pixel frames and 80 alpha silhouettes differ from approved Mire Crone; 72/72
-  colored brewer frames; 8/8 exact white alias flashes; opaque range 228-251;
-  7,764 Complete B additions; 6,575 Form changes. Candidate digest:
-  `17f40220730fe4e83be26156d73e0599235be66a9290284b37cb9c8282c7a1a6`.
-- Protected result: approved Mire Crone and all three Fairy 80-frame digests remain exact;
-  the public catalog remains 74/245; all five review artifacts are present and
-  hash-verified; no fixture was generated or modified.
-- Firewall: the lane adds no public registration, facade import, shared
-  renderer/schema/interface change, asset-pack entry, selector/persistence
-  route, pack/export change, fixture regeneration, effect, or release.
-- Review state: the exact three hash-frozen PNGs were opened directly in
-  Aseprite and presented with the paired GIFs. The designer replied
-  `approved lets do next` on 2026-08-09.
-- Required reading: `CLAUDE.md`, this section, the EN-E06 candidate subsection,
-  and `Current Authorization Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not use
-  `docs/archive/` or the historical body below as current workflow.
-- Fulfilled continuation: the exact approved Cauldron Hexer implementation is
-  published. The same reply separately authorizes only one complete Blackthorn
-  Matron elite Hag after publication; registration, fixtures, Dryad, effects,
-  and broader Wave 2 work remain closed.
+  pixel frames and alpha silhouettes differ from both approved Hags; 72/72
+  colored briar frames; 8/8 exact white alias flashes; opaque range 246-266;
+  9,368 Complete B additions; 6,023 Form changes. Candidate digest:
+  `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
+- Protected result: all three Fairy and both approved Hag 80-frame digests are
+  exact; public remains 74/245; no fixture was generated or modified.
+- Firewall: no public registration, facade import, shared renderer/schema
+  change, asset-pack entry, selector/persistence route, pack/export change,
+  fixture regeneration, effect, or release.
+- Required next gate: open the exact three hash-frozen PNGs in Aseprite and
+  present them with both GIFs. Stop for explicit visual approval; do not commit,
+  push, register Hag, start Dryad, or add effects before that approval.
 
 Suggested opening request for the next chat:
 
-> Read `CLAUDE.md`, the active top section of `HANDOFF.md`, and the EN-E06 plus
-> current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Continue from
-> the approved Cauldron Hexer publication on
-> `codex/en-e06-hag-cauldron-hexer` at `4b59b40`; preserve both approved Hags
-> and all three Fairies exactly, and open only the Blackthorn Matron one-sprite
-> lane before another visual approval gate.
+> Continue the exact Blackthorn Matron candidate on
+> `codex/en-e06-hag-blackthorn-matron`; inspect the three frozen boards and two
+> GIFs, preserve both approved Hags and all three Fairies, and stop at visual
+> approval before publication or any later family.
 
 # Historical Handoff Archive
 

@@ -3094,6 +3094,39 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   reply opens only Blackthorn Matron after publication. Registration, fixtures,
   Dryad, effects, and broader Wave 2 remain separate gates.
 
+#### Candidate Hag Blackthorn Matron complete suite
+
+- Gate ID: `en-e06-hag-blackthorn-matron-full-v1`; status: `candidate`,
+  internal, uncommitted, and unpushed on
+  `codex/en-e06-hag-blackthorn-matron`, based exactly on clean Cauldron
+  publication handoff `0a096fa`.
+- Authorization: the designer's `approved lets do next` approved Cauldron and
+  opens only this one complete elite Hag pass.
+- Identity: bark-olive skin, black-plum rope hair, blood-briar armor, ember
+  eyes, bone claws, a connected asymmetrical hooked crown, broad pauldrons,
+  plated shawl mass, and a heavier reinforced rake.
+- Animation/effect policy: two crown-settle Idle poses, four heavy grounded
+  Walk phases, four armored claw coil/rise/rake/recovery Attack phases, exact
+  Cast and Death aliases, and exact side mirroring. Detached thorns, briar
+  trails, curse motes, hexes, charms, fumes, familiars, trails, and impacts
+  remain external.
+- Review hashes: raw / Complete B + Form boards
+  `6f2ed670a65ac2215c818afb95d7f7a3f7183af7781506705be459962aa63315` /
+  `2f93b79eeadca993f6e6b18921942d5a51d8d7cf3ec5a43bab1ac4665011aa37`;
+  three-Hag comparison
+  `cd423efc081d32cc6979a192a3dbedceab7c94431737d3a32dc4cb2abce2eb2c`;
+  raw / Complete B + Form GIFs
+  `35c42c7916bdec51264544e43fe468551d0c8111d9d4d896c766ce25bf1b1c46` /
+  `d9ccd666b71575748cc513f0ffae1faeeea0d7e90ded104fced891359189e7dc`.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded frames;
+  80/80 pixel and alpha-silhouette distinctions from both approved Hags;
+  72/72 colored briar frames; 8/8 white flashes; opaque range 246-266;
+  9,368 Complete B additions; 6,023 Form changes; candidate digest
+  `d4588d754e01dbb4916949f27b801342a310706890a0532a0133216d7cb0c7a9`.
+- Stop gate: show the exact three PNGs and paired GIFs for explicit visual
+  approval. Do not commit, push, register Hag, generate fixtures, start Dryad,
+  add effects, release, or broaden Wave 2 before approval.
+
 ### EN-E07 - Shapeshifters and apparitions
 
 - Status: `queued`
@@ -3351,17 +3384,17 @@ identical at 17 families / 43 variants, `PUBLIC_ENEMIES` remains 74/245, the
 Complete Kit remains 2,182 PNGs, and public `zombie/ghoul` plus all 232
 committed fixtures remain unchanged.
 
-Wave 2 is explicitly authorized by the designer's `very good. wave 2` on
-2026-08-09. Bramblewing Scout and Thistle Hexer are approved, internal, and
-published at `cc92ca9` and `3dc68cb`. After publishing Thistle, the designer
-said `lets do next`, advancing only to elite Fairy Petalcrown Duelist gate
-`en-e06-fairy-petalcrown-duelist-full-v1` on
-`codex/en-e06-fairy-petalcrown-duelist`, based at clean reconciliation
-  `581bff9`. Its hash-frozen 80-frame suite is technically validated, internal,
-  non-public, visually approved, and published at `b265e97`. Hag,
-Dryad, Redcap, Nymph, EN-E07, public Ghoul replacement, fixture work, EN-E03
-adoption, effects, and release remain separate closed gates; authorization must
-not be broadened past this one complete-sprite pass.
+Wave 2 is authorized only through the private Blackthorn Matron visual-candidate
+gate `en-e06-hag-blackthorn-matron-full-v1` on
+`codex/en-e06-hag-blackthorn-matron`, based exactly on clean published
+Cauldron handoff `0a096fa`. The designer's `approved lets do next` approved
+Cauldron and opened this one complete elite Hag pass. Its frozen 80-frame suite
+is technically validated, internal, non-public, uncommitted, and unpushed.
+Explicit visual approval of the exact raw, Complete B + Form, and three-Hag
+comparison boards plus paired GIFs is required before publication. Dryad,
+Redcap, Nymph, EN-E07, public Hag registration, fixtures, effects, and release
+remain separate closed gates; authorization must not be broadened past this
+one complete-sprite pass.
 
 ### Historical Authorization Chronology
 

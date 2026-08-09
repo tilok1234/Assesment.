@@ -79,7 +79,7 @@ function rejects(action, expected, label) {
 }
 
 check(EN_E06_MIRE_CRONE_GATE.status === 'approved', 'Mire Crone must retain its explicit visual approval');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'hag-cauldron-hexer-full-published-2026-08-09', 'EN-E06 ledger must preserve Mire Crone while identifying published Cauldron Hexer');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'hag-blackthorn-matron-full-candidate-2026-08-09', 'EN-E06 ledger must preserve Mire Crone while identifying candidate Blackthorn Matron');
 check(EN_E06_MIRE_CRONE_GATE.approvedOn === '2026-08-09', 'Mire Crone approval date drifted');
 check(EN_E06_MIRE_CRONE_GATE.approvalEvidence.includes('designer replied: approved') && EN_E06_MIRE_CRONE_GATE.approvalEvidence.includes('three exact PNGs were opened directly in Aseprite') && EN_E06_MIRE_CRONE_GATE.approvalEvidence.includes('bounded commit and branch publication'), 'Mire Crone gate must retain the exact visual approval evidence');
 check(EN_E06_MIRE_CRONE_GATE.publishedImplementation === '25f67d4014437841f855ace2055de32abfeeaeeb', 'exact published Mire Crone implementation checkpoint drifted');
@@ -102,7 +102,7 @@ check(EN_E06_CONTRACT_CARDS.length === 5, 'EN-E06 must retain all five family co
 check(EN_E06_CONTRACT_CARDS[0].variants.every((variant) => variant.status === 'implemented-full-approved'), 'all three Fairy variants must remain approved');
 check(EN_E06_CONTRACT_CARDS[1].id === 'hag' && EN_E06_CONTRACT_CARDS[1].variants[0].status === 'implemented-full-approved', 'Mire Crone must retain its approved full-suite status');
 check(EN_E06_CONTRACT_CARDS[1].variants[1].status === 'implemented-full-approved', 'the separately approved Cauldron Hexer must remain visible without changing Mire Crone approval');
-check(EN_E06_CONTRACT_CARDS[1].variants[2].status === 'planned', 'Blackthorn Matron must remain planned');
+check(EN_E06_CONTRACT_CARDS[1].variants[2].status === 'implemented-full-candidate', 'Blackthorn Matron must remain an isolated full candidate');
 for (const card of EN_E06_CONTRACT_CARDS.slice(2)) check(card.variants.every((variant) => variant.status === 'planned'), `${card.id} must remain contract-only`);
 
 check(EN_E06_MIRE_CRONE_DATA.alphaPolicy === 'binary-connected-feral-hag', 'candidate must retain its hard-alpha connected-silhouette policy');
