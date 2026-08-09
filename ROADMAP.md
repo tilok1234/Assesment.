@@ -118,24 +118,24 @@ the designer explicitly says to hold publication. Unapproved lanes are never
 published under this rule.
 
 Current continuation checkpoint (2026-08-09): approved common Fairy Bramblewing
-Scout remains exact, internal, non-public, and published at `cc92ca9`. After
-confirming that enemy variations continue one complete sprite at a time, the
-designer said `lets do next`, opening only specialist Fairy Thistle Hexer gate
-`en-e06-fairy-thistle-hexer-full-v1` on
-`codex/en-e06-fairy-thistle-hexer`, based on clean reconciliation `c1165df`.
-Its approved 80-frame suite passes connected, bounded, hard-alpha,
-ground-clear checks; all 80 pixel frames and alpha silhouettes differ from
-Bramblewing; candidate digest is
-`675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
+Scout and specialist Thistle Hexer remain exact, internal, non-public, and
+published at `cc92ca9` and `3dc68cb`. After Thistle publication, the designer
+said `lets do next`, opening only elite Fairy Petalcrown Duelist gate
+`en-e06-fairy-petalcrown-duelist-full-v1` on
+`codex/en-e06-fairy-petalcrown-duelist`, based on clean reconciliation
+  `581bff9`. Its hash-frozen 80-frame suite passes connected, one-cell-
+bounded, hard-alpha, ground-clear checks; all 80 pixel frames and alpha
+silhouettes differ from both approved Fairies; candidate digest is
+`69de53e0b10aa80ef10afa7e3e8b6a9d913af81a365535f52e3f4be71945bd5c`.
 The published runtime boundary remains 17/43 expansion and 74/245 public with a
 2,182-PNG Complete Kit; public `zombie/ghoul`, all 232 committed fixtures,
-effects, release state, and EN-E03 isolation remain unchanged. Approval-state
-fast validation passes in `62.4s` and full validation in `108.6s`. The designer
-approved the exact Bramblewing full suite. The exact Thistle boards were opened
-in Aseprite and the designer replied `awesome! approved`; Thistle remains
-internal, non-public, committed, and pushed at `3dc68cb`. Petalcrown Duelist,
-Hag and later EN-E06 art, EN-E07, registration, fixtures, effects, and release
-each require a separate continuation.
+  effects, release state, and EN-E03 isolation remain unchanged. The designer
+  approved the exact Petalcrown boards and paired GIFs on 2026-08-09, authorizing
+  only bounded commit and branch publication; approval-state fast validation
+  passes in `50.4s` and full
+validation in `106.2s`. Hag and later EN-E06 art, EN-E07, registration, fixtures, shared
+renderer/schema changes, effects, and release each require a separate
+continuation.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and

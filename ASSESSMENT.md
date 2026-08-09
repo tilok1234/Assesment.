@@ -168,17 +168,16 @@ old one did — minus nothing — it just also passes from a clean checkout.
 ## Part 4 — Historical recommendations and current status
 
 Update for 2026-08-09: EN adoption is complete through EN-E05 assembler
-integration and the live catalog remains 74/245. Approved EN-E06 Fairy
-Bramblewing Scout remains exact and published at `cc92ca9`. After confirming
-the one-complete-variant cadence, the designer said `lets do next`, opening only
-specialist Fairy Thistle Hexer. Its private 80-frame suite passes focused
-structural and distinction gates and was approved with `awesome! approved`;
-the exact bounded implementation is published at `3dc68cb`. It remains outside
-the public catalog and fixtures. The active handoff starts with
-that authoritative candidate above an explicitly marked historical archive.
-Petalcrown Duelist, Hag, fixture regeneration,
-the legacy renderer split, boss-generator consolidation, and the Wildshot writer
-remain separate decisions.
+integration and the live catalog remains 74/245. Approved EN-E06 Fairies
+Bramblewing Scout and Thistle Hexer remain exact, internal, non-public, and
+published at `cc92ca9` and `3dc68cb`. After Thistle publication, the designer
+said `lets do next`, opening only elite Fairy Petalcrown Duelist. Its private
+ 80-frame suite passes focused structural and two-predecessor distinction gates.
+ The designer approved its exact boards and paired GIFs on 2026-08-09, authorizing
+ bounded commit and branch publication only. The active handoff starts with that approved lane above an
+explicitly marked historical archive. Hag, fixture regeneration, the legacy
+renderer split, boss-generator consolidation, and the Wildshot writer remain
+separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`
    lists the 166 stale sheets. If downstream should get the repaired art: `--all` + commit.

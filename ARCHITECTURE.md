@@ -683,11 +683,39 @@ candidate frames and the 80 approved Bramblewing comparison frames. It proves
 ground-clear structure, exact aliases/mirrors, deterministic raw/Complete B +
 Form/comparison evidence, unchanged 74/245 public state, and candidate digest
 `675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
-The module remains outside `sprite-engine.js`; Petalcrown Duelist, Hag,
-registration, fixtures, effects, and release remain closed. The exact boards
+The module remains outside `sprite-engine.js`; at its publication checkpoint,
+Petalcrown Duelist, Hag, registration, fixtures, effects, and release remained
+closed. The exact boards
 were opened in Aseprite and approved with `awesome! approved` on 2026-08-09;
 technical passage remains supporting evidence. The exact bounded implementation
 is published at `3dc68cb`.
+
+`engine/enemy-expansion-en-e06-fairy-petalcrown-duelist.js` is the separately
+authorized third private Fairy boundary. It remains content-only: no shared
+renderer interface, exporter, validator, schema, frame-contract, facade, public
+catalog, or fixture path changes. Its `small-winged-fey-v1` renderer paints a
+wider elite silhouette with dark-teal hair, rose petal armor, broad pale-pink
+crown-wings, green leaf joints, gold clasps, and a connected silver-blue petal
+rapier. Binary alpha and crown-wing negative space remain exact; dash trails,
+petal motes, wind arcs, detached blade glints, impact flashes, and detached
+petals stay external. Walk uses four aerial-fencing phases; Attack uses four
+connected-rapier phases; Cast aliases Attack; Hurt supplies white recoil and
+colored brace; Death aliases H1,H2,H2,H2; Left mirrors Right exactly.
+
+The nested
+`npm run check:enemy-expansion-en-e06-fairy-petalcrown-duelist` gate exhausts
+all 80 candidate frames plus both 80-frame approved Fairy suites. It proves
+80/80 pixel and alpha-silhouette distinctions from Thistle and again from
+Bramblewing, connected one-cell-bounded ground-clear structure, exact aliases
+and mirrors, 72/72 colored crown-wing frames, 8/8 white flashes, deterministic
+raw/Complete B + Form/three-Fairy comparison evidence, unchanged 74/245 public
+state, and candidate digest
+`69de53e0b10aa80ef10afa7e3e8b6a9d913af81a365535f52e3f4be71945bd5c`.
+The gate is an approved internal lane authorized only for bounded commit and
+branch publication. Approval-state fast validation passes in `50.4s`
+and full validation passes in `106.2s`, with all 232 fixture sheets unchanged.
+Hag, registration, fixtures, effects, release, and later Wave 2 work remain
+closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

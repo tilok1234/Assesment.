@@ -894,19 +894,17 @@ below later exposes only the four new families; at that point public Ghoul
 replacement, fixture work, effects, release, EN-E03 adoption, and Wave 2 were
 still closed.
 
-## EN-E06 Fairy Bramblewing Scout and Thistle Hexer sequence
+## EN-E06 Fairy Bramblewing, Thistle, and approved Petalcrown sequence
 
-Approved common Fairy Bramblewing Scout remains internal, non-public, and
-published at `cc92ca9`. Its exact 80-frame suite and all eight approved Idle
-frames remain frozen. After confirming that enemy variations continue one
-complete sprite at a time, the designer said `lets do next`, opening only the
-specialist Fairy Thistle Hexer candidate. The active branch is
-`codex/en-e06-fairy-thistle-hexer`, based exactly on clean published Fairy
-reconciliation `c1165df`. Thistle Hexer is technically validated, internal,
-approved, non-public, committed, and pushed at `3dc68cb`. After the exact
-three PNG boards and paired GIFs were presented and the PNGs opened in Aseprite,
-the designer replied `awesome! approved` on 2026-08-09, authorizing bounded
-publication of only this frozen suite. That publication is now complete.
+Approved common Fairy Bramblewing Scout and specialist Thistle Hexer remain
+internal, non-public, exact, and published at `cc92ca9` and `3dc68cb`. After
+Thistle publication, the designer said `lets do next`, opening only one complete
+  elite Petalcrown Duelist lane. The active branch is
+`codex/en-e06-fairy-petalcrown-duelist`, based exactly on clean published
+  Thistle reconciliation `581bff9`. Petalcrown is technically validated,
+  internal, and non-public. Its exact hash-frozen review surfaces were opened
+  directly in Aseprite, and the designer approved the three PNG boards plus
+  paired GIFs on 2026-08-09, authorizing bounded commit and branch publication.
 
 The approved compact Bramblewing Fairy has plum hair, pointed ears, a leaf-green dress, gold
 fasteners, and paired pale-mint open-lattice wings. The wings are connected
@@ -918,36 +916,42 @@ Hexer instead has rose skin, dark-violet hair, a tall green-and-lilac thorn
 crown, a long violet robe, narrow folded thistle wings, bronze fasteners, and
 an attached thorn focus. Every one of its 80 pixel frames and alpha silhouettes
 differs from Bramblewing. Curse motes, projectiles, thorn trails, impact flashes,
-and summoned briars remain external effects.
+and summoned briars remain external effects. Petalcrown is a wider, denser
+elite with dark-teal hair, rose petal armor, a broad pale-pink crown-wing
+mantle, green leaf joints, gold clasps, and one connected silver-blue petal
+rapier. All 80 pixel frames and alpha silhouettes differ from Thistle and again
+from Bramblewing. Dash trails, petal motes, wind arcs, detached blade glints,
+impact flashes, and detached petals remain external.
 
-Run `npm.cmd run review:enemy-expansion-en-e06-fairy-thistle-hexer` to
+Run `npm.cmd run review:enemy-expansion-en-e06-fairy-petalcrown-duelist` to
 reproduce its exact raw/no-outline and Complete B + Form `1428x760` boards,
-`910x548` Bramblewing comparison board, and paired `640x672` four-phase GIFs.
-Run `npm.cmd run check:enemy-expansion-en-e06-fairy-thistle-hexer` to validate
-all 80 frames, binary alpha, connected ground-clear silhouettes, folded-wing
-negative space, exact mirrors and aliases, Bramblewing distinction,
+`1192x548` three-Fairy comparison board, and paired `640x672` four-phase GIFs.
+Run `npm.cmd run check:enemy-expansion-en-e06-fairy-petalcrown-duelist` to
+validate all 80 frames, binary alpha, connected ground-clear silhouettes,
+crown-wing negative space, exact mirrors and aliases, two-way predecessor distinction,
 deterministic hashes, and the public/fixture firewall. Raw / Complete B + Form
 board hashes are
-`bcfcc701f7d87edc3291466dcf86670aaef75f44f104ae3acde45f344d688f1e` /
-`13901a2b1a4accf64cb3174f8ae4dc812b645effed53cb44916bfa11c3573d1f`;
+`74b6b4935ef9708c13396104d80589f67c9de5b189f44dac5c455ea33c45c7cc` /
+`784cfcd2041c8851491ebf38112b48b03d45d48715199907923950022b6f00ff`;
 comparison hash is
-`b615fb38c2be151f17e0f252cb923ed2cd9f67fca50b8c047c392ae4bdbe65fa`;
+`693a6fcdf88a96be3e6d14b55cd65286eb71aa1015934b5b2fef02272cc40b42`;
 raw / Complete B + Form GIF hashes are
-`b5610fdb8c0aa465cbba9667801c56b62ddeb8ed2b9e37c3cfa20b5cb4504b94` /
-`61dbf81601010068f09e08ba0226f80870f1bf4f4ec5acf2099e6af58f8eebcd`;
+`e98a5427e67d7abc15467cb630634ce57b63f3f6541aa0abb3bc73c19bd673c6` /
+`f11e102b7846f3d3ee2b47f1c56493493906fd6e0364046d8ae5964ea8c5ba10`;
 candidate digest is
-`675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
+`69de53e0b10aa80ef10afa7e3e8b6a9d913af81a365535f52e3f4be71945bd5c`.
 
-Thistle focused validation passes 80/80 connected, bounded, ground-clear frames
-at opaque range 157-180, with 5,892 Complete B additions and 5,584 Form changes.
-The approved Bramblewing full/Idle gates remain exact. Protected EN-E05
-consumers remain 74/245 and 320/320; approval-state fast validation passes in
-`62.4s`, full validation passes in `108.6s`, and all 232 fixtures remain
-unchanged. The
-Thistle boards are hash-frozen, were opened directly in Aseprite, and are
-explicitly approved. Petalcrown Duelist, Hag/Dryad/Redcap/Nymph art, EN-E06
-registration/consumers, fixture work, effects, release, EN-E07, and later Wave
-2 work remain excluded. No next content lane is active.
+Petalcrown focused validation passes 80/80 connected, bounded, ground-clear
+frames at opaque range 193-236, with 6,266 Complete B additions and 9,279 Form
+changes. All 80 pixel frames and alpha silhouettes differ from both approved
+Fairies; 72/72 colored frames and 8/8 white alias flashes pass. Approved
+Bramblewing full/Idle and Thistle full gates remain exact. Protected EN-E05
+consumers remain 74/245 and 320/320; candidate-state fast validation passes in
+`50.4s`, full validation passes in `106.2s`, and all 232 fixtures remain
+unchanged. Hag/Dryad/Redcap/Nymph art, EN-E06 registration/consumers,
+shared renderer or schema changes, fixture work, effects, release, EN-E07, and
+later Wave 2 work remain excluded. Do not commit or push Petalcrown before
+explicit visual approval.
 
 ## EN-E05 assembler consumer integration implemented
 
@@ -978,8 +982,8 @@ visual approval because it reuses exact approved and registered pixels. At
 that checkpoint public Ghoul replacement, fixture generation, regeneration or
 acceptance, effects, release, EN-E03 adoption, and Wave 2 still required later
 explicit authorization. Wave 2 was subsequently opened through the bounded
-EN-E06 Fairy lane. Approved Bramblewing Scout is now followed only by the
-approved internal Thistle Hexer suite above.
+  EN-E06 Fairy lane. Approved Bramblewing Scout and Thistle Hexer are now followed
+  by the approved internal Petalcrown Duelist lane above.
 
 ## EN-E05 Lich Soul Regent full-suite approved internal lane
 

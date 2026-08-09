@@ -48,7 +48,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
         brief: 'A thorn-crowned curse specialist with folded thistle wings; curse motes and pollen remain external.',
       },
       {
-        id: 'petalcrown-duelist', name: 'Petalcrown Duelist', role: 'elite', status: 'planned',
+        id: 'petalcrown-duelist', name: 'Petalcrown Duelist', role: 'elite', status: 'implemented-full-approved',
         brief: 'A petal-armored aerial duelist with a wider crown-wing silhouette; dash trails and impact flashes remain external.',
       },
     ],
