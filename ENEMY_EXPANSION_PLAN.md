@@ -2838,7 +2838,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `approved internal - Fairy Bramblewing Scout complete 80-frame lane published at cc92ca9`
+- Status: `approved internal - Fairy Thistle Hexer complete 80-frame lane authorized for bounded publication`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -2869,8 +2869,8 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   `blackthorn-matron`), Dryad (`grove-tender`, `spore-cantor`,
   `heartwood-warden`), Redcap (`barrow-stalker`, `ironboot-trapper`,
   `bloodcap-reaver`), and Nymph (`spring-dancer`, `mist-weaver`,
-  `rivercrown-muse`). Only Bramblewing Scout is implemented; every other variant
-  and family remains contract-only.
+  `rivercrown-muse`). At this published checkpoint only Bramblewing Scout was
+  implemented; every other variant and family remained contract-only.
 - Identity: a compact plum-haired, pointed-ear fey with leaf-green dress
   planes, small gold fasteners, and paired pale-mint open-lattice wings. The
   body remains clear of the ground and the wings remain connected body parts.
@@ -2898,12 +2898,72 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   232 committed PNG fixtures remain frozen.
 - Firewall: the candidate registry exposes zero public families; `fairy` is
   absent from `PUBLIC_ENEMIES`, `sprite-engine.js`, and the asset-pack manifest.
-- Exclusions: Fairy specialist/elite art, Hag/Dryad/Redcap/Nymph art,
+- Exclusions at this published checkpoint: Fairy specialist/elite art,
+  Hag/Dryad/Redcap/Nymph art,
   registration, consumers, fixture work, effects, release, EN-E07, and later
   Wave 2 work.
 - Publication state: the exact approved seventeen-file implementation is
-  published at `cc92ca9`. Stop; do not begin Hag or another sprite without a
-  separate continuation.
+  published at `cc92ca9`. The later separate continuation below opens only
+  Thistle Hexer.
+
+#### Approved Fairy Thistle Hexer complete suite
+
+- Gate ID: `en-e06-fairy-thistle-hexer-full-v1`; status:
+  `approved`, internal, uncommitted, and unpushed on
+  `codex/en-e06-fairy-thistle-hexer`, based exactly on clean published Fairy
+  reconciliation `c1165dfc901a39723dd61122bc26f9c5d1a3315c`.
+- Authorization: after Bramblewing approval/publication, the designer asked
+  whether enemy variations were still being made. The sequence was confirmed
+  as one complete variant at a time: Bramblewing Scout, Thistle Hexer,
+  Petalcrown Duelist, then Hag. The designer replied `nono thats good with just
+  1 at the time i was just wondering`, followed by `lets do next` on
+  2026-08-09. This authorizes only specialist Fairy Thistle Hexer.
+- Approval: after the exact labeled all-four-direction raw/no-outline, Complete
+  B + Form, and Bramblewing comparison boards plus paired full-suite GIFs were
+  presented, and the three PNGs were opened directly in Aseprite, the designer
+  replied `awesome! approved` on 2026-08-09. Approval applies only to the
+  frozen 80-frame candidate and authorizes bounded commit and branch
+  publication.
+- Scope: one private 80-frame specialist Fairy across Idle, Walk, Attack, Cast,
+  Hurt, and Death for Down, Left, Right, and Up. The approved Bramblewing suite
+  remains exact. Petalcrown Duelist and all Hag/Dryad/Redcap/Nymph art remain
+  contract-only.
+- Identity: rose-skinned dark-violet-haired fey with a tall green-and-lilac
+  thorn crown, long violet robe, narrow folded thistle wings, bronze fasteners,
+  and an attached thorn focus. Every candidate frame and alpha silhouette
+  differs from Bramblewing Scout.
+- Transparency/effect policy: standard binary alpha is unchanged. Connected
+  folded-wing rims preserve deliberate transparent negative space. Partial
+  alpha, curse motes, pollen, glow, projectiles, thorn trails, impact flashes,
+  and summoned briars remain external effects.
+- Animation scope: two distinct Idle poses, four translated Walk poses, four
+  connected-focus Attack poses, exact Cast-to-Attack aliases, white-recoil and
+  colored-brace Hurt H1-H2, and exact Death aliases H1,H2,H2,H2. Left mirrors
+  Right exactly.
+- Review evidence: raw / Complete B + Form `1428x760` boards
+  `bcfcc701f7d87edc3291466dcf86670aaef75f44f104ae3acde45f344d688f1e` /
+  `13901a2b1a4accf64cb3174f8ae4dc812b645effed53cb44916bfa11c3573d1f`;
+  Bramblewing comparison `910x548` board
+  `b615fb38c2be151f17e0f252cb923ed2cd9f67fca50b8c047c392ae4bdbe65fa`;
+  raw / Complete B + Form `640x672` four-phase GIFs
+  `b5610fdb8c0aa465cbba9667801c56b62ddeb8ed2b9e37c3cfa20b5cb4504b94` /
+  `61dbf81601010068f09e08ba0226f80870f1bf4f4ec5acf2099e6af58f8eebcd`.
+- Focused validation: 80/80 connected, one-cell-bounded, ground-clear frames;
+  80/80 pixel frames and 80/80 alpha silhouettes differ from Bramblewing;
+  72/72 colored folded-wing frames; 8/8 exact white alias flashes; exact side
+  mirrors and Cast/Death aliases; opaque range 157-180; 5,892 Complete B
+  additions; 5,584 Form changes; candidate digest
+  `675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
+- Protected boundaries: the approved Bramblewing full/Idle gates remain exact;
+  EN-E05 consumers remain 74/245 and 320/320; all 232 fixtures remain frozen;
+  `fairy` remains absent from the public catalog, engine facade, and manifest.
+  Approval-state fast validation passes in `62.4s` and full validation in
+  `108.6s`.
+- Exclusions: Petalcrown Duelist, Hag/Dryad/Redcap/Nymph art, registration,
+  consumers, fixture work, effects, release, EN-E07, and later Wave 2 work.
+- Publication state: the exact suite is hash-frozen and visually approved.
+  Commit and push only this bounded sixteen-file lane, reconcile the exact
+  implementation commit, then stop before Petalcrown Duelist or Hag.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3163,16 +3223,18 @@ Complete Kit remains 2,182 PNGs, and public `zombie/ghoul` plus all 232
 committed fixtures remain unchanged.
 
 Wave 2 is explicitly authorized by the designer's `very good. wave 2` on
-2026-08-09. The later correction `very good,. but lately we been doing all
-animations for 1 sprite each pass` approves the Bramblewing Scout identity and
-Idle baseline and advances only that sprite to gate
-`en-e06-fairy-bramblewing-scout-full-v1`. The designer subsequently replied
-`approved` to the exact full-suite evidence. The active lane is one internal,
-approved, non-public complete 80-frame common Fairy published at `cc92ca9`.
-No next content lane is active. Fairy specialist/elite variants,
-Hag/Dryad/Redcap/Nymph art, EN-E07, public Ghoul replacement, fixture work,
-EN-E03 adoption, effects, and release remain separate closed gates; Wave 2
-authorization must not be broadened past this one-complete-sprite pass.
+2026-08-09. Bramblewing Scout is approved and published at `cc92ca9`. After the
+designer confirmed that variations should continue one complete sprite at a
+time and said `lets do next`, the active lane advanced only to internal
+specialist Fairy Thistle Hexer gate
+`en-e06-fairy-thistle-hexer-full-v1` on
+`codex/en-e06-fairy-thistle-hexer`. That 80-frame suite is technically
+validated and explicitly approved with `awesome! approved`; bounded commit and
+branch publication are authorized. It remains internal and non-public.
+Petalcrown Duelist, Hag/Dryad/Redcap/Nymph art, EN-E07, public Ghoul
+replacement, fixture work, EN-E03 adoption, effects, and release remain
+separate closed gates; authorization must not be broadened past this one
+complete-sprite pass.
 
 ### Historical Authorization Chronology
 

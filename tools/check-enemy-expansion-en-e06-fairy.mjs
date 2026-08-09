@@ -138,7 +138,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Fairy suite must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public frame digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-full-published-2026-08-09', 'the EN-E06 ledger must identify the published approved Fairy full-suite gate');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-thistle-hexer-full-approved-2026-08-09', 'the EN-E06 ledger must preserve published Bramblewing while identifying the separately approved Thistle Hexer gate');
 
 check(EN_E06_FAIRY_IDLE_GATE.status === 'approved', 'the Fairy Idle predecessor must retain exact designer approval');
 check(EN_E06_FAIRY_IDLE_GATE.approvedOn === '2026-08-09', 'the Fairy Idle approval date drifted');
@@ -169,7 +169,8 @@ const expectedFamilies = ['fairy', 'hag', 'dryad', 'redcap', 'nymph'];
 check(EN_E06_CONTRACT_CARDS.length === 5, 'EN-E06 must retain exactly five family contract cards');
 check(JSON.stringify(EN_E06_CONTRACT_CARDS.map((card) => card.id)) === JSON.stringify(expectedFamilies), 'the EN-E06 contract-card order drifted');
 check(EN_E06_FAIRY_CONTRACT_CARD.variants[0].status === 'implemented-full-approved', 'Bramblewing Scout must retain the approved full-suite status in the shared contract card');
-check(EN_E06_FAIRY_CONTRACT_CARD.variants.slice(1).every((variant) => variant.status === 'planned'), 'the two later Fairy variants must remain planned');
+check(EN_E06_FAIRY_CONTRACT_CARD.variants[1].status === 'implemented-full-approved', 'Thistle Hexer must retain its separately approved full-suite status');
+check(EN_E06_FAIRY_CONTRACT_CARD.variants[2].status === 'planned', 'Petalcrown Duelist must remain planned');
 for (const card of EN_E06_CONTRACT_CARDS.slice(1)) check(card.variants.every((variant) => variant.status === 'planned'), `${card.id} must remain contract-only`);
 
 check(EN_E06_FAIRY_REGISTRY.families.length === 1, 'the full candidate registry must contain exactly one family');

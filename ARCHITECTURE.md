@@ -646,8 +646,9 @@ is checked byte-for-byte across all eight direction/frame cases. Walk adds four
 hover-travel phases; Attack adds four poses with a connected body-held thorn
 needle; Cast aliases Attack exactly; Hurt supplies white recoil plus colored
 brace; Death aliases Hurt H1,H2,H2,H2. Left is rendered as the exact mirror of
-Right. The full registry still contains only Bramblewing Scout and exposes zero
-public families. Neither Fairy module is imported by `sprite-engine.js`; the
+Right. The approved full registry contains only Bramblewing Scout and exposes
+zero public families. Neither approved Fairy module is imported by
+`sprite-engine.js`; the
 stable registry, `PUBLIC_ENEMIES`, selectors, persistence, packs, exports, and
 fixtures remain unchanged.
 
@@ -663,6 +664,30 @@ The designer approved the exact hash-frozen full suite on 2026-08-09. The
 bounded implementation is published at `cc92ca9`; another Fairy variant, Hag
 art, registration, fixtures, effects, and later Wave 2 work remain separate
 gates.
+
+`engine/enemy-expansion-en-e06-fairy-thistle-hexer.js` is the next private,
+content-only variant boundary. It does not change the shared renderer,
+interfaces, exporters, validators, or 20-column frame contract. Its dedicated
+`small-winged-fey-v1` data paints a rose-skinned specialist with violet hair
+and robe, connected folded thistle wings, thorn crown, bronze fasteners, and an
+attached focus. Binary alpha and negative-space wing windows remain exact;
+curse motes, glow, projectiles, trails, impacts, and summoned briars stay in
+the external effects layer. Walk uses four translated hover poses; Attack uses
+four connected-focus poses; Cast aliases Attack; Hurt supplies white recoil
+and colored brace; Death aliases H1,H2,H2,H2; Left mirrors Right exactly.
+
+The nested
+`npm run check:enemy-expansion-en-e06-fairy-thistle-hexer` gate exhausts all 80
+candidate frames and the 80 approved Bramblewing comparison frames. It proves
+80/80 pixel and alpha-silhouette distinctions, connected one-cell-bounded
+ground-clear structure, exact aliases/mirrors, deterministic raw/Complete B +
+Form/comparison evidence, unchanged 74/245 public state, and candidate digest
+`675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
+The module remains outside `sprite-engine.js`; Petalcrown Duelist, Hag,
+registration, fixtures, effects, and release remain closed. The exact boards
+were opened in Aseprite and approved with `awesome! approved` on 2026-08-09;
+technical passage remains supporting evidence and bounded publication is now
+authorized.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

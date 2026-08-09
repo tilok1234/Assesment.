@@ -168,15 +168,15 @@ old one did — minus nothing — it just also passes from a clean checkout.
 ## Part 4 — Historical recommendations and current status
 
 Update for 2026-08-09: EN adoption is complete through EN-E05 assembler
-integration and the live catalog remains 74/245. Wave 2 is now active only
-through one private, approved EN-E06 Fairy Bramblewing Scout complete 80-frame
-lane. The designer approved its identity and Idle baseline, then corrected the
-cadence to all animations for one sprite per pass; the eight approved Idle
-frames remain byte-identical inside the complete suite. The exact full suite is
-approved and published at `cc92ca9`; it does not alter public counts or
-fixtures. The active handoff starts with that one authoritative checkpoint above
-an explicitly marked historical archive. No next content lane is active;
-another sprite, fixture regeneration,
+integration and the live catalog remains 74/245. Approved EN-E06 Fairy
+Bramblewing Scout remains exact and published at `cc92ca9`. After confirming
+the one-complete-variant cadence, the designer said `lets do next`, opening only
+specialist Fairy Thistle Hexer. Its private 80-frame suite passes focused
+structural and distinction gates and was approved with `awesome! approved`;
+bounded publication is authorized. It remains outside the public catalog and
+fixtures. The active handoff starts with
+that authoritative candidate above an explicitly marked historical archive.
+Petalcrown Duelist, Hag, fixture regeneration,
 the legacy renderer split, boss-generator consolidation, and the Wildshot writer
 remain separate decisions.
 

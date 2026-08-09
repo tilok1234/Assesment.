@@ -15,72 +15,91 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Published Approved EN-E06 Fairy
+## Immediate Continuation Checkpoint - Approved EN-E06 Fairy Thistle Hexer Publication
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
 
 - Repository/branch: current v2 checkout on
-  `codex/en-e06-fairy-full`, created from clean published documentation handoff
-  `4b2f49dfb80c3c39b6e49672a2c594746f6c030a`; exact approved implementation
-  `cc92ca9bb14f9fa7937a7e1e746d55fb754d9653` is pushed to the matching origin
-  branch.
-- Authorization: after that handoff required an explicit next choice, the
-  designer replied `very good. wave 2` on 2026-08-09. After the exact Fairy
-  Idle evidence was presented, the designer replied `very good,. but lately we
-  been doing all animations for 1 sprite each pass`. That response approves and
-  freezes the eight Idle frames and authorizes only the rest of Bramblewing
-  Scout as one complete-sprite pass.
-- Gate: `en-e06-fairy-bramblewing-scout-full-v1`; status `approved`, internal,
-  committed, and pushed at `cc92ca9`. The designer approved the exact
-  full-suite boards and GIFs with `approved` on 2026-08-09.
-- Scope: five immutable contract cards for Fairy, Hag, Dryad, Redcap, and Nymph;
-  only common Fairy `bramblewing-scout` is implemented. Its complete 80-frame
-  suite covers approved Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast
-  aliases, Hurt H1-H2, and exact Death aliases across Down, Left, Right, and Up.
-  Fairy specialist/elite variants and all other EN-E06 art remain absent.
-- Identity: compact plum-haired pointed-ear fey, leaf-green dress, gold
-  fasteners, and paired pale-mint open-lattice wings. The wings are connected
-  body parts and the complete actor remains visibly clear of the ground.
+  `codex/en-e06-fairy-thistle-hexer`, created from clean published Fairy
+  reconciliation `c1165dfc901a39723dd61122bc26f9c5d1a3315c`. The preceding
+  approved Bramblewing Scout implementation remains pushed at
+  `cc92ca9bb14f9fa7937a7e1e746d55fb754d9653`.
+- Authorization: after approving and publishing Bramblewing Scout, the designer
+  asked whether enemy variations were still part of the sequence. The bounded
+  cadence was confirmed as one complete variant at a time, in the order common
+  Bramblewing Scout, specialist Thistle Hexer, elite Petalcrown Duelist, then
+  Hag. The designer replied `nono thats good with just 1 at the time i was just
+  wondering`, then explicitly said `lets do next` on 2026-08-09. This opens only
+  one complete Thistle Hexer candidate; it does not open Petalcrown Duelist or
+  Hag.
+- Gate: `en-e06-fairy-thistle-hexer-full-v1`; status
+  `approved`, internal, uncommitted, and unpushed. After the exact three PNG
+  boards and paired GIFs were presented, the designer replied `awesome!
+  approved` on 2026-08-09. Approval applies only to the frozen hashes below and
+  authorizes bounded commit and branch publication.
+- Scope: the five immutable EN-E06 family contract cards remain frozen.
+  Approved common Fairy `bramblewing-scout` remains exact; this lane adds only
+  specialist Fairy `thistle-hexer` as one private 80-frame suite across Idle,
+  Walk, Attack, Cast, Hurt, and Death in Down, Left, Right, and Up. Elite Fairy
+  `petalcrown-duelist` and all Hag/Dryad/Redcap/Nymph art remain absent.
+- Identity: a compact specialist fey with rose skin, dark-violet hair, a tall
+  green-and-lilac thorn crown, long violet robe, narrow folded thistle wings,
+  bronze fasteners, and an attached thorn focus. It remains visibly clear of
+  the ground and differs from Bramblewing in every frame and alpha silhouette.
 - Transparency/effect boundary: binary alpha remains exact. Connected opaque
-  wing rims/veins surround transparent negative-space windows; partial-alpha
-  membranes, glow, pollen, sparkles, trails, and impact light are not baked in.
-- Review command: `npm.cmd run review:enemy-expansion-en-e06-fairy`.
-- Focused command: `npm.cmd run check:enemy-expansion-en-e06-fairy`; the older
-  `check:enemy-expansion-en-e06-fairy-idle` remains the frozen predecessor gate.
+  folded-wing rims surround deliberate transparent negative space; partial
+  alpha, curse motes, pollen, glow, projectiles, thorn trails, impact flashes,
+  and summoned briars are not baked into the actor.
+- Animation contract: two Idle hover poses, four translated Walk poses, four
+  connected-focus Attack poses, exact Cast-to-Attack aliases, white-recoil and
+  colored-brace Hurt poses, and exact Death aliases H1,H2,H2,H2. Left is the
+  exact mirror of Right.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e06-fairy-thistle-hexer`.
+- Focused command:
+  `npm.cmd run check:enemy-expansion-en-e06-fairy-thistle-hexer`; the approved
+  Bramblewing full and Idle gates remain protected predecessors.
 - Review hashes: raw / Complete B + Form `1428x760` boards
-  `b154d3023c75bb06bb6c7312aa4327aa935723cdd7a0ea1d0165a851d3c20200` /
-  `3349fe0ebd8ce719b172d64dccaf940bf0e842679e4ee13700fa7182cdf5a650`;
+  `bcfcc701f7d87edc3291466dcf86670aaef75f44f104ae3acde45f344d688f1e` /
+  `13901a2b1a4accf64cb3174f8ae4dc812b645effed53cb44916bfa11c3573d1f`;
+  Bramblewing comparison `910x548` board
+  `b615fb38c2be151f17e0f252cb923ed2cd9f67fca50b8c047c392ae4bdbe65fa`;
   raw / Complete B + Form `640x672` labeled GIFs
-  `9812b570435f45a8efad77fcdf380f6ec159f73ad950967ed5d1889148958efa` /
-  `662af552ce31a84761001f86b95de3db6149419111b7ff592dca22aa8d57cb57`.
-- Focused result: 80/80 connected, bounded, ground-clear frames; 8/8 approved
-  Idle frames byte-identical; 72/72 colored hard-alpha wing-window frames; 8/8
-  exact white alias flashes; exact side mirrors and Cast/Death aliases; opaque
-  range 132-159; 6,362 Complete B additions; 5,274 Form changes. Candidate
-  digest: `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
-- Protected result: EN-E05 consumers remain exact at 74 public families / 245
-  variants and 320/320 frames; approval-state fast validation passes in
-  `52.7s`; full validation passes in `102.5s`; all 232 PNG fixtures remain
-  frozen.
+  `b5610fdb8c0aa465cbba9667801c56b62ddeb8ed2b9e37c3cfa20b5cb4504b94` /
+  `61dbf81601010068f09e08ba0226f80870f1bf4f4ec5acf2099e6af58f8eebcd`.
+- Focused result: 80/80 connected, one-cell-bounded, ground-clear frames;
+  80/80 pixel frames and 80/80 alpha silhouettes differ from Bramblewing;
+  72/72 colored folded-wing frames; 8/8 exact white alias flashes; exact side
+  mirrors and Cast/Death aliases; opaque range 157-180; 5,892 Complete B
+  additions; 5,584 Form changes. Candidate digest:
+  `675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
+- Protected result: the approved Bramblewing full and Idle gates pass unchanged;
+  EN-E05 consumers remain exact at 74 public families / 245 variants and
+  320/320 frames; approval-state fast validation passes in `62.4s`, full
+  validation passes in `108.6s`, and all 232 PNG fixtures remain frozen.
 - Firewall: `fairy` remains absent from `PUBLIC_ENEMIES`, `sprite-engine.js`,
   the asset-pack manifest, selectors, persistence, packs, exports, and fixtures.
-- Review state: the exact final raw and Complete B + Form full-suite PNGs were
-  opened directly in Aseprite and explicitly approved.
+- Review state: the exact hash-frozen raw, Complete B + Form, and Bramblewing
+  comparison PNGs were opened directly in Aseprite and explicitly approved with
+  `awesome! approved`; technical validation remains supporting evidence only.
 - Required reading: `CLAUDE.md`, this section, the EN-E06 candidate subsection,
   and `Current Authorization Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not use
   `docs/archive/` or the historical body below as current workflow.
-- Required next action: stop at this clean published checkpoint. No next
-  content lane is active. Do not add Fairy variants, begin Hag, register EN-E06,
-  generate fixtures, or broaden Wave 2 without a separate continuation.
+- Required next action: commit and push only this bounded sixteen-file approved
+  lane under the approval-publication rule, reconcile the exact published
+  implementation commit, and stop. Do not register EN-E06, generate fixtures,
+  begin Petalcrown Duelist or Hag, or broaden Wave 2 without a separate
+  continuation.
 
 Suggested opening request for the next chat:
 
 > Read `CLAUDE.md`, the active top section of `HANDOFF.md`, and the EN-E06 plus
 > current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Continue only the
-> published approved Fairy Bramblewing Scout checkpoint on
-> `codex/en-e06-fairy-full` at `cc92ca9`; do not begin another sprite/Hag
-> without explicit continuation.
+> approved complete Thistle Hexer publication gate on
+> `codex/en-e06-fairy-thistle-hexer` from `c1165df`; publish only the frozen
+> lane, reconcile its clean handoff, preserve approved Bramblewing exactly, and
+> do not begin Petalcrown Duelist or Hag.
 
 # Historical Handoff Archive
 

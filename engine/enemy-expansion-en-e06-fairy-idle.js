@@ -44,7 +44,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
         brief: 'A compact woodland scout with plum hair, leaf-green dress, pointed ears, pale veined wings, and a steady alert hover.',
       },
       {
-        id: 'thistle-hexer', name: 'Thistle Hexer', role: 'specialist', status: 'planned',
+        id: 'thistle-hexer', name: 'Thistle Hexer', role: 'specialist', status: 'implemented-full-approved',
         brief: 'A thorn-crowned curse specialist with folded thistle wings; curse motes and pollen remain external.',
       },
       {

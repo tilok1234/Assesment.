@@ -115,7 +115,7 @@ function frameRecord(captured, direction, frame) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Wave 2 predecessor must remain the exact EN-E05 consumer gate');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public frame digest must remain frozen');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-full-published-2026-08-09', 'the expansion ledger must advance from the approved Idle baseline to the published approved Fairy full-suite gate');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-thistle-hexer-full-approved-2026-08-09', 'the expansion ledger must preserve the approved Idle baseline while identifying the separately approved Thistle Hexer gate');
 check(EN_E06_FAIRY_IDLE_GATE.status === 'approved', 'the Fairy Idle gate must retain exact designer approval');
 check(EN_E06_FAIRY_IDLE_GATE.authorizedOn === '2026-08-09', 'the Wave 2 authorization date must remain frozen');
 check(EN_E06_FAIRY_IDLE_GATE.authorizationEvidence.includes('designer said: very good. wave 2') && EN_E06_FAIRY_IDLE_GATE.authorizationEvidence.includes('baseline Fairy four-direction Idle gate'), 'the gate must retain the explicit Wave 2 authorization and bounded first gate');
@@ -149,8 +149,8 @@ for (const card of EN_E06_CONTRACT_CARDS) {
 }
 check(EN_E06_FAIRY_CONTRACT_CARD === EN_E06_CONTRACT_CARDS[0], 'the exported Fairy card must be the first EN-E06 contract card');
 check(EN_E06_FAIRY_CONTRACT_CARD.anatomy === 'small-winged-fey-humanoid', 'the Fairy contract card must retain its small winged fey anatomy');
-check(EN_E06_FAIRY_CONTRACT_CARD.variants[0].id === 'bramblewing-scout' && EN_E06_FAIRY_CONTRACT_CARD.variants[0].status === 'implemented-full-approved', 'Bramblewing Scout must remain the only implemented role and retain its approved full-suite status');
-check(EN_E06_FAIRY_CONTRACT_CARD.variants[1].id === 'thistle-hexer' && EN_E06_FAIRY_CONTRACT_CARD.variants[1].status === 'planned', 'Thistle Hexer must remain planned only');
+check(EN_E06_FAIRY_CONTRACT_CARD.variants[0].id === 'bramblewing-scout' && EN_E06_FAIRY_CONTRACT_CARD.variants[0].status === 'implemented-full-approved', 'Bramblewing Scout must remain the approved common role and retain its approved full-suite status');
+check(EN_E06_FAIRY_CONTRACT_CARD.variants[1].id === 'thistle-hexer' && EN_E06_FAIRY_CONTRACT_CARD.variants[1].status === 'implemented-full-approved', 'Thistle Hexer must retain its separately approved full-suite status');
 check(EN_E06_FAIRY_CONTRACT_CARD.variants[2].id === 'petalcrown-duelist' && EN_E06_FAIRY_CONTRACT_CARD.variants[2].status === 'planned', 'Petalcrown Duelist must remain planned only');
 for (const card of EN_E06_CONTRACT_CARDS.slice(1)) check(card.variants.every((variant) => variant.status === 'planned'), card.id + ' must remain contract-only in this first gate');
 

@@ -894,49 +894,58 @@ below later exposes only the four new families; at that point public Ghoul
 replacement, fixture work, effects, release, EN-E03 adoption, and Wave 2 were
 still closed.
 
-## EN-E06 Fairy Bramblewing Scout complete-suite acceptance candidate
+## EN-E06 Fairy Bramblewing Scout and Thistle Hexer sequence
 
-Branch `codex/en-e06-fairy-full`, based exactly on clean documentation handoff
-`4b2f49d`, contains the first explicitly authorized Wave 2 sprite. Five
-immutable contract cards define Fairy, Hag, Dryad, Redcap, and Nymph
-common/specialist/elite roles. The designer approved the exact Bramblewing
-Scout identity and Idle baseline, then corrected the cadence to all animations
-for one sprite per pass. Only that common Fairy is implemented: one complete
-80-frame Idle/Walk/Attack/Cast/Hurt/Death suite across Down, Left, Right, and
-Up. The designer approved the exact full suite with `approved` on 2026-08-09.
-It remains internal and non-public and is committed and pushed at `cc92ca9`.
+Approved common Fairy Bramblewing Scout remains internal, non-public, and
+published at `cc92ca9`. Its exact 80-frame suite and all eight approved Idle
+frames remain frozen. After confirming that enemy variations continue one
+complete sprite at a time, the designer said `lets do next`, opening only the
+specialist Fairy Thistle Hexer candidate. The active branch is
+`codex/en-e06-fairy-thistle-hexer`, based exactly on clean published Fairy
+reconciliation `c1165df`. Thistle Hexer is technically validated but remains
+internal, approved, uncommitted, unpushed, and non-public. After the exact
+three PNG boards and paired GIFs were presented and the PNGs opened in Aseprite,
+the designer replied `awesome! approved` on 2026-08-09, authorizing bounded
+commit and branch publication of only this frozen suite.
 
-The compact Fairy has plum hair, pointed ears, a leaf-green dress, gold
+The approved compact Bramblewing Fairy has plum hair, pointed ears, a leaf-green dress, gold
 fasteners, and paired pale-mint open-lattice wings. The wings are connected
 body parts, and every frame remains visibly above the ground. Binary alpha is
 exact: translucent wing character comes from opaque rims and veins surrounding
 transparent negative-space windows, never partial-alpha membrane pixels. Glow,
-pollen, sparkles, trails, and impact light remain external effects.
+pollen, sparkles, trails, and impact light remain external effects. Thistle
+Hexer instead has rose skin, dark-violet hair, a tall green-and-lilac thorn
+crown, a long violet robe, narrow folded thistle wings, bronze fasteners, and
+an attached thorn focus. Every one of its 80 pixel frames and alpha silhouettes
+differs from Bramblewing. Curse motes, projectiles, thorn trails, impact flashes,
+and summoned briars remain external effects.
 
-Run `npm.cmd run review:enemy-expansion-en-e06-fairy` to reproduce the exact
-raw/no-outline and Complete B + Form `1428x760` boards plus the paired
-`640x672` four-phase labeled GIFs. Run
-`npm.cmd run check:enemy-expansion-en-e06-fairy` to validate all 80 frames,
-8/8 byte-identical approved Idle frames, hard alpha, connected ground-clear
-silhouettes, open-lattice windows, mirrors, exact Cast/Death aliases,
+Run `npm.cmd run review:enemy-expansion-en-e06-fairy-thistle-hexer` to
+reproduce its exact raw/no-outline and Complete B + Form `1428x760` boards,
+`910x548` Bramblewing comparison board, and paired `640x672` four-phase GIFs.
+Run `npm.cmd run check:enemy-expansion-en-e06-fairy-thistle-hexer` to validate
+all 80 frames, binary alpha, connected ground-clear silhouettes, folded-wing
+negative space, exact mirrors and aliases, Bramblewing distinction,
 deterministic hashes, and the public/fixture firewall. Raw / Complete B + Form
 board hashes are
-`b154d3023c75bb06bb6c7312aa4327aa935723cdd7a0ea1d0165a851d3c20200` /
-`3349fe0ebd8ce719b172d64dccaf940bf0e842679e4ee13700fa7182cdf5a650`;
+`bcfcc701f7d87edc3291466dcf86670aaef75f44f104ae3acde45f344d688f1e` /
+`13901a2b1a4accf64cb3174f8ae4dc812b645effed53cb44916bfa11c3573d1f`;
+comparison hash is
+`b615fb38c2be151f17e0f252cb923ed2cd9f67fca50b8c047c392ae4bdbe65fa`;
 raw / Complete B + Form GIF hashes are
-`9812b570435f45a8efad77fcdf380f6ec159f73ad950967ed5d1889148958efa` /
-`662af552ce31a84761001f86b95de3db6149419111b7ff592dca22aa8d57cb57`;
+`b5610fdb8c0aa465cbba9667801c56b62ddeb8ed2b9e37c3cfa20b5cb4504b94` /
+`61dbf81601010068f09e08ba0226f80870f1bf4f4ec5acf2099e6af58f8eebcd`;
 candidate digest is
-`0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
+`675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
 
-Focused validation passes 80/80 connected, bounded, ground-clear frames at
-opaque range 132-159, with 6,362 Complete B additions and 5,274 Form changes.
-Protected EN-E05 consumers remain exact at 74/245 and 320/320 frames;
-approval-state fast validation passes in `52.7s` and full validation in
-`102.5s`, with all 232
-fixtures unchanged. The exact full suite is visually approved and published;
-no next content lane is active. Fairy specialist/elite variants,
-Hag/Dryad/Redcap/Nymph art, EN-E06
+Thistle focused validation passes 80/80 connected, bounded, ground-clear frames
+at opaque range 157-180, with 5,892 Complete B additions and 5,584 Form changes.
+The approved Bramblewing full/Idle gates remain exact. Protected EN-E05
+consumers remain 74/245 and 320/320; approval-state fast validation passes in
+`62.4s`, full validation passes in `108.6s`, and all 232 fixtures remain
+unchanged. The
+Thistle boards are hash-frozen, were opened directly in Aseprite, and are
+explicitly approved. Petalcrown Duelist, Hag/Dryad/Redcap/Nymph art, EN-E06
 registration/consumers, fixture work, effects, release, EN-E07, and later Wave
 2 work remain excluded.
 
@@ -969,8 +978,8 @@ visual approval because it reuses exact approved and registered pixels. At
 that checkpoint public Ghoul replacement, fixture generation, regeneration or
 acceptance, effects, release, EN-E03 adoption, and Wave 2 still required later
 explicit authorization. Wave 2 was subsequently opened through the bounded
-EN-E06 Fairy lane and is currently limited to the complete Bramblewing Scout
-acceptance candidate above.
+EN-E06 Fairy lane. Approved Bramblewing Scout is now followed only by the
+approved internal Thistle Hexer suite above.
 
 ## EN-E05 Lich Soul Regent full-suite approved internal lane
 

@@ -117,24 +117,25 @@ intentional bounded commit and branch push before the next gate begins, unless
 the designer explicitly says to hold publication. Unapproved lanes are never
 published under this rule.
 
-Current continuation checkpoint (2026-08-09): the designer explicitly selected
-Wave 2 after clean documentation handoff `4b2f49d`. After approving the exact
-Bramblewing Scout identity and Idle baseline, the designer corrected the
-cadence to all animations for one sprite per pass. The only active gate is
-`en-e06-fairy-bramblewing-scout-full-v1` on
-`codex/en-e06-fairy-full`: five EN-E06 family contract cards plus one internal,
-approved, non-public complete common Fairy across all four directions. The
-bounded implementation is published at `cc92ca9`. Its
-80 connected, bounded, hard-alpha, ground-clear frames preserve all eight Idle
-frames byte-for-byte and pass focused validation at candidate digest
-`0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
+Current continuation checkpoint (2026-08-09): approved common Fairy Bramblewing
+Scout remains exact, internal, non-public, and published at `cc92ca9`. After
+confirming that enemy variations continue one complete sprite at a time, the
+designer said `lets do next`, opening only specialist Fairy Thistle Hexer gate
+`en-e06-fairy-thistle-hexer-full-v1` on
+`codex/en-e06-fairy-thistle-hexer`, based on clean reconciliation `c1165df`.
+Its approved 80-frame suite passes connected, bounded, hard-alpha,
+ground-clear checks; all 80 pixel frames and alpha silhouettes differ from
+Bramblewing; candidate digest is
+`675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
 The published runtime boundary remains 17/43 expansion and 74/245 public with a
 2,182-PNG Complete Kit; public `zombie/ghoul`, all 232 committed fixtures,
-effects, release state, and EN-E03 isolation remain unchanged. The designer
-approved the exact full suite with `approved`; no next content lane is active.
-Fairy specialist/elite variants, Hag and later
-EN-E06 art, EN-E07, registration, fixtures, effects, and release each require a
-separate continuation.
+effects, release state, and EN-E03 isolation remain unchanged. Approval-state
+fast validation passes in `62.4s` and full validation in `108.6s`. The designer
+approved the exact Bramblewing full suite. The exact Thistle boards were opened
+in Aseprite and the designer replied `awesome! approved`; Thistle remains
+uncommitted and unpushed with bounded publication authorized. Petalcrown Duelist,
+Hag and later EN-E06 art, EN-E07, registration, fixtures, effects, and release
+each require a separate continuation.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and
@@ -689,17 +690,18 @@ passes in `103.1s`. The bounded implementation is published at `773cfad`.
 At that consumer checkpoint, public Ghoul replacement, fixture generation,
 regeneration or acceptance, effects, release, EN-E03 adoption, and Wave 2 still
 required separate explicit authorization. Wave 2 was later opened through the
-bounded EN-E06 Fairy lane. The exact Bramblewing Scout identity and Idle pair
-were approved, then the designer corrected the cadence to one complete sprite
-per pass. Its active full-suite gate passes 80/80 connected, bounded,
-ground-clear frames, preserves all 8/8 approved Idle frames, enforces exact
-mirrors and aliases, retains binary-alpha open-lattice wing windows, supports
-Complete B/Form treatment, exposes zero public families, and freezes candidate
-digest `0cb24229c55bc9e719dc288ac57ec87c7fba4c4d244bd5e0273e757af09da9a3`.
-Protected EN-E05 consumers pass at 74/245 and 320/320 frames; approval-state
-fast (`52.7s`) and full (`102.5s`) validation pass with all 232 fixtures unchanged. The
-complete Fairy is approved, committed, pushed at `cc92ca9`, internal, and
-non-public. A separate continuation is required for any next lane.
+bounded EN-E06 Fairy lane. Bramblewing Scout is approved, committed, pushed at
+`cc92ca9`, internal, and non-public. The current separate continuation adds
+only approved specialist Thistle Hexer: 80/80 connected, bounded,
+ground-clear frames; 80/80 pixel and silhouette distinctions from Bramblewing;
+exact mirrors and aliases; binary-alpha folded-wing negative space; Complete
+B/Form support; zero public Fairy families; candidate digest
+`675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
+Protected EN-E05 consumers pass at 74/245 and 320/320 with all 232 fixtures
+unchanged; approval-state fast/full validation passes in `62.4s` / `108.6s`.
+Exact visual approval is recorded as `awesome! approved`; bounded publication
+is authorized, and a separate continuation is required for Petalcrown Duelist
+or Hag.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
@@ -874,11 +876,12 @@ Candidate additions:
   and review sequence in `ENEMY_EXPANSION_PLAN.md`. EN-E01, EN-E02, EN-E04,
   and the four new EN-E05 families are registered and consumer-integrated at
   17 expansion families / 43 variants and 74/245 public. The separate EN-E05
-  Ghoul upgrade and all EN-E03 evidence remain internal. Wave 2 is active only
-  through the approved complete 80-frame EN-E06 Fairy Bramblewing Scout gate;
-  Fairy specialist/elite variants, later EN-E06 families, EN-E07, public Ghoul
-  replacement, fixture work, EN-E03 adoption, effects, and release remain
-  separately gated.
+  Ghoul upgrade and all EN-E03 evidence remain internal. Wave 2 contains the
+  approved complete Bramblewing Scout plus one approved complete Thistle Hexer
+  suite awaiting bounded publication. Petalcrown Duelist, later EN-E06
+  families, EN-E07,
+  public Ghoul replacement, fixture work, EN-E03 adoption, effects, and release
+  remain separately gated.
 - Additional production animations only after the 20-column contract has a
   versioning plan; review-only boss pilots remain isolated
 
