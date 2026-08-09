@@ -1778,7 +1778,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine, aquatic, and avian peoples
 
-- Status: `active - complete EN-E04 stable registration published; assembler consumer integration is next`
+- Status: `active - assembler consumer integration implemented; bounded publication pending`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1791,7 +1791,8 @@ and no new sprite pixels or public integration are authorized.
 - Approved gate: Birdfolk Aerie Scout complete common motion across Down, Left, Right, and Up; published
 - Approved gate: Birdfolk Gale Augur complete specialist motion across Down, Left, Right, and Up; published
 - Approved gate: Birdfolk Stormcrown Exarch complete elite motion across Down, Left, Right, and Up; published
-- Approved gate: complete nine-enemy EN-E04 stable registration; consumer exposure remains separately gated
+- Approved gate: complete nine-enemy EN-E04 stable registration; published
+- Approved gate: generic assembler consumer integration for all nine EN-E04 enemies; implemented
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -2389,10 +2390,10 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Stable boundary: `ENEMY_EXPANSION_REGISTRY` contains 13 approved families /
   39 variants and four renderers across EN-E01, EN-E02, and EN-E04. The ledger
   records four approved and eighteen planned slices.
-- Separation: `ENEMY_EXPANSION_CONSUMER_REGISTRY` remains the exact repaired
-  EN-E01/EN-E02 ten-family registry. `PUBLIC_ENEMIES` therefore remains 67
-  families / 232 variants, and Naga, Merfolk, and Birdfolk remain absent from
-  editor selectors, randomization, persistence, packs, thumbnails, and exports.
+- Historical separation: at registration checkpoint `6f228fb`,
+  `ENEMY_EXPANSION_CONSUMER_REGISTRY` remained the exact repaired EN-E01/EN-E02
+  ten-family registry. `PUBLIC_ENEMIES` was therefore 67 families / 232
+  variants until the later separately authorized integration gate.
 - Validation: `npm.cmd run check:enemy-expansion-en-e04-registration` verifies
   nine complete `480x96` sheets, all 720 candidate/registered frame and alpha
   pairs, hard alpha, bounds, stable facade isolation, ledger state, and zero
@@ -2400,12 +2401,47 @@ upright avian person rather than collapse into the existing Harpy identity.
   `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
 - Protected gates: the foundation, EN-E01/EN-E02 candidate, registration,
   consumer, repair, and EN-E03 evidence gates all remain green.
-- Exclusions: consumer exposure, editor-specific branches, schema changes,
-  effects, release, EN-E03 adoption, later slices, and any reviewed pixel
-  changes.
+- Exclusions at registration: consumer exposure, editor-specific branches,
+  schema changes, effects, release, EN-E03 adoption, later slices, and any
+  reviewed pixel changes.
 - Publication is complete at registration checkpoint `6f228fb`.
-- Required next action: complete the separately authorized assembler
-  consumer-integration gate.
+
+#### EN-E04 assembler consumer integration implemented
+
+- Gate ID: `en-e04-assembler-consumers-v1`; status: `authorized` and
+  implemented on `codex/en-e04-assembler-integration`, based exactly on clean
+  registration handoff `3bc380a`. Bounded publication is pending.
+- Authorization: the designer's `sure lets do 123` on 2026-08-09 authorized
+  Stormcrown publication, nine-enemy registration, and then this generic
+  assembler integration.
+- Public boundary: `ENEMY_EXPANSION_CONSUMER_REGISTRY` now aliases the exact
+  13-family / 39-variant stable registry. `PUBLIC_ENEMIES` is therefore 70
+  families / 241 variants while legacy `ENEMIES` remains 57/202.
+- Generic coverage: editor selectors and sanitizers, persistence, Enemy
+  randomization, thumbnails, full/animation/direction sheets, ordinary packs,
+  Complete Character Kits and Packs, Wildshot validation, None/Complete B/
+  Selective C outlines, and Form shading require no EN-E04-specific consumer
+  branches.
+- Adapter repair: the public renderer bridge suppresses only a delegated
+  renderer's full-frame clear. It forwards deliberate regional clears used by
+  Merfolk and Temple Rajah to replace inherited lower-body pixels, preserving
+  exact candidate/public parity under generic composition.
+- Validation: `npm.cmd run check:enemy-expansion-en-e04-consumers` verifies all
+  720 public frames, nine native full sheets plus scoped sheet/thumbnail routes,
+  67,440 Complete B additions, 64,380 Form-changed source pixels, 2,178 Complete
+  Kit PNGs, and Wildshot acceptance for all nine EN-E04 specifications.
+- Frozen aggregate digest:
+  `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
+- Compatibility: the historical EN-E01/EN-E02 2,400-frame / 30-sheet consumer
+  matrix and all focused EN-E04 gates remain green. Full `npm.cmd run check`
+  passes in `101.4s` before documentation reconciliation.
+- Fixture firewall: the 232 committed `asset-pack/` PNGs remain the frozen
+  legacy fixture corpus. They are not regenerated, accepted as a new baseline,
+  or expanded by this consumer gate.
+- Exclusions: reviewed source pixels, schema versions, effects, EN-E03
+  adoption, fixture regeneration, release artifacts, and broader enemy work.
+- Required next action: run the final focused/build/full gates, publish the
+  bounded integration checkpoint, then reconcile this handoff to its commit.
 
 ### EN-E05 - Undead humanoids
 

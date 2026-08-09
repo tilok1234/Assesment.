@@ -108,13 +108,13 @@ check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 4, 'the stable regist
 check(['birdfolk', 'merfolk', 'naga'].every((id) => stableFamilyIds.includes(id)), 'the stable registry is missing an approved EN-E04 family');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed stable registry must be immutable');
 
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY, 'registration must leave consumers frozen at the approved EN-E01/EN-E02 repair registry');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'registration and consumer integration must remain separate gates');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 10, 'consumer routing must remain at ten EN-E01/EN-E02 families during registration');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later authorized consumer gate must reuse the exact stable EN-E04 registry');
+check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY, 'EN-E04 registration must remain composed above the unchanged approved EN-E01/EN-E02 repair registry');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 13, 'consumer routing must contain all thirteen approved EN-E01/EN-E02/EN-E04 families');
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
-check(engine.PUBLIC_ENEMIES.length === 67 && publicVariants === 232, 'registration must not change the 67-family / 232-variant consumer catalog');
-check(['birdfolk', 'merfolk', 'naga'].every((id) => !engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'EN-E04 must remain absent from generic consumers during registration');
-check(sourceEntries.every((entry) => !engine.isPublicEnemyExpansionSpec({ kind: 'enemy', family: entry.family, variant: entry.variant })), 'EN-E04 rendering must remain outside the consumer dispatcher during registration');
+check(engine.PUBLIC_ENEMIES.length === 70 && publicVariants === 241, 'the later consumer gate must expose the 70-family / 241-variant catalog');
+check(['birdfolk', 'merfolk', 'naga'].every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'the later consumer gate must expose every registered EN-E04 family');
+check(sourceEntries.every((entry) => engine.isPublicEnemyExpansionSpec({ kind: 'enemy', family: entry.family, variant: entry.variant })), 'the later consumer gate must route every EN-E04 enemy through the public dispatcher');
 check(engine.ENEMIES.length === 57, 'EN-E04 registration must not rewrite the legacy 57-family catalog');
 
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
@@ -190,5 +190,5 @@ console.log('EN-E04 registration validation passed.');
 console.log('- Stable registry: 13 families / 39 variants across EN-E01, EN-E02, and EN-E04');
 console.log('- Registered EN-E04 sheets: 9 (480x96)');
 console.log('- Candidate/registered parity frames: 720');
-console.log('- Consumer catalog remains gated: 67 families / 232 variants');
+console.log('- Consumer catalog after authorized integration: 70 families / 241 variants');
 console.log(`- Approved EN-E04 aggregate digest: ${registeredFrameDigest}`);

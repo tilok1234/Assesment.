@@ -144,8 +144,8 @@ check(JSON.stringify(EN_E04_BIRDFOLK_STORMCROWN_EXARCH_FAMILY.variants.map((vari
 check(EN_E04_BIRDFOLK_STORMCROWN_EXARCH_REGISTRY.publicFamilies.length === 0 && EN_E04_BIRDFOLK_STORMCROWN_EXARCH_REGISTRY.approvedFamilies.length === 0, 'the Stormcrown Exarch candidate must remain internal and non-public');
 check(EN_E04_BIRDFOLK_STORMCROWN_EXARCH_DATA.bakedEffects.length === 0, 'all Stormcrown Exarch lightning and thunder effects must remain external');
 check(engine.EN_E04_BIRDFOLK_STORMCROWN_EXARCH_REGISTRY === undefined && engine.EN_E04_BIRDFOLK_STORMCROWN_EXARCH_GATE === undefined, 'the Stormcrown Exarch candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 67 && engine.ENEMIES.length === 57, 'the Stormcrown Exarch candidate must not change public or legacy Enemy counts');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'birdfolk'), 'Birdfolk must remain absent from public consumers');
+check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the Stormcrown Exarch candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'birdfolk'), 'the later approved registry/consumer gates must expose Birdfolk generically');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e04-birdfolk-stormcrown-exarch') && !facadeSource.includes('EN_E04_BIRDFOLK_STORMCROWN_EXARCH'), 'the public facade must not import or expose the Stormcrown Exarch candidate');
 

@@ -549,9 +549,19 @@ nine approved EN-E04 enemies as Naga, Merfolk, and Birdfolk common/specialist/
 elite families. All 720 candidate/registered frames match at aggregate digest
 `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
 The bounded registration checkpoint is published at `6f228fb`.
-The stable registry reaches 13 families / 39 variants, while the consumer
-firewall deliberately remains 67 families / 232 variants through EN-E02. The
-separately authorized assembler consumer-integration checkpoint is next.
+The stable registry reaches 13 families / 39 variants. The separately
+authorized assembler consumer-integration checkpoint is now implemented on
+`codex/en-e04-assembler-integration`: the consumer registry reuses that exact
+stable object and the generic public catalog reaches 70 families / 241 variants.
+All 720 EN-E04 public frames, nine full sheets, scoped exports, thumbnails,
+randomization, persistence, Complete Kits/Packs, Wildshot intake, outline modes,
+and Form shading pass without family-specific consumer branches. The renderer
+bridge now forwards deliberate regional clears while still suppressing a
+delegated full-frame reset, preserving Merfolk and Temple Rajah composition.
+The approved aggregate digest remains
+`137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`;
+the frozen 232-sheet legacy fixture pack remains untouched. Bounded publication
+and final handoff reconciliation are pending.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

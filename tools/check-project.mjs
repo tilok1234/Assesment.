@@ -117,6 +117,7 @@ checkSyntax('tools/check-enemy-expansion-en-e02-full.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02-registration.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02-consumers.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e04-registration.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e04-consumers.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e03.mjs');
 checkSyntax('tools/check-enemy-expansion-repairs.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
@@ -230,6 +231,14 @@ const enemyExpansionEnE04RegistrationCheck = spawnSync(process.execPath, [path.j
 check(
   enemyExpansionEnE04RegistrationCheck.status === 0,
   `EN-E04 approved registration gate failed\n${enemyExpansionEnE04RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE04RegistrationCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE04ConsumerCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e04-consumers.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE04ConsumerCheck.status === 0,
+  `EN-E04 assembler consumer integration gate failed\n${enemyExpansionEnE04ConsumerCheck.stdout.trim()}\n${enemyExpansionEnE04ConsumerCheck.stderr.trim()}`,
 );
 
 const enemyExpansionRepairCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-repairs.mjs')], {
@@ -6879,6 +6888,8 @@ console.log(`- Entry point: ${entryFile}`);
 console.log(`- Player combinations: ${combinations.toLocaleString('en-US')}`);
 console.log(`- Enemy families: ${manifest.enemies.length}`);
 console.log(`- Enemy variants: ${enemyRefs.length}`);
+console.log(`- Public enemy families: ${publicEnemyFamilyCount}`);
+console.log(`- Public enemy variants: ${publicEnemyVariantCount}`);
 console.log(`- Combat effects: ${effectRefs.length}`);
 console.log(`- Player samples: ${playerRefs.length}`);
 console.log(`- Production Roll policy cases: ${productionRollCases}`);

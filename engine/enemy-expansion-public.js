@@ -32,8 +32,9 @@ export {
 };
 
 // The stable registry composes the repaired EN-E01/EN-E02 families with the
-// separately approved EN-E04 registration. Consumer routing remains frozen at
-// the repaired EN-E01/EN-E02 checkpoint until the next authorized gate.
+// separately approved EN-E04 registration. The designer authorized the next
+// generic consumer gate on 2026-08-09, so both stable and consumer boundaries
+// now reuse this exact composed registry.
 export const ENEMY_EXPANSION_REGISTRY = createEnemyExpansionRegistry({
   renderers: [
     ...ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY.renderers,
@@ -44,7 +45,7 @@ export const ENEMY_EXPANSION_REGISTRY = createEnemyExpansionRegistry({
     ...EN_E04_PUBLIC_REGISTRY.families,
   ],
 });
-export const ENEMY_EXPANSION_CONSUMER_REGISTRY = ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY;
+export const ENEMY_EXPANSION_CONSUMER_REGISTRY = ENEMY_EXPANSION_REGISTRY;
 
 // Approved expansion families join the public consumer catalog without
 // rewriting the locked legacy ENEMIES array or its historical fixtures.

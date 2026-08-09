@@ -160,8 +160,8 @@ check(JSON.stringify(EN_E04_TEMPLE_RAJAH_MOTION_FAMILY.variants.map((variant) =>
 check(EN_E04_TEMPLE_RAJAH_MOTION_REGISTRY.publicFamilies.length === 0 && EN_E04_TEMPLE_RAJAH_MOTION_REGISTRY.approvedFamilies.length === 0, 'the Rajah motion candidate must remain internal and non-public');
 check(EN_E04_TEMPLE_RAJAH_IDLE_DATA.bakedEffects.length === 0, 'Temple Rajah must keep all command/ward effects external');
 check(engine.EN_E04_TEMPLE_RAJAH_MOTION_REGISTRY === undefined && engine.EN_E04_TEMPLE_RAJAH_MOTION_GATE === undefined, 'the Rajah motion candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 67 && engine.ENEMIES.length === 57, 'the Rajah motion candidate must not change public or legacy Enemy counts');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'naga'), 'Naga must remain absent from public consumers');
+check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the Rajah motion candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'naga'), 'the later approved registry/consumer gates must expose Naga generically');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e04-rajah-motion') && !facadeSource.includes('EN_E04_TEMPLE_RAJAH_MOTION'), 'the public facade must not import or expose the Rajah motion candidate');
 

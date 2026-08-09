@@ -49,7 +49,7 @@ check(
 );
 check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved', 'the repair boundary must record explicit visual approval');
 check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the stable registry must compose later approved registrations without rewriting EN-E01 repair evidence');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the consumer boundary must retain the exact approved EN-E01/EN-E02 repair registry until EN-E04 integration');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E04 consumer gate must reuse the exact stable approved registry');
 check(EN_E01_APPROVED_FAMILIES.length === 5, 'public EN-E01 registration needs exactly five approved families');
 check(JSON.stringify(EN_E01_PUBLIC_REGISTRY.families.map((family) => family.id)) === JSON.stringify(expectedFamilies), 'public EN-E01 family order must be deterministic');
 check(EN_E01_PUBLIC_REGISTRY.families.every((family) => family.state === engine.ENEMY_EXPANSION_STATES.APPROVED), 'every registered EN-E01 family must be approved');

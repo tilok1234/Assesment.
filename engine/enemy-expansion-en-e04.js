@@ -106,6 +106,20 @@ export const EN_E04_REGISTRATION_GATE = deepFreeze({
   nextGate: 'After exact 720-frame candidate/registered parity and stable-registry validation, route EN-E04 through the separately authorized assembler consumer-integration gate.',
 });
 
+export const EN_E04_CONSUMER_INTEGRATION_GATE = deepFreeze({
+  id: 'en-e04-assembler-consumers-v1',
+  status: 'authorized',
+  authorizedOn: '2026-08-09',
+  authorizationEvidence: 'After reviewing and approving Stormcrown Exarch, the designer approved the proposed publication, registration, and assembler-integration sequence by saying: sure lets do 123.',
+  registrationCheckpoint: '6f228fb',
+  registrationHandoff: '3bc380a',
+  scope: 'Route the exact approved EN-E04 stable registry through generic editor selectors and sanitization, persistence, random Enemy generation, public rendering, outline/Form assembly, thumbnails, native sheets, Complete Kits, ordinary packs, and Wildshot game-pack validation.',
+  expectedPublicFamilies: 70,
+  expectedPublicVariants: 241,
+  exclusions: ['slice-specific editor branches', 'schema changes', 'reviewed pixel changes', 'baked effects', 'asset-pack fixture replacement', 'release', 'EN-E03 adoption', 'later expansion slices'],
+  nextGate: 'Validate all generic consumer routes and publish the bounded EN-E04 assembler-integration checkpoint without rewriting approved art or the frozen legacy asset-pack fixtures.',
+});
+
 export const EN_E04_NAGA_REGISTERED_RENDERER = registeredRenderer(
   'en-e04-naga-registered-v1',
   EN_E04_NAGA_MOTION_RENDERER.chassis,

@@ -138,8 +138,8 @@ check(EN_E04_NAGA_IDLE_REGISTRY.publicFamilies.length === 0, 'the Naga candidate
 check(EN_E04_NAGA_IDLE_FAMILY.variants.length === 1 && EN_E04_NAGA_IDLE_FAMILY.variants[0].id === 'coilguard', 'the candidate registry must implement only Coilguard');
 check(EN_E04_NAGA_IDLE_REGISTRY.renderers[0].chassis === 'serpentine-humanoid-v1', 'the candidate must use the explicit serpentine humanoid chassis');
 check(engine.EN_E04_NAGA_IDLE_REGISTRY === undefined && engine.EN_E04_NAGA_IDLE_GATE === undefined, 'the Naga candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 67 && engine.ENEMIES.length === 57, 'the Naga candidate must not change public or legacy Enemy counts');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'naga'), 'Naga must remain absent from public consumers');
+check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the Naga candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'naga'), 'the later approved registry/consumer gates must expose Naga generically');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e04-naga-idle') && !facadeSource.includes('EN_E04_NAGA_IDLE'), 'the public facade must not import or expose Naga candidate symbols');
 

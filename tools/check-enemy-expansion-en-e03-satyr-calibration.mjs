@@ -112,7 +112,7 @@ check(EN_E03_BRIAR_REVELER_CALIBRATION_DATA.actor.outfit === 'ranger', 'Briar Re
 check(EN_E03_BRIAR_REVELER_CALIBRATION_DATA.actor.weapon === 'none', 'Briar Reveler must use the bounded custom crooked staff');
 check(EN_E03_BRIAR_REVELER_CALIBRATION_DATA.identity.overlays[0].id === 'goatfolk-traits-v2', 'Briar Reveler must reuse the approved Goatfolk horn and ear grammar');
 
-check(engine.PUBLIC_ENEMIES.length === 67, 'the Briar Reveler calibration must not alter the 67-family public catalog');
+check(engine.PUBLIC_ENEMIES.length === 70, 'the Briar Reveler calibration must not alter the 70-family public catalog');
 check(engine.ENEMIES.length === 57, 'the Briar Reveler calibration must not alter the 57-family legacy catalog');
 check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'satyr'), 'Satyr must remain absent from public consumers');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');

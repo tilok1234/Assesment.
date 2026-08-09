@@ -21,9 +21,13 @@ function drawExpansionShadow(context) {
 
 function bridgedExpansionContext(context, spec, onOutOfBounds) {
   const bridge = {
-    clearRect() {
-      // The public dispatcher owns clear/compose semantics. The reviewed
-      // expansion renderer still clears when called directly for gate checks.
+    clearRect(x, y, width, height) {
+      // The public dispatcher owns full-frame clear/compose semantics so the
+      // shared shadow and clear:false layering survive. Forward intentional
+      // regional clears used by non-humanoid renderers to replace inherited
+      // anatomy (for example serpent coils and Merfolk tails).
+      if (x <= 0 && y <= 0 && width >= SIZE && height >= SIZE) return;
+      context.clearRect(x, y, width, height);
     },
     get fillStyle() { return context.fillStyle; },
     set fillStyle(value) { context.fillStyle = value; },

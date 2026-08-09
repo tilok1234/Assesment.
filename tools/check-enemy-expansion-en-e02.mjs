@@ -78,7 +78,7 @@ check(EN_E02_IDLE_REGISTRY.publicFamilies.length === 0, 'EN-E02 Idle evidence mu
 check(EN_E02_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E02 Idle evidence must not claim family approval');
 check(Object.isFrozen(EN_E02_IDLE_REGISTRY), 'the EN-E02 Idle registry must be immutable');
 check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 13, 'the cumulative registry must contain approved EN-E01, EN-E02, and EN-E04');
-check(engine.PUBLIC_ENEMIES.length === 67, 'the consumer catalog must contain 67 families after authorized EN-E02 integration');
+check(engine.PUBLIC_ENEMIES.length === 70, 'the consumer catalog must contain 70 families after authorized EN-E04 integration');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(cardOrder.every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'approved EN-E02 families must enter public consumers only after the separate integration gate');
 

@@ -148,7 +148,7 @@ check(EN_E03_GIANT_ATTACK_REGISTRY.publicFamilies.length === 0 && EN_E03_GIANT_A
 check(EN_E03_GIANT_ATTACK_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'the Attack renderer must retain the approved roster chassis');
 check(Object.isFrozen(EN_E03_GIANT_ATTACK_REGISTRY) && Object.isFrozen(EN_E03_GIANT_ATTACK_FAMILY), 'the Attack registry and family must be immutable');
 
-check(engine.PUBLIC_ENEMIES.length === 67, 'the Attack candidate must not alter the 67-family public catalog');
+check(engine.PUBLIC_ENEMIES.length === 70, 'the Attack candidate must not alter the 70-family public catalog');
 check(engine.ENEMIES.length === 57, 'the Attack candidate must not alter the 57-family legacy catalog');
 check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'giant'), 'Giant must remain absent from public consumers');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');

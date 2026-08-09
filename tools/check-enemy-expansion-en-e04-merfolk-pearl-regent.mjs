@@ -183,8 +183,8 @@ check(JSON.stringify(EN_E04_MERFOLK_PEARL_REGENT_FAMILY.variants.map((variant) =
 check(EN_E04_MERFOLK_PEARL_REGENT_REGISTRY.publicFamilies.length === 0 && EN_E04_MERFOLK_PEARL_REGENT_REGISTRY.approvedFamilies.length === 0, 'the Pearl Regent candidate must remain internal and non-public');
 check(EN_E04_MERFOLK_PEARL_REGENT_DATA.bakedEffects.length === 0, 'all Pearl Regent royal tide effects must remain external');
 check(engine.EN_E04_MERFOLK_PEARL_REGENT_REGISTRY === undefined && engine.EN_E04_MERFOLK_PEARL_REGENT_GATE === undefined, 'the Pearl Regent candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 67 && engine.ENEMIES.length === 57, 'the Pearl Regent candidate must not change public or legacy Enemy counts');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'merfolk'), 'Merfolk must remain absent from public consumers');
+check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the Pearl Regent candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'merfolk'), 'the later approved registry/consumer gates must expose Merfolk generically');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e04-merfolk-pearl-regent') && !facadeSource.includes('EN_E04_MERFOLK_PEARL_REGENT'), 'the public facade must not import or expose the PearlRegent candidate');
 

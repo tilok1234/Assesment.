@@ -143,8 +143,8 @@ check(JSON.stringify(EN_E04_BIRDFOLK_GALE_AUGUR_FAMILY.variants.map((variant) =>
 check(EN_E04_BIRDFOLK_GALE_AUGUR_REGISTRY.publicFamilies.length === 0 && EN_E04_BIRDFOLK_GALE_AUGUR_REGISTRY.approvedFamilies.length === 0, 'the Gale Augur candidate must remain internal and non-public');
 check(EN_E04_BIRDFOLK_GALE_AUGUR_DATA.bakedEffects.length === 0, 'all Gale Augur wind and omen effects must remain external');
 check(engine.EN_E04_BIRDFOLK_GALE_AUGUR_REGISTRY === undefined && engine.EN_E04_BIRDFOLK_GALE_AUGUR_GATE === undefined, 'the Gale Augur candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 67 && engine.ENEMIES.length === 57, 'the Gale Augur candidate must not change public or legacy Enemy counts');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'birdfolk'), 'Birdfolk must remain absent from public consumers');
+check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the Gale Augur candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'birdfolk'), 'the later approved registry/consumer gates must expose Birdfolk generically');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e04-birdfolk-gale-augur') && !facadeSource.includes('EN_E04_BIRDFOLK_GALE_AUGUR'), 'the public facade must not import or expose the Gale Augur candidate');
 

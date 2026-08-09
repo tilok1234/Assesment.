@@ -87,10 +87,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
   asset-pack). The stable expansion registry contains 13 families / 39 variants
-  across approved EN-E01, EN-E02, and EN-E04. The separately gated public
-  consumer catalog remains 67 families / 232 variants through EN-E02;
-  `engine.PUBLIC_ENEMIES` does not expose EN-E04 until its consumer gate.
-  EN-E03 remains isolated historical evidence and is not registered.
+  across approved EN-E01, EN-E02, and EN-E04. The separately authorized EN-E04
+  consumer gate now reuses that exact registry, so `engine.PUBLIC_ENEMIES` is
+  70 families / 241 variants. EN-E03 remains isolated historical evidence and
+  is not registered.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;

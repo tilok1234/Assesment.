@@ -15,6 +15,50 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
+## Immediate Continuation Checkpoint - EN-E04 Assembler Integration Implemented
+
+Start here in a new task. The designer authorized the three-part sequence with
+`sure lets do 123` on 2026-08-09. Stormcrown publication and nine-enemy stable
+registration are already pushed. The third step is now implemented and
+technically green; bounded commit/push and final handoff reconciliation remain.
+
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-assembler-integration`, based exactly on clean published
+  registration handoff `3bc380a`.
+- Gate: `en-e04-assembler-consumers-v1`; status `authorized` and implemented,
+  with bounded publication pending.
+- Public boundary: `ENEMY_EXPANSION_CONSUMER_REGISTRY` reuses the exact stable
+  13-family / 39-variant registry. `PUBLIC_ENEMIES` is now 70 families / 241
+  variants; legacy `ENEMIES` remains 57/202.
+- Generic routes: selectors/sanitization, persistence, randomization,
+  thumbnails, full/animation/direction sheets, ordinary packs, Complete Kits
+  and Packs, Wildshot validation, None/Complete B/Selective C outlines, and
+  Form shading all accept Naga, Merfolk, and Birdfolk without slice-specific
+  consumer branches.
+- Renderer bridge repair: delegated full-frame clears remain suppressed for
+  `clear:false` composition, while deliberate regional clears are forwarded.
+  This preserves approved Merfolk and Temple Rajah lower-body replacement
+  pixels through the generic public renderer.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e04-consumers`.
+- Focused result: all 720 public frames and nine native full sheets match the
+  approved lanes; direction, animation, thumbnail, pack, Kit, and Wildshot
+  routes pass. Aggregate digest remains
+  `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
+- Presentation metrics: 67,440 Complete B additions and 64,380 Form-changed
+  source pixels across 720 frames. Complete Kit planning is 70 families / 241
+  enemy sheets / 2,178 PNGs; all nine EN-E04 Wildshot specs are accepted.
+- Protected result: the historical EN-E01/EN-E02 2,400-frame / 30-sheet matrix,
+  EN-E04 registration and Stormcrown gates, and all other protected checks pass.
+  Full `npm.cmd run check` passed in `101.4s` before doc reconciliation.
+- Fixture firewall: the 232 committed `asset-pack/` PNGs remain frozen legacy
+  fixtures. This slice does not regenerate them, accept drift, or publish a new
+  outline ZIP/release artifact.
+- Required next action: run focused/build/full validation after documentation,
+  publish the bounded integration commit, reconcile this section to the exact
+  pushed checkpoint, and stop. Effects, EN-E03 adoption, fixture regeneration,
+  release, and broader content remain outside.
+
 ## Immediate Continuation Checkpoint - EN-E04 Registration Approved And Published
 
 Start here in a new task. The designer approved Stormcrown Exarch and the full
@@ -38,10 +82,11 @@ EN-E04 roster into the stable registry without exposing it to consumers.
 - Stable registry: 13 approved families / 39 variants / four renderers across
   EN-E01, EN-E02, and EN-E04. Ledger lifecycle: four approved, zero implemented,
   eighteen planned.
-- Consumer firewall: `ENEMY_EXPANSION_CONSUMER_REGISTRY` remains the exact
-  repaired EN-E01/EN-E02 ten-family object. `PUBLIC_ENEMIES` stays 67/232 and
-  EN-E04 remains absent from selectors, persistence, randomization, thumbnails,
-  game packs, Complete Kits, and every ordinary export route.
+- Historical consumer firewall: at registration checkpoint `6f228fb`,
+  `ENEMY_EXPANSION_CONSUMER_REGISTRY` remained the exact repaired EN-E01/EN-E02
+  ten-family object and `PUBLIC_ENEMIES` stayed 67/232. The later separately
+  authorized integration checkpoint above now exposes EN-E04 through the same
+  generic routes.
 - Focused command: `npm.cmd run check:enemy-expansion-en-e04-registration`.
 - Focused result: nine sheets and all 720 candidate/registered frame and alpha
   pairs pass with aggregate digest
@@ -50,9 +95,9 @@ EN-E04 roster into the stable registry without exposing it to consumers.
   historical gates remain green after the stable-registry composition.
 - Publication checkpoint: `6f228fb` on the tracked origin branch; the focused
   and full repository gates pass.
-- Required next action: begin the separately authorized assembler
-  consumer-integration gate. Do not add effects, later slices, or rewrite any
-  approved pixels.
+- Later action: the separately authorized assembler consumer-integration gate
+  is now implemented in the checkpoint above. Do not add effects, later slices,
+  or rewrite any approved pixels.
 
 The approved and published Stormcrown checkpoint follows for provenance.
 
