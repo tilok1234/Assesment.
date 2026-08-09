@@ -1281,11 +1281,12 @@ The bounded implementation is published at checkpoint `cedc774`.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
-48x192 direction sheets, plus ten animation-catalog entries, 800 distinct
-48x48 frames, and 110 native full/scoped animation sheets. They also enforce
+48x192 direction sheets, plus eleven animation-catalog entries, 880 distinct
+48x48 frames, and 121 native full/scoped animation sheets. They also enforce
 Idle-frame control parity, facade immutability, native-only download wiring,
 and absence from production renderer, generator, persistence, game-pack, and
-ordinary sheet dependencies.
+ordinary sheet dependencies. With the Lava animation accepted, the full
+repository gate passes in `97.5s` with all 232 fixture PNGs unchanged.
 
 The standard full `npm run check` is fresh-clone safe. Missing optional local
 Boss review checkpoints are warnings, and byte parity runs for every checkpoint

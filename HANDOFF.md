@@ -9,16 +9,72 @@ This checkout is the current v2 repository at
 `https://github.com/tilok1234/Assesment.` as `origin`. The old
 `C:\tmp\8-bit-sprite-assembler-*` paths below are historical provenance only;
 do not recreate or treat them as live workspaces. `CLAUDE.md` and the
-repo-local `add-enemy` runbook define the current authoring and verification
-workflow. The approved EN-E04 Idle source remains
+repo-local `add-enemy` / `add-boss` runbooks define the current authoring and
+verification workflow. The approved EN-E04 Idle source remains
 `codex/en-e04-naga-idle` at `26151e1`; the approved motion continuation is
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Published Approved EN-E06 Fairy Thistle Hexer
+## Immediate Continuation Checkpoint - Approved Lava-Core Colossus Publication
 
 Start here in a new task. This is the only active continuation section in this
-file; everything below `Historical Handoff Archive` is provenance.
+file; the published Thistle checkpoint and everything below `Historical Handoff
+Archive` are provenance.
+
+- Repository/worktree: isolated branch
+  `codex/boss-lava-core-colossus-animation` at
+  `C:\Users\headc\Documents\sprite-assembler-v2\death-review\boss-worktrees\lava-core-colossus-animation`,
+  based exactly on clean published Thistle handoff
+  `581bff99e2a99fc99b77402baffe2911b5a2ee47`.
+- Parallel-lane firewall: the separate unapproved Petalcrown Duelist worktree
+  remains untouched and is not included in this branch.
+- Authorization: on 2026-08-09 the designer asked to work on Bosses and begin
+  by making sure all bosses have animations. Live catalog audit found fourteen
+  Bosses-tab direction entries and ten animation suites. The bounded cadence is
+  one complete boss per visual-approval pass. The designer explicitly approved
+  the exact Lava full sheet and live Cycle All playback with `approved and next`;
+  Kraken, Griffin, and Unicorn remain closed until this approval is published.
+- Gate/status: accepted `boss-animation-v1` for `lava-core-colossus`; internal,
+  review-only, effects-off, visually approved, and authorized for publication.
+- Scope: one complete 80-frame native `48x48` suite across Down, Left, Right,
+  and Up: Idle x2, Walk x4, Attack x4, Cast x4, Hurt x2, and Death x4. Right is
+  the exact mirror of Left and every Idle frame 1 is byte-identical to the
+  approved static direction control.
+- Motion identity: furnace-core Idle pulse, four-beat heavy boulder lurch,
+  full-body wind-up/compression/ground-slam/recovery Attack, four-stage
+  core-overheat Cast, bright recoil, and staged rock collapse with body rubble.
+- Authoring boundary: `tools/generate-lava-core-colossus-animation-v1.py`
+  derives from the approved v2 direction/style sources and uses the shared
+  batched `boss_animation_authoring_v1.py` treatment path. No checker literals,
+  frame contracts, shared renderer code, production paths, persistence,
+  ordinary packs, fixtures, schemas, effects, or Windows build paths change.
+- Integration: append one accepted pilot to `engine/catalogs/boss-animations.js`
+  and data-owned `tools/fixtures/boss-roster.json`; generate exactly 80 runtime
+  frames plus eleven native sheets and matching ignored review checkpoints.
+- Deterministic evidence: exact native `960x192` full sheet SHA-256
+  `62d8a6ab95b6546154dbfbc66a5241d6071d36f5d5fc0dc160626a16497568c9`
+  reproduced byte-for-byte on consecutive builds.
+- Focused result: `npm.cmd run check:bosses` passes fourteen direction pilots,
+  eleven animation pilots, 880 distinct hard-alpha frames, 121 native sheets,
+  exact direction controls, mirrored side silhouettes, immutable facade, and
+  isolated dependencies. Missing unrelated review checkpoints remain warnings
+  on this clone; all present checkpoints and all runtime assets validate.
+- Live review result: the isolated local Bosses tab reported eleven full
+  animation pilots and three static entries, played Lava's frames and action
+  switching correctly, and emitted no browser-console warnings or errors. The
+  designer approved that visible Cycle All playback and the exact deterministic
+  full sheet on 2026-08-09.
+- Validation state: the full `npm.cmd run check` passes in `97.5s`
+  with the public Enemy catalog still 74/245 and all 232 fixture PNGs unchanged.
+- Required next action: run the accepted-state Boss and full gates, publish only
+  this isolated Lava lane, verify clean upstream parity, and then open only the
+  Abyssal Crown-Kraken animation lane. Do not run the frozen
+  `export:bosses:13` command.
+
+## Published Preceding Checkpoint - Approved EN-E06 Fairy Thistle Hexer
+
+This is the clean published source checkpoint for the isolated Boss branch.
+The active Lava section above supersedes its historical next-action wording.
 
 - Repository/branch: current v2 checkout on
   `codex/en-e06-fairy-thistle-hexer`, created from clean published Fairy

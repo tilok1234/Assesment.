@@ -187,10 +187,12 @@ legacy Enemy catalog remains visually approved; its current 20-column gate
 covers 16,160 source frames / 48,480 None-B-C cases. Form shading, Lantern,
 Production Roll, compatible category rerolls, and the public Cast/Death actor
 contract are complete. The isolated Boss workspace contains fourteen direction
-entries (twelve approved plus Rhino and Unicorn candidates) and ten animation
+entries (twelve approved plus Rhino and Unicorn candidates) and eleven animation
 entries. Catgirl Templar and Astro Knight are accepted; Goblin War-Crown,
 Rhino, and Boar Rider animations remain candidates, as do the repaired Rhino
-and Unicorn direction designs.
+and Unicorn direction designs. Lava-Core Colossus is accepted after exact-sheet
+and live Cycle All review; its full repository gate passes in `97.5s` with all
+232 fixture PNGs unchanged.
 
 The deterministic `wildshot-npc-slice-v1@bf6269c` delivery contains 32
 Player-built NPC looks and was verified by the game intake. The approved
@@ -704,7 +706,7 @@ is complete at `3dc68cb`, and a separate continuation is required for
 Petalcrown Duelist or Hag.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
-gate, but its frozen roster currently lacks four direction and seven animation
+gate, but its frozen roster currently lacks four direction and six animation
 catalog entries, so the command is not release-ready. Existing fixtures remain
 unchanged, Effects start Off, and the effect-after-character equipment
 occlusion issue remains on ice. A current local standalone executable was built

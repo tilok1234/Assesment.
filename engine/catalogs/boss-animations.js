@@ -94,4 +94,5 @@ export const BOSS_ANIMATION_PILOTS = Object.freeze([
     'Gunslinger Boar Rider',
     'candidate',
   ),
+  animationPilot('lava-core-colossus', 'Lava-Core Colossus'),
 ]);

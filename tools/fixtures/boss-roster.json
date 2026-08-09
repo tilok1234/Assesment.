@@ -30,7 +30,8 @@
       "cruel-catgirl-templar-of-the-brutes",
       "divine-armored-templar-astro-knight",
       "furious-depraved-rhino",
-      "gunslinger-boar-rider"
+      "gunslinger-boar-rider",
+      "lava-core-colossus"
     ],
     "candidates": [
       "goblin-war-crown",
@@ -45,7 +46,8 @@
       "cruel-catgirl-templar-of-the-brutes",
       "divine-armored-templar-astro-knight",
       "furious-depraved-rhino",
-      "gunslinger-boar-rider"
+      "gunslinger-boar-rider",
+      "lava-core-colossus"
     ],
     "generators": {
       "ancient-mirejaw": {
@@ -87,6 +89,10 @@
       "gunslinger-boar-rider": {
         "animationScript": "generate-gunslinger-boar-rider-animation-v1.py",
         "directionModule": "generate_gunslinger_boar_rider_directions_v1"
+      },
+      "lava-core-colossus": {
+        "animationScript": "generate-lava-core-colossus-animation-v1.py",
+        "directionModule": "generate_lava_core_colossus_directions_v1"
       }
     }
   }
