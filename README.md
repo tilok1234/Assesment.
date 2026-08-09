@@ -1815,7 +1815,7 @@ candidate.
 Lava-Core Colossus has approved direction controls and a deterministic,
 accepted 80-frame furnace-core animation suite: heavy Idle pulse, four-beat boulder
 lurch, ground-slam Attack, core-overheat Cast, bright recoil, and staged rock
-collapse. The full repository gate passes in `97.5s` with all 232 fixture PNGs
+collapse. The full repository gate passes in `99.8s` with all 232 fixture PNGs
 unchanged. The designer approved its exact full sheet and live Bosses-tab Cycle
 All playback on 2026-08-09.
 

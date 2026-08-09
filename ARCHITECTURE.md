@@ -1286,7 +1286,7 @@ The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 Idle-frame control parity, facade immutability, native-only download wiring,
 and absence from production renderer, generator, persistence, game-pack, and
 ordinary sheet dependencies. With the Lava animation accepted, the full
-repository gate passes in `97.5s` with all 232 fixture PNGs unchanged.
+repository gate passes in `99.8s` with all 232 fixture PNGs unchanged.
 
 The standard full `npm run check` is fresh-clone safe. Missing optional local
 Boss review checkpoints are warnings, and byte parity runs for every checkpoint

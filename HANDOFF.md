@@ -15,7 +15,7 @@ verification workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Approved Lava-Core Colossus Publication
+## Immediate Continuation Checkpoint - Published Approved Lava-Core Colossus Animation
 
 Start here in a new task. This is the only active continuation section in this
 file; the published Thistle checkpoint and everything below `Historical Handoff
@@ -25,17 +25,20 @@ Archive` are provenance.
   `codex/boss-lava-core-colossus-animation` at
   `C:\Users\headc\Documents\sprite-assembler-v2\death-review\boss-worktrees\lava-core-colossus-animation`,
   based exactly on clean published Thistle handoff
-  `581bff99e2a99fc99b77402baffe2911b5a2ee47`.
+  `581bff99e2a99fc99b77402baffe2911b5a2ee47`. The accepted implementation is
+  published at `95719357ee6e1363dda6b6c82a575c2720cb1ca2`.
 - Parallel-lane firewall: the separate unapproved Petalcrown Duelist worktree
   remains untouched and is not included in this branch.
 - Authorization: on 2026-08-09 the designer asked to work on Bosses and begin
   by making sure all bosses have animations. Live catalog audit found fourteen
   Bosses-tab direction entries and ten animation suites. The bounded cadence is
   one complete boss per visual-approval pass. The designer explicitly approved
-  the exact Lava full sheet and live Cycle All playback with `approved and next`;
-  Kraken, Griffin, and Unicorn remain closed until this approval is published.
+  the exact Lava full sheet and live Cycle All playback with `approved and next`.
+  That approval is now published; Kraken is the next single-boss lane, while
+  Griffin and Unicorn remain closed.
 - Gate/status: accepted `boss-animation-v1` for `lava-core-colossus`; internal,
-  review-only, effects-off, visually approved, and authorized for publication.
+  review-only, effects-off, visually approved, and published on its isolated
+  branch.
 - Scope: one complete 80-frame native `48x48` suite across Down, Left, Right,
   and Up: Idle x2, Walk x4, Attack x4, Cast x4, Hurt x2, and Death x4. Right is
   the exact mirror of Left and every Idle frame 1 is byte-identical to the
@@ -64,12 +67,13 @@ Archive` are provenance.
   switching correctly, and emitted no browser-console warnings or errors. The
   designer approved that visible Cycle All playback and the exact deterministic
   full sheet on 2026-08-09.
-- Validation state: the full `npm.cmd run check` passes in `97.5s`
+- Validation state: the accepted-state `npm.cmd run check:bosses` and full
+  `npm.cmd run check` pass; the full gate completes in `99.8s`
   with the public Enemy catalog still 74/245 and all 232 fixture PNGs unchanged.
-- Required next action: run the accepted-state Boss and full gates, publish only
-  this isolated Lava lane, verify clean upstream parity, and then open only the
-  Abyssal Crown-Kraken animation lane. Do not run the frozen
-  `export:bosses:13` command.
+- Required next action: publish this documentation reconciliation, verify clean
+  upstream parity, and then open only the Abyssal Crown-Kraken animation lane
+  from the reconciled Lava checkpoint. Do not run the frozen `export:bosses:13`
+  command.
 
 ## Published Preceding Checkpoint - Approved EN-E06 Fairy Thistle Hexer
 

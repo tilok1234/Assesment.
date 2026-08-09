@@ -191,7 +191,7 @@ entries (twelve approved plus Rhino and Unicorn candidates) and eleven animation
 entries. Catgirl Templar and Astro Knight are accepted; Goblin War-Crown,
 Rhino, and Boar Rider animations remain candidates, as do the repaired Rhino
 and Unicorn direction designs. Lava-Core Colossus is accepted after exact-sheet
-and live Cycle All review; its full repository gate passes in `97.5s` with all
+and live Cycle All review; its full repository gate passes in `99.8s` with all
 232 fixture PNGs unchanged.
 
 The deterministic `wildshot-npc-slice-v1@bf6269c` delivery contains 32
