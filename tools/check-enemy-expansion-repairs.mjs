@@ -87,8 +87,8 @@ check(JSON.stringify(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.affectedFamilies) ===
 check(Object.isFrozen(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE), 'repair gate must be immutable');
 check(Object.isFrozen(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.affectedFamilies), 'repair gate affected-family scope must be deeply immutable');
 check(ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'approved repair must alias the exact reviewed candidate object');
-check(engine.ENEMY_EXPANSION_REGISTRY === ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY, 'stable registry must use the exact approved repair object');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'generic consumers must use the stable approved repair registry');
+check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY, 'stable registry must compose EN-E04 without rewriting the exact approved repair object');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY, 'generic consumers must retain the exact approved repair registry until EN-E04 integration');
 check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_PRE_REPAIR_REGISTRY, 'approved repair must remain distinct from pre-repair comparison evidence');
 check(Object.isFrozen(ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY), 'repair registry must be immutable');
 check(ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY.publicFamilies.length === 10, 'repair registry must retain all ten approved families');

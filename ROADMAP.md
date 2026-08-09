@@ -192,7 +192,8 @@ the same generic boundary at 67 families / 232 variants while preserving the
 unchanged 57-family / 202-variant legacy catalog and pixel locks. The designer
 accepted EN-E02's live Complete B + Form consumer view and later approved the
 exact seven-family walk/seam repair. That repaired registry is now both the
-stable and consumer boundary; the pre-repair registry remains internal.
+EN-E01/EN-E02 source and current consumer boundary; the stable registry now
+composes approved EN-E04 while the pre-repair registry remains internal.
 The designer rejected EN-E03 v1 checkpoint `50ad516` because its boxed visual
 language did not match the approved roster, then rejected replacement checkpoint
 `6104eae` as still far from that style. V2 keeps only the Giant, Centaur, and
@@ -543,6 +544,13 @@ Bounded Stormcrown publication is complete at `da8c089`; separate complete
 EN-E04 registration and assembler consumer-integration checkpoints are
 authorized next in that order. Additional variants, effects, release, and
 broader work remain gated.
+The registration checkpoint on `codex/en-e04-registration` now composes all
+nine approved EN-E04 enemies as Naga, Merfolk, and Birdfolk common/specialist/
+elite families. All 720 candidate/registered frames match at aggregate digest
+`137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
+The stable registry reaches 13 families / 39 variants, while the consumer
+firewall deliberately remains 67 families / 232 variants through EN-E02. The
+separately authorized assembler consumer-integration checkpoint is next.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

@@ -14,6 +14,7 @@ import {
   ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE,
   ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY,
 } from './enemy-expansion-repairs.js';
+import { EN_E04_PUBLIC_REGISTRY } from './enemy-expansion-en-e04.js';
 import { ENEMIES } from './catalogs.js';
 
 export {
@@ -30,11 +31,20 @@ export {
   validateEnemyExpansionSheet,
 };
 
-// The designer approved the exact repair candidate on 2026-08-03. Keep the
-// pre-repair registry internal for regression evidence while routing both the
-// stable and consumer boundaries through the accepted pixels.
-export const ENEMY_EXPANSION_REGISTRY = ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY;
-export const ENEMY_EXPANSION_CONSUMER_REGISTRY = ENEMY_EXPANSION_REGISTRY;
+// The stable registry composes the repaired EN-E01/EN-E02 families with the
+// separately approved EN-E04 registration. Consumer routing remains frozen at
+// the repaired EN-E01/EN-E02 checkpoint until the next authorized gate.
+export const ENEMY_EXPANSION_REGISTRY = createEnemyExpansionRegistry({
+  renderers: [
+    ...ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY.renderers,
+    ...EN_E04_PUBLIC_REGISTRY.renderers,
+  ],
+  families: [
+    ...ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY.families,
+    ...EN_E04_PUBLIC_REGISTRY.families,
+  ],
+});
+export const ENEMY_EXPANSION_CONSUMER_REGISTRY = ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY;
 
 // Approved expansion families join the public consumer catalog without
 // rewriting the locked legacy ENEMIES array or its historical fixtures.

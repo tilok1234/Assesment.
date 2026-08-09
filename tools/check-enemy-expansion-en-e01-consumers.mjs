@@ -173,8 +173,8 @@ check(
   'the public consumer catalog must use the stable registry public-family view',
 );
 check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved', 'the consumer repair boundary must record explicit visual approval');
-check(engine.ENEMY_EXPANSION_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the stable registry must route through the exact approved repair candidate');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'generic consumers must route through the stable approved registry');
+check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the stable registry must compose EN-E04 without rewriting the approved repair candidate');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'generic consumers must remain on the exact approved EN-E01/EN-E02 repair registry until EN-E04 integration');
 check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_PRE_REPAIR_REGISTRY, 'pre-repair comparison evidence must remain isolated from generic consumers');
 
 const appSource = await readFile(path.join(root, 'app.js'), 'utf8');

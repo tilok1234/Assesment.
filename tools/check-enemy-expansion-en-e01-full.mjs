@@ -37,8 +37,8 @@ check(EN_E01_CANDIDATE_REGISTRY.renderers[0].key === 'humanoid-threat-v1', 'full
 check(EN_E01_CANDIDATE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'full EN-E01 must retain the approved chassis');
 check(EN_E01_CANDIDATE_REGISTRY.publicFamilies.length === 0, 'full EN-E01 candidates must remain outside the public family view');
 check(EN_E01_CANDIDATE_REGISTRY.approvedFamilies.length === 0, 'full EN-E01 candidates must not claim completed-family approval');
-check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 10, 'the cumulative expansion registry must contain ten approved EN-E01/EN-E02 families');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 10, 'the cumulative expansion view must contain ten approved EN-E01/EN-E02 families');
+check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 13, 'the cumulative expansion registry must contain thirteen approved EN-E01/EN-E02/EN-E04 families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 13, 'the cumulative expansion view must contain thirteen approved EN-E01/EN-E02/EN-E04 families');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(Object.isFrozen(EN_E01_CANDIDATE_REGISTRY), 'the full EN-E01 registry must be immutable');
 

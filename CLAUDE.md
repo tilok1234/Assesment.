@@ -83,13 +83,14 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 - Scope reviews to the changed family/boss; whole-roster review packets are
   release-time only.
 
-## Known state (2026-08-08)
+## Known state (2026-08-09)
 
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
-  asset-pack). Public consumer catalog: 67 families / 232 variants via the
-  enemy-expansion facade (EN-F00..EN-E02 adopted on this branch;
-  `engine.PUBLIC_ENEMIES` is the composed roster). EN-E03 stays parked on
-  codex/en-e03 until its Hill Breaker Walk gate is approved.
+  asset-pack). The stable expansion registry contains 13 families / 39 variants
+  across approved EN-E01, EN-E02, and EN-E04. The separately gated public
+  consumer catalog remains 67 families / 232 variants through EN-E02;
+  `engine.PUBLIC_ENEMIES` does not expose EN-E04 until its consumer gate.
+  EN-E03 remains isolated historical evidence and is not registered.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;

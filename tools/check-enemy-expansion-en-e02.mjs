@@ -77,7 +77,7 @@ check(EN_E02_IDLE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'EN-E02 must 
 check(EN_E02_IDLE_REGISTRY.publicFamilies.length === 0, 'EN-E02 Idle evidence must not enter the public family view');
 check(EN_E02_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E02 Idle evidence must not claim family approval');
 check(Object.isFrozen(EN_E02_IDLE_REGISTRY), 'the EN-E02 Idle registry must be immutable');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 10, 'the cumulative registry must contain approved EN-E01 and EN-E02');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 13, 'the cumulative registry must contain approved EN-E01, EN-E02, and EN-E04');
 check(engine.PUBLIC_ENEMIES.length === 67, 'the consumer catalog must contain 67 families after authorized EN-E02 integration');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(cardOrder.every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'approved EN-E02 families must enter public consumers only after the separate integration gate');
@@ -170,7 +170,7 @@ rejects(
 );
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E02_IDLE_REGISTRY);
-check(ledgerReport.counts.approved === 3 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 19, 'current ledger must report three approved, zero implemented, and nineteen planned slices');
+check(ledgerReport.counts.approved === 4 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 18, 'current ledger must report four approved, zero implemented, and eighteen planned slices');
 check(ledgerReport.counts.registeredFamilies === 5 && ledgerReport.counts.publicFamilies === 0, 'candidate ledger evidence must report five internal and zero public families');
 const enE02Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E02');
 check(enE02Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED && enE02Slice?.registeredFamilies === 5 && enE02Slice?.publicFamilies === 0, 'the frozen EN-E02 Idle evidence must retain five internal baselines while the ledger records completed-slice approval');

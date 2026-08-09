@@ -15,6 +15,46 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
+## Immediate Continuation Checkpoint - EN-E04 Registration Implemented
+
+Start here in a new task. The designer approved Stormcrown Exarch and the full
+three-step sequence by saying `sure lets do 123` on 2026-08-09. Step 1 is
+published and reconciled at `6f81c92`. Step 2 now composes the complete approved
+EN-E04 roster into the stable registry without exposing it to consumers.
+
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-registration`, based exactly on clean Stormcrown handoff
+  `6f81c92`.
+- Gate: `en-e04-nine-enemy-registration-v1`; status `approved`, implemented,
+  uncommitted, and unpushed.
+- Scope: three families / nine variants / nine complete `480x96` sheets / 720
+  frames: Naga Coilguard, Venom Oracle, Temple Rajah; Merfolk Tideguard,
+  Reefcaller, Pearl Regent; Birdfolk Aerie Scout, Gale Augur, Stormcrown Exarch.
+- Implementation: `engine/enemy-expansion-en-e04.js` owns three bounded family
+  dispatchers and delegates each variant to its exact approved lane renderer.
+  No approved source module, source frame, schema, legacy catalog entry, effect,
+  or export artifact changes.
+- Stable registry: 13 approved families / 39 variants / four renderers across
+  EN-E01, EN-E02, and EN-E04. Ledger lifecycle: four approved, zero implemented,
+  eighteen planned.
+- Consumer firewall: `ENEMY_EXPANSION_CONSUMER_REGISTRY` remains the exact
+  repaired EN-E01/EN-E02 ten-family object. `PUBLIC_ENEMIES` stays 67/232 and
+  EN-E04 remains absent from selectors, persistence, randomization, thumbnails,
+  game packs, Complete Kits, and every ordinary export route.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e04-registration`.
+- Focused result: nine sheets and all 720 candidate/registered frame and alpha
+  pairs pass with aggregate digest
+  `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
+- Protected result: foundation, EN-E01, EN-E02, repair, consumer, and EN-E03
+  historical gates remain green after the stable-registry composition.
+- Required next action: run the full repository gate, commit and push the
+  bounded registration checkpoint, reconcile the handoff, then begin the
+  separately authorized assembler consumer-integration gate. Do not add
+  effects, later slices, or rewrite any approved pixels.
+
+The approved and published Stormcrown checkpoint follows for provenance.
+
 ## Immediate Continuation Checkpoint - Birdfolk Stormcrown Exarch Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the
@@ -2525,14 +2565,15 @@ runtime contract and must not be rewritten merely to match it.
 - Giant uses the large-biped archetype, Centaur uses a true four-hoof hybrid
   archetype with readable withers joins, and Satyr uses the horned digitigrade
   archetype with tail, hocks, and split-hoof contacts.
-- Current lifecycle ledger: three approved slices, zero implemented slices, and
-  nineteen planned slices.
+- Current lifecycle ledger: four approved slices, zero implemented slices, and
+  eighteen planned slices.
 - The immutable `PUBLIC_ENEMIES` catalog appends the consumer-integrated
   EN-E01/EN-E02 families to the unchanged legacy entries and is the source for
   editor selectors, randomization, kits, packs, thumbnails, and exports.
-- Approved EN-E01/EN-E02 frames now include the exact accepted repair pixels in
-  the stable registry. The internal pre-repair comparison uses the same shared
-  Form/outline algorithms without entering public consumers.
+- Approved EN-E01/EN-E02 frames include the exact accepted repair pixels at the
+  consumer boundary. The stable registry additionally contains approved EN-E04;
+  the internal pre-repair comparison uses the same shared Form/outline
+  algorithms without entering public consumers.
 - The complete legacy 20-column corpus retains SHA-256 pixel digest
   `190a0f32b961b23fe0207c5a53fc005f9761666d27b15b98c0030325a10bef0c`.
 - Effects, projectiles, summons, telegraphs, attachments, and environment
@@ -3038,7 +3079,7 @@ Recorded expansion results through the rejected EN-E03 v2 technical gate:
   slice;
 - the registration gate passes five approved/public families, 15 variants, 15
   complete `480x96` sheets, stable-facade routing, current
-  three-approved/zero-implemented/nineteen-planned lifecycle counts, and exact
+  four-approved/zero-implemented/eighteen-planned lifecycle counts, and exact
   public/candidate parity across all 1,200 frames;
 - the cumulative EN-E01/EN-E02 consumer gate passes unchanged 57/202 legacy
   locks, immutable 67/232 public composition, editor persistence/selectors,

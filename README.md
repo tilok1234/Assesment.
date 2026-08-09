@@ -155,18 +155,21 @@ The private `1124x1992` Complete B/Form presentation board is SHA-256
 `211e9ace3eb965f243724249c73927567568e2f22f181f5448ba398ddab4a094`.
 The designer approved the exact completed-slice overview, authorized bounded
 registration, and then separately authorized EN-E02 consumer integration on
-2026-08-02. The cumulative stable `ENEMY_EXPANSION_REGISTRY` and separately
-authorized `ENEMY_EXPANSION_CONSUMER_REGISTRY` now expose the same ten approved
-EN-E01/EN-E02 families / 30 variants, producing the immutable 67-family /
-232-variant `PUBLIC_ENEMIES` catalog. The cumulative consumer gate exhausts all
+2026-08-02. At that checkpoint, the cumulative stable
+`ENEMY_EXPANSION_REGISTRY` and separately authorized
+`ENEMY_EXPANSION_CONSUMER_REGISTRY` exposed the same ten approved EN-E01/EN-E02
+families / 30 variants, producing the immutable 67-family / 232-variant
+`PUBLIC_ENEMIES` catalog. The cumulative consumer gate exhausts all
 2,400 approved frames, 30 sheets, 7,200 None/B/C outline cases, and 7,200
 Form-with-outline cases. A live Plague Doctor / Field Chirurgeon smoke test
 confirmed Complete B + Form, the exact export name, all 67 selector entries,
 and a clean console. The designer accepted that consumer presentation and later
 approved the exact seven-family walk/seam repair for Catfolk, Desert Raider,
-Fallen Knight, Fanatic Monk, Goatfolk, Necromancer, and Witch. The repaired
-registry is now the stable and consumer boundary; the pre-repair registry is
-retained only as immutable internal comparison evidence.
+Fallen Knight, Fanatic Monk, Goatfolk, Necromancer, and Witch. That repaired
+ten-family registry remains the consumer boundary and immutable comparison
+source. The current stable registry additionally composes the approved EN-E04
+registration, reaching 13 families / 39 variants while consumers remain at
+67/232 until the separate EN-E04 integration gate.
 
 The isolated `codex/en-e03` branch first produced checkpoint `50ad516`, but the
 designer rejected those Giant, Centaur, and Satyr common Idle boards because
@@ -811,6 +814,21 @@ lane is complete at `ad57f25d47415625540ea36ff16d2a884a421576` on the
 tracked origin branch. Birdfolk elite, additional variants, registration,
 integration, effects, release, and broader work remain outside.
 
+## EN-E04 nine-enemy stable registration implemented
+
+Branch `codex/en-e04-registration` composes the nine approved EN-E04 enemies
+into three stable families without changing their reviewed pixels. Naga,
+Merfolk, and Birdfolk each retain common, specialist, and elite variants through
+one family-local dispatcher in `engine/enemy-expansion-en-e04.js`.
+
+Run `npm.cmd run check:enemy-expansion-en-e04-registration` to exhaust all nine
+native `480x96` sheets and 720 candidate/registered frames. The frozen aggregate
+digest is `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
+The stable registry is 13 families / 39 variants, while the separately gated
+consumer registry remains the repaired EN-E01/EN-E02 ten-family boundary.
+Accordingly, `PUBLIC_ENEMIES` and every assembler consumer remain 67 families /
+232 variants until the next authorized integration checkpoint.
+
 ## Birdfolk Stormcrown Exarch full elite approved and published
 
 Branch `codex/en-e04-birdfolk-stormcrown-exarch` owns the next isolated
@@ -1033,8 +1051,8 @@ Idle digest, and preserves the exact reviewed pre-registration candidate.
 
 Run `npm run check:enemy-expansion-en-e01-registration` for the approved public
 boundary. It verifies the immutable completed-slice approval record, five
-approved families, 15 variants, the current three-approved/zero-implemented/
-nineteen-planned ledger, stable-facade routing, 15 complete sheets, and pixel
+approved families, 15 variants, the current four-approved/zero-implemented/
+eighteen-planned ledger, stable-facade routing, 15 complete sheets, and pixel
 parity for every one of the 1,200 candidate/public frames while keeping the
 legacy catalog unchanged.
 

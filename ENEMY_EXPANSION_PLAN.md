@@ -470,7 +470,7 @@ Approved implementation and registration evidence:
   now-approved bounded repair without rewriting this historical artifact; and
 - `npm.cmd run check:enemy-expansion-en-e01-registration` proves five approved
   families / 15 public variants, 15 complete sheets, stable-facade routing,
-  the current three-approved/zero-implemented/nineteen-planned ledger state,
+  the current four-approved/zero-implemented/eighteen-planned ledger state,
   unchanged 57-family / 202-variant legacy catalog, and exact candidate/public
   parity across all 1,200 frames.
 - at checkpoint `e0be273`, the EN-E01 consumer gate proved the then-current
@@ -568,14 +568,14 @@ Completed-slice approval and registration evidence:
   1,200-frame digest;
 - `EN_E02_PUBLIC_REGISTRY` contains five approved families / 15 variants while
   the separate candidate registry remains immutable `implemented` evidence;
-- cumulative `ENEMY_EXPANSION_REGISTRY` composition is ten approved families /
-  30 variants across EN-E01 and EN-E02;
+- at checkpoint `7b6e448`, cumulative `ENEMY_EXPANSION_REGISTRY` composition
+  was ten approved families / 30 variants across EN-E01 and EN-E02;
 - at registration checkpoint `7b6e448`, `ENEMY_EXPANSION_CONSUMER_REGISTRY`
   remained exactly EN-E01 and `PUBLIC_ENEMIES` remained 62 families / 217
   variants; that is historical registration evidence rather than the current
   post-authorization consumer boundary; and
 - `npm.cmd run check:enemy-expansion-en-e02-registration` verifies the exact
-  artifact hashes, three-approved/zero-implemented/nineteen-planned ledger,
+  artifact hashes, current four-approved/zero-implemented/eighteen-planned ledger,
   all 15 registered sheets, and candidate/registered parity across 1,200 frames.
 - checkpoint `be44af7` makes ignored-artifact verification clean-clone safe by
   default while
@@ -1778,7 +1778,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine, aquatic, and avian peoples
 
-- Status: `active - Stormcrown Exarch published; complete EN-E04 registration is next`
+- Status: `active - complete EN-E04 stable registration implemented; assembler consumer integration is next`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1791,6 +1791,7 @@ and no new sprite pixels or public integration are authorized.
 - Approved gate: Birdfolk Aerie Scout complete common motion across Down, Left, Right, and Up; published
 - Approved gate: Birdfolk Gale Augur complete specialist motion across Down, Left, Right, and Up; published
 - Approved gate: Birdfolk Stormcrown Exarch complete elite motion across Down, Left, Right, and Up; published
+- Approved gate: complete nine-enemy EN-E04 stable registration; consumer exposure remains separately gated
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
@@ -2368,6 +2369,43 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Required next action: complete the separately authorized nine-enemy EN-E04
   registration checkpoint, then the assembler consumer-integration checkpoint.
   Additional variants, effects, release, and broader work remain outside.
+
+#### Complete EN-E04 nine-enemy registration implemented
+
+- Gate ID: `en-e04-nine-enemy-registration-v1`; status: `approved` and
+  implemented on `codex/en-e04-registration`, based exactly on clean published
+  Stormcrown handoff `6f81c92`. The registration work is currently uncommitted
+  and unpushed.
+- Authorization: after Stormcrown review, the designer said `sure lets do 123`
+  on 2026-08-09, authorizing publication, then registration, then assembler
+  consumer integration as separate checkpoints.
+- Registered families/variants: Naga Coilguard, Venom Oracle, Temple Rajah;
+  Merfolk Tideguard, Reefcaller, Pearl Regent; Birdfolk Aerie Scout, Gale Augur,
+  Stormcrown Exarch.
+- Architecture: `engine/enemy-expansion-en-e04.js` composes three approved
+  families and three family-local dispatchers. Each dispatcher delegates to the
+  exact approved variant renderer; no candidate module or reviewed source pixel
+  changes.
+- Stable boundary: `ENEMY_EXPANSION_REGISTRY` contains 13 approved families /
+  39 variants and four renderers across EN-E01, EN-E02, and EN-E04. The ledger
+  records four approved and eighteen planned slices.
+- Separation: `ENEMY_EXPANSION_CONSUMER_REGISTRY` remains the exact repaired
+  EN-E01/EN-E02 ten-family registry. `PUBLIC_ENEMIES` therefore remains 67
+  families / 232 variants, and Naga, Merfolk, and Birdfolk remain absent from
+  editor selectors, randomization, persistence, packs, thumbnails, and exports.
+- Validation: `npm.cmd run check:enemy-expansion-en-e04-registration` verifies
+  nine complete `480x96` sheets, all 720 candidate/registered frame and alpha
+  pairs, hard alpha, bounds, stable facade isolation, ledger state, and zero
+  premature consumer exposure. Aggregate digest:
+  `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
+- Protected gates: the foundation, EN-E01/EN-E02 candidate, registration,
+  consumer, repair, and EN-E03 evidence gates all remain green.
+- Exclusions: consumer exposure, editor-specific branches, schema changes,
+  effects, release, EN-E03 adoption, later slices, and any reviewed pixel
+  changes.
+- Required next action: commit and push this bounded registration checkpoint,
+  reconcile its handoff, then complete the separately authorized assembler
+  consumer-integration gate.
 
 ### EN-E05 - Undead humanoids
 

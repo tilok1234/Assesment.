@@ -116,6 +116,7 @@ checkSyntax('tools/check-enemy-expansion-en-e02.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02-full.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02-registration.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e02-consumers.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e04-registration.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e03.mjs');
 checkSyntax('tools/check-enemy-expansion-repairs.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
@@ -221,6 +222,14 @@ const enemyExpansionEnE02RegistrationCheck = spawnSync(process.execPath, [path.j
 check(
   enemyExpansionEnE02RegistrationCheck.status === 0,
   `EN-E02 approved registration gate failed\n${enemyExpansionEnE02RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE02RegistrationCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE04RegistrationCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e04-registration.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE04RegistrationCheck.status === 0,
+  `EN-E04 approved registration gate failed\n${enemyExpansionEnE04RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE04RegistrationCheck.stderr.trim()}`,
 );
 
 const enemyExpansionRepairCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-repairs.mjs')], {

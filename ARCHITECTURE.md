@@ -184,8 +184,11 @@ slice-specific symbols. The five pre-registration candidate records remain
 immutable `implemented` evidence; consumer integration does not retroactively
 rewrite that reviewed snapshot. The designer later approved an exact
 seven-family walk/seam repair, so both stable and consumer composition now route
-through `ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY` while the pre-repair object
-remains internal. That repair did not authorize effects or release.
+through `ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY` at the EN-E01/EN-E02
+boundary while the pre-repair object remains internal. The later EN-E04
+registration composes three additional approved family dispatchers into the
+stable registry without yet changing that repaired consumer boundary. That
+repair did not authorize effects or release.
 
 `engine/enemy-expansion-en-e03.js` is a separate, non-public historical evidence
 module. It owns three immutable Giant/Centaur/Satyr contract cards, the exact v2
@@ -1168,6 +1171,20 @@ ten-file lane is complete at approved implementation checkpoint
 `da8c089`. The separately authorized next gates are complete EN-E04
 registration followed by assembler consumer integration. Additional Birdfolk
 variants, effects, release, and broader work remain outside.
+
+`engine/enemy-expansion-en-e04.js` owns the complete approved EN-E04
+registration boundary. It composes Naga, Merfolk, and Birdfolk as three
+approved families with common/specialist/elite variants in reviewed order and
+uses one bounded dispatcher per family to delegate to the nine exact approved
+lane renderers. No source renderer, candidate frame, public schema, or legacy
+catalog entry is rewritten. Gate `en-e04-nine-enemy-registration-v1` verifies
+all nine native `480x96` sheets and 720 candidate/registered frames at aggregate
+digest `137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459`.
+The stable registry is now 13 families / 39 variants with four renderers; the
+consumer registry deliberately remains the repaired EN-E01/EN-E02 ten-family
+object, so `PUBLIC_ENEMIES`, editor paths, randomization, persistence, and
+exports remain 67 families / 232 variants until the separately authorized
+consumer-integration checkpoint.
 
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
