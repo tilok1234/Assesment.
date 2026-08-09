@@ -87,11 +87,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
   asset-pack). The stable expansion registry contains 17 families / 43 variants
-  across approved EN-E01, EN-E02, EN-E04, and EN-E05. The assembler consumer
-  registry intentionally remains at the exact EN-E04 boundary of 13 families /
-  39 variants, so `engine.PUBLIC_ENEMIES` remains 70 families / 241 variants.
-  EN-E03 remains isolated historical evidence and is not registered.
-- The separate stable-only EN-E05 registration gate
+  across approved EN-E01, EN-E02, EN-E04, and EN-E05. The separately
+  authorized assembler consumer registry now reuses that exact 17-family /
+  43-variant registry, so `engine.PUBLIC_ENEMIES` is 74 families / 245
+  variants. EN-E03 remains isolated historical evidence and is not registered.
+- The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved
   `mummy/tomb-walker`, `vampire/night-noble`,
@@ -100,8 +100,19 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `zombie/ghoul`. All 400 source/registered frames and 320 composed-stable
   frames match; aggregate digest is
   `732c6097b237131e85bdf435112c2bed7ec1f8bf8317dee4e42605f0c1730d32`.
-  Do not expose EN-E05 through assembler consumers, replace public Ghoul,
-  regenerate fixtures, or begin Wave 2 without a later explicit gate.
+  That checkpoint was stable-only; the later consumer gate below exposes only
+  the four new families. Do not replace public Ghoul, regenerate fixtures, or
+  begin Wave 2 without another explicit gate.
+- The separate EN-E05 consumer gate `en-e05-assembler-consumers-v1` is
+  published on `codex/en-e05-assembler-integration` at `773cfad`. It exposes
+  exact `mummy/tomb-walker`, `vampire/night-noble`,
+  `revenant/grave-oathkeeper`, and `lich/soul-regent` through the existing
+  generic selectors, randomization, persistence, dispatcher, sheet,
+  thumbnail, pack, Complete Kit, and Wildshot routes. All 320 public frames
+  match the registered sources at digest
+  `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`;
+  the Complete Kit is 74 families / 245 enemy sheets / 2,182 PNGs. This gate
+  creates no new sprite pixels and does not alter fixtures.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate
@@ -113,29 +124,29 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Walker on `codex/en-e05-mummy`, based exactly on the published Ghoul handoff
   `1aa733c`, committed and pushed at `85f1ed7`. It is internal and non-public;
   its 80 frames, paired raw and Complete B + Form evidence, and approved-Ghoul
-  comparison are hash-frozen. Its exact approved variant is now registered in
-  the stable-only EN-E05 layer; consumer exposure and fixtures remain gated.
+  comparison are hash-frozen. Its exact approved variant is registered and now
+  exposed through the generic EN-E05 consumer layer; fixtures remain gated.
 - The approved third EN-E05 lane is one full-suite Vampire
   Night Noble on `codex/en-e05-vampire`, based exactly on reconciled Mummy
   handoff `3387bf2`, committed and pushed at `6a7cce2`. It is internal and
   non-public; its 80 frames, paired raw and Complete B + Form evidence, and
-  approved-Mummy comparison are hash-frozen. Its exact approved variant is now
-  registered in the stable-only EN-E05 layer; consumer exposure and fixtures
-  remain gated.
+  approved-Mummy comparison are hash-frozen. Its exact approved variant is
+  registered and now exposed through the generic EN-E05 consumer layer;
+  fixtures remain gated.
 - The approved fourth EN-E05 lane is one full-suite Revenant
   Grave Oathkeeper on `codex/en-e05-revenant`, based exactly on reconciled
   Vampire handoff `16f5876`, committed and pushed at `7434578`. It is internal
   and non-public; its 80 frames, paired raw and Complete B + Form evidence, and
   approved-Vampire comparison are hash-frozen. Its exact approved variant is
-  now registered in the stable-only EN-E05 layer; consumer exposure and
+  registered and now exposed through the generic EN-E05 consumer layer;
   fixtures remain gated.
 - The approved fifth EN-E05 lane is one full-suite elite Lich
   Soul Regent on `codex/en-e05-lich`, based exactly on clean reconciled
   Revenant handoff `97db37e`, committed and pushed at `4cebc7b`. Its 80
   connected and bounded frames, approved-Revenant comparison, raw/no-outline
   board and GIF, and Complete B + Form board and GIF are hash-frozen. Its exact
-  approved variant is now registered in the stable-only EN-E05 layer; consumer
-  exposure, fixtures, effects, and Wave 2 remain gated.
+  approved variant is registered and now exposed through the generic EN-E05
+  consumer layer; fixtures, effects, and Wave 2 remain gated.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;

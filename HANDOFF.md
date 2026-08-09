@@ -15,7 +15,51 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Stable Registration Published
+## Immediate Continuation Checkpoint - EN-E05 Assembler Integration Published
+
+Start here in a new task. After the clean EN-E05 registration checkpoint was
+published and reconciled, the designer said `cool lets do next` on 2026-08-09.
+This authorizes only the next dependency: generic assembler integration for the
+four registered new families.
+
+- Repository/branch: current v2 checkout on
+  `codex/en-e05-assembler-integration`, based exactly on clean published
+  registration handoff `59a694118e08733b6f5e069009abc31e75e517cf`.
+- Gate: `en-e05-assembler-consumers-v1`; status `authorized`, implemented,
+  committed, and pushed at
+  `773cfad1c550db8e5b43cc9360e55fe03ddc0ae2`.
+- Exact scope: expose approved `mummy/tomb-walker`,
+  `vampire/night-noble`, `revenant/grave-oathkeeper`, and
+  `lich/soul-regent` through the existing generic public facade. No
+  family-specific consumer branches or new sprite pixels were added.
+- Consumer coverage: selectors, sanitization, persistence, randomization,
+  dispatch, four native full sheets, direction/animation sheets, thumbnails,
+  ordinary packs, Complete Kit, and Wildshot all accept the four families.
+- Registry boundary: stable and consumer expansion registries are the same
+  exact 17 families / 43 variants. Legacy remains 57/202 and
+  `PUBLIC_ENEMIES` is now 74 families / 245 variants.
+- Pixel evidence: all 320 public dispatcher frames match their registered
+  sources. Frozen consumer digest:
+  `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`.
+  Complete B adds 29,795 pixels and Form changes 27,338 source pixels across
+  those 320 cases.
+- Export planning: Complete Kit is 74 families / 245 enemy sheets / 2,182
+  total PNGs, and all four EN-E05 Wildshot specs are accepted.
+- Ghoul/fixture firewall: public `zombie/ghoul` retains exact object and
+  80-frame pixel identity; `asset-pack/enemies/zombie-ghoul.png` remains
+  SHA-256
+  `a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2`.
+  All 232 committed PNG fixtures remain untouched.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e05-consumers`.
+  Fast validation passes in `52.7s`; full `npm.cmd run check` passes in
+  `103.1s`. No new visual review is required because this gate reuses the exact
+  approved and registered pixels.
+- Required next action: stop at this clean published consumer checkpoint. Do
+  not replace public Ghoul, generate, regenerate, or accept fixtures, change
+  reviewed pixels, add effects, release, adopt EN-E03, or begin Wave 2 without
+  later explicit authorization.
+
+## Approved Preceding Checkpoint - EN-E05 Stable Registration Published
 
 Start here in a new task. After the repaired Lich Soul Regent was approved,
 published, and reconciled, the designer said `lets do next` on 2026-08-09. The
@@ -55,10 +99,10 @@ so this continuation authorizes only the stable registration dependency.
   EN-F00/EN-E01/EN-E02/EN-E03/EN-E04 historical registration or consumer gate
   pass. Fast validation passes in `51.6s`; full `npm.cmd run check` passes in
   `101.2s`; all 232 frozen PNG fixtures remain unchanged.
-- Required next action: stop at this clean published registration checkpoint.
-  Do not expose EN-E05 through assembler consumers, replace public Ghoul,
-  regenerate or accept fixtures, change reviewed pixels, add effects, release,
-  or begin Wave 2. Each requires a later explicit authorization.
+- Historical next action: this checkpoint stopped before assembler consumer
+  exposure. The later gate above authorizes only the four new-family consumer
+  routes; public Ghoul replacement, fixture work, effects, release, EN-E03,
+  and Wave 2 remain closed.
 
 ## Approved Preceding Checkpoint - EN-E05 Lich Full-Suite Approved And Published
 

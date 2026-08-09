@@ -2451,12 +2451,12 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `registered stable-only at 7d273ef; assembler integration not authorized`
+- Status: `four new families integrated at 773cfad; public catalog 74/245`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
 - Priority-first: Ghoul upgrade, Mummy, Vampire, Revenant, Lich
-- Active gate: none; stop at the clean published registration checkpoint while
-  consumer integration, public Ghoul replacement, fixtures, and Wave 2 remain
-  gated
+- Active gate: none; stop at the clean published consumer checkpoint while
+  public Ghoul replacement, fixtures, effects, release, EN-E03 adoption, and
+  Wave 2 remain gated
 
 Shared leverage: broken posture, wrappings, capes, exposed bone, floating hems,
 and necrotic palette families. The Ghoul change is an explicit upgrade to the
@@ -2780,12 +2780,47 @@ silently alter unrelated Zombie variants.
 - Validation: the new focused gate, all five approved EN-E05 source gates, all
   affected historical expansion gates, fast validation (`51.6s`), and full
   validation (`101.2s`) pass.
-- Exclusions: assembler consumer exposure, selectors, random generation,
-  persistence, public Ghoul replacement, packs, fixture generation or
-  regeneration, schema or reviewed-pixel changes, effects, release, and Wave 2.
-- Required next action: stop at this clean published registration checkpoint.
-  Consumer integration, public Ghoul replacement, fixtures, and Wave 2 each
-  require later explicit authorization.
+- Historical exclusions: this checkpoint did not open assembler consumers,
+  public Ghoul replacement, packs, fixture work, schema or reviewed-pixel
+  changes, effects, release, or Wave 2. The later consumer gate below opens
+  only the four new-family generic routes.
+
+#### EN-E05 assembler consumer integration checkpoint
+
+- Gate ID: `en-e05-assembler-consumers-v1`; status: `authorized`, implemented,
+  committed, and pushed at
+  `773cfad1c550db8e5b43cc9360e55fe03ddc0ae2` on
+  `codex/en-e05-assembler-integration`, based exactly on clean published
+  registration handoff `59a694118e08733b6f5e069009abc31e75e517cf`.
+- Authorization: after the registration checkpoint was published and
+  reconciled, the designer said `cool lets do next` on 2026-08-09. This opens
+  only assembler integration for the four registered new families.
+- Exact scope: expose `mummy/tomb-walker`, `vampire/night-noble`,
+  `revenant/grave-oathkeeper`, and `lich/soul-regent` through generic
+  selectors, sanitization, persistence, randomization, dispatch, full,
+  direction, animation, and thumbnail sheets, ordinary packs, Complete Kit,
+  and Wildshot. No family-specific consumer branches or new sprite pixels.
+- Registry boundary: stable and consumer expansion registries are identical at
+  17 families / 43 variants. Legacy stays 57/202 and `PUBLIC_ENEMIES` advances
+  to 74 families / 245 variants.
+- Public parity: all 320 new-family dispatcher frames and four native sheets
+  match the registered sources. Frozen consumer digest:
+  `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`.
+  Complete B adds 29,795 pixels and Form changes 27,338 source pixels across
+  those 320 cases.
+- Export/Wildshot boundary: Complete Kit is 74 families / 245 enemy sheets /
+  2,182 total PNGs; all four EN-E05 Wildshot specs are accepted.
+- Ghoul/fixture firewall: public `zombie/ghoul` keeps exact object and 80-frame
+  pixel identity; `asset-pack/enemies/zombie-ghoul.png` remains SHA-256
+  `a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab57a7edc2`.
+  All 232 committed PNG fixtures remain untouched.
+- Validation: `npm.cmd run check:enemy-expansion-en-e05-consumers`, all
+  affected source and historical gates, fast validation (`52.7s`), and full
+  validation (`103.1s`) pass. No visual review is needed because the gate
+  reuses exact approved and registered pixels.
+- Required next action: stop. Public Ghoul replacement, fixture generation,
+  regeneration, or acceptance, schema or pixel changes, effects, release,
+  EN-E03 adoption, and Wave 2 require later explicit authorization.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not

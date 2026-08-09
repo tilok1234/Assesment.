@@ -637,7 +637,7 @@ and fixture-free. Registration, fixtures, effects, EN-E05 registration, and
 Wave 2 require later explicit gates. The exact Lich implementation is
 published at `4cebc7b`.
 The clean reconciled Lich handoff is `c0e438b`. The designer then said `lets do
-next`, which authorizes the separate stable-only EN-E05 registration dependency
+next`, which authorized the separate stable-only EN-E05 registration dependency
 without opening consumer integration or Wave 2. Gate
 `en-e05-five-undead-registration-v1` on `codex/en-e05-registration` registers
 exact approved Mummy, Vampire, Revenant, and Lich families plus a separate
@@ -650,8 +650,24 @@ consumers remain on the exact EN-E04 13/39 boundary and the public catalog
 remains 70/241. Public Ghoul and its frozen fixture remain exact; all 232 PNG
 fixtures are untouched. Fast validation passes in `51.6s` and full validation
 passes in `101.2s`. The bounded implementation is published at `7d273ef`.
-Consumer exposure, public Ghoul replacement, fixture generation or
-regeneration, effects, release, and Wave 2 still require separate explicit
+That registration checkpoint did not authorize consumer exposure, public Ghoul
+replacement, fixture work, effects, release, or Wave 2.
+After its clean handoff `59a6941`, the designer said `cool lets do next`, which
+authorizes only the next dependency: generic assembler integration for the four
+registered new families. Gate `en-e05-assembler-consumers-v1` on
+`codex/en-e05-assembler-integration` exposes exact Mummy Tomb Walker, Vampire
+Night Noble, Revenant Grave Oathkeeper, and Lich Soul Regent without
+family-specific consumer branches or new sprite pixels. Stable and consumer
+expansion registries are identical at 17 families / 43 variants; the public
+catalog is 74/245. All 320 public frames match at consumer digest
+`947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`;
+Complete B adds 29,795 pixels and Form changes 27,338 source pixels. Complete
+Kit is 74 families / 245 enemy sheets / 2,182 PNGs, and all four Wildshot specs
+are accepted. Public Ghoul and its frozen fixture remain exact, and all 232 PNG
+fixtures stay untouched. Fast validation passes in `52.7s`; full validation
+passes in `103.1s`. The bounded implementation is published at `773cfad`.
+Public Ghoul replacement, fixture generation, regeneration, or acceptance,
+effects, release, EN-E03 adoption, and Wave 2 still require separate explicit
 authorization.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
