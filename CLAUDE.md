@@ -114,7 +114,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`;
   the Complete Kit is 74 families / 245 enemy sheets / 2,182 PNGs. This gate
   creates no new sprite pixels and does not alter fixtures.
-- Wave 2 currently has one approved publication gate:
+- Wave 2 is active only through the published approved gate
   `en-e06-fairy-thistle-hexer-full-v1` on
   `codex/en-e06-fairy-thistle-hexer`, based exactly on clean published Fairy
   reconciliation `c1165df`. Approved common Fairy Bramblewing Scout remains
@@ -125,11 +125,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   silhouettes differ from Bramblewing; candidate digest is
   `675b5a8957efdc81c07ae53c4b013ad8229847fc84d9b1c0c8da4ad09e6a4534`.
   The exact boards were opened in Aseprite and the designer replied `awesome!
-  approved` on 2026-08-09. The lane remains internal, approved, uncommitted,
-  unpushed, and absent from the public facade/catalog and fixtures; bounded
-  commit and branch publication are authorized. Do not begin Petalcrown Duelist
-  or Hag, register EN-E06, generate fixtures, or broaden Wave 2 without a
-  separate continuation.
+  approved` on 2026-08-09. The lane remains internal, approved, committed, and
+  pushed at `3dc68cb`, and absent from the public facade/catalog and fixtures.
+  No next content lane is active. Do not begin Petalcrown Duelist or Hag,
+  register EN-E06, generate fixtures, or broaden Wave 2 without a separate
+  continuation.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate

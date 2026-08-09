@@ -2838,7 +2838,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `approved internal - Fairy Thistle Hexer complete 80-frame lane authorized for bounded publication`
+- Status: `approved internal - Fairy Thistle Hexer complete 80-frame lane published at 3dc68cb`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -2909,7 +2909,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 #### Approved Fairy Thistle Hexer complete suite
 
 - Gate ID: `en-e06-fairy-thistle-hexer-full-v1`; status:
-  `approved`, internal, uncommitted, and unpushed on
+  `approved`, internal, committed, and pushed at `3dc68cb` on
   `codex/en-e06-fairy-thistle-hexer`, based exactly on clean published Fairy
   reconciliation `c1165dfc901a39723dd61122bc26f9c5d1a3315c`.
 - Authorization: after Bramblewing approval/publication, the designer asked
@@ -2961,9 +2961,10 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   `108.6s`.
 - Exclusions: Petalcrown Duelist, Hag/Dryad/Redcap/Nymph art, registration,
   consumers, fixture work, effects, release, EN-E07, and later Wave 2 work.
-- Publication state: the exact suite is hash-frozen and visually approved.
-  Commit and push only this bounded sixteen-file lane, reconcile the exact
-  implementation commit, then stop before Petalcrown Duelist or Hag.
+- Publication state: the exact hash-frozen and visually approved sixteen-file
+  implementation is published at
+  `3dc68cbae16acd2564d81607ac5a1ca1d569fbee`. Stop before Petalcrown Duelist or
+  Hag; either requires a separate continuation.
 
 ### EN-E07 - Shapeshifters and apparitions
 
@@ -3229,8 +3230,8 @@ time and said `lets do next`, the active lane advanced only to internal
 specialist Fairy Thistle Hexer gate
 `en-e06-fairy-thistle-hexer-full-v1` on
 `codex/en-e06-fairy-thistle-hexer`. That 80-frame suite is technically
-validated and explicitly approved with `awesome! approved`; bounded commit and
-branch publication are authorized. It remains internal and non-public.
+validated, explicitly approved with `awesome! approved`, and published at
+`3dc68cb`. It remains internal and non-public. No next content lane is active.
 Petalcrown Duelist, Hag/Dryad/Redcap/Nymph art, EN-E07, public Ghoul
 replacement, fixture work, EN-E03 adoption, effects, and release remain
 separate closed gates; authorization must not be broadened past this one

@@ -173,8 +173,8 @@ Bramblewing Scout remains exact and published at `cc92ca9`. After confirming
 the one-complete-variant cadence, the designer said `lets do next`, opening only
 specialist Fairy Thistle Hexer. Its private 80-frame suite passes focused
 structural and distinction gates and was approved with `awesome! approved`;
-bounded publication is authorized. It remains outside the public catalog and
-fixtures. The active handoff starts with
+the exact bounded implementation is published at `3dc68cb`. It remains outside
+the public catalog and fixtures. The active handoff starts with
 that authoritative candidate above an explicitly marked historical archive.
 Petalcrown Duelist, Hag, fixture regeneration,
 the legacy renderer split, boss-generator consolidation, and the Wildshot writer

@@ -133,7 +133,7 @@ effects, release state, and EN-E03 isolation remain unchanged. Approval-state
 fast validation passes in `62.4s` and full validation in `108.6s`. The designer
 approved the exact Bramblewing full suite. The exact Thistle boards were opened
 in Aseprite and the designer replied `awesome! approved`; Thistle remains
-uncommitted and unpushed with bounded publication authorized. Petalcrown Duelist,
+internal, non-public, committed, and pushed at `3dc68cb`. Petalcrown Duelist,
 Hag and later EN-E06 art, EN-E07, registration, fixtures, effects, and release
 each require a separate continuation.
 
@@ -700,8 +700,8 @@ B/Form support; zero public Fairy families; candidate digest
 Protected EN-E05 consumers pass at 74/245 and 320/320 with all 232 fixtures
 unchanged; approval-state fast/full validation passes in `62.4s` / `108.6s`.
 Exact visual approval is recorded as `awesome! approved`; bounded publication
-is authorized, and a separate continuation is required for Petalcrown Duelist
-or Hag.
+is complete at `3dc68cb`, and a separate continuation is required for
+Petalcrown Duelist or Hag.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation
@@ -877,8 +877,8 @@ Candidate additions:
   and the four new EN-E05 families are registered and consumer-integrated at
   17 expansion families / 43 variants and 74/245 public. The separate EN-E05
   Ghoul upgrade and all EN-E03 evidence remain internal. Wave 2 contains the
-  approved complete Bramblewing Scout plus one approved complete Thistle Hexer
-  suite awaiting bounded publication. Petalcrown Duelist, later EN-E06
+  approved complete Bramblewing Scout plus the approved complete Thistle Hexer
+  suite published at `3dc68cb`. Petalcrown Duelist, later EN-E06
   families, EN-E07,
   public Ghoul replacement, fixture work, EN-E03 adoption, effects, and release
   remain separately gated.

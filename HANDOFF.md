@@ -15,15 +15,17 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Approved EN-E06 Fairy Thistle Hexer Publication
+## Immediate Continuation Checkpoint - Published Approved EN-E06 Fairy Thistle Hexer
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
 
 - Repository/branch: current v2 checkout on
   `codex/en-e06-fairy-thistle-hexer`, created from clean published Fairy
-  reconciliation `c1165dfc901a39723dd61122bc26f9c5d1a3315c`. The preceding
-  approved Bramblewing Scout implementation remains pushed at
+  reconciliation `c1165dfc901a39723dd61122bc26f9c5d1a3315c`; exact approved
+  Thistle Hexer implementation `3dc68cbae16acd2564d81607ac5a1ca1d569fbee`
+  is pushed to the matching origin branch. The preceding approved Bramblewing
+  Scout implementation remains pushed at
   `cc92ca9bb14f9fa7937a7e1e746d55fb754d9653`.
 - Authorization: after approving and publishing Bramblewing Scout, the designer
   asked whether enemy variations were still part of the sequence. The bounded
@@ -34,10 +36,10 @@ file; everything below `Historical Handoff Archive` is provenance.
   one complete Thistle Hexer candidate; it does not open Petalcrown Duelist or
   Hag.
 - Gate: `en-e06-fairy-thistle-hexer-full-v1`; status
-  `approved`, internal, uncommitted, and unpushed. After the exact three PNG
-  boards and paired GIFs were presented, the designer replied `awesome!
-  approved` on 2026-08-09. Approval applies only to the frozen hashes below and
-  authorizes bounded commit and branch publication.
+  `approved`, internal, committed, and pushed at `3dc68cb`. After the exact
+  three PNG boards and paired GIFs were presented, the designer replied
+  `awesome! approved` on 2026-08-09. Approval applies only to the frozen hashes
+  below and authorized this bounded publication.
 - Scope: the five immutable EN-E06 family contract cards remain frozen.
   Approved common Fairy `bramblewing-scout` remains exact; this lane adds only
   specialist Fairy `thistle-hexer` as one private 80-frame suite across Idle,
@@ -86,20 +88,18 @@ file; everything below `Historical Handoff Archive` is provenance.
 - Required reading: `CLAUDE.md`, this section, the EN-E06 candidate subsection,
   and `Current Authorization Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not use
   `docs/archive/` or the historical body below as current workflow.
-- Required next action: commit and push only this bounded sixteen-file approved
-  lane under the approval-publication rule, reconcile the exact published
-  implementation commit, and stop. Do not register EN-E06, generate fixtures,
-  begin Petalcrown Duelist or Hag, or broaden Wave 2 without a separate
-  continuation.
+- Required next action: stop at this clean published checkpoint. No next content
+  lane is active. Do not register EN-E06, generate fixtures, begin Petalcrown
+  Duelist or Hag, or broaden Wave 2 without a separate continuation.
 
 Suggested opening request for the next chat:
 
 > Read `CLAUDE.md`, the active top section of `HANDOFF.md`, and the EN-E06 plus
 > current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Continue only the
-> approved complete Thistle Hexer publication gate on
-> `codex/en-e06-fairy-thistle-hexer` from `c1165df`; publish only the frozen
-> lane, reconcile its clean handoff, preserve approved Bramblewing exactly, and
-> do not begin Petalcrown Duelist or Hag.
+> published approved Thistle Hexer checkpoint on
+> `codex/en-e06-fairy-thistle-hexer` at `3dc68cb`; preserve Bramblewing and
+> Thistle exactly, and do not begin Petalcrown Duelist or Hag without explicit
+> continuation.
 
 # Historical Handoff Archive
 

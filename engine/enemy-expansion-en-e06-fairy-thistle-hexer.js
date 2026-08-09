@@ -77,6 +77,7 @@ export const EN_E06_THISTLE_HEXER_GATE = deepFreeze({
   authorizationEvidence: 'After approving and publishing the complete Bramblewing Scout, the designer confirmed that enemy variations remain queued one complete sprite at a time and then said: lets do next. The frozen EN-E06 Fairy role order advances from common Bramblewing Scout to specialist Thistle Hexer and authorizes only this one complete 80-frame variant pass.',
   approvedOn: '2026-08-09',
   approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline, Complete B + Form, and Bramblewing comparison Thistle Hexer boards plus the paired full-suite GIFs were presented, and the three exact PNGs were opened directly in Aseprite, the designer replied: awesome! approved. This approves only the frozen 80-frame Thistle Hexer candidate and authorizes its bounded commit and branch publication; Petalcrown Duelist, Hag, registration, fixtures, effects, release, and later Wave 2 work remain separate gates.',
+  publishedImplementation: '3dc68cbae16acd2564d81607ac5a1ca1d569fbee',
   precedingApproval: {
     gateId: EN_E06_FAIRY_GATE.id,
     artifactSha256: EN_E06_FAIRY_GATE.artifactSha256,
@@ -132,7 +133,7 @@ export const EN_E06_THISTLE_HEXER_GATE = deepFreeze({
     'later EN-E06 sprites',
     'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Bounded commit, push, and publication of this exact approved Thistle Hexer lane are authorized. After clean publication, reconcile the exact implementation commit and stop for a separate continuation; do not register Fairy, generate fixtures, add Petalcrown Duelist, begin Hag, or broaden Wave 2 without explicit authorization.',
+  nextGate: 'The exact sixteen-file approved Thistle Hexer lane is published at 3dc68cbae16acd2564d81607ac5a1ca1d569fbee. Stop for a separate continuation; do not register Fairy, generate fixtures, add Petalcrown Duelist, begin Hag, or broaden Wave 2 without explicit authorization.',
 });
 
 export const EN_E06_THISTLE_HEXER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

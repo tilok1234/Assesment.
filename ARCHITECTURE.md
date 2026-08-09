@@ -686,8 +686,8 @@ Form/comparison evidence, unchanged 74/245 public state, and candidate digest
 The module remains outside `sprite-engine.js`; Petalcrown Duelist, Hag,
 registration, fixtures, effects, and release remain closed. The exact boards
 were opened in Aseprite and approved with `awesome! approved` on 2026-08-09;
-technical passage remains supporting evidence and bounded publication is now
-authorized.
+technical passage remains supporting evidence. The exact bounded implementation
+is published at `3dc68cb`.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

@@ -902,11 +902,11 @@ frames remain frozen. After confirming that enemy variations continue one
 complete sprite at a time, the designer said `lets do next`, opening only the
 specialist Fairy Thistle Hexer candidate. The active branch is
 `codex/en-e06-fairy-thistle-hexer`, based exactly on clean published Fairy
-reconciliation `c1165df`. Thistle Hexer is technically validated but remains
-internal, approved, uncommitted, unpushed, and non-public. After the exact
+reconciliation `c1165df`. Thistle Hexer is technically validated, internal,
+approved, non-public, committed, and pushed at `3dc68cb`. After the exact
 three PNG boards and paired GIFs were presented and the PNGs opened in Aseprite,
 the designer replied `awesome! approved` on 2026-08-09, authorizing bounded
-commit and branch publication of only this frozen suite.
+publication of only this frozen suite. That publication is now complete.
 
 The approved compact Bramblewing Fairy has plum hair, pointed ears, a leaf-green dress, gold
 fasteners, and paired pale-mint open-lattice wings. The wings are connected
@@ -947,7 +947,7 @@ unchanged. The
 Thistle boards are hash-frozen, were opened directly in Aseprite, and are
 explicitly approved. Petalcrown Duelist, Hag/Dryad/Redcap/Nymph art, EN-E06
 registration/consumers, fixture work, effects, release, EN-E07, and later Wave
-2 work remain excluded.
+2 work remain excluded. No next content lane is active.
 
 ## EN-E05 assembler consumer integration implemented
 

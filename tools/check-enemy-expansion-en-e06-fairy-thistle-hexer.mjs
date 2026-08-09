@@ -132,7 +132,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Thistle Hexer lane must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-thistle-hexer-full-approved-2026-08-09', 'the EN-E06 ledger must identify the approved Thistle Hexer full-suite gate');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-thistle-hexer-full-published-2026-08-09', 'the EN-E06 ledger must identify the published approved Thistle Hexer full-suite gate');
 
 check(EN_E06_FAIRY_GATE.status === 'approved', 'the Bramblewing Scout predecessor must retain exact approval');
 check(EN_E06_FAIRY_GATE.publishedImplementation === 'cc92ca9bb14f9fa7937a7e1e746d55fb754d9653', 'the published Bramblewing implementation drifted');
@@ -141,6 +141,7 @@ check(EN_E06_THISTLE_HEXER_GATE.status === 'approved', 'Thistle Hexer must retai
 check(EN_E06_THISTLE_HEXER_GATE.authorizedOn === '2026-08-09', 'the Thistle Hexer authorization date drifted');
 check(EN_E06_THISTLE_HEXER_GATE.approvedOn === '2026-08-09', 'the Thistle Hexer approval date drifted');
 check(EN_E06_THISTLE_HEXER_GATE.approvalEvidence.includes('designer replied: awesome! approved') && EN_E06_THISTLE_HEXER_GATE.approvalEvidence.includes('frozen 80-frame Thistle Hexer candidate') && EN_E06_THISTLE_HEXER_GATE.approvalEvidence.includes('bounded commit and branch publication'), 'the gate must retain the exact designer approval and bounded publication evidence');
+check(EN_E06_THISTLE_HEXER_GATE.publishedImplementation === '3dc68cbae16acd2564d81607ac5a1ca1d569fbee', 'the exact published Thistle Hexer implementation checkpoint drifted');
 check(EN_E06_THISTLE_HEXER_GATE.authorizationEvidence.includes('lets do next') && EN_E06_THISTLE_HEXER_GATE.authorizationEvidence.includes('one complete 80-frame variant pass'), 'the gate must retain the explicit next-variant authorization and one-sprite cadence');
 check(EN_E06_THISTLE_HEXER_GATE.precedingApproval.gateId === EN_E06_FAIRY_GATE.id, 'the gate must identify Bramblewing Scout as its approved predecessor');
 check(EN_E06_THISTLE_HEXER_GATE.precedingApproval.candidateFrameDigest === EN_E06_FAIRY_GATE.candidateFrameDigest, 'the gate must retain the approved Bramblewing digest');
@@ -148,7 +149,7 @@ check(EN_E06_THISTLE_HEXER_GATE.precedingApproval.publishedImplementation === EN
 check(EN_E06_THISTLE_HEXER_GATE.scope.includes('complete 80-frame Thistle Hexer') && EN_E06_THISTLE_HEXER_GATE.scope.includes('Cast-to-Attack') && EN_E06_THISTLE_HEXER_GATE.scope.includes('Death-to-Hurt'), 'the gate must retain the complete suite and alias scope');
 check(EN_E06_THISTLE_HEXER_GATE.animationContract.includes('folded-wing hover') && EN_E06_THISTLE_HEXER_GATE.animationContract.includes('attached hex-point release'), 'the specialist motion contract must retain folded wings and the attached attack tell');
 check(EN_E06_THISTLE_HEXER_GATE.exclusions.includes('changes to approved Bramblewing Scout source or pixels') && EN_E06_THISTLE_HEXER_GATE.exclusions.includes('Petalcrown Duelist implementation') && EN_E06_THISTLE_HEXER_GATE.exclusions.includes('Hag implementation') && EN_E06_THISTLE_HEXER_GATE.exclusions.includes('asset-pack fixture generation or regeneration'), 'the gate must protect Bramblewing and exclude later sprites and fixtures');
-check(EN_E06_THISTLE_HEXER_GATE.nextGate.includes('Bounded commit, push, and publication') && EN_E06_THISTLE_HEXER_GATE.nextGate.includes('do not register Fairy') && EN_E06_THISTLE_HEXER_GATE.nextGate.includes('add Petalcrown Duelist') && EN_E06_THISTLE_HEXER_GATE.nextGate.includes('begin Hag'), 'the approved Thistle Hexer lane must authorize only bounded publication and stop before another sprite');
+check(EN_E06_THISTLE_HEXER_GATE.nextGate.includes('published at 3dc68cbae16acd2564d81607ac5a1ca1d569fbee') && EN_E06_THISTLE_HEXER_GATE.nextGate.includes('Stop for a separate continuation') && EN_E06_THISTLE_HEXER_GATE.nextGate.includes('add Petalcrown Duelist') && EN_E06_THISTLE_HEXER_GATE.nextGate.includes('begin Hag'), 'the published Thistle Hexer lane must stop before another sprite');
 check(Object.isFrozen(EN_E06_THISTLE_HEXER_GATE) && Object.isFrozen(EN_E06_THISTLE_HEXER_GATE.precedingApproval) && Object.isFrozen(EN_E06_THISTLE_HEXER_GATE.exclusions), 'the Thistle Hexer gate must be deeply immutable');
 
 check(EN_E06_THISTLE_HEXER_CONTRACT.family === 'fairy' && EN_E06_THISTLE_HEXER_CONTRACT.variant === 'thistle-hexer', 'the candidate contract must remain one Fairy/Thistle Hexer');
