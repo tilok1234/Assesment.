@@ -15,85 +15,72 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Published Approved EN-E06 Fairy Petalcrown Duelist
+## Immediate Continuation Checkpoint - EN-E06 Hag Mire Crone Candidate Review
 
 Start here in a new task. This is the only active continuation section in this
 file; everything below `Historical Handoff Archive` is provenance.
 
-- Repository/branch: current v2 checkout on
-  `codex/en-e06-fairy-petalcrown-duelist`, based exactly on clean published
-  Thistle reconciliation `581bff99e2a99fc99b77402baffe2911b5a2ee47`.
-  The approved Petalcrown implementation is published at
-  `b265e972e719d6b697c99085503a1f2ea341da61`.
-  Approved Thistle Hexer implementation
-  `3dc68cbae16acd2564d81607ac5a1ca1d569fbee` and approved Bramblewing Scout
-  implementation `cc92ca9bb14f9fa7937a7e1e746d55fb754d9653` remain exact.
-- Authorization: after the exact Thistle lane was approved and published, the
-  designer said `lets do next` on 2026-08-09. Under the confirmed one-complete-
-  sprite cadence, this opens only elite Fairy `petalcrown-duelist`; Hag and all
-  later variants/families remain closed. After the exact Petalcrown evidence was
-  presented, the designer replied `approved` on 2026-08-09.
-- Gate: `en-e06-fairy-petalcrown-duelist-full-v1`; status
-  `approved`, internal, committed, and pushed on its isolated branch.
-- Scope: one private 80-frame elite Fairy across Idle, Walk, Attack, Cast,
-  Hurt, and Death in Down, Left, Right, and Up. Approved Bramblewing Scout and
-  Thistle Hexer source/pixels remain exact. Hag/Dryad/Redcap/Nymph art is absent.
-- Identity: a wider, denser elite fey with dark-teal hair, rose petal armor, a
-  broad pale-pink petal crown and paired wing mantle, green leaf joints, gold
-  clasps, and one attached silver-blue petal rapier. It stays clear of the
-  ground and differs from both approved Fairies in every frame and silhouette.
-- Transparency/effect boundary: binary alpha remains exact, with connected
-  crown-wing geometry and deliberate negative space. Dash trails, petal motes,
-  wind arcs, detached blade glints, impact flashes, and detached petals remain
-  external.
-- Animation contract: two wide crown-wing Idle guards, four aerial-fencing
-  Walk phases, four connected-rapier Attack phases, exact Cast-to-Attack
-  aliases, white-recoil and colored-brace Hurt poses, and exact Death aliases
-  H1,H2,H2,H2. Left is the exact mirror of Right.
-- Review command:
-  `npm.cmd run review:enemy-expansion-en-e06-fairy-petalcrown-duelist`.
-- Focused command:
-  `npm.cmd run check:enemy-expansion-en-e06-fairy-petalcrown-duelist`.
+- Repository/branch: current v2 checkout on `codex/en-e06-hag-mire-crone`,
+  based exactly on clean published Petalcrown reconciliation
+  `5c9363ef2558253c25db2d16f446e1e62ad3356d`. Approved Petalcrown
+  `b265e972e719d6b697c99085503a1f2ea341da61`, Thistle Hexer `3dc68cb`, and
+  Bramblewing Scout `cc92ca9` remain exact.
+- Authorization: after the approved Petalcrown lane was published, the
+  designer said `lets do nextr` on 2026-08-09. Under the confirmed one-complete-
+  sprite cadence, this opens only common Hag `mire-crone`.
+- Gate: `en-e06-hag-mire-crone-full-v1`; status `candidate`, internal,
+  uncommitted, unpushed, and awaiting explicit visual approval.
+- Scope: one private 80-frame common Hag across Idle, Walk, Attack, Cast, Hurt,
+  and Death in Down, Left, Right, and Up. All three approved Fairy suites remain
+  exact. Cauldron Hexer, Blackthorn Matron, Dryad, Redcap, and Nymph stay closed.
+- Identity: moss skin, amber eyes, rope-gray hair, hooked nose, long pale claws,
+  mud-dark shawl, swamp dress, crooked shoulder shelf, bowed torso, and planted
+  splayed feet. There is no staff, hat, robe, familiar, or cauldron, preserving
+  the feral-fey/monster separation from the equipped public Witch.
+- Transparency/effect boundary: binary alpha and one connected silhouette are
+  exact. Hex bursts, thrown charms, cauldron fumes, summoned familiars, curse
+  auras, claw trails, and impact flashes remain external.
+- Animation contract: two uneven Idle poses, four grounded crooked-shuffle Walk
+  phases, four leading-arm coil/rise/rake/recovery Attack phases, exact Cast-to-
+  Attack aliases, white-recoil and colored-brace Hurt poses, and exact Death
+  aliases H1,H2,H2,H2. Left is the exact mirror of Right.
+- Review command: `npm.cmd run review:enemy-expansion-en-e06-hag-mire-crone`.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e06-hag-mire-crone`.
 - Review hashes: raw / Complete B + Form `1428x760` boards
-  `74b6b4935ef9708c13396104d80589f67c9de5b189f44dac5c455ea33c45c7cc` /
-  `784cfcd2041c8851491ebf38112b48b03d45d48715199907923950022b6f00ff`;
-  three-Fairy comparison `1192x548` board
-  `693a6fcdf88a96be3e6d14b55cd65286eb71aa1015934b5b2fef02272cc40b42`;
+  `d0d878509e17455d8c0ea26e2a12bbd8338fcd1b6cdd799d6f8e4052175a742e` /
+  `b03473eb7339de3d6e16094f931b5f1f4ace6a7b790a942fc37eed458a440cd3`;
+  Witch comparison `910x548` board
+  `a3ded6138931636c5ad44354b833ce5467bce36d5e5a65d943b1b7c6b68e6594`;
   raw / Complete B + Form `640x672` labeled GIFs
-  `e98a5427e67d7abc15467cb630634ce57b63f3f6541aa0abb3bc73c19bd673c6` /
-  `f11e102b7846f3d3ee2b47f1c56493493906fd6e0364046d8ae5964ea8c5ba10`.
-- Focused result: 80/80 connected, one-cell-bounded, ground-clear frames; all
-  80 pixel frames and 80 alpha silhouettes differ from Thistle and again from
-  Bramblewing; 72/72 colored crown-wing frames; 8/8 exact white alias flashes;
-  opaque range 193-236; 6,266 Complete B additions; 9,279 Form changes.
-  Candidate digest:
-  `69de53e0b10aa80ef10afa7e3e8b6a9d913af81a365535f52e3f4be71945bd5c`.
-- Protected result: approved Bramblewing full/Idle and Thistle full gates pass
-  unchanged; EN-E05 consumers remain exact at 74/245 and 320/320; all five
-  review artifacts are present and hash-verified; approval-state fast
-  validation passes in `54.9s`, full validation passes in `107.2s`, and all 232
-  fixtures remain frozen.
+  `79cdc9bb9b1514c03b057f401b4baeb1732349445b11bed5254c84e5e1201ec2` /
+  `fda5caed4a6bacfd36f8e76afddcc81e195d390a96c3d5e47c61c4cfa9b195df`.
+- Focused result: 80/80 connected, one-cell-bounded, grounded frames; all 80
+  pixel frames and 80 alpha silhouettes differ from public Witch/Hexer; 72/72
+  colored feral-Hag frames; 8/8 exact white alias flashes; opaque range
+  224-246; 7,692 Complete B additions; 8,406 Form changes. Candidate digest:
+  `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
+- Protected result: all three approved Fairy 80-frame digests remain exact;
+  the public catalog remains 74/245; all five review artifacts are present and
+  hash-verified; no fixture was generated or modified.
 - Firewall: the lane adds no public registration, facade import, shared
   renderer/schema/interface change, asset-pack entry, selector/persistence
   route, pack/export change, fixture regeneration, effect, or release.
-- Review state: the exact hash-frozen raw, Complete B + Form, and three-Fairy
-  comparison PNGs were opened directly in Aseprite, the paired GIFs were
-  presented, and the designer explicitly approved them.
+- Review state: technical and local visual inspection pass. The exact three
+  hash-frozen PNGs still need to be opened directly in Aseprite and presented
+  with the paired GIFs for the designer's explicit approval.
 - Required reading: `CLAUDE.md`, this section, the EN-E06 candidate subsection,
   and `Current Authorization Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not use
   `docs/archive/` or the historical body below as current workflow.
-- Fulfilled continuation: the exact approved Petalcrown implementation and its
-  publication record are pushed. Stop here. Do not register EN-E06, generate
-  fixtures, begin Hag, or broaden Wave 2 without a separate continuation.
+- Active stop: do not commit, push, register Hag, generate fixtures, start a
+  second Hag, begin Dryad, or broaden Wave 2 before explicit Mire Crone approval.
 
 Suggested opening request for the next chat:
 
 > Read `CLAUDE.md`, the active top section of `HANDOFF.md`, and the EN-E06 plus
-> current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Continue only the
-> approved Petalcrown Duelist lane on
-> `codex/en-e06-fairy-petalcrown-duelist`, based at `581bff9`; preserve
-> Bramblewing and Thistle exactly, verify Petalcrown at published checkpoint
-> `b265e97`, and stop before Hag or registration without new authorization.
+> current-authorization sections in `ENEMY_EXPANSION_PLAN.md`. Review only the
+> hash-frozen Mire Crone candidate on `codex/en-e06-hag-mire-crone`, based at
+> `5c9363e`; preserve all three approved Fairies exactly and do not commit, push,
+> register, generate fixtures, or begin another sprite before visual approval.
 
 # Historical Handoff Archive
 

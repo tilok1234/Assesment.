@@ -61,7 +61,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
     attackTell: 'The long leading arm coils toward the chest before a broad hooked rake; thrown charms and hex bursts remain external.',
     externalEffects: ['hex bursts', 'thrown charms', 'cauldron fumes', 'summoned familiars'],
     variants: [
-      { id: 'mire-crone', name: 'Mire Crone', role: 'common', status: 'planned', brief: 'Feral bog Hag with rope hair, hooked nose, long claws, and a mud-dark shawl.' },
+      { id: 'mire-crone', name: 'Mire Crone', role: 'common', status: 'implemented-full-candidate', brief: 'Feral bog Hag with rope hair, hooked nose, long claws, and a mud-dark shawl.' },
       { id: 'cauldron-hexer', name: 'Cauldron Hexer', role: 'specialist', status: 'planned', brief: 'Charm-brewing Hag with a ladle-like hand tool; fumes and thrown brews remain external.' },
       { id: 'blackthorn-matron', name: 'Blackthorn Matron', role: 'elite', status: 'planned', brief: 'Briar-armored elder Hag with a crown of hooked blackthorn and a heavier raking silhouette.' },
     ],
@@ -108,6 +108,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
 ]);
 
 export const EN_E06_FAIRY_CONTRACT_CARD = EN_E06_CONTRACT_CARDS[0];
+export const EN_E06_HAG_CONTRACT_CARD = EN_E06_CONTRACT_CARDS[1];
 
 export const EN_E06_FAIRY_IDLE_GATE = deepFreeze({
   id: 'en-e06-fairy-bramblewing-scout-idle-v1',

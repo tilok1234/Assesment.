@@ -114,21 +114,19 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`;
   the Complete Kit is 74 families / 245 enemy sheets / 2,182 PNGs. This gate
   creates no new sprite pixels and does not alter fixtures.
-- Wave 2 is active only through the approved internal lane
-  `en-e06-fairy-petalcrown-duelist-full-v1` on
-  `codex/en-e06-fairy-petalcrown-duelist`, based exactly on clean published
-  Thistle reconciliation `581bff9`. Approved Bramblewing Scout and Thistle
-  Hexer remain exact and published at `cc92ca9` and `3dc68cb`. After publishing
-  Thistle, the designer said `lets do next`, authorizing only one complete
-  elite Petalcrown Duelist. Its private 80-frame suite passes 80/80 connected,
-  bounded, ground-clear frames; all 80 pixel frames and alpha silhouettes
-  differ from both approved Fairies; candidate digest is
-  `69de53e0b10aa80ef10afa7e3e8b6a9d913af81a365535f52e3f4be71945bd5c`.
-  The designer approved the exact raw, Complete B + Form, and three-Fairy
-  comparison boards plus paired GIFs on 2026-08-09. The bounded implementation
-  is published at `b265e97`; the lane remains absent from the public facade,
-  catalog, and fixtures. Do not begin Hag, register EN-E06, generate
-  fixtures, or broaden Wave 2.
+- Wave 2 is active only through private Hag gate
+  `en-e06-hag-mire-crone-full-v1` on `codex/en-e06-hag-mire-crone`, based
+  exactly on clean Petalcrown publication record `5c9363e`. Approved
+  Bramblewing Scout, Thistle Hexer, and Petalcrown Duelist remain exact and
+  published at `cc92ca9`, `3dc68cb`, and `b265e97`. After Petalcrown
+  publication, the designer said `lets do nextr`, authorizing only one complete
+  common Mire Crone. Its private 80-frame suite passes 80/80 connected,
+  bounded, grounded frames; all 80 pixel frames and alpha silhouettes differ
+  from public Witch/Hexer; candidate digest is
+  `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
+  The candidate remains absent from the public facade, catalog, and fixtures.
+  Do not commit, push, register Hag, generate fixtures, start another Hag or
+  Dryad, or broaden Wave 2 before explicit Mire Crone visual approval.
 - EN-E05's first isolated, visually approved lane is the full-suite Ghoul
   upgrade lane on `codex/en-e05-ghoul-upgrade`, committed and pushed at
   `88d32e9`. Approval applies only to the exact hash-frozen 80-frame candidate

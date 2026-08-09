@@ -714,8 +714,27 @@ state, and candidate digest
 The gate is an approved internal lane published at bounded implementation
 checkpoint `b265e97`. Approval-state fast validation passes in `54.9s`
 and full validation passes in `107.2s`, with all 232 fixture sheets unchanged.
-Hag, registration, fixtures, effects, release, and later Wave 2 work remain
-closed.
+That published checkpoint left Hag closed. The later explicit `lets do nextr`
+continuation opened only the isolated Mire Crone candidate below.
+
+`engine/enemy-expansion-en-e06-hag-mire-crone.js` is the first private Hag
+boundary. It is content-only and imports no public facade path. Its dedicated
+`stooped-feral-fey-humanoid-v1` renderer authors moss skin, rope-gray hair, a
+hooked profile, long connected claw arms, mud-dark shawl, bowed trunk, and
+planted splayed feet directly inside the standard 24x24 hard-alpha cell. The
+absence of hat, staff, robe, familiar, and cauldron keeps the silhouette distinct
+from the equipped public Witch. Hex bursts, thrown charms, fumes, familiars,
+auras, claw trails, and impacts stay external.
+
+The nested `npm run check:enemy-expansion-en-e06-hag-mire-crone` gate exhausts
+all 80 candidate frames plus the public Witch comparison and all three approved
+Fairy suites. It proves connected one-cell-bounded grounded structure, exact
+side mirrors and Cast/Death aliases, 80/80 pixel and alpha-silhouette
+distinctions from Witch, deterministic raw/Complete B + Form/comparison
+evidence, unchanged 74/245 public state, and candidate digest
+`f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
+The lane remains unapproved, uncommitted, unpushed, and absent from registration,
+fixtures, effects, and release until the exact review packet passes the visual gate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

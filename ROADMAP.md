@@ -117,25 +117,22 @@ intentional bounded commit and branch push before the next gate begins, unless
 the designer explicitly says to hold publication. Unapproved lanes are never
 published under this rule.
 
-Current continuation checkpoint (2026-08-09): approved common Fairy Bramblewing
-Scout and specialist Thistle Hexer remain exact, internal, non-public, and
-published at `cc92ca9` and `3dc68cb`. After Thistle publication, the designer
-said `lets do next`, opening only elite Fairy Petalcrown Duelist gate
-`en-e06-fairy-petalcrown-duelist-full-v1` on
-`codex/en-e06-fairy-petalcrown-duelist`, based on clean reconciliation
-  `581bff9`. Its hash-frozen 80-frame suite passes connected, one-cell-
-bounded, hard-alpha, ground-clear checks; all 80 pixel frames and alpha
-silhouettes differ from both approved Fairies; candidate digest is
-`69de53e0b10aa80ef10afa7e3e8b6a9d913af81a365535f52e3f4be71945bd5c`.
+Current continuation checkpoint (2026-08-09): approved Fairies Bramblewing
+Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,
+and published at `cc92ca9`, `3dc68cb`, and `b265e97`. After Petalcrown
+publication, the designer said `lets do nextr`, opening only common Hag Mire
+Crone gate `en-e06-hag-mire-crone-full-v1` on
+`codex/en-e06-hag-mire-crone`, based on clean Petalcrown publication record
+`5c9363e`. Its hash-frozen 80-frame suite passes connected, one-cell-bounded,
+hard-alpha, grounded checks; all 80 pixel frames and alpha silhouettes differ
+from public Witch/Hexer; candidate digest is
+`f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
 The published runtime boundary remains 17/43 expansion and 74/245 public with a
 2,182-PNG Complete Kit; public `zombie/ghoul`, all 232 committed fixtures,
-  effects, release state, and EN-E03 isolation remain unchanged. The designer
-  approved the exact Petalcrown boards and paired GIFs on 2026-08-09; the bounded
-  implementation is published at `b265e97`. Approval-state fast validation
-  passes in `54.9s` and full validation in `107.2s`. Hag and later EN-E06 art,
-  EN-E07, registration, fixtures, shared
-renderer/schema changes, effects, and release each require a separate
-continuation.
+effects, release state, and EN-E03 isolation remain unchanged. Mire Crone is
+unapproved, uncommitted, and unpushed. Later Hags, Dryad, EN-E07, registration,
+fixtures, shared renderer/schema changes, effects, and release each require a
+separate continuation.
 
 Historical continuation checkpoint (2026-08-07): synchronized `main` remains the
 pre-expansion base at `f5476a2`. The EN-E03 approval lane is preserved and

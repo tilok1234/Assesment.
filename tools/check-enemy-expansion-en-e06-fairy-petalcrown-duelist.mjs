@@ -131,7 +131,7 @@ function rejects(run, messageFragment, label) {
 
 check(EN_E05_CONSUMER_INTEGRATION_GATE.id === 'en-e05-assembler-consumers-v1', 'the Petalcrown lane must retain the exact EN-E05 consumer predecessor');
 check(EN_E05_CONSUMER_INTEGRATION_GATE.consumerFrameDigest === '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f', 'the approved EN-E05 public digest drifted');
-check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'fairy-petalcrown-duelist-full-published-2026-08-09', 'the EN-E06 ledger must identify the published Petalcrown Duelist gate');
+check(ENEMY_EXPANSION_LEDGER.find((entry) => entry.id === 'EN-E06')?.gate === 'hag-mire-crone-full-candidate-2026-08-09', 'the EN-E06 ledger must preserve published Petalcrown while identifying the later Mire Crone candidate gate');
 
 check(EN_E06_FAIRY_GATE.status === 'approved' && EN_E06_FAIRY_GATE.publishedImplementation === 'cc92ca9bb14f9fa7937a7e1e746d55fb754d9653', 'the published Bramblewing predecessor drifted');
 check(EN_E06_THISTLE_HEXER_GATE.status === 'approved', 'the Thistle Hexer predecessor must retain exact approval');
@@ -164,7 +164,9 @@ check(EN_E06_CONTRACT_CARDS.length === 5, 'EN-E06 must retain all five family co
 check(EN_E06_FAIRY_CONTRACT_CARD.variants[0].status === 'implemented-full-approved', 'Bramblewing Scout must retain its approved full-suite status');
 check(EN_E06_FAIRY_CONTRACT_CARD.variants[1].status === 'implemented-full-approved', 'Thistle Hexer must retain its approved full-suite status');
 check(EN_E06_FAIRY_CONTRACT_CARD.variants[2].id === 'petalcrown-duelist' && EN_E06_FAIRY_CONTRACT_CARD.variants[2].status === 'implemented-full-approved', 'Petalcrown Duelist must retain its separately approved full-suite status');
-for (const card of EN_E06_CONTRACT_CARDS.slice(1)) check(card.variants.every((variant) => variant.status === 'planned'), `${card.id} must remain contract-only`);
+check(EN_E06_CONTRACT_CARDS[1].variants[0].status === 'implemented-full-candidate', 'the separately authorized Mire Crone lane must remain visible without changing the approved Petalcrown gate');
+check(EN_E06_CONTRACT_CARDS[1].variants.slice(1).every((variant) => variant.status === 'planned'), 'later Hag variants must remain planned');
+for (const card of EN_E06_CONTRACT_CARDS.slice(2)) check(card.variants.every((variant) => variant.status === 'planned'), `${card.id} must remain contract-only`);
 
 check(EN_E06_PETALCROWN_DUELIST_DATA.alphaPolicy === 'binary-crown-wing-negative-space', 'the elite renderer data must retain its hard-alpha crown-wing policy');
 check(EN_E06_PETALCROWN_DUELIST_DATA.effectBoundary.includes('external-dash-trails') && EN_E06_PETALCROWN_DUELIST_DATA.bakedEffects.length === 0, 'dash trails and later effects must remain external');
@@ -347,6 +349,6 @@ console.log(`- Structure: ${connectedFrames}/80 connected; ${boundedFrames}/80 o
 console.log(`- Identity: ${coloredIdentityFrames}/72 colored crown-wing frames; ${flashFrames}/8 exact white alias flashes`);
 console.log('- Motion: 2 Idle, 4 Walk, 4 Attack, 2 Hurt frames distinct per direction; Cast/Death aliases exact');
 console.log(`- Presentation: Complete B +${completeBAddedPixels} outline pixels; Form changes ${formChangedPixels} source pixels`);
-console.log('- Protected boundaries: Bramblewing, Thistle, and approved Petalcrown exact; Hag closed; public catalog 74/245; fixtures unchanged');
+console.log('- Protected boundaries: Bramblewing, Thistle, and approved Petalcrown exact; Mire Crone is a later private lane; public catalog 74/245; fixtures unchanged');
 console.log('- Review artifacts: 5/5 present and hash-verified');
 console.log(`- Candidate digest: ${candidateFrameDigest}`);

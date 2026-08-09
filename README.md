@@ -894,7 +894,7 @@ below later exposes only the four new families; at that point public Ghoul
 replacement, fixture work, effects, release, EN-E03 adoption, and Wave 2 were
 still closed.
 
-## EN-E06 Fairy Bramblewing, Thistle, and approved Petalcrown sequence
+## EN-E06 approved Fairy sequence and active Hag Mire Crone candidate
 
 Approved common Fairy Bramblewing Scout and specialist Thistle Hexer remain
 internal, non-public, exact, and published at `cc92ca9` and `3dc68cb`. After
@@ -949,10 +949,27 @@ Fairies; 72/72 colored frames and 8/8 white alias flashes pass. Approved
 Bramblewing full/Idle and Thistle full gates remain exact. Protected EN-E05
 consumers remain 74/245 and 320/320; candidate-state fast validation passes in
 `50.4s`, full validation passes in `106.2s`, and all 232 fixtures remain
-unchanged. Hag/Dryad/Redcap/Nymph art, EN-E06 registration/consumers,
-shared renderer or schema changes, fixture work, effects, release, EN-E07, and
-later Wave 2 work remain excluded. Do not commit or push Petalcrown before
-explicit visual approval.
+unchanged. Petalcrown was subsequently approved and published at `b265e97`.
+
+After that publication, the designer said `lets do nextr`, opening only the
+common Hag Mire Crone on `codex/en-e06-hag-mire-crone`. The private candidate
+uses moss skin, amber eyes, rope-gray hair, a hooked nose, long claws, mud-dark
+shawl, bowed torso, and planted splayed feet. It has no staff, hat, robe,
+familiar, or cauldron, and all 80 pixel frames and alpha silhouettes differ
+from public Witch/Hexer. Hexes, charms, fumes, familiars, auras, trails, and
+impact flashes remain external.
+
+Run `npm.cmd run review:enemy-expansion-en-e06-hag-mire-crone` to reproduce the
+raw/no-outline and Complete B + Form `1428x760` boards, `910x548` Witch
+comparison, and paired `640x672` GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e06-hag-mire-crone` to validate all 80
+frames, connected grounded hard-alpha silhouettes, exact mirrors and aliases,
+Witch distinction, approved-Fairy preservation, frozen hashes, and the public
+and fixture firewall. Candidate digest:
+`f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
+The candidate is unapproved, uncommitted, and unpushed; do not publish it or
+begin another Hag, Dryad, registration, fixtures, effects, or later Wave 2 work
+before explicit visual approval.
 
 ## EN-E05 assembler consumer integration implemented
 

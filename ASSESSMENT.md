@@ -169,14 +169,15 @@ old one did — minus nothing — it just also passes from a clean checkout.
 
 Update for 2026-08-09: EN adoption is complete through EN-E05 assembler
 integration and the live catalog remains 74/245. Approved EN-E06 Fairies
-Bramblewing Scout and Thistle Hexer remain exact, internal, non-public, and
-published at `cc92ca9` and `3dc68cb`. After Thistle publication, the designer
-said `lets do next`, opening only elite Fairy Petalcrown Duelist. Its private
- 80-frame suite passes focused structural and two-predecessor distinction gates.
- The designer approved its exact boards and paired GIFs on 2026-08-09; the
- bounded implementation is published at `b265e97`. The active handoff starts
- with that approved lane above an
-explicitly marked historical archive. Hag, fixture regeneration, the legacy
+Bramblewing Scout, Thistle Hexer, and Petalcrown Duelist remain exact,
+internal, non-public, and published at `cc92ca9`, `3dc68cb`, and `b265e97`.
+After Petalcrown publication, the designer said `lets do nextr`, opening only
+common Hag Mire Crone. Its private 80-frame candidate passes connected,
+bounded, grounded, alias, mirror, public-Witch distinction, and approved-Fairy
+preservation gates at digest
+`f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
+The active handoff starts with that unapproved review lane above an explicitly
+marked historical archive. Later Hags, Dryad, fixture regeneration, the legacy
 renderer split, boss-generator consolidation, and the Wildshot writer remain
 separate decisions.
 

@@ -2838,7 +2838,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `approved internal - Fairy Petalcrown Duelist complete 80-frame lane published at b265e97`
+- Status: `candidate internal - Hag Mire Crone complete 80-frame lane awaiting visual approval`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3019,6 +3019,44 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 - Publication state: the exact approved Petalcrown implementation is published
   at `b265e972e719d6b697c99085503a1f2ea341da61`. Stop before Hag, Fairy
   registration, fixtures, or broader Wave 2 work; each requires a separate continuation.
+
+#### Candidate Hag Mire Crone complete suite
+
+- Gate ID: `en-e06-hag-mire-crone-full-v1`; status: `candidate`, internal,
+  uncommitted, and unpushed on `codex/en-e06-hag-mire-crone`, based exactly on
+  clean Petalcrown publication record `5c9363e`.
+- Authorization: after the exact Petalcrown lane was approved and published,
+  the designer said `lets do nextr` on 2026-08-09. This opens only common Hag
+  Mire Crone under the one-complete-sprite cadence.
+- Scope: one private 80-frame common Hag across Idle, Walk, Attack, Cast, Hurt,
+  and Death for Down, Left, Right, and Up. All three approved Fairies remain
+  exact. Later Hags, Dryad, Redcap, Nymph, registration, and fixtures stay closed.
+- Identity: moss skin, amber eyes, rope-gray hair, hooked nose, long claws,
+  mud-dark shawl, swamp dress, crooked shoulders, bowed trunk, and planted
+  splayed feet. No staff, hat, robe, familiar, or cauldron is baked into the
+  actor, keeping Hag distinct from the public equipped Witch.
+- Animation/effect policy: two uneven Idle poses, four grounded crooked-shuffle
+  Walk phases, four connected coil/rise/rake/recovery Attack phases, exact
+  Cast-to-Attack aliases, white-recoil and colored-brace Hurt, exact Death
+  aliases H1,H2,H2,H2, and exact side mirroring. Hexes, charms, fumes,
+  familiars, auras, trails, and impacts remain external.
+- Review evidence: raw / Complete B + Form `1428x760` boards
+  `d0d878509e17455d8c0ea26e2a12bbd8338fcd1b6cdd799d6f8e4052175a742e` /
+  `b03473eb7339de3d6e16094f931b5f1f4ace6a7b790a942fc37eed458a440cd3`;
+  Witch comparison `910x548` board
+  `a3ded6138931636c5ad44354b833ce5467bce36d5e5a65d943b1b7c6b68e6594`;
+  raw / Complete B + Form GIFs
+  `79cdc9bb9b1514c03b057f401b4baeb1732349445b11bed5254c84e5e1201ec2` /
+  `fda5caed4a6bacfd36f8e76afddcc81e195d390a96c3d5e47c61c4cfa9b195df`.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded frames;
+  80/80 pixel and alpha-silhouette distinctions from public Witch/Hexer;
+  72/72 colored identity frames; 8/8 exact white flashes; opaque range 224-246;
+  7,692 Complete B additions; 8,406 Form changes; candidate digest
+  `f35512e73fd7b2308bf408f11c2d21a30631361214a372df7bef2e8fc4e6478d`.
+- Review state: technical and local visual inspection pass. The three exact
+  PNGs must be opened directly in Aseprite and presented with the paired GIFs.
+  Stop for explicit approval; do not commit, push, register, generate fixtures,
+  or begin Cauldron Hexer before that approval.
 
 ### EN-E07 - Shapeshifters and apparitions
 
