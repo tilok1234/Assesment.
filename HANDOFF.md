@@ -15,6 +15,80 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
+## Immediate Continuation Checkpoint - Birdfolk Gale Augur Approved
+
+Start here in a new task. After approving, publishing, and reconciling the
+complete Birdfolk Aerie Scout common, the designer said `awesome lets keep
+going` on 2026-08-09. The live Birdfolk role order advances from common to the
+unnamed specialist, so Codex named and bounded this continuation to one complete
+80-frame Birdfolk Gale Augur specialist enemy only. The designer reviewed the
+exact hash-frozen raw/no-outline and Complete B + Form pair together and said
+`awesome looks good approved` on 2026-08-09.
+
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-birdfolk-gale-augur`, based exactly on clean Aerie Scout
+  reconciliation `60df011f86f2bce93e54a7bcd071d53b1ae3497e`; the approved
+  Aerie Scout implementation remains frozen at
+  `a0910312e510ee57b603ee981a279c1f372d6fad`.
+- Gate: `en-e04-birdfolk-gale-augur-full-v1`; status
+  `approved`, internal, non-public, uncommitted, and unpushed. Bounded
+  publication of the exact ten-file lane is authorized; generated review
+  artifacts remain ignored.
+- Scope: one specialist Gale Augur and 80 frames across Down, Left, Right, and
+  Up: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack
+  aliases, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Source/anatomy: all 80 frames preserve the complete approved Aerie Scout
+  alpha footprint and upright avian chassis. The beaked head, shoulder-rooted
+  wing-arms, digitigrade talon legs, and connected tail fan remain readable
+  beneath connected specialist regalia.
+- Specialist identity: indigo plumage, midnight flight feathers, storm-violet
+  tips, a connected storm cowl and shoulder mantle, silver brow circlet and
+  forewing bands, cyan sky-rune marks, ice-blue eyes, and gold beak/talons.
+  All 36 colored side frames retain the two-pixel eye treatment; all 18 colored
+  rear frames remain eye-free.
+- Motion: the approved Aerie breath, four-step gait, full-body wing-and-talon
+  rake, and complete-silhouette recoil remain intact while all specialist
+  regalia follows the same transforms.
+- Effects/exclusions: wind glyphs, omen rings, feather spirals, pressure waves,
+  lightning filaments, dust puffs, air blades, and impacts remain external.
+  Approved Aerie source changes, Birdfolk elite, additional variants, new
+  Cast/Death pixels, registration, consumers, integration, effects, release,
+  and broader EN-E04 work remain outside.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e04-birdfolk-gale-augur`; it
+  reproduces paired raw/no-outline and Complete B + Form `1428x760` boards plus
+  exact labeled `640x672`, four-phase, `720ms` looping GIFs.
+- Focused command:
+  `npm.cmd run check:enemy-expansion-en-e04-birdfolk-gale-augur`.
+- Raw / Complete B + Form board SHA-256 values:
+  `6f1083a615555aa47fc7a9d62c8cf1e2761cccee1b6346f04d5f0d973d68e33c` /
+  `c82183ed27e2639130670918960d3c87bd9d16d9eba74f76e049a0d04d1d631b`.
+- Raw / Complete B + Form GIF SHA-256 values:
+  `083b327e56c6e530e6b42f92178350803d7a40687e4dc985ad4077ac40bd1a09` /
+  `7db6c88d3c0a1ec0f9289d86b80885bf5418edd0af95ad44ac08f1da1ca96641`.
+- Candidate 80-frame digest:
+  `4495c4f91c77f411a7b0639ac68e3b8bf94318632d0191f0034a4373f32de9d4`.
+- Focused validation passes: suite `80/80`; approved Aerie alpha footprints
+  `80/80`; connected/hard-alpha silhouettes `80/80`; colored
+  cowl/circlet/mantle/sky-rune anatomy `72/72`; exact side mirrors `20/20`;
+  colored side eyes `36/36`; eye-free colored rear frames `18/18`; Cast aliases
+  `16/16`; Death aliases `16/16`; opaque range 188-237; 15,022 changed pixels
+  versus approved Aerie Scout; 7,650 Complete B additions; 8,133 Form changes;
+  public EN-E04 families `0`.
+- Visual evidence: all four raw phases and all four Complete B + Form phases
+  were inspected directly. Both exact frozen boards opened successfully through
+  the working Aseprite MCP after inspection.
+- All nine protected predecessor gates pass. The final post-approval v2 fast
+  gate passes in `50.8s`; full `npm.cmd run check` passes in `106.4s`, with all
+  232 public PNG sheets unchanged.
+- Required next action: commit and push the exact approved ten-file lane, then
+  reconcile the live handoff. Do not
+  begin Birdfolk elite, register, integrate, add effects, release, or broaden
+  the lane; those remain outside this approval.
+
+The approved preceding Aerie Scout checkpoint follows for provenance.
+
 ## Immediate Continuation Checkpoint - Birdfolk Aerie Scout Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the

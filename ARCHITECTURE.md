@@ -1111,6 +1111,32 @@ complete at approved implementation checkpoint
 `a0910312e510ee57b603ee981a279c1f372d6fad`; no later gate is opened by that
 publication.
 
+The isolated `engine/enemy-expansion-en-e04-birdfolk-gale-augur.js` module owns
+the next authorized Birdfolk specialist without modifying Aerie Scout, shared
+schemas, renderers, exporters, validators, or the public facade. Its lane-local
+renderer delegates every approved Aerie motion frame through a deterministic
+palette map, preserves the complete source alpha footprint, and draws connected
+storm-cowl, circlet, mantle, forewing-band, and sky-rune regalia through the
+same body transform. Cast aliases Attack and Death aliases Hurt
+`H1,H2,H2,H2` exactly; wind and omen effects remain external.
+
+Gate `en-e04-birdfolk-gale-augur-full-v1` is hash-frozen, focused validated,
+internal, non-public, uncommitted, unpushed, and
+`approved` on `codex/en-e04-birdfolk-gale-augur`. Its
+lane-local registry contains only specialist Gale Augur and remains absent from
+`sprite-engine.js`. Frozen `1428x760` boards, `640x672` paired four-phase GIFs,
+an 80-frame digest, 80 approved-source alpha locks, 80 connected hard-alpha
+silhouettes, one-cell margins, 20 exact side mirrors, exact aliases, 72/72
+colored specialist-identity frames, 36/36 two-pixel colored side eyes, 18/18
+eye-free colored rear views, Complete B/Form presentation, external effects,
+and zero public exposure define the gate. All nine protected predecessor gates
+pass; the final post-approval fast gate passes in `50.8s` and the full
+repository gate passes in `106.4s`, with all 232 public PNG sheets unchanged.
+Exact paired visual approval is recorded with the designer's `awesome looks
+good approved` on 2026-08-09. That approval authorizes only bounded commit,
+push, and publication of this exact ten-file Gale Augur lane. Birdfolk elite,
+registration, integration, effects, release, and broader work remain outside.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

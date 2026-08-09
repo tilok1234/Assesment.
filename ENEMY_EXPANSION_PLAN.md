@@ -1778,7 +1778,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine, aquatic, and avian peoples
 
-- Status: `paused - Aerie Scout common approved and published; later Birdfolk roles require explicit authorization`
+- Status: `active - Gale Augur specialist approved; bounded publication authorized`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1789,12 +1789,13 @@ and no new sprite pixels or public integration are authorized.
 - Approved gate: Merfolk Reefcaller complete specialist motion across Down, Left, Right, and Up; published
 - Approved gate: Merfolk Pearl Regent complete elite motion across Down, Left, Right, and Up; published
 - Approved gate: Birdfolk Aerie Scout complete common motion across Down, Left, Right, and Up; published
+- Approved gate: Birdfolk Gale Augur complete specialist motion across Down, Left, Right, and Up; bounded publication authorized
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
 | Naga | Coilguard | Venom Oracle | Temple Rajah |
 | Merfolk | Tideguard | Reefcaller | Pearl Regent |
-| Birdfolk | Aerie Scout | Not named | Not named |
+| Birdfolk | Aerie Scout | Gale Augur | Not named |
 
 Shared leverage: non-human lower bodies and upright equipment anchors. Naga and
 Merfolk must not fake ordinary feet in side views. Birdfolk must remain an
@@ -2258,6 +2259,57 @@ upright avian person rather than collapse into the existing Harpy identity.
   integration, effects, release, or broader work is authorized by this
   approval.
 
+#### Birdfolk Gale Augur full specialist approved, awaiting bounded publication
+
+- Gate ID: `en-e04-birdfolk-gale-augur-full-v1`; status:
+  `approved`, internal, non-public, uncommitted, and unpushed.
+- Live branch: `codex/en-e04-birdfolk-gale-augur`, based exactly on clean Aerie
+  Scout reconciliation `60df011f86f2bce93e54a7bcd071d53b1ae3497e`; approved
+  Aerie Scout remains frozen at
+  `a0910312e510ee57b603ee981a279c1f372d6fad`.
+- Authorization/naming: after Aerie Scout approval/publication, the designer
+  said `awesome lets keep going` on 2026-08-09. The Birdfolk role order advances
+  from common to specialist; Codex named and bounded one complete Gale Augur
+  specialist only. The elite name remains deliberately open.
+- Approval: the designer reviewed both exact hash-frozen all-four-direction
+  raw/no-outline and Complete B + Form GIFs together and said `awesome looks
+  good approved` on 2026-08-09.
+- Scope: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast aliases,
+  and exact Death aliases `H1,H2,H2,H2` across Down, Left, Right, and Up.
+- Source/anatomy: all 80 frames preserve the approved Aerie Scout alpha
+  footprint and upright avian chassis beneath connected specialist regalia.
+- Identity: indigo plumage, midnight flight feathers, storm-violet tips,
+  connected storm cowl and shoulder mantle, silver circlet/forewing bands, cyan
+  sky rune, ice-blue eyes, and gold beak/talons. All 36 colored side frames
+  retain two eye pixels; all 18 colored rear frames remain eye-free.
+- External effects: wind glyphs, omen rings, feather spirals, pressure waves,
+  lightning filaments, dust puffs, air blades, and impacts stay outside actor
+  pixels; baked effects are empty.
+- Exclusions: approved Aerie source changes, Birdfolk elite, additional
+  variants, new Cast/Death pixels, registration, consumers, integration,
+  effects, release, later EN-E04 work, and multi-enemy expansion.
+- Frozen candidate evidence: raw / Complete B + Form boards
+  `6f1083a615555aa47fc7a9d62c8cf1e2761cccee1b6346f04d5f0d973d68e33c` /
+  `c82183ed27e2639130670918960d3c87bd9d16d9eba74f76e049a0d04d1d631b`;
+  raw / Complete B + Form GIFs
+  `083b327e56c6e530e6b42f92178350803d7a40687e4dc985ad4077ac40bd1a09` /
+  `7db6c88d3c0a1ec0f9289d86b80885bf5418edd0af95ad44ac08f1da1ca96641`;
+  80-frame digest
+  `4495c4f91c77f411a7b0639ac68e3b8bf94318632d0191f0034a4373f32de9d4`.
+- Focused validation passes suite/source-lock/connected/hard-alpha frames
+  `80/80`, complete colored cowl/circlet/mantle/sky-rune/avian anatomy `72/72`,
+  exact side mirrors `20/20`, colored side eyes `36/36`, eye-free colored rear
+  frames `18/18`, Cast aliases `16/16`, Death aliases `16/16`, opaque range
+  188-237, 15,022 specialist-changed pixels, 7,650 Complete B additions, 8,133
+  Form changes, and zero public EN-E04 families.
+- All nine protected predecessor gates pass. The final post-approval v2 fast
+  gate passes in `50.8s`; full `npm.cmd run check` passes in `106.4s`, with all
+  232 public PNG sheets unchanged.
+- Required next action: commit and push the exact approved ten-file lane, then
+  reconcile the live handoff. No
+  Birdfolk elite, registration, integration, effects, release, or broader work
+  is authorized by this approval.
+
 ### EN-E05 - Undead humanoids
 
 - Status: `queued`
@@ -2662,3 +2714,12 @@ non-public, committed, and pushed at
 `a0910312e510ee57b603ee981a279c1f372d6fad`. Later Birdfolk roles,
 registration, integration, effects, release, and broader work remain
 unauthorized.
+The designer's later `awesome lets keep going` activates only one full 80-frame
+Birdfolk Gale Augur specialist on `codex/en-e04-birdfolk-gale-augur`. Because
+the specialist was not pre-named, this lane names only Gale Augur and leaves the
+elite open. Its exact paired evidence is hash-frozen and
+focused/protected/fast/full validated. The designer reviewed the exact pair and
+said `awesome looks good approved` on 2026-08-09. The lane remains internal,
+non-public, uncommitted, and unpushed with bounded publication authorized.
+Birdfolk elite, registration, integration, effects, release, and broader work
+remain unauthorized.
