@@ -71,6 +71,5 @@ export const BOSS_DIRECTION_PILOTS = Object.freeze([
     'eclipse-unicorn-sovereign',
     'Eclipse Unicorn Sovereign',
     'Majestic war-unicorn with a long striped sunhorn, luminous cyan eyes, flowing eclipse mane and tail, crescent barding, and four separated hoof columns.',
-    'candidate',
   ),
 ]);

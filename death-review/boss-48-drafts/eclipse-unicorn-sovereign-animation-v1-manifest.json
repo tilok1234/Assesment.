@@ -1,0 +1,1035 @@
+{
+  "profile": "boss-animation-v1",
+  "boss": "eclipse-unicorn-sovereign",
+  "reviewStatus": "candidate",
+  "fullSheet": "eclipse-unicorn-sovereign-animation-v1-full.png",
+  "width": 960,
+  "height": 192,
+  "cell": 48,
+  "columns": 20,
+  "directionOrder": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "animations": [
+    {
+      "id": "idle",
+      "name": "Idle",
+      "frames": 2,
+      "ms": 420
+    },
+    {
+      "id": "walk",
+      "name": "Walk",
+      "frames": 4,
+      "ms": 150
+    },
+    {
+      "id": "attack",
+      "name": "Attack",
+      "frames": 4,
+      "ms": 115
+    },
+    {
+      "id": "cast",
+      "name": "Cast",
+      "frames": 4,
+      "ms": 170
+    },
+    {
+      "id": "hurt",
+      "name": "Hurt",
+      "frames": 2,
+      "ms": 140
+    },
+    {
+      "id": "death",
+      "name": "Death",
+      "frames": 4,
+      "ms": 210
+    }
+  ],
+  "directionSheets": {
+    "down": "eclipse-unicorn-sovereign-animation-v1-direction-down.png",
+    "left": "eclipse-unicorn-sovereign-animation-v1-direction-left.png",
+    "right": "eclipse-unicorn-sovereign-animation-v1-direction-right.png",
+    "up": "eclipse-unicorn-sovereign-animation-v1-direction-up.png"
+  },
+  "animationSheets": {
+    "idle": "eclipse-unicorn-sovereign-animation-v1-animation-idle.png",
+    "walk": "eclipse-unicorn-sovereign-animation-v1-animation-walk.png",
+    "attack": "eclipse-unicorn-sovereign-animation-v1-animation-attack.png",
+    "cast": "eclipse-unicorn-sovereign-animation-v1-animation-cast.png",
+    "hurt": "eclipse-unicorn-sovereign-animation-v1-animation-hurt.png",
+    "death": "eclipse-unicorn-sovereign-animation-v1-animation-death.png"
+  },
+  "hardAlpha": true,
+  "exportScale": 1,
+  "effects": false,
+  "treatment": "24px authored logical poses, Form + Complete B, nearest-neighbor 2x",
+  "idleFrameOneMatchesDirectionPilot": true,
+  "frames": [
+    {
+      "animation": "idle",
+      "direction": "down",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-idle-down-1.png",
+      "bounds": [
+        6,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "idle",
+      "direction": "down",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-idle-down-2.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "idle",
+      "direction": "left",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-idle-left-1.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "idle",
+      "direction": "left",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-idle-left-2.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "idle",
+      "direction": "right",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-idle-right-1.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "idle",
+      "direction": "right",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-idle-right-2.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "idle",
+      "direction": "up",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-idle-up-1.png",
+      "bounds": [
+        6,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "idle",
+      "direction": "up",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-idle-up-2.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "down",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-down-1.png",
+      "bounds": [
+        4,
+        6,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "down",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-down-2.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "down",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-down-3.png",
+      "bounds": [
+        4,
+        8,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "down",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-down-4.png",
+      "bounds": [
+        4,
+        4,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "left",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-left-1.png",
+      "bounds": [
+        2,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "left",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-left-2.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "left",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-left-3.png",
+      "bounds": [
+        2,
+        8,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "left",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-left-4.png",
+      "bounds": [
+        2,
+        4,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "right",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-right-1.png",
+      "bounds": [
+        2,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "right",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-right-2.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "right",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-right-3.png",
+      "bounds": [
+        2,
+        8,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "right",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-right-4.png",
+      "bounds": [
+        2,
+        4,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "up",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-up-1.png",
+      "bounds": [
+        4,
+        6,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "up",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-up-2.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "up",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-up-3.png",
+      "bounds": [
+        4,
+        8,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "walk",
+      "direction": "up",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-walk-up-4.png",
+      "bounds": [
+        4,
+        4,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "down",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-down-1.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "down",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-down-2.png",
+      "bounds": [
+        4,
+        8,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "down",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-down-3.png",
+      "bounds": [
+        2,
+        4,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "down",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-down-4.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "left",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-left-1.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "left",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-left-2.png",
+      "bounds": [
+        2,
+        8,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "left",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-left-3.png",
+      "bounds": [
+        2,
+        4,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "left",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-left-4.png",
+      "bounds": [
+        2,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "right",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-right-1.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "right",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-right-2.png",
+      "bounds": [
+        2,
+        8,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "right",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-right-3.png",
+      "bounds": [
+        2,
+        4,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "right",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-right-4.png",
+      "bounds": [
+        2,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "up",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-up-1.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "up",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-up-2.png",
+      "bounds": [
+        4,
+        8,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "up",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-up-3.png",
+      "bounds": [
+        2,
+        4,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "attack",
+      "direction": "up",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-attack-up-4.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "down",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-down-1.png",
+      "bounds": [
+        4,
+        6,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "down",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-down-2.png",
+      "bounds": [
+        4,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "down",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-down-3.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "down",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-down-4.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "left",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-left-1.png",
+      "bounds": [
+        2,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "left",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-left-2.png",
+      "bounds": [
+        2,
+        4,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "left",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-left-3.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "left",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-left-4.png",
+      "bounds": [
+        2,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "right",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-right-1.png",
+      "bounds": [
+        2,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "right",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-right-2.png",
+      "bounds": [
+        2,
+        4,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "right",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-right-3.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "right",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-right-4.png",
+      "bounds": [
+        2,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "up",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-up-1.png",
+      "bounds": [
+        4,
+        6,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "up",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-up-2.png",
+      "bounds": [
+        4,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "up",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-up-3.png",
+      "bounds": [
+        2,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "cast",
+      "direction": "up",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-cast-up-4.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "hurt",
+      "direction": "down",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-hurt-down-1.png",
+      "bounds": [
+        4,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "hurt",
+      "direction": "down",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-hurt-down-2.png",
+      "bounds": [
+        2,
+        12,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "hurt",
+      "direction": "left",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-hurt-left-1.png",
+      "bounds": [
+        2,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "hurt",
+      "direction": "left",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-hurt-left-2.png",
+      "bounds": [
+        2,
+        12,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "hurt",
+      "direction": "right",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-hurt-right-1.png",
+      "bounds": [
+        2,
+        6,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "hurt",
+      "direction": "right",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-hurt-right-2.png",
+      "bounds": [
+        2,
+        12,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "hurt",
+      "direction": "up",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-hurt-up-1.png",
+      "bounds": [
+        2,
+        6,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "hurt",
+      "direction": "up",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-hurt-up-2.png",
+      "bounds": [
+        4,
+        12,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "down",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-down-1.png",
+      "bounds": [
+        4,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "down",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-down-2.png",
+      "bounds": [
+        2,
+        10,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "down",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-down-3.png",
+      "bounds": [
+        4,
+        22,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "down",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-down-4.png",
+      "bounds": [
+        2,
+        32,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "left",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-left-1.png",
+      "bounds": [
+        2,
+        2,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "left",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-left-2.png",
+      "bounds": [
+        2,
+        10,
+        42,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "left",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-left-3.png",
+      "bounds": [
+        4,
+        22,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "left",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-left-4.png",
+      "bounds": [
+        2,
+        32,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "right",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-right-1.png",
+      "bounds": [
+        4,
+        2,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "right",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-right-2.png",
+      "bounds": [
+        6,
+        10,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "right",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-right-3.png",
+      "bounds": [
+        4,
+        22,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "right",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-right-4.png",
+      "bounds": [
+        4,
+        32,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "up",
+      "frame": 1,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-up-1.png",
+      "bounds": [
+        4,
+        2,
+        42,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "up",
+      "frame": 2,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-up-2.png",
+      "bounds": [
+        2,
+        10,
+        44,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "up",
+      "frame": 3,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-up-3.png",
+      "bounds": [
+        4,
+        22,
+        46,
+        46
+      ]
+    },
+    {
+      "animation": "death",
+      "direction": "up",
+      "frame": 4,
+      "file": "eclipse-unicorn-sovereign-animation-v1-death-up-4.png",
+      "bounds": [
+        2,
+        32,
+        46,
+        46
+      ]
+    }
+  ]
+}

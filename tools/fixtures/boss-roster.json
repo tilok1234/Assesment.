@@ -12,11 +12,11 @@
       "sun-crown-griffin",
       "cruel-catgirl-templar-of-the-brutes",
       "divine-armored-templar-astro-knight",
-      "gunslinger-boar-rider"
+      "gunslinger-boar-rider",
+      "eclipse-unicorn-sovereign"
     ],
     "candidate": [
-      "furious-depraved-rhino",
-      "eclipse-unicorn-sovereign"
+      "furious-depraved-rhino"
     ]
   },
   "animations": {
@@ -33,7 +33,8 @@
       "gunslinger-boar-rider",
       "lava-core-colossus",
       "abyssal-crown-kraken",
-      "sun-crown-griffin"
+      "sun-crown-griffin",
+      "eclipse-unicorn-sovereign"
     ],
     "candidates": [
       "goblin-war-crown",
@@ -51,7 +52,8 @@
       "gunslinger-boar-rider",
       "lava-core-colossus",
       "abyssal-crown-kraken",
-      "sun-crown-griffin"
+      "sun-crown-griffin",
+      "eclipse-unicorn-sovereign"
     ],
     "generators": {
       "ancient-mirejaw": {
@@ -105,6 +107,10 @@
       "sun-crown-griffin": {
         "animationScript": "generate-sun-crown-griffin-animation-v1.py",
         "directionModule": "generate_sun_crown_griffin_directions_v1"
+      },
+      "eclipse-unicorn-sovereign": {
+        "animationScript": "generate-eclipse-unicorn-sovereign-animation-v1.py",
+        "directionModule": "generate_eclipse_unicorn_sovereign_directions_v1"
       }
     }
   }
