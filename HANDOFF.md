@@ -15,7 +15,63 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Revenant Full-Suite Approved And Published
+## Immediate Continuation Checkpoint - EN-E05 Lich Full-Suite Approved
+
+Start here in a new task. After the exact Revenant full-suite candidate was
+approved, published, and reconciled, the designer said `cool lets do next` on
+2026-08-09. This authorizes one separate elite Lich named Soul Regent under the
+established one-full-sprite cadence.
+
+- Repository/branch: current v2 checkout on `codex/en-e05-lich`, based exactly
+  on clean reconciled Revenant handoff
+  `97db37e151e04f42367c517955c88826c4ed7f51`.
+- Gate: `en-e05-lich-soul-regent-full-v1`; status `approved`, internal,
+  non-public, uncommitted, and unpushed.
+- Approval evidence: after the exact approved-Revenant comparison and labeled
+  all-four-direction raw/no-outline and Complete B + Form review surfaces were
+  presented together, the designer requested the repeated square lower-robe
+  panels be repaired. After the tapered-fold revision was regenerated and
+  presented, the designer replied `approved` on 2026-08-09. Approval applies
+  only to the final hash-frozen Lich and its bounded branch publication.
+- Scope: one complete 80-frame elite Lich across Down, Left, Right, and Up:
+  Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast-to-Attack aliases, Hurt
+  H1-H2, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Identity/motion: a jagged reliquary crown, exposed skull mask, wide ritual
+  mantle, cold ivory bone, deep violet split robes, teal lining, oxidized gold,
+  mint oathfire eyes, a sea-green soul gem, and one connected ritual staff;
+  reliquary pulse, four-phase grave glide, gather, ascent, full-body soul
+  decree, recovery, complete white rupture, and colored phylactery reform.
+- Effect boundary: soul flame, orbiting runes, spectral chains, projectiles,
+  aura rings, teleport afterimages, grave fog, staff trails, impacts, floating
+  pages, and detached robe wisps remain external.
+- Review command: `npm.cmd run review:enemy-expansion-en-e05-lich`.
+- Focused command: `npm.cmd run check:enemy-expansion-en-e05-lich`.
+- Focused result: 80/80 pixel frames and alpha silhouettes differ from the
+  approved Revenant; 80/80 connected and bounded; 72/72 colored identity
+  frames; exact front/side/rear eye rules, mirrors, and aliases; opaque range
+  223-281; 7,684 Complete B additions; 7,667 Form changes. Candidate digest:
+  `236afeccc237ba347a8f4929ac5743d3275abf60defb86d2705f39475bde2a01`.
+- Review hashes: raw / Complete B + Form boards
+  `d1b59e29d6881c2556a786cd0c4bd8017c34a5076a6b687798cef6cd7045519e` /
+  `137c89638cb4d23de02de5fe7f72b8fddddf8cdad1f707d91812a79686e928b6`;
+  approved-Revenant comparison
+  `c9ead47d3bf489ed0cc4af38e8c75d5eacf74c75f3628876fa70901e9d755fa9`;
+  raw / Complete B + Form GIFs
+  `0a851b281dc3a59bd888000dac8f4389d3a0b7ea9163df7157d64b94a23d11bf` /
+  `3d72223b59b9ec670809bca358b5d8f697e49d75315c0daf91b0da4526d10280`.
+- Firewall: approved Revenant digest remains
+  `f53fa853e7fb7aebc232e3ca1903d8a4d1d717de02576c51fe81f4c4d5b90079`;
+  public catalog remains 70/241; Zombie siblings and the frozen legacy Ghoul
+  fixture remain unchanged; Lich has zero public families and no fixture.
+- Protected result: the approved Revenant, Vampire, Mummy, Ghoul, and EN-E04
+  public consumer gates pass; fast validation passes in `52.4s`; full
+  `npm.cmd run check` passes in `104.7s` with all 232 frozen fixtures
+  unchanged.
+- Required next action: commit and push only the bounded approved ten-file
+  lane. Do not register Lich or generate fixtures. Stop at the clean published
+  checkpoint; EN-E05 registration and Wave 2 require later explicit gates.
+
+## Approved Preceding Checkpoint - EN-E05 Revenant Full-Suite Published
 
 Start here in a new task. After the exact Vampire full-suite candidate was
 approved, published, and reconciled, the designer said `awesome lets do next`

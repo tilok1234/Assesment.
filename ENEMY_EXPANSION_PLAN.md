@@ -2449,11 +2449,11 @@ upright avian person rather than collapse into the existing Harpy identity.
 
 ### EN-E05 - Undead humanoids
 
-- Status: `active - Revenant Grave Oathkeeper visually approved and published at 7434578`
+- Status: `active - Lich Soul Regent visually approved; bounded publication authorized`
 - Families/proposal work: existing Ghoul upgrade, Mummy, Vampire, Revenant, Lich
-- Priority-first: Ghoul upgrade, Mummy, Vampire, Revenant
-- Active gate: none; stop at the clean published Revenant checkpoint while
-  registration, fixtures, and Lich remain gated
+- Priority-first: Ghoul upgrade, Mummy, Vampire, Revenant, Lich
+- Active gate: one complete elite Lich Soul Regent candidate across all 80
+  standard frames; registration, fixtures, and Wave 2 remain gated
 
 Shared leverage: broken posture, wrappings, capes, exposed bone, floating hems,
 and necrotic palette families. The Ghoul change is an explicit upgrade to the
@@ -2681,9 +2681,68 @@ silently alter unrelated Zombie variants.
 - Publication: the exact approved ten-file implementation is committed and
   pushed at `7434578d5af8f3e7355add884cf0d33e3f312288`; generated review artifacts
   remain ignored.
-- Required next action: stop at this clean published checkpoint. Keep
-  Revenant registration and fixtures excluded; Lich requires a later explicit
-  continuation.
+- Required next action: the designer's later `cool lets do next` activates
+  exactly one separate complete Lich candidate below. Keep Revenant
+  registration, fixtures, effects, and Wave 2 outside that gate.
+
+#### Lich Soul Regent full-suite approved internal lane
+
+- Gate ID: `en-e05-lich-soul-regent-full-v1`; status:
+  `approved`, internal, non-public, uncommitted, and unpushed on
+  `codex/en-e05-lich`, based exactly on clean reconciled Revenant handoff
+  `97db37e151e04f42367c517955c88826c4ed7f51`.
+- Authorization: after approving, publishing, and reconciling the complete
+  Revenant, the designer said `cool lets do next` on 2026-08-09. This
+  activates one separate complete Lich under the established one-full-sprite
+  cadence.
+- Approval: after the exact approved-Revenant comparison and paired labeled
+  all-four-direction raw/no-outline and Complete B + Form Lich review surfaces
+  were presented, the designer requested removal of the repeated square
+  lower-robe panels. The panels were replaced with tapered folds across every
+  direction and frame, the evidence was regenerated, and the designer replied
+  `approved` on 2026-08-09. Approval applies only to this final hash-frozen
+  candidate and its bounded branch publication.
+- Exact scope: one elite `lich/soul-regent`; 80 frames across Down, Left,
+  Right, and Up with Idle F1-F2, Walk W1-W4, Attack A1-A4, exact Cast aliases,
+  Hurt H1-H2, and exact Death aliases H1,H2,H2,H2.
+- Identity: cold ivory bone, deep violet reliquary robes, teal lining,
+  oxidized gold, dark staff wood, a sea-green soul gem, black skull cavities,
+  mint oathfire eyes, a jagged crown, broad ritual mantle, split hem, and one
+  connected gem-tipped staff.
+- Motion: sealed ritual stillness and reliquary pulse; four-phase grave glide;
+  soul-reliquary gather, crown and staff ascent, full-body soul decree, and
+  sepulchral recovery; complete white soul rupture plus colored phylactery
+  reform. Soul flame, runes, chains, projectiles, auras, fog, trails, impacts,
+  pages, and detached wisps remain external.
+- Review evidence: raw / Complete B + Form full-suite boards
+  `d1b59e29d6881c2556a786cd0c4bd8017c34a5076a6b687798cef6cd7045519e` /
+  `137c89638cb4d23de02de5fe7f72b8fddddf8cdad1f707d91812a79686e928b6`;
+  approved-Revenant comparison
+  `c9ead47d3bf489ed0cc4af38e8c75d5eacf74c75f3628876fa70901e9d755fa9`;
+  raw / Complete B + Form GIFs
+  `0a851b281dc3a59bd888000dac8f4389d3a0b7ea9163df7157d64b94a23d11bf` /
+  `3d72223b59b9ec670809bca358b5d8f697e49d75315c0daf91b0da4526d10280`.
+- Focused validation passes 80/80 distinct-from-Revenant pixel frames and alpha
+  silhouettes, 80/80 connected silhouettes, 80/80 one-cell margins, 72/72
+  colored identity frames, exact directional eyes, mirrors, and aliases,
+  opaque range 223-281, 7,684 Complete B additions, and 7,667 Form changes.
+  Candidate digest:
+  `236afeccc237ba347a8f4929ac5743d3275abf60defb86d2705f39475bde2a01`;
+  approved Revenant digest remains
+  `f53fa853e7fb7aebc232e3ca1903d8a4d1d717de02576c51fe81f4c4d5b90079`.
+- Firewall: public catalog remains 70/241; Zombie siblings and the frozen
+  legacy Ghoul fixture remain exact. Lich has zero public families and no
+  fixture.
+- Protected validation: the approved Revenant, Vampire, Mummy, Ghoul, and
+  EN-E04 public consumer gates pass; the fast gate passes in `52.4s`; full
+  `npm.cmd run check` passes in `104.7s` with all 232 frozen fixtures
+  unchanged.
+- Exclusions: Lich registration, fixture generation, additional Lich variants,
+  effects, release, EN-E05 registration, Wave 2, and later expansion work.
+- Required next action: commit and push only this bounded approved ten-file
+  lane. Keep Lich registration and fixtures excluded, then stop at the clean
+  published checkpoint; EN-E05 registration and Wave 2 require later explicit
+  gates.
 
 Wave 1 exit gate: EN-F00 and EN-E01 through EN-E05 are individually approved,
 all existing legacy families still validate, and the humanoid renderer has not

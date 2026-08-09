@@ -618,6 +618,22 @@ effects require later explicit gates. The approved Vampire, Mummy, Ghoul, and
 EN-E04 public gates, fast validation, and full validation pass with the 70/241
 public catalog and all 232 fixtures unchanged. The exact Revenant implementation
 is published at `7434578`.
+The reconciled Revenant handoff is `97db37e`. The designer then said `cool
+lets do next`, authorizing one separate elite Lich Soul Regent on
+`codex/en-e05-lich`. Its 80-frame crowned-reliquary suite,
+approved-Revenant comparison, raw board, Complete B + Form board, paired GIFs,
+and candidate digest are hash-frozen. The focused gate passes all frames,
+distinct silhouettes, connected/bounded skull, robes, and ritual-staff
+anatomy, directional mint eyes, mirrors, aliases, identity colors, treatment
+metrics, approved-Revenant preservation, public catalog locks, and the
+unchanged legacy fixture. The approved Revenant, Vampire, Mummy, Ghoul, and
+EN-E04 public gates, fast validation, and full validation pass with the 70/241
+public catalog and all 232 fixtures unchanged. After the repeated square
+lower-robe panels were replaced with tapered folds and the exact regenerated
+review was presented, the designer replied `approved` on 2026-08-09,
+authorizing only bounded publication. The Lich remains internal, non-public,
+uncommitted, and unpushed. Registration, fixtures, effects, EN-E05
+registration, and Wave 2 require later explicit gates.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

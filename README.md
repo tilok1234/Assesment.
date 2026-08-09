@@ -857,6 +857,43 @@ legacy `asset-pack/` remains unchanged.
 The bounded implementation is committed and pushed at `cedc774` on
 `codex/en-e04-assembler-integration`.
 
+## EN-E05 Lich Soul Regent full-suite approved internal lane
+
+Branch `codex/en-e05-lich` contains one visually approved isolated elite Lich
+named Soul Regent, based exactly on reconciled Revenant handoff `97db37e`. It
+remains internal and non-public. The sprite uses a jagged reliquary crown,
+exposed skull mask, wide ritual mantle,
+cold ivory bone, deep violet split robes, teal lining, oxidized gold, mint
+oathfire eyes, a sea-green soul gem, and one connected ritual staff. Soul
+flame, orbiting runes, spectral chains, projectiles, aura rings, teleport
+afterimages, grave fog, staff trails, impacts, floating pages, and detached
+robe wisps remain external.
+
+Run `npm.cmd run review:enemy-expansion-en-e05-lich` to reproduce the exact
+approved-Revenant comparison, raw/no-outline and Complete B + Form `1428x760`
+full-suite boards, and paired `640x672` four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e05-lich` to exhaust all 80 frames,
+approved-Revenant distinction, connected hard-alpha anatomy, one-cell margins,
+directional eyes, mirrors, aliases, motion phases, presentation treatment, and
+public/fixture firewalls. Candidate digest:
+`236afeccc237ba347a8f4929ac5743d3275abf60defb86d2705f39475bde2a01`.
+Raw / Complete B + Form board hashes are
+`d1b59e29d6881c2556a786cd0c4bd8017c34a5076a6b687798cef6cd7045519e` /
+`137c89638cb4d23de02de5fe7f72b8fddddf8cdad1f707d91812a79686e928b6`;
+the Revenant comparison is
+`c9ead47d3bf489ed0cc4af38e8c75d5eacf74c75f3628876fa70901e9d755fa9`;
+raw / Complete B + Form GIF hashes are
+`0a851b281dc3a59bd888000dac8f4389d3a0b7ea9163df7157d64b94a23d11bf` /
+`3d72223b59b9ec670809bca358b5d8f697e49d75315c0daf91b0da4526d10280`.
+The protected Revenant, Vampire, Mummy, Ghoul, and EN-E04 gates pass; fast
+validation passes in `52.4s` and full validation passes in `104.7s`, with
+the public 70/241 catalog and all 232 fixtures unchanged. After requesting that
+the repeated square lower-robe panels be replaced with tapered folds, the
+designer reviewed the regenerated exact comparison and paired labeled surfaces
+and replied `approved` on 2026-08-09. This authorizes only bounded publication
+of the hash-frozen internal lane. Lich registration, fixture generation,
+EN-E05 registration, Wave 2, effects, and broader work remain excluded.
+
 ## EN-E05 Revenant Grave Oathkeeper full-suite approved internal lane
 
 Branch `codex/en-e05-revenant` contains one visually approved isolated common

@@ -115,6 +115,14 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and non-public; its 80 frames, paired raw and Complete B + Form evidence, and
   approved-Vampire comparison are hash-frozen. Do not register Revenant or
   generate fixtures; Lich requires a later explicit continuation.
+- The next isolated EN-E05 lane is one visually approved full-suite elite Lich
+  Soul Regent on `codex/en-e05-lich`, based exactly on clean reconciled
+  Revenant handoff `97db37e`. Its 80 connected and bounded frames,
+  approved-Revenant comparison, raw/no-outline board and GIF, and Complete B +
+  Form board and GIF are hash-frozen. Focused, protected, fast, and full
+  validation pass, and bounded publication is authorized. Keep it internal and
+  non-public; do not register Lich, generate fixtures, or begin EN-E05
+  registration or Wave 2.
 - 166 of 202 committed asset-pack fixtures are STALE vs the current engine
   (approved repair waves were never re-exported). `npm run export:fixtures -- --verify`
   lists them. The exporter refuses to overwrite them without `--accept-drift`;
