@@ -147,7 +147,7 @@ check(EN_E03_REED_CHARMER_IDLE_REGISTRY.publicFamilies.length === 0, 'the specia
 check(EN_E03_REED_CHARMER_IDLE_FAMILY.variants.length === 1 && EN_E03_REED_CHARMER_IDLE_FAMILY.variants[0].id === 'reed-charmer', 'the candidate registry must contain only Reed Charmer');
 check(EN_E03_REED_CHARMER_IDLE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'the specialist must retain the approved humanoid Satyr chassis');
 check(engine.EN_E03_REED_CHARMER_IDLE_REGISTRY === undefined && engine.EN_E03_REED_CHARMER_IDLE_GATE === undefined, 'the specialist candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.length === 74 && engine.ENEMIES.length === 57, 'the candidate must retain current public and legacy Enemy counts');
 check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'satyr'), 'Satyr must remain absent from public consumers');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e03-satyr-specialist-idle') && !facadeSource.includes('EN_E03_REED_CHARMER_IDLE'), 'the public facade must not import or expose Reed Charmer symbols');

@@ -105,7 +105,7 @@ check(EN_E03_STEPPE_HUNTER_CALIBRATION_DATA.actor.weapon === 'none', 'Steppe Hun
 check(EN_E03_STEPPE_HUNTER_CALIBRATION_DATA.horse.hide[0] === '#9a613d', 'Steppe Hunter must retain the chestnut horse palette');
 check(EN_E03_STEPPE_HUNTER_CALIBRATION_DATA.horse.hoof.length === 2, 'Steppe Hunter must retain a dedicated dark hoof material pair');
 
-check(engine.PUBLIC_ENEMIES.length === 70, 'the Centaur calibration must not alter the 70-family public catalog');
+check(engine.PUBLIC_ENEMIES.length === 74, 'the Centaur calibration must not alter the later 74-family public catalog');
 check(engine.ENEMIES.length === 57, 'the Centaur calibration must not alter the 57-family legacy catalog');
 check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'centaur'), 'Centaur must remain absent from public consumers');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');

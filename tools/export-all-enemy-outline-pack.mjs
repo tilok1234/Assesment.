@@ -13,8 +13,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EXPORTER_PATH = fileURLToPath(import.meta.url);
 const PACKAGE_ID = '8-bit-sprite-assembler-all-enemies-3-outline-modes-v1';
 const DEFAULT_OUTPUT_DIRECTORY = path.join(ROOT, 'dist', PACKAGE_ID);
-const EXPECTED_FAMILY_COUNT = 70;
-const EXPECTED_VARIANT_COUNT = 241;
+const EXPECTED_FAMILY_COUNT = 74;
+const EXPECTED_VARIANT_COUNT = 245;
 const FIXED_ZIP_TIMESTAMP = new Date(2000, 0, 1, 0, 0, 0);
 const ALLOWED_DIRTY_PATHS = new Set([
   'package.json',
@@ -260,7 +260,7 @@ function buildReadme({ source, generatedOn, pngCount }) {
     '- `semi-outlined/`: Form shading + Selective C, the lighter approved outline.',
     '- `without-outlines/`: Form shading + None, with outline geometry disabled.',
     '',
-    'Each folder contains `family-id/variant-id.png` paths for all 241 variants. The three treatments vary only the outline mode; Form shading remains enabled in all three.',
+    'Each folder contains `family-id/variant-id.png` paths for all 245 variants. The three treatments vary only the outline mode; Form shading remains enabled in all three.',
     '',
     '## Sheet contract',
     '',

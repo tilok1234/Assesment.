@@ -120,6 +120,7 @@ checkSyntax('tools/check-enemy-expansion-en-e02-consumers.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e04-registration.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e04-consumers.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e05-registration.mjs');
+checkSyntax('tools/check-enemy-expansion-en-e05-consumers.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e03.mjs');
 checkSyntax('tools/check-enemy-expansion-repairs.mjs');
 checkSyntax('tools/enemy-expansion-en-e01-review.mjs');
@@ -249,6 +250,14 @@ const enemyExpansionEnE05RegistrationCheck = spawnSync(process.execPath, [path.j
 check(
   enemyExpansionEnE05RegistrationCheck.status === 0,
   `EN-E05 approved registration gate failed\n${enemyExpansionEnE05RegistrationCheck.stdout.trim()}\n${enemyExpansionEnE05RegistrationCheck.stderr.trim()}`,
+);
+
+const enemyExpansionEnE05ConsumerCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-en-e05-consumers.mjs')], {
+  encoding: 'utf8',
+});
+check(
+  enemyExpansionEnE05ConsumerCheck.status === 0,
+  `EN-E05 assembler consumer integration gate failed\n${enemyExpansionEnE05ConsumerCheck.stdout.trim()}\n${enemyExpansionEnE05ConsumerCheck.stderr.trim()}`,
 );
 
 const enemyExpansionRepairCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-repairs.mjs')], {

@@ -126,7 +126,7 @@ check(EN_E03_GIANT_HURT_REGISTRY.publicFamilies.length === 0 && EN_E03_GIANT_HUR
 check(EN_E03_GIANT_HURT_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'the Hurt renderer must retain the approved roster chassis');
 check(Object.isFrozen(EN_E03_GIANT_HURT_REGISTRY) && Object.isFrozen(EN_E03_GIANT_HURT_FAMILY) && Object.isFrozen(EN_E03_GIANT_HURT_BODY_SHIFTS), 'the Hurt registry, family, and motion table must be immutable');
 
-check(engine.PUBLIC_ENEMIES.length === 70, 'the Hurt candidate must not alter the 70-family public catalog');
+check(engine.PUBLIC_ENEMIES.length === 74, 'the Hurt candidate must not alter the later 74-family public catalog');
 check(engine.ENEMIES.length === 57, 'the Hurt candidate must not alter the 57-family legacy catalog');
 check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'giant'), 'Giant must remain absent from public consumers');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');

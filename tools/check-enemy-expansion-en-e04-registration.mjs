@@ -108,11 +108,11 @@ check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 8, 'the later stable 
 check(['birdfolk', 'merfolk', 'naga'].every((id) => stableFamilyIds.includes(id)), 'the stable registry is missing an approved EN-E04 family');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed stable registry must be immutable');
 
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 registration must extend stable state without changing EN-E04 consumers');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 consumer gate must reuse the exact stable registry');
 check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY, 'EN-E04 registration must remain composed above the unchanged approved EN-E01/EN-E02 repair registry');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 13, 'consumer routing must contain all thirteen approved EN-E01/EN-E02/EN-E04 families');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 17, 'consumer routing must contain all seventeen approved EN-E01/EN-E02/EN-E04/EN-E05 families');
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
-check(engine.PUBLIC_ENEMIES.length === 70 && publicVariants === 241, 'the later consumer gate must expose the 70-family / 241-variant catalog');
+check(engine.PUBLIC_ENEMIES.length === 74 && publicVariants === 245, 'the later EN-E05 consumer gate must expose the 74-family / 245-variant catalog');
 check(['birdfolk', 'merfolk', 'naga'].every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'the later consumer gate must expose every registered EN-E04 family');
 check(sourceEntries.every((entry) => engine.isPublicEnemyExpansionSpec({ kind: 'enemy', family: entry.family, variant: entry.variant })), 'the later consumer gate must route every EN-E04 enemy through the public dispatcher');
 check(engine.ENEMIES.length === 57, 'EN-E04 registration must not rewrite the legacy 57-family catalog');
@@ -190,5 +190,5 @@ console.log('EN-E04 registration validation passed.');
 console.log('- EN-E04 registered slice: 3 families / 9 variants; later stable registry: 17 families / 43 variants');
 console.log('- Registered EN-E04 sheets: 9 (480x96)');
 console.log('- Candidate/registered parity frames: 720');
-console.log('- Consumer catalog after authorized integration: 70 families / 241 variants');
+console.log('- Consumer catalog after later EN-E05 integration: 74 families / 245 variants');
 console.log(`- Approved EN-E04 aggregate digest: ${registeredFrameDigest}`);

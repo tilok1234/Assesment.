@@ -142,7 +142,7 @@ check(JSON.stringify(EN_E04_MERFOLK_TIDEGUARD_FAMILY.variants.map((variant) => v
 check(EN_E04_MERFOLK_TIDEGUARD_REGISTRY.publicFamilies.length === 0 && EN_E04_MERFOLK_TIDEGUARD_REGISTRY.approvedFamilies.length === 0, 'the Merfolk candidate must remain internal and non-public');
 check(EN_E04_MERFOLK_TIDEGUARD_DATA.bakedEffects.length === 0, 'all Tideguard water effects must remain external');
 check(engine.EN_E04_MERFOLK_TIDEGUARD_REGISTRY === undefined && engine.EN_E04_MERFOLK_TIDEGUARD_GATE === undefined, 'the Merfolk candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the Merfolk candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.length === 74 && engine.ENEMIES.length === 57, 'the Merfolk candidate must retain current public and legacy Enemy counts');
 check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'merfolk'), 'the later approved registry/consumer gates must expose Merfolk generically');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e04-merfolk-tideguard') && !facadeSource.includes('EN_E04_MERFOLK_TIDEGUARD'), 'the public facade must not import or expose the Merfolk candidate');

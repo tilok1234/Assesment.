@@ -11,8 +11,8 @@ const EXPORTER_PATH = path.join(ROOT, 'tools', 'export-all-enemy-outline-pack.mj
 const PACKAGE_ID = '8-bit-sprite-assembler-all-enemies-3-outline-modes-v1';
 const DEFAULT_OUTPUT_DIRECTORY = path.join(ROOT, 'dist', PACKAGE_ID);
 const EXPECTED_TREATMENTS = ['outlined', 'semi-outlined', 'without-outlines'];
-const EXPECTED_FAMILIES = 70;
-const EXPECTED_VARIANTS = 241;
+const EXPECTED_FAMILIES = 74;
+const EXPECTED_VARIANTS = 245;
 const EXPECTED_PNGS = EXPECTED_VARIANTS * EXPECTED_TREATMENTS.length;
 const PNG_SIGNATURE = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
 const execFileAsync = promisify(execFile);
@@ -200,7 +200,7 @@ async function main() {
   for (const treatment of EXPECTED_TREATMENTS) {
     assert(treatmentCounts[treatment] === EXPECTED_VARIANTS, `${treatment} must contain ${EXPECTED_VARIANTS} PNGs.`);
   }
-  assert(variantTreatments.size === EXPECTED_VARIANTS, 'The package does not contain exactly 241 family/variant groups.');
+  assert(variantTreatments.size === EXPECTED_VARIANTS, 'The package does not contain exactly 245 family/variant groups.');
   for (const [key, entries] of variantTreatments) {
     assert(entries.length === EXPECTED_TREATMENTS.length, `${key} does not have all three treatments.`);
     const byTreatment = Object.fromEntries(entries.map((entry) => [entry.treatment, entry]));

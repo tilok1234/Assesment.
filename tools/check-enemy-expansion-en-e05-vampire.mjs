@@ -144,9 +144,9 @@ check(EN_E05_VAMPIRE_REGISTRY.publicFamilies.length === 0, 'the unapproved Vampi
 check(EN_E05_VAMPIRE_FAMILY.variants.length === 1 && EN_E05_VAMPIRE_FAMILY.variants[0].id === 'night-noble', 'the candidate lane must contain only Night Noble');
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 70 && publicVariantCount === 241, 'the candidate must not change the 57-family legacy or 70/241 public catalog boundaries');
-check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'vampire'), 'the Vampire candidate must remain absent from public selectors');
-check(!engine.isPublicEnemyExpansionSpec(candidateSpec), 'the Vampire candidate must not route through the public expansion dispatcher');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'the candidate must not change the 57-family legacy or later 74/245 public catalog boundaries');
+check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'vampire'), 'the later EN-E05 consumer gate must expose the registered Vampire family');
+check(engine.isPublicEnemyExpansionSpec(candidateSpec), 'the later EN-E05 consumer gate must route Vampire through the public expansion dispatcher');
 check(EN_E05_MUMMY_GATE.status === 'approved', 'the preceding Mummy approval must remain exact');
 
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8');
@@ -311,7 +311,7 @@ console.log(`- Structure: ${connectedFrames}/80 connected; ${boundedFrames}/80 o
 console.log(`- Identity: ${coloredIdentityFrames}/72 colored frames; ${frontEyeFrames}/18 front-eye frames; ${sideEyeFrames}/36 side-eye frames; ${rearEyeFrames}/18 eye-free rear frames`);
 console.log('- Motion: 2 Idle, 4 Walk, 4 Attack, 2 Hurt frames distinct per direction; Cast/Death aliases exact');
 console.log(`- Presentation: Complete B +${completeBAddedPixels} outline pixels; Form changes ${formChangedPixels} source pixels`);
-console.log('- Protected boundaries: approved Mummy exact; public catalog 70/241; Zombie siblings and legacy Ghoul fixture unchanged');
+console.log('- Protected boundaries: approved Mummy exact; public catalog 74/245; Zombie siblings and legacy Ghoul fixture unchanged');
 console.log(`- Review artifacts: ${verifiedArtifacts}/5 present and hash-verified`);
 console.log(`- Candidate digest: ${candidateFrameDigest}`);
 console.log(`- Approved Mummy digest: ${mummyFrameDigest}`);

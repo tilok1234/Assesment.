@@ -154,7 +154,7 @@ check(EN_E04_VENOM_ORACLE_IDLE_REGISTRY.publicFamilies.length === 0 && EN_E04_VE
 check(EN_E04_VENOM_ORACLE_IDLE_FAMILY.variants.length === 1 && EN_E04_VENOM_ORACLE_IDLE_FAMILY.variants[0].id === 'venom-oracle', 'the candidate registry must implement only Venom Oracle');
 check(EN_E04_VENOM_ORACLE_IDLE_REGISTRY.renderers[0].chassis === 'serpentine-humanoid-v1', 'the candidate must retain the serpentine humanoid chassis');
 check(engine.EN_E04_VENOM_ORACLE_IDLE_REGISTRY === undefined && engine.EN_E04_VENOM_ORACLE_IDLE_GATE === undefined, 'the Venom Oracle candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the Venom Oracle candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.length === 74 && engine.ENEMIES.length === 57, 'the Venom Oracle candidate must retain current public and legacy Enemy counts');
 check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'naga'), 'the later approved registry/consumer gates must expose Naga generically');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e04-naga-specialist-idle') && !facadeSource.includes('EN_E04_VENOM_ORACLE'), 'the public facade must not import or expose Venom Oracle symbols');

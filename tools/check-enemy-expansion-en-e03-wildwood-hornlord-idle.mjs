@@ -148,7 +148,7 @@ check(EN_E03_WILDWOOD_HORNLORD_IDLE_REGISTRY.publicFamilies.length === 0, 'the e
 check(EN_E03_WILDWOOD_HORNLORD_IDLE_FAMILY.variants.length === 1 && EN_E03_WILDWOOD_HORNLORD_IDLE_FAMILY.variants[0].id === 'wildwood-hornlord', 'the candidate registry must contain only Wildwood Hornlord');
 check(EN_E03_WILDWOOD_HORNLORD_IDLE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'the elite must retain the approved humanoid Satyr chassis');
 check(engine.EN_E03_WILDWOOD_HORNLORD_IDLE_REGISTRY === undefined && engine.EN_E03_WILDWOOD_HORNLORD_IDLE_GATE === undefined, 'the elite candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.length === 74 && engine.ENEMIES.length === 57, 'the candidate must retain current public and legacy Enemy counts');
 check(!engine.PUBLIC_ENEMIES.some((family) => family.id === 'satyr'), 'Satyr must remain absent from public consumers');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e03-satyr-elite-idle') && !facadeSource.includes('EN_E03_WILDWOOD_HORNLORD_IDLE'), 'the public facade must not import or expose Wildwood Hornlord symbols');

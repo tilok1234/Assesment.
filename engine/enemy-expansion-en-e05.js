@@ -124,6 +124,34 @@ export const EN_E05_REGISTRATION_GATE = deepFreeze({
   nextGate: 'After exact 400-frame candidate/registered parity and stable-registry validation, publish this bounded registration checkpoint and stop. Assembler consumer integration, public zombie/ghoul replacement, fixtures, and Wave 2 require later explicit authorization.',
 });
 
+export const EN_E05_CONSUMER_INTEGRATION_GATE = deepFreeze({
+  id: 'en-e05-assembler-consumers-v1',
+  status: 'authorized',
+  authorizedOn: '2026-08-09',
+  authorizationEvidence: 'After the clean EN-E05 registration checkpoint was published and the next closed gates were named, the designer said: cool lets do next. The next dependency is assembler exposure of the four registered new families; public Ghoul replacement, fixtures, effects, release, and Wave 2 remain separate.',
+  registrationCheckpoint: '7d273ef52960e5bd4568ce3d47148c1b68fdcf44',
+  registrationHandoff: '59a694118e08733b6f5e069009abc31e75e517cf',
+  registrationFrameDigest: EN_E05_REGISTRATION_GATE.candidateFrameDigest,
+  scope: 'Route exactly the four registered EN-E05 new families through generic editor selectors and sanitization, persistence, random Enemy generation, public rendering, outline/Form assembly, thumbnails, native sheets, Complete Kits, ordinary packs, and Wildshot game-pack validation.',
+  expectedExpansionFamilies: 17,
+  expectedExpansionVariants: 43,
+  expectedPublicFamilies: 74,
+  expectedPublicVariants: 245,
+  consumerFrameDigest: '947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f',
+  exclusions: [
+    'public zombie/ghoul replacement',
+    'asset-pack fixture generation or regeneration',
+    'slice-specific editor branches',
+    'schema changes',
+    'reviewed pixel changes',
+    'baked effects',
+    'release',
+    'EN-E03 adoption',
+    'Wave 2',
+  ],
+  nextGate: 'Validate all generic EN-E05 consumer routes, publish this bounded assembler-integration checkpoint, and stop. Public Ghoul replacement, fixtures, effects, release, and Wave 2 require later explicit authorization.',
+});
+
 export const EN_E05_GHOUL_REGISTERED_RENDERER = registeredRenderer(
   'en-e05-ghoul-replacement-registered-v1',
   EN_E05_GHOUL_UPGRADE_RENDERER.chassis,

@@ -141,7 +141,7 @@ check(EN_E04_NAGA_MOTION_FAMILY.variants.length === 1 && EN_E04_NAGA_MOTION_FAMI
 check(EN_E04_NAGA_MOTION_REGISTRY.publicFamilies.length === 0 && EN_E04_NAGA_MOTION_REGISTRY.approvedFamilies.length === 0, 'the Naga motion candidate must remain internal and non-public');
 check(EN_E04_NAGA_IDLE_DATA.bakedEffects.length === 0 && EN_E04_NAGA_IDLE_DATA.effectBoundary === 'external-venom-spit-miasma-and-coil-impact', 'all venom, miasma, and coil-impact effects must remain external');
 check(engine.EN_E04_NAGA_MOTION_REGISTRY === undefined && engine.EN_E04_NAGA_MOTION_GATE === undefined, 'the Naga motion candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the Naga motion candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.length === 74 && engine.ENEMIES.length === 57, 'the Naga motion candidate must retain current public and legacy Enemy counts');
 check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'naga'), 'the later approved registry/consumer gates must expose Naga generically');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e04-naga-motion') && !facadeSource.includes('EN_E04_NAGA_MOTION'), 'the public facade must not import or expose Naga motion symbols');

@@ -129,13 +129,13 @@ check(Object.isFrozen(EN_E04_CONSUMER_INTEGRATION_GATE) && Object.isFrozen(EN_E0
 check(EN_E04_REGISTRATION_GATE.candidateFrameDigest === '137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459', 'the approved EN-E04 registration digest drifted');
 
 check(engine.ENEMIES.length === 57 && engine.ENEMIES.reduce((total, family) => total + family.variants.length, 0) === 202, 'consumer integration must preserve the 57-family / 202-variant legacy catalog');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 stable registration must remain outside EN-E04 consumers');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 13, 'the generic expansion consumer registry must contain thirteen families');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 17, 'the later stable registry must contain four additional EN-E05 families without consumer exposure');
-check(engine.PUBLIC_ENEMIES.length === 70 && publicVariantCount === 241, 'the public consumer catalog must contain 70 families / 241 variants');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 consumer gate must reuse the exact stable registry');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 17, 'the generic expansion consumer registry must contain seventeen families after EN-E05 integration');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 17, 'the later stable and consumer registry must contain four additional EN-E05 families');
+check(engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'the later public consumer catalog must contain 74 families / 245 variants');
 check(Object.isFrozen(engine.PUBLIC_ENEMIES), 'the public consumer catalog must be immutable');
 check(engine.PUBLIC_ENEMIES.slice(0, 57).every((family, index) => family === engine.ENEMIES[index]), 'consumer integration must retain the legacy catalog unchanged and in order');
-check(engine.PUBLIC_ENEMIES.slice(-13).every((family, index) => family === engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies[index]), 'the public catalog must append the exact stable expansion public-family view');
+check(engine.PUBLIC_ENEMIES.slice(-17).every((family, index) => family === engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies[index]), 'the public catalog must append the exact stable expansion public-family view');
 
 for (const familyId of enE04FamilyIds) {
   const family = engine.PUBLIC_ENEMIES.find((entry) => entry.id === familyId);
@@ -153,13 +153,13 @@ for (const relativePath of ['app.js', 'character-kit.js', 'engine/generators.js'
 
 const originalRandom = Math.random;
 try {
-  let values = [58.1 / 70, 0.5];
+  let values = [58.1 / 74, 0.5];
   Math.random = () => values.shift();
   check(JSON.stringify(engine.randomEnemy()) === JSON.stringify({ family: 'birdfolk', variant: 'gale-augur' }), 'the randomizer must select Birdfolk variants');
-  values = [64.1 / 70, 0];
+  values = [65.1 / 74, 0];
   Math.random = () => values.shift();
   check(JSON.stringify(engine.randomEnemy()) === JSON.stringify({ family: 'merfolk', variant: 'tideguard' }), 'the randomizer must select Merfolk variants');
-  values = [65.1 / 70, 0.999999];
+  values = [67.1 / 74, 0.999999];
   Math.random = () => values.shift();
   check(JSON.stringify(engine.randomEnemy()) === JSON.stringify({ family: 'naga', variant: 'temple-rajah' }), 'the randomizer must select Naga variants');
 } finally {
@@ -168,8 +168,8 @@ try {
 
 const kitCounts = completeCharacterKitCounts();
 const kitPlan = buildCompleteCharacterKitPlan();
-check(kitCounts.componentPngs === 1912 && kitCounts.enemyFamilies === 70 && kitCounts.enemySheets === 241 && kitCounts.effectSheets === 24 && kitCounts.totalPngs === 2178, 'Complete Character Kit counts must include all nine EN-E04 sheets');
-check(kitPlan.enemies.length === 70 && kitPlan.enemies.flatMap((family) => family.variants).length === 241, 'Complete Character Kit planning must include the 70/241 public catalog');
+check(kitCounts.componentPngs === 1912 && kitCounts.enemyFamilies === 74 && kitCounts.enemySheets === 245 && kitCounts.effectSheets === 24 && kitCounts.totalPngs === 2182, 'Complete Character Kit counts must include the later EN-E05 public sheets');
+check(kitPlan.enemies.length === 74 && kitPlan.enemies.flatMap((family) => family.variants).length === 245, 'Complete Character Kit planning must include the later 74/245 public catalog');
 for (const [familyId, variants] of Object.entries(expectedVariants)) {
   const family = kitPlan.enemies.find((entry) => entry.family === familyId);
   check(Boolean(family), `Complete Character Kit is missing ${familyId}`);
@@ -296,11 +296,11 @@ if (errors.length) {
 }
 
 console.log('EN-E04 assembler consumer integration validation passed.');
-console.log('- Public catalog: 70 families / 241 variants');
+console.log('- Public catalog after later EN-E05 integration: 74 families / 245 variants');
 console.log('- EN-E04 generic dispatcher parity: 720 / 720 frames');
 console.log('- EN-E04 native exports: 9 full sheets plus direction/animation/thumbnail routes');
 console.log(`- Complete B cases: ${outlineCases}; added pixels: ${outlinePixels}`);
 console.log(`- Form cases: ${formCases}; changed source pixels: ${formChangedPixels}`);
-console.log('- Complete Character Kit: 70 families / 241 enemy sheets / 2178 total PNGs');
+console.log('- Complete Character Kit: 74 families / 245 enemy sheets / 2182 total PNGs');
 console.log('- Wildshot EN-E04 specs accepted: 9 / 9');
 console.log(`- Approved EN-E04 public frame digest: ${publicFrameDigest}`);

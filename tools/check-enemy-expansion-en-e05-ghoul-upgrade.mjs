@@ -139,7 +139,7 @@ check(EN_E05_GHOUL_UPGRADE_REGISTRY.publicFamilies.length === 0, 'the approved i
 check(EN_E05_GHOUL_UPGRADE_FAMILY.variants.length === 1 && EN_E05_GHOUL_UPGRADE_FAMILY.variants[0].id === 'ghoul', 'the candidate lane must contain only the Ghoul replacement');
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 70 && publicVariantCount === 241, 'the candidate must not change the 57-family legacy or 70/241 public catalog boundaries');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'the candidate must not change the 57-family legacy or later 74/245 public catalog boundaries');
 const zombieFamily = engine.ENEMIES.find((family) => family.id === 'zombie');
 check(Boolean(zombieFamily), 'the legacy Zombie family is missing');
 check(JSON.stringify(zombieFamily?.variants.map((variant) => variant.id)) === JSON.stringify(['shambler', 'ghoul', 'rotter', 'brute']), 'the legacy Zombie variant order must remain unchanged');

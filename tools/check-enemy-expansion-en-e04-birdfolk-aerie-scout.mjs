@@ -138,7 +138,7 @@ check(JSON.stringify(EN_E04_BIRDFOLK_AERIE_SCOUT_FAMILY.variants.map((variant) =
 check(EN_E04_BIRDFOLK_AERIE_SCOUT_REGISTRY.publicFamilies.length === 0 && EN_E04_BIRDFOLK_AERIE_SCOUT_REGISTRY.approvedFamilies.length === 0, 'the Aerie Scout candidate must remain internal and non-public');
 check(EN_E04_BIRDFOLK_AERIE_SCOUT_DATA.bakedEffects.length === 0, 'all Aerie Scout wind and impact effects must remain external');
 check(engine.EN_E04_BIRDFOLK_AERIE_SCOUT_REGISTRY === undefined && engine.EN_E04_BIRDFOLK_AERIE_SCOUT_GATE === undefined, 'the Aerie Scout candidate must not leak through the public engine facade');
-check(engine.PUBLIC_ENEMIES.length === 70 && engine.ENEMIES.length === 57, 'the Aerie Scout candidate must retain current public and legacy Enemy counts');
+check(engine.PUBLIC_ENEMIES.length === 74 && engine.ENEMIES.length === 57, 'the Aerie Scout candidate must retain current public and legacy Enemy counts');
 check(engine.PUBLIC_ENEMIES.some((family) => family.id === 'birdfolk'), 'the later approved registry/consumer gates must expose Birdfolk generically');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 check(!facadeSource.includes('enemy-expansion-en-e04-birdfolk-aerie-scout') && !facadeSource.includes('EN_E04_BIRDFOLK_AERIE_SCOUT'), 'the public facade must not import or expose the Aerie Scout candidate');

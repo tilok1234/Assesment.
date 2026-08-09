@@ -118,7 +118,7 @@ check(EN_E03_IDLE_REGISTRY.renderers[0].chassis === 'large-hybrid-v2', 'EN-E03 m
 check(EN_E03_IDLE_REGISTRY.publicFamilies.length === 0 && EN_E03_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E03 Idle evidence must not enter the public family view');
 check(Object.isFrozen(EN_E03_IDLE_REGISTRY), 'the EN-E03 Idle registry must be immutable');
 check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 17, 'EN-E03 Idle work must remain excluded while later EN-E05 registration brings the stable registry to seventeen approved families');
-check(engine.PUBLIC_ENEMIES.length === 70, 'EN-E03 Idle work must not alter the 70-family consumer catalog');
+check(engine.PUBLIC_ENEMIES.length === 74, 'EN-E03 Idle work must remain excluded from the later 74-family consumer catalog');
 check(engine.ENEMIES.length === 57, 'EN-E03 Idle work must not alter the legacy Enemy catalog');
 check(cardOrder.every((id) => !engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'EN-E03 families must remain absent from generic consumers');
 

@@ -130,10 +130,10 @@ check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed approved r
 
 check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved', 'the repair boundary must record explicit visual approval');
 check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the stable registry must compose later approved registrations without rewriting EN-E02 repair evidence');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 stable registration must remain outside the exact EN-E04 consumer boundary');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 13, 'consumer routing must contain the thirteen approved EN-E01/EN-E02/EN-E04 families');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 consumer gate must reuse the exact stable registry');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 17, 'consumer routing must contain the seventeen approved EN-E01/EN-E02/EN-E04/EN-E05 families');
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
-check(engine.PUBLIC_ENEMIES.length === 70 && publicVariants === 241, 'the later consumer gate must expose the 70-family / 241-variant catalog');
+check(engine.PUBLIC_ENEMIES.length === 74 && publicVariants === 245, 'the later EN-E05 consumer gate must expose the 74-family / 245-variant catalog');
 check(EN_E02_CONTRACT_CARDS.every((card) => engine.PUBLIC_ENEMIES.some((family) => family.id === card.id)), 'authorized EN-E02 families must enter generic consumers through PUBLIC_ENEMIES');
 check(EN_E02_CONTRACT_CARDS.every((card) => engine.isPublicEnemyExpansionSpec({ kind: 'enemy', family: card.id, variant: card.baseline.variantId })), 'authorized EN-E02 families must route through the public consumer renderer');
 check(engine.ENEMIES.length === 57, 'EN-E02 registration must not rewrite the 57-family legacy catalog');
@@ -232,7 +232,7 @@ console.log('EN-E02 registration validation passed.');
 console.log('- Approved registry: 10 families / 30 variants across EN-E01 and EN-E02');
 console.log('- Registered EN-E02 sheets: 15 (480x96)');
 console.log('- Candidate/registered parity frames: 1,200');
-console.log('- Consumer catalog: 70 families / 241 variants (EN-E01 + EN-E02 + EN-E04)');
+console.log('- Consumer catalog: 74 families / 245 variants (EN-E01 + EN-E02 + EN-E04 + EN-E05)');
 console.log('- Ignored review artifact bytes: ' + (verifiedArtifacts === 3 ? '3 / 3 verified' : 'not present; immutable hash locks verified'));
 console.log('- Approved EN-E02 Idle digest: ' + registeredIdleDigest);
 console.log('- Approved EN-E02 full-candidate digest: ' + registeredFrameDigest);

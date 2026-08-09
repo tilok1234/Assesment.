@@ -156,17 +156,17 @@ check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 8, 'the stable regist
 check(['lich', 'mummy', 'revenant', 'vampire'].every((id) => stableFamilyIds.includes(id)), 'the stable registry is missing an approved EN-E05 family');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed EN-E05 stable registry must be immutable');
 
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'EN-E05 registration must remain separate from the assembler consumer registry');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.families.length === 13 && consumerVariantCount === 39, 'the assembler consumer registry must remain at the exact EN-E04 13/39 boundary');
-check(['lich', 'mummy', 'revenant', 'vampire', 'ghoul-upgrade'].every((id) => !consumerFamilyIds.includes(id)), 'EN-E05 registration must not leak into assembler consumers');
-check(Object.isFrozen(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY), 'the unchanged EN-E04 consumer registry must remain immutable');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 consumer gate must reuse the exact registered stable object');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.families.length === 17 && consumerVariantCount === 43, 'the later assembler consumer registry must contain the complete 17/43 stable boundary');
+check(['lich', 'mummy', 'revenant', 'vampire'].every((id) => consumerFamilyIds.includes(id)) && !consumerFamilyIds.includes('ghoul-upgrade'), 'the later consumer gate must expose only the four registered new families and keep the Ghoul replacement separate');
+check(Object.isFrozen(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY), 'the authorized EN-E05 consumer registry must remain immutable');
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 check(engine.ENEMIES.length === 57 && engine.ENEMIES.reduce((total, family) => total + family.variants.length, 0) === 202, 'EN-E05 registration must not rewrite the legacy 57/202 catalog');
-check(engine.PUBLIC_ENEMIES.length === 70 && publicVariantCount === 241, 'EN-E05 registration must preserve the public 70/241 consumer catalog');
+check(engine.PUBLIC_ENEMIES.length === 74 && publicVariantCount === 245, 'the later EN-E05 consumer gate must expose the public 74/245 catalog');
 check(engine.PUBLIC_ENEMIES.slice(0, 57).every((family, index) => family === engine.ENEMIES[index]), 'EN-E05 registration must retain the exact legacy family records');
-check(['lich', 'mummy', 'revenant', 'vampire', 'ghoul-upgrade'].every((id) => !engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'EN-E05 registered records must remain absent from public selectors');
-check(sourceEntries.filter((entry) => entry.kind === 'family').every((entry) => !engine.isPublicEnemyExpansionSpec(entry.registeredSpec)), 'EN-E05 new families must not route through the public dispatcher before consumer integration');
+check(['lich', 'mummy', 'revenant', 'vampire'].every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)) && !engine.PUBLIC_ENEMIES.some((family) => family.id === 'ghoul-upgrade'), 'the later consumer gate must expose the four new families without exposing the Ghoul replacement record');
+check(sourceEntries.filter((entry) => entry.kind === 'family').every((entry) => engine.isPublicEnemyExpansionSpec(entry.registeredSpec)), 'the later EN-E05 consumer gate must route all four new families through the public dispatcher');
 
 const publicZombie = engine.PUBLIC_ENEMIES.find((family) => family.id === 'zombie');
 const legacyZombie = engine.ENEMIES.find((family) => family.id === 'zombie');
@@ -187,7 +187,8 @@ const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-p
 check(facadeSource.includes("from './engine/enemy-expansion-public.js'"), 'the public facade must retain the stable expansion boundary');
 check(!facadeSource.includes('enemy-expansion-en-e05') && !facadeSource.includes('EN_E05_'), 'the public facade must not expose EN-E05 implementation details directly');
 check(publicSource.includes("import { EN_E05_PUBLIC_REGISTRY } from './enemy-expansion-en-e05.js';"), 'the stable registry must import the bounded EN-E05 registration');
-check(publicSource.indexOf('export const ENEMY_EXPANSION_CONSUMER_REGISTRY') < publicSource.indexOf('export const ENEMY_EXPANSION_REGISTRY'), 'the unchanged consumer boundary must be composed before the EN-E05 stable layer');
+check(publicSource.indexOf('export const ENEMY_EXPANSION_REGISTRY') < publicSource.indexOf('export const ENEMY_EXPANSION_CONSUMER_REGISTRY'), 'the later consumer boundary must alias the completed EN-E05 stable layer');
+check(publicSource.includes('export const ENEMY_EXPANSION_CONSUMER_REGISTRY = ENEMY_EXPANSION_REGISTRY;'), 'the later consumer boundary must reuse the exact stable registry');
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport();
 check(ledgerReport.counts.slices === 22 && ledgerReport.counts.proposals === 80, 'EN-E05 registration must preserve the 22-slice / 80-proposal ledger');
@@ -267,6 +268,6 @@ console.log('EN-E05 registration validation passed.');
 console.log('- Stable registry: 17 families / 43 variants across EN-E01, EN-E02, EN-E04, and EN-E05');
 console.log('- Registered EN-E05 sheets: 5 (four new families plus one Ghoul replacement record)');
 console.log('- Candidate/registered parity frames: 400; composed stable parity frames: 320');
-console.log('- Consumer boundary unchanged: 13 expansion families / public catalog 70 families / 241 variants');
+console.log('- Later consumer boundary: 17 expansion families / public catalog 74 families / 245 variants');
 console.log('- Public zombie/ghoul and frozen legacy fixture remain exact');
 console.log(`- Approved EN-E05 aggregate digest: ${registeredFrameDigest}`);
