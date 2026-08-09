@@ -1778,7 +1778,7 @@ and no new sprite pixels or public integration are authorized.
 
 ### EN-E04 - Serpentine, aquatic, and avian peoples
 
-- Status: `paused - Gale Augur specialist approved and published; Birdfolk elite requires explicit authorization`
+- Status: `active - Stormcrown Exarch approved; publication, EN-E04 registration, and assembler integration authorized in order`
 - Families: Naga, Merfolk, Birdfolk
 - Priority-first: Naga
 - Approved gate: Naga Coilguard common Idle F1-F2 across Down, Left, Right, and Up
@@ -1790,12 +1790,13 @@ and no new sprite pixels or public integration are authorized.
 - Approved gate: Merfolk Pearl Regent complete elite motion across Down, Left, Right, and Up; published
 - Approved gate: Birdfolk Aerie Scout complete common motion across Down, Left, Right, and Up; published
 - Approved gate: Birdfolk Gale Augur complete specialist motion across Down, Left, Right, and Up; published
+- Approved gate: Birdfolk Stormcrown Exarch complete elite motion across Down, Left, Right, and Up; bounded publication authorized
 
 | Family | Common | Specialist | Elite |
 | --- | --- | --- | --- |
 | Naga | Coilguard | Venom Oracle | Temple Rajah |
 | Merfolk | Tideguard | Reefcaller | Pearl Regent |
-| Birdfolk | Aerie Scout | Gale Augur | Not named |
+| Birdfolk | Aerie Scout | Gale Augur | Stormcrown Exarch |
 
 Shared leverage: non-human lower bodies and upright equipment anchors. Naga and
 Merfolk must not fake ordinary feet in side views. Birdfolk must remain an
@@ -2312,6 +2313,62 @@ upright avian person rather than collapse into the existing Harpy identity.
 - Required next action: stop. No Birdfolk elite, registration, integration,
   effects, release, or broader work is authorized by this approval.
 
+#### Birdfolk Stormcrown Exarch full elite approved, awaiting bounded publication
+
+- Gate ID: `en-e04-birdfolk-stormcrown-exarch-full-v1`; status:
+  `approved`, internal, non-public, uncommitted, and unpushed.
+- Live branch: `codex/en-e04-birdfolk-stormcrown-exarch`, based exactly on clean
+  Gale Augur reconciliation `aaf59dff8a14226bd46edbe48979dd2eb87c3faa`;
+  approved Gale Augur remains frozen at
+  `ad57f25d47415625540ea36ff16d2a884a421576`.
+- Authorization/naming: after Gale Augur approval/publication, the designer
+  said `lets do next` on 2026-08-09. The Birdfolk role order advances from
+  specialist to elite; Codex named and bounded one complete Stormcrown Exarch
+  elite only because that role was not pre-named.
+- Approval/continuation: after reviewing the exact paired candidate and asking
+  when the new enemies would enter the assembler, the designer said `sure lets
+  do 123` on 2026-08-09. That approves Stormcrown and authorizes bounded
+  publication, then one complete nine-enemy EN-E04 registration checkpoint,
+  then one complete assembler consumer-integration checkpoint.
+- Scope: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast aliases,
+  and exact Death aliases `H1,H2,H2,H2` across Down, Left, Right, and Up.
+- Source/anatomy: all 80 frames preserve the approved Gale Augur alpha
+  footprint and upright avian chassis beneath connected elite regalia.
+- Identity: iron-slate plumage, near-black flight feathers, ivory throat,
+  crimson royal mantle, connected gold three-point storm crown and brow guard,
+  armored gold forewing bands, cyan lightning sigil, white-blue eyes, and a
+  burnished beak/talons. All 36 colored side frames retain two eye pixels; all
+  18 colored rear frames remain eye-free.
+- External effects: lightning coronas, thunder halos, storm arcs, pressure
+  waves, feather spirals, dust puffs, air blades, and impacts stay outside actor
+  pixels; baked effects are empty.
+- Exclusions: approved Gale source changes, additional Birdfolk variants, new
+  Cast/Death pixels, registration, consumers, integration, effects, release,
+  later EN-E04 work, and multi-enemy expansion.
+- Frozen candidate evidence: raw / Complete B + Form boards
+  `94937293130da44fe99b3681330a7807da63dc936ff76586c6647d42e5d41f42` /
+  `20f5119159b9440be3f84b65a0b41c88ff3253fffeda3aac65d372ac8c027a18`;
+  raw / Complete B + Form GIFs
+  `52eb71a4bffab666cfc006b047f2e51b350be3115cafdcf06e44f3e2cb529498` /
+  `ad11fbfd1533d29e79b0033b565db510f0a3dba54f49a75130a76dccaad3daac`;
+  80-frame digest
+  `9e7a7c5e29e1918bf1078bcd4823680ff4243beeaa2e90b8d27689d0c3af9fa1`.
+- Focused validation passes suite/source-lock/connected/hard-alpha frames
+  `80/80`, complete colored storm-crown/brow-guard/royal-mantle/
+  lightning-sigil/avian anatomy `72/72`, exact side mirrors `20/20`, colored
+  side eyes `36/36`, eye-free colored rear frames `18/18`, Cast aliases
+  `16/16`, Death aliases `16/16`, opaque range 188-237, 14,954 elite-changed
+  pixels, 7,650 Complete B additions, 7,041 Form changes, and zero public
+  EN-E04 families.
+- All ten protected predecessor gates pass. The v2 fast gate passes in
+  `50.4s`; full `npm.cmd run check` passes in `103.0s`, with all 232 public PNG
+  sheets unchanged.
+- Required next action: commit and push the exact approved ten-file lane, then
+  reconcile the publication handoff. After clean publication, advance through
+  the separately bounded EN-E04 registration and assembler consumer-integration
+  checkpoints in that order. Additional variants, effects, release, and broader
+  work remain outside.
+
 ### EN-E05 - Undead humanoids
 
 - Status: `queued`
@@ -2725,3 +2782,13 @@ said `awesome looks good approved` on 2026-08-09. The lane remains internal,
 non-public, committed, and pushed at
 `ad57f25d47415625540ea36ff16d2a884a421576`. Birdfolk elite, registration,
 integration, effects, release, and broader work remain unauthorized.
+The designer's later `lets do next` activates only one full 80-frame Birdfolk
+Stormcrown Exarch elite on `codex/en-e04-birdfolk-stormcrown-exarch`. Because
+the elite was not pre-named, this lane names only Stormcrown Exarch and does not
+open additional Birdfolk variants. Its exact paired evidence is hash-frozen and
+focused/protected/fast/full validated, but the lane remains internal,
+non-public, uncommitted, and unpushed. The designer reviewed the exact pair and
+said `sure lets do 123` on 2026-08-09, approving the lane and authorizing
+bounded publication followed by separate complete EN-E04 registration and
+assembler consumer-integration checkpoints. Effects, release, and broader work
+remain unauthorized.

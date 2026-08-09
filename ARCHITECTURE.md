@@ -1140,6 +1140,34 @@ publication is complete at approved implementation checkpoint
 publication. Birdfolk elite, registration, integration, effects, release, and
 broader work remain outside.
 
+The isolated
+`engine/enemy-expansion-en-e04-birdfolk-stormcrown-exarch.js` module owns the
+next authorized Birdfolk elite without modifying Gale Augur, shared schemas,
+renderers, exporters, validators, or the public facade. Its lane-local renderer
+delegates every approved Gale motion frame through a deterministic palette map,
+preserves the complete source alpha footprint, and draws connected storm-crown,
+gold brow-guard, royal-mantle, armored-forewing, and lightning-sigil regalia
+through the same body transform. Cast aliases Attack and Death aliases Hurt
+`H1,H2,H2,H2` exactly; lightning and thunder effects remain external.
+
+Gate `en-e04-birdfolk-stormcrown-exarch-full-v1` is hash-frozen, focused
+validated, internal, non-public, uncommitted, unpushed, and
+`approved` on
+`codex/en-e04-birdfolk-stormcrown-exarch`. Its lane-local registry contains
+only elite Stormcrown Exarch and remains absent from `sprite-engine.js`. Frozen
+`1428x760` boards, `640x672` paired four-phase GIFs, an 80-frame digest, 80
+approved-source alpha locks, 80 connected hard-alpha silhouettes, one-cell
+margins, 20 exact side mirrors, exact aliases, 72/72 colored elite-identity
+frames, 36/36 two-pixel colored side eyes, 18/18 eye-free colored rear views,
+Complete B/Form presentation, external effects, and zero public exposure define
+the gate. All ten protected predecessor gates pass; the fast gate passes in
+`50.4s` and full repository validation passes in `103.0s`, with all 232 public
+PNG sheets unchanged. Exact paired visual approval is recorded with the
+designer's `sure lets do 123` on 2026-08-09. That approval authorizes bounded
+publication of this exact ten-file lane, followed by separate complete EN-E04
+registration and assembler consumer-integration checkpoints. Additional
+Birdfolk variants, effects, release, and broader work remain outside.
+
 The nested boss gates verify fourteen deeply frozen direction-catalog entries,
 56 checkpoint-exact 48x48 hard-alpha direction frames, fourteen checkpoint-exact
 48x192 direction sheets, plus ten animation-catalog entries, 800 distinct

@@ -15,6 +15,83 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
+## Immediate Continuation Checkpoint - Birdfolk Stormcrown Exarch Approved
+
+Start here in a new task. After approving, publishing, and reconciling the
+complete Birdfolk Gale Augur specialist, the designer said `lets do next` on
+2026-08-09. The live Birdfolk role order advances from specialist to the
+unnamed elite, so Codex named and bounded this continuation to one complete
+80-frame Birdfolk Stormcrown Exarch elite enemy only. After reviewing the exact
+hash-frozen raw/no-outline and Complete B + Form pair and asking when the new
+enemies would enter the assembler, the designer said `sure lets do 123` on
+2026-08-09.
+
+- Repository/branch: current v2 checkout
+  `C:\Users\headc\Documents\sprite-assembler-v2` on
+  `codex/en-e04-birdfolk-stormcrown-exarch`, based exactly on clean Gale Augur
+  reconciliation `aaf59dff8a14226bd46edbe48979dd2eb87c3faa`; the approved
+  Gale Augur implementation remains frozen at
+  `ad57f25d47415625540ea36ff16d2a884a421576`.
+- Gate: `en-e04-birdfolk-stormcrown-exarch-full-v1`; status
+  `approved`, internal, non-public, uncommitted, and unpushed. Bounded
+  publication of the exact ten-file lane is authorized; generated review
+  artifacts remain ignored.
+- Scope: one elite Stormcrown Exarch and 80 frames across Down, Left, Right,
+  and Up: Idle F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact
+  Cast-to-Attack aliases, and exact Death-to-Hurt aliases `H1,H2,H2,H2`.
+- Source/anatomy: all 80 frames preserve the complete approved Gale Augur
+  alpha footprint and upright avian chassis. The beaked head, shoulder-rooted
+  wing-arms, digitigrade talon legs, and connected tail fan remain readable
+  beneath connected elite regalia.
+- Elite identity: iron-slate plumage, near-black flight feathers, ivory throat,
+  crimson royal mantle, connected gold three-point storm crown and brow guard,
+  armored gold forewing bands, cyan lightning sigil, white-blue eyes, and a
+  burnished beak/talons. All 36 colored side frames retain the two-pixel eye
+  treatment; all 18 colored rear frames remain eye-free.
+- Motion: the approved Gale breath, four-step gait, full-body wing-and-talon
+  rake, and complete-silhouette recoil remain intact while crown, mantle,
+  forewing armor, and lightning sigil follow the same transforms.
+- Effects/exclusions: lightning coronas, thunder halos, storm arcs, pressure
+  waves, feather spirals, dust puffs, air blades, and impacts remain external.
+  Approved Gale source changes, additional Birdfolk variants, new Cast/Death
+  pixels, registration, consumers, integration, effects, release, and broader
+  EN-E04 work remain outside.
+- Review command:
+  `npm.cmd run review:enemy-expansion-en-e04-birdfolk-stormcrown-exarch`; it
+  reproduces paired raw/no-outline and Complete B + Form `1428x760` boards plus
+  exact labeled `640x672`, four-phase, `720ms` looping GIFs.
+- Focused command:
+  `npm.cmd run check:enemy-expansion-en-e04-birdfolk-stormcrown-exarch`.
+- Raw / Complete B + Form board SHA-256 values:
+  `94937293130da44fe99b3681330a7807da63dc936ff76586c6647d42e5d41f42` /
+  `20f5119159b9440be3f84b65a0b41c88ff3253fffeda3aac65d372ac8c027a18`.
+- Raw / Complete B + Form GIF SHA-256 values:
+  `52eb71a4bffab666cfc006b047f2e51b350be3115cafdcf06e44f3e2cb529498` /
+  `ad11fbfd1533d29e79b0033b565db510f0a3dba54f49a75130a76dccaad3daac`.
+- Candidate 80-frame digest:
+  `9e7a7c5e29e1918bf1078bcd4823680ff4243beeaa2e90b8d27689d0c3af9fa1`.
+- Focused validation passes: suite `80/80`; approved Gale alpha footprints
+  `80/80`; connected/hard-alpha silhouettes `80/80`; colored storm-crown,
+  brow-guard, royal-mantle, lightning-sigil, wing-arm, tail-fan, and
+  broad-talon anatomy `72/72`; exact side mirrors `20/20`; colored side eyes
+  `36/36`; eye-free colored rear frames `18/18`; Cast aliases `16/16`; Death
+  aliases `16/16`; opaque range 188-237; 14,954 changed pixels versus approved
+  Gale Augur; 7,650 Complete B additions; 7,041 Form changes; public EN-E04
+  families `0`.
+- Visual evidence: all four raw phases and all four Complete B + Form phases
+  were inspected directly. Both exact frozen boards opened successfully through
+  the working Aseprite MCP after inspection.
+- All ten protected predecessor gates pass. The v2 fast gate passes in
+  `50.4s`; full `npm.cmd run check` passes in `103.0s`, with all 232 public PNG
+  sheets unchanged.
+- Required next action: commit and push the exact approved ten-file lane, then
+  reconcile the publication handoff. After clean publication, complete the
+  separately authorized nine-enemy EN-E04 registration checkpoint and then the
+  assembler consumer-integration checkpoint. Do not add further variants,
+  effects, release work, or broader scope.
+
+The approved preceding Gale Augur checkpoint follows for provenance.
+
 ## Immediate Continuation Checkpoint - Birdfolk Gale Augur Approved And Published
 
 Start here in a new task. After approving, publishing, and reconciling the

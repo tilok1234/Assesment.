@@ -525,6 +525,23 @@ The designer reviewed the exact pair and said `awesome looks good approved` on
 2026-08-09. Bounded publication of the exact ten-file lane is complete at
 `ad57f25d47415625540ea36ff16d2a884a421576`; Birdfolk elite, registration,
 integration, effects, release, and broader work remain gated.
+The designer then said `lets do next`; that continuation activates exactly one
+complete Birdfolk elite on `codex/en-e04-birdfolk-stormcrown-exarch`. Because
+the role was not pre-named, the lane names only Stormcrown Exarch and does not
+open additional variants. The 80-frame candidate preserves every approved Gale
+alpha footprint and motion phase beneath iron-slate plumage, a crimson royal
+mantle, connected gold storm crown/brow guard and forewing armor, cyan lightning
+sigil, white-blue eyes, and a burnished beak/talons while keeping all lightning
+and thunder effects external. Its exact raw plus Complete B + Form boards/GIFs
+and 80-frame digest are hash-frozen; the focused gate passes. Gate
+`en-e04-birdfolk-stormcrown-exarch-full-v1` is `approved`, internal,
+non-public, uncommitted, and unpushed;
+all ten protected predecessor gates pass, the fast gate passes in `50.4s`, and
+full validation passes in `103.0s` with all 232 public PNG sheets unchanged.
+The designer reviewed the exact pair and said `sure lets do 123` on 2026-08-09.
+Bounded Stormcrown publication, then separate complete EN-E04 registration and
+assembler consumer-integration checkpoints are authorized in that order;
+additional variants, effects, release, and broader work remain gated.
 The current branch history
 also contains the `established-boss-pack-13-v1` clean-tree/pushed-HEAD publish
 gate, but its frozen roster currently lacks four direction and seven animation

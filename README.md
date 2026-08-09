@@ -811,6 +811,42 @@ lane is complete at `ad57f25d47415625540ea36ff16d2a884a421576` on the
 tracked origin branch. Birdfolk elite, additional variants, registration,
 integration, effects, release, and broader work remain outside.
 
+## Birdfolk Stormcrown Exarch full elite approved, awaiting bounded publication
+
+Branch `codex/en-e04-birdfolk-stormcrown-exarch` owns the next isolated
+full-enemy slice, based exactly on clean Gale Augur handoff `aaf59df`. Because
+the live plan did not pre-name the Birdfolk elite, this lane names and contains
+one internal, non-public Stormcrown Exarch with all 80 standard
+Idle/Walk/Attack/Cast/Hurt/Death frames across four directions.
+
+Stormcrown Exarch preserves every approved Gale Augur alpha footprint and the
+full upright avian motion suite, then remaps the specialist into iron-slate and
+near-black plumage beneath a crimson royal mantle, connected gold three-point
+storm crown and brow guard, armored forewing bands, cyan lightning sigil, and
+white-blue eyes. Lightning coronas, thunder halos, storm arcs, pressure waves,
+feather spirals, dust, air blades, and impacts remain external.
+
+Run `npm.cmd run review:enemy-expansion-en-e04-birdfolk-stormcrown-exarch` to
+reproduce paired raw/no-outline and Complete B + Form `1428x760` boards and
+labeled `640x672`, four-phase GIFs. Run
+`npm.cmd run check:enemy-expansion-en-e04-birdfolk-stormcrown-exarch` to verify
+the frozen 80-frame digest, approved-source alpha locks, connected hard-alpha
+anatomy, one-cell margins, exact mirrors and aliases, 72/72 colored elite
+identity frames, 36/36 colored side-eye frames, 18/18 eye-free colored rear
+frames, external effects, and zero public exposure. The frozen digest is
+`9e7a7c5e29e1918bf1078bcd4823680ff4243beeaa2e90b8d27689d0c3af9fa1`.
+Focused validation and all ten protected predecessor gates pass. The v2 fast
+gate passes in `50.4s`; full `npm.cmd run check` passes in `103.0s`, with all
+232 public PNG sheets unchanged.
+
+Gate `en-e04-birdfolk-stormcrown-exarch-full-v1` is `approved`: after reviewing
+the exact raw plus Complete B + Form GIF pair, the designer said `sure lets do
+123` on 2026-08-09. This lane is uncommitted and unpushed with bounded
+publication authorized. One complete EN-E04 registration checkpoint and one
+assembler consumer-integration checkpoint are separately authorized to follow
+publication. Additional Birdfolk variants, effects, release, and broader work
+remain outside.
+
 The complete enemy-outline rollout was visually approved at historical
 12-column checkpoint `ac860aa` on `codex/enemy-outlines`. That checkpoint
 covered 9,696 source frames / 29,088 None-B-C cases with zero source-edge
