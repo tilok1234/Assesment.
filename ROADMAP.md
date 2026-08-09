@@ -187,13 +187,15 @@ legacy Enemy catalog remains visually approved; its current 20-column gate
 covers 16,160 source frames / 48,480 None-B-C cases. Form shading, Lantern,
 Production Roll, compatible category rerolls, and the public Cast/Death actor
 contract are complete. The isolated Boss workspace contains fourteen direction
-entries (twelve approved plus Rhino and Unicorn candidates) and twelve animation
+entries (twelve approved plus Rhino and Unicorn candidates) and thirteen animation
 entries. Catgirl Templar and Astro Knight are accepted; Goblin War-Crown,
-Rhino, and Boar Rider animations remain candidates, as do the repaired Rhino and
-Unicorn direction designs. Lava-Core Colossus and Abyssal Crown-Kraken are
+Rhino, and Boar Rider animations remain candidates, as do the
+repaired Rhino and Unicorn direction designs. Lava-Core Colossus and Abyssal Crown-Kraken are
 accepted after exact-sheet and live Cycle All review. Kraken's accepted-state
 full repository gate passes in `122.9s` with all 232 fixture PNGs unchanged;
-its isolated implementation is published at `82938c7`.
+its isolated implementation is published at `82938c7`. Griffin's deterministic,
+approved suite adds the thirteenth 80-frame corpus while Eclipse Unicorn Sovereign
+remains the only static entry.
 
 The deterministic `wildshot-npc-slice-v1@bf6269c` delivery contains 32
 Player-built NPC looks and was verified by the game intake. The approved
@@ -868,8 +870,9 @@ second direction candidate; animation remains approval-gated.
 Lava-Core Colossus then became the eleventh animation pilot and was accepted
 after exact-sheet and live Cycle All review. Abyssal Crown-Kraken is the
 twelfth animation pilot and was accepted after its deterministic full-sheet and
-live playback gate; Sun-Crown Griffin and Eclipse Unicorn Sovereign remain
-static.
+live playback gate. Sun-Crown Griffin is the thirteenth animation pilot and is
+accepted after deterministic full-sheet and live Cycle All review; Eclipse
+Unicorn Sovereign remains the only static entry.
 
 Candidate additions:
 

@@ -32,7 +32,8 @@
       "furious-depraved-rhino",
       "gunslinger-boar-rider",
       "lava-core-colossus",
-      "abyssal-crown-kraken"
+      "abyssal-crown-kraken",
+      "sun-crown-griffin"
     ],
     "candidates": [
       "goblin-war-crown",
@@ -49,7 +50,8 @@
       "furious-depraved-rhino",
       "gunslinger-boar-rider",
       "lava-core-colossus",
-      "abyssal-crown-kraken"
+      "abyssal-crown-kraken",
+      "sun-crown-griffin"
     ],
     "generators": {
       "ancient-mirejaw": {
@@ -99,6 +101,10 @@
       "abyssal-crown-kraken": {
         "animationScript": "generate-abyssal-crown-kraken-animation-v1.py",
         "directionModule": "generate_abyssal_crown_kraken_directions_v1"
+      },
+      "sun-crown-griffin": {
+        "animationScript": "generate-sun-crown-griffin-animation-v1.py",
+        "directionModule": "generate_sun_crown_griffin_directions_v1"
       }
     }
   }

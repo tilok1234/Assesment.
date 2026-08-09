@@ -15,18 +15,76 @@ verification workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Published Approved Abyssal Crown-Kraken Animation
+## Immediate Continuation Checkpoint - Approved Sun-Crown Griffin Animation Pending Publish
 
 Start here in a new task. This is the only active continuation section in this
-file; the published Lava checkpoint and everything below `Historical Handoff
-Archive` are provenance.
+file; the published Kraken and Lava checkpoints and everything below
+`Historical Handoff Archive` are provenance.
+
+- Repository/worktree: isolated branch
+  `codex/boss-sun-crown-griffin-animation` at
+  `C:\Users\headc\Documents\sprite-assembler-v2\death-review\boss-worktrees\sun-crown-griffin-animation`,
+  based exactly on reconciled published Kraken checkpoint
+  `caa5929f0142406ae66c7031a4669db062800564`.
+- Parallel-lane firewall: the separate unapproved Petalcrown Duelist worktree
+  remains untouched. The preceding Lava and Kraken branches remain clean and
+  match their upstream branches; neither lane is included in this candidate.
+- Authorization: after reviewing Kraken's exact full sheet and live Cycle All
+  playback, the designer replied `approved` and then requested `next` on
+  2026-08-09. The bounded one-boss cadence opens only approved-direction
+  Sun-Crown Griffin; Eclipse Unicorn Sovereign remains closed.
+- Gate/status: accepted `boss-animation-v1` for `sun-crown-griffin`; internal,
+  review-only, effects-off, and explicitly visually approved. Publication on
+  its isolated branch is the remaining action.
+- Scope: one complete 80-frame native `48x48` suite across Down, Left, Right,
+  and Up: Idle x2, Walk x4, Attack x4, Cast x4, Hurt x2, and Death x4. Right is
+  the exact mirror of Left and every Idle frame 1 is byte-identical to the
+  approved static direction control.
+- Motion identity: wing-and-crest breathing, a four-beat leonine prowl,
+  anticipation/launch/talon-rake/recovery Attack, solar crown-and-wing Cast,
+  bright recoil, and a four-stage wing-folded collapse.
+- Authoring boundary: `tools/generate-sun-crown-griffin-animation-v1.py`
+  derives from the approved v4 front, v3 profile, and v1 direction sources and
+  uses the shared batched `boss_animation_authoring_v1.py` treatment path. No
+  checker literals, frame contracts, shared renderer code, production paths,
+  persistence, ordinary packs, schemas, effects, or Windows build paths change.
+- Integration: append one candidate pilot to
+  `engine/catalogs/boss-animations.js` and data-owned
+  `tools/fixtures/boss-roster.json`; generate exactly 80 runtime frames plus
+  eleven native sheets and matching ignored review checkpoints.
+- Deterministic evidence: exact native `960x192` full sheet SHA-256
+  `98bb29ef54f26970e5b3f41344f4005c90816a0d7d2f7ae25507d3f0a8450e51`
+  reproduced byte-for-byte on consecutive builds.
+- Focused result: `npm.cmd run check:bosses` passes fourteen direction pilots,
+  thirteen animation pilots, 1,040 distinct hard-alpha frames, 143 native
+  sheets, exact direction controls, mirrored side silhouettes, immutable
+  facade, and isolated dependencies. Missing unrelated review checkpoints
+  remain warnings on this clone; all present checkpoints and all runtime assets
+  validate.
+- Live review result: the isolated local Bosses tab reports thirteen full
+  animation pilots and one static entry. All six Griffin actions load in all
+  four directions, Cycle All plays, every image is complete, and the browser
+  error log is empty. The designer approved the exact full sheet and visible
+  motion with `good letgs move on` on 2026-08-09.
+- Validation state: focused Boss and full repository gates pass with the public
+  Enemy catalog still 74/245 and all 232 fixture PNGs unchanged.
+- Required next action: commit the isolated runtime/checkpoint/docs scope, push
+  its matching branch, reconcile the published handoff, verify clean upstream
+  parity, and only then open Eclipse Unicorn Sovereign as the final one-boss
+  candidate lane. Do not run the frozen `export:bosses:13` command.
+
+## Published Preceding Checkpoint - Approved Abyssal Crown-Kraken Animation
+
+This clean published checkpoint is the source for the active Griffin lane. Its
+prior continuation instruction has been fulfilled and is historical.
 
 - Repository/worktree: isolated branch
   `codex/boss-abyssal-crown-kraken-animation` at
   `C:\Users\headc\Documents\sprite-assembler-v2\death-review\boss-worktrees\abyssal-crown-kraken-animation`,
   based exactly on reconciled published Lava checkpoint
   `1154bb5d2f1f12acfa8c1c805af30ac7c999c1ef`. The accepted implementation is
-  published at `82938c75fb1fd9416d529e158bfe010cde92bf39`.
+  published at `82938c75fb1fd9416d529e158bfe010cde92bf39`; its reconciled branch
+  head is `caa5929f0142406ae66c7031a4669db062800564`.
 - Parallel-lane firewall: the separate unapproved Petalcrown Duelist worktree
   remains untouched. The preceding Lava branch is clean and matches origin;
   neither lane is included in this Kraken branch.
@@ -69,9 +127,9 @@ Archive` are provenance.
 - Validation state: the accepted-state `npm.cmd run check:bosses` and full
   `npm.cmd run check` pass; the full gate completes in `122.9s`
   with the public Enemy catalog still 74/245 and all 232 fixture PNGs unchanged.
-- Required next action: publish this documentation reconciliation, verify clean
-  upstream parity, and stop. Griffin and Unicorn remain closed; do not run the
-  frozen `export:bosses:13` command.
+- Fulfilled continuation: the documentation reconciliation was published and
+  clean upstream parity verified before the isolated Griffin lane opened.
+  Unicorn remains closed; do not run the frozen `export:bosses:13` command.
 
 ## Published Preceding Checkpoint - Approved Lava-Core Colossus Animation
 
@@ -3302,8 +3360,9 @@ The live compatibility audit found:
 
 - missing direction entries: Royal Night Elf Prince, Living Pyre, Tide Man the
   Blue, and Dryad of Nature; and
-- missing animation entries: those four plus Lava-Core Colossus, Abyssal
-  Crown-Kraken, and Sun-Crown Griffin.
+- missing animation entries: the same four historical roster ids. Later live
+  catalogs now cover Lava-Core Colossus, Abyssal Crown-Kraken, and Sun-Crown
+  Griffin, but that does not reconcile the frozen roster.
 
 Therefore `npm run check:pack-publish` passing does not make
 `npm run export:bosses:13` runnable or publishable. Do not invoke the publish

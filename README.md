@@ -37,12 +37,13 @@ A browser-based procedural sprite creator for building 24x24 player characters, 
   those three variants, and the approved Boulder Hurler specialist Idle F1-F2
   baseline; none is selectable consumer content
 - A separate Bosses tab with twelve approved 48x48 direction pilots plus
-  repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; twelve
+  repaired quadruped Rhino and Eclipse Unicorn Sovereign direction candidates; thirteen
   bosses have full Idle/Walk/Attack/Cast/Hurt/Death animation workspaces and
   native 1x animation-sheet download. Cruel Catgirl Templar of the Brutes,
   Divine Armored Templar Astro Knight, Lava-Core Colossus, and Abyssal
-  Crown-Kraken are accepted, while Goblin War-Crown, Furious Depraved Rhino,
-  and Gunslinger Boar Rider retain separate animation-candidate status
+  Crown-Kraken, and Sun-Crown Griffin are accepted, while Goblin War-Crown,
+  Furious Depraved Rhino, and Gunslinger Boar Rider retain separate
+  animation-candidate status
 - 24 transparent combat-effect overlays across weapon trails, projectiles, impacts, and status effects
 - A Combat Loadout Builder that previews those overlays on players and enemies, supplies automatic weapon-aware defaults, supports per-slot overrides, saves named recipes, and exports game-ready JSON
 - An Equipment Variant Batch Builder that turns one character identity into bounded weapon, armor, shield, utility-off-hand, or 121-sheet RPG equipment collections with per-variant loadouts and only the combat effects they actually reference
@@ -1272,19 +1273,18 @@ changing the player.
 
 The Bosses tab is a deliberately isolated game-test surface for twelve
 approved 48x48 direction pilots plus repaired quadruped Rhino and Eclipse
-Unicorn Sovereign direction candidates. Twelve pilots—Ancient Mirejaw, Bone Reliquary
+Unicorn Sovereign direction candidates. Thirteen pilots—Ancient Mirejaw, Bone Reliquary
 King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut, Goblin
 War-Crown, Cruel Catgirl Templar of the Brutes, Divine Armored Templar Astro
-Knight, Furious Depraved Rhino, Gunslinger Boar Rider, Lava-Core Colossus, and
-Abyssal Crown-Kraken—also expose the full
+Knight, Furious Depraved Rhino, Gunslinger Boar Rider, Lava-Core Colossus,
+Abyssal Crown-Kraken, and Sun-Crown Griffin—also expose the full
 20-column animation contract, playback/frame inspection, and native
-full/direction/animation downloads. Sun-Crown Griffin remains an approved
-static four-direction fallback. Eclipse
-Unicorn Sovereign is a static four-direction candidate. Goblin
-War-Crown, Furious Depraved Rhino, and Gunslinger Boar Rider remain animation
-visual candidates; the Rhino's repaired direction controls also await visual
-approval. The repaired catgirl-templar, Astro Knight, Lava-Core Colossus, and
-Abyssal Crown-Kraken animations are accepted. Boss selection, direction,
+full/direction/animation downloads. Eclipse Unicorn Sovereign is the only static
+four-direction candidate. Goblin War-Crown, Furious Depraved Rhino, and
+Gunslinger Boar Rider remain animation visual candidates; the
+Rhino's repaired direction controls also await visual approval. The repaired
+catgirl-templar, Astro Knight, Lava-Core Colossus, and Abyssal Crown-Kraken
+animations plus Sun-Crown Griffin are accepted. Boss selection, direction,
 animation, frame, and speed are
 ephemeral: they do not enter current-document persistence, history, presets,
 Production/Wildcard rolls, ordinary packs, Complete Kits, game-pack exports,
@@ -1755,23 +1755,23 @@ The review-only **Bosses** workspace now exposes Ancient Mirejaw, Bone
 Reliquary King, Scorpion Empress, Cyclops Forge-Titan, Pit-Fiend Juggernaut,
 Goblin War-Crown, Cruel Catgirl Templar of the Brutes, Divine Armored Templar
 Astro Knight, Furious Depraved Rhino, Gunslinger Boar Rider, Lava-Core
-Colossus, and Abyssal Crown-Kraken as twelve complete 48x48 animation pilots.
-All twelve use the Player-facing animation names and
+  Colossus, Abyssal Crown-Kraken, and Sun-Crown Griffin as thirteen complete
+  48x48 animation pilots. All thirteen use the Player-facing animation names and
 counts (Idle x2, Walk x4, Attack x4, Cast x4,
 Hurt x2, Death x4), four direction rows, and native 20-column `960x192` full
 sheets. Playback, frame inspection, speed, Cycle all, direction controls, and
 native full/current animation/current direction downloads are available
 without adding Boss to the persisted sprite document.
 
-Sun-Crown Griffin and the Eclipse Unicorn Sovereign candidate remain static
-four-direction entries. All boss assets remain effects-off and
+Eclipse Unicorn Sovereign remains the only static four-direction entry. All boss
+assets remain effects-off and
 outside Enemy mode, procedural renderers, production rolls, presets,
 ordinary character/game packs, fixtures, baselines, and Windows builds.
 The separately frozen `established-boss-pack-13-v1` transport is the only
 exception, and it does not authorize ordinary Boss integration. At `bf6269c`,
 its clean-tree/pushed-HEAD/GitHub-release gate is tested, but the command is not
-ready to run against `main`: four frozen roster ids lack direction catalogs and
-five lack animation catalogs. Do not publish it until roster compatibility is
+ready to run against `main`: four frozen roster ids lack both direction and
+animation catalogs. Do not publish it until roster compatibility is
 reconciled and directly tested. Ancient Mirejaw, Bone Reliquary King,
 Scorpion Empress, and Cyclops Forge-Titan were accepted in live review;
 Pit-Fiend Juggernaut was repaired
@@ -1781,10 +1781,10 @@ Knight is accepted after its sealed-helmet direction repair and full motion
 review. Lava-Core Colossus is accepted after live full-sheet and Cycle All
 review. Abyssal Crown-Kraken is accepted after exact full-sheet and live Cycle
 All review. Goblin War-Crown, Furious Depraved Rhino, and Gunslinger Boar Rider
-remain full-animation visual candidates. The Rhino's low quadruped direction
-redesign is also a visual candidate.
+remain full-animation visual candidates. The Rhino's low
+quadruped direction redesign is also a visual candidate.
 
-All twelve Idle loops use authored breathing or weight-shift silhouettes rather
+All thirteen Idle loops use authored breathing or weight-shift silhouettes rather
 than palette-only flashing. Scorpion Empress additionally uses a blink and
 stinger-flick Idle, stable-body leg scuttling, a tail-led strike, stinger
 casting, impact squash, and a weighted armored collapse so each action frame
@@ -1833,6 +1833,16 @@ The accepted-state full repository gate passes in `122.9s` with all 232 fixture
 PNGs unchanged. The designer approved the exact sheet and live Bosses-tab Cycle
 All playback on 2026-08-09. The isolated implementation is published at
 checkpoint `82938c7`.
+
+Sun-Crown Griffin has approved direction controls and a deterministic, accepted
+80-frame animation suite: wing-and-crest breathing, four-beat leonine prowl,
+committed talon pounce, solar crown-and-wing Cast, bright recoil, and a
+four-stage wing-folded collapse. Its exact native full sheet SHA-256 is
+`98bb29ef54f26970e5b3f41344f4005c90816a0d7d2f7ae25507d3f0a8450e51` and
+reproduces byte-for-byte on consecutive builds. The focused Boss gate, full
+repository gate, and all 24 live action/direction combinations pass with no
+browser errors. The designer approved the exact sheet and visible motion on
+2026-08-09.
 
 Eclipse Unicorn Sovereign is direction-only: a pearl-white war-unicorn with a
 long striped sunhorn, luminous cyan eyes, flowing violet eclipse mane and tail,
