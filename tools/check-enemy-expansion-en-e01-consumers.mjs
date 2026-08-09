@@ -177,7 +177,7 @@ check(
 );
 check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved', 'the consumer repair boundary must record explicit visual approval');
 check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the stable registry must compose EN-E04 without rewriting the approved repair candidate');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'generic consumers must route through the exact stable EN-E01/EN-E02/EN-E04 registry');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'generic consumers must remain on the exact EN-E01/EN-E02/EN-E04 boundary while EN-E05 stays stable-only');
 check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_PRE_REPAIR_REGISTRY, 'pre-repair comparison evidence must remain isolated from generic consumers');
 
 const appSource = await readFile(path.join(root, 'app.js'), 'utf8');

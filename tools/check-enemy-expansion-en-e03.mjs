@@ -117,7 +117,7 @@ check(EN_E03_IDLE_REGISTRY.renderers[0].key === 'large-hybrid-v2', 'EN-E03 must 
 check(EN_E03_IDLE_REGISTRY.renderers[0].chassis === 'large-hybrid-v2', 'EN-E03 must declare the large-hybrid-v2 chassis');
 check(EN_E03_IDLE_REGISTRY.publicFamilies.length === 0 && EN_E03_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E03 Idle evidence must not enter the public family view');
 check(Object.isFrozen(EN_E03_IDLE_REGISTRY), 'the EN-E03 Idle registry must be immutable');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 13, 'EN-E03 Idle work must not alter the thirteen approved EN-E01/EN-E02/EN-E04 families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 17, 'EN-E03 Idle work must remain excluded while later EN-E05 registration brings the stable registry to seventeen approved families');
 check(engine.PUBLIC_ENEMIES.length === 70, 'EN-E03 Idle work must not alter the 70-family consumer catalog');
 check(engine.ENEMIES.length === 57, 'EN-E03 Idle work must not alter the legacy Enemy catalog');
 check(cardOrder.every((id) => !engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'EN-E03 families must remain absent from generic consumers');
@@ -254,7 +254,7 @@ rejects(
 );
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSION_LEDGER, EN_E03_IDLE_REGISTRY);
-check(ledgerReport.counts.approved === 4 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 18, 'current ledger must retain four approved, zero implemented, and eighteen planned slices');
+check(ledgerReport.counts.approved === 5 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 17, 'current ledger must retain five approved, zero implemented, and seventeen planned slices');
 check(ledgerReport.counts.registeredFamilies === 3 && ledgerReport.counts.publicFamilies === 0, 'EN-E03 evidence must report three internal and zero public families');
 const enE03Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E03');
 check(enE03Slice?.state === engine.ENEMY_EXPANSION_STATES.PLANNED && enE03Slice?.gate === 'idle-authorized-2026-08-03', 'the EN-E03 ledger entry must remain planned but record Idle authorization');

@@ -15,6 +15,7 @@ import {
   ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY,
 } from './enemy-expansion-repairs.js';
 import { EN_E04_PUBLIC_REGISTRY } from './enemy-expansion-en-e04.js';
+import { EN_E05_PUBLIC_REGISTRY } from './enemy-expansion-en-e05.js';
 import { ENEMIES } from './catalogs.js';
 
 export {
@@ -31,11 +32,10 @@ export {
   validateEnemyExpansionSheet,
 };
 
-// The stable registry composes the repaired EN-E01/EN-E02 families with the
-// separately approved EN-E04 registration. The designer authorized the next
-// generic consumer gate on 2026-08-09, so both stable and consumer boundaries
-// now reuse this exact composed registry.
-export const ENEMY_EXPANSION_REGISTRY = createEnemyExpansionRegistry({
+// The current assembler consumer boundary remains the exact published
+// EN-E01/EN-E02/EN-E04 registry. EN-E05 registration is a separate stable
+// layer and must not expose its families or Ghoul replacement to consumers.
+export const ENEMY_EXPANSION_CONSUMER_REGISTRY = createEnemyExpansionRegistry({
   renderers: [
     ...ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY.renderers,
     ...EN_E04_PUBLIC_REGISTRY.renderers,
@@ -45,7 +45,17 @@ export const ENEMY_EXPANSION_REGISTRY = createEnemyExpansionRegistry({
     ...EN_E04_PUBLIC_REGISTRY.families,
   ],
 });
-export const ENEMY_EXPANSION_CONSUMER_REGISTRY = ENEMY_EXPANSION_REGISTRY;
+
+export const ENEMY_EXPANSION_REGISTRY = createEnemyExpansionRegistry({
+  renderers: [
+    ...ENEMY_EXPANSION_CONSUMER_REGISTRY.renderers,
+    ...EN_E05_PUBLIC_REGISTRY.renderers,
+  ],
+  families: [
+    ...ENEMY_EXPANSION_CONSUMER_REGISTRY.families,
+    ...EN_E05_PUBLIC_REGISTRY.families,
+  ],
+});
 
 // Approved expansion families join the public consumer catalog without
 // rewriting the locked legacy ENEMIES array or its historical fixtures.

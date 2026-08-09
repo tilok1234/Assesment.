@@ -51,11 +51,15 @@ const expectedRegisteredFamilies = [
   'fallen-knight',
   'fanatic-monk',
   'goatfolk',
+  'lich',
   'merfolk',
+  'mummy',
   'naga',
   'necromancer',
   'pirate',
   'plague-doctor',
+  'revenant',
+  'vampire',
   'witch',
 ];
 const expectedVariants = {
@@ -119,14 +123,14 @@ for (const card of EN_E02_CONTRACT_CARDS) {
   check(family.variants.every((variant) => !/\b(effect|projectile|summon|familiar|explosion|smoke cloud)\b/i.test(JSON.stringify(variant.rendererData))), card.id + ' registered renderer data must not bake external effect or child-asset contracts');
 }
 
-check(JSON.stringify(engine.ENEMY_EXPANSION_REGISTRY.families.map((family) => family.id)) === JSON.stringify(expectedRegisteredFamilies), 'the stable registry must contain exactly the thirteen approved EN-E01/EN-E02/EN-E04 families');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 13, 'the stable registry must expose thirteen approved family records');
-check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 4, 'the composed approved registry must retain one repaired humanoid renderer plus three EN-E04 dispatchers');
+check(JSON.stringify(engine.ENEMY_EXPANSION_REGISTRY.families.map((family) => family.id)) === JSON.stringify(expectedRegisteredFamilies), 'the later stable registry must contain exactly the seventeen approved EN-E01/EN-E02/EN-E04/EN-E05 families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 17, 'the later stable registry must expose seventeen approved family records');
+check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 8, 'the composed stable registry must retain four earlier renderers plus four bounded EN-E05 renderers');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed approved registry must be immutable');
 
 check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved', 'the repair boundary must record explicit visual approval');
 check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the stable registry must compose later approved registrations without rewriting EN-E02 repair evidence');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E04 consumer gate must reuse the exact stable approved registry');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 stable registration must remain outside the exact EN-E04 consumer boundary');
 check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 13, 'consumer routing must contain the thirteen approved EN-E01/EN-E02/EN-E04 families');
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 check(engine.PUBLIC_ENEMIES.length === 70 && publicVariants === 241, 'the later consumer gate must expose the 70-family / 241-variant catalog');
@@ -154,13 +158,13 @@ for (const relativePath of [
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport();
 check(ledgerReport.counts.slices === 22 && ledgerReport.counts.proposals === 80, 'registration must preserve the 22-slice / 80-proposal ledger');
-check(ledgerReport.counts.approved === 4 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 18, 'current ledger lifecycle counts must be four approved, zero implemented, and eighteen planned');
-check(ledgerReport.counts.registeredFamilies === 13 && ledgerReport.counts.publicFamilies === 13, 'current ledger must report thirteen registered and registry-public families');
+check(ledgerReport.counts.approved === 5 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 17, 'current ledger lifecycle counts must be five approved, zero implemented, and seventeen planned');
+check(ledgerReport.counts.registeredFamilies === 17 && ledgerReport.counts.publicFamilies === 17, 'current ledger must report seventeen registered and registry-public families');
 const enE02Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E02');
 check(enE02Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED, 'EN-E02 ledger state must be approved');
 check(enE02Slice?.gate === 'completed-slice-approved-2026-08-02', 'EN-E02 ledger gate must record completed-slice approval');
 check(enE02Slice?.registeredFamilies === 5 && enE02Slice?.publicFamilies === 5, 'EN-E02 ledger row must report all five registered families');
-check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => ['EN-E01', 'EN-E02', 'EN-E04'].includes(slice.id)), 'no unapproved expansion slice may become registered implicitly');
+check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => ['EN-E01', 'EN-E02', 'EN-E04', 'EN-E05'].includes(slice.id)), 'no unapproved expansion slice may become registered implicitly');
 
 const frameRecords = [];
 let sheets = 0;

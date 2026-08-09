@@ -129,8 +129,9 @@ check(Object.isFrozen(EN_E04_CONSUMER_INTEGRATION_GATE) && Object.isFrozen(EN_E0
 check(EN_E04_REGISTRATION_GATE.candidateFrameDigest === '137d044a55dd41d612a8b41958029e41ef39fb75ccf58de9b46d6c4328c91459', 'the approved EN-E04 registration digest drifted');
 
 check(engine.ENEMIES.length === 57 && engine.ENEMIES.reduce((total, family) => total + family.variants.length, 0) === 202, 'consumer integration must preserve the 57-family / 202-variant legacy catalog');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'EN-E04 consumers must reuse the exact stable approved registry');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 stable registration must remain outside EN-E04 consumers');
 check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 13, 'the generic expansion consumer registry must contain thirteen families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 17, 'the later stable registry must contain four additional EN-E05 families without consumer exposure');
 check(engine.PUBLIC_ENEMIES.length === 70 && publicVariantCount === 241, 'the public consumer catalog must contain 70 families / 241 variants');
 check(Object.isFrozen(engine.PUBLIC_ENEMIES), 'the public consumer catalog must be immutable');
 check(engine.PUBLIC_ENEMIES.slice(0, 57).every((family, index) => family === engine.ENEMIES[index]), 'consumer integration must retain the legacy catalog unchanged and in order');

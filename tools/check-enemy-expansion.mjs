@@ -72,7 +72,7 @@ const ledgerReport = engine.buildEnemyExpansionLedgerReport(engine.ENEMY_EXPANSI
 check(ledgerReport.counts.slices === 22, 'the expansion ledger must contain EN-F00, EN-E01..18, and EN-B01..03');
 check(ledgerReport.counts.proposals === 80, 'the expansion ledger must account for all 80 intake proposals');
 check(ledgerReport.counts.implemented === 0, 'no expansion slice may remain implemented after EN-E02 completed-slice approval');
-check(ledgerReport.counts.approved === 4, 'EN-F00, EN-E01, EN-E02, and EN-E04 must be the approved expansion slices');
+check(ledgerReport.counts.approved === 5, 'EN-F00, EN-E01, EN-E02, EN-E04, and EN-E05 must be the approved expansion slices');
 check(ledgerReport.counts.publicFamilies === 0, 'the isolated EN-F00 foundation registry must remain empty');
 check(Object.isFrozen(ledgerReport) && Object.isFrozen(ledgerReport.slices), 'the expansion ledger report must be deeply immutable');
 

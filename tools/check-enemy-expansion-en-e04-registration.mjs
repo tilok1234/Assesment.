@@ -102,13 +102,13 @@ for (const family of EN_E04_PUBLIC_REGISTRY.families) {
 }
 
 const stableFamilyIds = engine.ENEMY_EXPANSION_REGISTRY.families.map((family) => family.id);
-check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 13, 'the stable registry must contain thirteen approved EN-E01/EN-E02/EN-E04 families');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 13, 'the stable registry must expose thirteen approved family records');
-check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 4, 'the stable registry must retain one repaired humanoid renderer plus three EN-E04 dispatchers');
+check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 17, 'the later EN-E05 registration must extend the stable registry to seventeen approved families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 17, 'the later stable registry must expose seventeen approved family records');
+check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 8, 'the later stable registry must retain EN-E04 and add exactly four EN-E05 renderers');
 check(['birdfolk', 'merfolk', 'naga'].every((id) => stableFamilyIds.includes(id)), 'the stable registry is missing an approved EN-E04 family');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed stable registry must be immutable');
 
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later authorized consumer gate must reuse the exact stable EN-E04 registry');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY !== engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 registration must extend stable state without changing EN-E04 consumers');
 check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_REPAIR_APPROVED_REGISTRY, 'EN-E04 registration must remain composed above the unchanged approved EN-E01/EN-E02 repair registry');
 check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 13, 'consumer routing must contain all thirteen approved EN-E01/EN-E02/EN-E04 families');
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
@@ -123,13 +123,13 @@ check(!facadeSource.includes('enemy-expansion-en-e04') && !facadeSource.includes
 
 const ledgerReport = engine.buildEnemyExpansionLedgerReport();
 check(ledgerReport.counts.slices === 22 && ledgerReport.counts.proposals === 80, 'EN-E04 registration must preserve the 22-slice / 80-proposal ledger');
-check(ledgerReport.counts.approved === 4 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 18, 'ledger lifecycle counts must be four approved and eighteen planned slices');
-check(ledgerReport.counts.registeredFamilies === 13 && ledgerReport.counts.publicFamilies === 13, 'ledger must report thirteen stable registered/public families');
+check(ledgerReport.counts.approved === 5 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 17, 'the later EN-E05 registration must advance ledger lifecycle counts to five approved and seventeen planned slices');
+check(ledgerReport.counts.registeredFamilies === 17 && ledgerReport.counts.publicFamilies === 17, 'the later stable registry must report seventeen registered/public family records');
 const enE04Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E04');
 check(enE04Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED, 'EN-E04 ledger state must be approved');
 check(enE04Slice?.gate === 'nine-enemy-registration-approved-2026-08-09', 'EN-E04 ledger gate drifted');
 check(enE04Slice?.registeredFamilies === 3 && enE04Slice?.publicFamilies === 3, 'EN-E04 ledger row must report three registered families');
-check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => ['EN-E01', 'EN-E02', 'EN-E04'].includes(slice.id)), 'no unapproved expansion slice may become registered implicitly');
+check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => ['EN-E01', 'EN-E02', 'EN-E04', 'EN-E05'].includes(slice.id)), 'no unapproved expansion slice may become registered implicitly');
 
 const frameRecords = [];
 let sheets = 0;
@@ -187,7 +187,7 @@ if (errors.length) {
 }
 
 console.log('EN-E04 registration validation passed.');
-console.log('- Stable registry: 13 families / 39 variants across EN-E01, EN-E02, and EN-E04');
+console.log('- EN-E04 registered slice: 3 families / 9 variants; later stable registry: 17 families / 43 variants');
 console.log('- Registered EN-E04 sheets: 9 (480x96)');
 console.log('- Candidate/registered parity frames: 720');
 console.log('- Consumer catalog after authorized integration: 70 families / 241 variants');
