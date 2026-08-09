@@ -15,7 +15,59 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - EN-E05 Assembler Integration Published
+## Immediate Continuation Checkpoint - Live Documentation Audit Published
+
+Start here in a new task. This is the only active continuation section in this
+file; everything below `Historical Handoff Archive` is provenance.
+
+- Repository/branch: current v2 checkout on
+  `codex/en-e05-doc-audit-handoff`, based exactly on clean published EN-E05
+  integration handoff `7ffbb0464f766f7ed29d64cd59f3613a3cfd1834`.
+- Audit evidence: all live project documentation outside `docs/archive/` was
+  checked against Git, code, package scripts, filesystem artifacts, and current
+  validators. The bounded audit implementation is committed at
+  `4ba29e2a3fbe9ec584107994c0a324364d8f9240`.
+- Canonical runtime state: legacy remains 57 families / 202 variants; stable
+  and consumer expansion registries are identical at 17/43; public is 74/245;
+  Complete Kit is 2,182 PNGs; a 24-player Complete Pack is 2,205 PNGs; the
+  three-treatment public export target is 735 PNGs.
+- EN-E05 state: exact Mummy Tomb Walker, Vampire Night Noble, Revenant Grave
+  Oathkeeper, and Lich Soul Regent are generic public consumers. All 320 frames
+  retain digest
+  `947cec4df921761cd5eba378991d7a35b3d773d7e5c0e7c80526ecc6a846a46f`.
+- Frozen boundaries: public `zombie/ghoul` is unchanged; the separate Ghoul
+  upgrade remains internal; all 202 Enemy fixtures and all 232 committed PNG
+  fixtures remain untouched. No sprite source, runtime code, schema, fixture,
+  baseline, effect, or release artifact changed in this documentation lane.
+- Verified open blockers: no repository `LICENSE`, deterministic Wildshot
+  writer/editor action, or NSIS artifact exists. These are accurately recorded
+  as pending, not silently opened by this audit.
+- Validation: release structure passes 35 assertions; the focused EN-E05 gate
+  passes 320/320 frames; fast validation passes in `51.3s`; full validation
+  passes in `97.7s`; all 232 fixtures validate.
+- Required reading: `CLAUDE.md`, this section, and the `Current Authorization
+  Boundary` in `ENEMY_EXPANSION_PLAN.md`. Do not read `docs/archive/` for the
+  active workflow and do not resume a lane from the historical body below.
+- Required next action: verify this branch is clean and equals its upstream,
+  then stop. No next content gate is authorized. Ask the designer to choose
+  explicitly among public Ghoul replacement, fixture work, EN-E03 adoption,
+  effects, release, or Wave 2; do not infer any one of them.
+
+Suggested opening request for the next chat:
+
+> Read `CLAUDE.md`, the active top section of `HANDOFF.md`, and the current
+> authorization boundary in `ENEMY_EXPANSION_PLAN.md`. Verify clean synced HEAD
+> on `codex/en-e05-doc-audit-handoff` and the 74/245 public boundary. No content
+> lane is open; wait for my explicit choice before changing sprites or fixtures.
+
+# Historical Handoff Archive
+
+Everything below this heading is point-in-time provenance. Words such as
+"current", "next", "immediate", and "required" apply only to the historical
+checkpoint in which they appear. A new chat must use the current checkpoint at
+the top of this file and must not resume a lane from this archive.
+
+## Approved Preceding Checkpoint - EN-E05 Assembler Integration Published
 
 Start here in a new task. After the clean EN-E05 registration checkpoint was
 published and reconciled, the designer said `cool lets do next` on 2026-08-09.
@@ -58,13 +110,6 @@ four registered new families.
   not replace public Ghoul, generate, regenerate, or accept fixtures, change
   reviewed pixels, add effects, release, adopt EN-E03, or begin Wave 2 without
   later explicit authorization.
-
-# Historical Handoff Archive
-
-Everything below this heading is point-in-time provenance. Words such as
-"current", "next", "immediate", and "required" apply only to the historical
-checkpoint in which they appear. A new chat must use the current checkpoint at
-the top of this file and must not resume a lane from this archive.
 
 ## Approved Preceding Checkpoint - EN-E05 Stable Registration Published
 
