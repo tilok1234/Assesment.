@@ -1332,11 +1332,11 @@ suite, and full suite pass; the approved 1,200-frame integration digest and all
 in responsive Aseprite, both GIFs were presented, and the designer replied
 `approved lets do next`. Implementation
 `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval record
-`cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` are committed locally; bounded
-documentation reconciliation and branch publication are authorized.
-Registration, fixtures, runtime copying, effects, later families, release, and
-EN-E08 remain closed. The elite opens only after a clean published Falseface
-reconciliation.
+`cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial handoff
+`a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
+verified. Registration, fixtures, runtime copying, effects, later families,
+release, and EN-E08 remain closed. The same response opens only one private
+elite Doppelganger candidate from the clean publication reconciliation.
 
 ## Approved enemy backlog integration published
 

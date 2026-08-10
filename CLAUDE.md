@@ -127,13 +127,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   fixtures exact. The three exact repaired PNGs were opened together in
   Aseprite, both GIFs were presented, and the designer replied `approved lets
   do next`. Implementation `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73`
-  and approval record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` are
-  committed locally, and bounded documentation reconciliation plus branch push
-  are authorized. Do not register Doppelganger, generate fixtures, implement
-  runtime copying, add effects, start the elite or another family, release, or
-  advance EN-E08 before the clean published Falseface reconciliation. After
-  that reconciliation, the same reply opens only one private elite
-  Doppelganger candidate.
+  and approval record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial
+  handoff `a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
+  verified. Do not register Doppelganger, generate fixtures, implement runtime
+  copying, add effects, start another family, release, or advance EN-E08. The
+  same reply opens only one private elite Doppelganger candidate from the clean
+  published reconciliation.
 - Approved preceding art checkpoint:
   `codex/en-e07-doppelganger-pale-echo`, based exactly on clean published
   Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`,

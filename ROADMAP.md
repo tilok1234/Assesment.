@@ -197,17 +197,17 @@ was visually approved after the three exact repaired PNGs were opened together
 in responsive Aseprite, both GIFs were presented, and the designer replied
 `approved lets do next`. Implementation
 `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval record
-`cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` are committed locally; bounded
-documentation reconciliation and branch publication are authorized. The
-protected 22-gate matrix, fast suite, and full suite pass with the approved
+`cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial handoff
+`a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
+verified. The protected 22-gate matrix, fast suite, and full suite pass with the approved
 integration and 232 fixtures unchanged. Pale Echo implementation
 `0628135b84725836c552e13db797540a965854cb`, approval record
 `182938381ac39812434518d0216e6e9796367bbb`, initial handoff
 `1e6e8d8bb01de97ca4e1373b62b461e40b1aa239`, and reconciliation `e18a512`
 remain exact. Registration, fixtures, runtime copying, effects, the elite and
-later EN-E07 families, release, and EN-E08 stay closed until a clean published
-Falseface reconciliation. After that checkpoint, the same reply opens only one
-private elite Doppelganger candidate.
+later EN-E07 families, release, and EN-E08 stay closed except that the same
+reply opens only one private elite Doppelganger candidate from the clean
+Falseface publication reconciliation.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

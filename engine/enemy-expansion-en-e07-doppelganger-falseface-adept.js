@@ -100,9 +100,10 @@ export const EN_E07_FALSEFACE_ADEPT_GATE = deepFreeze({
   approvedImplementation: 'c415620c2f7f95b98c8b8563a2c1d6e39abb4a73',
   publicationAuthorizedOn: '2026-08-10',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: 'c415620c2f7f95b98c8b8563a2c1d6e39abb4a73',
+  publishedApprovalRecord: 'cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb',
+  initialPublishedHandoff: 'a215f091022537644a4616e8b0977f12d972eb6d',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_PALE_ECHO_GATE.id,
     artifactSha256: EN_E07_PALE_ECHO_GATE.artifactSha256,
@@ -176,7 +177,7 @@ export const EN_E07_FALSEFACE_ADEPT_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact repaired Falseface Adept candidate is visually approved and its implementation is committed at c415620c2f7f95b98c8b8563a2c1d6e39abb4a73. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private elite Doppelganger candidate. Do not register Doppelganger, generate fixtures, add runtime copying or effects, release, start another family beyond that elite candidate, or advance EN-E08.',
+  nextGate: 'The exact repaired Falseface Adept candidate is visually approved and published: implementation c415620c2f7f95b98c8b8563a2c1d6e39abb4a73, approval record cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb, and initial handoff a215f091022537644a4616e8b0977f12d972eb6d are remote verified. The same approved lets do next response opens only one private elite Doppelganger candidate from this clean publication reconciliation. Do not register Doppelganger, generate fixtures, add runtime copying or effects, release, start another family beyond that elite candidate, or advance EN-E08.',
 });
 
 export const EN_E07_FALSEFACE_ADEPT_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -457,7 +458,7 @@ export const EN_E07_FALSEFACE_ADEPT_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'falseface-adept',
     scale: 8,
-    notes: 'Visually approved as one public-humanoid-scale Falseface Adept against approved Pale Echo plus public Cultist Zealot and Dark Elf. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, runtime copying, effects, the elite, Will-o-Wisp, and later Wave 2 work separate until the clean published reconciliation.',
+    notes: 'Visually approved and published as one public-humanoid-scale Falseface Adept against approved Pale Echo plus public Cultist Zealot and Dark Elf. Keep registration, fixtures, runtime copying, effects, Will-o-Wisp, and later Wave 2 work separate; only one private elite Doppelganger candidate is open from the clean publication reconciliation.',
   },
 });
 

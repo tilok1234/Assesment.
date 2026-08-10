@@ -29,11 +29,12 @@
   The three exact repaired PNGs were opened together in Aseprite, both GIFs
   were presented, and the designer replied `approved lets do next`.
   Implementation `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval
-  record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` are committed locally;
-  bounded documentation reconciliation and branch push are authorized.
-  Doppelganger registration, fixtures, runtime copying, effects, later
-  families, release, and EN-E08 remain closed. The elite opens only after a
-  clean published Falseface reconciliation.
+  record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial handoff
+  `a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
+  verified. Doppelganger registration, fixtures, runtime copying, effects,
+  later families, release, and EN-E08 remain closed. The same response opens
+  only one private elite Doppelganger candidate from the clean publication
+  reconciliation.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3562,7 +3563,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common Doppelganger approved and published; Falseface Adept specialist approved with bounded publication underway; Doppelganger elite still closed`
+- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common and Falseface Adept specialist Doppelgangers approved and published; one private Doppelganger elite gate open`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3785,7 +3786,7 @@ assembler.
   runtime copying, effects, the elite and later EN-E07 families, release, and
   EN-E08 closed.
 
-#### Doppelganger Falseface Adept complete suite approved; publication authorized
+#### Doppelganger Falseface Adept complete suite approved and published
 
 - Gate ID: `en-e07-doppelganger-falseface-adept-full-v1`; status: `approved`
   on `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean
@@ -3837,11 +3838,11 @@ assembler.
   `approved lets do next` on 2026-08-10. Approval applies only to digest
   `16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`.
   Implementation `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval
-  record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` are committed locally.
-- Required next action: commit this bounded documentation reconciliation, push
-  the branch, remote-verify all three commits, then record the clean published
-  checkpoint. Only after that reconciliation may the same response open one
-  private elite Doppelganger candidate. Keep registration, fixtures, runtime
+  record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial handoff
+  `a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
+  verified.
+- Required next action: open only one private elite Doppelganger candidate from
+  this clean publication reconciliation. Keep registration, fixtures, runtime
   copying, effects, later EN-E07 families, release, and EN-E08 closed.
 
 ### EN-E08 - Possessed equipment

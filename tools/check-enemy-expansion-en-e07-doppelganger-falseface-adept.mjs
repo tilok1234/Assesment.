@@ -148,9 +148,11 @@ check(
   EN_E07_FALSEFACE_ADEPT_GATE.status === 'approved'
     && EN_E07_FALSEFACE_ADEPT_GATE.approvedOn === '2026-08-10'
     && EN_E07_FALSEFACE_ADEPT_GATE.approvedImplementation === 'c415620c2f7f95b98c8b8563a2c1d6e39abb4a73'
-    && EN_E07_FALSEFACE_ADEPT_GATE.publishedImplementation === null
-    && EN_E07_FALSEFACE_ADEPT_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Falseface Adept approved-local state drifted',
+    && EN_E07_FALSEFACE_ADEPT_GATE.publishedImplementation === 'c415620c2f7f95b98c8b8563a2c1d6e39abb4a73'
+    && EN_E07_FALSEFACE_ADEPT_GATE.publishedApprovalRecord === 'cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb'
+    && EN_E07_FALSEFACE_ADEPT_GATE.initialPublishedHandoff === 'a215f091022537644a4616e8b0977f12d972eb6d'
+    && EN_E07_FALSEFACE_ADEPT_GATE.publicationState === 'published',
+  'Falseface Adept published state drifted',
 );
 check(
   EN_E07_FALSEFACE_ADEPT_GATE.approvalEvidence.includes('three exact repaired PNG review boards were opened together in Aseprite')
@@ -190,10 +192,10 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('visually approved')
-    && EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('bounded approval-record')
+  EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('visually approved and published')
+    && EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('remote verified')
     && EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('only one private elite Doppelganger candidate'),
-  'approved-local publication and next-role gate drifted',
+  'published next-role gate drifted',
 );
 check(
   JSON.stringify(EN_E07_DOPPELGANGER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
