@@ -23,13 +23,84 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Grand Pretender Published; Will-o-Wisp Gate Open
+## Immediate Continuation Checkpoint - Lantern Mote Frozen; Approval Pending
 
-Start here in a new task. The exact private elite Doppelganger Grand Pretender
-is repaired, hash-frozen, deterministic, fully validated, visually approved,
-published, and remote verified. The sole active art gate is now one private
-common Will-o-Wisp candidate from this clean publication reconciliation; the
-approved Grand Pretender remains unregistered and non-public.
+Start here in a new task. The sole active art gate is one private common
+Will-o-Wisp Lantern Mote candidate. It is repaired, hash-frozen,
+deterministic, fully validated, and visually inspected, but it is not yet
+designer-approved, committed, pushed, registered, or public.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean
+  published Grand Pretender reconciliation
+  `3ddbe159360f16844d167ecc753d6b767b7e5549`.
+- Approved predecessor: Grand Pretender implementation
+  `0a8d5094d5e5de575f1966db30fc01d093a866c3`, approval record
+  `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3`, initial published handoff
+  `c551799f585df2643f83a605279cda06cc629e45`, and final reconciliation
+  `3ddbe159360f16844d167ecc753d6b767b7e5549` remain exact.
+- Authorization: after Grand Pretender was visually approved, committed,
+  pushed, and reconciled, the designer replied `Approved lets do next` on
+  2026-08-10. The frozen family order and one-complete-sprite cadence open only
+  this one private common Will-o-Wisp.
+- Scope: one authored 80-frame common Will-o-Wisp across Idle F1-F2, Walk
+  W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 in all four directions.
+- Style contract: a small-to-medium hovering marsh lantern with one connected
+  stepped wick, broad ribbed cage, single visible core eye, tapered inner
+  flame, and two connected lower flame prongs. It must remain distinct from
+  the public Spectral Ghost robe, Shadow Slime dome, Flame Elemental blob,
+  humanoid Living Shadow, and detached particle clusters.
+- Motion: two-frame core/cage pulse; four opposed cage, core, and lower-prong
+  hover phases; single-eye cage focus, living-core pinch, one connected flame
+  tongue, and authored-lantern relight. Cast aliases Attack; Death aliases
+  Hurt.
+- Effects firewall: aura, bloom, glow, detached embers, loose sparks, smoke,
+  afterimages, trails, light pools, projectiles, impacts, and illumination
+  remain external. Registration, fixtures, public exposure, specialist/elite
+  Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 remain closed.
+- Focused validation passes: 80/80 connected, one-cell-bounded, genuinely
+  hovering hard-alpha frames; 80/80 pixel and alpha-silhouette distinctions
+  from public Spectral Ghost, Shadow Slime, and Flame Elemental; 72/72 colored
+  palette frames; 8/8 exact white flashes; 54/54 expected single-eye views;
+  opaque range 146-154; 5,570 Complete B additions; and 5,850 Form changes.
+  Grand Pretender remains exact, public 80/259 is unchanged, and no
+  fixture/facade/manifest exposure exists.
+- Frozen candidate digest:
+  `f50a0c6f08b63dde7bad06542140123c5d6bb7fb419b7df2789cffa441a9ebb8`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `a97a52022736cc0b471e7d14d714d779dbdd622d6f3d5936c5e0c58a438a370c` /
+  `71be29714f2bfcba373ec8c072102e11dc4213a2350ed7a73ace4eff586a40b7`;
+  Ghost/Slime/Flame/Mote `1520x548` comparison
+  `54ae19c61dec1a4a8566dc75153201f04bb1a5e6df082896eb05a7ebad0eb58e`;
+  raw / Complete B + Form `640x672` GIFs
+  `33b000d802955afa79aee7a33ffd5b42c2867c15f1c7caad3a8828da678ff7d7` /
+  `9308e786118a54a847acad7593e28cbab1ab2b41e272989744b948e6bea3e8bd`.
+  Two post-freeze generations reproduce all five hashes exactly; artifacts
+  remain ignored under
+  `enemy-expansion-review/en-e07-will-o-wisp-lantern-mote/`.
+- Visual review completed: the comparison, both full-suite boards, and all
+  eight raw/effects-enabled phase boards were inspected at original detail.
+  The exact raw, Complete B + Form, and comparison PNGs were then opened
+  together in a responsive Aseprite 1.3.17.2 session. This is inspection
+  evidence only; designer approval remains pending.
+- Broad validation passes: the 24-command protected
+  predecessor/candidate/integration matrix completed in 16.0s;
+  `npm.cmd run check:fast` passed in 55.6s; and full `npm.cmd run check` passed
+  in 108.4s. The integrated frame digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required next action: present this exact five-artifact packet and wait for an
+  explicit designer approval or rejection. Do not commit, push, publish,
+  register Will-o-Wisp, generate fixtures, add effects, name or start another
+  Will-o-Wisp role or family, release, or advance EN-E08 before approval.
+
+## Approved Preceding Checkpoint - Grand Pretender Published
+
+The exact private elite Doppelganger Grand Pretender is repaired, hash-frozen,
+deterministic, fully validated, visually approved, published, and remote
+verified. Its final clean reconciliation is the base of the active Lantern
+Mote gate above; Grand Pretender remains unregistered and non-public.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean
@@ -106,11 +177,11 @@ approved Grand Pretender remains unregistered and non-public.
   against the approved-local metadata in 106.3s. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: open only one private common Will-o-Wisp candidate from
-  this clean published checkpoint. Preserve Grand Pretender and every approved
-  predecessor byte-for-byte. Do not register Doppelganger, generate fixtures,
-  implement runtime copying, add effects, start another Will-o-Wisp role or
-  later family, release, or advance EN-E08.
+- Historical next action: the designer's later `Approved lets do next` response
+  opened only the Lantern Mote candidate recorded above. Grand Pretender and
+  every approved predecessor remain byte-exact; registration, fixtures,
+  runtime copying, effects, later roles/families, release, and EN-E08 remain
+  closed.
 
 ## Approved Preceding Checkpoint - Falseface Adept Published
 

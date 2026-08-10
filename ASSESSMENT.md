@@ -387,8 +387,26 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   and approval record `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` plus initial
   handoff `c551799f585df2643f83a605279cda06cc629e45` are published and remote
   verified. Grand Pretender remains private, unregistered, and fixture-free.
-  The same response opens only one private common Will-o-Wisp candidate from
+  The same response opened only one private common Will-o-Wisp candidate from
   the clean publication reconciliation.
+  The active continuation is Lantern Mote on
+  `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on Grand Pretender
+  reconciliation `3ddbe159360f16844d167ecc753d6b767b7e5549`. Its authored
+  hovering form uses a connected stepped wick, broad ribbed cage, single
+  visible core eye, tapered inner flame, and two connected lower flame prongs.
+  The first focused run caught and repaired one detached lower-prong pixel and
+  duplicate eye pixels before freeze. The frozen digest is
+  `f50a0c6f08b63dde7bad06542140123c5d6bb7fb419b7df2789cffa441a9ebb8`:
+  80/80 frames are connected, bounded, hovering, and pixel/alpha distinct from
+  Spectral Ghost, Shadow Slime, and Flame Elemental; 72/72 colored frames and
+  8/8 white flashes are exact; 54/54 expected views expose one eye; opaque
+  range is 146-154. All five artifacts reproduce byte-for-byte twice. The
+  comparison, both full boards, and all eight raw/effects-enabled phase boards
+  were inspected; the three exact PNGs are open together in responsive
+  Aseprite. The 24-command matrix passed in 16.0s, `check:fast` in 55.6s, and
+  full `check` in 108.4s with the integration digest and all 232 fixtures
+  exact. Lantern Mote remains private, uncommitted, and unpushed pending
+  explicit designer approval of this exact packet.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

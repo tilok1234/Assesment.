@@ -1068,6 +1068,31 @@ integration digest and all 232 fixtures exact. The module remains private,
 unregistered, and fixture-free. The same response opens one private common
 Will-o-Wisp candidate from the clean publication reconciliation.
 
+The subsequently authorized
+`engine/enemy-expansion-en-e07-will-o-wisp-lantern-mote.js` adds only that one
+private common without changing the facade, public registry, fixtures,
+manifest, schemas, shared renderers, or frame contract. Its isolated pixel
+buffer authors one connected stepped wick, broad ribbed cage, single visible
+core eye, tapered inner flame, two connected lower flame prongs, and true hover
+clearance in a marsh-teal, mint, pale-core, and violet-cage palette. Aura,
+bloom, glow, detached embers/sparks, smoke, afterimages, trails, floor light,
+projectiles, impacts, and illumination stay external. The first focused run
+caught a lower-prong pixel detaching during low phases and duplicate eye pixels
+in pinch/fold poses; both were repaired before freeze. Cast aliases Attack;
+Death aliases Hurt. The focused gate freezes all 80 frames at digest
+`f50a0c6f08b63dde7bad06542140123c5d6bb7fb419b7df2789cffa441a9ebb8`,
+proves 80/80 connected, bounded, hovering pixel and alpha distinctions from
+public Spectral Ghost, Shadow Slime, and Flame Elemental, and keeps approved
+Grand Pretender exact. The 146-154-pixel packet reproduces all five hashes
+byte-for-byte twice. The comparison, both full-suite boards, and all eight
+raw/effects-enabled phase boards were inspected, and the three exact frozen
+PNGs were opened together in responsive Aseprite. The protected 24-command
+matrix passed in 16.0s, fast validation in 55.6s, and full validation in 108.4s
+with the approved integration digest and all 232 fixtures exact. This remains
+inspection-only evidence: the module is private, unregistered, fixture-free,
+uncommitted, and unpushed pending explicit designer approval of the exact
+packet.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

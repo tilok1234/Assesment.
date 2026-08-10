@@ -13,29 +13,25 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-10): private elite Doppelganger Grand
-  Pretender on `codex/en-e07-doppelganger-grand-pretender` is frozen at digest
-  `03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`
-  from clean published Falseface reconciliation
-  `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`. The repaired 217-273-pixel
-  suite passes 80/80 connected, one-cell-bounded, grounded, hard-alpha,
-  alias, mirror, and pixel/alpha distinctions from approved Pale Echo,
-  approved Falseface Adept, and public Cultist Zealot. Its first packet was
-  rejected before freeze because the face-framing hands erased the visage and
-  inherited fringe pixels read as horns; the exact repaired five-artifact
-  packet restores the face and one continuous swept crest and reproduces twice.
-  All raw/effects-enabled phase boards were inspected, and the three exact
-  frozen PNGs were opened together in responsive Aseprite. The protected
-  matrix, fast suite, and full suite pass with the integration digest and all
-  232 fixtures exact. The designer replied `Approved lets do next`;
-  implementation `0a8d5094d5e5de575f1966db30fc01d093a866c3` and approval
-  record `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` plus initial handoff
-  `c551799f585df2643f83a605279cda06cc629e45` are published and remote
-  verified. Grand Pretender remains private, unregistered, and fixture-free.
-  The same response opens one private common Will-o-Wisp candidate from this
-  clean publication reconciliation. Doppelganger registration, fixtures,
-  runtime copying, effects,
-  later roles/families, release, and EN-E08 remain closed.
+- Current stopping checkpoint (2026-08-10): private common Will-o-Wisp Lantern
+  Mote on `codex/en-e07-will-o-wisp-lantern-mote` is frozen at digest
+  `f50a0c6f08b63dde7bad06542140123c5d6bb7fb419b7df2789cffa441a9ebb8`
+  from clean published Grand Pretender reconciliation
+  `3ddbe159360f16844d167ecc753d6b767b7e5549`. The repaired 146-154-pixel
+  suite passes 80/80 connected, one-cell-bounded, genuinely hovering,
+  hard-alpha, alias, mirror, and pixel/alpha distinctions from public Spectral
+  Ghost, Shadow Slime, and Flame Elemental. The focused gate caught and
+  repaired one detached lower-prong pixel and duplicate eye pixels before
+  freeze; the exact repaired five-artifact packet now preserves one connected
+  stepped wick, ribbed cage, single visible core eye, tapered inner flame, and
+  two connected lower flame prongs and reproduces twice. All
+  raw/effects-enabled phase boards were inspected, and the three exact frozen
+  PNGs were opened together in responsive Aseprite. The 24-command matrix,
+  fast suite, and full suite pass with the integration digest and all 232
+  fixtures exact. This is not designer approval: Lantern Mote remains private,
+  uncommitted, unpushed, unregistered, and fixture-free pending an explicit
+  reply on the exact packet. Effects, specialist/elite Will-o-Wisp, Changeling,
+  Kelpie, release, and EN-E08 remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3564,7 +3560,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common, Falseface Adept specialist, and Grand Pretender elite Doppelgangers approved and published; one private common Will-o-Wisp gate open`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote common Will-o-Wisp candidate frozen and awaiting exact visual approval`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3904,10 +3900,65 @@ assembler.
   digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: open only one private common Will-o-Wisp candidate from
-  this clean publication reconciliation. Do not register Doppelganger, generate
-  fixtures, implement runtime copying, add effects, start another Will-o-Wisp
-  role or later family, release, or advance EN-E08.
+- Historical next action: the designer's later `Approved lets do next`
+  response opened only the private common Lantern Mote candidate below.
+  Doppelganger remains unregistered and fixture-free; effects, later
+  roles/families, release, and EN-E08 remain closed.
+
+#### Will-o-Wisp Lantern Mote complete suite candidate - approval pending
+
+- Gate ID: `en-e07-will-o-wisp-lantern-mote-full-v1`; status: `candidate` on
+  `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean published
+  Grand Pretender reconciliation
+  `3ddbe159360f16844d167ecc753d6b767b7e5549`.
+- Authorization: after Grand Pretender was visually approved, committed,
+  pushed, and reconciled, the designer replied `Approved lets do next` on
+  2026-08-10. The family order and one-complete-sprite cadence open only one
+  private common Will-o-Wisp.
+- Style/silhouette contract: a small-to-medium hovering marsh lantern using a
+  connected stepped wick, broad ribbed cage, single visible core eye, tapered
+  inner flame, and two connected lower flame prongs. It must not read as the
+  public Spectral Ghost robe, Shadow Slime dome, Flame Elemental blob,
+  humanoid Living Shadow, or a detached particle cluster. The first focused
+  run caught a lower-prong pixel detaching in low phases and duplicate eye
+  pixels in pinch/fold phases; both were repaired before freeze.
+- Scope: one private 80-frame common Will-o-Wisp. Cast aliases Attack; Death
+  aliases Hurt H1,H2,H2,H2. Aura, bloom, glow, detached embers, loose sparks,
+  smoke, afterimages, trails, light pools, projectiles, impacts, and
+  illumination remain external.
+- Focused validation: 80/80 connected, bounded, hovering hard-alpha frames;
+  80/80 pixel and alpha distinctions from public Spectral Ghost, Shadow Slime,
+  and Flame Elemental; 72/72 colored frames; 8/8 exact white flashes; 54/54
+  expected single-eye views; opaque range 146-154; Complete B +5,570; Form
+  changes 5,850. Grand Pretender remains exact; public 80/259 and fixtures are
+  unchanged.
+- Candidate digest:
+  `f50a0c6f08b63dde7bad06542140123c5d6bb7fb419b7df2789cffa441a9ebb8`.
+- Evidence SHA-256: raw
+  `a97a52022736cc0b471e7d14d714d779dbdd622d6f3d5936c5e0c58a438a370c`;
+  Complete B + Form
+  `71be29714f2bfcba373ec8c072102e11dc4213a2350ed7a73ace4eff586a40b7`;
+  comparison
+  `54ae19c61dec1a4a8566dc75153201f04bb1a5e6df082896eb05a7ebad0eb58e`;
+  raw GIF `33b000d802955afa79aee7a33ffd5b42c2867c15f1c7caad3a8828da678ff7d7`;
+  Complete B + Form GIF
+  `9308e786118a54a847acad7593e28cbab1ab2b41e272989744b948e6bea3e8bd`.
+  Two post-freeze generations reproduce all five hashes exactly.
+- Visual inspection: the comparison, both full-suite boards, and all eight
+  raw/effects-enabled phase boards were inspected at original detail. The
+  three exact frozen PNGs were opened together in responsive Aseprite 1.3.17.2.
+  This is inspection evidence, not designer approval.
+- Broad validation: the 24-command protected predecessor/candidate/integration
+  matrix passed in 16.0s, `npm.cmd run check:fast` passed in 55.6s, and full
+  `npm.cmd run check` passed in 108.4s. The approved 1,200-frame integration
+  digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required next action: present the exact frozen packet and wait for explicit
+  designer approval or rejection. Lantern Mote remains private, uncommitted,
+  and unpushed. Do not publish, register Will-o-Wisp, generate fixtures, add
+  effects, name or start the specialist/elite or another family, release, or
+  advance EN-E08 before approval.
 
 ### EN-E08 - Possessed equipment
 

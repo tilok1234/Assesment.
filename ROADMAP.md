@@ -210,6 +210,26 @@ same response opens only one private common Will-o-Wisp candidate from the
 clean publication reconciliation. Registration, fixtures, runtime copying, effects, later
 EN-E07 roles/families, release, and EN-E08 stay closed.
 
+Current isolated EN-E07 art checkpoint (2026-08-10): that candidate is common
+Will-o-Wisp Lantern Mote on
+`codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean Grand Pretender
+reconciliation `3ddbe159360f16844d167ecc753d6b767b7e5549`. Its 146-154-pixel
+hovering form at digest
+`f50a0c6f08b63dde7bad06542140123c5d6bb7fb419b7df2789cffa441a9ebb8`
+uses a connected stepped wick, broad ribbed cage, single core eye, tapered
+inner flame, and two connected lower prongs. The first focused run caught and
+repaired one detached prong pixel and duplicate eye pixels before freeze. All
+80 frames are connected, bounded, hovering, hard-alpha, and pixel/alpha
+distinct from Spectral Ghost, Shadow Slime, and Flame Elemental. The exact
+five-artifact packet reproduces twice. All raw and effects-enabled phase boards
+were inspected, and the three exact PNGs were opened together in responsive
+Aseprite. The 24-command matrix passed in 16.0s, fast validation in 55.6s, and
+full validation in 108.4s with the approved integration digest and 232
+fixtures unchanged. This is not designer approval: Lantern Mote remains
+private, uncommitted, and unpushed pending an explicit reply on the exact
+packet. Registration, fixtures, effects, specialist/elite Will-o-Wisp,
+Changeling, Kelpie, release, and EN-E08 stay closed.
+
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do
 next`. The Living Shadow role order opens only elite Hollowcrown Regent on

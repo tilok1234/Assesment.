@@ -1373,6 +1373,31 @@ response opens only one private common Will-o-Wisp candidate from the clean
 publication reconciliation. Registration, fixtures, runtime copying, effects, later
 Will-o-Wisp roles and families, release, and EN-E08 remain closed.
 
+That candidate is Lantern Mote on
+`codex/en-e07-will-o-wisp-lantern-mote`: a small-to-medium hovering marsh
+lantern with one connected stepped wick, broad ribbed cage, single visible core
+eye, tapered inner flame, and two connected lower flame prongs. The first
+focused run caught one detached lower-prong pixel and duplicate eye pixels;
+both were repaired before the 146-154-pixel suite was frozen. Run
+`npm.cmd run review:enemy-expansion-en-e07-will-o-wisp-lantern-mote` for the
+raw, Complete B + Form, Ghost/Slime/Flame/Mote comparison, and paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-will-o-wisp-lantern-mote` for its
+focused structure, predecessor, artifact, and exposure firewalls. The frozen
+candidate digest is
+`f50a0c6f08b63dde7bad06542140123c5d6bb7fb419b7df2789cffa441a9ebb8`:
+all 80 frames are connected, bounded, genuinely hovering, and pixel/alpha
+distinct from public Spectral Ghost, Shadow Slime, and Flame Elemental; 72/72
+colored frames preserve all four palette ramps, 8/8 flashes are exact white,
+and 54/54 expected views expose exactly one eye. The five-artifact packet
+reproduces byte-for-byte twice. The 24-command protected matrix passed in
+16.0s, the fast suite in 55.6s, and the full suite in 108.4s; the approved
+integration digest and all 232 fixtures remain exact. The comparison, both
+full-suite boards, and all eight raw/effects-enabled phase boards were
+inspected, and the three exact frozen PNGs were opened together in responsive
+Aseprite. Lantern Mote remains private, uncommitted, and unpushed pending
+explicit designer approval of this exact packet. Registration, fixtures,
+effects, later Will-o-Wisp roles/families, release, and EN-E08 remain closed.
+
 ## Approved enemy backlog integration published
 
 Branch `codex/approved-enemy-assembler-integration` composes three explicit

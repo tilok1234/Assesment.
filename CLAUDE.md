@@ -108,6 +108,29 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   registration, fixtures, effects, later roles/families, release, or another
   gate.
 - Current isolated art approval checkpoint:
+  `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean published
+  Grand Pretender reconciliation `3ddbe159360f16844d167ecc753d6b767b7e5549`,
+  contains one private common Will-o-Wisp Lantern Mote candidate. Its frozen
+  80-frame digest is
+  `f50a0c6f08b63dde7bad06542140123c5d6bb7fb419b7df2789cffa441a9ebb8`.
+  All frames are connected, one-cell-bounded, genuinely hovering, hard-alpha,
+  and pixel/alpha distinct from public Spectral Ghost, Shadow Slime, and Flame
+  Elemental. It uses one connected stepped wick, broad ribbed cage, single
+  visible core eye, tapered inner flame, and two connected lower flame prongs;
+  aura, bloom, detached particles, smoke, trails, projectiles, impacts, floor
+  light, and illumination remain external. An initial focused check caught and
+  repaired one detached lower-prong pixel and duplicate eye pixels before
+  freeze. The repaired 146-154-pixel packet reproduces all five artifacts
+  byte-for-byte twice. The 24-command protected matrix passed in 16.0s,
+  `check:fast` in 55.6s, and full `check` in 108.4s with the approved
+  1,200-frame integration digest and all 232 fixtures exact. Both full boards,
+  the comparison, and all eight raw/effects-enabled phase boards were
+  inspected; the three exact frozen PNGs were opened together in responsive
+  Aseprite. This is not designer approval: keep the candidate uncommitted and
+  unpushed until the exact packet is explicitly approved. Do not register
+  Will-o-Wisp, generate fixtures, add effects, name or start another
+  Will-o-Wisp role or family, release, or advance EN-E08.
+- Approved preceding art checkpoint (Grand Pretender):
   `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean published
   Falseface Adept reconciliation `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`,
   contains one private elite Doppelganger Grand Pretender. Its approved frozen
