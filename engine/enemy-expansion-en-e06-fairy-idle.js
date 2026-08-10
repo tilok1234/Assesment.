@@ -101,7 +101,7 @@ export const EN_E06_CONTRACT_CARDS = deepFreeze([
     externalEffects: ['water arcs', 'mist', 'petals', 'elemental flares', 'ground ripples'],
     variants: [
       { id: 'spring-dancer', name: 'Spring Dancer', role: 'common', status: 'implemented-full-approved', brief: 'Clear humanoid Nymph with flowing hair, ribbon-like dress edges, and a light spring identity.' },
-      { id: 'mist-weaver', name: 'Mist Weaver', role: 'specialist', status: 'planned', brief: 'Veiled Nymph caster whose mist layers remain external effects.' },
+      { id: 'mist-weaver', name: 'Mist Weaver', role: 'specialist', status: 'implemented-full-candidate', brief: 'Veiled Nymph caster whose mist layers remain external effects.' },
       { id: 'rivercrown-muse', name: 'Rivercrown Muse', role: 'elite', status: 'planned', brief: 'Regal river Nymph with a broad flowing crown and self-contained character silhouette.' },
     ],
   }),

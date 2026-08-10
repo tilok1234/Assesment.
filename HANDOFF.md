@@ -15,10 +15,63 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Spring Dancer Approved And Published
+## Immediate Continuation Checkpoint - Mist Weaver Awaiting Visual Approval
 
-Start here in a new task. This is the current clean stopping checkpoint; the
-exact private candidate was visually approved, committed, and pushed.
+Start here in a new task. This is the current stopping checkpoint; the exact
+private candidate is frozen for review and must not be committed or published
+before explicit visual approval.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e06-nymph-mist-weaver`, based exactly on clean pushed
+  Spring Dancer handoff `6e63e95d5e6cf653ad37299766f10c3d3e3c0b2d`.
+- Authorization: after Spring Dancer was approved, committed, pushed, and
+  reconciled, the designer said `lets  do next` on 2026-08-10. Under the EN-E06
+  Nymph role order and one-complete-sprite cadence, this opens only specialist
+  Mist Weaver.
+- Scope: one private 80-frame specialist Nymph across Idle F1-F2, Walk W1-W4,
+  Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
+- Identity: a slender veiled fey with midnight crescent cowl, horizontal aqua
+  face veil, broad indigo shoulder mantle, connected bell sleeves, woven sash,
+  silver clasps, and a grounded divided robe.
+- Motion: close-hand gather, veiled focus lift, two-hand outward release, and
+  crossed-sleeve recovery. Mist, fog, vapor, water arcs, ripples, droplets,
+  sparkles, elemental flares, detached veil trails, and impacts remain external.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded hard-alpha
+  frames; 80/80 pixel and alpha-silhouette distinctions from public Elf Mage,
+  approved Spring Dancer, and approved Spore Cantor; 72/72 colored identity
+  frames; 8/8 exact white flashes; opaque range 280-324; 7,854 Complete B
+  additions; 11,425 Form changes.
+- Broader validation: all fifteen EN-E06 focused gates and the frozen
+  1,200-frame approved-integration gate pass; `check:fast` passes in 58.3s and
+  full `check` in 107.2s with all 232 fixtures valid and untouched.
+- Frozen candidate digest:
+  `e57a0af441f895fe376f2696d859a97d84564ddf034235d3b237b2cf637520da`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `8a10affbdd26d23ee7071ed6a19c723d3fc5f095d325064f855c2577eb830f01` /
+  `79f2876c8bed63d9f1b68cd4cc6d5308f6aa42939b6a424234ac4bd3bacd6b9a`;
+  Elf/Dancer/Spore/Mist `1520x548` comparison
+  `4cd1153281213823dafb812edd3b1b1cb11a1e6279f772fb84eba65f888cb41f`;
+  raw / Complete B + Form `640x672` GIFs
+  `ddc0b6bbd45f5d33d4e79f58f1ae2a47ddf81ee7e7b02ad4ca35d4a1bd9b03bc` /
+  `33712c7db8b0b30b4a53d4ab16eae90301c0d96bf8c2f5c2cc1777890ca011a3`.
+- Protected state: all fourteen approved Fairy, Hag, Dryad, Redcap, and Spring
+  Dancer digests remain exact; public catalog remains 80/259 with no public
+  Nymph; all 232 committed fixtures remain untouched.
+- Publication state: no Mist Weaver implementation or approval commit exists;
+  review artifacts remain ignored evidence.
+- Visual evidence: the three exact PNG boards are open together in Aseprite for
+  direct review.
+- Required next action: present those boards and both GIFs, and await explicit
+  approval. Do not commit,
+  publish, register Nymph, generate fixtures, begin Rivercrown Muse, add effects,
+  release, or open EN-E07.
+
+## Approved Preceding Checkpoint - Spring Dancer Published
+
+This records the clean published predecessor for the active Mist Weaver visual
+review gate. The exact private candidate was visually approved, committed, and
+pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-nymph-spring-dancer`, based exactly on clean pushed

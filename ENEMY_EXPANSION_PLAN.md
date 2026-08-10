@@ -13,20 +13,18 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-10): after Bloodcap Reaver was approved, committed,
-  pushed, and reconciled, the designer's `lets do next` opened only the first
-  Nymph role, one complete common Spring Dancer on
-  `codex/en-e06-nymph-spring-dancer`. Its frozen private 80-frame implementation
+- Current art gate (2026-08-10): after Spring Dancer was approved, committed,
+  pushed, and reconciled, the designer's `lets  do next` opened only the second
+  Nymph role, one complete specialist Mist Weaver on
+  `codex/en-e06-nymph-mist-weaver`. Its frozen private 80-frame candidate
   passes connected, one-cell-bounded, grounded, hard-alpha, alias, mirror, and
   80/80 pixel plus alpha-silhouette distinction gates against public Elf Mage,
-  approved Bramblewing Scout, and approved Grove Tender at digest
-  `b68906d962e16611384e419610324c6a9934d63ab329963f0734e83255dabe8c`.
+  approved Spring Dancer, and approved Spore Cantor at digest
+  `e57a0af441f895fe376f2696d859a97d84564ddf034235d3b237b2cf637520da`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
-  was opened together in Aseprite and visually approved on 2026-08-10. Frozen
-  implementation `9d6366b0c5456704137aadfbbec9a67eccb5fd7c` and approval record
-  `eae49376fd7bc4dd315168cb2989293de4a73f55` are committed and pushed. Mist
-  Weaver, Rivercrown Muse, EN-E07, fixtures, effects, registration changes, and
-  release remain closed.
+  is generated and awaiting explicit visual approval. No Mist Weaver commit or
+  publication is authorized. Rivercrown Muse, EN-E07, fixtures, effects,
+  registration changes, and release remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -2866,7 +2864,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `Spring Dancer approved and privately published; no later Nymph gate active`
+- Status: `Mist Weaver complete 80-frame candidate frozen; visual approval gate active`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3472,6 +3470,40 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   `eae49376fd7bc4dd315168cb2989293de4a73f55` are committed and pushed on the
   tracked branch. Stop before Mist Weaver, Rivercrown Muse, registration,
   fixtures, effects, release, or EN-E07 without another explicit authorization.
+
+#### Nymph Mist Weaver complete suite awaiting visual approval
+
+- Gate ID: `en-e06-nymph-mist-weaver-full-v1`; status: `candidate` on
+  `codex/en-e06-nymph-mist-weaver`, based exactly on clean Spring Dancer
+  handoff `6e63e95d5e6cf653ad37299766f10c3d3e3c0b2d`.
+- Authorization: after Spring Dancer publication, the designer said
+  `lets  do next`; the Nymph role order opens only specialist Mist Weaver.
+- Scope: one private complete 80-frame specialist Nymph. Rivercrown Muse,
+  registration, fixtures, effects, release, and EN-E07 remain closed.
+- Identity and motion: crescent cowl, horizontal face veil, broad layered
+  mantle, connected bell sleeves, woven sash, grounded divided robe, close-hand
+  gather, veiled lift, two-hand outward release, crossed recovery, exact
+  Cast/Death aliases, and exact side mirrors.
+- Validation: 80/80 connected, bounded, grounded hard-alpha frames; 80/80 pixel
+  and alpha distinctions from Elf Mage, Spring Dancer, and Spore Cantor; 72/72
+  colored frames; 8/8 white flashes; opaque range 280-324; Complete B +7,854;
+  Form changes 11,425. All fifteen EN-E06 gates and approved integration pass;
+  `check:fast` passes in 58.3s and full `check` in 107.2s with 232 fixtures valid.
+- Candidate digest:
+  `e57a0af441f895fe376f2696d859a97d84564ddf034235d3b237b2cf637520da`.
+- Evidence SHA-256: raw
+  `8a10affbdd26d23ee7071ed6a19c723d3fc5f095d325064f855c2577eb830f01`;
+  Complete B + Form
+  `79f2876c8bed63d9f1b68cd4cc6d5308f6aa42939b6a424234ac4bd3bacd6b9a`;
+  comparison
+  `4cd1153281213823dafb812edd3b1b1cb11a1e6279f772fb84eba65f888cb41f`;
+  raw GIF `ddc0b6bbd45f5d33d4e79f58f1ae2a47ddf81ee7e7b02ad4ca35d4a1bd9b03bc`;
+  Complete B + Form GIF
+  `33712c7db8b0b30b4a53d4ab16eae90301c0d96bf8c2f5c2cc1777890ca011a3`.
+- Visual evidence: the three exact frozen PNG boards are open together in
+  Aseprite for direct review; both synchronized GIFs are presented alongside
+  them.
+- Publication: none. Stop for exact visual approval before any commit or push.
 
 ### EN-E07 - Shapeshifters and apparitions
 

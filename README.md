@@ -1149,7 +1149,20 @@ on 2026-08-10. Frozen implementation
 `9d6366b0c5456704137aadfbbec9a67eccb5fd7c` and approval record
 `eae49376fd7bc4dd315168cb2989293de4a73f55` are committed and pushed on the
 tracked branch. It remains private. No registration, later Nymph, fixture,
-effect, release, or EN-E07 work is open.
+effect, release, or EN-E07 work was opened by that publication.
+
+The separately authorized Mist Weaver is the private specialist Nymph: a
+slender veiled fey with a crescent cowl, horizontal face veil, broad layered
+mantle, connected bell sleeves, woven sash, silver clasps, and grounded divided
+robe. Mist, fog, water arcs, ripples, particles, and detached trails remain
+external. Run `npm.cmd run review:enemy-expansion-en-e06-nymph-mist-weaver` for
+the raw, Complete B + Form, Elf/Dancer/Spore/Mist comparison, and paired GIFs;
+run `npm.cmd run check:enemy-expansion-en-e06-nymph-mist-weaver` for its 80-frame
+structural and firewall gate. It passes at digest
+`e57a0af441f895fe376f2696d859a97d84564ddf034235d3b237b2cf637520da`,
+with 80/80 connected, bounded, grounded frames and 72/72 colored identity
+frames. The exact packet is frozen for visual approval. No commit, publication,
+registration, Rivercrown Muse, fixture, effect, release, or EN-E07 work is open.
 
 ## Approved enemy backlog integration published
 

@@ -176,7 +176,7 @@ check(EN_E06_CONTRACT_CARDS[1].variants[1].status === 'implemented-full-approved
 check(EN_E06_CONTRACT_CARDS[1].variants[2].status === 'implemented-full-approved', 'Blackthorn Matron must retain its full approval');
 check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/implemented-full-approved', 'Dryad role-order status drifted');
   check(EN_E06_CONTRACT_CARDS[3].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Redcap role-order statuses must remain approved');
-check(EN_E06_CONTRACT_CARDS[4].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/planned/planned', 'Nymph role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[4].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-candidate/planned', 'Nymph role-order status drifted');
 
 check(EN_E06_FAIRY_REGISTRY.families.length === 1, 'the full candidate registry must contain exactly one family');
 check(EN_E06_FAIRY_REGISTRY.publicFamilies.length === 0, 'the full candidate registry must expose zero public families');
