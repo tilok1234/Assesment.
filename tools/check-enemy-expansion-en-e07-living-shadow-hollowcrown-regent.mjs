@@ -161,10 +161,19 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_HOLLOWCROWN_REGENT_GATE.status === 'candidate'
-    && EN_E07_HOLLOWCROWN_REGENT_GATE.approvedOn === null
-    && EN_E07_HOLLOWCROWN_REGENT_GATE.publishedImplementation === null,
-  'Hollowcrown Regent must remain an unapproved candidate',
+  EN_E07_HOLLOWCROWN_REGENT_GATE.status === 'approved'
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.approvedOn === '2026-08-10'
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.approvedImplementation === 'ffe5f574ab9f06ecfaad83c50a7980254eea7211'
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.publishedImplementation === null
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Hollowcrown Regent approved-local state drifted',
+);
+check(
+  EN_E07_HOLLOWCROWN_REGENT_GATE.approvalEvidence.includes('three exact PNG review boards were opened together in Aseprite')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.approvalEvidence.includes('657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_HOLLOWCROWN_REGENT_GATE.authorizationEvidence.includes('designer replied: approved lets do next')
@@ -197,10 +206,10 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('Stop at the exact frozen Hollowcrown Regent candidate review')
-    && EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('Do not commit')
-    && EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('until the designer explicitly approves'),
-  'candidate stop gate drifted',
+  EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('visually approved')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('bounded approval-record')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('only one private common Doppelganger candidate'),
+  'approved-local publication and next-family gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_HOLLOWCROWN_REGENT_GATE)
@@ -217,7 +226,7 @@ check(
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeElite.id === 'hollowcrown-regent'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeElite.role === 'elite'
-    && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeElite.status === 'implemented-full-candidate'
+    && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeElite.status === 'implemented-full-approved'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.deferredRoles.length === 0,
   'Living Shadow role order or one-active-elite boundary drifted',
 );

@@ -219,7 +219,7 @@ check(
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeElite.id === 'hollowcrown-regent'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeElite.role === 'elite'
-    && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeElite.status === 'implemented-full-candidate'
+    && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeElite.status === 'implemented-full-approved'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.deferredRoles.length === 0,
   'Living Shadow role order or one-active-specialist boundary drifted',
 );

@@ -47,7 +47,7 @@ export const EN_E07_LIVING_SHADOW_CONTRACT_CARD = deepFreeze({
     id: 'hollowcrown-regent',
     name: 'Hollowcrown Regent',
     role: 'elite',
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   styleContract: 'Use chunky one-to-three-pixel forms, a tight dark-violet ramp, hard alpha, and connected negative-space cutouts. Preserve readable head, shoulder, arm, split-leg, and foot anatomy at native 24x24 scale.',

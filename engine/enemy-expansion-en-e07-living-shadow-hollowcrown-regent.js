@@ -35,7 +35,7 @@ export const EN_E07_HOLLOWCROWN_REGENT_CONTRACT = deepFreeze({
   family: 'living-shadow',
   variant: 'hollowcrown-regent',
   role: 'elite',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'three-prong-crown-high-mantle-twin-slit-void-heart-command-bracer-split-leg-living-shadow-v1',
   silhouette: 'A tall grounded Living Shadow elite with a connected three-prong hollow crown, high angular shoulder mantle, paired narrow face slits, a diamond void-heart aperture, command-bracer arms, two armored split legs, and broad throne-step feet. Elite presence comes from crown height, mantle span, and deliberate posture rather than becoming a bulky knight, enlarged Gloam Walker, or another robed caster.',
   identity: 'The approved violet-black Living Shadow ramp, connected crown and mantle, paired pale eye slits, transparent diamond heart, squared command bracers, split greaves, and planted feet establish a self-contained Hollowcrown Regent without baking in a halo, eclipse ring, throne, banner, ray, portal, shadow double, glow, or particles.',
@@ -74,13 +74,18 @@ export const EN_E07_HOLLOWCROWN_REGENT_DATA = deepFreeze({
 
 export const EN_E07_HOLLOWCROWN_REGENT_GATE = deepFreeze({
   id: 'en-e07-living-shadow-hollowcrown-regent-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: '46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After the exact Nightglass Seer was visually approved, committed, pushed, and reconciled at a clean published checkpoint, the designer replied: approved lets do next. The frozen Living Shadow role order is common, specialist, elite, so the one-complete-sprite cadence authorizes only one private elite Hollowcrown Regent 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Cursed Ghost and Shadow Slime plus approved Mist Weaver, Gloam Walker, and Nightglass Seer comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Cursed Ghost and Shadow Slime plus approved Mist Weaver, Gloam Walker, and Nightglass Seer comparison, and paired GIF evidence were presented, and the three exact PNG review boards were opened together in Aseprite, the designer replied: approved lets do next. Approval applies only to candidate digest 657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991; Living Shadow registration, fixtures, effects, another EN-E07 family, release, and EN-E08 remain separate gates.',
+  approvedImplementation: 'ffe5f574ab9f06ecfaad83c50a7980254eea7211',
+  publicationAuthorizedOn: '2026-08-10',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
+  publishedApprovalRecord: null,
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_NIGHTGLASS_SEER_GATE.id,
     artifactSha256: EN_E07_NIGHTGLASS_SEER_GATE.artifactSha256,
@@ -156,7 +161,7 @@ export const EN_E07_HOLLOWCROWN_REGENT_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Stop at the exact frozen Hollowcrown Regent candidate review. Do not commit, publish, register Living Shadow, generate fixtures, add effects, release, start another EN-E07 family, or advance EN-E08 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact Hollowcrown Regent candidate is visually approved and its implementation is committed at ffe5f574ab9f06ecfaad83c50a7980254eea7211. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private common Doppelganger candidate. Do not register Living Shadow, generate fixtures, add effects, release, start another role or family beyond that candidate, or advance EN-E08.',
 });
 
 export const EN_E07_HOLLOWCROWN_REGENT_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -491,7 +496,7 @@ const HOLLOWCROWN_REGENT_VARIANT = deepFreeze({
   name: 'Hollowcrown Regent',
   role: EN_E07_HOLLOWCROWN_REGENT_CONTRACT.role,
   status: EN_E07_HOLLOWCROWN_REGENT_CONTRACT.state,
-  brief: 'A complete elite Living Shadow candidate with a connected three-prong crown, high mantle, paired eye slits, diamond void-heart, command bracers, armored split legs, and throne-step feet; halos, rings, banners, rays, portals, doubles, glow, and particles remain external.',
+  brief: 'An approved complete elite Living Shadow with a connected three-prong crown, high mantle, paired eye slits, diamond void-heart, command bracers, armored split legs, and throne-step feet; halos, rings, banners, rays, portals, doubles, glow, and particles remain external.',
   rendererData: EN_E07_HOLLOWCROWN_REGENT_DATA,
 });
 
@@ -511,7 +516,7 @@ export const EN_E07_HOLLOWCROWN_REGENT_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'hollowcrown-regent',
     scale: 8,
-    notes: 'Awaiting visual approval for one tall grounded Hollowcrown Regent against public Cursed Ghost and Shadow Slime plus approved Mist Weaver, Gloam Walker, and Nightglass Seer. Keep registration, fixtures, effects, Doppelganger, and later Wave 2 work separate.',
+    notes: 'Visually approved as one tall grounded Hollowcrown Regent against public Cursed Ghost and Shadow Slime plus approved Mist Weaver, Gloam Walker, and Nightglass Seer. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, effects, Doppelganger artwork, and later Wave 2 work separate until the clean published reconciliation.',
   },
 });
 
