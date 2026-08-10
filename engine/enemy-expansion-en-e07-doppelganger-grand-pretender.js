@@ -58,7 +58,7 @@ export const EN_E07_GRAND_PRETENDER_CONTRACT = deepFreeze({
   family: 'doppelganger',
   variant: 'grand-pretender',
   role: 'elite',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'fused-three-panel-visage-swept-crest-asymmetric-mantle-layered-split-coat-connected-claiming-hands-grounded-humanoid-v1',
   silhouette: 'A broad but public-humanoid-scale authored Doppelganger elite with one fused three-panel visage, a swept three-point hair crest, asymmetric connected mantle wings, a layered split formal coat, two connected long-finger claiming hands, separated legs, and grounded broad boots. It must read as the family elite without becoming a Living Shadow crown, robed caster, armored monarch, copied actor, detached-mask swarm, or simply an enlarged Falseface Adept.',
   identity: 'The approved pale gray-rose, charcoal-violet, cool-slate, faded-wine, and soft-veil family language is concentrated into a single connected ceremonial default form. A fused tri-seam face, swept crest, opposed mantle folds, layered coat panels, and paired claiming hands establish rank while the authored sheet never copies another actor or bakes in a detached face, mirror, double, reflection, ribbon, glow, or projectile.',
@@ -97,13 +97,18 @@ export const EN_E07_GRAND_PRETENDER_DATA = deepFreeze({
 
 export const EN_E07_GRAND_PRETENDER_GATE = deepFreeze({
   id: 'en-e07-doppelganger-grand-pretender-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: 'b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After the exact repaired Falseface Adept was visually approved, committed, pushed, and reconciled at clean published checkpoint b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c, the designer replied: lets do nezxt. The frozen Doppelganger role order is common, specialist, elite, so the one-complete-sprite cadence authorizes only one private elite Grand Pretender 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Pale Echo and Falseface Adept plus public Cultist Zealot comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact repaired labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Pale Echo and Falseface Adept plus public Cultist Zealot comparison, and paired GIF evidence were presented, and the three exact repaired PNG review boards were opened together in responsive Aseprite, the designer replied: Approved lets do next. Approval applies only to candidate digest 03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb; Doppelganger registration, fixtures, runtime copying, effects, Will-o-Wisp, later families, release, and EN-E08 remain separate gates.',
+  approvedImplementation: '0a8d5094d5e5de575f1966db30fc01d093a866c3',
+  publicationAuthorizedOn: '2026-08-10',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
+  publishedApprovalRecord: null,
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_FALSEFACE_ADEPT_GATE.id,
     artifactSha256: EN_E07_FALSEFACE_ADEPT_GATE.artifactSha256,
@@ -178,7 +183,7 @@ export const EN_E07_GRAND_PRETENDER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Stop at the exact frozen Grand Pretender candidate review. Do not commit, publish, register Doppelganger, generate fixtures, add runtime copying or effects, release, start Will-o-Wisp or another family, or advance EN-E08 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact repaired Grand Pretender candidate is visually approved and its implementation is committed at 0a8d5094d5e5de575f1966db30fc01d093a866c3. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same Approved lets do next response opens only one private common Will-o-Wisp candidate. Do not register Doppelganger, generate fixtures, add runtime copying or effects, release, start another Will-o-Wisp role or later family beyond that candidate, or advance EN-E08.',
 });
 
 export const EN_E07_GRAND_PRETENDER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -472,7 +477,7 @@ const GRAND_PRETENDER_VARIANT = deepFreeze({
   name: 'Grand Pretender',
   role: EN_E07_GRAND_PRETENDER_CONTRACT.role,
   status: EN_E07_GRAND_PRETENDER_CONTRACT.state,
-  brief: 'A complete elite Doppelganger candidate with one fused three-panel visage, swept hair crest, asymmetric connected mantle, layered split formal coat, paired connected claiming hands, separated legs, and planted boots; copied actors, detached faces, doubles, reflections, loose morph pieces, glow, and particles remain external.',
+  brief: 'An approved complete elite Doppelganger with one fused three-panel visage, swept hair crest, asymmetric connected mantle, layered split formal coat, paired connected claiming hands, separated legs, and planted boots; copied actors, detached faces, doubles, reflections, loose morph pieces, glow, and particles remain external.',
   rendererData: EN_E07_GRAND_PRETENDER_DATA,
 });
 
@@ -492,7 +497,7 @@ export const EN_E07_GRAND_PRETENDER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'grand-pretender',
     scale: 8,
-    notes: 'Awaiting visual approval for one broad public-humanoid-scale Grand Pretender against approved Pale Echo and Falseface Adept plus public Cultist Zealot. Keep registration, fixtures, runtime copying, effects, Will-o-Wisp, and later Wave 2 work separate.',
+    notes: 'Visually approved as one broad public-humanoid-scale Grand Pretender against approved Pale Echo and Falseface Adept plus public Cultist Zealot. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, runtime copying, effects, Will-o-Wisp, and later Wave 2 work separate until the clean published reconciliation.',
   },
 });
 

@@ -49,7 +49,7 @@ export const EN_E07_DOPPELGANGER_CONTRACT_CARD = deepFreeze({
     id: 'grand-pretender',
     name: 'Grand Pretender',
     role: 'elite',
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   styleContract: 'Use chunky one-to-three-pixel humanoid forms, hard alpha, an authored neutral default body, readable face and limb anatomy, and controlled asymmetry. Do not copy a player or public enemy sprite into the authored sheet.',

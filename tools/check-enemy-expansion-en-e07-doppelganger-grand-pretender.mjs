@@ -151,10 +151,19 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_GRAND_PRETENDER_GATE.status === 'candidate'
-    && EN_E07_GRAND_PRETENDER_GATE.approvedOn === null
-    && EN_E07_GRAND_PRETENDER_GATE.publishedImplementation === null,
-  'Grand Pretender must remain an unapproved candidate',
+  EN_E07_GRAND_PRETENDER_GATE.status === 'approved'
+    && EN_E07_GRAND_PRETENDER_GATE.approvedOn === '2026-08-10'
+    && EN_E07_GRAND_PRETENDER_GATE.approvedImplementation === '0a8d5094d5e5de575f1966db30fc01d093a866c3'
+    && EN_E07_GRAND_PRETENDER_GATE.publishedImplementation === null
+    && EN_E07_GRAND_PRETENDER_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Grand Pretender approved-local state drifted',
+);
+check(
+  EN_E07_GRAND_PRETENDER_GATE.approvalEvidence.includes('three exact repaired PNG review boards were opened together in responsive Aseprite')
+    && EN_E07_GRAND_PRETENDER_GATE.approvalEvidence.includes('designer replied: Approved lets do next')
+    && EN_E07_GRAND_PRETENDER_GATE.approvalEvidence.includes('03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb')
+    && EN_E07_GRAND_PRETENDER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_GRAND_PRETENDER_GATE.baseCheckpoint === 'b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c'
@@ -188,10 +197,10 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('Stop at the exact frozen Grand Pretender candidate review')
-    && EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('Do not commit')
-    && EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('until the designer explicitly approves'),
-  'candidate stop gate drifted',
+  EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('visually approved')
+    && EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('bounded approval-record')
+    && EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('only one private common Will-o-Wisp candidate'),
+  'approved-local publication and next-family gate drifted',
 );
 check(
   JSON.stringify(EN_E07_DOPPELGANGER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
@@ -202,7 +211,7 @@ check(
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.id === 'grand-pretender'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.role === 'elite'
-    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.status === 'implemented-full-candidate'
+    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.status === 'implemented-full-approved'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.length === 0,
   'Doppelganger role order or one-active-elite boundary drifted',
 );

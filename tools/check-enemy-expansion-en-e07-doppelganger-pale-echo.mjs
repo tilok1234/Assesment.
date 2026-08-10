@@ -202,7 +202,7 @@ check(
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.id === 'grand-pretender'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.role === 'elite'
-    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.status === 'implemented-full-candidate'
+    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.status === 'implemented-full-approved'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.length === 0,
   'Doppelganger role order or active-elite boundary drifted',
 );
