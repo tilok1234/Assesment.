@@ -995,8 +995,14 @@ external. The focused gate freezes all 80 frames at digest
 `c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`,
 proves 80/80 pixel and alpha distinctions from Bandit Thug, Cultist Acolyte,
 and Dark Elf, and keeps approved Hollowcrown exact. Its exact five-artifact
-packet reproduces byte-for-byte but still awaits visual approval; the module
-is not committed, published, registered, or fixture-backed.
+packet reproduces byte-for-byte and was visually approved after the three exact
+repaired PNGs were opened together in Aseprite and the designer replied
+`approved lets do next`. Implementation
+`0628135b84725836c552e13db797540a965854cb` and approval record
+`182938381ac39812434518d0216e6e9796367bbb` are committed locally; bounded
+branch publication is authorized. The module remains private, unregistered,
+and fixture-free. After a clean published reconciliation, the same response
+opens only one private specialist Doppelganger candidate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

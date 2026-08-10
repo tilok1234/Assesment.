@@ -1296,9 +1296,14 @@ all three public comparisons; 72/72 colored frames preserve its palette; 8/8
 flashes are exact white. The exact five-artifact packet reproduces
 byte-for-byte. The protected 21-gate matrix, fast suite, and full suite pass;
 the approved 1,200-frame integration digest and all 232 fixtures remain exact.
-The candidate is not visually approved, committed, or published.
-Doppelganger registration, fixtures, runtime copying, effects, later roles and
-families, release, and EN-E08 remain closed.
+The three exact repaired PNGs were opened together in Aseprite, both GIFs were
+presented, and the designer replied `approved lets do next`. Implementation
+`0628135b84725836c552e13db797540a965854cb` and approval record
+`182938381ac39812434518d0216e6e9796367bbb` are committed locally; bounded
+documentation reconciliation and branch publication are authorized. After a
+clean published reconciliation, the same response opens only one private
+specialist Doppelganger candidate. Registration, fixtures, runtime copying,
+effects, the elite and later families, release, and EN-E08 remain closed.
 
 ## Approved enemy backlog integration published
 

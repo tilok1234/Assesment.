@@ -23,11 +23,12 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Pale Echo Candidate Awaiting Visual Approval
+## Immediate Publication Checkpoint - Pale Echo Approved Locally
 
-Start here in a new task. This is the sole active isolated art gate. The exact
-private common Doppelganger candidate is hash-frozen and technically validated,
-but it is not visually approved, committed, or published.
+Start here in a new task. The exact private common Doppelganger is hash-frozen,
+technically validated, visually approved, and committed locally. Its bounded
+documentation reconciliation and branch publication are authorized but not yet
+recorded as a verified remote checkpoint.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-doppelganger-pale-echo`, based exactly on clean
@@ -60,8 +61,9 @@ but it is not visually approved, committed, or published.
 - Effects firewall: copied actor silhouettes, mirror doubles, reflection
   planes, peeling faces, loose skin ribbons, afterimages, glow, particles,
   projectiles, and impact flashes remain external. Doppelganger registration,
-  fixtures, public exposure, runtime copying, specialist/elite roles,
-  Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 remain closed.
+  fixtures, public exposure, runtime copying, the elite, Will-o-Wisp,
+  Changeling, Kelpie, release, and EN-E08 remain closed. The specialist opens
+  only after the approved common reaches a clean published reconciliation.
 - Focused validation passes: 80/80 connected, one-cell-bounded, grounded
   hard-alpha frames; 80/80 pixel and alpha-silhouette distinctions from public
   Bandit Thug, Cultist Acolyte, and Dark Elf; 72/72 colored palette frames; 8/8
@@ -81,6 +83,15 @@ but it is not visually approved, committed, or published.
   `2eb5e255c6196c178aa37c69a91d08cdb6ce9b5d5936bdfa32bb3acdfe14d125`.
   Two repaired generations reproduce all five hashes exactly; artifacts remain
   ignored under `enemy-expansion-review/en-e07-doppelganger-pale-echo/`.
+- Approval/publication: the three exact repaired PNG boards were opened
+  together in Aseprite, both exact GIFs were presented, and the designer
+  replied `approved lets do next` on 2026-08-10. Approval applies only to the
+  frozen digest and hashes above. Implementation
+  `0628135b84725836c552e13db797540a965854cb` and approval record
+  `182938381ac39812434518d0216e6e9796367bbb` are committed locally. Standing
+  approved-work permission authorizes the bounded handoff commit and branch
+  push; it does not authorize registration, fixtures, runtime copying,
+  effects, the elite, another family, release, or EN-E08.
 - Broad validation passes: the 21-command protected matrix (all 16 EN-E06
   gates, Gloam, Nightglass, Hollowcrown, Pale Echo, and the approved
   1,200-frame integration gate) completed in 7.7s; `npm.cmd run check:fast`
@@ -88,11 +99,9 @@ but it is not visually approved, committed, or published.
   frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required visual action: inspect the repaired raw, Complete B + Form,
-  four-way comparison, and all four animation-phase boards; open the three
-  exact PNG boards together in Aseprite; present both exact GIFs; and ask for
-  explicit approval of the digest above. Do not commit or push before that
-  approval.
+- Required next action: commit this approval-aware handoff, push the branch,
+  verify the remote hash, and reconcile the published fields. Then open only
+  one private specialist Doppelganger candidate from the clean publication.
 
 ## Approved Preceding Checkpoint - Hollowcrown Regent Published
 

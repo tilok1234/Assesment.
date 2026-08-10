@@ -13,21 +13,23 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-10): Hollowcrown Regent is approved and
-  published through clean reconciliation
-  `6ff54c3a926436083675ec8f7e2d0230cc073ac5`. The designer replied `approved
-  lets do next`. EN-E07 names Living Shadow then Doppelganger priority-first,
-  so this opens only one private common Pale Echo on
-  `codex/en-e07-doppelganger-pale-echo`. Its repaired public-humanoid-scale
-  80-frame candidate is frozen at digest
+- Current stopping checkpoint (2026-08-10): common Doppelganger Pale Echo on
+  `codex/en-e07-doppelganger-pale-echo` is based exactly on clean published
+  Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`.
+  Its repaired public-humanoid-scale 80-frame candidate is frozen at digest
   `c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`.
   It passes 80/80 connected, one-cell-bounded, grounded, hard-alpha, alias,
   mirror, and pixel/alpha distinctions from public Bandit Thug, Cultist
   Acolyte, and Dark Elf. The exact raw, Complete B + Form, four-way comparison,
-  and paired GIF packet reproduces all five recorded hashes. It is not visually
-  approved, committed, or published. Doppelganger registration, fixtures,
-  runtime copying, effects, later roles and families, release, and EN-E08 remain
-  closed.
+  and paired GIF packet reproduces all five recorded hashes. The exact repaired
+  packet was opened in Aseprite and the designer replied `approved lets do
+  next`. Implementation `0628135b84725836c552e13db797540a965854cb` and
+  approval record `182938381ac39812434518d0216e6e9796367bbb` are committed
+  locally; bounded documentation reconciliation and branch publication are
+  authorized. After a clean published reconciliation, the same response opens
+  only one private specialist Doppelganger candidate. Registration, fixtures,
+  runtime copying, effects, the elite and later families, release, and EN-E08
+  remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3556,7 +3558,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common Doppelganger candidate awaiting visual approval`
+- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common Doppelganger approved locally with bounded publication pending`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3724,9 +3726,9 @@ assembler.
   common Pale Echo candidate below. Keep Living Shadow registration, fixtures,
   effects, other EN-E07 family artwork, release, and EN-E08 closed.
 
-#### Doppelganger Pale Echo complete suite candidate
+#### Doppelganger Pale Echo complete suite approved; publication pending
 
-- Gate ID: `en-e07-doppelganger-pale-echo-full-v1`; status: `candidate` on
+- Gate ID: `en-e07-doppelganger-pale-echo-full-v1`; status: `approved` on
   `codex/en-e07-doppelganger-pale-echo`, based exactly on clean published
   Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`.
 - Authorization: after Hollowcrown Regent was visually approved, committed,
@@ -3760,17 +3762,23 @@ assembler.
   Complete B + Form GIF
   `2eb5e255c6196c178aa37c69a91d08cdb6ce9b5d5936bdfa32bb3acdfe14d125`.
   Two repaired generations reproduce all five hashes exactly.
+- Approval/publication: after the exact repaired packet was presented and the
+  three exact PNG boards were opened together in Aseprite, the designer replied
+  `approved lets do next` on 2026-08-10. Approval is restricted to the frozen
+  digest above. Implementation `0628135b84725836c552e13db797540a965854cb`
+  and approval record `182938381ac39812434518d0216e6e9796367bbb` are
+  committed locally; bounded branch publication is authorized.
 - Broad validation: the 21-command protected predecessor/candidate/integration
   matrix passed in 7.7s, `npm.cmd run check:fast` passed in 56.8s, and full
   `npm.cmd run check` passed in 110.1s. The approved 1,200-frame integration
   digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: inspect the repaired boards, open the three PNGs
-  together in Aseprite, present both GIFs, and request explicit visual approval.
-  Do not commit or publish before approval. Keep Doppelganger registration,
-  fixtures, runtime copying, effects, later roles and EN-E07 families, release,
-  and EN-E08 closed.
+- Required next action: publish the bounded approval checkpoint and reconcile
+  the verified remote state. After that clean publication, the same approval
+  response opens only one private specialist Doppelganger candidate. Keep
+  registration, fixtures, runtime copying, effects, the elite and later EN-E07
+  families, release, and EN-E08 closed.
 
 ### EN-E08 - Possessed equipment
 

@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current isolated art candidate:
+- Current approved-local art checkpoint:
   `codex/en-e07-doppelganger-pale-echo`, based exactly on clean published
   Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`,
   contains one private common Doppelganger Pale Echo. Its repaired frozen
@@ -122,11 +122,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   before freeze; the repaired public-humanoid-scale version is 186-245 opaque
   pixels. The five exact review artifacts reproduce byte-for-byte, and the
   protected 21-gate matrix, `check:fast`, and full `check` pass with the
-  approved 1,200-frame integration digest and all 232 fixtures exact. The
-  candidate is not visually approved, committed, or published. Do not
-  register Doppelganger, generate fixtures, implement runtime copying, add
-  effects, start another role or family, release, or advance EN-E08. Do not
-  commit or push this candidate before explicit approval of the exact digest.
+  approved 1,200-frame integration digest and all 232 fixtures exact. The three
+  exact repaired PNGs were opened together in Aseprite, both GIFs were
+  presented, and the designer replied `approved lets do next`. Implementation
+  `0628135b84725836c552e13db797540a965854cb` and approval record
+  `182938381ac39812434518d0216e6e9796367bbb` are committed locally; bounded
+  documentation reconciliation and branch publication are authorized. After a
+  clean published reconciliation, the same response opens only one private
+  specialist Doppelganger candidate. Do not register Doppelganger, generate
+  fixtures, implement runtime copying, add effects, start the elite or another
+  family beyond that candidate, release, or advance EN-E08.
 - Approved preceding art checkpoint:
   `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly on clean
   published Nightglass reconciliation `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`,

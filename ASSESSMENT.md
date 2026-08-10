@@ -331,10 +331,15 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   passes 80/80 connected, bounded, grounded, hard-alpha Bandit/Cultist/Dark Elf
   pixel and alpha distinctions at digest
   `c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`.
-  Its exact five-artifact packet reproduces byte-for-byte but is not visually
-  approved, committed, or published. The 21-gate protected matrix, fast suite,
-  and full suite pass; the approved 1,200-frame integration digest and all 232
-  fixtures remain exact.
+  Its exact five-artifact packet reproduces byte-for-byte and was visually
+  approved after the three exact repaired PNGs were opened together in
+  Aseprite and the designer replied `approved lets do next`. Implementation
+  `0628135b84725836c552e13db797540a965854cb` and approval record
+  `182938381ac39812434518d0216e6e9796367bbb` are committed locally; bounded
+  branch publication is authorized. After a clean published reconciliation,
+  the same response opens only one private specialist Doppelganger candidate.
+  The 21-gate protected matrix, fast suite, and full suite pass; the approved
+  1,200-frame integration digest and all 232 fixtures remain exact.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.
