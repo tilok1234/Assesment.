@@ -968,8 +968,13 @@ all 80 candidate frames at digest
 `657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`,
 proves 80/80 pixel and alpha distinctions from Cursed Ghost, Shadow Slime, Mist
 Weaver, Gloam Walker, and Nightglass Seer, and keeps both approved Living Shadow
-digests exact. Its exact review packet is reproducible but still awaits visual
-approval; the module is not committed, published, registered, or fixture-backed.
+digests exact. Its exact review packet is reproducible and was visually approved
+when the designer replied `approved lets do next`. Implementation
+`ffe5f574ab9f06ecfaad83c50a7980254eea7211` and approval record
+`90a06bd34e1bae29becdc380b01895825cf4a969` are committed locally; bounded
+publication is authorized and pending. The module remains private,
+unregistered, and fixture-free. After a clean published reconciliation, the
+same response opens only one private common Doppelganger candidate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

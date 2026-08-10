@@ -1264,9 +1264,13 @@ Cursed Ghost, Shadow Slime, Mist Weaver, Gloam Walker, and Nightglass Seer;
 opaque range is 244-283. The exact five-artifact packet reproduces
 byte-for-byte. The protected 20-gate matrix, fast suite, and full suite pass;
 the approved 1,200-frame integration digest and all 232 fixtures remain exact.
-The candidate is not visually approved, committed, or published.
-Registration, fixtures, effects, another EN-E07 family, release, and EN-E08
-remain closed.
+The exact packet was opened in Aseprite and visually approved when the designer
+replied `approved lets do next`. Implementation
+`ffe5f574ab9f06ecfaad83c50a7980254eea7211` and approval record
+`90a06bd34e1bae29becdc380b01895825cf4a969` are committed locally; bounded
+publication is authorized and pending. After a clean published reconciliation,
+only one private common Doppelganger candidate opens. Registration, fixtures,
+effects, other EN-E07 family artwork, release, and EN-E08 remain closed.
 
 ## Approved enemy backlog integration published
 

@@ -311,10 +311,14 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   Cursed Ghost/Shadow Slime/Mist Weaver/Gloam Walker/Nightglass Seer pixel and
   alpha distinctions at digest
   `657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`.
-  The exact review packet is reproducible but not visually approved, committed,
-  or published. The protected 20-gate matrix, fast suite, and full suite pass;
-  the approved 1,200-frame integration digest and all 232 fixtures remain
-  exact.
+  The exact review packet is reproducible and was visually approved when the
+  designer replied `approved lets do next`. Implementation
+  `ffe5f574ab9f06ecfaad83c50a7980254eea7211` and approval record
+  `90a06bd34e1bae29becdc380b01895825cf4a969` are committed locally with
+  bounded publication pending. The protected 20-gate matrix, fast suite, and
+  full suite pass; the approved 1,200-frame integration digest and all 232
+  fixtures remain exact. A clean published reconciliation opens only one
+  private common Doppelganger candidate.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

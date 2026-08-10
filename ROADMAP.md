@@ -189,10 +189,14 @@ paired eye slits, a diamond void-heart, command bracers, armored split legs,
 and throne-step feet. All 80 frames are connected, bounded, grounded, and
 pixel/alpha distinct from Cursed Ghost, Shadow Slime, Mist Weaver, Gloam
 Walker, and Nightglass Seer. The exact five-artifact packet is hash-frozen but
-not visually approved, committed, or published. The protected 20-gate matrix,
-fast suite, and full suite pass with the approved integration and 232 fixtures
-unchanged. Registration, fixtures, effects, Doppelganger and the remaining
-EN-E07 families, release, and EN-E08 stay closed.
+was visually approved when the designer replied `approved lets do next`.
+Implementation `ffe5f574ab9f06ecfaad83c50a7980254eea7211` and approval
+record `90a06bd34e1bae29becdc380b01895825cf4a969` are committed locally;
+bounded publication is pending. The protected 20-gate matrix, fast suite, and
+full suite pass with the approved integration and 232 fixtures unchanged. A
+clean published reconciliation opens only one private common Doppelganger
+candidate. Registration, fixtures, effects, other EN-E07 family artwork,
+release, and EN-E08 stay closed.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): after Gloam Walker was
 approved, published, and reconciled at `98d3781`, the designer said `lets do

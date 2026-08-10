@@ -23,11 +23,11 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Hollowcrown Regent Candidate Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Hollowcrown Regent Approved, Publication Pending
 
-Start here in a new task. This is the sole active isolated art gate. The exact
-private elite candidate is hash-frozen and focused-validated, but it is not
-visually approved, committed, or published.
+Start here in a new task. The exact private elite is hash-frozen, technically
+validated, visually approved, and committed locally. Its bounded publication
+is authorized but has not yet been pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly on
@@ -87,10 +87,21 @@ visually approved, committed, or published.
   digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required visual action: inspect the current raw, Complete B + Form, six-way
-  comparison, and all four animation-phase boards; open the three exact PNG
-  boards together in Aseprite; present both exact GIFs; and ask for explicit
-  approval of the digest above. Do not commit or push before that approval.
+- Visual approval: the exact comparison and paired GIFs were presented after
+  the three exact PNG boards were opened together in Aseprite; the designer
+  replied `approved lets do next` on 2026-08-10. Approval applies only to digest
+  `657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`.
+- Local commits: implementation
+  `ffe5f574ab9f06ecfaad83c50a7980254eea7211` and approval record
+  `90a06bd34e1bae29becdc380b01895825cf4a969`.
+- Publication state: the standing permission above authorizes this bounded
+  implementation, approval-record, documentation, and branch push. The branch
+  is not yet published at this checkpoint.
+- Required next action: commit this current-state reconciliation and push the
+  exact chain. After a clean published reconciliation, the same `approved lets
+  do next` response opens only one private common Doppelganger candidate. Do
+  not register Living Shadow, generate fixtures, add effects, open another
+  role or family beyond that candidate, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Nightglass Seer Published
 
