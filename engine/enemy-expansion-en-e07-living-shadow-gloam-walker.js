@@ -94,10 +94,14 @@ export const EN_E07_GLOAM_WALKER_GATE = deepFreeze({
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After the exact Rivercrown Muse was visually approved and its implementation and approval commits were pushed, the designer said: lets do next. Rivercrown completes the fifth and final EN-E06 family; the frozen plan queues EN-E07 next and names Living Shadow priority-first. Under the one-complete-sprite cadence, this authorizes only one private common Living Shadow Gloam Walker 80-frame candidate.',
   approvedOn: '2026-08-10',
-  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Cursed Ghost and Shadow Slime plus approved Mist Weaver comparison, and paired GIF evidence were presented, and the three exact PNG review boards were opened together in Aseprite, the designer replied: aaprovced. Approval applies only to candidate digest 131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9 and authorizes its bounded local approval-record commit. Branch publication remains blocked because it would also publish the separately approval-gated Rivercrown reconciliation d785fe56e7d8c98243f948fce615885d5a04fbc3; Living Shadow registration, fixtures, effects, later roles and families, release, and EN-E08 remain separate gates.',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Cursed Ghost and Shadow Slime plus approved Mist Weaver comparison, and paired GIF evidence were presented, and the three exact PNG review boards were opened together in Aseprite, the designer replied: aaprovced. Approval applies only to candidate digest 131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9; Living Shadow registration, fixtures, effects, later roles and families, release, and EN-E08 remain separate gates.',
   approvedImplementation: 'a46f59c1cb0bb751760f2776fe60b5c489806c94',
-  publishedImplementation: null,
-  publicationState: 'blocked-pending-explicit-rivercrown-reconciliation-authorization',
+  publicationAuthorizedOn: '2026-08-10',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
+  publishedImplementation: 'a46f59c1cb0bb751760f2776fe60b5c489806c94',
+  publishedApprovalRecord: '848c7192b6dc2cac8b7ab2dc8725d3859447715d',
+  initialPublishedHandoff: '00d5b436c7398312a5f3a05a482b4cf34cee9ba5',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E06_RIVERCROWN_MUSE_GATE.id,
     artifactSha256: EN_E06_RIVERCROWN_MUSE_GATE.artifactSha256,
@@ -109,7 +113,7 @@ export const EN_E07_GLOAM_WALKER_GATE = deepFreeze({
     publishedImplementation: EN_E06_RIVERCROWN_MUSE_GATE.publishedImplementation,
     approvalRecord: 'ca82f079ff84934edc4ab51a8d406050b9083d2a',
     currentReconciliation: 'd785fe56e7d8c98243f948fce615885d5a04fbc3',
-    reconciliationPublication: 'pending-explicit-push-authorization',
+    reconciliationPublication: 'published',
   },
   artifact: 'enemy-expansion-review/en-e07-living-shadow-gloam-walker/en-e07-living-shadow-gloam-walker-full-suite-raw.png',
   artifactSha256: 'a3389c510a0d8c16a50a19be6eaebac15d452a056531d71c807e778767975e76',
@@ -168,7 +172,7 @@ export const EN_E07_GLOAM_WALKER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Gloam Walker candidate is visually approved and committed locally at a46f59c1cb0bb751760f2776fe60b5c489806c94. Only its bounded local approval-record commit is authorized. Do not push this branch because doing so would also publish the separately approval-gated Rivercrown reconciliation d785fe56e7d8c98243f948fce615885d5a04fbc3. Do not register Living Shadow, generate fixtures, add effects, release, start another EN-E07 role or family, or advance EN-E08 without another explicit gate.',
+  nextGate: 'The exact Gloam Walker candidate is visually approved and published on codex/en-e07-living-shadow-gloam-walker with implementation a46f59c1cb0bb751760f2776fe60b5c489806c94, approval record 848c7192b6dc2cac8b7ab2dc8725d3859447715d, and initial published handoff 00d5b436c7398312a5f3a05a482b4cf34cee9ba5. Stop at this clean published checkpoint. Do not register Living Shadow, generate fixtures, add effects, release, start another EN-E07 role or family, or advance EN-E08 without another explicit gate.',
 });
 
 export const EN_E07_GLOAM_WALKER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -520,7 +524,7 @@ export const EN_E07_GLOAM_WALKER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'gloam-walker',
     scale: 8,
-    notes: 'Visually approved as one complete grounded Gloam Walker against public Cursed Ghost and Shadow Slime plus approved Mist Weaver. The exact implementation is committed locally and remains unpublished. Keep registration, fixtures, effects, later Living Shadows, Doppelganger, and later Wave 2 work separate.',
+    notes: 'Visually approved and published as one complete grounded Gloam Walker against public Cursed Ghost and Shadow Slime plus approved Mist Weaver. Keep registration, fixtures, effects, later Living Shadows, Doppelganger, and later Wave 2 work separate.',
   },
 });
 

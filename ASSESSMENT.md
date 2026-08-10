@@ -280,9 +280,10 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`.
   The exact packet was opened in Aseprite and the designer replied `aaprovced`
   on 2026-08-10. Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94`
-  and approval record `848c7192b6dc2cac8b7ab2dc8725d3859447715d` are committed
-  locally. It remains unpublished and non-public because the branch inherits
-  separately approval-gated Rivercrown reconciliation `d785fe5`.
+  and approval record `848c7192b6dc2cac8b7ab2dc8725d3859447715d` plus initial
+  handoff `00d5b436c7398312a5f3a05a482b4cf34cee9ba5` are committed and pushed.
+  The private review branch is published, while the family remains absent from
+  the public catalog. Rivercrown reconciliation `d785fe5` is published too.
 Fixture regeneration, later Living Shadow roles, remaining EN-E07 families, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 

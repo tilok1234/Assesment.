@@ -102,7 +102,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   byte-unchanged, including the intentionally historical Ghoul fixture. Source
   and documentation are committed and pushed at
   `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
-- Current approved-local art checkpoint:
+- Publication permission: after explicit approval of an exact artifact or
+  digest, the designer authorizes its bounded implementation, approval-record,
+  reconciliation commits, and branch push. Never infer approval for
+  registration, fixtures, effects, later roles/families, release, or another
+  gate.
+- Current approved and published art checkpoint:
   `codex/en-e07-living-shadow-gloam-walker` contains exactly one private common
   Living Shadow Gloam Walker. The frozen
   80-frame digest is
@@ -115,11 +120,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and paired GIF evidence was presented and the three exact PNGs were opened
   together in Aseprite; the designer replied `aaprovced` on 2026-08-10.
   Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94` and approval
-  record `848c7192b6dc2cac8b7ab2dc8725d3859447715d` are committed locally.
-  Do not push: this branch inherits separately approval-gated Rivercrown docs
-  reconciliation `d785fe5`. Do not register Living Shadow, generate fixtures,
-  add effects, start another EN-E07 role/family, release, or advance EN-E08
-  without another explicit gate.
+  record `848c7192b6dc2cac8b7ab2dc8725d3859447715d`, and initial handoff
+  `00d5b436c7398312a5f3a05a482b4cf34cee9ba5` are committed and pushed.
+  Rivercrown reconciliation `d785fe5` is also pushed. Do not register Living
+  Shadow, generate fixtures, add effects, start another EN-E07 role/family,
+  release, or advance EN-E08 without another explicit gate.
 - Approved EN-E06 predecessor: `codex/en-e06-nymph-rivercrown-muse`,
   based exactly on clean published Mist Weaver handoff `983b76a`, contains one
   complete approved elite Nymph. Its 80 frames pass connected, one-cell-bounded, grounded,

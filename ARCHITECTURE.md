@@ -927,8 +927,10 @@ proves all fifteen EN-E06 source digests exact, and keeps public 80/259 and
 fixtures unchanged. The exact review packet was opened in Aseprite and approved
 on 2026-08-10. Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94`
 and approval record `848c7192b6dc2cac8b7ab2dc8725d3859447715d` are committed
-locally. The module is not facade-imported, registered, or published; branch
-publication remains blocked by the inherited `d785fe5` approval boundary.
+and pushed with initial handoff `00d5b436c7398312a5f3a05a482b4cf34cee9ba5`.
+The module remains outside the facade and public registry even though its
+private review branch is published. Rivercrown reconciliation `d785fe5` is
+published too.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

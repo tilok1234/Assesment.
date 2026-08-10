@@ -1205,9 +1205,10 @@ four-part style ramp; 8/8 flashes are exact white; opaque range is 208-242.
 The exact five-artifact packet is technically reproducible, was opened in
 Aseprite, and was approved when the designer replied `aaprovced` on 2026-08-10.
 Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94` and approval record
-`848c7192b6dc2cac8b7ab2dc8725d3859447715d` are committed locally. The branch
-is not published because it inherits separately approval-gated Rivercrown docs
-reconciliation `d785fe5`. It is not registered, fixture-backed, or public;
+`848c7192b6dc2cac8b7ab2dc8725d3859447715d` plus initial handoff
+`00d5b436c7398312a5f3a05a482b4cf34cee9ba5` are committed and pushed.
+Rivercrown docs reconciliation `d785fe5` is pushed too. Living Shadow is not
+registered, fixture-backed, or public;
 later Living Shadow roles, remaining EN-E07 families, effects, release, and
 EN-E08 remain closed.
 

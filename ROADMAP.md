@@ -179,7 +179,7 @@ approved on 2026-08-10. Frozen implementation
 tracked branch. EN-E07, registration, fixtures, shared renderer/schema changes,
 effects, and release remain closed.
 
-Current EN-E07 approved-local checkpoint (2026-08-10): the designer's later
+Current EN-E07 approved and published checkpoint (2026-08-10): the designer's later
 `lets do next` advances the frozen plan from completed EN-E06 to priority-first
 Living Shadow only. Branch `codex/en-e07-living-shadow-gloam-walker` contains
 one private common Gloam Walker 80-frame suite at digest
@@ -190,12 +190,13 @@ hollow face, angular shoulders, long claws, split legs, and planted feet. All
 Cursed Ghost, Shadow Slime, and Mist Weaver; all fifteen approved EN-E06
 digests remain exact and public 80/259 is unchanged. The exact five-artifact
 review packet was opened in Aseprite and the designer replied `aaprovced`.
-Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94` and approval
-record `848c7192b6dc2cac8b7ab2dc8725d3859447715d` are committed locally but
-not published: the branch inherits separately approval-gated Rivercrown docs
-reconciliation `d785fe5`. Registration, fixtures, effects, later Living Shadow
-roles, Doppelganger and the remaining EN-E07 families, release, and EN-E08
-stay closed.
+Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94`, approval record
+`848c7192b6dc2cac8b7ab2dc8725d3859447715d`, and initial handoff
+`00d5b436c7398312a5f3a05a482b4cf34cee9ba5` are committed and pushed. The
+same standing approved-work permission published Rivercrown reconciliation
+`d785fe5`. Registration, fixtures, effects, later Living Shadow roles,
+Doppelganger and the remaining EN-E07 families, release, and EN-E08 stay
+closed.
 
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,

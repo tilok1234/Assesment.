@@ -222,15 +222,18 @@ check(
   EN_E07_GLOAM_WALKER_GATE.status === 'approved'
     && EN_E07_GLOAM_WALKER_GATE.approvedOn === '2026-08-10'
     && EN_E07_GLOAM_WALKER_GATE.approvedImplementation === 'a46f59c1cb0bb751760f2776fe60b5c489806c94'
-    && EN_E07_GLOAM_WALKER_GATE.publishedImplementation === null,
-  'Gloam Walker approved-local state drifted',
+    && EN_E07_GLOAM_WALKER_GATE.publishedImplementation === 'a46f59c1cb0bb751760f2776fe60b5c489806c94'
+    && EN_E07_GLOAM_WALKER_GATE.publishedApprovalRecord === '848c7192b6dc2cac8b7ab2dc8725d3859447715d'
+    && EN_E07_GLOAM_WALKER_GATE.initialPublishedHandoff === '00d5b436c7398312a5f3a05a482b4cf34cee9ba5',
+  'Gloam Walker approved publication state drifted',
 );
 check(
   EN_E07_GLOAM_WALKER_GATE.approvalEvidence.includes('three exact PNG review boards were opened together in Aseprite')
     && EN_E07_GLOAM_WALKER_GATE.approvalEvidence.includes('designer replied: aaprovced')
-    && EN_E07_GLOAM_WALKER_GATE.approvalEvidence.includes('Branch publication remains blocked')
-    && EN_E07_GLOAM_WALKER_GATE.publicationState === 'blocked-pending-explicit-rivercrown-reconciliation-authorization',
-  'approval evidence or publication boundary drifted',
+    && EN_E07_GLOAM_WALKER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E07_GLOAM_WALKER_GATE.publicationAuthorizationEvidence.includes('only after explicit approval')
+    && EN_E07_GLOAM_WALKER_GATE.publicationState === 'published',
+  'approval evidence or publication authorization drifted',
 );
 check(
   EN_E07_GLOAM_WALKER_GATE.authorizationEvidence.includes('designer said: lets do next')
@@ -243,8 +246,8 @@ check(
     && EN_E07_GLOAM_WALKER_GATE.precedingApproval.gateId === EN_E06_RIVERCROWN_MUSE_GATE.id
     && EN_E07_GLOAM_WALKER_GATE.precedingApproval.candidateFrameDigest === EN_E06_RIVERCROWN_MUSE_GATE.candidateFrameDigest
     && EN_E07_GLOAM_WALKER_GATE.precedingApproval.approvalRecord === 'ca82f079ff84934edc4ab51a8d406050b9083d2a'
-    && EN_E07_GLOAM_WALKER_GATE.precedingApproval.reconciliationPublication === 'pending-explicit-push-authorization',
-  'Rivercrown predecessor or pending reconciliation boundary drifted',
+    && EN_E07_GLOAM_WALKER_GATE.precedingApproval.reconciliationPublication === 'published',
+  'Rivercrown predecessor publication state drifted',
 );
 check(
   EN_E07_GLOAM_WALKER_GATE.scope.includes('complete 80-frame Gloam Walker common')
@@ -260,10 +263,10 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_GLOAM_WALKER_GATE.nextGate.includes('visually approved and committed locally')
-    && EN_E07_GLOAM_WALKER_GATE.nextGate.includes('Do not push this branch')
+  EN_E07_GLOAM_WALKER_GATE.nextGate.includes('visually approved and published')
+    && EN_E07_GLOAM_WALKER_GATE.nextGate.includes('Stop at this clean published checkpoint')
     && EN_E07_GLOAM_WALKER_GATE.nextGate.includes('without another explicit gate'),
-  'approved-local stop gate drifted',
+  'published stop gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_GLOAM_WALKER_GATE)
