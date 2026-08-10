@@ -179,28 +179,28 @@ approved on 2026-08-10. Frozen implementation
 tracked branch. EN-E07, registration, fixtures, shared renderer/schema changes,
 effects, and release remain closed.
 
-Current EN-E07 clean published checkpoint (2026-08-10): common Doppelganger Pale
-Echo on `codex/en-e07-doppelganger-pale-echo` is based exactly on published
-Hollowcrown reconciliation `6ff54c3`. Its repaired
-80-frame authored default form at digest
-`c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`
-uses pale gray-rose skin, uneven charcoal-violet fringe, offset eyes,
-mismatched shoulders, split slate/wine tunic, one connected lengthening mimic
-hand, separated legs, and grounded boots. The oversized 218-271-pixel
-diagnostic render was rejected before freeze; the 186-245-pixel repair is
-public-humanoid scale and remains 80/80 connected, bounded, grounded, and
-pixel/alpha distinct from Bandit Thug, Cultist Acolyte, and Dark Elf. The exact
-five-artifact packet is hash-frozen and was visually approved after the three
-exact repaired PNGs were opened together in Aseprite and the designer replied
-`approved lets do next`. Implementation
-`0628135b84725836c552e13db797540a965854cb` and approval record
-`182938381ac39812434518d0216e6e9796367bbb` plus initial handoff
-`1e6e8d8bb01de97ca4e1373b62b461e40b1aa239` are published and remote
-verified. The protected 21-gate matrix, fast suite, and full suite pass with
-the approved integration and 232 fixtures unchanged. The same response opens
-only one private specialist Doppelganger candidate from the clean publication
-reconciliation. Registration, fixtures, runtime copying, effects, the elite
-and later EN-E07 families, release, and EN-E08 stay closed.
+Current EN-E07 candidate checkpoint (2026-08-10): common Doppelganger Pale Echo
+is approved, published, and reconciled at `e18a512`; the designer replied
+`approved lets do next`. The role order opens only specialist Falseface Adept
+on `codex/en-e07-doppelganger-falseface-adept`. Its repaired authored default
+form at digest
+`16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`
+uses the approved pale/slate/wine family language with a fused diagonal visage
+seam, swept fringe, asymmetric high collar, cross-seamed coat, paired connected
+molding hands, separated legs, and grounded boots. The first diagnostic packet
+was rejected before freeze because its colored brace collapsed into a squat
+block and its face press was overfilled; the repaired 203-261-pixel candidate
+restores readable head and leg separation. It remains 80/80 connected, bounded,
+grounded, and pixel/alpha distinct from Pale Echo, Cultist Zealot, and Dark Elf.
+The exact repaired five-artifact packet is hash-frozen and reproduces twice but
+is not visually approved, committed, or published. The protected 22-gate
+matrix, fast suite, and full suite pass with the approved integration and 232
+fixtures unchanged. Pale Echo implementation
+`0628135b84725836c552e13db797540a965854cb`, approval record
+`182938381ac39812434518d0216e6e9796367bbb`, initial handoff
+`1e6e8d8bb01de97ca4e1373b62b461e40b1aa239`, and reconciliation `e18a512`
+remain exact. Registration, fixtures, runtime copying, effects, the elite and
+later EN-E07 families, release, and EN-E08 stay closed.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

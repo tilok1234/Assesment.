@@ -13,23 +13,23 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current clean published checkpoint (2026-08-10): common Doppelganger Pale Echo on
-  `codex/en-e07-doppelganger-pale-echo` is based exactly on clean published
-  Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`.
-  Its repaired public-humanoid-scale 80-frame candidate is frozen at digest
-  `c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`.
+- Current stopping checkpoint (2026-08-10): common Doppelganger Pale Echo is
+  approved and published through clean reconciliation
+  `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`. The designer replied `approved
+  lets do next`, opening only private specialist Falseface Adept on
+  `codex/en-e07-doppelganger-falseface-adept`. Its repaired
+  public-humanoid-scale 80-frame candidate is frozen at digest
+  `16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`.
   It passes 80/80 connected, one-cell-bounded, grounded, hard-alpha, alias,
-  mirror, and pixel/alpha distinctions from public Bandit Thug, Cultist
-  Acolyte, and Dark Elf. The exact raw, Complete B + Form, four-way comparison,
-  and paired GIF packet reproduces all five recorded hashes. The exact repaired
-  packet was opened in Aseprite and the designer replied `approved lets do
-  next`. Implementation `0628135b84725836c552e13db797540a965854cb` and
-  approval record `182938381ac39812434518d0216e6e9796367bbb` plus initial
-  handoff `1e6e8d8bb01de97ca4e1373b62b461e40b1aa239` are published and remote
-  verified. The same response opens only one private specialist Doppelganger
-  candidate from the clean publication reconciliation. Registration, fixtures,
-  runtime copying, effects, the elite and later families, release, and EN-E08
-  remain closed.
+  mirror, and pixel/alpha distinctions from approved Pale Echo, public Cultist
+  Zealot, and public Dark Elf. The first diagnostic packet was rejected before
+  freeze because its colored brace collapsed into a squat block and the face
+  press was overfilled; the repaired packet restores a readable head and split
+  legs at 203-261 opaque pixels. The exact raw, Complete B + Form, four-way
+  comparison, and paired GIF packet reproduces all five recorded hashes twice.
+  It is not visually approved, committed, or published. Doppelganger
+  registration, fixtures, runtime copying, effects, the elite and later
+  families, release, and EN-E08 remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3558,7 +3558,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common Doppelganger approved and published; specialist Doppelganger is the sole next art gate`
+- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common Doppelganger approved and published; Falseface Adept specialist candidate awaiting visual approval`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3780,6 +3780,58 @@ assembler.
   from this clean publication reconciliation. Keep registration, fixtures,
   runtime copying, effects, the elite and later EN-E07 families, release, and
   EN-E08 closed.
+
+#### Doppelganger Falseface Adept complete suite candidate
+
+- Gate ID: `en-e07-doppelganger-falseface-adept-full-v1`; status: `candidate`
+  on `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean
+  published Pale Echo reconciliation
+  `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`.
+- Authorization: after the repaired Pale Echo was visually approved,
+  committed, pushed, and reconciled, the designer replied `approved lets do
+  next` on 2026-08-10. The Doppelganger role order opens only specialist
+  Falseface Adept.
+- Style/silhouette contract: one authored default-form humanoid using the
+  approved family language with a fused diagonal false-face seam, swept uneven
+  fringe, asymmetric high collar, fitted cross-seamed short coat, two connected
+  long-finger molding hands, separated legs, and grounded boots. The first
+  diagnostic packet was rejected before freeze because the colored hurt/death
+  brace collapsed into a squat block and its middle attack phases overfilled
+  the face. The repaired public-humanoid-scale candidate restores the head and
+  split legs, narrows those overlays, and stays within 203-261 opaque pixels.
+- Scope: one private 80-frame specialist Doppelganger. Cast aliases Attack;
+  Death aliases Hurt H1,H2,H2,H2. Runtime actor copying, copied silhouettes,
+  detached faces, mirror doubles, reflection planes, peeling skin, loose skin
+  ribbons, afterimages, glow, particles, projectiles, and impacts remain
+  external.
+- Focused validation: 80/80 connected, bounded, grounded hard-alpha frames;
+  80/80 pixel and alpha distinctions from Pale Echo, Cultist Zealot, and Dark
+  Elf; 72/72 colored frames; 8/8 white flashes; 54/54 expected eye-bearing
+  views; opaque range 203-261; Complete B +8,004; Form changes 8,078. Pale Echo
+  remains exact; public 80/259 and fixtures are unchanged.
+- Candidate digest:
+  `16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`.
+- Evidence SHA-256: raw
+  `8b22e84a20699c694ec0a3110c0c2d887baedc204194ae885e68ccee9f116e38`;
+  Complete B + Form
+  `d282af955acd012c094be7ab5607828abf91ac2a90f786dab87732293cf79203`;
+  comparison
+  `69e5d6d64e192ce47a793103e6e23b5d17a465d75f8fac08741893ac4a99635d`;
+  raw GIF `4cf7a25aa416d88e61e0d8cecd0687e62f891f2bfb7e8cc7811f56eea17b19ee`;
+  Complete B + Form GIF
+  `458e15e7b2cad2b9d305dcbffc3bc172aa2b63138ddecfab3202d9947b3f40ad`.
+  Two repaired generations reproduce all five hashes exactly.
+- Broad validation: the 22-command protected predecessor/candidate/integration
+  matrix passed in 7.6s, `npm.cmd run check:fast` passed in 52.3s, and full
+  `npm.cmd run check` passed in 102.2s. The approved 1,200-frame integration
+  digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required next action: inspect the repaired boards and all four phase boards,
+  open the three exact PNGs together in Aseprite, present both exact GIFs, and
+  request explicit visual approval. Do not commit or publish before approval.
+  Keep registration, fixtures, runtime copying, effects, the elite and later
+  EN-E07 families, release, and EN-E08 closed.
 
 ### EN-E08 - Possessed equipment
 

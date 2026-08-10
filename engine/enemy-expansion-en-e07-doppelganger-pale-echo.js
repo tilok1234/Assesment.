@@ -39,8 +39,13 @@ export const EN_E07_DOPPELGANGER_CONTRACT_CARD = deepFreeze({
     role: 'common',
     status: 'implemented-full-approved',
   },
+  activeSpecialist: {
+    id: 'falseface-adept',
+    name: 'Falseface Adept',
+    role: 'specialist',
+    status: 'implemented-full-candidate',
+  },
   deferredRoles: [
-    { role: 'specialist', status: 'planned-unnamed' },
     { role: 'elite', status: 'planned-unnamed' },
   ],
   styleContract: 'Use chunky one-to-three-pixel humanoid forms, hard alpha, an authored neutral default body, readable face and limb anatomy, and controlled asymmetry. Do not copy a player or public enemy sprite into the authored sheet.',

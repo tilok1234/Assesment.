@@ -1306,6 +1306,32 @@ candidate from the clean publication reconciliation. Registration, fixtures,
 runtime copying, effects, the elite and later families, release, and EN-E08
 remain closed.
 
+That clean Pale Echo publication opens exactly one private specialist
+Doppelganger Falseface Adept on
+`codex/en-e07-doppelganger-falseface-adept`, based on reconciliation
+`e18a51207868cbcf5b01f55e1c04a50cac43bdcc`. It keeps the authored default
+form and family palette while adding a fused diagonal visage seam, asymmetric
+high collar, fitted cross-seamed short coat, and two connected molding hands.
+The first diagnostic packet was rejected before freeze because its colored
+brace collapsed into a squat block and its face press was overfilled; the
+repaired 203-261-pixel candidate preserves a readable head, split legs, and
+connected transformation tell. Run
+`npm.cmd run review:enemy-expansion-en-e07-doppelganger-falseface-adept` for
+the raw, Complete B + Form, Pale/Cultist/Dark Elf/Falseface comparison, and
+paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-doppelganger-falseface-adept` for its
+focused structural, scale, predecessor, artifact, and exposure firewalls. The
+frozen candidate digest is
+`16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`:
+all 80 frames are connected, bounded, grounded, and pixel/alpha distinct from
+Pale Echo, Cultist Zealot, and Dark Elf; 72/72 colored frames preserve every
+family/specialist ramp and 8/8 flashes are exact white. The repaired
+five-artifact packet reproduces byte-for-byte twice. The 22-gate matrix, fast
+suite, and full suite pass; the approved 1,200-frame integration digest and all
+232 fixtures remain exact. The candidate is not visually approved, committed,
+or published. Registration, fixtures, runtime copying, effects, the elite and
+later families, release, and EN-E08 remain closed.
+
 ## Approved enemy backlog integration published
 
 Branch `codex/approved-enemy-assembler-integration` composes three explicit

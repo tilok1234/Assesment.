@@ -341,6 +341,23 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   candidate from the clean publication reconciliation.
   The 21-gate protected matrix, fast suite, and full suite pass; the approved
   1,200-frame integration digest and all 232 fixtures remain exact.
+  The active continuation is one private specialist Doppelganger Falseface
+  Adept on `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean
+  published Pale Echo reconciliation
+  `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`. It keeps the authored default
+  form and family palette while adding a fused diagonal visage seam, asymmetric
+  high collar, fitted cross-seamed coat, and two connected molding hands. The
+  first diagnostic review was rejected before freeze because the colored brace
+  read as a squat block and the face press was overfilled; the repaired
+  203-261-pixel candidate restores readable head/leg separation. It passes
+  80/80 connected, bounded, grounded, hard-alpha pixel and alpha distinctions
+  from Pale Echo, Cultist Zealot, and Dark Elf at digest
+  `16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`.
+  Its exact repaired five-artifact packet reproduces byte-for-byte. The
+  22-command protected matrix passed in 7.6s, `check:fast` in 52.3s, and full
+  `check` in 102.2s; the approved 1,200-frame integration digest and all 232
+  fixtures remain exact. The candidate is not visually approved, committed, or
+  published.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

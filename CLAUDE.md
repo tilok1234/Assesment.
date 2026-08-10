@@ -107,7 +107,29 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved art checkpoint:
+- Current isolated art candidate:
+  `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean published
+  Pale Echo reconciliation `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`,
+  contains one private specialist Doppelganger Falseface Adept. Its repaired
+  frozen 80-frame digest is
+  `16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`.
+  All frames are connected, one-cell-bounded, grounded, hard-alpha, and
+  pixel/alpha distinct from approved Pale Echo, public Cultist Zealot, and
+  public Dark Elf. It retains the authored default form and family palette with
+  a fused diagonal visage seam, swept fringe, asymmetric high collar,
+  cross-seamed short coat, paired connected molding hands, separated legs, and
+  grounded boots. The first diagnostic packet was rejected before freeze
+  because its colored brace collapsed into a squat block and its attack press
+  overfilled the face; the repaired version restores a readable head and split
+  legs at 203-261 opaque pixels. All five repaired review artifacts reproduce
+  byte-for-byte. The 22-command protected matrix, `check:fast`, and full
+  `check` pass with the approved 1,200-frame integration digest and all 232
+  fixtures exact. The candidate is not visually approved, committed, or
+  published. Do not register Doppelganger, generate fixtures, implement runtime
+  copying, add effects, start the elite or another family, release, advance
+  EN-E08, or commit/push this candidate before explicit approval of the exact
+  digest.
+- Approved preceding art checkpoint:
   `codex/en-e07-doppelganger-pale-echo`, based exactly on clean published
   Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`,
   contains one private common Doppelganger Pale Echo. Its repaired frozen
@@ -133,7 +155,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Doppelganger, generate fixtures, implement runtime copying, add effects,
   start the elite or another family beyond that candidate, release, or advance
   EN-E08.
-- Approved preceding art checkpoint:
+- Earlier approved Living Shadow checkpoint:
   `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly on clean
   published Nightglass reconciliation `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`,
   contains one private elite Living Shadow Hollowcrown Regent. Its frozen

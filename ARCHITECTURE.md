@@ -1005,6 +1005,28 @@ verified. The module remains private, unregistered, and fixture-free. The same
 response opens only one private specialist Doppelganger candidate from the
 clean publication reconciliation.
 
+The subsequently authorized
+`engine/enemy-expansion-en-e07-doppelganger-falseface-adept.js` adds that one
+private specialist without changing the facade, public registry, fixtures,
+manifest, schemas, renderer interfaces, or runtime actor-selection contract.
+It captures the approved Pale Echo frame grammar into an isolated pixel buffer,
+recolors it through the same pale/slate/wine family language, and adds only
+connected specialist structure: a fused diagonal false-face seam, swept fringe,
+opposed high collar points, cross-seamed short coat, and paired molding hands.
+The first diagnostic packet was rejected before freeze because its colored
+hurt/death brace collapsed into a squat block and its attack press overfilled
+the face. The repaired geometry restores a visible head and split legs, narrows
+the press/cross overlays, stays within 203-261 opaque pixels, and preserves the
+connected transformation tell. Cast aliases Attack; Death aliases Hurt. Copied
+actors, detached faces, mirror doubles, reflections, peeling skin, loose
+ribbons, afterimages, glow, particles, projectiles, and impacts remain
+external. The focused gate freezes all 80 frames at digest
+`16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`,
+proves 80/80 pixel and alpha distinctions from approved Pale Echo, public
+Cultist Zealot, and public Dark Elf, and keeps Pale Echo exact. Its repaired
+five-artifact packet reproduces byte-for-byte but remains visually unapproved,
+uncommitted, unpublished, unregistered, and fixture-free.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

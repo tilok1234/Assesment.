@@ -23,12 +23,80 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Pale Echo Published; Specialist Open
+## Immediate Continuation Checkpoint - Falseface Adept Awaiting Visual Approval
 
-Start here in a new task. The exact private common Doppelganger is hash-frozen,
-technically validated, visually approved, committed, published, and remote
-verified. The same `approved lets do next` response opens only one private
-specialist Doppelganger art gate from this clean publication reconciliation.
+Start here in a new task. This is the sole active isolated art gate. The exact
+private specialist Doppelganger candidate is repaired, hash-frozen, and fully
+validated, but it is not visually approved, committed, or published.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean
+  published Pale Echo reconciliation
+  `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`.
+- Approved predecessor: Pale Echo implementation
+  `0628135b84725836c552e13db797540a965854cb`, approval record
+  `182938381ac39812434518d0216e6e9796367bbb`, initial published handoff
+  `1e6e8d8bb01de97ca4e1373b62b461e40b1aa239`, and final reconciliation
+  `e18a51207868cbcf5b01f55e1c04a50cac43bdcc` remain exact.
+- Authorization: after Pale Echo was visually approved, committed, pushed, and
+  reconciled, the designer replied `approved lets do next` on 2026-08-10. The
+  frozen common-specialist-elite order opens only one private specialist
+  Falseface Adept.
+- Scope: one authored default-form 80-frame specialist Doppelganger across Idle
+  F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases,
+  and exact Death-to-Hurt aliases H1,H2,H2,H2 in all four directions. Runtime
+  player/enemy copying is not part of this authored sheet.
+- Style contract: public-humanoid-scale chunky one-to-three-pixel geometry,
+  hard alpha, the approved pale/slate/wine family language, a fused diagonal
+  false-face seam, swept fringe, asymmetric high collar, fitted cross-seamed
+  short coat, two connected long-finger molding hands, separated legs, and
+  grounded boots. The first diagnostic packet was rejected before freeze
+  because its colored hurt/death brace collapsed into a squat block and its
+  face press was overfilled. The repaired packet restores a readable head and
+  split legs, narrows the middle attack overlays, and stays at 203-261 opaque
+  pixels.
+- Motion: two-frame visage/collar settle; four grounded alternating Walk steps;
+  paired-palm guard, fused diagonal visage press, connected twin-hand cross,
+  then authored-form reset. Cast aliases Attack; Death aliases Hurt.
+- Effects firewall: copied actor silhouettes, detached faces, mirror doubles,
+  reflection planes, peeling skin, loose skin ribbons, afterimages, glow,
+  particles, projectiles, and impact flashes remain external. Registration,
+  fixtures, public exposure, runtime copying, the elite, Will-o-Wisp,
+  Changeling, Kelpie, release, and EN-E08 remain closed.
+- Focused validation passes: 80/80 connected, one-cell-bounded, grounded
+  hard-alpha frames; 80/80 pixel and alpha-silhouette distinctions from
+  approved Pale Echo, public Cultist Zealot, and public Dark Elf; 72/72 colored
+  palette frames; 8/8 exact white flashes; 54/54 expected eye-bearing views;
+  opaque range 203-261; 8,004 Complete B additions; and 8,078 Form changes.
+  Pale Echo remains exact, public 80/259 is unchanged, and no
+  fixture/facade/manifest exposure exists.
+- Frozen candidate digest:
+  `16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `8b22e84a20699c694ec0a3110c0c2d887baedc204194ae885e68ccee9f116e38` /
+  `d282af955acd012c094be7ab5607828abf91ac2a90f786dab87732293cf79203`;
+  Pale/Cultist/Dark Elf/Falseface `1520x548` comparison
+  `69e5d6d64e192ce47a793103e6e23b5d17a465d75f8fac08741893ac4a99635d`;
+  raw / Complete B + Form `640x672` GIFs
+  `4cf7a25aa416d88e61e0d8cecd0687e62f891f2bfb7e8cc7811f56eea17b19ee` /
+  `458e15e7b2cad2b9d305dcbffc3bc172aa2b63138ddecfab3202d9947b3f40ad`.
+  Two repaired generations reproduce all five hashes exactly; artifacts remain
+  ignored under `enemy-expansion-review/en-e07-doppelganger-falseface-adept/`.
+- Broad validation passes: the 22-command protected matrix completed in 7.6s;
+  `npm.cmd run check:fast` passed in 52.3s; and full `npm.cmd run check` passed
+  in 102.2s. The integrated frame digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required visual action: inspect the repaired raw, Complete B + Form,
+  four-way comparison, and all four animation-phase boards; open the three
+  exact PNG boards together in Aseprite; present both exact GIFs; and ask for
+  explicit approval of the digest above. Do not commit or push before approval.
+
+## Approved Preceding Checkpoint - Pale Echo Published
+
+This records the exact clean published predecessor for the active Falseface
+Adept gate. The private common is hash-frozen, technically validated, visually
+approved, committed, published, and remote verified.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-doppelganger-pale-echo`, based exactly on clean
