@@ -145,9 +145,11 @@ check(
   EN_E07_PALE_ECHO_GATE.status === 'approved'
     && EN_E07_PALE_ECHO_GATE.approvedOn === '2026-08-10'
     && EN_E07_PALE_ECHO_GATE.approvedImplementation === '0628135b84725836c552e13db797540a965854cb'
-    && EN_E07_PALE_ECHO_GATE.publishedImplementation === null
-    && EN_E07_PALE_ECHO_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Pale Echo approved-local state drifted',
+    && EN_E07_PALE_ECHO_GATE.publishedImplementation === '0628135b84725836c552e13db797540a965854cb'
+    && EN_E07_PALE_ECHO_GATE.publishedApprovalRecord === '182938381ac39812434518d0216e6e9796367bbb'
+    && EN_E07_PALE_ECHO_GATE.initialPublishedHandoff === '1e6e8d8bb01de97ca4e1373b62b461e40b1aa239'
+    && EN_E07_PALE_ECHO_GATE.publicationState === 'published',
+  'Pale Echo published state drifted',
 );
 check(
   EN_E07_PALE_ECHO_GATE.approvalEvidence.includes('three exact repaired PNG review boards were opened together in Aseprite')
@@ -186,10 +188,10 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_PALE_ECHO_GATE.nextGate.includes('visually approved')
-    && EN_E07_PALE_ECHO_GATE.nextGate.includes('bounded approval-record')
+  EN_E07_PALE_ECHO_GATE.nextGate.includes('visually approved and published')
+    && EN_E07_PALE_ECHO_GATE.nextGate.includes('remote verified')
     && EN_E07_PALE_ECHO_GATE.nextGate.includes('only one private specialist Doppelganger candidate'),
-  'approved-local publication and next-role gate drifted',
+  'published next-role gate drifted',
 );
 check(
   JSON.stringify(EN_E07_DOPPELGANGER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])

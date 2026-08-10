@@ -100,9 +100,10 @@ export const EN_E07_PALE_ECHO_GATE = deepFreeze({
   approvedImplementation: '0628135b84725836c552e13db797540a965854cb',
   publicationAuthorizedOn: '2026-08-10',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '0628135b84725836c552e13db797540a965854cb',
+  publishedApprovalRecord: '182938381ac39812434518d0216e6e9796367bbb',
+  initialPublishedHandoff: '1e6e8d8bb01de97ca4e1373b62b461e40b1aa239',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_HOLLOWCROWN_REGENT_GATE.id,
     artifactSha256: EN_E07_HOLLOWCROWN_REGENT_GATE.artifactSha256,
@@ -174,7 +175,7 @@ export const EN_E07_PALE_ECHO_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact repaired Pale Echo candidate is visually approved and its implementation is committed at 0628135b84725836c552e13db797540a965854cb. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private specialist Doppelganger candidate. Do not register Doppelganger, generate fixtures, add runtime copying or effects, release, start the elite or another family beyond that candidate, or advance EN-E08.',
+  nextGate: 'The exact repaired Pale Echo candidate is visually approved and published: implementation 0628135b84725836c552e13db797540a965854cb, approval record 182938381ac39812434518d0216e6e9796367bbb, and initial handoff 1e6e8d8bb01de97ca4e1373b62b461e40b1aa239 are remote verified. The same approved lets do next response opens only one private specialist Doppelganger candidate from this clean publication reconciliation. Do not register Doppelganger, generate fixtures, add runtime copying or effects, release, start the elite or another family beyond that candidate, or advance EN-E08.',
 });
 
 export const EN_E07_PALE_ECHO_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -483,7 +484,7 @@ export const EN_E07_PALE_ECHO_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'pale-echo',
     scale: 8,
-    notes: 'Visually approved as one authored grounded Pale Echo against public Bandit Thug, Cultist Acolyte, and Dark Elf. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, runtime copying, effects, later Doppelganger roles, Will-o-Wisp, and later Wave 2 work separate until the clean published reconciliation.',
+    notes: 'Visually approved and published as one authored grounded Pale Echo against public Bandit Thug, Cultist Acolyte, and Dark Elf. Keep registration, fixtures, runtime copying, effects, the elite, Will-o-Wisp, and later Wave 2 work separate; only one private specialist Doppelganger candidate is open from the clean publication reconciliation.',
   },
 });
 

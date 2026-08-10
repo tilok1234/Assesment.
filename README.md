@@ -1299,11 +1299,12 @@ the approved 1,200-frame integration digest and all 232 fixtures remain exact.
 The three exact repaired PNGs were opened together in Aseprite, both GIFs were
 presented, and the designer replied `approved lets do next`. Implementation
 `0628135b84725836c552e13db797540a965854cb` and approval record
-`182938381ac39812434518d0216e6e9796367bbb` are committed locally; bounded
-documentation reconciliation and branch publication are authorized. After a
-clean published reconciliation, the same response opens only one private
-specialist Doppelganger candidate. Registration, fixtures, runtime copying,
-effects, the elite and later families, release, and EN-E08 remain closed.
+`182938381ac39812434518d0216e6e9796367bbb` plus initial handoff
+`1e6e8d8bb01de97ca4e1373b62b461e40b1aa239` are published and remote
+verified. The same response opens only one private specialist Doppelganger
+candidate from the clean publication reconciliation. Registration, fixtures,
+runtime copying, effects, the elite and later families, release, and EN-E08
+remain closed.
 
 ## Approved enemy backlog integration published
 

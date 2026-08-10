@@ -23,12 +23,12 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Publication Checkpoint - Pale Echo Approved Locally
+## Immediate Continuation Checkpoint - Pale Echo Published; Specialist Open
 
 Start here in a new task. The exact private common Doppelganger is hash-frozen,
-technically validated, visually approved, and committed locally. Its bounded
-documentation reconciliation and branch publication are authorized but not yet
-recorded as a verified remote checkpoint.
+technically validated, visually approved, committed, published, and remote
+verified. The same `approved lets do next` response opens only one private
+specialist Doppelganger art gate from this clean publication reconciliation.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-doppelganger-pale-echo`, based exactly on clean
@@ -88,20 +88,23 @@ recorded as a verified remote checkpoint.
   replied `approved lets do next` on 2026-08-10. Approval applies only to the
   frozen digest and hashes above. Implementation
   `0628135b84725836c552e13db797540a965854cb` and approval record
-  `182938381ac39812434518d0216e6e9796367bbb` are committed locally. Standing
-  approved-work permission authorizes the bounded handoff commit and branch
-  push; it does not authorize registration, fixtures, runtime copying,
-  effects, the elite, another family, release, or EN-E08.
+  `182938381ac39812434518d0216e6e9796367bbb` plus initial handoff
+  `1e6e8d8bb01de97ca4e1373b62b461e40b1aa239` are published and remote
+  verified. Standing approved-work permission does not authorize registration,
+  fixtures, runtime copying, effects, the elite, another family, release, or
+  EN-E08.
 - Broad validation passes: the 21-command protected matrix (all 16 EN-E06
   gates, Gloam, Nightglass, Hollowcrown, Pale Echo, and the approved
   1,200-frame integration gate) completed in 7.7s; `npm.cmd run check:fast`
-  passed in 56.8s; and full `npm.cmd run check` passed in 110.1s. The integrated
-  frame digest remains
+  passed in 56.8s before approval and the published-state fast suite passed in
+  53.1s; full `npm.cmd run check` passed in 108.4s before the implementation
+  commit. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: commit this approval-aware handoff, push the branch,
-  verify the remote hash, and reconcile the published fields. Then open only
-  one private specialist Doppelganger candidate from the clean publication.
+- Required next action: open only one private specialist Doppelganger candidate
+  from this clean publication. Preserve Pale Echo byte-for-byte and keep
+  registration, fixtures, runtime copying, effects, the elite, another family,
+  release, and EN-E08 closed.
 
 ## Approved Preceding Checkpoint - Hollowcrown Regent Published
 

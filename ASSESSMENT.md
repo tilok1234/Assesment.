@@ -335,9 +335,10 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   approved after the three exact repaired PNGs were opened together in
   Aseprite and the designer replied `approved lets do next`. Implementation
   `0628135b84725836c552e13db797540a965854cb` and approval record
-  `182938381ac39812434518d0216e6e9796367bbb` are committed locally; bounded
-  branch publication is authorized. After a clean published reconciliation,
-  the same response opens only one private specialist Doppelganger candidate.
+  `182938381ac39812434518d0216e6e9796367bbb` plus initial handoff
+  `1e6e8d8bb01de97ca4e1373b62b461e40b1aa239` are published and remote
+  verified. The same response opens only one private specialist Doppelganger
+  candidate from the clean publication reconciliation.
   The 21-gate protected matrix, fast suite, and full suite pass; the approved
   1,200-frame integration digest and all 232 fixtures remain exact.
 Fixture regeneration, remaining EN-E07 families, the

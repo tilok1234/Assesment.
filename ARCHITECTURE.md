@@ -999,10 +999,11 @@ packet reproduces byte-for-byte and was visually approved after the three exact
 repaired PNGs were opened together in Aseprite and the designer replied
 `approved lets do next`. Implementation
 `0628135b84725836c552e13db797540a965854cb` and approval record
-`182938381ac39812434518d0216e6e9796367bbb` are committed locally; bounded
-branch publication is authorized. The module remains private, unregistered,
-and fixture-free. After a clean published reconciliation, the same response
-opens only one private specialist Doppelganger candidate.
+`182938381ac39812434518d0216e6e9796367bbb` plus initial handoff
+`1e6e8d8bb01de97ca4e1373b62b461e40b1aa239` are published and remote
+verified. The module remains private, unregistered, and fixture-free. The same
+response opens only one private specialist Doppelganger candidate from the
+clean publication reconciliation.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

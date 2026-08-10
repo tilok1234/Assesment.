@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved-local art checkpoint:
+- Current approved art checkpoint:
   `codex/en-e07-doppelganger-pale-echo`, based exactly on clean published
   Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`,
   contains one private common Doppelganger Pale Echo. Its repaired frozen
@@ -126,12 +126,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   exact repaired PNGs were opened together in Aseprite, both GIFs were
   presented, and the designer replied `approved lets do next`. Implementation
   `0628135b84725836c552e13db797540a965854cb` and approval record
-  `182938381ac39812434518d0216e6e9796367bbb` are committed locally; bounded
-  documentation reconciliation and branch publication are authorized. After a
-  clean published reconciliation, the same response opens only one private
-  specialist Doppelganger candidate. Do not register Doppelganger, generate
-  fixtures, implement runtime copying, add effects, start the elite or another
-  family beyond that candidate, release, or advance EN-E08.
+  `182938381ac39812434518d0216e6e9796367bbb` plus initial handoff
+  `1e6e8d8bb01de97ca4e1373b62b461e40b1aa239` are published and remote
+  verified. The same response opens only one private specialist Doppelganger
+  candidate from the clean publication reconciliation. Do not register
+  Doppelganger, generate fixtures, implement runtime copying, add effects,
+  start the elite or another family beyond that candidate, release, or advance
+  EN-E08.
 - Approved preceding art checkpoint:
   `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly on clean
   published Nightglass reconciliation `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`,
