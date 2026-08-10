@@ -1267,10 +1267,11 @@ the approved 1,200-frame integration digest and all 232 fixtures remain exact.
 The exact packet was opened in Aseprite and visually approved when the designer
 replied `approved lets do next`. Implementation
 `ffe5f574ab9f06ecfaad83c50a7980254eea7211` and approval record
-`90a06bd34e1bae29becdc380b01895825cf4a969` are committed locally; bounded
-publication is authorized and pending. After a clean published reconciliation,
-only one private common Doppelganger candidate opens. Registration, fixtures,
-effects, other EN-E07 family artwork, release, and EN-E08 remain closed.
+`90a06bd34e1bae29becdc380b01895825cf4a969` plus initial handoff
+`0c3d671bee3013413291170e127d3820cdcaff95` are published and remote verified.
+Only one private common Doppelganger candidate opens from the clean publication
+reconciliation. Registration, fixtures, effects, other EN-E07 family artwork,
+release, and EN-E08 remain closed.
 
 ## Approved enemy backlog integration published
 

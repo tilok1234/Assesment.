@@ -83,9 +83,10 @@ export const EN_E07_HOLLOWCROWN_REGENT_GATE = deepFreeze({
   approvedImplementation: 'ffe5f574ab9f06ecfaad83c50a7980254eea7211',
   publicationAuthorizedOn: '2026-08-10',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: 'ffe5f574ab9f06ecfaad83c50a7980254eea7211',
+  publishedApprovalRecord: '90a06bd34e1bae29becdc380b01895825cf4a969',
+  initialPublishedHandoff: '0c3d671bee3013413291170e127d3820cdcaff95',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_NIGHTGLASS_SEER_GATE.id,
     artifactSha256: EN_E07_NIGHTGLASS_SEER_GATE.artifactSha256,
@@ -161,7 +162,7 @@ export const EN_E07_HOLLOWCROWN_REGENT_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Hollowcrown Regent candidate is visually approved and its implementation is committed at ffe5f574ab9f06ecfaad83c50a7980254eea7211. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private common Doppelganger candidate. Do not register Living Shadow, generate fixtures, add effects, release, start another role or family beyond that candidate, or advance EN-E08.',
+  nextGate: 'The exact Hollowcrown Regent implementation, approval record, and initial handoff are published at ffe5f574ab9f06ecfaad83c50a7980254eea7211, 90a06bd34e1bae29becdc380b01895825cf4a969, and 0c3d671bee3013413291170e127d3820cdcaff95. The designer reply approved lets do next opens only one private common Doppelganger candidate from the clean published reconciliation. Do not register Living Shadow, generate fixtures, add effects, release, start another role or family beyond that candidate, or advance EN-E08.',
 });
 
 export const EN_E07_HOLLOWCROWN_REGENT_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -516,7 +517,7 @@ export const EN_E07_HOLLOWCROWN_REGENT_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'hollowcrown-regent',
     scale: 8,
-    notes: 'Visually approved as one tall grounded Hollowcrown Regent against public Cursed Ghost and Shadow Slime plus approved Mist Weaver, Gloam Walker, and Nightglass Seer. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, effects, Doppelganger artwork, and later Wave 2 work separate until the clean published reconciliation.',
+    notes: 'Visually approved and published as one tall grounded Hollowcrown Regent against public Cursed Ghost and Shadow Slime plus approved Mist Weaver, Gloam Walker, and Nightglass Seer. Keep registration, fixtures, effects, Doppelganger artwork, and later Wave 2 work separate.',
   },
 });
 

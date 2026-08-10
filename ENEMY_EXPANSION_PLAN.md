@@ -28,12 +28,12 @@
   five recorded hashes. After the exact packet was presented and its three PNG
   boards were opened together in Aseprite, the designer replied `approved lets
   do next`. Implementation `ffe5f574ab9f06ecfaad83c50a7980254eea7211`
-  and approval record `90a06bd34e1bae29becdc380b01895825cf4a969` are
-  committed locally; bounded publication is authorized and pending. After a
-  clean published reconciliation, the same response opens only one private
-  common Doppelganger candidate. Living Shadow registration, fixtures, effects,
-  other EN-E07 families beyond that candidate, release, and EN-E08 remain
-  closed.
+  and approval record `90a06bd34e1bae29becdc380b01895825cf4a969` plus initial
+  handoff `0c3d671bee3013413291170e127d3820cdcaff95` are published and
+  remote-verified. The same response opens only one private common Doppelganger
+  candidate from the clean publication reconciliation. Living Shadow
+  registration, fixtures, effects, other EN-E07 families beyond that candidate,
+  release, and EN-E08 remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3562,7 +3562,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow common, specialist, and elite approved; Hollowcrown Regent publication pending`
+- Status: `Living Shadow common, specialist, and elite approved and published; Doppelganger common is the sole next private gate`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3675,7 +3675,7 @@ assembler.
   only the private elite candidate below. Keep Living Shadow registration,
   fixtures, effects, another EN-E07 family, release, and EN-E08 closed.
 
-#### Living Shadow Hollowcrown Regent complete suite approved locally
+#### Living Shadow Hollowcrown Regent complete suite approved and published
 
 - Gate ID: `en-e07-living-shadow-hollowcrown-regent-full-v1`; status:
   `approved` on `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly
@@ -3721,14 +3721,14 @@ assembler.
 - Approval: after the exact packet was presented and the three exact PNG boards
   were opened together in Aseprite, the designer replied `approved lets do
   next` on 2026-08-10. Approval is restricted to the candidate digest above.
-- Local commits: implementation
+- Published commits: implementation
   `ffe5f574ab9f06ecfaad83c50a7980254eea7211`; approval record
-  `90a06bd34e1bae29becdc380b01895825cf4a969`. The standing permission
-  authorizes their bounded documentation reconciliation and branch push.
-- Required next action: publish this exact chain and reconcile the clean remote
-  checkpoint. Then open only one private common Doppelganger candidate. Keep
-  Living Shadow registration, fixtures, effects, other EN-E07 family artwork,
-  release, and EN-E08 closed.
+  `90a06bd34e1bae29becdc380b01895825cf4a969`; initial handoff
+  `0c3d671bee3013413291170e127d3820cdcaff95`. The remote handoff was
+  verified exact.
+- Required next action: open only one private common Doppelganger candidate
+  from the clean publication reconciliation. Keep Living Shadow registration,
+  fixtures, effects, other EN-E07 family artwork, release, and EN-E08 closed.
 
 ### EN-E08 - Possessed equipment
 

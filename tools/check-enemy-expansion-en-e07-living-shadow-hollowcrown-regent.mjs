@@ -164,9 +164,11 @@ check(
   EN_E07_HOLLOWCROWN_REGENT_GATE.status === 'approved'
     && EN_E07_HOLLOWCROWN_REGENT_GATE.approvedOn === '2026-08-10'
     && EN_E07_HOLLOWCROWN_REGENT_GATE.approvedImplementation === 'ffe5f574ab9f06ecfaad83c50a7980254eea7211'
-    && EN_E07_HOLLOWCROWN_REGENT_GATE.publishedImplementation === null
-    && EN_E07_HOLLOWCROWN_REGENT_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Hollowcrown Regent approved-local state drifted',
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.publishedImplementation === 'ffe5f574ab9f06ecfaad83c50a7980254eea7211'
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.publishedApprovalRecord === '90a06bd34e1bae29becdc380b01895825cf4a969'
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.initialPublishedHandoff === '0c3d671bee3013413291170e127d3820cdcaff95'
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.publicationState === 'published',
+  'Hollowcrown Regent published state drifted',
 );
 check(
   EN_E07_HOLLOWCROWN_REGENT_GATE.approvalEvidence.includes('three exact PNG review boards were opened together in Aseprite')
@@ -206,10 +208,9 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('visually approved')
-    && EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('bounded approval-record')
+  EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('initial handoff are published')
     && EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('only one private common Doppelganger candidate'),
-  'approved-local publication and next-family gate drifted',
+  'published next-family gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_HOLLOWCROWN_REGENT_GATE)

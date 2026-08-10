@@ -314,11 +314,12 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The exact review packet is reproducible and was visually approved when the
   designer replied `approved lets do next`. Implementation
   `ffe5f574ab9f06ecfaad83c50a7980254eea7211` and approval record
-  `90a06bd34e1bae29becdc380b01895825cf4a969` are committed locally with
-  bounded publication pending. The protected 20-gate matrix, fast suite, and
-  full suite pass; the approved 1,200-frame integration digest and all 232
-  fixtures remain exact. A clean published reconciliation opens only one
-  private common Doppelganger candidate.
+  `90a06bd34e1bae29becdc380b01895825cf4a969` plus initial handoff
+  `0c3d671bee3013413291170e127d3820cdcaff95` are published and remote
+  verified. The protected 20-gate matrix, fast suite, and full suite pass; the
+  approved 1,200-frame integration digest and all 232 fixtures remain exact.
+  Only one private common Doppelganger candidate opens from the clean
+  publication reconciliation.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

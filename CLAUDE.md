@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved local art checkpoint:
+- Current approved published art checkpoint:
   `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly on clean
   published Nightglass reconciliation `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`,
   contains one private elite Living Shadow Hollowcrown Regent. Its frozen
@@ -123,12 +123,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   approved 1,200-frame integration digest and all 232 fixtures exact. The exact
   packet was opened in Aseprite and the designer replied `approved lets do
   next`; implementation `ffe5f574ab9f06ecfaad83c50a7980254eea7211` and
-  approval record `90a06bd34e1bae29becdc380b01895825cf4a969` are committed
-  locally and their bounded push is authorized. After a clean published
-  reconciliation, the same response opens only one private common Doppelganger
-  candidate. Do not register Living Shadow, generate fixtures, add effects,
-  start another role or family beyond that candidate, release, or advance
-  EN-E08.
+  approval record `90a06bd34e1bae29becdc380b01895825cf4a969` plus initial
+  handoff `0c3d671bee3013413291170e127d3820cdcaff95` are published and remote
+  verified. The same response opens only one private common Doppelganger
+  candidate from the clean publication reconciliation. Do not register Living
+  Shadow, generate fixtures, add effects, start another role or family beyond
+  that candidate, release, or advance EN-E08.
 - Approved preceding art checkpoint:
   `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
   published Gloam Walker reconciliation `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`,

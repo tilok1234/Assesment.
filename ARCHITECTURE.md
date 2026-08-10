@@ -971,10 +971,11 @@ Weaver, Gloam Walker, and Nightglass Seer, and keeps both approved Living Shadow
 digests exact. Its exact review packet is reproducible and was visually approved
 when the designer replied `approved lets do next`. Implementation
 `ffe5f574ab9f06ecfaad83c50a7980254eea7211` and approval record
-`90a06bd34e1bae29becdc380b01895825cf4a969` are committed locally; bounded
-publication is authorized and pending. The module remains private,
-unregistered, and fixture-free. After a clean published reconciliation, the
-same response opens only one private common Doppelganger candidate.
+`90a06bd34e1bae29becdc380b01895825cf4a969` are committed and pushed with
+initial handoff `0c3d671bee3013413291170e127d3820cdcaff95`. The module remains
+private, unregistered, and fixture-free even though its review branch is
+published. The same response opens only one private common Doppelganger
+candidate from the clean publication reconciliation.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

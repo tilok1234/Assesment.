@@ -23,11 +23,10 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Hollowcrown Regent Approved, Publication Pending
+## Immediate Continuation Checkpoint - Hollowcrown Regent Approved and Published
 
 Start here in a new task. The exact private elite is hash-frozen, technically
-validated, visually approved, and committed locally. Its bounded publication
-is authorized but has not yet been pushed.
+validated, visually approved, committed, and published.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly on
@@ -91,17 +90,16 @@ is authorized but has not yet been pushed.
   the three exact PNG boards were opened together in Aseprite; the designer
   replied `approved lets do next` on 2026-08-10. Approval applies only to digest
   `657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`.
-- Local commits: implementation
+- Published commits: implementation
   `ffe5f574ab9f06ecfaad83c50a7980254eea7211` and approval record
-  `90a06bd34e1bae29becdc380b01895825cf4a969`.
-- Publication state: the standing permission above authorizes this bounded
-  implementation, approval-record, documentation, and branch push. The branch
-  is not yet published at this checkpoint.
-- Required next action: commit this current-state reconciliation and push the
-  exact chain. After a clean published reconciliation, the same `approved lets
-  do next` response opens only one private common Doppelganger candidate. Do
-  not register Living Shadow, generate fixtures, add effects, open another
-  role or family beyond that candidate, release, or advance EN-E08.
+  `90a06bd34e1bae29becdc380b01895825cf4a969`, with initial published handoff
+  `0c3d671bee3013413291170e127d3820cdcaff95`. Direct remote verification
+  matched the local handoff exactly.
+- Required next action: the same `approved lets do next` response opens only
+  one private common Doppelganger candidate from the clean publication
+  reconciliation. Do not register Living Shadow, generate fixtures, add
+  effects, open another role or family beyond that candidate, release, or
+  advance EN-E08.
 
 ## Approved Preceding Checkpoint - Nightglass Seer Published
 
@@ -336,7 +334,7 @@ pushed.
 - Historical stop gate: this checkpoint did not itself authorize Nymph
   registration, fixtures, effects, release, or EN-E07. The later explicit
   authorization recorded above opened only the private Gloam Walker candidate,
-  now approved locally at the checkpoint above.
+  now approved and published at the checkpoint above.
 
 ## Approved Preceding Checkpoint - Mist Weaver Published
 
