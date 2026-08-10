@@ -355,9 +355,14 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   `16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`.
   Its exact repaired five-artifact packet reproduces byte-for-byte. The
   22-command protected matrix passed in 7.6s, `check:fast` in 52.3s, and full
-  `check` in 102.2s; the approved 1,200-frame integration digest and all 232
-  fixtures remain exact. The candidate is not visually approved, committed, or
-  published.
+  `check` most recently in 107.4s; the approved 1,200-frame integration digest
+  and all 232 fixtures remain exact. The three exact repaired PNGs were opened
+  together in Aseprite, both GIFs were presented, and the designer replied
+  `approved lets do next`. Implementation
+  `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval record
+  `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` are committed locally; bounded
+  publication is authorized. The elite remains closed until a clean published
+  Falseface reconciliation.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

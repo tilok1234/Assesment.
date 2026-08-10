@@ -1328,9 +1328,15 @@ Pale Echo, Cultist Zealot, and Dark Elf; 72/72 colored frames preserve every
 family/specialist ramp and 8/8 flashes are exact white. The repaired
 five-artifact packet reproduces byte-for-byte twice. The 22-gate matrix, fast
 suite, and full suite pass; the approved 1,200-frame integration digest and all
-232 fixtures remain exact. The candidate is not visually approved, committed,
-or published. Registration, fixtures, runtime copying, effects, the elite and
-later families, release, and EN-E08 remain closed.
+232 fixtures remain exact. The three exact repaired PNGs were opened together
+in responsive Aseprite, both GIFs were presented, and the designer replied
+`approved lets do next`. Implementation
+`c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval record
+`cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` are committed locally; bounded
+documentation reconciliation and branch publication are authorized.
+Registration, fixtures, runtime copying, effects, later families, release, and
+EN-E08 remain closed. The elite opens only after a clean published Falseface
+reconciliation.
 
 ## Approved enemy backlog integration published
 

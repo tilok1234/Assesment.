@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current isolated art candidate:
+- Current isolated art approval checkpoint:
   `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean published
   Pale Echo reconciliation `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`,
   contains one private specialist Doppelganger Falseface Adept. Its repaired
@@ -124,11 +124,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   legs at 203-261 opaque pixels. All five repaired review artifacts reproduce
   byte-for-byte. The 22-command protected matrix, `check:fast`, and full
   `check` pass with the approved 1,200-frame integration digest and all 232
-  fixtures exact. The candidate is not visually approved, committed, or
-  published. Do not register Doppelganger, generate fixtures, implement runtime
-  copying, add effects, start the elite or another family, release, advance
-  EN-E08, or commit/push this candidate before explicit approval of the exact
-  digest.
+  fixtures exact. The three exact repaired PNGs were opened together in
+  Aseprite, both GIFs were presented, and the designer replied `approved lets
+  do next`. Implementation `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73`
+  and approval record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` are
+  committed locally, and bounded documentation reconciliation plus branch push
+  are authorized. Do not register Doppelganger, generate fixtures, implement
+  runtime copying, add effects, start the elite or another family, release, or
+  advance EN-E08 before the clean published Falseface reconciliation. After
+  that reconciliation, the same reply opens only one private elite
+  Doppelganger candidate.
 - Approved preceding art checkpoint:
   `codex/en-e07-doppelganger-pale-echo`, based exactly on clean published
   Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`,

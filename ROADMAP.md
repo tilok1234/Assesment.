@@ -179,7 +179,7 @@ approved on 2026-08-10. Frozen implementation
 tracked branch. EN-E07, registration, fixtures, shared renderer/schema changes,
 effects, and release remain closed.
 
-Current EN-E07 candidate checkpoint (2026-08-10): common Doppelganger Pale Echo
+Current EN-E07 approval checkpoint (2026-08-10): common Doppelganger Pale Echo
 is approved, published, and reconciled at `e18a512`; the designer replied
 `approved lets do next`. The role order opens only specialist Falseface Adept
 on `codex/en-e07-doppelganger-falseface-adept`. Its repaired authored default
@@ -193,14 +193,21 @@ block and its face press was overfilled; the repaired 203-261-pixel candidate
 restores readable head and leg separation. It remains 80/80 connected, bounded,
 grounded, and pixel/alpha distinct from Pale Echo, Cultist Zealot, and Dark Elf.
 The exact repaired five-artifact packet is hash-frozen and reproduces twice but
-is not visually approved, committed, or published. The protected 22-gate
-matrix, fast suite, and full suite pass with the approved integration and 232
-fixtures unchanged. Pale Echo implementation
+was visually approved after the three exact repaired PNGs were opened together
+in responsive Aseprite, both GIFs were presented, and the designer replied
+`approved lets do next`. Implementation
+`c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval record
+`cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` are committed locally; bounded
+documentation reconciliation and branch publication are authorized. The
+protected 22-gate matrix, fast suite, and full suite pass with the approved
+integration and 232 fixtures unchanged. Pale Echo implementation
 `0628135b84725836c552e13db797540a965854cb`, approval record
 `182938381ac39812434518d0216e6e9796367bbb`, initial handoff
 `1e6e8d8bb01de97ca4e1373b62b461e40b1aa239`, and reconciliation `e18a512`
 remain exact. Registration, fixtures, runtime copying, effects, the elite and
-later EN-E07 families, release, and EN-E08 stay closed.
+later EN-E07 families, release, and EN-E08 stay closed until a clean published
+Falseface reconciliation. After that checkpoint, the same reply opens only one
+private elite Doppelganger candidate.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

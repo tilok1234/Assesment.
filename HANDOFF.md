@@ -23,11 +23,13 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Falseface Adept Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Falseface Adept Approved; Publication Authorized
 
-Start here in a new task. This is the sole active isolated art gate. The exact
-private specialist Doppelganger candidate is repaired, hash-frozen, and fully
-validated, but it is not visually approved, committed, or published.
+Start here in a new task. This is the sole active isolated publication gate.
+The exact private specialist Doppelganger is repaired, hash-frozen, fully
+validated, and visually approved. Its implementation and approval record are
+committed locally; bounded handoff reconciliation and branch push are
+authorized, but remote publication is not yet recorded.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean
@@ -42,6 +44,14 @@ validated, but it is not visually approved, committed, or published.
   reconciled, the designer replied `approved lets do next` on 2026-08-10. The
   frozen common-specialist-elite order opens only one private specialist
   Falseface Adept.
+- Approval/publication authorization: the repaired boards and all raw and
+  effects-enabled phase boards were inspected, the three exact repaired PNGs
+  were opened together in responsive Aseprite, both exact GIFs were presented,
+  and the designer replied `approved lets do next` on 2026-08-10. Approval
+  applies only to digest
+  `16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`.
+  Implementation `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval
+  record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` are committed locally.
 - Scope: one authored default-form 80-frame specialist Doppelganger across Idle
   F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases,
   and exact Death-to-Hurt aliases H1,H2,H2,H2 in all four directions. Runtime
@@ -84,13 +94,15 @@ validated, but it is not visually approved, committed, or published.
   ignored under `enemy-expansion-review/en-e07-doppelganger-falseface-adept/`.
 - Broad validation passes: the 22-command protected matrix completed in 7.6s;
   `npm.cmd run check:fast` passed in 52.3s; and full `npm.cmd run check` passed
-  in 102.2s. The integrated frame digest remains
+  most recently in 107.4s. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required visual action: inspect the repaired raw, Complete B + Form,
-  four-way comparison, and all four animation-phase boards; open the three
-  exact PNG boards together in Aseprite; present both exact GIFs; and ask for
-  explicit approval of the digest above. Do not commit or push before approval.
+- Required publication action: commit this bounded documentation handoff, push
+  implementation `c415620`, approval record `cb68ec7`, and the handoff commit,
+  remote-verify them, then record and publish one final clean reconciliation.
+  Only after that checkpoint may the same response open one private elite
+  Doppelganger candidate. Registration, fixtures, runtime copying, effects,
+  later families, release, and EN-E08 remain closed.
 
 ## Approved Preceding Checkpoint - Pale Echo Published
 
