@@ -262,7 +262,13 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   approved on 2026-08-10. Frozen implementation
   `682f99a581e70ee1c985257e0c122d75c7add6f9` and approval record
   `07a673df462cdb651673fd042fb92965da624faf` are committed and pushed on the
-  tracked branch. It remains private and no Rivercrown Muse gate is active.
+  tracked branch. The later elite Nymph Rivercrown Muse candidate on
+  `codex/en-e06-nymph-rivercrown-muse` passes 80/80 connected, bounded,
+  grounded, hard-alpha, Elf/Spring/Mist pixel, and alpha-silhouette distinction
+  gates at digest
+  `4917d42fd0b480e4c2635ba4c96725e6b68afec1075dacb8acee2f70dc886bcd`.
+  Its exact five-artifact packet is frozen for visual approval; no commit or
+  publication is authorized.
 Fixture regeneration, later Nymphs, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 

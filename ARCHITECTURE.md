@@ -897,8 +897,15 @@ All 80 frames are connected, bounded, grounded, and hard-alpha. The five exact
 artifacts were opened together in Aseprite and visually approved on 2026-08-10.
 Frozen implementation `682f99a581e70ee1c985257e0c122d75c7add6f9` and approval
 record `07a673df462cdb651673fd042fb92965da624faf` are committed and pushed on
-the tracked branch. It remains private. Rivercrown Muse, registration,
-fixtures, effects, release, and Wave 2 stay closed.
+the tracked branch. It remains private. The separately authorized Rivercrown
+Muse module keeps one complete elite Nymph in another private one-family
+registry. Its vertical three-point diadem, long asymmetric hair, open shoulders,
+diagonal sash, flared gown, and processional invocation poses pass 80/80 pixel
+and alpha distinctions from Elf Mage, Spring Dancer, and Mist Weaver at digest
+`4917d42fd0b480e4c2635ba4c96725e6b68afec1075dacb8acee2f70dc886bcd`.
+All 80 frames are connected, bounded, grounded, and hard-alpha; the five exact
+artifacts are frozen at the preapproval gate. It is not committed or public.
+Nymph registration, fixtures, effects, release, and Wave 2 stay closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

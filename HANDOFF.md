@@ -15,10 +15,95 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Mist Weaver Approved And Published
+## Immediate Continuation Checkpoint - Rebuilt Rivercrown Muse Awaiting Visual Approval
 
-Start here in a new task. This is the current clean stopping checkpoint; the
-exact private candidate was visually approved, committed, and pushed.
+Start here in a new task. The current branch intentionally has an uncommitted,
+private rebuilt Rivercrown Muse candidate. Do not discard, commit, push,
+register, or publish it without receiving explicit approval for the exact
+review packet below.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e06-nymph-rivercrown-muse`, based exactly on clean pushed
+  Mist Weaver handoff `983b76ad14dcaf7c3151196763e481237fcbedb1`.
+- Live Git state: `HEAD` remains that base commit. The working tree is
+  intentionally dirty with the Rivercrown implementation, its focused checker,
+  deterministic review/GIF tools, package scripts, the Nymph role-state change,
+  and the narrow predecessor-check updates needed to recognize one private
+  elite candidate. Nothing in this lane is committed or pushed.
+- Authorization: after Mist Weaver was approved, committed, pushed, and
+  reconciled, the designer said `lets do nexr` on 2026-08-10. Under the EN-E06
+  Nymph role order and one-complete-sprite cadence, this opens only elite
+  Rivercrown Muse.
+- Scope: one private 80-frame elite Nymph across Idle F1-F2, Walk W1-W4,
+  Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
+- Rejection history: on 2026-08-10 the designer flagged that the first broad
+  packet was drifting from the established Nymph style. That packet (opaque
+  range 338-370; digest
+  `32d1ee37ad6024823c79d600f945d26cfbf1347662c1d85335cc30174125b467`)
+  was superseded. A narrower overlay-based repair (opaque range 267-317; digest
+  `6394652eab751616183dedf6f5239ef844f4af79f93850e4396e618b3c378283`)
+  was then presented, and the designer replied `not reaALLY`; that packet is
+  also superseded and is not approval evidence.
+- Construction correction: the active candidate is an independently authored
+  private Nymph renderer rather than dense rectangular overlays painted across
+  the approved Spring Dancer chassis. It stays inside the Rivercrown module,
+  checker, and review framing; no shared renderer, approved predecessor art,
+  registration, or fixture was changed.
+- Identity: vertical three-point river diadem, clear hair-framed face, long
+  asymmetrical river hair, open shoulders, pearl collar, diagonal violet sash,
+  light ceremonial sleeves, flared blue-green gown, and visible split-foot
+  sandals. Elite presence now comes from height, ornament, and gesture rather
+  than armor-like mass.
+- Motion: diadem, hair, and sash counter-sway at Idle; four light processional
+  Walk steps; pearl-collar gather, one-hand invocation rise, open two-hand A3/C3
+  invocation, and diagonal recovery for Attack/Cast. Side and rear poses rotate
+  the face, hair, arms, sash, gown, and depth ordering rather than retaining a
+  front-facing block.
+- Effects firewall: water arcs, river currents, foam, droplets, ground ripples,
+  elemental flares, sparkles, glow, detached crown streamers, and impacts remain
+  external. Registration, fixtures, shared renderer/schema changes, release,
+  and EN-E07 remain closed.
+- Focused validation completed: the rebuilt candidate passes 80/80 connected,
+  one-cell-bounded, grounded hard-alpha frames; 80/80 pixel and alpha-silhouette
+  distinctions from public Elf Mage, approved Spring Dancer, and approved Mist
+  Weaver; 72/72 colored identity frames; 8/8 exact white flashes; opaque range
+  232-254; 7,358 Complete B additions; and 8,930 Form changes. The widest span
+  is reserved for the front/rear A3/C3 invocation poses. The focused
+  checker also confirms all fifteen approved EN-E06 sources remain exact, the
+  public catalog remains 80/259, and committed fixtures are unchanged.
+- Broader validation completed: all sixteen EN-E06 focused gates and the frozen
+  1,200-frame approved-integration gate pass; `check:fast` passes in 56.9s and
+  full `check` in 108.6s with all 232 fixtures valid and untouched.
+- Frozen candidate digest:
+  `4917d42fd0b480e4c2635ba4c96725e6b68afec1075dacb8acee2f70dc886bcd`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `1dfa2632a2949ce02316c6e26f7a033b67146cb8190edc510e41daeed36b4407` /
+  `5704a8b67c583728aab7b3ef1b4b79d67c75b4e779df3af0121aa7e406221471`;
+  Elf/Dancer/Mist/Muse `1520x548` comparison
+  `6080fd9cdf91593d63244f3e06b82191cc27bb7e55efab8bee16f9f0734af90a`;
+  raw / Complete B + Form `640x672` GIFs
+  `d72e5da8b6e0c96b573d81d75f50f2cd0e652286d9f6f05113bfe89e97d932bd` /
+  `9baf3c58541fbab1a3270e40145e401ac10a5c5d8c2e91ec96c2bc20f61fb496`.
+  Regeneration reproduces all five hashes exactly. Review artifacts remain
+  ignored evidence under
+  `enemy-expansion-review/en-e06-nymph-rivercrown-muse/`.
+- Review state: the three exact regenerated PNGs were inspected at original
+  resolution in the Codex viewer and opened together in Aseprite. The rebuilt
+  profile is taller and lighter beside Spring Dancer and Mist Weaver; the
+  diadem reads vertically, the face and feet remain visible, the diagonal flow
+  survives all directions, and only A3/C3 opens the invocation span. The
+  designer has not approved this rebuilt packet yet.
+- Required next action: preserve the dirty candidate, present the three exact
+  PNGs and both GIFs, and stop for explicit visual approval. Only after approval
+  may this exact frozen lane be committed and pushed. Approval would still not
+  authorize Nymph registration, fixtures, effects, release, or EN-E07.
+
+## Approved Preceding Checkpoint - Mist Weaver Published
+
+This records the clean published predecessor for the active Rivercrown Muse
+candidate. The exact private Mist Weaver candidate was visually approved,
+committed, and pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-nymph-mist-weaver`, based exactly on clean pushed

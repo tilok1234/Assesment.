@@ -166,7 +166,7 @@ check(EN_E06_CONTRACT_CARDS[1].variants[1].status === 'implemented-full-approved
 check(EN_E06_CONTRACT_CARDS[1].variants[2].status === 'implemented-full-approved', 'Blackthorn Matron must retain its full approval');
 check(EN_E06_CONTRACT_CARDS[2].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/implemented-full-approved', 'Dryad role-order status drifted');
   check(EN_E06_CONTRACT_CARDS[3].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Redcap role-order statuses must remain approved');
-check(EN_E06_CONTRACT_CARDS[4].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/planned', 'Nymph role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[4].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/implemented-full-candidate', 'Nymph role-order status drifted');
 
 check(EN_E06_THISTLE_HEXER_DATA.alphaPolicy === 'binary-folded-petal-negative-space', 'the specialist renderer data must retain its hard-alpha folded-wing policy');
 check(EN_E06_THISTLE_HEXER_DATA.effectBoundary.includes('external-curse-motes') && EN_E06_THISTLE_HEXER_DATA.bakedEffects.length === 0, 'curse motes and later effects must remain external');

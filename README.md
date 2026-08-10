@@ -1168,6 +1168,20 @@ on 2026-08-10. Frozen implementation
 tracked branch. It remains private. No registration, Rivercrown Muse, fixture,
 effect, release, or EN-E07 work is open.
 
+The separately authorized Rivercrown Muse is the private elite Nymph: a tall,
+light fey with a vertical three-point diadem, clear hair-framed face, long
+asymmetric river hair, open shoulders, pearl collar, diagonal violet sash,
+ceremonial sleeves, flared blue-green gown, and visible split-foot sandals.
+Water, foam, currents, ripples, glow, particles, and detached trails remain
+external. Run `npm.cmd run review:enemy-expansion-en-e06-nymph-rivercrown-muse`
+for the raw, Complete B + Form, Elf/Dancer/Mist/Muse comparison, and paired GIFs;
+run `npm.cmd run check:enemy-expansion-en-e06-nymph-rivercrown-muse` for its
+80-frame structural and firewall gate. It passes at digest
+`4917d42fd0b480e4c2635ba4c96725e6b68afec1075dacb8acee2f70dc886bcd`,
+with 80/80 connected, bounded, grounded frames and 72/72 colored identity
+frames. The exact packet is frozen for visual approval. No commit, publication,
+registration, fixture, effect, release, or EN-E07 work is open.
+
 ## Approved enemy backlog integration published
 
 Branch `codex/approved-enemy-assembler-integration` composes three explicit
