@@ -15,10 +15,79 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Rivercrown Muse Approved And Published
+## Immediate Continuation Checkpoint - Gloam Walker Candidate Awaiting Visual Approval
 
-Start here in a new task. This is the current clean stopping checkpoint; the
-exact rebuilt private candidate was visually approved, committed, and pushed.
+Start here in a new task. This is the active isolated art gate. The exact
+private candidate is hash-frozen and technically validated, but it is not
+visually approved, committed, or published.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e07-living-shadow-gloam-walker`, based on local
+  current-state reconciliation
+  `d785fe56e7d8c98243f948fce615885d5a04fbc3`. That reconciliation is still one
+  docs-only commit ahead of the tracked Rivercrown branch and requires explicit
+  push authorization; do not hide or bypass that publication boundary.
+- Approved predecessor: Rivercrown implementation
+  `39bd0658d53acbfe7aa4484e14f6518551720142` and approval record
+  `ca82f079ff84934edc4ab51a8d406050b9083d2a` are pushed. All fifteen approved
+  EN-E06 source digests remain exact.
+- Authorization: after Rivercrown was visually approved and its implementation
+  and approval commits were pushed, the designer said `lets do next` on
+  2026-08-10. Rivercrown completes the fifth and final EN-E06 family. The
+  frozen plan queues EN-E07 next and names Living Shadow priority-first, so the
+  one-complete-sprite cadence opens only common Gloam Walker.
+- Scope: one private 80-frame common Living Shadow across Idle F1-F2, Walk
+  W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
+- Style correction: use chunky one-to-three-pixel forms, a tight dark-violet
+  ramp, hard alpha, and connected negative-space cutouts. The silhouette keeps
+  a hooked crown, hollow face, angular shoulders, long connected claw arms,
+  pinched waist, two visibly split legs, and broad planted feet. It must not
+  collapse into the public Ghost floating robe, the Shadow Slime blob, or an
+  approved dark robed caster.
+- Motion: two-frame crown/shoulder compression at Idle; four stalking split-foot
+  Walk steps with opposed arm drag; connected-claw coil, one-arm long reach,
+  two-arm A3/C3 rake, and low recovery. The attack changes the body silhouette;
+  no detached claw trail or projectile is baked in.
+- Effects firewall: detached wisps, floor pools, smoke, afterimages,
+  projectiles, claw trails, glow, loose fragments, and impact flashes remain
+  external. Registration, fixtures, public exposure, later Living Shadow roles,
+  Doppelganger, Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 remain
+  closed.
+- Focused validation passes: 80/80 connected, one-cell-bounded, grounded
+  hard-alpha frames; 80/80 pixel and alpha-silhouette distinctions from public
+  Cursed Ghost, public Shadow Slime, and approved Mist Weaver; 72/72 colored
+  style-ramp frames; 8/8 exact white flashes; 54/54 expected eye-bearing
+  front/side views; opaque range 208-242; 7,792 Complete B additions; and 5,106
+  Form changes. The gate also proves all fifteen approved EN-E06 digests exact,
+  public 80/259 unchanged, and no fixture/facade/manifest exposure. The approved
+  1,200-frame integration gate remains exact at digest
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`;
+  `npm.cmd run check:fast` passes in 54.9s and full `npm.cmd run check` in
+  109.5s with all 232 fixtures valid.
+- Frozen candidate digest:
+  `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `a3389c510a0d8c16a50a19be6eaebac15d452a056531d71c807e778767975e76` /
+  `53c13282fe6d5b3ad9ddad19bd1047cd023fc8bb0392416d737ce47e27869b02`;
+  Ghost/Slime/Mist/Gloam `1520x548` comparison
+  `75609882aed2b04749e4efb30fbc77df749895549b0fd11cc42f38eb8c421527`;
+  raw / Complete B + Form `640x672` GIFs
+  `54f3262ce694e6696d3af2a40783cce32b2555de7c5cd72acd18900fa1c1e8a8` /
+  `862d28ed3a938a7315146b58706bce4e37f11e9abbfc50c720e63b83be5d9659`.
+  Regeneration reproduces all five hashes exactly; artifacts remain ignored
+  under `enemy-expansion-review/en-e07-living-shadow-gloam-walker/`.
+- Required next action: open the three exact PNG boards together in Aseprite,
+  present both exact GIFs, and ask for explicit visual approval of this digest.
+  Do not commit, publish, register Living Shadow, generate fixtures, add
+  effects, start another role or family, release, or advance EN-E08 without
+  that approval.
+
+## Approved Preceding Checkpoint - Rivercrown Muse Published
+
+This records the exact published predecessor for the active Gloam Walker gate.
+The rebuilt private Rivercrown candidate was visually approved, committed, and
+pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-nymph-rivercrown-muse`, based exactly on clean pushed
@@ -92,9 +161,9 @@ exact rebuilt private candidate was visually approved, committed, and pushed.
   visible, the diagonal flow survives all directions, and only A3/C3 opens the
   invocation span. The designer replied `approived` on 2026-08-10. Approval
   applies only to the frozen digest and hashes above.
-- Required next action: stop at this clean published checkpoint. Do not
-  register Nymph, generate fixtures, add effects, release, or open EN-E07
-  without another explicit authorization.
+- Historical stop gate: this checkpoint did not itself authorize Nymph
+  registration, fixtures, effects, release, or EN-E07. The later explicit
+  authorization recorded above opens only the private Gloam Walker candidate.
 
 ## Approved Preceding Checkpoint - Mist Weaver Published
 

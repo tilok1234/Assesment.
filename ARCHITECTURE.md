@@ -910,6 +910,23 @@ record `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed on
 the tracked branch. It remains private. Nymph registration, fixtures, effects,
 release, and Wave 2 stay closed.
 
+The separately authorized
+`engine/enemy-expansion-en-e07-living-shadow-gloam-walker.js` begins EN-E07
+without changing the public registry. It owns one private common Gloam Walker
+contract, renderer, and one-family candidate registry. The renderer uses
+chunky one-to-three-pixel geometry, a tight dark-violet ramp, connected
+transparent face and torso cavities, angular shoulders, long connected claws,
+a pinched waist, two split legs, and broad planted feet. This keeps its 24x24
+silhouette distinct from the public Ghost floating robe, Shadow Slime blob,
+and approved Mist Weaver caster. Cast aliases Attack; Death aliases Hurt.
+Detached wisps, floor pools, smoke, afterimages, projectiles, claw trails,
+glow, loose fragments, and impacts remain external. The focused gate freezes
+all 80 candidate frames at digest
+`131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`,
+proves all fifteen EN-E06 source digests exact, and keeps public 80/259 and
+fixtures unchanged. The exact review packet awaits visual approval; the module
+is not facade-imported, registered, committed, or published.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

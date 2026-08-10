@@ -13,19 +13,20 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-10): after Mist Weaver was approved, committed,
-  pushed, and reconciled, the designer's `lets do nexr` opened only the third
-  Nymph role, one complete elite Rivercrown Muse on
-  `codex/en-e06-nymph-rivercrown-muse`. Its frozen private 80-frame implementation
-  passes connected, one-cell-bounded, grounded, hard-alpha, alias, mirror, and
-  80/80 pixel plus alpha-silhouette distinction gates against public Elf Mage,
-  approved Spring Dancer, and approved Mist Weaver at digest
-  `4917d42fd0b480e4c2635ba4c96725e6b68afec1075dacb8acee2f70dc886bcd`.
-  The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
-  was opened together in Aseprite and visually approved on 2026-08-10. Frozen
-  implementation `39bd0658d53acbfe7aa4484e14f6518551720142` and approval record
-  `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed.
-  EN-E07, fixtures, effects, registration changes, and release remain closed.
+- Current stopping checkpoint (2026-08-10): after the fifth and final EN-E06
+  family was completed by approved Rivercrown Muse, the designer said `lets do
+  next`. The frozen slice order queues EN-E07 and names Living Shadow
+  priority-first, so this opens only one private common Gloam Walker on
+  `codex/en-e07-living-shadow-gloam-walker`. Its exact 80-frame candidate is
+  technically frozen at digest
+  `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`.
+  It passes 80/80 connected, one-cell-bounded, grounded, hard-alpha, alias,
+  mirror, and pixel/alpha distinctions from public Cursed Ghost, public Shadow
+  Slime, and approved Mist Weaver. The exact raw, Complete B + Form, four-way
+  comparison, and paired GIF packet reproduces all five recorded hashes, but
+  it is not visually approved, committed, or published. Living Shadow
+  registration, fixtures, effects, later EN-E07 roles/families, release, and
+  EN-E08 remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -2865,7 +2866,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `Rivercrown Muse approved and privately published; no later gate active`
+- Status: `all five family role sets complete through approved Rivercrown Muse; EN-E07 Gloam Walker candidate active separately`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3548,12 +3549,13 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 - Publication: frozen implementation
   `39bd0658d53acbfe7aa4484e14f6518551720142` and approval record
   `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed on the
-  tracked branch. Stop before Nymph registration, fixtures, effects, release,
-  or EN-E07 without another explicit authorization.
+  tracked branch. That checkpoint stopped before Nymph registration, fixtures,
+  effects, release, or EN-E07. The designer's later `lets do next` opens only
+  the isolated Gloam Walker candidate below.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `queued`
+- Status: `Gloam Walker common candidate awaiting visual approval`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3561,6 +3563,49 @@ Shared leverage: controlled negative space, unstable edges, silhouette swaps,
 and spectral motion. Doppelganger and Changeling receive authored default forms;
 copying another actor is a runtime/gameplay feature and is not promised by the
 assembler.
+
+#### Living Shadow Gloam Walker complete suite candidate
+
+- Gate ID: `en-e07-living-shadow-gloam-walker-full-v1`; status: `candidate` on
+  `codex/en-e07-living-shadow-gloam-walker`, based on local current-state
+  reconciliation `d785fe56e7d8c98243f948fce615885d5a04fbc3`.
+- Authorization: after Rivercrown Muse was visually approved and its
+  implementation and approval commits were pushed, the designer said `lets do
+  next` on 2026-08-10. Rivercrown completed EN-E06; the slice order and
+  priority-first list open only common Living Shadow Gloam Walker.
+- Style/silhouette contract: chunky one-to-three-pixel forms, a tight
+  dark-violet ramp, hard alpha, connected hollow face and torso negative space,
+  angular shoulders, long connected claws, pinched waist, clearly split legs,
+  and broad planted feet. It must not read as a dark recolor of public Ghost,
+  Shadow Slime, or approved Mist Weaver.
+- Scope: one private 80-frame common Living Shadow. Cast aliases Attack;
+  Death aliases Hurt H1,H2,H2,H2. Detached wisps, floor pools, smoke,
+  afterimages, projectiles, claw trails, glow, loose fragments, and impacts
+  remain external.
+- Focused validation: 80/80 connected, bounded, grounded hard-alpha frames;
+  80/80 pixel and alpha distinctions from Cursed Ghost, Shadow Slime, and Mist
+  Weaver; 72/72 colored frames; 8/8 white flashes; 54/54 expected eye-bearing
+  views; opaque range 208-242; Complete B +7,792; Form changes 5,106. All
+  fifteen approved EN-E06 sources remain exact; public 80/259 and fixtures are
+  unchanged. The approved 1,200-frame integration digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`;
+  `check:fast` passes in 54.9s and full `check` in 109.5s with all 232 fixtures
+  valid.
+- Candidate digest:
+  `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`.
+- Evidence SHA-256: raw
+  `a3389c510a0d8c16a50a19be6eaebac15d452a056531d71c807e778767975e76`;
+  Complete B + Form
+  `53c13282fe6d5b3ad9ddad19bd1047cd023fc8bb0392416d737ce47e27869b02`;
+  comparison
+  `75609882aed2b04749e4efb30fbc77df749895549b0fd11cc42f38eb8c421527`;
+  raw GIF `54f3262ce694e6696d3af2a40783cce32b2555de7c5cd72acd18900fa1c1e8a8`;
+  Complete B + Form GIF
+  `862d28ed3a938a7315146b58706bce4e37f11e9abbfc50c720e63b83be5d9659`.
+- Required next action: open the three exact PNGs together in Aseprite, present
+  both GIFs, and request explicit visual approval. Do not commit, publish,
+  register Living Shadow, generate fixtures, add effects, start another role
+  or EN-E07 family, release, or advance EN-E08 without approval.
 
 ### EN-E08 - Possessed equipment
 

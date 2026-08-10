@@ -1184,7 +1184,28 @@ on 2026-08-10. Frozen implementation
 `39bd0658d53acbfe7aa4484e14f6518551720142` and approval record
 `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed on the
 tracked branch. It remains private. No registration, fixture, effect, release,
-or EN-E07 work is open.
+or EN-E07 work was opened by that approval alone.
+
+The designer's later `lets do next` advances the frozen plan to exactly one
+private common EN-E07 Living Shadow Gloam Walker on
+`codex/en-e07-living-shadow-gloam-walker`. It uses a chunky dark-violet ramp,
+connected hollow face and torso negative space, angular shoulders, long
+connected claws, a pinched waist, clearly split legs, and broad planted feet;
+detached wisps, pools, smoke, afterimages, projectiles, claw trails, glow, and
+impacts remain external. Run
+`npm.cmd run review:enemy-expansion-en-e07-living-shadow-gloam-walker` for the
+raw, Complete B + Form, Ghost/Slime/Mist/Gloam comparison, and paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-living-shadow-gloam-walker` for the
+80-frame structural, style, predecessor, artifact, and public/fixture
+firewalls. The frozen candidate digest is
+`131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`:
+80/80 frames are connected, bounded, grounded, and pixel/alpha distinct from
+Cursed Ghost, Shadow Slime, and Mist Weaver; 72/72 colored frames preserve the
+four-part style ramp; 8/8 flashes are exact white; opaque range is 208-242.
+The exact five-artifact packet is technically reproducible but awaits visual
+approval. It is not committed, published, registered, fixture-backed, or
+public; later Living Shadow roles, remaining EN-E07 families, effects, release,
+and EN-E08 remain closed.
 
 ## Approved enemy backlog integration published
 

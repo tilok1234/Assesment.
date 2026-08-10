@@ -179,6 +179,21 @@ approved on 2026-08-10. Frozen implementation
 tracked branch. EN-E07, registration, fixtures, shared renderer/schema changes,
 effects, and release remain closed.
 
+Current EN-E07 candidate checkpoint (2026-08-10): the designer's later
+`lets do next` advances the frozen plan from completed EN-E06 to priority-first
+Living Shadow only. Branch `codex/en-e07-living-shadow-gloam-walker` contains
+one private common Gloam Walker 80-frame candidate at digest
+`131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`.
+Its chunky dark-violet, hard-alpha, connected negative-space silhouette keeps a
+hollow face, angular shoulders, long claws, split legs, and planted feet. All
+80 frames are connected, bounded, grounded, and pixel/alpha distinct from
+Cursed Ghost, Shadow Slime, and Mist Weaver; all fifteen approved EN-E06
+digests remain exact and public 80/259 is unchanged. The exact five-artifact
+review packet is hash-frozen but not visually approved, committed, or
+published. Registration, fixtures, effects, later Living Shadow roles,
+Doppelganger and the remaining EN-E07 families, release, and EN-E08 stay
+closed.
+
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,
 and published at `cc92ca9`, `3dc68cb`, and `b265e97`. After Petalcrown

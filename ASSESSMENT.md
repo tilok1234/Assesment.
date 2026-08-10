@@ -271,8 +271,16 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   approved on 2026-08-10. Frozen implementation
   `39bd0658d53acbfe7aa4484e14f6518551720142` and approval record
   `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed on the
-  tracked branch. It remains private and no later gate is active.
-Fixture regeneration, later Nymphs, the legacy renderer split, boss
+  tracked branch. It remains private. The designer's later `lets do next`
+  opens exactly one private common EN-E07 Living Shadow Gloam Walker. Its
+  hash-frozen 80-frame candidate uses connected hollow face/torso negative
+  space and clearly split planted legs; all frames pass connected, bounded,
+  grounded, hard-alpha, Cursed Ghost/Shadow Slime/Mist Weaver pixel and alpha
+  distinctions at digest
+  `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`.
+  The exact packet awaits visual approval and is not committed, published, or
+  public.
+Fixture regeneration, later Living Shadow roles, remaining EN-E07 families, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`

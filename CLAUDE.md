@@ -84,7 +84,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 - Scope reviews to the changed family/boss; whole-roster review packets are
   release-time only.
 
-## Known state (2026-08-09)
+## Known state (2026-08-10)
 
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
   the frozen asset pack). The stable and consumer expansion registries now
@@ -102,7 +102,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   byte-unchanged, including the intentionally historical Ghoul fixture. Source
   and documentation are committed and pushed at
   `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
-- Current EN-E06 stopping checkpoint: `codex/en-e06-nymph-rivercrown-muse`,
+- Current active art gate: `codex/en-e07-living-shadow-gloam-walker` contains
+  exactly one private common Living Shadow Gloam Walker candidate. The frozen
+  80-frame digest is
+  `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`;
+  all frames are connected, one-cell-bounded, grounded, hard-alpha, and
+  pixel/alpha distinct from public Cursed Ghost, public Shadow Slime, and
+  approved Mist Weaver. The style contract requires chunky one-to-three-pixel
+  forms, a tight dark-violet ramp, connected hollow face/torso negative space,
+  and clearly split planted legs. The exact raw, Complete B + Form, comparison,
+  and paired GIF evidence is hash-frozen but not visually approved, committed,
+  or published. Do not commit or push it, register Living Shadow, generate
+  fixtures, add effects, start another EN-E07 role/family, release, or advance
+  EN-E08 without explicit visual approval.
+- Approved EN-E06 predecessor: `codex/en-e06-nymph-rivercrown-muse`,
   based exactly on clean published Mist Weaver handoff `983b76a`, contains one
   complete approved elite Nymph. Its 80 frames pass connected, one-cell-bounded, grounded,
   hard-alpha, alias, mirror, and 80/80 pixel plus alpha-silhouette distinctions
@@ -112,7 +125,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   approved on 2026-08-10. Frozen implementation `39bd065` and approval record
   `ca82f07` are committed and pushed. Full post-approval validation passes in
   111.7s with all 232 fixtures valid. Public Nymph remains absent within 80/259.
-  Stop before registration, fixtures, EN-E07, effects, or release.
+  That approval itself stopped before registration, fixtures, EN-E07, effects,
+  or release; the later `lets do next` opens only the Gloam Walker gate above.
 - The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved
