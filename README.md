@@ -1394,9 +1394,14 @@ reproduces byte-for-byte twice. The 24-command protected matrix passed in
 integration digest and all 232 fixtures remain exact. The comparison, both
 full-suite boards, and all eight raw/effects-enabled phase boards were
 inspected, and the three exact frozen PNGs were opened together in responsive
-Aseprite. Lantern Mote remains private, uncommitted, and unpushed pending
-explicit designer approval of this exact packet. Registration, fixtures,
-effects, later Will-o-Wisp roles/families, release, and EN-E08 remain closed.
+Aseprite. The designer replied `approved lets do next` on 2026-08-11;
+implementation `96907f552a06ba3865e25a46f881af5add2237ee` and approval
+record `878e4969de59c500de342555e9b136e3d8cde2de` are committed locally,
+and full validation passes against approved-local metadata in 111.9s. Lantern
+Mote remains private, unregistered, and fixture-free while its bounded handoff
+and branch push are pending. Registration, fixtures, effects, elite or other
+families, release, and EN-E08 remain closed. Only one private specialist may
+open after clean publication.
 
 ## Approved enemy backlog integration published
 

@@ -1,6 +1,6 @@
 # Project Handoff
 
-Date: 2026-08-10
+Date: 2026-08-11
 
 ## V2 Repository And Workflow Note
 
@@ -23,12 +23,15 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Lantern Mote Frozen; Approval Pending
+## Immediate Continuation Checkpoint - Lantern Mote Approved; Publication Pending
 
 Start here in a new task. The sole active art gate is one private common
 Will-o-Wisp Lantern Mote candidate. It is repaired, hash-frozen,
-deterministic, fully validated, and visually inspected, but it is not yet
-designer-approved, committed, pushed, registered, or public.
+deterministic, fully validated, and visually approved. Implementation
+`96907f552a06ba3865e25a46f881af5add2237ee` and approval record
+`878e4969de59c500de342555e9b136e3d8cde2de` are committed locally; the bounded
+handoff reconciliation and branch push are authorized but not yet published.
+The actor remains unregistered and non-public.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean
@@ -82,18 +85,23 @@ designer-approved, committed, pushed, registered, or public.
 - Visual review completed: the comparison, both full-suite boards, and all
   eight raw/effects-enabled phase boards were inspected at original detail.
   The exact raw, Complete B + Form, and comparison PNGs were then opened
-  together in a responsive Aseprite 1.3.17.2 session. This is inspection
-  evidence only; designer approval remains pending.
+  together in a responsive Aseprite 1.3.17.2 session. The exact packet was
+  presented and the designer replied `approved lets do next` on 2026-08-11.
+  Approval applies only to the frozen digest and five hashes above.
 - Broad validation passes: the 24-command protected
   predecessor/candidate/integration matrix completed in 16.0s;
   `npm.cmd run check:fast` passed in 55.6s; and full `npm.cmd run check` passed
-  in 108.4s. The integrated frame digest remains
+  in 108.4s before approval and in 111.9s against approved-local metadata. The
+  integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: present this exact five-artifact packet and wait for an
-  explicit designer approval or rejection. Do not commit, push, publish,
-  register Will-o-Wisp, generate fixtures, add effects, name or start another
-  Will-o-Wisp role or family, release, or advance EN-E08 before approval.
+- Required next action: commit this bounded approval-state handoff and push the
+  implementation, approval record, and handoff commits under the standing
+  approved-work permission. Then reconcile the exact published tuple. Only
+  after that clean publication may the same `approved lets do next` response
+  open one private specialist Will-o-Wisp candidate. Do not register
+  Will-o-Wisp, generate fixtures, add effects, start the elite or another
+  family, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Grand Pretender Published
 

@@ -1089,9 +1089,13 @@ raw/effects-enabled phase boards were inspected, and the three exact frozen
 PNGs were opened together in responsive Aseprite. The protected 24-command
 matrix passed in 16.0s, fast validation in 55.6s, and full validation in 108.4s
 with the approved integration digest and all 232 fixtures exact. This remains
-inspection-only evidence: the module is private, unregistered, fixture-free,
-uncommitted, and unpushed pending explicit designer approval of the exact
-packet.
+private, unregistered, and fixture-free. The designer replied `approved lets
+do next` on 2026-08-11; implementation
+`96907f552a06ba3865e25a46f881af5add2237ee` and approval record
+`878e4969de59c500de342555e9b136e3d8cde2de` are committed locally, full
+validation passes against approved-local metadata in 111.9s, and bounded
+handoff reconciliation plus branch push are authorized. Only one private
+specialist Will-o-Wisp may open after clean publication.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

@@ -126,10 +126,14 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   1,200-frame integration digest and all 232 fixtures exact. Both full boards,
   the comparison, and all eight raw/effects-enabled phase boards were
   inspected; the three exact frozen PNGs were opened together in responsive
-  Aseprite. This is not designer approval: keep the candidate uncommitted and
-  unpushed until the exact packet is explicitly approved. Do not register
-  Will-o-Wisp, generate fixtures, add effects, name or start another
-  Will-o-Wisp role or family, release, or advance EN-E08.
+  Aseprite. The designer replied `approved lets do next` on 2026-08-11;
+  implementation `96907f552a06ba3865e25a46f881af5add2237ee` and approval
+  record `878e4969de59c500de342555e9b136e3d8cde2de` are committed locally,
+  and full `check` passes against approved-local metadata. Bounded handoff
+  reconciliation and branch push are authorized. Do not register Will-o-Wisp,
+  generate fixtures, add effects, start the elite or another family, release,
+  or advance EN-E08. Only one private specialist may open after a clean
+  published reconciliation.
 - Approved preceding art checkpoint (Grand Pretender):
   `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean published
   Falseface Adept reconciliation `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`,

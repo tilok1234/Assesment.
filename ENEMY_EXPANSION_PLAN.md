@@ -28,10 +28,14 @@
   raw/effects-enabled phase boards were inspected, and the three exact frozen
   PNGs were opened together in responsive Aseprite. The 24-command matrix,
   fast suite, and full suite pass with the integration digest and all 232
-  fixtures exact. This is not designer approval: Lantern Mote remains private,
-  uncommitted, unpushed, unregistered, and fixture-free pending an explicit
-  reply on the exact packet. Effects, specialist/elite Will-o-Wisp, Changeling,
-  Kelpie, release, and EN-E08 remain closed.
+  fixtures exact. The designer replied `approved lets do next` on 2026-08-11;
+  implementation `96907f552a06ba3865e25a46f881af5add2237ee` and approval
+  record `878e4969de59c500de342555e9b136e3d8cde2de` are committed locally,
+  and full validation passes against approved-local metadata. Lantern Mote
+  remains private, unregistered, and fixture-free while bounded handoff
+  reconciliation and branch push are pending. Effects, elite Will-o-Wisp,
+  Changeling, Kelpie, release, and EN-E08 remain closed. Only one private
+  specialist may open after clean publication.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3560,7 +3564,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote common Will-o-Wisp candidate frozen and awaiting exact visual approval`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote common Will-o-Wisp approved locally with bounded publication pending`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3905,9 +3909,9 @@ assembler.
   Doppelganger remains unregistered and fixture-free; effects, later
   roles/families, release, and EN-E08 remain closed.
 
-#### Will-o-Wisp Lantern Mote complete suite candidate - approval pending
+#### Will-o-Wisp Lantern Mote complete suite approved; publication pending
 
-- Gate ID: `en-e07-will-o-wisp-lantern-mote-full-v1`; status: `candidate` on
+- Gate ID: `en-e07-will-o-wisp-lantern-mote-full-v1`; status: `approved` on
   `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean published
   Grand Pretender reconciliation
   `3ddbe159360f16844d167ecc753d6b767b7e5549`.
@@ -3947,18 +3951,22 @@ assembler.
 - Visual inspection: the comparison, both full-suite boards, and all eight
   raw/effects-enabled phase boards were inspected at original detail. The
   three exact frozen PNGs were opened together in responsive Aseprite 1.3.17.2.
-  This is inspection evidence, not designer approval.
+  The designer replied `approved lets do next` on 2026-08-11. Approval applies
+  only to the frozen digest and five evidence hashes above. Implementation
+  `96907f552a06ba3865e25a46f881af5add2237ee` and approval record
+  `878e4969de59c500de342555e9b136e3d8cde2de` are committed locally.
 - Broad validation: the 24-command protected predecessor/candidate/integration
   matrix passed in 16.0s, `npm.cmd run check:fast` passed in 55.6s, and full
-  `npm.cmd run check` passed in 108.4s. The approved 1,200-frame integration
-  digest remains
+  `npm.cmd run check` passed in 108.4s before approval and in 111.9s against
+  approved-local metadata. The approved 1,200-frame integration digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: present the exact frozen packet and wait for explicit
-  designer approval or rejection. Lantern Mote remains private, uncommitted,
-  and unpushed. Do not publish, register Will-o-Wisp, generate fixtures, add
-  effects, name or start the specialist/elite or another family, release, or
-  advance EN-E08 before approval.
+- Required next action: commit the bounded approval-state handoff and push the
+  implementation, approval record, and handoff commits under the standing
+  approved-work permission; then reconcile the exact published tuple. Only
+  after that clean publication may one private specialist Will-o-Wisp open.
+  Do not register Will-o-Wisp, generate fixtures, add effects, start the elite
+  or another family, release, or advance EN-E08.
 
 ### EN-E08 - Possessed equipment
 
