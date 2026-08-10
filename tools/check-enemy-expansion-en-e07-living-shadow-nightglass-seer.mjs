@@ -158,9 +158,11 @@ check(
   EN_E07_NIGHTGLASS_SEER_GATE.status === 'approved'
     && EN_E07_NIGHTGLASS_SEER_GATE.approvedOn === '2026-08-10'
     && EN_E07_NIGHTGLASS_SEER_GATE.approvedImplementation === '325a6f4cfa1418383c93510262a631358add1d5f'
-    && EN_E07_NIGHTGLASS_SEER_GATE.publishedImplementation === null
-    && EN_E07_NIGHTGLASS_SEER_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Nightglass Seer approved-local state drifted',
+    && EN_E07_NIGHTGLASS_SEER_GATE.publishedImplementation === '325a6f4cfa1418383c93510262a631358add1d5f'
+    && EN_E07_NIGHTGLASS_SEER_GATE.publishedApprovalRecord === 'd50f3af5da0578edf66a5b2f156744c576427b9c'
+    && EN_E07_NIGHTGLASS_SEER_GATE.initialPublishedHandoff === '71d36ef48a55a7f1d49e1e6649a33eb945c9667c'
+    && EN_E07_NIGHTGLASS_SEER_GATE.publicationState === 'published',
+  'Nightglass Seer published state drifted',
 );
 check(
   EN_E07_NIGHTGLASS_SEER_GATE.approvalEvidence.includes('three exact PNG review boards were opened together in Aseprite')
@@ -198,10 +200,9 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('visually approved')
-    && EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('bounded approval-record')
+  EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('initial handoff are published')
     && EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('only one private elite Living Shadow candidate'),
-  'approved-local publication and next-role gate drifted',
+  'published next-role gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_NIGHTGLASS_SEER_GATE)

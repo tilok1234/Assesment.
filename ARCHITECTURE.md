@@ -949,8 +949,9 @@ Weaver, and Gloam Walker, and keeps the approved Gloam digest exact. The exact
 packet was opened in Aseprite and approved when the designer replied `approved
 lets do next`. Implementation `325a6f4cfa1418383c93510262a631358add1d5f`
 and approval record `d50f3af5da0578edf66a5b2f156744c576427b9c` are committed
-locally with bounded publication authorized. The module remains private,
-unregistered, and fixture-free.
+and pushed with initial handoff
+`71d36ef48a55a7f1d49e1e6649a33eb945c9667c`. The module remains private,
+unregistered, and fixture-free even though its review branch is published.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

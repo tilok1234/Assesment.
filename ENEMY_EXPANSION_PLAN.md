@@ -28,9 +28,10 @@
   five recorded hashes. After the exact packet was presented and its three PNG
   boards were opened together in Aseprite, the designer replied `approved lets
   do next`. Implementation `325a6f4cfa1418383c93510262a631358add1d5f` and
-  approval record `d50f3af5da0578edf66a5b2f156744c576427b9c` are committed
-  locally; bounded publication is authorized and pending. After a clean
-  published reconciliation, the same response opens only elite Living Shadow.
+  approval record `d50f3af5da0578edf66a5b2f156744c576427b9c`, and initial
+  handoff `71d36ef48a55a7f1d49e1e6649a33eb945c9667c` are published.
+  After the clean publication reconciliation, the same response opens only
+  elite Living Shadow.
   Registration, fixtures, effects, other EN-E07 families, release, and EN-E08
   remain closed.
 
@@ -3561,7 +3562,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Gloam Walker common approved and published; Nightglass Seer specialist candidate awaiting visual approval`
+- Status: `Gloam Walker common and Nightglass Seer specialist approved and published; elite Living Shadow authorized next`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3620,7 +3621,7 @@ assembler.
   fixtures, effects, another role or family, release, or EN-E08. The designer's
   later `lets do next` opens only the specialist candidate below.
 
-#### Living Shadow Nightglass Seer complete suite approved locally
+#### Living Shadow Nightglass Seer complete suite approved and published
 
 - Gate ID: `en-e07-living-shadow-nightglass-seer-full-v1`; status: `approved`
   on `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
@@ -3665,12 +3666,13 @@ assembler.
 - Approval: after the exact packet was presented and the three exact PNG boards
   were opened together in Aseprite, the designer replied `approved lets do
   next` on 2026-08-10. Approval is restricted to the candidate digest above.
-- Local commits: implementation
+- Published commits: implementation
   `325a6f4cfa1418383c93510262a631358add1d5f`; approval record
-  `d50f3af5da0578edf66a5b2f156744c576427b9c`. The standing permission
-  authorizes their bounded documentation reconciliation and branch push.
-- Required next action: publish this exact chain and reconcile the clean remote
-  checkpoint. Then open only one private elite Living Shadow candidate. Keep
+  `d50f3af5da0578edf66a5b2f156744c576427b9c`; initial handoff
+  `71d36ef48a55a7f1d49e1e6649a33eb945c9667c`. The remote handoff was
+  verified exact.
+- Required next action: open only one private elite Living Shadow candidate
+  from the clean publication reconciliation. Keep
   Living Shadow registration, fixtures, effects, another EN-E07 family,
   release, and EN-E08 closed.
 

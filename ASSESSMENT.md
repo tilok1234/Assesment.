@@ -296,8 +296,9 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The exact review packet is reproducible and was visually approved when the
   designer replied `approved lets do next`. Implementation
   `325a6f4cfa1418383c93510262a631358add1d5f` and approval record
-  `d50f3af5da0578edf66a5b2f156744c576427b9c` are committed locally with
-  bounded publication pending. The protected 19-gate matrix, fast suite, and full suite pass;
+  `d50f3af5da0578edf66a5b2f156744c576427b9c` plus initial handoff
+  `71d36ef48a55a7f1d49e1e6649a33eb945c9667c` are published. The protected
+  19-gate matrix, fast suite, and full suite pass;
   the approved 1,200-frame integration digest and all 232 fixtures remain
   exact.
 Fixture regeneration, elite Living Shadow, remaining EN-E07 families, the

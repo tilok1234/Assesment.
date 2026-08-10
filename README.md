@@ -1234,10 +1234,10 @@ preserve the family ramp; 8/8 flashes are exact white; opaque range is 228-265.
 The exact five-artifact packet reproduces byte-for-byte and was visually
 approved when the designer replied `approved lets do next`. Implementation
 `325a6f4cfa1418383c93510262a631358add1d5f` and approval record
-`d50f3af5da0578edf66a5b2f156744c576427b9c` are committed locally; their
-bounded branch publication is authorized and pending. The protected 19-gate
+`d50f3af5da0578edf66a5b2f156744c576427b9c` plus initial handoff
+`71d36ef48a55a7f1d49e1e6649a33eb945c9667c` are published. The protected 19-gate
 matrix, fast suite, and full suite pass; the approved 1,200-frame integration
-digest and all 232 fixtures remain exact. After clean publication, only elite
+digest and all 232 fixtures remain exact. Only elite
 Living Shadow opens. Registration, fixtures, effects, another EN-E07 family,
 release, and EN-E08 remain closed.
 

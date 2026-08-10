@@ -81,9 +81,10 @@ export const EN_E07_NIGHTGLASS_SEER_GATE = deepFreeze({
   approvedImplementation: '325a6f4cfa1418383c93510262a631358add1d5f',
   publicationAuthorizedOn: '2026-08-10',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '325a6f4cfa1418383c93510262a631358add1d5f',
+  publishedApprovalRecord: 'd50f3af5da0578edf66a5b2f156744c576427b9c',
+  initialPublishedHandoff: '71d36ef48a55a7f1d49e1e6649a33eb945c9667c',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_GLOAM_WALKER_GATE.id,
     artifactSha256: EN_E07_GLOAM_WALKER_GATE.artifactSha256,
@@ -157,7 +158,7 @@ export const EN_E07_NIGHTGLASS_SEER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Nightglass Seer candidate is visually approved and its implementation is committed at 325a6f4cfa1418383c93510262a631358add1d5f. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private elite Living Shadow candidate. Do not register Living Shadow, generate fixtures, add effects, release, start another EN-E07 family, or advance EN-E08.',
+  nextGate: 'The exact Nightglass Seer implementation, approval record, and initial handoff are published at 325a6f4cfa1418383c93510262a631358add1d5f, d50f3af5da0578edf66a5b2f156744c576427b9c, and 71d36ef48a55a7f1d49e1e6649a33eb945c9667c. The designer reply approved lets do next opens only one private elite Living Shadow candidate from the clean published reconciliation. Do not register Living Shadow, generate fixtures, add effects, release, start another EN-E07 family, or advance EN-E08.',
 });
 
 export const EN_E07_NIGHTGLASS_SEER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -508,7 +509,7 @@ export const EN_E07_NIGHTGLASS_SEER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'nightglass-seer',
     scale: 8,
-    notes: 'Visually approved as one grounded faceted Nightglass Seer against public Cursed Ghost and Shadow Slime plus approved Mist Weaver and Gloam Walker. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, effects, elite Living Shadow artwork, Doppelganger, and later Wave 2 work separate.',
+    notes: 'Visually approved and published as one grounded faceted Nightglass Seer against public Cursed Ghost and Shadow Slime plus approved Mist Weaver and Gloam Walker. Keep registration, fixtures, effects, elite Living Shadow artwork, Doppelganger, and later Wave 2 work separate.',
   },
 });
 

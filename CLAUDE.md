@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved local art checkpoint:
+- Current approved and published art checkpoint:
   `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
   published Gloam Walker reconciliation `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`,
   contains one private specialist Living Shadow Nightglass Seer. Its frozen
@@ -122,11 +122,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   byte-for-byte. The exact packet was opened in Aseprite and the designer
   replied `approved lets do next`; implementation
   `325a6f4cfa1418383c93510262a631358add1d5f` and approval record
-  `d50f3af5da0578edf66a5b2f156744c576427b9c` are committed locally and
-  their bounded push is authorized. The protected 19-gate matrix, `check:fast`, and full `check` all
+  `d50f3af5da0578edf66a5b2f156744c576427b9c` plus initial handoff
+  `71d36ef48a55a7f1d49e1e6649a33eb945c9667c` are published and remote
+  verified. The protected 19-gate matrix, `check:fast`, and full `check` all
   pass; the approved 1,200-frame integration digest and all 232 fixtures remain
-  exact. After a clean published reconciliation, the same response opens only
-  one private elite Living Shadow candidate. Do not register Living Shadow,
+  exact. The same response opens only one private elite Living Shadow candidate
+  from the clean publication reconciliation. Do not register Living Shadow,
   generate fixtures, add effects, start another EN-E07 family, release, or
   advance EN-E08.
 - Approved preceding art checkpoint:
