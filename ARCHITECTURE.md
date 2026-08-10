@@ -1092,10 +1092,11 @@ with the approved integration digest and all 232 fixtures exact. This remains
 private, unregistered, and fixture-free. The designer replied `approved lets
 do next` on 2026-08-11; implementation
 `96907f552a06ba3865e25a46f881af5add2237ee` and approval record
-`878e4969de59c500de342555e9b136e3d8cde2de` are committed locally, full
-validation passes against approved-local metadata in 111.9s, and bounded
-handoff reconciliation plus branch push are authorized. Only one private
-specialist Will-o-Wisp may open after clean publication.
+`878e4969de59c500de342555e9b136e3d8cde2de` plus initial handoff
+`71f0fbc07f088d6c366f11dc462856e79e3fde8b` are published and remote
+verified; full validation passes against the published metadata. Only one
+private specialist Will-o-Wisp is open from the clean publication
+reconciliation.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

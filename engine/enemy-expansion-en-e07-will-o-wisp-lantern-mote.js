@@ -98,9 +98,10 @@ export const EN_E07_LANTERN_MOTE_GATE = deepFreeze({
   approvedImplementation: '96907f552a06ba3865e25a46f881af5add2237ee',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '96907f552a06ba3865e25a46f881af5add2237ee',
+  publishedApprovalRecord: '878e4969de59c500de342555e9b136e3d8cde2de',
+  initialPublishedHandoff: '71f0fbc07f088d6c366f11dc462856e79e3fde8b',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_GRAND_PRETENDER_GATE.id,
     artifactSha256: EN_E07_GRAND_PRETENDER_GATE.artifactSha256,
@@ -175,7 +176,7 @@ export const EN_E07_LANTERN_MOTE_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact repaired Lantern Mote candidate is visually approved and its implementation is committed at 96907f552a06ba3865e25a46f881af5add2237ee. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private specialist Will-o-Wisp candidate. Do not register Will-o-Wisp, generate fixtures, add effects, release, start the elite or another family beyond that candidate, or advance EN-E08.',
+  nextGate: 'The exact repaired Lantern Mote is visually approved and published: implementation 96907f552a06ba3865e25a46f881af5add2237ee, approval record 878e4969de59c500de342555e9b136e3d8cde2de, and initial handoff 71f0fbc07f088d6c366f11dc462856e79e3fde8b are remote verified. The same approved lets do next response opens only one private specialist Will-o-Wisp candidate from this clean publication reconciliation. Do not register Will-o-Wisp, generate fixtures, add effects, release, start the elite or another family beyond that candidate, or advance EN-E08.',
 });
 
 export const EN_E07_LANTERN_MOTE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -432,7 +433,7 @@ export const EN_E07_LANTERN_MOTE_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'lantern-mote',
     scale: 8,
-    notes: 'Visually approved as one connected hovering Lantern Mote against public Spectral Ghost, Shadow Slime, and Flame Elemental. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, effects, later Will-o-Wisp roles, Changeling, Kelpie, and later Wave 2 work separate until the clean published reconciliation.',
+    notes: 'Visually approved and published as one connected hovering Lantern Mote against public Spectral Ghost, Shadow Slime, and Flame Elemental. Keep registration, fixtures, effects, and later Wave 2 work separate; only one private specialist Will-o-Wisp candidate is open from the clean publication reconciliation.',
   },
 });
 

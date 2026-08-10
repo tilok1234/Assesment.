@@ -23,15 +23,17 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Lantern Mote Approved; Publication Pending
+## Immediate Continuation Checkpoint - Lantern Mote Published; Specialist Gate Open
 
-Start here in a new task. The sole active art gate is one private common
-Will-o-Wisp Lantern Mote candidate. It is repaired, hash-frozen,
-deterministic, fully validated, and visually approved. Implementation
+Start here in a new task. The exact private common Will-o-Wisp Lantern Mote is
+repaired, hash-frozen, deterministic, fully validated, visually approved,
+published, and remote verified. Implementation
 `96907f552a06ba3865e25a46f881af5add2237ee` and approval record
-`878e4969de59c500de342555e9b136e3d8cde2de` are committed locally; the bounded
-handoff reconciliation and branch push are authorized but not yet published.
-The actor remains unregistered and non-public.
+`878e4969de59c500de342555e9b136e3d8cde2de` plus initial handoff
+`71f0fbc07f088d6c366f11dc462856e79e3fde8b` are remote verified. The same
+approval response opens only one private specialist Will-o-Wisp candidate from
+this clean publication reconciliation. Lantern Mote remains unregistered and
+non-public.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean
@@ -95,13 +97,11 @@ The actor remains unregistered and non-public.
   integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: commit this bounded approval-state handoff and push the
-  implementation, approval record, and handoff commits under the standing
-  approved-work permission. Then reconcile the exact published tuple. Only
-  after that clean publication may the same `approved lets do next` response
-  open one private specialist Will-o-Wisp candidate. Do not register
-  Will-o-Wisp, generate fixtures, add effects, start the elite or another
-  family, release, or advance EN-E08.
+- Required next action: open only one private specialist Will-o-Wisp candidate
+  from this clean published checkpoint. Preserve Lantern Mote and every
+  approved predecessor byte-for-byte. Do not register Will-o-Wisp, generate
+  fixtures, add effects, start the elite or another family, release, or advance
+  EN-E08.
 
 ## Approved Preceding Checkpoint - Grand Pretender Published
 

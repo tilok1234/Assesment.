@@ -152,9 +152,11 @@ check(
   EN_E07_LANTERN_MOTE_GATE.status === 'approved'
     && EN_E07_LANTERN_MOTE_GATE.approvedOn === '2026-08-11'
     && EN_E07_LANTERN_MOTE_GATE.approvedImplementation === '96907f552a06ba3865e25a46f881af5add2237ee'
-    && EN_E07_LANTERN_MOTE_GATE.publishedImplementation === null
-    && EN_E07_LANTERN_MOTE_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Lantern Mote approved-local state drifted',
+    && EN_E07_LANTERN_MOTE_GATE.publishedImplementation === '96907f552a06ba3865e25a46f881af5add2237ee'
+    && EN_E07_LANTERN_MOTE_GATE.publishedApprovalRecord === '878e4969de59c500de342555e9b136e3d8cde2de'
+    && EN_E07_LANTERN_MOTE_GATE.initialPublishedHandoff === '71f0fbc07f088d6c366f11dc462856e79e3fde8b'
+    && EN_E07_LANTERN_MOTE_GATE.publicationState === 'published',
+  'Lantern Mote published state drifted',
 );
 check(
   EN_E07_LANTERN_MOTE_GATE.approvalEvidence.includes('three exact frozen PNG review boards were opened together in responsive Aseprite')
@@ -194,10 +196,10 @@ check(
   'Lantern Mote exclusions drifted',
 );
 check(
-  EN_E07_LANTERN_MOTE_GATE.nextGate.includes('visually approved')
-    && EN_E07_LANTERN_MOTE_GATE.nextGate.includes('bounded approval-record')
+  EN_E07_LANTERN_MOTE_GATE.nextGate.includes('visually approved and published')
+    && EN_E07_LANTERN_MOTE_GATE.nextGate.includes('remote verified')
     && EN_E07_LANTERN_MOTE_GATE.nextGate.includes('only one private specialist Will-o-Wisp candidate'),
-  'Lantern Mote approved-local publication and next-role gate drifted',
+  'Lantern Mote published next-role gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_LANTERN_MOTE_GATE)
