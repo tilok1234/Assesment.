@@ -41,7 +41,7 @@ export const EN_E07_LIVING_SHADOW_CONTRACT_CARD = deepFreeze({
     id: 'nightglass-seer',
     name: 'Nightglass Seer',
     role: 'specialist',
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [
     { role: 'elite', status: 'planned-unnamed' },

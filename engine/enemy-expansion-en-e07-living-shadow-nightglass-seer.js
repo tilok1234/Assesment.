@@ -33,7 +33,7 @@ export const EN_E07_NIGHTGLASS_SEER_CONTRACT = deepFreeze({
   family: 'living-shadow',
   variant: 'nightglass-seer',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'faceted-single-eye-yoke-sight-frame-split-leg-living-shadow-v1',
   silhouette: 'A grounded faceted Living Shadow specialist with a broad nightglass mask, one vertical eye, connected shoulder yoke, angular sight-frame arms, a narrow transparent chest aperture, two bent split legs, and planted wedge feet. It must stay visibly related to Gloam Walker without inheriting its hooked crown and long claw profile or collapsing into a Ghost, Slime, or robed caster.',
   identity: 'The approved violet-black Living Shadow ramp, one pale vertical eye, symmetrical mask facets, connected shutter forearms, a hollow chest aperture, and bent planted legs establish a self-contained Nightglass Seer without baking in a beam, gaze cone, portal, rune, glow, or afterimage.',
@@ -72,13 +72,18 @@ export const EN_E07_NIGHTGLASS_SEER_DATA = deepFreeze({
 
 export const EN_E07_NIGHTGLASS_SEER_GATE = deepFreeze({
   id: 'en-e07-living-shadow-nightglass-seer-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: '98d3781b81c8c7ff615ad3cd6562efe12ce63d94',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After the exact Gloam Walker was visually approved, committed, pushed, and reconciled at a clean published checkpoint, the designer said: lets do next. The frozen Living Shadow role order is common, specialist, elite, so the one-complete-sprite cadence authorizes only one private specialist Nightglass Seer 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Cursed Ghost and Shadow Slime plus approved Mist Weaver and Gloam Walker comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Cursed Ghost and Shadow Slime plus approved Mist Weaver and Gloam Walker comparison, and paired GIF evidence were presented, and the three exact PNG review boards were opened together in Aseprite, the designer replied: approved lets do next. Approval applies only to candidate digest 07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa; Living Shadow registration, fixtures, effects, elite artwork, another EN-E07 family, release, and EN-E08 remain separate gates.',
+  approvedImplementation: '325a6f4cfa1418383c93510262a631358add1d5f',
+  publicationAuthorizedOn: '2026-08-10',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
+  publishedApprovalRecord: null,
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_GLOAM_WALKER_GATE.id,
     artifactSha256: EN_E07_GLOAM_WALKER_GATE.artifactSha256,
@@ -152,7 +157,7 @@ export const EN_E07_NIGHTGLASS_SEER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Stop at the exact frozen Nightglass Seer candidate review. Do not commit, publish, register Living Shadow, generate fixtures, add effects, release, start the elite Living Shadow or another EN-E07 family, or advance EN-E08 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact Nightglass Seer candidate is visually approved and its implementation is committed at 325a6f4cfa1418383c93510262a631358add1d5f. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private elite Living Shadow candidate. Do not register Living Shadow, generate fixtures, add effects, release, start another EN-E07 family, or advance EN-E08.',
 });
 
 export const EN_E07_NIGHTGLASS_SEER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -483,7 +488,7 @@ const NIGHTGLASS_SEER_VARIANT = deepFreeze({
   name: 'Nightglass Seer',
   role: EN_E07_NIGHTGLASS_SEER_CONTRACT.role,
   status: EN_E07_NIGHTGLASS_SEER_CONTRACT.state,
-  brief: 'A complete specialist Living Shadow candidate with a broad faceted mask, one vertical eye, connected shoulder yoke and sight-frame arms, hollow chest aperture, bent split legs, and planted wedge feet; beams, gaze cones, portals, runes, glow, and afterimages remain external.',
+  brief: 'An approved complete specialist Living Shadow with a broad faceted mask, one vertical eye, connected shoulder yoke and sight-frame arms, hollow chest aperture, bent split legs, and planted wedge feet; beams, gaze cones, portals, runes, glow, and afterimages remain external.',
   rendererData: EN_E07_NIGHTGLASS_SEER_DATA,
 });
 
@@ -503,7 +508,7 @@ export const EN_E07_NIGHTGLASS_SEER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'nightglass-seer',
     scale: 8,
-    notes: 'Awaiting visual approval for one grounded faceted Nightglass Seer against public Cursed Ghost and Shadow Slime plus approved Mist Weaver and Gloam Walker. Keep registration, fixtures, effects, elite Living Shadow, Doppelganger, and later Wave 2 work separate.',
+    notes: 'Visually approved as one grounded faceted Nightglass Seer against public Cursed Ghost and Shadow Slime plus approved Mist Weaver and Gloam Walker. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, effects, elite Living Shadow artwork, Doppelganger, and later Wave 2 work separate.',
   },
 });
 

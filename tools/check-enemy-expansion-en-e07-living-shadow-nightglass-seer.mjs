@@ -155,10 +155,19 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_NIGHTGLASS_SEER_GATE.status === 'candidate'
-    && EN_E07_NIGHTGLASS_SEER_GATE.approvedOn === null
-    && EN_E07_NIGHTGLASS_SEER_GATE.publishedImplementation === null,
-  'Nightglass Seer must remain an unapproved candidate',
+  EN_E07_NIGHTGLASS_SEER_GATE.status === 'approved'
+    && EN_E07_NIGHTGLASS_SEER_GATE.approvedOn === '2026-08-10'
+    && EN_E07_NIGHTGLASS_SEER_GATE.approvedImplementation === '325a6f4cfa1418383c93510262a631358add1d5f'
+    && EN_E07_NIGHTGLASS_SEER_GATE.publishedImplementation === null
+    && EN_E07_NIGHTGLASS_SEER_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Nightglass Seer approved-local state drifted',
+);
+check(
+  EN_E07_NIGHTGLASS_SEER_GATE.approvalEvidence.includes('three exact PNG review boards were opened together in Aseprite')
+    && EN_E07_NIGHTGLASS_SEER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E07_NIGHTGLASS_SEER_GATE.approvalEvidence.includes('07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa')
+    && EN_E07_NIGHTGLASS_SEER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_NIGHTGLASS_SEER_GATE.authorizationEvidence.includes('designer said: lets do next')
@@ -189,10 +198,10 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('Stop at the exact frozen Nightglass Seer candidate review')
-    && EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('Do not commit')
-    && EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('until the designer explicitly approves'),
-  'candidate stop gate drifted',
+  EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('visually approved')
+    && EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('bounded approval-record')
+    && EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('only one private elite Living Shadow candidate'),
+  'approved-local publication and next-role gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_NIGHTGLASS_SEER_GATE)
@@ -206,7 +215,7 @@ check(
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeSpecialist.id === 'nightglass-seer'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeSpecialist.role === 'specialist'
-    && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-candidate'
+    && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.deferredRoles.length === 1
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.deferredRoles[0].role === 'elite',
   'Living Shadow role order or one-active-specialist boundary drifted',

@@ -281,7 +281,7 @@ check(
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeSpecialist.id === 'nightglass-seer'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeSpecialist.role === 'specialist'
-    && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-candidate'
+    && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.deferredRoles.every(({ status }) => status === 'planned-unnamed'),
   'Living Shadow role order or one-active-role boundary drifted',
 );
