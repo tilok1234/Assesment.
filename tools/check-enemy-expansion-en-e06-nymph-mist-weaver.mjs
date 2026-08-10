@@ -68,13 +68,14 @@ function captureLegacyFrame(spec, direction, animation, frame) {
   return Object.freeze({ pixels: Object.freeze(pixels), alpha: Uint8Array.from(pixels, (color) => color === null ? 0 : 255), opaquePixels: occupied.length, bounds: bounds && Object.freeze(bounds), outOfBoundsWrites: Object.freeze(outOfBoundsWrites), digest: pixelDigest(pixels), alphaDigest: alphaDigest(pixels) });
 }
 
-check(EN_E06_MIST_WEAVER_GATE.status === 'candidate' && EN_E06_MIST_WEAVER_GATE.approvedOn === null && EN_E06_MIST_WEAVER_GATE.publishedImplementation === null, 'candidate preapproval state drifted');
+check(EN_E06_MIST_WEAVER_GATE.status === 'approved' && EN_E06_MIST_WEAVER_GATE.approvedOn === '2026-08-10' && EN_E06_MIST_WEAVER_GATE.publishedImplementation === '682f99a581e70ee1c985257e0c122d75c7add6f9', 'candidate approval state drifted');
+check(EN_E06_MIST_WEAVER_GATE.approvalEvidence.includes('three exact PNG review boards were opened together in Aseprite') && EN_E06_MIST_WEAVER_GATE.approvalEvidence.includes('designer replied: approved') && EN_E06_MIST_WEAVER_GATE.approvalEvidence.includes('Rivercrown Muse, Nymph registration'), 'approval evidence drifted');
 check(EN_E06_MIST_WEAVER_GATE.authorizationEvidence.includes('designer said: lets do next') && EN_E06_MIST_WEAVER_GATE.authorizationEvidence.includes('only one private specialist Nymph Mist Weaver'), 'authorization evidence drifted');
 check(EN_E06_MIST_WEAVER_GATE.baseCheckpoint === '6e63e95d5e6cf653ad37299766f10c3d3e3c0b2d', 'candidate base checkpoint drifted');
 check(EN_E06_MIST_WEAVER_GATE.precedingApproval.gateId === EN_E06_SPRING_DANCER_GATE.id && EN_E06_MIST_WEAVER_GATE.precedingApproval.publishedImplementation === EN_E06_SPRING_DANCER_GATE.publishedImplementation && EN_E06_MIST_WEAVER_GATE.precedingApproval.publishedHandoff === '6e63e95d5e6cf653ad37299766f10c3d3e3c0b2d', 'approved Spring Dancer predecessor drifted');
 check(EN_E06_MIST_WEAVER_GATE.scope.includes('complete 80-frame Mist Weaver specialist') && EN_E06_MIST_WEAVER_GATE.animationContract.includes('gathers both hands close') && EN_E06_MIST_WEAVER_GATE.animationContract.includes('outward release'), 'full-suite or motion contract drifted');
 check(EN_E06_MIST_WEAVER_GATE.exclusions.includes('asset-pack fixture generation or regeneration') && EN_E06_MIST_WEAVER_GATE.exclusions.includes('changes to approved Spring Dancer source or pixels') && EN_E06_MIST_WEAVER_GATE.exclusions.includes('Rivercrown Muse implementation'), 'scope exclusions drifted');
-check(EN_E06_MIST_WEAVER_GATE.nextGate.includes('exact frozen Mist Weaver candidate review') && EN_E06_MIST_WEAVER_GATE.nextGate.includes('Do not commit') && EN_E06_MIST_WEAVER_GATE.nextGate.includes('explicitly approves'), 'preapproval stop gate drifted');
+check(EN_E06_MIST_WEAVER_GATE.nextGate.includes('visually approved') && EN_E06_MIST_WEAVER_GATE.nextGate.includes('After push, stop') && EN_E06_MIST_WEAVER_GATE.nextGate.includes('without another explicit gate'), 'approved stop gate drifted');
 check(Object.isFrozen(EN_E06_MIST_WEAVER_GATE) && Object.isFrozen(EN_E06_MIST_WEAVER_DATA), 'gate and data must be deeply immutable');
 check(EN_E06_MIST_WEAVER_CONTRACT.family === 'nymph' && EN_E06_MIST_WEAVER_CONTRACT.variant === 'mist-weaver' && EN_E06_MIST_WEAVER_CONTRACT.role === 'specialist', 'candidate contract drifted');
 check(EN_E06_MIST_WEAVER_CONTRACT.silhouette.includes('face veil') && EN_E06_MIST_WEAVER_CONTRACT.silhouette.includes('bell sleeves') && EN_E06_MIST_WEAVER_CONTRACT.effectBoundary.includes('Mist') && EN_E06_MIST_WEAVER_CONTRACT.effectBoundary.includes('remain external'), 'Mist Weaver identity/effect boundary drifted');
@@ -83,7 +84,7 @@ check(EN_E06_CONTRACT_CARDS[0].variants.every(({ status }) => status === 'implem
 check(EN_E06_CONTRACT_CARDS[1].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Hags must remain approved');
 check(EN_E06_CONTRACT_CARDS[2].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Dryads must remain approved');
 check(EN_E06_CONTRACT_CARDS[3].variants.every(({ status }) => status === 'implemented-full-approved'), 'all Redcaps must remain approved');
-check(EN_E06_CONTRACT_CARDS[4].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-candidate/planned', 'Nymph role-order status drifted');
+check(EN_E06_CONTRACT_CARDS[4].variants.map(({ status }) => status).join('/') === 'implemented-full-approved/implemented-full-approved/planned', 'Nymph role-order status drifted');
 check(EN_E06_MIST_WEAVER_REGISTRY.families.length === 1 && EN_E06_MIST_WEAVER_REGISTRY.publicFamilies.length === 0 && EN_E06_MIST_WEAVER_FAMILY.variants.length === 1, 'candidate registry boundary drifted');
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
 check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 80 && publicVariantCount === 259 && !engine.PUBLIC_ENEMIES.some(({ id }) => id === 'nymph'), 'candidate must preserve public 80/259 and keep Nymph private');

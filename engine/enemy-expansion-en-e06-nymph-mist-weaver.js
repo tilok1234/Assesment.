@@ -45,7 +45,7 @@ export const EN_E06_MIST_WEAVER_CONTRACT = deepFreeze({
   family: 'nymph',
   variant: 'mist-weaver',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'veiled-cowl-bell-sleeve-mist-weaver-nymph-v1',
   silhouette: 'A slender grounded Nymph specialist with a deep crescent cowl, face veil, broad layered shoulder mantle, connected bell sleeves, woven sash, and long divided robe. The hood-and-sleeve mass must differ from Spring Dancer, public Elf Mage, and approved specialist fey in every frame.',
   identity: 'Moonlit lavender skin, midnight-blue hair, indigo robe planes, cool-aqua veil cloth, pale woven trim, silver fasteners, and dark sandals establish a self-contained Mist Weaver without baking in fog, vapor, water arcs, ripples, particles, or glow.',
@@ -70,13 +70,13 @@ export const EN_E06_MIST_WEAVER_DATA = deepFreeze({
 
 export const EN_E06_MIST_WEAVER_GATE = deepFreeze({
   id: 'en-e06-nymph-mist-weaver-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: '6e63e95d5e6cf653ad37299766f10c3d3e3c0b2d',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After Spring Dancer was visually approved, committed, pushed, and reconciled at a clean published checkpoint, the designer said: lets do next. Under the documented EN-E06 Nymph role order and one-complete-sprite cadence, this authorizes only one private specialist Nymph Mist Weaver 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Elf Mage plus approved Spring Dancer and Spore Cantor comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
-  publishedImplementation: null,
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Elf Mage plus approved Spring Dancer and Spore Cantor comparison, and paired GIF evidence were presented, and the three exact PNG review boards were opened together in Aseprite, the designer replied: approved. Approval applies only to candidate digest e57a0af441f895fe376f2696d859a97d84564ddf034235d3b237b2cf637520da and authorizes its bounded approval-record commit and branch publication; Rivercrown Muse, Nymph registration, fixtures, effects, release, EN-E07, and later work remain separate gates.',
+  publishedImplementation: '682f99a581e70ee1c985257e0c122d75c7add6f9',
   precedingApproval: {
     gateId: EN_E06_SPRING_DANCER_GATE.id,
     artifactSha256: EN_E06_SPRING_DANCER_GATE.artifactSha256,
@@ -114,7 +114,7 @@ export const EN_E06_MIST_WEAVER_GATE = deepFreeze({
     'ground ripples', 'droplets', 'sparkles', 'elemental flares', 'detached veil trails',
     'impact flashes', 'effects', 'release', 'later EN-E06 sprites', 'EN-E07 and later Wave 2 work',
   ],
-  nextGate: 'Stop at the exact frozen Mist Weaver candidate review. Do not commit, publish, register Nymph, generate fixtures, begin Rivercrown Muse, add effects, release, start EN-E07, or broaden Wave 2 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact Mist Weaver candidate is visually approved and committed at 682f99a581e70ee1c985257e0c122d75c7add6f9. Only its bounded approval-record commit and branch publication are authorized. After push, stop; do not register Nymph, generate fixtures, begin Rivercrown Muse, add effects, release, start EN-E07, or broaden Wave 2 without another explicit gate.',
 });
 
 export const EN_E06_MIST_WEAVER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
