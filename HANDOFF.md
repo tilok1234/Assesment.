@@ -23,11 +23,79 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Gloam Walker Approved And Published
+## Immediate Continuation Checkpoint - Nightglass Seer Candidate Awaiting Visual Approval
 
-Start here in a new task. The exact private Gloam Walker is hash-frozen,
-technically validated, visually approved, committed, and pushed. This is the
-current clean published art checkpoint.
+Start here in a new task. This is the active isolated art gate. The exact
+private specialist candidate is hash-frozen and technically validated, but it
+is not visually approved, committed, or published.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
+  published Gloam Walker reconciliation
+  `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`.
+- Approved predecessor: Gloam Walker implementation
+  `a46f59c1cb0bb751760f2776fe60b5c489806c94`, approval record
+  `848c7192b6dc2cac8b7ab2dc8725d3859447715d`, and published reconciliation
+  `98d3781b81c8c7ff615ad3cd6562efe12ce63d94` remain exact.
+- Authorization: after Gloam Walker was approved, committed, pushed, and
+  reconciled, the designer said `lets do next` on 2026-08-10. The frozen Living
+  Shadow role order is common, specialist, elite, so the one-complete-sprite
+  cadence opens only specialist Nightglass Seer.
+- Scope: one private 80-frame specialist Living Shadow across Idle F1-F2, Walk
+  W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
+- Style contract: preserve the approved chunky one-to-three-pixel violet-black
+  family ramp and hard alpha. Nightglass uses a broad faceted mask, one true
+  vertical eye, connected shoulder yoke, squared sight-frame forearms, a narrow
+  transparent chest aperture, two bent split legs, and planted wedge feet. It
+  must read as the same family without becoming a bulkier Gloam recolor, public
+  Ghost/Shadow Slime, or another dark robe caster.
+- Motion: two-frame mask/yoke compression at Idle; four bent split-foot Walk
+  steps with counter-rotating arms; connected sight-frame close, single-eye
+  lock, wide squared aperture, and grounded recovery. Cast aliases Attack;
+  Death aliases Hurt.
+- Effects firewall: eye beams, gaze cones, portals, runes, divination marks,
+  floor sigils, glow, afterimages, loose shards, trails, projectiles, and impact
+  flashes remain external. Registration, fixtures, public exposure, elite
+  Living Shadow, Doppelganger, Will-o-Wisp, Changeling, Kelpie, release, and
+  EN-E08 remain closed.
+- Focused validation passes: 80/80 connected, one-cell-bounded, grounded
+  hard-alpha frames; 80/80 pixel and alpha-silhouette distinctions from public
+  Cursed Ghost, public Shadow Slime, approved Mist Weaver, and approved Gloam
+  Walker; 72/72 colored family-ramp frames; 8/8 exact white flashes; 54/54
+  expected eye-bearing front/side views; opaque range 228-265; 7,832 Complete B
+  additions; and 7,257 Form changes. Approved Gloam remains exact, public
+  80/259 is unchanged, and no fixture/facade/manifest exposure exists.
+- Broad validation passes on the frozen candidate: the 19-command protected
+  matrix (all 16 EN-E06 gates, approved Gloam, Nightglass, and the approved
+  1,200-frame integration gate) completed in 12.3s; `npm.cmd run check:fast`
+  passed in 55.3s; and full `npm.cmd run check` passed in 109.5s. The integrated
+  frame digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Frozen candidate digest:
+  `07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `ce61d23cdc393d0c709b5af30cdf7fd734d2f2278431d819d28de8248c5c604a` /
+  `8889740496b860c5a27dd45d3a825f70b27b648bcc535d9ebbe6ab1f6825286e`;
+  Ghost/Slime/Mist/Gloam/Seer `1880x548` comparison
+  `15b5887fc92a39cf87bf14f40da9d7cb64be9f9d41edd8ace3df75a9fc849800`;
+  raw / Complete B + Form `640x672` GIFs
+  `54fb94164d0b90a5bbebe684d78ccc3f9f24d527e25c131cf162ff0f32d98828` /
+  `5c12a4d26affb4b4a3453e4eb7183cbbc138f91257428dc36ffe1bf830103523`.
+  Two regenerations reproduce all five hashes exactly; artifacts remain ignored
+  under `enemy-expansion-review/en-e07-living-shadow-nightglass-seer/`.
+- Required next action: open the three exact PNG boards together in Aseprite,
+  present both exact GIFs, and ask for explicit visual approval of this digest.
+  Do not commit or push before approval. Do not register Living Shadow,
+  generate fixtures, add effects, start the elite or another family, release,
+  or advance EN-E08 without another explicit gate.
+
+## Approved Preceding Checkpoint - Gloam Walker Published
+
+This records the exact clean published predecessor for the active Nightglass
+Seer gate. The private Gloam Walker is hash-frozen, technically validated,
+visually approved, committed, and pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-living-shadow-gloam-walker`, based on published
@@ -95,9 +163,9 @@ current clean published art checkpoint.
   `862d28ed3a938a7315146b58706bce4e37f11e9abbfc50c720e63b83be5d9659`.
   Regeneration reproduces all five hashes exactly; artifacts remain ignored
   under `enemy-expansion-review/en-e07-living-shadow-gloam-walker/`.
-- Required next action: stop at this clean published checkpoint. Do not
-  register Living Shadow, generate fixtures, add effects, start another role or
-  family, release, or advance EN-E08 without another explicit gate.
+- Historical stop gate: this checkpoint did not itself authorize registration,
+  fixtures, effects, another role or family, release, or EN-E08. The designer's
+  later authorization recorded above opens only specialist Nightglass Seer.
 
 ## Approved Preceding Checkpoint - Rivercrown Muse Published
 

@@ -284,8 +284,22 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   handoff `00d5b436c7398312a5f3a05a482b4cf34cee9ba5` are committed and pushed.
   The private review branch is published, while the family remains absent from
   the public catalog. Rivercrown reconciliation `d785fe5` is published too.
-Fixture regeneration, later Living Shadow roles, remaining EN-E07 families, the legacy renderer split, boss
-consolidation, and the Wildshot writer remain separate decisions.
+  The designer's subsequent `lets do next` opens only one private specialist
+  Living Shadow Nightglass Seer on
+  `codex/en-e07-living-shadow-nightglass-seer`. Its frozen 80-frame candidate
+  uses the same chunky violet-black family ramp with a broad faceted mask,
+  vertical eye, connected shoulder yoke and sight-frame arms, narrow chest
+  aperture, bent split legs, and planted wedge feet. It passes 80/80 connected,
+  bounded, grounded, hard-alpha, Cursed Ghost/Shadow Slime/Mist Weaver/Gloam
+  Walker pixel and alpha distinctions at digest
+  `07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa`.
+  The exact review packet is reproducible but not visually approved, committed,
+  or published. The protected 19-gate matrix, fast suite, and full suite pass;
+  the approved 1,200-frame integration digest and all 232 fixtures remain
+  exact.
+Fixture regeneration, elite Living Shadow, remaining EN-E07 families, the
+legacy renderer split, boss consolidation, and the Wildshot writer remain
+separate decisions.
 
 1. **Decide on the stale fixtures** (5 min decision): `npm run export:fixtures -- --verify`
    lists the 166 stale sheets. If downstream should get the repaired art: `--all` + commit.

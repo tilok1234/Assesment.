@@ -107,7 +107,25 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved and published art checkpoint:
+- Current isolated art candidate:
+  `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
+  published Gloam Walker reconciliation `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`,
+  contains one private specialist Living Shadow Nightglass Seer. Its frozen
+  80-frame digest is
+  `07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa`.
+  All frames are connected, one-cell-bounded, grounded, hard-alpha, and
+  pixel/alpha distinct from public Cursed Ghost, public Shadow Slime, approved
+  Mist Weaver, and approved Gloam Walker. The approved violet-black family ramp
+  is carried by a broad faceted mask, one true vertical eye, a connected
+  shoulder yoke, squared sight-frame arms, a narrow chest aperture, bent split
+  legs, and planted wedge feet. The five exact review artifacts reproduce
+  byte-for-byte, but the candidate is not visually approved, committed, or
+  published. The protected 19-gate matrix, `check:fast`, and full `check` all
+  pass; the approved 1,200-frame integration digest and all 232 fixtures remain
+  exact. Do not register Living Shadow, generate fixtures, add effects,
+  start the elite or another EN-E07 family, release, or advance EN-E08. Do not
+  commit or push this candidate before explicit approval of the exact digest.
+- Approved preceding art checkpoint:
   `codex/en-e07-living-shadow-gloam-walker` contains exactly one private common
   Living Shadow Gloam Walker. The frozen
   80-frame digest is
@@ -122,9 +140,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94` and approval
   record `848c7192b6dc2cac8b7ab2dc8725d3859447715d`, and initial handoff
   `00d5b436c7398312a5f3a05a482b4cf34cee9ba5` are committed and pushed.
-  Rivercrown reconciliation `d785fe5` is also pushed. Do not register Living
-  Shadow, generate fixtures, add effects, start another EN-E07 role/family,
-  release, or advance EN-E08 without another explicit gate.
+  Rivercrown reconciliation `d785fe5` is also pushed. That approval did not
+  register Living Shadow, generate fixtures, add effects, release, or open
+  another family; the later `lets do next` opens only the Nightglass Seer gate
+  above.
 - Approved EN-E06 predecessor: `codex/en-e06-nymph-rivercrown-muse`,
   based exactly on clean published Mist Weaver handoff `983b76a`, contains one
   complete approved elite Nymph. Its 80 frames pass connected, one-cell-bounded, grounded,

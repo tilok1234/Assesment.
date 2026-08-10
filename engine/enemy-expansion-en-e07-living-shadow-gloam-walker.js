@@ -37,8 +37,13 @@ export const EN_E07_LIVING_SHADOW_CONTRACT_CARD = deepFreeze({
     role: 'common',
     status: 'implemented-full-approved',
   },
+  activeSpecialist: {
+    id: 'nightglass-seer',
+    name: 'Nightglass Seer',
+    role: 'specialist',
+    status: 'implemented-full-candidate',
+  },
   deferredRoles: [
-    { role: 'specialist', status: 'planned-unnamed' },
     { role: 'elite', status: 'planned-unnamed' },
   ],
   styleContract: 'Use chunky one-to-three-pixel forms, a tight dark-violet ramp, hard alpha, and connected negative-space cutouts. Preserve readable head, shoulder, arm, split-leg, and foot anatomy at native 24x24 scale.',

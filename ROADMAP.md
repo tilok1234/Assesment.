@@ -179,7 +179,22 @@ approved on 2026-08-10. Frozen implementation
 tracked branch. EN-E07, registration, fixtures, shared renderer/schema changes,
 effects, and release remain closed.
 
-Current EN-E07 approved and published checkpoint (2026-08-10): the designer's later
+Current EN-E07 candidate checkpoint (2026-08-10): after Gloam Walker was
+approved, published, and reconciled at `98d3781`, the designer said `lets do
+next`. The Living Shadow role order opens only specialist Nightglass Seer on
+`codex/en-e07-living-shadow-nightglass-seer`. Its exact 80-frame candidate at
+digest `07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa`
+uses the approved family ramp with a broad faceted mask, one vertical eye,
+connected shoulder yoke and sight-frame arms, a hollow chest aperture, bent
+split legs, and planted wedge feet. All 80 frames are connected, bounded,
+grounded, and pixel/alpha distinct from Cursed Ghost, Shadow Slime, Mist
+Weaver, and Gloam Walker. The exact five-artifact packet is hash-frozen but not
+visually approved, committed, or published. The protected 19-gate matrix, fast
+suite, and full suite pass with the approved integration and 232 fixtures
+unchanged. Registration, fixtures, effects, elite Living Shadow, Doppelganger
+and the remaining EN-E07 families, release, and EN-E08 stay closed.
+
+Approved preceding EN-E07 checkpoint (2026-08-10): the designer's earlier
 `lets do next` advances the frozen plan from completed EN-E06 to priority-first
 Living Shadow only. Branch `codex/en-e07-living-shadow-gloam-walker` contains
 one private common Gloam Walker 80-frame suite at digest

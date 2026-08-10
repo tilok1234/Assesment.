@@ -1209,8 +1209,33 @@ Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94` and approval record
 `00d5b436c7398312a5f3a05a482b4cf34cee9ba5` are committed and pushed.
 Rivercrown docs reconciliation `d785fe5` is pushed too. Living Shadow is not
 registered, fixture-backed, or public;
-later Living Shadow roles, remaining EN-E07 families, effects, release, and
-EN-E08 remain closed.
+that approval alone did not open later Living Shadow roles, remaining EN-E07
+families, effects, release, or EN-E08.
+
+The designer's subsequent `lets do next` opens exactly one private specialist
+Living Shadow Nightglass Seer on
+`codex/en-e07-living-shadow-nightglass-seer`, based on clean published Gloam
+reconciliation `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`. The same chunky
+violet-black family ramp now carries a broad faceted mask, one vertical eye,
+connected shoulder yoke, squared sight-frame forearms, a narrow transparent
+chest aperture, bent split legs, and planted wedge feet. Eye beams, gaze cones,
+portals, runes, floor sigils, glow, afterimages, loose shards, trails,
+projectiles, and impacts remain external. Run
+`npm.cmd run review:enemy-expansion-en-e07-living-shadow-nightglass-seer` for
+the raw, Complete B + Form, Ghost/Slime/Mist/Gloam/Seer comparison, and paired
+GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-living-shadow-nightglass-seer` for
+its focused structural, style, predecessor, artifact, and exposure firewalls.
+The frozen candidate digest is
+`07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa`:
+80/80 frames are connected, bounded, grounded, and pixel/alpha distinct from
+Cursed Ghost, Shadow Slime, Mist Weaver, and Gloam Walker; 72/72 colored frames
+preserve the family ramp; 8/8 flashes are exact white; opaque range is 228-265.
+The exact five-artifact packet reproduces byte-for-byte but is not visually
+approved, committed, or published. The protected 19-gate matrix, fast suite,
+and full suite pass; the approved 1,200-frame integration digest and all 232
+fixtures remain exact. Registration, fixtures, effects, elite Living Shadow,
+another EN-E07 family, release, and EN-E08 remain closed.
 
 ## Approved enemy backlog integration published
 

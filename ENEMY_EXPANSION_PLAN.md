@@ -13,26 +13,21 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-10): after the fifth and final EN-E06
-  family was completed by approved Rivercrown Muse, the designer said `lets do
-  next`. The frozen slice order queues EN-E07 and names Living Shadow
-  priority-first, so this opens only one private common Gloam Walker on
-  `codex/en-e07-living-shadow-gloam-walker`. Its exact 80-frame candidate is
+- Current stopping checkpoint (2026-08-10): Gloam Walker common is approved and
+  published through reconciliation
+  `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`. The designer then said `lets do
+  next`. The frozen Living Shadow role order is common, specialist, elite, so
+  this opens only one private specialist Nightglass Seer on
+  `codex/en-e07-living-shadow-nightglass-seer`. Its exact 80-frame candidate is
   technically frozen at digest
-  `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`.
+  `07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa`.
   It passes 80/80 connected, one-cell-bounded, grounded, hard-alpha, alias,
   mirror, and pixel/alpha distinctions from public Cursed Ghost, public Shadow
-  Slime, and approved Mist Weaver. The exact raw, Complete B + Form, four-way
-  comparison, and paired GIF packet reproduces all five recorded hashes, but
-  it is now visually approved. Implementation
-  `a46f59c1cb0bb751760f2776fe60b5c489806c94` and approval record
-  `848c7192b6dc2cac8b7ab2dc8725d3859447715d` plus initial handoff
-  `00d5b436c7398312a5f3a05a482b4cf34cee9ba5` are committed and pushed. The
-  designer's standing permission authorizes bounded commits and pushes after
-  explicit approval of the exact artifact or digest; it does not broaden the
-  approved scope. Living Shadow
-  registration, fixtures, effects, later EN-E07 roles/families, release, and
-  EN-E08 remain closed.
+  Slime, approved Mist Weaver, and approved Gloam Walker. The exact raw,
+  Complete B + Form, five-way comparison, and paired GIF packet reproduces all
+  five recorded hashes. It is not visually approved, committed, or published.
+  Living Shadow registration, fixtures, effects, elite Living Shadow, other
+  EN-E07 families, release, and EN-E08 remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3561,7 +3556,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Gloam Walker common approved and published`
+- Status: `Gloam Walker common approved and published; Nightglass Seer specialist candidate awaiting visual approval`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3616,9 +3611,56 @@ assembler.
   raw GIF `54f3262ce694e6696d3af2a40783cce32b2555de7c5cd72acd18900fa1c1e8a8`;
   Complete B + Form GIF
   `862d28ed3a938a7315146b58706bce4e37f11e9abbfc50c720e63b83be5d9659`.
-- Required next action: stop at this clean published checkpoint. Keep Living
-  Shadow registration, fixtures, effects, another role or EN-E07 family,
-  release, and EN-E08 closed without another explicit gate.
+- Historical stop gate: Gloam approval did not itself open registration,
+  fixtures, effects, another role or family, release, or EN-E08. The designer's
+  later `lets do next` opens only the specialist candidate below.
+
+#### Living Shadow Nightglass Seer complete suite candidate
+
+- Gate ID: `en-e07-living-shadow-nightglass-seer-full-v1`; status: `candidate`
+  on `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
+  published Gloam reconciliation
+  `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`.
+- Authorization: after Gloam Walker was visually approved, committed, pushed,
+  and reconciled, the designer said `lets do next` on 2026-08-10. The Living
+  Shadow role order opens only specialist Nightglass Seer.
+- Style/silhouette contract: reuse the approved chunky one-to-three-pixel
+  violet-black family ramp and hard alpha. A broad faceted mask, one vertical
+  eye, connected shoulder yoke, squared sight-frame forearms, narrow
+  transparent chest aperture, bent split legs, and planted wedge feet must
+  remain distinct from Gloam Walker, public Ghost/Shadow Slime, and approved
+  Mist Weaver.
+- Scope: one private 80-frame specialist Living Shadow. Cast aliases Attack;
+  Death aliases Hurt H1,H2,H2,H2. Eye beams, gaze cones, portals, runes,
+  divination marks, floor sigils, glow, afterimages, loose shards, trails,
+  projectiles, and impacts remain external.
+- Focused validation: 80/80 connected, bounded, grounded hard-alpha frames;
+  80/80 pixel and alpha distinctions from Cursed Ghost, Shadow Slime, Mist
+  Weaver, and Gloam Walker; 72/72 colored frames; 8/8 white flashes; 54/54
+  expected eye-bearing views; opaque range 228-265; Complete B +7,832; Form
+  changes 7,257. Approved Gloam remains exact; public 80/259 and fixtures are
+  unchanged.
+- Broad validation: the 19-command protected predecessor/candidate/integration
+  matrix passed in 12.3s, `npm.cmd run check:fast` passed in 55.3s, and full
+  `npm.cmd run check` passed in 109.5s. The approved 1,200-frame integration
+  digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Candidate digest:
+  `07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa`.
+- Evidence SHA-256: raw
+  `ce61d23cdc393d0c709b5af30cdf7fd734d2f2278431d819d28de8248c5c604a`;
+  Complete B + Form
+  `8889740496b860c5a27dd45d3a825f70b27b648bcc535d9ebbe6ab1f6825286e`;
+  comparison
+  `15b5887fc92a39cf87bf14f40da9d7cb64be9f9d41edd8ace3df75a9fc849800`;
+  raw GIF `54fb94164d0b90a5bbebe684d78ccc3f9f24d527e25c131cf162ff0f32d98828`;
+  Complete B + Form GIF
+  `5c12a4d26affb4b4a3453e4eb7183cbbc138f91257428dc36ffe1bf830103523`.
+- Required next action: open the three exact PNGs together in Aseprite, present
+  both GIFs, and request explicit visual approval. Do not commit or publish
+  before approval. Keep Living Shadow registration, fixtures, effects, elite
+  Living Shadow, another EN-E07 family, release, and EN-E08 closed.
 
 ### EN-E08 - Possessed equipment
 
