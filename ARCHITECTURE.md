@@ -1095,8 +1095,33 @@ do next` on 2026-08-11; implementation
 `878e4969de59c500de342555e9b136e3d8cde2de` plus initial handoff
 `71f0fbc07f088d6c366f11dc462856e79e3fde8b` are published and remote
 verified; full validation passes against the published metadata. Only one
-private specialist Will-o-Wisp is open from the clean publication
-reconciliation.
+private specialist Will-o-Wisp was opened from final clean publication
+reconciliation `d734846067b3bf9dd05cadffef440ead1f6c6d3a`.
+
+The subsequently authorized
+`engine/enemy-expansion-en-e07-will-o-wisp-fenbell-shepherd.js` adds only that
+one private specialist without changing the facade, public registry, fixtures,
+manifest, schemas, shared renderers, or frame contract. Its isolated pixel
+buffer authors a taller hovering ritual lantern with one connected hooked
+wick, a tall bell-shaped ribbed cage, one guiding core eye, asymmetric
+connected side shutters, an elongated core, a broad lip, and three connected
+lower flame tines in the approved teal, mint, pale-core, and violet-cage family
+language. Detached wisps/embers/sparks, sound rings, aura, glow, smoke,
+afterimages, trails, floor light, projectiles, impacts, and illumination stay
+external. Cast aliases Attack; Death aliases Hurt. The focused gate freezes
+all 80 frames at digest
+`0a8000e33705967089ae66c98486eb701da88bfacd9f5adc38a47bbb62f5a46b`,
+proves 80/80 connected, bounded, hovering pixel and alpha distinctions from
+approved Lantern Mote, public Spectral Ghost, and public Flame Elemental, and
+keeps Lantern Mote exact. The 202-210-pixel packet reproduces all five hashes
+byte-for-byte twice. Both full-suite boards, the comparison, and all eight
+raw/effects-enabled phase boards have been inspected at original detail. The
+protected 25-command matrix passes in 16.8s, fast validation in 57.6s, and full
+validation in 111.7s with the integration digest and all 232 fixtures exact.
+The three frozen PNG hashes were reverified and those exact files are open
+together in responsive Aseprite 1.3.17.2, ready for presentation. This
+candidate is unapproved, uncommitted, unpushed, private, unregistered, and
+fixture-free.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

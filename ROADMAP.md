@@ -210,8 +210,8 @@ same response opens only one private common Will-o-Wisp candidate from the
 clean publication reconciliation. Registration, fixtures, runtime copying, effects, later
 EN-E07 roles/families, release, and EN-E08 stay closed.
 
-Current isolated EN-E07 art checkpoint (2026-08-10): that candidate is common
-Will-o-Wisp Lantern Mote on
+Approved preceding EN-E07 art checkpoint (2026-08-11): that candidate was
+common Will-o-Wisp Lantern Mote on
 `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean Grand Pretender
 reconciliation `3ddbe159360f16844d167ecc753d6b767b7e5549`. Its 146-154-pixel
 hovering form at digest
@@ -229,10 +229,30 @@ fixtures unchanged. The designer replied `approved lets do next` on
 2026-08-11; implementation `96907f552a06ba3865e25a46f881af5add2237ee`
 and approval record `878e4969de59c500de342555e9b136e3d8cde2de` plus initial
 handoff `71f0fbc07f088d6c366f11dc462856e79e3fde8b` are published and remote
-verified, and full validation passes against the published metadata. Lantern
-Mote remains private and unregistered. Registration, fixtures, effects, elite
-Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 stay closed. Only one
-private specialist is open from the clean publication reconciliation.
+verified; final publication reconciliation
+`d734846067b3bf9dd05cadffef440ead1f6c6d3a` is remote exact. Lantern Mote
+remains private and unregistered. Registration, fixtures, effects, elite
+Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 stay closed. That approval
+reply opened only the private Fenbell Shepherd candidate below.
+
+Current isolated EN-E07 art checkpoint (2026-08-11): specialist Will-o-Wisp
+Fenbell Shepherd on `codex/en-e07-will-o-wisp-fenbell-shepherd` is based
+exactly on clean Lantern reconciliation `d734846067b3bf9dd05cadffef440ead1f6c6d3a`.
+Its taller 202-210-pixel hovering ritual-lantern form at digest
+`0a8000e33705967089ae66c98486eb701da88bfacd9f5adc38a47bbb62f5a46b`
+uses one connected hooked wick, a tall bell-shaped ribbed cage, one guiding
+core eye, asymmetric connected side shutters, an elongated core, a broad lip,
+and three connected lower flame tines. All 80 frames are connected, bounded,
+hovering, hard-alpha, and pixel/alpha distinct from approved Lantern Mote,
+public Spectral Ghost, and public Flame Elemental. The exact five-artifact
+packet reproduces twice; all raw and effects-enabled phase boards have been
+inspected at original detail. The 25-command matrix passes in 16.8s, fast
+validation in 57.6s, and full validation in 111.7s with the integration digest
+and all 232 fixtures exact. The three frozen PNG hashes were reverified and
+those exact files are open together in responsive Aseprite 1.3.17.2, ready for
+presentation. Fenbell Shepherd is unapproved, uncommitted, unpushed,
+unregistered, and fixture-free. Registration, fixtures, effects, elite
+Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 stay closed.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

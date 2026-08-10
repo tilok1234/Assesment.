@@ -23,17 +23,90 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Lantern Mote Published; Specialist Gate Open
+## Immediate Continuation Checkpoint - Fenbell Shepherd Candidate Awaiting Approval
 
-Start here in a new task. The exact private common Will-o-Wisp Lantern Mote is
+Start here in a new task. The exact private specialist Will-o-Wisp Fenbell
+Shepherd is authored, repaired, hash-frozen, deterministic, and focused-gate
+clean on `codex/en-e07-will-o-wisp-fenbell-shepherd`. It is not approved,
+committed, pushed, registered, fixture-backed, or public. Its exact final PNGs
+are open together in responsive Aseprite; it still requires designer approval
+before the standing publication permission applies.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e07-will-o-wisp-fenbell-shepherd`, based exactly on clean
+  published Lantern Mote reconciliation
+  `d734846067b3bf9dd05cadffef440ead1f6c6d3a`.
+- Approved predecessor: Lantern Mote implementation
+  `96907f552a06ba3865e25a46f881af5add2237ee`, approval record
+  `878e4969de59c500de342555e9b136e3d8cde2de`, initial published handoff
+  `71f0fbc07f088d6c366f11dc462856e79e3fde8b`, and final reconciliation
+  `d734846067b3bf9dd05cadffef440ead1f6c6d3a` remain exact.
+- Authorization: after Lantern Mote was visually approved, committed, pushed,
+  and reconciled, the designer replied `approved lets do next` on 2026-08-11.
+  The frozen common-specialist-elite role order and one-complete-sprite cadence
+  open only this one private specialist Will-o-Wisp.
+- Scope: one authored 80-frame specialist Will-o-Wisp across Idle F1-F2, Walk
+  W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 in all four directions.
+- Style contract: a taller hovering ritual lantern with one connected hooked
+  wick, tall bell-shaped ribbed cage, one guiding core eye, asymmetric
+  connected side shutters, elongated core, broad lip, and three connected
+  lower flame tines in the approved teal, mint, pale-core, and violet-cage
+  family language. It must remain visibly distinct from Lantern Mote, public
+  Spectral Ghost, public Flame Elemental, humanoid Living Shadow, and detached
+  particle clusters.
+- Effects firewall: detached wisps, embers, sparks, sound rings, aura, glow,
+  smoke, afterimages, trails, floor light, projectiles, impacts, and
+  illumination remain external. Registration, fixtures, public exposure, the
+  elite Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 remain closed.
+- Focused validation passes: 80/80 connected, one-cell-bounded, genuinely
+  hovering hard-alpha frames; 80/80 pixel and alpha-silhouette distinctions
+  from approved Lantern Mote, public Spectral Ghost, and public Flame
+  Elemental; 72/72 colored palette frames; 8/8 exact white flashes; 54/54
+  expected single-eye views; opaque range 202-210; 7,010 Complete B additions;
+  and 6,404 Form changes. Lantern Mote remains exact, public 80/259 is
+  unchanged, and no fixture/facade/manifest exposure exists.
+- Frozen candidate digest:
+  `0a8000e33705967089ae66c98486eb701da88bfacd9f5adc38a47bbb62f5a46b`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `659e8539a29014278ff15e6cd726ffe2cbee26918cc0cb4e23df49a517f0572e` /
+  `ff8cba9a43c0a5639864cbd24fd82429bc3bb2cb8856c9ccadc477379911a781`;
+  Fenbell/Lantern/Ghost/Flame `1520x548` comparison
+  `a967b070596c5aee98798b67a61c1d6fa71ff7e9a3f30d9f2b7e18503a6d0e59`;
+  raw / Complete B + Form `640x672` GIFs
+  `a2eceb35ef98dd1acd92a5058ba71624456c852d92726995610e55e29fb8ba31` /
+  `dfb20b16ff2a15142874b718e01b0c5dd369a426f77a5b2c6a6a8af96859f7f7`.
+  Two post-freeze generations reproduce all five hashes exactly; artifacts
+  remain ignored under
+  `enemy-expansion-review/en-e07-will-o-wisp-fenbell-shepherd/`.
+- Visual inspection completed: the comparison, both full-suite boards, and all
+  eight raw/effects-enabled phase boards were inspected at original detail.
+  Pre-freeze inspection strengthened the connected hooked-wick cue. The three
+  frozen PNG hashes were reverified and those exact files were opened together
+  in a responsive Aseprite 1.3.17.2 session; its live command line names all
+  three paths and the comparison board is the active window.
+- Broad validation passes: the protected 25-command
+  predecessor/candidate/integration matrix completed in 16.8s;
+  `npm.cmd run check:fast` passed in 57.6s; and full `npm.cmd run check` passed
+  in 111.7s. The integrated frame digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required next action: present only this exact packet for explicit visual
+  approval. Do not commit or push Fenbell Shepherd without that reply; do not
+  register Will-o-Wisp, generate fixtures, add effects, start the elite or
+  another family, release, or advance EN-E08.
+
+## Approved Preceding Checkpoint - Lantern Mote Published
+
+The exact private common Will-o-Wisp Lantern Mote is
 repaired, hash-frozen, deterministic, fully validated, visually approved,
 published, and remote verified. Implementation
 `96907f552a06ba3865e25a46f881af5add2237ee` and approval record
 `878e4969de59c500de342555e9b136e3d8cde2de` plus initial handoff
-`71f0fbc07f088d6c366f11dc462856e79e3fde8b` are remote verified. The same
-approval response opens only one private specialist Will-o-Wisp candidate from
-this clean publication reconciliation. Lantern Mote remains unregistered and
-non-public.
+`71f0fbc07f088d6c366f11dc462856e79e3fde8b` and final reconciliation
+`d734846067b3bf9dd05cadffef440ead1f6c6d3a` are remote verified. The same
+approval response opened only the active Fenbell Shepherd candidate above.
+Lantern Mote remains unregistered and non-public.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean
@@ -97,11 +170,10 @@ non-public.
   integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: open only one private specialist Will-o-Wisp candidate
-  from this clean published checkpoint. Preserve Lantern Mote and every
-  approved predecessor byte-for-byte. Do not register Will-o-Wisp, generate
-  fixtures, add effects, start the elite or another family, release, or advance
-  EN-E08.
+- Historical next action: the designer's same reply opened only the active
+  Fenbell Shepherd candidate above. Preserve Lantern Mote and every approved
+  predecessor byte-for-byte. Registration, fixtures, effects, the elite or
+  another family, release, and EN-E08 remain closed.
 
 ## Approved Preceding Checkpoint - Grand Pretender Published
 

@@ -108,6 +108,32 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   registration, fixtures, effects, later roles/families, release, or another
   gate.
 - Current isolated art approval checkpoint:
+  `codex/en-e07-will-o-wisp-fenbell-shepherd`, based exactly on clean
+  published Lantern Mote reconciliation
+  `d734846067b3bf9dd05cadffef440ead1f6c6d3a`, contains one private specialist
+  Will-o-Wisp Fenbell Shepherd candidate. Its frozen 80-frame digest is
+  `0a8000e33705967089ae66c98486eb701da88bfacd9f5adc38a47bbb62f5a46b`.
+  All frames are connected, one-cell-bounded, genuinely hovering, hard-alpha,
+  and pixel/alpha distinct from approved Lantern Mote, public Spectral Ghost,
+  and public Flame Elemental. It uses one connected hooked wick, a tall
+  bell-shaped ribbed cage, one guiding core eye, asymmetric connected side
+  shutters, an elongated core, a broad lip, and three connected lower flame
+  tines. Detached wisps/embers/sparks, sound rings, aura, glow, smoke,
+  afterimages, trails, floor light, projectiles, impacts, and illumination
+  remain external. The 202-210-pixel packet reproduces all five artifacts
+  byte-for-byte twice; 80/80 predecessor/comparison pixel and alpha
+  distinctions, 72/72 colored frames, 8/8 white flashes, and 54/54 one-eye
+  views pass. All three boards and all eight raw/effects-enabled phase boards
+  have been inspected at original detail. The protected 25-command matrix
+  passes in 16.8s, `check:fast` in 57.6s, and full `check` in 111.7s with the
+  approved integration digest and all 232 fixtures exact. The three frozen PNG
+  hashes were reverified and those exact files are open together in responsive
+  Aseprite 1.3.17.2, ready for presentation. Fenbell Shepherd is unapproved,
+  uncommitted, unpushed, unregistered, and fixture-free. Do not publish it
+  without explicit visual approval; do not register Will-o-Wisp, generate
+  fixtures, add effects, start the elite or another family, release, or advance
+  EN-E08.
+- Approved preceding art checkpoint (Lantern Mote):
   `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean published
   Grand Pretender reconciliation `3ddbe159360f16844d167ecc753d6b767b7e5549`,
   contains one private common Will-o-Wisp Lantern Mote candidate. Its frozen
@@ -130,9 +156,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   implementation `96907f552a06ba3865e25a46f881af5add2237ee` and approval
   record `878e4969de59c500de342555e9b136e3d8cde2de` plus initial handoff
   `71f0fbc07f088d6c366f11dc462856e79e3fde8b` are published and remote
-  verified. Do not register Will-o-Wisp, generate fixtures, add effects, start
-  the elite or another family, release, or advance EN-E08. The same reply opens
-  only one private specialist from the clean publication reconciliation.
+  verified; final publication reconciliation
+  `d734846067b3bf9dd05cadffef440ead1f6c6d3a` is remote exact. Do not register
+  Will-o-Wisp, generate fixtures, add effects, start the elite or another
+  family, release, or advance EN-E08. The same reply opened only the Fenbell
+  Shepherd candidate above.
 - Approved preceding art checkpoint (Grand Pretender):
   `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean published
   Falseface Adept reconciliation `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`,

@@ -389,7 +389,7 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   verified. Grand Pretender remains private, unregistered, and fixture-free.
   The same response opened only one private common Will-o-Wisp candidate from
   the clean publication reconciliation.
-  The active continuation is Lantern Mote on
+  The approved preceding continuation was Lantern Mote on
   `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on Grand Pretender
   reconciliation `3ddbe159360f16844d167ecc753d6b767b7e5549`. Its authored
   hovering form uses a connected stepped wick, broad ribbed cage, single
@@ -409,9 +409,31 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   implementation `96907f552a06ba3865e25a46f881af5add2237ee` and approval
   record `878e4969de59c500de342555e9b136e3d8cde2de` plus initial handoff
   `71f0fbc07f088d6c366f11dc462856e79e3fde8b` are published and remote
-  verified, and full `check` passes against the published metadata. Lantern
-  Mote remains private and unregistered. Only one private specialist is open
-  from the clean publication reconciliation.
+  verified, and full `check` passes against the published metadata. Final
+  Lantern publication reconciliation
+  `d734846067b3bf9dd05cadffef440ead1f6c6d3a` is remote exact; Lantern Mote
+  remains private and unregistered. That approval reply opened only the active
+  Fenbell Shepherd candidate below.
+  The active continuation is private specialist Will-o-Wisp Fenbell Shepherd
+  on `codex/en-e07-will-o-wisp-fenbell-shepherd`, based exactly on the clean
+  Lantern reconciliation above. Its taller ritual-lantern form uses one
+  connected hooked wick, a tall bell-shaped ribbed cage, one guiding core eye,
+  asymmetric connected side shutters, an elongated core, a broad lip, and
+  three connected lower flame tines. The frozen digest is
+  `0a8000e33705967089ae66c98486eb701da88bfacd9f5adc38a47bbb62f5a46b`:
+  80/80 frames are connected, bounded, hovering, and pixel/alpha distinct from
+  approved Lantern Mote, public Spectral Ghost, and public Flame Elemental;
+  72/72 colored frames and 8/8 white flashes are exact; 54/54 expected views
+  expose one eye; opaque range is 202-210. All five artifacts reproduce
+  byte-for-byte twice. The comparison, both full boards, and all eight
+  raw/effects-enabled phase boards have been inspected at original detail.
+  The protected 25-command matrix passes in 16.8s, `check:fast` in 57.6s, and
+  full `check` in 111.7s with the integration digest and all 232 fixtures exact.
+  The three frozen PNG hashes were reverified and those exact files are open
+  together in responsive Aseprite 1.3.17.2, ready for presentation. Fenbell
+  Shepherd is unapproved, uncommitted, unpushed, unregistered, and
+  fixture-free. Effects, the elite or another family, release, and EN-E08 stay
+  closed.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.
