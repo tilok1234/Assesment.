@@ -1231,11 +1231,15 @@ The frozen candidate digest is
 80/80 frames are connected, bounded, grounded, and pixel/alpha distinct from
 Cursed Ghost, Shadow Slime, Mist Weaver, and Gloam Walker; 72/72 colored frames
 preserve the family ramp; 8/8 flashes are exact white; opaque range is 228-265.
-The exact five-artifact packet reproduces byte-for-byte but is not visually
-approved, committed, or published. The protected 19-gate matrix, fast suite,
-and full suite pass; the approved 1,200-frame integration digest and all 232
-fixtures remain exact. Registration, fixtures, effects, elite Living Shadow,
-another EN-E07 family, release, and EN-E08 remain closed.
+The exact five-artifact packet reproduces byte-for-byte and was visually
+approved when the designer replied `approved lets do next`. Implementation
+`325a6f4cfa1418383c93510262a631358add1d5f` and approval record
+`d50f3af5da0578edf66a5b2f156744c576427b9c` are committed locally; their
+bounded branch publication is authorized and pending. The protected 19-gate
+matrix, fast suite, and full suite pass; the approved 1,200-frame integration
+digest and all 232 fixtures remain exact. After clean publication, only elite
+Living Shadow opens. Registration, fixtures, effects, another EN-E07 family,
+release, and EN-E08 remain closed.
 
 ## Approved enemy backlog integration published
 

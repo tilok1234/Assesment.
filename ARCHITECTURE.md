@@ -945,9 +945,12 @@ glow, afterimages, loose shards, trails, projectiles, and impacts remain
 external. The focused gate freezes all 80 candidate frames at digest
 `07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa`,
 proves 80/80 pixel and alpha distinctions from Cursed Ghost, Shadow Slime, Mist
-Weaver, and Gloam Walker, and keeps the approved Gloam digest exact. Its exact
-review packet is reproducible but still awaits visual approval; the module is
-not committed, published, registered, or fixture-backed.
+Weaver, and Gloam Walker, and keeps the approved Gloam digest exact. The exact
+packet was opened in Aseprite and approved when the designer replied `approved
+lets do next`. Implementation `325a6f4cfa1418383c93510262a631358add1d5f`
+and approval record `d50f3af5da0578edf66a5b2f156744c576427b9c` are committed
+locally with bounded publication authorized. The module remains private,
+unregistered, and fixture-free.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

@@ -23,11 +23,11 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Nightglass Seer Candidate Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Nightglass Seer Approved, Publication Pending
 
-Start here in a new task. This is the active isolated art gate. The exact
-private specialist candidate is hash-frozen and technically validated, but it
-is not visually approved, committed, or published.
+Start here in a new task. The exact private specialist is hash-frozen,
+technically validated, visually approved, and committed locally. Its bounded
+publication is authorized but has not yet been pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
@@ -85,11 +85,21 @@ is not visually approved, committed, or published.
   `5c12a4d26affb4b4a3453e4eb7183cbbc138f91257428dc36ffe1bf830103523`.
   Two regenerations reproduce all five hashes exactly; artifacts remain ignored
   under `enemy-expansion-review/en-e07-living-shadow-nightglass-seer/`.
-- Required next action: open the three exact PNG boards together in Aseprite,
-  present both exact GIFs, and ask for explicit visual approval of this digest.
-  Do not commit or push before approval. Do not register Living Shadow,
-  generate fixtures, add effects, start the elite or another family, release,
-  or advance EN-E08 without another explicit gate.
+- Visual approval: the exact comparison and paired GIFs were presented after
+  the three exact PNG boards were opened together in Aseprite; the designer
+  replied `approved lets do next` on 2026-08-10. Approval applies only to digest
+  `07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa`.
+- Local commits: implementation
+  `325a6f4cfa1418383c93510262a631358add1d5f` and approval record
+  `d50f3af5da0578edf66a5b2f156744c576427b9c`.
+- Publication state: the standing permission above authorizes this bounded
+  implementation, approval-record, documentation, and branch push. The branch
+  is not yet published at this checkpoint.
+- Required next action: commit this current-state reconciliation and push the
+  exact chain. After a clean published reconciliation, the same `approved lets
+  do next` response opens only one private elite Living Shadow candidate. Do
+  not register Living Shadow, generate fixtures, add effects, start another
+  family, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Gloam Walker Published
 

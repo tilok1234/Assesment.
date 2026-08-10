@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current isolated art candidate:
+- Current approved local art checkpoint:
   `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
   published Gloam Walker reconciliation `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`,
   contains one private specialist Living Shadow Nightglass Seer. Its frozen
@@ -119,12 +119,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   is carried by a broad faceted mask, one true vertical eye, a connected
   shoulder yoke, squared sight-frame arms, a narrow chest aperture, bent split
   legs, and planted wedge feet. The five exact review artifacts reproduce
-  byte-for-byte, but the candidate is not visually approved, committed, or
-  published. The protected 19-gate matrix, `check:fast`, and full `check` all
+  byte-for-byte. The exact packet was opened in Aseprite and the designer
+  replied `approved lets do next`; implementation
+  `325a6f4cfa1418383c93510262a631358add1d5f` and approval record
+  `d50f3af5da0578edf66a5b2f156744c576427b9c` are committed locally and
+  their bounded push is authorized. The protected 19-gate matrix, `check:fast`, and full `check` all
   pass; the approved 1,200-frame integration digest and all 232 fixtures remain
-  exact. Do not register Living Shadow, generate fixtures, add effects,
-  start the elite or another EN-E07 family, release, or advance EN-E08. Do not
-  commit or push this candidate before explicit approval of the exact digest.
+  exact. After a clean published reconciliation, the same response opens only
+  one private elite Living Shadow candidate. Do not register Living Shadow,
+  generate fixtures, add effects, start another EN-E07 family, release, or
+  advance EN-E08.
 - Approved preceding art checkpoint:
   `codex/en-e07-living-shadow-gloam-walker` contains exactly one private common
   Living Shadow Gloam Walker. The frozen

@@ -25,9 +25,14 @@
   mirror, and pixel/alpha distinctions from public Cursed Ghost, public Shadow
   Slime, approved Mist Weaver, and approved Gloam Walker. The exact raw,
   Complete B + Form, five-way comparison, and paired GIF packet reproduces all
-  five recorded hashes. It is not visually approved, committed, or published.
-  Living Shadow registration, fixtures, effects, elite Living Shadow, other
-  EN-E07 families, release, and EN-E08 remain closed.
+  five recorded hashes. After the exact packet was presented and its three PNG
+  boards were opened together in Aseprite, the designer replied `approved lets
+  do next`. Implementation `325a6f4cfa1418383c93510262a631358add1d5f` and
+  approval record `d50f3af5da0578edf66a5b2f156744c576427b9c` are committed
+  locally; bounded publication is authorized and pending. After a clean
+  published reconciliation, the same response opens only elite Living Shadow.
+  Registration, fixtures, effects, other EN-E07 families, release, and EN-E08
+  remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3615,9 +3620,9 @@ assembler.
   fixtures, effects, another role or family, release, or EN-E08. The designer's
   later `lets do next` opens only the specialist candidate below.
 
-#### Living Shadow Nightglass Seer complete suite candidate
+#### Living Shadow Nightglass Seer complete suite approved locally
 
-- Gate ID: `en-e07-living-shadow-nightglass-seer-full-v1`; status: `candidate`
+- Gate ID: `en-e07-living-shadow-nightglass-seer-full-v1`; status: `approved`
   on `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
   published Gloam reconciliation
   `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`.
@@ -3657,10 +3662,17 @@ assembler.
   raw GIF `54fb94164d0b90a5bbebe684d78ccc3f9f24d527e25c131cf162ff0f32d98828`;
   Complete B + Form GIF
   `5c12a4d26affb4b4a3453e4eb7183cbbc138f91257428dc36ffe1bf830103523`.
-- Required next action: open the three exact PNGs together in Aseprite, present
-  both GIFs, and request explicit visual approval. Do not commit or publish
-  before approval. Keep Living Shadow registration, fixtures, effects, elite
-  Living Shadow, another EN-E07 family, release, and EN-E08 closed.
+- Approval: after the exact packet was presented and the three exact PNG boards
+  were opened together in Aseprite, the designer replied `approved lets do
+  next` on 2026-08-10. Approval is restricted to the candidate digest above.
+- Local commits: implementation
+  `325a6f4cfa1418383c93510262a631358add1d5f`; approval record
+  `d50f3af5da0578edf66a5b2f156744c576427b9c`. The standing permission
+  authorizes their bounded documentation reconciliation and branch push.
+- Required next action: publish this exact chain and reconcile the clean remote
+  checkpoint. Then open only one private elite Living Shadow candidate. Keep
+  Living Shadow registration, fixtures, effects, another EN-E07 family,
+  release, and EN-E08 closed.
 
 ### EN-E08 - Possessed equipment
 
