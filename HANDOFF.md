@@ -15,11 +15,10 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Mist Weaver Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Mist Weaver Approved And Published
 
-Start here in a new task. This is the current stopping checkpoint; the exact
-private candidate is frozen for review and must not be committed or published
-before explicit visual approval.
+Start here in a new task. This is the current clean stopping checkpoint; the
+exact private candidate was visually approved, committed, and pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-nymph-mist-weaver`, based exactly on clean pushed
@@ -58,19 +57,21 @@ before explicit visual approval.
 - Protected state: all fourteen approved Fairy, Hag, Dryad, Redcap, and Spring
   Dancer digests remain exact; public catalog remains 80/259 with no public
   Nymph; all 232 committed fixtures remain untouched.
-- Publication state: no Mist Weaver implementation or approval commit exists;
-  review artifacts remain ignored evidence.
-- Visual evidence: the three exact PNG boards are open together in Aseprite for
-  direct review.
-- Required next action: present those boards and both GIFs, and await explicit
-  approval. Do not commit,
-  publish, register Nymph, generate fixtures, begin Rivercrown Muse, add effects,
-  release, or open EN-E07.
+- Visual approval: the three exact PNG boards were opened together in Aseprite,
+  both GIFs were presented, and the designer replied `approved` on 2026-08-10.
+  Approval applies only to the frozen digest and hashes above.
+- Publication state: frozen implementation
+  `682f99a581e70ee1c985257e0c122d75c7add6f9` and approval record
+  `07a673df462cdb651673fd042fb92965da624faf` are committed and pushed on the
+  tracked branch; review artifacts remain ignored evidence.
+- Required next action: stop at this clean published checkpoint. Do not
+  register Nymph, generate fixtures, begin Rivercrown Muse, add effects,
+  release, or open EN-E07 without another explicit authorization.
 
 ## Approved Preceding Checkpoint - Spring Dancer Published
 
-This records the clean published predecessor for the active Mist Weaver visual
-review gate. The exact private candidate was visually approved, committed, and
+This records the clean published predecessor for the approved Mist Weaver
+checkpoint. The exact private candidate was visually approved, committed, and
 pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.

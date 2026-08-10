@@ -1161,8 +1161,12 @@ run `npm.cmd run check:enemy-expansion-en-e06-nymph-mist-weaver` for its 80-fram
 structural and firewall gate. It passes at digest
 `e57a0af441f895fe376f2696d859a97d84564ddf034235d3b237b2cf637520da`,
 with 80/80 connected, bounded, grounded frames and 72/72 colored identity
-frames. The exact packet is frozen for visual approval. No commit, publication,
-registration, Rivercrown Muse, fixture, effect, release, or EN-E07 work is open.
+frames. The exact packet was opened together in Aseprite and visually approved
+on 2026-08-10. Frozen implementation
+`682f99a581e70ee1c985257e0c122d75c7add6f9` and approval record
+`07a673df462cdb651673fd042fb92965da624faf` are committed and pushed on the
+tracked branch. It remains private. No registration, Rivercrown Muse, fixture,
+effect, release, or EN-E07 work is open.
 
 ## Approved enemy backlog integration published
 

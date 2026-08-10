@@ -254,12 +254,15 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   approved on 2026-08-10. Frozen implementation
   `9d6366b0c5456704137aadfbbec9a67eccb5fd7c` and approval record
   `eae49376fd7bc4dd315168cb2989293de4a73f55` are committed and pushed on the
-  tracked branch. The later specialist Nymph Mist Weaver candidate on
+  tracked branch. The later specialist Nymph Mist Weaver on
   `codex/en-e06-nymph-mist-weaver` passes 80/80 connected, bounded, grounded,
   hard-alpha, Elf/Spring/Spore pixel, and alpha-silhouette distinction gates at
   digest `e57a0af441f895fe376f2696d859a97d84564ddf034235d3b237b2cf637520da`.
-  Its exact five-artifact packet is frozen for visual approval; no commit or
-  publication is authorized.
+  Its exact five-artifact packet was opened together in Aseprite and visually
+  approved on 2026-08-10. Frozen implementation
+  `682f99a581e70ee1c985257e0c122d75c7add6f9` and approval record
+  `07a673df462cdb651673fd042fb92965da624faf` are committed and pushed on the
+  tracked branch. It remains private and no Rivercrown Muse gate is active.
 Fixture regeneration, later Nymphs, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 

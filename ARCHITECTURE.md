@@ -893,10 +893,12 @@ registry. Its crescent cowl, face veil, shoulder mantle, bell sleeves, woven
 sash, and gather-to-release poses pass 80/80 pixel and alpha distinctions from
 Elf Mage, Spring Dancer, and Spore Cantor at digest
 `e57a0af441f895fe376f2696d859a97d84564ddf034235d3b237b2cf637520da`.
-All 80 frames are connected, bounded, grounded, and hard-alpha; the five exact
-artifacts are frozen at the preapproval gate. It is not committed or public.
-Rivercrown Muse, registration, fixtures, effects, release, and Wave 2 stay
-closed.
+All 80 frames are connected, bounded, grounded, and hard-alpha. The five exact
+artifacts were opened together in Aseprite and visually approved on 2026-08-10.
+Frozen implementation `682f99a581e70ee1c985257e0c122d75c7add6f9` and approval
+record `07a673df462cdb651673fd042fb92965da624faf` are committed and pushed on
+the tracked branch. It remains private. Rivercrown Muse, registration,
+fixtures, effects, release, and Wave 2 stay closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

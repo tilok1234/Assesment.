@@ -131,7 +131,7 @@ Heartwood Warden, Redcap, Nymph, EN-E07, effects, fixture regeneration, and
 release remain outside this integration. The integration source and docs are
 committed and pushed at `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
 
-Current EN-E06 progression through the active Mist Weaver gate (2026-08-10):
+Current EN-E06 progression through the published Mist Weaver checkpoint (2026-08-10):
 Ironboot Trapper is approved and
 published at implementation `98865936244b94860985210fcaf9a044b0ca228a` plus
 approval record `00a9876f963522c88b9cd77f809bec3674d72b19`, with reconciled
@@ -158,12 +158,15 @@ approved on 2026-08-10. Frozen implementation
 tracked branch. Later Nymphs, EN-E07, registration, fixtures, shared
 renderer/schema changes, effects, and release remained closed until the
 separately authorized Mist Weaver gate. Its private hash-frozen 80-frame
-candidate on `codex/en-e06-nymph-mist-weaver` passes 80/80 connected, bounded,
+implementation on `codex/en-e06-nymph-mist-weaver` passes 80/80 connected, bounded,
 grounded, hard-alpha, Elf/Spring/Spore pixel, and alpha-silhouette distinctions
 at digest `e57a0af441f895fe376f2696d859a97d84564ddf034235d3b237b2cf637520da`.
-The exact five-artifact packet is frozen for visual approval. No candidate
-commit or publication is authorized. Rivercrown Muse, EN-E07, registration,
-fixtures, shared renderer/schema changes, effects, and release remain closed.
+The exact five-artifact packet was opened together in Aseprite and visually
+approved on 2026-08-10. Frozen implementation
+`682f99a581e70ee1c985257e0c122d75c7add6f9` and approval record
+`07a673df462cdb651673fd042fb92965da624faf` are committed and pushed on the
+tracked branch. Rivercrown Muse, EN-E07, registration, fixtures, shared
+renderer/schema changes, effects, and release remain closed.
 
 Historical EN-E06 production checkpoint (2026-08-09): approved Fairies Bramblewing
 Scout, Thistle Hexer, and Petalcrown Duelist remain exact, internal, non-public,

@@ -102,17 +102,17 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   byte-unchanged, including the intentionally historical Ghoul fixture. Source
   and documentation are committed and pushed at
   `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
-- Current private art gate: `codex/en-e06-nymph-mist-weaver`, based exactly on
-  clean published Spring Dancer handoff `6e63e95`, contains one complete
-  specialist Nymph candidate. Its 80 frames pass connected, one-cell-bounded, grounded,
+- Current EN-E06 stopping checkpoint: `codex/en-e06-nymph-mist-weaver`, based
+  exactly on clean published Spring Dancer handoff `6e63e95`, contains one
+  complete approved specialist Nymph. Its 80 frames pass connected, one-cell-bounded, grounded,
   hard-alpha, alias, mirror, and 80/80 pixel plus alpha-silhouette distinctions
   from public Elf Mage, approved Spring Dancer, and approved Spore Cantor at
   digest `e57a0af441f895fe376f2696d859a97d84564ddf034235d3b237b2cf637520da`.
-  The exact five-artifact packet is frozen for explicit visual approval. Fast
-  validation passes in 58.3s and full validation in 107.2s with all 232 fixtures
-  valid. Public Nymph remains absent within 80/259. No candidate commit or
-  publication is authorized; stop before Rivercrown Muse, registration,
-  fixtures, EN-E07, effects, or release.
+  The exact five-artifact packet was opened together in Aseprite and visually
+  approved on 2026-08-10. Frozen implementation `682f99a` and approval record
+  `07a673d` are committed and pushed. Full post-approval validation passes in
+  114.7s with all 232 fixtures valid. Public Nymph remains absent within 80/259.
+  Stop before Rivercrown Muse, registration, fixtures, EN-E07, effects, or release.
 - The EN-E05 registration gate
   `en-e05-five-undead-registration-v1` is published on
   `codex/en-e05-registration` at `7d273ef`. It registers exact approved
