@@ -1030,9 +1030,39 @@ presented, and the designer replied `approved lets do next`. Implementation
 `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval record
 `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial handoff
 `a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
-verified. The module remains private, unregistered, and fixture-free. The same
-response opens only one private elite Doppelganger candidate from the clean
-publication reconciliation.
+verified, with final reconciliation
+`b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`. The module remains private,
+unregistered, and fixture-free. The same response opens only one private elite
+Doppelganger candidate from that clean publication reconciliation.
+
+The subsequently authorized
+`engine/enemy-expansion-en-e07-doppelganger-grand-pretender.js` adds that one
+private elite without changing the facade, public registry, fixtures,
+manifest, schemas, renderer interfaces, or runtime actor-selection contract.
+It captures the approved Falseface frame grammar into an isolated pixel
+buffer, preserves the pale/slate/wine family language, and adds one fused
+three-panel visage, a continuous right-swept crest, asymmetric connected
+mantle wings, a layered split formal coat, and paired connected claiming hands.
+The first diagnostic packet was rejected before freeze because its A1 hands
+merged into a pale cap that erased the face and the inherited specialist fringe
+made the crest read as horns. The repaired geometry narrows the cheek-side
+hands, restores the expected eyes and tri-seam, explicitly removes only the
+inherited fringe pixels, and layers one connected swept hair mass over the
+seam tops. Cast aliases Attack; Death aliases Hurt. Copied actors, detached
+faces, mirror doubles, reflections, peeling skin, loose ribbons, afterimages,
+glow, particles, projectiles, and impacts remain external. The focused gate
+freezes all 80 frames at digest
+`03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`,
+proves 80/80 connected, bounded, grounded pixel and alpha distinctions from
+approved Pale Echo, approved Falseface Adept, and public Cultist Zealot, and
+keeps both approved Doppelgangers exact. The 217-273-pixel packet reproduces
+all five hashes byte-for-byte twice. The comparison, both full-suite boards,
+and all eight raw/effects-enabled phase boards were inspected, and the three
+exact frozen PNGs were opened together in responsive Aseprite. The protected
+23-command matrix, fast suite, and full suite pass with the approved
+integration digest and all 232 fixtures exact. This remains inspection-only
+evidence: the module is private, unregistered, fixture-free, uncommitted, and
+unpushed pending explicit designer approval of the exact packet.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

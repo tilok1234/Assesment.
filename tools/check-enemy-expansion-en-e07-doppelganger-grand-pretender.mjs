@@ -16,11 +16,17 @@ import {
 import {
   EN_E07_FALSEFACE_ADEPT_CONTRACT,
   EN_E07_FALSEFACE_ADEPT_DATA,
-  EN_E07_FALSEFACE_ADEPT_DEATH_SOURCE_FRAMES,
-  EN_E07_FALSEFACE_ADEPT_FAMILY,
   EN_E07_FALSEFACE_ADEPT_GATE,
   EN_E07_FALSEFACE_ADEPT_REGISTRY,
 } from '../engine/enemy-expansion-en-e07-doppelganger-falseface-adept.js';
+import {
+  EN_E07_GRAND_PRETENDER_CONTRACT,
+  EN_E07_GRAND_PRETENDER_DATA,
+  EN_E07_GRAND_PRETENDER_DEATH_SOURCE_FRAMES,
+  EN_E07_GRAND_PRETENDER_FAMILY,
+  EN_E07_GRAND_PRETENDER_GATE,
+  EN_E07_GRAND_PRETENDER_REGISTRY,
+} from '../engine/enemy-expansion-en-e07-doppelganger-grand-pretender.js';
 import { buildEnemyExpansionCandidatePresentation } from './enemy-expansion-candidate-presentation.mjs';
 import {
   alphaDigest,
@@ -40,10 +46,10 @@ const animations = [
   { id: 'hurt', frames: 2 },
   { id: 'death', frames: 4 },
 ];
-const candidateSpec = { kind: 'enemy', family: 'doppelganger', variant: 'falseface-adept' };
+const candidateSpec = { kind: 'enemy', family: 'doppelganger', variant: 'grand-pretender' };
 const paleSpec = { kind: 'enemy', family: 'doppelganger', variant: 'pale-echo' };
+const falsefaceSpec = { kind: 'enemy', family: 'doppelganger', variant: 'falseface-adept' };
 const cultistSpec = { kind: 'enemy', family: 'cultist', variant: 'zealot' };
-const darkElfSpec = { kind: 'enemy', family: 'elf', variant: 'dark' };
 
 function check(condition, message) {
   if (!condition) errors.push(message);
@@ -145,57 +151,47 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_FALSEFACE_ADEPT_GATE.status === 'approved'
-    && EN_E07_FALSEFACE_ADEPT_GATE.approvedOn === '2026-08-10'
-    && EN_E07_FALSEFACE_ADEPT_GATE.approvedImplementation === 'c415620c2f7f95b98c8b8563a2c1d6e39abb4a73'
-    && EN_E07_FALSEFACE_ADEPT_GATE.publishedImplementation === 'c415620c2f7f95b98c8b8563a2c1d6e39abb4a73'
-    && EN_E07_FALSEFACE_ADEPT_GATE.publishedApprovalRecord === 'cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb'
-    && EN_E07_FALSEFACE_ADEPT_GATE.initialPublishedHandoff === 'a215f091022537644a4616e8b0977f12d972eb6d'
-    && EN_E07_FALSEFACE_ADEPT_GATE.publicationState === 'published',
-  'Falseface Adept published state drifted',
+  EN_E07_GRAND_PRETENDER_GATE.status === 'candidate'
+    && EN_E07_GRAND_PRETENDER_GATE.approvedOn === null
+    && EN_E07_GRAND_PRETENDER_GATE.publishedImplementation === null,
+  'Grand Pretender must remain an unapproved candidate',
 );
 check(
-  EN_E07_FALSEFACE_ADEPT_GATE.approvalEvidence.includes('three exact repaired PNG review boards were opened together in Aseprite')
-    && EN_E07_FALSEFACE_ADEPT_GATE.approvalEvidence.includes('designer replied: approved lets do next')
-    && EN_E07_FALSEFACE_ADEPT_GATE.approvalEvidence.includes('16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6')
-    && EN_E07_FALSEFACE_ADEPT_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
-  'approval evidence or bounded publication authorization drifted',
-);
-check(
-  EN_E07_FALSEFACE_ADEPT_GATE.baseCheckpoint === 'e18a51207868cbcf5b01f55e1c04a50cac43bdcc'
-    && EN_E07_FALSEFACE_ADEPT_GATE.authorizationEvidence.includes('designer replied: approved lets do next')
-    && EN_E07_FALSEFACE_ADEPT_GATE.authorizationEvidence.includes('common, specialist, elite')
-    && EN_E07_FALSEFACE_ADEPT_GATE.authorizationEvidence.includes('only one private specialist Falseface Adept'),
+  EN_E07_GRAND_PRETENDER_GATE.baseCheckpoint === 'b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c'
+    && EN_E07_GRAND_PRETENDER_GATE.authorizationEvidence.includes('designer replied: lets do nezxt')
+    && EN_E07_GRAND_PRETENDER_GATE.authorizationEvidence.includes('common, specialist, elite')
+    && EN_E07_GRAND_PRETENDER_GATE.authorizationEvidence.includes('only one private elite Grand Pretender'),
   'authorization evidence or bounded interpretation drifted',
 );
 check(
-  EN_E07_FALSEFACE_ADEPT_GATE.precedingApproval.gateId === EN_E07_PALE_ECHO_GATE.id
-    && EN_E07_FALSEFACE_ADEPT_GATE.precedingApproval.candidateFrameDigest === EN_E07_PALE_ECHO_GATE.candidateFrameDigest
-    && EN_E07_FALSEFACE_ADEPT_GATE.precedingApproval.publishedImplementation === EN_E07_PALE_ECHO_GATE.publishedImplementation
-    && EN_E07_FALSEFACE_ADEPT_GATE.precedingApproval.publishedApprovalRecord === EN_E07_PALE_ECHO_GATE.publishedApprovalRecord
-    && EN_E07_FALSEFACE_ADEPT_GATE.precedingApproval.currentReconciliation === 'e18a51207868cbcf5b01f55e1c04a50cac43bdcc',
-  'approved Pale Echo predecessor drifted',
+  EN_E07_GRAND_PRETENDER_GATE.precedingApproval.gateId === EN_E07_FALSEFACE_ADEPT_GATE.id
+    && EN_E07_GRAND_PRETENDER_GATE.precedingApproval.candidateFrameDigest === EN_E07_FALSEFACE_ADEPT_GATE.candidateFrameDigest
+    && EN_E07_GRAND_PRETENDER_GATE.precedingApproval.publishedImplementation === EN_E07_FALSEFACE_ADEPT_GATE.publishedImplementation
+    && EN_E07_GRAND_PRETENDER_GATE.precedingApproval.publishedApprovalRecord === EN_E07_FALSEFACE_ADEPT_GATE.publishedApprovalRecord
+    && EN_E07_GRAND_PRETENDER_GATE.precedingApproval.currentReconciliation === 'b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c',
+  'approved Falseface Adept predecessor drifted',
 );
 check(
-  EN_E07_FALSEFACE_ADEPT_GATE.scope.includes('complete 80-frame Falseface Adept specialist Doppelganger')
-    && EN_E07_FALSEFACE_ADEPT_GATE.animationContract.includes('presses the diagonal visage without detaching it')
-    && EN_E07_FALSEFACE_ADEPT_GATE.animationContract.includes('Cast aliases Attack exactly'),
+  EN_E07_GRAND_PRETENDER_GATE.scope.includes('complete 80-frame Grand Pretender elite Doppelganger')
+    && EN_E07_GRAND_PRETENDER_GATE.animationContract.includes('compresses the fused tri-seam without detaching it')
+    && EN_E07_GRAND_PRETENDER_GATE.animationContract.includes('Cast aliases Attack exactly'),
   'full-suite or motion contract drifted',
 );
 check(
-  EN_E07_FALSEFACE_ADEPT_GATE.exclusions.includes('runtime actor copying')
-    && EN_E07_FALSEFACE_ADEPT_GATE.exclusions.includes('detached faces')
-    && EN_E07_FALSEFACE_ADEPT_GATE.exclusions.includes('public Doppelganger registration')
-    && EN_E07_FALSEFACE_ADEPT_GATE.exclusions.includes('asset-pack fixture generation or regeneration')
-    && EN_E07_FALSEFACE_ADEPT_GATE.exclusions.includes('Doppelganger elite')
-    && EN_E07_FALSEFACE_ADEPT_GATE.exclusions.includes('EN-E08 and later work'),
+  EN_E07_GRAND_PRETENDER_GATE.exclusions.includes('runtime actor copying')
+    && EN_E07_GRAND_PRETENDER_GATE.exclusions.includes('detached faces')
+    && EN_E07_GRAND_PRETENDER_GATE.exclusions.includes('public Doppelganger registration')
+    && EN_E07_GRAND_PRETENDER_GATE.exclusions.includes('asset-pack fixture generation or regeneration')
+    && EN_E07_GRAND_PRETENDER_GATE.exclusions.includes('changes to approved Falseface Adept rendered pixels')
+    && EN_E07_GRAND_PRETENDER_GATE.exclusions.includes('another Doppelganger variant')
+    && EN_E07_GRAND_PRETENDER_GATE.exclusions.includes('EN-E08 and later work'),
   'scope exclusions drifted',
 );
 check(
-  EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('visually approved and published')
-    && EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('remote verified')
-    && EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('only one private elite Doppelganger candidate'),
-  'published next-role gate drifted',
+  EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('Stop at the exact frozen Grand Pretender candidate review')
+    && EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('Do not commit')
+    && EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('until the designer explicitly approves'),
+  'candidate stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_DOPPELGANGER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
@@ -208,34 +204,37 @@ check(
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.role === 'elite'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.status === 'implemented-full-candidate'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.length === 0,
-  'Doppelganger role order or active-elite boundary drifted',
+  'Doppelganger role order or one-active-elite boundary drifted',
 );
 check(
-  EN_E07_FALSEFACE_ADEPT_CONTRACT.silhouette.includes('fused diagonal false-face seam')
-    && EN_E07_FALSEFACE_ADEPT_CONTRACT.silhouette.includes('two connected long-finger molding hands')
+  EN_E07_GRAND_PRETENDER_CONTRACT.silhouette.includes('fused three-panel visage')
+    && EN_E07_GRAND_PRETENDER_CONTRACT.silhouette.includes('two connected long-finger claiming hands')
+    && EN_E07_GRAND_PRETENDER_CONTRACT.identity.includes('never copies another actor')
+    && EN_E07_GRAND_PRETENDER_DATA.bakedEffects.length === 0,
+  'Grand Pretender elite identity or effect firewall drifted',
+);
+check(
+  EN_E07_FALSEFACE_ADEPT_GATE.status === 'approved'
+    && EN_E07_FALSEFACE_ADEPT_GATE.publicationState === 'published'
+    && EN_E07_FALSEFACE_ADEPT_GATE.candidateFrameDigest === '16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6'
     && EN_E07_FALSEFACE_ADEPT_CONTRACT.identity.includes('never copies a player or public enemy')
-    && EN_E07_FALSEFACE_ADEPT_DATA.bakedEffects.length === 0,
-  'Falseface Adept authored-default identity or effect firewall drifted',
-);
-check(
-  EN_E07_PALE_ECHO_GATE.status === 'approved'
-    && EN_E07_PALE_ECHO_GATE.publicationState === 'published'
+    && EN_E07_FALSEFACE_ADEPT_DATA.bakedEffects.length === 0
     && EN_E07_PALE_ECHO_GATE.candidateFrameDigest === 'c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596'
     && EN_E07_PALE_ECHO_CONTRACT.identity.includes('without promising runtime copying')
     && EN_E07_PALE_ECHO_DATA.bakedEffects.length === 0,
-  'approved Pale Echo contract or publication state drifted',
+  'approved Doppelganger predecessor contracts or publication state drifted',
 );
 check(
-  Object.isFrozen(EN_E07_FALSEFACE_ADEPT_GATE)
-    && Object.isFrozen(EN_E07_FALSEFACE_ADEPT_DATA)
-    && Object.isFrozen(EN_E07_FALSEFACE_ADEPT_CONTRACT)
+  Object.isFrozen(EN_E07_GRAND_PRETENDER_GATE)
+    && Object.isFrozen(EN_E07_GRAND_PRETENDER_DATA)
+    && Object.isFrozen(EN_E07_GRAND_PRETENDER_CONTRACT)
     && Object.isFrozen(EN_E07_DOPPELGANGER_CONTRACT_CARD),
   'gate, data, and contracts must be deeply immutable',
 );
 check(
-  EN_E07_FALSEFACE_ADEPT_REGISTRY.families.length === 1
-    && EN_E07_FALSEFACE_ADEPT_REGISTRY.publicFamilies.length === 0
-    && EN_E07_FALSEFACE_ADEPT_FAMILY.variants.length === 1,
+  EN_E07_GRAND_PRETENDER_REGISTRY.families.length === 1
+    && EN_E07_GRAND_PRETENDER_REGISTRY.publicFamilies.length === 0
+    && EN_E07_GRAND_PRETENDER_FAMILY.variants.length === 1,
   'candidate registry boundary drifted',
 );
 
@@ -247,7 +246,7 @@ check(
     && !engine.PUBLIC_ENEMIES.some(({ id }) => id === 'doppelganger'),
   'candidate must preserve public 80/259 and keep Doppelganger private',
 );
-check(engine.EN_E07_FALSEFACE_ADEPT_REGISTRY === undefined, 'candidate must not leak through the facade');
+check(engine.EN_E07_GRAND_PRETENDER_REGISTRY === undefined, 'candidate must not leak through the facade');
 
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8');
 const manifestSource = await readFile(path.join(root, 'asset-pack', 'manifest.json'), 'utf8');
@@ -257,14 +256,14 @@ check(!manifestSource.includes('doppelganger'), 'asset manifest must not mention
 const captures = new Map();
 const candidateRecords = [];
 const paleRecords = [];
+const falsefaceRecords = [];
 const cultistRecords = [];
-const darkElfRecords = [];
 const palettes = [
-  ['skin', new Set(EN_E07_FALSEFACE_ADEPT_DATA.falsefaceAdept.skin)],
-  ['hair', new Set(EN_E07_FALSEFACE_ADEPT_DATA.falsefaceAdept.hair)],
-  ['cloth', new Set(EN_E07_FALSEFACE_ADEPT_DATA.falsefaceAdept.cloth)],
-  ['accent', new Set(EN_E07_FALSEFACE_ADEPT_DATA.falsefaceAdept.accent)],
-  ['veil', new Set(EN_E07_FALSEFACE_ADEPT_DATA.falsefaceAdept.veil)],
+  ['skin', new Set(EN_E07_GRAND_PRETENDER_DATA.grandPretender.skin)],
+  ['hair', new Set(EN_E07_GRAND_PRETENDER_DATA.grandPretender.hair)],
+  ['cloth', new Set(EN_E07_GRAND_PRETENDER_DATA.grandPretender.cloth)],
+  ['accent', new Set(EN_E07_GRAND_PRETENDER_DATA.grandPretender.accent)],
+  ['veil', new Set(EN_E07_GRAND_PRETENDER_DATA.grandPretender.veil)],
 ];
 let connected = 0;
 let bounded = 0;
@@ -276,10 +275,10 @@ let minOpaque = Infinity;
 let maxOpaque = -Infinity;
 let paleDifferences = 0;
 let paleAlphaDifferences = 0;
+let falsefaceDifferences = 0;
+let falsefaceAlphaDifferences = 0;
 let cultistDifferences = 0;
 let cultistAlphaDifferences = 0;
-let darkElfDifferences = 0;
-let darkElfAlphaDifferences = 0;
 let completeB = 0;
 let formChanges = 0;
 
@@ -287,16 +286,16 @@ for (const animation of animations) for (const direction of directions) {
   const animationDigests = [];
   for (let frame = 0; frame < animation.frames; frame++) {
     const key = direction + '/' + animation.id + '/' + frame;
-    const candidate = captureEnemyExpansionFrame(EN_E07_FALSEFACE_ADEPT_REGISTRY, candidateSpec, direction, animation.id, frame);
+    const candidate = captureEnemyExpansionFrame(EN_E07_GRAND_PRETENDER_REGISTRY, candidateSpec, direction, animation.id, frame);
     const pale = captureEnemyExpansionFrame(EN_E07_PALE_ECHO_REGISTRY, paleSpec, direction, animation.id, frame);
+    const falseface = captureEnemyExpansionFrame(EN_E07_FALSEFACE_ADEPT_REGISTRY, falsefaceSpec, direction, animation.id, frame);
     const cultist = captureLegacyFrame(cultistSpec, direction, animation.id, frame);
-    const darkElf = captureLegacyFrame(darkElfSpec, direction, animation.id, frame);
     captures.set(key, candidate);
     animationDigests.push(candidate.digest);
-    candidateRecords.push(frameRecord(candidate, 'doppelganger', 'falseface-adept', direction, animation.id, frame));
+    candidateRecords.push(frameRecord(candidate, 'doppelganger', 'grand-pretender', direction, animation.id, frame));
     paleRecords.push(frameRecord(pale, 'doppelganger', 'pale-echo', direction, animation.id, frame));
+    falsefaceRecords.push(frameRecord(falseface, 'doppelganger', 'falseface-adept', direction, animation.id, frame));
     cultistRecords.push(frameRecord(cultist, 'cultist', 'zealot', direction, animation.id, frame, false));
-    darkElfRecords.push(frameRecord(darkElf, 'elf', 'dark', direction, animation.id, frame, false));
 
     check(candidate.outOfBoundsWrites.length === 0, key + ' wrote outside the cell');
     check(candidate.alpha.every((value) => value === 0 || value === 255), key + ' lost hard alpha');
@@ -310,16 +309,16 @@ for (const animation of animations) for (const direction of directions) {
     const isGrounded = candidate.bounds && candidate.bounds.maxY >= 21 && candidate.bounds.maxY <= 22;
     if (isGrounded) grounded++;
     else check(false, key + ' lost boot ground contact');
-    check(candidate.opaquePixels >= 180 && candidate.opaquePixels <= 285, key + ' density drifted outside the slim-to-medium specialist budget');
+    check(candidate.opaquePixels >= 210 && candidate.opaquePixels <= 360, key + ' density drifted outside the broad public-humanoid elite budget');
     minOpaque = Math.min(minOpaque, candidate.opaquePixels);
     maxOpaque = Math.max(maxOpaque, candidate.opaquePixels);
 
     if (candidate.digest !== pale.digest) paleDifferences++;
     if (candidate.alphaDigest !== pale.alphaDigest) paleAlphaDifferences++;
+    if (candidate.digest !== falseface.digest) falsefaceDifferences++;
+    if (candidate.alphaDigest !== falseface.alphaDigest) falsefaceAlphaDifferences++;
     if (candidate.digest !== cultist.digest) cultistDifferences++;
     if (candidate.alphaDigest !== cultist.alphaDigest) cultistAlphaDifferences++;
-    if (candidate.digest !== darkElf.digest) darkElfDifferences++;
-    if (candidate.alphaDigest !== darkElf.alphaDigest) darkElfAlphaDifferences++;
 
     const flash = (animation.id === 'hurt' || animation.id === 'death') && frame === 0;
     if (flash) {
@@ -328,20 +327,19 @@ for (const animation of animations) for (const direction of directions) {
       flashes++;
     } else {
       for (const [name, colors] of palettes) check(countColors(candidate.pixels, colors) > 0, key + ' lost ' + name + ' palette identity');
-      const eyeCount = countColors(candidate.pixels, new Set([EN_E07_FALSEFACE_ADEPT_DATA.falsefaceAdept.eye]));
-      let expectedEyes = direction === 'up' ? 0 : (direction === 'down' ? 2 : 1);
-      if ((animation.id === 'attack' || animation.id === 'cast') && frame === 0 && direction === 'down') expectedEyes = 1;
-      check(eyeCount === expectedEyes, key + ' false-face eye visibility drifted');
+      const eyeCount = countColors(candidate.pixels, new Set([EN_E07_GRAND_PRETENDER_DATA.grandPretender.eye]));
+      const expectedEyes = direction === 'up' ? 0 : (direction === 'down' ? 2 : 1);
+      check(eyeCount === expectedEyes, key + ' tri-panel visage eye visibility drifted');
       if (eyeCount > 0) eyeViews++;
       colored++;
     }
 
     check(
-      candidate.renderResult.falsefaceAdeptGate === EN_E07_FALSEFACE_ADEPT_GATE.id
-        && candidate.renderResult.approvedPrecedingGate === EN_E07_PALE_ECHO_GATE.id,
+      candidate.renderResult.grandPretenderGate === EN_E07_GRAND_PRETENDER_GATE.id
+        && candidate.renderResult.approvedPrecedingGate === EN_E07_FALSEFACE_ADEPT_GATE.id,
       key + ' gate metadata drifted',
     );
-    const presentation = buildEnemyExpansionCandidatePresentation(candidate.pixels, EN_E07_FALSEFACE_ADEPT_DATA);
+    const presentation = buildEnemyExpansionCandidatePresentation(candidate.pixels, EN_E07_GRAND_PRETENDER_DATA);
     completeB += presentation.formComplete.reduce((sum, color, index) => sum + (color && !candidate.pixels[index] ? 1 : 0), 0);
     formChanges += presentation.form.reduce((sum, color, index) => sum + (candidate.pixels[index] && color !== candidate.pixels[index] ? 1 : 0), 0);
   }
@@ -356,7 +354,7 @@ for (const direction of directions) {
     const cast = captures.get(direction + '/cast/' + frame);
     check(cast.digest === attack.digest, direction + ' Cast A' + (frame + 1) + ' must alias Attack exactly');
     const death = captures.get(direction + '/death/' + frame);
-    const hurt = captures.get(direction + '/hurt/' + EN_E07_FALSEFACE_ADEPT_DEATH_SOURCE_FRAMES[frame]);
+    const hurt = captures.get(direction + '/hurt/' + EN_E07_GRAND_PRETENDER_DEATH_SOURCE_FRAMES[frame]);
     check(death.digest === hurt.digest, direction + ' Death D' + (frame + 1) + ' must alias Hurt exactly');
   }
 }
@@ -368,46 +366,47 @@ for (const animation of animations) for (let frame = 0; frame < animation.frames
 
 const candidateDigest = hashJson(candidateRecords);
 const paleDigest = hashJson(paleRecords);
+const falsefaceDigest = hashJson(falsefaceRecords);
 const cultistDigest = hashJson(cultistRecords);
-const darkElfDigest = hashJson(darkElfRecords);
-if (EN_E07_FALSEFACE_ADEPT_GATE.candidateFrameDigest) check(candidateDigest === EN_E07_FALSEFACE_ADEPT_GATE.candidateFrameDigest, 'candidate digest drifted');
-if (EN_E07_FALSEFACE_ADEPT_GATE.paleEchoComparisonDigest) check(paleDigest === EN_E07_FALSEFACE_ADEPT_GATE.paleEchoComparisonDigest, 'Pale Echo comparison digest drifted');
-if (EN_E07_FALSEFACE_ADEPT_GATE.cultistZealotComparisonDigest) check(cultistDigest === EN_E07_FALSEFACE_ADEPT_GATE.cultistZealotComparisonDigest, 'Cultist Zealot comparison digest drifted');
-if (EN_E07_FALSEFACE_ADEPT_GATE.darkElfComparisonDigest) check(darkElfDigest === EN_E07_FALSEFACE_ADEPT_GATE.darkElfComparisonDigest, 'Dark Elf comparison digest drifted');
+if (EN_E07_GRAND_PRETENDER_GATE.candidateFrameDigest) check(candidateDigest === EN_E07_GRAND_PRETENDER_GATE.candidateFrameDigest, 'candidate digest drifted');
+if (EN_E07_GRAND_PRETENDER_GATE.paleEchoComparisonDigest) check(paleDigest === EN_E07_GRAND_PRETENDER_GATE.paleEchoComparisonDigest, 'Pale Echo comparison digest drifted');
+if (EN_E07_GRAND_PRETENDER_GATE.falsefaceAdeptComparisonDigest) check(falsefaceDigest === EN_E07_GRAND_PRETENDER_GATE.falsefaceAdeptComparisonDigest, 'Falseface Adept comparison digest drifted');
+if (EN_E07_GRAND_PRETENDER_GATE.cultistZealotComparisonDigest) check(cultistDigest === EN_E07_GRAND_PRETENDER_GATE.cultistZealotComparisonDigest, 'Cultist Zealot comparison digest drifted');
 check(paleDigest === EN_E07_PALE_ECHO_GATE.candidateFrameDigest, 'approved Pale Echo digest drifted');
+check(falsefaceDigest === EN_E07_FALSEFACE_ADEPT_GATE.candidateFrameDigest, 'approved Falseface Adept digest drifted');
 
-check(connected === 80 && bounded === 80 && grounded === 80, 'all 80 Falseface Adept frames must be connected, bounded, and grounded');
+check(connected === 80 && bounded === 80 && grounded === 80, 'all 80 Grand Pretender frames must be connected, bounded, and grounded');
 check(colored === 72 && flashes === 8 && eyeViews === 54, 'colored, flash, or eye-view totals drifted');
-check(paleDifferences === 80 && paleAlphaDifferences === 80, 'Falseface Adept must differ from Pale Echo in all 80 pixel and alpha frames');
-check(cultistDifferences === 80 && cultistAlphaDifferences === 80, 'Falseface Adept must differ from Cultist Zealot in all 80 pixel and alpha frames');
-check(darkElfDifferences === 80 && darkElfAlphaDifferences === 80, 'Falseface Adept must differ from Dark Elf in all 80 pixel and alpha frames');
+check(paleDifferences === 80 && paleAlphaDifferences === 80, 'Grand Pretender must differ from Pale Echo in all 80 pixel and alpha frames');
+check(falsefaceDifferences === 80 && falsefaceAlphaDifferences === 80, 'Grand Pretender must differ from Falseface Adept in all 80 pixel and alpha frames');
+check(cultistDifferences === 80 && cultistAlphaDifferences === 80, 'Grand Pretender must differ from Cultist Zealot in all 80 pixel and alpha frames');
 check(completeB > 0 && formChanges > 0, 'Complete B + Form presentation must visibly change the candidate');
 
-if (EN_E07_FALSEFACE_ADEPT_GATE.artifactSha256) check(await fileHash(EN_E07_FALSEFACE_ADEPT_GATE.artifact) === EN_E07_FALSEFACE_ADEPT_GATE.artifactSha256, 'raw review artifact drifted');
-if (EN_E07_FALSEFACE_ADEPT_GATE.assembledArtifactSha256) check(await fileHash(EN_E07_FALSEFACE_ADEPT_GATE.assembledArtifact) === EN_E07_FALSEFACE_ADEPT_GATE.assembledArtifactSha256, 'Complete B + Form artifact drifted');
-if (EN_E07_FALSEFACE_ADEPT_GATE.comparisonArtifactSha256) check(await fileHash(EN_E07_FALSEFACE_ADEPT_GATE.comparisonArtifact) === EN_E07_FALSEFACE_ADEPT_GATE.comparisonArtifactSha256, 'comparison artifact drifted');
-if (EN_E07_FALSEFACE_ADEPT_GATE.reviewAnimations.raw.sha256) check(await fileHash(EN_E07_FALSEFACE_ADEPT_GATE.reviewAnimations.raw.artifact) === EN_E07_FALSEFACE_ADEPT_GATE.reviewAnimations.raw.sha256, 'raw GIF drifted');
-if (EN_E07_FALSEFACE_ADEPT_GATE.reviewAnimations.completeBForm.sha256) check(await fileHash(EN_E07_FALSEFACE_ADEPT_GATE.reviewAnimations.completeBForm.artifact) === EN_E07_FALSEFACE_ADEPT_GATE.reviewAnimations.completeBForm.sha256, 'Complete B + Form GIF drifted');
+if (EN_E07_GRAND_PRETENDER_GATE.artifactSha256) check(await fileHash(EN_E07_GRAND_PRETENDER_GATE.artifact) === EN_E07_GRAND_PRETENDER_GATE.artifactSha256, 'raw review artifact drifted');
+if (EN_E07_GRAND_PRETENDER_GATE.assembledArtifactSha256) check(await fileHash(EN_E07_GRAND_PRETENDER_GATE.assembledArtifact) === EN_E07_GRAND_PRETENDER_GATE.assembledArtifactSha256, 'Complete B + Form artifact drifted');
+if (EN_E07_GRAND_PRETENDER_GATE.comparisonArtifactSha256) check(await fileHash(EN_E07_GRAND_PRETENDER_GATE.comparisonArtifact) === EN_E07_GRAND_PRETENDER_GATE.comparisonArtifactSha256, 'comparison artifact drifted');
+if (EN_E07_GRAND_PRETENDER_GATE.reviewAnimations.raw.sha256) check(await fileHash(EN_E07_GRAND_PRETENDER_GATE.reviewAnimations.raw.artifact) === EN_E07_GRAND_PRETENDER_GATE.reviewAnimations.raw.sha256, 'raw GIF drifted');
+if (EN_E07_GRAND_PRETENDER_GATE.reviewAnimations.completeBForm.sha256) check(await fileHash(EN_E07_GRAND_PRETENDER_GATE.reviewAnimations.completeBForm.artifact) === EN_E07_GRAND_PRETENDER_GATE.reviewAnimations.completeBForm.sha256, 'Complete B + Form GIF drifted');
 
-rejects(() => captureEnemyExpansionFrame(EN_E07_FALSEFACE_ADEPT_REGISTRY, candidateSpec, 'down', 'idle', 2), 'out-of-range Idle', 'invalid for idle');
-rejects(() => captureEnemyExpansionFrame(EN_E07_FALSEFACE_ADEPT_REGISTRY, { ...candidateSpec, family: 'living-shadow' }, 'down', 'idle', 0), 'wrong family');
-rejects(() => captureEnemyExpansionFrame(EN_E07_FALSEFACE_ADEPT_REGISTRY, { ...candidateSpec, variant: 'borrowed-player' }, 'down', 'idle', 0), 'runtime copied actor');
+rejects(() => captureEnemyExpansionFrame(EN_E07_GRAND_PRETENDER_REGISTRY, candidateSpec, 'down', 'idle', 2), 'out-of-range Idle', 'invalid for idle');
+rejects(() => captureEnemyExpansionFrame(EN_E07_GRAND_PRETENDER_REGISTRY, { ...candidateSpec, family: 'living-shadow' }, 'down', 'idle', 0), 'wrong family');
+rejects(() => captureEnemyExpansionFrame(EN_E07_GRAND_PRETENDER_REGISTRY, { ...candidateSpec, variant: 'borrowed-player' }, 'down', 'idle', 0), 'runtime copied actor');
 
 if (errors.length) {
-  console.error('EN-E07 Doppelganger Falseface Adept focused gate failed:');
+  console.error('EN-E07 Doppelganger Grand Pretender focused gate failed:');
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E07 Doppelganger Falseface Adept focused gate passed.');
+  console.log('EN-E07 Doppelganger Grand Pretender focused gate passed.');
   console.log('- Pale Echo distinction: ' + paleDifferences + '/80 pixel frames and ' + paleAlphaDifferences + '/80 alpha silhouettes differ');
+  console.log('- Falseface Adept distinction: ' + falsefaceDifferences + '/80 pixel frames and ' + falsefaceAlphaDifferences + '/80 alpha silhouettes differ');
   console.log('- Cultist Zealot distinction: ' + cultistDifferences + '/80 pixel frames and ' + cultistAlphaDifferences + '/80 alpha silhouettes differ');
-  console.log('- Dark Elf distinction: ' + darkElfDifferences + '/80 pixel frames and ' + darkElfAlphaDifferences + '/80 alpha silhouettes differ');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Style identity: ' + colored + '/72 colored palette frames; ' + flashes + '/8 exact white flashes; ' + eyeViews + '/54 expected eye-bearing views');
   console.log('- Presentation: Complete B +' + completeB + '; Form changes ' + formChanges);
-  console.log('- Protected: approved Pale Echo exact; public 80/259; fixtures unchanged');
+  console.log('- Protected: approved Pale Echo and Falseface Adept exact; public 80/259; fixtures unchanged');
   console.log('- Candidate digest: ' + candidateDigest);
   console.log('- Approved Pale Echo frame digest: ' + paleDigest);
+  console.log('- Approved Falseface Adept frame digest: ' + falsefaceDigest);
   console.log('- Public Cultist Zealot frame digest: ' + cultistDigest);
-  console.log('- Public Dark Elf frame digest: ' + darkElfDigest);
 }

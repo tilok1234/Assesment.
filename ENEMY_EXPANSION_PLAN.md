@@ -13,28 +13,24 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-10): private specialist Doppelganger
-  Falseface Adept on `codex/en-e07-doppelganger-falseface-adept` is visually
-  approved from clean Pale Echo reconciliation
-  `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`. Its repaired
-  public-humanoid-scale 80-frame candidate is frozen at digest
-  `16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`.
-  It passes 80/80 connected, one-cell-bounded, grounded, hard-alpha, alias,
-  mirror, and pixel/alpha distinctions from approved Pale Echo, public Cultist
-  Zealot, and public Dark Elf. The first diagnostic packet was rejected before
-  freeze because its colored brace collapsed into a squat block and the face
-  press was overfilled; the repaired packet restores a readable head and split
-  legs at 203-261 opaque pixels. The exact raw, Complete B + Form, four-way
-  comparison, and paired GIF packet reproduces all five recorded hashes twice.
-  The three exact repaired PNGs were opened together in Aseprite, both GIFs
-  were presented, and the designer replied `approved lets do next`.
-  Implementation `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval
-  record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial handoff
-  `a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
-  verified. Doppelganger registration, fixtures, runtime copying, effects,
-  later families, release, and EN-E08 remain closed. The same response opens
-  only one private elite Doppelganger candidate from the clean publication
-  reconciliation.
+- Current stopping checkpoint (2026-08-10): private elite Doppelganger Grand
+  Pretender on `codex/en-e07-doppelganger-grand-pretender` is frozen at digest
+  `03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`
+  from clean published Falseface reconciliation
+  `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`. The repaired 217-273-pixel
+  candidate passes 80/80 connected, one-cell-bounded, grounded, hard-alpha,
+  alias, mirror, and pixel/alpha distinctions from approved Pale Echo,
+  approved Falseface Adept, and public Cultist Zealot. Its first packet was
+  rejected before freeze because the face-framing hands erased the visage and
+  inherited fringe pixels read as horns; the exact repaired five-artifact
+  packet restores the face and one continuous swept crest and reproduces twice.
+  All raw/effects-enabled phase boards were inspected, and the three exact
+  frozen PNGs were opened together in responsive Aseprite. The protected
+  matrix, fast suite, and full suite pass with the integration digest and all
+  232 fixtures exact. This is not designer approval: Grand Pretender remains
+  private, uncommitted, and unpushed pending an explicit reply on the exact
+  packet. Doppelganger registration, fixtures, runtime copying, effects, later
+  families, release, and EN-E08 remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3563,7 +3559,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common and Falseface Adept specialist Doppelgangers approved and published; one private Doppelganger elite gate open`
+- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common and Falseface Adept specialist Doppelgangers approved and published; Grand Pretender elite candidate frozen and awaiting exact visual approval`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3841,9 +3837,68 @@ assembler.
   record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial handoff
   `a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
   verified.
-- Required next action: open only one private elite Doppelganger candidate from
-  this clean publication reconciliation. Keep registration, fixtures, runtime
-  copying, effects, later EN-E07 families, release, and EN-E08 closed.
+- Historical next action: the designer's later `lets do nezxt` response opened
+  only the private elite Grand Pretender candidate below. Registration,
+  fixtures, runtime copying, effects, later EN-E07 families, release, and
+  EN-E08 remained closed.
+
+#### Doppelganger Grand Pretender complete suite candidate - approval pending
+
+- Gate ID: `en-e07-doppelganger-grand-pretender-full-v1`; status: `candidate`
+  on `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean
+  published Falseface Adept reconciliation
+  `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`.
+- Authorization: after Falseface Adept was visually approved, committed,
+  pushed, and reconciled, the designer replied `lets do nezxt` on 2026-08-10.
+  The Doppelganger common-specialist-elite order opens only Grand Pretender.
+- Style/silhouette contract: one broad public-humanoid-scale authored default
+  form using the approved pale/slate/wine family language with a fused
+  three-panel visage, one continuous right-swept charcoal crest, asymmetric
+  connected mantle wings, a layered split formal coat, two connected
+  long-finger claiming hands, separated legs, and grounded broad boots. The
+  first diagnostic packet was rejected before freeze because A1 merged the
+  hands into a pale cap that erased the face and inherited specialist fringe
+  pixels made the crest read as horns. The repair narrows the cheek-side hands,
+  restores the expected eyes and tri-seam, clears only the inherited fringe,
+  and layers one swept hair mass over the seam tops.
+- Scope: one private 80-frame elite Doppelganger. Cast aliases Attack; Death
+  aliases Hurt H1,H2,H2,H2. Runtime actor copying, copied silhouettes,
+  detached faces, mirror doubles, reflection planes, peeling skin, loose
+  ribbons, afterimages, glow, particles, projectiles, and impacts remain
+  external.
+- Focused validation: 80/80 connected, bounded, grounded hard-alpha frames;
+  80/80 pixel and alpha distinctions from approved Pale Echo, approved
+  Falseface Adept, and public Cultist Zealot; 72/72 colored frames; 8/8 exact
+  white flashes; 54/54 expected eye-bearing views; opaque range 217-273;
+  Complete B +8,426; Form changes 8,439. Pale Echo and Falseface remain exact;
+  public 80/259 and fixtures are unchanged.
+- Candidate digest:
+  `03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`.
+- Evidence SHA-256: raw
+  `d919fcc3003fa0fdc5283c4b4388aa9b2032a0d0d14a0ee006ca8da3dd21ad98`;
+  Complete B + Form
+  `92468560ff1e0fa304eb7d681c8ab330c30fd8abf8ddacf656881ba321df36f5`;
+  comparison
+  `0e6acc2acc79b5f2cd0792e807b54286c1a9897ce7ff09e3b3bf3bbbd8d77b66`;
+  raw GIF `8980e6a317f8bb228690616ba41dc8bdc0d734fb40a78d2b2bf82ab89b0ca1b9`;
+  Complete B + Form GIF
+  `fc8619df2ab422d7bc62fb7f2559d97de7e1f61a6e55ab936b265b09206290f9`.
+  Two post-freeze generations reproduce all five hashes exactly.
+- Visual inspection: the comparison, both full-suite boards, and all eight
+  raw/effects-enabled phase boards were inspected at original detail. The
+  three exact frozen PNGs were opened together in responsive Aseprite 1.3.17.2.
+  This is inspection evidence, not designer approval.
+- Broad validation: the 23-command protected predecessor/candidate/integration
+  matrix passed in 15.0s, `npm.cmd run check:fast` passed in 56.4s, and full
+  `npm.cmd run check` passed in 107.2s. The approved 1,200-frame integration
+  digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required next action: present the exact frozen packet and wait for explicit
+  designer approval or rejection. Grand Pretender remains private,
+  uncommitted, and unpushed. Do not publish, register Doppelganger, generate
+  fixtures, implement runtime copying, add effects, start Will-o-Wisp or
+  another family, release, or advance EN-E08 before approval.
 
 ### EN-E08 - Possessed equipment
 

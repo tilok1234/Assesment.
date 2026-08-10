@@ -1334,9 +1334,40 @@ in responsive Aseprite, both GIFs were presented, and the designer replied
 `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval record
 `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial handoff
 `a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
-verified. Registration, fixtures, runtime copying, effects, later families,
-release, and EN-E08 remain closed. The same response opens only one private
-elite Doppelganger candidate from the clean publication reconciliation.
+verified, with final reconciliation
+`b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`. Registration, fixtures, runtime
+copying, effects, later families, release, and EN-E08 remain closed. The same
+response opens only one private elite Doppelganger candidate from that clean
+publication reconciliation.
+
+That candidate is Grand Pretender on
+`codex/en-e07-doppelganger-grand-pretender`: a broad authored default form with
+one fused three-panel visage, one continuous right-swept charcoal crest,
+asymmetric connected mantle wings, a layered split formal coat, paired
+connected long-finger claiming hands, separated legs, and grounded broad
+boots. The first packet was rejected before freeze because A1 hid the face
+under a pale hand cap and the inherited fringe read as horns. The repaired
+217-273-pixel version restores the expected eyes/tri-seam and replaces the
+fringe with one occluding swept hair mass. Run
+`npm.cmd run review:enemy-expansion-en-e07-doppelganger-grand-pretender` for
+the raw, Complete B + Form, Pale/Falseface/Cultist/Grand comparison, and paired
+GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-doppelganger-grand-pretender` for its
+focused structure, predecessor, artifact, and exposure firewalls. The frozen
+candidate digest is
+`03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`:
+all 80 frames are connected, bounded, grounded, and pixel/alpha distinct from
+Pale Echo, Falseface Adept, and Cultist Zealot; 72/72 colored frames preserve
+the family/elite ramps and 8/8 flashes are exact white. The five-artifact
+packet reproduces byte-for-byte twice. The 23-command protected matrix passed
+in 15.0s, the fast suite in 56.4s, and the full suite in 107.2s; the approved
+integration digest and all 232 fixtures remain exact. The comparison, both
+full-suite boards, and all eight raw/effects-enabled phase boards were
+inspected, and the three exact frozen PNGs were opened together in responsive
+Aseprite. Grand Pretender remains private, uncommitted, and unpushed pending
+explicit designer approval of this exact packet. Registration, fixtures,
+runtime copying, effects, Will-o-Wisp and later families, release, and EN-E08
+remain closed.
 
 ## Approved enemy backlog integration published
 

@@ -23,17 +23,96 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Falseface Adept Published; Elite Gate Open
+## Immediate Continuation Checkpoint - Grand Pretender Frozen; Approval Pending
 
-Start here in a new task. The exact private specialist Doppelganger is repaired,
-hash-frozen, fully validated, visually approved, published, and remote
-verified. The sole active art gate is now one private elite Doppelganger
-candidate from this clean publication reconciliation.
+Start here in a new task. The sole active art gate is one private elite
+Doppelganger Grand Pretender candidate. It is repaired, hash-frozen,
+deterministic, fully validated, and visually inspected, but it is not yet
+designer-approved, committed, pushed, registered, or public.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean
+  published Falseface Adept reconciliation
+  `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`.
+- Approved predecessor: Falseface implementation
+  `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73`, approval record
+  `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb`, initial published handoff
+  `a215f091022537644a4616e8b0977f12d972eb6d`, and final reconciliation
+  `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c` remain exact.
+- Authorization: after Falseface Adept was visually approved, committed,
+  pushed, and reconciled, the designer replied `lets do nezxt` on 2026-08-10.
+  The frozen common-specialist-elite order opens only this one private elite.
+- Scope: one authored default-form 80-frame elite Doppelganger across Idle
+  F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases,
+  and exact Death-to-Hurt aliases H1,H2,H2,H2 in all four directions. Runtime
+  player/enemy copying is not part of this authored sheet.
+- Style contract: a broad public-humanoid-scale elite in the approved
+  pale/slate/wine family language with one fused three-panel visage, one
+  continuous right-swept charcoal crest, asymmetric connected mantle wings, a
+  layered split formal coat, paired connected long-finger claiming hands,
+  separated legs, and grounded broad boots. The first diagnostic packet was
+  rejected before freeze because A1 merged the hands into a pale cap that
+  erased the face and the inherited fringe made the crest read as three horns.
+  The repaired packet narrows the cheek-side hands, restores both expected
+  eyes and the tri-seam, removes the inherited fringe pixels, and layers one
+  swept hair mass over the seam tops.
+- Motion: two-frame visage/crest settle; four grounded mantle, crest, coat-tail,
+  and hand counter-phases; paired visage frame, fused tri-seam compress,
+  opposed identity claim, and authored mantle reset. Cast aliases Attack;
+  Death aliases Hurt.
+- Effects firewall: copied actor silhouettes, detached faces, mirror doubles,
+  reflection planes, peeling skin, loose ribbons, afterimages, glow, particles,
+  projectiles, and impact flashes remain external. Registration, fixtures,
+  public exposure, runtime copying, Will-o-Wisp, Changeling, Kelpie, release,
+  and EN-E08 remain closed.
+- Focused validation passes: 80/80 connected, one-cell-bounded, grounded
+  hard-alpha frames; 80/80 pixel and alpha-silhouette distinctions from
+  approved Pale Echo, approved Falseface Adept, and public Cultist Zealot;
+  72/72 colored palette frames; 8/8 exact white flashes; 54/54 expected
+  eye-bearing views; opaque range 217-273; 8,426 Complete B additions; and
+  8,439 Form changes. Pale Echo and Falseface remain exact, public 80/259 is
+  unchanged, and no fixture/facade/manifest exposure exists.
+- Frozen candidate digest:
+  `03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `d919fcc3003fa0fdc5283c4b4388aa9b2032a0d0d14a0ee006ca8da3dd21ad98` /
+  `92468560ff1e0fa304eb7d681c8ab330c30fd8abf8ddacf656881ba321df36f5`;
+  Pale/Falseface/Cultist/Grand Pretender `1520x548` comparison
+  `0e6acc2acc79b5f2cd0792e807b54286c1a9897ce7ff09e3b3bf3bbbd8d77b66`;
+  raw / Complete B + Form `640x672` GIFs
+  `8980e6a317f8bb228690616ba41dc8bdc0d734fb40a78d2b2bf82ab89b0ca1b9` /
+  `fc8619df2ab422d7bc62fb7f2559d97de7e1f61a6e55ab936b265b09206290f9`.
+  Two post-freeze generations reproduce all five hashes exactly; artifacts
+  remain ignored under
+  `enemy-expansion-review/en-e07-doppelganger-grand-pretender/`.
+- Visual review completed: the comparison, both full-suite boards, and all
+  eight raw/effects-enabled phase boards were inspected at original detail.
+  The exact raw, Complete B + Form, and comparison PNGs were then opened
+  together in a responsive Aseprite 1.3.17.2 session. This is inspection
+  evidence only; designer approval remains pending.
+- Broad validation passes: the 23-command protected
+  predecessor/candidate/integration matrix completed in 15.0s;
+  `npm.cmd run check:fast` passed in 56.4s; and full `npm.cmd run check` passed
+  in 107.2s. The integrated frame digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required next action: present this exact five-artifact packet and wait for an
+  explicit designer approval or rejection. Do not commit, push, publish,
+  register Doppelganger, generate fixtures, implement runtime copying, add
+  effects, start another family, release, or advance EN-E08 before approval.
+
+## Approved Preceding Checkpoint - Falseface Adept Published
+
+The exact private specialist Doppelganger is repaired, hash-frozen, fully
+validated, visually approved, published, and remote verified. Its final clean
+reconciliation is the base of the active Grand Pretender gate above.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean
   published Pale Echo reconciliation
   `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`.
+- Final published reconciliation:
+  `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`.
 - Approved predecessor: Pale Echo implementation
   `0628135b84725836c552e13db797540a965854cb`, approval record
   `182938381ac39812434518d0216e6e9796367bbb`, initial published handoff
@@ -98,15 +177,15 @@ candidate from this clean publication reconciliation.
   most recently in 107.4s. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: open only one private elite Doppelganger candidate from
-  this clean published specialist checkpoint. Preserve Pale Echo and Falseface
-  byte-for-byte. Registration, fixtures, runtime copying, effects, later
+- Historical next action: the designer's later `lets do nezxt` response opened
+  only the Grand Pretender candidate recorded above. Pale Echo and Falseface
+  remain byte-exact; registration, fixtures, runtime copying, effects, later
   families, release, and EN-E08 remain closed.
 
 ## Approved Preceding Checkpoint - Pale Echo Published
 
-This records the exact clean published predecessor for the active Falseface
-Adept gate. The private common is hash-frozen, technically validated, visually
+This records the exact clean published predecessor for the then-active
+Falseface Adept gate. The private common is hash-frozen, technically validated, visually
 approved, committed, published, and remote verified.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.

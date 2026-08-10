@@ -200,9 +200,11 @@ check(
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.id === 'falseface-adept'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.role === 'specialist'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
-    && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.length === 1
-    && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.every(({ status }) => status === 'planned-unnamed'),
-  'Doppelganger role order or one-active-specialist boundary drifted',
+    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.id === 'grand-pretender'
+    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.role === 'elite'
+    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeElite.status === 'implemented-full-candidate'
+    && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.length === 0,
+  'Doppelganger role order or active-elite boundary drifted',
 );
 check(
   EN_E07_PALE_ECHO_CONTRACT.silhouette.includes('uneven borrowed fringe')

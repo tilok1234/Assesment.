@@ -179,35 +179,32 @@ approved on 2026-08-10. Frozen implementation
 tracked branch. EN-E07, registration, fixtures, shared renderer/schema changes,
 effects, and release remain closed.
 
-Current EN-E07 approval checkpoint (2026-08-10): common Doppelganger Pale Echo
-is approved, published, and reconciled at `e18a512`; the designer replied
-`approved lets do next`. The role order opens only specialist Falseface Adept
-on `codex/en-e07-doppelganger-falseface-adept`. Its repaired authored default
+Current EN-E07 approval checkpoint (2026-08-10): common Pale Echo and
+specialist Falseface Adept are approved and published. Falseface implementation
+`c415620c2f7f95b98c8b8563a2c1d6e39abb4a73`, approval record
+`cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb`, initial handoff
+`a215f091022537644a4616e8b0977f12d972eb6d`, and final reconciliation
+`b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c` are published and remote
+verified. The designer's `lets do nezxt` reply opens only elite Grand Pretender
+on `codex/en-e07-doppelganger-grand-pretender`. Its repaired authored default
 form at digest
-`16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6`
-uses the approved pale/slate/wine family language with a fused diagonal visage
-seam, swept fringe, asymmetric high collar, cross-seamed coat, paired connected
-molding hands, separated legs, and grounded boots. The first diagnostic packet
-was rejected before freeze because its colored brace collapsed into a squat
-block and its face press was overfilled; the repaired 203-261-pixel candidate
-restores readable head and leg separation. It remains 80/80 connected, bounded,
-grounded, and pixel/alpha distinct from Pale Echo, Cultist Zealot, and Dark Elf.
-The exact repaired five-artifact packet is hash-frozen and reproduces twice but
-was visually approved after the three exact repaired PNGs were opened together
-in responsive Aseprite, both GIFs were presented, and the designer replied
-`approved lets do next`. Implementation
-`c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval record
-`cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial handoff
-`a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
-verified. The protected 22-gate matrix, fast suite, and full suite pass with the approved
-integration and 232 fixtures unchanged. Pale Echo implementation
-`0628135b84725836c552e13db797540a965854cb`, approval record
-`182938381ac39812434518d0216e6e9796367bbb`, initial handoff
-`1e6e8d8bb01de97ca4e1373b62b461e40b1aa239`, and reconciliation `e18a512`
-remain exact. Registration, fixtures, runtime copying, effects, the elite and
-later EN-E07 families, release, and EN-E08 stay closed except that the same
-reply opens only one private elite Doppelganger candidate from the clean
-Falseface publication reconciliation.
+`03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`
+uses the approved pale/slate/wine language with a fused three-panel visage,
+continuous right-swept crest, asymmetric connected mantle, layered split coat,
+paired connected claiming hands, separated legs, and grounded broad boots.
+The first packet was rejected before freeze because A1 erased the face under a
+pale hand cap and inherited fringe pixels made the crest read as horns. The
+repaired 217-273-pixel candidate restores the expected face and replaces that
+fringe with one occluding swept hair mass. All 80 frames are connected,
+bounded, grounded, and pixel/alpha distinct from Pale Echo, Falseface Adept,
+and Cultist Zealot. The exact five-artifact packet is hash-frozen and
+reproduces twice. All raw and effects-enabled phase boards were inspected and
+the three exact PNGs were opened together in responsive Aseprite. The
+23-command matrix, fast suite, and full suite pass with the approved integration
+digest and 232 fixtures unchanged. This is not designer approval: Grand
+Pretender remains private, uncommitted, and unpushed pending an explicit reply
+on the exact packet. Registration, fixtures, runtime copying, effects, later
+EN-E07 families, release, and EN-E08 stay closed.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

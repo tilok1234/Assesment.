@@ -341,7 +341,7 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   candidate from the clean publication reconciliation.
   The 21-gate protected matrix, fast suite, and full suite pass; the approved
   1,200-frame integration digest and all 232 fixtures remain exact.
-  The active continuation is one private specialist Doppelganger Falseface
+  The next historical continuation was one private specialist Doppelganger Falseface
   Adept on `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean
   published Pale Echo reconciliation
   `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`. It keeps the authored default
@@ -362,8 +362,29 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73` and approval record
   `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial handoff
   `a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
-  verified. The same response opens only one private elite Doppelganger
-  candidate from the clean publication reconciliation.
+  verified, with final reconciliation
+  `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`. The same response opens only one
+  private elite Doppelganger candidate from that clean checkpoint.
+  The active continuation is Grand Pretender on
+  `codex/en-e07-doppelganger-grand-pretender`. Its authored default form uses a
+  fused three-panel visage, one continuous right-swept crest, asymmetric
+  connected mantle wings, a layered split formal coat, paired connected
+  claiming hands, separated legs, and grounded broad boots. The first packet
+  was rejected before freeze because A1 erased the face under a pale hand cap
+  and the inherited fringe read as horns; the repair restores the expected
+  eyes/tri-seam and replaces the fringe with one occluding swept hair mass.
+  The frozen digest is
+  `03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`:
+  80/80 frames are connected, bounded, grounded, and pixel/alpha distinct from
+  Pale Echo, Falseface Adept, and Cultist Zealot; 72/72 colored frames and 8/8
+  white flashes are exact; opaque range is 217-273. All five artifacts
+  reproduce byte-for-byte twice. The comparison, both full boards, and all
+  eight raw/effects-enabled phase boards were inspected; the three exact PNGs
+  are open together in responsive Aseprite. The 23-command matrix passed in
+  15.0s, `check:fast` in 56.4s, and full `check` in 107.2s with the integration
+  digest and all 232 fixtures exact. Grand Pretender remains private,
+  uncommitted, and unpushed pending explicit designer approval of this exact
+  packet.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

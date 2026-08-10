@@ -45,9 +45,13 @@ export const EN_E07_DOPPELGANGER_CONTRACT_CARD = deepFreeze({
     role: 'specialist',
     status: 'implemented-full-approved',
   },
-  deferredRoles: [
-    { role: 'elite', status: 'planned-unnamed' },
-  ],
+  activeElite: {
+    id: 'grand-pretender',
+    name: 'Grand Pretender',
+    role: 'elite',
+    status: 'implemented-full-candidate',
+  },
+  deferredRoles: [],
   styleContract: 'Use chunky one-to-three-pixel humanoid forms, hard alpha, an authored neutral default body, readable face and limb anatomy, and controlled asymmetry. Do not copy a player or public enemy sprite into the authored sheet.',
   effectBoundary: 'Copied actor silhouettes, mirror doubles, reflection planes, peeling faces, loose skin ribbons, afterimages, glow, particles, projectiles, and impact flashes remain external.',
 });

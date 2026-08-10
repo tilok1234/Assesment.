@@ -108,6 +108,30 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   registration, fixtures, effects, later roles/families, release, or another
   gate.
 - Current isolated art approval checkpoint:
+  `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean published
+  Falseface Adept reconciliation `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`,
+  contains one private elite Doppelganger Grand Pretender candidate. Its
+  frozen 80-frame digest is
+  `03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`.
+  All frames are connected, one-cell-bounded, grounded, hard-alpha, and
+  pixel/alpha distinct from approved Pale Echo, approved Falseface Adept, and
+  public Cultist Zealot. It uses one fused three-panel visage, a continuous
+  right-swept crest, asymmetric connected mantle, layered split formal coat,
+  paired connected claiming hands, separated legs, and grounded broad boots.
+  The first packet was rejected before freeze because A1 erased the face under
+  a pale hand cap and the inherited fringe made the crest read as horns; the
+  repaired 217-273-pixel version restores the face and replaces the fringe
+  with one occluding swept hair mass. All five artifacts reproduce
+  byte-for-byte twice. The 23-command protected matrix passed in 15.0s,
+  `check:fast` in 56.4s, and full `check` in 107.2s with the approved
+  1,200-frame integration digest and all 232 fixtures exact. All raw and
+  effects-enabled phase boards were inspected, and the three exact frozen
+  PNGs were opened together in responsive Aseprite. This is not designer
+  approval: keep the candidate uncommitted and unpushed until the exact packet
+  is explicitly approved. Do not register Doppelganger, generate fixtures,
+  implement runtime copying, add effects, start another family, release, or
+  advance EN-E08.
+- Approved preceding art checkpoint (Falseface Adept):
   `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean published
   Pale Echo reconciliation `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`,
   contains one private specialist Doppelganger Falseface Adept. Its repaired
@@ -129,10 +153,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   do next`. Implementation `c415620c2f7f95b98c8b8563a2c1d6e39abb4a73`
   and approval record `cb68ec7e861f7130aafb6c60b1e4b4a16676e9cb` plus initial
   handoff `a215f091022537644a4616e8b0977f12d972eb6d` are published and remote
-  verified. Do not register Doppelganger, generate fixtures, implement runtime
-  copying, add effects, start another family, release, or advance EN-E08. The
-  same reply opens only one private elite Doppelganger candidate from the clean
-  published reconciliation.
+  verified, with final reconciliation
+  `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`. The same reply opened only the
+  private elite Doppelganger candidate above.
 - Approved preceding art checkpoint:
   `codex/en-e07-doppelganger-pale-echo`, based exactly on clean published
   Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`,
