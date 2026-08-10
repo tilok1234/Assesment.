@@ -35,7 +35,7 @@ export const EN_E07_LIVING_SHADOW_CONTRACT_CARD = deepFreeze({
     id: 'gloam-walker',
     name: 'Gloam Walker',
     role: 'common',
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [
     { role: 'specialist', status: 'planned-unnamed' },
@@ -50,7 +50,7 @@ export const EN_E07_GLOAM_WALKER_CONTRACT = deepFreeze({
   family: 'living-shadow',
   variant: 'gloam-walker',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'gaunt-hollow-face-split-leg-living-shadow-v1',
   silhouette: 'A tall gaunt grounded humanoid absence with a hooked crown, hollow face, angular shoulders, long connected claw arms, a pinched waist, two clearly split legs, and broad planted shadow feet. It must not read as the public Ghost floating robe, the Shadow Slime blob, or an approved dark robed caster.',
   identity: 'A restrained violet-black body ramp, connected pale eye slits, a transparent face cavity, a narrow transparent torso rift, angular rim planes, and solid split feet establish a self-contained common Living Shadow without detached smoke or glow.',
@@ -89,13 +89,15 @@ export const EN_E07_GLOAM_WALKER_DATA = deepFreeze({
 
 export const EN_E07_GLOAM_WALKER_GATE = deepFreeze({
   id: 'en-e07-living-shadow-gloam-walker-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: 'd785fe56e7d8c98243f948fce615885d5a04fbc3',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After the exact Rivercrown Muse was visually approved and its implementation and approval commits were pushed, the designer said: lets do next. Rivercrown completes the fifth and final EN-E06 family; the frozen plan queues EN-E07 next and names Living Shadow priority-first. Under the one-complete-sprite cadence, this authorizes only one private common Living Shadow Gloam Walker 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Cursed Ghost and Shadow Slime plus approved Mist Weaver comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Cursed Ghost and Shadow Slime plus approved Mist Weaver comparison, and paired GIF evidence were presented, and the three exact PNG review boards were opened together in Aseprite, the designer replied: aaprovced. Approval applies only to candidate digest 131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9 and authorizes its bounded local approval-record commit. Branch publication remains blocked because it would also publish the separately approval-gated Rivercrown reconciliation d785fe56e7d8c98243f948fce615885d5a04fbc3; Living Shadow registration, fixtures, effects, later roles and families, release, and EN-E08 remain separate gates.',
+  approvedImplementation: 'a46f59c1cb0bb751760f2776fe60b5c489806c94',
   publishedImplementation: null,
+  publicationState: 'blocked-pending-explicit-rivercrown-reconciliation-authorization',
   precedingApproval: {
     gateId: EN_E06_RIVERCROWN_MUSE_GATE.id,
     artifactSha256: EN_E06_RIVERCROWN_MUSE_GATE.artifactSha256,
@@ -166,7 +168,7 @@ export const EN_E07_GLOAM_WALKER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Stop at the exact frozen Gloam Walker candidate review. Do not commit, publish, register Living Shadow, generate fixtures, add effects, release, start another EN-E07 role or family, or advance EN-E08 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact Gloam Walker candidate is visually approved and committed locally at a46f59c1cb0bb751760f2776fe60b5c489806c94. Only its bounded local approval-record commit is authorized. Do not push this branch because doing so would also publish the separately approval-gated Rivercrown reconciliation d785fe56e7d8c98243f948fce615885d5a04fbc3. Do not register Living Shadow, generate fixtures, add effects, release, start another EN-E07 role or family, or advance EN-E08 without another explicit gate.',
 });
 
 export const EN_E07_GLOAM_WALKER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -498,7 +500,7 @@ const GLOAM_WALKER_VARIANT = deepFreeze({
   name: 'Gloam Walker',
   role: EN_E07_GLOAM_WALKER_CONTRACT.role,
   status: EN_E07_GLOAM_WALKER_CONTRACT.state,
-  brief: 'A complete common Living Shadow candidate with a hooked crown, hollow face, angular shoulders, long connected claw arms, a pinched transparent torso rift, split legs, and broad planted feet; all wisps, pools, trails, smoke, glow, and impacts remain external.',
+  brief: 'An approved complete common Living Shadow with a hooked crown, hollow face, angular shoulders, long connected claw arms, a pinched transparent torso rift, split legs, and broad planted feet; all wisps, pools, trails, smoke, glow, and impacts remain external.',
   rendererData: EN_E07_GLOAM_WALKER_DATA,
 });
 
@@ -518,7 +520,7 @@ export const EN_E07_GLOAM_WALKER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'gloam-walker',
     scale: 8,
-    notes: 'Awaiting visual approval for one complete grounded Gloam Walker against public Cursed Ghost and Shadow Slime plus approved Mist Weaver. Keep registration, fixtures, effects, later Living Shadows, Doppelganger, and later Wave 2 work separate.',
+    notes: 'Visually approved as one complete grounded Gloam Walker against public Cursed Ghost and Shadow Slime plus approved Mist Weaver. The exact implementation is committed locally and remains unpublished. Keep registration, fixtures, effects, later Living Shadows, Doppelganger, and later Wave 2 work separate.',
   },
 });
 

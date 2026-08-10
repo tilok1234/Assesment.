@@ -219,10 +219,18 @@ function rejects(action, label) {
 }
 
 check(
-  EN_E07_GLOAM_WALKER_GATE.status === 'candidate'
-    && EN_E07_GLOAM_WALKER_GATE.approvedOn === null
+  EN_E07_GLOAM_WALKER_GATE.status === 'approved'
+    && EN_E07_GLOAM_WALKER_GATE.approvedOn === '2026-08-10'
+    && EN_E07_GLOAM_WALKER_GATE.approvedImplementation === 'a46f59c1cb0bb751760f2776fe60b5c489806c94'
     && EN_E07_GLOAM_WALKER_GATE.publishedImplementation === null,
-  'Gloam Walker must remain an unapproved candidate',
+  'Gloam Walker approved-local state drifted',
+);
+check(
+  EN_E07_GLOAM_WALKER_GATE.approvalEvidence.includes('three exact PNG review boards were opened together in Aseprite')
+    && EN_E07_GLOAM_WALKER_GATE.approvalEvidence.includes('designer replied: aaprovced')
+    && EN_E07_GLOAM_WALKER_GATE.approvalEvidence.includes('Branch publication remains blocked')
+    && EN_E07_GLOAM_WALKER_GATE.publicationState === 'blocked-pending-explicit-rivercrown-reconciliation-authorization',
+  'approval evidence or publication boundary drifted',
 );
 check(
   EN_E07_GLOAM_WALKER_GATE.authorizationEvidence.includes('designer said: lets do next')
@@ -252,10 +260,10 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_GLOAM_WALKER_GATE.nextGate.includes('Stop at the exact frozen Gloam Walker candidate review')
-    && EN_E07_GLOAM_WALKER_GATE.nextGate.includes('Do not commit')
-    && EN_E07_GLOAM_WALKER_GATE.nextGate.includes('until the designer explicitly approves'),
-  'candidate stop gate drifted',
+  EN_E07_GLOAM_WALKER_GATE.nextGate.includes('visually approved and committed locally')
+    && EN_E07_GLOAM_WALKER_GATE.nextGate.includes('Do not push this branch')
+    && EN_E07_GLOAM_WALKER_GATE.nextGate.includes('without another explicit gate'),
+  'approved-local stop gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_GLOAM_WALKER_GATE)
@@ -267,6 +275,7 @@ check(
   JSON.stringify(EN_E07_LIVING_SHADOW_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeVariant.id === 'gloam-walker'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeVariant.role === 'common'
+    && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.deferredRoles.every(({ status }) => status === 'planned-unnamed'),
   'Living Shadow role order or one-active-role boundary drifted',
 );
