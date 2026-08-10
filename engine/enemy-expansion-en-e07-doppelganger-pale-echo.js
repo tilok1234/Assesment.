@@ -43,7 +43,7 @@ export const EN_E07_DOPPELGANGER_CONTRACT_CARD = deepFreeze({
     id: 'falseface-adept',
     name: 'Falseface Adept',
     role: 'specialist',
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [
     { role: 'elite', status: 'planned-unnamed' },

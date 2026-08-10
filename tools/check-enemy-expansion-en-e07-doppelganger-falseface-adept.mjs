@@ -145,10 +145,19 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_FALSEFACE_ADEPT_GATE.status === 'candidate'
-    && EN_E07_FALSEFACE_ADEPT_GATE.approvedOn === null
-    && EN_E07_FALSEFACE_ADEPT_GATE.publishedImplementation === null,
-  'Falseface Adept must remain an unapproved candidate',
+  EN_E07_FALSEFACE_ADEPT_GATE.status === 'approved'
+    && EN_E07_FALSEFACE_ADEPT_GATE.approvedOn === '2026-08-10'
+    && EN_E07_FALSEFACE_ADEPT_GATE.approvedImplementation === 'c415620c2f7f95b98c8b8563a2c1d6e39abb4a73'
+    && EN_E07_FALSEFACE_ADEPT_GATE.publishedImplementation === null
+    && EN_E07_FALSEFACE_ADEPT_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Falseface Adept approved-local state drifted',
+);
+check(
+  EN_E07_FALSEFACE_ADEPT_GATE.approvalEvidence.includes('three exact repaired PNG review boards were opened together in Aseprite')
+    && EN_E07_FALSEFACE_ADEPT_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E07_FALSEFACE_ADEPT_GATE.approvalEvidence.includes('16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6')
+    && EN_E07_FALSEFACE_ADEPT_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_FALSEFACE_ADEPT_GATE.baseCheckpoint === 'e18a51207868cbcf5b01f55e1c04a50cac43bdcc'
@@ -181,10 +190,10 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('Stop at the exact frozen Falseface Adept candidate review')
-    && EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('Do not commit')
-    && EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('until the designer explicitly approves'),
-  'candidate stop gate drifted',
+  EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('visually approved')
+    && EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('bounded approval-record')
+    && EN_E07_FALSEFACE_ADEPT_GATE.nextGate.includes('only one private elite Doppelganger candidate'),
+  'approved-local publication and next-role gate drifted',
 );
 check(
   JSON.stringify(EN_E07_DOPPELGANGER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
@@ -192,7 +201,7 @@ check(
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.id === 'falseface-adept'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.role === 'specialist'
-    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-candidate'
+    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.length === 1
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles[0].role === 'elite',
   'Doppelganger role order or one-active-specialist boundary drifted',

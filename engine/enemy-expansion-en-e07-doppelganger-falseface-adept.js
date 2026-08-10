@@ -52,7 +52,7 @@ export const EN_E07_FALSEFACE_ADEPT_CONTRACT = deepFreeze({
   family: 'doppelganger',
   variant: 'falseface-adept',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'diagonal-falseface-high-collar-cross-seamed-coat-twin-molding-hands-grounded-humanoid-v1',
   silhouette: 'A public-humanoid-scale authored Doppelganger specialist with a fused diagonal false-face seam, swept uneven fringe, one lifted and one folded collar point, a fitted cross-seamed short coat, two connected long-finger molding hands, separated legs, and grounded broad boots. It must remain a slim-to-medium specialist rather than a broad elite, robed caster, armored duelist, copied actor, or enlarged Pale Echo.',
   identity: 'The approved pale gray-rose, charcoal-violet, slate, and faded-wine family language is shifted through a cool fitted coat, fused two-tone visage, asymmetric collar, crossed torso seams, and paired shaping hands. The authored sheet never copies a player or public enemy and does not bake in a detached face, mirror, double, reflection, ribbon, glow, or projectile.',
@@ -91,13 +91,18 @@ export const EN_E07_FALSEFACE_ADEPT_DATA = deepFreeze({
 
 export const EN_E07_FALSEFACE_ADEPT_GATE = deepFreeze({
   id: 'en-e07-doppelganger-falseface-adept-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: 'e18a51207868cbcf5b01f55e1c04a50cac43bdcc',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After the exact repaired Pale Echo was visually approved, committed, pushed, and reconciled at clean published checkpoint e18a51207868cbcf5b01f55e1c04a50cac43bdcc, the designer replied: approved lets do next. The frozen Doppelganger role order is common, specialist, elite, so the one-complete-sprite cadence authorizes only one private specialist Falseface Adept 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Cultist Zealot and Dark Elf plus approved Pale Echo comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact repaired labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Pale Echo plus public Cultist Zealot and Dark Elf comparison, and paired GIF evidence were presented, and the three exact repaired PNG review boards were opened together in Aseprite, the designer replied: approved lets do next. Approval applies only to candidate digest 16289e68776f0f93d8238d19a3538c4e92e77e108686f8ddfec01b1a783080c6; Doppelganger registration, fixtures, runtime copying, effects, the elite, later families, release, and EN-E08 remain separate gates.',
+  approvedImplementation: 'c415620c2f7f95b98c8b8563a2c1d6e39abb4a73',
+  publicationAuthorizedOn: '2026-08-10',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
+  publishedApprovalRecord: null,
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_PALE_ECHO_GATE.id,
     artifactSha256: EN_E07_PALE_ECHO_GATE.artifactSha256,
@@ -171,7 +176,7 @@ export const EN_E07_FALSEFACE_ADEPT_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Stop at the exact frozen Falseface Adept candidate review. Do not commit, publish, register Doppelganger, generate fixtures, add runtime copying or effects, release, start the elite or another EN-E07 family, or advance EN-E08 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact repaired Falseface Adept candidate is visually approved and its implementation is committed at c415620c2f7f95b98c8b8563a2c1d6e39abb4a73. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private elite Doppelganger candidate. Do not register Doppelganger, generate fixtures, add runtime copying or effects, release, start another family beyond that elite candidate, or advance EN-E08.',
 });
 
 export const EN_E07_FALSEFACE_ADEPT_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -432,7 +437,7 @@ const FALSEFACE_ADEPT_VARIANT = deepFreeze({
   name: 'Falseface Adept',
   role: EN_E07_FALSEFACE_ADEPT_CONTRACT.role,
   status: EN_E07_FALSEFACE_ADEPT_CONTRACT.state,
-  brief: 'A complete specialist Doppelganger candidate with a fused diagonal visage seam, asymmetric high collar, cross-seamed short coat, paired connected molding hands, separated legs, and planted boots; copied actors, detached faces, doubles, reflections, loose morph pieces, glow, and particles remain external.',
+  brief: 'An approved complete specialist Doppelganger with a fused diagonal visage seam, asymmetric high collar, cross-seamed short coat, paired connected molding hands, separated legs, and planted boots; copied actors, detached faces, doubles, reflections, loose morph pieces, glow, and particles remain external.',
   rendererData: EN_E07_FALSEFACE_ADEPT_DATA,
 });
 
@@ -452,7 +457,7 @@ export const EN_E07_FALSEFACE_ADEPT_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'falseface-adept',
     scale: 8,
-    notes: 'Awaiting visual approval for one public-humanoid-scale Falseface Adept against public Cultist Zealot and Dark Elf plus approved Pale Echo. Keep registration, fixtures, runtime copying, effects, the elite, Will-o-Wisp, and later Wave 2 work separate.',
+    notes: 'Visually approved as one public-humanoid-scale Falseface Adept against approved Pale Echo plus public Cultist Zealot and Dark Elf. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, runtime copying, effects, the elite, Will-o-Wisp, and later Wave 2 work separate until the clean published reconciliation.',
   },
 });
 

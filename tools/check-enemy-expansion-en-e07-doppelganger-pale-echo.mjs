@@ -199,7 +199,7 @@ check(
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.id === 'falseface-adept'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.role === 'specialist'
-    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-candidate'
+    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.length === 1
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.every(({ status }) => status === 'planned-unnamed'),
   'Doppelganger role order or one-active-specialist boundary drifted',
