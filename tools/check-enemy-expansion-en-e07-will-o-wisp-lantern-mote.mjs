@@ -149,10 +149,19 @@ function rejects(action, label) {
 }
 
 check(
-  EN_E07_LANTERN_MOTE_GATE.status === 'candidate'
-    && EN_E07_LANTERN_MOTE_GATE.approvedOn === null
-    && EN_E07_LANTERN_MOTE_GATE.publishedImplementation === null,
-  'Lantern Mote must remain an unapproved private candidate',
+  EN_E07_LANTERN_MOTE_GATE.status === 'approved'
+    && EN_E07_LANTERN_MOTE_GATE.approvedOn === '2026-08-11'
+    && EN_E07_LANTERN_MOTE_GATE.approvedImplementation === '96907f552a06ba3865e25a46f881af5add2237ee'
+    && EN_E07_LANTERN_MOTE_GATE.publishedImplementation === null
+    && EN_E07_LANTERN_MOTE_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Lantern Mote approved-local state drifted',
+);
+check(
+  EN_E07_LANTERN_MOTE_GATE.approvalEvidence.includes('three exact frozen PNG review boards were opened together in responsive Aseprite')
+    && EN_E07_LANTERN_MOTE_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E07_LANTERN_MOTE_GATE.approvalEvidence.includes('f50a0c6f08b63dde7bad06542140123c5d6bb7fb419b7df2789cffa441a9ebb8')
+    && EN_E07_LANTERN_MOTE_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'Lantern Mote approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_LANTERN_MOTE_GATE.baseCheckpoint === '3ddbe159360f16844d167ecc753d6b767b7e5549'
@@ -185,9 +194,10 @@ check(
   'Lantern Mote exclusions drifted',
 );
 check(
-  EN_E07_LANTERN_MOTE_GATE.nextGate.includes('Do not commit')
-    && EN_E07_LANTERN_MOTE_GATE.nextGate.includes('designer explicitly approves'),
-  'Lantern Mote approval stop gate drifted',
+  EN_E07_LANTERN_MOTE_GATE.nextGate.includes('visually approved')
+    && EN_E07_LANTERN_MOTE_GATE.nextGate.includes('bounded approval-record')
+    && EN_E07_LANTERN_MOTE_GATE.nextGate.includes('only one private specialist Will-o-Wisp candidate'),
+  'Lantern Mote approved-local publication and next-role gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_LANTERN_MOTE_GATE)
@@ -199,7 +209,7 @@ check(
   JSON.stringify(EN_E07_WILL_O_WISP_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E07_WILL_O_WISP_CONTRACT_CARD.activeVariant.id === 'lantern-mote'
     && EN_E07_WILL_O_WISP_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E07_WILL_O_WISP_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E07_WILL_O_WISP_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E07_WILL_O_WISP_CONTRACT_CARD.deferredRoles) === JSON.stringify([
       { role: 'specialist', status: 'planned-unnamed' },
       { role: 'elite', status: 'planned-unnamed' },

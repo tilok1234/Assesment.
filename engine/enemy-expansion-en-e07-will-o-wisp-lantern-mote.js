@@ -35,7 +35,7 @@ export const EN_E07_WILL_O_WISP_CONTRACT_CARD = deepFreeze({
     id: 'lantern-mote',
     name: 'Lantern Mote',
     role: 'common',
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [
     { role: 'specialist', status: 'planned-unnamed' },
@@ -50,7 +50,7 @@ export const EN_E07_LANTERN_MOTE_CONTRACT = deepFreeze({
   family: 'will-o-wisp',
   variant: 'lantern-mote',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'single-eye-ribbed-cage-split-flame-hovering-wisp-v1',
   silhouette: 'A small-to-medium hovering marsh lantern with one connected stepped wick, a broad ribbed cage, a single visible core eye, a tapered inner flame, and two connected lower flame prongs. It must not read as the public Ghost robe, Shadow Slime dome, Flame Elemental blob, a humanoid Living Shadow, or a detached particle cluster.',
   identity: 'A deep marsh-teal shell, mint spectral flame, pale living core, violet cage ribs, one warm eye, and a two-prong lower flame create a self-contained common Will-o-Wisp actor. The cage and flame remain one opaque connected component while all aura, bloom, sparks, trails, smoke, pools, and illumination stay external.',
@@ -89,13 +89,18 @@ export const EN_E07_LANTERN_MOTE_DATA = deepFreeze({
 
 export const EN_E07_LANTERN_MOTE_GATE = deepFreeze({
   id: 'en-e07-will-o-wisp-lantern-mote-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: '3ddbe159360f16844d167ecc753d6b767b7e5549',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After the exact repaired Grand Pretender was visually approved, committed, pushed, and reconciled at clean published checkpoint 3ddbe159360f16844d167ecc753d6b767b7e5549, the designer replied: Approved lets do next. The frozen EN-E07 family order advances from completed priority-first Living Shadow and Doppelganger to Will-o-Wisp; the one-complete-sprite cadence authorizes only one private common Will-o-Wisp Lantern Mote 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Spectral Ghost, Shadow Slime, and Flame Elemental comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'After the exact repaired labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Spectral Ghost, Shadow Slime, and Flame Elemental comparison, and paired GIF evidence were presented, and the three exact frozen PNG review boards were opened together in responsive Aseprite, the designer replied: approved lets do next. Approval applies only to candidate digest f50a0c6f08b63dde7bad06542140123c5d6bb7fb419b7df2789cffa441a9ebb8; Will-o-Wisp registration, fixtures, effects, later roles or families, release, and EN-E08 remain separate gates.',
+  approvedImplementation: '96907f552a06ba3865e25a46f881af5add2237ee',
+  publicationAuthorizedOn: '2026-08-11',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
+  publishedApprovalRecord: null,
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_GRAND_PRETENDER_GATE.id,
     artifactSha256: EN_E07_GRAND_PRETENDER_GATE.artifactSha256,
@@ -170,7 +175,7 @@ export const EN_E07_LANTERN_MOTE_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Stop at the exact frozen Lantern Mote candidate review. Do not commit, publish, register Will-o-Wisp, generate fixtures, add effects, release, start the specialist or another family, or advance EN-E08 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact repaired Lantern Mote candidate is visually approved and its implementation is committed at 96907f552a06ba3865e25a46f881af5add2237ee. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private specialist Will-o-Wisp candidate. Do not register Will-o-Wisp, generate fixtures, add effects, release, start the elite or another family beyond that candidate, or advance EN-E08.',
 });
 
 export const EN_E07_LANTERN_MOTE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -407,7 +412,7 @@ const LANTERN_MOTE_VARIANT = deepFreeze({
   name: 'Lantern Mote',
   role: EN_E07_LANTERN_MOTE_CONTRACT.role,
   status: EN_E07_LANTERN_MOTE_CONTRACT.state,
-  brief: 'A complete common Will-o-Wisp candidate with one connected wick, ribbed marsh-lantern cage, single core eye, tapered inner flame, split lower prongs, and true hover clearance; aura, bloom, sparks, smoke, trails, pools, projectiles, illumination, and impacts remain external.',
+  brief: 'An approved complete common Will-o-Wisp with one connected wick, ribbed marsh-lantern cage, single core eye, tapered inner flame, split lower prongs, and true hover clearance; aura, bloom, sparks, smoke, trails, pools, projectiles, illumination, and impacts remain external.',
   rendererData: EN_E07_LANTERN_MOTE_DATA,
 });
 
@@ -427,7 +432,7 @@ export const EN_E07_LANTERN_MOTE_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'lantern-mote',
     scale: 8,
-    notes: 'Awaiting visual approval for one connected hovering Lantern Mote against public Spectral Ghost, Shadow Slime, and Flame Elemental. Keep registration, fixtures, effects, later Will-o-Wisp roles, Changeling, Kelpie, and later Wave 2 work separate.',
+    notes: 'Visually approved as one connected hovering Lantern Mote against public Spectral Ghost, Shadow Slime, and Flame Elemental. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, effects, later Will-o-Wisp roles, Changeling, Kelpie, and later Wave 2 work separate until the clean published reconciliation.',
   },
 });
 
