@@ -249,10 +249,15 @@ packet reproduces twice; all raw and effects-enabled phase boards have been
 inspected at original detail. The 25-command matrix passes in 16.8s, fast
 validation in 57.6s, and full validation in 111.7s with the integration digest
 and all 232 fixtures exact. The three frozen PNG hashes were reverified and
-those exact files are open together in responsive Aseprite 1.3.17.2, ready for
-presentation. Fenbell Shepherd is unapproved, uncommitted, unpushed,
-unregistered, and fixture-free. Registration, fixtures, effects, elite
-Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 stay closed.
+those exact files were opened together in responsive Aseprite 1.3.17.2. The
+designer replied `approved` on 2026-08-11; implementation
+`04f113d6e2b95f290925eba040659b441e3cfcd1` and approval record
+`89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` are committed locally, and full
+validation passes in 113.7s against committed approved-local metadata. Fenbell
+Shepherd remains private and unregistered while bounded handoff reconciliation
+and branch push are pending. Registration, fixtures, effects, elite
+Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 stay closed; no later art
+gate is open.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

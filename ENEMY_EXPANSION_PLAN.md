@@ -29,10 +29,15 @@
   reproduce every hash. The protected 25-command matrix passes in 16.8s, the
   fast suite in 57.6s, and the full suite in 111.7s with the integration digest
   and all 232 fixtures exact. The exact three frozen PNG hashes were reverified
-  and those files are open together in responsive Aseprite 1.3.17.2, ready for
-  presentation. Fenbell Shepherd is unapproved, uncommitted, unpushed,
-  unregistered, and fixture-free. Effects, elite Will-o-Wisp, Changeling,
-  Kelpie, release, and EN-E08 remain closed.
+  and those files were opened together in responsive Aseprite 1.3.17.2. The
+  designer replied `approved` on 2026-08-11; implementation
+  `04f113d6e2b95f290925eba040659b441e3cfcd1` and approval record
+  `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` are committed locally, and full
+  validation passes in 113.7s against approved-local metadata. Fenbell
+  Shepherd remains private, unregistered, and fixture-free while bounded
+  handoff reconciliation and branch push are pending. Effects, elite
+  Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 remain closed; no later
+  art gate is open.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3561,7 +3566,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote common Will-o-Wisp approved and published; Fenbell Shepherd specialist Will-o-Wisp candidate frozen and awaiting approval`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote common Will-o-Wisp approved and published; Fenbell Shepherd specialist Will-o-Wisp approved locally with bounded publication pending`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3965,9 +3970,9 @@ assembler.
   Will-o-Wisp, generate fixtures, add effects, start the elite or another
   family, release, or advance EN-E08.
 
-#### Will-o-Wisp Fenbell Shepherd complete suite candidate
+#### Will-o-Wisp Fenbell Shepherd complete suite approved; publication pending
 
-- Gate ID: `en-e07-will-o-wisp-fenbell-shepherd-full-v1`; status: `candidate`
+- Gate ID: `en-e07-will-o-wisp-fenbell-shepherd-full-v1`; status: `approved`
   on `codex/en-e07-will-o-wisp-fenbell-shepherd`, based exactly on clean
   published Lantern Mote reconciliation
   `d734846067b3bf9dd05cadffef440ead1f6c6d3a`.
@@ -4009,17 +4014,24 @@ assembler.
   raw/effects-enabled phase boards were inspected at original detail. The
   three frozen PNG hashes were reverified and those exact files were opened
   together in responsive Aseprite 1.3.17.2; its live command line names all
-  three paths and the comparison board is the active window.
+  three paths and the comparison board is the active window. The designer
+  replied `approved` on 2026-08-11. Approval applies only to the frozen digest
+  and five evidence hashes above. Implementation
+  `04f113d6e2b95f290925eba040659b441e3cfcd1` and approval record
+  `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` are committed locally.
 - Broad validation: the protected 25-command
   predecessor/candidate/integration matrix passed in 16.8s,
   `npm.cmd run check:fast` passed in 57.6s, and full `npm.cmd run check` passed
-  in 111.7s. The approved 1,200-frame integration digest remains
+  in 111.7s before approval and in 113.7s against committed approved-local
+  metadata. The approved 1,200-frame integration digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: present only this exact packet for explicit visual
-  approval. Do not commit or push Fenbell Shepherd without that reply; do not
-  register Will-o-Wisp, generate fixtures, add effects, start the elite or
-  another family, release, or advance EN-E08.
+- Required next action: commit the bounded approval-state handoff and push the
+  implementation, approval record, and handoff commits under the standing
+  approved-work permission; then reconcile the exact published tuple. Stop at
+  that clean publication. Do not register Will-o-Wisp, generate fixtures, add
+  effects, start the elite or another family, release, or advance EN-E08
+  without another explicit authorization.
 
 ### EN-E08 - Possessed equipment
 

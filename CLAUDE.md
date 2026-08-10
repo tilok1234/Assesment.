@@ -128,11 +128,14 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   passes in 16.8s, `check:fast` in 57.6s, and full `check` in 111.7s with the
   approved integration digest and all 232 fixtures exact. The three frozen PNG
   hashes were reverified and those exact files are open together in responsive
-  Aseprite 1.3.17.2, ready for presentation. Fenbell Shepherd is unapproved,
-  uncommitted, unpushed, unregistered, and fixture-free. Do not publish it
-  without explicit visual approval; do not register Will-o-Wisp, generate
-  fixtures, add effects, start the elite or another family, release, or advance
-  EN-E08.
+  Aseprite 1.3.17.2. The designer replied `approved` on 2026-08-11;
+  implementation `04f113d6e2b95f290925eba040659b441e3cfcd1` and approval
+  record `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` are committed locally,
+  and full `check` passes in 113.7s against committed approved-local metadata.
+  Bounded handoff reconciliation and branch push are authorized. Do not
+  register Will-o-Wisp, generate fixtures, add effects, start the elite or
+  another family, release, or advance EN-E08 without another explicit
+  authorization; no later art gate is open.
 - Approved preceding art checkpoint (Lantern Mote):
   `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean published
   Grand Pretender reconciliation `3ddbe159360f16844d167ecc753d6b767b7e5549`,

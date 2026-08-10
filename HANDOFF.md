@@ -23,14 +23,15 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Fenbell Shepherd Candidate Awaiting Approval
+## Immediate Continuation Checkpoint - Fenbell Shepherd Approved; Publication Pending
 
 Start here in a new task. The exact private specialist Will-o-Wisp Fenbell
-Shepherd is authored, repaired, hash-frozen, deterministic, and focused-gate
-clean on `codex/en-e07-will-o-wisp-fenbell-shepherd`. It is not approved,
-committed, pushed, registered, fixture-backed, or public. Its exact final PNGs
-are open together in responsive Aseprite; it still requires designer approval
-before the standing publication permission applies.
+Shepherd is authored, repaired, hash-frozen, deterministic, fully validated,
+and visually approved on `codex/en-e07-will-o-wisp-fenbell-shepherd`.
+Implementation `04f113d6e2b95f290925eba040659b441e3cfcd1` and approval record
+`89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` are committed locally; bounded
+handoff reconciliation and branch push are authorized but not yet published.
+The actor remains unregistered, fixture-free, and non-public.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-will-o-wisp-fenbell-shepherd`, based exactly on clean
@@ -45,6 +46,13 @@ before the standing publication permission applies.
   and reconciled, the designer replied `approved lets do next` on 2026-08-11.
   The frozen common-specialist-elite role order and one-complete-sprite cadence
   open only this one private specialist Will-o-Wisp.
+- Approval: after the exact raw, Complete B + Form, comparison, and paired GIF
+  packet was presented and the three frozen PNGs were open together in
+  responsive Aseprite, the designer replied `approved` on 2026-08-11.
+  Approval applies only to digest
+  `0a8000e33705967089ae66c98486eb701da88bfacd9f5adc38a47bbb62f5a46b`
+  and the five hashes below. This reply does not open the elite or another
+  family.
 - Scope: one authored 80-frame specialist Will-o-Wisp across Idle F1-F2, Walk
   W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
   Death-to-Hurt aliases H1,H2,H2,H2 in all four directions.
@@ -84,17 +92,21 @@ before the standing publication permission applies.
   Pre-freeze inspection strengthened the connected hooked-wick cue. The three
   frozen PNG hashes were reverified and those exact files were opened together
   in a responsive Aseprite 1.3.17.2 session; its live command line names all
-  three paths and the comparison board is the active window.
+  three paths and the comparison board is the active window. The exact packet
+  was presented and approved as recorded above.
 - Broad validation passes: the protected 25-command
   predecessor/candidate/integration matrix completed in 16.8s;
-  `npm.cmd run check:fast` passed in 57.6s; and full `npm.cmd run check` passed
-  in 111.7s. The integrated frame digest remains
+  `npm.cmd run check:fast` passed in 57.6s; full `npm.cmd run check` passed in
+  111.7s before approval and in 113.7s against committed approved-local
+  metadata. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: present only this exact packet for explicit visual
-  approval. Do not commit or push Fenbell Shepherd without that reply; do not
-  register Will-o-Wisp, generate fixtures, add effects, start the elite or
-  another family, release, or advance EN-E08.
+- Required next action: commit this bounded approval-state handoff, push the
+  implementation, approval record, and handoff commits under the standing
+  approved-work permission, then reconcile the exact published tuple. Stop at
+  that clean publication. Do not register Will-o-Wisp, generate fixtures, add
+  effects, start the elite or another family, release, or advance EN-E08
+  without another explicit authorization.
 
 ## Approved Preceding Checkpoint - Lantern Mote Published
 
