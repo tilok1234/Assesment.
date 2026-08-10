@@ -953,6 +953,24 @@ and pushed with initial handoff
 `71d36ef48a55a7f1d49e1e6649a33eb945c9667c`. The module remains private,
 unregistered, and fixture-free even though its review branch is published.
 
+The subsequently authorized
+`engine/enemy-expansion-en-e07-living-shadow-hollowcrown-regent.js` adds one
+private elite Living Shadow without changing the facade, public registry,
+fixtures, manifest, schemas, or renderer interfaces. It preserves the approved
+violet-black family ramp and hard alpha while replacing Nightglass's faceted
+sight-frame silhouette with a connected three-prong crown, high angular
+mantle, paired narrow face slits, transparent diamond void-heart, command
+bracers, armored split legs, and broad throne-step feet. Cast aliases Attack;
+Death aliases Hurt. Crown halos, eclipse rings, throne shapes, banners, void
+rays, portals, floor seals, shadow doubles, detached mantle trails, glow,
+particles, projectiles, and impacts remain external. The focused gate freezes
+all 80 candidate frames at digest
+`657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`,
+proves 80/80 pixel and alpha distinctions from Cursed Ghost, Shadow Slime, Mist
+Weaver, Gloam Walker, and Nightglass Seer, and keeps both approved Living Shadow
+digests exact. Its exact review packet is reproducible but still awaits visual
+approval; the module is not committed, published, registered, or fixture-backed.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

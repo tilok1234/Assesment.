@@ -301,7 +301,21 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   19-gate matrix, fast suite, and full suite pass;
   the approved 1,200-frame integration digest and all 232 fixtures remain
   exact.
-Fixture regeneration, elite Living Shadow, remaining EN-E07 families, the
+  The same approval response opens only one private elite Living Shadow
+  Hollowcrown Regent on
+  `codex/en-e07-living-shadow-hollowcrown-regent`. Its frozen 80-frame
+  candidate uses the same chunky violet-black family ramp with a connected
+  three-prong crown, high mantle, paired eye slits, diamond void-heart, command
+  bracers, armored split legs, and broad throne-step feet. It passes 80/80
+  connected, bounded, grounded, hard-alpha,
+  Cursed Ghost/Shadow Slime/Mist Weaver/Gloam Walker/Nightglass Seer pixel and
+  alpha distinctions at digest
+  `657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`.
+  The exact review packet is reproducible but not visually approved, committed,
+  or published. The protected 20-gate matrix, fast suite, and full suite pass;
+  the approved 1,200-frame integration digest and all 232 fixtures remain
+  exact.
+Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.
 

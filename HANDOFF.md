@@ -23,10 +23,80 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Nightglass Seer Approved and Published
+## Immediate Continuation Checkpoint - Hollowcrown Regent Candidate Awaiting Visual Approval
 
-Start here in a new task. The exact private specialist is hash-frozen,
-technically validated, visually approved, committed, and published.
+Start here in a new task. This is the sole active isolated art gate. The exact
+private elite candidate is hash-frozen and focused-validated, but it is not
+visually approved, committed, or published.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly on
+  clean published Nightglass reconciliation
+  `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`.
+- Approved predecessor: Nightglass implementation
+  `325a6f4cfa1418383c93510262a631358add1d5f`, approval record
+  `d50f3af5da0578edf66a5b2f156744c576427b9c`, initial published handoff
+  `71d36ef48a55a7f1d49e1e6649a33eb945c9667c`, and final reconciliation
+  `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1` remain exact.
+- Authorization: after Nightglass was approved, committed, pushed, and
+  reconciled, the designer replied `approved lets do next` on 2026-08-10. The
+  frozen Living Shadow order is common, specialist, elite, so this opens only
+  one private elite Hollowcrown Regent.
+- Scope: one private 80-frame elite Living Shadow across Idle F1-F2, Walk
+  W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
+- Style contract: preserve the approved chunky one-to-three-pixel violet-black
+  family ramp and hard alpha. Hollowcrown uses a connected three-prong crown,
+  high angular mantle, paired narrow face slits, a transparent diamond
+  void-heart, command-bracer arms, armored split legs, and broad throne-step
+  feet. Elite presence comes from crown height, mantle span, and posture rather
+  than becoming a bulky knight, larger Gloam recolor, or dark robe caster.
+- Motion: restrained crown/mantle Idle compression; four measured throne-step
+  Walk phases; crossed edict seal, raised command, full mantle and void-heart
+  decree, then planted recovery. Cast aliases Attack; Death aliases Hurt.
+- Effects firewall: crown halos, eclipse rings, throne shapes, banners, void
+  rays, portals, floor seals, shadow doubles, detached mantle trails, glow,
+  particles, projectiles, and impact flashes remain external. Registration,
+  fixtures, public exposure, Doppelganger, Will-o-Wisp, Changeling, Kelpie,
+  release, and EN-E08 remain closed.
+- Focused validation passes: 80/80 connected, one-cell-bounded, grounded
+  hard-alpha frames; 80/80 pixel and alpha-silhouette distinctions from public
+  Cursed Ghost, public Shadow Slime, approved Mist Weaver, approved Gloam
+  Walker, and approved Nightglass Seer; 72/72 colored family-ramp frames; 8/8
+  exact white flashes; 54/54 exact eye-bearing front/side views; opaque range
+  244-283; 8,614 Complete B additions; and 8,119 Form changes. Both approved
+  Living Shadow predecessors remain exact, public 80/259 is unchanged, and no
+  fixture/facade/manifest exposure exists.
+- Frozen candidate digest:
+  `657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `28bacd40bff6686fb84fdbe0e6d149fa60384b50493dccd09d11f5985852b7c0` /
+  `d41dbf448ba59ba73befa65c553655fdb9f980b9d3e7e400a866125d36ff9d3b`;
+  Ghost/Slime/Mist/Gloam/Seer/Regent `2232x548` comparison
+  `414f5e44c9812cbdc6166a05205aa0fd01a73666ee867000234531ff7c4e4e59`;
+  raw / Complete B + Form `640x672` GIFs
+  `5e8acdc677f7cab6738600a259e666e4596963917eb3136b75e9987f3050662d` /
+  `dbe5c9676626240b57cada5f092ae43f0d627644a958882d3ea40ddb473923cd`.
+  Two fresh generations reproduce all five hashes exactly; artifacts remain
+  ignored under
+  `enemy-expansion-review/en-e07-living-shadow-hollowcrown-regent/`.
+- Broad validation passes: the 20-command protected matrix (all 16 EN-E06
+  gates, Gloam, Nightglass, Hollowcrown, and the approved 1,200-frame
+  integration gate) completed in 13.2s; `npm.cmd run check:fast` passed in
+  54.9s; and full `npm.cmd run check` passed in 109.2s. The integrated frame
+  digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required visual action: inspect the current raw, Complete B + Form, six-way
+  comparison, and all four animation-phase boards; open the three exact PNG
+  boards together in Aseprite; present both exact GIFs; and ask for explicit
+  approval of the digest above. Do not commit or push before that approval.
+
+## Approved Preceding Checkpoint - Nightglass Seer Published
+
+This records the exact clean published predecessor for the active Hollowcrown
+Regent gate. The private specialist is hash-frozen, technically validated,
+visually approved, committed, and published.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
@@ -93,15 +163,15 @@ technically validated, visually approved, committed, and published.
   `d50f3af5da0578edf66a5b2f156744c576427b9c`, with initial published handoff
   `71d36ef48a55a7f1d49e1e6649a33eb945c9667c`. Direct remote verification
   matched the local handoff exactly.
-- Required next action: the same `approved lets do next` response opens only
-  one private elite Living Shadow candidate from the clean publication
-  reconciliation. Do not register Living Shadow, generate fixtures, add
-  effects, start another family, release, or advance EN-E08.
+- Historical stop gate: Nightglass approval did not register Living Shadow,
+  generate fixtures, add effects, open another family, release, or advance
+  EN-E08. The same `approved lets do next` response opens only the active
+  Hollowcrown Regent candidate above.
 
 ## Approved Preceding Checkpoint - Gloam Walker Published
 
-This records the exact clean published predecessor for the active Nightglass
-Seer gate. The private Gloam Walker is hash-frozen, technically validated,
+This records the approved common predecessor for Nightglass and Hollowcrown.
+The private Gloam Walker is hash-frozen, technically validated,
 visually approved, committed, and pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.

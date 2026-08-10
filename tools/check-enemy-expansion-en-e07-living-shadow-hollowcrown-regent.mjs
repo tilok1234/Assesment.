@@ -12,13 +12,18 @@ import {
   EN_E07_LIVING_SHADOW_CONTRACT_CARD,
 } from '../engine/enemy-expansion-en-e07-living-shadow-gloam-walker.js';
 import {
-  EN_E07_NIGHTGLASS_SEER_CONTRACT,
   EN_E07_NIGHTGLASS_SEER_DATA,
-  EN_E07_NIGHTGLASS_SEER_DEATH_SOURCE_FRAMES,
-  EN_E07_NIGHTGLASS_SEER_FAMILY,
   EN_E07_NIGHTGLASS_SEER_GATE,
   EN_E07_NIGHTGLASS_SEER_REGISTRY,
 } from '../engine/enemy-expansion-en-e07-living-shadow-nightglass-seer.js';
+import {
+  EN_E07_HOLLOWCROWN_REGENT_CONTRACT,
+  EN_E07_HOLLOWCROWN_REGENT_DATA,
+  EN_E07_HOLLOWCROWN_REGENT_DEATH_SOURCE_FRAMES,
+  EN_E07_HOLLOWCROWN_REGENT_FAMILY,
+  EN_E07_HOLLOWCROWN_REGENT_GATE,
+  EN_E07_HOLLOWCROWN_REGENT_REGISTRY,
+} from '../engine/enemy-expansion-en-e07-living-shadow-hollowcrown-regent.js';
 import { buildEnemyExpansionCandidatePresentation } from './enemy-expansion-candidate-presentation.mjs';
 import {
   alphaDigest,
@@ -37,8 +42,9 @@ const animations = [
   { id: 'hurt', frames: 2 },
   { id: 'death', frames: 4 },
 ];
-const candidateSpec = { kind: 'enemy', family: 'living-shadow', variant: 'nightglass-seer' };
+const candidateSpec = { kind: 'enemy', family: 'living-shadow', variant: 'hollowcrown-regent' };
 const gloamSpec = { kind: 'enemy', family: 'living-shadow', variant: 'gloam-walker' };
+const nightglassSpec = { kind: 'enemy', family: 'living-shadow', variant: 'nightglass-seer' };
 const ghostSpec = { kind: 'enemy', family: 'ghost', variant: 'cursed' };
 const slimeSpec = { kind: 'enemy', family: 'slime', variant: 'shadow' };
 const mistSpec = { kind: 'enemy', family: 'nymph', variant: 'mist-weaver' };
@@ -155,59 +161,51 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_NIGHTGLASS_SEER_GATE.status === 'approved'
-    && EN_E07_NIGHTGLASS_SEER_GATE.approvedOn === '2026-08-10'
-    && EN_E07_NIGHTGLASS_SEER_GATE.approvedImplementation === '325a6f4cfa1418383c93510262a631358add1d5f'
-    && EN_E07_NIGHTGLASS_SEER_GATE.publishedImplementation === '325a6f4cfa1418383c93510262a631358add1d5f'
-    && EN_E07_NIGHTGLASS_SEER_GATE.publishedApprovalRecord === 'd50f3af5da0578edf66a5b2f156744c576427b9c'
-    && EN_E07_NIGHTGLASS_SEER_GATE.initialPublishedHandoff === '71d36ef48a55a7f1d49e1e6649a33eb945c9667c'
-    && EN_E07_NIGHTGLASS_SEER_GATE.publicationState === 'published',
-  'Nightglass Seer published state drifted',
+  EN_E07_HOLLOWCROWN_REGENT_GATE.status === 'candidate'
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.approvedOn === null
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.publishedImplementation === null,
+  'Hollowcrown Regent must remain an unapproved candidate',
 );
 check(
-  EN_E07_NIGHTGLASS_SEER_GATE.approvalEvidence.includes('three exact PNG review boards were opened together in Aseprite')
-    && EN_E07_NIGHTGLASS_SEER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
-    && EN_E07_NIGHTGLASS_SEER_GATE.approvalEvidence.includes('07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa')
-    && EN_E07_NIGHTGLASS_SEER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
-  'approval evidence or bounded publication authorization drifted',
-);
-check(
-  EN_E07_NIGHTGLASS_SEER_GATE.authorizationEvidence.includes('designer said: lets do next')
-    && EN_E07_NIGHTGLASS_SEER_GATE.authorizationEvidence.includes('common, specialist, elite')
-    && EN_E07_NIGHTGLASS_SEER_GATE.authorizationEvidence.includes('only one private specialist Nightglass Seer'),
+  EN_E07_HOLLOWCROWN_REGENT_GATE.authorizationEvidence.includes('designer replied: approved lets do next')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.authorizationEvidence.includes('common, specialist, elite')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.authorizationEvidence.includes('only one private elite Hollowcrown Regent'),
   'authorization evidence or bounded interpretation drifted',
 );
 check(
-  EN_E07_NIGHTGLASS_SEER_GATE.baseCheckpoint === '98d3781b81c8c7ff615ad3cd6562efe12ce63d94'
-    && EN_E07_NIGHTGLASS_SEER_GATE.precedingApproval.gateId === EN_E07_GLOAM_WALKER_GATE.id
-    && EN_E07_NIGHTGLASS_SEER_GATE.precedingApproval.candidateFrameDigest === EN_E07_GLOAM_WALKER_GATE.candidateFrameDigest
-    && EN_E07_NIGHTGLASS_SEER_GATE.precedingApproval.publishedHandoff === '98d3781b81c8c7ff615ad3cd6562efe12ce63d94',
-  'approved Gloam Walker predecessor drifted',
+  EN_E07_HOLLOWCROWN_REGENT_GATE.baseCheckpoint === '46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1'
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.precedingApproval.gateId === EN_E07_NIGHTGLASS_SEER_GATE.id
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.precedingApproval.candidateFrameDigest === EN_E07_NIGHTGLASS_SEER_GATE.candidateFrameDigest
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.precedingApproval.publishedImplementation === EN_E07_NIGHTGLASS_SEER_GATE.publishedImplementation
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.precedingApproval.publishedHandoff === '46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1',
+  'approved Nightglass Seer predecessor drifted',
 );
 check(
-  EN_E07_NIGHTGLASS_SEER_GATE.scope.includes('complete 80-frame Nightglass Seer specialist')
-    && EN_E07_NIGHTGLASS_SEER_GATE.animationContract.includes('opens both shutter arms into one wide aperture')
-    && EN_E07_NIGHTGLASS_SEER_GATE.animationContract.includes('Cast aliases Attack exactly'),
+  EN_E07_HOLLOWCROWN_REGENT_GATE.scope.includes('complete 80-frame Hollowcrown Regent elite')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.animationContract.includes('crosses both bracers into an edict seal')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.animationContract.includes('diamond void-heart for a full decree')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.animationContract.includes('Cast aliases Attack exactly'),
   'full-suite or motion contract drifted',
 );
 check(
-  EN_E07_NIGHTGLASS_SEER_GATE.exclusions.includes('changes to approved Gloam Walker rendered pixels')
-    && EN_E07_NIGHTGLASS_SEER_GATE.exclusions.includes('public Living Shadow registration')
-    && EN_E07_NIGHTGLASS_SEER_GATE.exclusions.includes('asset-pack fixture generation or regeneration')
-    && EN_E07_NIGHTGLASS_SEER_GATE.exclusions.includes('Living Shadow elite')
-    && EN_E07_NIGHTGLASS_SEER_GATE.exclusions.includes('Doppelganger')
-    && EN_E07_NIGHTGLASS_SEER_GATE.exclusions.includes('EN-E08 and later work'),
+  EN_E07_HOLLOWCROWN_REGENT_GATE.exclusions.includes('changes to approved Gloam Walker rendered pixels')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.exclusions.includes('changes to approved Nightglass Seer rendered pixels')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.exclusions.includes('public Living Shadow registration')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.exclusions.includes('asset-pack fixture generation or regeneration')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.exclusions.includes('Doppelganger')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.exclusions.includes('EN-E08 and later work'),
   'scope exclusions drifted',
 );
 check(
-  EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('initial handoff are published')
-    && EN_E07_NIGHTGLASS_SEER_GATE.nextGate.includes('only one private elite Living Shadow candidate'),
-  'published next-role gate drifted',
+  EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('Stop at the exact frozen Hollowcrown Regent candidate review')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('Do not commit')
+    && EN_E07_HOLLOWCROWN_REGENT_GATE.nextGate.includes('until the designer explicitly approves'),
+  'candidate stop gate drifted',
 );
 check(
-  Object.isFrozen(EN_E07_NIGHTGLASS_SEER_GATE)
-    && Object.isFrozen(EN_E07_NIGHTGLASS_SEER_DATA)
-    && Object.isFrozen(EN_E07_NIGHTGLASS_SEER_CONTRACT)
+  Object.isFrozen(EN_E07_HOLLOWCROWN_REGENT_GATE)
+    && Object.isFrozen(EN_E07_HOLLOWCROWN_REGENT_DATA)
+    && Object.isFrozen(EN_E07_HOLLOWCROWN_REGENT_CONTRACT)
     && Object.isFrozen(EN_E07_LIVING_SHADOW_CONTRACT_CARD),
   'gate, data, and contracts must be deeply immutable',
 );
@@ -221,28 +219,29 @@ check(
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeElite.role === 'elite'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.activeElite.status === 'implemented-full-candidate'
     && EN_E07_LIVING_SHADOW_CONTRACT_CARD.deferredRoles.length === 0,
-  'Living Shadow role order or one-active-specialist boundary drifted',
+  'Living Shadow role order or one-active-elite boundary drifted',
 );
 check(
-  EN_E07_NIGHTGLASS_SEER_CONTRACT.silhouette.includes('broad nightglass mask')
-    && EN_E07_NIGHTGLASS_SEER_CONTRACT.silhouette.includes('one vertical eye')
-    && EN_E07_NIGHTGLASS_SEER_CONTRACT.silhouette.includes('planted wedge feet')
-    && EN_E07_NIGHTGLASS_SEER_CONTRACT.effectBoundary.includes('Eye beams')
-    && EN_E07_NIGHTGLASS_SEER_DATA.bakedEffects.length === 0,
-  'specialist identity or effect firewall drifted',
+  EN_E07_HOLLOWCROWN_REGENT_CONTRACT.silhouette.includes('connected three-prong hollow crown')
+    && EN_E07_HOLLOWCROWN_REGENT_CONTRACT.silhouette.includes('diamond void-heart aperture')
+    && EN_E07_HOLLOWCROWN_REGENT_CONTRACT.silhouette.includes('broad throne-step feet')
+    && EN_E07_HOLLOWCROWN_REGENT_CONTRACT.effectBoundary.includes('Crown halos')
+    && EN_E07_HOLLOWCROWN_REGENT_DATA.bakedEffects.length === 0,
+  'elite identity or effect firewall drifted',
 );
 check(
-  JSON.stringify(EN_E07_NIGHTGLASS_SEER_DATA.nightglassSeer.body) === JSON.stringify(EN_E07_GLOAM_WALKER_DATA.gloamWalker.body)
-    && JSON.stringify(EN_E07_NIGHTGLASS_SEER_DATA.nightglassSeer.void) === JSON.stringify(EN_E07_GLOAM_WALKER_DATA.gloamWalker.void)
-    && JSON.stringify(EN_E07_NIGHTGLASS_SEER_DATA.nightglassSeer.rim) === JSON.stringify(EN_E07_GLOAM_WALKER_DATA.gloamWalker.rim)
-    && JSON.stringify(EN_E07_NIGHTGLASS_SEER_DATA.nightglassSeer.shutter) === JSON.stringify(EN_E07_GLOAM_WALKER_DATA.gloamWalker.claw)
-    && EN_E07_NIGHTGLASS_SEER_DATA.nightglassSeer.eye === EN_E07_GLOAM_WALKER_DATA.gloamWalker.eye,
+  JSON.stringify(EN_E07_HOLLOWCROWN_REGENT_DATA.hollowcrownRegent.body) === JSON.stringify(EN_E07_GLOAM_WALKER_DATA.gloamWalker.body)
+    && JSON.stringify(EN_E07_HOLLOWCROWN_REGENT_DATA.hollowcrownRegent.void) === JSON.stringify(EN_E07_GLOAM_WALKER_DATA.gloamWalker.void)
+    && JSON.stringify(EN_E07_HOLLOWCROWN_REGENT_DATA.hollowcrownRegent.rim) === JSON.stringify(EN_E07_GLOAM_WALKER_DATA.gloamWalker.rim)
+    && JSON.stringify(EN_E07_HOLLOWCROWN_REGENT_DATA.hollowcrownRegent.bracer) === JSON.stringify(EN_E07_GLOAM_WALKER_DATA.gloamWalker.claw)
+    && JSON.stringify(EN_E07_HOLLOWCROWN_REGENT_DATA.hollowcrownRegent.bracer) === JSON.stringify(EN_E07_NIGHTGLASS_SEER_DATA.nightglassSeer.shutter)
+    && EN_E07_HOLLOWCROWN_REGENT_DATA.hollowcrownRegent.eye === EN_E07_GLOAM_WALKER_DATA.gloamWalker.eye,
   'approved Living Shadow family ramp drifted',
 );
 check(
-  EN_E07_NIGHTGLASS_SEER_REGISTRY.families.length === 1
-    && EN_E07_NIGHTGLASS_SEER_REGISTRY.publicFamilies.length === 0
-    && EN_E07_NIGHTGLASS_SEER_FAMILY.variants.length === 1,
+  EN_E07_HOLLOWCROWN_REGENT_REGISTRY.families.length === 1
+    && EN_E07_HOLLOWCROWN_REGENT_REGISTRY.publicFamilies.length === 0
+    && EN_E07_HOLLOWCROWN_REGENT_FAMILY.variants.length === 1,
   'candidate registry boundary drifted',
 );
 
@@ -254,27 +253,28 @@ check(
     && !engine.PUBLIC_ENEMIES.some(({ id }) => id === 'living-shadow'),
   'candidate must preserve public 80/259 and keep Living Shadow private',
 );
-check(engine.EN_E07_NIGHTGLASS_SEER_REGISTRY === undefined, 'candidate must not leak through the facade');
+check(engine.EN_E07_HOLLOWCROWN_REGENT_REGISTRY === undefined, 'candidate must not leak through the facade');
 
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8');
 const facadeSource = await readFile(path.join(root, 'sprite-engine.js'), 'utf8');
 const manifestSource = await readFile(path.join(root, 'asset-pack', 'manifest.json'), 'utf8');
 check(
-  !publicSource.includes('nightglass-seer')
-    && !facadeSource.includes('nightglass-seer')
-    && !manifestSource.includes('nightglass-seer'),
+  !publicSource.includes('hollowcrown-regent')
+    && !facadeSource.includes('hollowcrown-regent')
+    && !manifestSource.includes('hollowcrown-regent'),
   'public or fixture firewall drifted',
 );
 
 const captures = new Map();
 const candidateRecords = [];
 const gloamRecords = [];
+const nightglassRecords = [];
 const ghostRecords = [];
 const slimeRecords = [];
 const mistRecords = [];
-const palettes = ['body', 'void', 'rim', 'shutter'].map((name) => [
+const palettes = ['body', 'void', 'rim', 'bracer'].map((name) => [
   name,
-  new Set(EN_E07_NIGHTGLASS_SEER_DATA.nightglassSeer[name]),
+  new Set(EN_E07_HOLLOWCROWN_REGENT_DATA.hollowcrownRegent[name]),
 ]);
 let connected = 0;
 let bounded = 0;
@@ -290,6 +290,8 @@ let mistDifferences = 0;
 let mistAlphaDifferences = 0;
 let gloamDifferences = 0;
 let gloamAlphaDifferences = 0;
+let nightglassDifferences = 0;
+let nightglassAlphaDifferences = 0;
 let completeB = 0;
 let formChanges = 0;
 let minOpaque = Infinity;
@@ -298,14 +300,16 @@ let maxOpaque = -Infinity;
 for (const animation of animations) for (const direction of directions) {
   for (let frame = 0; frame < animation.frames; frame++) {
     const key = direction + '/' + animation.id + '/' + frame;
-    const candidate = captureEnemyExpansionFrame(EN_E07_NIGHTGLASS_SEER_REGISTRY, candidateSpec, direction, animation.id, frame);
+    const candidate = captureEnemyExpansionFrame(EN_E07_HOLLOWCROWN_REGENT_REGISTRY, candidateSpec, direction, animation.id, frame);
     const gloam = captureEnemyExpansionFrame(EN_E07_GLOAM_WALKER_REGISTRY, gloamSpec, direction, animation.id, frame);
+    const nightglass = captureEnemyExpansionFrame(EN_E07_NIGHTGLASS_SEER_REGISTRY, nightglassSpec, direction, animation.id, frame);
     const ghost = captureLegacyFrame(ghostSpec, direction, animation.id, frame);
     const slime = captureLegacyFrame(slimeSpec, direction, animation.id, frame);
     const mist = captureEnemyExpansionFrame(EN_E06_MIST_WEAVER_REGISTRY, mistSpec, direction, animation.id, frame);
     captures.set(key, candidate);
-    candidateRecords.push(frameRecord(candidate, 'living-shadow', 'nightglass-seer', direction, animation.id, frame));
+    candidateRecords.push(frameRecord(candidate, 'living-shadow', 'hollowcrown-regent', direction, animation.id, frame));
     gloamRecords.push(frameRecord(gloam, 'living-shadow', 'gloam-walker', direction, animation.id, frame));
+    nightglassRecords.push(frameRecord(nightglass, 'living-shadow', 'nightglass-seer', direction, animation.id, frame));
     ghostRecords.push(frameRecord(ghost, 'ghost', 'cursed', direction, animation.id, frame, false));
     slimeRecords.push(frameRecord(slime, 'slime', 'shadow', direction, animation.id, frame, false));
     mistRecords.push(frameRecord(mist, 'nymph', 'mist-weaver', direction, animation.id, frame));
@@ -334,8 +338,8 @@ for (const animation of animations) for (const direction of directions) {
     else check(false, key + ' has ' + componentCount + ' opaque components');
 
     check(
-      candidate.opaquePixels >= 130 && candidate.opaquePixels <= 300,
-      key + ' density ' + candidate.opaquePixels + ' is implausible for a faceted Living Shadow specialist',
+      candidate.opaquePixels >= 170 && candidate.opaquePixels <= 360,
+      key + ' density ' + candidate.opaquePixels + ' is implausible for a crowned Living Shadow elite',
     );
     minOpaque = Math.min(minOpaque, candidate.opaquePixels);
     maxOpaque = Math.max(maxOpaque, candidate.opaquePixels);
@@ -356,6 +360,10 @@ for (const animation of animations) for (const direction of directions) {
     else check(false, key + ' must differ from approved Gloam Walker');
     if (candidate.alphaDigest !== gloam.alphaDigest) gloamAlphaDifferences++;
 
+    if (JSON.stringify(candidate.pixels) !== JSON.stringify(nightglass.pixels)) nightglassDifferences++;
+    else check(false, key + ' must differ from approved Nightglass Seer');
+    if (candidate.alphaDigest !== nightglass.alphaDigest) nightglassAlphaDifferences++;
+
     const flash = (animation.id === 'hurt' || animation.id === 'death') && frame === 0;
     if (flash) {
       const colors = new Set(candidate.pixels.filter(Boolean));
@@ -365,28 +373,33 @@ for (const animation of animations) for (const direction of directions) {
       for (const [name, colors] of palettes) {
         check(countColors(candidate.pixels, colors) > 0, key + ' lost ' + name + ' family-ramp identity');
       }
-      const eyeCount = countColors(candidate.pixels, new Set([EN_E07_NIGHTGLASS_SEER_DATA.nightglassSeer.eye]));
+      const eyeCount = countColors(candidate.pixels, new Set([EN_E07_HOLLOWCROWN_REGENT_DATA.hollowcrownRegent.eye]));
       if (direction === 'up') {
         check(eyeCount === 0, key + ' rear view must not expose eye pixels');
       } else {
-        check(eyeCount > 0, key + ' front or side view lost the vertical eye');
+        const expectedEyePixels = direction === 'down' ? 4 : 2;
+        check(eyeCount === expectedEyePixels, key + ' paired crown eye slits must use exactly ' + expectedEyePixels + ' eye pixels');
         if (eyeCount > 0) eyeFrames++;
       }
       colored++;
     }
 
     check(
-      candidate.renderResult.nightglassSeerGate === EN_E07_NIGHTGLASS_SEER_GATE.id
-        && candidate.renderResult.approvedPrecedingGate === EN_E07_GLOAM_WALKER_GATE.id,
+      candidate.renderResult.hollowcrownRegentGate === EN_E07_HOLLOWCROWN_REGENT_GATE.id
+        && candidate.renderResult.approvedPrecedingGate === EN_E07_NIGHTGLASS_SEER_GATE.id,
       key + ' gate metadata drifted',
     );
-    const presentation = buildEnemyExpansionCandidatePresentation(candidate.pixels, EN_E07_NIGHTGLASS_SEER_DATA);
+    const presentation = buildEnemyExpansionCandidatePresentation(candidate.pixels, EN_E07_HOLLOWCROWN_REGENT_DATA);
     completeB += presentation.formComplete.reduce((sum, color, index) => sum + (color && !candidate.pixels[index] ? 1 : 0), 0);
     formChanges += presentation.form.reduce((sum, color, index) => sum + (candidate.pixels[index] && color !== candidate.pixels[index] ? 1 : 0), 0);
   }
 }
 
 for (const direction of directions) {
+  for (const { id, frames } of animations.filter(({ id }) => ['idle', 'walk', 'attack', 'hurt'].includes(id))) {
+    const unique = new Set(Array.from({ length: frames }, (_, frame) => JSON.stringify(captures.get(direction + '/' + id + '/' + frame).pixels)));
+    check(unique.size === frames, direction + ' ' + id + ' motion frames must all be distinct');
+  }
   for (let frame = 0; frame < 4; frame++) {
     const attack = captures.get(direction + '/attack/' + frame);
     const cast = captures.get(direction + '/cast/' + frame);
@@ -395,7 +408,7 @@ for (const direction of directions) {
   const hurt = [0, 1].map((frame) => captures.get(direction + '/hurt/' + frame));
   for (let frame = 0; frame < 4; frame++) {
     const death = captures.get(direction + '/death/' + frame);
-    const source = hurt[EN_E07_NIGHTGLASS_SEER_DEATH_SOURCE_FRAMES[frame]];
+    const source = hurt[EN_E07_HOLLOWCROWN_REGENT_DEATH_SOURCE_FRAMES[frame]];
     check(JSON.stringify(death.pixels) === JSON.stringify(source.pixels), direction + ' Death D' + (frame + 1) + ' alias drifted');
   }
   for (const animation of animations) for (let frame = 0; frame < animation.frames; frame++) {
@@ -406,34 +419,41 @@ for (const direction of directions) {
 }
 
 rejects(
-  () => captureEnemyExpansionFrame(EN_E07_NIGHTGLASS_SEER_REGISTRY, { kind: 'enemy', family: 'living-shadow', variant: 'gloam-walker' }, 'down', 'idle', 0),
-  'Nightglass registry Gloam Walker access',
+  () => captureEnemyExpansionFrame(EN_E07_HOLLOWCROWN_REGENT_REGISTRY, { kind: 'enemy', family: 'living-shadow', variant: 'gloam-walker' }, 'down', 'idle', 0),
+  'Hollowcrown registry Gloam Walker access',
 );
 rejects(
-  () => captureEnemyExpansionFrame(EN_E07_NIGHTGLASS_SEER_REGISTRY, candidateSpec, 'down', 'taunt', 0),
-  'Nightglass unsupported animation',
+  () => captureEnemyExpansionFrame(EN_E07_HOLLOWCROWN_REGENT_REGISTRY, { kind: 'enemy', family: 'living-shadow', variant: 'nightglass-seer' }, 'down', 'idle', 0),
+  'Hollowcrown registry Nightglass Seer access',
+);
+rejects(
+  () => captureEnemyExpansionFrame(EN_E07_HOLLOWCROWN_REGENT_REGISTRY, candidateSpec, 'down', 'taunt', 0),
+  'Hollowcrown unsupported animation',
   'is invalid',
 );
 
 const candidateDigest = hashJson(candidateRecords);
 const gloamDigest = hashJson(gloamRecords);
+const nightglassDigest = hashJson(nightglassRecords);
 const ghostDigest = hashJson(ghostRecords);
 const slimeDigest = hashJson(slimeRecords);
 const mistDigest = hashJson(mistRecords);
 check(gloamDigest === EN_E07_GLOAM_WALKER_GATE.candidateFrameDigest, 'approved Gloam Walker digest drifted');
+check(nightglassDigest === EN_E07_NIGHTGLASS_SEER_GATE.candidateFrameDigest, 'approved Nightglass Seer digest drifted');
 check(mistDigest === EN_E06_MIST_WEAVER_GATE.candidateFrameDigest, 'approved Mist Weaver digest drifted');
-if (EN_E07_NIGHTGLASS_SEER_GATE.candidateFrameDigest) check(candidateDigest === EN_E07_NIGHTGLASS_SEER_GATE.candidateFrameDigest, 'candidate frame digest drifted');
-if (EN_E07_NIGHTGLASS_SEER_GATE.cursedGhostComparisonDigest) check(ghostDigest === EN_E07_NIGHTGLASS_SEER_GATE.cursedGhostComparisonDigest, 'Cursed Ghost comparison digest drifted');
-if (EN_E07_NIGHTGLASS_SEER_GATE.shadowSlimeComparisonDigest) check(slimeDigest === EN_E07_NIGHTGLASS_SEER_GATE.shadowSlimeComparisonDigest, 'Shadow Slime comparison digest drifted');
-if (EN_E07_NIGHTGLASS_SEER_GATE.mistWeaverComparisonDigest) check(mistDigest === EN_E07_NIGHTGLASS_SEER_GATE.mistWeaverComparisonDigest, 'Mist Weaver comparison digest drifted');
-check(EN_E07_NIGHTGLASS_SEER_GATE.gloamWalkerComparisonDigest === gloamDigest, 'Gloam Walker comparison digest drifted');
+if (EN_E07_HOLLOWCROWN_REGENT_GATE.candidateFrameDigest) check(candidateDigest === EN_E07_HOLLOWCROWN_REGENT_GATE.candidateFrameDigest, 'candidate frame digest drifted');
+if (EN_E07_HOLLOWCROWN_REGENT_GATE.cursedGhostComparisonDigest) check(ghostDigest === EN_E07_HOLLOWCROWN_REGENT_GATE.cursedGhostComparisonDigest, 'Cursed Ghost comparison digest drifted');
+if (EN_E07_HOLLOWCROWN_REGENT_GATE.shadowSlimeComparisonDigest) check(slimeDigest === EN_E07_HOLLOWCROWN_REGENT_GATE.shadowSlimeComparisonDigest, 'Shadow Slime comparison digest drifted');
+if (EN_E07_HOLLOWCROWN_REGENT_GATE.mistWeaverComparisonDigest) check(mistDigest === EN_E07_HOLLOWCROWN_REGENT_GATE.mistWeaverComparisonDigest, 'Mist Weaver comparison digest drifted');
+check(EN_E07_HOLLOWCROWN_REGENT_GATE.gloamWalkerComparisonDigest === gloamDigest, 'Gloam Walker comparison digest drifted');
+check(EN_E07_HOLLOWCROWN_REGENT_GATE.nightglassSeerComparisonDigest === nightglassDigest, 'Nightglass Seer comparison digest drifted');
 
 const artifacts = [
-  [EN_E07_NIGHTGLASS_SEER_GATE.artifact, EN_E07_NIGHTGLASS_SEER_GATE.artifactSha256],
-  [EN_E07_NIGHTGLASS_SEER_GATE.assembledArtifact, EN_E07_NIGHTGLASS_SEER_GATE.assembledArtifactSha256],
-  [EN_E07_NIGHTGLASS_SEER_GATE.comparisonArtifact, EN_E07_NIGHTGLASS_SEER_GATE.comparisonArtifactSha256],
-  [EN_E07_NIGHTGLASS_SEER_GATE.reviewAnimations.raw.artifact, EN_E07_NIGHTGLASS_SEER_GATE.reviewAnimations.raw.sha256],
-  [EN_E07_NIGHTGLASS_SEER_GATE.reviewAnimations.completeBForm.artifact, EN_E07_NIGHTGLASS_SEER_GATE.reviewAnimations.completeBForm.sha256],
+  [EN_E07_HOLLOWCROWN_REGENT_GATE.artifact, EN_E07_HOLLOWCROWN_REGENT_GATE.artifactSha256],
+  [EN_E07_HOLLOWCROWN_REGENT_GATE.assembledArtifact, EN_E07_HOLLOWCROWN_REGENT_GATE.assembledArtifactSha256],
+  [EN_E07_HOLLOWCROWN_REGENT_GATE.comparisonArtifact, EN_E07_HOLLOWCROWN_REGENT_GATE.comparisonArtifactSha256],
+  [EN_E07_HOLLOWCROWN_REGENT_GATE.reviewAnimations.raw.artifact, EN_E07_HOLLOWCROWN_REGENT_GATE.reviewAnimations.raw.sha256],
+  [EN_E07_HOLLOWCROWN_REGENT_GATE.reviewAnimations.completeBForm.artifact, EN_E07_HOLLOWCROWN_REGENT_GATE.reviewAnimations.completeBForm.sha256],
 ];
 for (const [artifact, expected] of artifacts) {
   if (expected) check(await sha256File(artifact) === expected, artifact + ' SHA-256 drifted');
@@ -449,24 +469,27 @@ check(ghostDifferences === 80 && ghostAlphaDifferences === 80, 'Cursed Ghost dis
 check(slimeDifferences === 80 && slimeAlphaDifferences === 80, 'Shadow Slime distinction must be 80/80 pixel and alpha');
 check(mistDifferences === 80 && mistAlphaDifferences === 80, 'Mist Weaver distinction must be 80/80 pixel and alpha');
 check(gloamDifferences === 80 && gloamAlphaDifferences === 80, 'Gloam Walker distinction must be 80/80 pixel and alpha');
+check(nightglassDifferences === 80 && nightglassAlphaDifferences === 80, 'Nightglass Seer distinction must be 80/80 pixel and alpha');
 
 if (errors.length) {
-  console.error('EN-E07 Living Shadow Nightglass Seer focused gate failed:');
+  console.error('EN-E07 Living Shadow Hollowcrown Regent focused gate failed:');
   for (const error of errors) console.error('- ' + error);
   process.exit(1);
 }
 
-console.log('EN-E07 Living Shadow Nightglass Seer focused gate passed.');
+console.log('EN-E07 Living Shadow Hollowcrown Regent focused gate passed.');
 console.log('- Cursed Ghost distinction: ' + ghostDifferences + '/80 pixel frames and ' + ghostAlphaDifferences + '/80 alpha silhouettes differ');
 console.log('- Shadow Slime distinction: ' + slimeDifferences + '/80 pixel frames and ' + slimeAlphaDifferences + '/80 alpha silhouettes differ');
 console.log('- Mist Weaver distinction: ' + mistDifferences + '/80 pixel frames and ' + mistAlphaDifferences + '/80 alpha silhouettes differ');
 console.log('- Gloam Walker distinction: ' + gloamDifferences + '/80 pixel frames and ' + gloamAlphaDifferences + '/80 alpha silhouettes differ');
+console.log('- Nightglass Seer distinction: ' + nightglassDifferences + '/80 pixel frames and ' + nightglassAlphaDifferences + '/80 alpha silhouettes differ');
 console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
 console.log('- Style identity: ' + colored + '/72 colored ramp frames; ' + flashes + '/8 exact white flashes; ' + eyeFrames + '/54 expected eye-bearing views');
 console.log('- Presentation: Complete B +' + completeB + '; Form changes ' + formChanges);
-console.log('- Protected: approved Gloam Walker exact; public 80/259; fixtures unchanged');
+console.log('- Protected: approved Gloam Walker and Nightglass Seer exact; public 80/259; fixtures unchanged');
 console.log('- Candidate digest: ' + candidateDigest);
 console.log('- Public Cursed Ghost frame digest: ' + ghostDigest);
 console.log('- Public Shadow Slime frame digest: ' + slimeDigest);
 console.log('- Approved Mist Weaver frame digest: ' + mistDigest);
 console.log('- Approved Gloam Walker frame digest: ' + gloamDigest);
+console.log('- Approved Nightglass Seer frame digest: ' + nightglassDigest);

@@ -107,7 +107,25 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved and published art checkpoint:
+- Current isolated art candidate:
+  `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly on clean
+  published Nightglass reconciliation `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`,
+  contains one private elite Living Shadow Hollowcrown Regent. Its frozen
+  80-frame digest is
+  `657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`.
+  All frames are connected, one-cell-bounded, grounded, hard-alpha, and
+  pixel/alpha distinct from public Cursed Ghost, public Shadow Slime, approved
+  Mist Weaver, Gloam Walker, and Nightglass Seer. The approved family ramp is
+  carried by a connected three-prong crown, high mantle, paired narrow eye
+  slits, diamond void-heart, command bracers, armored split legs, and broad
+  throne-step feet. The five exact review artifacts reproduce byte-for-byte,
+  and the protected 20-gate matrix, `check:fast`, and full `check` pass with the
+  approved 1,200-frame integration digest and all 232 fixtures exact. The
+  candidate is not visually approved, committed, or published. Do not
+  register Living Shadow, generate fixtures, add effects, start another EN-E07
+  family, release, or advance EN-E08. Do not commit or push this candidate
+  before explicit approval of the exact digest.
+- Approved preceding art checkpoint:
   `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
   published Gloam Walker reconciliation `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`,
   contains one private specialist Living Shadow Nightglass Seer. Its frozen
@@ -126,11 +144,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `71d36ef48a55a7f1d49e1e6649a33eb945c9667c` are published and remote
   verified. The protected 19-gate matrix, `check:fast`, and full `check` all
   pass; the approved 1,200-frame integration digest and all 232 fixtures remain
-  exact. The same response opens only one private elite Living Shadow candidate
-  from the clean publication reconciliation. Do not register Living Shadow,
-  generate fixtures, add effects, start another EN-E07 family, release, or
-  advance EN-E08.
-- Approved preceding art checkpoint:
+  exact. The same response opens only the Hollowcrown Regent gate above. Do not
+  register Living Shadow, generate fixtures, add effects, start another EN-E07
+  family, release, or advance EN-E08.
+- Earlier approved art checkpoint:
   `codex/en-e07-living-shadow-gloam-walker` contains exactly one private common
   Living Shadow Gloam Walker. The frozen
   80-frame digest is

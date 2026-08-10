@@ -1241,6 +1241,33 @@ digest and all 232 fixtures remain exact. Only elite
 Living Shadow opens. Registration, fixtures, effects, another EN-E07 family,
 release, and EN-E08 remain closed.
 
+That same `approved lets do next` response opens exactly one private elite
+Living Shadow Hollowcrown Regent on
+`codex/en-e07-living-shadow-hollowcrown-regent`, based on clean published
+Nightglass reconciliation `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`.
+The approved chunky violet-black family ramp now carries a connected
+three-prong crown, high angular mantle, paired narrow face slits, a transparent
+diamond void-heart, command bracers, armored split legs, and broad throne-step
+feet. Crown halos, eclipse rings, throne shapes, banners, void rays, portals,
+floor seals, shadow doubles, detached mantle trails, glow, particles,
+projectiles, and impacts remain external. Run
+`npm.cmd run review:enemy-expansion-en-e07-living-shadow-hollowcrown-regent`
+for the raw, Complete B + Form, Ghost/Slime/Mist/Gloam/Seer/Regent comparison,
+and paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-living-shadow-hollowcrown-regent`
+for its focused structural, style, predecessor, artifact, and exposure
+firewalls. The frozen candidate digest is
+`657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`:
+80/80 frames are connected, bounded, grounded, and pixel/alpha distinct from
+Cursed Ghost, Shadow Slime, Mist Weaver, Gloam Walker, and Nightglass Seer;
+72/72 colored frames preserve the family ramp; 8/8 flashes are exact white;
+opaque range is 244-283. The exact five-artifact packet reproduces
+byte-for-byte. The protected 20-gate matrix, fast suite, and full suite pass;
+the approved 1,200-frame integration digest and all 232 fixtures remain exact.
+The candidate is not visually approved, committed, or published.
+Registration, fixtures, effects, another EN-E07 family, release, and EN-E08
+remain closed.
+
 ## Approved enemy backlog integration published
 
 Branch `codex/approved-enemy-assembler-integration` composes three explicit

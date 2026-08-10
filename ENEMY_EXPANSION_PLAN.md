@@ -13,27 +13,21 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-10): Gloam Walker common is approved and
-  published through reconciliation
-  `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`. The designer then said `lets do
-  next`. The frozen Living Shadow role order is common, specialist, elite, so
-  this opens only one private specialist Nightglass Seer on
-  `codex/en-e07-living-shadow-nightglass-seer`. Its exact 80-frame candidate is
-  technically frozen at digest
-  `07909fa9b74df6dd386ca3f6186fe4da26e8d088af99ad7e2dfa2bcdeb10d3fa`.
+- Current stopping checkpoint (2026-08-10): Nightglass Seer specialist is
+  approved and published through clean reconciliation
+  `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`. The designer replied `approved
+  lets do next`. The frozen Living Shadow role order is common, specialist,
+  elite, so this opens only one private elite Hollowcrown Regent on
+  `codex/en-e07-living-shadow-hollowcrown-regent`. Its exact 80-frame candidate
+  is frozen at digest
+  `657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`.
   It passes 80/80 connected, one-cell-bounded, grounded, hard-alpha, alias,
   mirror, and pixel/alpha distinctions from public Cursed Ghost, public Shadow
-  Slime, approved Mist Weaver, and approved Gloam Walker. The exact raw,
-  Complete B + Form, five-way comparison, and paired GIF packet reproduces all
-  five recorded hashes. After the exact packet was presented and its three PNG
-  boards were opened together in Aseprite, the designer replied `approved lets
-  do next`. Implementation `325a6f4cfa1418383c93510262a631358add1d5f` and
-  approval record `d50f3af5da0578edf66a5b2f156744c576427b9c`, and initial
-  handoff `71d36ef48a55a7f1d49e1e6649a33eb945c9667c` are published.
-  After the clean publication reconciliation, the same response opens only
-  elite Living Shadow.
-  Registration, fixtures, effects, other EN-E07 families, release, and EN-E08
-  remain closed.
+  Slime, approved Mist Weaver, Gloam Walker, and Nightglass Seer. The exact raw,
+  Complete B + Form, six-way comparison, and paired GIF packet reproduces all
+  five recorded hashes. It is not visually approved, committed, or published.
+  Living Shadow registration, fixtures, effects, other EN-E07 families,
+  release, and EN-E08 remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3562,7 +3556,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Gloam Walker common and Nightglass Seer specialist approved and published; elite Living Shadow authorized next`
+- Status: `Gloam Walker common and Nightglass Seer specialist approved and published; Hollowcrown Regent elite candidate awaiting visual approval`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3671,8 +3665,56 @@ assembler.
   `d50f3af5da0578edf66a5b2f156744c576427b9c`; initial handoff
   `71d36ef48a55a7f1d49e1e6649a33eb945c9667c`. The remote handoff was
   verified exact.
-- Required next action: open only one private elite Living Shadow candidate
-  from the clean publication reconciliation. Keep
+- Historical stop gate: the designer's `approved lets do next` response opens
+  only the private elite candidate below. Keep Living Shadow registration,
+  fixtures, effects, another EN-E07 family, release, and EN-E08 closed.
+
+#### Living Shadow Hollowcrown Regent complete suite candidate
+
+- Gate ID: `en-e07-living-shadow-hollowcrown-regent-full-v1`; status:
+  `candidate` on `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly
+  on clean published Nightglass reconciliation
+  `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`.
+- Authorization: after Nightglass Seer was visually approved, committed,
+  pushed, and reconciled, the designer replied `approved lets do next` on
+  2026-08-10. The Living Shadow role order opens only elite Hollowcrown Regent.
+- Style/silhouette contract: reuse the approved chunky one-to-three-pixel
+  violet-black family ramp and hard alpha. A connected three-prong crown, high
+  angular mantle, paired narrow face slits, transparent diamond void-heart,
+  command-bracer arms, armored split legs, and broad throne-step feet must read
+  as regal structure rather than a bulky knight, enlarged Gloam, faceted Seer,
+  or robed caster.
+- Scope: one private 80-frame elite Living Shadow. Cast aliases Attack; Death
+  aliases Hurt H1,H2,H2,H2. Crown halos, eclipse rings, throne shapes, banners,
+  void rays, portals, floor seals, shadow doubles, detached mantle trails,
+  glow, particles, projectiles, and impacts remain external.
+- Focused validation: 80/80 connected, bounded, grounded hard-alpha frames;
+  80/80 pixel and alpha distinctions from Cursed Ghost, Shadow Slime, Mist
+  Weaver, Gloam Walker, and Nightglass Seer; 72/72 colored frames; 8/8 white
+  flashes; 54/54 exact eye-bearing views; opaque range 244-283; Complete B
+  +8,614; Form changes 8,119. Both approved Living Shadow predecessors remain
+  exact; public 80/259 and fixtures are unchanged.
+- Candidate digest:
+  `657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`.
+- Evidence SHA-256: raw
+  `28bacd40bff6686fb84fdbe0e6d149fa60384b50493dccd09d11f5985852b7c0`;
+  Complete B + Form
+  `d41dbf448ba59ba73befa65c553655fdb9f980b9d3e7e400a866125d36ff9d3b`;
+  comparison
+  `414f5e44c9812cbdc6166a05205aa0fd01a73666ee867000234531ff7c4e4e59`;
+  raw GIF `5e8acdc677f7cab6738600a259e666e4596963917eb3136b75e9987f3050662d`;
+  Complete B + Form GIF
+  `dbe5c9676626240b57cada5f092ae43f0d627644a958882d3ea40ddb473923cd`.
+  Two fresh generations reproduce all five hashes exactly.
+- Broad validation: the 20-command protected predecessor/candidate/integration
+  matrix passed in 13.2s, `npm.cmd run check:fast` passed in 54.9s, and full
+  `npm.cmd run check` passed in 109.2s. The approved 1,200-frame integration
+  digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required next action: inspect the exact boards, open the three PNGs together
+  in Aseprite, present both exact GIFs, and request explicit visual approval.
+  Do not commit or publish before approval. Keep
   Living Shadow registration, fixtures, effects, another EN-E07 family,
   release, and EN-E08 closed.
 
