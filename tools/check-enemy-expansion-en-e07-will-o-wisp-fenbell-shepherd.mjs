@@ -148,10 +148,19 @@ function rejects(action, label) {
 }
 
 check(
-  EN_E07_FENBELL_SHEPHERD_GATE.status === 'candidate'
-    && EN_E07_FENBELL_SHEPHERD_GATE.approvedOn === null
-    && EN_E07_FENBELL_SHEPHERD_GATE.publishedImplementation === null,
-  'Fenbell Shepherd must remain an unapproved private candidate',
+  EN_E07_FENBELL_SHEPHERD_GATE.status === 'approved'
+    && EN_E07_FENBELL_SHEPHERD_GATE.approvedOn === '2026-08-11'
+    && EN_E07_FENBELL_SHEPHERD_GATE.approvedImplementation === '04f113d6e2b95f290925eba040659b441e3cfcd1'
+    && EN_E07_FENBELL_SHEPHERD_GATE.publishedImplementation === null
+    && EN_E07_FENBELL_SHEPHERD_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Fenbell Shepherd approved-local state drifted',
+);
+check(
+  EN_E07_FENBELL_SHEPHERD_GATE.approvalEvidence.includes('three exact frozen PNG review boards were opened together in responsive Aseprite')
+    && EN_E07_FENBELL_SHEPHERD_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E07_FENBELL_SHEPHERD_GATE.approvalEvidence.includes('0a8000e33705967089ae66c98486eb701da88bfacd9f5adc38a47bbb62f5a46b')
+    && EN_E07_FENBELL_SHEPHERD_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'Fenbell Shepherd approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_FENBELL_SHEPHERD_GATE.baseCheckpoint === 'd734846067b3bf9dd05cadffef440ead1f6c6d3a'
@@ -185,10 +194,11 @@ check(
   'Fenbell Shepherd exclusions drifted',
 );
 check(
-  EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('Stop at the exact frozen Fenbell Shepherd candidate review')
-    && EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('Do not commit')
-    && EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('designer explicitly approves'),
-  'Fenbell Shepherd approval stop gate drifted',
+  EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('visually approved')
+    && EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('bounded approval-record')
+    && EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('Stop after a clean published reconciliation')
+    && EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('without another explicit authorization'),
+  'Fenbell Shepherd approved-local publication stop gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_FENBELL_SHEPHERD_GATE)
@@ -202,7 +212,7 @@ check(
     && EN_E07_WILL_O_WISP_FENBELL_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E07_WILL_O_WISP_FENBELL_CONTRACT_CARD.activeSpecialist.id === 'fenbell-shepherd'
     && EN_E07_WILL_O_WISP_FENBELL_CONTRACT_CARD.activeSpecialist.role === 'specialist'
-    && EN_E07_WILL_O_WISP_FENBELL_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-candidate'
+    && EN_E07_WILL_O_WISP_FENBELL_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
     && JSON.stringify(EN_E07_WILL_O_WISP_FENBELL_CONTRACT_CARD.deferredRoles) === JSON.stringify([
       { role: 'elite', status: 'planned-unnamed' },
     ]),

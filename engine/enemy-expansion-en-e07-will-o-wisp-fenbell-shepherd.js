@@ -41,7 +41,7 @@ export const EN_E07_WILL_O_WISP_FENBELL_CONTRACT_CARD = deepFreeze({
     id: 'fenbell-shepherd',
     name: 'Fenbell Shepherd',
     role: 'specialist',
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [
     { role: 'elite', status: 'planned-unnamed' },
@@ -55,7 +55,7 @@ export const EN_E07_FENBELL_SHEPHERD_CONTRACT = deepFreeze({
   family: 'will-o-wisp',
   variant: 'fenbell-shepherd',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'hooked-wick-bell-cage-single-eye-three-tine-hovering-wisp-v1',
   silhouette: 'A medium hovering ritual fen bell with one connected hooked wick, a tall bell-shaped ribbed cage, one visible guiding core eye, asymmetric connected side shutters, an elongated inner flame, a broad lower lip, and three connected lower flame tines. It must stay related to Lantern Mote without becoming its enlarged copy, a public Ghost robe, Flame Elemental blob, hanging humanoid, detached wisp flock, or sound-effect icon.',
   identity: 'The approved marsh-teal shell, mint spectral flame, pale living core, violet cage, and warm single eye expand into a taller specialist silhouette with a shepherd-hook wick, opposed shutters, bell lip, and triple lower flame. The whole actor remains one opaque connected component while aura, glow, satellite wisps, sound rings, smoke, trails, floor pools, projectiles, impacts, and illumination stay external.',
@@ -94,13 +94,18 @@ export const EN_E07_FENBELL_SHEPHERD_DATA = deepFreeze({
 
 export const EN_E07_FENBELL_SHEPHERD_GATE = deepFreeze({
   id: 'en-e07-will-o-wisp-fenbell-shepherd-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: 'd734846067b3bf9dd05cadffef440ead1f6c6d3a',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact repaired Lantern Mote was visually approved, committed, pushed, and reconciled at clean published checkpoint d734846067b3bf9dd05cadffef440ead1f6c6d3a, the designer replied: approved lets do next. The frozen Will-o-Wisp role order is common, specialist, elite, so the one-complete-sprite cadence authorizes only one private specialist Fenbell Shepherd 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Lantern Mote plus public Spectral Ghost and Flame Elemental comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'After the exact repaired labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Lantern Mote plus public Spectral Ghost and Flame Elemental comparison, and paired GIF evidence were presented, and the three exact frozen PNG review boards were opened together in responsive Aseprite, the designer replied: approved. Approval applies only to candidate digest 0a8000e33705967089ae66c98486eb701da88bfacd9f5adc38a47bbb62f5a46b; Will-o-Wisp registration, fixtures, effects, the elite or later families, release, and EN-E08 remain separate gates.',
+  approvedImplementation: '04f113d6e2b95f290925eba040659b441e3cfcd1',
+  publicationAuthorizedOn: '2026-08-11',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
+  publishedApprovalRecord: null,
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_LANTERN_MOTE_GATE.id,
     artifactSha256: EN_E07_LANTERN_MOTE_GATE.artifactSha256,
@@ -175,7 +180,7 @@ export const EN_E07_FENBELL_SHEPHERD_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Stop at the exact frozen Fenbell Shepherd candidate review. Do not commit, publish, register Will-o-Wisp, generate fixtures, add effects, release, start the elite or another family, or advance EN-E08 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact repaired Fenbell Shepherd candidate is visually approved and its implementation is committed at 04f113d6e2b95f290925eba040659b441e3cfcd1. Its bounded approval-record, documentation reconciliation, and branch push are authorized. Stop after a clean published reconciliation. Do not register Will-o-Wisp, generate fixtures, add effects, release, start the elite or another family, or advance EN-E08 without another explicit authorization.',
 });
 
 export const EN_E07_FENBELL_SHEPHERD_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -422,7 +427,7 @@ const FENBELL_SHEPHERD_VARIANT = deepFreeze({
   name: 'Fenbell Shepherd',
   role: EN_E07_FENBELL_SHEPHERD_CONTRACT.role,
   status: EN_E07_FENBELL_SHEPHERD_CONTRACT.state,
-  brief: 'A complete specialist Will-o-Wisp candidate with one connected hooked wick, tall ribbed bell cage, single guiding eye, asymmetric connected shutters, elongated core, broad lip, three lower flame tines, and true hover clearance; aura, detached wisps, sound rings, smoke, trails, pools, projectiles, illumination, and impacts remain external.',
+  brief: 'An approved complete specialist Will-o-Wisp with one connected hooked wick, tall ribbed bell cage, single guiding eye, asymmetric connected shutters, elongated core, broad lip, three lower flame tines, and true hover clearance; aura, detached wisps, sound rings, smoke, trails, pools, projectiles, illumination, and impacts remain external.',
   rendererData: EN_E07_FENBELL_SHEPHERD_DATA,
 });
 
@@ -442,7 +447,7 @@ export const EN_E07_FENBELL_SHEPHERD_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'fenbell-shepherd',
     scale: 8,
-    notes: 'Awaiting visual approval for one connected hovering Fenbell Shepherd against approved Lantern Mote plus public Spectral Ghost and Flame Elemental. Keep registration, fixtures, effects, elite Will-o-Wisp, Changeling, Kelpie, and later Wave 2 work separate.',
+    notes: 'Visually approved as one connected hovering Fenbell Shepherd against approved Lantern Mote plus public Spectral Ghost and Flame Elemental. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, effects, elite Will-o-Wisp, Changeling, Kelpie, and later Wave 2 work separate until another explicit authorization.',
   },
 });
 
