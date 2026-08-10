@@ -15,21 +15,18 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Rebuilt Rivercrown Muse Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Rivercrown Muse Approved And Published
 
-Start here in a new task. The current branch intentionally has an uncommitted,
-private rebuilt Rivercrown Muse candidate. Do not discard, commit, push,
-register, or publish it without receiving explicit approval for the exact
-review packet below.
+Start here in a new task. This is the current clean stopping checkpoint; the
+exact rebuilt private candidate was visually approved, committed, and pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e06-nymph-rivercrown-muse`, based exactly on clean pushed
   Mist Weaver handoff `983b76ad14dcaf7c3151196763e481237fcbedb1`.
-- Live Git state: `HEAD` remains that base commit. The working tree is
-  intentionally dirty with the Rivercrown implementation, its focused checker,
-  deterministic review/GIF tools, package scripts, the Nymph role-state change,
-  and the narrow predecessor-check updates needed to recognize one private
-  elite candidate. Nothing in this lane is committed or pushed.
+- Publication chain: frozen implementation
+  `39bd0658d53acbfe7aa4484e14f6518551720142` and approval record
+  `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed on the
+  tracked branch. Review artifacts remain ignored evidence.
 - Authorization: after Mist Weaver was approved, committed, pushed, and
   reconciled, the designer said `lets do nexr` on 2026-08-10. Under the EN-E06
   Nymph role order and one-complete-sprite cadence, this opens only elite
@@ -73,8 +70,8 @@ review packet below.
   checker also confirms all fifteen approved EN-E06 sources remain exact, the
   public catalog remains 80/259, and committed fixtures are unchanged.
 - Broader validation completed: all sixteen EN-E06 focused gates and the frozen
-  1,200-frame approved-integration gate pass; `check:fast` passes in 56.9s and
-  full `check` in 108.6s with all 232 fixtures valid and untouched.
+  1,200-frame approved-integration gate pass. Post-approval `check:fast` passes
+  in 62.2s and full `check` in 111.7s with all 232 fixtures valid and untouched.
 - Frozen candidate digest:
   `4917d42fd0b480e4c2635ba4c96725e6b68afec1075dacb8acee2f70dc886bcd`.
 - Review artifacts: raw / Complete B + Form `1428x760` boards
@@ -88,21 +85,21 @@ review packet below.
   Regeneration reproduces all five hashes exactly. Review artifacts remain
   ignored evidence under
   `enemy-expansion-review/en-e06-nymph-rivercrown-muse/`.
-- Review state: the three exact regenerated PNGs were inspected at original
-  resolution in the Codex viewer and opened together in Aseprite. The rebuilt
-  profile is taller and lighter beside Spring Dancer and Mist Weaver; the
-  diadem reads vertically, the face and feet remain visible, the diagonal flow
-  survives all directions, and only A3/C3 opens the invocation span. The
-  designer has not approved this rebuilt packet yet.
-- Required next action: preserve the dirty candidate, present the three exact
-  PNGs and both GIFs, and stop for explicit visual approval. Only after approval
-  may this exact frozen lane be committed and pushed. Approval would still not
-  authorize Nymph registration, fixtures, effects, release, or EN-E07.
+- Visual approval: the three exact regenerated PNGs were inspected at original
+  resolution in the Codex viewer and opened together in Aseprite; both GIFs
+  were presented. The rebuilt profile is taller and lighter beside Spring
+  Dancer and Mist Weaver; the diadem reads vertically, the face and feet remain
+  visible, the diagonal flow survives all directions, and only A3/C3 opens the
+  invocation span. The designer replied `approived` on 2026-08-10. Approval
+  applies only to the frozen digest and hashes above.
+- Required next action: stop at this clean published checkpoint. Do not
+  register Nymph, generate fixtures, add effects, release, or open EN-E07
+  without another explicit authorization.
 
 ## Approved Preceding Checkpoint - Mist Weaver Published
 
-This records the clean published predecessor for the active Rivercrown Muse
-candidate. The exact private Mist Weaver candidate was visually approved,
+This records the clean published predecessor for the approved Rivercrown Muse
+checkpoint. The exact private Mist Weaver candidate was visually approved,
 committed, and pushed.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.

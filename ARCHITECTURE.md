@@ -903,9 +903,12 @@ registry. Its vertical three-point diadem, long asymmetric hair, open shoulders,
 diagonal sash, flared gown, and processional invocation poses pass 80/80 pixel
 and alpha distinctions from Elf Mage, Spring Dancer, and Mist Weaver at digest
 `4917d42fd0b480e4c2635ba4c96725e6b68afec1075dacb8acee2f70dc886bcd`.
-All 80 frames are connected, bounded, grounded, and hard-alpha; the five exact
-artifacts are frozen at the preapproval gate. It is not committed or public.
-Nymph registration, fixtures, effects, release, and Wave 2 stay closed.
+All 80 frames are connected, bounded, grounded, and hard-alpha. The five exact
+artifacts were opened together in Aseprite and visually approved on 2026-08-10.
+Frozen implementation `39bd0658d53acbfe7aa4484e14f6518551720142` and approval
+record `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed on
+the tracked branch. It remains private. Nymph registration, fixtures, effects,
+release, and Wave 2 stay closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

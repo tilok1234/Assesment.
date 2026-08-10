@@ -13,18 +13,19 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current art gate (2026-08-10): after Mist Weaver was approved, committed,
+- Current stopping checkpoint (2026-08-10): after Mist Weaver was approved, committed,
   pushed, and reconciled, the designer's `lets do nexr` opened only the third
   Nymph role, one complete elite Rivercrown Muse on
-  `codex/en-e06-nymph-rivercrown-muse`. Its frozen private 80-frame candidate
+  `codex/en-e06-nymph-rivercrown-muse`. Its frozen private 80-frame implementation
   passes connected, one-cell-bounded, grounded, hard-alpha, alias, mirror, and
   80/80 pixel plus alpha-silhouette distinction gates against public Elf Mage,
   approved Spring Dancer, and approved Mist Weaver at digest
   `4917d42fd0b480e4c2635ba4c96725e6b68afec1075dacb8acee2f70dc886bcd`.
   The exact raw, Complete B + Form, four-way comparison, and paired GIF packet
-  is generated and awaiting explicit visual approval. No Rivercrown Muse commit
-  or publication is authorized. EN-E07, fixtures, effects, registration
-  changes, and release remain closed.
+  was opened together in Aseprite and visually approved on 2026-08-10. Frozen
+  implementation `39bd0658d53acbfe7aa4484e14f6518551720142` and approval record
+  `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed.
+  EN-E07, fixtures, effects, registration changes, and release remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -2864,7 +2865,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `Rivercrown Muse complete 80-frame candidate frozen; visual approval gate active`
+- Status: `Rivercrown Muse approved and privately published; no later gate active`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3509,9 +3510,9 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   tracked branch. Stop before Rivercrown Muse, registration, fixtures, effects,
   release, or EN-E07 without another explicit authorization.
 
-#### Nymph Rivercrown Muse complete suite awaiting visual approval
+#### Nymph Rivercrown Muse complete suite approved and published
 
-- Gate ID: `en-e06-nymph-rivercrown-muse-full-v1`; status: `candidate` on
+- Gate ID: `en-e06-nymph-rivercrown-muse-full-v1`; status: `approved` on
   `codex/en-e06-nymph-rivercrown-muse`, based exactly on clean Mist Weaver
   handoff `983b76ad14dcaf7c3151196763e481237fcbedb1`.
 - Authorization: after Mist Weaver publication, the designer said
@@ -3539,11 +3540,16 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   raw GIF `d72e5da8b6e0c96b573d81d75f50f2cd0e652286d9f6f05113bfe89e97d932bd`;
   Complete B + Form GIF
   `9baf3c58541fbab1a3270e40145e401ac10a5c5d8c2e91ec96c2bc20f61fb496`.
-- Visual evidence: the three exact frozen PNG boards are open together in
-  Aseprite for direct review; both synchronized GIFs are presented alongside
-  them. The two earlier rejected packets are superseded and are not approval
+- Visual approval: the three exact frozen PNG boards were opened together in
+  Aseprite and both synchronized GIFs were presented. The designer replied
+  `approived` on 2026-08-10; approval applies only to the frozen digest above.
+  The two earlier rejected packets remain superseded and are not approval
   evidence.
-- Publication: none. Stop for exact visual approval before any commit or push.
+- Publication: frozen implementation
+  `39bd0658d53acbfe7aa4484e14f6518551720142` and approval record
+  `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed on the
+  tracked branch. Stop before Nymph registration, fixtures, effects, release,
+  or EN-E07 without another explicit authorization.
 
 ### EN-E07 - Shapeshifters and apparitions
 
