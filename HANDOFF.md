@@ -23,12 +23,13 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Grand Pretender Frozen; Approval Pending
+## Immediate Continuation Checkpoint - Grand Pretender Approved; Publication Pending
 
-Start here in a new task. The sole active art gate is one private elite
-Doppelganger Grand Pretender candidate. It is repaired, hash-frozen,
-deterministic, fully validated, and visually inspected, but it is not yet
-designer-approved, committed, pushed, registered, or public.
+Start here in a new task. The exact private elite Doppelganger Grand Pretender
+is repaired, hash-frozen, deterministic, fully validated, visually approved,
+and committed locally. Its bounded approval record and documentation
+reconciliation are authorized; the branch has not yet been pushed and the
+module remains unregistered and non-public.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean
@@ -42,6 +43,15 @@ designer-approved, committed, pushed, registered, or public.
 - Authorization: after Falseface Adept was visually approved, committed,
   pushed, and reconciled, the designer replied `lets do nezxt` on 2026-08-10.
   The frozen common-specialist-elite order opens only this one private elite.
+- Approval/publication authorization: after the exact repaired boards and
+  paired GIFs were presented and the three exact PNGs were opened together in
+  responsive Aseprite, the designer replied `Approved lets do next` on
+  2026-08-10. Approval applies only to digest
+  `03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`.
+  Implementation `0a8d5094d5e5de575f1966db30fc01d093a866c3` and approval record
+  `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are committed locally; bounded
+  documentation reconciliation and branch publication are authorized by the
+  standing approved-work permission.
 - Scope: one authored default-form 80-frame elite Doppelganger across Idle
   F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases,
   and exact Death-to-Hurt aliases H1,H2,H2,H2 in all four directions. Runtime
@@ -88,18 +98,20 @@ designer-approved, committed, pushed, registered, or public.
 - Visual review completed: the comparison, both full-suite boards, and all
   eight raw/effects-enabled phase boards were inspected at original detail.
   The exact raw, Complete B + Form, and comparison PNGs were then opened
-  together in a responsive Aseprite 1.3.17.2 session. This is inspection
-  evidence only; designer approval remains pending.
+  together in a responsive Aseprite 1.3.17.2 session, and the designer
+  explicitly approved this exact packet.
 - Broad validation passes: the 23-command protected
   predecessor/candidate/integration matrix completed in 15.0s;
   `npm.cmd run check:fast` passed in 56.4s; and full `npm.cmd run check` passed
-  in 107.2s. The integrated frame digest remains
+  against the approved-local metadata in 106.3s. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: present this exact five-artifact packet and wait for an
-  explicit designer approval or rejection. Do not commit, push, publish,
-  register Doppelganger, generate fixtures, implement runtime copying, add
-  effects, start another family, release, or advance EN-E08 before approval.
+- Required next action: commit this bounded documentation reconciliation, push
+  the approved branch, verify the remote ref, and record the clean publication
+  reconciliation. Only after that checkpoint may the same approval response
+  open one private common Will-o-Wisp candidate. Do not register
+  Doppelganger, generate fixtures, implement runtime copying, add effects,
+  start another Will-o-Wisp role or later family, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Falseface Adept Published
 

@@ -1058,11 +1058,15 @@ approved Pale Echo, approved Falseface Adept, and public Cultist Zealot, and
 keeps both approved Doppelgangers exact. The 217-273-pixel packet reproduces
 all five hashes byte-for-byte twice. The comparison, both full-suite boards,
 and all eight raw/effects-enabled phase boards were inspected, and the three
-exact frozen PNGs were opened together in responsive Aseprite. The protected
-23-command matrix, fast suite, and full suite pass with the approved
-integration digest and all 232 fixtures exact. This remains inspection-only
-evidence: the module is private, unregistered, fixture-free, uncommitted, and
-unpushed pending explicit designer approval of the exact packet.
+exact frozen PNGs were opened together in responsive Aseprite. The designer
+replied `Approved lets do next`; implementation
+`0a8d5094d5e5de575f1966db30fc01d093a866c3` and approval record
+`0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are committed locally, and bounded
+documentation reconciliation plus branch publication are authorized. The
+protected 23-command matrix, fast suite, and full suite pass with the approved
+integration digest and all 232 fixtures exact. The module remains private,
+unregistered, and fixture-free. Only after clean publication may the same
+response open one private common Will-o-Wisp candidate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

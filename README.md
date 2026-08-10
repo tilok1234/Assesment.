@@ -1364,10 +1364,14 @@ in 15.0s, the fast suite in 56.4s, and the full suite in 107.2s; the approved
 integration digest and all 232 fixtures remain exact. The comparison, both
 full-suite boards, and all eight raw/effects-enabled phase boards were
 inspected, and the three exact frozen PNGs were opened together in responsive
-Aseprite. Grand Pretender remains private, uncommitted, and unpushed pending
-explicit designer approval of this exact packet. Registration, fixtures,
-runtime copying, effects, Will-o-Wisp and later families, release, and EN-E08
-remain closed.
+Aseprite. The designer replied `Approved lets do next`; implementation
+`0a8d5094d5e5de575f1966db30fc01d093a866c3` and approval record
+`0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are committed locally, with
+bounded documentation reconciliation and branch publication authorized. Grand
+Pretender remains private, unregistered, and fixture-free. After clean
+publication, the same response opens only one private common Will-o-Wisp
+candidate. Registration, fixtures, runtime copying, effects, later
+Will-o-Wisp roles and families, release, and EN-E08 remain closed.
 
 ## Approved enemy backlog integration published
 

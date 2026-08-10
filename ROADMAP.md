@@ -201,10 +201,14 @@ and Cultist Zealot. The exact five-artifact packet is hash-frozen and
 reproduces twice. All raw and effects-enabled phase boards were inspected and
 the three exact PNGs were opened together in responsive Aseprite. The
 23-command matrix, fast suite, and full suite pass with the approved integration
-digest and 232 fixtures unchanged. This is not designer approval: Grand
-Pretender remains private, uncommitted, and unpushed pending an explicit reply
-on the exact packet. Registration, fixtures, runtime copying, effects, later
-EN-E07 families, release, and EN-E08 stay closed.
+digest and 232 fixtures unchanged. The designer replied `Approved lets do
+next`; implementation `0a8d5094d5e5de575f1966db30fc01d093a866c3` and
+approval record `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are committed
+locally, with bounded documentation reconciliation and branch publication
+authorized. Grand Pretender remains private, unregistered, and fixture-free.
+After clean publication, the same response opens only one private common
+Will-o-Wisp candidate. Registration, fixtures, runtime copying, effects, later
+EN-E07 roles/families, release, and EN-E08 stay closed.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

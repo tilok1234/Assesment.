@@ -382,9 +382,13 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   eight raw/effects-enabled phase boards were inspected; the three exact PNGs
   are open together in responsive Aseprite. The 23-command matrix passed in
   15.0s, `check:fast` in 56.4s, and full `check` in 107.2s with the integration
-  digest and all 232 fixtures exact. Grand Pretender remains private,
-  uncommitted, and unpushed pending explicit designer approval of this exact
-  packet.
+  digest and all 232 fixtures exact. The designer replied `Approved lets do
+  next`; implementation `0a8d5094d5e5de575f1966db30fc01d093a866c3`
+  and approval record `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are
+  committed locally, with bounded documentation reconciliation and branch
+  publication authorized. Grand Pretender remains private, unregistered, and
+  fixture-free. After clean publication, the same response opens only one
+  private common Will-o-Wisp candidate.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

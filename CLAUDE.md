@@ -110,8 +110,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 - Current isolated art approval checkpoint:
   `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean published
   Falseface Adept reconciliation `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`,
-  contains one private elite Doppelganger Grand Pretender candidate. Its
-  frozen 80-frame digest is
+  contains one private elite Doppelganger Grand Pretender. Its approved frozen
+  80-frame digest is
   `03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`.
   All frames are connected, one-cell-bounded, grounded, hard-alpha, and
   pixel/alpha distinct from approved Pale Echo, approved Falseface Adept, and
@@ -126,11 +126,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `check:fast` in 56.4s, and full `check` in 107.2s with the approved
   1,200-frame integration digest and all 232 fixtures exact. All raw and
   effects-enabled phase boards were inspected, and the three exact frozen
-  PNGs were opened together in responsive Aseprite. This is not designer
-  approval: keep the candidate uncommitted and unpushed until the exact packet
-  is explicitly approved. Do not register Doppelganger, generate fixtures,
-  implement runtime copying, add effects, start another family, release, or
-  advance EN-E08.
+  PNGs were opened together in responsive Aseprite. The designer replied
+  `Approved lets do next`; implementation
+  `0a8d5094d5e5de575f1966db30fc01d093a866c3` and approval record
+  `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are committed locally, and the
+  bounded documentation reconciliation and branch push are authorized. After
+  a clean published reconciliation, that same response opens only one private
+  common Will-o-Wisp candidate. Do not register Doppelganger, generate
+  fixtures, implement runtime copying, add effects, start another
+  Will-o-Wisp role or later family, release, or advance EN-E08.
 - Approved preceding art checkpoint (Falseface Adept):
   `codex/en-e07-doppelganger-falseface-adept`, based exactly on clean published
   Pale Echo reconciliation `e18a51207868cbcf5b01f55e1c04a50cac43bdcc`,
