@@ -142,10 +142,19 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_PALE_ECHO_GATE.status === 'candidate'
-    && EN_E07_PALE_ECHO_GATE.approvedOn === null
-    && EN_E07_PALE_ECHO_GATE.publishedImplementation === null,
-  'Pale Echo must remain an unapproved candidate',
+  EN_E07_PALE_ECHO_GATE.status === 'approved'
+    && EN_E07_PALE_ECHO_GATE.approvedOn === '2026-08-10'
+    && EN_E07_PALE_ECHO_GATE.approvedImplementation === '0628135b84725836c552e13db797540a965854cb'
+    && EN_E07_PALE_ECHO_GATE.publishedImplementation === null
+    && EN_E07_PALE_ECHO_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Pale Echo approved-local state drifted',
+);
+check(
+  EN_E07_PALE_ECHO_GATE.approvalEvidence.includes('three exact repaired PNG review boards were opened together in Aseprite')
+    && EN_E07_PALE_ECHO_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E07_PALE_ECHO_GATE.approvalEvidence.includes('c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596')
+    && EN_E07_PALE_ECHO_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_PALE_ECHO_GATE.baseCheckpoint === '6ff54c3a926436083675ec8f7e2d0230cc073ac5'
@@ -177,15 +186,15 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_PALE_ECHO_GATE.nextGate.includes('Stop at the exact frozen Pale Echo candidate review')
-    && EN_E07_PALE_ECHO_GATE.nextGate.includes('Do not commit')
-    && EN_E07_PALE_ECHO_GATE.nextGate.includes('until the designer explicitly approves'),
-  'candidate stop gate drifted',
+  EN_E07_PALE_ECHO_GATE.nextGate.includes('visually approved')
+    && EN_E07_PALE_ECHO_GATE.nextGate.includes('bounded approval-record')
+    && EN_E07_PALE_ECHO_GATE.nextGate.includes('only one private specialist Doppelganger candidate'),
+  'approved-local publication and next-role gate drifted',
 );
 check(
   JSON.stringify(EN_E07_DOPPELGANGER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeVariant.id === 'pale-echo'
-    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E07_DOPPELGANGER_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.length === 2
     && EN_E07_DOPPELGANGER_CONTRACT_CARD.deferredRoles.every(({ status }) => status === 'planned-unnamed'),
   'Doppelganger role order or one-active-common boundary drifted',

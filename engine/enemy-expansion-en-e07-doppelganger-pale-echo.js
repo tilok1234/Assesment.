@@ -37,7 +37,7 @@ export const EN_E07_DOPPELGANGER_CONTRACT_CARD = deepFreeze({
     id: 'pale-echo',
     name: 'Pale Echo',
     role: 'common',
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [
     { role: 'specialist', status: 'planned-unnamed' },
@@ -52,7 +52,7 @@ export const EN_E07_PALE_ECHO_CONTRACT = deepFreeze({
   family: 'doppelganger',
   variant: 'pale-echo',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'asymmetric-borrowed-fringe-offset-face-split-tunic-mimic-hand-grounded-humanoid-v1',
   silhouette: 'A slim grounded authored humanoid with an uneven borrowed fringe, mismatched shoulder heights, offset paired eyes, a split short tunic, one ordinary hand, one connected long-finger mimic hand, separated legs, and broad boots. It must not collapse into a Bandit, Cultist robe, Dark Elf, Living Shadow, or copied actor.',
   identity: 'Pale gray-rose skin, charcoal-violet hair, slate cloth, faded wine asymmetry, a subtly offset face, reversed torso panels, and one lengthening connected hand establish a self-contained default Doppelganger form without promising runtime copying in the assembler.',
@@ -91,13 +91,18 @@ export const EN_E07_PALE_ECHO_DATA = deepFreeze({
 
 export const EN_E07_PALE_ECHO_GATE = deepFreeze({
   id: 'en-e07-doppelganger-pale-echo-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: '6ff54c3a926436083675ec8f7e2d0230cc073ac5',
   authorizedOn: '2026-08-10',
   authorizationEvidence: 'After the exact Hollowcrown Regent was visually approved, committed, pushed, and reconciled at a clean published checkpoint, the designer replied: approved lets do next. EN-E07 lists Living Shadow then Doppelganger as priority-first, so the one-complete-sprite cadence authorizes only one private common Doppelganger Pale Echo 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Bandit Thug, Cultist Acolyte, and Dark Elf comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
+  approvedOn: '2026-08-10',
+  approvalEvidence: 'After the exact repaired labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Bandit Thug, Cultist Acolyte, and Dark Elf comparison, and paired GIF evidence were presented, and the three exact repaired PNG review boards were opened together in Aseprite, the designer replied: approved lets do next. Approval applies only to candidate digest c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596; Doppelganger registration, fixtures, runtime copying, effects, later roles and families, release, and EN-E08 remain separate gates.',
+  approvedImplementation: '0628135b84725836c552e13db797540a965854cb',
+  publicationAuthorizedOn: '2026-08-10',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
+  publishedApprovalRecord: null,
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_HOLLOWCROWN_REGENT_GATE.id,
     artifactSha256: EN_E07_HOLLOWCROWN_REGENT_GATE.artifactSha256,
@@ -169,7 +174,7 @@ export const EN_E07_PALE_ECHO_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Stop at the exact frozen Pale Echo candidate review. Do not commit, publish, register Doppelganger, generate fixtures, add runtime copying or effects, release, start the specialist or another EN-E07 family, or advance EN-E08 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact repaired Pale Echo candidate is visually approved and its implementation is committed at 0628135b84725836c552e13db797540a965854cb. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private specialist Doppelganger candidate. Do not register Doppelganger, generate fixtures, add runtime copying or effects, release, start the elite or another family beyond that candidate, or advance EN-E08.',
 });
 
 export const EN_E07_PALE_ECHO_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -458,7 +463,7 @@ const PALE_ECHO_VARIANT = deepFreeze({
   name: 'Pale Echo',
   role: EN_E07_PALE_ECHO_CONTRACT.role,
   status: EN_E07_PALE_ECHO_CONTRACT.state,
-  brief: 'A complete common Doppelganger candidate with an authored uneven fringe, offset face, mismatched shoulders, split slate-wine tunic, one connected lengthening mimic hand, separated legs, and planted boots; copied actors, doubles, reflections, loose morph pieces, glow, and particles remain external.',
+  brief: 'An approved complete common Doppelganger with an authored uneven fringe, offset face, mismatched shoulders, split slate-wine tunic, one connected lengthening mimic hand, separated legs, and planted boots; copied actors, doubles, reflections, loose morph pieces, glow, and particles remain external.',
   rendererData: EN_E07_PALE_ECHO_DATA,
 });
 
@@ -478,7 +483,7 @@ export const EN_E07_PALE_ECHO_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'pale-echo',
     scale: 8,
-    notes: 'Awaiting visual approval for one authored grounded Pale Echo against public Bandit Thug, Cultist Acolyte, and Dark Elf. Keep registration, fixtures, runtime copying, effects, later Doppelganger roles, Will-o-Wisp, and later Wave 2 work separate.',
+    notes: 'Visually approved as one authored grounded Pale Echo against public Bandit Thug, Cultist Acolyte, and Dark Elf. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, runtime copying, effects, later Doppelganger roles, Will-o-Wisp, and later Wave 2 work separate until the clean published reconciliation.',
   },
 });
 
