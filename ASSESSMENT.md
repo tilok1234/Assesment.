@@ -384,11 +384,11 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   15.0s, `check:fast` in 56.4s, and full `check` in 107.2s with the integration
   digest and all 232 fixtures exact. The designer replied `Approved lets do
   next`; implementation `0a8d5094d5e5de575f1966db30fc01d093a866c3`
-  and approval record `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are
-  committed locally, with bounded documentation reconciliation and branch
-  publication authorized. Grand Pretender remains private, unregistered, and
-  fixture-free. After clean publication, the same response opens only one
-  private common Will-o-Wisp candidate.
+  and approval record `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` plus initial
+  handoff `c551799f585df2643f83a605279cda06cc629e45` are published and remote
+  verified. Grand Pretender remains private, unregistered, and fixture-free.
+  The same response opens only one private common Will-o-Wisp candidate from
+  the clean publication reconciliation.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

@@ -154,9 +154,11 @@ check(
   EN_E07_GRAND_PRETENDER_GATE.status === 'approved'
     && EN_E07_GRAND_PRETENDER_GATE.approvedOn === '2026-08-10'
     && EN_E07_GRAND_PRETENDER_GATE.approvedImplementation === '0a8d5094d5e5de575f1966db30fc01d093a866c3'
-    && EN_E07_GRAND_PRETENDER_GATE.publishedImplementation === null
-    && EN_E07_GRAND_PRETENDER_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Grand Pretender approved-local state drifted',
+    && EN_E07_GRAND_PRETENDER_GATE.publishedImplementation === '0a8d5094d5e5de575f1966db30fc01d093a866c3'
+    && EN_E07_GRAND_PRETENDER_GATE.publishedApprovalRecord === '0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3'
+    && EN_E07_GRAND_PRETENDER_GATE.initialPublishedHandoff === 'c551799f585df2643f83a605279cda06cc629e45'
+    && EN_E07_GRAND_PRETENDER_GATE.publicationState === 'published',
+  'Grand Pretender published state drifted',
 );
 check(
   EN_E07_GRAND_PRETENDER_GATE.approvalEvidence.includes('three exact repaired PNG review boards were opened together in responsive Aseprite')
@@ -197,10 +199,10 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('visually approved')
-    && EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('bounded approval-record')
+  EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('visually approved and published')
+    && EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('remote verified')
     && EN_E07_GRAND_PRETENDER_GATE.nextGate.includes('only one private common Will-o-Wisp candidate'),
-  'approved-local publication and next-family gate drifted',
+  'published next-family gate drifted',
 );
 check(
   JSON.stringify(EN_E07_DOPPELGANGER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])

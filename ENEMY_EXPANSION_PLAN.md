@@ -18,7 +18,7 @@
   `03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`
   from clean published Falseface reconciliation
   `b16b7d2c8cd91ffbf31e0c9ac55d392c53a4b64c`. The repaired 217-273-pixel
-  candidate passes 80/80 connected, one-cell-bounded, grounded, hard-alpha,
+  suite passes 80/80 connected, one-cell-bounded, grounded, hard-alpha,
   alias, mirror, and pixel/alpha distinctions from approved Pale Echo,
   approved Falseface Adept, and public Cultist Zealot. Its first packet was
   rejected before freeze because the face-framing hands erased the visage and
@@ -29,11 +29,12 @@
   matrix, fast suite, and full suite pass with the integration digest and all
   232 fixtures exact. The designer replied `Approved lets do next`;
   implementation `0a8d5094d5e5de575f1966db30fc01d093a866c3` and approval
-  record `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are committed locally,
-  with bounded reconciliation and branch publication authorized. Grand
-  Pretender remains private, unregistered, and fixture-free. Only after clean
-  publication may the same response open one private common Will-o-Wisp
-  candidate. Doppelganger registration, fixtures, runtime copying, effects,
+  record `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` plus initial handoff
+  `c551799f585df2643f83a605279cda06cc629e45` are published and remote
+  verified. Grand Pretender remains private, unregistered, and fixture-free.
+  The same response opens one private common Will-o-Wisp candidate from this
+  clean publication reconciliation. Doppelganger registration, fixtures,
+  runtime copying, effects,
   later roles/families, release, and EN-E08 remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
@@ -3563,7 +3564,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common and Falseface Adept specialist Doppelgangers approved and published; Grand Pretender elite approved locally with bounded publication pending`
+- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common, Falseface Adept specialist, and Grand Pretender elite Doppelgangers approved and published; one private common Will-o-Wisp gate open`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3846,7 +3847,7 @@ assembler.
   fixtures, runtime copying, effects, later EN-E07 families, release, and
   EN-E08 remained closed.
 
-#### Doppelganger Grand Pretender complete suite approved - publication pending
+#### Doppelganger Grand Pretender complete suite approved and published
 
 - Gate ID: `en-e07-doppelganger-grand-pretender-full-v1`; status: `approved`
   on `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean
@@ -3894,18 +3895,17 @@ assembler.
   The designer replied `Approved lets do next` on 2026-08-10. Approval applies
   only to the frozen digest and evidence hashes above. Implementation
   `0a8d5094d5e5de575f1966db30fc01d093a866c3` and approval record
-  `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are committed locally; bounded
-  documentation reconciliation and branch publication are authorized.
+  `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` plus initial handoff
+  `c551799f585df2643f83a605279cda06cc629e45` are published and remote
+  verified.
 - Broad validation: the 23-command protected predecessor/candidate/integration
   matrix passed in 15.0s, `npm.cmd run check:fast` passed in 56.4s, and full
   `npm.cmd run check` passed against the approved-local metadata in 106.3s. The approved 1,200-frame integration
   digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: commit the bounded documentation reconciliation, push
-  the approved branch, verify the remote ref, and record the clean publication
-  reconciliation. Only then may the same approval response open one private
-  common Will-o-Wisp candidate. Do not register Doppelganger, generate
+- Required next action: open only one private common Will-o-Wisp candidate from
+  this clean publication reconciliation. Do not register Doppelganger, generate
   fixtures, implement runtime copying, add effects, start another Will-o-Wisp
   role or later family, release, or advance EN-E08.
 

@@ -106,9 +106,10 @@ export const EN_E07_GRAND_PRETENDER_GATE = deepFreeze({
   approvedImplementation: '0a8d5094d5e5de575f1966db30fc01d093a866c3',
   publicationAuthorizedOn: '2026-08-10',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '0a8d5094d5e5de575f1966db30fc01d093a866c3',
+  publishedApprovalRecord: '0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3',
+  initialPublishedHandoff: 'c551799f585df2643f83a605279cda06cc629e45',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_FALSEFACE_ADEPT_GATE.id,
     artifactSha256: EN_E07_FALSEFACE_ADEPT_GATE.artifactSha256,
@@ -183,7 +184,7 @@ export const EN_E07_GRAND_PRETENDER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact repaired Grand Pretender candidate is visually approved and its implementation is committed at 0a8d5094d5e5de575f1966db30fc01d093a866c3. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same Approved lets do next response opens only one private common Will-o-Wisp candidate. Do not register Doppelganger, generate fixtures, add runtime copying or effects, release, start another Will-o-Wisp role or later family beyond that candidate, or advance EN-E08.',
+  nextGate: 'The exact repaired Grand Pretender is visually approved and published: implementation 0a8d5094d5e5de575f1966db30fc01d093a866c3, approval record 0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3, and initial handoff c551799f585df2643f83a605279cda06cc629e45 are remote verified. The same Approved lets do next response opens only one private common Will-o-Wisp candidate from this clean publication reconciliation. Do not register Doppelganger, generate fixtures, add runtime copying or effects, release, start another Will-o-Wisp role or later family beyond that candidate, or advance EN-E08.',
 });
 
 export const EN_E07_GRAND_PRETENDER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -497,7 +498,7 @@ export const EN_E07_GRAND_PRETENDER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'grand-pretender',
     scale: 8,
-    notes: 'Visually approved as one broad public-humanoid-scale Grand Pretender against approved Pale Echo and Falseface Adept plus public Cultist Zealot. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, runtime copying, effects, Will-o-Wisp, and later Wave 2 work separate until the clean published reconciliation.',
+    notes: 'Visually approved and published as one broad public-humanoid-scale Grand Pretender against approved Pale Echo and Falseface Adept plus public Cultist Zealot. Keep registration, fixtures, runtime copying, effects, and later Wave 2 work separate; only one private common Will-o-Wisp candidate is open from the clean publication reconciliation.',
   },
 });
 

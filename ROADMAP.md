@@ -203,11 +203,11 @@ the three exact PNGs were opened together in responsive Aseprite. The
 23-command matrix, fast suite, and full suite pass with the approved integration
 digest and 232 fixtures unchanged. The designer replied `Approved lets do
 next`; implementation `0a8d5094d5e5de575f1966db30fc01d093a866c3` and
-approval record `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are committed
-locally, with bounded documentation reconciliation and branch publication
-authorized. Grand Pretender remains private, unregistered, and fixture-free.
-After clean publication, the same response opens only one private common
-Will-o-Wisp candidate. Registration, fixtures, runtime copying, effects, later
+approval record `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` plus initial
+handoff `c551799f585df2643f83a605279cda06cc629e45` are published and remote
+verified. Grand Pretender remains private, unregistered, and fixture-free. The
+same response opens only one private common Will-o-Wisp candidate from the
+clean publication reconciliation. Registration, fixtures, runtime copying, effects, later
 EN-E07 roles/families, release, and EN-E08 stay closed.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,

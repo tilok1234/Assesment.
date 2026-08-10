@@ -23,13 +23,13 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Grand Pretender Approved; Publication Pending
+## Immediate Continuation Checkpoint - Grand Pretender Published; Will-o-Wisp Gate Open
 
 Start here in a new task. The exact private elite Doppelganger Grand Pretender
 is repaired, hash-frozen, deterministic, fully validated, visually approved,
-and committed locally. Its bounded approval record and documentation
-reconciliation are authorized; the branch has not yet been pushed and the
-module remains unregistered and non-public.
+published, and remote verified. The sole active art gate is now one private
+common Will-o-Wisp candidate from this clean publication reconciliation; the
+approved Grand Pretender remains unregistered and non-public.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-doppelganger-grand-pretender`, based exactly on clean
@@ -49,9 +49,9 @@ module remains unregistered and non-public.
   2026-08-10. Approval applies only to digest
   `03ca03ade7be4efcb2e69aafe3400cf6a452d26f1ddbaccca2b561374c172dcb`.
   Implementation `0a8d5094d5e5de575f1966db30fc01d093a866c3` and approval record
-  `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are committed locally; bounded
-  documentation reconciliation and branch publication are authorized by the
-  standing approved-work permission.
+  `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` plus initial handoff
+  `c551799f585df2643f83a605279cda06cc629e45` are published and remote
+  verified under the standing approved-work permission.
 - Scope: one authored default-form 80-frame elite Doppelganger across Idle
   F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases,
   and exact Death-to-Hurt aliases H1,H2,H2,H2 in all four directions. Runtime
@@ -106,12 +106,11 @@ module remains unregistered and non-public.
   against the approved-local metadata in 106.3s. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: commit this bounded documentation reconciliation, push
-  the approved branch, verify the remote ref, and record the clean publication
-  reconciliation. Only after that checkpoint may the same approval response
-  open one private common Will-o-Wisp candidate. Do not register
-  Doppelganger, generate fixtures, implement runtime copying, add effects,
-  start another Will-o-Wisp role or later family, release, or advance EN-E08.
+- Required next action: open only one private common Will-o-Wisp candidate from
+  this clean published checkpoint. Preserve Grand Pretender and every approved
+  predecessor byte-for-byte. Do not register Doppelganger, generate fixtures,
+  implement runtime copying, add effects, start another Will-o-Wisp role or
+  later family, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Falseface Adept Published
 

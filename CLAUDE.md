@@ -129,10 +129,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   PNGs were opened together in responsive Aseprite. The designer replied
   `Approved lets do next`; implementation
   `0a8d5094d5e5de575f1966db30fc01d093a866c3` and approval record
-  `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` are committed locally, and the
-  bounded documentation reconciliation and branch push are authorized. After
-  a clean published reconciliation, that same response opens only one private
-  common Will-o-Wisp candidate. Do not register Doppelganger, generate
+  `0c54731d5fc1a14495d13ebb4c2accd98ba8b8a3` plus initial handoff
+  `c551799f585df2643f83a605279cda06cc629e45` are published and remote
+  verified. The same response opens only one private common Will-o-Wisp
+  candidate from the clean publication reconciliation. Do not register Doppelganger, generate
   fixtures, implement runtime copying, add effects, start another
   Will-o-Wisp role or later family, release, or advance EN-E08.
 - Approved preceding art checkpoint (Falseface Adept):
