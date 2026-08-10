@@ -179,7 +179,25 @@ approved on 2026-08-10. Frozen implementation
 tracked branch. EN-E07, registration, fixtures, shared renderer/schema changes,
 effects, and release remain closed.
 
-Current EN-E07 candidate checkpoint (2026-08-10): Nightglass Seer was approved,
+Current EN-E07 candidate checkpoint (2026-08-10): Hollowcrown Regent is
+approved, published, and reconciled at `6ff54c3`; the designer replied
+`approved lets do next`. EN-E07 priority-first ordering opens only common
+Doppelganger Pale Echo on `codex/en-e07-doppelganger-pale-echo`. Its repaired
+80-frame authored default form at digest
+`c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`
+uses pale gray-rose skin, uneven charcoal-violet fringe, offset eyes,
+mismatched shoulders, split slate/wine tunic, one connected lengthening mimic
+hand, separated legs, and grounded boots. The oversized 218-271-pixel
+diagnostic render was rejected before freeze; the 186-245-pixel repair is
+public-humanoid scale and remains 80/80 connected, bounded, grounded, and
+pixel/alpha distinct from Bandit Thug, Cultist Acolyte, and Dark Elf. The exact
+five-artifact packet is hash-frozen but not visually approved, committed, or
+published. The protected 21-gate matrix, fast suite, and full suite pass with
+the approved integration and 232 fixtures unchanged. Registration, fixtures,
+runtime copying, effects, later EN-E07 roles/families, release, and EN-E08 stay
+closed.
+
+Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do
 next`. The Living Shadow role order opens only elite Hollowcrown Regent on
 `codex/en-e07-living-shadow-hollowcrown-regent`. Its exact 80-frame candidate

@@ -977,6 +977,27 @@ private, unregistered, and fixture-free even though its review branch is
 published. The same response opens only one private common Doppelganger
 candidate from the clean publication reconciliation.
 
+The subsequently authorized
+`engine/enemy-expansion-en-e07-doppelganger-pale-echo.js` adds one private
+common Doppelganger without changing the facade, public registry, fixtures,
+manifest, schemas, renderer interfaces, or runtime actor-selection contract.
+It authors one neutral default form rather than copying a player or public
+enemy: pale gray-rose skin, an uneven charcoal-violet fringe, offset paired
+eyes, mismatched shoulders, split slate/wine short tunic, one ordinary hand,
+one connected long-finger mimic hand, separated legs, and grounded boots. The
+first diagnostic silhouette was rejected before freeze for excessive
+218-271-pixel bulk; the repaired public-humanoid-scale geometry narrows head,
+shoulders, torso, resting arms, legs, and boots to 186-245 opaque pixels while
+retaining deliberate A2/A3 reach. Cast aliases Attack; Death aliases Hurt.
+Copied actors, mirror doubles, reflection planes, peeling faces, loose skin
+ribbons, afterimages, glow, particles, projectiles, and impacts remain
+external. The focused gate freezes all 80 frames at digest
+`c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`,
+proves 80/80 pixel and alpha distinctions from Bandit Thug, Cultist Acolyte,
+and Dark Elf, and keeps approved Hollowcrown exact. Its exact five-artifact
+packet reproduces byte-for-byte but still awaits visual approval; the module
+is not committed, published, registered, or fixture-backed.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

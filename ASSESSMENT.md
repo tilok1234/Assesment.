@@ -320,6 +320,21 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   approved 1,200-frame integration digest and all 232 fixtures remain exact.
   Only one private common Doppelganger candidate opens from the clean
   publication reconciliation.
+  That active candidate is Pale Echo on
+  `codex/en-e07-doppelganger-pale-echo`, based exactly on published
+  Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`.
+  Its authored default form uses public-humanoid-scale pale gray-rose skin,
+  uneven charcoal-violet fringe, offset eyes, mismatched shoulders, a split
+  slate/wine tunic, one ordinary hand, one connected long-finger mimic hand,
+  separated legs, and grounded boots. The oversized 218-271-pixel diagnostic
+  packet was rejected before freeze; the repaired 186-245-pixel candidate
+  passes 80/80 connected, bounded, grounded, hard-alpha Bandit/Cultist/Dark Elf
+  pixel and alpha distinctions at digest
+  `c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`.
+  Its exact five-artifact packet reproduces byte-for-byte but is not visually
+  approved, committed, or published. The 21-gate protected matrix, fast suite,
+  and full suite pass; the approved 1,200-frame integration digest and all 232
+  fixtures remain exact.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

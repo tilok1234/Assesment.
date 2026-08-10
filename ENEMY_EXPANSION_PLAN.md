@@ -13,27 +13,21 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-10): Nightglass Seer specialist is
-  approved and published through clean reconciliation
-  `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`. The designer replied `approved
-  lets do next`. The frozen Living Shadow role order is common, specialist,
-  elite, so this opens only one private elite Hollowcrown Regent on
-  `codex/en-e07-living-shadow-hollowcrown-regent`. Its exact 80-frame candidate
-  is frozen at digest
-  `657e4071ab8432387f7c8b6ecff8650f3f7a63bf7dc8f4b68564373a5e450991`.
+- Current stopping checkpoint (2026-08-10): Hollowcrown Regent is approved and
+  published through clean reconciliation
+  `6ff54c3a926436083675ec8f7e2d0230cc073ac5`. The designer replied `approved
+  lets do next`. EN-E07 names Living Shadow then Doppelganger priority-first,
+  so this opens only one private common Pale Echo on
+  `codex/en-e07-doppelganger-pale-echo`. Its repaired public-humanoid-scale
+  80-frame candidate is frozen at digest
+  `c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`.
   It passes 80/80 connected, one-cell-bounded, grounded, hard-alpha, alias,
-  mirror, and pixel/alpha distinctions from public Cursed Ghost, public Shadow
-  Slime, approved Mist Weaver, Gloam Walker, and Nightglass Seer. The exact raw,
-  Complete B + Form, six-way comparison, and paired GIF packet reproduces all
-  five recorded hashes. After the exact packet was presented and its three PNG
-  boards were opened together in Aseprite, the designer replied `approved lets
-  do next`. Implementation `ffe5f574ab9f06ecfaad83c50a7980254eea7211`
-  and approval record `90a06bd34e1bae29becdc380b01895825cf4a969` plus initial
-  handoff `0c3d671bee3013413291170e127d3820cdcaff95` are published and
-  remote-verified. The same response opens only one private common Doppelganger
-  candidate from the clean publication reconciliation. Living Shadow
-  registration, fixtures, effects, other EN-E07 families beyond that candidate,
-  release, and EN-E08 remain closed.
+  mirror, and pixel/alpha distinctions from public Bandit Thug, Cultist
+  Acolyte, and Dark Elf. The exact raw, Complete B + Form, four-way comparison,
+  and paired GIF packet reproduces all five recorded hashes. It is not visually
+  approved, committed, or published. Doppelganger registration, fixtures,
+  runtime copying, effects, later roles and families, release, and EN-E08 remain
+  closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3562,7 +3556,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow common, specialist, and elite approved and published; Doppelganger common is the sole next private gate`
+- Status: `Living Shadow common, specialist, and elite approved and published; Pale Echo common Doppelganger candidate awaiting visual approval`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3726,9 +3720,57 @@ assembler.
   `90a06bd34e1bae29becdc380b01895825cf4a969`; initial handoff
   `0c3d671bee3013413291170e127d3820cdcaff95`. The remote handoff was
   verified exact.
-- Required next action: open only one private common Doppelganger candidate
-  from the clean publication reconciliation. Keep Living Shadow registration,
-  fixtures, effects, other EN-E07 family artwork, release, and EN-E08 closed.
+- Historical next gate: the same approval response opened only the private
+  common Pale Echo candidate below. Keep Living Shadow registration, fixtures,
+  effects, other EN-E07 family artwork, release, and EN-E08 closed.
+
+#### Doppelganger Pale Echo complete suite candidate
+
+- Gate ID: `en-e07-doppelganger-pale-echo-full-v1`; status: `candidate` on
+  `codex/en-e07-doppelganger-pale-echo`, based exactly on clean published
+  Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`.
+- Authorization: after Hollowcrown Regent was visually approved, committed,
+  pushed, and reconciled, the designer replied `approved lets do next` on
+  2026-08-10. EN-E07 priority order opens only common Doppelganger Pale Echo.
+- Style/silhouette contract: one authored default-form humanoid with pale
+  gray-rose skin, charcoal-violet uneven fringe, offset eyes, mismatched
+  shoulders, split slate/wine short tunic, one ordinary hand, one connected
+  long-finger mimic hand, separated legs, and grounded boots. The first
+  diagnostic render was rejected before freeze for 218-271 opaque pixel bulk;
+  the repaired public-humanoid-scale candidate narrows the resting silhouette
+  to 186-245 while retaining deliberate A2/A3 reach.
+- Scope: one private 80-frame common Doppelganger. Cast aliases Attack; Death
+  aliases Hurt H1,H2,H2,H2. Runtime actor copying, copied silhouettes, mirror
+  doubles, reflection planes, peeling faces, loose skin ribbons, afterimages,
+  glow, particles, projectiles, and impacts remain external.
+- Focused validation: 80/80 connected, bounded, grounded hard-alpha frames;
+  80/80 pixel and alpha distinctions from Bandit Thug, Cultist Acolyte, and
+  Dark Elf; 72/72 colored frames; 8/8 white flashes; 54/54 expected eye-bearing
+  views; opaque range 186-245; Complete B +7,826; Form changes 6,236.
+  Hollowcrown remains exact; public 80/259 and fixtures are unchanged.
+- Candidate digest:
+  `c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`.
+- Evidence SHA-256: raw
+  `bcae6f51ad927038989a13f42d993ed05fd9f654f70f1b8f2cb70ce1df862023`;
+  Complete B + Form
+  `3150f7e6ab8fbfe2c40a8e31115d1c4992ffc33a887798c491a1875e61d770b8`;
+  comparison
+  `b3d8c0e211218726859b1ea4e41b9961002282d0073eb5d64f6be03ecc1823a2`;
+  raw GIF `ee5bf76bbf082e0dfc8a34628998b0a66edacee29a6fd0ce25fcb8b6692582c7`;
+  Complete B + Form GIF
+  `2eb5e255c6196c178aa37c69a91d08cdb6ce9b5d5936bdfa32bb3acdfe14d125`.
+  Two repaired generations reproduce all five hashes exactly.
+- Broad validation: the 21-command protected predecessor/candidate/integration
+  matrix passed in 7.7s, `npm.cmd run check:fast` passed in 56.8s, and full
+  `npm.cmd run check` passed in 110.1s. The approved 1,200-frame integration
+  digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required next action: inspect the repaired boards, open the three PNGs
+  together in Aseprite, present both GIFs, and request explicit visual approval.
+  Do not commit or publish before approval. Keep Doppelganger registration,
+  fixtures, runtime copying, effects, later roles and EN-E07 families, release,
+  and EN-E08 closed.
 
 ### EN-E08 - Possessed equipment
 

@@ -107,7 +107,27 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved published art checkpoint:
+- Current isolated art candidate:
+  `codex/en-e07-doppelganger-pale-echo`, based exactly on clean published
+  Hollowcrown reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`,
+  contains one private common Doppelganger Pale Echo. Its repaired frozen
+  80-frame digest is
+  `c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`.
+  All frames are connected, one-cell-bounded, grounded, hard-alpha, and
+  pixel/alpha distinct from public Bandit Thug, Cultist Acolyte, and Dark Elf.
+  The authored default form uses pale gray-rose skin, uneven charcoal-violet
+  fringe, offset eyes, mismatched shoulders, split slate/wine short tunic, one
+  ordinary hand, one connected long-finger mimic hand, separated legs, and
+  grounded boots. The initial 218-271-pixel diagnostic silhouette was rejected
+  before freeze; the repaired public-humanoid-scale version is 186-245 opaque
+  pixels. The five exact review artifacts reproduce byte-for-byte, and the
+  protected 21-gate matrix, `check:fast`, and full `check` pass with the
+  approved 1,200-frame integration digest and all 232 fixtures exact. The
+  candidate is not visually approved, committed, or published. Do not
+  register Doppelganger, generate fixtures, implement runtime copying, add
+  effects, start another role or family, release, or advance EN-E08. Do not
+  commit or push this candidate before explicit approval of the exact digest.
+- Approved preceding art checkpoint:
   `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly on clean
   published Nightglass reconciliation `46ad4e7759a1ef3a096ba326d96cdef44d1ee3b1`,
   contains one private elite Living Shadow Hollowcrown Regent. Its frozen
@@ -129,7 +149,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   candidate from the clean publication reconciliation. Do not register Living
   Shadow, generate fixtures, add effects, start another role or family beyond
   that candidate, release, or advance EN-E08.
-- Approved preceding art checkpoint:
+- Earlier approved art checkpoint:
   `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean
   published Gloam Walker reconciliation `98d3781b81c8c7ff615ad3cd6562efe12ce63d94`,
   contains one private specialist Living Shadow Nightglass Seer. Its frozen

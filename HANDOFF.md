@@ -23,10 +23,82 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Hollowcrown Regent Approved and Published
+## Immediate Continuation Checkpoint - Pale Echo Candidate Awaiting Visual Approval
 
-Start here in a new task. The exact private elite is hash-frozen, technically
-validated, visually approved, committed, and published.
+Start here in a new task. This is the sole active isolated art gate. The exact
+private common Doppelganger candidate is hash-frozen and technically validated,
+but it is not visually approved, committed, or published.
+
+- Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
+- Branch: `codex/en-e07-doppelganger-pale-echo`, based exactly on clean
+  published Hollowcrown reconciliation
+  `6ff54c3a926436083675ec8f7e2d0230cc073ac5`.
+- Approved predecessor: Hollowcrown implementation
+  `ffe5f574ab9f06ecfaad83c50a7980254eea7211`, approval record
+  `90a06bd34e1bae29becdc380b01895825cf4a969`, initial published handoff
+  `0c3d671bee3013413291170e127d3820cdcaff95`, and final reconciliation
+  `6ff54c3a926436083675ec8f7e2d0230cc073ac5` remain exact.
+- Authorization: after Hollowcrown was approved, committed, pushed, and
+  reconciled, the designer replied `approved lets do next` on 2026-08-10.
+  EN-E07 names Living Shadow then Doppelganger priority-first, so the
+  one-complete-sprite cadence opens only one private common Pale Echo.
+- Scope: one authored default-form 80-frame common Doppelganger across Idle
+  F1-F2, Walk W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases,
+  and exact Death-to-Hurt aliases H1,H2,H2,H2 for all four directions. Runtime
+  player/enemy copying is not part of this authored sheet.
+- Style contract: public-humanoid-scale chunky one-to-three-pixel geometry,
+  hard alpha, pale gray-rose skin, charcoal-violet uneven fringe, offset paired
+  eyes, mismatched shoulders, a split slate/wine short tunic, one ordinary
+  hand, one connected long-finger mimic hand, separated legs, and grounded
+  boots. The first diagnostic render was too wide at 218-271 opaque pixels; it
+  was rejected before freeze. The repaired candidate narrows head, shoulders,
+  torso, resting arms, legs, and boots to 186-245 while preserving deliberate
+  A2/A3 reach.
+- Motion: two-frame false-face/shoulder settle; four grounded alternating Walk
+  steps; face-pinching guard, connected mimic-hand lengthen, two-arm shape-rake,
+  then authored-form reset. Cast aliases Attack; Death aliases Hurt.
+- Effects firewall: copied actor silhouettes, mirror doubles, reflection
+  planes, peeling faces, loose skin ribbons, afterimages, glow, particles,
+  projectiles, and impact flashes remain external. Doppelganger registration,
+  fixtures, public exposure, runtime copying, specialist/elite roles,
+  Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 remain closed.
+- Focused validation passes: 80/80 connected, one-cell-bounded, grounded
+  hard-alpha frames; 80/80 pixel and alpha-silhouette distinctions from public
+  Bandit Thug, Cultist Acolyte, and Dark Elf; 72/72 colored palette frames; 8/8
+  exact white flashes; 54/54 expected eye-bearing front/side views; opaque range
+  186-245; 7,826 Complete B additions; and 6,236 Form changes. Approved
+  Hollowcrown remains exact, public 80/259 is unchanged, and no
+  fixture/facade/manifest exposure exists.
+- Frozen candidate digest:
+  `c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `bcae6f51ad927038989a13f42d993ed05fd9f654f70f1b8f2cb70ce1df862023` /
+  `3150f7e6ab8fbfe2c40a8e31115d1c4992ffc33a887798c491a1875e61d770b8`;
+  Bandit/Cultist/Dark Elf/Pale Echo `1520x548` comparison
+  `b3d8c0e211218726859b1ea4e41b9961002282d0073eb5d64f6be03ecc1823a2`;
+  raw / Complete B + Form `640x672` GIFs
+  `ee5bf76bbf082e0dfc8a34628998b0a66edacee29a6fd0ce25fcb8b6692582c7` /
+  `2eb5e255c6196c178aa37c69a91d08cdb6ce9b5d5936bdfa32bb3acdfe14d125`.
+  Two repaired generations reproduce all five hashes exactly; artifacts remain
+  ignored under `enemy-expansion-review/en-e07-doppelganger-pale-echo/`.
+- Broad validation passes: the 21-command protected matrix (all 16 EN-E06
+  gates, Gloam, Nightglass, Hollowcrown, Pale Echo, and the approved
+  1,200-frame integration gate) completed in 7.7s; `npm.cmd run check:fast`
+  passed in 56.8s; and full `npm.cmd run check` passed in 110.1s. The integrated
+  frame digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required visual action: inspect the repaired raw, Complete B + Form,
+  four-way comparison, and all four animation-phase boards; open the three
+  exact PNG boards together in Aseprite; present both exact GIFs; and ask for
+  explicit approval of the digest above. Do not commit or push before that
+  approval.
+
+## Approved Preceding Checkpoint - Hollowcrown Regent Published
+
+This records the exact clean published predecessor for the active Pale Echo
+gate. The private elite is hash-frozen, technically validated, visually
+approved, committed, and published.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-living-shadow-hollowcrown-regent`, based exactly on
@@ -95,17 +167,16 @@ validated, visually approved, committed, and published.
   `90a06bd34e1bae29becdc380b01895825cf4a969`, with initial published handoff
   `0c3d671bee3013413291170e127d3820cdcaff95`. Direct remote verification
   matched the local handoff exactly.
-- Required next action: the same `approved lets do next` response opens only
-  one private common Doppelganger candidate from the clean publication
-  reconciliation. Do not register Living Shadow, generate fixtures, add
-  effects, open another role or family beyond that candidate, release, or
+- Historical stop gate: the same `approved lets do next` response opened only
+  the active private common Pale Echo candidate above. It did not register
+  Living Shadow or Doppelganger, generate fixtures, add effects, release, or
   advance EN-E08.
 
 ## Approved Preceding Checkpoint - Nightglass Seer Published
 
-This records the exact clean published predecessor for the active Hollowcrown
-Regent gate. The private specialist is hash-frozen, technically validated,
-visually approved, committed, and published.
+This records the exact clean published Nightglass checkpoint that preceded the
+published Hollowcrown gate. The private specialist is hash-frozen, technically
+validated, visually approved, committed, and published.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-living-shadow-nightglass-seer`, based exactly on clean

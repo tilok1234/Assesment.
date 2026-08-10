@@ -1273,6 +1273,33 @@ Only one private common Doppelganger candidate opens from the clean publication
 reconciliation. Registration, fixtures, effects, other EN-E07 family artwork,
 release, and EN-E08 remain closed.
 
+That response opens exactly one private common Doppelganger Pale Echo on
+`codex/en-e07-doppelganger-pale-echo`, based on clean published Hollowcrown
+reconciliation `6ff54c3a926436083675ec8f7e2d0230cc073ac5`. The assembler
+authors a neutral default form rather than copying a player or public enemy:
+pale gray-rose skin, uneven charcoal-violet fringe, offset paired eyes,
+mismatched shoulders, split slate/wine short tunic, one ordinary hand, one
+connected long-finger mimic hand, separated legs, and grounded boots. The
+initial diagnostic packet was rejected before freeze for excessive 218-271
+opaque-pixel bulk; the repaired public-humanoid-scale candidate is 186-245.
+Copied silhouettes, mirror doubles, reflection planes, peeling faces, loose
+skin ribbons, afterimages, glow, particles, projectiles, and impacts remain
+external. Run
+`npm.cmd run review:enemy-expansion-en-e07-doppelganger-pale-echo` for the raw,
+Complete B + Form, Bandit/Cultist/Dark Elf/Pale Echo comparison, and paired
+GIFs; run `npm.cmd run check:enemy-expansion-en-e07-doppelganger-pale-echo` for
+its focused structural, scale, predecessor, artifact, and exposure firewalls.
+The frozen candidate digest is
+`c3fa12cb4bb0be432e955adfc32f331286e55c65cbd7a38250bdf0d120fa6596`:
+80/80 frames are connected, bounded, grounded, and pixel/alpha distinct from
+all three public comparisons; 72/72 colored frames preserve its palette; 8/8
+flashes are exact white. The exact five-artifact packet reproduces
+byte-for-byte. The protected 21-gate matrix, fast suite, and full suite pass;
+the approved 1,200-frame integration digest and all 232 fixtures remain exact.
+The candidate is not visually approved, committed, or published.
+Doppelganger registration, fixtures, runtime copying, effects, later roles and
+families, release, and EN-E08 remain closed.
+
 ## Approved enemy backlog integration published
 
 Branch `codex/approved-enemy-assembler-integration` composes three explicit
