@@ -273,13 +273,16 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed on the
   tracked branch. It remains private. The designer's later `lets do next`
   opens exactly one private common EN-E07 Living Shadow Gloam Walker. Its
-  hash-frozen 80-frame candidate uses connected hollow face/torso negative
+  hash-frozen 80-frame suite uses connected hollow face/torso negative
   space and clearly split planted legs; all frames pass connected, bounded,
   grounded, hard-alpha, Cursed Ghost/Shadow Slime/Mist Weaver pixel and alpha
   distinctions at digest
   `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`.
-  The exact packet awaits visual approval and is not committed, published, or
-  public.
+  The exact packet was opened in Aseprite and the designer replied `aaprovced`
+  on 2026-08-10. Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94`
+  and approval record `848c7192b6dc2cac8b7ab2dc8725d3859447715d` are committed
+  locally. It remains unpublished and non-public because the branch inherits
+  separately approval-gated Rivercrown reconciliation `d785fe5`.
 Fixture regeneration, later Living Shadow roles, remaining EN-E07 families, the legacy renderer split, boss
 consolidation, and the Wildshot writer remain separate decisions.
 

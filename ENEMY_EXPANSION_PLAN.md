@@ -24,7 +24,11 @@
   mirror, and pixel/alpha distinctions from public Cursed Ghost, public Shadow
   Slime, and approved Mist Weaver. The exact raw, Complete B + Form, four-way
   comparison, and paired GIF packet reproduces all five recorded hashes, but
-  it is not visually approved, committed, or published. Living Shadow
+  it is now visually approved. Implementation
+  `a46f59c1cb0bb751760f2776fe60b5c489806c94` and approval record
+  `848c7192b6dc2cac8b7ab2dc8725d3859447715d` are committed locally. The
+  branch remains unpublished because pushing it would also publish separately
+  approval-gated Rivercrown reconciliation `d785fe5`. Living Shadow
   registration, fixtures, effects, later EN-E07 roles/families, release, and
   EN-E08 remain closed.
 
@@ -2866,7 +2870,7 @@ stateful identities while effects remain outside the base actor.
 
 ### EN-E06 - Fey and folklore
 
-- Status: `all five family role sets complete through approved Rivercrown Muse; EN-E07 Gloam Walker candidate active separately`
+- Status: `all five family role sets complete through approved Rivercrown Muse; EN-E07 Gloam Walker approved locally and active separately`
 - Families: Fairy, Hag, Dryad, Redcap, Nymph
 - Priority-first: Fairy, Hag
 
@@ -3551,11 +3555,11 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
   `ca82f079ff84934edc4ab51a8d406050b9083d2a` are committed and pushed on the
   tracked branch. That checkpoint stopped before Nymph registration, fixtures,
   effects, release, or EN-E07. The designer's later `lets do next` opens only
-  the isolated Gloam Walker candidate below.
+  the isolated Gloam Walker gate below, now approved locally.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Gloam Walker common candidate awaiting visual approval`
+- Status: `Gloam Walker common approved locally; publication blocked`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -3564,15 +3568,22 @@ and spectral motion. Doppelganger and Changeling receive authored default forms;
 copying another actor is a runtime/gameplay feature and is not promised by the
 assembler.
 
-#### Living Shadow Gloam Walker complete suite candidate
+#### Living Shadow Gloam Walker complete suite approved locally
 
-- Gate ID: `en-e07-living-shadow-gloam-walker-full-v1`; status: `candidate` on
+- Gate ID: `en-e07-living-shadow-gloam-walker-full-v1`; status: `approved` on
   `codex/en-e07-living-shadow-gloam-walker`, based on local current-state
   reconciliation `d785fe56e7d8c98243f948fce615885d5a04fbc3`.
 - Authorization: after Rivercrown Muse was visually approved and its
   implementation and approval commits were pushed, the designer said `lets do
   next` on 2026-08-10. Rivercrown completed EN-E06; the slice order and
   priority-first list open only common Living Shadow Gloam Walker.
+- Approval/publication: the three exact PNG boards were opened together in
+  Aseprite, both exact GIFs were presented, and the designer replied
+  `aaprovced` on 2026-08-10. Approval applies only to the frozen digest and
+  hashes below. Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94`
+  and approval record `848c7192b6dc2cac8b7ab2dc8725d3859447715d`
+  are committed locally. Publication remains blocked because the branch also
+  contains separately approval-gated Rivercrown docs reconciliation `d785fe5`.
 - Style/silhouette contract: chunky one-to-three-pixel forms, a tight
   dark-violet ramp, hard alpha, connected hollow face and torso negative space,
   angular shoulders, long connected claws, pinched waist, clearly split legs,
@@ -3589,8 +3600,8 @@ assembler.
   fifteen approved EN-E06 sources remain exact; public 80/259 and fixtures are
   unchanged. The approved 1,200-frame integration digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`;
-  `check:fast` passes in 54.9s and full `check` in 109.5s with all 232 fixtures
-  valid.
+  post-approval `check:fast` passes in 53.0s and full `check` in 102.5s with all
+  232 fixtures valid.
 - Candidate digest:
   `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`.
 - Evidence SHA-256: raw
@@ -3602,10 +3613,9 @@ assembler.
   raw GIF `54f3262ce694e6696d3af2a40783cce32b2555de7c5cd72acd18900fa1c1e8a8`;
   Complete B + Form GIF
   `862d28ed3a938a7315146b58706bce4e37f11e9abbfc50c720e63b83be5d9659`.
-- Required next action: open the three exact PNGs together in Aseprite, present
-  both GIFs, and request explicit visual approval. Do not commit, publish,
-  register Living Shadow, generate fixtures, add effects, start another role
-  or EN-E07 family, release, or advance EN-E08 without approval.
+- Required next action: do not push around the inherited `d785fe5` publication
+  boundary. Keep Living Shadow registration, fixtures, effects, another role
+  or EN-E07 family, release, and EN-E08 closed without another explicit gate.
 
 ### EN-E08 - Possessed equipment
 

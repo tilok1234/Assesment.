@@ -15,18 +15,21 @@ workflow. The approved EN-E04 Idle source remains
 published separately on `codex/en-e04-naga-motion` without rewriting that
 baseline.
 
-## Immediate Continuation Checkpoint - Gloam Walker Candidate Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Gloam Walker Approved Locally; Publication Blocked
 
-Start here in a new task. This is the active isolated art gate. The exact
-private candidate is hash-frozen and technically validated, but it is not
-visually approved, committed, or published.
+Start here in a new task. The exact private Gloam Walker is hash-frozen,
+technically validated, visually approved, and committed locally. It is not
+published because this branch inherits a separately approval-gated docs commit.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-living-shadow-gloam-walker`, based on local
   current-state reconciliation
   `d785fe56e7d8c98243f948fce615885d5a04fbc3`. That reconciliation is still one
   docs-only commit ahead of the tracked Rivercrown branch and requires explicit
-  push authorization; do not hide or bypass that publication boundary.
+  push authorization; do not hide or bypass that publication boundary. Gloam
+  Walker implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94` and
+  approval record `848c7192b6dc2cac8b7ab2dc8725d3859447715d` are local
+  descendants and are not pushed.
 - Approved predecessor: Rivercrown implementation
   `39bd0658d53acbfe7aa4484e14f6518551720142` and approval record
   `ca82f079ff84934edc4ab51a8d406050b9083d2a` are pushed. All fifteen approved
@@ -36,6 +39,12 @@ visually approved, committed, or published.
   2026-08-10. Rivercrown completes the fifth and final EN-E06 family. The
   frozen plan queues EN-E07 next and names Living Shadow priority-first, so the
   one-complete-sprite cadence opens only common Gloam Walker.
+- Approval: the exact raw, Complete B + Form, and Ghost/Slime/Mist/Gloam PNG
+  boards were opened together in Aseprite and both exact GIFs were presented.
+  The designer replied `aaprovced` on 2026-08-10. Approval applies only to
+  digest
+  `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`
+  and the five artifact hashes below.
 - Scope: one private 80-frame common Living Shadow across Idle F1-F2, Walk
   W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
   Death-to-Hurt aliases H1,H2,H2,H2 for Down, Left, Right, and Up.
@@ -63,9 +72,9 @@ visually approved, committed, or published.
   public 80/259 unchanged, and no fixture/facade/manifest exposure. The approved
   1,200-frame integration gate remains exact at digest
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`;
-  `npm.cmd run check:fast` passes in 54.9s and full `npm.cmd run check` in
-  109.5s with all 232 fixtures valid.
-- Frozen candidate digest:
+  post-approval `npm.cmd run check:fast` passes in 53.0s and full
+  `npm.cmd run check` in 102.5s with all 232 fixtures valid.
+- Approved candidate digest:
   `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`.
 - Review artifacts: raw / Complete B + Form `1428x760` boards
   `a3389c510a0d8c16a50a19be6eaebac15d452a056531d71c807e778767975e76` /
@@ -77,11 +86,11 @@ visually approved, committed, or published.
   `862d28ed3a938a7315146b58706bce4e37f11e9abbfc50c720e63b83be5d9659`.
   Regeneration reproduces all five hashes exactly; artifacts remain ignored
   under `enemy-expansion-review/en-e07-living-shadow-gloam-walker/`.
-- Required next action: open the three exact PNG boards together in Aseprite,
-  present both exact GIFs, and ask for explicit visual approval of this digest.
-  Do not commit, publish, register Living Shadow, generate fixtures, add
-  effects, start another role or family, release, or advance EN-E08 without
-  that approval.
+- Required next action: keep this branch local until the designer separately
+  authorizes publication of inherited Rivercrown reconciliation
+  `d785fe56e7d8c98243f948fce615885d5a04fbc3`. Do not push around that boundary.
+  Do not register Living Shadow, generate fixtures, add effects, start another
+  role or family, release, or advance EN-E08 without another explicit gate.
 
 ## Approved Preceding Checkpoint - Rivercrown Muse Published
 
@@ -163,7 +172,8 @@ pushed.
   applies only to the frozen digest and hashes above.
 - Historical stop gate: this checkpoint did not itself authorize Nymph
   registration, fixtures, effects, release, or EN-E07. The later explicit
-  authorization recorded above opens only the private Gloam Walker candidate.
+  authorization recorded above opened only the private Gloam Walker candidate,
+  now approved locally at the checkpoint above.
 
 ## Approved Preceding Checkpoint - Mist Weaver Published
 

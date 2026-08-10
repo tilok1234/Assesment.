@@ -913,7 +913,7 @@ release, and Wave 2 stay closed.
 The separately authorized
 `engine/enemy-expansion-en-e07-living-shadow-gloam-walker.js` begins EN-E07
 without changing the public registry. It owns one private common Gloam Walker
-contract, renderer, and one-family candidate registry. The renderer uses
+contract, renderer, and one-family private review registry. The renderer uses
 chunky one-to-three-pixel geometry, a tight dark-violet ramp, connected
 transparent face and torso cavities, angular shoulders, long connected claws,
 a pinched waist, two split legs, and broad planted feet. This keeps its 24x24
@@ -921,11 +921,14 @@ silhouette distinct from the public Ghost floating robe, Shadow Slime blob,
 and approved Mist Weaver caster. Cast aliases Attack; Death aliases Hurt.
 Detached wisps, floor pools, smoke, afterimages, projectiles, claw trails,
 glow, loose fragments, and impacts remain external. The focused gate freezes
-all 80 candidate frames at digest
+all 80 approved frames at digest
 `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`,
 proves all fifteen EN-E06 source digests exact, and keeps public 80/259 and
-fixtures unchanged. The exact review packet awaits visual approval; the module
-is not facade-imported, registered, committed, or published.
+fixtures unchanged. The exact review packet was opened in Aseprite and approved
+on 2026-08-10. Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94`
+and approval record `848c7192b6dc2cac8b7ab2dc8725d3859447715d` are committed
+locally. The module is not facade-imported, registered, or published; branch
+publication remains blocked by the inherited `d785fe5` approval boundary.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

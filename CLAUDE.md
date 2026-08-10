@@ -102,8 +102,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   byte-unchanged, including the intentionally historical Ghoul fixture. Source
   and documentation are committed and pushed at
   `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
-- Current active art gate: `codex/en-e07-living-shadow-gloam-walker` contains
-  exactly one private common Living Shadow Gloam Walker candidate. The frozen
+- Current approved-local art checkpoint:
+  `codex/en-e07-living-shadow-gloam-walker` contains exactly one private common
+  Living Shadow Gloam Walker. The frozen
   80-frame digest is
   `131a95a106a36dea2f6879611c8e14e3aa077012dcbd1bd32e111c45658ca3f9`;
   all frames are connected, one-cell-bounded, grounded, hard-alpha, and
@@ -111,10 +112,14 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   approved Mist Weaver. The style contract requires chunky one-to-three-pixel
   forms, a tight dark-violet ramp, connected hollow face/torso negative space,
   and clearly split planted legs. The exact raw, Complete B + Form, comparison,
-  and paired GIF evidence is hash-frozen but not visually approved, committed,
-  or published. Do not commit or push it, register Living Shadow, generate
-  fixtures, add effects, start another EN-E07 role/family, release, or advance
-  EN-E08 without explicit visual approval.
+  and paired GIF evidence was presented and the three exact PNGs were opened
+  together in Aseprite; the designer replied `aaprovced` on 2026-08-10.
+  Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94` and approval
+  record `848c7192b6dc2cac8b7ab2dc8725d3859447715d` are committed locally.
+  Do not push: this branch inherits separately approval-gated Rivercrown docs
+  reconciliation `d785fe5`. Do not register Living Shadow, generate fixtures,
+  add effects, start another EN-E07 role/family, release, or advance EN-E08
+  without another explicit gate.
 - Approved EN-E06 predecessor: `codex/en-e06-nymph-rivercrown-muse`,
   based exactly on clean published Mist Weaver handoff `983b76a`, contains one
   complete approved elite Nymph. Its 80 frames pass connected, one-cell-bounded, grounded,

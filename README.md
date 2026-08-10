@@ -1202,10 +1202,14 @@ firewalls. The frozen candidate digest is
 80/80 frames are connected, bounded, grounded, and pixel/alpha distinct from
 Cursed Ghost, Shadow Slime, and Mist Weaver; 72/72 colored frames preserve the
 four-part style ramp; 8/8 flashes are exact white; opaque range is 208-242.
-The exact five-artifact packet is technically reproducible but awaits visual
-approval. It is not committed, published, registered, fixture-backed, or
-public; later Living Shadow roles, remaining EN-E07 families, effects, release,
-and EN-E08 remain closed.
+The exact five-artifact packet is technically reproducible, was opened in
+Aseprite, and was approved when the designer replied `aaprovced` on 2026-08-10.
+Implementation `a46f59c1cb0bb751760f2776fe60b5c489806c94` and approval record
+`848c7192b6dc2cac8b7ab2dc8725d3859447715d` are committed locally. The branch
+is not published because it inherits separately approval-gated Rivercrown docs
+reconciliation `d785fe5`. It is not registered, fixture-backed, or public;
+later Living Shadow roles, remaining EN-E07 families, effects, release, and
+EN-E08 remain closed.
 
 ## Approved enemy backlog integration published
 
