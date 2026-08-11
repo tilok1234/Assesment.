@@ -1385,9 +1385,11 @@ pass. `check:fast` passes in 62.3s and full `check` in 121.5s before approval,
 then in 61.5s and 107.7s against approved-local metadata, with public 80/259
 and all 232 fixtures exact. The designer replied `apprvoed`, approving
 only the frozen digest, and implementation
-`914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. The packet
-is hash-frozen, private, `approved`, and `approved-local`; publish only its
-bounded approval record and reconciliation under standing permission. It is
+`914aa700b82469dbb22ca1600f1bc7ad6dbecff7` plus approval record
+`6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified. The packet
+is hash-frozen, private, `approved`, and
+`authorized-pending-bounded-publication`; publish only its bounded initial
+handoff and final reconciliation under standing permission. It is
 not registered, fixture-backed, or public. Child/state assets, effects, later
 roles/families, release, accepted drift, a PR, and another art gate remain
 closed.

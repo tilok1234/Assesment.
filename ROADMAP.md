@@ -305,11 +305,12 @@ visor views pass. `check:fast` passes in 62.3s and full `check` in 121.5s
 before approval, then in 61.5s and 107.7s against approved-local metadata,
 with public 80/259 and all 232 fixtures exact. The exact three frozen PNGs are open
 together in responsive Aseprite 1.3.17.2 process 6832. Status is
-`approved` / `approved-local`: the designer replied `apprvoed`, approving only
-the exact digest above, and implementation
-`914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. Standing
-permission opens only the bounded approval record, reconciliation commits, and
-branch pushes. Registration, fixtures, child/state assets, effects, later
+`approved`: the designer replied `apprvoed`, approving only the exact digest
+above. Implementation `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` and
+approval record `6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified;
+publication state is `authorized-pending-bounded-publication`. Standing
+permission opens only the bounded initial handoff and final reconciliation
+commits plus branch pushes. Registration, fixtures, child/state assets, effects, later
 roles/families, release, accepted drift, and a PR remain closed; another art
 candidate requires a separate `lets do next` after clean publication.
 

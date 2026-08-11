@@ -140,8 +140,8 @@ check(
     && EN_E08_HOLLOW_SENTRY_GATE.approvedOn === '2026-08-11'
     && EN_E08_HOLLOW_SENTRY_GATE.approvedImplementation === '914aa700b82469dbb22ca1600f1bc7ad6dbecff7'
     && EN_E08_HOLLOW_SENTRY_GATE.publicationAuthorizedOn === '2026-08-11'
-    && EN_E08_HOLLOW_SENTRY_GATE.publicationState === 'approved-local',
-  'Hollow Sentry authorization or approved-local publication state drifted',
+    && EN_E08_HOLLOW_SENTRY_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Hollow Sentry authorization or bounded-publication state drifted',
 );
 check(
   EN_E08_HOLLOW_SENTRY_GATE.approvalEvidence.includes('designer replied: apprvoed')
@@ -190,7 +190,9 @@ check(
     && EN_E08_HOLLOW_SENTRY_GATE.animationContract.includes('connected full-body iron clamp')
     && EN_E08_HOLLOW_SENTRY_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('implementation 914aa700b82469dbb22ca1600f1bc7ad6dbecff7')
-    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('bounded approval-record publication')
+    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('approval record 6a577566766afc66aa01cdf1c7ebd1430aad425d')
+    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('remote verified')
+    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('bounded initial-handoff and final-reconciliation')
     && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('separate designer lets do next'),
   'full-suite, motion, or stop-gate contract drifted',
 );

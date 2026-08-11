@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Hollow Sentry Approved Locally
+## Immediate Continuation Checkpoint - Hollow Sentry Approval Published
 
 Start here in a new task. The EN-E08 actor-topology gate is resolved and one
 private common Animated Armor Hollow Sentry is implemented, deterministic,
@@ -32,12 +32,13 @@ hash-frozen, and technically validated on
 Blackwake Dreadmare reconciliation
 `defc9b8cab1226610da6cf2b17951c8b5815499e`. The exact frozen packet is
 visually approved and implementation
-`914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. The
-approval record and current-state reconciliation are not yet published. The
-candidate remains unregistered, fixture-free, and non-public.
+`914aa700b82469dbb22ca1600f1bc7ad6dbecff7` plus approval record
+`6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified. The bounded
+initial handoff and final current-state reconciliation remain to publish. The
+candidate stays unregistered, fixture-free, and non-public.
 
-- Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status:
-  `approved`; publication state `approved-local`.
+- Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status: `approved`;
+  publication state `authorized-pending-bounded-publication`.
 - Architecture decision: `en-e08-baked-single-actor-v1` is selected. After the
   Blackwake tuple was published and reconciled, the designer was shown the
   recommended baked single-actor topology and the alternative deterministic
@@ -90,9 +91,10 @@ candidate remains unregistered, fixture-free, and non-public.
 - Approval: after the exact packet above was presented, the designer replied
   `apprvoed` on 2026-08-11. In context this explicitly approves only candidate
   digest `f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`.
-  Implementation `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed
-  locally. Standing publication permission opens only the bounded approval
-  record, reconciliation commits, and branch pushes; it does not open a PR or
+  Implementation `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` and approval
+  record `6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified.
+  Standing publication permission opens only the bounded initial handoff and
+  final reconciliation commits plus branch pushes; it does not open a PR or
   any content gate.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e08-animated-armor-hollow-sentry` and

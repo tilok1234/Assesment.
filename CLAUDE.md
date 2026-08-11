@@ -133,9 +133,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `npm.cmd run check:enemy-expansion-en-e08-animated-armor-hollow-sentry`.
   The designer replied `apprvoed`; in context approval applies only to the
   exact digest above. Implementation
-  `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. Status is
-  `approved` / `approved-local`: publish only the bounded approval record and
-  current-state reconciliation under standing permission. Do not register,
+  `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` and approval record
+  `6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified. Status is
+  `approved` / `authorized-pending-bounded-publication`: publish only the
+  bounded initial handoff and final reconciliation under standing permission.
+  Do not register,
   generate fixtures, add child/state assets or effects, start another
   role/family, release, accept drift, or open a PR. Another art candidate
   requires a separate `lets do next` after clean remote-verified publication.

@@ -134,7 +134,7 @@ export const EN_E08_HOLLOW_SENTRY_GATE = deepFreeze({
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'approved-local',
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_BLACKWAKE_DREADMARE_GATE.id,
     artifactSha256: EN_E07_BLACKWAKE_DREADMARE_GATE.artifactSha256,
@@ -221,7 +221,7 @@ export const EN_E08_HOLLOW_SENTRY_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Hollow Sentry digest is visually approved and implementation 914aa700b82469dbb22ca1600f1bc7ad6dbecff7 is committed locally. Complete only the bounded approval-record publication and current-state reconciliation under standing permission. Animated Armor registration, fixtures, child/state assets, effects, later roles or EN-E08 families, release, accepted drift, and a pull request remain closed. A separate designer lets do next is required after clean remote-verified publication before another art candidate begins.',
+  nextGate: 'The exact Hollow Sentry digest is visually approved; implementation 914aa700b82469dbb22ca1600f1bc7ad6dbecff7 and approval record 6a577566766afc66aa01cdf1c7ebd1430aad425d are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. Animated Armor registration, fixtures, child/state assets, effects, later roles or EN-E08 families, release, accepted drift, and a pull request remain closed. A separate designer lets do next is required after final clean remote-verified publication before another art candidate begins.',
 });
 
 export const EN_E08_HOLLOW_SENTRY_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
