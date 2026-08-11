@@ -4706,7 +4706,57 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Animated Armor Hollow Sentry complete suite awaiting review
+#### Animated Armor Runeforge Custodian specialist awaiting review
+
+- Gate ID: `en-e08-animated-armor-runeforge-custodian-full-v1`; status:
+  `awaiting-visual-review` on
+  `codex/en-e08-animated-armor-runeforge-custodian`, based exactly on clean
+  published Hollow Sentry reconciliation
+  `dc86bb65053564c76b18e848933ab4c2d318bfde`.
+- Authorization: after the Hollow Sentry publication tuple was reconciled, the
+  designer replied `lets do next`, opening exactly one private specialist
+  Animated Armor candidate. Registration, fixtures, child/state assets,
+  effects, the elite role, Headless Rider, Possessed Mask, Living Weapon,
+  EN-E09, release, accepted drift, and a pull request remain closed.
+- Identity: independently authored constructed-rune-lock armor with an angular
+  crownless helm, one vertical readable rune-lock face aperture, level square
+  pauldrons, deep hexagonal forge chest, connected interlocking gauntlets,
+  rigid joint belt, divided greaves, and grounded wedge sabatons. Slate plate,
+  warm copper bands, dark fixed joints, and inset blue runes distinguish it
+  from haunted Hollow Sentry, Fallen Knight, Revenant, gear-driven Clockwork
+  Automaton, and independent Living Weapon.
+- Architecture and motion: `en-e08-baked-single-actor-v1`, zero child assets.
+  Idle seats/releases the rune lock; Walk uses four deliberate forge stamps;
+  Attack keys both connected gauntlets, draws the hex chest, drives one
+  body-owned interlocking press, and recovers. Hurt is white recoil then a
+  colored locked-joint brace. Cast aliases Attack; Death aliases Hurt
+  H1,H2,H2,H2.
+- Frozen digest:
+  `629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`.
+  Raw/assembled/comparison PNG hashes are
+  `fe033a30fb075a303334d2ee7f2c9af8c17e4b0ec915e068f486ce3703c8854a`,
+  `03faefe1460e956963484b722508ab999a4aae605d3af1d6ed29174f39bfdb82`,
+  and `b7cea70e48d5ac23e6fdb203cb7bd41cfda65885447987d30e4a5499b3d89f0d`.
+  Raw and Complete B + Form GIF hashes are
+  `9f6d1335c8bf68d2a56194efeda38823df2604ceb60e2498d1b3520849203f90`
+  and `5165326ba7dccb437de52277d01f001a6c28de265238bd7e2c736f85b82025f9`.
+- Focused validation passes: 80/80 connected, bounded, grounded, split-wedge,
+  tall-square, baked-topology, and pixel/alpha distinctions from approved
+  Hollow Sentry, Fallen Knight Shieldbearer, and Grave Oathkeeper Revenant;
+  72/72 colored frames retain every palette, 8/8 flashes are exact white, and
+  54/54 expected views retain the rune-lock aperture. Opaque range is 228-330;
+  Complete B adds 7,584 pixels and Form changes 7,788.
+- Broad validation: frozen review + focused + `check:fast` pass together in
+  59.6s; full `npm.cmd run check` passes in 113.1s. Public 80/259 and all 232
+  fixture sheets remain exact.
+- Visual-review readiness: the exact frozen raw, Complete B + Form, and
+  comparison PNG paths are open together in responsive Aseprite 1.3.17.2
+  process 42856.
+- Stop after exact visual presentation. Do not stage, commit, push, approve,
+  register, generate fixtures, open the elite role, or advance EN-E08 without
+  explicit designer approval of this frozen candidate.
+
+#### Animated Armor Hollow Sentry approved preceding suite
 
 - Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status: `approved`
   and `published` on

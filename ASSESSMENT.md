@@ -468,7 +468,19 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current private acceptance candidate is common Animated Armor Hollow
+  The current private acceptance candidate is specialist Animated Armor
+  Runeforge Custodian on `codex/en-e08-animated-armor-runeforge-custodian`,
+  based exactly on clean published Hollow Sentry reconciliation
+  `dc86bb65053564c76b18e848933ab4c2d318bfde`. Its independently authored
+  constructed-rune-lock 80-frame baked actor is frozen at digest
+  `629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`.
+  The focused gate passes 80/80 connected, bounded, grounded, split-wedge,
+  tall-square, topology, and comparison distinctions, with 54/54 expected
+  readable rune-lock views. Frozen review + focused + fast pass together in
+  59.6s and full validation passes in 113.1s, preserving public 80/259 and all
+  232 fixtures. It awaits visual approval and remains uncommitted,
+  unpushed, unregistered, fixture-free, effect-free, and private.
+  The approved preceding private checkpoint is common Animated Armor Hollow
   Sentry on `codex/en-e08-animated-armor-architecture`, based exactly on clean
   published Blackwake reconciliation
   `defc9b8cab1226610da6cf2b17951c8b5815499e`. The designer selected the

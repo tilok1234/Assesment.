@@ -1472,7 +1472,24 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Hollow Sentry is the current private common Animated Armor acceptance candidate
+Runeforge Custodian is the current private specialist Animated Armor acceptance
+candidate on `codex/en-e08-animated-armor-runeforge-custodian`, based exactly on
+clean published Hollow Sentry reconciliation
+`dc86bb65053564c76b18e848933ab4c2d318bfde`. Its complete 80-frame baked
+single-actor suite is frozen at digest
+`629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`
+and awaits visual approval. The constructed identity uses one vertical readable
+rune-lock aperture, square pauldrons, a hex forge chest, connected interlocking
+gauntlets, fixed joints, divided greaves, and wedge sabatons with zero child
+assets, gears, weapons, shields, detached plate, or effects. Run
+`npm.cmd run review:enemy-expansion-en-e08-animated-armor-runeforge-custodian`
+and `npm.cmd run check:enemy-expansion-en-e08-animated-armor-runeforge-custodian`.
+The frozen review + focused + fast gates pass together in 59.6s and full
+validation passes in 113.1s; public 80/259 and all 232 fixtures remain exact.
+Do not stage, commit, push, register, generate fixtures, or open the elite role
+until the exact frozen packet is explicitly approved.
+
+Hollow Sentry is the approved preceding private common Animated Armor checkpoint
 on `codex/en-e08-animated-armor-architecture`, based exactly on clean published
 Blackwake reconciliation `defc9b8cab1226610da6cf2b17951c8b5815499e`. The
 designer selected the recommended `baked-single-actor` topology after the

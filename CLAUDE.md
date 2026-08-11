@@ -107,7 +107,26 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art acceptance candidate:
+- Current private art acceptance candidate: specialist Animated Armor Runeforge
+  Custodian on `codex/en-e08-animated-armor-runeforge-custodian`, based exactly
+  on clean published Hollow Sentry reconciliation
+  `dc86bb65053564c76b18e848933ab4c2d318bfde`, is frozen at digest
+  `629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`
+  and awaits visual approval. It is one baked 24x24 actor with zero child
+  assets: angular helm, one vertical rune-lock aperture, square pauldrons, hex
+  forge chest, connected interlocking gauntlets, rigid joint belt, divided
+  greaves, and grounded wedge sabatons. Run
+  `npm.cmd run review:enemy-expansion-en-e08-animated-armor-runeforge-custodian`
+  and `npm.cmd run
+  check:enemy-expansion-en-e08-animated-armor-runeforge-custodian`.
+  The frozen review + focused + fast gates pass together in 59.6s and full
+  validation passes in 113.1s with public 80/259 and all 232 fixtures exact.
+  The exact three frozen PNGs are open together in responsive Aseprite 1.3.17.2
+  process 42856.
+  Do not stage, commit, push, register, generate fixtures, add effects, open the elite
+  role, or advance another EN-E08 family before explicit approval of the exact
+  frozen packet.
+- Approved preceding private art checkpoint:
   `codex/en-e08-animated-armor-architecture`, based exactly on clean published
   Blackwake reconciliation `defc9b8cab1226610da6cf2b17951c8b5815499e`,
   contains one common Animated Armor Hollow Sentry frozen at digest

@@ -1350,7 +1350,25 @@ reconciliation completes the bounded tuple. The same
 reply opened only the EN-E08 actor-topology architecture decision after clean
 remote reconciliation; the later explicit choice is recorded below.
 
-`engine/enemy-expansion-en-e08-animated-armor-hollow-sentry.js` resolves that
+`engine/enemy-expansion-en-e08-animated-armor-runeforge-custodian.js` extends
+the selected architecture without changing it. From clean published Hollow
+Sentry reconciliation `dc86bb65053564c76b18e848933ab4c2d318bfde`, it owns
+exactly one private constructed specialist with one baked 24x24 pixel array and
+zero child assets in every frame. Its angular helm and single vertical
+rune-lock aperture, square pauldrons, hex forge chest, connected interlocking
+gauntlets, fixed joint belt, divided greaves, and wedge sabatons remain actor
+pixels. Weapons, shields, gears, sparks, glow, detached plate, runtime offsets,
+and child/state exports remain outside the content gate. The isolated renderer,
+review builder, GIF builder, and focused checker do not enter the public facade,
+catalog, manifest, fixtures, shared renderer, exporter, validator, or frame
+contract. Candidate digest
+`629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`
+is frozen; frozen review + focused + fast pass together in 59.6s and full
+validation passes in 113.1s with public 80/259 and all 232 fixtures exact. It
+awaits visual approval before any staging or publication.
+
+`engine/enemy-expansion-en-e08-animated-armor-hollow-sentry.js` resolved the
+preceding architecture gate
 gate with `en-e08-baked-single-actor-v1` and owns the first isolated EN-E08
 content boundary. The designer selected the recommended baked actor after the
 explicit baked-versus-child/state choice. Helmet, pauldrons, breastplate,

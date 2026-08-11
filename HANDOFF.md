@@ -23,7 +23,58 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Hollow Sentry Published and Reconciled
+## Immediate Continuation Checkpoint - Runeforge Custodian Awaiting Review
+
+Start here. From clean published Hollow Sentry reconciliation
+`dc86bb65053564c76b18e848933ab4c2d318bfde`, the designer replied `lets do
+next`, opening exactly one private specialist Animated Armor art gate. The
+Runeforge Custodian is implemented on
+`codex/en-e08-animated-armor-runeforge-custodian` as one deterministic baked
+24x24 actor across all 80 frames. It is frozen at candidate digest
+`629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`
+and awaits visual approval; it is not staged, committed, pushed, registered,
+fixture-backed, or public.
+
+- Identity: constructed-rune-lock specialist with an angular crownless helm,
+  one vertical readable rune-lock aperture, level square pauldrons, hexagonal
+  forge chest, connected interlocking gauntlets, rigid joint belt, divided
+  greaves, and grounded wedge sabatons. Slate plate, copper bands, dark fixed
+  joints, and inset blue runes separate it from haunted Hollow Sentry, living
+  Fallen Knight, corpse-handed Revenant, gear-driven Clockwork Automaton, and
+  independent Living Weapon.
+- Architecture: `en-e08-baked-single-actor-v1`; 80/80 frames report one baked
+  actor and zero child assets. No schema, shared renderer, exporter, validator,
+  frame-contract, public registry, fixture, manifest, accepted-drift, effect,
+  weapon, shield, gear, spark, aura, or detached-part change is included.
+- Frozen packet hashes: raw PNG
+  `fe033a30fb075a303334d2ee7f2c9af8c17e4b0ec915e068f486ce3703c8854a`;
+  Complete B + Form PNG
+  `03faefe1460e956963484b722508ab999a4aae605d3af1d6ed29174f39bfdb82`;
+  comparison PNG
+  `b7cea70e48d5ac23e6fdb203cb7bd41cfda65885447987d30e4a5499b3d89f0d`;
+  raw GIF `9f6d1335c8bf68d2a56194efeda38823df2604ceb60e2498d1b3520849203f90`;
+  Complete B + Form GIF
+  `5165326ba7dccb437de52277d01f001a6c28de265238bd7e2c736f85b82025f9`.
+- Focused gate passes: 80/80 connected, bounded, grounded, split-wedge,
+  tall-square, baked-topology, and pixel/alpha-distinct frames; 72/72 colored
+  frames retain every material palette, 8/8 flashes are exact white, and 54/54
+  expected views retain the readable rune-lock aperture. Opaque range is
+  228-330; Complete B adds 7,584 pixels and Form changes 7,788.
+- Broad validation: frozen review + focused gate + `check:fast` pass together
+  in 59.6s; full `npm.cmd run check` passes in 113.1s. Public 80/259 and all
+  232 fixture sheets remain exact.
+- Visual-review readiness: the exact frozen raw, Complete B + Form, and
+  comparison PNG paths are open together in responsive Aseprite 1.3.17.2
+  process 42856.
+- Commands: `npm.cmd run
+  review:enemy-expansion-en-e08-animated-armor-runeforge-custodian` and
+  `npm.cmd run check:enemy-expansion-en-e08-animated-armor-runeforge-custodian`.
+- Stop gate: present the exact frozen raw, Complete B + Form, comparison, and
+  synchronized GIF evidence. Do not stage, commit, push, approve, register,
+  generate fixtures, open the elite role, or advance EN-E08 until the designer
+  explicitly approves this digest.
+
+## Approved Preceding Checkpoint - Hollow Sentry Published and Reconciled
 
 Start here in a new task. The EN-E08 actor-topology gate is resolved and one
 private common Animated Armor Hollow Sentry is implemented, deterministic,

@@ -288,7 +288,19 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current EN-E08 acceptance candidate (2026-08-11): common Animated Armor Hollow
+Current EN-E08 acceptance candidate (2026-08-11): specialist Animated Armor
+Runeforge Custodian on `codex/en-e08-animated-armor-runeforge-custodian` is
+frozen at digest
+`629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`
+from clean published Hollow Sentry reconciliation
+`dc86bb65053564c76b18e848933ab4c2d318bfde`. The constructed-rune-lock role is
+one baked actor with zero child assets and passes its focused 80-frame gate;
+the frozen review + focused + fast gates pass together in 59.6s and full
+validation passes in 113.1s with public 80/259 and all 232 fixtures exact.
+Visual approval, publication, registration, fixtures,
+effects, the elite role, and later EN-E08 families remain separate gates.
+
+Approved preceding EN-E08 checkpoint (2026-08-11): common Animated Armor Hollow
 Sentry on `codex/en-e08-animated-armor-architecture` is frozen at digest
 `f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`
 from clean published Blackwake reconciliation
