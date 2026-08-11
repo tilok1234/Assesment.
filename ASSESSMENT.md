@@ -468,7 +468,8 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current private acceptance candidate is elite Animated Armor Crownvault
+  The current approved private checkpoint awaiting publication reconciliation
+  is elite Animated Armor Crownvault
   Castellan on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly
   on clean published Runeforge Custodian reconciliation
   `700f2cedb1d3104369931a97bfec31a3b49fff93`. Its independently authored royal
@@ -477,9 +478,11 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The focused gate passes 80/80 connected, bounded, grounded, split-plinth,
   broad-fortress, topology, and comparison distinctions, with 54/54 expected
   readable T-seal views. Fast validation passes in 56.4s and full validation in
-  105.6s, preserving public 80/259 and all 232 fixtures. It awaits visual
-  approval and remains uncommitted,
-  unpushed, unregistered, fixture-free, effect-free, and private.
+  105.6s, preserving public 80/259 and all 232 fixtures. The designer replied
+  `approved`; implementation `46d09a4e16a11f9c622cb698ff30055bb9bcb877`
+  records the accepted pixels. The approval record and bounded publication
+  reconciliation are pending; registration, fixtures, effects, later EN-E08
+  families, release, accepted drift, and a PR remain closed.
   The approved preceding private checkpoint is specialist Animated Armor
   Runeforge Custodian on `codex/en-e08-animated-armor-runeforge-custodian`,
   based exactly on clean published Hollow Sentry reconciliation

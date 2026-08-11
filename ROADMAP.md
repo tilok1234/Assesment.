@@ -288,7 +288,8 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current EN-E08 acceptance candidate (2026-08-11): elite Animated Armor
+Current approved EN-E08 checkpoint awaiting publication reconciliation
+(2026-08-11): elite Animated Armor
 Crownvault Castellan on `codex/en-e08-animated-armor-crownvault-castellan` is
 frozen at digest
 `112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039`
@@ -296,9 +297,11 @@ from clean published Runeforge Custodian reconciliation
 `700f2cedb1d3104369931a97bfec31a3b49fff93`. The royal-fortress role is one
 baked actor with zero child assets and passes its focused 80-frame gate;
 fast validation passes in 56.4s and full validation in 105.6s with public
-80/259 and all 232 fixtures exact. Visual approval, publication, registration, fixtures,
-effects, later EN-E08 families, release, accepted drift, and a PR remain
-separate gates.
+80/259 and all 232 fixtures exact. The designer replied `approved`;
+implementation `46d09a4e16a11f9c622cb698ff30055bb9bcb877` records the accepted
+pixels. The approval record and bounded publication reconciliation are pending.
+Registration, fixtures, effects, later EN-E08 families, release, accepted
+drift, and a PR remain separate gates.
 
 Approved preceding EN-E08 checkpoint (2026-08-11): specialist Animated Armor
 Runeforge Custodian on `codex/en-e08-animated-armor-runeforge-custodian` is

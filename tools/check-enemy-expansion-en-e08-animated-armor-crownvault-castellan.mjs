@@ -129,15 +129,16 @@ check(
   'EN-E08 baked single-actor architecture decision drifted',
 );
 check(
-  EN_E08_CROWNVAULT_CASTELLAN_GATE.status === 'awaiting-visual-review'
+  EN_E08_CROWNVAULT_CASTELLAN_GATE.status === 'approved'
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.baseCheckpoint === '700f2cedb1d3104369931a97bfec31a3b49fff93'
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.authorizedOn === '2026-08-11'
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.authorizationEvidence.includes('designer replied: lets do nextr')
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.authorizationEvidence.includes('one private elite Animated Armor Crownvault Castellan')
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.architectureDecision === EN_E08_ACTOR_TOPOLOGY_DECISION.id
-    && EN_E08_CROWNVAULT_CASTELLAN_GATE.approvedOn === null
-    && EN_E08_CROWNVAULT_CASTELLAN_GATE.approvalEvidence === null
-    && EN_E08_CROWNVAULT_CASTELLAN_GATE.approvedImplementation === null
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.approvedOn === '2026-08-11'
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.approvalEvidence.includes('process 32136')
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.approvedImplementation === '46d09a4e16a11f9c622cb698ff30055bb9bcb877'
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.publicationAuthorizedOn === '2026-08-11'
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.publishedImplementation === null
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.publishedApprovalRecord === null
@@ -145,7 +146,7 @@ check(
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.publicationState === 'not-published'
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.publicationAuthorizationEvidence.includes('pull request'),
-  'Crownvault Castellan authorization or unpublished gate drifted',
+  'Crownvault Castellan approval or unpublished gate drifted',
 );
 check(
   EN_E08_CROWNVAULT_CASTELLAN_GATE.precedingApproval.gateId === EN_E08_RUNEFORGE_CUSTODIAN_GATE.id
@@ -165,13 +166,13 @@ check(
     && EN_E08_CROWNVAULT_CASTELLAN_CONTRACT_CARD.activeVariant.id === 'crownvault-castellan'
     && EN_E08_CROWNVAULT_CASTELLAN_CONTRACT_CARD.activeVariant.role === 'elite'
     && EN_E08_CROWNVAULT_CASTELLAN_CONTRACT_CARD.activeVariant.identity === 'royal-fortress-vault'
-    && EN_E08_CROWNVAULT_CASTELLAN_CONTRACT_CARD.activeVariant.status === 'acceptance-candidate'
+    && EN_E08_CROWNVAULT_CASTELLAN_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E08_CROWNVAULT_CASTELLAN_CONTRACT_CARD.deferredRoles.length === 0
     && EN_E08_CROWNVAULT_CASTELLAN_CONTRACT_CARD.actorTopology === 'baked-single-actor',
   'Animated Armor collision ruling, role order, or topology boundary drifted',
 );
 check(
-  EN_E08_CROWNVAULT_CASTELLAN_CONTRACT.state === 'implemented-complete-motion-awaiting-review'
+  EN_E08_CROWNVAULT_CASTELLAN_CONTRACT.state === 'implemented-complete-motion-approved'
     && EN_E08_CROWNVAULT_CASTELLAN_CONTRACT.topology === 'baked-single-actor'
     && EN_E08_CROWNVAULT_CASTELLAN_CONTRACT.silhouette.includes('centered T-shaped vault seal')
     && EN_E08_CROWNVAULT_CASTELLAN_CONTRACT.silhouette.includes('connected bastion gauntlets')
@@ -187,8 +188,9 @@ check(
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.animationContract.includes('four monumental plinth-stamp phases')
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.animationContract.includes('body-owned fortress press')
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.animationContract.includes('Cast aliases Attack exactly')
-    && EN_E08_CROWNVAULT_CASTELLAN_GATE.nextGate.includes('Do not stage, commit, push, approve, register')
-    && EN_E08_CROWNVAULT_CASTELLAN_GATE.nextGate.includes('designer explicitly approves this exact elite candidate'),
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.nextGate.includes('implementation 46d09a4e16a11f9c622cb698ff30055bb9bcb877')
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.nextGate.includes('bounded approval-record commit')
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.nextGate.includes('another art gate requires a separate designer lets do next'),
   'full-suite, motion, or stop-gate contract drifted',
 );
 check(

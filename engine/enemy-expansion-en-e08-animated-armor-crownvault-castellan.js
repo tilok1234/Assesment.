@@ -53,7 +53,7 @@ export const EN_E08_CROWNVAULT_CASTELLAN_CONTRACT_CARD = deepFreeze({
     name: 'Crownvault Castellan',
     role: 'elite',
     identity: 'royal-fortress-vault',
-    status: 'acceptance-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   actorTopology: EN_E08_ACTOR_TOPOLOGY_DECISION.selected,
@@ -67,7 +67,7 @@ export const EN_E08_CROWNVAULT_CASTELLAN_CONTRACT = deepFreeze({
   variant: 'crownvault-castellan',
   role: 'elite',
   identity: 'royal-fortress-vault',
-  state: 'implemented-complete-motion-awaiting-review',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E08_ACTOR_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-crenellated-crownvault-helm-t-vault-seal-tower-pauldrons-gatehouse-chest-bastion-gauntlets-portcullis-waist-pillar-greaves-plinth-sabatons-v1',
   silhouette: 'A monumental royal fortress-suit with a crenellated crownvault helm, one centered T-shaped vault seal, tall tower pauldrons, a broad gatehouse breastplate, two connected bastion gauntlets, a portcullis waist, pillar greaves, and wide grounded plinth sabatons. It must exceed Hollow Sentry and Runeforge Custodian in mass and ceremony without becoming a living knight, boss-scale colossus, gear-driven automaton, independent weapon, shield carrier, or detached castle set.',
@@ -109,14 +109,14 @@ export const EN_E08_CROWNVAULT_CASTELLAN_DATA = deepFreeze({
 
 export const EN_E08_CROWNVAULT_CASTELLAN_GATE = deepFreeze({
   id: 'en-e08-animated-armor-crownvault-castellan-full-v1',
-  status: 'awaiting-visual-review',
+  status: 'approved',
   baseCheckpoint: '700f2cedb1d3104369931a97bfec31a3b49fff93',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Runeforge Custodian digest was visually approved, committed, pushed, and reconciled at clean published checkpoint 700f2cedb1d3104369931a97bfec31a3b49fff93, the designer replied: lets do nextr. Runeforge Custodian completed the specialist role, so the one-complete-sprite cadence authorizes only one private elite Animated Armor Crownvault Castellan 80-frame candidate.',
   architectureDecision: EN_E08_ACTOR_TOPOLOGY_DECISION.id,
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Runeforge Custodian, Hollow Sentry, and Fallen Knight Shieldbearer comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in responsive Aseprite 1.3.17.2 process 32136. The designer replied: approved. In context this explicitly approves candidate digest 112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039 and its five frozen review hashes only. Animated Armor registration, fixtures, child/state assets, effects, later EN-E08 families, release, accepted drift, a pull request, and another art gate remain separate decisions.',
+  approvedImplementation: '46d09a4e16a11f9c622cb698ff30055bb9bcb877',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: null,
@@ -209,7 +209,7 @@ export const EN_E08_CROWNVAULT_CASTELLAN_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Stop after presenting the exact frozen Crownvault Castellan packet. Do not stage, commit, push, approve, register, generate fixtures, advance another EN-E08 family, or publish until the designer explicitly approves this exact elite candidate.',
+  nextGate: 'The exact Crownvault Castellan digest is visually approved and implementation 46d09a4e16a11f9c622cb698ff30055bb9bcb877 records the accepted pixels. Standing publication permission opens only the bounded approval-record commit, branch push, and handoff reconciliation. Animated Armor registration, fixtures, child/state assets, effects, later EN-E08 families, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next from a clean published reconciliation.',
 });
 
 export const EN_E08_CROWNVAULT_CASTELLAN_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

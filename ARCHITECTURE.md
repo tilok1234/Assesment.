@@ -1364,8 +1364,12 @@ the public facade, catalog, manifest, fixtures, shared renderer, exporter,
 validator, or frame contract. Candidate digest
 `112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039`
 is frozen; fast validation passes in 56.4s and full validation in 105.6s with
-public 80/259 and all 232 fixtures exact. It awaits visual approval before any
-staging or publication.
+public 80/259 and all 232 fixtures exact. The designer replied `approved`, and
+implementation `46d09a4e16a11f9c622cb698ff30055bb9bcb877` records the exact
+accepted pixels without changing the selected architecture. The approval
+record and bounded publication reconciliation are pending; public registration,
+fixtures, effects, later families, release, accepted drift, and a PR remain
+closed.
 
 `engine/enemy-expansion-en-e08-animated-armor-runeforge-custodian.js` extended
 the selected architecture without changing it. From clean published Hollow

@@ -1478,7 +1478,9 @@ on clean published Runeforge Custodian reconciliation
 `700f2cedb1d3104369931a97bfec31a3b49fff93`. Its complete 80-frame baked
 single-actor suite is frozen at digest
 `112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039`
-and awaits visual approval. The fortress identity uses a crenellated helm, one
+and is visually approved by the designer's reply `approved`; implementation
+`46d09a4e16a11f9c622cb698ff30055bb9bcb877` records the exact accepted pixels.
+The fortress identity uses a crenellated helm, one
 readable T-seal, tower pauldrons, gatehouse chest, connected bastion gauntlets,
 portcullis waist, pillar greaves, and plinth sabatons with zero child assets,
 gears, weapons, shields, detached plate, or effects. Run
@@ -1486,8 +1488,10 @@ gears, weapons, shields, detached plate, or effects. Run
 and `npm.cmd run check:enemy-expansion-en-e08-animated-armor-crownvault-castellan`.
 Fast validation passes in 56.4s and full validation in 105.6s; public 80/259
 and all 232 fixtures remain exact.
-Do not stage, commit, push, register, generate fixtures, or advance EN-E08
-until the exact packet is explicitly approved.
+The approval record and bounded publication reconciliation are pending under
+the standing permission to commit and push approved work. Registration,
+fixtures, effects, later EN-E08 families, release, accepted drift, and a PR
+remain closed.
 
 Runeforge Custodian is the approved preceding private specialist Animated Armor
 checkpoint and acceptance

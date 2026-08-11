@@ -50,4 +50,3 @@ assembled_hash = build_gif(
 print("Generated the two exact labeled EN-E08 Animated Armor Crownvault Castellan full-suite GIFs.")
 print(f"- Raw GIF SHA-256: {raw_hash}")
 print(f"- Complete B + Form GIF SHA-256: {assembled_hash}")
-
