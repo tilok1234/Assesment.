@@ -65,7 +65,7 @@ export const EN_E08_ANIMATED_ARMOR_CONTRACT_CARD = deepFreeze({
     name: 'Hollow Sentry',
     role: 'common',
     identity: 'haunted-default',
-    status: 'implemented-full-awaiting-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['specialist', 'elite'],
   actorTopology: EN_E08_ACTOR_TOPOLOGY_DECISION.selected,
@@ -79,7 +79,7 @@ export const EN_E08_HOLLOW_SENTRY_CONTRACT = deepFreeze({
   variant: 'hollow-sentry',
   role: 'common',
   identity: 'haunted-default',
-  state: 'implemented-complete-motion-awaiting-review',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E08_ACTOR_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-sealed-helm-black-visor-broad-mismatched-pauldrons-hollow-breastplate-oversized-gauntlets-cinched-bindings-split-greaves-grounded-sabatons-v1',
   silhouette: 'A broad grounded empty suit with a sealed low-crested helm, wide black visor slit, offset pauldrons, hollow ribbed breastplate, two oversized connected gauntlets, narrow bound waist, separated plate greaves, and broad sabatons. It must read as armor acting as the entire body rather than a living Fallen Knight, corpse-handed Revenant, robed Living Shadow, skeleton, clockwork automaton, or independent Living Weapon.',
@@ -121,20 +121,20 @@ export const EN_E08_HOLLOW_SENTRY_DATA = deepFreeze({
 
 export const EN_E08_HOLLOW_SENTRY_GATE = deepFreeze({
   id: 'en-e08-animated-armor-hollow-sentry-full-v1',
-  status: 'implemented-awaiting-review',
+  status: 'approved',
   baseCheckpoint: 'defc9b8cab1226610da6cf2b17951c8b5815499e',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Blackwake Dreadmare was visually approved, published, and reconciled at clean checkpoint defc9b8cab1226610da6cf2b17951c8b5815499e, the designer was presented with the recommended baked single-actor topology and a separate child/state alternative. The designer replied: lets do next. That context selects the recommended topology and authorizes exactly one private common Animated Armor Hollow Sentry 80-frame candidate.',
   architectureDecision: EN_E08_ACTOR_TOPOLOGY_DECISION.id,
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
-  publicationAuthorizedOn: null,
-  publicationAuthorizationEvidence: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Fallen Knight Shieldbearer, Grave Oathkeeper Revenant, and Gloam Walker comparison, and both synchronized GIFs were presented after final visor, hollow-breastplate, silhouette, and phase inspection. The three exact frozen PNG boards were open together in responsive Aseprite 1.3.17.2 process 6832, whose live command line named all three exact paths. The designer replied: apprvoed. In context this is explicit approval of candidate digest f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac only. Animated Armor registration, fixtures, child/state assets, effects, later roles or EN-E08 families, release, accepted drift, and a next-art gate remain separate decisions.',
+  approvedImplementation: '914aa700b82469dbb22ca1600f1bc7ad6dbecff7',
+  publicationAuthorizedOn: '2026-08-11',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-local',
   precedingApproval: {
     gateId: EN_E07_BLACKWAKE_DREADMARE_GATE.id,
     artifactSha256: EN_E07_BLACKWAKE_DREADMARE_GATE.artifactSha256,
@@ -221,7 +221,7 @@ export const EN_E08_HOLLOW_SENTRY_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Visual approval is required for the exact frozen Hollow Sentry packet. Do not commit or push the candidate, register Animated Armor, generate fixtures, add child/state assets or effects, begin another role or EN-E08 family, release, or accept drift before that approval.',
+  nextGate: 'The exact Hollow Sentry digest is visually approved and implementation 914aa700b82469dbb22ca1600f1bc7ad6dbecff7 is committed locally. Complete only the bounded approval-record publication and current-state reconciliation under standing permission. Animated Armor registration, fixtures, child/state assets, effects, later roles or EN-E08 families, release, accepted drift, and a pull request remain closed. A separate designer lets do next is required after clean remote-verified publication before another art candidate begins.',
 });
 
 export const EN_E08_HOLLOW_SENTRY_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -563,7 +563,7 @@ export const EN_E08_HOLLOW_SENTRY_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'hollow-sentry',
     scale: 8,
-    notes: 'Awaiting visual approval as one broad haunted-default Hollow Sentry rendered entirely as a baked single actor against Fallen Knight Shieldbearer, Grave Oathkeeper Revenant, and Gloam Walker. Keep registration, fixtures, child/state assets, effects, later roles and EN-E08 families, release, and accepted drift separate.',
+    notes: 'Visually approved as one broad haunted-default Hollow Sentry rendered entirely as a baked single actor against Fallen Knight Shieldbearer, Grave Oathkeeper Revenant, and Gloam Walker. Publish only the bounded approval and reconciliation tuple. Keep registration, fixtures, child/state assets, effects, later roles and EN-E08 families, release, accepted drift, and a next-art gate separate.',
   },
 });
 

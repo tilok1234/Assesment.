@@ -131,16 +131,25 @@ check(
   'EN-E08 baked single-actor architecture decision drifted',
 );
 check(
-  EN_E08_HOLLOW_SENTRY_GATE.status === 'implemented-awaiting-review'
+  EN_E08_HOLLOW_SENTRY_GATE.status === 'approved'
     && EN_E08_HOLLOW_SENTRY_GATE.baseCheckpoint === 'defc9b8cab1226610da6cf2b17951c8b5815499e'
     && EN_E08_HOLLOW_SENTRY_GATE.authorizedOn === '2026-08-11'
     && EN_E08_HOLLOW_SENTRY_GATE.authorizationEvidence.includes('designer replied: lets do next')
     && EN_E08_HOLLOW_SENTRY_GATE.authorizationEvidence.includes('exactly one private common Animated Armor Hollow Sentry')
     && EN_E08_HOLLOW_SENTRY_GATE.architectureDecision === EN_E08_ACTOR_TOPOLOGY_DECISION.id
-    && EN_E08_HOLLOW_SENTRY_GATE.approvedOn === null
-    && EN_E08_HOLLOW_SENTRY_GATE.approvalEvidence === null
-    && EN_E08_HOLLOW_SENTRY_GATE.publicationState === 'not-published',
-  'Hollow Sentry authorization or unapproved publication state drifted',
+    && EN_E08_HOLLOW_SENTRY_GATE.approvedOn === '2026-08-11'
+    && EN_E08_HOLLOW_SENTRY_GATE.approvedImplementation === '914aa700b82469dbb22ca1600f1bc7ad6dbecff7'
+    && EN_E08_HOLLOW_SENTRY_GATE.publicationAuthorizedOn === '2026-08-11'
+    && EN_E08_HOLLOW_SENTRY_GATE.publicationState === 'approved-local',
+  'Hollow Sentry authorization or approved-local publication state drifted',
+);
+check(
+  EN_E08_HOLLOW_SENTRY_GATE.approvalEvidence.includes('designer replied: apprvoed')
+    && EN_E08_HOLLOW_SENTRY_GATE.approvalEvidence.includes('Aseprite 1.3.17.2 process 6832')
+    && EN_E08_HOLLOW_SENTRY_GATE.approvalEvidence.includes('f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac')
+    && EN_E08_HOLLOW_SENTRY_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E08_HOLLOW_SENTRY_GATE.publicationAuthorizationEvidence.includes('pull request'),
+  'exact approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E08_HOLLOW_SENTRY_GATE.precedingApproval.gateId === EN_E07_BLACKWAKE_DREADMARE_GATE.id
@@ -158,13 +167,13 @@ check(
     && EN_E08_ANIMATED_ARMOR_CONTRACT_CARD.activeVariant.id === 'hollow-sentry'
     && EN_E08_ANIMATED_ARMOR_CONTRACT_CARD.activeVariant.role === 'common'
     && EN_E08_ANIMATED_ARMOR_CONTRACT_CARD.activeVariant.identity === 'haunted-default'
-    && EN_E08_ANIMATED_ARMOR_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-review'
+    && EN_E08_ANIMATED_ARMOR_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E08_ANIMATED_ARMOR_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
     && EN_E08_ANIMATED_ARMOR_CONTRACT_CARD.actorTopology === 'baked-single-actor',
   'Animated Armor collision ruling, role order, or topology boundary drifted',
 );
 check(
-  EN_E08_HOLLOW_SENTRY_CONTRACT.state === 'implemented-complete-motion-awaiting-review'
+  EN_E08_HOLLOW_SENTRY_CONTRACT.state === 'implemented-complete-motion-approved'
     && EN_E08_HOLLOW_SENTRY_CONTRACT.topology === 'baked-single-actor'
     && EN_E08_HOLLOW_SENTRY_CONTRACT.silhouette.includes('sealed low-crested helm')
     && EN_E08_HOLLOW_SENTRY_CONTRACT.silhouette.includes('oversized connected gauntlets')
@@ -180,7 +189,9 @@ check(
     && EN_E08_HOLLOW_SENTRY_GATE.animationContract.includes('four weighty iron steps')
     && EN_E08_HOLLOW_SENTRY_GATE.animationContract.includes('connected full-body iron clamp')
     && EN_E08_HOLLOW_SENTRY_GATE.animationContract.includes('Cast aliases Attack exactly')
-    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('Do not commit or push the candidate'),
+    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('implementation 914aa700b82469dbb22ca1600f1bc7ad6dbecff7')
+    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('bounded approval-record publication')
+    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('separate designer lets do next'),
   'full-suite, motion, or stop-gate contract drifted',
 );
 check(

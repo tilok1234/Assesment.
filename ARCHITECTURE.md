@@ -1381,10 +1381,16 @@ passes 80/80 connected, bounded, grounded, split-sabaton, broad-plate,
 baked-topology, and pixel/alpha distinctions from Fallen Knight Shieldbearer,
 Grave Oathkeeper Revenant, and Gloam Walker. The opaque range is 219-306;
 72/72 colored frames, 8/8 exact white flashes, and 54/54 readable visor views
-pass. `check:fast` passes in 62.3s and full `check` in 121.5s with public
-80/259 and all 232 fixtures exact. The packet is hash-frozen, private, and
-`implemented-awaiting-review`; it is not approved, staged, committed, pushed,
-registered, fixture-backed, or public.
+pass. `check:fast` passes in 62.3s and full `check` in 121.5s before approval,
+then in 61.5s and 107.7s against approved-local metadata, with public 80/259
+and all 232 fixtures exact. The designer replied `apprvoed`, approving
+only the frozen digest, and implementation
+`914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. The packet
+is hash-frozen, private, `approved`, and `approved-local`; publish only its
+bounded approval record and reconciliation under standing permission. It is
+not registered, fixture-backed, or public. Child/state assets, effects, later
+roles/families, release, accepted drift, a PR, and another art gate remain
+closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

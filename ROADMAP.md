@@ -301,12 +301,17 @@ deferred. Its 219-306-pixel suite passes 80/80 connected, bounded, grounded,
 split-sabaton, broad-plate, topology, hard-alpha, alias, mirror, and pixel/alpha
 distinctions from Fallen Knight Shieldbearer, Grave Oathkeeper Revenant, and
 Gloam Walker; 72/72 colored frames, 8/8 exact white flashes, and 54/54 readable
-visor views pass. `check:fast` passes in 62.3s and full `check` in 121.5s with
-public 80/259 and all 232 fixtures exact. The exact three frozen PNGs are open
+visor views pass. `check:fast` passes in 62.3s and full `check` in 121.5s
+before approval, then in 61.5s and 107.7s against approved-local metadata,
+with public 80/259 and all 232 fixtures exact. The exact three frozen PNGs are open
 together in responsive Aseprite 1.3.17.2 process 6832. Status is
-`implemented-awaiting-review`; no commit, push, registration, fixture,
-child/state asset, effect, later role/family, release, or accepted drift is
-authorized before explicit approval of the exact digest.
+`approved` / `approved-local`: the designer replied `apprvoed`, approving only
+the exact digest above, and implementation
+`914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. Standing
+permission opens only the bounded approval record, reconciliation commits, and
+branch pushes. Registration, fixtures, child/state assets, effects, later
+roles/families, release, accepted drift, and a PR remain closed; another art
+candidate requires a separate `lets do next` after clean publication.
 
 Approved preceding EN-E07 publication checkpoint (2026-08-11): elite Kelpie Blackwake
 Dreadmare on `codex/en-e07-kelpie-blackwake-dreadmare` is based exactly on clean

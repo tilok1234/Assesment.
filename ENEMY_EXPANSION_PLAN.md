@@ -27,12 +27,17 @@
   hard-alpha, alias, mirror, and pixel/alpha distinctions from Fallen Knight
   Shieldbearer, Grave Oathkeeper Revenant, and Gloam Walker. It also passes
   72/72 colored frames, 8/8 exact white flashes, and 54/54 readable visor
-  views. `check:fast` passes in 62.3s and full `check` in 121.5s with public
-  80/259 and all 232 fixtures exact. The exact three frozen PNGs are open in
+  views. `check:fast` passes in 62.3s and full `check` in 121.5s before
+  approval, then in 61.5s and 107.7s against approved-local metadata, with
+  public 80/259 and all 232 fixtures exact. The exact three frozen PNGs are open in
   responsive Aseprite 1.3.17.2 process 6832. Status is
-  `implemented-awaiting-review`; no staging, commit, push, registration,
-  fixture, child/state asset, effect, later role/family, release, or accepted
-  drift is authorized before exact visual approval.
+  `approved` / `approved-local`: the designer replied `apprvoed`, approving
+  only the exact digest above, and implementation
+  `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. Standing
+  permission opens only the bounded approval record, reconciliation commits,
+  and branch pushes. Registration, fixtures, child/state assets, effects,
+  later roles/families, release, accepted drift, a PR, and another art gate
+  remain closed.
 
 - Earlier approved publication checkpoint (2026-08-11): private specialist Kelpie
   Drownbridle Stalker on `codex/en-e07-kelpie-drownbridle-stalker` is frozen at
@@ -4703,7 +4708,7 @@ it with incidental per-frame offsets.
 #### Animated Armor Hollow Sentry complete suite awaiting review
 
 - Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status:
-  `implemented-awaiting-review` on
+  `approved` / `approved-local` on
   `codex/en-e08-animated-armor-architecture`, based exactly on clean published
   Blackwake reconciliation `defc9b8cab1226610da6cf2b17951c8b5815499e`.
 - Authorization and topology: after the Blackwake tuple was published and
@@ -4744,15 +4749,19 @@ it with incidental per-frame offsets.
   54/54 readable visor views; exact aliases and mirrors; 80/80 pixel and alpha
   distinctions from all three protected comparisons. Opaque range 219-306;
   Complete B adds 7,272 pixels and Form changes 6,464. `check:fast` passes in
-  62.3s and full `check` in 121.5s with public 80/259 and all 232 fixtures
+  62.3s and full `check` in 121.5s before approval, then in 61.5s and 107.7s
+  against approved-local metadata, with public 80/259 and all 232 fixtures
   exact.
-- Visual gate: the exact three frozen PNGs are open together in responsive
-  Aseprite 1.3.17.2 process 6832. The packet remains unapproved, unstaged,
-  uncommitted, unpushed, unregistered, fixture-free, and non-public.
-- Required next action: explicit approval of the exact digest above or one
-  narrow repair request. Standing publication permission does not apply before
-  approval. Child/state assets, effects, later roles/families, release, and
-  accepted drift remain closed.
+- Visual approval: the exact three frozen PNGs are open together in responsive
+  Aseprite 1.3.17.2 process 6832. The designer replied `apprvoed` on
+  2026-08-11; in context approval applies only to the frozen digest above.
+  Implementation `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed
+  locally. The candidate remains unregistered, fixture-free, and non-public.
+- Required next action: complete only the bounded approval-record publication
+  and remote-verified current-state reconciliation under standing permission.
+  Child/state assets, effects, later roles/families, release, accepted drift,
+  and a PR remain closed. A separate `lets do next` is required after clean
+  publication before another art candidate begins.
 
 ### EN-E09 - Arcane constructs
 

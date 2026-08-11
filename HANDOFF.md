@@ -23,18 +23,21 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Hollow Sentry Frozen Awaiting Review
+## Immediate Continuation Checkpoint - Hollow Sentry Approved Locally
 
 Start here in a new task. The EN-E08 actor-topology gate is resolved and one
 private common Animated Armor Hollow Sentry is implemented, deterministic,
 hash-frozen, and technically validated on
 `codex/en-e08-animated-armor-architecture`, based exactly on clean published
 Blackwake Dreadmare reconciliation
-`defc9b8cab1226610da6cf2b17951c8b5815499e`. It is not visually approved,
-committed, pushed, registered, fixture-backed, or public.
+`defc9b8cab1226610da6cf2b17951c8b5815499e`. The exact frozen packet is
+visually approved and implementation
+`914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. The
+approval record and current-state reconciliation are not yet published. The
+candidate remains unregistered, fixture-free, and non-public.
 
 - Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status:
-  `implemented-awaiting-review`.
+  `approved`; publication state `approved-local`.
 - Architecture decision: `en-e08-baked-single-actor-v1` is selected. After the
   Blackwake tuple was published and reconciled, the designer was shown the
   recommended baked single-actor topology and the alternative deterministic
@@ -78,20 +81,28 @@ committed, pushed, registered, fixture-backed, or public.
   are exact white; 54/54 expected views retain readable visor eyes. Complete B
   adds 7,272 pixels and Form changes 6,464.
 - Broad validation: `npm.cmd run check:fast` passed in 62.3s and full
-  `npm.cmd run check` passed in 121.5s, with public 80/259 and all 232 fixture
-  sheets exact.
+  `npm.cmd run check` passed in 121.5s before approval; against approved-local
+  metadata they pass in 61.5s and 107.7s. Public 80/259 and all 232 fixture
+  sheets remain exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in responsive Aseprite 1.3.17.2 process 6832; its
   live command line names all three exact paths.
+- Approval: after the exact packet above was presented, the designer replied
+  `apprvoed` on 2026-08-11. In context this explicitly approves only candidate
+  digest `f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`.
+  Implementation `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed
+  locally. Standing publication permission opens only the bounded approval
+  record, reconciliation commits, and branch pushes; it does not open a PR or
+  any content gate.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e08-animated-armor-hollow-sentry` and
   `npm.cmd run check:enemy-expansion-en-e08-animated-armor-hollow-sentry`.
-- Required next action: inspect the exact frozen packet and either request one
-  narrow repair or explicitly approve digest `f6e7cbf...`. Do not stage,
-  commit, push, register Animated Armor, generate fixtures, add child/state
-  assets or effects, begin another role or EN-E08 family, release, or accept
-  drift before that visual decision. Standing publication permission applies
-  only after explicit approval of this exact digest.
+- Required next action: complete only the bounded approval-record publication
+  and remote-verified current-state reconciliation. Do not register Animated
+  Armor, generate fixtures, add child/state assets or effects, begin another
+  role or EN-E08 family, release, accept drift, or open a PR. A separate
+  designer `lets do next` is required after clean publication before another
+  art candidate begins.
 
 ## Approved Preceding Checkpoint - Blackwake Dreadmare Published and Reconciled
 

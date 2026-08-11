@@ -125,15 +125,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Knight Shieldbearer, Grave Oathkeeper Revenant, and Gloam Walker. The opaque
   range is 219-306; 72/72 colored frames, 8/8 exact white flashes, 54/54 visor
   views, aliases, mirrors, and baked-topology metadata pass. `check:fast`
-  passes in 62.3s and full `check` in 121.5s with public 80/259 and all 232
+  passes in 62.3s and full `check` in 121.5s before approval, then in 61.5s
+  and 107.7s against approved-local metadata, with public 80/259 and all 232
   fixtures exact. The exact three frozen PNGs are open together in responsive
   Aseprite 1.3.17.2 process 6832. Run
   `npm.cmd run review:enemy-expansion-en-e08-animated-armor-hollow-sentry` and
   `npm.cmd run check:enemy-expansion-en-e08-animated-armor-hollow-sentry`.
-  Status is `implemented-awaiting-review`: do not stage, commit, push,
-  register, generate fixtures, add child/state assets or effects, start another
-  role/family, release, or accept drift before explicit visual approval of the
-  exact digest above.
+  The designer replied `apprvoed`; in context approval applies only to the
+  exact digest above. Implementation
+  `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. Status is
+  `approved` / `approved-local`: publish only the bounded approval record and
+  current-state reconciliation under standing permission. Do not register,
+  generate fixtures, add child/state assets or effects, start another
+  role/family, release, accept drift, or open a PR. Another art candidate
+  requires a separate `lets do next` after clean remote-verified publication.
 - Approved preceding art publication checkpoint:
   `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
   Drownbridle Stalker reconciliation

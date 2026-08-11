@@ -1500,14 +1500,18 @@ plate spans, carry zero child assets, and differ in pixels and alpha from all
 three protected comparisons. The opaque range is 219-306, all 72 colored
 frames retain the five identity palettes, all eight flashes are exact white,
 and all 54 expected face-bearing views retain readable visor eyes.
-`check:fast` passes in 62.3s and full `check` in 121.5s with public 80/259 and
+`check:fast` passes in 62.3s and full `check` in 121.5s before approval, then
+in 61.5s and 107.7s against approved-local metadata, with public 80/259 and
 all 232 fixtures exact. The exact three frozen PNGs are open together in
 responsive Aseprite 1.3.17.2 process 6832. Status is
-`implemented-awaiting-review`: the packet is unapproved, unstaged,
-uncommitted, unpushed, unregistered, fixture-free, and non-public. Explicit
-approval of this exact digest is required before standing publication
-permission applies; child/state assets, effects, later roles/families, release,
-and accepted drift remain closed.
+`approved` / `approved-local`: the designer replied `apprvoed`, which in
+context approves only the exact digest above. Implementation
+`914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. Standing
+permission now covers only the bounded approval record, reconciliation commits,
+and branch pushes; the candidate remains unregistered, fixture-free, and
+non-public. Child/state assets, effects, later roles/families, release, accepted
+drift, and a PR remain closed. A separate `lets do next` is required after
+clean remote-verified publication before another art candidate begins.
 
 Blackwake Dreadmare is the approved preceding private elite Kelpie publication checkpoint on
 `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published

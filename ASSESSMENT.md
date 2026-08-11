@@ -483,12 +483,18 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   and alpha from Fallen Knight Shieldbearer, Grave Oathkeeper Revenant, and
   Gloam Walker. The opaque range is 219-306, with 72/72 colored frames, 8/8
   exact white flashes, and 54/54 readable visor views. `check:fast` passes in
-  62.3s and full `check` in 121.5s, with public 80/259 and all 232 fixtures
+  62.3s and full `check` in 121.5s before approval, then in 61.5s and 107.7s
+  against approved-local metadata, with public 80/259 and all 232 fixtures
   exact. The exact raw, Complete B + Form, and comparison PNGs are open
   together in responsive Aseprite 1.3.17.2 process 6832. Status is
-  `implemented-awaiting-review`; it is unapproved, unstaged, uncommitted,
-  unpushed, unregistered, fixture-free, and non-public. Child/state assets,
-  effects, later roles/families, release, and accepted drift remain closed.
+  `approved` / `approved-local`: the designer replied `apprvoed`, approving
+  only the exact digest above, and implementation
+  `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` is committed locally. Standing
+  permission opens only the bounded approval record, reconciliation commits,
+  and branch pushes. It remains unregistered, fixture-free, and non-public;
+  child/state assets, effects, later roles/families, release, accepted drift,
+  and a PR remain closed. Another art candidate requires a separate `lets do
+  next` after clean remote-verified publication.
   The approved preceding publication checkpoint is elite Kelpie Blackwake Dreadmare on
   `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
   Drownbridle Stalker reconciliation
