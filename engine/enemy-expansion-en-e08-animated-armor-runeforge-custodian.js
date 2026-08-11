@@ -49,7 +49,7 @@ export const EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT_CARD = deepFreeze({
     name: 'Runeforge Custodian',
     role: 'specialist',
     identity: 'constructed-rune-lock',
-    status: 'acceptance-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
   actorTopology: EN_E08_ACTOR_TOPOLOGY_DECISION.selected,
@@ -63,7 +63,7 @@ export const EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT = deepFreeze({
   variant: 'runeforge-custodian',
   role: 'specialist',
   identity: 'constructed-rune-lock',
-  state: 'implemented-complete-motion-awaiting-review',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E08_ACTOR_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-angular-helm-single-rune-aperture-square-pauldrons-hex-forge-chest-interlocking-gauntlets-joint-belt-divided-greaves-wedge-sabatons-v1',
   silhouette: 'A tall squared constructed suit with a crownless angular helm, one large centered rune-lock face aperture, level block pauldrons, a deep hexagonal forge chest, two connected interlocking gauntlets, rigid joint belt, divided plated legs, and grounded wedge sabatons. It must read as deliberately forged magical machinery without becoming Hollow Sentry, a living Fallen Knight, corpse-handed Revenant, gear-driven Clockwork Automaton, independent Living Weapon, or detached equipment set.',
@@ -105,14 +105,14 @@ export const EN_E08_RUNEFORGE_CUSTODIAN_DATA = deepFreeze({
 
 export const EN_E08_RUNEFORGE_CUSTODIAN_GATE = deepFreeze({
   id: 'en-e08-animated-armor-runeforge-custodian-full-v1',
-  status: 'awaiting-visual-review',
+  status: 'approved',
   baseCheckpoint: 'dc86bb65053564c76b18e848933ab4c2d318bfde',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Hollow Sentry digest was visually approved, committed, pushed, and reconciled at clean published checkpoint dc86bb65053564c76b18e848933ab4c2d318bfde, the designer replied: lets do next. Hollow Sentry completed the haunted-default common role, so the one-complete-sprite cadence authorizes only one private constructed specialist Animated Armor Runeforge Custodian 80-frame candidate.',
   architectureDecision: EN_E08_ACTOR_TOPOLOGY_DECISION.id,
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Hollow Sentry, Fallen Knight Shieldbearer, and Grave Oathkeeper Revenant comparison, and both synchronized GIFs were presented after the paired-eye risk was repaired into one vertical readable rune-lock face column. The three exact frozen PNG paths were open together in responsive Aseprite 1.3.17.2 process 42856. The designer replied: accepted. In context this explicitly approves candidate digest 629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85 and its five frozen review hashes only. Animated Armor registration, fixtures, child/state assets, effects, the elite role, later EN-E08 families, release, accepted drift, a pull request, and another art gate remain separate decisions.',
+  approvedImplementation: 'd73ca9334640384d9b531c0d8375c1a42e459212',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: null,
@@ -205,7 +205,7 @@ export const EN_E08_RUNEFORGE_CUSTODIAN_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Stop after presenting the exact frozen Runeforge Custodian packet. Do not stage, commit, push, approve, register, generate fixtures, open the elite role, or advance another EN-E08 family until the designer explicitly approves this exact candidate.',
+  nextGate: 'The exact Runeforge Custodian digest is visually approved and implementation d73ca9334640384d9b531c0d8375c1a42e459212 records the accepted pixels. Standing publication permission now authorizes only its bounded approval record, branch push, and final handoff reconciliation. Animated Armor registration, fixtures, child/state assets, effects, the elite role, later EN-E08 families, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next after clean remote reconciliation.',
 });
 
 export const EN_E08_RUNEFORGE_CUSTODIAN_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -555,7 +555,7 @@ export const EN_E08_RUNEFORGE_CUSTODIAN_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'runeforge-custodian',
     scale: 8,
-    notes: 'Awaiting visual review as one constructed-rune-lock specialist rendered entirely as a baked single actor against approved Hollow Sentry, Fallen Knight Shieldbearer, and Grave Oathkeeper Revenant. Keep registration, fixtures, child/state assets, effects, the elite role and later EN-E08 families, release, accepted drift, a pull request, and publication separate.',
+    notes: 'Visually approved as one constructed-rune-lock specialist rendered entirely as a baked single actor against approved Hollow Sentry, Fallen Knight Shieldbearer, and Grave Oathkeeper Revenant. Implementation d73ca9334640384d9b531c0d8375c1a42e459212 records the exact accepted pixels. Keep registration, fixtures, child/state assets, effects, the elite role and later EN-E08 families, release, accepted drift, a pull request, and another art gate separate.',
   },
 });
 

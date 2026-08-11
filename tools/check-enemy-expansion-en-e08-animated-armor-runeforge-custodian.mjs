@@ -129,14 +129,17 @@ check(
   'EN-E08 baked single-actor architecture decision drifted',
 );
 check(
-  EN_E08_RUNEFORGE_CUSTODIAN_GATE.status === 'awaiting-visual-review'
+  EN_E08_RUNEFORGE_CUSTODIAN_GATE.status === 'approved'
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.baseCheckpoint === 'dc86bb65053564c76b18e848933ab4c2d318bfde'
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.authorizedOn === '2026-08-11'
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.authorizationEvidence.includes('designer replied: lets do next')
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.authorizationEvidence.includes('one private constructed specialist Animated Armor Runeforge Custodian')
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.architectureDecision === EN_E08_ACTOR_TOPOLOGY_DECISION.id
-    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.approvedOn === null
-    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.approvedImplementation === null
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.approvedOn === '2026-08-11'
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.approvalEvidence.includes('designer replied: accepted')
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.approvalEvidence.includes('Aseprite 1.3.17.2 process 42856')
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.approvalEvidence.includes('629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85')
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.approvedImplementation === 'd73ca9334640384d9b531c0d8375c1a42e459212'
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publicationAuthorizedOn === '2026-08-11'
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publishedImplementation === null
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publishedApprovalRecord === null
@@ -164,13 +167,13 @@ check(
     && EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT_CARD.activeVariant.id === 'runeforge-custodian'
     && EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT_CARD.activeVariant.role === 'specialist'
     && EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT_CARD.activeVariant.identity === 'constructed-rune-lock'
-    && EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT_CARD.activeVariant.status === 'acceptance-candidate'
+    && EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
     && EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT_CARD.actorTopology === 'baked-single-actor',
   'Animated Armor collision ruling, role order, or topology boundary drifted',
 );
 check(
-  EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT.state === 'implemented-complete-motion-awaiting-review'
+  EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT.state === 'implemented-complete-motion-approved'
     && EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT.topology === 'baked-single-actor'
     && EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT.silhouette.includes('one large centered rune-lock face aperture')
     && EN_E08_RUNEFORGE_CUSTODIAN_CONTRACT.silhouette.includes('connected interlocking gauntlets')
@@ -186,8 +189,8 @@ check(
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.animationContract.includes('four deliberate forge-stamp phases')
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.animationContract.includes('interlocking body-owned forge press')
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.animationContract.includes('Cast aliases Attack exactly')
-    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.nextGate.includes('Do not stage, commit, push, approve, register')
-    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.nextGate.includes('designer explicitly approves this exact candidate'),
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.nextGate.includes('implementation d73ca9334640384d9b531c0d8375c1a42e459212')
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.nextGate.includes('another art gate requires a separate designer lets do next'),
   'full-suite, motion, or stop-gate contract drifted',
 );
 check(

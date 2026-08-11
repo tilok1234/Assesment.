@@ -1365,7 +1365,10 @@ contract. Candidate digest
 `629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`
 is frozen; frozen review + focused + fast pass together in 59.6s and full
 validation passes in 113.1s with public 80/259 and all 232 fixtures exact. It
-awaits visual approval before any staging or publication.
+is visually accepted, and implementation
+`d73ca9334640384d9b531c0d8375c1a42e459212` records the exact accepted pixel
+contract. Standing permission opens only its approval record, branch push, and
+final reconciliation; no public or architecture boundary changes.
 
 `engine/enemy-expansion-en-e08-animated-armor-hollow-sentry.js` resolved the
 preceding architecture gate

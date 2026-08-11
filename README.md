@@ -1478,7 +1478,9 @@ clean published Hollow Sentry reconciliation
 `dc86bb65053564c76b18e848933ab4c2d318bfde`. Its complete 80-frame baked
 single-actor suite is frozen at digest
 `629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`
-and awaits visual approval. The constructed identity uses one vertical readable
+and visually accepted; implementation
+`d73ca9334640384d9b531c0d8375c1a42e459212` records the exact pixels. The
+constructed identity uses one vertical readable
 rune-lock aperture, square pauldrons, a hex forge chest, connected interlocking
 gauntlets, fixed joints, divided greaves, and wedge sabatons with zero child
 assets, gears, weapons, shields, detached plate, or effects. Run
@@ -1486,8 +1488,10 @@ assets, gears, weapons, shields, detached plate, or effects. Run
 and `npm.cmd run check:enemy-expansion-en-e08-animated-armor-runeforge-custodian`.
 The frozen review + focused + fast gates pass together in 59.6s and full
 validation passes in 113.1s; public 80/259 and all 232 fixtures remain exact.
-Do not stage, commit, push, register, generate fixtures, or open the elite role
-until the exact frozen packet is explicitly approved.
+The designer replied `accepted`, opening only its approval record, branch push,
+and final reconciliation under standing publication permission. Registration,
+fixtures, effects, the elite role, later EN-E08 families, release, accepted
+drift, and a PR remain separate gates.
 
 Hollow Sentry is the approved preceding private common Animated Armor checkpoint
 on `codex/en-e08-animated-armor-architecture`, based exactly on clean published

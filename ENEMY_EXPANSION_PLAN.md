@@ -4706,10 +4706,10 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Animated Armor Runeforge Custodian specialist awaiting review
+#### Animated Armor Runeforge Custodian specialist approved
 
 - Gate ID: `en-e08-animated-armor-runeforge-custodian-full-v1`; status:
-  `awaiting-visual-review` on
+  `approved` on
   `codex/en-e08-animated-armor-runeforge-custodian`, based exactly on clean
   published Hollow Sentry reconciliation
   `dc86bb65053564c76b18e848933ab4c2d318bfde`.
@@ -4752,9 +4752,13 @@ it with incidental per-frame offsets.
 - Visual-review readiness: the exact frozen raw, Complete B + Form, and
   comparison PNG paths are open together in responsive Aseprite 1.3.17.2
   process 42856.
-- Stop after exact visual presentation. Do not stage, commit, push, approve,
-  register, generate fixtures, open the elite role, or advance EN-E08 without
-  explicit designer approval of this frozen candidate.
+- Approval: after the exact frozen packet was presented and the three PNGs were
+  open in responsive Aseprite, the designer replied `accepted`. Implementation
+  `d73ca9334640384d9b531c0d8375c1a42e459212` records the exact accepted
+  pixels. Standing permission opens only its approval record, branch push, and
+  final reconciliation. Registration, fixtures, effects, the elite role,
+  later EN-E08 families, release, accepted drift, and a PR remain closed; a
+  separate `lets do next` is required after clean remote reconciliation.
 
 #### Animated Armor Hollow Sentry approved preceding suite
 

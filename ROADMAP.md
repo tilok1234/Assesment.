@@ -297,8 +297,11 @@ from clean published Hollow Sentry reconciliation
 one baked actor with zero child assets and passes its focused 80-frame gate;
 the frozen review + focused + fast gates pass together in 59.6s and full
 validation passes in 113.1s with public 80/259 and all 232 fixtures exact.
-Visual approval, publication, registration, fixtures,
-effects, the elite role, and later EN-E08 families remain separate gates.
+The designer replied `accepted`; implementation
+`d73ca9334640384d9b531c0d8375c1a42e459212` records the exact accepted pixels.
+Standing permission opens its approval record, branch push, and final
+reconciliation. Registration, fixtures, effects, the elite role, later EN-E08
+families, release, accepted drift, and a PR remain separate gates.
 
 Approved preceding EN-E08 checkpoint (2026-08-11): common Animated Armor Hollow
 Sentry on `codex/en-e08-animated-armor-architecture` is frozen at digest

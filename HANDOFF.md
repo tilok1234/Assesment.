@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Runeforge Custodian Awaiting Review
+## Immediate Continuation Checkpoint - Runeforge Custodian Accepted
 
 Start here. From clean published Hollow Sentry reconciliation
 `dc86bb65053564c76b18e848933ab4c2d318bfde`, the designer replied `lets do
@@ -32,8 +32,10 @@ Runeforge Custodian is implemented on
 `codex/en-e08-animated-armor-runeforge-custodian` as one deterministic baked
 24x24 actor across all 80 frames. It is frozen at candidate digest
 `629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`
-and awaits visual approval; it is not staged, committed, pushed, registered,
-fixture-backed, or public.
+and is visually accepted. Implementation
+`d73ca9334640384d9b531c0d8375c1a42e459212` records the exact accepted pixels;
+the approval record and remote publication are the only open actions. It
+remains unregistered, fixture-free, effect-free, and non-public.
 
 - Identity: constructed-rune-lock specialist with an angular crownless helm,
   one vertical readable rune-lock aperture, level square pauldrons, hexagonal
@@ -69,10 +71,14 @@ fixture-backed, or public.
 - Commands: `npm.cmd run
   review:enemy-expansion-en-e08-animated-armor-runeforge-custodian` and
   `npm.cmd run check:enemy-expansion-en-e08-animated-armor-runeforge-custodian`.
-- Stop gate: present the exact frozen raw, Complete B + Form, comparison, and
-  synchronized GIF evidence. Do not stage, commit, push, approve, register,
-  generate fixtures, open the elite role, or advance EN-E08 until the designer
-  explicitly approves this digest.
+- Approval: after the exact frozen raw, Complete B + Form, comparison, and
+  synchronized GIF evidence was presented, the designer replied `accepted`.
+  This approves only digest `629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`.
+  Standing permission opens its approval record, branch push, and final
+  reconciliation only. Do not register, generate fixtures, add effects, open
+  the elite role, advance another EN-E08 family, release, accept drift, or open
+  a PR. Another art gate requires a separate `lets do next` after clean remote
+  reconciliation.
 
 ## Approved Preceding Checkpoint - Hollow Sentry Published and Reconciled
 
