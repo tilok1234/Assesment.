@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Veilskin Foundling Approval Published; Reconciliation In Progress
+## Immediate Continuation Checkpoint - Veilskin Foundling Published and Reconciled
 
 Start here in a new task. One private common Changeling Veilskin Foundling is
 implemented, deterministic, hash-frozen, technically validated, and visually
@@ -32,12 +32,13 @@ approved on
 Mirecrown Beacon reconciliation
 `4ee32622ec2984ac805ac345b854f23584fda3c3`. Exact implementation
 `2a295aa70c8a6680ffb85881efa4ccd927a50979` and approval record
-`7d064226d9a0096f8b276f5b0bd30be93435962b` are published and remote-verified
-on that isolated branch. The bounded initial handoff and final reconciliation
-remain in progress; the actor is not registered, fixture-generated, or public.
+`7d064226d9a0096f8b276f5b0bd30be93435962b`, plus initial published handoff
+`0dcd15249d97b3e24bf174b014885fa2c8b6177c`, are published and remote-verified
+on that isolated branch. This reconciliation records the completed bounded
+publication tuple; the actor is not registered, fixture-generated, or public.
 
 - Gate ID: `en-e07-changeling-veilskin-foundling-full-v1`; status:
-  `approved-publication-in-progress`.
+  `approved-published`.
 - Authorization: after the exact Mirecrown Beacon packet was approved,
   published, and reconciled, the designer replied `approved lets do next` on
   2026-08-11. Mirecrown completed the common-specialist-elite Will-o-Wisp role
@@ -87,7 +88,8 @@ remain in progress; the actor is not registered, fixture-generated, or public.
 - Broad validation: the revised ten-gate EN-E07 predecessor/candidate matrix
   passed in 6.3s, `npm.cmd run check:fast` passed in 58.3s, and full
   `npm.cmd run check` passed in 107.1s before approval and 109.0s against
-  approval-local metadata, with public 80/259 and all 232 fixture sheets exact.
+  approval-local metadata, then 119.8s against the final published tuple, with
+  public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in responsive Aseprite 1.3.17.2. Its live command
   line names all three exact frozen paths.
@@ -95,19 +97,17 @@ remain in progress; the actor is not registered, fixture-generated, or public.
   designer replied `approved` on 2026-08-11. Approval applies only to digest
   `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`;
   the first digest remains superseded. Implementation
-  `2a295aa70c8a6680ffb85881efa4ccd927a50979` and approval record
-  `7d064226d9a0096f8b276f5b0bd30be93435962b` are remote-verified. Standing
-  publication permission opens only the bounded initial-handoff and
-  final-reconciliation commits plus their branch pushes.
+  `2a295aa70c8a6680ffb85881efa4ccd927a50979`, approval record
+  `7d064226d9a0096f8b276f5b0bd30be93435962b`, and initial published handoff
+  `0dcd15249d97b3e24bf174b014885fa2c8b6177c` are remote-verified. This
+  reconciliation closes the bounded publication sequence.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-changeling-veilskin-foundling` and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-veilskin-foundling`.
-- Required next action: commit and push this initial published handoff, record
-  its exact hash in the final reconciliation, then remote-verify the completed
-  publication tuple. Do not register Changeling, generate fixtures, implement
-  runtime copying, add effects, start specialist/elite Changeling or Kelpie,
-  release, or advance EN-E08. Another candidate requires a separate
-  `lets do next`.
+- Required next action: stop at this published checkpoint. Do not register
+  Changeling, generate fixtures, implement runtime copying, add effects, start
+  specialist/elite Changeling or Kelpie, release, or advance EN-E08. Another
+  candidate requires a separate `lets do next`.
 
 ## Approved Preceding Checkpoint - Mirecrown Beacon Published
 

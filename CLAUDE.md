@@ -130,15 +130,17 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `npm.cmd run check:enemy-expansion-en-e07-changeling-veilskin-foundling`.
   The revised ten-gate EN-E07 protection matrix passes in 6.3s, `check:fast`
   in 58.3s, and full `check` in 107.1s before approval and 109.0s against
-  approval-local metadata, with all 232 fixtures exact.
+  approval-local metadata, then 119.8s against the final published tuple, with
+  all 232 fixtures exact.
   The three exact frozen PNG boards are open together in responsive Aseprite
   1.3.17.2, and its live command line names all three paths.
   The designer replied `approved` on 2026-08-11. Exact implementation
   `2a295aa70c8a6680ffb85881efa4ccd927a50979` and approval record
-  `7d064226d9a0096f8b276f5b0bd30be93435962b` are published and remote-verified
-  on the isolated branch. Only the bounded initial handoff and final
-  reconciliation remain under standing publication permission. The packet is
-  not registered or fixture-generated. Runtime actor copying, alternate
+  `7d064226d9a0096f8b276f5b0bd30be93435962b`, plus initial published handoff
+  `0dcd15249d97b3e24bf174b014885fa2c8b6177c`, are published and remote-verified
+  on the isolated branch. This reconciliation records the completed bounded
+  publication tuple. The packet is not registered or fixture-generated.
+  Runtime actor copying, alternate
   bodies, detached masks or veil pieces, effects, specialist/elite Changeling,
   Kelpie, release, and EN-E08 remain separate gates; another candidate requires
   a separate `lets do next`.

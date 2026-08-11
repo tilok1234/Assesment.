@@ -1493,11 +1493,13 @@ digest `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
 is superseded by the face-readability repair. The revised ten-gate EN-E07
 matrix passes in 6.3s, `check:fast` in 58.3s, and full `check` in 107.1s with
 all 232 fixtures exact; full `check` also passes in 109.0s against
-approval-local metadata. The designer replied `approved` on 2026-08-11; exact
+approval-local metadata and 119.8s against the final published tuple. The
+designer replied `approved` on 2026-08-11; exact
 implementation `2a295aa70c8a6680ffb85881efa4ccd927a50979` and approval record
-`7d064226d9a0096f8b276f5b0bd30be93435962b` are published and remote-verified;
-the bounded initial handoff and final reconciliation are in progress under
-standing permission. It remains unregistered and fixture-free. Runtime actor copying,
+`7d064226d9a0096f8b276f5b0bd30be93435962b`, plus initial published handoff
+`0dcd15249d97b3e24bf174b014885fa2c8b6177c`, form the completed remote-verified
+publication tuple. It remains unregistered and fixture-free. Runtime actor
+copying,
 detached masks or veil pieces, effects, later Changeling roles, Kelpie,
 release, and EN-E08 remain closed; another candidate needs `lets do next`.
 

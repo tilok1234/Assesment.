@@ -101,10 +101,10 @@ export const EN_E07_VEILSKIN_FOUNDLING_GATE = deepFreeze({
   approvedImplementation: '2a295aa70c8a6680ffb85881efa4ccd927a50979',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  initialPublishedHandoff: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '2a295aa70c8a6680ffb85881efa4ccd927a50979',
+  publishedApprovalRecord: '7d064226d9a0096f8b276f5b0bd30be93435962b',
+  initialPublishedHandoff: '0dcd15249d97b3e24bf174b014885fa2c8b6177c',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_MIRECROWN_BEACON_GATE.id,
     artifactSha256: EN_E07_MIRECROWN_BEACON_GATE.artifactSha256,
@@ -184,7 +184,7 @@ export const EN_E07_VEILSKIN_FOUNDLING_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The repaired Veilskin Foundling digest is visually approved; implementation 2a295aa70c8a6680ffb85881efa4ccd927a50979 and approval record 7d064226d9a0096f8b276f5b0bd30be93435962b are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. No specialist Changeling, registration, fixtures, runtime copying, effects, Kelpie, release, or EN-E08 gate is open; a separate designer lets do next is required before another candidate begins.',
+  nextGate: 'The repaired Veilskin Foundling digest is visually approved and published: implementation 2a295aa70c8a6680ffb85881efa4ccd927a50979, approval record 7d064226d9a0096f8b276f5b0bd30be93435962b, and initial handoff 0dcd15249d97b3e24bf174b014885fa2c8b6177c are remote verified. No specialist Changeling, registration, fixtures, runtime copying, effects, Kelpie, release, or EN-E08 gate is open; a separate designer lets do next is required before another candidate begins.',
 });
 
 export const EN_E07_VEILSKIN_FOUNDLING_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

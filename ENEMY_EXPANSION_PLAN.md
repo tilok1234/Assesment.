@@ -33,12 +33,14 @@
   Echo exact, and leaves public 80/259 plus fixtures unchanged. The revised
   ten-gate EN-E07 matrix passes in 6.3s, `check:fast` in 58.3s, and full
   `check` in 107.1s before approval and 109.0s against approval-local metadata,
-  with all 232 fixtures exact. The designer replied
+  then 119.8s against the final published tuple, with all 232 fixtures exact.
+  The designer replied
   `approved` on 2026-08-11; exact implementation
   `2a295aa70c8a6680ffb85881efa4ccd927a50979` and approval record
-  `7d064226d9a0096f8b276f5b0bd30be93435962b` are published and remote-verified;
-  the bounded initial handoff and final reconciliation are in progress. It
-  remains unregistered and fixture-free. Runtime actor copying, effects,
+  `7d064226d9a0096f8b276f5b0bd30be93435962b`, plus initial published handoff
+  `0dcd15249d97b3e24bf174b014885fa2c8b6177c`, form the completed remote-verified
+  publication tuple. It remains unregistered and fixture-free. Runtime actor
+  copying, effects,
   specialist/elite Changeling, Kelpie, release, and EN-E08 remain closed;
   another candidate requires a separate `lets do next`.
 
@@ -3599,7 +3601,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling approval published with bounded reconciliation in progress`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling approved and published`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4133,10 +4135,10 @@ assembler.
   fixtures, add effects, start another role or family beyond that candidate,
   release, or advance EN-E08.
 
-#### Changeling Veilskin Foundling approval published; reconciliation in progress
+#### Changeling Veilskin Foundling complete suite approved and published
 
 - Gate ID: `en-e07-changeling-veilskin-foundling-full-v1`; status: `approved`
-  with implementation and approval record published on
+  and published on
   `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean
   published Mirecrown Beacon reconciliation
   `4ee32622ec2984ac805ac345b854f23584fda3c3`.
@@ -4183,7 +4185,8 @@ assembler.
 - Broad validation: the revised ten-gate EN-E07 predecessor/candidate matrix
   passed in 6.3s, `npm.cmd run check:fast` passed in 58.3s, and full
   `npm.cmd run check` passed in 107.1s before approval and 109.0s against
-  approval-local metadata, with public 80/259 and all 232 fixture sheets exact.
+  approval-local metadata, then 119.8s against the final published tuple, with
+  public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in responsive Aseprite 1.3.17.2; its live process
   command line names all three frozen paths.
@@ -4191,17 +4194,16 @@ assembler.
   designer replied `approved` on 2026-08-11. Approval applies only to digest
   `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`;
   the first digest remains superseded. Exact implementation
-  `2a295aa70c8a6680ffb85881efa4ccd927a50979` and approval record
-  `7d064226d9a0096f8b276f5b0bd30be93435962b` are remote-verified. Standing
-  permission opens only initial-handoff, final-reconciliation, and branch-push
-  work.
+  `2a295aa70c8a6680ffb85881efa4ccd927a50979`, approval record
+  `7d064226d9a0096f8b276f5b0bd30be93435962b`, and initial published handoff
+  `0dcd15249d97b3e24bf174b014885fa2c8b6177c` are remote-verified. This
+  reconciliation records the completed bounded publication tuple.
 - Scope firewall: no registration, fixtures, runtime actor copying, alternate
   bodies, new Cast or Death pixels, detached masks or veil pieces, wings,
   horns, weapons, glow, particles, projectiles, effects, specialist/elite
   Changeling, Kelpie, release, or EN-E08.
-- Required next action: commit and push the initial published handoff, record
-  its exact hash in the final reconciliation, then remote-verify the completed
-  publication tuple. Another candidate requires a separate `lets do next`.
+- Required next action: stop at this published checkpoint. Another candidate
+  requires a separate `lets do next`.
 
 ### EN-E08 - Possessed equipment
 

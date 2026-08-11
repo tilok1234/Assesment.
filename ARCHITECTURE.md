@@ -1184,10 +1184,11 @@ supersedes pre-feedback digest
 `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
 through a face-feature-only repair. The designer approved the revised digest on
 2026-08-11; exact implementation `2a295aa70c8a6680ffb85881efa4ccd927a50979`
-and approval record `7d064226d9a0096f8b276f5b0bd30be93435962b` are published and
-remote-verified on the isolated branch. The bounded initial handoff and final
-reconciliation are in progress. The actor remains unregistered and
-fixture-free; effects, later roles/families, release, and EN-E08 remain separate.
+and approval record `7d064226d9a0096f8b276f5b0bd30be93435962b`, plus initial published
+handoff `0dcd15249d97b3e24bf174b014885fa2c8b6177c`, form the completed
+remote-verified publication tuple. The actor remains unregistered and
+fixture-free; effects, later roles/families, release, and EN-E08 remain
+separate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

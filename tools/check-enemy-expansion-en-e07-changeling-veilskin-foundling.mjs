@@ -149,10 +149,11 @@ check(
   EN_E07_VEILSKIN_FOUNDLING_GATE.status === 'approved'
     && EN_E07_VEILSKIN_FOUNDLING_GATE.approvedOn === '2026-08-11'
     && EN_E07_VEILSKIN_FOUNDLING_GATE.approvedImplementation === '2a295aa70c8a6680ffb85881efa4ccd927a50979'
-    && EN_E07_VEILSKIN_FOUNDLING_GATE.publishedImplementation === null
-    && EN_E07_VEILSKIN_FOUNDLING_GATE.publishedApprovalRecord === null
-    && EN_E07_VEILSKIN_FOUNDLING_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Veilskin Foundling bounded-publication state drifted',
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.publishedImplementation === '2a295aa70c8a6680ffb85881efa4ccd927a50979'
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.publishedApprovalRecord === '7d064226d9a0096f8b276f5b0bd30be93435962b'
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.initialPublishedHandoff === '0dcd15249d97b3e24bf174b014885fa2c8b6177c'
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.publicationState === 'published',
+  'Veilskin Foundling published state drifted',
 );
 check(
   EN_E07_VEILSKIN_FOUNDLING_GATE.approvalEvidence.includes('designer replied: approved')
@@ -195,12 +196,13 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('visually approved')
+  EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('visually approved and published')
     && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('implementation 2a295aa70c8a6680ffb85881efa4ccd927a50979')
     && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('approval record 7d064226d9a0096f8b276f5b0bd30be93435962b')
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('initial handoff 0dcd15249d97b3e24bf174b014885fa2c8b6177c')
     && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('remote verified')
     && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('separate designer lets do next'),
-  'bounded publication or next-candidate stop gate drifted',
+  'published tuple or next-candidate stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_CHANGELING_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
