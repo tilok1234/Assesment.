@@ -1157,13 +1157,13 @@ were reverified and those exact files were opened together in responsive
 Aseprite 1.3.17.2; its live command line names all three paths. The designer
 replied `approved lets do next` on 2026-08-11; implementation
 `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval record
-`6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally, and full
-validation passes in 110.7s against committed approved-local metadata. The
-module remains private, unregistered, fixture-free, and non-public while its
-bounded handoff reconciliation and branch push are pending. After clean
-publication reconciliation, the same reply opens only one private common
-Changeling candidate; registration, effects, later roles or families, release,
-and EN-E08 remain closed.
+`6448bb49e16679b94fcc402166b089b6b6ca7174` plus initial handoff
+`72b529bcdd19bd0d3018f2b03ceabcb29a809015` are published and remote
+verified, and full validation passes in 110.9s against the published tuple.
+The module remains private, unregistered, fixture-free, and non-public. The
+same reply opens only one private common Changeling candidate from this clean
+publication reconciliation; registration, effects, later roles or families,
+release, and EN-E08 remain closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

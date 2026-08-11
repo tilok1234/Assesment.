@@ -109,9 +109,10 @@ export const EN_E07_MIRECROWN_BEACON_GATE = deepFreeze({
   approvedImplementation: '72925cd8d8ea1a3ae47a45601607a1a5853decb3',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '72925cd8d8ea1a3ae47a45601607a1a5853decb3',
+  publishedApprovalRecord: '6448bb49e16679b94fcc402166b089b6b6ca7174',
+  initialPublishedHandoff: '72b529bcdd19bd0d3018f2b03ceabcb29a809015',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_FENBELL_SHEPHERD_GATE.id,
     artifactSha256: EN_E07_FENBELL_SHEPHERD_GATE.artifactSha256,
@@ -191,7 +192,7 @@ export const EN_E07_MIRECROWN_BEACON_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact repaired Mirecrown Beacon candidate is visually approved and its implementation is committed at 72925cd8d8ea1a3ae47a45601607a1a5853decb3. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private common Changeling candidate. Do not register Will-o-Wisp, generate fixtures, add effects, release, start a specialist or elite Changeling, start Kelpie, or advance EN-E08.',
+  nextGate: 'The exact repaired Mirecrown Beacon is visually approved and published: implementation 72925cd8d8ea1a3ae47a45601607a1a5853decb3, approval record 6448bb49e16679b94fcc402166b089b6b6ca7174, and initial handoff 72b529bcdd19bd0d3018f2b03ceabcb29a809015 are remote verified. The same approved lets do next response opens only one private common Changeling candidate from this clean publication reconciliation. Do not register Will-o-Wisp, generate fixtures, add effects, release, start a specialist or elite Changeling, start Kelpie, or advance EN-E08.',
 });
 
 export const EN_E07_MIRECROWN_BEACON_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -474,7 +475,7 @@ export const EN_E07_MIRECROWN_BEACON_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mirecrown-beacon',
     scale: 8,
-    notes: 'Visually approved as one connected hovering Mirecrown Beacon against approved Fenbell Shepherd and Lantern Mote plus public Spectral Ghost and Flame Elemental. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, effects, later families, and later Wave 2 work separate until the clean published reconciliation.',
+    notes: 'Visually approved and published as one connected hovering Mirecrown Beacon against approved Fenbell Shepherd and Lantern Mote plus public Spectral Ghost and Flame Elemental. Keep registration, fixtures, effects, and later Wave 2 work separate; only one private common Changeling candidate is open from the clean publication reconciliation.',
   },
 });
 

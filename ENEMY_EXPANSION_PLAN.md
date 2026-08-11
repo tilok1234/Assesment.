@@ -35,13 +35,13 @@
   opened together in responsive Aseprite 1.3.17.2; its live command line names
   all three paths. The designer replied `approved lets do next` on 2026-08-11;
   implementation `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval
-  record `6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally, and
-  full validation passes in 110.7s against approved-local metadata. Mirecrown
-  Beacon remains private, unregistered, fixture-free, and non-public while
-  bounded handoff reconciliation and branch push are pending. After clean
-  publication reconciliation, the same reply opens only one private common
-  Changeling candidate. Registration, fixtures, effects, later roles or
-  families, Kelpie, release, and EN-E08 remain closed.
+  record `6448bb49e16679b94fcc402166b089b6b6ca7174` plus initial handoff
+  `72b529bcdd19bd0d3018f2b03ceabcb29a809015` are published and remote
+  verified, and full validation passes in 110.9s against the published tuple.
+  Mirecrown Beacon remains private, unregistered, fixture-free, and non-public.
+  The same reply opens only one private common Changeling candidate from this
+  clean publication reconciliation. Registration, fixtures, effects, later
+  roles or families, Kelpie, release, and EN-E08 remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3570,7 +3570,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote common and Fenbell Shepherd specialist Will-o-Wisp approved and published; Mirecrown Beacon elite approved locally with bounded publication pending`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; one private common Changeling gate open`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4037,7 +4037,7 @@ assembler.
   only the private elite Mirecrown Beacon candidate below. Registration,
   fixtures, effects, another family, release, and EN-E08 remain closed.
 
-#### Will-o-Wisp Mirecrown Beacon complete suite approved; publication pending
+#### Will-o-Wisp Mirecrown Beacon complete suite approved and published
 
 - Gate ID: `en-e07-will-o-wisp-mirecrown-beacon-full-v1`; status: `approved`
   on `codex/en-e07-will-o-wisp-mirecrown-beacon`, based exactly on clean
@@ -4087,20 +4087,22 @@ assembler.
   `approved lets do next` on 2026-08-11. Approval applies only to the frozen
   digest and five evidence hashes above. Implementation
   `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval record
-  `6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally.
+  `6448bb49e16679b94fcc402166b089b6b6ca7174` plus initial handoff
+  `72b529bcdd19bd0d3018f2b03ceabcb29a809015` are published and remote
+  verified.
 - Broad validation: the protected 26-command
   predecessor/candidate/repair/integration matrix passed in 19.0s,
   `npm.cmd run check:fast` passed in 60.4s, and full `npm.cmd run check`
-  passed in 111.2s before approval and in 110.7s against committed
-  approved-local metadata. The approved 1,200-frame integration digest remains
+  passed in 111.2s before approval, in 110.7s against committed approved-local
+  metadata, and in 110.9s against the published tuple. The approved
+  1,200-frame integration digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: commit the bounded approval-state handoff and push the
-  implementation, approval record, and handoff commits under the standing
-  approved-work permission; then reconcile the exact published tuple. After
-  that clean publication, open only one private common Changeling candidate.
-  Do not register Will-o-Wisp, generate fixtures, add effects, start another
-  role or family beyond that candidate, release, or advance EN-E08.
+- Required next action: preserve Mirecrown Beacon and every predecessor
+  byte-for-byte and open only one private common Changeling candidate from this
+  clean publication reconciliation. Do not register Will-o-Wisp, generate
+  fixtures, add effects, start another role or family beyond that candidate,
+  release, or advance EN-E08.
 
 ### EN-E08 - Possessed equipment
 

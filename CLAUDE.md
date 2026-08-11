@@ -131,12 +131,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Aseprite 1.3.17.2; its live command line names all three paths. The designer
   replied `approved lets do next` on 2026-08-11; implementation
   `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval record
-  `6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally, and full
-  `check` passes in 110.7s against committed approved-local metadata. Bounded
-  handoff reconciliation and branch push are authorized. After clean
-  publication reconciliation, the same reply opens only one private common
-  Changeling candidate. Do not register Will-o-Wisp, generate fixtures, add
-  effects, start another role or family beyond that candidate, release, or
+  `6448bb49e16679b94fcc402166b089b6b6ca7174` plus initial handoff
+  `72b529bcdd19bd0d3018f2b03ceabcb29a809015` are published and remote
+  verified, and full `check` passes in 110.9s against the published tuple. The
+  same reply opens only one private common Changeling candidate from this clean
+  publication reconciliation. Do not register Will-o-Wisp, generate fixtures,
+  add effects, start another role or family beyond that candidate, release, or
   advance EN-E08.
 - Approved preceding isolated art checkpoint:
   `codex/en-e07-will-o-wisp-fenbell-shepherd`, based exactly on clean

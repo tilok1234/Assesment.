@@ -280,13 +280,13 @@ three frozen PNG hashes were reverified and those exact files were opened
 together in responsive Aseprite 1.3.17.2; its live command line names all three
 paths. The designer replied `approved lets do next` on 2026-08-11;
 implementation `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval
-record `6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally, and
-full validation passes in 110.7s against committed approved-local metadata.
-Mirecrown Beacon remains private, unregistered, and fixture-free while bounded
-handoff reconciliation and branch push are pending. After clean publication
-reconciliation, the same reply opens only one private common Changeling
-candidate. Registration, fixtures, effects, later roles or families, Kelpie,
-release, and EN-E08 remain closed.
+record `6448bb49e16679b94fcc402166b089b6b6ca7174` plus initial handoff
+`72b529bcdd19bd0d3018f2b03ceabcb29a809015` are published and remote
+verified, and full validation passes in 110.9s against the published tuple.
+Mirecrown Beacon remains private, unregistered, and fixture-free. The same
+reply opens only one private common Changeling candidate from this clean
+publication reconciliation. Registration, fixtures, effects, later roles or
+families, Kelpie, release, and EN-E08 remain closed.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

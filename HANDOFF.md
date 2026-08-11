@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mirecrown Beacon Approved; Publication Pending
+## Immediate Continuation Checkpoint - Mirecrown Beacon Published; Common Changeling Gate Open
 
 Start here in a new task. The exact private elite Will-o-Wisp Mirecrown Beacon
 is authored, repaired, hash-frozen, deterministic, fully validated, and
@@ -31,9 +31,11 @@ visually approved on `codex/en-e07-will-o-wisp-mirecrown-beacon`. It is based
 exactly on clean published Fenbell Shepherd reconciliation
 `8b0754c9594ad91fe378ba11d4f43d7b2a558145`. Implementation
 `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval record
-`6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally; bounded
-handoff reconciliation and branch push are authorized but not yet published.
-The actor remains unregistered, fixture-free, and non-public.
+`6448bb49e16679b94fcc402166b089b6b6ca7174` plus initial handoff
+`72b529bcdd19bd0d3018f2b03ceabcb29a809015` are published and remote
+verified. The actor remains unregistered, fixture-free, and non-public. The
+same approval reply opens only one private common Changeling candidate from
+this clean publication reconciliation.
 
 - Authorization: after Fenbell Shepherd was visually approved, committed,
   pushed, and reconciled, the designer replied `lets do next` on 2026-08-11.
@@ -98,16 +100,15 @@ The actor remains unregistered, fixture-free, and non-public.
 - Broad validation passes: the protected 26-command
   predecessor/candidate/repair/integration matrix completed in 19.0s;
   `npm.cmd run check:fast` passed in 60.4s; full `npm.cmd run check` passed in
-  111.2s before approval and in 110.7s against committed approved-local
-  metadata. The integrated frame digest remains
+  111.2s before approval, in 110.7s against committed approved-local metadata,
+  and in 110.9s against the published tuple. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: commit this bounded approval-state handoff, push the
-  implementation, approval record, and handoff commits under the standing
-  approved-work permission, then reconcile the exact published tuple. After
-  that clean publication, open only one private common Changeling candidate.
-  Do not register Will-o-Wisp, generate fixtures, add effects, start another
-  role or family beyond that candidate, release, or advance EN-E08.
+- Required next action: preserve Mirecrown Beacon and every predecessor
+  byte-for-byte and open only one private common Changeling candidate from this
+  clean publication reconciliation. Do not register Will-o-Wisp, generate
+  fixtures, add effects, start another role or family beyond that candidate,
+  release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Fenbell Shepherd Published
 

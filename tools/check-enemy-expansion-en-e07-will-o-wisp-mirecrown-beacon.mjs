@@ -156,9 +156,11 @@ check(
   EN_E07_MIRECROWN_BEACON_GATE.status === 'approved'
     && EN_E07_MIRECROWN_BEACON_GATE.approvedOn === '2026-08-11'
     && EN_E07_MIRECROWN_BEACON_GATE.approvedImplementation === '72925cd8d8ea1a3ae47a45601607a1a5853decb3'
-    && EN_E07_MIRECROWN_BEACON_GATE.publishedImplementation === null
-    && EN_E07_MIRECROWN_BEACON_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Mirecrown Beacon approved-local state drifted',
+    && EN_E07_MIRECROWN_BEACON_GATE.publishedImplementation === '72925cd8d8ea1a3ae47a45601607a1a5853decb3'
+    && EN_E07_MIRECROWN_BEACON_GATE.publishedApprovalRecord === '6448bb49e16679b94fcc402166b089b6b6ca7174'
+    && EN_E07_MIRECROWN_BEACON_GATE.initialPublishedHandoff === '72b529bcdd19bd0d3018f2b03ceabcb29a809015'
+    && EN_E07_MIRECROWN_BEACON_GATE.publicationState === 'published',
+  'Mirecrown Beacon published state drifted',
 );
 check(
   EN_E07_MIRECROWN_BEACON_GATE.approvalEvidence.includes('three exact frozen PNG review boards were opened together in responsive Aseprite')
@@ -203,10 +205,10 @@ check(
   'Mirecrown Beacon exclusions drifted',
 );
 check(
-  EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('visually approved')
-    && EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('bounded approval-record')
+  EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('visually approved and published')
+    && EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('remote verified')
     && EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('only one private common Changeling candidate'),
-  'Mirecrown Beacon approved-local publication and next-family gate drifted',
+  'Mirecrown Beacon published next-family gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_MIRECROWN_BEACON_GATE)
