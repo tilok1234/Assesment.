@@ -23,17 +23,19 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mirrorfold Harrier Awaiting Visual Review
+## Immediate Continuation Checkpoint - Mirrorfold Harrier Approved; Publication In Progress
 
 Start here in a new task. One private specialist Changeling Mirrorfold Harrier
-is implemented, deterministic, hash-frozen, technically validated, and awaiting
-visual approval on `codex/en-e07-changeling-mirrorfold-harrier`, based exactly
+is implemented, deterministic, hash-frozen, technically validated, visually
+approved, and published on `codex/en-e07-changeling-mirrorfold-harrier`, based exactly
 on clean published Veilskin Foundling reconciliation
-`5eabfecc08f992db675b64ea3317eb59f67d737c`. The candidate is not committed,
-pushed, registered, fixture-generated, or public.
+`5eabfecc08f992db675b64ea3317eb59f67d737c`. Exact implementation
+`ab72a9c0600f016439a5351f363b3b34348dc4b1` is remote-verified; approval-record
+revalidation and current-state reconciliation remain in progress. The actor is
+not registered, fixture-generated, or public.
 
-- Gate ID: `en-e07-changeling-mirrorfold-harrier-full-v1`; status:
-  `implemented-awaiting-review`.
+- Gate ID: `en-e07-changeling-mirrorfold-harrier-full-v1`; status: `approved`
+  with bounded publication in progress.
 - Authorization: after Veilskin Foundling was approved, published, and
   reconciled, the designer replied `lets do next` on 2026-08-11. The frozen
   common-specialist-elite Changeling order opens only this private specialist
@@ -74,14 +76,20 @@ pushed, registered, fixture-generated, or public.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in responsive Aseprite 1.3.17.2 process 40804; its
   live command line names all three frozen paths.
+- Approval: after the exact packet was presented, the designer replied
+  `approved lets do next` on 2026-08-11. Approval applies only to digest
+  `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`.
+  The same reply opens only one private elite Changeling candidate after this
+  bounded publication tuple is remote-verified and reconciled.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-changeling-mirrorfold-harrier`
   and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-mirrorfold-harrier`.
-- Required next action: the designer must visually approve or reject this exact
-  digest. Do not commit or push the candidate, register Changeling, generate
-  fixtures, implement runtime copying, add effects, start elite Changeling or
-  Kelpie, release, or advance EN-E08 before approval.
+- Required next action: finish approval-local revalidation, commit and push the
+  approval record, remote-verify and reconcile the bounded tuple, then open
+  only one private elite Changeling candidate. Do not register Changeling,
+  generate fixtures, implement runtime copying, add effects, start Kelpie,
+  release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Veilskin Foundling Published and Reconciled
 

@@ -1208,9 +1208,12 @@ Candidate digest
 `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`
 passes 80/80 connected, bounded, grounded, stepped-diamond, narrow-leg, and
 pixel/alpha distinctions from approved Veilskin Foundling, Pale Echo, and
-Falseface Adept. The candidate remains uncommitted, unregistered, fixture-free,
-and non-public pending visual approval; elite Changeling, Kelpie, release, and
-EN-E08 remain separate.
+Falseface Adept. The designer approved the exact digest on 2026-08-11; exact
+implementation `ab72a9c0600f016439a5351f363b3b34348dc4b1` is remote-verified,
+with the bounded approval record and reconciliation in progress. The candidate
+remains unregistered, fixture-free, and non-public. After reconciliation, only
+one private elite Changeling candidate opens; Kelpie, release, and EN-E08
+remain separate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

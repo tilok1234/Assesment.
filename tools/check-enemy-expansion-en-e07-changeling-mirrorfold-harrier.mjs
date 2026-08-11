@@ -122,15 +122,21 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_MIRRORFOLD_HARRIER_GATE.status === 'implemented-awaiting-review'
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.approvedOn === null
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.approvalEvidence === null
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.approvedImplementation === null
+  EN_E07_MIRRORFOLD_HARRIER_GATE.status === 'approved'
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.approvedOn === '2026-08-11'
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.approvedImplementation === 'ab72a9c0600f016439a5351f363b3b34348dc4b1'
     && EN_E07_MIRRORFOLD_HARRIER_GATE.publishedImplementation === null
     && EN_E07_MIRRORFOLD_HARRIER_GATE.publishedApprovalRecord === null
     && EN_E07_MIRRORFOLD_HARRIER_GATE.initialPublishedHandoff === null
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.publicationState === 'not-published',
-  'Mirrorfold Harrier pre-approval state drifted',
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.publicationState === 'approved-local',
+  'Mirrorfold Harrier approved-local publication state drifted',
+);
+check(
+  EN_E07_MIRRORFOLD_HARRIER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.approvalEvidence.includes('responsive Aseprite 1.3.17.2 process 40804')
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.approvalEvidence.includes('be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2')
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_MIRRORFOLD_HARRIER_GATE.baseCheckpoint === '5eabfecc08f992db675b64ea3317eb59f67d737c'
@@ -163,17 +169,18 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('Visual approval is required')
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('Do not commit or push')
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('start the elite Changeling'),
-  'visual approval or next-role stop gate drifted',
+  EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('visually approved')
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('one private elite Changeling candidate')
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('Kelpie')
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('remain closed'),
+  'approved-local publication or next-role stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD.precedingVariant.id === 'veilskin-foundling'
     && EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD.activeVariant.id === 'mirrorfold-harrier'
     && EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-review'
+    && EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
     && EN_E07_CHANGELING_CONTRACT_CARD.activeVariant.id === 'veilskin-foundling',
   'Changeling role order or specialist-only boundary drifted',

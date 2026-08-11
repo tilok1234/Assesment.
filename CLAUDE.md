@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current isolated art review checkpoint:
+- Current approved art publication checkpoint:
   `codex/en-e07-changeling-mirrorfold-harrier`, based exactly on clean
   published Veilskin Foundling reconciliation
   `5eabfecc08f992db675b64ea3317eb59f67d737c`, contains one private specialist
@@ -128,9 +128,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `npm.cmd run check:enemy-expansion-en-e07-changeling-mirrorfold-harrier`.
   The exact raw, Complete B + Form, and comparison PNGs are open together in
   responsive Aseprite 1.3.17.2 process 40804, whose command line names all
-  three paths. Visual approval is required before commit or push. Registration,
-  fixtures, runtime copying, effects, elite Changeling, Kelpie, release, and
-  EN-E08 remain separate gates.
+  three paths. The designer replied `approved lets do next` on 2026-08-11;
+  exact implementation `ab72a9c0600f016439a5351f363b3b34348dc4b1` is
+  remote-verified, with approval-record revalidation and reconciliation in
+  progress. After that bounded tuple is reconciled, the same reply opens only
+  one private elite Changeling candidate. Registration, fixtures, runtime
+  copying, effects, Kelpie, release, and EN-E08 remain separate gates.
 - Approved preceding isolated art checkpoint:
   `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean
   published Mirecrown Beacon reconciliation

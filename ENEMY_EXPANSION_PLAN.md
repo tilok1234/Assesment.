@@ -13,7 +13,7 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-11): private specialist Changeling
+- Current publication checkpoint (2026-08-11): private specialist Changeling
   Mirrorfold Harrier on `codex/en-e07-changeling-mirrorfold-harrier` is frozen
   at digest
   `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`
@@ -30,9 +30,13 @@
   and leaves public 80/259 plus fixtures unchanged. `check:fast` passes in 56.7s
   and full `check` in 106.1s with all 232 fixtures exact. The exact raw,
   Complete B + Form, and comparison PNGs are open together in responsive
-  Aseprite 1.3.17.2 process 40804. Visual approval is required before commit or
-  push. It remains unregistered and fixture-free. Runtime actor copying,
-  effects, elite Changeling, Kelpie, release, and EN-E08 remain closed.
+  Aseprite 1.3.17.2 process 40804. The designer replied `approved lets do next`
+  on 2026-08-11; exact implementation
+  `ab72a9c0600f016439a5351f363b3b34348dc4b1` is remote-verified, with
+  approval-record revalidation and reconciliation in progress. It remains
+  unregistered and fixture-free. After reconciliation, the same reply opens
+  only one private elite Changeling candidate. Runtime actor copying, effects,
+  Kelpie, release, and EN-E08 remain closed.
 
 - Approved preceding checkpoint (2026-08-11): private common Changeling Veilskin
   Foundling on `codex/en-e07-changeling-veilskin-foundling` is frozen at digest
@@ -3623,7 +3627,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling approved and published; private specialist Changeling Mirrorfold Harrier awaiting visual review`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling approved and published; private specialist Changeling Mirrorfold Harrier approved with bounded publication in progress`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4228,10 +4232,10 @@ assembler.
   next`. The designer later supplied that authorization, opening only the
   isolated Mirrorfold Harrier specialist candidate below.
 
-#### Changeling Mirrorfold Harrier complete suite awaiting visual review
+#### Changeling Mirrorfold Harrier complete suite approved; publication in progress
 
-- Gate ID: `en-e07-changeling-mirrorfold-harrier-full-v1`; status:
-  `implemented-awaiting-review` on
+- Gate ID: `en-e07-changeling-mirrorfold-harrier-full-v1`; status: `approved`
+  with bounded publication in progress on
   `codex/en-e07-changeling-mirrorfold-harrier`, based exactly on clean,
   remote-verified Veilskin Foundling reconciliation
   `5eabfecc08f992db675b64ea3317eb59f67d737c`.
@@ -4275,14 +4279,21 @@ assembler.
 - Visual-review readiness: the exact raw, Complete B + Form, and family
   comparison PNGs are open together in responsive Aseprite 1.3.17.2; process
   40804 names all three frozen paths.
+- Approval: after the exact packet was presented, the designer replied
+  `approved lets do next` on 2026-08-11. Approval applies only to digest
+  `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`.
+  Exact implementation `ab72a9c0600f016439a5351f363b3b34348dc4b1` is
+  remote-verified. Standing publication permission opens only the bounded
+  approval-record and current-state reconciliation sequence.
 - Scope firewall: no registration, public facade or catalog change, fixtures,
   manifest, shared renderer, exporter, validator, frame-contract change,
   runtime copying, alternate body, detached mask, glow, particles, projectile,
   Kelpie, release, EN-E08, or accepted drift.
-- Required next action: visually approve or reject only candidate digest
-  `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`.
-  Do not stage, commit, push, register, or advance another candidate before
-  that explicit decision.
+- Required next action: finish approval-local revalidation, commit and push the
+  approval record, remote-verify and reconcile the bounded tuple, then open
+  only one private elite Changeling candidate under the same reply. Do not
+  register Changeling, generate fixtures, add runtime copying or effects,
+  start Kelpie, release, or advance EN-E08.
 
 ### EN-E08 - Possessed equipment
 

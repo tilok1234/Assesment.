@@ -45,7 +45,7 @@ export const EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD = deepFreeze({
     id: 'mirrorfold-harrier',
     name: 'Mirrorfold Harrier',
     role: 'specialist',
-    status: 'implemented-full-awaiting-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
   styleContract: 'Use chunky one-to-three-pixel hard-alpha forms and an independently authored compact grounded fey body. Keep one centered readable face inside a connected angular living mantle, paired ordinary arms, bent separated legs, and grounded wedge feet. The specialist must be taller and narrower than Veilskin Foundling without becoming an adult Doppelganger humanoid or copying any actor.',
@@ -57,7 +57,7 @@ export const EN_E07_MIRRORFOLD_HARRIER_CONTRACT = deepFreeze({
   family: 'changeling',
   variant: 'mirrorfold-harrier',
   role: 'specialist',
-  state: 'implemented-complete-motion-awaiting-review',
+  state: 'implemented-complete-motion-approved',
   chassis: 'compact-diamond-mantle-centered-face-long-paired-forearms-pinched-waist-bent-legs-wedge-feet-grounded-fey-v1',
   silhouette: 'A compact grounded authored Changeling specialist, taller and narrower than Veilskin Foundling, with one connected diamond-fold living mantle, angular shoulder points, one centered face, a pinched folded waist, two paired long ordinary forearms, bent separated legs, and low wedge feet. It must not collapse into the common pear-shaped Foundling, adult Pale Echo or Falseface humanoids, a detached mask, a winged Fairy, or a copied actor.',
   identity: 'Muted blue-green mantle flesh, clay-rose face and hands, plum inner folds, copper living seams, dark eye sockets with amber glints, one centered paired gaze, and a connected crossed-arm feint establish a self-contained specialist form without promising runtime actor copying in the assembler.',
@@ -96,19 +96,19 @@ export const EN_E07_MIRRORFOLD_HARRIER_DATA = deepFreeze({
 
 export const EN_E07_MIRRORFOLD_HARRIER_GATE = deepFreeze({
   id: 'en-e07-changeling-mirrorfold-harrier-full-v1',
-  status: 'implemented-awaiting-review',
+  status: 'approved',
   baseCheckpoint: '5eabfecc08f992db675b64ea3317eb59f67d737c',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact repaired Veilskin Foundling was visually approved, committed, pushed, and reconciled at clean published checkpoint 5eabfecc08f992db675b64ea3317eb59f67d737c, the designer replied: lets do next. Veilskin Foundling completed the frozen common Changeling role, so the one-complete-sprite cadence authorizes only one private specialist Changeling Mirrorfold Harrier 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
-  publicationAuthorizedOn: null,
-  publicationAuthorizationEvidence: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Veilskin Foundling, Pale Echo, and Falseface Adept comparison, and synchronized GIF evidence were presented after the early Foundling-like scaffold was corrected before freeze. The three exact frozen PNG boards were open together in responsive Aseprite 1.3.17.2 process 40804, whose live command line named all three paths. The designer replied: approved lets do next. Approval applies only to candidate digest be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2. Registration, fixtures, runtime copying, effects, Kelpie, release, and EN-E08 remain separate gates.',
+  approvedImplementation: 'ab72a9c0600f016439a5351f363b3b34348dc4b1',
+  publicationAuthorizedOn: '2026-08-11',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later families, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-local',
   precedingApproval: {
     gateId: EN_E07_VEILSKIN_FOUNDLING_GATE.id,
     artifactSha256: EN_E07_VEILSKIN_FOUNDLING_GATE.artifactSha256,
@@ -188,7 +188,7 @@ export const EN_E07_MIRRORFOLD_HARRIER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Visual approval is required for the exact frozen Mirrorfold Harrier packet. Do not commit or push the candidate, register Changeling, generate fixtures, add runtime copying or effects, release, start the elite Changeling, start Kelpie, or advance EN-E08 before that approval.',
+  nextGate: 'The exact Mirrorfold Harrier digest is visually approved and its implementation is published. Complete the bounded approval-record and current-state reconciliation first; after that remote-verified stop, the same designer reply opens only one private elite Changeling candidate. Registration, fixtures, runtime copying, effects, Kelpie, release, and EN-E08 remain closed.',
 });
 
 export const EN_E07_MIRRORFOLD_HARRIER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -511,7 +511,7 @@ export const EN_E07_MIRRORFOLD_HARRIER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mirrorfold-harrier',
     scale: 8,
-    notes: 'Review one compact grounded authored Mirrorfold Harrier against approved Veilskin Foundling, Pale Echo, and Falseface Adept. Keep registration, fixtures, runtime copying, effects, elite Changeling, Kelpie, and later Wave 2 work separate.',
+    notes: 'Visually approved as one compact grounded authored Mirrorfold Harrier against approved Veilskin Foundling, Pale Echo, and Falseface Adept. Publish only the bounded approval and reconciliation tuple; after remote verification, open only one private elite Changeling candidate. Keep registration, fixtures, runtime copying, effects, Kelpie, and later Wave 2 work separate.',
   },
 });
 

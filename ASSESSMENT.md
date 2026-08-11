@@ -483,8 +483,12 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   eye-bearing views, and 54/54 readable face-feature views. `check:fast` passes
   in 56.7s and full `check` in 106.1s with public 80/259 and all 232 fixtures
   exact. The three frozen PNGs are open together in responsive Aseprite
-  1.3.17.2 process 40804. Visual approval is required before commit or push;
-  registration, fixtures, runtime copying, effects, elite Changeling, Kelpie,
+  1.3.17.2 process 40804. The designer replied `approved lets do next` on
+  2026-08-11; exact implementation
+  `ab72a9c0600f016439a5351f363b3b34348dc4b1` is remote-verified, with
+  approval-record revalidation and reconciliation in progress. After that
+  bounded tuple is reconciled, the same reply opens only one private elite
+  Changeling. Registration, fixtures, runtime copying, effects, Kelpie,
   release, and EN-E08 remain closed.
   The approved preceding common Changeling is Veilskin Foundling on
   `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean

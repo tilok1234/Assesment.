@@ -1491,10 +1491,13 @@ comparisons. The opaque range is 202-248, all 72 colored frames preserve the
 four palette groups, all eight flashes are exact white, and all 54 visible-face
 views retain readable features. `check:fast` passes in 56.7s and full `check`
 in 106.1s with public 80/259 and all 232 fixtures exact. The exact three PNGs
-are open together in responsive Aseprite 1.3.17.2 process 40804. Visual
-approval is required before commit or push. The candidate remains private,
-unregistered, and fixture-free; runtime copying, effects, elite Changeling,
-Kelpie, release, and EN-E08 remain closed.
+are open together in responsive Aseprite 1.3.17.2 process 40804. The designer
+replied `approved lets do next` on 2026-08-11; exact implementation
+`ab72a9c0600f016439a5351f363b3b34348dc4b1` is remote-verified, with the
+approval record and reconciliation in progress. The candidate remains private,
+unregistered, and fixture-free. After reconciliation, the same reply opens
+only one private elite Changeling; runtime copying, effects, Kelpie, release,
+and EN-E08 remain closed.
 
 Veilskin Foundling is the approved preceding common Changeling checkpoint on
 `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean Mirecrown
