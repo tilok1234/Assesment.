@@ -432,10 +432,10 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The three frozen PNG hashes were reverified and those exact files are open
   together in responsive Aseprite 1.3.17.2. The designer replied `approved` on
   2026-08-11; implementation `04f113d6e2b95f290925eba040659b441e3cfcd1`
-  and approval record `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` are committed
-  locally, and full `check` passes in 113.7s against committed approved-local
-  metadata. Fenbell Shepherd remains private and unregistered while bounded
-  handoff reconciliation and branch push are pending. Effects, the elite or
+  and approval record `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` plus initial
+  handoff `462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
+  verified, and full `check` passes in 108.7s against the published tuple.
+  Fenbell Shepherd remains private and unregistered. Effects, the elite or
   another family, release, and EN-E08 stay closed; no later art gate is open.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain

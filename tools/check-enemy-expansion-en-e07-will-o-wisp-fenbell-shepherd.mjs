@@ -151,9 +151,11 @@ check(
   EN_E07_FENBELL_SHEPHERD_GATE.status === 'approved'
     && EN_E07_FENBELL_SHEPHERD_GATE.approvedOn === '2026-08-11'
     && EN_E07_FENBELL_SHEPHERD_GATE.approvedImplementation === '04f113d6e2b95f290925eba040659b441e3cfcd1'
-    && EN_E07_FENBELL_SHEPHERD_GATE.publishedImplementation === null
-    && EN_E07_FENBELL_SHEPHERD_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Fenbell Shepherd approved-local state drifted',
+    && EN_E07_FENBELL_SHEPHERD_GATE.publishedImplementation === '04f113d6e2b95f290925eba040659b441e3cfcd1'
+    && EN_E07_FENBELL_SHEPHERD_GATE.publishedApprovalRecord === '89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7'
+    && EN_E07_FENBELL_SHEPHERD_GATE.initialPublishedHandoff === '462e7e5123d96f3ff928cd6ff908267cd313570b'
+    && EN_E07_FENBELL_SHEPHERD_GATE.publicationState === 'published',
+  'Fenbell Shepherd published state drifted',
 );
 check(
   EN_E07_FENBELL_SHEPHERD_GATE.approvalEvidence.includes('three exact frozen PNG review boards were opened together in responsive Aseprite')
@@ -194,11 +196,11 @@ check(
   'Fenbell Shepherd exclusions drifted',
 );
 check(
-  EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('visually approved')
-    && EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('bounded approval-record')
-    && EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('Stop after a clean published reconciliation')
+  EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('visually approved and published')
+    && EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('remote verified')
+    && EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('Stop at this clean publication reconciliation')
     && EN_E07_FENBELL_SHEPHERD_GATE.nextGate.includes('without another explicit authorization'),
-  'Fenbell Shepherd approved-local publication stop gate drifted',
+  'Fenbell Shepherd published stop gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_FENBELL_SHEPHERD_GATE)

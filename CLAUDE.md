@@ -130,10 +130,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   hashes were reverified and those exact files are open together in responsive
   Aseprite 1.3.17.2. The designer replied `approved` on 2026-08-11;
   implementation `04f113d6e2b95f290925eba040659b441e3cfcd1` and approval
-  record `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` are committed locally,
-  and full `check` passes in 113.7s against committed approved-local metadata.
-  Bounded handoff reconciliation and branch push are authorized. Do not
-  register Will-o-Wisp, generate fixtures, add effects, start the elite or
+  record `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` plus initial handoff
+  `462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
+  verified, and full `check` passes in 108.7s against the published tuple. Do
+  not register Will-o-Wisp, generate fixtures, add effects, start the elite or
   another family, release, or advance EN-E08 without another explicit
   authorization; no later art gate is open.
 - Approved preceding art checkpoint (Lantern Mote):

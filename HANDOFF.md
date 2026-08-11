@@ -23,15 +23,16 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Fenbell Shepherd Approved; Publication Pending
+## Immediate Continuation Checkpoint - Fenbell Shepherd Published; No Later Art Gate Open
 
 Start here in a new task. The exact private specialist Will-o-Wisp Fenbell
 Shepherd is authored, repaired, hash-frozen, deterministic, fully validated,
 and visually approved on `codex/en-e07-will-o-wisp-fenbell-shepherd`.
 Implementation `04f113d6e2b95f290925eba040659b441e3cfcd1` and approval record
-`89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` are committed locally; bounded
-handoff reconciliation and branch push are authorized but not yet published.
-The actor remains unregistered, fixture-free, and non-public.
+`89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` plus initial handoff
+`462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
+verified. The actor remains unregistered, fixture-free, and non-public. The
+designer's exact approval reply did not open a later art gate.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-will-o-wisp-fenbell-shepherd`, based exactly on clean
@@ -97,16 +98,15 @@ The actor remains unregistered, fixture-free, and non-public.
 - Broad validation passes: the protected 25-command
   predecessor/candidate/integration matrix completed in 16.8s;
   `npm.cmd run check:fast` passed in 57.6s; full `npm.cmd run check` passed in
-  111.7s before approval and in 113.7s against committed approved-local
-  metadata. The integrated frame digest remains
+  111.7s before approval, in 113.7s against committed approved-local metadata,
+  and in 108.7s against the published tuple. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: commit this bounded approval-state handoff, push the
-  implementation, approval record, and handoff commits under the standing
-  approved-work permission, then reconcile the exact published tuple. Stop at
-  that clean publication. Do not register Will-o-Wisp, generate fixtures, add
-  effects, start the elite or another family, release, or advance EN-E08
-  without another explicit authorization.
+- Required next action: stop at this clean published checkpoint and preserve
+  Fenbell Shepherd plus every approved predecessor byte-for-byte. Do not
+  register Will-o-Wisp, generate fixtures, add effects, start the elite or
+  another family, release, or advance EN-E08 without another explicit
+  authorization.
 
 ## Approved Preceding Checkpoint - Lantern Mote Published
 

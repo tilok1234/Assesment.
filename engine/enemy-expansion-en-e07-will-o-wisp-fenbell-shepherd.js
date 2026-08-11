@@ -103,9 +103,10 @@ export const EN_E07_FENBELL_SHEPHERD_GATE = deepFreeze({
   approvedImplementation: '04f113d6e2b95f290925eba040659b441e3cfcd1',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '04f113d6e2b95f290925eba040659b441e3cfcd1',
+  publishedApprovalRecord: '89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7',
+  initialPublishedHandoff: '462e7e5123d96f3ff928cd6ff908267cd313570b',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_LANTERN_MOTE_GATE.id,
     artifactSha256: EN_E07_LANTERN_MOTE_GATE.artifactSha256,
@@ -180,7 +181,7 @@ export const EN_E07_FENBELL_SHEPHERD_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact repaired Fenbell Shepherd candidate is visually approved and its implementation is committed at 04f113d6e2b95f290925eba040659b441e3cfcd1. Its bounded approval-record, documentation reconciliation, and branch push are authorized. Stop after a clean published reconciliation. Do not register Will-o-Wisp, generate fixtures, add effects, release, start the elite or another family, or advance EN-E08 without another explicit authorization.',
+  nextGate: 'The exact repaired Fenbell Shepherd is visually approved and published: implementation 04f113d6e2b95f290925eba040659b441e3cfcd1, approval record 89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7, and initial handoff 462e7e5123d96f3ff928cd6ff908267cd313570b are remote verified. Stop at this clean publication reconciliation. Do not register Will-o-Wisp, generate fixtures, add effects, release, start the elite or another family, or advance EN-E08 without another explicit authorization.',
 });
 
 export const EN_E07_FENBELL_SHEPHERD_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -447,7 +448,7 @@ export const EN_E07_FENBELL_SHEPHERD_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'fenbell-shepherd',
     scale: 8,
-    notes: 'Visually approved as one connected hovering Fenbell Shepherd against approved Lantern Mote plus public Spectral Ghost and Flame Elemental. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, effects, elite Will-o-Wisp, Changeling, Kelpie, and later Wave 2 work separate until another explicit authorization.',
+    notes: 'Visually approved and published as one connected hovering Fenbell Shepherd against approved Lantern Mote plus public Spectral Ghost and Flame Elemental. Keep registration, fixtures, effects, elite Will-o-Wisp, Changeling, Kelpie, and later Wave 2 work separate; no later art gate is open without another explicit authorization.',
   },
 });
 

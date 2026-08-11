@@ -1121,11 +1121,11 @@ validation in 111.7s with the integration digest and all 232 fixtures exact.
 The three frozen PNG hashes were reverified and those exact files were opened
 together in responsive Aseprite 1.3.17.2. The designer replied `approved` on
 2026-08-11; implementation `04f113d6e2b95f290925eba040659b441e3cfcd1` and
-approval record `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` are committed
-locally, and full validation passes in 113.7s against committed approved-local
-metadata. The module remains private, unregistered, and fixture-free while its
-bounded handoff reconciliation and branch push are pending. No later art gate
-is open.
+approval record `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` plus initial handoff
+`462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
+verified, and full validation passes in 108.7s against the published tuple. The
+module remains private, unregistered, and fixture-free. No later art gate is
+open.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

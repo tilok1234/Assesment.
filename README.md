@@ -1428,12 +1428,12 @@ all 232 fixtures exact. The three frozen PNG hashes were reverified and those
 exact files were opened together in responsive Aseprite 1.3.17.2. The designer
 replied `approved` on 2026-08-11; implementation
 `04f113d6e2b95f290925eba040659b441e3cfcd1` and approval record
-`89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` are committed locally, and full
-validation passes in 113.7s against committed approved-local metadata. Fenbell
-Shepherd remains private, unregistered, and fixture-free while bounded handoff
-reconciliation and branch push are pending. Detached effects, registration,
-fixtures, the elite or another family, release, and EN-E08 remain closed; no
-later art gate is open.
+`89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` plus initial handoff
+`462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
+verified, and full validation passes in 108.7s against the published tuple.
+Fenbell Shepherd remains private, unregistered, and fixture-free. Detached
+effects, registration, fixtures, the elite or another family, release, and
+EN-E08 remain closed; no later art gate is open.
 
 ## Approved enemy backlog integration published
 
