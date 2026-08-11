@@ -115,7 +115,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and visually approved by the designer's reply `accepted`. Implementation
   `d73ca9334640384d9b531c0d8375c1a42e459212` records the exact accepted
   pixels; approval record `717b4f7f735984550f44ce90d0bba58cfd6e1762`
-  and the implementation are remote verified. It is one baked 24x24 actor with zero child
+  and initial handoff `054b100cbf9edc8e13facb5f8a312c03b9a7bdd9`
+  are remote verified. This reconciliation completes the bounded publication
+  tuple. It is one baked 24x24 actor with zero child
   assets: angular helm, one vertical rune-lock aperture, square pauldrons, hex
   forge chest, connected interlocking gauntlets, rigid joint belt, divided
   greaves, and grounded wedge sabatons. Run
@@ -126,10 +128,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   validation passes in 113.1s with public 80/259 and all 232 fixtures exact.
   The exact three frozen PNGs are open together in responsive Aseprite 1.3.17.2
   process 42856.
-  Standing permission opens only the initial handoff and final reconciliation.
   Do not register, generate fixtures, add effects, open the
   elite role, advance another EN-E08 family, release, accept drift, or open a
-  PR; a separate `lets do next` is required after clean remote reconciliation.
+  PR; a separate `lets do next` is required from this clean published reconciliation.
 - Approved preceding private art checkpoint:
   `codex/en-e08-animated-armor-architecture`, based exactly on clean published
   Blackwake reconciliation `defc9b8cab1226610da6cf2b17951c8b5815499e`,

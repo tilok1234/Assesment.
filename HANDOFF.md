@@ -35,9 +35,10 @@ Runeforge Custodian is implemented on
 and is visually accepted. Implementation
 `d73ca9334640384d9b531c0d8375c1a42e459212` records the exact accepted pixels;
 approval record `717b4f7f735984550f44ce90d0bba58cfd6e1762` and the implementation are
-remote verified. Only the initial published handoff hash and final clean
-reconciliation remain open. It remains unregistered, fixture-free,
-effect-free, and non-public.
+remote verified. Initial published handoff
+`054b100cbf9edc8e13facb5f8a312c03b9a7bdd9` is also remote verified; this
+reconciliation completes the bounded publication tuple. It remains
+unregistered, fixture-free, effect-free, and non-public.
 
 - Identity: constructed-rune-lock specialist with an angular crownless helm,
   one vertical readable rune-lock aperture, level square pauldrons, hexagonal
@@ -76,12 +77,11 @@ effect-free, and non-public.
 - Approval: after the exact frozen raw, Complete B + Form, comparison, and
   synchronized GIF evidence was presented, the designer replied `accepted`.
   This approves only digest `629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`.
-  Its implementation and approval record are remote verified; standing
-  permission now opens only the initial handoff and final reconciliation. Do
-  not register, generate fixtures, add effects, open
+  Its implementation, approval record, and initial handoff are remote verified.
+  Do not register, generate fixtures, add effects, open
   the elite role, advance another EN-E08 family, release, accept drift, or open
-  a PR. Another art gate requires a separate `lets do next` after clean remote
-  reconciliation.
+  a PR. Another art gate requires a separate `lets do next` from this clean
+  published reconciliation.
 
 ## Approved Preceding Checkpoint - Hollow Sentry Published and Reconciled
 

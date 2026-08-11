@@ -299,8 +299,9 @@ the frozen review + focused + fast gates pass together in 59.6s and full
 validation passes in 113.1s with public 80/259 and all 232 fixtures exact.
 The designer replied `accepted`; implementation
 `d73ca9334640384d9b531c0d8375c1a42e459212` and approval record
-`717b4f7f735984550f44ce90d0bba58cfd6e1762` are remote verified. Standing
-permission opens only the initial handoff and final reconciliation.
+`717b4f7f735984550f44ce90d0bba58cfd6e1762` plus initial handoff
+`054b100cbf9edc8e13facb5f8a312c03b9a7bdd9` are remote verified. This
+reconciliation completes the bounded publication tuple.
 Registration, fixtures, effects, the elite role, later EN-E08
 families, release, accepted drift, and a PR remain separate gates.
 

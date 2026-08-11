@@ -480,8 +480,9 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   59.6s and full validation passes in 113.1s, preserving public 80/259 and all
   232 fixtures. The designer replied `accepted`; implementation
   `d73ca9334640384d9b531c0d8375c1a42e459212` and approval record
-  `717b4f7f735984550f44ce90d0bba58cfd6e1762` are remote verified. Only the
-  initial handoff and final reconciliation remain open, while the
+  `717b4f7f735984550f44ce90d0bba58cfd6e1762` plus initial handoff
+  `054b100cbf9edc8e13facb5f8a312c03b9a7bdd9` are remote verified. This
+  reconciliation completes the bounded publication tuple, while the
   candidate remains unregistered, fixture-free, effect-free, and private.
   The approved preceding private checkpoint is common Animated Armor Hollow
   Sentry on `codex/en-e08-animated-armor-architecture`, based exactly on clean
