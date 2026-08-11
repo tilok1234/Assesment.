@@ -1269,12 +1269,14 @@ exact white flashes, 54/54 expected eye-bearing views, and 54/54 readable muzzle
 views pass. Complete B adds 10,468 pixels and Form changes 4,904. The exact
 three PNGs are open together in Aseprite, `check:fast` passes in 66.0s, and full
 `check` passes in 110.4s before approval and 120.2s immediately before the
-implementation commit and 102.4s against approval-local metadata, with public
-80/259 and all 232 fixtures unchanged. The
+implementation commit, 102.4s against approval-local metadata, and 110.8s
+against the final published tuple, with public 80/259 and all 232 fixtures
+unchanged. The
 designer approved the exact digest on 2026-08-11; implementation
 `74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
-`8fb53e961247da875814593feb132182648f9e48` are published and remote-verified.
-The bounded initial handoff and final reconciliation remain. The
+`8fb53e961247da875814593feb132182648f9e48` plus initial handoff
+`ae532a17e92c3a7b0b99ccd3c938f8174f102dd6` are published and remote-verified.
+This reconciliation completes the bounded tuple. The
 candidate remains unregistered, fixture-free, and non-public. No next Kelpie
 role is authorized; later roles, release, and EN-E08 remain separate until
 another `lets do next`.

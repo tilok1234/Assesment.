@@ -302,15 +302,16 @@ from approved Steppe Hunter plus public Dire Wolf and Marsh Crocodile; 72/72
 colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views, and
 54/54 readable muzzle views pass. `check:fast` passes in 66.0s and full `check`
 in 110.4s before approval and 120.2s immediately before the implementation
-commit and 102.4s against approval-local metadata, with public 80/259 and all
-232 fixtures exact. The exact three frozen
+commit, 102.4s against approval-local metadata, and 110.8s against the final
+published tuple, with public 80/259 and all 232 fixtures exact. The exact three frozen
 PNGs are open together in Aseprite. Front/rear face, chest/rump, tail color,
 hoof separation, and two detached walk legs were corrected before freeze. The
 designer replied `approved` on 2026-08-11; approval applies only to the frozen
 digest above. Exact implementation
 `74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
-`8fb53e961247da875814593feb132182648f9e48` are published and remote-verified;
-the bounded initial handoff and final reconciliation remain. The candidate
+`8fb53e961247da875814593feb132182648f9e48` plus initial handoff
+`ae532a17e92c3a7b0b99ccd3c938f8174f102dd6` are published and remote-verified.
+This reconciliation completes the bounded tuple. The candidate
 remains unregistered and fixture-free. No next Kelpie role is authorized;
 runtime copying, effects, release, and EN-E08 remain closed until another
 `lets do next`.

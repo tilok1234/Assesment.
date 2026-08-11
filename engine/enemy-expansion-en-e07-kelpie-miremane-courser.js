@@ -106,10 +106,10 @@ export const EN_E07_MIREMANE_COURSER_GATE = deepFreeze({
   approvedImplementation: '74463a2b1944b7d3a6d412923c205a0c9cc648f1',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  initialPublishedHandoff: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '74463a2b1944b7d3a6d412923c205a0c9cc648f1',
+  publishedApprovalRecord: '8fb53e961247da875814593feb132182648f9e48',
+  initialPublishedHandoff: 'ae532a17e92c3a7b0b99ccd3c938f8174f102dd6',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_MANYFOLD_USURPER_GATE.id,
     artifactSha256: EN_E07_MANYFOLD_USURPER_GATE.artifactSha256,
@@ -186,7 +186,7 @@ export const EN_E07_MIREMANE_COURSER_GATE = deepFreeze({
     'Kelpie specialist or elite',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Miremane Courser digest is visually approved; implementation 74463a2b1944b7d3a6d412923c205a0c9cc648f1 and approval record 8fb53e961247da875814593feb132182648f9e48 are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. No next Kelpie role is authorized; Kelpie registration, fixtures, runtime copying, water effects, later Kelpie roles, release, and EN-E08 remain closed until a separate lets do next.',
+  nextGate: 'The exact Miremane Courser digest is visually approved and published: implementation 74463a2b1944b7d3a6d412923c205a0c9cc648f1, approval record 8fb53e961247da875814593feb132182648f9e48, and initial handoff ae532a17e92c3a7b0b99ccd3c938f8174f102dd6 are remote verified. No next Kelpie role is authorized. Kelpie registration, fixtures, runtime copying, water effects, later Kelpie roles, release, and EN-E08 remain closed until a separate lets do next.',
 });
 
 export const EN_E07_MIREMANE_COURSER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

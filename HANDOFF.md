@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Miremane Courser Approval Published
+## Immediate Continuation Checkpoint - Miremane Courser Published and Reconciled
 
 Start here in a new task. One private common Kelpie Miremane Courser is
 implemented, deterministic, hash-frozen, technically validated, and visually
@@ -32,12 +32,13 @@ approved on
 Manyfold Usurper reconciliation
 `6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Exact implementation
 `74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
-`8fb53e961247da875814593feb132182648f9e48` are published and remote-verified.
-The bounded initial handoff and final reconciliation are the current steps; it
-remains unregistered, fixture-free, and non-public.
+`8fb53e961247da875814593feb132182648f9e48` plus initial handoff
+`ae532a17e92c3a7b0b99ccd3c938f8174f102dd6` are published and remote-verified.
+This reconciliation completes the bounded tuple. It remains unregistered,
+fixture-free, and non-public.
 
-- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `approved`; the
-  implementation and approval record are published.
+- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `approved` and
+  published.
 - Authorization: after Manyfold Usurper was approved, published, and
   reconciled, the designer replied `approved lets do next` on 2026-08-11. The
   frozen Kelpie role order opens only this one private common candidate.
@@ -76,8 +77,8 @@ remains unregistered, fixture-free, and non-public.
 - Broad validation: the focused gate passed in 0.5s,
   `npm.cmd run check:fast` passed in 66.0s, and full `npm.cmd run check` passed
   in 110.4s before approval and 120.2s immediately before the implementation
-  commit and 102.4s against approval-local metadata, with public 80/259 and all
-  232 fixture sheets exact.
+  commit, 102.4s against approval-local metadata, and 110.8s against the final
+  published tuple, with public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and family
   comparison PNGs are open together in Aseprite; the live sprite list reports
   those three frozen paths at IDs 7, 11, and 15. The first draft's front/rear
@@ -90,13 +91,14 @@ remains unregistered, fixture-free, and non-public.
   `approved` on 2026-08-11. Approval applies only to digest
   `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`.
   Exact implementation `74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
-  `8fb53e961247da875814593feb132182648f9e48` are published and remote-verified
-  under the standing bounded publication permission.
+  `8fb53e961247da875814593feb132182648f9e48` plus initial handoff
+  `ae532a17e92c3a7b0b99ccd3c938f8174f102dd6` are published and remote-verified
+  under the standing bounded publication permission. This reconciliation
+  completes the publication tuple.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-miremane-courser` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-miremane-courser`.
-- Required next action: commit and push the bounded initial handoff, verify it,
-  then record and push the final publication reconciliation. No next Kelpie
+- Required next action: stop at this clean published checkpoint. No next Kelpie
   role is authorized. Do not register Kelpie,
   generate fixtures, implement runtime copying, add effects, start another
   Kelpie role, release, or advance EN-E08 without a separate `lets do next`.

@@ -153,11 +153,11 @@ check(
   EN_E07_MIREMANE_COURSER_GATE.status === 'approved'
     && EN_E07_MIREMANE_COURSER_GATE.approvedOn === '2026-08-11'
     && EN_E07_MIREMANE_COURSER_GATE.approvedImplementation === '74463a2b1944b7d3a6d412923c205a0c9cc648f1'
-    && EN_E07_MIREMANE_COURSER_GATE.publishedImplementation === null
-    && EN_E07_MIREMANE_COURSER_GATE.publishedApprovalRecord === null
-    && EN_E07_MIREMANE_COURSER_GATE.initialPublishedHandoff === null
-    && EN_E07_MIREMANE_COURSER_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Miremane Courser bounded publication state drifted',
+    && EN_E07_MIREMANE_COURSER_GATE.publishedImplementation === '74463a2b1944b7d3a6d412923c205a0c9cc648f1'
+    && EN_E07_MIREMANE_COURSER_GATE.publishedApprovalRecord === '8fb53e961247da875814593feb132182648f9e48'
+    && EN_E07_MIREMANE_COURSER_GATE.initialPublishedHandoff === 'ae532a17e92c3a7b0b99ccd3c938f8174f102dd6'
+    && EN_E07_MIREMANE_COURSER_GATE.publicationState === 'published',
+  'Miremane Courser published state drifted',
 );
 check(
   EN_E07_MIREMANE_COURSER_GATE.approvalEvidence.includes('designer replied: approved')
@@ -198,14 +198,15 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('visually approved')
+  EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('visually approved and published')
     && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('implementation 74463a2b1944b7d3a6d412923c205a0c9cc648f1')
     && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('approval record 8fb53e961247da875814593feb132182648f9e48')
+    && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('initial handoff ae532a17e92c3a7b0b99ccd3c938f8174f102dd6')
     && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('remote verified')
     && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('No next Kelpie role is authorized')
     && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('remain closed')
     && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('separate lets do next'),
-  'bounded publication or next-role stop gate drifted',
+  'published tuple or next-role stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_KELPIE_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
