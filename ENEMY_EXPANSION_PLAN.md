@@ -13,7 +13,28 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-11): private common Changeling Veilskin
+- Current stopping checkpoint (2026-08-11): private specialist Changeling
+  Mirrorfold Harrier on `codex/en-e07-changeling-mirrorfold-harrier` is frozen
+  at digest
+  `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`
+  from clean published Veilskin Foundling reconciliation
+  `5eabfecc08f992db675b64ea3317eb59f67d737c`. The 202-248-pixel suite passes
+  80/80 connected, one-cell-bounded, grounded, stepped-diamond, narrow-leg,
+  hard-alpha, alias, mirror, and pixel/alpha distinctions from approved
+  Veilskin Foundling, Pale Echo, and Falseface Adept. Its independently authored
+  compact form uses one connected stepped diamond mantle, angular shoulders,
+  one centered readable face, plum-copper pinched folds, paired long ordinary
+  forearms, bent separated legs, and narrow wedge feet. The packet passes 72/72
+  colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views,
+  and 54/54 readable face-feature views, preserves all three comparisons exact,
+  and leaves public 80/259 plus fixtures unchanged. `check:fast` passes in 56.7s
+  and full `check` in 106.1s with all 232 fixtures exact. The exact raw,
+  Complete B + Form, and comparison PNGs are open together in responsive
+  Aseprite 1.3.17.2 process 40804. Visual approval is required before commit or
+  push. It remains unregistered and fixture-free. Runtime actor copying,
+  effects, elite Changeling, Kelpie, release, and EN-E08 remain closed.
+
+- Approved preceding checkpoint (2026-08-11): private common Changeling Veilskin
   Foundling on `codex/en-e07-changeling-veilskin-foundling` is frozen at digest
   `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`
   from clean published Mirecrown Beacon reconciliation
@@ -42,7 +63,8 @@
   publication tuple. It remains unregistered and fixture-free. Runtime actor
   copying, effects,
   specialist/elite Changeling, Kelpie, release, and EN-E08 remain closed;
-  another candidate requires a separate `lets do next`.
+  the designer's later `lets do next` opened only the specialist Mirrorfold
+  Harrier checkpoint above.
 
 - Approved preceding checkpoint (2026-08-11): private elite Will-o-Wisp
   Mirecrown Beacon on `codex/en-e07-will-o-wisp-mirecrown-beacon` is frozen at
@@ -3601,7 +3623,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling approved and published`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling approved and published; private specialist Changeling Mirrorfold Harrier awaiting visual review`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4202,8 +4224,65 @@ assembler.
   bodies, new Cast or Death pixels, detached masks or veil pieces, wings,
   horns, weapons, glow, particles, projectiles, effects, specialist/elite
   Changeling, Kelpie, release, or EN-E08.
-- Required next action: stop at this published checkpoint. Another candidate
-  requires a separate `lets do next`.
+- Historical stop: this published checkpoint required a separate `lets do
+  next`. The designer later supplied that authorization, opening only the
+  isolated Mirrorfold Harrier specialist candidate below.
+
+#### Changeling Mirrorfold Harrier complete suite awaiting visual review
+
+- Gate ID: `en-e07-changeling-mirrorfold-harrier-full-v1`; status:
+  `implemented-awaiting-review` on
+  `codex/en-e07-changeling-mirrorfold-harrier`, based exactly on clean,
+  remote-verified Veilskin Foundling reconciliation
+  `5eabfecc08f992db675b64ea3317eb59f67d737c`.
+- Authorization: after the exact Veilskin Foundling was visually approved,
+  committed, pushed, and reconciled, the designer replied `lets do next` on
+  2026-08-11. That opens only this one private specialist Changeling candidate.
+- Contract: a compact grounded authored Changeling, taller and narrower than
+  Veilskin Foundling, with one connected stepped-diamond mantle, angular
+  shoulders, one centered readable face, plum-copper pinched folds, paired
+  long ordinary forearms, bent separated legs, and narrow wedge feet. It is
+  distinct from Veilskin Foundling, Pale Echo, and Falseface Adept and does not
+  copy a runtime actor or use an alternate body, mask, glow, particles, or a
+  projectile.
+- Motion: Idle tightens and relaxes the diamond mantle; Walk uses four narrow
+  alternating cross-steps; Attack crosses the wrists beneath the face, opens
+  paired long forearms into an angular feint, drives one connected lead-hand
+  harry, and resets. Hurt is exact white recoil then colored closed-mantle
+  brace. Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2.
+- Frozen evidence: raw PNG
+  `e20cf180e46770d0ce8f12f9695067985954d798922c542acaaa14a585b8c834`;
+  Complete B + Form PNG
+  `27ddbd6b642ff7c8e5f434a4e816f91c7db07935642967d3462bbf8c8c996bfb`;
+  Veilskin Foundling/Pale Echo/Falseface Adept comparison PNG
+  `56293d0aa4c00fe628cf6ad0b6e5b7278278a7a645606cecac5ba58a56a9e433`;
+  raw GIF
+  `58353c0cd5564e7fa8bd6d32859d7c6e07fdf94f203213a5cc18c48deb1fcb63`;
+  Complete B + Form GIF
+  `2e0f5ed576878e6b9f4e49e056c84b892e9ea93589e07aa9b6fe7a8b745e9e29`;
+  candidate digest
+  `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`.
+- Focused validation: 80/80 candidate frames are connected, bounded,
+  grounded, and pixel/alpha distinct from all three approved comparisons;
+  opaque range 202-248; 80/80 stepped-diamond shoulder spans; 80/80 narrow
+  paired-leg rows; 72/72 colored palette frames; 8/8 exact white flashes;
+  54/54 expected eye-bearing views; 54/54 readable face-feature views;
+  Complete B adds 8,917 pixels and Form changes 7,062. Public 80/259 and all
+  fixtures remain unchanged.
+- Broad validation: `npm.cmd run check:fast` passed in 56.7s and full
+  `npm.cmd run check` passed in 106.1s, with public 80/259 and all 232 fixture
+  sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and family
+  comparison PNGs are open together in responsive Aseprite 1.3.17.2; process
+  40804 names all three frozen paths.
+- Scope firewall: no registration, public facade or catalog change, fixtures,
+  manifest, shared renderer, exporter, validator, frame-contract change,
+  runtime copying, alternate body, detached mask, glow, particles, projectile,
+  Kelpie, release, EN-E08, or accepted drift.
+- Required next action: visually approve or reject only candidate digest
+  `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`.
+  Do not stage, commit, push, register, or advance another candidate before
+  that explicit decision.
 
 ### EN-E08 - Possessed equipment
 

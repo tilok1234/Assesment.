@@ -468,7 +468,25 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  That active continuation is common Changeling Veilskin Foundling on
+  The active continuation is specialist Changeling Mirrorfold Harrier on
+  `codex/en-e07-changeling-mirrorfold-harrier`, based exactly on clean
+  published Veilskin Foundling reconciliation
+  `5eabfecc08f992db675b64ea3317eb59f67d737c`. Its compact grounded authored
+  silhouette uses one connected stepped diamond mantle, angular shoulders,
+  one centered readable face, plum-copper pinched folds, paired long ordinary
+  forearms, bent separated legs, and narrow wedge feet. The frozen digest is
+  `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`:
+  80/80 frames are connected, bounded, grounded, preserve the stepped-diamond
+  and narrow-leg silhouette, and differ in pixels and alpha from approved
+  Veilskin Foundling, Pale Echo, and Falseface Adept. The opaque range is
+  202-248, with 72/72 colored frames, 8/8 exact white flashes, 54/54 expected
+  eye-bearing views, and 54/54 readable face-feature views. `check:fast` passes
+  in 56.7s and full `check` in 106.1s with public 80/259 and all 232 fixtures
+  exact. The three frozen PNGs are open together in responsive Aseprite
+  1.3.17.2 process 40804. Visual approval is required before commit or push;
+  registration, fixtures, runtime copying, effects, elite Changeling, Kelpie,
+  release, and EN-E08 remain closed.
+  The approved preceding common Changeling is Veilskin Foundling on
   `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean
   Mirecrown reconciliation `4ee32622ec2984ac805ac345b854f23584fda3c3`.
   Its small grounded authored fey silhouette uses one connected pear-shaped

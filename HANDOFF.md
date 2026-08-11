@@ -23,7 +23,67 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Veilskin Foundling Published and Reconciled
+## Immediate Continuation Checkpoint - Mirrorfold Harrier Awaiting Visual Review
+
+Start here in a new task. One private specialist Changeling Mirrorfold Harrier
+is implemented, deterministic, hash-frozen, technically validated, and awaiting
+visual approval on `codex/en-e07-changeling-mirrorfold-harrier`, based exactly
+on clean published Veilskin Foundling reconciliation
+`5eabfecc08f992db675b64ea3317eb59f67d737c`. The candidate is not committed,
+pushed, registered, fixture-generated, or public.
+
+- Gate ID: `en-e07-changeling-mirrorfold-harrier-full-v1`; status:
+  `implemented-awaiting-review`.
+- Authorization: after Veilskin Foundling was approved, published, and
+  reconciled, the designer replied `lets do next` on 2026-08-11. The frozen
+  common-specialist-elite Changeling order opens only this private specialist
+  candidate.
+- Frozen identity: a compact grounded authored Changeling, taller and narrower
+  than Veilskin Foundling, with one connected stepped diamond mantle, angular
+  shoulders, one centered readable face, plum-copper pinched folds, paired long
+  ordinary forearms, bent separated legs, and narrow wedge feet. It is not the
+  common pear-shaped chassis, an adult Doppelganger humanoid, a detached mask,
+  a copied actor, or an effects carrier.
+- Motion: Idle tightens the diamond mantle; Walk uses four narrow alternating
+  cross-steps; Attack crosses both wrists beneath the face, opens both long
+  forearms into an angular feint, drives one connected lead-hand harry, and
+  resets. Cast aliases Attack exactly. Hurt is white recoil then a colored
+  closed-mantle brace; Death aliases Hurt H1,H2,H2,H2.
+- Candidate digest:
+  `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`.
+- Raw/no-outline PNG SHA-256:
+  `e20cf180e46770d0ce8f12f9695067985954d798922c542acaaa14a585b8c834`.
+- Complete B + Form PNG SHA-256:
+  `27ddbd6b642ff7c8e5f434a4e816f91c7db07935642967d3462bbf8c8c996bfb`.
+- Foundling/Pale Echo/Falseface comparison PNG SHA-256:
+  `56293d0aa4c00fe628cf6ad0b6e5b7278278a7a645606cecac5ba58a56a9e433`.
+- Raw GIF SHA-256:
+  `58353c0cd5564e7fa8bd6d32859d7c6e07fdf94f203213a5cc18c48deb1fcb63`.
+- Complete B + Form GIF SHA-256:
+  `2e0f5ed576878e6b9f4e49e056c84b892e9ea93589e07aa9b6fe7a8b745e9e29`.
+- Focused validation: 80/80 connected, bounded, grounded, stepped-diamond,
+  narrow-leg, and pixel/alpha distinct from approved Veilskin Foundling, Pale
+  Echo, and Falseface Adept; opaque range 202-248; 72/72 colored palette
+  frames; 8/8 exact white flashes; 54/54 expected eye-bearing views; 54/54
+  readable face-feature views; Complete B adds 8,917 pixels and Form changes
+  7,062. All three approved comparisons remain exact; public 80/259 and
+  fixtures remain unchanged.
+- Broad validation: `npm.cmd run check:fast` passed in 56.7s and full
+  `npm.cmd run check` passed in 106.1s, with public 80/259 and all 232 fixture
+  sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and comparison
+  PNGs are open together in responsive Aseprite 1.3.17.2 process 40804; its
+  live command line names all three frozen paths.
+- Commands:
+  `npm.cmd run review:enemy-expansion-en-e07-changeling-mirrorfold-harrier`
+  and
+  `npm.cmd run check:enemy-expansion-en-e07-changeling-mirrorfold-harrier`.
+- Required next action: the designer must visually approve or reject this exact
+  digest. Do not commit or push the candidate, register Changeling, generate
+  fixtures, implement runtime copying, add effects, start elite Changeling or
+  Kelpie, release, or advance EN-E08 before approval.
+
+## Approved Preceding Checkpoint - Veilskin Foundling Published and Reconciled
 
 Start here in a new task. One private common Changeling Veilskin Foundling is
 implemented, deterministic, hash-frozen, technically validated, and visually

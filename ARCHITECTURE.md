@@ -1190,6 +1190,28 @@ remote-verified publication tuple. The actor remains unregistered and
 fixture-free; effects, later roles/families, release, and EN-E08 remain
 separate.
 
+`engine/enemy-expansion-en-e07-changeling-mirrorfold-harrier.js` is the next
+isolated specialist Changeling boundary. It imports only the stable 24x24
+expansion contract plus the published Veilskin Foundling contract/gate, owns
+one private family/variant registry, and is not imported by `sprite-engine.js`,
+the public expansion registry, selectors, persistence, packs, or fixture
+tooling. Its independently authored compact grounded form uses one connected
+stepped diamond mantle, angular shoulders, a centered readable face,
+plum-copper pinched folds, paired long ordinary forearms, bent separated legs,
+and narrow wedge feet. The renderer owns 80 hard-alpha frames with exact
+Cast-to-Attack and Death-to-Hurt aliases; copied actors, alternate bodies,
+detached masks, runtime copying, glow, particles, and projectiles remain
+external. The review and checker boundaries are
+`tools/enemy-expansion-en-e07-changeling-mirrorfold-harrier-review.mjs` and
+`tools/check-enemy-expansion-en-e07-changeling-mirrorfold-harrier.mjs`.
+Candidate digest
+`be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`
+passes 80/80 connected, bounded, grounded, stepped-diamond, narrow-leg, and
+pixel/alpha distinctions from approved Veilskin Foundling, Pale Echo, and
+Falseface Adept. The candidate remains uncommitted, unregistered, fixture-free,
+and non-public pending visual approval; elite Changeling, Kelpie, release, and
+EN-E08 remain separate.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

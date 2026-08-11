@@ -1472,7 +1472,31 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Veilskin Foundling is that isolated common Changeling candidate on
+Mirrorfold Harrier is the active isolated specialist Changeling candidate on
+`codex/en-e07-changeling-mirrorfold-harrier`, based exactly on clean published
+Veilskin Foundling reconciliation
+`5eabfecc08f992db675b64ea3317eb59f67d737c`. Its compact grounded authored form
+uses one connected stepped diamond mantle, angular shoulders, one centered
+readable face, plum-copper pinched folds, paired long ordinary forearms, bent
+separated legs, and narrow wedge feet. Run
+`npm.cmd run review:enemy-expansion-en-e07-changeling-mirrorfold-harrier` for
+the raw, Complete B + Form, approved Foundling/Pale Echo/Falseface comparison,
+and paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-changeling-mirrorfold-harrier` for
+the focused contract gate. The frozen digest is
+`be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`:
+80/80 frames are connected, bounded, grounded, retain the stepped-diamond and
+narrow-leg silhouette, and differ in pixels and alpha from all three approved
+comparisons. The opaque range is 202-248, all 72 colored frames preserve the
+four palette groups, all eight flashes are exact white, and all 54 visible-face
+views retain readable features. `check:fast` passes in 56.7s and full `check`
+in 106.1s with public 80/259 and all 232 fixtures exact. The exact three PNGs
+are open together in responsive Aseprite 1.3.17.2 process 40804. Visual
+approval is required before commit or push. The candidate remains private,
+unregistered, and fixture-free; runtime copying, effects, elite Changeling,
+Kelpie, release, and EN-E08 remain closed.
+
+Veilskin Foundling is the approved preceding common Changeling checkpoint on
 `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean Mirecrown
 reconciliation `4ee32622ec2984ac805ac345b854f23584fda3c3`. Its small grounded
 authored fey form uses one connected pear-shaped living veil, one centered
