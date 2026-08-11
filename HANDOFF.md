@@ -23,19 +23,29 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mirecrown Beacon Frozen Private Candidate
+## Immediate Continuation Checkpoint - Mirecrown Beacon Approved; Publication Pending
 
 Start here in a new task. The exact private elite Will-o-Wisp Mirecrown Beacon
-is authored, repaired, hash-frozen, deterministic, and focused-validated on
-`codex/en-e07-will-o-wisp-mirecrown-beacon`. It is based exactly on clean
-published Fenbell Shepherd reconciliation
-`8b0754c9594ad91fe378ba11d4f43d7b2a558145`. It remains unapproved,
-uncommitted, unregistered, fixture-free, and non-public.
+is authored, repaired, hash-frozen, deterministic, fully validated, and
+visually approved on `codex/en-e07-will-o-wisp-mirecrown-beacon`. It is based
+exactly on clean published Fenbell Shepherd reconciliation
+`8b0754c9594ad91fe378ba11d4f43d7b2a558145`. Implementation
+`72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval record
+`6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally; bounded
+handoff reconciliation and branch push are authorized but not yet published.
+The actor remains unregistered, fixture-free, and non-public.
 
 - Authorization: after Fenbell Shepherd was visually approved, committed,
   pushed, and reconciled, the designer replied `lets do next` on 2026-08-11.
   The frozen common-specialist-elite role order and one-complete-sprite cadence
   open only this one private elite Will-o-Wisp candidate.
+- Approval: after the exact repaired raw, Complete B + Form, comparison, and
+  paired GIF packet was presented and the three frozen PNGs were open together
+  in responsive Aseprite, the designer replied `approved lets do next` on
+  2026-08-11. Approval applies only to digest
+  `5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81`
+  and the five hashes below. After clean publication reconciliation, the same
+  reply opens only one private common Changeling candidate.
 - Approved predecessor: Fenbell Shepherd implementation
   `04f113d6e2b95f290925eba040659b441e3cfcd1`, approval record
   `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7`, initial published handoff
@@ -81,19 +91,23 @@ uncommitted, unregistered, fixture-free, and non-public.
   eight raw/Complete B + Form phase boards were inspected at original detail.
   The first A3/C3 read as a detached pale beam and was repaired before freeze
   into an enclosed cage/core expansion in every direction. The three frozen
-  PNG hashes were reverified and those exact files are open together in a
+  PNG hashes were reverified and those exact files were opened together in a
   responsive Aseprite 1.3.17.2 process; its live command line names the
-  comparison, raw, and Complete B + Form paths.
+  comparison, raw, and Complete B + Form paths. The exact packet was presented
+  and approved as recorded above.
 - Broad validation passes: the protected 26-command
   predecessor/candidate/repair/integration matrix completed in 19.0s;
-  `npm.cmd run check:fast` passed in 60.4s; and full `npm.cmd run check`
-  passed in 111.2s. The integrated frame digest remains
+  `npm.cmd run check:fast` passed in 60.4s; full `npm.cmd run check` passed in
+  111.2s before approval and in 110.7s against committed approved-local
+  metadata. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: present the exact boards plus paired GIFs for explicit
-  designer approval. Do not commit, push, register Will-o-Wisp, generate
-  fixtures, add effects, release, start another family, or advance EN-E08
-  before that approval.
+- Required next action: commit this bounded approval-state handoff, push the
+  implementation, approval record, and handoff commits under the standing
+  approved-work permission, then reconcile the exact published tuple. After
+  that clean publication, open only one private common Changeling candidate.
+  Do not register Will-o-Wisp, generate fixtures, add effects, start another
+  role or family beyond that candidate, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Fenbell Shepherd Published
 

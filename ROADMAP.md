@@ -276,12 +276,17 @@ post-freeze package build, and all raw and Complete B + Form boards and phase
 sheets have been inspected at original detail. The protected 26-command
 matrix passes in 19.0s, fast validation in 60.4s, and full validation in
 111.2s with the approved integration digest and all 232 fixtures exact. The
-three frozen PNG hashes were reverified and those exact files are open together
-in responsive Aseprite 1.3.17.2; its live command line names all three paths.
-Designer review remains pending. Mirecrown Beacon is
-unapproved, uncommitted, private, unregistered, and fixture-free. Registration,
-fixtures, effects, Changeling, Kelpie, release, EN-E08, and publication remain
-closed until explicit approval of the exact review packet.
+three frozen PNG hashes were reverified and those exact files were opened
+together in responsive Aseprite 1.3.17.2; its live command line names all three
+paths. The designer replied `approved lets do next` on 2026-08-11;
+implementation `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval
+record `6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally, and
+full validation passes in 110.7s against committed approved-local metadata.
+Mirecrown Beacon remains private, unregistered, and fixture-free while bounded
+handoff reconciliation and branch push are pending. After clean publication
+reconciliation, the same reply opens only one private common Changeling
+candidate. Registration, fixtures, effects, later roles or families, Kelpie,
+release, and EN-E08 remain closed.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

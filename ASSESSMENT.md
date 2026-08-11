@@ -457,11 +457,17 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   at original detail. The protected 26-command matrix passes in 19.0s,
   `check:fast` in 60.4s, and full `check` in 111.2s with the integration digest
   and all 232 fixtures exact. The three frozen PNG hashes were reverified and
-  those exact files are open together in responsive Aseprite 1.3.17.2; its
-  live command line names all three paths. Designer review remains pending.
-  Mirecrown Beacon is unapproved, uncommitted,
-  unregistered, fixture-free, and non-public; no publication or later gate is
-  authorized.
+  those exact files were opened together in responsive Aseprite 1.3.17.2; its
+  live command line names all three paths. The designer replied `approved lets
+  do next` on 2026-08-11; implementation
+  `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval record
+  `6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally, and full
+  `check` passes in 110.7s against committed approved-local metadata.
+  Mirecrown Beacon remains private, unregistered, fixture-free, and non-public
+  while bounded handoff reconciliation and branch push are pending. After
+  clean publication reconciliation, the same reply opens only one private
+  common Changeling candidate; registration, fixtures, effects, later roles
+  or families, release, and EN-E08 remain closed.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

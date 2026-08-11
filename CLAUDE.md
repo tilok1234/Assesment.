@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current isolated art candidate checkpoint:
+- Current isolated art approval checkpoint:
   `codex/en-e07-will-o-wisp-mirecrown-beacon`, based exactly on clean
   published Fenbell Shepherd reconciliation
   `8b0754c9594ad91fe378ba11d4f43d7b2a558145`, contains one private elite
@@ -128,11 +128,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `check:fast` in 60.4s, and full `check` in 111.2s with the approved
   integration digest and all 232 fixtures exact. The three frozen PNG hashes
   were reverified and those exact files are open together in responsive
-  Aseprite 1.3.17.2; its live command line names all three paths. Designer
-  approval remains pending. The candidate is uncommitted, unregistered,
-  fixture-free, and non-public. Do not commit or push it, register
-  Will-o-Wisp, generate fixtures, add effects, start another family, release,
-  or advance EN-E08 before explicit approval of the exact review packet.
+  Aseprite 1.3.17.2; its live command line names all three paths. The designer
+  replied `approved lets do next` on 2026-08-11; implementation
+  `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval record
+  `6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally, and full
+  `check` passes in 110.7s against committed approved-local metadata. Bounded
+  handoff reconciliation and branch push are authorized. After clean
+  publication reconciliation, the same reply opens only one private common
+  Changeling candidate. Do not register Will-o-Wisp, generate fixtures, add
+  effects, start another role or family beyond that candidate, release, or
+  advance EN-E08.
 - Approved preceding isolated art checkpoint:
   `codex/en-e07-will-o-wisp-fenbell-shepherd`, based exactly on clean
   published Lantern Mote reconciliation

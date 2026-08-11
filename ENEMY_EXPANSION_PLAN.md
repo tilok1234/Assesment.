@@ -31,12 +31,17 @@
   detail; one post-freeze package build reproduces every hash. The protected
   26-command matrix passes in 19.0s, the fast suite in 60.4s, and the full
   suite in 111.2s with the approved integration digest and all 232 fixtures
-  exact. The three frozen PNG hashes were reverified and those exact files are
-  open together in responsive Aseprite 1.3.17.2; its live command line names
-  all three paths. Designer review remains pending. Mirecrown Beacon is
-  unapproved, uncommitted, private, unregistered, fixture-free, and non-public.
-  Registration, fixtures, effects, Changeling, Kelpie, release, EN-E08, and
-  publication remain closed until explicit approval of the exact packet.
+  exact. The three frozen PNG hashes were reverified and those exact files were
+  opened together in responsive Aseprite 1.3.17.2; its live command line names
+  all three paths. The designer replied `approved lets do next` on 2026-08-11;
+  implementation `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval
+  record `6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally, and
+  full validation passes in 110.7s against approved-local metadata. Mirecrown
+  Beacon remains private, unregistered, fixture-free, and non-public while
+  bounded handoff reconciliation and branch push are pending. After clean
+  publication reconciliation, the same reply opens only one private common
+  Changeling candidate. Registration, fixtures, effects, later roles or
+  families, Kelpie, release, and EN-E08 remain closed.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3565,7 +3570,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote common and Fenbell Shepherd specialist Will-o-Wisp approved and published; Mirecrown Beacon elite frozen as one private unapproved candidate`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote common and Fenbell Shepherd specialist Will-o-Wisp approved and published; Mirecrown Beacon elite approved locally with bounded publication pending`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4032,9 +4037,9 @@ assembler.
   only the private elite Mirecrown Beacon candidate below. Registration,
   fixtures, effects, another family, release, and EN-E08 remain closed.
 
-#### Will-o-Wisp Mirecrown Beacon complete suite frozen candidate
+#### Will-o-Wisp Mirecrown Beacon complete suite approved; publication pending
 
-- Gate ID: `en-e07-will-o-wisp-mirecrown-beacon-full-v1`; status: `candidate`
+- Gate ID: `en-e07-will-o-wisp-mirecrown-beacon-full-v1`; status: `approved`
   on `codex/en-e07-will-o-wisp-mirecrown-beacon`, based exactly on clean
   published Fenbell Shepherd reconciliation
   `8b0754c9594ad91fe378ba11d4f43d7b2a558145`.
@@ -4078,17 +4083,24 @@ assembler.
   raw/Complete B + Form phase boards were inspected at original detail. The
   three exact frozen PNG hashes were reverified and those files are open
   together in responsive Aseprite 1.3.17.2; its live command line names the
-  comparison, raw, and Complete B + Form paths.
+  comparison, raw, and Complete B + Form paths. The designer replied
+  `approved lets do next` on 2026-08-11. Approval applies only to the frozen
+  digest and five evidence hashes above. Implementation
+  `72925cd8d8ea1a3ae47a45601607a1a5853decb3` and approval record
+  `6448bb49e16679b94fcc402166b089b6b6ca7174` are committed locally.
 - Broad validation: the protected 26-command
   predecessor/candidate/repair/integration matrix passed in 19.0s,
   `npm.cmd run check:fast` passed in 60.4s, and full `npm.cmd run check`
-  passed in 111.2s. The approved 1,200-frame integration digest remains
+  passed in 111.2s before approval and in 110.7s against committed
+  approved-local metadata. The approved 1,200-frame integration digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: present the exact boards plus paired GIFs for explicit
-  approval. Do not commit, push, register Will-o-Wisp, generate
-  fixtures, add effects, start another family, release, or advance EN-E08
-  before that approval.
+- Required next action: commit the bounded approval-state handoff and push the
+  implementation, approval record, and handoff commits under the standing
+  approved-work permission; then reconcile the exact published tuple. After
+  that clean publication, open only one private common Changeling candidate.
+  Do not register Will-o-Wisp, generate fixtures, add effects, start another
+  role or family beyond that candidate, release, or advance EN-E08.
 
 ### EN-E08 - Possessed equipment
 
