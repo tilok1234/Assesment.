@@ -108,7 +108,7 @@ export const EN_E07_MIRRORFOLD_HARRIER_GATE = deepFreeze({
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'approved-local',
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_VEILSKIN_FOUNDLING_GATE.id,
     artifactSha256: EN_E07_VEILSKIN_FOUNDLING_GATE.artifactSha256,
@@ -188,7 +188,7 @@ export const EN_E07_MIRRORFOLD_HARRIER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Mirrorfold Harrier digest is visually approved and its implementation is published. Complete the bounded approval-record and current-state reconciliation first; after that remote-verified stop, the same designer reply opens only one private elite Changeling candidate. Registration, fixtures, runtime copying, effects, Kelpie, release, and EN-E08 remain closed.',
+  nextGate: 'The exact Mirrorfold Harrier digest is visually approved; implementation ab72a9c0600f016439a5351f363b3b34348dc4b1 and approval record e976ca5fc5c249af4e727fb3bff7d58fd541a932 are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. After that remote-verified stop, the same designer reply opens only one private elite Changeling candidate. Registration, fixtures, runtime copying, effects, Kelpie, release, and EN-E08 remain closed.',
 });
 
 export const EN_E07_MIRRORFOLD_HARRIER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

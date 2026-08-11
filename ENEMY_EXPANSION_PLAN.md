@@ -28,12 +28,14 @@
   colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views,
   and 54/54 readable face-feature views, preserves all three comparisons exact,
   and leaves public 80/259 plus fixtures unchanged. `check:fast` passes in 56.7s
-  and full `check` in 106.1s with all 232 fixtures exact. The exact raw,
+  and full `check` in 106.1s before approval and 138.6s against approval-local
+  metadata, with all 232 fixtures exact. The exact raw,
   Complete B + Form, and comparison PNGs are open together in responsive
   Aseprite 1.3.17.2 process 40804. The designer replied `approved lets do next`
   on 2026-08-11; exact implementation
-  `ab72a9c0600f016439a5351f363b3b34348dc4b1` is remote-verified, with
-  approval-record revalidation and reconciliation in progress. It remains
+  `ab72a9c0600f016439a5351f363b3b34348dc4b1` and approval record
+  `e976ca5fc5c249af4e727fb3bff7d58fd541a932` are remote-verified; initial
+  handoff and final reconciliation remain in progress. It remains
   unregistered and fixture-free. After reconciliation, the same reply opens
   only one private elite Changeling candidate. Runtime actor copying, effects,
   Kelpie, release, and EN-E08 remain closed.
@@ -4274,24 +4276,25 @@ assembler.
   Complete B adds 8,917 pixels and Form changes 7,062. Public 80/259 and all
   fixtures remain unchanged.
 - Broad validation: `npm.cmd run check:fast` passed in 56.7s and full
-  `npm.cmd run check` passed in 106.1s, with public 80/259 and all 232 fixture
-  sheets exact.
+  `npm.cmd run check` passed in 106.1s before approval and 138.6s against
+  approval-local metadata, with public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and family
   comparison PNGs are open together in responsive Aseprite 1.3.17.2; process
   40804 names all three frozen paths.
 - Approval: after the exact packet was presented, the designer replied
   `approved lets do next` on 2026-08-11. Approval applies only to digest
   `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`.
-  Exact implementation `ab72a9c0600f016439a5351f363b3b34348dc4b1` is
-  remote-verified. Standing publication permission opens only the bounded
-  approval-record and current-state reconciliation sequence.
+  Exact implementation `ab72a9c0600f016439a5351f363b3b34348dc4b1` and approval
+  record `e976ca5fc5c249af4e727fb3bff7d58fd541a932` are remote-verified. Standing
+  publication permission opens only the bounded initial-handoff and final
+  current-state reconciliation sequence.
 - Scope firewall: no registration, public facade or catalog change, fixtures,
   manifest, shared renderer, exporter, validator, frame-contract change,
   runtime copying, alternate body, detached mask, glow, particles, projectile,
   Kelpie, release, EN-E08, or accepted drift.
-- Required next action: finish approval-local revalidation, commit and push the
-  approval record, remote-verify and reconcile the bounded tuple, then open
-  only one private elite Changeling candidate under the same reply. Do not
+- Required next action: commit and push this initial handoff, bind its hash into
+  the final publication record, revalidate and push the final reconciliation,
+  then open only one private elite Changeling candidate under the same reply. Do not
   register Changeling, generate fixtures, add runtime copying or effects,
   start Kelpie, release, or advance EN-E08.
 

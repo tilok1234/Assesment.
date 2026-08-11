@@ -301,11 +301,13 @@ grounded, stepped-diamond, narrow-legged, hard-alpha, and pixel/alpha distinct
 from approved Veilskin Foundling, Pale Echo, and Falseface Adept; 72/72 colored
 frames, 8/8 exact white flashes, 54/54 expected eye-bearing views, and 54/54
 readable face-feature views pass. `check:fast` passes in 56.7s and full `check`
-in 106.1s with public 80/259 and all 232 fixtures exact. The three frozen PNGs
+in 106.1s before approval and 138.6s against approval-local metadata, with
+public 80/259 and all 232 fixtures exact. The three frozen PNGs
 are open together in responsive Aseprite 1.3.17.2 process 40804. The designer
 replied `approved lets do next` on 2026-08-11; exact implementation
-`ab72a9c0600f016439a5351f363b3b34348dc4b1` is remote-verified, with
-approval-record revalidation and reconciliation in progress. After that
+`ab72a9c0600f016439a5351f363b3b34348dc4b1` and approval record
+`e976ca5fc5c249af4e727fb3bff7d58fd541a932` are remote-verified; initial
+handoff and final reconciliation remain in progress. After that
 bounded tuple is reconciled, the same reply opens only one private elite
 Changeling. Registration, fixtures, runtime copying, effects, Kelpie, release,
 and EN-E08 remain closed.

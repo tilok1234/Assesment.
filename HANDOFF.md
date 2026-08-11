@@ -23,16 +23,17 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mirrorfold Harrier Approved; Publication In Progress
+## Immediate Continuation Checkpoint - Mirrorfold Harrier Initial Publication In Progress
 
 Start here in a new task. One private specialist Changeling Mirrorfold Harrier
 is implemented, deterministic, hash-frozen, technically validated, visually
 approved, and published on `codex/en-e07-changeling-mirrorfold-harrier`, based exactly
 on clean published Veilskin Foundling reconciliation
 `5eabfecc08f992db675b64ea3317eb59f67d737c`. Exact implementation
-`ab72a9c0600f016439a5351f363b3b34348dc4b1` is remote-verified; approval-record
-revalidation and current-state reconciliation remain in progress. The actor is
-not registered, fixture-generated, or public.
+`ab72a9c0600f016439a5351f363b3b34348dc4b1` and approval record
+`e976ca5fc5c249af4e727fb3bff7d58fd541a932` are remote-verified. Initial
+handoff and final current-state reconciliation remain in progress. The actor
+is not registered, fixture-generated, or public.
 
 - Gate ID: `en-e07-changeling-mirrorfold-harrier-full-v1`; status: `approved`
   with bounded publication in progress.
@@ -71,8 +72,8 @@ not registered, fixture-generated, or public.
   7,062. All three approved comparisons remain exact; public 80/259 and
   fixtures remain unchanged.
 - Broad validation: `npm.cmd run check:fast` passed in 56.7s and full
-  `npm.cmd run check` passed in 106.1s, with public 80/259 and all 232 fixture
-  sheets exact.
+  `npm.cmd run check` passed in 106.1s before approval and 138.6s against
+  approval-local metadata, with public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in responsive Aseprite 1.3.17.2 process 40804; its
   live command line names all three frozen paths.
@@ -85,9 +86,9 @@ not registered, fixture-generated, or public.
   `npm.cmd run review:enemy-expansion-en-e07-changeling-mirrorfold-harrier`
   and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-mirrorfold-harrier`.
-- Required next action: finish approval-local revalidation, commit and push the
-  approval record, remote-verify and reconcile the bounded tuple, then open
-  only one private elite Changeling candidate. Do not register Changeling,
+- Required next action: commit and push this initial handoff, bind its remote
+  hash into the final publication record, revalidate and push the final
+  reconciliation, then open only one private elite Changeling candidate. Do not register Changeling,
   generate fixtures, implement runtime copying, add effects, start Kelpie,
   release, or advance EN-E08.
 

@@ -128,8 +128,8 @@ check(
     && EN_E07_MIRRORFOLD_HARRIER_GATE.publishedImplementation === null
     && EN_E07_MIRRORFOLD_HARRIER_GATE.publishedApprovalRecord === null
     && EN_E07_MIRRORFOLD_HARRIER_GATE.initialPublishedHandoff === null
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.publicationState === 'approved-local',
-  'Mirrorfold Harrier approved-local publication state drifted',
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Mirrorfold Harrier bounded-publication state drifted',
 );
 check(
   EN_E07_MIRRORFOLD_HARRIER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
@@ -170,10 +170,13 @@ check(
 );
 check(
   EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('visually approved')
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('implementation ab72a9c0600f016439a5351f363b3b34348dc4b1')
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('approval record e976ca5fc5c249af4e727fb3bff7d58fd541a932')
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('remote verified')
     && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('one private elite Changeling candidate')
     && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('Kelpie')
     && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('remain closed'),
-  'approved-local publication or next-role stop gate drifted',
+  'bounded publication or next-role stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
