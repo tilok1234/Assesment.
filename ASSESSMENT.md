@@ -435,8 +435,33 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   and approval record `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` plus initial
   handoff `462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
   verified, and full `check` passes in 108.7s against the published tuple.
-  Fenbell Shepherd remains private and unregistered. Effects, the elite or
-  another family, release, and EN-E08 stay closed; no later art gate is open.
+  Fenbell Shepherd remains private and unregistered. The designer's later
+  `lets do next` reply opened only the private elite Mirecrown Beacon
+  candidate below; registration, fixtures, effects, another family, release,
+  and EN-E08 stay closed.
+  The active continuation is private elite Will-o-Wisp Mirecrown Beacon on
+  `codex/en-e07-will-o-wisp-mirecrown-beacon`, based exactly on clean Fenbell
+  reconciliation `8b0754c9594ad91fe378ba11d4f43d7b2a558145`. Its broad
+  sovereign-beacon form uses one connected three-prong crown-wick, a wide
+  double-tiered ribbed cage, one central eye, paired connected buttresses, a
+  deep living core, a broad basin, and four connected lower flame tines. The
+  frozen digest is
+  `5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81`:
+  80/80 frames are connected, bounded, hovering, hard-alpha, and pixel/alpha
+  distinct from approved Fenbell Shepherd, approved Lantern Mote, public
+  Spectral Ghost, and public Flame Elemental; 72/72 colored frames and 8/8
+  white flashes are exact; 54/54 expected views expose one eye; opaque range
+  is 243-254. The initial A3/C3 detached-beam read was repaired before freeze
+  into an enclosed cage/core expansion. One post-freeze build reproduces the
+  exact five-artifact packet, and all boards and phase sheets were inspected
+  at original detail. The protected 26-command matrix passes in 19.0s,
+  `check:fast` in 60.4s, and full `check` in 111.2s with the integration digest
+  and all 232 fixtures exact. The three frozen PNG hashes were reverified and
+  those exact files are open together in responsive Aseprite 1.3.17.2; its
+  live command line names all three paths. Designer review remains pending.
+  Mirecrown Beacon is unapproved, uncommitted,
+  unregistered, fixture-free, and non-public; no publication or later gate is
+  authorized.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

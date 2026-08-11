@@ -23,16 +23,90 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Fenbell Shepherd Published; No Later Art Gate Open
+## Immediate Continuation Checkpoint - Mirecrown Beacon Frozen Private Candidate
 
-Start here in a new task. The exact private specialist Will-o-Wisp Fenbell
-Shepherd is authored, repaired, hash-frozen, deterministic, fully validated,
-and visually approved on `codex/en-e07-will-o-wisp-fenbell-shepherd`.
+Start here in a new task. The exact private elite Will-o-Wisp Mirecrown Beacon
+is authored, repaired, hash-frozen, deterministic, and focused-validated on
+`codex/en-e07-will-o-wisp-mirecrown-beacon`. It is based exactly on clean
+published Fenbell Shepherd reconciliation
+`8b0754c9594ad91fe378ba11d4f43d7b2a558145`. It remains unapproved,
+uncommitted, unregistered, fixture-free, and non-public.
+
+- Authorization: after Fenbell Shepherd was visually approved, committed,
+  pushed, and reconciled, the designer replied `lets do next` on 2026-08-11.
+  The frozen common-specialist-elite role order and one-complete-sprite cadence
+  open only this one private elite Will-o-Wisp candidate.
+- Approved predecessor: Fenbell Shepherd implementation
+  `04f113d6e2b95f290925eba040659b441e3cfcd1`, approval record
+  `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7`, initial published handoff
+  `462e7e5123d96f3ff928cd6ff908267cd313570b`, and final reconciliation
+  `8b0754c9594ad91fe378ba11d4f43d7b2a558145` remain exact.
+- Scope: one authored 80-frame elite Will-o-Wisp across Idle F1-F2, Walk
+  W1-W4, Attack A1-A4, Hurt H1-H2, exact Cast-to-Attack aliases, and exact
+  Death-to-Hurt aliases H1,H2,H2,H2 in all four directions.
+- Style contract: a broad hovering sovereign beacon with one connected
+  three-prong crown-wick, a wide double-tiered ribbed cage, one central beacon
+  eye, paired connected side buttresses, a deep living core, a broad lower
+  basin, and four connected lower flame tines in the approved marsh teal,
+  mint, pale-core, and violet-cage family language. It must read as the elite
+  evolution of Lantern Mote and Fenbell Shepherd, not an enlarged Fenbell,
+  public Ghost robe, Flame Elemental blob, humanoid, particle cluster, halo,
+  beam, or sound-effect icon.
+- Effects firewall: aura, bloom, glow, detached wisps, embers, sparks, halos,
+  beams, rays, sound rings, smoke, afterimages, trails, light pools,
+  projectiles, impact flashes, and illumination remain external. Registration,
+  fixtures, public exposure, effects, Changeling, Kelpie, release, and EN-E08
+  remain closed.
+- Focused validation passes: 80/80 connected, one-cell-bounded, genuinely
+  hovering hard-alpha frames; 80/80 pixel and alpha-silhouette distinctions
+  from approved Fenbell Shepherd, approved Lantern Mote, public Spectral
+  Ghost, and public Flame Elemental; 72/72 colored palette frames; 8/8 exact
+  white flashes; 54/54 expected single-eye views; opaque range 243-254;
+  7,680 Complete B additions; and 6,017 Form changes. Public 80/259 is
+  unchanged and no fixture/facade/manifest exposure exists.
+- Frozen candidate digest:
+  `5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81`.
+- Review artifacts: raw / Complete B + Form `1428x760` boards
+  `c76b05b32ead47a92fbd8147c9d813b3e95c8e2bcd25e417ede4be7dc65ad275` /
+  `b9119b3f09f92842a0b71fa4198ed447dcddc9cfe5caba33ad3cb5904d28e2d6`;
+  Mote/Fenbell/Ghost/Flame/Mirecrown `1864x548` comparison
+  `cab869d6c4e406712db7c9a307b32adf9a44e6efc112188091b15d9dcfaae90e`;
+  raw / Complete B + Form `640x672` GIFs
+  `8f456bde2c82d33eb9cc5ce634967cb9e81d7fb1ff910b6ed55a37580bf9b99c` /
+  `61455606f5399c7006f2d5955fc4d289731d2406828fcfaa260e891989d77ffa`.
+  A post-freeze package build reproduces all five hashes exactly; artifacts
+  remain ignored under
+  `enemy-expansion-review/en-e07-will-o-wisp-mirecrown-beacon/`.
+- Visual inspection completed: the comparison, both full-suite boards, and all
+  eight raw/Complete B + Form phase boards were inspected at original detail.
+  The first A3/C3 read as a detached pale beam and was repaired before freeze
+  into an enclosed cage/core expansion in every direction. The three frozen
+  PNG hashes were reverified and those exact files are open together in a
+  responsive Aseprite 1.3.17.2 process; its live command line names the
+  comparison, raw, and Complete B + Form paths.
+- Broad validation passes: the protected 26-command
+  predecessor/candidate/repair/integration matrix completed in 19.0s;
+  `npm.cmd run check:fast` passed in 60.4s; and full `npm.cmd run check`
+  passed in 111.2s. The integrated frame digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required next action: present the exact boards plus paired GIFs for explicit
+  designer approval. Do not commit, push, register Will-o-Wisp, generate
+  fixtures, add effects, release, start another family, or advance EN-E08
+  before that approval.
+
+## Approved Preceding Checkpoint - Fenbell Shepherd Published
+
+The exact private specialist Will-o-Wisp Fenbell Shepherd is authored,
+repaired, hash-frozen, deterministic, fully validated, and visually approved
+on `codex/en-e07-will-o-wisp-fenbell-shepherd`.
 Implementation `04f113d6e2b95f290925eba040659b441e3cfcd1` and approval record
 `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` plus initial handoff
 `462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
-verified. The actor remains unregistered, fixture-free, and non-public. The
-designer's exact approval reply did not open a later art gate.
+verified, with final clean publication reconciliation
+`8b0754c9594ad91fe378ba11d4f43d7b2a558145`. The actor remains unregistered,
+fixture-free, and non-public. The designer's later `lets do next` reply opened
+only the active Mirecrown Beacon candidate above.
 
 - Workspace: `C:\Users\headc\Documents\sprite-assembler-v2`.
 - Branch: `codex/en-e07-will-o-wisp-fenbell-shepherd`, based exactly on clean
@@ -102,11 +176,10 @@ designer's exact approval reply did not open a later art gate.
   and in 108.7s against the published tuple. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: stop at this clean published checkpoint and preserve
-  Fenbell Shepherd plus every approved predecessor byte-for-byte. Do not
-  register Will-o-Wisp, generate fixtures, add effects, start the elite or
-  another family, release, or advance EN-E08 without another explicit
-  authorization.
+- Historical next action: the designer's later `lets do next` reply opened
+  only the private Mirecrown Beacon candidate above. Preserve Fenbell Shepherd
+  plus every approved predecessor byte-for-byte; registration, fixtures,
+  effects, another family, release, and EN-E08 remain closed.
 
 ## Approved Preceding Checkpoint - Lantern Mote Published
 

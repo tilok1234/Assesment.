@@ -13,31 +13,30 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-11): private specialist Will-o-Wisp
-  Fenbell Shepherd on `codex/en-e07-will-o-wisp-fenbell-shepherd` is frozen at
+- Current stopping checkpoint (2026-08-11): private elite Will-o-Wisp
+  Mirecrown Beacon on `codex/en-e07-will-o-wisp-mirecrown-beacon` is frozen at
   digest
-  `0a8000e33705967089ae66c98486eb701da88bfacd9f5adc38a47bbb62f5a46b`
-  from clean published Lantern Mote reconciliation
-  `d734846067b3bf9dd05cadffef440ead1f6c6d3a`. The 202-210-pixel suite passes
+  `5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81`
+  from clean published Fenbell Shepherd reconciliation
+  `8b0754c9594ad91fe378ba11d4f43d7b2a558145`. The 243-254-pixel suite passes
   80/80 connected, one-cell-bounded, genuinely hovering, hard-alpha, alias,
-  mirror, and pixel/alpha distinctions from approved Lantern Mote, public
-  Spectral Ghost, and public Flame Elemental. Its taller ritual-lantern form
-  preserves one connected hooked wick, bell-shaped ribbed cage, one guiding
-  core eye, asymmetric connected shutters, elongated core, broad lip, and
-  three connected lower flame tines. All raw/effects-enabled phase boards and
-  the exact five-artifact packet have been inspected; two post-freeze builds
-  reproduce every hash. The protected 25-command matrix passes in 16.8s, the
-  fast suite in 57.6s, and the full suite in 111.7s with the integration digest
-  and all 232 fixtures exact. The exact three frozen PNG hashes were reverified
-  and those files were opened together in responsive Aseprite 1.3.17.2. The
-  designer replied `approved` on 2026-08-11; implementation
-  `04f113d6e2b95f290925eba040659b441e3cfcd1` and approval record
-  `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` plus initial handoff
-  `462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
-  verified, and full validation passes in 108.7s against the published tuple.
-  Fenbell Shepherd remains private, unregistered, and fixture-free. Effects,
-  elite Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 remain closed; no
-  later art gate is open.
+  mirror, and pixel/alpha distinctions from approved Fenbell Shepherd,
+  approved Lantern Mote, public Spectral Ghost, and public Flame Elemental.
+  Its broad sovereign-beacon form preserves one connected three-prong
+  crown-wick, a wide double-tiered ribbed cage, one central eye, paired
+  connected buttresses, a deep living core, broad basin, and four connected
+  lower flame tines. The initial A3/C3 detached-beam read was repaired before
+  freeze into an enclosed cage/core expansion. All raw/Complete B + Form phase
+  boards and the exact five-artifact packet have been inspected at original
+  detail; one post-freeze package build reproduces every hash. The protected
+  26-command matrix passes in 19.0s, the fast suite in 60.4s, and the full
+  suite in 111.2s with the approved integration digest and all 232 fixtures
+  exact. The three frozen PNG hashes were reverified and those exact files are
+  open together in responsive Aseprite 1.3.17.2; its live command line names
+  all three paths. Designer review remains pending. Mirecrown Beacon is
+  unapproved, uncommitted, private, unregistered, fixture-free, and non-public.
+  Registration, fixtures, effects, Changeling, Kelpie, release, EN-E08, and
+  publication remain closed until explicit approval of the exact packet.
 
 - Historical plan chronology: EN-F00 checkpoint `73ad73a` is accepted; EN-E01 and
   EN-E02 are approved, registered, and consumer-integrated. Registration
@@ -3566,7 +3565,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote common and Fenbell Shepherd specialist Will-o-Wisp approved and published; no later art gate open`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote common and Fenbell Shepherd specialist Will-o-Wisp approved and published; Mirecrown Beacon elite frozen as one private unapproved candidate`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4029,10 +4028,67 @@ assembler.
   integration digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: stop at this clean published checkpoint. Do not
-  register Will-o-Wisp, generate fixtures, add effects, start the elite or
-  another family, release, or advance EN-E08 without another explicit
-  authorization.
+- Historical next action: the designer's later `lets do next` reply opened
+  only the private elite Mirecrown Beacon candidate below. Registration,
+  fixtures, effects, another family, release, and EN-E08 remain closed.
+
+#### Will-o-Wisp Mirecrown Beacon complete suite frozen candidate
+
+- Gate ID: `en-e07-will-o-wisp-mirecrown-beacon-full-v1`; status: `candidate`
+  on `codex/en-e07-will-o-wisp-mirecrown-beacon`, based exactly on clean
+  published Fenbell Shepherd reconciliation
+  `8b0754c9594ad91fe378ba11d4f43d7b2a558145`.
+- Authorization: after Fenbell Shepherd was visually approved, committed,
+  pushed, and reconciled, the designer replied `lets do next` on 2026-08-11.
+  The frozen Will-o-Wisp common-specialist-elite role order and
+  one-complete-sprite cadence open only one private elite.
+- Style/silhouette contract: a broad hovering sovereign beacon using one
+  connected three-prong crown-wick, a wide double-tiered ribbed cage, one
+  central beacon eye, paired connected side buttresses, a deep living core, a
+  broad lower basin, and four connected lower flame tines in the approved
+  marsh-teal, mint, pale-core, and violet-cage language. It must remain visibly
+  distinct from approved Fenbell Shepherd and Lantern Mote, public Spectral
+  Ghost and Flame Elemental, humanoids, detached particle clusters, halos,
+  beams, and sound-effect icons. The initial A3/C3 pale expansion was rejected
+  before freeze because the Up view read as a detached beam; the repaired
+  version encloses that expansion within the cage/core in every direction.
+- Scope: one private 80-frame elite Will-o-Wisp. Cast aliases Attack; Death
+  aliases Hurt H1,H2,H2,H2. Aura, bloom, glow, detached wisps, embers, sparks,
+  halos, beams, rays, sound rings, smoke, afterimages, trails, light pools,
+  projectiles, impact flashes, and illumination remain external.
+- Focused validation: 80/80 connected, bounded, hovering hard-alpha frames;
+  80/80 pixel and alpha distinctions from approved Fenbell Shepherd, approved
+  Lantern Mote, public Spectral Ghost, and public Flame Elemental; 72/72
+  colored frames; 8/8 exact white flashes; 54/54 expected single-eye views;
+  opaque range 243-254; Complete B +7,680; Form changes 6,017. Both approved
+  family predecessors remain exact; public 80/259 and fixtures are unchanged.
+- Candidate digest:
+  `5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81`.
+- Evidence SHA-256: raw
+  `c76b05b32ead47a92fbd8147c9d813b3e95c8e2bcd25e417ede4be7dc65ad275`;
+  Complete B + Form
+  `b9119b3f09f92842a0b71fa4198ed447dcddc9cfe5caba33ad3cb5904d28e2d6`;
+  comparison
+  `cab869d6c4e406712db7c9a307b32adf9a44e6efc112188091b15d9dcfaae90e`;
+  raw GIF `8f456bde2c82d33eb9cc5ce634967cb9e81d7fb1ff910b6ed55a37580bf9b99c`;
+  Complete B + Form GIF
+  `61455606f5399c7006f2d5955fc4d289731d2406828fcfaa260e891989d77ffa`.
+  One post-freeze package generation reproduces all five hashes exactly.
+- Visual inspection: the comparison, both full-suite boards, and all eight
+  raw/Complete B + Form phase boards were inspected at original detail. The
+  three exact frozen PNG hashes were reverified and those files are open
+  together in responsive Aseprite 1.3.17.2; its live command line names the
+  comparison, raw, and Complete B + Form paths.
+- Broad validation: the protected 26-command
+  predecessor/candidate/repair/integration matrix passed in 19.0s,
+  `npm.cmd run check:fast` passed in 60.4s, and full `npm.cmd run check`
+  passed in 111.2s. The approved 1,200-frame integration digest remains
+  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
+  and all 232 fixture sheets validate.
+- Required next action: present the exact boards plus paired GIFs for explicit
+  approval. Do not commit, push, register Will-o-Wisp, generate
+  fixtures, add effects, start another family, release, or advance EN-E08
+  before that approval.
 
 ### EN-E08 - Possessed equipment
 

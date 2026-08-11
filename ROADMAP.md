@@ -235,7 +235,7 @@ remains private and unregistered. Registration, fixtures, effects, elite
 Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 stay closed. That approval
 reply opened only the private Fenbell Shepherd candidate below.
 
-Current isolated EN-E07 art checkpoint (2026-08-11): specialist Will-o-Wisp
+Approved preceding isolated EN-E07 art checkpoint (2026-08-11): specialist Will-o-Wisp
 Fenbell Shepherd on `codex/en-e07-will-o-wisp-fenbell-shepherd` is based
 exactly on clean Lantern reconciliation `d734846067b3bf9dd05cadffef440ead1f6c6d3a`.
 Its taller 202-210-pixel hovering ritual-lantern form at digest
@@ -256,8 +256,32 @@ designer replied `approved` on 2026-08-11; implementation
 `462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
 verified, and full validation passes in 108.7s against the published tuple.
 Fenbell Shepherd remains private and unregistered. Registration, fixtures,
-effects, elite Will-o-Wisp, Changeling, Kelpie, release, and EN-E08 stay
-closed; no later art gate is open.
+effects, Changeling, Kelpie, release, and EN-E08 stay closed. The designer's
+later `lets do next` reply opened only the private elite candidate below.
+
+Current isolated EN-E07 art checkpoint (2026-08-11): elite Will-o-Wisp
+Mirecrown Beacon on `codex/en-e07-will-o-wisp-mirecrown-beacon` is based
+exactly on clean Fenbell reconciliation
+`8b0754c9594ad91fe378ba11d4f43d7b2a558145`. Its broad 243-254-pixel
+sovereign-beacon form at digest
+`5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81`
+uses one connected three-prong crown-wick, a wide double-tiered ribbed cage,
+one central eye, paired connected buttresses, a deep core, broad basin, and
+four connected lower flame tines. All 80 frames are connected, bounded,
+hovering, hard-alpha, and pixel/alpha distinct from approved Fenbell Shepherd,
+approved Lantern Mote, public Spectral Ghost, and public Flame Elemental. The
+initial A3/C3 detached-beam read was repaired before freeze into an enclosed
+cage/core expansion. The exact five-artifact packet reproduces in a
+post-freeze package build, and all raw and Complete B + Form boards and phase
+sheets have been inspected at original detail. The protected 26-command
+matrix passes in 19.0s, fast validation in 60.4s, and full validation in
+111.2s with the approved integration digest and all 232 fixtures exact. The
+three frozen PNG hashes were reverified and those exact files are open together
+in responsive Aseprite 1.3.17.2; its live command line names all three paths.
+Designer review remains pending. Mirecrown Beacon is
+unapproved, uncommitted, private, unregistered, and fixture-free. Registration,
+fixtures, effects, Changeling, Kelpie, release, EN-E08, and publication remain
+closed until explicit approval of the exact review packet.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

@@ -1432,8 +1432,40 @@ replied `approved` on 2026-08-11; implementation
 `462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
 verified, and full validation passes in 108.7s against the published tuple.
 Fenbell Shepherd remains private, unregistered, and fixture-free. Detached
-effects, registration, fixtures, the elite or another family, release, and
-EN-E08 remain closed; no later art gate is open.
+effects, registration, fixtures, another family, release, and EN-E08 remain
+closed. The designer's later `lets do next` reply opened only the private elite
+Mirecrown Beacon candidate below.
+
+Mirecrown Beacon is the isolated elite Will-o-Wisp candidate on
+`codex/en-e07-will-o-wisp-mirecrown-beacon`, based exactly on clean published
+Fenbell reconciliation `8b0754c9594ad91fe378ba11d4f43d7b2a558145`. It is a
+broad hovering sovereign beacon with one connected three-prong crown-wick, a
+wide double-tiered ribbed cage, one central eye, paired connected buttresses,
+a deep living core, broad basin, and four connected lower flame tines. Run
+`npm.cmd run review:enemy-expansion-en-e07-will-o-wisp-mirecrown-beacon` for
+the raw, Complete B + Form, Mote/Fenbell/Ghost/Flame comparison, and paired
+GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-will-o-wisp-mirecrown-beacon` for
+its focused structure, predecessor, artifact, alias, and exposure firewalls.
+The frozen candidate digest is
+`5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81`:
+all 80 frames are connected, bounded, genuinely hovering, and pixel/alpha
+distinct from both approved family predecessors and both public comparison
+actors; 72/72 colored frames preserve the family palette, 8/8 flashes are
+exact white, and 54/54 expected views expose exactly one eye. The opaque range
+is 243-254. Its first A3/C3 pale expansion was repaired before freeze because
+the Up view read as a detached beam; the frozen version keeps the expansion
+enclosed by the cage/core. One post-freeze package build reproduces the exact
+five-artifact packet. Both full boards, the comparison, and all eight raw/
+Complete B + Form phase boards have been inspected at original detail. The
+protected 26-command matrix passes in 19.0s, the fast suite in 60.4s, and the
+full suite in 111.2s with the approved integration digest and all 232 fixtures
+exact. The three frozen PNG hashes were reverified and those exact files are
+open together in responsive Aseprite 1.3.17.2; its live command line names all
+three paths. Designer review remains pending. Mirecrown Beacon is unapproved,
+uncommitted, unregistered, fixture-free, and
+non-public. Do not publish it or open registration, fixtures, effects, another
+family, release, or EN-E08 before explicit approval of the exact packet.
 
 ## Approved enemy backlog integration published
 

@@ -84,7 +84,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 - Scope reviews to the changed family/boss; whole-roster review packets are
   release-time only.
 
-## Known state (2026-08-10)
+## Known state (2026-08-11)
 
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
   the frozen asset pack). The stable and consumer expansion registries now
@@ -107,7 +107,33 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current isolated art approval checkpoint:
+- Current isolated art candidate checkpoint:
+  `codex/en-e07-will-o-wisp-mirecrown-beacon`, based exactly on clean
+  published Fenbell Shepherd reconciliation
+  `8b0754c9594ad91fe378ba11d4f43d7b2a558145`, contains one private elite
+  Will-o-Wisp Mirecrown Beacon candidate. Its frozen 80-frame digest is
+  `5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81`.
+  The broad sovereign-beacon form uses one connected three-prong crown-wick,
+  a wide double-tiered ribbed cage, one central eye, paired connected
+  buttresses, a deep living core, broad basin, and four connected lower flame
+  tines in the approved family palette. All 80 frames are connected,
+  one-cell-bounded, genuinely hovering, hard-alpha, and pixel/alpha distinct
+  from approved Fenbell Shepherd, approved Lantern Mote, public Spectral
+  Ghost, and public Flame Elemental. The packet passes 72/72 colored frames,
+  8/8 white flashes, 54/54 required single-eye views, and an opaque range of
+  243-254. A first A3/C3 detached-beam read was repaired before freeze into an
+  enclosed cage/core expansion. One post-freeze package build reproduces the
+  exact five-artifact packet. All boards and phase sheets were inspected at
+  original detail. The protected 26-command matrix passes in 19.0s,
+  `check:fast` in 60.4s, and full `check` in 111.2s with the approved
+  integration digest and all 232 fixtures exact. The three frozen PNG hashes
+  were reverified and those exact files are open together in responsive
+  Aseprite 1.3.17.2; its live command line names all three paths. Designer
+  approval remains pending. The candidate is uncommitted, unregistered,
+  fixture-free, and non-public. Do not commit or push it, register
+  Will-o-Wisp, generate fixtures, add effects, start another family, release,
+  or advance EN-E08 before explicit approval of the exact review packet.
+- Approved preceding isolated art checkpoint:
   `codex/en-e07-will-o-wisp-fenbell-shepherd`, based exactly on clean
   published Lantern Mote reconciliation
   `d734846067b3bf9dd05cadffef440ead1f6c6d3a`, contains one private specialist
@@ -133,9 +159,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   record `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` plus initial handoff
   `462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
   verified, and full `check` passes in 108.7s against the published tuple. Do
-  not register Will-o-Wisp, generate fixtures, add effects, start the elite or
-  another family, release, or advance EN-E08 without another explicit
-  authorization; no later art gate is open.
+  not register Will-o-Wisp, generate fixtures, add effects, start another
+  family, release, or advance EN-E08. The designer's later `lets do next`
+  reply opened only the private Mirecrown Beacon candidate above.
 - Approved preceding art checkpoint (Lantern Mote):
   `codex/en-e07-will-o-wisp-lantern-mote`, based exactly on clean published
   Grand Pretender reconciliation `3ddbe159360f16844d167ecc753d6b767b7e5549`,

@@ -1125,7 +1125,41 @@ approval record `89e2e2cb271dc9af60dd4dce6fba3bccd03cd9d7` plus initial handoff
 `462e7e5123d96f3ff928cd6ff908267cd313570b` are published and remote
 verified, and full validation passes in 108.7s against the published tuple. The
 module remains private, unregistered, and fixture-free. No later art gate is
-open.
+open from that approval alone. The designer's later `lets do next` reply opens
+only the private elite candidate described next.
+
+The subsequently authorized
+`engine/enemy-expansion-en-e07-will-o-wisp-mirecrown-beacon.js` adds only one
+private elite without changing the facade, public registry, fixtures,
+manifest, schemas, shared renderers, or frame contract. Its isolated 24x24
+pixel buffer authors a broad hovering sovereign beacon with one connected
+three-prong crown-wick, a wide double-tiered ribbed cage, one central beacon
+eye, paired connected buttresses, a deep living core, broad lower basin, and
+four connected lower flame tines in the approved family palette. Aura, bloom,
+glow, detached wisps/embers/sparks, halos, beams, rays, sound rings, smoke,
+afterimages, trails, light pools, projectiles, impact flashes, and illumination
+stay external. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.
+The focused gate freezes all 80 frames at digest
+`5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81`,
+proves 80/80 connected, bounded, hovering pixel and alpha distinctions from
+approved Fenbell Shepherd, approved Lantern Mote, public Spectral Ghost, and
+public Flame Elemental, and keeps both predecessors exact. The 243-254-pixel
+packet passes 72/72 colored frames, 8/8 whole-actor white flashes, and 54/54
+required one-eye views. Its first A3/C3 pale expansion was rejected before
+freeze because the Up view read as a detached beam; the repaired version keeps
+the expansion enclosed by the cage/core in every direction. One post-freeze
+package build reproduces all five hashes exactly, and the comparison, both
+full-suite boards, and all eight raw/Complete B + Form phase boards have been
+inspected at original detail. The protected 26-command matrix passes in 19.0s,
+fast validation in 60.4s, and full validation in 111.2s with the approved
+integration digest and all 232 fixtures exact. The three frozen PNG hashes
+were reverified and those exact files are open together in responsive Aseprite
+1.3.17.2; its live command line names all three paths. The module remains an
+unapproved, uncommitted, unregistered, fixture-free, non-public candidate
+based on clean Fenbell reconciliation
+`8b0754c9594ad91fe378ba11d4f43d7b2a558145`. Designer review is the only
+open work in this gate; publication, registration, effects, later families,
+release, and EN-E08 remain closed.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
