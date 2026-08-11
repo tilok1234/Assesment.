@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Manyfold Usurper Initial Publication In Progress
+## Immediate Continuation Checkpoint - Manyfold Usurper Published; Common Kelpie Authorized
 
 Start here in a new task. One private elite Changeling Manyfold Usurper is
 implemented, deterministic, hash-frozen, technically validated, visually
@@ -31,12 +31,13 @@ approved, and published on `codex/en-e07-changeling-manyfold-usurper`, based exa
 clean published Mirrorfold Harrier reconciliation
 `fdbb4cf04048a819b9cbe1655146842835b86a73`. Exact implementation
 `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and approval record
-`306aa3ac1ba658cb48e223651410a7df494e7b9e` are remote-verified. Initial
-handoff and final current-state reconciliation remain in progress. The actor
-is not registered, fixture-generated, or public.
+`306aa3ac1ba658cb48e223651410a7df494e7b9e` plus initial handoff
+`0d2f5ce3665f848633b4f7a1596356659d720afe` are published and remote-verified.
+This reconciliation completes the bounded tuple. The actor remains private,
+unregistered, fixture-free, and non-public.
 
 - Gate ID: `en-e07-changeling-manyfold-usurper-full-v1`; status: `approved`
-  with bounded publication in progress.
+  and published.
 - Authorization: after Mirrorfold Harrier was approved, published, and
   reconciled, the designer replied `approved lets do next` on 2026-08-11. The
   frozen common-specialist-elite Changeling order opens only this private elite
@@ -73,24 +74,25 @@ is not registered, fixture-generated, or public.
   unchanged.
 - Broad validation: `npm.cmd run check:fast` passed in 48.5s and full
   `npm.cmd run check` passed in 93.1s before approval, 104.1s immediately
-  before implementation publication, and 112.9s against approval-local
-  metadata, with public 80/259 and all 232 fixture sheets exact.
+  before implementation publication, 112.9s against approval-local metadata,
+  and 113.4s against the final published tuple, with public 80/259 and all 232
+  fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in responsive Aseprite 1.3.17.2 process 39276; its
   live command line names all three frozen paths.
 - Approval: after the exact packet was presented, the designer replied
   `approved lets do next` on 2026-08-11. Approval applies only to digest
   `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
-  Exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and
-  approval record `306aa3ac1ba658cb48e223651410a7df494e7b9e` are
+  Exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe`,
+  approval record `306aa3ac1ba658cb48e223651410a7df494e7b9e`, and
+  initial handoff `0d2f5ce3665f848633b4f7a1596356659d720afe` are
   published and remote-verified.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-changeling-manyfold-usurper`
   and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-manyfold-usurper`.
-- Required next action: commit and push this initial handoff, bind its remote
-  hash into the final publication record, revalidate and push the final
-  reconciliation, then open only one private common Kelpie candidate. Do not
+- Required next action: preserve this tuple byte-for-byte and open only one
+  private common Kelpie candidate from the clean final reconciliation. Do not
   register Changeling, generate fixtures, implement runtime copying, add
   effects, start later Kelpie roles, release, or advance EN-E08.
 
@@ -108,7 +110,7 @@ This reconciliation completes the bounded tuple. The actor remains private,
 unregistered, fixture-free, and non-public.
 
 - Gate ID: `en-e07-changeling-mirrorfold-harrier-full-v1`; status: `approved`
-  with bounded publication in progress.
+  and published.
 - Authorization: after Veilskin Foundling was approved, published, and
   reconciled, the designer replied `lets do next` on 2026-08-11. The frozen
   common-specialist-elite Changeling order opens only this private specialist

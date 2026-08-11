@@ -1491,14 +1491,15 @@ comparisons. The opaque range is 276-330, all 72 colored frames preserve the
 four palette groups, all eight flashes are exact white, and all 54 visible-face
 views retain readable features. `check:fast` passes in 48.5s and full `check`
 in 93.1s before approval, 104.1s immediately before implementation publication,
-and 112.9s against approval-local metadata, with public 80/259 and all 232
-fixtures exact. The exact three PNGs are open together in responsive Aseprite
+112.9s against approval-local metadata, and 113.4s against the final published
+tuple, with public 80/259 and all 232 fixtures exact. The exact three PNGs are open together in responsive Aseprite
 1.3.17.2 process 39276. The designer replied `approved lets do next` on
 2026-08-11; exact implementation
 `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and approval record
-`306aa3ac1ba658cb48e223651410a7df494e7b9e` are published and remote-verified.
-Initial handoff and final reconciliation remain in progress; after that clean
-stop, the same reply opens only one private common Kelpie candidate.
+`306aa3ac1ba658cb48e223651410a7df494e7b9e` plus initial handoff
+`0d2f5ce3665f848633b4f7a1596356659d720afe` are published and remote-verified.
+This reconciliation completes the bounded tuple; the same reply opens only one
+private common Kelpie candidate.
 Manyfold remains private, unregistered, and fixture-free; runtime copying,
 effects, later Kelpie roles, release, and EN-E08 remain closed.
 

@@ -28,15 +28,16 @@
   54/54 expected eye-bearing views, and 54/54 readable face-feature views;
   Complete B adds 8,378 pixels and Form changes 11,849. `check:fast` passes in
   48.5s and full `check` in 93.1s before approval, 104.1s immediately before
-  implementation publication, and 112.9s against approval-local metadata, with
-  public 80/259 and all 232 fixtures exact. The exact raw, Complete B + Form,
+  implementation publication, 112.9s against approval-local metadata, and
+  113.4s against the final published tuple, with public 80/259 and all 232
+  fixtures exact. The exact raw, Complete B + Form,
   and comparison PNGs are open together in responsive Aseprite 1.3.17.2
   process 39276. The designer replied `approved lets do next` on 2026-08-11;
   exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and approval record
-  `306aa3ac1ba658cb48e223651410a7df494e7b9e` are published and remote-verified.
-  Initial handoff and final reconciliation remain in progress; after that clean
-  stop, the same reply opens only one private common Kelpie candidate. Manyfold
-  remains unregistered and fixture-free.
+  `306aa3ac1ba658cb48e223651410a7df494e7b9e` plus initial handoff
+  `0d2f5ce3665f848633b4f7a1596356659d720afe` are published and remote-verified.
+  This reconciliation completes the bounded tuple; the same reply opens only
+  one private common Kelpie candidate. Manyfold remains unregistered and fixture-free.
   Runtime actor copying, effects, later Kelpie roles, release, and EN-E08 remain
   closed.
 
@@ -3657,7 +3658,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling and specialist Mirrorfold Harrier approved and published; private elite Changeling Manyfold Usurper approved with bounded publication in progress`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; one private common Kelpie candidate authorized`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4326,10 +4327,10 @@ assembler.
   register Changeling, generate fixtures, add runtime copying or effects,
   start Kelpie, release, or advance EN-E08.
 
-#### Changeling Manyfold Usurper complete suite approved; publication in progress
+#### Changeling Manyfold Usurper complete suite approved and published
 
 - Gate ID: `en-e07-changeling-manyfold-usurper-full-v1`; status: `approved`
-  with bounded publication in progress on
+  and published on
   `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean,
   remote-verified Mirrorfold Harrier reconciliation
   `fdbb4cf04048a819b9cbe1655146842835b86a73`.
@@ -4369,8 +4370,9 @@ assembler.
   11,849. Public 80/259 and all fixtures remain unchanged.
 - Broad validation: `npm.cmd run check:fast` passed in 48.5s and full
   `npm.cmd run check` passed in 93.1s before approval, 104.1s immediately
-  before implementation publication, and 112.9s against approval-local
-  metadata, with public 80/259 and all 232 fixture sheets exact.
+  before implementation publication, 112.9s against approval-local metadata,
+  and 113.4s against the final published tuple, with public 80/259 and all 232
+  fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and family
   comparison PNGs are open together in responsive Aseprite 1.3.17.2; process
   39276 names all three frozen paths. An early oversized square mask-like face
@@ -4380,16 +4382,16 @@ assembler.
 - Approval: after the exact packet was presented, the designer replied
   `approved lets do next` on 2026-08-11. Approval applies only to digest
   `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
-  Exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and approval record
-  `306aa3ac1ba658cb48e223651410a7df494e7b9e` are published and remote-verified;
-  initial handoff and final reconciliation remain in progress.
+  Exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe`, approval record
+  `306aa3ac1ba658cb48e223651410a7df494e7b9e`, and initial handoff
+  `0d2f5ce3665f848633b4f7a1596356659d720afe` are published and remote-verified.
+  This reconciliation completes the bounded publication tuple.
 - Scope firewall: no registration, public facade or catalog change, fixtures,
   manifest, shared renderer, exporter, validator, frame-contract change,
   runtime copying, alternate body, detached mask, wings, glow, particles,
   projectile, effects, Kelpie, release, EN-E08, or accepted drift.
-- Required next action: commit and push this initial handoff, bind its remote
-  hash into the final publication record, revalidate and push the final
-  reconciliation, then open only one private common Kelpie candidate. Do not
+- Required next action: preserve the published tuple byte-for-byte and open
+  only one private common Kelpie candidate under the same reply. Do not
   register Changeling, generate fixtures, implement runtime copying, add
   effects, start later Kelpie roles, release, or advance EN-E08.
 

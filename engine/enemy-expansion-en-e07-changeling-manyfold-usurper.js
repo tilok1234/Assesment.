@@ -105,10 +105,10 @@ export const EN_E07_MANYFOLD_USURPER_GATE = deepFreeze({
   approvedImplementation: '38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  initialPublishedHandoff: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe',
+  publishedApprovalRecord: '306aa3ac1ba658cb48e223651410a7df494e7b9e',
+  initialPublishedHandoff: '0d2f5ce3665f848633b4f7a1596356659d720afe',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_MIRRORFOLD_HARRIER_GATE.id,
     artifactSha256: EN_E07_MIRRORFOLD_HARRIER_GATE.artifactSha256,
@@ -188,7 +188,7 @@ export const EN_E07_MANYFOLD_USURPER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Manyfold Usurper digest is visually approved; implementation 38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe and approval record 306aa3ac1ba658cb48e223651410a7df494e7b9e are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. After that remote-verified stop, the same designer reply opens only one private common Kelpie candidate. Changeling registration, fixtures, runtime copying, effects, later Kelpie roles, release, and EN-E08 remain closed.',
+  nextGate: 'The exact Manyfold Usurper digest is visually approved and published: implementation 38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe, approval record 306aa3ac1ba658cb48e223651410a7df494e7b9e, and initial handoff 0d2f5ce3665f848633b4f7a1596356659d720afe are remote verified. The same approved lets do next designer reply opens only one private common Kelpie candidate from the clean final reconciliation. Changeling registration, fixtures, runtime copying, effects, later Kelpie roles, release, and EN-E08 remain closed.',
 });
 
 export const EN_E07_MANYFOLD_USURPER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

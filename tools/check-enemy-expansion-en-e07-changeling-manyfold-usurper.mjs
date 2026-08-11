@@ -126,11 +126,11 @@ check(
   EN_E07_MANYFOLD_USURPER_GATE.status === 'approved'
     && EN_E07_MANYFOLD_USURPER_GATE.approvedOn === '2026-08-11'
     && EN_E07_MANYFOLD_USURPER_GATE.approvedImplementation === '38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe'
-    && EN_E07_MANYFOLD_USURPER_GATE.publishedImplementation === null
-    && EN_E07_MANYFOLD_USURPER_GATE.publishedApprovalRecord === null
-    && EN_E07_MANYFOLD_USURPER_GATE.initialPublishedHandoff === null
-    && EN_E07_MANYFOLD_USURPER_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Manyfold Usurper bounded publication state drifted',
+    && EN_E07_MANYFOLD_USURPER_GATE.publishedImplementation === '38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe'
+    && EN_E07_MANYFOLD_USURPER_GATE.publishedApprovalRecord === '306aa3ac1ba658cb48e223651410a7df494e7b9e'
+    && EN_E07_MANYFOLD_USURPER_GATE.initialPublishedHandoff === '0d2f5ce3665f848633b4f7a1596356659d720afe'
+    && EN_E07_MANYFOLD_USURPER_GATE.publicationState === 'published',
+  'Manyfold Usurper published state drifted',
 );
 check(
   EN_E07_MANYFOLD_USURPER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
@@ -171,14 +171,15 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('visually approved')
+  EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('visually approved and published')
     && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('implementation 38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe')
     && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('approval record 306aa3ac1ba658cb48e223651410a7df494e7b9e')
+    && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('initial handoff 0d2f5ce3665f848633b4f7a1596356659d720afe')
     && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('remote verified')
     && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('one private common Kelpie candidate')
     && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('Changeling registration')
     && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('remain closed'),
-  'bounded publication or next-family stop gate drifted',
+  'published tuple or next-family stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_MANYFOLD_USURPER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])

@@ -1237,10 +1237,10 @@ passes 80/80 connected, bounded, grounded, broad-three-tier, wide-pillar, and
 pixel/alpha distinctions from approved Mirrorfold Harrier, Veilskin Foundling,
 and Grand Pretender. The designer approved the exact digest on 2026-08-11;
 implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and approval record
-`306aa3ac1ba658cb48e223651410a7df494e7b9e` are published and remote-verified.
-Initial handoff and final current-state reconciliation remain in progress. The
-actor remains unregistered, fixture-free, and non-public; after the clean
-bounded stop, only one private common Kelpie
+`306aa3ac1ba658cb48e223651410a7df494e7b9e` plus initial handoff
+`0d2f5ce3665f848633b4f7a1596356659d720afe` are published and remote-verified.
+This reconciliation completes the bounded tuple. The actor remains
+unregistered, fixture-free, and non-public; only one private common Kelpie
 candidate opens while later roles, release, and EN-E08 remain separate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
