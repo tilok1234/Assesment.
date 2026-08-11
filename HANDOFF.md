@@ -23,9 +23,76 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Manyfold Usurper Published; Common Kelpie Authorized
+## Immediate Continuation Checkpoint - Miremane Courser Awaiting Visual Approval
 
-Start here in a new task. One private elite Changeling Manyfold Usurper is
+Start here in a new task. One private common Kelpie Miremane Courser is
+implemented, deterministic, hash-frozen, technically validated, and awaiting
+the designer's visual approval on
+`codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
+Manyfold Usurper reconciliation
+`6ddef83e03e983672bee39b6b484dd1c1bfcba01`. It is not staged, committed,
+pushed, registered, fixture-backed, or public.
+
+- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `awaiting visual
+  approval`.
+- Authorization: after Manyfold Usurper was approved, published, and
+  reconciled, the designer replied `approved lets do next` on 2026-08-11. The
+  frozen Kelpie role order opens only this one private common candidate.
+- Frozen identity: a low, lean, waterlogged equine with a bowed wet neck, long
+  readable muzzle, connected dripping mane, long ribbed barrel, four separated
+  legs over four grounded dark hooves, and a connected drowned-weed tail. Its
+  peat-black teal body, drowned greens, brackish belly, and old-reed accents do
+  not introduce a Centaur torso or rider, Unicorn horn or crown, Wolf head or
+  tail, Crocodile belly or jaw, skeleton gaps, copied mount, or detached water
+  effects.
+- Motion: Idle lifts the connected mane and dips the head; Walk uses four
+  alternating upper-leg and knee phases while retaining four separated grounded
+  hoof contacts; Attack draws the neck, lowers the muzzle, lunges the connected
+  head and shoulder, and recovers. Cast aliases Attack exactly. Hurt is one
+  exact white recoil followed by a colored head-low four-hoof brace; Death
+  aliases Hurt H1,H2,H2,H2.
+- Candidate digest:
+  `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`.
+- Raw/no-outline PNG SHA-256:
+  `dd4b7f47344b641c8792dc94f04e23320c91e9bb5ec1223ffc70e2add6991311`.
+- Complete B + Form PNG SHA-256:
+  `be4747757a7b334dc2a74ea9ab68029ce804838011f9742b83b705411dbe1e91`.
+- Steppe Hunter/Dire Wolf/Marsh Crocodile comparison PNG SHA-256:
+  `aa83bce8c88338667c01602133e3780b5e4dd92e2da1eaa4676fc3771d66901e`.
+- Raw GIF SHA-256:
+  `d056dfd9bf0855650bc02a07ff888f1f363e22f74ae726b8afa1b8bdf00df607`.
+- Complete B + Form GIF SHA-256:
+  `38e8dc8a182829ec2b1f9003fa3272e011d58838992c46dc575c77dc0c044992`.
+- Focused validation: 80/80 frames are connected, bounded, grounded, retain
+  four separated hoof contacts and long equine spans, and differ in pixels and
+  alpha from approved Steppe Hunter plus public Dire Wolf and Marsh Crocodile.
+  The opaque range is 166-221, with 72/72 colored frames, 8/8 exact white
+  flashes, 54/54 expected eye-bearing views, and 54/54 readable muzzle views.
+  Complete B adds 10,468 pixels and Form changes 4,904. All comparisons remain
+  exact; public 80/259 and fixtures are unchanged.
+- Broad validation: the focused gate passed in 0.5s,
+  `npm.cmd run check:fast` passed in 66.0s, and full `npm.cmd run check` passed
+  in 110.4s, with public 80/259 and all 232 fixture sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and family
+  comparison PNGs are open together in Aseprite; the live sprite list reports
+  those three frozen paths at IDs 7, 11, and 15. The first draft's front/rear
+  four-pillar read and reed-colored tail tip were corrected before freeze by
+  clarifying the narrow equine face, chest and rump, tapered legs, and drowned
+  mane tail. A later gait audit repaired touching hooves and two detached walk
+  legs; the final suite keeps all four hoof contacts separated and every limb
+  connected.
+- Commands:
+  `npm.cmd run review:enemy-expansion-en-e07-kelpie-miremane-courser` and
+  `npm.cmd run check:enemy-expansion-en-e07-kelpie-miremane-courser`.
+- Required next action: inspect and approve or reject only digest
+  `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`.
+  Do not stage, commit, push, register Kelpie, generate fixtures, implement
+  runtime copying, add effects, start later Kelpie roles, release, or advance
+  EN-E08 before explicit visual approval.
+
+## Approved Preceding Checkpoint - Manyfold Usurper Published and Reconciled
+
+One private elite Changeling Manyfold Usurper is
 implemented, deterministic, hash-frozen, technically validated, visually
 approved, and published on `codex/en-e07-changeling-manyfold-usurper`, based exactly on
 clean published Mirrorfold Harrier reconciliation
@@ -91,9 +158,9 @@ unregistered, fixture-free, and non-public.
   `npm.cmd run review:enemy-expansion-en-e07-changeling-manyfold-usurper`
   and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-manyfold-usurper`.
-- Required next action: preserve this tuple byte-for-byte and open only one
-  private common Kelpie candidate from the clean final reconciliation. Do not
-  register Changeling, generate fixtures, implement runtime copying, add
+- Historical next action: preserve this tuple byte-for-byte. The same reply
+  opened only the private Miremane Courser checkpoint above. Do not register
+  Changeling or Kelpie, generate fixtures, implement runtime copying, add
   effects, start later Kelpie roles, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Mirrorfold Harrier Published and Reconciled

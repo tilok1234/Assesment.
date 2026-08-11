@@ -288,7 +288,27 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current approved EN-E07 publication checkpoint (2026-08-11): elite Changeling
+Current isolated EN-E07 art checkpoint (2026-08-11): common Kelpie Miremane
+Courser on `codex/en-e07-kelpie-miremane-courser` is based exactly on clean
+published Manyfold Usurper reconciliation
+`6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Its 166-221-pixel low lean
+waterlogged equine form at digest
+`6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`
+uses a bowed wet neck, long readable muzzle, connected dripping mane, long
+ribbed barrel, four separated legs and dark grounded hooves, and a connected
+drowned-weed tail. All 80 frames are connected, bounded, grounded, retain four
+separated hoof contacts and long equine spans, and are pixel/alpha distinct
+from approved Steppe Hunter plus public Dire Wolf and Marsh Crocodile; 72/72
+colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views, and
+54/54 readable muzzle views pass. `check:fast` passes in 66.0s and full `check`
+in 110.4s with public 80/259 and all 232 fixtures exact. The exact three frozen
+PNGs are open together in Aseprite. Front/rear face, chest/rump, tail color,
+hoof separation, and two detached walk legs were corrected before freeze. The
+candidate awaits visual approval and is not staged, committed, pushed,
+registered, or fixture-backed. Runtime copying, effects, later Kelpie roles,
+release, and EN-E08 remain closed.
+
+Approved preceding EN-E07 publication checkpoint (2026-08-11): elite Changeling
 Manyfold Usurper on `codex/en-e07-changeling-manyfold-usurper` is based exactly
 on clean published Mirrorfold Harrier reconciliation
 `fdbb4cf04048a819b9cbe1655146842835b86a73`. Its 276-330-pixel broad tall

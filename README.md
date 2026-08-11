@@ -1472,7 +1472,33 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Manyfold Usurper is the approved elite Changeling publication checkpoint on
+Miremane Courser is the current private common Kelpie art-review checkpoint on
+`codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
+Manyfold Usurper reconciliation
+`6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Its low lean waterlogged equine
+form uses a bowed wet neck, long readable muzzle, connected dripping mane, long
+ribbed barrel, four separated legs over four dark grounded hooves, and a
+connected drowned-weed tail. Run
+`npm.cmd run review:enemy-expansion-en-e07-kelpie-miremane-courser` for the raw,
+Complete B + Form, Steppe Hunter/Dire Wolf/Marsh Crocodile comparison, and
+paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-kelpie-miremane-courser` for the
+focused contract gate. The frozen digest is
+`6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`:
+80/80 frames are connected, bounded, grounded, preserve four separated hoof
+contacts and long equine spans, and differ in pixels and alpha from all three
+comparisons. The opaque range is 166-221, all 72 colored frames preserve the
+four palette groups, all eight flashes are exact white, and all 54 expected
+eye-bearing views retain readable muzzles. `check:fast` passes in 66.0s and full
+`check` in 110.4s, with public 80/259 and all 232 fixtures exact. The exact raw,
+Complete B + Form, and comparison PNGs are open together in Aseprite. Before
+freeze, the front/rear face, chest/rump, tail color, hoof separation, and two
+detached walk legs were corrected to keep the read equine and the gait fully
+connected. The candidate awaits visual approval and is not staged, committed,
+pushed, registered, or fixture-backed. Runtime copying, effects, later Kelpie
+roles, release, and EN-E08 remain closed.
+
+Manyfold Usurper is the approved preceding elite Changeling publication checkpoint on
 `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean published
 Mirrorfold Harrier reconciliation
 `fdbb4cf04048a819b9cbe1655146842835b86a73`. Its broad tall grounded authored

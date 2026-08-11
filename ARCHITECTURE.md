@@ -1243,6 +1243,36 @@ This reconciliation completes the bounded tuple. The actor remains
 unregistered, fixture-free, and non-public; only one private common Kelpie
 candidate opens while later roles, release, and EN-E08 remain separate.
 
+`engine/enemy-expansion-en-e07-kelpie-miremane-courser.js` is that isolated
+common Kelpie boundary. It imports only the stable 24x24 expansion contract
+plus the published Manyfold Usurper contract/gate, owns one private
+family/variant registry, and is not imported by `sprite-engine.js`, the public
+expansion registry, selectors, persistence, packs, or fixture tooling. Its
+independently authored low lean waterlogged equine form uses a bowed wet neck,
+long readable muzzle, connected dripping mane, long ribbed barrel, four
+separated legs over four grounded dark hooves, and a connected drowned-weed
+tail. The renderer owns 80 hard-alpha frames with exact Cast-to-Attack and
+Death-to-Hurt aliases. Centaur torsos or riders, Unicorn horns, Wolf anatomy,
+Crocodile anatomy, copied mounts, runtime copying, detached water sheets,
+splashes, foam, ripples, droplets, mist, glow, particles, projectiles, and
+effects remain external. The review and checker boundaries are
+`tools/enemy-expansion-en-e07-kelpie-miremane-courser-review.mjs` and
+`tools/check-enemy-expansion-en-e07-kelpie-miremane-courser.mjs`; the paired
+GIF builder is
+`tools/build-enemy-expansion-en-e07-kelpie-miremane-courser-gifs.py`.
+Candidate digest
+`6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`
+passes 80/80 connected, bounded, grounded, four-hoof-row, long-equine-span,
+and pixel/alpha distinctions from approved Steppe Hunter plus public Dire Wolf
+and Marsh Crocodile. The opaque range is 166-221; 72/72 colored frames, 8/8
+exact white flashes, 54/54 expected eye-bearing views, and 54/54 readable muzzle
+views pass. Complete B adds 10,468 pixels and Form changes 4,904. The exact
+three PNGs are open together in Aseprite, `check:fast` passes in 66.0s, and full
+`check` passes in 110.4s with public 80/259 and all 232 fixtures unchanged.
+The candidate remains uncommitted, unregistered, fixture-free, and non-public
+while awaiting visual approval; later Kelpie roles, release, and EN-E08 remain
+separate.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

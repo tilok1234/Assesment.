@@ -13,7 +13,29 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current approved publication checkpoint (2026-08-11): private elite Changeling Manyfold
+- Current art-review checkpoint (2026-08-11): private common Kelpie Miremane
+  Courser on `codex/en-e07-kelpie-miremane-courser` is frozen at digest
+  `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`
+  from clean published Manyfold Usurper reconciliation
+  `6ddef83e03e983672bee39b6b484dd1c1bfcba01`. The 166-221-pixel suite passes
+  80/80 connected, bounded, grounded, four-separated-hoof, long-equine-span,
+  hard-alpha, alias, mirror, and pixel/alpha distinctions from approved Steppe
+  Hunter plus public Dire Wolf and Marsh Crocodile. Its independently authored
+  low lean waterlogged form uses a bowed wet neck, long readable muzzle,
+  connected dripping mane, long ribbed barrel, four separated legs and dark
+  grounded hooves, and a connected drowned-weed tail. The packet passes 72/72
+  colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views,
+  and 54/54 readable muzzle views; Complete B adds 10,468 pixels and Form
+  changes 4,904. `check:fast` passes in 66.0s and full `check` in 110.4s with
+  public 80/259 and all 232 fixtures exact. The exact raw, Complete B + Form,
+  and comparison PNGs are open together in Aseprite. The front/rear face,
+  chest/rump, tail color, moving hoof separation, and two detached walk legs
+  were corrected before freeze. The candidate awaits visual approval and is
+  not staged, committed, pushed, registered, fixture-backed, or public.
+  Runtime copying, effects, later Kelpie roles, release, and EN-E08 remain
+  closed.
+
+- Approved preceding publication checkpoint (2026-08-11): private elite Changeling Manyfold
   Usurper on `codex/en-e07-changeling-manyfold-usurper` is frozen at digest
   `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`
   from clean published Mirrorfold Harrier reconciliation
@@ -3658,7 +3680,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; one private common Kelpie candidate authorized`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser awaiting visual review`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4390,10 +4412,78 @@ assembler.
   manifest, shared renderer, exporter, validator, frame-contract change,
   runtime copying, alternate body, detached mask, wings, glow, particles,
   projectile, effects, Kelpie, release, EN-E08, or accepted drift.
-- Required next action: preserve the published tuple byte-for-byte and open
-  only one private common Kelpie candidate under the same reply. Do not
-  register Changeling, generate fixtures, implement runtime copying, add
-  effects, start later Kelpie roles, release, or advance EN-E08.
+- Historical next action: preserve the published tuple byte-for-byte. The same
+  reply opened only the private Miremane Courser checkpoint below. Do not
+  register Changeling or Kelpie, generate fixtures, implement runtime copying,
+  add effects, start later Kelpie roles, release, or advance EN-E08.
+
+#### Kelpie Miremane Courser complete suite awaiting visual approval
+
+- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `awaiting visual
+  approval` on `codex/en-e07-kelpie-miremane-courser`, based exactly on clean,
+  remote-verified Manyfold Usurper reconciliation
+  `6ddef83e03e983672bee39b6b484dd1c1bfcba01`.
+- Authorization: after the exact Manyfold Usurper was visually approved,
+  committed, pushed, and reconciled, the designer replied `approved lets do
+  next` on 2026-08-11. That opens only this one private common Kelpie candidate.
+- Contract: a low lean waterlogged authored equine with a bowed wet neck, long
+  readable muzzle, connected dripping mane, long ribbed barrel, four separated
+  legs over four grounded dark hooves, and a connected drowned-weed tail. Its
+  peat-black teal, drowned green, brackish belly, and old-reed palette remains
+  distinct from Steppe Hunter, Dire Wolf, and Marsh Crocodile. It does not use
+  a Centaur humanoid torso or rider, spear or saddle, Unicorn horn or crown,
+  Wolf head or tail, Crocodile belly or jaw, skeleton gaps, a copied mount, or
+  detached water sheets, splashes, foam, ripples, droplets, mist, glow,
+  particles, projectiles, or effects.
+- Motion: Idle lifts the connected mane and dips the head; Walk uses four
+  alternating upper-leg and knee phases over four separated grounded hoof
+  contacts; Attack draws the neck, lowers the muzzle, drives a connected head
+  and shoulder lunge, and recovers. Hurt is exact white recoil then a colored
+  head-low four-hoof brace. Cast aliases Attack; Death aliases Hurt
+  H1,H2,H2,H2.
+- Frozen evidence: raw PNG
+  `dd4b7f47344b641c8792dc94f04e23320c91e9bb5ec1223ffc70e2add6991311`;
+  Complete B + Form PNG
+  `be4747757a7b334dc2a74ea9ab68029ce804838011f9742b83b705411dbe1e91`;
+  Steppe Hunter/Dire Wolf/Marsh Crocodile comparison PNG
+  `aa83bce8c88338667c01602133e3780b5e4dd92e2da1eaa4676fc3771d66901e`;
+  raw GIF
+  `d056dfd9bf0855650bc02a07ff888f1f363e22f74ae726b8afa1b8bdf00df607`;
+  Complete B + Form GIF
+  `38e8dc8a182829ec2b1f9003fa3272e011d58838992c46dc575c77dc0c044992`;
+  candidate digest
+  `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`.
+- Focused validation: 80/80 candidate frames are connected, bounded,
+  grounded, retain four separated hoof contacts and long equine spans, and are
+  pixel/alpha distinct from all three protected comparisons; opaque range
+  166-221; 72/72 colored palette frames; 8/8 exact white flashes; 54/54
+  expected eye-bearing views; 54/54 readable muzzle views; Complete B adds
+  10,468 pixels and Form changes 4,904. Approved Steppe Hunter plus public Dire
+  Wolf and Marsh Crocodile remain exact; public 80/259 and fixtures are
+  unchanged.
+- Broad validation: the focused gate passed in 0.5s,
+  `npm.cmd run check:fast` passed in 66.0s, and full `npm.cmd run check` passed
+  in 110.4s, with public 80/259 and all 232 fixture sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and family
+  comparison PNGs are open together in Aseprite; the live sprite list reports
+  those three frozen paths at IDs 7, 11, and 15. The first draft's front/rear
+  four-pillar read and reed-colored tail tip were corrected by clarifying the
+  narrow equine face, chest and rump, tapered legs, and drowned-mane tail. A
+  later gait audit repaired touching hooves and two detached walk legs; the
+  final suite retains four separated hoof contacts and fully connected limbs.
+- Approval boundary: no visual approval has been recorded. The implementation,
+  review/check tooling, package scripts, and documentation are intentionally
+  unstaged and uncommitted. Approval, if granted, applies only to digest
+  `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`.
+- Scope firewall: no registration, public facade or catalog change, fixtures,
+  manifest, shared renderer, exporter, validator, frame-contract change,
+  runtime copying, alternate body, rider, saddle, horn, detached water, glow,
+  particles, projectile, effects, later Kelpie role, release, EN-E08, or
+  accepted drift.
+- Required next action: stop for explicit visual approval or rejection of the
+  frozen digest. Do not stage, commit, push, register Kelpie, generate fixtures,
+  add runtime copying or effects, begin another Kelpie role, release, or advance
+  EN-E08.
 
 ### EN-E08 - Possessed equipment
 

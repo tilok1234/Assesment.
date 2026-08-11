@@ -468,7 +468,27 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current approved publication checkpoint is elite Changeling Manyfold Usurper on
+  The current isolated art checkpoint is common Kelpie Miremane Courser on
+  `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
+  Manyfold Usurper reconciliation
+  `6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Its low lean waterlogged equine
+  silhouette uses a bowed wet neck, long readable muzzle, connected dripping
+  mane, long ribbed barrel, four separated legs and dark grounded hooves, and a
+  connected drowned-weed tail. The frozen digest is
+  `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`:
+  80/80 frames are connected, bounded, grounded, preserve four separated hoof
+  contacts and long equine spans, and differ in pixels and alpha from approved
+  Steppe Hunter plus public Dire Wolf and Marsh Crocodile. The opaque range is
+  166-221, with 72/72 colored frames, 8/8 exact white flashes, 54/54 expected
+  eye-bearing views, and 54/54 readable muzzle views. `check:fast` passes in
+  66.0s and full `check` in 110.4s, with public 80/259 and all 232 fixtures
+  exact. The exact raw, Complete B + Form, and comparison PNGs are open together
+  in Aseprite. The front/rear equine read, tail color, hoof separation, and two
+  detached walk legs were corrected before freeze. The candidate awaits visual
+  approval and is not staged, committed, pushed, registered, fixture-backed, or
+  public. Runtime copying, effects, later Kelpie roles, release, and EN-E08
+  remain closed.
+  The approved preceding publication checkpoint is elite Changeling Manyfold Usurper on
   `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean published
   Mirrorfold Harrier reconciliation
   `fdbb4cf04048a819b9cbe1655146842835b86a73`. Its broad tall grounded authored
