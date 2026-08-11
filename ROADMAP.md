@@ -288,7 +288,7 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current isolated EN-E07 art checkpoint (2026-08-11): elite Kelpie Blackwake
+Current approved-local EN-E07 art checkpoint (2026-08-11): elite Kelpie Blackwake
 Dreadmare on `codex/en-e07-kelpie-blackwake-dreadmare` is based exactly on clean
 published Drownbridle Stalker reconciliation
 `f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Its 255-319-pixel broad rear-heavy
@@ -298,11 +298,17 @@ All 80 frames are connected, bounded, grounded, retain four separated hoof runs
 and broad tall elite spans, and are pixel/alpha distinct from approved
 Drownbridle Stalker, Miremane Courser, and Steppe Hunter; 72/72 colored frames,
 8/8 exact white flashes, 54/54 expected eye-bearing views, and 54/54 readable
-muzzle views pass. `check:fast` passes in 62.9s and full `check` in 121.9s,
-with public 80/259 and all 232 fixtures exact. The exact three frozen PNGs are open together in Aseprite
-process 27380. The candidate is awaiting exact visual approval and remains
-uncommitted, unpushed, unregistered, fixture-free, and non-public. Do not open
-runtime copying, water effects, release, or EN-E08.
+muzzle views pass. `check:fast` passes in 62.9s and full `check` in 121.9s
+before approval and 112.2s against approval-local metadata, with public 80/259
+and all 232 fixtures exact. The exact three frozen PNGs are open together in Aseprite
+process 27380. The designer replied `approved lets do next`; approval applies
+only to the frozen digest above. Exact implementation
+`3a3ffce6997a6cc9735b818e13573b9085229555` is committed locally. Finish the
+bounded approval record, reconciliation, and branch pushes before advancing.
+The same reply opens only the EN-E08 architecture decision after clean remote
+reconciliation; Animated Armor art remains closed until its actor-topology
+choice is explicit. Registration, fixtures, runtime copying, water effects,
+release, and accepted drift remain closed.
 
 Approved preceding EN-E07 publication checkpoint (2026-08-11): specialist Kelpie
 Drownbridle Stalker on `codex/en-e07-kelpie-drownbridle-stalker` is based

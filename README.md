@@ -1472,7 +1472,7 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Blackwake Dreadmare is the current private elite Kelpie review checkpoint on
+Blackwake Dreadmare is the current approved-local private elite Kelpie checkpoint on
 `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
 Drownbridle Stalker reconciliation
 `f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Its broad rear-heavy form uses a
@@ -1489,13 +1489,19 @@ runs and broad tall elite spans, and differ in pixels and alpha from all three
 protected comparisons. The opaque range is 255-319, all 72 colored frames
 preserve the four palette groups, all eight flashes are exact white, and all 54
 expected eye-bearing views retain readable muzzles. `check:fast` passes in
-62.9s and full `check` in 121.9s, with public 80/259 and all 232 fixtures exact.
+62.9s and full `check` in 121.9s before approval and 112.2s against
+approval-local metadata, with public 80/259 and all 232 fixtures exact.
 The exact raw, Complete B +
 Form, and comparison PNGs are open together in Aseprite process 27380. This
-candidate is `implemented-awaiting-review`, uncommitted, unpushed, unregistered,
-fixture-free, and non-public. Exact visual approval is required before commit or
-push; registration, runtime copying, water effects, release, and EN-E08 remain
-closed.
+candidate was approved with `approved lets do next` on 2026-08-11; approval
+applies only to the digest above. Exact implementation
+`3a3ffce6997a6cc9735b818e13573b9085229555` is committed locally; status is
+`approved` and `approved-local`. Complete the bounded approval record,
+reconciliation, and branch pushes before advancing. The same reply opens only
+the EN-E08 architecture decision after clean remote reconciliation; Animated
+Armor art remains closed until its actor-topology choice is explicit.
+Registration, fixtures, runtime copying, water effects, release, and accepted
+drift remain closed.
 
 Drownbridle Stalker is the approved preceding private specialist Kelpie
 publication checkpoint on

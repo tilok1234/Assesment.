@@ -49,7 +49,7 @@ export const EN_E07_BLACKWAKE_DREADMARE_CONTRACT_CARD = deepFreeze({
     id: 'blackwake-dreadmare',
     name: 'Blackwake Dreadmare',
     role: 'elite',
-    status: 'implemented-full-awaiting-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   styleContract: 'Use chunky one-to-three-pixel hard-alpha forms and an independently authored broad rear-heavy elite equine body. Keep a tall arched neck, long blunt readable muzzle, one connected breaker-like mane sweeping from poll to back, a massive deep barrel and sternum, four thick separated legs, four broad grounded dark hooves, and one thick connected hooked blackwake tail. The elite must be broader and more ominous than Drownbridle Stalker without becoming a Centaur horse body, horned or crowned Unicorn, Wolf, Crocodile, skeletal mount, armored or barded warhorse, or detached water effect.',
@@ -61,7 +61,7 @@ export const EN_E07_BLACKWAKE_DREADMARE_CONTRACT = deepFreeze({
   family: 'kelpie',
   variant: 'blackwake-dreadmare',
   role: 'elite',
-  state: 'implemented-complete-motion-awaiting-review',
+  state: 'implemented-complete-motion-approved',
   chassis: 'broad-rear-heavy-arched-neck-long-blunt-muzzle-connected-breaker-mane-massive-barrel-deep-sternum-four-thick-separated-legs-broad-grounded-hooves-hooked-blackwake-tail-equine-v1',
   silhouette: "A broad rear-heavy grounded elite Kelpie with a tall arched neck, long blunt readable equine muzzle, one connected breaker mane sweeping from poll to back, a massive deep barrel and sternum, four thick separated legs, four broad dark grounded hooves, and a connected hooked blackwake tail. It must not collapse into Miremane Courser's lean body or Drownbridle Stalker's forward wedge, nor grow a humanoid rider or torso, horn, crown, canine wedge head, crocodilian belly, skeletal gaps, armor or barding plates, detached wake shapes, or copied mount geometry.",
   identity: 'Abyssal navy hide, drowned silver-blue belly planes, black-green breaker mane blocks, bruised-violet wake seams, paired sea-glass eyes, dark nostrils and mouth, and a connected jaw-open shoulder surge establish a self-contained elite Kelpie while all wake, foam, undertow, and illumination effects remain external.',
@@ -100,19 +100,19 @@ export const EN_E07_BLACKWAKE_DREADMARE_DATA = deepFreeze({
 
 export const EN_E07_BLACKWAKE_DREADMARE_GATE = deepFreeze({
   id: 'en-e07-kelpie-blackwake-dreadmare-full-v1',
-  status: 'implemented-awaiting-review',
+  status: 'approved',
   baseCheckpoint: 'f9928aed53cd842b937d396e29ec8d6a7aaa8120',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Drownbridle Stalker digest was visually approved, committed, pushed, and reconciled at clean published checkpoint f9928aed53cd842b937d396e29ec8d6a7aaa8120, the designer replied: approved lets do next. Drownbridle Stalker completed the frozen specialist Kelpie role, so the one-complete-sprite cadence authorizes only one private elite Kelpie Blackwake Dreadmare 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
-  publicationAuthorizedOn: null,
-  publicationAuthorizationEvidence: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Drownbridle Stalker, Miremane Courser, and Steppe Hunter comparison, and both synchronized GIFs were presented after final face, silhouette, and phase inspection. The three exact frozen PNG boards were open together in responding Aseprite process 27380. The designer replied: approved lets do next. Approval applies only to candidate digest be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172. The lets do next portion authorizes advancing to the EN-E08 architecture decision only after the bounded Blackwake publication is clean and remote verified; Animated Armor art remains closed until its actor-topology choice is explicit. Kelpie registration, fixtures, runtime copying, water effects, release, and accepted drift remain separate gates.',
+  approvedImplementation: '3a3ffce6997a6cc9735b818e13573b9085229555',
+  publicationAuthorizedOn: '2026-08-11',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later family artwork, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-local',
   precedingApproval: {
     gateId: EN_E07_DROWNBRIDLE_STALKER_GATE.id,
     artifactSha256: EN_E07_DROWNBRIDLE_STALKER_GATE.artifactSha256,
@@ -189,7 +189,7 @@ export const EN_E07_BLACKWAKE_DREADMARE_GATE = deepFreeze({
     'release',
     'EN-E08 and later work',
   ],
-  nextGate: 'Visual approval is required for the exact frozen Blackwake Dreadmare packet. Do not commit or push the candidate, register Kelpie, generate fixtures, add runtime copying or water effects, release, or advance EN-E08 before that approval.',
+  nextGate: 'The exact Blackwake Dreadmare digest is visually approved and its implementation is committed locally. Complete the bounded approval-record publication and current-state reconciliation first. The same reply includes lets do next and authorizes only the EN-E08 architecture decision after this Blackwake tuple is clean and remote verified; do not begin Animated Armor art before that actor-topology choice is explicit. Kelpie registration, fixtures, runtime copying, water effects, release, and accepted drift remain closed.',
 });
 
 export const EN_E07_BLACKWAKE_DREADMARE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -478,7 +478,7 @@ export const EN_E07_BLACKWAKE_DREADMARE_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'blackwake-dreadmare',
     scale: 8,
-    notes: 'Awaiting visual approval as one broad rear-heavy breaker-maned Blackwake Dreadmare elite against approved Drownbridle Stalker and Miremane Courser plus Steppe Hunter. Keep registration, fixtures, runtime copying, water effects, release, and later Wave 2 work separate.',
+    notes: 'Visually approved as one broad rear-heavy breaker-maned Blackwake Dreadmare elite against approved Drownbridle Stalker, Miremane Courser, and Steppe Hunter. Publish only the bounded approval and reconciliation tuple. The same reply opens the EN-E08 architecture decision only after clean remote reconciliation; keep Animated Armor art, registration, fixtures, runtime copying, water effects, release, and later work separate.',
   },
 });
 

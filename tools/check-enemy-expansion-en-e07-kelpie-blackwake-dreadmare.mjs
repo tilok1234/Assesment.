@@ -116,18 +116,24 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_BLACKWAKE_DREADMARE_GATE.status === 'implemented-awaiting-review'
+  EN_E07_BLACKWAKE_DREADMARE_GATE.status === 'approved'
     && EN_E07_BLACKWAKE_DREADMARE_GATE.authorizedOn === '2026-08-11'
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.approvedOn === null
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.approvalEvidence === null
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.approvedImplementation === null
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationAuthorizedOn === null
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationAuthorizationEvidence === null
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.approvedOn === '2026-08-11'
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.approvedImplementation === '3a3ffce6997a6cc9735b818e13573b9085229555'
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationAuthorizedOn === '2026-08-11'
     && EN_E07_BLACKWAKE_DREADMARE_GATE.publishedImplementation === null
     && EN_E07_BLACKWAKE_DREADMARE_GATE.publishedApprovalRecord === null
     && EN_E07_BLACKWAKE_DREADMARE_GATE.initialPublishedHandoff === null
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationState === 'not-published',
-  'Blackwake Dreadmare must remain private and awaiting exact visual approval',
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationState === 'approved-local',
+  'Blackwake Dreadmare approved-local publication state drifted',
+);
+check(
+  EN_E07_BLACKWAKE_DREADMARE_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.approvalEvidence.includes('Aseprite process 27380')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.approvalEvidence.includes('be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.approvalEvidence.includes('EN-E08 architecture decision')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_BLACKWAKE_DREADMARE_GATE.baseCheckpoint === 'f9928aed53cd842b937d396e29ec8d6a7aaa8120'
@@ -163,14 +169,15 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('Visual approval is required')
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('Do not commit or push the candidate')
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('register Kelpie')
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('generate fixtures')
+  EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('implementation is committed locally')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('approval-record publication')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('EN-E08 architecture decision')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('do not begin Animated Armor art')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('actor-topology choice')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('registration')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('water effects')
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('release')
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('advance EN-E08'),
-  'private visual-approval gate drifted',
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('release'),
+  'approved-local publication or EN-E08 architecture gate drifted',
 );
 check(
   JSON.stringify(EN_E07_KELPIE_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
@@ -179,7 +186,8 @@ check(
     && EN_E07_BLACKWAKE_DREADMARE_CONTRACT_CARD.precedingVariant.id === 'drownbridle-stalker'
     && EN_E07_BLACKWAKE_DREADMARE_CONTRACT_CARD.activeVariant.id === 'blackwake-dreadmare'
     && EN_E07_BLACKWAKE_DREADMARE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E07_BLACKWAKE_DREADMARE_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-review'
+    && EN_E07_BLACKWAKE_DREADMARE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E07_BLACKWAKE_DREADMARE_CONTRACT.state === 'implemented-complete-motion-approved'
     && JSON.stringify(EN_E07_BLACKWAKE_DREADMARE_CONTRACT_CARD.deferredRoles) === JSON.stringify([]),
   'Kelpie role order or elite-only boundary drifted',
 );

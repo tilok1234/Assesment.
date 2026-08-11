@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art review checkpoint:
+- Current approved-local art checkpoint:
   `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
   Drownbridle Stalker reconciliation
   `f9928aed53cd842b937d396e29ec8d6a7aaa8120`, contains one private elite Kelpie
@@ -121,14 +121,21 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Stalker, Miremane Courser, and Steppe Hunter. The packet passes 72/72 colored
   frames, 8/8 exact white flashes, 54/54 expected eye-bearing views, 54/54
   readable muzzle views, exact aliases and mirrors, and public 80/259; opaque
-  range is 255-319. `check:fast` passes in 62.9s and full `check` in 121.9s,
-  with all 232 fixtures exact. The exact raw, Complete B + Form, and comparison PNGs are
+  range is 255-319. `check:fast` passes in 62.9s and full `check` in 121.9s
+  before approval and 112.2s against approval-local metadata, with all 232
+  fixtures exact. The exact raw, Complete B + Form, and comparison PNGs are
   open together in Aseprite process 27380. Run
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-blackwake-dreadmare` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-blackwake-dreadmare`.
-  Status is `implemented-awaiting-review` and `not-published`: do not stage,
-  commit, push, register, generate fixtures, add runtime copying or water
-  effects, release, or advance EN-E08 before exact visual approval.
+  The designer replied `approved lets do next` on 2026-08-11; approval applies
+  only to the frozen digest above. Exact implementation
+  `3a3ffce6997a6cc9735b818e13573b9085229555` is committed locally. Status is
+  `approved` and `approved-local`; finish the bounded approval record,
+  reconciliation, and branch pushes before advancing. The same reply opens only
+  the EN-E08 architecture decision after clean remote reconciliation; do not
+  begin Animated Armor art before its actor-topology choice is explicit, and do
+  not register, generate fixtures, add runtime copying or water effects,
+  release, or accept drift.
 - Approved preceding art publication checkpoint:
   `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean published
   Miremane Courser reconciliation

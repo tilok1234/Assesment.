@@ -23,17 +23,18 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Blackwake Dreadmare Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Blackwake Dreadmare Approved Locally
 
 Start here in a new task. One private elite Kelpie Blackwake Dreadmare is
-implemented, deterministic, hash-frozen, technically validated, and awaiting
-exact visual approval on `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly
+implemented, deterministic, hash-frozen, technically validated, and visually
+approved on `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly
 on clean published Drownbridle Stalker reconciliation
-`f9928aed53cd842b937d396e29ec8d6a7aaa8120`. It is not committed, pushed,
-registered, fixture-generated, or public.
+`f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Exact implementation
+`3a3ffce6997a6cc9735b818e13573b9085229555` is committed locally. It is not yet
+pushed, registered, fixture-generated, or public.
 
 - Gate ID: `en-e07-kelpie-blackwake-dreadmare-full-v1`; status:
-  `implemented-awaiting-review` and `not-published`.
+  `approved` and `approved-local`.
 - Authorization: after Drownbridle Stalker was visually approved, published,
   remote-verified, and reconciled, the designer replied `approved lets do next`
   on 2026-08-11. The frozen Kelpie role order opens only this one private elite
@@ -70,17 +71,26 @@ registered, fixture-generated, or public.
   muzzle views. Complete B adds 9,532 pixels and Form changes 6,673. Public
   80/259 remains exact and no fixture or manifest was changed.
 - Broad validation: `npm.cmd run check:fast` passed in 62.9s and full
-  `npm.cmd run check` passed in 121.9s, with public 80/259 and all 232 fixture
-  sheets exact.
+  `npm.cmd run check` passed in 121.9s before approval and 112.2s against
+  approval-local metadata, with public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in Aseprite process 27380. Front/profile eyes,
   nostrils, and mouths remain readable, including the jaw-open attack.
+- Approval: after the exact packet above was presented, the designer replied
+  `approved lets do next` on 2026-08-11. Approval applies only to digest
+  `be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172`.
+  Implementation `3a3ffce6997a6cc9735b818e13573b9085229555` is committed locally.
+  Standing approved-work permission authorizes its bounded approval record,
+  documentation reconciliation, and branch pushes.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-blackwake-dreadmare` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-blackwake-dreadmare`.
-- Required next action: present only this exact frozen packet for visual
-  approval. Do not commit or push it, register Kelpie, generate fixtures, add
-  runtime copying or water effects, release, or advance EN-E08 before approval.
+- Required next action: complete the bounded approval-record publication and
+  current-state reconciliation, then remote-verify the clean branch. The same
+  reply opens only the EN-E08 architecture decision after that publication; do
+  not begin Animated Armor art until its actor-topology choice is explicit. Do
+  not register Kelpie, generate fixtures, add runtime copying or water effects,
+  release, or accept drift.
 
 ## Approved Preceding Checkpoint - Drownbridle Stalker Published and Reconciled
 
