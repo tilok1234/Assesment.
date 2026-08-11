@@ -162,7 +162,7 @@ check(
     && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('approval record 08538ac2d90d186c6550bcc139c2234023ec9c9d')
     && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('initial published handoff 64f21886c43245f1c85820b0c91a1f8ff31686dc')
     && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('completes the bounded publication tuple')
-    && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('inspect the live roadmap')
+    && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('Inspect the live roadmap')
     && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('do not infer EN-E09 authorization'),
   'Crownmaw Greatblade stop gate drifted',
 );
