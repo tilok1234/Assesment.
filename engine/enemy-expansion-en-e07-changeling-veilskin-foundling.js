@@ -104,7 +104,7 @@ export const EN_E07_VEILSKIN_FOUNDLING_GATE = deepFreeze({
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'approved-local',
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_MIRECROWN_BEACON_GATE.id,
     artifactSha256: EN_E07_MIRECROWN_BEACON_GATE.artifactSha256,
@@ -184,7 +184,7 @@ export const EN_E07_VEILSKIN_FOUNDLING_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The repaired Veilskin Foundling digest is visually approved and its exact implementation is committed locally. Standing publication permission opens only the bounded approval-record, reconciliation, and branch-push sequence. No specialist Changeling, registration, fixtures, runtime copying, effects, Kelpie, release, or EN-E08 gate is open; a separate designer lets do next is required before another candidate begins.',
+  nextGate: 'The repaired Veilskin Foundling digest is visually approved; implementation 2a295aa70c8a6680ffb85881efa4ccd927a50979 and approval record 7d064226d9a0096f8b276f5b0bd30be93435962b are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. No specialist Changeling, registration, fixtures, runtime copying, effects, Kelpie, release, or EN-E08 gate is open; a separate designer lets do next is required before another candidate begins.',
 });
 
 export const EN_E07_VEILSKIN_FOUNDLING_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

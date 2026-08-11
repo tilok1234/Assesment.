@@ -151,8 +151,8 @@ check(
     && EN_E07_VEILSKIN_FOUNDLING_GATE.approvedImplementation === '2a295aa70c8a6680ffb85881efa4ccd927a50979'
     && EN_E07_VEILSKIN_FOUNDLING_GATE.publishedImplementation === null
     && EN_E07_VEILSKIN_FOUNDLING_GATE.publishedApprovalRecord === null
-    && EN_E07_VEILSKIN_FOUNDLING_GATE.publicationState === 'approved-local',
-  'Veilskin Foundling approved-local publication state drifted',
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Veilskin Foundling bounded-publication state drifted',
 );
 check(
   EN_E07_VEILSKIN_FOUNDLING_GATE.approvalEvidence.includes('designer replied: approved')
@@ -196,9 +196,11 @@ check(
 );
 check(
   EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('visually approved')
-    && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('Standing publication permission')
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('implementation 2a295aa70c8a6680ffb85881efa4ccd927a50979')
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('approval record 7d064226d9a0096f8b276f5b0bd30be93435962b')
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('remote verified')
     && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('separate designer lets do next'),
-  'approved-local publication or next-candidate stop gate drifted',
+  'bounded publication or next-candidate stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_CHANGELING_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])

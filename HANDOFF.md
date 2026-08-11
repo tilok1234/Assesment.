@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Veilskin Foundling Approved Locally; Publication In Progress
+## Immediate Continuation Checkpoint - Veilskin Foundling Approval Published; Reconciliation In Progress
 
 Start here in a new task. One private common Changeling Veilskin Foundling is
 implemented, deterministic, hash-frozen, technically validated, and visually
@@ -31,12 +31,13 @@ approved on
 `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean published
 Mirecrown Beacon reconciliation
 `4ee32622ec2984ac805ac345b854f23584fda3c3`. Exact implementation
-`2a295aa70c8a6680ffb85881efa4ccd927a50979` is committed locally. Approval
-metadata revalidation, approval-record commit, reconciliation, and push remain
-in progress; the actor is not registered, fixture-generated, or public.
+`2a295aa70c8a6680ffb85881efa4ccd927a50979` and approval record
+`7d064226d9a0096f8b276f5b0bd30be93435962b` are published and remote-verified
+on that isolated branch. The bounded initial handoff and final reconciliation
+remain in progress; the actor is not registered, fixture-generated, or public.
 
 - Gate ID: `en-e07-changeling-veilskin-foundling-full-v1`; status:
-  `implemented-awaiting-review`.
+  `approved-publication-in-progress`.
 - Authorization: after the exact Mirecrown Beacon packet was approved,
   published, and reconciled, the designer replied `approved lets do next` on
   2026-08-11. Mirecrown completed the common-specialist-elite Will-o-Wisp role
@@ -93,16 +94,20 @@ in progress; the actor is not registered, fixture-generated, or public.
 - Approval: after the repaired packet and both GIFs were presented, the
   designer replied `approved` on 2026-08-11. Approval applies only to digest
   `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`;
-  the first digest remains superseded. Standing publication permission opens
-  only the bounded approval-record, reconciliation, and branch-push sequence.
+  the first digest remains superseded. Implementation
+  `2a295aa70c8a6680ffb85881efa4ccd927a50979` and approval record
+  `7d064226d9a0096f8b276f5b0bd30be93435962b` are remote-verified. Standing
+  publication permission opens only the bounded initial-handoff and
+  final-reconciliation commits plus their branch pushes.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-changeling-veilskin-foundling` and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-veilskin-foundling`.
-- Required next action: finish approval-local metadata revalidation, commit the
-  approval record, publish and remote-verify the bounded tuple, then reconcile
-  these docs. Do not register Changeling, generate fixtures, implement runtime
-  copying, add effects, start specialist/elite Changeling or Kelpie, release,
-  or advance EN-E08. Another candidate requires a separate `lets do next`.
+- Required next action: commit and push this initial published handoff, record
+  its exact hash in the final reconciliation, then remote-verify the completed
+  publication tuple. Do not register Changeling, generate fixtures, implement
+  runtime copying, add effects, start specialist/elite Changeling or Kelpie,
+  release, or advance EN-E08. Another candidate requires a separate
+  `lets do next`.
 
 ## Approved Preceding Checkpoint - Mirecrown Beacon Published
 
