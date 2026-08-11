@@ -122,7 +122,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views,
   54/54 readable face-feature views, exact Cast/Death aliases, side mirrors,
   public 80/259, unchanged fixtures, `check:fast` in 56.7s, and full `check` in
-  106.1s before approval and 138.6s against approval-local metadata. Run
+  106.1s before approval, 138.6s against approval-local metadata, and 95.2s
+  against the final published tuple. Run
   `npm.cmd run review:enemy-expansion-en-e07-changeling-mirrorfold-harrier`
   and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-mirrorfold-harrier`.
@@ -130,10 +131,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   responsive Aseprite 1.3.17.2 process 40804, whose command line names all
   three paths. The designer replied `approved lets do next` on 2026-08-11;
   exact implementation `ab72a9c0600f016439a5351f363b3b34348dc4b1` and
-  approval record `e976ca5fc5c249af4e727fb3bff7d58fd541a932` are remote-verified;
-  initial handoff and final reconciliation remain in progress. After that
-  bounded tuple is reconciled, the same reply opens only
-  one private elite Changeling candidate. Registration, fixtures, runtime
+  approval record `e976ca5fc5c249af4e727fb3bff7d58fd541a932` plus initial handoff
+  `4ed366a39165660096306cbb327315b211639e3d` are published and remote-verified.
+  This reconciliation completes the bounded tuple; the same reply opens only
+  one private elite Changeling candidate from this clean checkpoint. Registration, fixtures, runtime
   copying, effects, Kelpie, release, and EN-E08 remain separate gates.
 - Approved preceding isolated art checkpoint:
   `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean

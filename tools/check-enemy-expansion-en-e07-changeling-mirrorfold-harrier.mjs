@@ -125,11 +125,11 @@ check(
   EN_E07_MIRRORFOLD_HARRIER_GATE.status === 'approved'
     && EN_E07_MIRRORFOLD_HARRIER_GATE.approvedOn === '2026-08-11'
     && EN_E07_MIRRORFOLD_HARRIER_GATE.approvedImplementation === 'ab72a9c0600f016439a5351f363b3b34348dc4b1'
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.publishedImplementation === null
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.publishedApprovalRecord === null
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.initialPublishedHandoff === null
-    && EN_E07_MIRRORFOLD_HARRIER_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Mirrorfold Harrier bounded-publication state drifted',
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.publishedImplementation === 'ab72a9c0600f016439a5351f363b3b34348dc4b1'
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.publishedApprovalRecord === 'e976ca5fc5c249af4e727fb3bff7d58fd541a932'
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.initialPublishedHandoff === '4ed366a39165660096306cbb327315b211639e3d'
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.publicationState === 'published',
+  'Mirrorfold Harrier published state drifted',
 );
 check(
   EN_E07_MIRRORFOLD_HARRIER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
@@ -169,14 +169,15 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('visually approved')
+  EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('visually approved and published')
     && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('implementation ab72a9c0600f016439a5351f363b3b34348dc4b1')
     && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('approval record e976ca5fc5c249af4e727fb3bff7d58fd541a932')
+    && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('initial handoff 4ed366a39165660096306cbb327315b211639e3d')
     && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('remote verified')
     && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('one private elite Changeling candidate')
     && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('Kelpie')
     && EN_E07_MIRRORFOLD_HARRIER_GATE.nextGate.includes('remain closed'),
-  'bounded publication or next-role stop gate drifted',
+  'published tuple or next-role stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])

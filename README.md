@@ -1490,15 +1490,16 @@ narrow-leg silhouette, and differ in pixels and alpha from all three approved
 comparisons. The opaque range is 202-248, all 72 colored frames preserve the
 four palette groups, all eight flashes are exact white, and all 54 visible-face
 views retain readable features. `check:fast` passes in 56.7s and full `check`
-in 106.1s before approval and 138.6s against approval-local metadata, with
-public 80/259 and all 232 fixtures exact. The exact three PNGs
+in 106.1s before approval, 138.6s against approval-local metadata, and 95.2s
+against the final published tuple, with public 80/259 and all 232 fixtures exact. The exact three PNGs
 are open together in responsive Aseprite 1.3.17.2 process 40804. The designer
 replied `approved lets do next` on 2026-08-11; exact implementation
 `ab72a9c0600f016439a5351f363b3b34348dc4b1` and approval record
-`e976ca5fc5c249af4e727fb3bff7d58fd541a932` are remote-verified; initial
-handoff and final reconciliation remain in progress. The candidate remains private,
-unregistered, and fixture-free. After reconciliation, the same reply opens
-only one private elite Changeling; runtime copying, effects, Kelpie, release,
+`e976ca5fc5c249af4e727fb3bff7d58fd541a932` plus initial handoff
+`4ed366a39165660096306cbb327315b211639e3d` are published and remote-verified.
+This reconciliation completes the bounded tuple. The candidate remains private,
+unregistered, and fixture-free. The same reply opens only one private elite
+Changeling from this clean checkpoint; runtime copying, effects, Kelpie, release,
 and EN-E08 remain closed.
 
 Veilskin Foundling is the approved preceding common Changeling checkpoint on

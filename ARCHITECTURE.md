@@ -1210,10 +1210,11 @@ passes 80/80 connected, bounded, grounded, stepped-diamond, narrow-leg, and
 pixel/alpha distinctions from approved Veilskin Foundling, Pale Echo, and
 Falseface Adept. The designer approved the exact digest on 2026-08-11; exact
 implementation `ab72a9c0600f016439a5351f363b3b34348dc4b1` and approval record
-`e976ca5fc5c249af4e727fb3bff7d58fd541a932` are remote-verified, with the
-initial handoff and final reconciliation in progress. The candidate
-remains unregistered, fixture-free, and non-public. After reconciliation, only
-one private elite Changeling candidate opens; Kelpie, release, and EN-E08
+`e976ca5fc5c249af4e727fb3bff7d58fd541a932` plus initial handoff
+`4ed366a39165660096306cbb327315b211639e3d` are published and remote-verified.
+The candidate remains unregistered, fixture-free, and non-public. Only one
+private elite Changeling candidate opens from this clean reconciliation;
+Kelpie, release, and EN-E08
 remain separate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
