@@ -113,10 +113,10 @@ check(
     && EN_E08_OATHBITE_CLEAVER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
     && EN_E08_OATHBITE_CLEAVER_GATE.approvalEvidence.includes('6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46')
     && EN_E08_OATHBITE_CLEAVER_GATE.approvedImplementation === 'ceafc0badba8c31876cfa3c8055091ba752dbf5d'
-    && EN_E08_OATHBITE_CLEAVER_GATE.publishedImplementation === null
-    && EN_E08_OATHBITE_CLEAVER_GATE.publishedApprovalRecord === null
+    && EN_E08_OATHBITE_CLEAVER_GATE.publishedImplementation === 'ceafc0badba8c31876cfa3c8055091ba752dbf5d'
+    && EN_E08_OATHBITE_CLEAVER_GATE.publishedApprovalRecord === '1c506640bb270c49815f0de357e9cb051b715cee'
     && EN_E08_OATHBITE_CLEAVER_GATE.initialPublishedHandoff === null
-    && EN_E08_OATHBITE_CLEAVER_GATE.publicationState === 'approved-not-published'
+    && EN_E08_OATHBITE_CLEAVER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E08_OATHBITE_CLEAVER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Oathbite Cleaver approval state or bounded publication authorization drifted',
 );
@@ -153,8 +153,9 @@ check(
   'Oathbite Cleaver exclusions drifted',
 );
 check(
-  EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('visually approved at implementation ceafc0badba8c31876cfa3c8055091ba752dbf5d')
-    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
+  EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('implementation ceafc0badba8c31876cfa3c8055091ba752dbf5d')
+    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('approval record 1c506640bb270c49815f0de357e9cb051b715cee')
+    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('initial published handoff and final reconciliation')
     && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('one private specialist Living Weapon art candidate')
     && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('after this tuple is clean and remote verified'),
   'Oathbite Cleaver stop gate drifted',

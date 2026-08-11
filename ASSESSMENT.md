@@ -480,9 +480,11 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   in 60.4s/110.3s before approval metadata and 51.3s/98.0s approval-local,
   preserving public 80/259 and all 232 fixtures. The designer replied `approved
   lets do next`; implementation
-  `ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the accepted pixels. It is
-  approved and awaiting bounded publication, unregistered, fixture-free,
-  effect-free, and non-public.
+  `ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the accepted pixels. The
+  implementation and approval record
+  `1c506640bb270c49815f0de357e9cb051b715cee` are remote verified. Only the
+  published handoff reconciliation remains open; it is unregistered,
+  fixture-free, effect-free, and non-public.
   The approved preceding private checkpoint is elite Possessed Mask Threnecrown Hierophant
   on `codex/en-e08-possessed-mask-threnecrown-hierophant`, based on clean
   published Mournseal reconciliation

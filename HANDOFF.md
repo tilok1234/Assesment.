@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Oathbite Cleaver Approved Awaiting Publication
+## Immediate Continuation Checkpoint - Oathbite Cleaver Published Awaiting Final Handoff
 
 Start here. From clean published Threnecrown Hierophant reconciliation
 `6f2a51739a65b88f8c50644e92e440c8004cc049`, the designer approved the
@@ -33,8 +33,10 @@ Weapon art gate is open. Oathbite Cleaver is implemented on
 `codex/en-e08-living-weapon-architecture` across all 80 frames. The designer
 replied `approved lets do next`; implementation
 `ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the exact accepted pixels.
-It is visually approved but its approval record and branch are not yet
-published. It remains unregistered, fixture-free, effect-free, and non-public.
+Approval record `1c506640bb270c49815f0de357e9cb051b715cee` and the implementation
+are remote verified. Only the initial published handoff and final
+reconciliation remain open. It remains unregistered, fixture-free,
+effect-free, and non-public.
 
 - Identity: broad chipped weathered-steel cleaver with a heavy dark spine, one
   readable teal inset core, hooked bright edge, connected rust-orange claw
@@ -72,8 +74,8 @@ published. It remains unregistered, fixture-free, effect-free, and non-public.
 - Commands: `npm.cmd run
   review:enemy-expansion-en-e08-living-weapon-oathbite-cleaver` and `npm.cmd
   run check:enemy-expansion-en-e08-living-weapon-oathbite-cleaver`.
-- Publication gate: standing permission opens only the approval record, branch
-  push, and handoff reconciliation. The same reply opens only one private
+- Publication gate: standing permission now opens only the initial published
+  handoff and final reconciliation. The same reply opens only one private
   specialist Living Weapon art candidate after a clean remote reconciliation.
   Registration, fixtures, child assets, effects, the elite role, EN-E09,
   release, accepted drift, and a PR remain closed.

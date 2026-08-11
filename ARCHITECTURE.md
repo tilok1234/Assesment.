@@ -1366,7 +1366,9 @@ passes its focused 80-frame gate, `check:fast` in 60.4s, and full `check` in
 public 80/259 and all 232 fixtures exact. The designer replied `approved lets
 do next`; implementation `ceafc0badba8c31876cfa3c8055091ba752dbf5d`
 records the accepted pixels without changing the baked-single-actor boundary.
-It is approved and awaiting bounded publication, and remains unregistered,
+The implementation and approval record
+`1c506640bb270c49815f0de357e9cb051b715cee` are remote verified. Only the
+published handoff reconciliation remains open. It remains unregistered,
 fixture-free, effect-free, and non-public.
 
 `engine/enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant.js`

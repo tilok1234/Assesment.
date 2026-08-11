@@ -300,8 +300,10 @@ predecessor/comparison gates; fast/full validation passes in 60.4s/110.3s
 before approval metadata and 51.3s/98.0s approval-local with public 80/259 and
 all 232 fixtures exact. The exact three frozen PNGs were open together in
 Aseprite when the designer replied `approved lets do next`; implementation
-`ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the accepted pixels. It is
-approved and awaiting bounded publication. The same reply opens only one
+`ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the accepted pixels. The
+implementation and approval record
+`1c506640bb270c49815f0de357e9cb051b715cee` are remote verified. Only the
+published handoff reconciliation remains open. The same reply opens only one
 private specialist Living Weapon art candidate after clean remote
 reconciliation. Registration, fixtures, effects, child assets, the elite role,
 EN-E09, release, broader publication, accepted drift, and a PR remain closed.

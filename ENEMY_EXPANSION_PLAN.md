@@ -4706,10 +4706,11 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Living Weapon Oathbite Cleaver common approved awaiting publication
+#### Living Weapon Oathbite Cleaver common published awaiting final handoff
 
 - Gate ID: `en-e08-living-weapon-oathbite-cleaver-full-v1`; status
-  `approved-not-published` on `codex/en-e08-living-weapon-architecture`, based
+  `published-awaiting-handoff-reconciliation` on
+  `codex/en-e08-living-weapon-architecture`, based
   exactly on published Threnecrown reconciliation
   `6f2a51739a65b88f8c50644e92e440c8004cc049`.
 - Authorization and topology: the designer approved the recommended
@@ -4734,9 +4735,11 @@ it with incidental per-frame offsets.
   and 51.3s/98.0s approval-local with all 232 fixtures unchanged.
 - Approval: the exact packet was presented and the designer replied `approved
   lets do next`. Implementation
-  `ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the accepted pixels.
-  Standing permission opens only the approval record, branch push, and handoff
-  reconciliation. The same reply opens only one private specialist Living
+  `ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the accepted pixels. The
+  implementation and approval record
+  `1c506640bb270c49815f0de357e9cb051b715cee` are remote verified. Standing
+  permission now opens only the published handoff reconciliation. The same
+  reply opens only one private specialist Living
   Weapon art candidate after clean remote reconciliation. Registration,
   fixtures, child assets, effects, the elite role, EN-E09, release, accepted
   drift, and a PR remain closed.
