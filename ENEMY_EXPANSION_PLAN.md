@@ -4706,10 +4706,10 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Living Weapon Oathbite Cleaver common awaiting visual review
+#### Living Weapon Oathbite Cleaver common approved awaiting publication
 
 - Gate ID: `en-e08-living-weapon-oathbite-cleaver-full-v1`; status
-  `awaiting-visual-review` on `codex/en-e08-living-weapon-architecture`, based
+  `approved-not-published` on `codex/en-e08-living-weapon-architecture`, based
   exactly on published Threnecrown reconciliation
   `6f2a51739a65b88f8c50644e92e440c8004cc049`.
 - Authorization and topology: the designer approved the recommended
@@ -4730,11 +4730,16 @@ it with incidental per-frame offsets.
   `cc08c221...37ce`.
 - Focused 80-frame gate passes with 80/80 connected, bounded, and hovering,
   54/54 readable core views, public 80/259, and approved predecessor pixels
-  exact. `check:fast` passes in 60.4s and full `check` in 110.3s with all 232
-  fixtures unchanged.
-- Approval gate: do not commit or push, register, generate fixtures, add child
-  assets or effects, begin later Living Weapon roles or EN-E09, release, accept
-  drift, or open a PR before explicit approval of this exact packet.
+  exact. Fast/full validation passes in 60.4s/110.3s before approval metadata
+  and 51.3s/98.0s approval-local with all 232 fixtures unchanged.
+- Approval: the exact packet was presented and the designer replied `approved
+  lets do next`. Implementation
+  `ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the accepted pixels.
+  Standing permission opens only the approval record, branch push, and handoff
+  reconciliation. The same reply opens only one private specialist Living
+  Weapon art candidate after clean remote reconciliation. Registration,
+  fixtures, child assets, effects, the elite role, EN-E09, release, accepted
+  drift, and a PR remain closed.
 
 #### Possessed Mask Threnecrown Hierophant elite approved and published
 

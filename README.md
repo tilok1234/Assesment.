@@ -1484,11 +1484,15 @@ frozen at digest
 Run `npm.cmd run review:enemy-expansion-en-e08-living-weapon-oathbite-cleaver`
 and `npm.cmd run check:enemy-expansion-en-e08-living-weapon-oathbite-cleaver`.
 The focused gate passes 80/80 connected, bounded, and hovering with 54/54
-readable core views; `check:fast` passes in 60.4s and full `check` in 110.3s
-with approved Threnecrown, approved Crownvault, public 80/259, and all 232
-fixtures unchanged. It awaits explicit visual approval and must not be
-committed or pushed. Registration, fixtures, child assets, effects,
-later roles, EN-E09, release, accepted drift, and a PR remain closed.
+readable core views; fast/full validation passes in 60.4s/110.3s before
+approval metadata and 51.3s/98.0s approval-local with approved Threnecrown,
+approved Crownvault, public 80/259, and all 232 fixtures unchanged. The designer
+replied `approved lets do next`; implementation
+`ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the exact accepted pixels.
+It is approved and awaiting bounded publication. The same reply opens only one
+private specialist Living Weapon art candidate after clean remote
+reconciliation. Registration, fixtures, child assets, effects, the elite role,
+EN-E09, release, accepted drift, and a PR remain closed.
 
 Threnecrown Hierophant is the approved preceding private elite Possessed Mask candidate on
 `codex/en-e08-possessed-mask-threnecrown-hierophant`, based exactly on clean

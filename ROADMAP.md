@@ -296,11 +296,15 @@ published Threnecrown reconciliation
 The designer selected the recommended baked 24x24 single-actor topology with
 zero child assets by replying `awesome lets do next`. All 80 frames pass the
 focused connected, bounded, hovering, core-readability, alias, mirror, and
-predecessor/comparison gates; fast validation passes in 60.4s and full
-validation in 110.3s with public 80/259 and all 232 fixtures exact. It awaits
-explicit visual approval and must not be committed or pushed.
-Registration, fixtures, effects, child assets, later roles, EN-E09, release,
-broader publication, accepted drift, and a PR remain closed.
+predecessor/comparison gates; fast/full validation passes in 60.4s/110.3s
+before approval metadata and 51.3s/98.0s approval-local with public 80/259 and
+all 232 fixtures exact. The exact three frozen PNGs were open together in
+Aseprite when the designer replied `approved lets do next`; implementation
+`ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the accepted pixels. It is
+approved and awaiting bounded publication. The same reply opens only one
+private specialist Living Weapon art candidate after clean remote
+reconciliation. Registration, fixtures, effects, child assets, the elite role,
+EN-E09, release, broader publication, accepted drift, and a PR remain closed.
 
 Approved preceding EN-E08 checkpoint (2026-08-11): elite Possessed Mask Threnecrown
 Hierophant on `codex/en-e08-possessed-mask-threnecrown-hierophant` is based on

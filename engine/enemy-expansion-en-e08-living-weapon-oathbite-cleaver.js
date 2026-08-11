@@ -62,7 +62,7 @@ export const EN_E08_LIVING_WEAPON_CONTRACT_CARD = deepFreeze({
     name: 'Oathbite Cleaver',
     role: 'common',
     identity: 'cursed-cleaver-default',
-    status: 'implemented-full-awaiting-visual-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [
     { role: 'specialist', status: 'planned-unnamed' },
@@ -78,7 +78,7 @@ export const EN_E08_OATHBITE_CLEAVER_CONTRACT = deepFreeze({
   family: 'living-weapon',
   variant: 'oathbite-cleaver',
   role: 'common',
-  state: 'implemented-complete-motion-awaiting-visual-review',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E08_LIVING_WEAPON_TOPOLOGY_DECISION.selected,
   chassis: 'baked-broad-chipped-cleaver-heavy-spine-single-teal-core-hooked-edge-connected-claw-guard-wrapped-grip-pommel-short-tassel-hovering-weapon-v1',
   silhouette: 'A broad vertical hovering cleaver with a clipped crown, heavy dark spine, chipped bright edge, one readable inset core, hooked lower blade, wide connected claw guard, wrapped grip, squared pommel, and short connected tassel. It must read as a weapon acting as the entire creature rather than Animated Armor holding a sword, a Fallen Knight, a Possessed Mask, a thin inventory icon, an upright humanoid, or a detached particle cluster.',
@@ -120,20 +120,20 @@ export const EN_E08_OATHBITE_CLEAVER_DATA = deepFreeze({
 
 export const EN_E08_OATHBITE_CLEAVER_GATE = deepFreeze({
   id: 'en-e08-living-weapon-oathbite-cleaver-full-v1',
-  status: 'awaiting-visual-review',
+  status: 'approved',
   baseCheckpoint: '6f2a51739a65b88f8c50644e92e440c8004cc049',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Threnecrown Hierophant publication tuple was reconciled at clean remote-verified checkpoint 6f2a51739a65b88f8c50644e92e440c8004cc049, the designer was given the recommended deterministic baked 24x24 single-actor Living Weapon topology with zero child assets and replied: awesome lets do next. In that immediate choice context, the reply selects topology decision en-e08-living-weapon-baked-single-actor-v1 and authorizes only one private common Living Weapon Oathbite Cleaver 80-frame art candidate. Registration, fixtures, child assets, effects, later roles, EN-E09, release, and a pull request remain closed.',
   architectureDecision: EN_E08_LIVING_WEAPON_TOPOLOGY_DECISION.id,
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Threnecrown Hierophant and Crownvault Castellan plus public Fallen Knight Shieldbearer silhouette comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in Aseprite. The designer replied: approved lets do next. In context this explicitly approves candidate digest 6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46 and its five frozen review hashes only. The same reply may open only one private specialist Living Weapon art candidate after clean publication reconciliation. Registration, fixtures, child assets, effects, the elite role, EN-E09, release, accepted drift, a pull request, and any broader gate remain separate decisions.',
+  approvedImplementation: 'ceafc0badba8c31876cfa3c8055091ba752dbf5d',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E08_THRENECROWN_HIEROPHANT_GATE.id,
     artifactSha256: EN_E08_THRENECROWN_HIEROPHANT_GATE.artifactSha256,
@@ -206,7 +206,7 @@ export const EN_E08_OATHBITE_CLEAVER_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Present the exact frozen Oathbite Cleaver raw/no-outline and Complete B + Form full-suite boards, approved Threnecrown Hierophant and Crownvault Castellan plus public Fallen Knight comparison, and both synchronized GIFs together for explicit visual approval. Do not commit or push the candidate, register Living Weapon, generate fixtures, add child assets or effects, begin the specialist role, start EN-E09, release, accept drift, or open a pull request before that approval.',
+  nextGate: 'The exact Oathbite Cleaver packet is visually approved at implementation ceafc0badba8c31876cfa3c8055091ba752dbf5d. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. The same approved lets do next reply opens only one private specialist Living Weapon art candidate after this tuple is clean and remote verified. Registration, fixtures, child assets, effects, the elite role, EN-E09, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E08_OATHBITE_CLEAVER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

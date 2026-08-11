@@ -476,10 +476,13 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   guard/wrapped-grip actor with zero child assets, frozen at digest
   `6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46`.
   All 80 frames pass focused connected, bounded, hovering, core-readability,
-  alias, mirror, predecessor, and comparison checks. Fast validation passes in
-  60.4s and full validation in 110.3s, preserving public 80/259 and all 232
-  fixtures. It is awaiting visual approval, unregistered, fixture-free,
-  effect-free, non-public, and uncommitted.
+  alias, mirror, predecessor, and comparison checks. Fast/full validation passes
+  in 60.4s/110.3s before approval metadata and 51.3s/98.0s approval-local,
+  preserving public 80/259 and all 232 fixtures. The designer replied `approved
+  lets do next`; implementation
+  `ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the accepted pixels. It is
+  approved and awaiting bounded publication, unregistered, fixture-free,
+  effect-free, and non-public.
   The approved preceding private checkpoint is elite Possessed Mask Threnecrown Hierophant
   on `codex/en-e08-possessed-mask-threnecrown-hierophant`, based on clean
   published Mournseal reconciliation

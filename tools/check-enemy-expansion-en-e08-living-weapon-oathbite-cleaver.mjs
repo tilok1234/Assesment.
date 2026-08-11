@@ -108,16 +108,17 @@ function rejects(action, label) {
 }
 
 check(
-  EN_E08_OATHBITE_CLEAVER_GATE.status === 'awaiting-visual-review'
-    && EN_E08_OATHBITE_CLEAVER_GATE.approvedOn === null
-    && EN_E08_OATHBITE_CLEAVER_GATE.approvalEvidence === null
-    && EN_E08_OATHBITE_CLEAVER_GATE.approvedImplementation === null
+  EN_E08_OATHBITE_CLEAVER_GATE.status === 'approved'
+    && EN_E08_OATHBITE_CLEAVER_GATE.approvedOn === '2026-08-11'
+    && EN_E08_OATHBITE_CLEAVER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E08_OATHBITE_CLEAVER_GATE.approvalEvidence.includes('6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46')
+    && EN_E08_OATHBITE_CLEAVER_GATE.approvedImplementation === 'ceafc0badba8c31876cfa3c8055091ba752dbf5d'
     && EN_E08_OATHBITE_CLEAVER_GATE.publishedImplementation === null
     && EN_E08_OATHBITE_CLEAVER_GATE.publishedApprovalRecord === null
     && EN_E08_OATHBITE_CLEAVER_GATE.initialPublishedHandoff === null
-    && EN_E08_OATHBITE_CLEAVER_GATE.publicationState === 'not-published'
+    && EN_E08_OATHBITE_CLEAVER_GATE.publicationState === 'approved-not-published'
     && EN_E08_OATHBITE_CLEAVER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
-  'Oathbite Cleaver visual-review state or bounded publication authorization drifted',
+  'Oathbite Cleaver approval state or bounded publication authorization drifted',
 );
 check(
   EN_E08_OATHBITE_CLEAVER_GATE.baseCheckpoint === '6f2a51739a65b88f8c50644e92e440c8004cc049'
@@ -152,9 +153,10 @@ check(
   'Oathbite Cleaver exclusions drifted',
 );
 check(
-  EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('explicit visual approval')
-    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('Do not commit or push')
-    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('begin the specialist role'),
+  EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('visually approved at implementation ceafc0badba8c31876cfa3c8055091ba752dbf5d')
+    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
+    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('one private specialist Living Weapon art candidate')
+    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('after this tuple is clean and remote verified'),
   'Oathbite Cleaver stop gate drifted',
 );
 check(
@@ -180,7 +182,7 @@ check(
   JSON.stringify(EN_E08_LIVING_WEAPON_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E08_LIVING_WEAPON_CONTRACT_CARD.activeVariant.id === 'oathbite-cleaver'
     && EN_E08_LIVING_WEAPON_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E08_LIVING_WEAPON_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-visual-review'
+    && EN_E08_LIVING_WEAPON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E08_LIVING_WEAPON_CONTRACT_CARD.actorTopology === 'baked-single-actor'
     && JSON.stringify(EN_E08_LIVING_WEAPON_CONTRACT_CARD.deferredRoles) === JSON.stringify([
       { role: 'specialist', status: 'planned-unnamed' },

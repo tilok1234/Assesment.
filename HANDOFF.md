@@ -23,16 +23,18 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Oathbite Cleaver Awaiting Visual Review
+## Immediate Continuation Checkpoint - Oathbite Cleaver Approved Awaiting Publication
 
 Start here. From clean published Threnecrown Hierophant reconciliation
 `6f2a51739a65b88f8c50644e92e440c8004cc049`, the designer approved the
 recommended deterministic baked 24x24 Living Weapon topology with zero child
 assets by replying `awesome lets do next`. Exactly one private common Living
-Weapon art gate is open. Oathbite Cleaver is implemented locally on
-`codex/en-e08-living-weapon-architecture` across all 80 frames. It is not
-visually approved, committed, pushed, registered, fixture-backed,
-effect-enabled, or public.
+Weapon art gate is open. Oathbite Cleaver is implemented on
+`codex/en-e08-living-weapon-architecture` across all 80 frames. The designer
+replied `approved lets do next`; implementation
+`ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the exact accepted pixels.
+It is visually approved but its approval record and branch are not yet
+published. It remains unregistered, fixture-free, effect-free, and non-public.
 
 - Identity: broad chipped weathered-steel cleaver with a heavy dark spine, one
   readable teal inset core, hooked bright edge, connected rust-orange claw
@@ -61,17 +63,20 @@ effect-enabled, or public.
   Castellan, and public Fallen Knight Shieldbearer. There are 72/72 colored
   frames, 8/8 exact white flashes, and 54/54 readable core views; opaque range
   154-182.
-- Broad validation: `check:fast` passes in 60.4s and full `check` passes in
-  110.3s. Public 80/259 and all 232 fixture sheets remain exact.
-- Visual-review readiness: the exact frozen raw, Complete B + Form, and
-  silhouette-comparison PNGs are open together in Aseprite.
+- Broad validation: fast/full validation passes in 60.4s/110.3s before
+  approval metadata and 51.3s/98.0s approval-local. Public 80/259 and all 232
+  fixture sheets remain exact.
+- Visual approval: the exact frozen raw, Complete B + Form, and silhouette-
+  comparison PNGs were open together in Aseprite when the designer replied
+  `approved lets do next`. Approval applies only to this digest and five hashes.
 - Commands: `npm.cmd run
   review:enemy-expansion-en-e08-living-weapon-oathbite-cleaver` and `npm.cmd
   run check:enemy-expansion-en-e08-living-weapon-oathbite-cleaver`.
-- Approval gate: approval must identify this exact digest and five artifact
-  hashes. Do not commit or push the candidate, register Living Weapon, generate
-  fixtures, add child assets or effects, begin the specialist role, start
-  EN-E09, release, accept drift, or open a PR before explicit visual approval.
+- Publication gate: standing permission opens only the approval record, branch
+  push, and handoff reconciliation. The same reply opens only one private
+  specialist Living Weapon art candidate after a clean remote reconciliation.
+  Registration, fixtures, child assets, effects, the elite role, EN-E09,
+  release, accepted drift, and a PR remain closed.
 
 ## Approved Preceding Checkpoint - Threnecrown Hierophant Published
 
