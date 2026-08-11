@@ -23,7 +23,67 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mirrorfold Harrier Published; Elite Changeling Authorized
+## Immediate Continuation Checkpoint - Manyfold Usurper Awaiting Visual Review
+
+Start here in a new task. One private elite Changeling Manyfold Usurper is
+implemented, deterministic, hash-frozen, technically validated, and awaiting
+visual approval on `codex/en-e07-changeling-manyfold-usurper`, based exactly on
+clean published Mirrorfold Harrier reconciliation
+`fdbb4cf04048a819b9cbe1655146842835b86a73`. The candidate is not committed,
+pushed, registered, fixture-generated, or public.
+
+- Gate ID: `en-e07-changeling-manyfold-usurper-full-v1`; status:
+  `implemented-awaiting-review`.
+- Authorization: after Mirrorfold Harrier was approved, published, and
+  reconciled, the designer replied `approved lets do next` on 2026-08-11. The
+  frozen common-specialist-elite Changeling order opens only this private elite
+  candidate.
+- Frozen identity: a broad tall grounded authored Changeling with one connected
+  three-tier fan mantle, deep side drapes, one centered readable face,
+  ink-teal/wine/old-gold folds, paired heavy ordinary forearms, a pinched
+  middle, wide separated pillar legs, and broad slab feet. It is not the
+  Foundling pear, Harrier diamond, an adult Doppelganger, crowned sovereign,
+  detached mask, winged creature, copied actor, or effects carrier.
+- Motion: Idle opens and settles the three-tier fan; Walk uses four deliberate
+  wide alternating slab steps; Attack clasps both hands beneath the face,
+  unfurls both heavy forearms into a wide decree, drives both connected palms
+  into a centered press, and resets. Cast aliases Attack exactly. Hurt is white
+  recoil then a colored collapsed-fan brace; Death aliases Hurt H1,H2,H2,H2.
+- Candidate digest:
+  `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
+- Raw/no-outline PNG SHA-256:
+  `f33e2449d3ab77124af6a17b5d7727a7c92d76c2b4b78e1bcfcd227686e219f5`.
+- Complete B + Form PNG SHA-256:
+  `e2febf3f3ee2f0f2cf1db45041ab86d89d229d2c291f16130696a15c99218817`.
+- Foundling/Harrier/Grand Pretender comparison PNG SHA-256:
+  `9791178ce188b8ac7095d3e206dd5d0cb71c4ca903954653b8ee8a5ee3d52645`.
+- Raw GIF SHA-256:
+  `d4bc6f78a1e91f3e586ef2c8d9817ffa931bcc8875e34f7e2ff15a42f471fd4d`.
+- Complete B + Form GIF SHA-256:
+  `2ce887c526c6985cc4b775555284391018ecd693824d378a0be891f8feb399f0`.
+- Focused validation: 80/80 connected, bounded, grounded, broad-three-tier,
+  wide-pillar, and pixel/alpha distinct from approved Mirrorfold Harrier,
+  Veilskin Foundling, and Grand Pretender; opaque range 276-330; 72/72 colored
+  palette frames; 8/8 exact white flashes; 54/54 expected eye-bearing views;
+  54/54 readable face-feature views; Complete B adds 8,378 pixels and Form
+  changes 11,849. All comparisons remain exact; public 80/259 and fixtures are
+  unchanged.
+- Broad validation: `npm.cmd run check:fast` passed in 48.5s and full
+  `npm.cmd run check` passed in 93.1s, with public 80/259 and all 232 fixture
+  sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and comparison
+  PNGs are open together in responsive Aseprite 1.3.17.2 process 39276; its
+  live command line names all three frozen paths.
+- Commands:
+  `npm.cmd run review:enemy-expansion-en-e07-changeling-manyfold-usurper`
+  and
+  `npm.cmd run check:enemy-expansion-en-e07-changeling-manyfold-usurper`.
+- Required next action: the designer must visually approve or reject this exact
+  digest. Do not commit or push the candidate, register Changeling, generate
+  fixtures, implement runtime copying, add effects, start Kelpie, release, or
+  advance EN-E08 before approval.
+
+## Approved Preceding Checkpoint - Mirrorfold Harrier Published and Reconciled
 
 Start here in a new task. One private specialist Changeling Mirrorfold Harrier
 is implemented, deterministic, hash-frozen, technically validated, visually
@@ -82,14 +142,14 @@ unregistered, fixture-free, and non-public.
 - Approval: after the exact packet was presented, the designer replied
   `approved lets do next` on 2026-08-11. Approval applies only to digest
   `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`.
-  The same reply opens only one private elite Changeling candidate after this
-  bounded publication tuple is remote-verified and reconciled.
+  The same reply later opened only the private Manyfold Usurper elite
+  candidate at the active checkpoint above.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-changeling-mirrorfold-harrier`
   and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-mirrorfold-harrier`.
-- Required next action: preserve this tuple byte-for-byte and open only one
-  private elite Changeling candidate from the clean final reconciliation. Do not register Changeling,
+- Historical next action: preserve this tuple byte-for-byte; the active
+  Manyfold Usurper gate above is the only authorized continuation. Do not register Changeling,
   generate fixtures, implement runtime copying, add effects, start Kelpie,
   release, or advance EN-E08.
 

@@ -1472,7 +1472,31 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Mirrorfold Harrier is the active isolated specialist Changeling candidate on
+Manyfold Usurper is the active isolated elite Changeling candidate on
+`codex/en-e07-changeling-manyfold-usurper`, based exactly on clean published
+Mirrorfold Harrier reconciliation
+`fdbb4cf04048a819b9cbe1655146842835b86a73`. Its broad tall grounded authored
+form uses one connected three-tier fan mantle, deep side drapes, one centered
+readable face, ink-teal/wine/old-gold folds, paired heavy ordinary forearms, a
+pinched middle, wide separated pillar legs, and broad slab feet. Run
+`npm.cmd run review:enemy-expansion-en-e07-changeling-manyfold-usurper` for the
+raw, Complete B + Form, approved Foundling/Harrier/Grand Pretender comparison,
+and paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-changeling-manyfold-usurper` for the
+focused contract gate. The frozen digest is
+`f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`:
+80/80 frames are connected, bounded, grounded, retain the broad three-tier fan
+and wide pillar stance, and differ in pixels and alpha from all three approved
+comparisons. The opaque range is 276-330, all 72 colored frames preserve the
+four palette groups, all eight flashes are exact white, and all 54 visible-face
+views retain readable features. `check:fast` passes in 48.5s and full `check`
+in 93.1s with public 80/259 and all 232 fixtures exact. The exact three PNGs
+are open together in responsive Aseprite 1.3.17.2 process 39276. Visual
+approval is required before commit or push. The candidate remains private,
+unregistered, and fixture-free; runtime copying, effects, Kelpie, release, and
+EN-E08 remain closed.
+
+Mirrorfold Harrier is the approved preceding specialist Changeling checkpoint on
 `codex/en-e07-changeling-mirrorfold-harrier`, based exactly on clean published
 Veilskin Foundling reconciliation
 `5eabfecc08f992db675b64ea3317eb59f67d737c`. Its compact grounded authored form
@@ -1498,8 +1522,8 @@ replied `approved lets do next` on 2026-08-11; exact implementation
 `e976ca5fc5c249af4e727fb3bff7d58fd541a932` plus initial handoff
 `4ed366a39165660096306cbb327315b211639e3d` are published and remote-verified.
 This reconciliation completes the bounded tuple. The candidate remains private,
-unregistered, and fixture-free. The same reply opens only one private elite
-Changeling from this clean checkpoint; runtime copying, effects, Kelpie, release,
+unregistered, and fixture-free. The same reply opened only the private
+Manyfold Usurper checkpoint above; runtime copying, effects, Kelpie, release,
 and EN-E08 remain closed.
 
 Veilskin Foundling is the approved preceding common Changeling checkpoint on

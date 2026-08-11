@@ -107,7 +107,31 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved art publication checkpoint:
+- Current isolated art review checkpoint:
+  `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean published
+  Mirrorfold Harrier reconciliation
+  `fdbb4cf04048a819b9cbe1655146842835b86a73`, contains one private elite
+  Changeling Manyfold Usurper candidate. Its frozen 80-frame digest is
+  `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
+  The broad tall grounded form uses one connected three-tier fan mantle, deep
+  side drapes, one centered readable face, ink-teal/wine/old-gold folds, paired
+  heavy ordinary forearms, a pinched middle, wide separated pillar legs, and
+  broad slab feet. All 80 frames are connected, bounded, grounded, hard-alpha,
+  retain the broad fan and pillar stance, and differ in pixels and alpha from
+  approved Mirrorfold Harrier, Veilskin Foundling, and Grand Pretender. The
+  packet passes 72/72 colored frames, 8/8 exact white flashes, 54/54 expected
+  eye-bearing views, 54/54 readable face-feature views, exact Cast/Death
+  aliases, side mirrors, public 80/259, unchanged fixtures, `check:fast` in
+  48.5s, and full `check` in 93.1s. Run
+  `npm.cmd run review:enemy-expansion-en-e07-changeling-manyfold-usurper`
+  and
+  `npm.cmd run check:enemy-expansion-en-e07-changeling-manyfold-usurper`.
+  The exact raw, Complete B + Form, and comparison PNGs are open together in
+  responsive Aseprite 1.3.17.2 process 39276, whose command line names all
+  three paths. Visual approval is required before commit or push. Registration,
+  fixtures, runtime copying, effects, Kelpie, release, and EN-E08 remain
+  separate gates.
+- Approved preceding art publication checkpoint:
   `codex/en-e07-changeling-mirrorfold-harrier`, based exactly on clean
   published Veilskin Foundling reconciliation
   `5eabfecc08f992db675b64ea3317eb59f67d737c`, contains one private specialist
@@ -133,8 +157,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   exact implementation `ab72a9c0600f016439a5351f363b3b34348dc4b1` and
   approval record `e976ca5fc5c249af4e727fb3bff7d58fd541a932` plus initial handoff
   `4ed366a39165660096306cbb327315b211639e3d` are published and remote-verified.
-  This reconciliation completes the bounded tuple; the same reply opens only
-  one private elite Changeling candidate from this clean checkpoint. Registration, fixtures, runtime
+  This reconciliation completes the bounded tuple; the same reply opened only
+  the private Manyfold Usurper candidate at the active checkpoint above. Registration, fixtures, runtime
   copying, effects, Kelpie, release, and EN-E08 remain separate gates.
 - Approved preceding isolated art checkpoint:
   `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean

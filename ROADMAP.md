@@ -288,7 +288,26 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Approved EN-E07 publication checkpoint (2026-08-11): specialist Changeling
+Current isolated EN-E07 art checkpoint (2026-08-11): elite Changeling
+Manyfold Usurper on `codex/en-e07-changeling-manyfold-usurper` is based exactly
+on clean published Mirrorfold Harrier reconciliation
+`fdbb4cf04048a819b9cbe1655146842835b86a73`. Its 276-330-pixel broad tall
+grounded elite form at digest
+`f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`
+uses one connected three-tier fan mantle, deep side drapes, one centered
+readable face, ink-teal/wine/old-gold folds, paired heavy ordinary forearms, a
+pinched middle, wide separated pillar legs, and broad slab feet. All 80 frames
+are connected, bounded, grounded, broad-three-tier, wide-pillar, hard-alpha,
+and pixel/alpha distinct from approved Mirrorfold Harrier, Veilskin Foundling,
+and Grand Pretender; 72/72 colored frames, 8/8 exact white flashes, 54/54
+expected eye-bearing views, and 54/54 readable face-feature views pass.
+`check:fast` passes in 48.5s and full `check` in 93.1s with public 80/259 and
+all 232 fixtures exact. The three frozen PNGs are open together in responsive
+Aseprite 1.3.17.2 process 39276. Visual approval is required before commit or
+push. Registration, fixtures, runtime copying, effects, Kelpie, release, and
+EN-E08 remain closed.
+
+Approved preceding EN-E07 publication checkpoint (2026-08-11): specialist Changeling
 Mirrorfold Harrier on `codex/en-e07-changeling-mirrorfold-harrier` is based
 exactly on clean published Veilskin Foundling reconciliation
 `5eabfecc08f992db675b64ea3317eb59f67d737c`. Its 202-248-pixel compact
@@ -308,8 +327,8 @@ replied `approved lets do next` on 2026-08-11; exact implementation
 `ab72a9c0600f016439a5351f363b3b34348dc4b1` and approval record
 `e976ca5fc5c249af4e727fb3bff7d58fd541a932` plus initial handoff
 `4ed366a39165660096306cbb327315b211639e3d` are published and remote-verified.
-This reconciliation completes the bounded tuple; the same reply opens only one
-private elite Changeling from this clean checkpoint. Registration, fixtures,
+This reconciliation completes the bounded tuple; the same reply opened only
+the private Manyfold Usurper checkpoint above. Registration, fixtures,
 runtime copying, effects, Kelpie, release,
 and EN-E08 remain closed.
 

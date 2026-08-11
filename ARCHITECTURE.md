@@ -1217,6 +1217,28 @@ private elite Changeling candidate opens from this clean reconciliation;
 Kelpie, release, and EN-E08
 remain separate.
 
+`engine/enemy-expansion-en-e07-changeling-manyfold-usurper.js` is that isolated
+elite Changeling boundary. It imports only the stable 24x24 expansion contract
+plus the published Mirrorfold Harrier contract/gate, owns one private
+family/variant registry, and is not imported by `sprite-engine.js`, the public
+expansion registry, selectors, persistence, packs, or fixture tooling. Its
+independently authored broad tall grounded form uses one connected three-tier
+fan mantle, deep side drapes, one centered readable face, ink-teal/wine/old-gold
+folds, paired heavy ordinary forearms, a pinched middle, wide separated pillar
+legs, and broad slab feet. The renderer owns 80 hard-alpha frames with exact
+Cast-to-Attack and Death-to-Hurt aliases; copied actors, alternate bodies,
+detached masks, runtime copying, glow, particles, projectiles, and effects
+remain external. The review and checker boundaries are
+`tools/enemy-expansion-en-e07-changeling-manyfold-usurper-review.mjs` and
+`tools/check-enemy-expansion-en-e07-changeling-manyfold-usurper.mjs`.
+Candidate digest
+`f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`
+passes 80/80 connected, bounded, grounded, broad-three-tier, wide-pillar, and
+pixel/alpha distinctions from approved Mirrorfold Harrier, Veilskin Foundling,
+and Grand Pretender. The candidate remains uncommitted, unregistered,
+fixture-free, and non-public while awaiting exact visual approval; Kelpie,
+release, and EN-E08 remain separate.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

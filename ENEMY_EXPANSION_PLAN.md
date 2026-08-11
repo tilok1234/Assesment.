@@ -13,7 +13,27 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current publication checkpoint (2026-08-11): private specialist Changeling
+- Current art checkpoint (2026-08-11): private elite Changeling Manyfold
+  Usurper on `codex/en-e07-changeling-manyfold-usurper` is frozen at digest
+  `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`
+  from clean published Mirrorfold Harrier reconciliation
+  `fdbb4cf04048a819b9cbe1655146842835b86a73`. The 276-330-pixel suite passes
+  80/80 connected, bounded, grounded, broad-three-tier, wide-pillar,
+  hard-alpha, alias, mirror, and pixel/alpha distinctions from approved
+  Mirrorfold Harrier, Veilskin Foundling, and Grand Pretender. Its independently
+  authored broad tall form uses one connected three-tier fan mantle, deep side
+  drapes, one centered readable face, ink-teal/wine/old-gold folds, paired heavy
+  ordinary forearms, a pinched middle, wide separated pillar legs, and broad
+  slab feet. The packet passes 72/72 colored frames, 8/8 exact white flashes,
+  54/54 expected eye-bearing views, and 54/54 readable face-feature views;
+  Complete B adds 8,378 pixels and Form changes 11,849. `check:fast` passes in
+  48.5s and full `check` in 93.1s with public 80/259 and all 232 fixtures exact.
+  The exact raw, Complete B + Form, and comparison PNGs are open together in
+  responsive Aseprite 1.3.17.2 process 39276. This candidate is uncommitted,
+  unregistered, fixture-free, and awaiting visual approval. Runtime actor
+  copying, effects, Kelpie, release, and EN-E08 remain closed.
+
+- Approved preceding checkpoint (2026-08-11): private specialist Changeling
   Mirrorfold Harrier on `codex/en-e07-changeling-mirrorfold-harrier` is frozen
   at digest
   `be3e4d03263929ce9677fcf15b742cde769271d037160cd6461b45ea389660f2`
@@ -37,8 +57,8 @@
   `e976ca5fc5c249af4e727fb3bff7d58fd541a932` plus initial handoff
   `4ed366a39165660096306cbb327315b211639e3d` are published and remote-verified.
   This reconciliation completes the bounded tuple. It remains unregistered
-  and fixture-free. The same reply opens only one private elite Changeling
-  candidate from this clean checkpoint. Runtime actor copying, effects,
+  and fixture-free. The same reply opened only the private Manyfold Usurper
+  checkpoint above. Runtime actor copying, effects,
   Kelpie, release, and EN-E08 remain closed.
 
 - Approved preceding checkpoint (2026-08-11): private common Changeling Veilskin
@@ -3630,7 +3650,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling and specialist Mirrorfold Harrier approved and published; one private elite Changeling candidate authorized`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling and specialist Mirrorfold Harrier approved and published; private elite Changeling Manyfold Usurper awaiting visual review`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4294,10 +4314,70 @@ assembler.
   manifest, shared renderer, exporter, validator, frame-contract change,
   runtime copying, alternate body, detached mask, glow, particles, projectile,
   Kelpie, release, EN-E08, or accepted drift.
-- Required next action: preserve the published tuple byte-for-byte and open
-  only one private elite Changeling candidate under the same reply. Do not
+- Historical next action: preserve the published tuple byte-for-byte. The same
+  reply opened only the private Manyfold Usurper checkpoint below. Do not
   register Changeling, generate fixtures, add runtime copying or effects,
   start Kelpie, release, or advance EN-E08.
+
+#### Changeling Manyfold Usurper complete suite awaiting visual review
+
+- Gate ID: `en-e07-changeling-manyfold-usurper-full-v1`; status:
+  `implemented-awaiting-review` on
+  `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean,
+  remote-verified Mirrorfold Harrier reconciliation
+  `fdbb4cf04048a819b9cbe1655146842835b86a73`.
+- Authorization: after the exact Mirrorfold Harrier was visually approved,
+  committed, pushed, and reconciled, the designer replied
+  `approved lets do next` on 2026-08-11. That opens only this one private elite
+  Changeling candidate.
+- Contract: a broad tall grounded authored Changeling, broader and heavier than
+  Mirrorfold Harrier, with one connected three-tier fan mantle, deep side
+  drapes, one centered readable face, ink-teal/wine/old-gold folds, paired heavy
+  ordinary forearms, a pinched middle, wide separated pillar legs, and broad
+  slab feet. It is distinct from Mirrorfold Harrier, Veilskin Foundling, and
+  Grand Pretender and does not copy a runtime actor or use an alternate body,
+  detached mask, wings, glow, particles, a projectile, or effects.
+- Motion: Idle opens and settles the three-tier fan; Walk uses four deliberate
+  wide alternating slab steps; Attack clasps the hands beneath the face, opens
+  the heavy forearms into a wide decree, drives one connected centered two-palm
+  press, and resets. Hurt is exact white recoil then colored collapsed-fan
+  brace. Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2.
+- Frozen evidence: raw PNG
+  `f33e2449d3ab77124af6a17b5d7727a7c92d76c2b4b78e1bcfcd227686e219f5`;
+  Complete B + Form PNG
+  `e2febf3f3ee2f0f2cf1db45041ab86d89d229d2c291f16130696a15c99218817`;
+  Mirrorfold Harrier/Veilskin Foundling/Grand Pretender comparison PNG
+  `9791178ce188b8ac7095d3e206dd5d0cb71c4ca903954653b8ee8a5ee3d52645`;
+  raw GIF
+  `d4bc6f78a1e91f3e586ef2c8d9817ffa931bcc8875e34f7e2ff15a42f471fd4d`;
+  Complete B + Form GIF
+  `2ce887c526c6985cc4b775555284391018ecd693824d378a0be891f8feb399f0`;
+  candidate digest
+  `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
+- Focused validation: 80/80 candidate frames are connected, bounded,
+  grounded, broad-three-tier, wide-pillar, and pixel/alpha distinct from all
+  three approved comparisons; opaque range 276-330; 72/72 colored palette
+  frames; 8/8 exact white flashes; 54/54 expected eye-bearing views; 54/54
+  readable face-feature views; Complete B adds 8,378 pixels and Form changes
+  11,849. Public 80/259 and all fixtures remain unchanged.
+- Broad validation: `npm.cmd run check:fast` passed in 48.5s and full
+  `npm.cmd run check` passed in 93.1s, with public 80/259 and all 232 fixture
+  sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and family
+  comparison PNGs are open together in responsive Aseprite 1.3.17.2; process
+  39276 names all three frozen paths. An early oversized square mask-like face
+  and Harrier-adjacent side read were corrected before the evidence freeze;
+  the final face is smaller, readable, and held within exposed tier seams and
+  connected side drapes.
+- Scope firewall: no registration, public facade or catalog change, fixtures,
+  manifest, shared renderer, exporter, validator, frame-contract change,
+  runtime copying, alternate body, detached mask, wings, glow, particles,
+  projectile, effects, Kelpie, release, EN-E08, or accepted drift.
+- Required next action: visually approve or reject only candidate digest
+  `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
+  Do not stage, commit, push, register Changeling, generate fixtures, implement
+  runtime copying, add effects, start Kelpie, release, or advance EN-E08 before
+  that exact approval.
 
 ### EN-E08 - Possessed equipment
 
