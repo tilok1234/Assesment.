@@ -1472,7 +1472,44 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Blackwake Dreadmare is the current approved private elite Kelpie publication checkpoint on
+Hollow Sentry is the current private common Animated Armor acceptance candidate
+on `codex/en-e08-animated-armor-architecture`, based exactly on clean published
+Blackwake reconciliation `defc9b8cab1226610da6cf2b17951c8b5815499e`. The
+designer selected the recommended `baked-single-actor` topology after the
+explicit baked actor versus deterministic child/state choice. Helmet,
+pauldrons, breastplate, gauntlets, bindings, greaves, and sabatons are authored
+inside one deterministic 24x24 Enemy frame; the candidate exports and reports
+zero child assets. Separate equipment assets, runtime attachment offsets,
+schema work, shared renderer work, exporter or validator changes, and frame
+contract changes are outside this content gate.
+
+The Haunted Armor and Animated Armor proposals remain one `animated-armor`
+family. Hollow Sentry is its haunted-default common identity: a sealed
+low-crested helm with a wide black visor, paired haunt gaze, mismatched
+pauldrons, hollow ribbed breastplate, oversized connected gauntlets, bound
+waist, split greaves, and broad grounded sabatons. It has no flesh, corpse
+hands, robe body, clockwork gears, handheld weapon, shield, or detached plate.
+Run `npm.cmd run review:enemy-expansion-en-e08-animated-armor-hollow-sentry`
+for the raw, Complete B + Form, Fallen Knight/Revenant/Gloam comparison, and
+paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e08-animated-armor-hollow-sentry` for the
+focused gate. The frozen digest is
+`f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`:
+80/80 frames are connected, bounded, grounded, retain split sabatons and broad
+plate spans, carry zero child assets, and differ in pixels and alpha from all
+three protected comparisons. The opaque range is 219-306, all 72 colored
+frames retain the five identity palettes, all eight flashes are exact white,
+and all 54 expected face-bearing views retain readable visor eyes.
+`check:fast` passes in 62.3s and full `check` in 121.5s with public 80/259 and
+all 232 fixtures exact. The exact three frozen PNGs are open together in
+responsive Aseprite 1.3.17.2 process 6832. Status is
+`implemented-awaiting-review`: the packet is unapproved, unstaged,
+uncommitted, unpushed, unregistered, fixture-free, and non-public. Explicit
+approval of this exact digest is required before standing publication
+permission applies; child/state assets, effects, later roles/families, release,
+and accepted drift remain closed.
+
+Blackwake Dreadmare is the approved preceding private elite Kelpie publication checkpoint on
 `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
 Drownbridle Stalker reconciliation
 `f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Its broad rear-heavy form uses a
@@ -1499,11 +1536,9 @@ applies only to the digest above. Exact implementation
 `a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` plus initial handoff
 `d4cfd72229355ccb6024e676562303bc6d633f98` are published and remote-verified;
 status is `approved` and `published`. This reconciliation completes the bounded
-tuple. The same reply opens only
-the EN-E08 architecture decision after clean remote reconciliation; Animated
-Armor art remains closed until its actor-topology choice is explicit.
-Registration, fixtures, runtime copying, water effects, release, and accepted
-drift remain closed.
+tuple. Its later architecture decision is resolved only as the private baked
+Hollow Sentry gate above. Kelpie registration, fixtures, runtime copying,
+water effects, release, and accepted drift remain closed.
 
 Drownbridle Stalker is the approved preceding private specialist Kelpie
 publication checkpoint on

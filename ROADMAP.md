@@ -288,7 +288,27 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current approved EN-E07 publication checkpoint (2026-08-11): elite Kelpie Blackwake
+Current EN-E08 acceptance candidate (2026-08-11): common Animated Armor Hollow
+Sentry on `codex/en-e08-animated-armor-architecture` is frozen at digest
+`f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`
+from clean published Blackwake reconciliation
+`defc9b8cab1226610da6cf2b17951c8b5815499e`. The explicit topology choice is
+`baked-single-actor`: all armor parts live inside one 24x24 frame and all 80
+frames report zero child assets. The collision ruling keeps Haunted Armor and
+Animated Armor as one `animated-armor` family; Hollow Sentry is the
+haunted-default common while constructed/specialist/elite identities remain
+deferred. Its 219-306-pixel suite passes 80/80 connected, bounded, grounded,
+split-sabaton, broad-plate, topology, hard-alpha, alias, mirror, and pixel/alpha
+distinctions from Fallen Knight Shieldbearer, Grave Oathkeeper Revenant, and
+Gloam Walker; 72/72 colored frames, 8/8 exact white flashes, and 54/54 readable
+visor views pass. `check:fast` passes in 62.3s and full `check` in 121.5s with
+public 80/259 and all 232 fixtures exact. The exact three frozen PNGs are open
+together in responsive Aseprite 1.3.17.2 process 6832. Status is
+`implemented-awaiting-review`; no commit, push, registration, fixture,
+child/state asset, effect, later role/family, release, or accepted drift is
+authorized before explicit approval of the exact digest.
+
+Approved preceding EN-E07 publication checkpoint (2026-08-11): elite Kelpie Blackwake
 Dreadmare on `codex/en-e07-kelpie-blackwake-dreadmare` is based exactly on clean
 published Drownbridle Stalker reconciliation
 `f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Its 255-319-pixel broad rear-heavy
@@ -306,11 +326,10 @@ only to the frozen digest above. Exact implementation
 `3a3ffce6997a6cc9735b818e13573b9085229555` and approval record
 `a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` plus initial handoff
 `d4cfd72229355ccb6024e676562303bc6d633f98` are published and remote-verified.
-This reconciliation completes the bounded tuple.
-The same reply opens only the EN-E08 architecture decision after clean remote
-reconciliation; Animated Armor art remains closed until its actor-topology
-choice is explicit. Registration, fixtures, runtime copying, water effects,
-release, and accepted drift remain closed.
+This reconciliation completes the bounded tuple. Its later architecture
+decision is resolved only as the private baked Hollow Sentry gate above.
+Registration, fixtures, runtime copying, water effects, release, and accepted
+drift remain closed.
 
 Approved preceding EN-E07 publication checkpoint (2026-08-11): specialist Kelpie
 Drownbridle Stalker on `codex/en-e07-kelpie-drownbridle-stalker` is based

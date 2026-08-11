@@ -1347,8 +1347,44 @@ approval applies only to the frozen digest above. Exact implementation
 `d4cfd72229355ccb6024e676562303bc6d633f98` are published and remote-verified.
 This boundary is hash-frozen, private, `approved`, and `published`; this
 reconciliation completes the bounded tuple. The same
-reply opens only the EN-E08 actor-topology architecture decision after clean
-remote reconciliation; it does not select or authorize Animated Armor art.
+reply opened only the EN-E08 actor-topology architecture decision after clean
+remote reconciliation; the later explicit choice is recorded below.
+
+`engine/enemy-expansion-en-e08-animated-armor-hollow-sentry.js` resolves that
+gate with `en-e08-baked-single-actor-v1` and owns the first isolated EN-E08
+content boundary. The designer selected the recommended baked actor after the
+explicit baked-versus-child/state choice. Helmet, pauldrons, breastplate,
+gauntlets, bindings, greaves, sabatons, and any later approved family weapon
+belong to one deterministic 24x24 pixel array; the renderer reports
+`actorTopology: baked-single-actor` and `childAssetCount: 0` on all 80 frames.
+Separate head, gauntlet, weapon, mask, rider, or mount assets require a new
+architecture gate. This module does not change schemas, shared renderer
+interfaces, exporters, validators, or the frame contract, and it is not
+imported by `sprite-engine.js`, the public expansion registry, selectors,
+persistence, packs, manifest, or fixture tooling.
+
+The same module applies the collision ruling that Haunted Armor and Animated
+Armor are one `animated-armor` family. Its private common Hollow Sentry is the
+haunted-default identity: sealed low-crested helm, black visor cavity, offset
+pauldrons, hollow ribbed breastplate, oversized connected gauntlets, bound
+waist, split greaves, and grounded sabatons. It owns 80 hard-alpha frames with
+exact Cast-to-Attack and Death-to-Hurt aliases. Detached plate, child/state
+assets, runtime offsets, exposed bodies, handheld weapons, shields, soul wisps,
+glow, particles, projectiles, and effects remain external. The review,
+checker, and GIF boundaries are
+`tools/enemy-expansion-en-e08-animated-armor-hollow-sentry-review.mjs`,
+`tools/check-enemy-expansion-en-e08-animated-armor-hollow-sentry.mjs`, and
+`tools/build-enemy-expansion-en-e08-animated-armor-hollow-sentry-gifs.py`.
+Candidate digest
+`f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`
+passes 80/80 connected, bounded, grounded, split-sabaton, broad-plate,
+baked-topology, and pixel/alpha distinctions from Fallen Knight Shieldbearer,
+Grave Oathkeeper Revenant, and Gloam Walker. The opaque range is 219-306;
+72/72 colored frames, 8/8 exact white flashes, and 54/54 readable visor views
+pass. `check:fast` passes in 62.3s and full `check` in 121.5s with public
+80/259 and all 232 fixtures exact. The packet is hash-frozen, private, and
+`implemented-awaiting-review`; it is not approved, staged, committed, pushed,
+registered, fixture-backed, or public.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

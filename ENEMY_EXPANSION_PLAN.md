@@ -13,7 +13,28 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current approved publication checkpoint (2026-08-11): private specialist Kelpie
+- Current acceptance candidate (2026-08-11): private common Animated Armor
+  Hollow Sentry on `codex/en-e08-animated-armor-architecture` is frozen at
+  digest `f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`
+  from clean published Blackwake reconciliation
+  `defc9b8cab1226610da6cf2b17951c8b5815499e`. The explicit architecture choice
+  selects `baked-single-actor`: every helmet, armor, gauntlet, binding, greave,
+  and sabaton pixel is owned by one 24x24 frame and all 80 frames report zero
+  child assets. Haunted Armor and Animated Armor remain one `animated-armor`
+  family; Hollow Sentry is its haunted-default common role, with constructed,
+  specialist, and elite identities deferred. The 219-306-pixel suite passes
+  80/80 connected, bounded, grounded, split-sabaton, broad-plate, topology,
+  hard-alpha, alias, mirror, and pixel/alpha distinctions from Fallen Knight
+  Shieldbearer, Grave Oathkeeper Revenant, and Gloam Walker. It also passes
+  72/72 colored frames, 8/8 exact white flashes, and 54/54 readable visor
+  views. `check:fast` passes in 62.3s and full `check` in 121.5s with public
+  80/259 and all 232 fixtures exact. The exact three frozen PNGs are open in
+  responsive Aseprite 1.3.17.2 process 6832. Status is
+  `implemented-awaiting-review`; no staging, commit, push, registration,
+  fixture, child/state asset, effect, later role/family, release, or accepted
+  drift is authorized before exact visual approval.
+
+- Earlier approved publication checkpoint (2026-08-11): private specialist Kelpie
   Drownbridle Stalker on `codex/en-e07-kelpie-drownbridle-stalker` is frozen at
   digest `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`
   from clean published Miremane Courser reconciliation
@@ -4658,22 +4679,80 @@ assembler.
   frame-contract change, runtime copying, alternate body, rider, saddle, horn,
   armor or barding, detached water, glow, particles, projectile, effects,
   release, EN-E08, or accepted drift.
-- Required next action: from the clean published Blackwake reconciliation, the
-  same reply opens only the EN-E08 architecture decision below. Do
-  not begin Animated Armor art until the baked-actor versus deterministic-child
-  actor-topology choice below is explicit.
+- Historical next action: the clean published Blackwake reconciliation opened
+  only the EN-E08 architecture decision below. The designer later selected the
+  recommended baked single-actor option and opened only the Hollow Sentry
+  acceptance candidate recorded below.
 
 ### EN-E08 - Possessed equipment
 
-- Status: `architecture-gated`
+- Status: `acceptance-candidate`
 - Families/proposals: Haunted Armor + Animated Armor merged as
   `animated-armor`, Headless Rider, Possessed Mask, Living Weapon
 - Priority-first: `animated-armor`
 
 Shared leverage: hollow silhouettes, floating components, rider/mount joins,
-and equipment acting as a body. Before art begins, decide whether the head,
-mount, mask, or weapon is baked into one actor or exported as a deterministic
-child/state asset. Do not solve that decision with incidental per-frame offsets.
+and equipment acting as a body. Architecture decision
+`en-e08-baked-single-actor-v1` is selected for the first Animated Armor lane:
+helmet, armor, gauntlets, bindings, greaves, sabatons, and any later approved
+family weapon belong to one deterministic 24x24 actor. The current candidate
+has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
+living-weapon asset must stop at a new explicit architecture gate; do not solve
+it with incidental per-frame offsets.
+
+#### Animated Armor Hollow Sentry complete suite awaiting review
+
+- Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status:
+  `implemented-awaiting-review` on
+  `codex/en-e08-animated-armor-architecture`, based exactly on clean published
+  Blackwake reconciliation `defc9b8cab1226610da6cf2b17951c8b5815499e`.
+- Authorization and topology: after the Blackwake tuple was published and
+  reconciled, the designer was shown the recommended baked actor and the
+  deterministic child/state alternative, then replied `lets do next`. In that
+  immediate choice context, the reply selects the recommended option and
+  authorizes exactly one private common Hollow Sentry. All 80 render results
+  report `baked-single-actor` and zero child assets. No schema, shared renderer,
+  exporter, validator, or frame-contract change is permitted.
+- Collision and role boundary: Haunted Armor and Animated Armor stay merged as
+  one `animated-armor` family. Hollow Sentry is the haunted-default common role;
+  constructed identities, specialist/elite roles, Headless Rider, Possessed
+  Mask, and Living Weapon remain deferred.
+- Identity: one broad grounded empty suit with a sealed low-crested helm, wide
+  black visor and paired haunt gaze, mismatched pauldrons, hollow ribbed
+  breastplate, oversized connected gauntlets, bound waist, separated greaves,
+  and broad grounded sabatons. Flesh, corpse hands, skeleton gaps, robe bodies,
+  gears, handheld weapons, shields, floating plate, and detached components are
+  excluded.
+- Motion: Idle locks and settles the empty shell; Walk uses four weighty iron
+  steps; Attack closes the gauntlets into guard, draws the breastplate back,
+  commits to one connected full-body iron clamp, and recovers. Hurt uses an
+  exact white recoil and colored buckled-plate brace. Cast aliases Attack;
+  Death aliases Hurt H1,H2,H2,H2.
+- Frozen candidate digest:
+  `f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`.
+- Frozen artifacts: raw
+  `d4e257be9814475c9ecab189f2842541b1fc1264aa95b90098d295a56f4be022`;
+  Complete B + Form
+  `86bfde2b5091db85f718f8603e8391db21424981bcb46f0985885fc141ce863e`;
+  Fallen Knight/Revenant/Gloam comparison
+  `85d3bdc53b356eb886329be6045531f9644a11e44965de385bcb4848cf4e8619`;
+  raw GIF `731cee04ff79fbeced685299be575cee643b52b88f2ee3404783587b91f4a330`;
+  Complete B + Form GIF
+  `54faee2dad6939c3e377a7a2eb99358860419e8ebfac4fc5f04b03bd6591a294`.
+- Validation: 80/80 connected, bounded, grounded, split-sabaton, broad-plate,
+  and baked-topology frames; 72/72 colored frames; 8/8 exact white flashes;
+  54/54 readable visor views; exact aliases and mirrors; 80/80 pixel and alpha
+  distinctions from all three protected comparisons. Opaque range 219-306;
+  Complete B adds 7,272 pixels and Form changes 6,464. `check:fast` passes in
+  62.3s and full `check` in 121.5s with public 80/259 and all 232 fixtures
+  exact.
+- Visual gate: the exact three frozen PNGs are open together in responsive
+  Aseprite 1.3.17.2 process 6832. The packet remains unapproved, unstaged,
+  uncommitted, unpushed, unregistered, fixture-free, and non-public.
+- Required next action: explicit approval of the exact digest above or one
+  narrow repair request. Standing publication permission does not apply before
+  approval. Child/state assets, effects, later roles/families, release, and
+  accepted drift remain closed.
 
 ### EN-E09 - Arcane constructs
 

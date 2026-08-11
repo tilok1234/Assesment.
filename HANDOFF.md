@@ -23,9 +23,79 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Blackwake Dreadmare Published and Reconciled
+## Immediate Continuation Checkpoint - Hollow Sentry Frozen Awaiting Review
 
-Start here in a new task. One private elite Kelpie Blackwake Dreadmare is
+Start here in a new task. The EN-E08 actor-topology gate is resolved and one
+private common Animated Armor Hollow Sentry is implemented, deterministic,
+hash-frozen, and technically validated on
+`codex/en-e08-animated-armor-architecture`, based exactly on clean published
+Blackwake Dreadmare reconciliation
+`defc9b8cab1226610da6cf2b17951c8b5815499e`. It is not visually approved,
+committed, pushed, registered, fixture-backed, or public.
+
+- Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status:
+  `implemented-awaiting-review`.
+- Architecture decision: `en-e08-baked-single-actor-v1` is selected. After the
+  Blackwake tuple was published and reconciled, the designer was shown the
+  recommended baked single-actor topology and the alternative deterministic
+  child/state architecture, then replied `lets do next`. In that immediate
+  choice context, helmet, pauldrons, breastplate, gauntlets, bindings, greaves,
+  sabatons, and any later approved family weapon belong to one deterministic
+  24x24 Enemy pixel array. This candidate reports zero child assets. Separate
+  head, gauntlet, weapon, mask, rider, or mount assets require a new explicit
+  architecture gate; never simulate them with incidental per-frame offsets.
+- Collision ruling: Haunted Armor and Animated Armor remain one
+  `animated-armor` family. Hollow Sentry is the haunted-default common variant;
+  constructed identities and the specialist/elite roles remain deferred.
+- Frozen identity: a broad grounded empty suit with a sealed low-crested helm,
+  wide black visor and paired haunt gaze, offset pauldrons, hollow ribbed
+  breastplate, oversized connected gauntlets, bound waist, split greaves, and
+  broad grounded sabatons. No flesh, corpse hands, skeleton gaps, robe body,
+  clockwork gears, sword, shield, floating plate, or detached component is used.
+- Motion: Idle locks and settles the empty shell; Walk uses four weighty iron
+  steps; Attack closes the gauntlets into guard, draws the breastplate back,
+  commits to one connected full-body iron clamp, and recovers. Hurt is an exact
+  white recoil then a colored buckled-plate brace. Cast aliases Attack; Death
+  aliases Hurt H1,H2,H2,H2.
+- Candidate digest:
+  `f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`.
+- Raw/no-outline PNG SHA-256:
+  `d4e257be9814475c9ecab189f2842541b1fc1264aa95b90098d295a56f4be022`.
+- Complete B + Form PNG SHA-256:
+  `86bfde2b5091db85f718f8603e8391db21424981bcb46f0985885fc141ce863e`.
+- Fallen Knight Shieldbearer/Grave Oathkeeper Revenant/Gloam Walker comparison
+  PNG SHA-256:
+  `85d3bdc53b356eb886329be6045531f9644a11e44965de385bcb4848cf4e8619`.
+- Raw GIF SHA-256:
+  `731cee04ff79fbeced685299be575cee643b52b88f2ee3404783587b91f4a330`.
+- Complete B + Form GIF SHA-256:
+  `54faee2dad6939c3e377a7a2eb99358860419e8ebfac4fc5f04b03bd6591a294`.
+- Focused validation: 80/80 frames are one connected baked actor, one-cell
+  bounded, grounded, retain two separated sabaton runs and broad tall plate
+  spans, report zero child assets, and differ in pixels and alpha from all
+  three protected comparisons. The opaque range is 219-306; 72/72 colored
+  frames retain plate, rust, binding, haunt, and cavity palettes; 8/8 flashes
+  are exact white; 54/54 expected views retain readable visor eyes. Complete B
+  adds 7,272 pixels and Form changes 6,464.
+- Broad validation: `npm.cmd run check:fast` passed in 62.3s and full
+  `npm.cmd run check` passed in 121.5s, with public 80/259 and all 232 fixture
+  sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and comparison
+  PNGs are open together in responsive Aseprite 1.3.17.2 process 6832; its
+  live command line names all three exact paths.
+- Commands:
+  `npm.cmd run review:enemy-expansion-en-e08-animated-armor-hollow-sentry` and
+  `npm.cmd run check:enemy-expansion-en-e08-animated-armor-hollow-sentry`.
+- Required next action: inspect the exact frozen packet and either request one
+  narrow repair or explicitly approve digest `f6e7cbf...`. Do not stage,
+  commit, push, register Animated Armor, generate fixtures, add child/state
+  assets or effects, begin another role or EN-E08 family, release, or accept
+  drift before that visual decision. Standing publication permission applies
+  only after explicit approval of this exact digest.
+
+## Approved Preceding Checkpoint - Blackwake Dreadmare Published and Reconciled
+
+The approved predecessor is one private elite Kelpie Blackwake Dreadmare,
 implemented, deterministic, hash-frozen, technically validated, and visually
 approved on `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly
 on clean published Drownbridle Stalker reconciliation
@@ -90,11 +160,11 @@ unregistered, fixture-free, and non-public.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-blackwake-dreadmare` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-blackwake-dreadmare`.
-- Required next action: remote-verify this final clean reconciliation. The same
-  reply opens only the EN-E08 architecture decision from that checkpoint; do
-  not begin Animated Armor art until its actor-topology choice is explicit. Do
-  not register Kelpie, generate fixtures, add runtime copying or water effects,
-  release, or accept drift.
+- Historical next action: the final reconciliation was remote-verified at
+  `defc9b8cab1226610da6cf2b17951c8b5815499e`. The later explicit topology
+  choice opened only the private Hollow Sentry gate above. Kelpie registration,
+  fixtures, runtime copying, water effects, release, and accepted drift remain
+  closed.
 
 ## Approved Preceding Checkpoint - Drownbridle Stalker Published and Reconciled
 

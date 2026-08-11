@@ -107,7 +107,34 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved art publication checkpoint:
+- Current private art acceptance candidate:
+  `codex/en-e08-animated-armor-architecture`, based exactly on clean published
+  Blackwake reconciliation `defc9b8cab1226610da6cf2b17951c8b5815499e`,
+  contains one common Animated Armor Hollow Sentry frozen at digest
+  `f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`.
+  The designer selected `en-e08-baked-single-actor-v1` by replying `lets do
+  next` immediately after the recommended baked actor versus deterministic
+  child/state choice. Every frame owns the complete helmet, plate body,
+  gauntlets, bindings, greaves, and sabatons in one 24x24 pixel array and
+  reports zero child assets; schema, shared renderer, exporter, validator, and
+  frame-contract changes are forbidden. The Haunted Armor/Animated Armor
+  collision is one `animated-armor` family, with Hollow Sentry as its
+  haunted-default common role and constructed/specialist/elite identities
+  deferred. All 80 frames are connected, bounded, grounded, preserve split
+  sabatons and broad plate spans, and differ in pixels and alpha from Fallen
+  Knight Shieldbearer, Grave Oathkeeper Revenant, and Gloam Walker. The opaque
+  range is 219-306; 72/72 colored frames, 8/8 exact white flashes, 54/54 visor
+  views, aliases, mirrors, and baked-topology metadata pass. `check:fast`
+  passes in 62.3s and full `check` in 121.5s with public 80/259 and all 232
+  fixtures exact. The exact three frozen PNGs are open together in responsive
+  Aseprite 1.3.17.2 process 6832. Run
+  `npm.cmd run review:enemy-expansion-en-e08-animated-armor-hollow-sentry` and
+  `npm.cmd run check:enemy-expansion-en-e08-animated-armor-hollow-sentry`.
+  Status is `implemented-awaiting-review`: do not stage, commit, push,
+  register, generate fixtures, add child/state assets or effects, start another
+  role/family, release, or accept drift before explicit visual approval of the
+  exact digest above.
+- Approved preceding art publication checkpoint:
   `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
   Drownbridle Stalker reconciliation
   `f9928aed53cd842b937d396e29ec8d6a7aaa8120`, contains one private elite Kelpie
@@ -133,11 +160,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` plus initial handoff
   `d4cfd72229355ccb6024e676562303bc6d633f98` are published and remote-verified.
   Status is `approved` and `published`; this reconciliation completes the
-  bounded tuple. The same reply opens only
-  the EN-E08 architecture decision after clean remote reconciliation; do not
-  begin Animated Armor art before its actor-topology choice is explicit, and do
-  not register, generate fixtures, add runtime copying or water effects,
-  release, or accept drift.
+  bounded tuple. Its later architecture decision is resolved only as the baked
+  Hollow Sentry gate above; Kelpie registration, fixtures, runtime copying,
+  water effects, release, and accepted drift remain closed.
 - Approved preceding art publication checkpoint:
   `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean published
   Miremane Courser reconciliation
