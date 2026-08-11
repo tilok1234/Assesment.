@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved-local art checkpoint:
+- Current approved art publication-reconciliation checkpoint:
   `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean published
   Miremane Courser reconciliation
   `f143de1fadf3b812f3968d930acf6451e926388d`, contains one private specialist
@@ -129,11 +129,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-drownbridle-stalker`.
   The designer replied `approved lets do next` on 2026-08-11; approval applies
   only to the frozen digest above. Exact implementation
-  `c34b3b9564df683900ff3846d692970faca53ff5` is committed locally. The bounded
-  approval record and publication reconciliation are current; the same reply
-  opens one private elite Kelpie only after this tuple is clean and
-  remote-verified. Registration, fixtures, runtime copying, effects, release,
-  and EN-E08 remain closed.
+  `c34b3b9564df683900ff3846d692970faca53ff5` and approval record
+  `b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and
+  remote-verified. The bounded initial handoff and final reconciliation are
+  current; the same reply opens one private elite Kelpie only after final
+  published reconciliation. Registration, fixtures, runtime copying, effects,
+  release, and EN-E08 remain closed.
 - Approved preceding art publication checkpoint:
   `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
   Manyfold Usurper reconciliation

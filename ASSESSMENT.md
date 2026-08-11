@@ -468,7 +468,7 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current approved-local art checkpoint is specialist Kelpie Drownbridle Stalker
+  The current approved publication-reconciliation checkpoint is specialist Kelpie Drownbridle Stalker
   on `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean
   published Miremane Courser reconciliation
   `f143de1fadf3b812f3968d930acf6451e926388d`. Its forward-heavy high-crested
@@ -487,10 +487,12 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   + Form, and comparison PNGs are open together in Aseprite at IDs 19, 23, and
   27. The designer replied `approved lets do next`; approval applies only to
   the frozen digest above. Exact implementation
-  `c34b3b9564df683900ff3846d692970faca53ff5` is committed locally. The approval
-  record and publication reconciliation are current; the same reply opens one
-  private elite Kelpie only after clean remote verification. Registration,
-  fixtures, runtime copying, effects, release, and EN-E08 remain closed.
+  `c34b3b9564df683900ff3846d692970faca53ff5` and approval record
+  `b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and
+  remote-verified. The initial handoff and final reconciliation are current;
+  the same reply opens one private elite Kelpie only after final published
+  reconciliation. Registration, fixtures, runtime copying, effects, release,
+  and EN-E08 remain closed.
   The approved preceding publication checkpoint is common Kelpie Miremane Courser on
   `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
   Manyfold Usurper reconciliation

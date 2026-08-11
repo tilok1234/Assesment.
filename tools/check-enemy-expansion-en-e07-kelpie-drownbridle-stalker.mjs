@@ -158,8 +158,8 @@ check(
     && EN_E07_DROWNBRIDLE_STALKER_GATE.publishedImplementation === null
     && EN_E07_DROWNBRIDLE_STALKER_GATE.publishedApprovalRecord === null
     && EN_E07_DROWNBRIDLE_STALKER_GATE.initialPublishedHandoff === null
-    && EN_E07_DROWNBRIDLE_STALKER_GATE.publicationState === 'approved-local',
-  'Drownbridle Stalker approved-local publication state drifted',
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Drownbridle Stalker bounded publication state drifted',
 );
 check(
   EN_E07_DROWNBRIDLE_STALKER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
@@ -202,11 +202,12 @@ check(
 );
 check(
   EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('visually approved')
-    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('implementation is committed locally')
-    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('same reply includes lets do next')
-    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('only one private elite Kelpie candidate')
-    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('clean and remote verified'),
-  'approved-local publication or elite-role gate drifted',
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('implementation c34b3b9564df683900ff3846d692970faca53ff5')
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('approval record b5a9011b37dc9a3e0db7c371fa168e589665a127')
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('remote verified')
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('exactly one private elite Kelpie candidate')
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('only after final published reconciliation'),
+  'bounded publication or elite-role gate drifted',
 );
 check(
   JSON.stringify(EN_E07_KELPIE_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])

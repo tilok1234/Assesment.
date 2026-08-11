@@ -1308,11 +1308,12 @@ views pass. The focused gate passes in 0.7s, `check:fast` in 53.2s, and full
 with public 80/259 and all 232 fixtures exact. The exact
 three PNGs are open in Aseprite at IDs 19, 23, and 27.
 This boundary is hash-frozen and visually approved at implementation
-`c34b3b9564df683900ff3846d692970faca53ff5`, which is committed locally. The
-approval record and publication reconciliation are current. The same
-`approved lets do next` reply opens one private elite Kelpie only after clean
-remote verification; registration, fixtures, runtime copying, effects,
-release, and EN-E08 remain separate.
+`c34b3b9564df683900ff3846d692970faca53ff5`; that implementation and approval
+record `b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and
+remote-verified. The initial handoff and final reconciliation are current. The
+same `approved lets do next` reply opens one private elite Kelpie only after
+final published reconciliation; registration, fixtures, runtime copying,
+effects, release, and EN-E08 remain separate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

@@ -23,19 +23,20 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Drownbridle Stalker Approved Locally
+## Immediate Continuation Checkpoint - Drownbridle Publication Reconciliation
 
 Start here in a new task. One private specialist Kelpie Drownbridle Stalker is
 implemented, deterministic, hash-frozen, technically validated, and visually
 approved on `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on
 the clean published Miremane Courser reconciliation
 `f143de1fadf3b812f3968d930acf6451e926388d`. Exact implementation
-`c34b3b9564df683900ff3846d692970faca53ff5` is committed locally. The bounded
-approval record and branch publication are the current steps; it remains
-unregistered, fixture-free, and non-public.
+`c34b3b9564df683900ff3846d692970faca53ff5` and approval record
+`b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and
+remote-verified. The bounded initial handoff and final reconciliation are the
+current steps; it remains unregistered, fixture-free, and non-public.
 
-- Gate ID: `en-e07-kelpie-drownbridle-stalker-full-v1`; status:
-  `approved-local`.
+- Gate ID: `en-e07-kelpie-drownbridle-stalker-full-v1`; status: `approved` with
+  implementation and approval record published.
 - Authorization: after Miremane Courser was approved, published, and
   reconciled, the designer replied `lets do next` on 2026-08-11. The frozen
   Kelpie role order opens only this one private specialist candidate; the elite
@@ -81,18 +82,19 @@ unregistered, fixture-free, and non-public.
 - Approval: after the exact packet was presented, the designer replied
   `approved lets do next` on 2026-08-11. Approval applies only to digest
   `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`.
-  Exact implementation `c34b3b9564df683900ff3846d692970faca53ff5` is
-  committed locally under the standing bounded publication permission. The
-  same reply opens only one private elite Kelpie after this tuple is clean and
-  remote-verified.
+  Exact implementation `c34b3b9564df683900ff3846d692970faca53ff5` and approval
+  record `b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and
+  remote-verified under the standing bounded publication permission. The same
+  reply opens only one private elite Kelpie after final published
+  reconciliation.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-drownbridle-stalker` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-drownbridle-stalker`.
-- Required next action: commit the bounded approval record, push the
-  implementation and approval commits, verify the remote tuple, and reconcile
-  the final handoff. Only after clean remote reconciliation may the same reply
-  open one private elite Kelpie candidate. Do not register Kelpie, generate
-  fixtures, add runtime copying or effects, release, or advance EN-E08.
+- Required next action: commit and push the bounded initial handoff, then record
+  and push the final publication reconciliation. Only after that clean remote
+  checkpoint may the same reply open one private elite Kelpie candidate. Do not
+  register Kelpie, generate fixtures, add runtime copying or effects, release,
+  or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Miremane Courser Published and Reconciled
 

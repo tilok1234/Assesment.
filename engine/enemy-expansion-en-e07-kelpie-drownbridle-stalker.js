@@ -109,7 +109,7 @@ export const EN_E07_DROWNBRIDLE_STALKER_GATE = deepFreeze({
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'approved-local',
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_MIREMANE_COURSER_GATE.id,
     artifactSha256: EN_E07_MIREMANE_COURSER_GATE.artifactSha256,
@@ -186,7 +186,7 @@ export const EN_E07_DROWNBRIDLE_STALKER_GATE = deepFreeze({
     'Kelpie elite',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Drownbridle Stalker digest is visually approved and its implementation is committed locally. Complete the bounded approval-record publication and current-state reconciliation first. The same reply includes lets do next and authorizes only one private elite Kelpie candidate after this Drownbridle tuple is clean and remote verified. Kelpie registration, fixtures, runtime copying, water effects, release, and EN-E08 remain closed.',
+  nextGate: 'The exact Drownbridle Stalker digest is visually approved; implementation c34b3b9564df683900ff3846d692970faca53ff5 and approval record b5a9011b37dc9a3e0db7c371fa168e589665a127 are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. The same approved lets do next reply opens exactly one private elite Kelpie candidate only after final published reconciliation. Kelpie registration, fixtures, runtime copying, water effects, release, and EN-E08 remain closed.',
 });
 
 export const EN_E07_DROWNBRIDLE_STALKER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
