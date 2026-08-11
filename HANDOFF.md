@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Miremane Courser Approved Locally
+## Immediate Continuation Checkpoint - Miremane Courser Approval Published
 
 Start here in a new task. One private common Kelpie Miremane Courser is
 implemented, deterministic, hash-frozen, technically validated, and visually
@@ -31,11 +31,13 @@ approved on
 `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
 Manyfold Usurper reconciliation
 `6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Exact implementation
-`74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally. The bounded
-approval record and branch publication are the current steps; it remains
-unregistered, fixture-free, and non-public.
+`74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
+`8fb53e961247da875814593feb132182648f9e48` are published and remote-verified.
+The bounded initial handoff and final reconciliation are the current steps; it
+remains unregistered, fixture-free, and non-public.
 
-- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `approved-local`.
+- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `approved`; the
+  implementation and approval record are published.
 - Authorization: after Manyfold Usurper was approved, published, and
   reconciled, the designer replied `approved lets do next` on 2026-08-11. The
   frozen Kelpie role order opens only this one private common candidate.
@@ -87,14 +89,15 @@ unregistered, fixture-free, and non-public.
 - Approval: after the exact packet was presented, the designer replied
   `approved` on 2026-08-11. Approval applies only to digest
   `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`.
-  Exact implementation `74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally under the
-  standing bounded publication permission.
+  Exact implementation `74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
+  `8fb53e961247da875814593feb132182648f9e48` are published and remote-verified
+  under the standing bounded publication permission.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-miremane-courser` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-miremane-courser`.
-- Required next action: commit the bounded approval record, push the
-  implementation and approval commits, verify the remote tuple, and reconcile
-  the final handoff. No next Kelpie role is authorized. Do not register Kelpie,
+- Required next action: commit and push the bounded initial handoff, verify it,
+  then record and push the final publication reconciliation. No next Kelpie
+  role is authorized. Do not register Kelpie,
   generate fixtures, implement runtime copying, add effects, start another
   Kelpie role, release, or advance EN-E08 without a separate `lets do next`.
 

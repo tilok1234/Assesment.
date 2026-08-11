@@ -288,7 +288,7 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current approved-local EN-E07 art checkpoint (2026-08-11): common Kelpie Miremane
+Current approved EN-E07 publication checkpoint (2026-08-11): common Kelpie Miremane
 Courser on `codex/en-e07-kelpie-miremane-courser` is based exactly on clean
 published Manyfold Usurper reconciliation
 `6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Its 166-221-pixel low lean
@@ -308,8 +308,9 @@ PNGs are open together in Aseprite. Front/rear face, chest/rump, tail color,
 hoof separation, and two detached walk legs were corrected before freeze. The
 designer replied `approved` on 2026-08-11; approval applies only to the frozen
 digest above. Exact implementation
-`74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally while the
-bounded approval record and branch publication are in progress. The candidate
+`74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
+`8fb53e961247da875814593feb132182648f9e48` are published and remote-verified;
+the bounded initial handoff and final reconciliation remain. The candidate
 remains unregistered and fixture-free. No next Kelpie role is authorized;
 runtime copying, effects, release, and EN-E08 remain closed until another
 `lets do next`.

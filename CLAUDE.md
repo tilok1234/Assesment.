@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved-local art publication checkpoint:
+- Current approved art publication checkpoint (initial handoff pending):
   `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
   Manyfold Usurper reconciliation
   `6ddef83e03e983672bee39b6b484dd1c1bfcba01`, contains one private common
@@ -132,8 +132,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-miremane-courser`.
   The designer replied `approved` on 2026-08-11; approval applies only to the
   frozen digest above. Exact implementation
-  `74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally, while the
-  bounded approval record and branch publication are in progress. The candidate
+  `74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
+  `8fb53e961247da875814593feb132182648f9e48` are published and remote-verified;
+  the bounded initial handoff and final reconciliation remain. The candidate
   remains unregistered, fixture-free, and non-public. No next Kelpie role is
   authorized; runtime copying, effects, release, and EN-E08 remain separate
   closed gates until another `lets do next`.

@@ -13,7 +13,7 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current approved-local publication checkpoint (2026-08-11): private common Kelpie Miremane
+- Current approved publication checkpoint (2026-08-11): private common Kelpie Miremane
   Courser on `codex/en-e07-kelpie-miremane-courser` is frozen at digest
   `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`
   from clean published Manyfold Usurper reconciliation
@@ -34,8 +34,9 @@
   chest/rump, tail color, moving hoof separation, and two detached walk legs
   were corrected before freeze. The designer replied `approved` on 2026-08-11;
   approval applies only to the frozen digest above. Exact implementation
-  `74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally while the
-  bounded approval record and branch publication are in progress. The candidate
+  `74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
+  `8fb53e961247da875814593feb132182648f9e48` are published and remote-verified;
+  the bounded initial handoff and final reconciliation remain. The candidate
   remains unregistered, fixture-free, and non-public. No next Kelpie role is
   authorized; runtime copying, effects, release, and EN-E08 remain closed until
   another `lets do next`.
@@ -3685,7 +3686,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser approved locally with publication reconciliation in progress`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser approved with bounded publication reconciliation in progress`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4422,9 +4423,9 @@ assembler.
   register Changeling or Kelpie, generate fixtures, implement runtime copying,
   add effects, start later Kelpie roles, release, or advance EN-E08.
 
-#### Kelpie Miremane Courser complete suite approved locally
+#### Kelpie Miremane Courser complete suite approved; initial handoff pending
 
-- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `approved-local`
+- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `approved`
   on `codex/en-e07-kelpie-miremane-courser`, based exactly on clean,
   remote-verified Manyfold Usurper reconciliation
   `6ddef83e03e983672bee39b6b484dd1c1bfcba01`.
@@ -4481,17 +4482,18 @@ assembler.
 - Approval: after the exact packet was presented, the designer replied
   `approved` on 2026-08-11. Approval applies only to digest
   `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`.
-  Exact implementation `74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally under the
-  standing bounded publication permission. The approval record and branch
-  publication are the current steps; no later Kelpie role is authorized.
+  Exact implementation `74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
+  `8fb53e961247da875814593feb132182648f9e48` are published and remote-verified
+  under the standing bounded publication permission. The bounded initial
+  handoff and final reconciliation remain; no later Kelpie role is authorized.
 - Scope firewall: no registration, public facade or catalog change, fixtures,
   manifest, shared renderer, exporter, validator, frame-contract change,
   runtime copying, alternate body, rider, saddle, horn, detached water, glow,
   particles, projectile, effects, later Kelpie role, release, EN-E08, or
   accepted drift.
-- Required next action: commit the bounded approval record, push the
-  implementation and approval commits, verify the remote tuple, and reconcile
-  the final handoff. Do not register Kelpie, generate fixtures, add runtime
+- Required next action: commit and push the bounded initial handoff, verify it,
+  then record and push the final publication reconciliation. Do not register
+  Kelpie, generate fixtures, add runtime
   copying or effects, begin another Kelpie role, release, or advance EN-E08
   without a separate `lets do next`.
 

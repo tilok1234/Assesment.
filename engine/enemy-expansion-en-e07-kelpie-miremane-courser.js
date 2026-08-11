@@ -109,7 +109,7 @@ export const EN_E07_MIREMANE_COURSER_GATE = deepFreeze({
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'approved-local',
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_MANYFOLD_USURPER_GATE.id,
     artifactSha256: EN_E07_MANYFOLD_USURPER_GATE.artifactSha256,
@@ -186,7 +186,7 @@ export const EN_E07_MIREMANE_COURSER_GATE = deepFreeze({
     'Kelpie specialist or elite',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Miremane Courser digest is visually approved and its implementation is committed locally. Complete the bounded approval-record publication and current-state reconciliation first. No next Kelpie role is authorized; Kelpie registration, fixtures, runtime copying, water effects, later Kelpie roles, release, and EN-E08 remain closed until a separate lets do next.',
+  nextGate: 'The exact Miremane Courser digest is visually approved; implementation 74463a2b1944b7d3a6d412923c205a0c9cc648f1 and approval record 8fb53e961247da875814593feb132182648f9e48 are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. No next Kelpie role is authorized; Kelpie registration, fixtures, runtime copying, water effects, later Kelpie roles, release, and EN-E08 remain closed until a separate lets do next.',
 });
 
 export const EN_E07_MIREMANE_COURSER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

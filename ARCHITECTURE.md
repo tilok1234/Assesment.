@@ -1272,8 +1272,9 @@ three PNGs are open together in Aseprite, `check:fast` passes in 66.0s, and full
 implementation commit and 102.4s against approval-local metadata, with public
 80/259 and all 232 fixtures unchanged. The
 designer approved the exact digest on 2026-08-11; implementation
-`74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally while the
-bounded approval record and publication reconciliation are in progress. The
+`74463a2b1944b7d3a6d412923c205a0c9cc648f1` and approval record
+`8fb53e961247da875814593feb132182648f9e48` are published and remote-verified.
+The bounded initial handoff and final reconciliation remain. The
 candidate remains unregistered, fixture-free, and non-public. No next Kelpie
 role is authorized; later roles, release, and EN-E08 remain separate until
 another `lets do next`.

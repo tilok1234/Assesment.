@@ -156,8 +156,8 @@ check(
     && EN_E07_MIREMANE_COURSER_GATE.publishedImplementation === null
     && EN_E07_MIREMANE_COURSER_GATE.publishedApprovalRecord === null
     && EN_E07_MIREMANE_COURSER_GATE.initialPublishedHandoff === null
-    && EN_E07_MIREMANE_COURSER_GATE.publicationState === 'approved-local',
-  'Miremane Courser approved-local publication state drifted',
+    && EN_E07_MIREMANE_COURSER_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Miremane Courser bounded publication state drifted',
 );
 check(
   EN_E07_MIREMANE_COURSER_GATE.approvalEvidence.includes('designer replied: approved')
@@ -199,10 +199,13 @@ check(
 );
 check(
   EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('visually approved')
+    && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('implementation 74463a2b1944b7d3a6d412923c205a0c9cc648f1')
+    && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('approval record 8fb53e961247da875814593feb132182648f9e48')
+    && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('remote verified')
     && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('No next Kelpie role is authorized')
     && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('remain closed')
     && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('separate lets do next'),
-  'approved-local publication or next-role stop gate drifted',
+  'bounded publication or next-role stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_KELPIE_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
