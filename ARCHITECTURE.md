@@ -1367,9 +1367,10 @@ before approval metadata, then 62.0s and 119.1s approval-local, with public
 ddo next`; implementation `4bf12351ebe643520f052c08bacd385141231a3f`
 records the accepted pixels without changing the baked-single-actor boundary.
 Approval record `3ba7a1c49aae4fd759df2912c7e16a8637039a83` and the implementation
-are remote verified; only the initial published handoff and final
-reconciliation remain open. It remains unregistered, fixture-free,
-effect-free, and non-public.
+are remote verified. Initial published handoff
+`15b2c26232d3098705b7704b6aee0d52ba2a18b9` is also remote verified; this
+reconciliation completes the bounded publication tuple. It remains
+unregistered, fixture-free, effect-free, and non-public.
 
 `engine/enemy-expansion-en-e08-possessed-mask-mournseal-cantor.js` extends the
 private Possessed Mask family without changing its topology. From clean

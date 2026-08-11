@@ -159,8 +159,8 @@ check(
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvedImplementation === '4bf12351ebe643520f052c08bacd385141231a3f'
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.publishedImplementation === '4bf12351ebe643520f052c08bacd385141231a3f'
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.publishedApprovalRecord === '3ba7a1c49aae4fd759df2912c7e16a8637039a83'
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.initialPublishedHandoff === null
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.initialPublishedHandoff === '15b2c26232d3098705b7704b6aee0d52ba2a18b9'
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.publicationState === 'published'
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Threnecrown Hierophant approval state or bounded publication authorization drifted',
 );
@@ -199,6 +199,7 @@ check(
 check(
   EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('remote verified')
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('initial published handoff')
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('completes the bounded publication tuple')
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('Living Weapon actor-topology architecture decision')
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('does not select a topology or authorize Living Weapon art'),
   'Threnecrown Hierophant stop gate drifted',

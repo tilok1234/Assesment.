@@ -105,8 +105,8 @@ export const EN_E08_THRENECROWN_HIEROPHANT_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: '4bf12351ebe643520f052c08bacd385141231a3f',
   publishedApprovalRecord: '3ba7a1c49aae4fd759df2912c7e16a8637039a83',
-  initialPublishedHandoff: null,
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '15b2c26232d3098705b7704b6aee0d52ba2a18b9',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E08_MOURNSEAL_CANTOR_GATE.id,
     artifactSha256: EN_E08_MOURNSEAL_CANTOR_GATE.artifactSha256,
@@ -181,7 +181,7 @@ export const EN_E08_THRENECROWN_HIEROPHANT_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Threnecrown Hierophant implementation 4bf12351ebe643520f052c08bacd385141231a3f and approval record 3ba7a1c49aae4fd759df2912c7e16a8637039a83 are remote verified. Only the initial published handoff and final reconciliation remain open under standing publication permission. The same approved lets ddo next reply opens only the Living Weapon actor-topology architecture decision after this tuple is clean and remote verified; it does not select a topology or authorize Living Weapon art. Registration, fixtures, child assets, effects, EN-E09, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Threnecrown Hierophant implementation 4bf12351ebe643520f052c08bacd385141231a3f, approval record 3ba7a1c49aae4fd759df2912c7e16a8637039a83, and initial published handoff 15b2c26232d3098705b7704b6aee0d52ba2a18b9 are remote verified; this reconciliation completes the bounded publication tuple. The same approved lets ddo next reply opens only the Living Weapon actor-topology architecture decision from this clean published reconciliation; it does not select a topology or authorize Living Weapon art. Registration, fixtures, child assets, effects, EN-E09, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E08_THRENECROWN_HIEROPHANT_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

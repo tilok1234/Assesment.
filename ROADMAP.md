@@ -301,8 +301,9 @@ The exact three PNGs were open together in Aseprite when the designer replied
 `approved lets ddo next`; implementation
 `4bf12351ebe643520f052c08bacd385141231a3f` records the accepted pixels. It is
 remote verified with approval record
-`3ba7a1c49aae4fd759df2912c7e16a8637039a83`; only the initial published
-handoff and final reconciliation remain open. The same reply opens only the
+`3ba7a1c49aae4fd759df2912c7e16a8637039a83`. Initial published handoff
+`15b2c26232d3098705b7704b6aee0d52ba2a18b9` is also remote verified; this
+reconciliation completes the bounded publication tuple. The same reply opens only the
 Living Weapon actor-topology architecture decision after clean remote
 reconciliation and does not authorize its art. Registration, fixtures,
 effects, child assets, EN-E09, release, broader publication, accepted drift,
