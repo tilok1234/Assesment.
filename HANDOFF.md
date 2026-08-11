@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Whisperveil Visage Approved Locally
+## Immediate Continuation Checkpoint - Whisperveil Visage Published Awaiting Final Handoff
 
 Start here. The designer abandoned Headless Rider, returned to clean published
 Crownvault Castellan reconciliation
@@ -33,8 +33,9 @@ Visage is implemented on `codex/en-e08-possessed-mask-whisperveil-visage` as one
 deterministic baked 24x24 actor with zero child assets across all 80 frames.
 The exact packet was presented and the designer replied `approved`.
 Implementation `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the
-accepted pixels; the approval-record commit and publication reconciliation are
-the only open actions under standing publication permission.
+accepted pixels. Approval record
+`c27435976f03a4f9263f6f4bbc4b46dc275b19a7` and the implementation are remote
+verified; only the initial published handoff and final reconciliation remain.
 
 - Identity: broad aged-bone ceremonial face with two readable cold eyes, deep
   sockets, nose ridge, carved mouth, cheek cracks, pointed chin, connected
@@ -64,8 +65,9 @@ the only open actions under standing publication permission.
   review:enemy-expansion-en-e08-possessed-mask-whisperveil-visage` and
   `npm.cmd run check:enemy-expansion-en-e08-possessed-mask-whisperveil-visage`.
 - Approval and publication gate: approval applies only to the frozen digest and
-  five hashes above. Standing permission opens the bounded approval-record
-  commit, branch push, and handoff reconciliation. Do not register, generate
+  five hashes above. The implementation and approval record are published and
+  remote verified. Standing permission opens only the initial handoff and final
+  reconciliation. Do not register, generate
   fixtures, add effects or child assets, begin later roles, start Living Weapon
   or EN-E09, release, accept drift, or open a PR.
 

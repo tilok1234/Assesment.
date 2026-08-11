@@ -1364,6 +1364,8 @@ passes the focused gate, `check:fast` in 59.2s, and full `check` in 106.4s with
 public 80/259 and all 232 fixtures exact. The designer replied `approved`;
 implementation `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the
 accepted pixels without changing the baked-single-actor boundary.
+Approval record `c27435976f03a4f9263f6f4bbc4b46dc275b19a7` and the
+implementation are remote verified; final handoff reconciliation remains.
 
 `engine/enemy-expansion-en-e08-animated-armor-crownvault-castellan.js` completes
 the private three-role family without changing the selected topology. From

@@ -4733,8 +4733,9 @@ it with incidental per-frame offsets.
   in 106.4s with public 80/259 and all 232 fixtures exact.
 - Approval: the exact packet was presented and the designer replied `approved`.
   Implementation `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the
-  accepted pixels; standing permission opens its approval record, branch push,
-  and handoff reconciliation only. Registration, fixtures, child assets, effects,
+  accepted pixels. Approval record `c27435976f03a4f9263f6f4bbc4b46dc275b19a7`
+  and the implementation are remote verified; only initial handoff and final
+  reconciliation remain. Registration, fixtures, child assets, effects,
   later Possessed Mask roles, Living Weapon, EN-E09, release, accepted drift,
   publication, and a PR remain closed.
 

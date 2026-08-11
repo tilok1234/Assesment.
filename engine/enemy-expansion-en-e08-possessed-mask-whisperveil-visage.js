@@ -100,10 +100,10 @@ export const EN_E08_WHISPERVEIL_VISAGE_GATE = deepFreeze({
   approvedImplementation: '78f5446c7821bd751c3562d0a18056a64c0e00c6',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
+  publishedImplementation: '78f5446c7821bd751c3562d0a18056a64c0e00c6',
+  publishedApprovalRecord: 'c27435976f03a4f9263f6f4bbc4b46dc275b19a7',
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E08_CROWNVAULT_CASTELLAN_GATE.id,
     artifactSha256: EN_E08_CROWNVAULT_CASTELLAN_GATE.artifactSha256,
@@ -178,7 +178,7 @@ export const EN_E08_WHISPERVEIL_VISAGE_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Whisperveil Visage digest is visually approved and implementation 78f5446c7821bd751c3562d0a18056a64c0e00c6 records the accepted pixels. Standing publication permission opens only the bounded approval-record commit, branch push, and handoff reconciliation. Possessed Mask registration, fixtures, child assets, effects, later roles or families, Living Weapon, EN-E09, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next from a clean published reconciliation.',
+  nextGate: 'The exact Whisperveil Visage implementation 78f5446c7821bd751c3562d0a18056a64c0e00c6 and approval record c27435976f03a4f9263f6f4bbc4b46dc275b19a7 are remote verified. Only the initial published handoff and final reconciliation remain open under standing publication permission. Possessed Mask registration, fixtures, child assets, effects, later roles or families, Living Weapon, EN-E09, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next from the clean published reconciliation.',
 });
 
 export const EN_E08_WHISPERVEIL_VISAGE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

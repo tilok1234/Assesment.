@@ -117,8 +117,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   comparison gates; fast and full validation pass with public 80/259 and all
   232 fixtures exact. The designer replied `approved`; implementation
   `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the accepted pixels.
-  Standing permission opens only its approval record, push, and handoff
-  reconciliation. Registration, fixtures, effects, child assets, later
+  Approval record `c27435976f03a4f9263f6f4bbc4b46dc275b19a7` and the
+  implementation are remote verified. Only its initial handoff and final
+  reconciliation remain. Registration, fixtures, effects, child assets, later
   roles/families, release, accepted drift, and a PR remain closed.
 - Current approved published private art checkpoint:
   elite Animated Armor Crownvault

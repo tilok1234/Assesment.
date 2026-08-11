@@ -1485,8 +1485,9 @@ and `npm.cmd run check:enemy-expansion-en-e08-possessed-mask-whisperveil-visage`
 Focused, fast, and full checks pass with public 80/259 and all 232 fixtures
 unchanged. The designer replied `approved`; implementation
 `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the accepted pixels.
-It remains private, unregistered, fixture-free, and effect-free while its
-approval record and publication reconciliation are completed.
+Approval record `c27435976f03a4f9263f6f4bbc4b46dc275b19a7` and the
+implementation are remote verified. It remains private, unregistered,
+fixture-free, and effect-free while its final handoff is reconciled.
 
 Crownvault Castellan is the approved preceding private elite Animated Armor
 candidate on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly

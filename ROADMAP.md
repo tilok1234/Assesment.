@@ -298,6 +298,8 @@ frames pass the focused gate; fast validation passes in 59.2s and full
 validation in 106.4s with public 80/259 and all 232 fixtures exact. The
 designer replied `approved`; implementation
 `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the accepted pixels.
+Approval record `c27435976f03a4f9263f6f4bbc4b46dc275b19a7` and the
+implementation are remote verified; final handoff reconciliation remains.
 Registration, fixtures, effects, child assets, later
 roles/families, release, accepted drift, publication, and a PR remain closed.
 

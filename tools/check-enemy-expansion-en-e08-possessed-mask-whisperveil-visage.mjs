@@ -154,8 +154,10 @@ check(
     && EN_E08_WHISPERVEIL_VISAGE_GATE.approvalEvidence.includes('designer replied: approved')
     && EN_E08_WHISPERVEIL_VISAGE_GATE.approvalEvidence.includes('c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098')
     && EN_E08_WHISPERVEIL_VISAGE_GATE.approvedImplementation === '78f5446c7821bd751c3562d0a18056a64c0e00c6'
-    && EN_E08_WHISPERVEIL_VISAGE_GATE.publishedImplementation === null
-    && EN_E08_WHISPERVEIL_VISAGE_GATE.publicationState === 'not-published'
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.publishedImplementation === '78f5446c7821bd751c3562d0a18056a64c0e00c6'
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.publishedApprovalRecord === 'c27435976f03a4f9263f6f4bbc4b46dc275b19a7'
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.initialPublishedHandoff === null
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E08_WHISPERVEIL_VISAGE_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Whisperveil Visage approval state or bounded publication authorization drifted',
 );
@@ -191,8 +193,8 @@ check(
   'Whisperveil Visage exclusions drifted',
 );
 check(
-  EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('visually approved')
-    && EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('approval-record commit')
+  EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('remote verified')
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('initial published handoff')
     && EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('Living Weapon, EN-E09'),
   'Whisperveil Visage stop gate drifted',
 );
