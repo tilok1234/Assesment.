@@ -1493,8 +1493,10 @@ approval metadata and 62.0s/119.1s approval-local with public 80/259 and all
 232 fixture sheets exact. The
 designer replied `approved lets ddo next`; implementation
 `4bf12351ebe643520f052c08bacd385141231a3f` records the exact accepted pixels.
-It is approved and awaiting bounded publication. The same reply opens only the
-Living Weapon actor-topology architecture decision after clean remote
+Approval record `3ba7a1c49aae4fd759df2912c7e16a8637039a83` and the implementation
+are remote verified; only the initial published handoff and final
+reconciliation remain open. The same reply opens only the Living Weapon
+actor-topology architecture decision after clean remote
 reconciliation; it does not authorize Living Weapon art. Registration,
 fixtures, child assets, effects, EN-E09, release, accepted drift, and a PR
 remain closed.

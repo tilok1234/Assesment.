@@ -480,8 +480,10 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   preserving public 80/259 and all 232 fixtures. The designer replied `approved
   lets ddo next`; implementation
   `4bf12351ebe643520f052c08bacd385141231a3f` records the accepted pixels. It is
-  approved and awaiting bounded publication, unregistered, fixture-free,
-  effect-free, and non-public.
+  remote verified with approval record
+  `3ba7a1c49aae4fd759df2912c7e16a8637039a83`; only the initial published
+  handoff and final reconciliation remain open. It stays unregistered,
+  fixture-free, effect-free, and non-public.
   The approved preceding private checkpoint is specialist Possessed Mask Mournseal Cantor
   on `codex/en-e08-possessed-mask-mournseal-cantor`, based on clean published
   Whisperveil reconciliation `2ab49dc879a852d8a3c1a5f14de93345b32d490a`.

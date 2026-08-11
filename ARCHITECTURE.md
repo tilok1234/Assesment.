@@ -1366,8 +1366,10 @@ before approval metadata, then 62.0s and 119.1s approval-local, with public
 80/259 and all 232 fixtures exact. The designer replied `approved lets
 ddo next`; implementation `4bf12351ebe643520f052c08bacd385141231a3f`
 records the accepted pixels without changing the baked-single-actor boundary.
-It is approved and awaiting bounded publication, and remains unregistered,
-fixture-free, effect-free, and non-public.
+Approval record `3ba7a1c49aae4fd759df2912c7e16a8637039a83` and the implementation
+are remote verified; only the initial published handoff and final
+reconciliation remain open. It remains unregistered, fixture-free,
+effect-free, and non-public.
 
 `engine/enemy-expansion-en-e08-possessed-mask-mournseal-cantor.js` extends the
 private Possessed Mask family without changing its topology. From clean

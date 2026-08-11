@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Threnecrown Hierophant Approved Awaiting Publication
+## Immediate Continuation Checkpoint - Threnecrown Hierophant Published Awaiting Final Handoff
 
 Start here. From clean published Mournseal Cantor reconciliation
 `4f7a1146f1b90c8e70b819461d29a4be72cb379a`, the designer replied `approved
@@ -33,8 +33,10 @@ Threnecrown Hierophant is implemented locally on
 24x24 actor with zero child assets across all 80 frames. The designer replied
 `approved lets ddo next`; implementation
 `4bf12351ebe643520f052c08bacd385141231a3f` records the exact accepted pixels.
-It is visually approved but its approval record and branch are not yet
-published. It remains unregistered, fixture-free, effect-free, and non-public.
+Approval record `3ba7a1c49aae4fd759df2912c7e16a8637039a83` and the implementation
+are remote verified. Only the initial published handoff and final
+reconciliation remain open. It remains unregistered, fixture-free,
+effect-free, and non-public.
 
 - Identity: broad monumental aged-ivory funerary mask with a connected
   three-prong crown-brow, two rose-magenta eyes, deep cheek panels, long nose
@@ -73,8 +75,8 @@ published. It remains unregistered, fixture-free, effect-free, and non-public.
   review:enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant` and
   `npm.cmd run
   check:enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant`.
-- Publication gate: standing permission opens only the approval record, branch
-  push, and handoff reconciliation. The same reply opens only the Living Weapon
+- Publication gate: standing permission now opens only the initial published
+  handoff and final reconciliation. The same reply opens only the Living Weapon
   actor-topology architecture decision after a clean remote reconciliation; it
   does not select a topology or authorize Living Weapon art. Registration,
   fixtures, child assets, effects, EN-E09, release, accepted drift, and a PR

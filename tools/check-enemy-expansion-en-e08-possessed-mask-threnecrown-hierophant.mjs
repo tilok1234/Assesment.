@@ -157,10 +157,10 @@ check(
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvalEvidence.includes('designer replied: approved lets ddo next')
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvalEvidence.includes('51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f')
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvedImplementation === '4bf12351ebe643520f052c08bacd385141231a3f'
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.publishedImplementation === null
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.publishedApprovalRecord === null
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.publishedImplementation === '4bf12351ebe643520f052c08bacd385141231a3f'
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.publishedApprovalRecord === '3ba7a1c49aae4fd759df2912c7e16a8637039a83'
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.initialPublishedHandoff === null
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.publicationState === 'approved-not-published'
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Threnecrown Hierophant approval state or bounded publication authorization drifted',
 );
@@ -197,8 +197,8 @@ check(
   'Threnecrown Hierophant exclusions drifted',
 );
 check(
-  EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('visually approved')
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('handoff reconciliation')
+  EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('remote verified')
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('initial published handoff')
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('Living Weapon actor-topology architecture decision')
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('does not select a topology or authorize Living Weapon art'),
   'Threnecrown Hierophant stop gate drifted',

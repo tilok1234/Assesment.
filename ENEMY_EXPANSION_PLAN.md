@@ -4706,10 +4706,10 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Possessed Mask Threnecrown Hierophant elite approved awaiting publication
+#### Possessed Mask Threnecrown Hierophant elite published awaiting final handoff
 
 - Gate ID: `en-e08-possessed-mask-threnecrown-hierophant-full-v1`; status
-  `approved-not-published` on
+  `published-awaiting-handoff-reconciliation` on
   `codex/en-e08-possessed-mask-threnecrown-hierophant`, based exactly on
   published Mournseal reconciliation
   `4f7a1146f1b90c8e70b819461d29a4be72cb379a`.
@@ -4738,8 +4738,9 @@ it with incidental per-frame offsets.
 - Approval: the exact packet was presented and the designer replied `approved
   lets ddo next`. Implementation
   `4bf12351ebe643520f052c08bacd385141231a3f` records the accepted pixels.
-  Standing permission opens only the approval record, branch push, and handoff
-  reconciliation. The same reply opens only the Living Weapon actor-topology
+  Approval record `3ba7a1c49aae4fd759df2912c7e16a8637039a83` and the implementation
+  are remote verified. Standing permission opens only the initial published
+  handoff and final reconciliation. The same reply opens only the Living Weapon actor-topology
   architecture decision after clean remote reconciliation and does not
   authorize its art. Registration, fixtures, child assets, effects, EN-E09,
   release, accepted drift, and a PR remain closed.
