@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Crownvault Castellan Handoff Reconciliation
+## Immediate Continuation Checkpoint - Crownvault Castellan Published
 
 Start here. From clean published Runeforge Custodian reconciliation
 `700f2cedb1d3104369931a97bfec31a3b49fff93`, the designer replied `lets do
@@ -35,9 +35,10 @@ Castellan is implemented on
 and is visually approved by the designer's reply `approved`. Implementation
 `46d09a4e16a11f9c622cb698ff30055bb9bcb877` records the exact accepted
 pixels. Approval record `9c21f92aed06a66092279e8d53db6cb9a289cbd9` and the
-implementation are remote verified. Only the initial published handoff and
-final reconciliation remain pending; it remains unregistered, fixture-free,
-effect-free, and non-public.
+implementation are remote verified. Initial published handoff
+`9aea250a9a509a27a233d27633e6f7cf9bb759a2` is also remote verified; this
+reconciliation completes the bounded publication tuple. It remains
+unregistered, fixture-free, effect-free, and non-public.
 
 - Identity: monumental royal fortress-suit with crenellated crownvault helm,
   one readable ivory T-shaped vault seal, tower pauldrons, broad gatehouse
@@ -74,8 +75,9 @@ effect-free, and non-public.
   `npm.cmd run check:enemy-expansion-en-e08-animated-armor-crownvault-castellan`.
 - Approval and next gate: the exact frozen packet was presented and the
   designer replied `approved`. The implementation and approval record are
-  remote verified; standing publication permission opens only the initial
-  handoff and final reconciliation. Do not
+  remote verified, as is initial handoff
+  `9aea250a9a509a27a233d27633e6f7cf9bb759a2`; this reconciliation completes
+  the bounded publication tuple. Do not
   register, generate fixtures, add effects, advance another EN-E08 family,
   release, accept drift, or open a PR.
 

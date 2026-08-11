@@ -468,7 +468,7 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current approved private checkpoint in handoff reconciliation
+  The current approved published private checkpoint
   is elite Animated Armor Crownvault
   Castellan on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly
   on clean published Runeforge Custodian reconciliation
@@ -482,8 +482,10 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   `approved`; implementation `46d09a4e16a11f9c622cb698ff30055bb9bcb877`
   records the accepted pixels. Approval record
   `9c21f92aed06a66092279e8d53db6cb9a289cbd9` and the implementation are
-  remote verified; only the initial published handoff and final reconciliation
-  are pending. Registration, fixtures, effects, later EN-E08
+  remote verified. Initial published handoff
+  `9aea250a9a509a27a233d27633e6f7cf9bb759a2` is also remote verified; this
+  reconciliation completes the bounded publication tuple. Registration,
+  fixtures, effects, later EN-E08
   families, release, accepted drift, and a PR remain closed.
   The approved preceding private checkpoint is specialist Animated Armor
   Runeforge Custodian on `codex/en-e08-animated-armor-runeforge-custodian`,

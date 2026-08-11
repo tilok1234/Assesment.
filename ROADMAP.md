@@ -288,7 +288,7 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current approved EN-E08 checkpoint in handoff reconciliation
+Current approved published EN-E08 checkpoint
 (2026-08-11): elite Animated Armor
 Crownvault Castellan on `codex/en-e08-animated-armor-crownvault-castellan` is
 frozen at digest
@@ -300,8 +300,9 @@ fast validation passes in 56.4s and full validation in 105.6s with public
 80/259 and all 232 fixtures exact. The designer replied `approved`;
 implementation `46d09a4e16a11f9c622cb698ff30055bb9bcb877` records the accepted
 pixels. Approval record `9c21f92aed06a66092279e8d53db6cb9a289cbd9`
-and the implementation are remote verified; only the initial published handoff
-and final reconciliation are pending.
+and the implementation are remote verified. Initial published handoff
+`9aea250a9a509a27a233d27633e6f7cf9bb759a2` is also remote verified; this
+reconciliation completes the bounded publication tuple.
 Registration, fixtures, effects, later EN-E08 families, release, accepted
 drift, and a PR remain separate gates.
 

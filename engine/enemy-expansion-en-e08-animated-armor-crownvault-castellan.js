@@ -121,8 +121,8 @@ export const EN_E08_CROWNVAULT_CASTELLAN_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: '46d09a4e16a11f9c622cb698ff30055bb9bcb877',
   publishedApprovalRecord: '9c21f92aed06a66092279e8d53db6cb9a289cbd9',
-  initialPublishedHandoff: null,
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '9aea250a9a509a27a233d27633e6f7cf9bb759a2',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E08_RUNEFORGE_CUSTODIAN_GATE.id,
     artifactSha256: EN_E08_RUNEFORGE_CUSTODIAN_GATE.artifactSha256,
@@ -209,7 +209,7 @@ export const EN_E08_CROWNVAULT_CASTELLAN_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Crownvault Castellan implementation 46d09a4e16a11f9c622cb698ff30055bb9bcb877 and approval record 9c21f92aed06a66092279e8d53db6cb9a289cbd9 are remote verified. Only the initial published handoff and final reconciliation remain open under standing publication permission. Animated Armor registration, fixtures, child/state assets, effects, later EN-E08 families, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next from the clean published reconciliation.',
+  nextGate: 'The exact Crownvault Castellan implementation 46d09a4e16a11f9c622cb698ff30055bb9bcb877, approval record 9c21f92aed06a66092279e8d53db6cb9a289cbd9, and initial handoff 9aea250a9a509a27a233d27633e6f7cf9bb759a2 are remote verified. This reconciliation completes the bounded publication tuple. Animated Armor registration, fixtures, child/state assets, effects, later EN-E08 families, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next from this clean published reconciliation.',
 });
 
 export const EN_E08_CROWNVAULT_CASTELLAN_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
