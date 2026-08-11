@@ -140,13 +140,13 @@ check(
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.approvalEvidence.includes('process 32136')
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.approvedImplementation === '46d09a4e16a11f9c622cb698ff30055bb9bcb877'
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.publicationAuthorizedOn === '2026-08-11'
-    && EN_E08_CROWNVAULT_CASTELLAN_GATE.publishedImplementation === null
-    && EN_E08_CROWNVAULT_CASTELLAN_GATE.publishedApprovalRecord === null
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.publishedImplementation === '46d09a4e16a11f9c622cb698ff30055bb9bcb877'
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.publishedApprovalRecord === '9c21f92aed06a66092279e8d53db6cb9a289cbd9'
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.initialPublishedHandoff === null
-    && EN_E08_CROWNVAULT_CASTELLAN_GATE.publicationState === 'not-published'
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.publicationAuthorizationEvidence.includes('pull request'),
-  'Crownvault Castellan approval or unpublished gate drifted',
+  'Crownvault Castellan approval or initial publication gate drifted',
 );
 check(
   EN_E08_CROWNVAULT_CASTELLAN_GATE.precedingApproval.gateId === EN_E08_RUNEFORGE_CUSTODIAN_GATE.id
@@ -189,7 +189,8 @@ check(
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.animationContract.includes('body-owned fortress press')
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.nextGate.includes('implementation 46d09a4e16a11f9c622cb698ff30055bb9bcb877')
-    && EN_E08_CROWNVAULT_CASTELLAN_GATE.nextGate.includes('bounded approval-record commit')
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.nextGate.includes('approval record 9c21f92aed06a66092279e8d53db6cb9a289cbd9')
+    && EN_E08_CROWNVAULT_CASTELLAN_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E08_CROWNVAULT_CASTELLAN_GATE.nextGate.includes('another art gate requires a separate designer lets do next'),
   'full-suite, motion, or stop-gate contract drifted',
 );

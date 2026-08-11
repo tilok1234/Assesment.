@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private art checkpoint awaiting publication reconciliation:
+- Current approved private art checkpoint in handoff reconciliation:
   elite Animated Armor Crownvault
   Castellan on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly
   on clean published Runeforge Custodian reconciliation
@@ -125,8 +125,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   80/259 and all 232 fixtures exact.
   The exact three frozen PNGs are open together in responsive Aseprite 1.3.17.2
   process 32136.
-  Standing publication permission opens only the approval-record commit,
-  branch push, and handoff reconciliation. Do not register, generate fixtures,
+  Approval record `9c21f92aed06a66092279e8d53db6cb9a289cbd9` and the
+  implementation are remote verified. Standing publication permission opens
+  only the initial published handoff and final reconciliation. Do not register, generate fixtures,
   add effects, advance another EN-E08 family, release, accept drift, or open a
   PR.
 - Approved preceding private art checkpoint: specialist Animated Armor Runeforge

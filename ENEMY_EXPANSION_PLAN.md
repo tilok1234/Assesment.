@@ -4706,7 +4706,7 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Animated Armor Crownvault Castellan elite approved, publication pending
+#### Animated Armor Crownvault Castellan elite handoff reconciliation
 
 - Gate ID: `en-e08-animated-armor-crownvault-castellan-full-v1`; status:
   `approved` on
@@ -4755,8 +4755,10 @@ it with incidental per-frame offsets.
   GIFs were presented with the three PNG paths open in responsive Aseprite
   1.3.17.2 process 32136. The designer replied `approved`; implementation
   `46d09a4e16a11f9c622cb698ff30055bb9bcb877` records the exact accepted
-  pixels. Standing publication permission opens only the approval record,
-  branch push, and handoff reconciliation. Registration, fixtures, effects,
+  pixels. Approval record `9c21f92aed06a66092279e8d53db6cb9a289cbd9`
+  and the implementation are remote verified. Standing publication permission
+  opens only the initial published handoff and final reconciliation.
+  Registration, fixtures, effects,
   later EN-E08 families, release, accepted drift, and a PR remain closed.
 
 #### Animated Armor Runeforge Custodian specialist approved preceding

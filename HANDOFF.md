@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Crownvault Castellan Approved, Publication Pending
+## Immediate Continuation Checkpoint - Crownvault Castellan Handoff Reconciliation
 
 Start here. From clean published Runeforge Custodian reconciliation
 `700f2cedb1d3104369931a97bfec31a3b49fff93`, the designer replied `lets do
@@ -34,8 +34,10 @@ Castellan is implemented on
 `112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039`
 and is visually approved by the designer's reply `approved`. Implementation
 `46d09a4e16a11f9c622cb698ff30055bb9bcb877` records the exact accepted
-pixels. The approval record and bounded publication reconciliation are pending;
-it remains unregistered, fixture-free, effect-free, and non-public.
+pixels. Approval record `9c21f92aed06a66092279e8d53db6cb9a289cbd9` and the
+implementation are remote verified. Only the initial published handoff and
+final reconciliation remain pending; it remains unregistered, fixture-free,
+effect-free, and non-public.
 
 - Identity: monumental royal fortress-suit with crenellated crownvault helm,
   one readable ivory T-shaped vault seal, tower pauldrons, broad gatehouse
@@ -71,8 +73,9 @@ it remains unregistered, fixture-free, effect-free, and non-public.
   review:enemy-expansion-en-e08-animated-armor-crownvault-castellan` and
   `npm.cmd run check:enemy-expansion-en-e08-animated-armor-crownvault-castellan`.
 - Approval and next gate: the exact frozen packet was presented and the
-  designer replied `approved`. Standing publication permission opens only the
-  approval-record commit, branch push, and handoff reconciliation. Do not
+  designer replied `approved`. The implementation and approval record are
+  remote verified; standing publication permission opens only the initial
+  handoff and final reconciliation. Do not
   register, generate fixtures, add effects, advance another EN-E08 family,
   release, accept drift, or open a PR.
 
