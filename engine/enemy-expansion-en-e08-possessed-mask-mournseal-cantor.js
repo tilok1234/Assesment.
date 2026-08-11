@@ -105,8 +105,8 @@ export const EN_E08_MOURNSEAL_CANTOR_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: 'b1fd09ab0b04128330178a99c0379783621e478f',
   publishedApprovalRecord: 'ae364550cf2ecfece032098800b2c1df018ee2a5',
-  initialPublishedHandoff: null,
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '0309590d9d025e8cdfa960131a3d7835730c3f7b',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E08_WHISPERVEIL_VISAGE_GATE.id,
     artifactSha256: EN_E08_WHISPERVEIL_VISAGE_GATE.artifactSha256,
@@ -181,7 +181,7 @@ export const EN_E08_MOURNSEAL_CANTOR_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Mournseal Cantor implementation b1fd09ab0b04128330178a99c0379783621e478f and approval record ae364550cf2ecfece032098800b2c1df018ee2a5 are remote verified. Only the initial published handoff and final reconciliation remain open under standing publication permission. The same approved lets do next reply opens one private elite Possessed Mask art gate only after this tuple is clean and remote verified. Registration, fixtures, child assets, effects, Living Weapon, EN-E09, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Mournseal Cantor implementation b1fd09ab0b04128330178a99c0379783621e478f, approval record ae364550cf2ecfece032098800b2c1df018ee2a5, and initial published handoff 0309590d9d025e8cdfa960131a3d7835730c3f7b are remote verified; this reconciliation completes the bounded publication tuple. The same approved lets do next reply opens exactly one private elite Possessed Mask art gate from this clean published reconciliation. Registration, fixtures, child assets, effects, Living Weapon, EN-E09, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E08_MOURNSEAL_CANTOR_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

@@ -155,8 +155,8 @@ check(
     && EN_E08_MOURNSEAL_CANTOR_GATE.approvedImplementation === 'b1fd09ab0b04128330178a99c0379783621e478f'
     && EN_E08_MOURNSEAL_CANTOR_GATE.publishedImplementation === 'b1fd09ab0b04128330178a99c0379783621e478f'
     && EN_E08_MOURNSEAL_CANTOR_GATE.publishedApprovalRecord === 'ae364550cf2ecfece032098800b2c1df018ee2a5'
-    && EN_E08_MOURNSEAL_CANTOR_GATE.initialPublishedHandoff === null
-    && EN_E08_MOURNSEAL_CANTOR_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E08_MOURNSEAL_CANTOR_GATE.initialPublishedHandoff === '0309590d9d025e8cdfa960131a3d7835730c3f7b'
+    && EN_E08_MOURNSEAL_CANTOR_GATE.publicationState === 'published'
     && EN_E08_MOURNSEAL_CANTOR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Mournseal Cantor approval state or bounded publication authorization drifted',
 );
@@ -195,6 +195,7 @@ check(
 check(
   EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('remote verified')
     && EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('initial published handoff')
+    && EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('completes the bounded publication tuple')
     && EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('private elite Possessed Mask')
     && EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('Living Weapon, EN-E09'),
   'Mournseal Cantor stop gate drifted',

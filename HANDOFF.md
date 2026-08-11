@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mournseal Cantor Published Awaiting Final Handoff
+## Immediate Continuation Checkpoint - Mournseal Cantor Approved And Published
 
 Start here. From clean published Whisperveil Visage reconciliation
 `2ab49dc879a852d8a3c1a5f14de93345b32d490a`, the designer replied `lets do
@@ -34,8 +34,10 @@ actor with zero child assets across all 80 frames. The designer replied
 `approved lets do next`; implementation
 `b1fd09ab0b04128330178a99c0379783621e478f` records the exact accepted pixels.
 Approval record `ae364550cf2ecfece032098800b2c1df018ee2a5` and the implementation
-are remote verified; only the initial published handoff and final reconciliation
-remain. It is not registered, fixture-backed, effect-enabled, or public.
+are remote verified. Initial published handoff
+`0309590d9d025e8cdfa960131a3d7835730c3f7b` is also remote verified; this
+reconciliation completes the bounded publication tuple. It is not registered,
+fixture-backed, effect-enabled, or public.
 
 - Identity: tall ash-bone ritual mask with stepped brow, two readable amber
   eyes, paired tear channels, nose ridge, oval cantor mouth, long chin,
@@ -72,9 +74,8 @@ remain. It is not registered, fixture-backed, effect-enabled, or public.
   run check:enemy-expansion-en-e08-possessed-mask-mournseal-cantor`.
 - Approval/publication gate: approval applies only to this exact digest and five
   hashes. The implementation and approval record are published and remote
-  verified. Standing permission opens only the initial handoff and final
-  reconciliation. The same reply opens only one private elite
-  Possessed Mask gate after clean remote reconciliation. Do not register,
+  verified; the bounded tuple is complete. The same reply opens only one private
+  elite Possessed Mask gate from this clean reconciliation. Do not register,
   generate fixtures, add child assets or effects, start Living Weapon or EN-E09,
   release, accept drift, or open a PR.
 

@@ -120,8 +120,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   process 3228. The designer replied `approved lets do next`; implementation
   `b1fd09ab0b04128330178a99c0379783621e478f` records the accepted pixels.
   Approval record `ae364550cf2ecfece032098800b2c1df018ee2a5` and the
-  implementation are remote verified. Status is `approved` and published
-  awaiting final handoff reconciliation. The same reply opens only the private elite role
+  implementation are remote verified. Initial handoff
+  `0309590d9d025e8cdfa960131a3d7835730c3f7b` is also remote verified; this
+  reconciliation completes the bounded publication tuple. Status is `approved`
+  and `published`. The same reply opens only the private elite role
   after clean remote reconciliation. Registration, fixtures, effects, child
   assets, Living Weapon, EN-E09, release, accepted drift, and a PR remain closed.
 - Approved preceding published private art checkpoint: common Possessed Mask Whisperveil Visage on

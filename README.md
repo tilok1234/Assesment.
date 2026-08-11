@@ -1487,8 +1487,10 @@ Focused, fast, and full checks pass with public 80/259 and all 232 fixtures
 unchanged. The designer replied `approved lets do next`; implementation
 `b1fd09ab0b04128330178a99c0379783621e478f` records the exact accepted pixels.
 Approval record `ae364550cf2ecfece032098800b2c1df018ee2a5` and the
-implementation are remote verified. It remains private, unregistered,
-fixture-free, and effect-free while its final handoff is reconciled.
+implementation are remote verified. Initial handoff
+`0309590d9d025e8cdfa960131a3d7835730c3f7b` is also remote verified, completing
+the bounded publication tuple. It remains private, unregistered, fixture-free,
+and effect-free.
 
 Whisperveil Visage is the approved preceding private common Possessed Mask candidate on
 `codex/en-e08-possessed-mask-whisperveil-visage`, based on clean published

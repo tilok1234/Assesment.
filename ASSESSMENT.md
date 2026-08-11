@@ -480,8 +480,10 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   fixtures. The designer replied `approved lets do next`; implementation
   `b1fd09ab0b04128330178a99c0379783621e478f` records the accepted pixels.
   Approval record `ae364550cf2ecfece032098800b2c1df018ee2a5` and the
-  implementation are remote verified. It remains unregistered, fixture-free,
-  effect-free, and private while its final handoff is reconciled.
+  implementation are remote verified. Initial handoff
+  `0309590d9d025e8cdfa960131a3d7835730c3f7b` is also remote verified, completing
+  the bounded publication tuple. It remains unregistered, fixture-free,
+  effect-free, and private.
   The approved preceding private checkpoint is common Possessed Mask Whisperveil Visage on
   `codex/en-e08-possessed-mask-whisperveil-visage`, based on clean published
   Crownvault reconciliation `42156250f24d03b7e81a29e14cec75c25528cde4`.

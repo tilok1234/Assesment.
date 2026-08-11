@@ -1366,8 +1366,9 @@ public 80/259 and all 232 fixtures exact. The designer replied `approved lets do
 next`; implementation `b1fd09ab0b04128330178a99c0379783621e478f` records the
 accepted pixels without changing the baked-single-actor boundary. Approval
 record `ae364550cf2ecfece032098800b2c1df018ee2a5` and the implementation are
-remote verified; final handoff reconciliation remains. It stays unregistered,
-fixture-free, effect-free, and non-public.
+remote verified. Initial handoff `0309590d9d025e8cdfa960131a3d7835730c3f7b`
+is also remote verified; this reconciliation completes the bounded publication
+tuple. It stays unregistered, fixture-free, effect-free, and non-public.
 
 `engine/enemy-expansion-en-e08-possessed-mask-whisperveil-visage.js` opens the
 next EN-E08 family as a content-only private common actor. From clean published
