@@ -1472,7 +1472,7 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Blackwake Dreadmare is the current approved-local private elite Kelpie checkpoint on
+Blackwake Dreadmare is the current approved private elite Kelpie publication checkpoint with reconciliation pending on
 `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
 Drownbridle Stalker reconciliation
 `f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Its broad rear-heavy form uses a
@@ -1495,9 +1495,11 @@ The exact raw, Complete B +
 Form, and comparison PNGs are open together in Aseprite process 27380. This
 candidate was approved with `approved lets do next` on 2026-08-11; approval
 applies only to the digest above. Exact implementation
-`3a3ffce6997a6cc9735b818e13573b9085229555` is committed locally; status is
-`approved` and `approved-local`. Complete the bounded approval record,
-reconciliation, and branch pushes before advancing. The same reply opens only
+`3a3ffce6997a6cc9735b818e13573b9085229555` and approval record
+`a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` are published and remote-verified;
+status is `approved` and `authorized-pending-bounded-publication`. Complete the
+bounded initial handoff, final reconciliation, and branch pushes before
+advancing. The same reply opens only
 the EN-E08 architecture decision after clean remote reconciliation; Animated
 Armor art remains closed until its actor-topology choice is explicit.
 Registration, fixtures, runtime copying, water effects, release, and accepted

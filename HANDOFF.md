@@ -23,18 +23,20 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Blackwake Dreadmare Approved Locally
+## Immediate Continuation Checkpoint - Blackwake Approval Published, Handoff Pending
 
 Start here in a new task. One private elite Kelpie Blackwake Dreadmare is
 implemented, deterministic, hash-frozen, technically validated, and visually
 approved on `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly
 on clean published Drownbridle Stalker reconciliation
 `f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Exact implementation
-`3a3ffce6997a6cc9735b818e13573b9085229555` is committed locally. It is not yet
-pushed, registered, fixture-generated, or public.
+`3a3ffce6997a6cc9735b818e13573b9085229555` and approval record
+`a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` are published and remote-verified.
+The bounded initial handoff and final reconciliation remain pending. Blackwake
+is not registered, fixture-generated, or public.
 
 - Gate ID: `en-e07-kelpie-blackwake-dreadmare-full-v1`; status:
-  `approved` and `approved-local`.
+  `approved` and `authorized-pending-bounded-publication`.
 - Authorization: after Drownbridle Stalker was visually approved, published,
   remote-verified, and reconciled, the designer replied `approved lets do next`
   on 2026-08-11. The frozen Kelpie role order opens only this one private elite
@@ -79,15 +81,16 @@ pushed, registered, fixture-generated, or public.
 - Approval: after the exact packet above was presented, the designer replied
   `approved lets do next` on 2026-08-11. Approval applies only to digest
   `be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172`.
-  Implementation `3a3ffce6997a6cc9735b818e13573b9085229555` is committed locally.
-  Standing approved-work permission authorizes its bounded approval record,
-  documentation reconciliation, and branch pushes.
+  Implementation `3a3ffce6997a6cc9735b818e13573b9085229555` and approval record
+  `a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` are published and remote-verified.
+  Standing approved-work permission authorizes only the bounded initial handoff,
+  final documentation reconciliation, and branch pushes that remain.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-blackwake-dreadmare` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-blackwake-dreadmare`.
-- Required next action: complete the bounded approval-record publication and
+- Required next action: publish the bounded initial handoff and final
   current-state reconciliation, then remote-verify the clean branch. The same
-  reply opens only the EN-E08 architecture decision after that publication; do
+  reply opens only the EN-E08 architecture decision after final publication; do
   not begin Animated Armor art until its actor-topology choice is explicit. Do
   not register Kelpie, generate fixtures, add runtime copying or water effects,
   release, or accept drift.

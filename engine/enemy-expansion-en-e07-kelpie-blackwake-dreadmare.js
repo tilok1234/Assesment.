@@ -112,7 +112,7 @@ export const EN_E07_BLACKWAKE_DREADMARE_GATE = deepFreeze({
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'approved-local',
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_DROWNBRIDLE_STALKER_GATE.id,
     artifactSha256: EN_E07_DROWNBRIDLE_STALKER_GATE.artifactSha256,
@@ -189,7 +189,7 @@ export const EN_E07_BLACKWAKE_DREADMARE_GATE = deepFreeze({
     'release',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Blackwake Dreadmare digest is visually approved and its implementation is committed locally. Complete the bounded approval-record publication and current-state reconciliation first. The same reply includes lets do next and authorizes only the EN-E08 architecture decision after this Blackwake tuple is clean and remote verified; do not begin Animated Armor art before that actor-topology choice is explicit. Kelpie registration, fixtures, runtime copying, water effects, release, and accepted drift remain closed.',
+  nextGate: 'The exact Blackwake Dreadmare digest is visually approved; implementation 3a3ffce6997a6cc9735b818e13573b9085229555 and approval record a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6 are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. The same approved lets do next reply opens only the EN-E08 actor-topology architecture decision after final published reconciliation; do not begin Animated Armor art before that choice is explicit. Kelpie registration, fixtures, runtime copying, water effects, release, and accepted drift remain closed.',
 });
 
 export const EN_E07_BLACKWAKE_DREADMARE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

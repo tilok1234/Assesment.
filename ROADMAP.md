@@ -288,7 +288,7 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current approved-local EN-E07 art checkpoint (2026-08-11): elite Kelpie Blackwake
+Current approved EN-E07 publication checkpoint with reconciliation pending (2026-08-11): elite Kelpie Blackwake
 Dreadmare on `codex/en-e07-kelpie-blackwake-dreadmare` is based exactly on clean
 published Drownbridle Stalker reconciliation
 `f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Its 255-319-pixel broad rear-heavy
@@ -303,8 +303,10 @@ before approval and 112.2s against approval-local metadata, with public 80/259
 and all 232 fixtures exact. The exact three frozen PNGs are open together in Aseprite
 process 27380. The designer replied `approved lets do next`; approval applies
 only to the frozen digest above. Exact implementation
-`3a3ffce6997a6cc9735b818e13573b9085229555` is committed locally. Finish the
-bounded approval record, reconciliation, and branch pushes before advancing.
+`3a3ffce6997a6cc9735b818e13573b9085229555` and approval record
+`a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` are published and remote-verified.
+Finish the bounded initial handoff, final reconciliation, and branch pushes
+before advancing.
 The same reply opens only the EN-E08 architecture decision after clean remote
 reconciliation; Animated Armor art remains closed until its actor-topology
 choice is explicit. Registration, fixtures, runtime copying, water effects,

@@ -1342,9 +1342,11 @@ views pass. `check:fast` passes in 62.9s and full `check` in 121.9s before
 approval and 112.2s against approval-local metadata, with public 80/259 and all
 232 fixtures exact. The designer replied `approved lets do next`;
 approval applies only to the frozen digest above. Exact implementation
-`3a3ffce6997a6cc9735b818e13573b9085229555` is committed locally. This boundary
-is hash-frozen, private, `approved`, and `approved-local`; complete its bounded
-approval record, reconciliation, and branch pushes before advancing. The same
+`3a3ffce6997a6cc9735b818e13573b9085229555` and approval record
+`a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` are published and remote-verified.
+This boundary is hash-frozen, private, `approved`, and
+`authorized-pending-bounded-publication`; complete its bounded initial handoff,
+final reconciliation, and branch pushes before advancing. The same
 reply opens only the EN-E08 actor-topology architecture decision after clean
 remote reconciliation; it does not select or authorize Animated Armor art.
 

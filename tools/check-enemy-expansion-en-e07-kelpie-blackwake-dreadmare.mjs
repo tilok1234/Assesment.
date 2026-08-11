@@ -124,8 +124,8 @@ check(
     && EN_E07_BLACKWAKE_DREADMARE_GATE.publishedImplementation === null
     && EN_E07_BLACKWAKE_DREADMARE_GATE.publishedApprovalRecord === null
     && EN_E07_BLACKWAKE_DREADMARE_GATE.initialPublishedHandoff === null
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationState === 'approved-local',
-  'Blackwake Dreadmare approved-local publication state drifted',
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Blackwake Dreadmare authorized-pending publication state drifted',
 );
 check(
   EN_E07_BLACKWAKE_DREADMARE_GATE.approvalEvidence.includes('designer replied: approved lets do next')
@@ -169,15 +169,16 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('implementation is committed locally')
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('approval-record publication')
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('EN-E08 architecture decision')
+  EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('implementation 3a3ffce6997a6cc9735b818e13573b9085229555')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('approval record a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('remote verified')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('initial-handoff and final-reconciliation commits')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('EN-E08 actor-topology architecture decision')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('do not begin Animated Armor art')
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('actor-topology choice')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('registration')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('water effects')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('release'),
-  'approved-local publication or EN-E08 architecture gate drifted',
+  'published approval record or EN-E08 architecture gate drifted',
 );
 check(
   JSON.stringify(EN_E07_KELPIE_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
