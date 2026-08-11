@@ -153,10 +153,10 @@ check(
     && EN_E08_MOURNSEAL_CANTOR_GATE.approvalEvidence.includes('designer replied: approved lets do next')
     && EN_E08_MOURNSEAL_CANTOR_GATE.approvalEvidence.includes('5f54d5f716a11e42e813c7f09c1031d7090b1ac51a9cd93f93f6e0df08ac4e55')
     && EN_E08_MOURNSEAL_CANTOR_GATE.approvedImplementation === 'b1fd09ab0b04128330178a99c0379783621e478f'
-    && EN_E08_MOURNSEAL_CANTOR_GATE.publishedImplementation === null
-    && EN_E08_MOURNSEAL_CANTOR_GATE.publishedApprovalRecord === null
+    && EN_E08_MOURNSEAL_CANTOR_GATE.publishedImplementation === 'b1fd09ab0b04128330178a99c0379783621e478f'
+    && EN_E08_MOURNSEAL_CANTOR_GATE.publishedApprovalRecord === 'ae364550cf2ecfece032098800b2c1df018ee2a5'
     && EN_E08_MOURNSEAL_CANTOR_GATE.initialPublishedHandoff === null
-    && EN_E08_MOURNSEAL_CANTOR_GATE.publicationState === 'approved-not-published'
+    && EN_E08_MOURNSEAL_CANTOR_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E08_MOURNSEAL_CANTOR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Mournseal Cantor approval state or bounded publication authorization drifted',
 );
@@ -193,8 +193,8 @@ check(
   'Mournseal Cantor exclusions drifted',
 );
 check(
-  EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('visually approved')
-    && EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('handoff reconciliation')
+  EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('remote verified')
+    && EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('initial published handoff')
     && EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('private elite Possessed Mask')
     && EN_E08_MOURNSEAL_CANTOR_GATE.nextGate.includes('Living Weapon, EN-E09'),
   'Mournseal Cantor stop gate drifted',

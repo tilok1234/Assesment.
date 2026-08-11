@@ -4706,7 +4706,7 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Possessed Mask Mournseal Cantor specialist approved locally
+#### Possessed Mask Mournseal Cantor specialist published awaiting final handoff
 
 - Gate ID: `en-e08-possessed-mask-mournseal-cantor-full-v1`; status
   `awaiting-visual-review` on
@@ -4736,8 +4736,9 @@ it with incidental per-frame offsets.
 - Approval: the exact packet was presented and the designer replied `approved
   lets do next`. Implementation
   `b1fd09ab0b04128330178a99c0379783621e478f` records the accepted pixels.
-  Standing permission opens only its approval record, branch push, and handoff
-  reconciliation. The same reply opens one private elite Possessed Mask gate
+  Approval record `ae364550cf2ecfece032098800b2c1df018ee2a5` and the
+  implementation are remote verified; only initial handoff and final
+  reconciliation remain. The same reply opens one private elite Possessed Mask gate
   after clean remote reconciliation. Registration, fixtures, child assets,
   effects, Living Weapon, EN-E09, release, broader publication, accepted drift,
   and a PR remain closed.

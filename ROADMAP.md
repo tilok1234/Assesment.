@@ -299,8 +299,9 @@ and full validation in 109.0s with public 80/259 and all 232 fixtures exact.
 The exact three PNGs are open in responsive Aseprite process 3228. The designer
 replied `approved lets do next`; implementation
 `b1fd09ab0b04128330178a99c0379783621e478f` records the accepted pixels.
-Status is `approved-local`; standing permission opens its approval record,
-push, and reconciliation. The same reply opens only the private elite role
+Approval record `ae364550cf2ecfece032098800b2c1df018ee2a5` and the
+implementation are remote verified; final handoff reconciliation remains. The
+same reply opens only the private elite role
 after clean remote reconciliation. Registration, fixtures, effects, child
 assets, Living Weapon, EN-E09, release, broader publication, accepted drift,
 and a PR remain closed.

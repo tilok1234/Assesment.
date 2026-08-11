@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mournseal Cantor Approved Locally
+## Immediate Continuation Checkpoint - Mournseal Cantor Published Awaiting Final Handoff
 
 Start here. From clean published Whisperveil Visage reconciliation
 `2ab49dc879a852d8a3c1a5f14de93345b32d490a`, the designer replied `lets do
@@ -33,8 +33,9 @@ Mournseal Cantor is implemented on
 actor with zero child assets across all 80 frames. The designer replied
 `approved lets do next`; implementation
 `b1fd09ab0b04128330178a99c0379783621e478f` records the exact accepted pixels.
-It is approved locally but not yet pushed, registered, fixture-backed,
-effect-enabled, or public.
+Approval record `ae364550cf2ecfece032098800b2c1df018ee2a5` and the implementation
+are remote verified; only the initial published handoff and final reconciliation
+remain. It is not registered, fixture-backed, effect-enabled, or public.
 
 - Identity: tall ash-bone ritual mask with stepped brow, two readable amber
   eyes, paired tear channels, nose ridge, oval cantor mouth, long chin,
@@ -61,16 +62,18 @@ effect-enabled, or public.
   Elemental; 72/72 colored frames, 8/8 exact white flashes, and 54/54 readable
   face views. Opaque range 224-242; Complete B adds 6,428 pixels and Form
   changes 6,069.
-- Broad validation: `check:fast` passes in 56.2s and full `check` in 109.0s;
-  public 80/259 and all 232 fixture sheets remain exact.
+- Broad validation: `check:fast` passes in 56.2s; full `check` passes in 109.0s
+  before approval metadata and 115.1s against approved-local metadata. Public
+  80/259 and all 232 fixture sheets remain exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in responsive Aseprite process 3228.
 - Commands: `npm.cmd run
   review:enemy-expansion-en-e08-possessed-mask-mournseal-cantor` and `npm.cmd
   run check:enemy-expansion-en-e08-possessed-mask-mournseal-cantor`.
 - Approval/publication gate: approval applies only to this exact digest and five
-  hashes. Standing permission opens the approval record, branch push, and
-  handoff reconciliation. The same reply opens only one private elite
+  hashes. The implementation and approval record are published and remote
+  verified. Standing permission opens only the initial handoff and final
+  reconciliation. The same reply opens only one private elite
   Possessed Mask gate after clean remote reconciliation. Do not register,
   generate fixtures, add child assets or effects, start Living Weapon or EN-E09,
   release, accept drift, or open a PR.

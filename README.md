@@ -1486,8 +1486,9 @@ and `npm.cmd run check:enemy-expansion-en-e08-possessed-mask-mournseal-cantor`.
 Focused, fast, and full checks pass with public 80/259 and all 232 fixtures
 unchanged. The designer replied `approved lets do next`; implementation
 `b1fd09ab0b04128330178a99c0379783621e478f` records the exact accepted pixels.
-Status is `approved-local`; it remains private, unregistered, fixture-free,
-effect-free, and not yet pushed.
+Approval record `ae364550cf2ecfece032098800b2c1df018ee2a5` and the
+implementation are remote verified. It remains private, unregistered,
+fixture-free, and effect-free while its final handoff is reconciled.
 
 Whisperveil Visage is the approved preceding private common Possessed Mask candidate on
 `codex/en-e08-possessed-mask-whisperveil-visage`, based on clean published
