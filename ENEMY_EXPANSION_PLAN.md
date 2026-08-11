@@ -4706,10 +4706,11 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Living Weapon Vowcoil Glaive specialist approved awaiting publication
+#### Living Weapon Vowcoil Glaive specialist published awaiting handoff reconciliation
 
 - Gate ID: `en-e08-living-weapon-vowcoil-glaive-full-v1`; status
-  `approved-not-published` on `codex/en-e08-living-weapon-specialist`, based
+  `published-awaiting-handoff-reconciliation` on
+  `codex/en-e08-living-weapon-specialist`, based
   exactly on published Oathbite reconciliation
   `870bf042e4d7604fec6f33ba3ba6b03308204ee2`.
 - Authorization: the exact Oathbite packet was approved by `approved lets do
@@ -4730,9 +4731,11 @@ it with incidental per-frame offsets.
   57.7s/116.1s approval-local with public 80/259 and all 232 fixtures unchanged.
 - Approval: the exact packet was presented and the designer replied `approved
   lets do next`. Implementation
-  `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted pixels.
-  Standing permission opens only the approval record, branch push, and handoff
-  reconciliation. The same reply opens only one private elite Living Weapon
+  `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted pixels. That
+  implementation and approval record
+  `36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified. Only the
+  initial published handoff and final reconciliation remain open. The same
+  reply opens only one private elite Living Weapon
   art candidate after clean remote reconciliation. Registration, fixtures,
   child assets, effects, EN-E09, release, accepted drift, and a PR remain closed.
 

@@ -479,9 +479,11 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   in 55.0s/115.7s before approval metadata and 57.7s/116.1s approval-local,
   preserving public 80/259 and all 232 fixtures. The designer replied `approved
   lets do next`; implementation
-  `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted pixels. It is
-  approved and awaiting bounded publication, unregistered, fixture-free,
-  effect-free, and non-public.
+  `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted pixels. The
+  implementation and approval record
+  `36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified; only the
+  initial published handoff and final reconciliation remain. It is
+  unregistered, fixture-free, effect-free, and non-public.
   The approved preceding private checkpoint is common Living Weapon Oathbite Cleaver on
   `codex/en-e08-living-weapon-architecture`, based on clean published
   Threnecrown reconciliation `6f2a51739a65b88f8c50644e92e440c8004cc049`.

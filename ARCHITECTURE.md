@@ -1361,9 +1361,10 @@ passes its focused gate, `check:fast` in 55.0s, and full `check` in 115.7s befor
 approval metadata, then 57.7s and 116.1s approval-local, with public 80/259 and
 all 232 fixtures exact. The designer replied `approved lets do next`;
 implementation `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted
-pixels without changing the baked-single-actor boundary. It is approved and
-awaiting bounded publication, and remains unregistered, fixture-free,
-effect-free, and non-public.
+pixels without changing the baked-single-actor boundary. That implementation
+and approval record `36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified;
+only bounded handoff reconciliation remains. It stays unregistered,
+fixture-free, effect-free, and non-public.
 
 `engine/enemy-expansion-en-e08-living-weapon-oathbite-cleaver.js` opens the
 private Living Weapon family under decision

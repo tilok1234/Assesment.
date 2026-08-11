@@ -113,10 +113,10 @@ check(
     && EN_E08_VOWCOIL_GLAIVE_GATE.approvalEvidence.includes('designer replied: approved lets do next')
     && EN_E08_VOWCOIL_GLAIVE_GATE.approvalEvidence.includes('bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807')
     && EN_E08_VOWCOIL_GLAIVE_GATE.approvedImplementation === '1080ca4a377657634249d3579dbd9c743db3b38c'
-    && EN_E08_VOWCOIL_GLAIVE_GATE.publishedImplementation === null
-    && EN_E08_VOWCOIL_GLAIVE_GATE.publishedApprovalRecord === null
+    && EN_E08_VOWCOIL_GLAIVE_GATE.publishedImplementation === '1080ca4a377657634249d3579dbd9c743db3b38c'
+    && EN_E08_VOWCOIL_GLAIVE_GATE.publishedApprovalRecord === '36d41a04fc122336a9e65aa9f5d94618975df388'
     && EN_E08_VOWCOIL_GLAIVE_GATE.initialPublishedHandoff === null
-    && EN_E08_VOWCOIL_GLAIVE_GATE.publicationState === 'approved-not-published'
+    && EN_E08_VOWCOIL_GLAIVE_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E08_VOWCOIL_GLAIVE_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Vowcoil Glaive approval state or bounded publication authorization drifted',
 );
@@ -153,8 +153,9 @@ check(
   'Vowcoil Glaive exclusions drifted',
 );
 check(
-  EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('visually approved at implementation 1080ca4a377657634249d3579dbd9c743db3b38c')
-    && EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
+  EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('implementation 1080ca4a377657634249d3579dbd9c743db3b38c')
+    && EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('approval record 36d41a04fc122336a9e65aa9f5d94618975df388')
+    && EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('one private elite Living Weapon art candidate')
     && EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('after this tuple is clean and remote verified'),
   'Vowcoil Glaive stop gate drifted',

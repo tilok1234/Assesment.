@@ -117,8 +117,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   public 80/259 and all 232 fixtures exact. The exact three frozen PNGs were
   open together in Aseprite when the designer replied `approved lets do next`;
   implementation `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted
-  pixels. It is approved and awaiting bounded publication. The same reply opens
-  only one private elite Living Weapon art candidate after clean remote
+  pixels. The implementation and approval record
+  `36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified; only the
+  initial published handoff and final reconciliation remain. The same reply
+  opens only one private elite Living Weapon art candidate after clean remote
   reconciliation. Registration, fixtures, effects, child assets, EN-E09,
   release, accepted drift, and a PR remain closed.
 - Approved preceding published private art checkpoint: common Living Weapon Oathbite Cleaver on

@@ -113,10 +113,10 @@ export const EN_E08_VOWCOIL_GLAIVE_GATE = deepFreeze({
   approvedImplementation: '1080ca4a377657634249d3579dbd9c743db3b38c',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
+  publishedImplementation: '1080ca4a377657634249d3579dbd9c743db3b38c',
+  publishedApprovalRecord: '36d41a04fc122336a9e65aa9f5d94618975df388',
   initialPublishedHandoff: null,
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E08_OATHBITE_CLEAVER_GATE.id,
     artifactSha256: EN_E08_OATHBITE_CLEAVER_GATE.artifactSha256,
@@ -189,7 +189,7 @@ export const EN_E08_VOWCOIL_GLAIVE_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Vowcoil Glaive packet is visually approved at implementation 1080ca4a377657634249d3579dbd9c743db3b38c. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. The same approved lets do next reply opens only one private elite Living Weapon art candidate after this tuple is clean and remote verified. Registration, fixtures, child assets, effects, EN-E09, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Vowcoil Glaive implementation 1080ca4a377657634249d3579dbd9c743db3b38c and approval record 36d41a04fc122336a9e65aa9f5d94618975df388 are remote verified. Only the initial published handoff and final reconciliation remain open. The same approved lets do next reply opens only one private elite Living Weapon art candidate after this tuple is clean and remote verified. Registration, fixtures, child assets, effects, EN-E09, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E08_VOWCOIL_GLAIVE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

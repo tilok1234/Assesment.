@@ -1486,8 +1486,10 @@ approval metadata and 57.7s/116.1s approval-local with approved
 Oathbite/Crownvault, public 80/259, and all 232 fixtures exact. The designer
 replied `approved lets do next`; implementation
 `1080ca4a377657634249d3579dbd9c743db3b38c` records the exact accepted pixels.
-It is approved and awaiting bounded publication. The same reply opens only one
-private elite Living Weapon art candidate after clean remote reconciliation.
+That implementation and approval record
+`36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified; only the
+initial published handoff and final reconciliation remain. The same reply opens
+only one private elite Living Weapon art candidate after clean remote reconciliation.
 Registration, fixtures, child assets, effects, EN-E09, release, accepted drift,
 and a PR remain closed.
 

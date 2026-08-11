@@ -298,9 +298,11 @@ the focused gate; fast/full validation passes in 55.0s/115.7s before approval
 metadata and 57.7s/116.1s approval-local with public 80/259 and all 232 fixtures
 exact. The exact three PNGs were open together in Aseprite when the designer
 replied `approved lets do next`; implementation
-`1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted pixels. It is
-approved and awaiting bounded publication. The same reply opens only one
-private elite Living Weapon art candidate after clean remote reconciliation.
+`1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted pixels. That
+implementation and approval record
+`36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified; only the
+initial published handoff and final reconciliation remain. The same reply opens
+only one private elite Living Weapon art candidate after clean remote reconciliation.
 Registration, fixtures, effects, child assets, EN-E09, release, broader
 publication, accepted drift, and a PR remain closed.
 
