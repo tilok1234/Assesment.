@@ -141,10 +141,10 @@ check(
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.approvalEvidence.includes('629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85')
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.approvedImplementation === 'd73ca9334640384d9b531c0d8375c1a42e459212'
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publicationAuthorizedOn === '2026-08-11'
-    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publishedImplementation === null
-    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publishedApprovalRecord === null
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publishedImplementation === 'd73ca9334640384d9b531c0d8375c1a42e459212'
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publishedApprovalRecord === '717b4f7f735984550f44ce90d0bba58cfd6e1762'
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.initialPublishedHandoff === null
-    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publicationState === 'not-published'
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.publicationAuthorizationEvidence.includes('pull request'),
   'Runeforge Custodian authorization or unpublished gate drifted',
@@ -190,6 +190,7 @@ check(
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.animationContract.includes('interlocking body-owned forge press')
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.nextGate.includes('implementation d73ca9334640384d9b531c0d8375c1a42e459212')
+    && EN_E08_RUNEFORGE_CUSTODIAN_GATE.nextGate.includes('approval record 717b4f7f735984550f44ce90d0bba58cfd6e1762')
     && EN_E08_RUNEFORGE_CUSTODIAN_GATE.nextGate.includes('another art gate requires a separate designer lets do next'),
   'full-suite, motion, or stop-gate contract drifted',
 );

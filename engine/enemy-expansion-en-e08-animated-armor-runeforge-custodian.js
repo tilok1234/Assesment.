@@ -115,10 +115,10 @@ export const EN_E08_RUNEFORGE_CUSTODIAN_GATE = deepFreeze({
   approvedImplementation: 'd73ca9334640384d9b531c0d8375c1a42e459212',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
+  publishedImplementation: 'd73ca9334640384d9b531c0d8375c1a42e459212',
+  publishedApprovalRecord: '717b4f7f735984550f44ce90d0bba58cfd6e1762',
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E08_HOLLOW_SENTRY_GATE.id,
     artifactSha256: EN_E08_HOLLOW_SENTRY_GATE.artifactSha256,
@@ -205,7 +205,7 @@ export const EN_E08_RUNEFORGE_CUSTODIAN_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Runeforge Custodian digest is visually approved and implementation d73ca9334640384d9b531c0d8375c1a42e459212 records the accepted pixels. Standing publication permission now authorizes only its bounded approval record, branch push, and final handoff reconciliation. Animated Armor registration, fixtures, child/state assets, effects, the elite role, later EN-E08 families, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next after clean remote reconciliation.',
+  nextGate: 'The exact Runeforge Custodian digest is visually approved; implementation d73ca9334640384d9b531c0d8375c1a42e459212 and approval record 717b4f7f735984550f44ce90d0bba58cfd6e1762 are remote verified. Only the initial published handoff hash and final clean reconciliation remain open. Animated Armor registration, fixtures, child/state assets, effects, the elite role, later EN-E08 families, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next after clean remote reconciliation.',
 });
 
 export const EN_E08_RUNEFORGE_CUSTODIAN_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

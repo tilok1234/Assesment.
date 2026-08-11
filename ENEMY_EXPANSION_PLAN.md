@@ -4754,9 +4754,10 @@ it with incidental per-frame offsets.
   process 42856.
 - Approval: after the exact frozen packet was presented and the three PNGs were
   open in responsive Aseprite, the designer replied `accepted`. Implementation
-  `d73ca9334640384d9b531c0d8375c1a42e459212` records the exact accepted
-  pixels. Standing permission opens only its approval record, branch push, and
-  final reconciliation. Registration, fixtures, effects, the elite role,
+  `d73ca9334640384d9b531c0d8375c1a42e459212` and approval record
+  `717b4f7f735984550f44ce90d0bba58cfd6e1762` are remote verified. Standing
+  permission opens only the initial handoff and final reconciliation.
+  Registration, fixtures, effects, the elite role,
   later EN-E08 families, release, accepted drift, and a PR remain closed; a
   separate `lets do next` is required after clean remote reconciliation.
 

@@ -1366,9 +1366,10 @@ contract. Candidate digest
 is frozen; frozen review + focused + fast pass together in 59.6s and full
 validation passes in 113.1s with public 80/259 and all 232 fixtures exact. It
 is visually accepted, and implementation
-`d73ca9334640384d9b531c0d8375c1a42e459212` records the exact accepted pixel
-contract. Standing permission opens only its approval record, branch push, and
-final reconciliation; no public or architecture boundary changes.
+`d73ca9334640384d9b531c0d8375c1a42e459212` plus approval record
+`717b4f7f735984550f44ce90d0bba58cfd6e1762` are remote verified. Standing
+permission opens only the initial handoff and final reconciliation; no public
+or architecture boundary changes.
 
 `engine/enemy-expansion-en-e08-animated-armor-hollow-sentry.js` resolved the
 preceding architecture gate

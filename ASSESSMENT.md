@@ -479,8 +479,9 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   readable rune-lock views. Frozen review + focused + fast pass together in
   59.6s and full validation passes in 113.1s, preserving public 80/259 and all
   232 fixtures. The designer replied `accepted`; implementation
-  `d73ca9334640384d9b531c0d8375c1a42e459212` records the accepted pixels.
-  Approval-record publication is open under standing permission, while the
+  `d73ca9334640384d9b531c0d8375c1a42e459212` and approval record
+  `717b4f7f735984550f44ce90d0bba58cfd6e1762` are remote verified. Only the
+  initial handoff and final reconciliation remain open, while the
   candidate remains unregistered, fixture-free, effect-free, and private.
   The approved preceding private checkpoint is common Animated Armor Hollow
   Sentry on `codex/en-e08-animated-armor-architecture`, based exactly on clean

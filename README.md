@@ -1479,7 +1479,8 @@ clean published Hollow Sentry reconciliation
 single-actor suite is frozen at digest
 `629930688cca04f3d714e12225ab8c3db7c494c5fbaf027d65ec7f8d530ccf85`
 and visually accepted; implementation
-`d73ca9334640384d9b531c0d8375c1a42e459212` records the exact pixels. The
+`d73ca9334640384d9b531c0d8375c1a42e459212` and approval record
+`717b4f7f735984550f44ce90d0bba58cfd6e1762` are remote verified. The
 constructed identity uses one vertical readable
 rune-lock aperture, square pauldrons, a hex forge chest, connected interlocking
 gauntlets, fixed joints, divided greaves, and wedge sabatons with zero child
@@ -1488,8 +1489,8 @@ assets, gears, weapons, shields, detached plate, or effects. Run
 and `npm.cmd run check:enemy-expansion-en-e08-animated-armor-runeforge-custodian`.
 The frozen review + focused + fast gates pass together in 59.6s and full
 validation passes in 113.1s; public 80/259 and all 232 fixtures remain exact.
-The designer replied `accepted`, opening only its approval record, branch push,
-and final reconciliation under standing publication permission. Registration,
+The designer replied `accepted`; only its initial handoff and final
+reconciliation remain open under standing publication permission. Registration,
 fixtures, effects, the elite role, later EN-E08 families, release, accepted
 drift, and a PR remain separate gates.
 
