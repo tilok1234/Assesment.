@@ -4706,6 +4706,35 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
+#### Possessed Mask Whisperveil Visage common awaiting review
+
+- Gate ID: `en-e08-possessed-mask-whisperveil-visage-full-v1`; status
+  `awaiting-visual-review` on
+  `codex/en-e08-possessed-mask-whisperveil-visage`, based exactly on published
+  Crownvault reconciliation `42156250f24d03b7e81a29e14cec75c25528cde4`.
+- Authorization: after abandoning Headless Rider, the designer accepted
+  Possessed Mask as next and replied `lets go`. This opens only one private
+  common Whisperveil Visage art candidate.
+- Architecture: one deterministic baked 24x24 actor, zero child assets. The
+  broad bone mask, connected shroud, and tether ribbons are actor pixels; hosts,
+  detached masks, possession overlays, effects, runtime attachments, schemas,
+  shared renderers, exporters, validators, registration, and fixtures remain out.
+- Identity and motion: two cold eyes, nose ridge, mouth, cheek cracks, pointed
+  chin, violet shroud, and wine ribbons. Idle breathes the shroud; Walk uses four
+  hover phases; Attack gathers ribbons, seals the mouth, opens one body-owned
+  shriek, and settles. Hurt is white recoil then colored brace. Cast aliases
+  Attack; Death aliases Hurt H1,H2,H2,H2.
+- Frozen digest:
+  `c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098`.
+  PNG hashes are `cd4a3758...b190d`, `5df28a32...9f88c`, and
+  `b6e71886...6e17`; GIF hashes are `d4603cc0...e8b0` and
+  `4ddf94aa...6245`.
+- Focused 80-frame gate passes; `check:fast` passes in 59.2s and full `check`
+  in 106.4s with public 80/259 and all 232 fixtures exact.
+- Stop after exact presentation. Registration, fixtures, child assets, effects,
+  later Possessed Mask roles, Living Weapon, EN-E09, release, accepted drift,
+  publication, and a PR remain closed.
+
 #### Animated Armor Crownvault Castellan elite approved and published
 
 - Gate ID: `en-e08-animated-armor-crownvault-castellan-full-v1`; status:

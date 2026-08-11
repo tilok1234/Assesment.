@@ -1350,6 +1350,19 @@ reconciliation completes the bounded tuple. The same
 reply opened only the EN-E08 actor-topology architecture decision after clean
 remote reconciliation; the later explicit choice is recorded below.
 
+`engine/enemy-expansion-en-e08-possessed-mask-whisperveil-visage.js` opens the
+next EN-E08 family as a content-only private common actor. From clean published
+Crownvault reconciliation `42156250f24d03b7e81a29e14cec75c25528cde4`, the
+mask, connected torn shroud, and tether ribbons live in one deterministic baked
+24x24 pixel array with zero child assets. The renderer owns the broad bone face,
+two eye sockets, nose ridge, mouth, cheek cracks, pointed chin, connected cloth,
+split tails, and all 80 motion frames. It does not add a host, detached mask,
+attachment runtime, schema, shared renderer, exporter, validator, frame-contract,
+public registration, fixture, manifest entry, or effect. Candidate digest
+`c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098`
+passes the focused gate, `check:fast` in 59.2s, and full `check` in 106.4s with
+public 80/259 and all 232 fixtures exact. Visual approval is pending.
+
 `engine/enemy-expansion-en-e08-animated-armor-crownvault-castellan.js` completes
 the private three-role family without changing the selected topology. From
 clean published Runeforge Custodian reconciliation

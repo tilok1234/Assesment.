@@ -23,7 +23,48 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Crownvault Castellan Published
+## Immediate Continuation Checkpoint - Whisperveil Visage Awaiting Review
+
+Start here. The designer abandoned Headless Rider, returned to clean published
+Crownvault Castellan reconciliation
+`42156250f24d03b7e81a29e14cec75c25528cde4`, accepted Possessed Mask as the
+next EN-E08 family, and replied `lets go`. One private common Whisperveil
+Visage is implemented on `codex/en-e08-possessed-mask-whisperveil-visage` as one
+deterministic baked 24x24 actor with zero child assets across all 80 frames.
+
+- Identity: broad aged-bone ceremonial face with two readable cold eyes, deep
+  sockets, nose ridge, carved mouth, cheek cracks, pointed chin, connected
+  violet torn shroud, wine tether ribbons, split tails, and true hover clearance.
+- Architecture: `baked-single-actor`; mask, shroud, and ribbons are one connected
+  hard-alpha actor. No host, detached mask, child asset, shared attachment
+  runtime, schema, renderer, exporter, validator, frame-contract, registration,
+  fixture, manifest, effect, accepted-drift, or public-catalog change.
+- Frozen digest:
+  `c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098`.
+  Raw/Complete B + Form/comparison PNG hashes are
+  `cd4a375813e0f6ad4a61126dc1858af2913f093abfb61a45b25331af30bb190d`,
+  `5df28a32c0ee8e8dbfc8a349d1898b2dbde6542a4ef9a7f7ba11ee0354e9f88c`,
+  and `b6e71886fa3750192eea1f67d916f8c042335cc77a368ccc916da8e71c656e17`.
+  Raw and assembled GIF hashes are
+  `d4603cc0a5dcc169be3e076b14d69651514a1e2708d6b2aa8bc3d02f62c2e8b0`
+  and `4ddf94aa919bd2d4b77a3526c723d186a5f3ee4971784fe0012cfef97ade6245`.
+- Focused gate: 80/80 connected, bounded, hovering, and distinct from public
+  Spectral Ghost, Shadow Slime, and Flame Elemental; 72/72 colored frames,
+  8/8 exact white flashes, and 54/54 readable face views. Opaque range 184-213;
+  Complete B adds 6,428 pixels and Form changes 5,259.
+- Broad validation: `check:fast` passes in 59.2s and full `check` in 106.4s;
+  public 80/259 and all 232 fixture sheets remain exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and comparison
+  PNGs are open together in responsive Aseprite process 1956.
+- Commands: `npm.cmd run
+  review:enemy-expansion-en-e08-possessed-mask-whisperveil-visage` and
+  `npm.cmd run check:enemy-expansion-en-e08-possessed-mask-whisperveil-visage`.
+- Stop gate: present the exact packet. Do not stage, commit, push, approve,
+  register, generate fixtures, add effects or child assets, begin later roles,
+  start Living Weapon or EN-E09, release, accept drift, or open a PR before
+  explicit approval.
+
+## Approved Preceding Checkpoint - Crownvault Castellan Published
 
 Start here. From clean published Runeforge Custodian reconciliation
 `700f2cedb1d3104369931a97bfec31a3b49fff93`, the designer replied `lets do

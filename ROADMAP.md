@@ -288,6 +288,17 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
+Current EN-E08 prototype gate (2026-08-11): common Possessed Mask Whisperveil
+Visage on `codex/en-e08-possessed-mask-whisperveil-visage` is based on clean
+published Crownvault reconciliation
+`42156250f24d03b7e81a29e14cec75c25528cde4` and frozen at digest
+`c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098`.
+It is one baked 24x24 mask/shroud/ribbon actor with zero child assets. All 80
+frames pass the focused gate; fast validation passes in 59.2s and full
+validation in 106.4s with public 80/259 and all 232 fixtures exact. Visual
+approval is pending. Registration, fixtures, effects, child assets, later
+roles/families, release, accepted drift, publication, and a PR remain closed.
+
 Current approved published EN-E08 checkpoint
 (2026-08-11): elite Animated Armor
 Crownvault Castellan on `codex/en-e08-animated-armor-crownvault-castellan` is

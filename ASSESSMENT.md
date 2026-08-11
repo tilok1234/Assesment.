@@ -468,6 +468,17 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
+  The current private prototype is common Possessed Mask Whisperveil Visage on
+  `codex/en-e08-possessed-mask-whisperveil-visage`, based on clean published
+  Crownvault reconciliation `42156250f24d03b7e81a29e14cec75c25528cde4`.
+  It is one connected baked 24x24 mask/shroud/ribbon actor with zero child
+  assets, frozen at digest
+  `c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098`.
+  All 80 frames pass focused connected, bounded, hovering, face-readability,
+  alias, mirror, and comparison checks. Fast validation passes in 59.2s and
+  full validation in 106.4s, preserving public 80/259 and all 232 fixtures.
+  It awaits visual approval and remains uncommitted, unpushed, unregistered,
+  fixture-free, effect-free, and private.
   The current approved published private checkpoint
   is elite Animated Armor Crownvault
   Castellan on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly

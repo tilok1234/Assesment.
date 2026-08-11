@@ -1472,7 +1472,21 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Crownvault Castellan is the current private elite Animated Armor acceptance
+Whisperveil Visage is the current private common Possessed Mask candidate on
+`codex/en-e08-possessed-mask-whisperveil-visage`, based on clean published
+Crownvault reconciliation `42156250f24d03b7e81a29e14cec75c25528cde4`.
+The mask, shroud, and ribbons are one connected baked 24x24 actor with zero
+child assets. Its aged-bone face has two cold eyes, nose ridge, carved mouth,
+cheek cracks, pointed chin, violet torn shroud, wine tether ribbons, and true
+hover clearance. The exact 80-frame candidate is frozen at digest
+`c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098`.
+Run `npm.cmd run review:enemy-expansion-en-e08-possessed-mask-whisperveil-visage`
+and `npm.cmd run check:enemy-expansion-en-e08-possessed-mask-whisperveil-visage`.
+Focused, fast, and full checks pass with public 80/259 and all 232 fixtures
+unchanged. It awaits visual approval and remains private, unregistered,
+fixture-free, effect-free, uncommitted, and unpushed.
+
+Crownvault Castellan is the approved preceding private elite Animated Armor
 candidate on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly
 on clean published Runeforge Custodian reconciliation
 `700f2cedb1d3104369931a97bfec31a3b49fff93`. Its complete 80-frame baked
