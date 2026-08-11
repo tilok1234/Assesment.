@@ -109,10 +109,10 @@ export const EN_E07_BLACKWAKE_DREADMARE_GATE = deepFreeze({
   approvedImplementation: '3a3ffce6997a6cc9735b818e13573b9085229555',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later family artwork, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  initialPublishedHandoff: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '3a3ffce6997a6cc9735b818e13573b9085229555',
+  publishedApprovalRecord: 'a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6',
+  initialPublishedHandoff: 'd4cfd72229355ccb6024e676562303bc6d633f98',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_DROWNBRIDLE_STALKER_GATE.id,
     artifactSha256: EN_E07_DROWNBRIDLE_STALKER_GATE.artifactSha256,
@@ -189,7 +189,7 @@ export const EN_E07_BLACKWAKE_DREADMARE_GATE = deepFreeze({
     'release',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Blackwake Dreadmare digest is visually approved; implementation 3a3ffce6997a6cc9735b818e13573b9085229555 and approval record a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6 are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. The same approved lets do next reply opens only the EN-E08 actor-topology architecture decision after final published reconciliation; do not begin Animated Armor art before that choice is explicit. Kelpie registration, fixtures, runtime copying, water effects, release, and accepted drift remain closed.',
+  nextGate: 'The exact Blackwake Dreadmare digest is visually approved and published: implementation 3a3ffce6997a6cc9735b818e13573b9085229555, approval record a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6, and initial handoff d4cfd72229355ccb6024e676562303bc6d633f98 are remote verified. The same approved lets do next reply authorizes only the EN-E08 actor-topology architecture decision from this clean published reconciliation; do not begin Animated Armor art before that choice is explicit. Kelpie registration, fixtures, runtime copying, water effects, release, and accepted drift remain closed.',
 });
 
 export const EN_E07_BLACKWAKE_DREADMARE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -478,7 +478,7 @@ export const EN_E07_BLACKWAKE_DREADMARE_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'blackwake-dreadmare',
     scale: 8,
-    notes: 'Visually approved as one broad rear-heavy breaker-maned Blackwake Dreadmare elite against approved Drownbridle Stalker, Miremane Courser, and Steppe Hunter. Publish only the bounded approval and reconciliation tuple. The same reply opens the EN-E08 architecture decision only after clean remote reconciliation; keep Animated Armor art, registration, fixtures, runtime copying, water effects, release, and later work separate.',
+    notes: 'Visually approved and published as one broad rear-heavy breaker-maned Blackwake Dreadmare elite against approved Drownbridle Stalker, Miremane Courser, and Steppe Hunter. The same reply opens only the separate EN-E08 actor-topology architecture decision; keep Animated Armor art, registration, fixtures, runtime copying, water effects, release, and later work separate.',
   },
 });
 

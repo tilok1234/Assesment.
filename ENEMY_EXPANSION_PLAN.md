@@ -3715,7 +3715,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser and specialist Drownbridle Stalker approved and published; private elite Kelpie Blackwake Dreadmare implementation and approval record published with bounded reconciliation pending`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common-specialist-elite Kelpie roles approved and published; EN-E07 art complete with registration, fixtures, effects, and release still separate`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4596,10 +4596,10 @@ assembler.
   private Blackwake Dreadmare elite checkpoint below. It did not open
   registration, fixtures, runtime copying, effects, release, or EN-E08.
 
-#### Kelpie Blackwake Dreadmare complete suite approval published, reconciliation pending
+#### Kelpie Blackwake Dreadmare complete suite approved and published
 
 - Gate ID: `en-e07-kelpie-blackwake-dreadmare-full-v1`; status:
-  `approved` and `authorized-pending-bounded-publication` on
+  `approved` and `published` on
   `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean,
   remote-verified Drownbridle Stalker reconciliation
   `f9928aed53cd842b937d396e29ec8d6a7aaa8120`.
@@ -4649,17 +4649,17 @@ assembler.
   `approved lets do next` on 2026-08-11. Approval applies only to candidate
   digest `be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172`.
   Exact implementation `3a3ffce6997a6cc9735b818e13573b9085229555` and approval record
-  `a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` are published and remote-verified.
-  The standing approved-work permission authorizes only the bounded initial
-  handoff, final current-state reconciliation, and branch pushes that remain.
+  `a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` plus initial handoff
+  `d4cfd72229355ccb6024e676562303bc6d633f98` are published and remote-verified
+  under the standing bounded publication permission. This reconciliation
+  completes the publication tuple.
 - Scope firewall: no registration, public facade
   or catalog change, fixtures, manifest, shared renderer, exporter, validator,
   frame-contract change, runtime copying, alternate body, rider, saddle, horn,
   armor or barding, detached water, glow, particles, projectile, effects,
   release, EN-E08, or accepted drift.
-- Required next action: publish the bounded initial handoff and final
-  current-state reconciliation, then remote-verify the clean branch. The same
-  reply opens only the EN-E08 architecture decision after final publication. Do
+- Required next action: from the clean published Blackwake reconciliation, the
+  same reply opens only the EN-E08 architecture decision below. Do
   not begin Animated Armor art until the baked-actor versus deterministic-child
   actor-topology choice below is explicit.
 

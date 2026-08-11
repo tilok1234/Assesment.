@@ -121,11 +121,11 @@ check(
     && EN_E07_BLACKWAKE_DREADMARE_GATE.approvedOn === '2026-08-11'
     && EN_E07_BLACKWAKE_DREADMARE_GATE.approvedImplementation === '3a3ffce6997a6cc9735b818e13573b9085229555'
     && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationAuthorizedOn === '2026-08-11'
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.publishedImplementation === null
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.publishedApprovalRecord === null
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.initialPublishedHandoff === null
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Blackwake Dreadmare authorized-pending publication state drifted',
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.publishedImplementation === '3a3ffce6997a6cc9735b818e13573b9085229555'
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.publishedApprovalRecord === 'a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6'
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.initialPublishedHandoff === 'd4cfd72229355ccb6024e676562303bc6d633f98'
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.publicationState === 'published',
+  'Blackwake Dreadmare published tuple drifted',
 );
 check(
   EN_E07_BLACKWAKE_DREADMARE_GATE.approvalEvidence.includes('designer replied: approved lets do next')
@@ -169,11 +169,13 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('implementation 3a3ffce6997a6cc9735b818e13573b9085229555')
+  EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('visually approved and published')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('implementation 3a3ffce6997a6cc9735b818e13573b9085229555')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('approval record a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('initial handoff d4cfd72229355ccb6024e676562303bc6d633f98')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('remote verified')
-    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('initial-handoff and final-reconciliation commits')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('EN-E08 actor-topology architecture decision')
+    && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('clean published reconciliation')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('do not begin Animated Armor art')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('registration')
     && EN_E07_BLACKWAKE_DREADMARE_GATE.nextGate.includes('water effects')

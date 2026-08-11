@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved art publication checkpoint with reconciliation pending:
+- Current approved art publication checkpoint:
   `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
   Drownbridle Stalker reconciliation
   `f9928aed53cd842b937d396e29ec8d6a7aaa8120`, contains one private elite Kelpie
@@ -130,10 +130,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   The designer replied `approved lets do next` on 2026-08-11; approval applies
   only to the frozen digest above. Exact implementation
   `3a3ffce6997a6cc9735b818e13573b9085229555` and approval record
-  `a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` are published and remote-verified.
-  Status is `approved` and `authorized-pending-bounded-publication`; finish the
-  bounded initial handoff, final reconciliation, and branch pushes before
-  advancing. The same reply opens only
+  `a397f3034b9ce894dd7caf971d4b3c1fbc9cb2e6` plus initial handoff
+  `d4cfd72229355ccb6024e676562303bc6d633f98` are published and remote-verified.
+  Status is `approved` and `published`; this reconciliation completes the
+  bounded tuple. The same reply opens only
   the EN-E08 architecture decision after clean remote reconciliation; do not
   begin Animated Armor art before its actor-topology choice is explicit, and do
   not register, generate fixtures, add runtime copying or water effects,
