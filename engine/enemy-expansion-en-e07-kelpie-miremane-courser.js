@@ -46,7 +46,7 @@ export const EN_E07_KELPIE_CONTRACT_CARD = deepFreeze({
     id: 'miremane-courser',
     name: 'Miremane Courser',
     role: 'common',
-    status: 'implemented-full-awaiting-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['specialist', 'elite'],
   styleContract: 'Use chunky one-to-three-pixel hard-alpha forms and an independently authored low lean waterlogged equine body. Keep a bowed wet neck, readable long muzzle, one connected dripping mane, a connected weed-like tail, a long barrel, four separated legs, and four grounded dark hooves. The common must read as a self-contained Kelpie rather than a Centaur horse body, horned Unicorn, Wolf, Crocodile, skeletal mount, or detached water effect.',
@@ -58,7 +58,7 @@ export const EN_E07_MIREMANE_COURSER_CONTRACT = deepFreeze({
   family: 'kelpie',
   variant: 'miremane-courser',
   role: 'common',
-  state: 'implemented-complete-motion-awaiting-review',
+  state: 'implemented-complete-motion-approved',
   chassis: 'low-lean-bowed-neck-long-muzzle-connected-wet-mane-long-barrel-four-separated-legs-grounded-dark-hooves-weed-tail-equine-v1',
   silhouette: 'A low lean grounded waterlogged horse with a bowed neck, long readable muzzle, connected wet mane, long ribbed barrel, four separated legs, four small dark hooves, and a connected weed-like tail. It must not grow a humanoid rider or torso, horn, crown, canine wedge head, crocodilian belly, skeletal gaps, detached water shapes, or copied mount body.',
   identity: 'Peat-black teal hide, pale brackish belly planes, drowned-green mane clumps, old-reed tail accents, one pale marsh-light profile eye, paired front-view eyes, dark nostrils, and a connected head-low charge establish a self-contained common Kelpie while all water effects remain external.',
@@ -97,19 +97,19 @@ export const EN_E07_MIREMANE_COURSER_DATA = deepFreeze({
 
 export const EN_E07_MIREMANE_COURSER_GATE = deepFreeze({
   id: 'en-e07-kelpie-miremane-courser-full-v1',
-  status: 'implemented-awaiting-review',
+  status: 'approved',
   baseCheckpoint: '6ddef83e03e983672bee39b6b484dd1c1bfcba01',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Manyfold Usurper digest was visually approved, committed, pushed, and reconciled at clean published checkpoint 6ddef83e03e983672bee39b6b484dd1c1bfcba01, the designer replied: approved lets do next. Manyfold Usurper completed the frozen Changeling common-specialist-elite order, so the one-complete-sprite cadence authorizes only one private common Kelpie Miremane Courser 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
-  publicationAuthorizedOn: null,
-  publicationAuthorizationEvidence: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Steppe Hunter plus public Dire Wolf and Marsh Crocodile comparison, and synchronized GIF evidence were presented after the front/rear four-pillar read, reed-colored tail tip, touching moving hooves, and two detached walk legs were corrected before freeze. The three exact frozen PNG boards were open together in Aseprite and the live sprite list named all three paths at IDs 7, 11, and 15. The designer replied: approved. Approval applies only to candidate digest 6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32. Kelpie registration, fixtures, runtime copying, water effects, later Kelpie roles, release, and EN-E08 remain separate gates.',
+  approvedImplementation: '74463a2b1944b7d3a6d412923c205a0c9cc648f1',
+  publicationAuthorizedOn: '2026-08-11',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-local',
   precedingApproval: {
     gateId: EN_E07_MANYFOLD_USURPER_GATE.id,
     artifactSha256: EN_E07_MANYFOLD_USURPER_GATE.artifactSha256,
@@ -186,7 +186,7 @@ export const EN_E07_MIREMANE_COURSER_GATE = deepFreeze({
     'Kelpie specialist or elite',
     'EN-E08 and later work',
   ],
-  nextGate: 'Visual approval is required for the exact frozen Miremane Courser packet. Do not commit or push the candidate, register Kelpie, generate fixtures, add water effects, release, start later Kelpie roles, or advance EN-E08 before that approval.',
+  nextGate: 'The exact Miremane Courser digest is visually approved and its implementation is committed locally. Complete the bounded approval-record publication and current-state reconciliation first. No next Kelpie role is authorized; Kelpie registration, fixtures, runtime copying, water effects, later Kelpie roles, release, and EN-E08 remain closed until a separate lets do next.',
 });
 
 export const EN_E07_MIREMANE_COURSER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -462,7 +462,7 @@ export const EN_E07_MIREMANE_COURSER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'miremane-courser',
     scale: 8,
-    notes: 'Review one low lean waterlogged authored Miremane Courser against approved Steppe Hunter and public Dire Wolf and Marsh Crocodile. Keep registration, fixtures, water effects, later Kelpie roles, and later Wave 2 work separate.',
+    notes: 'Visually approved as one low lean waterlogged authored Miremane Courser against approved Steppe Hunter and public Dire Wolf and Marsh Crocodile. Publish only the bounded approval and reconciliation tuple. No next Kelpie role is authorized; keep registration, fixtures, runtime copying, water effects, later Kelpie roles, and later Wave 2 work separate.',
   },
 });
 

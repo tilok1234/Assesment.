@@ -23,18 +23,19 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Miremane Courser Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Miremane Courser Approved Locally
 
 Start here in a new task. One private common Kelpie Miremane Courser is
-implemented, deterministic, hash-frozen, technically validated, and awaiting
-the designer's visual approval on
+implemented, deterministic, hash-frozen, technically validated, and visually
+approved on
 `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
 Manyfold Usurper reconciliation
-`6ddef83e03e983672bee39b6b484dd1c1bfcba01`. It is not staged, committed,
-pushed, registered, fixture-backed, or public.
+`6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Exact implementation
+`74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally. The bounded
+approval record and branch publication are the current steps; it remains
+unregistered, fixture-free, and non-public.
 
-- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `awaiting visual
-  approval`.
+- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `approved-local`.
 - Authorization: after Manyfold Usurper was approved, published, and
   reconciled, the designer replied `approved lets do next` on 2026-08-11. The
   frozen Kelpie role order opens only this one private common candidate.
@@ -72,7 +73,9 @@ pushed, registered, fixture-backed, or public.
   exact; public 80/259 and fixtures are unchanged.
 - Broad validation: the focused gate passed in 0.5s,
   `npm.cmd run check:fast` passed in 66.0s, and full `npm.cmd run check` passed
-  in 110.4s, with public 80/259 and all 232 fixture sheets exact.
+  in 110.4s before approval and 120.2s immediately before the implementation
+  commit and 102.4s against approval-local metadata, with public 80/259 and all
+  232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and family
   comparison PNGs are open together in Aseprite; the live sprite list reports
   those three frozen paths at IDs 7, 11, and 15. The first draft's front/rear
@@ -81,14 +84,19 @@ pushed, registered, fixture-backed, or public.
   mane tail. A later gait audit repaired touching hooves and two detached walk
   legs; the final suite keeps all four hoof contacts separated and every limb
   connected.
+- Approval: after the exact packet was presented, the designer replied
+  `approved` on 2026-08-11. Approval applies only to digest
+  `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`.
+  Exact implementation `74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally under the
+  standing bounded publication permission.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-miremane-courser` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-miremane-courser`.
-- Required next action: inspect and approve or reject only digest
-  `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`.
-  Do not stage, commit, push, register Kelpie, generate fixtures, implement
-  runtime copying, add effects, start later Kelpie roles, release, or advance
-  EN-E08 before explicit visual approval.
+- Required next action: commit the bounded approval record, push the
+  implementation and approval commits, verify the remote tuple, and reconcile
+  the final handoff. No next Kelpie role is authorized. Do not register Kelpie,
+  generate fixtures, implement runtime copying, add effects, start another
+  Kelpie role, release, or advance EN-E08 without a separate `lets do next`.
 
 ## Approved Preceding Checkpoint - Manyfold Usurper Published and Reconciled
 

@@ -288,7 +288,7 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current isolated EN-E07 art checkpoint (2026-08-11): common Kelpie Miremane
+Current approved-local EN-E07 art checkpoint (2026-08-11): common Kelpie Miremane
 Courser on `codex/en-e07-kelpie-miremane-courser` is based exactly on clean
 published Manyfold Usurper reconciliation
 `6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Its 166-221-pixel low lean
@@ -301,12 +301,18 @@ separated hoof contacts and long equine spans, and are pixel/alpha distinct
 from approved Steppe Hunter plus public Dire Wolf and Marsh Crocodile; 72/72
 colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views, and
 54/54 readable muzzle views pass. `check:fast` passes in 66.0s and full `check`
-in 110.4s with public 80/259 and all 232 fixtures exact. The exact three frozen
+in 110.4s before approval and 120.2s immediately before the implementation
+commit and 102.4s against approval-local metadata, with public 80/259 and all
+232 fixtures exact. The exact three frozen
 PNGs are open together in Aseprite. Front/rear face, chest/rump, tail color,
 hoof separation, and two detached walk legs were corrected before freeze. The
-candidate awaits visual approval and is not staged, committed, pushed,
-registered, or fixture-backed. Runtime copying, effects, later Kelpie roles,
-release, and EN-E08 remain closed.
+designer replied `approved` on 2026-08-11; approval applies only to the frozen
+digest above. Exact implementation
+`74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally while the
+bounded approval record and branch publication are in progress. The candidate
+remains unregistered and fixture-free. No next Kelpie role is authorized;
+runtime copying, effects, release, and EN-E08 remain closed until another
+`lets do next`.
 
 Approved preceding EN-E07 publication checkpoint (2026-08-11): elite Changeling
 Manyfold Usurper on `codex/en-e07-changeling-manyfold-usurper` is based exactly

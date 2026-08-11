@@ -1268,10 +1268,15 @@ and Marsh Crocodile. The opaque range is 166-221; 72/72 colored frames, 8/8
 exact white flashes, 54/54 expected eye-bearing views, and 54/54 readable muzzle
 views pass. Complete B adds 10,468 pixels and Form changes 4,904. The exact
 three PNGs are open together in Aseprite, `check:fast` passes in 66.0s, and full
-`check` passes in 110.4s with public 80/259 and all 232 fixtures unchanged.
-The candidate remains uncommitted, unregistered, fixture-free, and non-public
-while awaiting visual approval; later Kelpie roles, release, and EN-E08 remain
-separate.
+`check` passes in 110.4s before approval and 120.2s immediately before the
+implementation commit and 102.4s against approval-local metadata, with public
+80/259 and all 232 fixtures unchanged. The
+designer approved the exact digest on 2026-08-11; implementation
+`74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally while the
+bounded approval record and publication reconciliation are in progress. The
+candidate remains unregistered, fixture-free, and non-public. No next Kelpie
+role is authorized; later roles, release, and EN-E08 remain separate until
+another `lets do next`.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

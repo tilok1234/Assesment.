@@ -150,15 +150,21 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_MIREMANE_COURSER_GATE.status === 'implemented-awaiting-review'
-    && EN_E07_MIREMANE_COURSER_GATE.approvedOn === null
-    && EN_E07_MIREMANE_COURSER_GATE.approvalEvidence === null
-    && EN_E07_MIREMANE_COURSER_GATE.approvedImplementation === null
+  EN_E07_MIREMANE_COURSER_GATE.status === 'approved'
+    && EN_E07_MIREMANE_COURSER_GATE.approvedOn === '2026-08-11'
+    && EN_E07_MIREMANE_COURSER_GATE.approvedImplementation === '74463a2b1944b7d3a6d412923c205a0c9cc648f1'
     && EN_E07_MIREMANE_COURSER_GATE.publishedImplementation === null
     && EN_E07_MIREMANE_COURSER_GATE.publishedApprovalRecord === null
     && EN_E07_MIREMANE_COURSER_GATE.initialPublishedHandoff === null
-    && EN_E07_MIREMANE_COURSER_GATE.publicationState === 'not-published',
-  'Miremane Courser pre-approval state drifted',
+    && EN_E07_MIREMANE_COURSER_GATE.publicationState === 'approved-local',
+  'Miremane Courser approved-local publication state drifted',
+);
+check(
+  EN_E07_MIREMANE_COURSER_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E07_MIREMANE_COURSER_GATE.approvalEvidence.includes('IDs 7, 11, and 15')
+    && EN_E07_MIREMANE_COURSER_GATE.approvalEvidence.includes('6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32')
+    && EN_E07_MIREMANE_COURSER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_MIREMANE_COURSER_GATE.baseCheckpoint === '6ddef83e03e983672bee39b6b484dd1c1bfcba01'
@@ -192,17 +198,18 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('Visual approval is required')
-    && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('Do not commit or push')
-    && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('later Kelpie roles'),
-  'visual approval or next-role stop gate drifted',
+  EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('visually approved')
+    && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('No next Kelpie role is authorized')
+    && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('remain closed')
+    && EN_E07_MIREMANE_COURSER_GATE.nextGate.includes('separate lets do next'),
+  'approved-local publication or next-role stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_KELPIE_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E07_KELPIE_CONTRACT_CARD.precedingFamily.variant === 'manyfold-usurper'
     && EN_E07_KELPIE_CONTRACT_CARD.activeVariant.id === 'miremane-courser'
     && EN_E07_KELPIE_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E07_KELPIE_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-review'
+    && EN_E07_KELPIE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E07_KELPIE_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite']),
   'Kelpie role order or common-only boundary drifted',
 );

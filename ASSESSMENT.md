@@ -468,7 +468,7 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current isolated art checkpoint is common Kelpie Miremane Courser on
+  The current approved-local art checkpoint is common Kelpie Miremane Courser on
   `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
   Manyfold Usurper reconciliation
   `6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Its low lean waterlogged equine
@@ -481,13 +481,18 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   Steppe Hunter plus public Dire Wolf and Marsh Crocodile. The opaque range is
   166-221, with 72/72 colored frames, 8/8 exact white flashes, 54/54 expected
   eye-bearing views, and 54/54 readable muzzle views. `check:fast` passes in
-  66.0s and full `check` in 110.4s, with public 80/259 and all 232 fixtures
-  exact. The exact raw, Complete B + Form, and comparison PNGs are open together
+  66.0s and full `check` in 110.4s before approval and 120.2s immediately
+  before the implementation commit and 102.4s against approval-local metadata,
+  with public 80/259 and all 232 fixtures exact. The exact raw, Complete B +
+  Form, and comparison PNGs are open together
   in Aseprite. The front/rear equine read, tail color, hoof separation, and two
-  detached walk legs were corrected before freeze. The candidate awaits visual
-  approval and is not staged, committed, pushed, registered, fixture-backed, or
-  public. Runtime copying, effects, later Kelpie roles, release, and EN-E08
-  remain closed.
+  detached walk legs were corrected before freeze. The designer replied
+  `approved` on 2026-08-11; approval applies only to the frozen digest above.
+  Exact implementation `74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally while the
+  bounded approval record and branch publication are in progress. The candidate
+  remains unregistered, fixture-free, and non-public. No next Kelpie role is
+  authorized; runtime copying, effects, release, and EN-E08 remain closed until
+  another `lets do next`.
   The approved preceding publication checkpoint is elite Changeling Manyfold Usurper on
   `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean published
   Mirrorfold Harrier reconciliation

@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current art review checkpoint:
+- Current approved-local art publication checkpoint:
   `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
   Manyfold Usurper reconciliation
   `6ddef83e03e983672bee39b6b484dd1c1bfcba01`, contains one private common
@@ -122,15 +122,21 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   8/8 exact white flashes, 54/54 expected eye-bearing views, 54/54 readable
   muzzle views, exact Cast/Death aliases, side mirrors, public 80/259,
   unchanged fixtures, the focused gate in 0.5s, `check:fast` in 66.0s, and full
-  `check` in 110.4s. The raw, Complete B + Form, and comparison PNGs are open
+  `check` in 110.4s before approval and 120.2s immediately before the
+  implementation commit, then 102.4s against approval-local metadata. The raw,
+  Complete B + Form, and comparison PNGs are open
   together in Aseprite as exact frozen paths. The front/rear face, chest/rump,
   tail color, moving hoof separation, and two detached walk legs were corrected
   before freeze. Run
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-miremane-courser` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-miremane-courser`.
-  The candidate is awaiting visual approval and is not staged, committed,
-  pushed, registered, fixture-backed, or public. Later Kelpie roles, runtime
-  copying, effects, release, and EN-E08 remain separate closed gates.
+  The designer replied `approved` on 2026-08-11; approval applies only to the
+  frozen digest above. Exact implementation
+  `74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally, while the
+  bounded approval record and branch publication are in progress. The candidate
+  remains unregistered, fixture-free, and non-public. No next Kelpie role is
+  authorized; runtime copying, effects, release, and EN-E08 remain separate
+  closed gates until another `lets do next`.
 - Approved preceding art publication checkpoint:
   `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean published
   Mirrorfold Harrier reconciliation

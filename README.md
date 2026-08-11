@@ -1472,7 +1472,7 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Miremane Courser is the current private common Kelpie art-review checkpoint on
+Miremane Courser is the current approved-local private common Kelpie checkpoint on
 `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
 Manyfold Usurper reconciliation
 `6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Its low lean waterlogged equine
@@ -1490,13 +1490,19 @@ contacts and long equine spans, and differ in pixels and alpha from all three
 comparisons. The opaque range is 166-221, all 72 colored frames preserve the
 four palette groups, all eight flashes are exact white, and all 54 expected
 eye-bearing views retain readable muzzles. `check:fast` passes in 66.0s and full
-`check` in 110.4s, with public 80/259 and all 232 fixtures exact. The exact raw,
+`check` in 110.4s before approval and 120.2s immediately before the
+implementation commit and 102.4s against approval-local metadata, with public
+80/259 and all 232 fixtures exact. The exact raw,
 Complete B + Form, and comparison PNGs are open together in Aseprite. Before
 freeze, the front/rear face, chest/rump, tail color, hoof separation, and two
 detached walk legs were corrected to keep the read equine and the gait fully
-connected. The candidate awaits visual approval and is not staged, committed,
-pushed, registered, or fixture-backed. Runtime copying, effects, later Kelpie
-roles, release, and EN-E08 remain closed.
+connected. The designer replied `approved` on 2026-08-11; approval applies only
+to the frozen digest above. Exact implementation
+`74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally while its
+bounded approval record and branch publication are in progress. It remains
+unregistered and fixture-free. No next Kelpie role is authorized; runtime
+copying, effects, release, and EN-E08 remain closed until another `lets do
+next`.
 
 Manyfold Usurper is the approved preceding elite Changeling publication checkpoint on
 `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean published

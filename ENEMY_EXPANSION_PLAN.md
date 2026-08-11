@@ -13,7 +13,7 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current art-review checkpoint (2026-08-11): private common Kelpie Miremane
+- Current approved-local publication checkpoint (2026-08-11): private common Kelpie Miremane
   Courser on `codex/en-e07-kelpie-miremane-courser` is frozen at digest
   `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`
   from clean published Manyfold Usurper reconciliation
@@ -26,14 +26,19 @@
   grounded hooves, and a connected drowned-weed tail. The packet passes 72/72
   colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views,
   and 54/54 readable muzzle views; Complete B adds 10,468 pixels and Form
-  changes 4,904. `check:fast` passes in 66.0s and full `check` in 110.4s with
-  public 80/259 and all 232 fixtures exact. The exact raw, Complete B + Form,
+  changes 4,904. `check:fast` passes in 66.0s and full `check` in 110.4s before
+  approval, 120.2s immediately before the implementation commit, and 102.4s
+  against approval-local metadata, with public 80/259 and all 232 fixtures
+  exact. The exact raw, Complete B + Form,
   and comparison PNGs are open together in Aseprite. The front/rear face,
   chest/rump, tail color, moving hoof separation, and two detached walk legs
-  were corrected before freeze. The candidate awaits visual approval and is
-  not staged, committed, pushed, registered, fixture-backed, or public.
-  Runtime copying, effects, later Kelpie roles, release, and EN-E08 remain
-  closed.
+  were corrected before freeze. The designer replied `approved` on 2026-08-11;
+  approval applies only to the frozen digest above. Exact implementation
+  `74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally while the
+  bounded approval record and branch publication are in progress. The candidate
+  remains unregistered, fixture-free, and non-public. No next Kelpie role is
+  authorized; runtime copying, effects, release, and EN-E08 remain closed until
+  another `lets do next`.
 
 - Approved preceding publication checkpoint (2026-08-11): private elite Changeling Manyfold
   Usurper on `codex/en-e07-changeling-manyfold-usurper` is frozen at digest
@@ -3680,7 +3685,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser awaiting visual review`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser approved locally with publication reconciliation in progress`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4417,10 +4422,10 @@ assembler.
   register Changeling or Kelpie, generate fixtures, implement runtime copying,
   add effects, start later Kelpie roles, release, or advance EN-E08.
 
-#### Kelpie Miremane Courser complete suite awaiting visual approval
+#### Kelpie Miremane Courser complete suite approved locally
 
-- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `awaiting visual
-  approval` on `codex/en-e07-kelpie-miremane-courser`, based exactly on clean,
+- Gate ID: `en-e07-kelpie-miremane-courser-full-v1`; status: `approved-local`
+  on `codex/en-e07-kelpie-miremane-courser`, based exactly on clean,
   remote-verified Manyfold Usurper reconciliation
   `6ddef83e03e983672bee39b6b484dd1c1bfcba01`.
 - Authorization: after the exact Manyfold Usurper was visually approved,
@@ -4463,7 +4468,9 @@ assembler.
   unchanged.
 - Broad validation: the focused gate passed in 0.5s,
   `npm.cmd run check:fast` passed in 66.0s, and full `npm.cmd run check` passed
-  in 110.4s, with public 80/259 and all 232 fixture sheets exact.
+  in 110.4s before approval and 120.2s immediately before the implementation
+  commit and 102.4s against approval-local metadata, with public 80/259 and all
+  232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and family
   comparison PNGs are open together in Aseprite; the live sprite list reports
   those three frozen paths at IDs 7, 11, and 15. The first draft's front/rear
@@ -4471,19 +4478,22 @@ assembler.
   narrow equine face, chest and rump, tapered legs, and drowned-mane tail. A
   later gait audit repaired touching hooves and two detached walk legs; the
   final suite retains four separated hoof contacts and fully connected limbs.
-- Approval boundary: no visual approval has been recorded. The implementation,
-  review/check tooling, package scripts, and documentation are intentionally
-  unstaged and uncommitted. Approval, if granted, applies only to digest
+- Approval: after the exact packet was presented, the designer replied
+  `approved` on 2026-08-11. Approval applies only to digest
   `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`.
+  Exact implementation `74463a2b1944b7d3a6d412923c205a0c9cc648f1` is committed locally under the
+  standing bounded publication permission. The approval record and branch
+  publication are the current steps; no later Kelpie role is authorized.
 - Scope firewall: no registration, public facade or catalog change, fixtures,
   manifest, shared renderer, exporter, validator, frame-contract change,
   runtime copying, alternate body, rider, saddle, horn, detached water, glow,
   particles, projectile, effects, later Kelpie role, release, EN-E08, or
   accepted drift.
-- Required next action: stop for explicit visual approval or rejection of the
-  frozen digest. Do not stage, commit, push, register Kelpie, generate fixtures,
-  add runtime copying or effects, begin another Kelpie role, release, or advance
-  EN-E08.
+- Required next action: commit the bounded approval record, push the
+  implementation and approval commits, verify the remote tuple, and reconcile
+  the final handoff. Do not register Kelpie, generate fixtures, add runtime
+  copying or effects, begin another Kelpie role, release, or advance EN-E08
+  without a separate `lets do next`.
 
 ### EN-E08 - Possessed equipment
 
