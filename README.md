@@ -1486,7 +1486,9 @@ approval metadata. Approval-local focused/fast/full gates also pass, with the
 full suite at 117.5s and approved Vowcoil/Oathbite/Crownvault, public 80/259,
 and all 232 fixtures exact. The designer replied `ok lets do next`; implementation
 `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the exact accepted pixels.
-It is approved and awaiting bounded publication. After clean remote
+That implementation and approval record
+`08538ac2d90d186c6550bcc139c2234023ec9c9d` are remote verified; only the
+initial published handoff and final reconciliation remain. After clean remote
 reconciliation, inspect the live roadmap and stop at its next explicit decision
 gate; do not infer EN-E09 authorization. Registration, fixtures, child assets,
 effects, release, accepted drift, and a PR remain closed.

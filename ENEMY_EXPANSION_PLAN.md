@@ -4706,10 +4706,10 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Living Weapon Crownmaw Greatblade elite approved awaiting publication
+#### Living Weapon Crownmaw Greatblade elite published awaiting handoff reconciliation
 
 - Gate ID: `en-e08-living-weapon-crownmaw-greatblade-full-v1`; status
-  `approved-not-published` on
+  `published-awaiting-handoff-reconciliation` on
   `codex/en-e08-living-weapon-elite`, based exactly on published Vowcoil
   reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1`.
 - Authorization: the exact Vowcoil packet was approved by `approved lets do
@@ -4731,8 +4731,9 @@ it with incidental per-frame offsets.
   117.5s and public 80/259 plus all 232 fixtures unchanged.
 - Approval: the exact packet was presented and the designer replied `ok lets do
   next`. Implementation `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe`
-  records the accepted pixels. Standing permission opens only the approval
-  record, branch push, and handoff reconciliation. After clean remote
+  records the accepted pixels. That implementation and approval record
+  `08538ac2d90d186c6550bcc139c2234023ec9c9d` are remote verified. Only the
+  initial published handoff and final reconciliation remain open. After clean remote
   reconciliation, inspect the live roadmap and stop at its next explicit
   decision gate; do not infer EN-E09 authorization. Registration, fixtures,
   child assets, effects, release, accepted drift, and a PR remain closed.

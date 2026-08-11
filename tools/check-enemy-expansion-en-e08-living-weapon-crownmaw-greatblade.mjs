@@ -118,10 +118,10 @@ check(
     && EN_E08_CROWNMAW_GREATBLADE_GATE.approvalEvidence.includes('designer replied: ok lets do next')
     && EN_E08_CROWNMAW_GREATBLADE_GATE.approvalEvidence.includes('a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44')
     && EN_E08_CROWNMAW_GREATBLADE_GATE.approvedImplementation === '2ec77b0595d74d6765503b2ebd2bb366f53d4ffe'
-    && EN_E08_CROWNMAW_GREATBLADE_GATE.publishedImplementation === null
-    && EN_E08_CROWNMAW_GREATBLADE_GATE.publishedApprovalRecord === null
+    && EN_E08_CROWNMAW_GREATBLADE_GATE.publishedImplementation === '2ec77b0595d74d6765503b2ebd2bb366f53d4ffe'
+    && EN_E08_CROWNMAW_GREATBLADE_GATE.publishedApprovalRecord === '08538ac2d90d186c6550bcc139c2234023ec9c9d'
     && EN_E08_CROWNMAW_GREATBLADE_GATE.initialPublishedHandoff === null
-    && EN_E08_CROWNMAW_GREATBLADE_GATE.publicationState === 'approved-not-published'
+    && EN_E08_CROWNMAW_GREATBLADE_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E08_CROWNMAW_GREATBLADE_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Crownmaw Greatblade approval state or bounded publication authorization drifted',
 );
@@ -158,8 +158,9 @@ check(
   'Crownmaw Greatblade exclusions drifted',
 );
 check(
-  EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('visually approved at implementation 2ec77b0595d74d6765503b2ebd2bb366f53d4ffe')
-    && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
+  EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('implementation 2ec77b0595d74d6765503b2ebd2bb366f53d4ffe')
+    && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('approval record 08538ac2d90d186c6550bcc139c2234023ec9c9d')
+    && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('inspect the live roadmap')
     && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('do not infer EN-E09 authorization'),
   'Crownmaw Greatblade stop gate drifted',

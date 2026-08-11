@@ -479,9 +479,11 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   in 61.0s/114.0s before approval metadata; approval-local focused/fast/full
   gates also pass, with the full suite at 117.5s and public 80/259 plus all 232
   fixtures exact. The designer replied `ok lets do next`; implementation
-  `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the accepted pixels. It is
-  approved and awaiting bounded publication, unregistered, fixture-free,
-  effect-free, and non-public.
+  `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the accepted pixels. The
+  implementation and approval record
+  `08538ac2d90d186c6550bcc139c2234023ec9c9d` are remote verified; only the
+  initial published handoff and final reconciliation remain. It is
+  unregistered, fixture-free, effect-free, and non-public.
   The approved preceding private checkpoint is specialist Living Weapon Vowcoil Glaive on
   `codex/en-e08-living-weapon-specialist`, based on clean published Oathbite
   reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2`. It is one connected
