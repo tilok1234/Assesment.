@@ -481,8 +481,9 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   lets do next`; implementation
   `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted pixels. The
   implementation and approval record
-  `36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified; only the
-  initial published handoff and final reconciliation remain. It is
+  `36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified. Initial
+  published handoff `5f7b93d4a911a87e3fb91a45c68d6ce2d8fb31cf` is also remote
+  verified; this reconciliation completes the bounded publication tuple. It is
   unregistered, fixture-free, effect-free, and non-public.
   The approved preceding private checkpoint is common Living Weapon Oathbite Cleaver on
   `codex/en-e08-living-weapon-architecture`, based on clean published

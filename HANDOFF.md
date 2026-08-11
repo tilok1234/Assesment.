@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Vowcoil Glaive Awaiting Handoff Reconciliation
+## Immediate Continuation Checkpoint - Vowcoil Glaive Published
 
 Start here. Oathbite Cleaver's bounded publication tuple is clean and remote
 verified at `870bf042e4d7604fec6f33ba3ba6b03308204ee2`. The designer replied
@@ -33,9 +33,10 @@ art gate. Vowcoil Glaive is implemented on
 replied `approved lets do next`; implementation
 `1080ca4a377657634249d3579dbd9c743db3b38c` records the exact accepted pixels.
 Implementation `1080ca4a377657634249d3579dbd9c743db3b38c` and approval record
-`36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified. Only the
-initial published handoff and final reconciliation remain. It stays
-unregistered, fixture-free, effect-free, and non-public.
+`36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified. Initial
+published handoff `5f7b93d4a911a87e3fb91a45c68d6ce2d8fb31cf` is also remote
+verified; this reconciliation completes the bounded publication tuple. It
+stays unregistered, fixture-free, effect-free, and non-public.
 
 - Identity: tall pale moon-steel crescent glaive with an inward hook, connected
   teal ring core, old-gold collar lugs, long indigo-wrapped segmented shaft,
@@ -70,10 +71,10 @@ unregistered, fixture-free, effect-free, and non-public.
 - Commands: `npm.cmd run
   review:enemy-expansion-en-e08-living-weapon-vowcoil-glaive` and `npm.cmd run
   check:enemy-expansion-en-e08-living-weapon-vowcoil-glaive`.
-- Publication gate: the implementation and approval record are remote verified;
-  only the initial published handoff and final reconciliation remain. The same
-  reply opens only one private elite
-  Living Weapon art candidate after a clean remote reconciliation.
+- Publication gate: the implementation, approval record, and initial handoff
+  are remote verified; this reconciliation completes the bounded publication
+  tuple. The same reply opens only one private elite Living Weapon art
+  candidate from this clean published reconciliation.
   Registration, fixtures, child assets, effects, EN-E09, release, accepted
   drift, and a PR remain closed.
 

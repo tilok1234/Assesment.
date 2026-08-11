@@ -4706,10 +4706,10 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Living Weapon Vowcoil Glaive specialist published awaiting handoff reconciliation
+#### Living Weapon Vowcoil Glaive specialist approved and published
 
-- Gate ID: `en-e08-living-weapon-vowcoil-glaive-full-v1`; status
-  `published-awaiting-handoff-reconciliation` on
+- Gate ID: `en-e08-living-weapon-vowcoil-glaive-full-v1`; status `approved` and
+  `published` on
   `codex/en-e08-living-weapon-specialist`, based
   exactly on published Oathbite reconciliation
   `870bf042e4d7604fec6f33ba3ba6b03308204ee2`.
@@ -4733,10 +4733,11 @@ it with incidental per-frame offsets.
   lets do next`. Implementation
   `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted pixels. That
   implementation and approval record
-  `36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified. Only the
-  initial published handoff and final reconciliation remain open. The same
-  reply opens only one private elite Living Weapon
-  art candidate after clean remote reconciliation. Registration, fixtures,
+  `36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified. Initial
+  published handoff `5f7b93d4a911a87e3fb91a45c68d6ce2d8fb31cf` is also remote
+  verified; this reconciliation completes the bounded publication tuple. The
+  same reply opens only one private elite Living Weapon
+  art candidate from this clean published reconciliation. Registration, fixtures,
   child assets, effects, EN-E09, release, accepted drift, and a PR remain closed.
 
 #### Living Weapon Oathbite Cleaver common approved and published

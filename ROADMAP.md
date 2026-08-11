@@ -300,9 +300,11 @@ exact. The exact three PNGs were open together in Aseprite when the designer
 replied `approved lets do next`; implementation
 `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted pixels. That
 implementation and approval record
-`36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified; only the
-initial published handoff and final reconciliation remain. The same reply opens
-only one private elite Living Weapon art candidate after clean remote reconciliation.
+`36d41a04fc122336a9e65aa9f5d94618975df388` are remote verified. Initial
+published handoff `5f7b93d4a911a87e3fb91a45c68d6ce2d8fb31cf` is also remote
+verified; this reconciliation completes the bounded publication tuple. The
+same reply opens only one private elite Living Weapon art candidate from this
+clean published reconciliation.
 Registration, fixtures, effects, child assets, EN-E09, release, broader
 publication, accepted drift, and a PR remain closed.
 
