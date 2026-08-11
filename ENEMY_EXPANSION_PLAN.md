@@ -4706,6 +4706,32 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
+#### Living Weapon Vowcoil Glaive specialist awaiting visual review
+
+- Gate ID: `en-e08-living-weapon-vowcoil-glaive-full-v1`; status
+  `awaiting-visual-review` on `codex/en-e08-living-weapon-specialist`, based
+  exactly on published Oathbite reconciliation
+  `870bf042e4d7604fec6f33ba3ba6b03308204ee2`.
+- Authorization: the exact Oathbite packet was approved by `approved lets do
+  next`; after its clean publication tuple, that reply opens only this private
+  specialist candidate under the existing baked-single-actor topology.
+- Identity and motion: tall moon-steel crescent, inward hook, teal ring core,
+  old-gold collar lugs, long indigo-wrapped shaft, and hooked butt spike. Attack
+  performs one body-owned horizontal reaping sweep; Cast aliases Attack and
+  Death aliases Hurt H1,H2,H2,H2.
+- Frozen digest:
+  `bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`.
+  PNG hashes are `740d2351...43f1`, `5697d242...a580`, and
+  `245212d2...3558`; GIF hashes are `c0e4ffa2...f971` and
+  `f4c6816a...2f594`.
+- The focused gate passes 80/80 connected, bounded, hovering, and distinct from
+  Oathbite/Crownvault/Fallen Knight, with 54/54 readable core views. Fast/full
+  validation passes in 55.0s/115.7s with public 80/259 and all 232 fixtures
+  unchanged.
+- Approval gate: do not commit or push, register, generate fixtures, add child
+  assets or effects, begin the elite role or EN-E09, release, accept drift, or
+  open a PR before explicit approval of this exact packet.
+
 #### Living Weapon Oathbite Cleaver common approved and published
 
 - Gate ID: `en-e08-living-weapon-oathbite-cleaver-full-v1`; status

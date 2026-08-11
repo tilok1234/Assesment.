@@ -1472,7 +1472,22 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Oathbite Cleaver is the current private common Living Weapon candidate on
+Vowcoil Glaive is the current private specialist Living Weapon candidate on
+`codex/en-e08-living-weapon-specialist`, based exactly on clean published
+Oathbite reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2`. Its tall
+moon-steel crescent, teal ring core, old-gold collar, indigo-wrapped shaft, and
+hooked butt spike are one baked 24x24 actor with zero child assets. The exact
+80-frame candidate is frozen at digest
+`bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`.
+Run `npm.cmd run review:enemy-expansion-en-e08-living-weapon-vowcoil-glaive`
+and `npm.cmd run check:enemy-expansion-en-e08-living-weapon-vowcoil-glaive`.
+The focused gate, fast validation in 55.0s, and full validation in 115.7s pass
+with approved Oathbite/Crownvault, public 80/259, and all 232 fixtures exact.
+It awaits explicit visual approval and must not be committed or pushed.
+Registration, fixtures, child assets, effects, the elite role, EN-E09, release,
+accepted drift, and a PR remain closed.
+
+Oathbite Cleaver is the approved preceding private common Living Weapon candidate on
 `codex/en-e08-living-weapon-architecture`, based exactly on clean published
 Threnecrown reconciliation `6f2a51739a65b88f8c50644e92e440c8004cc049`.
 The designer replied `awesome lets do next` to the recommended deterministic

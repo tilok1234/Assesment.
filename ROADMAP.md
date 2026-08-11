@@ -288,7 +288,19 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current EN-E08 prototype gate (2026-08-11): common Living Weapon Oathbite
+Current EN-E08 prototype gate (2026-08-11): specialist Living Weapon Vowcoil
+Glaive on `codex/en-e08-living-weapon-specialist` is based on clean published
+Oathbite reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2` and frozen
+at digest `bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`.
+Its tall crescent blade, connected ring core, collar lugs, long wrapped shaft,
+and butt spike are one baked actor with zero child assets. All 80 frames pass
+the focused gate; fast/full validation passes in 55.0s/115.7s with public
+80/259 and all 232 fixtures exact. The exact three PNGs are open together in
+Aseprite. It awaits explicit visual approval and must not be committed or
+pushed. Registration, fixtures, effects, child assets, the elite role, EN-E09,
+release, broader publication, accepted drift, and a PR remain closed.
+
+Approved preceding EN-E08 checkpoint (2026-08-11): common Living Weapon Oathbite
 Cleaver on `codex/en-e08-living-weapon-architecture` is based on clean
 published Threnecrown reconciliation
 `6f2a51739a65b88f8c50644e92e440c8004cc049` and frozen at digest

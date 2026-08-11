@@ -1350,6 +1350,17 @@ reconciliation completes the bounded tuple. The same
 reply opened only the EN-E08 actor-topology architecture decision after clean
 remote reconciliation; the later explicit choice is recorded below.
 
+`engine/enemy-expansion-en-e08-living-weapon-vowcoil-glaive.js` extends the
+private Living Weapon family without changing decision
+`en-e08-living-weapon-baked-single-actor-v1`. From clean published Oathbite
+reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2`, it owns exactly one
+specialist tall crescent-glaive/ring-core/wrapped-shaft actor with zero child
+assets in every frame. Candidate digest
+`bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`
+passes its focused gate, `check:fast` in 55.0s, and full `check` in 115.7s with
+public 80/259 and all 232 fixtures exact. It awaits visual approval and remains
+unregistered, fixture-free, effect-free, non-public, and uncommitted.
+
 `engine/enemy-expansion-en-e08-living-weapon-oathbite-cleaver.js` opens the
 private Living Weapon family under decision
 `en-e08-living-weapon-baked-single-actor-v1`. From clean published Threnecrown

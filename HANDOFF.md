@@ -23,7 +23,53 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Oathbite Cleaver Published
+## Immediate Continuation Checkpoint - Vowcoil Glaive Awaiting Visual Review
+
+Start here. Oathbite Cleaver's bounded publication tuple is clean and remote
+verified at `870bf042e4d7604fec6f33ba3ba6b03308204ee2`. The designer replied
+`approved lets do next`, opening exactly one private specialist Living Weapon
+art gate. Vowcoil Glaive is implemented locally on
+`codex/en-e08-living-weapon-specialist` across all 80 frames. It is not visually
+approved, committed, pushed, registered, fixture-backed, effect-enabled, or
+public.
+
+- Identity: tall pale moon-steel crescent glaive with an inward hook, connected
+  teal ring core, old-gold collar lugs, long indigo-wrapped segmented shaft,
+  hooked butt spike, and true hover clearance.
+- Motion: Idle holds the glaive upright and pulses the ring core; Walk uses four
+  directional hover phases; Attack coils, leans, drives one horizontal
+  body-owned reaping sweep, and recovers. Hurt is a complete white recoil then
+  a colored shaft brace. Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2.
+- Architecture: the approved `en-e08-living-weapon-baked-single-actor-v1`
+  topology remains exact. Blade, hook, ring core, collar, shaft, bindings, and
+  butt spike are one connected hard-alpha actor with zero child assets.
+- Frozen digest:
+  `bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`.
+  Raw/Complete B + Form/comparison PNG hashes are
+  `740d23519944d9a3567ca8889871ab4e731c87f74a79d61e3ccc5faf550843f1`,
+  `5697d242be08d1a456fdfdbacb32e67827be58f57819a0678f4adc808c42a580`,
+  and `245212d2c7f07bb259da471707a9a70922556ad04d6a6e08e9d1ee976dcd3558`.
+  Raw and assembled GIF hashes are
+  `c0e4ffa28050045d22799ccee5ed4a800caa60a7ff068b543da6a59be0fdf971`
+  and `f4c6816a1513c3b900b8a54be7aab68ca210b864a3c450f3aa514aaefbe2f594`.
+- Focused gate: 80/80 connected, bounded, and hovering; 80/80 pixel and alpha
+  silhouettes differ from approved Oathbite Cleaver, approved Crownvault
+  Castellan, and public Fallen Knight Shieldbearer. There are 72/72 colored
+  frames, 8/8 exact white flashes, and 54/54 readable core views; opaque range
+  99-168. Complete B adds 5,800 pixels and Form changes 4,182.
+- Broad validation: `check:fast` passes in 55.0s and full `check` in 115.7s.
+  Public 80/259 and all 232 fixture sheets remain exact.
+- Visual-review readiness: the exact frozen raw, Complete B + Form, and
+  silhouette-comparison PNGs are open together in Aseprite.
+- Commands: `npm.cmd run
+  review:enemy-expansion-en-e08-living-weapon-vowcoil-glaive` and `npm.cmd run
+  check:enemy-expansion-en-e08-living-weapon-vowcoil-glaive`.
+- Approval gate: approval applies only to this exact digest and five hashes. Do
+  not commit or push, register Living Weapon, generate fixtures, add child
+  assets or effects, begin the elite role, start EN-E09, release, accept drift,
+  or open a PR before explicit visual approval.
+
+## Approved Preceding Checkpoint - Oathbite Cleaver Published
 
 Start here. From clean published Threnecrown Hierophant reconciliation
 `6f2a51739a65b88f8c50644e92e440c8004cc049`, the designer approved the

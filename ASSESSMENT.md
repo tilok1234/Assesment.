@@ -468,7 +468,18 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current private prototype is common Living Weapon Oathbite Cleaver on
+  The current private prototype is specialist Living Weapon Vowcoil Glaive on
+  `codex/en-e08-living-weapon-specialist`, based on clean published Oathbite
+  reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2`. It is one connected
+  tall crescent/ring-core/wrapped-shaft/butt-spike actor with zero child assets,
+  frozen at digest
+  `bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`.
+  All 80 frames pass focused connected, bounded, hovering, core-readability,
+  alias, mirror, predecessor, and comparison checks. Fast validation passes in
+  55.0s and full validation in 115.7s, preserving public 80/259 and all 232
+  fixtures. It is awaiting visual approval, unregistered, fixture-free,
+  effect-free, non-public, and uncommitted.
+  The approved preceding private checkpoint is common Living Weapon Oathbite Cleaver on
   `codex/en-e08-living-weapon-architecture`, based on clean published
   Threnecrown reconciliation `6f2a51739a65b88f8c50644e92e440c8004cc049`.
   The designer selected the recommended baked 24x24 single-actor topology by

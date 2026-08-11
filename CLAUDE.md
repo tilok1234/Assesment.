@@ -107,7 +107,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: common Living Weapon Oathbite Cleaver on
+- Current private art gate: specialist Living Weapon Vowcoil Glaive on
+  `codex/en-e08-living-weapon-specialist`, based exactly on clean published
+  Oathbite reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2`, is frozen
+  at digest `bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`.
+  It is one baked tall crescent/ring-core/wrapped-shaft/butt-spike actor with
+  zero child assets. The focused gate, `check:fast` in 55.0s, and full `check`
+  in 115.7s pass with public 80/259 and all 232 fixtures exact. The exact three
+  frozen PNGs are open together in Aseprite. It awaits explicit visual approval
+  and must not be committed or pushed. Registration, fixtures, effects, child
+  assets, the elite role, EN-E09, release, accepted drift, and a PR remain
+  closed.
+- Approved preceding published private art checkpoint: common Living Weapon Oathbite Cleaver on
   `codex/en-e08-living-weapon-architecture`, based exactly on clean published
   Threnecrown reconciliation `6f2a51739a65b88f8c50644e92e440c8004cc049`, is
   frozen at digest
