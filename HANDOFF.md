@@ -23,7 +23,80 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mirecrown Beacon Published; Common Changeling Gate Open
+## Immediate Continuation Checkpoint - Veilskin Foundling Awaiting Visual Review
+
+Start here in a new task. One private common Changeling Veilskin Foundling is
+implemented, deterministic, hash-frozen, and technically validated on
+`codex/en-e07-changeling-veilskin-foundling`, based exactly on clean published
+Mirecrown Beacon reconciliation
+`4ee32622ec2984ac805ac345b854f23584fda3c3`. It is not visually approved,
+committed, pushed, registered, fixture-generated, or public.
+
+- Gate ID: `en-e07-changeling-veilskin-foundling-full-v1`; status:
+  `implemented-awaiting-review`.
+- Authorization: after the exact Mirecrown Beacon packet was approved,
+  published, and reconciled, the designer replied `approved lets do next` on
+  2026-08-11. Mirecrown completed the common-specialist-elite Will-o-Wisp role
+  order, so the one-complete-sprite cadence opens only this private common
+  Changeling candidate.
+- Face repair: the first digest
+  `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
+  is superseded after the designer said `could need a more readable face`.
+  The revised packet adds connected dark eye sockets, retained amber glints,
+  and a tiny mouth mark in visible-face views only; silhouette, body, motion,
+  aliases, and exclusions are unchanged.
+- Frozen identity: a small grounded authored fey impostor with one connected
+  pear-shaped living veil, one centered face, a narrow ochre-coral folded
+  torso, paired short ordinary arms, bowed separated legs, and broad splayed
+  feet. It is not an adult Pale Echo body, Goblin ear bar, Imp horn bar,
+  winged Fairy, detached mask, or copied actor.
+- Motion: Idle flexes the connected veil; Walk uses four crouched alternating
+  splayed steps; Attack draws both hands beneath the face, extends both short
+  forearms symmetrically, opens a connected two-hand rake, and resets. Cast is
+  an exact Attack alias. Hurt is white recoil then colored closed-veil brace;
+  Death aliases Hurt H1,H2,H2,H2.
+- Candidate digest:
+  `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`.
+- Raw/no-outline PNG:
+  `enemy-expansion-review/en-e07-changeling-veilskin-foundling/en-e07-changeling-veilskin-foundling-full-suite-raw.png`,
+  SHA-256
+  `795f6eb56dba256c78295e0543ce2282d680e42fc5ac907534ee30198fbb5485`.
+- Complete B + Form PNG:
+  `enemy-expansion-review/en-e07-changeling-veilskin-foundling/en-e07-changeling-veilskin-foundling-full-suite-complete-b-form.png`,
+  SHA-256
+  `e636c9122dd17b1ed901c0afc821256b6dabae4a3b560003720d05d4e40d67f1`.
+- Pale Echo/Goblin Scout/Imp Sprite comparison PNG:
+  `enemy-expansion-review/en-e07-changeling-veilskin-foundling/en-e07-changeling-veilskin-foundling-family-comparison.png`,
+  SHA-256
+  `a323ac1b863d8168cc0d3ad4726d2c220cd2c909cd18a90a589fcdd0ac2153f5`.
+- Raw GIF SHA-256:
+  `d4fd3f0ab7f3cd0dc9f44dbaee576a7fdc178ea86dda71d5265cb14194b57aac`.
+- Complete B + Form GIF SHA-256:
+  `55234484dde64a8b7a90dcb7c24acc8505f351c0e69b9aea8182a6e93093cfdd`.
+- Focused validation: 80/80 connected, one-cell-bounded, grounded, and
+  pixel/alpha distinct from approved Pale Echo, public Goblin Scout, and public
+  Imp Sprite; opaque range 201-267; 72/72 colored palette frames; 8/8 exact
+  white flashes; 54/54 expected eye-bearing views; 54/54 readable
+  face-feature views; Complete B adds 7,664
+  pixels and Form changes 7,309. Approved Mirecrown and Pale Echo remain exact;
+  public 80/259 and fixtures remain unchanged.
+- Broad validation: the revised ten-gate EN-E07 predecessor/candidate matrix
+  passed in 6.3s, `npm.cmd run check:fast` passed in 58.3s, and full
+  `npm.cmd run check` passed in 107.1s with public 80/259 and all 232 fixture
+  sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and comparison
+  PNGs are open together in responsive Aseprite 1.3.17.2. Its live command
+  line names all three exact frozen paths.
+- Commands:
+  `npm.cmd run review:enemy-expansion-en-e07-changeling-veilskin-foundling` and
+  `npm.cmd run check:enemy-expansion-en-e07-changeling-veilskin-foundling`.
+- Required next action: present those exact boards plus both synchronized GIFs
+  and request an explicit visual verdict on this digest. Do not commit or push it before
+  approval. Do not register Changeling, generate fixtures, implement runtime
+  copying, add effects, start specialist/elite Changeling or Kelpie, release,
+  or advance EN-E08.
+
+## Approved Preceding Checkpoint - Mirecrown Beacon Published
 
 Start here in a new task. The exact private elite Will-o-Wisp Mirecrown Beacon
 is authored, repaired, hash-frozen, deterministic, fully validated, and
@@ -104,11 +177,10 @@ this clean publication reconciliation.
   and in 110.9s against the published tuple. The integrated frame digest remains
   `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`
   and all 232 fixture sheets validate.
-- Required next action: preserve Mirecrown Beacon and every predecessor
-  byte-for-byte and open only one private common Changeling candidate from this
-  clean publication reconciliation. Do not register Will-o-Wisp, generate
-  fixtures, add effects, start another role or family beyond that candidate,
-  release, or advance EN-E08.
+- Historical next action: the approved reply opened only the active private
+  Veilskin Foundling candidate above. Preserve Mirecrown Beacon and every
+  predecessor byte-for-byte; Will-o-Wisp registration, fixtures, effects,
+  another family beyond that candidate, release, and EN-E08 remain closed.
 
 ## Approved Preceding Checkpoint - Fenbell Shepherd Published
 

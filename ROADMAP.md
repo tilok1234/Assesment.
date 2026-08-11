@@ -288,6 +288,28 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
+Current isolated EN-E07 art checkpoint (2026-08-11): common Changeling
+Veilskin Foundling on `codex/en-e07-changeling-veilskin-foundling` is based
+exactly on clean Mirecrown reconciliation
+`4ee32622ec2984ac805ac345b854f23584fda3c3`. Its 201-267-pixel small grounded
+fey form at digest
+`e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`
+uses one connected pear-shaped living veil, one centered face with dark
+eye sockets, amber glints, and a tiny mouth mark, ochre-coral
+folds, paired short ordinary arms, bowed legs, and broad splayed feet. All 80
+frames are connected, bounded, grounded, hard-alpha, and pixel/alpha distinct
+from approved Pale Echo, public Goblin Scout, and public Imp Sprite; 72/72
+colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views, and
+54/54 readable face-feature views pass. The first digest
+`1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
+is superseded by this face-only repair. The revised ten-gate EN-E07 matrix
+passes in 6.3s, `check:fast` in 58.3s, and full `check` in 107.1s with all 232
+fixtures exact. The packet is hash-frozen
+and technically validated but remains
+unapproved, uncommitted, unpushed, unregistered, and fixture-free. Visual
+review is the only open action; runtime copying, effects, specialist/elite
+Changeling, Kelpie, release, and EN-E08 remain closed.
+
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do
 next`. The Living Shadow role order opens only elite Hollowcrown Regent on

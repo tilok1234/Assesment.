@@ -13,7 +13,32 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current stopping checkpoint (2026-08-11): private elite Will-o-Wisp
+- Current stopping checkpoint (2026-08-11): private common Changeling Veilskin
+  Foundling on `codex/en-e07-changeling-veilskin-foundling` is frozen at digest
+  `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`
+  from clean published Mirecrown Beacon reconciliation
+  `4ee32622ec2984ac805ac345b854f23584fda3c3`. The 201-267-pixel suite passes
+  80/80 connected, one-cell-bounded, grounded, hard-alpha, alias, mirror, and
+  pixel/alpha distinctions from approved Pale Echo, public Goblin Scout, and
+  public Imp Sprite. Its small authored fey default uses one connected
+  pear-shaped living veil, one centered face with connected dark eye sockets,
+  retained amber glints, and a tiny mouth mark, a narrow ochre-coral folded
+  torso, paired short ordinary arms, bowed separated legs, and broad splayed
+  feet. The first digest
+  `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
+  is superseded after the designer said `could need a more readable face`;
+  silhouette, body, and motion remain unchanged. The packet passes 72/72
+  colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views,
+  and 54/54 readable face-feature views, preserves approved Mirecrown and Pale
+  Echo exact, and leaves public 80/259 plus fixtures unchanged. The revised
+  ten-gate EN-E07 matrix passes in 6.3s, `check:fast` in 58.3s, and full
+  `check` in 107.1s with all 232 fixtures exact. It is implemented and
+  hash-frozen but remains visually unapproved, uncommitted, unpushed,
+  unregistered, and fixture-free. Visual review is the only open action;
+  runtime actor copying, effects, specialist/elite Changeling, Kelpie, release,
+  and EN-E08 remain closed.
+
+- Approved preceding checkpoint (2026-08-11): private elite Will-o-Wisp
   Mirecrown Beacon on `codex/en-e07-will-o-wisp-mirecrown-beacon` is frozen at
   digest
   `5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81`
@@ -3570,7 +3595,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; one private common Changeling gate open`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling implemented and awaiting visual review`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4103,6 +4128,68 @@ assembler.
   clean publication reconciliation. Do not register Will-o-Wisp, generate
   fixtures, add effects, start another role or family beyond that candidate,
   release, or advance EN-E08.
+
+#### Changeling Veilskin Foundling complete suite awaiting visual review
+
+- Gate ID: `en-e07-changeling-veilskin-foundling-full-v1`; status:
+  `implemented-awaiting-review` on
+  `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean
+  published Mirecrown Beacon reconciliation
+  `4ee32622ec2984ac805ac345b854f23584fda3c3`.
+- Authorization: after the exact Mirecrown Beacon was visually approved,
+  committed, pushed, and reconciled, the designer replied `approved lets do
+  next` on 2026-08-11. Mirecrown completed the frozen Will-o-Wisp role order;
+  the one-complete-sprite cadence authorizes only this one private common
+  Changeling candidate.
+- Face repair: the first digest
+  `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
+  is superseded after the designer said `could need a more readable face`.
+  Only connected dark eye sockets, retained amber glints, and a tiny mouth mark
+  changed; silhouette, body, motion, aliases, and exclusions remain unchanged.
+- Contract: a small grounded authored fey impostor with one connected
+  pear-shaped living veil, one centered face, a narrow ochre-coral folded
+  torso, paired short ordinary arms, bowed separated legs, and broad splayed
+  feet. It must remain distinct from the adult Pale Echo humanoid, public
+  Goblin ear bar, public Imp horn bar, winged Fairy, detached mask, and copied
+  actor silhouettes.
+- Motion: Idle flexes the connected veil; Walk uses four crouched alternating
+  splayed steps; Attack draws both hands beneath the face, extends both short
+  forearms symmetrically, opens a connected two-hand rake, and resets. Hurt is
+  exact white recoil then colored closed-veil brace. Cast aliases Attack;
+  Death aliases Hurt H1,H2,H2,H2.
+- Frozen evidence: raw PNG
+  `795f6eb56dba256c78295e0543ce2282d680e42fc5ac907534ee30198fbb5485`;
+  Complete B + Form PNG
+  `e636c9122dd17b1ed901c0afc821256b6dabae4a3b560003720d05d4e40d67f1`;
+  Pale Echo/Goblin Scout/Imp Sprite comparison PNG
+  `a323ac1b863d8168cc0d3ad4726d2c220cd2c909cd18a90a589fcdd0ac2153f5`;
+  raw GIF
+  `d4fd3f0ab7f3cd0dc9f44dbaee576a7fdc178ea86dda71d5265cb14194b57aac`;
+  Complete B + Form GIF
+  `55234484dde64a8b7a90dcb7c24acc8505f351c0e69b9aea8182a6e93093cfdd`;
+  candidate digest
+  `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`.
+- Focused validation: 80/80 connected, bounded, grounded, and pixel/alpha
+  distinct from approved Pale Echo, public Goblin Scout, and public Imp Sprite;
+  opaque range 201-267; 72/72 colored palette frames; 8/8 exact white flashes;
+  54/54 expected eye-bearing views; 54/54 readable face-feature views;
+  Complete B adds 7,664 pixels and Form
+  changes 7,309. Approved Mirecrown and Pale Echo, public 80/259, and all
+  fixtures remain unchanged.
+- Broad validation: the revised ten-gate EN-E07 predecessor/candidate matrix
+  passed in 6.3s, `npm.cmd run check:fast` passed in 58.3s, and full
+  `npm.cmd run check` passed in 107.1s with public 80/259 and all 232 fixture
+  sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and comparison
+  PNGs are open together in responsive Aseprite 1.3.17.2; its live process
+  command line names all three frozen paths.
+- Scope firewall: no registration, fixtures, runtime actor copying, alternate
+  bodies, new Cast or Death pixels, detached masks or veil pieces, wings,
+  horns, weapons, glow, particles, projectiles, effects, specialist/elite
+  Changeling, Kelpie, release, or EN-E08.
+- Required next action: present the exact three frozen PNG boards and two
+  synchronized GIFs for visual approval. Do not commit or push this candidate
+  before the designer approves the exact digest.
 
 ### EN-E08 - Possessed equipment
 

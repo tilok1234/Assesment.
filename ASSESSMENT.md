@@ -468,6 +468,26 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
+  That active continuation is common Changeling Veilskin Foundling on
+  `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean
+  Mirecrown reconciliation `4ee32622ec2984ac805ac345b854f23584fda3c3`.
+  Its small grounded authored fey silhouette uses one connected pear-shaped
+  living veil, one centered face with dark eye sockets, amber glints, and a
+  tiny mouth mark, ochre-coral folds, paired short ordinary
+  arms, bowed legs, and broad splayed feet. The frozen digest is
+  `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`:
+  80/80 frames are connected, bounded, grounded, hard-alpha, and pixel/alpha
+  distinct from approved Pale Echo, public Goblin Scout, and public Imp Sprite;
+  the opaque range is 201-267, with 72/72 colored frames, 8/8 exact white
+  flashes, 54/54 expected eye-bearing views, and 54/54 readable face-feature
+  views. The first digest
+  `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
+  is superseded by this face-only repair. The revised ten-gate EN-E07 matrix
+  passes in 6.3s, `check:fast` in 58.3s, and full `check` in 107.1s with all
+  232 fixtures exact. The exact review packet is
+  technically validated but remains visually unapproved, uncommitted,
+  unpushed, unregistered, and fixture-free. Runtime actor copying, effects,
+  specialist/elite Changeling, Kelpie, release, and EN-E08 remain closed.
 Fixture regeneration, remaining EN-E07 families, the
 legacy renderer split, boss consolidation, and the Wildshot writer remain
 separate decisions.

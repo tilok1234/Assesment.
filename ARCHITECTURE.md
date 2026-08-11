@@ -1165,6 +1165,26 @@ same reply opens only one private common Changeling candidate from this clean
 publication reconciliation; registration, effects, later roles or families,
 release, and EN-E08 remain closed.
 
+`engine/enemy-expansion-en-e07-changeling-veilskin-foundling.js` is that
+isolated common Changeling candidate boundary. It imports only the stable
+24x24 expansion contract and the approved Mirecrown gate, owns one private
+family/variant registry, and is not imported by `sprite-engine.js`, the public
+expansion registry, selectors, persistence, packs, or fixture tooling. Its
+authored default form is a small grounded fey impostor with a connected
+pear-shaped living veil, one centered face with connected dark eye sockets,
+amber glints, and a tiny mouth mark, paired short ordinary arms, bowed
+legs, and splayed feet; runtime actor copying and alternate actor bodies remain
+outside the assembler. The renderer owns 80 hard-alpha frames with exact
+Cast-to-Attack and Death-to-Hurt aliases. The review and checker boundaries are
+`tools/enemy-expansion-en-e07-changeling-veilskin-foundling-review.mjs` and
+`tools/check-enemy-expansion-en-e07-changeling-veilskin-foundling.mjs`.
+Candidate digest
+`e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`
+supersedes pre-feedback digest
+`1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
+through a face-feature-only repair. It is hash-frozen but remains visually unapproved and unpublished; registration,
+fixtures, effects, later roles/families, release, and EN-E08 remain separate.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and

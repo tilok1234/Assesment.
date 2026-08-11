@@ -108,6 +108,35 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   registration, fixtures, effects, later roles/families, release, or another
   gate.
 - Current isolated art approval checkpoint:
+  `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean
+  published Mirecrown Beacon reconciliation
+  `4ee32622ec2984ac805ac345b854f23584fda3c3`, contains one private common
+  Changeling Veilskin Foundling candidate. Its frozen 80-frame digest is
+  `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`.
+  The small grounded fey form uses one connected pear-shaped living veil, one
+  centered face, a narrow ochre-coral folded torso, paired short ordinary
+  arms, bowed separated legs, and broad splayed feet. The first digest
+  `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
+  is superseded after the designer said `could need a more readable face`.
+  The repair adds connected dark eye sockets, retained amber glints, and a
+  tiny mouth mark only; silhouette, body, and motion remain unchanged. All 80 frames are
+  connected, one-cell-bounded, grounded, hard-alpha, and pixel/alpha distinct
+  from approved Pale Echo, public Goblin Scout, and public Imp Sprite. The
+  packet passes 72/72 colored frames, 8/8 exact white flashes, 54/54 expected
+  eye-bearing views, 54/54 readable face-feature views, exact Cast/Death aliases, side mirrors, public 80/259,
+  approved Mirecrown and Pale Echo protection, and unchanged fixtures. Run
+  `npm.cmd run review:enemy-expansion-en-e07-changeling-veilskin-foundling`
+  and
+  `npm.cmd run check:enemy-expansion-en-e07-changeling-veilskin-foundling`.
+  The revised ten-gate EN-E07 protection matrix passes in 6.3s, `check:fast`
+  in 58.3s, and full `check` in 107.1s with all 232 fixtures exact.
+  The three exact frozen PNG boards are open together in responsive Aseprite
+  1.3.17.2, and its live command line names all three paths.
+  This exact hash-frozen packet is implemented but not visually approved,
+  committed, pushed, registered, or fixture-generated. Preserve runtime actor
+  copying, alternate bodies, detached masks or veil pieces, effects,
+  specialist/elite Changeling, Kelpie, release, and EN-E08 as separate gates.
+- Approved preceding isolated art checkpoint:
   `codex/en-e07-will-o-wisp-mirecrown-beacon`, based exactly on clean
   published Fenbell Shepherd reconciliation
   `8b0754c9594ad91fe378ba11d4f43d7b2a558145`, contains one private elite

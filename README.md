@@ -1472,6 +1472,32 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
+Veilskin Foundling is that isolated common Changeling candidate on
+`codex/en-e07-changeling-veilskin-foundling`, based exactly on clean Mirecrown
+reconciliation `4ee32622ec2984ac805ac345b854f23584fda3c3`. Its small grounded
+authored fey form uses one connected pear-shaped living veil, one centered
+face with dark eye sockets, amber glints, and a tiny mouth mark, ochre-coral
+body folds, paired short ordinary arms, bowed legs, and broad
+splayed feet. Run
+`npm.cmd run review:enemy-expansion-en-e07-changeling-veilskin-foundling` for
+the raw, Complete B + Form, Pale Echo/Goblin Scout/Imp Sprite comparison, and
+paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-changeling-veilskin-foundling` for
+the focused contract gate. The exact candidate digest is
+`e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`:
+80/80 frames are connected, bounded, grounded, hard-alpha, and pixel/alpha
+distinct from all three comparisons; the opaque range is 201-267, all 72
+colored frames preserve the four palette groups, all eight flashes are exact
+white, and all 54 visible-face views preserve the repaired features. The first
+digest `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
+is superseded by the face-readability repair. The revised ten-gate EN-E07
+matrix passes in 6.3s, `check:fast` in 58.3s, and full `check` in 107.1s with
+all 232 fixtures exact. This packet is
+implemented and hash-frozen but not visually
+approved, committed, pushed, registered, or fixture-generated. Runtime actor
+copying, detached masks or veil pieces, effects, later Changeling roles,
+Kelpie, release, and EN-E08 remain closed.
+
 ## Approved enemy backlog integration published
 
 Branch `codex/approved-enemy-assembler-integration` composes three explicit
