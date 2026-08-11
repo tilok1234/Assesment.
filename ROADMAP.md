@@ -288,7 +288,7 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current approved EN-E07 publication-reconciliation checkpoint (2026-08-11): specialist Kelpie
+Current approved EN-E07 publication checkpoint (2026-08-11): specialist Kelpie
 Drownbridle Stalker on `codex/en-e07-kelpie-drownbridle-stalker` is based
 exactly on clean published Miremane Courser reconciliation
 `f143de1fadf3b812f3968d930acf6451e926388d`. Its 203-274-pixel forward-heavy
@@ -305,10 +305,10 @@ IDs 19, 23, and 27. The designer replied `approved lets do next`; approval
 applies only to the frozen digest above. Exact implementation
 `c34b3b9564df683900ff3846d692970faca53ff5` and approval record
 `b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and remote-verified.
-The initial handoff and final reconciliation are current; the same reply opens
-one private elite Kelpie only after final published reconciliation.
-Registration, fixtures, runtime copying, effects, release, and EN-E08 remain
-closed.
+Initial handoff `1ba57fefe52398c2c007c01adfde6384c327e6f8` is published and
+remote-verified. This reconciliation completes the bounded tuple. The same
+reply opens only one private elite Kelpie candidate; registration, fixtures,
+runtime copying, effects, release, and EN-E08 remain closed.
 
 Approved preceding EN-E07 publication checkpoint (2026-08-11): common Kelpie Miremane
 Courser on `codex/en-e07-kelpie-miremane-courser` is based exactly on clean

@@ -1310,10 +1310,11 @@ three PNGs are open in Aseprite at IDs 19, 23, and 27.
 This boundary is hash-frozen and visually approved at implementation
 `c34b3b9564df683900ff3846d692970faca53ff5`; that implementation and approval
 record `b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and
-remote-verified. The initial handoff and final reconciliation are current. The
-same `approved lets do next` reply opens one private elite Kelpie only after
-final published reconciliation; registration, fixtures, runtime copying,
-effects, release, and EN-E08 remain separate.
+remote-verified. Initial handoff
+`1ba57fefe52398c2c007c01adfde6384c327e6f8` is published and remote-verified.
+This reconciliation completes the bounded tuple. The same `approved lets do
+next` reply opens only one private elite Kelpie candidate; registration,
+fixtures, runtime copying, effects, release, and EN-E08 remain separate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

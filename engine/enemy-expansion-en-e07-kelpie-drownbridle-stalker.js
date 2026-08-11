@@ -106,10 +106,10 @@ export const EN_E07_DROWNBRIDLE_STALKER_GATE = deepFreeze({
   approvedImplementation: 'c34b3b9564df683900ff3846d692970faca53ff5',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  initialPublishedHandoff: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: 'c34b3b9564df683900ff3846d692970faca53ff5',
+  publishedApprovalRecord: 'b5a9011b37dc9a3e0db7c371fa168e589665a127',
+  initialPublishedHandoff: '1ba57fefe52398c2c007c01adfde6384c327e6f8',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_MIREMANE_COURSER_GATE.id,
     artifactSha256: EN_E07_MIREMANE_COURSER_GATE.artifactSha256,
@@ -186,7 +186,7 @@ export const EN_E07_DROWNBRIDLE_STALKER_GATE = deepFreeze({
     'Kelpie elite',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Drownbridle Stalker digest is visually approved; implementation c34b3b9564df683900ff3846d692970faca53ff5 and approval record b5a9011b37dc9a3e0db7c371fa168e589665a127 are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. The same approved lets do next reply opens exactly one private elite Kelpie candidate only after final published reconciliation. Kelpie registration, fixtures, runtime copying, water effects, release, and EN-E08 remain closed.',
+  nextGate: 'The exact Drownbridle Stalker digest is visually approved and published: implementation c34b3b9564df683900ff3846d692970faca53ff5, approval record b5a9011b37dc9a3e0db7c371fa168e589665a127, and initial handoff 1ba57fefe52398c2c007c01adfde6384c327e6f8 are remote verified. The same approved lets do next reply authorizes exactly one private elite Kelpie candidate from this clean published reconciliation. Kelpie registration, fixtures, runtime copying, water effects, release, and EN-E08 remain closed.',
 });
 
 export const EN_E07_DROWNBRIDLE_STALKER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -471,7 +471,7 @@ export const EN_E07_DROWNBRIDLE_STALKER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'drownbridle-stalker',
     scale: 8,
-    notes: 'Visually approved as one forward-heavy high-crested authored Drownbridle Stalker against approved Miremane Courser and Steppe Hunter plus public Dire Wolf. Publish only the bounded approval and reconciliation tuple. The same reply opens one private elite Kelpie only after clean remote reconciliation; keep registration, fixtures, runtime copying, water effects, and later Wave 2 work separate.',
+    notes: 'Visually approved and published as one forward-heavy high-crested authored Drownbridle Stalker against approved Miremane Courser and Steppe Hunter plus public Dire Wolf. The same reply opens one separate private elite Kelpie candidate; keep registration, fixtures, runtime copying, water effects, and later Wave 2 work separate.',
   },
 });
 

@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved art publication-reconciliation checkpoint:
+- Current approved art publication checkpoint:
   `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean published
   Miremane Courser reconciliation
   `f143de1fadf3b812f3968d930acf6451e926388d`, contains one private specialist
@@ -131,10 +131,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   only to the frozen digest above. Exact implementation
   `c34b3b9564df683900ff3846d692970faca53ff5` and approval record
   `b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and
-  remote-verified. The bounded initial handoff and final reconciliation are
-  current; the same reply opens one private elite Kelpie only after final
-  published reconciliation. Registration, fixtures, runtime copying, effects,
-  release, and EN-E08 remain closed.
+  remote-verified, and initial handoff
+  `1ba57fefe52398c2c007c01adfde6384c327e6f8` is published and remote-verified.
+  This reconciliation completes the bounded tuple. The same reply opens only
+  one private elite Kelpie candidate; registration, fixtures, runtime copying,
+  effects, release, and EN-E08 remain closed.
 - Approved preceding art publication checkpoint:
   `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
   Manyfold Usurper reconciliation

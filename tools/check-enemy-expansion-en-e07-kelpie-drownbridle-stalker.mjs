@@ -155,11 +155,11 @@ check(
   EN_E07_DROWNBRIDLE_STALKER_GATE.status === 'approved'
     && EN_E07_DROWNBRIDLE_STALKER_GATE.approvedOn === '2026-08-11'
     && EN_E07_DROWNBRIDLE_STALKER_GATE.approvedImplementation === 'c34b3b9564df683900ff3846d692970faca53ff5'
-    && EN_E07_DROWNBRIDLE_STALKER_GATE.publishedImplementation === null
-    && EN_E07_DROWNBRIDLE_STALKER_GATE.publishedApprovalRecord === null
-    && EN_E07_DROWNBRIDLE_STALKER_GATE.initialPublishedHandoff === null
-    && EN_E07_DROWNBRIDLE_STALKER_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Drownbridle Stalker bounded publication state drifted',
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.publishedImplementation === 'c34b3b9564df683900ff3846d692970faca53ff5'
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.publishedApprovalRecord === 'b5a9011b37dc9a3e0db7c371fa168e589665a127'
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.initialPublishedHandoff === '1ba57fefe52398c2c007c01adfde6384c327e6f8'
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.publicationState === 'published',
+  'Drownbridle Stalker published state drifted',
 );
 check(
   EN_E07_DROWNBRIDLE_STALKER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
@@ -201,13 +201,14 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('visually approved')
+  EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('visually approved and published')
     && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('implementation c34b3b9564df683900ff3846d692970faca53ff5')
     && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('approval record b5a9011b37dc9a3e0db7c371fa168e589665a127')
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('initial handoff 1ba57fefe52398c2c007c01adfde6384c327e6f8')
     && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('remote verified')
     && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('exactly one private elite Kelpie candidate')
-    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('only after final published reconciliation'),
-  'bounded publication or elite-role gate drifted',
+    && EN_E07_DROWNBRIDLE_STALKER_GATE.nextGate.includes('clean published reconciliation'),
+  'published tuple or elite-role gate drifted',
 );
 check(
   JSON.stringify(EN_E07_KELPIE_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])

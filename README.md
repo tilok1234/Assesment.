@@ -1473,7 +1473,7 @@ clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
 Drownbridle Stalker is the current approved private specialist Kelpie
-publication-reconciliation checkpoint on
+publication checkpoint on
 `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean
 published Miremane Courser reconciliation
 `f143de1fadf3b812f3968d930acf6451e926388d`. Its forward-heavy form uses a high
@@ -1498,10 +1498,10 @@ Complete B + Form, and comparison PNGs are open together in Aseprite at IDs 19,
 approval applies only to the frozen digest above. Exact implementation
 `c34b3b9564df683900ff3846d692970faca53ff5` and approval record
 `b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and remote-verified.
-The initial handoff and final reconciliation are current; the same reply opens
-one private elite Kelpie only after final published reconciliation.
-Registration, fixtures, runtime copying, effects, release, and EN-E08 remain
-closed.
+Initial handoff `1ba57fefe52398c2c007c01adfde6384c327e6f8` is published and
+remote-verified. This reconciliation completes the bounded tuple. The same
+reply opens only one private elite Kelpie candidate; registration, fixtures,
+runtime copying, effects, release, and EN-E08 remain closed.
 
 Miremane Courser is the approved preceding private common Kelpie publication checkpoint on
 `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published

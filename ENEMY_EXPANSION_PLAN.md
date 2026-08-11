@@ -13,7 +13,7 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current approved publication-reconciliation checkpoint (2026-08-11): private specialist Kelpie
+- Current approved publication checkpoint (2026-08-11): private specialist Kelpie
   Drownbridle Stalker on `codex/en-e07-kelpie-drownbridle-stalker` is frozen at
   digest `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`
   from clean published Miremane Courser reconciliation
@@ -35,10 +35,11 @@
   to the frozen digest above. Exact implementation
   `c34b3b9564df683900ff3846d692970faca53ff5` and approval record
   `b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and
-  remote-verified. The initial handoff and final reconciliation are current;
-  the same reply opens one private elite Kelpie only after final published
-  reconciliation. Registration, fixtures, runtime copying, effects, release,
-  and EN-E08 remain closed.
+  remote-verified. Initial handoff
+  `1ba57fefe52398c2c007c01adfde6384c327e6f8` is published and remote-verified.
+  This reconciliation completes the bounded tuple. The same reply opens only
+  one private elite Kelpie candidate; registration, fixtures, runtime copying,
+  effects, release, and EN-E08 remain closed.
 
 - Approved preceding publication checkpoint (2026-08-11): private common Kelpie Miremane
   Courser on `codex/en-e07-kelpie-miremane-courser` is frozen at digest
@@ -3714,7 +3715,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser approved and published; private specialist Kelpie Drownbridle Stalker implementation and approval record published with final reconciliation pending`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser and specialist Drownbridle Stalker approved and published; one private elite Kelpie candidate authorized`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4526,10 +4527,10 @@ assembler.
   Kelpie, generate fixtures, add runtime copying or effects, begin the elite,
   release, or advance EN-E08.
 
-#### Kelpie Drownbridle Stalker approved; publication reconciliation pending
+#### Kelpie Drownbridle Stalker complete suite approved and published
 
-- Gate ID: `en-e07-kelpie-drownbridle-stalker-full-v1`; status: `approved` with
-  implementation and approval record published on
+- Gate ID: `en-e07-kelpie-drownbridle-stalker-full-v1`; status: `approved` and
+  published on
   `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean,
   remote-verified Miremane Courser reconciliation
   `f143de1fadf3b812f3968d930acf6451e926388d`.
@@ -4582,18 +4583,19 @@ assembler.
   `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`.
   Exact implementation `c34b3b9564df683900ff3846d692970faca53ff5` and approval
   record `b5a9011b37dc9a3e0db7c371fa168e589665a127` are published and
-  remote-verified under the standing bounded publication permission. The same
-  reply opens one private elite Kelpie only after final published
-  reconciliation.
+  remote-verified, and initial handoff
+  `1ba57fefe52398c2c007c01adfde6384c327e6f8` is published and remote-verified
+  under the standing bounded publication permission. This reconciliation
+  completes the publication tuple.
 - Scope firewall: no registration,
   public facade or catalog change, fixtures, manifest, shared renderer,
   exporter, validator, frame-contract change, runtime copying, alternate body,
   rider, saddle, horn, detached water, glow, particles, projectile, effects,
   elite Kelpie, release, EN-E08, or accepted drift.
-- Required next action: commit and push the bounded initial handoff, then record
-  and push the final publication reconciliation. Only then may the same reply
-  open one private elite Kelpie candidate. It does not open registration,
-  fixtures, runtime copying, effects, release, or EN-E08.
+- Required next action: the same `approved lets do next` reply opens only one
+  private elite Kelpie candidate from this clean published checkpoint. It does
+  not open registration, fixtures, runtime copying, effects, release, or
+  EN-E08.
 
 ### EN-E08 - Possessed equipment
 
