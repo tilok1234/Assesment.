@@ -13,7 +13,7 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current isolated art checkpoint (2026-08-11): private specialist Kelpie
+- Current approved-local art checkpoint (2026-08-11): private specialist Kelpie
   Drownbridle Stalker on `codex/en-e07-kelpie-drownbridle-stalker` is frozen at
   digest `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`
   from clean published Miremane Courser reconciliation
@@ -27,12 +27,16 @@
   ropeweed tail. The packet passes 72/72 colored frames, 8/8 exact white
   flashes, 54/54 expected eye-bearing views, and 54/54 readable muzzle views;
   Complete B adds 9,789 pixels and Form changes 6,465. The focused gate passes
-  in 0.7s, `check:fast` in 53.2s, and full `check` in 104.7s, with public
-  80/259 and all 232 fixtures exact. The exact raw, Complete
+  in 0.7s, `check:fast` in 53.2s, and full `check` in 104.7s before approval
+  and 110.3s against approval-local metadata, with public 80/259 and all 232
+  fixtures exact. The exact raw, Complete
   B + Form, and comparison PNGs are open together in Aseprite at IDs 19, 23,
-  and 27. This exact packet is awaiting visual approval and is not committed,
-  pushed, registered, fixture-generated, or public. Do not begin the elite
-  Kelpie, runtime copying, effects, release, or EN-E08.
+  and 27. The designer replied `approved lets do next`; approval applies only
+  to the frozen digest above. Exact implementation
+  `c34b3b9564df683900ff3846d692970faca53ff5` is committed locally. The approval
+  record and publication reconciliation are current; the same reply opens one
+  private elite Kelpie only after clean remote verification. Registration,
+  fixtures, runtime copying, effects, release, and EN-E08 remain closed.
 
 - Approved preceding publication checkpoint (2026-08-11): private common Kelpie Miremane
   Courser on `codex/en-e07-kelpie-miremane-courser` is frozen at digest
@@ -3708,7 +3712,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser approved and published; private specialist Kelpie Drownbridle Stalker implemented and awaiting visual approval`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser approved and published; private specialist Kelpie Drownbridle Stalker approved locally and awaiting bounded publication`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4520,10 +4524,10 @@ assembler.
   Kelpie, generate fixtures, add runtime copying or effects, begin the elite,
   release, or advance EN-E08.
 
-#### Kelpie Drownbridle Stalker complete suite awaiting visual approval
+#### Kelpie Drownbridle Stalker complete suite approved locally
 
 - Gate ID: `en-e07-kelpie-drownbridle-stalker-full-v1`; status:
-  `implemented-awaiting-review` on
+  `approved-local` on
   `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean,
   remote-verified Miremane Courser reconciliation
   `f143de1fadf3b812f3968d930acf6451e926388d`.
@@ -4565,20 +4569,29 @@ assembler.
   unchanged.
 - Broad validation: the frozen focused gate passed in 0.7s,
   `npm.cmd run check:fast` passed in 53.2s, and full `npm.cmd run check` passed
-  in 104.7s with public 80/259 and all 232 fixture sheets exact.
+  in 104.7s before approval and 110.3s against approval-local metadata, with
+  public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and family
   comparison PNGs are open together in Aseprite at IDs 19, 23, and 27. The
   face, one-cell crown margin, bridle overlap, and profile eye were corrected
   before freeze.
-- Scope firewall: no commit or push before visual approval; no registration,
+- Approval: the designer replied `approved lets do next` on 2026-08-11;
+  approval applies only to digest
+  `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`.
+  Exact implementation `c34b3b9564df683900ff3846d692970faca53ff5` is
+  committed locally under the standing bounded publication permission. The
+  same reply opens one private elite Kelpie only after this tuple is clean and
+  remote-verified.
+- Scope firewall: no registration,
   public facade or catalog change, fixtures, manifest, shared renderer,
   exporter, validator, frame-contract change, runtime copying, alternate body,
   rider, saddle, horn, detached water, glow, particles, projectile, effects,
   elite Kelpie, release, EN-E08, or accepted drift.
-- Required next action: inspect and approve or reject only the exact frozen
-  digest above. If approved, the standing bounded publication permission covers
-  the implementation, approval record, reconciliation, and branch push. It
-  does not open any excluded gate.
+- Required next action: commit the approval record, push the implementation and
+  approval commits, verify the remote tuple, and reconcile the final handoff.
+  Only then may the same reply open one private elite Kelpie candidate. It does
+  not open registration, fixtures, runtime copying, effects, release, or
+  EN-E08.
 
 ### EN-E08 - Possessed equipment
 

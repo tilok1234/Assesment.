@@ -23,17 +23,19 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Drownbridle Stalker Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Drownbridle Stalker Approved Locally
 
 Start here in a new task. One private specialist Kelpie Drownbridle Stalker is
-implemented, deterministic, hash-frozen, technically validated, and open for
-visual approval on `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on
+implemented, deterministic, hash-frozen, technically validated, and visually
+approved on `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on
 the clean published Miremane Courser reconciliation
-`f143de1fadf3b812f3968d930acf6451e926388d`. It is not visually approved,
-committed, pushed, registered, fixture-generated, or public.
+`f143de1fadf3b812f3968d930acf6451e926388d`. Exact implementation
+`c34b3b9564df683900ff3846d692970faca53ff5` is committed locally. The bounded
+approval record and branch publication are the current steps; it remains
+unregistered, fixture-free, and non-public.
 
 - Gate ID: `en-e07-kelpie-drownbridle-stalker-full-v1`; status:
-  `implemented-awaiting-review`.
+  `approved-local`.
 - Authorization: after Miremane Courser was approved, published, and
   reconciled, the designer replied `lets do next` on 2026-08-11. The frozen
   Kelpie role order opens only this one private specialist candidate; the elite
@@ -71,17 +73,26 @@ committed, pushed, registered, fixture-generated, or public.
   The protected comparison digests, public 80/259, and fixtures remain exact.
 - Broad validation: the frozen focused gate passed in 0.7s,
   `npm.cmd run check:fast` passed in 53.2s, and full `npm.cmd run check` passed
-  in 104.7s with public 80/259 and all 232 fixture sheets exact.
+  in 104.7s before approval and 110.3s against approval-local metadata, with
+  public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in Aseprite at IDs 19, 23, and 27. The face, one-cell
   crown margin, bridle overlap, and profile eye were corrected before freeze.
+- Approval: after the exact packet was presented, the designer replied
+  `approved lets do next` on 2026-08-11. Approval applies only to digest
+  `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`.
+  Exact implementation `c34b3b9564df683900ff3846d692970faca53ff5` is
+  committed locally under the standing bounded publication permission. The
+  same reply opens only one private elite Kelpie after this tuple is clean and
+  remote-verified.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-drownbridle-stalker` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-drownbridle-stalker`.
-- Required next action: inspect and approve or reject only the exact digest
-  above. Do not commit or push the candidate before visual approval. Do not
-  register Kelpie, generate fixtures, add runtime copying or effects, begin the
-  elite Kelpie, release, or advance EN-E08.
+- Required next action: commit the bounded approval record, push the
+  implementation and approval commits, verify the remote tuple, and reconcile
+  the final handoff. Only after clean remote reconciliation may the same reply
+  open one private elite Kelpie candidate. Do not register Kelpie, generate
+  fixtures, add runtime copying or effects, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Miremane Courser Published and Reconciled
 

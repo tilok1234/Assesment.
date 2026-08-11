@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art approval checkpoint:
+- Current approved-local art checkpoint:
   `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean published
   Miremane Courser reconciliation
   `f143de1fadf3b812f3968d930acf6451e926388d`, contains one private specialist
@@ -122,14 +122,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views,
   54/54 readable muzzle views, exact aliases and mirrors, public 80/259, and
   unchanged fixtures. The focused gate passes in 0.7s, `check:fast` in 53.2s,
-  and full `check` in 104.7s. The exact raw, Complete B + Form, and comparison PNGs are
+  and full `check` in 104.7s before approval and 110.3s against approved-local
+  metadata. The exact raw, Complete B + Form, and comparison PNGs are
   open together in Aseprite at IDs 19, 23, and 27. Run
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-drownbridle-stalker` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-drownbridle-stalker`.
-  This exact candidate is awaiting visual approval and is not committed,
-  pushed, registered, fixture-generated, or public. Approval is required before
-  publication; the elite Kelpie, runtime copying, effects, release, and EN-E08
-  remain closed.
+  The designer replied `approved lets do next` on 2026-08-11; approval applies
+  only to the frozen digest above. Exact implementation
+  `c34b3b9564df683900ff3846d692970faca53ff5` is committed locally. The bounded
+  approval record and publication reconciliation are current; the same reply
+  opens one private elite Kelpie only after this tuple is clean and
+  remote-verified. Registration, fixtures, runtime copying, effects, release,
+  and EN-E08 remain closed.
 - Approved preceding art publication checkpoint:
   `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
   Manyfold Usurper reconciliation

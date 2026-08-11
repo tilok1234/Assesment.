@@ -1304,11 +1304,15 @@ pixel/alpha distinctions from approved Miremane Courser and Steppe Hunter plus
 public Dire Wolf. The opaque range is 203-274; 72/72 colored frames, 8/8 exact
 white flashes, 54/54 expected eye-bearing views, and 54/54 readable muzzle
 views pass. The focused gate passes in 0.7s, `check:fast` in 53.2s, and full
-`check` in 104.7s, with public 80/259 and all 232 fixtures exact. The exact
+`check` in 104.7s before approval and 110.3s against approval-local metadata,
+with public 80/259 and all 232 fixtures exact. The exact
 three PNGs are open in Aseprite at IDs 19, 23, and 27.
-This boundary is hash-frozen but awaiting visual approval and is not committed,
-pushed, registered, fixture-generated, or public. The elite Kelpie, release,
-and EN-E08 remain separate.
+This boundary is hash-frozen and visually approved at implementation
+`c34b3b9564df683900ff3846d692970faca53ff5`, which is committed locally. The
+approval record and publication reconciliation are current. The same
+`approved lets do next` reply opens one private elite Kelpie only after clean
+remote verification; registration, fixtures, runtime copying, effects,
+release, and EN-E08 remain separate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

@@ -1472,7 +1472,7 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Drownbridle Stalker is the current private specialist Kelpie visual-approval
+Drownbridle Stalker is the current approved-local private specialist Kelpie
 checkpoint on `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean
 published Miremane Courser reconciliation
 `f143de1fadf3b812f3968d930acf6451e926388d`. Its forward-heavy form uses a high
@@ -1490,11 +1490,15 @@ three protected comparisons. The opaque range is 203-274, all 72 colored
 frames preserve the four palette groups, all eight flashes are exact white,
 and all 54 expected eye-bearing views retain readable muzzles. The focused
 gate passes in 0.7s, `check:fast` in 53.2s, and full `check` in 104.7s, with
-public 80/259 and all 232 fixtures exact. The exact raw,
+public 80/259 and all 232 fixtures exact before approval; full `check` also
+passes in 110.3s against approval-local metadata. The exact raw,
 Complete B + Form, and comparison PNGs are open together in Aseprite at IDs 19,
-23, and 27. This exact packet is awaiting visual approval and is not committed,
-pushed, registered, fixture-generated, or public. Do not begin the elite
-Kelpie, runtime copying, effects, release, or EN-E08.
+23, and 27. The designer replied `approved lets do next` on 2026-08-11;
+approval applies only to the frozen digest above. Exact implementation
+`c34b3b9564df683900ff3846d692970faca53ff5` is committed locally. The approval
+record and publication reconciliation are current; the same reply opens one
+private elite Kelpie only after clean remote verification. Registration,
+fixtures, runtime copying, effects, release, and EN-E08 remain closed.
 
 Miremane Courser is the approved preceding private common Kelpie publication checkpoint on
 `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published

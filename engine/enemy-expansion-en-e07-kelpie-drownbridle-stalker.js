@@ -46,7 +46,7 @@ export const EN_E07_DROWNBRIDLE_STALKER_CONTRACT_CARD = deepFreeze({
     id: 'drownbridle-stalker',
     name: 'Drownbridle Stalker',
     role: 'specialist',
-    status: 'implemented-full-awaiting-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
   styleContract: 'Use chunky one-to-three-pixel hard-alpha forms and an independently authored forward-heavy specialist equine body. Keep a high arched neck, long readable hooked muzzle, connected blocky crest mane, connected reed bridle, deep wedge chest, shorter barrel, four separated fetlocked legs, four grounded dark hooves, and one thick connected ropeweed tail. The specialist must be taller and more forceful than Miremane Courser without becoming a Centaur horse body, horned Unicorn, Wolf, Crocodile, skeletal mount, armored warhorse, or detached water effect.',
@@ -58,7 +58,7 @@ export const EN_E07_DROWNBRIDLE_STALKER_CONTRACT = deepFreeze({
   family: 'kelpie',
   variant: 'drownbridle-stalker',
   role: 'specialist',
-  state: 'implemented-complete-motion-awaiting-review',
+  state: 'implemented-complete-motion-approved',
   chassis: 'forward-heavy-high-arched-neck-hooked-muzzle-block-crest-connected-reed-bridle-deep-chest-short-barrel-four-fetlocked-legs-grounded-hooves-ropeweed-tail-equine-v1',
   silhouette: "A forward-heavy grounded specialist Kelpie with a high arched neck, long hooked equine muzzle, connected blocky crest mane, connected reed bridle, deep wedge chest, short powerful barrel, four separated fetlocked legs, four dark grounded hooves, and a thick connected ropeweed tail. It must not collapse into Miremane Courser's low lean body or grow a humanoid rider or torso, horn, crown, canine wedge head, crocodilian belly, skeletal gaps, armor plates, detached reins, or copied mount geometry.",
   identity: 'Blue-black drowned hide, cold brackish belly planes, moss-dark crest blocks, ochre reed bridle bands, pale marsh-light eyes, dark nostrils, and a connected coil-to-chest-ram motion establish a self-contained specialist Kelpie while all water and loose-rein effects remain external.',
@@ -97,19 +97,19 @@ export const EN_E07_DROWNBRIDLE_STALKER_DATA = deepFreeze({
 
 export const EN_E07_DROWNBRIDLE_STALKER_GATE = deepFreeze({
   id: 'en-e07-kelpie-drownbridle-stalker-full-v1',
-  status: 'implemented-awaiting-review',
+  status: 'approved',
   baseCheckpoint: 'f143de1fadf3b812f3968d930acf6451e926388d',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Miremane Courser digest was visually approved, committed, pushed, and reconciled at clean published checkpoint f143de1fadf3b812f3968d930acf6451e926388d, the designer replied: lets do next. Miremane Courser completed the frozen common Kelpie role, so the one-complete-sprite cadence authorizes only one private specialist Kelpie Drownbridle Stalker 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
-  publicationAuthorizedOn: null,
-  publicationAuthorizationEvidence: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Miremane Courser and Steppe Hunter plus public Dire Wolf comparison, and synchronized GIF evidence were presented after the face readability, one-cell crown margin, bridle overlap, and profile eye were corrected before freeze. The three exact frozen PNG boards were open together in Aseprite and the live sprite list named all three paths at IDs 19, 23, and 27. The designer replied: approved lets do next. Approval applies only to candidate digest d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b. The lets do next portion authorizes exactly one private elite Kelpie candidate only after the bounded Drownbridle publication is clean and remote verified. Kelpie registration, fixtures, runtime copying, water effects, release, and EN-E08 remain separate gates.',
+  approvedImplementation: 'c34b3b9564df683900ff3846d692970faca53ff5',
+  publicationAuthorizedOn: '2026-08-11',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-local',
   precedingApproval: {
     gateId: EN_E07_MIREMANE_COURSER_GATE.id,
     artifactSha256: EN_E07_MIREMANE_COURSER_GATE.artifactSha256,
@@ -186,7 +186,7 @@ export const EN_E07_DROWNBRIDLE_STALKER_GATE = deepFreeze({
     'Kelpie elite',
     'EN-E08 and later work',
   ],
-  nextGate: 'Visual approval is required for the exact frozen Drownbridle Stalker packet. Do not commit or push the candidate, register Kelpie, generate fixtures, add runtime copying or water effects, release, start the elite Kelpie role, or advance EN-E08 before that approval.',
+  nextGate: 'The exact Drownbridle Stalker digest is visually approved and its implementation is committed locally. Complete the bounded approval-record publication and current-state reconciliation first. The same reply includes lets do next and authorizes only one private elite Kelpie candidate after this Drownbridle tuple is clean and remote verified. Kelpie registration, fixtures, runtime copying, water effects, release, and EN-E08 remain closed.',
 });
 
 export const EN_E07_DROWNBRIDLE_STALKER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -471,7 +471,7 @@ export const EN_E07_DROWNBRIDLE_STALKER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'drownbridle-stalker',
     scale: 8,
-    notes: 'Review one forward-heavy high-crested authored Drownbridle Stalker against approved Miremane Courser and Steppe Hunter plus public Dire Wolf. Keep registration, fixtures, runtime copying, water effects, elite Kelpie, and later Wave 2 work separate.',
+    notes: 'Visually approved as one forward-heavy high-crested authored Drownbridle Stalker against approved Miremane Courser and Steppe Hunter plus public Dire Wolf. Publish only the bounded approval and reconciliation tuple. The same reply opens one private elite Kelpie only after clean remote reconciliation; keep registration, fixtures, runtime copying, water effects, and later Wave 2 work separate.',
   },
 });
 

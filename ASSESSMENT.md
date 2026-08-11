@@ -468,7 +468,7 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current isolated art checkpoint is specialist Kelpie Drownbridle Stalker
+  The current approved-local art checkpoint is specialist Kelpie Drownbridle Stalker
   on `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean
   published Miremane Courser reconciliation
   `f143de1fadf3b812f3968d930acf6451e926388d`. Its forward-heavy high-crested
@@ -481,12 +481,16 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   Miremane Courser and Steppe Hunter plus public Dire Wolf. The opaque range is
   203-274, with 72/72 colored frames, 8/8 exact white flashes, 54/54 expected
   eye-bearing views, and 54/54 readable muzzle views. The focused gate passes
-  in 0.7s, `check:fast` in 53.2s, and full `check` in 104.7s, with public
-  80/259 and all 232 fixtures exact. The exact raw, Complete B
+  in 0.7s, `check:fast` in 53.2s, and full `check` in 104.7s before approval
+  and 110.3s against approval-local metadata, with public 80/259 and all 232
+  fixtures exact. The exact raw, Complete B
   + Form, and comparison PNGs are open together in Aseprite at IDs 19, 23, and
-  27. The packet is awaiting visual approval and is not committed, pushed,
-  registered, fixture-generated, or public. The elite Kelpie, runtime copying,
-  effects, release, and EN-E08 remain closed.
+  27. The designer replied `approved lets do next`; approval applies only to
+  the frozen digest above. Exact implementation
+  `c34b3b9564df683900ff3846d692970faca53ff5` is committed locally. The approval
+  record and publication reconciliation are current; the same reply opens one
+  private elite Kelpie only after clean remote verification. Registration,
+  fixtures, runtime copying, effects, release, and EN-E08 remain closed.
   The approved preceding publication checkpoint is common Kelpie Miremane Courser on
   `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
   Manyfold Usurper reconciliation
