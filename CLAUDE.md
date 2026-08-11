@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current isolated art review checkpoint:
+- Current approved art publication checkpoint:
   `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean published
   Mirrorfold Harrier reconciliation
   `fdbb4cf04048a819b9cbe1655146842835b86a73`, contains one private elite
@@ -122,15 +122,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   packet passes 72/72 colored frames, 8/8 exact white flashes, 54/54 expected
   eye-bearing views, 54/54 readable face-feature views, exact Cast/Death
   aliases, side mirrors, public 80/259, unchanged fixtures, `check:fast` in
-  48.5s, and full `check` in 93.1s. Run
+  48.5s, and full `check` in 93.1s before approval, 104.1s immediately before
+  implementation publication, and 112.9s against approval-local metadata. Run
   `npm.cmd run review:enemy-expansion-en-e07-changeling-manyfold-usurper`
   and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-manyfold-usurper`.
   The exact raw, Complete B + Form, and comparison PNGs are open together in
   responsive Aseprite 1.3.17.2 process 39276, whose command line names all
-  three paths. Visual approval is required before commit or push. Registration,
-  fixtures, runtime copying, effects, Kelpie, release, and EN-E08 remain
-  separate gates.
+  three paths. The designer replied `approved lets do next` on 2026-08-11;
+  exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is
+  published and remote-verified. Approval-record publication and final
+  current-state reconciliation remain in progress; after that clean stop, the
+  same reply opens only one private common Kelpie candidate. Registration,
+  fixtures, runtime copying, effects, later Kelpie roles, release, and EN-E08
+  remain separate gates.
 - Approved preceding art publication checkpoint:
   `codex/en-e07-changeling-mirrorfold-harrier`, based exactly on clean
   published Veilskin Foundling reconciliation

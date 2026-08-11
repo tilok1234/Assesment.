@@ -1235,9 +1235,12 @@ Candidate digest
 `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`
 passes 80/80 connected, bounded, grounded, broad-three-tier, wide-pillar, and
 pixel/alpha distinctions from approved Mirrorfold Harrier, Veilskin Foundling,
-and Grand Pretender. The candidate remains uncommitted, unregistered,
-fixture-free, and non-public while awaiting exact visual approval; Kelpie,
-release, and EN-E08 remain separate.
+and Grand Pretender. The designer approved the exact digest on 2026-08-11;
+implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is published and
+remote-verified. Approval-record publication and final current-state
+reconciliation remain in progress. The actor remains unregistered, fixture-free,
+and non-public; after the clean bounded stop, only one private common Kelpie
+candidate opens while later roles, release, and EN-E08 remain separate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

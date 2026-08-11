@@ -288,7 +288,7 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current isolated EN-E07 art checkpoint (2026-08-11): elite Changeling
+Current approved EN-E07 publication checkpoint (2026-08-11): elite Changeling
 Manyfold Usurper on `codex/en-e07-changeling-manyfold-usurper` is based exactly
 on clean published Mirrorfold Harrier reconciliation
 `fdbb4cf04048a819b9cbe1655146842835b86a73`. Its 276-330-pixel broad tall
@@ -301,11 +301,16 @@ are connected, bounded, grounded, broad-three-tier, wide-pillar, hard-alpha,
 and pixel/alpha distinct from approved Mirrorfold Harrier, Veilskin Foundling,
 and Grand Pretender; 72/72 colored frames, 8/8 exact white flashes, 54/54
 expected eye-bearing views, and 54/54 readable face-feature views pass.
-`check:fast` passes in 48.5s and full `check` in 93.1s with public 80/259 and
-all 232 fixtures exact. The three frozen PNGs are open together in responsive
-Aseprite 1.3.17.2 process 39276. Visual approval is required before commit or
-push. Registration, fixtures, runtime copying, effects, Kelpie, release, and
-EN-E08 remain closed.
+`check:fast` passes in 48.5s and full `check` in 93.1s before approval, 104.1s
+immediately before implementation publication, and 112.9s against
+approval-local metadata, with public 80/259 and all 232 fixtures exact. The
+three frozen PNGs are open together in responsive Aseprite 1.3.17.2 process
+39276. The designer replied `approved lets do next` on 2026-08-11; exact
+implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is published and
+remote-verified. Approval-record publication and final reconciliation remain
+in progress; after that clean stop, the same reply opens only one private
+common Kelpie candidate. Registration, fixtures, runtime copying, effects,
+later Kelpie roles, release, and EN-E08 remain closed.
 
 Approved preceding EN-E07 publication checkpoint (2026-08-11): specialist Changeling
 Mirrorfold Harrier on `codex/en-e07-changeling-mirrorfold-harrier` is based

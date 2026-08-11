@@ -45,7 +45,7 @@ export const EN_E07_MANYFOLD_USURPER_CONTRACT_CARD = deepFreeze({
     id: 'manyfold-usurper',
     name: 'Manyfold Usurper',
     role: 'elite',
-    status: 'implemented-full-awaiting-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   styleContract: 'Use chunky one-to-three-pixel hard-alpha forms and an independently authored broad tall grounded fey body. Keep one centered readable face inside a single connected three-tier living fan mantle, paired heavy ordinary arms, a pinched middle, wide separated pillar legs, and grounded slab feet. The elite must be broader and heavier than Mirrorfold Harrier without becoming a Doppelganger humanoid, a crowned sovereign, a winged creature, or a copied actor.',
@@ -57,7 +57,7 @@ export const EN_E07_MANYFOLD_USURPER_CONTRACT = deepFreeze({
   family: 'changeling',
   variant: 'manyfold-usurper',
   role: 'elite',
-  state: 'implemented-complete-motion-awaiting-review',
+  state: 'implemented-complete-motion-approved',
   chassis: 'broad-three-tier-fan-mantle-centered-face-heavy-paired-arms-pinched-middle-wide-pillar-legs-slab-feet-grounded-fey-v1',
   silhouette: 'A broad tall grounded authored Changeling elite with one connected three-tier fan mantle, deep side drapes, one centered face, a pinched folded middle, two paired heavy ordinary arms, wide separated pillar legs, and broad slab feet. It must be broader and heavier than Mirrorfold Harrier without collapsing into the pear-shaped Veilskin Foundling, an adult Doppelganger humanoid, a crowned sovereign, detached mask, winged creature, or copied actor.',
   identity: 'Deep ink-teal mantle flesh, rose-clay face and hands, wine inner folds, old-gold living seams, dark eye sockets with amber glints, one centered paired gaze, and a connected two-arm clasp-to-decree motion establish a self-contained elite form without promising runtime actor copying in the assembler.',
@@ -96,19 +96,19 @@ export const EN_E07_MANYFOLD_USURPER_DATA = deepFreeze({
 
 export const EN_E07_MANYFOLD_USURPER_GATE = deepFreeze({
   id: 'en-e07-changeling-manyfold-usurper-full-v1',
-  status: 'implemented-awaiting-review',
+  status: 'approved',
   baseCheckpoint: 'fdbb4cf04048a819b9cbe1655146842835b86a73',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Mirrorfold Harrier digest was visually approved, committed, pushed, and reconciled at clean published checkpoint fdbb4cf04048a819b9cbe1655146842835b86a73, the designer replied: approved lets do next. Mirrorfold Harrier completed the frozen specialist Changeling role, so the one-complete-sprite cadence authorizes only one private elite Changeling Manyfold Usurper 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
-  publicationAuthorizedOn: null,
-  publicationAuthorizationEvidence: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Mirrorfold Harrier, Veilskin Foundling, and Grand Pretender comparison, and synchronized GIF evidence were presented after the early oversized square mask-like face and Harrier-adjacent side read were corrected before freeze. The three exact frozen PNG boards were open together in responsive Aseprite 1.3.17.2 process 39276, whose live command line named all three paths. The designer replied: approved lets do next. Approval applies only to candidate digest f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246. Registration, fixtures, runtime copying, effects, Kelpie, release, and EN-E08 remain separate gates.',
+  approvedImplementation: '38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe',
+  publicationAuthorizedOn: '2026-08-11',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later families, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-local',
   precedingApproval: {
     gateId: EN_E07_MIRRORFOLD_HARRIER_GATE.id,
     artifactSha256: EN_E07_MIRRORFOLD_HARRIER_GATE.artifactSha256,
@@ -188,7 +188,7 @@ export const EN_E07_MANYFOLD_USURPER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Visual approval is required for the exact frozen Manyfold Usurper packet. Do not commit or push the candidate, register Changeling, generate fixtures, add runtime copying or effects, release, start Kelpie, or advance EN-E08 before that approval.',
+  nextGate: 'The exact Manyfold Usurper digest is visually approved and its implementation is published. Complete the bounded approval-record and current-state reconciliation first; after that remote-verified stop, the same designer reply opens only one private common Kelpie candidate. Changeling registration, fixtures, runtime copying, effects, later Kelpie roles, release, and EN-E08 remain closed.',
 });
 
 export const EN_E07_MANYFOLD_USURPER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -522,7 +522,7 @@ export const EN_E07_MANYFOLD_USURPER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'manyfold-usurper',
     scale: 8,
-    notes: 'Review one broad tall grounded authored Manyfold Usurper against approved Mirrorfold Harrier, Veilskin Foundling, and Grand Pretender. Keep registration, fixtures, runtime copying, effects, Kelpie, and later Wave 2 work separate.',
+    notes: 'Visually approved as one broad tall grounded authored Manyfold Usurper against approved Mirrorfold Harrier, Veilskin Foundling, and Grand Pretender. Publish only the bounded approval and reconciliation tuple; after remote verification, open only one private common Kelpie candidate. Keep Changeling registration, fixtures, runtime copying, effects, later Kelpie roles, and later Wave 2 work separate.',
   },
 });
 

@@ -123,15 +123,21 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_MANYFOLD_USURPER_GATE.status === 'implemented-awaiting-review'
-    && EN_E07_MANYFOLD_USURPER_GATE.approvedOn === null
-    && EN_E07_MANYFOLD_USURPER_GATE.approvalEvidence === null
-    && EN_E07_MANYFOLD_USURPER_GATE.approvedImplementation === null
+  EN_E07_MANYFOLD_USURPER_GATE.status === 'approved'
+    && EN_E07_MANYFOLD_USURPER_GATE.approvedOn === '2026-08-11'
+    && EN_E07_MANYFOLD_USURPER_GATE.approvedImplementation === '38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe'
     && EN_E07_MANYFOLD_USURPER_GATE.publishedImplementation === null
     && EN_E07_MANYFOLD_USURPER_GATE.publishedApprovalRecord === null
     && EN_E07_MANYFOLD_USURPER_GATE.initialPublishedHandoff === null
-    && EN_E07_MANYFOLD_USURPER_GATE.publicationState === 'not-published',
-  'Manyfold Usurper pre-approval state drifted',
+    && EN_E07_MANYFOLD_USURPER_GATE.publicationState === 'approved-local',
+  'Manyfold Usurper approved-local publication state drifted',
+);
+check(
+  EN_E07_MANYFOLD_USURPER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E07_MANYFOLD_USURPER_GATE.approvalEvidence.includes('responsive Aseprite 1.3.17.2 process 39276')
+    && EN_E07_MANYFOLD_USURPER_GATE.approvalEvidence.includes('f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246')
+    && EN_E07_MANYFOLD_USURPER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_MANYFOLD_USURPER_GATE.baseCheckpoint === 'fdbb4cf04048a819b9cbe1655146842835b86a73'
@@ -165,17 +171,18 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('Visual approval is required')
-    && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('Do not commit or push')
-    && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('start Kelpie'),
-  'visual approval or next-family stop gate drifted',
+  EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('visually approved')
+    && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('one private common Kelpie candidate')
+    && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('Changeling registration')
+    && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('remain closed'),
+  'approved-local publication or next-family stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_MANYFOLD_USURPER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E07_MANYFOLD_USURPER_CONTRACT_CARD.precedingVariant.id === 'mirrorfold-harrier'
     && EN_E07_MANYFOLD_USURPER_CONTRACT_CARD.activeVariant.id === 'manyfold-usurper'
     && EN_E07_MANYFOLD_USURPER_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E07_MANYFOLD_USURPER_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-review'
+    && EN_E07_MANYFOLD_USURPER_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E07_MANYFOLD_USURPER_CONTRACT_CARD.deferredRoles) === JSON.stringify([])
     && EN_E07_MIRRORFOLD_HARRIER_CONTRACT_CARD.activeVariant.id === 'mirrorfold-harrier'
     && EN_E07_CHANGELING_CONTRACT_CARD.activeVariant.id === 'veilskin-foundling',

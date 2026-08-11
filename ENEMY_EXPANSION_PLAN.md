@@ -13,7 +13,7 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current art checkpoint (2026-08-11): private elite Changeling Manyfold
+- Current approved publication checkpoint (2026-08-11): private elite Changeling Manyfold
   Usurper on `codex/en-e07-changeling-manyfold-usurper` is frozen at digest
   `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`
   from clean published Mirrorfold Harrier reconciliation
@@ -27,11 +27,17 @@
   slab feet. The packet passes 72/72 colored frames, 8/8 exact white flashes,
   54/54 expected eye-bearing views, and 54/54 readable face-feature views;
   Complete B adds 8,378 pixels and Form changes 11,849. `check:fast` passes in
-  48.5s and full `check` in 93.1s with public 80/259 and all 232 fixtures exact.
-  The exact raw, Complete B + Form, and comparison PNGs are open together in
-  responsive Aseprite 1.3.17.2 process 39276. This candidate is uncommitted,
-  unregistered, fixture-free, and awaiting visual approval. Runtime actor
-  copying, effects, Kelpie, release, and EN-E08 remain closed.
+  48.5s and full `check` in 93.1s before approval, 104.1s immediately before
+  implementation publication, and 112.9s against approval-local metadata, with
+  public 80/259 and all 232 fixtures exact. The exact raw, Complete B + Form,
+  and comparison PNGs are open together in responsive Aseprite 1.3.17.2
+  process 39276. The designer replied `approved lets do next` on 2026-08-11;
+  exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is published and
+  remote-verified. Approval-record publication and final reconciliation remain
+  in progress; after that clean stop, the same reply opens only one private
+  common Kelpie candidate. Manyfold remains unregistered and fixture-free.
+  Runtime actor copying, effects, later Kelpie roles, release, and EN-E08 remain
+  closed.
 
 - Approved preceding checkpoint (2026-08-11): private specialist Changeling
   Mirrorfold Harrier on `codex/en-e07-changeling-mirrorfold-harrier` is frozen
@@ -3650,7 +3656,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling and specialist Mirrorfold Harrier approved and published; private elite Changeling Manyfold Usurper awaiting visual review`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common Changeling Veilskin Foundling and specialist Mirrorfold Harrier approved and published; private elite Changeling Manyfold Usurper approved with bounded publication in progress`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4319,10 +4325,10 @@ assembler.
   register Changeling, generate fixtures, add runtime copying or effects,
   start Kelpie, release, or advance EN-E08.
 
-#### Changeling Manyfold Usurper complete suite awaiting visual review
+#### Changeling Manyfold Usurper complete suite approved; publication in progress
 
-- Gate ID: `en-e07-changeling-manyfold-usurper-full-v1`; status:
-  `implemented-awaiting-review` on
+- Gate ID: `en-e07-changeling-manyfold-usurper-full-v1`; status: `approved`
+  with bounded publication in progress on
   `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean,
   remote-verified Mirrorfold Harrier reconciliation
   `fdbb4cf04048a819b9cbe1655146842835b86a73`.
@@ -4361,23 +4367,29 @@ assembler.
   readable face-feature views; Complete B adds 8,378 pixels and Form changes
   11,849. Public 80/259 and all fixtures remain unchanged.
 - Broad validation: `npm.cmd run check:fast` passed in 48.5s and full
-  `npm.cmd run check` passed in 93.1s, with public 80/259 and all 232 fixture
-  sheets exact.
+  `npm.cmd run check` passed in 93.1s before approval, 104.1s immediately
+  before implementation publication, and 112.9s against approval-local
+  metadata, with public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and family
   comparison PNGs are open together in responsive Aseprite 1.3.17.2; process
   39276 names all three frozen paths. An early oversized square mask-like face
   and Harrier-adjacent side read were corrected before the evidence freeze;
   the final face is smaller, readable, and held within exposed tier seams and
   connected side drapes.
+- Approval: after the exact packet was presented, the designer replied
+  `approved lets do next` on 2026-08-11. Approval applies only to digest
+  `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
+  Exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is published and
+  remote-verified; approval-record publication and final reconciliation remain
+  in progress.
 - Scope firewall: no registration, public facade or catalog change, fixtures,
   manifest, shared renderer, exporter, validator, frame-contract change,
   runtime copying, alternate body, detached mask, wings, glow, particles,
   projectile, effects, Kelpie, release, EN-E08, or accepted drift.
-- Required next action: visually approve or reject only candidate digest
-  `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
-  Do not stage, commit, push, register Changeling, generate fixtures, implement
-  runtime copying, add effects, start Kelpie, release, or advance EN-E08 before
-  that exact approval.
+- Required next action: commit and push the approval record, remote-verify and
+  reconcile the bounded tuple, then open only one private common Kelpie
+  candidate. Do not register Changeling, generate fixtures, implement runtime
+  copying, add effects, start later Kelpie roles, release, or advance EN-E08.
 
 ### EN-E08 - Possessed equipment
 

@@ -23,17 +23,19 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Manyfold Usurper Awaiting Visual Review
+## Immediate Continuation Checkpoint - Manyfold Usurper Approved; Publication In Progress
 
 Start here in a new task. One private elite Changeling Manyfold Usurper is
-implemented, deterministic, hash-frozen, technically validated, and awaiting
-visual approval on `codex/en-e07-changeling-manyfold-usurper`, based exactly on
+implemented, deterministic, hash-frozen, technically validated, visually
+approved, and published on `codex/en-e07-changeling-manyfold-usurper`, based exactly on
 clean published Mirrorfold Harrier reconciliation
-`fdbb4cf04048a819b9cbe1655146842835b86a73`. The candidate is not committed,
-pushed, registered, fixture-generated, or public.
+`fdbb4cf04048a819b9cbe1655146842835b86a73`. Exact implementation
+`38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is remote-verified; approval-record
+publication and current-state reconciliation remain in progress. The actor is
+not registered, fixture-generated, or public.
 
-- Gate ID: `en-e07-changeling-manyfold-usurper-full-v1`; status:
-  `implemented-awaiting-review`.
+- Gate ID: `en-e07-changeling-manyfold-usurper-full-v1`; status: `approved`
+  with bounded publication in progress.
 - Authorization: after Mirrorfold Harrier was approved, published, and
   reconciled, the designer replied `approved lets do next` on 2026-08-11. The
   frozen common-specialist-elite Changeling order opens only this private elite
@@ -69,19 +71,25 @@ pushed, registered, fixture-generated, or public.
   changes 11,849. All comparisons remain exact; public 80/259 and fixtures are
   unchanged.
 - Broad validation: `npm.cmd run check:fast` passed in 48.5s and full
-  `npm.cmd run check` passed in 93.1s, with public 80/259 and all 232 fixture
-  sheets exact.
+  `npm.cmd run check` passed in 93.1s before approval, 104.1s immediately
+  before implementation publication, and 112.9s against approval-local
+  metadata, with public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in responsive Aseprite 1.3.17.2 process 39276; its
   live command line names all three frozen paths.
+- Approval: after the exact packet was presented, the designer replied
+  `approved lets do next` on 2026-08-11. Approval applies only to digest
+  `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
+  Exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is
+  published and remote-verified.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-changeling-manyfold-usurper`
   and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-manyfold-usurper`.
-- Required next action: the designer must visually approve or reject this exact
-  digest. Do not commit or push the candidate, register Changeling, generate
-  fixtures, implement runtime copying, add effects, start Kelpie, release, or
-  advance EN-E08 before approval.
+- Required next action: commit and push the approval record, remote-verify and
+  reconcile the bounded tuple, then open only one private common Kelpie
+  candidate. Do not register Changeling, generate fixtures, implement runtime
+  copying, add effects, start later Kelpie roles, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Mirrorfold Harrier Published and Reconciled
 
