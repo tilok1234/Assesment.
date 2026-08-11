@@ -152,16 +152,17 @@ function rejects(action, label) {
 }
 
 check(
-  EN_E08_THRENECROWN_HIEROPHANT_GATE.status === 'awaiting-visual-review'
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvedOn === null
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvalEvidence === null
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvedImplementation === null
+  EN_E08_THRENECROWN_HIEROPHANT_GATE.status === 'approved'
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvedOn === '2026-08-11'
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvalEvidence.includes('designer replied: approved lets ddo next')
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvalEvidence.includes('51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f')
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.approvedImplementation === '4bf12351ebe643520f052c08bacd385141231a3f'
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.publishedImplementation === null
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.publishedApprovalRecord === null
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.initialPublishedHandoff === null
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.publicationState === 'not-published'
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.publicationState === 'approved-not-published'
     && EN_E08_THRENECROWN_HIEROPHANT_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
-  'Threnecrown Hierophant visual-review state or bounded publication authorization drifted',
+  'Threnecrown Hierophant approval state or bounded publication authorization drifted',
 );
 check(
   EN_E08_THRENECROWN_HIEROPHANT_GATE.baseCheckpoint === '4f7a1146f1b90c8e70b819461d29a4be72cb379a'
@@ -196,9 +197,10 @@ check(
   'Threnecrown Hierophant exclusions drifted',
 );
 check(
-  EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('explicit visual approval')
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('Do not commit or push')
-    && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('Living Weapon or EN-E09'),
+  EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('visually approved')
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('handoff reconciliation')
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('Living Weapon actor-topology architecture decision')
+    && EN_E08_THRENECROWN_HIEROPHANT_GATE.nextGate.includes('does not select a topology or authorize Living Weapon art'),
   'Threnecrown Hierophant stop gate drifted',
 );
 check(
@@ -211,7 +213,7 @@ check(
   JSON.stringify(EN_E08_POSSESSED_MASK_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E08_POSSESSED_MASK_CONTRACT_CARD.activeVariant.id === 'threnecrown-hierophant'
     && EN_E08_POSSESSED_MASK_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E08_POSSESSED_MASK_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-visual-review'
+    && EN_E08_POSSESSED_MASK_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E08_POSSESSED_MASK_CONTRACT_CARD.precedingVariant.id === 'mournseal-cantor'
     && JSON.stringify(EN_E08_POSSESSED_MASK_CONTRACT_CARD.deferredRoles) === JSON.stringify([]),
   'Possessed Mask role order or one-active-role boundary drifted',

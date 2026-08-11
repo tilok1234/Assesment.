@@ -475,10 +475,13 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   crown-mask/tiered-mantle/gold-tab actor with zero child assets, frozen at
   digest `51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f`.
   All 80 frames pass focused connected, bounded, hovering, face-readability,
-  alias, mirror, predecessor, and comparison checks. Fast validation passes in
-  57.0s and full validation in 107.1s, preserving public 80/259 and all 232
-  fixtures. It is awaiting visual approval, unregistered, fixture-free,
-  effect-free, non-public, and uncommitted.
+  alias, mirror, predecessor, and comparison checks. Fast/full validation passes
+  in 57.0s/107.1s before approval metadata and 62.0s/119.1s approval-local,
+  preserving public 80/259 and all 232 fixtures. The designer replied `approved
+  lets ddo next`; implementation
+  `4bf12351ebe643520f052c08bacd385141231a3f` records the accepted pixels. It is
+  approved and awaiting bounded publication, unregistered, fixture-free,
+  effect-free, and non-public.
   The approved preceding private checkpoint is specialist Possessed Mask Mournseal Cantor
   on `codex/en-e08-possessed-mask-mournseal-cantor`, based on clean published
   Whisperveil reconciliation `2ab49dc879a852d8a3c1a5f14de93345b32d490a`.

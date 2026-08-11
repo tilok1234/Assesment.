@@ -4706,10 +4706,10 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Possessed Mask Threnecrown Hierophant elite awaiting visual review
+#### Possessed Mask Threnecrown Hierophant elite approved awaiting publication
 
 - Gate ID: `en-e08-possessed-mask-threnecrown-hierophant-full-v1`; status
-  `awaiting-visual-review` on
+  `approved-not-published` on
   `codex/en-e08-possessed-mask-threnecrown-hierophant`, based exactly on
   published Mournseal reconciliation
   `4f7a1146f1b90c8e70b819461d29a4be72cb379a`.
@@ -4731,13 +4731,18 @@ it with incidental per-frame offsets.
   PNG hashes are `896121c2...370d`, `54e5c643...cc16`, and
   `a351d886...07e8`; GIF hashes are `066fee33...88e4` and
   `193c2681...8888`.
-- Focused 80-frame gate passes; `check:fast` passes in 57.0s and full `check`
-  in 107.1s with public 80/259 and all 232 fixtures exact. The exact three PNGs
-  are open together in Aseprite.
-- Approval gate: explicit visual approval must identify this exact digest and
-  five hashes. Do not commit or push, register, generate fixtures, add child
-  assets or effects, start Living Weapon or EN-E09, release, accept drift, or
-  open a PR before approval.
+- Focused 80-frame gate passes; fast/full validation passes in 57.0s/107.1s
+  before approval metadata and 62.0s/119.1s approval-local with public 80/259
+  and all 232 fixtures exact. The exact three PNGs were open together in
+  Aseprite for approval.
+- Approval: the exact packet was presented and the designer replied `approved
+  lets ddo next`. Implementation
+  `4bf12351ebe643520f052c08bacd385141231a3f` records the accepted pixels.
+  Standing permission opens only the approval record, branch push, and handoff
+  reconciliation. The same reply opens only the Living Weapon actor-topology
+  architecture decision after clean remote reconciliation and does not
+  authorize its art. Registration, fixtures, child assets, effects, EN-E09,
+  release, accepted drift, and a PR remain closed.
 
 #### Possessed Mask Mournseal Cantor specialist approved and published
 

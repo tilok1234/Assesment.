@@ -114,12 +114,17 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f`.
   It is one baked 24x24 crown-mask/tiered-mantle/gold-tab actor with zero child
   assets. All 80 frames pass connected, bounded, hovering, readable-face,
-  alias, mirror, and predecessor/comparison gates; fast validation passes in
-  57.0s and full validation in 107.1s with public 80/259 and all 232 fixtures
-  exact. The exact three frozen PNGs are open together in Aseprite. It awaits
-  explicit visual approval and must not be committed or pushed. Registration,
-  fixtures, effects, child assets, Living Weapon, EN-E09, release, accepted
-  drift, and a PR remain closed.
+  alias, mirror, and predecessor/comparison gates; fast/full validation passes
+  in 57.0s/107.1s before approval metadata and 62.0s/119.1s approval-local with
+  public 80/259 and all 232 fixtures exact. The exact three frozen PNGs were
+  open together in Aseprite when the
+  designer replied `approved lets ddo next`; implementation
+  `4bf12351ebe643520f052c08bacd385141231a3f` records the accepted pixels. It is
+  approved and awaiting bounded publication. The same reply opens only the
+  Living Weapon actor-topology architecture decision after clean remote
+  reconciliation; it does not authorize Living Weapon art. Registration,
+  fixtures, effects, child assets, EN-E09, release, accepted drift, and a PR
+  remain closed.
 - Approved preceding published private art checkpoint: specialist Possessed Mask Mournseal Cantor on
   `codex/en-e08-possessed-mask-mournseal-cantor`, based exactly on clean
   published Whisperveil reconciliation

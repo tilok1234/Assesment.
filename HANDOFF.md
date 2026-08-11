@@ -23,16 +23,18 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Threnecrown Hierophant Awaiting Visual Review
+## Immediate Continuation Checkpoint - Threnecrown Hierophant Approved Awaiting Publication
 
 Start here. From clean published Mournseal Cantor reconciliation
 `4f7a1146f1b90c8e70b819461d29a4be72cb379a`, the designer replied `approved
 lets do next`, opening exactly one private elite Possessed Mask art gate.
 Threnecrown Hierophant is implemented locally on
 `codex/en-e08-possessed-mask-threnecrown-hierophant` as one deterministic baked
-24x24 actor with zero child assets across all 80 frames. It is not visually
-approved, committed, pushed, registered, fixture-backed, effect-enabled, or
-public.
+24x24 actor with zero child assets across all 80 frames. The designer replied
+`approved lets ddo next`; implementation
+`4bf12351ebe643520f052c08bacd385141231a3f` records the exact accepted pixels.
+It is visually approved but its approval record and branch are not yet
+published. It remains unregistered, fixture-free, effect-free, and non-public.
 
 - Identity: broad monumental aged-ivory funerary mask with a connected
   three-prong crown-brow, two rose-magenta eyes, deep cheek panels, long nose
@@ -61,18 +63,22 @@ public.
   silhouettes differ from approved Mournseal Cantor, approved Whisperveil
   Visage, and public Spectral Ghost. There are 72/72 colored frames, 8/8 exact
   white flashes, and 54/54 readable face views; opaque range 267-312.
-- Broad validation: `check:fast` passes in 57.0s and full `check` passes in
-  107.1s. Public 80/259 and all 232 fixture sheets remain exact.
-- Visual-review readiness: the exact corrected raw, Complete B + Form, and
-  comparison PNGs are open together in Aseprite.
+- Broad validation: fast/full validation passes in 57.0s/107.1s before
+  approval metadata and 62.0s/119.1s approval-local. Public 80/259 and all 232
+  fixture sheets remain exact.
+- Visual approval: the exact corrected raw, Complete B + Form, and comparison
+  PNGs were open together in Aseprite when the designer replied `approved lets
+  ddo next`. Approval applies only to this digest and five hashes.
 - Commands: `npm.cmd run
   review:enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant` and
   `npm.cmd run
   check:enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant`.
-- Approval gate: approval must identify this exact digest and five artifact
-  hashes. Do not commit or push the candidate, register Possessed Mask,
-  generate fixtures, add child assets or effects, start Living Weapon or
-  EN-E09, release, accept drift, or open a PR before explicit visual approval.
+- Publication gate: standing permission opens only the approval record, branch
+  push, and handoff reconciliation. The same reply opens only the Living Weapon
+  actor-topology architecture decision after a clean remote reconciliation; it
+  does not select a topology or authorize Living Weapon art. Registration,
+  fixtures, child assets, effects, EN-E09, release, accepted drift, and a PR
+  remain closed.
 
 ## Approved Preceding Checkpoint - Mournseal Cantor Published
 

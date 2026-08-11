@@ -41,7 +41,7 @@ export const EN_E08_POSSESSED_MASK_CONTRACT_CARD = deepFreeze({
     id: 'threnecrown-hierophant',
     name: 'Threnecrown Hierophant',
     role: 'elite',
-    status: 'implemented-full-awaiting-visual-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   styleContract: 'Use chunky one-to-three-pixel hard-alpha forms and one deterministic baked 24x24 actor. A broad bone mask with two readable eye sockets, nose ridge, mouth, cheek planes, connected torn shroud, and tether ribbons must read without a host body. All pieces remain connected actor pixels with true hover clearance; no detached mask, child asset, copied humanoid, aura, glow, particles, or projectile.',
@@ -53,7 +53,7 @@ export const EN_E08_THRENECROWN_HIEROPHANT_CONTRACT = deepFreeze({
   family: 'possessed-mask',
   variant: 'threnecrown-hierophant',
   role: 'elite',
-  state: 'implemented-complete-motion-awaiting-visual-review',
+  state: 'implemented-complete-motion-approved',
   chassis: 'broad-sovereign-funerary-mask-three-prong-crown-brow-twin-rose-eyes-deep-cheek-panels-nose-ridge-barred-mouth-connected-tiered-mantle-gold-chain-tabs-hovering-mask-v1',
   silhouette: 'A broad monumental hovering funerary mask with a connected three-prong crown-brow, two deep eye sockets, heavy cheek panels, one long nose ridge, a readable barred mouth, wide jaw, connected gold chain tabs, and a three-tier crimson mantle. It must remain visibly related to Whisperveil Visage and Mournseal Cantor without copying either face proportion, shroud shape, palette, or attack pose, and must not read as a Ghost robe, Living Shadow humanoid, floating helmet, crown-only icon, slime, flame blob, or detached particle cluster.',
   identity: 'Dark aged ivory, obsidian-violet voids, crimson funerary mantle cloth, old-gold chain tabs, and two rose-magenta eyes establish a sovereign elite. The crown-brow, broad face, barred mouth, chain tabs, and tiered mantle remain one connected baked actor while hosts, detached masks, aura, glow, smoke, possession overlays, projectiles, and illumination stay external.',
@@ -94,19 +94,19 @@ export const EN_E08_THRENECROWN_HIEROPHANT_DATA = deepFreeze({
 
 export const EN_E08_THRENECROWN_HIEROPHANT_GATE = deepFreeze({
   id: 'en-e08-possessed-mask-threnecrown-hierophant-full-v1',
-  status: 'awaiting-visual-review',
+  status: 'approved',
   baseCheckpoint: '4f7a1146f1b90c8e70b819461d29a4be72cb379a',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Mournseal Cantor packet was approved by the designer reply: approved lets do next, its bounded publication tuple was reconciled at clean remote-verified checkpoint 4f7a1146f1b90c8e70b819461d29a4be72cb379a. Mournseal Cantor completed the specialist role, so the one-complete-sprite cadence authorizes only one private elite Possessed Mask Threnecrown Hierophant 80-frame art candidate. Registration, fixtures, effects, Living Weapon, EN-E09, release, and a pull request remain closed.',
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Mournseal Cantor and Whisperveil Visage plus public Spectral Ghost comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in Aseprite. The designer replied: approved lets ddo next. In context this explicitly approves candidate digest 51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f and its five frozen review hashes only. The same reply may open only the Living Weapon actor-topology architecture decision after clean publication reconciliation; it does not select a topology or authorize Living Weapon art. Registration, fixtures, child assets, effects, EN-E09, release, accepted drift, a pull request, and any broader gate remain separate decisions.',
+  approvedImplementation: '4bf12351ebe643520f052c08bacd385141231a3f',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E08_MOURNSEAL_CANTOR_GATE.id,
     artifactSha256: EN_E08_MOURNSEAL_CANTOR_GATE.artifactSha256,
@@ -181,7 +181,7 @@ export const EN_E08_THRENECROWN_HIEROPHANT_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Present the exact frozen Threnecrown Hierophant raw/no-outline and Complete B + Form full-suite boards, approved Mournseal Cantor and Whisperveil Visage comparisons, and both synchronized GIFs together for explicit visual approval. Do not commit or push the candidate, register Possessed Mask, generate fixtures, add child assets or effects, start Living Weapon or EN-E09, release, accept drift, or open a pull request before that approval.',
+  nextGate: 'The exact Threnecrown Hierophant packet is visually approved at implementation 4bf12351ebe643520f052c08bacd385141231a3f. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. The same approved lets ddo next reply opens only the Living Weapon actor-topology architecture decision after this tuple is clean and remote verified; it does not select a topology or authorize Living Weapon art. Registration, fixtures, child assets, effects, EN-E09, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E08_THRENECROWN_HIEROPHANT_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -446,7 +446,7 @@ export const EN_E08_THRENECROWN_HIEROPHANT_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'threnecrown-hierophant',
     scale: 8,
-    notes: 'Awaiting visual review as one connected baked hovering elite Threnecrown Hierophant against approved Mournseal Cantor and Whisperveil Visage plus public Spectral Ghost. Keep registration, fixtures, child assets, effects, Living Weapon, EN-E09, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one connected baked hovering elite Threnecrown Hierophant against approved Mournseal Cantor and Whisperveil Visage plus public Spectral Ghost. Implementation 4bf12351ebe643520f052c08bacd385141231a3f records the exact accepted pixels. Keep registration, fixtures, child assets, effects, EN-E09, release, accepted drift, and a pull request separate; the same reply opens only the Living Weapon actor-topology architecture decision after clean publication reconciliation and does not authorize its art.',
   },
 });
 

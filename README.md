@@ -1488,11 +1488,16 @@ review:enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant` and
 check:enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant`. The
 focused gate passes 80/80 connected, bounded, and hovering with 54/54 readable
 face views; all Mournseal Cantor, Whisperveil Visage, public, and fixture
-baselines remain unchanged. Fast validation passes in 57.0s and full validation
-passes in 107.1s with public 80/259 and all 232 fixture sheets exact. It is
-awaiting explicit visual approval and must not be committed or pushed.
-Registration, fixtures, child assets, effects, Living Weapon, EN-E09, release,
-accepted drift, and a PR remain closed.
+baselines remain unchanged. Fast/full validation passes in 57.0s/107.1s before
+approval metadata and 62.0s/119.1s approval-local with public 80/259 and all
+232 fixture sheets exact. The
+designer replied `approved lets ddo next`; implementation
+`4bf12351ebe643520f052c08bacd385141231a3f` records the exact accepted pixels.
+It is approved and awaiting bounded publication. The same reply opens only the
+Living Weapon actor-topology architecture decision after clean remote
+reconciliation; it does not authorize Living Weapon art. Registration,
+fixtures, child assets, effects, EN-E09, release, accepted drift, and a PR
+remain closed.
 
 Mournseal Cantor is the approved preceding private specialist Possessed Mask candidate on
 `codex/en-e08-possessed-mask-mournseal-cantor`, based on clean published
