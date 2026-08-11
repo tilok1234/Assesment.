@@ -38,7 +38,7 @@ export const EN_E07_CHANGELING_CONTRACT_CARD = deepFreeze({
     id: 'veilskin-foundling',
     name: 'Veilskin Foundling',
     role: 'common',
-    status: 'implemented-full-awaiting-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['specialist', 'elite'],
   styleContract: 'Use chunky one-to-three-pixel hard-alpha forms and an authored small grounded fey default body. Keep one centered readable face inside a connected living veil, paired ordinary arms, bowed legs, and splayed feet. Do not copy a player, public enemy, or approved Doppelganger sprite into the authored sheet.',
@@ -50,7 +50,7 @@ export const EN_E07_VEILSKIN_FOUNDLING_CONTRACT = deepFreeze({
   family: 'changeling',
   variant: 'veilskin-foundling',
   role: 'common',
-  state: 'implemented-complete-motion-awaiting-review',
+  state: 'implemented-complete-motion-approved',
   chassis: 'small-pear-veil-centered-face-paired-arms-bowed-legs-splayed-feet-grounded-fey-v1',
   silhouette: 'A small grounded authored fey impostor with a connected pear-shaped living veil, one centered face, narrow folded torso, two short paired ordinary arms, bowed separated legs, and broad splayed feet. It must not collapse into the adult Pale Echo humanoid, a Goblin ear bar, an Imp horn bar, a winged Fairy, a detached mask, or a copied actor.',
   identity: 'Muted green veil flesh, clay-rose face and hands, ochre body folds, coral living seams, dark eye sockets with amber glints, one centered paired gaze, and symmetrical connected rake motion establish a self-contained default Changeling form without promising runtime actor copying in the assembler.',
@@ -89,22 +89,22 @@ export const EN_E07_VEILSKIN_FOUNDLING_DATA = deepFreeze({
 
 export const EN_E07_VEILSKIN_FOUNDLING_GATE = deepFreeze({
   id: 'en-e07-changeling-veilskin-foundling-full-v1',
-  status: 'implemented-awaiting-review',
+  status: 'approved',
   baseCheckpoint: '4ee32622ec2984ac805ac345b854f23584fda3c3',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Mirecrown Beacon was visually approved, committed, pushed, and reconciled at clean published checkpoint 4ee32622ec2984ac805ac345b854f23584fda3c3, the designer replied: approved lets do next. Mirecrown completed the frozen Will-o-Wisp role order, so the one-complete-sprite cadence authorizes only one private common Changeling Veilskin Foundling 80-frame candidate.',
   repairRequestedOn: '2026-08-11',
   repairRequestEvidence: 'After reviewing candidate digest 1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d, the designer said: could need a more readable face. That packet is superseded as approval evidence; the repair is restricted to connected dark eye sockets, retained amber glints, and a tiny mouth mark without changing silhouette, body, or motion.',
   supersededCandidateFrameDigest: '1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d',
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
-  publicationAuthorizedOn: null,
-  publicationAuthorizationEvidence: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'After the face-readability repair, the exact revised labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Pale Echo plus public Goblin Scout and Imp Sprite comparison, and paired GIF evidence were presented, and the three exact revised frozen PNG boards were opened together in a fresh responsive Aseprite 1.3.17.2 process whose live command line named all three paths. The designer replied: approved. Approval applies only to repaired candidate digest e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126; superseded digest 1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d is not approval evidence. Changeling registration, fixtures, runtime copying, effects, later roles and families, release, and EN-E08 remain separate gates.',
+  approvedImplementation: '2a295aa70c8a6680ffb85881efa4ccd927a50979',
+  publicationAuthorizedOn: '2026-08-11',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, runtime copying, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-local',
   precedingApproval: {
     gateId: EN_E07_MIRECROWN_BEACON_GATE.id,
     artifactSha256: EN_E07_MIRECROWN_BEACON_GATE.artifactSha256,
@@ -184,7 +184,7 @@ export const EN_E07_VEILSKIN_FOUNDLING_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Visual approval is required for the exact frozen Veilskin Foundling packet. Do not commit or push the candidate, register Changeling, generate fixtures, add runtime copying or effects, release, start the specialist or elite Changeling, start Kelpie, or advance EN-E08 before that approval.',
+  nextGate: 'The repaired Veilskin Foundling digest is visually approved and its exact implementation is committed locally. Standing publication permission opens only the bounded approval-record, reconciliation, and branch-push sequence. No specialist Changeling, registration, fixtures, runtime copying, effects, Kelpie, release, or EN-E08 gate is open; a separate designer lets do next is required before another candidate begins.',
 });
 
 export const EN_E07_VEILSKIN_FOUNDLING_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -503,7 +503,7 @@ export const EN_E07_VEILSKIN_FOUNDLING_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'veilskin-foundling',
     scale: 8,
-    notes: 'Review one small grounded authored Veilskin Foundling against approved Pale Echo plus public Goblin Scout and Imp Sprite. Keep registration, fixtures, runtime copying, effects, later Changeling roles, Kelpie, and later Wave 2 work separate.',
+    notes: 'Visually approved locally as one small grounded authored Veilskin Foundling against approved Pale Echo plus public Goblin Scout and Imp Sprite. Publish only the bounded approval/reconciliation tuple under standing permission. Keep registration, fixtures, runtime copying, effects, later Changeling roles, Kelpie, and later Wave 2 work separate.',
   },
 });
 

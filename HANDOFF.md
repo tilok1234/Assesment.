@@ -23,14 +23,17 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Veilskin Foundling Awaiting Visual Review
+## Immediate Continuation Checkpoint - Veilskin Foundling Approved Locally; Publication In Progress
 
 Start here in a new task. One private common Changeling Veilskin Foundling is
-implemented, deterministic, hash-frozen, and technically validated on
+implemented, deterministic, hash-frozen, technically validated, and visually
+approved on
 `codex/en-e07-changeling-veilskin-foundling`, based exactly on clean published
 Mirecrown Beacon reconciliation
-`4ee32622ec2984ac805ac345b854f23584fda3c3`. It is not visually approved,
-committed, pushed, registered, fixture-generated, or public.
+`4ee32622ec2984ac805ac345b854f23584fda3c3`. Exact implementation
+`2a295aa70c8a6680ffb85881efa4ccd927a50979` is committed locally. Approval
+metadata revalidation, approval-record commit, reconciliation, and push remain
+in progress; the actor is not registered, fixture-generated, or public.
 
 - Gate ID: `en-e07-changeling-veilskin-foundling-full-v1`; status:
   `implemented-awaiting-review`.
@@ -82,19 +85,24 @@ committed, pushed, registered, fixture-generated, or public.
   public 80/259 and fixtures remain unchanged.
 - Broad validation: the revised ten-gate EN-E07 predecessor/candidate matrix
   passed in 6.3s, `npm.cmd run check:fast` passed in 58.3s, and full
-  `npm.cmd run check` passed in 107.1s with public 80/259 and all 232 fixture
-  sheets exact.
+  `npm.cmd run check` passed in 107.1s before approval and 109.0s against
+  approval-local metadata, with public 80/259 and all 232 fixture sheets exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in responsive Aseprite 1.3.17.2. Its live command
   line names all three exact frozen paths.
+- Approval: after the repaired packet and both GIFs were presented, the
+  designer replied `approved` on 2026-08-11. Approval applies only to digest
+  `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`;
+  the first digest remains superseded. Standing publication permission opens
+  only the bounded approval-record, reconciliation, and branch-push sequence.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-changeling-veilskin-foundling` and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-veilskin-foundling`.
-- Required next action: present those exact boards plus both synchronized GIFs
-  and request an explicit visual verdict on this digest. Do not commit or push it before
-  approval. Do not register Changeling, generate fixtures, implement runtime
+- Required next action: finish approval-local metadata revalidation, commit the
+  approval record, publish and remote-verify the bounded tuple, then reconcile
+  these docs. Do not register Changeling, generate fixtures, implement runtime
   copying, add effects, start specialist/elite Changeling or Kelpie, release,
-  or advance EN-E08.
+  or advance EN-E08. Another candidate requires a separate `lets do next`.
 
 ## Approved Preceding Checkpoint - Mirecrown Beacon Published
 

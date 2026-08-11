@@ -129,13 +129,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-veilskin-foundling`.
   The revised ten-gate EN-E07 protection matrix passes in 6.3s, `check:fast`
-  in 58.3s, and full `check` in 107.1s with all 232 fixtures exact.
+  in 58.3s, and full `check` in 107.1s before approval and 109.0s against
+  approval-local metadata, with all 232 fixtures exact.
   The three exact frozen PNG boards are open together in responsive Aseprite
   1.3.17.2, and its live command line names all three paths.
-  This exact hash-frozen packet is implemented but not visually approved,
-  committed, pushed, registered, or fixture-generated. Preserve runtime actor
-  copying, alternate bodies, detached masks or veil pieces, effects,
-  specialist/elite Changeling, Kelpie, release, and EN-E08 as separate gates.
+  The designer replied `approved` on 2026-08-11. Exact implementation
+  `2a295aa70c8a6680ffb85881efa4ccd927a50979` is committed locally; approval
+  metadata revalidation, approval-record commit, reconciliation, and branch
+  push remain in progress under standing publication permission. The packet
+  is not registered or fixture-generated. Runtime actor copying, alternate
+  bodies, detached masks or veil pieces, effects, specialist/elite Changeling,
+  Kelpie, release, and EN-E08 remain separate gates; another candidate requires
+  a separate `lets do next`.
 - Approved preceding isolated art checkpoint:
   `codex/en-e07-will-o-wisp-mirecrown-beacon`, based exactly on clean
   published Fenbell Shepherd reconciliation

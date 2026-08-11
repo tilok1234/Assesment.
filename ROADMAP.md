@@ -304,11 +304,13 @@ colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views, and
 `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
 is superseded by this face-only repair. The revised ten-gate EN-E07 matrix
 passes in 6.3s, `check:fast` in 58.3s, and full `check` in 107.1s with all 232
-fixtures exact. The packet is hash-frozen
-and technically validated but remains
-unapproved, uncommitted, unpushed, unregistered, and fixture-free. Visual
-review is the only open action; runtime copying, effects, specialist/elite
-Changeling, Kelpie, release, and EN-E08 remain closed.
+fixtures exact; full `check` also passes in 109.0s against approval-local
+metadata. The designer replied `approved` on 2026-08-11; exact
+implementation `2a295aa70c8a6680ffb85881efa4ccd927a50979` is committed locally,
+with approval-record revalidation and publication in progress. The packet
+remains unregistered and fixture-free. Runtime copying, effects,
+specialist/elite Changeling, Kelpie, release, and EN-E08 remain closed; another
+candidate needs a separate `lets do next`.
 
 Approved preceding EN-E07 checkpoint (2026-08-10): Nightglass Seer was approved,
 published, and reconciled at `46ad4e7`; the designer replied `approved lets do

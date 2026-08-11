@@ -146,13 +146,21 @@ function rejects(action, label, expected = 'is not implemented') {
 }
 
 check(
-  EN_E07_VEILSKIN_FOUNDLING_GATE.status === 'implemented-awaiting-review'
-    && EN_E07_VEILSKIN_FOUNDLING_GATE.approvedOn === null
-    && EN_E07_VEILSKIN_FOUNDLING_GATE.approvedImplementation === null
+  EN_E07_VEILSKIN_FOUNDLING_GATE.status === 'approved'
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.approvedOn === '2026-08-11'
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.approvedImplementation === '2a295aa70c8a6680ffb85881efa4ccd927a50979'
     && EN_E07_VEILSKIN_FOUNDLING_GATE.publishedImplementation === null
     && EN_E07_VEILSKIN_FOUNDLING_GATE.publishedApprovalRecord === null
-    && EN_E07_VEILSKIN_FOUNDLING_GATE.publicationState === 'not-published',
-  'Veilskin Foundling must remain implemented, unapproved, and unpublished',
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.publicationState === 'approved-local',
+  'Veilskin Foundling approved-local publication state drifted',
+);
+check(
+  EN_E07_VEILSKIN_FOUNDLING_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.approvalEvidence.includes('fresh responsive Aseprite 1.3.17.2')
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.approvalEvidence.includes('e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126')
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.approvalEvidence.includes('superseded digest 1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d')
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_VEILSKIN_FOUNDLING_GATE.baseCheckpoint === '4ee32622ec2984ac805ac345b854f23584fda3c3'
@@ -187,14 +195,15 @@ check(
   'scope exclusions drifted',
 );
 check(
-  EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('Visual approval is required')
-    && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('Do not commit or push the candidate'),
-  'visual-approval stop gate drifted',
+  EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('visually approved')
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('Standing publication permission')
+    && EN_E07_VEILSKIN_FOUNDLING_GATE.nextGate.includes('separate designer lets do next'),
+  'approved-local publication or next-candidate stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_CHANGELING_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E07_CHANGELING_CONTRACT_CARD.activeVariant.id === 'veilskin-foundling'
-    && EN_E07_CHANGELING_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-review'
+    && EN_E07_CHANGELING_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E07_CHANGELING_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite']),
   'Changeling role order or common-only boundary drifted',
 );

@@ -1492,11 +1492,13 @@ white, and all 54 visible-face views preserve the repaired features. The first
 digest `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
 is superseded by the face-readability repair. The revised ten-gate EN-E07
 matrix passes in 6.3s, `check:fast` in 58.3s, and full `check` in 107.1s with
-all 232 fixtures exact. This packet is
-implemented and hash-frozen but not visually
-approved, committed, pushed, registered, or fixture-generated. Runtime actor
-copying, detached masks or veil pieces, effects, later Changeling roles,
-Kelpie, release, and EN-E08 remain closed.
+all 232 fixtures exact; full `check` also passes in 109.0s against
+approval-local metadata. The designer replied `approved` on 2026-08-11; exact
+implementation `2a295aa70c8a6680ffb85881efa4ccd927a50979` is committed locally,
+with approval-record revalidation and publication in progress under standing
+permission. It remains unregistered and fixture-free. Runtime actor copying,
+detached masks or veil pieces, effects, later Changeling roles, Kelpie,
+release, and EN-E08 remain closed; another candidate needs `lets do next`.
 
 ## Approved enemy backlog integration published
 

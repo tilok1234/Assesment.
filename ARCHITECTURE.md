@@ -1182,8 +1182,11 @@ Candidate digest
 `e472931d214d369331d6cb750619471d9234ab11561233e700facab6ea4f0126`
 supersedes pre-feedback digest
 `1a852ef46dcaa7fee5779379cb9eda9acd79e67cd53dd469ff9cfae9dc18844d`
-through a face-feature-only repair. It is hash-frozen but remains visually unapproved and unpublished; registration,
-fixtures, effects, later roles/families, release, and EN-E08 remain separate.
+through a face-feature-only repair. The designer approved the revised digest on
+2026-08-11; exact implementation `2a295aa70c8a6680ffb85881efa4ccd927a50979`
+is committed locally and the bounded approval/publication sequence is in
+progress. It remains unpublished, unregistered, and fixture-free; effects,
+later roles/families, release, and EN-E08 remain separate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
