@@ -107,7 +107,25 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art acceptance candidate: specialist Animated Armor Runeforge
+- Current private art acceptance candidate: elite Animated Armor Crownvault
+  Castellan on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly
+  on clean published Runeforge Custodian reconciliation
+  `700f2cedb1d3104369931a97bfec31a3b49fff93`, is frozen at digest
+  `112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039`
+  and awaits visual approval. It is one baked 24x24 actor with zero child
+  assets: crenellated helm, readable T-seal, tower pauldrons, gatehouse chest,
+  connected bastion gauntlets, portcullis waist, pillar greaves, and plinth
+  sabatons. Run `npm.cmd run
+  review:enemy-expansion-en-e08-animated-armor-crownvault-castellan` and
+  `npm.cmd run check:enemy-expansion-en-e08-animated-armor-crownvault-castellan`.
+  Fast validation passes in 56.4s and full validation in 105.6s with public
+  80/259 and all 232 fixtures exact.
+  The exact three frozen PNGs are open together in responsive Aseprite 1.3.17.2
+  process 32136.
+  Do not stage, commit, push, register, generate fixtures, add effects, advance
+  another EN-E08 family, release, accept drift, or open a PR before explicit
+  approval of the exact frozen packet.
+- Approved preceding private art checkpoint: specialist Animated Armor Runeforge
   Custodian on `codex/en-e08-animated-armor-runeforge-custodian`, based exactly
   on clean published Hollow Sentry reconciliation
   `dc86bb65053564c76b18e848933ab4c2d318bfde`, is frozen at digest

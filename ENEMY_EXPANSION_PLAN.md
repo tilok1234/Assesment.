@@ -4706,7 +4706,56 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Animated Armor Runeforge Custodian specialist approved
+#### Animated Armor Crownvault Castellan elite awaiting review
+
+- Gate ID: `en-e08-animated-armor-crownvault-castellan-full-v1`; status:
+  `awaiting-visual-review` on
+  `codex/en-e08-animated-armor-crownvault-castellan`, based exactly on clean
+  published Runeforge Custodian reconciliation
+  `700f2cedb1d3104369931a97bfec31a3b49fff93`.
+- Authorization: after the Runeforge publication tuple was reconciled, the
+  designer replied `lets do nextr`, opening exactly one private elite Animated
+  Armor candidate. Registration, fixtures, child/state assets, effects,
+  Headless Rider, Possessed Mask, Living Weapon, EN-E09, release, accepted
+  drift, and a PR remain closed.
+- Identity: independently authored monumental royal fortress-suit with a
+  crenellated crownvault helm, one readable ivory T-shaped seal, tower
+  pauldrons, broad gatehouse chest, connected bastion gauntlets, portcullis
+  waist, pillar greaves, and grounded plinth sabatons. Charcoal plate, old gold
+  bands, wine-dark vault insets, and black joints distinguish it from approved
+  Runeforge Custodian, Hollow Sentry, Fallen Knight, Clockwork Automaton,
+  Living Weapon, and boss-scale Colossus identities.
+- Architecture and motion: `en-e08-baked-single-actor-v1`, zero child assets.
+  Idle locks/releases the T-seal; Walk uses four monumental plinth stamps;
+  Attack closes both connected bastion gauntlets, draws the gatehouse chest,
+  drives one body-owned fortress press, and recovers. Hurt is white recoil then
+  a colored portcullis brace. Cast aliases Attack; Death aliases Hurt
+  H1,H2,H2,H2.
+- Frozen digest:
+  `112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039`.
+  Raw/assembled/comparison PNG hashes are
+  `43dfbf617e3e746be3e1afaeafdbff628502709bfd68ba8c02ea7c2f0d9cde47`,
+  `1ee1f901c04d95a191d7608f8a41443dfaa4c9ad6593bc1fdc76d4d3db4828e4`,
+  and `6f6b4dc735803dd902571047ce44e5ee33472e962a303eb2072ecae93dc319ce`.
+  Raw and Complete B + Form GIF hashes are
+  `5129fed8d00af19fc52de9d6e36ea3b9d36f03e46a390e380d9ced5ba8bc642c`
+  and `554d85925e689b89e7bfdcef573d44e96313c8077fc5013081dd906786aa414b`.
+- Focused validation passes: 80/80 connected, bounded, grounded, split-plinth,
+  broad-fortress, baked-topology, and pixel/alpha distinctions from approved
+  Runeforge Custodian, Hollow Sentry, and Fallen Knight Shieldbearer; 72/72
+  colored frames retain every palette, 8/8 flashes are exact white, and 54/54
+  expected views retain the T-seal. Opaque range is 262-356; Complete B adds
+  8,202 pixels and Form changes 7,420.
+- Broad validation: `check:fast` passes in 56.4s and full `npm.cmd run check`
+  passes in 105.6s. Public 80/259 and all 232 fixture sheets remain exact.
+- Visual-review readiness: the exact frozen raw, Complete B + Form, and
+  comparison PNG paths are open together in responsive Aseprite 1.3.17.2
+  process 32136.
+- Stop after exact visual presentation. Do not stage, commit, push, approve,
+  register, generate fixtures, advance another EN-E08 family, release, accept
+  drift, or open a PR without explicit approval of this frozen candidate.
+
+#### Animated Armor Runeforge Custodian specialist approved preceding
 
 - Gate ID: `en-e08-animated-armor-runeforge-custodian-full-v1`; status:
   `approved` on

@@ -1472,7 +1472,25 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Runeforge Custodian is the current private specialist Animated Armor acceptance
+Crownvault Castellan is the current private elite Animated Armor acceptance
+candidate on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly
+on clean published Runeforge Custodian reconciliation
+`700f2cedb1d3104369931a97bfec31a3b49fff93`. Its complete 80-frame baked
+single-actor suite is frozen at digest
+`112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039`
+and awaits visual approval. The fortress identity uses a crenellated helm, one
+readable T-seal, tower pauldrons, gatehouse chest, connected bastion gauntlets,
+portcullis waist, pillar greaves, and plinth sabatons with zero child assets,
+gears, weapons, shields, detached plate, or effects. Run
+`npm.cmd run review:enemy-expansion-en-e08-animated-armor-crownvault-castellan`
+and `npm.cmd run check:enemy-expansion-en-e08-animated-armor-crownvault-castellan`.
+Fast validation passes in 56.4s and full validation in 105.6s; public 80/259
+and all 232 fixtures remain exact.
+Do not stage, commit, push, register, generate fixtures, or advance EN-E08
+until the exact packet is explicitly approved.
+
+Runeforge Custodian is the approved preceding private specialist Animated Armor
+checkpoint and acceptance
 candidate on `codex/en-e08-animated-armor-runeforge-custodian`, based exactly on
 clean published Hollow Sentry reconciliation
 `dc86bb65053564c76b18e848933ab4c2d318bfde`. Its complete 80-frame baked

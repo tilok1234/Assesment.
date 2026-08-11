@@ -1350,7 +1350,24 @@ reconciliation completes the bounded tuple. The same
 reply opened only the EN-E08 actor-topology architecture decision after clean
 remote reconciliation; the later explicit choice is recorded below.
 
-`engine/enemy-expansion-en-e08-animated-armor-runeforge-custodian.js` extends
+`engine/enemy-expansion-en-e08-animated-armor-crownvault-castellan.js` completes
+the private three-role family without changing the selected topology. From
+clean published Runeforge Custodian reconciliation
+`700f2cedb1d3104369931a97bfec31a3b49fff93`, it owns exactly one elite royal
+fortress-suit with one baked 24x24 pixel array and zero child assets in every
+frame. Its crenellated helm and T-seal, tower pauldrons, gatehouse chest,
+connected bastion gauntlets, portcullis waist, pillar greaves, and plinth
+sabatons remain actor pixels. Weapons, shields, gears, sparks, glow, detached
+plate, runtime offsets, and child/state exports remain outside the gate. The
+isolated renderer, review builder, GIF builder, and focused checker do not enter
+the public facade, catalog, manifest, fixtures, shared renderer, exporter,
+validator, or frame contract. Candidate digest
+`112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039`
+is frozen; fast validation passes in 56.4s and full validation in 105.6s with
+public 80/259 and all 232 fixtures exact. It awaits visual approval before any
+staging or publication.
+
+`engine/enemy-expansion-en-e08-animated-armor-runeforge-custodian.js` extended
 the selected architecture without changing it. From clean published Hollow
 Sentry reconciliation `dc86bb65053564c76b18e848933ab4c2d318bfde`, it owns
 exactly one private constructed specialist with one baked 24x24 pixel array and

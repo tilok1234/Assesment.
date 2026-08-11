@@ -468,7 +468,19 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current private acceptance candidate is specialist Animated Armor
+  The current private acceptance candidate is elite Animated Armor Crownvault
+  Castellan on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly
+  on clean published Runeforge Custodian reconciliation
+  `700f2cedb1d3104369931a97bfec31a3b49fff93`. Its independently authored royal
+  fortress 80-frame baked actor is frozen at digest
+  `112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039`.
+  The focused gate passes 80/80 connected, bounded, grounded, split-plinth,
+  broad-fortress, topology, and comparison distinctions, with 54/54 expected
+  readable T-seal views. Fast validation passes in 56.4s and full validation in
+  105.6s, preserving public 80/259 and all 232 fixtures. It awaits visual
+  approval and remains uncommitted,
+  unpushed, unregistered, fixture-free, effect-free, and private.
+  The approved preceding private checkpoint is specialist Animated Armor
   Runeforge Custodian on `codex/en-e08-animated-armor-runeforge-custodian`,
   based exactly on clean published Hollow Sentry reconciliation
   `dc86bb65053564c76b18e848933ab4c2d318bfde`. Its independently authored

@@ -23,7 +23,57 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Runeforge Custodian Accepted
+## Immediate Continuation Checkpoint - Crownvault Castellan Awaiting Review
+
+Start here. From clean published Runeforge Custodian reconciliation
+`700f2cedb1d3104369931a97bfec31a3b49fff93`, the designer replied `lets do
+nextr`, opening exactly one private elite Animated Armor art gate. Crownvault
+Castellan is implemented on
+`codex/en-e08-animated-armor-crownvault-castellan` as one deterministic baked
+24x24 actor across all 80 frames. It is frozen at digest
+`112feaad57ce04cb2dae15f5bd33f2e7e4fd3418cd3aece68aeb345ff1dc9039`
+and awaits visual approval; it is unstaged, uncommitted, unpushed,
+unregistered, fixture-free, effect-free, and non-public.
+
+- Identity: monumental royal fortress-suit with crenellated crownvault helm,
+  one readable ivory T-shaped vault seal, tower pauldrons, broad gatehouse
+  chest, connected bastion gauntlets, portcullis waist, pillar greaves, and
+  wide grounded plinth sabatons. Charcoal plate, old gold bands, wine-dark
+  vault insets, and black joints separate it from haunted Hollow Sentry,
+  constructed Runeforge Custodian, living Fallen Knight, Clockwork Automaton,
+  Living Weapon, and boss-scale Colossus identities.
+- Architecture: `en-e08-baked-single-actor-v1`; 80/80 frames report one baked
+  actor and zero child assets. No schema, shared renderer, exporter, validator,
+  frame-contract, public registry, fixture, manifest, accepted-drift, effect,
+  weapon, shield, gear, spark, aura, or detached-part change is included.
+- Frozen packet hashes: raw PNG
+  `43dfbf617e3e746be3e1afaeafdbff628502709bfd68ba8c02ea7c2f0d9cde47`;
+  Complete B + Form PNG
+  `1ee1f901c04d95a191d7608f8a41443dfaa4c9ad6593bc1fdc76d4d3db4828e4`;
+  comparison PNG
+  `6f6b4dc735803dd902571047ce44e5ee33472e962a303eb2072ecae93dc319ce`;
+  raw GIF `5129fed8d00af19fc52de9d6e36ea3b9d36f03e46a390e380d9ced5ba8bc642c`;
+  Complete B + Form GIF
+  `554d85925e689b89e7bfdcef573d44e96313c8077fc5013081dd906786aa414b`.
+- Focused gate passes: 80/80 connected, bounded, grounded, split-plinth,
+  broad-fortress, baked-topology, and pixel/alpha-distinct frames; 72/72
+  colored frames retain every material palette, 8/8 flashes are exact white,
+  and 54/54 expected views retain the readable T-seal. Opaque range is
+  262-356; Complete B adds 8,202 pixels and Form changes 7,420.
+- Broad validation: `check:fast` passes in 56.4s and full `npm.cmd run check`
+  passes in 105.6s. Public 80/259 and all 232 fixture sheets remain exact.
+- Visual-review readiness: the exact frozen raw, Complete B + Form, and
+  comparison PNG paths are open together in responsive Aseprite 1.3.17.2
+  process 32136.
+- Commands: `npm.cmd run
+  review:enemy-expansion-en-e08-animated-armor-crownvault-castellan` and
+  `npm.cmd run check:enemy-expansion-en-e08-animated-armor-crownvault-castellan`.
+- Stop gate: present the exact frozen raw, Complete B + Form, comparison, and
+  synchronized GIF evidence. Do not stage, commit, push, approve, register,
+  generate fixtures, advance another EN-E08 family, release, accept drift, or
+  open a PR until the designer explicitly approves this digest.
+
+## Approved Preceding Checkpoint - Runeforge Custodian Accepted
 
 Start here. From clean published Hollow Sentry reconciliation
 `dc86bb65053564c76b18e848933ab4c2d318bfde`, the designer replied `lets do
