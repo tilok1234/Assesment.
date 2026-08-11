@@ -4706,7 +4706,7 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Possessed Mask Whisperveil Visage common awaiting review
+#### Possessed Mask Whisperveil Visage common approved locally
 
 - Gate ID: `en-e08-possessed-mask-whisperveil-visage-full-v1`; status
   `awaiting-visual-review` on
@@ -4731,7 +4731,10 @@ it with incidental per-frame offsets.
   `4ddf94aa...6245`.
 - Focused 80-frame gate passes; `check:fast` passes in 59.2s and full `check`
   in 106.4s with public 80/259 and all 232 fixtures exact.
-- Stop after exact presentation. Registration, fixtures, child assets, effects,
+- Approval: the exact packet was presented and the designer replied `approved`.
+  Implementation `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the
+  accepted pixels; standing permission opens its approval record, branch push,
+  and handoff reconciliation only. Registration, fixtures, child assets, effects,
   later Possessed Mask roles, Living Weapon, EN-E09, release, accepted drift,
   publication, and a PR remain closed.
 

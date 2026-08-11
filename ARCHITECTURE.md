@@ -1361,7 +1361,9 @@ attachment runtime, schema, shared renderer, exporter, validator, frame-contract
 public registration, fixture, manifest entry, or effect. Candidate digest
 `c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098`
 passes the focused gate, `check:fast` in 59.2s, and full `check` in 106.4s with
-public 80/259 and all 232 fixtures exact. Visual approval is pending.
+public 80/259 and all 232 fixtures exact. The designer replied `approved`;
+implementation `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the
+accepted pixels without changing the baked-single-actor boundary.
 
 `engine/enemy-expansion-en-e08-animated-armor-crownvault-castellan.js` completes
 the private three-role family without changing the selected topology. From

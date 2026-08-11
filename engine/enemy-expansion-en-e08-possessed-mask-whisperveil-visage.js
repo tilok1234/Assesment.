@@ -35,7 +35,7 @@ export const EN_E08_POSSESSED_MASK_CONTRACT_CARD = deepFreeze({
     id: 'whisperveil-visage',
     name: 'Whisperveil Visage',
     role: 'common',
-    status: 'acceptance-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [
     { role: 'specialist', status: 'planned-unnamed' },
@@ -50,7 +50,7 @@ export const EN_E08_WHISPERVEIL_VISAGE_CONTRACT = deepFreeze({
   family: 'possessed-mask',
   variant: 'whisperveil-visage',
   role: 'common',
-  state: 'implemented-complete-motion-awaiting-review',
+  state: 'implemented-complete-motion-approved',
   chassis: 'broad-bone-visage-twin-void-eyes-nose-ridge-mouth-cheek-planes-connected-torn-shroud-tether-ribbons-hovering-mask-v1',
   silhouette: 'A medium hovering ceremonial mask with a broad brow, tapered jaw, pointed chin, two deep eye sockets, one nose ridge, a readable mouth, asymmetric cheek cracks, connected side ribbons, and a split torn shroud below. It must not read as a Ghost robe, Living Shadow humanoid, Doppelganger face, floating helmet, slime, flame blob, or detached particle cluster.',
   identity: 'Aged bone planes, plum-black voids, violet shroud cloth, wine tether ribbons, and two cold teal eyes establish a self-contained common Possessed Mask. The face and every cloth piece remain one connected baked actor while hosts, detached masks, glow, smoke, possession overlays, projectiles, and illumination stay external.',
@@ -91,13 +91,13 @@ export const EN_E08_WHISPERVEIL_VISAGE_DATA = deepFreeze({
 
 export const EN_E08_WHISPERVEIL_VISAGE_GATE = deepFreeze({
   id: 'en-e08-possessed-mask-whisperveil-visage-full-v1',
-  status: 'awaiting-visual-review',
+  status: 'approved',
   baseCheckpoint: '42156250f24d03b7e81a29e14cec75c25528cde4',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the published Crownvault Castellan reconciliation at 42156250f24d03b7e81a29e14cec75c25528cde4, the designer abandoned the Headless Rider lane, returned to the clean checkpoint, accepted Possessed Mask as next, and replied: lets go. The content-only architecture uses one deterministic baked 24x24 actor containing the mask, shroud, and tether ribbons with zero child assets. This authorizes only one private common Whisperveil Visage 80-frame art candidate.',
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Spectral Ghost, Shadow Slime, and Flame Elemental comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in responsive Aseprite process 1956. The designer replied: approved. In context this explicitly approves candidate digest c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098 and its five frozen review hashes only. Possessed Mask registration, fixtures, child assets, effects, later roles or families, Living Weapon, EN-E09, release, accepted drift, a pull request, and another art gate remain separate decisions.',
+  approvedImplementation: '78f5446c7821bd751c3562d0a18056a64c0e00c6',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
@@ -178,7 +178,7 @@ export const EN_E08_WHISPERVEIL_VISAGE_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Stop after presenting the exact private Whisperveil Visage packet. Do not stage, commit, push, approve, register, generate fixtures, add child assets, add effects, begin the specialist or elite, start Living Weapon or EN-E09, release, accept drift, or open a pull request until the designer explicitly approves this exact candidate.',
+  nextGate: 'The exact Whisperveil Visage digest is visually approved and implementation 78f5446c7821bd751c3562d0a18056a64c0e00c6 records the accepted pixels. Standing publication permission opens only the bounded approval-record commit, branch push, and handoff reconciliation. Possessed Mask registration, fixtures, child assets, effects, later roles or families, Living Weapon, EN-E09, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next from a clean published reconciliation.',
 });
 
 export const EN_E08_WHISPERVEIL_VISAGE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

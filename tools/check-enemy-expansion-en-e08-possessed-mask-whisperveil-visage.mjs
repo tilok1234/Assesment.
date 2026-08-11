@@ -149,13 +149,15 @@ function rejects(action, label) {
 }
 
 check(
-  EN_E08_WHISPERVEIL_VISAGE_GATE.status === 'awaiting-visual-review'
-    && EN_E08_WHISPERVEIL_VISAGE_GATE.approvedOn === null
-    && EN_E08_WHISPERVEIL_VISAGE_GATE.approvedImplementation === null
+  EN_E08_WHISPERVEIL_VISAGE_GATE.status === 'approved'
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.approvedOn === '2026-08-11'
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.approvalEvidence.includes('c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098')
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.approvedImplementation === '78f5446c7821bd751c3562d0a18056a64c0e00c6'
     && EN_E08_WHISPERVEIL_VISAGE_GATE.publishedImplementation === null
     && EN_E08_WHISPERVEIL_VISAGE_GATE.publicationState === 'not-published'
     && EN_E08_WHISPERVEIL_VISAGE_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
-  'Whisperveil Visage private review state or bounded publication authorization drifted',
+  'Whisperveil Visage approval state or bounded publication authorization drifted',
 );
 check(
   EN_E08_WHISPERVEIL_VISAGE_GATE.baseCheckpoint === '42156250f24d03b7e81a29e14cec75c25528cde4'
@@ -189,9 +191,9 @@ check(
   'Whisperveil Visage exclusions drifted',
 );
 check(
-  EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('Stop after presenting')
-    && EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('Do not stage, commit, push')
-    && EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('Living Weapon or EN-E09'),
+  EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('visually approved')
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('approval-record commit')
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('Living Weapon, EN-E09'),
   'Whisperveil Visage stop gate drifted',
 );
 check(
@@ -204,7 +206,7 @@ check(
   JSON.stringify(EN_E08_POSSESSED_MASK_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E08_POSSESSED_MASK_CONTRACT_CARD.activeVariant.id === 'whisperveil-visage'
     && EN_E08_POSSESSED_MASK_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E08_POSSESSED_MASK_CONTRACT_CARD.activeVariant.status === 'acceptance-candidate'
+    && EN_E08_POSSESSED_MASK_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E08_POSSESSED_MASK_CONTRACT_CARD.deferredRoles) === JSON.stringify([
       { role: 'specialist', status: 'planned-unnamed' },
       { role: 'elite', status: 'planned-unnamed' },

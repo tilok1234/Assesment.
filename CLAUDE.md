@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private prototype gate: common Possessed Mask Whisperveil Visage on
+- Current approved-local private art gate: common Possessed Mask Whisperveil Visage on
   `codex/en-e08-possessed-mask-whisperveil-visage`, based exactly on clean
   published Crownvault reconciliation
   `42156250f24d03b7e81a29e14cec75c25528cde4`, is frozen at digest
@@ -115,9 +115,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   It is one baked 24x24 mask/shroud/ribbon actor with zero child assets. All 80
   frames pass connected, bounded, hovering, readable-face, alias, mirror, and
   comparison gates; fast and full validation pass with public 80/259 and all
-  232 fixtures exact. Present only the exact packet. Do not stage, commit,
-  push, register, generate fixtures, add effects or child assets, begin later
-  roles/families, release, accept drift, or open a PR before explicit approval.
+  232 fixtures exact. The designer replied `approved`; implementation
+  `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the accepted pixels.
+  Standing permission opens only its approval record, push, and handoff
+  reconciliation. Registration, fixtures, effects, child assets, later
+  roles/families, release, accepted drift, and a PR remain closed.
 - Current approved published private art checkpoint:
   elite Animated Armor Crownvault
   Castellan on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly

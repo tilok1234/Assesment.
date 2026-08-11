@@ -295,8 +295,10 @@ published Crownvault reconciliation
 `c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098`.
 It is one baked 24x24 mask/shroud/ribbon actor with zero child assets. All 80
 frames pass the focused gate; fast validation passes in 59.2s and full
-validation in 106.4s with public 80/259 and all 232 fixtures exact. Visual
-approval is pending. Registration, fixtures, effects, child assets, later
+validation in 106.4s with public 80/259 and all 232 fixtures exact. The
+designer replied `approved`; implementation
+`78f5446c7821bd751c3562d0a18056a64c0e00c6` records the accepted pixels.
+Registration, fixtures, effects, child assets, later
 roles/families, release, accepted drift, publication, and a PR remain closed.
 
 Current approved published EN-E08 checkpoint

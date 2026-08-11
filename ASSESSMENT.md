@@ -477,8 +477,10 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   All 80 frames pass focused connected, bounded, hovering, face-readability,
   alias, mirror, and comparison checks. Fast validation passes in 59.2s and
   full validation in 106.4s, preserving public 80/259 and all 232 fixtures.
-  It awaits visual approval and remains uncommitted, unpushed, unregistered,
-  fixture-free, effect-free, and private.
+  The designer replied `approved`; implementation
+  `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the accepted pixels.
+  It remains unregistered, fixture-free, effect-free, and private while its
+  approval record and publication reconciliation are completed.
   The current approved published private checkpoint
   is elite Animated Armor Crownvault
   Castellan on `codex/en-e08-animated-armor-crownvault-castellan`, based exactly
