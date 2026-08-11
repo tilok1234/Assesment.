@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved-local private art gate: common Possessed Mask Whisperveil Visage on
+- Current approved published private art checkpoint: common Possessed Mask Whisperveil Visage on
   `codex/en-e08-possessed-mask-whisperveil-visage`, based exactly on clean
   published Crownvault reconciliation
   `42156250f24d03b7e81a29e14cec75c25528cde4`, is frozen at digest
@@ -118,8 +118,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   232 fixtures exact. The designer replied `approved`; implementation
   `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the accepted pixels.
   Approval record `c27435976f03a4f9263f6f4bbc4b46dc275b19a7` and the
-  implementation are remote verified. Only its initial handoff and final
-  reconciliation remain. Registration, fixtures, effects, child assets, later
+  implementation are remote verified. Initial handoff
+  `29316d8c0c2cbaa900d34cf6b372679dc447ef2e` is also remote verified; this
+  reconciliation completes the bounded publication tuple. Registration,
+  fixtures, effects, child assets, later
   roles/families, release, accepted drift, and a PR remain closed.
 - Current approved published private art checkpoint:
   elite Animated Armor Crownvault

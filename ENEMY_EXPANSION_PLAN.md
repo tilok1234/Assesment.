@@ -4706,10 +4706,10 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Possessed Mask Whisperveil Visage common approved locally
+#### Possessed Mask Whisperveil Visage common approved and published
 
 - Gate ID: `en-e08-possessed-mask-whisperveil-visage-full-v1`; status
-  `awaiting-visual-review` on
+  `approved` and `published` on
   `codex/en-e08-possessed-mask-whisperveil-visage`, based exactly on published
   Crownvault reconciliation `42156250f24d03b7e81a29e14cec75c25528cde4`.
 - Authorization: after abandoning Headless Rider, the designer accepted
@@ -4730,14 +4730,17 @@ it with incidental per-frame offsets.
   `b6e71886...6e17`; GIF hashes are `d4603cc0...e8b0` and
   `4ddf94aa...6245`.
 - Focused 80-frame gate passes; `check:fast` passes in 59.2s and full `check`
-  in 106.4s with public 80/259 and all 232 fixtures exact.
+  in 106.4s before publication metadata and 115.5s against the final published
+  tuple, with public 80/259 and all 232 fixtures exact.
 - Approval: the exact packet was presented and the designer replied `approved`.
   Implementation `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the
   accepted pixels. Approval record `c27435976f03a4f9263f6f4bbc4b46dc275b19a7`
-  and the implementation are remote verified; only initial handoff and final
-  reconciliation remain. Registration, fixtures, child assets, effects,
+  and the implementation are remote verified. Initial handoff
+  `29316d8c0c2cbaa900d34cf6b372679dc447ef2e` is also remote verified; this
+  reconciliation completes the bounded publication tuple. Registration,
+  fixtures, child assets, effects,
   later Possessed Mask roles, Living Weapon, EN-E09, release, accepted drift,
-  publication, and a PR remain closed.
+  further publication, and a PR remain closed.
 
 #### Animated Armor Crownvault Castellan elite approved and published
 

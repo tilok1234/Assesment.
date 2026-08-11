@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Whisperveil Visage Published Awaiting Final Handoff
+## Immediate Continuation Checkpoint - Whisperveil Visage Approved And Published
 
 Start here. The designer abandoned Headless Rider, returned to clean published
 Crownvault Castellan reconciliation
@@ -35,7 +35,9 @@ The exact packet was presented and the designer replied `approved`.
 Implementation `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the
 accepted pixels. Approval record
 `c27435976f03a4f9263f6f4bbc4b46dc275b19a7` and the implementation are remote
-verified; only the initial published handoff and final reconciliation remain.
+verified. Initial published handoff
+`29316d8c0c2cbaa900d34cf6b372679dc447ef2e` is also remote verified; this
+reconciliation completes the bounded publication tuple.
 
 - Identity: broad aged-bone ceremonial face with two readable cold eyes, deep
   sockets, nose ridge, carved mouth, cheek cracks, pointed chin, connected
@@ -57,17 +59,17 @@ verified; only the initial published handoff and final reconciliation remain.
   Spectral Ghost, Shadow Slime, and Flame Elemental; 72/72 colored frames,
   8/8 exact white flashes, and 54/54 readable face views. Opaque range 184-213;
   Complete B adds 6,428 pixels and Form changes 5,259.
-- Broad validation: `check:fast` passes in 59.2s and full `check` in 106.4s;
-  public 80/259 and all 232 fixture sheets remain exact.
+- Broad validation: `check:fast` passes in 59.2s; full `check` passes in 106.4s
+  before publication metadata and in 115.5s against the final published tuple.
+  Public 80/259 and all 232 fixture sheets remain exact.
 - Visual-review readiness: the exact raw, Complete B + Form, and comparison
   PNGs are open together in responsive Aseprite process 1956.
 - Commands: `npm.cmd run
   review:enemy-expansion-en-e08-possessed-mask-whisperveil-visage` and
   `npm.cmd run check:enemy-expansion-en-e08-possessed-mask-whisperveil-visage`.
 - Approval and publication gate: approval applies only to the frozen digest and
-  five hashes above. The implementation and approval record are published and
-  remote verified. Standing permission opens only the initial handoff and final
-  reconciliation. Do not register, generate
+  five hashes above. The implementation, approval record, and initial handoff
+  are published and remote verified; the bounded tuple is complete. Do not register, generate
   fixtures, add effects or child assets, begin later roles, start Living Weapon
   or EN-E09, release, accept drift, or open a PR.
 

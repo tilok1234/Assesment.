@@ -156,8 +156,8 @@ check(
     && EN_E08_WHISPERVEIL_VISAGE_GATE.approvedImplementation === '78f5446c7821bd751c3562d0a18056a64c0e00c6'
     && EN_E08_WHISPERVEIL_VISAGE_GATE.publishedImplementation === '78f5446c7821bd751c3562d0a18056a64c0e00c6'
     && EN_E08_WHISPERVEIL_VISAGE_GATE.publishedApprovalRecord === 'c27435976f03a4f9263f6f4bbc4b46dc275b19a7'
-    && EN_E08_WHISPERVEIL_VISAGE_GATE.initialPublishedHandoff === null
-    && EN_E08_WHISPERVEIL_VISAGE_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.initialPublishedHandoff === '29316d8c0c2cbaa900d34cf6b372679dc447ef2e'
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.publicationState === 'published'
     && EN_E08_WHISPERVEIL_VISAGE_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Whisperveil Visage approval state or bounded publication authorization drifted',
 );
@@ -195,6 +195,7 @@ check(
 check(
   EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('remote verified')
     && EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('initial published handoff')
+    && EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('completes the bounded publication tuple')
     && EN_E08_WHISPERVEIL_VISAGE_GATE.nextGate.includes('Living Weapon, EN-E09'),
   'Whisperveil Visage stop gate drifted',
 );

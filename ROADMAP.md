@@ -295,13 +295,17 @@ published Crownvault reconciliation
 `c0fac02331632e028b73a21cadd4b472b1bdc18f7d4915b814e9a872dbc0b098`.
 It is one baked 24x24 mask/shroud/ribbon actor with zero child assets. All 80
 frames pass the focused gate; fast validation passes in 59.2s and full
-validation in 106.4s with public 80/259 and all 232 fixtures exact. The
+validation passes in 106.4s before publication metadata and 115.5s against the
+final published tuple, with public 80/259 and all 232 fixtures exact. The
 designer replied `approved`; implementation
 `78f5446c7821bd751c3562d0a18056a64c0e00c6` records the accepted pixels.
 Approval record `c27435976f03a4f9263f6f4bbc4b46dc275b19a7` and the
-implementation are remote verified; final handoff reconciliation remains.
+implementation are remote verified. Initial handoff
+`29316d8c0c2cbaa900d34cf6b372679dc447ef2e` is also remote verified; this
+reconciliation completes the bounded publication tuple.
 Registration, fixtures, effects, child assets, later
-roles/families, release, accepted drift, publication, and a PR remain closed.
+roles/families, release, accepted drift, further publication, and a PR remain
+closed.
 
 Current approved published EN-E08 checkpoint
 (2026-08-11): elite Animated Armor

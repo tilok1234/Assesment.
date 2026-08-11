@@ -102,8 +102,8 @@ export const EN_E08_WHISPERVEIL_VISAGE_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: '78f5446c7821bd751c3562d0a18056a64c0e00c6',
   publishedApprovalRecord: 'c27435976f03a4f9263f6f4bbc4b46dc275b19a7',
-  initialPublishedHandoff: null,
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '29316d8c0c2cbaa900d34cf6b372679dc447ef2e',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E08_CROWNVAULT_CASTELLAN_GATE.id,
     artifactSha256: EN_E08_CROWNVAULT_CASTELLAN_GATE.artifactSha256,
@@ -178,7 +178,7 @@ export const EN_E08_WHISPERVEIL_VISAGE_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Whisperveil Visage implementation 78f5446c7821bd751c3562d0a18056a64c0e00c6 and approval record c27435976f03a4f9263f6f4bbc4b46dc275b19a7 are remote verified. Only the initial published handoff and final reconciliation remain open under standing publication permission. Possessed Mask registration, fixtures, child assets, effects, later roles or families, Living Weapon, EN-E09, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next from the clean published reconciliation.',
+  nextGate: 'The exact Whisperveil Visage implementation 78f5446c7821bd751c3562d0a18056a64c0e00c6, approval record c27435976f03a4f9263f6f4bbc4b46dc275b19a7, and initial published handoff 29316d8c0c2cbaa900d34cf6b372679dc447ef2e are remote verified; this reconciliation completes the bounded publication tuple. Possessed Mask registration, fixtures, child assets, effects, later roles or families, Living Weapon, EN-E09, release, accepted drift, and a pull request remain closed; another art gate requires a separate designer lets do next from this clean published reconciliation.',
 });
 
 export const EN_E08_WHISPERVEIL_VISAGE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -414,7 +414,7 @@ export const EN_E08_WHISPERVEIL_VISAGE_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'whisperveil-visage',
     scale: 8,
-    notes: 'Awaiting visual review as one connected baked hovering Whisperveil Visage against public Spectral Ghost, Shadow Slime, and Flame Elemental. Keep registration, fixtures, child assets, effects, later roles, Living Weapon, and EN-E09 separate.',
+    notes: 'Visually approved as one connected baked hovering Whisperveil Visage against public Spectral Ghost, Shadow Slime, and Flame Elemental. The bounded publication tuple is remote verified; keep registration, fixtures, child assets, effects, later roles, Living Weapon, and EN-E09 separate.',
   },
 });
 
