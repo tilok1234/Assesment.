@@ -288,7 +288,18 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current EN-E08 prototype gate (2026-08-11): specialist Living Weapon Vowcoil
+Current EN-E08 prototype gate (2026-08-12): elite Living Weapon Crownmaw
+Greatblade on `codex/en-e08-living-weapon-elite` is based on clean published
+Vowcoil reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1` and frozen at
+digest `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.
+Its broad crown blade, jaw guard, crimson slit core, short wrapped grip, and
+forked pommel are one baked actor with zero child assets. All 80 frames pass the
+focused gate; fast/full validation passes in 61.0s/114.0s with public 80/259 and
+all 232 fixtures exact. It awaits explicit visual approval and remains
+uncommitted. Registration, fixtures, effects, child assets, EN-E09, release,
+broader publication, accepted drift, commit, push, and a PR remain closed.
+
+Approved preceding EN-E08 checkpoint (2026-08-12): specialist Living Weapon Vowcoil
 Glaive on `codex/en-e08-living-weapon-specialist` is based on clean published
 Oathbite reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2` and frozen
 at digest `bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`.

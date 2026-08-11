@@ -4706,6 +4706,32 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
+#### Living Weapon Crownmaw Greatblade elite awaiting visual approval
+
+- Gate ID: `en-e08-living-weapon-crownmaw-greatblade-full-v1`; status
+  `implemented-awaiting-visual-approval` on
+  `codex/en-e08-living-weapon-elite`, based exactly on published Vowcoil
+  reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1`.
+- Authorization: the exact Vowcoil packet was approved by `approved lets do
+  next`; after its clean publication tuple, that reply opens only this private
+  elite candidate under the existing baked-single-actor topology.
+- Identity and motion: broad ash-steel execution blade, three ivory crown
+  prongs, old-gold jaw guard, crimson slit core, short wine-wrapped grip, and
+  forked pommel. Attack performs one body-owned horizontal execution cleave;
+  Cast aliases Attack and Death aliases Hurt H1,H2,H2,H2.
+- Frozen digest:
+  `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.
+  PNG hashes are `19865009...dcc8`, `2e4966af...b30`, and
+  `cc12a02b...e5ac`; GIF hashes are `9a6b939d...7214` and
+  `77eed1d6...f86a`.
+- The focused gate passes 80/80 connected, bounded, hovering, and distinct from
+  Vowcoil/Oathbite/Crownvault/Fallen Knight, with 54/54 readable core views.
+  Fast/full validation passes in 61.0s/114.0s with public 80/259 and all 232
+  fixtures unchanged.
+- Stop for explicit visual approval or rejection of this exact packet.
+  Registration, fixtures, child assets, effects, EN-E09, release, accepted
+  drift, commit, push, and a PR remain closed.
+
 #### Living Weapon Vowcoil Glaive specialist approved and published
 
 - Gate ID: `en-e08-living-weapon-vowcoil-glaive-full-v1`; status `approved` and

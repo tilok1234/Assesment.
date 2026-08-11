@@ -1472,7 +1472,22 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Vowcoil Glaive is the current private specialist Living Weapon candidate on
+Crownmaw Greatblade is the current private elite Living Weapon candidate on
+`codex/en-e08-living-weapon-elite`, based exactly on clean published Vowcoil
+reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1`. Its broad ash-steel
+crown blade, ivory prongs, old-gold jaw guard, crimson slit core, short
+wine-wrapped grip, and forked pommel are one baked 24x24 actor with zero child
+assets. The exact 80-frame candidate is frozen at digest
+`a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.
+Run `npm.cmd run review:enemy-expansion-en-e08-living-weapon-crownmaw-greatblade`
+and `npm.cmd run check:enemy-expansion-en-e08-living-weapon-crownmaw-greatblade`.
+The focused gate passes; fast/full validation passes in 61.0s/114.0s with
+approved Vowcoil/Oathbite/Crownvault, public 80/259, and all 232 fixtures exact.
+It awaits explicit visual approval and remains uncommitted. Registration,
+fixtures, child assets, effects, EN-E09, release, accepted drift, commit, push,
+and a PR remain closed.
+
+Vowcoil Glaive is the approved preceding private specialist Living Weapon candidate on
 `codex/en-e08-living-weapon-specialist`, based exactly on clean published
 Oathbite reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2`. Its tall
 moon-steel crescent, teal ring core, old-gold collar, indigo-wrapped shaft, and

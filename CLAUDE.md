@@ -107,7 +107,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: specialist Living Weapon Vowcoil Glaive on
+- Current private art gate: elite Living Weapon Crownmaw Greatblade on
+  `codex/en-e08-living-weapon-elite`, based exactly on clean published Vowcoil
+  reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1`, is frozen at digest
+  `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.
+  It is one baked broad crown-blade/jaw-guard/crimson-slit-core/short-grip/
+  forked-pommel actor with zero child assets. The focused gate passes; fast/full
+  validation passes in 61.0s/114.0s with public 80/259 and all 232 fixtures
+  exact. It awaits explicit visual approval and remains uncommitted. Do not
+  register, generate fixtures, add effects or child assets, begin EN-E09,
+  release, accept drift, commit, push, or open a PR without a new explicit
+  decision.
+- Approved preceding published private art checkpoint: specialist Living Weapon Vowcoil Glaive on
   `codex/en-e08-living-weapon-specialist`, based exactly on clean published
   Oathbite reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2`, is frozen
   at digest `bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`.

@@ -1350,6 +1350,17 @@ reconciliation completes the bounded tuple. The same
 reply opened only the EN-E08 actor-topology architecture decision after clean
 remote reconciliation; the later explicit choice is recorded below.
 
+`engine/enemy-expansion-en-e08-living-weapon-crownmaw-greatblade.js` completes
+the private Living Weapon role order without changing decision
+`en-e08-living-weapon-baked-single-actor-v1`. From clean published Vowcoil
+reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1`, it owns exactly one
+elite broad crown-blade/jaw-guard/crimson-slit-core/short-grip/forked-pommel
+actor with zero child assets in every frame. Candidate digest
+`a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`
+passes its focused gate, `check:fast` in 61.0s, and full `check` in 114.0s with
+public 80/259 and all 232 fixtures exact. It awaits explicit visual approval and
+remains unregistered, fixture-free, effect-free, uncommitted, and non-public.
+
 `engine/enemy-expansion-en-e08-living-weapon-vowcoil-glaive.js` extends the
 private Living Weapon family without changing decision
 `en-e08-living-weapon-baked-single-actor-v1`. From clean published Oathbite

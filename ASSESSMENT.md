@@ -468,7 +468,18 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current private prototype is specialist Living Weapon Vowcoil Glaive on
+  The current private prototype is elite Living Weapon Crownmaw Greatblade on
+  `codex/en-e08-living-weapon-elite`, based on clean published Vowcoil
+  reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1`. It is one connected
+  broad crown-blade/jaw-guard/crimson-slit-core/short-grip/forked-pommel actor
+  with zero child assets, frozen at digest
+  `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.
+  All 80 frames pass focused connected, bounded, hovering, core-readability,
+  alias, mirror, predecessor, and comparison checks. Fast/full validation passes
+  in 61.0s/114.0s, preserving public 80/259 and all 232 fixtures. It awaits
+  explicit visual approval and is uncommitted, unregistered, fixture-free,
+  effect-free, and non-public.
+  The approved preceding private checkpoint is specialist Living Weapon Vowcoil Glaive on
   `codex/en-e08-living-weapon-specialist`, based on clean published Oathbite
   reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2`. It is one connected
   tall crescent/ring-core/wrapped-shaft/butt-spike actor with zero child assets,

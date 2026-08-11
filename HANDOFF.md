@@ -23,7 +23,50 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Vowcoil Glaive Published
+## Immediate Continuation Checkpoint - Crownmaw Greatblade Visual Gate
+
+Start here. Vowcoil Glaive's bounded publication tuple is clean and remote
+verified at `7bdb09e95d47c6213e2387124c305f78b0b486d1`. The designer replied
+`approved lets do next`, opening exactly one private elite Living Weapon art
+gate. Crownmaw Greatblade is implemented locally and uncommitted on
+`codex/en-e08-living-weapon-elite` across all 80 frames. It remains
+unregistered, fixture-free, effect-free, and non-public.
+
+- Identity: broad symmetrical ash-steel execution blade with three ivory crown
+  prongs, an old-gold toothed jaw guard, connected crimson slit core, short
+  wine-wrapped grip, forked pommel, and true hover clearance.
+- Motion: Idle holds the crowned blade upright and pulses the slit core; Walk
+  uses four directional hover phases; Attack draws, leans, performs one
+  body-owned horizontal execution cleave, and recovers. Hurt is a complete
+  white recoil then a colored jaw-guard brace. Cast aliases Attack; Death
+  aliases Hurt H1,H2,H2,H2.
+- Architecture: the approved `en-e08-living-weapon-baked-single-actor-v1`
+  topology remains exact. Crown blade, jaw guard, core, grip, bindings, and
+  pommel are one connected hard-alpha actor with zero child assets.
+- Frozen digest:
+  `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.
+  Raw/Complete B + Form/comparison PNG hashes are
+  `1986500952544fc01507ea76b4e2f0d6d87c5a03c2afc79eec5c30b168d8dcc8`,
+  `2e4966afbefcb7c1c0f2086efdd1c29a99fbc9d30928222fb0f11aa29db1ab30`,
+  and `cc12a02b84b9010c3238f3ee6acefb04271537941302346b9017c648d5dbe5ac`.
+  Raw and assembled GIF hashes are
+  `9a6b939dc2192d2fb813d2807200426ac34bee5258b41b5ec2812db048227214`
+  and `77eed1d6333f68c0ae26d0caf80ff9609abe93d2a852ac59a96a52392068f86a`.
+- Focused gate: 80/80 connected, bounded, and hovering; 80/80 pixel and alpha
+  silhouettes differ from Vowcoil, Oathbite, Crownvault, and Fallen Knight.
+  There are 72/72 colored frames, 8/8 exact white flashes, and 54/54 readable
+  core views; opaque range 143-216. Complete B adds 7,080 pixels and Form
+  changes 5,518.
+- Broad validation: fast/full validation passes in 61.0s/114.0s. Public 80/259
+  and all 232 fixture sheets remain exact.
+- Commands: `npm.cmd run
+  review:enemy-expansion-en-e08-living-weapon-crownmaw-greatblade` and
+  `npm.cmd run check:enemy-expansion-en-e08-living-weapon-crownmaw-greatblade`.
+- Visual gate: stop for explicit approval or rejection of this exact digest and
+  five hashes. Do not commit, push, register, generate fixtures, add child
+  assets or effects, begin EN-E09, release, accept drift, or open a PR.
+
+## Approved Preceding Checkpoint - Vowcoil Glaive Published
 
 Start here. Oathbite Cleaver's bounded publication tuple is clean and remote
 verified at `870bf042e4d7604fec6f33ba3ba6b03308204ee2`. The designer replied
