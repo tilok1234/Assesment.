@@ -153,10 +153,19 @@ function rejects(action, label) {
 }
 
 check(
-  EN_E07_MIRECROWN_BEACON_GATE.status === 'candidate'
-    && EN_E07_MIRECROWN_BEACON_GATE.approvedOn === null
-    && EN_E07_MIRECROWN_BEACON_GATE.publishedImplementation === null,
-  'Mirecrown Beacon must remain an unapproved unpublished candidate',
+  EN_E07_MIRECROWN_BEACON_GATE.status === 'approved'
+    && EN_E07_MIRECROWN_BEACON_GATE.approvedOn === '2026-08-11'
+    && EN_E07_MIRECROWN_BEACON_GATE.approvedImplementation === '72925cd8d8ea1a3ae47a45601607a1a5853decb3'
+    && EN_E07_MIRECROWN_BEACON_GATE.publishedImplementation === null
+    && EN_E07_MIRECROWN_BEACON_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Mirecrown Beacon approved-local state drifted',
+);
+check(
+  EN_E07_MIRECROWN_BEACON_GATE.approvalEvidence.includes('three exact frozen PNG review boards were opened together in responsive Aseprite')
+    && EN_E07_MIRECROWN_BEACON_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E07_MIRECROWN_BEACON_GATE.approvalEvidence.includes('5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81')
+    && EN_E07_MIRECROWN_BEACON_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
+  'Mirecrown Beacon approval evidence or bounded publication authorization drifted',
 );
 check(
   EN_E07_MIRECROWN_BEACON_GATE.baseCheckpoint === '8b0754c9594ad91fe378ba11d4f43d7b2a558145'
@@ -194,10 +203,10 @@ check(
   'Mirecrown Beacon exclusions drifted',
 );
 check(
-  EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('Stop at the exact frozen Mirecrown Beacon candidate review')
-    && EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('Do not commit')
-    && EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('explicitly approves'),
-  'Mirecrown Beacon stop gate drifted',
+  EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('visually approved')
+    && EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('bounded approval-record')
+    && EN_E07_MIRECROWN_BEACON_GATE.nextGate.includes('only one private common Changeling candidate'),
+  'Mirecrown Beacon approved-local publication and next-family gate drifted',
 );
 check(
   Object.isFrozen(EN_E07_MIRECROWN_BEACON_GATE)
@@ -213,7 +222,7 @@ check(
     && EN_E07_WILL_O_WISP_MIRECROWN_CONTRACT_CARD.activeSpecialist.status === 'implemented-full-approved'
     && EN_E07_WILL_O_WISP_MIRECROWN_CONTRACT_CARD.activeElite.id === 'mirecrown-beacon'
     && EN_E07_WILL_O_WISP_MIRECROWN_CONTRACT_CARD.activeElite.role === 'elite'
-    && EN_E07_WILL_O_WISP_MIRECROWN_CONTRACT_CARD.activeElite.status === 'implemented-full-candidate'
+    && EN_E07_WILL_O_WISP_MIRECROWN_CONTRACT_CARD.activeElite.status === 'implemented-full-approved'
     && EN_E07_WILL_O_WISP_MIRECROWN_CONTRACT_CARD.deferredRoles.length === 0,
   'Will-o-Wisp role order or one-active-elite boundary drifted',
 );

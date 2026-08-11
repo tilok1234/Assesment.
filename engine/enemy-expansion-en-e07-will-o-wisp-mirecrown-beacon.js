@@ -48,7 +48,7 @@ export const EN_E07_WILL_O_WISP_MIRECROWN_CONTRACT_CARD = deepFreeze({
     id: 'mirecrown-beacon',
     name: 'Mirecrown Beacon',
     role: 'elite',
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   closedFamilies: ['changeling', 'kelpie'],
@@ -61,7 +61,7 @@ export const EN_E07_MIRECROWN_BEACON_CONTRACT = deepFreeze({
   family: 'will-o-wisp',
   variant: 'mirecrown-beacon',
   role: 'elite',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: 'crown-wick-double-tier-cage-single-eye-four-tine-hovering-beacon-v1',
   silhouette: 'A broad hovering sovereign mire beacon with one connected three-prong crown-wick, a wide double-tiered ribbed cage, one visible central beacon eye, paired connected side buttresses, a deep living core, a broad lower basin, and four connected lower flame tines. It must stay related to Lantern Mote and Fenbell Shepherd without becoming an enlarged bell, public Ghost robe, Flame Elemental blob, hanging humanoid, detached wisp flock, halo, or sound-effect icon.',
   identity: 'The approved marsh-teal shell, mint spectral flame, pale living core, violet cage, and warm single eye expand into a wider elite silhouette with crown-wick regalia, two structural cage tiers, opposed buttresses, a deep core, basin, and four lower flames. The whole actor remains one opaque connected component while aura, glow, detached fire, halos, beams, rays, sound rings, smoke, trails, floor pools, projectiles, impacts, and illumination stay external.',
@@ -100,13 +100,18 @@ export const EN_E07_MIRECROWN_BEACON_DATA = deepFreeze({
 
 export const EN_E07_MIRECROWN_BEACON_GATE = deepFreeze({
   id: 'en-e07-will-o-wisp-mirecrown-beacon-full-v1',
-  status: 'candidate',
+  status: 'approved',
   baseCheckpoint: '8b0754c9594ad91fe378ba11d4f43d7b2a558145',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact repaired Fenbell Shepherd was visually approved, committed, pushed, and reconciled at clean published checkpoint 8b0754c9594ad91fe378ba11d4f43d7b2a558145, the designer replied: lets do next. The frozen Will-o-Wisp role order is common, specialist, elite, so the one-complete-sprite cadence authorizes only one private elite Mirecrown Beacon 80-frame candidate.',
-  approvedOn: null,
-  approvalEvidence: 'Pending explicit visual approval of the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Lantern Mote and Fenbell Shepherd plus public Spectral Ghost and Flame Elemental comparison, paired GIF evidence, and the three exact PNG review boards opened together in Aseprite.',
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'After the exact repaired labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Lantern Mote and Fenbell Shepherd plus public Spectral Ghost and Flame Elemental comparison, and paired GIF evidence were presented, and the three exact frozen PNG review boards were opened together in responsive Aseprite, the designer replied: approved lets do next. Approval applies only to candidate digest 5fbd53af9fb461717a8bd90698a0b2f7f81f8fdd55fee42fbca5254738654d81; Will-o-Wisp registration, fixtures, effects, later families, release, and EN-E08 remain separate gates.',
+  approvedImplementation: '72925cd8d8ea1a3ae47a45601607a1a5853decb3',
+  publicationAuthorizedOn: '2026-08-11',
+  publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
+  publishedApprovalRecord: null,
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_FENBELL_SHEPHERD_GATE.id,
     artifactSha256: EN_E07_FENBELL_SHEPHERD_GATE.artifactSha256,
@@ -186,7 +191,7 @@ export const EN_E07_MIRECROWN_BEACON_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'Stop at the exact frozen Mirecrown Beacon candidate review. Do not commit, publish, register Will-o-Wisp, generate fixtures, add effects, release, start another family, or advance EN-E08 until the designer explicitly approves the presented boards and paired GIFs.',
+  nextGate: 'The exact repaired Mirecrown Beacon candidate is visually approved and its implementation is committed at 72925cd8d8ea1a3ae47a45601607a1a5853decb3. Its bounded approval-record, documentation reconciliation, and branch push are authorized. After a clean published reconciliation, the same approved lets do next response opens only one private common Changeling candidate. Do not register Will-o-Wisp, generate fixtures, add effects, release, start a specialist or elite Changeling, start Kelpie, or advance EN-E08.',
 });
 
 export const EN_E07_MIRECROWN_BEACON_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -449,7 +454,7 @@ const MIRECROWN_BEACON_VARIANT = deepFreeze({
   name: 'Mirecrown Beacon',
   role: EN_E07_MIRECROWN_BEACON_CONTRACT.role,
   status: EN_E07_MIRECROWN_BEACON_CONTRACT.state,
-  brief: 'A complete elite Will-o-Wisp candidate with one connected three-prong crown-wick, broad double-tiered cage, single beacon eye, paired buttresses, deep core, broad basin, four lower flame tines, and true hover clearance; halos, beams, rays, aura, detached wisps, sound rings, smoke, trails, pools, projectiles, illumination, and impacts remain external.',
+  brief: 'An approved complete elite Will-o-Wisp with one connected three-prong crown-wick, broad double-tiered cage, single beacon eye, paired buttresses, deep core, broad basin, four lower flame tines, and true hover clearance; halos, beams, rays, aura, detached wisps, sound rings, smoke, trails, pools, projectiles, illumination, and impacts remain external.',
   rendererData: EN_E07_MIRECROWN_BEACON_DATA,
 });
 
@@ -469,7 +474,7 @@ export const EN_E07_MIRECROWN_BEACON_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mirecrown-beacon',
     scale: 8,
-    notes: 'Awaiting visual approval for one connected hovering Mirecrown Beacon against approved Fenbell Shepherd and Lantern Mote plus public Spectral Ghost and Flame Elemental. Keep registration, fixtures, effects, Changeling, Kelpie, and later Wave 2 work separate.',
+    notes: 'Visually approved as one connected hovering Mirecrown Beacon against approved Fenbell Shepherd and Lantern Mote plus public Spectral Ghost and Flame Elemental. The exact implementation is committed locally and its bounded publication is authorized. Keep registration, fixtures, effects, later families, and later Wave 2 work separate until the clean published reconciliation.',
   },
 });
 
