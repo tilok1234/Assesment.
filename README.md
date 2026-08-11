@@ -1481,11 +1481,15 @@ hooked butt spike are one baked 24x24 actor with zero child assets. The exact
 `bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`.
 Run `npm.cmd run review:enemy-expansion-en-e08-living-weapon-vowcoil-glaive`
 and `npm.cmd run check:enemy-expansion-en-e08-living-weapon-vowcoil-glaive`.
-The focused gate, fast validation in 55.0s, and full validation in 115.7s pass
-with approved Oathbite/Crownvault, public 80/259, and all 232 fixtures exact.
-It awaits explicit visual approval and must not be committed or pushed.
-Registration, fixtures, child assets, effects, the elite role, EN-E09, release,
-accepted drift, and a PR remain closed.
+The focused gate passes; fast/full validation passes in 55.0s/115.7s before
+approval metadata and 57.7s/116.1s approval-local with approved
+Oathbite/Crownvault, public 80/259, and all 232 fixtures exact. The designer
+replied `approved lets do next`; implementation
+`1080ca4a377657634249d3579dbd9c743db3b38c` records the exact accepted pixels.
+It is approved and awaiting bounded publication. The same reply opens only one
+private elite Living Weapon art candidate after clean remote reconciliation.
+Registration, fixtures, child assets, effects, EN-E09, release, accepted drift,
+and a PR remain closed.
 
 Oathbite Cleaver is the approved preceding private common Living Weapon candidate on
 `codex/en-e08-living-weapon-architecture`, based exactly on clean published

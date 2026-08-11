@@ -108,16 +108,17 @@ function rejects(action, label) {
 }
 
 check(
-  EN_E08_VOWCOIL_GLAIVE_GATE.status === 'awaiting-visual-review'
-    && EN_E08_VOWCOIL_GLAIVE_GATE.approvedOn === null
-    && EN_E08_VOWCOIL_GLAIVE_GATE.approvalEvidence === null
-    && EN_E08_VOWCOIL_GLAIVE_GATE.approvedImplementation === null
+  EN_E08_VOWCOIL_GLAIVE_GATE.status === 'approved'
+    && EN_E08_VOWCOIL_GLAIVE_GATE.approvedOn === '2026-08-12'
+    && EN_E08_VOWCOIL_GLAIVE_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E08_VOWCOIL_GLAIVE_GATE.approvalEvidence.includes('bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807')
+    && EN_E08_VOWCOIL_GLAIVE_GATE.approvedImplementation === '1080ca4a377657634249d3579dbd9c743db3b38c'
     && EN_E08_VOWCOIL_GLAIVE_GATE.publishedImplementation === null
     && EN_E08_VOWCOIL_GLAIVE_GATE.publishedApprovalRecord === null
     && EN_E08_VOWCOIL_GLAIVE_GATE.initialPublishedHandoff === null
-    && EN_E08_VOWCOIL_GLAIVE_GATE.publicationState === 'not-published'
+    && EN_E08_VOWCOIL_GLAIVE_GATE.publicationState === 'approved-not-published'
     && EN_E08_VOWCOIL_GLAIVE_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
-  'Vowcoil Glaive visual-review state or bounded publication authorization drifted',
+  'Vowcoil Glaive approval state or bounded publication authorization drifted',
 );
 check(
   EN_E08_VOWCOIL_GLAIVE_GATE.baseCheckpoint === '870bf042e4d7604fec6f33ba3ba6b03308204ee2'
@@ -152,9 +153,10 @@ check(
   'Vowcoil Glaive exclusions drifted',
 );
 check(
-  EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('explicit visual approval')
-    && EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('Do not commit or push')
-    && EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('begin the elite role'),
+  EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('visually approved at implementation 1080ca4a377657634249d3579dbd9c743db3b38c')
+    && EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
+    && EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('one private elite Living Weapon art candidate')
+    && EN_E08_VOWCOIL_GLAIVE_GATE.nextGate.includes('after this tuple is clean and remote verified'),
   'Vowcoil Glaive stop gate drifted',
 );
 check(
@@ -182,7 +184,7 @@ check(
     && EN_E08_LIVING_WEAPON_CONTRACT_CARD.precedingVariant.id === 'oathbite-cleaver'
     && EN_E08_LIVING_WEAPON_CONTRACT_CARD.precedingVariant.status === 'approved-published'
     && EN_E08_LIVING_WEAPON_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E08_LIVING_WEAPON_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-visual-review'
+    && EN_E08_LIVING_WEAPON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E08_LIVING_WEAPON_CONTRACT_CARD.actorTopology === 'baked-single-actor'
     && JSON.stringify(EN_E08_LIVING_WEAPON_CONTRACT_CARD.deferredRoles) === JSON.stringify([
       { role: 'elite', status: 'planned-unnamed' },

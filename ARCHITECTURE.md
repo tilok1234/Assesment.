@@ -1357,9 +1357,13 @@ reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2`, it owns exactly one
 specialist tall crescent-glaive/ring-core/wrapped-shaft actor with zero child
 assets in every frame. Candidate digest
 `bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807`
-passes its focused gate, `check:fast` in 55.0s, and full `check` in 115.7s with
-public 80/259 and all 232 fixtures exact. It awaits visual approval and remains
-unregistered, fixture-free, effect-free, non-public, and uncommitted.
+passes its focused gate, `check:fast` in 55.0s, and full `check` in 115.7s before
+approval metadata, then 57.7s and 116.1s approval-local, with public 80/259 and
+all 232 fixtures exact. The designer replied `approved lets do next`;
+implementation `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted
+pixels without changing the baked-single-actor boundary. It is approved and
+awaiting bounded publication, and remains unregistered, fixture-free,
+effect-free, and non-public.
 
 `engine/enemy-expansion-en-e08-living-weapon-oathbite-cleaver.js` opens the
 private Living Weapon family under decision

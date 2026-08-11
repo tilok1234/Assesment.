@@ -46,7 +46,7 @@ export const EN_E08_LIVING_WEAPON_CONTRACT_CARD = deepFreeze({
     name: 'Vowcoil Glaive',
     role: 'specialist',
     identity: 'crescent-glaive-specialist',
-    status: 'implemented-full-awaiting-visual-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [
     { role: 'elite', status: 'planned-unnamed' },
@@ -61,7 +61,7 @@ export const EN_E08_VOWCOIL_GLAIVE_CONTRACT = deepFreeze({
   family: 'living-weapon',
   variant: 'vowcoil-glaive',
   role: 'specialist',
-  state: 'implemented-complete-motion-awaiting-visual-review',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E08_LIVING_WEAPON_TOPOLOGY_DECISION.selected,
   chassis: 'baked-tall-crescent-glaive-hooked-crown-connected-ring-core-long-wrapped-shaft-collar-lugs-butt-spike-hovering-weapon-v1',
   silhouette: 'A tall narrow hovering polearm with a broad crescent crown blade, inward hook, connected round core collar, long segmented shaft, two short collar lugs, and a hooked butt spike. It must read as a living glaive rather than Oathbite Cleaver, Animated Armor holding a spear, a Fallen Knight, a thin inventory icon, an upright humanoid, or a detached particle cluster.',
@@ -103,20 +103,20 @@ export const EN_E08_VOWCOIL_GLAIVE_DATA = deepFreeze({
 
 export const EN_E08_VOWCOIL_GLAIVE_GATE = deepFreeze({
   id: 'en-e08-living-weapon-vowcoil-glaive-full-v1',
-  status: 'awaiting-visual-review',
+  status: 'approved',
   baseCheckpoint: '870bf042e4d7604fec6f33ba3ba6b03308204ee2',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'The exact Oathbite Cleaver packet was presented and the designer replied: approved lets do next. Its bounded publication tuple was reconciled at clean remote-verified checkpoint 870bf042e4d7604fec6f33ba3ba6b03308204ee2. Oathbite completed the common role, so the one-complete-sprite cadence authorizes only one private specialist Living Weapon Vowcoil Glaive 80-frame art candidate under the approved baked-single-actor topology. Registration, fixtures, child assets, effects, the elite role, EN-E09, release, and a pull request remain closed.',
   architectureDecision: EN_E08_LIVING_WEAPON_TOPOLOGY_DECISION.id,
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-12',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Oathbite Cleaver and Crownvault Castellan plus public Fallen Knight Shieldbearer silhouette comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in Aseprite. The designer replied: approved lets do next. In context this explicitly approves candidate digest bfdbd581137492667ad042b062480895b67f63a33aeec43aaef94e22a4816807 and its five frozen review hashes only. The same reply may open only one private elite Living Weapon art candidate after clean publication reconciliation. Registration, fixtures, child assets, effects, EN-E09, release, accepted drift, a pull request, and any broader gate remain separate decisions.',
+  approvedImplementation: '1080ca4a377657634249d3579dbd9c743db3b38c',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E08_OATHBITE_CLEAVER_GATE.id,
     artifactSha256: EN_E08_OATHBITE_CLEAVER_GATE.artifactSha256,
@@ -189,7 +189,7 @@ export const EN_E08_VOWCOIL_GLAIVE_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Present the exact frozen Vowcoil Glaive raw/no-outline and Complete B + Form full-suite boards, approved Oathbite Cleaver and Crownvault Castellan plus public Fallen Knight comparison, and both synchronized GIFs together for explicit visual approval. Do not commit or push the candidate, register Living Weapon, generate fixtures, add child assets or effects, begin the elite role, start EN-E09, release, accept drift, or open a pull request before that approval.',
+  nextGate: 'The exact Vowcoil Glaive packet is visually approved at implementation 1080ca4a377657634249d3579dbd9c743db3b38c. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. The same approved lets do next reply opens only one private elite Living Weapon art candidate after this tuple is clean and remote verified. Registration, fixtures, child assets, effects, EN-E09, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E08_VOWCOIL_GLAIVE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

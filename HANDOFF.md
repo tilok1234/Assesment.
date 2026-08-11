@@ -23,15 +23,17 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Vowcoil Glaive Awaiting Visual Review
+## Immediate Continuation Checkpoint - Vowcoil Glaive Approved Awaiting Publication
 
 Start here. Oathbite Cleaver's bounded publication tuple is clean and remote
 verified at `870bf042e4d7604fec6f33ba3ba6b03308204ee2`. The designer replied
 `approved lets do next`, opening exactly one private specialist Living Weapon
 art gate. Vowcoil Glaive is implemented locally on
-`codex/en-e08-living-weapon-specialist` across all 80 frames. It is not visually
-approved, committed, pushed, registered, fixture-backed, effect-enabled, or
-public.
+`codex/en-e08-living-weapon-specialist` across all 80 frames. The designer
+replied `approved lets do next`; implementation
+`1080ca4a377657634249d3579dbd9c743db3b38c` records the exact accepted pixels.
+It is visually approved but its approval record and branch are not yet
+published. It remains unregistered, fixture-free, effect-free, and non-public.
 
 - Identity: tall pale moon-steel crescent glaive with an inward hook, connected
   teal ring core, old-gold collar lugs, long indigo-wrapped segmented shaft,
@@ -57,17 +59,20 @@ public.
   Castellan, and public Fallen Knight Shieldbearer. There are 72/72 colored
   frames, 8/8 exact white flashes, and 54/54 readable core views; opaque range
   99-168. Complete B adds 5,800 pixels and Form changes 4,182.
-- Broad validation: `check:fast` passes in 55.0s and full `check` in 115.7s.
-  Public 80/259 and all 232 fixture sheets remain exact.
-- Visual-review readiness: the exact frozen raw, Complete B + Form, and
-  silhouette-comparison PNGs are open together in Aseprite.
+- Broad validation: fast/full validation passes in 55.0s/115.7s before
+  approval metadata and 57.7s/116.1s approval-local. Public 80/259 and all 232
+  fixture sheets remain exact.
+- Visual approval: the exact frozen raw, Complete B + Form, and silhouette-
+  comparison PNGs were open together in Aseprite when the designer replied
+  `approved lets do next`. Approval applies only to this digest and five hashes.
 - Commands: `npm.cmd run
   review:enemy-expansion-en-e08-living-weapon-vowcoil-glaive` and `npm.cmd run
   check:enemy-expansion-en-e08-living-weapon-vowcoil-glaive`.
-- Approval gate: approval applies only to this exact digest and five hashes. Do
-  not commit or push, register Living Weapon, generate fixtures, add child
-  assets or effects, begin the elite role, start EN-E09, release, accept drift,
-  or open a PR before explicit visual approval.
+- Publication gate: standing permission opens only the approval record, branch
+  push, and handoff reconciliation. The same reply opens only one private elite
+  Living Weapon art candidate after a clean remote reconciliation.
+  Registration, fixtures, child assets, effects, EN-E09, release, accepted
+  drift, and a PR remain closed.
 
 ## Approved Preceding Checkpoint - Oathbite Cleaver Published
 

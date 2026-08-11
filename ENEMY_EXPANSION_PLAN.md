@@ -4706,10 +4706,10 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Living Weapon Vowcoil Glaive specialist awaiting visual review
+#### Living Weapon Vowcoil Glaive specialist approved awaiting publication
 
 - Gate ID: `en-e08-living-weapon-vowcoil-glaive-full-v1`; status
-  `awaiting-visual-review` on `codex/en-e08-living-weapon-specialist`, based
+  `approved-not-published` on `codex/en-e08-living-weapon-specialist`, based
   exactly on published Oathbite reconciliation
   `870bf042e4d7604fec6f33ba3ba6b03308204ee2`.
 - Authorization: the exact Oathbite packet was approved by `approved lets do
@@ -4726,11 +4726,15 @@ it with incidental per-frame offsets.
   `f4c6816a...2f594`.
 - The focused gate passes 80/80 connected, bounded, hovering, and distinct from
   Oathbite/Crownvault/Fallen Knight, with 54/54 readable core views. Fast/full
-  validation passes in 55.0s/115.7s with public 80/259 and all 232 fixtures
-  unchanged.
-- Approval gate: do not commit or push, register, generate fixtures, add child
-  assets or effects, begin the elite role or EN-E09, release, accept drift, or
-  open a PR before explicit approval of this exact packet.
+  validation passes in 55.0s/115.7s before approval metadata and
+  57.7s/116.1s approval-local with public 80/259 and all 232 fixtures unchanged.
+- Approval: the exact packet was presented and the designer replied `approved
+  lets do next`. Implementation
+  `1080ca4a377657634249d3579dbd9c743db3b38c` records the accepted pixels.
+  Standing permission opens only the approval record, branch push, and handoff
+  reconciliation. The same reply opens only one private elite Living Weapon
+  art candidate after clean remote reconciliation. Registration, fixtures,
+  child assets, effects, EN-E09, release, accepted drift, and a PR remain closed.
 
 #### Living Weapon Oathbite Cleaver common approved and published
 
