@@ -107,7 +107,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved published private art checkpoint: common Possessed Mask Whisperveil Visage on
+- Current private art gate: specialist Possessed Mask Mournseal Cantor on
+  `codex/en-e08-possessed-mask-mournseal-cantor`, based exactly on clean
+  published Whisperveil reconciliation
+  `2ab49dc879a852d8a3c1a5f14de93345b32d490a`, is frozen at digest
+  `5f54d5f716a11e42e813c7f09c1031d7090b1ac51a9cd93f93f6e0df08ac4e55`.
+  It is one baked 24x24 tall-mask/fan-shroud/braided-cord actor with zero child
+  assets. All 80 frames pass connected, bounded, hovering, readable-face,
+  alias, mirror, and predecessor/comparison gates; fast validation passes in
+  56.2s and full validation in 109.0s with public 80/259 and all 232 fixtures
+  exact. The exact three frozen PNGs are open together in responsive Aseprite
+  process 3228. Status is `awaiting-visual-review`: do not commit or push,
+  register, generate fixtures, add effects or child assets, begin the elite
+  role, start Living Weapon or EN-E09, release, accept drift, or open a PR.
+- Approved preceding published private art checkpoint: common Possessed Mask Whisperveil Visage on
   `codex/en-e08-possessed-mask-whisperveil-visage`, based exactly on clean
   published Crownvault reconciliation
   `42156250f24d03b7e81a29e14cec75c25528cde4`, is frozen at digest

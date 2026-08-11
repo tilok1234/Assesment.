@@ -23,7 +23,54 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Whisperveil Visage Approved And Published
+## Immediate Continuation Checkpoint - Mournseal Cantor Awaiting Visual Review
+
+Start here. From clean published Whisperveil Visage reconciliation
+`2ab49dc879a852d8a3c1a5f14de93345b32d490a`, the designer replied `lets do
+next`, opening exactly one private specialist Possessed Mask art gate.
+Mournseal Cantor is implemented on
+`codex/en-e08-possessed-mask-mournseal-cantor` as one deterministic baked 24x24
+actor with zero child assets across all 80 frames. It is not approved,
+committed, pushed, registered, fixture-backed, effect-enabled, or public.
+
+- Identity: tall ash-bone ritual mask with stepped brow, two readable amber
+  eyes, paired tear channels, nose ridge, oval cantor mouth, long chin,
+  connected storm-blue fan shroud, ochre braided cords, and true hover clearance.
+- Motion: Idle seats and breathes the fan; Walk uses four hover phases; Attack
+  gathers both cords, seals the mouth, opens one body-owned binding canticle,
+  and settles. Hurt is a complete white recoil then colored folded-fan brace.
+  Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.
+- Architecture: `baked-single-actor`; mask, fan, and cords are one connected
+  hard-alpha actor. No host, detached mask, sound ring, child asset, shared
+  runtime, schema, renderer, exporter, validator, frame-contract, registration,
+  fixture, manifest, effect, accepted-drift, or public-catalog change.
+- Frozen digest:
+  `5f54d5f716a11e42e813c7f09c1031d7090b1ac51a9cd93f93f6e0df08ac4e55`.
+  Raw/Complete B + Form/comparison PNG hashes are
+  `475142168aa09e65d89509243be69b2fcae8bb570cb9dcb03a972051859ccfc4`,
+  `08307dc01d116070cc3cb39a17c48493afafaeffe26486819f94c8a1a48361bc`,
+  and `81014badb7da35d1b779b0364fca07e59465a5c72b61e00dbdb64e5ee2d31835`.
+  Raw and assembled GIF hashes are
+  `16002a90220fd12a5403de46dbef67b26365aac63bb0f3d0534e557db4f93e9e`
+  and `ed7797d9ef900d90c27335b7ff3c254cb9dbbdcab65db3fed5a8e177b8035a39`.
+- Focused gate: 80/80 connected, bounded, hovering, and pixel/alpha distinct
+  from approved Whisperveil Visage, public Spectral Ghost, and public Flame
+  Elemental; 72/72 colored frames, 8/8 exact white flashes, and 54/54 readable
+  face views. Opaque range 224-242; Complete B adds 6,428 pixels and Form
+  changes 6,069.
+- Broad validation: `check:fast` passes in 56.2s and full `check` in 109.0s;
+  public 80/259 and all 232 fixture sheets remain exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and comparison
+  PNGs are open together in responsive Aseprite process 3228.
+- Commands: `npm.cmd run
+  review:enemy-expansion-en-e08-possessed-mask-mournseal-cantor` and `npm.cmd
+  run check:enemy-expansion-en-e08-possessed-mask-mournseal-cantor`.
+- Stop gate: require explicit approval of this exact digest and five hashes.
+  Do not commit or push the candidate, register Possessed Mask, generate
+  fixtures, add child assets or effects, begin the elite role, start Living
+  Weapon or EN-E09, release, accept drift, or open a PR before that approval.
+
+## Approved Preceding Checkpoint - Whisperveil Visage Published
 
 Start here. The designer abandoned Headless Rider, returned to clean published
 Crownvault Castellan reconciliation

@@ -288,7 +288,20 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current EN-E08 prototype gate (2026-08-11): common Possessed Mask Whisperveil
+Current EN-E08 prototype gate (2026-08-11): specialist Possessed Mask Mournseal
+Cantor on `codex/en-e08-possessed-mask-mournseal-cantor` is based on clean
+published Whisperveil reconciliation
+`2ab49dc879a852d8a3c1a5f14de93345b32d490a` and frozen at digest
+`5f54d5f716a11e42e813c7f09c1031d7090b1ac51a9cd93f93f6e0df08ac4e55`.
+It is one baked 24x24 tall-mask/fan-shroud/braided-cord actor with zero child
+assets. All 80 frames pass the focused gate; fast validation passes in 56.2s
+and full validation in 109.0s with public 80/259 and all 232 fixtures exact.
+The exact three PNGs are open in responsive Aseprite process 3228. Status is
+`awaiting-visual-review`; registration, fixtures, effects, child assets, the
+elite role, Living Weapon, EN-E09, release, publication, accepted drift, and a
+PR remain closed.
+
+Approved preceding EN-E08 checkpoint (2026-08-11): common Possessed Mask Whisperveil
 Visage on `codex/en-e08-possessed-mask-whisperveil-visage` is based on clean
 published Crownvault reconciliation
 `42156250f24d03b7e81a29e14cec75c25528cde4` and frozen at digest

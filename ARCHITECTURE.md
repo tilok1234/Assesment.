@@ -1350,6 +1350,21 @@ reconciliation completes the bounded tuple. The same
 reply opened only the EN-E08 actor-topology architecture decision after clean
 remote reconciliation; the later explicit choice is recorded below.
 
+`engine/enemy-expansion-en-e08-possessed-mask-mournseal-cantor.js` extends the
+private Possessed Mask family without changing its topology. From clean
+published Whisperveil reconciliation
+`2ab49dc879a852d8a3c1a5f14de93345b32d490a`, it owns exactly one specialist
+ritual-cantor with one baked 24x24 pixel array and zero child assets in every
+frame. The tall stepped ash-bone mask, paired amber eyes and tear channels,
+nose ridge, oval mouth, long chin, connected storm-blue fan shroud, and ochre
+braided cords remain actor pixels. Hosts, detached masks, sound rings, glow,
+smoke, projectiles, runtime offsets, and child/state exports remain outside the
+gate. Candidate digest
+`5f54d5f716a11e42e813c7f09c1031d7090b1ac51a9cd93f93f6e0df08ac4e55`
+passes its focused gate, `check:fast` in 56.2s, and full `check` in 109.0s with
+public 80/259 and all 232 fixtures exact. It awaits visual approval and remains
+uncommitted, unregistered, fixture-free, effect-free, and non-public.
+
 `engine/enemy-expansion-en-e08-possessed-mask-whisperveil-visage.js` opens the
 next EN-E08 family as a content-only private common actor. From clean published
 Crownvault reconciliation `42156250f24d03b7e81a29e14cec75c25528cde4`, the

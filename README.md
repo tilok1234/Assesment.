@@ -1472,7 +1472,22 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Whisperveil Visage is the current private common Possessed Mask candidate on
+Mournseal Cantor is the current private specialist Possessed Mask candidate on
+`codex/en-e08-possessed-mask-mournseal-cantor`, based on clean published
+Whisperveil reconciliation `2ab49dc879a852d8a3c1a5f14de93345b32d490a`.
+The tall ash-bone mask, storm-blue fan shroud, and ochre braided cords are one
+connected baked 24x24 actor with zero child assets. Its two amber eyes, paired
+tear channels, nose ridge, oval cantor mouth, long chin, and hover clearance
+remain readable across the expected views. The exact 80-frame candidate is
+frozen at digest
+`5f54d5f716a11e42e813c7f09c1031d7090b1ac51a9cd93f93f6e0df08ac4e55`.
+Run `npm.cmd run review:enemy-expansion-en-e08-possessed-mask-mournseal-cantor`
+and `npm.cmd run check:enemy-expansion-en-e08-possessed-mask-mournseal-cantor`.
+Focused, fast, and full checks pass with public 80/259 and all 232 fixtures
+unchanged. Status is `awaiting-visual-review`; it remains private,
+unregistered, fixture-free, effect-free, and uncommitted.
+
+Whisperveil Visage is the approved preceding private common Possessed Mask candidate on
 `codex/en-e08-possessed-mask-whisperveil-visage`, based on clean published
 Crownvault reconciliation `42156250f24d03b7e81a29e14cec75c25528cde4`.
 The mask, shroud, and ribbons are one connected baked 24x24 actor with zero

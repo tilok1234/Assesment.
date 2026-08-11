@@ -4706,6 +4706,38 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
+#### Possessed Mask Mournseal Cantor specialist awaiting visual review
+
+- Gate ID: `en-e08-possessed-mask-mournseal-cantor-full-v1`; status
+  `awaiting-visual-review` on
+  `codex/en-e08-possessed-mask-mournseal-cantor`, based exactly on published
+  Whisperveil reconciliation `2ab49dc879a852d8a3c1a5f14de93345b32d490a`.
+- Authorization: after the Whisperveil publication tuple was reconciled, the
+  designer replied `lets do next`. This opens only one private specialist
+  Mournseal Cantor art candidate.
+- Architecture: one deterministic baked 24x24 actor, zero child assets. The
+  tall ash-bone mask, connected storm-blue fan shroud, and ochre braided cords
+  are actor pixels; hosts, detached masks, sound rings, effects, runtime
+  attachments, schemas, shared renderers, exporters, validators, registration,
+  and fixtures remain out.
+- Identity and motion: two amber eyes, paired tear channels, nose ridge, oval
+  mouth, and long chin. Idle breathes the fan; Walk uses four hover phases;
+  Attack gathers cords, seals the mouth, opens one body-owned binding canticle,
+  and settles. Hurt is white recoil then colored brace. Cast aliases Attack;
+  Death aliases Hurt H1,H2,H2,H2.
+- Frozen digest:
+  `5f54d5f716a11e42e813c7f09c1031d7090b1ac51a9cd93f93f6e0df08ac4e55`.
+  PNG hashes are `47514216...cfc4`, `08307dc0...61bc`, and
+  `81014bad...1835`; GIF hashes are `16002a90...e9e` and
+  `ed7797d9...5a39`.
+- Focused 80-frame gate passes; `check:fast` passes in 56.2s and full `check`
+  in 109.0s with public 80/259 and all 232 fixtures exact. The exact three PNGs
+  are open together in responsive Aseprite process 3228.
+- Required next action: visually approve, iterate, or reject only this frozen
+  packet. Registration, fixtures, child assets, effects, the elite role,
+  Living Weapon, EN-E09, release, publication, accepted drift, and a PR remain
+  closed.
+
 #### Possessed Mask Whisperveil Visage common approved and published
 
 - Gate ID: `en-e08-possessed-mask-whisperveil-visage-full-v1`; status
