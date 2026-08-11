@@ -41,7 +41,7 @@ export const EN_E08_POSSESSED_MASK_CONTRACT_CARD = deepFreeze({
     id: 'mournseal-cantor',
     name: 'Mournseal Cantor',
     role: 'specialist',
-    status: 'implemented-full-awaiting-visual-review',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [{ role: 'elite', status: 'planned-unnamed' }],
   styleContract: 'Use chunky one-to-three-pixel hard-alpha forms and one deterministic baked 24x24 actor. A broad bone mask with two readable eye sockets, nose ridge, mouth, cheek planes, connected torn shroud, and tether ribbons must read without a host body. All pieces remain connected actor pixels with true hover clearance; no detached mask, child asset, copied humanoid, aura, glow, particles, or projectile.',
@@ -53,7 +53,7 @@ export const EN_E08_MOURNSEAL_CANTOR_CONTRACT = deepFreeze({
   family: 'possessed-mask',
   variant: 'mournseal-cantor',
   role: 'specialist',
-  state: 'implemented-complete-motion-awaiting-visual-review',
+  state: 'implemented-complete-motion-approved',
   chassis: 'tall-ritual-visage-stepped-brow-twin-amber-eyes-tear-channels-nose-ridge-oval-cantor-mouth-connected-fan-shroud-braided-cords-hovering-mask-v1',
   silhouette: 'A tall hovering ritual mask with a stepped brow, long tapered jaw, two deep eye sockets, paired tear channels, one nose ridge, a readable oval cantor mouth, connected side cords, and a broad fan-shaped shroud. It must remain visibly related to Whisperveil Visage without copying its broad short face, split tails, violet palette, or shriek pose, and must not read as a Ghost robe, Living Shadow humanoid, Doppelganger face, floating helmet, slime, flame blob, or detached particle cluster.',
   identity: 'Pale ash-bone planes, ink-violet voids, storm-blue fan cloth, ochre braided cords, and two warm amber eyes establish a ritual-cantor specialist. The taller face, tear channels, oval mouth, and fan shroud remain one connected baked actor while hosts, detached masks, sound rings, glow, smoke, possession overlays, projectiles, and illumination stay external.',
@@ -94,19 +94,19 @@ export const EN_E08_MOURNSEAL_CANTOR_DATA = deepFreeze({
 
 export const EN_E08_MOURNSEAL_CANTOR_GATE = deepFreeze({
   id: 'en-e08-possessed-mask-mournseal-cantor-full-v1',
-  status: 'awaiting-visual-review',
+  status: 'approved',
   baseCheckpoint: '2ab49dc879a852d8a3c1a5f14de93345b32d490a',
   authorizedOn: '2026-08-11',
   authorizationEvidence: 'After the exact Whisperveil Visage publication tuple was reconciled at clean remote-verified checkpoint 2ab49dc879a852d8a3c1a5f14de93345b32d490a, the designer replied: lets do next. Whisperveil Visage completed the common role, so the one-complete-sprite cadence authorizes only one private specialist Possessed Mask Mournseal Cantor 80-frame art candidate. Registration, fixtures, effects, the elite role, Living Weapon, EN-E09, release, and a pull request remain closed.',
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-11',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Whisperveil Visage plus public Spectral Ghost and Flame Elemental comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in responsive Aseprite process 3228. The designer replied: approved lets do next. In context this explicitly approves candidate digest 5f54d5f716a11e42e813c7f09c1031d7090b1ac51a9cd93f93f6e0df08ac4e55 and its five frozen review hashes only. The same reply may open only one private elite Possessed Mask art gate after clean publication reconciliation. Registration, fixtures, child assets, effects, Living Weapon, EN-E09, release, accepted drift, a pull request, and any broader gate remain separate decisions.',
+  approvedImplementation: 'b1fd09ab0b04128330178a99c0379783621e478f',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-published',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E08_WHISPERVEIL_VISAGE_GATE.id,
     artifactSha256: EN_E08_WHISPERVEIL_VISAGE_GATE.artifactSha256,
@@ -181,7 +181,7 @@ export const EN_E08_MOURNSEAL_CANTOR_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Present the exact frozen Mournseal Cantor raw/no-outline and Complete B + Form full-suite boards, approved Whisperveil Visage and public spectral comparisons, and both synchronized GIFs together for explicit visual approval. Do not commit or push the candidate, register Possessed Mask, generate fixtures, add child assets or effects, begin the elite role, start Living Weapon or EN-E09, release, accept drift, or open a pull request before that approval.',
+  nextGate: 'The exact Mournseal Cantor packet is visually approved at implementation b1fd09ab0b04128330178a99c0379783621e478f. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. The same approved lets do next reply opens one private elite Possessed Mask art gate only after this tuple is clean and remote verified. Registration, fixtures, child assets, effects, Living Weapon, EN-E09, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E08_MOURNSEAL_CANTOR_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -430,7 +430,7 @@ export const EN_E08_MOURNSEAL_CANTOR_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mournseal-cantor',
     scale: 8,
-    notes: 'Awaiting visual review as one connected baked hovering specialist Mournseal Cantor against approved Whisperveil Visage plus public Spectral Ghost and Flame Elemental. Keep registration, fixtures, child assets, effects, the elite role, Living Weapon, and EN-E09 separate.',
+    notes: 'Visually approved as one connected baked hovering specialist Mournseal Cantor against approved Whisperveil Visage plus public Spectral Ghost and Flame Elemental. Implementation b1fd09ab0b04128330178a99c0379783621e478f records the exact accepted pixels. Keep registration, fixtures, child assets, effects, Living Weapon, EN-E09, release, accepted drift, and a pull request separate; the same reply opens only the private elite role after clean publication reconciliation.',
   },
 });
 

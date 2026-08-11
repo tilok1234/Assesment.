@@ -23,15 +23,18 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mournseal Cantor Awaiting Visual Review
+## Immediate Continuation Checkpoint - Mournseal Cantor Approved Locally
 
 Start here. From clean published Whisperveil Visage reconciliation
 `2ab49dc879a852d8a3c1a5f14de93345b32d490a`, the designer replied `lets do
 next`, opening exactly one private specialist Possessed Mask art gate.
 Mournseal Cantor is implemented on
 `codex/en-e08-possessed-mask-mournseal-cantor` as one deterministic baked 24x24
-actor with zero child assets across all 80 frames. It is not approved,
-committed, pushed, registered, fixture-backed, effect-enabled, or public.
+actor with zero child assets across all 80 frames. The designer replied
+`approved lets do next`; implementation
+`b1fd09ab0b04128330178a99c0379783621e478f` records the exact accepted pixels.
+It is approved locally but not yet pushed, registered, fixture-backed,
+effect-enabled, or public.
 
 - Identity: tall ash-bone ritual mask with stepped brow, two readable amber
   eyes, paired tear channels, nose ridge, oval cantor mouth, long chin,
@@ -65,10 +68,12 @@ committed, pushed, registered, fixture-backed, effect-enabled, or public.
 - Commands: `npm.cmd run
   review:enemy-expansion-en-e08-possessed-mask-mournseal-cantor` and `npm.cmd
   run check:enemy-expansion-en-e08-possessed-mask-mournseal-cantor`.
-- Stop gate: require explicit approval of this exact digest and five hashes.
-  Do not commit or push the candidate, register Possessed Mask, generate
-  fixtures, add child assets or effects, begin the elite role, start Living
-  Weapon or EN-E09, release, accept drift, or open a PR before that approval.
+- Approval/publication gate: approval applies only to this exact digest and five
+  hashes. Standing permission opens the approval record, branch push, and
+  handoff reconciliation. The same reply opens only one private elite
+  Possessed Mask gate after clean remote reconciliation. Do not register,
+  generate fixtures, add child assets or effects, start Living Weapon or EN-E09,
+  release, accept drift, or open a PR.
 
 ## Approved Preceding Checkpoint - Whisperveil Visage Published
 

@@ -1362,8 +1362,10 @@ smoke, projectiles, runtime offsets, and child/state exports remain outside the
 gate. Candidate digest
 `5f54d5f716a11e42e813c7f09c1031d7090b1ac51a9cd93f93f6e0df08ac4e55`
 passes its focused gate, `check:fast` in 56.2s, and full `check` in 109.0s with
-public 80/259 and all 232 fixtures exact. It awaits visual approval and remains
-uncommitted, unregistered, fixture-free, effect-free, and non-public.
+public 80/259 and all 232 fixtures exact. The designer replied `approved lets do
+next`; implementation `b1fd09ab0b04128330178a99c0379783621e478f` records the
+accepted pixels without changing the baked-single-actor boundary. It remains
+unregistered, fixture-free, effect-free, non-public, and not yet pushed.
 
 `engine/enemy-expansion-en-e08-possessed-mask-whisperveil-visage.js` opens the
 next EN-E08 family as a content-only private common actor. From clean published

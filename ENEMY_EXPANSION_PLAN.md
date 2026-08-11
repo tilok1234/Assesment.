@@ -4706,7 +4706,7 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Possessed Mask Mournseal Cantor specialist awaiting visual review
+#### Possessed Mask Mournseal Cantor specialist approved locally
 
 - Gate ID: `en-e08-possessed-mask-mournseal-cantor-full-v1`; status
   `awaiting-visual-review` on
@@ -4733,10 +4733,14 @@ it with incidental per-frame offsets.
 - Focused 80-frame gate passes; `check:fast` passes in 56.2s and full `check`
   in 109.0s with public 80/259 and all 232 fixtures exact. The exact three PNGs
   are open together in responsive Aseprite process 3228.
-- Required next action: visually approve, iterate, or reject only this frozen
-  packet. Registration, fixtures, child assets, effects, the elite role,
-  Living Weapon, EN-E09, release, publication, accepted drift, and a PR remain
-  closed.
+- Approval: the exact packet was presented and the designer replied `approved
+  lets do next`. Implementation
+  `b1fd09ab0b04128330178a99c0379783621e478f` records the accepted pixels.
+  Standing permission opens only its approval record, branch push, and handoff
+  reconciliation. The same reply opens one private elite Possessed Mask gate
+  after clean remote reconciliation. Registration, fixtures, child assets,
+  effects, Living Weapon, EN-E09, release, broader publication, accepted drift,
+  and a PR remain closed.
 
 #### Possessed Mask Whisperveil Visage common approved and published
 

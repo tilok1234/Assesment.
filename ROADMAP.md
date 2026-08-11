@@ -296,10 +296,14 @@ published Whisperveil reconciliation
 It is one baked 24x24 tall-mask/fan-shroud/braided-cord actor with zero child
 assets. All 80 frames pass the focused gate; fast validation passes in 56.2s
 and full validation in 109.0s with public 80/259 and all 232 fixtures exact.
-The exact three PNGs are open in responsive Aseprite process 3228. Status is
-`awaiting-visual-review`; registration, fixtures, effects, child assets, the
-elite role, Living Weapon, EN-E09, release, publication, accepted drift, and a
-PR remain closed.
+The exact three PNGs are open in responsive Aseprite process 3228. The designer
+replied `approved lets do next`; implementation
+`b1fd09ab0b04128330178a99c0379783621e478f` records the accepted pixels.
+Status is `approved-local`; standing permission opens its approval record,
+push, and reconciliation. The same reply opens only the private elite role
+after clean remote reconciliation. Registration, fixtures, effects, child
+assets, Living Weapon, EN-E09, release, broader publication, accepted drift,
+and a PR remain closed.
 
 Approved preceding EN-E08 checkpoint (2026-08-11): common Possessed Mask Whisperveil
 Visage on `codex/en-e08-possessed-mask-whisperveil-visage` is based on clean
