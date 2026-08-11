@@ -468,7 +468,19 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current private prototype is elite Possessed Mask Threnecrown Hierophant
+  The current private prototype is common Living Weapon Oathbite Cleaver on
+  `codex/en-e08-living-weapon-architecture`, based on clean published
+  Threnecrown reconciliation `6f2a51739a65b88f8c50644e92e440c8004cc049`.
+  The designer selected the recommended baked 24x24 single-actor topology by
+  replying `awesome lets do next`. It is one connected broad-cleaver/core/claw-
+  guard/wrapped-grip actor with zero child assets, frozen at digest
+  `6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46`.
+  All 80 frames pass focused connected, bounded, hovering, core-readability,
+  alias, mirror, predecessor, and comparison checks. Fast validation passes in
+  60.4s and full validation in 110.3s, preserving public 80/259 and all 232
+  fixtures. It is awaiting visual approval, unregistered, fixture-free,
+  effect-free, non-public, and uncommitted.
+  The approved preceding private checkpoint is elite Possessed Mask Threnecrown Hierophant
   on `codex/en-e08-possessed-mask-threnecrown-hierophant`, based on clean
   published Mournseal reconciliation
   `4f7a1146f1b90c8e70b819461d29a4be72cb379a`. It is one connected baked 24x24

@@ -107,7 +107,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: elite Possessed Mask Threnecrown Hierophant on
+- Current private art gate: common Living Weapon Oathbite Cleaver on
+  `codex/en-e08-living-weapon-architecture`, based exactly on clean published
+  Threnecrown reconciliation `6f2a51739a65b88f8c50644e92e440c8004cc049`, is
+  frozen at digest
+  `6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46`.
+  The designer selected the recommended baked 24x24 single-actor topology with
+  zero child assets by replying `awesome lets do next`. All 80 frames pass
+  connected, bounded, hovering, readable-core, alias, mirror, and predecessor/
+  comparison gates; fast validation passes in 60.4s and full validation in
+  110.3s with public 80/259 and all 232 fixtures exact. It awaits explicit
+  visual approval and must not be committed or pushed. Registration, fixtures,
+  effects, child assets, later roles, EN-E09, release, accepted drift, and a PR
+  remain closed.
+- Approved preceding published private art checkpoint: elite Possessed Mask Threnecrown Hierophant on
   `codex/en-e08-possessed-mask-threnecrown-hierophant`, based exactly on clean
   published Mournseal reconciliation
   `4f7a1146f1b90c8e70b819461d29a4be72cb379a`, is frozen at digest

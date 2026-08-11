@@ -288,7 +288,21 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current EN-E08 prototype gate (2026-08-11): elite Possessed Mask Threnecrown
+Current EN-E08 prototype gate (2026-08-11): common Living Weapon Oathbite
+Cleaver on `codex/en-e08-living-weapon-architecture` is based on clean
+published Threnecrown reconciliation
+`6f2a51739a65b88f8c50644e92e440c8004cc049` and frozen at digest
+`6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46`.
+The designer selected the recommended baked 24x24 single-actor topology with
+zero child assets by replying `awesome lets do next`. All 80 frames pass the
+focused connected, bounded, hovering, core-readability, alias, mirror, and
+predecessor/comparison gates; fast validation passes in 60.4s and full
+validation in 110.3s with public 80/259 and all 232 fixtures exact. It awaits
+explicit visual approval and must not be committed or pushed.
+Registration, fixtures, effects, child assets, later roles, EN-E09, release,
+broader publication, accepted drift, and a PR remain closed.
+
+Approved preceding EN-E08 checkpoint (2026-08-11): elite Possessed Mask Threnecrown
 Hierophant on `codex/en-e08-possessed-mask-threnecrown-hierophant` is based on
 clean published Mournseal reconciliation
 `4f7a1146f1b90c8e70b819461d29a4be72cb379a` and frozen at digest

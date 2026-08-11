@@ -23,7 +23,57 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Threnecrown Hierophant Approved And Published
+## Immediate Continuation Checkpoint - Oathbite Cleaver Awaiting Visual Review
+
+Start here. From clean published Threnecrown Hierophant reconciliation
+`6f2a51739a65b88f8c50644e92e440c8004cc049`, the designer approved the
+recommended deterministic baked 24x24 Living Weapon topology with zero child
+assets by replying `awesome lets do next`. Exactly one private common Living
+Weapon art gate is open. Oathbite Cleaver is implemented locally on
+`codex/en-e08-living-weapon-architecture` across all 80 frames. It is not
+visually approved, committed, pushed, registered, fixture-backed,
+effect-enabled, or public.
+
+- Identity: broad chipped weathered-steel cleaver with a heavy dark spine, one
+  readable teal inset core, hooked bright edge, connected rust-orange claw
+  guard, wine-wrapped grip, squared pommel, short connected tassel, and true
+  hover clearance.
+- Motion: Idle holds the cleaver upright and pulses the core; Walk uses four
+  directional hover phases; Attack braces, raises, drives one body-owned
+  cleaving stroke, and recovers. Hurt is a complete white recoil then colored
+  guarded brace. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.
+- Architecture: decision `en-e08-living-weapon-baked-single-actor-v1`; blade,
+  core, guard, grip, pommel, and tassel are one connected hard-alpha actor. No
+  wielder, detached/swapped blade, orbiting weapon, separate core, child asset,
+  schema, shared renderer, exporter, validator, frame-contract, registration,
+  fixture, effect, accepted drift, or public-catalog change.
+- Frozen digest:
+  `6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46`.
+  Raw/Complete B + Form/comparison PNG hashes are
+  `9eb25986699b4331d213f884c9c6c9db75a9334a095a1974d01a3b6b0c45d209`,
+  `284df6320e8f90d0cad0251e7c7f14268ba88e1d47c1d90519cdd54c15838889`,
+  and `1d2cfd7dcc318b266127871aaf49d628b8d8f12a0e549cccdbbc9fde789a9530`.
+  Raw and assembled GIF hashes are
+  `f8c13d15116219752b07b983cdbc20a83e0fa43cec737fc48ed433459329a22c`
+  and `cc08c221d67a08ae720b839c20a9ecf04b4e355c1a97df787ec900deaae537ce`.
+- Focused gate: 80/80 connected, bounded, and hovering; 80/80 pixel and alpha
+  silhouettes differ from approved Threnecrown Hierophant, approved Crownvault
+  Castellan, and public Fallen Knight Shieldbearer. There are 72/72 colored
+  frames, 8/8 exact white flashes, and 54/54 readable core views; opaque range
+  154-182.
+- Broad validation: `check:fast` passes in 60.4s and full `check` passes in
+  110.3s. Public 80/259 and all 232 fixture sheets remain exact.
+- Visual-review readiness: the exact frozen raw, Complete B + Form, and
+  silhouette-comparison PNGs are open together in Aseprite.
+- Commands: `npm.cmd run
+  review:enemy-expansion-en-e08-living-weapon-oathbite-cleaver` and `npm.cmd
+  run check:enemy-expansion-en-e08-living-weapon-oathbite-cleaver`.
+- Approval gate: approval must identify this exact digest and five artifact
+  hashes. Do not commit or push the candidate, register Living Weapon, generate
+  fixtures, add child assets or effects, begin the specialist role, start
+  EN-E09, release, accept drift, or open a PR before explicit visual approval.
+
+## Approved Preceding Checkpoint - Threnecrown Hierophant Published
 
 Start here. From clean published Mournseal Cantor reconciliation
 `4f7a1146f1b90c8e70b819461d29a4be72cb379a`, the designer replied `approved

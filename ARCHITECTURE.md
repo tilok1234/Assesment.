@@ -1350,6 +1350,22 @@ reconciliation completes the bounded tuple. The same
 reply opened only the EN-E08 actor-topology architecture decision after clean
 remote reconciliation; the later explicit choice is recorded below.
 
+`engine/enemy-expansion-en-e08-living-weapon-oathbite-cleaver.js` opens the
+private Living Weapon family under decision
+`en-e08-living-weapon-baked-single-actor-v1`. From clean published Threnecrown
+reconciliation `6f2a51739a65b88f8c50644e92e440c8004cc049`, the designer
+selected the recommended deterministic baked 24x24 topology with zero child
+assets by replying `awesome lets do next`. The broad chipped blade, heavy
+spine, inset core, hooked edge, claw guard, wrapped grip, pommel, and short
+tassel remain one pixel array in every frame. Wielders, detached/swapped blades,
+orbiting weapons, separate cores, runtime offsets, and child/state exports
+remain outside the gate. Candidate digest
+`6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46`
+passes its focused 80-frame gate, `check:fast` in 60.4s, and full `check` in
+110.3s with public 80/259 and all 232 fixtures exact. It awaits visual approval
+and remains unregistered, fixture-free, effect-free, non-public, and
+uncommitted.
+
 `engine/enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant.js`
 completes the private Possessed Mask three-role art family without changing its
 topology. From clean published Mournseal reconciliation

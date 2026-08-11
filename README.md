@@ -1472,7 +1472,25 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Threnecrown Hierophant is the current private elite Possessed Mask candidate on
+Oathbite Cleaver is the current private common Living Weapon candidate on
+`codex/en-e08-living-weapon-architecture`, based exactly on clean published
+Threnecrown reconciliation `6f2a51739a65b88f8c50644e92e440c8004cc049`.
+The designer replied `awesome lets do next` to the recommended deterministic
+baked 24x24 single-actor topology with zero child assets. The broad chipped
+cleaver, heavy spine, one teal inset core, hooked edge, connected claw guard,
+wrapped grip, pommel, and tassel are one actor. The exact 80-frame candidate is
+frozen at digest
+`6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46`.
+Run `npm.cmd run review:enemy-expansion-en-e08-living-weapon-oathbite-cleaver`
+and `npm.cmd run check:enemy-expansion-en-e08-living-weapon-oathbite-cleaver`.
+The focused gate passes 80/80 connected, bounded, and hovering with 54/54
+readable core views; `check:fast` passes in 60.4s and full `check` in 110.3s
+with approved Threnecrown, approved Crownvault, public 80/259, and all 232
+fixtures unchanged. It awaits explicit visual approval and must not be
+committed or pushed. Registration, fixtures, child assets, effects,
+later roles, EN-E09, release, accepted drift, and a PR remain closed.
+
+Threnecrown Hierophant is the approved preceding private elite Possessed Mask candidate on
 `codex/en-e08-possessed-mask-threnecrown-hierophant`, based exactly on clean
 published Mournseal reconciliation
 `4f7a1146f1b90c8e70b819461d29a4be72cb379a`. The broad aged-ivory funerary

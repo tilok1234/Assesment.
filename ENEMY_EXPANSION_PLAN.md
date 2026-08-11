@@ -4706,6 +4706,36 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
+#### Living Weapon Oathbite Cleaver common awaiting visual review
+
+- Gate ID: `en-e08-living-weapon-oathbite-cleaver-full-v1`; status
+  `awaiting-visual-review` on `codex/en-e08-living-weapon-architecture`, based
+  exactly on published Threnecrown reconciliation
+  `6f2a51739a65b88f8c50644e92e440c8004cc049`.
+- Authorization and topology: the designer approved the recommended
+  deterministic baked 24x24 single actor with zero child assets by replying
+  `awesome lets do next`. Decision
+  `en-e08-living-weapon-baked-single-actor-v1` owns the blade, spine, core,
+  guard, grip, pommel, and tassel in one array and authorizes only this private
+  common candidate.
+- Identity and motion: broad chipped steel cleaver, heavy spine, one teal core,
+  hooked edge, rust claw guard, wine grip, pommel, and short tassel. Idle pulses
+  the core; Walk uses four hover phases; Attack braces, raises, drives one
+  body-owned cleave, and recovers. Hurt is white recoil then colored brace.
+  Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2.
+- Frozen digest:
+  `6aba171cd7960766078e0fefd6e08cda2313d9f1b8e110d74ad4e78325d58a46`.
+  PNG hashes are `9eb25986...d209`, `284df632...8889`, and
+  `1d2cfd7d...9530`; GIF hashes are `f8c13d15...a22c` and
+  `cc08c221...37ce`.
+- Focused 80-frame gate passes with 80/80 connected, bounded, and hovering,
+  54/54 readable core views, public 80/259, and approved predecessor pixels
+  exact. `check:fast` passes in 60.4s and full `check` in 110.3s with all 232
+  fixtures unchanged.
+- Approval gate: do not commit or push, register, generate fixtures, add child
+  assets or effects, begin later Living Weapon roles or EN-E09, release, accept
+  drift, or open a PR before explicit approval of this exact packet.
+
 #### Possessed Mask Threnecrown Hierophant elite approved and published
 
 - Gate ID: `en-e08-possessed-mask-threnecrown-hierophant-full-v1`; status
