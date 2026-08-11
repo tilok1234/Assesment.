@@ -288,7 +288,24 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current approved EN-E07 publication checkpoint (2026-08-11): common Kelpie Miremane
+Current isolated EN-E07 art checkpoint (2026-08-11): specialist Kelpie
+Drownbridle Stalker on `codex/en-e07-kelpie-drownbridle-stalker` is based
+exactly on clean published Miremane Courser reconciliation
+`f143de1fadf3b812f3968d930acf6451e926388d`. Its 203-274-pixel forward-heavy
+high-crested equine form is frozen at digest
+`d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`.
+All 80 frames are connected, bounded, grounded, retain four separated hoof
+runs and specialist spans, and are pixel/alpha distinct from approved Miremane
+Courser and Steppe Hunter plus public Dire Wolf; 72/72 colored frames, 8/8
+exact white flashes, 54/54 expected eye-bearing views, and 54/54 readable
+muzzle views pass. The focused gate passes in 0.7s, `check:fast` in 53.2s, and
+full `check` in 104.7s, with public 80/259 and all 232 fixtures exact. The exact three frozen PNGs are open together in Aseprite at
+IDs 19, 23, and 27. This candidate is awaiting visual approval and is not
+committed, pushed, registered, fixture-generated, or public. Approval is
+required before publication; the elite Kelpie, runtime copying, effects,
+release, and EN-E08 remain closed.
+
+Approved preceding EN-E07 publication checkpoint (2026-08-11): common Kelpie Miremane
 Courser on `codex/en-e07-kelpie-miremane-courser` is based exactly on clean
 published Manyfold Usurper reconciliation
 `6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Its 166-221-pixel low lean
@@ -312,9 +329,9 @@ digest above. Exact implementation
 `8fb53e961247da875814593feb132182648f9e48` plus initial handoff
 `ae532a17e92c3a7b0b99ccd3c938f8174f102dd6` are published and remote-verified.
 This reconciliation completes the bounded tuple. The candidate
-remains unregistered and fixture-free. No next Kelpie role is authorized;
-runtime copying, effects, release, and EN-E08 remain closed until another
-`lets do next`.
+remains unregistered and fixture-free. The designer's later `lets do next`
+opened only the private Drownbridle Stalker checkpoint above; runtime copying,
+effects, release, and EN-E08 remain closed.
 
 Approved preceding EN-E07 publication checkpoint (2026-08-11): elite Changeling
 Manyfold Usurper on `codex/en-e07-changeling-manyfold-usurper` is based exactly

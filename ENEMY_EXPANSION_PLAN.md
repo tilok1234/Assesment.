@@ -13,7 +13,28 @@
   EN-E07, effects, fixture regeneration, and release remain outside that
   published integration. All 232 legacy fixtures remain unchanged.
 
-- Current approved publication checkpoint (2026-08-11): private common Kelpie Miremane
+- Current isolated art checkpoint (2026-08-11): private specialist Kelpie
+  Drownbridle Stalker on `codex/en-e07-kelpie-drownbridle-stalker` is frozen at
+  digest `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`
+  from clean published Miremane Courser reconciliation
+  `f143de1fadf3b812f3968d930acf6451e926388d`. The 203-274-pixel suite passes
+  80/80 connected, bounded, grounded, four-separated-hoof, specialist-span,
+  hard-alpha, alias, mirror, and pixel/alpha distinctions from approved
+  Miremane Courser and Steppe Hunter plus public Dire Wolf. Its independently
+  authored forward-heavy form uses a high arched neck, hooked readable muzzle,
+  connected block crest and ochre reed bridle, deep wedge chest, short barrel,
+  four separated fetlocked legs over dark grounded hooves, and a connected
+  ropeweed tail. The packet passes 72/72 colored frames, 8/8 exact white
+  flashes, 54/54 expected eye-bearing views, and 54/54 readable muzzle views;
+  Complete B adds 9,789 pixels and Form changes 6,465. The focused gate passes
+  in 0.7s, `check:fast` in 53.2s, and full `check` in 104.7s, with public
+  80/259 and all 232 fixtures exact. The exact raw, Complete
+  B + Form, and comparison PNGs are open together in Aseprite at IDs 19, 23,
+  and 27. This exact packet is awaiting visual approval and is not committed,
+  pushed, registered, fixture-generated, or public. Do not begin the elite
+  Kelpie, runtime copying, effects, release, or EN-E08.
+
+- Approved preceding publication checkpoint (2026-08-11): private common Kelpie Miremane
   Courser on `codex/en-e07-kelpie-miremane-courser` is frozen at digest
   `6efd596731a468be7647ee37f048046072bad289f209926e4db862cb63b01f32`
   from clean published Manyfold Usurper reconciliation
@@ -38,9 +59,9 @@
   `8fb53e961247da875814593feb132182648f9e48` plus initial handoff
   `ae532a17e92c3a7b0b99ccd3c938f8174f102dd6` are published and remote-verified.
   This reconciliation completes the bounded tuple. The candidate
-  remains unregistered, fixture-free, and non-public. No next Kelpie role is
-  authorized; runtime copying, effects, release, and EN-E08 remain closed until
-  another `lets do next`.
+  remains unregistered, fixture-free, and non-public. The designer's later
+  `lets do next` opened only the private Drownbridle Stalker checkpoint above;
+  runtime copying, effects, release, and EN-E08 remain closed.
 
 - Approved preceding publication checkpoint (2026-08-11): private elite Changeling Manyfold
   Usurper on `codex/en-e07-changeling-manyfold-usurper` is frozen at digest
@@ -3687,7 +3708,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser approved and published; no next art candidate active`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser approved and published; private specialist Kelpie Drownbridle Stalker implemented and awaiting visual approval`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4487,16 +4508,77 @@ assembler.
   `8fb53e961247da875814593feb132182648f9e48` plus initial handoff
   `ae532a17e92c3a7b0b99ccd3c938f8174f102dd6` are published and remote-verified
   under the standing bounded publication permission. This reconciliation
-  completes the bounded tuple; no later Kelpie role is authorized.
+  completes the bounded tuple. The designer's later `lets do next` opens only
+  the Drownbridle Stalker specialist checkpoint below.
 - Scope firewall: no registration, public facade or catalog change, fixtures,
   manifest, shared renderer, exporter, validator, frame-contract change,
   runtime copying, alternate body, rider, saddle, horn, detached water, glow,
   particles, projectile, effects, later Kelpie role, release, EN-E08, or
   accepted drift.
-- Required next action: stop at this clean published checkpoint. Do not register
-  Kelpie, generate fixtures, add runtime
-  copying or effects, begin another Kelpie role, release, or advance EN-E08
-  without a separate `lets do next`.
+- Historical next action: preserve this tuple byte-for-byte. The later `lets do
+  next` opens only the private specialist checkpoint below. Do not register
+  Kelpie, generate fixtures, add runtime copying or effects, begin the elite,
+  release, or advance EN-E08.
+
+#### Kelpie Drownbridle Stalker complete suite awaiting visual approval
+
+- Gate ID: `en-e07-kelpie-drownbridle-stalker-full-v1`; status:
+  `implemented-awaiting-review` on
+  `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean,
+  remote-verified Miremane Courser reconciliation
+  `f143de1fadf3b812f3968d930acf6451e926388d`.
+- Authorization: after the exact Miremane Courser was visually approved,
+  committed, pushed, and reconciled, the designer replied `lets do next` on
+  2026-08-11. That opens only this one private specialist Kelpie candidate; the
+  elite remains deferred.
+- Contract: a forward-heavy authored equine with a high arched neck, long
+  hooked readable muzzle, connected block crest mane, connected ochre reed
+  bridle, deep wedge chest, short powerful barrel, four separated fetlocked
+  legs over four grounded dark hooves, and one thick connected ropeweed tail.
+  It does not use a Centaur torso or rider, spear or saddle, Unicorn horn or
+  crown, Wolf or Crocodile anatomy, skeleton gaps, armor plates, a copied mount,
+  loose reins, detached water, glow, particles, projectiles, or effects.
+- Motion: Idle raises and settles the crest while the bridle tightens; Walk
+  uses four stalking diagonal hoof phases; Attack coils the high neck, lowers
+  the hooked bridled muzzle, drives one connected chest-and-muzzle ram, and
+  recovers. Hurt is exact white recoil then a colored wide four-hoof brace.
+  Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2.
+- Frozen evidence: raw PNG
+  `3fc970d3ffc5c33b11ec8a4d563f8684650d6548288a62dbc9191259edc75561`;
+  Complete B + Form PNG
+  `80a09e7a2062d0a34fc9aa906ef39218866afee461952805f2689a8fe3bdd0bf`;
+  Miremane Courser/Steppe Hunter/Dire Wolf comparison PNG
+  `3c7f0d4702dcd10c1f905b51717baabf3844a4d4b70e0c17736ecfa799ff51ff`;
+  raw GIF
+  `4b48a5454b1aabdc691578715e35b961b4a896fc9d1be9e37dfc901e17c7ca21`;
+  Complete B + Form GIF
+  `18795cb0c27078a180f7044c228b5542ad100cb62b1ad8d0ccd749e5865e7781`;
+  candidate digest
+  `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`.
+- Focused validation: 80/80 candidate frames are connected, bounded,
+  grounded, retain four separated hoof runs and high-crested specialist spans,
+  and are pixel/alpha distinct from all three protected comparisons; opaque
+  range 203-274; 72/72 colored palette frames; 8/8 exact white flashes; 54/54
+  expected eye-bearing views; 54/54 readable muzzle views; Complete B adds
+  9,789 pixels and Form changes 6,465. Approved Miremane Courser and Steppe
+  Hunter plus public Dire Wolf remain exact; public 80/259 and fixtures are
+  unchanged.
+- Broad validation: the frozen focused gate passed in 0.7s,
+  `npm.cmd run check:fast` passed in 53.2s, and full `npm.cmd run check` passed
+  in 104.7s with public 80/259 and all 232 fixture sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and family
+  comparison PNGs are open together in Aseprite at IDs 19, 23, and 27. The
+  face, one-cell crown margin, bridle overlap, and profile eye were corrected
+  before freeze.
+- Scope firewall: no commit or push before visual approval; no registration,
+  public facade or catalog change, fixtures, manifest, shared renderer,
+  exporter, validator, frame-contract change, runtime copying, alternate body,
+  rider, saddle, horn, detached water, glow, particles, projectile, effects,
+  elite Kelpie, release, EN-E08, or accepted drift.
+- Required next action: inspect and approve or reject only the exact frozen
+  digest above. If approved, the standing bounded publication permission covers
+  the implementation, approval record, reconciliation, and branch push. It
+  does not open any excluded gate.
 
 ### EN-E08 - Possessed equipment
 

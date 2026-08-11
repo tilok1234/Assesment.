@@ -107,7 +107,30 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved art publication checkpoint:
+- Current private art approval checkpoint:
+  `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean published
+  Miremane Courser reconciliation
+  `f143de1fadf3b812f3968d930acf6451e926388d`, contains one private specialist
+  Kelpie Drownbridle Stalker candidate. Its frozen 80-frame digest is
+  `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`.
+  The forward-heavy form uses a high arched neck, hooked readable muzzle,
+  connected block crest and ochre reed bridle, deep chest, short barrel, four
+  separated fetlocked legs and grounded dark hooves, and a connected ropeweed
+  tail. All 80 frames are connected, bounded, grounded, preserve four hoof runs
+  and specialist spans, and differ in pixels and alpha from approved Miremane
+  Courser and Steppe Hunter plus public Dire Wolf. The packet passes 72/72
+  colored frames, 8/8 exact white flashes, 54/54 expected eye-bearing views,
+  54/54 readable muzzle views, exact aliases and mirrors, public 80/259, and
+  unchanged fixtures. The focused gate passes in 0.7s, `check:fast` in 53.2s,
+  and full `check` in 104.7s. The exact raw, Complete B + Form, and comparison PNGs are
+  open together in Aseprite at IDs 19, 23, and 27. Run
+  `npm.cmd run review:enemy-expansion-en-e07-kelpie-drownbridle-stalker` and
+  `npm.cmd run check:enemy-expansion-en-e07-kelpie-drownbridle-stalker`.
+  This exact candidate is awaiting visual approval and is not committed,
+  pushed, registered, fixture-generated, or public. Approval is required before
+  publication; the elite Kelpie, runtime copying, effects, release, and EN-E08
+  remain closed.
+- Approved preceding art publication checkpoint:
   `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
   Manyfold Usurper reconciliation
   `6ddef83e03e983672bee39b6b484dd1c1bfcba01`, contains one private common
@@ -137,9 +160,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `8fb53e961247da875814593feb132182648f9e48` plus initial handoff
   `ae532a17e92c3a7b0b99ccd3c938f8174f102dd6` are published and remote-verified.
   This reconciliation completes the bounded tuple. The candidate
-  remains unregistered, fixture-free, and non-public. No next Kelpie role is
-  authorized; runtime copying, effects, release, and EN-E08 remain separate
-  closed gates until another `lets do next`.
+  remains unregistered, fixture-free, and non-public. The designer's later
+  `lets do next` opens only the private Drownbridle Stalker checkpoint above;
+  runtime copying, effects, release, and EN-E08 remain separate closed gates.
 - Approved preceding art publication checkpoint:
   `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean published
   Mirrorfold Harrier reconciliation

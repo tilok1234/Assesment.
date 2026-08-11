@@ -23,7 +23,67 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Miremane Courser Published and Reconciled
+## Immediate Continuation Checkpoint - Drownbridle Stalker Awaiting Visual Approval
+
+Start here in a new task. One private specialist Kelpie Drownbridle Stalker is
+implemented, deterministic, hash-frozen, technically validated, and open for
+visual approval on `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on
+the clean published Miremane Courser reconciliation
+`f143de1fadf3b812f3968d930acf6451e926388d`. It is not visually approved,
+committed, pushed, registered, fixture-generated, or public.
+
+- Gate ID: `en-e07-kelpie-drownbridle-stalker-full-v1`; status:
+  `implemented-awaiting-review`.
+- Authorization: after Miremane Courser was approved, published, and
+  reconciled, the designer replied `lets do next` on 2026-08-11. The frozen
+  Kelpie role order opens only this one private specialist candidate; the elite
+  remains deferred.
+- Frozen identity: a forward-heavy specialist equine with a high arched neck,
+  long hooked readable muzzle, connected block crest mane, connected ochre reed
+  bridle, deep wedge chest, short powerful barrel, four separated fetlocked
+  legs over four dark grounded hooves, and one thick connected ropeweed tail.
+  It does not use a Centaur torso or rider, spear or saddle, Unicorn horn or
+  crown, Wolf anatomy, Crocodile anatomy, skeleton gaps, armor plates, a copied
+  mount, loose reins, or detached water effects.
+- Motion: Idle raises and settles the crest while the bridle tightens; Walk
+  uses four stalking diagonal hoof phases; Attack coils the high neck, lowers
+  the hooked bridled muzzle, drives one connected chest-and-muzzle ram, and
+  recovers. Cast aliases Attack exactly. Hurt is one exact white recoil followed
+  by a colored wide four-hoof brace; Death aliases Hurt H1,H2,H2,H2.
+- Candidate digest:
+  `d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`.
+- Raw/no-outline PNG SHA-256:
+  `3fc970d3ffc5c33b11ec8a4d563f8684650d6548288a62dbc9191259edc75561`.
+- Complete B + Form PNG SHA-256:
+  `80a09e7a2062d0a34fc9aa906ef39218866afee461952805f2689a8fe3bdd0bf`.
+- Miremane Courser/Steppe Hunter/Dire Wolf comparison PNG SHA-256:
+  `3c7f0d4702dcd10c1f905b51717baabf3844a4d4b70e0c17736ecfa799ff51ff`.
+- Raw GIF SHA-256:
+  `4b48a5454b1aabdc691578715e35b961b4a896fc9d1be9e37dfc901e17c7ca21`.
+- Complete B + Form GIF SHA-256:
+  `18795cb0c27078a180f7044c228b5542ad100cb62b1ad8d0ccd749e5865e7781`.
+- Focused validation: 80/80 frames are connected, one-cell bounded, grounded,
+  preserve four separated hoof runs and high-crested specialist spans, and
+  differ in pixels and alpha from approved Miremane Courser and Steppe Hunter
+  plus public Dire Wolf. The opaque range is 203-274, with 72/72 colored
+  frames, 8/8 exact white flashes, 54/54 expected eye-bearing views, and 54/54
+  readable muzzle views. Complete B adds 9,789 pixels and Form changes 6,465.
+  The protected comparison digests, public 80/259, and fixtures remain exact.
+- Broad validation: the frozen focused gate passed in 0.7s,
+  `npm.cmd run check:fast` passed in 53.2s, and full `npm.cmd run check` passed
+  in 104.7s with public 80/259 and all 232 fixture sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and comparison
+  PNGs are open together in Aseprite at IDs 19, 23, and 27. The face, one-cell
+  crown margin, bridle overlap, and profile eye were corrected before freeze.
+- Commands:
+  `npm.cmd run review:enemy-expansion-en-e07-kelpie-drownbridle-stalker` and
+  `npm.cmd run check:enemy-expansion-en-e07-kelpie-drownbridle-stalker`.
+- Required next action: inspect and approve or reject only the exact digest
+  above. Do not commit or push the candidate before visual approval. Do not
+  register Kelpie, generate fixtures, add runtime copying or effects, begin the
+  elite Kelpie, release, or advance EN-E08.
+
+## Approved Preceding Checkpoint - Miremane Courser Published and Reconciled
 
 Start here in a new task. One private common Kelpie Miremane Courser is
 implemented, deterministic, hash-frozen, technically validated, and visually
@@ -98,10 +158,10 @@ fixture-free, and non-public.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-kelpie-miremane-courser` and
   `npm.cmd run check:enemy-expansion-en-e07-kelpie-miremane-courser`.
-- Required next action: stop at this clean published checkpoint. No next Kelpie
-  role is authorized. Do not register Kelpie,
-  generate fixtures, implement runtime copying, add effects, start another
-  Kelpie role, release, or advance EN-E08 without a separate `lets do next`.
+- Historical next action: preserve this tuple byte-for-byte. The designer's
+  later `lets do next` opened only the private Drownbridle Stalker specialist
+  checkpoint above. Do not register Kelpie, generate fixtures, implement
+  runtime copying, add effects, start the elite, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Manyfold Usurper Published and Reconciled
 

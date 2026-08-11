@@ -1472,7 +1472,31 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Miremane Courser is the current approved private common Kelpie publication checkpoint on
+Drownbridle Stalker is the current private specialist Kelpie visual-approval
+checkpoint on `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean
+published Miremane Courser reconciliation
+`f143de1fadf3b812f3968d930acf6451e926388d`. Its forward-heavy form uses a high
+arched neck, hooked readable muzzle, connected block crest and ochre reed
+bridle, deep wedge chest, short barrel, four separated fetlocked legs over dark
+grounded hooves, and a connected ropeweed tail. Run
+`npm.cmd run review:enemy-expansion-en-e07-kelpie-drownbridle-stalker` for the
+raw, Complete B + Form, Miremane/Steppe/Dire comparison, and paired GIFs; run
+`npm.cmd run check:enemy-expansion-en-e07-kelpie-drownbridle-stalker` for the
+focused contract gate. The frozen digest is
+`d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`:
+80/80 frames are connected, bounded, grounded, preserve four separated hoof
+runs and high-crested specialist spans, and differ in pixels and alpha from all
+three protected comparisons. The opaque range is 203-274, all 72 colored
+frames preserve the four palette groups, all eight flashes are exact white,
+and all 54 expected eye-bearing views retain readable muzzles. The focused
+gate passes in 0.7s, `check:fast` in 53.2s, and full `check` in 104.7s, with
+public 80/259 and all 232 fixtures exact. The exact raw,
+Complete B + Form, and comparison PNGs are open together in Aseprite at IDs 19,
+23, and 27. This exact packet is awaiting visual approval and is not committed,
+pushed, registered, fixture-generated, or public. Do not begin the elite
+Kelpie, runtime copying, effects, release, or EN-E08.
+
+Miremane Courser is the approved preceding private common Kelpie publication checkpoint on
 `codex/en-e07-kelpie-miremane-courser`, based exactly on clean published
 Manyfold Usurper reconciliation
 `6ddef83e03e983672bee39b6b484dd1c1bfcba01`. Its low lean waterlogged equine
@@ -1503,9 +1527,9 @@ to the frozen digest above. Exact implementation
 `8fb53e961247da875814593feb132182648f9e48` plus initial handoff
 `ae532a17e92c3a7b0b99ccd3c938f8174f102dd6` are published and remote-verified.
 This reconciliation completes the bounded tuple. It remains
-unregistered and fixture-free. No next Kelpie role is authorized; runtime
-copying, effects, release, and EN-E08 remain closed until another `lets do
-next`.
+unregistered and fixture-free. The designer's later `lets do next` opened only
+the Drownbridle Stalker checkpoint above; runtime copying, effects, release,
+and EN-E08 remain closed.
 
 Manyfold Usurper is the approved preceding elite Changeling publication checkpoint on
 `codex/en-e07-changeling-manyfold-usurper`, based exactly on clean published

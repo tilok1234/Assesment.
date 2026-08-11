@@ -1277,9 +1277,38 @@ designer approved the exact digest on 2026-08-11; implementation
 `8fb53e961247da875814593feb132182648f9e48` plus initial handoff
 `ae532a17e92c3a7b0b99ccd3c938f8174f102dd6` are published and remote-verified.
 This reconciliation completes the bounded tuple. The
-candidate remains unregistered, fixture-free, and non-public. No next Kelpie
-role is authorized; later roles, release, and EN-E08 remain separate until
-another `lets do next`.
+candidate remains unregistered, fixture-free, and non-public. The designer's
+later `lets do next` opens only the isolated specialist boundary below; later
+roles, release, and EN-E08 remain separate.
+
+`engine/enemy-expansion-en-e07-kelpie-drownbridle-stalker.js` is the isolated
+specialist Kelpie boundary. It imports only the stable 24x24 expansion contract
+and the published Miremane Courser contract/gate, owns one private
+family/variant registry, and is not imported by `sprite-engine.js`, the public
+expansion registry, selectors, persistence, packs, or fixture tooling. Its
+independently authored forward-heavy equine uses a high arched neck, hooked
+readable muzzle, connected block crest and reed bridle, deep wedge chest, short
+barrel, four separated fetlocked legs over four dark grounded hooves, and one
+connected ropeweed tail. The renderer owns 80 hard-alpha frames with exact
+Cast-to-Attack and Death-to-Hurt aliases. Riders, horns, Wolf or Crocodile
+anatomy, skeleton gaps, armor, copied mounts, runtime copying, loose reins,
+detached water, glow, particles, projectiles, and effects remain external. The
+review/checker/GIF boundaries are
+`tools/enemy-expansion-en-e07-kelpie-drownbridle-stalker-review.mjs`,
+`tools/check-enemy-expansion-en-e07-kelpie-drownbridle-stalker.mjs`, and
+`tools/build-enemy-expansion-en-e07-kelpie-drownbridle-stalker-gifs.py`.
+Candidate digest
+`d8cbbfef97b63590e6a63335a6b241e742d87f4df5e7443933c5484ef849224b`
+passes 80/80 connected, bounded, grounded, four-hoof-row, specialist-span, and
+pixel/alpha distinctions from approved Miremane Courser and Steppe Hunter plus
+public Dire Wolf. The opaque range is 203-274; 72/72 colored frames, 8/8 exact
+white flashes, 54/54 expected eye-bearing views, and 54/54 readable muzzle
+views pass. The focused gate passes in 0.7s, `check:fast` in 53.2s, and full
+`check` in 104.7s, with public 80/259 and all 232 fixtures exact. The exact
+three PNGs are open in Aseprite at IDs 19, 23, and 27.
+This boundary is hash-frozen but awaiting visual approval and is not committed,
+pushed, registered, fixture-generated, or public. The elite Kelpie, release,
+and EN-E08 remain separate.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
