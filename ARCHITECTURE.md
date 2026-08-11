@@ -1363,8 +1363,10 @@ full suite at 117.5s and public 80/259 plus all 232 fixtures exact. The designer
 replied `ok lets do next`; implementation
 `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the accepted pixels. That
 implementation and approval record `08538ac2d90d186c6550bcc139c2234023ec9c9d`
-are remote verified; only bounded handoff reconciliation remains. It stays
-unregistered, fixture-free, effect-free, and non-public.
+are remote verified. Initial published handoff
+`64f21886c43245f1c85820b0c91a1f8ff31686dc` is also remote verified; this
+reconciliation completes the bounded publication tuple. It stays unregistered,
+fixture-free, effect-free, and non-public.
 
 `engine/enemy-expansion-en-e08-living-weapon-vowcoil-glaive.js` extends the
 private Living Weapon family without changing decision

@@ -114,8 +114,8 @@ export const EN_E08_CROWNMAW_GREATBLADE_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: '2ec77b0595d74d6765503b2ebd2bb366f53d4ffe',
   publishedApprovalRecord: '08538ac2d90d186c6550bcc139c2234023ec9c9d',
-  initialPublishedHandoff: null,
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '64f21886c43245f1c85820b0c91a1f8ff31686dc',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E08_VOWCOIL_GLAIVE_GATE.id,
     artifactSha256: EN_E08_VOWCOIL_GLAIVE_GATE.artifactSha256,
@@ -189,7 +189,7 @@ export const EN_E08_CROWNMAW_GREATBLADE_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Crownmaw Greatblade implementation 2ec77b0595d74d6765503b2ebd2bb366f53d4ffe and approval record 08538ac2d90d186c6550bcc139c2234023ec9c9d are remote verified. Only the initial published handoff and final reconciliation remain open. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate; do not infer EN-E09 authorization from this approval. Registration, fixtures, child assets, effects, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Crownmaw Greatblade implementation 2ec77b0595d74d6765503b2ebd2bb366f53d4ffe, approval record 08538ac2d90d186c6550bcc139c2234023ec9c9d, and initial published handoff 64f21886c43245f1c85820b0c91a1f8ff31686dc are remote verified; this reconciliation completes the bounded publication tuple. Inspect the live roadmap and stop at its next explicit decision gate; do not infer EN-E09 authorization from this approval. Registration, fixtures, child assets, effects, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E08_CROWNMAW_GREATBLADE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

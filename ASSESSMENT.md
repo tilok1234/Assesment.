@@ -481,8 +481,9 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   fixtures exact. The designer replied `ok lets do next`; implementation
   `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the accepted pixels. The
   implementation and approval record
-  `08538ac2d90d186c6550bcc139c2234023ec9c9d` are remote verified; only the
-  initial published handoff and final reconciliation remain. It is
+  `08538ac2d90d186c6550bcc139c2234023ec9c9d` are remote verified. Initial
+  published handoff `64f21886c43245f1c85820b0c91a1f8ff31686dc` is also remote
+  verified; this reconciliation completes the bounded publication tuple. It is
   unregistered, fixture-free, effect-free, and non-public.
   The approved preceding private checkpoint is specialist Living Weapon Vowcoil Glaive on
   `codex/en-e08-living-weapon-specialist`, based on clean published Oathbite

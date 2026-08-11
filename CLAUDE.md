@@ -119,9 +119,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   when the designer replied `ok lets do next`; implementation
   `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the accepted pixels. It is
   approved; the implementation and approval record
-  `08538ac2d90d186c6550bcc139c2234023ec9c9d` are remote verified. Only the
-  initial published handoff and final reconciliation remain. After clean remote
-  reconciliation, inspect the live roadmap and stop at its next decision gate; do not infer
+  `08538ac2d90d186c6550bcc139c2234023ec9c9d` are remote verified. Initial
+  published handoff `64f21886c43245f1c85820b0c91a1f8ff31686dc` is also remote
+  verified; this reconciliation completes the bounded publication tuple.
+  Inspect the live roadmap and stop at its next decision gate; do not infer
   EN-E09 authorization. Registration, fixtures, effects, child assets, release,
   accepted drift, and a PR remain closed.
 - Approved preceding published private art checkpoint: specialist Living Weapon Vowcoil Glaive on

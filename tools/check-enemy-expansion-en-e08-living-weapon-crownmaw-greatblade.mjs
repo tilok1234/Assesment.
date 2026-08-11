@@ -120,8 +120,8 @@ check(
     && EN_E08_CROWNMAW_GREATBLADE_GATE.approvedImplementation === '2ec77b0595d74d6765503b2ebd2bb366f53d4ffe'
     && EN_E08_CROWNMAW_GREATBLADE_GATE.publishedImplementation === '2ec77b0595d74d6765503b2ebd2bb366f53d4ffe'
     && EN_E08_CROWNMAW_GREATBLADE_GATE.publishedApprovalRecord === '08538ac2d90d186c6550bcc139c2234023ec9c9d'
-    && EN_E08_CROWNMAW_GREATBLADE_GATE.initialPublishedHandoff === null
-    && EN_E08_CROWNMAW_GREATBLADE_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E08_CROWNMAW_GREATBLADE_GATE.initialPublishedHandoff === '64f21886c43245f1c85820b0c91a1f8ff31686dc'
+    && EN_E08_CROWNMAW_GREATBLADE_GATE.publicationState === 'published'
     && EN_E08_CROWNMAW_GREATBLADE_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Crownmaw Greatblade approval state or bounded publication authorization drifted',
 );
@@ -160,7 +160,8 @@ check(
 check(
   EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('implementation 2ec77b0595d74d6765503b2ebd2bb366f53d4ffe')
     && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('approval record 08538ac2d90d186c6550bcc139c2234023ec9c9d')
-    && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
+    && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('initial published handoff 64f21886c43245f1c85820b0c91a1f8ff31686dc')
+    && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('completes the bounded publication tuple')
     && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('inspect the live roadmap')
     && EN_E08_CROWNMAW_GREATBLADE_GATE.nextGate.includes('do not infer EN-E09 authorization'),
   'Crownmaw Greatblade stop gate drifted',

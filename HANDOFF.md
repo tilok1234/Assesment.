@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Crownmaw Greatblade Awaiting Handoff Reconciliation
+## Immediate Continuation Checkpoint - Crownmaw Greatblade Published
 
 Start here. Vowcoil Glaive's bounded publication tuple is clean and remote
 verified at `7bdb09e95d47c6213e2387124c305f78b0b486d1`. The designer replied
@@ -33,9 +33,10 @@ gate. Crownmaw Greatblade is implemented on
 `ok lets do next`; implementation
 `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the exact accepted pixels.
 Implementation `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` and approval record
-`08538ac2d90d186c6550bcc139c2234023ec9c9d` are remote verified. Only the
-initial published handoff and final reconciliation remain. It stays
-unregistered, fixture-free, effect-free, and non-public.
+`08538ac2d90d186c6550bcc139c2234023ec9c9d` are remote verified. Initial
+published handoff `64f21886c43245f1c85820b0c91a1f8ff31686dc` is also remote
+verified; this reconciliation completes the bounded publication tuple. It
+stays unregistered, fixture-free, effect-free, and non-public.
 
 - Identity: broad symmetrical ash-steel execution blade with three ivory crown
   prongs, an old-gold toothed jaw guard, connected crimson slit core, short
@@ -72,9 +73,9 @@ unregistered, fixture-free, effect-free, and non-public.
   silhouette-comparison PNGs were open together in Aseprite when the designer
   replied `ok lets do next`. Approval applies only to this digest and five
   hashes.
-- Publication gate: the implementation and approval record are remote verified;
-  only the initial published handoff and final reconciliation remain. After
-  clean remote reconciliation, inspect
+- Publication gate: the implementation, approval record, and initial handoff
+  are remote verified; this reconciliation completes the bounded publication
+  tuple. Inspect
   the live roadmap and stop at its next explicit decision gate; do not infer
   EN-E09 authorization. Registration, fixtures, child assets, effects, release,
   accepted drift, and a PR remain closed.
