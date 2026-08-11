@@ -113,11 +113,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.
   It is one baked broad crown-blade/jaw-guard/crimson-slit-core/short-grip/
   forked-pommel actor with zero child assets. The focused gate passes; fast/full
-  validation passes in 61.0s/114.0s with public 80/259 and all 232 fixtures
-  exact. It awaits explicit visual approval and remains uncommitted. Do not
-  register, generate fixtures, add effects or child assets, begin EN-E09,
-  release, accept drift, commit, push, or open a PR without a new explicit
-  decision.
+  validation passes in 61.0s/114.0s before approval metadata; approval-local
+  focused/fast/full gates also pass, with the full suite at 117.5s and public
+  80/259 plus all 232 fixtures exact. The exact packet was open together in Aseprite
+  when the designer replied `ok lets do next`; implementation
+  `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the accepted pixels. It is
+  approved and awaiting bounded publication. After clean remote reconciliation,
+  inspect the live roadmap and stop at its next decision gate; do not infer
+  EN-E09 authorization. Registration, fixtures, effects, child assets, release,
+  accepted drift, and a PR remain closed.
 - Approved preceding published private art checkpoint: specialist Living Weapon Vowcoil Glaive on
   `codex/en-e08-living-weapon-specialist`, based exactly on clean published
   Oathbite reconciliation `870bf042e4d7604fec6f33ba3ba6b03308204ee2`, is frozen

@@ -102,20 +102,20 @@ export const EN_E08_CROWNMAW_GREATBLADE_DATA = deepFreeze({
 
 export const EN_E08_CROWNMAW_GREATBLADE_GATE = deepFreeze({
   id: 'en-e08-living-weapon-crownmaw-greatblade-full-v1',
-  status: 'implemented-awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '7bdb09e95d47c6213e2387124c305f78b0b486d1',
   authorizedOn: '2026-08-12',
   authorizationEvidence: 'The exact Vowcoil Glaive packet was presented and the designer replied: approved lets do next. Its bounded publication tuple was reconciled at clean remote-verified checkpoint 7bdb09e95d47c6213e2387124c305f78b0b486d1. Vowcoil completed the specialist role, so the one-complete-sprite cadence authorizes only one private elite Living Weapon Crownmaw Greatblade 80-frame art candidate under the approved baked-single-actor topology. Registration, fixtures, child assets, effects, EN-E09, release, and a pull request remain closed.',
   architectureDecision: EN_E08_LIVING_WEAPON_TOPOLOGY_DECISION.id,
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-12',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the public Fallen Knight Shieldbearer plus approved Crownvault Castellan, Oathbite Cleaver, and Vowcoil Glaive silhouette comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in Aseprite. The designer replied: ok lets do next. In context this explicitly approves candidate digest a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44 and its five frozen review hashes only. The reply authorizes bounded publication under standing permission but does not by itself open EN-E09, registration, fixtures, child assets, effects, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: '2ec77b0595d74d6765503b2ebd2bb366f53d4ffe',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-approved',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E08_VOWCOIL_GLAIVE_GATE.id,
     artifactSha256: EN_E08_VOWCOIL_GLAIVE_GATE.artifactSha256,
@@ -189,7 +189,7 @@ export const EN_E08_CROWNMAW_GREATBLADE_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Stop for explicit visual approval or rejection of the exact Crownmaw Greatblade digest and five frozen review hashes. Do not commit, publish, register, generate fixtures, add child assets or effects, begin EN-E09, release, accept drift, or open a pull request without a new explicit decision.',
+  nextGate: 'The exact Crownmaw Greatblade packet is visually approved at implementation 2ec77b0595d74d6765503b2ebd2bb366f53d4ffe. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate; do not infer EN-E09 authorization from this approval. Registration, fixtures, child assets, effects, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E08_CROWNMAW_GREATBLADE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

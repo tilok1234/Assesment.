@@ -1357,9 +1357,13 @@ reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1`, it owns exactly one
 elite broad crown-blade/jaw-guard/crimson-slit-core/short-grip/forked-pommel
 actor with zero child assets in every frame. Candidate digest
 `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`
-passes its focused gate, `check:fast` in 61.0s, and full `check` in 114.0s with
-public 80/259 and all 232 fixtures exact. It awaits explicit visual approval and
-remains unregistered, fixture-free, effect-free, uncommitted, and non-public.
+passes its focused gate, `check:fast` in 61.0s, and full `check` in 114.0s before
+approval metadata; approval-local focused/fast/full gates also pass, with the
+full suite at 117.5s and public 80/259 plus all 232 fixtures exact. The designer
+replied `ok lets do next`; implementation
+`2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the accepted pixels. It is
+approved and awaiting bounded publication, and remains unregistered,
+fixture-free, effect-free, and non-public.
 
 `engine/enemy-expansion-en-e08-living-weapon-vowcoil-glaive.js` extends the
 private Living Weapon family without changing decision

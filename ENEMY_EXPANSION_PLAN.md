@@ -4706,10 +4706,10 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
-#### Living Weapon Crownmaw Greatblade elite awaiting visual approval
+#### Living Weapon Crownmaw Greatblade elite approved awaiting publication
 
 - Gate ID: `en-e08-living-weapon-crownmaw-greatblade-full-v1`; status
-  `implemented-awaiting-visual-approval` on
+  `approved-not-published` on
   `codex/en-e08-living-weapon-elite`, based exactly on published Vowcoil
   reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1`.
 - Authorization: the exact Vowcoil packet was approved by `approved lets do
@@ -4726,11 +4726,16 @@ it with incidental per-frame offsets.
   `77eed1d6...f86a`.
 - The focused gate passes 80/80 connected, bounded, hovering, and distinct from
   Vowcoil/Oathbite/Crownvault/Fallen Knight, with 54/54 readable core views.
-  Fast/full validation passes in 61.0s/114.0s with public 80/259 and all 232
-  fixtures unchanged.
-- Stop for explicit visual approval or rejection of this exact packet.
-  Registration, fixtures, child assets, effects, EN-E09, release, accepted
-  drift, commit, push, and a PR remain closed.
+  Fast/full validation passes in 61.0s/114.0s before approval metadata;
+  approval-local focused/fast/full gates also pass, with the full suite at
+  117.5s and public 80/259 plus all 232 fixtures unchanged.
+- Approval: the exact packet was presented and the designer replied `ok lets do
+  next`. Implementation `2ec77b0595d74d6765503b2ebd2bb366f53d4ffe`
+  records the accepted pixels. Standing permission opens only the approval
+  record, branch push, and handoff reconciliation. After clean remote
+  reconciliation, inspect the live roadmap and stop at its next explicit
+  decision gate; do not infer EN-E09 authorization. Registration, fixtures,
+  child assets, effects, release, accepted drift, and a PR remain closed.
 
 #### Living Weapon Vowcoil Glaive specialist approved and published
 

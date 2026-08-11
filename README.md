@@ -1481,11 +1481,15 @@ assets. The exact 80-frame candidate is frozen at digest
 `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.
 Run `npm.cmd run review:enemy-expansion-en-e08-living-weapon-crownmaw-greatblade`
 and `npm.cmd run check:enemy-expansion-en-e08-living-weapon-crownmaw-greatblade`.
-The focused gate passes; fast/full validation passes in 61.0s/114.0s with
-approved Vowcoil/Oathbite/Crownvault, public 80/259, and all 232 fixtures exact.
-It awaits explicit visual approval and remains uncommitted. Registration,
-fixtures, child assets, effects, EN-E09, release, accepted drift, commit, push,
-and a PR remain closed.
+The focused gate passes; fast/full validation passes in 61.0s/114.0s before
+approval metadata. Approval-local focused/fast/full gates also pass, with the
+full suite at 117.5s and approved Vowcoil/Oathbite/Crownvault, public 80/259,
+and all 232 fixtures exact. The designer replied `ok lets do next`; implementation
+`2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the exact accepted pixels.
+It is approved and awaiting bounded publication. After clean remote
+reconciliation, inspect the live roadmap and stop at its next explicit decision
+gate; do not infer EN-E09 authorization. Registration, fixtures, child assets,
+effects, release, accepted drift, and a PR remain closed.
 
 Vowcoil Glaive is the approved preceding private specialist Living Weapon candidate on
 `codex/en-e08-living-weapon-specialist`, based exactly on clean published

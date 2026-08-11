@@ -294,10 +294,15 @@ Vowcoil reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1` and frozen at
 digest `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.
 Its broad crown blade, jaw guard, crimson slit core, short wrapped grip, and
 forked pommel are one baked actor with zero child assets. All 80 frames pass the
-focused gate; fast/full validation passes in 61.0s/114.0s with public 80/259 and
-all 232 fixtures exact. It awaits explicit visual approval and remains
-uncommitted. Registration, fixtures, effects, child assets, EN-E09, release,
-broader publication, accepted drift, commit, push, and a PR remain closed.
+focused gate; fast/full validation passes in 61.0s/114.0s before approval
+metadata. Approval-local focused/fast/full gates also pass, with the full suite
+at 117.5s and public 80/259 plus all 232 fixtures exact. The designer replied
+`ok lets do next`; implementation
+`2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the accepted pixels. It is
+approved and awaiting bounded publication. After clean remote reconciliation,
+inspect the live roadmap and stop at its next explicit decision gate; do not
+infer EN-E09 authorization. Registration, fixtures, effects, child assets,
+release, broader publication, accepted drift, and a PR remain closed.
 
 Approved preceding EN-E08 checkpoint (2026-08-12): specialist Living Weapon Vowcoil
 Glaive on `codex/en-e08-living-weapon-specialist` is based on clean published

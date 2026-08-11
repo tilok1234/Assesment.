@@ -23,14 +23,17 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Crownmaw Greatblade Visual Gate
+## Immediate Continuation Checkpoint - Crownmaw Greatblade Approved Awaiting Publication
 
 Start here. Vowcoil Glaive's bounded publication tuple is clean and remote
 verified at `7bdb09e95d47c6213e2387124c305f78b0b486d1`. The designer replied
 `approved lets do next`, opening exactly one private elite Living Weapon art
-gate. Crownmaw Greatblade is implemented locally and uncommitted on
-`codex/en-e08-living-weapon-elite` across all 80 frames. It remains
-unregistered, fixture-free, effect-free, and non-public.
+gate. Crownmaw Greatblade is implemented on
+`codex/en-e08-living-weapon-elite` across all 80 frames. The designer replied
+`ok lets do next`; implementation
+`2ec77b0595d74d6765503b2ebd2bb366f53d4ffe` records the exact accepted pixels.
+It is visually approved but its approval record and branch are not yet
+published. It remains unregistered, fixture-free, effect-free, and non-public.
 
 - Identity: broad symmetrical ash-steel execution blade with three ivory crown
   prongs, an old-gold toothed jaw guard, connected crimson slit core, short
@@ -57,14 +60,21 @@ unregistered, fixture-free, effect-free, and non-public.
   There are 72/72 colored frames, 8/8 exact white flashes, and 54/54 readable
   core views; opaque range 143-216. Complete B adds 7,080 pixels and Form
   changes 5,518.
-- Broad validation: fast/full validation passes in 61.0s/114.0s. Public 80/259
-  and all 232 fixture sheets remain exact.
+- Broad validation: fast/full validation passes in 61.0s/114.0s before approval
+  metadata; approval-local focused/fast/full gates also pass, with the full
+  suite at 117.5s. Public 80/259 and all 232 fixture sheets remain exact.
 - Commands: `npm.cmd run
   review:enemy-expansion-en-e08-living-weapon-crownmaw-greatblade` and
   `npm.cmd run check:enemy-expansion-en-e08-living-weapon-crownmaw-greatblade`.
-- Visual gate: stop for explicit approval or rejection of this exact digest and
-  five hashes. Do not commit, push, register, generate fixtures, add child
-  assets or effects, begin EN-E09, release, accept drift, or open a PR.
+- Visual approval: the exact frozen raw, Complete B + Form, and five-way
+  silhouette-comparison PNGs were open together in Aseprite when the designer
+  replied `ok lets do next`. Approval applies only to this digest and five
+  hashes.
+- Publication gate: standing permission opens only the approval record, branch
+  push, and handoff reconciliation. After clean remote reconciliation, inspect
+  the live roadmap and stop at its next explicit decision gate; do not infer
+  EN-E09 authorization. Registration, fixtures, child assets, effects, release,
+  accepted drift, and a PR remain closed.
 
 ## Approved Preceding Checkpoint - Vowcoil Glaive Published
 
