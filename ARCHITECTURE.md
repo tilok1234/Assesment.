@@ -1367,9 +1367,10 @@ public 80/259 and all 232 fixtures exact. The designer replied `approved lets
 do next`; implementation `ceafc0badba8c31876cfa3c8055091ba752dbf5d`
 records the accepted pixels without changing the baked-single-actor boundary.
 The implementation and approval record
-`1c506640bb270c49815f0de357e9cb051b715cee` are remote verified. Only the
-published handoff reconciliation remains open. It remains unregistered,
-fixture-free, effect-free, and non-public.
+`1c506640bb270c49815f0de357e9cb051b715cee` are remote verified. Initial
+published handoff `ad6388d308c95e498601b0b40d5406a30253fd44` is also remote
+verified; this reconciliation completes the bounded publication tuple. It
+remains unregistered, fixture-free, effect-free, and non-public.
 
 `engine/enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant.js`
 completes the private Possessed Mask three-role art family without changing its

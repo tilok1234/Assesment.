@@ -121,8 +121,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   when the designer replied `approved lets do next`; implementation
   `ceafc0badba8c31876cfa3c8055091ba752dbf5d` records the accepted pixels. The
   implementation and approval record
-  `1c506640bb270c49815f0de357e9cb051b715cee` are remote verified. Only the
-  published handoff reconciliation remains open. The same reply opens only one
+  `1c506640bb270c49815f0de357e9cb051b715cee` are remote verified. Initial
+  published handoff `ad6388d308c95e498601b0b40d5406a30253fd44` is also remote
+  verified; this reconciliation completes the bounded publication tuple. The
+  same reply opens only one
   private specialist Living Weapon art candidate after clean remote
   reconciliation. Registration, fixtures, effects, child assets, the elite
   role, EN-E09, release, accepted drift, and a PR remain closed.

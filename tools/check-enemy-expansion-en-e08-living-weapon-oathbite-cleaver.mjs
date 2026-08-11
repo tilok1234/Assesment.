@@ -115,8 +115,8 @@ check(
     && EN_E08_OATHBITE_CLEAVER_GATE.approvedImplementation === 'ceafc0badba8c31876cfa3c8055091ba752dbf5d'
     && EN_E08_OATHBITE_CLEAVER_GATE.publishedImplementation === 'ceafc0badba8c31876cfa3c8055091ba752dbf5d'
     && EN_E08_OATHBITE_CLEAVER_GATE.publishedApprovalRecord === '1c506640bb270c49815f0de357e9cb051b715cee'
-    && EN_E08_OATHBITE_CLEAVER_GATE.initialPublishedHandoff === null
-    && EN_E08_OATHBITE_CLEAVER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E08_OATHBITE_CLEAVER_GATE.initialPublishedHandoff === 'ad6388d308c95e498601b0b40d5406a30253fd44'
+    && EN_E08_OATHBITE_CLEAVER_GATE.publicationState === 'published'
     && EN_E08_OATHBITE_CLEAVER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve'),
   'Oathbite Cleaver approval state or bounded publication authorization drifted',
 );
@@ -155,9 +155,10 @@ check(
 check(
   EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('implementation ceafc0badba8c31876cfa3c8055091ba752dbf5d')
     && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('approval record 1c506640bb270c49815f0de357e9cb051b715cee')
-    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('initial published handoff and final reconciliation')
+    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('initial published handoff ad6388d308c95e498601b0b40d5406a30253fd44')
+    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('completes the bounded publication tuple')
     && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('one private specialist Living Weapon art candidate')
-    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('after this tuple is clean and remote verified'),
+    && EN_E08_OATHBITE_CLEAVER_GATE.nextGate.includes('from this clean published reconciliation'),
   'Oathbite Cleaver stop gate drifted',
 );
 check(

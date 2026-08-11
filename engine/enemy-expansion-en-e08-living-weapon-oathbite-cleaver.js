@@ -132,8 +132,8 @@ export const EN_E08_OATHBITE_CLEAVER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, effects, later roles or families, release, or any other unopened gate.',
   publishedImplementation: 'ceafc0badba8c31876cfa3c8055091ba752dbf5d',
   publishedApprovalRecord: '1c506640bb270c49815f0de357e9cb051b715cee',
-  initialPublishedHandoff: null,
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: 'ad6388d308c95e498601b0b40d5406a30253fd44',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E08_THRENECROWN_HIEROPHANT_GATE.id,
     artifactSha256: EN_E08_THRENECROWN_HIEROPHANT_GATE.artifactSha256,
@@ -206,7 +206,7 @@ export const EN_E08_OATHBITE_CLEAVER_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Oathbite Cleaver implementation ceafc0badba8c31876cfa3c8055091ba752dbf5d and approval record 1c506640bb270c49815f0de357e9cb051b715cee are remote verified. Only the initial published handoff and final reconciliation remain open under standing publication permission. The same approved lets do next reply opens only one private specialist Living Weapon art candidate after this tuple is clean and remote verified. Registration, fixtures, child assets, effects, the elite role, EN-E09, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Oathbite Cleaver implementation ceafc0badba8c31876cfa3c8055091ba752dbf5d, approval record 1c506640bb270c49815f0de357e9cb051b715cee, and initial published handoff ad6388d308c95e498601b0b40d5406a30253fd44 are remote verified; this reconciliation completes the bounded publication tuple. The same approved lets do next reply opens only one private specialist Living Weapon art candidate from this clean published reconciliation. Registration, fixtures, child assets, effects, the elite role, EN-E09, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E08_OATHBITE_CLEAVER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
