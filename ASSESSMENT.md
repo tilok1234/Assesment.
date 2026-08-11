@@ -489,13 +489,13 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   together in responsive Aseprite 1.3.17.2 process 6832. Status is
   `approved`: the designer replied `apprvoed`, approving only the exact digest
   above. Implementation `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` and
-  approval record `6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified;
-  publication state is `authorized-pending-bounded-publication`. Standing
-  permission opens only the bounded initial handoff and final reconciliation
-  commits plus branch pushes. It remains unregistered, fixture-free, and non-public;
+  approval record `6a577566766afc66aa01cdf1c7ebd1430aad425d` plus initial handoff
+  `e12ff211dda002ac1c089eaedc0ff369d1e432e0` are remote verified. Status is
+  `approved` and `published`; this reconciliation completes the bounded tuple.
+  It remains unregistered, fixture-free, and non-public;
   child/state assets, effects, later roles/families, release, accepted drift,
   and a PR remain closed. Another art candidate requires a separate `lets do
-  next` after clean remote-verified publication.
+  next` from this clean published reconciliation.
   The approved preceding publication checkpoint is elite Kelpie Blackwake Dreadmare on
   `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
   Drownbridle Stalker reconciliation

@@ -1386,13 +1386,13 @@ then in 61.5s and 107.7s against approved-local metadata, with public 80/259
 and all 232 fixtures exact. The designer replied `apprvoed`, approving
 only the frozen digest, and implementation
 `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` plus approval record
-`6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified. The packet
-is hash-frozen, private, `approved`, and
-`authorized-pending-bounded-publication`; publish only its bounded initial
-handoff and final reconciliation under standing permission. It is
+`6a577566766afc66aa01cdf1c7ebd1430aad425d` and initial handoff
+`e12ff211dda002ac1c089eaedc0ff369d1e432e0` are remote verified. The packet
+is hash-frozen, private, `approved`, and `published`; this reconciliation
+completes its bounded tuple. It is
 not registered, fixture-backed, or public. Child/state assets, effects, later
 roles/families, release, accepted drift, a PR, and another art gate remain
-closed.
+closed and require separate authorization.
 
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks

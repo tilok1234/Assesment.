@@ -33,10 +33,10 @@
   responsive Aseprite 1.3.17.2 process 6832. Status is
   `approved`: the designer replied `apprvoed`, approving only the exact digest
   above. Implementation `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` and
-  approval record `6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified;
-  publication state is `authorized-pending-bounded-publication`. Standing
-  permission opens only the bounded initial handoff and final reconciliation
-  commits plus branch pushes. Registration, fixtures, child/state assets, effects,
+  approval record `6a577566766afc66aa01cdf1c7ebd1430aad425d` plus initial handoff
+  `e12ff211dda002ac1c089eaedc0ff369d1e432e0` are remote verified. Status is
+  `approved` and `published`; this reconciliation completes the bounded tuple.
+  Registration, fixtures, child/state assets, effects,
   later roles/families, release, accepted drift, a PR, and another art gate
   remain closed.
 
@@ -4708,8 +4708,8 @@ it with incidental per-frame offsets.
 
 #### Animated Armor Hollow Sentry complete suite awaiting review
 
-- Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status: `approved` /
-  `authorized-pending-bounded-publication` on
+- Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status: `approved`
+  and `published` on
   `codex/en-e08-animated-armor-architecture`, based exactly on clean published
   Blackwake reconciliation `defc9b8cab1226610da6cf2b17951c8b5815499e`.
 - Authorization and topology: after the Blackwake tuple was published and
@@ -4757,13 +4757,14 @@ it with incidental per-frame offsets.
   Aseprite 1.3.17.2 process 6832. The designer replied `apprvoed` on
   2026-08-11; in context approval applies only to the frozen digest above.
   Implementation `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` and approval
-  record `6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified.
-  The candidate remains unregistered, fixture-free, and non-public.
-- Required next action: complete only the bounded initial handoff and
-  remote-verified final current-state reconciliation under standing permission.
+  record `6a577566766afc66aa01cdf1c7ebd1430aad425d` plus initial handoff
+  `e12ff211dda002ac1c089eaedc0ff369d1e432e0` are remote verified. This
+  reconciliation completes the bounded tuple. The candidate remains
+  unregistered, fixture-free, and non-public.
+- Required next action: preserve this tuple byte-for-byte.
   Child/state assets, effects, later roles/families, release, accepted drift,
-  and a PR remain closed. A separate `lets do next` is required after clean
-  publication before another art candidate begins.
+  and a PR remain closed. A separate `lets do next` is required from this clean
+  published reconciliation before another art candidate begins.
 
 ### EN-E09 - Arcane constructs
 

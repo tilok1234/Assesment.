@@ -134,13 +134,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   The designer replied `apprvoed`; in context approval applies only to the
   exact digest above. Implementation
   `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` and approval record
-  `6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified. Status is
-  `approved` / `authorized-pending-bounded-publication`: publish only the
-  bounded initial handoff and final reconciliation under standing permission.
+  `6a577566766afc66aa01cdf1c7ebd1430aad425d` plus initial handoff
+  `e12ff211dda002ac1c089eaedc0ff369d1e432e0` are remote verified. Status is
+  `approved` and `published`; this reconciliation completes the bounded tuple.
   Do not register,
   generate fixtures, add child/state assets or effects, start another
   role/family, release, accept drift, or open a PR. Another art candidate
-  requires a separate `lets do next` after clean remote-verified publication.
+  requires a separate `lets do next` from this clean published reconciliation.
 - Approved preceding art publication checkpoint:
   `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
   Drownbridle Stalker reconciliation

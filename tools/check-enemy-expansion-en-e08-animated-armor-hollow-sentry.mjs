@@ -140,8 +140,11 @@ check(
     && EN_E08_HOLLOW_SENTRY_GATE.approvedOn === '2026-08-11'
     && EN_E08_HOLLOW_SENTRY_GATE.approvedImplementation === '914aa700b82469dbb22ca1600f1bc7ad6dbecff7'
     && EN_E08_HOLLOW_SENTRY_GATE.publicationAuthorizedOn === '2026-08-11'
-    && EN_E08_HOLLOW_SENTRY_GATE.publicationState === 'authorized-pending-bounded-publication',
-  'Hollow Sentry authorization or bounded-publication state drifted',
+    && EN_E08_HOLLOW_SENTRY_GATE.publishedImplementation === '914aa700b82469dbb22ca1600f1bc7ad6dbecff7'
+    && EN_E08_HOLLOW_SENTRY_GATE.publishedApprovalRecord === '6a577566766afc66aa01cdf1c7ebd1430aad425d'
+    && EN_E08_HOLLOW_SENTRY_GATE.initialPublishedHandoff === 'e12ff211dda002ac1c089eaedc0ff369d1e432e0'
+    && EN_E08_HOLLOW_SENTRY_GATE.publicationState === 'published',
+  'Hollow Sentry authorization or published tuple drifted',
 );
 check(
   EN_E08_HOLLOW_SENTRY_GATE.approvalEvidence.includes('designer replied: apprvoed')
@@ -191,8 +194,9 @@ check(
     && EN_E08_HOLLOW_SENTRY_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('implementation 914aa700b82469dbb22ca1600f1bc7ad6dbecff7')
     && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('approval record 6a577566766afc66aa01cdf1c7ebd1430aad425d')
+    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('initial handoff e12ff211dda002ac1c089eaedc0ff369d1e432e0')
     && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('remote verified')
-    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('bounded initial-handoff and final-reconciliation')
+    && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('visually approved and published')
     && EN_E08_HOLLOW_SENTRY_GATE.nextGate.includes('separate designer lets do next'),
   'full-suite, motion, or stop-gate contract drifted',
 );

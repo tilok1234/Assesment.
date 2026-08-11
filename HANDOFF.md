@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Hollow Sentry Approval Published
+## Immediate Continuation Checkpoint - Hollow Sentry Published and Reconciled
 
 Start here in a new task. The EN-E08 actor-topology gate is resolved and one
 private common Animated Armor Hollow Sentry is implemented, deterministic,
@@ -33,12 +33,13 @@ Blackwake Dreadmare reconciliation
 `defc9b8cab1226610da6cf2b17951c8b5815499e`. The exact frozen packet is
 visually approved and implementation
 `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` plus approval record
-`6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified. The bounded
-initial handoff and final current-state reconciliation remain to publish. The
+`6a577566766afc66aa01cdf1c7ebd1430aad425d` and initial handoff
+`e12ff211dda002ac1c089eaedc0ff369d1e432e0` are remote verified. This final
+current-state reconciliation completes the bounded publication tuple. The
 candidate stays unregistered, fixture-free, and non-public.
 
-- Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status: `approved`;
-  publication state `authorized-pending-bounded-publication`.
+- Gate ID: `en-e08-animated-armor-hollow-sentry-full-v1`; status: `approved`
+  and `published`.
 - Architecture decision: `en-e08-baked-single-actor-v1` is selected. After the
   Blackwake tuple was published and reconciled, the designer was shown the
   recommended baked single-actor topology and the alternative deterministic
@@ -92,19 +93,18 @@ candidate stays unregistered, fixture-free, and non-public.
   `apprvoed` on 2026-08-11. In context this explicitly approves only candidate
   digest `f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`.
   Implementation `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` and approval
-  record `6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified.
-  Standing publication permission opens only the bounded initial handoff and
-  final reconciliation commits plus branch pushes; it does not open a PR or
-  any content gate.
+  record `6a577566766afc66aa01cdf1c7ebd1430aad425d` plus initial handoff
+  `e12ff211dda002ac1c089eaedc0ff369d1e432e0` are remote verified. This
+  reconciliation completes the bounded tuple; it does not open a PR or any
+  content gate.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e08-animated-armor-hollow-sentry` and
   `npm.cmd run check:enemy-expansion-en-e08-animated-armor-hollow-sentry`.
-- Required next action: complete only the bounded approval-record publication
-  and remote-verified current-state reconciliation. Do not register Animated
-  Armor, generate fixtures, add child/state assets or effects, begin another
-  role or EN-E08 family, release, accept drift, or open a PR. A separate
-  designer `lets do next` is required after clean publication before another
-  art candidate begins.
+- Required next action: preserve this tuple byte-for-byte. Do not register
+  Animated Armor, generate fixtures, add child/state assets or effects, begin
+  another role or EN-E08 family, release, accept drift, or open a PR. A
+  separate designer `lets do next` is required from this clean published
+  reconciliation before another art candidate begins.
 
 ## Approved Preceding Checkpoint - Blackwake Dreadmare Published and Reconciled
 

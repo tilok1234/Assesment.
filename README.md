@@ -1507,13 +1507,13 @@ responsive Aseprite 1.3.17.2 process 6832. Status is
 `approved`: the designer replied `apprvoed`, which in
 context approves only the exact digest above. Implementation
 `914aa700b82469dbb22ca1600f1bc7ad6dbecff7` and approval record
-`6a577566766afc66aa01cdf1c7ebd1430aad425d` are remote verified. Publication
-state is `authorized-pending-bounded-publication`; standing permission now
-covers only the bounded initial handoff and final reconciliation commits plus
-branch pushes. The candidate remains unregistered, fixture-free, and
-non-public. Child/state assets, effects, later roles/families, release, accepted
-drift, and a PR remain closed. A separate `lets do next` is required after
-final clean remote-verified publication before another art candidate begins.
+`6a577566766afc66aa01cdf1c7ebd1430aad425d` plus initial handoff
+`e12ff211dda002ac1c089eaedc0ff369d1e432e0` are remote verified. Status is
+`approved` and `published`; this reconciliation completes the bounded tuple.
+The candidate remains unregistered, fixture-free, and non-public. Child/state
+assets, effects, later roles/families, release, accepted drift, and a PR remain
+closed. A separate `lets do next` is required from this clean published
+reconciliation before another art candidate begins.
 
 Blackwake Dreadmare is the approved preceding private elite Kelpie publication checkpoint on
 `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published

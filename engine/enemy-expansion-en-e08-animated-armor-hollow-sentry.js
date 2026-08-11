@@ -131,10 +131,10 @@ export const EN_E08_HOLLOW_SENTRY_GATE = deepFreeze({
   approvedImplementation: '914aa700b82469dbb22ca1600f1bc7ad6dbecff7',
   publicationAuthorizedOn: '2026-08-11',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
-  initialPublishedHandoff: null,
-  publicationState: 'authorized-pending-bounded-publication',
+  publishedImplementation: '914aa700b82469dbb22ca1600f1bc7ad6dbecff7',
+  publishedApprovalRecord: '6a577566766afc66aa01cdf1c7ebd1430aad425d',
+  initialPublishedHandoff: 'e12ff211dda002ac1c089eaedc0ff369d1e432e0',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E07_BLACKWAKE_DREADMARE_GATE.id,
     artifactSha256: EN_E07_BLACKWAKE_DREADMARE_GATE.artifactSha256,
@@ -221,7 +221,7 @@ export const EN_E08_HOLLOW_SENTRY_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Hollow Sentry digest is visually approved; implementation 914aa700b82469dbb22ca1600f1bc7ad6dbecff7 and approval record 6a577566766afc66aa01cdf1c7ebd1430aad425d are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. Animated Armor registration, fixtures, child/state assets, effects, later roles or EN-E08 families, release, accepted drift, and a pull request remain closed. A separate designer lets do next is required after final clean remote-verified publication before another art candidate begins.',
+  nextGate: 'The exact Hollow Sentry digest is visually approved and published: implementation 914aa700b82469dbb22ca1600f1bc7ad6dbecff7, approval record 6a577566766afc66aa01cdf1c7ebd1430aad425d, and initial handoff e12ff211dda002ac1c089eaedc0ff369d1e432e0 are remote verified. Animated Armor registration, fixtures, child/state assets, effects, later roles or EN-E08 families, release, accepted drift, and a pull request remain closed. A separate designer lets do next is required from this clean published reconciliation before another art candidate begins.',
 });
 
 export const EN_E08_HOLLOW_SENTRY_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -563,7 +563,7 @@ export const EN_E08_HOLLOW_SENTRY_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'hollow-sentry',
     scale: 8,
-    notes: 'Visually approved as one broad haunted-default Hollow Sentry rendered entirely as a baked single actor against Fallen Knight Shieldbearer, Grave Oathkeeper Revenant, and Gloam Walker. Publish only the bounded approval and reconciliation tuple. Keep registration, fixtures, child/state assets, effects, later roles and EN-E08 families, release, accepted drift, and a next-art gate separate.',
+    notes: 'Visually approved and published as one broad haunted-default Hollow Sentry rendered entirely as a baked single actor against Fallen Knight Shieldbearer, Grave Oathkeeper Revenant, and Gloam Walker. Keep registration, fixtures, child/state assets, effects, later roles and EN-E08 families, release, accepted drift, a pull request, and the next-art gate separate.',
   },
 });
 
