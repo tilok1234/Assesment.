@@ -468,7 +468,26 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current approved publication checkpoint is specialist Kelpie Drownbridle Stalker
+  The current isolated art checkpoint is elite Kelpie Blackwake Dreadmare on
+  `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
+  Drownbridle Stalker reconciliation
+  `f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Its broad rear-heavy silhouette
+  uses a tall arched neck, long blunt readable muzzle, connected breaker mane,
+  massive barrel and sternum, four thick separated legs over broad grounded
+  dark hooves, and a connected hooked blackwake tail. The frozen digest is
+  `be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172`:
+  80/80 frames are connected, bounded, grounded, preserve four separated hoof
+  runs and broad tall elite spans, and differ in pixels and alpha from approved
+  Drownbridle Stalker, Miremane Courser, and Steppe Hunter. The opaque range is
+  255-319, with 72/72 colored frames, 8/8 exact white flashes, 54/54 expected
+  eye-bearing views, and 54/54 readable muzzle views. `check:fast` passes in
+  62.9s and full `check` in 121.9s, with public 80/259 and all 232 fixtures
+  exact. The exact raw, Complete B
+  + Form, and comparison PNGs are open together in Aseprite process 27380. The
+  candidate is awaiting exact visual approval and remains uncommitted, unpushed,
+  unregistered, fixture-free, and non-public; runtime copying, water effects,
+  release, and EN-E08 remain closed.
+  The approved preceding publication checkpoint is specialist Kelpie Drownbridle Stalker
   on `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean
   published Miremane Courser reconciliation
   `f143de1fadf3b812f3968d930acf6451e926388d`. Its forward-heavy high-crested

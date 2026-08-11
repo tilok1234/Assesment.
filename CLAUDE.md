@@ -107,7 +107,29 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved art publication checkpoint:
+- Current private art review checkpoint:
+  `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
+  Drownbridle Stalker reconciliation
+  `f9928aed53cd842b937d396e29ec8d6a7aaa8120`, contains one private elite Kelpie
+  Blackwake Dreadmare candidate. Its frozen 80-frame digest is
+  `be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172`.
+  The broad rear-heavy form uses a tall arched neck, long blunt readable muzzle,
+  connected breaker mane, massive barrel and sternum, four thick separated legs
+  over broad grounded dark hooves, and a connected hooked blackwake tail. All 80
+  frames are connected, bounded, grounded, preserve four hoof runs and broad
+  tall elite spans, and differ in pixels and alpha from approved Drownbridle
+  Stalker, Miremane Courser, and Steppe Hunter. The packet passes 72/72 colored
+  frames, 8/8 exact white flashes, 54/54 expected eye-bearing views, 54/54
+  readable muzzle views, exact aliases and mirrors, and public 80/259; opaque
+  range is 255-319. `check:fast` passes in 62.9s and full `check` in 121.9s,
+  with all 232 fixtures exact. The exact raw, Complete B + Form, and comparison PNGs are
+  open together in Aseprite process 27380. Run
+  `npm.cmd run review:enemy-expansion-en-e07-kelpie-blackwake-dreadmare` and
+  `npm.cmd run check:enemy-expansion-en-e07-kelpie-blackwake-dreadmare`.
+  Status is `implemented-awaiting-review` and `not-published`: do not stage,
+  commit, push, register, generate fixtures, add runtime copying or water
+  effects, release, or advance EN-E08 before exact visual approval.
+- Approved preceding art publication checkpoint:
   `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean published
   Miremane Courser reconciliation
   `f143de1fadf3b812f3968d930acf6451e926388d`, contains one private specialist

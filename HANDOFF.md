@@ -23,7 +23,66 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Drownbridle Stalker Published and Reconciled
+## Immediate Continuation Checkpoint - Blackwake Dreadmare Awaiting Visual Approval
+
+Start here in a new task. One private elite Kelpie Blackwake Dreadmare is
+implemented, deterministic, hash-frozen, technically validated, and awaiting
+exact visual approval on `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly
+on clean published Drownbridle Stalker reconciliation
+`f9928aed53cd842b937d396e29ec8d6a7aaa8120`. It is not committed, pushed,
+registered, fixture-generated, or public.
+
+- Gate ID: `en-e07-kelpie-blackwake-dreadmare-full-v1`; status:
+  `implemented-awaiting-review` and `not-published`.
+- Authorization: after Drownbridle Stalker was visually approved, published,
+  remote-verified, and reconciled, the designer replied `approved lets do next`
+  on 2026-08-11. The frozen Kelpie role order opens only this one private elite
+  candidate.
+- Frozen identity: a broad rear-heavy elite equine with a tall arched neck,
+  long blunt readable muzzle, one connected breaker mane sweeping from poll to
+  back, massive deep barrel and sternum, four thick separated legs over four
+  broad grounded dark hooves, and one connected hooked blackwake tail. It does
+  not use a Centaur torso or rider, saddle or spear, Unicorn horn or crown, Wolf
+  or Crocodile anatomy, skeleton gaps, armor or barding, copied mount geometry,
+  or detached water effects.
+- Motion: Idle heaves and settles the breaker mane and barrel; Walk uses four
+  crushing diagonal hoof phases; Attack draws the tall neck, opens the blunt
+  jaw, drives one connected shoulder-and-jaw surge, and recovers. Hurt is an
+  exact white breaker recoil then a colored collapsed-breaker four-hoof brace.
+  Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2.
+- Candidate digest:
+  `be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172`.
+- Raw/no-outline PNG SHA-256:
+  `2d902c8fafdb016affc2858fa332196fa1585f5013b2d5a80e07733da81d6e1f`.
+- Complete B + Form PNG SHA-256:
+  `cb70a90ae5cfd604412e34b8dd980dca24b93f3db12c42e479920bc2cc44b891`.
+- Drownbridle Stalker/Miremane Courser/Steppe Hunter comparison PNG SHA-256:
+  `d0176a8dd8136b9cef40e1d97bf3322a02153f096512bf2099829241802919ed`.
+- Raw GIF SHA-256:
+  `082ce13f2b2a72997d36b6738a643bde3b53a8df3c15ff035166b7cb256e4520`.
+- Complete B + Form GIF SHA-256:
+  `60fb0e3f2db76113eb0b8d8f2615b9fd65cce31f1f5dfa1c1173d6251c4aa806`.
+- Focused validation: 80/80 frames are connected, one-cell bounded, grounded,
+  preserve four separated hoof runs and broad tall elite spans, and differ in
+  pixels and alpha from approved Drownbridle Stalker, Miremane Courser, and
+  Steppe Hunter. The opaque range is 255-319, with 72/72 colored frames, 8/8
+  exact white flashes, 54/54 expected eye-bearing views, and 54/54 readable
+  muzzle views. Complete B adds 9,532 pixels and Form changes 6,673. Public
+  80/259 remains exact and no fixture or manifest was changed.
+- Broad validation: `npm.cmd run check:fast` passed in 62.9s and full
+  `npm.cmd run check` passed in 121.9s, with public 80/259 and all 232 fixture
+  sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and comparison
+  PNGs are open together in Aseprite process 27380. Front/profile eyes,
+  nostrils, and mouths remain readable, including the jaw-open attack.
+- Commands:
+  `npm.cmd run review:enemy-expansion-en-e07-kelpie-blackwake-dreadmare` and
+  `npm.cmd run check:enemy-expansion-en-e07-kelpie-blackwake-dreadmare`.
+- Required next action: present only this exact frozen packet for visual
+  approval. Do not commit or push it, register Kelpie, generate fixtures, add
+  runtime copying or water effects, release, or advance EN-E08 before approval.
+
+## Approved Preceding Checkpoint - Drownbridle Stalker Published and Reconciled
 
 Start here in a new task. One private specialist Kelpie Drownbridle Stalker is
 implemented, deterministic, hash-frozen, technically validated, and visually

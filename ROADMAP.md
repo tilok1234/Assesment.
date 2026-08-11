@@ -288,7 +288,23 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current approved EN-E07 publication checkpoint (2026-08-11): specialist Kelpie
+Current isolated EN-E07 art checkpoint (2026-08-11): elite Kelpie Blackwake
+Dreadmare on `codex/en-e07-kelpie-blackwake-dreadmare` is based exactly on clean
+published Drownbridle Stalker reconciliation
+`f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Its 255-319-pixel broad rear-heavy
+breaker-maned equine form is frozen at digest
+`be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172`.
+All 80 frames are connected, bounded, grounded, retain four separated hoof runs
+and broad tall elite spans, and are pixel/alpha distinct from approved
+Drownbridle Stalker, Miremane Courser, and Steppe Hunter; 72/72 colored frames,
+8/8 exact white flashes, 54/54 expected eye-bearing views, and 54/54 readable
+muzzle views pass. `check:fast` passes in 62.9s and full `check` in 121.9s,
+with public 80/259 and all 232 fixtures exact. The exact three frozen PNGs are open together in Aseprite
+process 27380. The candidate is awaiting exact visual approval and remains
+uncommitted, unpushed, unregistered, fixture-free, and non-public. Do not open
+runtime copying, water effects, release, or EN-E08.
+
+Approved preceding EN-E07 publication checkpoint (2026-08-11): specialist Kelpie
 Drownbridle Stalker on `codex/en-e07-kelpie-drownbridle-stalker` is based
 exactly on clean published Miremane Courser reconciliation
 `f143de1fadf3b812f3968d930acf6451e926388d`. Its 203-274-pixel forward-heavy

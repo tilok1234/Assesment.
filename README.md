@@ -1472,7 +1472,32 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Drownbridle Stalker is the current approved private specialist Kelpie
+Blackwake Dreadmare is the current private elite Kelpie review checkpoint on
+`codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean published
+Drownbridle Stalker reconciliation
+`f9928aed53cd842b937d396e29ec8d6a7aaa8120`. Its broad rear-heavy form uses a
+tall arched neck, long blunt readable muzzle, connected breaker mane, massive
+barrel and sternum, four thick separated legs over four broad grounded dark
+hooves, and a connected hooked blackwake tail. Run
+`npm.cmd run review:enemy-expansion-en-e07-kelpie-blackwake-dreadmare` for the
+raw, Complete B + Form, Drownbridle/Miremane/Steppe comparison, and paired GIFs;
+run `npm.cmd run check:enemy-expansion-en-e07-kelpie-blackwake-dreadmare` for
+the focused contract gate. The frozen digest is
+`be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172`:
+80/80 frames are connected, bounded, grounded, preserve four separated hoof
+runs and broad tall elite spans, and differ in pixels and alpha from all three
+protected comparisons. The opaque range is 255-319, all 72 colored frames
+preserve the four palette groups, all eight flashes are exact white, and all 54
+expected eye-bearing views retain readable muzzles. `check:fast` passes in
+62.9s and full `check` in 121.9s, with public 80/259 and all 232 fixtures exact.
+The exact raw, Complete B +
+Form, and comparison PNGs are open together in Aseprite process 27380. This
+candidate is `implemented-awaiting-review`, uncommitted, unpushed, unregistered,
+fixture-free, and non-public. Exact visual approval is required before commit or
+push; registration, runtime copying, water effects, release, and EN-E08 remain
+closed.
+
+Drownbridle Stalker is the approved preceding private specialist Kelpie
 publication checkpoint on
 `codex/en-e07-kelpie-drownbridle-stalker`, based exactly on clean
 published Miremane Courser reconciliation

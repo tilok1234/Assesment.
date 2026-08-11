@@ -3715,7 +3715,7 @@ Dryad must remain humanoid/fey scale rather than overlap Treant.
 
 ### EN-E07 - Shapeshifters and apparitions
 
-- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser and specialist Drownbridle Stalker approved and published; one private elite Kelpie candidate authorized`
+- Status: `Living Shadow and Doppelganger common-specialist-elite roles approved and published; Lantern Mote, Fenbell Shepherd, and Mirecrown Beacon common-specialist-elite Will-o-Wisp roles approved and published; private common-specialist-elite Changeling roles approved and published; private common Kelpie Miremane Courser and specialist Drownbridle Stalker approved and published; private elite Kelpie Blackwake Dreadmare implemented and awaiting exact visual approval`
 - Families: Living Shadow, Doppelganger, Will-o'-Wisp, Changeling, Kelpie
 - Priority-first: Living Shadow, Doppelganger
 
@@ -4592,10 +4592,68 @@ assembler.
   exporter, validator, frame-contract change, runtime copying, alternate body,
   rider, saddle, horn, detached water, glow, particles, projectile, effects,
   elite Kelpie, release, EN-E08, or accepted drift.
-- Required next action: the same `approved lets do next` reply opens only one
-  private elite Kelpie candidate from this clean published checkpoint. It does
-  not open registration, fixtures, runtime copying, effects, release, or
-  EN-E08.
+- Historical next action: the same `approved lets do next` reply opened only the
+  private Blackwake Dreadmare elite checkpoint below. It did not open
+  registration, fixtures, runtime copying, effects, release, or EN-E08.
+
+#### Kelpie Blackwake Dreadmare complete suite awaiting visual approval
+
+- Gate ID: `en-e07-kelpie-blackwake-dreadmare-full-v1`; status:
+  `implemented-awaiting-review` and `not-published` on
+  `codex/en-e07-kelpie-blackwake-dreadmare`, based exactly on clean,
+  remote-verified Drownbridle Stalker reconciliation
+  `f9928aed53cd842b937d396e29ec8d6a7aaa8120`.
+- Authorization: after the exact Drownbridle Stalker was visually approved,
+  committed, pushed, remotely verified, and reconciled, the designer replied
+  `approved lets do next` on 2026-08-11. That opens only this one private elite
+  Kelpie candidate.
+- Contract: a broad rear-heavy authored equine with a tall arched neck, long
+  blunt readable muzzle, one connected breaker mane sweeping from poll to back,
+  massive deep barrel and sternum, four thick separated legs over four broad
+  grounded dark hooves, and one connected hooked blackwake tail. It does not use
+  a Centaur torso or rider, saddle or spear, Unicorn horn or crown, Wolf or
+  Crocodile anatomy, skeleton gaps, armor or barding, copied mount geometry,
+  detached water, glow, particles, projectiles, or effects.
+- Motion: Idle heaves and settles the breaker mane and barrel; Walk uses four
+  crushing diagonal hoof phases; Attack draws the tall neck, opens the blunt
+  jaw, drives one connected shoulder-and-jaw surge, and recovers. Hurt is exact
+  white breaker recoil then a colored collapsed-breaker four-hoof brace. Cast
+  aliases Attack; Death aliases Hurt H1,H2,H2,H2.
+- Frozen evidence: raw PNG
+  `2d902c8fafdb016affc2858fa332196fa1585f5013b2d5a80e07733da81d6e1f`;
+  Complete B + Form PNG
+  `cb70a90ae5cfd604412e34b8dd980dca24b93f3db12c42e479920bc2cc44b891`;
+  Drownbridle Stalker/Miremane Courser/Steppe Hunter comparison PNG
+  `d0176a8dd8136b9cef40e1d97bf3322a02153f096512bf2099829241802919ed`;
+  raw GIF
+  `082ce13f2b2a72997d36b6738a643bde3b53a8df3c15ff035166b7cb256e4520`;
+  Complete B + Form GIF
+  `60fb0e3f2db76113eb0b8d8f2615b9fd65cce31f1f5dfa1c1173d6251c4aa806`;
+  candidate digest
+  `be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172`.
+- Focused validation: 80/80 candidate frames are connected, bounded, grounded,
+  retain four separated hoof runs and broad tall elite spans, and are
+  pixel/alpha distinct from all three protected comparisons; opaque range
+  255-319; 72/72 colored palette frames; 8/8 exact white flashes; 54/54 expected
+  eye-bearing views; 54/54 readable muzzle views; Complete B adds 9,532 pixels
+  and Form changes 6,673. Approved Drownbridle Stalker, Miremane Courser, and
+  Steppe Hunter remain exact; public 80/259 is unchanged and no fixture or
+  manifest was modified.
+- Broad validation: `npm.cmd run check:fast` passed in 62.9s and full
+  `npm.cmd run check` passed in 121.9s, with public 80/259 and all 232 fixture
+  sheets exact.
+- Visual-review readiness: the exact raw, Complete B + Form, and comparison PNGs
+  are open together in Aseprite process 27380. The front/profile eyes,
+  nostrils, and mouths remain readable, including the jaw-open attack.
+- Scope firewall: no commit or push before approval, registration, public facade
+  or catalog change, fixtures, manifest, shared renderer, exporter, validator,
+  frame-contract change, runtime copying, alternate body, rider, saddle, horn,
+  armor or barding, detached water, glow, particles, projectile, effects,
+  release, EN-E08, or accepted drift.
+- Required next action: present only this exact frozen Blackwake Dreadmare packet
+  for visual approval. A rejection authorizes only a narrow repair and new
+  frozen hashes; an approval authorizes the bounded implementation publication
+  under the standing permission.
 
 ### EN-E08 - Possessed equipment
 

@@ -1316,6 +1316,33 @@ This reconciliation completes the bounded tuple. The same `approved lets do
 next` reply opens only one private elite Kelpie candidate; registration,
 fixtures, runtime copying, effects, release, and EN-E08 remain separate.
 
+`engine/enemy-expansion-en-e07-kelpie-blackwake-dreadmare.js` is that isolated
+elite Kelpie boundary. It imports the stable 24x24 expansion contract plus the
+published Miremane and Drownbridle gates, owns one private family/variant
+registry, and is not imported by `sprite-engine.js`, the public expansion
+registry, selectors, persistence, packs, manifest, or fixture tooling. Its
+independently authored broad rear-heavy equine uses a tall arched neck, long
+blunt readable muzzle, one connected breaker mane, massive deep barrel and
+sternum, four thick separated legs over four broad grounded dark hooves, and
+one connected hooked blackwake tail. The renderer owns 80 hard-alpha frames
+with exact Cast-to-Attack and Death-to-Hurt aliases. Riders, horns, Wolf or
+Crocodile anatomy, skeleton gaps, armor or barding, copied mounts, runtime
+copying, detached water, glow, particles, projectiles, and effects remain
+external. The review/checker/GIF boundaries are
+`tools/enemy-expansion-en-e07-kelpie-blackwake-dreadmare-review.mjs`,
+`tools/check-enemy-expansion-en-e07-kelpie-blackwake-dreadmare.mjs`, and
+`tools/build-enemy-expansion-en-e07-kelpie-blackwake-dreadmare-gifs.py`.
+Candidate digest
+`be29daec400cffca3f5822aec3bd6ca37c8139a8783f51c7238b47aa37001172`
+passes 80/80 connected, bounded, grounded, four-hoof-row, elite-span, and
+pixel/alpha distinctions from approved Drownbridle Stalker, Miremane Courser,
+and Steppe Hunter. The opaque range is 255-319; 72/72 colored frames, 8/8 exact
+white flashes, 54/54 expected eye-bearing views, and 54/54 readable muzzle
+views pass. `check:fast` passes in 62.9s and full `check` in 121.9s, with public
+80/259 and all 232 fixtures exact. This boundary is hash-frozen but remains private,
+`implemented-awaiting-review`, uncommitted, and unpushed until exact visual
+approval.
+
 The nested `npm run check:enemy-expansion-repairs` gate proves that exactly the
 approved 18 renderer-data records differ from the pre-repair registry and locks
 the seven affected families' Walk contacts, hard alpha, margins, clipping, and
