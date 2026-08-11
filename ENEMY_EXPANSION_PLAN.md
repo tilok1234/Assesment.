@@ -32,10 +32,11 @@
   public 80/259 and all 232 fixtures exact. The exact raw, Complete B + Form,
   and comparison PNGs are open together in responsive Aseprite 1.3.17.2
   process 39276. The designer replied `approved lets do next` on 2026-08-11;
-  exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is published and
-  remote-verified. Approval-record publication and final reconciliation remain
-  in progress; after that clean stop, the same reply opens only one private
-  common Kelpie candidate. Manyfold remains unregistered and fixture-free.
+  exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and approval record
+  `306aa3ac1ba658cb48e223651410a7df494e7b9e` are published and remote-verified.
+  Initial handoff and final reconciliation remain in progress; after that clean
+  stop, the same reply opens only one private common Kelpie candidate. Manyfold
+  remains unregistered and fixture-free.
   Runtime actor copying, effects, later Kelpie roles, release, and EN-E08 remain
   closed.
 
@@ -4379,17 +4380,18 @@ assembler.
 - Approval: after the exact packet was presented, the designer replied
   `approved lets do next` on 2026-08-11. Approval applies only to digest
   `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
-  Exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is published and
-  remote-verified; approval-record publication and final reconciliation remain
-  in progress.
+  Exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and approval record
+  `306aa3ac1ba658cb48e223651410a7df494e7b9e` are published and remote-verified;
+  initial handoff and final reconciliation remain in progress.
 - Scope firewall: no registration, public facade or catalog change, fixtures,
   manifest, shared renderer, exporter, validator, frame-contract change,
   runtime copying, alternate body, detached mask, wings, glow, particles,
   projectile, effects, Kelpie, release, EN-E08, or accepted drift.
-- Required next action: commit and push the approval record, remote-verify and
-  reconcile the bounded tuple, then open only one private common Kelpie
-  candidate. Do not register Changeling, generate fixtures, implement runtime
-  copying, add effects, start later Kelpie roles, release, or advance EN-E08.
+- Required next action: commit and push this initial handoff, bind its remote
+  hash into the final publication record, revalidate and push the final
+  reconciliation, then open only one private common Kelpie candidate. Do not
+  register Changeling, generate fixtures, implement runtime copying, add
+  effects, start later Kelpie roles, release, or advance EN-E08.
 
 ### EN-E08 - Possessed equipment
 

@@ -487,10 +487,11 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   public 80/259 and all 232 fixtures exact. The three frozen PNGs are open
   together in responsive Aseprite 1.3.17.2 process 39276. The designer replied
   `approved lets do next` on 2026-08-11; exact implementation
-  `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is published and remote-verified.
-  Approval-record publication and final reconciliation remain in progress;
-  after that clean stop, the same reply opens only one private common Kelpie
-  candidate. Registration, fixtures, runtime copying, effects, later Kelpie
+  `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and approval record
+  `306aa3ac1ba658cb48e223651410a7df494e7b9e` are published and remote-verified.
+  Initial handoff and final reconciliation remain in progress; after that clean
+  stop, the same reply opens only one private common Kelpie candidate.
+  Registration, fixtures, runtime copying, effects, later Kelpie
   roles, release, and EN-E08 remain closed.
   The approved preceding specialist Changeling is Mirrorfold Harrier on
   `codex/en-e07-changeling-mirrorfold-harrier`, based exactly on clean

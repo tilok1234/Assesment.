@@ -130,9 +130,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   The exact raw, Complete B + Form, and comparison PNGs are open together in
   responsive Aseprite 1.3.17.2 process 39276, whose command line names all
   three paths. The designer replied `approved lets do next` on 2026-08-11;
-  exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is
-  published and remote-verified. Approval-record publication and final
-  current-state reconciliation remain in progress; after that clean stop, the
+  exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and approval
+  record `306aa3ac1ba658cb48e223651410a7df494e7b9e` are published and
+  remote-verified. Initial handoff and final current-state reconciliation
+  remain in progress; after that clean stop, the
   same reply opens only one private common Kelpie candidate. Registration,
   fixtures, runtime copying, effects, later Kelpie roles, release, and EN-E08
   remain separate gates.

@@ -129,8 +129,8 @@ check(
     && EN_E07_MANYFOLD_USURPER_GATE.publishedImplementation === null
     && EN_E07_MANYFOLD_USURPER_GATE.publishedApprovalRecord === null
     && EN_E07_MANYFOLD_USURPER_GATE.initialPublishedHandoff === null
-    && EN_E07_MANYFOLD_USURPER_GATE.publicationState === 'approved-local',
-  'Manyfold Usurper approved-local publication state drifted',
+    && EN_E07_MANYFOLD_USURPER_GATE.publicationState === 'authorized-pending-bounded-publication',
+  'Manyfold Usurper bounded publication state drifted',
 );
 check(
   EN_E07_MANYFOLD_USURPER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
@@ -172,10 +172,13 @@ check(
 );
 check(
   EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('visually approved')
+    && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('implementation 38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe')
+    && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('approval record 306aa3ac1ba658cb48e223651410a7df494e7b9e')
+    && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('remote verified')
     && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('one private common Kelpie candidate')
     && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('Changeling registration')
     && EN_E07_MANYFOLD_USURPER_GATE.nextGate.includes('remain closed'),
-  'approved-local publication or next-family stop gate drifted',
+  'bounded publication or next-family stop gate drifted',
 );
 check(
   JSON.stringify(EN_E07_MANYFOLD_USURPER_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])

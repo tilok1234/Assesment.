@@ -108,7 +108,7 @@ export const EN_E07_MANYFOLD_USURPER_GATE = deepFreeze({
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'approved-local',
+  publicationState: 'authorized-pending-bounded-publication',
   precedingApproval: {
     gateId: EN_E07_MIRRORFOLD_HARRIER_GATE.id,
     artifactSha256: EN_E07_MIRRORFOLD_HARRIER_GATE.artifactSha256,
@@ -188,7 +188,7 @@ export const EN_E07_MANYFOLD_USURPER_GATE = deepFreeze({
     'Kelpie',
     'EN-E08 and later work',
   ],
-  nextGate: 'The exact Manyfold Usurper digest is visually approved and its implementation is published. Complete the bounded approval-record and current-state reconciliation first; after that remote-verified stop, the same designer reply opens only one private common Kelpie candidate. Changeling registration, fixtures, runtime copying, effects, later Kelpie roles, release, and EN-E08 remain closed.',
+  nextGate: 'The exact Manyfold Usurper digest is visually approved; implementation 38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe and approval record 306aa3ac1ba658cb48e223651410a7df494e7b9e are remote verified. Standing publication permission opens only the bounded initial-handoff and final-reconciliation commits plus branch pushes. After that remote-verified stop, the same designer reply opens only one private common Kelpie candidate. Changeling registration, fixtures, runtime copying, effects, later Kelpie roles, release, and EN-E08 remain closed.',
 });
 
 export const EN_E07_MANYFOLD_USURPER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

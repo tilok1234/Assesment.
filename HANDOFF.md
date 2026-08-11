@@ -23,16 +23,17 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Manyfold Usurper Approved; Publication In Progress
+## Immediate Continuation Checkpoint - Manyfold Usurper Initial Publication In Progress
 
 Start here in a new task. One private elite Changeling Manyfold Usurper is
 implemented, deterministic, hash-frozen, technically validated, visually
 approved, and published on `codex/en-e07-changeling-manyfold-usurper`, based exactly on
 clean published Mirrorfold Harrier reconciliation
 `fdbb4cf04048a819b9cbe1655146842835b86a73`. Exact implementation
-`38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is remote-verified; approval-record
-publication and current-state reconciliation remain in progress. The actor is
-not registered, fixture-generated, or public.
+`38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and approval record
+`306aa3ac1ba658cb48e223651410a7df494e7b9e` are remote-verified. Initial
+handoff and final current-state reconciliation remain in progress. The actor
+is not registered, fixture-generated, or public.
 
 - Gate ID: `en-e07-changeling-manyfold-usurper-full-v1`; status: `approved`
   with bounded publication in progress.
@@ -80,16 +81,18 @@ not registered, fixture-generated, or public.
 - Approval: after the exact packet was presented, the designer replied
   `approved lets do next` on 2026-08-11. Approval applies only to digest
   `f3ed9a91cb01746fc7467e59c92335778a85b476495f5772ac81cf2a6cbda246`.
-  Exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` is
+  Exact implementation `38f9d7f9b3ac5a34bdff91be1fd878e158d26bfe` and
+  approval record `306aa3ac1ba658cb48e223651410a7df494e7b9e` are
   published and remote-verified.
 - Commands:
   `npm.cmd run review:enemy-expansion-en-e07-changeling-manyfold-usurper`
   and
   `npm.cmd run check:enemy-expansion-en-e07-changeling-manyfold-usurper`.
-- Required next action: commit and push the approval record, remote-verify and
-  reconcile the bounded tuple, then open only one private common Kelpie
-  candidate. Do not register Changeling, generate fixtures, implement runtime
-  copying, add effects, start later Kelpie roles, release, or advance EN-E08.
+- Required next action: commit and push this initial handoff, bind its remote
+  hash into the final publication record, revalidate and push the final
+  reconciliation, then open only one private common Kelpie candidate. Do not
+  register Changeling, generate fixtures, implement runtime copying, add
+  effects, start later Kelpie roles, release, or advance EN-E08.
 
 ## Approved Preceding Checkpoint - Mirrorfold Harrier Published and Reconciled
 
