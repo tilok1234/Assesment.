@@ -23,7 +23,58 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mournseal Cantor Approved And Published
+## Immediate Continuation Checkpoint - Threnecrown Hierophant Awaiting Visual Review
+
+Start here. From clean published Mournseal Cantor reconciliation
+`4f7a1146f1b90c8e70b819461d29a4be72cb379a`, the designer replied `approved
+lets do next`, opening exactly one private elite Possessed Mask art gate.
+Threnecrown Hierophant is implemented locally on
+`codex/en-e08-possessed-mask-threnecrown-hierophant` as one deterministic baked
+24x24 actor with zero child assets across all 80 frames. It is not visually
+approved, committed, pushed, registered, fixture-backed, effect-enabled, or
+public.
+
+- Identity: broad monumental aged-ivory funerary mask with a connected
+  three-prong crown-brow, two rose-magenta eyes, deep cheek panels, long nose
+  ridge, barred mouth, wide jaw, crimson tiered mantle, old-gold chain tabs,
+  and true hover clearance.
+- Motion: Idle seats the crown and breathes the mantle; Walk uses four sovereign
+  hover phases; Attack gathers the chain tabs, seals the mouth, opens one
+  body-owned sovereign edict, and settles. Hurt is a complete white recoil then
+  colored folded-mantle brace. Cast aliases Attack exactly; Death aliases Hurt
+  H1,H2,H2,H2.
+- Architecture: `baked-single-actor`; crown, face, mantle, and tabs are one
+  connected hard-alpha actor. No host, detached mask, aura, glow, smoke,
+  projectile, child asset, shared runtime, schema, renderer, exporter,
+  validator, frame-contract, registration, fixture, manifest, effect,
+  accepted-drift, or public-catalog change.
+- Frozen digest:
+  `51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f`.
+  Raw/Complete B + Form/comparison PNG hashes are
+  `896121c269d76a8f7824e024b4ac74b9467ef33b4f27d09a0348a9fb81b3370d`,
+  `54e5c643ae2a0aaf87e9af93a541c1db9b17b555fc9f548ad7bf59dacd03cc16`,
+  and `a351d886d5a22264679512e9c2254bf7221922d18f0a9ebdffff17d337f507e8`.
+  Raw and assembled GIF hashes are
+  `066fee337f72f091e4b6737a7e9f13bc4fcfcf48c7059ae6cc4ea47eff3d88e4`
+  and `193c268151ae42c818ff4c56f62dc6bf209e3adff21c0dc3afc6af244be78888`.
+- Focused gate: 80/80 connected, bounded, and hovering; 80/80 pixel and alpha
+  silhouettes differ from approved Mournseal Cantor, approved Whisperveil
+  Visage, and public Spectral Ghost. There are 72/72 colored frames, 8/8 exact
+  white flashes, and 54/54 readable face views; opaque range 267-312.
+- Broad validation: `check:fast` passes in 57.0s and full `check` passes in
+  107.1s. Public 80/259 and all 232 fixture sheets remain exact.
+- Visual-review readiness: the exact corrected raw, Complete B + Form, and
+  comparison PNGs are open together in Aseprite.
+- Commands: `npm.cmd run
+  review:enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant` and
+  `npm.cmd run
+  check:enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant`.
+- Approval gate: approval must identify this exact digest and five artifact
+  hashes. Do not commit or push the candidate, register Possessed Mask,
+  generate fixtures, add child assets or effects, start Living Weapon or
+  EN-E09, release, accept drift, or open a PR before explicit visual approval.
+
+## Approved Preceding Checkpoint - Mournseal Cantor Published
 
 Start here. From clean published Whisperveil Visage reconciliation
 `2ab49dc879a852d8a3c1a5f14de93345b32d490a`, the designer replied `lets do

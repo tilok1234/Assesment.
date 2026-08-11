@@ -4706,10 +4706,43 @@ has zero child assets. Any separate head, mask, rider, mount, gauntlet, or
 living-weapon asset must stop at a new explicit architecture gate; do not solve
 it with incidental per-frame offsets.
 
+#### Possessed Mask Threnecrown Hierophant elite awaiting visual review
+
+- Gate ID: `en-e08-possessed-mask-threnecrown-hierophant-full-v1`; status
+  `awaiting-visual-review` on
+  `codex/en-e08-possessed-mask-threnecrown-hierophant`, based exactly on
+  published Mournseal reconciliation
+  `4f7a1146f1b90c8e70b819461d29a4be72cb379a`.
+- Authorization: after the Mournseal publication tuple was reconciled, the
+  designer replied `approved lets do next`. This opens only one private elite
+  Threnecrown Hierophant art candidate.
+- Architecture: one deterministic baked 24x24 actor, zero child assets. The
+  three-prong crown-brow, aged-ivory face, crimson tiered mantle, and old-gold
+  chain tabs are actor pixels; hosts, detached masks, effects, runtime
+  attachments, schemas, shared renderers, exporters, validators, registration,
+  and fixtures remain out.
+- Identity and motion: two rose-magenta eyes, deep cheeks, long nose ridge,
+  barred mouth, and wide jaw. Idle breathes the mantle; Walk uses four hover
+  phases; Attack gathers tabs, seals the mouth, opens one body-owned sovereign
+  edict, and settles. Hurt is white recoil then colored brace. Cast aliases
+  Attack; Death aliases Hurt H1,H2,H2,H2.
+- Frozen digest:
+  `51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f`.
+  PNG hashes are `896121c2...370d`, `54e5c643...cc16`, and
+  `a351d886...07e8`; GIF hashes are `066fee33...88e4` and
+  `193c2681...8888`.
+- Focused 80-frame gate passes; `check:fast` passes in 57.0s and full `check`
+  in 107.1s with public 80/259 and all 232 fixtures exact. The exact three PNGs
+  are open together in Aseprite.
+- Approval gate: explicit visual approval must identify this exact digest and
+  five hashes. Do not commit or push, register, generate fixtures, add child
+  assets or effects, start Living Weapon or EN-E09, release, accept drift, or
+  open a PR before approval.
+
 #### Possessed Mask Mournseal Cantor specialist approved and published
 
 - Gate ID: `en-e08-possessed-mask-mournseal-cantor-full-v1`; status
-  `awaiting-visual-review` on
+  `approved` and `published` on
   `codex/en-e08-possessed-mask-mournseal-cantor`, based exactly on published
   Whisperveil reconciliation `2ab49dc879a852d8a3c1a5f14de93345b32d490a`.
 - Authorization: after the Whisperveil publication tuple was reconciled, the

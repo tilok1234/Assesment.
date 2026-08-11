@@ -1350,6 +1350,21 @@ reconciliation completes the bounded tuple. The same
 reply opened only the EN-E08 actor-topology architecture decision after clean
 remote reconciliation; the later explicit choice is recorded below.
 
+`engine/enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant.js`
+completes the private Possessed Mask three-role art family without changing its
+topology. From clean published Mournseal reconciliation
+`4f7a1146f1b90c8e70b819461d29a4be72cb379a`, it owns exactly one elite
+sovereign funerary mask with one baked 24x24 pixel array and zero child assets
+in every frame. The three-prong crown-brow, aged-ivory face, rose eyes, deep
+cheeks, long nose ridge, barred mouth, wide jaw, crimson tiered mantle, and
+old-gold chain tabs remain actor pixels. Hosts, detached masks, aura, glow,
+smoke, projectiles, runtime offsets, and child/state exports remain outside the
+gate. Candidate digest
+`51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f`
+passes its focused gate, `check:fast` in 57.0s, and full `check` in 107.1s with
+public 80/259 and all 232 fixtures exact. It is awaiting visual approval and
+remains unregistered, fixture-free, effect-free, non-public, and uncommitted.
+
 `engine/enemy-expansion-en-e08-possessed-mask-mournseal-cantor.js` extends the
 private Possessed Mask family without changing its topology. From clean
 published Whisperveil reconciliation

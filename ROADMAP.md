@@ -288,7 +288,20 @@ reply opens only one private common Changeling candidate from this clean
 publication reconciliation. Registration, fixtures, effects, later roles or
 families, Kelpie, release, and EN-E08 remain closed.
 
-Current EN-E08 prototype gate (2026-08-11): specialist Possessed Mask Mournseal
+Current EN-E08 prototype gate (2026-08-11): elite Possessed Mask Threnecrown
+Hierophant on `codex/en-e08-possessed-mask-threnecrown-hierophant` is based on
+clean published Mournseal reconciliation
+`4f7a1146f1b90c8e70b819461d29a4be72cb379a` and frozen at digest
+`51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f`.
+It is one baked 24x24 crown-mask/tiered-mantle/gold-tab actor with zero child
+assets. All 80 frames pass the focused gate; fast validation passes in 57.0s
+and full validation in 107.1s with public 80/259 and all 232 fixtures exact.
+The exact three PNGs are open together in Aseprite. It awaits explicit visual
+approval and must not be committed or pushed. Registration, fixtures, effects,
+child assets, Living Weapon, EN-E09, release, broader publication, accepted
+drift, and a PR remain closed.
+
+Approved preceding EN-E08 checkpoint (2026-08-11): specialist Possessed Mask Mournseal
 Cantor on `codex/en-e08-possessed-mask-mournseal-cantor` is based on clean
 published Whisperveil reconciliation
 `2ab49dc879a852d8a3c1a5f14de93345b32d490a` and frozen at digest

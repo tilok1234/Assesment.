@@ -468,7 +468,18 @@ implementation `98865936244b94860985210fcaf9a044b0ca228a` and approval record
   The same reply opens only one private common Changeling candidate from this
   clean publication reconciliation; registration, fixtures, effects, later
   roles or families, release, and EN-E08 remain closed.
-  The current private prototype is specialist Possessed Mask Mournseal Cantor
+  The current private prototype is elite Possessed Mask Threnecrown Hierophant
+  on `codex/en-e08-possessed-mask-threnecrown-hierophant`, based on clean
+  published Mournseal reconciliation
+  `4f7a1146f1b90c8e70b819461d29a4be72cb379a`. It is one connected baked 24x24
+  crown-mask/tiered-mantle/gold-tab actor with zero child assets, frozen at
+  digest `51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f`.
+  All 80 frames pass focused connected, bounded, hovering, face-readability,
+  alias, mirror, predecessor, and comparison checks. Fast validation passes in
+  57.0s and full validation in 107.1s, preserving public 80/259 and all 232
+  fixtures. It is awaiting visual approval, unregistered, fixture-free,
+  effect-free, non-public, and uncommitted.
+  The approved preceding private checkpoint is specialist Possessed Mask Mournseal Cantor
   on `codex/en-e08-possessed-mask-mournseal-cantor`, based on clean published
   Whisperveil reconciliation `2ab49dc879a852d8a3c1a5f14de93345b32d490a`.
   It is one connected baked 24x24 tall-mask/fan-shroud/braided-cord actor with

@@ -1472,7 +1472,29 @@ The same reply opens only one private common Changeling candidate from this
 clean publication reconciliation. Do not open registration, fixtures, effects,
 later roles or families, release, or EN-E08.
 
-Mournseal Cantor is the current private specialist Possessed Mask candidate on
+Threnecrown Hierophant is the current private elite Possessed Mask candidate on
+`codex/en-e08-possessed-mask-threnecrown-hierophant`, based exactly on clean
+published Mournseal reconciliation
+`4f7a1146f1b90c8e70b819461d29a4be72cb379a`. The broad aged-ivory funerary
+mask, three-prong crown-brow, crimson tiered mantle, and old-gold chain tabs are
+one connected baked 24x24 actor with zero child assets. Its two rose-magenta
+eyes, deep cheek panels, long nose ridge, barred mouth, wide jaw, and hover
+clearance remain readable across the expected views. The exact 80-frame
+candidate is frozen at digest
+`51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f`.
+Run `npm.cmd run
+review:enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant` and
+`npm.cmd run
+check:enemy-expansion-en-e08-possessed-mask-threnecrown-hierophant`. The
+focused gate passes 80/80 connected, bounded, and hovering with 54/54 readable
+face views; all Mournseal Cantor, Whisperveil Visage, public, and fixture
+baselines remain unchanged. Fast validation passes in 57.0s and full validation
+passes in 107.1s with public 80/259 and all 232 fixture sheets exact. It is
+awaiting explicit visual approval and must not be committed or pushed.
+Registration, fixtures, child assets, effects, Living Weapon, EN-E09, release,
+accepted drift, and a PR remain closed.
+
+Mournseal Cantor is the approved preceding private specialist Possessed Mask candidate on
 `codex/en-e08-possessed-mask-mournseal-cantor`, based on clean published
 Whisperveil reconciliation `2ab49dc879a852d8a3c1a5f14de93345b32d490a`.
 The tall ash-bone mask, storm-blue fan shroud, and ochre braided cords are one

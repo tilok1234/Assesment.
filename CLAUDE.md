@@ -107,7 +107,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: specialist Possessed Mask Mournseal Cantor on
+- Current private art gate: elite Possessed Mask Threnecrown Hierophant on
+  `codex/en-e08-possessed-mask-threnecrown-hierophant`, based exactly on clean
+  published Mournseal reconciliation
+  `4f7a1146f1b90c8e70b819461d29a4be72cb379a`, is frozen at digest
+  `51ca678e1dee5e086d0fa439686c0e699b857b2ab00dfa4ab7a963546c11c81f`.
+  It is one baked 24x24 crown-mask/tiered-mantle/gold-tab actor with zero child
+  assets. All 80 frames pass connected, bounded, hovering, readable-face,
+  alias, mirror, and predecessor/comparison gates; fast validation passes in
+  57.0s and full validation in 107.1s with public 80/259 and all 232 fixtures
+  exact. The exact three frozen PNGs are open together in Aseprite. It awaits
+  explicit visual approval and must not be committed or pushed. Registration,
+  fixtures, effects, child assets, Living Weapon, EN-E09, release, accepted
+  drift, and a PR remain closed.
+- Approved preceding published private art checkpoint: specialist Possessed Mask Mournseal Cantor on
   `codex/en-e08-possessed-mask-mournseal-cantor`, based exactly on clean
   published Whisperveil reconciliation
   `2ab49dc879a852d8a3c1a5f14de93345b32d490a`, is frozen at digest
