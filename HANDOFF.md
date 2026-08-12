@@ -29,8 +29,10 @@ Start here. Aetherdial Surveyor's bounded publication tuple is clean and remote
 verified at `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`. The designer
 replied `lets do nexty`, opening exactly one private elite Clockwork Automaton
 under the selected baked-single-actor topology. Epochforge Colossus is
-implemented on `codex/en-e09-clockwork-automaton-elite` and remains uncommitted
-while awaiting explicit visual approval.
+implemented on `codex/en-e09-clockwork-automaton-elite`. The designer replied
+`approved`, accepting implementation
+`96e83258ff0b350880139cb4a2b283ef0063e51f` and the exact digest and five
+hashes below only.
 
 - Identity: broad black-iron and red-brass siege machine with a connected cog
   crown, low pale sensor slit, twin furnace dials, oversized integrated hammer
@@ -56,9 +58,13 @@ while awaiting explicit visual approval.
   differ from approved Aetherdial Surveyor, Brasscoil Sentry, and Runeforge
   Custodian. There are 72/72 colored frames, 8/8 exact-white flashes, and
   54/54 readable non-rear sensor views.
-- Next gate: inspect the exact three frozen PNGs and stop for explicit designer
-  visual approval. Do not commit, push, register, generate fixtures, add child
-  assets or effects, start another family, release, accept drift, or open a PR.
+- Approval: the exact three frozen PNGs were open together in Aseprite when the
+  designer replied `approved`. Standing permission opens only the bounded
+  approval record, branch push, and handoff reconciliation.
+- Next gate: finish that bounded publication tuple, verify it remotely, inspect
+  the live roadmap, and stop at its next explicit decision. Do not register,
+  generate fixtures, add child assets or effects, start another family,
+  release, accept drift, or open a PR.
 
 ## Approved Preceding Checkpoint - Aetherdial Surveyor Published
 

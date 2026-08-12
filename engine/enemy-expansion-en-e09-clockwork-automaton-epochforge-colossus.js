@@ -107,20 +107,20 @@ export const EN_E09_EPOCHFORGE_COLOSSUS_DATA = deepFreeze({
 
 export const EN_E09_EPOCHFORGE_COLOSSUS_GATE = deepFreeze({
   id: 'en-e09-clockwork-automaton-epochforge-colossus-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '0d5aec453d8bad9ba6d4c66a641963932d9c2e78',
   authorizedOn: '2026-08-12',
   authorizationEvidence: 'After the exact Aetherdial Surveyor publication tuple was clean and remote verified at checkpoint 0d5aec453d8bad9ba6d4c66a641963932d9c2e78, the designer replied: lets do nexty. Under the selected en-e09-clockwork-automaton-baked-single-actor-v1 topology and one-complete-sprite cadence, this authorizes only one private elite Epochforge Colossus 80-frame art candidate. Registration, fixtures, effects, child assets, later families, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E09_CLOCKWORK_AUTOMATON_TOPOLOGY_DECISION.id,
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-12',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Aetherdial Surveyor, Brasscoil Sentry, and Runeforge Custodian family comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in Aseprite. The designer replied: approved. In context this explicitly approves candidate digest 0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254 and its five frozen review hashes only. Standing permission authorizes bounded publication but does not open registration, fixtures, child/state assets, effects, later families, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: '96e83258ff0b350880139cb4a2b283ef0063e51f',
   publicationAuthorizedOn: '2026-08-12',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-approved',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E09_AETHERDIAL_SURVEYOR_GATE.id,
     artifactSha256: EN_E09_AETHERDIAL_SURVEYOR_GATE.artifactSha256,
@@ -204,7 +204,7 @@ export const EN_E09_EPOCHFORGE_COLOSSUS_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Stop for explicit designer visual approval of the exact frozen Epochforge Colossus review artifacts and candidate digest. Do not publish, register, add fixtures, add child/state assets, add effects, begin later families, release, accept drift, or open a pull request.',
+  nextGate: 'The exact Epochforge Colossus packet is visually approved at implementation 96e83258ff0b350880139cb4a2b283ef0063e51f. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate. Registration, fixtures, child/state assets, effects, later families, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E09_EPOCHFORGE_COLOSSUS_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

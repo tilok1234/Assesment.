@@ -69,13 +69,15 @@ function componentCount(pixels) {
 const frameHash = async (relative) => createHash('sha256').update(await readFile(path.join(root, relative))).digest('hex');
 
 check(
-  EN_E09_EPOCHFORGE_COLOSSUS_GATE.status === 'awaiting-visual-approval'
+  EN_E09_EPOCHFORGE_COLOSSUS_GATE.status === 'approved'
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.baseCheckpoint === '0d5aec453d8bad9ba6d4c66a641963932d9c2e78'
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.authorizationEvidence.includes('lets do nexty')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.authorizationEvidence.includes('only one private elite Epochforge Colossus')
-    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.approvedOn === null
-    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.approvedImplementation === null
-    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.publicationState === 'not-approved',
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.approvedOn === '2026-08-12'
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.approvalEvidence.includes('0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254')
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.approvedImplementation === '96e83258ff0b350880139cb4a2b283ef0063e51f'
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.publicationState === 'approved-not-published',
   'Epochforge Colossus private approval gate drifted',
 );
 check(
@@ -102,7 +104,8 @@ check(
   EN_E09_EPOCHFORGE_COLOSSUS_GATE.scope.includes('80-frame Epochforge Colossus elite')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.animationContract.includes('body-owned compression strike')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.animationContract.includes('Cast aliases Attack exactly')
-    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('explicit designer visual approval')
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('visually approved at implementation 96e83258ff0b350880139cb4a2b283ef0063e51f')
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.exclusions.includes('public Clockwork Automaton registration')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.exclusions.includes('additional Clockwork Automaton roles'),
   'Epochforge motion, exclusions, or stop gate drifted',

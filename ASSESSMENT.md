@@ -15,7 +15,8 @@
 > reconciliation `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`. It is one connected
 > 24x24 baked siege actor with zero child assets. Digest
 > `0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
-> passes its focused 80-frame gate and is awaiting explicit visual approval.
+> passes its focused 80-frame gate and is visually approved at implementation
+> `96e83258ff0b350880139cb4a2b283ef0063e51f`.
 > Registration, fixtures, effects, child/state assets, later families, release,
 > accepted drift, and a PR remain closed. See `HANDOFF.md` for exact hashes and
 > continuation instructions.

@@ -139,7 +139,8 @@ assets. Its black-iron siege chassis, cog crown, low sensor slit, twin furnace
 dials, integrated hammer forearms, hip axle, piston legs, and tread feet are
 baked actor pixels; impacts and sparks remain Effects Off. Exact candidate
 digest `0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
-passes the focused 80-frame gate and awaits explicit visual approval. It is
+passes the focused 80-frame gate and is visually approved at implementation
+`96e83258ff0b350880139cb4a2b283ef0063e51f`. It is
 private, unregistered, fixture-free, and effect-free. Registration, fixtures,
 child assets, effects, later families, release, accepted drift, and a PR remain
 closed.
