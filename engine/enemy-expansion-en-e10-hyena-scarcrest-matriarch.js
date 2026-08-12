@@ -108,8 +108,8 @@ export const EN_E10_SCARCREST_MATRIARCH_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later families, release, accepted drift, or a pull request.',
   publishedImplementation: '88d00336ee8ff714f1d978a5cf37d9807bbb4719',
   publishedApprovalRecord: '0411a1a385ddddf090f0ca3d31c81e0a6f6e6214',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: 'e0c9fcce275380d501c7ac393619387e033f3046',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.id,
     artifactSha256: EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.artifactSha256,
@@ -165,7 +165,7 @@ export const EN_E10_SCARCREST_MATRIARCH_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Scarcrest Matriarch implementation 88d00336ee8ff714f1d978a5cf37d9807bbb4719 and approval record 0411a1a385ddddf090f0ca3d31c81e0a6f6e6214 are remote verified. Only the initial published handoff and final reconciliation remain open. The approvedf lets do nex tr reply separately opens only the next EN-E10 Ram actor-topology decision after this publication tuple is complete, clean, and remote verified; no topology is selected and no Ram art is authorized. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Hyena registration, fixtures, effects, child assets, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Scarcrest Matriarch implementation 88d00336ee8ff714f1d978a5cf37d9807bbb4719, approval record 0411a1a385ddddf090f0ca3d31c81e0a6f6e6214, and initial published handoff e0c9fcce275380d501c7ac393619387e033f3046 are remote verified; this reconciliation completes the bounded publication tuple. The approvedf lets do nex tr reply opens only the next EN-E10 Ram actor-topology decision from this clean published reconciliation. No topology is selected and no Ram art is authorized until the designer explicitly accepts that separate decision. Public Hyena or outline registration, fixtures, effects, child assets, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_SCARCREST_MATRIARCH_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

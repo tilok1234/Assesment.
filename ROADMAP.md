@@ -14,7 +14,18 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private art gate (2026-08-13): from clean published Gloamstripe
+Current EN-E10 actor-topology decision (2026-08-13): Scarcrest's `approvedf
+lets do nex tr` continuation opens only the Ram topology decision from its clean
+published tuple. Recommended topology is
+`baked-single-actor-horned-grounded-quadruped`: one connected grounded 24x24
+Ram with compact barrel torso, proud arched neck, wedge muzzle, two body-owned
+swept spiral horns, connected forehead wool and chest beard, four separated
+dark hooves, short connected tail, body-owned horn bash, and zero child assets.
+Dust, arcs, impacts, debris, projectiles, glow, illumination, runtime
+attachments, and detached horns remain external Effects Off. No topology is
+selected and no Ram art is authorized before explicit designer approval.
+
+Approved preceding EN-E10 art gate (2026-08-13): from clean published Gloamstripe
 reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's
 `approved lets do nex t` authorizes exactly one private elite Hyena candidate.
 Scarcrest Matriarch on `codex/en-e10-hyena-elite` keeps the approved connected
@@ -30,18 +41,19 @@ three-way distinction gate at opaque range 239-259. The raw, required distinct
 Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
 hash-frozen and deterministic. Pre-approval focused / fast / full gates pass in
 0.6s / 61.5s / 111.2s and approval-local focused / fast gates pass in
-0.6s / 58.9s with public 92/294 and all 232 fixtures unchanged. The exact raw,
-outlined, Complete B + Form, and comparison PNGs are open together
+0.6s / 58.9s with public 92/294 and all 232 fixtures unchanged. Final
+published-state full validation passes in 113.2s with the same boundary. The
+exact raw, outlined, Complete B + Form, and comparison PNGs are open together
 in Aseprite as sprites 35, 39, 43, and active 47 when the designer replied
 `approvedf lets do nex tr`. Accepted implementation
 `88d00336ee8ff714f1d978a5cf37d9807bbb4719` records the exact packet. The
 outlined PNG is review evidence only and does not authorize outline
 registration. Scarcrest implementation
 `88d00336ee8ff714f1d978a5cf37d9807bbb4719` and approval record
-`0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` are remote verified; only its
-initial published handoff and final reconciliation remain open. The
-continuation opens only the Ram actor-topology decision after the tuple is
-complete, clean, and remote verified; no Ram art or topology is authorized.
+`0411a1a385ddddf090f0ca3d31c81e0a6f6e6214`, and initial published handoff
+`e0c9fcce275380d501c7ac393619387e033f3046` are remote verified; this
+reconciliation completes the bounded publication tuple. The continuation opens
+only the Ram decision above; no Ram art or topology is authorized.
 Public registration, fixtures, effects, child assets, Stag, Mammoth, Rhino,
 Rhino Boss work,
 the deferred Runic Idol decision, release, accepted drift, a PR, and every later

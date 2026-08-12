@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Scarcrest Matriarch Approval Publication
+## Immediate Continuation Checkpoint - Scarcrest Published / Ram Topology Decision
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-hyena-elite`. It is based exactly on the clean published
@@ -67,6 +67,8 @@ gate.
    Pre-approval focused / `check:fast` / full `check` gates pass in
    0.6s / 61.5s / 111.2s and the approval-local focused / fast gates pass in
    0.6s / 58.9s with public 92/294 and all 232 fixture sheets unchanged.
+   Final published-state full validation passes in 113.2s with the same
+   protected boundary.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-hyena-scarcrest-matriarch/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-hyena-scarcrest-matriarch` and run
@@ -81,15 +83,24 @@ gate.
    The designer replied `approvedf lets do nex tr`. Approval applies only to
    that exact packet; accepted implementation
    `88d00336ee8ff714f1d978a5cf37d9807bbb4719` records it. The implementation
-   and approval record `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` are remote
-   verified. Only the initial published handoff and final reconciliation remain
-   open.
+   and approval record `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214`, plus initial
+   published handoff `e0c9fcce275380d501c7ac393619387e033f3046`, are remote
+   verified; this reconciliation completes the bounded publication tuple.
 8. Public Hyena registration or outline registration, fixtures, effects, child
-   assets, Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
-   deferred Runic Idol decision, release, accepted drift, and a PR remain
-   closed. The continuation clause opens only the next EN-E10 Ram
-   actor-topology decision after this publication tuple is complete, clean, and
-   remote verified; it does not select a topology or authorize Ram art.
+   assets, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the deferred
+   Runic Idol decision, release, accepted drift, and a PR remain closed. The
+   continuation clause opens only the next EN-E10 Ram actor-topology decision
+   from this clean published reconciliation; it does not itself select a
+   topology or authorize Ram art.
+9. Recommended Ram topology for explicit designer decision:
+   `baked-single-actor-horned-grounded-quadruped` — one connected grounded
+   24x24 Ram with a compact barrel torso, proud arched neck, wedge muzzle, two
+   body-owned swept spiral horns, connected forehead wool and chest beard, four
+   separated dark hooves, short connected tail, and a body-owned horn bash.
+   Dust, impact arcs, debris, glow, illumination, projectiles, runtime
+   attachments, detached horns, and all child assets remain external and Off.
+   Stop for explicit topology approval before creating a Ram branch, naming a
+   common candidate, or drawing pixels.
 
 ## Approved Preceding Checkpoint - Gloamstripe Ambusher Published And Reconciled
 

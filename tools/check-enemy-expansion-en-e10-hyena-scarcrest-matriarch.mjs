@@ -77,8 +77,8 @@ check(
     && EN_E10_SCARCREST_MATRIARCH_GATE.approvedImplementation==='88d00336ee8ff714f1d978a5cf37d9807bbb4719'
     && EN_E10_SCARCREST_MATRIARCH_GATE.publishedImplementation==='88d00336ee8ff714f1d978a5cf37d9807bbb4719'
     && EN_E10_SCARCREST_MATRIARCH_GATE.publishedApprovalRecord==='0411a1a385ddddf090f0ca3d31c81e0a6f6e6214'
-    && EN_E10_SCARCREST_MATRIARCH_GATE.initialPublishedHandoff===''
-    && EN_E10_SCARCREST_MATRIARCH_GATE.publicationState==='published-awaiting-handoff-reconciliation',
+    && EN_E10_SCARCREST_MATRIARCH_GATE.initialPublishedHandoff==='e0c9fcce275380d501c7ac393619387e033f3046'
+    && EN_E10_SCARCREST_MATRIARCH_GATE.publicationState==='published',
   'elite authorization or outlined-review boundary drifted',
 );
 check(
@@ -116,14 +116,15 @@ check(
     && EN_E10_SCARCREST_MATRIARCH_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('implementation 88d00336ee8ff714f1d978a5cf37d9807bbb4719')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('approval record 0411a1a385ddddf090f0ca3d31c81e0a6f6e6214')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('initial published handoff e0c9fcce275380d501c7ac393619387e033f3046')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('remote verified')
-    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('initial published handoff and final reconciliation')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('completes the bounded publication tuple')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('approvedf lets do nex tr')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('Ram actor-topology decision')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('No topology is selected')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('no Ram art is authorized')
-    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('complete, clean, and remote verified')
-    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('review evidence only')
-    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('does not authorize outline registration'),
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('clean published reconciliation')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('outline registration'),
   'full-suite motion, review, or stop boundary drifted',
 );
 check(Object.isFrozen(EN_E10_HYENA_ELITE_CONTRACT_CARD)&&Object.isFrozen(EN_E10_SCARCREST_MATRIARCH_CONTRACT)&&Object.isFrozen(EN_E10_SCARCREST_MATRIARCH_DATA)&&Object.isFrozen(EN_E10_SCARCREST_MATRIARCH_GATE),'elite contract, data, and gate must be deeply immutable');

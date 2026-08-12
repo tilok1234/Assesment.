@@ -107,7 +107,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: on `codex/en-e10-hyena-elite`, based exactly on clean
+- Current actor-topology decision: Scarcrest's `approvedf lets do nex tr`
+  continuation opens only the next EN-E10 Ram topology decision from its clean
+  published tuple. Recommended topology is
+  `baked-single-actor-horned-grounded-quadruped`: one connected grounded 24x24
+  Ram with a compact barrel torso, arched neck, wedge muzzle, two body-owned
+  swept spiral horns, connected forehead wool and chest beard, four separated
+  hooves, short connected tail, body-owned horn bash, and zero child assets.
+  Dust, arcs, impacts, debris, glow, illumination, projectiles, runtime
+  attachments, and detached horns remain external Effects Off. The designer
+  has not selected this topology yet; do not create a Ram branch, name a common
+  candidate, or draw Ram art before explicit approval.
+- Approved preceding private art checkpoint: on `codex/en-e10-hyena-elite`, based exactly on clean
   published Gloamstripe reconciliation
   `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's `approved lets do
   nex t` authorizes exactly one private elite Hyena under the approved connected
@@ -126,6 +137,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   hash-frozen and regenerate deterministically. Pre-approval focused / fast /
   full gates pass in 0.6s / 61.5s / 111.2s and approval-local focused / fast
   gates pass in 0.6s / 58.9s with public 92/294 and all 232 fixtures unchanged.
+  Final published-state full validation passes in 113.2s with the same boundary.
   The exact raw, outlined, Complete B + Form, and
   comparison PNGs are open together in Aseprite as sprites 35, 39, 43, and
   active 47 when the designer replied `approvedf lets do nex tr`. Accepted
@@ -137,12 +149,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `1126852feae8f812c044806760a0063a7ef8d31f`, and final reconciliation above
   are remote verified. Scarcrest implementation
   `88d00336ee8ff714f1d978a5cf37d9807bbb4719` and approval record
-  `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` are also remote verified; only
-  its initial handoff and final reconciliation remain open. The continuation
-  clause opens only the Ram actor-topology decision after the tuple is complete,
-  clean, and remote verified; it does
-  not select a topology or authorize Ram art. Registration, fixtures, effects,
-  child assets, Stag,
+  `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214`, and initial published handoff
+  `e0c9fcce275380d501c7ac393619387e033f3046` are remote verified; this
+  reconciliation completes the bounded publication tuple. The continuation
+  opens only the Ram decision above; it does not select a topology or authorize
+  Ram art. Registration, fixtures, effects, child assets, Stag,
   Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release,
   accepted drift, a PR, and every later gate remain closed.
 - Current approved private art gate: on `codex/en-e09-living-book-elite`, based exactly

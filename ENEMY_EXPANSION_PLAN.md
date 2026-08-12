@@ -15,7 +15,19 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private art gate (2026-08-13): from clean published Gloamstripe
+- Current actor-topology decision (2026-08-13): Scarcrest's `approvedf lets do
+  nex tr` continuation opens only the next EN-E10 Ram topology decision from
+  its clean published tuple. Recommended topology is
+  `baked-single-actor-horned-grounded-quadruped`: one connected grounded 24x24
+  Ram with a compact barrel torso, proud arched neck, wedge muzzle, two
+  body-owned swept spiral horns, connected forehead wool and chest beard, four
+  separated dark hooves, short connected tail, a body-owned horn bash, and zero
+  child assets. Dust, impact arcs, debris, projectiles, glow, illumination,
+  runtime attachments, and detached horns remain external Effects Off. No
+  topology has been selected and no Ram art is authorized; stop for explicit
+  designer approval before creating its branch or candidate.
+
+- Approved preceding private art gate (2026-08-13): from clean published Gloamstripe
   reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's
   `approved lets do nex t` authorizes exactly one private elite Hyena under the
   approved connected grounded 24x24 zero-child topology. Scarcrest Matriarch on
@@ -34,16 +46,17 @@
   comparison PNGs plus two GIFs are hash-frozen and deterministic. Pre-approval
   focused / fast / full gates pass in 0.6s / 61.5s / 111.2s and approval-local
   focused / fast gates pass in 0.6s / 58.9s with public 92/294 and all 232
-  fixtures unchanged. The exact raw, outlined, Complete B + Form,
+  fixtures unchanged. Final published-state full validation passes in 113.2s
+  with the same boundary. The exact raw, outlined, Complete B + Form,
   and comparison PNGs are open together in Aseprite as sprites 35, 39, 43, and
   active 47 when the designer replied `approvedf lets do nex tr`. Accepted
   implementation `88d00336ee8ff714f1d978a5cf37d9807bbb4719` records only the
   frozen packet. The outlined PNG is review evidence only, not outline
   registration. The implementation and approval record
-  `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` are remote verified; only the
-  initial published handoff and final reconciliation remain open. The
-  continuation clause opens only the Ram actor-topology decision after the
-  tuple is complete, clean, and remote verified; it does not
+  `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` and initial published handoff
+  `e0c9fcce275380d501c7ac393619387e033f3046` are remote verified; this
+  reconciliation completes the bounded publication tuple. The continuation
+  clause opens only the Ram decision above; it does not
   select a topology or authorize Ram art. Public registration, fixtures,
   effects, child assets, Stag, Mammoth, Rhino, Rhino Boss work,
   the deferred Runic Idol decision, release, accepted drift, a PR, and every
@@ -5420,7 +5433,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common and specialist published; elite approved pending bounded publication; Ram topology next after remote verification; remaining families queued`
+- Status: `Hyena common, specialist, and elite approved and published; Ram topology awaiting explicit approval; remaining families queued`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5481,16 +5494,25 @@ packet includes raw, required distinct Complete B outlined, Complete B + Form,
 and comparison PNGs plus two GIFs and regenerates deterministically.
 Pre-approval focused / fast / full gates pass in 0.6s / 61.5s / 111.2s and
 approval-local focused / fast gates pass in 0.6s / 58.9s with public 92/294 and
-all 232 fixtures unchanged. The exact raw, outlined, Complete
+all 232 fixtures unchanged. Final published-state full validation passes in
+113.2s with the same boundary. The exact raw, outlined, Complete
 B + Form, and comparison PNGs are open together in Aseprite as sprites 35, 39,
 43, and active 47 when the designer replied `approvedf lets do nex tr`.
 Accepted implementation `88d00336ee8ff714f1d978a5cf37d9807bbb4719`
 records the frozen packet. The outlined PNG is review evidence only and does
-not change outline registration. The implementation and approval record
-`0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` are remote verified; only the
-initial published handoff and final reconciliation remain open. Only after the
-tuple is complete, clean, and remote verified does the continuation open the
-Ram actor-topology decision; no Ram art or topology is authorized.
+not change outline registration. The implementation, approval record
+`0411a1a385ddddf090f0ca3d31c81e0a6f6e6214`, and initial published handoff
+`e0c9fcce275380d501c7ac393619387e033f3046` are remote verified; this
+reconciliation completes the bounded publication tuple.
+
+The continuation opens only the Ram actor-topology decision. Recommended
+`baked-single-actor-horned-grounded-quadruped` keeps one connected grounded
+24x24 actor with a compact barrel torso, arched neck, wedge muzzle, two
+body-owned swept spiral horns, connected forehead wool and chest beard, four
+separated dark hooves, short connected tail, a body-owned horn bash, and zero
+child assets. Dust, arcs, debris, projectiles, glow, illumination, runtime
+attachments, and detached horns remain external Effects Off. No topology is
+selected and no Ram art is authorized before explicit designer approval.
 Registration, fixtures, effects, Stag, Mammoth, Rhino, Rhino Boss work, and all
 later gates remain closed.
 
