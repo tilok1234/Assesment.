@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Stonecurl Grazer Approval Publication
+## Immediate Continuation Checkpoint - Stonecurl Grazer Published / No Next Gate
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-ram-common`. It is based exactly on the clean published
@@ -64,7 +64,8 @@ gate.
    all six review hashes. Pre-approval focused / `check:fast` / full `check`
    gates pass in 0.7s / 67.6s / 123.1s and the approval-local focused / fast
    gates pass in 0.7s / 58.8s with public 92/294 and all 232 fixture sheets
-   unchanged.
+   unchanged. Final published-state full validation passes in 113.9s with the
+   same protected boundary.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-ram-stonecurl-grazer/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-ram-stonecurl-grazer` and run the
@@ -79,8 +80,9 @@ gate.
    The designer replied `approved`. Approval applies only to that exact packet;
    accepted implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8`
    records it. The implementation and approval record
-   `c7757c1293bae90840735555e2670d7661bc9873` are remote verified. Only the
-   initial published handoff and final reconciliation remain open.
+   `c7757c1293bae90840735555e2670d7661bc9873`, plus initial published handoff
+   `c278919b2830d7e8654bcb1bbd38f07db344d285`, are remote verified; this
+   reconciliation completes the bounded publication tuple.
 8. Public Ram registration or outline registration, fixtures, effects, child
    assets, specialist or elite Ram, Stag, Mammoth, Rhino, Furious Depraved
    Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,

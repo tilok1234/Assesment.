@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private art gate (2026-08-13): from clean published Scarcrest
+Current published EN-E10 private art checkpoint (2026-08-13): from clean published Scarcrest
 reconciliation `a7d2abbd610dfc6096498d1dce096d652e50596d`, the designer's
 `approved` selects `baked-single-actor-horned-grounded-quadruped` and authorizes
 exactly one private common Ram candidate. Stonecurl Grazer on
@@ -29,15 +29,17 @@ three-way distinction gate at opaque range 214-243. The raw, required distinct
 Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
 hash-frozen and deterministic. Pre-approval focused / fast / full gates pass
 in 0.7s / 67.6s / 123.1s and approval-local focused / fast gates pass in 0.7s
-/ 58.8s with public 92/294 and all 232 fixtures unchanged. The exact four PNGs
-are open together in Aseprite as sprites 51, 55, 59, and active 63. The
-outlined PNG is review evidence only, not outline registration. The designer
-replied `approved` to the exact posted packet. Accepted
+/ 58.8s with public 92/294 and all 232 fixtures unchanged. Final
+published-state full validation passes in 113.9s with the same boundary. The
+exact four PNGs are open together in Aseprite as sprites 51, 55, 59, and active
+63. The outlined PNG is review evidence only, not outline registration. The
+designer replied `approved` to the exact posted packet. Accepted
 implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` and approval
-record `c7757c1293bae90840735555e2670d7661bc9873` are remote verified. Only
-the initial published handoff and final reconciliation remain open. No next
-Ram art gate is open; registration, fixtures, effects, child assets, later
-roles and families, release, accepted drift, and a PR remain closed.
+record `c7757c1293bae90840735555e2670d7661bc9873`, plus initial published
+handoff `c278919b2830d7e8654bcb1bbd38f07db344d285`, are remote verified;
+this reconciliation completes the bounded publication tuple. No next Ram art
+gate is open; registration, fixtures, effects, child assets, later roles and
+families, release, accepted drift, and a PR remain closed.
 
 Approved preceding EN-E10 art gate (2026-08-13): from clean published Gloamstripe
 reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's

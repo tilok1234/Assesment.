@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: on `codex/en-e10-ram-common`, based exactly on clean
+- Current published private art checkpoint: on `codex/en-e10-ram-common`, based exactly on clean
   published Scarcrest reconciliation
   `a7d2abbd610dfc6096498d1dce096d652e50596d`, the designer's `approved`
   selects `baked-single-actor-horned-grounded-quadruped` and authorizes exactly
@@ -126,17 +126,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   are hash-frozen and regenerate deterministically. Pre-approval focused /
   fast / full gates pass in 0.7s / 67.6s / 123.1s and approval-local focused /
   fast gates pass in 0.7s / 58.8s with public 92/294 and all 232 fixtures
-  unchanged. The four exact PNGs are open together in Aseprite as sprites 51,
-  55, 59, and active 63. The outlined PNG is review evidence only, not outline
-  registration. The final prompt posted all four PNGs and the exact digest;
-  the designer replied `approved`. Accepted implementation
+  unchanged. Final published-state full validation passes in 113.9s with the
+  same boundary. The four exact PNGs are open together in Aseprite as sprites
+  51, 55, 59, and active 63. The outlined PNG is review evidence only, not
+  outline registration. The final prompt posted all four PNGs and the exact
+  digest; the designer replied `approved`. Accepted implementation
   `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` and approval record
-  `c7757c1293bae90840735555e2670d7661bc9873` are remote verified. Only the
-  initial published handoff and final reconciliation remain open. No next Ram
-  art gate is open. Public registration, fixtures, effects, child assets,
-  specialist or elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, the deferred
-  Runic Idol decision, release, accepted drift, a PR, and every later gate
-  remain closed.
+  `c7757c1293bae90840735555e2670d7661bc9873`, plus initial published handoff
+  `c278919b2830d7e8654bcb1bbd38f07db344d285`, are remote verified; this
+  reconciliation completes the bounded publication tuple. No next Ram art gate
+  is open. Public registration, fixtures, effects, child assets, specialist or
+  elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol
+  decision, release, accepted drift, a PR, and every later gate remain closed.
 - Approved preceding private art checkpoint: on `codex/en-e10-hyena-elite`, based exactly on clean
   published Gloamstripe reconciliation
   `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's `approved lets do

@@ -153,8 +153,8 @@ check(
     && EN_E10_STONECURL_GRAZER_GATE.approvedImplementation === '195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8'
     && EN_E10_STONECURL_GRAZER_GATE.publishedImplementation === '195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8'
     && EN_E10_STONECURL_GRAZER_GATE.publishedApprovalRecord === 'c7757c1293bae90840735555e2670d7661bc9873'
-    && EN_E10_STONECURL_GRAZER_GATE.initialPublishedHandoff === ''
-    && EN_E10_STONECURL_GRAZER_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
+    && EN_E10_STONECURL_GRAZER_GATE.initialPublishedHandoff === 'c278919b2830d7e8654bcb1bbd38f07db344d285'
+    && EN_E10_STONECURL_GRAZER_GATE.publicationState === 'published',
   'common Ram authorization or review boundary drifted',
 );
 check(
@@ -193,11 +193,11 @@ check(
     && EN_E10_STONECURL_GRAZER_GATE.exclusions.includes('Ram specialist or elite')
     && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('implementation 195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8')
     && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('approval record c7757c1293bae90840735555e2670d7661bc9873')
+    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('initial published handoff c278919b2830d7e8654bcb1bbd38f07db344d285')
     && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('remote verified')
-    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('initial published handoff and final reconciliation')
+    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('completes the bounded publication tuple')
     && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('No next Ram art gate is open')
-    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('review evidence only')
-    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('does not authorize outline registration'),
+    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('outline registration'),
   'full-suite motion, review, or stop boundary drifted',
 );
 check(
