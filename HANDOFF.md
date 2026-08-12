@@ -23,7 +23,50 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Starlock Lexicon Published And Reconciled
+## Immediate Continuation Checkpoint - Crownseal Grimoire Awaiting Visual Approval
+
+### Current active gate
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e09-living-book-elite`. It is based exactly on clean published
+   Starlock reconciliation `77334139e5fb968b8f8415a3b13e60e6e0b632d0`.
+2. The designer replied `lets do nex t`, opening exactly one private elite
+   Living Book under the approved connected 24x24 baked-single-actor topology
+   with zero child assets. Registration, fixtures, effects, Runic Idol,
+   Crystal Beast, later families, release, accepted drift, and a PR stay closed.
+3. Crownseal Grimoire is a broad royal-violet tome with a connected gilt
+   crown-spine, tiered ivory page mass, integrated crimson triple seals, one
+   turquoise crown script, a connected cathedral page vault, and a body-owned
+   twin-cover crush. Loose pages, script flare, impacts, projectiles, runtime
+   offsets, and child/state assets remain Effects Off and outside the gate.
+4. Frozen candidate digest:
+   `7c1ea4a637b46b0fc494670e83a6527535b02b0c21705c0450f74cf1293ce024`.
+   Raw / Complete B + Form / comparison PNG hashes are
+   `1ea8742965273838a4c96b3e3e0a71b8d29e19abf37f552b1aa4d0596c6b5b80`,
+   `55dcef98ba7bfd5e208b17b25df537f93ef1b7de6554bb0dc54cf462a58c8593`,
+   and `a44c5aaca75fef3dc60227cbf64d197a990c585d0765c1f681f4f60f6e4f4079`.
+   Raw and Complete B + Form GIF hashes are
+   `7d5f61ff22612e8e984b1b009eecfe91e9eb9fd540d3f0ec8b3260adb21659f5`
+   and `61fd569f735a68e3dc5d50b3fe448321f879247ce27fa1ec966bcbe8180be9b4`.
+5. Focused validation passes 80/80 connected and hovering silhouettes, 8/8
+   connected cathedral vaults, 72/72 colored frames, 8/8 exact-white flashes,
+   54/54 readable non-rear crown-script views, and 80/80 pixel plus alpha
+   distinctions from approved Starlock Lexicon, Claspbound Primer, and
+   Epochforge Colossus. Opaque range is 235-303; public remains 92/294 with
+   zero child assets or effects. `check:fast` passes in 61.3s with all 232
+   frozen fixture sheets validated unchanged.
+6. Exact review files are under
+   `enemy-expansion-review/en-e09-living-book-crownseal-grimoire/`. Regenerate
+   them with `npm.cmd run review:enemy-expansion-en-e09-living-book-crownseal-grimoire`
+   and run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e09-living-book-crownseal-grimoire`.
+7. The exact raw, Complete B + Form, and comparison PNGs are open together in
+   the four-lane Aseprite MCP hub as sprites 7, 11, and active 15. Stop for the
+   designer's visual approval. Do not commit, push, register, generate fixtures,
+   add effects or child/state assets, begin another family, release, accept
+   drift, or open a PR before that exact decision.
+
+## Approved Preceding Checkpoint - Starlock Lexicon Published And Reconciled
 
 ### Current active gate
 
@@ -66,9 +109,10 @@ gate.
    `335ff6a36a1b72509816546655d3d58ae2173ecb` are remote verified.
    Initial published handoff `7ae9b30dc5c440eb4b8743fe726c952241a18da3`
    is also remote verified; this reconciliation completes the bounded tuple.
-7. Next gate: none is active. Require separate explicit authorization before
-   the elite role, another family, registration, fixtures, effects or
-   child/state assets, release, accepted drift, or a PR.
+7. The designer later replied `lets do nex t`, opening only the isolated elite
+   Crownseal Grimoire gate above. Another family, registration, fixtures,
+   effects or child/state assets, release, accepted drift, and a PR remain
+   separately gated.
 
 ## Immediate Continuation Checkpoint - Approved Enemy Backlog Integrated
 

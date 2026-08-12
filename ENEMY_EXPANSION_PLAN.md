@@ -15,7 +15,27 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current isolated art gate (2026-08-12): from clean integrated checkpoint
+- Current isolated art gate (2026-08-12): from clean published Starlock
+  reconciliation `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer
+  replied `lets do nex t`, opening exactly one private elite Living Book under
+  the approved connected 24x24 zero-child topology. Crownseal Grimoire on
+  `codex/en-e09-living-book-elite` uses a broad royal-violet cover mass, gilt
+  crown-spine, tiered ivory pages, crimson triple seals, turquoise crown script,
+  connected cathedral page vault, and body-owned twin-cover crush. Its exact
+  80-frame candidate is frozen at digest
+  `7c1ea4a637b46b0fc494670e83a6527535b02b0c21705c0450f74cf1293ce024`.
+  The focused gate passes 80/80 connected hover silhouettes, 8/8 connected
+  cathedral vaults, 72/72 colored frames, 8/8 exact-white flashes, 54/54
+  readable non-rear crown-script views, and 80/80 pixel plus alpha distinctions
+  from Starlock Lexicon, Claspbound Primer, and Epochforge Colossus. Opaque
+  range is 235-303 and the exact five review hashes are frozen. `check:fast`
+  passes in 61.3s with public 92/294 and all 232 fixtures exact. The exact three
+  PNGs are open together in Aseprite as sprites 7, 11, and active 15. Status is
+  `implemented-awaiting-visual-approval`; no registration, fixtures,
+  child/state assets, effects, later family, release, accepted drift, or PR
+  gate is open.
+
+- Approved preceding art gate (2026-08-12): from clean integrated checkpoint
   `e7729e651044139bda7e4dcf14c3c2690dbd29be`, the designer replied `lets keep
   going`, opening exactly one private specialist Living Book under the approved
   connected 24x24 zero-child topology. Starlock Lexicon on
@@ -37,8 +57,9 @@
   `335ff6a36a1b72509816546655d3d58ae2173ecb` plus initial published handoff
   `7ae9b30dc5c440eb4b8743fe726c952241a18da3` are remote verified; this
   reconciliation completes the bounded publication tuple. Status is `approved`
-  and `published`; no registration, fixtures, child/state assets, effects,
-  elite role, later family, release, accepted drift, or PR gate is open.
+  and `published`; the designer's later `lets do nex t` opens only the elite
+  gate above. No registration, fixtures, child/state assets, effects, later
+  family, release, accepted drift, or PR gate is open.
 
 - Historical source approval checkpoint (2026-08-11): private common Animated Armor
   Hollow Sentry on `codex/en-e08-animated-armor-architecture` is frozen at
@@ -5128,7 +5149,7 @@ it with incidental per-frame offsets.
 
 ### EN-E09 - Arcane constructs
 
-- Status: `private Living Book specialist awaiting visual approval`
+- Status: `private Living Book elite awaiting visual approval`
 - Families: Clockwork Automaton, Living Book, Runic Idol, Crystal Beast
 - Priority-first: Clockwork Automaton, Living Book
 
@@ -5166,11 +5187,35 @@ candidate digest
 `3cd86b946115179fc566160e5045eccfda4fd5ce61ce44eae269634b07f3e92c`
 passes its focused 80-frame gate with 80/80 connected hover silhouettes, 8/8
 connected page fans, 72/72 colored frames, 8/8 exact-white flashes, and 54/54
-readable non-rear sigil views. `check:fast` passes in 61.1s with public 92/294
-and all 232 fixture sheets exact. The exact five review hashes are frozen; stop
-for visual approval. Registration, fixtures, child/state assets, effects, the
-elite role, later EN-E09 families, release, accepted drift, and a PR remain
-closed.
+readable non-rear sigil views. Pre-approval fast/full validation passes in
+58.1s/114.1s and approval-local fast/full validation in 61.2s/112.9s with public
+92/294 and all 232 fixture sheets exact. The exact packet is visually approved;
+implementation `f11c2a0915588c616e1db7d8e461208f97a42706`, approval record
+`335ff6a36a1b72509816546655d3d58ae2173ecb`, and initial published handoff
+`7ae9b30dc5c440eb4b8743fe726c952241a18da3` are remote verified, completing
+the bounded publication tuple. The designer's later `lets do nex t` opens only
+the elite gate below. Registration, fixtures, child/state assets, effects,
+later EN-E09 families, release, accepted drift, and a PR remain closed.
+
+Living Book elite gate (2026-08-12): from clean published Starlock
+reconciliation `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer
+replied `lets do nex t`, opening exactly one private elite under the selected
+connected 24x24 baked-single-actor topology. Crownseal Grimoire is a broad
+royal-violet tome with a gilt crown-spine, tiered ivory page mass, crimson
+triple seals, turquoise crown script, connected cathedral page vault, and
+body-owned twin-cover crush. It has zero child assets; loose pages, script
+flare, impacts, projectiles, glow, and runtime offsets remain Effects Off.
+Candidate digest
+`7c1ea4a637b46b0fc494670e83a6527535b02b0c21705c0450f74cf1293ce024`
+passes 80/80 connected hover silhouettes, 8/8 connected cathedral vaults,
+72/72 colored frames, 8/8 exact-white flashes, 54/54 readable non-rear
+crown-script views, and 80/80 pixel plus alpha distinctions from Starlock,
+Claspbound, and Epochforge. Opaque range is 235-303 and the exact five review
+hashes are frozen. `check:fast` passes in 61.3s with public 92/294 and all 232
+fixtures exact. The exact three PNGs are open together in Aseprite as sprites
+7, 11, and active 15; stop for visual approval. Registration, fixtures,
+child/state assets, effects, Runic Idol, Crystal Beast, later families, release,
+accepted drift, and a PR remain closed.
 
 Clockwork Automaton architecture/prototype gate (2026-08-12): from clean
 published Crownmaw reconciliation

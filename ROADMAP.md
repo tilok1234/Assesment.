@@ -14,7 +14,24 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current isolated EN-E09 art gate (2026-08-12): from clean integrated checkpoint
+Current isolated EN-E09 art gate (2026-08-12): from clean published Starlock
+reconciliation `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer
+replied `lets do nex t`, opening exactly one private elite Living Book under the
+approved connected 24x24 zero-child topology. Crownseal Grimoire on
+`codex/en-e09-living-book-elite` is a broad royal-violet tome with a gilt
+crown-spine, tiered ivory page mass, crimson triple seals, turquoise crown
+script, connected cathedral page vault, and body-owned twin-cover crush. Its
+exact 80-frame candidate is frozen at digest
+`7c1ea4a637b46b0fc494670e83a6527535b02b0c21705c0450f74cf1293ce024`.
+Focused validation passes all structure, identity, alias, mirror, and three-way
+comparison gates with opaque range 235-303; the exact five review hashes are
+frozen. `check:fast` passes in 61.3s with public 92/294 and all 232 fixtures
+exact. The exact three PNGs are open together in Aseprite as sprites 7, 11, and
+active 15. Status is `implemented-awaiting-visual-approval`; registration,
+fixtures, child/state assets, effects, later families, release, accepted drift,
+and a PR remain closed.
+
+Approved preceding EN-E09 art gate (2026-08-12): from clean integrated checkpoint
 `e7729e651044139bda7e4dcf14c3c2690dbd29be`, the designer replied `lets keep
 going`, opening exactly one private specialist Living Book under the approved
 connected 24x24 zero-child topology. Starlock Lexicon on
@@ -34,8 +51,9 @@ implementation and approval record
 `335ff6a36a1b72509816546655d3d58ae2173ecb` plus initial published handoff
 `7ae9b30dc5c440eb4b8743fe726c952241a18da3` are remote verified; this
 reconciliation completes the bounded publication tuple. Status is `approved`
-and `published`; registration, fixtures, child/state assets, effects, the elite
-role, later families, release, accepted drift, and a PR remain closed.
+and `published`; the designer's later `lets do nex t` opens only the elite gate
+above. Registration, fixtures, child/state assets, effects, later families,
+release, accepted drift, and a PR remain closed.
 
 Latest source-art approval (2026-08-12): from clean published
 Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, the designer

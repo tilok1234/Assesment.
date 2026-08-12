@@ -1,0 +1,54 @@
+import { createHash } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import * as engine from '../sprite-engine.js';
+import { EN_E09_EPOCHFORGE_COLOSSUS_GATE, EN_E09_EPOCHFORGE_COLOSSUS_REGISTRY } from '../engine/enemy-expansion-en-e09-clockwork-automaton-epochforge-colossus.js';
+import { EN_E09_CLASPBOUND_PRIMER_GATE, EN_E09_CLASPBOUND_PRIMER_REGISTRY, EN_E09_LIVING_BOOK_TOPOLOGY_DECISION } from '../engine/enemy-expansion-en-e09-living-book-claspbound-primer.js';
+import { EN_E09_CROWNSEAL_GRIMOIRE_CONTRACT, EN_E09_CROWNSEAL_GRIMOIRE_CONTRACT_CARD, EN_E09_CROWNSEAL_GRIMOIRE_DATA, EN_E09_CROWNSEAL_GRIMOIRE_DEATH_SOURCE_FRAMES, EN_E09_CROWNSEAL_GRIMOIRE_FAMILY, EN_E09_CROWNSEAL_GRIMOIRE_GATE, EN_E09_CROWNSEAL_GRIMOIRE_REGISTRY } from '../engine/enemy-expansion-en-e09-living-book-crownseal-grimoire.js';
+import { EN_E09_STARLOCK_LEXICON_GATE, EN_E09_STARLOCK_LEXICON_REGISTRY } from '../engine/enemy-expansion-en-e09-living-book-starlock-lexicon.js';
+import { captureEnemyExpansionFrame, mirrorPixels } from './enemy-expansion-review-pixels.mjs';
+
+const root=path.resolve(fileURLToPath(new URL('..',import.meta.url))),errors=[];
+const check=(condition,message)=>{if(!condition)errors.push(message);};
+const hashJson=(value)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+const directions=['down','left','right','up'];
+const animations=[{id:'idle',frames:2},{id:'walk',frames:4},{id:'attack',frames:4},{id:'cast',frames:4},{id:'hurt',frames:2},{id:'death',frames:4}];
+const specs={candidate:{kind:'enemy',family:'living-book',variant:'crownseal-grimoire'},starlock:{kind:'enemy',family:'living-book',variant:'starlock-lexicon'},claspbound:{kind:'enemy',family:'living-book',variant:'claspbound-primer'},epochforge:{kind:'enemy',family:'clockwork-automaton',variant:'epochforge-colossus'}};
+const registries={candidate:EN_E09_CROWNSEAL_GRIMOIRE_REGISTRY,starlock:EN_E09_STARLOCK_LEXICON_REGISTRY,claspbound:EN_E09_CLASPBOUND_PRIMER_REGISTRY,epochforge:EN_E09_EPOCHFORGE_COLOSSUS_REGISTRY};
+const record=(captured,spec,direction,animation,frame)=>({family:spec.family,variant:spec.variant,candidateFamily:spec.family,direction,animation,frame,digest:captured.digest,alphaDigest:captured.alphaDigest,opaquePixels:captured.opaquePixels,bounds:captured.bounds});
+function componentCount(pixels){const occupied=new Set(pixels.flatMap((c,i)=>c?[i]:[]));let count=0;while(occupied.size){count++;const q=[occupied.values().next().value];occupied.delete(q[0]);while(q.length){const i=q.shift(),x=i%24,y=Math.floor(i/24);for(const[nx,ny]of[[x-1,y],[x+1,y],[x,y-1],[x,y+1]]){const n=(ny*24)+nx;if(nx>=0&&ny>=0&&nx<24&&ny<24&&occupied.delete(n))q.push(n);}}}return count;}
+const fileHash=async(relative)=>createHash('sha256').update(await readFile(path.join(root,relative))).digest('hex');
+
+check(EN_E09_LIVING_BOOK_TOPOLOGY_DECISION.status==='selected'&&EN_E09_LIVING_BOOK_TOPOLOGY_DECISION.selected==='baked-single-actor'&&EN_E09_LIVING_BOOK_TOPOLOGY_DECISION.childAssets.length===0&&EN_E09_LIVING_BOOK_TOPOLOGY_DECISION.forbidden.includes('detached pages'),'Living Book topology decision drifted');
+check(EN_E09_CROWNSEAL_GRIMOIRE_GATE.status==='implemented-awaiting-visual-approval'&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.baseCheckpoint==='77334139e5fb968b8f8415a3b13e60e6e0b632d0'&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.authorizedOn==='2026-08-12'&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.authorizationEvidence.includes('designer replied: lets do nex t')&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.approvedOn===null&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.approvedImplementation===null&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.publicationState==='not-approved','private elite gate drifted');
+check(EN_E09_CROWNSEAL_GRIMOIRE_GATE.precedingApproval.gateId===EN_E09_STARLOCK_LEXICON_GATE.id&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.precedingApproval.candidateFrameDigest===EN_E09_STARLOCK_LEXICON_GATE.candidateFrameDigest&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.precedingApproval.currentReconciliation==='77334139e5fb968b8f8415a3b13e60e6e0b632d0','Starlock predecessor drifted');
+check(EN_E09_CROWNSEAL_GRIMOIRE_CONTRACT_CARD.activeVariant.role==='elite'&&EN_E09_CROWNSEAL_GRIMOIRE_CONTRACT_CARD.activeVariant.identity==='crown-spine-tiered-page-mass-triple-seal-cathedral-vault-grimoire'&&EN_E09_CROWNSEAL_GRIMOIRE_CONTRACT_CARD.deferredRoles.length===0&&EN_E09_CROWNSEAL_GRIMOIRE_CONTRACT.silhouette.includes('connected three-point crown-spine')&&EN_E09_CROWNSEAL_GRIMOIRE_CONTRACT.visualIdentity.includes('No eyes, mouth, hands, limbs')&&EN_E09_CROWNSEAL_GRIMOIRE_DATA.childAssets.length===0&&EN_E09_CROWNSEAL_GRIMOIRE_DATA.bakedEffects.length===0,'Living Book elite identity or boundary drifted');
+check(EN_E09_CROWNSEAL_GRIMOIRE_GATE.scope.includes('80-frame Crownseal Grimoire elite Living Book')&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.animationContract.includes('body-owned twin-cover crush')&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.animationContract.includes('Cast aliases Attack exactly')&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.nextGate.includes('explicit designer visual approval')&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.exclusions.includes('loose pages')&&EN_E09_CROWNSEAL_GRIMOIRE_GATE.exclusions.includes('additional Living Book variants'),'motion or stop gate drifted');
+check(Object.isFrozen(EN_E09_CROWNSEAL_GRIMOIRE_GATE)&&Object.isFrozen(EN_E09_CROWNSEAL_GRIMOIRE_DATA),'gate and data must be frozen');
+check(EN_E09_CROWNSEAL_GRIMOIRE_REGISTRY.families.length===1&&EN_E09_CROWNSEAL_GRIMOIRE_REGISTRY.publicFamilies.length===0&&EN_E09_CROWNSEAL_GRIMOIRE_FAMILY.variants.length===1,'private registry drifted');
+const publicVariants=engine.PUBLIC_ENEMIES.reduce((sum,f)=>sum+f.variants.length,0);check(engine.PUBLIC_ENEMIES.length===92&&publicVariants===294&&!engine.PUBLIC_ENEMIES.some((f)=>f.variants.some((v)=>v.id==='crownseal-grimoire')),'public 92/294 boundary drifted');
+check(JSON.stringify(EN_E09_CROWNSEAL_GRIMOIRE_DEATH_SOURCE_FRAMES)===JSON.stringify([0,1,1,1]),'death alias drifted');
+
+const records=Object.fromEntries(Object.keys(specs).map((name)=>[name,[]])),byKey=new Map();
+let connected=0,hovering=0,flashes=0,colored=0,scriptViews=0,openVaults=0;let minOpaque=999,maxOpaque=0;
+const diffs={starlock:0,claspbound:0,epochforge:0},alphaDiffs={starlock:0,claspbound:0,epochforge:0};
+for(const animation of animations)for(const direction of directions)for(let frame=0;frame<animation.frames;frame++){
+  const captured={};for(const name of Object.keys(specs)){captured[name]=captureEnemyExpansionFrame(registries[name],specs[name],direction,animation.id,frame);records[name].push(record(captured[name],specs[name],direction,animation.id,frame));}
+  const c=captured.candidate,key=`${animation.id}/${direction}/${frame}`;byKey.set(key,c);if(componentCount(c.pixels)===1)connected++;if(c.bounds.minY>=1&&c.bounds.maxY<=22)hovering++;
+  const colors=new Set(c.pixels.filter(Boolean)),flash=colors.size===1&&colors.has('#f4f4f4');if(flash)flashes++;else colored++;
+  if(!flash&&direction!=='up'&&c.pixels.includes('#68d5cc'))scriptViews++;
+  if((animation.id==='attack'||animation.id==='cast')&&frame===1&&(c.bounds.maxX-c.bounds.minX+1)>=22)openVaults++;
+  minOpaque=Math.min(minOpaque,c.opaquePixels);maxOpaque=Math.max(maxOpaque,c.opaquePixels);
+  check(c.opaquePixels>=190&&c.opaquePixels<=390,`${key} opaque ${c.opaquePixels} left elite book range`);check(c.renderResult.childAssetCount===0&&c.renderResult.approvedPrecedingGate===EN_E09_STARLOCK_LEXICON_GATE.id,`${key} renderer boundary drifted`);
+  for(const name of ['starlock','claspbound','epochforge']){if(c.digest!==captured[name].digest)diffs[name]++;if(c.alphaDigest!==captured[name].alphaDigest)alphaDiffs[name]++;}
+}
+for(const direction of directions)for(let frame=0;frame<4;frame++){check(byKey.get(`cast/${direction}/${frame}`).digest===byKey.get(`attack/${direction}/${frame}`).digest,`${direction} cast alias ${frame}`);check(byKey.get(`death/${direction}/${frame}`).digest===byKey.get(`hurt/${direction}/${EN_E09_CROWNSEAL_GRIMOIRE_DEATH_SOURCE_FRAMES[frame]}`).digest,`${direction} death alias ${frame}`);check(JSON.stringify(byKey.get(`walk/left/${frame}`).pixels)===JSON.stringify(mirrorPixels(byKey.get(`walk/right/${frame}`).pixels)),`walk mirror ${frame}`);}
+const digests=Object.fromEntries(Object.keys(records).map((name)=>[name,hashJson(records[name])]));
+if(EN_E09_CROWNSEAL_GRIMOIRE_GATE.candidateFrameDigest)check(digests.candidate===EN_E09_CROWNSEAL_GRIMOIRE_GATE.candidateFrameDigest,'candidate digest drifted');
+check(digests.starlock===EN_E09_STARLOCK_LEXICON_GATE.candidateFrameDigest,'Starlock digest drifted');check(digests.claspbound===EN_E09_CLASPBOUND_PRIMER_GATE.candidateFrameDigest,'Claspbound digest drifted');check(digests.epochforge===EN_E09_EPOCHFORGE_COLOSSUS_GATE.candidateFrameDigest,'Epochforge digest drifted');
+check(connected===80&&hovering===80,`structure connected ${connected} hovering ${hovering}`);check(flashes===8&&colored===72&&scriptViews===54,`identity flashes ${flashes} colored ${colored} script ${scriptViews}`);check(openVaults===8,`open cathedral-vault frames ${openVaults}`);
+for(const name of Object.keys(diffs))check(diffs[name]===80&&alphaDiffs[name]===80,`${name} distinction ${diffs[name]}/${alphaDiffs[name]}`);
+for(const[field,relative]of[['artifactSha256',EN_E09_CROWNSEAL_GRIMOIRE_GATE.artifact],['assembledArtifactSha256',EN_E09_CROWNSEAL_GRIMOIRE_GATE.assembledArtifact],['comparisonArtifactSha256',EN_E09_CROWNSEAL_GRIMOIRE_GATE.comparisonArtifact]])if(EN_E09_CROWNSEAL_GRIMOIRE_GATE[field])check(await fileHash(relative)===EN_E09_CROWNSEAL_GRIMOIRE_GATE[field],field+' drifted');
+for(const review of Object.values(EN_E09_CROWNSEAL_GRIMOIRE_GATE.reviewAnimations))if(review.sha256)check(await fileHash(review.artifact)===review.sha256,review.artifact+' drifted');
+if(errors.length){console.error('Crownseal Grimoire check failed:');for(const error of errors)console.error('- '+error);process.exitCode=1;}else{console.log('Crownseal Grimoire private elite candidate passes focused validation.');console.log(`- Structure: ${connected}/80 connected, ${hovering}/80 broad hover silhouettes, ${openVaults}/8 connected cathedral vaults`);console.log(`- Identity: ${colored}/72 colored, ${flashes}/8 white flashes, ${scriptViews}/54 readable crown-script views, opaque ${minOpaque}-${maxOpaque}`);console.log('- Candidate frame digest: '+digests.candidate);console.log('- Protected: Starlock, Claspbound, Epochforge exact; public 92/294; zero child assets/effects');}

@@ -107,6 +107,26 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
+- Active private art gate: on `codex/en-e09-living-book-elite`, based exactly
+  on clean published Starlock reconciliation
+  `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer's `lets do nex t`
+  authorizes exactly one elite Living Book under the approved connected 24x24
+  zero-child topology. Crownseal Grimoire is a broad royal-violet tome with a
+  gilt crown-spine, tiered ivory page mass, crimson triple seals, turquoise
+  crown script, connected cathedral page vault, and body-owned twin-cover
+  crush. Its exact 80-frame candidate is frozen at digest
+  `7c1ea4a637b46b0fc494670e83a6527535b02b0c21705c0450f74cf1293ce024`.
+  The focused gate passes 80/80 connected hover silhouettes, 8/8 connected
+  cathedral vaults, 72/72 colored frames, 8/8 exact-white flashes, 54/54
+  readable non-rear crown-script views, and 80/80 pixel plus alpha distinctions
+  from Starlock, Claspbound, and Epochforge. Opaque range is 235-303 and the
+  exact three PNG plus two GIF hashes are frozen in the gate. `check:fast`
+  passes in 61.3s with public 92/294 and all 232 fixtures exact. The exact raw,
+  Complete B + Form, and comparison PNGs are open together in Aseprite as
+  sprites 7, 11, and active 15. This local candidate is unapproved and
+  unpublished; stop for exact visual approval.
+  Registration, fixtures, child/state assets, effects, later families, release,
+  accepted drift, and a PR remain closed.
 - Current approved private art gate: on `codex/en-e09-living-book-specialist`, based on
   clean integrated checkpoint `e7729e651044139bda7e4dcf14c3c2690dbd29be`,
   the designer's `lets keep going` authorizes exactly one specialist Living
@@ -126,9 +146,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   pixels. The implementation and approval record
   `335ff6a36a1b72509816546655d3d58ae2173ecb` plus initial published handoff
   `7ae9b30dc5c440eb4b8743fe726c952241a18da3` are remote verified; this
-  reconciliation completes the bounded publication tuple. No next art gate is
-  authorized. Registration, fixtures, child/state assets, effects, the elite
-  role, later families, release, accepted drift, and a PR remain closed.
+  reconciliation completes the bounded publication tuple. The designer's later
+  `lets do nex t` opens only the isolated elite gate above. Registration,
+  fixtures, child/state assets, effects, later families, release, accepted
+  drift, and a PR remain closed.
 - Latest source-art approval: common Living Book Claspbound Primer on
   `codex/en-e09-living-book-architecture`, based exactly on clean published
   Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, is frozen
