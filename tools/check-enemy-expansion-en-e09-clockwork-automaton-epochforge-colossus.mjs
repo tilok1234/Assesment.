@@ -79,8 +79,8 @@ check(
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.approvedImplementation === '96e83258ff0b350880139cb4a2b283ef0063e51f'
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.publishedImplementation === '96e83258ff0b350880139cb4a2b283ef0063e51f'
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.publishedApprovalRecord === '853b922619775450d13510a3746ecfb163161afb'
-    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.initialPublishedHandoff === null
-    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.initialPublishedHandoff === '234a08ad53973c3afed1697089b59e1d9d6651f0'
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.publicationState === 'published',
   'Epochforge Colossus private approval gate drifted',
 );
 check(
@@ -109,7 +109,8 @@ check(
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('implementation 96e83258ff0b350880139cb4a2b283ef0063e51f')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('approval record 853b922619775450d13510a3746ecfb163161afb')
-    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('initial published handoff 234a08ad53973c3afed1697089b59e1d9d6651f0')
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('completes the bounded publication tuple')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.exclusions.includes('public Clockwork Automaton registration')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.exclusions.includes('additional Clockwork Automaton roles'),
   'Epochforge motion, exclusions, or stop gate drifted',

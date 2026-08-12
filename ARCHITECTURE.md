@@ -17,7 +17,9 @@ validator, or frame contract. Digest
 `0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
 is published at implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`
 and approval record `853b922619775450d13510a3746ecfb163161afb`, both remote
-verified; registration, fixtures,
+verified. Initial published handoff
+`234a08ad53973c3afed1697089b59e1d9d6651f0` is also remote verified; the
+bounded publication tuple is complete. Registration, fixtures,
 child/state assets, effects, later families, release, accepted drift, and a PR
 remain closed.
 

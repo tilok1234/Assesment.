@@ -5142,7 +5142,9 @@ part, or runtime offset is baked. Candidate digest
 passes the focused 80-frame gate and differs from Aetherdial, Brasscoil, and
 Runeforge in every pixel frame. The exact review packet is visually approved at
 implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`; approval record
-`853b922619775450d13510a3746ecfb163161afb` is also remote verified. Registration,
+`853b922619775450d13510a3746ecfb163161afb` is also remote verified.
+Initial published handoff `234a08ad53973c3afed1697089b59e1d9d6651f0`
+is remote verified; the bounded publication tuple is complete. Registration,
 fixtures, child/state assets, effects, later EN-E09
 families, release, accepted drift, and a PR remain closed.
 

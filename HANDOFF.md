@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Epochforge Colossus Visual Gate
+## Immediate Continuation Checkpoint - Epochforge Colossus Published
 
 Start here. Aetherdial Surveyor's bounded publication tuple is clean and remote
 verified at `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`. The designer
@@ -33,7 +33,9 @@ implemented on `codex/en-e09-clockwork-automaton-elite`. The designer replied
 `approved`, accepting implementation
 `96e83258ff0b350880139cb4a2b283ef0063e51f` and the exact digest and five
 hashes below only. Approval record
-`853b922619775450d13510a3746ecfb163161afb` is also remote verified.
+`853b922619775450d13510a3746ecfb163161afb` and initial published handoff
+`234a08ad53973c3afed1697089b59e1d9d6651f0` are also remote verified; this
+reconciliation completes the bounded publication tuple.
 
 - Identity: broad black-iron and red-brass siege machine with a connected cog
   crown, low pale sensor slit, twin furnace dials, oversized integrated hammer
@@ -59,12 +61,14 @@ hashes below only. Approval record
   differ from approved Aetherdial Surveyor, Brasscoil Sentry, and Runeforge
   Custodian. There are 72/72 colored frames, 8/8 exact-white flashes, and
   54/54 readable non-rear sensor views.
+- Post-approval validation: focused passes; `check:fast` passes in 57.2s and
+  full `check` passes in 101.2s with public 80/259 and all 232 fixture sheets
+  exact.
 - Approval: the exact three frozen PNGs were open together in Aseprite when the
-  designer replied `approved`. Standing permission opens only the bounded
-  handoff reconciliation.
-- Next gate: publish this initial handoff, complete its final reconciliation,
-  verify it remotely, inspect
-  the live roadmap, and stop at its next explicit decision. Do not register,
+  designer replied `approved`, accepting this digest and five hashes only.
+  Standing permission completed its bounded publication tuple.
+- Next gate: inspect the live roadmap and stop at its next explicit decision.
+  Do not register,
   generate fixtures, add child assets or effects, start another family,
   release, accept drift, or open a PR.
 

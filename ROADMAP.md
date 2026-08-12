@@ -11,9 +11,12 @@ baked 24x24 actor with zero child assets, frozen at digest
 Its broad black-iron siege silhouette, cog crown, low sensor slit, twin furnace
 dials, hammer forearms, reinforced hip axle, piston legs, and tread feet are
 distinct from Aetherdial, Brasscoil, and Runeforge. Focused validation passes
-all 80 frames. The exact five review hashes were visually approved at
+all 80 frames; post-approval fast/full validation passes in 57.2s/101.2s with
+public 80/259 and all 232 fixture sheets exact. The exact five review hashes were visually approved at
 implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`; approval record
 `853b922619775450d13510a3746ecfb163161afb` is also remote verified.
+Initial published handoff `234a08ad53973c3afed1697089b59e1d9d6651f0`
+is remote verified; the bounded publication tuple is complete.
 Registration, fixtures, child assets, effects, later families, release,
 accepted drift, and a PR stay closed.
 
