@@ -124,16 +124,22 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   range is 239-259. Exact aliases and mirrors pass. The raw, required distinct
   Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
   hash-frozen and regenerate deterministically. Pre-approval focused / fast /
-  full gates pass in 0.6s / 61.5s / 111.2s with public 92/294 and all 232
-  fixtures unchanged. The exact raw, outlined, Complete B + Form, and
+  full gates pass in 0.6s / 61.5s / 111.2s and approval-local focused / fast
+  gates pass in 0.6s / 58.9s with public 92/294 and all 232 fixtures unchanged.
+  The exact raw, outlined, Complete B + Form, and
   comparison PNGs are open together in Aseprite as sprites 35, 39, 43, and
-  active 47. The outlined PNG is a review surface only, not public outline
+  active 47 when the designer replied `approvedf lets do nex tr`. Accepted
+  implementation `88d00336ee8ff714f1d978a5cf37d9807bbb4719` records only the
+  frozen packet. The outlined PNG is a review surface only, not public outline
   registration. Gloamstripe's approved
   implementation `5d35ed0c36f84646270a3d02b13e63559798aa01`, approval record
   `76ed7212ccddc33d1fcafa1ec97b26eb8963f096`, initial published handoff
   `1126852feae8f812c044806760a0063a7ef8d31f`, and final reconciliation above
-  are remote verified. Scarcrest still awaits explicit visual approval; do not
-  commit or push it. Registration, fixtures, effects, child assets, Ram, Stag,
+  are remote verified. Standing permission opens Scarcrest's approval record,
+  push, and bounded publication reconciliation. The continuation clause opens
+  only the Ram actor-topology decision after clean remote verification; it does
+  not select a topology or authorize Ram art. Registration, fixtures, effects,
+  child assets, Stag,
   Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release,
   accepted drift, a PR, and every later gate remain closed.
 - Current approved private art gate: on `codex/en-e09-living-book-elite`, based exactly

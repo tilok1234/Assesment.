@@ -45,7 +45,7 @@ export const EN_E10_HYENA_ELITE_CONTRACT_CARD = deepFreeze({
     id: 'scarcrest-matriarch',
     name: 'Scarcrest Matriarch',
     role: 'elite',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   actorTopology: EN_E10_HYENA_TOPOLOGY_DECISION.selected,
@@ -58,7 +58,7 @@ export const EN_E10_SCARCREST_MATRIARCH_CONTRACT = deepFreeze({
   family: 'hyena',
   variant: 'scarcrest-matriarch',
   role: 'elite',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_HYENA_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-broad-high-shoulder-heavy-neck-raised-crest-scarred-wedge-jaw-four-paw-hyena-v1',
   silhouette: 'A broad elite Hyena matriarch with massive high shoulders, a heavy connected neck, descending back, low powerful rump, deep chest, compact scarred wedge muzzle, two rounded ears, a raised connected crown-like crest, thick connected lowered tail, and four separated dark paws. It must remain a grounded Hyena rather than an upright Werewolf, reduced Rhino Boss, long-snouted Dire Wolf, or recolored Duneback and Gloamstripe body.',
@@ -96,11 +96,20 @@ export const EN_E10_SCARCREST_MATRIARCH_DATA = deepFreeze({
 
 export const EN_E10_SCARCREST_MATRIARCH_GATE = deepFreeze({
   id: 'en-e10-hyena-scarcrest-matriarch-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '76117603035f6880f25f7dc8356ba23221df2af9',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Gloamstripe Ambusher packet was visually approved at digest 6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885 when the designer replied: approved lets do nex t. After its bounded implementation 5d35ed0c36f84646270a3d02b13e63559798aa01, approval record 76ed7212ccddc33d1fcafa1ec97b26eb8963f096, initial published handoff 1126852feae8f812c044806760a0063a7ef8d31f, and final reconciliation 76117603035f6880f25f7dc8356ba23221df2af9 were pushed and remote verified, the lets do nex t portion authorizes exactly one private elite Hyena full 80-frame candidate under the approved baked-single-actor-grounded-quadruped topology. Continue the distinct Complete B outlined PNG as review evidence only; it does not authorize outline registration. Public Hyena registration, fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E10_HYENA_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Gloamstripe Ambusher and Duneback Scavenger plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The four-lane Aseprite MCP review window reported those exact four paths open together as raw sprite 35, outlined sprite 39, Complete B + Form sprite 43, and active comparison sprite 47. The final approval prompt posted all four exact PNGs and identified candidate digest 81e0c289eae61184741155c99a1cef9c03d3d3bae115f7eb96489572fbc00cf7. The designer replied: approvedf lets do nex tr. Approval applies only to that exact Scarcrest Matriarch digest and its six frozen review hashes. The continuation portion separately opens only the next EN-E10 Ram actor-topology decision after this bounded elite publication is clean and remote verified; it does not select a topology or authorize Ram art. Public Hyena or outline registration, fixtures, effects, child assets, Ram art, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  approvedImplementation: '88d00336ee8ff714f1d978a5cf37d9807bbb4719',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.id,
     artifactSha256: EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.artifactSha256,
@@ -156,7 +165,7 @@ export const EN_E10_SCARCREST_MATRIARCH_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop for explicit visual approval of this exact frozen Scarcrest Matriarch digest and its four PNG plus two GIF review hashes. Do not register or publish it before approval. The distinct outlined PNG is review evidence only and does not authorize outline registration. All later EN-E10 families remain closed.',
+  nextGate: 'The exact Scarcrest Matriarch packet is visually approved at implementation 88d00336ee8ff714f1d978a5cf37d9807bbb4719. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The approvedf lets do nex tr reply separately opens only the next EN-E10 Ram actor-topology decision after this publication is clean and remote verified; no topology is selected and no Ram art is authorized. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Hyena registration, fixtures, effects, child assets, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_SCARCREST_MATRIARCH_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -455,7 +464,7 @@ export const EN_E10_SCARCREST_MATRIARCH_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'scarcrest-matriarch',
     scale: 8,
-    notes: 'Awaiting explicit visual approval as one broad heavy-necked elite Hyena against approved Gloamstripe Ambusher and Duneback Scavenger plus public Dire Wolf. The packet includes a distinct Complete B outlined PNG as review evidence. Keep outline registration, public registration, fixtures, effects, child assets, later EN-E10 families, Rhino Boss work, and deferred Runic Idol separate.',
+    notes: 'Visually approved as one exact broad heavy-necked elite Hyena against approved Gloamstripe Ambusher and Duneback Scavenger plus public Dire Wolf. The packet includes a distinct Complete B outlined PNG as review evidence. Keep outline registration, public registration, fixtures, effects, child assets, Ram art and later EN-E10 families, Rhino Boss work, and deferred Runic Idol separate.',
   },
 });
 

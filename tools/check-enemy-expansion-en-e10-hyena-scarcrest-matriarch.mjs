@@ -59,14 +59,23 @@ check(
   'published Gloamstripe predecessor drifted',
 );
 check(
-  EN_E10_SCARCREST_MATRIARCH_GATE.status==='awaiting-visual-approval'
+  EN_E10_SCARCREST_MATRIARCH_GATE.status==='approved'
     && EN_E10_SCARCREST_MATRIARCH_GATE.baseCheckpoint==='76117603035f6880f25f7dc8356ba23221df2af9'
     && EN_E10_SCARCREST_MATRIARCH_GATE.authorizedOn==='2026-08-13'
     && EN_E10_SCARCREST_MATRIARCH_GATE.authorizationEvidence.includes('approved lets do nex t')
     && EN_E10_SCARCREST_MATRIARCH_GATE.authorizationEvidence.includes('exactly one private elite Hyena full 80-frame candidate')
     && EN_E10_SCARCREST_MATRIARCH_GATE.authorizationEvidence.includes('final reconciliation 76117603035f6880f25f7dc8356ba23221df2af9')
     && EN_E10_SCARCREST_MATRIARCH_GATE.authorizationEvidence.includes('distinct Complete B outlined PNG')
-    && EN_E10_SCARCREST_MATRIARCH_GATE.authorizationEvidence.includes('does not authorize outline registration'),
+    && EN_E10_SCARCREST_MATRIARCH_GATE.authorizationEvidence.includes('does not authorize outline registration')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.approvedOn==='2026-08-13'
+    && EN_E10_SCARCREST_MATRIARCH_GATE.approvalEvidence.includes('approvedf lets do nex tr')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.approvalEvidence.includes('raw sprite 35')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.approvalEvidence.includes('outlined sprite 39')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.approvalEvidence.includes('Complete B + Form sprite 43')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.approvalEvidence.includes('active comparison sprite 47')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.approvalEvidence.includes('81e0c289eae61184741155c99a1cef9c03d3d3bae115f7eb96489572fbc00cf7')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.approvedImplementation==='88d00336ee8ff714f1d978a5cf37d9807bbb4719'
+    && EN_E10_SCARCREST_MATRIARCH_GATE.publicationState==='approved-not-published',
   'elite authorization or outlined-review boundary drifted',
 );
 check(
@@ -84,6 +93,7 @@ check(
     && EN_E10_HYENA_ELITE_CONTRACT_CARD.precedingVariant.id==='gloamstripe-ambusher'
     && EN_E10_HYENA_ELITE_CONTRACT_CARD.activeVariant.id==='scarcrest-matriarch'
     && EN_E10_HYENA_ELITE_CONTRACT_CARD.activeVariant.role==='elite'
+    && EN_E10_HYENA_ELITE_CONTRACT_CARD.activeVariant.status==='implemented-full-approved'
     && EN_E10_HYENA_ELITE_CONTRACT_CARD.deferredRoles.length===0,
   'Hyena elite role boundary drifted',
 );
@@ -101,7 +111,11 @@ check(
     && EN_E10_SCARCREST_MATRIARCH_GATE.animationContract.includes('heavy neck-and-jaw crush')
     && EN_E10_SCARCREST_MATRIARCH_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_SCARCREST_MATRIARCH_GATE.reviewPresentation.includes('distinct Complete B outlined')
-    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('four PNG plus two GIF review hashes')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('visually approved at implementation 88d00336ee8ff714f1d978a5cf37d9807bbb4719')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('approvedf lets do nex tr')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('Ram actor-topology decision')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('no Ram art is authorized')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('clean and remote verified')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('review evidence only')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('does not authorize outline registration'),
   'full-suite motion, review, or stop boundary drifted',

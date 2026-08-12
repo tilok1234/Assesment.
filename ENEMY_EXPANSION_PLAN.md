@@ -32,13 +32,18 @@
   range is 239-259. Exact Cast/Attack and Death/Hurt aliases and side mirrors
   pass. The raw, required distinct Complete B outlined, Complete B + Form, and
   comparison PNGs plus two GIFs are hash-frozen and deterministic. Pre-approval
-  focused / fast / full gates pass in 0.6s / 61.5s / 111.2s with public 92/294
-  and all 232 fixtures unchanged. The exact raw, outlined, Complete B + Form,
+  focused / fast / full gates pass in 0.6s / 61.5s / 111.2s and approval-local
+  focused / fast gates pass in 0.6s / 58.9s with public 92/294 and all 232
+  fixtures unchanged. The exact raw, outlined, Complete B + Form,
   and comparison PNGs are open together in Aseprite as sprites 35, 39, 43, and
-  active 47. The outlined PNG is review evidence only, not outline
-  registration. Scarcrest awaits
-  explicit visual approval; do not commit or push it. Public registration,
-  fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino, Rhino Boss work,
+  active 47 when the designer replied `approvedf lets do nex tr`. Accepted
+  implementation `88d00336ee8ff714f1d978a5cf37d9807bbb4719` records only the
+  frozen packet. The outlined PNG is review evidence only, not outline
+  registration. Standing permission opens its approval record, branch push,
+  and bounded publication reconciliation. The continuation clause opens only
+  the Ram actor-topology decision after clean remote verification; it does not
+  select a topology or authorize Ram art. Public registration, fixtures,
+  effects, child assets, Stag, Mammoth, Rhino, Rhino Boss work,
   the deferred Runic Idol decision, release, accepted drift, a PR, and every
   later gate remain closed.
 
@@ -5413,7 +5418,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common and specialist approved and published; elite awaiting visual approval; remaining families queued`
+- Status: `Hyena common and specialist published; elite approved pending bounded publication; Ram topology next after remote verification; remaining families queued`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5472,14 +5477,18 @@ quadruped-span, alias, mirror, and pixel/alpha distinction checks against
 Gloamstripe, Duneback, and Dire Wolf at opaque range 239-259. The hash-frozen
 packet includes raw, required distinct Complete B outlined, Complete B + Form,
 and comparison PNGs plus two GIFs and regenerates deterministically.
-Pre-approval focused / fast / full gates pass in 0.6s / 61.5s / 111.2s with
-public 92/294 and all 232 fixtures unchanged. The exact raw, outlined, Complete
+Pre-approval focused / fast / full gates pass in 0.6s / 61.5s / 111.2s and
+approval-local focused / fast gates pass in 0.6s / 58.9s with public 92/294 and
+all 232 fixtures unchanged. The exact raw, outlined, Complete
 B + Form, and comparison PNGs are open together in Aseprite as sprites 35, 39,
-43, and active 47. The outlined PNG is review evidence only and does not change
-outline registration. Stop for explicit visual approval of Scarcrest.
-Registration, fixtures,
-effects, Ram, Stag, Mammoth, Rhino, Rhino Boss work, and all later gates remain
-closed.
+43, and active 47 when the designer replied `approvedf lets do nex tr`.
+Accepted implementation `88d00336ee8ff714f1d978a5cf37d9807bbb4719`
+records the frozen packet. The outlined PNG is review evidence only and does
+not change outline registration. Standing permission opens the bounded
+publication tuple. Only after clean remote verification does the continuation
+open the Ram actor-topology decision; no Ram art or topology is authorized.
+Registration, fixtures, effects, Stag, Mammoth, Rhino, Rhino Boss work, and all
+later gates remain closed.
 
 ### EN-E11 - Birds
 

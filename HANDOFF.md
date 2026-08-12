@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Scarcrest Matriarch Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Scarcrest Matriarch Approval Publication
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-hyena-elite`. It is based exactly on the clean published
@@ -65,8 +65,8 @@ gate.
    Wolf. Opaque range is 239-259. Complete B adds 9,817 outline pixels and Form
    changes 4,013 pixels. Deterministic regeneration reproduces all six hashes.
    Pre-approval focused / `check:fast` / full `check` gates pass in
-   0.6s / 61.5s / 111.2s with public 92/294 and all 232 fixture sheets
-   unchanged.
+   0.6s / 61.5s / 111.2s and the approval-local focused / fast gates pass in
+   0.6s / 58.9s with public 92/294 and all 232 fixture sheets unchanged.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-hyena-scarcrest-matriarch/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-hyena-scarcrest-matriarch` and run
@@ -75,13 +75,19 @@ gate.
 7. The exact raw, distinct Complete B outlined, Complete B + Form, and
    comparison PNGs are open together in the four-lane Aseprite MCP review
    window as sprites 35, 39, 43, and active 47. The outlined PNG is required
-   review evidence only; it does not authorize outline registration. Explicit
-   visual approval of the frozen digest is still pending, so do not commit or
-   push this elite packet.
+   review evidence only; it does not authorize outline registration. The final
+   approval prompt posted all four exact PNGs and identified digest
+   `81e0c289eae61184741155c99a1cef9c03d3d3bae115f7eb96489572fbc00cf7`.
+   The designer replied `approvedf lets do nex tr`. Approval applies only to
+   that exact packet; accepted implementation
+   `88d00336ee8ff714f1d978a5cf37d9807bbb4719` records it. Standing permission
+   opens its approval record, branch push, and bounded reconciliation.
 8. Public Hyena registration or outline registration, fixtures, effects, child
    assets, Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
-   deferred Runic Idol decision, release, accepted drift, a PR, and every later
-   gate remain closed. Stop for the designer's exact visual verdict.
+   deferred Runic Idol decision, release, accepted drift, and a PR remain
+   closed. The continuation clause opens only the next EN-E10 Ram
+   actor-topology decision after this publication is clean and remote verified;
+   it does not select a topology or authorize Ram art.
 
 ## Approved Preceding Checkpoint - Gloamstripe Ambusher Published And Reconciled
 

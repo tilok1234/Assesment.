@@ -29,12 +29,18 @@ Focused validation passes every structure, identity, alias, mirror, and
 three-way distinction gate at opaque range 239-259. The raw, required distinct
 Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
 hash-frozen and deterministic. Pre-approval focused / fast / full gates pass in
-0.6s / 61.5s / 111.2s with public 92/294 and all 232 fixtures unchanged. The
-exact raw, outlined, Complete B + Form, and comparison PNGs are open together
-in Aseprite as sprites 35, 39, 43, and active 47. The outlined PNG is review
-evidence only and does not authorize outline registration. Scarcrest awaits explicit visual
-approval and must not be committed or pushed yet. Public registration,
-fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino, Rhino Boss work,
+0.6s / 61.5s / 111.2s and approval-local focused / fast gates pass in
+0.6s / 58.9s with public 92/294 and all 232 fixtures unchanged. The exact raw,
+outlined, Complete B + Form, and comparison PNGs are open together
+in Aseprite as sprites 35, 39, 43, and active 47 when the designer replied
+`approvedf lets do nex tr`. Accepted implementation
+`88d00336ee8ff714f1d978a5cf37d9807bbb4719` records the exact packet. The
+outlined PNG is review evidence only and does not authorize outline
+registration. Standing permission opens Scarcrest's approval record, push, and
+bounded reconciliation. The continuation opens only the Ram actor-topology
+decision after clean remote verification; no Ram art or topology is authorized.
+Public registration, fixtures, effects, child assets, Stag, Mammoth, Rhino,
+Rhino Boss work,
 the deferred Runic Idol decision, release, accepted drift, a PR, and every later
 gate remain closed.
 
