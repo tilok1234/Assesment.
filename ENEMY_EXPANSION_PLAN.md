@@ -39,9 +39,11 @@
   active 47 when the designer replied `approvedf lets do nex tr`. Accepted
   implementation `88d00336ee8ff714f1d978a5cf37d9807bbb4719` records only the
   frozen packet. The outlined PNG is review evidence only, not outline
-  registration. Standing permission opens its approval record, branch push,
-  and bounded publication reconciliation. The continuation clause opens only
-  the Ram actor-topology decision after clean remote verification; it does not
+  registration. The implementation and approval record
+  `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` are remote verified; only the
+  initial published handoff and final reconciliation remain open. The
+  continuation clause opens only the Ram actor-topology decision after the
+  tuple is complete, clean, and remote verified; it does not
   select a topology or authorize Ram art. Public registration, fixtures,
   effects, child assets, Stag, Mammoth, Rhino, Rhino Boss work,
   the deferred Runic Idol decision, release, accepted drift, a PR, and every
@@ -5484,9 +5486,11 @@ B + Form, and comparison PNGs are open together in Aseprite as sprites 35, 39,
 43, and active 47 when the designer replied `approvedf lets do nex tr`.
 Accepted implementation `88d00336ee8ff714f1d978a5cf37d9807bbb4719`
 records the frozen packet. The outlined PNG is review evidence only and does
-not change outline registration. Standing permission opens the bounded
-publication tuple. Only after clean remote verification does the continuation
-open the Ram actor-topology decision; no Ram art or topology is authorized.
+not change outline registration. The implementation and approval record
+`0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` are remote verified; only the
+initial published handoff and final reconciliation remain open. Only after the
+tuple is complete, clean, and remote verified does the continuation open the
+Ram actor-topology decision; no Ram art or topology is authorized.
 Registration, fixtures, effects, Stag, Mammoth, Rhino, Rhino Boss work, and all
 later gates remain closed.
 

@@ -36,9 +36,12 @@ in Aseprite as sprites 35, 39, 43, and active 47 when the designer replied
 `approvedf lets do nex tr`. Accepted implementation
 `88d00336ee8ff714f1d978a5cf37d9807bbb4719` records the exact packet. The
 outlined PNG is review evidence only and does not authorize outline
-registration. Standing permission opens Scarcrest's approval record, push, and
-bounded reconciliation. The continuation opens only the Ram actor-topology
-decision after clean remote verification; no Ram art or topology is authorized.
+registration. Scarcrest implementation
+`88d00336ee8ff714f1d978a5cf37d9807bbb4719` and approval record
+`0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` are remote verified; only its
+initial published handoff and final reconciliation remain open. The
+continuation opens only the Ram actor-topology decision after the tuple is
+complete, clean, and remote verified; no Ram art or topology is authorized.
 Public registration, fixtures, effects, child assets, Stag, Mammoth, Rhino,
 Rhino Boss work,
 the deferred Runic Idol decision, release, accepted drift, a PR, and every later

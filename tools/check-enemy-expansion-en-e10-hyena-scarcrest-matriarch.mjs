@@ -75,7 +75,10 @@ check(
     && EN_E10_SCARCREST_MATRIARCH_GATE.approvalEvidence.includes('active comparison sprite 47')
     && EN_E10_SCARCREST_MATRIARCH_GATE.approvalEvidence.includes('81e0c289eae61184741155c99a1cef9c03d3d3bae115f7eb96489572fbc00cf7')
     && EN_E10_SCARCREST_MATRIARCH_GATE.approvedImplementation==='88d00336ee8ff714f1d978a5cf37d9807bbb4719'
-    && EN_E10_SCARCREST_MATRIARCH_GATE.publicationState==='approved-not-published',
+    && EN_E10_SCARCREST_MATRIARCH_GATE.publishedImplementation==='88d00336ee8ff714f1d978a5cf37d9807bbb4719'
+    && EN_E10_SCARCREST_MATRIARCH_GATE.publishedApprovalRecord==='0411a1a385ddddf090f0ca3d31c81e0a6f6e6214'
+    && EN_E10_SCARCREST_MATRIARCH_GATE.initialPublishedHandoff===''
+    && EN_E10_SCARCREST_MATRIARCH_GATE.publicationState==='published-awaiting-handoff-reconciliation',
   'elite authorization or outlined-review boundary drifted',
 );
 check(
@@ -111,11 +114,14 @@ check(
     && EN_E10_SCARCREST_MATRIARCH_GATE.animationContract.includes('heavy neck-and-jaw crush')
     && EN_E10_SCARCREST_MATRIARCH_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_SCARCREST_MATRIARCH_GATE.reviewPresentation.includes('distinct Complete B outlined')
-    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('visually approved at implementation 88d00336ee8ff714f1d978a5cf37d9807bbb4719')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('implementation 88d00336ee8ff714f1d978a5cf37d9807bbb4719')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('approval record 0411a1a385ddddf090f0ca3d31c81e0a6f6e6214')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('remote verified')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('initial published handoff and final reconciliation')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('approvedf lets do nex tr')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('Ram actor-topology decision')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('no Ram art is authorized')
-    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('clean and remote verified')
+    && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('complete, clean, and remote verified')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('review evidence only')
     && EN_E10_SCARCREST_MATRIARCH_GATE.nextGate.includes('does not authorize outline registration'),
   'full-suite motion, review, or stop boundary drifted',

@@ -80,14 +80,16 @@ gate.
    `81e0c289eae61184741155c99a1cef9c03d3d3bae115f7eb96489572fbc00cf7`.
    The designer replied `approvedf lets do nex tr`. Approval applies only to
    that exact packet; accepted implementation
-   `88d00336ee8ff714f1d978a5cf37d9807bbb4719` records it. Standing permission
-   opens its approval record, branch push, and bounded reconciliation.
+   `88d00336ee8ff714f1d978a5cf37d9807bbb4719` records it. The implementation
+   and approval record `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` are remote
+   verified. Only the initial published handoff and final reconciliation remain
+   open.
 8. Public Hyena registration or outline registration, fixtures, effects, child
    assets, Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
    deferred Runic Idol decision, release, accepted drift, and a PR remain
    closed. The continuation clause opens only the next EN-E10 Ram
-   actor-topology decision after this publication is clean and remote verified;
-   it does not select a topology or authorize Ram art.
+   actor-topology decision after this publication tuple is complete, clean, and
+   remote verified; it does not select a topology or authorize Ram art.
 
 ## Approved Preceding Checkpoint - Gloamstripe Ambusher Published And Reconciled
 

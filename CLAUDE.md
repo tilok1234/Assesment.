@@ -135,9 +135,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   implementation `5d35ed0c36f84646270a3d02b13e63559798aa01`, approval record
   `76ed7212ccddc33d1fcafa1ec97b26eb8963f096`, initial published handoff
   `1126852feae8f812c044806760a0063a7ef8d31f`, and final reconciliation above
-  are remote verified. Standing permission opens Scarcrest's approval record,
-  push, and bounded publication reconciliation. The continuation clause opens
-  only the Ram actor-topology decision after clean remote verification; it does
+  are remote verified. Scarcrest implementation
+  `88d00336ee8ff714f1d978a5cf37d9807bbb4719` and approval record
+  `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` are also remote verified; only
+  its initial handoff and final reconciliation remain open. The continuation
+  clause opens only the Ram actor-topology decision after the tuple is complete,
+  clean, and remote verified; it does
   not select a topology or authorize Ram art. Registration, fixtures, effects,
   child assets, Stag,
   Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release,
