@@ -138,10 +138,10 @@ export const EN_E10_DUNEBACK_SCAVENGER_GATE = deepFreeze({
   approvedImplementation: 'e0e5e36bd6769a334f06e72db3de67c836021c46',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission applies only after explicit approval of the exact frozen artifact or digest and does not authorize this awaiting-review candidate, registration, fixtures, effects, later roles or families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: 'e0e5e36bd6769a334f06e72db3de67c836021c46',
+  publishedApprovalRecord: 'eab51c5045a2f8c3f211476e1de640d64940dbc5',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E09_CROWNSEAL_GRIMOIRE_GATE.id,
     artifactSha256: EN_E09_CROWNSEAL_GRIMOIRE_GATE.artifactSha256,
@@ -212,7 +212,7 @@ export const EN_E10_DUNEBACK_SCAVENGER_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'The exact Duneback Scavenger packet is visually approved at implementation e0e5e36bd6769a334f06e72db3de67c836021c46. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. No next sprite is authorized. If a later sprite is separately authorized, its review presentation must also post a distinct outlined image; this is a review-surface requirement, not permission for outline registration. Registration, fixtures, effects, child assets, specialist or elite Hyena, Ram, Stag, Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Duneback Scavenger implementation e0e5e36bd6769a334f06e72db3de67c836021c46 and approval record eab51c5045a2f8c3f211476e1de640d64940dbc5 are remote verified. Only the initial published handoff and final reconciliation remain open. No next sprite is authorized. If a later sprite is separately authorized, its review presentation must also post a distinct outlined image; this is a review-surface requirement, not permission for outline registration. Registration, fixtures, effects, child assets, specialist or elite Hyena, Ram, Stag, Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_DUNEBACK_SCAVENGER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

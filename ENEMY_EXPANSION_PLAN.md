@@ -37,7 +37,9 @@
   `e0e5e36bd6769a334f06e72db3de67c836021c46` records only that frozen packet.
   The second clause requires the next separately authorized sprite review to
   also post a distinct outlined image; it neither opens another sprite nor
-  authorizes outline registration. Bounded approval publication is active.
+  authorizes outline registration. The implementation and approval record
+  `eab51c5045a2f8c3f211476e1de640d64940dbc5` are remote verified; only the
+  initial published handoff and final reconciliation remain.
   Registration,
   fixtures, effects, child assets, later Hyena roles, Ram, Stag, Mammoth,
   Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted
@@ -5348,7 +5350,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common approved; bounded publication active; remaining families queued`
+- Status: `Hyena common published; handoff reconciliation active; remaining families queued`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 

@@ -66,8 +66,9 @@ gate.
    the designer replied `approved but for nex to ne please also post image of
    it outlined`. Accepted implementation
    `e0e5e36bd6769a334f06e72db3de67c836021c46` records only the frozen packet.
-   Standing permission opens its approval record, branch push, and bounded
-   publication reconciliation.
+   The implementation and approval record
+   `eab51c5045a2f8c3f211476e1de640d64940dbc5` are remote verified. Only the
+   initial published handoff and final reconciliation remain open.
 8. Registration, fixtures, effects, child assets, specialist or elite Hyena,
    Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the deferred
    Runic Idol topology decision, release, accepted drift, and a PR remain

@@ -131,7 +131,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `e0e5e36bd6769a334f06e72db3de67c836021c46` records only the exact frozen
   packet. The second clause requires the next separately authorized sprite
   review to also post a distinct outlined image; it does not authorize another
-  sprite or outline registration. Bounded approval publication is active.
+  sprite or outline registration. The implementation and approval record
+  `eab51c5045a2f8c3f211476e1de640d64940dbc5` are remote verified; only the
+  initial published handoff and final reconciliation remain.
   Registration,
   fixtures, effects, child assets, later Hyena roles, Ram, Stag, Mammoth,
   Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted

@@ -170,7 +170,10 @@ check(
     && EN_E10_DUNEBACK_SCAVENGER_GATE.approvalEvidence.includes('approved but for nex to ne please also post image of it outlined')
     && EN_E10_DUNEBACK_SCAVENGER_GATE.approvalEvidence.includes('353bd2ee9818a9eac8e799a7bc0e041cb6841509d61d3aabd695e86cd146db4d')
     && EN_E10_DUNEBACK_SCAVENGER_GATE.approvedImplementation === 'e0e5e36bd6769a334f06e72db3de67c836021c46'
-    && EN_E10_DUNEBACK_SCAVENGER_GATE.publicationState === 'approved-not-published',
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.publishedImplementation === 'e0e5e36bd6769a334f06e72db3de67c836021c46'
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.publishedApprovalRecord === 'eab51c5045a2f8c3f211476e1de640d64940dbc5'
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.initialPublishedHandoff === ''
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
   'private common authorization or awaiting-review state drifted',
 );
 check(
@@ -209,7 +212,10 @@ check(
   'full-suite motion or stop boundary drifted',
 );
 check(
-  EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('visually approved at implementation e0e5e36bd6769a334f06e72db3de67c836021c46')
+  EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('implementation e0e5e36bd6769a334f06e72db3de67c836021c46')
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('approval record eab51c5045a2f8c3f211476e1de640d64940dbc5')
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('remote verified')
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('initial published handoff and final reconciliation')
     && EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('No next sprite is authorized')
     && EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('distinct outlined image')
     && EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('not permission for outline registration'),

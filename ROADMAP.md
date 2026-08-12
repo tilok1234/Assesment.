@@ -32,7 +32,9 @@ Complete B + Form, and comparison PNGs were open together in Aseprite as sprites
 7, 11, and active 15 when the designer replied `approved but for nex to ne
 please also post image of it outlined`. Accepted implementation
 `e0e5e36bd6769a334f06e72db3de67c836021c46` records only the exact frozen
-packet. Its bounded approval publication is active. No next sprite is
+packet. The implementation and approval record
+`eab51c5045a2f8c3f211476e1de640d64940dbc5` are remote verified; only the
+initial published handoff and final reconciliation remain. No next sprite is
 authorized; if one is separately opened, its review must also post a distinct
 outlined image without implying outline registration. Registration, fixtures,
 effects, child assets, later Hyena roles, Ram, Stag, Mammoth, Rhino, Rhino Boss
