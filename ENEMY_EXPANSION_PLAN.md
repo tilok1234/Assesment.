@@ -15,7 +15,34 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private art gate (2026-08-13): from clean published Duneback
+- Current private art gate (2026-08-13): from clean published Gloamstripe
+  reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's
+  `approved lets do nex t` authorizes exactly one private elite Hyena under the
+  approved connected grounded 24x24 zero-child topology. Scarcrest Matriarch on
+  `codex/en-e10-hyena-elite` is a broad burnished-umber matriarch with massive
+  high shoulders, heavy connected neck, descending back, low powerful rump,
+  deep pale chest, compact scarred wedge muzzle, rounded crimson-lined ears,
+  raised connected near-black wine crest, integrated pale scars, gold eyes,
+  four separated dark paws, a thick connected lowered tail, and a body-owned
+  heavy neck-and-jaw crush. Its exact 80-frame digest is
+  `81e0c289eae61184741155c99a1cef9c03d3d3bae115f7eb96489572fbc00cf7`.
+  Focused validation passes all 80 connected, bounded, grounded, four-paw,
+  quadruped-span, pixel-distinct, and alpha-distinct frames against approved
+  Gloamstripe Ambusher and Duneback Scavenger plus public Dire Wolf; opaque
+  range is 239-259. Exact Cast/Attack and Death/Hurt aliases and side mirrors
+  pass. The raw, required distinct Complete B outlined, Complete B + Form, and
+  comparison PNGs plus two GIFs are hash-frozen and deterministic. Pre-approval
+  focused / fast / full gates pass in 0.6s / 61.5s / 111.2s with public 92/294
+  and all 232 fixtures unchanged. The exact raw, outlined, Complete B + Form,
+  and comparison PNGs are open together in Aseprite as sprites 35, 39, 43, and
+  active 47. The outlined PNG is review evidence only, not outline
+  registration. Scarcrest awaits
+  explicit visual approval; do not commit or push it. Public registration,
+  fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino, Rhino Boss work,
+  the deferred Runic Idol decision, release, accepted drift, a PR, and every
+  later gate remain closed.
+
+- Approved preceding private art gate (2026-08-13): from clean published Duneback
   reconciliation `153ca132f94cc2360eca2c0366602ff400f871df`, the designer said
   `lets do nex t`, authorizing exactly one private specialist Hyena candidate
   under the approved connected grounded 24x24 zero-child topology. Gloamstripe
@@ -42,10 +69,10 @@
   The implementation, approval record
   `76ed7212ccddc33d1fcafa1ec97b26eb8963f096`, and initial published handoff
   `1126852feae8f812c044806760a0063a7ef8d31f` are remote verified; this
-  reconciliation completes the bounded publication tuple. The same reply
-  authorizes exactly one private elite Hyena candidate from this clean
-  published reconciliation. Continue the distinct outlined review PNG without
-  changing outline registration. Public registration, fixtures, effects, child assets, Ram, Stag,
+  reconciliation completes the bounded publication tuple. The same reply later
+  opened exactly the one private Scarcrest Matriarch candidate above from this
+  clean published reconciliation. Continue the distinct outlined review PNG
+  without changing outline registration. Public registration, fixtures, effects, child assets, Ram, Stag,
   Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release,
   accepted drift, and a PR remain closed.
 
@@ -5386,7 +5413,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common approved and published; specialist awaiting visual approval; elite and remaining families queued`
+- Status: `Hyena common and specialist approved and published; elite awaiting visual approval; remaining families queued`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5426,10 +5453,33 @@ All 80 frames pass connected, one-cell bounded, grounded, four-paw,
 quadruped-span, alias, mirror, and pixel/alpha distinction checks against
 Duneback, Miremane, and Dire Wolf. The packet includes raw, distinct Complete B
 outlined, Complete B + Form, and comparison PNGs plus two GIFs; all six hashes
-are frozen and deterministic. The outlined PNG fulfills the requested review
-surface only and does not change outline registration. Stop for explicit visual
-approval. Elite Hyena, registration, fixtures, effects, Ram, Stag, Mammoth,
-Rhino, Rhino Boss work, and all later gates remain closed.
+are frozen and deterministic. The four exact PNGs were open together in
+Aseprite as sprites 19, 23, 27, and active 31 when the designer approved the
+digest. Its implementation, approval record, initial handoff, and final
+reconciliation are published and remote verified at the checkpoints above.
+
+The same approval reply separately opened exactly one private elite candidate
+from clean Gloamstripe reconciliation
+`76117603035f6880f25f7dc8356ba23221df2af9`. Scarcrest Matriarch is a broad
+burnished-umber matriarch with massive high shoulders, heavy connected neck,
+low rump, deep pale chest, compact scarred wedge muzzle, rounded crimson-lined
+ears, raised connected near-black wine crest, pale scars, gold eyes, four dark
+paws, thick connected low tail, and a body-owned neck-and-jaw crush. Its exact
+80-frame digest is
+`81e0c289eae61184741155c99a1cef9c03d3d3bae115f7eb96489572fbc00cf7`.
+All 80 frames pass connected, one-cell bounded, grounded, four-paw,
+quadruped-span, alias, mirror, and pixel/alpha distinction checks against
+Gloamstripe, Duneback, and Dire Wolf at opaque range 239-259. The hash-frozen
+packet includes raw, required distinct Complete B outlined, Complete B + Form,
+and comparison PNGs plus two GIFs and regenerates deterministically.
+Pre-approval focused / fast / full gates pass in 0.6s / 61.5s / 111.2s with
+public 92/294 and all 232 fixtures unchanged. The exact raw, outlined, Complete
+B + Form, and comparison PNGs are open together in Aseprite as sprites 35, 39,
+43, and active 47. The outlined PNG is review evidence only and does not change
+outline registration. Stop for explicit visual approval of Scarcrest.
+Registration, fixtures,
+effects, Ram, Stag, Mammoth, Rhino, Rhino Boss work, and all later gates remain
+closed.
 
 ### EN-E11 - Birds
 

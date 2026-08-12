@@ -23,7 +23,67 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Gloamstripe Ambusher Published And Reconciled
+## Immediate Continuation Checkpoint - Scarcrest Matriarch Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-hyena-elite`. It is based exactly on the clean published
+   Gloamstripe Ambusher reconciliation
+   `76117603035f6880f25f7dc8356ba23221df2af9`.
+2. The exact Gloamstripe packet was visually approved at digest
+   `6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885`
+   when the designer replied `approved lets do nex t`. After its bounded
+   implementation `5d35ed0c36f84646270a3d02b13e63559798aa01`, approval record
+   `76ed7212ccddc33d1fcafa1ec97b26eb8963f096`, initial published handoff
+   `1126852feae8f812c044806760a0063a7ef8d31f`, and final reconciliation above
+   were pushed and remote verified, the continuation clause authorizes exactly
+   one private elite Hyena full 80-frame candidate under the approved
+   `baked-single-actor-grounded-quadruped` topology.
+3. The candidate is Scarcrest Matriarch: a broad burnished-umber elite with
+   massive high shoulders, heavy connected neck, descending back, low powerful
+   rump, deep pale chest, compact scarred wedge muzzle, rounded crimson-lined
+   ears, raised connected near-black wine crest, integrated pale scars, gold
+   eyes, four separated dark paws, a thick connected lowered tail, and a
+   body-owned heavy neck-and-jaw crush. Trophies, chains, sound glyphs, dust,
+   saliva, bite arcs, impacts, particles, projectiles, glow, illumination,
+   runtime attachments, and all other effects remain external and Off.
+4. Frozen candidate digest:
+   `81e0c289eae61184741155c99a1cef9c03d3d3bae115f7eb96489572fbc00cf7`.
+   Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+   hashes are
+   `dedd81ffe72ccef6357faf67bb8b26e247a8bba7e15f562ec4296046658c2026`,
+   `4b77fa3209c2d82df3cb91a11a42ef5e15ca31e4e84fc8720356ec2129a857e6`,
+   `a48ff7eee5c35302b771e721ce8fd4e9eed471a321a9dda27be8182979c4d31d`,
+   and `b976fc42cb7f0c5d3df89c746db01eb962bbae7642b93ba98b474a011ee7eed0`.
+   Raw and Complete B + Form GIF hashes are
+   `6e187f8fb2940a68715ec2ee835dd49cfe42703c1089f79aff14e6e2af550ade`
+   and `1a2ba4ca2ee3a2279eb3b43a22a1bfb6d87c863e9956d992b969ae282841b5df`.
+5. Focused validation passes 80/80 connected, bounded, grounded, four-paw, and
+   quadruped-span frames; 72/72 colored frames; 8/8 exact-white flashes; 54/54
+   expected eye-bearing and readable-muzzle views; exact Cast/Attack and
+   Death/Hurt aliases; side mirrors; and 80/80 pixel plus alpha distinctions
+   from approved Gloamstripe Ambusher and Duneback Scavenger plus public Dire
+   Wolf. Opaque range is 239-259. Complete B adds 9,817 outline pixels and Form
+   changes 4,013 pixels. Deterministic regeneration reproduces all six hashes.
+   Pre-approval focused / `check:fast` / full `check` gates pass in
+   0.6s / 61.5s / 111.2s with public 92/294 and all 232 fixture sheets
+   unchanged.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-hyena-scarcrest-matriarch/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-hyena-scarcrest-matriarch` and run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-hyena-scarcrest-matriarch`.
+7. The exact raw, distinct Complete B outlined, Complete B + Form, and
+   comparison PNGs are open together in the four-lane Aseprite MCP review
+   window as sprites 35, 39, 43, and active 47. The outlined PNG is required
+   review evidence only; it does not authorize outline registration. Explicit
+   visual approval of the frozen digest is still pending, so do not commit or
+   push this elite packet.
+8. Public Hyena registration or outline registration, fixtures, effects, child
+   assets, Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
+   deferred Runic Idol decision, release, accepted drift, a PR, and every later
+   gate remain closed. Stop for the designer's exact visual verdict.
+
+## Approved Preceding Checkpoint - Gloamstripe Ambusher Published And Reconciled
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-hyena-specialist`. It is based exactly on the clean published

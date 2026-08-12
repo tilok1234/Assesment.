@@ -14,7 +14,31 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private art gate (2026-08-13): from clean published Duneback
+Current EN-E10 private art gate (2026-08-13): from clean published Gloamstripe
+reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's
+`approved lets do nex t` authorizes exactly one private elite Hyena candidate.
+Scarcrest Matriarch on `codex/en-e10-hyena-elite` keeps the approved connected
+grounded 24x24 zero-child topology and uses a broad burnished-umber body,
+massive high shoulders, heavy connected neck, low powerful rump, deep pale
+chest, compact scarred wedge muzzle, rounded crimson-lined ears, raised
+connected near-black wine crest, pale scars, gold eyes, four dark paws, thick
+connected lowered tail, and a body-owned heavy neck-and-jaw crush. Its exact
+80-frame digest is
+`81e0c289eae61184741155c99a1cef9c03d3d3bae115f7eb96489572fbc00cf7`.
+Focused validation passes every structure, identity, alias, mirror, and
+three-way distinction gate at opaque range 239-259. The raw, required distinct
+Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
+hash-frozen and deterministic. Pre-approval focused / fast / full gates pass in
+0.6s / 61.5s / 111.2s with public 92/294 and all 232 fixtures unchanged. The
+exact raw, outlined, Complete B + Form, and comparison PNGs are open together
+in Aseprite as sprites 35, 39, 43, and active 47. The outlined PNG is review
+evidence only and does not authorize outline registration. Scarcrest awaits explicit visual
+approval and must not be committed or pushed yet. Public registration,
+fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino, Rhino Boss work,
+the deferred Runic Idol decision, release, accepted drift, a PR, and every later
+gate remain closed.
+
+Approved preceding EN-E10 art gate (2026-08-13): from clean published Duneback
 reconciliation `153ca132f94cc2360eca2c0366602ff400f871df`, the designer said
 `lets do nex t`, authorizing exactly one private specialist Hyena candidate.
 Gloamstripe Ambusher on `codex/en-e10-hyena-specialist` keeps the approved
@@ -38,9 +62,9 @@ four exact PNGs were open together in Aseprite as sprites 19, 23, 27, and active
 permission has published the implementation, approval record
 `76ed7212ccddc33d1fcafa1ec97b26eb8963f096`, and initial handoff
 `1126852feae8f812c044806760a0063a7ef8d31f`; the bounded tuple is complete and
-remote verified. The same reply opens exactly one private elite Hyena from this
-clean published reconciliation. Continue the distinct outlined review PNG
-without changing outline registration. Public registration, fixtures, effects, child assets,
+remote verified. The same reply opens exactly the one private Scarcrest
+Matriarch candidate above from this clean published reconciliation. Continue
+the distinct outlined review PNG without changing outline registration. Public registration, fixtures, effects, child assets,
 Ram, Stag, Mammoth, Rhino, Rhino
 Boss work, the deferred Runic Idol decision, release, accepted drift, and a PR
 remain closed.

@@ -107,39 +107,35 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: on `codex/en-e10-hyena-specialist`, based exactly
-  on clean published Duneback reconciliation
-  `153ca132f94cc2360eca2c0366602ff400f871df`, the designer said `lets do nex
-  t`, separately authorizing exactly one private specialist Hyena candidate
-  under the approved connected grounded 24x24 zero-child topology. Gloamstripe
-  Ambusher is a lean slate-violet dusk hunter with tall narrow shoulders, a low
-  rump, tucked abdomen, compact wedge muzzle, rounded ears, long connected
-  indigo ruff, cold face and flank stripes, cyan eyes, four dark paws, connected
-  lowered tail, and a body-owned feint-to-pounce. Its exact 80-frame digest is
-  `6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885`.
+- Current private art gate: on `codex/en-e10-hyena-elite`, based exactly on clean
+  published Gloamstripe reconciliation
+  `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's `approved lets do
+  nex t` authorizes exactly one private elite Hyena under the approved connected
+  grounded 24x24 zero-child topology. Scarcrest Matriarch is a broad
+  burnished-umber matriarch with massive high shoulders, heavy connected neck,
+  low rump, deep pale chest, compact scarred wedge muzzle, rounded crimson-lined
+  ears, raised connected near-black wine crest, pale scars, gold eyes, four
+  dark paws, thick connected lowered tail, and a body-owned heavy neck-and-jaw
+  crush. Its exact 80-frame digest is
+  `81e0c289eae61184741155c99a1cef9c03d3d3bae115f7eb96489572fbc00cf7`.
   Focused validation passes 80/80 connected, bounded, grounded, four-paw,
   quadruped-span, pixel-distinct, and alpha-distinct frames against approved
-  Duneback Scavenger and Miremane Courser plus public Dire Wolf; opaque range is
-  205-244. Exact aliases and mirrors pass. The raw, separately requested
+  Gloamstripe Ambusher and Duneback Scavenger plus public Dire Wolf; opaque
+  range is 239-259. Exact aliases and mirrors pass. The raw, required distinct
   Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
-  hash-frozen; deterministic regeneration passes. Pre-approval `check:fast`/full
-  pass in 60.2s/111.1s and approval-local gates pass in 57.9s/112.7s with
-  public 92/294 and all 232 fixtures unchanged. Final published-state full
-  validation passes in 108.1s with the same boundary. The distinct
-  outlined PNG is a review surface only, not public outline registration. The
-  exact raw, outlined, Complete B + Form, and comparison PNGs were open together
-  in Aseprite as sprites 19, 23, 27, and active 31 when the designer replied
-  `approved lets do nex t`. Accepted implementation
-  `5d35ed0c36f84646270a3d02b13e63559798aa01` records only the frozen packet.
-  The implementation, approval record
-  `76ed7212ccddc33d1fcafa1ec97b26eb8963f096`, and initial published handoff
-  `1126852feae8f812c044806760a0063a7ef8d31f` are remote verified; this
-  reconciliation completes the bounded publication tuple. The same reply opens
-  exactly one private elite Hyena from this clean published reconciliation.
-  Continue the outlined review PNG without changing outline registration. Registration,
-  fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino,
-  Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
-  and a PR remain closed.
+  hash-frozen and regenerate deterministically. Pre-approval focused / fast /
+  full gates pass in 0.6s / 61.5s / 111.2s with public 92/294 and all 232
+  fixtures unchanged. The exact raw, outlined, Complete B + Form, and
+  comparison PNGs are open together in Aseprite as sprites 35, 39, 43, and
+  active 47. The outlined PNG is a review surface only, not public outline
+  registration. Gloamstripe's approved
+  implementation `5d35ed0c36f84646270a3d02b13e63559798aa01`, approval record
+  `76ed7212ccddc33d1fcafa1ec97b26eb8963f096`, initial published handoff
+  `1126852feae8f812c044806760a0063a7ef8d31f`, and final reconciliation above
+  are remote verified. Scarcrest still awaits explicit visual approval; do not
+  commit or push it. Registration, fixtures, effects, child assets, Ram, Stag,
+  Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release,
+  accepted drift, a PR, and every later gate remain closed.
 - Current approved private art gate: on `codex/en-e09-living-book-elite`, based exactly
   on clean published Starlock reconciliation
   `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer's `lets do nex t`
