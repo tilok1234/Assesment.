@@ -26,10 +26,15 @@ exact 80-frame candidate is frozen at digest
 Focused validation passes all structure, identity, alias, mirror, and three-way
 comparison gates with opaque range 235-303; the exact five review hashes are
 frozen. `check:fast` passes in 61.3s with public 92/294 and all 232 fixtures
-exact. The exact three PNGs are open together in Aseprite as sprites 7, 11, and
-active 15. Status is `implemented-awaiting-visual-approval`; registration,
-fixtures, child/state assets, effects, later families, release, accepted drift,
-and a PR remain closed.
+exact; pre-metadata fast/full gates pass in 61.7s/115.7s and approval-local
+fast/full gates in 67.1s/122.5s. The exact three PNGs were open together in
+Aseprite as sprites 7, 11, and active 15 when the designer
+replied `approved lets do next`. Accepted implementation
+`159b9105297fb6c999f91ec77c194c777579d526` records that packet. Status is
+`approved-not-published`; after its bounded publication, the same reply opens
+only the Runic Idol actor-topology decision and does not authorize art.
+Registration, fixtures, child/state assets, effects, Crystal Beast, later
+families, release, accepted drift, and a PR remain closed.
 
 Approved preceding EN-E09 art gate (2026-08-12): from clean integrated checkpoint
 `e7729e651044139bda7e4dcf14c3c2690dbd29be`, the designer replied `lets keep

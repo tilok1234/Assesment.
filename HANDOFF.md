@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Crownseal Grimoire Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Crownseal Grimoire Approved, Publication Pending
 
 ### Current active gate
 
@@ -54,17 +54,23 @@ gate.
    distinctions from approved Starlock Lexicon, Claspbound Primer, and
    Epochforge Colossus. Opaque range is 235-303; public remains 92/294 with
    zero child assets or effects. `check:fast` passes in 61.3s with all 232
-   frozen fixture sheets validated unchanged.
+   frozen fixture sheets validated unchanged. Pre-metadata `check:fast` passes
+   in 61.7s and full `check` in 115.7s; approval-local fast/full gates pass in
+   67.1s/122.5s with the same protected boundary.
 6. Exact review files are under
    `enemy-expansion-review/en-e09-living-book-crownseal-grimoire/`. Regenerate
    them with `npm.cmd run review:enemy-expansion-en-e09-living-book-crownseal-grimoire`
    and run the focused gate with
    `npm.cmd run check:enemy-expansion-en-e09-living-book-crownseal-grimoire`.
-7. The exact raw, Complete B + Form, and comparison PNGs are open together in
-   the four-lane Aseprite MCP hub as sprites 7, 11, and active 15. Stop for the
-   designer's visual approval. Do not commit, push, register, generate fixtures,
-   add effects or child/state assets, begin another family, release, accept
-   drift, or open a PR before that exact decision.
+7. Approval: the exact raw, Complete B + Form, and comparison PNGs were open
+   together in the four-lane Aseprite MCP hub as sprites 7, 11, and active 15
+   when the designer replied `approved lets do next`. Accepted implementation
+   `159b9105297fb6c999f91ec77c194c777579d526` records only that frozen packet.
+   Standing permission opens its bounded approval record, branch push, and
+   handoff reconciliation. After that tuple is clean, the same reply opens only
+   the Runic Idol actor-topology decision; it does not select a topology or
+   authorize art. Registration, fixtures, effects or child/state assets,
+   Crystal Beast, later families, release, accepted drift, and a PR stay closed.
 
 ## Approved Preceding Checkpoint - Starlock Lexicon Published And Reconciled
 

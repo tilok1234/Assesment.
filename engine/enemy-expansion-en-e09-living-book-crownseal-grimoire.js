@@ -79,16 +79,18 @@ export const EN_E09_CROWNSEAL_GRIMOIRE_DATA = deepFreeze({
 
 export const EN_E09_CROWNSEAL_GRIMOIRE_GATE = deepFreeze({
   id: 'en-e09-living-book-crownseal-grimoire-full-v1',
-  status: 'implemented-awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '77334139e5fb968b8f8415a3b13e60e6e0b632d0',
   authorizedOn: '2026-08-12',
   authorizationEvidence: 'After the exact Starlock Lexicon publication tuple was clean and remote verified at checkpoint 77334139e5fb968b8f8415a3b13e60e6e0b632d0, the designer replied: lets do nex t. Following the Living Book common-specialist-elite role order under the selected connected 24x24 zero-child topology, this authorizes only one private Crownseal Grimoire 80-frame elite art candidate. Registration, fixtures, effects, child assets, Runic Idol, Crystal Beast, later families, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E09_LIVING_BOOK_TOPOLOGY_DECISION.id,
-  approvedOn: null, approvalEvidence: null, approvedImplementation: null,
+  approvedOn: '2026-08-12',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Starlock Lexicon, Claspbound Primer, and Epochforge Colossus family comparison, and both synchronized GIFs were presented. The four-lane Aseprite MCP hub reported the three exact frozen PNG paths open together as raw sprite 7, Complete B + Form sprite 11, and active comparison sprite 15. The designer replied: approved lets do next. In context this explicitly approves candidate digest 7c1ea4a637b46b0fc494670e83a6527535b02b0c21705c0450f74cf1293ce024 and its five frozen review hashes only. The same reply opens only the Runic Idol actor-topology architecture gate after this bounded publication tuple is clean; it does not select a topology or authorize Runic Idol art. Standing permission authorizes bounded publication but does not open registration, fixtures, child/state assets, effects, Crystal Beast, later families, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: '159b9105297fb6c999f91ec77c194c777579d526',
   publicationAuthorizedOn: '2026-08-12',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: null, publishedApprovalRecord: null, initialPublishedHandoff: null,
-  publicationState: 'not-approved',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E09_STARLOCK_LEXICON_GATE.id,
     artifactSha256: EN_E09_STARLOCK_LEXICON_GATE.artifactSha256,
@@ -118,7 +120,7 @@ export const EN_E09_CROWNSEAL_GRIMOIRE_GATE = deepFreeze({
   animationContract: 'Idle settles the connected crown-spine and tiered page mass. Walk uses four heavy regal hover pitches. Attack braces, opens into one connected cathedral page vault, performs a body-owned twin-cover crush with no loose-page, impact, or script-flare pixels, and recovers. Hurt uses a complete white recoil and colored triple-seal brace. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.',
   reviewPresentation: 'Show the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, synchronized GIFs, and approved Starlock Lexicon, Claspbound Primer, and Epochforge Colossus family comparisons together.',
   exclusions: ['changes to approved Starlock Lexicon, Claspbound Primer, or earlier rendered pixels', 'public Living Book registration', 'public catalog or facade exposure', 'asset-pack fixture or manifest changes', 'schema changes', 'shared renderer changes', 'exporter changes', 'validator changes', 'frame-contract changes', 'deterministic child/state exports', 'runtime attachment offsets', 'loose pages', 'detached bookmark', 'separate covers', 'new Cast pixels', 'new Death pixels', 'humanoid face', 'eyes or mouth', 'hands or limbs', 'handheld weapon or shield', 'aura', 'glow', 'particles', 'projectiles', 'script flare', 'impacts', 'illumination', 'effects', 'additional Living Book variants', 'Runic Idol, Crystal Beast, or later work', 'release', 'accepted drift'],
-  nextGate: 'Stop for explicit designer visual approval of the exact frozen Crownseal Grimoire review artifacts and candidate digest. Do not publish, register, add fixtures, add child/state assets, add effects, begin Runic Idol, Crystal Beast, or later families, release, accept drift, or open a pull request.',
+  nextGate: 'The exact Crownseal Grimoire packet is visually approved at implementation 159b9105297fb6c999f91ec77c194c777579d526. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. After that tuple is clean, present the recommended Runic Idol actor-topology decision; do not select it or begin art without explicit approval. Registration, fixtures, child/state assets, effects, Crystal Beast, later families, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E09_CROWNSEAL_GRIMOIRE_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

@@ -121,12 +121,17 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   readable non-rear crown-script views, and 80/80 pixel plus alpha distinctions
   from Starlock, Claspbound, and Epochforge. Opaque range is 235-303 and the
   exact three PNG plus two GIF hashes are frozen in the gate. `check:fast`
-  passes in 61.3s with public 92/294 and all 232 fixtures exact. The exact raw,
-  Complete B + Form, and comparison PNGs are open together in Aseprite as
-  sprites 7, 11, and active 15. This local candidate is unapproved and
-  unpublished; stop for exact visual approval.
-  Registration, fixtures, child/state assets, effects, later families, release,
-  accepted drift, and a PR remain closed.
+  passes in 61.3s, while pre-metadata fast/full gates pass in 61.7s/115.7s and
+  approval-local fast/full gates in 67.1s/122.5s with public 92/294 and all 232
+  fixtures exact. The exact raw, Complete B +
+  Form, and comparison PNGs were open together in Aseprite as sprites 7, 11,
+  and active 15 when the designer replied `approved lets do next`. Accepted
+  implementation `159b9105297fb6c999f91ec77c194c777579d526` records only that
+  frozen packet. Standing permission opens its bounded publication tuple; the
+  same reply opens only the Runic Idol actor-topology decision after clean
+  reconciliation and does not authorize art. Registration, fixtures,
+  child/state assets, effects, Crystal Beast, later families, release, accepted
+  drift, and a PR remain closed.
 - Current approved private art gate: on `codex/en-e09-living-book-specialist`, based on
   clean integrated checkpoint `e7729e651044139bda7e4dcf14c3c2690dbd29be`,
   the designer's `lets keep going` authorizes exactly one specialist Living

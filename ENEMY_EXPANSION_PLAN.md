@@ -29,11 +29,16 @@
   readable non-rear crown-script views, and 80/80 pixel plus alpha distinctions
   from Starlock Lexicon, Claspbound Primer, and Epochforge Colossus. Opaque
   range is 235-303 and the exact five review hashes are frozen. `check:fast`
-  passes in 61.3s with public 92/294 and all 232 fixtures exact. The exact three
-  PNGs are open together in Aseprite as sprites 7, 11, and active 15. Status is
-  `implemented-awaiting-visual-approval`; no registration, fixtures,
-  child/state assets, effects, later family, release, accepted drift, or PR
-  gate is open.
+  passes in 61.3s, pre-metadata fast/full gates in 61.7s/115.7s, and
+  approval-local fast/full gates in 67.1s/122.5s with public 92/294 and all 232
+  fixtures exact. The exact three PNGs were open together in
+  Aseprite as sprites 7, 11, and active 15 when the designer replied `approved
+  lets do next`. Accepted implementation
+  `159b9105297fb6c999f91ec77c194c777579d526` records that packet. Status is
+  `approved-not-published`; after bounded publication, the same reply opens
+  only the Runic Idol actor-topology decision and does not authorize art. No
+  registration, fixtures, child/state assets, effects, Crystal Beast, later
+  family, release, accepted drift, or PR gate is open.
 
 - Approved preceding art gate (2026-08-12): from clean integrated checkpoint
   `e7729e651044139bda7e4dcf14c3c2690dbd29be`, the designer replied `lets keep
@@ -5212,10 +5217,15 @@ passes 80/80 connected hover silhouettes, 8/8 connected cathedral vaults,
 crown-script views, and 80/80 pixel plus alpha distinctions from Starlock,
 Claspbound, and Epochforge. Opaque range is 235-303 and the exact five review
 hashes are frozen. `check:fast` passes in 61.3s with public 92/294 and all 232
-fixtures exact. The exact three PNGs are open together in Aseprite as sprites
-7, 11, and active 15; stop for visual approval. Registration, fixtures,
-child/state assets, effects, Runic Idol, Crystal Beast, later families, release,
-accepted drift, and a PR remain closed.
+fixtures exact; pre-metadata fast/full gates pass in 61.7s/115.7s and
+approval-local fast/full gates in 67.1s/122.5s. The exact three PNGs were open
+together in Aseprite as sprites 7, 11, and active 15 when
+the designer replied `approved lets do next`. Accepted implementation
+`159b9105297fb6c999f91ec77c194c777579d526` records that frozen packet. After
+bounded publication, the same reply opens only the Runic Idol actor-topology
+decision and does not authorize art. Registration, fixtures, child/state
+assets, effects, Crystal Beast, later families, release, accepted drift, and a
+PR remain closed.
 
 Clockwork Automaton architecture/prototype gate (2026-08-12): from clean
 published Crownmaw reconciliation
