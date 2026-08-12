@@ -1,19 +1,21 @@
 # Enemy Expansion Plan
 
-- Current integration status (2026-08-09): the approved assembler backlog gate
-  on `codex/approved-enemy-assembler-integration` is committed and pushed at
-  `90ac018923fbaa9906cd47cdc9ef22f0db77336a`. It composes 23 expansion
-  families / 57 variants and 80 public families / 259 variants. It registers
-  all eight completed EN-E06 suites, adopts only the six completed full EN-E03
-  suites, and maps public `zombie/ghoul` to the approved Ghoul Upgrade without
-  adding a duplicate family. The focused gate exhausts 1,200 source-parity
-  frames and 1,200 None/Complete B/Form presentation triplets at digest
-  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`.
-  Boulder Hurler, Storm-Clan Jarl, Sun Lancer, Heartwood Warden, Redcap, Nymph,
-  EN-E07, effects, fixture regeneration, and release remain outside that
-  published integration. All 232 legacy fixtures remain unchanged.
+- Current integration status (2026-08-12): the designer authorized the exact
+  audited 35-suite backlog with `lets do it`. Branch
+  `codex/approved-enemy-assembler-integration-v2` implements it at
+  `6808ee93e4a7434173a7502795ed39c032f20530`, composing 35 expansion families
+  / 92 variants and 92 public families / 294 variants. It exposes exactly seven
+  later EN-E06 suites, fifteen EN-E07 suites, nine EN-E08 suites, and four
+  EN-E09 suites without editing their reviewed source renderers. The focused v2
+  gate exhausts 2,800 source-parity frames and 2,800 None/Complete B/Form
+  presentation triplets at digest
+  `e7d8b93e78058ca43b3ba584108bfa9906f33581aed43dbf6ec6819101743f93`.
+  The historical 1,200-frame integration digest remains exact. Incomplete
+  EN-E03 candidates, Headless Rider prototypes, bosses, effects, fixture
+  regeneration, accepted drift, release, and a PR remain outside this gate.
+  All 232 legacy fixtures remain unchanged.
 
-- Current acceptance candidate (2026-08-11): private common Animated Armor
+- Historical source approval checkpoint (2026-08-11): private common Animated Armor
   Hollow Sentry on `codex/en-e08-animated-armor-architecture` is frozen at
   digest `f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`
   from clean published Blackwake reconciliation
@@ -5407,14 +5409,15 @@ counts as an upgrade; the three Boss candidates do not enter the Enemy totals.
 
 ## Current Authorization Boundary
 
-The designer authorized the completed-sprite assembler integration on
-2026-08-09. Branch `codex/approved-enemy-assembler-integration` now composes
-23 expansion families / 57 variants and `PUBLIC_ENEMIES` 80/259, including the
-six completed EN-E03 suites, all eight completed EN-E06 suites, and the public
-Ghoul Upgrade route. Complete Kit is 2,196 PNGs; all 232 committed fixtures
-remain unchanged. Focused, fast, and full validation pass. The implementation
-and reconciled documentation are committed and pushed at
-`90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
+The designer authorized the audited v2 completed-sprite integration on
+2026-08-12 with `lets do it`. Branch
+`codex/approved-enemy-assembler-integration-v2` now composes 35 expansion
+families / 92 variants and `PUBLIC_ENEMIES` 92/294, including the six completed
+EN-E03 suites, every explicitly approved complete suite through EN-E09, and the
+public Ghoul Upgrade route. Complete Kit is 2,231 PNGs; all 232 committed
+fixtures remain unchanged. The 2,800-frame focused gate, historical
+1,200-frame regression gate, fast gate, and full validation pass. The
+implementation checkpoint is `6808ee93e4a7434173a7502795ed39c032f20530`.
 
 The isolated private Heartwood Warden complete suite on
 `codex/en-e06-dryad-heartwood-warden` is visually approved and published. Its
@@ -5438,9 +5441,11 @@ tracked branch. The later isolated Bloodcap Reaver suite on
 frozen at digest `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdabff`;
 its implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval
 record `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
-tracked branch. No subsequent art gate is active.
-Nymph, EN-E07, the three EN-E03 Idle-only variants, public-registration changes,
-fixtures, effects, and release remain separate closed gates.
+tracked branch. Those source checkpoints are now included only through the
+authorized v2 adapter. No subsequent art gate is active. The three EN-E03
+Idle-only variants, incomplete candidates, Headless Rider prototypes, bosses,
+fixtures, effects, release, accepted drift, and a PR remain separate closed
+gates.
 
 ### Historical Authorization Chronology
 

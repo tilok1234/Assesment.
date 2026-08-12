@@ -2,28 +2,23 @@
 
 > **Historical snapshot:** this assessment was written against pre-adoption
 > `main` (57/202, no EN work) and first published on an EN-E02 checkout. The
-> current repository has since integrated 23 expansion families / 57 variants
-> across EN-E01 through EN-E06, producing 80 public families / 259 variants;
+> current repository has since integrated 35 expansion families / 92 variants
+> across EN-E01 through EN-E09, producing 92 public families / 294 variants;
 > public `zombie/ghoul` uses the approved replacement renderer while the legacy
 > fixture remains frozen. Measurements and branch
 > wording below describe the 2026-08-08 assessment point unless a later update
 > is explicitly noted; they are evidence, not the current handoff.
 
-> **Current gate update (2026-08-12):** EN-E09 common Living Book Claspbound
-> Primer is a private visual candidate on
-> `codex/en-e09-living-book-architecture`, based on clean published Epochforge
-> reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`. The approved
-> topology is one connected 24x24 baked book with zero child assets; loose pages
-> and rune effects remain external. Digest
-> `bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`
-> passes its focused 80-frame gate and is visually approved at implementation
-> `785c851672d427e7b45459716b70fff5834fa0a5`.
-> Approval record `7f46874d47572044cba070c0f04f441d88804191` is also remote verified.
-> Initial published handoff `02d0e7cc4fc33d1e98c244468643927ab99c1063`
-> is remote verified; the bounded publication tuple is complete.
-> Registration, fixtures, effects, child/state assets, later roles/families,
-> release, accepted drift, and a PR remain closed. See `HANDOFF.md` for exact
-> hashes and continuation instructions.
+> **Current gate update (2026-08-12):** the designer authorized the exact
+> 35-suite approved backlog with `lets do it`. Branch
+> `codex/approved-enemy-assembler-integration-v2` implements the content-only
+> registration at `6808ee93e4a7434173a7502795ed39c032f20530`, producing a
+> 35/92 expansion registry and 92/294 public catalog. All 2,800 newly exposed
+> frames match their approved private sources at digest
+> `e7d8b93e78058ca43b3ba584108bfa9906f33581aed43dbf6ec6819101743f93`;
+> all 232 fixtures remain unchanged. Incomplete candidates, Headless Rider
+> prototypes, bosses, effects, fixture regeneration, release, accepted drift,
+> and a PR remain closed. See `HANDOFF.md` for the restart checkpoint.
 
 **Date:** 2026-08-08 · **Scope:** why adding sprites is slow, where Claude Code tokens go, and what to change.
 **Method:** six parallel analysis agents read the full repo (evidence cited as `file:line`), every load-bearing claim was re-verified by executing the actual tools, and the highest-leverage fixes are already implemented on this branch.
@@ -185,11 +180,11 @@ old one did — minus nothing — it just also passes from a clean checkout.
 
 ## Part 4 — Historical recommendations and current status
 
-Update for 2026-08-09: the approved backlog integration now composes 23
-expansion families / 57 variants and a live 80/259 public catalog. It includes
-the six completed EN-E03 suites, all eight completed EN-E06 suites, and the
-Ghoul Upgrade replacement route; the focused, fast, and full gates pass without
-fixture or sprite-art changes. The production chronology below records the
+Update for 2026-08-12: the approved backlog integrations now compose 35
+expansion families / 92 variants and a live 92/294 public catalog. They include
+the six completed EN-E03 suites, all approved suites through EN-E09, and the
+Ghoul Upgrade replacement route; focused, fast, and full gates pass without
+fixture or source-sprite changes. The production chronology below records the
 earlier private source checkpoints. Approved EN-E06 Fairies Bramblewing Scout,
 Thistle Hexer, and Petalcrown Duelist remain exact and were originally
 published at `cc92ca9`, `3dc68cb`, and `b265e97`.

@@ -9,10 +9,11 @@ and pushed at `d6a56c1`, but `wildshot-assembler` manifest v1 is **not ready to
 emit yet**. Compact effect packing, approved license text, the deterministic
 writer, editor action, and consumer handoff remain pending.
 
-Re-audited on 2026-08-09: the repository still has no `LICENSE`, deterministic
+Re-audited on 2026-08-12: the repository still has no `LICENSE`, deterministic
 Wildshot writer, or editor export action, so this status remains current.
 The approved enemy backlog integration raises the generic actor catalog to
-80 families / 259 variants and accepts all 15 newly exposed specifications;
+92 families / 294 variants. The content-only v2 adapter exposes 35 additional
+approved specifications without changing the portable Enemy spec shape;
 it does not resolve the license, compact-effect, writer, or editor-action
 blockers and therefore does not make this separate pack profile emit-ready.
 

@@ -2,7 +2,19 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E09 Living Book common gate (2026-08-12): from clean published
+Current approved integration checkpoint (2026-08-12): the designer replied
+`lets do it`, authorizing exactly 35 complete private suites from later EN-E06
+through EN-E09. Branch `codex/approved-enemy-assembler-integration-v2`
+implements the content-only registration at
+`6808ee93e4a7434173a7502795ed39c032f20530`. The expansion boundary is 35
+families / 92 variants and public is 92/294. The focused gate proves 2,800
+source-parity frames plus 2,800 None / Complete B / Form presentation triplets
+at digest `e7d8b93e78058ca43b3ba584108bfa9906f33581aed43dbf6ec6819101743f93`.
+Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
+unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
+fixture regeneration, accepted drift, release, and a PR remain separate gates.
+
+Latest source-art approval (2026-08-12): from clean published
 Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, the designer
 replied `lets do next`, then approved the recommended one-connected-actor,
 zero-child Living Book topology. Claspbound Primer on
@@ -155,19 +167,17 @@ intentional bounded commit and branch push before the next gate begins, unless
 the designer explicitly says to hold publication. Unapproved lanes are never
 published under this rule.
 
-Current integration checkpoint (2026-08-09): branch
-`codex/approved-enemy-assembler-integration` brings all completed approved
-backlog suites into the assembler without editing their pixels. It registers
-eight EN-E06 variants across Fairy, Hag, and Dryad; adopts six completed EN-E03
-variants across Giant, Centaur, and Satyr; and routes `zombie/ghoul` through
-the approved Ghoul Upgrade without a duplicate family. The stable/consumer
-registry is 23/57, the public catalog is 80/259, the Complete Kit is 2,196
-PNGs, and the 24-player Complete Pack maximum is 2,219 PNGs. The focused
-1,200-frame integration gate, fast gate, and full project gate pass. All 232
-legacy fixtures remain unchanged. Three EN-E03 Idle-only variants,
-Heartwood Warden, Redcap, Nymph, EN-E07, effects, fixture regeneration, and
-release remain outside this integration. The integration source and docs are
-committed and pushed at `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
+Current integration checkpoint (2026-08-12): branch
+`codex/approved-enemy-assembler-integration-v2` composes every authorized
+complete suite through EN-E09 without editing reviewed source pixels. The
+stable/consumer registry is 35/92, the public catalog is 92/294, the Complete
+Kit is 2,231 PNGs, and the 24-player Complete Pack maximum is 2,254 PNGs. The
+new 2,800-frame integration gate, earlier 1,200-frame regression gate, fast
+gate, and full project gate pass. All 232 legacy fixtures remain unchanged.
+Three EN-E03 Idle-only variants, incomplete candidates, Headless Rider
+prototypes, bosses, effects, fixture regeneration, release, accepted drift,
+and a PR remain outside this integration. Implementation is
+`6808ee93e4a7434173a7502795ed39c032f20530`.
 
 Current EN-E06 progression through the published Rivercrown Muse checkpoint (2026-08-10):
 Ironboot Trapper is approved and
