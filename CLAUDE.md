@@ -107,7 +107,17 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Active private art gate: on `codex/en-e09-living-book-elite`, based exactly
+- Active architecture decision: after the exact Crownseal publication tuple,
+  the designer's `approved lets do next` opens only the Runic Idol actor-topology
+  decision. Recommend `baked-single-actor-monolith`: one deterministic connected
+  grounded 24x24 carved idol with body-owned capstone, rune face, stepped
+  shoulders, buttresses, core slab, plinth, rigid animation, and zero child
+  assets. Orbiting shards, detached tablets, beams, rune flare, impacts,
+  projectiles, glow, illumination, and runtime offsets remain Effects Off.
+  Require explicit topology approval before creating the Runic Idol branch,
+  naming a common variant, or implementing art. Registration, fixtures,
+  Crystal Beast, later families, release, accepted drift, and a PR remain closed.
+- Current approved private art gate: on `codex/en-e09-living-book-elite`, based exactly
   on clean published Starlock reconciliation
   `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer's `lets do nex t`
   authorizes exactly one elite Living Book under the approved connected 24x24
@@ -128,10 +138,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and active 15 when the designer replied `approved lets do next`. Accepted
   implementation `159b9105297fb6c999f91ec77c194c777579d526` records only that
   frozen packet. The implementation and approval record
-  `c4c256c7ba125cc177954f8664593431e00da27a` are remote verified. Only the
-  initial handoff and final reconciliation remain. After that clean tuple, the
-  same reply opens only the Runic Idol actor-topology decision and does not
-  authorize art. Registration, fixtures,
+  `c4c256c7ba125cc177954f8664593431e00da27a` plus initial published handoff
+  `7406864fb459eca40082b0fe9883441148b2230a` are remote verified; this
+  reconciliation completes the bounded publication tuple. The same reply opens
+  only the Runic Idol actor-topology decision above and does not authorize art.
+  Registration, fixtures,
   child/state assets, effects, Crystal Beast, later families, release, accepted
   drift, and a PR remain closed.
 - Current approved private art gate: on `codex/en-e09-living-book-specialist`, based on

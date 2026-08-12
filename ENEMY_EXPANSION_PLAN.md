@@ -15,7 +15,18 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current isolated art gate (2026-08-12): from clean published Starlock
+- Current architecture decision (2026-08-12): after the exact Crownseal
+  publication tuple, the designer's `approved lets do next` opens only the Runic
+  Idol actor-topology decision. Recommend `baked-single-actor-monolith`: one
+  deterministic connected grounded 24x24 carved idol with a body-owned capstone,
+  rune face, stepped shoulders, buttresses, core slab, plinth, rigid animation,
+  and zero child assets. Orbiting shards, detached tablets, beams, rune flare,
+  impacts, projectiles, glow, illumination, and runtime offsets remain Effects
+  Off. Require explicit topology approval before creating a branch, naming a
+  common candidate, or implementing art. Registration, fixtures, Crystal Beast,
+  later families, release, accepted drift, and a PR remain closed.
+
+- Approved preceding art gate (2026-08-12): from clean published Starlock
   reconciliation `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer
   replied `lets do nex t`, opening exactly one private elite Living Book under
   the approved connected 24x24 zero-child topology. Crownseal Grimoire on
@@ -36,10 +47,11 @@
   lets do next`. Accepted implementation
   `159b9105297fb6c999f91ec77c194c777579d526` records that packet. The
   implementation and approval record
-  `c4c256c7ba125cc177954f8664593431e00da27a` are remote verified. Status is
-  `published-awaiting-handoff-reconciliation`; after the bounded tuple is
-  clean, the same reply opens only the Runic Idol actor-topology decision and
-  does not authorize art. No
+  `c4c256c7ba125cc177954f8664593431e00da27a` plus initial published handoff
+  `7406864fb459eca40082b0fe9883441148b2230a` are remote verified; this
+  reconciliation completes the bounded publication tuple. Status is `approved`
+  and `published`; the same reply opens only the Runic Idol actor-topology
+  decision above and does not authorize art. No
   registration, fixtures, child/state assets, effects, Crystal Beast, later
   family, release, accepted drift, or PR gate is open.
 
@@ -5157,7 +5169,7 @@ it with incidental per-frame offsets.
 
 ### EN-E09 - Arcane constructs
 
-- Status: `private Living Book elite awaiting visual approval`
+- Status: `Runic Idol actor-topology decision awaiting designer approval`
 - Families: Clockwork Automaton, Living Book, Runic Idol, Crystal Beast
 - Priority-first: Clockwork Automaton, Living Book
 
@@ -5226,11 +5238,25 @@ together in Aseprite as sprites 7, 11, and active 15 when
 the designer replied `approved lets do next`. Accepted implementation
 `159b9105297fb6c999f91ec77c194c777579d526` records that frozen packet. The
 implementation and approval record
-`c4c256c7ba125cc177954f8664593431e00da27a` are remote verified. After the
-bounded tuple is clean, the same reply opens only the Runic Idol actor-topology
-decision and does not authorize art. Registration, fixtures, child/state
+`c4c256c7ba125cc177954f8664593431e00da27a` plus initial published handoff
+`7406864fb459eca40082b0fe9883441148b2230a` are remote verified; this
+reconciliation completes the bounded publication tuple. The same reply opens
+only the Runic Idol actor-topology decision and does not authorize art.
+Registration, fixtures, child/state
 assets, effects, Crystal Beast, later families, release, accepted drift, and a
 PR remain closed.
+
+Runic Idol actor-topology decision (2026-08-12): the designer's Crownseal
+approval reply `approved lets do next` opens only this decision after the clean
+Living Book publication tuple. Recommended selection:
+`baked-single-actor-monolith`, one deterministic connected grounded 24x24
+carved idol with body-owned capstone, rune face, stepped shoulders, side
+buttresses, core slab, plinth, rigid animation, and zero child assets. Orbiting
+shards, detached tablets, beams, rune flare, impacts, projectiles, glow,
+illumination, and runtime offsets remain Effects Off. Require explicit
+topology approval before creating an isolated Runic Idol branch, naming a
+common candidate, or implementing art. Registration, fixtures, Crystal Beast,
+later families, release, accepted drift, and a PR remain closed.
 
 Clockwork Automaton architecture/prototype gate (2026-08-12): from clean
 published Crownmaw reconciliation

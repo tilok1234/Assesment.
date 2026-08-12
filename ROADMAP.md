@@ -14,7 +14,16 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current isolated EN-E09 art gate (2026-08-12): from clean published Starlock
+Current EN-E09 architecture decision (2026-08-12): after the exact Crownseal
+publication tuple, the designer's `approved lets do next` opens only the Runic
+Idol actor-topology decision. The recommendation is
+`baked-single-actor-monolith`: one connected grounded 24x24 carved idol with
+body-owned capstone, rune face, stepped shoulders, buttresses, core slab,
+plinth, rigid animation, and zero child assets. Orbiting shards, detached
+tablets, beams, rune flare, impacts, projectiles, glow, illumination, and runtime
+offsets remain Effects Off. Explicit topology approval is required before art.
+
+Approved preceding EN-E09 art gate (2026-08-12): from clean published Starlock
 reconciliation `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer
 replied `lets do nex t`, opening exactly one private elite Living Book under the
 approved connected 24x24 zero-child topology. Crownseal Grimoire on
@@ -32,10 +41,11 @@ Aseprite as sprites 7, 11, and active 15 when the designer
 replied `approved lets do next`. Accepted implementation
 `159b9105297fb6c999f91ec77c194c777579d526` records that packet. The
 implementation and approval record
-`c4c256c7ba125cc177954f8664593431e00da27a` are remote verified. Status is
-`published-awaiting-handoff-reconciliation`; after the bounded tuple is clean,
-the same reply opens only the Runic Idol actor-topology decision and does not
-authorize art.
+`c4c256c7ba125cc177954f8664593431e00da27a` plus initial published handoff
+`7406864fb459eca40082b0fe9883441148b2230a` are remote verified; this
+reconciliation completes the bounded publication tuple. Status is `approved`
+and `published`; the same reply opens only the Runic Idol actor-topology
+decision above and does not authorize art.
 Registration, fixtures, child/state assets, effects, Crystal Beast, later
 families, release, accepted drift, and a PR remain closed.
 

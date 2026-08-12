@@ -23,7 +23,31 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Crownseal Grimoire Published, Handoff Reconciliation Pending
+## Immediate Continuation Checkpoint - Runic Idol Topology Decision
+
+1. Crownseal Grimoire's accepted implementation
+   `159b9105297fb6c999f91ec77c194c777579d526`, approval record
+   `c4c256c7ba125cc177954f8664593431e00da27a`, and initial published handoff
+   `7406864fb459eca40082b0fe9883441148b2230a` are remote verified. The final
+   reconciliation below closes that bounded Living Book publication tuple.
+2. The designer's approval reply was `approved lets do next`. Its `next`
+   portion opens only the Runic Idol actor-topology decision after Crownseal's
+   clean publication. It does not select a topology, name a common variant, or
+   authorize art, registration, fixtures, child assets, or effects.
+3. Recommended topology: `baked-single-actor-monolith` — one deterministic,
+   connected, grounded 24x24 carved idol with a body-owned capstone, rune face,
+   stepped shoulders, side buttresses, core slab, and plinth. All animation is
+   rigid body motion inside the one actor; child asset count remains zero.
+4. Effects boundary: orbiting shards, detached tablets, beams, rune flare,
+   impacts, projectiles, glow, illumination, and runtime attachment offsets
+   remain Effects Off. Any floating shard array or separate state object would
+   require a new architecture gate.
+5. Next decision: require explicit designer approval of the recommended
+   topology before creating an isolated Runic Idol branch or implementing and
+   naming one common candidate. Crystal Beast, later families, release,
+   accepted drift, and a PR remain closed.
+
+## Approved Preceding Checkpoint - Crownseal Grimoire Published And Reconciled
 
 ### Current active gate
 
@@ -67,12 +91,12 @@ gate.
    when the designer replied `approved lets do next`. Accepted implementation
    `159b9105297fb6c999f91ec77c194c777579d526` records only that frozen packet.
    The implementation and approval record
-   `c4c256c7ba125cc177954f8664593431e00da27a` are remote verified.
-8. Next gate: commit and push the initial published handoff, then record its
-   immutable hash in the final reconciliation. After that clean tuple, present
-   only the Runic Idol actor-topology decision; do not select a topology or
-   authorize art. Registration, fixtures, effects or child/state assets,
-   Crystal Beast, later families, release, accepted drift, and a PR stay closed.
+   `c4c256c7ba125cc177954f8664593431e00da27a` plus initial published handoff
+   `7406864fb459eca40082b0fe9883441148b2230a` are remote verified; this
+   reconciliation completes the bounded publication tuple.
+8. Next gate: the same reply opens only the Runic Idol topology decision above.
+   Registration, fixtures, effects or child/state assets, Crystal Beast, later
+   families, release, accepted drift, and a PR stay closed.
 
 ## Approved Preceding Checkpoint - Starlock Lexicon Published And Reconciled
 
