@@ -32,7 +32,8 @@ under the selected baked-single-actor topology. Epochforge Colossus is
 implemented on `codex/en-e09-clockwork-automaton-elite`. The designer replied
 `approved`, accepting implementation
 `96e83258ff0b350880139cb4a2b283ef0063e51f` and the exact digest and five
-hashes below only.
+hashes below only. Approval record
+`853b922619775450d13510a3746ecfb163161afb` is also remote verified.
 
 - Identity: broad black-iron and red-brass siege machine with a connected cog
   crown, low pale sensor slit, twin furnace dials, oversized integrated hammer
@@ -60,8 +61,9 @@ hashes below only.
   54/54 readable non-rear sensor views.
 - Approval: the exact three frozen PNGs were open together in Aseprite when the
   designer replied `approved`. Standing permission opens only the bounded
-  approval record, branch push, and handoff reconciliation.
-- Next gate: finish that bounded publication tuple, verify it remotely, inspect
+  handoff reconciliation.
+- Next gate: publish this initial handoff, complete its final reconciliation,
+  verify it remotely, inspect
   the live roadmap, and stop at its next explicit decision. Do not register,
   generate fixtures, add child assets or effects, start another family,
   release, accept drift, or open a PR.

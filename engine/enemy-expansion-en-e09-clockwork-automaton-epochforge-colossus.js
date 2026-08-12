@@ -117,10 +117,10 @@ export const EN_E09_EPOCHFORGE_COLOSSUS_GATE = deepFreeze({
   approvedImplementation: '96e83258ff0b350880139cb4a2b283ef0063e51f',
   publicationAuthorizedOn: '2026-08-12',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
+  publishedImplementation: '96e83258ff0b350880139cb4a2b283ef0063e51f',
+  publishedApprovalRecord: '853b922619775450d13510a3746ecfb163161afb',
   initialPublishedHandoff: null,
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E09_AETHERDIAL_SURVEYOR_GATE.id,
     artifactSha256: EN_E09_AETHERDIAL_SURVEYOR_GATE.artifactSha256,
@@ -204,7 +204,7 @@ export const EN_E09_EPOCHFORGE_COLOSSUS_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Epochforge Colossus packet is visually approved at implementation 96e83258ff0b350880139cb4a2b283ef0063e51f. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate. Registration, fixtures, child/state assets, effects, later families, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Epochforge Colossus implementation 96e83258ff0b350880139cb4a2b283ef0063e51f and approval record 853b922619775450d13510a3746ecfb163161afb are remote verified. Only the initial published handoff and final reconciliation remain open. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate. Registration, fixtures, child/state assets, effects, later families, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E09_EPOCHFORGE_COLOSSUS_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

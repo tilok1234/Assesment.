@@ -15,8 +15,9 @@ is baked. The private module and review/check tools do not enter the public
 facade, catalog, packs, manifest, fixtures, shared renderer, exporter,
 validator, or frame contract. Digest
 `0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
-is visually approved at implementation
-`96e83258ff0b350880139cb4a2b283ef0063e51f`; registration, fixtures,
+is published at implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`
+and approval record `853b922619775450d13510a3746ecfb163161afb`, both remote
+verified; registration, fixtures,
 child/state assets, effects, later families, release, accepted drift, and a PR
 remain closed.
 

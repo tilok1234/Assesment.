@@ -77,7 +77,10 @@ check(
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.approvalEvidence.includes('designer replied: approved')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.approvalEvidence.includes('0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.approvedImplementation === '96e83258ff0b350880139cb4a2b283ef0063e51f'
-    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.publicationState === 'approved-not-published',
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.publishedImplementation === '96e83258ff0b350880139cb4a2b283ef0063e51f'
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.publishedApprovalRecord === '853b922619775450d13510a3746ecfb163161afb'
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.initialPublishedHandoff === null
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
   'Epochforge Colossus private approval gate drifted',
 );
 check(
@@ -104,8 +107,9 @@ check(
   EN_E09_EPOCHFORGE_COLOSSUS_GATE.scope.includes('80-frame Epochforge Colossus elite')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.animationContract.includes('body-owned compression strike')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.animationContract.includes('Cast aliases Attack exactly')
-    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('visually approved at implementation 96e83258ff0b350880139cb4a2b283ef0063e51f')
-    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('implementation 96e83258ff0b350880139cb4a2b283ef0063e51f')
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('approval record 853b922619775450d13510a3746ecfb163161afb')
+    && EN_E09_EPOCHFORGE_COLOSSUS_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.exclusions.includes('public Clockwork Automaton registration')
     && EN_E09_EPOCHFORGE_COLOSSUS_GATE.exclusions.includes('additional Clockwork Automaton roles'),
   'Epochforge motion, exclusions, or stop gate drifted',

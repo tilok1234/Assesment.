@@ -117,9 +117,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   impacts and sparks remain Effects Off. The focused gate passes across all 80
   frames; all are connected, grounded, broad, and distinct from Aetherdial,
   Brasscoil, and Runeforge. The exact five review hashes are visually approved
-  at implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`. Standing
-  permission opens only the approval record, bounded branch push, and handoff
-  reconciliation. Do not register, generate fixtures, add child/state assets
+  at implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`; approval record
+  `853b922619775450d13510a3746ecfb163161afb` is also remote verified. Standing
+  permission opens only the bounded handoff reconciliation. Do not register,
+  generate fixtures, add child/state assets
   or effects, begin another family, release, accept drift, or open a PR.
 - Approved preceding private art gate: common Clockwork Automaton Brasscoil
   Sentry on `codex/en-e09-clockwork-automaton-architecture` is published at

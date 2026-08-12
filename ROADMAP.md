@@ -12,7 +12,8 @@ Its broad black-iron siege silhouette, cog crown, low sensor slit, twin furnace
 dials, hammer forearms, reinforced hip axle, piston legs, and tread feet are
 distinct from Aetherdial, Brasscoil, and Runeforge. Focused validation passes
 all 80 frames. The exact five review hashes were visually approved at
-implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`.
+implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`; approval record
+`853b922619775450d13510a3746ecfb163161afb` is also remote verified.
 Registration, fixtures, child assets, effects, later families, release,
 accepted drift, and a PR stay closed.
 
