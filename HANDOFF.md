@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Starlock Lexicon Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Starlock Lexicon Approved, Publication Pending
 
 ### Current active gate
 
@@ -53,13 +53,19 @@ gate.
    connected page fans, 72/72 colored frames, 8/8 exact-white flashes, 54/54
    readable non-rear sigil views, and 80/80 pixel plus alpha distinctions from
    approved Claspbound Primer, Aetherdial Surveyor, and Mournseal Cantor.
-   Opaque range is 176-303. `check:fast` passes in 61.1s with public 92/294 and
-   all 232 frozen fixtures validated unchanged.
-6. Next gate: open the exact raw, Complete B + Form, and comparison PNGs
-   together in Aseprite and stop for the designer's visual approval. Do not
-   commit, push, register, generate fixtures, add effects or child/state
-   assets, start the elite role or another family, release, accept drift, or
-   open a PR before that exact decision.
+   Opaque range is 176-303. Pre-approval `check:fast` passes in 58.1s and full
+   `check` in 114.1s. Approval-local `check:fast` passes in 61.2s and full
+   `check` in 112.9s with public 92/294 and all 232 frozen fixtures validated
+   unchanged.
+6. Approval: the exact raw, Complete B + Form, and comparison PNGs were open
+   together in the four-lane Aseprite MCP hub as sprites 7, 11, and 15 when the
+   designer replied `APPROVED`. This approves only the frozen digest and five
+   hashes above. Accepted implementation
+   `f11c2a0915588c616e1db7d8e461208f97a42706` records those pixels.
+7. Next gate: use standing permission only to finish this candidate's bounded
+   approval record, branch push, and restart-safe handoff reconciliation. Do
+   not register, generate fixtures, add effects or child/state assets, start
+   the elite role or another family, release, accept drift, or open a PR.
 
 ## Immediate Continuation Checkpoint - Approved Enemy Backlog Integrated
 

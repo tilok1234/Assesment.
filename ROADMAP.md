@@ -24,11 +24,14 @@ asymmetric page fan, and body-owned spine sweep. Its exact 80-frame candidate
 is frozen at digest
 `3cd86b946115179fc566160e5045eccfda4fd5ce61ce44eae269634b07f3e92c`.
 Focused validation passes all structure, identity, alias, mirror, and three-way
-comparison gates; `check:fast` passes in 61.1s with public 92/294 and all 232
-fixtures unchanged. The exact five review hashes are frozen. Status is
-`implemented-awaiting-visual-approval`; registration, fixtures, child/state
-assets, effects, the elite role, later families, release, accepted drift, and
-a PR remain closed.
+comparison gates; pre-approval `check:fast` passes in 58.1s and full `check`
+in 114.1s, while approval-local fast/full gates pass in 61.2s/112.9s with
+public 92/294 and all 232 fixtures unchanged. The exact five review hashes are
+frozen. All three exact PNGs were open together in Aseprite
+when the designer replied `APPROVED`; accepted implementation
+`f11c2a0915588c616e1db7d8e461208f97a42706` records those pixels. Status is
+`approved-not-published`; registration, fixtures, child/state assets, effects,
+the elite role, later families, release, accepted drift, and a PR remain closed.
 
 Latest source-art approval (2026-08-12): from clean published
 Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, the designer

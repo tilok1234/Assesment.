@@ -27,11 +27,15 @@
   The focused gate passes 80/80 connected hover silhouettes, 8/8 connected page
   fans, 72/72 colored frames, 8/8 exact-white flashes, 54/54 readable non-rear
   sigil views, and 80/80 pixel plus alpha distinctions from Claspbound Primer,
-  Aetherdial Surveyor, and Mournseal Cantor. `check:fast` passes in 61.1s with
-  public 92/294 and all 232 fixtures exact. The exact five review hashes are
-  frozen. Status is `implemented-awaiting-visual-approval`; no registration,
-  fixtures, child/state assets, effects, elite role, later family, release,
-  accepted drift, or PR gate is open.
+  Aetherdial Surveyor, and Mournseal Cantor. Pre-approval `check:fast` passes in
+  58.1s and full `check` in 114.1s; approval-local fast/full gates pass in
+  61.2s/112.9s with public 92/294 and all 232 fixtures exact. The exact five
+  review hashes are frozen. All three exact PNGs were open
+  together in Aseprite when the designer replied `APPROVED`; accepted
+  implementation `f11c2a0915588c616e1db7d8e461208f97a42706` records those
+  pixels. Status is `approved-not-published`; no registration, fixtures,
+  child/state assets, effects, elite role, later family, release, accepted
+  drift, or PR gate is open.
 
 - Historical source approval checkpoint (2026-08-11): private common Animated Armor
   Hollow Sentry on `codex/en-e08-animated-armor-architecture` is frozen at

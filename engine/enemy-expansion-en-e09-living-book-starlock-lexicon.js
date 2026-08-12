@@ -75,16 +75,18 @@ export const EN_E09_STARLOCK_LEXICON_DATA = deepFreeze({
 
 export const EN_E09_STARLOCK_LEXICON_GATE = deepFreeze({
   id: 'en-e09-living-book-starlock-lexicon-full-v1',
-  status: 'implemented-awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: 'e7729e651044139bda7e4dcf14c3c2690dbd29be',
   authorizedOn: '2026-08-12',
   authorizationEvidence: 'After the approved 35-suite integration was completed and its next-chat handoff was read, the assistant recommended opening exactly one isolated Living Book specialist lane under the selected connected 24x24 zero-child topology. The designer replied: lets keep going. This authorizes only one private Starlock Lexicon 80-frame art candidate. Registration, fixtures, effects, child assets, the elite role, later families, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E09_LIVING_BOOK_TOPOLOGY_DECISION.id,
-  approvedOn: null, approvalEvidence: null, approvedImplementation: null,
+  approvedOn: '2026-08-12',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Claspbound Primer, Aetherdial Surveyor, and Mournseal Cantor family comparison, and both synchronized GIFs were presented. The four-lane Aseprite MCP hub reported the three exact frozen PNG paths open together as raw sprite 7, Complete B + Form sprite 11, and active comparison sprite 15. The designer replied: APPROVED. In context this explicitly approves candidate digest 3cd86b946115179fc566160e5045eccfda4fd5ce61ce44eae269634b07f3e92c and its five frozen review hashes only. Standing permission authorizes bounded publication but does not open registration, fixtures, child/state assets, effects, the elite role, later families, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: 'f11c2a0915588c616e1db7d8e461208f97a42706',
   publicationAuthorizedOn: '2026-08-12',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: null, publishedApprovalRecord: null, initialPublishedHandoff: null,
-  publicationState: 'not-approved',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E09_CLASPBOUND_PRIMER_GATE.id,
     artifactSha256: EN_E09_CLASPBOUND_PRIMER_GATE.artifactSha256,
@@ -114,7 +116,7 @@ export const EN_E09_STARLOCK_LEXICON_GATE = deepFreeze({
   animationContract: 'Idle indexes the connected page block and star-lock. Walk uses four tall hinge-led hover tilts. Attack braces, opens into one connected asymmetric page fan, performs a body-owned spine-led sweep with no loose-page or sigil-flare pixels, and recovers. Hurt uses a complete white recoil and colored iron-spine brace. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.',
   reviewPresentation: 'Show the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, synchronized GIFs, and approved Claspbound Primer, Aetherdial Surveyor, and Mournseal Cantor family comparisons together.',
   exclusions: ['changes to approved Claspbound Primer or earlier rendered pixels', 'public Living Book registration', 'public catalog or facade exposure', 'asset-pack fixture or manifest changes', 'schema changes', 'shared renderer changes', 'exporter changes', 'validator changes', 'frame-contract changes', 'deterministic child/state exports', 'runtime attachment offsets', 'loose pages', 'detached bookmark', 'separate covers', 'new Cast pixels', 'new Death pixels', 'humanoid face', 'eyes or mouth', 'hands or limbs', 'handheld weapon or shield', 'aura', 'glow', 'particles', 'projectiles', 'sigil flare', 'impacts', 'illumination', 'effects', 'elite Living Book', 'Runic Idol, Crystal Beast, or later work', 'release', 'accepted drift'],
-  nextGate: 'Stop for explicit designer visual approval of the exact frozen Starlock Lexicon review artifacts and candidate digest. Do not publish, register, add fixtures, add child/state assets, add effects, begin the elite role or later families, release, accept drift, or open a pull request.',
+  nextGate: 'The exact Starlock Lexicon packet is visually approved at implementation f11c2a0915588c616e1db7d8e461208f97a42706. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. Do not register, add fixtures, add child/state assets, add effects, begin the elite role or later families, release, accept drift, or open a pull request.',
 });
 
 export const EN_E09_STARLOCK_LEXICON_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
