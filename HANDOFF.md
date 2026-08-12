@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Stonecurl Grazer Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Stonecurl Grazer Approval Publication
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-ram-common`. It is based exactly on the clean published
@@ -62,8 +62,9 @@ gate.
    public Dire Wolf. Opaque range is 214-243. Complete B adds 10,781 outline
    pixels and Form changes 8,256 pixels. Deterministic regeneration reproduces
    all six review hashes. Pre-approval focused / `check:fast` / full `check`
-   gates pass in 0.7s / 67.6s / 123.1s with public 92/294 and all 232 fixture
-   sheets unchanged.
+   gates pass in 0.7s / 67.6s / 123.1s and the approval-local focused / fast
+   gates pass in 0.7s / 58.8s with public 92/294 and all 232 fixture sheets
+   unchanged.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-ram-stonecurl-grazer/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-ram-stonecurl-grazer` and run the
@@ -72,13 +73,17 @@ gate.
 7. The exact raw, distinct Complete B outlined, Complete B + Form, and
    comparison PNGs are open together in the four-lane Aseprite MCP review
    window as sprites 51, 55, 59, and active 63. The outlined PNG is required
-   review evidence only; it does not authorize outline registration.
-8. Stop for explicit visual approval of this exact digest and six review
-   hashes. Public Ram registration or outline registration, fixtures, effects,
-   child assets, specialist or elite Ram, Stag, Mammoth, Rhino, Furious
-   Depraved Rhino Boss work, the deferred Runic Idol decision, release,
-   accepted drift, and a PR remain closed. No commit or push has been made for
-   Stonecurl Grazer.
+   review evidence only; it does not authorize outline registration. The final
+   approval prompt posted all four exact PNGs and identified digest
+   `79b440290b1c6f503834d44b13d2c9508b34ad48a4ae495c6e957e329095942f`.
+   The designer replied `approved`. Approval applies only to that exact packet;
+   accepted implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8`
+   records it and is remote verified. Standing permission opens only its
+   approval record, branch push, and bounded reconciliation.
+8. Public Ram registration or outline registration, fixtures, effects, child
+   assets, specialist or elite Ram, Stag, Mammoth, Rhino, Furious Depraved
+   Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
+   and a PR remain closed. No next Ram art gate is open.
 
 ## Approved Preceding Checkpoint - Scarcrest Published / Ram Topology Decision
 

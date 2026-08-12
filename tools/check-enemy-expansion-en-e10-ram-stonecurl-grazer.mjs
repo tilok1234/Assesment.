@@ -136,13 +136,25 @@ check(
   'published Scarcrest predecessor drifted',
 );
 check(
-  EN_E10_STONECURL_GRAZER_GATE.status === 'awaiting-visual-approval'
+  EN_E10_STONECURL_GRAZER_GATE.status === 'approved'
     && EN_E10_STONECURL_GRAZER_GATE.baseCheckpoint === 'a7d2abbd610dfc6096498d1dce096d652e50596d'
     && EN_E10_STONECURL_GRAZER_GATE.authorizedOn === '2026-08-13'
     && EN_E10_STONECURL_GRAZER_GATE.authorizationEvidence.includes('designer replied: approved')
     && EN_E10_STONECURL_GRAZER_GATE.authorizationEvidence.includes('exactly one private common Ram Stonecurl Grazer full 80-frame candidate')
     && EN_E10_STONECURL_GRAZER_GATE.authorizationEvidence.includes('raw, outlined, Form, and comparison review packet')
-    && EN_E10_STONECURL_GRAZER_GATE.architectureDecision === EN_E10_RAM_TOPOLOGY_DECISION.id,
+    && EN_E10_STONECURL_GRAZER_GATE.architectureDecision === EN_E10_RAM_TOPOLOGY_DECISION.id
+    && EN_E10_STONECURL_GRAZER_GATE.approvedOn === '2026-08-13'
+    && EN_E10_STONECURL_GRAZER_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E10_STONECURL_GRAZER_GATE.approvalEvidence.includes('raw sprite 51')
+    && EN_E10_STONECURL_GRAZER_GATE.approvalEvidence.includes('outlined sprite 55')
+    && EN_E10_STONECURL_GRAZER_GATE.approvalEvidence.includes('Complete B + Form sprite 59')
+    && EN_E10_STONECURL_GRAZER_GATE.approvalEvidence.includes('active comparison sprite 63')
+    && EN_E10_STONECURL_GRAZER_GATE.approvalEvidence.includes('79b440290b1c6f503834d44b13d2c9508b34ad48a4ae495c6e957e329095942f')
+    && EN_E10_STONECURL_GRAZER_GATE.approvedImplementation === '195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8'
+    && EN_E10_STONECURL_GRAZER_GATE.publishedImplementation === ''
+    && EN_E10_STONECURL_GRAZER_GATE.publishedApprovalRecord === ''
+    && EN_E10_STONECURL_GRAZER_GATE.initialPublishedHandoff === ''
+    && EN_E10_STONECURL_GRAZER_GATE.publicationState === 'approved-not-published',
   'common Ram authorization or review boundary drifted',
 );
 check(
@@ -160,6 +172,7 @@ check(
     && EN_E10_RAM_CONTRACT_CARD.variantBriefs.length === 3
     && EN_E10_RAM_CONTRACT_CARD.activeVariant.id === 'stonecurl-grazer'
     && EN_E10_RAM_CONTRACT_CARD.activeVariant.role === 'common'
+    && EN_E10_RAM_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E10_RAM_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite']),
   'Ram role order, three briefs, or common-only boundary drifted',
 );
@@ -178,7 +191,8 @@ check(
     && EN_E10_STONECURL_GRAZER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_STONECURL_GRAZER_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_STONECURL_GRAZER_GATE.exclusions.includes('Ram specialist or elite')
-    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('four PNG plus two GIF review hashes')
+    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('visually approved at implementation 195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8')
+    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('No next Ram art gate is open')
     && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('review evidence only')
     && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('does not authorize outline registration'),
   'full-suite motion, review, or stop boundary drifted',

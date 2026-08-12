@@ -67,7 +67,7 @@ export const EN_E10_RAM_CONTRACT_CARD = deepFreeze({
     id: 'stonecurl-grazer',
     name: 'Stonecurl Grazer',
     role: 'common',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   variantBriefs: [
     { role: 'common', brief: 'Ash-cream hill Ram with a compact wool barrel, charcoal face and legs, weathered ochre spiral horns, short beard, and direct body-owned horn bash.' },
@@ -85,7 +85,7 @@ export const EN_E10_STONECURL_GRAZER_CONTRACT = deepFreeze({
   family: 'ram',
   variant: 'stonecurl-grazer',
   role: 'common',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_RAM_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-compact-barrel-arched-neck-connected-spiral-horns-beard-four-hoof-ram-v1',
   silhouette: 'A grounded common Ram with a compact wool barrel, proud arched neck, short wedge muzzle, two large connected swept spiral horns, connected forehead fleece and chest beard, four separated dark hooves, and a short connected tail. It must read as a horned Ram rather than a long-backed Dire Wolf, sloped Hyena, bowed Miremane Courser, upright Goatfolk, antlered Stag, or reduced Rhino Boss.',
@@ -123,11 +123,20 @@ export const EN_E10_STONECURL_GRAZER_DATA = deepFreeze({
 
 export const EN_E10_STONECURL_GRAZER_GATE = deepFreeze({
   id: 'en-e10-ram-stonecurl-grazer-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: 'a7d2abbd610dfc6096498d1dce096d652e50596d',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Scarcrest Matriarch implementation 88d00336ee8ff714f1d978a5cf37d9807bbb4719, approval record 0411a1a385ddddf090f0ca3d31c81e0a6f6e6214, initial published handoff e0c9fcce275380d501c7ac393619387e033f3046, and final reconciliation a7d2abbd610dfc6096498d1dce096d652e50596d were pushed and remote verified. Codex then presented the separate EN-E10 Ram topology decision: one connected grounded 24x24 actor with body-owned spiral horns and horn bash, four readable hooves, zero child assets, all effects external, and a raw, outlined, Form, and comparison review packet. The designer replied: approved. This selects baked-single-actor-horned-grounded-quadruped and authorizes exactly one private common Ram Stonecurl Grazer full 80-frame candidate. Public Ram or outline registration, fixtures, effects, child assets, specialist or elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E10_RAM_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Scarcrest Matriarch and Miremane Courser plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The four-lane Aseprite MCP review window reported those exact four paths open together as raw sprite 51, outlined sprite 55, Complete B + Form sprite 59, and active comparison sprite 63. The final approval prompt posted all four exact PNGs and identified candidate digest 79b440290b1c6f503834d44b13d2c9508b34ad48a4ae495c6e957e329095942f. The designer replied: approved. Approval applies only to that exact Stonecurl Grazer digest and its six frozen review hashes. It does not authorize public Ram or outline registration, fixtures, effects, child assets, specialist or elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or another art gate.',
+  approvedImplementation: '195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_SCARCREST_MATRIARCH_GATE.id,
     artifactSha256: EN_E10_SCARCREST_MATRIARCH_GATE.artifactSha256,
@@ -184,7 +193,7 @@ export const EN_E10_STONECURL_GRAZER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop for explicit visual approval of this exact frozen Stonecurl Grazer digest and its four PNG plus two GIF review hashes. Do not register or publish it before approval. The distinct outlined PNG is review evidence only and does not authorize outline registration. Specialist and elite Ram plus all later EN-E10 families remain closed.',
+  nextGate: 'The exact Stonecurl Grazer packet is visually approved at implementation 195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. No next Ram art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Ram registration, fixtures, effects, child assets, specialist or elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_STONECURL_GRAZER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -451,7 +460,7 @@ export const EN_E10_STONECURL_GRAZER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'stonecurl-grazer',
     scale: 8,
-    notes: 'Awaiting explicit visual approval as one common horned Ram against approved Scarcrest Matriarch and Miremane Courser plus public Dire Wolf. The packet includes a distinct Complete B outlined PNG as review evidence. Keep outline registration, public registration, fixtures, effects, child assets, later Ram roles and EN-E10 families, Rhino Boss work, and deferred Runic Idol separate.',
+    notes: 'Visually approved as one exact common horned Ram against approved Scarcrest Matriarch and Miremane Courser plus public Dire Wolf. The packet includes a distinct Complete B outlined PNG as review evidence. No next art gate is open. Keep outline registration, public registration, fixtures, effects, child assets, later Ram roles and EN-E10 families, Rhino Boss work, and deferred Runic Idol separate.',
   },
 });
 

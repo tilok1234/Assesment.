@@ -30,12 +30,16 @@
   at opaque range 214-243. The raw, required distinct Complete B outlined,
   Complete B + Form, and comparison PNGs plus two GIFs are hash-frozen and
   deterministic. Pre-approval focused / fast / full gates pass in 0.7s /
-  67.6s / 123.1s with public 92/294 and all 232 fixtures unchanged. The exact
-  four PNGs are open together in Aseprite as sprites 51, 55, 59, and active 63.
-  The outlined PNG is review evidence only, not outline registration. Stop for
-  explicit visual approval; publication, registration, fixtures, effects,
-  child assets, later Ram roles and families, release, accepted drift, and a PR
-  remain closed.
+  67.6s / 123.1s and approval-local focused / fast gates pass in 0.7s / 58.8s
+  with public 92/294 and all 232 fixtures unchanged. The exact four PNGs are
+  open together in Aseprite as sprites 51, 55, 59, and active 63.
+  The outlined PNG is review evidence only, not outline registration. The
+  designer replied `approved` to the exact posted packet. Accepted
+  implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` is remote
+  verified. Standing permission opens only its approval record, branch push,
+  and bounded handoff reconciliation. No next Ram art gate is open;
+  registration, fixtures, effects, child assets, later roles and families,
+  release, accepted drift, and a PR remain closed.
 
 - Approved preceding private art gate (2026-08-13): from clean published Gloamstripe
   reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's
@@ -5442,7 +5446,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common, specialist, and elite approved and published; Ram common private packet awaiting visual approval; remaining roles and families queued`
+- Status: `Hyena common, specialist, and elite approved and published; Ram common approved and undergoing bounded publication; remaining roles and families closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5532,14 +5536,19 @@ approved Scarcrest Matriarch and Miremane Courser plus public Dire Wolf at
 opaque range 214-243. The hash-frozen packet includes raw, required distinct
 Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs and
 regenerates deterministically. Pre-approval focused / fast / full gates pass
-in 0.7s / 67.6s / 123.1s with public 92/294 and all 232 fixtures unchanged.
-The four exact PNGs are open together in Aseprite as sprites 51, 55, 59, and
-active 63. The outlined PNG is review evidence only and does not change
-outline registration. Dust, horn arcs, impacts, debris, particles,
-projectiles, glow, illumination, runtime attachments, and detached horns
-remain external Effects Off. Stop for exact visual approval. Publication,
-registration, fixtures, effects, specialist or elite Ram, Stag, Mammoth,
-Rhino, Rhino Boss work, and all later gates remain closed.
+in 0.7s / 67.6s / 123.1s and approval-local focused / fast gates pass in 0.7s
+/ 58.8s with public 92/294 and all 232 fixtures unchanged. The four exact PNGs
+are open together in Aseprite as sprites 51, 55, 59, and active 63. The
+outlined PNG is review evidence only and does not change outline registration.
+The designer replied `approved` to the exact posted digest and six hashes.
+Accepted implementation
+`195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` is remote verified; standing
+permission opens only its approval record, branch push, and bounded handoff
+reconciliation. Dust, horn arcs, impacts, debris, particles, projectiles,
+glow, illumination, runtime attachments, and detached horns remain external
+Effects Off. No next Ram art gate is open. Registration, fixtures, effects,
+specialist or elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, and all later
+gates remain closed.
 
 ### EN-E11 - Birds
 
@@ -5772,8 +5781,9 @@ frozen at digest `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdab
 its implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval
 record `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
 tracked branch. Those source checkpoints are now included only through the
-authorized v2 adapter. The current subsequent art gate is the private EN-E10
-Stonecurl Grazer common Ram documented above, awaiting visual approval.
+authorized v2 adapter. The exact private EN-E10 Stonecurl Grazer common Ram
+documented above is approved and undergoing its bounded publication tuple; no
+subsequent art gate is open.
 The three EN-E03 Idle-only variants, other incomplete candidates, Headless Rider
 prototypes, bosses, fixtures, effects, release, accepted drift, and a PR remain
 separate closed gates.

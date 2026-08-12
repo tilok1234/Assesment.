@@ -28,12 +28,16 @@ Focused validation passes every structure, identity, alias, mirror, and
 three-way distinction gate at opaque range 214-243. The raw, required distinct
 Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
 hash-frozen and deterministic. Pre-approval focused / fast / full gates pass
-in 0.7s / 67.6s / 123.1s with public 92/294 and all 232 fixtures unchanged.
-The exact four PNGs are open together in Aseprite as sprites 51, 55, 59, and
-active 63. The outlined PNG is review evidence only, not outline registration.
-Stop for explicit visual approval; publication, registration, fixtures,
-effects, child assets, later Ram roles and families, release, accepted drift,
-and a PR remain closed.
+in 0.7s / 67.6s / 123.1s and approval-local focused / fast gates pass in 0.7s
+/ 58.8s with public 92/294 and all 232 fixtures unchanged. The exact four PNGs
+are open together in Aseprite as sprites 51, 55, 59, and active 63. The
+outlined PNG is review evidence only, not outline registration. The designer
+replied `approved` to the exact posted packet. Accepted
+implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` is remote
+verified. Standing permission opens only its approval record, branch push, and
+bounded handoff reconciliation. No next Ram art gate is open; registration,
+fixtures, effects, child assets, later roles and families, release, accepted
+drift, and a PR remain closed.
 
 Approved preceding EN-E10 art gate (2026-08-13): from clean published Gloamstripe
 reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's
