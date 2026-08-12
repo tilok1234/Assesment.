@@ -29,15 +29,18 @@ three-way distinction gate at opaque range 205-244. The raw, separately
 requested Complete B outlined, Complete B + Form, and comparison PNGs plus two
 GIFs are hash-frozen and deterministic. Pre-approval `check:fast`/full pass in
 60.2s/111.1s and approval-local gates pass in 57.9s/112.7s with public 92/294
-and all 232 fixtures unchanged. The outlined
+and all 232 fixtures unchanged. Final published-state full validation passes in
+108.1s with the same boundary. The outlined
 PNG is a review surface only and does not authorize outline registration. The
 four exact PNGs were open together in Aseprite as sprites 19, 23, 27, and active
 31 when the designer replied `approved lets do nex t`. Accepted implementation
 `5d35ed0c36f84646270a3d02b13e63559798aa01` records the exact packet. Standing
-permission has published the implementation and approval record
-`76ed7212ccddc33d1fcafa1ec97b26eb8963f096`; only handoff reconciliation remains.
-The same reply opens exactly one private elite Hyena only after publication is
-complete, clean, and remote verified. Public registration, fixtures, effects, child assets,
+permission has published the implementation, approval record
+`76ed7212ccddc33d1fcafa1ec97b26eb8963f096`, and initial handoff
+`1126852feae8f812c044806760a0063a7ef8d31f`; the bounded tuple is complete and
+remote verified. The same reply opens exactly one private elite Hyena from this
+clean published reconciliation. Continue the distinct outlined review PNG
+without changing outline registration. Public registration, fixtures, effects, child assets,
 Ram, Stag, Mammoth, Rhino, Rhino
 Boss work, the deferred Runic Idol decision, release, accepted drift, and a PR
 remain closed.

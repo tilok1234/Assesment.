@@ -33,16 +33,19 @@
   comparison PNGs plus two GIFs are hash-frozen and regenerate
   deterministically. Pre-approval `check:fast`/full pass in 60.2s/111.1s and
   approval-local gates pass in 57.9s/112.7s with public 92/294 and all 232
-  fixtures unchanged. The outlined PNG is a review surface only,
+  fixtures unchanged. Final published-state full validation passes in 108.1s
+  with the same boundary. The outlined PNG is a review surface only,
   not outline registration. The exact four PNGs are open together in Aseprite
   as sprites 19, 23, 27, and active 31 when the designer replied `approved lets
   do nex t`. Accepted implementation
   `5d35ed0c36f84646270a3d02b13e63559798aa01` records only the exact packet.
-  The implementation and approval record
-  `76ed7212ccddc33d1fcafa1ec97b26eb8963f096` are remote verified; only the
-  handoff reconciliation remains. The same reply authorizes exactly one private
-  elite Hyena candidate only after that publication tuple is complete, clean,
-  and remote verified. Public registration, fixtures, effects, child assets, Ram, Stag,
+  The implementation, approval record
+  `76ed7212ccddc33d1fcafa1ec97b26eb8963f096`, and initial published handoff
+  `1126852feae8f812c044806760a0063a7ef8d31f` are remote verified; this
+  reconciliation completes the bounded publication tuple. The same reply
+  authorizes exactly one private elite Hyena candidate from this clean
+  published reconciliation. Continue the distinct outlined review PNG without
+  changing outline registration. Public registration, fixtures, effects, child assets, Ram, Stag,
   Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release,
   accepted drift, and a PR remain closed.
 

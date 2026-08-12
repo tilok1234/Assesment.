@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Gloamstripe Ambusher Approval Publication
+## Immediate Continuation Checkpoint - Gloamstripe Ambusher Published And Reconciled
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-hyena-specialist`. It is based exactly on the clean published
@@ -62,6 +62,7 @@ gate.
    is 205-244. Deterministic regeneration reproduces all six hashes.
    Pre-approval `check:fast`/full pass in 60.2s/111.1s and approval-local gates
    pass in 57.9s/112.7s with public 92/294 and all 232 fixture sheets unchanged.
+   Final published-state full validation passes in 108.1s with the same boundary.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-hyena-gloamstripe-ambusher/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-hyena-gloamstripe-ambusher` and
@@ -72,15 +73,16 @@ gate.
    window as sprites 19, 23, 27, and active 31 when the designer replied
    `approved lets do nex t`. Accepted implementation
    `5d35ed0c36f84646270a3d02b13e63559798aa01` records only the exact frozen
-   packet. The implementation and approval record
-   `76ed7212ccddc33d1fcafa1ec97b26eb8963f096` are remote verified. Only the
-   initial published handoff and final reconciliation remain open.
+   packet. The implementation, approval record
+   `76ed7212ccddc33d1fcafa1ec97b26eb8963f096`, and initial published handoff
+   `1126852feae8f812c044806760a0063a7ef8d31f` are remote verified; this
+   reconciliation completes the bounded publication tuple.
 8. Public Hyena registration or outline registration, fixtures, effects, child
    assets, Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
    deferred Runic Idol decision, release, accepted drift, and a PR remain
-   closed. The same reply opens exactly one private elite Hyena candidate only
-   after this bounded specialist publication tuple is complete, clean, and
-   remote verified.
+   closed. The same reply opens exactly one private elite Hyena candidate from
+   this clean published reconciliation. Continue the distinct outlined PNG as
+   review evidence only; it does not authorize outline registration.
 
 ## Approved Preceding Checkpoint - Duneback Scavenger Published And Reconciled
 

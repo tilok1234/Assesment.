@@ -112,8 +112,8 @@ export const EN_E10_GLOAMSTRIPE_AMBUSHER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: '5d35ed0c36f84646270a3d02b13e63559798aa01',
   publishedApprovalRecord: '76ed7212ccddc33d1fcafa1ec97b26eb8963f096',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '1126852feae8f812c044806760a0063a7ef8d31f',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E10_DUNEBACK_SCAVENGER_GATE.id,
     artifactSha256: EN_E10_DUNEBACK_SCAVENGER_GATE.artifactSha256,
@@ -169,7 +169,7 @@ export const EN_E10_GLOAMSTRIPE_AMBUSHER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Gloamstripe Ambusher implementation 5d35ed0c36f84646270a3d02b13e63559798aa01 and approval record 76ed7212ccddc33d1fcafa1ec97b26eb8963f096 are remote verified. Only the initial published handoff and final reconciliation remain open. The same approved lets do nex t reply authorizes exactly one private elite Hyena candidate only after this publication tuple is complete, clean, and remote verified. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Hyena registration, fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Gloamstripe Ambusher implementation 5d35ed0c36f84646270a3d02b13e63559798aa01, approval record 76ed7212ccddc33d1fcafa1ec97b26eb8963f096, and initial published handoff 1126852feae8f812c044806760a0063a7ef8d31f are remote verified; this reconciliation completes the bounded publication tuple. The same approved lets do nex t reply authorizes exactly one private elite Hyena candidate from this clean published reconciliation. Continue the distinct outlined PNG as review evidence only; it does not authorize outline registration. Public Hyena registration, fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_GLOAMSTRIPE_AMBUSHER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
