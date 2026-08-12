@@ -25,6 +25,37 @@ gate.
 
 ## Immediate Continuation Checkpoint - Approved Enemy Backlog Integrated
 
+### Next-chat startup
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/approved-enemy-assembler-integration-v2` unless the designer chooses
+   a new isolated branch. Read `CLAUDE.md`, this section, and the relevant live
+   roadmap section before editing; the long checkpoint history below is
+   provenance, not an instruction to repeat finished work.
+2. Verify a clean worktree and local/remote equality. The completed integration
+   tuple before this handoff is implementation
+   `6808ee93e4a7434173a7502795ed39c032f20530`, restart-safe documentation
+   checkpoint `0fd1a4babd1780b93a427fef51289a8ae87d0ac8`, and final five-doc
+   reconciliation `e12fb67854755044146732ba2e06b5ef5581da1a`.
+3. Treat 92 public families / 294 variants and 35 expansion families / 92
+   variants as the live catalog. The legacy source catalog remains 57/202 and
+   all 232 frozen fixture sheets remain unchanged.
+4. No art, registration, fixture, effect, boss, release, accepted-drift, or PR
+   gate is active. Ask the designer which bounded lane is next; do not infer one
+   from historical `lets do next` messages.
+5. If the next lane changes Enemy content, use the repo-local `add-enemy`
+   runbook and keep AI responsible for implementation, docs, tests, diagnosis,
+   and repair. Reserve the designer for visual approval or genuine architecture
+   and safety choices.
+
+Latest validation at this handoff: the pinned v2 gate passes all 35 suites /
+2,800 exact source frames and 2,800 None / Complete B / Form triplets at digest
+`e7d8b93e78058ca43b3ba584108bfa9906f33581aed43dbf6ec6819101743f93`;
+`check:fast` passes in 64.8s with public 92/294 and all 232 fixtures validated.
+The implementation's full `check` passed in 115.4s. No source renderer, fixture,
+effect, schema, shared renderer interface, exporter contract, or frame contract
+changed in the integration.
+
 Start here. On branch `codex/approved-enemy-assembler-integration-v2`, the
 designer authorized the audited 35-variant private backlog by replying
 `lets do it`. Implementation
