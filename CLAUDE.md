@@ -130,9 +130,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   in Aseprite as sprites 19, 23, 27, and active 31 when the designer replied
   `approved lets do nex t`. Accepted implementation
   `5d35ed0c36f84646270a3d02b13e63559798aa01` records only the frozen packet.
-  Standing permission opens its approval record, push, and bounded publication
-  reconciliation; the same reply opens exactly one private elite Hyena only
-  after that publication is clean and remote verified. Registration,
+  The implementation and approval record
+  `76ed7212ccddc33d1fcafa1ec97b26eb8963f096` are remote verified; only the
+  handoff reconciliation remains. The same reply opens exactly one private
+  elite Hyena only after that publication tuple is complete, clean, and remote
+  verified. Registration,
   fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino,
   Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
   and a PR remain closed.

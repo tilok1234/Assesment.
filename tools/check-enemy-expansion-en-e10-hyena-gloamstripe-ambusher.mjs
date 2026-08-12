@@ -184,7 +184,10 @@ check(
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvalEvidence.includes('active comparison sprite 31')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvalEvidence.includes('6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvedImplementation === '5d35ed0c36f84646270a3d02b13e63559798aa01'
-    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.publicationState === 'approved-not-published',
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.publishedImplementation === '5d35ed0c36f84646270a3d02b13e63559798aa01'
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.publishedApprovalRecord === '76ed7212ccddc33d1fcafa1ec97b26eb8963f096'
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.initialPublishedHandoff === ''
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
   'specialist authorization or outlined-image boundary drifted',
 );
 check(
@@ -219,10 +222,13 @@ check(
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.reviewPresentation.includes('distinct Complete B outlined board')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.exclusions.includes('Hyena elite')
-    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('visually approved at implementation 5d35ed0c36f84646270a3d02b13e63559798aa01')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('implementation 5d35ed0c36f84646270a3d02b13e63559798aa01')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('approval record 76ed7212ccddc33d1fcafa1ec97b26eb8963f096')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('remote verified')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('initial published handoff and final reconciliation')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('approved lets do nex t')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('exactly one private elite Hyena candidate')
-    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('clean and remote verified')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('complete, clean, and remote verified')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('review evidence only')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('does not authorize outline registration'),
   'full-suite motion, review, or stop boundary drifted',

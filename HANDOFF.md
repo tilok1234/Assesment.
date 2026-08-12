@@ -72,13 +72,15 @@ gate.
    window as sprites 19, 23, 27, and active 31 when the designer replied
    `approved lets do nex t`. Accepted implementation
    `5d35ed0c36f84646270a3d02b13e63559798aa01` records only the exact frozen
-   packet. Standing permission opens its approval record, branch push, and
-   bounded publication reconciliation.
+   packet. The implementation and approval record
+   `76ed7212ccddc33d1fcafa1ec97b26eb8963f096` are remote verified. Only the
+   initial published handoff and final reconciliation remain open.
 8. Public Hyena registration or outline registration, fixtures, effects, child
    assets, Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
    deferred Runic Idol decision, release, accepted drift, and a PR remain
    closed. The same reply opens exactly one private elite Hyena candidate only
-   after this bounded specialist publication is clean and remote verified.
+   after this bounded specialist publication tuple is complete, clean, and
+   remote verified.
 
 ## Approved Preceding Checkpoint - Duneback Scavenger Published And Reconciled
 

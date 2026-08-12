@@ -34,9 +34,10 @@ PNG is a review surface only and does not authorize outline registration. The
 four exact PNGs were open together in Aseprite as sprites 19, 23, 27, and active
 31 when the designer replied `approved lets do nex t`. Accepted implementation
 `5d35ed0c36f84646270a3d02b13e63559798aa01` records the exact packet. Standing
-permission opens its approval record, branch push, and bounded reconciliation;
-the same reply opens exactly one private elite Hyena only after publication is
-clean and remote verified. Public registration, fixtures, effects, child assets,
+permission has published the implementation and approval record
+`76ed7212ccddc33d1fcafa1ec97b26eb8963f096`; only handoff reconciliation remains.
+The same reply opens exactly one private elite Hyena only after publication is
+complete, clean, and remote verified. Public registration, fixtures, effects, child assets,
 Ram, Stag, Mammoth, Rhino, Rhino
 Boss work, the deferred Runic Idol decision, release, accepted drift, and a PR
 remain closed.
