@@ -133,10 +133,10 @@ export const EN_E10_STONECURL_GRAZER_GATE = deepFreeze({
   approvedImplementation: '195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8',
+  publishedApprovalRecord: 'c7757c1293bae90840735555e2670d7661bc9873',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E10_SCARCREST_MATRIARCH_GATE.id,
     artifactSha256: EN_E10_SCARCREST_MATRIARCH_GATE.artifactSha256,
@@ -193,7 +193,7 @@ export const EN_E10_STONECURL_GRAZER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Stonecurl Grazer packet is visually approved at implementation 195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. No next Ram art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Ram registration, fixtures, effects, child assets, specialist or elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Stonecurl Grazer implementation 195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8 and approval record c7757c1293bae90840735555e2670d7661bc9873 are remote verified. Only the initial published handoff and final reconciliation remain open. No next Ram art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Ram registration, fixtures, effects, child assets, specialist or elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_STONECURL_GRAZER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

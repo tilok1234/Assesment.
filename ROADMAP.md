@@ -33,11 +33,11 @@ in 0.7s / 67.6s / 123.1s and approval-local focused / fast gates pass in 0.7s
 are open together in Aseprite as sprites 51, 55, 59, and active 63. The
 outlined PNG is review evidence only, not outline registration. The designer
 replied `approved` to the exact posted packet. Accepted
-implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` is remote
-verified. Standing permission opens only its approval record, branch push, and
-bounded handoff reconciliation. No next Ram art gate is open; registration,
-fixtures, effects, child assets, later roles and families, release, accepted
-drift, and a PR remain closed.
+implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` and approval
+record `c7757c1293bae90840735555e2670d7661bc9873` are remote verified. Only
+the initial published handoff and final reconciliation remain open. No next
+Ram art gate is open; registration, fixtures, effects, child assets, later
+roles and families, release, accepted drift, and a PR remain closed.
 
 Approved preceding EN-E10 art gate (2026-08-13): from clean published Gloamstripe
 reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's

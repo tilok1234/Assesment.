@@ -130,12 +130,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   55, 59, and active 63. The outlined PNG is review evidence only, not outline
   registration. The final prompt posted all four PNGs and the exact digest;
   the designer replied `approved`. Accepted implementation
-  `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` is remote verified. Standing
-  permission opens only its approval record, branch push, and bounded handoff
-  reconciliation. No next Ram art gate is open. Public registration, fixtures,
-  effects, child assets, specialist or elite Ram, Stag, Mammoth, Rhino, Rhino
-  Boss work, the deferred Runic Idol decision, release, accepted drift, a PR,
-  and every later gate remain closed.
+  `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` and approval record
+  `c7757c1293bae90840735555e2670d7661bc9873` are remote verified. Only the
+  initial published handoff and final reconciliation remain open. No next Ram
+  art gate is open. Public registration, fixtures, effects, child assets,
+  specialist or elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, the deferred
+  Runic Idol decision, release, accepted drift, a PR, and every later gate
+  remain closed.
 - Approved preceding private art checkpoint: on `codex/en-e10-hyena-elite`, based exactly on clean
   published Gloamstripe reconciliation
   `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's `approved lets do

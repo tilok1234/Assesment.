@@ -151,10 +151,10 @@ check(
     && EN_E10_STONECURL_GRAZER_GATE.approvalEvidence.includes('active comparison sprite 63')
     && EN_E10_STONECURL_GRAZER_GATE.approvalEvidence.includes('79b440290b1c6f503834d44b13d2c9508b34ad48a4ae495c6e957e329095942f')
     && EN_E10_STONECURL_GRAZER_GATE.approvedImplementation === '195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8'
-    && EN_E10_STONECURL_GRAZER_GATE.publishedImplementation === ''
-    && EN_E10_STONECURL_GRAZER_GATE.publishedApprovalRecord === ''
+    && EN_E10_STONECURL_GRAZER_GATE.publishedImplementation === '195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8'
+    && EN_E10_STONECURL_GRAZER_GATE.publishedApprovalRecord === 'c7757c1293bae90840735555e2670d7661bc9873'
     && EN_E10_STONECURL_GRAZER_GATE.initialPublishedHandoff === ''
-    && EN_E10_STONECURL_GRAZER_GATE.publicationState === 'approved-not-published',
+    && EN_E10_STONECURL_GRAZER_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
   'common Ram authorization or review boundary drifted',
 );
 check(
@@ -191,7 +191,10 @@ check(
     && EN_E10_STONECURL_GRAZER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_STONECURL_GRAZER_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_STONECURL_GRAZER_GATE.exclusions.includes('Ram specialist or elite')
-    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('visually approved at implementation 195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8')
+    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('implementation 195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8')
+    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('approval record c7757c1293bae90840735555e2670d7661bc9873')
+    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('remote verified')
+    && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('initial published handoff and final reconciliation')
     && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('No next Ram art gate is open')
     && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('review evidence only')
     && EN_E10_STONECURL_GRAZER_GATE.nextGate.includes('does not authorize outline registration'),

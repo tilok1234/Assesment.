@@ -35,11 +35,11 @@
   open together in Aseprite as sprites 51, 55, 59, and active 63.
   The outlined PNG is review evidence only, not outline registration. The
   designer replied `approved` to the exact posted packet. Accepted
-  implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` is remote
-  verified. Standing permission opens only its approval record, branch push,
-  and bounded handoff reconciliation. No next Ram art gate is open;
-  registration, fixtures, effects, child assets, later roles and families,
-  release, accepted drift, and a PR remain closed.
+  implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` and approval
+  record `c7757c1293bae90840735555e2670d7661bc9873` are remote verified.
+  Only the initial published handoff and final reconciliation remain open. No
+  next Ram art gate is open; registration, fixtures, effects, child assets,
+  later roles and families, release, accepted drift, and a PR remain closed.
 
 - Approved preceding private art gate (2026-08-13): from clean published Gloamstripe
   reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's
@@ -5542,13 +5542,13 @@ are open together in Aseprite as sprites 51, 55, 59, and active 63. The
 outlined PNG is review evidence only and does not change outline registration.
 The designer replied `approved` to the exact posted digest and six hashes.
 Accepted implementation
-`195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` is remote verified; standing
-permission opens only its approval record, branch push, and bounded handoff
-reconciliation. Dust, horn arcs, impacts, debris, particles, projectiles,
-glow, illumination, runtime attachments, and detached horns remain external
-Effects Off. No next Ram art gate is open. Registration, fixtures, effects,
-specialist or elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, and all later
-gates remain closed.
+`195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` and approval record
+`c7757c1293bae90840735555e2670d7661bc9873` are remote verified. Only the
+initial published handoff and final reconciliation remain open. Dust, horn
+arcs, impacts, debris, particles, projectiles, glow, illumination, runtime
+attachments, and detached horns remain external Effects Off. No next Ram art
+gate is open. Registration, fixtures, effects, specialist or elite Ram, Stag,
+Mammoth, Rhino, Rhino Boss work, and all later gates remain closed.
 
 ### EN-E11 - Birds
 

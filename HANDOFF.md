@@ -78,8 +78,9 @@ gate.
    `79b440290b1c6f503834d44b13d2c9508b34ad48a4ae495c6e957e329095942f`.
    The designer replied `approved`. Approval applies only to that exact packet;
    accepted implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8`
-   records it and is remote verified. Standing permission opens only its
-   approval record, branch push, and bounded reconciliation.
+   records it. The implementation and approval record
+   `c7757c1293bae90840735555e2670d7661bc9873` are remote verified. Only the
+   initial published handoff and final reconciliation remain open.
 8. Public Ram registration or outline registration, fixtures, effects, child
    assets, specialist or elite Ram, Stag, Mammoth, Rhino, Furious Depraved
    Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
