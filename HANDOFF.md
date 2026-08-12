@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Duneback Scavenger Visual Approval
+## Immediate Continuation Checkpoint - Duneback Scavenger Approval Publication
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-hyena-common`. It is based exactly on clean published
@@ -53,21 +53,27 @@ gate.
    expected eye and readable-muzzle views; and 80/80 pixel plus alpha
    distinctions from approved Miremane Courser and public Dire Wolf and Marsh
    Crocodile. Opaque range is 187-216. Deterministic review regeneration
-   reproduces all frozen hashes. `check:fast` passes in 60.9s and full `check`
-   in 113.5s with public 92/294 and all 232 fixtures unchanged.
+   reproduces all frozen hashes. Pre-approval `check:fast`/full gates pass in
+   60.9s/113.5s and approval-local gates pass in 60.4s/110.1s with public
+   92/294 and all 232 fixtures unchanged.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-hyena-duneback-scavenger/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-hyena-duneback-scavenger` and run
    the focused gate with
    `npm.cmd run check:enemy-expansion-en-e10-hyena-duneback-scavenger`.
-7. The exact raw, Complete B + Form, and comparison PNGs are open together in
-   the four-lane Aseprite MCP review window as sprites 7, 11, and active 15.
-   Stop for the designer's explicit visual approval. The candidate is not
-   committed or pushed under the standing permission until that approval.
+7. The exact raw, Complete B + Form, and comparison PNGs were open together in
+   the four-lane Aseprite MCP review window as sprites 7, 11, and active 15 when
+   the designer replied `approved but for nex to ne please also post image of
+   it outlined`. Accepted implementation
+   `e0e5e36bd6769a334f06e72db3de67c836021c46` records only the frozen packet.
+   Standing permission opens its approval record, branch push, and bounded
+   publication reconciliation.
 8. Registration, fixtures, effects, child assets, specialist or elite Hyena,
    Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the deferred
    Runic Idol topology decision, release, accepted drift, and a PR remain
-   closed.
+   closed. No next sprite is authorized. If one is separately authorized, its
+   review packet must also post a distinct outlined image; this requirement
+   does not authorize outline registration or alter Duneback retroactively.
 
 ## Deferred Checkpoint - Runic Idol Topology Decision
 

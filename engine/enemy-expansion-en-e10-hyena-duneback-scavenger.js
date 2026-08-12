@@ -68,7 +68,7 @@ export const EN_E10_HYENA_CONTRACT_CARD = deepFreeze({
     id: 'duneback-scavenger',
     name: 'Duneback Scavenger',
     role: 'common',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   variantBriefs: [
     { role: 'common', brief: 'Tawny spotted scavenger with a steep shoulder-to-rump slope, compact dark muzzle, connected bristle ridge, and direct body-owned bite.' },
@@ -86,7 +86,7 @@ export const EN_E10_DUNEBACK_SCAVENGER_CONTRACT = deepFreeze({
   family: 'hyena',
   variant: 'duneback-scavenger',
   role: 'common',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_HYENA_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-high-shoulder-low-rump-wedge-muzzle-rounded-ear-bristle-mane-four-paw-hyena-v1',
   silhouette: 'A grounded tawny Hyena with high bristled shoulders, a visibly descending back, low narrow rump, deep chest, tucked belly, compact wedge muzzle, two rounded ears, connected short tail, and four separated dark paws. It must read as a Hyena rather than a level-backed long-snouted Dire Wolf, bowed long-necked Kelpie, low Crocodile, upright Werewolf, feline predator, or reduced Rhino Boss.',
@@ -128,20 +128,20 @@ export const EN_E10_DUNEBACK_SCAVENGER_DATA = deepFreeze({
 
 export const EN_E10_DUNEBACK_SCAVENGER_GATE = deepFreeze({
   id: 'en-e10-hyena-duneback-scavenger-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: 'ff9f9103e06e9edb7729b5efb61c237cf6d4a625',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The designer redirected the next lane to EN-E10. Codex bounded EN-E10 to its first family, Hyena, while retaining the roadmap rule that Rhino stays deferred until its ordinary-versus-Boss distinction is approved. Codex then recommended one connected grounded 24x24 baked Hyena actor with zero child assets and external effects. The designer replied: approved. This selects that topology and authorizes only one private common Hyena Duneback Scavenger 80-frame candidate. Runic Idol remains deferred; registration, fixtures, effects, later Hyena roles, Ram, Stag, Mammoth, Rhino, Boss work, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E10_HYENA_TOPOLOGY_DECISION.id,
-  approvedOn: null,
-  approvalEvidence: '',
-  approvedImplementation: '',
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards and the approved Miremane Courser plus public Dire Wolf and Marsh Crocodile comparison were frozen with both synchronized GIF hashes. The four-lane Aseprite MCP review window reported the exact three PNG paths open together as raw sprite 7, Complete B + Form sprite 11, and active comparison sprite 15; the final approval prompt also posted the exact raw and comparison PNGs and identified candidate digest 353bd2ee9818a9eac8e799a7bc0e041cb6841509d61d3aabd695e86cd146db4d. The designer replied: approved but for nex to ne please also post image of it outlined. In context this approves only that exact Duneback Scavenger digest and its five frozen review hashes. The second clause adds one presentation requirement for the next separately authorized sprite: post a distinct outlined image in addition to the existing packet. It does not retroactively change Duneback, authorize outline registration, fixtures, effects, child assets, another Hyena role or family, or any new art gate.',
+  approvedImplementation: 'e0e5e36bd6769a334f06e72db3de67c836021c46',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission applies only after explicit approval of the exact frozen artifact or digest and does not authorize this awaiting-review candidate, registration, fixtures, effects, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: '',
   publishedApprovalRecord: '',
   initialPublishedHandoff: '',
-  publicationState: 'unpublished-awaiting-visual-approval',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E09_CROWNSEAL_GRIMOIRE_GATE.id,
     artifactSha256: EN_E09_CROWNSEAL_GRIMOIRE_GATE.artifactSha256,
@@ -212,7 +212,7 @@ export const EN_E10_DUNEBACK_SCAVENGER_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'Stop for explicit designer visual approval of the exact frozen Duneback Scavenger digest and five review artifacts. Approval may publish only this bounded private common candidate under the standing permission. It does not register Hyena, generate fixtures, add effects or children, open specialist or elite Hyena, advance Ram, Stag, Mammoth, or Rhino, resume Runic Idol, change the Rhino Boss, release, accept drift, or open a pull request.',
+  nextGate: 'The exact Duneback Scavenger packet is visually approved at implementation e0e5e36bd6769a334f06e72db3de67c836021c46. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. No next sprite is authorized. If a later sprite is separately authorized, its review presentation must also post a distinct outlined image; this is a review-surface requirement, not permission for outline registration. Registration, fixtures, effects, child assets, specialist or elite Hyena, Ram, Stag, Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_DUNEBACK_SCAVENGER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

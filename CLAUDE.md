@@ -122,10 +122,17 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   expected eye and muzzle views; and 80/80 pixel plus alpha distinctions from
   approved Miremane Courser and public Dire Wolf and Marsh Crocodile. Opaque
   range is 187-216. The exact three PNG plus two GIF hashes are frozen;
-  deterministic regeneration passes. `check:fast` passes in 60.9s and full
-  `check` in 113.5s with public 92/294 and all 232 fixtures unchanged. Raw,
-  Complete B + Form, and comparison PNGs are open together in Aseprite as
-  sprites 7, 11, and active 15 awaiting explicit visual approval. Registration,
+  deterministic regeneration passes. Pre-approval `check:fast`/full gates pass
+  in 60.9s/113.5s and approval-local gates pass in 60.4s/110.1s with public
+  92/294 and all 232 fixtures unchanged. Raw,
+  Complete B + Form, and comparison PNGs were open together in Aseprite as
+  sprites 7, 11, and active 15 when the designer replied `approved but for nex
+  to ne please also post image of it outlined`. Accepted implementation
+  `e0e5e36bd6769a334f06e72db3de67c836021c46` records only the exact frozen
+  packet. The second clause requires the next separately authorized sprite
+  review to also post a distinct outlined image; it does not authorize another
+  sprite or outline registration. Bounded approval publication is active.
+  Registration,
   fixtures, effects, child assets, later Hyena roles, Ram, Stag, Mammoth,
   Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted
   drift, and a PR remain closed.

@@ -161,13 +161,16 @@ check(
   'approved Hyena topology decision drifted',
 );
 check(
-  EN_E10_DUNEBACK_SCAVENGER_GATE.status === 'awaiting-visual-approval'
+  EN_E10_DUNEBACK_SCAVENGER_GATE.status === 'approved'
     && EN_E10_DUNEBACK_SCAVENGER_GATE.baseCheckpoint === 'ff9f9103e06e9edb7729b5efb61c237cf6d4a625'
     && EN_E10_DUNEBACK_SCAVENGER_GATE.authorizedOn === '2026-08-13'
     && EN_E10_DUNEBACK_SCAVENGER_GATE.authorizationEvidence.includes('designer replied: approved')
     && EN_E10_DUNEBACK_SCAVENGER_GATE.authorizationEvidence.includes('only one private common Hyena Duneback Scavenger')
-    && EN_E10_DUNEBACK_SCAVENGER_GATE.approvedOn === null
-    && EN_E10_DUNEBACK_SCAVENGER_GATE.publicationState === 'unpublished-awaiting-visual-approval',
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.approvedOn === '2026-08-13'
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.approvalEvidence.includes('approved but for nex to ne please also post image of it outlined')
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.approvalEvidence.includes('353bd2ee9818a9eac8e799a7bc0e041cb6841509d61d3aabd695e86cd146db4d')
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.approvedImplementation === 'e0e5e36bd6769a334f06e72db3de67c836021c46'
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.publicationState === 'approved-not-published',
   'private common authorization or awaiting-review state drifted',
 );
 check(
@@ -204,6 +207,13 @@ check(
     && EN_E10_DUNEBACK_SCAVENGER_GATE.exclusions.includes('Ram, Stag, Mammoth, or Rhino')
     && EN_E10_DUNEBACK_SCAVENGER_GATE.exclusions.includes('Runic Idol or other EN-E09 work'),
   'full-suite motion or stop boundary drifted',
+);
+check(
+  EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('visually approved at implementation e0e5e36bd6769a334f06e72db3de67c836021c46')
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('No next sprite is authorized')
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('distinct outlined image')
+    && EN_E10_DUNEBACK_SCAVENGER_GATE.nextGate.includes('not permission for outline registration'),
+  'approval publication boundary or next-review outlined-image requirement drifted',
 );
 check(
   Object.isFrozen(EN_E10_HYENA_TOPOLOGY_DECISION)

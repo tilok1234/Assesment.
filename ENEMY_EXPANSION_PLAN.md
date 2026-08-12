@@ -28,10 +28,17 @@
   quadruped-span frames; 72/72 colored frames; 8/8 white flashes; 54/54 eye and
   muzzle views; and 80/80 pixel plus alpha distinctions from approved Miremane
   Courser and public Dire Wolf and Marsh Crocodile. Opaque range is 187-216.
-  Deterministic review regeneration passes; fast/full gates pass in
-  60.9s/113.5s with public 92/294 and all 232 fixtures exact. The exact raw,
-  Complete B + Form, and comparison PNGs are open together in Aseprite as
-  sprites 7, 11, and active 15 awaiting explicit visual approval. Registration,
+  Deterministic review regeneration passes; pre-approval fast/full gates pass
+  in 60.9s/113.5s and approval-local gates in 60.4s/110.1s with public 92/294
+  and all 232 fixtures exact. The exact raw,
+  Complete B + Form, and comparison PNGs were open together in Aseprite as
+  sprites 7, 11, and active 15 when the designer replied `approved but for nex
+  to ne please also post image of it outlined`. Accepted implementation
+  `e0e5e36bd6769a334f06e72db3de67c836021c46` records only that frozen packet.
+  The second clause requires the next separately authorized sprite review to
+  also post a distinct outlined image; it neither opens another sprite nor
+  authorizes outline registration. Bounded approval publication is active.
+  Registration,
   fixtures, effects, child assets, later Hyena roles, Ram, Stag, Mammoth,
   Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted
   drift, and a PR remain closed.
@@ -5341,7 +5348,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common visual approval gate active; remaining families queued`
+- Status: `Hyena common approved; bounded publication active; remaining families queued`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5364,8 +5371,12 @@ amber eyes. Its exact 80-frame candidate and five review artifacts are hash-
 frozen in `en-e10-hyena-duneback-scavenger-full-v1`. All 80 frames are
 connected, one-cell bounded, grounded, four-paw readable, and pixel/alpha
 distinct from approved Miremane Courser and public Dire Wolf and Marsh
-Crocodile. Raw, Complete B + Form, and comparison PNGs are open together in
-Aseprite as sprites 7, 11, and active 15. Stop for explicit visual approval.
+Crocodile. Raw, Complete B + Form, and comparison PNGs were open together in
+Aseprite as sprites 7, 11, and active 15 when the designer approved the exact
+packet at implementation `e0e5e36bd6769a334f06e72db3de67c836021c46` and
+requested that the next sprite review also post a distinct outlined image.
+That is a future review-surface requirement, not outline registration or next-
+sprite authorization.
 Specialist and elite Hyena, registration, fixtures, effects, Ram, Stag,
 Mammoth, Rhino, Rhino Boss work, and all later gates remain closed.
 

@@ -25,10 +25,16 @@ body-owned jaw lunge. The exact 80-frame candidate is frozen at digest
 `353bd2ee9818a9eac8e799a7bc0e041cb6841509d61d3aabd695e86cd146db4d`.
 Focused validation passes all connected, bounded, grounded, four-paw, identity,
 alias, mirror, and three-way distinction gates at opaque range 187-216.
-Deterministic review regeneration passes; `check:fast` and full `check` pass in
-60.9s/113.5s with public 92/294 and all 232 fixtures unchanged. The exact raw,
-Complete B + Form, and comparison PNGs are open together in Aseprite as sprites
-7, 11, and active 15 awaiting explicit visual approval. Registration, fixtures,
+Deterministic review regeneration passes; pre-approval fast/full gates pass in
+60.9s/113.5s and approval-local gates in 60.4s/110.1s with public 92/294 and
+all 232 fixtures unchanged. The exact raw,
+Complete B + Form, and comparison PNGs were open together in Aseprite as sprites
+7, 11, and active 15 when the designer replied `approved but for nex to ne
+please also post image of it outlined`. Accepted implementation
+`e0e5e36bd6769a334f06e72db3de67c836021c46` records only the exact frozen
+packet. Its bounded approval publication is active. No next sprite is
+authorized; if one is separately opened, its review must also post a distinct
+outlined image without implying outline registration. Registration, fixtures,
 effects, child assets, later Hyena roles, Ram, Stag, Mammoth, Rhino, Rhino Boss
 work, the deferred Runic Idol decision, release, accepted drift, and a PR remain
 closed.
