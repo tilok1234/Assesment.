@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Brasscoil Sentry Approval Publication
+## Immediate Continuation Checkpoint - Brasscoil Sentry Published
 
 Start here. Crownmaw Greatblade's complete bounded publication tuple is clean
 and remote verified at `165dd2a82adabcf87f5c26b12a2c55da893e9718`. The
@@ -34,6 +34,8 @@ child assets. One private common Brasscoil Sentry prototype is implemented on
 `approved, and you can commit and push everything we approved`; accepted
 implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` and approval
 record `08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` are remote verified.
+Initial published handoff `81bdac90133b9382dfefb5e87e19349da33774a1` is also
+remote verified; this reconciliation completes the bounded publication tuple.
 It remains private, unregistered, effect-free, and fixture-free.
 
 - Identity: squat worn-brass boiler body, small single-lens head pod, dark-iron
@@ -63,9 +65,8 @@ It remains private, unregistered, effect-free, and fixture-free.
 - Approval: the exact three frozen PNGs were open together in Aseprite when the
   designer approved this digest and five hashes. Standing permission opens only
   its bounded handoff reconciliation.
-- Next gate: publish the initial handoff, complete its final reconciliation,
-  inspect the live roadmap, and
-  stop at its next explicit decision. Do not register, generate fixtures, add
+- Next gate: inspect the live roadmap and stop at its next explicit decision.
+  Do not register, generate fixtures, add
   child assets or effects, start another role/family, release, accept drift, or
   open a PR without a new explicit decision.
 

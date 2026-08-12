@@ -17,8 +17,9 @@ shared renderer, exporter, validator, or frame contract. Digest
 `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`
 is visually approved. Implementation
 `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` and approval record
-`08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` are remote verified; only the
-initial published handoff and final reconciliation remain open. Detached gears, runtime
+`08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` plus initial published handoff
+`81bdac90133b9382dfefb5e87e19349da33774a1` are remote verified; this
+reconciliation completes the bounded publication tuple. Detached gears, runtime
 offsets, child/state exports, registration,
 fixtures, effects, later roles/families, release, accepted drift, and a PR need
 separate authorization.

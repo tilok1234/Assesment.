@@ -142,8 +142,8 @@ check(
     && EN_E09_BRASSCOIL_SENTRY_GATE.publicationAuthorizedOn === '2026-08-12'
     && EN_E09_BRASSCOIL_SENTRY_GATE.publishedImplementation === 'b109e3d8ba81d444edc3c7ce7e8a479eb37a183e'
     && EN_E09_BRASSCOIL_SENTRY_GATE.publishedApprovalRecord === '08cf45c5ecd9807ebf399b00cb8bfea54fcffc52'
-    && EN_E09_BRASSCOIL_SENTRY_GATE.initialPublishedHandoff === null
-    && EN_E09_BRASSCOIL_SENTRY_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E09_BRASSCOIL_SENTRY_GATE.initialPublishedHandoff === '81bdac90133b9382dfefb5e87e19349da33774a1'
+    && EN_E09_BRASSCOIL_SENTRY_GATE.publicationState === 'published'
     && EN_E09_BRASSCOIL_SENTRY_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E09_BRASSCOIL_SENTRY_GATE.publicationAuthorizationEvidence.includes('pull request'),
   'Brasscoil Sentry authorization or unpublished gate drifted',
@@ -189,8 +189,9 @@ check(
     && EN_E09_BRASSCOIL_SENTRY_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('implementation b109e3d8ba81d444edc3c7ce7e8a479eb37a183e')
     && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('approval record 08cf45c5ecd9807ebf399b00cb8bfea54fcffc52')
-    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
-    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('inspect the live roadmap'),
+    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('initial published handoff 81bdac90133b9382dfefb5e87e19349da33774a1')
+    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('completes the bounded publication tuple')
+    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('Inspect the live roadmap'),
   'full-suite, motion, or stop-gate contract drifted',
 );
 check(

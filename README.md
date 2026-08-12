@@ -143,8 +143,9 @@ candidate digest is
 the focused 80-frame gate passes. The designer approved the exact packet;
 accepted implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` and approval
 record `08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` are remote verified.
-It remains private, unregistered, fixture-free, and effect-free. Only its
-initial published handoff and final reconciliation are open; registration,
+Initial published handoff `81bdac90133b9382dfefb5e87e19349da33774a1` is also
+remote verified; this reconciliation completes the bounded publication tuple.
+It remains private, unregistered, fixture-free, and effect-free. Registration,
 fixtures, child assets, effects,
 later roles/families, release, accepted drift, and a PR remain closed.
 

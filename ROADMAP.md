@@ -13,8 +13,9 @@ rear winding key are baked body pixels; sparks remain Effects Off. The focused
 80-frame gate passes and public 80/259 plus all fixtures remain protected. The
 designer approved the exact packet; accepted implementation
 `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` and approval record
-`08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` are remote verified. Only the
-initial published handoff and final reconciliation are open; registration,
+`08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` plus initial published handoff
+`81bdac90133b9382dfefb5e87e19349da33774a1` are remote verified; this
+reconciliation completes the bounded publication tuple. Registration,
 fixtures, child assets,
 effects, later roles/families, release, accepted drift, and a PR stay closed.
 Fast/full validation passes in 57.3s/107.1s with public 80/259 and all 232
