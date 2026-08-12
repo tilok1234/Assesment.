@@ -83,11 +83,11 @@ check(!facadeSource.includes('EN_E01_'), 'the stable facade must not expose slic
 const ledgerReport = engine.buildEnemyExpansionLedgerReport();
 check(ledgerReport.counts.slices === 22 && ledgerReport.counts.proposals === 80, 'public registration must preserve the 22-slice / 80-proposal ledger');
 check(ledgerReport.counts.approved === 7 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 15, 'current ledger lifecycle counts must be seven approved, zero implemented, and fifteen planned');
-check(ledgerReport.counts.registeredFamilies === 23 && ledgerReport.counts.publicFamilies === 23, 'current ledger must report twenty-three registered approved families');
+check(ledgerReport.counts.registeredFamilies === 35 && ledgerReport.counts.publicFamilies === 35, 'current ledger must report thirty-five registered approved families');
 const enE01Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E01');
 check(enE01Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED, 'EN-E01 ledger state must be approved');
 check(enE01Slice?.registeredFamilies === 5 && enE01Slice?.publicFamilies === 5, 'EN-E01 ledger row must report all five public families');
-check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => ['EN-E01', 'EN-E02', 'EN-E03', 'EN-E04', 'EN-E05', 'EN-E06'].includes(slice.id)), 'no unapproved expansion slice may become registered implicitly');
+check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => ['EN-E01', 'EN-E02', 'EN-E03', 'EN-E04', 'EN-E05', 'EN-E06', 'EN-E07', 'EN-E08', 'EN-E09'].includes(slice.id)), 'only explicitly approved expansion slices may become registered');
 
 const frameRecords = [];
 let sheets = 0;

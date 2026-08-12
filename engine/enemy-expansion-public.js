@@ -24,10 +24,11 @@ import {
   EN_E05_GHOUL_PUBLIC_GATE,
   PUBLIC_ENEMY_REPLACEMENT_ROUTES,
 } from './enemy-expansion-en-e05-ghoul-public.js';
+import { EN_E06_REGISTRATION_GATE } from './enemy-expansion-en-e06-public.js';
 import {
-  EN_E06_PUBLIC_REGISTRY,
-  EN_E06_REGISTRATION_GATE,
-} from './enemy-expansion-en-e06-public.js';
+  APPROVED_BACKLOG_V2_GATE,
+  APPROVED_BACKLOG_V2_REGISTRY,
+} from './enemy-expansion-approved-backlog-v2.js';
 import { ENEMIES } from './catalogs.js';
 
 export {
@@ -43,6 +44,7 @@ export {
   EN_E03_ADOPTION_GATE,
   EN_E05_GHOUL_PUBLIC_GATE,
   EN_E06_REGISTRATION_GATE,
+  APPROVED_BACKLOG_V2_GATE,
   PUBLIC_ENEMY_REPLACEMENT_ROUTES,
   renderEnemyExpansionFrame,
   validateEnemyExpansionSheet,
@@ -73,17 +75,18 @@ const ENEMY_EXPANSION_PRE_APPROVED_BACKLOG_REGISTRY = createEnemyExpansionRegist
 });
 
 // The approved backlog integration appends only complete, visually approved
-// EN-E06 and EN-E03 suites. Partial EN-E03 variants and future EN-E06 families
-// remain outside this stable consumer boundary.
+// EN-E06 through EN-E09 suites plus the separately adopted EN-E03 suites.
+// Incomplete candidates, prototypes, bosses, and effects remain outside this
+// stable consumer boundary.
 export const ENEMY_EXPANSION_REGISTRY = createEnemyExpansionRegistry({
   renderers: [
     ...ENEMY_EXPANSION_PRE_APPROVED_BACKLOG_REGISTRY.renderers,
-    ...EN_E06_PUBLIC_REGISTRY.renderers,
+    ...APPROVED_BACKLOG_V2_REGISTRY.renderers,
     ...EN_E03_ADOPTED_PUBLIC_REGISTRY.renderers,
   ],
   families: [
     ...ENEMY_EXPANSION_PRE_APPROVED_BACKLOG_REGISTRY.families,
-    ...EN_E06_PUBLIC_REGISTRY.families,
+    ...APPROVED_BACKLOG_V2_REGISTRY.families,
     ...EN_E03_ADOPTED_PUBLIC_REGISTRY.families,
   ],
 });

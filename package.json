@@ -211,6 +211,7 @@
     "check:enemy-expansion-en-e09-clockwork-automaton-epochforge-colossus": "node tools/check-enemy-expansion-en-e09-clockwork-automaton-epochforge-colossus.mjs",
     "check:enemy-expansion-en-e09-living-book-claspbound-primer": "node tools/check-enemy-expansion-en-e09-living-book-claspbound-primer.mjs",
     "check:approved-enemy-assembler-integration": "node tools/check-approved-enemy-assembler-integration.mjs",
+    "check:approved-enemy-assembler-integration-v2": "node tools/check-approved-enemy-assembler-integration-v2.mjs",
     "check:enemy-expansion-repairs": "node tools/check-enemy-expansion-repairs.mjs",
     "export:enemies:all-outlines": "node tools/export-all-enemy-outline-pack.mjs",
     "check:export:enemies:all-outlines": "node tools/check-all-enemy-outline-pack.mjs",
