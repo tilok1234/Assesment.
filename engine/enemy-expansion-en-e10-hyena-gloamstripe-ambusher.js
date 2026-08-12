@@ -45,7 +45,7 @@ export const EN_E10_HYENA_SPECIALIST_CONTRACT_CARD = deepFreeze({
     id: 'gloamstripe-ambusher',
     name: 'Gloamstripe Ambusher',
     role: 'specialist',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
   actorTopology: EN_E10_HYENA_TOPOLOGY_DECISION.selected,
@@ -58,7 +58,7 @@ export const EN_E10_GLOAMSTRIPE_AMBUSHER_CONTRACT = deepFreeze({
   family: 'hyena',
   variant: 'gloamstripe-ambusher',
   role: 'specialist',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_HYENA_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-lean-high-shoulder-low-rump-long-ruff-striped-face-four-paw-hyena-v1',
   silhouette: 'A lean dusk Hyena with tall narrow shoulders, a sharply descending back, tucked abdomen, low angular rump, compact wedge muzzle, two rounded ears, a long connected neck-to-shoulder ruff, connected lowered tail, and four separated dark paws. It must remain recognizably Hyena while reading faster and narrower than Duneback Scavenger and unlike the level-backed long-snouted Dire Wolf or bowed long-necked Miremane Courser.',
@@ -100,11 +100,20 @@ export const EN_E10_GLOAMSTRIPE_AMBUSHER_DATA = deepFreeze({
 
 export const EN_E10_GLOAMSTRIPE_AMBUSHER_GATE = deepFreeze({
   id: 'en-e10-hyena-gloamstripe-ambusher-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '153ca132f94cc2360eca2c0366602ff400f871df',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'From the clean published Duneback Scavenger reconciliation at 153ca132f94cc2360eca2c0366602ff400f871df, the designer said: lets do nex t. In the established one-complete-sprite cadence this separately authorizes exactly one private specialist Hyena full 80-frame candidate under the already approved baked-single-actor-grounded-quadruped topology. The prior Duneback approval also required the next review to post a distinct outlined image. That requirement is carried forward as a review-only Complete B PNG and does not authorize public outline registration. Public Hyena registration, fixtures, effects, child assets, the elite Hyena, Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E10_HYENA_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Duneback Scavenger and Miremane Courser plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The four-lane Aseprite MCP review window reported those exact four paths open together as raw sprite 19, outlined sprite 23, Complete B + Form sprite 27, and active comparison sprite 31. The final approval prompt posted all four exact PNGs and identified candidate digest 6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885. The designer replied: approved lets do nex t. Approval applies only to that exact Gloamstripe Ambusher digest and its six frozen review hashes. The lets do nex t portion separately authorizes exactly one private elite Hyena candidate only after this bounded specialist publication is clean and remote verified. Public Hyena or outline registration, fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  approvedImplementation: '5d35ed0c36f84646270a3d02b13e63559798aa01',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_DUNEBACK_SCAVENGER_GATE.id,
     artifactSha256: EN_E10_DUNEBACK_SCAVENGER_GATE.artifactSha256,
@@ -160,7 +169,7 @@ export const EN_E10_GLOAMSTRIPE_AMBUSHER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop at explicit visual approval of this exact frozen Gloamstripe Ambusher digest and its four PNG plus two GIF review hashes. Do not register or publish the candidate before that approval. The distinct outlined PNG is a review surface only and does not authorize outline registry changes. Elite Hyena and all later families remain closed.',
+  nextGate: 'The exact Gloamstripe Ambusher packet is visually approved at implementation 5d35ed0c36f84646270a3d02b13e63559798aa01. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The same approved lets do nex t reply authorizes exactly one private elite Hyena candidate only after this publication is clean and remote verified. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Hyena registration, fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_GLOAMSTRIPE_AMBUSHER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

@@ -31,13 +31,19 @@
   205-244. Exact Cast/Attack and Death/Hurt aliases and side mirrors pass. The
   raw, separately requested Complete B outlined, Complete B + Form, and
   comparison PNGs plus two GIFs are hash-frozen and regenerate
-  deterministically. `check:fast`/full pass in 60.2s/111.1s with public 92/294
-  and all 232 fixtures unchanged. The outlined PNG is a review surface only,
+  deterministically. Pre-approval `check:fast`/full pass in 60.2s/111.1s and
+  approval-local gates pass in 57.9s/112.7s with public 92/294 and all 232
+  fixtures unchanged. The outlined PNG is a review surface only,
   not outline registration. The exact four PNGs are open together in Aseprite
-  as sprites 19, 23, 27, and active 31. Stop for explicit visual approval
-  before commit or push. Public registration, fixtures, effects, child assets, elite Hyena, Ram,
-  Stag, Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision,
-  release, accepted drift, and a PR remain closed.
+  as sprites 19, 23, 27, and active 31 when the designer replied `approved lets
+  do nex t`. Accepted implementation
+  `5d35ed0c36f84646270a3d02b13e63559798aa01` records only the exact packet.
+  Standing permission opens its approval record, branch push, and bounded
+  publication reconciliation. The same reply authorizes exactly one private
+  elite Hyena candidate only after that publication is clean and remote
+  verified. Public registration, fixtures, effects, child assets, Ram, Stag,
+  Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release,
+  accepted drift, and a PR remain closed.
 
 - Approved preceding private art gate (2026-08-13): the designer paused the Runic Idol
   topology decision, selected EN-E10, and approved one connected grounded 24x24

@@ -122,13 +122,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Duneback Scavenger and Miremane Courser plus public Dire Wolf; opaque range is
   205-244. Exact aliases and mirrors pass. The raw, separately requested
   Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
-  hash-frozen; deterministic regeneration passes. `check:fast`/full pass in
-  60.2s/111.1s with public 92/294 and all 232 fixtures unchanged. The distinct
+  hash-frozen; deterministic regeneration passes. Pre-approval `check:fast`/full
+  pass in 60.2s/111.1s and approval-local gates pass in 57.9s/112.7s with
+  public 92/294 and all 232 fixtures unchanged. The distinct
   outlined PNG is a review surface only, not public outline registration. The
-  exact raw, outlined, Complete B + Form, and comparison PNGs are open together
-  in Aseprite as sprites 19, 23, 27, and active 31. Stop for explicit visual
-  approval before committing or pushing. Registration,
-  fixtures, effects, child assets, elite Hyena, Ram, Stag, Mammoth, Rhino,
+  exact raw, outlined, Complete B + Form, and comparison PNGs were open together
+  in Aseprite as sprites 19, 23, 27, and active 31 when the designer replied
+  `approved lets do nex t`. Accepted implementation
+  `5d35ed0c36f84646270a3d02b13e63559798aa01` records only the frozen packet.
+  Standing permission opens its approval record, push, and bounded publication
+  reconciliation; the same reply opens exactly one private elite Hyena only
+  after that publication is clean and remote verified. Registration,
+  fixtures, effects, child assets, Ram, Stag, Mammoth, Rhino,
   Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
   and a PR remain closed.
 - Current approved private art gate: on `codex/en-e09-living-book-elite`, based exactly

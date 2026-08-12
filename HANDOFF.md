@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Gloamstripe Ambusher Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Gloamstripe Ambusher Approval Publication
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-hyena-specialist`. It is based exactly on the clean published
@@ -60,22 +60,25 @@ gate.
    aliases; side mirrors; and 80/80 pixel plus alpha distinctions from approved
    Duneback Scavenger and Miremane Courser plus public Dire Wolf. Opaque range
    is 205-244. Deterministic regeneration reproduces all six hashes.
-   `check:fast` and full `check` pass in 60.2s/111.1s with public 92/294 and all
-   232 fixture sheets unchanged.
+   Pre-approval `check:fast`/full pass in 60.2s/111.1s and approval-local gates
+   pass in 57.9s/112.7s with public 92/294 and all 232 fixture sheets unchanged.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-hyena-gloamstripe-ambusher/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-hyena-gloamstripe-ambusher` and
    run the focused gate with
    `npm.cmd run check:enemy-expansion-en-e10-hyena-gloamstripe-ambusher`.
 7. The exact raw, distinct Complete B outlined, Complete B + Form, and
-   comparison PNGs are open together in the four-lane Aseprite MCP review
-   window as sprites 19, 23, 27, and active 31. Post the requested outlined
-   image with the review packet and stop for explicit visual approval of the
-   exact frozen digest. Do not commit or push before that approval.
+   comparison PNGs were open together in the four-lane Aseprite MCP review
+   window as sprites 19, 23, 27, and active 31 when the designer replied
+   `approved lets do nex t`. Accepted implementation
+   `5d35ed0c36f84646270a3d02b13e63559798aa01` records only the exact frozen
+   packet. Standing permission opens its approval record, branch push, and
+   bounded publication reconciliation.
 8. Public Hyena registration or outline registration, fixtures, effects, child
-   assets, elite Hyena, Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss
-   work, the deferred Runic Idol decision, release, accepted drift, and a PR
-   remain closed.
+   assets, Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
+   deferred Runic Idol decision, release, accepted drift, and a PR remain
+   closed. The same reply opens exactly one private elite Hyena candidate only
+   after this bounded specialist publication is clean and remote verified.
 
 ## Approved Preceding Checkpoint - Duneback Scavenger Published And Reconciled
 

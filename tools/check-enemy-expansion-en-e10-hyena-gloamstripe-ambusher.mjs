@@ -169,13 +169,22 @@ check(
   'published Duneback predecessor drifted',
 );
 check(
-  EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.status === 'awaiting-visual-approval'
+  EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.status === 'approved'
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.baseCheckpoint === '153ca132f94cc2360eca2c0366602ff400f871df'
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.authorizedOn === '2026-08-13'
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.authorizationEvidence.includes('designer said: lets do nex t')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.authorizationEvidence.includes('exactly one private specialist Hyena full 80-frame candidate')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.authorizationEvidence.includes('distinct outlined image')
-    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.authorizationEvidence.includes('does not authorize public outline registration'),
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.authorizationEvidence.includes('does not authorize public outline registration')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvedOn === '2026-08-13'
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvalEvidence.includes('approved lets do nex t')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvalEvidence.includes('raw sprite 19')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvalEvidence.includes('outlined sprite 23')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvalEvidence.includes('Complete B + Form sprite 27')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvalEvidence.includes('active comparison sprite 31')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvalEvidence.includes('6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.approvedImplementation === '5d35ed0c36f84646270a3d02b13e63559798aa01'
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.publicationState === 'approved-not-published',
   'specialist authorization or outlined-image boundary drifted',
 );
 check(
@@ -210,8 +219,12 @@ check(
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.reviewPresentation.includes('distinct Complete B outlined board')
     && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.exclusions.includes('Hyena elite')
-    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('four PNG plus two GIF review hashes')
-    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('review surface only'),
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('visually approved at implementation 5d35ed0c36f84646270a3d02b13e63559798aa01')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('approved lets do nex t')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('exactly one private elite Hyena candidate')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('clean and remote verified')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('review evidence only')
+    && EN_E10_GLOAMSTRIPE_AMBUSHER_GATE.nextGate.includes('does not authorize outline registration'),
   'full-suite motion, review, or stop boundary drifted',
 );
 check(
