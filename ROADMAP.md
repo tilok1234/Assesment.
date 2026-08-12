@@ -14,6 +14,22 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
+Current isolated EN-E09 art gate (2026-08-12): from clean integrated checkpoint
+`e7729e651044139bda7e4dcf14c3c2690dbd29be`, the designer replied `lets keep
+going`, opening exactly one private specialist Living Book under the approved
+connected 24x24 zero-child topology. Starlock Lexicon on
+`codex/en-e09-living-book-specialist` is a tall midnight-blue codex with an
+iron spine, copper star-lock, stepped pale page index, amber sigil, connected
+asymmetric page fan, and body-owned spine sweep. Its exact 80-frame candidate
+is frozen at digest
+`3cd86b946115179fc566160e5045eccfda4fd5ce61ce44eae269634b07f3e92c`.
+Focused validation passes all structure, identity, alias, mirror, and three-way
+comparison gates; `check:fast` passes in 61.1s with public 92/294 and all 232
+fixtures unchanged. The exact five review hashes are frozen. Status is
+`implemented-awaiting-visual-approval`; registration, fixtures, child/state
+assets, effects, the elite role, later families, release, accepted drift, and
+a PR remain closed.
+
 Latest source-art approval (2026-08-12): from clean published
 Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, the designer
 replied `lets do next`, then approved the recommended one-connected-actor,

@@ -23,6 +23,44 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Immediate Continuation Checkpoint - Starlock Lexicon Awaiting Visual Approval
+
+### Current active gate
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e09-living-book-specialist`. It is based on clean integrated
+   checkpoint `e7729e651044139bda7e4dcf14c3c2690dbd29be`; do not restart the
+   candidate from the historical temporary workspaces.
+2. The designer replied `lets keep going` after the assistant recommended one
+   isolated Living Book specialist. This opens exactly one private Starlock
+   Lexicon 80-frame art gate under the approved connected 24x24 baked-single-
+   actor topology with zero child assets.
+3. The candidate is a tall midnight-blue codex with an iron spine, integrated
+   copper star-lock and corners, stepped pale page index, one amber sigil, a
+   connected asymmetric page fan, and a body-owned spine-led sweep. Loose
+   pages, glow, sigil flare, projectiles, runtime offsets, and child/state
+   assets remain Effects Off and outside the gate.
+4. Frozen candidate digest:
+   `3cd86b946115179fc566160e5045eccfda4fd5ce61ce44eae269634b07f3e92c`.
+   Raw / Complete B + Form / comparison PNG hashes are
+   `c3f5028aeaade2055f19068dfaf98615d41b8fde21863c98180f04e1167ce562`,
+   `a499b0446b5d222df11e6f74da9126432a6cd1264111ffcf7fe71e19336cba70`,
+   and `5282fd2d1a1d523e6ff243689fb2b054f8b26979aef720bab9b564122a4daefe`.
+   Raw and Complete B + Form GIF hashes are
+   `b6e323cc6267113caebdc8ce309799e07b4be9df47ba39544bd2a0853cf99951`
+   and `3c614f28b8bc16bbfe4ae53da13426ecc9cc3cf96e7c629acf612f51c70e6e6c`.
+5. Focused validation passes 80/80 connected and hovering silhouettes, 8/8
+   connected page fans, 72/72 colored frames, 8/8 exact-white flashes, 54/54
+   readable non-rear sigil views, and 80/80 pixel plus alpha distinctions from
+   approved Claspbound Primer, Aetherdial Surveyor, and Mournseal Cantor.
+   Opaque range is 176-303. `check:fast` passes in 61.1s with public 92/294 and
+   all 232 frozen fixtures validated unchanged.
+6. Next gate: open the exact raw, Complete B + Form, and comparison PNGs
+   together in Aseprite and stop for the designer's visual approval. Do not
+   commit, push, register, generate fixtures, add effects or child/state
+   assets, start the elite role or another family, release, accept drift, or
+   open a PR before that exact decision.
+
 ## Immediate Continuation Checkpoint - Approved Enemy Backlog Integrated
 
 ### Next-chat startup

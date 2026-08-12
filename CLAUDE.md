@@ -107,6 +107,21 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
+- Active private art gate: on `codex/en-e09-living-book-specialist`, based on
+  clean integrated checkpoint `e7729e651044139bda7e4dcf14c3c2690dbd29be`,
+  the designer's `lets keep going` authorizes exactly one specialist Living
+  Book under the approved connected 24x24 zero-child topology. Starlock
+  Lexicon is a tall midnight-blue codex with an iron spine, copper star-lock,
+  stepped pale page index, amber sigil, connected asymmetric page fan, and
+  body-owned spine sweep. Its exact 80-frame candidate is frozen at digest
+  `3cd86b946115179fc566160e5045eccfda4fd5ce61ce44eae269634b07f3e92c`.
+  The focused gate passes 80/80 connected hover silhouettes, 8/8 connected
+  page fans, 72/72 colored frames, 8/8 exact-white flashes, and 54/54 readable
+  non-rear sigil views; `check:fast` passes in 61.1s with public 92/294 and all
+  232 fixtures exact. The three PNG and two GIF hashes are frozen in the gate.
+  This local candidate is unapproved and unpublished; stop for exact visual
+  approval. Registration, fixtures, child/state assets, effects, the elite
+  role, later families, release, accepted drift, and a PR remain closed.
 - Latest source-art approval: common Living Book Claspbound Primer on
   `codex/en-e09-living-book-architecture`, based exactly on clean published
   Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, is frozen

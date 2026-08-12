@@ -15,6 +15,24 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
+- Current isolated art gate (2026-08-12): from clean integrated checkpoint
+  `e7729e651044139bda7e4dcf14c3c2690dbd29be`, the designer replied `lets keep
+  going`, opening exactly one private specialist Living Book under the approved
+  connected 24x24 zero-child topology. Starlock Lexicon on
+  `codex/en-e09-living-book-specialist` uses a tall midnight-blue cover, iron
+  spine, copper star-lock, stepped pale page index, one amber sigil, connected
+  asymmetric page fan, and body-owned spine sweep. Its exact 80-frame candidate
+  is frozen at digest
+  `3cd86b946115179fc566160e5045eccfda4fd5ce61ce44eae269634b07f3e92c`.
+  The focused gate passes 80/80 connected hover silhouettes, 8/8 connected page
+  fans, 72/72 colored frames, 8/8 exact-white flashes, 54/54 readable non-rear
+  sigil views, and 80/80 pixel plus alpha distinctions from Claspbound Primer,
+  Aetherdial Surveyor, and Mournseal Cantor. `check:fast` passes in 61.1s with
+  public 92/294 and all 232 fixtures exact. The exact five review hashes are
+  frozen. Status is `implemented-awaiting-visual-approval`; no registration,
+  fixtures, child/state assets, effects, elite role, later family, release,
+  accepted drift, or PR gate is open.
+
 - Historical source approval checkpoint (2026-08-11): private common Animated Armor
   Hollow Sentry on `codex/en-e08-animated-armor-architecture` is frozen at
   digest `f6e7cbf25692b08e2e4dfccef149662c18d195e4cf615185f7a38e4874e2b9ac`
@@ -5103,7 +5121,7 @@ it with incidental per-frame offsets.
 
 ### EN-E09 - Arcane constructs
 
-- Status: `private Living Book common awaiting visual approval`
+- Status: `private Living Book specialist awaiting visual approval`
 - Families: Clockwork Automaton, Living Book, Runic Idol, Crystal Beast
 - Priority-first: Clockwork Automaton, Living Book
 
@@ -5129,6 +5147,23 @@ verified. Initial published handoff `02d0e7cc4fc33d1e98c244468643927ab99c1063`
 is remote verified; the bounded publication tuple is complete. Registration,
 fixtures, child/state assets, effects, later Living
 Book roles or EN-E09 families, release, accepted drift, and a PR remain closed.
+
+Living Book specialist gate (2026-08-12): after the approved backlog integration
+and its restart-safe handoff, the designer replied `lets keep going` to the
+recommended single specialist continuation. Private Starlock Lexicon remains
+one deterministic connected 24x24 baked book with zero child assets. Its tall
+midnight cover, iron spine, copper star-lock and corners, stepped page index,
+amber sigil, connected asymmetric page fan, and spine-led sweep are actor
+pixels; loose pages, sigil flare, glow, and projectiles remain Effects Off. The
+candidate digest
+`3cd86b946115179fc566160e5045eccfda4fd5ce61ce44eae269634b07f3e92c`
+passes its focused 80-frame gate with 80/80 connected hover silhouettes, 8/8
+connected page fans, 72/72 colored frames, 8/8 exact-white flashes, and 54/54
+readable non-rear sigil views. `check:fast` passes in 61.1s with public 92/294
+and all 232 fixture sheets exact. The exact five review hashes are frozen; stop
+for visual approval. Registration, fixtures, child/state assets, effects, the
+elite role, later EN-E09 families, release, accepted drift, and a PR remain
+closed.
 
 Clockwork Automaton architecture/prototype gate (2026-08-12): from clean
 published Crownmaw reconciliation
