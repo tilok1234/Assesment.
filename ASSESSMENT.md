@@ -9,6 +9,16 @@
 > wording below describe the 2026-08-08 assessment point unless a later update
 > is explicitly noted; they are evidence, not the current handoff.
 
+> **Current gate update (2026-08-12):** EN-E09 common Clockwork Automaton
+> Brasscoil Sentry is private, unapproved, and uncommitted on
+> `codex/en-e09-clockwork-automaton-architecture`. The designer selected one
+> deterministic connected 24x24 baked actor with zero child assets. Digest
+> `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`
+> passes its focused 80-frame gate. Only exact-packet visual approval is open;
+> registration, fixtures, effects, child/state assets, later roles/families,
+> release, accepted drift, and a PR remain closed. See `HANDOFF.md` for exact
+> artifact hashes and continuation instructions.
+
 **Date:** 2026-08-08 · **Scope:** why adding sprites is slow, where Claude Code tokens go, and what to change.
 **Method:** six parallel analysis agents read the full repo (evidence cited as `file:line`), every load-bearing claim was re-verified by executing the actual tools, and the highest-leverage fixes are already implemented on this branch.
 

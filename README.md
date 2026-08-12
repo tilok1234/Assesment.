@@ -131,6 +131,20 @@ explicit hold instruction overrides this default.
 
 ## Current integration status
 
+The current private visual gate is EN-E09 common Clockwork Automaton Brasscoil
+Sentry on `codex/en-e09-clockwork-automaton-architecture`, based on clean
+published Crownmaw reconciliation
+`165dd2a82adabcf87f5c26b12a2c55da893e9718`. The designer selected one
+deterministic connected 24x24 actor with zero child assets. The squat brass
+boiler, single-lens pod, side gear, turquoise coil, piston arms, broad feet, and
+rear winding key are baked actor pixels; sparks remain Effects Off. The exact
+candidate digest is
+`2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`;
+the focused 80-frame gate passes. It is private, unapproved, uncommitted,
+unregistered, fixture-free, and effect-free. Only visual approval or rejection
+of the exact packet is open; registration, fixtures, child assets, effects,
+later roles/families, release, accepted drift, and a PR remain closed.
+
 The EN-F00 Enemy-expansion foundation is accepted at isolated checkpoint
 `73ad73a` on `codex/en-f00`. The separately authorized `codex/en-e01` branch
 passed its four-direction Idle and completed-slice visual gates on 2026-08-02.

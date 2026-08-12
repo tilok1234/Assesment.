@@ -5101,13 +5101,28 @@ it with incidental per-frame offsets.
 
 ### EN-E09 - Arcane constructs
 
-- Status: `queued`
+- Status: `private prototype awaiting visual approval`
 - Families: Clockwork Automaton, Living Book, Runic Idol, Crystal Beast
 - Priority-first: Clockwork Automaton, Living Book
 
 Shared leverage: rigid rotations, hinges, page motion, rune-bearing surfaces,
 and faceted masses. Gear sparks, loose pages, rune flares, and crystal volleys
 remain effects rather than permanent body pixels.
+
+Clockwork Automaton architecture/prototype gate (2026-08-12): from clean
+published Crownmaw reconciliation
+`165dd2a82adabcf87f5c26b12a2c55da893e9718`, the designer replied `lets do
+next` and selected the recommended `baked-single-actor` topology. Private common
+Brasscoil Sentry is one deterministic connected 24x24 actor with zero child
+assets. Worn-brass boiler, lens pod, connected side gear, turquoise coil,
+piston arms, broad feet, and rear winding key are body pixels; sparks remain
+Effects Off. Candidate digest
+`2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`
+passes the focused 80-frame gate and is distinct from Fallen Knight,
+Runeforge, and Crownmaw in every pixel frame and alpha silhouette. This is
+private unapproved evidence only. Stop for exact-packet visual approval;
+registration, fixtures, child/state assets, effects, later Clockwork roles or
+EN-E09 families, release, accepted drift, and a PR remain closed.
 
 Wave 2 exit gate: transparency and detached-part policy are documented, each
 family remains legible with Effects Off, and EN-E08's child/state contract is

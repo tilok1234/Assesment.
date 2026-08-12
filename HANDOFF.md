@@ -1,6 +1,6 @@
 # Project Handoff
 
-Date: 2026-08-11
+Date: 2026-08-12
 
 ## V2 Repository And Workflow Note
 
@@ -23,7 +23,44 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Crownmaw Greatblade Published
+## Immediate Continuation Checkpoint - Brasscoil Sentry Visual Gate
+
+Start here. Crownmaw Greatblade's complete bounded publication tuple is clean
+and remote verified at `165dd2a82adabcf87f5c26b12a2c55da893e9718`. The
+designer replied `lets do next`, selecting the recommended content-only EN-E09
+topology: one deterministic connected 24x24 Clockwork Automaton actor with zero
+child assets. One private common Brasscoil Sentry prototype is implemented on
+`codex/en-e09-clockwork-automaton-architecture`; it is not approved, committed,
+published, registered, or fixture-backed.
+
+- Identity: squat worn-brass boiler body, small single-lens head pod, dark-iron
+  joints, connected side gear, turquoise boiler coil, piston arms, broad plated
+  feet, and a connected rear winding key.
+- Motion: body-owned piston punch; no detached gear, projectile, spark, glow,
+  runtime offset, or child/state export. Sparks remain Effects Off.
+- Frozen digest:
+  `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`.
+  Raw/Complete B + Form/comparison PNG hashes are
+  `ac547fc59af25e5df228919e75f16f43d1b679fb1e721a96f82481207ed3f76c`,
+  `a4134ca9eb8f2ef5af63ad2b096f21dff8ba9a70578af8aa03700799a1df4791`,
+  and `09ad18d449b05a8f18eea2b7e24a955d8d54f607ad8cf244fa02b6a6b937da44`.
+  Raw and Complete B + Form GIF hashes are
+  `9d57474c2eecf3ba4944c0b7cf4067fd3340ed5e25f8e1712219380c6c00ecae`
+  and `dc1fc31a3f17e60c93e6ce831580904a83426d735c6f561d1ff96bd4dbea7ccc`.
+- Focused gate: 80/80 baked actor frames with zero children; all are connected,
+  bounded, grounded, broad-footed, and squat-wide. All 80 pixel and alpha
+  silhouettes differ from Fallen Knight Shieldbearer, Runeforge Custodian, and
+  Crownmaw Greatblade. There are 72/72 colored frames, 8/8 exact-white flashes,
+  and 54/54 readable lens views; opaque range 206-253. Complete B adds 7,936
+  pixels and Form changes 9,264.
+- Broad validation: `check:fast` passes in 57.3s and full `check` passes in
+  107.1s with public 80/259 and all 232 fixture sheets exact.
+- Next gate: present the exact three PNGs together and stop for explicit visual
+  approval or rejection. Do not commit or publish this art, register it,
+  generate fixtures, add child assets or effects, start another role/family,
+  release, accept drift, or open a PR without a new explicit decision.
+
+## Approved Preceding Checkpoint - Crownmaw Greatblade Published
 
 Start here. Vowcoil Glaive's bounded publication tuple is clean and remote
 verified at `7bdb09e95d47c6213e2387124c305f78b0b486d1`. The designer replied

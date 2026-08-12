@@ -107,7 +107,22 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: elite Living Weapon Crownmaw Greatblade on
+- Current private art gate: common Clockwork Automaton Brasscoil Sentry on
+  `codex/en-e09-clockwork-automaton-architecture`, based exactly on clean
+  published Crownmaw reconciliation
+  `165dd2a82adabcf87f5c26b12a2c55da893e9718`, is frozen at digest
+  `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`.
+  The designer selected one connected deterministic 24x24 actor with zero child
+  assets. Its worn-brass boiler, single-lens head pod, side gear, turquoise
+  coil, piston arms, broad feet, and rear winding key are baked body pixels;
+  sparks remain Effects Off. The focused gate passes across all 80 frames;
+  fast/full validation passes in 57.3s/107.1s with public 80/259 and all 232
+  fixtures exact. The exact five review hashes are frozen. It is private, unapproved,
+  uncommitted, unregistered, fixture-free, and effect-free. Stop for visual
+  approval of the exact three PNGs. Do not publish, register, generate fixtures,
+  add child/state assets or effects, begin another role/family, release, accept
+  drift, or open a PR.
+- Approved preceding private art gate: elite Living Weapon Crownmaw Greatblade on
   `codex/en-e08-living-weapon-elite`, based exactly on clean published Vowcoil
   reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1`, is frozen at digest
   `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.

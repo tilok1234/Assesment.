@@ -2,6 +2,24 @@
 
 The Sprite Assembler keeps its browser and Windows builds on the same frontend and procedural engine. Tauri packages the production web build without duplicating editor or rendering logic.
 
+## Current EN-E09 private boundary
+
+`engine/enemy-expansion-en-e09-clockwork-automaton-brasscoil-sentry.js` proves
+the selected Clockwork Automaton topology without changing shared architecture.
+From clean published Crownmaw reconciliation
+`165dd2a82adabcf87f5c26b12a2c55da893e9718`, private common Brasscoil Sentry
+owns one deterministic connected 24x24 baked actor and reports zero child
+assets across all 80 frames. Boiler, lens pod, side gear, coil, piston arms,
+broad feet, winding key, and attack punch remain actor pixels. Sparks remain
+Effects Off. The private module and its review/check tools do not enter the
+public facade, catalog, selectors, persistence, packs, manifest, fixtures,
+shared renderer, exporter, validator, or frame contract. Digest
+`2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`
+is frozen but unapproved and uncommitted; visual approval is the only open
+gate. Detached gears, runtime offsets, child/state exports, registration,
+fixtures, effects, later roles/families, release, accepted drift, and a PR need
+separate authorization.
+
 ## Dependency direction
 
 ```text
