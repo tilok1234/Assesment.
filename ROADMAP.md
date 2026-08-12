@@ -13,8 +13,10 @@ frozen at digest
 Focused validation passes all 80 frames; fast/full validation passes in
 52.6s/100.1s with public 80/259 and all 232 fixture sheets exact. The exact five
 review hashes are visually approved at implementation
-`785c851672d427e7b45459716b70fff5834fa0a5`. Registration, fixtures, child assets, effects, later
-roles/families, release, accepted drift, and a PR stay closed.
+`785c851672d427e7b45459716b70fff5834fa0a5`. Approval record
+`7f46874d47572044cba070c0f04f441d88804191` is also remote verified.
+Registration, fixtures, child assets, effects, later roles/families, release,
+accepted drift, and a PR stay closed.
 
 Approved preceding EN-E09 common gate (2026-08-12): the designer replied `lets do next`
 from clean published Crownmaw reconciliation

@@ -18,6 +18,7 @@
 > `bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`
 > passes its focused 80-frame gate and is visually approved at implementation
 > `785c851672d427e7b45459716b70fff5834fa0a5`.
+> Approval record `7f46874d47572044cba070c0f04f441d88804191` is also remote verified.
 > Registration, fixtures, effects, child/state assets, later roles/families,
 > release, accepted drift, and a PR remain closed. See `HANDOFF.md` for exact
 > hashes and continuation instructions.

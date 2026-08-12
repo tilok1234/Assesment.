@@ -33,7 +33,8 @@ plus rune effects kept Effects Off. One private common Claspbound Primer is
 implemented on `codex/en-e09-living-book-architecture`. The designer replied
 `approved`, accepting implementation
 `785c851672d427e7b45459716b70fff5834fa0a5` and the exact digest and five
-hashes below only.
+hashes below only. Approval record
+`7f46874d47572044cba070c0f04f441d88804191` is also remote verified.
 
 - Identity: thick burgundy cover, dark connected spine, brass hinges and clasp,
   ivory page block, and one readable turquoise geometric cover rune without
