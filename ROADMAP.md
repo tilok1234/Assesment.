@@ -14,7 +14,29 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private art gate (2026-08-13): after pausing the Runic Idol
+Current EN-E10 private art gate (2026-08-13): from clean published Duneback
+reconciliation `153ca132f94cc2360eca2c0366602ff400f871df`, the designer said
+`lets do nex t`, authorizing exactly one private specialist Hyena candidate.
+Gloamstripe Ambusher on `codex/en-e10-hyena-specialist` keeps the approved
+connected grounded 24x24 zero-child topology and uses a lean slate-violet body,
+tall narrow shoulders, low rump, tucked abdomen, compact wedge muzzle, rounded
+ears, long connected indigo ruff, cold face and flank stripes, cyan eyes, four
+dark paws, connected lowered tail, and a body-owned feint-to-pounce. Its exact
+80-frame digest is
+`6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885`.
+Focused validation passes every structure, identity, alias, mirror, and
+three-way distinction gate at opaque range 205-244. The raw, separately
+requested Complete B outlined, Complete B + Form, and comparison PNGs plus two
+GIFs are hash-frozen and deterministic. `check:fast`/full pass in
+60.2s/111.1s with public 92/294 and all 232 fixtures unchanged. The outlined
+PNG is a review surface only and does not authorize outline registration. The
+four exact PNGs are open together in Aseprite as sprites 19, 23, 27, and active
+31. Stop for explicit visual approval before commit or push. Public registration,
+fixtures, effects, child assets, elite Hyena, Ram, Stag, Mammoth, Rhino, Rhino
+Boss work, the deferred Runic Idol decision, release, accepted drift, and a PR
+remain closed.
+
+Approved preceding EN-E10 art gate (2026-08-13): after pausing the Runic Idol
 topology decision, the designer selected EN-E10 and approved one connected
 grounded 24x24 zero-child Hyena topology. Duneback Scavenger on
 `codex/en-e10-hyena-common`, based exactly on published Crownseal
@@ -36,10 +58,11 @@ please also post image of it outlined`. Accepted implementation
 packet. The implementation, approval record
 `eab51c5045a2f8c3f211476e1de640d64940dbc5`, and initial published handoff
 `b639080386473c44504bc5b7adab527e82fc4fdd` are remote verified; this
-reconciliation completes the bounded publication tuple. No next sprite is
-authorized; if one is separately opened, its review must also post a distinct
-outlined image without implying outline registration. Registration, fixtures,
-effects, child assets, later Hyena roles, Ram, Stag, Mammoth, Rhino, Rhino Boss
+reconciliation completes the bounded publication tuple. The designer later
+separately opened the one specialist candidate above, whose review posts the
+required distinct outlined image without implying outline registration.
+Registration, fixtures, effects, child assets, elite Hyena, Ram, Stag,
+Mammoth, Rhino, Rhino Boss
 work, the deferred Runic Idol decision, release, accepted drift, and a PR remain
 closed.
 

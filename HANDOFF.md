@@ -23,7 +23,61 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Duneback Scavenger Published And Reconciled
+## Immediate Continuation Checkpoint - Gloamstripe Ambusher Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-hyena-specialist`. It is based exactly on the clean published
+   Duneback Scavenger reconciliation
+   `153ca132f94cc2360eca2c0366602ff400f871df`.
+2. After that bounded common publication was remote verified, the designer said
+   `lets do nex t`. This separately authorizes exactly one private specialist
+   Hyena full 80-frame candidate under the already approved
+   `baked-single-actor-grounded-quadruped` topology. The prior approval also
+   required the next packet to post a distinct outlined image; that requirement
+   is implemented as a review-only Complete B PNG and does not authorize public
+   outline registration.
+3. The candidate is Gloamstripe Ambusher: a lean slate-violet dusk hunter with
+   tall narrow shoulders, low rump, tucked abdomen, compact wedge muzzle,
+   rounded ears, a long connected indigo neck-to-shoulder ruff, cold angular
+   face and flank stripes, cyan eyes, connected lowered tail, four dark paws,
+   and a body-owned feint-to-pounce. Sound glyphs, laughter marks, dust, saliva,
+   arcs, impacts, particles, projectiles, glow, illumination, runtime
+   attachments, and all other effects remain external and Off.
+4. Frozen candidate digest:
+   `6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885`.
+   Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+   hashes are
+   `0d622fcd390ace6e143d7a19fc13e07cec359d6dbd6a5ad8b0fb1b837fdadc16`,
+   `06544757f2c4413c43707d3c64ddbacd9d6678d232d1b5d6a8bada14deb71cc0`,
+   `420da9378fdaedd5e863a160e5d7e26e2a7db2221d8f55e07c77a5b3b85cf282`,
+   and `375c5f62b1b8e275daaa11419e2b992d8de0c852a6456652051da19d76b93fb9`.
+   Raw and Complete B + Form GIF hashes are
+   `aa0024b7e4104384d37cbce5b73284de3d570f42d7eafe14849da193f1318ed3`
+   and `d9b471d7d5bd3c6fb9d8f1fca3a28e1f983aa179a32b6836fec99cab8893cb13`.
+5. Focused validation passes 80/80 connected, bounded, grounded, four-paw, and
+   quadruped-span frames; 72/72 colored frames; 8/8 exact-white flashes; 54/54
+   expected eye and readable-muzzle views; exact Cast/Attack and Death/Hurt
+   aliases; side mirrors; and 80/80 pixel plus alpha distinctions from approved
+   Duneback Scavenger and Miremane Courser plus public Dire Wolf. Opaque range
+   is 205-244. Deterministic regeneration reproduces all six hashes.
+   `check:fast` and full `check` pass in 60.2s/111.1s with public 92/294 and all
+   232 fixture sheets unchanged.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-hyena-gloamstripe-ambusher/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-hyena-gloamstripe-ambusher` and
+   run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-hyena-gloamstripe-ambusher`.
+7. The exact raw, distinct Complete B outlined, Complete B + Form, and
+   comparison PNGs are open together in the four-lane Aseprite MCP review
+   window as sprites 19, 23, 27, and active 31. Post the requested outlined
+   image with the review packet and stop for explicit visual approval of the
+   exact frozen digest. Do not commit or push before that approval.
+8. Public Hyena registration or outline registration, fixtures, effects, child
+   assets, elite Hyena, Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss
+   work, the deferred Runic Idol decision, release, accepted drift, and a PR
+   remain closed.
+
+## Approved Preceding Checkpoint - Duneback Scavenger Published And Reconciled
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-hyena-common`. It is based exactly on clean published
@@ -71,12 +125,12 @@ gate.
    `eab51c5045a2f8c3f211476e1de640d64940dbc5`, and initial published handoff
    `b639080386473c44504bc5b7adab527e82fc4fdd` are remote verified; this
    reconciliation completes the bounded publication tuple.
-8. Registration, fixtures, effects, child assets, specialist or elite Hyena,
+8. Registration, fixtures, effects, child assets, elite Hyena,
    Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the deferred
    Runic Idol topology decision, release, accepted drift, and a PR remain
-   closed. No next sprite is authorized. If one is separately authorized, its
-   review packet must also post a distinct outlined image; this requirement
-   does not authorize outline registration or alter Duneback retroactively.
+   closed. The designer later separately authorized the one specialist candidate
+   documented above, whose review packet posts the requested distinct outlined
+   image without changing outline registration or Duneback retroactively.
 
 ## Deferred Checkpoint - Runic Idol Topology Decision
 

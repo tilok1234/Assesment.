@@ -84,7 +84,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 - Scope reviews to the changed family/boss; whole-roster review packets are
   release-time only.
 
-## Known state (2026-08-12)
+## Known state (2026-08-13)
 
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
   the frozen asset pack). The stable and consumer expansion registries now
@@ -107,39 +107,30 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: on `codex/en-e10-hyena-common`, based exactly on
-  clean published Crownseal reconciliation
-  `ff9f9103e06e9edb7729b5efb61c237cf6d4a625`, the designer redirected the
-  next lane from the paused Runic Idol topology decision to EN-E10, then
-  approved one connected grounded 24x24 zero-child Hyena topology. Duneback
-  Scavenger is a warm-dun common with high bristled shoulders, descending back,
-  low rump, compact dark wedge muzzle, rounded ears, irregular flank spots,
-  connected short tail, four dark paws, and a body-owned jaw lunge. Its exact
-  80-frame candidate is frozen at digest
-  `353bd2ee9818a9eac8e799a7bc0e041cb6841509d61d3aabd695e86cd146db4d`.
-  Focused validation passes 80/80 connected, bounded, grounded, four-paw, and
-  quadruped-span frames; 72/72 colored frames; 8/8 white flashes; 54/54
-  expected eye and muzzle views; and 80/80 pixel plus alpha distinctions from
-  approved Miremane Courser and public Dire Wolf and Marsh Crocodile. Opaque
-  range is 187-216. The exact three PNG plus two GIF hashes are frozen;
-  deterministic regeneration passes. Pre-approval `check:fast`/full gates pass
-  in 60.9s/113.5s and approval-local gates pass in 60.4s/110.1s with public
-  92/294 and all 232 fixtures unchanged. Final published-state full validation
-  passes in 112.7s with the same protected boundary. Raw,
-  Complete B + Form, and comparison PNGs were open together in Aseprite as
-  sprites 7, 11, and active 15 when the designer replied `approved but for nex
-  to ne please also post image of it outlined`. Accepted implementation
-  `e0e5e36bd6769a334f06e72db3de67c836021c46` records only the exact frozen
-  packet. The second clause requires the next separately authorized sprite
-  review to also post a distinct outlined image; it does not authorize another
-  sprite or outline registration. The implementation, approval record
-  `eab51c5045a2f8c3f211476e1de640d64940dbc5`, and initial published handoff
-  `b639080386473c44504bc5b7adab527e82fc4fdd` are remote verified; this
-  reconciliation completes the bounded publication tuple.
-  Registration,
-  fixtures, effects, child assets, later Hyena roles, Ram, Stag, Mammoth,
-  Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted
-  drift, and a PR remain closed.
+- Current private art gate: on `codex/en-e10-hyena-specialist`, based exactly
+  on clean published Duneback reconciliation
+  `153ca132f94cc2360eca2c0366602ff400f871df`, the designer said `lets do nex
+  t`, separately authorizing exactly one private specialist Hyena candidate
+  under the approved connected grounded 24x24 zero-child topology. Gloamstripe
+  Ambusher is a lean slate-violet dusk hunter with tall narrow shoulders, a low
+  rump, tucked abdomen, compact wedge muzzle, rounded ears, long connected
+  indigo ruff, cold face and flank stripes, cyan eyes, four dark paws, connected
+  lowered tail, and a body-owned feint-to-pounce. Its exact 80-frame digest is
+  `6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885`.
+  Focused validation passes 80/80 connected, bounded, grounded, four-paw,
+  quadruped-span, pixel-distinct, and alpha-distinct frames against approved
+  Duneback Scavenger and Miremane Courser plus public Dire Wolf; opaque range is
+  205-244. Exact aliases and mirrors pass. The raw, separately requested
+  Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
+  hash-frozen; deterministic regeneration passes. `check:fast`/full pass in
+  60.2s/111.1s with public 92/294 and all 232 fixtures unchanged. The distinct
+  outlined PNG is a review surface only, not public outline registration. The
+  exact raw, outlined, Complete B + Form, and comparison PNGs are open together
+  in Aseprite as sprites 19, 23, 27, and active 31. Stop for explicit visual
+  approval before committing or pushing. Registration,
+  fixtures, effects, child assets, elite Hyena, Ram, Stag, Mammoth, Rhino,
+  Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
+  and a PR remain closed.
 - Current approved private art gate: on `codex/en-e09-living-book-elite`, based exactly
   on clean published Starlock reconciliation
   `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer's `lets do nex t`

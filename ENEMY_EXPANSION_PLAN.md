@@ -15,7 +15,31 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private art gate (2026-08-13): the designer paused the Runic Idol
+- Current private art gate (2026-08-13): from clean published Duneback
+  reconciliation `153ca132f94cc2360eca2c0366602ff400f871df`, the designer said
+  `lets do nex t`, authorizing exactly one private specialist Hyena candidate
+  under the approved connected grounded 24x24 zero-child topology. Gloamstripe
+  Ambusher on `codex/en-e10-hyena-specialist` is a lean slate-violet dusk
+  hunter with tall narrow shoulders, low rump, tucked abdomen, compact wedge
+  muzzle, rounded ears, a long connected indigo ruff, cold angular face and
+  flank stripes, cyan eyes, four dark paws, a connected lowered tail, and a
+  body-owned feint-to-pounce. Its exact 80-frame digest is
+  `6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885`.
+  Focused validation passes all 80 connected, bounded, grounded, four-paw,
+  quadruped-span, pixel-distinct, and alpha-distinct frames against approved
+  Duneback Scavenger and Miremane Courser plus public Dire Wolf; opaque range is
+  205-244. Exact Cast/Attack and Death/Hurt aliases and side mirrors pass. The
+  raw, separately requested Complete B outlined, Complete B + Form, and
+  comparison PNGs plus two GIFs are hash-frozen and regenerate
+  deterministically. `check:fast`/full pass in 60.2s/111.1s with public 92/294
+  and all 232 fixtures unchanged. The outlined PNG is a review surface only,
+  not outline registration. The exact four PNGs are open together in Aseprite
+  as sprites 19, 23, 27, and active 31. Stop for explicit visual approval
+  before commit or push. Public registration, fixtures, effects, child assets, elite Hyena, Ram,
+  Stag, Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision,
+  release, accepted drift, and a PR remain closed.
+
+- Approved preceding private art gate (2026-08-13): the designer paused the Runic Idol
   topology decision, selected EN-E10, and approved one connected grounded 24x24
   zero-child Hyena topology. Duneback Scavenger on
   `codex/en-e10-hyena-common`, based exactly on clean published Crownseal
@@ -43,7 +67,7 @@
   `b639080386473c44504bc5b7adab527e82fc4fdd` are remote verified; this
   reconciliation completes the bounded publication tuple.
   Registration,
-  fixtures, effects, child assets, later Hyena roles, Ram, Stag, Mammoth,
+  fixtures, effects, child assets, elite Hyena, Ram, Stag, Mammoth,
   Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted
   drift, and a PR remain closed.
 
@@ -5352,7 +5376,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common approved and published; no next sprite authorized; remaining families queued`
+- Status: `Hyena common approved and published; specialist awaiting visual approval; elite and remaining families queued`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5379,10 +5403,23 @@ Crocodile. Raw, Complete B + Form, and comparison PNGs were open together in
 Aseprite as sprites 7, 11, and active 15 when the designer approved the exact
 packet at implementation `e0e5e36bd6769a334f06e72db3de67c836021c46` and
 requested that the next sprite review also post a distinct outlined image.
-That is a future review-surface requirement, not outline registration or next-
-sprite authorization.
-Specialist and elite Hyena, registration, fixtures, effects, Ram, Stag,
-Mammoth, Rhino, Rhino Boss work, and all later gates remain closed.
+That requirement did not itself authorize a sprite or outline registration.
+
+After the Duneback publication tuple was clean and remote verified at
+`153ca132f94cc2360eca2c0366602ff400f871df`, the designer separately said `lets
+do nex t`, opening exactly one private specialist. Gloamstripe Ambusher is a
+lean slate-violet dusk hunter with a long connected indigo ruff, cold angular
+face and flank stripes, cyan eyes, tucked abdomen, connected low tail, four
+dark paws, and a body-owned feint-to-pounce. Its exact 80-frame digest is
+`6da5c64d98252021280fe6edd867dbe1dc5afa17a0e79a73152194860d52b885`.
+All 80 frames pass connected, one-cell bounded, grounded, four-paw,
+quadruped-span, alias, mirror, and pixel/alpha distinction checks against
+Duneback, Miremane, and Dire Wolf. The packet includes raw, distinct Complete B
+outlined, Complete B + Form, and comparison PNGs plus two GIFs; all six hashes
+are frozen and deterministic. The outlined PNG fulfills the requested review
+surface only and does not change outline registration. Stop for explicit visual
+approval. Elite Hyena, registration, fixtures, effects, Ram, Stag, Mammoth,
+Rhino, Rhino Boss work, and all later gates remain closed.
 
 ### EN-E11 - Birds
 
@@ -5615,10 +5652,11 @@ frozen at digest `e9a41fd37e19d96911cfffee3bd89e3859f9cbb95099996632f877da2dbdab
 its implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval
 record `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
 tracked branch. Those source checkpoints are now included only through the
-authorized v2 adapter. No subsequent art gate is active. The three EN-E03
-Idle-only variants, incomplete candidates, Headless Rider prototypes, bosses,
-fixtures, effects, release, accepted drift, and a PR remain separate closed
-gates.
+authorized v2 adapter. The current subsequent art gate is the private EN-E10
+Gloamstripe Ambusher specialist documented above, awaiting visual approval.
+The three EN-E03 Idle-only variants, other incomplete candidates, Headless Rider
+prototypes, bosses, fixtures, effects, release, accepted drift, and a PR remain
+separate closed gates.
 
 ### Historical Authorization Chronology
 
