@@ -16,7 +16,8 @@ private module and review/check tools do not enter the public facade, catalog,
 packs, manifest, fixtures, shared renderer, exporter, validator, or frame
 contract. Digest
 `bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`
-is frozen and awaiting explicit visual approval; registration, fixtures,
+is visually approved at implementation
+`785c851672d427e7b45459716b70fff5834fa0a5`; registration, fixtures,
 child/state assets, effects, later roles/families, release, accepted drift, and
 a PR remain closed.
 

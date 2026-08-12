@@ -12,7 +12,8 @@ frozen at digest
 `bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`.
 Focused validation passes all 80 frames; fast/full validation passes in
 52.6s/100.1s with public 80/259 and all 232 fixture sheets exact. The exact five
-review hashes await explicit visual approval. Registration, fixtures, child assets, effects, later
+review hashes are visually approved at implementation
+`785c851672d427e7b45459716b70fff5834fa0a5`. Registration, fixtures, child assets, effects, later
 roles/families, release, accepted drift, and a PR stay closed.
 
 Approved preceding EN-E09 common gate (2026-08-12): the designer replied `lets do next`

@@ -16,7 +16,8 @@
 > topology is one connected 24x24 baked book with zero child assets; loose pages
 > and rune effects remain external. Digest
 > `bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`
-> passes its focused 80-frame gate and awaits explicit visual approval.
+> passes its focused 80-frame gate and is visually approved at implementation
+> `785c851672d427e7b45459716b70fff5834fa0a5`.
 > Registration, fixtures, effects, child/state assets, later roles/families,
 > release, accepted drift, and a PR remain closed. See `HANDOFF.md` for exact
 > hashes and continuation instructions.

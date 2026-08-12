@@ -84,16 +84,18 @@ export const EN_E09_CLASPBOUND_PRIMER_DATA = deepFreeze({
 
 export const EN_E09_CLASPBOUND_PRIMER_GATE = deepFreeze({
   id: 'en-e09-living-book-claspbound-primer-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '85b29f76cb77ae85a116cec56eeed5b61ea5a375',
   authorizedOn: '2026-08-12',
   authorizationEvidence: EN_E09_LIVING_BOOK_TOPOLOGY_DECISION.selectionEvidence,
   architectureDecision: EN_E09_LIVING_BOOK_TOPOLOGY_DECISION.id,
-  approvedOn: null, approvalEvidence: null, approvedImplementation: null,
+  approvedOn: '2026-08-12',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Epochforge Colossus, Whisperveil Visage, and Crownmaw Greatblade family comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in Aseprite. The designer replied: approved. In context this explicitly approves candidate digest bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4 and its five frozen review hashes only. The designer then asked whether all approved sprites should be added to the assembler; that question does not itself authorize registration or fixture changes. Standing permission authorizes bounded publication of this candidate but no broader gate.',
+  approvedImplementation: '785c851672d427e7b45459716b70fff5834fa0a5',
   publicationAuthorizedOn: '2026-08-12',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: null, publishedApprovalRecord: null, initialPublishedHandoff: null,
-  publicationState: 'not-approved',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E09_EPOCHFORGE_COLOSSUS_GATE.id,
     artifactSha256: EN_E09_EPOCHFORGE_COLOSSUS_GATE.artifactSha256,
@@ -121,7 +123,7 @@ export const EN_E09_CLASPBOUND_PRIMER_GATE = deepFreeze({
   animationContract: 'Idle flexes the cover and page block. Walk uses four hovering hinge-led tilts. Attack guards, opens into a connected page spread, performs a body-owned snapping-book strike with no loose-page or rune-flare pixels, and recovers. Hurt uses a complete white recoil and colored bent-spine brace. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.',
   reviewPresentation: 'Show the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, synchronized GIFs, and approved Epochforge Colossus, Whisperveil Visage, and Crownmaw Greatblade family comparisons together.',
   exclusions: ['changes to approved Epochforge Colossus or earlier rendered pixels', 'public Living Book registration', 'public catalog or facade exposure', 'asset-pack fixture or manifest changes', 'schema changes', 'shared renderer changes', 'exporter changes', 'validator changes', 'frame-contract changes', 'deterministic child/state exports', 'runtime attachment offsets', 'loose pages', 'detached bookmark', 'separate covers', 'new Cast pixels', 'new Death pixels', 'humanoid face', 'eyes or mouth', 'hands or limbs', 'handheld weapon or shield', 'aura', 'glow', 'particles', 'projectiles', 'rune flare', 'impacts', 'illumination', 'effects', 'specialist or elite Living Book', 'Runic Idol, Crystal Beast, or later work', 'release', 'accepted drift'],
-  nextGate: 'Stop for explicit designer visual approval of the exact frozen Claspbound Primer review artifacts and candidate digest. Do not publish, register, add fixtures, add child/state assets, add effects, begin later roles or families, release, accept drift, or open a pull request.',
+  nextGate: 'The exact Claspbound Primer packet is visually approved at implementation 785c851672d427e7b45459716b70fff5834fa0a5. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. Separately audit the approved private backlog and propose an exact assembler-integration gate; do not infer registration or fixture authorization from the designer asking whether integration should happen. Effects, child/state assets, later roles/families, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E09_CLASPBOUND_PRIMER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

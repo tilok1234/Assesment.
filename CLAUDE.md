@@ -117,8 +117,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   effects remain Effects Off. The focused gate passes all 80 frames with 80/80
   connected hover silhouettes, 8/8 connected open spreads, 72/72 colored
   frames, 8/8 exact-white flashes, and 54/54 readable non-rear rune views. The
-  exact five review hashes are frozen and await explicit visual approval. Do
-  not commit, push, register, generate fixtures, add child/state assets or
+  exact five review hashes are visually approved at implementation
+  `785c851672d427e7b45459716b70fff5834fa0a5`. Standing permission opens only
+  the approval record, branch push, and bounded handoff reconciliation. The
+  designer's question about integrating approved sprites opens an audit and
+  proposal, not registration or fixtures. Do not add child/state assets or
   effects, begin another role/family, release, accept drift, or open a PR.
 - Approved preceding private art gate: common Clockwork Automaton Brasscoil
   Sentry on `codex/en-e09-clockwork-automaton-architecture` is published at

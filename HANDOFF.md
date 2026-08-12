@@ -30,8 +30,10 @@ verified at `85b29f76cb77ae85a116cec56eeed5b61ea5a375`. The designer
 replied `lets do next`, then approved the recommended Living Book topology: one
 deterministic connected 24x24 baked actor with zero child assets and loose pages
 plus rune effects kept Effects Off. One private common Claspbound Primer is
-implemented on `codex/en-e09-living-book-architecture` and remains uncommitted
-while awaiting explicit visual approval.
+implemented on `codex/en-e09-living-book-architecture`. The designer replied
+`approved`, accepting implementation
+`785c851672d427e7b45459716b70fff5834fa0a5` and the exact digest and five
+hashes below only.
 
 - Identity: thick burgundy cover, dark connected spine, brass hinges and clasp,
   ivory page block, and one readable turquoise geometric cover rune without
@@ -59,10 +61,15 @@ while awaiting explicit visual approval.
   approved Epochforge Colossus, Whisperveil Visage, and Crownmaw Greatblade.
 - Broad validation: `check:fast` passes in 52.6s and full `check` passes in
   100.1s with public 80/259 and all 232 fixture sheets exact.
-- Next gate: inspect the exact three frozen PNGs and stop for explicit designer
-  visual approval. Do not commit, push, register, generate fixtures, add child
-  assets or effects, start another role/family, release, accept drift, or open
-  a PR.
+- Approval: the exact three frozen PNGs were open together in Aseprite when the
+  designer replied `approved`. Standing permission opens only this candidate's
+  bounded publication tuple.
+- Integration question: the designer asked whether all approved sprites should
+  now enter the assembler. Audit the exact approved-private backlog and propose
+  a bounded integration set before changing public registration or fixtures.
+- Next gate: finish this candidate's publication tuple, then present that exact
+  integration recommendation. Do not add child assets or effects, begin another
+  role/family, release, accept drift, or open a PR.
 
 ## Approved Preceding Checkpoint - Epochforge Colossus Published
 
