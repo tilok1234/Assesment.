@@ -120,7 +120,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   exact five review hashes are visually approved at implementation
   `785c851672d427e7b45459716b70fff5834fa0a5`. Standing permission opens only
   the bounded handoff reconciliation; approval record
-  `7f46874d47572044cba070c0f04f441d88804191` is remote verified. The
+  `7f46874d47572044cba070c0f04f441d88804191` and initial published handoff
+  `02d0e7cc4fc33d1e98c244468643927ab99c1063` are remote verified; the bounded
+  publication tuple is complete. The
   designer's question about integrating approved sprites opens an audit and
   proposal, not registration or fixtures. Do not add child/state assets or
   effects, begin another role/family, release, accept drift, or open a PR.

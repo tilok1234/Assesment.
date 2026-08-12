@@ -18,7 +18,9 @@ contract. Digest
 `bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`
 is published at implementation `785c851672d427e7b45459716b70fff5834fa0a5`
 and approval record `7f46874d47572044cba070c0f04f441d88804191`, both remote
-verified; registration, fixtures,
+verified. Initial published handoff
+`02d0e7cc4fc33d1e98c244468643927ab99c1063` is also remote verified; the
+bounded publication tuple is complete. Registration, fixtures,
 child/state assets, effects, later roles/families, release, accepted drift, and
 a PR remain closed.
 

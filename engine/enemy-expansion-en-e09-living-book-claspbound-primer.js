@@ -96,8 +96,8 @@ export const EN_E09_CLASPBOUND_PRIMER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: '785c851672d427e7b45459716b70fff5834fa0a5',
   publishedApprovalRecord: '7f46874d47572044cba070c0f04f441d88804191',
-  initialPublishedHandoff: null,
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '02d0e7cc4fc33d1e98c244468643927ab99c1063',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E09_EPOCHFORGE_COLOSSUS_GATE.id,
     artifactSha256: EN_E09_EPOCHFORGE_COLOSSUS_GATE.artifactSha256,
@@ -125,7 +125,7 @@ export const EN_E09_CLASPBOUND_PRIMER_GATE = deepFreeze({
   animationContract: 'Idle flexes the cover and page block. Walk uses four hovering hinge-led tilts. Attack guards, opens into a connected page spread, performs a body-owned snapping-book strike with no loose-page or rune-flare pixels, and recovers. Hurt uses a complete white recoil and colored bent-spine brace. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.',
   reviewPresentation: 'Show the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, synchronized GIFs, and approved Epochforge Colossus, Whisperveil Visage, and Crownmaw Greatblade family comparisons together.',
   exclusions: ['changes to approved Epochforge Colossus or earlier rendered pixels', 'public Living Book registration', 'public catalog or facade exposure', 'asset-pack fixture or manifest changes', 'schema changes', 'shared renderer changes', 'exporter changes', 'validator changes', 'frame-contract changes', 'deterministic child/state exports', 'runtime attachment offsets', 'loose pages', 'detached bookmark', 'separate covers', 'new Cast pixels', 'new Death pixels', 'humanoid face', 'eyes or mouth', 'hands or limbs', 'handheld weapon or shield', 'aura', 'glow', 'particles', 'projectiles', 'rune flare', 'impacts', 'illumination', 'effects', 'specialist or elite Living Book', 'Runic Idol, Crystal Beast, or later work', 'release', 'accepted drift'],
-  nextGate: 'The exact Claspbound Primer implementation 785c851672d427e7b45459716b70fff5834fa0a5 and approval record 7f46874d47572044cba070c0f04f441d88804191 are remote verified. Only the initial published handoff and final reconciliation remain open. Separately audit the approved private backlog and propose an exact assembler-integration gate; do not infer registration or fixture authorization from the designer asking whether integration should happen. Effects, child/state assets, later roles/families, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Claspbound Primer implementation 785c851672d427e7b45459716b70fff5834fa0a5, approval record 7f46874d47572044cba070c0f04f441d88804191, and initial published handoff 02d0e7cc4fc33d1e98c244468643927ab99c1063 are remote verified; this reconciliation completes the bounded publication tuple. The audited complete private backlog is 35 variants across 12 new public families plus one added Dryad variant; propose this exact assembler-integration gate before changing registration or fixtures. Effects, child/state assets, incomplete candidates, later art, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E09_CLASPBOUND_PRIMER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

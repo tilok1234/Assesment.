@@ -34,7 +34,9 @@ implemented on `codex/en-e09-living-book-architecture`. The designer replied
 `approved`, accepting implementation
 `785c851672d427e7b45459716b70fff5834fa0a5` and the exact digest and five
 hashes below only. Approval record
-`7f46874d47572044cba070c0f04f441d88804191` is also remote verified.
+`7f46874d47572044cba070c0f04f441d88804191` and initial published handoff
+`02d0e7cc4fc33d1e98c244468643927ab99c1063` are also remote verified; this
+reconciliation completes the bounded publication tuple.
 
 - Identity: thick burgundy cover, dark connected spine, brass hinges and clasp,
   ivory page block, and one readable turquoise geometric cover rune without
@@ -62,14 +64,20 @@ hashes below only. Approval record
   approved Epochforge Colossus, Whisperveil Visage, and Crownmaw Greatblade.
 - Broad validation: `check:fast` passes in 52.6s and full `check` passes in
   100.1s with public 80/259 and all 232 fixture sheets exact.
+- Post-approval validation: focused passes; `check:fast` passes in 65.6s and
+  full `check` passes in 120.3s with public 80/259 and all 232 fixture sheets
+  exact.
 - Approval: the exact three frozen PNGs were open together in Aseprite when the
   designer replied `approved`. Standing permission opens only this candidate's
   bounded publication tuple.
 - Integration question: the designer asked whether all approved sprites should
-  now enter the assembler. Audit the exact approved-private backlog and propose
-  a bounded integration set before changing public registration or fixtures.
-- Next gate: finish this candidate's publication tuple, then present that exact
-  integration recommendation. Do not add child assets or effects, begin another
+  now enter the assembler. The audited complete private backlog is 35 variants:
+  seven later EN-E06 variants, fifteen EN-E07 variants, nine EN-E08 variants,
+  and four EN-E09 variants. This adds 12 new public families plus Heartwood
+  Warden to existing Dryad, moving public 80/259 to 92/294.
+- Next gate: present that exact bounded integration recommendation and require
+  explicit authorization before registration or fixture work. Do not add child
+  assets or effects, include incomplete candidates, begin another
   role/family, release, accept drift, or open a PR.
 
 ## Approved Preceding Checkpoint - Epochforge Colossus Published
