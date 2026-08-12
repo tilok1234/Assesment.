@@ -13,8 +13,11 @@ Its tall verdigris optical-instrument silhouette, fork crown, large dial,
 flywheel, integrated projector, counterweight arm, long legs, and three-prong
 feet are distinct from Brasscoil and Animated Armor. Focused validation passes
 all 80 frames; fast/full validation passes in 57.7s/112.9s with public 80/259
-and all 232 fixtures protected. It is unapproved and
-uncommitted; only exact-packet visual approval is open. Registration, fixtures,
+and all 232 fixtures protected before approval metadata; approval-local
+focused/fast/full gates also pass, with the full suite at 106.3s. The designer approved the exact packet;
+accepted implementation `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote
+verified. Only its approval record and bounded handoff reconciliation are open.
+Registration, fixtures,
 child assets, effects, the elite role, later families, release, accepted drift,
 and a PR stay closed.
 

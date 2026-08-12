@@ -129,20 +129,21 @@ check(
   'EN-E09 baked single-actor architecture decision drifted',
 );
 check(
-  EN_E09_AETHERDIAL_SURVEYOR_GATE.status === 'implemented-awaiting-visual-approval'
+  EN_E09_AETHERDIAL_SURVEYOR_GATE.status === 'approved'
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.baseCheckpoint === '8037f0ccbb042bf041e01ecbe18b1c567567e409'
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.authorizedOn === '2026-08-12'
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.authorizationEvidence.includes('designer replied: lets do next')
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.authorizationEvidence.includes('only one private specialist Aetherdial Surveyor')
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.architectureDecision === EN_E09_CLOCKWORK_AUTOMATON_TOPOLOGY_DECISION.id
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.approvedOn === null
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.approvalEvidence === null
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.approvedImplementation === null
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.approvedOn === '2026-08-12'
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.approvalEvidence.includes('e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627')
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.approvedImplementation === 'f3c06649af346dc8a84edcff7c5cdfd8c0bddb16'
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.publicationAuthorizedOn === '2026-08-12'
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.publishedImplementation === null
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.publishedApprovalRecord === null
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.initialPublishedHandoff === null
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.publicationState === 'not-approved'
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.publicationState === 'approved-not-published'
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.publicationAuthorizationEvidence.includes('pull request'),
   'Aetherdial Surveyor authorization or unpublished gate drifted',
@@ -186,9 +187,9 @@ check(
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.animationContract.includes('four tall piston strides')
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.animationContract.includes('body-owned recoil with no projectile pixels')
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.animationContract.includes('Cast aliases Attack exactly')
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('explicit visual approval or rejection')
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('five frozen review hashes')
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('Do not commit, publish, register'),
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('visually approved at implementation f3c06649af346dc8a84edcff7c5cdfd8c0bddb16')
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('inspect the live roadmap'),
   'full-suite, motion, or stop-gate contract drifted',
 );
 check(

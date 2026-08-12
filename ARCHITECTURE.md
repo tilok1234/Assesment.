@@ -15,8 +15,10 @@ actor pixels; no projectile is baked. The private module and review/check tools
 do not enter the public facade, catalog, packs, manifest, fixtures, shared
 renderer, exporter, validator, or frame contract. Digest
 `e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
-is frozen but unapproved and uncommitted. Visual approval is the only open
-gate; registration, fixtures, child/state assets, effects, the elite role,
+is visually approved at accepted implementation
+`f3c06649af346dc8a84edcff7c5cdfd8c0bddb16`, which is remote verified.
+Only its approval record and bounded handoff reconciliation remain open;
+registration, fixtures, child/state assets, effects, the elite role,
 later families, release, accepted drift, and a PR remain closed.
 
 ## Approved preceding EN-E09 common boundary

@@ -10,12 +10,14 @@
 > is explicitly noted; they are evidence, not the current handoff.
 
 > **Current gate update (2026-08-12):** EN-E09 specialist Clockwork Automaton
-> Aetherdial Surveyor is private, unapproved, and uncommitted on
+> Aetherdial Surveyor is private and visually approved on
 > `codex/en-e09-clockwork-automaton-specialist`. The designer selected one
 > deterministic connected 24x24 baked actor topology with zero child assets;
 > Aetherdial reuses it as a tall optical instrument. Digest
 > `e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
-> passes its focused 80-frame gate. Only exact-packet visual approval is open;
+> passes its focused 80-frame gate. Accepted implementation
+> `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote verified; only its
+> approval record and bounded handoff reconciliation remain open;
 > registration, fixtures, effects, child/state assets, later roles/families,
 > release, accepted drift, and a PR remain closed. See `HANDOFF.md` for exact
 > artifact hashes and continuation instructions.

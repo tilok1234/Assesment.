@@ -106,20 +106,20 @@ export const EN_E09_AETHERDIAL_SURVEYOR_DATA = deepFreeze({
 
 export const EN_E09_AETHERDIAL_SURVEYOR_GATE = deepFreeze({
   id: 'en-e09-clockwork-automaton-aetherdial-surveyor-full-v1',
-  status: 'implemented-awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '8037f0ccbb042bf041e01ecbe18b1c567567e409',
   authorizedOn: '2026-08-12',
   authorizationEvidence: 'After the exact Brasscoil Sentry publication tuple was clean and remote verified at checkpoint 8037f0ccbb042bf041e01ecbe18b1c567567e409, the designer replied: lets do next. Under the selected en-e09-clockwork-automaton-baked-single-actor-v1 topology and one-complete-sprite cadence, this authorizes only one private specialist Aetherdial Surveyor 80-frame art candidate. Registration, fixtures, effects, child assets, the elite role, later families, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E09_CLOCKWORK_AUTOMATON_TOPOLOGY_DECISION.id,
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-12',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Brasscoil Sentry and Runeforge Custodian plus public Fallen Knight Shieldbearer family comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in Aseprite. The designer replied: approved. In context this explicitly approves candidate digest e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627 and its five frozen review hashes only. Standing permission authorizes bounded publication but does not open registration, fixtures, child/state assets, effects, the elite role, later families, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: 'f3c06649af346dc8a84edcff7c5cdfd8c0bddb16',
   publicationAuthorizedOn: '2026-08-12',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-approved',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E09_BRASSCOIL_SENTRY_GATE.id,
     artifactSha256: EN_E09_BRASSCOIL_SENTRY_GATE.artifactSha256,
@@ -204,7 +204,7 @@ export const EN_E09_AETHERDIAL_SURVEYOR_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Stop for explicit visual approval or rejection of the exact Aetherdial Surveyor digest and five frozen review hashes. Do not commit, publish, register, generate fixtures, add child assets or effects, begin the elite role or another family, release, accept drift, or open a pull request without a new explicit decision.',
+  nextGate: 'The exact Aetherdial Surveyor packet is visually approved at implementation f3c06649af346dc8a84edcff7c5cdfd8c0bddb16. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate. Registration, fixtures, child/state assets, effects, the elite role, later families, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E09_AETHERDIAL_SURVEYOR_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

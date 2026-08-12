@@ -118,10 +118,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   feet are baked body pixels; projectiles and sparks remain Effects Off. The
   focused gate passes across all 80 frames, with all candidate pixels and alpha
   silhouettes distinct from Brasscoil, Runeforge, and Fallen Knight. Fast/full
-  validation passes in 57.7s/112.9s with public 80/259 and all 232 fixtures
-  exact. The exact five review hashes are frozen. It is private, unapproved, uncommitted,
-  unregistered, fixture-free, and effect-free. Stop for visual approval of the
-  exact three PNGs. Do not publish, register, generate fixtures, add child/state
+  validation passes in 57.7s/112.9s before approval metadata; approval-local
+  focused/fast/full gates also pass, with the full suite at 106.3s and public
+  80/259 plus all 232 fixtures exact. The exact five review hashes are frozen. The designer replied
+  `approved`; accepted implementation
+  `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote verified. It remains
+  private, unregistered, fixture-free, and effect-free. Publish only its
+  approval record and handoff reconciliation. Do not register, generate fixtures, add child/state
   assets or effects, begin the elite role or another family, release, accept
   drift, or open a PR.
 - Approved preceding private art gate: common Clockwork Automaton Brasscoil

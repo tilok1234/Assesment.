@@ -23,14 +23,16 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Aetherdial Surveyor Visual Gate
+## Immediate Continuation Checkpoint - Aetherdial Surveyor Approval Publication
 
 Start here. Brasscoil Sentry's bounded publication tuple is clean and remote
 verified at `8037f0ccbb042bf041e01ecbe18b1c567567e409`. The designer
 replied `lets do next`, opening exactly one private specialist Clockwork
 Automaton under the selected baked-single-actor topology. Aetherdial Surveyor
-is implemented on `codex/en-e09-clockwork-automaton-specialist`; it is not
-approved, committed, published, registered, or fixture-backed.
+is implemented on `codex/en-e09-clockwork-automaton-specialist`. The designer
+replied `approved`; accepted implementation
+`f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote verified. It remains
+private, unregistered, effect-free, and fixture-free.
 
 - Identity: tall verdigris-and-brass precision machine with a connected
   tuning-fork crown, oversized cyclopean dial, narrow iron spine, exposed chest
@@ -60,11 +62,17 @@ approved, committed, published, registered, or fixture-backed.
   frames, 8/8 exact-white flashes, and 54/54 readable lens views; opaque range
   208-249. Complete B adds 8,390 pixels and Form changes 11,538.
 - Broad validation: `check:fast` passes in 57.7s and full `check` passes in
-  112.9s with public 80/259 and all 232 fixture sheets exact.
-- Next gate: present the exact three PNGs together and stop for explicit visual
-  approval or rejection. Do not commit or publish this art, register it,
-  generate fixtures, add child assets or effects, start the elite role or
-  another family, release, accept drift, or open a PR.
+  112.9s before approval metadata. Approval-local focused/fast/full gates also
+  pass, with the full suite at 106.3s and public 80/259 plus all 232 fixture
+  sheets exact.
+- Approval: the exact three frozen PNGs were open together in Aseprite when the
+  designer replied `approved`, accepting this digest and five hashes only.
+  Standing permission opens only its approval record, branch push, and bounded
+  handoff reconciliation.
+- Next gate: complete that publication tuple, inspect the live roadmap, and
+  stop at its next explicit decision. Do not register, generate fixtures, add
+  child assets or effects, start the elite role or another family, release,
+  accept drift, or open a PR.
 
 ## Approved Preceding Checkpoint - Brasscoil Sentry Published
 

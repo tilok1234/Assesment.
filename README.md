@@ -140,9 +140,11 @@ verdigris chassis, fork crown, cyclopean dial, flywheel, integrated projector,
 counterweight arm, long legs, and three-prong feet are baked actor pixels;
 projectiles and sparks remain Effects Off. Exact candidate digest
 `e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
-passes the focused 80-frame gate. It is private, unapproved, uncommitted,
-unregistered, fixture-free, and effect-free. Only exact-packet visual approval
-or rejection is open; registration, fixtures, child assets, effects,
+passes the focused 80-frame gate. The designer approved the exact packet;
+accepted implementation `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote
+verified. It remains private, unregistered, fixture-free, and effect-free. Only
+its approval record and bounded handoff reconciliation are open; registration,
+fixtures, child assets, effects,
 later roles/families, release, accepted drift, and a PR remain closed.
 
 The EN-F00 Enemy-expansion foundation is accepted at isolated checkpoint
