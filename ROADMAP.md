@@ -2,27 +2,18 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E09 specialist gate (2026-08-12): from clean published Brasscoil
-reconciliation `8037f0ccbb042bf041e01ecbe18b1c567567e409`, the designer
-replied `lets do next`, opening exactly one private specialist Clockwork
-Automaton. Aetherdial Surveyor on
-`codex/en-e09-clockwork-automaton-specialist` is one connected baked 24x24
-actor with zero child assets, frozen at digest
-`e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`.
-Its tall verdigris optical-instrument silhouette, fork crown, large dial,
-flywheel, integrated projector, counterweight arm, long legs, and three-prong
-feet are distinct from Brasscoil and Animated Armor. Focused validation passes
-all 80 frames; fast/full validation passes in 57.7s/112.9s with public 80/259
-and all 232 fixtures protected before approval metadata; approval-local
-focused/fast/full gates also pass, with the full suite at 106.3s. The designer approved the exact packet;
-accepted implementation `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote
-verified. Approval record `ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` is also
-remote verified. Initial published handoff
-`edbbbca4021941488c5daece20aa6a65afae7f7f` is also remote verified; this
-reconciliation completes the bounded publication tuple.
-Registration, fixtures,
-child assets, effects, the elite role, later families, release, accepted drift,
-and a PR stay closed.
+Current EN-E09 elite gate (2026-08-12): from clean published Aetherdial
+reconciliation `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`, the designer
+replied `lets do nexty`, opening exactly one private elite Clockwork Automaton.
+Epochforge Colossus on `codex/en-e09-clockwork-automaton-elite` is one connected
+baked 24x24 actor with zero child assets, frozen at digest
+`0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`.
+Its broad black-iron siege silhouette, cog crown, low sensor slit, twin furnace
+dials, hammer forearms, reinforced hip axle, piston legs, and tread feet are
+distinct from Aetherdial, Brasscoil, and Runeforge. Focused validation passes
+all 80 frames. The exact five review hashes await explicit visual approval.
+Registration, fixtures, child assets, effects, later families, release,
+accepted drift, and a PR stay closed.
 
 Approved preceding EN-E09 common gate (2026-08-12): the designer replied `lets do next`
 from clean published Crownmaw reconciliation

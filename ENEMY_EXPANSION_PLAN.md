@@ -5130,7 +5130,21 @@ roadmap and stop at its next explicit decision;
 registration, fixtures, child/state assets, effects, later Clockwork roles or
 EN-E09 families, release, accepted drift, and a PR remain closed.
 
-Clockwork Automaton specialist gate (2026-08-12): from clean published
+Clockwork Automaton elite gate (2026-08-12): from clean published Aetherdial
+reconciliation `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`, the designer
+replied `lets do nexty`, opening exactly one private elite under the selected
+baked-single-actor topology. Epochforge Colossus is a broad black-iron and
+red-brass siege machine with connected cog crown, low sensor slit, twin furnace
+dials, integrated hammer forearms, reinforced hip axle, piston legs, and tread
+feet. It has zero child assets, and no impact, projectile, spark, glow, detached
+part, or runtime offset is baked. Candidate digest
+`0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
+passes the focused 80-frame gate and differs from Aetherdial, Brasscoil, and
+Runeforge in every pixel frame. The exact review packet awaits explicit visual
+approval; registration, fixtures, child/state assets, effects, later EN-E09
+families, release, accepted drift, and a PR remain closed.
+
+Approved Clockwork Automaton specialist gate (2026-08-12): from clean published
 Brasscoil reconciliation `8037f0ccbb042bf041e01ecbe18b1c567567e409`, the
 designer replied `lets do next`, opening exactly one private specialist under
 the selected baked-single-actor topology. Aetherdial Surveyor is a tall narrow

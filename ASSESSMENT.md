@@ -9,21 +9,16 @@
 > wording below describe the 2026-08-08 assessment point unless a later update
 > is explicitly noted; they are evidence, not the current handoff.
 
-> **Current gate update (2026-08-12):** EN-E09 specialist Clockwork Automaton
-> Aetherdial Surveyor is private and visually approved on
-> `codex/en-e09-clockwork-automaton-specialist`. The designer selected one
-> deterministic connected 24x24 baked actor topology with zero child assets;
-> Aetherdial reuses it as a tall optical instrument. Digest
-> `e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
-> passes its focused 80-frame gate. Accepted implementation
-> `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote verified; only its
-> approval record `ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` is also remote
-> verified. Initial published handoff
-> `edbbbca4021941488c5daece20aa6a65afae7f7f` is remote verified; the bounded
-> publication tuple is complete;
-> registration, fixtures, effects, child/state assets, later roles/families,
-> release, accepted drift, and a PR remain closed. See `HANDOFF.md` for exact
-> artifact hashes and continuation instructions.
+> **Current gate update (2026-08-12):** EN-E09 elite Clockwork Automaton
+> Epochforge Colossus is a private visual candidate on
+> `codex/en-e09-clockwork-automaton-elite`, based on clean published Aetherdial
+> reconciliation `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`. It is one connected
+> 24x24 baked siege actor with zero child assets. Digest
+> `0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
+> passes its focused 80-frame gate and is awaiting explicit visual approval.
+> Registration, fixtures, effects, child/state assets, later families, release,
+> accepted drift, and a PR remain closed. See `HANDOFF.md` for exact hashes and
+> continuation instructions.
 
 **Date:** 2026-08-08 · **Scope:** why adding sprites is slow, where Claude Code tokens go, and what to change.
 **Method:** six parallel analysis agents read the full repo (evidence cited as `file:line`), every load-bearing claim was re-verified by executing the actual tools, and the highest-leverage fixes are already implemented on this branch.

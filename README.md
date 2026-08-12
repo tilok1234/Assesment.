@@ -131,24 +131,18 @@ explicit hold instruction overrides this default.
 
 ## Current integration status
 
-The current private visual gate is EN-E09 specialist Clockwork Automaton
-Aetherdial Surveyor on `codex/en-e09-clockwork-automaton-specialist`, based on
-clean published Brasscoil reconciliation
-`8037f0ccbb042bf041e01ecbe18b1c567567e409`. It reuses the selected
-deterministic connected 24x24 actor topology with zero child assets. Its tall
-verdigris chassis, fork crown, cyclopean dial, flywheel, integrated projector,
-counterweight arm, long legs, and three-prong feet are baked actor pixels;
-projectiles and sparks remain Effects Off. Exact candidate digest
-`e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
-passes the focused 80-frame gate. The designer approved the exact packet;
-accepted implementation `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote
-verified. Approval record `ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` is also
-remote verified. Initial published handoff
-`edbbbca4021941488c5daece20aa6a65afae7f7f` is also remote verified; this
-reconciliation completes the bounded publication tuple. It remains private,
-unregistered, fixture-free, and effect-free. Registration,
-fixtures, child assets, effects,
-later roles/families, release, accepted drift, and a PR remain closed.
+The current private visual gate is EN-E09 elite Clockwork Automaton Epochforge
+Colossus on `codex/en-e09-clockwork-automaton-elite`, based on clean published
+Aetherdial reconciliation `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`. It reuses
+the selected deterministic connected 24x24 actor topology with zero child
+assets. Its black-iron siege chassis, cog crown, low sensor slit, twin furnace
+dials, integrated hammer forearms, hip axle, piston legs, and tread feet are
+baked actor pixels; impacts and sparks remain Effects Off. Exact candidate
+digest `0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
+passes the focused 80-frame gate and awaits explicit visual approval. It is
+private, unregistered, fixture-free, and effect-free. Registration, fixtures,
+child assets, effects, later families, release, accepted drift, and a PR remain
+closed.
 
 The EN-F00 Enemy-expansion foundation is accepted at isolated checkpoint
 `73ad73a` on `codex/en-f00`. The separately authorized `codex/en-e01` branch

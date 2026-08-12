@@ -2,26 +2,22 @@
 
 The Sprite Assembler keeps its browser and Windows builds on the same frontend and procedural engine. Tauri packages the production web build without duplicating editor or rendering logic.
 
-## Current EN-E09 specialist private boundary
+## Current EN-E09 elite private boundary
 
-`engine/enemy-expansion-en-e09-clockwork-automaton-aetherdial-surveyor.js`
-extends the selected topology from clean published Brasscoil reconciliation
-`8037f0ccbb042bf041e01ecbe18b1c567567e409` without changing shared
-architecture. Private specialist Aetherdial Surveyor owns one deterministic
-connected 24x24 baked actor and zero child assets across all 80 frames. Its
-tuning-fork crown, cyclopean dial, narrow chassis, flywheel, integrated
-coil-projector, counterweight arm, piston legs, and three-prong feet remain
-actor pixels; no projectile is baked. The private module and review/check tools
-do not enter the public facade, catalog, packs, manifest, fixtures, shared
-renderer, exporter, validator, or frame contract. Digest
-`e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
-is visually approved at accepted implementation
-`f3c06649af346dc8a84edcff7c5cdfd8c0bddb16`, which is remote verified.
-Approval record `ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` is also remote
-verified. Initial published handoff `edbbbca4021941488c5daece20aa6a65afae7f7f`
-is remote verified; this reconciliation completes the bounded publication tuple;
-registration, fixtures, child/state assets, effects, the elite role,
-later families, release, accepted drift, and a PR remain closed.
+`engine/enemy-expansion-en-e09-clockwork-automaton-epochforge-colossus.js`
+extends the selected topology from clean published Aetherdial reconciliation
+`0d5aec453d8bad9ba6d4c66a641963932d9c2e78` without changing shared
+architecture. Private elite Epochforge Colossus owns one deterministic connected
+24x24 baked actor and zero child assets across all 80 frames. Its cog crown,
+low sensor slit, twin furnace dials, integrated hammer forearms, reinforced hip
+axle, piston legs, and tread feet remain actor pixels; no impact or projectile
+is baked. The private module and review/check tools do not enter the public
+facade, catalog, packs, manifest, fixtures, shared renderer, exporter,
+validator, or frame contract. Digest
+`0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
+is frozen and awaiting explicit visual approval; registration, fixtures,
+child/state assets, effects, later families, release, accepted drift, and a PR
+remain closed.
 
 ## Approved preceding EN-E09 common boundary
 

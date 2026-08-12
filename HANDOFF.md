@@ -23,7 +23,44 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Aetherdial Surveyor Published
+## Immediate Continuation Checkpoint - Epochforge Colossus Visual Gate
+
+Start here. Aetherdial Surveyor's bounded publication tuple is clean and remote
+verified at `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`. The designer
+replied `lets do nexty`, opening exactly one private elite Clockwork Automaton
+under the selected baked-single-actor topology. Epochforge Colossus is
+implemented on `codex/en-e09-clockwork-automaton-elite` and remains uncommitted
+while awaiting explicit visual approval.
+
+- Identity: broad black-iron and red-brass siege machine with a connected cog
+  crown, low pale sensor slit, twin furnace dials, oversized integrated hammer
+  forearms, reinforced hip axle, piston legs, and planted tread-like feet.
+- Motion: Idle banks the twin furnaces and indexes the crown; Walk uses four
+  heavy piston steps; Attack guards, raises both hammers, performs a body-owned
+  compression strike with no impact pixels, and recovers. Hurt is a complete
+  white recoil then colored tread brace. Cast aliases Attack; Death aliases
+  Hurt H1,H2,H2,H2.
+- Architecture: one deterministic connected 24x24 hard-alpha actor with zero
+  child assets. Impacts, projectiles, sparks, glow, detached parts, and runtime
+  offsets remain outside the gate with Effects Off.
+- Frozen digest:
+  `0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`.
+  Raw/Complete B + Form/comparison PNG hashes are
+  `7d47c4ba15edc745133c02484c8e535f70b044986b319bd3c59aeff82f58d529`,
+  `7349145fe0943007a92fc55bb1a52eea187a8a3eff8029db2f811dec76caa4c5`,
+  and `4b24ab724c98551dd3f85fd0d5fabde0de5b86aeeb38d163a500cd3dd55795b4`.
+  Raw and Complete B + Form GIF hashes are
+  `b4c94bc40c9500c52139de6e1aa718e7f5a3607b610e36176bd6fda4c707320c`
+  and `2c3e213170572269be1d810e61ec38fc8697eb31936479df4d7efdc8836097bc`.
+- Focused gate: 80/80 connected, grounded, and broad silhouettes; all 80 frames
+  differ from approved Aetherdial Surveyor, Brasscoil Sentry, and Runeforge
+  Custodian. There are 72/72 colored frames, 8/8 exact-white flashes, and
+  54/54 readable non-rear sensor views.
+- Next gate: inspect the exact three frozen PNGs and stop for explicit designer
+  visual approval. Do not commit, push, register, generate fixtures, add child
+  assets or effects, start another family, release, accept drift, or open a PR.
+
+## Approved Preceding Checkpoint - Aetherdial Surveyor Published
 
 Start here. Brasscoil Sentry's bounded publication tuple is clean and remote
 verified at `8037f0ccbb042bf041e01ecbe18b1c567567e409`. The designer
