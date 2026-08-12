@@ -5101,13 +5101,28 @@ it with incidental per-frame offsets.
 
 ### EN-E09 - Arcane constructs
 
-- Status: `private specialist approved; publication reconciliation in progress`
+- Status: `private Living Book common awaiting visual approval`
 - Families: Clockwork Automaton, Living Book, Runic Idol, Crystal Beast
 - Priority-first: Clockwork Automaton, Living Book
 
 Shared leverage: rigid rotations, hinges, page motion, rune-bearing surfaces,
 and faceted masses. Gear sparks, loose pages, rune flares, and crystal volleys
 remain effects rather than permanent body pixels.
+
+Living Book architecture/common prototype gate (2026-08-12): from clean
+published Epochforge reconciliation
+`85b29f76cb77ae85a116cec56eeed5b61ea5a375`, the designer replied `lets do
+next`, then approved the recommended content-only topology: one deterministic
+connected 24x24 baked book with zero child assets; loose pages and rune effects
+remain Effects Off. Private common Claspbound Primer is a thick burgundy volume
+with dark spine, brass hinges and clasp, ivory page block, one turquoise rune,
+connected open spread, and body-owned snapping attack. Candidate digest
+`bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`
+passes its focused 80-frame gate with 80/80 connected compact hover silhouettes,
+8/8 connected open spreads, 72/72 colored frames, 8/8 exact-white flashes, and
+54/54 readable non-rear rune views. The exact packet awaits explicit visual
+approval. Registration, fixtures, child/state assets, effects, later Living
+Book roles or EN-E09 families, release, accepted drift, and a PR remain closed.
 
 Clockwork Automaton architecture/prototype gate (2026-08-12): from clean
 published Crownmaw reconciliation

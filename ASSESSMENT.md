@@ -9,20 +9,17 @@
 > wording below describe the 2026-08-08 assessment point unless a later update
 > is explicitly noted; they are evidence, not the current handoff.
 
-> **Current gate update (2026-08-12):** EN-E09 elite Clockwork Automaton
-> Epochforge Colossus is a private visual candidate on
-> `codex/en-e09-clockwork-automaton-elite`, based on clean published Aetherdial
-> reconciliation `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`. It is one connected
-> 24x24 baked siege actor with zero child assets. Digest
-> `0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
-> passes its focused 80-frame gate and is visually approved at implementation
-> `96e83258ff0b350880139cb4a2b283ef0063e51f`; approval record
-> `853b922619775450d13510a3746ecfb163161afb` is also remote verified.
-> Initial published handoff `234a08ad53973c3afed1697089b59e1d9d6651f0`
-> is remote verified; the bounded publication tuple is complete.
-> Registration, fixtures, effects, child/state assets, later families, release,
-> accepted drift, and a PR remain closed. See `HANDOFF.md` for exact hashes and
-> continuation instructions.
+> **Current gate update (2026-08-12):** EN-E09 common Living Book Claspbound
+> Primer is a private visual candidate on
+> `codex/en-e09-living-book-architecture`, based on clean published Epochforge
+> reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`. The approved
+> topology is one connected 24x24 baked book with zero child assets; loose pages
+> and rune effects remain external. Digest
+> `bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`
+> passes its focused 80-frame gate and awaits explicit visual approval.
+> Registration, fixtures, effects, child/state assets, later roles/families,
+> release, accepted drift, and a PR remain closed. See `HANDOFF.md` for exact
+> hashes and continuation instructions.
 
 **Date:** 2026-08-08 · **Scope:** why adding sprites is slow, where Claude Code tokens go, and what to change.
 **Method:** six parallel analysis agents read the full repo (evidence cited as `file:line`), every load-bearing claim was re-verified by executing the actual tools, and the highest-leverage fixes are already implemented on this branch.

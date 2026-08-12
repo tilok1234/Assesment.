@@ -2,26 +2,23 @@
 
 The Sprite Assembler keeps its browser and Windows builds on the same frontend and procedural engine. Tauri packages the production web build without duplicating editor or rendering logic.
 
-## Current EN-E09 elite private boundary
+## Current EN-E09 Living Book common private boundary
 
-`engine/enemy-expansion-en-e09-clockwork-automaton-epochforge-colossus.js`
-extends the selected topology from clean published Aetherdial reconciliation
-`0d5aec453d8bad9ba6d4c66a641963932d9c2e78` without changing shared
-architecture. Private elite Epochforge Colossus owns one deterministic connected
-24x24 baked actor and zero child assets across all 80 frames. Its cog crown,
-low sensor slit, twin furnace dials, integrated hammer forearms, reinforced hip
-axle, piston legs, and tread feet remain actor pixels; no impact or projectile
-is baked. The private module and review/check tools do not enter the public
-facade, catalog, packs, manifest, fixtures, shared renderer, exporter,
-validator, or frame contract. Digest
-`0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
-is published at implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`
-and approval record `853b922619775450d13510a3746ecfb163161afb`, both remote
-verified. Initial published handoff
-`234a08ad53973c3afed1697089b59e1d9d6651f0` is also remote verified; the
-bounded publication tuple is complete. Registration, fixtures,
-child/state assets, effects, later families, release, accepted drift, and a PR
-remain closed.
+`engine/enemy-expansion-en-e09-living-book-claspbound-primer.js` extends EN-E09
+from clean published Epochforge reconciliation
+`85b29f76cb77ae85a116cec56eeed5b61ea5a375` without changing shared
+architecture. The approved Living Book topology is one deterministic connected
+24x24 baked actor with zero child assets. Private common Claspbound Primer keeps
+its burgundy cover, dark spine, brass hinges and clasp, ivory page block,
+turquoise rune, connected open spread, and snapping-book strike in actor
+pixels. Loose pages, rune flare, glow, and projectiles remain Effects Off. The
+private module and review/check tools do not enter the public facade, catalog,
+packs, manifest, fixtures, shared renderer, exporter, validator, or frame
+contract. Digest
+`bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`
+is frozen and awaiting explicit visual approval; registration, fixtures,
+child/state assets, effects, later roles/families, release, accepted drift, and
+a PR remain closed.
 
 ## Approved preceding EN-E09 common boundary
 

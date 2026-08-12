@@ -23,7 +23,48 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Epochforge Colossus Published
+## Immediate Continuation Checkpoint - Claspbound Primer Visual Gate
+
+Start here. Epochforge Colossus's bounded publication tuple is clean and remote
+verified at `85b29f76cb77ae85a116cec56eeed5b61ea5a375`. The designer
+replied `lets do next`, then approved the recommended Living Book topology: one
+deterministic connected 24x24 baked actor with zero child assets and loose pages
+plus rune effects kept Effects Off. One private common Claspbound Primer is
+implemented on `codex/en-e09-living-book-architecture` and remains uncommitted
+while awaiting explicit visual approval.
+
+- Identity: thick burgundy cover, dark connected spine, brass hinges and clasp,
+  ivory page block, and one readable turquoise geometric cover rune without
+  eyes, mouth, hands, or humanoid anatomy.
+- Motion: Idle flexes cover and page block; Walk uses four hinge-led hover
+  tilts; Attack guards, opens into one connected page spread, performs a
+  body-owned snapping-book strike, and recovers. Hurt is a complete white
+  recoil then colored bent-spine brace. Cast aliases Attack; Death aliases Hurt
+  H1,H2,H2,H2.
+- Architecture: one deterministic connected 24x24 hard-alpha book actor with
+  zero child assets. Loose pages, detached bookmarks, rune flare, glow,
+  projectiles, and runtime offsets remain outside the gate with Effects Off.
+- Frozen digest:
+  `bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`.
+  Raw/Complete B + Form/comparison PNG hashes are
+  `599371272dcf6fe37c608cf5d54942deebcd5d5ad012214955a362eea922faf6`,
+  `9640beb5757e955acd1c01f3f2aa25d4cc4620013c3c38105ee10cbc1179f661`,
+  and `a0b9668b23945384eb03ea93790d8b45b8f39834f6e05c7106becd779b401b0a`.
+  Raw and Complete B + Form GIF hashes are
+  `286ea0ae857639c2a202ea0568818db46ee50b54adfc5dc15e8f369ea46b2b42`
+  and `5dac6f4fb41daf9208a275864f836aac54026e5ec093090c70cf64b6cb97c020`.
+- Focused gate: 80/80 connected compact hover silhouettes, 8/8 connected open
+  spreads, 72/72 colored frames, 8/8 exact-white flashes, 54/54 readable
+  non-rear rune views, and opaque range 158-244. Every frame differs from
+  approved Epochforge Colossus, Whisperveil Visage, and Crownmaw Greatblade.
+- Broad validation: `check:fast` passes in 52.6s and full `check` passes in
+  100.1s with public 80/259 and all 232 fixture sheets exact.
+- Next gate: inspect the exact three frozen PNGs and stop for explicit designer
+  visual approval. Do not commit, push, register, generate fixtures, add child
+  assets or effects, start another role/family, release, accept drift, or open
+  a PR.
+
+## Approved Preceding Checkpoint - Epochforge Colossus Published
 
 Start here. Aetherdial Surveyor's bounded publication tuple is clean and remote
 verified at `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`. The designer

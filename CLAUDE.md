@@ -107,23 +107,19 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: elite Clockwork Automaton Epochforge Colossus on
-  `codex/en-e09-clockwork-automaton-elite`, based exactly on clean published
-  Aetherdial reconciliation `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`, is frozen
-  at digest `0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`.
-  It reuses the selected connected deterministic 24x24 actor topology with zero
-  child assets. Its cog crown, low sensor slit, twin furnace dials, integrated
-  hammer forearms, hip axle, piston legs, and tread feet are baked body pixels;
-  impacts and sparks remain Effects Off. The focused gate passes across all 80
-  frames; all are connected, grounded, broad, and distinct from Aetherdial,
-  Brasscoil, and Runeforge. The exact five review hashes are visually approved
-  at implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`; approval record
-  `853b922619775450d13510a3746ecfb163161afb` is also remote verified.
-  Initial published handoff `234a08ad53973c3afed1697089b59e1d9d6651f0`
-  is remote verified; the bounded publication tuple is complete. Inspect the
-  live roadmap and stop at its next explicit decision. Do not register,
-  generate fixtures, add child/state assets
-  or effects, begin another family, release, accept drift, or open a PR.
+- Current private art gate: common Living Book Claspbound Primer on
+  `codex/en-e09-living-book-architecture`, based exactly on clean published
+  Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, is frozen
+  at digest `bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`.
+  It uses the approved connected deterministic 24x24 baked-book topology with
+  zero child assets. Cover, spine, hinges, clasp, page block, rune, connected
+  open spread, and body-owned snap are actor pixels; loose pages and rune
+  effects remain Effects Off. The focused gate passes all 80 frames with 80/80
+  connected hover silhouettes, 8/8 connected open spreads, 72/72 colored
+  frames, 8/8 exact-white flashes, and 54/54 readable non-rear rune views. The
+  exact five review hashes are frozen and await explicit visual approval. Do
+  not commit, push, register, generate fixtures, add child/state assets or
+  effects, begin another role/family, release, accept drift, or open a PR.
 - Approved preceding private art gate: common Clockwork Automaton Brasscoil
   Sentry on `codex/en-e09-clockwork-automaton-architecture` is published at
   reconciliation `8037f0ccbb042bf041e01ecbe18b1c567567e409`, frozen at digest

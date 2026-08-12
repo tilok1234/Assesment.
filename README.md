@@ -131,22 +131,18 @@ explicit hold instruction overrides this default.
 
 ## Current integration status
 
-The current private visual gate is EN-E09 elite Clockwork Automaton Epochforge
-Colossus on `codex/en-e09-clockwork-automaton-elite`, based on clean published
-Aetherdial reconciliation `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`. It reuses
-the selected deterministic connected 24x24 actor topology with zero child
-assets. Its black-iron siege chassis, cog crown, low sensor slit, twin furnace
-dials, integrated hammer forearms, hip axle, piston legs, and tread feet are
-baked actor pixels; impacts and sparks remain Effects Off. Exact candidate
-digest `0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`
-passes the focused 80-frame gate and is visually approved at implementation
-`96e83258ff0b350880139cb4a2b283ef0063e51f`; approval record
-`853b922619775450d13510a3746ecfb163161afb` is also remote verified.
-Initial published handoff `234a08ad53973c3afed1697089b59e1d9d6651f0`
-is remote verified; the bounded publication tuple is complete. It remains
+The current private visual gate is EN-E09 common Living Book Claspbound Primer
+on `codex/en-e09-living-book-architecture`, based on clean published Epochforge
+reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`. It uses the approved
+deterministic connected 24x24 baked-book topology with zero child assets. Its
+burgundy cover, spine, brass hinges and clasp, ivory page block, turquoise
+rune, connected open spread, and body-owned snap are actor pixels; loose pages
+and rune effects remain Effects Off. Exact candidate digest
+`bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`
+passes the focused 80-frame gate and awaits explicit visual approval. It is
 private, unregistered, fixture-free, and effect-free. Registration, fixtures,
-child assets, effects, later families, release, accepted drift, and a PR remain
-closed.
+child assets, effects, later roles/families, release, accepted drift, and a PR
+remain closed.
 
 The EN-F00 Enemy-expansion foundation is accepted at isolated checkpoint
 `73ad73a` on `codex/en-f00`. The separately authorized `codex/en-e01` branch

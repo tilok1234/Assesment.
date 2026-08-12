@@ -2,23 +2,18 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E09 elite gate (2026-08-12): from clean published Aetherdial
-reconciliation `0d5aec453d8bad9ba6d4c66a641963932d9c2e78`, the designer
-replied `lets do nexty`, opening exactly one private elite Clockwork Automaton.
-Epochforge Colossus on `codex/en-e09-clockwork-automaton-elite` is one connected
-baked 24x24 actor with zero child assets, frozen at digest
-`0b0c8b792a177c08fd9655cf635aa2b756373ecb57aefe5ff508291f5b708254`.
-Its broad black-iron siege silhouette, cog crown, low sensor slit, twin furnace
-dials, hammer forearms, reinforced hip axle, piston legs, and tread feet are
-distinct from Aetherdial, Brasscoil, and Runeforge. Focused validation passes
-all 80 frames; post-approval fast/full validation passes in 57.2s/101.2s with
-public 80/259 and all 232 fixture sheets exact. The exact five review hashes were visually approved at
-implementation `96e83258ff0b350880139cb4a2b283ef0063e51f`; approval record
-`853b922619775450d13510a3746ecfb163161afb` is also remote verified.
-Initial published handoff `234a08ad53973c3afed1697089b59e1d9d6651f0`
-is remote verified; the bounded publication tuple is complete.
-Registration, fixtures, child assets, effects, later families, release,
-accepted drift, and a PR stay closed.
+Current EN-E09 Living Book common gate (2026-08-12): from clean published
+Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, the designer
+replied `lets do next`, then approved the recommended one-connected-actor,
+zero-child Living Book topology. Claspbound Primer on
+`codex/en-e09-living-book-architecture` is a compact burgundy, brass, and ivory
+book with a readable turquoise rune, connected open spread, and body-owned snap,
+frozen at digest
+`bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`.
+Focused validation passes all 80 frames; fast/full validation passes in
+52.6s/100.1s with public 80/259 and all 232 fixture sheets exact. The exact five
+review hashes await explicit visual approval. Registration, fixtures, child assets, effects, later
+roles/families, release, accepted drift, and a PR stay closed.
 
 Approved preceding EN-E09 common gate (2026-08-12): the designer replied `lets do next`
 from clean published Crownmaw reconciliation
