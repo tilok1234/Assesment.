@@ -107,16 +107,28 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Active architecture decision: after the exact Crownseal publication tuple,
-  the designer's `approved lets do next` opens only the Runic Idol actor-topology
-  decision. Recommend `baked-single-actor-monolith`: one deterministic connected
-  grounded 24x24 carved idol with body-owned capstone, rune face, stepped
-  shoulders, buttresses, core slab, plinth, rigid animation, and zero child
-  assets. Orbiting shards, detached tablets, beams, rune flare, impacts,
-  projectiles, glow, illumination, and runtime offsets remain Effects Off.
-  Require explicit topology approval before creating the Runic Idol branch,
-  naming a common variant, or implementing art. Registration, fixtures,
-  Crystal Beast, later families, release, accepted drift, and a PR remain closed.
+- Current private art gate: on `codex/en-e10-hyena-common`, based exactly on
+  clean published Crownseal reconciliation
+  `ff9f9103e06e9edb7729b5efb61c237cf6d4a625`, the designer redirected the
+  next lane from the paused Runic Idol topology decision to EN-E10, then
+  approved one connected grounded 24x24 zero-child Hyena topology. Duneback
+  Scavenger is a warm-dun common with high bristled shoulders, descending back,
+  low rump, compact dark wedge muzzle, rounded ears, irregular flank spots,
+  connected short tail, four dark paws, and a body-owned jaw lunge. Its exact
+  80-frame candidate is frozen at digest
+  `353bd2ee9818a9eac8e799a7bc0e041cb6841509d61d3aabd695e86cd146db4d`.
+  Focused validation passes 80/80 connected, bounded, grounded, four-paw, and
+  quadruped-span frames; 72/72 colored frames; 8/8 white flashes; 54/54
+  expected eye and muzzle views; and 80/80 pixel plus alpha distinctions from
+  approved Miremane Courser and public Dire Wolf and Marsh Crocodile. Opaque
+  range is 187-216. The exact three PNG plus two GIF hashes are frozen;
+  deterministic regeneration passes. `check:fast` passes in 60.9s and full
+  `check` in 113.5s with public 92/294 and all 232 fixtures unchanged. Raw,
+  Complete B + Form, and comparison PNGs are open together in Aseprite as
+  sprites 7, 11, and active 15 awaiting explicit visual approval. Registration,
+  fixtures, effects, child assets, later Hyena roles, Ram, Stag, Mammoth,
+  Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted
+  drift, and a PR remain closed.
 - Current approved private art gate: on `codex/en-e09-living-book-elite`, based exactly
   on clean published Starlock reconciliation
   `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer's `lets do nex t`
@@ -140,8 +152,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   frozen packet. The implementation and approval record
   `c4c256c7ba125cc177954f8664593431e00da27a` plus initial published handoff
   `7406864fb459eca40082b0fe9883441148b2230a` are remote verified; this
-  reconciliation completes the bounded publication tuple. The same reply opens
-  only the Runic Idol actor-topology decision above and does not authorize art.
+  reconciliation completes the bounded publication tuple. That reply
+  historically opened only the Runic Idol actor-topology decision; the designer
+  later paused it and selected the separate EN-E10 Hyena gate above.
   Registration, fixtures,
   child/state assets, effects, Crystal Beast, later families, release, accepted
   drift, and a PR remain closed.

@@ -1,6 +1,6 @@
 # Project Handoff
 
-Date: 2026-08-12
+Date: 2026-08-13
 
 ## V2 Repository And Workflow Note
 
@@ -23,7 +23,53 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Runic Idol Topology Decision
+## Immediate Continuation Checkpoint - Duneback Scavenger Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-hyena-common`. It is based exactly on clean published
+   Crownseal reconciliation
+   `ff9f9103e06e9edb7729b5efb61c237cf6d4a625`.
+2. The designer paused the Runic Idol topology decision, selected EN-E10, then
+   approved the recommended `baked-single-actor-grounded-quadruped` Hyena
+   topology: one connected grounded 24x24 actor with high shoulders, low rump,
+   compact wedge muzzle, rounded ears, connected bristled mane and short tail,
+   four readable paws, a body-owned bite lunge, and zero child assets.
+3. The private common candidate is Duneback Scavenger: warm-dun spotted fur,
+   cocoa mane and muzzle, pale throat and belly, rose-brown ear interiors,
+   amber eyes, and four dark paws. Dust, saliva, bite arcs, impacts, laughter
+   marks, projectiles, glow, illumination, runtime attachments, and all other
+   effects remain external and Off.
+4. Frozen candidate digest:
+   `353bd2ee9818a9eac8e799a7bc0e041cb6841509d61d3aabd695e86cd146db4d`.
+   Raw / Complete B + Form / comparison PNG hashes are
+   `053fbc337412dff68a66b991ce2d1e876ba6c7c8255a666039db48aa00db2abc`,
+   `766089b27e18eb15525c1b1a664ff877b400bf624b06ed1ea8f380e45b8c25fe`,
+   and `30b32107b63343f3aceed123c34e801f3d421b8f62eed35b84a61260ea387587`.
+   Raw and Complete B + Form GIF hashes are
+   `eea7b08355c03478ac2dc1c4b440e426cebce0cca3a12d5a09fddf28916fb6e8`
+   and `16c622b006b99f0b1135468048c3478c6907bdd1e40f91e468720bebdeb6f370`.
+5. Focused validation passes 80/80 connected, bounded, grounded, four-paw, and
+   quadruped-span frames; 72/72 colored frames; 8/8 exact-white flashes; 54/54
+   expected eye and readable-muzzle views; and 80/80 pixel plus alpha
+   distinctions from approved Miremane Courser and public Dire Wolf and Marsh
+   Crocodile. Opaque range is 187-216. Deterministic review regeneration
+   reproduces all frozen hashes. `check:fast` passes in 60.9s and full `check`
+   in 113.5s with public 92/294 and all 232 fixtures unchanged.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-hyena-duneback-scavenger/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-hyena-duneback-scavenger` and run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-hyena-duneback-scavenger`.
+7. The exact raw, Complete B + Form, and comparison PNGs are open together in
+   the four-lane Aseprite MCP review window as sprites 7, 11, and active 15.
+   Stop for the designer's explicit visual approval. The candidate is not
+   committed or pushed under the standing permission until that approval.
+8. Registration, fixtures, effects, child assets, specialist or elite Hyena,
+   Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the deferred
+   Runic Idol topology decision, release, accepted drift, and a PR remain
+   closed.
+
+## Deferred Checkpoint - Runic Idol Topology Decision
 
 1. Crownseal Grimoire's accepted implementation
    `159b9105297fb6c999f91ec77c194c777579d526`, approval record
@@ -42,7 +88,8 @@ gate.
    impacts, projectiles, glow, illumination, and runtime attachment offsets
    remain Effects Off. Any floating shard array or separate state object would
    require a new architecture gate.
-5. Next decision: require explicit designer approval of the recommended
+5. The designer later paused this decision and selected EN-E10. If resumed,
+   require explicit designer approval of the recommended
    topology before creating an isolated Runic Idol branch or implementing and
    naming one common candidate. Crystal Beast, later families, release,
    accepted drift, and a PR remain closed.

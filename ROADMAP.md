@@ -14,14 +14,24 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E09 architecture decision (2026-08-12): after the exact Crownseal
-publication tuple, the designer's `approved lets do next` opens only the Runic
-Idol actor-topology decision. The recommendation is
-`baked-single-actor-monolith`: one connected grounded 24x24 carved idol with
-body-owned capstone, rune face, stepped shoulders, buttresses, core slab,
-plinth, rigid animation, and zero child assets. Orbiting shards, detached
-tablets, beams, rune flare, impacts, projectiles, glow, illumination, and runtime
-offsets remain Effects Off. Explicit topology approval is required before art.
+Current EN-E10 private art gate (2026-08-13): after pausing the Runic Idol
+topology decision, the designer selected EN-E10 and approved one connected
+grounded 24x24 zero-child Hyena topology. Duneback Scavenger on
+`codex/en-e10-hyena-common`, based exactly on published Crownseal
+reconciliation `ff9f9103e06e9edb7729b5efb61c237cf6d4a625`, is a warm-dun
+common with high bristled shoulders, descending back, low rump, compact wedge
+muzzle, rounded ears, dark flank spots, connected short tail, four paws, and a
+body-owned jaw lunge. The exact 80-frame candidate is frozen at digest
+`353bd2ee9818a9eac8e799a7bc0e041cb6841509d61d3aabd695e86cd146db4d`.
+Focused validation passes all connected, bounded, grounded, four-paw, identity,
+alias, mirror, and three-way distinction gates at opaque range 187-216.
+Deterministic review regeneration passes; `check:fast` and full `check` pass in
+60.9s/113.5s with public 92/294 and all 232 fixtures unchanged. The exact raw,
+Complete B + Form, and comparison PNGs are open together in Aseprite as sprites
+7, 11, and active 15 awaiting explicit visual approval. Registration, fixtures,
+effects, child assets, later Hyena roles, Ram, Stag, Mammoth, Rhino, Rhino Boss
+work, the deferred Runic Idol decision, release, accepted drift, and a PR remain
+closed.
 
 Approved preceding EN-E09 art gate (2026-08-12): from clean published Starlock
 reconciliation `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer
@@ -44,8 +54,9 @@ implementation and approval record
 `c4c256c7ba125cc177954f8664593431e00da27a` plus initial published handoff
 `7406864fb459eca40082b0fe9883441148b2230a` are remote verified; this
 reconciliation completes the bounded publication tuple. Status is `approved`
-and `published`; the same reply opens only the Runic Idol actor-topology
-decision above and does not authorize art.
+and `published`; that reply historically opened only the Runic Idol
+actor-topology decision. The designer later paused it and selected the separate
+EN-E10 Hyena gate above.
 Registration, fixtures, child/state assets, effects, Crystal Beast, later
 families, release, accepted drift, and a PR remain closed.
 

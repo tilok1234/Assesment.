@@ -15,16 +15,26 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current architecture decision (2026-08-12): after the exact Crownseal
-  publication tuple, the designer's `approved lets do next` opens only the Runic
-  Idol actor-topology decision. Recommend `baked-single-actor-monolith`: one
-  deterministic connected grounded 24x24 carved idol with a body-owned capstone,
-  rune face, stepped shoulders, buttresses, core slab, plinth, rigid animation,
-  and zero child assets. Orbiting shards, detached tablets, beams, rune flare,
-  impacts, projectiles, glow, illumination, and runtime offsets remain Effects
-  Off. Require explicit topology approval before creating a branch, naming a
-  common candidate, or implementing art. Registration, fixtures, Crystal Beast,
-  later families, release, accepted drift, and a PR remain closed.
+- Current private art gate (2026-08-13): the designer paused the Runic Idol
+  topology decision, selected EN-E10, and approved one connected grounded 24x24
+  zero-child Hyena topology. Duneback Scavenger on
+  `codex/en-e10-hyena-common`, based exactly on clean published Crownseal
+  reconciliation `ff9f9103e06e9edb7729b5efb61c237cf6d4a625`, is a warm-dun
+  common with high bristled shoulders, descending back, low rump, compact dark
+  wedge muzzle, rounded ears, irregular flank spots, connected short tail, four
+  dark paws, and a body-owned jaw lunge. Its exact 80-frame digest is
+  `353bd2ee9818a9eac8e799a7bc0e041cb6841509d61d3aabd695e86cd146db4d`.
+  Focused validation passes 80/80 connected, bounded, grounded, four-paw, and
+  quadruped-span frames; 72/72 colored frames; 8/8 white flashes; 54/54 eye and
+  muzzle views; and 80/80 pixel plus alpha distinctions from approved Miremane
+  Courser and public Dire Wolf and Marsh Crocodile. Opaque range is 187-216.
+  Deterministic review regeneration passes; fast/full gates pass in
+  60.9s/113.5s with public 92/294 and all 232 fixtures exact. The exact raw,
+  Complete B + Form, and comparison PNGs are open together in Aseprite as
+  sprites 7, 11, and active 15 awaiting explicit visual approval. Registration,
+  fixtures, effects, child assets, later Hyena roles, Ram, Stag, Mammoth,
+  Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted
+  drift, and a PR remain closed.
 
 - Approved preceding art gate (2026-08-12): from clean published Starlock
   reconciliation `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer
@@ -50,8 +60,9 @@
   `c4c256c7ba125cc177954f8664593431e00da27a` plus initial published handoff
   `7406864fb459eca40082b0fe9883441148b2230a` are remote verified; this
   reconciliation completes the bounded publication tuple. Status is `approved`
-  and `published`; the same reply opens only the Runic Idol actor-topology
-  decision above and does not authorize art. No
+  and `published`; that reply historically opened only the Runic Idol
+  actor-topology decision. The designer later paused it and selected the
+  separate EN-E10 Hyena gate above. No
   registration, fixtures, child/state assets, effects, Crystal Beast, later
   family, release, accepted drift, or PR gate is open.
 
@@ -5330,7 +5341,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `queued`
+- Status: `Hyena common visual approval gate active; remaining families queued`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5338,6 +5349,25 @@ Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
 stance. Ordinary Rhino must not read as a reduced copy of the Furious Depraved
 Rhino Boss.
+
+Hyena topology and common art gate (2026-08-13): the designer selected
+`baked-single-actor-grounded-quadruped` — one connected grounded 24x24 Hyena
+with high shoulders, low rump, compact wedge muzzle, rounded ears, connected
+bristled mane and short tail, four readable paws in every direction, a
+body-owned bite lunge, and zero child assets. Dust, saliva, bite arcs, impacts,
+particles, laughter marks, projectiles, glow, illumination, and runtime
+attachments remain external Effects Off.
+
+The authorized common is Duneback Scavenger, independently authored in warm
+dun, cocoa, pale-bone, and rose-brown pixels with irregular flank spots and
+amber eyes. Its exact 80-frame candidate and five review artifacts are hash-
+frozen in `en-e10-hyena-duneback-scavenger-full-v1`. All 80 frames are
+connected, one-cell bounded, grounded, four-paw readable, and pixel/alpha
+distinct from approved Miremane Courser and public Dire Wolf and Marsh
+Crocodile. Raw, Complete B + Form, and comparison PNGs are open together in
+Aseprite as sprites 7, 11, and active 15. Stop for explicit visual approval.
+Specialist and elite Hyena, registration, fixtures, effects, Ram, Stag,
+Mammoth, Rhino, Rhino Boss work, and all later gates remain closed.
 
 ### EN-E11 - Birds
 
