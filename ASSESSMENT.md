@@ -15,8 +15,9 @@
 > deterministic connected 24x24 baked actor with zero child assets. Digest
 > `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`
 > passes its focused 80-frame gate. Accepted implementation
-> `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` is remote verified; only the
-> approval record and publication reconciliation are open;
+> `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` and approval record
+> `08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` are remote verified; only the
+> initial published handoff and final reconciliation are open;
 > registration, fixtures, effects, child/state assets, later roles/families,
 > release, accepted drift, and a PR remain closed. See `HANDOFF.md` for exact
 > artifact hashes and continuation instructions.

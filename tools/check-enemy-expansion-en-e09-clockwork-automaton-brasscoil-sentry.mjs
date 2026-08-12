@@ -140,10 +140,10 @@ check(
     && EN_E09_BRASSCOIL_SENTRY_GATE.approvalEvidence.includes('2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd')
     && EN_E09_BRASSCOIL_SENTRY_GATE.approvedImplementation === 'b109e3d8ba81d444edc3c7ce7e8a479eb37a183e'
     && EN_E09_BRASSCOIL_SENTRY_GATE.publicationAuthorizedOn === '2026-08-12'
-    && EN_E09_BRASSCOIL_SENTRY_GATE.publishedImplementation === null
-    && EN_E09_BRASSCOIL_SENTRY_GATE.publishedApprovalRecord === null
+    && EN_E09_BRASSCOIL_SENTRY_GATE.publishedImplementation === 'b109e3d8ba81d444edc3c7ce7e8a479eb37a183e'
+    && EN_E09_BRASSCOIL_SENTRY_GATE.publishedApprovalRecord === '08cf45c5ecd9807ebf399b00cb8bfea54fcffc52'
     && EN_E09_BRASSCOIL_SENTRY_GATE.initialPublishedHandoff === null
-    && EN_E09_BRASSCOIL_SENTRY_GATE.publicationState === 'approved-not-published'
+    && EN_E09_BRASSCOIL_SENTRY_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E09_BRASSCOIL_SENTRY_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E09_BRASSCOIL_SENTRY_GATE.publicationAuthorizationEvidence.includes('pull request'),
   'Brasscoil Sentry authorization or unpublished gate drifted',
@@ -187,8 +187,9 @@ check(
     && EN_E09_BRASSCOIL_SENTRY_GATE.animationContract.includes('four weighted piston steps')
     && EN_E09_BRASSCOIL_SENTRY_GATE.animationContract.includes('body-owned piston punch')
     && EN_E09_BRASSCOIL_SENTRY_GATE.animationContract.includes('Cast aliases Attack exactly')
-    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('visually approved at implementation b109e3d8ba81d444edc3c7ce7e8a479eb37a183e')
-    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
+    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('implementation b109e3d8ba81d444edc3c7ce7e8a479eb37a183e')
+    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('approval record 08cf45c5ecd9807ebf399b00cb8bfea54fcffc52')
+    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('inspect the live roadmap'),
   'full-suite, motion, or stop-gate contract drifted',
 );

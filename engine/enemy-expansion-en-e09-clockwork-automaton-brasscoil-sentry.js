@@ -136,10 +136,10 @@ export const EN_E09_BRASSCOIL_SENTRY_GATE = deepFreeze({
   approvedImplementation: 'b109e3d8ba81d444edc3c7ce7e8a479eb37a183e',
   publicationAuthorizedOn: '2026-08-12',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
+  publishedImplementation: 'b109e3d8ba81d444edc3c7ce7e8a479eb37a183e',
+  publishedApprovalRecord: '08cf45c5ecd9807ebf399b00cb8bfea54fcffc52',
   initialPublishedHandoff: null,
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E08_CROWNMAW_GREATBLADE_GATE.id,
     artifactSha256: EN_E08_CROWNMAW_GREATBLADE_GATE.artifactSha256,
@@ -224,7 +224,7 @@ export const EN_E09_BRASSCOIL_SENTRY_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Brasscoil Sentry packet is visually approved at implementation b109e3d8ba81d444edc3c7ce7e8a479eb37a183e. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate. Registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Brasscoil Sentry implementation b109e3d8ba81d444edc3c7ce7e8a479eb37a183e and approval record 08cf45c5ecd9807ebf399b00cb8bfea54fcffc52 are remote verified. Only the initial published handoff and final reconciliation remain open. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate. Registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E09_BRASSCOIL_SENTRY_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

@@ -121,9 +121,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   123.2s and public 80/259 plus all 232 fixtures exact. The exact five review
   hashes are frozen. The designer replied
   `approved, and you can commit and push everything we approved`; accepted
-  implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` is remote
-  verified. It remains private, unregistered, fixture-free, and effect-free.
-  Publish only its approval record and handoff reconciliation. Do not register, generate fixtures,
+  implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` and approval
+  record `08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` are remote verified.
+  It remains private, unregistered, fixture-free, and effect-free. Publish only
+  its initial handoff and final reconciliation. Do not register, generate fixtures,
   add child/state assets or effects, begin another role/family, release, accept
   drift, or open a PR.
 - Approved preceding private art gate: elite Living Weapon Crownmaw Greatblade on

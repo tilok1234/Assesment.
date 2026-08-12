@@ -5122,7 +5122,8 @@ passes the focused 80-frame gate and is distinct from Fallen Knight,
 Runeforge, and Crownmaw in every pixel frame and alpha silhouette. This is
 visually approved exactly at implementation
 `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e`, which is remote verified. Only
-the approval record and bounded handoff reconciliation remain open;
+approval record `08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` is also remote
+verified; only the initial published handoff and final reconciliation remain open;
 registration, fixtures, child/state assets, effects, later Clockwork roles or
 EN-E09 families, release, accepted drift, and a PR remain closed.
 

@@ -32,8 +32,9 @@ topology: one deterministic connected 24x24 Clockwork Automaton actor with zero
 child assets. One private common Brasscoil Sentry prototype is implemented on
 `codex/en-e09-clockwork-automaton-architecture`. The designer replied
 `approved, and you can commit and push everything we approved`; accepted
-implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` is remote
-verified. It remains private, unregistered, effect-free, and fixture-free.
+implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` and approval
+record `08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` are remote verified.
+It remains private, unregistered, effect-free, and fixture-free.
 
 - Identity: squat worn-brass boiler body, small single-lens head pod, dark-iron
   joints, connected side gear, turquoise boiler coil, piston arms, broad plated
@@ -61,8 +62,9 @@ verified. It remains private, unregistered, effect-free, and fixture-free.
   sheets exact.
 - Approval: the exact three frozen PNGs were open together in Aseprite when the
   designer approved this digest and five hashes. Standing permission opens only
-  its approval record, branch push, and bounded handoff reconciliation.
-- Next gate: complete that publication tuple, inspect the live roadmap, and
+  its bounded handoff reconciliation.
+- Next gate: publish the initial handoff, complete its final reconciliation,
+  inspect the live roadmap, and
   stop at its next explicit decision. Do not register, generate fixtures, add
   child assets or effects, start another role/family, release, accept drift, or
   open a PR without a new explicit decision.
