@@ -87,8 +87,8 @@ export const EN_E09_STARLOCK_LEXICON_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: 'f11c2a0915588c616e1db7d8e461208f97a42706',
   publishedApprovalRecord: '335ff6a36a1b72509816546655d3d58ae2173ecb',
-  initialPublishedHandoff: null,
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '7ae9b30dc5c440eb4b8743fe726c952241a18da3',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E09_CLASPBOUND_PRIMER_GATE.id,
     artifactSha256: EN_E09_CLASPBOUND_PRIMER_GATE.artifactSha256,
@@ -118,7 +118,7 @@ export const EN_E09_STARLOCK_LEXICON_GATE = deepFreeze({
   animationContract: 'Idle indexes the connected page block and star-lock. Walk uses four tall hinge-led hover tilts. Attack braces, opens into one connected asymmetric page fan, performs a body-owned spine-led sweep with no loose-page or sigil-flare pixels, and recovers. Hurt uses a complete white recoil and colored iron-spine brace. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.',
   reviewPresentation: 'Show the exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, synchronized GIFs, and approved Claspbound Primer, Aetherdial Surveyor, and Mournseal Cantor family comparisons together.',
   exclusions: ['changes to approved Claspbound Primer or earlier rendered pixels', 'public Living Book registration', 'public catalog or facade exposure', 'asset-pack fixture or manifest changes', 'schema changes', 'shared renderer changes', 'exporter changes', 'validator changes', 'frame-contract changes', 'deterministic child/state exports', 'runtime attachment offsets', 'loose pages', 'detached bookmark', 'separate covers', 'new Cast pixels', 'new Death pixels', 'humanoid face', 'eyes or mouth', 'hands or limbs', 'handheld weapon or shield', 'aura', 'glow', 'particles', 'projectiles', 'sigil flare', 'impacts', 'illumination', 'effects', 'elite Living Book', 'Runic Idol, Crystal Beast, or later work', 'release', 'accepted drift'],
-  nextGate: 'The exact Starlock Lexicon implementation f11c2a0915588c616e1db7d8e461208f97a42706 and approval record 335ff6a36a1b72509816546655d3d58ae2173ecb are remote verified. Only the initial published handoff and final reconciliation remain open. Do not infer authorization for the elite role or another family. Registration, fixtures, child/state assets, effects, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Starlock Lexicon implementation f11c2a0915588c616e1db7d8e461208f97a42706, approval record 335ff6a36a1b72509816546655d3d58ae2173ecb, and initial published handoff 7ae9b30dc5c440eb4b8743fe726c952241a18da3 are remote verified; this reconciliation completes the bounded publication tuple. No next art gate is authorized. Registration, fixtures, child/state assets, effects, the elite role, later families, release, accepted drift, and a pull request require separate explicit authorization.',
 });
 
 export const EN_E09_STARLOCK_LEXICON_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

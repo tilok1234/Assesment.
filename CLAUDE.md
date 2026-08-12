@@ -124,10 +124,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   together in Aseprite when the designer replied `APPROVED`; accepted
   implementation `f11c2a0915588c616e1db7d8e461208f97a42706` records those
   pixels. The implementation and approval record
-  `335ff6a36a1b72509816546655d3d58ae2173ecb` are remote verified. Only the
-  initial published handoff and final reconciliation remain open; do not infer
-  another art gate. Registration, fixtures, child/state assets, effects, the
-  elite role, later families, release, accepted drift, and a PR remain closed.
+  `335ff6a36a1b72509816546655d3d58ae2173ecb` plus initial published handoff
+  `7ae9b30dc5c440eb4b8743fe726c952241a18da3` are remote verified; this
+  reconciliation completes the bounded publication tuple. No next art gate is
+  authorized. Registration, fixtures, child/state assets, effects, the elite
+  role, later families, release, accepted drift, and a PR remain closed.
 - Latest source-art approval: common Living Book Claspbound Primer on
   `codex/en-e09-living-book-architecture`, based exactly on clean published
   Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, is frozen

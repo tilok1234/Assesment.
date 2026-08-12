@@ -34,10 +34,11 @@
   together in Aseprite when the designer replied `APPROVED`; accepted
   implementation `f11c2a0915588c616e1db7d8e461208f97a42706` records those
   pixels. The implementation and approval record
-  `335ff6a36a1b72509816546655d3d58ae2173ecb` are remote verified. Status is
-  `published-awaiting-handoff-reconciliation`; no registration, fixtures,
-  child/state assets, effects, elite role, later family, release, accepted
-  drift, or PR gate is open.
+  `335ff6a36a1b72509816546655d3d58ae2173ecb` plus initial published handoff
+  `7ae9b30dc5c440eb4b8743fe726c952241a18da3` are remote verified; this
+  reconciliation completes the bounded publication tuple. Status is `approved`
+  and `published`; no registration, fixtures, child/state assets, effects,
+  elite role, later family, release, accepted drift, or PR gate is open.
 
 - Historical source approval checkpoint (2026-08-11): private common Animated Armor
   Hollow Sentry on `codex/en-e08-animated-armor-architecture` is frozen at

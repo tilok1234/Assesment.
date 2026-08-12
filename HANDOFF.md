@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Starlock Lexicon Published, Handoff Reconciliation Pending
+## Immediate Continuation Checkpoint - Starlock Lexicon Published And Reconciled
 
 ### Current active gate
 
@@ -64,10 +64,11 @@ gate.
    `f11c2a0915588c616e1db7d8e461208f97a42706` records those pixels. The
    implementation and approval record
    `335ff6a36a1b72509816546655d3d58ae2173ecb` are remote verified.
-7. Next gate: commit and push the initial published handoff, then record its
-   immutable hash in the final reconciliation. Do not infer authorization for
-   the elite role or another family. Do not register, generate fixtures, add
-   effects or child/state assets, release, accept drift, or open a PR.
+   Initial published handoff `7ae9b30dc5c440eb4b8743fe726c952241a18da3`
+   is also remote verified; this reconciliation completes the bounded tuple.
+7. Next gate: none is active. Require separate explicit authorization before
+   the elite role, another family, registration, fixtures, effects or
+   child/state assets, release, accepted drift, or a PR.
 
 ## Immediate Continuation Checkpoint - Approved Enemy Backlog Integrated
 
