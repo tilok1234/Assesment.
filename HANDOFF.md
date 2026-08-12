@@ -23,7 +23,50 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Brasscoil Sentry Published
+## Immediate Continuation Checkpoint - Aetherdial Surveyor Visual Gate
+
+Start here. Brasscoil Sentry's bounded publication tuple is clean and remote
+verified at `8037f0ccbb042bf041e01ecbe18b1c567567e409`. The designer
+replied `lets do next`, opening exactly one private specialist Clockwork
+Automaton under the selected baked-single-actor topology. Aetherdial Surveyor
+is implemented on `codex/en-e09-clockwork-automaton-specialist`; it is not
+approved, committed, published, registered, or fixture-backed.
+
+- Identity: tall verdigris-and-brass precision machine with a connected
+  tuning-fork crown, oversized cyclopean dial, narrow iron spine, exposed chest
+  flywheel, integrated coil-projector forearm, counterweight arm, long piston
+  legs, and planted three-prong feet.
+- Motion: Idle calibrates crown and flywheel; Walk uses four tall opposed-arm
+  strides; Attack raises/focuses the integrated projector, performs body-owned
+  recoil with no projectile pixels, and recovers. Hurt is a complete white
+  recoil then colored tripod brace. Cast aliases Attack; Death aliases Hurt
+  H1,H2,H2,H2.
+- Architecture: one deterministic connected 24x24 hard-alpha actor with zero
+  child assets. Projectiles, sparks, glow, detached parts, and runtime offsets
+  remain outside the gate with Effects Off.
+- Frozen digest:
+  `e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`.
+  Raw/Complete B + Form/comparison PNG hashes are
+  `4778dd43e09e2f3816b69abbcca85900e2838194638dd088e55b3047b497babd`,
+  `3a2111896a5eb6198b17f4110927cafd5961ed58ba83bf09747d27f42d1a2b57`,
+  and `ea42855b38ae0b0ecebfa2a770a31c896b4666252fbe01618acde1cb88064f7a`.
+  Raw and Complete B + Form GIF hashes are
+  `d6eec578bc68d6662d758d776c3d9119ed307b8171a3b711c2c12670fd46fd7a`
+  and `e7916001025dcfa3b40b0ee93cad2cde28d638ec10c49c2b42de2d3f55d73ff5`.
+- Focused gate: 80/80 connected, bounded, grounded baked actors with zero
+  children; 80/80 planted foot spans and tall surveyor spans; all 80 pixel and
+  alpha silhouettes differ from approved Brasscoil Sentry, approved Runeforge
+  Custodian, and public Fallen Knight Shieldbearer. There are 72/72 colored
+  frames, 8/8 exact-white flashes, and 54/54 readable lens views; opaque range
+  208-249. Complete B adds 8,390 pixels and Form changes 11,538.
+- Broad validation: `check:fast` passes in 57.7s and full `check` passes in
+  112.9s with public 80/259 and all 232 fixture sheets exact.
+- Next gate: present the exact three PNGs together and stop for explicit visual
+  approval or rejection. Do not commit or publish this art, register it,
+  generate fixtures, add child assets or effects, start the elite role or
+  another family, release, accept drift, or open a PR.
+
+## Approved Preceding Checkpoint - Brasscoil Sentry Published
 
 Start here. Crownmaw Greatblade's complete bounded publication tuple is clean
 and remote verified at `165dd2a82adabcf87f5c26b12a2c55da893e9718`. The

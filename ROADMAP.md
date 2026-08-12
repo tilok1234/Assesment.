@@ -2,7 +2,23 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E09 prototype gate (2026-08-12): the designer replied `lets do next`
+Current EN-E09 specialist gate (2026-08-12): from clean published Brasscoil
+reconciliation `8037f0ccbb042bf041e01ecbe18b1c567567e409`, the designer
+replied `lets do next`, opening exactly one private specialist Clockwork
+Automaton. Aetherdial Surveyor on
+`codex/en-e09-clockwork-automaton-specialist` is one connected baked 24x24
+actor with zero child assets, frozen at digest
+`e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`.
+Its tall verdigris optical-instrument silhouette, fork crown, large dial,
+flywheel, integrated projector, counterweight arm, long legs, and three-prong
+feet are distinct from Brasscoil and Animated Armor. Focused validation passes
+all 80 frames; fast/full validation passes in 57.7s/112.9s with public 80/259
+and all 232 fixtures protected. It is unapproved and
+uncommitted; only exact-packet visual approval is open. Registration, fixtures,
+child assets, effects, the elite role, later families, release, accepted drift,
+and a PR stay closed.
+
+Approved preceding EN-E09 common gate (2026-08-12): the designer replied `lets do next`
 from clean published Crownmaw reconciliation
 `165dd2a82adabcf87f5c26b12a2c55da893e9718` and selected one deterministic
 connected 24x24 Clockwork Automaton actor with zero child assets. Private common

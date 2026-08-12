@@ -5101,7 +5101,7 @@ it with incidental per-frame offsets.
 
 ### EN-E09 - Arcane constructs
 
-- Status: `private prototype approved; publication reconciliation in progress`
+- Status: `private specialist prototype awaiting visual approval`
 - Families: Clockwork Automaton, Living Book, Runic Idol, Crystal Beast
 - Priority-first: Clockwork Automaton, Living Book
 
@@ -5129,6 +5129,22 @@ reconciliation completes the bounded publication tuple. Inspect the live
 roadmap and stop at its next explicit decision;
 registration, fixtures, child/state assets, effects, later Clockwork roles or
 EN-E09 families, release, accepted drift, and a PR remain closed.
+
+Clockwork Automaton specialist gate (2026-08-12): from clean published
+Brasscoil reconciliation `8037f0ccbb042bf041e01ecbe18b1c567567e409`, the
+designer replied `lets do next`, opening exactly one private specialist under
+the selected baked-single-actor topology. Aetherdial Surveyor is a tall narrow
+verdigris precision machine with connected tuning-fork crown, oversized
+cyclopean dial, exposed chest flywheel, integrated coil-projector forearm,
+counterweight arm, long piston legs, and three-prong feet. It has zero child
+assets, and no projectile, spark, glow, detached part, or runtime offset is
+baked. Candidate digest
+`e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
+passes the focused 80-frame gate and differs from Brasscoil, Runeforge, and
+Fallen Knight in every pixel frame and alpha silhouette. This is private
+unapproved evidence only. Stop for exact-packet visual approval; registration,
+fixtures, child/state assets, effects, the elite role, later EN-E09 families,
+release, accepted drift, and a PR remain closed.
 
 Wave 2 exit gate: transparency and detached-part policy are documented, each
 family remains legible with Effects Off, and EN-E08's child/state contract is

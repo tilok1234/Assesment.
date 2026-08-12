@@ -131,22 +131,18 @@ explicit hold instruction overrides this default.
 
 ## Current integration status
 
-The current private visual gate is EN-E09 common Clockwork Automaton Brasscoil
-Sentry on `codex/en-e09-clockwork-automaton-architecture`, based on clean
-published Crownmaw reconciliation
-`165dd2a82adabcf87f5c26b12a2c55da893e9718`. The designer selected one
-deterministic connected 24x24 actor with zero child assets. The squat brass
-boiler, single-lens pod, side gear, turquoise coil, piston arms, broad feet, and
-rear winding key are baked actor pixels; sparks remain Effects Off. The exact
-candidate digest is
-`2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`;
-the focused 80-frame gate passes. The designer approved the exact packet;
-accepted implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` and approval
-record `08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` are remote verified.
-Initial published handoff `81bdac90133b9382dfefb5e87e19349da33774a1` is also
-remote verified; this reconciliation completes the bounded publication tuple.
-It remains private, unregistered, fixture-free, and effect-free. Registration,
-fixtures, child assets, effects,
+The current private visual gate is EN-E09 specialist Clockwork Automaton
+Aetherdial Surveyor on `codex/en-e09-clockwork-automaton-specialist`, based on
+clean published Brasscoil reconciliation
+`8037f0ccbb042bf041e01ecbe18b1c567567e409`. It reuses the selected
+deterministic connected 24x24 actor topology with zero child assets. Its tall
+verdigris chassis, fork crown, cyclopean dial, flywheel, integrated projector,
+counterweight arm, long legs, and three-prong feet are baked actor pixels;
+projectiles and sparks remain Effects Off. Exact candidate digest
+`e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
+passes the focused 80-frame gate. It is private, unapproved, uncommitted,
+unregistered, fixture-free, and effect-free. Only exact-packet visual approval
+or rejection is open; registration, fixtures, child assets, effects,
 later roles/families, release, accepted drift, and a PR remain closed.
 
 The EN-F00 Enemy-expansion foundation is accepted at isolated checkpoint

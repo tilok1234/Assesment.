@@ -107,29 +107,29 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: common Clockwork Automaton Brasscoil Sentry on
-  `codex/en-e09-clockwork-automaton-architecture`, based exactly on clean
-  published Crownmaw reconciliation
-  `165dd2a82adabcf87f5c26b12a2c55da893e9718`, is frozen at digest
-  `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`.
-  The designer selected one connected deterministic 24x24 actor with zero child
-  assets. Its worn-brass boiler, single-lens head pod, side gear, turquoise
-  coil, piston arms, broad feet, and rear winding key are baked body pixels;
-  sparks remain Effects Off. The focused gate passes across all 80 frames;
-  fast/full validation passes in 57.3s/107.1s before approval metadata;
-  approval-local focused/fast/full gates also pass, with the full suite at
-  123.2s and public 80/259 plus all 232 fixtures exact. The exact five review
-  hashes are frozen. The designer replied
-  `approved, and you can commit and push everything we approved`; accepted
-  implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` and approval
-  record `08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` are remote verified.
-  Initial published handoff `81bdac90133b9382dfefb5e87e19349da33774a1` is
-  also remote verified; this reconciliation completes the bounded publication
-  tuple. It remains private, unregistered, fixture-free, and effect-free.
-  Inspect the live roadmap and stop at its next explicit decision. Do not register, generate fixtures,
-  add child/state assets or effects, begin another role/family, release, accept
+- Current private art gate: specialist Clockwork Automaton Aetherdial Surveyor
+  on `codex/en-e09-clockwork-automaton-specialist`, based exactly on clean
+  published Brasscoil reconciliation
+  `8037f0ccbb042bf041e01ecbe18b1c567567e409`, is frozen at digest
+  `e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`.
+  It reuses the selected connected deterministic 24x24 actor topology with zero
+  child assets. Its fork crown, cyclopean dial, verdigris chassis, flywheel,
+  integrated projector, counterweight arm, long piston legs, and three-prong
+  feet are baked body pixels; projectiles and sparks remain Effects Off. The
+  focused gate passes across all 80 frames, with all candidate pixels and alpha
+  silhouettes distinct from Brasscoil, Runeforge, and Fallen Knight. Fast/full
+  validation passes in 57.7s/112.9s with public 80/259 and all 232 fixtures
+  exact. The exact five review hashes are frozen. It is private, unapproved, uncommitted,
+  unregistered, fixture-free, and effect-free. Stop for visual approval of the
+  exact three PNGs. Do not publish, register, generate fixtures, add child/state
+  assets or effects, begin the elite role or another family, release, accept
   drift, or open a PR.
-- Approved preceding private art gate: elite Living Weapon Crownmaw Greatblade on
+- Approved preceding private art gate: common Clockwork Automaton Brasscoil
+  Sentry on `codex/en-e09-clockwork-automaton-architecture` is published at
+  reconciliation `8037f0ccbb042bf041e01ecbe18b1c567567e409`, frozen at digest
+  `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`,
+  and remains private, unregistered, fixture-free, effect-free, and zero-child.
+- Approved earlier private art gate: elite Living Weapon Crownmaw Greatblade on
   `codex/en-e08-living-weapon-elite`, based exactly on clean published Vowcoil
   reconciliation `7bdb09e95d47c6213e2387124c305f78b0b486d1`, is frozen at digest
   `a7f88e5ebf4656f7dbea55ea5a62ad23a530b0c4bf573f9750240cf605a6fa44`.

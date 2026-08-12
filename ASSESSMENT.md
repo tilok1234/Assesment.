@@ -9,16 +9,13 @@
 > wording below describe the 2026-08-08 assessment point unless a later update
 > is explicitly noted; they are evidence, not the current handoff.
 
-> **Current gate update (2026-08-12):** EN-E09 common Clockwork Automaton
-> Brasscoil Sentry is private and visually approved on
-> `codex/en-e09-clockwork-automaton-architecture`. The designer selected one
-> deterministic connected 24x24 baked actor with zero child assets. Digest
-> `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`
-> passes its focused 80-frame gate. Accepted implementation
-> `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` and approval record
-> `08cf45c5ecd9807ebf399b00cb8bfea54fcffc52` plus initial published handoff
-> `81bdac90133b9382dfefb5e87e19349da33774a1` are remote verified; the bounded
-> publication tuple is complete;
+> **Current gate update (2026-08-12):** EN-E09 specialist Clockwork Automaton
+> Aetherdial Surveyor is private, unapproved, and uncommitted on
+> `codex/en-e09-clockwork-automaton-specialist`. The designer selected one
+> deterministic connected 24x24 baked actor topology with zero child assets;
+> Aetherdial reuses it as a tall optical instrument. Digest
+> `e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
+> passes its focused 80-frame gate. Only exact-packet visual approval is open;
 > registration, fixtures, effects, child/state assets, later roles/families,
 > release, accepted drift, and a PR remain closed. See `HANDOFF.md` for exact
 > artifact hashes and continuation instructions.
