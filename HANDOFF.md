@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Aetherdial Surveyor Approval Publication
+## Immediate Continuation Checkpoint - Aetherdial Surveyor Published
 
 Start here. Brasscoil Sentry's bounded publication tuple is clean and remote
 verified at `8037f0ccbb042bf041e01ecbe18b1c567567e409`. The designer
@@ -32,8 +32,10 @@ Automaton under the selected baked-single-actor topology. Aetherdial Surveyor
 is implemented on `codex/en-e09-clockwork-automaton-specialist`. The designer
 replied `approved`; accepted implementation
 `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` and approval record
-`ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` are remote verified. It remains
-private, unregistered, effect-free, and fixture-free.
+`ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` are remote verified. Initial
+published handoff `edbbbca4021941488c5daece20aa6a65afae7f7f` is also remote
+verified; this reconciliation completes the bounded publication tuple. It
+remains private, unregistered, effect-free, and fixture-free.
 
 - Identity: tall verdigris-and-brass precision machine with a connected
   tuning-fork crown, oversized cyclopean dial, narrow iron spine, exposed chest
@@ -69,9 +71,8 @@ private, unregistered, effect-free, and fixture-free.
 - Approval: the exact three frozen PNGs were open together in Aseprite when the
   designer replied `approved`, accepting this digest and five hashes only.
   Standing permission opens only its bounded handoff reconciliation.
-- Next gate: publish the initial handoff, complete its final reconciliation,
-  inspect the live roadmap, and
-  stop at its next explicit decision. Do not register, generate fixtures, add
+- Next gate: inspect the live roadmap and stop at its next explicit decision.
+  Do not register, generate fixtures, add
   child assets or effects, start the elite role or another family, release,
   accept drift, or open a PR.
 

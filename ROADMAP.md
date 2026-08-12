@@ -17,7 +17,9 @@ and all 232 fixtures protected before approval metadata; approval-local
 focused/fast/full gates also pass, with the full suite at 106.3s. The designer approved the exact packet;
 accepted implementation `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote
 verified. Approval record `ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` is also
-remote verified. Only the initial published handoff and final reconciliation are open.
+remote verified. Initial published handoff
+`edbbbca4021941488c5daece20aa6a65afae7f7f` is also remote verified; this
+reconciliation completes the bounded publication tuple.
 Registration, fixtures,
 child assets, effects, the elite role, later families, release, accepted drift,
 and a PR stay closed.
