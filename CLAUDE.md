@@ -124,16 +124,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   range is 187-216. The exact three PNG plus two GIF hashes are frozen;
   deterministic regeneration passes. Pre-approval `check:fast`/full gates pass
   in 60.9s/113.5s and approval-local gates pass in 60.4s/110.1s with public
-  92/294 and all 232 fixtures unchanged. Raw,
+  92/294 and all 232 fixtures unchanged. Final published-state full validation
+  passes in 112.7s with the same protected boundary. Raw,
   Complete B + Form, and comparison PNGs were open together in Aseprite as
   sprites 7, 11, and active 15 when the designer replied `approved but for nex
   to ne please also post image of it outlined`. Accepted implementation
   `e0e5e36bd6769a334f06e72db3de67c836021c46` records only the exact frozen
   packet. The second clause requires the next separately authorized sprite
   review to also post a distinct outlined image; it does not authorize another
-  sprite or outline registration. The implementation and approval record
-  `eab51c5045a2f8c3f211476e1de640d64940dbc5` are remote verified; only the
-  initial published handoff and final reconciliation remain.
+  sprite or outline registration. The implementation, approval record
+  `eab51c5045a2f8c3f211476e1de640d64940dbc5`, and initial published handoff
+  `b639080386473c44504bc5b7adab527e82fc4fdd` are remote verified; this
+  reconciliation completes the bounded publication tuple.
   Registration,
   fixtures, effects, child assets, later Hyena roles, Ram, Stag, Mammoth,
   Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted

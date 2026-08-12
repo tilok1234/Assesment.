@@ -27,14 +27,16 @@ Focused validation passes all connected, bounded, grounded, four-paw, identity,
 alias, mirror, and three-way distinction gates at opaque range 187-216.
 Deterministic review regeneration passes; pre-approval fast/full gates pass in
 60.9s/113.5s and approval-local gates in 60.4s/110.1s with public 92/294 and
-all 232 fixtures unchanged. The exact raw,
+all 232 fixtures unchanged. Final published-state full validation passes in
+112.7s with the same boundary. The exact raw,
 Complete B + Form, and comparison PNGs were open together in Aseprite as sprites
 7, 11, and active 15 when the designer replied `approved but for nex to ne
 please also post image of it outlined`. Accepted implementation
 `e0e5e36bd6769a334f06e72db3de67c836021c46` records only the exact frozen
-packet. The implementation and approval record
-`eab51c5045a2f8c3f211476e1de640d64940dbc5` are remote verified; only the
-initial published handoff and final reconciliation remain. No next sprite is
+packet. The implementation, approval record
+`eab51c5045a2f8c3f211476e1de640d64940dbc5`, and initial published handoff
+`b639080386473c44504bc5b7adab527e82fc4fdd` are remote verified; this
+reconciliation completes the bounded publication tuple. No next sprite is
 authorized; if one is separately opened, its review must also post a distinct
 outlined image without implying outline registration. Registration, fixtures,
 effects, child assets, later Hyena roles, Ram, Stag, Mammoth, Rhino, Rhino Boss

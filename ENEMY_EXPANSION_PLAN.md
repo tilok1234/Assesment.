@@ -30,16 +30,18 @@
   Courser and public Dire Wolf and Marsh Crocodile. Opaque range is 187-216.
   Deterministic review regeneration passes; pre-approval fast/full gates pass
   in 60.9s/113.5s and approval-local gates in 60.4s/110.1s with public 92/294
-  and all 232 fixtures exact. The exact raw,
+  and all 232 fixtures exact. Final published-state full validation passes in
+  112.7s with the same protected boundary. The exact raw,
   Complete B + Form, and comparison PNGs were open together in Aseprite as
   sprites 7, 11, and active 15 when the designer replied `approved but for nex
   to ne please also post image of it outlined`. Accepted implementation
   `e0e5e36bd6769a334f06e72db3de67c836021c46` records only that frozen packet.
   The second clause requires the next separately authorized sprite review to
   also post a distinct outlined image; it neither opens another sprite nor
-  authorizes outline registration. The implementation and approval record
-  `eab51c5045a2f8c3f211476e1de640d64940dbc5` are remote verified; only the
-  initial published handoff and final reconciliation remain.
+  authorizes outline registration. The implementation, approval record
+  `eab51c5045a2f8c3f211476e1de640d64940dbc5`, and initial published handoff
+  `b639080386473c44504bc5b7adab527e82fc4fdd` are remote verified; this
+  reconciliation completes the bounded publication tuple.
   Registration,
   fixtures, effects, child assets, later Hyena roles, Ram, Stag, Mammoth,
   Rhino, Rhino Boss work, the deferred Runic Idol decision, release, accepted
@@ -5350,7 +5352,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common published; handoff reconciliation active; remaining families queued`
+- Status: `Hyena common approved and published; no next sprite authorized; remaining families queued`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 

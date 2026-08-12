@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Duneback Scavenger Approval Publication
+## Immediate Continuation Checkpoint - Duneback Scavenger Published And Reconciled
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-hyena-common`. It is based exactly on clean published
@@ -55,7 +55,8 @@ gate.
    Crocodile. Opaque range is 187-216. Deterministic review regeneration
    reproduces all frozen hashes. Pre-approval `check:fast`/full gates pass in
    60.9s/113.5s and approval-local gates pass in 60.4s/110.1s with public
-   92/294 and all 232 fixtures unchanged.
+   92/294 and all 232 fixtures unchanged. Final published-state full validation
+   passes in 112.7s with the same protected boundary.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-hyena-duneback-scavenger/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-hyena-duneback-scavenger` and run
@@ -66,9 +67,10 @@ gate.
    the designer replied `approved but for nex to ne please also post image of
    it outlined`. Accepted implementation
    `e0e5e36bd6769a334f06e72db3de67c836021c46` records only the frozen packet.
-   The implementation and approval record
-   `eab51c5045a2f8c3f211476e1de640d64940dbc5` are remote verified. Only the
-   initial published handoff and final reconciliation remain open.
+   The implementation, approval record
+   `eab51c5045a2f8c3f211476e1de640d64940dbc5`, and initial published handoff
+   `b639080386473c44504bc5b7adab527e82fc4fdd` are remote verified; this
+   reconciliation completes the bounded publication tuple.
 8. Registration, fixtures, effects, child assets, specialist or elite Hyena,
    Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the deferred
    Runic Idol topology decision, release, accepted drift, and a PR remain
