@@ -142,8 +142,9 @@ projectiles and sparks remain Effects Off. Exact candidate digest
 `e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
 passes the focused 80-frame gate. The designer approved the exact packet;
 accepted implementation `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote
-verified. It remains private, unregistered, fixture-free, and effect-free. Only
-its approval record and bounded handoff reconciliation are open; registration,
+verified. Approval record `ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` is also
+remote verified. It remains private, unregistered, fixture-free, and effect-free.
+Only its initial published handoff and final reconciliation are open; registration,
 fixtures, child assets, effects,
 later roles/families, release, accepted drift, and a PR remain closed.
 

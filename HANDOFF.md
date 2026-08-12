@@ -31,7 +31,8 @@ replied `lets do next`, opening exactly one private specialist Clockwork
 Automaton under the selected baked-single-actor topology. Aetherdial Surveyor
 is implemented on `codex/en-e09-clockwork-automaton-specialist`. The designer
 replied `approved`; accepted implementation
-`f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote verified. It remains
+`f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` and approval record
+`ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` are remote verified. It remains
 private, unregistered, effect-free, and fixture-free.
 
 - Identity: tall verdigris-and-brass precision machine with a connected
@@ -67,9 +68,9 @@ private, unregistered, effect-free, and fixture-free.
   sheets exact.
 - Approval: the exact three frozen PNGs were open together in Aseprite when the
   designer replied `approved`, accepting this digest and five hashes only.
-  Standing permission opens only its approval record, branch push, and bounded
-  handoff reconciliation.
-- Next gate: complete that publication tuple, inspect the live roadmap, and
+  Standing permission opens only its bounded handoff reconciliation.
+- Next gate: publish the initial handoff, complete its final reconciliation,
+  inspect the live roadmap, and
   stop at its next explicit decision. Do not register, generate fixtures, add
   child assets or effects, start the elite role or another family, release,
   accept drift, or open a PR.

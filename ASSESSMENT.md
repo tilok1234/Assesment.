@@ -17,7 +17,8 @@
 > `e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
 > passes its focused 80-frame gate. Accepted implementation
 > `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote verified; only its
-> approval record and bounded handoff reconciliation remain open;
+> approval record `ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` is also remote
+> verified; only the initial published handoff and final reconciliation remain open;
 > registration, fixtures, effects, child/state assets, later roles/families,
 > release, accepted drift, and a PR remain closed. See `HANDOFF.md` for exact
 > artifact hashes and continuation instructions.

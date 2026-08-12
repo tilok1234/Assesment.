@@ -17,7 +17,8 @@ renderer, exporter, validator, or frame contract. Digest
 `e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627`
 is visually approved at accepted implementation
 `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16`, which is remote verified.
-Only its approval record and bounded handoff reconciliation remain open;
+Approval record `ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` is also remote
+verified; only the initial published handoff and final reconciliation remain open;
 registration, fixtures, child/state assets, effects, the elite role,
 later families, release, accepted drift, and a PR remain closed.
 

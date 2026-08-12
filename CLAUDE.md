@@ -122,9 +122,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   focused/fast/full gates also pass, with the full suite at 106.3s and public
   80/259 plus all 232 fixtures exact. The exact five review hashes are frozen. The designer replied
   `approved`; accepted implementation
-  `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` is remote verified. It remains
+  `f3c06649af346dc8a84edcff7c5cdfd8c0bddb16` and approval record
+  `ad517df4f2ca4c5c897f2ec8a0d50e453b32365d` are remote verified. It remains
   private, unregistered, fixture-free, and effect-free. Publish only its
-  approval record and handoff reconciliation. Do not register, generate fixtures, add child/state
+  initial handoff and final reconciliation. Do not register, generate fixtures, add child/state
   assets or effects, begin the elite role or another family, release, accept
   drift, or open a PR.
 - Approved preceding private art gate: common Clockwork Automaton Brasscoil

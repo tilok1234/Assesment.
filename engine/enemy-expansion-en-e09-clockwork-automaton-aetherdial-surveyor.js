@@ -116,10 +116,10 @@ export const EN_E09_AETHERDIAL_SURVEYOR_GATE = deepFreeze({
   approvedImplementation: 'f3c06649af346dc8a84edcff7c5cdfd8c0bddb16',
   publicationAuthorizedOn: '2026-08-12',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
-  publishedImplementation: null,
-  publishedApprovalRecord: null,
+  publishedImplementation: 'f3c06649af346dc8a84edcff7c5cdfd8c0bddb16',
+  publishedApprovalRecord: 'ad517df4f2ca4c5c897f2ec8a0d50e453b32365d',
   initialPublishedHandoff: null,
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E09_BRASSCOIL_SENTRY_GATE.id,
     artifactSha256: EN_E09_BRASSCOIL_SENTRY_GATE.artifactSha256,
@@ -204,7 +204,7 @@ export const EN_E09_AETHERDIAL_SURVEYOR_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'The exact Aetherdial Surveyor packet is visually approved at implementation f3c06649af346dc8a84edcff7c5cdfd8c0bddb16. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate. Registration, fixtures, child/state assets, effects, the elite role, later families, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Aetherdial Surveyor implementation f3c06649af346dc8a84edcff7c5cdfd8c0bddb16 and approval record ad517df4f2ca4c5c897f2ec8a0d50e453b32365d are remote verified. Only the initial published handoff and final reconciliation remain open. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate. Registration, fixtures, child/state assets, effects, the elite role, later families, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E09_AETHERDIAL_SURVEYOR_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

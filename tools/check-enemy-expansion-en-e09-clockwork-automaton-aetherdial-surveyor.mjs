@@ -140,10 +140,10 @@ check(
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.approvalEvidence.includes('e42453d23d110a5f4328a67b2beb6a83cb3e6a3ca3f51b2e891a82efd18f3627')
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.approvedImplementation === 'f3c06649af346dc8a84edcff7c5cdfd8c0bddb16'
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.publicationAuthorizedOn === '2026-08-12'
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.publishedImplementation === null
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.publishedApprovalRecord === null
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.publishedImplementation === 'f3c06649af346dc8a84edcff7c5cdfd8c0bddb16'
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.publishedApprovalRecord === 'ad517df4f2ca4c5c897f2ec8a0d50e453b32365d'
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.initialPublishedHandoff === null
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.publicationState === 'approved-not-published'
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.publicationAuthorizationEvidence.includes('pull request'),
   'Aetherdial Surveyor authorization or unpublished gate drifted',
@@ -187,8 +187,9 @@ check(
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.animationContract.includes('four tall piston strides')
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.animationContract.includes('body-owned recoil with no projectile pixels')
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.animationContract.includes('Cast aliases Attack exactly')
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('visually approved at implementation f3c06649af346dc8a84edcff7c5cdfd8c0bddb16')
-    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('implementation f3c06649af346dc8a84edcff7c5cdfd8c0bddb16')
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('approval record ad517df4f2ca4c5c897f2ec8a0d50e453b32365d')
+    && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E09_AETHERDIAL_SURVEYOR_GATE.nextGate.includes('inspect the live roadmap'),
   'full-suite, motion, or stop-gate contract drifted',
 );
