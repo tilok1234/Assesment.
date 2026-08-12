@@ -129,20 +129,21 @@ check(
   'EN-E09 baked single-actor architecture decision drifted',
 );
 check(
-  EN_E09_BRASSCOIL_SENTRY_GATE.status === 'implemented-awaiting-visual-approval'
+  EN_E09_BRASSCOIL_SENTRY_GATE.status === 'approved'
     && EN_E09_BRASSCOIL_SENTRY_GATE.baseCheckpoint === '165dd2a82adabcf87f5c26b12a2c55da893e9718'
     && EN_E09_BRASSCOIL_SENTRY_GATE.authorizedOn === '2026-08-12'
     && EN_E09_BRASSCOIL_SENTRY_GATE.authorizationEvidence.includes('then replied: lets do next')
     && EN_E09_BRASSCOIL_SENTRY_GATE.authorizationEvidence.includes('only one private common Brasscoil Sentry')
     && EN_E09_BRASSCOIL_SENTRY_GATE.architectureDecision === EN_E09_CLOCKWORK_AUTOMATON_TOPOLOGY_DECISION.id
-    && EN_E09_BRASSCOIL_SENTRY_GATE.approvedOn === null
-    && EN_E09_BRASSCOIL_SENTRY_GATE.approvalEvidence === null
-    && EN_E09_BRASSCOIL_SENTRY_GATE.approvedImplementation === null
+    && EN_E09_BRASSCOIL_SENTRY_GATE.approvedOn === '2026-08-12'
+    && EN_E09_BRASSCOIL_SENTRY_GATE.approvalEvidence.includes('designer replied: approved, and you can commit and push everything we approved')
+    && EN_E09_BRASSCOIL_SENTRY_GATE.approvalEvidence.includes('2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd')
+    && EN_E09_BRASSCOIL_SENTRY_GATE.approvedImplementation === 'b109e3d8ba81d444edc3c7ce7e8a479eb37a183e'
     && EN_E09_BRASSCOIL_SENTRY_GATE.publicationAuthorizedOn === '2026-08-12'
     && EN_E09_BRASSCOIL_SENTRY_GATE.publishedImplementation === null
     && EN_E09_BRASSCOIL_SENTRY_GATE.publishedApprovalRecord === null
     && EN_E09_BRASSCOIL_SENTRY_GATE.initialPublishedHandoff === null
-    && EN_E09_BRASSCOIL_SENTRY_GATE.publicationState === 'not-approved'
+    && EN_E09_BRASSCOIL_SENTRY_GATE.publicationState === 'approved-not-published'
     && EN_E09_BRASSCOIL_SENTRY_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E09_BRASSCOIL_SENTRY_GATE.publicationAuthorizationEvidence.includes('pull request'),
   'Brasscoil Sentry authorization or unpublished gate drifted',
@@ -186,9 +187,9 @@ check(
     && EN_E09_BRASSCOIL_SENTRY_GATE.animationContract.includes('four weighted piston steps')
     && EN_E09_BRASSCOIL_SENTRY_GATE.animationContract.includes('body-owned piston punch')
     && EN_E09_BRASSCOIL_SENTRY_GATE.animationContract.includes('Cast aliases Attack exactly')
-    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('explicit visual approval or rejection')
-    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('five frozen review hashes')
-    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('Do not commit, publish, register'),
+    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('visually approved at implementation b109e3d8ba81d444edc3c7ce7e8a479eb37a183e')
+    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('approval record, branch push, and handoff reconciliation')
+    && EN_E09_BRASSCOIL_SENTRY_GATE.nextGate.includes('inspect the live roadmap'),
   'full-suite, motion, or stop-gate contract drifted',
 );
 check(

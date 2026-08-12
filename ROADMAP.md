@@ -10,12 +10,15 @@ Brasscoil Sentry on `codex/en-e09-clockwork-automaton-architecture` is frozen at
 digest `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`.
 Its squat boiler body, lens pod, side gear, coil, piston arms, broad feet, and
 rear winding key are baked body pixels; sparks remain Effects Off. The focused
-80-frame gate passes and public 80/259 plus all fixtures remain protected. It is
-unapproved and uncommitted. The only open decision is visual approval or
-rejection of the exact frozen packet; registration, fixtures, child assets,
+80-frame gate passes and public 80/259 plus all fixtures remain protected. The
+designer approved the exact packet; accepted implementation
+`b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` is remote verified. Only its
+approval record and bounded handoff reconciliation are open; registration,
+fixtures, child assets,
 effects, later roles/families, release, accepted drift, and a PR stay closed.
 Fast/full validation passes in 57.3s/107.1s with public 80/259 and all 232
-fixture sheets exact.
+fixture sheets exact before approval metadata; approval-local focused/fast/full
+gates also pass, with the full suite at 123.2s.
 
 ## Guiding decision
 

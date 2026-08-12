@@ -23,15 +23,17 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Brasscoil Sentry Visual Gate
+## Immediate Continuation Checkpoint - Brasscoil Sentry Approval Publication
 
 Start here. Crownmaw Greatblade's complete bounded publication tuple is clean
 and remote verified at `165dd2a82adabcf87f5c26b12a2c55da893e9718`. The
 designer replied `lets do next`, selecting the recommended content-only EN-E09
 topology: one deterministic connected 24x24 Clockwork Automaton actor with zero
 child assets. One private common Brasscoil Sentry prototype is implemented on
-`codex/en-e09-clockwork-automaton-architecture`; it is not approved, committed,
-published, registered, or fixture-backed.
+`codex/en-e09-clockwork-automaton-architecture`. The designer replied
+`approved, and you can commit and push everything we approved`; accepted
+implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` is remote
+verified. It remains private, unregistered, effect-free, and fixture-free.
 
 - Identity: squat worn-brass boiler body, small single-lens head pod, dark-iron
   joints, connected side gear, turquoise boiler coil, piston arms, broad plated
@@ -54,11 +56,16 @@ published, registered, or fixture-backed.
   and 54/54 readable lens views; opaque range 206-253. Complete B adds 7,936
   pixels and Form changes 9,264.
 - Broad validation: `check:fast` passes in 57.3s and full `check` passes in
-  107.1s with public 80/259 and all 232 fixture sheets exact.
-- Next gate: present the exact three PNGs together and stop for explicit visual
-  approval or rejection. Do not commit or publish this art, register it,
-  generate fixtures, add child assets or effects, start another role/family,
-  release, accept drift, or open a PR without a new explicit decision.
+  107.1s before approval metadata. Approval-local focused/fast/full gates also
+  pass, with the full suite at 123.2s and public 80/259 plus all 232 fixture
+  sheets exact.
+- Approval: the exact three frozen PNGs were open together in Aseprite when the
+  designer approved this digest and five hashes. Standing permission opens only
+  its approval record, branch push, and bounded handoff reconciliation.
+- Next gate: complete that publication tuple, inspect the live roadmap, and
+  stop at its next explicit decision. Do not register, generate fixtures, add
+  child assets or effects, start another role/family, release, accept drift, or
+  open a PR without a new explicit decision.
 
 ## Approved Preceding Checkpoint - Crownmaw Greatblade Published
 

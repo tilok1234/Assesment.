@@ -140,9 +140,11 @@ boiler, single-lens pod, side gear, turquoise coil, piston arms, broad feet, and
 rear winding key are baked actor pixels; sparks remain Effects Off. The exact
 candidate digest is
 `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`;
-the focused 80-frame gate passes. It is private, unapproved, uncommitted,
-unregistered, fixture-free, and effect-free. Only visual approval or rejection
-of the exact packet is open; registration, fixtures, child assets, effects,
+the focused 80-frame gate passes. The designer approved the exact packet;
+accepted implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` is remote
+verified. It remains private, unregistered, fixture-free, and effect-free. Only
+its approval record and bounded handoff reconciliation are open; registration,
+fixtures, child assets, effects,
 later roles/families, release, accepted drift, and a PR remain closed.
 
 The EN-F00 Enemy-expansion foundation is accepted at isolated checkpoint

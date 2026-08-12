@@ -5101,7 +5101,7 @@ it with incidental per-frame offsets.
 
 ### EN-E09 - Arcane constructs
 
-- Status: `private prototype awaiting visual approval`
+- Status: `private prototype approved; publication reconciliation in progress`
 - Families: Clockwork Automaton, Living Book, Runic Idol, Crystal Beast
 - Priority-first: Clockwork Automaton, Living Book
 
@@ -5120,7 +5120,9 @@ Effects Off. Candidate digest
 `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`
 passes the focused 80-frame gate and is distinct from Fallen Knight,
 Runeforge, and Crownmaw in every pixel frame and alpha silhouette. This is
-private unapproved evidence only. Stop for exact-packet visual approval;
+visually approved exactly at implementation
+`b109e3d8ba81d444edc3c7ce7e8a479eb37a183e`, which is remote verified. Only
+the approval record and bounded handoff reconciliation remain open;
 registration, fixtures, child/state assets, effects, later Clockwork roles or
 EN-E09 families, release, accepted drift, and a PR remain closed.
 

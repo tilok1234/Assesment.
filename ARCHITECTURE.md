@@ -15,8 +15,10 @@ Effects Off. The private module and its review/check tools do not enter the
 public facade, catalog, selectors, persistence, packs, manifest, fixtures,
 shared renderer, exporter, validator, or frame contract. Digest
 `2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd`
-is frozen but unapproved and uncommitted; visual approval is the only open
-gate. Detached gears, runtime offsets, child/state exports, registration,
+is visually approved at implementation
+`b109e3d8ba81d444edc3c7ce7e8a479eb37a183e`; its approval record and remote
+reconciliation are the only open publication steps. Detached gears, runtime
+offsets, child/state exports, registration,
 fixtures, effects, later roles/families, release, accepted drift, and a PR need
 separate authorization.
 

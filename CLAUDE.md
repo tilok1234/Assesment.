@@ -116,10 +116,14 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   assets. Its worn-brass boiler, single-lens head pod, side gear, turquoise
   coil, piston arms, broad feet, and rear winding key are baked body pixels;
   sparks remain Effects Off. The focused gate passes across all 80 frames;
-  fast/full validation passes in 57.3s/107.1s with public 80/259 and all 232
-  fixtures exact. The exact five review hashes are frozen. It is private, unapproved,
-  uncommitted, unregistered, fixture-free, and effect-free. Stop for visual
-  approval of the exact three PNGs. Do not publish, register, generate fixtures,
+  fast/full validation passes in 57.3s/107.1s before approval metadata;
+  approval-local focused/fast/full gates also pass, with the full suite at
+  123.2s and public 80/259 plus all 232 fixtures exact. The exact five review
+  hashes are frozen. The designer replied
+  `approved, and you can commit and push everything we approved`; accepted
+  implementation `b109e3d8ba81d444edc3c7ce7e8a479eb37a183e` is remote
+  verified. It remains private, unregistered, fixture-free, and effect-free.
+  Publish only its approval record and handoff reconciliation. Do not register, generate fixtures,
   add child/state assets or effects, begin another role/family, release, accept
   drift, or open a PR.
 - Approved preceding private art gate: elite Living Weapon Crownmaw Greatblade on

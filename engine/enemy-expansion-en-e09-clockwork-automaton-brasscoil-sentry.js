@@ -126,20 +126,20 @@ export const EN_E09_BRASSCOIL_SENTRY_DATA = deepFreeze({
 
 export const EN_E09_BRASSCOIL_SENTRY_GATE = deepFreeze({
   id: 'en-e09-clockwork-automaton-brasscoil-sentry-full-v1',
-  status: 'implemented-awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '165dd2a82adabcf87f5c26b12a2c55da893e9718',
   authorizedOn: '2026-08-12',
   authorizationEvidence: 'After the exact Crownmaw Greatblade publication tuple was clean and remote verified at checkpoint 165dd2a82adabcf87f5c26b12a2c55da893e9718, the designer was shown the recommended deterministic connected 24x24 Clockwork Automaton actor with zero child assets, baked hinges and gears, and sparks kept Effects Off, then replied: lets do next. This selects topology en-e09-clockwork-automaton-baked-single-actor-v1 and authorizes only one private common Brasscoil Sentry 80-frame art candidate. Registration, fixtures, effects, child assets, later roles or families, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E09_CLOCKWORK_AUTOMATON_TOPOLOGY_DECISION.id,
-  approvedOn: null,
-  approvalEvidence: null,
-  approvedImplementation: null,
+  approvedOn: '2026-08-12',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline and Complete B + Form full-suite boards, the approved Runeforge Custodian and Crownmaw Greatblade plus public Fallen Knight Shieldbearer family comparison, and both synchronized GIFs were presented. The three exact frozen PNG paths were open together in Aseprite. The designer replied: approved, and you can commit and push everything we approved. In context this explicitly approves candidate digest 2ce7599bdfeb97ccf99f986f5bf842a5ada7fb4cb3d0605a566c1d1263a111cd and its five frozen review hashes only. The reply authorizes bounded publication under standing permission but does not open registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: 'b109e3d8ba81d444edc3c7ce7e8a479eb37a183e',
   publicationAuthorizedOn: '2026-08-12',
   publicationAuthorizationEvidence: 'The designer said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact artifact or digest. It does not authorize registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, a pull request, or any other unopened gate.',
   publishedImplementation: null,
   publishedApprovalRecord: null,
   initialPublishedHandoff: null,
-  publicationState: 'not-approved',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E08_CROWNMAW_GREATBLADE_GATE.id,
     artifactSha256: EN_E08_CROWNMAW_GREATBLADE_GATE.artifactSha256,
@@ -224,7 +224,7 @@ export const EN_E09_BRASSCOIL_SENTRY_GATE = deepFreeze({
     'release',
     'accepted drift',
   ],
-  nextGate: 'Stop for explicit visual approval or rejection of the exact Brasscoil Sentry digest and five frozen review hashes. Do not commit, publish, register, generate fixtures, add child assets or effects, begin another role or family, release, accept drift, or open a pull request without a new explicit decision.',
+  nextGate: 'The exact Brasscoil Sentry packet is visually approved at implementation b109e3d8ba81d444edc3c7ce7e8a479eb37a183e. Standing publication permission opens only its approval record, branch push, and handoff reconciliation. After this tuple is clean and remote verified, inspect the live roadmap and stop at its next explicit decision gate. Registration, fixtures, child/state assets, effects, later roles or families, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E09_BRASSCOIL_SENTRY_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
