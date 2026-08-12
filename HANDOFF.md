@@ -23,15 +23,32 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Claspbound Primer Visual Gate
+## Immediate Continuation Checkpoint - Approved Enemy Backlog Integrated
 
-Start here. Epochforge Colossus's bounded publication tuple is clean and remote
-verified at `85b29f76cb77ae85a116cec56eeed5b61ea5a375`. The designer
-replied `lets do next`, then approved the recommended Living Book topology: one
-deterministic connected 24x24 baked actor with zero child assets and loose pages
-plus rune effects kept Effects Off. One private common Claspbound Primer is
-implemented on `codex/en-e09-living-book-architecture`. The designer replied
-`approved`, accepting implementation
+Start here. On branch `codex/approved-enemy-assembler-integration-v2`, the
+designer authorized the audited 35-variant private backlog by replying
+`lets do it`. Implementation
+`6808ee93e4a7434173a7502795ed39c032f20530` registers exactly seven later
+EN-E06 variants, fifteen EN-E07 variants, nine EN-E08 variants, and four EN-E09
+variants. It adds 12 public families and extends Dryad with Heartwood Warden,
+moving the immutable public consumer catalog from 80/259 to 92/294 and the
+expansion registry from 23/57 to 35/92. No source renderer, fixture, effect,
+schema, shared renderer interface, exporter contract, or frame contract changed.
+
+The exhaustive v2 gate proves all 35 suites / 2,800 frames pixel-identical to
+their approved private registries at assembler None presentation, exercises
+2,800 None / Complete B / Form presentation triplets, and pins digest
+`e7d8b93e78058ca43b3ba584108bfa9906f33581aed43dbf6ec6819101743f93`.
+The earlier 15-suite / 1,200-frame integration digest remains exact at
+`74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`.
+Focused v2 validation passes in 3.1s; `check:fast` passes in 63.1s and full
+`check` in 115.4s. Public is 92/294, Complete Kit is 92/294/2,231 PNGs, and
+all 232 frozen fixture sheets validate unchanged.
+
+Claspbound Primer was the last source approval before this integration.
+Epochforge Colossus's bounded publication tuple is clean and remote verified at
+`85b29f76cb77ae85a116cec56eeed5b61ea5a375`. The designer approved the
+recommended Living Book topology and exact Claspbound implementation
 `785c851672d427e7b45459716b70fff5834fa0a5` and the exact digest and five
 hashes below only. Approval record
 `7f46874d47572044cba070c0f04f441d88804191` and initial published handoff
@@ -70,15 +87,11 @@ reconciliation completes the bounded publication tuple.
 - Approval: the exact three frozen PNGs were open together in Aseprite when the
   designer replied `approved`. Standing permission opens only this candidate's
   bounded publication tuple.
-- Integration question: the designer asked whether all approved sprites should
-  now enter the assembler. The audited complete private backlog is 35 variants:
-  seven later EN-E06 variants, fifteen EN-E07 variants, nine EN-E08 variants,
-  and four EN-E09 variants. This adds 12 new public families plus Heartwood
-  Warden to existing Dryad, moving public 80/259 to 92/294.
-- Next gate: present that exact bounded integration recommendation and require
-  explicit authorization before registration or fixture work. Do not add child
-  assets or effects, include incomplete candidates, begin another
-  role/family, release, accept drift, or open a PR.
+- Integration authorization: complete. The exact 35-suite content-only gate is
+  implemented and validated; fixture generation was not authorized or run.
+- Next gate: inspect the live roadmap with the designer and choose the next
+  bounded lane. Do not infer fixtures, incomplete candidates, Headless Rider
+  prototypes, bosses, effects, release, accepted drift, a PR, or a new art gate.
 
 ## Approved Preceding Checkpoint - Epochforge Colossus Published
 

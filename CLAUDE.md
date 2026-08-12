@@ -84,30 +84,30 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 - Scope reviews to the changed family/boss; whole-roster review packets are
   release-time only.
 
-## Known state (2026-08-11)
+## Known state (2026-08-12)
 
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
   the frozen asset pack). The stable and consumer expansion registries now
-  contain 23 families / 57 variants across approved EN-E01 through EN-E06, so
-  `engine.PUBLIC_ENEMIES` is 80 families / 259 variants. EN-E03 contributes
+  contain 35 families / 92 variants across approved EN-E01 through EN-E09, so
+  `engine.PUBLIC_ENEMIES` is 92 families / 294 variants. EN-E03 contributes
   only its six completed full suites; Boulder Hurler, Storm-Clan Jarl, and Sun
   Lancer remain internal Idle-only evidence.
-- Current integration gate: `codex/approved-enemy-assembler-integration`
-  registers all eight completed EN-E06 suites, adopts the six completed EN-E03
-  suites, and routes public `zombie/ghoul` through the approved Ghoul Upgrade
-  without adding a duplicate selector family. Focused digest:
-  `74953d1b8531be86bf3f551b15fc70aa4ff142d954763ad4183eb36e06fd6497`.
-  The Complete Kit is 80 families / 259 enemy sheets / 2,196 PNGs; the
-  24-player Complete Pack maximum is 2,219 PNGs. All 232 legacy fixtures stay
-  byte-unchanged, including the intentionally historical Ghoul fixture. Source
-  and documentation are committed and pushed at
-  `90ac018923fbaa9906cd47cdc9ef22f0db77336a`.
+- Current integration gate: `codex/approved-enemy-assembler-integration-v2`
+  at implementation `6808ee93e4a7434173a7502795ed39c032f20530`
+  registers exactly 35 previously private approved suites from later EN-E06,
+  EN-E07, EN-E08, and EN-E09. The new exhaustive 2,800-frame digest is
+  `e7d8b93e78058ca43b3ba584108bfa9906f33581aed43dbf6ec6819101743f93`;
+  the earlier 1,200-frame digest remains exact. The Complete Kit is 92 families
+  / 294 enemy sheets / 2,231 PNGs; the 24-player Complete Pack maximum is 2,254
+  PNGs. All 232 legacy fixtures stay byte-unchanged, including the intentionally
+  historical Ghoul fixture. No source sprite module, schema, effect, exporter,
+  shared renderer interface, or frame contract changed.
 - Publication permission: after explicit approval of an exact artifact or
   digest, the designer authorizes its bounded implementation, approval-record,
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: common Living Book Claspbound Primer on
+- Latest source-art approval: common Living Book Claspbound Primer on
   `codex/en-e09-living-book-architecture`, based exactly on clean published
   Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, is frozen
   at digest `bb00346a7bf5f8157f018b92dfd038373977d8ba9dc372f7affee7e2dc3dedf4`.
@@ -123,9 +123,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `7f46874d47572044cba070c0f04f441d88804191` and initial published handoff
   `02d0e7cc4fc33d1e98c244468643927ab99c1063` are remote verified; the bounded
   publication tuple is complete. The
-  designer's question about integrating approved sprites opens an audit and
-  proposal, not registration or fixtures. Do not add child/state assets or
-  effects, begin another role/family, release, accept drift, or open a PR.
+  designer's later `lets do it` authorized its inclusion in the exact 35-suite
+  integration above. Fixture generation remains closed. Do not add child/state
+  assets or effects, begin another role/family, release, accept drift, or open
+  a PR without a separate gate.
 - Approved preceding private art gate: common Clockwork Automaton Brasscoil
   Sentry on `codex/en-e09-clockwork-automaton-architecture` is published at
   reconciliation `8037f0ccbb042bf041e01ecbe18b1c567567e409`, frozen at digest
