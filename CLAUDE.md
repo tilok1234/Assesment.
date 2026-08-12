@@ -107,17 +107,30 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current actor-topology decision: Scarcrest's `approvedf lets do nex tr`
-  continuation opens only the next EN-E10 Ram topology decision from its clean
-  published tuple. Recommended topology is
-  `baked-single-actor-horned-grounded-quadruped`: one connected grounded 24x24
-  Ram with a compact barrel torso, arched neck, wedge muzzle, two body-owned
-  swept spiral horns, connected forehead wool and chest beard, four separated
-  hooves, short connected tail, body-owned horn bash, and zero child assets.
-  Dust, arcs, impacts, debris, glow, illumination, projectiles, runtime
-  attachments, and detached horns remain external Effects Off. The designer
-  has not selected this topology yet; do not create a Ram branch, name a common
-  candidate, or draw Ram art before explicit approval.
+- Current private art gate: on `codex/en-e10-ram-common`, based exactly on clean
+  published Scarcrest reconciliation
+  `a7d2abbd610dfc6096498d1dce096d652e50596d`, the designer's `approved`
+  selects `baked-single-actor-horned-grounded-quadruped` and authorizes exactly
+  one private common Ram candidate. Stonecurl Grazer is a connected grounded
+  24x24 ash-cream Ram with a compact barrel torso, proud arched neck, charcoal
+  wedge muzzle and lower legs, two body-owned weathered-ochre spiral horns,
+  connected forehead wool, pale chest beard, four separated black-brown
+  hooves, short connected tail, amber eyes, rose ears, and a body-owned horn
+  bash. Its exact 80-frame digest is
+  `79b440290b1c6f503834d44b13d2c9508b34ad48a4ae495c6e957e329095942f`.
+  Focused validation passes all 80 connected, bounded, grounded, four-hoof,
+  quadruped-span, pixel-distinct, and alpha-distinct frames against approved
+  Scarcrest Matriarch and Miremane Courser plus public Dire Wolf; opaque range
+  is 214-243. Exact aliases and mirrors pass. The raw, required distinct
+  Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs
+  are hash-frozen and regenerate deterministically. Pre-approval focused /
+  fast / full gates pass in 0.7s / 67.6s / 123.1s with public 92/294 and all
+  232 fixtures unchanged. The four exact PNGs are open together in Aseprite as
+  sprites 51, 55, 59, and active 63. The outlined PNG is review evidence only,
+  not outline registration. Stop for explicit visual approval. Public
+  registration, fixtures, effects, child assets, specialist or elite Ram,
+  Stag, Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision,
+  release, accepted drift, a PR, and every later gate remain closed.
 - Approved preceding private art checkpoint: on `codex/en-e10-hyena-elite`, based exactly on clean
   published Gloamstripe reconciliation
   `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's `approved lets do
@@ -151,12 +164,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `88d00336ee8ff714f1d978a5cf37d9807bbb4719` and approval record
   `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214`, and initial published handoff
   `e0c9fcce275380d501c7ac393619387e033f3046` are remote verified; this
-  reconciliation completes the bounded publication tuple. The continuation
-  opens only the Ram decision above; it does not select a topology or authorize
-  Ram art. Registration, fixtures, effects, child assets, Stag,
-  Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision, release,
-  accepted drift, a PR, and every later gate remain closed.
-- Current approved private art gate: on `codex/en-e09-living-book-elite`, based exactly
+  reconciliation completes the bounded publication tuple. That continuation
+  opened only the Ram decision; the designer's later separate `approved`
+  selected it and authorized only the Stonecurl Grazer candidate above. It did
+  not authorize publication, registration, fixtures, effects, child assets,
+  later roles or families, release, accepted drift, or a PR.
+- Approved preceding private art gate: on `codex/en-e09-living-book-elite`, based exactly
   on clean published Starlock reconciliation
   `77334139e5fb968b8f8415a3b13e60e6e0b632d0`, the designer's `lets do nex t`
   authorizes exactly one elite Living Book under the approved connected 24x24

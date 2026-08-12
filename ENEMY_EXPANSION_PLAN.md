@@ -15,17 +15,27 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current actor-topology decision (2026-08-13): Scarcrest's `approvedf lets do
-  nex tr` continuation opens only the next EN-E10 Ram topology decision from
-  its clean published tuple. Recommended topology is
-  `baked-single-actor-horned-grounded-quadruped`: one connected grounded 24x24
-  Ram with a compact barrel torso, proud arched neck, wedge muzzle, two
-  body-owned swept spiral horns, connected forehead wool and chest beard, four
-  separated dark hooves, short connected tail, a body-owned horn bash, and zero
-  child assets. Dust, impact arcs, debris, projectiles, glow, illumination,
-  runtime attachments, and detached horns remain external Effects Off. No
-  topology has been selected and no Ram art is authorized; stop for explicit
-  designer approval before creating its branch or candidate.
+- Current private art gate (2026-08-13): from clean published Scarcrest
+  reconciliation `a7d2abbd610dfc6096498d1dce096d652e50596d`, the designer's
+  `approved` selects `baked-single-actor-horned-grounded-quadruped` and
+  authorizes exactly one private common Ram candidate. Stonecurl Grazer on
+  `codex/en-e10-ram-common` is a connected grounded ash-cream Ram with a compact
+  barrel torso, proud arched neck, charcoal wedge muzzle and lower legs,
+  weathered-ochre spiral horns, connected forehead wool, pale chest beard,
+  four separated black-brown hooves, a short connected tail, amber eyes, rose
+  ears, and a body-owned horn bash. Its exact 80-frame digest is
+  `79b440290b1c6f503834d44b13d2c9508b34ad48a4ae495c6e957e329095942f`.
+  Focused validation passes all connected, bounded, grounded, four-hoof,
+  quadruped-span, alias, mirror, and three-way pixel/alpha distinction checks
+  at opaque range 214-243. The raw, required distinct Complete B outlined,
+  Complete B + Form, and comparison PNGs plus two GIFs are hash-frozen and
+  deterministic. Pre-approval focused / fast / full gates pass in 0.7s /
+  67.6s / 123.1s with public 92/294 and all 232 fixtures unchanged. The exact
+  four PNGs are open together in Aseprite as sprites 51, 55, 59, and active 63.
+  The outlined PNG is review evidence only, not outline registration. Stop for
+  explicit visual approval; publication, registration, fixtures, effects,
+  child assets, later Ram roles and families, release, accepted drift, and a PR
+  remain closed.
 
 - Approved preceding private art gate (2026-08-13): from clean published Gloamstripe
   reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's
@@ -55,12 +65,11 @@
   registration. The implementation and approval record
   `0411a1a385ddddf090f0ca3d31c81e0a6f6e6214` and initial published handoff
   `e0c9fcce275380d501c7ac393619387e033f3046` are remote verified; this
-  reconciliation completes the bounded publication tuple. The continuation
-  clause opens only the Ram decision above; it does not
-  select a topology or authorize Ram art. Public registration, fixtures,
-  effects, child assets, Stag, Mammoth, Rhino, Rhino Boss work,
-  the deferred Runic Idol decision, release, accepted drift, a PR, and every
-  later gate remain closed.
+  reconciliation completes the bounded publication tuple. That continuation
+  opened only the Ram decision; the designer's later separate `approved`
+  selected it and authorized only the Stonecurl Grazer candidate above. It did
+  not authorize publication, registration, fixtures, effects, child assets,
+  later roles or families, release, accepted drift, or a PR.
 
 - Approved preceding private art gate (2026-08-13): from clean published Duneback
   reconciliation `153ca132f94cc2360eca2c0366602ff400f871df`, the designer said
@@ -5433,7 +5442,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common, specialist, and elite approved and published; Ram topology awaiting explicit approval; remaining families queued`
+- Status: `Hyena common, specialist, and elite approved and published; Ram common private packet awaiting visual approval; remaining roles and families queued`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5505,16 +5514,32 @@ not change outline registration. The implementation, approval record
 `e0c9fcce275380d501c7ac393619387e033f3046` are remote verified; this
 reconciliation completes the bounded publication tuple.
 
-The continuation opens only the Ram actor-topology decision. Recommended
-`baked-single-actor-horned-grounded-quadruped` keeps one connected grounded
-24x24 actor with a compact barrel torso, arched neck, wedge muzzle, two
-body-owned swept spiral horns, connected forehead wool and chest beard, four
-separated dark hooves, short connected tail, a body-owned horn bash, and zero
-child assets. Dust, arcs, debris, projectiles, glow, illumination, runtime
-attachments, and detached horns remain external Effects Off. No topology is
-selected and no Ram art is authorized before explicit designer approval.
-Registration, fixtures, effects, Stag, Mammoth, Rhino, Rhino Boss work, and all
-later gates remain closed.
+The designer's subsequent `approved` selects
+`baked-single-actor-horned-grounded-quadruped`: one connected grounded 24x24
+actor with a compact barrel torso, arched neck, wedge muzzle, two body-owned
+swept spiral horns, connected forehead wool and chest beard, four separated
+dark hooves, a short connected tail, a body-owned horn bash, and zero child
+assets. It authorizes only one private common Ram candidate from clean
+Scarcrest reconciliation `a7d2abbd610dfc6096498d1dce096d652e50596d`.
+
+Stonecurl Grazer uses ash-cream wool, a charcoal-brown face and lower legs,
+weathered-ochre spiral horns, a pale belly and beard, rose ear interiors, amber
+eyes, and black-brown hooves. Its exact 80-frame digest is
+`79b440290b1c6f503834d44b13d2c9508b34ad48a4ae495c6e957e329095942f`.
+All 80 frames pass connected, one-cell bounded, grounded, four-hoof,
+quadruped-span, alias, mirror, and pixel/alpha distinction checks against
+approved Scarcrest Matriarch and Miremane Courser plus public Dire Wolf at
+opaque range 214-243. The hash-frozen packet includes raw, required distinct
+Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs and
+regenerates deterministically. Pre-approval focused / fast / full gates pass
+in 0.7s / 67.6s / 123.1s with public 92/294 and all 232 fixtures unchanged.
+The four exact PNGs are open together in Aseprite as sprites 51, 55, 59, and
+active 63. The outlined PNG is review evidence only and does not change
+outline registration. Dust, horn arcs, impacts, debris, particles,
+projectiles, glow, illumination, runtime attachments, and detached horns
+remain external Effects Off. Stop for exact visual approval. Publication,
+registration, fixtures, effects, specialist or elite Ram, Stag, Mammoth,
+Rhino, Rhino Boss work, and all later gates remain closed.
 
 ### EN-E11 - Birds
 
@@ -5748,7 +5773,7 @@ its implementation `1a1ba00ea1edfa6e8bd946e95f5e35c6080ce73a` and approval
 record `5c55af26481f9a79988382df3d67b8ff33b765a4` are committed and pushed on the
 tracked branch. Those source checkpoints are now included only through the
 authorized v2 adapter. The current subsequent art gate is the private EN-E10
-Gloamstripe Ambusher specialist documented above, awaiting visual approval.
+Stonecurl Grazer common Ram documented above, awaiting visual approval.
 The three EN-E03 Idle-only variants, other incomplete candidates, Headless Rider
 prototypes, bosses, fixtures, effects, release, accepted drift, and a PR remain
 separate closed gates.

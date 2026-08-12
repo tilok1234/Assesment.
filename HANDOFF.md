@@ -23,7 +23,64 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Scarcrest Published / Ram Topology Decision
+## Immediate Continuation Checkpoint - Stonecurl Grazer Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-ram-common`. It is based exactly on the clean published
+   Scarcrest Matriarch reconciliation
+   `a7d2abbd610dfc6096498d1dce096d652e50596d`.
+2. After Scarcrest's bounded publication was remote verified, Codex recommended
+   `baked-single-actor-horned-grounded-quadruped`: one connected grounded
+   24x24 Ram with a compact barrel torso, proud arched neck, wedge muzzle, two
+   body-owned swept spiral horns, connected forehead wool and chest beard,
+   four separated dark hooves, a short connected tail, a body-owned horn bash,
+   zero child assets, and all effects external. The designer replied
+   `approved`. This selects the topology and authorizes exactly one private
+   common Ram full 80-frame candidate.
+3. The candidate is Stonecurl Grazer: ash-cream wool, a charcoal-brown face and
+   lower legs, weathered ochre spiral horns, pale belly and beard, muted rose
+   ear interiors, amber eyes, and black-brown hooves. It uses a body-owned horn
+   bash. Dust, horn arcs, impacts, debris, particles, projectiles, glow,
+   illumination, runtime attachments, and all other effects remain external
+   and Off.
+4. Frozen candidate digest:
+   `79b440290b1c6f503834d44b13d2c9508b34ad48a4ae495c6e957e329095942f`.
+   Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+   hashes are
+   `81759779be3730ca370f73644ec8fcb12d199119a72fd667a7fa7c301f005893`,
+   `7c07c23a49e6133bb45bf73fb5cb95f972f4b49a23a50dbbeb5355aa166c6070`,
+   `6e058b6586b992e6a2b22d67809cf3746bc5863738d40638e48c7f60326d4409`,
+   and `2bdbf2d4081faa40a4acc5cfb9daad602a254425892e87c35ce31f6c3d9c47f8`.
+   Raw and Complete B + Form GIF hashes are
+   `b22bda08edd16db96be31d31fb487fa614985959a618657427386f407d8a066b`
+   and `33c3ed194c31405ac9d78c2bf4a23671568e76dccd3b7716bd1f1fa48f3f6600`.
+5. Focused validation passes 80/80 connected, bounded, grounded, four-hoof,
+   and quadruped-span frames; 72/72 colored horn-bearing frames; 8/8 exact-
+   white flashes; 54/54 expected eye-bearing and readable-muzzle views; exact
+   Cast/Attack and Death/Hurt aliases; side mirrors; and 80/80 pixel plus alpha
+   distinctions from approved Scarcrest Matriarch and Miremane Courser plus
+   public Dire Wolf. Opaque range is 214-243. Complete B adds 10,781 outline
+   pixels and Form changes 8,256 pixels. Deterministic regeneration reproduces
+   all six review hashes. Pre-approval focused / `check:fast` / full `check`
+   gates pass in 0.7s / 67.6s / 123.1s with public 92/294 and all 232 fixture
+   sheets unchanged.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-ram-stonecurl-grazer/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-ram-stonecurl-grazer` and run the
+   focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-ram-stonecurl-grazer`.
+7. The exact raw, distinct Complete B outlined, Complete B + Form, and
+   comparison PNGs are open together in the four-lane Aseprite MCP review
+   window as sprites 51, 55, 59, and active 63. The outlined PNG is required
+   review evidence only; it does not authorize outline registration.
+8. Stop for explicit visual approval of this exact digest and six review
+   hashes. Public Ram registration or outline registration, fixtures, effects,
+   child assets, specialist or elite Ram, Stag, Mammoth, Rhino, Furious
+   Depraved Rhino Boss work, the deferred Runic Idol decision, release,
+   accepted drift, and a PR remain closed. No commit or push has been made for
+   Stonecurl Grazer.
+
+## Approved Preceding Checkpoint - Scarcrest Published / Ram Topology Decision
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-hyena-elite`. It is based exactly on the clean published
@@ -88,19 +145,18 @@ gate.
    verified; this reconciliation completes the bounded publication tuple.
 8. Public Hyena registration or outline registration, fixtures, effects, child
    assets, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the deferred
-   Runic Idol decision, release, accepted drift, and a PR remain closed. The
-   continuation clause opens only the next EN-E10 Ram actor-topology decision
-   from this clean published reconciliation; it does not itself select a
-   topology or authorize Ram art.
-9. Recommended Ram topology for explicit designer decision:
+   Runic Idol decision, release, accepted drift, and a PR remain closed. This
+   continuation historically opened only the next EN-E10 Ram actor-topology
+   decision from the clean published reconciliation.
+9. The recommended Ram topology was
    `baked-single-actor-horned-grounded-quadruped` — one connected grounded
    24x24 Ram with a compact barrel torso, proud arched neck, wedge muzzle, two
    body-owned swept spiral horns, connected forehead wool and chest beard, four
    separated dark hooves, short connected tail, and a body-owned horn bash.
    Dust, impact arcs, debris, glow, illumination, projectiles, runtime
    attachments, detached horns, and all child assets remain external and Off.
-   Stop for explicit topology approval before creating a Ram branch, naming a
-   common candidate, or drawing pixels.
+   The designer's later separate `approved` selected it and authorized only the
+   Stonecurl Grazer private candidate in the immediate checkpoint above.
 
 ## Approved Preceding Checkpoint - Gloamstripe Ambusher Published And Reconciled
 
