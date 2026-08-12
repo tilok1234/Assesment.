@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Starlock Lexicon Approved, Publication Pending
+## Immediate Continuation Checkpoint - Starlock Lexicon Published, Handoff Reconciliation Pending
 
 ### Current active gate
 
@@ -61,11 +61,13 @@ gate.
    together in the four-lane Aseprite MCP hub as sprites 7, 11, and 15 when the
    designer replied `APPROVED`. This approves only the frozen digest and five
    hashes above. Accepted implementation
-   `f11c2a0915588c616e1db7d8e461208f97a42706` records those pixels.
-7. Next gate: use standing permission only to finish this candidate's bounded
-   approval record, branch push, and restart-safe handoff reconciliation. Do
-   not register, generate fixtures, add effects or child/state assets, start
-   the elite role or another family, release, accept drift, or open a PR.
+   `f11c2a0915588c616e1db7d8e461208f97a42706` records those pixels. The
+   implementation and approval record
+   `335ff6a36a1b72509816546655d3d58ae2173ecb` are remote verified.
+7. Next gate: commit and push the initial published handoff, then record its
+   immutable hash in the final reconciliation. Do not infer authorization for
+   the elite role or another family. Do not register, generate fixtures, add
+   effects or child/state assets, release, accept drift, or open a PR.
 
 ## Immediate Continuation Checkpoint - Approved Enemy Backlog Integrated
 

@@ -29,9 +29,12 @@ in 114.1s, while approval-local fast/full gates pass in 61.2s/112.9s with
 public 92/294 and all 232 fixtures unchanged. The exact five review hashes are
 frozen. All three exact PNGs were open together in Aseprite
 when the designer replied `APPROVED`; accepted implementation
-`f11c2a0915588c616e1db7d8e461208f97a42706` records those pixels. Status is
-`approved-not-published`; registration, fixtures, child/state assets, effects,
-the elite role, later families, release, accepted drift, and a PR remain closed.
+`f11c2a0915588c616e1db7d8e461208f97a42706` records those pixels. The
+implementation and approval record
+`335ff6a36a1b72509816546655d3d58ae2173ecb` are remote verified. Status is
+`published-awaiting-handoff-reconciliation`; registration, fixtures,
+child/state assets, effects, the elite role, later families, release, accepted
+drift, and a PR remain closed.
 
 Latest source-art approval (2026-08-12): from clean published
 Epochforge reconciliation `85b29f76cb77ae85a116cec56eeed5b61ea5a375`, the designer

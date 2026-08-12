@@ -33,7 +33,9 @@
   review hashes are frozen. All three exact PNGs were open
   together in Aseprite when the designer replied `APPROVED`; accepted
   implementation `f11c2a0915588c616e1db7d8e461208f97a42706` records those
-  pixels. Status is `approved-not-published`; no registration, fixtures,
+  pixels. The implementation and approval record
+  `335ff6a36a1b72509816546655d3d58ae2173ecb` are remote verified. Status is
+  `published-awaiting-handoff-reconciliation`; no registration, fixtures,
   child/state assets, effects, elite role, later family, release, accepted
   drift, or PR gate is open.
 
