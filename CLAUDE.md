@@ -127,9 +127,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Form, and comparison PNGs were open together in Aseprite as sprites 7, 11,
   and active 15 when the designer replied `approved lets do next`. Accepted
   implementation `159b9105297fb6c999f91ec77c194c777579d526` records only that
-  frozen packet. Standing permission opens its bounded publication tuple; the
-  same reply opens only the Runic Idol actor-topology decision after clean
-  reconciliation and does not authorize art. Registration, fixtures,
+  frozen packet. The implementation and approval record
+  `c4c256c7ba125cc177954f8664593431e00da27a` are remote verified. Only the
+  initial handoff and final reconciliation remain. After that clean tuple, the
+  same reply opens only the Runic Idol actor-topology decision and does not
+  authorize art. Registration, fixtures,
   child/state assets, effects, Crystal Beast, later families, release, accepted
   drift, and a PR remain closed.
 - Current approved private art gate: on `codex/en-e09-living-book-specialist`, based on

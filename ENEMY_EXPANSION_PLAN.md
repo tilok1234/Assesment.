@@ -34,9 +34,12 @@
   fixtures exact. The exact three PNGs were open together in
   Aseprite as sprites 7, 11, and active 15 when the designer replied `approved
   lets do next`. Accepted implementation
-  `159b9105297fb6c999f91ec77c194c777579d526` records that packet. Status is
-  `approved-not-published`; after bounded publication, the same reply opens
-  only the Runic Idol actor-topology decision and does not authorize art. No
+  `159b9105297fb6c999f91ec77c194c777579d526` records that packet. The
+  implementation and approval record
+  `c4c256c7ba125cc177954f8664593431e00da27a` are remote verified. Status is
+  `published-awaiting-handoff-reconciliation`; after the bounded tuple is
+  clean, the same reply opens only the Runic Idol actor-topology decision and
+  does not authorize art. No
   registration, fixtures, child/state assets, effects, Crystal Beast, later
   family, release, accepted drift, or PR gate is open.
 
@@ -5221,8 +5224,10 @@ fixtures exact; pre-metadata fast/full gates pass in 61.7s/115.7s and
 approval-local fast/full gates in 67.1s/122.5s. The exact three PNGs were open
 together in Aseprite as sprites 7, 11, and active 15 when
 the designer replied `approved lets do next`. Accepted implementation
-`159b9105297fb6c999f91ec77c194c777579d526` records that frozen packet. After
-bounded publication, the same reply opens only the Runic Idol actor-topology
+`159b9105297fb6c999f91ec77c194c777579d526` records that frozen packet. The
+implementation and approval record
+`c4c256c7ba125cc177954f8664593431e00da27a` are remote verified. After the
+bounded tuple is clean, the same reply opens only the Runic Idol actor-topology
 decision and does not authorize art. Registration, fixtures, child/state
 assets, effects, Crystal Beast, later families, release, accepted drift, and a
 PR remain closed.

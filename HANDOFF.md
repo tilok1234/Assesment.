@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Crownseal Grimoire Approved, Publication Pending
+## Immediate Continuation Checkpoint - Crownseal Grimoire Published, Handoff Reconciliation Pending
 
 ### Current active gate
 
@@ -66,9 +66,11 @@ gate.
    together in the four-lane Aseprite MCP hub as sprites 7, 11, and active 15
    when the designer replied `approved lets do next`. Accepted implementation
    `159b9105297fb6c999f91ec77c194c777579d526` records only that frozen packet.
-   Standing permission opens its bounded approval record, branch push, and
-   handoff reconciliation. After that tuple is clean, the same reply opens only
-   the Runic Idol actor-topology decision; it does not select a topology or
+   The implementation and approval record
+   `c4c256c7ba125cc177954f8664593431e00da27a` are remote verified.
+8. Next gate: commit and push the initial published handoff, then record its
+   immutable hash in the final reconciliation. After that clean tuple, present
+   only the Runic Idol actor-topology decision; do not select a topology or
    authorize art. Registration, fixtures, effects or child/state assets,
    Crystal Beast, later families, release, accepted drift, and a PR stay closed.
 
