@@ -14,7 +14,36 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private elite Mammoth checkpoint published / no next Mammoth gate open
+Current EN-E10 private common Rhino candidate awaiting visual approval
+(2026-08-13): on `codex/en-e10-rhino-common`, based exactly on clean,
+published Rimevault reconciliation
+`df7a918c2b8ef13476cbf363663d42eec7638809`, the designer approved only
+`baked-single-actor-natural-plated-low-grounded-quadruped`. Mudplate Grazer is
+a warm olive-taupe natural Rhino with a low long three-plate barrel, compact
+umber wedge head, medium old-ivory nasal horn and tiny nub, small ears, clay
+flank patch, amber eyes, short rear tail, four stout legs, four separated broad
+three-toed feet, and a body-owned head dip into an effect-free short shoulder
+shove and horn jab. Its exact 80-frame digest is
+`ba84ed03d4985b979974ab23d547fb7f687d6e2b948d80c9ccc84bb9cd911848`.
+Raw / outlined / Form / comparison PNG hashes are
+`bf6ad4e767e45a1bdaf1b617d3fc1ba56fad28c80d5a806c22f4737e45e98118`,
+`88e2bf1f9e7f9446829e7db533adf65d9a804ef9146478a1ffc5ece335daf4b8`,
+`98a85184de5d607003415123e5a24ed1d41c1de515163146d8cbdc6d1a02974d`,
+and `918e4a311d2223fbd472683d002e4b9d140dc044c6dc2586e5b380f8efe4b2a4`;
+raw / Form GIF hashes are
+`66496991b74420e5cc9d9fe86f51c78cded24208a88c05c28a24be38bfab63b8`
+and `39dba84ff75d445146fb897d17b967bf429b02fe860f1be2cefab2f54f1d49e5`.
+Focused validation passes 80/80 connected, bounded, grounded,
+four-three-toed-foot, low-long-plated-span, alias, mirror, and comparison
+cases at opaque range 230-254. The protected Furious Depraved Rhino direction
+and full-animation candidates remain byte-exact. Pre-approval fast/full gates
+pass in 63.1s/109.7s. Public stays 92/294, all 232 fixtures remain unchanged,
+and child assets/effects/public registration/
+outline registration stay zero. Stop for explicit visual approval of the
+exact packet; no commit, push, later Rhino role, Boss change, release, accepted
+drift, or PR is open.
+
+Approved preceding EN-E10 private elite Mammoth checkpoint published / Rhino distinction decision opened later
 (2026-08-13): on `codex/en-e10-mammoth-elite`, based exactly on clean,
 published, remote-verified Frostvein reconciliation
 `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch is a broad

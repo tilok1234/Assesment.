@@ -15,7 +15,35 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private elite Mammoth checkpoint published / no next Mammoth gate open
+- Current private common Rhino candidate awaiting visual approval
+  (2026-08-13): on `codex/en-e10-rhino-common`, based exactly on clean
+  Rimevault reconciliation `df7a918c2b8ef13476cbf363663d42eec7638809`,
+  the designer approved only
+  `baked-single-actor-natural-plated-low-grounded-quadruped`. Mudplate Grazer
+  is one connected low warm olive-taupe Rhino with three natural hide plates,
+  compact umber wedge head, one medium old-ivory nasal horn and tiny nub,
+  small ears, clay flank patch, amber eyes, short rear tail, four stout legs,
+  four broad three-toed feet, and a body-owned head dip into a short
+  effect-free shoulder shove and horn jab. Its frozen digest is
+  `ba84ed03d4985b979974ab23d547fb7f687d6e2b948d80c9ccc84bb9cd911848`.
+  Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+  hashes are `bf6ad4e767e45a1bdaf1b617d3fc1ba56fad28c80d5a806c22f4737e45e98118`,
+  `88e2bf1f9e7f9446829e7db533adf65d9a804ef9146478a1ffc5ece335daf4b8`,
+  `98a85184de5d607003415123e5a24ed1d41c1de515163146d8cbdc6d1a02974d`,
+  and `918e4a311d2223fbd472683d002e4b9d140dc044c6dc2586e5b380f8efe4b2a4`;
+  raw / Form GIF hashes are
+  `66496991b74420e5cc9d9fe86f51c78cded24208a88c05c28a24be38bfab63b8`
+  and `39dba84ff75d445146fb897d17b967bf429b02fe860f1be2cefab2f54f1d49e5`.
+  Focused validation passes all 80 structural, four-three-toed-foot,
+  low-long-plated-span, alias, mirror, and comparison cases at opaque range
+  230-254. Pre-approval fast/full gates pass in 63.1s/109.7s. The protected
+  Furious Depraved Rhino direction and animation candidates remain byte-exact.
+  Public remains 92/294 and all 232 fixtures
+  remain unchanged. Stop for explicit visual approval; no commit, push,
+  registration, fixture, effect, child asset, later Rhino role, Boss change,
+  release, accepted drift, PR, or broader gate is open.
+
+- Approved preceding private elite Mammoth checkpoint published / Rhino distinction decision opened later
   (2026-08-13): on `codex/en-e10-mammoth-elite`, based exactly on clean,
   published, remote-verified Frostvein reconciliation
   `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch is one
@@ -5722,14 +5750,38 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; no next Mammoth gate open; Rhino closed`
+- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino topology selected; private common Mudplate Grazer awaiting visual approval`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
-- Priority-first: Rhino only after its Boss distinction is approved
+- Priority-first: stop at the exact common Mudplate Grazer visual approval gate
 
 Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
 stance. Ordinary Rhino must not read as a reduced copy of the Furious Depraved
 Rhino Boss.
+
+Rhino topology and common art gate (2026-08-13): after the clean published
+Rimevault reconciliation, the designer said `lets do next`. Codex opened only
+the ordinary-Rhino versus Furious Depraved Rhino Boss distinction decision and
+recommended `baked-single-actor-natural-plated-low-grounded-quadruped`: one
+connected grounded 24x24 natural Rhino with a low long three-plate barrel,
+compact wedge head, one medium body-owned nasal horn and tiny secondary nub,
+small rounded ears, short rear tail, four stout legs, four separated broad
+three-toed feet, a body-owned head dip into a short shoulder shove and horn
+jab, zero child assets, and external effects. The designer replied `approved`.
+This selects only that topology and authorizes exactly one private common
+80-frame candidate; it does not approve pixels or authorize publication.
+
+Mudplate Grazer is the resulting frozen candidate at digest
+`ba84ed03d4985b979974ab23d547fb7f687d6e2b948d80c9ccc84bb9cd911848`.
+Its warm olive-taupe and clay natural plates, restrained old-ivory horn,
+compact head, flat shoulder shelf, absence of harness/rage/corruption, and
+short effect-free shove distinguish it from the 48x48 Furious Depraved Rhino
+Boss. Focused validation passes all 80 structural, three-toed-foot, low-span,
+alias, mirror, and comparison cases, with the protected Boss assets exact.
+Stop for explicit visual approval of the exact four PNG and two GIF hashes in
+the current checkpoint. Registration, fixtures, effects, child assets,
+specialist/elite Rhino, every Boss change, release, accepted drift, and a PR
+remain closed.
 
 Hyena topology and common art gate (2026-08-13): the designer selected
 `baked-single-actor-grounded-quadruped` — one connected grounded 24x24 Hyena

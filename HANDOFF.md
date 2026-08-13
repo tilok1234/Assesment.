@@ -23,7 +23,69 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Rimevault Matriarch Published / No Next Mammoth Gate Open
+## Immediate Continuation Checkpoint - Mudplate Grazer Candidate Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-rhino-common`. It branches exactly from clean, published,
+   remote-verified Rimevault reconciliation
+   `df7a918c2b8ef13476cbf363663d42eec7638809`.
+2. The designer's fresh `lets do next` opened only the ordinary-Rhino versus
+   Furious Depraved Rhino Boss distinction decision. Codex recommended
+   `baked-single-actor-natural-plated-low-grounded-quadruped`, and the designer
+   replied `approved`. This selects one connected grounded 24x24 ordinary
+   Rhino, zero child assets, and external effects, and authorizes exactly one
+   private common full 80-frame candidate. It does not approve candidate
+   pixels.
+3. Mudplate Grazer is a warm olive-taupe natural Rhino with a low long barrel,
+   three gently stepped hide plates instead of a Boss hump, compact umber
+   wedge head, one medium old-ivory nasal horn plus a tiny secondary nub,
+   small rose-brown ears, clay flank patch, amber eyes, short connected rear
+   tail, four stout legs, and four separated broad three-toed feet. Attack
+   plants, dips the body-owned head, performs one short shoulder shove and
+   horn jab, and recovers without a charge wake, horn flare, impact, roar,
+   debris, or corruption pixels. Cast aliases Attack; Death aliases Hurt
+   H1,H2,H2,H2.
+4. The frozen 80-frame digest is
+   `ba84ed03d4985b979974ab23d547fb7f687d6e2b948d80c9ccc84bb9cd911848`.
+   Raw / distinct Complete B outlined / Complete B + Form / family-comparison
+   PNG hashes are
+   `bf6ad4e767e45a1bdaf1b617d3fc1ba56fad28c80d5a806c22f4737e45e98118`,
+   `88e2bf1f9e7f9446829e7db533adf65d9a804ef9146478a1ffc5ece335daf4b8`,
+   `98a85184de5d607003415123e5a24ed1d41c1de515163146d8cbdc6d1a02974d`,
+   and `918e4a311d2223fbd472683d002e4b9d140dc044c6dc2586e5b380f8efe4b2a4`.
+   Raw and Complete B + Form GIF hashes are
+   `66496991b74420e5cc9d9fe86f51c78cded24208a88c05c28a24be38bfab63b8`
+   and `39dba84ff75d445146fb897d17b967bf429b02fe860f1be2cefab2f54f1d49e5`.
+5. Focused validation passes 80/80 connected, bounded, grounded, exactly
+   four-three-toed-foot, and low-long-plated-span frames; 54/54 expected horn,
+   eye, and wedge-face views; 8/8 exact-white flashes; exact aliases and
+   mirrors; and 80/80 pixel-plus-alpha distinctions from approved Tundrahide
+   Grazer and Cragcrown Patriarch plus public Dire Wolf. Opaque range is
+   230-254. Complete B adds 9,569 outline pixels and Form changes 8,598 pixels.
+   Pre-approval `check:fast` and full `check` pass in 63.1s and 109.7s.
+   Public remains 92/294, all 232 fixtures stay unchanged, and child assets,
+   effects, public registration, and outline registration remain zero. The
+   protected Furious Depraved Rhino direction and animation candidates remain
+   byte-exact at SHA-256
+   `6ce979d356e986b207a09bf2e020fde25f2e4a496137fac96aa7bc6a567f2f86`
+   and `7c87c58b4854f75ff8827f66fe29a78b36ee198865e1f6e8d3d4e18d66f46ceb`.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-rhino-mudplate-grazer/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-rhino-mudplate-grazer` and run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-rhino-mudplate-grazer`. The raw,
+   outlined, Complete B + Form, family-comparison, synchronized GIFs, and the
+   protected Boss direction/full-animation sheets form the complete visual
+   approval surface. The outlined PNG is evidence only; it does not authorize
+   outline registration.
+7. Stop for explicit designer visual approval of this exact digest and six
+   hashes. Do not commit, push, register, publish, or open another role before
+   approval. Public or outline registration, fixtures, effects, child assets,
+   specialist or elite Rhino, every Furious Depraved Rhino Boss change,
+   Runic Idol, release, accepted drift, a PR, and every broader gate remain
+   closed.
+
+## Approved Preceding Checkpoint - Rimevault Matriarch Published / Rhino Distinction Decision Opened Later
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-elite`. It branches exactly from the clean,

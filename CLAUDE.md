@@ -107,7 +107,33 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private elite Mammoth checkpoint published / no next Mammoth gate open: on
+- Current private common Rhino candidate awaiting visual approval: on
+  `codex/en-e10-rhino-common`, based exactly on clean Rimevault reconciliation
+  `df7a918c2b8ef13476cbf363663d42eec7638809`, the designer approved only the
+  ordinary-Rhino topology
+  `baked-single-actor-natural-plated-low-grounded-quadruped`. Mudplate Grazer
+  is one connected low warm olive-taupe natural Rhino with three gently
+  stepped hide plates, compact umber wedge head, one medium old-ivory nasal
+  horn and tiny nub, small ears, clay flank patch, amber eyes, short rear
+  tail, four stout legs, four separated broad three-toed feet, and a body-owned
+  head dip into a short shoulder shove and horn jab. Its frozen digest is
+  `ba84ed03d4985b979974ab23d547fb7f687d6e2b948d80c9ccc84bb9cd911848`.
+  Raw / outlined / Form / comparison PNG hashes are
+  `bf6ad4e767e45a1bdaf1b617d3fc1ba56fad28c80d5a806c22f4737e45e98118`,
+  `88e2bf1f9e7f9446829e7db533adf65d9a804ef9146478a1ffc5ece335daf4b8`,
+  `98a85184de5d607003415123e5a24ed1d41c1de515163146d8cbdc6d1a02974d`,
+  and `918e4a311d2223fbd472683d002e4b9d140dc044c6dc2586e5b380f8efe4b2a4`;
+  raw / Form GIF hashes are
+  `66496991b74420e5cc9d9fe86f51c78cded24208a88c05c28a24be38bfab63b8`
+  and `39dba84ff75d445146fb897d17b967bf429b02fe860f1be2cefab2f54f1d49e5`.
+  Focused validation passes all 80 structural, low-span, four-three-toed-foot,
+  alias, mirror, and three-way pixel/alpha-distinction cases at opaque range
+  230-254. Pre-approval fast/full gates pass in 63.1s/109.7s. Protected
+  Furious Depraved Rhino Boss assets remain exact; public stays 92/294 and
+  all 232 fixtures stay unchanged. Stop for explicit visual
+  approval. No commit, push, registration, fixtures, effects, child assets,
+  later Rhino role, Boss change, release, drift acceptance, or PR is open.
+- Approved preceding private elite Mammoth checkpoint published / Rhino distinction decision opened later: on
   `codex/en-e10-mammoth-elite`, based exactly on clean published Frostvein
   reconciliation `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch
   is one connected broad blue-violet Mammoth with an immense old-ivory royal
