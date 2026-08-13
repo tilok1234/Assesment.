@@ -107,7 +107,32 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current published private art checkpoint: on `codex/en-e10-ram-specialist`, based exactly
+- Current private art gate: on `codex/en-e10-ram-elite`, based exactly on clean
+  published Cliffcoil reconciliation
+  `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`, the designer's separate `lets
+  xdo next` authorizes exactly one private elite Ram candidate under the
+  approved `baked-single-actor-horned-grounded-quadruped` topology. Cragcrown
+  Patriarch is a broad connected grounded Ram with layered basalt-wine fleece,
+  near-black umber face and lower legs, enormous connected ironstone full-ring
+  horns with burnished-copper growth bands, weathered taupe belly and beard,
+  dark crimson crag bands, pale facial scars, blood-wine ears, gold eyes,
+  near-black hooves, and a body-owned double-impact horn ram. Its exact
+  80-frame digest is
+  `b8c7159c1d85689b3b9178179464b54e01a7ae538a1bda0036eb731d7d7d6c0a`.
+  Focused validation passes all 80 connected, bounded, grounded, four-hoof,
+  quadruped-span, pixel-distinct, and alpha-distinct frames against approved
+  Cliffcoil Strider and Stonecurl Grazer plus public Dire Wolf; opaque range is
+  282-303. Exact aliases and mirrors pass. The raw, required distinct Complete B
+  outlined, Complete B + Form, and comparison PNGs plus two GIFs are hash-frozen
+  and regenerate deterministically. Focused / fast / full gates pass in 0.6s /
+  60.9s / 119.0s with public 92/294 and all 232 fixtures unchanged. The four
+  exact PNGs are open together in Aseprite as sprites 83, 87, 91, and active 95.
+  The outlined PNG is review evidence only, not outline registration. This exact
+  packet is awaiting visual approval and remains uncommitted and unpushed.
+  Public/outline registration, fixtures, effects, child assets, further Ram
+  variants, later families, release, accepted drift, a PR, and every later gate
+  remain closed.
+- Approved preceding published private art checkpoint: on `codex/en-e10-ram-specialist`, based exactly
   on clean published Stonecurl reconciliation
   `67ba19086669b9135286784b6c9c39f682ca3032`, the designer's separate `lets do
   nex t` authorizes exactly one private specialist Ram candidate under the
@@ -133,10 +158,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `cb6c58440297b76f62776d8c11a6232d05bb1467` and approval record
   `3b9b99e28a2c4787d76f3dc0def20f4a79b589ac`, plus initial published handoff
   `b43e0ab90bf39bdc04abf1681d8f78cf2faa78fc`, are remote verified; this
-  reconciliation completes the bounded publication tuple. No next Ram art gate
-  is open. Public/outline registration,
-  fixtures, effects, child assets, elite Ram, later families, release, accepted
-  drift, a PR, and every later gate remain closed.
+  reconciliation completes the bounded publication tuple. At that checkpoint
+  public/outline registration, fixtures, effects, child assets, elite Ram,
+  later families, release, accepted drift, a PR, and every later gate remained
+  closed. The designer later separately said `lets xdo next`, opening only the
+  private elite Cragcrown Patriarch candidate above.
 - Approved preceding published private art checkpoint: on `codex/en-e10-ram-common`, based exactly on clean
   published Scarcrest reconciliation
   `a7d2abbd610dfc6096498d1dce096d652e50596d`, the designer's `approved`

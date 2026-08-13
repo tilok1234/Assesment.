@@ -14,7 +14,30 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current published EN-E10 private art checkpoint (2026-08-13): from clean published
+Current EN-E10 private art gate (2026-08-13): from clean published Cliffcoil
+reconciliation `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`, the designer's
+separate `lets xdo next` authorizes exactly one private elite Ram under the
+approved `baked-single-actor-horned-grounded-quadruped` topology. Cragcrown
+Patriarch on `codex/en-e10-ram-elite` is a broad connected grounded Ram with
+layered basalt-wine fleece, near-black umber face and lower legs, enormous
+connected ironstone full-ring horns with burnished-copper growth bands,
+weathered taupe belly and beard, dark crimson crag bands, pale facial scars,
+blood-wine ears, gold eyes, near-black hooves, and a body-owned double-impact
+horn ram. Its exact 80-frame digest is
+`b8c7159c1d85689b3b9178179464b54e01a7ae538a1bda0036eb731d7d7d6c0a`.
+Focused validation passes every structure, identity, alias, mirror, and
+three-way pixel/alpha distinction gate at opaque range 282-303. The raw,
+required distinct Complete B outlined, Complete B + Form, and comparison PNGs
+plus two GIFs are hash-frozen and deterministic. Focused / fast / full gates
+pass in 0.6s / 60.9s / 119.0s with public 92/294 and all 232 fixtures
+unchanged. The exact four PNGs are open together in Aseprite as sprites 83, 87,
+91, and active 95. The outlined PNG is review evidence only, not outline
+registration. This exact packet is awaiting visual approval and remains
+uncommitted and unpushed. Public/outline registration, fixtures, effects, child
+assets, further Ram variants, later families, release, accepted drift, a PR,
+and every later gate remain closed.
+
+Approved preceding published EN-E10 private art checkpoint (2026-08-13): from clean published
 Stonecurl reconciliation `67ba19086669b9135286784b6c9c39f682ca3032`, the
 designer's separate `lets do nex t` authorizes exactly one private specialist
 Ram under the approved `baked-single-actor-horned-grounded-quadruped` topology.
@@ -37,10 +60,11 @@ designer replied `approved` to the exact posted packet. Accepted implementation
 `cb6c58440297b76f62776d8c11a6232d05bb1467` and approval record
 `3b9b99e28a2c4787d76f3dc0def20f4a79b589ac`, plus initial published handoff
 `b43e0ab90bf39bdc04abf1681d8f78cf2faa78fc`, are remote verified; this
-reconciliation completes the bounded publication tuple. No next Ram art gate
-is open. Public/outline registration,
-fixtures, effects, child assets, elite Ram, later families, release, accepted
-drift, a PR, and every later gate remain closed.
+reconciliation completes the bounded publication tuple. At that checkpoint
+public/outline registration, fixtures, effects, child assets, elite Ram, later
+families, release, accepted drift, a PR, and every later gate remained closed.
+The designer later separately said `lets xdo next`, opening only the private
+elite Cragcrown Patriarch candidate above.
 
 Approved preceding published EN-E10 private art checkpoint (2026-08-13): from clean published Scarcrest
 reconciliation `a7d2abbd610dfc6096498d1dce096d652e50596d`, the designer's

@@ -23,7 +23,67 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Cliffcoil Strider Published / No Next Gate
+## Immediate Continuation Checkpoint - Cragcrown Patriarch Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-ram-elite`. It is based exactly on the clean published
+   Cliffcoil Strider reconciliation
+   `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`.
+2. After Cliffcoil's bounded publication tuple was remote verified, the
+   designer separately said `lets xdo next`. In the established common /
+   specialist / elite cadence this authorizes exactly one private elite Ram
+   full 80-frame candidate under the approved
+   `baked-single-actor-horned-grounded-quadruped` topology. It does not
+   authorize publication, registration, or any later gate.
+3. The candidate is Cragcrown Patriarch: broad layered basalt-wine fleece, a
+   near-black umber face and lower legs, enormous connected ironstone full-ring
+   horns with burnished-copper growth bands, a weathered taupe belly and beard,
+   dark crimson crag bands, pale integrated facial scars, blood-wine ears, gold
+   eyes, near-black hooves, and a body-owned plant / first horn impact /
+   effect-free recoil / heavier second horn impact. Dust, trophies, chains,
+   rock shards, horn arcs, impacts, debris, particles, projectiles, glow,
+   illumination, runtime attachments, and all other effects remain external
+   and Off.
+4. Frozen candidate digest:
+   `b8c7159c1d85689b3b9178179464b54e01a7ae538a1bda0036eb731d7d7d6c0a`.
+   Raw / distinct Complete B outlined / Complete B + Form / family-comparison
+   PNG hashes are
+   `52994038e2b6b9c1d54915099d0d82b3a40fad2c1f71db00eb427a95b0349ae2`,
+   `5613856ef24a57ea3972881918003373729a400f82ea17647c00daa7567e8da0`,
+   `0f64719cfbd4226497c1c010994b8c38dd29144d5366ef8857babb06b8a9dc0c`,
+   and `803711a50fc9b2e24b33e6a86136fc2556d0ebfba1fbc411a05d110b26a60c2f`.
+   Raw and Complete B + Form GIF hashes are
+   `c206c884282ee7c09c82eaa0d92d4f3082c6f1efb1370f665ab677499985293e`
+   and `0a5abbc5e575232744ddf0da253a0f07e4007669234b5aba0fb91d1b8bf7e2ad`.
+5. Focused validation passes 80/80 connected, bounded, grounded, four-hoof,
+   and quadruped-span frames; 72/72 colored horn-bearing frames; 8/8 exact-white
+   flashes; 54/54 expected eye-bearing and readable-muzzle views; exact aliases
+   and mirrors; and 80/80 pixel plus alpha distinctions from approved Cliffcoil
+   Strider and Stonecurl Grazer plus public Dire Wolf. Opaque range is 282-303.
+   Complete B adds 10,456 outline pixels and Form changes 8,539 pixels.
+   Deterministic regeneration reproduces all six frozen hashes. Focused /
+   `check:fast` / full `check` pass in 0.6s / 60.9s / 119.0s with public
+   92/294, both approved Rams exact, all 232 fixture sheets unchanged, zero
+   child assets/effects, and no public or outline registration.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-ram-cragcrown-patriarch/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-ram-cragcrown-patriarch` and run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-ram-cragcrown-patriarch`.
+7. The exact raw, distinct Complete B outlined, Complete B + Form, and
+   comparison PNGs are open together in the four-lane Aseprite MCP review
+   window as sprites 83, 87, 91, and active 95. The outlined PNG is required
+   review evidence only; it does not authorize outline registration. The final
+   approval prompt must post all four exact PNGs, both synchronized GIFs, and
+   digest `b8c7159c1d85689b3b9178179464b54e01a7ae538a1bda0036eb731d7d7d6c0a`.
+8. Stop for explicit designer approval of that exact packet. This branch is
+   intentionally uncommitted and unpushed while approval is pending. Public
+   Ram or outline registration, fixtures, effects, child assets, further Ram
+   variants, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
+   deferred Runic Idol decision, release, accepted drift, a PR, and every later
+   art gate remain closed.
+
+## Approved Preceding Checkpoint - Cliffcoil Strider Published
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-ram-specialist`. It is based exactly on the clean published
@@ -82,10 +142,12 @@ gate.
    `3b9b99e28a2c4787d76f3dc0def20f4a79b589ac`, plus initial published handoff
    `b43e0ab90bf39bdc04abf1681d8f78cf2faa78fc`, are remote verified; this
    reconciliation completes the bounded publication tuple.
-8. Public Ram registration or outline registration, fixtures, effects, child
-   assets, elite Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work,
-   the deferred Runic Idol decision, release, accepted drift, a PR, and every
-   later art gate remain closed. No next Ram art gate is open.
+8. At this published checkpoint public Ram or outline registration, fixtures,
+   effects, child assets, elite Ram, Stag, Mammoth, Rhino, Furious Depraved
+   Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
+   a PR, and every later art gate remained closed. The designer later
+   separately said `lets xdo next`, opening only the private elite Cragcrown
+   Patriarch candidate in the immediate checkpoint above.
 
 ## Approved Preceding Checkpoint - Stonecurl Grazer Published
 
