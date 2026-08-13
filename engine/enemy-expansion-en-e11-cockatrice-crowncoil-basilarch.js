@@ -61,10 +61,10 @@ export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE = deepFreeze({
   approvedImplementation: '5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef',
   publicationAuthorizedOn: '2026-08-14',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. After approving Crowncoil, the designer added: and commit and push all aproved please. This authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes for the exact approved packet only. It does not authorize registration, fixtures, effects, child assets, later-family pixels, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef',
+  publishedApprovalRecord: '27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.id,
     candidateFrameDigest: EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.candidateFrameDigest,
@@ -130,7 +130,7 @@ export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Crowncoil Basilarch implementation 5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded publication tuple. The approved continuation lets do next remains held until that tuple is complete; afterward it opens only the next documented Bird-family decision gate and does not approve a topology or candidate pixels. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Crowncoil Basilarch implementation 5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef and approval record 27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded publication tuple. The approved continuation lets do next remains held until that tuple is complete; afterward it opens only the next documented Bird-family decision gate and does not approve a topology or candidate pixels. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_DATA = deepFreeze({

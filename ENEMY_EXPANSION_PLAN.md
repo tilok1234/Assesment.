@@ -50,8 +50,10 @@
   designer replied `approved lets do next`, then explicitly requested `and
   commit and push all aproved please`. Approval binds only to implementation
   `5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef`, the digest, and six frozen
-  hashes; that implementation is pushed and remote verified. Commit and push
-  only the approval/handoff reconciliation. Approval-local focused/fast gates
+  hashes; that implementation and approval record
+  `27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7` are pushed and remote
+  verified. Only the initial published handoff/final reconciliation remains.
+  Approval-local focused/fast gates
   pass again in about 0.8s/56.0s. Hold the continuation until that
   tuple completes; it then opens only the next documented Bird-family decision
   gate, not its topology or pixels. Registration, fixtures, effects, child

@@ -37,9 +37,11 @@ gate.
    replied `approved lets do next`, then explicitly added `and commit and push
    all aproved please`. Approval binds only to implementation
    `5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef`, the exact digest, and six
-   frozen review hashes. That implementation is pushed and remote verified.
-   Hold the continuation until the bounded approval and handoff publication
-   tuple is also pushed and reconciled; afterward it opens only the next
+   frozen review hashes. That implementation and approval record
+   `27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7` are pushed and remote
+   verified. Only the initial published handoff and final reconciliation remain
+   open. Hold the continuation until that bounded publication tuple is
+   reconciled; afterward it opens only the next
    documented Bird-family decision gate and does not approve its topology or
    candidate pixels. Public or outline registration, fixtures, effects, child
    assets, release, accepted drift, and a PR remain separate.
@@ -86,9 +88,9 @@ gate.
    The raw, outlined, Complete B + Form, Gloamgaze/Bramblecomb/Marsh-Crocodile
    comparison PNGs and all four raw phase sheets were inspected at original
    resolution. The outlined PNG is review evidence only.
-7. Commit and push only the exact approval record, then create the initial
-   published handoff and final reconciliation needed to complete Crowncoil's
-   bounded publication tuple. Do not register it publicly or for outlines,
+7. Create and push only the initial published handoff and final reconciliation
+   needed to complete Crowncoil's bounded publication tuple. Do not register it
+   publicly or for outlines,
    regenerate fixtures, add effects or child assets, begin later-family pixels,
    release, accept drift, or open a PR. The approved `lets do next`
    continuation remains held until publication reconciliation is complete.

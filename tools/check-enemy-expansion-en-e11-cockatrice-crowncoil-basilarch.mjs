@@ -157,12 +157,13 @@ check(
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.approvedImplementation === '5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef'
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publicationAuthorizedOn === '2026-08-14'
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publicationAuthorizationEvidence.includes('commit and push all aproved please')
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publishedImplementation === ''
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publishedApprovalRecord === ''
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publishedImplementation === '5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef'
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publishedApprovalRecord === '27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7'
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.initialPublishedHandoff === ''
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publicationState === 'approved-not-published'
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef')
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('approval record')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('initial published handoff')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('outline registration'),
   'Crowncoil approval record or predecessor tuple drifted',
 );
