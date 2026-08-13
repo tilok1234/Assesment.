@@ -38,8 +38,10 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied
    `approved` again. Pixel approval binds only to implementation
    `0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the exact digest, and six
-   frozen review hashes. That implementation is pushed and remote verified.
-   The reply contains no continuation request, so Raven specialist or elite,
+   frozen review hashes. That implementation and approval record
+   `368754e9c037d7f37793ac737e162a3c5a4572f7` are pushed and remote
+   verified. Only the initial published handoff and final reconciliation remain
+   open. The reply contains no continuation request, so Raven specialist or elite,
    Owl, Phoenix, public or outline registration, fixtures, effects, child
    assets, release, accepted drift, and a PR remain closed.
 3. Cinderquill Scavenger is one connected compact low-forward natural corvid
@@ -84,9 +86,9 @@ gate.
    four raw phase sheets and the transparent 20x4 inspection atlas were loaded
    and inspected at original resolution. The outlined PNG is review evidence
    only.
-7. Commit and push only the exact approval record, then create the initial
-   published handoff and final reconciliation needed to complete Cinderquill's
-   bounded publication tuple. Do not register it publicly or for outlines,
+7. Create and push only the initial published handoff and final reconciliation
+   needed to complete Cinderquill's bounded publication tuple. Do not register
+   it publicly or for outlines,
    regenerate fixtures, add effects or child assets, begin Raven specialist or
    elite, Owl, or Phoenix, release, accept drift, or open a PR.
 

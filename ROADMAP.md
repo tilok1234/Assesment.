@@ -45,9 +45,10 @@ inspection atlas were inspected at original resolution. The exact four-PNG,
 two-GIF, digest-frozen packet was posted and the designer replied `approved`.
 Approval binds only to implementation
 `0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the digest, and six frozen
-hashes; that implementation is pushed and remote verified. Approval-local
-focused/fast gates pass again in about 1.2s/66.7s. Commit and push only the
-approval/handoff reconciliation. No continuation request was supplied, so
+hashes; that implementation and approval record
+`368754e9c037d7f37793ac737e162a3c5a4572f7` are pushed and remote verified.
+Only the initial published handoff/final reconciliation remains. Approval-local
+focused/fast gates pass again in about 1.2s/66.7s. No continuation request was supplied, so
 Raven specialist or elite, Owl, Phoenix, registration, fixtures, effects,
 child assets, release, accepted drift, and a PR remain closed.
 

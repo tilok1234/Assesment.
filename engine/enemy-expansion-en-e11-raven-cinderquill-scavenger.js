@@ -62,10 +62,10 @@ export const EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE = deepFreeze({
   approvedImplementation: '0e1124d6e16f3c5e568b0fe38890eb270b41306d',
   publicationAuthorizedOn: '2026-08-14',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved to the exact Cinderquill Scavenger review packet. This does not authorize registration, fixtures, effects, child assets, later Raven roles, later families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '0e1124d6e16f3c5e568b0fe38890eb270b41306d',
+  publishedApprovalRecord: '368754e9c037d7f37793ac737e162a3c5a4572f7',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.id,
     candidateFrameDigest: EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.candidateFrameDigest,
@@ -133,7 +133,7 @@ export const EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Cinderquill Scavenger implementation 0e1124d6e16f3c5e568b0fe38890eb270b41306d is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded publication tuple. No continuation request accompanied the pixel approval, so no Raven specialist or elite, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, Owl, Phoenix, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Cinderquill Scavenger implementation 0e1124d6e16f3c5e568b0fe38890eb270b41306d and approval record 368754e9c037d7f37793ac737e162a3c5a4572f7 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded publication tuple. No continuation request accompanied the pixel approval, so no Raven specialist or elite, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, Owl, Phoenix, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_RAVEN_CINDERQUILL_SCAVENGER_DATA = deepFreeze({
@@ -607,7 +607,7 @@ export const EN_E11_RAVEN_CINDERQUILL_SCAVENGER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'cinderquill-scavenger',
     scale: 6,
-    notes: 'Approved private Cinderquill Scavenger common Raven only, bound to exact implementation 0e1124d6e16f3c5e568b0fe38890eb270b41306d, candidate digest 0f14b1a5c2c9fab2756130fffce516ad50b34d860cd68cd186bd93bc3c2a15f2, and its six frozen review hashes. The designer replied approved to the posted exact packet; no continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Raven specialist or elite, Owl, Phoenix, release, accepted drift, and a pull request separate.',
+    notes: 'Approved private Cinderquill Scavenger common Raven only, bound to exact implementation 0e1124d6e16f3c5e568b0fe38890eb270b41306d, approval record 368754e9c037d7f37793ac737e162a3c5a4572f7, candidate digest 0f14b1a5c2c9fab2756130fffce516ad50b34d860cd68cd186bd93bc3c2a15f2, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. No continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Raven specialist or elite, Owl, Phoenix, release, accepted drift, and a pull request separate.',
   },
 });
 

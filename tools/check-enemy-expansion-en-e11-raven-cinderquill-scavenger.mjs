@@ -135,12 +135,13 @@ check(
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.approvedImplementation === '0e1124d6e16f3c5e568b0fe38890eb270b41306d'
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publicationAuthorizedOn === '2026-08-14'
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publishedImplementation === ''
-    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publishedApprovalRecord === ''
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publishedImplementation === '0e1124d6e16f3c5e568b0fe38890eb270b41306d'
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publishedApprovalRecord === '368754e9c037d7f37793ac737e162a3c5a4572f7'
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.initialPublishedHandoff === ''
-    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('0e1124d6e16f3c5e568b0fe38890eb270b41306d')
-    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('approval record')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('368754e9c037d7f37793ac737e162a3c5a4572f7')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('initial published handoff')
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('No continuation request')
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('outline registration'),
   'Raven approval record or publication boundary drifted',

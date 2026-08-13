@@ -46,10 +46,12 @@
   original resolution. The exact four-PNG, two-GIF, digest-frozen packet was
   posted and the designer replied `approved`. Approval binds only to
   implementation `0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the digest,
-  and six frozen hashes; that implementation is pushed and remote verified.
-  Approval-local focused/fast gates pass again in about 1.2s/66.7s. Commit and
-  push only the approval/handoff reconciliation. No continuation request was
-  supplied, so Raven specialist or elite, Owl, Phoenix, registration,
+  and six frozen hashes; that implementation and approval record
+  `368754e9c037d7f37793ac737e162a3c5a4572f7` are pushed and remote
+  verified. Only the initial published handoff/final reconciliation remains.
+  Approval-local focused/fast gates pass again in about 1.2s/66.7s. No
+  continuation request was supplied, so Raven specialist or elite, Owl,
+  Phoenix, registration,
   fixtures, effects, child assets, release, accepted drift, a PR, and every
   broader gate remain closed.
 
@@ -6487,7 +6489,9 @@ topology and authorized this candidate without approving its pixels. After the
 exact four-PNG, two-GIF, digest-frozen packet below was posted, the designer
 replied `approved` again. Pixel approval binds only to implementation
 `0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the digest, and the six frozen
-review hashes. That implementation is pushed and remote verified.
+review hashes. That implementation and approval record
+`368754e9c037d7f37793ac737e162a3c5a4572f7` are pushed and remote verified.
+Only the initial published handoff/final reconciliation remains.
 
 Cinderquill Scavenger is one connected compact low-forward natural corvid with
 a rounded blue-black head, short smoky throat, hooked horn beak, deep charcoal
@@ -6521,8 +6525,9 @@ and outline registration remain zero. The four exact PNGs, four raw phase
 sheets, and transparent inspection atlas were inspected at original
 resolution. Approval-local focused/fast gates pass again in about 1.2s/66.7s.
 
-Commit and push only the approval/handoff reconciliation needed to complete the
-bounded publication tuple. The outlined PNG is review evidence only. No
+Create and push only the initial published handoff and final reconciliation
+needed to complete the bounded publication tuple. The outlined PNG is review
+evidence only. No
 continuation request was supplied, so Raven specialist or elite, Owl, Phoenix,
 registration, fixtures, effects, child assets, release, accepted drift, and a
 PR remain closed.
