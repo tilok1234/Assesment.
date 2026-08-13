@@ -15,7 +15,35 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private elite Stag checkpoint published / Mammoth topology decision open
+- Current private common Mammoth checkpoint awaiting visual approval
+  (2026-08-13): from clean published Gloamcrown reconciliation
+  `c371e7ffeb3dd9196c29b9236d62585d96a52585`, the designer approved
+  `baked-single-actor-tusked-heavy-grounded-quadruped` and opened exactly one
+  private common Mammoth. Tundrahide Grazer on
+  `codex/en-e10-mammoth-common` is a connected low, heavy actor with
+  storm-taupe domed wool, massive shoulders, a warm stone face, large rose
+  ears, connected trunk, paired frost-ivory tusks, pale sand belly, muted
+  tundra bands, amber eyes, a short tail, four short legs, four broad feet, and
+  a body-owned trunk lift into a tusk shove. Its exact digest is
+  `740960848a5a45941a908b8f32d53a6426de789f7ca002817309e7506dcd3e08`.
+  Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+  hashes are `8e0f30182ce187fcd2742c6d6dde9e7ef6d8716cdef562e6279cf09ea1ead1f6`,
+  `9baac7da2784068bb775b1b705a79d66e80db23e5750fff91e3d76b89a77fec2`,
+  `658ec1817f40c58cf2de9d2bd0b9d752f863aeca82d4892908dd50d0cbe85d80`,
+  and `b8e289487c3130e1a199f4637c1106ac69238df4b3935915c79090cf3d0c044d`;
+  raw / Form GIF hashes are
+  `fdfc4ff68c913df89807a85ccb0a803b6d04612ca1ff87c62bbaea79488a045d`
+  and `497eee4fadf8ceb6d4cd0b3cc096b676757aea95a51f92346d9a34089a473e97`.
+  Focused / fast / full validation passes, with fast / full at 64.6s / 118.7s:
+  80/80 structural, four-foot, heavy-span, and three-way pixel/alpha-distinct
+  frames; opaque range 245-281; public 92/294; all 232 fixtures unchanged;
+  zero child assets/effects; no public or outline registration. Exact PNGs are
+  open in Aseprite as sprites 155, 159, 163, and active 167. The candidate is
+  intentionally uncommitted and unpushed pending explicit visual approval.
+  Specialist/elite Mammoth, Rhino, fixtures, effects, release, accepted drift,
+  a PR, and every broader gate remain closed.
+
+- Approved preceding private elite Stag checkpoint published / Mammoth topology decision open
   (2026-08-13): from
   clean remote-verified Briarstep handoff
   `595b2b2b18ebe7e111486df96624b4e1f057647b`, the designer's `awesine lets keep
@@ -5619,7 +5647,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, and Stag common, specialist, and elite approved and published; Mammoth actor-topology decision open; Mammoth pixels and Rhino closed`
+- Status: `Hyena, Ram, and Stag common, specialist, and elite approved and published; Mammoth common implemented privately and awaiting visual approval; Mammoth specialist/elite and Rhino closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5844,17 +5872,44 @@ Implementation `0ece468efeaf4b50351358020075b4bf91dc7cff`, approval record
 reconciliation completes the bounded publication tuple. No next Stag art gate
 is open.
 
-The continuation suffix opens only the Mammoth actor-topology decision.
+At the published Gloamcrown checkpoint, the continuation suffix opened only the Mammoth actor-topology decision.
 Recommended topology: `baked-single-actor-tusked-heavy-grounded-quadruped` —
 one connected grounded 24x24 Mammoth with a high domed back, massive shoulders,
 low hindquarters, four short weight-bearing legs and broad feet, body-owned
 large ears, trunk, paired tusks, and short tail, plus a body-owned trunk lift
 into a tusk shove. Dust, snow, breath, debris, shock rings, tusk trails,
 impacts, particles, projectiles, glow, illumination, runtime attachments, and
-all other effects remain external; child assets remain zero. Mammoth common
-pixels require explicit approval of this topology. Registration, fixtures,
-effects, Rhino, Rhino Boss work, release, accepted drift, a PR, and every
-broader gate remain closed.
+all other effects remain external; child assets remain zero. The designer
+subsequently supplied that exact topology approval, opening only the private
+common candidate below.
+
+Tundrahide Grazer is the authorized private common Mammoth from clean,
+published, remote-verified Gloamcrown reconciliation
+`c371e7ffeb3dd9196c29b9236d62585d96a52585`. On branch
+`codex/en-e10-mammoth-common`, it uses storm-taupe domed wool, massive
+shoulders, low hindquarters, a warm stone face, large weathered-rose ears, a
+connected trunk, paired frost-ivory tusks, pale sand belly, muted blue-green
+tundra bands, amber eyes, a short tail, four short weight-bearing legs, four
+broad separated feet, and a body-owned trunk lift into an effect-free tusk
+shove. Its exact 80-frame digest is
+`740960848a5a45941a908b8f32d53a6426de789f7ca002817309e7506dcd3e08`.
+
+All 80 frames pass connected, one-cell bounded, grounded, four-broad-foot,
+heavy-domed-span, alias, mirror, and pixel/alpha distinction checks against
+approved Gloamcrown Sovereign and Cragcrown Patriarch plus public Dire Wolf at
+opaque range 245-281. The hash-frozen packet includes raw, required distinct
+Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs and
+regenerates deterministically. Focused / fast / full gates pass, with fast /
+full at 64.6s / 118.7s, public 92/294, all 232 fixtures unchanged, zero child
+assets/effects, and no public or outline registration. The exact raw,
+outlined, Complete B + Form, and comparison PNGs are open together in Aseprite
+as sprites 155, 159, 163, and active 167. The outlined PNG is review evidence
+only and does not change outline registration.
+
+This exact private candidate is intentionally uncommitted and unpushed while
+awaiting explicit designer visual approval. Registration, fixtures, effects,
+child assets, specialist or elite Mammoth, Rhino, Rhino Boss work, release,
+accepted drift, a PR, and every broader gate remain closed.
 
 ### EN-E11 - Birds
 

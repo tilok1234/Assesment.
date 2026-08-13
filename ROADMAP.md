@@ -14,7 +14,35 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private elite Stag checkpoint published / Mammoth topology decision open (2026-08-13):
+Current EN-E10 private common Mammoth checkpoint awaiting visual approval
+(2026-08-13): from clean published Gloamcrown reconciliation
+`c371e7ffeb3dd9196c29b9236d62585d96a52585`, the designer approved
+`baked-single-actor-tusked-heavy-grounded-quadruped` and opened exactly one
+private common Mammoth. Tundrahide Grazer on `codex/en-e10-mammoth-common` is a
+connected low, heavy actor with storm-taupe domed wool, massive shoulders, a
+warm stone face, large rose ears, connected trunk, paired frost-ivory tusks,
+pale sand belly, muted tundra bands, amber eyes, a short tail, four short legs,
+four broad feet, and a body-owned trunk lift into a tusk shove. Its exact
+80-frame digest is
+`740960848a5a45941a908b8f32d53a6426de789f7ca002817309e7506dcd3e08`.
+Raw / outlined / Form / comparison PNG hashes are
+`8e0f30182ce187fcd2742c6d6dde9e7ef6d8716cdef562e6279cf09ea1ead1f6`,
+`9baac7da2784068bb775b1b705a79d66e80db23e5750fff91e3d76b89a77fec2`,
+`658ec1817f40c58cf2de9d2bd0b9d752f863aeca82d4892908dd50d0cbe85d80`,
+and `b8e289487c3130e1a199f4637c1106ac69238df4b3935915c79090cf3d0c044d`;
+raw / Form GIF hashes are
+`fdfc4ff68c913df89807a85ccb0a803b6d04612ca1ff87c62bbaea79488a045d`
+and `497eee4fadf8ceb6d4cd0b3cc096b676757aea95a51f92346d9a34089a473e97`.
+Focused / fast / full validation passes, with fast / full at 64.6s / 118.7s:
+80/80 structural, four-foot, heavy-span, and three-way pixel/alpha-distinct
+frames; opaque range 245-281; public 92/294; all 232 fixtures unchanged; zero
+child assets/effects; no public or outline registration. Exact PNGs are open
+in Aseprite as sprites 155, 159, 163, and active 167. The candidate is
+intentionally uncommitted and unpushed pending explicit visual approval.
+Specialist/elite Mammoth, Rhino, fixtures, effects, release, accepted drift,
+and a PR remain closed.
+
+Approved preceding EN-E10 private elite Stag checkpoint published / Mammoth topology decision open (2026-08-13):
 from clean remote-verified Briarstep handoff
 `595b2b2b18ebe7e111486df96624b4e1f057647b`, the designer's `awesine lets keep
 going` opens exactly one private elite Stag under the selected

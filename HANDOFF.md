@@ -23,7 +23,61 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Gloamcrown Sovereign Published / Mammoth Topology Decision Open
+## Immediate Continuation Checkpoint - Tundrahide Grazer Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-mammoth-common`. It branches exactly from the clean,
+   published, remote-verified Gloamcrown reconciliation
+   `c371e7ffeb3dd9196c29b9236d62585d96a52585`. Preserve this private dirty
+   candidate; it is intentionally uncommitted and unpushed while visual
+   approval is pending.
+2. After the Gloamcrown publication tuple was completed, the designer approved
+   the recommended `baked-single-actor-tusked-heavy-grounded-quadruped`
+   topology. That authorizes exactly one private common Mammoth full 80-frame
+   candidate: one connected grounded 24x24 actor with a high domed back,
+   massive shoulders, low hindquarters, body-owned large ears, connected
+   trunk, paired tusks, short tail, four short weight-bearing legs, four broad
+   feet, and a body-owned trunk lift into a tusk shove. Child assets remain
+   zero and every effect remains external.
+3. Tundrahide Grazer is the exact candidate: storm-taupe wool, charcoal-brown
+   lower body and feet, warm stone face, frost-ivory tusks, pale sand belly,
+   muted blue-green tundra bands, weathered rose ears, and amber eyes. The
+   frozen 80-frame digest is
+   `740960848a5a45941a908b8f32d53a6426de789f7ca002817309e7506dcd3e08`.
+4. Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+   hashes are
+   `8e0f30182ce187fcd2742c6d6dde9e7ef6d8716cdef562e6279cf09ea1ead1f6`,
+   `9baac7da2784068bb775b1b705a79d66e80db23e5750fff91e3d76b89a77fec2`,
+   `658ec1817f40c58cf2de9d2bd0b9d752f863aeca82d4892908dd50d0cbe85d80`,
+   and `b8e289487c3130e1a199f4637c1106ac69238df4b3935915c79090cf3d0c044d`.
+   Raw and Complete B + Form GIF hashes are
+   `fdfc4ff68c913df89807a85ccb0a803b6d04612ca1ff87c62bbaea79488a045d`
+   and `497eee4fadf8ceb6d4cd0b3cc096b676757aea95a51f92346d9a34089a473e97`.
+5. Focused validation passes 80/80 connected, bounded, grounded, four-broad-foot,
+   and heavy-domed-span frames; 54/54 expected tusk, eye, and trunk-face views;
+   8/8 exact-white flashes; exact aliases and mirrors; and 80/80 pixel-plus-alpha
+   distinctions from approved Gloamcrown Sovereign and Cragcrown Patriarch
+   plus public Dire Wolf. Opaque range is 245-281. Complete B adds 10,037
+   outline pixels and Form changes 9,227 pixels. Focused / `check:fast` / full
+   `check` are green, with fast / full passing in 64.6s / 118.7s, public
+   92/294, all 232 fixture sheets unchanged, zero child assets/effects, and no
+   public or outline registration.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-mammoth-tundrahide-grazer/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-mammoth-tundrahide-grazer` and
+   run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-mammoth-tundrahide-grazer`.
+   Aseprite has the exact raw, outlined, Complete B + Form, and active
+   comparison PNGs open as sprites 155, 159, 163, and 167. The outlined PNG is
+   review evidence only; it does not authorize outline registration.
+7. Stop for explicit designer visual approval of this exact digest and six
+   hashes. Do not commit, push, register, publish, accept drift, or open a PR
+   before that reply. Approval would bind only this frozen common candidate;
+   specialist or elite Mammoth, Rhino, Furious Depraved Rhino Boss work,
+   fixtures, effects, child assets, the deferred Runic Idol decision, release,
+   and every broader gate remain closed.
+
+## Approved Preceding Checkpoint - Gloamcrown Sovereign Published / Mammoth Topology Decision Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-stag-elite`. It is based exactly on the clean, published,
