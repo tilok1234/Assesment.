@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private common Mammoth checkpoint published / handoff reconciliation pending
+Current EN-E10 private common Mammoth checkpoint published / specialist Mammoth gate open
 (2026-08-13): from clean published Gloamcrown reconciliation
 `c371e7ffeb3dd9196c29b9236d62585d96a52585`, the designer approved
 `baked-single-actor-tusked-heavy-grounded-quadruped` and opened exactly one
@@ -40,13 +40,15 @@ frames; opaque range 245-281; public 92/294; all 232 fixtures unchanged; zero
 child assets/effects; no public or outline registration. Exact PNGs are open
 in Aseprite as sprites 155, 159, 163, and active 167. The designer replied
 `awesome klets do next`; accepted implementation
-`f0ced3c777c478a4077fb439ccd8b4b363ea52ac` and approval record
-`2387ec0a584f77b3473827ef0568823bf86b4fd2` are pushed and remote verified.
-Only the initial published handoff and final reconciliation remain open. Hold
-the continuation suffix until the complete tuple is clean and remote verified;
-it then opens exactly one private specialist Mammoth under the selected
-topology. Public/outline
-registration, fixtures, effects, child assets, elite Mammoth, Rhino, release,
+`f0ced3c777c478a4077fb439ccd8b4b363ea52ac`, approval record
+`2387ec0a584f77b3473827ef0568823bf86b4fd2`, and initial published handoff
+`699e17fe7749b365feabbd15f323eac15aaf4337` are pushed and remote verified;
+this reconciliation completes the bounded publication tuple. Final
+published-state full validation passes in 106.7s. The continuation suffix opens
+exactly one private specialist Mammoth full 80-frame candidate on a new
+isolated branch from this clean checkpoint under the selected topology.
+Public/outline registration, fixtures, effects, child assets, elite Mammoth,
+Rhino, release,
 accepted drift, and a PR remain closed.
 
 Approved preceding EN-E10 private elite Stag checkpoint published / Mammoth topology decision open (2026-08-13):

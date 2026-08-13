@@ -122,8 +122,8 @@ export const EN_E10_TUNDRAHIDE_GRAZER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: 'f0ced3c777c478a4077fb439ccd8b4b363ea52ac',
   publishedApprovalRecord: '2387ec0a584f77b3473827ef0568823bf86b4fd2',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '699e17fe7749b365feabbd15f323eac15aaf4337',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E10_GLOAMCROWN_SOVEREIGN_GATE.id,
     artifactSha256: EN_E10_GLOAMCROWN_SOVEREIGN_GATE.artifactSha256,
@@ -173,7 +173,7 @@ export const EN_E10_TUNDRAHIDE_GRAZER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Tundrahide Grazer implementation f0ced3c777c478a4077fb439ccd8b4b363ea52ac and approval record 2387ec0a584f77b3473827ef0568823bf86b4fd2 are remote verified. Only the initial published handoff and final reconciliation remain open. The designer reply includes lets do next, but that suffix remains held until this exact publication tuple is clean and remote verified; it then opens exactly one private specialist Mammoth under the selected baked-single-actor-tusked-heavy-grounded-quadruped topology. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Mammoth registration, fixtures, effects, child assets, elite Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Tundrahide Grazer implementation f0ced3c777c478a4077fb439ccd8b4b363ea52ac, approval record 2387ec0a584f77b3473827ef0568823bf86b4fd2, and initial published handoff 699e17fe7749b365feabbd15f323eac15aaf4337 are remote verified; this reconciliation completes the bounded publication tuple. The designer reply awesome klets do next opens exactly one private specialist Mammoth full 80-frame candidate on a new isolated branch from this clean checkpoint under the selected baked-single-actor-tusked-heavy-grounded-quadruped topology. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Mammoth registration, fixtures, effects, child assets, elite Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_TUNDRAHIDE_GRAZER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -457,7 +457,7 @@ export const EN_E10_TUNDRAHIDE_GRAZER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'tundrahide-grazer',
     scale: 8,
-    notes: 'Visually approved as one exact private common Mammoth against approved Gloamcrown Sovereign and Cragcrown Patriarch plus public Dire Wolf. Accepted implementation f0ced3c777c478a4077fb439ccd8b4b363ea52ac and approval record 2387ec0a584f77b3473827ef0568823bf86b4fd2 are remote verified. Only the initial published handoff and final reconciliation remain open. The distinct Complete B outlined PNG remains review evidence only. The lets do next suffix is held until the publication tuple is clean and remote verified, then opens exactly one private specialist Mammoth under the selected topology; keep public or outline registration, fixtures, effects, child assets, elite Mammoth, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private common Mammoth against approved Gloamcrown Sovereign and Cragcrown Patriarch plus public Dire Wolf. Accepted implementation f0ced3c777c478a4077fb439ccd8b4b363ea52ac, approval record 2387ec0a584f77b3473827ef0568823bf86b4fd2, and initial published handoff 699e17fe7749b365feabbd15f323eac15aaf4337 are remote verified; this reconciliation completes the bounded publication tuple. The designer reply awesome klets do next opens exactly one private specialist Mammoth full 80-frame candidate on a new isolated branch from this clean checkpoint under the selected topology. The distinct Complete B outlined PNG remains review evidence only. Keep public or outline registration, fixtures, effects, child assets, elite Mammoth, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

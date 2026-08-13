@@ -23,15 +23,16 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Tundrahide Grazer Published / Handoff Reconciliation Pending
+## Immediate Continuation Checkpoint - Tundrahide Grazer Published / Specialist Mammoth Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-common`. It branches exactly from the clean,
    published, remote-verified Gloamcrown reconciliation
    `c371e7ffeb3dd9196c29b9236d62585d96a52585`. Accepted implementation
    `f0ced3c777c478a4077fb439ccd8b4b363ea52ac` and approval record
-   `2387ec0a584f77b3473827ef0568823bf86b4fd2` are pushed and remote verified.
-   Only the initial published handoff and final reconciliation remain open.
+   `2387ec0a584f77b3473827ef0568823bf86b4fd2` and initial published handoff
+   `699e17fe7749b365feabbd15f323eac15aaf4337` are pushed and remote verified;
+   this reconciliation completes the bounded publication tuple.
 2. After the Gloamcrown publication tuple was completed, the designer approved
    the recommended `baked-single-actor-tusked-heavy-grounded-quadruped`
    topology. That authorizes exactly one private common Mammoth full 80-frame
@@ -63,7 +64,8 @@ gate.
    `check` are green, with pre-approval fast / full passing in 64.6s / 118.7s
    and approval-local fast passing in 60.2s, public 92/294, all 232 fixture
    sheets unchanged, zero child assets/effects, and no public or outline
-   registration.
+   registration. Final published-state full validation passes in 106.7s with
+   the same boundary.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-mammoth-tundrahide-grazer/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-mammoth-tundrahide-grazer` and
@@ -76,11 +78,13 @@ gate.
    digest `740960848a5a45941a908b8f32d53a6426de789f7ca002817309e7506dcd3e08`.
    The designer replied `awesome klets do next`. Approval binds only that exact
    packet at implementation `f0ced3c777c478a4077fb439ccd8b4b363ea52ac`.
-   Its implementation and approval record are remote verified. Only the initial
-   published handoff and final reconciliation remain open. Hold the
-   continuation suffix until the complete tuple is clean and remote verified;
-   it then opens exactly one private specialist Mammoth under the selected
-   topology. Public/outline registration,
+   Accepted implementation `f0ced3c777c478a4077fb439ccd8b4b363ea52ac`,
+   approval record `2387ec0a584f77b3473827ef0568823bf86b4fd2`, and initial
+   published handoff `699e17fe7749b365feabbd15f323eac15aaf4337` are remote
+   verified; this reconciliation completes the bounded publication tuple. The
+   continuation suffix opens exactly one private specialist Mammoth full
+   80-frame candidate on a new isolated branch from this clean checkpoint under
+   the selected topology. Public/outline registration,
    fixtures, effects, child assets, elite Mammoth, Rhino, Furious Depraved
    Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
    a PR, and every broader gate remain closed.
