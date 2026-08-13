@@ -149,11 +149,12 @@ check(
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publishedImplementation === 'cb227af79e2e7db39609d8bb5524942387026333'
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publishedApprovalRecord === 'ab1cab569aa4fbd69a6b2ec9ca60f838792c481b'
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.initialPublishedHandoff === ''
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.initialPublishedHandoff === '1fbad52011fb4e3d95c3b64f2b8ad280d290b22b'
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publicationState === 'published'
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('cb227af79e2e7db39609d8bb5524942387026333')
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('ab1cab569aa4fbd69a6b2ec9ca60f838792c481b')
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('initial published handoff'),
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('1fbad52011fb4e3d95c3b64f2b8ad280d290b22b')
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('completes the bounded publication tuple'),
   'Gloamgaze approval record or predecessor tuple drifted',
 );
 check(
@@ -162,7 +163,7 @@ check(
     && EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.precedingVariant.role === 'common'
     && EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'gloamgaze-stalker'
     && EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && JSON.stringify(EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Cockatrice specialist role contract drifted',

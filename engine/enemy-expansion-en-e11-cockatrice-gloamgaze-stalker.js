@@ -42,7 +42,7 @@ export const EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_COCKATRICE_GLOAMGAZE_STALKER_CONTRACT.variant,
     role: EN_E11_COCKATRICE_GLOAMGAZE_STALKER_CONTRACT.role,
-    status: 'implemented-full-approved',
+    status: 'implemented-full-approved-published-reconciled',
   },
   deferredRoles: ['elite'],
 });
@@ -61,8 +61,8 @@ export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: 'cb227af79e2e7db39609d8bb5524942387026333',
   publishedApprovalRecord: 'ab1cab569aa4fbd69a6b2ec9ca60f838792c481b',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '1fbad52011fb4e3d95c3b64f2b8ad280d290b22b',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.id,
     candidateFrameDigest: EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.candidateFrameDigest,
@@ -129,7 +129,7 @@ export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Gloamgaze Stalker implementation cb227af79e2e7db39609d8bb5524942387026333 and approval record ab1cab569aa4fbd69a6b2ec9ca60f838792c481b are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded publication tuple. The approval reply aproved contains no continuation request, so Cockatrice elite, Raven, Owl, Phoenix, every other Bird-family candidate, public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Gloamgaze Stalker implementation cb227af79e2e7db39609d8bb5524942387026333, approval record ab1cab569aa4fbd69a6b2ec9ca60f838792c481b, and initial published handoff 1fbad52011fb4e3d95c3b64f2b8ad280d290b22b are pushed and remote verified; this reconciliation completes the bounded publication tuple. The approval reply aproved contains no continuation request, so Cockatrice elite, Raven, Owl, Phoenix, every other Bird-family candidate, public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_DATA = deepFreeze({
@@ -587,7 +587,7 @@ export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'gloamgaze-stalker',
     scale: 6,
-    notes: 'Approved private specialist Cockatrice only, bound to exact implementation cb227af79e2e7db39609d8bb5524942387026333, candidate digest 7752f15be95848bb5af6d1b89e79cd9f07ff3f1be8776427857497773d5b4eb8, and its six frozen review hashes. The designer replied aproved without a continuation request. Keep public or outline registration, fixtures, effects, child assets, elite Cockatrice, later Bird families, release, accepted drift, and a pull request separate.',
+    notes: 'Published and reconciled private specialist Cockatrice only, bound to exact implementation cb227af79e2e7db39609d8bb5524942387026333, approval record ab1cab569aa4fbd69a6b2ec9ca60f838792c481b, initial published handoff 1fbad52011fb4e3d95c3b64f2b8ad280d290b22b, candidate digest 7752f15be95848bb5af6d1b89e79cd9f07ff3f1be8776427857497773d5b4eb8, and its six frozen review hashes. The designer replied aproved without a continuation request. Keep public or outline registration, fixtures, effects, child assets, elite Cockatrice, later Bird families, release, accepted drift, and a pull request separate.',
   },
 });
 

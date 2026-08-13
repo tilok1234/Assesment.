@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Approved Checkpoint - Gloamgaze Stalker / Published Handoff In Progress
+## Current Published Checkpoint - Gloamgaze Stalker / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-cockatrice-specialist`. It branches exactly from clean,
@@ -83,12 +83,14 @@ gate.
    All four exact PNGs and all four raw animation phase sheets were inspected
    at original resolution. The outlined PNG is review evidence only.
 7. Approval-local focused and fast gates pass again in about 0.8s and 67.0s.
-   Implementation `cb227af79e2e7db39609d8bb5524942387026333` and approval
-   record `ab1cab569aa4fbd69a6b2ec9ca60f838792c481b` are pushed and remote
-   verified. Only the initial published handoff and final reconciliation
-   remain in progress. Do not register, regenerate fixtures, add effects or
-   child assets, begin elite Cockatrice or another Bird family, release,
-   accept drift, or open a PR.
+   Implementation `cb227af79e2e7db39609d8bb5524942387026333`, approval record
+   `ab1cab569aa4fbd69a6b2ec9ca60f838792c481b`, and initial published handoff
+   `1fbad52011fb4e3d95c3b64f2b8ad280d290b22b` are pushed and remote verified;
+   this reconciliation completes the bounded publication tuple. The reply
+   contains no continuation request. Final published-state focused / fast /
+   full gates pass in about 0.8s / 56.5s / 107.6s. Do not register, regenerate
+   fixtures, add effects or child assets, begin elite Cockatrice or another
+   Bird family, release, accept drift, or open a PR.
 
 ## Current Published Checkpoint - Bramblecomb Scratcher / Specialist Gate Open
 
