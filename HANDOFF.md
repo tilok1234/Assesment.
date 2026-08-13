@@ -23,6 +23,68 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Private Candidate - Bramblecomb Scratcher Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-cockatrice-common`. It branches exactly from the clean,
+   pushed, remote-verified Crownveil reconciliation
+   `99fed17ec4815b6985288818796a85b9abc7d78d`.
+2. After Crownveil was approved, published, and reconciled, the designer gave
+   the fresh continuation `lets do next`. That opened only the Cockatrice
+   topology decision. Codex proposed
+   `baked-single-actor-grounded-serpent-tailed-cockerel`; the designer replied
+   `approved`. This selects one connected actor topology and authorizes exactly
+   one private common Cockatrice 80-frame candidate. It does not approve the
+   candidate pixels or open commit, push, publication, public or outline
+   registration, fixtures, effects, child assets, specialist or elite
+   Cockatrices, Raven, Owl, Phoenix, release, accepted drift, or a PR.
+3. Bramblecomb Scratcher is one connected low-slung cockerel-and-serpent actor
+   with a crimson jagged comb and wattle, hooked old-ivory beak, moss-scaled
+   neck, warm umber body, folded straw-and-rust wings, two separated broad
+   ochre talon contacts, and one thick forest-green scale-marked serpent tail.
+   Attack plants both talons, draws and snaps the neck into a beak strike,
+   lashes the connected tail through two readable phases, and recoils. Cast
+   aliases Attack; Death aliases Hurt H1,H2,H2,H2. Petrifying gaze, venom,
+   dust, glow, projectiles, and impacts remain external.
+4. The frozen 80-frame candidate digest is
+   `0d55f7dc0fafac3014bcdfa1ea2dce3cbb4b5ba09eb6c52f6c723067702b9764`.
+   Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+   hashes are
+   `c42f11a84cdd6f711eb485f1a3125e9438603acba9a7c4ec17aac5aae0df5f00`,
+   `7cde3cb4ca342f554d42ec4f1b5959bf901acd803a2c0da467b62b6166c9fd2d`,
+   `7c896d379bd57f3105d4ca42a6be69b15c8d60f5bbe8cbee61e941ba12756582`,
+   and `afcceb3e614fafebd3416c8d7ee79fd7380ad45fbcfcbbefe1416f621df6cd8e`.
+   Raw and Complete B + Form GIF hashes are
+   `8bc278089a917e9659f976f301b5b82bd303952947bf1a06885b92c7f0c9ced9`
+   and `96fdc163c8093fb4215d0d8b6eb9786e9d14ddd8774ceade04722cebcc82c21d`.
+5. Focused validation passes 80/80 connected, bounded, grounded, exactly
+   two-talon, and hybrid-span frames; 16/16 connected tail-lash views; 54/54
+   expected eye-and-beak views; 72/72 comb, tail, wing, and scale views; 8/8
+   exact `#f4f4f4` flashes; exact aliases and side mirrors; and 80/80
+   pixel-plus-alpha distinctions from approved Crownveil Sovereign, approved
+   Aerie Scout, and public Marsh Crocodile. Opaque range is 200-253. Complete B
+   adds 8,380 outline pixels and Form changes 9,992 pixels. The transparent
+   20x4 inspection atlas passes exact dimensions, hard alpha, non-empty-cell,
+   and strict boundary checks. Focused / fast / full validation passes in about
+   0.5s / 57.5s / 116.4s. Public remains 92/294, all 232 fixture sheets stay
+   unchanged, and child assets, effects, public registration, and outline
+   registration remain zero.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-cockatrice-bramblecomb-scratcher/`.
+   Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e11-cockatrice-bramblecomb-scratcher`
+   and run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-cockatrice-bramblecomb-scratcher`.
+   The raw, outlined, Complete B + Form, Crownveil/Aerie/Marsh-Crocodile
+   comparison, and synchronized GIF files form the complete review surface.
+   All four exact PNGs were loaded and inspected at original resolution. The
+   outlined PNG is evidence only; it does not authorize outline registration.
+7. Required next action: show the four exact PNGs, both synchronized GIFs, and
+   candidate digest together, then stop for explicit visual approval. Do not
+   commit, push, publish, register, regenerate fixtures, add effects or child
+   assets, start later Cockatrice roles or Bird families, release, accept
+   drift, or open a PR.
+
 ## Current Published Checkpoint - Crownveil Sovereign / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch

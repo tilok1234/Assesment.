@@ -107,6 +107,36 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
+- Current private common Cockatrice candidate awaiting visual approval: on
+  `codex/en-e11-cockatrice-common`, based exactly on clean, pushed,
+  remote-verified Crownveil reconciliation
+  `99fed17ec4815b6985288818796a85b9abc7d78d`, the designer's fresh `lets do
+  next` opened only the Cockatrice topology decision. The designer then
+  replied `approved` to the proposed
+  `baked-single-actor-grounded-serpent-tailed-cockerel` topology, authorizing
+  one private common Cockatrice full 80-frame candidate without approving its
+  pixels. Bramblecomb Scratcher is a connected low-slung moss/umber/rust
+  cockerel-and-serpent actor with a jagged crimson comb and wattle, hooked
+  old-ivory beak, scaled neck, folded wings, two separated broad ochre talon
+  contacts, and one connected forest-green scale-marked tail. Attack plants
+  both talons, snaps the hooked beak forward, lashes the body-owned tail
+  through two phases, and recovers without a baked effect. Its frozen digest
+  is `0d55f7dc0fafac3014bcdfa1ea2dce3cbb4b5ba09eb6c52f6c723067702b9764`;
+  raw / outline / Form / comparison PNG hashes are
+  `c42f11a84cdd6f711eb485f1a3125e9438603acba9a7c4ec17aac5aae0df5f00`,
+  `7cde3cb4ca342f554d42ec4f1b5959bf901acd803a2c0da467b62b6166c9fd2d`,
+  `7c896d379bd57f3105d4ca42a6be69b15c8d60f5bbe8cbee61e941ba12756582`,
+  and `afcceb3e614fafebd3416c8d7ee79fd7380ad45fbcfcbbefe1416f621df6cd8e`;
+  raw / Form GIF hashes are
+  `8bc278089a917e9659f976f301b5b82bd303952947bf1a06885b92c7f0c9ced9`
+  and `96fdc163c8093fb4215d0d8b6eb9786e9d14ddd8774ceade04722cebcc82c21d`.
+  Focused/fast/full gates pass in about 0.5s/57.5s/116.4s with all 80 frames
+  structural and pixel-plus-alpha distinct from Crownveil, Aerie Scout, and
+  Marsh Crocodile; public stays 92/294 and all 232 fixtures remain exact. All
+  four exact PNGs were inspected at original resolution. Stop for explicit
+  visual approval; no commit, push, publication, registration, fixture,
+  effect, child asset, later Cockatrice role, other Bird family, release,
+  accepted drift, or PR gate is open.
 - Current private elite Peacock published / next gate closed: on
   `codex/en-e11-peacock-elite`, based exactly on clean, pushed, remote-verified
   Mirrorfan reconciliation `6df83e5e642dbec5b68b856d436aa9db810678eb`,

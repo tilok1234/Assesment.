@@ -14,6 +14,41 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
+Current EN-E11 private common Cockatrice candidate awaiting visual approval
+(2026-08-13): on `codex/en-e11-cockatrice-common`, based exactly on clean,
+pushed, remote-verified Crownveil reconciliation
+`99fed17ec4815b6985288818796a85b9abc7d78d`, the designer's fresh `lets do
+next` opened only the Cockatrice topology decision. The designer then replied
+`approved` to the proposed
+`baked-single-actor-grounded-serpent-tailed-cockerel` topology, authorizing one
+private common Cockatrice 80-frame candidate without approving its pixels.
+Bramblecomb Scratcher is one connected low-slung moss, umber, rust, crimson,
+ochre, and forest-green cockerel-and-serpent actor with a jagged comb and
+wattle, hooked beak, scaled neck, folded wings, two separated broad talon
+contacts, and a thick body-owned coiled tail. Attack plants both talons, snaps
+the beak forward, lashes the connected tail through two phases, and recovers.
+Its exact candidate digest is
+`0d55f7dc0fafac3014bcdfa1ea2dce3cbb4b5ba09eb6c52f6c723067702b9764`.
+Raw / outlined / Form / comparison PNG hashes are
+`c42f11a84cdd6f711eb485f1a3125e9438603acba9a7c4ec17aac5aae0df5f00`,
+`7cde3cb4ca342f554d42ec4f1b5959bf901acd803a2c0da467b62b6166c9fd2d`,
+`7c896d379bd57f3105d4ca42a6be69b15c8d60f5bbe8cbee61e941ba12756582`,
+and `afcceb3e614fafebd3416c8d7ee79fd7380ad45fbcfcbbefe1416f621df6cd8e`;
+raw / Form GIF hashes are
+`8bc278089a917e9659f976f301b5b82bd303952947bf1a06885b92c7f0c9ced9`
+and `96fdc163c8093fb4215d0d8b6eb9786e9d14ddd8774ceade04722cebcc82c21d`.
+Focused validation passes all 80 connected, bounded, grounded, two-talon,
+hybrid-span, alias, mirror, and three-way pixel/alpha-distinction cases at
+opaque range 200-253; 16/16 attack/cast lash views preserve the connected tail.
+The inspection atlas passes dimensions, hard alpha, non-empty-cell, and strict
+boundary checks. Focused/fast/full gates pass in about 0.5s/57.5s/116.4s.
+Public stays 92/294, all 232 fixtures remain unchanged, and child assets,
+effects, public registration, and outline registration stay zero. All four
+exact PNGs were inspected at original resolution. Stop for explicit visual
+approval; no commit, push, publication, registration, fixtures, effects,
+later Cockatrice roles, Raven, Owl, Phoenix, release, accepted drift, or PR is
+open.
+
 Current EN-E11 private elite Peacock published / next gate closed
 (2026-08-13): on `codex/en-e11-peacock-elite`, based exactly on clean, pushed,
 remote-verified Mirrorfan reconciliation
