@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private specialist Cockatrice candidate awaiting visual approval
+- Current approved private specialist Cockatrice / publication in progress
   (2026-08-13): on `codex/en-e11-cockatrice-specialist`, based exactly on the
   clean, pushed, remote-verified Bramblecomb reconciliation
   `f95144ee3fc656dcb624567ee003d344185cbfe5`, the designer's `approved lets do
@@ -44,11 +44,16 @@
   195-260; 16/16 high-hook attack/cast views; exact aliases/mirrors; exact
   inspection atlas; public 92/294; all 232 fixtures unchanged; zero child
   assets/effects/public or outline registration. All four exact PNGs and all
-  four raw phase sheets were inspected at original resolution. Candidate
-  pixels are not approved, committed, or pushed. Stop for explicit visual
-  approval. Registration, fixtures, effects, child assets, elite Cockatrice,
-  Raven, Owl, Phoenix, release, accepted drift, a PR, and every broader gate
-  remain closed.
+  four raw phase sheets were inspected at original resolution. The designer
+  replied `aproved`; approval binds only to accepted implementation
+  `cb227af79e2e7db39609d8bb5524942387026333`, the digest, and six frozen
+  hashes. That implementation is pushed and remote verified. Approval-local
+  focused/fast gates pass again in about 0.8s/67.0s. The reply contains no
+  continuation request, so elite Cockatrice and every later lane remain
+  closed. Only the approval record, initial published handoff, and final
+  reconciliation are in progress. Registration, fixtures, effects, child
+  assets, Raven, Owl, Phoenix, release, accepted drift, a PR, and every broader
+  gate remain closed.
 
 - Current approved private common Cockatrice published / specialist gate open
   (2026-08-13): on `codex/en-e11-cockatrice-common`, based exactly on clean,

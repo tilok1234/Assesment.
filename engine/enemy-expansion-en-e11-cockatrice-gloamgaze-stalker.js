@@ -23,7 +23,7 @@ export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_CONTRACT = deepFreeze({
   family: 'cockatrice',
   variant: 'gloamgaze-stalker',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E11_COCKATRICE_TOPOLOGY_DECISION.selected,
   silhouette: 'One connected lean high-necked cockerel-and-serpent actor joins a tall forked comb and narrow wattle, hooked beak, long pale-throated scaled neck, slim feathered torso, two angular folded wings, two separated taloned feet, and one long body-owned serpent tail ending in a raised wedge-shaped hook. It is taller and narrower than Bramblecomb Scratcher and is neither a fan-tailed Peacock, upright Birdfolk person, ordinary two-legged bird, nor quadruped basilisk.',
   identity: 'Deep teal and slate head scales, a pale mint throat mask, dusk-plum body, angular rose-copper wings, forked violet comb, bone hooked beak, lichen-green eyes, dark copper talons, and a blue-black teal-marked hooked serpent tail distinguish the Gloamgaze Stalker specialist.',
@@ -42,18 +42,27 @@ export const EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_COCKATRICE_GLOAMGAZE_STALKER_CONTRACT.variant,
     role: EN_E11_COCKATRICE_GLOAMGAZE_STALKER_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
 });
 
 export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE = deepFreeze({
   id: 'en-e11-cockatrice-gloamgaze-stalker-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Bramblecomb Scratcher implementation c01ac35a5862296469967255ffcadadfd5aaae4e, approval record 335b5c467c10f2042128ef7e7f20367735422909, initial published handoff 9347a28f6cef9c6ca11a163732674d203bc87d94, and final reconciliation f95144ee3fc656dcb624567ee003d344185cbfe5 are pushed and remote verified. The designer approved that exact common packet and continued with: approved lets do next. Under the documented Cockatrice role order and selected baked-single-actor-grounded-serpent-tailed-cockerel topology, the continuation authorizes exactly one private specialist Cockatrice full 80-frame candidate only. It does not approve candidate pixels or authorize public or outline registration, fixtures, effects, child assets, elite Cockatrice, Raven, Owl, Phoenix, release, accepted drift, or a pull request.',
   baseCheckpoint: 'f95144ee3fc656dcb624567ee003d344185cbfe5',
   architectureDecision: EN_E11_COCKATRICE_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Bramblecomb Scratcher, approved Aerie Scout, and public Marsh Crocodile comparison PNGs were frozen with both synchronized GIF hashes. All four exact PNG paths and all four raw phase sheets were loaded and inspected at original resolution, and the transparent 20x4 inspection atlas passed dimensions, hard alpha, non-empty-cell, and strict boundary checks. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest 7752f15be95848bb5af6d1b89e79cd9f07ff3f1be8776427857497773d5b4eb8. The designer replied: aproved. Approval applies only to that exact Gloamgaze Stalker digest and its six frozen review hashes. The reply contains no continuation request, so it does not open elite Cockatrice, Raven, Owl, Phoenix, any other Bird family, public or outline registration, fixtures, effects, child assets, release, accepted drift, or a pull request.',
+  approvedImplementation: 'cb227af79e2e7db39609d8bb5524942387026333',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.id,
     candidateFrameDigest: EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.candidateFrameDigest,
@@ -120,7 +129,7 @@ export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'Stop after the exact hash-frozen private Gloamgaze Stalker review packet is generated and validated. Explicit designer visual approval is required before any commit, push, publication, registration, fixture, effect, elite Cockatrice, other Bird family, release, accepted drift, or pull-request work. The distinct outlined PNG is review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Gloamgaze Stalker implementation cb227af79e2e7db39609d8bb5524942387026333 is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded publication tuple. The approval reply aproved contains no continuation request, so Cockatrice elite, Raven, Owl, Phoenix, every other Bird-family candidate, public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_DATA = deepFreeze({
@@ -578,7 +587,7 @@ export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'gloamgaze-stalker',
     scale: 6,
-    notes: 'Private specialist Cockatrice candidate only, authorized by the designer continuation attached to exact Bramblecomb Scratcher approval after that common publication tuple became remote verified and reconciled. Review the exact raw, Complete B outline, Complete B + Form, sibling/comparison, and animated full-suite evidence together. Candidate pixels are not approved. Keep public or outline registration, fixtures, effects, child assets, elite Cockatrice, later Bird families, release, accepted drift, commit, push, publication, and a pull request separate until explicit visual approval.',
+    notes: 'Approved private specialist Cockatrice only, bound to exact implementation cb227af79e2e7db39609d8bb5524942387026333, candidate digest 7752f15be95848bb5af6d1b89e79cd9f07ff3f1be8776427857497773d5b4eb8, and its six frozen review hashes. The designer replied aproved without a continuation request. Keep public or outline registration, fixtures, effects, child assets, elite Cockatrice, later Bird families, release, accepted drift, and a pull request separate.',
   },
 });
 

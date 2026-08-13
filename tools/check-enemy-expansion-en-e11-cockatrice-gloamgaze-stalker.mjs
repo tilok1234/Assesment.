@@ -127,7 +127,7 @@ check(
   'approved Cockatrice topology decision drifted',
 );
 check(
-  EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.status === 'candidate'
+  EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.status === 'approved'
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.authorizedOn === '2026-08-13'
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.baseCheckpoint === 'f95144ee3fc656dcb624567ee003d344185cbfe5'
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.architectureDecision === EN_E11_COCKATRICE_TOPOLOGY_DECISION.id
@@ -140,11 +140,20 @@ check(
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.precedingApproval.gateId === EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.id
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.precedingApproval.candidateFrameDigest === EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.candidateFrameDigest
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.precedingApproval.currentReconciliation === 'f95144ee3fc656dcb624567ee003d344185cbfe5'
-    && !Object.hasOwn(EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE, 'approvedOn')
-    && !Object.hasOwn(EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE, 'publicationState')
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('Explicit designer visual approval')
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('before any commit, push, publication'),
-  'Gloamgaze authorization or predecessor tuple drifted',
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.approvedOn === '2026-08-13'
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.approvalEvidence.includes('7752f15be95848bb5af6d1b89e79cd9f07ff3f1be8776427857497773d5b4eb8')
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.approvalEvidence.includes('The designer replied: aproved')
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.approvalEvidence.includes('no continuation request')
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.approvedImplementation === 'cb227af79e2e7db39609d8bb5524942387026333'
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publishedImplementation === ''
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publishedApprovalRecord === ''
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.initialPublishedHandoff === ''
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('cb227af79e2e7db39609d8bb5524942387026333')
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('approval record'),
+  'Gloamgaze approval record or predecessor tuple drifted',
 );
 check(
   JSON.stringify(EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
@@ -152,9 +161,9 @@ check(
     && EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.precedingVariant.role === 'common'
     && EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'gloamgaze-stalker'
     && EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_COCKATRICE_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Cockatrice specialist role contract drifted',
 );
 check(
@@ -167,7 +176,7 @@ check(
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.exclusions.includes('registration')
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.exclusions.includes('fixtures')
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.exclusions.includes('approved Bramblecomb Scratcher pixel changes')
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('Explicit designer visual approval')
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('no continuation request')
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('outline registration'),
   'Gloamgaze anatomy, motion, effect firewall, or stop boundary drifted',
 );
@@ -341,7 +350,7 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E11 Cockatrice Gloamgaze Stalker private specialist candidate passes focused validation.');
+  console.log('EN-E11 Cockatrice Gloamgaze Stalker approved private specialist packet passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Cockatrice identity: ' + twoFootRows + '/80 two-talon rows; ' + naturalSpans + '/80 grounded hybrid spans; ' + tailHookViews + '/16 connected tail-hook views; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + combViews + '/72 comb views; ' + tailViews + '/72 tail views; ' + wingViews + '/72 wing views; ' + scaleViews + '/72 scale views');
   console.log('- Distinction: Bramblecomb ' + differences.bramblecomb + '/80; Aerie Scout ' + differences.aerieScout + '/80; Marsh Crocodile ' + differences.marshCrocodile + '/80 pixel and alpha frames differ');

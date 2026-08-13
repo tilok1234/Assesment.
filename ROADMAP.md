@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E11 private specialist Cockatrice candidate awaiting visual approval
+Current EN-E11 approved private specialist Cockatrice / publication in progress
 (2026-08-13): on `codex/en-e11-cockatrice-specialist`, based exactly on clean,
 pushed, remote-verified Bramblecomb reconciliation
 `f95144ee3fc656dcb624567ee003d344185cbfe5`, the designer's `approved lets do
@@ -42,10 +42,15 @@ structural, two-talon, and pixel-plus-alpha distinct from Bramblecomb, Aerie,
 and Marsh Crocodile at opaque range 195-260; 16/16 hooked attack/cast views;
 public 92/294; all 232 fixtures exact; zero child assets/effects/registration.
 The exact review PNGs and raw phase sheets were inspected at original
-resolution. Candidate pixels are not approved, committed, or pushed. Stop for
-explicit visual approval; registration, fixtures, effects, outline
-registration, elite Cockatrice, other Bird families, release, accepted drift,
-and a PR remain closed.
+resolution. The designer replied `aproved`; approval binds only to accepted
+implementation `cb227af79e2e7db39609d8bb5524942387026333`, the digest, and six
+frozen hashes. That implementation is pushed and remote verified.
+Approval-local focused/fast gates pass again in about 0.8s/67.0s. The reply
+contains no continuation request, so elite Cockatrice and every later lane
+remain closed. Only the approval record, initial published handoff, and final
+reconciliation are in progress; registration, fixtures, effects, outline
+registration, other Bird families, release, accepted drift, and a PR remain
+closed.
 
 Current EN-E11 approved private common Cockatrice published / specialist gate open
 (2026-08-13): on `codex/en-e11-cockatrice-common`, based exactly on clean,

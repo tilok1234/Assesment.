@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private specialist Cockatrice candidate awaiting visual approval: on
+- Current approved private specialist Cockatrice / publication in progress: on
   `codex/en-e11-cockatrice-specialist`, based exactly on clean, pushed,
   remote-verified Bramblecomb reconciliation
   `f95144ee3fc656dcb624567ee003d344185cbfe5`, the designer replied `approved
@@ -137,10 +137,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Bramblecomb, Aerie Scout, and Marsh Crocodile; 16/16 hooked attack/cast
   views; opaque range 195-260; public 92/294; all 232 fixtures exact; zero
   child assets/effects/registration. All four exact PNGs and all four raw
-  animation phase sheets were inspected at original resolution. Candidate
-  pixels are not approved, committed, or pushed. Stop for explicit visual
-  approval; registration, fixtures, effects, outline registration, elite
-  Cockatrice, other Bird families, release, accepted drift, and a PR remain
+  animation phase sheets were inspected at original resolution. The designer
+  replied `aproved`; approval binds only to accepted implementation
+  `cb227af79e2e7db39609d8bb5524942387026333`, the digest, and six frozen
+  hashes. That implementation is pushed and remote verified. Approval-local
+  focused/fast gates pass again in about 0.8s/67.0s. The reply contains no
+  continuation request, so elite Cockatrice and every later lane remain
+  closed. Only the bounded approval record, published handoff, and final
+  reconciliation are in progress; registration, fixtures, effects, outline
+  registration, other Bird families, release, accepted drift, and a PR remain
   closed.
 - Current approved private common Cockatrice published / specialist gate open: on
   `codex/en-e11-cockatrice-common`, based exactly on clean, pushed,

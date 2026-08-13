@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Candidate - Gloamgaze Stalker / Awaiting Visual Approval
+## Current Approved Checkpoint - Gloamgaze Stalker / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-cockatrice-specialist`. It branches exactly from clean,
@@ -31,12 +31,16 @@ gate.
    `f95144ee3fc656dcb624567ee003d344185cbfe5`.
 2. The designer replied `approved lets do next` to Bramblecomb's exact frozen
    packet. That reply approved and published only the common candidate. Its
-   continuation opens exactly one private specialist Cockatrice full 80-frame
-   candidate under the selected
-   `baked-single-actor-grounded-serpent-tailed-cockerel` topology. It does not
-   approve Gloamgaze pixels or authorize commit, push, publication, public or
-   outline registration, fixtures, effects, child assets, elite Cockatrice,
-   another Bird family, release, accepted drift, or a PR.
+   continuation opened exactly one private specialist Cockatrice full
+   80-frame candidate under the selected
+   `baked-single-actor-grounded-serpent-tailed-cockerel` topology. After the
+   complete Gloamgaze packet below was shown, the designer replied `aproved`.
+   That approval binds only to accepted implementation
+   `cb227af79e2e7db39609d8bb5524942387026333`, its digest, and six frozen
+   review hashes. The implementation is pushed and remote verified. The reply
+   contains no continuation request and does not authorize public or outline
+   registration, fixtures, effects, child assets, elite Cockatrice, another
+   Bird family, release, accepted drift, or a PR.
 3. Gloamgaze Stalker is one connected lean, high-necked cockerel-and-serpent
    actor with a forked violet comb, bone hooked beak, long teal/slate neck and
    pale mint throat mask, dusk-plum torso, angular rose-copper wings, two
@@ -78,11 +82,12 @@ gate.
    `npm.cmd run check:enemy-expansion-en-e11-cockatrice-gloamgaze-stalker`.
    All four exact PNGs and all four raw animation phase sheets were inspected
    at original resolution. The outlined PNG is review evidence only.
-7. Stop for explicit designer visual approval of the exact four PNGs, two
-   GIFs, and candidate digest. No specialist commit or push has been made.
-   Do not register, regenerate fixtures, add effects or child assets, begin
-   elite Cockatrice or another Bird family, release, accept drift, or open a
-   PR.
+7. Approval-local focused and fast gates pass again in about 0.8s and 67.0s.
+   Implementation `cb227af79e2e7db39609d8bb5524942387026333` is pushed and
+   remote verified. Only the bounded approval record, initial published
+   handoff, and final reconciliation remain in progress. Do not register,
+   regenerate fixtures, add effects or child assets, begin elite Cockatrice or
+   another Bird family, release, accept drift, or open a PR.
 
 ## Current Published Checkpoint - Bramblecomb Scratcher / Specialist Gate Open
 
