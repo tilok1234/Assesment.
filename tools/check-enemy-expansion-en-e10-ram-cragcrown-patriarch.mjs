@@ -128,13 +128,24 @@ check(
   'published Cliffcoil predecessor drifted',
 );
 check(
-  EN_E10_CRAGCROWN_PATRIARCH_GATE.status === 'awaiting-visual-approval'
+  EN_E10_CRAGCROWN_PATRIARCH_GATE.status === 'approved'
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.baseCheckpoint === 'bb11e3518b65613caa5499ec7cb5ddefb18d5ebd'
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.authorizedOn === '2026-08-13'
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.authorizationEvidence.includes('designer then separately said: lets xdo next')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.authorizationEvidence.includes('exactly one private elite Ram full 80-frame candidate')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.authorizationEvidence.includes('distinct Complete B outlined PNG')
-    && EN_E10_CRAGCROWN_PATRIARCH_GATE.architectureDecision === EN_E10_RAM_TOPOLOGY_DECISION.id,
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.architectureDecision === EN_E10_RAM_TOPOLOGY_DECISION.id
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.approvedOn === '2026-08-13'
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.approvalEvidence.includes('raw sprite 83')
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.approvalEvidence.includes('outlined sprite 87')
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.approvalEvidence.includes('Complete B + Form sprite 91')
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.approvalEvidence.includes('active comparison sprite 95')
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.approvalEvidence.includes('b8c7159c1d85689b3b9178179464b54e01a7ae538a1bda0036eb731d7d7d6c0a')
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.approvedImplementation === '3d8727cce7d8b3f00ce8923ee9db629de13e1097'
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.publishedImplementation === ''
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.publishedApprovalRecord === ''
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.initialPublishedHandoff === ''
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.publicationState === 'approved-not-published',
   'elite Ram authorization or outlined-review boundary drifted',
 );
 check(
@@ -152,12 +163,12 @@ check(
     && EN_E10_RAM_ELITE_CONTRACT_CARD.precedingVariant.id === 'cliffcoil-strider'
     && EN_E10_RAM_ELITE_CONTRACT_CARD.activeVariant.id === 'cragcrown-patriarch'
     && EN_E10_RAM_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E10_RAM_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-visual-approval'
+    && EN_E10_RAM_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E10_RAM_ELITE_CONTRACT_CARD.deferredRoles.length === 0,
   'Ram elite role boundary drifted',
 );
 check(
-  EN_E10_CRAGCROWN_PATRIARCH_CONTRACT.state === 'implemented-complete-motion-awaiting-visual-approval'
+  EN_E10_CRAGCROWN_PATRIARCH_CONTRACT.state === 'implemented-complete-motion-approved'
     && EN_E10_CRAGCROWN_PATRIARCH_CONTRACT.silhouette.includes('enormous connected full-ring horns')
     && EN_E10_CRAGCROWN_PATRIARCH_CONTRACT.visualIdentity.includes('burnished-copper growth rings')
     && EN_E10_CRAGCROWN_PATRIARCH_DATA.actorTopology === EN_E10_RAM_TOPOLOGY_DECISION.selected
@@ -172,7 +183,8 @@ check(
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.exclusions.includes('additional Ram variants')
-    && EN_E10_CRAGCROWN_PATRIARCH_GATE.nextGate.includes('four PNG plus two GIF review hashes')
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.nextGate.includes('visually approved at implementation 3d8727cce7d8b3f00ce8923ee9db629de13e1097')
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.nextGate.includes('No next Ram art gate is open')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.nextGate.includes('review evidence only')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.nextGate.includes('does not authorize outline registration'),
   'full-suite motion, review, or stop boundary drifted',

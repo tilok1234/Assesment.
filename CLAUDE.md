@@ -124,14 +124,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Cliffcoil Strider and Stonecurl Grazer plus public Dire Wolf; opaque range is
   282-303. Exact aliases and mirrors pass. The raw, required distinct Complete B
   outlined, Complete B + Form, and comparison PNGs plus two GIFs are hash-frozen
-  and regenerate deterministically. Focused / fast / full gates pass in 0.6s /
-  60.9s / 119.0s with public 92/294 and all 232 fixtures unchanged. The four
-  exact PNGs are open together in Aseprite as sprites 83, 87, 91, and active 95.
-  The outlined PNG is review evidence only, not outline registration. This exact
-  packet is awaiting visual approval and remains uncommitted and unpushed.
-  Public/outline registration, fixtures, effects, child assets, further Ram
-  variants, later families, release, accepted drift, a PR, and every later gate
-  remain closed.
+  and regenerate deterministically. Pre-approval focused / fast / full gates
+  pass in 0.6s / 60.9s / 119.0s and approval-local focused / fast gates pass in
+  0.7s / 58.7s with public 92/294 and all 232 fixtures unchanged. The four exact
+  PNGs are open together in Aseprite as sprites 83, 87, 91, and active 95. The
+  outlined PNG is review evidence only, not outline registration. The final
+  prompt posted all four PNGs, both GIFs, and the exact digest; the designer
+  replied `approved`. Accepted implementation
+  `3d8727cce7d8b3f00ce8923ee9db629de13e1097` is remote verified. Standing
+  permission opens only its approval record, branch push, and bounded handoff
+  reconciliation. No next Ram art gate is open. Public/outline registration,
+  fixtures, effects, child assets, further Ram variants, later families,
+  release, accepted drift, a PR, and every later gate remain closed.
 - Approved preceding published private art checkpoint: on `codex/en-e10-ram-specialist`, based exactly
   on clean published Stonecurl reconciliation
   `67ba19086669b9135286784b6c9c39f682ca3032`, the designer's separate `lets do

@@ -48,7 +48,7 @@ export const EN_E10_RAM_ELITE_CONTRACT_CARD = deepFreeze({
     id: 'cragcrown-patriarch',
     name: 'Cragcrown Patriarch',
     role: 'elite',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   actorTopology: EN_E10_RAM_TOPOLOGY_DECISION.selected,
@@ -61,7 +61,7 @@ export const EN_E10_CRAGCROWN_PATRIARCH_CONTRACT = deepFreeze({
   family: 'ram',
   variant: 'cragcrown-patriarch',
   role: 'elite',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_RAM_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-broad-dark-layered-fleece-massive-ringed-horns-scarred-four-hoof-ram-v1',
   silhouette: 'A broad elite Ram with a deep layered fleece barrel, massive high shoulders, thick neck, blunt scarred wedge muzzle, two enormous connected full-ring horns, a connected heavy beard and short squared tail, and four separated weight-bearing hooves. It must remain a horned Ram while reading heavier than Stonecurl Grazer and Cliffcoil Strider and unlike a long-backed Dire Wolf, bowed Miremane Courser, upright Goatfolk, antlered Stag, Mammoth, or reduced Rhino Boss.',
@@ -103,11 +103,20 @@ export const EN_E10_CRAGCROWN_PATRIARCH_DATA = deepFreeze({
 
 export const EN_E10_CRAGCROWN_PATRIARCH_GATE = deepFreeze({
   id: 'en-e10-ram-cragcrown-patriarch-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: 'bb11e3518b65613caa5499ec7cb5ddefb18d5ebd',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Cliffcoil Strider implementation cb6c58440297b76f62776d8c11a6232d05bb1467, approval record 3b9b99e28a2c4787d76f3dc0def20f4a79b589ac, initial published handoff b43e0ab90bf39bdc04abf1681d8f78cf2faa78fc, and final reconciliation bb11e3518b65613caa5499ec7cb5ddefb18d5ebd were pushed and remote verified. The handoff recorded that no next Ram art gate was open. The designer then separately said: lets xdo next. In the established common-specialist-elite cadence this authorizes exactly one private elite Ram full 80-frame candidate under the already approved baked-single-actor-horned-grounded-quadruped topology. Continue the distinct Complete B outlined PNG as review evidence only; it does not authorize outline registration. Public Ram registration, fixtures, effects, child assets, additional Ram variants, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E10_RAM_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Cliffcoil Strider and Stonecurl Grazer plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The four-lane Aseprite MCP review window reported those exact four paths open together as raw sprite 83, outlined sprite 87, Complete B + Form sprite 91, and active comparison sprite 95. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest b8c7159c1d85689b3b9178179464b54e01a7ae538a1bda0036eb731d7d7d6c0a. The designer replied: approved. Approval applies only to that exact Cragcrown Patriarch digest and its six frozen review hashes. It does not authorize public Ram or outline registration, fixtures, effects, child assets, additional Ram variants, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or another art gate.',
+  approvedImplementation: '3d8727cce7d8b3f00ce8923ee9db629de13e1097',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_CLIFFCOIL_STRIDER_GATE.id,
     artifactSha256: EN_E10_CLIFFCOIL_STRIDER_GATE.artifactSha256,
@@ -164,7 +173,7 @@ export const EN_E10_CRAGCROWN_PATRIARCH_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop for explicit visual approval of this exact frozen Cragcrown Patriarch digest and its four PNG plus two GIF review hashes. Do not register or publish it before approval. The distinct outlined PNG is review evidence only and does not authorize outline registration. Additional Ram variants plus all later EN-E10 families remain closed.',
+  nextGate: 'The exact Cragcrown Patriarch packet is visually approved at implementation 3d8727cce7d8b3f00ce8923ee9db629de13e1097. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. No next Ram art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Ram registration, fixtures, effects, child assets, additional Ram variants, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_CRAGCROWN_PATRIARCH_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -498,7 +507,7 @@ export const EN_E10_CRAGCROWN_PATRIARCH_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'cragcrown-patriarch',
     scale: 8,
-    notes: 'Awaiting explicit visual approval as one elite horned Ram against approved Cliffcoil Strider and Stonecurl Grazer plus public Dire Wolf. The packet includes a distinct Complete B outlined PNG as review evidence. Keep outline registration, public registration, fixtures, effects, child assets, additional Ram variants and later EN-E10 families, Rhino Boss work, and deferred Runic Idol separate.',
+    notes: 'Visually approved as one exact elite horned Ram at implementation 3d8727cce7d8b3f00ce8923ee9db629de13e1097 against approved Cliffcoil Strider and Stonecurl Grazer plus public Dire Wolf. The packet includes a distinct Complete B outlined PNG as review evidence only. Standing permission opens only the approval record, branch push, and bounded handoff reconciliation. Keep outline registration, public registration, fixtures, effects, child assets, additional Ram variants and later EN-E10 families, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

@@ -28,14 +28,17 @@ horn ram. Its exact 80-frame digest is
 Focused validation passes every structure, identity, alias, mirror, and
 three-way pixel/alpha distinction gate at opaque range 282-303. The raw,
 required distinct Complete B outlined, Complete B + Form, and comparison PNGs
-plus two GIFs are hash-frozen and deterministic. Focused / fast / full gates
-pass in 0.6s / 60.9s / 119.0s with public 92/294 and all 232 fixtures
-unchanged. The exact four PNGs are open together in Aseprite as sprites 83, 87,
-91, and active 95. The outlined PNG is review evidence only, not outline
-registration. This exact packet is awaiting visual approval and remains
-uncommitted and unpushed. Public/outline registration, fixtures, effects, child
-assets, further Ram variants, later families, release, accepted drift, a PR,
-and every later gate remain closed.
+plus two GIFs are hash-frozen and deterministic. Pre-approval focused / fast /
+full gates pass in 0.6s / 60.9s / 119.0s and approval-local focused / fast gates
+pass in 0.7s / 58.7s with public 92/294 and all 232 fixtures unchanged. The
+exact four PNGs are open together in Aseprite as sprites 83, 87, 91, and active
+95. The outlined PNG is review evidence only, not outline registration. The
+designer replied `approved` to the exact posted packet. Accepted implementation
+`3d8727cce7d8b3f00ce8923ee9db629de13e1097` is remote verified. Standing
+permission opens only its approval record, branch push, and bounded handoff
+reconciliation. No next Ram art gate is open. Public/outline registration,
+fixtures, effects, child assets, further Ram variants, later families, release,
+accepted drift, a PR, and every later gate remain closed.
 
 Approved preceding published EN-E10 private art checkpoint (2026-08-13): from clean published
 Stonecurl reconciliation `67ba19086669b9135286784b6c9c39f682ca3032`, the
