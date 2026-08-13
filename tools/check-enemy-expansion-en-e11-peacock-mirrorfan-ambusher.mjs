@@ -108,11 +108,21 @@ check(
   'approved Peacock topology decision drifted',
 );
 check(
-  EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.status === 'candidate'
+  EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.status === 'approved'
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.baseCheckpoint === 'eb504d2c6b419768aefe026e84f9ed6119855d5c'
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.architectureDecision === EN_E11_PEACOCK_TOPOLOGY_DECISION.id
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.authorizationEvidence.includes('The designer then said: lets do next')
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.authorizationEvidence.includes('exactly one private specialist Peacock full 80-frame candidate only')
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.approvedOn === '2026-08-13'
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.approvalEvidence.includes('The designer replied: approved lets do next')
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.approvalEvidence.includes('one private elite Peacock candidate')
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.approvedImplementation === 'dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216'
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publishedImplementation === ''
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publishedApprovalRecord === ''
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.initialPublishedHandoff === ''
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publicationState === 'approved-not-published'
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.precedingApproval.gateId === EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.id
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.precedingApproval.candidateFrameDigest === EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.candidateFrameDigest
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.precedingApproval.currentReconciliation === EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.baseCheckpoint,
@@ -123,8 +133,9 @@ check(
     && EN_E11_PEACOCK_SPECIALIST_CONTRACT_CARD.precedingVariant.id === 'rainfan-forager'
     && EN_E11_PEACOCK_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'mirrorfan-ambusher'
     && EN_E11_PEACOCK_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
+    && EN_E11_PEACOCK_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_PEACOCK_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
-    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Peacock specialist role contract drifted',
 );
 check(
@@ -136,7 +147,9 @@ check(
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.exclusions.includes('registration')
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.exclusions.includes('fixtures')
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.exclusions.includes('Peacock elite')
-    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.nextGate.includes('Explicit designer visual approval is required'),
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.nextGate.includes('implementation dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216')
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.nextGate.includes('exactly one private elite Peacock candidate')
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.nextGate.includes('review evidence only'),
   'Mirrorfan anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(

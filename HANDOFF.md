@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mirrorfan Ambusher Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Mirrorfan Ambusher Approved / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-peacock-specialist`. It branches exactly from the clean,
@@ -82,10 +82,18 @@ gate.
    files form the complete review surface. All four exact PNGs were loaded in
    Aseprite and inspected. The outlined PNG is evidence only; it does not
    authorize outline registration.
-7. Stop for explicit designer visual approval of this exact digest and six
-   hashes. Do not commit, push, publish, register, regenerate fixtures, add
-   effects or child assets, begin Peacock elite or Cockatrice/Raven/Owl/Phoenix,
-   release, accept drift, or open a PR.
+7. The final approval prompt posted all four exact PNGs, both synchronized
+   GIFs, and digest
+   `d2b57707034f5c2f46b53de51ac800cb12b70610d5abe230db7d8a74396e0cb6`.
+   The designer replied `approved lets do next`. Approval binds only to those
+   frozen files and accepted implementation
+   `dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216`. Standing permission opens only
+   this packet's approval record, branch push, and bounded handoff
+   reconciliation. The same reply opens exactly one private elite Peacock
+   candidate after this specialist publication is clean, pushed, remote
+   verified, and reconciled. Do not register, regenerate fixtures, add effects
+   or child assets, begin Cockatrice/Raven/Owl/Phoenix, release, accept drift,
+   or open a PR.
 
 ## Approved Preceding Checkpoint - Rainfan Forager Published / Specialist Gate Opened Later
 

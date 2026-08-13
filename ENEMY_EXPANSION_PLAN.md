@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private specialist Peacock candidate awaiting visual approval
+- Current private specialist Peacock approved / publication in progress
   (2026-08-13): on `codex/en-e11-peacock-specialist`, based exactly on clean,
   pushed, remote-verified Rainfan reconciliation
   `eb504d2c6b419768aefe026e84f9ed6119855d5c`, the designer's fresh
@@ -41,9 +41,14 @@
   lean-natural-bird-span, alias, mirror, and three-way pixel/alpha-distinction
   cases at opaque range 154-308. Focused/fast/full gates pass in about
   0.9s/56.2s/104.1s. Public remains 92/294 and all 232 fixtures remain
-  unchanged. Stop for explicit visual approval; no commit, push, publication,
-  registration, fixture, effect, child asset, Peacock elite, other Bird
-  family, release, accepted drift, PR, or broader gate is open.
+  unchanged. The designer replied `approved lets do next` to the exact review
+  packet. Approval binds only to accepted implementation
+  `dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216` and its six frozen hashes.
+  Standing permission opens its approval record, branch push, and bounded
+  reconciliation; the same reply opens exactly one private elite Peacock
+  candidate afterward. Registration, fixtures, effects, child assets, other
+  Bird families, release, accepted drift, a PR, and every broader gate remain
+  closed.
 
 - Current private common Rhino candidate awaiting visual approval
   (2026-08-13): on `codex/en-e10-rhino-common`, based exactly on clean
