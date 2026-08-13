@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E11 private specialist Peacock approved / publication in progress
+Current EN-E11 private specialist Peacock published / handoff reconciliation in progress
 (2026-08-13): on `codex/en-e11-peacock-specialist`, based exactly on clean,
 pushed, remote-verified Rainfan reconciliation
 `eb504d2c6b419768aefe026e84f9ed6119855d5c`, the designer supplied the fresh
@@ -48,11 +48,13 @@ The four exact review PNGs were loaded in Aseprite and inspected. The final
 approval prompt posted all four exact PNGs, both GIFs, and the digest; the
 designer replied `approved lets do next`. Approval binds only to accepted
 implementation `dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216` and the six frozen
-hashes. Standing permission opens its approval record, branch push, and bounded
-handoff reconciliation. The same reply opens exactly one private elite Peacock
-candidate after this specialist publication is clean, pushed, remote verified,
-and reconciled. Registration, fixtures, effects, child assets, other Bird
-families, release, accepted drift, and a PR remain closed.
+hashes. That implementation and approval record
+`a39a0ef3d5054e040c75f6c9203efa194d987429` are pushed and remote verified.
+Only the initial published handoff and final reconciliation remain open. The
+same reply opens exactly one private elite Peacock candidate after this
+specialist publication is clean, pushed, remote verified, and reconciled.
+Registration, fixtures, effects, child assets, other Bird families, release,
+accepted drift, and a PR remain closed.
 
 Approved preceding EN-E11 private common Peacock published / specialist gate opened later
 (2026-08-13): on `codex/en-e11-peacock-common`, based exactly on clean,

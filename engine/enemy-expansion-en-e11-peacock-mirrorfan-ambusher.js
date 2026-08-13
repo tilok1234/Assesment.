@@ -59,10 +59,10 @@ export const EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE = deepFreeze({
   approvedImplementation: 'dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: 'dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216',
+  publishedApprovalRecord: 'a39a0ef3d5054e040c75f6c9203efa194d987429',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.id,
     candidateFrameDigest: EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.candidateFrameDigest,
@@ -131,7 +131,7 @@ export const EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Mirrorfan Ambusher packet is visually approved at implementation dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The same designer reply says lets do next, which opens exactly one private elite Peacock candidate only after this specialist publication is clean, pushed, remote verified, and reconciled. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Peacock registration, fixtures, effects, child assets, Cockatrice, Raven, Owl, Phoenix, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Mirrorfan Ambusher implementation dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216 and approval record a39a0ef3d5054e040c75f6c9203efa194d987429 are remote verified. Only the initial published handoff and final reconciliation remain open. The same designer reply says lets do next, which opens exactly one private elite Peacock candidate only after this specialist publication is clean, pushed, remote verified, and reconciled. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Peacock registration, fixtures, effects, child assets, Cockatrice, Raven, Owl, Phoenix, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_DATA = deepFreeze({
@@ -617,7 +617,7 @@ export const EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mirrorfan-ambusher',
     scale: 6,
-    notes: 'Visually approved as one exact private specialist Peacock against approved Rainfan Forager and Aerie Scout plus public Harpy Screecher. Accepted implementation dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216 records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. The same reply opens exactly one private elite Peacock candidate after clean remote reconciliation; keep public or outline registration, fixtures, effects, child assets, other Bird families, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private specialist Peacock against approved Rainfan Forager and Aerie Scout plus public Harpy Screecher. Accepted implementation dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216 and approval record a39a0ef3d5054e040c75f6c9203efa194d987429 are remote verified. Only the initial published handoff and final reconciliation remain open. The distinct Complete B outlined PNG remains review evidence only. The same reply opens exactly one private elite Peacock candidate after clean remote reconciliation; keep public or outline registration, fixtures, effects, child assets, other Bird families, release, accepted drift, and a pull request separate.',
   },
 });
 

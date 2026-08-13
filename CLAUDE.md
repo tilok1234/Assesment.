@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private specialist Peacock approved / publication in progress: on
+- Current private specialist Peacock published / handoff reconciliation in progress: on
   `codex/en-e11-peacock-specialist`, based exactly on clean, pushed,
   remote-verified Rainfan reconciliation
   `eb504d2c6b419768aefe026e84f9ed6119855d5c`, the designer supplied the fresh
@@ -135,11 +135,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   92/294 and all 232 fixtures stay exact. The four exact PNGs were loaded in
   Aseprite and inspected. The designer replied `approved lets do next` to the
   frozen packet. Approval binds only to accepted implementation
-  `dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216`; standing permission opens its
-  approval record, branch push, and bounded reconciliation. The same reply
-  opens exactly one private elite Peacock candidate afterward. Registration,
-  fixtures, effects, child assets, other Bird families, release, accepted
-  drift, and a PR remain closed.
+  `dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216`. That implementation and approval
+  record `a39a0ef3d5054e040c75f6c9203efa194d987429` are pushed and remote verified;
+  only the initial published handoff and final reconciliation remain open. The
+  same reply opens exactly one private elite Peacock candidate afterward.
+  Registration, fixtures, effects, child assets, other Bird families, release,
+  accepted drift, and a PR remain closed.
 - Approved preceding private common Peacock published / specialist gate opened later: on
   `codex/en-e11-peacock-common`, based exactly on clean, published,
   remote-verified Stonefern reconciliation

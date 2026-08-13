@@ -119,10 +119,10 @@ check(
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.approvedImplementation === 'dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216'
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publicationAuthorizedOn === '2026-08-13'
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publishedImplementation === ''
-    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publishedApprovalRecord === ''
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publishedImplementation === 'dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216'
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publishedApprovalRecord === 'a39a0ef3d5054e040c75f6c9203efa194d987429'
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.initialPublishedHandoff === ''
-    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.precedingApproval.gateId === EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.id
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.precedingApproval.candidateFrameDigest === EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.candidateFrameDigest
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.precedingApproval.currentReconciliation === EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.baseCheckpoint,
@@ -147,7 +147,8 @@ check(
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.exclusions.includes('registration')
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.exclusions.includes('fixtures')
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.exclusions.includes('Peacock elite')
-    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.nextGate.includes('implementation dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216')
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.nextGate.includes('implementation dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216 and approval record a39a0ef3d5054e040c75f6c9203efa194d987429 are remote verified')
+    && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.nextGate.includes('exactly one private elite Peacock candidate')
     && EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.nextGate.includes('review evidence only'),
   'Mirrorfan anatomy, motion, effect firewall, or stop boundary drifted',
