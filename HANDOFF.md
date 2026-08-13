@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Checkpoint - Crownveil Sovereign Approved / Publication In Progress
+## Immediate Checkpoint - Crownveil Sovereign Published / Handoff Reconciliation In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-peacock-elite`. It branches exactly from the clean, pushed,
@@ -84,12 +84,13 @@ gate.
    `6c4220e3a108eb902370a6d69bea8f2334a73dfddd914deb7f9a43495b99c82d`.
    The designer replied `approved`. Approval binds only to those frozen files
    and accepted implementation
-   `13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc`. Standing permission opens only
-   this packet's approval record, branch push, and bounded handoff
-   reconciliation. This reply contains no continuation request, so Peacock is
-   complete and no Cockatrice/Raven/Owl/Phoenix or other Bird-family candidate
-   is open. Do not register, regenerate fixtures, add effects or child assets,
-   release, accept drift, or open a PR.
+   `13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc`. That implementation and approval
+   record `15d55e973e5b0d1566e2d3dec39981d37edf24b8` are pushed and remote verified;
+   only the initial published handoff and final reconciliation remain open.
+   This reply contains no continuation request, so Peacock is complete and no
+   Cockatrice/Raven/Owl/Phoenix or other Bird-family candidate is open. Do not
+   register, regenerate fixtures, add effects or child assets, release, accept
+   drift, or open a PR.
 
 ## Approved Preceding Checkpoint - Mirrorfan Ambusher Published / Elite Gate Open
 

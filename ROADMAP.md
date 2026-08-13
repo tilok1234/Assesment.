@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E11 private elite Peacock approved / publication in progress
+Current EN-E11 private elite Peacock published / handoff reconciliation in progress
 (2026-08-13): on `codex/en-e11-peacock-elite`, based exactly on clean, pushed,
 remote-verified Mirrorfan reconciliation
 `6df83e5e642dbec5b68b856d436aa9db810678eb`, the designer's exact reply
@@ -47,12 +47,14 @@ Approval-local focused/fast gates pass again in about 0.8s/61.6s.
 All four exact PNGs were loaded in Aseprite and inspected. The final approval
 prompt posted those four PNGs, both GIFs, and the digest; the designer replied
 `approved`. Approval binds only to implementation
-`13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc` and the six frozen hashes.
-Standing permission opens only its approval record, branch push, and bounded
-reconciliation. This reply contains no continuation request, so no next
-Peacock role, Cockatrice, Raven, Owl, Phoenix, or other Bird-family candidate
-is open. Registration, fixtures, effects, child assets, release, accepted
-drift, and a PR remain closed.
+`13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc` and the six frozen hashes. That
+implementation and approval record
+`15d55e973e5b0d1566e2d3dec39981d37edf24b8` are pushed and remote verified;
+only the initial published handoff and final reconciliation remain open. This
+reply contains no continuation request, so no next Peacock role, Cockatrice,
+Raven, Owl, Phoenix, or other Bird-family candidate is open. Registration,
+fixtures, effects, child assets, release, accepted drift, and a PR remain
+closed.
 
 Approved preceding EN-E11 private specialist Peacock published / elite gate open
 (2026-08-13): on `codex/en-e11-peacock-specialist`, based exactly on clean,
