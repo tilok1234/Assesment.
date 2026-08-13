@@ -132,9 +132,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and active 111. The outlined PNG is review evidence only, not outline
   registration. The final prompt posted all four PNGs, both GIFs, and the exact
   digest; the designer replied `approved lets do next`. Accepted implementation
-  `4c5d80901d12063b21c0d6303fc24260bd700209` is remote verified. Standing
-  permission opens only its approval record, branch push, and bounded handoff
-  reconciliation. After that tuple is clean and remote verified, the reply
+  `4c5d80901d12063b21c0d6303fc24260bd700209` and approval record
+  `328a9b188ddd6e5db6144f2fdb253f8d9599e12d` are remote verified. Only the
+  initial published handoff and final reconciliation remain open. After that
+  tuple is clean and remote verified, the reply
   opens exactly one private specialist Stag. Public/outline registration,
   fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work,
   release, accepted drift, a PR, and every broader gate remain closed.

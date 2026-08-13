@@ -146,10 +146,10 @@ check(
     && EN_E10_MOSSRACK_FORAGER_GATE.approvalEvidence.includes('c3383941492c1976bc03786f73fee20744d0a2af9e8846f44cbf9d59b7384d36')
     && EN_E10_MOSSRACK_FORAGER_GATE.approvalEvidence.includes('approved lets do next')
     && EN_E10_MOSSRACK_FORAGER_GATE.approvedImplementation === '4c5d80901d12063b21c0d6303fc24260bd700209'
-    && EN_E10_MOSSRACK_FORAGER_GATE.publishedImplementation === ''
-    && EN_E10_MOSSRACK_FORAGER_GATE.publishedApprovalRecord === ''
+    && EN_E10_MOSSRACK_FORAGER_GATE.publishedImplementation === '4c5d80901d12063b21c0d6303fc24260bd700209'
+    && EN_E10_MOSSRACK_FORAGER_GATE.publishedApprovalRecord === '328a9b188ddd6e5db6144f2fdb253f8d9599e12d'
     && EN_E10_MOSSRACK_FORAGER_GATE.initialPublishedHandoff === ''
-    && EN_E10_MOSSRACK_FORAGER_GATE.publicationState === 'approved-not-published',
+    && EN_E10_MOSSRACK_FORAGER_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
   'common Stag authorization or visual stop boundary drifted',
 );
 check(
@@ -185,7 +185,7 @@ check(
     && EN_E10_MOSSRACK_FORAGER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_MOSSRACK_FORAGER_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_MOSSRACK_FORAGER_GATE.exclusions.includes('specialist or elite Stag variants')
-    && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('visually approved at implementation 4c5d80901d12063b21c0d6303fc24260bd700209')
+    && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('implementation 4c5d80901d12063b21c0d6303fc24260bd700209 and approval record 328a9b188ddd6e5db6144f2fdb253f8d9599e12d are remote verified')
     && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('exactly one private specialist Stag')
     && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('review evidence only')
     && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('does not authorize outline registration'),

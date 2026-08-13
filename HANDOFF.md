@@ -82,9 +82,10 @@ gate.
    `c3383941492c1976bc03786f73fee20744d0a2af9e8846f44cbf9d59b7384d36`.
    The designer replied `approved lets do next`. Approval applies only to that
    exact packet; accepted implementation
-   `4c5d80901d12063b21c0d6303fc24260bd700209` records it and is remote
-   verified. Standing permission opens only its approval record, branch push,
-   and bounded handoff reconciliation.
+   `4c5d80901d12063b21c0d6303fc24260bd700209` records it. The implementation
+   and approval record `328a9b188ddd6e5db6144f2fdb253f8d9599e12d` are
+   remote verified. Only the initial published handoff and final reconciliation
+   remain open.
 8. After the common Stag publication tuple is clean and remote verified, the
    `lets do next` suffix opens exactly one private specialist Stag under the
    selected topology. Public Stag or outline registration, fixtures, effects,
