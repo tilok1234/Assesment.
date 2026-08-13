@@ -145,10 +145,10 @@ check(
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.approvedImplementation === 'f0ced3c777c478a4077fb439ccd8b4b363ea52ac'
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.publicationAuthorizedOn === '2026-08-13'
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publishedImplementation === ''
-    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publishedApprovalRecord === ''
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publishedImplementation === 'f0ced3c777c478a4077fb439ccd8b4b363ea52ac'
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publishedApprovalRecord === '2387ec0a584f77b3473827ef0568823bf86b4fd2'
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.initialPublishedHandoff === ''
-    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publicationState === 'approved-not-published'
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.precedingApproval.gateId === EN_E10_GLOAMCROWN_SOVEREIGN_GATE.id
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.precedingApproval.candidateFrameDigest === EN_E10_GLOAMCROWN_SOVEREIGN_GATE.candidateFrameDigest
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.precedingApproval.publishedImplementation === EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publishedImplementation
@@ -174,6 +174,8 @@ check(
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.exclusions.includes('public Mammoth registration or outline registration')
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.nextGate.includes('implementation f0ced3c777c478a4077fb439ccd8b4b363ea52ac')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.nextGate.includes('approval record 2387ec0a584f77b3473827ef0568823bf86b4fd2')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.nextGate.includes('private specialist Mammoth')
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.nextGate.includes('review evidence only'),
   'Mammoth anatomy, effect firewall, motion, or stop boundary drifted',

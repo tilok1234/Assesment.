@@ -23,15 +23,15 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Tundrahide Grazer Visually Approved / Publication Pending
+## Immediate Continuation Checkpoint - Tundrahide Grazer Published / Handoff Reconciliation Pending
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-common`. It branches exactly from the clean,
    published, remote-verified Gloamcrown reconciliation
-   `c371e7ffeb3dd9196c29b9236d62585d96a52585`. The exact approved packet is
-   committed locally at implementation
-   `f0ced3c777c478a4077fb439ccd8b4b363ea52ac`; its approval record and
-   publication reconciliation remain pending and the branch is not yet pushed.
+   `c371e7ffeb3dd9196c29b9236d62585d96a52585`. Accepted implementation
+   `f0ced3c777c478a4077fb439ccd8b4b363ea52ac` and approval record
+   `2387ec0a584f77b3473827ef0568823bf86b4fd2` are pushed and remote verified.
+   Only the initial published handoff and final reconciliation remain open.
 2. After the Gloamcrown publication tuple was completed, the designer approved
    the recommended `baked-single-actor-tusked-heavy-grounded-quadruped`
    topology. That authorizes exactly one private common Mammoth full 80-frame
@@ -76,10 +76,11 @@ gate.
    digest `740960848a5a45941a908b8f32d53a6426de789f7ca002817309e7506dcd3e08`.
    The designer replied `awesome klets do next`. Approval binds only that exact
    packet at implementation `f0ced3c777c478a4077fb439ccd8b4b363ea52ac`.
-   Standing publication permission opens only the approval record, branch push,
-   and bounded handoff reconciliation. Hold the continuation suffix until that
-   tuple is clean and remote verified; it then opens exactly one private
-   specialist Mammoth under the selected topology. Public/outline registration,
+   Its implementation and approval record are remote verified. Only the initial
+   published handoff and final reconciliation remain open. Hold the
+   continuation suffix until the complete tuple is clean and remote verified;
+   it then opens exactly one private specialist Mammoth under the selected
+   topology. Public/outline registration,
    fixtures, effects, child assets, elite Mammoth, Rhino, Furious Depraved
    Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
    a PR, and every broader gate remain closed.

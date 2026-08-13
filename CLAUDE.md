@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art checkpoint visually approved / publication pending: on branch
+- Current private art checkpoint published / handoff reconciliation pending: on branch
   `codex/en-e10-mammoth-common`, based exactly on clean published Gloamcrown
   reconciliation `c371e7ffeb3dd9196c29b9236d62585d96a52585`, the designer
   approved `baked-single-actor-tusked-heavy-grounded-quadruped` and opened
@@ -132,11 +132,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   fixtures unchanged; zero child assets/effects; no public or outline
   registration. Exact PNGs are open in Aseprite as sprites 155, 159, 163, and
   active 167. The designer replied `awesome klets do next` to the exact packet.
-  Accepted implementation `f0ced3c777c478a4077fb439ccd8b4b363ea52ac` is
-  committed locally; its approval record and publication reconciliation remain
-  pending and the branch is not yet pushed. Standing permission opens only that
-  bounded tuple. Hold the continuation suffix until it is clean and remote
-  verified; it then opens exactly one private specialist Mammoth under the
+  Accepted implementation `f0ced3c777c478a4077fb439ccd8b4b363ea52ac` and
+  approval record `2387ec0a584f77b3473827ef0568823bf86b4fd2` are pushed
+  and remote verified. Only the initial published handoff and final
+  reconciliation remain open. Hold the continuation suffix until the complete
+  tuple is clean and remote verified; it then opens exactly one private
+  specialist Mammoth under the
   selected topology. Public/outline registration, fixtures, effects, child
   assets, elite Mammoth, Rhino, release, accepted drift, and a PR remain closed.
 - Approved preceding private art checkpoint published / Mammoth topology decision open: on
