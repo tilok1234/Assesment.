@@ -126,6 +126,7 @@ checkSyntax('tools/check-enemy-expansion-en-e05-registration.mjs');
 checkSyntax('tools/check-enemy-expansion-en-e05-consumers.mjs');
 checkSyntax('tools/check-approved-enemy-assembler-integration.mjs');
 checkSyntax('tools/check-approved-enemy-assembler-integration-v2.mjs');
+checkSyntax('tools/check-approved-enemy-assembler-integration-v3.mjs');
 checkSyntax('tools/complete-b-actor-pack-pixels.mjs');
 checkSyntax('tools/export-complete-b-actor-pack.mjs');
 checkSyntax('tools/check-complete-b-actor-pack.mjs');
@@ -284,6 +285,15 @@ const approvedEnemyAssemblerIntegrationV2Check = spawnSync(process.execPath, [pa
 check(
   approvedEnemyAssemblerIntegrationV2Check.status === 0,
   `Approved enemy assembler integration v2 gate failed\n${approvedEnemyAssemblerIntegrationV2Check.stdout.trim()}\n${approvedEnemyAssemblerIntegrationV2Check.stderr.trim()}`,
+);
+
+const approvedEnemyAssemblerIntegrationV3Check = spawnSync(process.execPath, [path.join(root, 'tools', 'check-approved-enemy-assembler-integration-v3.mjs')], {
+  cwd: root,
+  encoding: 'utf8',
+});
+check(
+  approvedEnemyAssemblerIntegrationV3Check.status === 0,
+  `Approved enemy assembler integration v3 gate failed\n${approvedEnemyAssemblerIntegrationV3Check.stdout.trim()}\n${approvedEnemyAssemblerIntegrationV3Check.stderr.trim()}`,
 );
 
 const enemyExpansionRepairCheck = spawnSync(process.execPath, [path.join(root, 'tools', 'check-enemy-expansion-repairs.mjs')], {

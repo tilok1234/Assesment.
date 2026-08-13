@@ -117,8 +117,8 @@ check(EN_E03_IDLE_REGISTRY.renderers[0].key === 'large-hybrid-v2', 'EN-E03 must 
 check(EN_E03_IDLE_REGISTRY.renderers[0].chassis === 'large-hybrid-v2', 'EN-E03 must declare the large-hybrid-v2 chassis');
 check(EN_E03_IDLE_REGISTRY.publicFamilies.length === 0 && EN_E03_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E03 Idle evidence must not enter the public family view');
 check(Object.isFrozen(EN_E03_IDLE_REGISTRY), 'the EN-E03 Idle registry must be immutable');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 35, 'later approved integration must bring the stable registry to thirty-five approved families');
-check(engine.PUBLIC_ENEMIES.length === 92, 'later approved integration must bring the public consumer catalog to ninety-two families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 43, 'later approved integration must bring the stable registry to forty-three approved families');
+check(engine.PUBLIC_ENEMIES.length === 100, 'later approved integration must bring the public consumer catalog to one hundred families');
 check(engine.ENEMIES.length === 57, 'EN-E03 Idle work must not alter the legacy Enemy catalog');
 check(cardOrder.every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'the later EN-E03 adoption must expose all three approved families generically');
 

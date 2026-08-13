@@ -51,6 +51,7 @@ const expectedRegisteredFamilies = [
   'centaur',
   'changeling',
   'clockwork-automaton',
+  'cockatrice',
   'desert-raider',
   'doppelganger',
   'dryad',
@@ -60,22 +61,29 @@ const expectedRegisteredFamilies = [
   'giant',
   'goatfolk',
   'hag',
+  'hyena',
   'kelpie',
   'lich',
   'living-book',
   'living-shadow',
   'living-weapon',
+  'mammoth',
   'merfolk',
   'mummy',
   'naga',
   'necromancer',
   'nymph',
+  'peacock',
   'pirate',
   'plague-doctor',
   'possessed-mask',
+  'ram',
+  'raven',
   'redcap',
   'revenant',
+  'rhino',
   'satyr',
+  'stag',
   'vampire',
   'will-o-wisp',
   'witch',
@@ -141,17 +149,17 @@ for (const card of EN_E02_CONTRACT_CARDS) {
   check(family.variants.every((variant) => !/\b(effect|projectile|summon|familiar|explosion|smoke cloud)\b/i.test(JSON.stringify(variant.rendererData))), card.id + ' registered renderer data must not bake external effect or child-asset contracts');
 }
 
-check(JSON.stringify(engine.ENEMY_EXPANSION_REGISTRY.families.map((family) => family.id)) === JSON.stringify(expectedRegisteredFamilies), 'the stable registry must contain exactly the thirty-five approved families');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 35, 'the stable registry must expose thirty-five approved family records');
-check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 26, 'the composed stable registry must contain twenty-six bounded family renderers');
+check(JSON.stringify(engine.ENEMY_EXPANSION_REGISTRY.families.map((family) => family.id)) === JSON.stringify(expectedRegisteredFamilies), 'the stable registry must contain exactly the forty-three approved families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 43, 'the stable registry must expose forty-three approved family records');
+check(engine.ENEMY_EXPANSION_REGISTRY.renderers.length === 34, 'the composed stable registry must contain thirty-four bounded family renderers');
 check(Object.isFrozen(engine.ENEMY_EXPANSION_REGISTRY), 'the composed approved registry must be immutable');
 
 check(ENEMY_EXPANSION_REPAIR_CANDIDATE_GATE.status === 'approved', 'the repair boundary must record explicit visual approval');
 check(engine.ENEMY_EXPANSION_REGISTRY !== ENEMY_EXPANSION_REPAIR_CANDIDATE_REGISTRY, 'the stable registry must compose later approved registrations without rewriting EN-E02 repair evidence');
 check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'the later EN-E05 consumer gate must reuse the exact stable registry');
-check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 35, 'consumer routing must contain all thirty-five approved families');
+check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY.publicFamilies.length === 43, 'consumer routing must contain all forty-three approved families');
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
-check(engine.PUBLIC_ENEMIES.length === 92 && publicVariants === 294, 'the approved backlog integration must expose the 92-family / 294-variant catalog');
+check(engine.PUBLIC_ENEMIES.length === 100 && publicVariants === 316, 'the approved backlog integration must expose the 100-family / 316-variant catalog');
 check(EN_E02_CONTRACT_CARDS.every((card) => engine.PUBLIC_ENEMIES.some((family) => family.id === card.id)), 'authorized EN-E02 families must enter generic consumers through PUBLIC_ENEMIES');
 check(EN_E02_CONTRACT_CARDS.every((card) => engine.isPublicEnemyExpansionSpec({ kind: 'enemy', family: card.id, variant: card.baseline.variantId })), 'authorized EN-E02 families must route through the public consumer renderer');
 check(engine.ENEMIES.length === 57, 'EN-E02 registration must not rewrite the 57-family legacy catalog');
@@ -177,12 +185,12 @@ for (const relativePath of [
 const ledgerReport = engine.buildEnemyExpansionLedgerReport();
 check(ledgerReport.counts.slices === 22 && ledgerReport.counts.proposals === 80, 'registration must preserve the 22-slice / 80-proposal ledger');
 check(ledgerReport.counts.approved === 7 && ledgerReport.counts.implemented === 0 && ledgerReport.counts.planned === 15, 'current ledger lifecycle counts must be seven approved, zero implemented, and fifteen planned');
-check(ledgerReport.counts.registeredFamilies === 35 && ledgerReport.counts.publicFamilies === 35, 'current ledger must report thirty-five registered and registry-public families');
+check(ledgerReport.counts.registeredFamilies === 43 && ledgerReport.counts.publicFamilies === 43, 'current ledger must report forty-three registered and registry-public families');
 const enE02Slice = ledgerReport.slices.find((slice) => slice.id === 'EN-E02');
 check(enE02Slice?.state === engine.ENEMY_EXPANSION_STATES.APPROVED, 'EN-E02 ledger state must be approved');
 check(enE02Slice?.gate === 'completed-slice-approved-2026-08-02', 'EN-E02 ledger gate must record completed-slice approval');
 check(enE02Slice?.registeredFamilies === 5 && enE02Slice?.publicFamilies === 5, 'EN-E02 ledger row must report all five registered families');
-check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => ['EN-E01', 'EN-E02', 'EN-E03', 'EN-E04', 'EN-E05', 'EN-E06', 'EN-E07', 'EN-E08', 'EN-E09'].includes(slice.id)), 'only explicitly approved expansion slices may become registered');
+check(ledgerReport.slices.filter((slice) => slice.publicFamilies > 0).every((slice) => ['EN-E01', 'EN-E02', 'EN-E03', 'EN-E04', 'EN-E05', 'EN-E06', 'EN-E07', 'EN-E08', 'EN-E09', 'EN-E10', 'EN-E11'].includes(slice.id)), 'only explicitly approved expansion slices may become registered');
 
 const frameRecords = [];
 let sheets = 0;
@@ -250,7 +258,7 @@ console.log('EN-E02 registration validation passed.');
 console.log('- Approved registry: 10 families / 30 variants across EN-E01 and EN-E02');
 console.log('- Registered EN-E02 sheets: 15 (480x96)');
 console.log('- Candidate/registered parity frames: 1,200');
-console.log('- Consumer catalog: 92 families / 294 variants across all approved registered slices');
+console.log('- Consumer catalog: 100 families / 316 variants across all approved registered slices');
 console.log('- Ignored review artifact bytes: ' + (verifiedArtifacts === 3 ? '3 / 3 verified' : 'not present; immutable hash locks verified'));
 console.log('- Approved EN-E02 Idle digest: ' + registeredIdleDigest);
 console.log('- Approved EN-E02 full-candidate digest: ' + registeredFrameDigest);

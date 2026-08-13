@@ -101,9 +101,9 @@ check([EN_E06_REGISTRATION_GATE, EN_E03_ADOPTION_GATE, EN_E05_GHOUL_PUBLIC_GATE]
 const expansionVariants = engine.ENEMY_EXPANSION_REGISTRY.families.reduce((total, family) => total + family.variants.length, 0);
 const publicVariants = engine.PUBLIC_ENEMIES.reduce((total, family) => total + family.variants.length, 0);
 check(engine.ENEMIES.length === 57 && engine.ENEMIES.reduce((total, family) => total + family.variants.length, 0) === 202, 'legacy catalog must remain 57/202');
-check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 35 && expansionVariants === 92, 'approved expansion registry must be 35/92');
+check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 43 && expansionVariants === 114, 'approved expansion registry must be 43/114');
 check(engine.ENEMY_EXPANSION_CONSUMER_REGISTRY === engine.ENEMY_EXPANSION_REGISTRY, 'assembler consumers must reuse the exact approved registry');
-check(engine.PUBLIC_ENEMIES.length === 92 && publicVariants === 294, 'public assembler catalog must be 92/294');
+check(engine.PUBLIC_ENEMIES.length === 100 && publicVariants === 316, 'public assembler catalog must be 100/316');
 check(engine.PUBLIC_ENEMIES.slice(0, 57).every((family, index) => family === engine.ENEMIES[index]), 'legacy public catalog order or identity changed');
 
 for (const [familyId, variants] of Object.entries(expected)) {
@@ -159,8 +159,8 @@ check(fixtureHash === 'a6f69caac95fad855db65ae787ceac0e9333f9013ee3882a13b6ccab5
 
 const kitCounts = completeCharacterKitCounts();
 const kitPlan = buildCompleteCharacterKitPlan();
-check(kitCounts.componentPngs === 1912 && kitCounts.enemyFamilies === 92 && kitCounts.enemySheets === 294 && kitCounts.effectSheets === 24 && kitCounts.totalPngs === 2231, 'Complete Kit counts must include all adopted enemies');
-check(kitPlan.enemies.length === 92 && kitPlan.enemies.flatMap(({ variants }) => variants).length === 294, 'Complete Kit plan must include the 92/294 public catalog');
+check(kitCounts.componentPngs === 1912 && kitCounts.enemyFamilies === 100 && kitCounts.enemySheets === 316 && kitCounts.effectSheets === 24 && kitCounts.totalPngs === 2253, 'Complete Kit counts must include all adopted enemies');
+check(kitPlan.enemies.length === 100 && kitPlan.enemies.flatMap(({ variants }) => variants).length === 316, 'Complete Kit plan must include the 100/316 public catalog');
 
 const actorSpecs = [...sources.map(([family, variant]) => ({ family, variant })), publicGhoul].map((spec) => ({ kind: 'enemy', ...spec }));
 const manifest = engine.buildWildshotGamePackManifest({
@@ -180,7 +180,7 @@ if (errors.length) {
 }
 
 console.log('Approved enemy assembler integration gate passed.');
-console.log('- Public catalog: 92 families / 294 variants; legacy remains 57/202');
+console.log('- Public catalog: 100 families / 316 variants; legacy remains 57/202');
 console.log('- Integrated parity: 15 complete suites / 1,200 exact approved frames');
 console.log(`- Assembler presentation: ${presentationFrames} None / Complete B / Form frame triplets`);
 console.log('- Excluded partials: Boulder Hurler, Storm-Clan Jarl, Sun Lancer');

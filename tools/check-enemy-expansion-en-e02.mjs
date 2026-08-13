@@ -77,8 +77,8 @@ check(EN_E02_IDLE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'EN-E02 must 
 check(EN_E02_IDLE_REGISTRY.publicFamilies.length === 0, 'EN-E02 Idle evidence must not enter the public family view');
 check(EN_E02_IDLE_REGISTRY.approvedFamilies.length === 0, 'EN-E02 Idle evidence must not claim family approval');
 check(Object.isFrozen(EN_E02_IDLE_REGISTRY), 'the EN-E02 Idle registry must be immutable');
-check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 35, 'the approved backlog integration must extend the cumulative stable registry to thirty-five approved families');
-check(engine.PUBLIC_ENEMIES.length === 92, 'the approved backlog integration must expose 92 public families');
+check(engine.ENEMY_EXPANSION_REGISTRY.publicFamilies.length === 43, 'the approved backlog integration must extend the cumulative stable registry to forty-three approved families');
+check(engine.PUBLIC_ENEMIES.length === 100, 'the approved backlog integration must expose 100 public families');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(cardOrder.every((id) => engine.PUBLIC_ENEMIES.some((family) => family.id === id)), 'approved EN-E02 families must enter public consumers only after the separate integration gate');
 

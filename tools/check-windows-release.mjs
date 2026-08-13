@@ -47,6 +47,7 @@ const cargoToml = await readText('src-tauri/Cargo.toml');
 const rustLib = await readText('src-tauri/src/lib.rs');
 const appSource = await readText('app.js');
 const workflow = await readText('.github/workflows/windows-release.yml');
+const v2Launcher = await readText('start-assembler-v2.bat');
 
 const cargoVersion = cargoToml.match(/\[package\][\s\S]*?\nversion\s*=\s*"([^"]+)"/)?.[1];
 check(packageJson.version === tauriConfig.version, 'package.json and tauri.conf.json versions must match');
@@ -85,10 +86,24 @@ check(appSource.includes("return 'cancelled'"), 'Native save cancellation must b
 check(workflow.includes('tauri-apps/tauri-action@v1'), 'Windows release workflow must use the official Tauri release action');
 check(workflow.includes('npm run check'), 'Windows release workflow must run the project validator');
 check(workflow.includes('npm run check:release -- --require-artifact'), 'Windows release workflow must verify its installer artifact');
+check(v2Launcher.includes('src-tauri\\target\\release\\sprite-assembler.exe'), 'V2 launcher must target this checkout\'s standalone executable');
+check(v2Launcher.includes('if exist "%ASSEMBLER_EXE%"'), 'V2 launcher must prefer the current standalone executable when present');
+check(v2Launcher.includes('node tools\\dev-server.mjs --open'), 'V2 launcher must retain a same-checkout browser fallback');
 
 const targetRoot = path.join(root, 'src-tauri', 'target');
+const standalone = path.join(targetRoot, 'release', 'sprite-assembler.exe');
 const installers = (await listFiles(targetRoot)).filter((file) => /[\\/]bundle[\\/]nsis[\\/].+-setup\.exe$/i.test(file));
 if (requireArtifact) check(installers.length > 0, 'No NSIS setup executable was found under src-tauri/target');
+
+if (await fileExists(path.join('src-tauri', 'target', 'release', 'sprite-assembler.exe'))) {
+  const info = await stat(standalone);
+  const handle = await open(standalone, 'r');
+  const signature = Buffer.alloc(2);
+  await handle.read(signature, 0, signature.length, 0);
+  await handle.close();
+  check(signature.toString('ascii') === 'MZ', 'The standalone Sprite Assembler is not a Windows executable');
+  check(info.size > 100_000, 'The standalone Sprite Assembler executable is unexpectedly small');
+}
 
 for (const installer of installers) {
   const info = await stat(installer);

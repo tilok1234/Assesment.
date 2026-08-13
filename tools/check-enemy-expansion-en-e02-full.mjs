@@ -84,8 +84,8 @@ check(EN_E02_CANDIDATE_REGISTRY.renderers[0].key === 'humanoid-threat-v1', 'full
 check(EN_E02_CANDIDATE_REGISTRY.renderers[0].chassis === 'humanoid-v1', 'full EN-E02 must retain the approved chassis');
 check(EN_E02_CANDIDATE_REGISTRY.publicFamilies.length === 0, 'full EN-E02 candidates must remain outside the public family view');
 check(EN_E02_CANDIDATE_REGISTRY.approvedFamilies.length === 0, 'full EN-E02 candidates must not claim completed-family approval');
-check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 35, 'the approved backlog integration must extend the cumulative stable registry to thirty-five approved families');
-check(engine.PUBLIC_ENEMIES.length === 92, 'the public consumer catalog must contain the authorized 92 families after backlog integration');
+check(engine.ENEMY_EXPANSION_REGISTRY.families.length === 43, 'the approved backlog integration must extend the cumulative stable registry to forty-three approved families');
+check(engine.PUBLIC_ENEMIES.length === 100, 'the public consumer catalog must contain the authorized 100 families after backlog integration');
 check(engine.ENEMIES.length === 57, 'the legacy Enemy catalog must remain at 57 families');
 check(Object.isFrozen(EN_E02_CANDIDATE_REGISTRY), 'the full EN-E02 registry must be immutable');
 
@@ -276,6 +276,6 @@ console.log('- Added outline pixels: ' + completeOutlinePixels.toLocaleString('e
 console.log('- Private Form shade cases: ' + shadeModeCases.toLocaleString('en-US') + ' across None/B/C outlines');
 console.log('- Form shade changes: ' + shadeChangedPixels.toLocaleString('en-US') + ' source-owned pixels; ' + protectedShadePixels.toLocaleString('en-US') + ' protected pixels preserved');
 console.log('- Frozen candidate view: 0 approved/public EN-E02 families');
-console.log('- Public consumer catalog: 92 families / 294 variants');
+console.log('- Public consumer catalog: 100 families / 316 variants');
 console.log('- Approved Idle digest: ' + approvedIdleDigest);
 console.log('- Full candidate frame digest: ' + fullFrameDigest);
