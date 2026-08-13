@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate visually approved / publication in progress: on
+- Current private art checkpoint published / handoff reconciliation in progress: on
   `codex/en-e10-stag-elite`, based exactly on clean remote-verified Briarstep
   handoff `595b2b2b18ebe7e111486df96624b4e1f057647b`, the designer's `awesine lets
   keep going` opens exactly one private elite Stag. Gloamcrown Sovereign is a
@@ -132,8 +132,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   135, 139, and active 143. The designer replied `approved lets do next` to the
   exact posted packet. Accepted implementation
   `0ece468efeaf4b50351358020075b4bf91dc7cff` is the immutable publication
-  anchor. Standing permission opens only its approval record, push, and
-  reconciliation. After that tuple is clean and remote verified, the suffix
+  anchor. Approval record `378ec3d107b43e6b354cadcad16f64e0a8cf838b` and
+  that implementation are pushed and remote verified; only the initial
+  published handoff and final reconciliation remain open. After that tuple is
+  clean and remote verified, the suffix
   opens only the Mammoth actor-topology decision, not Mammoth pixels.
   Registration, fixtures, effects, child assets, additional Stag variants,
   Rhino, release, accepted drift, and a PR remain closed.

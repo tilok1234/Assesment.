@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private elite Stag gate approved / publication in progress (2026-08-13):
+Current EN-E10 private elite Stag checkpoint published / handoff reconciliation in progress (2026-08-13):
 from clean remote-verified Briarstep handoff
 `595b2b2b18ebe7e111486df96624b4e1f057647b`, the designer's `awesine lets keep
 going` opens exactly one private elite Stag under the selected
@@ -41,8 +41,9 @@ PNGs are open in Aseprite as sprites 131, 135, 139, and active
 143. The outlined board is evidence only. The designer replied `approved lets
 do next`; accepted implementation
 `0ece468efeaf4b50351358020075b4bf91dc7cff` anchors only that frozen packet.
-Standing permission opens its bounded approval publication and reconciliation.
-After that tuple is clean and remote verified, the suffix opens only the
+It and approval record `378ec3d107b43e6b354cadcad16f64e0a8cf838b` are
+pushed and remote verified; only the initial handoff and final reconciliation
+remain open. After that tuple is clean and remote verified, the suffix opens only the
 Mammoth actor-topology decision, not Mammoth pixels. Registration, fixtures,
 effects, child assets, additional Stag variants, Rhino, release, accepted
 drift, and a PR remain closed.

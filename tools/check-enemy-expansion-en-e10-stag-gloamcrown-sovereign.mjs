@@ -144,10 +144,10 @@ check(
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.approvedImplementation === '0ece468efeaf4b50351358020075b4bf91dc7cff'
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publicationAuthorizedOn === '2026-08-13'
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publishedImplementation === ''
-    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publishedApprovalRecord === ''
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publishedImplementation === '0ece468efeaf4b50351358020075b4bf91dc7cff'
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publishedApprovalRecord === '378ec3d107b43e6b354cadcad16f64e0a8cf838b'
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.initialPublishedHandoff === ''
-    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publicationState === 'approved-not-published'
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.architectureDecision === EN_E10_STAG_TOPOLOGY_DECISION.id,
   'elite Stag approval, publication, or outlined-review boundary drifted',
 );
@@ -187,6 +187,8 @@ check(
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.exclusions.includes('additional Stag variants')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('implementation 0ece468efeaf4b50351358020075b4bf91dc7cff')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('approval record 378ec3d107b43e6b354cadcad16f64e0a8cf838b')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('Mammoth actor-topology decision')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('review evidence only')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('does not authorize outline registration'),

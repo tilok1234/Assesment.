@@ -114,10 +114,10 @@ export const EN_E10_GLOAMCROWN_SOVEREIGN_GATE = deepFreeze({
   approvedImplementation: '0ece468efeaf4b50351358020075b4bf91dc7cff',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '0ece468efeaf4b50351358020075b4bf91dc7cff',
+  publishedApprovalRecord: '378ec3d107b43e6b354cadcad16f64e0a8cf838b',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E10_BRIARSTEP_HARRIER_GATE.id,
     artifactSha256: EN_E10_BRIARSTEP_HARRIER_GATE.artifactSha256,
@@ -174,7 +174,7 @@ export const EN_E10_GLOAMCROWN_SOVEREIGN_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Gloamcrown Sovereign packet is visually approved at implementation 0ece468efeaf4b50351358020075b4bf91dc7cff. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The designer reply includes lets do next, but that suffix remains held until this exact publication tuple is clean and remote verified; it then opens only the Mammoth actor-topology decision and does not authorize Mammoth pixels. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, additional Stag variants, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Gloamcrown Sovereign implementation 0ece468efeaf4b50351358020075b4bf91dc7cff and approval record 378ec3d107b43e6b354cadcad16f64e0a8cf838b are remote verified. Only the initial published handoff and final reconciliation remain open. The designer reply includes lets do next, but that suffix remains held until this exact publication tuple is clean and remote verified; it then opens only the Mammoth actor-topology decision and does not authorize Mammoth pixels. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, additional Stag variants, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_GLOAMCROWN_SOVEREIGN_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -514,7 +514,7 @@ export const EN_E10_GLOAMCROWN_SOVEREIGN_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'gloamcrown-sovereign',
     scale: 8,
-    notes: 'Visually approved as one exact private elite Stag against approved Briarstep Harrier and Mossrack Forager plus public Dire Wolf. Accepted implementation 0ece468efeaf4b50351358020075b4bf91dc7cff records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. The lets do next suffix is held until that tuple is clean and remote verified, then opens only the Mammoth actor-topology decision; keep Mammoth pixels, public or outline registration, fixtures, effects, child assets, additional Stag variants, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private elite Stag against approved Briarstep Harrier and Mossrack Forager plus public Dire Wolf. Accepted implementation 0ece468efeaf4b50351358020075b4bf91dc7cff and approval record 378ec3d107b43e6b354cadcad16f64e0a8cf838b are remote verified. Only the initial published handoff and final reconciliation remain open. The distinct Complete B outlined PNG remains review evidence only. The lets do next suffix is held until the publication tuple is clean and remote verified, then opens only the Mammoth actor-topology decision; keep Mammoth pixels, public or outline registration, fixtures, effects, child assets, additional Stag variants, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

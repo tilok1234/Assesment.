@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Gloamcrown Sovereign Approved / Publication In Progress
+## Immediate Continuation Checkpoint - Gloamcrown Sovereign Published / Handoff Reconciliation In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-stag-elite`. It is based exactly on the clean, published,
@@ -74,12 +74,13 @@ gate.
 7. The final prompt posted all four exact PNGs, both synchronized GIFs, and
    digest `5a80240ca6bfb16eb6a53b0b95b5214323a9dde25814b48fb39e9caaf11e4855`.
    The designer replied `approved lets do next`. Approval binds only that exact
-   packet; accepted implementation
-   `0ece468efeaf4b50351358020075b4bf91dc7cff` is the immutable publication
-   anchor. Standing permission now opens only the bounded approval record,
-   branch push, and handoff reconciliation. Once that tuple is clean and remote
-   verified, the continuation suffix opens only the Mammoth actor-topology
-   decision, not Mammoth pixels. Public/outline registration, fixtures,
+   packet. Accepted implementation
+   `0ece468efeaf4b50351358020075b4bf91dc7cff` and approval record
+   `378ec3d107b43e6b354cadcad16f64e0a8cf838b` are pushed and remote verified.
+   Only the initial published handoff and final reconciliation remain open.
+   Once that tuple is clean and remote verified, the continuation suffix opens
+   only the Mammoth actor-topology decision, not Mammoth pixels.
+   Public/outline registration, fixtures,
    effects, child assets, additional Stag variants, Rhino, Furious Depraved
    Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
    a PR, and every broader art gate remain closed.
