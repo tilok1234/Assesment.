@@ -59,10 +59,10 @@ export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE = deepFreeze({
   approvedImplementation: 'cb227af79e2e7db39609d8bb5524942387026333',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: 'cb227af79e2e7db39609d8bb5524942387026333',
+  publishedApprovalRecord: 'ab1cab569aa4fbd69a6b2ec9ca60f838792c481b',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.id,
     candidateFrameDigest: EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.candidateFrameDigest,
@@ -129,7 +129,7 @@ export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Gloamgaze Stalker implementation cb227af79e2e7db39609d8bb5524942387026333 is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded publication tuple. The approval reply aproved contains no continuation request, so Cockatrice elite, Raven, Owl, Phoenix, every other Bird-family candidate, public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Gloamgaze Stalker implementation cb227af79e2e7db39609d8bb5524942387026333 and approval record ab1cab569aa4fbd69a6b2ec9ca60f838792c481b are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded publication tuple. The approval reply aproved contains no continuation request, so Cockatrice elite, Raven, Owl, Phoenix, every other Bird-family candidate, public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_COCKATRICE_GLOAMGAZE_STALKER_DATA = deepFreeze({

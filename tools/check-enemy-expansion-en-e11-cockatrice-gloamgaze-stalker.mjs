@@ -147,12 +147,13 @@ check(
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.approvedImplementation === 'cb227af79e2e7db39609d8bb5524942387026333'
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publicationAuthorizedOn === '2026-08-13'
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publishedImplementation === ''
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publishedApprovalRecord === ''
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publishedImplementation === 'cb227af79e2e7db39609d8bb5524942387026333'
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publishedApprovalRecord === 'ab1cab569aa4fbd69a6b2ec9ca60f838792c481b'
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.initialPublishedHandoff === ''
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('cb227af79e2e7db39609d8bb5524942387026333')
-    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('approval record'),
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('ab1cab569aa4fbd69a6b2ec9ca60f838792c481b')
+    && EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.nextGate.includes('initial published handoff'),
   'Gloamgaze approval record or predecessor tuple drifted',
 );
 check(
