@@ -23,6 +23,66 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Checkpoint - Crownveil Sovereign Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-peacock-elite`. It branches exactly from the clean, pushed,
+   remote-verified Mirrorfan reconciliation
+   `6df83e5e642dbec5b68b856d436aa9db810678eb`.
+2. The designer replied `approved lets do next` to the exact frozen Mirrorfan
+   packet. That approval published only Mirrorfan Ambusher; its continuation
+   opens exactly one private elite Peacock full 80-frame candidate under the
+   selected `baked-single-actor-grounded-fan-tailed-bird` topology. It does not
+   approve Crownveil pixels or open commit, push, publication, public or
+   outline registration, fixtures, effects, child assets, Cockatrice, Raven,
+   Owl, Phoenix, another Bird family, release, accepted drift, or a PR.
+3. Crownveil Sovereign is one connected broad natural ground Peacock with a
+   tall three-pronged moon-white coronet, thick arched royal-violet neck, dark
+   amethyst body, layered antique-gold mantle wings, two strong legs ending in
+   separated broad three-toed talon contacts, and one heavy connected
+   blue-green train with ivory/cyan/rose crown eyes. Attack plants both talons,
+   raises the full train into a crown shield, drives a double-mantle press and
+   short beak strike, then folds and recovers. Cast aliases Attack; Death
+   aliases Hurt H1,H2,H2,H2. Loose feathers, wind, gust rings, dust, glow,
+   projectiles, air blades, and impacts remain external.
+4. The frozen 80-frame candidate digest is
+   `6c4220e3a108eb902370a6d69bea8f2334a73dfddd914deb7f9a43495b99c82d`.
+   Raw / distinct Complete B outlined / Complete B + Form / avian-comparison
+   PNG hashes are
+   `4e27a7d72012ec7468195ddaa06f7801c5d9926d3e1c51754f23231b4efaa9ba`,
+   `d0e0ed05df36855af918ce741dd4d68adda6266cb0b0bb893134a1b6e3778da7`,
+   `7b5d5d16b45a41976d77d4cccb6adb69418d29f0329dd3fdf0548b9348798351`,
+   and `89ca07be4cc53edf14ebc3da06f1d3a4c311bd0d07572569f5d561373cb2e21e`.
+   Raw and Complete B + Form GIF hashes are
+   `93e9068ed97d2ef02c89da15e4e1bac2ef945702a4a85a4afc0858fb9a354d7d`
+   and `8fdd6cde061f09cbbeaa32839c31f5a33f5ea0cf38921780e2460572c5f9985a`.
+5. Focused validation passes 80/80 connected, bounded, grounded, exactly
+   two-three-toed-talon, and broad crowned natural-bird-span frames; 16/16 full
+   crown-shield views; 54/54 expected eye-bearing views; 72/72 crest, train,
+   and wing views; 8/8 exact `#f4f4f4` flashes; exact aliases and mirrors; and
+   80/80 pixel-plus-alpha distinctions from approved Mirrorfan Ambusher,
+   Rainfan Forager, and Aerie Scout. Opaque range is 213-360. Complete B adds
+   7,990 outline pixels and Form changes 10,141 pixels. The transparent 20x4
+   inspection atlas passes exact dimensions, hard alpha, non-empty-cell, and
+   strict boundary checks. Focused / fast / full gates pass in about
+   0.9s / 54.4s / 134.4s. Public remains 92/294, all 232 fixture sheets stay
+   unchanged, and child assets, effects, public registration, and outline
+   registration remain zero.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-peacock-crownveil-sovereign/`. Regenerate
+   with
+   `npm.cmd run review:enemy-expansion-en-e11-peacock-crownveil-sovereign` and
+   run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-peacock-crownveil-sovereign`. The
+   raw, outlined, Complete B + Form, avian-comparison, and synchronized GIF
+   files form the complete review surface. All four exact PNGs were loaded in
+   Aseprite and inspected. The outlined PNG is evidence only; it does not
+   authorize outline registration.
+7. Stop for explicit designer visual approval of this exact frozen packet. Do
+   not commit, push, publish, register, regenerate fixtures, add effects or
+   child assets, begin another Bird family, release, accept drift, or open a
+   PR.
+
 ## Approved Preceding Checkpoint - Mirrorfan Ambusher Published / Elite Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch

@@ -14,6 +14,39 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
+Current EN-E11 private elite Peacock candidate awaiting visual approval
+(2026-08-13): on `codex/en-e11-peacock-elite`, based exactly on clean, pushed,
+remote-verified Mirrorfan reconciliation
+`6df83e5e642dbec5b68b856d436aa9db810678eb`, the designer's exact reply
+`approved lets do next` publishes only Mirrorfan and opens exactly one private
+elite Peacock candidate under the selected
+`baked-single-actor-grounded-fan-tailed-bird` topology. Crownveil Sovereign is
+a connected broad natural ground bird with a tall three-pronged moon-white
+coronet, thick royal-violet neck, dark amethyst body, layered antique-gold
+mantle wings, two separated broad three-toed talon contacts, and one connected
+heavy blue-green crown-eye train. Attack raises a full crown shield, drives a
+double-mantle press and short beak strike, then recovers without a baked effect.
+Its exact 80-frame digest is
+`6c4220e3a108eb902370a6d69bea8f2334a73dfddd914deb7f9a43495b99c82d`.
+Raw / outlined / Form / comparison PNG hashes are
+`4e27a7d72012ec7468195ddaa06f7801c5d9926d3e1c51754f23231b4efaa9ba`,
+`d0e0ed05df36855af918ce741dd4d68adda6266cb0b0bb893134a1b6e3778da7`,
+`7b5d5d16b45a41976d77d4cccb6adb69418d29f0329dd3fdf0548b9348798351`,
+and `89ca07be4cc53edf14ebc3da06f1d3a4c311bd0d07572569f5d561373cb2e21e`;
+raw / Form GIF hashes are
+`93e9068ed97d2ef02c89da15e4e1bac2ef945702a4a85a4afc0858fb9a354d7d`
+and `8fdd6cde061f09cbbeaa32839c31f5a33f5ea0cf38921780e2460572c5f9985a`.
+Focused validation passes all 80 structural, two-talon, broad crowned
+natural-bird-span, alias, mirror, and three-way comparison cases at opaque
+range 213-360; 16/16 full crown-shield views preserve the connected train.
+The inspection atlas passes dimensions, hard alpha, non-empty-cell, and strict
+boundary checks. Focused/fast/full gates pass in about
+0.9s/54.4s/134.4s. Public stays 92/294, all 232 fixtures remain unchanged,
+and child assets/effects/public registration/outline registration stay zero.
+All four exact PNGs were loaded in Aseprite and inspected. Stop for explicit
+visual approval; no commit, push, publication, registration, fixture, effect,
+child asset, other Bird family, release, accepted drift, or PR gate is open.
+
 Approved preceding EN-E11 private specialist Peacock published / elite gate open
 (2026-08-13): on `codex/en-e11-peacock-specialist`, based exactly on clean,
 pushed, remote-verified Rainfan reconciliation
