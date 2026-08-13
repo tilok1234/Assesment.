@@ -5750,9 +5750,9 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer and specialist Reedcrest Skirmisher approved and published; private elite Stonefern Bastion implementation and approval record remote verified with handoff reconciliation in progress`
+- Status: `Hyena, Ram, Stag, Mammoth, and Rhino common, specialist, and elite approved and published; no next sprite lane open`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
-- Priority-first: finish only the bounded Stonefern Bastion initial published handoff and final reconciliation; no next sprite lane is open
+- Priority-first: require a fresh explicit continuation before any next sprite lane
 
 Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
@@ -5866,15 +5866,17 @@ focused/fast/full gates pass in 0.6s/62.8s/121.9s. The final prompt posted all
 four exact PNGs, both synchronized GIFs, and the frozen digest; the designer
 replied `approved`. Approval binds only to accepted implementation
 `e527031e0d29444bf17a1cf79229bac7150d1786` and those six hashes.
-Approval-local focused/fast gates pass in 0.6s/64.2s. Public stays 92/294, all 232
+Approval-local focused/fast gates pass in 0.6s/64.2s. Final published-state
+focused/fast/full gates pass in 0.7s/65.7s/120.8s. Public stays 92/294, all 232
 fixtures remain unchanged, and child assets/effects/public registration/
 outline registration stay zero. The four exact review PNGs are open in
 Aseprite as sprites 302, 306, 310, and 314; the protected Boss direction and
 full-animation sheets are open separately as sprites 318 and active 322.
 Accepted implementation `e527031e0d29444bf17a1cf79229bac7150d1786` and
-approval record `154a12fc8e208f64cfb48f0d3dee71b1bff62d50` are remote
-verified. Only the initial published handoff and final reconciliation remain
-open. The approval reply contains no continuation
+approval record `154a12fc8e208f64cfb48f0d3dee71b1bff62d50`, and initial
+published handoff `b3703b4c2c60b53c29e8f1941c9c8ffb158703f9` are remote
+verified; this reconciliation completes the bounded publication tuple. The
+approval reply contains no continuation
 request, so no additional Rhino or other sprite lane is open. Public or outline
 registration, fixtures, effects, child assets, every Boss change, release,
 accepted drift, and a PR remain closed; the outlined PNG is review evidence only.

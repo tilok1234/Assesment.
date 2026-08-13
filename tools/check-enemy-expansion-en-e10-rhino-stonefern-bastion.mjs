@@ -127,8 +127,8 @@ check(
     && EN_E10_STONEFERN_BASTION_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E10_STONEFERN_BASTION_GATE.publishedImplementation === 'e527031e0d29444bf17a1cf79229bac7150d1786'
     && EN_E10_STONEFERN_BASTION_GATE.publishedApprovalRecord === '154a12fc8e208f64cfb48f0d3dee71b1bff62d50'
-    && EN_E10_STONEFERN_BASTION_GATE.initialPublishedHandoff === ''
-    && EN_E10_STONEFERN_BASTION_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E10_STONEFERN_BASTION_GATE.initialPublishedHandoff === 'b3703b4c2c60b53c29e8f1941c9c8ffb158703f9'
+    && EN_E10_STONEFERN_BASTION_GATE.publicationState === 'published'
     && EN_E10_STONEFERN_BASTION_GATE.precedingApproval.gateId === EN_E10_REEDCREST_SKIRMISHER_GATE.id
     && EN_E10_STONEFERN_BASTION_GATE.precedingApproval.candidateFrameDigest === EN_E10_REEDCREST_SKIRMISHER_GATE.candidateFrameDigest
     && EN_E10_STONEFERN_BASTION_GATE.precedingApproval.publishedImplementation === EN_E10_REEDCREST_SKIRMISHER_GATE.publishedImplementation
@@ -155,9 +155,9 @@ check(
     && EN_E10_STONEFERN_BASTION_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_STONEFERN_BASTION_GATE.exclusions.includes('public Rhino registration or outline registration')
     && EN_E10_STONEFERN_BASTION_GATE.exclusions.includes('any Furious Depraved Rhino Boss source, catalog, roster, or asset change')
-    && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('implementation e527031e0d29444bf17a1cf79229bac7150d1786 and approval record 154a12fc8e208f64cfb48f0d3dee71b1bff62d50 are remote verified')
-    && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
-    && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('no additional Rhino or other sprite lane is opened')
+    && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('implementation e527031e0d29444bf17a1cf79229bac7150d1786, approval record 154a12fc8e208f64cfb48f0d3dee71b1bff62d50, and initial published handoff b3703b4c2c60b53c29e8f1941c9c8ffb158703f9 are remote verified')
+    && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('completes the bounded publication tuple')
+    && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('no additional Rhino or other sprite lane is open')
     && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('review evidence only'),
   'elite Rhino anatomy, effect firewall, motion, or stop boundary drifted',
 );

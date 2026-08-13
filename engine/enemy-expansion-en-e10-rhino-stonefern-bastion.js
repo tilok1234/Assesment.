@@ -107,8 +107,8 @@ export const EN_E10_STONEFERN_BASTION_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: 'e527031e0d29444bf17a1cf79229bac7150d1786',
   publishedApprovalRecord: '154a12fc8e208f64cfb48f0d3dee71b1bff62d50',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: 'b3703b4c2c60b53c29e8f1941c9c8ffb158703f9',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E10_REEDCREST_SKIRMISHER_GATE.id,
     artifactSha256: EN_E10_REEDCREST_SKIRMISHER_GATE.artifactSha256,
@@ -165,7 +165,7 @@ export const EN_E10_STONEFERN_BASTION_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Stonefern Bastion implementation e527031e0d29444bf17a1cf79229bac7150d1786 and approval record 154a12fc8e208f64cfb48f0d3dee71b1bff62d50 are remote verified. Only the initial published handoff and final reconciliation remain open. The designer reply contains no continuation request, so no additional Rhino or other sprite lane is opened throughout or after publication. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Rhino registration, fixtures, effects, child assets, every Boss change, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Stonefern Bastion implementation e527031e0d29444bf17a1cf79229bac7150d1786, approval record 154a12fc8e208f64cfb48f0d3dee71b1bff62d50, and initial published handoff b3703b4c2c60b53c29e8f1941c9c8ffb158703f9 are remote verified; this reconciliation completes the bounded publication tuple. The designer reply contains no continuation request, so no additional Rhino or other sprite lane is open; a fresh explicit continuation is required. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Rhino registration, fixtures, effects, child assets, every Boss change, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_STONEFERN_BASTION_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -430,7 +430,7 @@ export const EN_E10_STONEFERN_BASTION_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'stonefern-bastion',
     scale: 8,
-    notes: 'Visually approved as one exact private elite Rhino against approved Mudplate Grazer and Reedcrest Skirmisher plus public Dire Wolf, with the protected Furious Depraved Rhino Boss direction and full-animation candidates reviewed separately and unchanged. Accepted implementation e527031e0d29444bf17a1cf79229bac7150d1786 and approval record 154a12fc8e208f64cfb48f0d3dee71b1bff62d50 are remote verified. Only the initial published handoff and final reconciliation remain open. The distinct Complete B outlined PNG remains review evidence only. The designer reply contains no continuation request, so keep public or outline registration, fixtures, effects, child assets, every Boss change, another Rhino, every other sprite lane, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private elite Rhino against approved Mudplate Grazer and Reedcrest Skirmisher plus public Dire Wolf, with the protected Furious Depraved Rhino Boss direction and full-animation candidates reviewed separately and unchanged. Accepted implementation e527031e0d29444bf17a1cf79229bac7150d1786, approval record 154a12fc8e208f64cfb48f0d3dee71b1bff62d50, and initial published handoff b3703b4c2c60b53c29e8f1941c9c8ffb158703f9 are remote verified; this reconciliation completes the bounded publication tuple. The distinct Complete B outlined PNG remains review evidence only. The designer reply contains no continuation request, so no additional Rhino or other sprite lane is open; keep public or outline registration, fixtures, effects, child assets, every Boss change, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

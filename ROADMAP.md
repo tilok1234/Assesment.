@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 approved private elite Rhino / handoff reconciliation in progress
+Current EN-E10 approved private elite Rhino published / next gate closed
 (2026-08-13): on
 `codex/en-e10-rhino-elite`, based exactly on clean, published, remote-verified
 Reedcrest reconciliation `b0313abeeaadea7e14b62339e280469b08b37653`, the
@@ -46,15 +46,17 @@ opaque range 239-290. Complete B adds 10,040 outline pixels and Form changes
 0.6s/62.8s/121.9s. The designer then replied `approved` to the exact four PNGs,
 two GIFs, and digest. Approval binds only to accepted implementation
 `e527031e0d29444bf17a1cf79229bac7150d1786` and those six hashes;
-approval-local focused/fast gates pass in 0.6s/64.2s. The protected Furious Depraved Rhino direction and
+approval-local focused/fast gates pass in 0.6s/64.2s. Final published-state
+focused/fast/full gates pass in 0.7s/65.7s/120.8s. The protected Furious Depraved Rhino direction and
 full-animation candidates remain byte-exact. Public stays 92/294, all 232 fixtures remain
 unchanged, and child assets/effects/public registration/outline registration
 stay zero. The four exact review PNGs are open in Aseprite as sprites 302, 306,
 310, and 314; the protected Boss references are open separately as sprites 318
 and active 322. Accepted implementation
 `e527031e0d29444bf17a1cf79229bac7150d1786` and approval record
-`154a12fc8e208f64cfb48f0d3dee71b1bff62d50` are remote verified. Only the
-initial published handoff and final reconciliation remain open. The reply contains no
+`154a12fc8e208f64cfb48f0d3dee71b1bff62d50`, and initial published handoff
+`b3703b4c2c60b53c29e8f1941c9c8ffb158703f9` are remote verified; this
+reconciliation completes the bounded publication tuple. The reply contains no
 continuation request, so no additional Rhino or other sprite lane is open.
 Registration, fixtures, effects, child assets, every Boss change, release,
 accepted drift, and a PR remain closed.

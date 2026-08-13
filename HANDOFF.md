@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Publication Checkpoint - Stonefern Bastion Handoff Reconciliation In Progress
+## Immediate Continuation Checkpoint - Stonefern Bastion Published / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-rhino-elite`. It branches exactly from clean, published,
@@ -67,7 +67,8 @@ gate.
    pixels and Form changes 9,438 pixels. Pre-approval focused / `check:fast` /
    full `check` pass in 0.6s / 62.8s / 121.9s. Approval-local focused /
    `check:fast` gates pass again in 0.6s / 64.2s against the exact approved
-   implementation. Public remains 92/294, all 232
+   implementation. Final published-state focused / `check:fast` / full
+   `check` pass in 0.7s / 65.7s / 120.8s. Public remains 92/294, all 232
    fixtures stay unchanged, and child assets, effects, public registration,
    and outline registration remain zero. The protected Furious Depraved Rhino
    direction and animation candidates remain byte-exact at SHA-256
@@ -90,8 +91,9 @@ gate.
    The designer replied `approved`. Approval applies only to that exact packet
    and accepted implementation
    `e527031e0d29444bf17a1cf79229bac7150d1786`. That implementation and approval
-   record `154a12fc8e208f64cfb48f0d3dee71b1bff62d50` are remote verified.
-   Only the initial published handoff and final reconciliation remain open.
+   record `154a12fc8e208f64cfb48f0d3dee71b1bff62d50`, and initial published handoff
+   `b3703b4c2c60b53c29e8f1941c9c8ffb158703f9` are remote verified; this
+   reconciliation completes the bounded publication tuple.
 8. The reply contains no continuation request, so no additional Rhino or other
    sprite lane is open. Public or outline registration, fixtures, effects,
    child assets, every Furious Depraved Rhino Boss change, Runic Idol, release,

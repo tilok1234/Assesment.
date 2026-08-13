@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private elite Rhino / handoff reconciliation in progress: on
+- Current approved private elite Rhino published / next gate closed: on
   `codex/en-e10-rhino-elite`, based exactly on clean, published,
   remote-verified Reedcrest reconciliation
   `b0313abeeaadea7e14b62339e280469b08b37653`, the designer first asked
@@ -149,10 +149,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   outline registration stay zero. The four exact review PNGs are open in
   Aseprite as sprites 302, 306, 310, and 314; the protected Boss direction and
   full-animation sheets are open separately as sprites 318 and active 322.
-  Accepted implementation `e527031e0d29444bf17a1cf79229bac7150d1786` and
-  approval record `154a12fc8e208f64cfb48f0d3dee71b1bff62d50` are remote
-  verified. Only the initial published handoff and final reconciliation remain
-  open. The reply contains no continuation
+  Accepted implementation `e527031e0d29444bf17a1cf79229bac7150d1786`,
+  approval record `154a12fc8e208f64cfb48f0d3dee71b1bff62d50`, and initial
+  published handoff `b3703b4c2c60b53c29e8f1941c9c8ffb158703f9` are remote
+  verified; this reconciliation completes the bounded publication tuple.
+  Final published-state focused / `check:fast` / full `check` pass in
+  0.7s / 65.7s / 120.8s. The
+  reply contains no continuation
   request, so no additional Rhino or other sprite lane is open. Registration,
   fixtures, effects, child assets, every Boss change, release, accepted drift,
   and a PR remain closed; the outlined PNG is review evidence only.
