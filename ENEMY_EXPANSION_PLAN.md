@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current approved private elite Cockatrice / publication in progress
+- Current approved private elite Cockatrice published / Raven topology gate open
   (2026-08-14): on `codex/en-e11-cockatrice-elite`, based exactly on clean,
   pushed, remote-verified Gloamgaze reconciliation
   `9d5c942fbdeb49db8c232fc763972962b56e8837`, the designer's fresh `lets do
@@ -52,12 +52,16 @@
   `5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef`, the digest, and six frozen
   hashes; that implementation and approval record
   `27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7` are pushed and remote
-  verified. Only the initial published handoff/final reconciliation remains.
-  Approval-local focused/fast gates
-  pass again in about 0.8s/56.0s. Hold the continuation until that
-  tuple completes; it then opens only the next documented Bird-family decision
-  gate, not its topology or pixels. Registration, fixtures, effects, child
-  assets, release, accepted drift, a PR, and every broader gate remain closed.
+  verified. Initial published handoff
+  `7f588bf305072e80a4bf3c4d913dfaba1f389416` is also pushed and remote
+  verified; this reconciliation completes the bounded Cockatrice publication
+  tuple. Approval-local focused/fast gates pass again in about 0.8s/56.0s.
+  Final published-state focused/fast/full gates pass in about
+  1.0s/75.3s/119.4s. The approved continuation opens only the documented Raven
+  topology decision gate. It does not choose a topology or approve Raven
+  pixels. Owl, Phoenix,
+  registration, fixtures, effects, child assets, release, accepted drift, a
+  PR, and every broader gate remain closed.
 
 - Current approved private specialist Cockatrice published / next gate closed
   (2026-08-13): on `codex/en-e11-cockatrice-specialist`, based exactly on the

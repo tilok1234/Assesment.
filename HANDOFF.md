@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Approved Checkpoint - Crowncoil Basilarch / Publication In Progress
+## Current Published Checkpoint - Crowncoil Basilarch / Raven Topology Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-cockatrice-elite`. It branches exactly from clean, pushed,
@@ -39,12 +39,13 @@ gate.
    `5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef`, the exact digest, and six
    frozen review hashes. That implementation and approval record
    `27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7` are pushed and remote
-   verified. Only the initial published handoff and final reconciliation remain
-   open. Hold the continuation until that bounded publication tuple is
-   reconciled; afterward it opens only the next
-   documented Bird-family decision gate and does not approve its topology or
-   candidate pixels. Public or outline registration, fixtures, effects, child
-   assets, release, accepted drift, and a PR remain separate.
+   verified. Initial published handoff
+   `7f588bf305072e80a4bf3c4d913dfaba1f389416` is also pushed and remote
+   verified; this reconciliation completes the bounded Cockatrice publication
+   tuple. The approved continuation now opens only the documented Raven
+   topology decision gate. It does not choose a Raven topology or authorize
+   Raven pixels, Owl, Phoenix, public or outline registration, fixtures,
+   effects, child assets, release, accepted drift, or a PR.
 3. Crowncoil Basilarch is one connected broad, high-crowned
    cockerel-and-serpent actor with an obsidian-blue head, tall three-pronged
    crimson crown comb, ivory hooked beak, antique-gold plated throat, deep
@@ -78,7 +79,8 @@ gate.
    passes in about 0.8s / 61.8s / 112.2s. Public remains 92/294, all 232
    fixtures stay exact, and child assets, effects, public registration, and
    outline registration remain zero. Approval-local focused and fast gates
-   pass again in about 0.8s and 56.0s.
+   pass again in about 0.8s and 56.0s. Final published-state focused / fast /
+   full gates pass in about 1.0s / 75.3s / 119.4s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-cockatrice-crowncoil-basilarch/`. Regenerate
    with
@@ -88,12 +90,12 @@ gate.
    The raw, outlined, Complete B + Form, Gloamgaze/Bramblecomb/Marsh-Crocodile
    comparison PNGs and all four raw phase sheets were inspected at original
    resolution. The outlined PNG is review evidence only.
-7. Create and push only the initial published handoff and final reconciliation
-   needed to complete Crowncoil's bounded publication tuple. Do not register it
-   publicly or for outlines,
-   regenerate fixtures, add effects or child assets, begin later-family pixels,
-   release, accept drift, or open a PR. The approved `lets do next`
-   continuation remains held until publication reconciliation is complete.
+7. The implementation, approval record, and initial published handoff are
+   remote verified; this reconciliation completes Crowncoil's bounded
+   publication tuple. The next action is a Raven topology proposal for explicit
+   designer approval. Do not author Raven pixels, register anything publicly or
+   for outlines, regenerate fixtures, add effects or child assets, begin Owl or
+   Phoenix, release, accept drift, or open a PR.
 
 ## Current Published Checkpoint - Gloamgaze Stalker / Next Gate Closed
 

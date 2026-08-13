@@ -159,11 +159,13 @@ check(
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publicationAuthorizationEvidence.includes('commit and push all aproved please')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publishedImplementation === '5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef'
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publishedApprovalRecord === '27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7'
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.initialPublishedHandoff === ''
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.initialPublishedHandoff === '7f588bf305072e80a4bf3c4d913dfaba1f389416'
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publicationState === 'published'
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7')
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('initial published handoff')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('7f588bf305072e80a4bf3c4d913dfaba1f389416')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('completes the bounded Cockatrice publication tuple')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('Raven topology decision gate')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('outline registration'),
   'Crowncoil approval record or predecessor tuple drifted',
 );
@@ -173,7 +175,7 @@ check(
     && EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.precedingVariant.role === 'specialist'
     && EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.activeVariant.id === 'crowncoil-basilarch'
     && EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && JSON.stringify(EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.deferredRoles) === JSON.stringify([])
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_CONTRACT.state === 'implemented-complete-motion-approved',
   'Cockatrice elite role contract drifted',
@@ -189,7 +191,7 @@ check(
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.exclusions.includes('fixtures')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.exclusions.includes('approved Gloamgaze Stalker pixel changes')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.exclusions.includes('approved Bramblecomb Scratcher pixel changes')
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('continuation lets do next remains held')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('opens only the documented Raven topology decision gate')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('outline registration'),
   'Crowncoil anatomy, motion, effect firewall, or stop boundary drifted',
 );

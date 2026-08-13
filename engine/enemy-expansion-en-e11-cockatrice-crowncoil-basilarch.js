@@ -44,7 +44,7 @@ export const EN_E11_COCKATRICE_ELITE_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_CONTRACT.variant,
     role: EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_CONTRACT.role,
-    status: 'implemented-full-approved',
+    status: 'implemented-full-approved-published-reconciled',
   },
   deferredRoles: [],
 });
@@ -63,8 +63,8 @@ export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. After approving Crowncoil, the designer added: and commit and push all aproved please. This authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes for the exact approved packet only. It does not authorize registration, fixtures, effects, child assets, later-family pixels, release, accepted drift, or a pull request.',
   publishedImplementation: '5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef',
   publishedApprovalRecord: '27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '7f588bf305072e80a4bf3c4d913dfaba1f389416',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.id,
     candidateFrameDigest: EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.candidateFrameDigest,
@@ -130,7 +130,7 @@ export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Crowncoil Basilarch implementation 5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef and approval record 27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded publication tuple. The approved continuation lets do next remains held until that tuple is complete; afterward it opens only the next documented Bird-family decision gate and does not approve a topology or candidate pixels. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Crowncoil Basilarch implementation 5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef, approval record 27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7, and initial published handoff 7f588bf305072e80a4bf3c4d913dfaba1f389416 are pushed and remote verified; this reconciliation completes the bounded Cockatrice publication tuple. The approved continuation lets do next now opens only the documented Raven topology decision gate. It does not select a Raven topology, authorize Raven candidate pixels, or open Owl, Phoenix, public or outline registration, fixtures, effects, child assets, release, accepted drift, or a pull request. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_DATA = deepFreeze({
@@ -595,7 +595,7 @@ export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'crowncoil-basilarch',
     scale: 6,
-    notes: 'Approved private Crowncoil Basilarch elite Cockatrice only, bound to exact implementation 5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef, candidate digest 5beeb0036af6f5c9dc9bfb64c0121e548a372f31ee257e53c0765e3b031c2bb0, and its six frozen review hashes. The designer replied approved lets do next and separately confirmed commit and push all approved work. Hold the continuation until bounded publication reconciliation completes. Keep public or outline registration, fixtures, effects, child assets, later-family pixels, release, accepted drift, and a pull request separate.',
+    notes: 'Published and reconciled private Crowncoil Basilarch elite Cockatrice only, bound to exact implementation 5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef, approval record 27e60acd72f9c00de886d8fd0d7e1d899c7f2bb7, initial published handoff 7f588bf305072e80a4bf3c4d913dfaba1f389416, candidate digest 5beeb0036af6f5c9dc9bfb64c0121e548a372f31ee257e53c0765e3b031c2bb0, and its six frozen review hashes. The approved continuation opens only the Raven topology decision. Keep Raven pixels, Owl, Phoenix, public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request separate.',
   },
 });
 
