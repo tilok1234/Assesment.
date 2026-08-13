@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E11 approved private common Cockatrice / publication in progress
+Current EN-E11 approved private common Cockatrice published / handoff reconciliation in progress
 (2026-08-13): on `codex/en-e11-cockatrice-common`, based exactly on clean,
 pushed, remote-verified Crownveil reconciliation
 `99fed17ec4815b6985288818796a85b9abc7d78d`, the designer's fresh `lets do
@@ -45,15 +45,17 @@ boundary checks. Focused/fast/full gates pass in about 0.5s/57.5s/116.4s.
 Public stays 92/294, all 232 fixtures remain unchanged, and child assets,
 effects, public registration, and outline registration stay zero. All four
 exact PNGs were inspected at original resolution. Approval-local focused/fast
-gates pass again in about 0.5s/58.7s. The designer replied `approved lets do
+gates pass again in about 0.5s/58.7s; final published-state focused/fast/full
+gates pass in about 0.5s/59.1s/111.8s. The designer replied `approved lets do
 next` to the exact packet. Approval binds only to accepted implementation
-`c01ac35a5862296469967255ffcadadfd5aaae4e` and its six frozen hashes.
-Standing permission opens only its approval record, branch push, and bounded
-reconciliation. The same reply opens exactly one private specialist
-Cockatrice candidate after this publication tuple is reconciled; it does not
-approve specialist pixels. Registration, fixtures, effects, child assets,
-elite Cockatrice, Raven, Owl, Phoenix, release, accepted drift, and a PR remain
-closed.
+`c01ac35a5862296469967255ffcadadfd5aaae4e` and its six frozen hashes. That
+implementation and approval record
+`335b5c467c10f2042128ef7e7f20367735422909` are pushed and remote verified;
+only the initial published handoff and final reconciliation remain open. The
+same reply opens exactly one private specialist Cockatrice candidate after
+this publication tuple is reconciled; it does not approve specialist pixels.
+Registration, fixtures, effects, child assets, elite Cockatrice, Raven, Owl,
+Phoenix, release, accepted drift, and a PR remain closed.
 
 Current EN-E11 private elite Peacock published / next gate closed
 (2026-08-13): on `codex/en-e11-peacock-elite`, based exactly on clean, pushed,
