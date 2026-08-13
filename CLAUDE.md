@@ -107,7 +107,32 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private specialist Mammoth checkpoint published / elite Mammoth gate open: on
+- Current private elite Mammoth checkpoint awaiting visual approval: on
+  `codex/en-e10-mammoth-elite`, based exactly on clean published Frostvein
+  reconciliation `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch
+  is one connected broad blue-violet Mammoth with an immense old-ivory royal
+  mantle, dark glacier face and connected trunk, enormous paired age-banded
+  crescent tusks, crimson vault marks, wine ears, gold eyes, short tail, four
+  weight-bearing pillar legs, four separated broad feet, and a body-owned trunk
+  lift into an effect-free planted double-tusk press. Its exact digest is
+  `db9d43c24dc9c3e958cdba595866333cfee14d67658524a7f02c1f6d912c5763`.
+  Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+  hashes are `bb758e8902151564d5b37a4af4aa6a0a280fa9497d65e32214bae7338b2b1f23`,
+  `eae4cb406f7ef1bae7c1aa61a7278eb7c65f5de757714a71cfe27e320e7bf49c`,
+  `8617dda1f9cac9ebb4be33fa2b6c0998525d3170fb8a300f415539485fefe94c`,
+  and `b40401430b2a9600b52dc2b0d4a9a4b5e2be963470f0a5f7210abd829bd931f9`;
+  raw / Form GIF hashes are
+  `5be609a931b39599c223b601b91920455d106ef4e679e592a9a110534dda48e0`
+  and `2bdc517179096917e9bcdac97e4558d34b150f0c75569bbb8e392c49d3603fdd`.
+  Focused validation passes all 80 structural, four-foot, crescent-tusk-span,
+  alias, mirror, and three-way pixel/alpha-distinction cases at opaque range
+  274-315. Fast/full gates pass at 61.4s/112.5s, public remains 92/294, and all
+  232 fixtures remain unchanged. Exact PNGs are open in Aseprite as sprites
+  222, 226, 230, and active 234. The candidate is uncommitted and unpushed,
+  awaiting explicit visual approval. No next Mammoth role is open; public or
+  outline registration, fixtures, effects, child assets, Rhino, release,
+  accepted drift, and a PR remain closed.
+- Approved preceding private specialist Mammoth checkpoint published / elite Mammoth gate open: on
   `codex/en-e10-mammoth-specialist`, based exactly on clean published
   Tundrahide reconciliation `125b1b81d0f6fa977c3bf674964a45131e65f3ab`,
   Frostvein Wayfinder is one connected lean, high-shouldered slate-blue

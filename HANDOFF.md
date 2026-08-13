@@ -23,7 +23,62 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Frostvein Wayfinder Published / Elite Mammoth Gate Open
+## Immediate Continuation Checkpoint - Rimevault Matriarch Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-mammoth-elite`. It branches exactly from the clean,
+   published, remote-verified Frostvein reconciliation
+   `d93dc918e379212743433c5a505029c42dfa0182`.
+2. The designer's `approved lets do next` approved only the exact frozen
+   Frostvein Wayfinder packet and opened exactly one private elite Mammoth
+   full 80-frame candidate under the selected
+   `baked-single-actor-tusked-heavy-grounded-quadruped` topology. Rimevault
+   Matriarch is one connected grounded 24x24 actor with zero child assets and
+   all effects external.
+3. Rimevault is a broader blue-violet elite with an immense old-ivory royal
+   mantle, dark glacier face and connected trunk, enormous paired age-banded
+   crescent tusks, crimson vault marks, wine ears, gold eyes, a short tail,
+   four weight-bearing pillar legs, and four separated broad feet. Attack
+   plants, performs a connected trunk lift, drives an effect-free planted
+   double-tusk press, and recovers. Cast aliases Attack; Death aliases Hurt
+   H1,H2,H2,H2.
+4. The frozen 80-frame digest is
+   `db9d43c24dc9c3e958cdba595866333cfee14d67658524a7f02c1f6d912c5763`.
+   Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+   hashes are
+   `bb758e8902151564d5b37a4af4aa6a0a280fa9497d65e32214bae7338b2b1f23`,
+   `eae4cb406f7ef1bae7c1aa61a7278eb7c65f5de757714a71cfe27e320e7bf49c`,
+   `8617dda1f9cac9ebb4be33fa2b6c0998525d3170fb8a300f415539485fefe94c`,
+   and `b40401430b2a9600b52dc2b0d4a9a4b5e2be963470f0a5f7210abd829bd931f9`.
+   Raw and Complete B + Form GIF hashes are
+   `5be609a931b39599c223b601b91920455d106ef4e679e592a9a110534dda48e0`
+   and `2bdc517179096917e9bcdac97e4558d34b150f0c75569bbb8e392c49d3603fdd`.
+5. Focused validation passes 80/80 connected, bounded, grounded, four-foot,
+   and crescent-tusk vaulted-elite-span frames; 54/54 expected tusk, eye, and
+   trunk-face views; 8/8 exact-white flashes; exact aliases and mirrors; and
+   80/80 pixel-plus-alpha distinctions from approved Frostvein Wayfinder and
+   Tundrahide Grazer plus public Dire Wolf. Opaque range is 274-315. Complete B
+   adds 10,179 outline pixels and Form changes 9,033 pixels. `check:fast` and
+   full `check` pass in 61.4s and 112.5s, with public 92/294, all 232 fixture
+   sheets unchanged, zero child assets/effects, and no public or outline
+   registration.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-mammoth-rimevault-matriarch/`. Regenerate
+   with
+   `npm.cmd run review:enemy-expansion-en-e10-mammoth-rimevault-matriarch` and
+   run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-mammoth-rimevault-matriarch`.
+   Aseprite has the exact raw, outlined, Complete B + Form, and active
+   comparison PNGs open as sprites 222, 226, 230, and 234. The outlined PNG is
+   review evidence only; it does not authorize outline registration.
+7. This exact candidate is uncommitted and unpushed, awaiting explicit visual
+   approval of the digest and six hashes above. Do not commit, push, register,
+   or publish it before that approval. No next Mammoth role is open. Public or
+   outline registration, fixtures, effects, child assets, Rhino or Rhino Boss
+   work, Runic Idol, release, accepted drift, a PR, and every broader gate
+   remain closed.
+
+## Approved Preceding Checkpoint - Frostvein Wayfinder Published / Elite Mammoth Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-specialist`. It branches exactly from the clean,

@@ -15,7 +15,35 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private specialist Mammoth checkpoint published / elite Mammoth gate open
+- Current private elite Mammoth checkpoint awaiting visual approval
+  (2026-08-13): on `codex/en-e10-mammoth-elite`, based exactly on clean,
+  published, remote-verified Frostvein reconciliation
+  `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch is one
+  connected broad blue-violet Mammoth with an immense old-ivory royal mantle,
+  dark glacier face and connected trunk, enormous paired age-banded crescent
+  tusks, crimson vault marks, wine ears, gold eyes, short tail, four pillar
+  legs, four separated broad feet, and a body-owned trunk lift into an
+  effect-free planted double-tusk press. Its exact digest is
+  `db9d43c24dc9c3e958cdba595866333cfee14d67658524a7f02c1f6d912c5763`.
+  Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+  hashes are `bb758e8902151564d5b37a4af4aa6a0a280fa9497d65e32214bae7338b2b1f23`,
+  `eae4cb406f7ef1bae7c1aa61a7278eb7c65f5de757714a71cfe27e320e7bf49c`,
+  `8617dda1f9cac9ebb4be33fa2b6c0998525d3170fb8a300f415539485fefe94c`,
+  and `b40401430b2a9600b52dc2b0d4a9a4b5e2be963470f0a5f7210abd829bd931f9`;
+  raw / Form GIF hashes are
+  `5be609a931b39599c223b601b91920455d106ef4e679e592a9a110534dda48e0`
+  and `2bdc517179096917e9bcdac97e4558d34b150f0c75569bbb8e392c49d3603fdd`.
+  Focused validation passes all 80 structural, four-foot,
+  crescent-tusk-vaulted-span, alias, mirror, and three-way pixel/alpha-
+  distinction cases at opaque range 274-315. Fast/full gates pass at
+  61.4s/112.5s, public remains 92/294, and all 232 fixtures remain unchanged.
+  Exact PNGs are open in Aseprite as sprites 222, 226, 230, and active 234.
+  The candidate is uncommitted and unpushed, awaiting explicit visual approval.
+  No next Mammoth role is open. Public/outline registration, fixtures, effects,
+  child assets, Rhino, Rhino Boss work, release, accepted drift, a PR, and every
+  broader gate remain closed.
+
+- Approved preceding private specialist Mammoth checkpoint published / elite Mammoth gate open
   (2026-08-13): on `codex/en-e10-mammoth-specialist`, based exactly on clean
   published Tundrahide reconciliation
   `125b1b81d0f6fa977c3bf674964a45131e65f3ab`, Frostvein Wayfinder is one
@@ -5689,7 +5717,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, and Stag common, specialist, and elite approved and published; Mammoth common and specialist approved and published; Mammoth elite gate open; Rhino closed`
+- Status: `Hyena, Ram, and Stag common, specialist, and elite approved and published; Mammoth common and specialist approved and published; Mammoth elite Rimevault Matriarch awaiting visual approval; Rhino closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5994,6 +6022,32 @@ suffix opens exactly one private elite Mammoth full 80-frame candidate on a
 new isolated branch under the selected topology. Public or outline
 registration, fixtures, effects, child assets, Rhino, Rhino Boss work,
 release, accepted drift, a PR, and every broader gate remain closed.
+
+Rimevault Matriarch is the authorized private elite Mammoth from the clean,
+published, remote-verified Frostvein reconciliation
+`d93dc918e379212743433c5a505029c42dfa0182`. On branch
+`codex/en-e10-mammoth-elite`, it uses a broader blue-violet vaulted wool
+chassis, immense old-ivory royal mantle, dark glacier face and connected trunk,
+enormous paired age-banded crescent tusks, crimson vault marks, wine ears, gold
+eyes, a short tail, four weight-bearing pillar legs, four separated broad feet,
+and a body-owned connected trunk lift into an effect-free planted double-tusk
+press. Its exact 80-frame digest is
+`db9d43c24dc9c3e958cdba595866333cfee14d67658524a7f02c1f6d912c5763`.
+
+All 80 frames pass connected, one-cell bounded, grounded, four-broad-foot,
+crescent-tusk vaulted-elite-span, alias, mirror, and pixel/alpha distinction
+checks against approved Frostvein Wayfinder and Tundrahide Grazer plus public
+Dire Wolf at opaque range 274-315. The hash-frozen packet includes raw,
+required distinct Complete B outlined, Complete B + Form, and comparison PNGs
+plus two GIFs and regenerates deterministically. Focused / fast / full gates
+pass, with fast/full at 61.4s/112.5s, public 92/294, all 232 fixtures unchanged,
+zero child assets/effects, and no public or outline registration. The exact raw,
+outlined, Complete B + Form, and comparison PNGs are open together in Aseprite
+as sprites 222, 226, 230, and active 234. The outlined PNG is review evidence
+only and does not change outline registration. This candidate is uncommitted
+and unpushed, awaiting explicit visual approval of its exact digest and six
+review hashes. No next Mammoth role is open; Rhino, Rhino Boss work, and all
+broader gates remain closed.
 
 ### EN-E11 - Birds
 
