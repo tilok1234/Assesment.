@@ -147,10 +147,10 @@ check(
     && EN_E10_BRIARSTEP_HARRIER_GATE.approvedImplementation === '8d52dc26d9d361c5d95603276a4a88b3978a585e'
     && EN_E10_BRIARSTEP_HARRIER_GATE.publicationAuthorizedOn === '2026-08-13'
     && EN_E10_BRIARSTEP_HARRIER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E10_BRIARSTEP_HARRIER_GATE.publishedImplementation === ''
-    && EN_E10_BRIARSTEP_HARRIER_GATE.publishedApprovalRecord === ''
+    && EN_E10_BRIARSTEP_HARRIER_GATE.publishedImplementation === '8d52dc26d9d361c5d95603276a4a88b3978a585e'
+    && EN_E10_BRIARSTEP_HARRIER_GATE.publishedApprovalRecord === '895456020801fa40a31d7e83413895e0440c505e'
     && EN_E10_BRIARSTEP_HARRIER_GATE.initialPublishedHandoff === ''
-    && EN_E10_BRIARSTEP_HARRIER_GATE.publicationState === 'approved-not-published',
+    && EN_E10_BRIARSTEP_HARRIER_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
   'specialist Stag authorization or visual stop boundary drifted',
 );
 check(
@@ -188,7 +188,8 @@ check(
     && EN_E10_BRIARSTEP_HARRIER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_BRIARSTEP_HARRIER_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_BRIARSTEP_HARRIER_GATE.exclusions.includes('elite Stag variants')
-    && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('implementation 8d52dc26d9d361c5d95603276a4a88b3978a585e')
+    && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('implementation 8d52dc26d9d361c5d95603276a4a88b3978a585e and approval record 895456020801fa40a31d7e83413895e0440c505e are remote verified')
+    && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('No next Stag art gate is open')
     && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('review evidence only')
     && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('does not authorize outline registration'),

@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private art checkpoint undergoing bounded publication: on
+- Current approved private art checkpoint undergoing publication reconciliation: on
   `codex/en-e10-stag-specialist`, based exactly on clean published Mossrack
   reconciliation `67331ed1a160c8e62df0c9941b7c051ab5d0b228`, the designer's
   `approved lets do next` suffix opens exactly one private specialist Stag.
@@ -133,9 +133,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   outlined board is evidence only, not outline registration. The final prompt
   posted all four exact PNGs, both GIFs, and the digest; the designer replied
   `approved`. Accepted implementation
-  `8d52dc26d9d361c5d95603276a4a88b3978a585e` is remote verified. Standing
-  permission opens only its approval record, branch push, and bounded handoff
-  reconciliation. No next Stag art gate is open. Registration, fixtures,
+  `8d52dc26d9d361c5d95603276a4a88b3978a585e` and approval record
+  `895456020801fa40a31d7e83413895e0440c505e` are remote verified. Only the
+  initial published handoff and final reconciliation remain open. No next Stag
+  art gate is open. Registration, fixtures,
   effects, child assets, elite Stag, later families, release, accepted drift,
   and a PR remain closed.
 - Approved preceding private art checkpoint published / specialist gate open: on

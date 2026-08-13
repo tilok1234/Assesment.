@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Briarstep Harrier Approval Publication
+## Immediate Continuation Checkpoint - Briarstep Harrier Publication Reconciliation
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-stag-specialist`. It is based exactly on clean, published,
@@ -79,12 +79,13 @@ gate.
    The designer replied `approved`. Approval applies only to that exact packet;
    accepted implementation `8d52dc26d9d361c5d95603276a4a88b3978a585e`
    records it and is remote verified.
-8. Standing publication permission opens only the approval record, branch
-   push, and bounded handoff reconciliation. No next Stag art gate is open.
-   Public Stag or outline registration, fixtures, effects, child assets, elite
-   Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the deferred Runic
-   Idol decision, release, accepted drift, a PR, and every broader art gate
-   remain closed.
+8. Accepted implementation `8d52dc26d9d361c5d95603276a4a88b3978a585e`
+   and approval record `895456020801fa40a31d7e83413895e0440c505e` are
+   remote verified. Only the initial published handoff and final reconciliation
+   remain open. No next Stag art gate is open. Public Stag or outline
+   registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino,
+   Furious Depraved Rhino Boss work, the deferred Runic Idol decision, release,
+   accepted drift, a PR, and every broader art gate remain closed.
 
 ## Approved Preceding Checkpoint - Mossrack Forager Published / Specialist Gate Open
 

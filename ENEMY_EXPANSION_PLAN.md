@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current approved private art checkpoint undergoing bounded publication
+- Current approved private art checkpoint undergoing publication reconciliation
   (2026-08-13): from
   clean published Mossrack reconciliation
   `67331ed1a160c8e62df0c9941b7c051ab5d0b228`, the designer's `approved lets do
@@ -42,9 +42,10 @@
   232 fixtures unchanged. Exact PNGs are open in Aseprite as sprites 115, 119,
   123, and active 127. The outlined board is review evidence only. The designer
   replied `approved` to the exact posted packet; accepted implementation
-  `8d52dc26d9d361c5d95603276a4a88b3978a585e` is remote verified. Standing
-  permission opens only its approval record, branch push, and bounded handoff
-  reconciliation. No next Stag art gate is open. Public/outline registration,
+  `8d52dc26d9d361c5d95603276a4a88b3978a585e` and approval record
+  `895456020801fa40a31d7e83413895e0440c505e` are remote verified. Only the
+  initial published handoff and final reconciliation remain open. No next Stag
+  art gate is open. Public/outline registration,
   fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work,
   release, accepted drift, a PR, and every broader gate remain closed.
 
