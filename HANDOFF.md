@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mudplate Grazer Candidate Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Mudplate Grazer Approval Publication
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-rhino-common`. It branches exactly from clean, published,
@@ -62,7 +62,9 @@ gate.
    mirrors; and 80/80 pixel-plus-alpha distinctions from approved Tundrahide
    Grazer and Cragcrown Patriarch plus public Dire Wolf. Opaque range is
    230-254. Complete B adds 9,569 outline pixels and Form changes 8,598 pixels.
-   Pre-approval `check:fast` and full `check` pass in 63.1s and 109.7s.
+   Pre-approval `check:fast` and full `check` pass in 63.1s and 109.7s;
+   approval-local focused validation and `check:fast` pass again with the exact
+   digest and hashes, with the fast gate completing in 60.7s.
    Public remains 92/294, all 232 fixtures stay unchanged, and child assets,
    effects, public registration, and outline registration remain zero. The
    protected Furious Depraved Rhino direction and animation candidates remain
@@ -78,12 +80,22 @@ gate.
    protected Boss direction/full-animation sheets form the complete visual
    approval surface. The outlined PNG is evidence only; it does not authorize
    outline registration.
-7. Stop for explicit designer visual approval of this exact digest and six
-   hashes. Do not commit, push, register, publish, or open another role before
-   approval. Public or outline registration, fixtures, effects, child assets,
-   specialist or elite Rhino, every Furious Depraved Rhino Boss change,
-   Runic Idol, release, accepted drift, a PR, and every broader gate remain
-   closed.
+7. The exact raw, outlined, Complete B + Form, and family-comparison paths were
+   open together in Aseprite as sprites 246, 250, 254, and active 258. The
+   final approval prompt posted all four exact PNGs, both synchronized GIFs,
+   and digest
+   `ba84ed03d4985b979974ab23d547fb7f687d6e2b948d80c9ccc84bb9cd911848`.
+   The designer replied `approved and lets do next`. Approval applies only to
+   that exact packet; accepted implementation
+   `1e685159e6ddc09a20d853a511c9cfb448b502fe` records it locally.
+8. Standing publication permission opens only the approval record, branch
+   push, and bounded handoff reconciliation. The continuation suffix is held
+   until that publication tuple is clean and remote verified, after which it
+   opens exactly one private specialist Rhino full 80-frame candidate on a new
+   isolated branch under the selected topology. Public or outline
+   registration, fixtures, effects, child assets, elite Rhino, every Furious
+   Depraved Rhino Boss change, Runic Idol, release, accepted drift, a PR, and
+   every broader gate remain closed.
 
 ## Approved Preceding Checkpoint - Rimevault Matriarch Published / Rhino Distinction Decision Opened Later
 

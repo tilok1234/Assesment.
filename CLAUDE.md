@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private common Rhino candidate awaiting visual approval: on
+- Current approved private common Rhino publication checkpoint: on
   `codex/en-e10-rhino-common`, based exactly on clean Rimevault reconciliation
   `df7a918c2b8ef13476cbf363663d42eec7638809`, the designer approved only the
   ordinary-Rhino topology
@@ -128,11 +128,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and `39dba84ff75d445146fb897d17b967bf429b02fe860f1be2cefab2f54f1d49e5`.
   Focused validation passes all 80 structural, low-span, four-three-toed-foot,
   alias, mirror, and three-way pixel/alpha-distinction cases at opaque range
-  230-254. Pre-approval fast/full gates pass in 63.1s/109.7s. Protected
-  Furious Depraved Rhino Boss assets remain exact; public stays 92/294 and
-  all 232 fixtures stay unchanged. Stop for explicit visual
-  approval. No commit, push, registration, fixtures, effects, child assets,
-  later Rhino role, Boss change, release, drift acceptance, or PR is open.
+  230-254. Pre-approval fast/full gates pass in 63.1s/109.7s; approval-local
+  focused/fast gates pass again with the exact hashes, with fast completing in
+  60.7s. Protected Furious Depraved Rhino Boss assets remain exact; public
+  stays 92/294 and all 232 fixtures stay unchanged. The exact four PNGs and
+  two GIFs were open in Aseprite as sprites 246, 250, 254, and active 258, and
+  the designer replied `approved and lets do next` to the final packet.
+  Accepted implementation `1e685159e6ddc09a20d853a511c9cfb448b502fe`
+  records only that frozen digest. Standing permission opens its approval
+  record, branch push, and bounded reconciliation. The continuation suffix is
+  held until the publication tuple is clean and remote verified, after which
+  it opens exactly one private specialist Rhino full 80-frame candidate on a
+  new isolated branch under the selected topology. Registration, fixtures,
+  effects, child assets, elite Rhino, every Boss change, release, drift
+  acceptance, and a PR remain closed.
 - Approved preceding private elite Mammoth checkpoint published / Rhino distinction decision opened later: on
   `codex/en-e10-mammoth-elite`, based exactly on clean published Frostvein
   reconciliation `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch

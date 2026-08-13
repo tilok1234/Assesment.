@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private common Rhino candidate awaiting visual approval
+Current EN-E10 approved private common Rhino publication checkpoint
 (2026-08-13): on `codex/en-e10-rhino-common`, based exactly on clean,
 published Rimevault reconciliation
 `df7a918c2b8ef13476cbf363663d42eec7638809`, the designer approved only
@@ -37,11 +37,19 @@ Focused validation passes 80/80 connected, bounded, grounded,
 four-three-toed-foot, low-long-plated-span, alias, mirror, and comparison
 cases at opaque range 230-254. The protected Furious Depraved Rhino direction
 and full-animation candidates remain byte-exact. Pre-approval fast/full gates
-pass in 63.1s/109.7s. Public stays 92/294, all 232 fixtures remain unchanged,
-and child assets/effects/public registration/
-outline registration stay zero. Stop for explicit visual approval of the
-exact packet; no commit, push, later Rhino role, Boss change, release, accepted
-drift, or PR is open.
+pass in 63.1s/109.7s; approval-local focused/fast gates pass again against the
+same digest and hashes, with fast completing in 60.7s. Public stays 92/294,
+all 232 fixtures remain unchanged, and child assets/effects/public
+registration/outline registration stay zero. The exact four PNG and two GIF
+packet was open in Aseprite as sprites 246, 250, 254, and active 258; the
+designer replied `approved and lets do next`. Accepted implementation
+`1e685159e6ddc09a20d853a511c9cfb448b502fe` records only that packet. Its
+approval record, branch push, and bounded reconciliation are open. The
+continuation suffix is held until the publication tuple is clean and remote
+verified, after which it opens exactly one private specialist Rhino full
+80-frame candidate on a new isolated branch under the selected topology.
+Public/outline registration, fixtures, effects, child assets, elite Rhino,
+every Boss change, release, accepted drift, and a PR remain closed.
 
 Approved preceding EN-E10 private elite Mammoth checkpoint published / Rhino distinction decision opened later
 (2026-08-13): on `codex/en-e10-mammoth-elite`, based exactly on clean,

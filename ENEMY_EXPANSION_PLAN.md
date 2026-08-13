@@ -5750,9 +5750,9 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino topology selected; private common Mudplate Grazer awaiting visual approval`
+- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino topology selected; private common Mudplate Grazer approved and publication in progress`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
-- Priority-first: stop at the exact common Mudplate Grazer visual approval gate
+- Priority-first: complete the bounded common Mudplate Grazer publication tuple; hold its specialist continuation until clean remote verification
 
 Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
@@ -5778,10 +5778,17 @@ compact head, flat shoulder shelf, absence of harness/rage/corruption, and
 short effect-free shove distinguish it from the 48x48 Furious Depraved Rhino
 Boss. Focused validation passes all 80 structural, three-toed-foot, low-span,
 alias, mirror, and comparison cases, with the protected Boss assets exact.
-Stop for explicit visual approval of the exact four PNG and two GIF hashes in
-the current checkpoint. Registration, fixtures, effects, child assets,
-specialist/elite Rhino, every Boss change, release, accepted drift, and a PR
-remain closed.
+The exact four PNG and two GIF packet was open together in Aseprite as sprites
+246, 250, 254, and active 258. The final prompt posted all six artifacts and
+the frozen digest; the designer replied `approved and lets do next`. Approval
+binds only to accepted implementation
+`1e685159e6ddc09a20d853a511c9cfb448b502fe` and those hashes. Standing
+permission opens its approval record, branch push, and bounded reconciliation.
+The continuation suffix is held until the publication tuple is clean and
+remote verified, after which it opens exactly one private specialist Rhino
+full 80-frame candidate on a new isolated branch under the selected topology.
+Registration, fixtures, effects, child assets, elite Rhino, every Boss change,
+release, accepted drift, and a PR remain closed.
 
 Hyena topology and common art gate (2026-08-13): the designer selected
 `baked-single-actor-grounded-quadruped` — one connected grounded 24x24 Hyena
