@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E11 private common Peacock approved / publication in progress
+Current EN-E11 private common Peacock published / handoff reconciliation in progress
 (2026-08-13): on `codex/en-e11-peacock-common`, based exactly on clean,
 published, remote-verified Stonefern reconciliation
 `51033b2385fe5e3eab64006b935a85c91140e86f`, the designer selected Birds with
@@ -49,10 +49,11 @@ exact accepted implementation.
 The four exact review PNGs were inspected in Aseprite. The final approval
 prompt posted those four PNGs, both GIFs, and the digest, and the designer
 replied `approved`. Approval binds only to accepted implementation
-`9841f97fbf25074b1ac5aade89ecc84edfe0da73`, which is remote verified, and
-the six frozen hashes. Standing permission opens only the approval-record
-commit, branch push, and bounded handoff reconciliation. The reply contains no
-continuation request, so registration, fixtures, effects, later Peacock roles,
+`9841f97fbf25074b1ac5aade89ecc84edfe0da73` and the six frozen hashes. That
+implementation and approval record
+`d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5` are remote verified; only the
+initial published handoff and final reconciliation remain open. The reply
+contains no continuation request, so registration, fixtures, effects, later Peacock roles,
 other Bird families, release, accepted drift, and a PR remain closed.
 
 Approved preceding EN-E10 private elite Rhino published / Peacock gate opened later

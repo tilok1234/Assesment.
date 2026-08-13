@@ -122,10 +122,10 @@ check(
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.approvedImplementation === '9841f97fbf25074b1ac5aade89ecc84edfe0da73'
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publicationAuthorizedOn === '2026-08-13'
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publishedImplementation === ''
-    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publishedApprovalRecord === ''
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publishedImplementation === '9841f97fbf25074b1ac5aade89ecc84edfe0da73'
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publishedApprovalRecord === 'd9d2c601b66ca3dcd4c1e00e97df1d4d486932e5'
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.initialPublishedHandoff === ''
-    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.precedingApproval.gateId === EN_E10_STONEFERN_BASTION_GATE.id
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.precedingApproval.candidateFrameDigest === EN_E10_STONEFERN_BASTION_GATE.candidateFrameDigest
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.precedingApproval.publishedImplementation === EN_E10_STONEFERN_BASTION_GATE.publishedImplementation
@@ -152,7 +152,8 @@ check(
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.exclusions.includes('registration')
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.exclusions.includes('fixtures')
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.exclusions.includes('Phoenix')
-    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.nextGate.includes('implementation 9841f97fbf25074b1ac5aade89ecc84edfe0da73')
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.nextGate.includes('implementation 9841f97fbf25074b1ac5aade89ecc84edfe0da73 and approval record d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5 are remote verified')
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.nextGate.includes('no Peacock specialist or elite, other Bird family, or other sprite lane is opened')
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.nextGate.includes('review evidence only'),
   'Peacock anatomy, motion, effect firewall, or stop boundary drifted',

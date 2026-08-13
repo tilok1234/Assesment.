@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private common Peacock approved / publication in progress: on
+- Current private common Peacock published / handoff reconciliation in progress: on
   `codex/en-e11-peacock-common`, based exactly on clean, published,
   remote-verified Stonefern reconciliation
   `51033b2385fe5e3eab64006b935a85c91140e86f`, the designer selected Birds
@@ -144,10 +144,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   The four exact review PNGs were inspected in Aseprite. The final approval
   prompt posted those four PNGs, both GIFs, and the digest, and the designer
   replied `approved`. Approval binds only to accepted implementation
-  `9841f97fbf25074b1ac5aade89ecc84edfe0da73`, which is remote verified, and
-  the six frozen hashes. Standing permission opens only the approval-record
-  commit, branch push, and bounded handoff reconciliation. The reply contains
-  no continuation request, so registration, fixtures, effects, later Peacock
+  `9841f97fbf25074b1ac5aade89ecc84edfe0da73` and the six frozen hashes. That
+  implementation and approval record
+  `d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5` are remote verified; only the
+  initial published handoff and final reconciliation remain open. The reply
+  contains no continuation request, so registration, fixtures, effects, later Peacock
   roles, other Bird families, release, accepted drift, and a PR remain closed;
   the outlined PNG is review evidence only.
 - Approved preceding private elite Rhino published / Peacock gate opened later: on

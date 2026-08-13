@@ -6211,7 +6211,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `common-approved-publication`
+- Status: `common-published-handoff-reconciliation`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 
@@ -6264,10 +6264,11 @@ exact accepted implementation.
 
 The final approval prompt posted the exact four PNGs, two GIFs, and digest, and
 the designer replied `approved`. Approval binds only to accepted implementation
-`9841f97fbf25074b1ac5aade89ecc84edfe0da73`, which is remote verified, and
-the six frozen hashes. Standing permission opens only the approval-record
-commit, branch push, and bounded handoff reconciliation. The reply contains no
-continuation request, so registration, fixtures, effects, specialist/elite
+`9841f97fbf25074b1ac5aade89ecc84edfe0da73` and the six frozen hashes. That
+implementation and approval record
+`d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5` are remote verified; only the
+initial published handoff and final reconciliation remain open. The reply
+contains no continuation request, so registration, fixtures, effects, specialist/elite
 Peacock, Cockatrice, Raven, Owl, Phoenix, release, accepted drift, and a PR
 remain closed. The outlined PNG is review evidence only.
 
