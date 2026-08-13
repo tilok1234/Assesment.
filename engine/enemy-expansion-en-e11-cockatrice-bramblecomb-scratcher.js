@@ -39,7 +39,7 @@ export const EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_CONTRACT = deepFreeze({
   family: 'cockatrice',
   variant: 'bramblecomb-scratcher',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E11_COCKATRICE_TOPOLOGY_DECISION.selected,
   silhouette: 'One connected low-slung cockerel-and-serpent actor joins a jagged rooster comb and wattle, hooked beak, arched scaled neck, broad feathered torso, two folded wings, two separated taloned feet, and one thick body-owned serpent tail that coils behind the feet and lashes without becoming a child asset. It is neither a fan-tailed Peacock, upright Birdfolk person, ordinary two-legged bird, nor quadruped basilisk.',
   identity: 'Moss-olive head and neck scales, warm umber body, straw-and-rust folded wings, a crimson bramble comb and wattle, old-ivory hooked beak, amber eyes, ochre talons, and a dark forest-green scale-marked serpent tail distinguish the Bramblecomb Scratcher common.',
@@ -58,18 +58,27 @@ export const EN_E11_COCKATRICE_COMMON_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_CONTRACT.variant,
     role: EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['specialist', 'elite'],
 });
 
 export const EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE = deepFreeze({
   id: 'en-e11-cockatrice-bramblecomb-scratcher-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-13',
   authorizationEvidence: EN_E11_COCKATRICE_TOPOLOGY_DECISION.approvalEvidence,
   baseCheckpoint: '99fed17ec4815b6985288818796a85b9abc7d78d',
   architectureDecision: EN_E11_COCKATRICE_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Crownveil Sovereign, approved Aerie Scout, and public Marsh Crocodile comparison PNGs were frozen with both synchronized GIF hashes. All four exact PNG paths were loaded and inspected at original resolution, and the transparent 20x4 inspection atlas passed dimensions, hard alpha, non-empty-cell, and strict boundary checks. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest 0d55f7dc0fafac3014bcdfa1ea2dce3cbb4b5ba09eb6c52f6c723067702b9764. The designer replied: approved lets do next. Approval applies only to that exact Bramblecomb Scratcher digest and its six frozen review hashes. The continuation opens exactly one private specialist Cockatrice full 80-frame candidate after this bounded publication tuple is reconciled; it does not approve specialist pixels or authorize public or outline registration, fixtures, effects, child assets, elite Cockatrice, Raven, Owl, Phoenix, release, accepted drift, or a pull request.',
+  approvedImplementation: 'c01ac35a5862296469967255ffcadadfd5aaae4e',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.id,
     candidateFrameDigest: EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.candidateFrameDigest,
@@ -137,7 +146,7 @@ export const EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'Present the exact frozen Bramblecomb Scratcher candidate digest, four PNG hashes, and two synchronized GIF hashes for explicit visual approval. Stop before commit, push, registration, fixtures, effects, specialist or elite Cockatrices, Raven, Owl, Phoenix, release, accepted drift, or a pull request.',
+  nextGate: 'The exact Bramblecomb Scratcher packet is visually approved at implementation c01ac35a5862296469967255ffcadadfd5aaae4e. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The same reply opens exactly one private specialist Cockatrice full 80-frame candidate after this tuple is reconciled; it does not approve specialist pixels. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Cockatrice registration, fixtures, effects, child assets, elite Cockatrice, Raven, Owl, Phoenix, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_DATA = deepFreeze({
@@ -590,7 +599,7 @@ export const EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'bramblecomb-scratcher',
     scale: 6,
-    notes: 'Private common Cockatrice candidate only. Review against approved Crownveil Sovereign, approved Aerie Scout, and public Marsh Crocodile. The distinct Complete B outlined PNG is review evidence only. Keep public or outline registration, fixtures, effects, child assets, later Cockatrice roles, later Bird families, release, accepted drift, and a pull request separate until explicit approval and continuation.',
+    notes: 'Visually approved as one exact private common Cockatrice against approved Crownveil Sovereign, approved Aerie Scout, and public Marsh Crocodile. Accepted implementation c01ac35a5862296469967255ffcadadfd5aaae4e records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens bounded approval publication and reconciliation; the same reply opens exactly one private specialist Cockatrice candidate only after reconciliation. Keep public or outline registration, fixtures, effects, child assets, elite Cockatrice, later Bird families, release, accepted drift, and a pull request separate.',
   },
 });
 

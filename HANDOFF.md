@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Private Candidate - Bramblecomb Scratcher Awaiting Visual Approval
+## Immediate Checkpoint - Bramblecomb Scratcher Approved / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-cockatrice-common`. It branches exactly from the clean,
@@ -68,7 +68,8 @@ gate.
    and strict boundary checks. Focused / fast / full validation passes in about
    0.5s / 57.5s / 116.4s. Public remains 92/294, all 232 fixture sheets stay
    unchanged, and child assets, effects, public registration, and outline
-   registration remain zero.
+   registration remain zero. Approval-local focused / fast gates pass again
+   in about 0.5s / 58.7s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-cockatrice-bramblecomb-scratcher/`.
    Regenerate with
@@ -79,11 +80,18 @@ gate.
    comparison, and synchronized GIF files form the complete review surface.
    All four exact PNGs were loaded and inspected at original resolution. The
    outlined PNG is evidence only; it does not authorize outline registration.
-7. Required next action: show the four exact PNGs, both synchronized GIFs, and
-   candidate digest together, then stop for explicit visual approval. Do not
-   commit, push, publish, register, regenerate fixtures, add effects or child
-   assets, start later Cockatrice roles or Bird families, release, accept
-   drift, or open a PR.
+7. The final approval prompt posted all four exact PNGs, both synchronized
+   GIFs, and digest
+   `0d55f7dc0fafac3014bcdfa1ea2dce3cbb4b5ba09eb6c52f6c723067702b9764`.
+   The designer replied `approved lets do next`. Approval binds only to those
+   frozen files and accepted implementation
+   `c01ac35a5862296469967255ffcadadfd5aaae4e`. Standing permission opens only
+   this packet's approval record, branch push, and bounded handoff
+   reconciliation. The same reply opens exactly one private specialist
+   Cockatrice full 80-frame candidate after this publication tuple is
+   reconciled; it does not approve specialist pixels. Do not register,
+   regenerate fixtures, add effects or child assets, begin elite Cockatrice or
+   another Bird family, release, accept drift, or open a PR.
 
 ## Current Published Checkpoint - Crownveil Sovereign / Next Gate Closed
 

@@ -127,24 +127,33 @@ check(
   'approved Cockatrice topology decision drifted',
 );
 check(
-  EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.status === 'candidate'
+  EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.status === 'approved'
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.baseCheckpoint === '99fed17ec4815b6985288818796a85b9abc7d78d'
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.architectureDecision === EN_E11_COCKATRICE_TOPOLOGY_DECISION.id
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.approvedOn === '2026-08-13'
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.approvalEvidence.includes('approved lets do next')
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.approvalEvidence.includes('exactly one private specialist Cockatrice full 80-frame candidate')
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.approvedImplementation === 'c01ac35a5862296469967255ffcadadfd5aaae4e'
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.publishedImplementation === ''
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.publishedApprovalRecord === ''
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.initialPublishedHandoff === ''
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.publicationState === 'approved-not-published'
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.precedingApproval.gateId === EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.id
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.precedingApproval.candidateFrameDigest === EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.candidateFrameDigest
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.precedingApproval.currentReconciliation === EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.baseCheckpoint
-    && !Object.hasOwn(EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE, 'approvedOn')
-    && !Object.hasOwn(EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE, 'publicationState'),
-  'Bramblecomb candidate authorization or predecessor tuple drifted',
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.nextGate.includes('private specialist Cockatrice full 80-frame candidate'),
+  'Bramblecomb approval, publication boundary, or predecessor tuple drifted',
 );
 check(
   JSON.stringify(EN_E11_COCKATRICE_COMMON_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E11_COCKATRICE_COMMON_CONTRACT_CARD.precedingFamily.finalVariant === 'crownveil-sovereign'
     && EN_E11_COCKATRICE_COMMON_CONTRACT_CARD.activeVariant.id === 'bramblecomb-scratcher'
     && EN_E11_COCKATRICE_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E11_COCKATRICE_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_COCKATRICE_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_COCKATRICE_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
-    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Cockatrice common role contract drifted',
 );
 check(
@@ -156,7 +165,7 @@ check(
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.exclusions.includes('registration')
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.exclusions.includes('fixtures')
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.exclusions.includes('approved Crownveil Sovereign pixel changes')
-    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.nextGate.includes('Stop before commit, push'),
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.nextGate.includes('Standing publication permission'),
   'Bramblecomb anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(
@@ -328,7 +337,7 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E11 Cockatrice Bramblecomb Scratcher private common candidate passes focused validation.');
+  console.log('EN-E11 Cockatrice Bramblecomb Scratcher approved private common packet passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Cockatrice identity: ' + twoFootRows + '/80 two-talon rows; ' + naturalSpans + '/80 grounded hybrid spans; ' + tailLashViews + '/16 connected tail-lash views; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + combViews + '/72 comb views; ' + tailViews + '/72 tail views; ' + wingViews + '/72 wing views; ' + scaleViews + '/72 scale views');
   console.log('- Distinction: Crownveil ' + differences.crownveil + '/80; Aerie Scout ' + differences.aerieScout + '/80; Marsh Crocodile ' + differences.marshCrocodile + '/80 pixel and alpha frames differ');

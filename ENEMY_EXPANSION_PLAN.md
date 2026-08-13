@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private common Cockatrice candidate awaiting visual approval
+- Current approved private common Cockatrice / publication in progress
   (2026-08-13): on `codex/en-e11-cockatrice-common`, based exactly on clean,
   pushed, remote-verified Crownveil reconciliation
   `99fed17ec4815b6985288818796a85b9abc7d78d`, the designer's fresh `lets do
@@ -46,9 +46,16 @@
   0.5s/57.5s/116.4s. Public remains 92/294 and all 232 fixtures remain
   unchanged. Child assets, effects, public registration, and outline
   registration remain zero. All four exact PNGs were inspected at original
-  resolution. Stop for explicit visual approval; no commit, push,
-  publication, registration, fixtures, effects, later Cockatrice roles,
-  Raven, Owl, Phoenix, release, accepted drift, PR, or broader gate is open.
+  resolution. Approval-local focused/fast gates pass again in about
+  0.5s/58.7s. The designer replied `approved lets do next` to the exact four
+  PNGs, two GIFs, and digest. Approval binds only to accepted implementation
+  `c01ac35a5862296469967255ffcadadfd5aaae4e` and the six frozen hashes.
+  Standing permission opens only its approval record, branch push, and bounded
+  reconciliation. The same reply opens exactly one private specialist
+  Cockatrice candidate after the publication tuple is reconciled; it does not
+  approve specialist pixels. Registration, fixtures, effects, child assets,
+  elite Cockatrice, Raven, Owl, Phoenix, release, accepted drift, a PR, and
+  every broader gate remain closed.
 
 - Current private elite Peacock published / next gate closed
   (2026-08-13): on `codex/en-e11-peacock-elite`, based exactly on clean,

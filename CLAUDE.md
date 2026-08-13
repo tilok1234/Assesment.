@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private common Cockatrice candidate awaiting visual approval: on
+- Current approved private common Cockatrice / publication in progress: on
   `codex/en-e11-cockatrice-common`, based exactly on clean, pushed,
   remote-verified Crownveil reconciliation
   `99fed17ec4815b6985288818796a85b9abc7d78d`, the designer's fresh `lets do
@@ -133,10 +133,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Focused/fast/full gates pass in about 0.5s/57.5s/116.4s with all 80 frames
   structural and pixel-plus-alpha distinct from Crownveil, Aerie Scout, and
   Marsh Crocodile; public stays 92/294 and all 232 fixtures remain exact. All
-  four exact PNGs were inspected at original resolution. Stop for explicit
-  visual approval; no commit, push, publication, registration, fixture,
-  effect, child asset, later Cockatrice role, other Bird family, release,
-  accepted drift, or PR gate is open.
+  four exact PNGs were inspected at original resolution. Approval-local
+  focused/fast gates pass again in about 0.5s/58.7s. The designer replied
+  `approved lets do next` to the exact packet. Approval binds only to accepted
+  implementation `c01ac35a5862296469967255ffcadadfd5aaae4e` and the six frozen
+  hashes. Standing permission opens only its approval record, branch push, and
+  bounded reconciliation. The same reply opens exactly one private specialist
+  Cockatrice candidate after this publication tuple is reconciled; it does not
+  approve specialist pixels. Registration, fixtures, effects, child assets,
+  elite Cockatrice, other Bird families, release, accepted drift, and a PR
+  remain closed.
 - Current private elite Peacock published / next gate closed: on
   `codex/en-e11-peacock-elite`, based exactly on clean, pushed, remote-verified
   Mirrorfan reconciliation `6df83e5e642dbec5b68b856d436aa9db810678eb`,
