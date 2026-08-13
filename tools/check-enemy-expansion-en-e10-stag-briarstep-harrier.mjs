@@ -130,20 +130,27 @@ check(
   'published Mossrack predecessor drifted',
 );
 check(
-  EN_E10_BRIARSTEP_HARRIER_GATE.status === 'awaiting-visual-approval'
+  EN_E10_BRIARSTEP_HARRIER_GATE.status === 'approved'
     && EN_E10_BRIARSTEP_HARRIER_GATE.baseCheckpoint === '67331ed1a160c8e62df0c9941b7c051ab5d0b228'
     && EN_E10_BRIARSTEP_HARRIER_GATE.authorizedOn === '2026-08-13'
     && EN_E10_BRIARSTEP_HARRIER_GATE.authorizationEvidence.includes('approved lets do next')
     && EN_E10_BRIARSTEP_HARRIER_GATE.authorizationEvidence.includes('exactly one private specialist Stag full 80-frame candidate')
     && EN_E10_BRIARSTEP_HARRIER_GATE.authorizationEvidence.includes('distinct Complete B outlined PNG')
     && EN_E10_BRIARSTEP_HARRIER_GATE.architectureDecision === EN_E10_STAG_TOPOLOGY_DECISION.id
-    && EN_E10_BRIARSTEP_HARRIER_GATE.approvedOn === ''
-    && EN_E10_BRIARSTEP_HARRIER_GATE.approvalEvidence === ''
-    && EN_E10_BRIARSTEP_HARRIER_GATE.approvedImplementation === ''
+    && EN_E10_BRIARSTEP_HARRIER_GATE.approvedOn === '2026-08-13'
+    && EN_E10_BRIARSTEP_HARRIER_GATE.approvalEvidence.includes('raw sprite 115')
+    && EN_E10_BRIARSTEP_HARRIER_GATE.approvalEvidence.includes('outlined sprite 119')
+    && EN_E10_BRIARSTEP_HARRIER_GATE.approvalEvidence.includes('Complete B + Form sprite 123')
+    && EN_E10_BRIARSTEP_HARRIER_GATE.approvalEvidence.includes('active comparison sprite 127')
+    && EN_E10_BRIARSTEP_HARRIER_GATE.approvalEvidence.includes('fb352a405be53536a2304eb8ad97ef7e03f0819519607a8a0afea16e81f97457')
+    && EN_E10_BRIARSTEP_HARRIER_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E10_BRIARSTEP_HARRIER_GATE.approvedImplementation === '8d52dc26d9d361c5d95603276a4a88b3978a585e'
+    && EN_E10_BRIARSTEP_HARRIER_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E10_BRIARSTEP_HARRIER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E10_BRIARSTEP_HARRIER_GATE.publishedImplementation === ''
     && EN_E10_BRIARSTEP_HARRIER_GATE.publishedApprovalRecord === ''
     && EN_E10_BRIARSTEP_HARRIER_GATE.initialPublishedHandoff === ''
-    && EN_E10_BRIARSTEP_HARRIER_GATE.publicationState === 'unpublished-private',
+    && EN_E10_BRIARSTEP_HARRIER_GATE.publicationState === 'approved-not-published',
   'specialist Stag authorization or visual stop boundary drifted',
 );
 check(
@@ -166,7 +173,7 @@ check(
 );
 check(
   EN_E10_BRIARSTEP_HARRIER_CONTRACT.role === 'specialist'
-    && EN_E10_BRIARSTEP_HARRIER_CONTRACT.state === 'implemented-complete-motion-awaiting-visual-approval'
+    && EN_E10_BRIARSTEP_HARRIER_CONTRACT.state === 'implemented-complete-motion-approved'
     && EN_E10_BRIARSTEP_HARRIER_CONTRACT.silhouette.includes('swept-back branching antlers')
     && EN_E10_BRIARSTEP_HARRIER_CONTRACT.visualIdentity.includes('dusk-violet bramble bands')
     && EN_E10_BRIARSTEP_HARRIER_DATA.actorTopology === EN_E10_STAG_TOPOLOGY_DECISION.selected
@@ -181,8 +188,8 @@ check(
     && EN_E10_BRIARSTEP_HARRIER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_BRIARSTEP_HARRIER_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_BRIARSTEP_HARRIER_GATE.exclusions.includes('elite Stag variants')
-    && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('explicit designer visual approval')
-    && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('Do not commit or push')
+    && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('implementation 8d52dc26d9d361c5d95603276a4a88b3978a585e')
+    && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('No next Stag art gate is open')
     && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('review evidence only')
     && EN_E10_BRIARSTEP_HARRIER_GATE.nextGate.includes('does not authorize outline registration'),
   'full-suite motion, review, or stop boundary drifted',

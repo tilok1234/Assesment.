@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art checkpoint awaiting visual approval: on
+- Current approved private art checkpoint undergoing bounded publication: on
   `codex/en-e10-stag-specialist`, based exactly on clean published Mossrack
   reconciliation `67331ed1a160c8e62df0c9941b7c051ab5d0b228`, the designer's
   `approved lets do next` suffix opens exactly one private specialist Stag.
@@ -125,14 +125,19 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   raw / Form GIF hashes are
   `6172ddb391750d318e8fc263e6a53a34492dd723beb53ad6bf10d07b8cad1e13`
   and `523e4c3a8462d02a95398fa8df8c056b932c157ee834d18c10042092eea3ccc5`.
-  Focused / fast / full gates pass in 1.1s / 69.1s / 124.8s: 80/80
-  connected, bounded, grounded, split-hoof, cervid-span, and three-way
-  pixel/alpha-distinct frames; opaque range 171-209; public 92/294 and all 232
-  fixtures unchanged. Exact PNGs are open in Aseprite as sprites 115, 119,
-  123, and active 127. The outlined board is evidence only, not outline
-  registration. Stop for explicit visual approval; the candidate remains
-  uncommitted and unpushed. Registration, fixtures, effects, child assets,
-  elite Stag, later families, release, accepted drift, and a PR remain closed.
+  Focused / fast / full gates pass in 1.1s / 69.1s / 124.8s and approval-local
+  focused / fast gates pass in 0.7s / 67.0s: 80/80 connected, bounded,
+  grounded, split-hoof, cervid-span, and three-way pixel/alpha-distinct frames;
+  opaque range 171-209; public 92/294 and all 232 fixtures unchanged. Exact
+  PNGs are open in Aseprite as sprites 115, 119, 123, and active 127. The
+  outlined board is evidence only, not outline registration. The final prompt
+  posted all four exact PNGs, both GIFs, and the digest; the designer replied
+  `approved`. Accepted implementation
+  `8d52dc26d9d361c5d95603276a4a88b3978a585e` is remote verified. Standing
+  permission opens only its approval record, branch push, and bounded handoff
+  reconciliation. No next Stag art gate is open. Registration, fixtures,
+  effects, child assets, elite Stag, later families, release, accepted drift,
+  and a PR remain closed.
 - Approved preceding private art checkpoint published / specialist gate open: on
   `codex/en-e10-stag-common`, based exactly on clean published Cragcrown reconciliation
   `6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca`, the designer's `letsdo nex t`

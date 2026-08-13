@@ -14,7 +14,8 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private art checkpoint awaiting visual approval (2026-08-13):
+Current approved EN-E10 private art checkpoint undergoing bounded publication
+(2026-08-13):
 from clean published Mossrack reconciliation
 `67331ed1a160c8e62df0c9941b7c051ab5d0b228`, the designer's `approved lets do
 next` suffix authorizes exactly one private specialist Stag. Briarstep Harrier
@@ -32,14 +33,18 @@ and `f58ced45ebe96fb7e42bfb29118024e7e2a4b4d0461e287ad522d093d3bcc866`;
 raw / Form GIF hashes are
 `6172ddb391750d318e8fc263e6a53a34492dd723beb53ad6bf10d07b8cad1e13`
 and `523e4c3a8462d02a95398fa8df8c056b932c157ee834d18c10042092eea3ccc5`.
-Focused / fast / full gates pass in 1.1s / 69.1s / 124.8s with 80/80 connected,
-bounded, grounded, split-hoof, cervid-span, and three-way pixel/alpha-distinct
-frames; opaque range 171-209, public 92/294, and all 232 fixtures unchanged.
-Exact PNGs are open in Aseprite as sprites 115, 119, 123, and active 127. Stop
-for explicit visual approval; the candidate remains uncommitted and unpushed.
-The outlined board is evidence only. Public/outline registration, fixtures,
-effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, release,
-accepted drift, a PR, and every broader gate remain closed.
+Focused / fast / full gates pass in 1.1s / 69.1s / 124.8s and approval-local
+focused / fast gates pass in 0.7s / 67.0s with 80/80 connected, bounded,
+grounded, split-hoof, cervid-span, and three-way pixel/alpha-distinct frames;
+opaque range 171-209, public 92/294, and all 232 fixtures unchanged. Exact PNGs
+are open in Aseprite as sprites 115, 119, 123, and active 127. The outlined
+board is evidence only. The designer replied `approved` to the exact posted
+packet; accepted implementation `8d52dc26d9d361c5d95603276a4a88b3978a585e`
+is remote verified. Standing permission opens only its approval record, branch
+push, and bounded handoff reconciliation. No next Stag art gate is open.
+Public/outline registration, fixtures, effects, child assets, elite Stag,
+Mammoth, Rhino, Rhino Boss work, release, accepted drift, a PR, and every
+broader gate remain closed.
 
 Approved preceding EN-E10 private art checkpoint published / specialist gate open
 (2026-08-13): from clean published Cragcrown reconciliation

@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Briarstep Harrier Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Briarstep Harrier Approval Publication
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-stag-specialist`. It is based exactly on clean, published,
@@ -61,9 +61,10 @@ gate.
    Forager and Miremane Courser plus public Dire Wolf. Opaque range is 171-209.
    Complete B adds 14,362 outline pixels and Form changes 6,195 pixels.
    Deterministic regeneration reproduces all six frozen hashes. Focused /
-   `check:fast` / full `check` pass in 1.1s / 69.1s / 124.8s with public
-   92/294, both approved comparison sources exact, all 232 fixture sheets
-   unchanged, zero child assets/effects, and no public or outline registration.
+   `check:fast` / full `check` pass in 1.1s / 69.1s / 124.8s, and
+   approval-local focused / fast gates pass in 0.7s / 67.0s, with public 92/294,
+   both approved comparison sources exact, all 232 fixture sheets unchanged,
+   zero child assets/effects, and no public or outline registration.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-stag-briarstep-harrier/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-stag-briarstep-harrier` and run
@@ -73,11 +74,17 @@ gate.
    comparison PNGs are open together in the four-lane Aseprite MCP review
    window as sprites 115, 119, 123, and active 127. The outlined PNG is
    required review evidence only; it does not authorize outline registration.
-8. Stop for explicit designer visual approval of this exact packet. The
-   candidate is deliberately uncommitted and unpushed. Public Stag or outline
-   registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino,
-   Furious Depraved Rhino Boss work, the deferred Runic Idol decision, release,
-   accepted drift, a PR, and every broader art gate remain closed.
+   The final prompt posted all four exact PNGs, both synchronized GIFs, and
+   digest `fb352a405be53536a2304eb8ad97ef7e03f0819519607a8a0afea16e81f97457`.
+   The designer replied `approved`. Approval applies only to that exact packet;
+   accepted implementation `8d52dc26d9d361c5d95603276a4a88b3978a585e`
+   records it and is remote verified.
+8. Standing publication permission opens only the approval record, branch
+   push, and bounded handoff reconciliation. No next Stag art gate is open.
+   Public Stag or outline registration, fixtures, effects, child assets, elite
+   Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the deferred Runic
+   Idol decision, release, accepted drift, a PR, and every broader art gate
+   remain closed.
 
 ## Approved Preceding Checkpoint - Mossrack Forager Published / Specialist Gate Open
 

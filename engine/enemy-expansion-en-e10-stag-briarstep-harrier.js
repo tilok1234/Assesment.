@@ -35,7 +35,7 @@ export const EN_E10_BRIARSTEP_HARRIER_CONTRACT = deepFreeze({
   family: 'stag',
   variant: 'briarstep-harrier',
   role: 'specialist',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_STAG_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-sleek-slate-green-high-chested-long-legged-swept-rack-four-split-hoof-stag-v1',
   silhouette: 'A sleek high-chested specialist Stag with a tucked narrow barrel, long angled neck, compact tapered muzzle, paired swept ears, two long connected swept-back branching antlers, a short pale flag tail, four high-stepping legs, and four separated split hooves. It must remain distinct from the warmer upright-racked Mossrack Forager, bowed equine Miremane Courser, long-backed Dire Wolf, broad Ram, Mammoth, and Rhino silhouettes.',
@@ -77,20 +77,20 @@ export const EN_E10_BRIARSTEP_HARRIER_DATA = deepFreeze({
 
 export const EN_E10_BRIARSTEP_HARRIER_GATE = deepFreeze({
   id: 'en-e10-stag-briarstep-harrier-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '67331ed1a160c8e62df0c9941b7c051ab5d0b228',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Mossrack Forager implementation 4c5d80901d12063b21c0d6303fc24260bd700209, approval record 328a9b188ddd6e5db6144f2fdb253f8d9599e12d, initial published handoff b8e67f2ddc12a71e3b25c33997a1ffed0329b7f4, and final reconciliation 67331ed1a160c8e62df0c9941b7c051ab5d0b228 were pushed and remote verified. The designer approval reply was: approved lets do next. Its lets do next suffix authorizes exactly one private specialist Stag full 80-frame candidate under the selected baked-single-actor-antlered-grounded-quadruped topology. Continue the distinct Complete B outlined PNG as review evidence only; it does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, and every broader art gate remain closed.',
   architectureDecision: EN_E10_STAG_TOPOLOGY_DECISION.id,
-  approvedOn: '',
-  approvalEvidence: '',
-  approvedImplementation: '',
-  publicationAuthorizedOn: '',
-  publicationAuthorizationEvidence: '',
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Mossrack Forager and Miremane Courser plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The four-lane Aseprite MCP review window reported those exact four paths open together as raw sprite 115, outlined sprite 119, Complete B + Form sprite 123, and active comparison sprite 127. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest fb352a405be53536a2304eb8ad97ef7e03f0819519607a8a0afea16e81f97457. The designer replied: approved. Approval applies only to that exact Briarstep Harrier digest and its six frozen review hashes. It does not authorize public Stag or outline registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: '8d52dc26d9d361c5d95603276a4a88b3978a585e',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: '',
   publishedApprovalRecord: '',
   initialPublishedHandoff: '',
-  publicationState: 'unpublished-private',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_MOSSRACK_FORAGER_GATE.id,
     artifactSha256: EN_E10_MOSSRACK_FORAGER_GATE.artifactSha256,
@@ -147,7 +147,7 @@ export const EN_E10_BRIARSTEP_HARRIER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop for explicit designer visual approval of the exact Briarstep Harrier raw, distinct Complete B outlined, Complete B + Form, comparison, and synchronized GIF packet. Do not commit or push the candidate before approval. The distinct outlined PNG is review evidence only and does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, and every broader art gate remain closed.',
+  nextGate: 'The exact Briarstep Harrier packet is visually approved at implementation 8d52dc26d9d361c5d95603276a4a88b3978a585e. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. No next Stag art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_BRIARSTEP_HARRIER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -465,7 +465,7 @@ export const EN_E10_BRIARSTEP_HARRIER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'briarstep-harrier',
     scale: 8,
-    notes: 'Awaiting explicit visual approval as one private specialist Stag against approved Mossrack Forager and Miremane Courser plus public Dire Wolf. The packet includes a distinct Complete B outlined PNG as review evidence only. Do not commit, push, register, generate fixtures, add effects or child assets, begin elite Stag or later families, release, accept drift, or open a pull request before the exact packet is approved.',
+    notes: 'Visually approved as one exact private specialist Stag against approved Mossrack Forager and Miremane Courser plus public Dire Wolf. Accepted implementation 8d52dc26d9d361c5d95603276a4a88b3978a585e records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation; keep public or outline registration, fixtures, effects, child assets, elite Stag, later families, release, accepted drift, and a pull request separate.',
   },
 });
 
