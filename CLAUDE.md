@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art checkpoint awaiting visual approval: on branch
+- Current private art checkpoint visually approved / publication pending: on branch
   `codex/en-e10-mammoth-common`, based exactly on clean published Gloamcrown
   reconciliation `c371e7ffeb3dd9196c29b9236d62585d96a52585`, the designer
   approved `baked-single-actor-tusked-heavy-grounded-quadruped` and opened
@@ -125,14 +125,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   raw / Form GIF hashes are
   `fdfc4ff68c913df89807a85ccb0a803b6d04612ca1ff87c62bbaea79488a045d`
   and `497eee4fadf8ceb6d4cd0b3cc096b676757aea95a51f92346d9a34089a473e97`.
-  Focused / fast / full validation passes, with fast / full at 64.6s / 118.7s:
+  Focused / fast / full validation passes, with pre-approval fast / full at
+  64.6s / 118.7s and approval-local fast at 60.2s:
   80/80 connected, bounded, grounded, four-foot, heavy-span, and three-way
   pixel/alpha-distinct frames; opaque range 245-281; public 92/294; all 232
   fixtures unchanged; zero child assets/effects; no public or outline
   registration. Exact PNGs are open in Aseprite as sprites 155, 159, 163, and
-  active 167. The candidate is intentionally uncommitted and unpushed. Stop
-  for explicit visual approval of the exact packet. Specialist/elite Mammoth,
-  Rhino, fixtures, effects, release, accepted drift, and a PR remain closed.
+  active 167. The designer replied `awesome klets do next` to the exact packet.
+  Accepted implementation `f0ced3c777c478a4077fb439ccd8b4b363ea52ac` is
+  committed locally; its approval record and publication reconciliation remain
+  pending and the branch is not yet pushed. Standing permission opens only that
+  bounded tuple. Hold the continuation suffix until it is clean and remote
+  verified; it then opens exactly one private specialist Mammoth under the
+  selected topology. Public/outline registration, fixtures, effects, child
+  assets, elite Mammoth, Rhino, release, accepted drift, and a PR remain closed.
 - Approved preceding private art checkpoint published / Mammoth topology decision open: on
   `codex/en-e10-stag-elite`, based exactly on clean remote-verified Briarstep
   handoff `595b2b2b18ebe7e111486df96624b4e1f057647b`, the designer's `awesine lets

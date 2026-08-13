@@ -132,9 +132,23 @@ check(
   'approved Mammoth topology decision drifted',
 );
 check(
-  EN_E10_TUNDRAHIDE_GRAZER_GATE.status === 'awaiting-visual-approval'
+  EN_E10_TUNDRAHIDE_GRAZER_GATE.status === 'approved'
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.baseCheckpoint === 'c371e7ffeb3dd9196c29b9236d62585d96a52585'
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.architectureDecision === EN_E10_MAMMOTH_TOPOLOGY_DECISION.id
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.approvedOn === '2026-08-13'
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.approvalEvidence.includes('raw sprite 155')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.approvalEvidence.includes('outlined sprite 159')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.approvalEvidence.includes('Complete B + Form sprite 163')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.approvalEvidence.includes('active comparison sprite 167')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.approvalEvidence.includes('740960848a5a45941a908b8f32d53a6426de789f7ca002817309e7506dcd3e08')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.approvalEvidence.includes('designer replied: awesome klets do next')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.approvedImplementation === 'f0ced3c777c478a4077fb439ccd8b4b363ea52ac'
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publishedImplementation === ''
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publishedApprovalRecord === ''
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.initialPublishedHandoff === ''
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.publicationState === 'approved-not-published'
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.precedingApproval.gateId === EN_E10_GLOAMCROWN_SOVEREIGN_GATE.id
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.precedingApproval.candidateFrameDigest === EN_E10_GLOAMCROWN_SOVEREIGN_GATE.candidateFrameDigest
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.precedingApproval.publishedImplementation === EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publishedImplementation
@@ -147,8 +161,9 @@ check(
   JSON.stringify(EN_E10_MAMMOTH_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E10_MAMMOTH_CONTRACT_CARD.activeVariant.id === 'tundrahide-grazer'
     && EN_E10_MAMMOTH_CONTRACT_CARD.activeVariant.role === 'common'
+    && EN_E10_MAMMOTH_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E10_MAMMOTH_CONTRACT_CARD.deferredRoles.join(',') === 'specialist,elite'
-    && EN_E10_TUNDRAHIDE_GRAZER_CONTRACT.state === 'implemented-complete-motion-awaiting-visual-approval',
+    && EN_E10_TUNDRAHIDE_GRAZER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Mammoth role or candidate contract drifted',
 );
 check(
@@ -158,7 +173,9 @@ check(
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.animationContract.includes('body-owned tusk shove')
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_TUNDRAHIDE_GRAZER_GATE.exclusions.includes('public Mammoth registration or outline registration')
-    && EN_E10_TUNDRAHIDE_GRAZER_GATE.nextGate.includes('Do not commit, push, register, or publish'),
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.nextGate.includes('implementation f0ced3c777c478a4077fb439ccd8b4b363ea52ac')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.nextGate.includes('private specialist Mammoth')
+    && EN_E10_TUNDRAHIDE_GRAZER_GATE.nextGate.includes('review evidence only'),
   'Mammoth anatomy, effect firewall, motion, or stop boundary drifted',
 );
 check(

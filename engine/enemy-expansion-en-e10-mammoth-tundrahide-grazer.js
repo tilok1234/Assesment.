@@ -59,7 +59,7 @@ export const EN_E10_MAMMOTH_CONTRACT_CARD = deepFreeze({
     id: 'tundrahide-grazer',
     name: 'Tundrahide Grazer',
     role: 'common',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['specialist', 'elite'],
   actorTopology: EN_E10_MAMMOTH_TOPOLOGY_DECISION.selected,
@@ -72,7 +72,7 @@ export const EN_E10_TUNDRAHIDE_GRAZER_CONTRACT = deepFreeze({
   family: 'mammoth',
   variant: 'tundrahide-grazer',
   role: 'common',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_MAMMOTH_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-storm-taupe-domed-wool-broad-head-connected-trunk-paired-tusks-four-broad-foot-mammoth-v1',
   silhouette: 'A grounded common Mammoth with a high domed woolly back, massive shoulders, low hindquarters, broad head, large connected ears, long body-owned trunk, paired connected forward-curving tusks, a short tail, four short weight-bearing legs, and four separated broad feet. It must read heavier and lower than Gloamcrown Sovereign and Cragcrown Patriarch while remaining unlike a reduced Furious Depraved Rhino Boss, long-backed Dire Wolf, antlered Stag, or ring-horned Ram.',
@@ -110,11 +110,20 @@ export const EN_E10_TUNDRAHIDE_GRAZER_DATA = deepFreeze({
 
 export const EN_E10_TUNDRAHIDE_GRAZER_GATE = deepFreeze({
   id: 'en-e10-mammoth-tundrahide-grazer-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: 'c371e7ffeb3dd9196c29b9236d62585d96a52585',
   authorizedOn: '2026-08-13',
   authorizationEvidence: EN_E10_MAMMOTH_TOPOLOGY_DECISION.approvalEvidence,
   architectureDecision: EN_E10_MAMMOTH_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Gloamcrown Sovereign and Cragcrown Patriarch plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The Aseprite review session reported those exact four paths open together as raw sprite 155, outlined sprite 159, Complete B + Form sprite 163, and active comparison sprite 167. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest 740960848a5a45941a908b8f32d53a6426de789f7ca002817309e7506dcd3e08. The designer replied: awesome klets do next. Approval applies only to that exact Tundrahide Grazer digest and its six frozen review hashes. The continuation suffix is held until the bounded publication tuple is clean and remote verified, after which it opens exactly one private specialist Mammoth under the selected baked-single-actor-tusked-heavy-grounded-quadruped topology. It does not authorize public Mammoth or outline registration, fixtures, effects, child assets, elite Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: 'f0ced3c777c478a4077fb439ccd8b4b363ea52ac',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_GLOAMCROWN_SOVEREIGN_GATE.id,
     artifactSha256: EN_E10_GLOAMCROWN_SOVEREIGN_GATE.artifactSha256,
@@ -164,7 +173,7 @@ export const EN_E10_TUNDRAHIDE_GRAZER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop for explicit designer visual approval of this exact frozen Tundrahide Grazer digest and its four PNG plus two GIF review hashes. Do not commit, push, register, or publish the candidate before approval. The distinct outlined PNG is review evidence only and does not authorize outline registration. Specialist and elite Mammoth plus Rhino and all broader gates remain closed.',
+  nextGate: 'The exact Tundrahide Grazer packet is visually approved at implementation f0ced3c777c478a4077fb439ccd8b4b363ea52ac. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The designer reply includes lets do next, but that suffix remains held until this exact publication tuple is clean and remote verified; it then opens exactly one private specialist Mammoth under the selected baked-single-actor-tusked-heavy-grounded-quadruped topology. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Mammoth registration, fixtures, effects, child assets, elite Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_TUNDRAHIDE_GRAZER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -448,7 +457,7 @@ export const EN_E10_TUNDRAHIDE_GRAZER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'tundrahide-grazer',
     scale: 8,
-    notes: 'Awaiting explicit visual approval as one exact private common Mammoth against approved Gloamcrown Sovereign and Cragcrown Patriarch plus public Dire Wolf. The packet includes raw, distinct Complete B outlined, Complete B + Form, comparison, and two synchronized GIF artifacts. Keep outline/public registration, fixtures, effects, child assets, specialist and elite Mammoth, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private common Mammoth against approved Gloamcrown Sovereign and Cragcrown Patriarch plus public Dire Wolf. Accepted implementation f0ced3c777c478a4077fb439ccd8b4b363ea52ac records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. The lets do next suffix is held until that tuple is clean and remote verified, then opens exactly one private specialist Mammoth under the selected topology; keep public or outline registration, fixtures, effects, child assets, elite Mammoth, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 
