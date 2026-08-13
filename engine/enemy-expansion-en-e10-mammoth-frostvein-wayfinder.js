@@ -46,7 +46,7 @@ export const EN_E10_MAMMOTH_SPECIALIST_CONTRACT_CARD = deepFreeze({
     id: 'frostvein-wayfinder',
     name: 'Frostvein Wayfinder',
     role: 'specialist',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
   actorTopology: EN_E10_MAMMOTH_TOPOLOGY_DECISION.selected,
@@ -59,7 +59,7 @@ export const EN_E10_FROSTVEIN_WAYFINDER_CONTRACT = deepFreeze({
   family: 'mammoth',
   variant: 'frostvein-wayfinder',
   role: 'specialist',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_MAMMOTH_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-lean-high-shouldered-slate-blue-long-swept-tusk-four-broad-foot-mammoth-v1',
   silhouette: 'A specialist Mammoth with a leaner high-shouldered barrel, sloping back, tucked belly, high alert head, large connected ears, long body-owned trunk, longer swept paired tusks, short tail, four weight-bearing legs, and four separated broad feet. It must read faster, taller, and more directional than Tundrahide Grazer while remaining unmistakably heavier than Cliffcoil Strider and unlike a reduced Furious Depraved Rhino Boss, long-backed Dire Wolf, antlered Stag, or ring-horned Ram.',
@@ -97,11 +97,20 @@ export const EN_E10_FROSTVEIN_WAYFINDER_DATA = deepFreeze({
 
 export const EN_E10_FROSTVEIN_WAYFINDER_GATE = deepFreeze({
   id: 'en-e10-mammoth-frostvein-wayfinder-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '125b1b81d0f6fa977c3bf674964a45131e65f3ab',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Tundrahide Grazer implementation f0ced3c777c478a4077fb439ccd8b4b363ea52ac, approval record 2387ec0a584f77b3473827ef0568823bf86b4fd2, initial published handoff 699e17fe7749b365feabbd15f323eac15aaf4337, and final reconciliation 125b1b81d0f6fa977c3bf674964a45131e65f3ab were pushed and remote verified. The designer reply awesome klets do next opens exactly one private specialist Mammoth full 80-frame candidate on a new isolated branch from that clean checkpoint under the selected baked-single-actor-tusked-heavy-grounded-quadruped topology. It does not authorize publication, public or outline registration, fixtures, effects, child assets, elite Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or any broader gate.',
   architectureDecision: EN_E10_MAMMOTH_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Tundrahide Grazer and Cliffcoil Strider plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The Aseprite review session reported those exact four paths open together as raw sprite 179, outlined sprite 183, Complete B + Form sprite 187, and active comparison sprite 191. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest 2fbcd71017d4acacb9e8cfee31d984ad9f039634af79cb656180b11a08f1250e. The designer replied: approved lets do next. Approval applies only to that exact Frostvein Wayfinder digest and its six frozen review hashes. The continuation suffix is held until the bounded publication tuple is clean and remote verified, after which it opens exactly one private elite Mammoth full 80-frame candidate under the selected baked-single-actor-tusked-heavy-grounded-quadruped topology. It does not authorize public Mammoth or outline registration, fixtures, effects, child assets, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: '03618d6ca98ad1a93596bdbe501edcf1cedd466a',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_TUNDRAHIDE_GRAZER_GATE.id,
     artifactSha256: EN_E10_TUNDRAHIDE_GRAZER_GATE.artifactSha256,
@@ -151,7 +160,7 @@ export const EN_E10_FROSTVEIN_WAYFINDER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop for explicit designer visual approval of this exact frozen Frostvein Wayfinder digest and its four PNG plus two GIF review hashes. Do not commit, push, register, or publish the candidate before approval. The distinct outlined PNG is review evidence only and does not authorize outline registration. Elite Mammoth plus Rhino and all broader gates remain closed.',
+  nextGate: 'The exact Frostvein Wayfinder packet is visually approved at implementation 03618d6ca98ad1a93596bdbe501edcf1cedd466a. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The designer reply includes lets do next, but that suffix remains held until this exact publication tuple is clean and remote verified; it then opens exactly one private elite Mammoth full 80-frame candidate under the selected baked-single-actor-tusked-heavy-grounded-quadruped topology. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Mammoth registration, fixtures, effects, child assets, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_FROSTVEIN_WAYFINDER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -442,7 +451,7 @@ export const EN_E10_FROSTVEIN_WAYFINDER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'frostvein-wayfinder',
     scale: 8,
-    notes: 'Awaiting explicit visual approval as one exact private specialist Mammoth against approved Tundrahide Grazer and Cliffcoil Strider plus public Dire Wolf. The packet includes raw, distinct Complete B outlined, Complete B + Form, comparison, and two synchronized GIF artifacts. Keep outline/public registration, fixtures, effects, child assets, elite Mammoth, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private specialist Mammoth against approved Tundrahide Grazer and Cliffcoil Strider plus public Dire Wolf. Accepted implementation 03618d6ca98ad1a93596bdbe501edcf1cedd466a records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. The lets do next suffix is held until that tuple is clean and remote verified, then opens exactly one private elite Mammoth full 80-frame candidate under the selected topology; keep public or outline registration, fixtures, effects, child assets, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

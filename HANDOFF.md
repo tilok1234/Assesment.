@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Frostvein Wayfinder Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Frostvein Wayfinder Approved / Publication Authorized
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-specialist`. It branches exactly from the clean,
@@ -70,14 +70,18 @@ gate.
    Aseprite has the exact raw, outlined, Complete B + Form, and active
    comparison PNGs open as sprites 179, 183, 187, and 191. The outlined PNG is
    review evidence only; it does not authorize outline registration.
-7. The candidate is hash-frozen, fully validated, visually inspected, and
-   deliberately uncommitted and unpushed pending explicit designer visual
-   approval of this exact digest and six hashes. Stop here. Exact `approved`
-   may authorize only this packet's bounded implementation, approval record,
-   handoff reconciliation, and branch push under the standing publication
-   permission. It does not authorize public/outline registration, fixtures,
-   effects, child assets, elite Mammoth, Rhino or Rhino Boss work, Runic Idol,
-   release, accepted drift, a PR, or any broader gate.
+7. The designer replied `approved lets do next` to this exact packet. Approval
+   binds only digest
+   `2fbcd71017d4acacb9e8cfee31d984ad9f039634af79cb656180b11a08f1250e`
+   and the six hashes above at accepted implementation
+   `03618d6ca98ad1a93596bdbe501edcf1cedd466a`. Standing publication
+   permission opens only its approval record, branch push, and bounded handoff
+   reconciliation. The continuation suffix remains held until that exact
+   publication tuple is clean and remote verified; it then opens exactly one
+   private elite Mammoth full 80-frame candidate on a new isolated branch from
+   the clean reconciliation under the selected topology. It does not authorize
+   public/outline registration, fixtures, effects, child assets, Rhino or Rhino
+   Boss work, Runic Idol, release, accepted drift, a PR, or any broader gate.
 
 ## Approved Preceding Checkpoint - Tundrahide Grazer Published / Specialist Mammoth Gate Open
 

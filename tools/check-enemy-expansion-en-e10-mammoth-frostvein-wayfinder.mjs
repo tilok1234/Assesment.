@@ -131,12 +131,26 @@ check(
   'approved Mammoth topology decision drifted',
 );
 check(
-  EN_E10_FROSTVEIN_WAYFINDER_GATE.status === 'awaiting-visual-approval'
+  EN_E10_FROSTVEIN_WAYFINDER_GATE.status === 'approved'
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.baseCheckpoint === '125b1b81d0f6fa977c3bf674964a45131e65f3ab'
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.authorizedOn === '2026-08-13'
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.authorizationEvidence.includes('designer reply awesome klets do next')
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.authorizationEvidence.includes('exactly one private specialist Mammoth full 80-frame candidate')
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.architectureDecision === EN_E10_MAMMOTH_TOPOLOGY_DECISION.id
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.approvedOn === '2026-08-13'
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.approvalEvidence.includes('raw sprite 179')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.approvalEvidence.includes('outlined sprite 183')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.approvalEvidence.includes('Complete B + Form sprite 187')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.approvalEvidence.includes('active comparison sprite 191')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.approvalEvidence.includes('2fbcd71017d4acacb9e8cfee31d984ad9f039634af79cb656180b11a08f1250e')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.approvedImplementation === '03618d6ca98ad1a93596bdbe501edcf1cedd466a'
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.publishedImplementation === ''
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.publishedApprovalRecord === ''
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.initialPublishedHandoff === ''
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.publicationState === 'approved-not-published'
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.precedingApproval.gateId === EN_E10_TUNDRAHIDE_GRAZER_GATE.id
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.precedingApproval.candidateFrameDigest === EN_E10_TUNDRAHIDE_GRAZER_GATE.candidateFrameDigest
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.precedingApproval.publishedImplementation === EN_E10_TUNDRAHIDE_GRAZER_GATE.publishedImplementation
@@ -150,8 +164,9 @@ check(
     && EN_E10_MAMMOTH_SPECIALIST_CONTRACT_CARD.precedingVariant.id === 'tundrahide-grazer'
     && EN_E10_MAMMOTH_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'frostvein-wayfinder'
     && EN_E10_MAMMOTH_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
+    && EN_E10_MAMMOTH_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E10_MAMMOTH_SPECIALIST_CONTRACT_CARD.deferredRoles.join(',') === 'elite'
-    && EN_E10_FROSTVEIN_WAYFINDER_CONTRACT.state === 'implemented-complete-motion-awaiting-visual-approval',
+    && EN_E10_FROSTVEIN_WAYFINDER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Mammoth specialist role or candidate contract drifted',
 );
 check(
@@ -162,7 +177,9 @@ check(
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.animationContract.includes('hooked tusk sweep')
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.exclusions.includes('public Mammoth registration or outline registration')
-    && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('Do not commit, push, register, or publish'),
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('implementation 03618d6ca98ad1a93596bdbe501edcf1cedd466a')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('private elite Mammoth full 80-frame candidate')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('review evidence only'),
   'specialist Mammoth anatomy, effect firewall, motion, or stop boundary drifted',
 );
 check(
