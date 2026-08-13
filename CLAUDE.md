@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private specialist Peacock published / handoff reconciliation in progress: on
+- Approved preceding private specialist Peacock published / elite gate open: on
   `codex/en-e11-peacock-specialist`, based exactly on clean, pushed,
   remote-verified Rainfan reconciliation
   `eb504d2c6b419768aefe026e84f9ed6119855d5c`, the designer supplied the fresh
@@ -132,13 +132,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and `1bf90d9ff43ee0d874c227c505355163b4e19f8827f623705f569c0ea929c963`.
   Focused/fast/full gates pass in about 0.9s/56.2s/104.1s with all 80 frames
   structural and distinct from Rainfan, Aerie Scout, and Harpy; public stays
-  92/294 and all 232 fixtures stay exact. The four exact PNGs were loaded in
-  Aseprite and inspected. The designer replied `approved lets do next` to the
+  92/294 and all 232 fixtures stay exact. Final published-state
+  focused/fast/full gates pass in about 1.0s/62.6s/122.8s. The four exact PNGs
+  were loaded in Aseprite and inspected. The designer replied
+  `approved lets do next` to the
   frozen packet. Approval binds only to accepted implementation
   `dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216`. That implementation and approval
-  record `a39a0ef3d5054e040c75f6c9203efa194d987429` are pushed and remote verified;
-  only the initial published handoff and final reconciliation remain open. The
-  same reply opens exactly one private elite Peacock candidate afterward.
+  record `a39a0ef3d5054e040c75f6c9203efa194d987429`, and initial published handoff
+  `790c82ff0ae33f4777f2628c51af100a9fbc6f52` are pushed and remote verified;
+  this reconciliation completes the bounded publication tuple. The same reply
+  opens exactly one private elite Peacock candidate from this clean checkpoint.
   Registration, fixtures, effects, child assets, other Bird families, release,
   accepted drift, and a PR remain closed.
 - Approved preceding private common Peacock published / specialist gate opened later: on

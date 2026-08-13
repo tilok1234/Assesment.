@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mirrorfan Ambusher Published / Handoff Reconciliation In Progress
+## Approved Preceding Checkpoint - Mirrorfan Ambusher Published / Elite Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-peacock-specialist`. It branches exactly from the clean,
@@ -72,7 +72,10 @@ gate.
    hard alpha, non-empty-cell, and strict boundary checks. Focused / fast /
    full validation passes in about 0.9s / 56.2s / 104.1s. Public remains
    92/294, all 232 fixture sheets stay unchanged, and child assets, effects,
-   public registration, and outline registration remain zero.
+   public registration, and outline registration remain zero. Approval-local
+   focused / fast gates pass again in about 1.1s / 62.7s. Final
+   published-state focused / fast / full gates pass in about
+   1.0s / 62.6s / 122.8s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-peacock-mirrorfan-ambusher/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e11-peacock-mirrorfan-ambusher` and
@@ -88,12 +91,13 @@ gate.
    The designer replied `approved lets do next`. Approval binds only to those
    frozen files and accepted implementation
    `dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216`. That implementation and approval
-   record `a39a0ef3d5054e040c75f6c9203efa194d987429` are pushed and remote verified.
-   Only the initial published handoff and final reconciliation remain open.
-   The same reply opens exactly one private elite Peacock candidate after this
-   specialist publication is clean, pushed, remote verified, and reconciled.
-   Do not register, regenerate fixtures, add effects or child assets, begin
-   Cockatrice/Raven/Owl/Phoenix, release, accept drift, or open a PR.
+   record `a39a0ef3d5054e040c75f6c9203efa194d987429`, and initial published handoff
+   `790c82ff0ae33f4777f2628c51af100a9fbc6f52` are pushed and remote verified;
+   this reconciliation completes the bounded publication tuple. The same
+   reply opens exactly one private elite Peacock candidate from this clean,
+   pushed reconciliation. Do not register, regenerate fixtures, add effects
+   or child assets, begin Cockatrice/Raven/Owl/Phoenix or another Bird family,
+   release, accept drift, or open a PR.
 
 ## Approved Preceding Checkpoint - Rainfan Forager Published / Specialist Gate Opened Later
 
