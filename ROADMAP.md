@@ -27,13 +27,17 @@ sidestep horn charge. Its exact 80-frame digest is
 Focused validation passes every structure, identity, alias, mirror, and
 three-way pixel/alpha distinction gate at opaque range 233-259. The raw,
 required distinct Complete B outlined, Complete B + Form, and comparison PNGs
-plus two GIFs are hash-frozen and deterministic. Focused / fast / full gates
-pass in 0.7s / 59.0s / 113.9s with public 92/294 and all 232 fixtures unchanged.
-The exact four PNGs are open together in Aseprite as sprites 67, 71, 75, and
-active 79. The outlined PNG is review evidence only, not outline registration.
-Await explicit visual approval; the branch is uncommitted and unpushed.
-Public/outline registration, fixtures, effects, child assets, elite Ram, later
-families, release, accepted drift, publication, and a PR remain closed.
+plus two GIFs are hash-frozen and deterministic. Pre-approval focused / fast /
+full gates pass in 0.7s / 59.0s / 113.9s and approval-local focused / fast gates
+pass in 0.6s / 57.9s with public 92/294 and all 232 fixtures unchanged. The exact
+four PNGs are open together in Aseprite as sprites 67, 71, 75, and active 79.
+The outlined PNG is review evidence only, not outline registration. The designer
+replied `approved` to the exact posted packet. Accepted implementation
+`cb6c58440297b76f62776d8c11a6232d05bb1467` is remote verified. Standing
+permission opens only its approval record, branch push, and bounded handoff
+reconciliation. No next Ram art gate is open. Public/outline registration,
+fixtures, effects, child assets, elite Ram, later families, release, accepted
+drift, a PR, and every later gate remain closed.
 
 Approved preceding published EN-E10 private art checkpoint (2026-08-13): from clean published Scarcrest
 reconciliation `a7d2abbd610dfc6096498d1dce096d652e50596d`, the designer's

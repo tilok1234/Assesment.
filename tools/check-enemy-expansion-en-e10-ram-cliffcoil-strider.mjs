@@ -128,13 +128,25 @@ check(
   'published Stonecurl predecessor drifted',
 );
 check(
-  EN_E10_CLIFFCOIL_STRIDER_GATE.status === 'awaiting-visual-approval'
+  EN_E10_CLIFFCOIL_STRIDER_GATE.status === 'approved'
     && EN_E10_CLIFFCOIL_STRIDER_GATE.baseCheckpoint === '67ba19086669b9135286784b6c9c39f682ca3032'
     && EN_E10_CLIFFCOIL_STRIDER_GATE.authorizedOn === '2026-08-13'
     && EN_E10_CLIFFCOIL_STRIDER_GATE.authorizationEvidence.includes('designer then separately said: lets do nex t')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.authorizationEvidence.includes('exactly one private specialist Ram full 80-frame candidate')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.authorizationEvidence.includes('distinct Complete B outlined PNG')
-    && EN_E10_CLIFFCOIL_STRIDER_GATE.architectureDecision === EN_E10_RAM_TOPOLOGY_DECISION.id,
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.architectureDecision === EN_E10_RAM_TOPOLOGY_DECISION.id
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.approvedOn === '2026-08-13'
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.approvalEvidence.includes('raw sprite 67')
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.approvalEvidence.includes('outlined sprite 71')
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.approvalEvidence.includes('Complete B + Form sprite 75')
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.approvalEvidence.includes('active comparison sprite 79')
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.approvalEvidence.includes('1ca2ce85dc6bd4b291e6ede4754f58c2a5bd4278b50acfb699926f9626dd9b29')
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.approvedImplementation === 'cb6c58440297b76f62776d8c11a6232d05bb1467'
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.publishedImplementation === ''
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.publishedApprovalRecord === ''
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.initialPublishedHandoff === ''
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.publicationState === 'approved-not-published',
   'specialist Ram authorization or outlined-review boundary drifted',
 );
 check(
@@ -152,11 +164,13 @@ check(
     && EN_E10_RAM_SPECIALIST_CONTRACT_CARD.precedingVariant.id === 'stonecurl-grazer'
     && EN_E10_RAM_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'cliffcoil-strider'
     && EN_E10_RAM_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
+    && EN_E10_RAM_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E10_RAM_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite']),
   'Ram specialist role boundary drifted',
 );
 check(
-  EN_E10_CLIFFCOIL_STRIDER_CONTRACT.silhouette.includes('long connected swept-back coil horns')
+  EN_E10_CLIFFCOIL_STRIDER_CONTRACT.state === 'implemented-complete-motion-approved'
+    && EN_E10_CLIFFCOIL_STRIDER_CONTRACT.silhouette.includes('long connected swept-back coil horns')
     && EN_E10_CLIFFCOIL_STRIDER_CONTRACT.visualIdentity.includes('sea-glass sure-foot chevrons')
     && EN_E10_CLIFFCOIL_STRIDER_DATA.actorTopology === EN_E10_RAM_TOPOLOGY_DECISION.selected
     && EN_E10_CLIFFCOIL_STRIDER_DATA.childAssets.length === 0
@@ -169,7 +183,8 @@ check(
     && EN_E10_CLIFFCOIL_STRIDER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.exclusions.includes('Ram elite')
-    && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('four PNG plus two GIF review hashes')
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('visually approved at implementation cb6c58440297b76f62776d8c11a6232d05bb1467')
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('No next Ram art gate is open')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('review evidence only')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('does not authorize outline registration'),
   'full-suite motion, review, or stop boundary drifted',

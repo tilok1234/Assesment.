@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art checkpoint: on `codex/en-e10-ram-specialist`, based exactly
+- Current private art gate: on `codex/en-e10-ram-specialist`, based exactly
   on clean published Stonecurl reconciliation
   `67ba19086669b9135286784b6c9c39f682ca3032`, the designer's separate `lets do
   nex t` authorizes exactly one private specialist Ram candidate under the
@@ -122,14 +122,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Stonecurl Grazer and Miremane Courser plus public Dire Wolf; opaque range is
   233-259. Exact aliases and mirrors pass. The raw, required distinct Complete B
   outlined, Complete B + Form, and comparison PNGs plus two GIFs are hash-frozen
-  and regenerate deterministically. Focused / fast / full gates pass in 0.7s /
-  59.0s / 113.9s with public 92/294 and all 232 fixtures unchanged. The four
-  exact PNGs are open together in Aseprite as sprites 67, 71, 75, and active 79.
-  The outlined PNG is review evidence only, not outline registration. Await
-  explicit visual approval of this exact packet; the branch remains uncommitted
-  and unpushed. Public/outline registration, fixtures, effects, child assets,
-  elite Ram, later families, release, accepted drift, publication, and a PR
-  remain closed.
+  and regenerate deterministically. Pre-approval focused / fast / full gates
+  pass in 0.7s / 59.0s / 113.9s and approval-local focused / fast gates pass in
+  0.6s / 57.9s with public 92/294 and all 232 fixtures unchanged. The four exact
+  PNGs are open together in Aseprite as sprites 67, 71, 75, and active 79. The
+  outlined PNG is review evidence only, not outline registration. The final
+  prompt posted all four PNGs, both GIFs, and the exact digest; the designer
+  replied `approved`. Accepted implementation
+  `cb6c58440297b76f62776d8c11a6232d05bb1467` is remote verified. Standing
+  permission opens only its approval record, branch push, and bounded handoff
+  reconciliation. No next Ram art gate is open. Public/outline registration,
+  fixtures, effects, child assets, elite Ram, later families, release, accepted
+  drift, a PR, and every later gate remain closed.
 - Approved preceding published private art checkpoint: on `codex/en-e10-ram-common`, based exactly on clean
   published Scarcrest reconciliation
   `a7d2abbd610dfc6096498d1dce096d652e50596d`, the designer's `approved`

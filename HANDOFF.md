@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Cliffcoil Strider Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Cliffcoil Strider Approval Publication
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-ram-specialist`. It is based exactly on the clean published
@@ -60,9 +60,9 @@ gate.
    Dire Wolf. Opaque range is 233-259. Complete B adds 11,532 outline pixels and
    Form changes 9,177 pixels. Deterministic regeneration reproduces all six
    frozen hashes. Focused / `check:fast` / full `check` pass in 0.7s / 59.0s /
-   113.9s with public 92/294, approved comparison sources exact, all 232 fixture
-   sheets unchanged, zero child assets/effects, and no public or outline
-   registration.
+   113.9s, and the approval-local focused / fast gates pass in 0.6s / 57.9s,
+   with public 92/294, approved comparison sources exact, all 232 fixture sheets
+   unchanged, zero child assets/effects, and no public or outline registration.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-ram-cliffcoil-strider/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-ram-cliffcoil-strider` and run the
@@ -71,13 +71,17 @@ gate.
 7. The exact raw, distinct Complete B outlined, Complete B + Form, and comparison
    PNGs are open together in the four-lane Aseprite MCP review window as sprites
    67, 71, 75, and active 79. The outlined PNG is required review evidence only;
-   it does not authorize outline registration. Await explicit visual approval of
-   this exact four-PNG plus two-GIF packet. Nothing on this branch is committed
-   or pushed before that approval.
+   it does not authorize outline registration. The final approval prompt posted
+   all four exact PNGs, both synchronized GIFs, and digest
+   `1ca2ce85dc6bd4b291e6ede4754f58c2a5bd4278b50acfb699926f9626dd9b29`.
+   The designer replied `approved`. Approval applies only to that exact packet;
+   accepted implementation `cb6c58440297b76f62776d8c11a6232d05bb1467`
+   records it and is remote verified. Standing permission opens only its
+   approval record, branch push, and bounded handoff reconciliation.
 8. Public Ram registration or outline registration, fixtures, effects, child
    assets, elite Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work,
-   the deferred Runic Idol decision, release, accepted drift, publication, and
-   a PR remain closed.
+   the deferred Runic Idol decision, release, accepted drift, a PR, and every
+   later art gate remain closed. No next Ram art gate is open.
 
 ## Approved Preceding Checkpoint - Stonecurl Grazer Published
 
