@@ -23,7 +23,63 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Tundrahide Grazer Published / Specialist Mammoth Gate Open
+## Immediate Continuation Checkpoint - Frostvein Wayfinder Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-mammoth-specialist`. It branches exactly from the clean,
+   published, remote-verified Tundrahide reconciliation
+   `125b1b81d0f6fa977c3bf674964a45131e65f3ab`.
+2. The designer's `awesome klets do next` approved the exact Tundrahide packet
+   and opened exactly one private specialist Mammoth full 80-frame candidate
+   under the selected `baked-single-actor-tusked-heavy-grounded-quadruped`
+   topology. Frostvein Wayfinder is one connected grounded 24x24 actor with
+   zero child assets and all effects external.
+3. Frostvein is a leaner, high-shouldered specialist with slate-blue wool, a
+   deep indigo lower body, pale glacier face and connected trunk, long swept
+   old-ivory tusks with sea-glass undertones, a lichen-pale belly, blue-green
+   frost-vein chevrons, muted-wine ears, cyan eyes, a short tail, four
+   weight-bearing legs, and four separated broad feet. Attack braces, performs
+   a lateral body-owned trunk feint, drives an effect-free hooked tusk sweep,
+   and recovers. Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2.
+4. The frozen 80-frame digest is
+   `2fbcd71017d4acacb9e8cfee31d984ad9f039634af79cb656180b11a08f1250e`.
+   Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+   hashes are
+   `8c3a0343c40f31d7feb4b9758d4dc7fdbb80f04c7e92d6ed00096dc590a2e8da`,
+   `028196f73fee84c5c369c34ddb15a99e0d4ef63ab1a80aba1477170e7d3569b0`,
+   `6eac49abbd08f2f15fe801e1434fefd6e3d7d92f3b538d97ad91ff551c644a53`,
+   and `8ae03110e5b2097f14b5797953134bc7e8b4ec9d3892ae9c0a290861bb01ff9c`.
+   Raw and Complete B + Form GIF hashes are
+   `7300c456c32c38bc5f040b93c21be5e0d81a1596d21ad46c99ed13975aaa7e5e`
+   and `87b730870744d5db6bbdb5109c384f69cfeec3ab5402e9a8055a2f0a8bdccf18`.
+5. Focused validation passes 80/80 connected, bounded, grounded,
+   four-broad-foot, and long-tusk high-shouldered-span frames; 54/54 expected
+   tusk, eye, and trunk-face views; 8/8 exact-white flashes; exact aliases and
+   mirrors; and 80/80 pixel-plus-alpha distinctions from approved Tundrahide
+   Grazer and Cliffcoil Strider plus public Dire Wolf. Opaque range is 221-281.
+   Complete B adds 10,250 outline pixels and Form changes 9,573 pixels.
+   `check:fast` and full `check` pass in 56.5s and 109.5s, with public 92/294,
+   all 232 fixture sheets unchanged, zero child assets/effects, and no public
+   or outline registration.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-mammoth-frostvein-wayfinder/`. Regenerate
+   with
+   `npm.cmd run review:enemy-expansion-en-e10-mammoth-frostvein-wayfinder` and
+   run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-mammoth-frostvein-wayfinder`.
+   Aseprite has the exact raw, outlined, Complete B + Form, and active
+   comparison PNGs open as sprites 179, 183, 187, and 191. The outlined PNG is
+   review evidence only; it does not authorize outline registration.
+7. The candidate is hash-frozen, fully validated, visually inspected, and
+   deliberately uncommitted and unpushed pending explicit designer visual
+   approval of this exact digest and six hashes. Stop here. Exact `approved`
+   may authorize only this packet's bounded implementation, approval record,
+   handoff reconciliation, and branch push under the standing publication
+   permission. It does not authorize public/outline registration, fixtures,
+   effects, child assets, elite Mammoth, Rhino or Rhino Boss work, Runic Idol,
+   release, accepted drift, a PR, or any broader gate.
+
+## Approved Preceding Checkpoint - Tundrahide Grazer Published / Specialist Mammoth Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-common`. It branches exactly from the clean,

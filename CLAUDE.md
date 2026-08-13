@@ -107,7 +107,31 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art checkpoint published / specialist Mammoth gate open: on branch
+- Current private specialist Mammoth checkpoint awaiting visual approval: on
+  `codex/en-e10-mammoth-specialist`, based exactly on clean published
+  Tundrahide reconciliation `125b1b81d0f6fa977c3bf674964a45131e65f3ab`,
+  Frostvein Wayfinder is one connected lean, high-shouldered slate-blue
+  Mammoth with a pale glacier face and connected trunk, long swept old-ivory
+  tusks, lichen belly, frost-vein chevrons, muted-wine ears, cyan eyes, short
+  tail, four weight-bearing legs, and four separated broad feet. Its exact
+  digest is `2fbcd71017d4acacb9e8cfee31d984ad9f039634af79cb656180b11a08f1250e`.
+  Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+  hashes are `8c3a0343c40f31d7feb4b9758d4dc7fdbb80f04c7e92d6ed00096dc590a2e8da`,
+  `028196f73fee84c5c369c34ddb15a99e0d4ef63ab1a80aba1477170e7d3569b0`,
+  `6eac49abbd08f2f15fe801e1434fefd6e3d7d92f3b538d97ad91ff551c644a53`,
+  and `8ae03110e5b2097f14b5797953134bc7e8b4ec9d3892ae9c0a290861bb01ff9c`;
+  raw / Form GIF hashes are
+  `7300c456c32c38bc5f040b93c21be5e0d81a1596d21ad46c99ed13975aaa7e5e`
+  and `87b730870744d5db6bbdb5109c384f69cfeec3ab5402e9a8055a2f0a8bdccf18`.
+  Focused validation and fast/full gates pass; fast/full are 56.5s/109.5s,
+  all 80 frames preserve the structural, four-foot, specialist-span, alias,
+  mirror, and three-way pixel/alpha-distinction contracts, public remains
+  92/294, and all 232 fixtures remain unchanged. Exact PNGs are open in
+  Aseprite as sprites 179, 183, 187, and active 191. The packet is uncommitted
+  and unpushed pending exact visual approval. Public/outline registration,
+  fixtures, effects, child assets, elite Mammoth, Rhino, release, accepted
+  drift, and a PR remain closed.
+- Approved preceding private art checkpoint published / specialist Mammoth gate open: on branch
   `codex/en-e10-mammoth-common`, based exactly on clean published Gloamcrown
   reconciliation `c371e7ffeb3dd9196c29b9236d62585d96a52585`, the designer
   approved `baked-single-actor-tusked-heavy-grounded-quadruped` and opened

@@ -14,7 +14,33 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private common Mammoth checkpoint published / specialist Mammoth gate open
+Current EN-E10 private specialist Mammoth checkpoint awaiting visual approval
+(2026-08-13): on `codex/en-e10-mammoth-specialist`, based exactly on clean
+published Tundrahide reconciliation
+`125b1b81d0f6fa977c3bf674964a45131e65f3ab`, Frostvein Wayfinder is a lean,
+high-shouldered slate-blue Mammoth with a pale glacier face and connected
+trunk, long swept old-ivory tusks, lichen belly, frost-vein chevrons,
+muted-wine ears, cyan eyes, short tail, four weight-bearing legs, four broad
+feet, and a body-owned lateral trunk feint into an effect-free hooked tusk
+sweep. Its exact 80-frame digest is
+`2fbcd71017d4acacb9e8cfee31d984ad9f039634af79cb656180b11a08f1250e`.
+Raw / outlined / Form / comparison PNG hashes are
+`8c3a0343c40f31d7feb4b9758d4dc7fdbb80f04c7e92d6ed00096dc590a2e8da`,
+`028196f73fee84c5c369c34ddb15a99e0d4ef63ab1a80aba1477170e7d3569b0`,
+`6eac49abbd08f2f15fe801e1434fefd6e3d7d92f3b538d97ad91ff551c644a53`,
+and `8ae03110e5b2097f14b5797953134bc7e8b4ec9d3892ae9c0a290861bb01ff9c`;
+raw / Form GIF hashes are
+`7300c456c32c38bc5f040b93c21be5e0d81a1596d21ad46c99ed13975aaa7e5e`
+and `87b730870744d5db6bbdb5109c384f69cfeec3ab5402e9a8055a2f0a8bdccf18`.
+Focused validation and fast/full gates pass, with fast/full at 56.5s/109.5s:
+80/80 structural, four-foot, specialist-span, and three-way pixel/alpha-
+distinct frames; opaque range 221-281; public 92/294; all 232 fixtures
+unchanged; zero child assets/effects; no public or outline registration. Exact
+PNGs are open in Aseprite as sprites 179, 183, 187, and active 191. The packet
+is uncommitted and unpushed pending explicit visual approval. Elite Mammoth,
+Rhino, release, accepted drift, and a PR remain closed.
+
+Approved preceding EN-E10 private common Mammoth checkpoint published / specialist Mammoth gate open
 (2026-08-13): from clean published Gloamcrown reconciliation
 `c371e7ffeb3dd9196c29b9236d62585d96a52585`, the designer approved
 `baked-single-actor-tusked-heavy-grounded-quadruped` and opened exactly one
