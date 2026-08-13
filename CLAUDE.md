@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private elite Peacock candidate awaiting visual approval: on
+- Current private elite Peacock approved / publication in progress: on
   `codex/en-e11-peacock-elite`, based exactly on clean, pushed, remote-verified
   Mirrorfan reconciliation `6df83e5e642dbec5b68b856d436aa9db810678eb`,
   the designer's exact reply `approved lets do next` publishes only Mirrorfan
@@ -130,10 +130,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and `8fdd6cde061f09cbbeaa32839c31f5a33f5ea0cf38921780e2460572c5f9985a`.
   Focused/fast/full gates pass in about 0.9s/54.4s/134.4s with all 80 frames
   structural and pixel-plus-alpha distinct from Mirrorfan, Rainfan, and Aerie;
-  public stays 92/294 and all 232 fixtures remain exact. The four exact PNGs
-  were loaded in Aseprite and inspected. Stop for explicit visual approval;
-  no commit, push, publication, registration, fixture, effect, child asset,
-  other Bird family, release, accepted drift, or PR gate is open.
+  public stays 92/294 and all 232 fixtures remain exact. Approval-local
+  focused/fast gates pass again in about 0.8s/61.6s. The four exact PNGs were
+  loaded in Aseprite and inspected. The designer replied `approved` to
+  the frozen packet. Approval binds only to accepted implementation
+  `13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc`; standing permission opens its
+  approval record, branch push, and bounded reconciliation. This reply contains
+  no continuation request, so no next Peacock role or Bird-family candidate is
+  open. Registration, fixtures, effects, child assets, release, accepted drift,
+  and a PR remain closed.
 - Approved preceding private specialist Peacock published / elite gate open: on
   `codex/en-e11-peacock-specialist`, based exactly on clean, pushed,
   remote-verified Rainfan reconciliation

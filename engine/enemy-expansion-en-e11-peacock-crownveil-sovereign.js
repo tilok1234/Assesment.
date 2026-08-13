@@ -25,7 +25,7 @@ export const EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_CONTRACT = deepFreeze({
   family: 'peacock',
   variant: 'crownveil-sovereign',
   role: 'elite',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E11_PEACOCK_TOPOLOGY_DECISION.selected,
   silhouette: 'One broad natural ground-bird body joins a tall connected three-pronged coronet crest, thick arched neck, two layered mantle wings, two strong taloned legs with separated broad three-toed contacts, and one connected heavy eyespot train that becomes a full crowned shield during Attack. It is wider and more imposing than Rainfan Forager or Mirrorfan Ambusher and is not an upright Birdfolk person, exposed-human Harpy, or four-legged Griffin.',
   identity: 'Moon-white and royal-violet head-and-neck plumage, a dark amethyst body, layered antique-gold mantle wings, a deep blue-green train with ivory-cyan-rose crown eyes, old-ivory beak, and a body-owned full-train shield press distinguish the elite Crownveil Sovereign.',
@@ -44,18 +44,27 @@ export const EN_E11_PEACOCK_ELITE_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_CONTRACT.variant,
     role: EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
 });
 
 export const EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE = deepFreeze({
   id: 'en-e11-peacock-crownveil-sovereign-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Mirrorfan Ambusher implementation dcbb69ca92f8ba8be1a40c79d1ef84b56ac29216, approval record a39a0ef3d5054e040c75f6c9203efa194d987429, initial published handoff 790c82ff0ae33f4777f2628c51af100a9fbc6f52, and final reconciliation 6df83e5e642dbec5b68b856d436aa9db810678eb are pushed and remote verified. The designer approved that exact specialist packet and continued with: approved lets do next. Under the documented Peacock role order and selected baked-single-actor-grounded-fan-tailed-bird topology, the continuation authorizes exactly one private elite Peacock full 80-frame candidate only. It does not approve candidate pixels or authorize public or outline registration, fixtures, effects, child assets, Cockatrice, Raven, Owl, Phoenix, another Bird family, release, accepted drift, or a pull request.',
   baseCheckpoint: '6df83e5e642dbec5b68b856d436aa9db810678eb',
   architectureDecision: EN_E11_PEACOCK_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Mirrorfan Ambusher, approved Rainfan Forager, and approved Aerie Scout comparison PNGs were frozen with both synchronized GIF hashes. All four exact PNG paths were loaded in Aseprite and inspected, and the transparent 20x4 inspection atlas passed dimensions, hard alpha, non-empty-cell, and strict boundary checks. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest 6c4220e3a108eb902370a6d69bea8f2334a73dfddd914deb7f9a43495b99c82d. The designer replied: approved. Approval applies only to that exact Crownveil Sovereign digest and its six frozen review hashes. This reply contains no continuation request and does not open public or outline registration, fixtures, effects, child assets, Cockatrice, Raven, Owl, Phoenix, another Bird family, release, accepted drift, or a pull request.',
+  approvedImplementation: '13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.id,
     candidateFrameDigest: EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.candidateFrameDigest,
@@ -124,7 +133,7 @@ export const EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'Stop after the exact hash-frozen private Crownveil Sovereign review packet is generated and validated. Explicit designer visual approval is required before any commit, push, publication, registration, fixture, effect, other Bird family, release, or PR work. The distinct outlined PNG is review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Crownveil Sovereign packet is visually approved at implementation 13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. This approval contains no continuation request, so Peacock is complete and no Cockatrice, Raven, Owl, Phoenix, or other Bird candidate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Peacock registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_DATA = deepFreeze({
@@ -617,7 +626,7 @@ export const EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'crownveil-sovereign',
     scale: 6,
-    notes: 'Private elite Peacock candidate authorized by the designer continuation attached to exact Mirrorfan Ambusher approval after that specialist publication tuple became remote verified and reconciled. Review the exact raw, Complete B outline, Complete B + Form, comparison, and animated full-suite evidence together. Candidate pixels are not approved. Keep public or outline registration, fixtures, effects, child assets, other Bird families, release, accepted drift, commit, push, publication, and a pull request separate until explicit visual approval.',
+    notes: 'Visually approved as one exact private elite Peacock against approved Mirrorfan Ambusher, Rainfan Forager, and Aerie Scout. Accepted implementation 13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. This approval contains no continuation request; keep public or outline registration, fixtures, effects, child assets, other Bird families, release, accepted drift, and a pull request separate.',
   },
 });
 

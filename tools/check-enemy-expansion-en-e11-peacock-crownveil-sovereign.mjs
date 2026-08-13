@@ -98,11 +98,21 @@ check(
   'approved Peacock topology decision drifted',
 );
 check(
-  EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.status === 'candidate'
+  EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.status === 'approved'
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.baseCheckpoint === '6df83e5e642dbec5b68b856d436aa9db810678eb'
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.architectureDecision === EN_E11_PEACOCK_TOPOLOGY_DECISION.id
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.authorizationEvidence.includes('approved lets do next')
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.authorizationEvidence.includes('exactly one private elite Peacock full 80-frame candidate only')
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.approvedOn === '2026-08-13'
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.approvalEvidence.includes('The designer replied: approved')
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.approvalEvidence.includes('no continuation request')
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.approvedImplementation === '13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc'
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.publishedImplementation === ''
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.publishedApprovalRecord === ''
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.initialPublishedHandoff === ''
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.publicationState === 'approved-not-published'
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.precedingApproval.gateId === EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.id
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.precedingApproval.candidateFrameDigest === EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.candidateFrameDigest
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.precedingApproval.currentReconciliation === EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.baseCheckpoint,
@@ -113,9 +123,9 @@ check(
     && EN_E11_PEACOCK_ELITE_CONTRACT_CARD.precedingVariant.id === 'mirrorfan-ambusher'
     && EN_E11_PEACOCK_ELITE_CONTRACT_CARD.activeVariant.id === 'crownveil-sovereign'
     && EN_E11_PEACOCK_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E11_PEACOCK_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_PEACOCK_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_PEACOCK_ELITE_CONTRACT_CARD.deferredRoles) === JSON.stringify([])
-    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_CONTRACT.state === 'implemented-complete-motion-approved',
   'Peacock elite role contract drifted',
 );
 check(
@@ -127,7 +137,8 @@ check(
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.exclusions.includes('registration')
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.exclusions.includes('fixtures')
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.exclusions.includes('approved Mirrorfan Ambusher pixel changes')
-    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.nextGate.includes('Explicit designer visual approval is required')
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.nextGate.includes('implementation 13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc')
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.nextGate.includes('no continuation request')
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.nextGate.includes('review evidence only'),
   'Crownveil anatomy, motion, effect firewall, or stop boundary drifted',
 );
@@ -297,7 +308,7 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E11 Peacock Crownveil Sovereign private elite candidate passes focused validation.');
+  console.log('EN-E11 Peacock Crownveil Sovereign approved private elite packet passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Peacock identity: ' + twoFootRows + '/80 two three-toed talon rows; ' + naturalSpans + '/80 broad crowned bird spans; ' + openFanViews + '/16 full crown-shield views; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + crestViews + '/72 crest views; ' + trainViews + '/72 train views; ' + wingViews + '/72 wing views');
   console.log('- Distinction: Mirrorfan ' + differences.mirrorfan + '/80; Rainfan ' + differences.rainfan + '/80; Aerie Scout ' + differences.aerieScout + '/80 pixel and alpha frames differ');

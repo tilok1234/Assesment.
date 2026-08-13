@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private elite Peacock candidate awaiting visual approval
+- Current private elite Peacock approved / publication in progress
   (2026-08-13): on `codex/en-e11-peacock-elite`, based exactly on clean,
   pushed, remote-verified Mirrorfan reconciliation
   `6df83e5e642dbec5b68b856d436aa9db810678eb`, the designer's exact reply
@@ -42,10 +42,16 @@
   at opaque range 213-360, including 16/16 full crown shields. The inspection
   atlas is exact. Focused/fast/full gates pass in about
   0.9s/54.4s/134.4s. Public remains 92/294 and all 232 fixtures remain
-  unchanged. All four exact PNGs were loaded in Aseprite and inspected. Stop
-  for explicit visual approval; no commit, push, publication, registration,
-  fixture, effect, child asset, other Bird family, release, accepted drift,
-  PR, or broader gate is open.
+  unchanged. Approval-local focused/fast gates pass again in about
+  0.8s/61.6s. All four exact PNGs were loaded in Aseprite and inspected. The
+  designer replied `approved` to the exact review packet. Approval binds only
+  to accepted implementation
+  `13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc` and its six frozen hashes.
+  Standing permission opens only its approval record, branch push, and bounded
+  reconciliation. This reply contains no continuation request, so no next
+  Peacock role, Cockatrice, Raven, Owl, Phoenix, or other Bird-family candidate
+  is open. Registration, fixtures, effects, child assets, release, accepted
+  drift, a PR, and every broader gate remain closed.
 
 - Approved preceding private specialist Peacock published / elite gate open
   (2026-08-13): on `codex/en-e11-peacock-specialist`, based exactly on clean,
@@ -6282,7 +6288,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `specialist-published-elite-candidate-awaiting-visual-approval`
+- Status: `specialist-published-elite-approved-publication-in-progress`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 
@@ -6290,18 +6296,22 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current private Peacock elite awaiting visual approval
+#### Current approved Peacock elite / publication in progress
 
 The exact Mirrorfan approval reply `approved lets do next` opens only one
 private elite Peacock candidate from clean, pushed Mirrorfan reconciliation
 `6df83e5e642dbec5b68b856d436aa9db810678eb`. Crownveil Sovereign is the frozen
 80-frame candidate described at the top of this plan, at digest
 `6c4220e3a108eb902370a6d69bea8f2334a73dfddd914deb7f9a43495b99c82d`.
-Focused/fast/full gates pass in about 0.9s/54.4s/134.4s, the exact review packet
-has been inspected in Aseprite, public remains 92/294, and all 232 fixtures
-remain unchanged. Candidate pixels are not approved. Stop before commit, push,
-publication, registration, fixtures, effects, child assets, another Bird
-family, release, accepted drift, or a PR.
+Focused/fast/full gates pass in about 0.9s/54.4s/134.4s, and approval-local
+focused/fast gates pass again in about 0.8s/61.6s. The exact review packet has
+been inspected in Aseprite, public remains 92/294, and all 232 fixtures remain
+unchanged. The designer replied `approved`; approval binds only to
+implementation `13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc` and the six frozen
+hashes. Standing permission opens bounded publication and reconciliation only.
+This reply contains no continuation request. Registration, fixtures, effects,
+child assets, another Bird family, release, accepted drift, and a PR remain
+closed.
 
 #### Current approved Peacock common
 
