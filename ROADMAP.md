@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 approved private common Rhino publication checkpoint
+Current EN-E10 approved private common Rhino published / specialist gate open
 (2026-08-13): on `codex/en-e10-rhino-common`, based exactly on clean,
 published Rimevault reconciliation
 `df7a918c2b8ef13476cbf363663d42eec7638809`, the designer approved only
@@ -38,16 +38,18 @@ four-three-toed-foot, low-long-plated-span, alias, mirror, and comparison
 cases at opaque range 230-254. The protected Furious Depraved Rhino direction
 and full-animation candidates remain byte-exact. Pre-approval fast/full gates
 pass in 63.1s/109.7s; approval-local focused/fast gates pass again against the
-same digest and hashes, with fast completing in 60.7s. Public stays 92/294,
+same digest and hashes, with fast completing in 60.7s. Final published-state
+focused/fast/full gates pass in 1.0s/60.0s/110.6s. Public stays 92/294,
 all 232 fixtures remain unchanged, and child assets/effects/public
 registration/outline registration stay zero. The exact four PNG and two GIF
 packet was open in Aseprite as sprites 246, 250, 254, and active 258; the
 designer replied `approved and lets do next`. Accepted implementation
-`1e685159e6ddc09a20d853a511c9cfb448b502fe` and approval record
-`9d2b801f5e02c851e746571880d5465e65e3b1a6` are remote verified. Only the
-initial published handoff and final reconciliation remain open. The
-continuation suffix remains held until final remote verification; no
-specialist Rhino work is open before then.
+`1e685159e6ddc09a20d853a511c9cfb448b502fe`, approval record
+`9d2b801f5e02c851e746571880d5465e65e3b1a6`, and initial published handoff
+`fcb5296dba2c9960609d6dd5ed326ad97c093ac1` are remote verified; this
+reconciliation completes the bounded publication tuple. The reply opens
+exactly one private specialist Rhino full 80-frame candidate on a new isolated
+branch from this clean checkpoint under the selected topology.
 Public/outline registration, fixtures, effects, child assets, elite Rhino,
 every Boss change, release, accepted drift, and a PR remain closed.
 

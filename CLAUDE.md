@@ -130,16 +130,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   alias, mirror, and three-way pixel/alpha-distinction cases at opaque range
   230-254. Pre-approval fast/full gates pass in 63.1s/109.7s; approval-local
   focused/fast gates pass again with the exact hashes, with fast completing in
-  60.7s. Protected Furious Depraved Rhino Boss assets remain exact; public
+  60.7s. Final published-state focused/fast/full gates pass in
+  1.0s/60.0s/110.6s. Protected Furious Depraved Rhino Boss assets remain exact; public
   stays 92/294 and all 232 fixtures stay unchanged. The exact four PNGs and
   two GIFs were open in Aseprite as sprites 246, 250, 254, and active 258, and
   the designer replied `approved and lets do next` to the final packet.
-  Accepted implementation `1e685159e6ddc09a20d853a511c9cfb448b502fe`
-  and approval record `9d2b801f5e02c851e746571880d5465e65e3b1a6`
-  are remote verified. Only the initial published handoff and final
-  reconciliation remain open. The continuation suffix stays held until final
-  remote verification; no specialist Rhino work is open before then.
-  Registration, fixtures,
+  Accepted implementation `1e685159e6ddc09a20d853a511c9cfb448b502fe`,
+  approval record `9d2b801f5e02c851e746571880d5465e65e3b1a6`, and initial
+  published handoff `fcb5296dba2c9960609d6dd5ed326ad97c093ac1` are remote
+  verified; this reconciliation completes the bounded publication tuple. The
+  designer reply `approved and lets do next` opens exactly one private
+  specialist Rhino full 80-frame candidate on a new isolated branch from this
+  clean checkpoint under the selected topology. Registration, fixtures,
   effects, child assets, elite Rhino, every Boss change, release, drift
   acceptance, and a PR remain closed.
 - Approved preceding private elite Mammoth checkpoint published / Rhino distinction decision opened later: on

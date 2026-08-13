@@ -5750,9 +5750,9 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino topology selected; private common Mudplate Grazer approved and publication in progress`
+- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer approved and published; private specialist Rhino gate open`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
-- Priority-first: complete the bounded common Mudplate Grazer publication tuple; hold its specialist continuation until clean remote verification
+- Priority-first: exactly one private specialist Rhino full 80-frame candidate on a new isolated branch from the clean Mudplate reconciliation
 
 Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
@@ -5783,10 +5783,12 @@ The exact four PNG and two GIF packet was open together in Aseprite as sprites
 the frozen digest; the designer replied `approved and lets do next`. Approval
 binds only to accepted implementation
 `1e685159e6ddc09a20d853a511c9cfb448b502fe` and those hashes. Its approval
-record `9d2b801f5e02c851e746571880d5465e65e3b1a6` is also remote verified. Only
-the initial published handoff and final reconciliation remain open. The
-continuation suffix remains held until final remote verification; no
-specialist Rhino work is open before then.
+record `9d2b801f5e02c851e746571880d5465e65e3b1a6` and initial published handoff
+`fcb5296dba2c9960609d6dd5ed326ad97c093ac1` are also remote verified; this
+reconciliation completes the bounded publication tuple. Final published-state
+focused/fast/full validation passes in 1.0s/60.0s/110.6s. The continuation
+suffix opens exactly one private specialist Rhino full 80-frame candidate on a
+new isolated branch from this clean checkpoint under the selected topology.
 Registration, fixtures, effects, child assets, elite Rhino, every Boss change,
 release, accepted drift, and a PR remain closed.
 

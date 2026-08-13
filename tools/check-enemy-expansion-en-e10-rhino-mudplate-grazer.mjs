@@ -151,8 +151,8 @@ check(
     && EN_E10_MUDPLATE_GRAZER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E10_MUDPLATE_GRAZER_GATE.publishedImplementation === '1e685159e6ddc09a20d853a511c9cfb448b502fe'
     && EN_E10_MUDPLATE_GRAZER_GATE.publishedApprovalRecord === '9d2b801f5e02c851e746571880d5465e65e3b1a6'
-    && EN_E10_MUDPLATE_GRAZER_GATE.initialPublishedHandoff === ''
-    && EN_E10_MUDPLATE_GRAZER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E10_MUDPLATE_GRAZER_GATE.initialPublishedHandoff === 'fcb5296dba2c9960609d6dd5ed326ad97c093ac1'
+    && EN_E10_MUDPLATE_GRAZER_GATE.publicationState === 'published'
     && EN_E10_MUDPLATE_GRAZER_GATE.precedingApproval.gateId === EN_E10_RIMEVAULT_MATRIARCH_GATE.id
     && EN_E10_MUDPLATE_GRAZER_GATE.precedingApproval.candidateFrameDigest === EN_E10_RIMEVAULT_MATRIARCH_GATE.candidateFrameDigest
     && EN_E10_MUDPLATE_GRAZER_GATE.precedingApproval.publishedImplementation === EN_E10_RIMEVAULT_MATRIARCH_GATE.publishedImplementation
@@ -178,9 +178,9 @@ check(
     && EN_E10_MUDPLATE_GRAZER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_MUDPLATE_GRAZER_GATE.exclusions.includes('public Rhino registration or outline registration')
     && EN_E10_MUDPLATE_GRAZER_GATE.exclusions.includes('any Furious Depraved Rhino Boss source, catalog, roster, or asset change')
-    && EN_E10_MUDPLATE_GRAZER_GATE.nextGate.includes('implementation 1e685159e6ddc09a20d853a511c9cfb448b502fe and approval record 9d2b801f5e02c851e746571880d5465e65e3b1a6 are remote verified')
-    && EN_E10_MUDPLATE_GRAZER_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
-    && EN_E10_MUDPLATE_GRAZER_GATE.nextGate.includes('no specialist Rhino work is open before final remote verification')
+    && EN_E10_MUDPLATE_GRAZER_GATE.nextGate.includes('implementation 1e685159e6ddc09a20d853a511c9cfb448b502fe, approval record 9d2b801f5e02c851e746571880d5465e65e3b1a6, and initial published handoff fcb5296dba2c9960609d6dd5ed326ad97c093ac1 are remote verified')
+    && EN_E10_MUDPLATE_GRAZER_GATE.nextGate.includes('completes the bounded publication tuple')
+    && EN_E10_MUDPLATE_GRAZER_GATE.nextGate.includes('opens exactly one private specialist Rhino full 80-frame candidate')
     && EN_E10_MUDPLATE_GRAZER_GATE.nextGate.includes('review evidence only'),
   'Rhino anatomy, effect firewall, motion, or stop boundary drifted',
 );

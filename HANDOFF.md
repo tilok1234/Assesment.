@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mudplate Grazer Publication Reconciliation
+## Immediate Continuation Checkpoint - Mudplate Grazer Published / Specialist Rhino Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-rhino-common`. It branches exactly from clean, published,
@@ -64,7 +64,8 @@ gate.
    230-254. Complete B adds 9,569 outline pixels and Form changes 8,598 pixels.
    Pre-approval `check:fast` and full `check` pass in 63.1s and 109.7s;
    approval-local focused validation and `check:fast` pass again with the exact
-   digest and hashes, with the fast gate completing in 60.7s.
+   digest and hashes, with the fast gate completing in 60.7s. Final
+   published-state focused / fast / full gates pass in 1.0s / 60.0s / 110.6s.
    Public remains 92/294, all 232 fixtures stay unchanged, and child assets,
    effects, public registration, and outline registration remain zero. The
    protected Furious Depraved Rhino direction and animation candidates remain
@@ -89,10 +90,13 @@ gate.
    that exact packet; accepted implementation
    `1e685159e6ddc09a20d853a511c9cfb448b502fe` and approval record
    `9d2b801f5e02c851e746571880d5465e65e3b1a6` are remote verified.
-8. Only the initial published handoff and final reconciliation remain open.
-   The continuation suffix remains held until that final reconciliation is
-   clean and remote verified; no specialist Rhino work is open before then.
-   Public or outline
+8. Accepted implementation `1e685159e6ddc09a20d853a511c9cfb448b502fe`,
+   approval record `9d2b801f5e02c851e746571880d5465e65e3b1a6`, and initial
+   published handoff `fcb5296dba2c9960609d6dd5ed326ad97c093ac1` are remote
+   verified; this reconciliation completes the bounded publication tuple. The
+   designer reply `approved and lets do next` opens exactly one private
+   specialist Rhino full 80-frame candidate on a new isolated branch from this
+   clean checkpoint under the selected topology. Public or outline
    registration, fixtures, effects, child assets, elite Rhino, every Furious
    Depraved Rhino Boss change, Runic Idol, release, accepted drift, a PR, and
    every broader gate remain closed.
