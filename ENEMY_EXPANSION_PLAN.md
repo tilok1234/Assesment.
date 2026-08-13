@@ -5750,9 +5750,9 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer approved and published; private specialist Rhino gate open`
+- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer approved and published; private specialist Reedcrest Skirmisher awaiting visual approval`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
-- Priority-first: exactly one private specialist Rhino full 80-frame candidate on a new isolated branch from the clean Mudplate reconciliation
+- Priority-first: stop at the exact specialist Reedcrest Skirmisher visual approval gate
 
 Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
@@ -5790,6 +5790,36 @@ focused/fast/full validation passes in 1.0s/60.0s/110.6s. The continuation
 suffix opens exactly one private specialist Rhino full 80-frame candidate on a
 new isolated branch from this clean checkpoint under the selected topology.
 Registration, fixtures, effects, child assets, elite Rhino, every Boss change,
+release, accepted drift, and a PR remain closed.
+
+Reedcrest Skirmisher is the authorized private specialist Rhino from clean,
+published, remote-verified Mudplate reconciliation
+`fb99996abd98ae369dc6d1fdb436e8f97d54bc95`. It preserves the selected
+connected natural topology while using a lean slate-teal barrel, restrained
+forward shoulder wedge, three separated rust plate ridges, narrow pale reed
+face blaze and flank bars, compact dark wedge head, medium upswept sand-ivory
+horn and tiny nub, pointed ears, short tail, four weight-bearing legs, and four
+broad three-toed feet. Its planted sidestep into a controlled rising horn
+sweep is entirely body-owned; arcs, wakes, flares, impacts, dust, debris, and
+every other effect stay external. The exact 80-frame digest is
+`3125fe122e54f7a2d08c3f28cd179f2a8409a771001e9021217238a488348f8e`.
+Raw / outlined Complete B / Complete B + Form / comparison PNG hashes are
+`70b6b0fbc2433acfa883bbe405ee4a62b043bf7af674b13a0d2e4a906e587842`,
+`1d7951acabb4c3b12fd3a16c165a65f5c42cc0721ed8b72b25a64db306b9594d`,
+`34674d927289e87e4502b77f3321a81863858f138f36572756f1410ae7b4bd3c`,
+and `b87f4961f1db5a0e11dc5b636b4c1db2f7d5d80d05a646120405111f446929c5`;
+raw / Form GIF hashes are
+`683051e6fdabbc96d7624644266ec25127bfe73e194a489ccad01a23c66e19bb`
+and `ebd69b5ed812888fb6601f70d0df869054efcf8206f81672d6c5ba7f440a7f49`.
+Focused validation passes all 80 structural, four-three-toed-foot, lean-span,
+ridge/blaze, alias, mirror, and comparison cases, with approved Mudplate and
+Frostvein plus public Dire Wolf exact and the protected Boss assets byte-exact.
+Pre-approval focused/fast/full gates pass in 0.6s/57.8s/110.0s.
+The four exact review PNGs are open in Aseprite as sprites 270, 274, 278, and
+282; the protected Boss direction and full-animation sheets are open separately
+as sprites 294 and active 298.
+Stop for explicit visual approval of this exact packet. Public or outline
+registration, fixtures, effects, child assets, elite Rhino, every Boss change,
 release, accepted drift, and a PR remain closed.
 
 Hyena topology and common art gate (2026-08-13): the designer selected

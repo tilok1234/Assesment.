@@ -107,7 +107,40 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private common Rhino publication checkpoint: on
+- Current private specialist Rhino candidate awaiting visual approval: on
+  `codex/en-e10-rhino-specialist`, based exactly on clean, published,
+  remote-verified Mudplate reconciliation
+  `fb99996abd98ae369dc6d1fdb436e8f97d54bc95`, the designer reply `approved
+  and lets do next` opens exactly one private specialist Rhino full 80-frame
+  candidate under the selected
+  `baked-single-actor-natural-plated-low-grounded-quadruped` topology.
+  Reedcrest Skirmisher is one connected lean slate-teal Rhino with a restrained
+  forward shoulder wedge, three separated rust natural ridges, narrow pale reed
+  face blaze and flank bars, compact dark wedge head, one medium upswept
+  sand-ivory horn and tiny nub, pointed ears, amber eyes, short tail, four
+  weight-bearing legs, four separated broad three-toed feet, and a body-owned
+  planted sidestep into a controlled rising horn sweep. Its frozen digest is
+  `3125fe122e54f7a2d08c3f28cd179f2a8409a771001e9021217238a488348f8e`.
+  Raw / outlined / Form / comparison PNG hashes are
+  `70b6b0fbc2433acfa883bbe405ee4a62b043bf7af674b13a0d2e4a906e587842`,
+  `1d7951acabb4c3b12fd3a16c165a65f5c42cc0721ed8b72b25a64db306b9594d`,
+  `34674d927289e87e4502b77f3321a81863858f138f36572756f1410ae7b4bd3c`,
+  and `b87f4961f1db5a0e11dc5b636b4c1db2f7d5d80d05a646120405111f446929c5`;
+  raw / Form GIF hashes are
+  `683051e6fdabbc96d7624644266ec25127bfe73e194a489ccad01a23c66e19bb`
+  and `ebd69b5ed812888fb6601f70d0df869054efcf8206f81672d6c5ba7f440a7f49`.
+  Focused validation passes all 80 structural, four-three-toed-foot,
+  lean-span, alias, mirror, ridge/blaze, and three-way pixel/alpha-distinction
+  cases at opaque range 236-261. Pre-approval focused/fast/full gates pass in
+  0.6s/57.8s/110.0s. Protected Furious Depraved Rhino Boss assets
+  remain exact. The four exact review PNGs are open in Aseprite as sprites 270,
+  274, 278, and 282; the protected Boss direction and full-animation sheets
+  are open separately as sprites 294 and active 298. Public stays 92/294 and
+  all 232 fixtures stay unchanged. Stop for explicit visual approval. No
+  commit, push, registration, fixtures,
+  effects, child assets, elite Rhino, Boss change, release, drift acceptance,
+  or PR is open.
+- Approved preceding private common Rhino checkpoint published / specialist gate open: on
   `codex/en-e10-rhino-common`, based exactly on clean Rimevault reconciliation
   `df7a918c2b8ef13476cbf363663d42eec7638809`, the designer approved only the
   ordinary-Rhino topology

@@ -14,7 +14,40 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 approved private common Rhino published / specialist gate open
+Current EN-E10 private specialist Rhino candidate awaiting visual approval
+(2026-08-13): on `codex/en-e10-rhino-specialist`, based exactly on clean,
+published, remote-verified Mudplate reconciliation
+`fb99996abd98ae369dc6d1fdb436e8f97d54bc95`, the designer reply `approved
+and lets do next` opens exactly one private specialist Rhino full 80-frame
+candidate under the selected
+`baked-single-actor-natural-plated-low-grounded-quadruped` topology. Reedcrest
+Skirmisher is a lean slate-teal natural Rhino with a restrained forward
+shoulder wedge, three separated rust plate ridges, narrow pale reed face blaze
+and flank bars, compact dark wedge head, medium upswept sand-ivory horn and tiny
+nub, pointed ears, amber eyes, short tail, four weight-bearing legs, four broad
+three-toed feet, and a planted sidestep into an effect-free controlled rising
+horn sweep. Its exact 80-frame digest is
+`3125fe122e54f7a2d08c3f28cd179f2a8409a771001e9021217238a488348f8e`.
+Raw / outlined / Form / comparison PNG hashes are
+`70b6b0fbc2433acfa883bbe405ee4a62b043bf7af674b13a0d2e4a906e587842`,
+`1d7951acabb4c3b12fd3a16c165a65f5c42cc0721ed8b72b25a64db306b9594d`,
+`34674d927289e87e4502b77f3321a81863858f138f36572756f1410ae7b4bd3c`,
+and `b87f4961f1db5a0e11dc5b636b4c1db2f7d5d80d05a646120405111f446929c5`;
+raw / Form GIF hashes are
+`683051e6fdabbc96d7624644266ec25127bfe73e194a489ccad01a23c66e19bb`
+and `ebd69b5ed812888fb6601f70d0df869054efcf8206f81672d6c5ba7f440a7f49`.
+Focused validation passes all 80 structural, four-three-toed-foot, lean-span,
+alias, mirror, ridge/blaze, and comparison cases at opaque range 236-261. The
+protected Furious Depraved Rhino direction and full-animation candidates remain
+byte-exact. Pre-approval focused/fast/full gates pass in 0.6s/57.8s/110.0s.
+The four exact review PNGs are open in Aseprite as sprites 270, 274, 278, and
+282; the protected Boss references are open separately as sprites 294 and
+active 298. Public stays 92/294, all 232 fixtures remain unchanged, and child
+assets/effects/public registration/outline registration stay zero. Stop for
+explicit visual approval of the exact packet; no commit, push, elite Rhino,
+Boss change, release, accepted drift, or PR is open.
+
+Approved preceding EN-E10 private common Rhino checkpoint published / specialist gate open
 (2026-08-13): on `codex/en-e10-rhino-common`, based exactly on clean,
 published Rimevault reconciliation
 `df7a918c2b8ef13476cbf363663d42eec7638809`, the designer approved only

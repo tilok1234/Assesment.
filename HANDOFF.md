@@ -23,7 +23,69 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mudplate Grazer Published / Specialist Rhino Gate Open
+## Immediate Continuation Checkpoint - Reedcrest Skirmisher Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-rhino-specialist`. It branches exactly from clean, published,
+   remote-verified Mudplate reconciliation
+   `fb99996abd98ae369dc6d1fdb436e8f97d54bc95`.
+2. The designer replied `approved and lets do next` to the exact frozen
+   Mudplate Grazer packet. After that bounded publication tuple became clean
+   and remote verified, the continuation suffix opened exactly one private
+   specialist Rhino full 80-frame candidate under the selected
+   `baked-single-actor-natural-plated-low-grounded-quadruped` topology. It did
+   not approve candidate pixels or open the elite role.
+3. Reedcrest Skirmisher is a lean slate-teal specialist Rhino with a restrained
+   forward shoulder wedge, three separated rust-brown natural plate ridges,
+   compact dark green-gray wedge head, narrow pale reed face blaze and flank
+   bars, one medium upswept sand-ivory horn plus a tiny nub, pointed rose-brown
+   ears, amber eyes, short connected tail, four weight-bearing legs, and four
+   separated broad three-toed feet. Attack plants, shifts laterally, draws the
+   head back, performs one controlled body-owned rising horn sweep, and
+   recovers without a charge wake, horn arc, flare, impact, debris, or
+   corruption pixels. Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2.
+4. The frozen 80-frame digest is
+   `3125fe122e54f7a2d08c3f28cd179f2a8409a771001e9021217238a488348f8e`.
+   Raw / distinct Complete B outlined / Complete B + Form / family-comparison
+   PNG hashes are
+   `70b6b0fbc2433acfa883bbe405ee4a62b043bf7af674b13a0d2e4a906e587842`,
+   `1d7951acabb4c3b12fd3a16c165a65f5c42cc0721ed8b72b25a64db306b9594d`,
+   `34674d927289e87e4502b77f3321a81863858f138f36572756f1410ae7b4bd3c`,
+   and `b87f4961f1db5a0e11dc5b636b4c1db2f7d5d80d05a646120405111f446929c5`.
+   Raw and Complete B + Form GIF hashes are
+   `683051e6fdabbc96d7624644266ec25127bfe73e194a489ccad01a23c66e19bb`
+   and `ebd69b5ed812888fb6601f70d0df869054efcf8206f81672d6c5ba7f440a7f49`.
+5. Focused validation passes 80/80 connected, bounded, grounded, exactly
+   four-three-toed-foot, and lean-low-ridged-span frames; 54/54 expected horn,
+   eye, and wedge-face views; 72/72 ridge and reed-mark views; 8/8 exact-white
+   flashes; exact aliases and mirrors; and 80/80 pixel-plus-alpha distinctions
+   from approved Mudplate Grazer and Frostvein Wayfinder plus public Dire Wolf.
+   Opaque range is 236-261. Complete B adds 9,922 outline pixels and Form
+   changes 9,045 pixels. Focused / `check:fast` / full `check` pass in
+   0.6s / 57.8s / 110.0s. Public remains 92/294, all 232 fixtures stay
+   unchanged, and child assets, effects, public registration, and outline
+   registration remain zero. The protected Furious Depraved Rhino direction
+   and animation candidates remain byte-exact at SHA-256
+   `6ce979d356e986b207a09bf2e020fde25f2e4a496137fac96aa7bc6a567f2f86`
+   and `7c87c58b4854f75ff8827f66fe29a78b36ee198865e1f6e8d3d4e18d66f46ceb`.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-rhino-reedcrest-skirmisher/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-rhino-reedcrest-skirmisher` and
+   run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-rhino-reedcrest-skirmisher`. The
+   raw, outlined, Complete B + Form, family-comparison, synchronized GIFs, and
+   protected Boss direction/full-animation sheets form the complete visual
+   approval surface. The exact four review PNGs are open in Aseprite as sprites
+   270, 274, 278, and 282; the protected Boss direction and full-animation
+   sheets are open separately as sprites 294 and active 298. The outlined PNG
+   is evidence only; it does not authorize outline registration.
+7. Stop for explicit designer visual approval of this exact digest and six
+   hashes. Do not commit, push, register, publish, or open the elite role before
+   approval. Public or outline registration, fixtures, effects, child assets,
+   elite Rhino, every Furious Depraved Rhino Boss change, Runic Idol, release,
+   accepted drift, a PR, and every broader gate remain closed.
+
+## Approved Preceding Checkpoint - Mudplate Grazer Published / Specialist Rhino Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-rhino-common`. It branches exactly from clean, published,
