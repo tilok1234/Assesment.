@@ -107,8 +107,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: on `codex/en-e10-ram-elite`, based exactly on clean
-  published Cliffcoil reconciliation
+- Current published private art checkpoint: on `codex/en-e10-ram-elite`, based
+  exactly on clean published Cliffcoil reconciliation
   `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`, the designer's separate `lets
   xdo next` authorizes exactly one private elite Ram candidate under the
   approved `baked-single-actor-horned-grounded-quadruped` topology. Cragcrown
@@ -126,17 +126,19 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   outlined, Complete B + Form, and comparison PNGs plus two GIFs are hash-frozen
   and regenerate deterministically. Pre-approval focused / fast / full gates
   pass in 0.6s / 60.9s / 119.0s and approval-local focused / fast gates pass in
-  0.7s / 58.7s with public 92/294 and all 232 fixtures unchanged. The four exact
-  PNGs are open together in Aseprite as sprites 83, 87, 91, and active 95. The
-  outlined PNG is review evidence only, not outline registration. The final
-  prompt posted all four PNGs, both GIFs, and the exact digest; the designer
-  replied `approved`. Accepted implementation
+  0.7s / 58.7s with public 92/294 and all 232 fixtures unchanged. Final
+  published-state full validation passes in 115.0s with the same boundary. The
+  four exact PNGs are open together in Aseprite as sprites 83, 87, 91, and
+  active 95. The outlined PNG is review evidence only, not outline
+  registration. The final prompt posted all four PNGs, both GIFs, and the exact
+  digest; the designer replied `approved`. Accepted implementation
   `3d8727cce7d8b3f00ce8923ee9db629de13e1097` and approval record
-  `8b2cc029a94eaeae69dc1a0f4886dd899dfc6902` are remote verified. Only the
-  initial published handoff and final reconciliation remain open. No next Ram
-  art gate is open. Public/outline registration,
-  fixtures, effects, child assets, further Ram variants, later families,
-  release, accepted drift, a PR, and every later gate remain closed.
+  `8b2cc029a94eaeae69dc1a0f4886dd899dfc6902`, plus initial published handoff
+  `46645d2a2a84bc0669f0f5e5f4362da93abf0782`, are remote verified; this
+  reconciliation completes the bounded publication tuple. No next Ram art gate
+  is open. Public/outline registration, fixtures, effects, child assets, further
+  Ram variants, later families, release, accepted drift, a PR, and every later
+  gate remain closed.
 - Approved preceding published private art checkpoint: on `codex/en-e10-ram-specialist`, based exactly
   on clean published Stonecurl reconciliation
   `67ba19086669b9135286784b6c9c39f682ca3032`, the designer's separate `lets do

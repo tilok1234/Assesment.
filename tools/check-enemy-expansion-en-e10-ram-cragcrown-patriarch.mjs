@@ -144,8 +144,8 @@ check(
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.approvedImplementation === '3d8727cce7d8b3f00ce8923ee9db629de13e1097'
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.publishedImplementation === '3d8727cce7d8b3f00ce8923ee9db629de13e1097'
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.publishedApprovalRecord === '8b2cc029a94eaeae69dc1a0f4886dd899dfc6902'
-    && EN_E10_CRAGCROWN_PATRIARCH_GATE.initialPublishedHandoff === ''
-    && EN_E10_CRAGCROWN_PATRIARCH_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.initialPublishedHandoff === '46645d2a2a84bc0669f0f5e5f4362da93abf0782'
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.publicationState === 'published',
   'elite Ram authorization or outlined-review boundary drifted',
 );
 check(
@@ -183,7 +183,7 @@ check(
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.exclusions.includes('additional Ram variants')
-    && EN_E10_CRAGCROWN_PATRIARCH_GATE.nextGate.includes('implementation 3d8727cce7d8b3f00ce8923ee9db629de13e1097 and approval record 8b2cc029a94eaeae69dc1a0f4886dd899dfc6902 are remote verified')
+    && EN_E10_CRAGCROWN_PATRIARCH_GATE.nextGate.includes('implementation 3d8727cce7d8b3f00ce8923ee9db629de13e1097, approval record 8b2cc029a94eaeae69dc1a0f4886dd899dfc6902, and initial published handoff 46645d2a2a84bc0669f0f5e5f4362da93abf0782 are remote verified')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.nextGate.includes('No next Ram art gate is open')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.nextGate.includes('review evidence only')
     && EN_E10_CRAGCROWN_PATRIARCH_GATE.nextGate.includes('does not authorize outline registration'),

@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private art gate (2026-08-13): from clean published Cliffcoil
+- Current published private art checkpoint (2026-08-13): from clean published Cliffcoil
   reconciliation `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`, the designer's
   separate `lets xdo next` authorizes exactly one private elite Ram under the
   approved `baked-single-actor-horned-grounded-quadruped` topology. Cragcrown
@@ -32,13 +32,15 @@
   plus two GIFs are hash-frozen and deterministic. Pre-approval focused / fast /
   full gates pass in 0.6s / 60.9s / 119.0s and approval-local focused / fast
   gates pass in 0.7s / 58.7s with public 92/294 and all 232 fixtures unchanged.
+  Final published-state full validation passes in 115.0s with the same boundary.
   The exact four PNGs are open together in Aseprite as sprites 83, 87, 91, and
   active 95. The outlined PNG is review evidence only, not outline registration.
   The designer replied `approved` to the exact posted packet. Accepted
   implementation `3d8727cce7d8b3f00ce8923ee9db629de13e1097` and approval
-  record `8b2cc029a94eaeae69dc1a0f4886dd899dfc6902` are remote verified. Only the
-  initial published handoff and final reconciliation remain open. No next Ram
-  art gate is open.
+  record `8b2cc029a94eaeae69dc1a0f4886dd899dfc6902`, plus initial published handoff
+  `46645d2a2a84bc0669f0f5e5f4362da93abf0782`, are remote verified; this
+  reconciliation completes the bounded publication tuple. No next Ram art gate
+  is open.
   Public/outline registration, fixtures, effects, child assets, further Ram
   variants, later families, release, accepted drift, a PR, and every later gate
   remain closed.
@@ -5507,7 +5509,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common, specialist, and elite approved and published; Ram common and specialist approved and published; Ram elite approved and undergoing bounded publication; later families closed`
+- Status: `Hyena common, specialist, and elite approved and published; Ram common, specialist, and elite approved and published; later families closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5658,16 +5660,17 @@ range 282-303. The hash-frozen packet includes raw, required distinct Complete
 B outlined, Complete B + Form, and comparison PNGs plus two GIFs and regenerates
 deterministically. Pre-approval focused / fast / full gates pass in 0.6s /
 60.9s / 119.0s and approval-local focused / fast gates pass in 0.7s / 58.7s
-with public 92/294 and all 232 fixtures unchanged. The four exact PNGs are open
-together in Aseprite as sprites 83, 87, 91, and active 95. The outlined PNG is
-review evidence only and does not change outline registration. The designer
-replied `approved` to the exact posted digest and six hashes. Accepted
+with public 92/294 and all 232 fixtures unchanged. Final published-state full
+validation passes in 115.0s with the same boundary. The four exact PNGs are
+open together in Aseprite as sprites 83, 87, 91, and active 95. The outlined
+PNG is review evidence only and does not change outline registration. The
+designer replied `approved` to the exact posted digest and six hashes. Accepted
 implementation `3d8727cce7d8b3f00ce8923ee9db629de13e1097` and approval record
-`8b2cc029a94eaeae69dc1a0f4886dd899dfc6902` are remote verified. Only the
-initial published handoff and final reconciliation remain open. No next Ram art
-gate is open. Registration, fixtures, effects, child assets, further Ram
-variants, Stag, Mammoth, Rhino, Rhino Boss work, and all later gates remain
-closed.
+`8b2cc029a94eaeae69dc1a0f4886dd899dfc6902`, plus initial published handoff
+`46645d2a2a84bc0669f0f5e5f4362da93abf0782`, are remote verified; this
+reconciliation completes the bounded publication tuple. No next Ram art gate
+is open. Registration, fixtures, effects, child assets, further Ram variants,
+Stag, Mammoth, Rhino, Rhino Boss work, and all later gates remain closed.
 
 ### EN-E11 - Birds
 
@@ -5903,8 +5906,7 @@ tracked branch. Those source checkpoints are now included only through the
 authorized v2 adapter. The exact private EN-E10 Cliffcoil Strider specialist Ram
 documented above is approved, published, and reconciled. The exact private
 Cragcrown Patriarch elite Ram is hash-frozen, fully validated, open in Aseprite,
-visually approved, and undergoing its bounded publication tuple; no subsequent
-art gate is open.
+visually approved, published, and reconciled; no subsequent art gate is open.
 The three EN-E03 Idle-only variants, other incomplete candidates, Headless Rider
 prototypes, bosses, fixtures, effects, release, accepted drift, and a PR remain
 separate closed gates.

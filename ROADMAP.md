@@ -14,8 +14,9 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private art gate (2026-08-13): from clean published Cliffcoil
-reconciliation `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`, the designer's
+Current published EN-E10 private art checkpoint (2026-08-13): from clean
+published Cliffcoil reconciliation `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`,
+the designer's
 separate `lets xdo next` authorizes exactly one private elite Ram under the
 approved `baked-single-actor-horned-grounded-quadruped` topology. Cragcrown
 Patriarch on `codex/en-e10-ram-elite` is a broad connected grounded Ram with
@@ -30,16 +31,18 @@ three-way pixel/alpha distinction gate at opaque range 282-303. The raw,
 required distinct Complete B outlined, Complete B + Form, and comparison PNGs
 plus two GIFs are hash-frozen and deterministic. Pre-approval focused / fast /
 full gates pass in 0.6s / 60.9s / 119.0s and approval-local focused / fast gates
-pass in 0.7s / 58.7s with public 92/294 and all 232 fixtures unchanged. The
+pass in 0.7s / 58.7s with public 92/294 and all 232 fixtures unchanged. Final
+published-state full validation passes in 115.0s with the same boundary. The
 exact four PNGs are open together in Aseprite as sprites 83, 87, 91, and active
 95. The outlined PNG is review evidence only, not outline registration. The
 designer replied `approved` to the exact posted packet. Accepted implementation
 `3d8727cce7d8b3f00ce8923ee9db629de13e1097` and approval record
-`8b2cc029a94eaeae69dc1a0f4886dd899dfc6902` are remote verified. Only the
-initial published handoff and final reconciliation remain open. No next Ram
-art gate is open. Public/outline registration,
-fixtures, effects, child assets, further Ram variants, later families, release,
-accepted drift, a PR, and every later gate remain closed.
+`8b2cc029a94eaeae69dc1a0f4886dd899dfc6902`, plus initial published handoff
+`46645d2a2a84bc0669f0f5e5f4362da93abf0782`, are remote verified; this
+reconciliation completes the bounded publication tuple. No next Ram art gate
+is open. Public/outline registration, fixtures, effects, child assets, further
+Ram variants, later families, release, accepted drift, a PR, and every later
+gate remain closed.
 
 Approved preceding published EN-E10 private art checkpoint (2026-08-13): from clean published
 Stonecurl reconciliation `67ba19086669b9135286784b6c9c39f682ca3032`, the

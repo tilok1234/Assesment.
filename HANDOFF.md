@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Cragcrown Patriarch Approval Publication
+## Immediate Continuation Checkpoint - Cragcrown Patriarch Published / No Next Gate
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-ram-elite`. It is based exactly on the clean published
@@ -66,6 +66,8 @@ gate.
    the approval-local focused / fast gates pass in 0.7s / 58.7s, with public
    92/294, both approved Rams exact, all 232 fixture sheets unchanged, zero
    child assets/effects, and no public or outline registration.
+   Final published-state full validation passes in 115.0s with the same
+   protected boundary.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-ram-cragcrown-patriarch/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-ram-cragcrown-patriarch` and run
@@ -79,9 +81,10 @@ gate.
    digest `b8c7159c1d85689b3b9178179464b54e01a7ae538a1bda0036eb731d7d7d6c0a`.
    The designer replied `approved`. Approval applies only to that exact packet;
    accepted implementation `3d8727cce7d8b3f00ce8923ee9db629de13e1097`
-   records it. The implementation and approval record
-   `8b2cc029a94eaeae69dc1a0f4886dd899dfc6902` are remote verified. Only the
-   initial published handoff and final reconciliation remain open.
+   records it. The implementation, approval record
+   `8b2cc029a94eaeae69dc1a0f4886dd899dfc6902`, and initial published handoff
+   `46645d2a2a84bc0669f0f5e5f4362da93abf0782` are remote verified; this
+   reconciliation completes the bounded publication tuple.
 8. Public Ram or outline registration, fixtures, effects, child assets, further
    Ram variants, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
    deferred Runic Idol decision, release, accepted drift, a PR, and every later
