@@ -149,8 +149,8 @@ check(
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.publishedImplementation === '03618d6ca98ad1a93596bdbe501edcf1cedd466a'
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.publishedApprovalRecord === '36c43772911aa0ab81d4a417fc1ad2a29531aa30'
-    && EN_E10_FROSTVEIN_WAYFINDER_GATE.initialPublishedHandoff === ''
-    && EN_E10_FROSTVEIN_WAYFINDER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.initialPublishedHandoff === 'c03f2fb05746398e530ff80e2ebacbe261cc5422'
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.publicationState === 'published'
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.precedingApproval.gateId === EN_E10_TUNDRAHIDE_GRAZER_GATE.id
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.precedingApproval.candidateFrameDigest === EN_E10_TUNDRAHIDE_GRAZER_GATE.candidateFrameDigest
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.precedingApproval.publishedImplementation === EN_E10_TUNDRAHIDE_GRAZER_GATE.publishedImplementation
@@ -179,7 +179,8 @@ check(
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.exclusions.includes('public Mammoth registration or outline registration')
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('implementation 03618d6ca98ad1a93596bdbe501edcf1cedd466a')
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('approval record 36c43772911aa0ab81d4a417fc1ad2a29531aa30')
-    && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('initial published handoff c03f2fb05746398e530ff80e2ebacbe261cc5422')
+    && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('reconciliation completes the bounded publication tuple')
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('private elite Mammoth full 80-frame candidate')
     && EN_E10_FROSTVEIN_WAYFINDER_GATE.nextGate.includes('review evidence only'),
   'specialist Mammoth anatomy, effect firewall, motion, or stop boundary drifted',

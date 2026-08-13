@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Frostvein Wayfinder Published / Handoff Reconciliation Pending
+## Immediate Continuation Checkpoint - Frostvein Wayfinder Published / Elite Mammoth Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-specialist`. It branches exactly from the clean,
@@ -58,7 +58,8 @@ gate.
    mirrors; and 80/80 pixel-plus-alpha distinctions from approved Tundrahide
    Grazer and Cliffcoil Strider plus public Dire Wolf. Opaque range is 221-281.
    Complete B adds 10,250 outline pixels and Form changes 9,573 pixels.
-   `check:fast` and full `check` pass in 56.5s and 109.5s, with public 92/294,
+   Pre-approval `check:fast` and full `check` passed in 56.5s and 109.5s;
+   final published-state fast/full validation passes in 61.6s and 113.6s, with public 92/294,
    all 232 fixture sheets unchanged, zero child assets/effects, and no public
    or outline registration.
 6. Exact review files are under
@@ -74,15 +75,15 @@ gate.
    binds only digest
    `2fbcd71017d4acacb9e8cfee31d984ad9f039634af79cb656180b11a08f1250e`
    and the six hashes above at accepted implementation
-   `03618d6ca98ad1a93596bdbe501edcf1cedd466a`. That implementation and approval
-   record `36c43772911aa0ab81d4a417fc1ad2a29531aa30` are pushed and remote
-   verified. Only the initial published handoff and final reconciliation remain
-   open. The continuation suffix remains held until that exact tuple is clean
-   and remote verified; it then opens exactly one private elite Mammoth full
-   80-frame candidate on a new isolated branch from the clean reconciliation
-   under the selected topology. It does not authorize public/outline
-   registration, fixtures, effects, child assets, Rhino or Rhino Boss work,
-   Runic Idol, release, accepted drift, a PR, or any broader gate.
+   `03618d6ca98ad1a93596bdbe501edcf1cedd466a`. That implementation, approval
+   record `36c43772911aa0ab81d4a417fc1ad2a29531aa30`, and initial published
+   handoff `c03f2fb05746398e530ff80e2ebacbe261cc5422` are pushed and remote
+   verified; this reconciliation completes the bounded publication tuple. The
+   continuation suffix opens exactly one private elite Mammoth full 80-frame
+   candidate on a new isolated branch from this clean reconciliation under the
+   selected topology. It does not authorize public/outline registration,
+   fixtures, effects, child assets, Rhino or Rhino Boss work, Runic Idol,
+   release, accepted drift, a PR, or any broader gate.
 
 ## Approved Preceding Checkpoint - Tundrahide Grazer Published / Specialist Mammoth Gate Open
 

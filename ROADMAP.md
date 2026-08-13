@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private specialist Mammoth checkpoint published / handoff reconciliation pending
+Current EN-E10 private specialist Mammoth checkpoint published / elite Mammoth gate open
 (2026-08-13): on `codex/en-e10-mammoth-specialist`, based exactly on clean
 published Tundrahide reconciliation
 `125b1b81d0f6fa977c3bf674964a45131e65f3ab`, Frostvein Wayfinder is a lean,
@@ -32,19 +32,21 @@ and `8ae03110e5b2097f14b5797953134bc7e8b4ec9d3892ae9c0a290861bb01ff9c`;
 raw / Form GIF hashes are
 `7300c456c32c38bc5f040b93c21be5e0d81a1596d21ad46c99ed13975aaa7e5e`
 and `87b730870744d5db6bbdb5109c384f69cfeec3ab5402e9a8055a2f0a8bdccf18`.
-Focused validation and fast/full gates pass, with fast/full at 56.5s/109.5s:
+Focused validation and pre-approval fast/full gates pass at 56.5s/109.5s;
+final published-state fast/full validation passes at 61.6s/113.6s:
 80/80 structural, four-foot, specialist-span, and three-way pixel/alpha-
 distinct frames; opaque range 221-281; public 92/294; all 232 fixtures
 unchanged; zero child assets/effects; no public or outline registration. Exact
 PNGs are open in Aseprite as sprites 179, 183, 187, and active 191. The
 designer replied `approved lets do next`; accepted implementation
-`03618d6ca98ad1a93596bdbe501edcf1cedd466a` and approval record
-`36c43772911aa0ab81d4a417fc1ad2a29531aa30` are pushed and remote verified.
-Only the initial published handoff and final reconciliation remain open. The
-continuation suffix is held until that tuple is clean and remote verified,
-then opens exactly one private elite Mammoth full 80-frame candidate.
-Public/outline registration, fixtures, effects, child assets, Rhino, release,
-accepted drift, and a PR remain closed.
+`03618d6ca98ad1a93596bdbe501edcf1cedd466a`, approval record
+`36c43772911aa0ab81d4a417fc1ad2a29531aa30`, and initial published handoff
+`c03f2fb05746398e530ff80e2ebacbe261cc5422` are pushed and remote verified;
+this reconciliation completes the bounded publication tuple. The continuation
+suffix opens exactly one private elite Mammoth full 80-frame candidate on a
+new isolated branch from this clean checkpoint. Public/outline registration,
+fixtures, effects, child assets, Rhino, release, accepted drift, and a PR
+remain closed.
 
 Approved preceding EN-E10 private common Mammoth checkpoint published / specialist Mammoth gate open
 (2026-08-13): from clean published Gloamcrown reconciliation
