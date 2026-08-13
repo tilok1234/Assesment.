@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private specialist Rhino publication checkpoint: on
+- Current approved private specialist Rhino published / elite gate closed: on
   `codex/en-e10-rhino-specialist`, based exactly on clean, published,
   remote-verified Mudplate reconciliation
   `fb99996abd98ae369dc6d1fdb436e8f97d54bc95`, the designer reply `approved
@@ -134,18 +134,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   cases at opaque range 236-261. Pre-approval focused/fast/full gates pass in
   0.6s/57.8s/110.0s; approval-local focused/fast gates pass again against the
   exact digest and hashes, with fast completing in 61.3s. Protected Furious
-  Depraved Rhino Boss assets
-  remain exact. The four exact review PNGs are open in Aseprite as sprites 270,
-  274, 278, and 282; the protected Boss direction and full-animation sheets
-  are open separately as sprites 294 and active 298. The designer replied
-  `approved` to that exact packet. Accepted implementation
-  `2f02388f941088f0fdadff809c3b048ba2e93734` and approval record
-  `c0ab513f576f0e66cafcc0b36a3467b13e790936` are remote verified. Only the
-  initial published handoff and final reconciliation remain open. The reply
-  contains no continuation request, so elite Rhino remains closed throughout
-  and after publication until separately authorized. Public stays
-  92/294 and all 232 fixtures stay unchanged. No registration, fixtures,
-  effects, child assets, Boss change, release, drift acceptance, or PR is open.
+  Depraved Rhino Boss assets remain exact. Final published-state
+  focused/fast/full gates pass in 0.6s/60.4s/118.5s. The four exact review
+  PNGs are open in Aseprite as sprites 270, 274, 278, and 282; the protected
+  Boss direction and full-animation sheets are open separately as sprites 294
+  and active 298. The designer replied `approved` to that exact packet.
+  Accepted implementation `2f02388f941088f0fdadff809c3b048ba2e93734`,
+  approval record `c0ab513f576f0e66cafcc0b36a3467b13e790936`, and initial
+  published handoff `bbe25e76653622c93b99068268f10791a35a9dc2` are remote
+  verified; this reconciliation completes the bounded publication tuple. The
+  reply contains no continuation request, so no private elite Rhino candidate
+  or other Rhino work is open; a fresh explicit continuation is required.
+  Public stays 92/294 and all 232 fixtures stay unchanged. No registration,
+  fixtures, effects, child assets, Boss change, release, drift acceptance, or
+  PR is open.
 - Approved preceding private common Rhino checkpoint published / specialist gate open: on
   `codex/en-e10-rhino-common`, based exactly on clean Rimevault reconciliation
   `df7a918c2b8ef13476cbf363663d42eec7638809`, the designer approved only the

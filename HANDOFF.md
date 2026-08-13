@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Reedcrest Skirmisher Publication Reconciliation
+## Immediate Continuation Checkpoint - Reedcrest Skirmisher Published / Elite Rhino Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-rhino-specialist`. It branches exactly from clean, published,
@@ -64,7 +64,8 @@ gate.
    changes 9,045 pixels. Pre-approval focused / `check:fast` / full `check`
    pass in 0.6s / 57.8s / 110.0s; approval-local focused validation and
    `check:fast` pass again against the exact digest and hashes, with fast
-   completing in 61.3s. Public remains 92/294, all 232 fixtures stay
+   completing in 61.3s. Final published-state focused / `check:fast` / full
+   `check` pass in 0.6s / 60.4s / 118.5s. Public remains 92/294, all 232 fixtures stay
    unchanged, and child assets, effects, public registration, and outline
    registration remain zero. The protected Furious Depraved Rhino direction
    and animation candidates remain byte-exact at SHA-256
@@ -86,12 +87,13 @@ gate.
    `3125fe122e54f7a2d08c3f28cd179f2a8409a771001e9021217238a488348f8e`.
    The designer replied `approved`. Approval applies only to that exact packet;
    accepted implementation
-   `2f02388f941088f0fdadff809c3b048ba2e93734` and approval record
-   `c0ab513f576f0e66cafcc0b36a3467b13e790936` are remote verified.
-8. Only the initial published handoff and final reconciliation remain open. The
-   reply contains no continuation request, so elite Rhino remains closed
-   throughout and after publication until separately authorized. Public or
-   outline registration, fixtures, effects,
+   `2f02388f941088f0fdadff809c3b048ba2e93734`, approval record
+   `c0ab513f576f0e66cafcc0b36a3467b13e790936`, and initial published handoff
+   `bbe25e76653622c93b99068268f10791a35a9dc2` are remote verified.
+8. This reconciliation completes the bounded publication tuple. The reply
+   contains no continuation request, so no private elite Rhino candidate or
+   other Rhino work is open; a fresh explicit continuation is required. Public
+   or outline registration, fixtures, effects,
    child assets, every Furious Depraved Rhino Boss change, Runic Idol, release,
    accepted drift, a PR, and every broader gate remain closed.
 

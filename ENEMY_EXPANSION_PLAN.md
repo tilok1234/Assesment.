@@ -5750,9 +5750,9 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer approved and published; private specialist Reedcrest Skirmisher approved and publication in progress; elite Rhino closed`
+- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer and specialist Reedcrest Skirmisher approved and published; elite Rhino closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
-- Priority-first: complete the bounded specialist Reedcrest Skirmisher publication tuple; keep elite Rhino closed
+- Priority-first: no active Rhino art lane; require a fresh explicit continuation before elite Rhino work
 
 Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
@@ -5816,17 +5816,19 @@ ridge/blaze, alias, mirror, and comparison cases, with approved Mudplate and
 Frostvein plus public Dire Wolf exact and the protected Boss assets byte-exact.
 Pre-approval focused/fast/full gates pass in 0.6s/57.8s/110.0s;
 approval-local focused/fast gates pass again against the exact digest and
-hashes, with fast completing in 61.3s.
+hashes, with fast completing in 61.3s. Final published-state focused/fast/full
+gates pass in 0.6s/60.4s/118.5s.
 The four exact review PNGs are open in Aseprite as sprites 270, 274, 278, and
 282; the protected Boss direction and full-animation sheets are open separately
 as sprites 294 and active 298. The final approval prompt posted all four exact
 PNGs, both synchronized GIFs, and the frozen digest; the designer replied
 `approved`. Approval binds only to accepted implementation
 `2f02388f941088f0fdadff809c3b048ba2e93734` and those hashes. Its approval
-record `c0ab513f576f0e66cafcc0b36a3467b13e790936` is also remote verified.
-Only the initial published handoff and final reconciliation remain open. The
-reply contains no continuation request, so elite Rhino remains closed
-throughout and after publication until separately authorized. Public or outline registration,
+record `c0ab513f576f0e66cafcc0b36a3467b13e790936` and initial published handoff
+`bbe25e76653622c93b99068268f10791a35a9dc2` are also remote verified; this
+reconciliation completes the bounded publication tuple. The reply contains no
+continuation request, so no private elite Rhino candidate or other Rhino work
+is open; a fresh explicit continuation is required. Public or outline registration,
 fixtures, effects, child assets, every Boss change, release, accepted drift,
 and a PR remain closed.
 
