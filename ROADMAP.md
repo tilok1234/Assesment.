@@ -45,10 +45,11 @@ hashes, with fast completing in 61.3s.
 The four exact review PNGs are open in Aseprite as sprites 270, 274, 278, and
 282; the protected Boss references are open separately as sprites 294 and
 active 298. The designer replied `approved` to that exact packet. Accepted
-implementation `2f02388f941088f0fdadff809c3b048ba2e93734` records only the
-frozen digest. Standing permission opens its approval record, branch push, and
-bounded reconciliation. The reply contains no continuation request, so elite
-Rhino remains closed after publication until separately authorized. Public
+implementation `2f02388f941088f0fdadff809c3b048ba2e93734` and approval record
+`c0ab513f576f0e66cafcc0b36a3467b13e790936` are remote verified. Only the
+initial published handoff and final reconciliation remain open. The reply
+contains no continuation request, so elite Rhino remains closed throughout
+and after publication until separately authorized. Public
 stays 92/294, all 232 fixtures remain unchanged, and child assets/effects/
 public registration/outline registration stay zero. No Boss change, release,
 accepted drift, or PR is open.

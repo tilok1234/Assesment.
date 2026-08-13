@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Reedcrest Skirmisher Approval Publication
+## Immediate Continuation Checkpoint - Reedcrest Skirmisher Publication Reconciliation
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-rhino-specialist`. It branches exactly from clean, published,
@@ -86,11 +86,12 @@ gate.
    `3125fe122e54f7a2d08c3f28cd179f2a8409a771001e9021217238a488348f8e`.
    The designer replied `approved`. Approval applies only to that exact packet;
    accepted implementation
-   `2f02388f941088f0fdadff809c3b048ba2e93734` records it locally.
-8. Standing publication permission opens only the approval record, branch
-   push, and bounded handoff reconciliation. The reply contains no
-   continuation request, so elite Rhino remains closed after publication until
-   separately authorized. Public or outline registration, fixtures, effects,
+   `2f02388f941088f0fdadff809c3b048ba2e93734` and approval record
+   `c0ab513f576f0e66cafcc0b36a3467b13e790936` are remote verified.
+8. Only the initial published handoff and final reconciliation remain open. The
+   reply contains no continuation request, so elite Rhino remains closed
+   throughout and after publication until separately authorized. Public or
+   outline registration, fixtures, effects,
    child assets, every Furious Depraved Rhino Boss change, Runic Idol, release,
    accepted drift, a PR, and every broader gate remain closed.
 

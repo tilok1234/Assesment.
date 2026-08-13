@@ -139,10 +139,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   274, 278, and 282; the protected Boss direction and full-animation sheets
   are open separately as sprites 294 and active 298. The designer replied
   `approved` to that exact packet. Accepted implementation
-  `2f02388f941088f0fdadff809c3b048ba2e93734` records only the frozen digest.
-  Standing permission opens its approval record, branch push, and bounded
-  reconciliation. The reply contains no continuation request, so elite Rhino
-  remains closed after publication until separately authorized. Public stays
+  `2f02388f941088f0fdadff809c3b048ba2e93734` and approval record
+  `c0ab513f576f0e66cafcc0b36a3467b13e790936` are remote verified. Only the
+  initial published handoff and final reconciliation remain open. The reply
+  contains no continuation request, so elite Rhino remains closed throughout
+  and after publication until separately authorized. Public stays
   92/294 and all 232 fixtures stay unchanged. No registration, fixtures,
   effects, child assets, Boss change, release, drift acceptance, or PR is open.
 - Approved preceding private common Rhino checkpoint published / specialist gate open: on

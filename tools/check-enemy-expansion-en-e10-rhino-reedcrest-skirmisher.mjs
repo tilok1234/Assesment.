@@ -124,10 +124,10 @@ check(
     && EN_E10_REEDCREST_SKIRMISHER_GATE.approvedImplementation === '2f02388f941088f0fdadff809c3b048ba2e93734'
     && EN_E10_REEDCREST_SKIRMISHER_GATE.publicationAuthorizedOn === '2026-08-13'
     && EN_E10_REEDCREST_SKIRMISHER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E10_REEDCREST_SKIRMISHER_GATE.publishedImplementation === ''
-    && EN_E10_REEDCREST_SKIRMISHER_GATE.publishedApprovalRecord === ''
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.publishedImplementation === '2f02388f941088f0fdadff809c3b048ba2e93734'
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.publishedApprovalRecord === 'c0ab513f576f0e66cafcc0b36a3467b13e790936'
     && EN_E10_REEDCREST_SKIRMISHER_GATE.initialPublishedHandoff === ''
-    && EN_E10_REEDCREST_SKIRMISHER_GATE.publicationState === 'approved-not-published'
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E10_REEDCREST_SKIRMISHER_GATE.precedingApproval.gateId === EN_E10_MUDPLATE_GRAZER_GATE.id
     && EN_E10_REEDCREST_SKIRMISHER_GATE.precedingApproval.candidateFrameDigest === EN_E10_MUDPLATE_GRAZER_GATE.candidateFrameDigest
     && EN_E10_REEDCREST_SKIRMISHER_GATE.precedingApproval.publishedImplementation === EN_E10_MUDPLATE_GRAZER_GATE.publishedImplementation
@@ -153,8 +153,9 @@ check(
     && EN_E10_REEDCREST_SKIRMISHER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_REEDCREST_SKIRMISHER_GATE.exclusions.includes('public Rhino registration or outline registration')
     && EN_E10_REEDCREST_SKIRMISHER_GATE.exclusions.includes('any Furious Depraved Rhino Boss source, catalog, roster, or asset change')
-    && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('implementation 2f02388f941088f0fdadff809c3b048ba2e93734')
-    && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('elite Rhino remains closed')
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('implementation 2f02388f941088f0fdadff809c3b048ba2e93734 and approval record c0ab513f576f0e66cafcc0b36a3467b13e790936 are remote verified')
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('elite Rhino stays closed')
     && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('review evidence only'),
   'specialist Rhino anatomy, effect firewall, motion, or stop boundary drifted',
 );

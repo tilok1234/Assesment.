@@ -107,10 +107,10 @@ export const EN_E10_REEDCREST_SKIRMISHER_GATE = deepFreeze({
   approvedImplementation: '2f02388f941088f0fdadff809c3b048ba2e93734',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '2f02388f941088f0fdadff809c3b048ba2e93734',
+  publishedApprovalRecord: 'c0ab513f576f0e66cafcc0b36a3467b13e790936',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E10_MUDPLATE_GRAZER_GATE.id,
     artifactSha256: EN_E10_MUDPLATE_GRAZER_GATE.artifactSha256,
@@ -167,7 +167,7 @@ export const EN_E10_REEDCREST_SKIRMISHER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Reedcrest Skirmisher packet is visually approved at implementation 2f02388f941088f0fdadff809c3b048ba2e93734. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The designer reply contains no continuation request, so elite Rhino remains closed after publication until separately authorized. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Rhino registration, fixtures, effects, child assets, every Boss change, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Reedcrest Skirmisher implementation 2f02388f941088f0fdadff809c3b048ba2e93734 and approval record c0ab513f576f0e66cafcc0b36a3467b13e790936 are remote verified. Only the initial published handoff and final reconciliation remain open. The designer reply contains no continuation request, so elite Rhino stays closed throughout and after publication until separately authorized. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Rhino registration, fixtures, effects, child assets, every Boss change, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_REEDCREST_SKIRMISHER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -431,7 +431,7 @@ export const EN_E10_REEDCREST_SKIRMISHER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'reedcrest-skirmisher',
     scale: 8,
-    notes: 'Visually approved as one exact private specialist Rhino against approved Mudplate Grazer and Frostvein Wayfinder plus public Dire Wolf, with the protected Furious Depraved Rhino Boss direction and full-animation candidates reviewed separately and unchanged. Accepted implementation 2f02388f941088f0fdadff809c3b048ba2e93734 records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. The designer reply contains no continuation request, so keep public or outline registration, fixtures, effects, child assets, elite Rhino, every Boss change, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private specialist Rhino against approved Mudplate Grazer and Frostvein Wayfinder plus public Dire Wolf, with the protected Furious Depraved Rhino Boss direction and full-animation candidates reviewed separately and unchanged. Accepted implementation 2f02388f941088f0fdadff809c3b048ba2e93734 and approval record c0ab513f576f0e66cafcc0b36a3467b13e790936 are remote verified. Only the initial published handoff and final reconciliation remain open. The distinct Complete B outlined PNG remains review evidence only. The designer reply contains no continuation request, so keep public or outline registration, fixtures, effects, child assets, elite Rhino, every Boss change, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 
