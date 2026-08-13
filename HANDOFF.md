@@ -23,6 +23,67 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Candidate - Gloamgaze Stalker / Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-cockatrice-specialist`. It branches exactly from clean,
+   pushed, remote-verified Bramblecomb final reconciliation
+   `f95144ee3fc656dcb624567ee003d344185cbfe5`.
+2. The designer replied `approved lets do next` to Bramblecomb's exact frozen
+   packet. That reply approved and published only the common candidate. Its
+   continuation opens exactly one private specialist Cockatrice full 80-frame
+   candidate under the selected
+   `baked-single-actor-grounded-serpent-tailed-cockerel` topology. It does not
+   approve Gloamgaze pixels or authorize commit, push, publication, public or
+   outline registration, fixtures, effects, child assets, elite Cockatrice,
+   another Bird family, release, accepted drift, or a PR.
+3. Gloamgaze Stalker is one connected lean, high-necked cockerel-and-serpent
+   actor with a forked violet comb, bone hooked beak, long teal/slate neck and
+   pale mint throat mask, dusk-plum torso, angular rose-copper wings, two
+   separated copper talon contacts, and one long connected blue-black
+   teal-marked tail ending in a raised wedge hook. Attack plants both talons,
+   raises a forked gaze-screen posture, folds an angular wing through the face
+   line, lifts the connected tail into a high hooked counter-feint, drives a
+   short beak feint, and recovers. Cast aliases Attack; Death aliases Hurt
+   H1,H2,H2,H2. Petrification, venom, dust, glow, projectiles, and impacts stay
+   external.
+4. The frozen 80-frame candidate digest is
+   `7752f15be95848bb5af6d1b89e79cd9f07ff3f1be8776427857497773d5b4eb8`.
+   Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+   hashes are
+   `6c68b97f972f396b93cdffc51508846f626fa408c07ccbc346ad5834d96ca9c8`,
+   `e2334a8c390e8ff461fceefd5fb2f520331b185d050d17b33cd0bce35424f49a`,
+   `290ae13e6502ae5247540e48bc7ce433a498f254d40c1cf22d1e989db69a7eb7`,
+   and `c61716adca6a92d6c64a76bfd7bdb308b5b9a27c1ef28e5f3b09ae9df8c72ba9`.
+   Raw and Complete B + Form GIF hashes are
+   `866ec849db45b9c6bd5bda91b7e918b6fba63ac78389a51d744eab5dae13fc84`
+   and `600c2a2de173c5b9c9cf55fed7a16e4ee330a688b968e10e1145fe599aa40e1a`.
+5. Focused validation passes 80/80 connected, bounded, grounded, two-talon,
+   and hybrid-span frames; 16/16 connected high-hook attack/cast views; 54/54
+   expected eye-and-beak views; 72/72 comb, tail, wing, and scale views; 8/8
+   exact `#f4f4f4` flashes; exact aliases and mirrors; and 80/80 pixel-plus-
+   alpha distinctions from approved Bramblecomb Scratcher, approved Aerie
+   Scout, and public Marsh Crocodile. Opaque range is 195-260. Complete B adds
+   8,688 outline pixels and Form changes 9,191 pixels. The transparent 20x4
+   inspection atlas passes exact dimensions, hard alpha, non-empty-cell, and
+   strict-boundary checks. Focused / fast / full validation passes in about
+   0.8s / 58.2s / 116.3s. Public remains 92/294, all 232 fixtures stay exact,
+   and child assets, effects, public registration, and outline registration
+   remain zero.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-cockatrice-gloamgaze-stalker/`. Regenerate
+   with
+   `npm.cmd run review:enemy-expansion-en-e11-cockatrice-gloamgaze-stalker`
+   and run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-cockatrice-gloamgaze-stalker`.
+   All four exact PNGs and all four raw animation phase sheets were inspected
+   at original resolution. The outlined PNG is review evidence only.
+7. Stop for explicit designer visual approval of the exact four PNGs, two
+   GIFs, and candidate digest. No specialist commit or push has been made.
+   Do not register, regenerate fixtures, add effects or child assets, begin
+   elite Cockatrice or another Bird family, release, accept drift, or open a
+   PR.
+
 ## Current Published Checkpoint - Bramblecomb Scratcher / Specialist Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch

@@ -15,6 +15,41 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
+- Current private specialist Cockatrice candidate awaiting visual approval
+  (2026-08-13): on `codex/en-e11-cockatrice-specialist`, based exactly on the
+  clean, pushed, remote-verified Bramblecomb reconciliation
+  `f95144ee3fc656dcb624567ee003d344185cbfe5`, the designer's `approved lets do
+  next` approves only that common packet and opens exactly one private
+  specialist Cockatrice full 80-frame candidate under the selected
+  `baked-single-actor-grounded-serpent-tailed-cockerel` topology. Gloamgaze
+  Stalker is one connected lean, high-necked teal/slate and dusk-plum
+  cockerel-and-serpent actor with a forked violet comb, pale mint throat mask,
+  angular rose-copper wings, two separated copper talon contacts, and one long
+  connected blue-black tail ending in a high wedge hook. Attack plants both
+  talons, raises a forked gaze-screen posture, crosses a wing through the face
+  line, lifts the tail into a hooked counter-feint, drives a short beak feint,
+  and recovers without a baked effect. Its frozen digest is
+  `7752f15be95848bb5af6d1b89e79cd9f07ff3f1be8776427857497773d5b4eb8`.
+  Raw / outlined / Form / comparison PNG hashes are
+  `6c68b97f972f396b93cdffc51508846f626fa408c07ccbc346ad5834d96ca9c8`,
+  `e2334a8c390e8ff461fceefd5fb2f520331b185d050d17b33cd0bce35424f49a`,
+  `290ae13e6502ae5247540e48bc7ce433a498f254d40c1cf22d1e989db69a7eb7`,
+  and `c61716adca6a92d6c64a76bfd7bdb308b5b9a27c1ef28e5f3b09ae9df8c72ba9`;
+  raw / Form GIF hashes are
+  `866ec849db45b9c6bd5bda91b7e918b6fba63ac78389a51d744eab5dae13fc84`
+  and `600c2a2de173c5b9c9cf55fed7a16e4ee330a688b968e10e1145fe599aa40e1a`.
+  Focused/fast/full validation passes in about 0.8s/58.2s/116.3s: all 80
+  frames connected, bounded, grounded, two-talon, and pixel-plus-alpha
+  distinct from Bramblecomb, Aerie Scout, and Marsh Crocodile at opaque range
+  195-260; 16/16 high-hook attack/cast views; exact aliases/mirrors; exact
+  inspection atlas; public 92/294; all 232 fixtures unchanged; zero child
+  assets/effects/public or outline registration. All four exact PNGs and all
+  four raw phase sheets were inspected at original resolution. Candidate
+  pixels are not approved, committed, or pushed. Stop for explicit visual
+  approval. Registration, fixtures, effects, child assets, elite Cockatrice,
+  Raven, Owl, Phoenix, release, accepted drift, a PR, and every broader gate
+  remain closed.
+
 - Current approved private common Cockatrice published / specialist gate open
   (2026-08-13): on `codex/en-e11-cockatrice-common`, based exactly on clean,
   pushed, remote-verified Crownveil reconciliation

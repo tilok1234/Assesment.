@@ -14,6 +14,39 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
+Current EN-E11 private specialist Cockatrice candidate awaiting visual approval
+(2026-08-13): on `codex/en-e11-cockatrice-specialist`, based exactly on clean,
+pushed, remote-verified Bramblecomb reconciliation
+`f95144ee3fc656dcb624567ee003d344185cbfe5`, the designer's `approved lets do
+next` approved only the common packet and opened exactly one private specialist
+Cockatrice candidate under the selected
+`baked-single-actor-grounded-serpent-tailed-cockerel` topology. Gloamgaze
+Stalker is one connected lean teal/slate, dusk-plum, rose-copper, violet, mint,
+and blue-black cockerel-and-serpent actor with a high forked comb, pale throat
+mask, angular wings, two separated talon contacts, and a long body-owned tail
+ending in a raised wedge hook. Attack plants both talons, raises a forked
+gaze-screen posture, crosses a wing through the face line, lifts the tail into
+a high hooked counter-feint, drives a short beak feint, and recovers without a
+baked effect. Its exact candidate digest is
+`7752f15be95848bb5af6d1b89e79cd9f07ff3f1be8776427857497773d5b4eb8`.
+Raw / outlined / Form / comparison PNG hashes are
+`6c68b97f972f396b93cdffc51508846f626fa408c07ccbc346ad5834d96ca9c8`,
+`e2334a8c390e8ff461fceefd5fb2f520331b185d050d17b33cd0bce35424f49a`,
+`290ae13e6502ae5247540e48bc7ce433a498f254d40c1cf22d1e989db69a7eb7`,
+and `c61716adca6a92d6c64a76bfd7bdb308b5b9a27c1ef28e5f3b09ae9df8c72ba9`;
+raw / Form GIF hashes are
+`866ec849db45b9c6bd5bda91b7e918b6fba63ac78389a51d744eab5dae13fc84`
+and `600c2a2de173c5b9c9cf55fed7a16e4ee330a688b968e10e1145fe599aa40e1a`.
+Focused/fast/full gates pass in about 0.8s/58.2s/116.3s with all 80 frames
+structural, two-talon, and pixel-plus-alpha distinct from Bramblecomb, Aerie,
+and Marsh Crocodile at opaque range 195-260; 16/16 hooked attack/cast views;
+public 92/294; all 232 fixtures exact; zero child assets/effects/registration.
+The exact review PNGs and raw phase sheets were inspected at original
+resolution. Candidate pixels are not approved, committed, or pushed. Stop for
+explicit visual approval; registration, fixtures, effects, outline
+registration, elite Cockatrice, other Bird families, release, accepted drift,
+and a PR remain closed.
+
 Current EN-E11 approved private common Cockatrice published / specialist gate open
 (2026-08-13): on `codex/en-e11-cockatrice-common`, based exactly on clean,
 pushed, remote-verified Crownveil reconciliation
