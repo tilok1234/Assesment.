@@ -14,7 +14,40 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 approved private elite Rhino published / next gate closed
+Current EN-E11 private common Peacock candidate / visual approval required
+(2026-08-13): on `codex/en-e11-peacock-common`, based exactly on clean,
+published, remote-verified Stonefern reconciliation
+`51033b2385fe5e3eab64006b935a85c91140e86f`, the designer selected Birds with
+`lets do birds for now`, then replied `approved and letsd go` to the proposed
+`baked-single-actor-grounded-fan-tailed-bird` topology and bounded candidate.
+This opens exactly one private common Peacock full 80-frame candidate; it does
+not approve its pixels or publication. Rainfan Forager is a connected natural
+ground bird with a compact crest, long cobalt-and-teal neck, moss body, bronze
+folded wings, two separated three-toed talon contacts, and one connected teal
+eyespot train. Attack opens the body-owned train into a partial fan, follows
+with a short wing buffet and beak strike, then recovers without any baked
+effect. Its exact 80-frame digest is
+`061a67e81e4c2bb4e7ed528953d2acf1e19d1453b2098ddceff1c01ca4e38128`.
+Raw / outlined / Form / comparison PNG hashes are
+`4a0b21ddca2ec6786e541fd6890e1984897f80cfa936776c6fec571201d123a2`,
+`2c65e3b9dba6cfa50c0bf79fefd99bd13456a4616e25e903e886d65835f022ce`,
+`1c2b0bf4a41a4695d18aaaea3e45545cd650a42cc727a7750824992ae1a2cc2d`,
+and `d8c7f3951067c959c16388e1a388521a77f0ba08e5866199c59555c7cad2a46d`;
+raw / Form GIF hashes are
+`5cebea74dcfc6bc70f349f8d90fb9e5a88aaeeac3971a7bcaf41ab9942b8e182`
+and `a0c8f2f7f07da4f2e67bda4093eadf510444abfba29eaa72cb2c2e5317a816db`.
+Focused validation passes all 80 structural, two-talon, natural-bird-span,
+alias, mirror, palette, and three-way comparison cases at opaque range 168-300;
+16/16 fan-open views preserve broad connected eyespot trains. The transparent
+inspection atlas passes dimensions, hard alpha, empty-cell, and strict
+boundary checks. Focused/fast/full gates pass in about
+0.6s/56.8s/106.4s. Public stays 92/294, all 232 fixtures remain unchanged,
+and child assets/effects/public registration/outline registration stay zero.
+The four exact review PNGs were inspected in Aseprite. Stop for explicit visual
+approval; no commit, push, publication, registration, fixture, effect, later
+Peacock role, other Bird family, release, accepted drift, or PR is open.
+
+Approved preceding EN-E10 private elite Rhino published / Peacock gate opened later
 (2026-08-13): on
 `codex/en-e10-rhino-elite`, based exactly on clean, published, remote-verified
 Reedcrest reconciliation `b0313abeeaadea7e14b62339e280469b08b37653`, the

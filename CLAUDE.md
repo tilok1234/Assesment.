@@ -107,7 +107,42 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private elite Rhino published / next gate closed: on
+- Current private common Peacock candidate / visual approval required: on
+  `codex/en-e11-peacock-common`, based exactly on clean, published,
+  remote-verified Stonefern reconciliation
+  `51033b2385fe5e3eab64006b935a85c91140e86f`, the designer selected Birds
+  with `lets do birds for now`, then replied `approved and letsd go` to the
+  proposed `baked-single-actor-grounded-fan-tailed-bird` topology and bounded
+  candidate. This opens exactly one private common Peacock full 80-frame
+  candidate; it does not approve its pixels or open publication. Rainfan
+  Forager is one connected natural ground bird with a crested cobalt-and-teal
+  head and neck, compact moss body, two bronze folded wings, two separated
+  three-toed talon contacts, and one connected teal eyespot train. Attack
+  plants both talons, opens a partial body-owned fan, drives a short wing
+  buffet and beak strike, and recovers without loose feathers, wind, glow,
+  dust, projectiles, air blades, or impacts. Its frozen digest is
+  `061a67e81e4c2bb4e7ed528953d2acf1e19d1453b2098ddceff1c01ca4e38128`.
+  Raw / outlined / Form / comparison PNG hashes are
+  `4a0b21ddca2ec6786e541fd6890e1984897f80cfa936776c6fec571201d123a2`,
+  `2c65e3b9dba6cfa50c0bf79fefd99bd13456a4616e25e903e886d65835f022ce`,
+  `1c2b0bf4a41a4695d18aaaea3e45545cd650a42cc727a7750824992ae1a2cc2d`,
+  and `d8c7f3951067c959c16388e1a388521a77f0ba08e5866199c59555c7cad2a46d`;
+  raw / Form GIF hashes are
+  `5cebea74dcfc6bc70f349f8d90fb9e5a88aaeeac3971a7bcaf41ab9942b8e182`
+  and `a0c8f2f7f07da4f2e67bda4093eadf510444abfba29eaa72cb2c2e5317a816db`.
+  Focused validation passes all 80 connected/bounded/grounded/two-talon/
+  natural-bird-span frames, 16/16 open-fan views, exact aliases and mirrors,
+  and 80/80 pixel-plus-alpha distinctions from approved Aerie Scout, public
+  Harpy Screecher, and public Griffin Royal at opaque range 168-300. The
+  transparent inspection atlas passes dimensions, hard alpha, empty-cell, and
+  strict boundary checks. Focused / fast / full gates pass in about
+  0.6s / 56.8s / 106.4s. Public stays 92/294, all 232 fixtures remain exact,
+  and child assets/effects/public registration/outline registration stay zero.
+  The four exact review PNGs were inspected in Aseprite. Stop for explicit
+  visual approval: no commit, push, publication, registration, fixtures,
+  effects, later Peacock role, other Bird family, release, accepted drift, or
+  PR is open; the outlined PNG is review evidence only.
+- Approved preceding private elite Rhino published / Peacock gate opened later: on
   `codex/en-e10-rhino-elite`, based exactly on clean, published,
   remote-verified Reedcrest reconciliation
   `b0313abeeaadea7e14b62339e280469b08b37653`, the designer first asked

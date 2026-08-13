@@ -23,7 +23,65 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Stonefern Bastion Published / Next Gate Closed
+## Immediate Continuation Checkpoint - Rainfan Forager Private Candidate / Visual Approval Required
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-peacock-common`. It branches exactly from clean, published,
+   remote-verified Stonefern reconciliation
+   `51033b2385fe5e3eab64006b935a85c91140e86f`.
+2. After asking about the remaining candidate categories, the designer selected
+   Birds with `lets do birds for now`. Codex proposed the
+   `baked-single-actor-grounded-fan-tailed-bird` Peacock topology, and the
+   designer replied `approved and letsd go`. This authorizes exactly one
+   private common Peacock full 80-frame candidate. It does not approve the
+   candidate pixels, publication, registration, fixtures, effects, later
+   Peacock roles, or another Bird family.
+3. Rainfan Forager is one connected natural ground bird with a compact crested
+   head, long cobalt-and-teal neck, moss-green body, two burnished-bronze
+   folded wings, two legs ending in separated broad three-toed talon contacts,
+   and one connected dark-teal train with readable gold/cyan eyespots. Attack
+   braces on both talons, opens the body-owned train into a partial fan, drives
+   a short wing buffet and beak strike, and recovers. Cast aliases Attack;
+   Death aliases Hurt H1,H2,H2,H2. Loose feathers, wind, gust rings, dust,
+   glow, projectiles, air blades, and impacts remain external.
+4. The frozen 80-frame digest is
+   `061a67e81e4c2bb4e7ed528953d2acf1e19d1453b2098ddceff1c01ca4e38128`.
+   Raw / distinct Complete B outlined / Complete B + Form / avian-comparison
+   PNG hashes are
+   `4a0b21ddca2ec6786e541fd6890e1984897f80cfa936776c6fec571201d123a2`,
+   `2c65e3b9dba6cfa50c0bf79fefd99bd13456a4616e25e903e886d65835f022ce`,
+   `1c2b0bf4a41a4695d18aaaea3e45545cd650a42cc727a7750824992ae1a2cc2d`,
+   and `d8c7f3951067c959c16388e1a388521a77f0ba08e5866199c59555c7cad2a46d`.
+   Raw and Complete B + Form GIF hashes are
+   `5cebea74dcfc6bc70f349f8d90fb9e5a88aaeeac3971a7bcaf41ab9942b8e182`
+   and `a0c8f2f7f07da4f2e67bda4093eadf510444abfba29eaa72cb2c2e5317a816db`.
+5. Focused validation passes 80/80 connected, bounded, grounded, exactly
+   two-three-toed-talon, and long-necked natural-bird-span frames; 16/16 broad
+   open-fan views; 54/54 expected eye and beak views; 72/72 crest, train, and
+   wing views; 8/8 exact `#f4f4f4` flashes; exact aliases and mirrors; and
+   80/80 pixel-plus-alpha distinctions from approved Aerie Scout plus public
+   Harpy Screecher and Griffin Royal. Opaque range is 168-300. Complete B adds
+   7,646 outline pixels and Form changes 9,268 pixels. The transparent 20x4
+   inspection atlas passes exact dimensions, hard alpha, non-empty-cell, and
+   strict boundary checks. Focused / `check:fast` / full `check` pass in about
+   0.6s / 56.8s / 106.4s. Public remains 92/294, all 232 fixtures stay
+   unchanged, and child assets, effects, public registration, and outline
+   registration remain zero.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-peacock-rainfan-forager/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e11-peacock-rainfan-forager` and run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-peacock-rainfan-forager`. The raw,
+   outlined, Complete B + Form, avian-comparison, and synchronized GIF files
+   form the complete review surface. All four exact PNGs were opened and
+   inspected in Aseprite. The outlined PNG is evidence only; it does not
+   authorize outline registration.
+7. Stop here for explicit visual approval of this exact packet. Do not commit,
+   push, publish, register, regenerate fixtures, add effects, open Peacock
+   specialist or elite, begin Cockatrice/Raven/Owl/Phoenix, release, accept
+   drift, or open a PR without the corresponding later authorization.
+
+## Approved Preceding Checkpoint - Stonefern Bastion Published / Peacock Gate Opened Later
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-rhino-elite`. It branches exactly from clean, published,

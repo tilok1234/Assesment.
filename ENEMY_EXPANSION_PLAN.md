@@ -6211,13 +6211,59 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `queued`
+- Status: `common-candidate-review`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 
 Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
+
+#### Current authorized Peacock common candidate
+
+After comparing the remaining candidate categories, the designer said `lets do
+birds for now`. Codex proposed the
+`baked-single-actor-grounded-fan-tailed-bird` topology for the Peacock common,
+and the designer replied `approved and letsd go`. This authorizes exactly one
+private common Peacock full 80-frame candidate from clean, published,
+remote-verified Stonefern reconciliation
+`51033b2385fe5e3eab64006b935a85c91140e86f`; it does not approve candidate
+pixels, publication, registration, fixtures, effects, later Peacock roles, or
+another Bird family.
+
+Rainfan Forager is one connected natural ground bird with a compact crested
+head, long cobalt-and-teal neck, moss body, two burnished-bronze folded wings,
+two separated broad three-toed talon contacts, and one connected dark-teal
+gold/cyan-eyespot train. Attack braces on both talons, opens the train into a
+partial body-owned fan, drives a short wing buffet and beak strike, and
+recovers. Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2. Loose feathers,
+wind streaks, gust rings, dust, glow, projectiles, air blades, and impacts
+remain external.
+
+The frozen 80-frame digest is
+`061a67e81e4c2bb4e7ed528953d2acf1e19d1453b2098ddceff1c01ca4e38128`.
+Raw / distinct Complete B outlined / Complete B + Form / avian-comparison PNG
+hashes are
+`4a0b21ddca2ec6786e541fd6890e1984897f80cfa936776c6fec571201d123a2`,
+`2c65e3b9dba6cfa50c0bf79fefd99bd13456a4616e25e903e886d65835f022ce`,
+`1c2b0bf4a41a4695d18aaaea3e45545cd650a42cc727a7750824992ae1a2cc2d`,
+and `d8c7f3951067c959c16388e1a388521a77f0ba08e5866199c59555c7cad2a46d`.
+Raw and Complete B + Form GIF hashes are
+`5cebea74dcfc6bc70f349f8d90fb9e5a88aaeeac3971a7bcaf41ab9942b8e182`
+and `a0c8f2f7f07da4f2e67bda4093eadf510444abfba29eaa72cb2c2e5317a816db`.
+Focused validation passes all 80 connected, bounded, grounded, two-talon, and
+natural-bird-span frames; 16/16 open-fan views; 54/54 eye/beak views; 72/72
+crest/train/wing views; exact aliases and mirrors; and 80/80 pixel-plus-alpha
+distinctions from approved Aerie Scout plus public Harpy Screecher and Griffin
+Royal. The transparent inspection atlas passes dimensions, hard alpha,
+non-empty-cell, and strict boundary checks. Focused/fast/full gates pass in
+about 0.6s/56.8s/106.4s with public 92/294, all 232 fixtures unchanged, and
+zero child assets, effects, public registration, or outline registration.
+
+Stop for explicit visual approval of the exact four PNGs, two GIFs, and digest.
+No commit, push, publication, registration, fixture, effect, specialist/elite
+Peacock, Cockatrice, Raven, Owl, Phoenix, release, accepted drift, or PR is
+open. The outlined PNG is review evidence only.
 
 ### EN-E12 - Mythic composite creatures
 
