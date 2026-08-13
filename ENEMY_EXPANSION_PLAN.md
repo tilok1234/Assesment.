@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private elite Mammoth checkpoint published / handoff reconciliation pending
+- Current private elite Mammoth checkpoint published / no next Mammoth gate open
   (2026-08-13): on `codex/en-e10-mammoth-elite`, based exactly on clean,
   published, remote-verified Frostvein reconciliation
   `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch is one
@@ -35,17 +35,18 @@
   and `2bdc517179096917e9bcdac97e4558d34b150f0c75569bbb8e392c49d3603fdd`.
   Focused validation passes all 80 structural, four-foot,
   crescent-tusk-vaulted-span, alias, mirror, and three-way pixel/alpha-
-  distinction cases at opaque range 274-315. Fast/full gates pass at
-  61.4s/112.5s, public remains 92/294, and all 232 fixtures remain unchanged.
+  distinction cases at opaque range 274-315. Pre-approval fast/full gates pass
+  at 61.4s/112.5s; approval-local fast/full gates pass at 62.9s/115.7s; final
+  published-state fast/full gates pass at 61.7s/122.9s with public 92/294 and all 232 fixtures unchanged.
   Exact PNGs are open in Aseprite as sprites 222, 226, 230, and active 234.
   The designer replied `approved`; accepted implementation
-  `702a93964de696cb246ca144b0d9a946c81875c9` and approval record
-  `91e012e1682db1db0bb4cec0f692d86b19c962d1` are pushed and remote verified.
-  Only the initial published handoff and final reconciliation remain open. No
-  continuation clause was supplied, so no next Mammoth role or Rhino gate is
-  open. Public/outline registration, fixtures, effects, child assets, Rhino,
-  Rhino Boss work, release, accepted drift, a PR, and every broader gate remain
-  closed.
+  `702a93964de696cb246ca144b0d9a946c81875c9`, approval record
+  `91e012e1682db1db0bb4cec0f692d86b19c962d1`, and initial published handoff
+  `78c574c1b50e4b17e2a3a551500cbaf6d17c855e` are pushed and remote verified;
+  this reconciliation completes the bounded publication tuple. No continuation
+  clause was supplied, so no next Mammoth role or Rhino gate is open.
+  Public/outline registration, fixtures, effects, child assets, Rhino, Rhino
+  Boss work, release, accepted drift, a PR, and every broader gate remain closed.
 
 - Approved preceding private specialist Mammoth checkpoint published / elite Mammoth gate open
   (2026-08-13): on `codex/en-e10-mammoth-specialist`, based exactly on clean
@@ -5721,7 +5722,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, and Stag common, specialist, and elite approved and published; Mammoth common and specialist approved and published; Mammoth elite Rimevault Matriarch published with handoff reconciliation pending; Rhino closed`
+- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; no next Mammoth gate open; Rhino closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -6044,17 +6045,19 @@ checks against approved Frostvein Wayfinder and Tundrahide Grazer plus public
 Dire Wolf at opaque range 274-315. The hash-frozen packet includes raw,
 required distinct Complete B outlined, Complete B + Form, and comparison PNGs
 plus two GIFs and regenerates deterministically. Focused / fast / full gates
-pass, with fast/full at 61.4s/112.5s, public 92/294, all 232 fixtures unchanged,
-zero child assets/effects, and no public or outline registration. The exact raw,
+pass, with pre-approval fast/full at 61.4s/112.5s and approval-local fast/full
+at 62.9s/115.7s; final published-state fast/full gates pass at 61.7s/122.9s with public 92/294, all 232
+fixtures unchanged, zero child assets/effects, and no public or outline registration. The exact raw,
 outlined, Complete B + Form, and comparison PNGs are open together in Aseprite
 as sprites 222, 226, 230, and active 234. The outlined PNG is review evidence
 only and does not change outline registration. The designer replied `approved`
 to the exact frozen digest and six review hashes. Accepted implementation
-`702a93964de696cb246ca144b0d9a946c81875c9` and approval record
-`91e012e1682db1db0bb4cec0f692d86b19c962d1` are pushed and remote verified.
-Only the initial published handoff and final reconciliation remain open. No
-continuation clause was supplied, so no next Mammoth role or Rhino gate is
-open; Rhino Boss work and all broader gates remain closed.
+`702a93964de696cb246ca144b0d9a946c81875c9`, approval record
+`91e012e1682db1db0bb4cec0f692d86b19c962d1`, and initial published handoff
+`78c574c1b50e4b17e2a3a551500cbaf6d17c855e` are pushed and remote verified;
+this reconciliation completes the bounded publication tuple. No continuation
+clause was supplied, so no next Mammoth role or Rhino gate is open; Rhino Boss
+work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 

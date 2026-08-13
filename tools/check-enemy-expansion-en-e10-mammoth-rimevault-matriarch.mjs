@@ -142,8 +142,8 @@ check(
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.publishedImplementation === '702a93964de696cb246ca144b0d9a946c81875c9'
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.publishedApprovalRecord === '91e012e1682db1db0bb4cec0f692d86b19c962d1'
-    && EN_E10_RIMEVAULT_MATRIARCH_GATE.initialPublishedHandoff === ''
-    && EN_E10_RIMEVAULT_MATRIARCH_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.initialPublishedHandoff === '78c574c1b50e4b17e2a3a551500cbaf6d17c855e'
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.publicationState === 'published'
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.precedingApproval.gateId === EN_E10_FROSTVEIN_WAYFINDER_GATE.id
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.precedingApproval.candidateFrameDigest === EN_E10_FROSTVEIN_WAYFINDER_GATE.candidateFrameDigest
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.precedingApproval.publishedImplementation === EN_E10_FROSTVEIN_WAYFINDER_GATE.publishedImplementation
@@ -172,7 +172,8 @@ check(
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.exclusions.includes('public Mammoth registration or outline registration')
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('implementation 702a93964de696cb246ca144b0d9a946c81875c9')
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('approval record 91e012e1682db1db0bb4cec0f692d86b19c962d1')
-    && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('initial published handoff and final reconciliation remain open')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('initial published handoff 78c574c1b50e4b17e2a3a551500cbaf6d17c855e')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('reconciliation completes the bounded publication tuple')
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('no next Mammoth role')
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('review evidence only'),
   'elite Mammoth anatomy, effect firewall, motion, or stop boundary drifted',

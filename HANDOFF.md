@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Rimevault Matriarch Published / Handoff Reconciliation Pending
+## Immediate Continuation Checkpoint - Rimevault Matriarch Published / No Next Mammoth Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-elite`. It branches exactly from the clean,
@@ -58,10 +58,11 @@ gate.
    trunk-face views; 8/8 exact-white flashes; exact aliases and mirrors; and
    80/80 pixel-plus-alpha distinctions from approved Frostvein Wayfinder and
    Tundrahide Grazer plus public Dire Wolf. Opaque range is 274-315. Complete B
-   adds 10,179 outline pixels and Form changes 9,033 pixels. `check:fast` and
-   full `check` pass in 61.4s and 112.5s, with public 92/294, all 232 fixture
-   sheets unchanged, zero child assets/effects, and no public or outline
-   registration.
+   adds 10,179 outline pixels and Form changes 9,033 pixels. Pre-approval
+   `check:fast` and full `check` pass in 61.4s and 112.5s; approval-local
+   fast/full validation passes in 62.9s and 115.7s. Final published-state
+   fast/full gates pass in 61.7s and 122.9s with public 92/294, all 232 fixture sheets unchanged, zero child
+   assets/effects, and no public or outline registration.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-mammoth-rimevault-matriarch/`. Regenerate
    with
@@ -75,13 +76,14 @@ gate.
    digest
    `db9d43c24dc9c3e958cdba595866333cfee14d67658524a7f02c1f6d912c5763`
    and the six hashes above at accepted implementation
-   `702a93964de696cb246ca144b0d9a946c81875c9`. That implementation and approval
-   record `91e012e1682db1db0bb4cec0f692d86b19c962d1` are pushed and remote
-   verified. Only the initial published handoff and final reconciliation remain
-   open. No continuation clause was supplied, so no next Mammoth role or Rhino
-   gate is open after this tuple is complete. It does not authorize public or
-   outline registration, fixtures, effects, child assets, Rhino or Rhino Boss
-   work, Runic Idol, release, accepted drift, a PR, or any broader gate.
+   `702a93964de696cb246ca144b0d9a946c81875c9`. That implementation, approval
+   record `91e012e1682db1db0bb4cec0f692d86b19c962d1`, and initial published
+   handoff `78c574c1b50e4b17e2a3a551500cbaf6d17c855e` are pushed and remote
+   verified; this reconciliation completes the bounded publication tuple. No
+   continuation clause was supplied, so no next Mammoth role or Rhino gate is
+   open. It does not authorize public or outline registration, fixtures,
+   effects, child assets, Rhino or Rhino Boss work, Runic Idol, release,
+   accepted drift, a PR, or any broader gate.
 
 ## Approved Preceding Checkpoint - Frostvein Wayfinder Published / Elite Mammoth Gate Open
 
