@@ -15,7 +15,8 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private elite Stag gate awaiting visual approval (2026-08-13): from
+- Current private elite Stag gate approved / publication in progress
+  (2026-08-13): from
   clean remote-verified Briarstep handoff
   `595b2b2b18ebe7e111486df96624b4e1f057647b`, the designer's `awesine lets keep
   going` opens exactly one private elite Stag under the selected
@@ -34,15 +35,21 @@
   raw / Form GIF hashes are
   `8403dbb9d1443590ccb34e72a12b73b5a6141e98011159cfa3ae9ee40e8b1795`
   and `33dab8a93c5156b07e97733c44c928436d1cc747241a887b897552471ef859f5`.
-  Focused / fast / full validation is green: 80/80 connected, bounded,
-  grounded, split-hoof, crown-rack, and Briarstep / Mossrack / Dire Wolf
-  pixel-plus-alpha-distinct frames; opaque range 196-234; public 92/294; all
-  232 fixtures unchanged; zero child assets/effects; no public or outline
-  registration. Exact PNGs are open in Aseprite as sprites 131, 135, 139, and
-  active 143. The outlined board is evidence only. The candidate is uncommitted
-  and unpushed pending explicit visual approval. Registration, fixtures,
-  effects, child assets, Mammoth, Rhino, Rhino Boss work, release, accepted
-  drift, a PR, and every broader gate remain closed.
+  Focused / fast / full validation is green, with approval-local focused / fast
+  passing in 0.8s / 56.6s: 80/80 connected, bounded, grounded, split-hoof,
+  crown-rack, and Briarstep / Mossrack / Dire Wolf pixel-plus-alpha-distinct
+  frames; opaque range 196-234; public 92/294; all 232 fixtures unchanged; zero
+  child assets/effects; no public or outline registration. Exact PNGs are open
+  in Aseprite as sprites 131, 135, 139, and
+  active 143. The outlined board is evidence only. The designer replied
+  `approved lets do next`; accepted implementation
+  `0ece468efeaf4b50351358020075b4bf91dc7cff` anchors only that frozen packet.
+  Standing permission opens its bounded approval publication and
+  reconciliation. After that tuple is clean and remote verified, the suffix
+  opens only the Mammoth actor-topology decision, not Mammoth pixels.
+  Registration, fixtures, effects, child assets, additional Stag variants,
+  Rhino, Rhino Boss work, release, accepted drift, a PR, and every broader gate
+  remain closed.
 
 - Current approved private art checkpoint published / no next Stag gate
   (2026-08-13): from

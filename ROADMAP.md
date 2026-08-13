@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private elite Stag gate awaiting visual approval (2026-08-13):
+Current EN-E10 private elite Stag gate approved / publication in progress (2026-08-13):
 from clean remote-verified Briarstep handoff
 `595b2b2b18ebe7e111486df96624b4e1f057647b`, the designer's `awesine lets keep
 going` opens exactly one private elite Stag under the selected
@@ -33,13 +33,19 @@ and `1bd4fbdda04870c55b13891adead703decf7508a9509fb54a188f7b50c49697e`;
 raw / Form GIF hashes are
 `8403dbb9d1443590ccb34e72a12b73b5a6141e98011159cfa3ae9ee40e8b1795`
 and `33dab8a93c5156b07e97733c44c928436d1cc747241a887b897552471ef859f5`.
-Focused / fast / full validation is green: 80/80 connected, bounded, grounded,
-split-hoof, crown-rack, and Briarstep / Mossrack / Dire Wolf pixel-plus-alpha
-distinct frames; opaque range 196-234; public 92/294; all 232 fixtures
-unchanged. Exact PNGs are open in Aseprite as sprites 131, 135, 139, and active
-143. The outlined board is evidence only. The candidate is uncommitted and
-unpushed pending explicit visual approval. Registration, fixtures, effects,
-child assets, later families, release, accepted drift, and a PR remain closed.
+Focused / fast / full validation is green, with approval-local focused / fast
+passing in 0.8s / 56.6s: 80/80 connected, bounded, grounded, split-hoof,
+crown-rack, and Briarstep / Mossrack / Dire Wolf pixel-plus-alpha distinct
+frames; opaque range 196-234; public 92/294; all 232 fixtures unchanged. Exact
+PNGs are open in Aseprite as sprites 131, 135, 139, and active
+143. The outlined board is evidence only. The designer replied `approved lets
+do next`; accepted implementation
+`0ece468efeaf4b50351358020075b4bf91dc7cff` anchors only that frozen packet.
+Standing permission opens its bounded approval publication and reconciliation.
+After that tuple is clean and remote verified, the suffix opens only the
+Mammoth actor-topology decision, not Mammoth pixels. Registration, fixtures,
+effects, child assets, additional Stag variants, Rhino, release, accepted
+drift, and a PR remain closed.
 
 Current approved EN-E10 private art checkpoint published / no next Stag gate
 (2026-08-13):

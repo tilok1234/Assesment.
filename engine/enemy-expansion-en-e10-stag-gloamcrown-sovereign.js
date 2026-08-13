@@ -49,7 +49,7 @@ export const EN_E10_STAG_ELITE_CONTRACT_CARD = deepFreeze({
     id: 'gloamcrown-sovereign',
     name: 'Gloamcrown Sovereign',
     role: 'elite',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   actorTopology: EN_E10_STAG_TOPOLOGY_DECISION.selected,
@@ -62,7 +62,7 @@ export const EN_E10_GLOAMCROWN_SOVEREIGN_CONTRACT = deepFreeze({
   family: 'stag',
   variant: 'gloamcrown-sovereign',
   role: 'elite',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_STAG_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-broad-midnight-plum-royal-mantle-vast-crown-antler-four-split-hoof-stag-v1',
   silhouette: 'A broad elite Stag with a deep but lifted barrel, high royal shoulder mantle, long powerful neck, tapered dark muzzle, paired ears, two vast connected outward-branching crown antlers, a short pale flag tail, four weight-bearing legs, and four visibly split hooves. It must read heavier and more sovereign than Briarstep Harrier and Mossrack Forager while remaining unlike a bowed Miremane Courser, long-backed Dire Wolf, ring-horned Ram, Mammoth, or reduced Rhino Boss.',
@@ -104,11 +104,20 @@ export const EN_E10_GLOAMCROWN_SOVEREIGN_DATA = deepFreeze({
 
 export const EN_E10_GLOAMCROWN_SOVEREIGN_GATE = deepFreeze({
   id: 'en-e10-stag-gloamcrown-sovereign-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '595b2b2b18ebe7e111486df96624b4e1f057647b',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Briarstep Harrier implementation 8d52dc26d9d361c5d95603276a4a88b3978a585e, approval record 895456020801fa40a31d7e83413895e0440c505e, initial published handoff 40fd66c20f3b01ddd927ecb83c807c96c5feec7b, final reconciliation f25ebea08723db889298ebce2db606421ed03282, and next-chat handoff 595b2b2b18ebe7e111486df96624b4e1f057647b were pushed and remote verified. The handoff recorded that no next Stag art gate was open. The designer then separately said: awesine lets keep going. In the established common-specialist-elite cadence this authorizes exactly one private elite Stag full 80-frame candidate under the already approved baked-single-actor-antlered-grounded-quadruped topology. Continue the distinct Complete B outlined PNG as review evidence only; it does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, additional Stag variants, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, and every broader art gate remain closed.',
   architectureDecision: EN_E10_STAG_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Briarstep Harrier and Mossrack Forager plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The Aseprite review session reported those exact four paths open together as raw sprite 131, outlined sprite 135, Complete B + Form sprite 139, and active comparison sprite 143. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest 5a80240ca6bfb16eb6a53b0b95b5214323a9dde25814b48fb39e9caaf11e4855. The designer replied: approved lets do next. Approval applies only to that exact Gloamcrown Sovereign digest and its six frozen review hashes. The continuation suffix is held until the bounded publication tuple is clean and remote verified, after which it opens only the Mammoth actor-topology decision, not Mammoth pixels. It does not authorize public Stag or outline registration, fixtures, effects, child assets, additional Stag variants, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: '0ece468efeaf4b50351358020075b4bf91dc7cff',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_BRIARSTEP_HARRIER_GATE.id,
     artifactSha256: EN_E10_BRIARSTEP_HARRIER_GATE.artifactSha256,
@@ -165,7 +174,7 @@ export const EN_E10_GLOAMCROWN_SOVEREIGN_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop for explicit designer visual approval of this exact frozen Gloamcrown Sovereign digest and its four PNG plus two GIF review hashes. Do not commit, push, register, or publish the candidate before approval. The distinct outlined PNG is review evidence only and does not authorize outline registration. Additional Stag variants plus Mammoth, Rhino, and all broader gates remain closed.',
+  nextGate: 'The exact Gloamcrown Sovereign packet is visually approved at implementation 0ece468efeaf4b50351358020075b4bf91dc7cff. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The designer reply includes lets do next, but that suffix remains held until this exact publication tuple is clean and remote verified; it then opens only the Mammoth actor-topology decision and does not authorize Mammoth pixels. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, additional Stag variants, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_GLOAMCROWN_SOVEREIGN_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -505,7 +514,7 @@ export const EN_E10_GLOAMCROWN_SOVEREIGN_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'gloamcrown-sovereign',
     scale: 8,
-    notes: 'Awaiting explicit visual approval as one exact private elite Stag against approved Briarstep Harrier and Mossrack Forager plus public Dire Wolf. The packet includes raw, distinct Complete B outlined, Complete B + Form, comparison, and two synchronized GIF artifacts. Keep outline/public registration, fixtures, effects, child assets, additional Stag variants, Mammoth, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private elite Stag against approved Briarstep Harrier and Mossrack Forager plus public Dire Wolf. Accepted implementation 0ece468efeaf4b50351358020075b4bf91dc7cff records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. The lets do next suffix is held until that tuple is clean and remote verified, then opens only the Mammoth actor-topology decision; keep Mammoth pixels, public or outline registration, fixtures, effects, child assets, additional Stag variants, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

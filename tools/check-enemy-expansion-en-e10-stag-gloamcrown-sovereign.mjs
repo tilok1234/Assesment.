@@ -128,14 +128,28 @@ check(
   'published Briarstep predecessor drifted',
 );
 check(
-  EN_E10_GLOAMCROWN_SOVEREIGN_GATE.status === 'awaiting-visual-approval'
+  EN_E10_GLOAMCROWN_SOVEREIGN_GATE.status === 'approved'
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.baseCheckpoint === '595b2b2b18ebe7e111486df96624b4e1f057647b'
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.authorizedOn === '2026-08-13'
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.authorizationEvidence.includes('designer then separately said: awesine lets keep going')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.authorizationEvidence.includes('exactly one private elite Stag full 80-frame candidate')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.authorizationEvidence.includes('distinct Complete B outlined PNG')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.approvedOn === '2026-08-13'
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.approvalEvidence.includes('raw sprite 131')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.approvalEvidence.includes('outlined sprite 135')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.approvalEvidence.includes('Complete B + Form sprite 139')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.approvalEvidence.includes('active comparison sprite 143')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.approvalEvidence.includes('5a80240ca6bfb16eb6a53b0b95b5214323a9dde25814b48fb39e9caaf11e4855')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.approvalEvidence.includes('designer replied: approved lets do next')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.approvedImplementation === '0ece468efeaf4b50351358020075b4bf91dc7cff'
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publishedImplementation === ''
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publishedApprovalRecord === ''
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.initialPublishedHandoff === ''
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.publicationState === 'approved-not-published'
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.architectureDecision === EN_E10_STAG_TOPOLOGY_DECISION.id,
-  'elite Stag authorization or outlined-review boundary drifted',
+  'elite Stag approval, publication, or outlined-review boundary drifted',
 );
 check(
   EN_E10_GLOAMCROWN_SOVEREIGN_GATE.precedingApproval.gateId === EN_E10_BRIARSTEP_HARRIER_GATE.id
@@ -152,12 +166,12 @@ check(
     && EN_E10_STAG_ELITE_CONTRACT_CARD.precedingVariant.id === 'briarstep-harrier'
     && EN_E10_STAG_ELITE_CONTRACT_CARD.activeVariant.id === 'gloamcrown-sovereign'
     && EN_E10_STAG_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E10_STAG_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-visual-approval'
+    && EN_E10_STAG_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E10_STAG_ELITE_CONTRACT_CARD.deferredRoles.length === 0,
   'Stag elite role boundary drifted',
 );
 check(
-  EN_E10_GLOAMCROWN_SOVEREIGN_CONTRACT.state === 'implemented-complete-motion-awaiting-visual-approval'
+  EN_E10_GLOAMCROWN_SOVEREIGN_CONTRACT.state === 'implemented-complete-motion-approved'
     && EN_E10_GLOAMCROWN_SOVEREIGN_CONTRACT.silhouette.includes('vast connected outward-branching crown antlers')
     && EN_E10_GLOAMCROWN_SOVEREIGN_CONTRACT.visualIdentity.includes('verdigris growth bands')
     && EN_E10_GLOAMCROWN_SOVEREIGN_DATA.actorTopology === EN_E10_STAG_TOPOLOGY_DECISION.selected
@@ -172,7 +186,8 @@ check(
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.exclusions.includes('additional Stag variants')
-    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('four PNG plus two GIF review hashes')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('implementation 0ece468efeaf4b50351358020075b4bf91dc7cff')
+    && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('Mammoth actor-topology decision')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('review evidence only')
     && EN_E10_GLOAMCROWN_SOVEREIGN_GATE.nextGate.includes('does not authorize outline registration'),
   'full-suite motion, review, or stop boundary drifted',

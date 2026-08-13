@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Gloamcrown Sovereign Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Gloamcrown Sovereign Approved / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-stag-elite`. It is based exactly on the clean, published,
@@ -59,8 +59,9 @@ gate.
    approved Briarstep Harrier and Mossrack Forager plus public Dire Wolf.
    Opaque range is 196-234. Complete B adds 14,792 outline pixels and Form
    changes 6,326 pixels. Focused / `check:fast` / full `check` are green, with
-   fast / full passing in 58.2s / 111.8s, public 92/294, all 232 fixture sheets
-   unchanged, zero child assets/effects, and no public or outline registration.
+   fast / full passing in 58.2s / 111.8s and approval-local focused / fast
+   passing in 0.8s / 56.6s, public 92/294, all 232 fixture sheets unchanged,
+   zero child assets/effects, and no public or outline registration.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-stag-gloamcrown-sovereign/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-stag-gloamcrown-sovereign` and
@@ -70,11 +71,18 @@ gate.
    comparison PNGs are open together in Aseprite as sprites 131, 135, 139, and
    active 143. The outlined PNG is review evidence only; it does not authorize
    outline registration.
-7. Stop for explicit visual approval of the exact posted packet. The candidate
-   remains uncommitted and unpushed. Public/outline registration, fixtures,
-   effects, child assets, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
-   deferred Runic Idol decision, release, accepted drift, a PR, and every
-   broader art gate remain closed.
+7. The final prompt posted all four exact PNGs, both synchronized GIFs, and
+   digest `5a80240ca6bfb16eb6a53b0b95b5214323a9dde25814b48fb39e9caaf11e4855`.
+   The designer replied `approved lets do next`. Approval binds only that exact
+   packet; accepted implementation
+   `0ece468efeaf4b50351358020075b4bf91dc7cff` is the immutable publication
+   anchor. Standing permission now opens only the bounded approval record,
+   branch push, and handoff reconciliation. Once that tuple is clean and remote
+   verified, the continuation suffix opens only the Mammoth actor-topology
+   decision, not Mammoth pixels. Public/outline registration, fixtures,
+   effects, child assets, additional Stag variants, Rhino, Furious Depraved
+   Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
+   a PR, and every broader art gate remain closed.
 
 ## Approved Preceding Checkpoint - Clean Published Briarstep Checkpoint
 
