@@ -5750,9 +5750,9 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer and specialist Reedcrest Skirmisher approved and published; private elite Stonefern Bastion awaiting visual approval`
+- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer and specialist Reedcrest Skirmisher approved and published; private elite Stonefern Bastion approved with bounded publication in progress`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
-- Priority-first: stop at the exact Stonefern Bastion elite Rhino visual-approval gate
+- Priority-first: finish only the bounded Stonefern Bastion approval record, branch push, and handoff reconciliation; no next sprite lane is open
 
 Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
@@ -5838,9 +5838,9 @@ remote-verified Reedcrest reconciliation
 Codex answered that elite Rhino was next but required a fresh continuation.
 After the designer typed `approvedf`, Codex explicitly asked whether that meant
 `lets do next` to open the elite Rhino lane, and the designer replied
-`approved`. That confirmation opens exactly one private elite Rhino full
-80-frame candidate under the selected topology; it does not approve candidate
-pixels. Stonefern preserves the connected natural Rhino contract while using a
+`approved`. That confirmation opened exactly one private elite Rhino full
+80-frame candidate under the selected topology; it did not approve candidate
+pixels at that time. Stonefern preserves the connected natural Rhino contract while using a
 broad low iron-gray barrel, restrained shoulder escarpment, three separated
 burnt-ochre ridges, muted fern markings, compact charcoal wedge head, thick
 limestone horn and tiny nub, low ears, copper-gold eyes, short tail, four pillar
@@ -5862,14 +5862,20 @@ Focused validation passes all 80 structural, four-three-toed-foot,
 broad-low-ridged-span, ridge/fern-mark, alias, mirror, and comparison cases at
 opaque range 239-290, with approved Mudplate and Reedcrest plus public Dire
 Wolf exact and the protected Boss assets byte-exact. Pre-approval
-focused/fast/full gates pass in 0.6s/62.8s/121.9s. Public stays 92/294, all 232
+focused/fast/full gates pass in 0.6s/62.8s/121.9s. The final prompt posted all
+four exact PNGs, both synchronized GIFs, and the frozen digest; the designer
+replied `approved`. Approval binds only to accepted implementation
+`e527031e0d29444bf17a1cf79229bac7150d1786` and those six hashes.
+Approval-local focused/fast gates pass in 0.6s/64.2s. Public stays 92/294, all 232
 fixtures remain unchanged, and child assets/effects/public registration/
 outline registration stay zero. The four exact review PNGs are open in
 Aseprite as sprites 302, 306, 310, and 314; the protected Boss direction and
-full-animation sheets are open separately as sprites 318 and active 322. Stop
-for explicit visual approval of exactly this frozen packet. Do not commit,
-push, register, publish, accept drift, release, or open a PR before approval;
-the outlined PNG is review evidence only and every Boss change remains closed.
+full-animation sheets are open separately as sprites 318 and active 322.
+Standing publication permission opens only the bounded approval record, branch
+push, and handoff reconciliation. The approval reply contains no continuation
+request, so no additional Rhino or other sprite lane is open. Public or outline
+registration, fixtures, effects, child assets, every Boss change, release,
+accepted drift, and a PR remain closed; the outlined PNG is review evidence only.
 
 Hyena topology and common art gate (2026-08-13): the designer selected
 `baked-single-actor-grounded-quadruped` — one connected grounded 24x24 Hyena

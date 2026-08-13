@@ -44,7 +44,7 @@ export const EN_E10_RHINO_ELITE_CONTRACT_CARD = deepFreeze({
     id: 'stonefern-bastion',
     name: 'Stonefern Bastion',
     role: 'elite',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   actorTopology: EN_E10_RHINO_TOPOLOGY_DECISION.selected,
@@ -57,7 +57,7 @@ export const EN_E10_STONEFERN_BASTION_CONTRACT = deepFreeze({
   family: 'rhino',
   variant: 'stonefern-bastion',
   role: 'elite',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_RHINO_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-iron-gray-broad-low-shoulder-escarpment-ochre-ridge-fern-mark-heavy-limestone-horn-four-three-toed-foot-rhino-v1',
   silhouette: 'A broad grounded elite Rhino with a low iron-gray barrel, restrained shoulder escarpment, three separated ochre natural ridges, heavy compact wedge head, one thick forward-curved horn and tiny nub, low ears, short tail, four pillar legs, and four separated broad three-toed feet. It must read tougher and more deliberate than Mudplate Grazer and Reedcrest Skirmisher while remaining substantially smaller, flatter, less armed, and less top-heavy than the 48x48 Furious Depraved Rhino Boss.',
@@ -95,11 +95,20 @@ export const EN_E10_STONEFERN_BASTION_DATA = deepFreeze({
 
 export const EN_E10_STONEFERN_BASTION_GATE = deepFreeze({
   id: 'en-e10-rhino-stonefern-bastion-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: 'b0313abeeaadea7e14b62339e280469b08b37653',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Reedcrest Skirmisher implementation 2f02388f941088f0fdadff809c3b048ba2e93734, approval record c0ab513f576f0e66cafcc0b36a3467b13e790936, initial published handoff bbe25e76653622c93b99068268f10791a35a9dc2, and final reconciliation b0313abeeaadea7e14b62339e280469b08b37653 were pushed and remote verified. The designer asked whats next; Codex answered that elite Rhino is next but its gate was closed and required a fresh lets do next. After the designer typed approvedf, Codex asked whether that meant lets do next to open the elite Rhino lane, and the designer replied approved. That confirmation authorizes exactly one private elite Rhino full 80-frame candidate on a new isolated branch under the selected baked-single-actor-natural-plated-low-grounded-quadruped topology. It does not approve candidate pixels or authorize public or outline registration, fixtures, effects, child assets, any Furious Depraved Rhino Boss change, Runic Idol, release, accepted drift, or a pull request.',
   architectureDecision: EN_E10_RHINO_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Mudplate Grazer and Reedcrest Skirmisher plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The Aseprite review session reported those exact four paths open together as raw sprite 302, outlined sprite 306, Complete B + Form sprite 310, and comparison sprite 314; protected Furious Depraved Rhino Boss direction and full-animation sheets were open separately as sprites 318 and active 322. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest a737511220c2049e4aed742a7f08a9a71d4b1cfeab86aa8997cef4d3181b808f. The designer replied: approved. Approval applies only to that exact Stonefern Bastion digest and its six frozen review hashes. It does not open public or outline registration, fixtures, effects, child assets, any Boss change, another Rhino, another sprite lane, release, accepted drift, or a pull request.',
+  approvedImplementation: 'e527031e0d29444bf17a1cf79229bac7150d1786',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_REEDCREST_SKIRMISHER_GATE.id,
     artifactSha256: EN_E10_REEDCREST_SKIRMISHER_GATE.artifactSha256,
@@ -156,7 +165,7 @@ export const EN_E10_STONEFERN_BASTION_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop for explicit designer visual approval of the exact Stonefern Bastion raw, distinct Complete B outlined, Complete B + Form, comparison, and synchronized GIF packet while showing the protected Furious Depraved Rhino Boss candidates for distinction. Do not commit, push, register, or publish the candidate before approval. The distinct outlined PNG is review evidence only and does not authorize outline registration. Every Boss change and all broader gates remain closed.',
+  nextGate: 'The exact Stonefern Bastion packet is visually approved at implementation e527031e0d29444bf17a1cf79229bac7150d1786. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The designer reply contains no continuation request, so no additional Rhino or other sprite lane is opened. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Rhino registration, fixtures, effects, child assets, every Boss change, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_STONEFERN_BASTION_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -421,7 +430,7 @@ export const EN_E10_STONEFERN_BASTION_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'stonefern-bastion',
     scale: 8,
-    notes: 'Awaiting explicit visual approval as one exact private elite Rhino against approved Mudplate Grazer and Reedcrest Skirmisher plus public Dire Wolf, with the protected Furious Depraved Rhino Boss direction and full-animation candidates shown separately for distinction. The distinct Complete B outlined PNG is review evidence only. Keep public or outline registration, fixtures, effects, child assets, every Boss change, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private elite Rhino against approved Mudplate Grazer and Reedcrest Skirmisher plus public Dire Wolf, with the protected Furious Depraved Rhino Boss direction and full-animation candidates reviewed separately and unchanged. Accepted implementation e527031e0d29444bf17a1cf79229bac7150d1786 records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. The designer reply contains no continuation request, so keep public or outline registration, fixtures, effects, child assets, every Boss change, another Rhino, every other sprite lane, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

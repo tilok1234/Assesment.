@@ -107,17 +107,17 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private elite Rhino candidate awaiting visual approval: on
+- Current approved private elite Rhino / bounded publication in progress: on
   `codex/en-e10-rhino-elite`, based exactly on clean, published,
   remote-verified Reedcrest reconciliation
   `b0313abeeaadea7e14b62339e280469b08b37653`, the designer first asked
   `whats next`; Codex answered that elite Rhino was next but required a fresh
   continuation. After the designer typed `approvedf`, Codex asked whether that
   meant `lets do next` to open the elite Rhino lane, and the designer replied
-  `approved`. That explicit confirmation opens exactly one private elite Rhino
+  `approved`. That explicit confirmation opened exactly one private elite Rhino
   full 80-frame candidate under the selected
   `baked-single-actor-natural-plated-low-grounded-quadruped` topology. It does
-  not approve candidate pixels or open publication. Stonefern Bastion is one
+  did not approve candidate pixels or open publication at that time. Stonefern Bastion is one
   connected broad low iron-gray Rhino with a restrained shoulder escarpment,
   three separated burnt-ochre natural ridges, muted fern markings, compact
   charcoal wedge head, one thick limestone horn and tiny nub, copper-gold
@@ -139,15 +139,21 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   broad-low-ridged-span, alias, mirror, ridge/fern-mark, and three-way
   pixel/alpha-distinction cases at opaque range 239-290. Complete B adds
   10,040 outline pixels and Form changes 9,438 pixels. Pre-approval focused /
-  `check:fast` / full `check` pass in 0.6s / 62.8s / 121.9s. Protected Furious
+  `check:fast` / full `check` pass in 0.6s / 62.8s / 121.9s. After the exact
+  four PNGs, two GIFs, and digest were posted, the designer replied `approved`.
+  Approval binds only to accepted implementation
+  `e527031e0d29444bf17a1cf79229bac7150d1786` and the six frozen hashes;
+  approval-local focused / `check:fast` gates pass in 0.6s / 64.2s. Protected Furious
   Depraved Rhino Boss assets remain exact; public stays 92/294, all 232
   fixtures stay unchanged, and child assets/effects/public registration/
   outline registration stay zero. The four exact review PNGs are open in
   Aseprite as sprites 302, 306, 310, and 314; the protected Boss direction and
   full-animation sheets are open separately as sprites 318 and active 322.
-  Stop for explicit visual approval of exactly this frozen packet. Do not
-  commit, push, register, publish, accept drift, release, or open a PR before
-  that approval; the outlined PNG is review evidence only.
+  Standing publication permission now opens only the bounded approval record,
+  branch push, and handoff reconciliation. The reply contains no continuation
+  request, so no additional Rhino or other sprite lane is open. Registration,
+  fixtures, effects, child assets, every Boss change, release, accepted drift,
+  and a PR remain closed; the outlined PNG is review evidence only.
 - Approved preceding private specialist Rhino published / elite gate opened later: on
   `codex/en-e10-rhino-specialist`, based exactly on clean, published,
   remote-verified Mudplate reconciliation

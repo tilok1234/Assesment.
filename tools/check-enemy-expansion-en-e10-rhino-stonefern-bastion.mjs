@@ -113,15 +113,22 @@ check(
   'approved Rhino topology decision drifted',
 );
 check(
-  EN_E10_STONEFERN_BASTION_GATE.status === 'awaiting-visual-approval'
+  EN_E10_STONEFERN_BASTION_GATE.status === 'approved'
     && EN_E10_STONEFERN_BASTION_GATE.baseCheckpoint === 'b0313abeeaadea7e14b62339e280469b08b37653'
     && EN_E10_STONEFERN_BASTION_GATE.architectureDecision === EN_E10_RHINO_TOPOLOGY_DECISION.id
     && EN_E10_STONEFERN_BASTION_GATE.authorizationEvidence.includes('Codex asked whether that meant lets do next')
     && EN_E10_STONEFERN_BASTION_GATE.authorizationEvidence.includes('the designer replied approved')
     && EN_E10_STONEFERN_BASTION_GATE.authorizationEvidence.includes('exactly one private elite Rhino full 80-frame candidate')
-    && !Object.hasOwn(EN_E10_STONEFERN_BASTION_GATE, 'approvedOn')
-    && !Object.hasOwn(EN_E10_STONEFERN_BASTION_GATE, 'approvedImplementation')
-    && !Object.hasOwn(EN_E10_STONEFERN_BASTION_GATE, 'publishedImplementation')
+    && EN_E10_STONEFERN_BASTION_GATE.approvedOn === '2026-08-13'
+    && EN_E10_STONEFERN_BASTION_GATE.approvalEvidence.includes('The designer replied: approved')
+    && EN_E10_STONEFERN_BASTION_GATE.approvalEvidence.includes('another sprite lane')
+    && EN_E10_STONEFERN_BASTION_GATE.approvedImplementation === 'e527031e0d29444bf17a1cf79229bac7150d1786'
+    && EN_E10_STONEFERN_BASTION_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E10_STONEFERN_BASTION_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E10_STONEFERN_BASTION_GATE.publishedImplementation === ''
+    && EN_E10_STONEFERN_BASTION_GATE.publishedApprovalRecord === ''
+    && EN_E10_STONEFERN_BASTION_GATE.initialPublishedHandoff === ''
+    && EN_E10_STONEFERN_BASTION_GATE.publicationState === 'approved-not-published'
     && EN_E10_STONEFERN_BASTION_GATE.precedingApproval.gateId === EN_E10_REEDCREST_SKIRMISHER_GATE.id
     && EN_E10_STONEFERN_BASTION_GATE.precedingApproval.candidateFrameDigest === EN_E10_REEDCREST_SKIRMISHER_GATE.candidateFrameDigest
     && EN_E10_STONEFERN_BASTION_GATE.precedingApproval.publishedImplementation === EN_E10_REEDCREST_SKIRMISHER_GATE.publishedImplementation
@@ -135,9 +142,9 @@ check(
     && EN_E10_RHINO_ELITE_CONTRACT_CARD.precedingVariant.id === 'reedcrest-skirmisher'
     && EN_E10_RHINO_ELITE_CONTRACT_CARD.activeVariant.id === 'stonefern-bastion'
     && EN_E10_RHINO_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E10_RHINO_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-visual-approval'
+    && EN_E10_RHINO_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E10_RHINO_ELITE_CONTRACT_CARD.deferredRoles.length === 0
-    && EN_E10_STONEFERN_BASTION_CONTRACT.state === 'implemented-complete-motion-awaiting-visual-approval',
+    && EN_E10_STONEFERN_BASTION_CONTRACT.state === 'implemented-complete-motion-approved',
   'elite Rhino role or candidate contract drifted',
 );
 check(
@@ -148,8 +155,8 @@ check(
     && EN_E10_STONEFERN_BASTION_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_STONEFERN_BASTION_GATE.exclusions.includes('public Rhino registration or outline registration')
     && EN_E10_STONEFERN_BASTION_GATE.exclusions.includes('any Furious Depraved Rhino Boss source, catalog, roster, or asset change')
-    && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('explicit designer visual approval')
-    && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('Do not commit, push, register, or publish')
+    && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('implementation e527031e0d29444bf17a1cf79229bac7150d1786')
+    && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('no additional Rhino or other sprite lane is opened')
     && EN_E10_STONEFERN_BASTION_GATE.nextGate.includes('review evidence only'),
   'elite Rhino anatomy, effect firewall, motion, or stop boundary drifted',
 );

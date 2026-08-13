@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Stonefern Bastion Awaiting Visual Approval
+## Immediate Publication Checkpoint - Stonefern Bastion Approved / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-rhino-elite`. It branches exactly from clean, published,
@@ -36,7 +36,7 @@ gate.
    confirmation authorizes exactly one private elite Rhino full 80-frame
    candidate under the selected
    `baked-single-actor-natural-plated-low-grounded-quadruped` topology. It does
-   not approve candidate pixels or authorize publication.
+   did not approve candidate pixels or authorize publication at that time.
 3. Stonefern Bastion is a broad low iron-gray elite Rhino with a restrained
    shoulder escarpment, three separated burnt-ochre natural ridges, muted fern
    markings, heavy compact charcoal wedge head, one thick limestone horn plus
@@ -65,7 +65,9 @@ gate.
    distinctions from approved Mudplate Grazer and Reedcrest Skirmisher plus
    public Dire Wolf. Opaque range is 239-290. Complete B adds 10,040 outline
    pixels and Form changes 9,438 pixels. Pre-approval focused / `check:fast` /
-   full `check` pass in 0.6s / 62.8s / 121.9s. Public remains 92/294, all 232
+   full `check` pass in 0.6s / 62.8s / 121.9s. Approval-local focused /
+   `check:fast` gates pass again in 0.6s / 64.2s against the exact approved
+   implementation. Public remains 92/294, all 232
    fixtures stay unchanged, and child assets, effects, public registration,
    and outline registration remain zero. The protected Furious Depraved Rhino
    direction and animation candidates remain byte-exact at SHA-256
@@ -82,11 +84,18 @@ gate.
    302, 306, 310, and 314; the protected Boss direction and full-animation
    sheets are open separately as sprites 318 and active 322. The outlined PNG
    is evidence only; it does not authorize outline registration.
-7. Stop for explicit designer visual approval of this exact digest and six
-   frozen review hashes. Do not commit, push, register, publish, accept drift,
-   release, or open a PR before that approval. Fixtures, effects, child assets,
-   every Furious Depraved Rhino Boss change, Runic Idol, and every broader gate
-   remain closed.
+7. The final approval prompt posted all four exact PNGs, both synchronized
+   GIFs, and digest
+   `a737511220c2049e4aed742a7f08a9a71d4b1cfeab86aa8997cef4d3181b808f`.
+   The designer replied `approved`. Approval applies only to that exact packet
+   and accepted implementation
+   `e527031e0d29444bf17a1cf79229bac7150d1786`; standing publication permission
+   opens only its bounded approval record, branch push, and handoff
+   reconciliation.
+8. The reply contains no continuation request, so no additional Rhino or other
+   sprite lane is open. Public or outline registration, fixtures, effects,
+   child assets, every Furious Depraved Rhino Boss change, Runic Idol, release,
+   accepted drift, a PR, and every broader gate remain closed.
 
 ## Approved Preceding Checkpoint - Reedcrest Skirmisher Published / Elite Rhino Gate Opened Later
 
