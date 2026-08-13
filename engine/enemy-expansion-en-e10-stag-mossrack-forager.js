@@ -59,7 +59,7 @@ export const EN_E10_STAG_CONTRACT_CARD = deepFreeze({
     id: 'mossrack-forager',
     name: 'Mossrack Forager',
     role: 'common',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['specialist', 'elite'],
   actorTopology: EN_E10_STAG_TOPOLOGY_DECISION.selected,
@@ -72,7 +72,7 @@ export const EN_E10_MOSSRACK_FORAGER_CONTRACT = deepFreeze({
   family: 'stag',
   variant: 'mossrack-forager',
   role: 'common',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_STAG_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-lean-russet-high-shouldered-long-necked-tapered-muzzle-branching-antlered-four-split-hoof-stag-v1',
   silhouette: 'A lean high-shouldered Stag with a narrow barrel, long upright neck, tapered dark muzzle, paired ears, two tall connected branching antlers, short cream-tipped tail, four slender legs, and four separated split hooves. It must remain a cervid rather than the broad full-ring-horned Cragcrown Ram, bowed equine Miremane Courser, long-backed Dire Wolf, upright Goatfolk, Mammoth, or Rhino.',
@@ -114,20 +114,20 @@ export const EN_E10_MOSSRACK_FORAGER_DATA = deepFreeze({
 
 export const EN_E10_MOSSRACK_FORAGER_GATE = deepFreeze({
   id: 'en-e10-stag-mossrack-forager-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: '6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Cragcrown Patriarch implementation 3d8727cce7d8b3f00ce8923ee9db629de13e1097, approval record 8b2cc029a94eaeae69dc1a0f4886dd899dfc6902, initial published handoff 46645d2a2a84bc0669f0f5e5f4362da93abf0782, and final reconciliation 6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca were pushed and remote verified. The designer then said: letsdo nex t. After the exact topology recommendation, the designer replied: approved. This selects baked-single-actor-antlered-grounded-quadruped and authorizes exactly one private common Stag full 80-frame candidate. Continue the distinct Complete B outlined PNG as review evidence only; it does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, specialist or elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
   architectureDecision: EN_E10_STAG_TOPOLOGY_DECISION.id,
-  approvedOn: '',
-  approvalEvidence: '',
-  approvedImplementation: '',
-  publicationAuthorizedOn: '',
-  publicationAuthorizationEvidence: '',
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Cragcrown Patriarch and Miremane Courser plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The four-lane Aseprite MCP review window reported those exact four paths open together as raw sprite 99, outlined sprite 103, Complete B + Form sprite 107, and active comparison sprite 111. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest c3383941492c1976bc03786f73fee20744d0a2af9e8846f44cbf9d59b7384d36. The designer replied: approved lets do next. Approval applies only to that exact Mossrack Forager digest and its six frozen review hashes. The lets do next suffix separately authorizes exactly one private specialist Stag only after this common Stag publication tuple is clean and remote verified. It does not authorize public Stag or outline registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: '4c5d80901d12063b21c0d6303fc24260bd700209',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: '',
   publishedApprovalRecord: '',
   initialPublishedHandoff: '',
-  publicationState: 'not-published',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_CRAGCROWN_PATRIARCH_GATE.id,
     artifactSha256: EN_E10_CRAGCROWN_PATRIARCH_GATE.artifactSha256,
@@ -184,7 +184,7 @@ export const EN_E10_MOSSRACK_FORAGER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop after deterministic validation and exact visual review. Only the designer may approve this frozen Mossrack Forager packet. Approval would apply only to its exact candidate digest and six frozen review hashes and would not authorize public or outline registration, fixtures, effects, child assets, specialist or elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or another art gate.',
+  nextGate: 'The exact Mossrack Forager packet is visually approved at implementation 4c5d80901d12063b21c0d6303fc24260bd700209. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. After that tuple is clean and remote verified, the designer reply approved lets do next authorizes exactly one private specialist Stag under the selected topology. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_MOSSRACK_FORAGER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -504,7 +504,7 @@ export const EN_E10_MOSSRACK_FORAGER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mossrack-forager',
     scale: 8,
-    notes: 'Private common Stag awaiting exact visual approval against approved Cragcrown Patriarch, approved Miremane Courser, and public Dire Wolf. The packet includes a distinct Complete B outlined PNG as review evidence only. Keep outline registration, public registration, fixtures, effects, child assets, specialist and elite Stag, Mammoth, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact common Stag at implementation 4c5d80901d12063b21c0d6303fc24260bd700209 against approved Cragcrown Patriarch, approved Miremane Courser, and public Dire Wolf. The packet includes a distinct Complete B outlined PNG as review evidence only. Standing permission opens only the approval record, branch push, and bounded handoff reconciliation. After that tuple is clean and remote verified, the designer reply approved lets do next opens exactly one private specialist Stag. Keep outline registration, public registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

@@ -15,7 +15,8 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private art checkpoint (2026-08-13): from clean published Cragcrown
+- Current approved private art checkpoint undergoing bounded publication
+  (2026-08-13): from clean published Cragcrown
   reconciliation `6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca`, the designer's
   `letsdo nex t` opened the Stag topology decision and the subsequent
   `approved` selected `baked-single-actor-antlered-grounded-quadruped`. It
@@ -29,14 +30,19 @@
   Focused validation passes every structure, identity, alias, mirror, and
   three-way pixel/alpha distinction gate at opaque range 194-224. The raw,
   required distinct Complete B outlined, Complete B + Form, and comparison PNGs
-  plus two GIFs are hash-frozen and deterministic. Focused / fast / full gates
-  pass in 0.9s / 69.8s / 113.3s with public 92/294 and all 232 fixtures
-  unchanged. The exact four PNGs are open together in Aseprite as sprites 99,
-  103, 107, and active 111. The outlined PNG is review evidence only, not
-  outline registration. Stop for exact visual approval; no commit or push has
-  been made. Public/outline registration, fixtures, effects, child assets,
-  specialist or elite Stag, Mammoth, Rhino, Rhino Boss work, release, accepted
-  drift, a PR, and every later gate remain closed.
+  plus two GIFs are hash-frozen and deterministic. Pre-approval focused / fast /
+  full gates pass in 0.9s / 69.8s / 113.3s and approval-local focused / fast
+  gates pass in 0.9s / 61.1s with public 92/294 and all 232 fixtures unchanged.
+  The exact four PNGs are open together in Aseprite as sprites 99, 103, 107,
+  and active 111. The outlined PNG is review evidence only, not outline
+  registration. The designer replied `approved lets do next` to the exact
+  posted packet. Accepted implementation
+  `4c5d80901d12063b21c0d6303fc24260bd700209` is remote verified. Standing
+  permission opens only its approval record, branch push, and bounded handoff
+  reconciliation. After that tuple is clean and remote verified, the reply
+  opens exactly one private specialist Stag. Public/outline registration,
+  fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work,
+  release, accepted drift, a PR, and every broader gate remain closed.
 
 - Approved preceding published private art checkpoint (2026-08-13): from clean published Cliffcoil
   reconciliation `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`, the designer's
@@ -5532,7 +5538,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena and Ram common, specialist, and elite approved and published; Stag common private candidate awaiting visual approval; specialist/elite Stag and later families closed`
+- Status: `Hyena and Ram common, specialist, and elite approved and published; Stag common approved and undergoing bounded publication; specialist Stag authorized only after that tuple; elite Stag and later families closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5713,13 +5719,18 @@ cervid-span, alias, mirror, and pixel/alpha distinction checks against approved
 Cragcrown Patriarch and Miremane Courser plus public Dire Wolf at opaque range
 194-224. The hash-frozen packet includes raw, required distinct Complete B
 outlined, Complete B + Form, and comparison PNGs plus two GIFs and regenerates
-deterministically. Focused / fast / full gates pass in 0.9s / 69.8s / 113.3s
+deterministically. Pre-approval focused / fast / full gates pass in 0.9s /
+69.8s / 113.3s and approval-local focused / fast gates pass in 0.9s / 61.1s
 with public 92/294 and all 232 fixtures unchanged. The four exact PNGs are open
 together in Aseprite as sprites 99, 103, 107, and active 111. The outlined PNG
-is review evidence only and does not change outline registration. Stop for
-exact visual approval; no commit or push has been made. Public/outline
-registration, fixtures, effects, child assets, specialist or elite Stag,
-Mammoth, Rhino, Rhino Boss work, and all later gates remain closed.
+is review evidence only and does not change outline registration. The designer
+replied `approved lets do next` to the exact posted digest and six hashes.
+Accepted implementation `4c5d80901d12063b21c0d6303fc24260bd700209` is remote
+verified; standing permission opens only its approval record, branch push, and
+bounded handoff reconciliation. After that tuple is clean and remote verified,
+the reply opens exactly one private specialist Stag. Public/outline
+registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino,
+Rhino Boss work, and all broader gates remain closed.
 
 ### EN-E11 - Birds
 

@@ -107,8 +107,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art checkpoint: on `codex/en-e10-stag-common`, based exactly
-  on clean published Cragcrown reconciliation
+- Current approved private art checkpoint undergoing bounded publication: on
+  `codex/en-e10-stag-common`, based exactly on clean published Cragcrown reconciliation
   `6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca`, the designer's `letsdo nex t`
   opened the Stag topology decision and the subsequent `approved` selected
   `baked-single-actor-antlered-grounded-quadruped`: one connected lean cervid
@@ -125,14 +125,19 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Cragcrown Patriarch and Miremane Courser plus public Dire Wolf; opaque range
   is 194-224. Exact aliases and mirrors pass. The raw, required distinct
   Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
-  hash-frozen and regenerate deterministically. Focused / fast / full gates
-  pass in 0.9s / 69.8s / 113.3s with public 92/294 and all 232 fixtures
-  unchanged. The four exact PNGs are open together in Aseprite as sprites 99,
-  103, 107, and active 111. The outlined PNG is review evidence only, not
-  outline registration. Stop for exact visual approval; no commit or push has
-  been made. Public/outline registration, fixtures, effects, child assets,
-  specialist or elite Stag, Mammoth, Rhino, Rhino Boss work, release, accepted
-  drift, a PR, and every later gate remain closed.
+  hash-frozen and regenerate deterministically. Pre-approval focused / fast /
+  full gates pass in 0.9s / 69.8s / 113.3s and approval-local focused / fast
+  gates pass in 0.9s / 61.1s with public 92/294 and all 232 fixtures unchanged.
+  The four exact PNGs are open together in Aseprite as sprites 99, 103, 107,
+  and active 111. The outlined PNG is review evidence only, not outline
+  registration. The final prompt posted all four PNGs, both GIFs, and the exact
+  digest; the designer replied `approved lets do next`. Accepted implementation
+  `4c5d80901d12063b21c0d6303fc24260bd700209` is remote verified. Standing
+  permission opens only its approval record, branch push, and bounded handoff
+  reconciliation. After that tuple is clean and remote verified, the reply
+  opens exactly one private specialist Stag. Public/outline registration,
+  fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work,
+  release, accepted drift, a PR, and every broader gate remain closed.
 - Approved preceding published private art checkpoint: on `codex/en-e10-ram-elite`, based
   exactly on clean published Cliffcoil reconciliation
   `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`, the designer's separate `lets

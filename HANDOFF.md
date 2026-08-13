@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mossrack Forager Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Mossrack Forager Approval Publication
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-stag-common`. It is based exactly on the clean published
@@ -65,7 +65,8 @@ gate.
    approved Cragcrown Patriarch and Miremane Courser plus public Dire Wolf.
    Opaque range is 194-224. Complete B adds 13,738 outline pixels and Form
    changes 7,518 pixels. Deterministic regeneration reproduces all six frozen
-   hashes. Focused / `check:fast` / full `check` pass in 0.9s / 69.8s / 113.3s
+   hashes. Pre-approval focused / `check:fast` / full `check` pass in 0.9s /
+   69.8s / 113.3s, and approval-local focused / fast gates pass in 0.9s / 61.1s,
    with public 92/294, both approved comparisons exact, all 232 fixture sheets
    unchanged, zero child assets/effects, and no public or outline registration.
 6. Exact review files are under
@@ -76,13 +77,20 @@ gate.
 7. The exact raw, distinct Complete B outlined, Complete B + Form, and
    comparison PNGs are open together in the four-lane Aseprite MCP review
    window as sprites 99, 103, 107, and active 111. The outlined PNG is required
-   review evidence only; it does not authorize outline registration. The
-   synchronized raw and Complete B + Form GIFs are frozen beside them.
-8. Stop for the designer's visual approval of this exact packet. No commit or
-   push has been made. Public Stag or outline registration, fixtures, effects,
-   child assets, specialist or elite Stag, Mammoth, Rhino, Furious Depraved
-   Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
-   a PR, and every later art gate remain closed.
+   review evidence only; it does not authorize outline registration. The final
+   prompt posted all four exact PNGs, both synchronized GIFs, and digest
+   `c3383941492c1976bc03786f73fee20744d0a2af9e8846f44cbf9d59b7384d36`.
+   The designer replied `approved lets do next`. Approval applies only to that
+   exact packet; accepted implementation
+   `4c5d80901d12063b21c0d6303fc24260bd700209` records it and is remote
+   verified. Standing permission opens only its approval record, branch push,
+   and bounded handoff reconciliation.
+8. After the common Stag publication tuple is clean and remote verified, the
+   `lets do next` suffix opens exactly one private specialist Stag under the
+   selected topology. Public Stag or outline registration, fixtures, effects,
+   child assets, elite Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work,
+   the deferred Runic Idol decision, release, accepted drift, a PR, and every
+   broader art gate remain closed.
 
 ## Approved Preceding Checkpoint - Cragcrown Patriarch Published
 

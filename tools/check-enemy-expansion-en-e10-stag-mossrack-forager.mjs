@@ -130,7 +130,7 @@ check(
   'published Cragcrown predecessor drifted',
 );
 check(
-  EN_E10_MOSSRACK_FORAGER_GATE.status === 'awaiting-visual-approval'
+  EN_E10_MOSSRACK_FORAGER_GATE.status === 'approved'
     && EN_E10_MOSSRACK_FORAGER_GATE.baseCheckpoint === '6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca'
     && EN_E10_MOSSRACK_FORAGER_GATE.authorizedOn === '2026-08-13'
     && EN_E10_MOSSRACK_FORAGER_GATE.authorizationEvidence.includes('designer then said: letsdo nex t')
@@ -138,8 +138,18 @@ check(
     && EN_E10_MOSSRACK_FORAGER_GATE.authorizationEvidence.includes('exactly one private common Stag full 80-frame candidate')
     && EN_E10_MOSSRACK_FORAGER_GATE.authorizationEvidence.includes('distinct Complete B outlined PNG')
     && EN_E10_MOSSRACK_FORAGER_GATE.architectureDecision === EN_E10_STAG_TOPOLOGY_DECISION.id
-    && EN_E10_MOSSRACK_FORAGER_GATE.approvedOn === ''
-    && EN_E10_MOSSRACK_FORAGER_GATE.publicationState === 'not-published',
+    && EN_E10_MOSSRACK_FORAGER_GATE.approvedOn === '2026-08-13'
+    && EN_E10_MOSSRACK_FORAGER_GATE.approvalEvidence.includes('raw sprite 99')
+    && EN_E10_MOSSRACK_FORAGER_GATE.approvalEvidence.includes('outlined sprite 103')
+    && EN_E10_MOSSRACK_FORAGER_GATE.approvalEvidence.includes('Complete B + Form sprite 107')
+    && EN_E10_MOSSRACK_FORAGER_GATE.approvalEvidence.includes('active comparison sprite 111')
+    && EN_E10_MOSSRACK_FORAGER_GATE.approvalEvidence.includes('c3383941492c1976bc03786f73fee20744d0a2af9e8846f44cbf9d59b7384d36')
+    && EN_E10_MOSSRACK_FORAGER_GATE.approvalEvidence.includes('approved lets do next')
+    && EN_E10_MOSSRACK_FORAGER_GATE.approvedImplementation === '4c5d80901d12063b21c0d6303fc24260bd700209'
+    && EN_E10_MOSSRACK_FORAGER_GATE.publishedImplementation === ''
+    && EN_E10_MOSSRACK_FORAGER_GATE.publishedApprovalRecord === ''
+    && EN_E10_MOSSRACK_FORAGER_GATE.initialPublishedHandoff === ''
+    && EN_E10_MOSSRACK_FORAGER_GATE.publicationState === 'approved-not-published',
   'common Stag authorization or visual stop boundary drifted',
 );
 check(
@@ -156,12 +166,12 @@ check(
   JSON.stringify(EN_E10_STAG_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E10_STAG_CONTRACT_CARD.activeVariant.id === 'mossrack-forager'
     && EN_E10_STAG_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E10_STAG_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-visual-approval'
+    && EN_E10_STAG_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E10_STAG_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite']),
   'Stag common role boundary drifted',
 );
 check(
-  EN_E10_MOSSRACK_FORAGER_CONTRACT.state === 'implemented-complete-motion-awaiting-visual-approval'
+  EN_E10_MOSSRACK_FORAGER_CONTRACT.state === 'implemented-complete-motion-approved'
     && EN_E10_MOSSRACK_FORAGER_CONTRACT.silhouette.includes('two tall connected branching antlers')
     && EN_E10_MOSSRACK_FORAGER_CONTRACT.visualIdentity.includes('muted moss lichen markings')
     && EN_E10_MOSSRACK_FORAGER_DATA.actorTopology === EN_E10_STAG_TOPOLOGY_DECISION.selected
@@ -175,9 +185,10 @@ check(
     && EN_E10_MOSSRACK_FORAGER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_MOSSRACK_FORAGER_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_MOSSRACK_FORAGER_GATE.exclusions.includes('specialist or elite Stag variants')
-    && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('Stop after deterministic validation and exact visual review')
-    && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('Only the designer may approve')
-    && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('would not authorize public or outline registration'),
+    && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('visually approved at implementation 4c5d80901d12063b21c0d6303fc24260bd700209')
+    && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('exactly one private specialist Stag')
+    && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('review evidence only')
+    && EN_E10_MOSSRACK_FORAGER_GATE.nextGate.includes('does not authorize outline registration'),
   'full-suite motion, review, or stop boundary drifted',
 );
 check(
