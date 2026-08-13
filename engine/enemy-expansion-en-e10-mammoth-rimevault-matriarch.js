@@ -44,7 +44,7 @@ export const EN_E10_MAMMOTH_ELITE_CONTRACT_CARD = deepFreeze({
     id: 'rimevault-matriarch',
     name: 'Rimevault Matriarch',
     role: 'elite',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
   actorTopology: EN_E10_MAMMOTH_TOPOLOGY_DECISION.selected,
@@ -57,7 +57,7 @@ export const EN_E10_RIMEVAULT_MATRIARCH_CONTRACT = deepFreeze({
   family: 'mammoth',
   variant: 'rimevault-matriarch',
   role: 'elite',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_MAMMOTH_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-broad-vaulted-blue-violet-royal-mantle-crescent-tusk-four-pillar-foot-mammoth-v1',
   silhouette: 'An elite Mammoth with a broad vaulted back, immense layered shoulder mantle, low royal head, large connected ears, heavy connected trunk, enormous paired crescent tusks, compact hindquarters, short tail, four pillar legs, and four separated broad feet. It must be broader and denser than Frostvein Wayfinder and more ceremonial than Tundrahide Grazer while remaining distinct from the Furious Depraved Rhino Boss, Dire Wolf, Stag, and Ram silhouettes.',
@@ -95,11 +95,20 @@ export const EN_E10_RIMEVAULT_MATRIARCH_DATA = deepFreeze({
 
 export const EN_E10_RIMEVAULT_MATRIARCH_GATE = deepFreeze({
   id: 'en-e10-mammoth-rimevault-matriarch-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: 'd93dc918e379212743433c5a505029c42dfa0182',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Frostvein Wayfinder implementation 03618d6ca98ad1a93596bdbe501edcf1cedd466a, approval record 36c43772911aa0ab81d4a417fc1ad2a29531aa30, initial published handoff c03f2fb05746398e530ff80e2ebacbe261cc5422, and final reconciliation d93dc918e379212743433c5a505029c42dfa0182 were pushed and remote verified. The designer reply approved lets do next opens exactly one private elite Mammoth full 80-frame candidate on a new isolated branch from that clean checkpoint under the selected baked-single-actor-tusked-heavy-grounded-quadruped topology. It does not authorize publication, public or outline registration, fixtures, effects, child assets, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or any broader gate.',
   architectureDecision: EN_E10_MAMMOTH_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Frostvein Wayfinder and Tundrahide Grazer plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The Aseprite review session reported those exact four paths open together as raw sprite 222, outlined sprite 226, Complete B + Form sprite 230, and active comparison sprite 234. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest db9d43c24dc9c3e958cdba595866333cfee14d67658524a7f02c1f6d912c5763. The designer replied: approved. Approval applies only to that exact Rimevault Matriarch digest and its six frozen review hashes. No continuation clause was supplied, so no next Mammoth role or Rhino gate is open. It does not authorize public Mammoth or outline registration, fixtures, effects, child assets, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, a pull request, or any broader gate.',
+  approvedImplementation: '702a93964de696cb246ca144b0d9a946c81875c9',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_FROSTVEIN_WAYFINDER_GATE.id,
     artifactSha256: EN_E10_FROSTVEIN_WAYFINDER_GATE.artifactSha256,
@@ -149,7 +158,7 @@ export const EN_E10_RIMEVAULT_MATRIARCH_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop for explicit designer visual approval of this exact frozen Rimevault Matriarch digest and its four PNG plus two GIF review hashes. Do not commit, push, register, or publish the candidate before approval. The distinct outlined PNG is review evidence only and does not authorize outline registration. Rhino and all broader gates remain closed.',
+  nextGate: 'The exact Rimevault Matriarch packet is visually approved at implementation 702a93964de696cb246ca144b0d9a946c81875c9. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. No continuation clause was supplied, so no next Mammoth role or Rhino gate is open after publication. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Mammoth registration, fixtures, effects, child assets, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_RIMEVAULT_MATRIARCH_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -436,7 +445,7 @@ export const EN_E10_RIMEVAULT_MATRIARCH_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'rimevault-matriarch',
     scale: 8,
-    notes: 'Awaiting explicit visual approval as one exact private elite Mammoth against approved Frostvein Wayfinder and Tundrahide Grazer plus public Dire Wolf. The packet includes raw, distinct Complete B outlined, Complete B + Form, comparison, and two synchronized GIF artifacts. Keep outline/public registration, fixtures, effects, child assets, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private elite Mammoth against approved Frostvein Wayfinder and Tundrahide Grazer plus public Dire Wolf. Accepted implementation 702a93964de696cb246ca144b0d9a946c81875c9 records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. No continuation clause was supplied, so no next Mammoth role or Rhino gate is open; keep public or outline registration, fixtures, effects, child assets, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

@@ -124,12 +124,26 @@ check(
   'approved Mammoth topology decision drifted',
 );
 check(
-  EN_E10_RIMEVAULT_MATRIARCH_GATE.status === 'awaiting-visual-approval'
+  EN_E10_RIMEVAULT_MATRIARCH_GATE.status === 'approved'
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.baseCheckpoint === 'd93dc918e379212743433c5a505029c42dfa0182'
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.authorizedOn === '2026-08-13'
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.authorizationEvidence.includes('designer reply approved lets do next')
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.authorizationEvidence.includes('exactly one private elite Mammoth full 80-frame candidate')
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.architectureDecision === EN_E10_MAMMOTH_TOPOLOGY_DECISION.id
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.approvedOn === '2026-08-13'
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.approvalEvidence.includes('raw sprite 222')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.approvalEvidence.includes('outlined sprite 226')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.approvalEvidence.includes('Complete B + Form sprite 230')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.approvalEvidence.includes('active comparison sprite 234')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.approvalEvidence.includes('db9d43c24dc9c3e958cdba595866333cfee14d67658524a7f02c1f6d912c5763')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.approvalEvidence.includes('designer replied: approved')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.approvedImplementation === '702a93964de696cb246ca144b0d9a946c81875c9'
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.publishedImplementation === ''
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.publishedApprovalRecord === ''
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.initialPublishedHandoff === ''
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.publicationState === 'approved-not-published'
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.precedingApproval.gateId === EN_E10_FROSTVEIN_WAYFINDER_GATE.id
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.precedingApproval.candidateFrameDigest === EN_E10_FROSTVEIN_WAYFINDER_GATE.candidateFrameDigest
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.precedingApproval.publishedImplementation === EN_E10_FROSTVEIN_WAYFINDER_GATE.publishedImplementation
@@ -143,8 +157,9 @@ check(
     && EN_E10_MAMMOTH_ELITE_CONTRACT_CARD.precedingVariant.id === 'frostvein-wayfinder'
     && EN_E10_MAMMOTH_ELITE_CONTRACT_CARD.activeVariant.id === 'rimevault-matriarch'
     && EN_E10_MAMMOTH_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
+    && EN_E10_MAMMOTH_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E10_MAMMOTH_ELITE_CONTRACT_CARD.deferredRoles.length === 0
-    && EN_E10_RIMEVAULT_MATRIARCH_CONTRACT.state === 'implemented-complete-motion-awaiting-visual-approval',
+    && EN_E10_RIMEVAULT_MATRIARCH_CONTRACT.state === 'implemented-complete-motion-approved',
   'Mammoth elite role or candidate contract drifted',
 );
 check(
@@ -155,7 +170,9 @@ check(
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.animationContract.includes('double-tusk press')
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_RIMEVAULT_MATRIARCH_GATE.exclusions.includes('public Mammoth registration or outline registration')
-    && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('Do not commit, push, register, or publish'),
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('implementation 702a93964de696cb246ca144b0d9a946c81875c9')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('no next Mammoth role')
+    && EN_E10_RIMEVAULT_MATRIARCH_GATE.nextGate.includes('review evidence only'),
   'elite Mammoth anatomy, effect firewall, motion, or stop boundary drifted',
 );
 check(

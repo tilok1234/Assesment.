@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private elite Mammoth checkpoint awaiting visual approval: on
+- Current private elite Mammoth checkpoint approved / publication authorized: on
   `codex/en-e10-mammoth-elite`, based exactly on clean published Frostvein
   reconciliation `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch
   is one connected broad blue-violet Mammoth with an immense old-ivory royal
@@ -128,10 +128,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   alias, mirror, and three-way pixel/alpha-distinction cases at opaque range
   274-315. Fast/full gates pass at 61.4s/112.5s, public remains 92/294, and all
   232 fixtures remain unchanged. Exact PNGs are open in Aseprite as sprites
-  222, 226, 230, and active 234. The candidate is uncommitted and unpushed,
-  awaiting explicit visual approval. No next Mammoth role is open; public or
-  outline registration, fixtures, effects, child assets, Rhino, release,
-  accepted drift, and a PR remain closed.
+  222, 226, 230, and active 234. The designer replied `approved`; accepted
+  implementation `702a93964de696cb246ca144b0d9a946c81875c9` records only this
+  frozen packet. Standing permission opens its bounded approval record, branch
+  push, and handoff reconciliation. No continuation clause was supplied, so no
+  next Mammoth role or Rhino gate is open. Public or outline registration,
+  fixtures, effects, child assets, Rhino, release, accepted drift, and a PR
+  remain closed.
 - Approved preceding private specialist Mammoth checkpoint published / elite Mammoth gate open: on
   `codex/en-e10-mammoth-specialist`, based exactly on clean published
   Tundrahide reconciliation `125b1b81d0f6fa977c3bf674964a45131e65f3ab`,

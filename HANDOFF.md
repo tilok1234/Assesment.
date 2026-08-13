@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Rimevault Matriarch Awaiting Visual Approval
+## Immediate Continuation Checkpoint - Rimevault Matriarch Approved / Publication Authorized
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-elite`. It branches exactly from the clean,
@@ -71,12 +71,16 @@ gate.
    Aseprite has the exact raw, outlined, Complete B + Form, and active
    comparison PNGs open as sprites 222, 226, 230, and 234. The outlined PNG is
    review evidence only; it does not authorize outline registration.
-7. This exact candidate is uncommitted and unpushed, awaiting explicit visual
-   approval of the digest and six hashes above. Do not commit, push, register,
-   or publish it before that approval. No next Mammoth role is open. Public or
-   outline registration, fixtures, effects, child assets, Rhino or Rhino Boss
-   work, Runic Idol, release, accepted drift, a PR, and every broader gate
-   remain closed.
+7. The designer replied `approved` to this exact packet. Approval binds only
+   digest
+   `db9d43c24dc9c3e958cdba595866333cfee14d67658524a7f02c1f6d912c5763`
+   and the six hashes above at accepted implementation
+   `702a93964de696cb246ca144b0d9a946c81875c9`. Standing publication
+   permission opens only its approval record, branch push, and bounded handoff
+   reconciliation. No continuation clause was supplied, so no next Mammoth
+   role or Rhino gate is open after publication. It does not authorize public
+   or outline registration, fixtures, effects, child assets, Rhino or Rhino
+   Boss work, Runic Idol, release, accepted drift, a PR, or any broader gate.
 
 ## Approved Preceding Checkpoint - Frostvein Wayfinder Published / Elite Mammoth Gate Open
 
