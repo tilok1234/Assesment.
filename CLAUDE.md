@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private art checkpoint undergoing bounded publication: on
+- Current approved private art checkpoint published / specialist gate open: on
   `codex/en-e10-stag-common`, based exactly on clean published Cragcrown reconciliation
   `6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca`, the designer's `letsdo nex t`
   opened the Stag topology decision and the subsequent `approved` selected
@@ -126,17 +126,18 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   is 194-224. Exact aliases and mirrors pass. The raw, required distinct
   Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
   hash-frozen and regenerate deterministically. Pre-approval focused / fast /
-  full gates pass in 0.9s / 69.8s / 113.3s and approval-local focused / fast
-  gates pass in 0.9s / 61.1s with public 92/294 and all 232 fixtures unchanged.
+  full gates pass in 0.9s / 69.8s / 113.3s, approval-local focused / fast gates
+  pass in 0.9s / 61.1s, and final published-state full validation passes in
+  111.4s with public 92/294 and all 232 fixtures unchanged.
   The four exact PNGs are open together in Aseprite as sprites 99, 103, 107,
   and active 111. The outlined PNG is review evidence only, not outline
   registration. The final prompt posted all four PNGs, both GIFs, and the exact
   digest; the designer replied `approved lets do next`. Accepted implementation
-  `4c5d80901d12063b21c0d6303fc24260bd700209` and approval record
-  `328a9b188ddd6e5db6144f2fdb253f8d9599e12d` are remote verified. Only the
-  initial published handoff and final reconciliation remain open. After that
-  tuple is clean and remote verified, the reply
-  opens exactly one private specialist Stag. Public/outline registration,
+  `4c5d80901d12063b21c0d6303fc24260bd700209`, approval record
+  `328a9b188ddd6e5db6144f2fdb253f8d9599e12d`, and initial published handoff
+  `b8e67f2ddc12a71e3b25c33997a1ffed0329b7f4` are remote verified; this
+  reconciliation completes the bounded publication tuple. The reply now opens
+  exactly one private specialist Stag. Public/outline registration,
   fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work,
   release, accepted drift, a PR, and every broader gate remain closed.
 - Approved preceding published private art checkpoint: on `codex/en-e10-ram-elite`, based

@@ -126,8 +126,8 @@ export const EN_E10_MOSSRACK_FORAGER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: '4c5d80901d12063b21c0d6303fc24260bd700209',
   publishedApprovalRecord: '328a9b188ddd6e5db6144f2fdb253f8d9599e12d',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: 'b8e67f2ddc12a71e3b25c33997a1ffed0329b7f4',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E10_CRAGCROWN_PATRIARCH_GATE.id,
     artifactSha256: EN_E10_CRAGCROWN_PATRIARCH_GATE.artifactSha256,
@@ -184,7 +184,7 @@ export const EN_E10_MOSSRACK_FORAGER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Mossrack Forager implementation 4c5d80901d12063b21c0d6303fc24260bd700209 and approval record 328a9b188ddd6e5db6144f2fdb253f8d9599e12d are remote verified. Only the initial published handoff and final reconciliation remain open. After that tuple is clean and remote verified, the designer reply approved lets do next authorizes exactly one private specialist Stag under the selected topology. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Mossrack Forager implementation 4c5d80901d12063b21c0d6303fc24260bd700209, approval record 328a9b188ddd6e5db6144f2fdb253f8d9599e12d, and initial published handoff b8e67f2ddc12a71e3b25c33997a1ffed0329b7f4 are remote verified; this reconciliation completes the bounded publication tuple. The designer reply approved lets do next authorizes exactly one private specialist Stag under the selected topology. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_MOSSRACK_FORAGER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -504,7 +504,7 @@ export const EN_E10_MOSSRACK_FORAGER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mossrack-forager',
     scale: 8,
-    notes: 'Visually approved as one exact common Stag against approved Cragcrown Patriarch, approved Miremane Courser, and public Dire Wolf. Implementation 4c5d80901d12063b21c0d6303fc24260bd700209 and approval record 328a9b188ddd6e5db6144f2fdb253f8d9599e12d are remote verified. Only the initial published handoff and final reconciliation remain open. After that tuple is clean and remote verified, the designer reply approved lets do next opens exactly one private specialist Stag. The packet includes a distinct Complete B outlined PNG as review evidence only. Keep outline registration, public registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact common Stag against approved Cragcrown Patriarch, approved Miremane Courser, and public Dire Wolf. Implementation 4c5d80901d12063b21c0d6303fc24260bd700209, approval record 328a9b188ddd6e5db6144f2fdb253f8d9599e12d, and initial published handoff b8e67f2ddc12a71e3b25c33997a1ffed0329b7f4 are remote verified; this reconciliation completes the bounded publication tuple. The designer reply approved lets do next opens exactly one private specialist Stag. The packet includes a distinct Complete B outlined PNG as review evidence only. Keep outline registration, public registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

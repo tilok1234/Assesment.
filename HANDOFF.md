@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mossrack Forager Approval Publication
+## Immediate Continuation Checkpoint - Mossrack Forager Published / Specialist Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-stag-common`. It is based exactly on the clean published
@@ -66,9 +66,10 @@ gate.
    Opaque range is 194-224. Complete B adds 13,738 outline pixels and Form
    changes 7,518 pixels. Deterministic regeneration reproduces all six frozen
    hashes. Pre-approval focused / `check:fast` / full `check` pass in 0.9s /
-   69.8s / 113.3s, and approval-local focused / fast gates pass in 0.9s / 61.1s,
-   with public 92/294, both approved comparisons exact, all 232 fixture sheets
-   unchanged, zero child assets/effects, and no public or outline registration.
+   69.8s / 113.3s, approval-local focused / fast gates pass in 0.9s / 61.1s,
+   and final published-state full validation passes in 111.4s, with public
+   92/294, both approved comparisons exact, all 232 fixture sheets unchanged,
+   zero child assets/effects, and no public or outline registration.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-stag-mossrack-forager/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-stag-mossrack-forager` and run
@@ -82,13 +83,13 @@ gate.
    `c3383941492c1976bc03786f73fee20744d0a2af9e8846f44cbf9d59b7384d36`.
    The designer replied `approved lets do next`. Approval applies only to that
    exact packet; accepted implementation
-   `4c5d80901d12063b21c0d6303fc24260bd700209` records it. The implementation
-   and approval record `328a9b188ddd6e5db6144f2fdb253f8d9599e12d` are
-   remote verified. Only the initial published handoff and final reconciliation
-   remain open.
-8. After the common Stag publication tuple is clean and remote verified, the
-   `lets do next` suffix opens exactly one private specialist Stag under the
-   selected topology. Public Stag or outline registration, fixtures, effects,
+   `4c5d80901d12063b21c0d6303fc24260bd700209` records it. The implementation,
+   approval record `328a9b188ddd6e5db6144f2fdb253f8d9599e12d`, and initial
+   published handoff `b8e67f2ddc12a71e3b25c33997a1ffed0329b7f4` are remote
+   verified; this reconciliation completes the bounded publication tuple.
+8. With that common Stag tuple clean and remote verified, the `lets do next`
+   suffix opens exactly one private specialist Stag under the selected topology.
+   Public Stag or outline registration, fixtures, effects,
    child assets, elite Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work,
    the deferred Runic Idol decision, release, accepted drift, a PR, and every
    broader art gate remain closed.
