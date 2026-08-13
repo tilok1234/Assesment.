@@ -23,7 +23,60 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Clean Published Briarstep Checkpoint
+## Immediate Continuation Checkpoint - Gloamcrown Sovereign Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-stag-elite`. It is based exactly on the clean, published,
+   remote-verified Briarstep handoff
+   `595b2b2b18ebe7e111486df96624b4e1f057647b`.
+2. The designer's new `awesine lets keep going` opens exactly one private elite
+   Stag in the frozen common / specialist / elite role order under the selected
+   `baked-single-actor-antlered-grounded-quadruped` topology. It does not
+   authorize publication, registration, fixtures, effects, child assets, or a
+   later family.
+3. Gloamcrown Sovereign is a broad midnight-plum royal cervid with an old-ivory
+   mantle, throat, and tail flag; a near-black violet face and lower legs; a
+   vast connected weathered-gold outward-branching crown rack with verdigris
+   bands; wine markings, mulberry ears, a pale blaze, amber-gold eyes, and four
+   visibly split hooves. Its body owns an antler lift into a planted crown
+   press. Trails, glow, impacts, particles, projectiles, illumination, runtime
+   attachments, and every other effect remain external and Off.
+4. Frozen candidate digest:
+   `5a80240ca6bfb16eb6a53b0b95b5214323a9dde25814b48fb39e9caaf11e4855`.
+   Raw / distinct Complete B outlined / Complete B + Form / family-comparison
+   PNG hashes are
+   `74245504722d36cfe54d79334230b07464833e1ce15b9175554142b5f232f7f9`,
+   `7c4a63f53987e19e87fb5befa9bc9e4561c5cd597b1bdc6de30f50192faa9337`,
+   `f489bad325cfa905036f8c6a7f8dc8ba8a71ee273aa5932fcc31c2f0d9e88ed8`,
+   and `1bd4fbdda04870c55b13891adead703decf7508a9509fb54a188f7b50c49697e`.
+   Raw and Complete B + Form GIF hashes are
+   `8403dbb9d1443590ccb34e72a12b73b5a6141e98011159cfa3ae9ee40e8b1795`
+   and `33dab8a93c5156b07e97733c44c928436d1cc747241a887b897552471ef859f5`.
+5. Focused validation passes 80/80 connected, bounded, grounded, split-hoof,
+   and crown-rack cervid-span frames; 72/72 colored antler-bearing frames; 8/8
+   exact-white flashes; 54/54 expected eye-bearing and readable-muzzle views;
+   exact aliases and mirrors; and 80/80 pixel-plus-alpha distinctions from
+   approved Briarstep Harrier and Mossrack Forager plus public Dire Wolf.
+   Opaque range is 196-234. Complete B adds 14,792 outline pixels and Form
+   changes 6,326 pixels. Focused / `check:fast` / full `check` are green, with
+   fast / full passing in 58.2s / 111.8s, public 92/294, all 232 fixture sheets
+   unchanged, zero child assets/effects, and no public or outline registration.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-stag-gloamcrown-sovereign/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-stag-gloamcrown-sovereign` and
+   run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-stag-gloamcrown-sovereign`.
+   The exact raw, distinct Complete B outlined, Complete B + Form, and
+   comparison PNGs are open together in Aseprite as sprites 131, 135, 139, and
+   active 143. The outlined PNG is review evidence only; it does not authorize
+   outline registration.
+7. Stop for explicit visual approval of the exact posted packet. The candidate
+   remains uncommitted and unpushed. Public/outline registration, fixtures,
+   effects, child assets, Mammoth, Rhino, Furious Depraved Rhino Boss work, the
+   deferred Runic Idol decision, release, accepted drift, a PR, and every
+   broader art gate remain closed.
+
+## Approved Preceding Checkpoint - Clean Published Briarstep Checkpoint
 
 1. Use only `C:\Users\headc\Documents\sprite-assembler-v2`. The live branch is
    `codex/en-e10-stag-specialist`. Its clean published checkpoint and
