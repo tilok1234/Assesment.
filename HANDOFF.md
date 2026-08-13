@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Candidate Checkpoint - Cinderquill Scavenger Awaiting Pixel Approval
+## Current Approved Checkpoint - Cinderquill Scavenger / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-raven-common`. It branches exactly from clean, pushed,
@@ -33,11 +33,15 @@ gate.
    The Raven decision gate proposed
    `baked-single-actor-grounded-folded-wing-corvid` and stated that approval
    would build exactly one private common Raven full 80-frame candidate. On
-   2026-08-14 the designer replied `approved`. That response selects the
-   topology and authorizes only this candidate; it does not approve the pixels
-   or authorize a commit, push, public or outline registration, fixtures,
-   effects, child assets, Raven specialist or elite, Owl, Phoenix, release,
-   accepted drift, or a PR.
+   2026-08-14 the designer replied `approved`. That first response selected the
+   topology and authorized only this candidate. After the exact four-PNG,
+   two-GIF, digest-frozen packet below was shown, the designer replied
+   `approved` again. Pixel approval binds only to implementation
+   `0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the exact digest, and six
+   frozen review hashes. That implementation is pushed and remote verified.
+   The reply contains no continuation request, so Raven specialist or elite,
+   Owl, Phoenix, public or outline registration, fixtures, effects, child
+   assets, release, accepted drift, and a PR remain closed.
 3. Cinderquill Scavenger is one connected compact low-forward natural corvid
    with a rounded blue-black head, short smoky throat, hooked horn beak, deep
    charcoal body, slate folded wings, muted rust-cinder nape and shoulder
@@ -68,7 +72,8 @@ gate.
    and Form changes 6,806 pixels. Focused / fast / full validation passes in
    about 0.7s / 58.0s / 112.6s. Public remains 92/294, all 232 fixtures stay
    exact, and child assets, effects, public registration, and outline
-   registration remain zero.
+   registration remain zero. Approval-local focused and fast gates pass again
+   in about 1.2s and 66.7s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-raven-cinderquill-scavenger/`. Regenerate
    with
@@ -79,11 +84,11 @@ gate.
    four raw phase sheets and the transparent 20x4 inspection atlas were loaded
    and inspected at original resolution. The outlined PNG is review evidence
    only.
-7. Stop here for explicit designer pixel approval of the exact posted packet
-   or candidate digest. The candidate is intentionally uncommitted. Do not
-   stage, commit, push, register, regenerate fixtures, add effects or child
-   assets, begin Raven specialist or elite, Owl, or Phoenix, release, accept
-   drift, or open a PR.
+7. Commit and push only the exact approval record, then create the initial
+   published handoff and final reconciliation needed to complete Cinderquill's
+   bounded publication tuple. Do not register it publicly or for outlines,
+   regenerate fixtures, add effects or child assets, begin Raven specialist or
+   elite, Owl, or Phoenix, release, accept drift, or open a PR.
 
 ## Current Published Checkpoint - Crowncoil Basilarch / Raven Topology Gate Open
 

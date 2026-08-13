@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E11 private common Raven candidate awaiting pixel approval
+Current EN-E11 approved private common Raven / publication in progress
 (2026-08-14): on `codex/en-e11-raven-common`, based exactly on clean, pushed,
 remote-verified Crowncoil final reconciliation
 `090399f2e05f83d102f4d672670f64ffdcd24fed`, the designer replied `approved`
@@ -41,11 +41,15 @@ distinct from approved Crowncoil, approved Rainfan, and public Harpy at opaque
 range 175-284; 16/16 wing-screen attack/cast views; exact aliases and mirrors;
 public 92/294; all 232 fixtures exact; zero child assets, effects, or
 registration. The exact four PNGs, four raw phase sheets, and transparent
-inspection atlas were inspected at original resolution. This topology approval
-does not approve the candidate pixels. Stop for explicit approval of the exact
-packet or digest before any commit or push. Raven specialist or elite, Owl,
-Phoenix, registration, fixtures, effects, child assets, release, accepted
-drift, and a PR remain closed.
+inspection atlas were inspected at original resolution. The exact four-PNG,
+two-GIF, digest-frozen packet was posted and the designer replied `approved`.
+Approval binds only to implementation
+`0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the digest, and six frozen
+hashes; that implementation is pushed and remote verified. Approval-local
+focused/fast gates pass again in about 1.2s/66.7s. Commit and push only the
+approval/handoff reconciliation. No continuation request was supplied, so
+Raven specialist or elite, Owl, Phoenix, registration, fixtures, effects,
+child assets, release, accepted drift, and a PR remain closed.
 
 Current EN-E11 approved private elite Cockatrice published / Raven topology gate open
 (2026-08-14): on `codex/en-e11-cockatrice-elite`, based exactly on

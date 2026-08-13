@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private common Raven candidate awaiting pixel approval
+- Current approved private common Raven / publication in progress
   (2026-08-14): on `codex/en-e11-raven-common`, based exactly on clean,
   pushed, remote-verified Crowncoil final reconciliation
   `090399f2e05f83d102f4d672670f64ffdcd24fed`, the designer replied `approved`
@@ -43,11 +43,15 @@
   16/16 wing-screen views; exact aliases and mirrors; public 92/294; all 232
   fixtures exact; zero child assets/effects/registration. The four exact PNGs,
   four raw phase sheets, and transparent inspection atlas were inspected at
-  original resolution. Topology approval does not approve candidate pixels.
-  Stop for explicit approval of the exact packet or digest before any commit
-  or push. Raven specialist or elite, Owl, Phoenix, registration, fixtures,
-  effects, child assets, release, accepted drift, a PR, and every broader gate
-  remain closed.
+  original resolution. The exact four-PNG, two-GIF, digest-frozen packet was
+  posted and the designer replied `approved`. Approval binds only to
+  implementation `0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the digest,
+  and six frozen hashes; that implementation is pushed and remote verified.
+  Approval-local focused/fast gates pass again in about 1.2s/66.7s. Commit and
+  push only the approval/handoff reconciliation. No continuation request was
+  supplied, so Raven specialist or elite, Owl, Phoenix, registration,
+  fixtures, effects, child assets, release, accepted drift, a PR, and every
+  broader gate remain closed.
 
 - Current approved private elite Cockatrice published / Raven topology gate open
   (2026-08-14): on `codex/en-e11-cockatrice-elite`, based exactly on clean,
@@ -6463,7 +6467,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `raven-common-candidate-awaiting-pixel-approval`
+- Status: `raven-common-approved-publication-in-progress`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 - Active family: Raven common
@@ -6472,14 +6476,18 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current private Raven common candidate awaiting pixel approval
+#### Current approved Raven common / publication in progress
 
 After the complete Crowncoil publication tuple was pushed, remote verified,
 and reconciled at `090399f2e05f83d102f4d672670f64ffdcd24fed`, the open Raven
 decision gate proposed `baked-single-actor-grounded-folded-wing-corvid` and
 stated that approval would build exactly one private common Raven full
 80-frame candidate. The designer replied `approved`. That selected the
-topology and authorized this candidate without approving its pixels.
+topology and authorized this candidate without approving its pixels. After the
+exact four-PNG, two-GIF, digest-frozen packet below was posted, the designer
+replied `approved` again. Pixel approval binds only to implementation
+`0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the digest, and the six frozen
+review hashes. That implementation is pushed and remote verified.
 
 Cinderquill Scavenger is one connected compact low-forward natural corvid with
 a rounded blue-black head, short smoky throat, hooked horn beak, deep charcoal
@@ -6511,12 +6519,13 @@ Focused/fast/full gates pass in about 0.7s/58.0s/112.6s; public remains 92/294,
 all 232 fixtures stay exact, and child assets, effects, public registration,
 and outline registration remain zero. The four exact PNGs, four raw phase
 sheets, and transparent inspection atlas were inspected at original
-resolution.
+resolution. Approval-local focused/fast gates pass again in about 1.2s/66.7s.
 
-Stop for explicit designer approval of the exact packet or digest before any
-commit or push. The outlined PNG is review evidence only. Raven specialist or
-elite, Owl, Phoenix, registration, fixtures, effects, child assets, release,
-accepted drift, and a PR remain closed.
+Commit and push only the approval/handoff reconciliation needed to complete the
+bounded publication tuple. The outlined PNG is review evidence only. No
+continuation request was supplied, so Raven specialist or elite, Owl, Phoenix,
+registration, fixtures, effects, child assets, release, accepted drift, and a
+PR remain closed.
 
 #### Current approved Peacock elite published / next gate closed
 

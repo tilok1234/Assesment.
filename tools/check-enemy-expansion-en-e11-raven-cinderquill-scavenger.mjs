@@ -116,7 +116,7 @@ check(
   'approved Raven topology decision drifted',
 );
 check(
-  EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.status === 'candidate'
+  EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.status === 'approved'
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.baseCheckpoint === '090399f2e05f83d102f4d672670f64ffdcd24fed'
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.architectureDecision === EN_E11_RAVEN_TOPOLOGY_DECISION.id,
   'Raven candidate gate identity or base checkpoint drifted',
@@ -128,9 +128,22 @@ check(
   'Raven candidate authorization evidence drifted',
 );
 check(
-  !('approvedOn' in EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE)
-    && !('publicationState' in EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE),
-  'Raven candidate publication boundary drifted',
+  EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.approvedOn === '2026-08-14'
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.approvalEvidence.includes('The designer replied: approved')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.approvalEvidence.includes('0f14b1a5c2c9fab2756130fffce516ad50b34d860cd68cd186bd93bc3c2a15f2')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.approvedImplementation === '0e1124d6e16f3c5e568b0fe38890eb270b41306d'
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publicationAuthorizedOn === '2026-08-14'
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publishedImplementation === ''
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publishedApprovalRecord === ''
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.initialPublishedHandoff === ''
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('0e1124d6e16f3c5e568b0fe38890eb270b41306d')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('approval record')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('No continuation request')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('outline registration'),
+  'Raven approval record or publication boundary drifted',
 );
 check(
   EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.precedingApproval.gateId === EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.id
@@ -145,9 +158,9 @@ check(
   JSON.stringify(EN_E11_RAVEN_COMMON_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E11_RAVEN_COMMON_CONTRACT_CARD.activeVariant.id === 'cinderquill-scavenger'
     && EN_E11_RAVEN_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E11_RAVEN_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_RAVEN_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_RAVEN_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
-    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Raven common role or candidate contract drifted',
 );
 check(
@@ -159,8 +172,8 @@ check(
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.exclusions.includes('registration')
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.exclusions.includes('fixtures')
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.exclusions.includes('Phoenix')
-    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('Explicit designer approval')
-    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('before any implementation commit or push')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('No continuation request')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('no Raven specialist or elite')
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('Raven specialist or elite'),
   'Raven anatomy, motion, effect firewall, or stop boundary drifted',
 );

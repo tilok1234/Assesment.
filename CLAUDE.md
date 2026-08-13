@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private common Raven candidate awaiting pixel approval: on
+- Current approved private common Raven / publication in progress: on
   `codex/en-e11-raven-common`, based exactly on clean, pushed, remote-verified
   Crowncoil final reconciliation
   `090399f2e05f83d102f4d672670f64ffdcd24fed`, the designer replied `approved`
@@ -130,10 +130,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   connected, bounded, grounded, two-talon, compact-corvid, and distinct from
   approved Crowncoil, approved Rainfan, and public Harpy at opaque range
   175-284; 16/16 wing-screen views; exact aliases and mirrors; public 92/294;
-  all 232 fixtures exact; zero child assets/effects/registration. Stop for
-  explicit approval of the exact packet or digest before commit or push. Raven
-  specialist or elite, Owl, Phoenix, registration, fixtures, effects, child
-  assets, release, accepted drift, and a PR remain closed.
+  all 232 fixtures exact; zero child assets/effects/registration. The exact
+  four-PNG, two-GIF, digest-frozen packet was posted and the designer replied
+  `approved`. Approval binds only to implementation
+  `0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the digest, and six frozen
+  hashes; that implementation is pushed and remote verified. Approval-local
+  focused/fast gates pass again in about 1.2s/66.7s. Commit and push only the
+  approval/handoff reconciliation. No continuation request was supplied, so
+  Raven specialist or elite, Owl, Phoenix, registration, fixtures, effects,
+  child assets, release, accepted drift, and a PR remain closed.
 - Current approved private elite Cockatrice published / Raven topology gate open:
   on `codex/en-e11-cockatrice-elite`, based exactly on clean, pushed,
   remote-verified Gloamgaze reconciliation
