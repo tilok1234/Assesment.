@@ -23,7 +23,71 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Rainfan Forager Published / Next Gate Closed
+## Immediate Continuation Checkpoint - Mirrorfan Ambusher Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-peacock-specialist`. It branches exactly from the clean,
+   pushed, remote-verified Rainfan reconciliation
+   `eb504d2c6b419768aefe026e84f9ed6119855d5c`.
+2. Rainfan Forager's implementation
+   `9841f97fbf25074b1ac5aade89ecc84edfe0da73`, approval record
+   `d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5`, initial published handoff
+   `6321c247007cc8940f6080352bdfc21576482fc7`, and final reconciliation above
+   are remote verified. The live handoff closed every next lane pending a
+   fresh continuation. The designer then said `lets do next`. Under the
+   approved Peacock role order and
+   `baked-single-actor-grounded-fan-tailed-bird` topology, that request opens
+   exactly one private specialist Peacock full 80-frame candidate. It does not
+   approve candidate pixels or open publication, registration, fixtures,
+   effects, child assets, Peacock elite, another Bird family, release,
+   accepted drift, or a PR.
+3. Mirrorfan Ambusher is one connected lean natural ground bird with a high
+   forked dusk-indigo crest, long swept neck and pale throat flash, plum body,
+   two angular copper-russet wings, two long legs ending in separated broad
+   three-toed talon contacts, and one connected narrow jade train with
+   cream/cyan/violet mirror eyes. Attack plants both talons, snaps the train
+   into a split mirror-screen, crosses a wing through the face line, drives a
+   short beak-and-talon lunge, and recovers. Cast aliases Attack; Death aliases
+   Hurt H1,H2,H2,H2. Loose feathers, wind, gust rings, dust, glow,
+   projectiles, air blades, and impacts remain external.
+4. The frozen 80-frame digest is
+   `d2b57707034f5c2f46b53de51ac800cb12b70610d5abe230db7d8a74396e0cb6`.
+   Raw / distinct Complete B outlined / Complete B + Form / avian-comparison
+   PNG hashes are
+   `0a0b2b8d90f70681d6b88a72856cd02d97083863d2c5d50a0df70b79d8f5a19d`,
+   `e1af810efb0dbf3ecec4790e76de4177be5704490e1aecc2d3bc1648e9a5abf4`,
+   `41e4b101a813a55b68eb580e2b00397a602c98725eec69ca6416ffc942911895`,
+   and `a7a93357411b7737e045cc57d2a55532a2bd8b5ebd06e13f28ba0322f3cab303`.
+   Raw and Complete B + Form GIF hashes are
+   `e33ddaa98a99150e9088e34108a91daa9eb5470d1a612c128f74a78618268fa3`
+   and `1bf90d9ff43ee0d874c227c505355163b4e19f8827f623705f569c0ea929c963`.
+5. Focused validation passes 80/80 connected, bounded, grounded, exactly
+   two-three-toed-talon, and lean long-necked natural-bird-span frames; 16/16
+   split mirror-screen views; 54/54 expected eye and beak views; 72/72 crest,
+   train, and wing views; 8/8 exact `#f4f4f4` flashes; exact aliases and
+   mirrors; and 80/80 pixel-plus-alpha distinctions from approved Rainfan
+   Forager and Aerie Scout plus public Harpy Screecher. Opaque range is
+   154-308. Complete B adds 7,664 outline pixels and Form changes 8,916
+   pixels. The transparent 20x4 inspection atlas passes exact dimensions,
+   hard alpha, non-empty-cell, and strict boundary checks. Focused / fast /
+   full validation passes in about 0.9s / 56.2s / 104.1s. Public remains
+   92/294, all 232 fixture sheets stay unchanged, and child assets, effects,
+   public registration, and outline registration remain zero.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-peacock-mirrorfan-ambusher/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e11-peacock-mirrorfan-ambusher` and
+   run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-peacock-mirrorfan-ambusher`. The
+   raw, outlined, Complete B + Form, avian-comparison, and synchronized GIF
+   files form the complete review surface. All four exact PNGs were loaded in
+   Aseprite and inspected. The outlined PNG is evidence only; it does not
+   authorize outline registration.
+7. Stop for explicit designer visual approval of this exact digest and six
+   hashes. Do not commit, push, publish, register, regenerate fixtures, add
+   effects or child assets, begin Peacock elite or Cockatrice/Raven/Owl/Phoenix,
+   release, accept drift, or open a PR.
+
+## Approved Preceding Checkpoint - Rainfan Forager Published / Specialist Gate Opened Later
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-peacock-common`. It branches exactly from clean, published,
@@ -89,11 +153,12 @@ gate.
    record `d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5`, and initial published handoff
    `6321c247007cc8940f6080352bdfc21576482fc7` are remote verified; this
    reconciliation completes the bounded publication tuple.
-8. The approval reply contains no continuation request. Do not register,
-   regenerate fixtures, add effects, open Peacock specialist or elite, begin
-   Cockatrice/Raven/Owl/Phoenix, release, accept drift, or open a PR. The next
-   sprite lane remains closed after publication until a fresh explicit
-   continuation request.
+8. The approval reply itself contained no continuation request, so every next
+   lane remained closed at publication. The designer's later fresh
+   `lets do next` opened only the private specialist Peacock checkpoint above.
+   Registration, fixtures, effects, Peacock elite,
+   Cockatrice/Raven/Owl/Phoenix, release, accepted drift, and a PR remain
+   closed.
 
 ## Approved Preceding Checkpoint - Stonefern Bastion Published / Peacock Gate Opened Later
 

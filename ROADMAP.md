@@ -14,7 +14,42 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E11 private common Peacock published / next gate closed
+Current EN-E11 private specialist Peacock candidate awaiting visual approval
+(2026-08-13): on `codex/en-e11-peacock-specialist`, based exactly on clean,
+pushed, remote-verified Rainfan reconciliation
+`eb504d2c6b419768aefe026e84f9ed6119855d5c`, the designer supplied the fresh
+continuation `lets do next`. Under the approved Peacock role order and
+`baked-single-actor-grounded-fan-tailed-bird` topology, that opens exactly one
+private specialist Peacock full 80-frame candidate and does not approve its
+pixels or publication. Mirrorfan Ambusher is a connected lean natural ground
+bird with a high forked dusk-indigo crest, long pale-throated neck, plum body,
+angular copper-russet wings, two separated three-toed talon contacts, and one
+connected narrow jade mirror-eye train. Attack plants both talons, snaps the
+train into a split mirror-screen, crosses a wing through the face line, drives
+a short beak-and-talon lunge, and recovers without a baked effect. Its exact
+80-frame digest is
+`d2b57707034f5c2f46b53de51ac800cb12b70610d5abe230db7d8a74396e0cb6`.
+Raw / outlined / Form / comparison PNG hashes are
+`0a0b2b8d90f70681d6b88a72856cd02d97083863d2c5d50a0df70b79d8f5a19d`,
+`e1af810efb0dbf3ecec4790e76de4177be5704490e1aecc2d3bc1648e9a5abf4`,
+`41e4b101a813a55b68eb580e2b00397a602c98725eec69ca6416ffc942911895`,
+and `a7a93357411b7737e045cc57d2a55532a2bd8b5ebd06e13f28ba0322f3cab303`;
+raw / Form GIF hashes are
+`e33ddaa98a99150e9088e34108a91daa9eb5470d1a612c128f74a78618268fa3`
+and `1bf90d9ff43ee0d874c227c505355163b4e19f8827f623705f569c0ea929c963`.
+Focused validation passes all 80 structural, two-talon, lean natural-bird-span,
+alias, mirror, palette, and three-way comparison cases at opaque range 154-308;
+16/16 mirror-screen views preserve broad connected eyespot trains. The
+transparent inspection atlas passes dimensions, hard alpha, non-empty-cell,
+and strict boundary checks. Focused/fast/full gates pass in about
+0.9s/56.2s/104.1s. Public stays 92/294, all 232 fixtures remain unchanged,
+and child assets/effects/public registration/outline registration stay zero.
+The four exact review PNGs were loaded in Aseprite and inspected. Stop for
+explicit visual approval; no commit, push, publication, registration,
+fixtures, effects, child assets, Peacock elite, another Bird family, release,
+accepted drift, or PR is open.
+
+Approved preceding EN-E11 private common Peacock published / specialist gate opened later
 (2026-08-13): on `codex/en-e11-peacock-common`, based exactly on clean,
 published, remote-verified Stonefern reconciliation
 `51033b2385fe5e3eab64006b935a85c91140e86f`, the designer selected Birds with
@@ -54,8 +89,10 @@ replied `approved`. Approval binds only to accepted implementation
 implementation, approval record
 `d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5`, and initial published handoff
 `6321c247007cc8940f6080352bdfc21576482fc7` are remote verified; this
-reconciliation completes the bounded publication tuple. The reply
-contains no continuation request, so registration, fixtures, effects, later Peacock roles,
+reconciliation completes the bounded publication tuple. That approval reply
+contained no continuation request, so every next lane remained closed at
+publication. The designer's later fresh `lets do next` opens only the private
+specialist checkpoint above; registration, fixtures, effects, Peacock elite,
 other Bird families, release, accepted drift, and a PR remain closed.
 
 Approved preceding EN-E10 private elite Rhino published / Peacock gate opened later

@@ -107,7 +107,36 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private common Peacock published / next gate closed: on
+- Current private specialist Peacock candidate awaiting visual approval: on
+  `codex/en-e11-peacock-specialist`, based exactly on clean, pushed,
+  remote-verified Rainfan reconciliation
+  `eb504d2c6b419768aefe026e84f9ed6119855d5c`, the designer supplied the fresh
+  continuation `lets do next`. Under the selected
+  `baked-single-actor-grounded-fan-tailed-bird` topology and Peacock role
+  order, that opens exactly one private specialist Peacock full 80-frame
+  candidate. Mirrorfan Ambusher is a connected lean dusk-indigo/plum natural
+  Peacock with a high forked crest, long pale-throated neck, angular
+  copper-russet wings, two separated broad three-toed talon contacts, and one
+  connected narrow jade mirror-eye train. Attack plants both talons, snaps the
+  train into a split mirror-screen, crosses a wing through the face line,
+  drives a short beak-and-talon lunge, and recovers without a baked effect.
+  Its frozen digest is
+  `d2b57707034f5c2f46b53de51ac800cb12b70610d5abe230db7d8a74396e0cb6`;
+  raw / outline / Form / comparison PNG hashes are
+  `0a0b2b8d90f70681d6b88a72856cd02d97083863d2c5d50a0df70b79d8f5a19d`,
+  `e1af810efb0dbf3ecec4790e76de4177be5704490e1aecc2d3bc1648e9a5abf4`,
+  `41e4b101a813a55b68eb580e2b00397a602c98725eec69ca6416ffc942911895`,
+  and `a7a93357411b7737e045cc57d2a55532a2bd8b5ebd06e13f28ba0322f3cab303`;
+  raw / Form GIF hashes are
+  `e33ddaa98a99150e9088e34108a91daa9eb5470d1a612c128f74a78618268fa3`
+  and `1bf90d9ff43ee0d874c227c505355163b4e19f8827f623705f569c0ea929c963`.
+  Focused/fast/full gates pass in about 0.9s/56.2s/104.1s with all 80 frames
+  structural and distinct from Rainfan, Aerie Scout, and Harpy; public stays
+  92/294 and all 232 fixtures stay exact. The four exact PNGs were loaded in
+  Aseprite and inspected. Stop for explicit visual approval. No commit, push,
+  publication, registration, fixture, effect, child asset, Peacock elite,
+  another Bird family, release, accepted drift, or PR is open.
+- Approved preceding private common Peacock published / specialist gate opened later: on
   `codex/en-e11-peacock-common`, based exactly on clean, published,
   remote-verified Stonefern reconciliation
   `51033b2385fe5e3eab64006b935a85c91140e86f`, the designer selected Birds
@@ -149,10 +178,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   implementation, approval record
   `d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5`, and initial published handoff
   `6321c247007cc8940f6080352bdfc21576482fc7` are remote verified; this
-  reconciliation completes the bounded publication tuple. The reply
-  contains no continuation request, so registration, fixtures, effects, later Peacock
-  roles, other Bird families, release, accepted drift, and a PR remain closed;
-  the outlined PNG is review evidence only.
+  reconciliation completes the bounded publication tuple. That reply itself
+  contained no continuation request, so every next lane remained closed at
+  publication. The designer's later fresh `lets do next` opens only the
+  specialist checkpoint above; registration, fixtures, effects, Peacock
+  elite, other Bird families, release, accepted drift, and a PR remain closed.
+  The outlined PNG is review evidence only.
 - Approved preceding private elite Rhino published / Peacock gate opened later: on
   `codex/en-e10-rhino-elite`, based exactly on clean, published,
   remote-verified Reedcrest reconciliation

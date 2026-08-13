@@ -15,6 +15,36 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
+- Current private specialist Peacock candidate awaiting visual approval
+  (2026-08-13): on `codex/en-e11-peacock-specialist`, based exactly on clean,
+  pushed, remote-verified Rainfan reconciliation
+  `eb504d2c6b419768aefe026e84f9ed6119855d5c`, the designer's fresh
+  `lets do next` authorizes exactly one private specialist Peacock full
+  80-frame candidate under the selected
+  `baked-single-actor-grounded-fan-tailed-bird` topology. Mirrorfan Ambusher is
+  one connected lean dusk-indigo and plum natural Peacock with a high forked
+  crest, long pale-throated neck, angular copper-russet wings, two separated
+  broad three-toed talon contacts, and one connected narrow jade mirror-eye
+  train. Attack plants both talons, snaps the train into a split mirror-screen,
+  crosses a wing through the face line, drives a short beak-and-talon lunge,
+  and recovers without a baked effect. Its frozen digest is
+  `d2b57707034f5c2f46b53de51ac800cb12b70610d5abe230db7d8a74396e0cb6`.
+  Raw / distinct Complete B outlined / Complete B + Form / comparison PNG
+  hashes are `0a0b2b8d90f70681d6b88a72856cd02d97083863d2c5d50a0df70b79d8f5a19d`,
+  `e1af810efb0dbf3ecec4790e76de4177be5704490e1aecc2d3bc1648e9a5abf4`,
+  `41e4b101a813a55b68eb580e2b00397a602c98725eec69ca6416ffc942911895`,
+  and `a7a93357411b7737e045cc57d2a55532a2bd8b5ebd06e13f28ba0322f3cab303`;
+  raw / Form GIF hashes are
+  `e33ddaa98a99150e9088e34108a91daa9eb5470d1a612c128f74a78618268fa3`
+  and `1bf90d9ff43ee0d874c227c505355163b4e19f8827f623705f569c0ea929c963`.
+  Focused validation passes all 80 structural, two-talon,
+  lean-natural-bird-span, alias, mirror, and three-way pixel/alpha-distinction
+  cases at opaque range 154-308. Focused/fast/full gates pass in about
+  0.9s/56.2s/104.1s. Public remains 92/294 and all 232 fixtures remain
+  unchanged. Stop for explicit visual approval; no commit, push, publication,
+  registration, fixture, effect, child asset, Peacock elite, other Bird
+  family, release, accepted drift, PR, or broader gate is open.
+
 - Current private common Rhino candidate awaiting visual approval
   (2026-08-13): on `codex/en-e10-rhino-common`, based exactly on clean
   Rimevault reconciliation `df7a918c2b8ef13476cbf363663d42eec7638809`,
