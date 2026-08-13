@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Rainfan Forager Published / Handoff Reconciliation In Progress
+## Immediate Continuation Checkpoint - Rainfan Forager Published / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-peacock-common`. It branches exactly from clean, published,
@@ -69,6 +69,8 @@ gate.
    unchanged, and child assets, effects, public registration, and outline
    registration remain zero. Approval-local focused / `check:fast` gates pass
    again in about 0.9s / 56.5s against the exact accepted implementation.
+   Final published-state focused / `check:fast` / full `check` pass in about
+   0.9s / 55.3s / 101.9s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-peacock-rainfan-forager/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e11-peacock-rainfan-forager` and run
@@ -83,9 +85,10 @@ gate.
    `061a67e81e4c2bb4e7ed528953d2acf1e19d1453b2098ddceff1c01ca4e38128`.
    The designer replied `approved`. Approval binds only to those frozen files
    and accepted implementation
-   `9841f97fbf25074b1ac5aade89ecc84edfe0da73`. That implementation and approval
-   record `d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5` are remote verified. Only the
-   initial published handoff and final reconciliation remain open.
+   `9841f97fbf25074b1ac5aade89ecc84edfe0da73`. That implementation, approval
+   record `d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5`, and initial published handoff
+   `6321c247007cc8940f6080352bdfc21576482fc7` are remote verified; this
+   reconciliation completes the bounded publication tuple.
 8. The approval reply contains no continuation request. Do not register,
    regenerate fixtures, add effects, open Peacock specialist or elite, begin
    Cockatrice/Raven/Owl/Phoenix, release, accept drift, or open a PR. The next

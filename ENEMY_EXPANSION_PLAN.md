@@ -6211,7 +6211,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `common-published-handoff-reconciliation`
+- Status: `common-published-next-gate-closed`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 
@@ -6260,14 +6260,16 @@ non-empty-cell, and strict boundary checks. Focused/fast/full gates pass in
 about 0.6s/56.8s/106.4s with public 92/294, all 232 fixtures unchanged, and
 zero child assets, effects, public registration, or outline registration.
 Approval-local focused/fast gates pass again in about 0.9s/56.5s against the
-exact accepted implementation.
+exact accepted implementation. Final published-state focused/fast/full gates
+pass in about 0.9s/55.3s/101.9s.
 
 The final approval prompt posted the exact four PNGs, two GIFs, and digest, and
 the designer replied `approved`. Approval binds only to accepted implementation
 `9841f97fbf25074b1ac5aade89ecc84edfe0da73` and the six frozen hashes. That
-implementation and approval record
-`d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5` are remote verified; only the
-initial published handoff and final reconciliation remain open. The reply
+implementation, approval record
+`d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5`, and initial published handoff
+`6321c247007cc8940f6080352bdfc21576482fc7` are remote verified; this
+reconciliation completes the bounded publication tuple. The reply
 contains no continuation request, so registration, fixtures, effects, specialist/elite
 Peacock, Cockatrice, Raven, Owl, Phoenix, release, accepted drift, and a PR
 remain closed. The outlined PNG is review evidence only.

@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private common Peacock published / handoff reconciliation in progress: on
+- Current private common Peacock published / next gate closed: on
   `codex/en-e11-peacock-common`, based exactly on clean, published,
   remote-verified Stonefern reconciliation
   `51033b2385fe5e3eab64006b935a85c91140e86f`, the designer selected Birds
@@ -140,14 +140,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   0.6s / 56.8s / 106.4s. Public stays 92/294, all 232 fixtures remain exact,
   and child assets/effects/public registration/outline registration stay zero.
   Approval-local focused / fast gates pass again in about 0.9s / 56.5s
-  against the exact accepted implementation.
+  against the exact accepted implementation. Final published-state focused /
+  fast / full gates pass in about 0.9s / 55.3s / 101.9s.
   The four exact review PNGs were inspected in Aseprite. The final approval
   prompt posted those four PNGs, both GIFs, and the digest, and the designer
   replied `approved`. Approval binds only to accepted implementation
   `9841f97fbf25074b1ac5aade89ecc84edfe0da73` and the six frozen hashes. That
-  implementation and approval record
-  `d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5` are remote verified; only the
-  initial published handoff and final reconciliation remain open. The reply
+  implementation, approval record
+  `d9d2c601b66ca3dcd4c1e00e97df1d4d486932e5`, and initial published handoff
+  `6321c247007cc8940f6080352bdfc21576482fc7` are remote verified; this
+  reconciliation completes the bounded publication tuple. The reply
   contains no continuation request, so registration, fixtures, effects, later Peacock
   roles, other Bird families, release, accepted drift, and a PR remain closed;
   the outlined PNG is review evidence only.
