@@ -14,7 +14,44 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 approved private specialist Rhino published / elite gate closed
+Current EN-E10 private elite Rhino awaiting visual approval (2026-08-13): on
+`codex/en-e10-rhino-elite`, based exactly on clean, published, remote-verified
+Reedcrest reconciliation `b0313abeeaadea7e14b62339e280469b08b37653`, the
+designer explicitly confirmed that `approvedf` meant `lets do next` after Codex
+asked whether to open the elite Rhino lane. That confirmation opens exactly one
+private elite Rhino full 80-frame candidate under the selected
+`baked-single-actor-natural-plated-low-grounded-quadruped` topology; it does
+not approve candidate pixels. Stonefern Bastion is a broad low iron-gray
+natural Rhino with a restrained shoulder escarpment, three separated
+burnt-ochre ridges, muted fern markings, compact charcoal wedge head, thick
+limestone horn and tiny nub, low ears, copper-gold eyes, short tail, four pillar
+legs, four broad three-toed feet, and a planted compression into an effect-free
+short rising shoulder-and-horn hook. A narrow pre-freeze visual-QA polish
+tapered only the Down-facing horn so it reads as a horn rather than a trunk.
+Its exact 80-frame digest is
+`a737511220c2049e4aed742a7f08a9a71d4b1cfeab86aa8997cef4d3181b808f`.
+Raw / outlined / Form / comparison PNG hashes are
+`82ea503fec8ded8679f38714b8e1870a29d9db441dc902853ec4716249c2efe5`,
+`47ce2c46015c05f5ed05b11eb1f10af865ad2c1510e22d7b2e9cf18a24639107`,
+`753f0c1b70e16410763803ce4258152228fca387e39b4d6fecaac537defe1293`,
+and `2622e48bd4d8dd751457fb1527d61760677757578fe77616cacf6ffac7a66838`;
+raw / Form GIF hashes are
+`c4eb9256c8db42de0232aa71b709b3aed21521ea9ca3e32ddf3d4120e1eb08a3`
+and `a784f08e7535a4ccc219adc2ae3ae277e2058c68c14ffcefecec66f518bcbae6`.
+Focused validation passes all 80 structural, four-three-toed-foot,
+broad-low-ridged-span, alias, mirror, ridge/fern-mark, and comparison cases at
+opaque range 239-290. Complete B adds 10,040 outline pixels and Form changes
+9,438 pixels. Pre-approval focused/fast/full gates pass in
+0.6s/62.8s/121.9s. The protected Furious Depraved Rhino direction and
+full-animation candidates remain byte-exact. Public stays 92/294, all 232 fixtures remain
+unchanged, and child assets/effects/public registration/outline registration
+stay zero. The four exact review PNGs are open in Aseprite as sprites 302, 306,
+310, and 314; the protected Boss references are open separately as sprites 318
+and active 322. Stop for explicit visual approval of exactly this frozen
+packet. No commit, push, registration, publication, Boss change, release,
+accepted drift, or PR is open.
+
+Approved preceding EN-E10 private specialist Rhino published / elite gate opened later
 (2026-08-13): on `codex/en-e10-rhino-specialist`, based exactly on clean,
 published, remote-verified Mudplate reconciliation
 `fb99996abd98ae369dc6d1fdb436e8f97d54bc95`, the designer reply `approved

@@ -5750,9 +5750,9 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer and specialist Reedcrest Skirmisher approved and published; elite Rhino closed`
+- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer and specialist Reedcrest Skirmisher approved and published; private elite Stonefern Bastion awaiting visual approval`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
-- Priority-first: no active Rhino art lane; require a fresh explicit continuation before elite Rhino work
+- Priority-first: stop at the exact Stonefern Bastion elite Rhino visual-approval gate
 
 Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
@@ -5831,6 +5831,45 @@ continuation request, so no private elite Rhino candidate or other Rhino work
 is open; a fresh explicit continuation is required. Public or outline registration,
 fixtures, effects, child assets, every Boss change, release, accepted drift,
 and a PR remain closed.
+
+Stonefern Bastion is the authorized private elite Rhino from clean, published,
+remote-verified Reedcrest reconciliation
+`b0313abeeaadea7e14b62339e280469b08b37653`. The designer asked `whats next`;
+Codex answered that elite Rhino was next but required a fresh continuation.
+After the designer typed `approvedf`, Codex explicitly asked whether that meant
+`lets do next` to open the elite Rhino lane, and the designer replied
+`approved`. That confirmation opens exactly one private elite Rhino full
+80-frame candidate under the selected topology; it does not approve candidate
+pixels. Stonefern preserves the connected natural Rhino contract while using a
+broad low iron-gray barrel, restrained shoulder escarpment, three separated
+burnt-ochre ridges, muted fern markings, compact charcoal wedge head, thick
+limestone horn and tiny nub, low ears, copper-gold eyes, short tail, four pillar
+legs, and four broad three-toed feet. Its planted compression into a short
+rising shoulder-and-horn hook is entirely body-owned; arcs, wakes, flares,
+impacts, dust, debris, and every other effect stay external. A narrow
+pre-freeze visual-QA polish tapered only the Down-facing horn so it reads as a
+horn rather than a trunk. The exact 80-frame digest is
+`a737511220c2049e4aed742a7f08a9a71d4b1cfeab86aa8997cef4d3181b808f`.
+Raw / outlined Complete B / Complete B + Form / comparison PNG hashes are
+`82ea503fec8ded8679f38714b8e1870a29d9db441dc902853ec4716249c2efe5`,
+`47ce2c46015c05f5ed05b11eb1f10af865ad2c1510e22d7b2e9cf18a24639107`,
+`753f0c1b70e16410763803ce4258152228fca387e39b4d6fecaac537defe1293`,
+and `2622e48bd4d8dd751457fb1527d61760677757578fe77616cacf6ffac7a66838`;
+raw / Form GIF hashes are
+`c4eb9256c8db42de0232aa71b709b3aed21521ea9ca3e32ddf3d4120e1eb08a3`
+and `a784f08e7535a4ccc219adc2ae3ae277e2058c68c14ffcefecec66f518bcbae6`.
+Focused validation passes all 80 structural, four-three-toed-foot,
+broad-low-ridged-span, ridge/fern-mark, alias, mirror, and comparison cases at
+opaque range 239-290, with approved Mudplate and Reedcrest plus public Dire
+Wolf exact and the protected Boss assets byte-exact. Pre-approval
+focused/fast/full gates pass in 0.6s/62.8s/121.9s. Public stays 92/294, all 232
+fixtures remain unchanged, and child assets/effects/public registration/
+outline registration stay zero. The four exact review PNGs are open in
+Aseprite as sprites 302, 306, 310, and 314; the protected Boss direction and
+full-animation sheets are open separately as sprites 318 and active 322. Stop
+for explicit visual approval of exactly this frozen packet. Do not commit,
+push, register, publish, accept drift, release, or open a PR before approval;
+the outlined PNG is review evidence only and every Boss change remains closed.
 
 Hyena topology and common art gate (2026-08-13): the designer selected
 `baked-single-actor-grounded-quadruped` — one connected grounded 24x24 Hyena
