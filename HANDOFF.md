@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Checkpoint - Bramblecomb Scratcher Published / Handoff Reconciliation In Progress
+## Current Published Checkpoint - Bramblecomb Scratcher / Specialist Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-cockatrice-common`. It branches exactly from the clean,
@@ -88,11 +88,13 @@ gate.
    frozen files and accepted implementation
    `c01ac35a5862296469967255ffcadadfd5aaae4e`. That implementation and approval
    record `335b5c467c10f2042128ef7e7f20367735422909` are pushed and remote
-   verified; only the initial published handoff and final reconciliation
-   remain open. The same reply opens exactly one private specialist Cockatrice
-   full 80-frame candidate after this publication tuple is reconciled; it does
-   not approve specialist pixels. Do not register, regenerate fixtures, add
-   effects or child assets, begin elite Cockatrice or another Bird family,
+   verified. Initial published handoff
+   `9347a28f6cef9c6ca11a163732674d203bc87d94` is also pushed and remote
+   verified; this reconciliation completes the bounded publication tuple. The
+   same reply opens exactly one private specialist Cockatrice full 80-frame
+   candidate from this clean pushed checkpoint under the selected topology; it
+   does not approve specialist pixels. Do not register, regenerate fixtures,
+   add effects or child assets, begin elite Cockatrice or another Bird family,
    release, accept drift, or open a PR.
 
 ## Current Published Checkpoint - Crownveil Sovereign / Next Gate Closed

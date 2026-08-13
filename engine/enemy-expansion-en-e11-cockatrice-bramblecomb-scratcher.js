@@ -77,8 +77,8 @@ export const EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: 'c01ac35a5862296469967255ffcadadfd5aaae4e',
   publishedApprovalRecord: '335b5c467c10f2042128ef7e7f20367735422909',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '9347a28f6cef9c6ca11a163732674d203bc87d94',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.id,
     candidateFrameDigest: EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.candidateFrameDigest,
@@ -146,7 +146,7 @@ export const EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Bramblecomb Scratcher implementation c01ac35a5862296469967255ffcadadfd5aaae4e and approval record 335b5c467c10f2042128ef7e7f20367735422909 are remote verified. Only the initial published handoff and final reconciliation remain open. The same reply opens exactly one private specialist Cockatrice full 80-frame candidate after this tuple is reconciled; it does not approve specialist pixels. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Cockatrice registration, fixtures, effects, child assets, elite Cockatrice, Raven, Owl, Phoenix, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Bramblecomb Scratcher implementation c01ac35a5862296469967255ffcadadfd5aaae4e, approval record 335b5c467c10f2042128ef7e7f20367735422909, and initial published handoff 9347a28f6cef9c6ca11a163732674d203bc87d94 are remote verified; this reconciliation completes the bounded publication tuple. The same approval reply opens exactly one private specialist Cockatrice full 80-frame candidate from this clean pushed checkpoint under the selected topology; it does not approve specialist pixels. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Cockatrice registration, fixtures, effects, child assets, elite Cockatrice, Raven, Owl, Phoenix, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_DATA = deepFreeze({
@@ -599,7 +599,7 @@ export const EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'bramblecomb-scratcher',
     scale: 6,
-    notes: 'Visually approved as one exact private common Cockatrice against approved Crownveil Sovereign, approved Aerie Scout, and public Marsh Crocodile. Accepted implementation c01ac35a5862296469967255ffcadadfd5aaae4e and approval record 335b5c467c10f2042128ef7e7f20367735422909 are remote verified. Only the initial published handoff and final reconciliation remain open. The distinct Complete B outlined PNG remains review evidence only. The same reply opens exactly one private specialist Cockatrice candidate only after reconciliation. Keep public or outline registration, fixtures, effects, child assets, elite Cockatrice, later Bird families, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private common Cockatrice against approved Crownveil Sovereign, approved Aerie Scout, and public Marsh Crocodile. Accepted implementation c01ac35a5862296469967255ffcadadfd5aaae4e, approval record 335b5c467c10f2042128ef7e7f20367735422909, and initial published handoff 9347a28f6cef9c6ca11a163732674d203bc87d94 are remote verified; this reconciliation completes the bounded publication tuple. The distinct Complete B outlined PNG remains review evidence only. The same reply opens exactly one private specialist Cockatrice candidate from this clean checkpoint. Keep public or outline registration, fixtures, effects, child assets, elite Cockatrice, later Bird families, release, accepted drift, and a pull request separate.',
   },
 });
 

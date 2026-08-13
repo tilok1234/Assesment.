@@ -138,8 +138,8 @@ check(
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.publishedImplementation === 'c01ac35a5862296469967255ffcadadfd5aaae4e'
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.publishedApprovalRecord === '335b5c467c10f2042128ef7e7f20367735422909'
-    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.initialPublishedHandoff === ''
-    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.initialPublishedHandoff === '9347a28f6cef9c6ca11a163732674d203bc87d94'
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.publicationState === 'published'
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.precedingApproval.gateId === EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.id
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.precedingApproval.candidateFrameDigest === EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.candidateFrameDigest
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.precedingApproval.currentReconciliation === EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.baseCheckpoint
@@ -165,7 +165,8 @@ check(
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.exclusions.includes('registration')
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.exclusions.includes('fixtures')
     && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.exclusions.includes('approved Crownveil Sovereign pixel changes')
-    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.nextGate.includes('initial published handoff'),
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.nextGate.includes('initial published handoff 9347a28f6cef9c6ca11a163732674d203bc87d94')
+    && EN_E11_COCKATRICE_BRAMBLECOMB_SCRATCHER_GATE.nextGate.includes('completes the bounded publication tuple'),
   'Bramblecomb anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(

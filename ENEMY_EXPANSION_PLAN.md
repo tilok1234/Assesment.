@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current approved private common Cockatrice published / handoff reconciliation in progress
+- Current approved private common Cockatrice published / specialist gate open
   (2026-08-13): on `codex/en-e11-cockatrice-common`, based exactly on clean,
   pushed, remote-verified Crownveil reconciliation
   `99fed17ec4815b6985288818796a85b9abc7d78d`, the designer's fresh `lets do
@@ -53,12 +53,13 @@
   `c01ac35a5862296469967255ffcadadfd5aaae4e` and the six frozen hashes.
   That implementation and approval record
   `335b5c467c10f2042128ef7e7f20367735422909` are pushed and remote verified;
-  only the initial published handoff and final reconciliation remain open. The
-  same reply opens exactly one private specialist Cockatrice candidate after
-  the publication tuple is reconciled; it does not approve specialist pixels.
-  Registration, fixtures, effects, child assets, elite Cockatrice, Raven, Owl,
-  Phoenix, release, accepted drift, a PR, and every broader gate remain
-  closed.
+  initial published handoff `9347a28f6cef9c6ca11a163732674d203bc87d94`
+  is also pushed and remote verified; this reconciliation completes the
+  bounded publication tuple. The same reply opens exactly one private
+  specialist Cockatrice candidate from this clean pushed checkpoint under the
+  selected topology; it does not approve specialist pixels. Registration,
+  fixtures, effects, child assets, elite Cockatrice, Raven, Owl, Phoenix,
+  release, accepted drift, a PR, and every broader gate remain closed.
 
 - Current private elite Peacock published / next gate closed
   (2026-08-13): on `codex/en-e11-peacock-elite`, based exactly on clean,
