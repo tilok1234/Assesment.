@@ -14,7 +14,34 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current approved EN-E10 private art checkpoint published / specialist gate open
+Current EN-E10 private art checkpoint awaiting visual approval (2026-08-13):
+from clean published Mossrack reconciliation
+`67331ed1a160c8e62df0c9941b7c051ab5d0b228`, the designer's `approved lets do
+next` suffix authorizes exactly one private specialist Stag. Briarstep Harrier
+on `codex/en-e10-stag-specialist` is a sleek high-chested slate-green cervid
+with a tucked barrel, long pale throat, compact blue-charcoal face, connected
+swept-back ivory branching rack, violet bramble bands, plum ears, cyan eyes,
+short pale flag tail, four long legs, four cleft near-black hooves, and a
+body-owned lateral feint into a low antler rake. Its exact digest is
+`fb352a405be53536a2304eb8ad97ef7e03f0819519607a8a0afea16e81f97457`.
+Raw / distinct Complete B outlined / Complete B + Form / comparison PNG hashes
+are `3874a2be78c6cf49d956da8cad4dea0273bd64df4a905b49ea6a10bbaa34ebcc`,
+`18c2ead46605c7530511a076ecbcf0f6cf2f630b94bdf9504449cec6794164a8`,
+`d0c075c28d6ed0a52620e54195435c477f41a13ac71205c34b281ec6817ec8cb`,
+and `f58ced45ebe96fb7e42bfb29118024e7e2a4b4d0461e287ad522d093d3bcc866`;
+raw / Form GIF hashes are
+`6172ddb391750d318e8fc263e6a53a34492dd723beb53ad6bf10d07b8cad1e13`
+and `523e4c3a8462d02a95398fa8df8c056b932c157ee834d18c10042092eea3ccc5`.
+Focused / fast / full gates pass in 1.1s / 69.1s / 124.8s with 80/80 connected,
+bounded, grounded, split-hoof, cervid-span, and three-way pixel/alpha-distinct
+frames; opaque range 171-209, public 92/294, and all 232 fixtures unchanged.
+Exact PNGs are open in Aseprite as sprites 115, 119, 123, and active 127. Stop
+for explicit visual approval; the candidate remains uncommitted and unpushed.
+The outlined board is evidence only. Public/outline registration, fixtures,
+effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, release,
+accepted drift, a PR, and every broader gate remain closed.
+
+Approved preceding EN-E10 private art checkpoint published / specialist gate open
 (2026-08-13): from clean published Cragcrown reconciliation
 `6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca`,
 the designer's `letsdo nex t` opened the Stag topology decision and the

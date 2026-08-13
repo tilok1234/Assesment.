@@ -23,7 +23,63 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mossrack Forager Published / Specialist Gate Open
+## Immediate Continuation Checkpoint - Briarstep Harrier Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-stag-specialist`. It is based exactly on clean, published,
+   remote-verified Mossrack Forager reconciliation
+   `67331ed1a160c8e62df0c9941b7c051ab5d0b228`.
+2. The designer approved Mossrack's exact packet with `approved lets do next`.
+   After the common publication tuple was completed and remote verified, that
+   suffix authorizes exactly one private specialist Stag under the selected
+   `baked-single-actor-antlered-grounded-quadruped` topology. It does not
+   authorize publication, registration, or another art gate.
+3. Briarstep Harrier is a sleek high-chested specialist with dusk slate-green
+   hide, a tucked narrow barrel, long angled pale throat, compact blue-charcoal
+   muzzle and lower legs, two long connected swept-back branching ivory
+   antlers, dusk-violet bramble bands, plum ears, cyan eyes, a short pale flag
+   tail, four high-stepping legs, and four visibly cleft near-black hooves. Its
+   body owns a lateral feint into one low antler rake. Leaves, thorns, dust,
+   grass, pollen, antler trails, impacts, particles, projectiles, glow,
+   illumination, runtime attachments, and all other effects remain external
+   and Off.
+4. Frozen candidate digest:
+   `fb352a405be53536a2304eb8ad97ef7e03f0819519607a8a0afea16e81f97457`.
+   Raw / distinct Complete B outlined / Complete B + Form / family-comparison
+   PNG hashes are
+   `3874a2be78c6cf49d956da8cad4dea0273bd64df4a905b49ea6a10bbaa34ebcc`,
+   `18c2ead46605c7530511a076ecbcf0f6cf2f630b94bdf9504449cec6794164a8`,
+   `d0c075c28d6ed0a52620e54195435c477f41a13ac71205c34b281ec6817ec8cb`,
+   and `f58ced45ebe96fb7e42bfb29118024e7e2a4b4d0461e287ad522d093d3bcc866`.
+   Raw and Complete B + Form GIF hashes are
+   `6172ddb391750d318e8fc263e6a53a34492dd723beb53ad6bf10d07b8cad1e13`
+   and `523e4c3a8462d02a95398fa8df8c056b932c157ee834d18c10042092eea3ccc5`.
+5. Focused validation passes 80/80 connected, bounded, grounded, split-hoof,
+   and cervid-span frames; 72/72 colored antler-bearing frames; 8/8 exact-white
+   flashes; 54/54 expected eye-bearing and readable-muzzle views; exact aliases
+   and mirrors; and 80/80 pixel plus alpha distinctions from approved Mossrack
+   Forager and Miremane Courser plus public Dire Wolf. Opaque range is 171-209.
+   Complete B adds 14,362 outline pixels and Form changes 6,195 pixels.
+   Deterministic regeneration reproduces all six frozen hashes. Focused /
+   `check:fast` / full `check` pass in 1.1s / 69.1s / 124.8s with public
+   92/294, both approved comparison sources exact, all 232 fixture sheets
+   unchanged, zero child assets/effects, and no public or outline registration.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-stag-briarstep-harrier/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-stag-briarstep-harrier` and run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-stag-briarstep-harrier`.
+7. The exact raw, distinct Complete B outlined, Complete B + Form, and
+   comparison PNGs are open together in the four-lane Aseprite MCP review
+   window as sprites 115, 119, 123, and active 127. The outlined PNG is
+   required review evidence only; it does not authorize outline registration.
+8. Stop for explicit designer visual approval of this exact packet. The
+   candidate is deliberately uncommitted and unpushed. Public Stag or outline
+   registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino,
+   Furious Depraved Rhino Boss work, the deferred Runic Idol decision, release,
+   accepted drift, a PR, and every broader art gate remain closed.
+
+## Approved Preceding Checkpoint - Mossrack Forager Published / Specialist Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-stag-common`. It is based exactly on the clean published
