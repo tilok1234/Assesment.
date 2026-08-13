@@ -143,10 +143,10 @@ check(
     && EN_E10_CLIFFCOIL_STRIDER_GATE.approvalEvidence.includes('active comparison sprite 79')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.approvalEvidence.includes('1ca2ce85dc6bd4b291e6ede4754f58c2a5bd4278b50acfb699926f9626dd9b29')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.approvedImplementation === 'cb6c58440297b76f62776d8c11a6232d05bb1467'
-    && EN_E10_CLIFFCOIL_STRIDER_GATE.publishedImplementation === ''
-    && EN_E10_CLIFFCOIL_STRIDER_GATE.publishedApprovalRecord === ''
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.publishedImplementation === 'cb6c58440297b76f62776d8c11a6232d05bb1467'
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.publishedApprovalRecord === '3b9b99e28a2c4787d76f3dc0def20f4a79b589ac'
     && EN_E10_CLIFFCOIL_STRIDER_GATE.initialPublishedHandoff === ''
-    && EN_E10_CLIFFCOIL_STRIDER_GATE.publicationState === 'approved-not-published',
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
   'specialist Ram authorization or outlined-review boundary drifted',
 );
 check(
@@ -183,7 +183,7 @@ check(
     && EN_E10_CLIFFCOIL_STRIDER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.exclusions.includes('Ram elite')
-    && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('visually approved at implementation cb6c58440297b76f62776d8c11a6232d05bb1467')
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('implementation cb6c58440297b76f62776d8c11a6232d05bb1467 and approval record 3b9b99e28a2c4787d76f3dc0def20f4a79b589ac are remote verified')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('No next Ram art gate is open')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('review evidence only')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('does not authorize outline registration'),
