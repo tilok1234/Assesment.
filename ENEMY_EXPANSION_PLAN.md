@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private specialist Mammoth checkpoint approved / publication authorized
+- Current private specialist Mammoth checkpoint published / handoff reconciliation pending
   (2026-08-13): on `codex/en-e10-mammoth-specialist`, based exactly on clean
   published Tundrahide reconciliation
   `125b1b81d0f6fa977c3bf674964a45131e65f3ab`, Frostvein Wayfinder is one
@@ -39,13 +39,13 @@
   unchanged; zero child assets/effects; no public or outline registration.
   Exact PNGs are open in Aseprite as sprites 179, 183, 187, and active 191.
   The designer replied `approved lets do next`; accepted implementation
-  `03618d6ca98ad1a93596bdbe501edcf1cedd466a` records only this frozen packet.
-  Standing permission opens its bounded approval record, branch push, and
-  handoff reconciliation. The continuation suffix is held until that tuple is
-  clean and remote verified, then opens exactly one private elite Mammoth full
-  80-frame candidate. Public/outline registration, fixtures, effects, child
-  assets, Rhino, release, accepted drift, a PR, and every broader gate remain
-  closed.
+  `03618d6ca98ad1a93596bdbe501edcf1cedd466a` and approval record
+  `36c43772911aa0ab81d4a417fc1ad2a29531aa30` are pushed and remote verified.
+  Only the initial published handoff and final reconciliation remain open. The
+  continuation suffix is held until that tuple is clean and remote verified,
+  then opens exactly one private elite Mammoth full 80-frame candidate.
+  Public/outline registration, fixtures, effects, child assets, Rhino, release,
+  accepted drift, a PR, and every broader gate remain closed.
 
 - Approved preceding private common Mammoth checkpoint published / specialist Mammoth gate open
   (2026-08-13): from clean published Gloamcrown reconciliation
@@ -5687,7 +5687,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, and Stag common, specialist, and elite approved and published; Mammoth common approved and published; Mammoth specialist approved with bounded publication in progress; Mammoth elite held until clean remote reconciliation; Rhino closed`
+- Status: `Hyena, Ram, and Stag common, specialist, and elite approved and published; Mammoth common approved and published; Mammoth specialist published with handoff reconciliation pending; Mammoth elite held until clean remote reconciliation; Rhino closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5983,13 +5983,14 @@ are open together in Aseprite as sprites 179, 183, 187, and active 191. The
 outlined PNG is review evidence only and does not change outline registration.
 The designer replied `approved lets do next` to the exact frozen digest and six
 hashes. Accepted implementation
-`03618d6ca98ad1a93596bdbe501edcf1cedd466a` records only that packet. Standing
-permission opens its bounded approval record, branch push, and handoff
-reconciliation. The continuation suffix is held until that tuple is clean and
-remote verified, then opens exactly one private elite Mammoth full 80-frame
-candidate on a new isolated branch under the selected topology. Public or
-outline registration, fixtures, effects, child assets, Rhino, Rhino Boss work,
-release, accepted drift, a PR, and every broader gate remain closed.
+`03618d6ca98ad1a93596bdbe501edcf1cedd466a` and approval record
+`36c43772911aa0ab81d4a417fc1ad2a29531aa30` are pushed and remote verified.
+Only the initial published handoff and final reconciliation remain open. The
+continuation suffix is held until that tuple is clean and remote verified, then
+opens exactly one private elite Mammoth full 80-frame candidate on a new
+isolated branch under the selected topology. Public or outline registration,
+fixtures, effects, child assets, Rhino, Rhino Boss work, release, accepted
+drift, a PR, and every broader gate remain closed.
 
 ### EN-E11 - Birds
 

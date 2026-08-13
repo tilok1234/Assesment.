@@ -107,10 +107,10 @@ export const EN_E10_FROSTVEIN_WAYFINDER_GATE = deepFreeze({
   approvedImplementation: '03618d6ca98ad1a93596bdbe501edcf1cedd466a',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '03618d6ca98ad1a93596bdbe501edcf1cedd466a',
+  publishedApprovalRecord: '36c43772911aa0ab81d4a417fc1ad2a29531aa30',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E10_TUNDRAHIDE_GRAZER_GATE.id,
     artifactSha256: EN_E10_TUNDRAHIDE_GRAZER_GATE.artifactSha256,
@@ -160,7 +160,7 @@ export const EN_E10_FROSTVEIN_WAYFINDER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Frostvein Wayfinder packet is visually approved at implementation 03618d6ca98ad1a93596bdbe501edcf1cedd466a. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The designer reply includes lets do next, but that suffix remains held until this exact publication tuple is clean and remote verified; it then opens exactly one private elite Mammoth full 80-frame candidate under the selected baked-single-actor-tusked-heavy-grounded-quadruped topology. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Mammoth registration, fixtures, effects, child assets, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Frostvein Wayfinder implementation 03618d6ca98ad1a93596bdbe501edcf1cedd466a and approval record 36c43772911aa0ab81d4a417fc1ad2a29531aa30 are remote verified. Only the initial published handoff and final reconciliation remain open. The designer reply includes lets do next, but that suffix remains held until this exact publication tuple is clean and remote verified; it then opens exactly one private elite Mammoth full 80-frame candidate under the selected baked-single-actor-tusked-heavy-grounded-quadruped topology. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Mammoth registration, fixtures, effects, child assets, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_FROSTVEIN_WAYFINDER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -451,7 +451,7 @@ export const EN_E10_FROSTVEIN_WAYFINDER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'frostvein-wayfinder',
     scale: 8,
-    notes: 'Visually approved as one exact private specialist Mammoth against approved Tundrahide Grazer and Cliffcoil Strider plus public Dire Wolf. Accepted implementation 03618d6ca98ad1a93596bdbe501edcf1cedd466a records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. The lets do next suffix is held until that tuple is clean and remote verified, then opens exactly one private elite Mammoth full 80-frame candidate under the selected topology; keep public or outline registration, fixtures, effects, child assets, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private specialist Mammoth against approved Tundrahide Grazer and Cliffcoil Strider plus public Dire Wolf. Accepted implementation 03618d6ca98ad1a93596bdbe501edcf1cedd466a and approval record 36c43772911aa0ab81d4a417fc1ad2a29531aa30 are remote verified. Only the initial published handoff and final reconciliation remain open. The distinct Complete B outlined PNG remains review evidence only. The lets do next suffix is held until the publication tuple is clean and remote verified, then opens exactly one private elite Mammoth full 80-frame candidate under the selected topology; keep public or outline registration, fixtures, effects, child assets, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

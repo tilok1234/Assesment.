@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Frostvein Wayfinder Approved / Publication Authorized
+## Immediate Continuation Checkpoint - Frostvein Wayfinder Published / Handoff Reconciliation Pending
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-specialist`. It branches exactly from the clean,
@@ -74,14 +74,15 @@ gate.
    binds only digest
    `2fbcd71017d4acacb9e8cfee31d984ad9f039634af79cb656180b11a08f1250e`
    and the six hashes above at accepted implementation
-   `03618d6ca98ad1a93596bdbe501edcf1cedd466a`. Standing publication
-   permission opens only its approval record, branch push, and bounded handoff
-   reconciliation. The continuation suffix remains held until that exact
-   publication tuple is clean and remote verified; it then opens exactly one
-   private elite Mammoth full 80-frame candidate on a new isolated branch from
-   the clean reconciliation under the selected topology. It does not authorize
-   public/outline registration, fixtures, effects, child assets, Rhino or Rhino
-   Boss work, Runic Idol, release, accepted drift, a PR, or any broader gate.
+   `03618d6ca98ad1a93596bdbe501edcf1cedd466a`. That implementation and approval
+   record `36c43772911aa0ab81d4a417fc1ad2a29531aa30` are pushed and remote
+   verified. Only the initial published handoff and final reconciliation remain
+   open. The continuation suffix remains held until that exact tuple is clean
+   and remote verified; it then opens exactly one private elite Mammoth full
+   80-frame candidate on a new isolated branch from the clean reconciliation
+   under the selected topology. It does not authorize public/outline
+   registration, fixtures, effects, child assets, Rhino or Rhino Boss work,
+   Runic Idol, release, accepted drift, a PR, or any broader gate.
 
 ## Approved Preceding Checkpoint - Tundrahide Grazer Published / Specialist Mammoth Gate Open
 

@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private specialist Mammoth checkpoint approved / publication authorized
+Current EN-E10 private specialist Mammoth checkpoint published / handoff reconciliation pending
 (2026-08-13): on `codex/en-e10-mammoth-specialist`, based exactly on clean
 published Tundrahide reconciliation
 `125b1b81d0f6fa977c3bf674964a45131e65f3ab`, Frostvein Wayfinder is a lean,
@@ -38,12 +38,13 @@ distinct frames; opaque range 221-281; public 92/294; all 232 fixtures
 unchanged; zero child assets/effects; no public or outline registration. Exact
 PNGs are open in Aseprite as sprites 179, 183, 187, and active 191. The
 designer replied `approved lets do next`; accepted implementation
-`03618d6ca98ad1a93596bdbe501edcf1cedd466a` records only the frozen packet.
-Standing permission opens its bounded approval record, branch push, and
-handoff reconciliation. The continuation suffix is held until that tuple is
-clean and remote verified, then opens exactly one private elite Mammoth full
-80-frame candidate. Public/outline registration, fixtures, effects, child
-assets, Rhino, release, accepted drift, and a PR remain closed.
+`03618d6ca98ad1a93596bdbe501edcf1cedd466a` and approval record
+`36c43772911aa0ab81d4a417fc1ad2a29531aa30` are pushed and remote verified.
+Only the initial published handoff and final reconciliation remain open. The
+continuation suffix is held until that tuple is clean and remote verified,
+then opens exactly one private elite Mammoth full 80-frame candidate.
+Public/outline registration, fixtures, effects, child assets, Rhino, release,
+accepted drift, and a PR remain closed.
 
 Approved preceding EN-E10 private common Mammoth checkpoint published / specialist Mammoth gate open
 (2026-08-13): from clean published Gloamcrown reconciliation

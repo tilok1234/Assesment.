@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private specialist Mammoth checkpoint approved / publication authorized: on
+- Current private specialist Mammoth checkpoint published / handoff reconciliation pending: on
   `codex/en-e10-mammoth-specialist`, based exactly on clean published
   Tundrahide reconciliation `125b1b81d0f6fa977c3bf674964a45131e65f3ab`,
   Frostvein Wayfinder is one connected lean, high-shouldered slate-blue
@@ -129,12 +129,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   92/294, and all 232 fixtures remain unchanged. Exact PNGs are open in
   Aseprite as sprites 179, 183, 187, and active 191. The designer replied
   `approved lets do next`; accepted implementation
-  `03618d6ca98ad1a93596bdbe501edcf1cedd466a` records only this frozen packet.
-  Standing permission opens its bounded approval record, branch push, and
-  handoff reconciliation. The continuation suffix is held until that tuple is
-  clean and remote verified, then opens exactly one private elite Mammoth full
-  80-frame candidate. Public/outline registration, fixtures, effects, child
-  assets, Rhino, release, accepted drift, and a PR remain closed.
+  `03618d6ca98ad1a93596bdbe501edcf1cedd466a` and approval record
+  `36c43772911aa0ab81d4a417fc1ad2a29531aa30` are pushed and remote verified.
+  Only the initial published handoff and final reconciliation remain open. The
+  continuation suffix is held until that tuple is clean and remote verified,
+  then opens exactly one private elite Mammoth full 80-frame candidate.
+  Public/outline registration, fixtures, effects, child assets, Rhino, release,
+  accepted drift, and a PR remain closed.
 - Approved preceding private art checkpoint published / specialist Mammoth gate open: on branch
   `codex/en-e10-mammoth-common`, based exactly on clean published Gloamcrown
   reconciliation `c371e7ffeb3dd9196c29b9236d62585d96a52585`, the designer
