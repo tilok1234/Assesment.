@@ -63,8 +63,8 @@ export const EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: '13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc',
   publishedApprovalRecord: '15d55e973e5b0d1566e2d3dec39981d37edf24b8',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: 'dee859e09ea86ddb546082b4bb45290d06afa252',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.id,
     candidateFrameDigest: EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.candidateFrameDigest,
@@ -133,7 +133,7 @@ export const EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Crownveil Sovereign implementation 13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc and approval record 15d55e973e5b0d1566e2d3dec39981d37edf24b8 are remote verified. Only the initial published handoff and final reconciliation remain open. This approval contains no continuation request, so Peacock is complete and no Cockatrice, Raven, Owl, Phoenix, or other Bird candidate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Peacock registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Crownveil Sovereign implementation 13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc, approval record 15d55e973e5b0d1566e2d3dec39981d37edf24b8, and initial published handoff dee859e09ea86ddb546082b4bb45290d06afa252 are remote verified; this reconciliation completes the bounded publication tuple. This approval contains no continuation request, so Peacock is complete and no Cockatrice, Raven, Owl, Phoenix, or other Bird candidate is open without a fresh explicit continuation. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Peacock registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_DATA = deepFreeze({
@@ -626,7 +626,7 @@ export const EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'crownveil-sovereign',
     scale: 6,
-    notes: 'Visually approved as one exact private elite Peacock against approved Mirrorfan Ambusher, Rainfan Forager, and Aerie Scout. Accepted implementation 13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc and approval record 15d55e973e5b0d1566e2d3dec39981d37edf24b8 are remote verified. Only the initial published handoff and final reconciliation remain open. The distinct Complete B outlined PNG remains review evidence only. This approval contains no continuation request; keep public or outline registration, fixtures, effects, child assets, other Bird families, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private elite Peacock against approved Mirrorfan Ambusher, Rainfan Forager, and Aerie Scout. Accepted implementation 13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc, approval record 15d55e973e5b0d1566e2d3dec39981d37edf24b8, and initial published handoff dee859e09ea86ddb546082b4bb45290d06afa252 are remote verified; this reconciliation completes the bounded publication tuple. The distinct Complete B outlined PNG remains review evidence only. This approval contains no continuation request; keep public or outline registration, fixtures, effects, child assets, other Bird families, release, accepted drift, and a pull request separate until a fresh explicit continuation.',
   },
 });
 

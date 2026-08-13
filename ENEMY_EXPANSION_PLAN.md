@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private elite Peacock published / handoff reconciliation in progress
+- Current private elite Peacock published / next gate closed
   (2026-08-13): on `codex/en-e11-peacock-elite`, based exactly on clean,
   pushed, remote-verified Mirrorfan reconciliation
   `6df83e5e642dbec5b68b856d436aa9db810678eb`, the designer's exact reply
@@ -43,17 +43,19 @@
   atlas is exact. Focused/fast/full gates pass in about
   0.9s/54.4s/134.4s. Public remains 92/294 and all 232 fixtures remain
   unchanged. Approval-local focused/fast gates pass again in about
-  0.8s/61.6s. All four exact PNGs were loaded in Aseprite and inspected. The
+  0.8s/61.6s; final published-state focused/fast/full gates pass in about
+  0.9s/60.4s/115.6s. All four exact PNGs were loaded in Aseprite and inspected. The
   designer replied `approved` to the exact review packet. Approval binds only
   to accepted implementation
   `13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc` and its six frozen hashes. That
   implementation and approval record
-  `15d55e973e5b0d1566e2d3dec39981d37edf24b8` are pushed and remote verified;
-  only the initial published handoff and final reconciliation remain open.
-  This reply contains no continuation request, so no next Peacock role,
-  Cockatrice, Raven, Owl, Phoenix, or other Bird-family candidate is open.
-  Registration, fixtures, effects, child assets, release, accepted drift, a
-  PR, and every broader gate remain closed.
+  `15d55e973e5b0d1566e2d3dec39981d37edf24b8` and initial published handoff
+  `dee859e09ea86ddb546082b4bb45290d06afa252` are pushed and remote verified;
+  this reconciliation completes the bounded publication tuple. This reply
+  contains no continuation request, so no next Peacock role, Cockatrice,
+  Raven, Owl, Phoenix, or other Bird-family candidate is open without a fresh
+  explicit continuation. Registration, fixtures, effects, child assets,
+  release, accepted drift, a PR, and every broader gate remain closed.
 
 - Approved preceding private specialist Peacock published / elite gate open
   (2026-08-13): on `codex/en-e11-peacock-specialist`, based exactly on clean,
@@ -6290,7 +6292,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `elite-published-handoff-reconciliation-in-progress`
+- Status: `peacock-published-next-gate-closed`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 
@@ -6298,7 +6300,7 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current published Peacock elite / handoff reconciliation in progress
+#### Current approved Peacock elite published / next gate closed
 
 The exact Mirrorfan approval reply `approved lets do next` opens only one
 private elite Peacock candidate from clean, pushed Mirrorfan reconciliation
@@ -6307,14 +6309,17 @@ private elite Peacock candidate from clean, pushed Mirrorfan reconciliation
 `6c4220e3a108eb902370a6d69bea8f2334a73dfddd914deb7f9a43495b99c82d`.
 Focused/fast/full gates pass in about 0.9s/54.4s/134.4s, and approval-local
 focused/fast gates pass again in about 0.8s/61.6s. The exact review packet has
-been inspected in Aseprite, public remains 92/294, and all 232 fixtures remain
+been inspected in Aseprite; final published-state focused/fast/full gates pass
+in about 0.9s/60.4s/115.6s, public remains 92/294, and all 232 fixtures remain
 unchanged. The designer replied `approved`; approval binds only to
 implementation `13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc` and the six frozen
-hashes. The implementation and approval record
-`15d55e973e5b0d1566e2d3dec39981d37edf24b8` are remote verified; only the
-initial published handoff and final reconciliation remain open. This reply
-contains no continuation request. Registration, fixtures, effects, child
-assets, another Bird family, release, accepted drift, and a PR remain closed.
+hashes. The implementation, approval record
+`15d55e973e5b0d1566e2d3dec39981d37edf24b8`, and initial published handoff
+`dee859e09ea86ddb546082b4bb45290d06afa252` are remote verified; this
+reconciliation completes the bounded publication tuple. This reply contains
+no continuation request. Registration, fixtures, effects, child assets,
+another Bird family, release, accepted drift, and a PR remain closed until a
+fresh explicit continuation.
 
 #### Current approved Peacock common
 

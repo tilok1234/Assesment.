@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Checkpoint - Crownveil Sovereign Published / Handoff Reconciliation In Progress
+## Current Published Checkpoint - Crownveil Sovereign / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-peacock-elite`. It branches exactly from the clean, pushed,
@@ -68,7 +68,8 @@ gate.
    0.9s / 54.4s / 134.4s. Public remains 92/294, all 232 fixture sheets stay
    unchanged, and child assets, effects, public registration, and outline
    registration remain zero. Approval-local focused / fast gates pass again
-   in about 0.8s / 61.6s.
+   in about 0.8s / 61.6s. Final published-state focused / fast / full gates
+   pass in about 0.9s / 60.4s / 115.6s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-peacock-crownveil-sovereign/`. Regenerate
    with
@@ -85,12 +86,13 @@ gate.
    The designer replied `approved`. Approval binds only to those frozen files
    and accepted implementation
    `13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc`. That implementation and approval
-   record `15d55e973e5b0d1566e2d3dec39981d37edf24b8` are pushed and remote verified;
-   only the initial published handoff and final reconciliation remain open.
-   This reply contains no continuation request, so Peacock is complete and no
-   Cockatrice/Raven/Owl/Phoenix or other Bird-family candidate is open. Do not
-   register, regenerate fixtures, add effects or child assets, release, accept
-   drift, or open a PR.
+   record `15d55e973e5b0d1566e2d3dec39981d37edf24b8`, and initial published handoff
+   `dee859e09ea86ddb546082b4bb45290d06afa252` are pushed and remote verified;
+   this reconciliation completes the bounded publication tuple. This reply
+   contains no continuation request, so Peacock is complete and no
+   Cockatrice/Raven/Owl/Phoenix or other Bird-family candidate is open without
+   a fresh explicit continuation. Do not register, regenerate fixtures, add
+   effects or child assets, release, accept drift, or open a PR.
 
 ## Approved Preceding Checkpoint - Mirrorfan Ambusher Published / Elite Gate Open
 

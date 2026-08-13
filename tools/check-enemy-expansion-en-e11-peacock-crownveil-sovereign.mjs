@@ -111,8 +111,8 @@ check(
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.publishedImplementation === '13ceea22b163ae87fe2b6acd9dcf0e45c6e800bc'
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.publishedApprovalRecord === '15d55e973e5b0d1566e2d3dec39981d37edf24b8'
-    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.initialPublishedHandoff === ''
-    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.initialPublishedHandoff === 'dee859e09ea86ddb546082b4bb45290d06afa252'
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.publicationState === 'published'
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.precedingApproval.gateId === EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.id
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.precedingApproval.candidateFrameDigest === EN_E11_PEACOCK_MIRRORFAN_AMBUSHER_GATE.candidateFrameDigest
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.precedingApproval.currentReconciliation === EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.baseCheckpoint,
@@ -137,7 +137,8 @@ check(
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.exclusions.includes('registration')
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.exclusions.includes('fixtures')
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.exclusions.includes('approved Mirrorfan Ambusher pixel changes')
-    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.nextGate.includes('approval record 15d55e973e5b0d1566e2d3dec39981d37edf24b8')
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.nextGate.includes('initial published handoff dee859e09ea86ddb546082b4bb45290d06afa252')
+    && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.nextGate.includes('completes the bounded publication tuple')
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.nextGate.includes('no continuation request')
     && EN_E11_PEACOCK_CROWNVEIL_SOVEREIGN_GATE.nextGate.includes('review evidence only'),
   'Crownveil anatomy, motion, effect firewall, or stop boundary drifted',
