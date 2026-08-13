@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private elite Mammoth checkpoint approved / publication authorized
+Current EN-E10 private elite Mammoth checkpoint published / handoff reconciliation pending
 (2026-08-13): on `codex/en-e10-mammoth-elite`, based exactly on clean,
 published, remote-verified Frostvein reconciliation
 `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch is a broad
@@ -38,11 +38,12 @@ alias, mirror, and three-way pixel/alpha-distinction cases at opaque range
 fixtures remain unchanged; child assets/effects remain zero; and no public or
 outline registration changed. Exact PNGs are open in Aseprite as sprites 222,
 226, 230, and active 234. The designer replied `approved`; accepted
-implementation `702a93964de696cb246ca144b0d9a946c81875c9` records only the
-frozen packet. Standing permission opens its bounded approval record, branch
-push, and handoff reconciliation. No continuation clause was supplied, so no
-next Mammoth role or Rhino gate is open. Public/outline registration, fixtures,
-effects, child assets, Rhino, release, accepted drift, and a PR remain closed.
+implementation `702a93964de696cb246ca144b0d9a946c81875c9` and approval record
+`91e012e1682db1db0bb4cec0f692d86b19c962d1` are pushed and remote verified.
+Only the initial published handoff and final reconciliation remain open. No
+continuation clause was supplied, so no next Mammoth role or Rhino gate is
+open. Public/outline registration, fixtures, effects, child assets, Rhino,
+release, accepted drift, and a PR remain closed.
 
 Approved preceding EN-E10 private specialist Mammoth checkpoint published / elite Mammoth gate open
 (2026-08-13): on `codex/en-e10-mammoth-specialist`, based exactly on clean

@@ -105,10 +105,10 @@ export const EN_E10_RIMEVAULT_MATRIARCH_GATE = deepFreeze({
   approvedImplementation: '702a93964de696cb246ca144b0d9a946c81875c9',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '702a93964de696cb246ca144b0d9a946c81875c9',
+  publishedApprovalRecord: '91e012e1682db1db0bb4cec0f692d86b19c962d1',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E10_FROSTVEIN_WAYFINDER_GATE.id,
     artifactSha256: EN_E10_FROSTVEIN_WAYFINDER_GATE.artifactSha256,
@@ -158,7 +158,7 @@ export const EN_E10_RIMEVAULT_MATRIARCH_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Rimevault Matriarch packet is visually approved at implementation 702a93964de696cb246ca144b0d9a946c81875c9. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. No continuation clause was supplied, so no next Mammoth role or Rhino gate is open after publication. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Mammoth registration, fixtures, effects, child assets, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Rimevault Matriarch implementation 702a93964de696cb246ca144b0d9a946c81875c9 and approval record 91e012e1682db1db0bb4cec0f692d86b19c962d1 are remote verified. Only the initial published handoff and final reconciliation remain open. No continuation clause was supplied, so no next Mammoth role or Rhino gate is open after this tuple is complete. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Mammoth registration, fixtures, effects, child assets, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_RIMEVAULT_MATRIARCH_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -445,7 +445,7 @@ export const EN_E10_RIMEVAULT_MATRIARCH_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'rimevault-matriarch',
     scale: 8,
-    notes: 'Visually approved as one exact private elite Mammoth against approved Frostvein Wayfinder and Tundrahide Grazer plus public Dire Wolf. Accepted implementation 702a93964de696cb246ca144b0d9a946c81875c9 records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. No continuation clause was supplied, so no next Mammoth role or Rhino gate is open; keep public or outline registration, fixtures, effects, child assets, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private elite Mammoth against approved Frostvein Wayfinder and Tundrahide Grazer plus public Dire Wolf. Accepted implementation 702a93964de696cb246ca144b0d9a946c81875c9 and approval record 91e012e1682db1db0bb4cec0f692d86b19c962d1 are remote verified. Only the initial published handoff and final reconciliation remain open. The distinct Complete B outlined PNG remains review evidence only. No continuation clause was supplied, so no next Mammoth role or Rhino gate is open; keep public or outline registration, fixtures, effects, child assets, Rhino, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

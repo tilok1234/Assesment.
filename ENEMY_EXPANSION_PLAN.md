@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private elite Mammoth checkpoint approved / publication authorized
+- Current private elite Mammoth checkpoint published / handoff reconciliation pending
   (2026-08-13): on `codex/en-e10-mammoth-elite`, based exactly on clean,
   published, remote-verified Frostvein reconciliation
   `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch is one
@@ -39,12 +39,13 @@
   61.4s/112.5s, public remains 92/294, and all 232 fixtures remain unchanged.
   Exact PNGs are open in Aseprite as sprites 222, 226, 230, and active 234.
   The designer replied `approved`; accepted implementation
-  `702a93964de696cb246ca144b0d9a946c81875c9` records only the frozen packet.
-  Standing permission opens its bounded approval record, branch push, and
-  handoff reconciliation. No continuation clause was supplied, so no next
-  Mammoth role or Rhino gate is open. Public/outline registration, fixtures,
-  effects, child assets, Rhino, Rhino Boss work, release, accepted drift, a PR,
-  and every broader gate remain closed.
+  `702a93964de696cb246ca144b0d9a946c81875c9` and approval record
+  `91e012e1682db1db0bb4cec0f692d86b19c962d1` are pushed and remote verified.
+  Only the initial published handoff and final reconciliation remain open. No
+  continuation clause was supplied, so no next Mammoth role or Rhino gate is
+  open. Public/outline registration, fixtures, effects, child assets, Rhino,
+  Rhino Boss work, release, accepted drift, a PR, and every broader gate remain
+  closed.
 
 - Approved preceding private specialist Mammoth checkpoint published / elite Mammoth gate open
   (2026-08-13): on `codex/en-e10-mammoth-specialist`, based exactly on clean
@@ -5720,7 +5721,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, and Stag common, specialist, and elite approved and published; Mammoth common and specialist approved and published; Mammoth elite Rimevault Matriarch approved with bounded publication in progress; Rhino closed`
+- Status: `Hyena, Ram, and Stag common, specialist, and elite approved and published; Mammoth common and specialist approved and published; Mammoth elite Rimevault Matriarch published with handoff reconciliation pending; Rhino closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -6049,10 +6050,11 @@ outlined, Complete B + Form, and comparison PNGs are open together in Aseprite
 as sprites 222, 226, 230, and active 234. The outlined PNG is review evidence
 only and does not change outline registration. The designer replied `approved`
 to the exact frozen digest and six review hashes. Accepted implementation
-`702a93964de696cb246ca144b0d9a946c81875c9` records only that packet. Standing
-permission opens its bounded approval record, branch push, and handoff
-reconciliation. No continuation clause was supplied, so no next Mammoth role
-or Rhino gate is open; Rhino Boss work and all broader gates remain closed.
+`702a93964de696cb246ca144b0d9a946c81875c9` and approval record
+`91e012e1682db1db0bb4cec0f692d86b19c962d1` are pushed and remote verified.
+Only the initial published handoff and final reconciliation remain open. No
+continuation clause was supplied, so no next Mammoth role or Rhino gate is
+open; Rhino Boss work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 

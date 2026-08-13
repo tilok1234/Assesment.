@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Rimevault Matriarch Approved / Publication Authorized
+## Immediate Continuation Checkpoint - Rimevault Matriarch Published / Handoff Reconciliation Pending
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-mammoth-elite`. It branches exactly from the clean,
@@ -75,12 +75,13 @@ gate.
    digest
    `db9d43c24dc9c3e958cdba595866333cfee14d67658524a7f02c1f6d912c5763`
    and the six hashes above at accepted implementation
-   `702a93964de696cb246ca144b0d9a946c81875c9`. Standing publication
-   permission opens only its approval record, branch push, and bounded handoff
-   reconciliation. No continuation clause was supplied, so no next Mammoth
-   role or Rhino gate is open after publication. It does not authorize public
-   or outline registration, fixtures, effects, child assets, Rhino or Rhino
-   Boss work, Runic Idol, release, accepted drift, a PR, or any broader gate.
+   `702a93964de696cb246ca144b0d9a946c81875c9`. That implementation and approval
+   record `91e012e1682db1db0bb4cec0f692d86b19c962d1` are pushed and remote
+   verified. Only the initial published handoff and final reconciliation remain
+   open. No continuation clause was supplied, so no next Mammoth role or Rhino
+   gate is open after this tuple is complete. It does not authorize public or
+   outline registration, fixtures, effects, child assets, Rhino or Rhino Boss
+   work, Runic Idol, release, accepted drift, a PR, or any broader gate.
 
 ## Approved Preceding Checkpoint - Frostvein Wayfinder Published / Elite Mammoth Gate Open
 

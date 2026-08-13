@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private elite Mammoth checkpoint approved / publication authorized: on
+- Current private elite Mammoth checkpoint published / handoff reconciliation pending: on
   `codex/en-e10-mammoth-elite`, based exactly on clean published Frostvein
   reconciliation `d93dc918e379212743433c5a505029c42dfa0182`, Rimevault Matriarch
   is one connected broad blue-violet Mammoth with an immense old-ivory royal
@@ -129,12 +129,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   274-315. Fast/full gates pass at 61.4s/112.5s, public remains 92/294, and all
   232 fixtures remain unchanged. Exact PNGs are open in Aseprite as sprites
   222, 226, 230, and active 234. The designer replied `approved`; accepted
-  implementation `702a93964de696cb246ca144b0d9a946c81875c9` records only this
-  frozen packet. Standing permission opens its bounded approval record, branch
-  push, and handoff reconciliation. No continuation clause was supplied, so no
-  next Mammoth role or Rhino gate is open. Public or outline registration,
-  fixtures, effects, child assets, Rhino, release, accepted drift, and a PR
-  remain closed.
+  implementation `702a93964de696cb246ca144b0d9a946c81875c9` and approval record
+  `91e012e1682db1db0bb4cec0f692d86b19c962d1` are pushed and remote verified.
+  Only the initial published handoff and final reconciliation remain open. No
+  continuation clause was supplied, so no next Mammoth role or Rhino gate is
+  open. Public or outline registration, fixtures, effects, child assets,
+  Rhino, release, accepted drift, and a PR remain closed.
 - Approved preceding private specialist Mammoth checkpoint published / elite Mammoth gate open: on
   `codex/en-e10-mammoth-specialist`, based exactly on clean published
   Tundrahide reconciliation `125b1b81d0f6fa977c3bf674964a45131e65f3ab`,
