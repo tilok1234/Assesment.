@@ -23,6 +23,52 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Next Chat Start Here - Clean Published Briarstep Checkpoint
+
+1. Use only `C:\Users\headc\Documents\sprite-assembler-v2`. The live branch is
+   `codex/en-e10-stag-specialist`. Its clean published checkpoint and
+   remote-verified head before this handoff note is
+   `f25ebea08723db889298ebce2db606421ed03282`. At the start of the next chat,
+   verify `git status --short --branch`, local `HEAD`, and the matching remote
+   branch before editing or making completion claims. Preserve any later
+   intentional dirty work instead of resetting it.
+2. Briarstep Harrier is complete, visually approved, published, reconciled,
+   private, and content-only. Its bounded publication tuple is:
+   implementation `8d52dc26d9d361c5d95603276a4a88b3978a585e`, approval record
+   `895456020801fa40a31d7e83413895e0440c505e`, initial published handoff
+   `40fd66c20f3b01ddd927ecb83c807c96c5feec7b`, and final reconciliation
+   `f25ebea08723db889298ebce2db606421ed03282`.
+3. The accepted candidate digest is
+   `fb352a405be53536a2304eb8ad97ef7e03f0819519607a8a0afea16e81f97457`.
+   Exact review evidence remains under
+   `enemy-expansion-review/en-e10-stag-briarstep-harrier/`. In the current
+   four-lane Aseprite review session, raw is sprite 115, distinct Complete B
+   outlined is 119, Complete B + Form is 123, and active comparison is 127.
+   The outlined image is review evidence only, not outline registration.
+4. Final technical evidence: focused validation passes 80/80 connected,
+   bounded, grounded, split-hoof, cervid-span, and Mossrack / Miremane / Dire
+   Wolf pixel-plus-alpha-distinct frames at opaque range 171-209. Final
+   published-state full `npm run check` passed in 126.9s with public 92/294,
+   all 232 fixture sheets unchanged, zero child assets/effects, and no public
+   or outline registration.
+5. There is no active art gate. The designer's Briarstep reply was `approved`
+   without a continuation clause. This later request to write a handoff is
+   documentation authorization only. Do not reuse older `lets do next`
+   messages to infer new scope. Elite Stag, Mammoth, Rhino, Furious Depraved
+   Rhino Boss work, the paused Runic Idol decision, registration, fixtures,
+   effects, child assets, release, accepted drift, and a PR remain closed.
+6. If the designer asks what comes next, explain that the frozen Stag role
+   order is common / specialist / elite and elite remains deferred, but do not
+   implement it without a new explicit continuation. If the designer instead
+   chooses Mammoth, Rhino, or another family, begin with a bounded topology
+   recommendation and obtain approval before creating a branch or pixels.
+7. For any newly authorized enemy work, re-read
+   `.claude/skills/add-enemy/SKILL.md`, use a new isolated branch from the exact
+   clean checkpoint, keep review evidence private, include a distinct outlined
+   review board, run focused / fast / full validation, open the exact packet in
+   Aseprite, and stop for explicit visual approval before committing or
+   pushing the candidate.
+
 ## Immediate Continuation Checkpoint - Briarstep Harrier Published / No Next Stag Gate
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
