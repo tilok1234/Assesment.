@@ -14,14 +14,14 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E11 private elite Cockatrice candidate / explicit pixel approval
-required (2026-08-14): on `codex/en-e11-cockatrice-elite`, based exactly on
+Current EN-E11 approved private elite Cockatrice / publication in progress
+(2026-08-14): on `codex/en-e11-cockatrice-elite`, based exactly on
 clean, pushed, remote-verified Gloamgaze reconciliation
 `9d5c942fbdeb49db8c232fc763972962b56e8837`, the designer's fresh `lets do
-next` opens exactly one private elite Cockatrice full 80-frame candidate under
+next` opened exactly one private elite Cockatrice full 80-frame candidate under
 the selected `baked-single-actor-grounded-serpent-tailed-cockerel` topology.
-It does not approve candidate pixels. Crowncoil Basilarch is one connected
-broad royal cockerel-and-serpent with an obsidian-blue head, tall three-pronged
+Crowncoil Basilarch is one connected broad royal cockerel-and-serpent with an
+obsidian-blue head, tall three-pronged
 crimson crown, antique-gold plated throat, burgundy torso, layered brass
 mantle wings, two separated broad bronze talons, and a heavy dark blue-green
 body-owned tail ending in a crown-hook coil. Attack plants both talons, raises
@@ -42,9 +42,15 @@ approved Bramblecomb, and public Marsh Crocodile at opaque range 235-320;
 16/16 crown-hook attack/cast views; exact aliases, mirrors, and inspection
 atlas; public 92/294; all 232 fixtures exact; zero child assets, effects, or
 registration. The exact four PNGs and all four raw phase sheets were inspected
-at original resolution. Explicit approval of this exact packet is required
-before any commit, push, approval record, publication, registration, fixture,
-effect, child asset, later Bird family, release, accepted drift, or PR gate.
+at original resolution. The designer replied `approved lets do next`, then
+explicitly requested `and commit and push all aproved please`. Approval binds
+only to implementation `5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef`, the
+digest, and six frozen hashes; that implementation is pushed and remote
+verified. Commit and push only the approval/handoff reconciliation.
+Approval-local focused/fast gates pass again in about 0.8s/56.0s. Hold the
+continuation until that tuple completes; it then opens only the next documented
+Bird-family decision gate, not its topology or pixels. Registration, fixtures,
+effects, child assets, release, accepted drift, and a PR remain closed.
 
 Current EN-E11 approved private specialist Cockatrice published / next gate closed
 (2026-08-13): on `codex/en-e11-cockatrice-specialist`, based exactly on clean,

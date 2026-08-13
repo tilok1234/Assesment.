@@ -25,7 +25,7 @@ export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_CONTRACT = deepFreeze({
   family: 'cockatrice',
   variant: 'crowncoil-basilarch',
   role: 'elite',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E11_COCKATRICE_TOPOLOGY_DECISION.selected,
   silhouette: 'One connected broad high-crowned cockerel-and-serpent actor joins a tall three-pronged crown comb and plated wattle, hooked beak, thick brass-plated scaled neck, deep feathered torso, two layered mantle wings, two separated broad taloned feet, and one heavy body-owned serpent tail ending in a raised crown-hook coil. It is wider and heavier than both Gloamgaze Stalker and Bramblecomb Scratcher and is neither a fan-tailed Peacock, upright Birdfolk person, ordinary two-legged bird, nor quadruped basilisk.',
   identity: 'Obsidian-blue head scales, an antique-gold plated throat, deep royal-burgundy body, layered brass mantle wings, crimson three-pronged crown comb, ivory hooked beak, acid-gold eyes, bronze talons, and a dark blue-green crown-hook serpent tail distinguish the Crowncoil Basilarch elite.',
@@ -44,18 +44,27 @@ export const EN_E11_COCKATRICE_ELITE_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_CONTRACT.variant,
     role: EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_CONTRACT.role,
-    status: 'implemented-complete-motion-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
 });
 
 export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE = deepFreeze({
   id: 'en-e11-cockatrice-crowncoil-basilarch-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-14',
   authorizationEvidence: 'The exact Gloamgaze Stalker implementation cb227af79e2e7db39609d8bb5524942387026333, approval record ab1cab569aa4fbd69a6b2ec9ca60f838792c481b, initial published handoff 1fbad52011fb4e3d95c3b64f2b8ad280d290b22b, and final reconciliation 9d5c942fbdeb49db8c232fc763972962b56e8837 are pushed and remote verified. The prior approval reply aproved did not continue. The designer then supplied a fresh continuation request: lets do next. Under the documented Cockatrice role order and selected baked-single-actor-grounded-serpent-tailed-cockerel topology, that fresh request authorizes exactly one private elite Cockatrice full 80-frame candidate only. It does not approve candidate pixels or authorize a commit, push, public or outline registration, fixtures, effects, child assets, Raven, Owl, Phoenix, release, accepted drift, or a pull request.',
   baseCheckpoint: '9d5c942fbdeb49db8c232fc763972962b56e8837',
   architectureDecision: EN_E11_COCKATRICE_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-14',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Gloamgaze Stalker, approved Bramblecomb Scratcher, and public Marsh Crocodile comparison PNGs were frozen with both synchronized GIF hashes. All four exact PNG paths and all four raw phase sheets were loaded and inspected at original resolution, and the transparent 20x4 inspection atlas passed dimensions, hard alpha, non-empty-cell, and strict boundary checks. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest 5beeb0036af6f5c9dc9bfb64c0121e548a372f31ee257e53c0765e3b031c2bb0. The designer replied: approved lets do next. Approval applies only to that exact Crowncoil Basilarch digest and its six frozen review hashes. The continuation is held until this bounded publication tuple is pushed, remote verified, and reconciled; it then opens only the next documented Bird-family decision gate and does not choose a topology or approve later candidate pixels. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain separate.',
+  approvedImplementation: '5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef',
+  publicationAuthorizedOn: '2026-08-14',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. After approving Crowncoil, the designer added: and commit and push all aproved please. This authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes for the exact approved packet only. It does not authorize registration, fixtures, effects, child assets, later-family pixels, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.id,
     candidateFrameDigest: EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.candidateFrameDigest,
@@ -121,7 +130,7 @@ export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'Explicit visual approval of the exact frozen Crowncoil Basilarch raw/no-outline, outlined Complete B, Complete B + Form, family-comparison PNGs, both synchronized GIFs, and candidate digest is required before any approval record, commit, push, publication, public or outline registration, fixture work, effects, child assets, Raven, Owl, Phoenix, later Bird-family candidate, release, accepted drift, or pull request. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Crowncoil Basilarch implementation 5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded publication tuple. The approved continuation lets do next remains held until that tuple is complete; afterward it opens only the next documented Bird-family decision gate and does not approve a topology or candidate pixels. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_DATA = deepFreeze({
@@ -586,7 +595,7 @@ export const EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'crowncoil-basilarch',
     scale: 6,
-    notes: 'Private Crowncoil Basilarch elite Cockatrice candidate only, authorized from the exact remote-verified Gloamgaze Stalker reconciliation 9d5c942fbdeb49db8c232fc763972962b56e8837 by the fresh continuation lets do next. Keep pixel approval, commits, pushes, public or outline registration, fixtures, effects, child assets, later Bird families, release, accepted drift, and a pull request separate.',
+    notes: 'Approved private Crowncoil Basilarch elite Cockatrice only, bound to exact implementation 5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef, candidate digest 5beeb0036af6f5c9dc9bfb64c0121e548a372f31ee257e53c0765e3b031c2bb0, and its six frozen review hashes. The designer replied approved lets do next and separately confirmed commit and push all approved work. Hold the continuation until bounded publication reconciliation completes. Keep public or outline registration, fixtures, effects, child assets, later-family pixels, release, accepted drift, and a pull request separate.',
   },
 });
 

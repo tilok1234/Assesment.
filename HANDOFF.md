@@ -23,21 +23,26 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Review Gate - Crowncoil Basilarch / Explicit Pixel Approval Required
+## Current Approved Checkpoint - Crowncoil Basilarch / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-cockatrice-elite`. It branches exactly from clean, pushed,
    remote-verified Gloamgaze final reconciliation
    `9d5c942fbdeb49db8c232fc763972962b56e8837`.
-2. Gloamgaze Stalker was approved by `aproved`, published, reconciled, and
-   remote verified; that reply did not continue. On 2026-08-14 the designer
-   supplied the fresh request `lets do next`. Under the documented
-   common/specialist/elite order and selected
-   `baked-single-actor-grounded-serpent-tailed-cockerel` topology, this opens
-   exactly one private elite Cockatrice full 80-frame candidate. It does not
-   approve Crowncoil pixels or authorize commit, push, publication, public or
-   outline registration, fixtures, effects, child assets, Raven, Owl,
-   Phoenix, release, accepted drift, or a PR.
+2. Gloamgaze Stalker was approved, published, reconciled, and remote verified.
+   On 2026-08-14 the designer supplied the fresh request `lets do next`, which
+   opened exactly one private elite Cockatrice full 80-frame candidate under
+   the selected `baked-single-actor-grounded-serpent-tailed-cockerel`
+   topology. After the complete Crowncoil packet below was shown, the designer
+   replied `approved lets do next`, then explicitly added `and commit and push
+   all aproved please`. Approval binds only to implementation
+   `5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef`, the exact digest, and six
+   frozen review hashes. That implementation is pushed and remote verified.
+   Hold the continuation until the bounded approval and handoff publication
+   tuple is also pushed and reconciled; afterward it opens only the next
+   documented Bird-family decision gate and does not approve its topology or
+   candidate pixels. Public or outline registration, fixtures, effects, child
+   assets, release, accepted drift, and a PR remain separate.
 3. Crowncoil Basilarch is one connected broad, high-crowned
    cockerel-and-serpent actor with an obsidian-blue head, tall three-pronged
    crimson crown comb, ivory hooked beak, antique-gold plated throat, deep
@@ -70,7 +75,8 @@ gate.
    non-empty-cell, and strict-boundary checks. Focused / fast / full validation
    passes in about 0.8s / 61.8s / 112.2s. Public remains 92/294, all 232
    fixtures stay exact, and child assets, effects, public registration, and
-   outline registration remain zero.
+   outline registration remain zero. Approval-local focused and fast gates
+   pass again in about 0.8s and 56.0s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-cockatrice-crowncoil-basilarch/`. Regenerate
    with
@@ -80,11 +86,12 @@ gate.
    The raw, outlined, Complete B + Form, Gloamgaze/Bramblecomb/Marsh-Crocodile
    comparison PNGs and all four raw phase sheets were inspected at original
    resolution. The outlined PNG is review evidence only.
-7. Stop for explicit visual approval of this exact four-PNG, two-GIF, digest-
-   frozen packet. Do not commit or push the candidate, add an approval record,
-   publish, register it publicly or for outlines, regenerate fixtures, add
-   effects or child assets, begin Raven/Owl/Phoenix or another lane, release,
-   accept drift, or open a PR without the corresponding explicit gate.
+7. Commit and push only the exact approval record, then create the initial
+   published handoff and final reconciliation needed to complete Crowncoil's
+   bounded publication tuple. Do not register it publicly or for outlines,
+   regenerate fixtures, add effects or child assets, begin later-family pixels,
+   release, accept drift, or open a PR. The approved `lets do next`
+   continuation remains held until publication reconciliation is complete.
 
 ## Current Published Checkpoint - Gloamgaze Stalker / Next Gate Closed
 

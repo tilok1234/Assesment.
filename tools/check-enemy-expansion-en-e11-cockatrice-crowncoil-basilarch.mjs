@@ -136,7 +136,7 @@ check(
   'approved Cockatrice topology decision drifted',
 );
 check(
-  EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.status === 'candidate'
+  EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.status === 'approved'
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.authorizedOn === '2026-08-14'
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.baseCheckpoint === '9d5c942fbdeb49db8c232fc763972962b56e8837'
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.architectureDecision === EN_E11_COCKATRICE_TOPOLOGY_DECISION.id
@@ -150,10 +150,21 @@ check(
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.precedingApproval.gateId === EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.id
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.precedingApproval.candidateFrameDigest === EN_E11_COCKATRICE_GLOAMGAZE_STALKER_GATE.candidateFrameDigest
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.precedingApproval.currentReconciliation === '9d5c942fbdeb49db8c232fc763972962b56e8837'
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('Explicit visual approval')
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('commit')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.approvedOn === '2026-08-14'
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.approvalEvidence.includes('5beeb0036af6f5c9dc9bfb64c0121e548a372f31ee257e53c0765e3b031c2bb0')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.approvalEvidence.includes('The designer replied: approved lets do next')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.approvalEvidence.includes('continuation is held')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.approvedImplementation === '5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef'
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publicationAuthorizedOn === '2026-08-14'
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publicationAuthorizationEvidence.includes('commit and push all aproved please')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publishedImplementation === ''
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publishedApprovalRecord === ''
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.initialPublishedHandoff === ''
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.publicationState === 'approved-not-published'
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('5d4ebe9dea7a8a85d0adeec0e34a0b3be8a016ef')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('approval record')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('outline registration'),
-  'Crowncoil candidate authorization or predecessor tuple drifted',
+  'Crowncoil approval record or predecessor tuple drifted',
 );
 check(
   JSON.stringify(EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
@@ -161,9 +172,9 @@ check(
     && EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.precedingVariant.role === 'specialist'
     && EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.activeVariant.id === 'crowncoil-basilarch'
     && EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-complete-motion-candidate'
+    && EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_COCKATRICE_ELITE_CONTRACT_CARD.deferredRoles) === JSON.stringify([])
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_CONTRACT.state === 'implemented-complete-motion-approved',
   'Cockatrice elite role contract drifted',
 );
 check(
@@ -177,7 +188,7 @@ check(
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.exclusions.includes('fixtures')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.exclusions.includes('approved Gloamgaze Stalker pixel changes')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.exclusions.includes('approved Bramblecomb Scratcher pixel changes')
-    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('Explicit visual approval')
+    && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('continuation lets do next remains held')
     && EN_E11_COCKATRICE_CROWNCOIL_BASILARCH_GATE.nextGate.includes('outline registration'),
   'Crowncoil anatomy, motion, effect firewall, or stop boundary drifted',
 );
@@ -351,7 +362,7 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E11 Cockatrice Crowncoil Basilarch private elite candidate passes focused validation.');
+  console.log('EN-E11 Cockatrice Crowncoil Basilarch approved private elite packet passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Cockatrice identity: ' + twoFootRows + '/80 two-talon rows; ' + naturalSpans + '/80 grounded hybrid spans; ' + tailHookViews + '/16 connected tail-hook views; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + combViews + '/72 comb views; ' + tailViews + '/72 tail views; ' + wingViews + '/72 wing views; ' + scaleViews + '/72 scale views');
   console.log('- Distinction: Gloamgaze ' + differences.gloamgaze + '/80; Bramblecomb ' + differences.bramblecomb + '/80; Marsh Crocodile ' + differences.marshCrocodile + '/80 pixel and alpha frames differ');
