@@ -89,8 +89,8 @@ export const EN_E10_BRIARSTEP_HARRIER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: '8d52dc26d9d361c5d95603276a4a88b3978a585e',
   publishedApprovalRecord: '895456020801fa40a31d7e83413895e0440c505e',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '40fd66c20f3b01ddd927ecb83c807c96c5feec7b',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E10_MOSSRACK_FORAGER_GATE.id,
     artifactSha256: EN_E10_MOSSRACK_FORAGER_GATE.artifactSha256,
@@ -147,7 +147,7 @@ export const EN_E10_BRIARSTEP_HARRIER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Briarstep Harrier implementation 8d52dc26d9d361c5d95603276a4a88b3978a585e and approval record 895456020801fa40a31d7e83413895e0440c505e are remote verified. Only the initial published handoff and final reconciliation remain open. No next Stag art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Briarstep Harrier implementation 8d52dc26d9d361c5d95603276a4a88b3978a585e, approval record 895456020801fa40a31d7e83413895e0440c505e, and initial published handoff 40fd66c20f3b01ddd927ecb83c807c96c5feec7b are remote verified; this reconciliation completes the bounded publication tuple. No next Stag art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Stag registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_BRIARSTEP_HARRIER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -465,7 +465,7 @@ export const EN_E10_BRIARSTEP_HARRIER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'briarstep-harrier',
     scale: 8,
-    notes: 'Visually approved as one exact private specialist Stag against approved Mossrack Forager and Miremane Courser plus public Dire Wolf. Accepted implementation 8d52dc26d9d361c5d95603276a4a88b3978a585e and approval record 895456020801fa40a31d7e83413895e0440c505e are remote verified. Only the initial published handoff and final reconciliation remain open. No next Stag art gate is open. The distinct Complete B outlined PNG remains review evidence only. Keep public or outline registration, fixtures, effects, child assets, elite Stag, later families, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private specialist Stag against approved Mossrack Forager and Miremane Courser plus public Dire Wolf. Accepted implementation 8d52dc26d9d361c5d95603276a4a88b3978a585e, approval record 895456020801fa40a31d7e83413895e0440c505e, and initial published handoff 40fd66c20f3b01ddd927ecb83c807c96c5feec7b are remote verified; this reconciliation completes the bounded publication tuple. No next Stag art gate is open. The distinct Complete B outlined PNG remains review evidence only. Keep public or outline registration, fixtures, effects, child assets, elite Stag, later families, release, accepted drift, and a pull request separate.',
   },
 });
 

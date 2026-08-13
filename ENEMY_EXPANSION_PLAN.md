@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current approved private art checkpoint undergoing publication reconciliation
+- Current approved private art checkpoint published / no next Stag gate
   (2026-08-13): from
   clean published Mossrack reconciliation
   `67331ed1a160c8e62df0c9941b7c051ab5d0b228`, the designer's `approved lets do
@@ -35,17 +35,19 @@
   raw / Form GIF hashes are
   `6172ddb391750d318e8fc263e6a53a34492dd723beb53ad6bf10d07b8cad1e13`
   and `523e4c3a8462d02a95398fa8df8c056b932c157ee834d18c10042092eea3ccc5`.
-  Focused / fast / full gates pass in 1.1s / 69.1s / 124.8s and approval-local
-  focused / fast gates pass in 0.7s / 67.0s with 80/80 connected, bounded,
-  grounded, split-hoof, cervid-span, and Mossrack / Miremane / Dire Wolf
+  Focused / fast / full gates pass in 1.1s / 69.1s / 124.8s, approval-local
+  focused / fast gates pass in 0.7s / 67.0s, and final published-state full
+  validation passes in 126.9s with 80/80 connected, bounded, grounded,
+  split-hoof, cervid-span, and Mossrack / Miremane / Dire Wolf
   pixel-plus-alpha-distinct frames; opaque range 171-209, public 92/294, and all
   232 fixtures unchanged. Exact PNGs are open in Aseprite as sprites 115, 119,
   123, and active 127. The outlined board is review evidence only. The designer
   replied `approved` to the exact posted packet; accepted implementation
-  `8d52dc26d9d361c5d95603276a4a88b3978a585e` and approval record
-  `895456020801fa40a31d7e83413895e0440c505e` are remote verified. Only the
-  initial published handoff and final reconciliation remain open. No next Stag
-  art gate is open. Public/outline registration,
+  `8d52dc26d9d361c5d95603276a4a88b3978a585e`, approval record
+  `895456020801fa40a31d7e83413895e0440c505e`, and initial published handoff
+  `40fd66c20f3b01ddd927ecb83c807c96c5feec7b` are remote verified; this
+  reconciliation completes the bounded publication tuple. No next Stag art
+  gate is open. Public/outline registration,
   fixtures, effects, child assets, elite Stag, Mammoth, Rhino, Rhino Boss work,
   release, accepted drift, a PR, and every broader gate remain closed.
 

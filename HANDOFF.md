@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Briarstep Harrier Publication Reconciliation
+## Immediate Continuation Checkpoint - Briarstep Harrier Published / No Next Stag Gate
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-stag-specialist`. It is based exactly on clean, published,
@@ -61,10 +61,11 @@ gate.
    Forager and Miremane Courser plus public Dire Wolf. Opaque range is 171-209.
    Complete B adds 14,362 outline pixels and Form changes 6,195 pixels.
    Deterministic regeneration reproduces all six frozen hashes. Focused /
-   `check:fast` / full `check` pass in 1.1s / 69.1s / 124.8s, and
-   approval-local focused / fast gates pass in 0.7s / 67.0s, with public 92/294,
-   both approved comparison sources exact, all 232 fixture sheets unchanged,
-   zero child assets/effects, and no public or outline registration.
+   `check:fast` / full `check` pass in 1.1s / 69.1s / 124.8s,
+   approval-local focused / fast gates pass in 0.7s / 67.0s, and final
+   published-state full validation passes in 126.9s, with public 92/294, both
+   approved comparison sources exact, all 232 fixture sheets unchanged, zero
+   child assets/effects, and no public or outline registration.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-stag-briarstep-harrier/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-stag-briarstep-harrier` and run
@@ -79,10 +80,11 @@ gate.
    The designer replied `approved`. Approval applies only to that exact packet;
    accepted implementation `8d52dc26d9d361c5d95603276a4a88b3978a585e`
    records it and is remote verified.
-8. Accepted implementation `8d52dc26d9d361c5d95603276a4a88b3978a585e`
-   and approval record `895456020801fa40a31d7e83413895e0440c505e` are
-   remote verified. Only the initial published handoff and final reconciliation
-   remain open. No next Stag art gate is open. Public Stag or outline
+8. Accepted implementation `8d52dc26d9d361c5d95603276a4a88b3978a585e`,
+   approval record `895456020801fa40a31d7e83413895e0440c505e`, and initial
+   published handoff `40fd66c20f3b01ddd927ecb83c807c96c5feec7b` are remote
+   verified; this reconciliation completes the bounded publication tuple. No
+   next Stag art gate is open. Public Stag or outline
    registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino,
    Furious Depraved Rhino Boss work, the deferred Runic Idol decision, release,
    accepted drift, a PR, and every broader art gate remain closed.
