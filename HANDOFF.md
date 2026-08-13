@@ -23,7 +23,63 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Stonecurl Grazer Published / No Next Gate
+## Immediate Continuation Checkpoint - Cliffcoil Strider Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-ram-specialist`. It is based exactly on the clean published
+   Stonecurl Grazer reconciliation
+   `67ba19086669b9135286784b6c9c39f682ca3032`.
+2. After Stonecurl's bounded publication tuple was remote verified, the designer
+   separately said `lets do nex t`. In the established common / specialist /
+   elite cadence this authorizes exactly one private specialist Ram full
+   80-frame candidate under the already approved
+   `baked-single-actor-horned-grounded-quadruped` topology. It does not authorize
+   publication or any later gate.
+3. The candidate is Cliffcoil Strider: lean blue-slate fleece, charcoal-blue
+   face and lower legs, long connected pale-limestone swept coil horns, a cool
+   pale belly and beard, sea-glass sure-foot chevrons, muted-wine ear interiors,
+   cyan eyes, near-black hooves, and a body-owned sidestep horn charge. Dust,
+   horn arcs, impacts, debris, particles, projectiles, glow, illumination,
+   runtime attachments, and all other effects remain external and Off.
+4. Frozen candidate digest:
+   `1ca2ce85dc6bd4b291e6ede4754f58c2a5bd4278b50acfb699926f9626dd9b29`.
+   Raw / distinct Complete B outlined / Complete B + Form / family-comparison
+   PNG hashes are
+   `727f944bd748663326dbe208cbec36a3f4f6eb6aecf127265d59c318dc4c7006`,
+   `fcff74c278fa4f617cec277e7a7f229188a4debe0461be514ef61f898a16457e`,
+   `735827ed4c89c80949c46f14a7db1de15fa2733b4fb94195e813d3653ea88b11`,
+   and `e5e7a5fc056db1ad12b83c6f0b0ebc47bedfe395ae2d0f87dfa539654f261911`.
+   Raw and Complete B + Form GIF hashes are
+   `f44a277d8f69cbb374964f3b6325ae8af477d55af7bfb85eccac88480f7d6d30`
+   and `1856759ae6b5f4b805587b7f9f764a37ec40dbc18b3e192f6ca93c12ecbcbf6f`.
+5. Focused validation passes 80/80 connected, bounded, grounded, four-hoof,
+   and quadruped-span frames; 72/72 colored horn-bearing frames; 8/8 exact-white
+   flashes; 54/54 expected eye-bearing and readable-muzzle views; exact
+   Cast/Attack and Death/Hurt aliases; side mirrors; and 80/80 pixel plus alpha
+   distinctions from approved Stonecurl Grazer and Miremane Courser plus public
+   Dire Wolf. Opaque range is 233-259. Complete B adds 11,532 outline pixels and
+   Form changes 9,177 pixels. Deterministic regeneration reproduces all six
+   frozen hashes. Focused / `check:fast` / full `check` pass in 0.7s / 59.0s /
+   113.9s with public 92/294, approved comparison sources exact, all 232 fixture
+   sheets unchanged, zero child assets/effects, and no public or outline
+   registration.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-ram-cliffcoil-strider/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-ram-cliffcoil-strider` and run the
+   focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-ram-cliffcoil-strider`.
+7. The exact raw, distinct Complete B outlined, Complete B + Form, and comparison
+   PNGs are open together in the four-lane Aseprite MCP review window as sprites
+   67, 71, 75, and active 79. The outlined PNG is required review evidence only;
+   it does not authorize outline registration. Await explicit visual approval of
+   this exact four-PNG plus two-GIF packet. Nothing on this branch is committed
+   or pushed before that approval.
+8. Public Ram registration or outline registration, fixtures, effects, child
+   assets, elite Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work,
+   the deferred Runic Idol decision, release, accepted drift, publication, and
+   a PR remain closed.
+
+## Approved Preceding Checkpoint - Stonecurl Grazer Published
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-ram-common`. It is based exactly on the clean published
@@ -83,10 +139,12 @@ gate.
    `c7757c1293bae90840735555e2670d7661bc9873`, plus initial published handoff
    `c278919b2830d7e8654bcb1bbd38f07db344d285`, are remote verified; this
    reconciliation completes the bounded publication tuple.
-8. Public Ram registration or outline registration, fixtures, effects, child
-   assets, specialist or elite Ram, Stag, Mammoth, Rhino, Furious Depraved
-   Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
-   and a PR remain closed. No next Ram art gate is open.
+8. At this published checkpoint public Ram registration or outline registration,
+   fixtures, effects, child assets, specialist or elite Ram, Stag, Mammoth,
+   Rhino, Furious Depraved Rhino Boss work, the deferred Runic Idol decision,
+   release, accepted drift, and a PR remained closed. The designer later
+   separately said `lets do nex t`, opening only the one private specialist
+   Cliffcoil Strider candidate in the immediate checkpoint above.
 
 ## Approved Preceding Checkpoint - Scarcrest Published / Ram Topology Decision
 

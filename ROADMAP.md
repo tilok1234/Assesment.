@@ -14,7 +14,28 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current published EN-E10 private art checkpoint (2026-08-13): from clean published Scarcrest
+Current EN-E10 private art checkpoint (2026-08-13): from clean published
+Stonecurl reconciliation `67ba19086669b9135286784b6c9c39f682ca3032`, the
+designer's separate `lets do nex t` authorizes exactly one private specialist
+Ram under the approved `baked-single-actor-horned-grounded-quadruped` topology.
+Cliffcoil Strider on `codex/en-e10-ram-specialist` is a connected grounded lean
+blue-slate Ram with charcoal-blue face and lower legs, long connected
+pale-limestone swept coil horns, cool pale belly and beard, sea-glass sure-foot
+chevrons, muted-wine ears, cyan eyes, near-black hooves, and a body-owned
+sidestep horn charge. Its exact 80-frame digest is
+`1ca2ce85dc6bd4b291e6ede4754f58c2a5bd4278b50acfb699926f9626dd9b29`.
+Focused validation passes every structure, identity, alias, mirror, and
+three-way pixel/alpha distinction gate at opaque range 233-259. The raw,
+required distinct Complete B outlined, Complete B + Form, and comparison PNGs
+plus two GIFs are hash-frozen and deterministic. Focused / fast / full gates
+pass in 0.7s / 59.0s / 113.9s with public 92/294 and all 232 fixtures unchanged.
+The exact four PNGs are open together in Aseprite as sprites 67, 71, 75, and
+active 79. The outlined PNG is review evidence only, not outline registration.
+Await explicit visual approval; the branch is uncommitted and unpushed.
+Public/outline registration, fixtures, effects, child assets, elite Ram, later
+families, release, accepted drift, publication, and a PR remain closed.
+
+Approved preceding published EN-E10 private art checkpoint (2026-08-13): from clean published Scarcrest
 reconciliation `a7d2abbd610dfc6096498d1dce096d652e50596d`, the designer's
 `approved` selects `baked-single-actor-horned-grounded-quadruped` and authorizes
 exactly one private common Ram candidate. Stonecurl Grazer on
@@ -37,9 +58,11 @@ designer replied `approved` to the exact posted packet. Accepted
 implementation `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` and approval
 record `c7757c1293bae90840735555e2670d7661bc9873`, plus initial published
 handoff `c278919b2830d7e8654bcb1bbd38f07db344d285`, are remote verified;
-this reconciliation completes the bounded publication tuple. No next Ram art
-gate is open; registration, fixtures, effects, child assets, later roles and
-families, release, accepted drift, and a PR remain closed.
+this reconciliation completes the bounded publication tuple. At that checkpoint
+registration, fixtures, effects, child assets, later roles and families,
+release, accepted drift, and a PR remained closed. The designer later separately
+said `lets do nex t`, opening only the private specialist Cliffcoil Strider
+candidate above.
 
 Approved preceding EN-E10 art gate (2026-08-13): from clean published Gloamstripe
 reconciliation `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's

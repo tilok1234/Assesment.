@@ -107,7 +107,30 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current published private art checkpoint: on `codex/en-e10-ram-common`, based exactly on clean
+- Current private art checkpoint: on `codex/en-e10-ram-specialist`, based exactly
+  on clean published Stonecurl reconciliation
+  `67ba19086669b9135286784b6c9c39f682ca3032`, the designer's separate `lets do
+  nex t` authorizes exactly one private specialist Ram candidate under the
+  approved `baked-single-actor-horned-grounded-quadruped` topology. Cliffcoil
+  Strider is a connected grounded lean blue-slate Ram with charcoal-blue face
+  and lower legs, long connected pale-limestone swept coil horns, cool pale
+  belly and beard, sea-glass sure-foot chevrons, muted-wine ears, cyan eyes,
+  near-black hooves, and a body-owned sidestep horn charge. Its exact 80-frame
+  digest is `1ca2ce85dc6bd4b291e6ede4754f58c2a5bd4278b50acfb699926f9626dd9b29`.
+  Focused validation passes all 80 connected, bounded, grounded, four-hoof,
+  quadruped-span, pixel-distinct, and alpha-distinct frames against approved
+  Stonecurl Grazer and Miremane Courser plus public Dire Wolf; opaque range is
+  233-259. Exact aliases and mirrors pass. The raw, required distinct Complete B
+  outlined, Complete B + Form, and comparison PNGs plus two GIFs are hash-frozen
+  and regenerate deterministically. Focused / fast / full gates pass in 0.7s /
+  59.0s / 113.9s with public 92/294 and all 232 fixtures unchanged. The four
+  exact PNGs are open together in Aseprite as sprites 67, 71, 75, and active 79.
+  The outlined PNG is review evidence only, not outline registration. Await
+  explicit visual approval of this exact packet; the branch remains uncommitted
+  and unpushed. Public/outline registration, fixtures, effects, child assets,
+  elite Ram, later families, release, accepted drift, publication, and a PR
+  remain closed.
+- Approved preceding published private art checkpoint: on `codex/en-e10-ram-common`, based exactly on clean
   published Scarcrest reconciliation
   `a7d2abbd610dfc6096498d1dce096d652e50596d`, the designer's `approved`
   selects `baked-single-actor-horned-grounded-quadruped` and authorizes exactly
@@ -134,10 +157,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   `195c6ddf4c2f8d5345d18b3e1657bfab3f7a41b8` and approval record
   `c7757c1293bae90840735555e2670d7661bc9873`, plus initial published handoff
   `c278919b2830d7e8654bcb1bbd38f07db344d285`, are remote verified; this
-  reconciliation completes the bounded publication tuple. No next Ram art gate
-  is open. Public registration, fixtures, effects, child assets, specialist or
-  elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol
-  decision, release, accepted drift, a PR, and every later gate remain closed.
+  reconciliation completes the bounded publication tuple. At that checkpoint
+  public registration, fixtures, effects, child assets, specialist or elite
+  Ram, Stag, Mammoth, Rhino, Rhino Boss work, the deferred Runic Idol decision,
+  release, accepted drift, a PR, and every later gate remained closed. The
+  designer later separately said `lets do nex t`, opening only the private
+  specialist Cliffcoil Strider candidate above.
 - Approved preceding private art checkpoint: on `codex/en-e10-hyena-elite`, based exactly on clean
   published Gloamstripe reconciliation
   `76117603035f6880f25f7dc8356ba23221df2af9`, the designer's `approved lets do
