@@ -30,7 +30,7 @@ export const EN_E11_PEACOCK_RAINFAN_FORAGER_CONTRACT = deepFreeze({
   family: 'peacock',
   variant: 'rainfan-forager',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E11_PEACOCK_TOPOLOGY_DECISION.selected,
   silhouette: 'One compact natural ground-bird body joins a small crested head, long upright neck, two folded wings, two taloned legs with broad three-toed contacts, and one connected eyespot train that stays compact at rest and becomes a partial fan during Attack. It is not an upright Birdfolk person, an exposed-human Harpy, or a four-legged Griffin.',
   identity: 'Cobalt and teal head-and-neck plumage, moss-green body feathers, burnished-bronze folded wings, a dark teal eyespot train, old-ivory beak and talons, and a body-owned rainfan feint distinguish the common Rainfan Forager.',
@@ -44,18 +44,27 @@ export const EN_E11_PEACOCK_COMMON_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_PEACOCK_RAINFAN_FORAGER_CONTRACT.variant,
     role: EN_E11_PEACOCK_RAINFAN_FORAGER_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['specialist', 'elite'],
 });
 
 export const EN_E11_PEACOCK_RAINFAN_FORAGER_GATE = deepFreeze({
   id: 'en-e11-peacock-rainfan-forager-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'After reviewing other enemy categories and choosing Birds for now, the designer approved the proposed baked-single-actor-grounded-fan-tailed-bird topology and authorized the next bounded candidate with: approved and letsd go. This authorizes exactly one private common Peacock full 80-frame candidate only.',
   baseCheckpoint: '51033b2385fe5e3eab64006b935a85c91140e86f',
   architectureDecision: EN_E11_PEACOCK_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Aerie Scout plus public Harpy Screecher and Griffin Royal comparison PNGs were frozen with both synchronized GIF hashes. All four exact PNG paths were opened and inspected in Aseprite, and the transparent 20x4 inspection atlas passed dimensions, hard alpha, non-empty-cell, and strict boundary checks. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest 061a67e81e4c2bb4e7ed528953d2acf1e19d1453b2098ddceff1c01ca4e38128. The designer replied: approved. Approval applies only to that exact Rainfan Forager digest and its six frozen review hashes. It does not open public or outline registration, fixtures, effects, child assets, another Peacock role, another Bird family, release, accepted drift, or a pull request.',
+  approvedImplementation: '9841f97fbf25074b1ac5aade89ecc84edfe0da73',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_STONEFERN_BASTION_GATE.id,
     candidateFrameDigest: EN_E10_STONEFERN_BASTION_GATE.candidateFrameDigest,
@@ -125,7 +134,7 @@ export const EN_E11_PEACOCK_RAINFAN_FORAGER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'Stop after the exact hash-frozen private Rainfan Forager review packet is generated and validated. Explicit designer visual approval is required before any commit, push, publication, registration, fixture, effect, later Peacock role, other Bird family, release, or PR work.',
+  nextGate: 'The exact Rainfan Forager packet is visually approved at implementation 9841f97fbf25074b1ac5aade89ecc84edfe0da73. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The designer reply contains no continuation request, so no Peacock specialist or elite, other Bird family, or other sprite lane is opened. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Peacock registration, fixtures, effects, child assets, Cockatrice, Raven, Owl, Phoenix, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E11_PEACOCK_RAINFAN_FORAGER_DATA = deepFreeze({
@@ -610,7 +619,7 @@ export const EN_E11_PEACOCK_RAINFAN_FORAGER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'rainfan-forager',
     scale: 6,
-    notes: 'One complete Peacock Rainfan Forager common remains private, non-public, effect-free, and pending exact visual approval.',
+    notes: 'Visually approved as one exact private common Peacock against approved Aerie Scout plus public Harpy Screecher and Griffin Royal. Accepted implementation 9841f97fbf25074b1ac5aade89ecc84edfe0da73 records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. The designer reply contains no continuation request, so keep public or outline registration, fixtures, effects, child assets, later Peacock roles, other Bird families, release, accepted drift, and a pull request separate.',
   },
 });
 

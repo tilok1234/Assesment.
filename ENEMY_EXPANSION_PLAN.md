@@ -6211,7 +6211,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `common-candidate-review`
+- Status: `common-approved-publication`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 
@@ -6219,17 +6219,17 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current authorized Peacock common candidate
+#### Current approved Peacock common
 
 After comparing the remaining candidate categories, the designer said `lets do
 birds for now`. Codex proposed the
 `baked-single-actor-grounded-fan-tailed-bird` topology for the Peacock common,
-and the designer replied `approved and letsd go`. This authorizes exactly one
-private common Peacock full 80-frame candidate from clean, published,
-remote-verified Stonefern reconciliation
-`51033b2385fe5e3eab64006b935a85c91140e86f`; it does not approve candidate
-pixels, publication, registration, fixtures, effects, later Peacock roles, or
-another Bird family.
+and the designer replied `approved and letsd go`. That response authorized
+exactly one private common Peacock full 80-frame candidate from clean,
+published, remote-verified Stonefern reconciliation
+`51033b2385fe5e3eab64006b935a85c91140e86f`; it did not approve candidate
+pixels or publication at that time and never opened registration, fixtures,
+effects, later Peacock roles, or another Bird family.
 
 Rainfan Forager is one connected natural ground bird with a compact crested
 head, long cobalt-and-teal neck, moss body, two burnished-bronze folded wings,
@@ -6259,11 +6259,17 @@ Royal. The transparent inspection atlas passes dimensions, hard alpha,
 non-empty-cell, and strict boundary checks. Focused/fast/full gates pass in
 about 0.6s/56.8s/106.4s with public 92/294, all 232 fixtures unchanged, and
 zero child assets, effects, public registration, or outline registration.
+Approval-local focused/fast gates pass again in about 0.9s/56.5s against the
+exact accepted implementation.
 
-Stop for explicit visual approval of the exact four PNGs, two GIFs, and digest.
-No commit, push, publication, registration, fixture, effect, specialist/elite
-Peacock, Cockatrice, Raven, Owl, Phoenix, release, accepted drift, or PR is
-open. The outlined PNG is review evidence only.
+The final approval prompt posted the exact four PNGs, two GIFs, and digest, and
+the designer replied `approved`. Approval binds only to accepted implementation
+`9841f97fbf25074b1ac5aade89ecc84edfe0da73`, which is remote verified, and
+the six frozen hashes. Standing permission opens only the approval-record
+commit, branch push, and bounded handoff reconciliation. The reply contains no
+continuation request, so registration, fixtures, effects, specialist/elite
+Peacock, Cockatrice, Raven, Owl, Phoenix, release, accepted drift, and a PR
+remain closed. The outlined PNG is review evidence only.
 
 ### EN-E12 - Mythic composite creatures
 

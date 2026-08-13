@@ -107,15 +107,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private common Peacock candidate / visual approval required: on
+- Current private common Peacock approved / publication in progress: on
   `codex/en-e11-peacock-common`, based exactly on clean, published,
   remote-verified Stonefern reconciliation
   `51033b2385fe5e3eab64006b935a85c91140e86f`, the designer selected Birds
   with `lets do birds for now`, then replied `approved and letsd go` to the
   proposed `baked-single-actor-grounded-fan-tailed-bird` topology and bounded
-  candidate. This opens exactly one private common Peacock full 80-frame
-  candidate; it does not approve its pixels or open publication. Rainfan
-  Forager is one connected natural ground bird with a crested cobalt-and-teal
+  candidate. That authorization opened exactly one private common Peacock full
+  80-frame candidate; it did not approve its pixels or open publication at
+  that time. Rainfan Forager is one connected natural ground bird with a
+  crested cobalt-and-teal
   head and neck, compact moss body, two bronze folded wings, two separated
   three-toed talon contacts, and one connected teal eyespot train. Attack
   plants both talons, opens a partial body-owned fan, drives a short wing
@@ -138,10 +139,17 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   strict boundary checks. Focused / fast / full gates pass in about
   0.6s / 56.8s / 106.4s. Public stays 92/294, all 232 fixtures remain exact,
   and child assets/effects/public registration/outline registration stay zero.
-  The four exact review PNGs were inspected in Aseprite. Stop for explicit
-  visual approval: no commit, push, publication, registration, fixtures,
-  effects, later Peacock role, other Bird family, release, accepted drift, or
-  PR is open; the outlined PNG is review evidence only.
+  Approval-local focused / fast gates pass again in about 0.9s / 56.5s
+  against the exact accepted implementation.
+  The four exact review PNGs were inspected in Aseprite. The final approval
+  prompt posted those four PNGs, both GIFs, and the digest, and the designer
+  replied `approved`. Approval binds only to accepted implementation
+  `9841f97fbf25074b1ac5aade89ecc84edfe0da73`, which is remote verified, and
+  the six frozen hashes. Standing permission opens only the approval-record
+  commit, branch push, and bounded handoff reconciliation. The reply contains
+  no continuation request, so registration, fixtures, effects, later Peacock
+  roles, other Bird families, release, accepted drift, and a PR remain closed;
+  the outlined PNG is review evidence only.
 - Approved preceding private elite Rhino published / Peacock gate opened later: on
   `codex/en-e10-rhino-elite`, based exactly on clean, published,
   remote-verified Reedcrest reconciliation

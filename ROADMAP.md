@@ -14,15 +14,16 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E11 private common Peacock candidate / visual approval required
+Current EN-E11 private common Peacock approved / publication in progress
 (2026-08-13): on `codex/en-e11-peacock-common`, based exactly on clean,
 published, remote-verified Stonefern reconciliation
 `51033b2385fe5e3eab64006b935a85c91140e86f`, the designer selected Birds with
 `lets do birds for now`, then replied `approved and letsd go` to the proposed
 `baked-single-actor-grounded-fan-tailed-bird` topology and bounded candidate.
-This opens exactly one private common Peacock full 80-frame candidate; it does
-not approve its pixels or publication. Rainfan Forager is a connected natural
-ground bird with a compact crest, long cobalt-and-teal neck, moss body, bronze
+That authorization opened exactly one private common Peacock full 80-frame
+candidate; it did not approve its pixels or publication at that time. Rainfan
+Forager is a connected natural ground bird with a compact crest, long
+cobalt-and-teal neck, moss body, bronze
 folded wings, two separated three-toed talon contacts, and one connected teal
 eyespot train. Attack opens the body-owned train into a partial fan, follows
 with a short wing buffet and beak strike, then recovers without any baked
@@ -43,9 +44,16 @@ inspection atlas passes dimensions, hard alpha, empty-cell, and strict
 boundary checks. Focused/fast/full gates pass in about
 0.6s/56.8s/106.4s. Public stays 92/294, all 232 fixtures remain unchanged,
 and child assets/effects/public registration/outline registration stay zero.
-The four exact review PNGs were inspected in Aseprite. Stop for explicit visual
-approval; no commit, push, publication, registration, fixture, effect, later
-Peacock role, other Bird family, release, accepted drift, or PR is open.
+Approval-local focused/fast gates pass again in about 0.9s/56.5s against the
+exact accepted implementation.
+The four exact review PNGs were inspected in Aseprite. The final approval
+prompt posted those four PNGs, both GIFs, and the digest, and the designer
+replied `approved`. Approval binds only to accepted implementation
+`9841f97fbf25074b1ac5aade89ecc84edfe0da73`, which is remote verified, and
+the six frozen hashes. Standing permission opens only the approval-record
+commit, branch push, and bounded handoff reconciliation. The reply contains no
+continuation request, so registration, fixtures, effects, later Peacock roles,
+other Bird families, release, accepted drift, and a PR remain closed.
 
 Approved preceding EN-E10 private elite Rhino published / Peacock gate opened later
 (2026-08-13): on

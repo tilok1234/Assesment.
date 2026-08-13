@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Rainfan Forager Private Candidate / Visual Approval Required
+## Immediate Continuation Checkpoint - Rainfan Forager Approved / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-peacock-common`. It branches exactly from clean, published,
@@ -33,9 +33,10 @@ gate.
    Birds with `lets do birds for now`. Codex proposed the
    `baked-single-actor-grounded-fan-tailed-bird` Peacock topology, and the
    designer replied `approved and letsd go`. This authorizes exactly one
-   private common Peacock full 80-frame candidate. It does not approve the
-   candidate pixels, publication, registration, fixtures, effects, later
-   Peacock roles, or another Bird family.
+   private common Peacock full 80-frame candidate. That authorization did not
+   approve the candidate pixels or publication at that time and never opened
+   registration, fixtures, effects, later Peacock roles, or another Bird
+   family.
 3. Rainfan Forager is one connected natural ground bird with a compact crested
    head, long cobalt-and-teal neck, moss-green body, two burnished-bronze
    folded wings, two legs ending in separated broad three-toed talon contacts,
@@ -66,7 +67,8 @@ gate.
    strict boundary checks. Focused / `check:fast` / full `check` pass in about
    0.6s / 56.8s / 106.4s. Public remains 92/294, all 232 fixtures stay
    unchanged, and child assets, effects, public registration, and outline
-   registration remain zero.
+   registration remain zero. Approval-local focused / `check:fast` gates pass
+   again in about 0.9s / 56.5s against the exact accepted implementation.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-peacock-rainfan-forager/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e11-peacock-rainfan-forager` and run
@@ -76,10 +78,19 @@ gate.
    form the complete review surface. All four exact PNGs were opened and
    inspected in Aseprite. The outlined PNG is evidence only; it does not
    authorize outline registration.
-7. Stop here for explicit visual approval of this exact packet. Do not commit,
-   push, publish, register, regenerate fixtures, add effects, open Peacock
-   specialist or elite, begin Cockatrice/Raven/Owl/Phoenix, release, accept
-   drift, or open a PR without the corresponding later authorization.
+7. The final approval prompt posted all four exact PNGs, both synchronized
+   GIFs, and digest
+   `061a67e81e4c2bb4e7ed528953d2acf1e19d1453b2098ddceff1c01ca4e38128`.
+   The designer replied `approved`. Approval binds only to those frozen files
+   and accepted implementation
+   `9841f97fbf25074b1ac5aade89ecc84edfe0da73`, which is remote verified.
+   Standing publication permission opens only the approval-record commit,
+   branch push, and bounded handoff reconciliation.
+8. The approval reply contains no continuation request. Do not register,
+   regenerate fixtures, add effects, open Peacock specialist or elite, begin
+   Cockatrice/Raven/Owl/Phoenix, release, accept drift, or open a PR. The next
+   sprite lane remains closed after publication until a fresh explicit
+   continuation request.
 
 ## Approved Preceding Checkpoint - Stonefern Bastion Published / Peacock Gate Opened Later
 

@@ -111,11 +111,21 @@ check(
   'approved Peacock topology decision drifted',
 );
 check(
-  EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.status === 'candidate'
+  EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.status === 'approved'
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.baseCheckpoint === '51033b2385fe5e3eab64006b935a85c91140e86f'
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.architectureDecision === EN_E11_PEACOCK_TOPOLOGY_DECISION.id
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.authorizationEvidence.includes('approved and letsd go')
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.authorizationEvidence.includes('exactly one private common Peacock full 80-frame candidate only')
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.approvedOn === '2026-08-13'
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.approvalEvidence.includes('The designer replied: approved')
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.approvalEvidence.includes('another Bird family')
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.approvedImplementation === '9841f97fbf25074b1ac5aade89ecc84edfe0da73'
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publishedImplementation === ''
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publishedApprovalRecord === ''
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.initialPublishedHandoff === ''
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.publicationState === 'approved-not-published'
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.precedingApproval.gateId === EN_E10_STONEFERN_BASTION_GATE.id
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.precedingApproval.candidateFrameDigest === EN_E10_STONEFERN_BASTION_GATE.candidateFrameDigest
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.precedingApproval.publishedImplementation === EN_E10_STONEFERN_BASTION_GATE.publishedImplementation
@@ -128,9 +138,9 @@ check(
   JSON.stringify(EN_E11_PEACOCK_COMMON_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E11_PEACOCK_COMMON_CONTRACT_CARD.activeVariant.id === 'rainfan-forager'
     && EN_E11_PEACOCK_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E11_PEACOCK_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_PEACOCK_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_PEACOCK_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
-    && EN_E11_PEACOCK_RAINFAN_FORAGER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Peacock common role or candidate contract drifted',
 );
 check(
@@ -142,7 +152,9 @@ check(
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.exclusions.includes('registration')
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.exclusions.includes('fixtures')
     && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.exclusions.includes('Phoenix')
-    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.nextGate.includes('Explicit designer visual approval is required'),
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.nextGate.includes('implementation 9841f97fbf25074b1ac5aade89ecc84edfe0da73')
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.nextGate.includes('no Peacock specialist or elite, other Bird family, or other sprite lane is opened')
+    && EN_E11_PEACOCK_RAINFAN_FORAGER_GATE.nextGate.includes('review evidence only'),
   'Peacock anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(
