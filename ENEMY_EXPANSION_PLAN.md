@@ -15,7 +15,7 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current private elite Stag checkpoint published / handoff reconciliation in progress
+- Current private elite Stag checkpoint published / Mammoth topology decision open
   (2026-08-13): from
   clean remote-verified Briarstep handoff
   `595b2b2b18ebe7e111486df96624b4e1f057647b`, the designer's `awesine lets keep
@@ -39,15 +39,21 @@
   passing in 0.8s / 56.6s: 80/80 connected, bounded, grounded, split-hoof,
   crown-rack, and Briarstep / Mossrack / Dire Wolf pixel-plus-alpha-distinct
   frames; opaque range 196-234; public 92/294; all 232 fixtures unchanged; zero
-  child assets/effects; no public or outline registration. Exact PNGs are open
-  in Aseprite as sprites 131, 135, 139, and
+  child assets/effects; no public or outline registration. Final
+  published-state full validation passes in 117.9s with the same boundary.
+  Exact PNGs are open in Aseprite as sprites 131, 135, 139, and
   active 143. The outlined board is evidence only. The designer replied
   `approved lets do next`; accepted implementation
   `0ece468efeaf4b50351358020075b4bf91dc7cff` anchors only that frozen packet.
   It and approval record `378ec3d107b43e6b354cadcad16f64e0a8cf838b` are
-  pushed and remote verified; only the initial handoff and final reconciliation
-  remain open. After that tuple is clean and remote verified, the suffix
-  opens only the Mammoth actor-topology decision, not Mammoth pixels.
+  pushed and remote verified with initial handoff
+  `be5d7c7316e035021ef805b0f1f6843b10df9c32`; this reconciliation completes the
+  bounded publication tuple. No next Stag gate is open. The suffix opens only
+  the Mammoth actor-topology decision. Recommend
+  `baked-single-actor-tusked-heavy-grounded-quadruped`, with one connected
+  grounded actor, body-owned trunk/tusks/ears/tail, four broad feet, zero child
+  assets, and all effects external. Mammoth pixels require separate explicit
+  topology approval.
   Registration, fixtures, effects, child assets, additional Stag variants,
   Rhino, Rhino Boss work, release, accepted drift, a PR, and every broader gate
   remain closed.
@@ -5613,7 +5619,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena and Ram common, specialist, and elite approved and published; Stag common approved and undergoing bounded publication; specialist Stag authorized only after that tuple; elite Stag and later families closed`
+- Status: `Hyena, Ram, and Stag common, specialist, and elite approved and published; Mammoth actor-topology decision open; Mammoth pixels and Rhino closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5801,12 +5807,54 @@ together in Aseprite as sprites 99, 103, 107, and active 111. The outlined PNG
 is review evidence only and does not change outline registration. The designer
 replied `approved lets do next` to the exact posted digest and six hashes.
 Accepted implementation `4c5d80901d12063b21c0d6303fc24260bd700209` and approval
-record `328a9b188ddd6e5db6144f2fdb253f8d9599e12d` are remote verified. Only the
-initial published handoff and final reconciliation remain open. After that
-tuple is clean and remote verified, the reply opens exactly one private
-specialist Stag. Public/outline
-registration, fixtures, effects, child assets, elite Stag, Mammoth, Rhino,
-Rhino Boss work, and all broader gates remain closed.
+record `328a9b188ddd6e5db6144f2fdb253f8d9599e12d`, initial handoff
+`b8e67f2ddc12a71e3b25c33997a1ffed0329b7f4`, and final reconciliation
+`67331ed1a160c8e62df0c9941b7c051ab5d0b228` are remote verified. The reply
+opened exactly one private specialist Stag under the selected topology.
+
+Briarstep Harrier is the approved specialist Stag: a sleek high-chested
+slate-green cervid with a tucked barrel, long pale throat, compact
+blue-charcoal face, connected swept-back ivory branching rack, violet bramble
+bands, plum ears, cyan eyes, short pale flag tail, four long legs, four cleft
+near-black hooves, and a body-owned lateral feint into a low antler rake. Its
+exact digest is
+`fb352a405be53536a2304eb8ad97ef7e03f0819519607a8a0afea16e81f97457`.
+Focused / fast / full validation and the exact raw, outlined, Form, comparison,
+and synchronized GIF review all passed. The designer replied `approved`.
+Implementation `8d52dc26d9d361c5d95603276a4a88b3978a585e`, approval record
+`895456020801fa40a31d7e83413895e0440c505e`, initial handoff
+`40fd66c20f3b01ddd927ecb83c807c96c5feec7b`, final reconciliation
+`f25ebea08723db889298ebce2db606421ed03282`, and next-chat handoff
+`595b2b2b18ebe7e111486df96624b4e1f057647b` are remote verified.
+
+The designer then said `awesine lets keep going`, opening exactly one private
+elite Stag. Gloamcrown Sovereign is a broad midnight-plum royal cervid with an
+old-ivory mantle, near-black violet face and lower legs, a vast connected
+weathered-gold crown rack with verdigris bands, wine markings, mulberry ears, a
+pale blaze, amber-gold eyes, four split hooves, and a body-owned antler lift
+into a planted crown press. Its exact digest is
+`5a80240ca6bfb16eb6a53b0b95b5214323a9dde25814b48fb39e9caaf11e4855`.
+Focused / fast / full validation passed with opaque range 196-234, public
+92/294, all 232 fixtures unchanged, zero child assets/effects, and no public or
+outline registration. The exact four PNGs were open in Aseprite as sprites 131,
+135, 139, and active 143. The designer replied `approved lets do next`.
+Implementation `0ece468efeaf4b50351358020075b4bf91dc7cff`, approval record
+`378ec3d107b43e6b354cadcad16f64e0a8cf838b`, and initial handoff
+`be5d7c7316e035021ef805b0f1f6843b10df9c32` are remote verified; this
+reconciliation completes the bounded publication tuple. No next Stag art gate
+is open.
+
+The continuation suffix opens only the Mammoth actor-topology decision.
+Recommended topology: `baked-single-actor-tusked-heavy-grounded-quadruped` —
+one connected grounded 24x24 Mammoth with a high domed back, massive shoulders,
+low hindquarters, four short weight-bearing legs and broad feet, body-owned
+large ears, trunk, paired tusks, and short tail, plus a body-owned trunk lift
+into a tusk shove. Dust, snow, breath, debris, shock rings, tusk trails,
+impacts, particles, projectiles, glow, illumination, runtime attachments, and
+all other effects remain external; child assets remain zero. Mammoth common
+pixels require explicit approval of this topology. Registration, fixtures,
+effects, Rhino, Rhino Boss work, release, accepted drift, a PR, and every
+broader gate remain closed.
 
 ### EN-E11 - Birds
 

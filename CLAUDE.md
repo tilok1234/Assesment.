@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art checkpoint published / handoff reconciliation in progress: on
+- Current private art checkpoint published / Mammoth topology decision open: on
   `codex/en-e10-stag-elite`, based exactly on clean remote-verified Briarstep
   handoff `595b2b2b18ebe7e111486df96624b4e1f057647b`, the designer's `awesine lets
   keep going` opens exactly one private elite Stag. Gloamcrown Sovereign is a
@@ -128,15 +128,20 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   Focused / fast / full validation is green, with approval-local focused / fast
   passing in 0.8s / 56.6s, 80/80 structural and three-way comparison frames,
   opaque range 196-234, public 92/294, and all 232 fixtures unchanged. Exact
-  review PNGs are open in Aseprite as sprites 131,
+  final published-state full validation passes in 117.9s with the same
+  boundary. Exact review PNGs are open in Aseprite as sprites 131,
   135, 139, and active 143. The designer replied `approved lets do next` to the
   exact posted packet. Accepted implementation
   `0ece468efeaf4b50351358020075b4bf91dc7cff` is the immutable publication
   anchor. Approval record `378ec3d107b43e6b354cadcad16f64e0a8cf838b` and
-  that implementation are pushed and remote verified; only the initial
-  published handoff and final reconciliation remain open. After that tuple is
-  clean and remote verified, the suffix
-  opens only the Mammoth actor-topology decision, not Mammoth pixels.
+  initial published handoff `be5d7c7316e035021ef805b0f1f6843b10df9c32`
+  are remote verified with that implementation; this reconciliation completes
+  the bounded publication tuple. No next Stag art gate is open. The suffix
+  opens only the Mammoth actor-topology decision. Recommend
+  `baked-single-actor-tusked-heavy-grounded-quadruped`, with one connected
+  grounded actor, body-owned trunk/tusks/ears/tail, four broad feet, zero child
+  assets, and all effects external. Mammoth pixels require separate explicit
+  topology approval.
   Registration, fixtures, effects, child assets, additional Stag variants,
   Rhino, release, accepted drift, and a PR remain closed.
 - Current approved private art checkpoint published / no next Stag gate: on

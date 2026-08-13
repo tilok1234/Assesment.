@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Gloamcrown Sovereign Published / Handoff Reconciliation In Progress
+## Immediate Continuation Checkpoint - Gloamcrown Sovereign Published / Mammoth Topology Decision Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-stag-elite`. It is based exactly on the clean, published,
@@ -61,7 +61,8 @@ gate.
    changes 6,326 pixels. Focused / `check:fast` / full `check` are green, with
    fast / full passing in 58.2s / 111.8s and approval-local focused / fast
    passing in 0.8s / 56.6s, public 92/294, all 232 fixture sheets unchanged,
-   zero child assets/effects, and no public or outline registration.
+   zero child assets/effects, and no public or outline registration. Final
+   published-state full validation passes in 117.9s with the same boundary.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-stag-gloamcrown-sovereign/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-stag-gloamcrown-sovereign` and
@@ -76,10 +77,16 @@ gate.
    The designer replied `approved lets do next`. Approval binds only that exact
    packet. Accepted implementation
    `0ece468efeaf4b50351358020075b4bf91dc7cff` and approval record
-   `378ec3d107b43e6b354cadcad16f64e0a8cf838b` are pushed and remote verified.
-   Only the initial published handoff and final reconciliation remain open.
-   Once that tuple is clean and remote verified, the continuation suffix opens
-   only the Mammoth actor-topology decision, not Mammoth pixels.
+   `378ec3d107b43e6b354cadcad16f64e0a8cf838b`, plus initial published handoff
+   `be5d7c7316e035021ef805b0f1f6843b10df9c32`, are pushed and remote verified;
+   this reconciliation completes the bounded publication tuple. No next Stag
+   art gate is open. The continuation suffix opens only the Mammoth
+   actor-topology decision. Recommend
+   `baked-single-actor-tusked-heavy-grounded-quadruped`: one connected grounded
+   24x24 Mammoth with body-owned trunk, paired tusks, ears, short tail, four
+   broad feet, and a body-owned trunk lift into a tusk shove; all effects remain
+   external and child assets stay zero. Do not create a Mammoth branch or
+   pixels until the designer explicitly approves that topology.
    Public/outline registration, fixtures,
    effects, child assets, additional Stag variants, Rhino, Furious Depraved
    Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
