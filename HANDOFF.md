@@ -23,6 +23,68 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Candidate Checkpoint - Cinderquill Scavenger Awaiting Pixel Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-raven-common`. It branches exactly from clean, pushed,
+   remote-verified Crowncoil final reconciliation
+   `090399f2e05f83d102f4d672670f64ffdcd24fed`.
+2. Crowncoil's bounded publication tuple was complete before this lane opened.
+   The Raven decision gate proposed
+   `baked-single-actor-grounded-folded-wing-corvid` and stated that approval
+   would build exactly one private common Raven full 80-frame candidate. On
+   2026-08-14 the designer replied `approved`. That response selects the
+   topology and authorizes only this candidate; it does not approve the pixels
+   or authorize a commit, push, public or outline registration, fixtures,
+   effects, child assets, Raven specialist or elite, Owl, Phoenix, release,
+   accepted drift, or a PR.
+3. Cinderquill Scavenger is one connected compact low-forward natural corvid
+   with a rounded blue-black head, short smoky throat, hooked horn beak, deep
+   charcoal body, slate folded wings, muted rust-cinder nape and shoulder
+   quills, two separated bronze-gray talon contacts, copper-gold eyes, and one
+   connected black wedge tail. Attack crouches on both talons, opens a broad
+   tapered wing screen, drives a hooked-beak wing rake with the wedge tail
+   counterbalancing, and refolds. Cast aliases Attack exactly; Death aliases
+   Hurt H1,H2,H2,H2. Loose feathers, shadow wisps, dust, glow, projectiles,
+   and impacts stay external.
+4. The hash-frozen 80-frame candidate digest is
+   `0f14b1a5c2c9fab2756130fffce516ad50b34d860cd68cd186bd93bc3c2a15f2`.
+   Raw / distinct Complete B outlined / Complete B + Form / Crowncoil-Rainfan-
+   Harpy comparison PNG hashes are
+   `106a702f1084bbc1c4a32390ed13c22f787af6625fcd0563ec036a5214dbe8b2`,
+   `49b233b5b7a8b1b2ee8f155f5e0a28aa08182b85b6a1f73f7e8b6bef06183cd2`,
+   `b94dc10ee145508cd249fd505bf82567f0da9c006d59f066387ee0a97558c769`,
+   and `b0af0677ebf7c8ec0f6a7e0b5d24780c23ca9680ac600a64ab393db495476ce4`.
+   Raw and Complete B + Form GIF hashes are
+   `eb64ff8d38cc1565a2e41061023de9cfc04081ff7d8e4191a6eaa674db031c7a`
+   and `687767db7f6d9e3ba642c57c69cfd170541ba6ac3125d0b5d5a9d5fc16100919`.
+5. Focused validation passes 80/80 connected, bounded, grounded, separated
+   two-talon, and compact-corvid-span frames; 16/16 broad wing-screen
+   attack/cast views; 54/54 expected eye-and-beak views; 72/72 head, throat,
+   wedge-tail, rust-cinder, and wing views; 8/8 exact `#f4f4f4` flashes; exact
+   aliases and side mirrors; and 80/80 pixel-plus-alpha distinctions from
+   approved Crowncoil Basilarch, approved Rainfan Forager, and public Harpy
+   Screecher. Opaque range is 175-284. Complete B adds 7,356 outline pixels
+   and Form changes 6,806 pixels. Focused / fast / full validation passes in
+   about 0.7s / 58.0s / 112.6s. Public remains 92/294, all 232 fixtures stay
+   exact, and child assets, effects, public registration, and outline
+   registration remain zero.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-raven-cinderquill-scavenger/`. Regenerate
+   with
+   `npm.cmd run review:enemy-expansion-en-e11-raven-cinderquill-scavenger`
+   and run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-raven-cinderquill-scavenger`.
+   The raw, outlined, Complete B + Form, and family-comparison PNGs plus all
+   four raw phase sheets and the transparent 20x4 inspection atlas were loaded
+   and inspected at original resolution. The outlined PNG is review evidence
+   only.
+7. Stop here for explicit designer pixel approval of the exact posted packet
+   or candidate digest. The candidate is intentionally uncommitted. Do not
+   stage, commit, push, register, regenerate fixtures, add effects or child
+   assets, begin Raven specialist or elite, Owl, or Phoenix, release, accept
+   drift, or open a PR.
+
 ## Current Published Checkpoint - Crowncoil Basilarch / Raven Topology Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch

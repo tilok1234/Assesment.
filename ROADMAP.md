@@ -14,6 +14,39 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
+Current EN-E11 private common Raven candidate awaiting pixel approval
+(2026-08-14): on `codex/en-e11-raven-common`, based exactly on clean, pushed,
+remote-verified Crowncoil final reconciliation
+`090399f2e05f83d102f4d672670f64ffdcd24fed`, the designer replied `approved`
+to the proposed `baked-single-actor-grounded-folded-wing-corvid` topology and
+the stated plan to build exactly one private common Raven full 80-frame
+candidate. Cinderquill Scavenger is one connected compact low-forward natural
+corvid with a blue-black head and body, short smoky throat, hooked horn beak,
+slate folded wings, muted rust-cinder quills, two separated bronze-gray talon
+contacts, copper-gold eyes, and a connected black wedge tail. Attack crouches
+on both talons, opens a broad tapered wing screen, drives a hooked-beak wing
+rake, and refolds without baked effects. Its hash-frozen candidate digest is
+`0f14b1a5c2c9fab2756130fffce516ad50b34d860cd68cd186bd93bc3c2a15f2`.
+Raw / outlined / Form / comparison PNG hashes are
+`106a702f1084bbc1c4a32390ed13c22f787af6625fcd0563ec036a5214dbe8b2`,
+`49b233b5b7a8b1b2ee8f155f5e0a28aa08182b85b6a1f73f7e8b6bef06183cd2`,
+`b94dc10ee145508cd249fd505bf82567f0da9c006d59f066387ee0a97558c769`,
+and `b0af0677ebf7c8ec0f6a7e0b5d24780c23ca9680ac600a64ab393db495476ce4`;
+raw / Form GIF hashes are
+`eb64ff8d38cc1565a2e41061023de9cfc04081ff7d8e4191a6eaa674db031c7a`
+and `687767db7f6d9e3ba642c57c69cfd170541ba6ac3125d0b5d5a9d5fc16100919`.
+Focused/fast/full gates pass in about 0.7s/58.0s/112.6s: all 80 frames are
+connected, bounded, grounded, two-talon, compact-corvid, and pixel-plus-alpha
+distinct from approved Crowncoil, approved Rainfan, and public Harpy at opaque
+range 175-284; 16/16 wing-screen attack/cast views; exact aliases and mirrors;
+public 92/294; all 232 fixtures exact; zero child assets, effects, or
+registration. The exact four PNGs, four raw phase sheets, and transparent
+inspection atlas were inspected at original resolution. This topology approval
+does not approve the candidate pixels. Stop for explicit approval of the exact
+packet or digest before any commit or push. Raven specialist or elite, Owl,
+Phoenix, registration, fixtures, effects, child assets, release, accepted
+drift, and a PR remain closed.
+
 Current EN-E11 approved private elite Cockatrice published / Raven topology gate open
 (2026-08-14): on `codex/en-e11-cockatrice-elite`, based exactly on
 clean, pushed, remote-verified Gloamgaze reconciliation
