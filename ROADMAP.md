@@ -14,6 +14,38 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
+Current EN-E11 private elite Cockatrice candidate / explicit pixel approval
+required (2026-08-14): on `codex/en-e11-cockatrice-elite`, based exactly on
+clean, pushed, remote-verified Gloamgaze reconciliation
+`9d5c942fbdeb49db8c232fc763972962b56e8837`, the designer's fresh `lets do
+next` opens exactly one private elite Cockatrice full 80-frame candidate under
+the selected `baked-single-actor-grounded-serpent-tailed-cockerel` topology.
+It does not approve candidate pixels. Crowncoil Basilarch is one connected
+broad royal cockerel-and-serpent with an obsidian-blue head, tall three-pronged
+crimson crown, antique-gold plated throat, burgundy torso, layered brass
+mantle wings, two separated broad bronze talons, and a heavy dark blue-green
+body-owned tail ending in a crown-hook coil. Attack plants both talons, raises
+the mantle, drives a high connected crown-hook press with a short beak strike,
+and recovers without baked effects. Its exact candidate digest is
+`5beeb0036af6f5c9dc9bfb64c0121e548a372f31ee257e53c0765e3b031c2bb0`.
+Raw / outlined / Form / comparison PNG hashes are
+`996e0aadf855f5cc5497abc2fe37b8dd529659b97a050d4390e91934637bfbd1`,
+`61267a117b812efc382084a7d3ae5c00df0a95ef99dbc7ff6cefd7e975f64ff9`,
+`0bdaf2170643c164cf0cfa7dbcd3d539bef1f9a70094a517650f60ddf26f531d`,
+and `d9f841a9261f58a34a5fc6bc9571563d706bd2167fb5f42395afc1d5d76f439d`;
+raw / Form GIF hashes are
+`7f31d3a07e0ff6db7739f9606bdcf4c4dfedb2b484ab13fed2ef20e9ba11cd7d`
+and `5613e1e2c50125e8bb758f9b545a912ff3e22387b78b48bc3d12d7c8d3a0135d`.
+Focused/fast/full gates pass in about 0.8s/61.8s/112.2s with all 80 frames
+structural, two-talon, and pixel-plus-alpha distinct from approved Gloamgaze,
+approved Bramblecomb, and public Marsh Crocodile at opaque range 235-320;
+16/16 crown-hook attack/cast views; exact aliases, mirrors, and inspection
+atlas; public 92/294; all 232 fixtures exact; zero child assets, effects, or
+registration. The exact four PNGs and all four raw phase sheets were inspected
+at original resolution. Explicit approval of this exact packet is required
+before any commit, push, approval record, publication, registration, fixture,
+effect, child asset, later Bird family, release, accepted drift, or PR gate.
+
 Current EN-E11 approved private specialist Cockatrice published / next gate closed
 (2026-08-13): on `codex/en-e11-cockatrice-specialist`, based exactly on clean,
 pushed, remote-verified Bramblecomb reconciliation

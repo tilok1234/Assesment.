@@ -1,6 +1,6 @@
 # Project Handoff
 
-Date: 2026-08-13
+Date: 2026-08-14
 
 ## V2 Repository And Workflow Note
 
@@ -22,6 +22,69 @@ documentation reconciliation may be committed and pushed without asking for a
 second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
+
+## Current Review Gate - Crowncoil Basilarch / Explicit Pixel Approval Required
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-cockatrice-elite`. It branches exactly from clean, pushed,
+   remote-verified Gloamgaze final reconciliation
+   `9d5c942fbdeb49db8c232fc763972962b56e8837`.
+2. Gloamgaze Stalker was approved by `aproved`, published, reconciled, and
+   remote verified; that reply did not continue. On 2026-08-14 the designer
+   supplied the fresh request `lets do next`. Under the documented
+   common/specialist/elite order and selected
+   `baked-single-actor-grounded-serpent-tailed-cockerel` topology, this opens
+   exactly one private elite Cockatrice full 80-frame candidate. It does not
+   approve Crowncoil pixels or authorize commit, push, publication, public or
+   outline registration, fixtures, effects, child assets, Raven, Owl,
+   Phoenix, release, accepted drift, or a PR.
+3. Crowncoil Basilarch is one connected broad, high-crowned
+   cockerel-and-serpent actor with an obsidian-blue head, tall three-pronged
+   crimson crown comb, ivory hooked beak, antique-gold plated throat, deep
+   royal-burgundy torso, layered brass mantle wings, two separated broad
+   bronze talon contacts, and one heavy connected dark blue-green serpent tail
+   ending in a crown-hook coil. Attack plants both talons in a crown-brace,
+   raises both mantle wings, drives the body-owned tail into a high crown-hook
+   press with a short beak strike, and settles into a sovereign recovery. Cast
+   aliases Attack; Death aliases Hurt H1,H2,H2,H2. Petrification, venom, dust,
+   glow, projectiles, and impacts stay external.
+4. The frozen 80-frame candidate digest is
+   `5beeb0036af6f5c9dc9bfb64c0121e548a372f31ee257e53c0765e3b031c2bb0`.
+   Raw / distinct Complete B outlined / Complete B + Form / family-comparison
+   PNG hashes are
+   `996e0aadf855f5cc5497abc2fe37b8dd529659b97a050d4390e91934637bfbd1`,
+   `61267a117b812efc382084a7d3ae5c00df0a95ef99dbc7ff6cefd7e975f64ff9`,
+   `0bdaf2170643c164cf0cfa7dbcd3d539bef1f9a70094a517650f60ddf26f531d`,
+   and `d9f841a9261f58a34a5fc6bc9571563d706bd2167fb5f42395afc1d5d76f439d`.
+   Raw and Complete B + Form GIF hashes are
+   `7f31d3a07e0ff6db7739f9606bdcf4c4dfedb2b484ab13fed2ef20e9ba11cd7d`
+   and `5613e1e2c50125e8bb758f9b545a912ff3e22387b78b48bc3d12d7c8d3a0135d`.
+5. Focused validation passes 80/80 connected, bounded, grounded, two-talon,
+   and hybrid-span frames; 16/16 connected crown-hook attack/cast views; 54/54
+   expected eye-and-beak views; 72/72 crown, tail, wing, and scale views; 8/8
+   exact `#f4f4f4` flashes; exact aliases and side mirrors; and 80/80
+   pixel-plus-alpha distinctions from approved Gloamgaze Stalker, approved
+   Bramblecomb Scratcher, and public Marsh Crocodile. Opaque range is 235-320.
+   Complete B adds 9,382 outline pixels and Form changes 12,483 pixels. The
+   transparent 20x4 inspection atlas passes exact dimensions, hard alpha,
+   non-empty-cell, and strict-boundary checks. Focused / fast / full validation
+   passes in about 0.8s / 61.8s / 112.2s. Public remains 92/294, all 232
+   fixtures stay exact, and child assets, effects, public registration, and
+   outline registration remain zero.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-cockatrice-crowncoil-basilarch/`. Regenerate
+   with
+   `npm.cmd run review:enemy-expansion-en-e11-cockatrice-crowncoil-basilarch`
+   and run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-cockatrice-crowncoil-basilarch`.
+   The raw, outlined, Complete B + Form, Gloamgaze/Bramblecomb/Marsh-Crocodile
+   comparison PNGs and all four raw phase sheets were inspected at original
+   resolution. The outlined PNG is review evidence only.
+7. Stop for explicit visual approval of this exact four-PNG, two-GIF, digest-
+   frozen packet. Do not commit or push the candidate, add an approval record,
+   publish, register it publicly or for outlines, regenerate fixtures, add
+   effects or child assets, begin Raven/Owl/Phoenix or another lane, release,
+   accept drift, or open a PR without the corresponding explicit gate.
 
 ## Current Published Checkpoint - Gloamgaze Stalker / Next Gate Closed
 
