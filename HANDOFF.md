@@ -23,6 +23,41 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Integration Checkpoint - 22 Approved Suites And V2 Launcher
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/approved-enemy-assembler-integration-v3`, based exactly on clean,
+   pushed Raven reconciliation
+   `a56211531caaa55be96979af2f53aafaa08c1067`. The integration and launcher
+   implementation is pushed and remote verified at
+   `016d79333aada592025a15cb77f42d05f755a9e7`.
+2. The designer asked to put the audited 22 approved suites into the current
+   assembler and update both its `.bat` launcher and `.exe`. The V3 registry
+   exposes exactly 15 EN-E10 suites across Hyena, Mammoth, Ram, Rhino, and Stag
+   plus seven EN-E11 suites across Peacock, Cockatrice, and Raven. Public is now
+   100 families / 316 variants; the stable expansion boundary is 43/114.
+3. The focused V3 gate proves all 1,760 frames match their approved private
+   sources exactly and validates 1,760 None / Complete B / Form presentation
+   triplets at digest
+   `148f3147a5afbb1857bfd8018eef647460069de05e6450ade4a45f624235045a`.
+   The earlier 1,200- and 2,800-frame integration digests remain exact. No
+   source pixels or outlines changed, outline enrollment remains closed, and
+   all 232 existing fixture sheets stay unchanged.
+4. `start-assembler-v2.bat` now prefers this checkout's current standalone at
+   `src-tauri\target\release\sprite-assembler.exe`; if it is absent, the same
+   batch file opens this checkout's live browser source. A launch smoke started
+   that exact V2 executable path and the app remained responsive.
+5. The current standalone executable is 5,986,816 bytes with SHA-256
+   `0ac4d7313f215121c8c5729e89acb92f129f4863cbd81dfb4fa2182ce3a62555`.
+   The packaged V3 registry module is byte-identical to source at SHA-256
+   `1eda6de99862fab7f1d08c9d0ddac74103b7477458d98d5938f337d03142c715`.
+   Release configuration plus launcher/executable structure pass 40 assertions;
+   fast/full validation passes in about 66.0s/129.8s.
+6. The executable is an ignored, unsigned local standalone proof. No NSIS
+   installer was built and no release, fixture generation, accepted drift,
+   later Raven role, Owl, Phoenix, effect, child asset, or PR is authorized by
+   this checkpoint.
+
 ## Current Published Checkpoint - Cinderquill Scavenger / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch

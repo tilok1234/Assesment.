@@ -2,17 +2,24 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current approved integration checkpoint (2026-08-12): the designer replied
-`lets do it`, authorizing exactly 35 complete private suites from later EN-E06
-through EN-E09. Branch `codex/approved-enemy-assembler-integration-v2`
-implements the content-only registration at
-`6808ee93e4a7434173a7502795ed39c032f20530`. The expansion boundary is 35
-families / 92 variants and public is 92/294. The focused gate proves 2,800
-source-parity frames plus 2,800 None / Complete B / Form presentation triplets
-at digest `e7d8b93e78058ca43b3ba584108bfa9906f33581aed43dbf6ec6819101743f93`.
-Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
-unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
-fixture regeneration, accepted drift, release, and a PR remain separate gates.
+Current approved integration and Windows launcher checkpoint (2026-08-14): on
+`codex/approved-enemy-assembler-integration-v3`, based exactly on reconciled
+Raven checkpoint `a56211531caaa55be96979af2f53aafaa08c1067`, the designer
+authorized putting the audited 22 approved EN-E10/EN-E11 suites into the
+current assembler and updating its `.bat` and `.exe`. Implementation
+`016d79333aada592025a15cb77f42d05f755a9e7` is pushed and remote verified. The expansion boundary
+is 43 families / 114 variants and public is 100/316. The V3 gate proves 1,760
+exact source-parity frames plus 1,760 None / Complete B / Form presentation
+triplets at digest
+`148f3147a5afbb1857bfd8018eef647460069de05e6450ade4a45f624235045a`;
+the earlier integration digests remain exact. Fast/full validation passes in
+66.0s/129.8s and all 232 fixture sheets remain unchanged.
+`start-assembler-v2.bat` launches this checkout's current standalone executable,
+which is 5,986,816 bytes at SHA-256
+`0ac4d7313f215121c8c5729e89acb92f129f4863cbd81dfb4fa2182ce3a62555`.
+It is not an installer or release candidate. Source pixels, outline enrollment,
+fixtures, effects, later roles/families, accepted drift, release, and a PR
+remain separate gates.
 
 Current EN-E11 approved private common Raven published / next gate closed
 (2026-08-14): on `codex/en-e11-raven-common`, based exactly on clean, pushed,

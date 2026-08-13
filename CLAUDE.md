@@ -88,20 +88,31 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
   the frozen asset pack). The stable and consumer expansion registries now
-  contain 35 families / 92 variants across approved EN-E01 through EN-E09, so
-  `engine.PUBLIC_ENEMIES` is 92 families / 294 variants. EN-E03 contributes
+  contain 43 families / 114 variants across approved EN-E01 through EN-E11, so
+  `engine.PUBLIC_ENEMIES` is 100 families / 316 variants. EN-E03 contributes
   only its six completed full suites; Boulder Hurler, Storm-Clan Jarl, and Sun
   Lancer remain internal Idle-only evidence.
-- Current integration gate: `codex/approved-enemy-assembler-integration-v2`
-  at implementation `6808ee93e4a7434173a7502795ed39c032f20530`
-  registers exactly 35 previously private approved suites from later EN-E06,
-  EN-E07, EN-E08, and EN-E09. The new exhaustive 2,800-frame digest is
-  `e7d8b93e78058ca43b3ba584108bfa9906f33581aed43dbf6ec6819101743f93`;
-  the earlier 1,200-frame digest remains exact. The Complete Kit is 92 families
-  / 294 enemy sheets / 2,231 PNGs; the 24-player Complete Pack maximum is 2,254
-  PNGs. All 232 legacy fixtures stay byte-unchanged, including the intentionally
-  historical Ghoul fixture. No source sprite module, schema, effect, exporter,
-  shared renderer interface, or frame contract changed.
+- Current integration gate: `codex/approved-enemy-assembler-integration-v3`,
+  based exactly on reconciled Raven checkpoint
+  `a56211531caaa55be96979af2f53aafaa08c1067`, is implemented, pushed, and
+  remote verified at `016d79333aada592025a15cb77f42d05f755a9e7`. It registers
+  the exact 22 approved EN-E10/EN-E11 suites: Hyena, Mammoth, Ram, Rhino, and
+  Stag (three each), Peacock and Cockatrice (three each), and Raven (one). Its
+  exhaustive 1,760-frame None / Complete B / Form parity digest is
+  `148f3147a5afbb1857bfd8018eef647460069de05e6450ade4a45f624235045a`;
+  the earlier 1,200- and 2,800-frame integration digests remain exact. The
+  Complete Kit is 100 families / 316 enemy sheets / 2,253 PNGs. All 232 legacy
+  fixtures stay byte-unchanged, including the intentionally historical Ghoul
+  fixture. No source sprite pixels, outline enrollment, schema, effect,
+  exporter, shared renderer interface, or frame contract changed. Fast/full
+  validation passes in about 66.0s/129.8s.
+- Current Windows launcher/build: `start-assembler-v2.bat` prefers this
+  checkout's `src-tauri/target/release/sprite-assembler.exe` and falls back to
+  this checkout's live browser source only when that executable is absent. The
+  current standalone is 5,986,816 bytes at SHA-256
+  `0ac4d7313f215121c8c5729e89acb92f129f4863cbd81dfb4fa2182ce3a62555`;
+  the batch smoke launched that exact path responsively. It remains a local,
+  unsigned standalone proof, not an NSIS installer or release candidate.
 - Publication permission: after explicit approval of an exact artifact or
   digest, the designer authorizes its bounded implementation, approval-record,
   reconciliation commits, and branch push. Never infer approval for

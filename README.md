@@ -132,18 +132,21 @@ explicit hold instruction overrides this default.
 ## Current integration status
 
 The current public integration gate is
-`codex/approved-enemy-assembler-integration-v2`, authorized by the designer's
-`lets do it` and implemented at
-`6808ee93e4a7434173a7502795ed39c032f20530`. It registers exactly 35 complete
-approved private suites from later EN-E06 through EN-E09, adds 12 public
-families plus Heartwood Warden to Dryad, and moves the public catalog to 92
-families / 294 variants. The exhaustive gate proves all 2,800 newly exposed
-frames pixel-identical to their approved sources at None presentation and
-checks None / Complete B / Form for every frame. Its pinned digest is
-`e7d8b93e78058ca43b3ba584108bfa9906f33581aed43dbf6ec6819101743f93`.
-The 232 frozen fixture sheets remain unchanged. Incomplete EN-E03 candidates,
-Headless Rider prototypes, bosses, effects, fixture regeneration, accepted
-drift, release, and a PR remain outside this gate.
+`codex/approved-enemy-assembler-integration-v3`, based exactly on reconciled
+Raven checkpoint `a56211531caaa55be96979af2f53aafaa08c1067`. Implementation
+`016d79333aada592025a15cb77f42d05f755a9e7` is pushed and remote verified. It
+registers exactly 22 approved private suites from EN-E10 and EN-E11 across Hyena,
+Mammoth, Ram, Rhino, Stag, Peacock, Cockatrice, and Raven, moving the stable
+expansion registry to 43 families / 114 variants and the public catalog to 100
+families / 316 variants. The exhaustive V3 gate proves all 1,760 newly exposed
+frames pixel-identical to their approved sources and checks None / Complete B /
+Form for every frame. Its pinned digest is
+`148f3147a5afbb1857bfd8018eef647460069de05e6450ade4a45f624235045a`;
+the earlier 1,200- and 2,800-frame integration digests remain exact. The 232
+frozen fixture sheets remain unchanged. Source pixel changes, outline
+enrollment, incomplete candidates, later Raven roles, Owl, Phoenix, Headless
+Rider prototypes, bosses, effects, fixture regeneration, accepted drift,
+release, and a PR remain outside this gate.
 
 The EN-F00 Enemy-expansion foundation is accepted at isolated checkpoint
 `73ad73a` on `codex/en-f00`. The separately authorized `codex/en-e01` branch
@@ -167,13 +170,13 @@ catalog without changing the legacy `ENEMIES` entries. EN-E02 consumer
 checkpoint `8ab1837` extended that generic boundary, and the separately
 authorized EN-E04 consumer gate first reused the exact 13-family / 39-variant
 approved registry. The later approved backlog gates now reuse the exact
-35-family / 92-variant registry. Editor sanitization and
+43-family / 114-variant registry. Editor sanitization and
 selectors, persistence, Enemy randomization, thumbnails,
 full/animation/direction exports, ordinary packs, Wildshot manifest validation,
-combat defaults, and Complete Kits now consume 92 families / 294 variants
+combat defaults, and Complete Kits now consume 100 families / 316 variants
 through the same public dispatcher. The dedicated Ghoul replacement route maps
 `zombie/ghoul` to the approved upgrade without a duplicate selector family.
-All 7,360 approved expansion frames and all 92 native sheets remain pixel-identical to their
+All 9,120 approved expansion frames and all 114 native sheets remain pixel-identical to their
 registries when assembled presentation is None. Optional assembled output
 supports both approved enemy outline modes and material-aware Form shading
 without changing that raw dispatcher boundary. No schema version changed
@@ -2292,9 +2295,15 @@ The saved comparison copy stays on the current device until it is replaced or re
 
 ## Run it on Windows
 
-Double-click `start-dev.bat`. It starts the local development server and opens the assembler in your default browser.
+Double-click `start-assembler-v2.bat` to open the current V2 desktop executable.
+The launcher targets `src-tauri\target\release\sprite-assembler.exe` in this
+checkout, so it cannot accidentally open the older repository. If the current
+executable has not been built yet, the same launcher falls back to this V2
+checkout's local development server in your default browser.
 
-Node.js 18 or newer is required for development. Run `npm install` once before using the native Tauri workflow.
+Node.js 18 or newer is required for development and for the browser fallback.
+Run `npm install` once before using the native Tauri workflow. Use
+`start-dev.bat` when you specifically want the browser development server.
 
 You can also run it from a terminal:
 

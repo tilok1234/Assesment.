@@ -1,19 +1,22 @@
 # Enemy Expansion Plan
 
-- Current integration status (2026-08-12): the designer authorized the exact
-  audited 35-suite backlog with `lets do it`. Branch
-  `codex/approved-enemy-assembler-integration-v2` implements it at
-  `6808ee93e4a7434173a7502795ed39c032f20530`, composing 35 expansion families
-  / 92 variants and 92 public families / 294 variants. It exposes exactly seven
-  later EN-E06 suites, fifteen EN-E07 suites, nine EN-E08 suites, and four
-  EN-E09 suites without editing their reviewed source renderers. The focused v2
-  gate exhausts 2,800 source-parity frames and 2,800 None/Complete B/Form
-  presentation triplets at digest
-  `e7d8b93e78058ca43b3ba584108bfa9906f33581aed43dbf6ec6819101743f93`.
-  The historical 1,200-frame integration digest remains exact. Incomplete
-  EN-E03 candidates, Headless Rider prototypes, bosses, effects, fixture
-  regeneration, accepted drift, release, and a PR remain outside this gate.
-  All 232 legacy fixtures remain unchanged.
+- Current integration status (2026-08-14): on
+  `codex/approved-enemy-assembler-integration-v3`, based exactly on reconciled
+  Raven checkpoint `a56211531caaa55be96979af2f53aafaa08c1067`, the designer
+  authorized registering the audited 22 approved EN-E10/EN-E11 suites in the
+  current assembler. Implementation
+  `016d79333aada592025a15cb77f42d05f755a9e7` is pushed and remote verified.
+  They are 15 EN-E10 suites across Hyena, Mammoth, Ram,
+  Rhino, and Stag plus seven EN-E11 suites across Peacock, Cockatrice, and
+  Raven. The stable expansion registry is 43 families / 114 variants and the
+  public catalog is 100/316. The focused V3 gate exhausts 1,760 source-parity
+  frames and 1,760 None/Complete B/Form presentation triplets at digest
+  `148f3147a5afbb1857bfd8018eef647460069de05e6450ade4a45f624235045a`.
+  The historical 1,200- and 2,800-frame integration digests remain exact.
+  Source pixels and outline enrollment are unchanged, and all 232 legacy
+  fixtures remain exact. Incomplete candidates, later Raven roles, Owl,
+  Phoenix, Headless Rider prototypes, bosses, effects, fixture regeneration,
+  accepted drift, release, and a PR remain outside this gate.
 
 - Current approved private common Raven published / next gate closed
   (2026-08-14): on `codex/en-e11-raven-common`, based exactly on clean,
