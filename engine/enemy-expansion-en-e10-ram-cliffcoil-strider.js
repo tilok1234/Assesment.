@@ -113,8 +113,8 @@ export const EN_E10_CLIFFCOIL_STRIDER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
   publishedImplementation: 'cb6c58440297b76f62776d8c11a6232d05bb1467',
   publishedApprovalRecord: '3b9b99e28a2c4787d76f3dc0def20f4a79b589ac',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: 'b43e0ab90bf39bdc04abf1681d8f78cf2faa78fc',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E10_STONECURL_GRAZER_GATE.id,
     artifactSha256: EN_E10_STONECURL_GRAZER_GATE.artifactSha256,
@@ -171,7 +171,7 @@ export const EN_E10_CLIFFCOIL_STRIDER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Cliffcoil Strider implementation cb6c58440297b76f62776d8c11a6232d05bb1467 and approval record 3b9b99e28a2c4787d76f3dc0def20f4a79b589ac are remote verified. Only the initial published handoff and final reconciliation remain open. No next Ram art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Ram registration, fixtures, effects, child assets, elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Cliffcoil Strider implementation cb6c58440297b76f62776d8c11a6232d05bb1467, approval record 3b9b99e28a2c4787d76f3dc0def20f4a79b589ac, and initial published handoff b43e0ab90bf39bdc04abf1681d8f78cf2faa78fc are remote verified; this reconciliation completes the bounded publication tuple. No next Ram art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Ram registration, fixtures, effects, child assets, elite Ram, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_CLIFFCOIL_STRIDER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);

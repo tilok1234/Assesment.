@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Cliffcoil Strider Approval Publication
+## Immediate Continuation Checkpoint - Cliffcoil Strider Published / No Next Gate
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-ram-specialist`. It is based exactly on the clean published
@@ -63,6 +63,8 @@ gate.
    113.9s, and the approval-local focused / fast gates pass in 0.6s / 57.9s,
    with public 92/294, approved comparison sources exact, all 232 fixture sheets
    unchanged, zero child assets/effects, and no public or outline registration.
+   Final published-state full validation passes in 111.0s with the same
+   protected boundary.
 6. Exact review files are under
    `enemy-expansion-review/en-e10-ram-cliffcoil-strider/`. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e10-ram-cliffcoil-strider` and run the
@@ -77,8 +79,9 @@ gate.
    The designer replied `approved`. Approval applies only to that exact packet;
    accepted implementation `cb6c58440297b76f62776d8c11a6232d05bb1467`
    records it. The implementation and approval record
-   `3b9b99e28a2c4787d76f3dc0def20f4a79b589ac` are remote verified. Only the
-   initial published handoff and final reconciliation remain open.
+   `3b9b99e28a2c4787d76f3dc0def20f4a79b589ac`, plus initial published handoff
+   `b43e0ab90bf39bdc04abf1681d8f78cf2faa78fc`, are remote verified; this
+   reconciliation completes the bounded publication tuple.
 8. Public Ram registration or outline registration, fixtures, effects, child
    assets, elite Ram, Stag, Mammoth, Rhino, Furious Depraved Rhino Boss work,
    the deferred Runic Idol decision, release, accepted drift, a PR, and every

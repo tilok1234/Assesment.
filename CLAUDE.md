@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private art gate: on `codex/en-e10-ram-specialist`, based exactly
+- Current published private art checkpoint: on `codex/en-e10-ram-specialist`, based exactly
   on clean published Stonecurl reconciliation
   `67ba19086669b9135286784b6c9c39f682ca3032`, the designer's separate `lets do
   nex t` authorizes exactly one private specialist Ram candidate under the
@@ -124,15 +124,17 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   outlined, Complete B + Form, and comparison PNGs plus two GIFs are hash-frozen
   and regenerate deterministically. Pre-approval focused / fast / full gates
   pass in 0.7s / 59.0s / 113.9s and approval-local focused / fast gates pass in
-  0.6s / 57.9s with public 92/294 and all 232 fixtures unchanged. The four exact
-  PNGs are open together in Aseprite as sprites 67, 71, 75, and active 79. The
-  outlined PNG is review evidence only, not outline registration. The final
-  prompt posted all four PNGs, both GIFs, and the exact digest; the designer
-  replied `approved`. Accepted implementation
+  0.6s / 57.9s with public 92/294 and all 232 fixtures unchanged. Final
+  published-state full validation passes in 111.0s with the same boundary. The
+  four exact PNGs are open together in Aseprite as sprites 67, 71, 75, and
+  active 79. The outlined PNG is review evidence only, not outline registration.
+  The final prompt posted all four PNGs, both GIFs, and the exact digest; the
+  designer replied `approved`. Accepted implementation
   `cb6c58440297b76f62776d8c11a6232d05bb1467` and approval record
-  `3b9b99e28a2c4787d76f3dc0def20f4a79b589ac` are remote verified. Only the
-  initial published handoff and final reconciliation remain open. No next Ram
-  art gate is open. Public/outline registration,
+  `3b9b99e28a2c4787d76f3dc0def20f4a79b589ac`, plus initial published handoff
+  `b43e0ab90bf39bdc04abf1681d8f78cf2faa78fc`, are remote verified; this
+  reconciliation completes the bounded publication tuple. No next Ram art gate
+  is open. Public/outline registration,
   fixtures, effects, child assets, elite Ram, later families, release, accepted
   drift, a PR, and every later gate remain closed.
 - Approved preceding published private art checkpoint: on `codex/en-e10-ram-common`, based exactly on clean

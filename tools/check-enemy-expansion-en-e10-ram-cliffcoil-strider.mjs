@@ -145,8 +145,8 @@ check(
     && EN_E10_CLIFFCOIL_STRIDER_GATE.approvedImplementation === 'cb6c58440297b76f62776d8c11a6232d05bb1467'
     && EN_E10_CLIFFCOIL_STRIDER_GATE.publishedImplementation === 'cb6c58440297b76f62776d8c11a6232d05bb1467'
     && EN_E10_CLIFFCOIL_STRIDER_GATE.publishedApprovalRecord === '3b9b99e28a2c4787d76f3dc0def20f4a79b589ac'
-    && EN_E10_CLIFFCOIL_STRIDER_GATE.initialPublishedHandoff === ''
-    && EN_E10_CLIFFCOIL_STRIDER_GATE.publicationState === 'published-awaiting-handoff-reconciliation',
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.initialPublishedHandoff === 'b43e0ab90bf39bdc04abf1681d8f78cf2faa78fc'
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.publicationState === 'published',
   'specialist Ram authorization or outlined-review boundary drifted',
 );
 check(
@@ -183,7 +183,7 @@ check(
     && EN_E10_CLIFFCOIL_STRIDER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.reviewPresentation.includes('distinct Complete B outlined')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.exclusions.includes('Ram elite')
-    && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('implementation cb6c58440297b76f62776d8c11a6232d05bb1467 and approval record 3b9b99e28a2c4787d76f3dc0def20f4a79b589ac are remote verified')
+    && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('implementation cb6c58440297b76f62776d8c11a6232d05bb1467, approval record 3b9b99e28a2c4787d76f3dc0def20f4a79b589ac, and initial published handoff b43e0ab90bf39bdc04abf1681d8f78cf2faa78fc are remote verified')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('No next Ram art gate is open')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('review evidence only')
     && EN_E10_CLIFFCOIL_STRIDER_GATE.nextGate.includes('does not authorize outline registration'),
