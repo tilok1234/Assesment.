@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 approved private elite Rhino / bounded publication in progress
+Current EN-E10 approved private elite Rhino / handoff reconciliation in progress
 (2026-08-13): on
 `codex/en-e10-rhino-elite`, based exactly on clean, published, remote-verified
 Reedcrest reconciliation `b0313abeeaadea7e14b62339e280469b08b37653`, the
@@ -51,8 +51,10 @@ full-animation candidates remain byte-exact. Public stays 92/294, all 232 fixtur
 unchanged, and child assets/effects/public registration/outline registration
 stay zero. The four exact review PNGs are open in Aseprite as sprites 302, 306,
 310, and 314; the protected Boss references are open separately as sprites 318
-and active 322. Standing publication permission opens only the bounded
-approval record, branch push, and handoff reconciliation. The reply contains no
+and active 322. Accepted implementation
+`e527031e0d29444bf17a1cf79229bac7150d1786` and approval record
+`154a12fc8e208f64cfb48f0d3dee71b1bff62d50` are remote verified. Only the
+initial published handoff and final reconciliation remain open. The reply contains no
 continuation request, so no additional Rhino or other sprite lane is open.
 Registration, fixtures, effects, child assets, every Boss change, release,
 accepted drift, and a PR remain closed.

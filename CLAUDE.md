@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private elite Rhino / bounded publication in progress: on
+- Current approved private elite Rhino / handoff reconciliation in progress: on
   `codex/en-e10-rhino-elite`, based exactly on clean, published,
   remote-verified Reedcrest reconciliation
   `b0313abeeaadea7e14b62339e280469b08b37653`, the designer first asked
@@ -149,8 +149,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   outline registration stay zero. The four exact review PNGs are open in
   Aseprite as sprites 302, 306, 310, and 314; the protected Boss direction and
   full-animation sheets are open separately as sprites 318 and active 322.
-  Standing publication permission now opens only the bounded approval record,
-  branch push, and handoff reconciliation. The reply contains no continuation
+  Accepted implementation `e527031e0d29444bf17a1cf79229bac7150d1786` and
+  approval record `154a12fc8e208f64cfb48f0d3dee71b1bff62d50` are remote
+  verified. Only the initial published handoff and final reconciliation remain
+  open. The reply contains no continuation
   request, so no additional Rhino or other sprite lane is open. Registration,
   fixtures, effects, child assets, every Boss change, release, accepted drift,
   and a PR remain closed; the outlined PNG is review evidence only.

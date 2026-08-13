@@ -5750,9 +5750,9 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer and specialist Reedcrest Skirmisher approved and published; private elite Stonefern Bastion approved with bounded publication in progress`
+- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer and specialist Reedcrest Skirmisher approved and published; private elite Stonefern Bastion implementation and approval record remote verified with handoff reconciliation in progress`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
-- Priority-first: finish only the bounded Stonefern Bastion approval record, branch push, and handoff reconciliation; no next sprite lane is open
+- Priority-first: finish only the bounded Stonefern Bastion initial published handoff and final reconciliation; no next sprite lane is open
 
 Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
@@ -5871,8 +5871,10 @@ fixtures remain unchanged, and child assets/effects/public registration/
 outline registration stay zero. The four exact review PNGs are open in
 Aseprite as sprites 302, 306, 310, and 314; the protected Boss direction and
 full-animation sheets are open separately as sprites 318 and active 322.
-Standing publication permission opens only the bounded approval record, branch
-push, and handoff reconciliation. The approval reply contains no continuation
+Accepted implementation `e527031e0d29444bf17a1cf79229bac7150d1786` and
+approval record `154a12fc8e208f64cfb48f0d3dee71b1bff62d50` are remote
+verified. Only the initial published handoff and final reconciliation remain
+open. The approval reply contains no continuation
 request, so no additional Rhino or other sprite lane is open. Public or outline
 registration, fixtures, effects, child assets, every Boss change, release,
 accepted drift, and a PR remain closed; the outlined PNG is review evidence only.

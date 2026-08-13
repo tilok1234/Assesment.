@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Publication Checkpoint - Stonefern Bastion Approved / Publication In Progress
+## Immediate Publication Checkpoint - Stonefern Bastion Handoff Reconciliation In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-rhino-elite`. It branches exactly from clean, published,
@@ -89,9 +89,9 @@ gate.
    `a737511220c2049e4aed742a7f08a9a71d4b1cfeab86aa8997cef4d3181b808f`.
    The designer replied `approved`. Approval applies only to that exact packet
    and accepted implementation
-   `e527031e0d29444bf17a1cf79229bac7150d1786`; standing publication permission
-   opens only its bounded approval record, branch push, and handoff
-   reconciliation.
+   `e527031e0d29444bf17a1cf79229bac7150d1786`. That implementation and approval
+   record `154a12fc8e208f64cfb48f0d3dee71b1bff62d50` are remote verified.
+   Only the initial published handoff and final reconciliation remain open.
 8. The reply contains no continuation request, so no additional Rhino or other
    sprite lane is open. Public or outline registration, fixtures, effects,
    child assets, every Furious Depraved Rhino Boss change, Runic Idol, release,
