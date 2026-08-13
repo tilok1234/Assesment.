@@ -113,14 +113,21 @@ check(
   'approved Rhino topology decision drifted',
 );
 check(
-  EN_E10_REEDCREST_SKIRMISHER_GATE.status === 'awaiting-visual-approval'
+  EN_E10_REEDCREST_SKIRMISHER_GATE.status === 'approved'
     && EN_E10_REEDCREST_SKIRMISHER_GATE.baseCheckpoint === 'fb99996abd98ae369dc6d1fdb436e8f97d54bc95'
     && EN_E10_REEDCREST_SKIRMISHER_GATE.architectureDecision === EN_E10_RHINO_TOPOLOGY_DECISION.id
     && EN_E10_REEDCREST_SKIRMISHER_GATE.authorizationEvidence.includes('approved and lets do next')
     && EN_E10_REEDCREST_SKIRMISHER_GATE.authorizationEvidence.includes('exactly one private specialist Rhino full 80-frame candidate')
-    && !Object.hasOwn(EN_E10_REEDCREST_SKIRMISHER_GATE, 'approvedOn')
-    && !Object.hasOwn(EN_E10_REEDCREST_SKIRMISHER_GATE, 'approvedImplementation')
-    && !Object.hasOwn(EN_E10_REEDCREST_SKIRMISHER_GATE, 'publishedImplementation')
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.approvedOn === '2026-08-13'
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.approvalEvidence.includes('The designer replied: approved')
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.approvalEvidence.includes('It does not open elite Rhino')
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.approvedImplementation === '2f02388f941088f0fdadff809c3b048ba2e93734'
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.publicationAuthorizedOn === '2026-08-13'
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.publishedImplementation === ''
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.publishedApprovalRecord === ''
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.initialPublishedHandoff === ''
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.publicationState === 'approved-not-published'
     && EN_E10_REEDCREST_SKIRMISHER_GATE.precedingApproval.gateId === EN_E10_MUDPLATE_GRAZER_GATE.id
     && EN_E10_REEDCREST_SKIRMISHER_GATE.precedingApproval.candidateFrameDigest === EN_E10_MUDPLATE_GRAZER_GATE.candidateFrameDigest
     && EN_E10_REEDCREST_SKIRMISHER_GATE.precedingApproval.publishedImplementation === EN_E10_MUDPLATE_GRAZER_GATE.publishedImplementation
@@ -133,9 +140,9 @@ check(
   JSON.stringify(EN_E10_RHINO_SPECIALIST_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E10_RHINO_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'reedcrest-skirmisher'
     && EN_E10_RHINO_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E10_RHINO_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-awaiting-visual-approval'
+    && EN_E10_RHINO_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E10_RHINO_SPECIALIST_CONTRACT_CARD.deferredRoles.join(',') === 'elite'
-    && EN_E10_REEDCREST_SKIRMISHER_CONTRACT.state === 'implemented-complete-motion-awaiting-visual-approval',
+    && EN_E10_REEDCREST_SKIRMISHER_CONTRACT.state === 'implemented-complete-motion-approved',
   'specialist Rhino role or candidate contract drifted',
 );
 check(
@@ -146,8 +153,8 @@ check(
     && EN_E10_REEDCREST_SKIRMISHER_GATE.animationContract.includes('Cast aliases Attack exactly')
     && EN_E10_REEDCREST_SKIRMISHER_GATE.exclusions.includes('public Rhino registration or outline registration')
     && EN_E10_REEDCREST_SKIRMISHER_GATE.exclusions.includes('any Furious Depraved Rhino Boss source, catalog, roster, or asset change')
-    && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('explicit designer visual approval')
-    && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('Do not commit, push, register, or publish')
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('implementation 2f02388f941088f0fdadff809c3b048ba2e93734')
+    && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('elite Rhino remains closed')
     && EN_E10_REEDCREST_SKIRMISHER_GATE.nextGate.includes('review evidence only'),
   'specialist Rhino anatomy, effect firewall, motion, or stop boundary drifted',
 );

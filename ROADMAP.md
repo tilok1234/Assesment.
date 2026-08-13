@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E10 private specialist Rhino candidate awaiting visual approval
+Current EN-E10 approved private specialist Rhino publication checkpoint
 (2026-08-13): on `codex/en-e10-rhino-specialist`, based exactly on clean,
 published, remote-verified Mudplate reconciliation
 `fb99996abd98ae369dc6d1fdb436e8f97d54bc95`, the designer reply `approved
@@ -39,13 +39,19 @@ and `ebd69b5ed812888fb6601f70d0df869054efcf8206f81672d6c5ba7f440a7f49`.
 Focused validation passes all 80 structural, four-three-toed-foot, lean-span,
 alias, mirror, ridge/blaze, and comparison cases at opaque range 236-261. The
 protected Furious Depraved Rhino direction and full-animation candidates remain
-byte-exact. Pre-approval focused/fast/full gates pass in 0.6s/57.8s/110.0s.
+byte-exact. Pre-approval focused/fast/full gates pass in 0.6s/57.8s/110.0s;
+approval-local focused/fast gates pass again against the exact digest and
+hashes, with fast completing in 61.3s.
 The four exact review PNGs are open in Aseprite as sprites 270, 274, 278, and
 282; the protected Boss references are open separately as sprites 294 and
-active 298. Public stays 92/294, all 232 fixtures remain unchanged, and child
-assets/effects/public registration/outline registration stay zero. Stop for
-explicit visual approval of the exact packet; no commit, push, elite Rhino,
-Boss change, release, accepted drift, or PR is open.
+active 298. The designer replied `approved` to that exact packet. Accepted
+implementation `2f02388f941088f0fdadff809c3b048ba2e93734` records only the
+frozen digest. Standing permission opens its approval record, branch push, and
+bounded reconciliation. The reply contains no continuation request, so elite
+Rhino remains closed after publication until separately authorized. Public
+stays 92/294, all 232 fixtures remain unchanged, and child assets/effects/
+public registration/outline registration stay zero. No Boss change, release,
+accepted drift, or PR is open.
 
 Approved preceding EN-E10 private common Rhino checkpoint published / specialist gate open
 (2026-08-13): on `codex/en-e10-rhino-common`, based exactly on clean,

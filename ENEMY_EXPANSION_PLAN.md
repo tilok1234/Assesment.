@@ -5750,9 +5750,9 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer approved and published; private specialist Reedcrest Skirmisher awaiting visual approval`
+- Status: `Hyena, Ram, Stag, and Mammoth common, specialist, and elite approved and published; Rhino common Mudplate Grazer approved and published; private specialist Reedcrest Skirmisher approved and publication in progress; elite Rhino closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
-- Priority-first: stop at the exact specialist Reedcrest Skirmisher visual approval gate
+- Priority-first: complete the bounded specialist Reedcrest Skirmisher publication tuple; keep elite Rhino closed
 
 Shared leverage: four-foot contact timing, side-view body length, horn/tusk
 anchors, and weight shifts. Front and back views must still show four-footed
@@ -5814,13 +5814,20 @@ and `ebd69b5ed812888fb6601f70d0df869054efcf8206f81672d6c5ba7f440a7f49`.
 Focused validation passes all 80 structural, four-three-toed-foot, lean-span,
 ridge/blaze, alias, mirror, and comparison cases, with approved Mudplate and
 Frostvein plus public Dire Wolf exact and the protected Boss assets byte-exact.
-Pre-approval focused/fast/full gates pass in 0.6s/57.8s/110.0s.
+Pre-approval focused/fast/full gates pass in 0.6s/57.8s/110.0s;
+approval-local focused/fast gates pass again against the exact digest and
+hashes, with fast completing in 61.3s.
 The four exact review PNGs are open in Aseprite as sprites 270, 274, 278, and
 282; the protected Boss direction and full-animation sheets are open separately
-as sprites 294 and active 298.
-Stop for explicit visual approval of this exact packet. Public or outline
-registration, fixtures, effects, child assets, elite Rhino, every Boss change,
-release, accepted drift, and a PR remain closed.
+as sprites 294 and active 298. The final approval prompt posted all four exact
+PNGs, both synchronized GIFs, and the frozen digest; the designer replied
+`approved`. Approval binds only to accepted implementation
+`2f02388f941088f0fdadff809c3b048ba2e93734` and those hashes. Standing
+permission opens its approval record, branch push, and bounded reconciliation.
+The reply contains no continuation request, so elite Rhino remains closed
+after publication until separately authorized. Public or outline registration,
+fixtures, effects, child assets, every Boss change, release, accepted drift,
+and a PR remain closed.
 
 Hyena topology and common art gate (2026-08-13): the designer selected
 `baked-single-actor-grounded-quadruped` — one connected grounded 24x24 Hyena

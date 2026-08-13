@@ -46,7 +46,7 @@ export const EN_E10_RHINO_SPECIALIST_CONTRACT_CARD = deepFreeze({
     id: 'reedcrest-skirmisher',
     name: 'Reedcrest Skirmisher',
     role: 'specialist',
-    status: 'implemented-full-awaiting-visual-approval',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
   actorTopology: EN_E10_RHINO_TOPOLOGY_DECISION.selected,
@@ -59,7 +59,7 @@ export const EN_E10_REEDCREST_SKIRMISHER_CONTRACT = deepFreeze({
   family: 'rhino',
   variant: 'reedcrest-skirmisher',
   role: 'specialist',
-  state: 'implemented-complete-motion-awaiting-visual-approval',
+  state: 'implemented-complete-motion-approved',
   topology: EN_E10_RHINO_TOPOLOGY_DECISION.selected,
   chassis: 'baked-single-actor-slate-teal-lean-forward-shoulder-rust-ridge-reed-blaze-upswept-horn-four-three-toed-foot-rhino-v1',
   silhouette: 'A lean grounded specialist Rhino with a low barrel, defined but restrained forward shoulder wedge, three narrow rearward natural plate ridges, compact wedge head, one medium upswept horn and tiny nub, pointed ears, short tail, four weight-bearing legs, and four separated broad three-toed feet. It must read quicker and more directional than Mudplate Grazer while remaining substantially smaller, flatter, less armed, and less top-heavy than the 48x48 Furious Depraved Rhino Boss.',
@@ -97,11 +97,20 @@ export const EN_E10_REEDCREST_SKIRMISHER_DATA = deepFreeze({
 
 export const EN_E10_REEDCREST_SKIRMISHER_GATE = deepFreeze({
   id: 'en-e10-rhino-reedcrest-skirmisher-full-v1',
-  status: 'awaiting-visual-approval',
+  status: 'approved',
   baseCheckpoint: 'fb99996abd98ae369dc6d1fdb436e8f97d54bc95',
   authorizedOn: '2026-08-13',
   authorizationEvidence: 'The exact Mudplate Grazer implementation 1e685159e6ddc09a20d853a511c9cfb448b502fe, approval record 9d2b801f5e02c851e746571880d5465e65e3b1a6, initial published handoff fcb5296dba2c9960609d6dd5ed326ad97c093ac1, and final reconciliation fb99996abd98ae369dc6d1fdb436e8f97d54bc95 were pushed and remote verified. The designer reply was: approved and lets do next. Its continuation suffix authorizes exactly one private specialist Rhino full 80-frame candidate on a new isolated branch under the selected baked-single-actor-natural-plated-low-grounded-quadruped topology. It does not approve candidate pixels or authorize public or outline registration, fixtures, effects, child assets, elite Rhino, any Furious Depraved Rhino Boss change, Runic Idol, release, accepted drift, or a pull request.',
   architectureDecision: EN_E10_RHINO_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-13',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Mudplate Grazer and Frostvein Wayfinder plus public Dire Wolf comparison PNGs were frozen with both synchronized GIF hashes. The Aseprite review session reported those exact four paths open together as raw sprite 270, outlined sprite 274, Complete B + Form sprite 278, and comparison sprite 282; protected Furious Depraved Rhino Boss direction and full-animation sheets were open separately as sprites 294 and active 298. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest 3125fe122e54f7a2d08c3f28cd179f2a8409a771001e9021217238a488348f8e. The designer replied: approved. Approval applies only to that exact Reedcrest Skirmisher digest and its six frozen review hashes. It does not open elite Rhino or any broader gate.',
+  approvedImplementation: '2f02388f941088f0fdadff809c3b048ba2e93734',
+  publicationAuthorizedOn: '2026-08-13',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E10_MUDPLATE_GRAZER_GATE.id,
     artifactSha256: EN_E10_MUDPLATE_GRAZER_GATE.artifactSha256,
@@ -158,7 +167,7 @@ export const EN_E10_REEDCREST_SKIRMISHER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'Stop for explicit designer visual approval of the exact Reedcrest Skirmisher raw, distinct Complete B outlined, Complete B + Form, comparison, and synchronized GIF packet while showing the protected Furious Depraved Rhino Boss candidates for distinction. Do not commit, push, register, or publish the candidate before approval. The distinct outlined PNG is review evidence only and does not authorize outline registration. Elite Rhino, every Boss change, and all broader gates remain closed.',
+  nextGate: 'The exact Reedcrest Skirmisher packet is visually approved at implementation 2f02388f941088f0fdadff809c3b048ba2e93734. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The designer reply contains no continuation request, so elite Rhino remains closed after publication until separately authorized. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Rhino registration, fixtures, effects, child assets, every Boss change, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_REEDCREST_SKIRMISHER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -422,7 +431,7 @@ export const EN_E10_REEDCREST_SKIRMISHER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'reedcrest-skirmisher',
     scale: 8,
-    notes: 'Awaiting explicit visual approval as one exact private specialist Rhino against approved Mudplate Grazer and Frostvein Wayfinder plus public Dire Wolf, with the protected Furious Depraved Rhino Boss direction and full-animation candidates shown separately for distinction. The distinct Complete B outlined PNG is review evidence only. Keep public or outline registration, fixtures, effects, child assets, elite Rhino, every Boss change, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private specialist Rhino against approved Mudplate Grazer and Frostvein Wayfinder plus public Dire Wolf, with the protected Furious Depraved Rhino Boss direction and full-animation candidates reviewed separately and unchanged. Accepted implementation 2f02388f941088f0fdadff809c3b048ba2e93734 records only the frozen packet. The distinct Complete B outlined PNG remains review evidence only. Standing permission opens only bounded approval publication and reconciliation. The designer reply contains no continuation request, so keep public or outline registration, fixtures, effects, child assets, elite Rhino, every Boss change, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 
