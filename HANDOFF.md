@@ -23,7 +23,68 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Cragcrown Patriarch Published / No Next Gate
+## Immediate Continuation Checkpoint - Mossrack Forager Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e10-stag-common`. It is based exactly on the clean published
+   Cragcrown Patriarch reconciliation
+   `6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca`.
+2. After the complete Ram family was approved, published, reconciled, and
+   remote verified, the designer said `letsdo nex t`. Codex recommended one
+   connected 24x24 cervid with a lean barrel, high shoulders, long upright
+   neck, tapered muzzle, paired ears, short tail, four split hooves, two
+   connected branching antlers, and a body-owned head-lowering antler sweep;
+   all trails, leaves, impacts, and glow remain external. The designer replied
+   `approved`. This selects
+   `baked-single-actor-antlered-grounded-quadruped` and authorizes exactly one
+   private common Stag full 80-frame candidate. It does not authorize
+   publication, registration, or another art gate.
+3. The candidate is Mossrack Forager: warm russet hide, copper shoulders, a
+   dark chestnut tapered face and lower legs, weathered-bone branching
+   antlers, a birch-cream throat and belly, muted moss lichen markings,
+   rose-brown ears, amber eyes, a short cream-tipped tail, and four visibly
+   cleft near-black hooves. Its body owns the head-lowering antler sweep. Dust,
+   grass, leaves, pollen, antler arcs, trails, impacts, debris, particles,
+   projectiles, glow, illumination, runtime attachments, and every other effect
+   remain external and Off.
+4. Frozen candidate digest:
+   `c3383941492c1976bc03786f73fee20744d0a2af9e8846f44cbf9d59b7384d36`.
+   Raw / distinct Complete B outlined / Complete B + Form / family-comparison
+   PNG hashes are
+   `4238f2741eee51be3d64c546ccd7be94b4b82413d704689fc67a494041bff990`,
+   `f49a0a417df05aac07b85499e156997cb2f792287d08d99da95ef5f2c64209cf`,
+   `b6362bf1127e710ed988c6b00634ade853e391c8e69ec949b0ce47fa3a485025`,
+   and `cbb7e0a0b285fed6be331e1e689a758594ca0d9719c4ee41445074fa906107f4`.
+   Raw and Complete B + Form GIF hashes are
+   `8821d26a27f193fce26d425f7062cd3c4874e57eda8d34b0294b27e0c15f7bc3`
+   and `a769fb6ff61d894fbdd2a9129c2e253669e9cc6f5be97a1d641370b5c69d0a6f`.
+5. Focused validation passes 80/80 connected, bounded, grounded, split-hoof,
+   and cervid-span frames; 72/72 colored antler-bearing frames; 8/8
+   exact-white flashes; 54/54 expected eye-bearing and readable-muzzle views;
+   exact aliases and mirrors; and 80/80 pixel plus alpha distinctions from
+   approved Cragcrown Patriarch and Miremane Courser plus public Dire Wolf.
+   Opaque range is 194-224. Complete B adds 13,738 outline pixels and Form
+   changes 7,518 pixels. Deterministic regeneration reproduces all six frozen
+   hashes. Focused / `check:fast` / full `check` pass in 0.9s / 69.8s / 113.3s
+   with public 92/294, both approved comparisons exact, all 232 fixture sheets
+   unchanged, zero child assets/effects, and no public or outline registration.
+6. Exact review files are under
+   `enemy-expansion-review/en-e10-stag-mossrack-forager/`. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e10-stag-mossrack-forager` and run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e10-stag-mossrack-forager`.
+7. The exact raw, distinct Complete B outlined, Complete B + Form, and
+   comparison PNGs are open together in the four-lane Aseprite MCP review
+   window as sprites 99, 103, 107, and active 111. The outlined PNG is required
+   review evidence only; it does not authorize outline registration. The
+   synchronized raw and Complete B + Form GIFs are frozen beside them.
+8. Stop for the designer's visual approval of this exact packet. No commit or
+   push has been made. Public Stag or outline registration, fixtures, effects,
+   child assets, specialist or elite Stag, Mammoth, Rhino, Furious Depraved
+   Rhino Boss work, the deferred Runic Idol decision, release, accepted drift,
+   a PR, and every later art gate remain closed.
+
+## Approved Preceding Checkpoint - Cragcrown Patriarch Published
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-ram-elite`. It is based exactly on the clean published

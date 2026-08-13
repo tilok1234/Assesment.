@@ -107,7 +107,33 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current published private art checkpoint: on `codex/en-e10-ram-elite`, based
+- Current private art checkpoint: on `codex/en-e10-stag-common`, based exactly
+  on clean published Cragcrown reconciliation
+  `6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca`, the designer's `letsdo nex t`
+  opened the Stag topology decision and the subsequent `approved` selected
+  `baked-single-actor-antlered-grounded-quadruped`: one connected lean cervid
+  with a high shoulder, long upright neck, tapered muzzle, paired ears, short
+  tail, two connected branching antlers, four visibly cleft hooves, a
+  body-owned head-lowering antler sweep, zero child assets, and all effects
+  external. Mossrack Forager is the one authorized private common candidate,
+  using warm russet and copper hide, a dark chestnut face and lower legs,
+  weathered-bone rack, birch throat and belly, moss lichen markings, rose ears,
+  amber eyes, and near-black split hooves. Its exact 80-frame digest is
+  `c3383941492c1976bc03786f73fee20744d0a2af9e8846f44cbf9d59b7384d36`.
+  Focused validation passes all 80 connected, bounded, grounded, split-hoof,
+  cervid-span, pixel-distinct, and alpha-distinct frames against approved
+  Cragcrown Patriarch and Miremane Courser plus public Dire Wolf; opaque range
+  is 194-224. Exact aliases and mirrors pass. The raw, required distinct
+  Complete B outlined, Complete B + Form, and comparison PNGs plus two GIFs are
+  hash-frozen and regenerate deterministically. Focused / fast / full gates
+  pass in 0.9s / 69.8s / 113.3s with public 92/294 and all 232 fixtures
+  unchanged. The four exact PNGs are open together in Aseprite as sprites 99,
+  103, 107, and active 111. The outlined PNG is review evidence only, not
+  outline registration. Stop for exact visual approval; no commit or push has
+  been made. Public/outline registration, fixtures, effects, child assets,
+  specialist or elite Stag, Mammoth, Rhino, Rhino Boss work, release, accepted
+  drift, a PR, and every later gate remain closed.
+- Approved preceding published private art checkpoint: on `codex/en-e10-ram-elite`, based
   exactly on clean published Cliffcoil reconciliation
   `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`, the designer's separate `lets
   xdo next` authorizes exactly one private elite Ram candidate under the

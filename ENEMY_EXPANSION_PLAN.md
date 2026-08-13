@@ -15,7 +15,30 @@
   regeneration, accepted drift, release, and a PR remain outside this gate.
   All 232 legacy fixtures remain unchanged.
 
-- Current published private art checkpoint (2026-08-13): from clean published Cliffcoil
+- Current private art checkpoint (2026-08-13): from clean published Cragcrown
+  reconciliation `6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca`, the designer's
+  `letsdo nex t` opened the Stag topology decision and the subsequent
+  `approved` selected `baked-single-actor-antlered-grounded-quadruped`. It
+  authorizes one private common Stag only. Mossrack Forager on
+  `codex/en-e10-stag-common` is a connected lean russet cervid with high copper
+  shoulders, a long birch throat, tapered chestnut muzzle, paired rose ears,
+  connected weathered-bone branching antlers, moss lichen markings, amber eyes,
+  a short cream-tipped tail, four slender legs, four visibly cleft near-black
+  hooves, and a body-owned head-lowering antler sweep. Its exact 80-frame digest
+  is `c3383941492c1976bc03786f73fee20744d0a2af9e8846f44cbf9d59b7384d36`.
+  Focused validation passes every structure, identity, alias, mirror, and
+  three-way pixel/alpha distinction gate at opaque range 194-224. The raw,
+  required distinct Complete B outlined, Complete B + Form, and comparison PNGs
+  plus two GIFs are hash-frozen and deterministic. Focused / fast / full gates
+  pass in 0.9s / 69.8s / 113.3s with public 92/294 and all 232 fixtures
+  unchanged. The exact four PNGs are open together in Aseprite as sprites 99,
+  103, 107, and active 111. The outlined PNG is review evidence only, not
+  outline registration. Stop for exact visual approval; no commit or push has
+  been made. Public/outline registration, fixtures, effects, child assets,
+  specialist or elite Stag, Mammoth, Rhino, Rhino Boss work, release, accepted
+  drift, a PR, and every later gate remain closed.
+
+- Approved preceding published private art checkpoint (2026-08-13): from clean published Cliffcoil
   reconciliation `bb11e3518b65613caa5499ec7cb5ddefb18d5ebd`, the designer's
   separate `lets xdo next` authorizes exactly one private elite Ram under the
   approved `baked-single-actor-horned-grounded-quadruped` topology. Cragcrown
@@ -5509,7 +5532,7 @@ Boss animation.
 
 ### EN-E10 - Heavy quadrupeds
 
-- Status: `Hyena common, specialist, and elite approved and published; Ram common, specialist, and elite approved and published; later families closed`
+- Status: `Hyena and Ram common, specialist, and elite approved and published; Stag common private candidate awaiting visual approval; specialist/elite Stag and later families closed`
 - Families: Hyena, Ram, Stag, Mammoth, Rhino
 - Priority-first: Rhino only after its Boss distinction is approved
 
@@ -5670,7 +5693,33 @@ implementation `3d8727cce7d8b3f00ce8923ee9db629de13e1097` and approval record
 `46645d2a2a84bc0669f0f5e5f4362da93abf0782`, are remote verified; this
 reconciliation completes the bounded publication tuple. No next Ram art gate
 is open. Registration, fixtures, effects, child assets, further Ram variants,
-Stag, Mammoth, Rhino, Rhino Boss work, and all later gates remain closed.
+Stag, Mammoth, Rhino, Rhino Boss work, and all later gates remained closed at
+that checkpoint. The designer later said `letsdo nex t` and then approved the
+recommended Stag topology, opening only the private common candidate below.
+
+Mossrack Forager is the authorized common Stag from clean published Cragcrown
+reconciliation `6d7f7b32733a1a7f8ca16a79ef06b72c17a246ca`. The designer
+selected `baked-single-actor-antlered-grounded-quadruped`: one connected lean
+24x24 cervid with high shoulders, long upright neck, tapered muzzle, paired
+ears, two connected branching antlers, short tail, four slender legs, four
+visibly cleft hooves, a body-owned head-lowering antler sweep, zero child
+assets, and all effects external. Mossrack uses warm russet and copper hide, a
+dark chestnut face and lower legs, weathered-bone antlers, a birch throat and
+belly, muted moss lichen markings, rose ears, amber eyes, and near-black split
+hooves. Its exact 80-frame digest is
+`c3383941492c1976bc03786f73fee20744d0a2af9e8846f44cbf9d59b7384d36`.
+All 80 frames pass connected, one-cell bounded, grounded, split-hoof,
+cervid-span, alias, mirror, and pixel/alpha distinction checks against approved
+Cragcrown Patriarch and Miremane Courser plus public Dire Wolf at opaque range
+194-224. The hash-frozen packet includes raw, required distinct Complete B
+outlined, Complete B + Form, and comparison PNGs plus two GIFs and regenerates
+deterministically. Focused / fast / full gates pass in 0.9s / 69.8s / 113.3s
+with public 92/294 and all 232 fixtures unchanged. The four exact PNGs are open
+together in Aseprite as sprites 99, 103, 107, and active 111. The outlined PNG
+is review evidence only and does not change outline registration. Stop for
+exact visual approval; no commit or push has been made. Public/outline
+registration, fixtures, effects, child assets, specialist or elite Stag,
+Mammoth, Rhino, Rhino Boss work, and all later gates remain closed.
 
 ### EN-E11 - Birds
 
