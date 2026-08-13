@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Approved Checkpoint - Cinderquill Scavenger / Publication In Progress
+## Current Published Checkpoint - Cinderquill Scavenger / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-raven-common`. It branches exactly from clean, pushed,
@@ -38,10 +38,11 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied
    `approved` again. Pixel approval binds only to implementation
    `0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the exact digest, and six
-   frozen review hashes. That implementation and approval record
-   `368754e9c037d7f37793ac737e162a3c5a4572f7` are pushed and remote
-   verified. Only the initial published handoff and final reconciliation remain
-   open. The reply contains no continuation request, so Raven specialist or elite,
+   frozen review hashes. That implementation, approval record
+   `368754e9c037d7f37793ac737e162a3c5a4572f7`, and initial published handoff
+   `0e455f9665400003fbb55c4a59260016c80f40cd` are pushed and remote verified;
+   this reconciliation completes the bounded Raven common publication tuple.
+   The reply contains no continuation request, so Raven specialist or elite,
    Owl, Phoenix, public or outline registration, fixtures, effects, child
    assets, release, accepted drift, and a PR remain closed.
 3. Cinderquill Scavenger is one connected compact low-forward natural corvid
@@ -75,7 +76,8 @@ gate.
    about 0.7s / 58.0s / 112.6s. Public remains 92/294, all 232 fixtures stay
    exact, and child assets, effects, public registration, and outline
    registration remain zero. Approval-local focused and fast gates pass again
-   in about 1.2s and 66.7s.
+   in about 1.2s and 66.7s. Final published-state focused / fast / full gates
+   pass in about 1.0s / 67.4s / 105.6s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-raven-cinderquill-scavenger/`. Regenerate
    with
@@ -86,11 +88,12 @@ gate.
    four raw phase sheets and the transparent 20x4 inspection atlas were loaded
    and inspected at original resolution. The outlined PNG is review evidence
    only.
-7. Create and push only the initial published handoff and final reconciliation
-   needed to complete Cinderquill's bounded publication tuple. Do not register
-   it publicly or for outlines,
-   regenerate fixtures, add effects or child assets, begin Raven specialist or
-   elite, Owl, or Phoenix, release, accept drift, or open a PR.
+7. The implementation, approval record, and initial published handoff are
+   remote verified; this reconciliation completes Cinderquill's bounded
+   publication tuple. The next action requires a fresh explicit continuation
+   request. Do not register it publicly or for outlines, regenerate fixtures,
+   add effects or child assets, begin Raven specialist or elite, Owl, or
+   Phoenix, release, accept drift, or open a PR.
 
 ## Current Published Checkpoint - Crowncoil Basilarch / Raven Topology Gate Open
 

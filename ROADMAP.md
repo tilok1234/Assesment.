@@ -14,7 +14,7 @@ Fast/full validation passes in 63.1s/115.4s and all 232 fixture sheets remain
 unchanged. Incomplete candidates, Headless Rider prototypes, bosses, effects,
 fixture regeneration, accepted drift, release, and a PR remain separate gates.
 
-Current EN-E11 approved private common Raven / publication in progress
+Current EN-E11 approved private common Raven published / next gate closed
 (2026-08-14): on `codex/en-e11-raven-common`, based exactly on clean, pushed,
 remote-verified Crowncoil final reconciliation
 `090399f2e05f83d102f4d672670f64ffdcd24fed`, the designer replied `approved`
@@ -45,10 +45,13 @@ inspection atlas were inspected at original resolution. The exact four-PNG,
 two-GIF, digest-frozen packet was posted and the designer replied `approved`.
 Approval binds only to implementation
 `0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the digest, and six frozen
-hashes; that implementation and approval record
-`368754e9c037d7f37793ac737e162a3c5a4572f7` are pushed and remote verified.
-Only the initial published handoff/final reconciliation remains. Approval-local
-focused/fast gates pass again in about 1.2s/66.7s. No continuation request was supplied, so
+hashes; that implementation, approval record
+`368754e9c037d7f37793ac737e162a3c5a4572f7`, and initial published handoff
+`0e455f9665400003fbb55c4a59260016c80f40cd` are pushed and remote verified;
+this reconciliation completes the bounded Raven common publication tuple.
+Approval-local focused/fast gates pass again in about 1.2s/66.7s. Final
+published-state focused/fast/full gates pass in about 1.0s/67.4s/105.6s. No
+continuation request was supplied, so
 Raven specialist or elite, Owl, Phoenix, registration, fixtures, effects,
 child assets, release, accepted drift, and a PR remain closed.
 

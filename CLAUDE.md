@@ -107,7 +107,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private common Raven / publication in progress: on
+- Current approved private common Raven published / next gate closed: on
   `codex/en-e11-raven-common`, based exactly on clean, pushed, remote-verified
   Crowncoil final reconciliation
   `090399f2e05f83d102f4d672670f64ffdcd24fed`, the designer replied `approved`
@@ -134,11 +134,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   four-PNG, two-GIF, digest-frozen packet was posted and the designer replied
   `approved`. Approval binds only to implementation
   `0e1124d6e16f3c5e568b0fe38890eb270b41306d`, the digest, and six frozen
-  hashes; that implementation and approval record
-  `368754e9c037d7f37793ac737e162a3c5a4572f7` are pushed and remote
-  verified. Only the initial published handoff/final reconciliation remains.
-  Approval-local focused/fast gates pass again in about 1.2s/66.7s. No
-  continuation request was supplied, so
+  hashes; that implementation, approval record
+  `368754e9c037d7f37793ac737e162a3c5a4572f7`, and initial published handoff
+  `0e455f9665400003fbb55c4a59260016c80f40cd` are pushed and remote verified;
+  this reconciliation completes the bounded Raven common publication tuple.
+  Approval-local focused/fast gates pass again in about 1.2s/66.7s. Final
+  published-state focused/fast/full gates pass in about
+  1.0s/67.4s/105.6s. No continuation request was supplied, so
   Raven specialist or elite, Owl, Phoenix, registration, fixtures, effects,
   child assets, release, accepted drift, and a PR remain closed.
 - Current approved private elite Cockatrice published / Raven topology gate open:

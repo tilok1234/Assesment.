@@ -137,11 +137,12 @@ check(
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publishedImplementation === '0e1124d6e16f3c5e568b0fe38890eb270b41306d'
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publishedApprovalRecord === '368754e9c037d7f37793ac737e162a3c5a4572f7'
-    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.initialPublishedHandoff === ''
-    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.initialPublishedHandoff === '0e455f9665400003fbb55c4a59260016c80f40cd'
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.publicationState === 'published'
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('0e1124d6e16f3c5e568b0fe38890eb270b41306d')
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('368754e9c037d7f37793ac737e162a3c5a4572f7')
-    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('initial published handoff')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('0e455f9665400003fbb55c4a59260016c80f40cd')
+    && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('completes the bounded Raven common publication tuple')
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('No continuation request')
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.nextGate.includes('outline registration'),
   'Raven approval record or publication boundary drifted',
@@ -159,7 +160,7 @@ check(
   JSON.stringify(EN_E11_RAVEN_COMMON_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E11_RAVEN_COMMON_CONTRACT_CARD.activeVariant.id === 'cinderquill-scavenger'
     && EN_E11_RAVEN_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E11_RAVEN_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E11_RAVEN_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && JSON.stringify(EN_E11_RAVEN_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
     && EN_E11_RAVEN_CINDERQUILL_SCAVENGER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Raven common role or candidate contract drifted',
