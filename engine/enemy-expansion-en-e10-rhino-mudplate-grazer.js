@@ -121,10 +121,10 @@ export const EN_E10_MUDPLATE_GRAZER_GATE = deepFreeze({
   approvedImplementation: '1e685159e6ddc09a20d853a511c9cfb448b502fe',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '1e685159e6ddc09a20d853a511c9cfb448b502fe',
+  publishedApprovalRecord: '9d2b801f5e02c851e746571880d5465e65e3b1a6',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E10_RIMEVAULT_MATRIARCH_GATE.id,
     artifactSha256: EN_E10_RIMEVAULT_MATRIARCH_GATE.artifactSha256,
@@ -181,7 +181,7 @@ export const EN_E10_MUDPLATE_GRAZER_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Mudplate Grazer packet is visually approved at implementation 1e685159e6ddc09a20d853a511c9cfb448b502fe. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. The designer continuation suffix is held until the publication tuple is clean and remote verified; no specialist Rhino work is open before then. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Rhino registration, fixtures, effects, child assets, elite Rhino, every Boss change, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Mudplate Grazer implementation 1e685159e6ddc09a20d853a511c9cfb448b502fe and approval record 9d2b801f5e02c851e746571880d5465e65e3b1a6 are remote verified. Only the initial published handoff and final reconciliation remain open. The designer continuation suffix remains held; no specialist Rhino work is open before final remote verification. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Rhino registration, fixtures, effects, child assets, elite Rhino, every Boss change, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_MUDPLATE_GRAZER_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -441,7 +441,7 @@ export const EN_E10_MUDPLATE_GRAZER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mudplate-grazer',
     scale: 8,
-    notes: 'Visually approved as one exact private common Rhino against approved Tundrahide Grazer and Cragcrown Patriarch plus public Dire Wolf, with the protected Furious Depraved Rhino Boss direction and full-animation candidates reviewed separately and unchanged. Accepted implementation 1e685159e6ddc09a20d853a511c9cfb448b502fe records only the frozen packet. The continuation suffix is held until the bounded publication tuple is clean and remote verified. The distinct Complete B outlined PNG remains review evidence only. Keep public or outline registration, fixtures, effects, child assets, specialist and elite Rhino, every Boss change, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact private common Rhino against approved Tundrahide Grazer and Cragcrown Patriarch plus public Dire Wolf, with the protected Furious Depraved Rhino Boss direction and full-animation candidates reviewed separately and unchanged. Accepted implementation 1e685159e6ddc09a20d853a511c9cfb448b502fe and approval record 9d2b801f5e02c851e746571880d5465e65e3b1a6 are remote verified. Only the initial published handoff and final reconciliation remain open; the continuation suffix remains held. The distinct Complete B outlined PNG remains review evidence only. Keep public or outline registration, fixtures, effects, child assets, specialist and elite Rhino, every Boss change, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 

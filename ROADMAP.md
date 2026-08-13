@@ -43,11 +43,11 @@ all 232 fixtures remain unchanged, and child assets/effects/public
 registration/outline registration stay zero. The exact four PNG and two GIF
 packet was open in Aseprite as sprites 246, 250, 254, and active 258; the
 designer replied `approved and lets do next`. Accepted implementation
-`1e685159e6ddc09a20d853a511c9cfb448b502fe` records only that packet. Its
-approval record, branch push, and bounded reconciliation are open. The
-continuation suffix is held until the publication tuple is clean and remote
-verified, after which it opens exactly one private specialist Rhino full
-80-frame candidate on a new isolated branch under the selected topology.
+`1e685159e6ddc09a20d853a511c9cfb448b502fe` and approval record
+`9d2b801f5e02c851e746571880d5465e65e3b1a6` are remote verified. Only the
+initial published handoff and final reconciliation remain open. The
+continuation suffix remains held until final remote verification; no
+specialist Rhino work is open before then.
 Public/outline registration, fixtures, effects, child assets, elite Rhino,
 every Boss change, release, accepted drift, and a PR remain closed.
 

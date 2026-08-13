@@ -5782,11 +5782,11 @@ The exact four PNG and two GIF packet was open together in Aseprite as sprites
 246, 250, 254, and active 258. The final prompt posted all six artifacts and
 the frozen digest; the designer replied `approved and lets do next`. Approval
 binds only to accepted implementation
-`1e685159e6ddc09a20d853a511c9cfb448b502fe` and those hashes. Standing
-permission opens its approval record, branch push, and bounded reconciliation.
-The continuation suffix is held until the publication tuple is clean and
-remote verified, after which it opens exactly one private specialist Rhino
-full 80-frame candidate on a new isolated branch under the selected topology.
+`1e685159e6ddc09a20d853a511c9cfb448b502fe` and those hashes. Its approval
+record `9d2b801f5e02c851e746571880d5465e65e3b1a6` is also remote verified. Only
+the initial published handoff and final reconciliation remain open. The
+continuation suffix remains held until final remote verification; no
+specialist Rhino work is open before then.
 Registration, fixtures, effects, child assets, elite Rhino, every Boss change,
 release, accepted drift, and a PR remain closed.
 

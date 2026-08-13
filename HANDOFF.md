@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Immediate Continuation Checkpoint - Mudplate Grazer Approval Publication
+## Immediate Continuation Checkpoint - Mudplate Grazer Publication Reconciliation
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e10-rhino-common`. It branches exactly from clean, published,
@@ -87,12 +87,12 @@ gate.
    `ba84ed03d4985b979974ab23d547fb7f687d6e2b948d80c9ccc84bb9cd911848`.
    The designer replied `approved and lets do next`. Approval applies only to
    that exact packet; accepted implementation
-   `1e685159e6ddc09a20d853a511c9cfb448b502fe` records it locally.
-8. Standing publication permission opens only the approval record, branch
-   push, and bounded handoff reconciliation. The continuation suffix is held
-   until that publication tuple is clean and remote verified, after which it
-   opens exactly one private specialist Rhino full 80-frame candidate on a new
-   isolated branch under the selected topology. Public or outline
+   `1e685159e6ddc09a20d853a511c9cfb448b502fe` and approval record
+   `9d2b801f5e02c851e746571880d5465e65e3b1a6` are remote verified.
+8. Only the initial published handoff and final reconciliation remain open.
+   The continuation suffix remains held until that final reconciliation is
+   clean and remote verified; no specialist Rhino work is open before then.
+   Public or outline
    registration, fixtures, effects, child assets, elite Rhino, every Furious
    Depraved Rhino Boss change, Runic Idol, release, accepted drift, a PR, and
    every broader gate remain closed.
