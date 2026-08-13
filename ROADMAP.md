@@ -34,9 +34,10 @@ pass in 0.7s / 58.7s with public 92/294 and all 232 fixtures unchanged. The
 exact four PNGs are open together in Aseprite as sprites 83, 87, 91, and active
 95. The outlined PNG is review evidence only, not outline registration. The
 designer replied `approved` to the exact posted packet. Accepted implementation
-`3d8727cce7d8b3f00ce8923ee9db629de13e1097` is remote verified. Standing
-permission opens only its approval record, branch push, and bounded handoff
-reconciliation. No next Ram art gate is open. Public/outline registration,
+`3d8727cce7d8b3f00ce8923ee9db629de13e1097` and approval record
+`8b2cc029a94eaeae69dc1a0f4886dd899dfc6902` are remote verified. Only the
+initial published handoff and final reconciliation remain open. No next Ram
+art gate is open. Public/outline registration,
 fixtures, effects, child assets, further Ram variants, later families, release,
 accepted drift, a PR, and every later gate remain closed.
 

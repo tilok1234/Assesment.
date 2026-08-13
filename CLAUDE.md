@@ -131,9 +131,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   outlined PNG is review evidence only, not outline registration. The final
   prompt posted all four PNGs, both GIFs, and the exact digest; the designer
   replied `approved`. Accepted implementation
-  `3d8727cce7d8b3f00ce8923ee9db629de13e1097` is remote verified. Standing
-  permission opens only its approval record, branch push, and bounded handoff
-  reconciliation. No next Ram art gate is open. Public/outline registration,
+  `3d8727cce7d8b3f00ce8923ee9db629de13e1097` and approval record
+  `8b2cc029a94eaeae69dc1a0f4886dd899dfc6902` are remote verified. Only the
+  initial published handoff and final reconciliation remain open. No next Ram
+  art gate is open. Public/outline registration,
   fixtures, effects, child assets, further Ram variants, later families,
   release, accepted drift, a PR, and every later gate remain closed.
 - Approved preceding published private art checkpoint: on `codex/en-e10-ram-specialist`, based exactly

@@ -113,10 +113,10 @@ export const EN_E10_CRAGCROWN_PATRIARCH_GATE = deepFreeze({
   approvedImplementation: '3d8727cce7d8b3f00ce8923ee9db629de13e1097',
   publicationAuthorizedOn: '2026-08-13',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. It does not authorize registration, fixtures, effects, child assets, later roles or families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '3d8727cce7d8b3f00ce8923ee9db629de13e1097',
+  publishedApprovalRecord: '8b2cc029a94eaeae69dc1a0f4886dd899dfc6902',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E10_CLIFFCOIL_STRIDER_GATE.id,
     artifactSha256: EN_E10_CLIFFCOIL_STRIDER_GATE.artifactSha256,
@@ -173,7 +173,7 @@ export const EN_E10_CRAGCROWN_PATRIARCH_GATE = deepFreeze({
     'Runic Idol or other EN-E09 work',
     'release, accepted drift, or pull request',
   ],
-  nextGate: 'The exact Cragcrown Patriarch packet is visually approved at implementation 3d8727cce7d8b3f00ce8923ee9db629de13e1097. Standing publication permission opens only its approval record, branch push, and bounded handoff reconciliation. No next Ram art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Ram registration, fixtures, effects, child assets, additional Ram variants, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
+  nextGate: 'The exact Cragcrown Patriarch implementation 3d8727cce7d8b3f00ce8923ee9db629de13e1097 and approval record 8b2cc029a94eaeae69dc1a0f4886dd899dfc6902 are remote verified. Only the initial published handoff and final reconciliation remain open. No next Ram art gate is open. The distinct outlined PNG remains review evidence only and does not authorize outline registration. Public Ram registration, fixtures, effects, child assets, additional Ram variants, Stag, Mammoth, Rhino, Rhino Boss work, Runic Idol, release, accepted drift, and a pull request remain closed.',
 });
 
 export const EN_E10_CRAGCROWN_PATRIARCH_DEATH_SOURCE_FRAMES = deepFreeze([0, 1, 1, 1]);
@@ -507,7 +507,7 @@ export const EN_E10_CRAGCROWN_PATRIARCH_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'cragcrown-patriarch',
     scale: 8,
-    notes: 'Visually approved as one exact elite horned Ram at implementation 3d8727cce7d8b3f00ce8923ee9db629de13e1097 against approved Cliffcoil Strider and Stonecurl Grazer plus public Dire Wolf. The packet includes a distinct Complete B outlined PNG as review evidence only. Standing permission opens only the approval record, branch push, and bounded handoff reconciliation. Keep outline registration, public registration, fixtures, effects, child assets, additional Ram variants and later EN-E10 families, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
+    notes: 'Visually approved as one exact elite horned Ram against approved Cliffcoil Strider and Stonecurl Grazer plus public Dire Wolf. Implementation 3d8727cce7d8b3f00ce8923ee9db629de13e1097 and approval record 8b2cc029a94eaeae69dc1a0f4886dd899dfc6902 are remote verified. Only the initial published handoff and final reconciliation remain open. The packet includes a distinct Complete B outlined PNG as review evidence only. Keep outline registration, public registration, fixtures, effects, child assets, additional Ram variants and later EN-E10 families, Rhino Boss work, deferred Runic Idol, release, accepted drift, and a pull request separate.',
   },
 });
 
