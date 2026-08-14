@@ -23,7 +23,115 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Published Checkpoint - Ashcrest Kindler / Specialist Gate Open
+## Next Chat Start Here - Revised Phoenix Specialist Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-phoenix-specialist`. `HEAD` is still the clean, pushed,
+   remote-verified Ashcrest Kindler final reconciliation
+   `ef2d1836a88f074e48d536e92c757988a0a13d17`. Preserve the intentional dirty
+   worktree; do not reset or discard it.
+2. The dirty source scope remains exactly nine intended files: modified
+   `CLAUDE.md`, `ENEMY_EXPANSION_PLAN.md`, `HANDOFF.md`, `ROADMAP.md`, and
+   `package.json`; plus untracked
+   `engine/enemy-expansion-en-e11-phoenix-sunveil-cantor.js`,
+   `tools/enemy-expansion-en-e11-phoenix-sunveil-cantor-review.mjs`,
+   `tools/check-enemy-expansion-en-e11-phoenix-sunveil-cantor.mjs`, and
+   `tools/build-enemy-expansion-en-e11-phoenix-sunveil-cantor-gifs.py`.
+   Current and rejected-v1 review artifacts are ignored. There is no temporary
+   comparison-builder file.
+3. Ashcrest Kindler is approved, published, pushed, and remote verified. The
+   designer's `approved lets do next` opened exactly one private Phoenix
+   specialist candidate. The first Sunveil packet was visually rejected as an
+   Ashcrest reskin. The designer's fresh `lets keep working here` authorized a
+   narrow revision of Sunveil Cantor only; it did not approve revised pixels,
+   commit, push, registration, fixtures, outline enrollment, effects, child
+   assets, elite Phoenix, another family, release, accepted drift, or a PR.
+4. The rejected v1 digest
+   `4abf172caafeb078ebcf8f1ce7d372f3dbc3c5b11efaade94a2cdb641a96d2bf`
+   remains rejection evidence under `enemy-expansion-review/en-e11-phoenix-
+   sunveil-cantor-rejected-v1/`. Never publish it. Its palette-mapped Ashcrest
+   poses, anatomy, and dominant silhouette are the exact failure the revision
+   must not reintroduce.
+5. Revised Sunveil Cantor v2 uses bespoke geometry and does not import, render,
+   or palette-map the Ashcrest renderer. It is a long-necked, low-bodied
+   processional grounded Phoenix with a connected back-swept lyre-ray crest,
+   narrow pale-gold hanging sunveil, diagonal dawn-orange body-owned mantle
+   wings, cool-aqua eyes, gilt hooked beak, two separated three-toed talons, and
+   one connected forked-ribbon tail. Idle alternates a high watch and measured
+   bow; Walk uses four processional steps; Attack gathers low, alternates high
+   rear and fore dawnscreen arches, and ends in a low conducting press. Cast
+   aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.
+6. The exact frozen revised candidate digest is
+   `f97ddd614b58c2d3f99bc7c16e622cbd99f382455853815d17938804e859c226`.
+   Raw / distinct Complete B outlined / Complete B + Form / Ashcrest-Moonveil-
+   Harpy comparison PNG hashes are
+   `2f8cd9f264aacb06c57999a3df1f1933189ff4e06352986a1150a115d9137547`,
+   `b505140807eb461f48d594536f909482214d3ffd3ddac25f229ae33964d33e4e`,
+   `7eb90eed077e265c5bc99addacbc229ee79e664aa7db545fd587e0214997f55f`,
+   and `f29339fcbbafc78cc0bbe424f99cc3a16a967fa2ad7c640e171f6939a5064757`.
+   Raw and Complete B + Form GIF hashes are
+   `9c7991fd6a2f5bec8edc91413bc9eb1cc45a318ceb48a9d4175da1b2b92b8c0c`
+   and `746083e0f834bde653a63fa3b4fe9e2208f996ce88ba71d572f754befa2df30a`.
+7. Focused, fast, and full validation pass in about 1.0s, 60.6s, and 108.4s.
+   Focused validation passes 80/80 connected, bounded, grounded, two-talon,
+   specialist-span, sunveil, cantor-mantle, and body-owned-wing frames; 40/40
+   long side profiles; 16/16 alternating high-arch dawnscreen views; eight
+   exact flashes; aliases and mirrors; and 80/80 substantial black-shape
+   differences from Ashcrest. Minimum Ashcrest alpha distance is 69; maximum
+   alpha IoU is 0.725. Every frame is pixel-plus-alpha distinct from approved
+   Moonveil and public Harpy. Opaque range is 194-313. Complete B adds 8,962
+   outline pixels and Form changes 9,102 pixels. Public remains 100/316 and all
+   232 fixtures stay untouched.
+8. Exact review files are under
+   `enemy-expansion-review/en-e11-phoenix-sunveil-cantor/`. The four exact PNGs,
+   eight phase sheets, transparent 20x4 atlas, and both GIFs were inspected at
+   original resolution. The atlas is 480x96 with 80 non-empty hard-alpha 24x24
+   cells and no boundary contact. Regeneration reproduces all six hashes, and
+   Aseprite parsed all six principal files. The independent inspection verdict
+   is `candidate-ready-for-designer-review`, not designer pixel approval.
+9. Stop for explicit approval of the posted exact packet or digest. Do not
+   commit, push, register, regenerate fixtures, add outline enrollment, effects,
+   or child assets, begin egg/ash resurrection or flight-state art, open elite
+   Phoenix or another family, release, accept drift, or open a PR. Never use
+   `--accept-drift` or hand-edit fixtures.
+10. Image-posting convention is mandatory for visual review. Put the source and
+    candidate images directly in the final chat message using plain inline
+    Markdown with leading-slash Windows paths. Do not wrap images in links,
+    substitute tool previews, or post only file links.
+11. Regenerate with
+    `npm.cmd run review:enemy-expansion-en-e11-phoenix-sunveil-cantor`; run the
+    focused gate with
+    `npm.cmd run check:enemy-expansion-en-e11-phoenix-sunveil-cantor`; then use
+    `npm.cmd run check:fast` and `npm.cmd run check` for project-wide proof.
+
+## Superseded Rejected Candidate Evidence - Sunveil Cantor v1 / Never Publish
+
+1. The exact rejected 80-frame v1 digest is
+   `4abf172caafeb078ebcf8f1ce7d372f3dbc3c5b11efaade94a2cdb641a96d2bf`.
+   Raw / distinct Complete B outlined / Complete B + Form / Ashcrest-Moonveil-
+   Harpy comparison PNG hashes are
+   `9d4eac865884840ac404b8a1200428be67b49e351230853ed30bef60914fd345`,
+   `428ce70fb3514129fc82bd82a1484541189dce36785a737de845d6d4a8d163ed`,
+   `bf06eb1eae3a9d9d28804eb471c60d2f969a9313b21f8f46f11f326ebf5af967`,
+   and `da6f7ab3a65a3dec9443ac4ef46682835cf7963d080425ceb83dc0f8bcfaa160`.
+   Raw and Complete B + Form GIF hashes are
+   `f1b1d4833e8721a8b9fb37cb800dc0935ec74bab3cf10271d6bba797995bed74`
+   and `21c0f17079cb1232517fad82c998e8096e0d3141565187a1878be9e4dc985201`.
+2. Exact v1 review files are preserved under
+   `enemy-expansion-review/en-e11-phoenix-sunveil-cantor-rejected-v1/`, not the
+   current revised-candidate directory. The packet remains mechanically valid:
+   its focused, fast, and full checks passed, the public catalog stayed 100/316,
+   and all 232 fixtures remained unchanged.
+3. The visual verdict remains `iterate` and the packet is permanently
+   superseded. Source inspection proved that v1 called Ashcrest through a
+   palette-mapped context and painted regalia over it, retaining Ashcrest's
+   poses, motion, anatomy, and dominant silhouette. Machine-level pixel
+   difference did not establish specialist identity.
+4. Never approve, commit, push, register, or otherwise publish v1. Use it only
+   as exact comparison evidence against silhouette regression in later Sunveil
+   revisions.
+
+## Published Checkpoint - Ashcrest Kindler / Specialist Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-phoenix-common`, based exactly on the clean, pushed,

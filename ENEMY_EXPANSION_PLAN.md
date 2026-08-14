@@ -1,6 +1,50 @@
 # Enemy Expansion Plan
 
-- Current approved private common Phoenix published / specialist gate open
+- Current private specialist Phoenix revised candidate awaiting visual approval
+  (2026-08-14): on `codex/en-e11-phoenix-specialist`, based exactly on the
+  clean, pushed, remote-verified Ashcrest final reconciliation
+  `ef2d1836a88f074e48d536e92c757988a0a13d17`, the designer's `approved lets do
+  next` opened exactly one private specialist Phoenix candidate. The first
+  Sunveil packet was rejected because it palette-mapped Ashcrest and preserved
+  the same poses and dominant silhouette. The designer's fresh `lets keep
+  working here` authorized only a narrow revision of Sunveil Cantor; it did not
+  approve revised pixels or open another role or family. Rejected v1 evidence
+  is preserved under `enemy-expansion-review/en-e11-phoenix-sunveil-cantor-
+  rejected-v1/`.
+  The revised v2 candidate uses bespoke content geometry: a connected wine-red
+  and carmine, long-necked, low-bodied processional Phoenix with a back-swept
+  lyre-ray crest, narrow pale-gold hanging sunveil, diagonal dawn-orange mantle
+  wings, cool-aqua eyes, a gilt hooked beak, two separated three-toed talons,
+  and one connected forked-ribbon tail. Attack gathers low, alternates high rear
+  and fore body-owned dawnscreen arches, and finishes with a low conducting
+  press. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2. The exact
+  frozen revised digest is
+  `f97ddd614b58c2d3f99bc7c16e622cbd99f382455853815d17938804e859c226`.
+  Raw / outlined / Form / Ashcrest-Moonveil-Harpy comparison PNG hashes are
+  `2f8cd9f264aacb06c57999a3df1f1933189ff4e06352986a1150a115d9137547`,
+  `b505140807eb461f48d594536f909482214d3ffd3ddac25f229ae33964d33e4e`,
+  `7eb90eed077e265c5bc99addacbc229ee79e664aa7db545fd587e0214997f55f`,
+  and `f29339fcbbafc78cc0bbe424f99cc3a16a967fa2ad7c640e171f6939a5064757`;
+  raw / Form GIF hashes are
+  `9c7991fd6a2f5bec8edc91413bc9eb1cc45a318ceb48a9d4175da1b2b92b8c0c`
+  and `746083e0f834bde653a63fa3b4fe9e2208f996ce88ba71d572f754befa2df30a`.
+  Focused, fast, and full validation pass in about 1.0s, 60.6s, and 108.4s.
+  Focused validation passes all 80 frames, all 40 long side profiles, all 16
+  alternating high-arch dawnscreen views, eight exact flashes, exact aliases
+  and mirrors, expected specialist marks, and 80/80 substantial black-shape
+  differences from approved Ashcrest (minimum alpha distance 69; maximum IoU
+  0.725). Every frame also differs from approved Moonveil and public Harpy in
+  pixels and alpha. Public remains 100/316 and all 232 fixtures remain
+  untouched. Original-resolution review, exact 20x4 hard-alpha atlas
+  measurement, exact hash reproduction, and Aseprite parsing of all six
+  principal files pass. The current verdict is `candidate-ready-for-designer-
+  review`; commit and push remain closed pending explicit approval of this exact
+  packet or digest. Registration, outline registration, fixtures, effects,
+  child assets, egg/ash resurrection or flight-state art, elite Phoenix,
+  another family, release, accepted drift, PR, and every broader gate remain
+  closed.
+
+- Approved preceding private common Phoenix published / specialist gate open
   (2026-08-14): on `codex/en-e11-phoenix-common`, based exactly on the clean,
   pushed, remote-verified Eclipsecrown final reconciliation
   `43452d7a03a92cee228a1d1ffaf147fc39802ad5`, the designer's fresh `Let's do
@@ -6757,7 +6801,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `phoenix-common-approved-published-specialist-gate-open`
+- Status: `phoenix-specialist-revised-candidate-awaiting-visual-approval`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 - Active family: Phoenix specialist
@@ -6766,7 +6810,76 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current approved private Phoenix common published / specialist gate open
+#### Current private Phoenix specialist revised candidate awaiting visual approval
+
+The complete Ashcrest publication tuple is pushed, remote verified, and
+reconciled at `ef2d1836a88f074e48d536e92c757988a0a13d17`. The designer's exact
+reply `approved lets do next` approved only that Ashcrest packet and opened
+exactly one private specialist Phoenix candidate under the selected
+`baked-single-actor-grounded-flame-crested-phoenix` topology. Because the role
+was not pre-named, this lane names only Sunveil Cantor. The first submitted
+Sunveil packet at digest
+`4abf172caafeb078ebcf8f1ce7d372f3dbc3c5b11efaade94a2cdb641a96d2bf`
+was visually rejected because its renderer palette-mapped Ashcrest and added
+regalia while preserving the same poses, anatomy, and dominant silhouette. Its
+exact evidence is preserved under `enemy-expansion-review/en-e11-phoenix-
+sunveil-cantor-rejected-v1/` and remains rejection evidence only.
+
+The designer's fresh `lets keep working here` authorized a narrow revision of
+Sunveil Cantor only. It did not approve revised pixels or authorize commit,
+push, registration, fixtures, outline enrollment, effects, child assets,
+resurrection or flight-state art, elite Phoenix, another family, release,
+accepted drift, or a PR. The revised renderer no longer imports or calls the
+Ashcrest renderer and contains no palette-mapped Ashcrest context.
+
+Revised Sunveil Cantor is one connected long-necked, low-bodied processional
+grounded Phoenix with deep wine-red and carmine plumage, a narrow pale-gold
+hanging sunveil, connected back-swept saffron lyre-ray crest, diagonal dawn-
+orange body-owned mantle wings, cool-aqua eyes, a gilt hooked beak, two
+separated three-toed gilt talons, and one connected forked-ribbon cantor tail.
+Idle alternates a high watch and measured bow. Walk uses four grounded
+processional steps with neck and tail counter-motion. Attack gathers low,
+alternates high rear and fore body-owned dawnscreen arches, and finishes with a
+low hooked-beak conducting press. Cast aliases Attack exactly; Death aliases
+Hurt H1,H2,H2,H2. Fire, embers, glow, halos, sound rings, projectiles, loose
+feathers, ash, egg or resurrection art, flight states, dust, shock rings, and
+impacts remain external.
+
+The exact frozen revised candidate digest is
+`f97ddd614b58c2d3f99bc7c16e622cbd99f382455853815d17938804e859c226`.
+Raw, outlined, Complete B + Form, and Ashcrest-Moonveil-Harpy comparison PNG
+hashes are
+`2f8cd9f264aacb06c57999a3df1f1933189ff4e06352986a1150a115d9137547`,
+`b505140807eb461f48d594536f909482214d3ffd3ddac25f229ae33964d33e4e`,
+`7eb90eed077e265c5bc99addacbc229ee79e664aa7db545fd587e0214997f55f`,
+and `f29339fcbbafc78cc0bbe424f99cc3a16a967fa2ad7c640e171f6939a5064757`.
+Raw and Complete B + Form GIF hashes are
+`9c7991fd6a2f5bec8edc91413bc9eb1cc45a318ceb48a9d4175da1b2b92b8c0c`
+and `746083e0f834bde653a63fa3b4fe9e2208f996ce88ba71d572f754befa2df30a`.
+
+Focused, fast, and full validation pass in about 1.0s, 60.6s, and 108.4s.
+Focused validation passes 80/80 connected, bounded, grounded, separated two-
+talon, specialist-span, sunveil, cantor-mantle, and body-owned-wing frames;
+40/40 long processional side profiles; 16/16 alternating high-arch dawnscreen
+views; 8/8 exact flashes; exact aliases and mirrors; and 80/80 substantial
+black-shape differences from approved Ashcrest. Minimum Ashcrest alpha distance
+is 69 and maximum alpha IoU is 0.725. Every frame also differs from approved
+Moonveil and public Harpy in pixels and alpha. Opaque range is 194-313;
+Complete B adds 8,962 outline pixels and Form changes 9,102 pixels. Public
+remains 100/316 and all 232 fixtures remain untouched. The four exact PNGs, all
+eight phase sheets, transparent 20x4 atlas, and both exact GIFs were inspected
+at original resolution. The atlas passes its 480x96, 80-cell, hard-alpha, no-
+boundary-contact contract, Aseprite parsed all six principal files, and
+regeneration reproduces every frozen hash.
+
+The current verdict is `candidate-ready-for-designer-review`, not pixel
+approval. Stop for explicit designer approval of the posted exact packet or
+digest before commit or push. Do not register, regenerate fixtures, add outline
+enrollment, effects, or child assets, begin egg/ash resurrection or flight-
+state art, open elite Phoenix or another family, release, accept drift, or open
+a PR.
+
+#### Approved preceding private Phoenix common published / specialist gate open
 
 The exact Eclipsecrown publication tuple is pushed, remote verified, and
 reconciled at `43452d7a03a92cee228a1d1ffaf147fc39802ad5`. The designer's

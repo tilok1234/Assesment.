@@ -2,7 +2,43 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 approved private common Phoenix published / specialist gate open
+Current EN-E11 private specialist Phoenix revised candidate awaiting visual approval
+(2026-08-14): on `codex/en-e11-phoenix-specialist`, based exactly on clean,
+pushed, remote-verified Ashcrest final reconciliation
+`ef2d1836a88f074e48d536e92c757988a0a13d17`, the designer's `approved lets do
+next` opened exactly one private specialist Phoenix candidate. The first
+Sunveil packet was rejected as an Ashcrest reskin. The designer's fresh `lets
+keep working here` authorized only a narrow Sunveil revision and did not
+approve revised pixels. Rejected v1 evidence is preserved separately.
+The revised candidate uses bespoke long-necked, low-bodied processional Phoenix
+geometry with a connected back-swept lyre-ray crest, narrow pale-gold hanging
+sunveil, diagonal dawn-orange mantle wings, cool-aqua eyes, gilt beak and two
+three-toed talons, and one connected forked-ribbon tail. Attack alternates high
+rear and fore body-owned dawnscreen arches before a low conducting press. Its
+frozen digest is
+`f97ddd614b58c2d3f99bc7c16e622cbd99f382455853815d17938804e859c226`.
+Raw / outlined / Form / Ashcrest-Moonveil-Harpy comparison PNG hashes are
+`2f8cd9f264aacb06c57999a3df1f1933189ff4e06352986a1150a115d9137547`,
+`b505140807eb461f48d594536f909482214d3ffd3ddac25f229ae33964d33e4e`,
+`7eb90eed077e265c5bc99addacbc229ee79e664aa7db545fd587e0214997f55f`,
+and `f29339fcbbafc78cc0bbe424f99cc3a16a967fa2ad7c640e171f6939a5064757`;
+raw / Form GIF hashes are
+`9c7991fd6a2f5bec8edc91413bc9eb1cc45a318ceb48a9d4175da1b2b92b8c0c`
+and `746083e0f834bde653a63fa3b4fe9e2208f996ce88ba71d572f754befa2df30a`.
+Focused, fast, and full validation pass in about 1.0s, 60.6s, and 108.4s.
+All 80 frames pass structure, grounded Phoenix identity, specialist marks,
+aliases, mirrors, and substantial black-shape distinction from approved
+Ashcrest; all 40 side profiles preserve the long processional read and all 16
+dawnscreen views preserve alternating high arches. Public remains 100/316 and
+all 232 fixtures remain untouched. Original-resolution review, the exact 20x4
+hard-alpha atlas measurement, exact hash reproduction, and Aseprite parsing of
+all six principal files pass. The current verdict is `candidate-ready-for-
+designer-review`; candidate commit and push remain closed pending explicit
+approval of the exact packet or digest. Registration, fixtures, effects, child
+assets, resurrection or flight-state art, elite Phoenix, another family,
+release, accepted drift, and PR remain closed.
+
+Approved preceding EN-E11 private common Phoenix published / specialist gate open
 (2026-08-14): on `codex/en-e11-phoenix-common`, based exactly on the clean,
 pushed, remote-verified Eclipsecrown final reconciliation
 `43452d7a03a92cee228a1d1ffaf147fc39802ad5`, the designer's fresh `Let's do

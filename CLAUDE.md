@@ -118,7 +118,50 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private common Phoenix published / specialist gate open: on
+- Current private Phoenix specialist revised candidate awaiting visual approval:
+  on `codex/en-e11-phoenix-specialist`, based exactly on the clean, pushed,
+  remote-verified Ashcrest Kindler final reconciliation
+  `ef2d1836a88f074e48d536e92c757988a0a13d17`, the designer's `approved lets do
+  next` opened exactly one private specialist Phoenix candidate. The first
+  Sunveil Cantor packet was visually rejected because it palette-mapped
+  Ashcrest and preserved its poses and dominant silhouette. The designer's
+  fresh `lets keep working here` authorized only a narrow revision of Sunveil;
+  it did not approve revised pixels or open any adjacent gate. The rejected v1
+  evidence is preserved under `enemy-expansion-review/en-e11-phoenix-sunveil-
+  cantor-rejected-v1/`.
+  The revised v2 renderer is bespoke content geometry: a long-necked, low-
+  bodied processional Phoenix with a connected back-swept lyre-ray crest,
+  narrow pale-gold hanging sunveil, diagonal dawn-orange mantle wings, cool-
+  aqua eyes, gilt hooked beak, two separated three-toed talons, and one
+  connected forked-ribbon tail. Attack gathers low, alternates a high rear and
+  high fore body-owned dawnscreen arch, then finishes with a low conducting
+  press. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2. The
+  frozen revised digest is
+  `f97ddd614b58c2d3f99bc7c16e622cbd99f382455853815d17938804e859c226`.
+  Raw / outline / Form / Ashcrest-Moonveil-Harpy comparison PNG hashes are
+  `2f8cd9f264aacb06c57999a3df1f1933189ff4e06352986a1150a115d9137547`,
+  `b505140807eb461f48d594536f909482214d3ffd3ddac25f229ae33964d33e4e`,
+  `7eb90eed077e265c5bc99addacbc229ee79e664aa7db545fd587e0214997f55f`,
+  and `f29339fcbbafc78cc0bbe424f99cc3a16a967fa2ad7c640e171f6939a5064757`;
+  raw / Form GIF hashes are
+  `9c7991fd6a2f5bec8edc91413bc9eb1cc45a318ceb48a9d4175da1b2b92b8c0c`
+  and `746083e0f834bde653a63fa3b4fe9e2208f996ce88ba71d572f754befa2df30a`.
+  Focused, fast, and full validation pass in about 1.0s, 60.6s, and 108.4s.
+  Focused validation passes 80/80 connected, bounded, grounded, two-talon,
+  specialist-span, sunveil, cantor-mantle, and body-owned-wing frames; 40/40
+  long side profiles; 16/16 alternating high-arch dawnscreen views; eight exact
+  flashes; aliases and mirrors; and 80/80 substantial black-shape differences
+  from Ashcrest (minimum alpha distance 69; maximum IoU 0.725). Every frame is
+  also pixel-plus-alpha distinct from approved Moonveil and public Harpy.
+  Public remains 100/316 and all 232 fixtures remain untouched. Original-
+  resolution inspection, the 480x96 20x4 hard-alpha atlas check with no boundary
+  contact, exact hash reproduction, and Aseprite parsing of all six principal
+  files pass. The current verdict is `candidate-ready-for-designer-review`, not
+  pixel approval. Candidate commit and push remain closed pending explicit
+  approval of this exact packet or digest. Registration, outline registration,
+  fixtures, effects, child assets, egg/ash resurrection or flight-state art,
+  elite Phoenix, another family, release, accepted drift, and PR remain closed.
+- Approved preceding private common Phoenix published / specialist gate open: on
   `codex/en-e11-phoenix-common`, based exactly on clean, pushed,
   remote-verified Eclipsecrown final reconciliation
   `43452d7a03a92cee228a1d1ffaf147fc39802ad5`, the designer's fresh `Let's do
