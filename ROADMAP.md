@@ -35,11 +35,13 @@ resolution and loaded through Aseprite; regeneration reproduced every frozen
 hash. The exact four-PNG, two-GIF, digest-frozen packet was posted and the
 designer replied `Approved`. Approval binds only to implementation
 `e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the digest, and six frozen
-hashes; that implementation is pushed and remote verified. Approval-local
-focused/fast gates pass again in about 1.0s/74.4s. Commit and push only the
-approval/handoff reconciliation. No continuation request was supplied, so
-public or outline registration, fixtures, effects, child assets, Owl elite,
-Phoenix, release, accepted drift, and a PR remain closed.
+hashes; that implementation and approval record
+`c384f07ace77822b12b1daa54b3fc6ca8ef11209` are pushed and remote verified.
+Only the initial published handoff and final reconciliation remain.
+Approval-local focused/fast gates pass again in about 1.0s/74.4s. No
+continuation request was supplied, so public or outline registration, fixtures,
+effects, child assets, Owl elite, Phoenix, release, accepted drift, and a PR
+remain closed.
 
 Current EN-E11 approved private common Owl published / next gate closed
 (2026-08-14): on `codex/en-e11-owl-common`, based exactly on clean, pushed,

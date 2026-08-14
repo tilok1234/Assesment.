@@ -41,10 +41,12 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied
    `Approved`. Pixel approval binds only to implementation
    `e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the exact digest, and six
-   frozen review hashes. That implementation is pushed and remote verified.
-   The reply contains no continuation request, so Owl elite, Phoenix, public
-   or outline registration, fixtures, effects, child assets, release,
-   accepted drift, and a PR remain closed.
+   frozen review hashes. That implementation and approval record
+   `c384f07ace77822b12b1daa54b3fc6ca8ef11209` are pushed and remote verified.
+   Only the initial published handoff and final reconciliation remain. The
+   reply contains no continuation request, so Owl elite, Phoenix, public or
+   outline registration, fixtures, effects, child assets, release, accepted
+   drift, and a PR remain closed.
 3. Moonveil Augur is one connected compact specialist Owl with a
    midnight-indigo body, pearl-silver facial disk, connected swept crescent
    brow-plumes, layered silver-and-blue shoulder mantle, moon-barred wings,
@@ -90,11 +92,11 @@ gate.
    `npm.cmd run review:enemy-expansion-en-e11-owl-moonveil-augur` and run the
    focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-owl-moonveil-augur`.
-7. Commit and push only the exact approval record, then create the initial
-   published handoff and final reconciliation needed to complete Moonveil's
-   bounded Owl specialist publication tuple. Do not register it publicly or
-   for outlines, regenerate fixtures, add effects or child assets, begin Owl
-   elite, begin Phoenix, release, accept drift, or open a PR.
+7. Create and push only the initial published handoff and final reconciliation
+   needed to complete Moonveil's bounded Owl specialist publication tuple. Do
+   not register it publicly or for outlines, regenerate fixtures, add effects
+   or child assets, begin Owl elite, begin Phoenix, release, accept drift, or
+   open a PR.
 
 ## Current Published Checkpoint - Hushmask Prowler / Next Gate Closed
 

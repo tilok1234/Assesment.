@@ -30,11 +30,13 @@
   Aseprite; regeneration reproduced every frozen hash. The designer replied
   `Approved`. Approval binds only to implementation
   `e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the digest, and six frozen
-  hashes; that implementation is pushed and remote verified. Approval-local
-  focused/fast gates pass again in about 1.0s/74.4s. Commit and push only the
-  approval/handoff reconciliation. No continuation request was supplied, so
-  public or outline registration, fixtures, effects, child assets, Owl elite,
-  Phoenix, release, accepted drift, a PR, and every broader gate remain closed.
+  hashes; that implementation and approval record
+  `c384f07ace77822b12b1daa54b3fc6ca8ef11209` are pushed and remote verified.
+  Only the initial published handoff and final reconciliation remain.
+  Approval-local focused/fast gates pass again in about 1.0s/74.4s. No
+  continuation request was supplied, so public or outline registration,
+  fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift,
+  a PR, and every broader gate remain closed.
 
 - Current approved private common Owl published / next gate closed
   (2026-08-14): on `codex/en-e11-owl-common`, based exactly on clean, pushed,
@@ -6655,7 +6657,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `owl-specialist-approved-publication-in-progress`
+- Status: `owl-specialist-approved-handoff-reconciliation-in-progress`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 - Active family: Owl specialist
@@ -6664,7 +6666,7 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current approved Owl specialist / publication in progress
+#### Current approved Owl specialist / handoff reconciliation in progress
 
 The exact Hushmask publication tuple is pushed, remote verified, and reconciled
 at `0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`. The designer's fresh `Let's do
@@ -6677,7 +6679,9 @@ an implementation commit or push. After the exact four-PNG, two-GIF,
 digest-frozen packet below was posted, the designer replied `Approved`. Pixel
 approval binds only to implementation
 `e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the exact digest, and six frozen
-review hashes. That implementation is pushed and remote verified. The reply
+review hashes. That implementation and approval record
+`c384f07ace77822b12b1daa54b3fc6ca8ef11209` are pushed and remote verified.
+Only the initial published handoff and final reconciliation remain. The reply
 contains no continuation request, so Owl elite, Phoenix, and every broader
 gate remain closed.
 
@@ -6715,11 +6719,10 @@ inspected at original resolution and loaded through Aseprite. Regeneration
 reproduced every frozen hash. Approval-local focused and fast gates pass again
 in about 1.0s and 74.4s.
 
-Commit and push only the exact approval record, then create the initial
-published handoff and final reconciliation needed to complete Moonveil's
-bounded Owl specialist publication tuple. Public or outline registration,
-fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift,
-a PR, and every broader gate remain closed.
+Create and push only the initial published handoff and final reconciliation
+needed to complete Moonveil's bounded Owl specialist publication tuple. Public
+or outline registration, fixtures, effects, child assets, Owl elite, Phoenix,
+release, accepted drift, a PR, and every broader gate remain closed.
 
 #### Current approved Owl common published / next gate closed
 

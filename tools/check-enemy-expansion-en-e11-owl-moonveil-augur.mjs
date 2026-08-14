@@ -124,12 +124,13 @@ check(
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.approvedImplementation === 'e3544a7c08195d67d7bfac4a4f531bc53c0a1981'
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publicationAuthorizedOn === '2026-08-14'
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publishedImplementation === ''
-    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publishedApprovalRecord === ''
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publishedImplementation === 'e3544a7c08195d67d7bfac4a4f531bc53c0a1981'
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publishedApprovalRecord === 'c384f07ace77822b12b1daa54b3fc6ca8ef11209'
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.initialPublishedHandoff === ''
-    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publicationState === 'approved-not-published'
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('e3544a7c08195d67d7bfac4a4f531bc53c0a1981')
-    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('approval record')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('c384f07ace77822b12b1daa54b3fc6ca8ef11209')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('initial published handoff')
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('No continuation request')
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('outline registration'),
   'Moonveil approval record or publication boundary drifted',
