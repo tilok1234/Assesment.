@@ -2,6 +2,41 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
+Current EN-E11 private Owl specialist candidate / awaiting visual approval
+(2026-08-14): on `codex/en-e11-owl-specialist`, based exactly on clean, pushed,
+remote-verified Hushmask final reconciliation
+`0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`, the designer's fresh `Let's do
+next` advances the documented Owl role order from approved common to exactly
+one private specialist full 80-frame candidate under the selected
+`baked-single-actor-grounded-facial-disk-owl` topology. This lane names only
+Moonveil Augur: one connected midnight-indigo Owl with a pearl-silver facial
+disk, swept connected crescent brow-plumes, layered silver-blue shoulder
+mantle, moon-barred wings, cool-teal eyes and feather marks, steel beak, slate
+talons, and a short silver-banded connected fan tail. Attack braces, opens an
+asymmetrical body-owned moon-screen, drives a hooked-beak mantle press, and
+refolds without baked effects. Its frozen digest is
+`86dbba1f850c9411f8d25949f4284874eb594711f4aa8c2c09f75172b2a2addd`.
+Raw / outlined / Form / comparison PNG hashes are
+`cfcefc24118f92bc786808f0bb9b043653b5a852a6eff9ce76e04cd75b1b93c3`,
+`743f5afed2cf7677a2b061a06a8bb6ba45765ab16615e67277437c159699ee97`,
+`84a4efa628dc44a71616146c0a1a875c3ece2dda2f6a0ceb409e645bd0c6f81b`,
+and `914f1e3cfb46904a231e8897569a2dccaa85c5f22c72f640346bf04a1c7d3876`;
+raw / Form GIF hashes are
+`8c9160678d67e11a99e6dba1eb0cb7a4baff1bcba8de6b3c2e6698fcf47777c4`
+and `1b2713198b363cbc841973143655d9e55d30c1f35501cecc8d0fbb2cce89c3d4`.
+Focused/fast/full validation passes in about 1.0s/75.0s/140.7s: all 80 frames are
+connected, bounded, grounded, two-talon, compact-mantled, connected-brow, and
+pixel-plus-alpha distinct from approved Hushmask, approved Mournglass, and
+public Harpy; all 16 moon-screen views, expected identity marks, exact
+aliases/mirrors, and eight exact flashes pass. Public remains 100/316 and all
+232 fixtures stay exact. The four exact PNGs, all eight phase sheets,
+transparent inspection atlas, and both exact GIFs were inspected at original
+resolution and loaded through Aseprite; regeneration reproduced every frozen
+hash. The pixels are not approved yet. Stop for explicit approval of this exact
+packet before any implementation commit or push. Public or outline
+registration, fixtures, effects, child assets, Owl elite, Phoenix, release,
+accepted drift, and a PR remain closed.
+
 Current EN-E11 approved private common Owl published / next gate closed
 (2026-08-14): on `codex/en-e11-owl-common`, based exactly on clean, pushed,
 remote-verified Gravecrown final reconciliation

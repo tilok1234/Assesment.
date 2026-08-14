@@ -6619,14 +6619,63 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `owl-common-approved-published-next-gate-closed`
+- Status: `owl-specialist-candidate-awaiting-visual-approval`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
-- Active family: Owl common
+- Active family: Owl specialist
 
 Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
+
+#### Current private Owl specialist candidate / awaiting visual approval
+
+The exact Hushmask publication tuple is pushed, remote verified, and reconciled
+at `0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`. The designer's fresh `Let's do
+next` advances the documented Owl role order from approved common to exactly
+one private specialist full 80-frame candidate under the already selected
+`baked-single-actor-grounded-facial-disk-owl` topology. Because the role was
+not pre-named, this lane names only Moonveil Augur. The continuation authorizes
+candidate authoring and review only; it does not approve the pixels or authorize
+an implementation commit or push.
+
+Moonveil Augur is one connected compact midnight-indigo Owl with a
+pearl-silver facial disk, connected swept crescent brow-plumes, layered
+silver-and-blue shoulder mantle, moon-barred wings, cool-teal eyes and feather
+marks, a steel beak, two separated slate three-toed talons, and one short
+connected silver-banded fan tail. Its body-owned attack is planted brace,
+asymmetrical moon-screen, hooked-beak mantle press, and refold. Cast aliases
+Attack exactly; Death aliases Hurt H1,H2,H2,H2. Moon halos, runes, scrying
+panes, glow, particles, projectiles, loose feathers, shadow wisps, dust, and
+impacts remain external.
+
+The exact frozen candidate digest is
+`86dbba1f850c9411f8d25949f4284874eb594711f4aa8c2c09f75172b2a2addd`.
+The raw, outlined, Complete B + Form, and Hushmask-Mournglass-Harpy comparison
+PNG hashes are
+`cfcefc24118f92bc786808f0bb9b043653b5a852a6eff9ce76e04cd75b1b93c3`,
+`743f5afed2cf7677a2b061a06a8bb6ba45765ab16615e67277437c159699ee97`,
+`84a4efa628dc44a71616146c0a1a875c3ece2dda2f6a0ceb409e645bd0c6f81b`,
+and `914f1e3cfb46904a231e8897569a2dccaa85c5f22c72f640346bf04a1c7d3876`.
+Raw and Complete B + Form GIF hashes are
+`8c9160678d67e11a99e6dba1eb0cb7a4baff1bcba8de6b3c2e6698fcf47777c4`
+and `1b2713198b363cbc841973143655d9e55d30c1f35501cecc8d0fbb2cce89c3d4`.
+
+Focused, fast, and full gates pass in about 1.0s, 75.0s, and 140.7s. All 80 frames are
+connected, bounded, grounded, two-talon, compact-mantled, connected-brow, and
+pixel-plus-alpha distinct from approved Hushmask, approved Mournglass, and
+public Harpy. All 16 asymmetrical moon-screen views, expected face and palette
+marks, exact aliases and mirrors, and eight exact flashes pass. Opaque range is
+231-341; Complete B adds 7,538 pixels and Form changes 10,903 pixels. Public
+remains 100/316 and all 232 fixtures stay exact. The four exact PNGs, all eight
+phase sheets, transparent 20x4 inspection atlas, and both exact GIFs were
+inspected at original resolution and loaded through Aseprite. Regeneration
+reproduced every frozen hash.
+
+Stop for explicit designer approval of the exact digest-and-six-hash packet.
+Do not commit or push the candidate implementation before that approval. Public
+or outline registration, fixtures, effects, child assets, Owl elite, Phoenix,
+release, accepted drift, a PR, and every broader gate remain closed.
 
 #### Current approved Owl common published / next gate closed
 

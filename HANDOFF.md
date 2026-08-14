@@ -23,6 +23,71 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Private Candidate - Moonveil Augur / Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-owl-specialist`, based exactly on clean, pushed,
+   remote-verified Hushmask final reconciliation
+   `0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`.
+2. After the complete Hushmask publication tuple was reconciled, the designer
+   supplied the fresh continuation `Let's do next`. Under the documented Owl
+   role order, this opens exactly one private specialist full 80-frame
+   candidate under the already selected
+   `baked-single-actor-grounded-facial-disk-owl` topology. Because the role was
+   not pre-named, this lane names only Moonveil Augur. This continuation does
+   not approve its pixels and does not authorize an implementation commit,
+   push, registration, fixtures, effects, child assets, another role or
+   family, release, accepted drift, or a PR.
+3. Moonveil Augur is one connected compact specialist Owl with a
+   midnight-indigo body, pearl-silver facial disk, connected swept crescent
+   brow-plumes, layered silver-and-blue shoulder mantle, moon-barred wings,
+   cool-teal eyes and feather marks, steel beak, two separated slate
+   three-toed talons, and one short connected silver-banded fan tail. Attack
+   plants into a brace, opens an asymmetrical body-owned moon-screen, drives a
+   hooked-beak mantle press, and refolds. Cast aliases Attack exactly; Death
+   aliases Hurt H1,H2,H2,H2. Moon halos, runes, scrying panes, glow, particles,
+   projectiles, loose feathers, shadow wisps, dust, and impacts stay external.
+4. The frozen 80-frame candidate digest is
+   `86dbba1f850c9411f8d25949f4284874eb594711f4aa8c2c09f75172b2a2addd`.
+   Raw / distinct Complete B outlined / Complete B + Form / Hushmask-
+   Mournglass-Harpy comparison PNG hashes are
+   `cfcefc24118f92bc786808f0bb9b043653b5a852a6eff9ce76e04cd75b1b93c3`,
+   `743f5afed2cf7677a2b061a06a8bb6ba45765ab16615e67277437c159699ee97`,
+   `84a4efa628dc44a71616146c0a1a875c3ece2dda2f6a0ceb409e645bd0c6f81b`,
+   and `914f1e3cfb46904a231e8897569a2dccaa85c5f22c72f640346bf04a1c7d3876`.
+   Raw and Complete B + Form GIF hashes are
+   `8c9160678d67e11a99e6dba1eb0cb7a4baff1bcba8de6b3c2e6698fcf47777c4`
+   and `1b2713198b363cbc841973143655d9e55d30c1f35501cecc8d0fbb2cce89c3d4`.
+5. Focused validation passes 80/80 connected, bounded, grounded, separated
+   two-talon, compact-mantled, and connected-brow frames; 16/16 asymmetrical
+   moon-screen views; 54/54 eye-bearing and facial-disk views; 72/72 expected
+   head, moon-silver, teal-mark, short-tail, and wing views; 8/8 exact
+   `#f4f4f4` flashes; exact aliases and mirrors; and 80/80 pixel-plus-alpha
+   distinctions from approved Hushmask Prowler, approved Mournglass Scrier,
+   and public Harpy Screecher. Opaque range is 231-341. Complete B adds 7,538
+   outline pixels and Form changes 10,903 pixels. Focused, fast, and full
+   validation pass in about 1.0s, 75.0s, and 140.7s. Public remains 100/316,
+   all 232 fixtures stay
+   exact, and child assets, effects, public registration, and outline
+   registration remain zero for this lane.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-owl-moonveil-augur/`. The raw, outlined,
+   Complete B + Form, and family-comparison PNGs, all four raw phase sheets,
+   all four Complete B + Form phase sheets, the transparent 20x4 inspection
+   atlas, and both exact GIFs were inspected at original resolution and loaded
+   through Aseprite. The atlas is 480x96 with 80 non-empty hard-alpha 24x24
+   cells, no boundary contact, and retained margins. Both GIFs are valid
+   640x672 four-frame animations, and regeneration reproduced every frozen
+   hash. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e11-owl-moonveil-augur` and run the
+   focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-owl-moonveil-augur`.
+7. Stop now for explicit designer approval of the exact digest-and-six-hash
+   packet. Do not commit or push the candidate implementation before that
+   approval. Do not register it publicly or for outlines, regenerate fixtures,
+   add effects or child assets, begin Owl elite, begin Phoenix, release, accept
+   drift, or open a PR.
+
 ## Current Published Checkpoint - Hushmask Prowler / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
