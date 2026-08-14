@@ -23,6 +23,70 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Private Candidate - Hushmask Prowler / Visual Approval Required
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-owl-common`, based exactly on clean, pushed, remote-verified
+   Gravecrown final reconciliation
+   `2d5fb020541cbe936bd7f5dba33811f7a0be03e4`.
+2. After the complete Gravecrown publication tuple was reconciled, the
+   designer supplied the fresh continuation `lets do ext`, meaning `lets do
+   next`. Under the documented Peacock / Cockatrice / Raven / Owl / Phoenix
+   order, that opened only the Owl topology decision. Codex recommended
+   `baked-single-actor-grounded-facial-disk-owl` and stated that approval would
+   authorize exactly one private common Owl full 80-frame candidate. The
+   designer replied `approved`. This selects the topology and authorizes only
+   the private candidate; it does not approve its pixels or authorize commit,
+   push, registration, fixtures, effects, child assets, another role or
+   family, release, accepted drift, or a PR.
+3. Hushmask Prowler is one connected compact natural Owl with a broad
+   cream-and-taupe facial disk, twin amber eyes, a small ochre hooked beak,
+   warm umber round body, smoke-brown barred wings, pale hush throat, two
+   separated pale-horn three-toed talons, and one short connected banded fan
+   tail. Attack plants both talons, opens both body-owned wings into a silent
+   crescent screen, drives a compact beak-and-talon pounce, and refolds. Cast
+   aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2. Flight states,
+   loose feathers, shadow wisps, dust, glow, projectiles, air blades, and
+   impacts stay external.
+4. The frozen 80-frame candidate digest is
+   `c035b53021e4281378d2a43ff9e0d909fa750d4c877837517ed3c2a42beb445a`.
+   Raw / distinct Complete B outlined / Complete B + Form / Cinderquill-
+   Rainfan-Harpy comparison PNG hashes are
+   `5104046863cfbb3c032a5b4dae7d9ab1e35fe0131c35a00f94133d7fd6205a20`,
+   `535cd37776a7ea3ea43d92546ba76bed8809d924724cfaaa7ed51b618bdeccff`,
+   `eb278ef44ad8d5233e383824b78f9bd5b9b25e6afcbcbb9f282d3593563d321a`,
+   and `9dce39c1ea271ee27da09c8fbbc54d9cff7a17e86bb6a99371834cc95669ddcc`.
+   Raw and Complete B + Form GIF hashes are
+   `2b81d72f7f22f786dde5e36d20eb3266ee4aaa3c06a52371dfa150186b92bea0`
+   and `2403d2c88534f27f7945b2e7f933e07ad594bb92b8ed7141e7423b33a316403d`.
+5. Focused validation passes 80/80 connected, bounded, grounded, separated
+   two-talon, and compact-round-Owl frames; 16/16 broad crescent views; 54/54
+   expected eye, beak, and facial-disk views; 72/72 head, throat-palette,
+   short-tail, barred-feather, and wing views; 8/8 exact `#f4f4f4` flashes;
+   exact aliases and mirrors; and 80/80 pixel-plus-alpha distinctions from
+   approved Cinderquill Scavenger, approved Rainfan Forager, and public Harpy
+   Screecher. Opaque range is 230-325. Complete B adds 7,290 outline pixels
+   and Form changes 9,493 pixels. Focused / fast / full validation passes in
+   about 0.9s / 63.2s / 113.5s. Public remains 100/316, all 232 fixtures stay
+   exact, and child assets, effects, public registration, and outline
+   registration remain zero for this lane.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-owl-hushmask-prowler/`. The raw, outlined,
+   Complete B + Form, and family-comparison PNGs, all four raw phase sheets,
+   all four Complete B + Form phase sheets, the transparent 20x4 inspection
+   atlas, and both exact GIFs were inspected at original resolution and in
+   Aseprite. Both GIFs are valid 640x672 four-frame animations, and
+   regeneration reproduced every frozen hash. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e11-owl-hushmask-prowler` and run the
+   focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-owl-hushmask-prowler`.
+7. Stop at the exact visual-approval packet. The candidate implementation and
+   docs are intentionally uncommitted and unpushed. Explicit designer approval
+   of the posted packet or digest is required before the bounded
+   implementation commit and push. Do not register it publicly or for
+   outlines, regenerate fixtures, add effects or child assets, begin Owl
+   specialist or elite, begin Phoenix, release, accept drift, or open a PR.
+
 ## Current Published Checkpoint - Gravecrown Harrower / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch

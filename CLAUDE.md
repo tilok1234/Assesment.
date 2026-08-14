@@ -118,6 +118,42 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
+- Current private common Owl candidate awaiting visual approval: on
+  `codex/en-e11-owl-common`, based exactly on clean, pushed Gravecrown final
+  reconciliation `2d5fb020541cbe936bd7f5dba33811f7a0be03e4`, the designer's
+  fresh `lets do ext`, meaning `lets do next`, opened only the Owl topology
+  decision. The designer approved the recommended
+  `baked-single-actor-grounded-facial-disk-owl` topology, authorizing exactly
+  one private common Owl full 80-frame candidate without approving its pixels.
+  This lane names only Hushmask Prowler: one connected compact warm-umber Owl
+  with a broad cream-and-taupe facial disk, twin amber eyes, small ochre hooked
+  beak, smoke-brown barred wings, pale hush throat, two separated pale-horn
+  talons, and one short connected banded fan tail. Attack plants both talons,
+  opens both body-owned wings into a silent crescent screen, drives a compact
+  beak-and-talon pounce, and refolds without baked effects. Its frozen digest
+  is `c035b53021e4281378d2a43ff9e0d909fa750d4c877837517ed3c2a42beb445a`;
+  raw / outline / Form / comparison PNG hashes are
+  `5104046863cfbb3c032a5b4dae7d9ab1e35fe0131c35a00f94133d7fd6205a20`,
+  `535cd37776a7ea3ea43d92546ba76bed8809d924724cfaaa7ed51b618bdeccff`,
+  `eb278ef44ad8d5233e383824b78f9bd5b9b25e6afcbcbb9f282d3593563d321a`,
+  and `9dce39c1ea271ee27da09c8fbbc54d9cff7a17e86bb6a99371834cc95669ddcc`;
+  raw / Form GIF hashes are
+  `2b81d72f7f22f786dde5e36d20eb3266ee4aaa3c06a52371dfa150186b92bea0`
+  and `2403d2c88534f27f7945b2e7f933e07ad594bb92b8ed7141e7423b33a316403d`.
+  Focused/fast/full gates pass in about 0.9s/63.2s/113.5s: all 80 frames are
+  connected, bounded, grounded, two-talon, compact-round, and pixel-plus-alpha
+  distinct from approved Cinderquill, approved Rainfan, and public Harpy; all
+  16 crescent views, 54 expected eye/beak/facial-disk views, 72
+  head/throat/short-tail/barred-wing views, exact aliases/mirrors, and eight
+  exact flashes pass. Public remains 100/316 and all 232 fixtures stay exact.
+  The four exact PNGs, eight phase sheets, transparent inspection atlas, and
+  both exact GIFs were inspected at original resolution and in Aseprite; both
+  GIFs validate as 640x672 four-frame animations and regeneration reproduced
+  every hash. The candidate implementation and docs remain intentionally
+  uncommitted and unpushed pending explicit visual approval of the posted
+  packet or digest. Public or outline registration, fixtures, effects, child
+  assets, Owl specialist or elite, Phoenix, release, accepted drift, and a PR
+  remain closed.
 - Current approved private elite Raven published / next gate closed: on
   `codex/en-e11-raven-elite`, based exactly on clean, pushed Mournglass final
   reconciliation `d12e42ceb0375a39c60de3f4253aeaa5ac0306ae`, the designer's
