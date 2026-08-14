@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Approved Checkpoint - Hushmask Prowler / Publication In Progress
+## Current Published Checkpoint - Hushmask Prowler / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-owl-common`, based exactly on clean, pushed, remote-verified
@@ -42,10 +42,11 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied
    `approived`. Pixel approval binds only to implementation
    `e0fd0560ec93d12959d06cd30b593c82be74ffbd`, the exact digest, and six
-   frozen review hashes. That implementation and approval record
-   `0e2dbbc6f519c1e135a57686ab1e0600d0327239` are pushed and remote verified.
-   Only the initial published handoff and final reconciliation remain. The
-   reply contains no continuation request, so Owl specialist or elite,
+   frozen review hashes. That implementation, approval record
+   `0e2dbbc6f519c1e135a57686ab1e0600d0327239`, and initial published handoff
+   `afa265a17feca93d2bd1c49cc844c3259e751d04` are pushed and remote verified;
+   this reconciliation completes the bounded Owl common publication tuple.
+   The reply contains no continuation request, so Owl specialist or elite,
    Phoenix, public or outline registration, fixtures, effects, child assets,
    release, accepted drift, and a PR remain closed.
 3. Hushmask Prowler is one connected compact natural Owl with a broad
@@ -79,7 +80,8 @@ gate.
    about 0.9s / 63.2s / 113.5s. Public remains 100/316, all 232 fixtures stay
    exact, and child assets, effects, public registration, and outline
    registration remain zero for this lane. Approval-local focused and fast
-   gates pass again in about 0.8s and 59.4s.
+   gates pass again in about 0.8s and 59.4s. Final published-state focused,
+   fast, and full gates pass in about 0.9s, 68.0s, and 133.9s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-owl-hushmask-prowler/`. The raw, outlined,
    Complete B + Form, and family-comparison PNGs, all four raw phase sheets,
@@ -90,11 +92,13 @@ gate.
    `npm.cmd run review:enemy-expansion-en-e11-owl-hushmask-prowler` and run the
    focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-owl-hushmask-prowler`.
-7. Create and push only the initial published handoff and final reconciliation
-   needed to complete Hushmask's bounded Owl common publication tuple. Do not
-   register it publicly or for outlines, regenerate fixtures, add effects or
-   child assets, begin Owl specialist or elite, begin Phoenix, release, accept
-   drift, or open a PR.
+7. The implementation, approval record, and initial published handoff are
+   remote verified; this reconciliation completes Hushmask's bounded Owl
+   common publication tuple. No continuation request was supplied, so the next
+   gate stays closed. Do not register it publicly or for outlines, regenerate
+   fixtures, add effects or child assets, begin Owl specialist or elite, begin
+   Phoenix, release, accept drift, or open a PR. A fresh explicit continuation
+   request is required before any later lane can open.
 
 ## Current Published Checkpoint - Gravecrown Harrower / Next Gate Closed
 

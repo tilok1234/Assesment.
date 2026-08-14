@@ -141,11 +141,12 @@ check(
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publishedImplementation === 'e0fd0560ec93d12959d06cd30b593c82be74ffbd'
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publishedApprovalRecord === '0e2dbbc6f519c1e135a57686ab1e0600d0327239'
-    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.initialPublishedHandoff === ''
-    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.initialPublishedHandoff === 'afa265a17feca93d2bd1c49cc844c3259e751d04'
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publicationState === 'published'
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('e0fd0560ec93d12959d06cd30b593c82be74ffbd')
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('0e2dbbc6f519c1e135a57686ab1e0600d0327239')
-    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('initial published handoff')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('afa265a17feca93d2bd1c49cc844c3259e751d04')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('completes the bounded Owl common publication tuple')
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('No continuation request')
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('outline registration'),
   'Owl approval record or publication boundary drifted',
@@ -164,7 +165,7 @@ check(
     && EN_E11_OWL_COMMON_CONTRACT_CARD.activeVariant.id === 'hushmask-prowler'
     && EN_E11_OWL_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
     && EN_E11_OWL_COMMON_CONTRACT_CARD.precedingGate === EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.id
-    && EN_E11_OWL_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E11_OWL_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && JSON.stringify(EN_E11_OWL_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
     && EN_E11_OWL_HUSHMASK_PROWLER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Owl common role or candidate contract drifted',

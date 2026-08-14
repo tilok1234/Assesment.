@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 approved private common Owl / publication in progress
+Current EN-E11 approved private common Owl published / next gate closed
 (2026-08-14): on `codex/en-e11-owl-common`, based exactly on clean, pushed,
 remote-verified Gravecrown final reconciliation
 `2d5fb020541cbe936bd7f5dba33811f7a0be03e4`, the designer's fresh `lets do
@@ -37,10 +37,12 @@ GIFs validate as 640x672 four-frame animations and regeneration reproduced
 every frozen hash. The exact four-PNG, two-GIF, digest-frozen packet was posted
 and the designer replied `approived`. Approval binds only to implementation
 `e0fd0560ec93d12959d06cd30b593c82be74ffbd`, the digest, and six frozen
-hashes; that implementation and approval record
-`0e2dbbc6f519c1e135a57686ab1e0600d0327239` are pushed and remote verified.
-Only the initial published handoff and final reconciliation remain.
-Approval-local focused/fast gates pass again in about 0.8s/59.4s. No
+hashes; that implementation, approval record
+`0e2dbbc6f519c1e135a57686ab1e0600d0327239`, and initial published handoff
+`afa265a17feca93d2bd1c49cc844c3259e751d04` are pushed and remote verified;
+this reconciliation completes the bounded Owl common publication tuple.
+Approval-local focused/fast gates pass again in about 0.8s/59.4s. Final
+published-state focused/fast/full gates pass in about 0.9s/68.0s/133.9s. No
 continuation request was supplied, so public or outline registration, fixtures,
 effects, child assets, Owl specialist or elite, Phoenix, release, accepted
 drift, and a PR remain closed.
