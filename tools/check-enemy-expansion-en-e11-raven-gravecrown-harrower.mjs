@@ -134,11 +134,12 @@ check(
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publishedImplementation === '4d05b1f4f0ff5113bb31c4ac7011a393b6d877be'
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publishedApprovalRecord === '8ec032c2ff90aceffeb8f8cf9533fccac89d68df'
-    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.initialPublishedHandoff === ''
-    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.initialPublishedHandoff === 'e1645f03572073d00c9c9a9f96b70e9daf2d484a'
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publicationState === 'published'
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('4d05b1f4f0ff5113bb31c4ac7011a393b6d877be')
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('8ec032c2ff90aceffeb8f8cf9533fccac89d68df')
-    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('initial published handoff')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('e1645f03572073d00c9c9a9f96b70e9daf2d484a')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('completes the bounded Raven elite publication tuple')
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('No continuation request')
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('outline registration'),
   'Gravecrown approval record or publication boundary drifted',
@@ -157,7 +158,7 @@ check(
     && EN_E11_RAVEN_ELITE_CONTRACT_CARD.precedingVariant.id === 'mournglass-scrier'
     && EN_E11_RAVEN_ELITE_CONTRACT_CARD.activeVariant.id === 'gravecrown-harrower'
     && EN_E11_RAVEN_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E11_RAVEN_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E11_RAVEN_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && EN_E11_RAVEN_ELITE_CONTRACT_CARD.deferredRoles.length === 0
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Raven elite role contract drifted',

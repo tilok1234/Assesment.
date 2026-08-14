@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Approved Checkpoint - Gravecrown Harrower / Publication In Progress
+## Current Published Checkpoint - Gravecrown Harrower / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-raven-elite`, based exactly on clean, pushed Mournglass final
@@ -40,12 +40,13 @@ gate.
    four-PNG, two-GIF, digest-frozen packet below was shown, the designer replied
    `approved`. Pixel approval binds only to implementation
    `4d05b1f4f0ff5113bb31c4ac7011a393b6d877be`, the exact digest, and six
-   frozen review hashes. That implementation and approval record
-   `8ec032c2ff90aceffeb8f8cf9533fccac89d68df` are pushed and remote verified.
-   Only the initial published handoff and final reconciliation remain. The
-   reply contains no continuation request, so Owl, Phoenix, public or outline
-   registration, fixtures, effects, child assets, release, accepted drift,
-   and a PR remain closed.
+   frozen review hashes. That implementation, approval record
+   `8ec032c2ff90aceffeb8f8cf9533fccac89d68df`, and initial published handoff
+   `e1645f03572073d00c9c9a9f96b70e9daf2d484a` are pushed and remote verified;
+   this reconciliation completes the bounded Raven elite publication tuple.
+   The reply contains no continuation request, so Owl, Phoenix, public or
+   outline registration, fixtures, effects, child assets, release, accepted
+   drift, and a PR remain closed.
 3. Gravecrown Harrower is one connected broad obsidian-black corvid with
    oxblood and iron-violet plated mantle wings, a bone-ivory throat gorget,
    attached antique-gold three-pronged gravecrown and wing clasps, ember-gold
@@ -77,7 +78,8 @@ gate.
    passes in about 0.9s / 69.7s / 108.8s. Public remains 100/316, all 232
    fixtures stay exact, and child assets, effects, public registration, and
    outline registration remain zero for this lane. Approval-local focused and
-   fast gates pass again in about 0.8s and 58.5s.
+   fast gates pass again in about 0.8s and 58.5s. Final published-state
+   focused, fast, and full gates pass in about 0.8s, 64.6s, and 123.0s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-raven-gravecrown-harrower/`. The raw,
    outlined, Complete B + Form, and family-comparison PNGs, all four raw phase
@@ -87,10 +89,13 @@ gate.
    `npm.cmd run review:enemy-expansion-en-e11-raven-gravecrown-harrower` and
    run the focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-raven-gravecrown-harrower`.
-7. Create and push only the initial published handoff and final reconciliation
-   needed to complete Gravecrown's bounded publication tuple. Do not register
-   it publicly or for outlines, regenerate fixtures, add effects or child
-   assets, begin Owl or Phoenix, release, accept drift, or open a PR.
+7. The implementation, approval record, and initial published handoff are
+   remote verified; this reconciliation completes Gravecrown's bounded
+   publication tuple. No continuation request was supplied, so the next gate
+   stays closed. Do not register it publicly or for outlines, regenerate
+   fixtures, add effects or child assets, begin Owl or Phoenix, release,
+   accept drift, or open a PR. A fresh explicit continuation request is
+   required before any later lane can open.
 
 ## Current Published Checkpoint - Mournglass Scrier / Next Gate Closed
 

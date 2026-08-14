@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 approved private elite Raven / publication in progress
+Current EN-E11 approved private elite Raven published / next gate closed
 (2026-08-14): on `codex/en-e11-raven-elite`, based exactly on clean, pushed
 Mournglass final reconciliation
 `d12e42ceb0375a39c60de3f4253aeaa5ac0306ae`, the designer's fresh `lets do
@@ -37,10 +37,12 @@ and in Aseprite; regeneration reproduced every hash. The exact four-PNG,
 two-GIF, digest-frozen packet was posted and the designer replied `approved`.
 Approval binds only to implementation
 `4d05b1f4f0ff5113bb31c4ac7011a393b6d877be`, the digest, and six frozen
-hashes; that implementation and approval record
-`8ec032c2ff90aceffeb8f8cf9533fccac89d68df` are pushed and remote verified.
-Only the initial published handoff and final reconciliation remain.
-Approval-local focused/fast gates pass again in about 0.8s/58.5s. No
+hashes; that implementation, approval record
+`8ec032c2ff90aceffeb8f8cf9533fccac89d68df`, and initial published handoff
+`e1645f03572073d00c9c9a9f96b70e9daf2d484a` are pushed and remote verified;
+this reconciliation completes the bounded Raven elite publication tuple.
+Approval-local focused/fast gates pass again in about 0.8s/58.5s. Final
+published-state focused/fast/full gates pass in about 0.8s/64.6s/123.0s. No
 continuation request was supplied, so public or outline registration, fixtures,
 effects, child assets, Owl, Phoenix, release, accepted drift, and a PR remain
 closed.

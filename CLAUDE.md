@@ -118,7 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private elite Raven / publication in progress: on
+- Current approved private elite Raven published / next gate closed: on
   `codex/en-e11-raven-elite`, based exactly on clean, pushed Mournglass final
   reconciliation `d12e42ceb0375a39c60de3f4253aeaa5ac0306ae`, the designer's
   fresh `lets do next` opens exactly one private elite Raven full 80-frame
@@ -152,13 +152,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   byte-identical hashes. The exact four-PNG, two-GIF, digest-frozen packet was
   posted and the designer replied `approved`. Approval binds only to
   implementation `4d05b1f4f0ff5113bb31c4ac7011a393b6d877be`, the digest,
-  and six frozen hashes; that implementation and approval record
-  `8ec032c2ff90aceffeb8f8cf9533fccac89d68df` are pushed and remote verified.
-  Only the initial published handoff and final reconciliation remain.
+  and six frozen hashes; that implementation, approval record
+  `8ec032c2ff90aceffeb8f8cf9533fccac89d68df`, and initial published handoff
+  `e1645f03572073d00c9c9a9f96b70e9daf2d484a` are pushed and remote verified;
+  this reconciliation completes the bounded Raven elite publication tuple.
   Approval-local focused/fast gates pass again in about 0.8s/58.5s. No
-  continuation request was supplied, so public or outline registration,
-  fixtures, effects, child assets, Owl, Phoenix, release, accepted drift, and
-  a PR remain closed.
+  continuation request was supplied, and final published-state
+  focused/fast/full gates pass in about 0.8s/64.6s/123.0s. Public or outline
+  registration, fixtures, effects, child assets, Owl, Phoenix, release,
+  accepted drift, and a PR remain closed.
 - Current approved private specialist Raven published / next gate closed: on
   `codex/en-e11-raven-specialist`, based exactly on the clean, pushed current
   V3 assembler checkpoint `e7cedbc569ac0ad5c405efbf9b888e167cb8f671`, the
