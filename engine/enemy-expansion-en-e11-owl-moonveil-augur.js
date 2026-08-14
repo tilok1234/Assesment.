@@ -30,7 +30,7 @@ export const EN_E11_OWL_MOONVEIL_AUGUR_CONTRACT = deepFreeze({
   family: 'owl',
   variant: 'moonveil-augur',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E11_OWL_TOPOLOGY_DECISION.selected,
   silhouette: 'The approved compact grounded Hushmask Prowler Owl remains complete beneath connected swept crescent brow-plumes, a silver-blue facial-disk frame, layered shoulder mantle, moon-barred folded wings, throat clasp, and short tail bands. The broad round head, small hooked beak, compact feathered barrel, two body-owned wings, two separated three-toed taloned feet, and connected short fan tail remain readable in every direction. No regalia pixel floats, no human anatomy is exposed, and no effect substitutes for the Owl body.',
   identity: 'Midnight-indigo head and body plumage, blue-black wings, a pearl-silver facial disk, connected moon-silver brow-plumes and shoulder mantle, cool teal eyes and feather marks, a steel beak, slate talons, and a short silver-banded fan tail distinguish the Moonveil Augur specialist from common Hushmask Prowler.',
@@ -48,18 +48,27 @@ export const EN_E11_OWL_SPECIALIST_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_OWL_MOONVEIL_AUGUR_CONTRACT.variant,
     role: EN_E11_OWL_MOONVEIL_AUGUR_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
 });
 
 export const EN_E11_OWL_MOONVEIL_AUGUR_GATE = deepFreeze({
   id: 'en-e11-owl-moonveil-augur-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-14',
   authorizationEvidence: 'The exact Hushmask Prowler implementation e0fd0560ec93d12959d06cd30b593c82be74ffbd, approval record 0e2dbbc6f519c1e135a57686ab1e0600d0327239, initial published handoff afa265a17feca93d2bd1c49cc844c3259e751d04, and final reconciliation 0d4aff05c0ace01be69ddc2ebf8efcf79abcd394 are pushed and remote verified. The designer then supplied the fresh continuation: Let\'s do next. Under the documented Owl common, specialist, elite role order and selected baked-single-actor-grounded-facial-disk-owl topology, this fresh request authorizes exactly one private specialist Owl full 80-frame candidate. Because the role was not pre-named, this lane names only Moonveil Augur. It does not approve candidate pixels or authorize a commit, push, public or outline registration, fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift, or a pull request.',
   baseCheckpoint: '0d4aff05c0ace01be69ddc2ebf8efcf79abcd394',
   architectureDecision: EN_E11_OWL_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-14',
+  approvalEvidence: 'The final approval prompt posted the exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and Hushmask-Mournglass-Harpy comparison PNGs together with both synchronized full-suite GIFs and candidate digest 86dbba1f850c9411f8d25949f4284874eb594711f4aa8c2c09f75172b2a2addd. All four exact PNGs, all eight raw and Complete B + Form phase sheets, the transparent 20x4 inspection atlas, and both exact GIFs were inspected at original resolution and loaded through Aseprite; both GIFs validated as 640x672 four-frame animations and regeneration reproduced every frozen hash. The designer replied: Approved. Approval applies only to that exact Moonveil Augur digest and its six frozen review hashes. It does not open public or outline registration, fixtures, effects, child assets, Owl elite, Phoenix, another Bird family, release, accepted drift, or a pull request.',
+  approvedImplementation: 'e3544a7c08195d67d7bfac4a4f531bc53c0a1981',
+  publicationAuthorizedOn: '2026-08-14',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied Approved to the exact Moonveil Augur review packet. This does not authorize public or outline registration, fixtures, effects, child assets, Owl elite, Phoenix, later families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E11_OWL_HUSHMASK_PROWLER_GATE.id,
     candidateFrameDigest: EN_E11_OWL_HUSHMASK_PROWLER_GATE.candidateFrameDigest,
@@ -130,7 +139,7 @@ export const EN_E11_OWL_MOONVEIL_AUGUR_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'Stop after rendering, inspecting, freezing, and validating this exact private Moonveil Augur candidate. Explicit designer approval of the posted exact review packet or candidate digest is required before any implementation commit or push. That approval would apply only to the frozen specialist Owl pixels and would not open public or outline registration, fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift, or a pull request.',
+  nextGate: 'The exact Moonveil Augur implementation e3544a7c08195d67d7bfac4a4f531bc53c0a1981 is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Owl specialist publication tuple. No continuation request accompanied the pixel approval, so no Owl elite, Phoenix, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_OWL_MOONVEIL_AUGUR_DATA = deepFreeze({
@@ -492,7 +501,7 @@ export const EN_E11_OWL_MOONVEIL_AUGUR_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'moonveil-augur',
     scale: 6,
-    notes: 'Unapproved private specialist Owl candidate against approved Hushmask Prowler, approved Mournglass Scrier, and public Harpy Screecher. Stop after exact review-packet inspection and validation. Do not commit or push candidate pixels without explicit approval of the posted exact packet or candidate digest. Keep public or outline registration, fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift, and a pull request separate.',
+    notes: 'Approved private Moonveil Augur specialist Owl only, bound to exact implementation e3544a7c08195d67d7bfac4a4f531bc53c0a1981, candidate digest 86dbba1f850c9411f8d25949f4284874eb594711f4aa8c2c09f75172b2a2addd, and its six frozen review hashes. The designer replied Approved to the posted exact packet; no continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift, and a pull request separate.',
   },
 });
 

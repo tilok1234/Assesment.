@@ -107,16 +107,32 @@ check(
   'published Hushmask predecessor tuple drifted',
 );
 check(
-  EN_E11_OWL_MOONVEIL_AUGUR_GATE.status === 'candidate'
+  EN_E11_OWL_MOONVEIL_AUGUR_GATE.status === 'approved'
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.baseCheckpoint === '0d4aff05c0ace01be69ddc2ebf8efcf79abcd394'
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.architectureDecision === EN_E11_OWL_TOPOLOGY_DECISION.id
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.authorizationEvidence.includes("Let's do next")
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.authorizationEvidence.includes('exactly one private specialist Owl full 80-frame candidate')
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.authorizationEvidence.includes('role was not pre-named')
-    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.authorizationEvidence.includes('does not approve candidate pixels')
-    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('Explicit designer approval')
-    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('before any implementation commit or push'),
-  'Moonveil candidate authorization or stop boundary drifted',
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.authorizationEvidence.includes('does not approve candidate pixels'),
+  'Moonveil candidate authorization drifted',
+);
+check(
+  EN_E11_OWL_MOONVEIL_AUGUR_GATE.approvedOn === '2026-08-14'
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.approvalEvidence.includes('The designer replied: Approved')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.approvalEvidence.includes('86dbba1f850c9411f8d25949f4284874eb594711f4aa8c2c09f75172b2a2addd')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.approvedImplementation === 'e3544a7c08195d67d7bfac4a4f531bc53c0a1981'
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publicationAuthorizedOn === '2026-08-14'
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publishedImplementation === ''
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publishedApprovalRecord === ''
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.initialPublishedHandoff === ''
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publicationState === 'approved-not-published'
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('e3544a7c08195d67d7bfac4a4f531bc53c0a1981')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('approval record')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('No continuation request')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('outline registration'),
+  'Moonveil approval record or publication boundary drifted',
 );
 check(
   EN_E11_OWL_MOONVEIL_AUGUR_GATE.precedingApproval.gateId === EN_E11_OWL_HUSHMASK_PROWLER_GATE.id
@@ -133,9 +149,9 @@ check(
     && EN_E11_OWL_SPECIALIST_CONTRACT_CARD.precedingVariant.role === 'common'
     && EN_E11_OWL_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'moonveil-augur'
     && EN_E11_OWL_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E11_OWL_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_OWL_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_OWL_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
-    && EN_E11_OWL_MOONVEIL_AUGUR_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_OWL_MOONVEIL_AUGUR_CONTRACT.state === 'implemented-complete-motion-approved',
   'Owl specialist role contract drifted',
 );
 check(
@@ -324,7 +340,7 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E11 Owl Moonveil Augur private specialist candidate passes focused validation.');
+  console.log('EN-E11 Owl Moonveil Augur approved private specialist passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Owl identity: ' + twoFootRows + '/80 two three-toed talon rows; ' + roundOwlSpans + '/80 compact mantled Owl spans; ' + browPlumeViews + '/80 connected brow-plume silhouettes; ' + moonScreenViews + '/16 asymmetrical moon-screen views; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + headViews + '/72 head views; ' + facialDiskViews + '/54 facial-disk views; ' + moonViews + '/72 moon-silver views; ' + sigilViews + '/72 teal-mark views; ' + tailViews + '/72 short fan-tail views; ' + wingViews + '/72 wing views');
   console.log('- Distinction: Hushmask ' + differences.hushmask + '/80; Mournglass ' + differences.mournglass + '/80; Harpy ' + differences.harpy + '/80 pixel and alpha frames differ');

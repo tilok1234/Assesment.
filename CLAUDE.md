@@ -118,7 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private Owl specialist candidate / awaiting visual approval: on
+- Current approved private Owl specialist / publication in progress: on
   `codex/en-e11-owl-specialist`, based exactly on clean, pushed, remote-verified
   Hushmask final reconciliation
   `0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`, the designer's fresh `Let's do
@@ -148,10 +148,14 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   232 fixtures stay exact. The four exact PNGs, eight phase sheets, transparent
   inspection atlas, and both exact GIFs were inspected at original resolution
   and loaded through Aseprite; regeneration reproduced every frozen hash.
-  These pixels are not approved yet: stop for explicit approval of the exact
-  packet before any implementation commit or push. Public or outline
-  registration, fixtures, effects, child assets, Owl elite, Phoenix, release,
-  accepted drift, and a PR remain closed.
+  The exact four-PNG, two-GIF, digest-frozen packet was posted and the designer
+  replied `Approved`. Approval binds only to implementation
+  `e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the digest, and six frozen
+  hashes; that implementation is pushed and remote verified. Approval-local
+  focused/fast gates pass again in about 1.0s/74.4s. Commit and push only the
+  approval/handoff reconciliation. No continuation request was supplied, so
+  public or outline registration, fixtures, effects, child assets, Owl elite,
+  Phoenix, release, accepted drift, and a PR remain closed.
 - Current approved private common Owl published / next gate closed: on
   `codex/en-e11-owl-common`, based exactly on clean, pushed Gravecrown final
   reconciliation `2d5fb020541cbe936bd7f5dba33811f7a0be03e4`, the designer's

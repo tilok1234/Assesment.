@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 private Owl specialist candidate / awaiting visual approval
+Current EN-E11 approved private Owl specialist / publication in progress
 (2026-08-14): on `codex/en-e11-owl-specialist`, based exactly on clean, pushed,
 remote-verified Hushmask final reconciliation
 `0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`, the designer's fresh `Let's do
@@ -32,10 +32,14 @@ aliases/mirrors, and eight exact flashes pass. Public remains 100/316 and all
 232 fixtures stay exact. The four exact PNGs, all eight phase sheets,
 transparent inspection atlas, and both exact GIFs were inspected at original
 resolution and loaded through Aseprite; regeneration reproduced every frozen
-hash. The pixels are not approved yet. Stop for explicit approval of this exact
-packet before any implementation commit or push. Public or outline
-registration, fixtures, effects, child assets, Owl elite, Phoenix, release,
-accepted drift, and a PR remain closed.
+hash. The exact four-PNG, two-GIF, digest-frozen packet was posted and the
+designer replied `Approved`. Approval binds only to implementation
+`e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the digest, and six frozen
+hashes; that implementation is pushed and remote verified. Approval-local
+focused/fast gates pass again in about 1.0s/74.4s. Commit and push only the
+approval/handoff reconciliation. No continuation request was supplied, so
+public or outline registration, fixtures, effects, child assets, Owl elite,
+Phoenix, release, accepted drift, and a PR remain closed.
 
 Current EN-E11 approved private common Owl published / next gate closed
 (2026-08-14): on `codex/en-e11-owl-common`, based exactly on clean, pushed,

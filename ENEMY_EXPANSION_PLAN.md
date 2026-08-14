@@ -1,5 +1,41 @@
 # Enemy Expansion Plan
 
+- Current approved private Owl specialist / publication in progress
+  (2026-08-14): on `codex/en-e11-owl-specialist`, based exactly on clean,
+  pushed, remote-verified Hushmask final reconciliation
+  `0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`, the designer's fresh `Let's do
+  next` advanced the documented Owl role order from approved common to exactly
+  one private specialist full 80-frame candidate under the selected
+  `baked-single-actor-grounded-facial-disk-owl` topology. This lane names only
+  Moonveil Augur: one connected midnight-indigo Owl with a pearl-silver facial
+  disk, connected swept crescent brow-plumes, layered silver-blue shoulder
+  mantle, moon-barred wings, cool-teal eyes and feather marks, steel beak,
+  slate talons, and one short silver-banded connected fan tail. Attack braces,
+  opens an asymmetrical body-owned moon-screen, drives a hooked-beak mantle
+  press, and refolds without baked effects. Its frozen digest is
+  `86dbba1f850c9411f8d25949f4284874eb594711f4aa8c2c09f75172b2a2addd`.
+  Raw / outlined / Form / comparison PNG hashes are
+  `cfcefc24118f92bc786808f0bb9b043653b5a852a6eff9ce76e04cd75b1b93c3`,
+  `743f5afed2cf7677a2b061a06a8bb6ba45765ab16615e67277437c159699ee97`,
+  `84a4efa628dc44a71616146c0a1a875c3ece2dda2f6a0ceb409e645bd0c6f81b`,
+  and `914f1e3cfb46904a231e8897569a2dccaa85c5f22c72f640346bf04a1c7d3876`;
+  raw / Form GIF hashes are
+  `8c9160678d67e11a99e6dba1eb0cb7a4baff1bcba8de6b3c2e6698fcf47777c4`
+  and `1b2713198b363cbc841973143655d9e55d30c1f35501cecc8d0fbb2cce89c3d4`.
+  Focused/fast/full gates pass in about 1.0s/75.0s/140.7s with all 80 frames
+  connected, bounded, grounded, two-talon, compact-mantled, connected-brow,
+  and pixel-plus-alpha distinct from approved Hushmask, approved Mournglass,
+  and public Harpy. Public remains 100/316 and all 232 fixtures stay exact.
+  The complete packet was inspected at original resolution and loaded through
+  Aseprite; regeneration reproduced every frozen hash. The designer replied
+  `Approved`. Approval binds only to implementation
+  `e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the digest, and six frozen
+  hashes; that implementation is pushed and remote verified. Approval-local
+  focused/fast gates pass again in about 1.0s/74.4s. Commit and push only the
+  approval/handoff reconciliation. No continuation request was supplied, so
+  public or outline registration, fixtures, effects, child assets, Owl elite,
+  Phoenix, release, accepted drift, a PR, and every broader gate remain closed.
+
 - Current approved private common Owl published / next gate closed
   (2026-08-14): on `codex/en-e11-owl-common`, based exactly on clean, pushed,
   remote-verified Gravecrown final reconciliation
@@ -6619,7 +6655,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `owl-specialist-candidate-awaiting-visual-approval`
+- Status: `owl-specialist-approved-publication-in-progress`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 - Active family: Owl specialist
@@ -6628,16 +6664,22 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current private Owl specialist candidate / awaiting visual approval
+#### Current approved Owl specialist / publication in progress
 
 The exact Hushmask publication tuple is pushed, remote verified, and reconciled
 at `0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`. The designer's fresh `Let's do
 next` advances the documented Owl role order from approved common to exactly
 one private specialist full 80-frame candidate under the already selected
 `baked-single-actor-grounded-facial-disk-owl` topology. Because the role was
-not pre-named, this lane names only Moonveil Augur. The continuation authorizes
-candidate authoring and review only; it does not approve the pixels or authorize
-an implementation commit or push.
+not pre-named, this lane names only Moonveil Augur. The continuation authorized
+candidate authoring and review only; it did not approve the pixels or authorize
+an implementation commit or push. After the exact four-PNG, two-GIF,
+digest-frozen packet below was posted, the designer replied `Approved`. Pixel
+approval binds only to implementation
+`e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the exact digest, and six frozen
+review hashes. That implementation is pushed and remote verified. The reply
+contains no continuation request, so Owl elite, Phoenix, and every broader
+gate remain closed.
 
 Moonveil Augur is one connected compact midnight-indigo Owl with a
 pearl-silver facial disk, connected swept crescent brow-plumes, layered
@@ -6670,12 +6712,14 @@ marks, exact aliases and mirrors, and eight exact flashes pass. Opaque range is
 remains 100/316 and all 232 fixtures stay exact. The four exact PNGs, all eight
 phase sheets, transparent 20x4 inspection atlas, and both exact GIFs were
 inspected at original resolution and loaded through Aseprite. Regeneration
-reproduced every frozen hash.
+reproduced every frozen hash. Approval-local focused and fast gates pass again
+in about 1.0s and 74.4s.
 
-Stop for explicit designer approval of the exact digest-and-six-hash packet.
-Do not commit or push the candidate implementation before that approval. Public
-or outline registration, fixtures, effects, child assets, Owl elite, Phoenix,
-release, accepted drift, a PR, and every broader gate remain closed.
+Commit and push only the exact approval record, then create the initial
+published handoff and final reconciliation needed to complete Moonveil's
+bounded Owl specialist publication tuple. Public or outline registration,
+fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift,
+a PR, and every broader gate remain closed.
 
 #### Current approved Owl common published / next gate closed
 
