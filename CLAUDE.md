@@ -118,6 +118,34 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
+- Current private specialist Raven candidate / awaiting visual approval: on
+  `codex/en-e11-raven-specialist`, based exactly on the clean, pushed current
+  V3 assembler checkpoint `e7cedbc569ac0ad5c405efbf9b888e167cb8f671`, the
+  designer's fresh `awesome lets keep going` advances the documented Raven
+  order from common to exactly one private specialist full 80-frame candidate.
+  Because the role was not pre-named, this lane names only Mournglass Scrier.
+  It preserves the approved grounded folded-wing corvid beneath violet-black
+  plumage, indigo wings, a pale throat, connected moon-glass brow crest and
+  quill bars, cool-teal eyes and omen marks, two steel talons, and one notched
+  wedge tail. Attack opens a tall body-owned scrying vane and drives a precise
+  hooked-beak wing rake without baked effects. Its frozen digest is
+  `59b3b963b18edf1385fcc13252ec702cfa7d87c48ec8aaf8e34039becbfc8f1a`;
+  raw / outline / Form / comparison PNG hashes are
+  `49bbf1f8e1345ab2b36e819e6ad399bb4a8d367824127a5c6bc31d730eb95ebe`,
+  `a07638992a87b024611de68f1871d5076f71b96c1f0b5834f53b32131a5b411a`,
+  `1779a1cf763ff0211850f56cf78116f6a8ee9d546f12811000828d1ca10813b1`,
+  and `0f9b718508723b69d094aa4c6b742d8dcd558eeba19064065c90369c86df62a1`;
+  raw / Form GIF hashes are
+  `a5126e97c75c3b4e37cf9a135da44f75c112979616311017d0df601349b557c7`
+  and `60ae2796847d11995a80a438595e3fada5664b9dde3ddb410484a3677682e0fe`.
+  Focused/fast/full gates pass in about 0.5s/61.7s/109.0s: all 80 frames are
+  connected, bounded, grounded, two-talon, source-footprint preserving, and
+  distinct from approved Cinderquill, approved Mirrorfan, and public Harpy;
+  public remains 100/316 and all 232 fixtures stay exact. The four exact PNGs,
+  eight phase sheets, and transparent inspection atlas were inspected at
+  original resolution. Pixel approval is still required; no commit, push,
+  public or outline registration, fixtures, effects, child assets, Raven elite,
+  Owl, Phoenix, release, accepted drift, or PR is open.
 - Current approved private common Raven published / next gate closed: on
   `codex/en-e11-raven-common`, based exactly on clean, pushed, remote-verified
   Crowncoil final reconciliation

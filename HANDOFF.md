@@ -23,6 +23,65 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Private Candidate - Mournglass Scrier / Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-raven-specialist`, based exactly on the clean, pushed current
+   V3 assembler checkpoint `e7cedbc569ac0ad5c405efbf9b888e167cb8f671`.
+2. Cinderquill Scavenger's exact implementation, approval record, initial
+   published handoff, and final reconciliation
+   `a56211531caaa55be96979af2f53aafaa08c1067` are pushed and remote verified.
+   After its approved suite was integrated into the current assembler, the
+   designer supplied the fresh continuation `awesome lets keep going`. Under
+   the documented Raven common / specialist / elite order, that opens exactly
+   one private specialist Raven full 80-frame candidate under the already
+   selected `baked-single-actor-grounded-folded-wing-corvid` topology. Because
+   the role was not pre-named, this lane names only Mournglass Scrier.
+3. Mournglass Scrier preserves the complete approved compact grounded Raven
+   beneath violet-black plumage, indigo-slate wings, a pale mourning throat,
+   connected silver moon-glass brow crest and quill bars, cool-teal eyes and
+   omen marks, a steel beak, two dark-steel talons, and one connected notched
+   wedge tail. Attack braces on both talons, opens the body-owned wings into a
+   tall scrying vane, drives a precise hooked-beak wing rake, and refolds. Cast
+   aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2. Omen rings, scrying
+   panes, shadow wisps, loose feathers, dust, glow, projectiles, air blades,
+   and impacts stay external.
+4. The frozen 80-frame candidate digest is
+   `59b3b963b18edf1385fcc13252ec702cfa7d87c48ec8aaf8e34039becbfc8f1a`.
+   Raw / distinct Complete B outlined / Complete B + Form / Cinderquill-
+   Mirrorfan-Harpy comparison PNG hashes are
+   `49bbf1f8e1345ab2b36e819e6ad399bb4a8d367824127a5c6bc31d730eb95ebe`,
+   `a07638992a87b024611de68f1871d5076f71b96c1f0b5834f53b32131a5b411a`,
+   `1779a1cf763ff0211850f56cf78116f6a8ee9d546f12811000828d1ca10813b1`,
+   and `0f9b718508723b69d094aa4c6b742d8dcd558eeba19064065c90369c86df62a1`.
+   Raw and Complete B + Form GIF hashes are
+   `a5126e97c75c3b4e37cf9a135da44f75c112979616311017d0df601349b557c7`
+   and `60ae2796847d11995a80a438595e3fada5664b9dde3ddb410484a3677682e0fe`.
+5. Focused validation passes 80/80 connected, bounded, grounded, two-talon,
+   compact-corvid, and approved-source-footprint frames; 16/16 scrying-vane
+   attack/cast views; 54/54 expected eye-and-beak views; 72/72 moon-glass,
+   omen-mark, throat, tail, and wing views; 8/8 exact `#f4f4f4` flashes; exact
+   aliases and side mirrors; and 80/80 pixel-plus-alpha distinctions from
+   approved Cinderquill Scavenger, approved Mirrorfan Ambusher, and public
+   Harpy Screecher. Opaque range is 181-300. Complete B adds 8,016 outline
+   pixels and Form changes 6,906 pixels. Focused / fast / full validation
+   passes in about 0.5s / 61.7s / 109.0s. Public remains 100/316, all 232
+   fixtures stay exact, and child assets, effects, public registration, and
+   outline registration remain zero for this lane.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-raven-mournglass-scrier/`. The raw,
+   outlined, Complete B + Form, and family-comparison PNGs, all four raw phase
+   sheets, all four Complete B + Form phase sheets, and the transparent 20x4
+   inspection atlas were loaded and inspected at original resolution. Regenerate
+   with `npm.cmd run review:enemy-expansion-en-e11-raven-mournglass-scrier`
+   and run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-raven-mournglass-scrier`.
+7. Stop for explicit designer approval of the posted exact review packet or
+   candidate digest. Do not commit or push candidate pixels before that
+   approval. Do not register it publicly or for outlines, regenerate fixtures,
+   add effects or child assets, begin Raven elite, Owl, or Phoenix, release,
+   accept drift, or open a PR.
+
 ## Current Integration Checkpoint - 22 Approved Suites And V2 Launcher
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
