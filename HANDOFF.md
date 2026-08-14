@@ -23,6 +23,66 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Candidate - Gravecrown Harrower / Visual Approval Pending
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-raven-elite`, based exactly on clean, pushed Mournglass final
+   reconciliation `d12e42ceb0375a39c60de3f4253aeaa5ac0306ae`.
+2. Mournglass Scrier's exact implementation
+   `ca79bdeced0161f720775e405416d98cd809314f`, approval record
+   `5e50ad8bf12e6782800be71a7e7613684fc7bb49`, initial published handoff
+   `930d589f4ab77598bbd11fe925a838b99e52556d`, and final reconciliation are
+   pushed. The designer's fresh `lets do next` advances the documented Raven
+   common / specialist / elite order by exactly one private elite full
+   80-frame candidate under the selected
+   `baked-single-actor-grounded-folded-wing-corvid` topology. Because the role
+   was not pre-named, this lane names only Gravecrown Harrower. This request
+   does not approve its pixels or open any later gate.
+3. Gravecrown Harrower is one connected broad obsidian-black corvid with
+   oxblood and iron-violet plated mantle wings, a bone-ivory throat gorget,
+   attached antique-gold three-pronged gravecrown and wing clasps, ember-gold
+   eyes, a bronze hooked beak and talons, crimson seal marks, and a connected
+   barbed black wedge tail. Attack braces on both talons, raises the body-owned
+   mantle into a full gravegate, drives a hooked-beak and plated-shoulder
+   harrow press, and refolds. Cast aliases Attack exactly; Death aliases Hurt
+   H1,H2,H2,H2. Loose feathers, seal flares, shadow wisps, dust, glow,
+   projectiles, air blades, and impacts stay external.
+4. The frozen 80-frame candidate digest is
+   `06892d2e8583a2c7ba2dc06aca12a94007230801b645db478cac187e538465d9`.
+   Raw / distinct Complete B outlined / Complete B + Form / Cinderquill-
+   Mournglass-Harpy comparison PNG hashes are
+   `feca6ff1f3a6fb840e76d7da463894ddd548f1560b2d15e9f7ec7749cdfb6aa3`,
+   `94046507e0e3fa003b0681263cbecc5d099216f70497f986d48cf69ff9c9ad5e`,
+   `8ee08b4c7f9df7f0d384aee3fd2ded305b472d3283ef61285dccf42392ff7d69`,
+   and `d2b8593807344b48b0e4aa0ab05d9fc03aaf2aa0df378e7a4d41c53d923a696e`.
+   Raw and Complete B + Form GIF hashes are
+   `10b714ebab2cd2b480b5012c2104f7fc7a0b07706103b5398943c600409bf73d`
+   and `3138fd5a34201b6bdaf96263f77d39d1f5264b7e3cd072cabdfe9a3aff9def6b`.
+5. Focused validation passes 80/80 connected, bounded, grounded, two-talon,
+   broad-elite, and approved-source-footprint frames; 16/16 gravegate
+   attack/cast views; 54/54 expected eye-bearing views; 72/72 gravecrown,
+   crimson-seal, and mantle-wing views; 8/8 exact `#f4f4f4` flashes; exact
+   aliases and side mirrors; and 80/80 pixel-plus-alpha distinctions from
+   approved Cinderquill Scavenger, approved Mournglass Scrier, and public
+   Harpy Screecher. Opaque range is 205-334. Complete B adds 8,620 outline
+   pixels and Form changes 8,723 pixels. Focused / fast / full validation
+   passes in about 0.9s / 69.7s / 108.8s. Public remains 100/316, all 232
+   fixtures stay exact, and child assets, effects, public registration, and
+   outline registration remain zero for this lane.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-raven-gravecrown-harrower/`. The raw,
+   outlined, Complete B + Form, and family-comparison PNGs, all four raw phase
+   sheets, all four Complete B + Form phase sheets, the transparent 20x4
+   inspection atlas, and both exact GIFs were inspected at original resolution
+   and in Aseprite. Regeneration reproduced every frozen hash. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e11-raven-gravecrown-harrower` and
+   run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-raven-gravecrown-harrower`.
+7. Stop for explicit visual approval of the exact digest-and-hash-frozen
+   packet. The candidate remains uncommitted and unpushed. Do not register it
+   publicly or for outlines, regenerate fixtures, add effects or child assets,
+   begin Owl or Phoenix, release, accept drift, or open a PR.
+
 ## Current Published Checkpoint - Mournglass Scrier / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch

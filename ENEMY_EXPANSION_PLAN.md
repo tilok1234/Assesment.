@@ -1,5 +1,45 @@
 # Enemy Expansion Plan
 
+- Current private elite Raven candidate / visual approval pending
+  (2026-08-14): on `codex/en-e11-raven-elite`, based exactly on clean, pushed
+  Mournglass final reconciliation
+  `d12e42ceb0375a39c60de3f4253aeaa5ac0306ae`, the designer's fresh `lets do
+  next` advances the documented Raven role order from approved specialist to
+  exactly one private elite full 80-frame candidate under the selected
+  `baked-single-actor-grounded-folded-wing-corvid` topology. Because the role
+  was not pre-named, this lane names only Gravecrown Harrower. It is one
+  connected broad obsidian-black corvid with oxblood and iron-violet plated
+  mantle wings, a bone-ivory throat gorget, attached antique-gold
+  three-pronged gravecrown and wing clasps, ember-gold eyes, a bronze hooked
+  beak and talons, crimson seal marks, and one connected barbed black wedge
+  tail. Attack braces on both talons, raises a full body-owned gravegate,
+  drives a hooked-beak and plated-shoulder harrow press, and refolds. Loose
+  feathers, seal flares, shadow wisps, dust, glow, projectiles, air blades, and
+  impacts remain external. Its frozen digest is
+  `06892d2e8583a2c7ba2dc06aca12a94007230801b645db478cac187e538465d9`.
+  Raw / distinct Complete B outlined / Complete B + Form / Cinderquill-
+  Mournglass-Harpy comparison PNG hashes are
+  `feca6ff1f3a6fb840e76d7da463894ddd548f1560b2d15e9f7ec7749cdfb6aa3`,
+  `94046507e0e3fa003b0681263cbecc5d099216f70497f986d48cf69ff9c9ad5e`,
+  `8ee08b4c7f9df7f0d384aee3fd2ded305b472d3283ef61285dccf42392ff7d69`,
+  and `d2b8593807344b48b0e4aa0ab05d9fc03aaf2aa0df378e7a4d41c53d923a696e`;
+  raw / Form GIF hashes are
+  `10b714ebab2cd2b480b5012c2104f7fc7a0b07706103b5398943c600409bf73d`
+  and `3138fd5a34201b6bdaf96263f77d39d1f5264b7e3cd072cabdfe9a3aff9def6b`.
+  Focused/fast/full gates pass in about 0.9s/69.7s/108.8s: 80/80 connected,
+  bounded, grounded, two-talon, broad-elite, approved-source-footprint frames;
+  16/16 gravegate views; 54/54 expected eye views; 72/72 gravecrown,
+  crimson-seal, and mantle-wing views; 8/8 exact flashes; exact aliases and
+  mirrors; and 80/80 pixel-plus-alpha distinctions from approved Cinderquill,
+  approved Mournglass, and public Harpy. Opaque range is 205-334, Complete B
+  adds 8,620 outline pixels, and Form changes 8,723 pixels. Public remains
+  100/316 and all 232 fixtures stay exact. All four exact PNGs, eight phase
+  sheets, the transparent inspection atlas, and both exact GIFs were inspected
+  at original resolution and in Aseprite; regeneration reproduced every hash.
+  This exact candidate is uncommitted and unpushed pending explicit designer
+  approval. Registration, fixtures, effects, child assets, Owl, Phoenix,
+  release, accepted drift, a PR, and every broader gate remain closed.
+
 - Current approved private specialist Raven published / next gate closed
   (2026-08-14): on `codex/en-e11-raven-specialist`, based exactly on clean,
   pushed current V3 assembler checkpoint

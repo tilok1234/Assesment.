@@ -2,6 +2,42 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
+Current EN-E11 private elite Raven candidate / visual approval pending
+(2026-08-14): on `codex/en-e11-raven-elite`, based exactly on clean, pushed
+Mournglass final reconciliation
+`d12e42ceb0375a39c60de3f4253aeaa5ac0306ae`, the designer's fresh `lets do
+next` advances the documented Raven order to exactly one private elite full
+80-frame candidate under the selected
+`baked-single-actor-grounded-folded-wing-corvid` topology. Because the role
+was not pre-named, this lane names only Gravecrown Harrower. It is one
+connected broad obsidian-black corvid with oxblood and iron-violet plated
+mantle wings, a bone-ivory throat gorget, attached antique-gold three-pronged
+gravecrown and wing clasps, ember-gold eyes, a bronze hooked beak and talons,
+crimson seal marks, and a connected barbed black wedge tail. Attack braces on
+both talons, raises a full body-owned gravegate, drives a hooked-beak and
+plated-shoulder harrow press, and refolds without baked effects. Its frozen
+digest is
+`06892d2e8583a2c7ba2dc06aca12a94007230801b645db478cac187e538465d9`.
+Raw / outlined / Form / comparison PNG hashes are
+`feca6ff1f3a6fb840e76d7da463894ddd548f1560b2d15e9f7ec7749cdfb6aa3`,
+`94046507e0e3fa003b0681263cbecc5d099216f70497f986d48cf69ff9c9ad5e`,
+`8ee08b4c7f9df7f0d384aee3fd2ded305b472d3283ef61285dccf42392ff7d69`,
+and `d2b8593807344b48b0e4aa0ab05d9fc03aaf2aa0df378e7a4d41c53d923a696e`;
+raw / Form GIF hashes are
+`10b714ebab2cd2b480b5012c2104f7fc7a0b07706103b5398943c600409bf73d`
+and `3138fd5a34201b6bdaf96263f77d39d1f5264b7e3cd072cabdfe9a3aff9def6b`.
+Focused/fast/full validation passes in about 0.9s/69.7s/108.8s: all 80
+frames are connected, bounded, grounded, two-talon, broad-elite,
+source-footprint preserving, and pixel-plus-alpha distinct from approved
+Cinderquill, approved Mournglass, and public Harpy; all 16 gravegate views and
+exact aliases/mirrors pass. Public remains 100/316 and all 232 fixtures stay
+exact. The four exact PNGs, all eight raw/Form phase sheets, the transparent
+inspection atlas, and both exact GIFs were inspected at original resolution
+and in Aseprite; regeneration reproduced every hash. The exact candidate is
+uncommitted and unpushed pending explicit visual approval. Public or outline
+registration, fixtures, effects, child assets, Owl, Phoenix, release, accepted
+drift, and a PR remain closed.
+
 Current EN-E11 approved private specialist Raven published / next gate closed
 (2026-08-14): on `codex/en-e11-raven-specialist`, based exactly on the clean,
 pushed current V3 assembler checkpoint
