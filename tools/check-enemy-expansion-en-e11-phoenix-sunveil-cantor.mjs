@@ -168,11 +168,12 @@ check(
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publishedImplementation === 'f1fb03eedad0537d6999b3e0346ef689ba052ac0'
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publishedApprovalRecord === '017e889275377cee23c5db57486a949bed3caa70'
-    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.initialPublishedHandoff === ''
-    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.initialPublishedHandoff === '3dd15852f6d7664febaa0610b797f589703e6ab6'
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publicationState === 'published'
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('f1fb03eedad0537d6999b3e0346ef689ba052ac0')
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('017e889275377cee23c5db57486a949bed3caa70')
-    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('initial published handoff')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('3dd15852f6d7664febaa0610b797f589703e6ab6')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('completes the bounded Phoenix specialist publication tuple')
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('no continuation clause')
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('outline registration'),
   'Sunveil approval record or publication boundary drifted',
@@ -192,7 +193,7 @@ check(
     && EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.precedingVariant.role === 'common'
     && EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'sunveil-cantor'
     && EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && JSON.stringify(EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_CONTRACT.state === 'implemented-complete-motion-approved',
   'Phoenix specialist role contract drifted',

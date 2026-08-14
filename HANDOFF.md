@@ -23,13 +23,14 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Published Phoenix Specialist / Handoff Reconciliation In Progress
+## Next Chat Start Here - Published Phoenix Specialist / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-phoenix-specialist`. The exact revised Sunveil Cantor
-   implementation `f1fb03eedad0537d6999b3e0346ef689ba052ac0` and approval
-   record `017e889275377cee23c5db57486a949bed3caa70` are pushed and remote
-   verified. Only the initial published handoff and final reconciliation remain.
+   implementation `f1fb03eedad0537d6999b3e0346ef689ba052ac0`, approval record
+   `017e889275377cee23c5db57486a949bed3caa70`, and initial published handoff
+   `3dd15852f6d7664febaa0610b797f589703e6ab6` are pushed and remote verified;
+   this reconciliation completes the bounded specialist publication tuple.
 2. The immutable implementation contains exactly the intended nine-file source
    and documentation scope. Current and rejected-v1 review artifacts remain
    ignored, all 232 fixtures remain untouched, and there is no temporary
@@ -42,8 +43,8 @@ gate.
    digest-frozen v2 packet below was shown, the designer replied `approved`.
    Pixel approval binds only to implementation
    `f1fb03eedad0537d6999b3e0346ef689ba052ac0`, the exact digest, and six frozen
-   review hashes. The implementation and approval record are pushed and remote
-   verified. The reply contains no continuation clause, so elite Phoenix
+   review hashes. The exact publication tuple is pushed and remote verified.
+   The reply contains no continuation clause, so elite Phoenix
    work and every later gate remain closed. Registration, fixtures, outline
    enrollment, effects, child assets, another family, release, accepted drift,
    and a PR remain closed.
@@ -90,8 +91,9 @@ gate.
    cells and no boundary contact. Regeneration reproduces all six hashes, and
    Aseprite parsed all six principal files. Internal visual QA accepted the
    exact packet and the designer approved it.
-9. Create and push only the initial published handoff and final reconciliation.
-   Do not register, regenerate fixtures, add outline
+9. Final published-state focused and full gates pass again. Stop: no next
+   Phoenix role or family is open. A fresh explicit continuation is required
+   before later work begins. Do not register, regenerate fixtures, add outline
    enrollment, effects, or child assets, begin egg/ash resurrection or flight-
    state art, open elite Phoenix or another family, release, accept drift, or
    open a PR. Never use `--accept-drift` or hand-edit fixtures.
