@@ -280,6 +280,8 @@
     "check:enemy-expansion-repairs": "node tools/check-enemy-expansion-repairs.mjs",
     "export:enemies:all-outlines": "node tools/export-all-enemy-outline-pack.mjs",
     "check:export:enemies:all-outlines": "node tools/check-all-enemy-outline-pack.mjs",
+    "export:enemies:approved-expansion": "node tools/export-approved-expansion-enemy-pack.mjs",
+    "check:export:enemies:approved-expansion": "node tools/export-approved-expansion-enemy-pack.mjs --verify-only",
     "export:actors:complete-b": "node tools/export-complete-b-actor-pack.mjs",
     "check:export:actors:complete-b": "node tools/check-complete-b-actor-pack.mjs",
     "export:bosses:13": "node tools/export-established-boss-pack.mjs",
