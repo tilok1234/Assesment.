@@ -112,7 +112,7 @@ check(
   'approved Raven topology decision drifted',
 );
 check(
-  EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.status === 'candidate'
+  EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.status === 'approved'
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.baseCheckpoint === 'd12e42ceb0375a39c60de3f4253aeaa5ac0306ae'
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.architectureDecision === EN_E11_RAVEN_TOPOLOGY_DECISION.id,
   'Gravecrown candidate gate identity or base checkpoint drifted',
@@ -125,9 +125,22 @@ check(
   'Gravecrown authorization evidence drifted',
 );
 check(
-  !('approvedOn' in EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE)
-    && !('publicationState' in EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE),
-  'Gravecrown candidate publication boundary drifted',
+  EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.approvedOn === '2026-08-14'
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.approvalEvidence.includes('The designer replied: approved')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.approvalEvidence.includes('06892d2e8583a2c7ba2dc06aca12a94007230801b645db478cac187e538465d9')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.approvedImplementation === '4d05b1f4f0ff5113bb31c4ac7011a393b6d877be'
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publicationAuthorizedOn === '2026-08-14'
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publishedImplementation === ''
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publishedApprovalRecord === ''
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.initialPublishedHandoff === ''
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('4d05b1f4f0ff5113bb31c4ac7011a393b6d877be')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('approval record')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('No continuation request')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('outline registration'),
+  'Gravecrown approval record or publication boundary drifted',
 );
 check(
   EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.precedingApproval.gateId === EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.id
@@ -143,9 +156,9 @@ check(
     && EN_E11_RAVEN_ELITE_CONTRACT_CARD.precedingVariant.id === 'mournglass-scrier'
     && EN_E11_RAVEN_ELITE_CONTRACT_CARD.activeVariant.id === 'gravecrown-harrower'
     && EN_E11_RAVEN_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E11_RAVEN_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_RAVEN_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E11_RAVEN_ELITE_CONTRACT_CARD.deferredRoles.length === 0
-    && EN_E11_RAVEN_GRAVECROWN_HARROWER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Raven elite role contract drifted',
 );
 check(
@@ -157,8 +170,8 @@ check(
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.exclusions.includes('registration')
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.exclusions.includes('fixtures')
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.exclusions.includes('Owl')
-    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('Explicit designer approval')
-    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('before any implementation commit or push'),
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('No continuation request')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('no Owl'),
   'Gravecrown anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(

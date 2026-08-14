@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Candidate - Gravecrown Harrower / Visual Approval Pending
+## Current Approved Checkpoint - Gravecrown Harrower / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-raven-elite`, based exactly on clean, pushed Mournglass final
@@ -36,8 +36,14 @@ gate.
    common / specialist / elite order by exactly one private elite full
    80-frame candidate under the selected
    `baked-single-actor-grounded-folded-wing-corvid` topology. Because the role
-   was not pre-named, this lane names only Gravecrown Harrower. This request
-   does not approve its pixels or open any later gate.
+   was not pre-named, this lane names only Gravecrown Harrower. After the exact
+   four-PNG, two-GIF, digest-frozen packet below was shown, the designer replied
+   `approved`. Pixel approval binds only to implementation
+   `4d05b1f4f0ff5113bb31c4ac7011a393b6d877be`, the exact digest, and six
+   frozen review hashes. That implementation is pushed and remote verified.
+   The reply contains no continuation request, so Owl, Phoenix, public or
+   outline registration, fixtures, effects, child assets, release, accepted
+   drift, and a PR remain closed.
 3. Gravecrown Harrower is one connected broad obsidian-black corvid with
    oxblood and iron-violet plated mantle wings, a bone-ivory throat gorget,
    attached antique-gold three-pronged gravecrown and wing clasps, ember-gold
@@ -68,7 +74,8 @@ gate.
    pixels and Form changes 8,723 pixels. Focused / fast / full validation
    passes in about 0.9s / 69.7s / 108.8s. Public remains 100/316, all 232
    fixtures stay exact, and child assets, effects, public registration, and
-   outline registration remain zero for this lane.
+   outline registration remain zero for this lane. Approval-local focused and
+   fast gates pass again in about 0.8s and 58.5s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-raven-gravecrown-harrower/`. The raw,
    outlined, Complete B + Form, and family-comparison PNGs, all four raw phase
@@ -78,10 +85,11 @@ gate.
    `npm.cmd run review:enemy-expansion-en-e11-raven-gravecrown-harrower` and
    run the focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-raven-gravecrown-harrower`.
-7. Stop for explicit visual approval of the exact digest-and-hash-frozen
-   packet. The candidate remains uncommitted and unpushed. Do not register it
-   publicly or for outlines, regenerate fixtures, add effects or child assets,
-   begin Owl or Phoenix, release, accept drift, or open a PR.
+7. Commit and push only the exact approval record, then create the initial
+   published handoff and final reconciliation needed to complete Gravecrown's
+   bounded publication tuple. Do not register it publicly or for outlines,
+   regenerate fixtures, add effects or child assets, begin Owl or Phoenix,
+   release, accept drift, or open a PR.
 
 ## Current Published Checkpoint - Mournglass Scrier / Next Gate Closed
 

@@ -1,6 +1,6 @@
 # Enemy Expansion Plan
 
-- Current private elite Raven candidate / visual approval pending
+- Current approved private elite Raven / publication in progress
   (2026-08-14): on `codex/en-e11-raven-elite`, based exactly on clean, pushed
   Mournglass final reconciliation
   `d12e42ceb0375a39c60de3f4253aeaa5ac0306ae`, the designer's fresh `lets do
@@ -36,9 +36,14 @@
   100/316 and all 232 fixtures stay exact. All four exact PNGs, eight phase
   sheets, the transparent inspection atlas, and both exact GIFs were inspected
   at original resolution and in Aseprite; regeneration reproduced every hash.
-  This exact candidate is uncommitted and unpushed pending explicit designer
-  approval. Registration, fixtures, effects, child assets, Owl, Phoenix,
-  release, accepted drift, a PR, and every broader gate remain closed.
+  The exact four-PNG, two-GIF, digest-frozen packet was posted and the designer
+  replied `approved`. Approval binds only to implementation
+  `4d05b1f4f0ff5113bb31c4ac7011a393b6d877be`, the digest, and six frozen
+  hashes; that implementation is pushed and remote verified. Approval-local
+  focused/fast gates pass again in about 0.8s/58.5s. Commit and push only the
+  approval/handoff reconciliation. No continuation request was supplied, so
+  registration, fixtures, effects, child assets, Owl, Phoenix, release,
+  accepted drift, a PR, and every broader gate remain closed.
 
 - Current approved private specialist Raven published / next gate closed
   (2026-08-14): on `codex/en-e11-raven-specialist`, based exactly on clean,

@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 private elite Raven candidate / visual approval pending
+Current EN-E11 approved private elite Raven / publication in progress
 (2026-08-14): on `codex/en-e11-raven-elite`, based exactly on clean, pushed
 Mournglass final reconciliation
 `d12e42ceb0375a39c60de3f4253aeaa5ac0306ae`, the designer's fresh `lets do
@@ -33,10 +33,15 @@ Cinderquill, approved Mournglass, and public Harpy; all 16 gravegate views and
 exact aliases/mirrors pass. Public remains 100/316 and all 232 fixtures stay
 exact. The four exact PNGs, all eight raw/Form phase sheets, the transparent
 inspection atlas, and both exact GIFs were inspected at original resolution
-and in Aseprite; regeneration reproduced every hash. The exact candidate is
-uncommitted and unpushed pending explicit visual approval. Public or outline
-registration, fixtures, effects, child assets, Owl, Phoenix, release, accepted
-drift, and a PR remain closed.
+and in Aseprite; regeneration reproduced every hash. The exact four-PNG,
+two-GIF, digest-frozen packet was posted and the designer replied `approved`.
+Approval binds only to implementation
+`4d05b1f4f0ff5113bb31c4ac7011a393b6d877be`, the digest, and six frozen
+hashes; that implementation is pushed and remote verified. Approval-local
+focused/fast gates pass again in about 0.8s/58.5s. Commit and push only the
+approval/handoff reconciliation. No continuation request was supplied, so
+public or outline registration, fixtures, effects, child assets, Owl, Phoenix,
+release, accepted drift, and a PR remain closed.
 
 Current EN-E11 approved private specialist Raven published / next gate closed
 (2026-08-14): on `codex/en-e11-raven-specialist`, based exactly on the clean,
