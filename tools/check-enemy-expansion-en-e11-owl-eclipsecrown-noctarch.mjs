@@ -112,7 +112,7 @@ check(
   'approved Owl topology decision drifted',
 );
 check(
-  EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.status === 'candidate'
+  EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.status === 'approved'
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.baseCheckpoint === '20311d040ac086ecff950c3da2a57e330c13b875'
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.architectureDecision === EN_E11_OWL_TOPOLOGY_DECISION.id,
   'Eclipsecrown candidate gate identity or base checkpoint drifted',
@@ -125,9 +125,22 @@ check(
   'Eclipsecrown authorization evidence drifted',
 );
 check(
-  !('approvedOn' in EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE)
-    && !('publicationState' in EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE),
-  'Eclipsecrown candidate publication boundary drifted',
+  EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.approvedOn === '2026-08-14'
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.approvalEvidence.includes('The designer replied: Approved')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.approvalEvidence.includes('c2e1e1108ba71d118a1bd169fe81a4745f37c3f96cb89eed1d18033356dc8b6d')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.approvedImplementation === 'c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2'
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publicationAuthorizedOn === '2026-08-14'
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publishedImplementation === ''
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publishedApprovalRecord === ''
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.initialPublishedHandoff === ''
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publicationState === 'approved-not-published'
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('approval record')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('No continuation request')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('outline registration'),
+  'Eclipsecrown approval record or publication boundary drifted',
 );
 check(
   EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.precedingApproval.gateId === EN_E11_OWL_MOONVEIL_AUGUR_GATE.id
@@ -143,9 +156,9 @@ check(
     && EN_E11_OWL_ELITE_CONTRACT_CARD.precedingVariant.id === 'moonveil-augur'
     && EN_E11_OWL_ELITE_CONTRACT_CARD.activeVariant.id === 'eclipsecrown-noctarch'
     && EN_E11_OWL_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E11_OWL_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_OWL_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E11_OWL_ELITE_CONTRACT_CARD.deferredRoles.length === 0
-    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_CONTRACT.state === 'implemented-complete-motion-approved',
   'Owl elite role contract drifted',
 );
 check(
@@ -157,8 +170,8 @@ check(
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.exclusions.includes('registration')
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.exclusions.includes('fixtures')
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.exclusions.includes('Phoenix')
-    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('Explicit designer approval')
-    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('before any implementation commit or push'),
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('No continuation request')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('outline registration'),
   'Eclipsecrown anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(
@@ -338,7 +351,7 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E11 Owl Eclipsecrown Noctarch private elite candidate passes focused validation.');
+  console.log('EN-E11 Owl Eclipsecrown Noctarch approved private elite passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; source footprint ' + sourceFootprints + '/80; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Owl identity: ' + twoFootRows + '/80 two three-toed talon rows; ' + broadEliteSpans + '/80 broad elite spans; ' + eclipsegateViews + '/16 eclipse-gate views; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + diskViews + '/72 ivory-disk views; ' + crownViews + '/72 eclipse-crown views; ' + sealViews + '/72 corona-bar views; ' + wingViews + '/72 mantle-wing views');
   console.log('- Distinction: Hushmask ' + differences.hushmask + '/80; Moonveil ' + differences.moonveil + '/80; Harpy ' + differences.harpy + '/80 pixel and alpha frames differ');

@@ -118,7 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private Owl elite candidate / awaiting visual approval: on
+- Current approved private Owl elite / publication in progress: on
   `codex/en-e11-owl-elite`, based exactly on the clean, pushed,
   remote-verified Moonveil final reconciliation
   `20311d040ac086ecff950c3da2a57e330c13b875`, the designer's fresh `Let's do
@@ -141,20 +141,25 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   raw / Form GIF hashes are
   `ad500e727a8ee6c19376dcb39e76a01cf3de37bb736daaf9002c3dc65b903a90`
   and `02d6b55b78672fbe693bad315c1f14761761c06e664124fd92dbe74ef6df270a`.
+  The exact four-PNG, two-GIF, digest-frozen packet was posted and the designer
+  replied `Approved`. Approval binds only to implementation
+  `c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2`, the digest, and six frozen
+  hashes. That implementation is pushed and remote verified; only the bounded
+  approval record, initial published handoff, and final reconciliation remain.
   Focused/fast/full gates pass in about 1.0s/78.4s/147.7s: all 80 frames are
   connected, bounded, grounded, two-talon, broad-elite, source-footprint
   preserving, and pixel-plus-alpha distinct from approved Hushmask, approved
   Moonveil, and public Harpy; all 16 eclipse-gate views, expected identity
   marks, exact aliases/mirrors, and eight exact flashes pass. Public remains
-  100/316 and all 232 fixtures stay exact. The four exact PNGs, all eight phase
+  100/316 and all 232 fixtures stay exact. Approval-local focused/fast gates
+  pass again in about 0.7s/74.6s. The four exact PNGs, all eight phase
   sheets, transparent inspection atlas, and both exact GIFs were inspected at
   original resolution; Aseprite parsed all six principal files, and
-  regeneration reproduced every frozen hash. The visual QA verdict is accept,
-  but the designer has not approved these pixels. No candidate commit or push
-  exists. Explicit approval of this exact packet or digest is required before
-  its bounded implementation may be committed and pushed; registration,
-  fixtures, effects, child assets, Phoenix, another family, release, accepted
-  drift, and a PR remain closed.
+  regeneration reproduced every frozen hash. No continuation request
+  accompanied the pixel approval. Commit and push only the approval record and
+  handoff reconciliation needed to complete this bounded publication tuple;
+  registration, fixtures, effects, child assets, Phoenix, another family,
+  release, accepted drift, and a PR remain closed.
 - Current approved private Owl specialist published / next gate closed: on
   `codex/en-e11-owl-specialist`, based exactly on clean, pushed, remote-verified
   Hushmask final reconciliation

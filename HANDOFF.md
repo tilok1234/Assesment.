@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Private Candidate - Eclipsecrown Noctarch / Awaiting Visual Approval
+## Current Approved Checkpoint - Eclipsecrown Noctarch / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-owl-elite`, based exactly on clean, pushed, remote-verified
@@ -35,9 +35,14 @@ gate.
    under the already selected
    `baked-single-actor-grounded-facial-disk-owl` topology. Because the role was
    not pre-named, this lane names only Eclipsecrown Noctarch. This continuation
-   does not approve its pixels or authorize an implementation commit, push,
+   did not approve its pixels or authorize an implementation commit, push,
    public or outline registration, fixtures, effects, child assets, Phoenix,
-   another family, release, accepted drift, or a PR.
+   another family, release, accepted drift, or a PR. After the exact four-PNG,
+   two-GIF, digest-frozen packet below was shown, the designer replied
+   `Approved`. Pixel approval binds only to implementation
+   `c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2`, the exact digest, and six
+   frozen review hashes. That implementation is pushed and remote verified.
+   The reply contains no continuation request.
 3. Eclipsecrown Noctarch is one connected broad elite Owl with an
    obsidian-black and ecliptic-violet body, broad ivory-and-gold facial disk
    and throat gorget, connected antique-gold three-pronged eclipse crown,
@@ -69,7 +74,8 @@ gate.
    outline pixels and Form changes 9,222 pixels. Focused, fast, and full
    validation pass in about 1.0s, 78.4s, and 147.7s. Public remains 100/316,
    all 232 fixtures stay exact, and child assets, effects, public registration,
-   and outline registration remain zero for this lane.
+   and outline registration remain zero for this lane. Approval-local focused
+   and fast gates pass again in about 0.7s and 74.6s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-owl-eclipsecrown-noctarch/`. The raw,
    outlined, Complete B + Form, and family-comparison PNGs, all four raw phase
@@ -82,12 +88,13 @@ gate.
    `npm.cmd run review:enemy-expansion-en-e11-owl-eclipsecrown-noctarch` and
    run the focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-owl-eclipsecrown-noctarch`.
-7. Internal visual QA accepts the exact packet for approval: the crown and
-   ivory disk retain the focal hierarchy, the silhouette reads as elite in all
+7. Internal visual QA accepted the exact packet: the crown and ivory disk
+   retain the focal hierarchy, the silhouette reads as elite in all
    directions, rear views remove facial features, and the A2 eclipse gate to
-   A3 crown press reads clearly without clipping or floating geometry. Stop
-   here. The designer must explicitly approve this exact packet or digest
-   before any candidate commit or push. Do not register it publicly or for
+   A3 crown press reads clearly without clipping or floating geometry. The
+   designer's `Approved` reply authorizes only the bounded approval record,
+   initial published handoff, final reconciliation, and branch pushes needed
+   to complete this publication tuple. Do not register it publicly or for
    outlines, regenerate fixtures, add effects or child assets, begin Phoenix
    or another family, release, accept drift, or open a PR.
 

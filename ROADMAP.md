@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 private Owl elite candidate / awaiting visual approval
+Current EN-E11 approved private Owl elite / publication in progress
 (2026-08-14): on `codex/en-e11-owl-elite`, based exactly on the clean, pushed,
 remote-verified Moonveil final reconciliation
 `20311d040ac086ecff950c3da2a57e330c13b875`, the designer's fresh `Let's do
@@ -25,19 +25,24 @@ and `fc5ec424acd79bb9af187ae66bbc6ca479784f46dfa7d78a3ffc3e8c534d3450`;
 raw / Form GIF hashes are
 `ad500e727a8ee6c19376dcb39e76a01cf3de37bb736daaf9002c3dc65b903a90`
 and `02d6b55b78672fbe693bad315c1f14761761c06e664124fd92dbe74ef6df270a`.
+The exact four-PNG, two-GIF, digest-frozen packet was posted and the designer
+replied `Approved`. Approval binds only to implementation
+`c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2`, the digest, and six frozen
+hashes. That implementation is pushed and remote verified; only the bounded
+approval record, initial published handoff, and final reconciliation remain.
 Focused/fast/full validation passes in about 1.0s/78.4s/147.7s: all 80 frames
 are connected, bounded, grounded, two-talon, broad-elite,
 source-footprint-preserving, and pixel-plus-alpha distinct from approved
 Hushmask, approved Moonveil, and public Harpy; all 16 eclipse-gate views,
 expected identity marks, exact aliases/mirrors, and eight exact flashes pass.
 Public remains 100/316 and all 232 fixtures stay exact. All review views were
-inspected at original resolution; Aseprite parsed all six principal files,
-and regeneration reproduced every frozen hash. Internal visual QA accepts the
-packet, but designer pixel approval has not been supplied, so there is no
-candidate commit or push. Explicit approval of the exact packet or digest is
-required before bounded publication; registration, fixtures, effects, child
-assets, Phoenix, another family, release, accepted drift, and a PR remain
-closed.
+inspected at original resolution; approval-local focused/fast gates pass again
+in about 0.7s/74.6s, Aseprite parsed all six principal files,
+and regeneration reproduced every frozen hash. No continuation request
+accompanied the approval. Commit and push only the approval record and handoff
+reconciliation needed to complete this bounded publication tuple;
+registration, fixtures, effects, child assets, Phoenix, another family,
+release, accepted drift, and a PR remain closed.
 
 Current EN-E11 approved private Owl specialist published / next gate closed
 (2026-08-14): on `codex/en-e11-owl-specialist`, based exactly on clean, pushed,
