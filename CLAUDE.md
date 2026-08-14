@@ -118,7 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private common Owl candidate awaiting visual approval: on
+- Current approved private common Owl / publication in progress: on
   `codex/en-e11-owl-common`, based exactly on clean, pushed Gravecrown final
   reconciliation `2d5fb020541cbe936bd7f5dba33811f7a0be03e4`, the designer's
   fresh `lets do ext`, meaning `lets do next`, opened only the Owl topology
@@ -149,11 +149,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   The four exact PNGs, eight phase sheets, transparent inspection atlas, and
   both exact GIFs were inspected at original resolution and in Aseprite; both
   GIFs validate as 640x672 four-frame animations and regeneration reproduced
-  every hash. The candidate implementation and docs remain intentionally
-  uncommitted and unpushed pending explicit visual approval of the posted
-  packet or digest. Public or outline registration, fixtures, effects, child
-  assets, Owl specialist or elite, Phoenix, release, accepted drift, and a PR
-  remain closed.
+  every hash. The exact four-PNG, two-GIF, digest-frozen packet was posted and
+  the designer replied `approived`. Approval binds only to implementation
+  `e0fd0560ec93d12959d06cd30b593c82be74ffbd`, the digest, and six frozen
+  hashes; that implementation is pushed and remote verified. Approval-local
+  focused/fast gates pass again in about 0.8s/59.4s. Commit and push only the
+  approval/handoff reconciliation. No continuation request was supplied, so
+  public or outline registration, fixtures, effects, child assets, Owl
+  specialist or elite, Phoenix, release, accepted drift, and a PR remain
+  closed.
 - Current approved private elite Raven published / next gate closed: on
   `codex/en-e11-raven-elite`, based exactly on clean, pushed Mournglass final
   reconciliation `d12e42ceb0375a39c60de3f4253aeaa5ac0306ae`, the designer's

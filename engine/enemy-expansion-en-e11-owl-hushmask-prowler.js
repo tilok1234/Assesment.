@@ -33,7 +33,7 @@ export const EN_E11_OWL_HUSHMASK_PROWLER_CONTRACT = deepFreeze({
   family: 'owl',
   variant: 'hushmask-prowler',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E11_OWL_TOPOLOGY_DECISION.selected,
   silhouette: 'One connected compact grounded Owl joins a broad round facial disk and head, small hooked beak, short feathered throat, round barrel body, two folded barred wings, two separated three-toed taloned feet, and one short connected fan tail. Attack plants both talons, opens both body-owned wings into a silent crescent screen, drives a compact beak-and-talon pounce, and refolds. It is rounder-faced, shorter-tailed, and more upright than a Raven, neither a long-necked Peacock nor serpent-tailed Cockatrice, and never an exposed-human Harpy or four-legged Griffin.',
   identity: 'Warm umber head and body plumage, a cream-and-taupe facial disk, smoke-brown barred wings, a pale hush throat, a short banded tail, amber eyes, a small ochre beak, and pale horn talons distinguish the common Hushmask Prowler without baking magic, glow, or shadow effects.',
@@ -47,18 +47,27 @@ export const EN_E11_OWL_COMMON_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_OWL_HUSHMASK_PROWLER_CONTRACT.variant,
     role: EN_E11_OWL_HUSHMASK_PROWLER_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['specialist', 'elite'],
 });
 
 export const EN_E11_OWL_HUSHMASK_PROWLER_GATE = deepFreeze({
   id: 'en-e11-owl-hushmask-prowler-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-14',
   authorizationEvidence: 'The exact Gravecrown Harrower implementation 4d05b1f4f0ff5113bb31c4ac7011a393b6d877be, approval record 8ec032c2ff90aceffeb8f8cf9533fccac89d68df, initial published handoff e1645f03572073d00c9c9a9f96b70e9daf2d484a, and final reconciliation 2d5fb020541cbe936bd7f5dba33811f7a0be03e4 are pushed and remote verified. The designer then supplied the fresh continuation lets do ext, meaning lets do next. Under the documented Bird-family order that opened only the Owl actor-topology decision. Codex recommended baked-single-actor-grounded-facial-disk-owl: one connected grounded 24x24 Owl with a broad round facial disk, large eyes, small hooked beak, compact feathered body, folded wings, two separated talons, short connected fan tail, and a body-owned crescent-wing pounce, with flight states, magic, glow, projectiles, effects, and child assets excluded. The designer replied approved. This selects that topology and authorizes exactly one private common Owl full 80-frame candidate only. Because the common role was not pre-named, this lane names only Hushmask Prowler. It does not approve candidate pixels or authorize a commit, push, public or outline registration, fixtures, effects, child assets, Owl specialist or elite, Phoenix, release, accepted drift, or a pull request.',
   baseCheckpoint: '2d5fb020541cbe936bd7f5dba33811f7a0be03e4',
   architectureDecision: EN_E11_OWL_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-14',
+  approvalEvidence: 'The final approval prompt posted the exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and Cinderquill-Rainfan-Harpy comparison PNGs together with both synchronized full-suite GIFs and candidate digest c035b53021e4281378d2a43ff9e0d909fa750d4c877837517ed3c2a42beb445a. All four exact PNGs, all eight raw and Complete B + Form phase sheets, the transparent 20x4 inspection atlas, and both exact GIFs were inspected at original resolution and in Aseprite; both GIFs validated as 640x672 four-frame animations and regeneration reproduced every frozen hash. The designer replied: approived. Approval applies only to that exact Hushmask Prowler digest and its six frozen review hashes. It does not open public or outline registration, fixtures, effects, child assets, Owl specialist or elite, Phoenix, another Bird family, release, accepted drift, or a pull request.',
+  approvedImplementation: 'e0fd0560ec93d12959d06cd30b593c82be74ffbd',
+  publicationAuthorizedOn: '2026-08-14',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approived to the exact Hushmask Prowler review packet. This does not authorize public or outline registration, fixtures, effects, child assets, Owl specialist or elite, Phoenix, later families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.id,
     candidateFrameDigest: EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.candidateFrameDigest,
@@ -127,7 +136,7 @@ export const EN_E11_OWL_HUSHMASK_PROWLER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'Stop after rendering, inspecting, freezing, and validating this exact private Hushmask Prowler candidate. Explicit designer approval of the posted exact review packet or candidate digest is required before any implementation commit or push. That approval would apply only to the frozen common Owl pixels and would not open public or outline registration, fixtures, effects, child assets, Owl specialist or elite, Phoenix, another Bird family, release, accepted drift, or a pull request.',
+  nextGate: 'The exact Hushmask Prowler implementation e0fd0560ec93d12959d06cd30b593c82be74ffbd is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Owl common publication tuple. No continuation request accompanied the pixel approval, so no Owl specialist or elite, Phoenix, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_OWL_HUSHMASK_PROWLER_DATA = deepFreeze({
@@ -605,7 +614,7 @@ export const EN_E11_OWL_HUSHMASK_PROWLER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'hushmask-prowler',
     scale: 6,
-    notes: 'Unapproved private Hushmask Prowler common Owl candidate only. Stop after rendering, inspecting, freezing, and validating the exact review packet. Do not commit, push, register, generate fixtures, add effects or child assets, advance to Owl specialist or elite, open Phoenix, release, accept drift, or create a pull request without the separately required explicit designer approval.',
+    notes: 'Approved private Hushmask Prowler common Owl only, bound to exact implementation e0fd0560ec93d12959d06cd30b593c82be74ffbd, candidate digest c035b53021e4281378d2a43ff9e0d909fa750d4c877837517ed3c2a42beb445a, and its six frozen review hashes. The designer replied approived to the posted exact packet; no continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Owl specialist or elite, Phoenix, release, accepted drift, and a pull request separate.',
   },
 });
 

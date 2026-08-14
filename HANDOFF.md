@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Private Candidate - Hushmask Prowler / Visual Approval Required
+## Current Approved Checkpoint - Hushmask Prowler / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-owl-common`, based exactly on clean, pushed, remote-verified
@@ -36,9 +36,16 @@ gate.
    `baked-single-actor-grounded-facial-disk-owl` and stated that approval would
    authorize exactly one private common Owl full 80-frame candidate. The
    designer replied `approved`. This selects the topology and authorizes only
-   the private candidate; it does not approve its pixels or authorize commit,
+   the private candidate; it did not approve its pixels or authorize commit,
    push, registration, fixtures, effects, child assets, another role or
-   family, release, accepted drift, or a PR.
+   family, release, accepted drift, or a PR. After the exact four-PNG,
+   two-GIF, digest-frozen packet below was shown, the designer replied
+   `approived`. Pixel approval binds only to implementation
+   `e0fd0560ec93d12959d06cd30b593c82be74ffbd`, the exact digest, and six
+   frozen review hashes. That implementation is pushed and remote verified.
+   The reply contains no continuation request, so Owl specialist or elite,
+   Phoenix, public or outline registration, fixtures, effects, child assets,
+   release, accepted drift, and a PR remain closed.
 3. Hushmask Prowler is one connected compact natural Owl with a broad
    cream-and-taupe facial disk, twin amber eyes, a small ochre hooked beak,
    warm umber round body, smoke-brown barred wings, pale hush throat, two
@@ -69,7 +76,8 @@ gate.
    and Form changes 9,493 pixels. Focused / fast / full validation passes in
    about 0.9s / 63.2s / 113.5s. Public remains 100/316, all 232 fixtures stay
    exact, and child assets, effects, public registration, and outline
-   registration remain zero for this lane.
+   registration remain zero for this lane. Approval-local focused and fast
+   gates pass again in about 0.8s and 59.4s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-owl-hushmask-prowler/`. The raw, outlined,
    Complete B + Form, and family-comparison PNGs, all four raw phase sheets,
@@ -80,10 +88,9 @@ gate.
    `npm.cmd run review:enemy-expansion-en-e11-owl-hushmask-prowler` and run the
    focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-owl-hushmask-prowler`.
-7. Stop at the exact visual-approval packet. The candidate implementation and
-   docs are intentionally uncommitted and unpushed. Explicit designer approval
-   of the posted packet or digest is required before the bounded
-   implementation commit and push. Do not register it publicly or for
+7. Commit and push only the exact approval record, then create the initial
+   published handoff and final reconciliation needed to complete Hushmask's
+   bounded Owl common publication tuple. Do not register it publicly or for
    outlines, regenerate fixtures, add effects or child assets, begin Owl
    specialist or elite, begin Phoenix, release, accept drift, or open a PR.
 

@@ -1,6 +1,6 @@
 # Enemy Expansion Plan
 
-- Current private common Owl candidate awaiting visual approval
+- Current approved private common Owl / publication in progress
   (2026-08-14): on `codex/en-e11-owl-common`, based exactly on clean, pushed,
   remote-verified Gravecrown final reconciliation
   `2d5fb020541cbe936bd7f5dba33811f7a0be03e4`, the designer's fresh `lets do
@@ -35,11 +35,15 @@
   The four exact PNGs, all eight phase sheets, transparent inspection atlas,
   and both exact GIFs were inspected at original resolution and in Aseprite;
   both GIFs validate as 640x672 four-frame animations and regeneration
-  reproduced every hash. The candidate implementation and docs remain
-  intentionally uncommitted and unpushed pending explicit visual approval of
-  the posted packet or digest. Public or outline registration, fixtures,
-  effects, child assets, Owl specialist or elite, Phoenix, release, accepted
-  drift, a PR, and every broader gate remain closed.
+  reproduced every hash. The exact four-PNG, two-GIF, digest-frozen packet was
+  posted and the designer replied `approived`. Approval binds only to
+  implementation `e0fd0560ec93d12959d06cd30b593c82be74ffbd`, the digest,
+  and six frozen hashes; that implementation is pushed and remote verified.
+  Approval-local focused/fast gates pass again in about 0.8s/59.4s. Commit and
+  push only the approval/handoff reconciliation. No continuation request was
+  supplied, so public or outline registration, fixtures, effects, child
+  assets, Owl specialist or elite, Phoenix, release, accepted drift, a PR,
+  and every broader gate remain closed.
 
 - Current approved private elite Raven published / next gate closed
   (2026-08-14): on `codex/en-e11-raven-elite`, based exactly on clean, pushed
@@ -6612,7 +6616,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `owl-common-private-candidate-awaiting-visual-approval`
+- Status: `owl-common-approved-publication-in-progress`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 - Active family: Owl common
@@ -6621,7 +6625,7 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current private Owl common candidate awaiting visual approval
+#### Current approved Owl common / publication in progress
 
 The exact Gravecrown publication tuple is pushed, remote verified, and
 reconciled at `2d5fb020541cbe936bd7f5dba33811f7a0be03e4`. The designer's
@@ -6630,6 +6634,13 @@ decision. The designer then approved
 `baked-single-actor-grounded-facial-disk-owl`, authorizing exactly one private
 common Owl full 80-frame candidate without approving its pixels. Because the
 role was not pre-named, this lane names only Hushmask Prowler.
+
+After the exact four-PNG, two-GIF, digest-frozen packet below was posted, the
+designer replied `approived`. Pixel approval binds only to implementation
+`e0fd0560ec93d12959d06cd30b593c82be74ffbd`, the exact digest, and six frozen
+review hashes. That implementation is pushed and remote verified. The reply
+contains no continuation request, so Owl specialist or elite, Phoenix, and
+every broader gate remain closed.
 
 Hushmask is one connected compact warm-umber Owl with a broad cream-and-taupe
 facial disk, twin amber eyes, a small ochre hooked beak, smoke-brown barred
@@ -6659,12 +6670,13 @@ aliases/mirrors, and eight exact flashes pass. Public remains 100/316 and all
 232 fixtures stay exact. Every required board, all eight phase sheets, the
 transparent inspection atlas, and both exact GIFs were inspected at original
 resolution and in Aseprite, and regeneration reproduced every frozen hash.
+Approval-local focused and fast gates pass again in about 0.8s and 59.4s.
 
-The implementation and docs remain uncommitted and unpushed on
-`codex/en-e11-owl-common`. Stop for explicit designer approval of the posted
-packet or digest before the bounded commit and push. Public or outline
-registration, fixtures, effects, child assets, Owl specialist or elite,
-Phoenix, release, accepted drift, and a PR remain closed.
+Commit and push only the exact approval record, then create the initial
+published handoff and final reconciliation needed to complete Hushmask's
+bounded Owl common publication tuple. Public or outline registration,
+fixtures, effects, child assets, Owl specialist or elite, Phoenix, release,
+accepted drift, and a PR remain closed.
 
 #### Current approved Raven common published / next gate closed
 

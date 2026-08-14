@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 private common Owl candidate awaiting visual approval
+Current EN-E11 approved private common Owl / publication in progress
 (2026-08-14): on `codex/en-e11-owl-common`, based exactly on clean, pushed,
 remote-verified Gravecrown final reconciliation
 `2d5fb020541cbe936bd7f5dba33811f7a0be03e4`, the designer's fresh `lets do
@@ -34,10 +34,13 @@ exact flashes pass. Public remains 100/316 and all 232 fixtures stay exact.
 The four exact PNGs, all eight phase sheets, transparent inspection atlas, and
 both exact GIFs were inspected at original resolution and in Aseprite; both
 GIFs validate as 640x672 four-frame animations and regeneration reproduced
-every frozen hash. The candidate implementation and docs are intentionally
-uncommitted and unpushed. Explicit designer approval of the posted exact
-packet or digest is required before the bounded implementation commit and
-push. Public or outline registration, fixtures, effects, child assets, Owl
+every frozen hash. The exact four-PNG, two-GIF, digest-frozen packet was posted
+and the designer replied `approived`. Approval binds only to implementation
+`e0fd0560ec93d12959d06cd30b593c82be74ffbd`, the digest, and six frozen
+hashes; that implementation is pushed and remote verified. Approval-local
+focused/fast gates pass again in about 0.8s/59.4s. Commit and push only the
+approval/handoff reconciliation. No continuation request was supplied, so
+public or outline registration, fixtures, effects, child assets, Owl
 specialist or elite, Phoenix, release, accepted drift, and a PR remain closed.
 
 Current EN-E11 approved private elite Raven published / next gate closed

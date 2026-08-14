@@ -118,7 +118,7 @@ check(
   'approved Owl topology decision drifted',
 );
 check(
-  EN_E11_OWL_HUSHMASK_PROWLER_GATE.status === 'candidate'
+  EN_E11_OWL_HUSHMASK_PROWLER_GATE.status === 'approved'
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.baseCheckpoint === '2d5fb020541cbe936bd7f5dba33811f7a0be03e4'
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.architectureDecision === EN_E11_OWL_TOPOLOGY_DECISION.id,
   'Owl candidate gate identity or base checkpoint drifted',
@@ -132,14 +132,22 @@ check(
   'Owl candidate authorization evidence drifted',
 );
 check(
-  !('approvedOn' in EN_E11_OWL_HUSHMASK_PROWLER_GATE)
-    && !('approvalEvidence' in EN_E11_OWL_HUSHMASK_PROWLER_GATE)
-    && !('approvedImplementation' in EN_E11_OWL_HUSHMASK_PROWLER_GATE)
-    && !('publicationAuthorizedOn' in EN_E11_OWL_HUSHMASK_PROWLER_GATE)
-    && !('publicationState' in EN_E11_OWL_HUSHMASK_PROWLER_GATE)
-    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('Explicit designer approval')
-    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('before any implementation commit or push'),
-  'Owl candidate must remain unapproved and unpublished',
+  EN_E11_OWL_HUSHMASK_PROWLER_GATE.approvedOn === '2026-08-14'
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.approvalEvidence.includes('The designer replied: approived')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.approvalEvidence.includes('c035b53021e4281378d2a43ff9e0d909fa750d4c877837517ed3c2a42beb445a')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.approvedImplementation === 'e0fd0560ec93d12959d06cd30b593c82be74ffbd'
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publicationAuthorizedOn === '2026-08-14'
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publishedImplementation === ''
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publishedApprovalRecord === ''
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.initialPublishedHandoff === ''
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('e0fd0560ec93d12959d06cd30b593c82be74ffbd')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('approval record')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('No continuation request')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('outline registration'),
+  'Owl approval record or publication boundary drifted',
 );
 check(
   EN_E11_OWL_HUSHMASK_PROWLER_GATE.precedingApproval.gateId === EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.id
@@ -155,9 +163,9 @@ check(
     && EN_E11_OWL_COMMON_CONTRACT_CARD.activeVariant.id === 'hushmask-prowler'
     && EN_E11_OWL_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
     && EN_E11_OWL_COMMON_CONTRACT_CARD.precedingGate === EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.id
-    && EN_E11_OWL_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_OWL_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_OWL_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
-    && EN_E11_OWL_HUSHMASK_PROWLER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_OWL_HUSHMASK_PROWLER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Owl common role or candidate contract drifted',
 );
 check(
@@ -169,7 +177,7 @@ check(
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.exclusions.includes('registration')
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.exclusions.includes('fixtures')
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.exclusions.includes('Phoenix')
-    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('Explicit designer approval')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('No continuation request')
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('Owl specialist or elite'),
   'Owl anatomy, motion, effect firewall, or stop boundary drifted',
 );
