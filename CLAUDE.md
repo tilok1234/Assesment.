@@ -152,12 +152,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   every hash. The exact four-PNG, two-GIF, digest-frozen packet was posted and
   the designer replied `approived`. Approval binds only to implementation
   `e0fd0560ec93d12959d06cd30b593c82be74ffbd`, the digest, and six frozen
-  hashes; that implementation is pushed and remote verified. Approval-local
-  focused/fast gates pass again in about 0.8s/59.4s. Commit and push only the
-  approval/handoff reconciliation. No continuation request was supplied, so
-  public or outline registration, fixtures, effects, child assets, Owl
-  specialist or elite, Phoenix, release, accepted drift, and a PR remain
-  closed.
+  hashes; that implementation and approval record
+  `0e2dbbc6f519c1e135a57686ab1e0600d0327239` are pushed and remote verified.
+  Only the initial published handoff and final reconciliation remain.
+  Approval-local focused/fast gates pass again in about 0.8s/59.4s. No
+  continuation request was supplied, so public or outline registration,
+  fixtures, effects, child assets, Owl specialist or elite, Phoenix, release,
+  accepted drift, and a PR remain closed.
 - Current approved private elite Raven published / next gate closed: on
   `codex/en-e11-raven-elite`, based exactly on clean, pushed Mournglass final
   reconciliation `d12e42ceb0375a39c60de3f4253aeaa5ac0306ae`, the designer's

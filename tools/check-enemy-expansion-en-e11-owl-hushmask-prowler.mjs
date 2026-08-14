@@ -139,12 +139,13 @@ check(
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.approvedImplementation === 'e0fd0560ec93d12959d06cd30b593c82be74ffbd'
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publicationAuthorizedOn === '2026-08-14'
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publishedImplementation === ''
-    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publishedApprovalRecord === ''
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publishedImplementation === 'e0fd0560ec93d12959d06cd30b593c82be74ffbd'
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publishedApprovalRecord === '0e2dbbc6f519c1e135a57686ab1e0600d0327239'
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.initialPublishedHandoff === ''
-    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('e0fd0560ec93d12959d06cd30b593c82be74ffbd')
-    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('approval record')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('0e2dbbc6f519c1e135a57686ab1e0600d0327239')
+    && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('initial published handoff')
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('No continuation request')
     && EN_E11_OWL_HUSHMASK_PROWLER_GATE.nextGate.includes('outline registration'),
   'Owl approval record or publication boundary drifted',

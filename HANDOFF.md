@@ -42,8 +42,10 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied
    `approived`. Pixel approval binds only to implementation
    `e0fd0560ec93d12959d06cd30b593c82be74ffbd`, the exact digest, and six
-   frozen review hashes. That implementation is pushed and remote verified.
-   The reply contains no continuation request, so Owl specialist or elite,
+   frozen review hashes. That implementation and approval record
+   `0e2dbbc6f519c1e135a57686ab1e0600d0327239` are pushed and remote verified.
+   Only the initial published handoff and final reconciliation remain. The
+   reply contains no continuation request, so Owl specialist or elite,
    Phoenix, public or outline registration, fixtures, effects, child assets,
    release, accepted drift, and a PR remain closed.
 3. Hushmask Prowler is one connected compact natural Owl with a broad
@@ -88,11 +90,11 @@ gate.
    `npm.cmd run review:enemy-expansion-en-e11-owl-hushmask-prowler` and run the
    focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-owl-hushmask-prowler`.
-7. Commit and push only the exact approval record, then create the initial
-   published handoff and final reconciliation needed to complete Hushmask's
-   bounded Owl common publication tuple. Do not register it publicly or for
-   outlines, regenerate fixtures, add effects or child assets, begin Owl
-   specialist or elite, begin Phoenix, release, accept drift, or open a PR.
+7. Create and push only the initial published handoff and final reconciliation
+   needed to complete Hushmask's bounded Owl common publication tuple. Do not
+   register it publicly or for outlines, regenerate fixtures, add effects or
+   child assets, begin Owl specialist or elite, begin Phoenix, release, accept
+   drift, or open a PR.
 
 ## Current Published Checkpoint - Gravecrown Harrower / Next Gate Closed
 

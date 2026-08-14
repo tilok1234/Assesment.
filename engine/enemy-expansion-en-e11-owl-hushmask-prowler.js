@@ -64,10 +64,10 @@ export const EN_E11_OWL_HUSHMASK_PROWLER_GATE = deepFreeze({
   approvedImplementation: 'e0fd0560ec93d12959d06cd30b593c82be74ffbd',
   publicationAuthorizedOn: '2026-08-14',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approived to the exact Hushmask Prowler review packet. This does not authorize public or outline registration, fixtures, effects, child assets, Owl specialist or elite, Phoenix, later families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: 'e0fd0560ec93d12959d06cd30b593c82be74ffbd',
+  publishedApprovalRecord: '0e2dbbc6f519c1e135a57686ab1e0600d0327239',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.id,
     candidateFrameDigest: EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.candidateFrameDigest,
@@ -136,7 +136,7 @@ export const EN_E11_OWL_HUSHMASK_PROWLER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Hushmask Prowler implementation e0fd0560ec93d12959d06cd30b593c82be74ffbd is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Owl common publication tuple. No continuation request accompanied the pixel approval, so no Owl specialist or elite, Phoenix, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Hushmask Prowler implementation e0fd0560ec93d12959d06cd30b593c82be74ffbd and approval record 0e2dbbc6f519c1e135a57686ab1e0600d0327239 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Owl common publication tuple. No continuation request accompanied the pixel approval, so no Owl specialist or elite, Phoenix, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_OWL_HUSHMASK_PROWLER_DATA = deepFreeze({
@@ -614,7 +614,7 @@ export const EN_E11_OWL_HUSHMASK_PROWLER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'hushmask-prowler',
     scale: 6,
-    notes: 'Approved private Hushmask Prowler common Owl only, bound to exact implementation e0fd0560ec93d12959d06cd30b593c82be74ffbd, candidate digest c035b53021e4281378d2a43ff9e0d909fa750d4c877837517ed3c2a42beb445a, and its six frozen review hashes. The designer replied approived to the posted exact packet; no continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Owl specialist or elite, Phoenix, release, accepted drift, and a pull request separate.',
+    notes: 'Approved private Hushmask Prowler common Owl only, bound to exact implementation e0fd0560ec93d12959d06cd30b593c82be74ffbd, approval record 0e2dbbc6f519c1e135a57686ab1e0600d0327239, candidate digest c035b53021e4281378d2a43ff9e0d909fa750d4c877837517ed3c2a42beb445a, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. No continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Owl specialist or elite, Phoenix, release, accepted drift, and a pull request separate.',
   },
 });
 
