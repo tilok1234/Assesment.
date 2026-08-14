@@ -1,6 +1,7 @@
 # Enemy Expansion Plan
 
-- Current approved private Owl elite / publication in progress
+- Current approved private Owl elite published / handoff reconciliation in
+  progress
   (2026-08-14): on `codex/en-e11-owl-elite`, based exactly on the clean,
   pushed, remote-verified Moonveil final reconciliation
   `20311d040ac086ecff950c3da2a57e330c13b875`, the designer's fresh `Let's do
@@ -28,8 +29,9 @@
   The exact four-PNG, two-GIF, digest-frozen packet was posted and the designer
   replied `Approved`. Approval binds only to implementation
   `c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2`, the digest, and six frozen
-  hashes. That implementation is pushed and remote verified; only the bounded
-  approval record, initial published handoff, and final reconciliation remain.
+  hashes. That implementation and approval record
+  `402d94575701ecffd16a23a156bf39eae44298f0` are pushed and remote verified;
+  only the initial published handoff and final reconciliation remain.
   Focused/fast/full gates pass in about 1.0s/78.4s/147.7s: all 80 frames are
   connected, bounded, grounded, two-talon, broad-elite,
   source-footprint-preserving, and pixel-plus-alpha distinct from approved
@@ -40,9 +42,9 @@
   eight phase sheets, transparent inspection atlas, and both exact GIFs were
   inspected at original resolution. Aseprite parsed all six
   principal files, and regeneration reproduced every frozen hash. No
-  continuation request accompanied the approval. Commit and push only the
-  approval record and handoff reconciliation needed to complete this bounded
-  publication tuple; public or outline registration, fixtures, effects, child
+  continuation request accompanied the approval. Create and push only the
+  initial published handoff and final reconciliation needed to complete this
+  bounded publication tuple; public or outline registration, fixtures, effects, child
   assets, Phoenix, another family, release, accepted drift, a PR, and every
   broader gate remain closed.
 

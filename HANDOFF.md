@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Approved Checkpoint - Eclipsecrown Noctarch / Publication In Progress
+## Current Published Checkpoint - Eclipsecrown Noctarch / Handoff Reconciliation In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-owl-elite`, based exactly on clean, pushed, remote-verified
@@ -41,7 +41,8 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied
    `Approved`. Pixel approval binds only to implementation
    `c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2`, the exact digest, and six
-   frozen review hashes. That implementation is pushed and remote verified.
+   frozen review hashes. That implementation and approval record
+   `402d94575701ecffd16a23a156bf39eae44298f0` are pushed and remote verified.
    The reply contains no continuation request.
 3. Eclipsecrown Noctarch is one connected broad elite Owl with an
    obsidian-black and ecliptic-violet body, broad ivory-and-gold facial disk
@@ -92,9 +93,10 @@ gate.
    retain the focal hierarchy, the silhouette reads as elite in all
    directions, rear views remove facial features, and the A2 eclipse gate to
    A3 crown press reads clearly without clipping or floating geometry. The
-   designer's `Approved` reply authorizes only the bounded approval record,
-   initial published handoff, final reconciliation, and branch pushes needed
-   to complete this publication tuple. Do not register it publicly or for
+   implementation and approval record are pushed and remote verified. Only the
+   initial published handoff, final reconciliation, and bounded branch pushes
+   needed to complete this publication tuple remain. Do not register it
+   publicly or for
    outlines, regenerate fixtures, add effects or child assets, begin Phoenix
    or another family, release, accept drift, or open a PR.
 

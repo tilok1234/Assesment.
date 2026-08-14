@@ -132,12 +132,13 @@ check(
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.approvedImplementation === 'c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2'
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publicationAuthorizedOn === '2026-08-14'
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publishedImplementation === ''
-    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publishedApprovalRecord === ''
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publishedImplementation === 'c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2'
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publishedApprovalRecord === '402d94575701ecffd16a23a156bf39eae44298f0'
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.initialPublishedHandoff === ''
-    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publicationState === 'approved-not-published'
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2')
-    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('approval record')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('402d94575701ecffd16a23a156bf39eae44298f0')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('initial published handoff')
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('No continuation request')
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('outline registration'),
   'Eclipsecrown approval record or publication boundary drifted',
