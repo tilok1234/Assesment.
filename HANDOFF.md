@@ -23,6 +23,75 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Candidate Checkpoint - Ashcrest Kindler / Visual Approval Required
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-phoenix-common`, based exactly on the clean, pushed,
+   remote-verified Eclipsecrown final reconciliation
+   `43452d7a03a92cee228a1d1ffaf147fc39802ad5`.
+2. After the complete Eclipsecrown publication tuple was reconciled, the
+   designer supplied the fresh continuation `Let's do next`. That opened only
+   the Phoenix topology decision. Codex recommended
+   `baked-single-actor-grounded-flame-crested-phoenix`, and the designer
+   replied `Approved`. This selects the topology and authorizes exactly one
+   private common Phoenix full 80-frame candidate named Ashcrest Kindler. It
+   does not approve candidate pixels or authorize a commit, push, public or
+   outline registration, fixtures, effects, child assets, egg or ash
+   resurrection art, flight states, Phoenix specialist or elite work, another
+   family, release, accepted drift, or a PR.
+3. Ashcrest Kindler is one connected compact grounded Phoenix with
+   ash-charcoal and ember-russet plumage, a heated-gold breast, connected
+   orange-gold flame-feather crest, copper-red body-owned wings, pale-gold
+   eyes, a hooked brass beak, two separated three-toed brass talons, and one
+   connected layered ember tail. Attack performs a two-talon solar brace,
+   broad body-owned solar wing fan, hooked-beak kindle rake, and refold. Cast
+   aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2. Fire, embers, glow,
+   halos, projectiles, loose feathers, ash, egg or resurrection art, flight
+   states, dust, shock rings, and impacts remain external.
+4. The frozen 80-frame candidate digest is
+   `8ed5a8436f2c0647cb1bfe09740cb8e6bfd84c6f0254c5402c547f7ef974b3b7`.
+   Raw / distinct Complete B outlined / Complete B + Form / Eclipsecrown-
+   Cinderquill-Harpy comparison PNG hashes are
+   `1932d82750a37ad527b6e24e53ab947b19c7fee5edcdafb97ed23af2092ca284`,
+   `94da66c785c37116342d51ff0f5b5f4267b8c051973c995f37985d5ada9b9253`,
+   `815dff42950252f2764fd8166bf2858be0db006c2dbddfe0bcc9236f799b8500`,
+   and `c347131877b8b0f78d51ff96df3bf6f49c55cdb236250dd2257faad773445f6a`.
+   Raw and Complete B + Form GIF hashes are
+   `db9b464d5f2395b743c6b0c3f298e0f2654d3c14eb9f883147edb14ac22be5a2`
+   and `dc651078d81f87168f4be481173add9142a050f199dc92b23f0a030d3047e2c2`.
+5. Focused, fast, and full validation pass in about 1.1s, 73.1s, and
+   137.3s. Focused validation passes 80/80 connected, bounded, grounded,
+   source-footprint-preserving, separated two-talon, and connected-Phoenix
+   frames; 16/16 solar-fan views; 54/54 expected eye-bearing views; 72/72
+   heated-breast, flame-crest, tail, and copper-wing views; 8/8 exact
+   `#f4f4f4` flashes; exact aliases and mirrors; and 80/80 pixel-plus-alpha
+   distinctions from approved Eclipsecrown Noctarch, approved Cinderquill
+   Scavenger, and public Harpy Screecher. Opaque range is 183-294. Complete B
+   adds 7,688 outline pixels and Form changes 10,445 pixels. Public remains
+   100/316; all 232 fixtures stay untouched; child assets, effects, public
+   registration, and outline registration remain zero for this lane.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-phoenix-ashcrest-kindler/`. The raw,
+   outlined, Complete B + Form, and family-comparison PNGs, all four raw phase
+   sheets, all four Complete B + Form phase sheets, the transparent 20x4
+   inspection atlas, and both exact GIFs were inspected at original
+   resolution. The atlas is 480x96 with 80 non-empty hard-alpha 24x24 cells,
+   no boundary contact, and retained margins. Both GIFs are valid 640x672
+   four-frame animations. Aseprite parsed all six principal review files.
+   Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e11-phoenix-ashcrest-kindler` and run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-phoenix-ashcrest-kindler`.
+7. Internal visual QA accepts this exact packet for designer review: the
+   connected crest and hooked face remain readable in Down/Left/Right, the Up
+   view removes all face pixels, the compact common silhouette stays distinct
+   from the Owl, Raven, and Harpy comparisons, and Attack A2-A3 produces a
+   broad connected solar fan without clipping or floating geometry. Stop for
+   explicit visual pixel approval. Do not commit, push, register, regenerate
+   fixtures, add effects or child assets, begin resurrection or flight-state
+   art, open later Phoenix roles or another family, release, accept drift, or
+   open a PR.
+
 ## Current Published Checkpoint - Eclipsecrown Noctarch / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch

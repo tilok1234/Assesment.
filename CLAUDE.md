@@ -118,6 +118,42 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
+- Current private common Phoenix candidate / visual approval required: on
+  `codex/en-e11-phoenix-common`, based exactly on clean, pushed,
+  remote-verified Eclipsecrown final reconciliation
+  `43452d7a03a92cee228a1d1ffaf147fc39802ad5`, the designer's fresh `Let's do
+  next` opened only the Phoenix topology decision. The designer then replied
+  `Approved` to the recommended
+  `baked-single-actor-grounded-flame-crested-phoenix` topology, authorizing
+  exactly one private common 80-frame candidate named Ashcrest Kindler without
+  approving its pixels. It is one connected ash-charcoal and ember-russet
+  grounded Phoenix with a heated-gold breast, connected orange-gold
+  flame-feather crest, copper-red body-owned wings, pale-gold eyes, hooked
+  brass beak, two separated brass talons, and one connected layered ember
+  tail. Attack braces, opens a broad body-owned solar wing fan, performs a
+  hooked-beak kindle rake, and refolds. Its frozen digest is
+  `8ed5a8436f2c0647cb1bfe09740cb8e6bfd84c6f0254c5402c547f7ef974b3b7`;
+  raw / outline / Form / comparison PNG hashes are
+  `1932d82750a37ad527b6e24e53ab947b19c7fee5edcdafb97ed23af2092ca284`,
+  `94da66c785c37116342d51ff0f5b5f4267b8c051973c995f37985d5ada9b9253`,
+  `815dff42950252f2764fd8166bf2858be0db006c2dbddfe0bcc9236f799b8500`,
+  and `c347131877b8b0f78d51ff96df3bf6f49c55cdb236250dd2257faad773445f6a`;
+  raw / Form GIF hashes are
+  `db9b464d5f2395b743c6b0c3f298e0f2654d3c14eb9f883147edb14ac22be5a2`
+  and `dc651078d81f87168f4be481173add9142a050f199dc92b23f0a030d3047e2c2`.
+  Focused/fast/full validation passes in about 1.1s/73.1s/137.3s. Focused
+  validation passes all 80 connected, bounded, grounded, two-talon,
+  source-footprint-preserving frames; 16/16 solar fans; expected palette and
+  direction marks; aliases, mirrors, eight exact flashes; and pixel-plus-alpha
+  distinction from approved Eclipsecrown, approved Cinderquill, and public
+  Harpy. Public remains 100/316 and fixtures remain untouched. The four PNGs,
+  eight phase sheets, atlas, and both GIFs were inspected at original
+  resolution; the 480x96 atlas passes its 20x4 hard-alpha contract with no
+  boundary contact, and Aseprite parsed all six principal files. Internal
+  visual QA accepts the packet for designer review. Stop for explicit pixel
+  approval: no commit, push, registration, fixtures, effects, child assets,
+  resurrection or flight-state art, specialist or elite Phoenix, another
+  family, release, accepted drift, or PR is authorized.
 - Current approved private Owl elite published / next gate closed: on
   `codex/en-e11-owl-elite`, based exactly on the clean, pushed,
   remote-verified Moonveil final reconciliation

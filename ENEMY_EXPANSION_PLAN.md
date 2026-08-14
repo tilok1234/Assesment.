@@ -1,5 +1,44 @@
 # Enemy Expansion Plan
 
+- Current private common Phoenix candidate / visual approval required
+  (2026-08-14): on `codex/en-e11-phoenix-common`, based exactly on the clean,
+  pushed, remote-verified Eclipsecrown final reconciliation
+  `43452d7a03a92cee228a1d1ffaf147fc39802ad5`, the designer's fresh `Let's do
+  next` opened only the Phoenix topology decision. The designer then replied
+  `Approved` to the recommended
+  `baked-single-actor-grounded-flame-crested-phoenix` topology, authorizing
+  exactly one private common 80-frame candidate named Ashcrest Kindler without
+  approving its pixels. It is one connected ash-charcoal and ember-russet
+  grounded Phoenix with a heated-gold breast, connected orange-gold
+  flame-feather crest, copper-red body-owned wings, pale-gold eyes, hooked
+  brass beak, two separated brass talons, and one connected layered ember
+  tail. Attack braces, opens a broad body-owned solar wing fan, performs a
+  hooked-beak kindle rake, and refolds. Cast aliases Attack exactly and Death
+  aliases Hurt H1,H2,H2,H2. Fire, embers, glow, halos, projectiles, loose
+  feathers, ash, egg or resurrection art, flight states, dust, shock rings,
+  and impacts remain external. Its frozen digest is
+  `8ed5a8436f2c0647cb1bfe09740cb8e6bfd84c6f0254c5402c547f7ef974b3b7`.
+  Raw / outlined / Form / comparison PNG hashes are
+  `1932d82750a37ad527b6e24e53ab947b19c7fee5edcdafb97ed23af2092ca284`,
+  `94da66c785c37116342d51ff0f5b5f4267b8c051973c995f37985d5ada9b9253`,
+  `815dff42950252f2764fd8166bf2858be0db006c2dbddfe0bcc9236f799b8500`,
+  and `c347131877b8b0f78d51ff96df3bf6f49c55cdb236250dd2257faad773445f6a`;
+  raw / Form GIF hashes are
+  `db9b464d5f2395b743c6b0c3f298e0f2654d3c14eb9f883147edb14ac22be5a2`
+  and `dc651078d81f87168f4be481173add9142a050f199dc92b23f0a030d3047e2c2`.
+  Focused/fast/full validation passes in about 1.1s/73.1s/137.3s. Focused
+  validation passes all 80 connected, bounded, grounded, two-talon,
+  source-footprint-preserving frames; all 16 solar-fan views; expected palette
+  and direction marks; aliases, mirrors, and eight exact flashes; and 80/80
+  pixel-plus-alpha distinction from approved Eclipsecrown, approved
+  Cinderquill, and public Harpy. Public remains 100/316 and fixtures remain
+  untouched. Original-resolution review, exact 20x4 atlas measurement, and
+  Aseprite parsing of all six principal files pass. Internal visual QA accepts
+  the exact packet for designer review. Stop for explicit pixel approval; no
+  commit, push, registration, fixtures, effects, child assets, resurrection or
+  flight-state art, later Phoenix role, another family, release, accepted
+  drift, PR, or broader gate is authorized.
+
 - Current approved private Owl elite published / next gate closed
   (2026-08-14): on `codex/en-e11-owl-elite`, based exactly on the clean,
   pushed, remote-verified Moonveil final reconciliation
@@ -6707,14 +6746,68 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `owl-specialist-approved-published-next-gate-closed`
+- Status: `phoenix-common-candidate-awaiting-visual-approval`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
-- Active family: Owl specialist
+- Active family: Phoenix common
 
 Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
+
+#### Current private Phoenix common candidate / visual approval required
+
+The exact Eclipsecrown publication tuple is pushed, remote verified, and
+reconciled at `43452d7a03a92cee228a1d1ffaf147fc39802ad5`. The designer's
+fresh `Let's do next` opened only the Phoenix topology decision. The designer
+then replied `Approved` to
+`baked-single-actor-grounded-flame-crested-phoenix`, selecting that topology
+and authorizing exactly one private common full 80-frame candidate named
+Ashcrest Kindler. This did not approve candidate pixels or authorize a commit,
+push, registration, fixtures, effects, child assets, resurrection art, flight
+states, later Phoenix roles, another family, release, accepted drift, or a PR.
+
+Ashcrest Kindler is one connected compact grounded Phoenix with ash-charcoal
+and ember-russet plumage, a heated-gold breast, connected orange-gold
+flame-feather crest, copper-red body-owned wings, pale-gold eyes, a hooked
+brass beak, two separated three-toed brass talons, and one connected layered
+ember tail. Its body-owned attack is two-talon solar brace, broad solar wing
+fan, hooked-beak kindle rake, and refold. Cast aliases Attack exactly; Death
+aliases Hurt H1,H2,H2,H2. Fire, embers, glow, halos, projectiles, loose
+feathers, ash, egg or resurrection art, flight states, dust, shock rings, and
+impacts remain external.
+
+The exact frozen candidate digest is
+`8ed5a8436f2c0647cb1bfe09740cb8e6bfd84c6f0254c5402c547f7ef974b3b7`.
+The raw, outlined, Complete B + Form, and Eclipsecrown-Cinderquill-Harpy
+comparison PNG hashes are
+`1932d82750a37ad527b6e24e53ab947b19c7fee5edcdafb97ed23af2092ca284`,
+`94da66c785c37116342d51ff0f5b5f4267b8c051973c995f37985d5ada9b9253`,
+`815dff42950252f2764fd8166bf2858be0db006c2dbddfe0bcc9236f799b8500`,
+and `c347131877b8b0f78d51ff96df3bf6f49c55cdb236250dd2257faad773445f6a`.
+Raw and Complete B + Form GIF hashes are
+`db9b464d5f2395b743c6b0c3f298e0f2654d3c14eb9f883147edb14ac22be5a2`
+and `dc651078d81f87168f4be481173add9142a050f199dc92b23f0a030d3047e2c2`.
+
+Focused, fast, and full validation pass in about 1.1s, 73.1s, and 137.3s.
+Focused validation passes 80/80 connected, bounded, grounded, two-talon,
+connected-Phoenix, and Cinderquill-source-footprint-preserving frames; 16/16
+solar-fan views; 54/54 expected eye-bearing views; 72/72 heated-breast,
+flame-crest, tail, and copper-wing views; exact aliases and mirrors; eight
+exact flashes; and 80/80 pixel-plus-alpha distinction from approved
+Eclipsecrown, approved Cinderquill, and public Harpy. Opaque range is 183-294;
+Complete B adds 7,688 pixels and Form changes 10,445 pixels. Public remains
+100/316 and all 232 fixtures remain untouched. The four exact PNGs, all eight
+phase sheets, transparent 20x4 atlas, and both exact GIFs were inspected at
+original resolution. The atlas passes its 480x96, 80-cell, hard-alpha,
+no-boundary-contact contract, Aseprite parsed all six principal files, and
+regeneration reproduces every frozen hash.
+
+Internal visual QA accepts the packet for designer review. Stop for explicit
+visual pixel approval. Do not commit, push, register, regenerate fixtures, add
+effects or child assets, begin egg/ash resurrection or flight-state art, open
+specialist or elite Phoenix work or another family, release, accept drift, or
+open a PR.
 
 #### Current approved Owl specialist published / next gate closed
 
