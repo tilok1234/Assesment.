@@ -1,6 +1,6 @@
 # Enemy Expansion Plan
 
-- Current approved private elite Phoenix / publication in progress
+- Current approved private elite Phoenix published / handoff reconciliation in progress
   (2026-08-14): on `codex/en-e11-phoenix-elite`, based exactly on clean,
   pushed, remote-verified Sunveil final reconciliation
   `1e0e8b31bac737f8fc0f8cd3eb4710330bd160de`, the designer's fresh `lets do
@@ -27,7 +27,8 @@
   The designer replied `awesome approved` to this exact packet. Pixel approval
   binds only to implementation
   `68c36bb5711b985ab9f9a37a68c18bfc0748c399`, the digest, and six frozen
-  review hashes; that implementation is pushed and remote verified. The same
+  review hashes. That implementation and approval record
+  `4acfbbb172a8ff380ce22141f68d494e620ce9c4` are pushed and remote verified. The same
   reply separately authorizes a copy-only package of all new approved
   expansion enemies, not registration or another enemy gate.
   Focused/fast/full validation passes in about 1.6s/70.2s/121.7s. All 80
@@ -40,8 +41,8 @@
   remain untouched. Original-resolution inspection, exact 20x4 hard-alpha
   atlas measurement, exact hash reproduction, and Aseprite parsing of all six
   principal files pass. Internal visual QA accepted the exact packet for
-  designer review and the designer approved it. Commit and push only the
-  approval record and publication reconciliation, and build only the separately
+  designer review and the designer approved it. Create and push only the
+  initial handoff and final reconciliation, and build only the separately
   requested copy-only approved-expansion-enemy package. Do not register, add
   outlines, fixtures, effects, child assets, resurrection or flight-state art,
   open another Phoenix or family, release, accept drift, or open a PR.
@@ -6857,7 +6858,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `phoenix-elite-approved-publication-in-progress`
+- Status: `phoenix-elite-published-handoff-reconciliation-in-progress`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 - Active family: Phoenix elite
@@ -6866,7 +6867,7 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current approved private Phoenix elite / publication in progress
+#### Current approved private Phoenix elite published / handoff reconciliation in progress
 
 The clean, pushed, remote-verified Sunveil Cantor publication tuple ends at
 `1e0e8b31bac737f8fc0f8cd3eb4710330bd160de`. The designer's fresh `lets do
@@ -6898,7 +6899,8 @@ and `9da45b041cc0f8102c0b3958632633fc1ca571793eeb6465619d5f5eeef5636e`.
 The designer replied `awesome approved` to this exact packet. Pixel approval
 binds only to implementation
 `68c36bb5711b985ab9f9a37a68c18bfc0748c399`, the exact digest, and six frozen
-review hashes; that implementation is pushed and remote verified. The same
+review hashes. That implementation and approval record
+`4acfbbb172a8ff380ce22141f68d494e620ce9c4` are pushed and remote verified. The same
 reply separately requests a copy-only package of all new approved expansion
 enemies. It does not open another enemy role or family, registration, fixtures,
 effects, release, accepted drift, or a PR.
@@ -6911,8 +6913,8 @@ the twin-pylon or sunwall architecture. Public remains 100/316 and all 232
 fixtures remain untouched. Original-resolution inspection, the exact 20x4
 hard-alpha atlas, deterministic hash reproduction, and Aseprite parsing of all
 six principal files pass. Internal visual QA accepted the exact packet and the
-designer approved it. Complete only the approval record, published handoff,
-final reconciliation, and the separately requested copy-only package. Keep
+designer approved it. Complete only the initial published handoff, final
+reconciliation, and the separately requested copy-only package. Keep
 registration, outline enrollment, fixtures, effects, child assets,
 resurrection or flight-state art, another Phoenix or family, release, accepted
 drift, and PR closed.

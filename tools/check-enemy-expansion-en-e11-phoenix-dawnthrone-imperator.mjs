@@ -165,12 +165,13 @@ check(
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.approvedImplementation === '68c36bb5711b985ab9f9a37a68c18bfc0748c399'
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publicationAuthorizedOn === '2026-08-14'
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publishedImplementation === ''
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publishedApprovalRecord === ''
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publishedImplementation === '68c36bb5711b985ab9f9a37a68c18bfc0748c399'
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publishedApprovalRecord === '4acfbbb172a8ff380ce22141f68d494e620ce9c4'
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.initialPublishedHandoff === ''
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publicationState === 'approved-not-published'
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('68c36bb5711b985ab9f9a37a68c18bfc0748c399')
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('approval record')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('4acfbbb172a8ff380ce22141f68d494e620ce9c4')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('initial published handoff')
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('copy-only approved-enemy package request')
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('outline registration'),
   'Dawnthrone approval record or publication boundary drifted',
