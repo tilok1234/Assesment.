@@ -23,14 +23,15 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Published Phoenix Elite / Handoff Reconciliation In Progress
+## Next Chat Start Here - Published Phoenix Elite / Next Enemy Gate Closed / Package Requested
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-phoenix-elite`. The exact Dawnthrone Imperator implementation
-   `68c36bb5711b985ab9f9a37a68c18bfc0748c399` and approval record
-   `4acfbbb172a8ff380ce22141f68d494e620ce9c4` are pushed and remote verified.
-   Finish only the initial published handoff, final reconciliation, and the separately requested
-   copy-only package of approved expansion enemies.
+   `68c36bb5711b985ab9f9a37a68c18bfc0748c399`, approval record
+   `4acfbbb172a8ff380ce22141f68d494e620ce9c4`, and initial published handoff
+   `6d6fa755f4c7c7a4fefa0da3e2740d7a43629f25` are pushed and remote verified;
+   this reconciliation completes the bounded elite publication tuple. Only the
+   separately requested copy-only package of approved expansion enemies remains.
 2. After the published Sunveil tuple was complete, the designer supplied the
    fresh continuation `lets do next`. Under the documented common, specialist,
    elite order and selected
@@ -80,9 +81,9 @@ gate.
    24x24 cells and zero boundary contact. Regeneration reproduces all six frozen
    hashes, and Aseprite parsed all six principal files. Internal visual QA
    accepted the exact packet and the designer approved it.
-7. Create and push only the initial published handoff and final reconciliation.
-   Build only the separately requested copy-only package
-   of approved expansion enemies. Do not register, regenerate or hand-edit
+7. Final published-state focused and full gates pass again. No next enemy role
+   or family is open. Build only the separately requested copy-only package of
+   approved expansion enemies. Do not register, regenerate or hand-edit
    fixtures, add outline enrollment, effects, child assets, resurrection or
    flight-state art, open another Phoenix or family, release, accept drift, or
    open a PR. Never use `--accept-drift`.

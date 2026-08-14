@@ -45,7 +45,7 @@ export const EN_E11_PHOENIX_ELITE_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_CONTRACT.variant,
     role: EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_CONTRACT.role,
-    status: 'implemented-full-approved',
+    status: 'implemented-full-approved-published-reconciled',
   },
   deferredRoles: [],
 });
@@ -64,8 +64,8 @@ export const EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied awesome approved to the exact Dawnthrone Imperator review packet. The separate approved-enemy package request authorizes a copy-only deliverable, not public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, another Phoenix variant or family, release, accepted drift, or a pull request.',
   publishedImplementation: '68c36bb5711b985ab9f9a37a68c18bfc0748c399',
   publishedApprovalRecord: '4acfbbb172a8ff380ce22141f68d494e620ce9c4',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '6d6fa755f4c7c7a4fefa0da3e2740d7a43629f25',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.id,
     candidateFrameDigest: EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.candidateFrameDigest,
@@ -135,7 +135,7 @@ export const EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'The exact Dawnthrone Imperator implementation 68c36bb5711b985ab9f9a37a68c18bfc0748c399 and approval record 4acfbbb172a8ff380ce22141f68d494e620ce9c4 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Phoenix elite publication tuple. The approval reply contains a separate copy-only approved-enemy package request but no continuation to another enemy role or family. Public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Dawnthrone Imperator implementation 68c36bb5711b985ab9f9a37a68c18bfc0748c399, approval record 4acfbbb172a8ff380ce22141f68d494e620ce9c4, and initial published handoff 6d6fa755f4c7c7a4fefa0da3e2740d7a43629f25 are pushed and remote verified; this reconciliation completes the bounded Phoenix elite publication tuple. The approval reply contains a separate copy-only approved-enemy package request but no continuation to another enemy role or family, so no later enemy gate is open. Public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_DATA = deepFreeze({
@@ -619,7 +619,7 @@ export const EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'dawnthrone-imperator',
     scale: 6,
-    notes: 'Approved private Dawnthrone Imperator elite Phoenix bound to exact implementation 68c36bb5711b985ab9f9a37a68c18bfc0748c399, approval record 4acfbbb172a8ff380ce22141f68d494e620ce9c4, candidate digest 6d7f50455ff7864004bac35fe2e94c2d0ef4d3530845db2e83a69ff871dbcaba, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. The renderer uses bespoke broad throne-bodied geometry rather than either approved Phoenix source. The designer replied awesome approved and separately requested a copy-only package of all new approved expansion enemies; that package request does not open another enemy gate. Keep public or outline registration, fixtures, effects, child assets, resurrection art, flight states, another Phoenix variant or family, release, accepted drift, and a pull request separate.',
+    notes: 'Published and reconciled private Dawnthrone Imperator elite Phoenix bound to exact implementation 68c36bb5711b985ab9f9a37a68c18bfc0748c399, approval record 4acfbbb172a8ff380ce22141f68d494e620ce9c4, initial published handoff 6d6fa755f4c7c7a4fefa0da3e2740d7a43629f25, candidate digest 6d7f50455ff7864004bac35fe2e94c2d0ef4d3530845db2e83a69ff871dbcaba, and its six frozen review hashes. The renderer uses bespoke broad throne-bodied geometry rather than either approved Phoenix source. The designer replied awesome approved and separately requested a copy-only package of all new approved expansion enemies; that package request does not open another enemy gate. Keep public or outline registration, fixtures, effects, child assets, resurrection art, flight states, another Phoenix variant or family, release, accepted drift, and a pull request separate.',
   },
 });
 
