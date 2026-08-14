@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Approved Checkpoint - Ashcrest Kindler / Publication In Progress
+## Current Published Checkpoint - Ashcrest Kindler / Handoff Reconciliation In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-phoenix-common`, based exactly on the clean, pushed,
@@ -42,7 +42,8 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied
    `approved lets do next`. Pixel approval binds only to implementation
    `4111b322fe6f362f92f389e606722b80426aee25`, the exact digest, and six
-   frozen review hashes. That implementation is pushed and remote verified.
+   frozen review hashes. That implementation and approval record
+   `c9cd3669394f0e39e05377bb9be0532e1b6204d8` are pushed and remote verified.
    The continuation clause opens exactly one private specialist Phoenix
    candidate only after this common publication tuple is complete; it does not
    approve specialist pixels or broaden any other boundary.
@@ -95,8 +96,8 @@ gate.
    from the Owl, Raven, and Harpy comparisons, and Attack A2-A3 produces a
    broad connected solar fan without clipping or floating geometry. The
    designer approved these exact pixels and authorized their bounded
-   publication. Commit and push only the approval record, initial handoff, and
-   final reconciliation. After that tuple is complete, the same reply opens
+   publication. Only the initial handoff and final reconciliation remain.
+   After that tuple is complete, the same reply opens
    one private specialist Phoenix candidate under the selected topology. Do
    not register, regenerate fixtures, add effects or child assets, begin
    resurrection or flight-state art, open elite Phoenix or another family,

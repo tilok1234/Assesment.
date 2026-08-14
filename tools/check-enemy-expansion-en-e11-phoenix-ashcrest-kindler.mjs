@@ -150,12 +150,13 @@ check(
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.approvedImplementation === '4111b322fe6f362f92f389e606722b80426aee25'
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publicationAuthorizedOn === '2026-08-14'
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publishedImplementation === ''
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publishedApprovalRecord === ''
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publishedImplementation === '4111b322fe6f362f92f389e606722b80426aee25'
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publishedApprovalRecord === 'c9cd3669394f0e39e05377bb9be0532e1b6204d8'
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.initialPublishedHandoff === ''
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('4111b322fe6f362f92f389e606722b80426aee25')
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('approval record')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('c9cd3669394f0e39e05377bb9be0532e1b6204d8')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('initial published handoff')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('private specialist Phoenix candidate')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('does not approve specialist pixels'),
   'Ashcrest approval record or publication boundary drifted',

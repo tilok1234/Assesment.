@@ -118,7 +118,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private common Phoenix / publication in progress: on
+- Current approved private common Phoenix published / handoff reconciliation
+  in progress: on
   `codex/en-e11-phoenix-common`, based exactly on clean, pushed,
   remote-verified Eclipsecrown final reconciliation
   `43452d7a03a92cee228a1d1ffaf147fc39802ad5`, the designer's fresh `Let's do
@@ -143,8 +144,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and `dc651078d81f87168f4be481173add9142a050f199dc92b23f0a030d3047e2c2`.
   The designer replied `approved lets do next` to this exact packet. Approval
   binds only to implementation
-  `4111b322fe6f362f92f389e606722b80426aee25`, the digest, and six hashes;
-  that implementation is pushed and remote verified. The continuation opens
+  `4111b322fe6f362f92f389e606722b80426aee25`, the digest, and six hashes.
+  That implementation and approval record
+  `c9cd3669394f0e39e05377bb9be0532e1b6204d8` are pushed and remote verified.
+  The continuation opens
   exactly one private specialist Phoenix candidate only after common
   publication completes and does not approve specialist pixels.
   Focused/fast/full validation passes in about 1.1s/73.1s/137.3s. Focused
@@ -156,8 +159,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   eight phase sheets, atlas, and both GIFs were inspected at original
   resolution; the 480x96 atlas passes its 20x4 hard-alpha contract with no
   boundary contact, and Aseprite parsed all six principal files. Internal
-  visual QA accepted the packet. Commit and push only the approval record and
-  publication reconciliation. Registration, fixtures, effects, child assets,
+  visual QA accepted the packet. Create and push only the initial handoff and
+  final reconciliation. Registration, fixtures, effects, child assets,
   resurrection or flight-state art, elite Phoenix, another family, release,
   accepted drift, and PR remain closed.
 - Current approved private Owl elite published / next gate closed: on

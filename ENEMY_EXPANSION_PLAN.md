@@ -1,6 +1,7 @@
 # Enemy Expansion Plan
 
-- Current approved private common Phoenix / publication in progress
+- Current approved private common Phoenix published / handoff reconciliation
+  in progress
   (2026-08-14): on `codex/en-e11-phoenix-common`, based exactly on the clean,
   pushed, remote-verified Eclipsecrown final reconciliation
   `43452d7a03a92cee228a1d1ffaf147fc39802ad5`, the designer's fresh `Let's do
@@ -28,8 +29,10 @@
   and `dc651078d81f87168f4be481173add9142a050f199dc92b23f0a030d3047e2c2`.
   The designer replied `approved lets do next` to this exact packet. Approval
   binds only to implementation
-  `4111b322fe6f362f92f389e606722b80426aee25`, the digest, and six hashes; that
-  implementation is pushed and remote verified. The continuation opens
+  `4111b322fe6f362f92f389e606722b80426aee25`, the digest, and six hashes. That
+  implementation and approval record
+  `c9cd3669394f0e39e05377bb9be0532e1b6204d8` are pushed and remote verified.
+  The continuation opens
   exactly one private specialist Phoenix candidate only after common
   publication completes and does not approve specialist pixels.
   Focused/fast/full validation passes in about 1.1s/73.1s/137.3s. Focused
@@ -40,7 +43,7 @@
   Cinderquill, and public Harpy. Public remains 100/316 and fixtures remain
   untouched. Original-resolution review, exact 20x4 atlas measurement, and
   Aseprite parsing of all six principal files pass. Internal visual QA accepted
-  the exact packet. Commit and push only the approval record and publication
+  the exact packet. Create and push only the initial handoff and final
   reconciliation. Registration, fixtures, effects, child assets, resurrection
   or flight-state art, elite Phoenix, another family, release, accepted drift,
   PR, and every broader gate remain closed.
@@ -6752,7 +6755,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `phoenix-common-approved-publication-in-progress`
+- Status: `phoenix-common-published-handoff-reconciliation-in-progress`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 - Active family: Phoenix common
@@ -6761,7 +6764,7 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current approved private Phoenix common / publication in progress
+#### Current approved private Phoenix common published / handoff reconciliation in progress
 
 The exact Eclipsecrown publication tuple is pushed, remote verified, and
 reconciled at `43452d7a03a92cee228a1d1ffaf147fc39802ad5`. The designer's
@@ -6798,7 +6801,9 @@ and `dc651078d81f87168f4be481173add9142a050f199dc92b23f0a030d3047e2c2`.
 The designer replied `approved lets do next` to this exact packet. Pixel
 approval binds only to implementation
 `4111b322fe6f362f92f389e606722b80426aee25`, the exact digest, and six frozen
-hashes; that implementation is pushed and remote verified. The continuation
+hashes. That implementation and approval record
+`c9cd3669394f0e39e05377bb9be0532e1b6204d8` are pushed and remote verified.
+The continuation
 clause opens exactly one private specialist Phoenix candidate only after the
 common publication tuple is complete and does not approve specialist pixels.
 
@@ -6816,8 +6821,8 @@ original resolution. The atlas passes its 480x96, 80-cell, hard-alpha,
 no-boundary-contact contract, Aseprite parsed all six principal files, and
 regeneration reproduces every frozen hash.
 
-Internal visual QA accepted the packet. Commit and push only the approval
-record, initial published handoff, and final reconciliation. After that tuple
+Internal visual QA accepted the packet. Create and push only the initial
+published handoff and final reconciliation. After that tuple
 is complete, the current continuation opens one private specialist Phoenix
 candidate under the selected topology. Do not register, regenerate fixtures,
 add effects or child assets, begin egg/ash resurrection or flight-state art,
