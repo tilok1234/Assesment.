@@ -137,7 +137,7 @@ check(
   'approved Basilisk topology decision drifted',
 );
 check(
-  EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.status === 'candidate'
+  EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.status === 'approved'
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.baseCheckpoint === '6bec0b69f95c11d63780712aff223073376c2541'
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.architectureDecision === EN_E12_BASILISK_TOPOLOGY_DECISION.id
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.precedingApproval.gateId === EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.id
@@ -145,20 +145,35 @@ check(
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.precedingApproval.publishedImplementation === EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publishedImplementation
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.precedingApproval.publishedApprovalRecord === EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publishedApprovalRecord
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.precedingApproval.initialPublishedHandoff === EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.initialPublishedHandoff
-    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.precedingApproval.currentReconciliation === EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.baseCheckpoint
-    && !Object.hasOwn(EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE, 'approvedOn')
-    && !Object.hasOwn(EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE, 'approvedImplementation')
-    && !Object.hasOwn(EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE, 'publicationState'),
-  'Crownscale gate must remain an unapproved private candidate on the exact clean checkpoint',
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.precedingApproval.currentReconciliation === EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.baseCheckpoint,
+  'Crownscale approved gate identity or predecessor tuple drifted',
+);
+check(
+  EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.approvedOn === '2026-08-15'
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.approvalEvidence.includes('The designer replied: Approved lets do next')
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.approvalEvidence.includes('96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872')
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.approvedImplementation === '3071d18d98b84ca1492e88ab85bf7765aa7ee0d0'
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publicationAuthorizedOn === '2026-08-15'
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publishedImplementation === ''
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publishedApprovalRecord === ''
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.initialPublishedHandoff === ''
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publicationState === 'approved-not-published'
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('3071d18d98b84ca1492e88ab85bf7765aa7ee0d0')
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('approval record')
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('private specialist Basilisk candidate')
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('does not approve specialist pixels'),
+  'Crownscale approval record or publication boundary drifted',
 );
 check(
   JSON.stringify(EN_E12_BASILISK_COMMON_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E12_BASILISK_COMMON_CONTRACT_CARD.precedingFamily.finalVariant === 'dawnthrone-imperator'
     && EN_E12_BASILISK_COMMON_CONTRACT_CARD.activeVariant.id === 'crownscale-crawler'
     && EN_E12_BASILISK_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E12_BASILISK_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E12_BASILISK_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E12_BASILISK_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
-    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Basilisk common role contract drifted',
 );
 check(
@@ -172,8 +187,8 @@ check(
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.exclusions.includes('outline registration')
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.exclusions.includes('fixtures')
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.exclusions.includes('Manticore or Sphinx')
-    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('stop for explicit visual pixel approval')
-    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('Do not commit, push, register'),
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('private specialist Basilisk candidate')
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('outline registration'),
   'Crownscale anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(
@@ -372,14 +387,14 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E12 Basilisk Crownscale Crawler private common candidate passes focused validation.');
+  console.log('EN-E12 Basilisk Crownscale Crawler approved private common passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Basilisk identity: ' + fourFootRows + '/80 four-claw ground rows; ' + naturalSpans + '/80 common spans; ' + sideLongSpans + '/40 long-body side views; ' + crownRiseViews + '/8 crown-rise views; ' + fangedPressViews + '/8 body-owned fanged presses; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + crownViews + '/72 crown views; ' + plateViews + '/72 plated-back views; ' + scaleViews + '/72 scale-marked views');
   console.log('- Black-shape distinction: Naga minimum distance ' + alphaStats.naga.minDistance + ', max IoU ' + alphaStats.naga.maxIou.toFixed(3) + '; Cockatrice minimum distance ' + alphaStats.cockatrice.minDistance + ', max IoU ' + alphaStats.cockatrice.maxIou.toFixed(3) + '; Marsh Crocodile minimum distance ' + alphaStats.marshCrocodile.minDistance + ', max IoU ' + alphaStats.marshCrocodile.maxIou.toFixed(3));
   console.log('- Distinction: Naga ' + differences.naga + '/80; Cockatrice ' + differences.cockatrice + '/80; Marsh Crocodile ' + differences.marshCrocodile + '/80 pixel and alpha frames differ');
   console.log('- Presentation: Complete B outline +' + outlinedPixels + ' pixels; Form changes ' + formChanges);
-  console.log('- Protected: published Dawnthrone exact; approved Naga and Cockatrice exact; public Marsh Crocodile and 100/316 exact; zero child assets/effects; no registration, outline registration, fixtures, or later EN-E12 work');
-  console.log('- Candidate frame digest: ' + digests.candidate);
+  console.log('- Protected: published Dawnthrone exact; approved Naga and Cockatrice exact; public Marsh Crocodile and 100/316 exact; zero child assets/effects; bounded publication only; no registration, outline registration, fixtures, package mutation, or broader EN-E12 work');
+  console.log('- Approved Crownscale frame digest: ' + digests.candidate);
   console.log('- Approved Naga frame digest: ' + digests.naga);
   console.log('- Approved Cockatrice frame digest: ' + digests.cockatrice);
   console.log('- Public Marsh Crocodile frame digest: ' + digests.marshCrocodile);

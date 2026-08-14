@@ -118,7 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private EN-E12 Basilisk common candidate / pixel approval required:
+- Current approved private EN-E12 Basilisk common / publication in progress:
   on `codex/en-e12-basilisk-common`, based exactly on clean, pushed, remote-
   verified Dawnthrone/package checkpoint
   `6bec0b69f95c11d63780712aff223073376c2541`, the designer's fresh `awesome
@@ -146,6 +146,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   raw / Form GIF hashes are
   `c7570f094b448f16715c83814b8a8da62126c9ecaa04daf5002e7ef5f48ce5bb`
   and `ec32bcad5e6a36e775022d9ed024581db10e10d2a20a89e65a787a5d57efae4e`.
+  The designer replied `Approved lets do next` to this exact packet. Pixel
+  approval binds only to implementation
+  `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0`, the digest, and six frozen
+  review hashes; that implementation is pushed and remote verified. The
+  continuation opens exactly one private specialist Basilisk candidate only
+  after common publication completes and does not approve specialist pixels.
   Focused/fast/full validation passes in about 1.1s/56.0s/97.3s. Focused proof
   passes 80/80 connected, one-cell-bounded, grounded, four-claw, common-span,
   crown, plated-back, and scale-marked frames; 40/40 long side profiles; 8/8
@@ -158,9 +164,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   were inspected; the atlas has 80 non-empty cells and zero boundary contact,
   all six principal files parse in Aseprite, and regeneration reproduces every
   frozen hash. Public remains 100/316 and all 232 fixtures stay exact. The
-  candidate remains private, uncommitted, unpushed, and unapproved pending the
-  designer's exact pixel decision. Registration, outline enrollment, fixtures,
-  effects, child assets, later Basilisk roles, Manticore, Sphinx, boss work,
+  designer approved the exact private packet. Commit and push only the approval
+  record and publication reconciliation. Registration, outline enrollment,
+  fixtures, effects, child assets, elite Basilisk, Manticore, Sphinx, boss work,
   package mutation, release, accepted drift, and PR remain closed.
 - Current approved private Phoenix elite published / next enemy gate closed:
   on

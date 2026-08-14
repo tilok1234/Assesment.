@@ -52,7 +52,7 @@ export const EN_E12_BASILISK_CROWNSCALE_CRAWLER_CONTRACT = deepFreeze({
   family: 'basilisk',
   variant: 'crownscale-crawler',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E12_BASILISK_TOPOLOGY_DECISION.selected,
   silhouette: 'One connected low, long Basilisk joins a broad wedge-shaped serpent head, a connected three-pronged keratin crown, short plated neck, heavy scale-armored barrel body, four separately readable grounded clawed legs, and one thick tapering upturned serpent tail. It is neither an upright humanoid Naga, serpent-tailed cockerel Cockatrice, ordinary uncrowned Crocodile, nor winged composite.',
   identity: 'Deep moss and forest-green hide, sage back plates, an ochre throat and belly, old-bone three-pronged crown, amber eyes, dark wedge jaw, ivory fangs, and bronze claws distinguish the Crownscale Crawler common without relying on gaze, venom, glow, dust, or projectiles.',
@@ -71,18 +71,27 @@ export const EN_E12_BASILISK_COMMON_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E12_BASILISK_CROWNSCALE_CRAWLER_CONTRACT.variant,
     role: EN_E12_BASILISK_CROWNSCALE_CRAWLER_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['specialist', 'elite'],
 });
 
 export const EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE = deepFreeze({
   id: 'en-e12-basilisk-crownscale-crawler-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-15',
   authorizationEvidence: EN_E12_BASILISK_TOPOLOGY_DECISION.approvalEvidence,
   baseCheckpoint: '6bec0b69f95c11d63780712aff223073376c2541',
   architectureDecision: EN_E12_BASILISK_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-15',
+  approvalEvidence: 'The final approval prompt posted the exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and Naga-Cockatrice-Marsh Crocodile comparison PNGs together with both synchronized full-suite GIFs and candidate digest 96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872. All four exact PNGs, all eight raw and Complete B + Form phase sheets, the transparent 20x4 inspection atlas, and both exact GIFs were inspected at original resolution; Aseprite parsed all six principal files and regeneration reproduced every frozen hash. The designer replied: Approved lets do next. Pixel approval applies only to that exact Crownscale Crawler digest and its six frozen review hashes. The continuation clause separately opens exactly one private specialist Basilisk candidate only after this common publication tuple is complete; it does not approve specialist pixels or open public or outline registration, fixtures, package mutation, effects, child assets, elite Basilisk work, Manticore, Sphinx, boss work, release, accepted drift, or a pull request.',
+  approvedImplementation: '3071d18d98b84ca1492e88ab85bf7765aa7ee0d0',
+  publicationAuthorizedOn: '2026-08-15',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied Approved lets do next to the exact Crownscale Crawler review packet. This does not authorize public or outline registration, fixtures, package mutation, effects, child assets, specialist pixel approval, elite Basilisk work, Manticore, Sphinx, boss work, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.id,
     candidateFrameDigest: EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.candidateFrameDigest,
@@ -152,7 +161,7 @@ export const EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'Render, inspect, freeze, and validate this exact private Crownscale Crawler candidate, then stop for explicit visual pixel approval. Do not commit, push, register, add fixtures or effects, create child assets, open a specialist or elite Basilisk, Manticore, Sphinx, boss, release, accepted-drift, or pull-request lane. The distinct outlined PNG is review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Crownscale Crawler implementation 3071d18d98b84ca1492e88ab85bf7765aa7ee0d0 is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Basilisk common publication tuple. The same reply includes a lets do next continuation, which opens exactly one private specialist Basilisk candidate only after that publication tuple is complete; it does not approve specialist pixels. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, elite Basilisk work, Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E12_BASILISK_CROWNSCALE_CRAWLER_DATA = deepFreeze({
@@ -586,7 +595,7 @@ export const EN_E12_BASILISK_CROWNSCALE_CRAWLER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'crownscale-crawler',
     scale: 6,
-    notes: 'Private common Basilisk candidate only. Review the exact raw/no-outline, distinct Complete B outlined, Complete B + Form, Naga/Cockatrice/Marsh Crocodile comparison, and paired GIF packet. Keep public or outline registration, fixtures, effects, child assets, later Basilisk roles, Manticore, Sphinx, boss work, release, accepted drift, and a pull request separate until explicit approval.',
+    notes: 'Approved private Crownscale Crawler common Basilisk only, bound to exact implementation 3071d18d98b84ca1492e88ab85bf7765aa7ee0d0, candidate digest 96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872, and its six frozen review hashes. The designer replied Approved lets do next to the posted exact packet. The continuation clause opens only one private specialist Basilisk candidate after common publication completes and does not approve specialist pixels. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, elite Basilisk work, Manticore, Sphinx, boss work, release, accepted drift, and a pull request separate.',
   },
 });
 

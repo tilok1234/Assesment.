@@ -23,21 +23,27 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Private Basilisk Common Candidate / Pixel Approval Required
+## Next Chat Start Here - Approved Basilisk Common Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
-   `codex/en-e12-basilisk-common`, based exactly on clean, pushed, remote-
-   verified checkpoint `6bec0b69f95c11d63780712aff223073376c2541`. Do not move this work to another
-   checkout or modify the approved copy package.
+   `codex/en-e12-basilisk-common`. Exact Crownscale Crawler implementation
+   `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0` is pushed and remote verified.
+   Publication is in progress; finish only the approval record, initial
+   published handoff, and final reconciliation. Do not modify the approved copy
+   package.
 2. After the published Dawnthrone tuple and copy-only package reconciliation
    were complete, the designer supplied the fresh continuation `awesome lets do
    next`. That opened only the documented EN-E12 priority-first Basilisk
    topology decision. Codex recommended
    `baked-single-actor-grounded-four-clawed-crowned-serpent`; the designer
-   replied `approved`. That reply approves only this actor topology and
-   authorizes exactly one private common Basilisk 80-frame candidate. It does
-   not approve candidate pixels, a commit, push, registration, fixtures,
-   effects, later Basilisk roles, Manticore, Sphinx, or boss work.
+   replied `approved`. That reply approved only this actor topology and opened
+   one private common Basilisk 80-frame candidate. After the exact four-PNG,
+   two-GIF, digest-frozen packet below was shown, the designer replied `Approved
+   lets do next`. Pixel approval binds only to implementation
+   `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0`, the exact digest, and six frozen
+   review hashes. The continuation opens exactly one private specialist Basilisk
+   candidate only after this common publication tuple is complete; it does not
+   approve specialist pixels or broaden any other boundary.
 3. This lane names only Crownscale Crawler. It uses bespoke content geometry:
    one connected low, long moss-and-forest serpent-lizard with sage back plates,
    ochre throat and belly, connected old-bone three-pronged crown, amber eyes,
@@ -74,12 +80,13 @@ gate.
    at original resolution. The atlas is 480x96 with 80 non-empty hard-alpha
    24x24 cells and zero boundary contact. Regeneration reproduces all six frozen
    hashes, and Aseprite parses all six principal files.
-7. Stop for explicit designer pixel approval of this exact packet. The candidate
-   is intentionally private, uncommitted, unpushed, and unapproved. Do not
-   register it, enroll an outline, create or edit fixtures, mutate the approved-
-   enemy copy package, add effects or child assets, start specialist/elite
-   Basilisk, Manticore, Sphinx, or boss work, release, accept drift, or open a
-   PR. Never use `--accept-drift`.
+7. The designer approved this exact packet. Commit and push only the approval
+   record, initial published handoff, and final reconciliation. After that tuple
+   is complete, open exactly one private specialist Basilisk candidate under the
+   selected topology and stop for its separate pixel approval. Do not register,
+   enroll an outline, create or edit fixtures, mutate the approved-enemy copy
+   package, add effects or child assets, start elite Basilisk, Manticore, Sphinx,
+   or boss work, release, accept drift, or open a PR. Never use `--accept-drift`.
 8. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e12-basilisk-crownscale-crawler`; run
    the focused gate with

@@ -1,6 +1,6 @@
 # Enemy Expansion Plan
 
-- Current private EN-E12 common Basilisk candidate / pixel approval required
+- Current approved private EN-E12 common Basilisk / publication in progress
   (2026-08-15): on `codex/en-e12-basilisk-common`, based exactly on clean,
   pushed, remote-verified Dawnthrone/package checkpoint
   `6bec0b69f95c11d63780712aff223073376c2541`, the designer's fresh `awesome lets
@@ -27,6 +27,12 @@
   raw / Form GIF hashes are
   `c7570f094b448f16715c83814b8a8da62126c9ecaa04daf5002e7ef5f48ce5bb`
   and `ec32bcad5e6a36e775022d9ed024581db10e10d2a20a89e65a787a5d57efae4e`.
+  The designer replied `Approved lets do next` to this exact packet. Pixel
+  approval binds only to implementation
+  `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0`, the digest, and six frozen
+  review hashes; that implementation is pushed and remote verified. The
+  continuation opens exactly one private specialist Basilisk candidate only
+  after common publication completes and does not approve specialist pixels.
   Focused/fast/full validation passes in about 1.1s/56.0s/97.3s. All 80 frames
   pass connected, one-cell-bounded, grounded, four-claw, common-span, crown,
   plated-back, scale-mark, alias, and mirror gates; all 40 side views retain the
@@ -38,11 +44,11 @@
   changes 11,166. Public remains 100/316 and all 232 fixtures stay exact.
   Original-resolution inspection, the 480x96 20x4 hard-alpha atlas with 80
   non-empty cells and zero boundary contact, exact hash reproduction, and
-  Aseprite parsing of all six principal files pass. The candidate is private,
-  uncommitted, unpushed, and awaiting exact pixel approval. Registration,
-  outline enrollment, fixtures, package mutation, effects, child assets,
-  specialist/elite Basilisk, Manticore, Sphinx, boss work, release, accepted
-  drift, and PR remain closed.
+  Aseprite parsing of all six principal files pass. The designer approved the
+  exact private packet. Commit and push only the approval record and publication
+  reconciliation. Registration, outline enrollment, fixtures, package mutation,
+  effects, child assets, elite Basilisk, Manticore, Sphinx, boss work, release,
+  accepted drift, and PR remain closed.
 
 - Current approved private elite Phoenix published / next enemy gate closed
   (2026-08-14): on `codex/en-e11-phoenix-elite`, based exactly on clean,
@@ -7383,7 +7389,7 @@ remain closed. The outlined PNG is review evidence only.
 
 ### EN-E12 - Mythic composite creatures
 
-- Status: `common-candidate-awaiting-pixel-approval`
+- Status: `common-approved-publication-in-progress`
 - Families: Basilisk, Manticore, Sphinx
 - Priority-first: Basilisk
 
@@ -7393,14 +7399,18 @@ If a family cannot remain readable at 24x24, stop and request a scale ruling
 rather than quietly moving it into the Boss lane.
 
 The exact Basilisk topology decision is approved as
-`baked-single-actor-grounded-four-clawed-crowned-serpent`. One private common
-Crownscale Crawler 80-frame candidate is implemented and frozen at digest
-`96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872`.
-Its required review packet and focused/fast/full gates pass. Stop for explicit
-pixel approval of that exact digest and six review hashes. Do not commit, push,
-register, add outlines, fixtures, effects, or child assets, mutate the approved-
-enemy package, start later Basilisk roles, Manticore, Sphinx, or a Boss pilot,
-release, accept drift, or open a PR.
+`baked-single-actor-grounded-four-clawed-crowned-serpent`. The designer replied
+`Approved lets do next` to the exact private Crownscale Crawler packet. Pixel
+approval binds only to implementation
+`3071d18d98b84ca1492e88ab85bf7765aa7ee0d0`, candidate digest
+`96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872`,
+and its six frozen review hashes; the implementation is pushed and remote
+verified. Complete only the approval record, initial published handoff, and
+final reconciliation. After that tuple is complete, the continuation opens one
+private specialist Basilisk candidate under the same topology without approving
+its pixels. Do not register, add outlines, fixtures, effects, or child assets,
+mutate the approved-enemy package, start elite Basilisk, Manticore, Sphinx, or a
+Boss pilot, release, accept drift, or open a PR.
 
 ### EN-B01 - Hydra direction pilot
 
