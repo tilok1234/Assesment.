@@ -71,7 +71,7 @@ export const EN_E12_BASILISK_COMMON_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E12_BASILISK_CROWNSCALE_CRAWLER_CONTRACT.variant,
     role: EN_E12_BASILISK_CROWNSCALE_CRAWLER_CONTRACT.role,
-    status: 'implemented-full-approved',
+    status: 'implemented-full-approved-published-reconciled',
   },
   deferredRoles: ['specialist', 'elite'],
 });
@@ -90,8 +90,8 @@ export const EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied Approved lets do next to the exact Crownscale Crawler review packet. This does not authorize public or outline registration, fixtures, package mutation, effects, child assets, specialist pixel approval, elite Basilisk work, Manticore, Sphinx, boss work, release, accepted drift, or a pull request.',
   publishedImplementation: '3071d18d98b84ca1492e88ab85bf7765aa7ee0d0',
   publishedApprovalRecord: 'fd734af1df0a6b2ab1712533892e2a9e18c5984c',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '06249d3ce2924a1010ab6a8edd927ab934c50380',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.id,
     candidateFrameDigest: EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.candidateFrameDigest,
@@ -161,7 +161,7 @@ export const EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'The exact Crownscale Crawler implementation 3071d18d98b84ca1492e88ab85bf7765aa7ee0d0 and approval record fd734af1df0a6b2ab1712533892e2a9e18c5984c are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Basilisk common publication tuple. The same reply includes a lets do next continuation, which opens exactly one private specialist Basilisk candidate only after that publication tuple is complete; it does not approve specialist pixels. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, elite Basilisk work, Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Crownscale Crawler implementation 3071d18d98b84ca1492e88ab85bf7765aa7ee0d0, approval record fd734af1df0a6b2ab1712533892e2a9e18c5984c, and initial published handoff 06249d3ce2924a1010ab6a8edd927ab934c50380 are pushed and remote verified; this reconciliation completes the bounded Basilisk common publication tuple. The same reply includes a lets do next continuation, which now opens exactly one private specialist Basilisk full 80-frame candidate under the selected baked-single-actor-grounded-four-clawed-crowned-serpent topology; because the specialist was not pre-named, that lane may name only its one candidate. It does not approve specialist pixels or authorize their commit or push. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, elite Basilisk work, Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E12_BASILISK_CROWNSCALE_CRAWLER_DATA = deepFreeze({
@@ -595,7 +595,7 @@ export const EN_E12_BASILISK_CROWNSCALE_CRAWLER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'crownscale-crawler',
     scale: 6,
-    notes: 'Approved private Crownscale Crawler common Basilisk only, bound to exact implementation 3071d18d98b84ca1492e88ab85bf7765aa7ee0d0, approval record fd734af1df0a6b2ab1712533892e2a9e18c5984c, candidate digest 96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. The designer replied Approved lets do next, which opens only one private specialist Basilisk candidate after common publication completes and does not approve specialist pixels. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, elite Basilisk work, Manticore, Sphinx, boss work, release, accepted drift, and a pull request separate.',
+    notes: 'Published and reconciled private Crownscale Crawler common Basilisk only, bound to exact implementation 3071d18d98b84ca1492e88ab85bf7765aa7ee0d0, approval record fd734af1df0a6b2ab1712533892e2a9e18c5984c, initial published handoff 06249d3ce2924a1010ab6a8edd927ab934c50380, candidate digest 96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872, and its six frozen review hashes. The designer replied Approved lets do next, so exactly one private specialist Basilisk candidate is now open under the selected topology without pixel approval. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, elite Basilisk work, Manticore, Sphinx, boss work, release, accepted drift, and a pull request separate.',
   },
 });
 

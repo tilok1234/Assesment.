@@ -23,13 +23,14 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Published Basilisk Common / Handoff Reconciliation In Progress
+## Next Chat Start Here - Published Basilisk Common / Specialist Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-basilisk-common`. Exact Crownscale Crawler implementation
-   `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0` and approval record
-   `fd734af1df0a6b2ab1712533892e2a9e18c5984c` are pushed and remote verified.
-   Finish only the initial published handoff and final reconciliation. Do not
+   `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0`, approval record
+   `fd734af1df0a6b2ab1712533892e2a9e18c5984c`, and initial published handoff
+   `06249d3ce2924a1010ab6a8edd927ab934c50380` are pushed and remote verified;
+   this reconciliation completes the bounded common publication tuple. Do not
    modify the approved copy package.
 2. After the published Dawnthrone tuple and copy-only package reconciliation
    were complete, the designer supplied the fresh continuation `awesome lets do
@@ -65,7 +66,8 @@ gate.
    Raw and Complete B + Form GIF hashes are
    `c7570f094b448f16715c83814b8a8da62126c9ecaa04daf5002e7ef5f48ce5bb`
    and `ec32bcad5e6a36e775022d9ed024581db10e10d2a20a89e65a787a5d57efae4e`.
-5. Focused, fast, and full validation pass in about 1.1s, 56.0s, and 97.3s.
+5. Focused, fast, and full validation pass in about 1.1s, 56.0s, and 97.3s;
+   final published-state focused and full gates pass again.
    Focused proof passes 80/80 connected, one-cell-bounded, grounded, four-claw,
    common-span, crowned, plated-back, and scale-marked frames; 40/40 long side
    profiles; 8/8 crown-rise and 8/8 body-owned fanged-press views; eight exact
@@ -81,10 +83,11 @@ gate.
    at original resolution. The atlas is 480x96 with 80 non-empty hard-alpha
    24x24 cells and zero boundary contact. Regeneration reproduces all six frozen
    hashes, and Aseprite parses all six principal files.
-7. The designer approved this exact packet. Only the initial published handoff
-   and final reconciliation remain. After that tuple
-   is complete, open exactly one private specialist Basilisk candidate under the
-   selected topology and stop for its separate pixel approval. Do not register,
+7. The designer approved this exact packet. The same reply now opens exactly one
+   private specialist Basilisk full 80-frame candidate under the selected
+   topology. Because that specialist was not pre-named, the lane may name only
+   its one candidate; its pixels are not approved and may not be committed or
+   pushed. Do not register,
    enroll an outline, create or edit fixtures, mutate the approved-enemy copy
    package, add effects or child assets, start elite Basilisk, Manticore, Sphinx,
    or boss work, release, accept drift, or open a PR. Never use `--accept-drift`.
