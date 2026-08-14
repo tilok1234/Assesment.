@@ -44,8 +44,13 @@
   atlas measurement, exact hash reproduction, and Aseprite parsing of all six
   principal files pass. Internal visual QA accepted the exact packet for
   designer review and the designer approved it. Final published-state focused
-  and full gates pass again. No next enemy role or family is open; build only
-  the separately requested copy-only approved-expansion-enemy package. Do not register, add
+  and full gates pass again. No next enemy role or family is open. The requested
+  copy-only package is complete at
+  `dist/8-bit-sprite-assembler-approved-expansion-enemies-v1.zip`, generated
+  from clean source `0d4bea1d9e907c1a7149db5a1f1fa1620fe04a8b` with 45 families,
+  122 raw sheets, 9,760 frames, and SHA-256
+  `984c147409d1c6ca57196c569a9d4339de400c7a1fdc06d6390e91810c4ebd03`.
+  Independent archive, dimension, manifest-hash, and sidecar checks pass. Do not register, add
   outlines, fixtures, effects, child assets, resurrection or flight-state art,
   open another Phoenix or family, release, accept drift, or open a PR.
 
@@ -6918,8 +6923,15 @@ fixtures remain untouched. Original-resolution inspection, the exact 20x4
 hard-alpha atlas, deterministic hash reproduction, and Aseprite parsing of all
 six principal files pass. Internal visual QA accepted the exact packet and the
 designer approved it. Final published-state focused and full gates pass again.
-No next enemy role or family is open; only the separately requested copy-only
-package remains authorized. Keep
+No next enemy role or family is open. The separately requested copy-only
+package is complete at
+`dist/8-bit-sprite-assembler-approved-expansion-enemies-v1.zip`, generated from
+clean source `0d4bea1d9e907c1a7149db5a1f1fa1620fe04a8b`. It contains 45 families / 122
+raw sheets / 9,760 frames, including 114 stable integrated variants and eight
+approved private Raven, Owl, and Phoenix variants. Its SHA-256 is
+`984c147409d1c6ca57196c569a9d4339de400c7a1fdc06d6390e91810c4ebd03`;
+archive CRC, entry count, 480x96 dimensions, manifest asset hashes, and the
+sidecar all pass. Keep
 registration, outline enrollment, fixtures, effects, child assets,
 resurrection or flight-state art, another Phoenix or family, release, accepted
 drift, and PR closed.

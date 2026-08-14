@@ -23,15 +23,16 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Published Phoenix Elite / Next Enemy Gate Closed / Package Requested
+## Next Chat Start Here - Published Phoenix Elite / Next Enemy Gate Closed / Package Delivered
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-phoenix-elite`. The exact Dawnthrone Imperator implementation
    `68c36bb5711b985ab9f9a37a68c18bfc0748c399`, approval record
    `4acfbbb172a8ff380ce22141f68d494e620ce9c4`, and initial published handoff
    `6d6fa755f4c7c7a4fefa0da3e2740d7a43629f25` are pushed and remote verified;
-   this reconciliation completes the bounded elite publication tuple. Only the
-   separately requested copy-only package of approved expansion enemies remains.
+   this reconciliation completes the bounded elite publication tuple. The
+   separately requested copy-only approved-expansion-enemy package is complete
+   at `dist/8-bit-sprite-assembler-approved-expansion-enemies-v1.zip`.
 2. After the published Sunveil tuple was complete, the designer supplied the
    fresh continuation `lets do next`. Under the documented common, specialist,
    elite order and selected
@@ -82,8 +83,14 @@ gate.
    hashes, and Aseprite parsed all six principal files. Internal visual QA
    accepted the exact packet and the designer approved it.
 7. Final published-state focused and full gates pass again. No next enemy role
-   or family is open. Build only the separately requested copy-only package of
-   approved expansion enemies. Do not register, regenerate or hand-edit
+   or family is open. The copy-only package was generated from clean source
+   `0d4bea1d9e907c1a7149db5a1f1fa1620fe04a8b` and contains 45 families / 122
+   native raw sheets / 9,760 frames: 114 stable integrated variants plus eight
+   approved private Raven, Owl, and Phoenix variants. ZIP SHA-256 is
+   `984c147409d1c6ca57196c569a9d4339de400c7a1fdc06d6390e91810c4ebd03`.
+   Archive CRC, 124-entry count, 480x96 dimensions, every manifest asset hash,
+   and the sidecar pass independently. The extracted copy is beside the ZIP and
+   the `.zip.sha256` sidecar. Do not register, regenerate or hand-edit
    fixtures, add outline enrollment, effects, child assets, resurrection or
    flight-state art, open another Phoenix or family, release, accept drift, or
    open a PR. Never use `--accept-drift`.

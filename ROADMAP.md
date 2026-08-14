@@ -42,8 +42,14 @@ fixtures stay untouched. Original-resolution inspection, the exact 20x4 hard-
 alpha atlas measurement, exact hash reproduction, and Aseprite parsing of all
 six principal files pass. Internal visual QA accepted the exact packet and the
 designer approved it. Final published-state focused and full gates pass again.
-No next enemy role or family is open; only the separately requested copy-only
-approved-expansion-enemy package remains authorized. Registration, outline enrollment, fixtures, effects,
+No next enemy role or family is open. The separately requested copy-only
+approved-expansion-enemy package is complete at
+`dist/8-bit-sprite-assembler-approved-expansion-enemies-v1.zip`, generated from
+clean source `0d4bea1d9e907c1a7149db5a1f1fa1620fe04a8b`. It contains 45 families / 122
+raw sheets / 9,760 frames and has SHA-256
+`984c147409d1c6ca57196c569a9d4339de400c7a1fdc06d6390e91810c4ebd03`.
+Independent archive, dimension, manifest-hash, and sidecar checks pass.
+Registration, outline enrollment, fixtures, effects,
 child assets, resurrection or flight-state art, another Phoenix or family,
 release, accepted drift, and PR remain closed.
 

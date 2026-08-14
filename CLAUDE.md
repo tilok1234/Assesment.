@@ -164,8 +164,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reproduction, and Aseprite parsing of all six principal files pass. Internal
   visual QA accepted the packet and the designer approved it. Final published-
   state focused and full gates pass again. No next enemy role or family is
-  open; only the separately requested copy-only approved-expansion-enemy
-  package remains authorized.
+  open. The separately requested copy-only approved-expansion-enemy package is
+  complete at `dist/8-bit-sprite-assembler-approved-expansion-enemies-v1.zip`.
+  It was generated from clean source `0d4bea1d9e907c1a7149db5a1f1fa1620fe04a8b`
+  and contains 45 families / 122 native raw sheets / 9,760 frames: 114 stable
+  integrated variants plus eight approved private Raven, Owl, and Phoenix
+  variants. Its SHA-256 is
+  `984c147409d1c6ca57196c569a9d4339de400c7a1fdc06d6390e91810c4ebd03`.
+  Archive CRC, 124-entry count, 480x96 dimensions, manifest asset hashes, and
+  the hash sidecar all pass. This local copy does not change registration.
   Registration, outline enrollment, fixtures, effects, child assets,
   resurrection or flight-state art, another Phoenix or family, release,
   accepted drift, and PR remain closed.
