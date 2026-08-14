@@ -23,14 +23,14 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Approved Basilisk Common Publication In Progress
+## Next Chat Start Here - Published Basilisk Common / Handoff Reconciliation In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-basilisk-common`. Exact Crownscale Crawler implementation
-   `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0` is pushed and remote verified.
-   Publication is in progress; finish only the approval record, initial
-   published handoff, and final reconciliation. Do not modify the approved copy
-   package.
+   `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0` and approval record
+   `fd734af1df0a6b2ab1712533892e2a9e18c5984c` are pushed and remote verified.
+   Finish only the initial published handoff and final reconciliation. Do not
+   modify the approved copy package.
 2. After the published Dawnthrone tuple and copy-only package reconciliation
    were complete, the designer supplied the fresh continuation `awesome lets do
    next`. That opened only the documented EN-E12 priority-first Basilisk
@@ -41,7 +41,8 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied `Approved
    lets do next`. Pixel approval binds only to implementation
    `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0`, the exact digest, and six frozen
-   review hashes. The continuation opens exactly one private specialist Basilisk
+   review hashes. The implementation and approval record are pushed and remote
+   verified. The continuation opens exactly one private specialist Basilisk
    candidate only after this common publication tuple is complete; it does not
    approve specialist pixels or broaden any other boundary.
 3. This lane names only Crownscale Crawler. It uses bespoke content geometry:
@@ -80,8 +81,8 @@ gate.
    at original resolution. The atlas is 480x96 with 80 non-empty hard-alpha
    24x24 cells and zero boundary contact. Regeneration reproduces all six frozen
    hashes, and Aseprite parses all six principal files.
-7. The designer approved this exact packet. Commit and push only the approval
-   record, initial published handoff, and final reconciliation. After that tuple
+7. The designer approved this exact packet. Only the initial published handoff
+   and final reconciliation remain. After that tuple
    is complete, open exactly one private specialist Basilisk candidate under the
    selected topology and stop for its separate pixel approval. Do not register,
    enroll an outline, create or edit fixtures, mutate the approved-enemy copy

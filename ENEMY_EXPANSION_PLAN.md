@@ -1,6 +1,7 @@
 # Enemy Expansion Plan
 
-- Current approved private EN-E12 common Basilisk / publication in progress
+- Current approved private EN-E12 common Basilisk published / handoff
+  reconciliation in progress
   (2026-08-15): on `codex/en-e12-basilisk-common`, based exactly on clean,
   pushed, remote-verified Dawnthrone/package checkpoint
   `6bec0b69f95c11d63780712aff223073376c2541`, the designer's fresh `awesome lets
@@ -30,7 +31,8 @@
   The designer replied `Approved lets do next` to this exact packet. Pixel
   approval binds only to implementation
   `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0`, the digest, and six frozen
-  review hashes; that implementation is pushed and remote verified. The
+  review hashes. That implementation and approval record
+  `fd734af1df0a6b2ab1712533892e2a9e18c5984c` are pushed and remote verified. The
   continuation opens exactly one private specialist Basilisk candidate only
   after common publication completes and does not approve specialist pixels.
   Focused/fast/full validation passes in about 1.1s/56.0s/97.3s. All 80 frames
@@ -45,7 +47,7 @@
   Original-resolution inspection, the 480x96 20x4 hard-alpha atlas with 80
   non-empty cells and zero boundary contact, exact hash reproduction, and
   Aseprite parsing of all six principal files pass. The designer approved the
-  exact private packet. Commit and push only the approval record and publication
+  exact private packet. Create and push only the initial handoff and final
   reconciliation. Registration, outline enrollment, fixtures, package mutation,
   effects, child assets, elite Basilisk, Manticore, Sphinx, boss work, release,
   accepted drift, and PR remain closed.
@@ -7389,7 +7391,7 @@ remain closed. The outlined PNG is review evidence only.
 
 ### EN-E12 - Mythic composite creatures
 
-- Status: `common-approved-publication-in-progress`
+- Status: `common-published-handoff-reconciliation-in-progress`
 - Families: Basilisk, Manticore, Sphinx
 - Priority-first: Basilisk
 
@@ -7405,8 +7407,8 @@ approval binds only to implementation
 `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0`, candidate digest
 `96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872`,
 and its six frozen review hashes; the implementation is pushed and remote
-verified. Complete only the approval record, initial published handoff, and
-final reconciliation. After that tuple is complete, the continuation opens one
+verified. Complete only the initial published handoff and final reconciliation.
+After that tuple is complete, the continuation opens one
 private specialist Basilisk candidate under the same topology without approving
 its pixels. Do not register, add outlines, fixtures, effects, or child assets,
 mutate the approved-enemy package, start elite Basilisk, Manticore, Sphinx, or a

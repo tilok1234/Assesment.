@@ -2,7 +2,8 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E12 approved private common Basilisk / publication in progress
+Current EN-E12 approved private common Basilisk published / handoff
+reconciliation in progress
 (2026-08-15): on `codex/en-e12-basilisk-common`, based exactly on clean,
 pushed, remote-verified Dawnthrone/package checkpoint
 `6bec0b69f95c11d63780712aff223073376c2541`, the designer's fresh `awesome lets
@@ -32,7 +33,8 @@ and `ec32bcad5e6a36e775022d9ed024581db10e10d2a20a89e65a787a5d57efae4e`.
 The designer replied `Approved lets do next` to this exact packet. Pixel
 approval binds only to implementation
 `3071d18d98b84ca1492e88ab85bf7765aa7ee0d0`, the digest, and six frozen review
-hashes; that implementation is pushed and remote verified. The continuation
+hashes. That implementation and approval record
+`fd734af1df0a6b2ab1712533892e2a9e18c5984c` are pushed and remote verified. The continuation
 opens exactly one private specialist Basilisk candidate only after common
 publication completes and does not approve specialist pixels.
 Focused/fast/full validation passes in about 1.1s/56.0s/97.3s. All 80 frames
@@ -44,8 +46,8 @@ and public Marsh Crocodile; minimum alpha distances / maximum IoUs are
 118/0.600, 75/0.717, and 106/0.578. Public remains 100/316 and all 232 fixtures
 stay exact. Original-resolution inspection, 20x4 hard-alpha atlas validation,
 exact hash reproduction, and Aseprite parsing of all six principal files pass.
-The designer approved the exact private packet. Commit and push only the
-approval record and publication reconciliation. Registration, outline
+The designer approved the exact private packet. Create and push only the
+initial handoff and final reconciliation. Registration, outline
 enrollment, fixtures, package mutation, effects, child assets, elite Basilisk,
 Manticore, Sphinx, boss work, release, accepted drift, and PR remain closed.
 

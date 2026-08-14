@@ -156,12 +156,13 @@ check(
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.approvedImplementation === '3071d18d98b84ca1492e88ab85bf7765aa7ee0d0'
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publicationAuthorizedOn === '2026-08-15'
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publishedImplementation === ''
-    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publishedApprovalRecord === ''
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publishedImplementation === '3071d18d98b84ca1492e88ab85bf7765aa7ee0d0'
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publishedApprovalRecord === 'fd734af1df0a6b2ab1712533892e2a9e18c5984c'
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.initialPublishedHandoff === ''
-    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publicationState === 'approved-not-published'
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('3071d18d98b84ca1492e88ab85bf7765aa7ee0d0')
-    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('approval record')
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('fd734af1df0a6b2ab1712533892e2a9e18c5984c')
+    && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('initial published handoff')
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('private specialist Basilisk candidate')
     && EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.nextGate.includes('does not approve specialist pixels'),
   'Crownscale approval record or publication boundary drifted',
