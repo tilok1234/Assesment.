@@ -23,6 +23,74 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
+## Current Private Candidate - Eclipsecrown Noctarch / Awaiting Visual Approval
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-owl-elite`, based exactly on clean, pushed, remote-verified
+   Moonveil final reconciliation
+   `20311d040ac086ecff950c3da2a57e330c13b875`.
+2. After the complete Moonveil publication tuple was reconciled, the designer
+   supplied the fresh continuation `Let's do next`. Under the documented Owl
+   role order, this opens exactly one private elite full 80-frame candidate
+   under the already selected
+   `baked-single-actor-grounded-facial-disk-owl` topology. Because the role was
+   not pre-named, this lane names only Eclipsecrown Noctarch. This continuation
+   does not approve its pixels or authorize an implementation commit, push,
+   public or outline registration, fixtures, effects, child assets, Phoenix,
+   another family, release, accepted drift, or a PR.
+3. Eclipsecrown Noctarch is one connected broad elite Owl with an
+   obsidian-black and ecliptic-violet body, broad ivory-and-gold facial disk
+   and throat gorget, connected antique-gold three-pronged eclipse crown,
+   royal-violet plated mantle wings, ember-gold eyes, bronze hooked beak and
+   separated three-toed talons, crimson corona bars, and one short connected
+   notched fan tail. Attack braces on both talons, raises a full body-owned
+   eclipse gate, drives a hooked-beak and plated-shoulder crown press, and
+   refolds. Cast aliases Attack exactly; Death aliases Hurt H1,H2,H2,H2.
+   Eclipse halos, corona rings, sun seals, shadow wisps, loose feathers, dust,
+   glow, projectiles, air blades, shock rings, and impacts stay external.
+4. The frozen 80-frame candidate digest is
+   `c2e1e1108ba71d118a1bd169fe81a4745f37c3f96cb89eed1d18033356dc8b6d`.
+   Raw / distinct Complete B outlined / Complete B + Form / Hushmask-Moonveil-
+   Harpy comparison PNG hashes are
+   `271cccaf5495c25672e3d211af5f78ce76f80b201ed868b7aef8eb33b4ed81c5`,
+   `1b4f86abf30f23d25df51c5286703a0666abc2f9a795a7d4f3e042ce1da4cda2`,
+   `13602279254adb1dd367baff784fcf53dba10c5eefa9186ef90d961a2cf0b954`,
+   and `fc5ec424acd79bb9af187ae66bbc6ca479784f46dfa7d78a3ffc3e8c534d3450`.
+   Raw and Complete B + Form GIF hashes are
+   `ad500e727a8ee6c19376dcb39e76a01cf3de37bb736daaf9002c3dc65b903a90`
+   and `02d6b55b78672fbe693bad315c1f14761761c06e664124fd92dbe74ef6df270a`.
+5. Focused validation passes 80/80 connected, bounded, grounded,
+   source-footprint-preserving, separated two-talon, and broad-elite frames;
+   16/16 eclipse-gate views; 54/54 expected eye-bearing views; 72/72 facial-
+   disk, eclipse-crown, corona-bar, and mantle-wing views; 8/8 exact
+   `#f4f4f4` flashes; exact aliases and mirrors; and 80/80 pixel-plus-alpha
+   distinctions from approved Hushmask Prowler, approved Moonveil Augur, and
+   public Harpy Screecher. Opaque range is 239-357. Complete B adds 7,810
+   outline pixels and Form changes 9,222 pixels. Focused, fast, and full
+   validation pass in about 1.0s, 78.4s, and 147.7s. Public remains 100/316,
+   all 232 fixtures stay exact, and child assets, effects, public registration,
+   and outline registration remain zero for this lane.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-owl-eclipsecrown-noctarch/`. The raw,
+   outlined, Complete B + Form, and family-comparison PNGs, all four raw phase
+   sheets, all four Complete B + Form phase sheets, the transparent 20x4
+   inspection atlas, and both exact GIFs were inspected at original
+   resolution. The atlas is 480x96 with 80 non-empty hard-alpha 24x24 cells,
+   no boundary contact, and retained margins. Both GIFs are valid 640x672
+   four-frame animations. Aseprite parsed all six principal review files, and
+   regeneration reproduced every frozen hash. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e11-owl-eclipsecrown-noctarch` and
+   run the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-owl-eclipsecrown-noctarch`.
+7. Internal visual QA accepts the exact packet for approval: the crown and
+   ivory disk retain the focal hierarchy, the silhouette reads as elite in all
+   directions, rear views remove facial features, and the A2 eclipse gate to
+   A3 crown press reads clearly without clipping or floating geometry. Stop
+   here. The designer must explicitly approve this exact packet or digest
+   before any candidate commit or push. Do not register it publicly or for
+   outlines, regenerate fixtures, add effects or child assets, begin Phoenix
+   or another family, release, accept drift, or open a PR.
+
 ## Current Published Checkpoint - Moonveil Augur / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch

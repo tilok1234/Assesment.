@@ -2,6 +2,43 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
+Current EN-E11 private Owl elite candidate / awaiting visual approval
+(2026-08-14): on `codex/en-e11-owl-elite`, based exactly on the clean, pushed,
+remote-verified Moonveil final reconciliation
+`20311d040ac086ecff950c3da2a57e330c13b875`, the designer's fresh `Let's do
+next` advances the documented Owl role order from approved specialist to
+exactly one private elite full 80-frame candidate under the selected
+`baked-single-actor-grounded-facial-disk-owl` topology. This lane names only
+Eclipsecrown Noctarch: one connected broad obsidian-black and ecliptic-violet
+Owl with an ivory-and-gold facial disk and throat gorget, connected
+antique-gold three-pronged eclipse crown, royal-violet plated mantle wings,
+ember-gold eyes, bronze hooked beak and talons, crimson corona bars, and one
+short connected notched fan tail. Attack braces, raises a full body-owned
+eclipse gate, drives a hooked-beak plated-shoulder crown press, and refolds
+without baked effects. Its frozen digest is
+`c2e1e1108ba71d118a1bd169fe81a4745f37c3f96cb89eed1d18033356dc8b6d`.
+Raw / outlined / Form / comparison PNG hashes are
+`271cccaf5495c25672e3d211af5f78ce76f80b201ed868b7aef8eb33b4ed81c5`,
+`1b4f86abf30f23d25df51c5286703a0666abc2f9a795a7d4f3e042ce1da4cda2`,
+`13602279254adb1dd367baff784fcf53dba10c5eefa9186ef90d961a2cf0b954`,
+and `fc5ec424acd79bb9af187ae66bbc6ca479784f46dfa7d78a3ffc3e8c534d3450`;
+raw / Form GIF hashes are
+`ad500e727a8ee6c19376dcb39e76a01cf3de37bb736daaf9002c3dc65b903a90`
+and `02d6b55b78672fbe693bad315c1f14761761c06e664124fd92dbe74ef6df270a`.
+Focused/fast/full validation passes in about 1.0s/78.4s/147.7s: all 80 frames
+are connected, bounded, grounded, two-talon, broad-elite,
+source-footprint-preserving, and pixel-plus-alpha distinct from approved
+Hushmask, approved Moonveil, and public Harpy; all 16 eclipse-gate views,
+expected identity marks, exact aliases/mirrors, and eight exact flashes pass.
+Public remains 100/316 and all 232 fixtures stay exact. All review views were
+inspected at original resolution; Aseprite parsed all six principal files,
+and regeneration reproduced every frozen hash. Internal visual QA accepts the
+packet, but designer pixel approval has not been supplied, so there is no
+candidate commit or push. Explicit approval of the exact packet or digest is
+required before bounded publication; registration, fixtures, effects, child
+assets, Phoenix, another family, release, accepted drift, and a PR remain
+closed.
+
 Current EN-E11 approved private Owl specialist published / next gate closed
 (2026-08-14): on `codex/en-e11-owl-specialist`, based exactly on clean, pushed,
 remote-verified Hushmask final reconciliation
