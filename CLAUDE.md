@@ -118,7 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private specialist Raven candidate / awaiting visual approval: on
+- Current approved private specialist Raven / publication in progress: on
   `codex/en-e11-raven-specialist`, based exactly on the clean, pushed current
   V3 assembler checkpoint `e7cedbc569ac0ad5c405efbf9b888e167cb8f671`, the
   designer's fresh `awesome lets keep going` advances the documented Raven
@@ -143,9 +143,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   distinct from approved Cinderquill, approved Mirrorfan, and public Harpy;
   public remains 100/316 and all 232 fixtures stay exact. The four exact PNGs,
   eight phase sheets, and transparent inspection atlas were inspected at
-  original resolution. Pixel approval is still required; no commit, push,
-  public or outline registration, fixtures, effects, child assets, Raven elite,
-  Owl, Phoenix, release, accepted drift, or PR is open.
+  original resolution. The exact four-PNG, two-GIF, digest-frozen packet was
+  posted and the designer replied `approved`. Approval binds only to
+  implementation `ca79bdeced0161f720775e405416d98cd809314f`, the digest,
+  and six frozen hashes; that implementation is pushed and remote verified.
+  Approval-local focused/fast gates pass again; fast completes in about 65.7s.
+  Commit and push only the approval/handoff reconciliation. No continuation
+  request was supplied, so public or outline registration, fixtures, effects,
+  child assets, Raven elite, Owl, Phoenix, release, accepted drift, and a PR
+  remain closed.
 - Current approved private common Raven published / next gate closed: on
   `codex/en-e11-raven-common`, based exactly on clean, pushed, remote-verified
   Crowncoil final reconciliation

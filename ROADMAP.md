@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 private specialist Raven candidate / awaiting visual approval
+Current EN-E11 approved private specialist Raven / publication in progress
 (2026-08-14): on `codex/en-e11-raven-specialist`, based exactly on the clean,
 pushed current V3 assembler checkpoint
 `e7cedbc569ac0ad5c405efbf9b888e167cb8f671`, the designer's fresh `awesome
@@ -30,10 +30,15 @@ pixel-plus-alpha distinct from approved Cinderquill, approved Mirrorfan, and
 public Harpy; 16/16 scrying-vane views and exact aliases/mirrors pass. Public
 remains 100/316 and all 232 fixtures stay exact. The four exact PNGs, all eight
 raw/Form phase sheets, and the transparent inspection atlas were inspected at
-original resolution. Explicit pixel approval is required before an
-implementation commit or push. Public or outline registration, fixtures,
-effects, child assets, Raven elite, Owl, Phoenix, release, accepted drift, and
-a PR remain closed.
+original resolution. The exact four-PNG, two-GIF, digest-frozen packet was
+posted and the designer replied `approved`. Approval binds only to
+implementation `ca79bdeced0161f720775e405416d98cd809314f`, the digest, and
+six frozen hashes; that implementation is pushed and remote verified.
+Approval-local focused/fast gates pass again; fast completes in about 65.7s.
+Commit and push only the approval/handoff reconciliation. No continuation
+request was supplied, so public or outline registration, fixtures, effects,
+child assets, Raven elite, Owl, Phoenix, release, accepted drift, and a PR
+remain closed.
 
 Current approved integration and Windows launcher checkpoint (2026-08-14): on
 `codex/approved-enemy-assembler-integration-v3`, based exactly on reconciled

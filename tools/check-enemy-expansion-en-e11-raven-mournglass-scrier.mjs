@@ -113,7 +113,7 @@ check(
   'approved Raven topology decision drifted',
 );
 check(
-  EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.status === 'candidate'
+  EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.status === 'approved'
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.baseCheckpoint === 'e7cedbc569ac0ad5c405efbf9b888e167cb8f671'
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.architectureDecision === EN_E11_RAVEN_TOPOLOGY_DECISION.id,
   'Mournglass candidate gate identity or base checkpoint drifted',
@@ -124,6 +124,24 @@ check(
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.authorizationEvidence.includes('role was not pre-named')
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.authorizationEvidence.includes('does not approve candidate pixels'),
   'Mournglass authorization evidence drifted',
+);
+check(
+  EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.approvedOn === '2026-08-14'
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.approvalEvidence.includes('The designer replied: approved')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.approvalEvidence.includes('59b3b963b18edf1385fcc13252ec702cfa7d87c48ec8aaf8e34039becbfc8f1a')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.approvedImplementation === 'ca79bdeced0161f720775e405416d98cd809314f'
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publicationAuthorizedOn === '2026-08-14'
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publishedImplementation === ''
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publishedApprovalRecord === ''
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.initialPublishedHandoff === ''
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('ca79bdeced0161f720775e405416d98cd809314f')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('approval record')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('No continuation request')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('outline registration'),
+  'Mournglass approval record or publication boundary drifted',
 );
 check(
   EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.precedingApproval.gateId === EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.id
@@ -140,9 +158,9 @@ check(
     && EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.precedingVariant.id === 'cinderquill-scavenger'
     && EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'mournglass-scrier'
     && EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
-    && EN_E11_RAVEN_MOURNGLASS_SCRIER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Raven specialist role contract drifted',
 );
 check(
@@ -154,8 +172,8 @@ check(
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.exclusions.includes('registration')
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.exclusions.includes('fixtures')
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.exclusions.includes('Raven elite')
-    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('Explicit designer approval')
-    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('before any implementation commit or push'),
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('No continuation request')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('no Raven elite'),
   'Mournglass anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(

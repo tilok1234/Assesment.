@@ -1,6 +1,6 @@
 # Enemy Expansion Plan
 
-- Current private specialist Raven candidate / awaiting visual approval
+- Current approved private specialist Raven / publication in progress
   (2026-08-14): on `codex/en-e11-raven-specialist`, based exactly on clean,
   pushed current V3 assembler checkpoint
   `e7cedbc569ac0ad5c405efbf9b888e167cb8f671`, the designer's fresh `awesome
@@ -32,10 +32,16 @@
   and 80/80 pixel-plus-alpha distinctions from approved Cinderquill,
   approved Mirrorfan, and public Harpy. Public remains 100/316 and all 232
   fixtures stay exact. All four exact PNGs, eight phase sheets, and the
-  transparent inspection atlas were inspected at original resolution. Stop
-  for explicit pixel approval before an implementation commit or push.
-  Registration, fixtures, effects, child assets, Raven elite, Owl, Phoenix,
-  release, accepted drift, a PR, and every broader gate remain closed.
+  transparent inspection atlas were inspected at original resolution. The
+  exact four-PNG, two-GIF, digest-frozen packet was posted and the designer
+  replied `approved`. Approval binds only to implementation
+  `ca79bdeced0161f720775e405416d98cd809314f`, the digest, and six frozen
+  hashes; that implementation is pushed and remote verified. Approval-local
+  focused/fast gates pass again; fast completes in about 65.7s. Commit and
+  push only the approval/handoff reconciliation. No continuation request was
+  supplied, so registration, fixtures, effects, child assets, Raven elite,
+  Owl, Phoenix, release, accepted drift, a PR, and every broader gate remain
+  closed.
 
 - Current integration status (2026-08-14): on
   `codex/approved-enemy-assembler-integration-v3`, based exactly on reconciled

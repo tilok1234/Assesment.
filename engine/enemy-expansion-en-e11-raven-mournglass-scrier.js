@@ -27,7 +27,7 @@ export const EN_E11_RAVEN_MOURNGLASS_SCRIER_CONTRACT = deepFreeze({
   family: 'raven',
   variant: 'mournglass-scrier',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E11_RAVEN_TOPOLOGY_DECISION.selected,
   silhouette: 'The approved compact grounded Cinderquill Scavenger corvid remains complete beneath a connected swept two-point brow crest, moon-glass face band, pale throat clasp, folded-wing quill bars, and tail notches. The rounded head, hooked beak, short throat, deep body, two body-owned wings, two separated taloned feet, and connected wedge tail remain readable in every direction. No regalia pixel floats, no human anatomy is exposed, and no effect substitutes for the Raven body.',
   identity: 'Violet-black head and body plumage, indigo-slate wings, a pale mourning throat, silver moon-glass brow and quill bars, cool teal omen marks and eyes, a steel beak, dark steel talons, and a connected swept crest distinguish the Mournglass Scrier specialist from common Cinderquill Scavenger.',
@@ -45,18 +45,27 @@ export const EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_RAVEN_MOURNGLASS_SCRIER_CONTRACT.variant,
     role: EN_E11_RAVEN_MOURNGLASS_SCRIER_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
 });
 
 export const EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE = deepFreeze({
   id: 'en-e11-raven-mournglass-scrier-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-14',
   authorizationEvidence: 'The exact Cinderquill Scavenger implementation 0e1124d6e16f3c5e568b0fe38890eb270b41306d, approval record 368754e9c037d7f37793ac737e162a3c5a4572f7, initial published handoff 0e455f9665400003fbb55c4a59260016c80f40cd, and final reconciliation a56211531caaa55be96979af2f53aafaa08c1067 are pushed and remote verified. The audited approved suites and current Windows launcher are integrated on clean pushed V3 checkpoint e7cedbc569ac0ad5c405efbf9b888e167cb8f671. The designer then said: awesome lets keep going. Under the documented Raven common, specialist, elite role order and selected baked-single-actor-grounded-folded-wing-corvid topology, this fresh continuation authorizes exactly one private specialist Raven full 80-frame candidate. Because the role was not pre-named, this lane names only Mournglass Scrier. It does not approve candidate pixels or authorize a commit, push, public or outline registration, fixtures, effects, child assets, Raven elite, Owl, Phoenix, release, accepted drift, or a pull request.',
   baseCheckpoint: 'e7cedbc569ac0ad5c405efbf9b888e167cb8f671',
   architectureDecision: EN_E11_RAVEN_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-14',
+  approvalEvidence: 'The exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and Cinderquill Scavenger, Mirrorfan Ambusher, and Harpy Screecher comparison PNGs were frozen with both synchronized GIF hashes. All four exact PNG paths, all eight raw and Complete B + Form phase sheets, and the transparent 20x4 inspection atlas were loaded and inspected at original resolution. The final approval prompt posted all four exact PNGs, both synchronized GIFs, and candidate digest 59b3b963b18edf1385fcc13252ec702cfa7d87c48ec8aaf8e34039becbfc8f1a. The designer replied: approved. Approval applies only to that exact Mournglass Scrier digest and its six frozen review hashes. It does not open public or outline registration, fixtures, effects, child assets, Raven elite, Owl, Phoenix, release, accepted drift, or a pull request.',
+  approvedImplementation: 'ca79bdeced0161f720775e405416d98cd809314f',
+  publicationAuthorizedOn: '2026-08-14',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved to the exact Mournglass Scrier review packet. This does not authorize registration, fixtures, effects, child assets, Raven elite, later families, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.id,
     candidateFrameDigest: EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.candidateFrameDigest,
@@ -128,7 +137,7 @@ export const EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'Stop after rendering, inspecting, freezing, and validating this exact private Mournglass Scrier candidate. Explicit designer approval of the posted exact review packet or candidate digest is required before any implementation commit or push. That approval would apply only to the frozen specialist Raven pixels and would not open public or outline registration, fixtures, effects, child assets, Raven elite, Owl, Phoenix, release, accepted drift, or a pull request.',
+  nextGate: 'The exact Mournglass Scrier implementation ca79bdeced0161f720775e405416d98cd809314f is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded publication tuple. No continuation request accompanied the pixel approval, so no Raven elite, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, Owl, Phoenix, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_RAVEN_MOURNGLASS_SCRIER_DATA = deepFreeze({
@@ -474,7 +483,7 @@ export const EN_E11_RAVEN_MOURNGLASS_SCRIER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mournglass-scrier',
     scale: 6,
-    notes: 'Unapproved private specialist Raven candidate against approved Cinderquill Scavenger, approved Mirrorfan Ambusher, and public Harpy Screecher. Stop after exact review-packet inspection and validation. Do not commit or push candidate pixels without explicit approval of the posted exact packet or candidate digest. Keep public or outline registration, fixtures, effects, child assets, Raven elite, Owl, Phoenix, release, accepted drift, and a pull request separate.',
+    notes: 'Approved private Mournglass Scrier specialist Raven only, bound to exact implementation ca79bdeced0161f720775e405416d98cd809314f, candidate digest 59b3b963b18edf1385fcc13252ec702cfa7d87c48ec8aaf8e34039becbfc8f1a, and its six frozen review hashes. The designer replied approved to the posted exact packet; no continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Raven elite, Owl, Phoenix, release, accepted drift, and a pull request separate.',
   },
 });
 

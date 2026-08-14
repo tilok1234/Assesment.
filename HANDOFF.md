@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Private Candidate - Mournglass Scrier / Awaiting Visual Approval
+## Current Approved Checkpoint - Mournglass Scrier / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-raven-specialist`, based exactly on the clean, pushed current
@@ -36,7 +36,14 @@ gate.
    the documented Raven common / specialist / elite order, that opens exactly
    one private specialist Raven full 80-frame candidate under the already
    selected `baked-single-actor-grounded-folded-wing-corvid` topology. Because
-   the role was not pre-named, this lane names only Mournglass Scrier.
+   the role was not pre-named, this lane names only Mournglass Scrier. After
+   the exact four-PNG, two-GIF, digest-frozen packet below was shown, the
+   designer replied `approved`. Pixel approval binds only to implementation
+   `ca79bdeced0161f720775e405416d98cd809314f`, the exact digest, and six
+   frozen review hashes. That implementation is pushed and remote verified.
+   The reply contains no continuation request, so Raven elite, Owl, Phoenix,
+   public or outline registration, fixtures, effects, child assets, release,
+   accepted drift, and a PR remain closed.
 3. Mournglass Scrier preserves the complete approved compact grounded Raven
    beneath violet-black plumage, indigo-slate wings, a pale mourning throat,
    connected silver moon-glass brow crest and quill bars, cool-teal eyes and
@@ -67,7 +74,8 @@ gate.
    pixels and Form changes 6,906 pixels. Focused / fast / full validation
    passes in about 0.5s / 61.7s / 109.0s. Public remains 100/316, all 232
    fixtures stay exact, and child assets, effects, public registration, and
-   outline registration remain zero for this lane.
+   outline registration remain zero for this lane. Approval-local focused and
+   fast gates pass again; fast completes in about 65.7s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-raven-mournglass-scrier/`. The raw,
    outlined, Complete B + Form, and family-comparison PNGs, all four raw phase
@@ -76,11 +84,11 @@ gate.
    with `npm.cmd run review:enemy-expansion-en-e11-raven-mournglass-scrier`
    and run the focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-raven-mournglass-scrier`.
-7. Stop for explicit designer approval of the posted exact review packet or
-   candidate digest. Do not commit or push candidate pixels before that
-   approval. Do not register it publicly or for outlines, regenerate fixtures,
-   add effects or child assets, begin Raven elite, Owl, or Phoenix, release,
-   accept drift, or open a PR.
+7. Commit and push only the exact approval record, then create the initial
+   published handoff and final reconciliation needed to complete Mournglass's
+   bounded publication tuple. Do not register it publicly or for outlines,
+   regenerate fixtures, add effects or child assets, begin Raven elite, Owl,
+   or Phoenix, release, accept drift, or open a PR.
 
 ## Current Integration Checkpoint - 22 Approved Suites And V2 Launcher
 
