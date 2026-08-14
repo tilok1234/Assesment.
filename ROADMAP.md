@@ -2,6 +2,47 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
+Current EN-E12 private common Basilisk candidate / pixel approval required
+(2026-08-15): on `codex/en-e12-basilisk-common`, based exactly on clean,
+pushed, remote-verified Dawnthrone/package checkpoint
+`6bec0b69f95c11d63780712aff223073376c2541`, the designer's fresh `awesome lets
+do next` opened only the documented priority-first Basilisk topology decision.
+The designer replied `approved` to the recommended
+`baked-single-actor-grounded-four-clawed-crowned-serpent` topology. This
+approves only the topology and opens one private common 80-frame candidate; it
+does not approve candidate pixels. The lane names only Crownscale Crawler. Its
+bespoke low, long serpent-lizard geometry carries deep moss and forest hide,
+sage back plates, an ochre throat and belly, connected old-bone three-pronged
+crown, amber eyes, dark wedge jaw, ivory fangs, four separately grounded bronze-
+clawed legs, and one connected tapering upturned tail. Attack braces all four
+claws, raises the connected crown and neck, performs a body-owned fanged forward
+press, and recoils. Cast aliases Attack exactly and Death aliases Hurt
+H1,H2,H2,H2. Gaze, venom, glow, dust, projectiles, shock rings, and impacts stay
+external. The frozen candidate digest is
+`96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872`.
+Raw / outlined / Form / Naga-Cockatrice-Marsh Crocodile comparison PNG hashes
+are
+`1c06e9921dd81028e7da5e2e45756852bf466150156fe466a61ca387ec6823bd`,
+`c4fd7a868ff220e90d63683b542d8e02353ef33e69c0b29a8b371c48551fec07`,
+`f1c5cfd174522a89a6a1194958c603d84df7b26cf1434423276cd07eef87b66d`,
+and `5471ca5ea7e1be4e935ae4bb063fa23f2145efa397530162632b15ad6da23aa4`;
+raw / Form GIF hashes are
+`c7570f094b448f16715c83814b8a8da62126c9ecaa04daf5002e7ef5f48ce5bb`
+and `ec32bcad5e6a36e775022d9ed024581db10e10d2a20a89e65a787a5d57efae4e`.
+Focused/fast/full validation passes in about 1.1s/56.0s/97.3s. All 80 frames
+are connected, one-cell-bounded, grounded, four-clawed, common-span, crowned,
+plated, scale-marked, and exact under aliases/mirrors; all 40 side views retain
+the long-body read, and all eight crown-rise plus eight fanged-press views pass.
+Every frame differs in pixels and alpha from approved Naga, approved Cockatrice,
+and public Marsh Crocodile; minimum alpha distances / maximum IoUs are
+118/0.600, 75/0.717, and 106/0.578. Public remains 100/316 and all 232 fixtures
+stay exact. Original-resolution inspection, 20x4 hard-alpha atlas validation,
+exact hash reproduction, and Aseprite parsing of all six principal files pass.
+The candidate is private, uncommitted, unpushed, and awaiting exact pixel
+approval. Registration, outline enrollment, fixtures, package mutation,
+effects, child assets, later Basilisk roles, Manticore, Sphinx, boss work,
+release, accepted drift, and PR remain closed.
+
 Current EN-E11 approved private elite Phoenix published / next enemy gate closed
 (2026-08-14): on `codex/en-e11-phoenix-elite`, based exactly on clean, pushed,
 remote-verified Sunveil final reconciliation

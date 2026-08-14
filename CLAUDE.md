@@ -84,7 +84,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 - Scope reviews to the changed family/boss; whole-roster review packets are
   release-time only.
 
-## Known state (2026-08-14)
+## Known state (2026-08-15)
 
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
   the frozen asset pack). The stable and consumer expansion registries now
@@ -118,6 +118,50 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
+- Current private EN-E12 Basilisk common candidate / pixel approval required:
+  on `codex/en-e12-basilisk-common`, based exactly on clean, pushed, remote-
+  verified Dawnthrone/package checkpoint
+  `6bec0b69f95c11d63780712aff223073376c2541`, the designer's fresh `awesome
+  lets do next` opened only the documented priority-first Basilisk topology
+  decision. The recommended
+  `baked-single-actor-grounded-four-clawed-crowned-serpent` topology was shown,
+  and the designer replied `approved`. That reply approves only the topology
+  and opens one private common 80-frame Basilisk candidate; it does not approve
+  candidate pixels. This lane names only Crownscale Crawler: one connected low,
+  long moss-and-forest serpent-lizard with sage back plates, an ochre throat and
+  belly, connected old-bone three-pronged crown, amber eyes, dark wedge jaw,
+  ivory fangs, four separately grounded bronze-clawed legs, and one connected
+  tapering upturned tail. Attack braces all four claws, raises the crown and
+  neck, performs a body-owned fanged forward press, and recoils. Cast aliases
+  Attack exactly; Death aliases Hurt H1,H2,H2,H2. Petrifying gaze, venom, glow,
+  dust, projectiles, shock rings, and impacts remain external. The exact frozen
+  candidate digest is
+  `96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872`.
+  Raw / distinct Complete B outlined / Complete B + Form / Naga-Cockatrice-
+  Marsh Crocodile comparison PNG hashes are
+  `1c06e9921dd81028e7da5e2e45756852bf466150156fe466a61ca387ec6823bd`,
+  `c4fd7a868ff220e90d63683b542d8e02353ef33e69c0b29a8b371c48551fec07`,
+  `f1c5cfd174522a89a6a1194958c603d84df7b26cf1434423276cd07eef87b66d`,
+  and `5471ca5ea7e1be4e935ae4bb063fa23f2145efa397530162632b15ad6da23aa4`;
+  raw / Form GIF hashes are
+  `c7570f094b448f16715c83814b8a8da62126c9ecaa04daf5002e7ef5f48ce5bb`
+  and `ec32bcad5e6a36e775022d9ed024581db10e10d2a20a89e65a787a5d57efae4e`.
+  Focused/fast/full validation passes in about 1.1s/56.0s/97.3s. Focused proof
+  passes 80/80 connected, one-cell-bounded, grounded, four-claw, common-span,
+  crown, plated-back, and scale-marked frames; 40/40 long side profiles; 8/8
+  crown-rise and 8/8 fanged-press views; eight exact flashes; aliases and
+  mirrors. Every frame differs in pixels and alpha from approved Naga Coilguard,
+  approved Cockatrice Bramblecomb Scratcher, and public Marsh Crocodile.
+  Minimum alpha distances / maximum IoUs are 118/0.600, 75/0.717, and 106/0.578.
+  Opaque range is 232-283; Complete B adds 9,538 pixels and Form changes 11,166.
+  The exact four PNGs, eight phase boards, 480x96 hard-alpha atlas, and two GIFs
+  were inspected; the atlas has 80 non-empty cells and zero boundary contact,
+  all six principal files parse in Aseprite, and regeneration reproduces every
+  frozen hash. Public remains 100/316 and all 232 fixtures stay exact. The
+  candidate remains private, uncommitted, unpushed, and unapproved pending the
+  designer's exact pixel decision. Registration, outline enrollment, fixtures,
+  effects, child assets, later Basilisk roles, Manticore, Sphinx, boss work,
+  package mutation, release, accepted drift, and PR remain closed.
 - Current approved private Phoenix elite published / next enemy gate closed:
   on
   `codex/en-e11-phoenix-elite`, based exactly on clean, pushed, remote-verified

@@ -1,6 +1,6 @@
 # Project Handoff
 
-Date: 2026-08-14
+Date: 2026-08-15
 
 ## V2 Repository And Workflow Note
 
@@ -23,7 +23,71 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Published Phoenix Elite / Next Enemy Gate Closed / Package Delivered
+## Next Chat Start Here - Private Basilisk Common Candidate / Pixel Approval Required
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e12-basilisk-common`, based exactly on clean, pushed, remote-
+   verified checkpoint `6bec0b69f95c11d63780712aff223073376c2541`. Do not move this work to another
+   checkout or modify the approved copy package.
+2. After the published Dawnthrone tuple and copy-only package reconciliation
+   were complete, the designer supplied the fresh continuation `awesome lets do
+   next`. That opened only the documented EN-E12 priority-first Basilisk
+   topology decision. Codex recommended
+   `baked-single-actor-grounded-four-clawed-crowned-serpent`; the designer
+   replied `approved`. That reply approves only this actor topology and
+   authorizes exactly one private common Basilisk 80-frame candidate. It does
+   not approve candidate pixels, a commit, push, registration, fixtures,
+   effects, later Basilisk roles, Manticore, Sphinx, or boss work.
+3. This lane names only Crownscale Crawler. It uses bespoke content geometry:
+   one connected low, long moss-and-forest serpent-lizard with sage back plates,
+   ochre throat and belly, connected old-bone three-pronged crown, amber eyes,
+   dark wedge jaw, ivory fangs, four separately grounded bronze-clawed legs, and
+   one connected tapering upturned tail. Attack braces all four claws, raises
+   the connected crown and neck, drives a body-owned fanged forward press, and
+   recoils. Cast aliases Attack exactly and Death aliases Hurt H1,H2,H2,H2.
+   Petrifying gaze, venom, glow, dust, projectiles, shock rings, and impacts are
+   external; there are no child assets or baked effects.
+4. The exact frozen candidate digest is
+   `96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872`.
+   Raw / distinct Complete B outlined / Complete B + Form / Naga-Cockatrice-
+   Marsh Crocodile comparison PNG hashes are
+   `1c06e9921dd81028e7da5e2e45756852bf466150156fe466a61ca387ec6823bd`,
+   `c4fd7a868ff220e90d63683b542d8e02353ef33e69c0b29a8b371c48551fec07`,
+   `f1c5cfd174522a89a6a1194958c603d84df7b26cf1434423276cd07eef87b66d`,
+   and `5471ca5ea7e1be4e935ae4bb063fa23f2145efa397530162632b15ad6da23aa4`.
+   Raw and Complete B + Form GIF hashes are
+   `c7570f094b448f16715c83814b8a8da62126c9ecaa04daf5002e7ef5f48ce5bb`
+   and `ec32bcad5e6a36e775022d9ed024581db10e10d2a20a89e65a787a5d57efae4e`.
+5. Focused, fast, and full validation pass in about 1.1s, 56.0s, and 97.3s.
+   Focused proof passes 80/80 connected, one-cell-bounded, grounded, four-claw,
+   common-span, crowned, plated-back, and scale-marked frames; 40/40 long side
+   profiles; 8/8 crown-rise and 8/8 body-owned fanged-press views; eight exact
+   flashes; and exact aliases and mirrors. Every frame differs in pixels and
+   alpha from approved Naga Coilguard, approved Cockatrice Bramblecomb
+   Scratcher, and public Marsh Crocodile. Their minimum alpha distances / maximum
+   IoUs are 118/0.600, 75/0.717, and 106/0.578. Opaque range is 232-283;
+   Complete B adds 9,538 outline pixels and Form changes 11,166 pixels. Public
+   remains 100/316 and all 232 fixtures stay exact.
+6. Exact review files are under
+   `enemy-expansion-review/en-e12-basilisk-crownscale-crawler/`. The four PNGs,
+   all eight phase sheets, transparent 20x4 atlas, and both GIFs were inspected
+   at original resolution. The atlas is 480x96 with 80 non-empty hard-alpha
+   24x24 cells and zero boundary contact. Regeneration reproduces all six frozen
+   hashes, and Aseprite parses all six principal files.
+7. Stop for explicit designer pixel approval of this exact packet. The candidate
+   is intentionally private, uncommitted, unpushed, and unapproved. Do not
+   register it, enroll an outline, create or edit fixtures, mutate the approved-
+   enemy copy package, add effects or child assets, start specialist/elite
+   Basilisk, Manticore, Sphinx, or boss work, release, accept drift, or open a
+   PR. Never use `--accept-drift`.
+8. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e12-basilisk-crownscale-crawler`; run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e12-basilisk-crownscale-crawler`; then
+   use `npm.cmd run check:fast` and `npm.cmd run check` for project-wide proof.
+   Post the four exact PNGs and both GIFs directly in chat with absolute paths.
+
+## Published Predecessor - Phoenix Elite / Package Delivered
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-phoenix-elite`. The exact Dawnthrone Imperator implementation

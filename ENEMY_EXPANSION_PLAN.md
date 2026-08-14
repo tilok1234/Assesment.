@@ -1,5 +1,49 @@
 # Enemy Expansion Plan
 
+- Current private EN-E12 common Basilisk candidate / pixel approval required
+  (2026-08-15): on `codex/en-e12-basilisk-common`, based exactly on clean,
+  pushed, remote-verified Dawnthrone/package checkpoint
+  `6bec0b69f95c11d63780712aff223073376c2541`, the designer's fresh `awesome lets
+  do next` opened only the documented priority-first Basilisk topology decision.
+  The designer replied `approved` to the recommended
+  `baked-single-actor-grounded-four-clawed-crowned-serpent` topology. This
+  approves only that topology and authorizes one private common 80-frame
+  candidate; it does not approve candidate pixels. This lane names only
+  Crownscale Crawler: one connected low, long moss-and-forest serpent-lizard
+  with sage back plates, ochre throat and belly, connected old-bone three-
+  pronged crown, amber eyes, dark wedge jaw, ivory fangs, four separately
+  grounded bronze-clawed legs, and one connected tapering upturned tail. Attack
+  braces all four claws, raises the connected crown and neck, performs a body-
+  owned fanged forward press, and recoils. Cast aliases Attack exactly; Death
+  aliases Hurt H1,H2,H2,H2. Petrifying gaze, venom, glow, dust, projectiles,
+  shock rings, and impacts remain external. The exact frozen candidate digest is
+  `96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872`.
+  Raw / outlined / Form / Naga-Cockatrice-Marsh Crocodile comparison PNG hashes
+  are
+  `1c06e9921dd81028e7da5e2e45756852bf466150156fe466a61ca387ec6823bd`,
+  `c4fd7a868ff220e90d63683b542d8e02353ef33e69c0b29a8b371c48551fec07`,
+  `f1c5cfd174522a89a6a1194958c603d84df7b26cf1434423276cd07eef87b66d`,
+  and `5471ca5ea7e1be4e935ae4bb063fa23f2145efa397530162632b15ad6da23aa4`;
+  raw / Form GIF hashes are
+  `c7570f094b448f16715c83814b8a8da62126c9ecaa04daf5002e7ef5f48ce5bb`
+  and `ec32bcad5e6a36e775022d9ed024581db10e10d2a20a89e65a787a5d57efae4e`.
+  Focused/fast/full validation passes in about 1.1s/56.0s/97.3s. All 80 frames
+  pass connected, one-cell-bounded, grounded, four-claw, common-span, crown,
+  plated-back, scale-mark, alias, and mirror gates; all 40 side views retain the
+  long body, and all eight crown-rise plus eight body-owned fanged-press views
+  pass. Every frame differs in pixels and alpha from approved Naga Coilguard,
+  approved Cockatrice Bramblecomb Scratcher, and public Marsh Crocodile.
+  Minimum alpha distances / maximum IoUs are 118/0.600, 75/0.717, and
+  106/0.578. Opaque range is 232-283; Complete B adds 9,538 pixels and Form
+  changes 11,166. Public remains 100/316 and all 232 fixtures stay exact.
+  Original-resolution inspection, the 480x96 20x4 hard-alpha atlas with 80
+  non-empty cells and zero boundary contact, exact hash reproduction, and
+  Aseprite parsing of all six principal files pass. The candidate is private,
+  uncommitted, unpushed, and awaiting exact pixel approval. Registration,
+  outline enrollment, fixtures, package mutation, effects, child assets,
+  specialist/elite Basilisk, Manticore, Sphinx, boss work, release, accepted
+  drift, and PR remain closed.
+
 - Current approved private elite Phoenix published / next enemy gate closed
   (2026-08-14): on `codex/en-e11-phoenix-elite`, based exactly on clean,
   pushed, remote-verified Sunveil final reconciliation
@@ -7339,7 +7383,7 @@ remain closed. The outlined PNG is review evidence only.
 
 ### EN-E12 - Mythic composite creatures
 
-- Status: `queued`
+- Status: `common-candidate-awaiting-pixel-approval`
 - Families: Basilisk, Manticore, Sphinx
 - Priority-first: Basilisk
 
@@ -7347,6 +7391,16 @@ Shared leverage: composite anatomy and long-body directional readability. This
 slice is the final standard-size proof before the isolated 48x48 Boss pilots.
 If a family cannot remain readable at 24x24, stop and request a scale ruling
 rather than quietly moving it into the Boss lane.
+
+The exact Basilisk topology decision is approved as
+`baked-single-actor-grounded-four-clawed-crowned-serpent`. One private common
+Crownscale Crawler 80-frame candidate is implemented and frozen at digest
+`96283b7a295071acaa7541a44ccccbd6c99af0523b4e66d69cb5c9a706cd9872`.
+Its required review packet and focused/fast/full gates pass. Stop for explicit
+pixel approval of that exact digest and six review hashes. Do not commit, push,
+register, add outlines, fixtures, effects, or child assets, mutate the approved-
+enemy package, start later Basilisk roles, Manticore, Sphinx, or a Boss pilot,
+release, accept drift, or open a PR.
 
 ### EN-B01 - Hydra direction pilot
 
