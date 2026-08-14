@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Published Checkpoint - Eclipsecrown Noctarch / Handoff Reconciliation In Progress
+## Current Published Checkpoint - Eclipsecrown Noctarch / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-owl-elite`, based exactly on clean, pushed, remote-verified
@@ -41,9 +41,11 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied
    `Approved`. Pixel approval binds only to implementation
    `c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2`, the exact digest, and six
-   frozen review hashes. That implementation and approval record
-   `402d94575701ecffd16a23a156bf39eae44298f0` are pushed and remote verified.
-   The reply contains no continuation request.
+   frozen review hashes. That implementation, approval record
+   `402d94575701ecffd16a23a156bf39eae44298f0`, and initial published handoff
+   `5dc6b790e5320e55625a5d601fb4752684a87883` are pushed and remote verified;
+   this reconciliation completes the bounded Owl elite publication tuple. The
+   reply contains no continuation request.
 3. Eclipsecrown Noctarch is one connected broad elite Owl with an
    obsidian-black and ecliptic-violet body, broad ivory-and-gold facial disk
    and throat gorget, connected antique-gold three-pronged eclipse crown,
@@ -76,7 +78,8 @@ gate.
    validation pass in about 1.0s, 78.4s, and 147.7s. Public remains 100/316,
    all 232 fixtures stay exact, and child assets, effects, public registration,
    and outline registration remain zero for this lane. Approval-local focused
-   and fast gates pass again in about 0.7s and 74.6s.
+   and fast gates pass again in about 0.7s and 74.6s. Final published-state
+   focused, fast, and full gates pass in about 0.7s, 74.1s, and 139.1s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-owl-eclipsecrown-noctarch/`. The raw,
    outlined, Complete B + Form, and family-comparison PNGs, all four raw phase
@@ -93,12 +96,12 @@ gate.
    retain the focal hierarchy, the silhouette reads as elite in all
    directions, rear views remove facial features, and the A2 eclipse gate to
    A3 crown press reads clearly without clipping or floating geometry. The
-   implementation and approval record are pushed and remote verified. Only the
-   initial published handoff, final reconciliation, and bounded branch pushes
-   needed to complete this publication tuple remain. Do not register it
-   publicly or for
-   outlines, regenerate fixtures, add effects or child assets, begin Phoenix
-   or another family, release, accept drift, or open a PR.
+   implementation, approval record, and initial published handoff are pushed
+   and remote verified; this reconciliation completes the bounded publication
+   tuple. No continuation request was supplied, so the next gate stays closed.
+   Do not register it publicly or for outlines, regenerate fixtures, add
+   effects or child assets, begin Phoenix or another family, release, accept
+   drift, or open a PR.
 
 ## Current Published Checkpoint - Moonveil Augur / Next Gate Closed
 

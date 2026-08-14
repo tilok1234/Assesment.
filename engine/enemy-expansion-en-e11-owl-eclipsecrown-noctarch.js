@@ -47,7 +47,7 @@ export const EN_E11_OWL_ELITE_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_OWL_ECLIPSECROWN_NOCTARCH_CONTRACT.variant,
     role: EN_E11_OWL_ECLIPSECROWN_NOCTARCH_CONTRACT.role,
-    status: 'implemented-full-approved',
+    status: 'implemented-full-approved-published-reconciled',
   },
   deferredRoles: [],
 });
@@ -66,8 +66,8 @@ export const EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied Approved to the exact Eclipsecrown Noctarch review packet. This does not authorize public or outline registration, fixtures, effects, child assets, Phoenix, later families, release, accepted drift, or a pull request.',
   publishedImplementation: 'c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2',
   publishedApprovalRecord: '402d94575701ecffd16a23a156bf39eae44298f0',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '5dc6b790e5320e55625a5d601fb4752684a87883',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E11_OWL_MOONVEIL_AUGUR_GATE.id,
     candidateFrameDigest: EN_E11_OWL_MOONVEIL_AUGUR_GATE.candidateFrameDigest,
@@ -137,7 +137,7 @@ export const EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Eclipsecrown Noctarch implementation c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2 and approval record 402d94575701ecffd16a23a156bf39eae44298f0 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Owl elite publication tuple. No continuation request accompanied the pixel approval, so no Phoenix, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Eclipsecrown Noctarch implementation c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2, approval record 402d94575701ecffd16a23a156bf39eae44298f0, and initial published handoff 5dc6b790e5320e55625a5d601fb4752684a87883 are pushed and remote verified; this reconciliation completes the bounded Owl elite publication tuple. No continuation request accompanied the pixel approval, so no Phoenix, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_OWL_ECLIPSECROWN_NOCTARCH_DATA = deepFreeze({
@@ -513,7 +513,7 @@ export const EN_E11_OWL_ECLIPSECROWN_NOCTARCH_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'eclipsecrown-noctarch',
     scale: 6,
-    notes: 'Approved private Eclipsecrown Noctarch elite Owl only, bound to exact implementation c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2, approval record 402d94575701ecffd16a23a156bf39eae44298f0, candidate digest c2e1e1108ba71d118a1bd169fe81a4745f37c3f96cb89eed1d18033356dc8b6d, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. No continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Phoenix, later Bird work, release, accepted drift, and a pull request separate.',
+    notes: 'Published and reconciled private Eclipsecrown Noctarch elite Owl only, bound to exact implementation c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2, approval record 402d94575701ecffd16a23a156bf39eae44298f0, initial published handoff 5dc6b790e5320e55625a5d601fb4752684a87883, candidate digest c2e1e1108ba71d118a1bd169fe81a4745f37c3f96cb89eed1d18033356dc8b6d, and its six frozen review hashes. No continuation request was supplied, so the next gate stays closed. Keep public or outline registration, fixtures, effects, child assets, Phoenix, later Bird work, release, accepted drift, and a pull request separate.',
   },
 });
 

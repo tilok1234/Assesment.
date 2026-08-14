@@ -134,11 +134,12 @@ check(
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publishedImplementation === 'c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2'
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publishedApprovalRecord === '402d94575701ecffd16a23a156bf39eae44298f0'
-    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.initialPublishedHandoff === ''
-    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.initialPublishedHandoff === '5dc6b790e5320e55625a5d601fb4752684a87883'
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.publicationState === 'published'
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('c7c95df2bfd3fb2d4cf421ddc413965b9b0c51f2')
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('402d94575701ecffd16a23a156bf39eae44298f0')
-    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('initial published handoff')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('5dc6b790e5320e55625a5d601fb4752684a87883')
+    && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('completes the bounded Owl elite publication tuple')
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('No continuation request')
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.nextGate.includes('outline registration'),
   'Eclipsecrown approval record or publication boundary drifted',
@@ -157,7 +158,7 @@ check(
     && EN_E11_OWL_ELITE_CONTRACT_CARD.precedingVariant.id === 'moonveil-augur'
     && EN_E11_OWL_ELITE_CONTRACT_CARD.activeVariant.id === 'eclipsecrown-noctarch'
     && EN_E11_OWL_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E11_OWL_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E11_OWL_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && EN_E11_OWL_ELITE_CONTRACT_CARD.deferredRoles.length === 0
     && EN_E11_OWL_ECLIPSECROWN_NOCTARCH_CONTRACT.state === 'implemented-complete-motion-approved',
   'Owl elite role contract drifted',
