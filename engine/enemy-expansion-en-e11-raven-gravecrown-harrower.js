@@ -64,10 +64,10 @@ export const EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE = deepFreeze({
   approvedImplementation: '4d05b1f4f0ff5113bb31c4ac7011a393b6d877be',
   publicationAuthorizedOn: '2026-08-14',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved to the exact Gravecrown Harrower review packet. This does not authorize registration, fixtures, effects, child assets, Owl, Phoenix, later families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '4d05b1f4f0ff5113bb31c4ac7011a393b6d877be',
+  publishedApprovalRecord: '8ec032c2ff90aceffeb8f8cf9533fccac89d68df',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.id,
     candidateFrameDigest: EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.candidateFrameDigest,
@@ -136,7 +136,7 @@ export const EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Gravecrown Harrower implementation 4d05b1f4f0ff5113bb31c4ac7011a393b6d877be is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Raven elite publication tuple. No continuation request accompanied the pixel approval, so no Owl, Phoenix, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Gravecrown Harrower implementation 4d05b1f4f0ff5113bb31c4ac7011a393b6d877be and approval record 8ec032c2ff90aceffeb8f8cf9533fccac89d68df are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Raven elite publication tuple. No continuation request accompanied the pixel approval, so no Owl, Phoenix, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_RAVEN_GRAVECROWN_HARROWER_DATA = deepFreeze({
@@ -512,7 +512,7 @@ export const EN_E11_RAVEN_GRAVECROWN_HARROWER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'gravecrown-harrower',
     scale: 6,
-    notes: 'Approved private Gravecrown Harrower elite Raven only, bound to exact implementation 4d05b1f4f0ff5113bb31c4ac7011a393b6d877be, candidate digest 06892d2e8583a2c7ba2dc06aca12a94007230801b645db478cac187e538465d9, and its six frozen review hashes. The designer replied approved to the posted exact packet; no continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Owl, Phoenix, release, accepted drift, and a pull request separate.',
+    notes: 'Approved private Gravecrown Harrower elite Raven only, bound to exact implementation 4d05b1f4f0ff5113bb31c4ac7011a393b6d877be, approval record 8ec032c2ff90aceffeb8f8cf9533fccac89d68df, candidate digest 06892d2e8583a2c7ba2dc06aca12a94007230801b645db478cac187e538465d9, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. No continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Owl, Phoenix, release, accepted drift, and a pull request separate.',
   },
 });
 

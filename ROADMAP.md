@@ -37,11 +37,13 @@ and in Aseprite; regeneration reproduced every hash. The exact four-PNG,
 two-GIF, digest-frozen packet was posted and the designer replied `approved`.
 Approval binds only to implementation
 `4d05b1f4f0ff5113bb31c4ac7011a393b6d877be`, the digest, and six frozen
-hashes; that implementation is pushed and remote verified. Approval-local
-focused/fast gates pass again in about 0.8s/58.5s. Commit and push only the
-approval/handoff reconciliation. No continuation request was supplied, so
-public or outline registration, fixtures, effects, child assets, Owl, Phoenix,
-release, accepted drift, and a PR remain closed.
+hashes; that implementation and approval record
+`8ec032c2ff90aceffeb8f8cf9533fccac89d68df` are pushed and remote verified.
+Only the initial published handoff and final reconciliation remain.
+Approval-local focused/fast gates pass again in about 0.8s/58.5s. No
+continuation request was supplied, so public or outline registration, fixtures,
+effects, child assets, Owl, Phoenix, release, accepted drift, and a PR remain
+closed.
 
 Current EN-E11 approved private specialist Raven published / next gate closed
 (2026-08-14): on `codex/en-e11-raven-specialist`, based exactly on the clean,

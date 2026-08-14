@@ -40,10 +40,12 @@ gate.
    four-PNG, two-GIF, digest-frozen packet below was shown, the designer replied
    `approved`. Pixel approval binds only to implementation
    `4d05b1f4f0ff5113bb31c4ac7011a393b6d877be`, the exact digest, and six
-   frozen review hashes. That implementation is pushed and remote verified.
-   The reply contains no continuation request, so Owl, Phoenix, public or
-   outline registration, fixtures, effects, child assets, release, accepted
-   drift, and a PR remain closed.
+   frozen review hashes. That implementation and approval record
+   `8ec032c2ff90aceffeb8f8cf9533fccac89d68df` are pushed and remote verified.
+   Only the initial published handoff and final reconciliation remain. The
+   reply contains no continuation request, so Owl, Phoenix, public or outline
+   registration, fixtures, effects, child assets, release, accepted drift,
+   and a PR remain closed.
 3. Gravecrown Harrower is one connected broad obsidian-black corvid with
    oxblood and iron-violet plated mantle wings, a bone-ivory throat gorget,
    attached antique-gold three-pronged gravecrown and wing clasps, ember-gold
@@ -85,11 +87,10 @@ gate.
    `npm.cmd run review:enemy-expansion-en-e11-raven-gravecrown-harrower` and
    run the focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-raven-gravecrown-harrower`.
-7. Commit and push only the exact approval record, then create the initial
-   published handoff and final reconciliation needed to complete Gravecrown's
-   bounded publication tuple. Do not register it publicly or for outlines,
-   regenerate fixtures, add effects or child assets, begin Owl or Phoenix,
-   release, accept drift, or open a PR.
+7. Create and push only the initial published handoff and final reconciliation
+   needed to complete Gravecrown's bounded publication tuple. Do not register
+   it publicly or for outlines, regenerate fixtures, add effects or child
+   assets, begin Owl or Phoenix, release, accept drift, or open a PR.
 
 ## Current Published Checkpoint - Mournglass Scrier / Next Gate Closed
 

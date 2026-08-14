@@ -132,12 +132,13 @@ check(
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.approvedImplementation === '4d05b1f4f0ff5113bb31c4ac7011a393b6d877be'
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publicationAuthorizedOn === '2026-08-14'
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publishedImplementation === ''
-    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publishedApprovalRecord === ''
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publishedImplementation === '4d05b1f4f0ff5113bb31c4ac7011a393b6d877be'
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publishedApprovalRecord === '8ec032c2ff90aceffeb8f8cf9533fccac89d68df'
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.initialPublishedHandoff === ''
-    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('4d05b1f4f0ff5113bb31c4ac7011a393b6d877be')
-    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('approval record')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('8ec032c2ff90aceffeb8f8cf9533fccac89d68df')
+    && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('initial published handoff')
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('No continuation request')
     && EN_E11_RAVEN_GRAVECROWN_HARROWER_GATE.nextGate.includes('outline registration'),
   'Gravecrown approval record or publication boundary drifted',
