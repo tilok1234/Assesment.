@@ -1,6 +1,7 @@
 # Enemy Expansion Plan
 
-- Current approved private specialist Phoenix / publication in progress
+- Current approved private specialist Phoenix published / handoff reconciliation
+  in progress
   (2026-08-14): on `codex/en-e11-phoenix-specialist`, based exactly on the
   clean, pushed, remote-verified Ashcrest final reconciliation
   `ef2d1836a88f074e48d536e92c757988a0a13d17`, the designer's `approved lets do
@@ -31,7 +32,9 @@
   The designer replied `approved` to this exact revised packet. Approval binds
   only to implementation
   `f1fb03eedad0537d6999b3e0346ef689ba052ac0`, the digest, and six frozen
-  review hashes; that implementation is pushed and remote verified. The reply
+  review hashes. That implementation and approval record
+  `017e889275377cee23c5db57486a949bed3caa70` are pushed and remote verified.
+  The reply
   contains no continuation clause, so elite Phoenix work and every later gate
   remain closed.
   Focused, fast, and full validation pass in about 1.0s, 60.6s, and 108.4s.
@@ -44,7 +47,7 @@
   untouched. Original-resolution review, exact 20x4 hard-alpha atlas
   measurement, exact hash reproduction, and Aseprite parsing of all six
   principal files pass. Internal visual QA accepted the exact packet and the
-  designer approved it. Commit and push only the approval record and publication
+  designer approved it. Create and push only the initial handoff and final
   reconciliation. Registration, outline registration, fixtures, effects, child
   assets, egg/ash resurrection or flight-state art, elite Phoenix, another
   family, release, accepted drift, PR, and every broader gate remain closed.
@@ -6806,7 +6809,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `phoenix-specialist-approved-publication-in-progress`
+- Status: `phoenix-specialist-published-handoff-reconciliation-in-progress`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 - Active family: Phoenix specialist
@@ -6815,7 +6818,7 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current approved private Phoenix specialist / publication in progress
+#### Current approved private Phoenix specialist published / handoff reconciliation in progress
 
 The complete Ashcrest publication tuple is pushed, remote verified, and
 reconciled at `ef2d1836a88f074e48d536e92c757988a0a13d17`. The designer's exact
@@ -6865,7 +6868,9 @@ and `746083e0f834bde653a63fa3b4fe9e2208f996ce88ba71d572f754befa2df30a`.
 The designer replied `approved` to this exact revised packet. Pixel approval
 binds only to implementation
 `f1fb03eedad0537d6999b3e0346ef689ba052ac0`, the exact digest, and six frozen
-review hashes; that implementation is pushed and remote verified. The reply
+review hashes. That implementation and approval record
+`017e889275377cee23c5db57486a949bed3caa70` are pushed and remote verified.
+The reply
 contains no continuation clause, so elite Phoenix work and every later gate
 remain closed.
 
@@ -6885,8 +6890,8 @@ boundary-contact contract, Aseprite parsed all six principal files, and
 regeneration reproduces every frozen hash.
 
 Internal visual QA accepted the exact packet and the designer approved it.
-Commit and push only the approval record, initial published handoff, and final
-reconciliation. Do not register, regenerate fixtures, add outline enrollment,
+Create and push only the initial published handoff and final reconciliation. Do
+not register, regenerate fixtures, add outline enrollment,
 effects, or child assets, begin egg/ash resurrection or flight-state art, open
 elite Phoenix or another family, release, accept drift, or open a PR.
 

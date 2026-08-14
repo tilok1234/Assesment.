@@ -2,7 +2,8 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 approved private specialist Phoenix / publication in progress
+Current EN-E11 approved private specialist Phoenix published / handoff
+reconciliation in progress
 (2026-08-14): on `codex/en-e11-phoenix-specialist`, based exactly on clean,
 pushed, remote-verified Ashcrest final reconciliation
 `ef2d1836a88f074e48d536e92c757988a0a13d17`, the designer's `approved lets do
@@ -28,7 +29,9 @@ and `746083e0f834bde653a63fa3b4fe9e2208f996ce88ba71d572f754befa2df30a`.
 The designer replied `approved` to this exact revised packet. Approval binds
 only to implementation
 `f1fb03eedad0537d6999b3e0346ef689ba052ac0`, the digest, and six frozen review
-hashes; that implementation is pushed and remote verified. The reply contains
+hashes. That implementation and approval record
+`017e889275377cee23c5db57486a949bed3caa70` are pushed and remote verified.
+The reply contains
 no continuation clause, so elite Phoenix work and every later gate remain
 closed.
 Focused, fast, and full validation pass in about 1.0s, 60.6s, and 108.4s.
@@ -39,8 +42,8 @@ dawnscreen views preserve alternating high arches. Public remains 100/316 and
    all 232 fixtures remain untouched. Original-resolution review, the exact 20x4
    hard-alpha atlas measurement, exact hash reproduction, and Aseprite parsing of
    all six principal files pass. Internal visual QA accepted the exact packet and
-   the designer approved it. Commit and push only the approval record and
-   publication reconciliation. Registration, fixtures, effects, child assets,
+   the designer approved it. Create and push only the initial handoff and final
+   reconciliation. Registration, fixtures, effects, child assets,
    resurrection or flight-state art, elite Phoenix, another family, release,
    accepted drift, and PR remain closed.
 

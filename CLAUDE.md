@@ -118,7 +118,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private Phoenix specialist / publication in progress:
+- Current approved private Phoenix specialist published / handoff reconciliation
+  in progress:
   on `codex/en-e11-phoenix-specialist`, based exactly on the clean, pushed,
   remote-verified Ashcrest Kindler final reconciliation
   `ef2d1836a88f074e48d536e92c757988a0a13d17`, the designer's `approved lets do
@@ -149,7 +150,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   The designer replied `approved` to this exact revised packet. Approval binds
   only to implementation
   `f1fb03eedad0537d6999b3e0346ef689ba052ac0`, the digest, and six frozen
-  review hashes; that implementation is pushed and remote verified. The reply
+  review hashes. That implementation and approval record
+  `017e889275377cee23c5db57486a949bed3caa70` are pushed and remote verified.
+  The reply
   contains no continuation clause, so elite Phoenix work and every later gate
   remain closed.
   Focused, fast, and full validation pass in about 1.0s, 60.6s, and 108.4s.
@@ -163,7 +166,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   resolution inspection, the 480x96 20x4 hard-alpha atlas check with no boundary
   contact, exact hash reproduction, and Aseprite parsing of all six principal
   files pass. Internal visual QA accepted the exact packet and the designer
-  approved it. Commit and push only the approval record and publication
+  approved it. Create and push only the initial handoff and final
   reconciliation. Registration, outline registration, fixtures, effects, child
   assets, egg/ash resurrection or flight-state art, elite Phoenix, another
   family, release, accepted drift, and PR remain closed.

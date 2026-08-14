@@ -60,10 +60,10 @@ export const EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE = deepFreeze({
   approvedImplementation: 'f1fb03eedad0537d6999b3e0346ef689ba052ac0',
   publicationAuthorizedOn: '2026-08-14',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved to the exact revised Sunveil Cantor v2 review packet. This does not authorize public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, elite Phoenix work, another family, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: 'f1fb03eedad0537d6999b3e0346ef689ba052ac0',
+  publishedApprovalRecord: '017e889275377cee23c5db57486a949bed3caa70',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.id,
     candidateFrameDigest: EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.candidateFrameDigest,
@@ -133,7 +133,7 @@ export const EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'The exact revised Sunveil Cantor implementation f1fb03eedad0537d6999b3e0346ef689ba052ac0 is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Phoenix specialist publication tuple. The approval reply contains no continuation clause, so elite Phoenix work and every later gate remain closed. Public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, another family, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact revised Sunveil Cantor implementation f1fb03eedad0537d6999b3e0346ef689ba052ac0 and approval record 017e889275377cee23c5db57486a949bed3caa70 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Phoenix specialist publication tuple. The approval reply contains no continuation clause, so elite Phoenix work and every later gate remain closed. Public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, another family, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_PHOENIX_SUNVEIL_CANTOR_DATA = deepFreeze({
@@ -582,7 +582,7 @@ export const EN_E11_PHOENIX_SUNVEIL_CANTOR_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'sunveil-cantor',
     scale: 6,
-    notes: 'Approved revised private specialist Phoenix bound to exact implementation f1fb03eedad0537d6999b3e0346ef689ba052ac0, candidate digest f97ddd614b58c2d3f99bc7c16e622cbd99f382455853815d17938804e859c226, and its six frozen review hashes. The renderer uses bespoke long-necked processional geometry rather than Ashcrest source pixels. The designer replied approved to the posted exact packet without a continuation clause. Keep public or outline registration, fixtures, effects, child assets, resurrection art, flight states, elite Phoenix work, another family, release, accepted drift, and a pull request separate.',
+    notes: 'Approved revised private specialist Phoenix bound to exact implementation f1fb03eedad0537d6999b3e0346ef689ba052ac0, approval record 017e889275377cee23c5db57486a949bed3caa70, candidate digest f97ddd614b58c2d3f99bc7c16e622cbd99f382455853815d17938804e859c226, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. The renderer uses bespoke long-necked processional geometry rather than Ashcrest source pixels. The designer replied approved without a continuation clause. Keep public or outline registration, fixtures, effects, child assets, resurrection art, flight states, elite Phoenix work, another family, release, accepted drift, and a pull request separate.',
   },
 });
 

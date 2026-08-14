@@ -166,12 +166,13 @@ check(
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.approvedImplementation === 'f1fb03eedad0537d6999b3e0346ef689ba052ac0'
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publicationAuthorizedOn === '2026-08-14'
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publishedImplementation === ''
-    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publishedApprovalRecord === ''
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publishedImplementation === 'f1fb03eedad0537d6999b3e0346ef689ba052ac0'
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publishedApprovalRecord === '017e889275377cee23c5db57486a949bed3caa70'
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.initialPublishedHandoff === ''
-    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publicationState === 'approved-not-published'
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('f1fb03eedad0537d6999b3e0346ef689ba052ac0')
-    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('approval record')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('017e889275377cee23c5db57486a949bed3caa70')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('initial published handoff')
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('no continuation clause')
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('outline registration'),
   'Sunveil approval record or publication boundary drifted',
