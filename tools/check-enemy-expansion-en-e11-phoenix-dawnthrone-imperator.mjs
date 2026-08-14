@@ -143,10 +143,10 @@ check(
   'approved Phoenix topology decision drifted',
 );
 check(
-  EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.status === 'candidate'
+  EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.status === 'approved'
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.baseCheckpoint === '1e0e8b31bac737f8fc0f8cd3eb4710330bd160de'
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.architectureDecision === EN_E11_PHOENIX_TOPOLOGY_DECISION.id,
-  'Dawnthrone candidate gate identity or base checkpoint drifted',
+  'Dawnthrone approved gate identity or base checkpoint drifted',
 );
 check(
   EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.authorizationEvidence.includes('fresh continuation: lets do next')
@@ -157,12 +157,23 @@ check(
   'Dawnthrone authorization evidence drifted',
 );
 check(
-  EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.approvedOn === undefined
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.approvalEvidence === undefined
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publicationState === undefined
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publishedImplementation === undefined
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publishedApprovalRecord === undefined,
-  'Dawnthrone candidate must remain unapproved and unpublished',
+  EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.approvedOn === '2026-08-14'
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.approvalEvidence.includes('The designer replied: awesome approved')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.approvalEvidence.includes('6d7f50455ff7864004bac35fe2e94c2d0ef4d3530845db2e83a69ff871dbcaba')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.approvalEvidence.includes('copy-only package')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.approvedImplementation === '68c36bb5711b985ab9f9a37a68c18bfc0748c399'
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publicationAuthorizedOn === '2026-08-14'
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publishedImplementation === ''
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publishedApprovalRecord === ''
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.initialPublishedHandoff === ''
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.publicationState === 'approved-not-published'
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('68c36bb5711b985ab9f9a37a68c18bfc0748c399')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('approval record')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('copy-only approved-enemy package request')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('outline registration'),
+  'Dawnthrone approval record or publication boundary drifted',
 );
 check(
   EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.precedingApproval.gateId === EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.id
@@ -179,9 +190,9 @@ check(
     && EN_E11_PHOENIX_ELITE_CONTRACT_CARD.precedingVariant.role === 'specialist'
     && EN_E11_PHOENIX_ELITE_CONTRACT_CARD.activeVariant.id === 'dawnthrone-imperator'
     && EN_E11_PHOENIX_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E11_PHOENIX_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_PHOENIX_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E11_PHOENIX_ELITE_CONTRACT_CARD.deferredRoles.length === 0
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_CONTRACT.state === 'implemented-complete-motion-approved',
   'Phoenix elite role contract drifted',
 );
 check(
@@ -197,8 +208,8 @@ check(
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.exclusions.includes('fixtures')
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.exclusions.includes('egg or resurrection art')
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.exclusions.includes('flight states')
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('explicit visual pixel approval')
-    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('Do not commit, push')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('no continuation to another enemy role or family')
+    && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('approval record')
     && EN_E11_PHOENIX_DAWNTHRONE_IMPERATOR_GATE.nextGate.includes('outline registration'),
   'Dawnthrone anatomy, motion, effect firewall, or stop boundary drifted',
 );
@@ -410,14 +421,14 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E11 Phoenix Dawnthrone Imperator private elite candidate passes focused validation.');
+  console.log('EN-E11 Phoenix Dawnthrone Imperator approved private elite passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Bespoke silhouette: ' + bespokeSilhouettes + '/80 substantial Sunveil black-shape differences; minimum alpha distance ' + minSunveilAlphaDistance + '; maximum IoU ' + maxSunveilAlphaIou.toFixed(3) + '; ' + throneProfiles + '/40 broad throne-bodied side profiles');
   console.log('- Phoenix identity: ' + twoFootRows + '/80 two three-toed talon rows; ' + eliteSpans + '/80 elite spans; ' + sunwallViews + '/16 twin-pylon or imperial-sunwall views; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + crownViews + '/72 crown views; ' + plateViews + '/72 plated-mantle views; ' + sealViews + '/72 turquoise-seal views; ' + wingViews + '/72 body-owned wing views');
   console.log('- Distinction: Ashcrest ' + differences.ashcrest + '/80; Sunveil ' + differences.sunveil + '/80; Harpy ' + differences.harpy + '/80 pixel and alpha frames differ');
   console.log('- Presentation: Complete B outline +' + outlinedPixels + ' pixels; Form changes ' + formChanges);
-  console.log('- Protected: approved Sunveil and Ashcrest exact; public Harpy and 100/316 exact; zero child assets/effects; no registration, outline registration, fixtures, commit, push, or broader gate');
-  console.log('- Candidate frame digest: ' + digests.candidate);
+  console.log('- Protected: approved Sunveil and Ashcrest exact; public Harpy and 100/316 exact; zero child assets/effects; bounded publication only; no registration, outline registration, fixtures, or broader gate');
+  console.log('- Approved Dawnthrone frame digest: ' + digests.candidate);
   console.log('- Approved Ashcrest frame digest: ' + digests.ashcrest);
   console.log('- Approved Sunveil frame digest: ' + digests.sunveil);
   console.log('- Public Harpy frame digest: ' + digests.harpy);

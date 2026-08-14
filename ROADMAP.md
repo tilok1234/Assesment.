@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 private elite Phoenix candidate / exact pixel approval required
+Current EN-E11 approved private elite Phoenix / publication in progress
 (2026-08-14): on `codex/en-e11-phoenix-elite`, based exactly on clean, pushed,
 remote-verified Sunveil final reconciliation
 `1e0e8b31bac737f8fc0f8cd3eb4710330bd160de`, the designer's fresh `lets do
@@ -24,6 +24,12 @@ and `471de61ddc455abfc73a027e1be8fa9908bd411629600cd54b01e200f3438dcf`;
 raw / Form GIF hashes are
 `9707b21b7fdee4742cb1914adeda8939cc0e28c6a8a4806add112934ca4ff8b5`
 and `9da45b041cc0f8102c0b3958632633fc1ca571793eeb6465619d5f5eeef5636e`.
+The designer replied `awesome approved` to this exact packet. Approval binds
+only to implementation
+`68c36bb5711b985ab9f9a37a68c18bfc0748c399`, the digest, and six frozen review
+hashes; that implementation is pushed and remote verified. The same reply
+separately requests a copy-only package of all new approved expansion enemies
+and does not open another enemy role or family.
 Focused/fast/full validation passes in about 1.6s/70.2s/121.7s. All 80 frames
 pass structure, grounded Phoenix identity, exact aliases and mirrors, and
 pixel-plus-alpha distinction from Sunveil, Ashcrest, and public Harpy. All 40
@@ -31,11 +37,12 @@ side profiles preserve the broad throne body, and all 16 A2-A3 views preserve
 the twin-pylon or sunwall architecture. Public remains 100/316 and all 232
 fixtures stay untouched. Original-resolution inspection, the exact 20x4 hard-
 alpha atlas measurement, exact hash reproduction, and Aseprite parsing of all
-six principal files pass. Internal visual QA accepted the exact packet for
-designer review. The candidate remains dirty and uncommitted. Stop for exact
-pixel approval; registration, outline enrollment, fixtures, effects, child
-assets, resurrection or flight-state art, another Phoenix or family, commit,
-push, release, accepted drift, and PR remain closed.
+six principal files pass. Internal visual QA accepted the exact packet and the
+designer approved it. Commit and push only the approval record and publication
+reconciliation, and build only the separately requested copy-only approved-
+expansion-enemy package. Registration, outline enrollment, fixtures, effects,
+child assets, resurrection or flight-state art, another Phoenix or family,
+release, accepted drift, and PR remain closed.
 
 Published preceding EN-E11 private specialist Phoenix / elite gate consumed
 (2026-08-14): on `codex/en-e11-phoenix-specialist`, based exactly on clean,

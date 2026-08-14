@@ -118,7 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private Phoenix elite candidate / exact pixel approval required: on
+- Current approved private Phoenix elite / publication in progress: on
   `codex/en-e11-phoenix-elite`, based exactly on clean, pushed, remote-verified
   Sunveil final reconciliation
   `1e0e8b31bac737f8fc0f8cd3eb4710330bd160de`, the designer's fresh `lets do
@@ -141,6 +141,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   raw / Form GIF hashes are
   `9707b21b7fdee4742cb1914adeda8939cc0e28c6a8a4806add112934ca4ff8b5`
   and `9da45b041cc0f8102c0b3958632633fc1ca571793eeb6465619d5f5eeef5636e`.
+  The designer replied `awesome approved` to this exact packet. Approval binds
+  only to implementation
+  `68c36bb5711b985ab9f9a37a68c18bfc0748c399`, the digest, and six frozen
+  review hashes; that implementation is pushed and remote verified. The same
+  reply separately requests a copy-only package of all new approved expansion
+  enemies. It contains no continuation to another enemy role or family.
   Focused/fast/full validation passes in about 1.6s/70.2s/121.7s. Focused
   validation passes 80/80 connected, bounded, grounded, two-talon, elite-span,
   crown, plated-mantle, seal, and body-owned-wing frames; 40/40 broad throne-
@@ -152,9 +158,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   232 fixtures remain untouched. Original-resolution inspection, the 480x96
   hard-alpha atlas with 80 non-empty cells and no boundary contact, exact hash
   reproduction, and Aseprite parsing of all six principal files pass. Internal
-  visual QA accepted the packet for designer review. The candidate remains
-  dirty and uncommitted. Stop for exact pixel approval: commit, push,
-  registration, outline enrollment, fixtures, effects, child assets,
+  visual QA accepted the packet and the designer approved it. Commit and push
+  only the approval record and publication reconciliation, and build only the
+  separately requested copy-only approved-expansion-enemy package.
+  Registration, outline enrollment, fixtures, effects, child assets,
   resurrection or flight-state art, another Phoenix or family, release,
   accepted drift, and PR remain closed.
 - Published preceding private Phoenix specialist / elite gate consumed:

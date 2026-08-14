@@ -23,22 +23,26 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Private Phoenix Elite Candidate / Pixel Approval Required
+## Next Chat Start Here - Approved Phoenix Elite Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
-   `codex/en-e11-phoenix-elite`, based exactly on the clean, pushed,
-   remote-verified final Sunveil Cantor reconciliation
-   `1e0e8b31bac737f8fc0f8cd3eb4710330bd160de`. The current candidate scope is
-   deliberately dirty and uncommitted; review artifacts remain ignored.
+   `codex/en-e11-phoenix-elite`. The exact Dawnthrone Imperator implementation
+   `68c36bb5711b985ab9f9a37a68c18bfc0748c399` is pushed and remote verified.
+   Publication is in progress; finish only the approval record, initial
+   published handoff, final reconciliation, and the separately requested
+   copy-only package of approved expansion enemies.
 2. After the published Sunveil tuple was complete, the designer supplied the
    fresh continuation `lets do next`. Under the documented common, specialist,
    elite order and selected
    `baked-single-actor-grounded-flame-crested-phoenix` topology, this opens
    exactly one private elite Phoenix full 80-frame candidate. Because the role
-   was not pre-named, this lane names only Dawnthrone Imperator. The continuation
-   does not approve its pixels or authorize commit, push, registration, outline
-   enrollment, fixtures, effects, child assets, resurrection or flight-state
-   art, another Phoenix or family, release, accepted drift, or a PR.
+   was not pre-named, this lane names only Dawnthrone Imperator. After the exact
+   four-PNG, two-GIF, digest-frozen packet below was shown, the designer replied
+   `awesome approved`. Pixel approval binds only to implementation
+   `68c36bb5711b985ab9f9a37a68c18bfc0748c399`, the exact digest, and six frozen
+   review hashes. The accompanying package request authorizes a copy-only
+   approved-expansion-enemy deliverable; it does not authorize registration or
+   open another enemy role or family.
 3. Dawnthrone Imperator uses bespoke broad throne-bodied geometry rather than
    rendering or palette-mapping Sunveil or Ashcrest: midnight-indigo plumage,
    moon-ivory face and throat, antique-gold three-pronged stepped crown and
@@ -74,12 +78,13 @@ gate.
    at original resolution. The atlas is 480x96 with 80 non-empty hard-alpha
    24x24 cells and zero boundary contact. Regeneration reproduces all six frozen
    hashes, and Aseprite parsed all six principal files. Internal visual QA
-   accepted the exact packet for designer review.
-7. Stop for explicit approval of this exact packet or digest. Do not commit or
-   push candidate pixels before that approval. Do not register, regenerate or
-   hand-edit fixtures, add outline enrollment, effects, child assets,
-   resurrection or flight-state art, open another Phoenix or family, release,
-   accept drift, or open a PR. Never use `--accept-drift`.
+   accepted the exact packet and the designer approved it.
+7. Commit and push only the approval record, initial published handoff, and
+   final reconciliation. Build only the separately requested copy-only package
+   of approved expansion enemies. Do not register, regenerate or hand-edit
+   fixtures, add outline enrollment, effects, child assets, resurrection or
+   flight-state art, open another Phoenix or family, release, accept drift, or
+   open a PR. Never use `--accept-drift`.
 8. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e11-phoenix-dawnthrone-imperator`; run
    the focused gate with

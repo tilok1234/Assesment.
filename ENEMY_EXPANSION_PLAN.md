@@ -1,6 +1,6 @@
 # Enemy Expansion Plan
 
-- Current private elite Phoenix candidate / exact pixel approval required
+- Current approved private elite Phoenix / publication in progress
   (2026-08-14): on `codex/en-e11-phoenix-elite`, based exactly on clean,
   pushed, remote-verified Sunveil final reconciliation
   `1e0e8b31bac737f8fc0f8cd3eb4710330bd160de`, the designer's fresh `lets do
@@ -24,6 +24,12 @@
   raw / Form GIF hashes are
   `9707b21b7fdee4742cb1914adeda8939cc0e28c6a8a4806add112934ca4ff8b5`
   and `9da45b041cc0f8102c0b3958632633fc1ca571793eeb6465619d5f5eeef5636e`.
+  The designer replied `awesome approved` to this exact packet. Pixel approval
+  binds only to implementation
+  `68c36bb5711b985ab9f9a37a68c18bfc0748c399`, the digest, and six frozen
+  review hashes; that implementation is pushed and remote verified. The same
+  reply separately authorizes a copy-only package of all new approved
+  expansion enemies, not registration or another enemy gate.
   Focused/fast/full validation passes in about 1.6s/70.2s/121.7s. All 80
   frames are connected, bounded, grounded, two-talon, elite-span, and distinct
   from Sunveil, Ashcrest, and public Harpy in pixels and alpha. All 40 side
@@ -34,10 +40,11 @@
   remain untouched. Original-resolution inspection, exact 20x4 hard-alpha
   atlas measurement, exact hash reproduction, and Aseprite parsing of all six
   principal files pass. Internal visual QA accepted the exact packet for
-  designer review. The candidate remains dirty and uncommitted. Stop for exact
-  pixel approval; do not commit, push, register, add outlines, fixtures,
-  effects, child assets, resurrection or flight-state art, another Phoenix or
-  family, release, accepted drift, or a PR.
+  designer review and the designer approved it. Commit and push only the
+  approval record and publication reconciliation, and build only the separately
+  requested copy-only approved-expansion-enemy package. Do not register, add
+  outlines, fixtures, effects, child assets, resurrection or flight-state art,
+  open another Phoenix or family, release, accept drift, or open a PR.
 
 - Published preceding private specialist Phoenix / elite gate consumed
   (2026-08-14): on `codex/en-e11-phoenix-specialist`, based exactly on the
@@ -6850,16 +6857,67 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `phoenix-specialist-approved-published-next-gate-closed`
+- Status: `phoenix-elite-approved-publication-in-progress`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
-- Active family: Phoenix specialist
+- Active family: Phoenix elite
 
 Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current approved private Phoenix specialist published / next gate closed
+#### Current approved private Phoenix elite / publication in progress
+
+The clean, pushed, remote-verified Sunveil Cantor publication tuple ends at
+`1e0e8b31bac737f8fc0f8cd3eb4710330bd160de`. The designer's fresh `lets do
+next` opened exactly one private elite Phoenix candidate under the selected
+`baked-single-actor-grounded-flame-crested-phoenix` topology. Because the role
+was not pre-named, this lane names only Dawnthrone Imperator.
+
+Dawnthrone Imperator is one connected broad, high-chested, throne-bodied
+grounded Phoenix with midnight-indigo plumage, a moon-ivory face and throat,
+an antique-gold three-pronged stepped crown and breast, oxblood plated
+body-owned mantle wings, turquoise seals, pale-cyan eyes, a bronze hooked beak
+and talons, and one connected tiered old-gold throne tail. Attack crouches,
+raises twin body-owned throne pylons, closes into a forward imperial sunwall,
+and ends in a hooked-beak decree. Cast aliases Attack exactly and Death aliases
+Hurt H1,H2,H2,H2. Effects and child assets remain external.
+
+The exact frozen candidate digest is
+`6d7f50455ff7864004bac35fe2e94c2d0ef4d3530845db2e83a69ff871dbcaba`.
+Raw, outlined, Complete B + Form, and Sunveil-Ashcrest-Harpy comparison PNG
+hashes are
+`1bcbe5f19ece1fcc3fa85b73325b54d6ce9ebfa9516d6da389d4815f2a2faf9b`,
+`fbbabe2143550d7aaa12f6b4095f0a36651c069a24a9ade28171088e94d91617`,
+`cb1f4f4810b0db4d920bc188266215dd216c22e38ba0fd27acba7515defb21c0`,
+and `471de61ddc455abfc73a027e1be8fa9908bd411629600cd54b01e200f3438dcf`.
+Raw and Complete B + Form GIF hashes are
+`9707b21b7fdee4742cb1914adeda8939cc0e28c6a8a4806add112934ca4ff8b5`
+and `9da45b041cc0f8102c0b3958632633fc1ca571793eeb6465619d5f5eeef5636e`.
+
+The designer replied `awesome approved` to this exact packet. Pixel approval
+binds only to implementation
+`68c36bb5711b985ab9f9a37a68c18bfc0748c399`, the exact digest, and six frozen
+review hashes; that implementation is pushed and remote verified. The same
+reply separately requests a copy-only package of all new approved expansion
+enemies. It does not open another enemy role or family, registration, fixtures,
+effects, release, accepted drift, or a PR.
+
+Focused, fast, and full validation pass in about 1.6s, 70.2s, and 121.7s. All
+80 frames pass structure, grounded Phoenix identity, aliases, mirrors, and
+pixel-plus-alpha distinction from Sunveil, Ashcrest, and public Harpy. All 40
+side profiles preserve the broad throne body and all 16 A2-A3 views preserve
+the twin-pylon or sunwall architecture. Public remains 100/316 and all 232
+fixtures remain untouched. Original-resolution inspection, the exact 20x4
+hard-alpha atlas, deterministic hash reproduction, and Aseprite parsing of all
+six principal files pass. Internal visual QA accepted the exact packet and the
+designer approved it. Complete only the approval record, published handoff,
+final reconciliation, and the separately requested copy-only package. Keep
+registration, outline enrollment, fixtures, effects, child assets,
+resurrection or flight-state art, another Phoenix or family, release, accepted
+drift, and PR closed.
+
+#### Published preceding private Phoenix specialist / elite gate consumed
 
 The complete Ashcrest publication tuple is pushed, remote verified, and
 reconciled at `ef2d1836a88f074e48d536e92c757988a0a13d17`. The designer's exact
