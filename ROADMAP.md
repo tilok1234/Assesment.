@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 private common Phoenix candidate / visual approval required
+Current EN-E11 approved private common Phoenix / publication in progress
 (2026-08-14): on `codex/en-e11-phoenix-common`, based exactly on the clean,
 pushed, remote-verified Eclipsecrown final reconciliation
 `43452d7a03a92cee228a1d1ffaf147fc39802ad5`, the designer's fresh `Let's do
@@ -24,6 +24,12 @@ and `c347131877b8b0f78d51ff96df3bf6f49c55cdb236250dd2257faad773445f6a`;
 raw / Form GIF hashes are
 `db9b464d5f2395b743c6b0c3f298e0f2654d3c14eb9f883147edb14ac22be5a2`
 and `dc651078d81f87168f4be481173add9142a050f199dc92b23f0a030d3047e2c2`.
+The designer replied `approved lets do next` to this exact packet. Approval
+binds only to implementation
+`4111b322fe6f362f92f389e606722b80426aee25`, the digest, and six hashes; that
+implementation is pushed and remote verified. The continuation opens exactly
+one private specialist Phoenix candidate only after common publication
+completes and does not approve specialist pixels.
 Focused/fast/full validation passes in about 1.1s/73.1s/137.3s. Focused
 validation passes all 80 connected, bounded, grounded, two-talon,
 source-footprint-preserving frames; all 16 solar-fan views; expected identity
@@ -31,11 +37,11 @@ marks, aliases, mirrors, and eight flashes; and 80/80 pixel-plus-alpha
 distinction from approved Eclipsecrown, approved Cinderquill, and public
 Harpy. Public remains 100/316 and fixtures are untouched. Original-resolution
 inspection, the exact 20x4 hard-alpha atlas measurement, and Aseprite parsing
-of all six principal files pass. Internal visual QA accepts the exact packet
-for designer review. Stop for explicit pixel approval; no commit, push,
-registration, fixtures, effects, child assets, resurrection or flight-state
-art, specialist or elite Phoenix, another family, release, accepted drift, or
-PR is authorized.
+of all six principal files pass. Internal visual QA accepted the exact packet.
+Commit and push only the approval record and publication reconciliation.
+Registration, fixtures, effects, child assets, resurrection or flight-state
+art, elite Phoenix, another family, release, accepted drift, and PR remain
+closed.
 
 Current EN-E11 approved private Owl elite published / next gate closed
 (2026-08-14): on `codex/en-e11-owl-elite`, based exactly on the clean, pushed,

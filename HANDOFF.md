@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Candidate Checkpoint - Ashcrest Kindler / Visual Approval Required
+## Current Approved Checkpoint - Ashcrest Kindler / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-phoenix-common`, based exactly on the clean, pushed,
@@ -38,7 +38,14 @@ gate.
    does not approve candidate pixels or authorize a commit, push, public or
    outline registration, fixtures, effects, child assets, egg or ash
    resurrection art, flight states, Phoenix specialist or elite work, another
-   family, release, accepted drift, or a PR.
+   family, release, accepted drift, or a PR. After the exact four-PNG,
+   two-GIF, digest-frozen packet below was shown, the designer replied
+   `approved lets do next`. Pixel approval binds only to implementation
+   `4111b322fe6f362f92f389e606722b80426aee25`, the exact digest, and six
+   frozen review hashes. That implementation is pushed and remote verified.
+   The continuation clause opens exactly one private specialist Phoenix
+   candidate only after this common publication tuple is complete; it does not
+   approve specialist pixels or broaden any other boundary.
 3. Ashcrest Kindler is one connected compact grounded Phoenix with
    ash-charcoal and ember-russet plumage, a heated-gold breast, connected
    orange-gold flame-feather crest, copper-red body-owned wings, pale-gold
@@ -82,15 +89,18 @@ gate.
    `npm.cmd run review:enemy-expansion-en-e11-phoenix-ashcrest-kindler` and run
    the focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-phoenix-ashcrest-kindler`.
-7. Internal visual QA accepts this exact packet for designer review: the
+7. Internal visual QA accepted this exact packet: the
    connected crest and hooked face remain readable in Down/Left/Right, the Up
    view removes all face pixels, the compact common silhouette stays distinct
    from the Owl, Raven, and Harpy comparisons, and Attack A2-A3 produces a
-   broad connected solar fan without clipping or floating geometry. Stop for
-   explicit visual pixel approval. Do not commit, push, register, regenerate
-   fixtures, add effects or child assets, begin resurrection or flight-state
-   art, open later Phoenix roles or another family, release, accept drift, or
-   open a PR.
+   broad connected solar fan without clipping or floating geometry. The
+   designer approved these exact pixels and authorized their bounded
+   publication. Commit and push only the approval record, initial handoff, and
+   final reconciliation. After that tuple is complete, the same reply opens
+   one private specialist Phoenix candidate under the selected topology. Do
+   not register, regenerate fixtures, add effects or child assets, begin
+   resurrection or flight-state art, open elite Phoenix or another family,
+   release, accept drift, or open a PR.
 
 ## Current Published Checkpoint - Eclipsecrown Noctarch / Next Gate Closed
 

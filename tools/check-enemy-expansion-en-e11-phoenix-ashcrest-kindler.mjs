@@ -130,7 +130,7 @@ check(
   'approved Phoenix topology decision drifted',
 );
 check(
-  EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.status === 'candidate'
+  EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.status === 'approved'
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.baseCheckpoint === '43452d7a03a92cee228a1d1ffaf147fc39802ad5'
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.architectureDecision === EN_E11_PHOENIX_TOPOLOGY_DECISION.id,
   'Ashcrest candidate gate identity or base checkpoint drifted',
@@ -141,6 +141,24 @@ check(
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.authorizationEvidence.includes('exactly one private common Phoenix 80-frame candidate')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.authorizationEvidence.includes('does not approve candidate pixels'),
   'Ashcrest authorization evidence drifted',
+);
+check(
+  EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.approvedOn === '2026-08-14'
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.approvalEvidence.includes('The designer replied: approved lets do next')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.approvalEvidence.includes('8ed5a8436f2c0647cb1bfe09740cb8e6bfd84c6f0254c5402c547f7ef974b3b7')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.approvedImplementation === '4111b322fe6f362f92f389e606722b80426aee25'
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publicationAuthorizedOn === '2026-08-14'
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publishedImplementation === ''
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publishedApprovalRecord === ''
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.initialPublishedHandoff === ''
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('4111b322fe6f362f92f389e606722b80426aee25')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('approval record')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('private specialist Phoenix candidate')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('does not approve specialist pixels'),
+  'Ashcrest approval record or publication boundary drifted',
 );
 check(
   EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.precedingApproval.gateId === EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.id
@@ -156,9 +174,9 @@ check(
     && EN_E11_PHOENIX_COMMON_CONTRACT_CARD.precedingGate === EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.id
     && EN_E11_PHOENIX_COMMON_CONTRACT_CARD.activeVariant.id === 'ashcrest-kindler'
     && EN_E11_PHOENIX_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E11_PHOENIX_COMMON_CONTRACT_CARD.activeVariant.status === 'candidate-awaiting-visual-approval'
+    && EN_E11_PHOENIX_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_PHOENIX_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_CONTRACT.state === 'candidate-awaiting-visual-approval',
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Phoenix common role contract drifted',
 );
 check(
@@ -172,8 +190,8 @@ check(
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.exclusions.includes('fixtures')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.exclusions.includes('egg or resurrection art')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.exclusions.includes('flight states')
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('explicit visual pixel approval')
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('Do not commit, push'),
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('private specialist Phoenix candidate')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('outline registration'),
   'Ashcrest anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(
@@ -357,7 +375,7 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E11 Phoenix Ashcrest Kindler private common candidate passes focused validation.');
+  console.log('EN-E11 Phoenix Ashcrest Kindler approved private common passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; source footprint ' + sourceFootprints + '/80; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Phoenix identity: ' + twoFootRows + '/80 two three-toed talon rows; ' + phoenixSpans + '/80 connected Phoenix spans; ' + solarFanViews + '/16 solar-fan views; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + breastViews + '/72 heated-breast views; ' + crestViews + '/72 flame-crest views; ' + wingViews + '/72 copper-wing views');
   console.log('- Distinction: Eclipsecrown ' + differences.eclipsecrown + '/80; Cinderquill ' + differences.cinderquill + '/80; Harpy ' + differences.harpy + '/80 pixel and alpha frames differ');
