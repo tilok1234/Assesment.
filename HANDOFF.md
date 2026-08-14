@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Approved Checkpoint - Moonveil Augur / Publication In Progress
+## Current Published Checkpoint - Moonveil Augur / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-owl-specialist`, based exactly on clean, pushed,
@@ -41,12 +41,13 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied
    `Approved`. Pixel approval binds only to implementation
    `e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the exact digest, and six
-   frozen review hashes. That implementation and approval record
-   `c384f07ace77822b12b1daa54b3fc6ca8ef11209` are pushed and remote verified.
-   Only the initial published handoff and final reconciliation remain. The
-   reply contains no continuation request, so Owl elite, Phoenix, public or
-   outline registration, fixtures, effects, child assets, release, accepted
-   drift, and a PR remain closed.
+   frozen review hashes. That implementation, approval record
+   `c384f07ace77822b12b1daa54b3fc6ca8ef11209`, and initial published handoff
+   `5dd51c5bdd386ecf4648cae3cc722fcd3ea8cc90` are pushed and remote verified;
+   this reconciliation completes the bounded Owl specialist publication
+   tuple. The reply contains no continuation request, so Owl elite, Phoenix,
+   public or outline registration, fixtures, effects, child assets, release,
+   accepted drift, and a PR remain closed.
 3. Moonveil Augur is one connected compact specialist Owl with a
    midnight-indigo body, pearl-silver facial disk, connected swept crescent
    brow-plumes, layered silver-and-blue shoulder mantle, moon-barred wings,
@@ -79,7 +80,8 @@ gate.
    all 232 fixtures stay
    exact, and child assets, effects, public registration, and outline
    registration remain zero for this lane. Approval-local focused and fast
-   gates pass again in about 1.0s and 74.4s.
+   gates pass again in about 1.0s and 74.4s. Final published-state focused,
+   fast, and full gates pass in about 1.1s, 79.4s, and 140.8s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-owl-moonveil-augur/`. The raw, outlined,
    Complete B + Form, and family-comparison PNGs, all four raw phase sheets,
@@ -92,11 +94,13 @@ gate.
    `npm.cmd run review:enemy-expansion-en-e11-owl-moonveil-augur` and run the
    focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-owl-moonveil-augur`.
-7. Create and push only the initial published handoff and final reconciliation
-   needed to complete Moonveil's bounded Owl specialist publication tuple. Do
-   not register it publicly or for outlines, regenerate fixtures, add effects
-   or child assets, begin Owl elite, begin Phoenix, release, accept drift, or
-   open a PR.
+7. The implementation, approval record, and initial published handoff are
+   remote verified; this reconciliation completes Moonveil's bounded Owl
+   specialist publication tuple. No continuation request was supplied, so the
+   next gate stays closed. Do not register it publicly or for outlines,
+   regenerate fixtures, add effects or child assets, begin Owl elite, begin
+   Phoenix, release, accept drift, or open a PR. A fresh explicit continuation
+   request is required before any later lane can open.
 
 ## Current Published Checkpoint - Hushmask Prowler / Next Gate Closed
 

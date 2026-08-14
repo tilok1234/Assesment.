@@ -1,6 +1,6 @@
 # Enemy Expansion Plan
 
-- Current approved private Owl specialist / publication in progress
+- Current approved private Owl specialist published / next gate closed
   (2026-08-14): on `codex/en-e11-owl-specialist`, based exactly on clean,
   pushed, remote-verified Hushmask final reconciliation
   `0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`, the designer's fresh `Let's do
@@ -30,11 +30,13 @@
   Aseprite; regeneration reproduced every frozen hash. The designer replied
   `Approved`. Approval binds only to implementation
   `e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the digest, and six frozen
-  hashes; that implementation and approval record
-  `c384f07ace77822b12b1daa54b3fc6ca8ef11209` are pushed and remote verified.
-  Only the initial published handoff and final reconciliation remain.
-  Approval-local focused/fast gates pass again in about 1.0s/74.4s. No
-  continuation request was supplied, so public or outline registration,
+  hashes; that implementation, approval record
+  `c384f07ace77822b12b1daa54b3fc6ca8ef11209`, and initial published handoff
+  `5dd51c5bdd386ecf4648cae3cc722fcd3ea8cc90` are pushed and remote verified;
+  this reconciliation completes the bounded Owl specialist publication tuple.
+  Approval-local focused/fast gates pass again in about 1.0s/74.4s. Final
+  published-state focused/fast/full gates pass in about 1.1s/79.4s/140.8s.
+  No continuation request was supplied, so public or outline registration,
   fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift,
   a PR, and every broader gate remain closed.
 
@@ -6657,7 +6659,7 @@ work and all broader gates remain closed.
 
 ### EN-E11 - Birds
 
-- Status: `owl-specialist-approved-handoff-reconciliation-in-progress`
+- Status: `owl-specialist-approved-published-next-gate-closed`
 - Families: Peacock, Cockatrice, Raven, Owl, Phoenix
 - Priority-first: Peacock
 - Active family: Owl specialist
@@ -6666,7 +6668,7 @@ Shared leverage: folded-wing bodies, wing attacks, tail fans, beaks, and talon
 contacts. Phoenix egg/ash resurrection art, if desired, requires a separate
 state-asset decision; fire and embers remain effects.
 
-#### Current approved Owl specialist / handoff reconciliation in progress
+#### Current approved Owl specialist published / next gate closed
 
 The exact Hushmask publication tuple is pushed, remote verified, and reconciled
 at `0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`. The designer's fresh `Let's do
@@ -6679,11 +6681,12 @@ an implementation commit or push. After the exact four-PNG, two-GIF,
 digest-frozen packet below was posted, the designer replied `Approved`. Pixel
 approval binds only to implementation
 `e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the exact digest, and six frozen
-review hashes. That implementation and approval record
-`c384f07ace77822b12b1daa54b3fc6ca8ef11209` are pushed and remote verified.
-Only the initial published handoff and final reconciliation remain. The reply
-contains no continuation request, so Owl elite, Phoenix, and every broader
-gate remain closed.
+review hashes. That implementation, approval record
+`c384f07ace77822b12b1daa54b3fc6ca8ef11209`, and initial published handoff
+`5dd51c5bdd386ecf4648cae3cc722fcd3ea8cc90` are pushed and remote verified;
+this reconciliation completes the bounded Owl specialist publication tuple.
+The reply contains no continuation request, so Owl elite, Phoenix, and every
+broader gate remain closed.
 
 Moonveil Augur is one connected compact midnight-indigo Owl with a
 pearl-silver facial disk, connected swept crescent brow-plumes, layered
@@ -6717,12 +6720,15 @@ remains 100/316 and all 232 fixtures stay exact. The four exact PNGs, all eight
 phase sheets, transparent 20x4 inspection atlas, and both exact GIFs were
 inspected at original resolution and loaded through Aseprite. Regeneration
 reproduced every frozen hash. Approval-local focused and fast gates pass again
-in about 1.0s and 74.4s.
+in about 1.0s and 74.4s. Final published-state focused, fast, and full gates
+pass in about 1.1s, 79.4s, and 140.8s.
 
-Create and push only the initial published handoff and final reconciliation
-needed to complete Moonveil's bounded Owl specialist publication tuple. Public
-or outline registration, fixtures, effects, child assets, Owl elite, Phoenix,
-release, accepted drift, a PR, and every broader gate remain closed.
+The implementation, approval record, and initial published handoff are remote
+verified; this reconciliation completes Moonveil's bounded Owl specialist
+publication tuple. No continuation request was supplied, so the next gate
+stays closed. Public or outline registration, fixtures, effects, child assets,
+Owl elite, Phoenix, release, accepted drift, and a PR remain closed. A fresh
+explicit continuation request is required before any later lane can open.
 
 #### Current approved Owl common published / next gate closed
 

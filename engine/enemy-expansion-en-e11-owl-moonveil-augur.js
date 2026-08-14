@@ -48,7 +48,7 @@ export const EN_E11_OWL_SPECIALIST_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_OWL_MOONVEIL_AUGUR_CONTRACT.variant,
     role: EN_E11_OWL_MOONVEIL_AUGUR_CONTRACT.role,
-    status: 'implemented-full-approved',
+    status: 'implemented-full-approved-published-reconciled',
   },
   deferredRoles: ['elite'],
 });
@@ -67,8 +67,8 @@ export const EN_E11_OWL_MOONVEIL_AUGUR_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied Approved to the exact Moonveil Augur review packet. This does not authorize public or outline registration, fixtures, effects, child assets, Owl elite, Phoenix, later families, release, accepted drift, or a pull request.',
   publishedImplementation: 'e3544a7c08195d67d7bfac4a4f531bc53c0a1981',
   publishedApprovalRecord: 'c384f07ace77822b12b1daa54b3fc6ca8ef11209',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '5dd51c5bdd386ecf4648cae3cc722fcd3ea8cc90',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E11_OWL_HUSHMASK_PROWLER_GATE.id,
     candidateFrameDigest: EN_E11_OWL_HUSHMASK_PROWLER_GATE.candidateFrameDigest,
@@ -139,7 +139,7 @@ export const EN_E11_OWL_MOONVEIL_AUGUR_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Moonveil Augur implementation e3544a7c08195d67d7bfac4a4f531bc53c0a1981 and approval record c384f07ace77822b12b1daa54b3fc6ca8ef11209 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Owl specialist publication tuple. No continuation request accompanied the pixel approval, so no Owl elite, Phoenix, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Moonveil Augur implementation e3544a7c08195d67d7bfac4a4f531bc53c0a1981, approval record c384f07ace77822b12b1daa54b3fc6ca8ef11209, and initial published handoff 5dd51c5bdd386ecf4648cae3cc722fcd3ea8cc90 are pushed and remote verified; this reconciliation completes the bounded Owl specialist publication tuple. No continuation request accompanied the pixel approval, so no Owl elite, Phoenix, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_OWL_MOONVEIL_AUGUR_DATA = deepFreeze({
@@ -501,7 +501,7 @@ export const EN_E11_OWL_MOONVEIL_AUGUR_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'moonveil-augur',
     scale: 6,
-    notes: 'Approved private Moonveil Augur specialist Owl only, bound to exact implementation e3544a7c08195d67d7bfac4a4f531bc53c0a1981, approval record c384f07ace77822b12b1daa54b3fc6ca8ef11209, candidate digest 86dbba1f850c9411f8d25949f4284874eb594711f4aa8c2c09f75172b2a2addd, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. No continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift, and a pull request separate.',
+    notes: 'Published and reconciled private Moonveil Augur specialist Owl only, bound to exact implementation e3544a7c08195d67d7bfac4a4f531bc53c0a1981, approval record c384f07ace77822b12b1daa54b3fc6ca8ef11209, initial published handoff 5dd51c5bdd386ecf4648cae3cc722fcd3ea8cc90, candidate digest 86dbba1f850c9411f8d25949f4284874eb594711f4aa8c2c09f75172b2a2addd, and its six frozen review hashes. No continuation request was supplied, so the next gate stays closed. Keep public or outline registration, fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift, and a pull request separate.',
   },
 });
 

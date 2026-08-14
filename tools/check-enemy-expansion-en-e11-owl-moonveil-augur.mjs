@@ -126,11 +126,12 @@ check(
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publishedImplementation === 'e3544a7c08195d67d7bfac4a4f531bc53c0a1981'
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publishedApprovalRecord === 'c384f07ace77822b12b1daa54b3fc6ca8ef11209'
-    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.initialPublishedHandoff === ''
-    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.initialPublishedHandoff === '5dd51c5bdd386ecf4648cae3cc722fcd3ea8cc90'
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.publicationState === 'published'
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('e3544a7c08195d67d7bfac4a4f531bc53c0a1981')
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('c384f07ace77822b12b1daa54b3fc6ca8ef11209')
-    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('initial published handoff')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('5dd51c5bdd386ecf4648cae3cc722fcd3ea8cc90')
+    && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('completes the bounded Owl specialist publication tuple')
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('No continuation request')
     && EN_E11_OWL_MOONVEIL_AUGUR_GATE.nextGate.includes('outline registration'),
   'Moonveil approval record or publication boundary drifted',
@@ -150,7 +151,7 @@ check(
     && EN_E11_OWL_SPECIALIST_CONTRACT_CARD.precedingVariant.role === 'common'
     && EN_E11_OWL_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'moonveil-augur'
     && EN_E11_OWL_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E11_OWL_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E11_OWL_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && JSON.stringify(EN_E11_OWL_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
     && EN_E11_OWL_MOONVEIL_AUGUR_CONTRACT.state === 'implemented-complete-motion-approved',
   'Owl specialist role contract drifted',

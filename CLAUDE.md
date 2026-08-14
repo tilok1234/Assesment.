@@ -118,7 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private Owl specialist / publication in progress: on
+- Current approved private Owl specialist published / next gate closed: on
   `codex/en-e11-owl-specialist`, based exactly on clean, pushed, remote-verified
   Hushmask final reconciliation
   `0d4aff05c0ace01be69ddc2ebf8efcf79abcd394`, the designer's fresh `Let's do
@@ -151,13 +151,15 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   The exact four-PNG, two-GIF, digest-frozen packet was posted and the designer
   replied `Approved`. Approval binds only to implementation
   `e3544a7c08195d67d7bfac4a4f531bc53c0a1981`, the digest, and six frozen
-  hashes; that implementation and approval record
-  `c384f07ace77822b12b1daa54b3fc6ca8ef11209` are pushed and remote verified.
-  Only the initial published handoff and final reconciliation remain.
+  hashes; that implementation, approval record
+  `c384f07ace77822b12b1daa54b3fc6ca8ef11209`, and initial published handoff
+  `5dd51c5bdd386ecf4648cae3cc722fcd3ea8cc90` are pushed and remote verified;
+  this reconciliation completes the bounded Owl specialist publication tuple.
   Approval-local focused/fast gates pass again in about 1.0s/74.4s. No
-  continuation request was supplied, so public or outline registration,
-  fixtures, effects, child assets, Owl elite, Phoenix, release, accepted drift,
-  and a PR remain closed.
+  continuation request was supplied, and final published-state
+  focused/fast/full gates pass in about 1.1s/79.4s/140.8s. Public or outline
+  registration, fixtures, effects, child assets, Owl elite, Phoenix, release,
+  accepted drift, and a PR remain closed.
 - Current approved private common Owl published / next gate closed: on
   `codex/en-e11-owl-common`, based exactly on clean, pushed Gravecrown final
   reconciliation `2d5fb020541cbe936bd7f5dba33811f7a0be03e4`, the designer's
