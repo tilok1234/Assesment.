@@ -67,7 +67,7 @@ export const EN_E11_PHOENIX_COMMON_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_PHOENIX_ASHCREST_KINDLER_CONTRACT.variant,
     role: EN_E11_PHOENIX_ASHCREST_KINDLER_CONTRACT.role,
-    status: 'implemented-full-approved',
+    status: 'implemented-full-approved-published-reconciled',
   },
   deferredRoles: ['specialist', 'elite'],
 });
@@ -86,8 +86,8 @@ export const EN_E11_PHOENIX_ASHCREST_KINDLER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved lets do next to the exact Ashcrest Kindler review packet. This does not authorize public or outline registration, fixtures, effects, child assets, resurrection art, flight states, later Phoenix pixel approval, another family, release, accepted drift, or a pull request.',
   publishedImplementation: '4111b322fe6f362f92f389e606722b80426aee25',
   publishedApprovalRecord: 'c9cd3669394f0e39e05377bb9be0532e1b6204d8',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: '2c12283f38fc30a6d73be5a86a67d34842aec715',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.id,
     candidateFrameDigest: EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.candidateFrameDigest,
@@ -160,7 +160,7 @@ export const EN_E11_PHOENIX_ASHCREST_KINDLER_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'The exact Ashcrest Kindler implementation 4111b322fe6f362f92f389e606722b80426aee25 and approval record c9cd3669394f0e39e05377bb9be0532e1b6204d8 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Phoenix common publication tuple. The same reply includes a fresh lets do next continuation, which opens exactly one private specialist Phoenix candidate only after that publication tuple is complete; it does not approve specialist pixels. Public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, elite Phoenix work, another family, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Ashcrest Kindler implementation 4111b322fe6f362f92f389e606722b80426aee25, approval record c9cd3669394f0e39e05377bb9be0532e1b6204d8, and initial published handoff 2c12283f38fc30a6d73be5a86a67d34842aec715 are pushed and remote verified; this reconciliation completes the bounded Phoenix common publication tuple. The same reply includes a fresh lets do next continuation, which now opens exactly one private specialist Phoenix full 80-frame candidate under the selected baked-single-actor-grounded-flame-crested-phoenix topology; because the specialist was not pre-named, that lane may name only its one candidate. It does not approve specialist pixels or authorize their commit or push. Public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, elite Phoenix work, another family, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_PHOENIX_ASHCREST_KINDLER_DATA = deepFreeze({
@@ -491,7 +491,7 @@ export const EN_E11_PHOENIX_ASHCREST_KINDLER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'ashcrest-kindler',
     scale: 6,
-    notes: 'Approved private Ashcrest Kindler common Phoenix only, bound to exact implementation 4111b322fe6f362f92f389e606722b80426aee25, approval record c9cd3669394f0e39e05377bb9be0532e1b6204d8, candidate digest 8ed5a8436f2c0647cb1bfe09740cb8e6bfd84c6f0254c5402c547f7ef974b3b7, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. The designer replied approved lets do next, which opens only one private specialist Phoenix candidate after common publication completes and does not approve later pixels. Keep public or outline registration, fixtures, effects, child assets, resurrection art, flight states, elite Phoenix work, another family, release, accepted drift, and a pull request separate.',
+    notes: 'Published and reconciled private Ashcrest Kindler common Phoenix only, bound to exact implementation 4111b322fe6f362f92f389e606722b80426aee25, approval record c9cd3669394f0e39e05377bb9be0532e1b6204d8, initial published handoff 2c12283f38fc30a6d73be5a86a67d34842aec715, candidate digest 8ed5a8436f2c0647cb1bfe09740cb8e6bfd84c6f0254c5402c547f7ef974b3b7, and its six frozen review hashes. The designer replied approved lets do next, so exactly one private specialist Phoenix candidate is now open under the selected topology without pixel approval. Keep public or outline registration, fixtures, effects, child assets, resurrection art, flight states, elite Phoenix work, another family, release, accepted drift, and a pull request separate.',
   },
 });
 

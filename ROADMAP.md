@@ -2,8 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 approved private common Phoenix published / handoff
-reconciliation in progress
+Current EN-E11 approved private common Phoenix published / specialist gate open
 (2026-08-14): on `codex/en-e11-phoenix-common`, based exactly on the clean,
 pushed, remote-verified Eclipsecrown final reconciliation
 `43452d7a03a92cee228a1d1ffaf147fc39802ad5`, the designer's fresh `Let's do
@@ -28,12 +27,14 @@ and `dc651078d81f87168f4be481173add9142a050f199dc92b23f0a030d3047e2c2`.
 The designer replied `approved lets do next` to this exact packet. Approval
 binds only to implementation
 `4111b322fe6f362f92f389e606722b80426aee25`, the digest, and six hashes. That
-implementation and approval record
-`c9cd3669394f0e39e05377bb9be0532e1b6204d8` are pushed and remote verified.
-The continuation opens exactly
-one private specialist Phoenix candidate only after common publication
-completes and does not approve specialist pixels.
-Focused/fast/full validation passes in about 1.1s/73.1s/137.3s. Focused
+implementation, approval record
+`c9cd3669394f0e39e05377bb9be0532e1b6204d8`, and initial published handoff
+`2c12283f38fc30a6d73be5a86a67d34842aec715` are pushed and remote verified;
+this reconciliation completes the common publication tuple. The continuation
+now opens exactly one private specialist Phoenix full 80-frame candidate under
+the selected topology and does not approve its pixels.
+Focused/fast/full validation passes in about 1.1s/73.1s/137.3s; final
+published-state focused/full gates pass again in about 1.0s/118.8s. Focused
 validation passes all 80 connected, bounded, grounded, two-talon,
 source-footprint-preserving frames; all 16 solar-fan views; expected identity
 marks, aliases, mirrors, and eight flashes; and 80/80 pixel-plus-alpha
@@ -41,7 +42,8 @@ distinction from approved Eclipsecrown, approved Cinderquill, and public
 Harpy. Public remains 100/316 and fixtures are untouched. Original-resolution
 inspection, the exact 20x4 hard-alpha atlas measurement, and Aseprite parsing
 of all six principal files pass. Internal visual QA accepted the exact packet.
-Create and push only the initial handoff and final reconciliation.
+The specialist authoring/review gate is open, but its commit and push remain
+closed until exact pixel approval.
 Registration, fixtures, effects, child assets, resurrection or flight-state
 art, elite Phoenix, another family, release, accepted drift, and PR remain
 closed.

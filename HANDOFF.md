@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Published Checkpoint - Ashcrest Kindler / Handoff Reconciliation In Progress
+## Current Published Checkpoint - Ashcrest Kindler / Specialist Gate Open
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-phoenix-common`, based exactly on the clean, pushed,
@@ -42,8 +42,11 @@ gate.
    two-GIF, digest-frozen packet below was shown, the designer replied
    `approved lets do next`. Pixel approval binds only to implementation
    `4111b322fe6f362f92f389e606722b80426aee25`, the exact digest, and six
-   frozen review hashes. That implementation and approval record
-   `c9cd3669394f0e39e05377bb9be0532e1b6204d8` are pushed and remote verified.
+   frozen review hashes. That implementation, approval record
+   `c9cd3669394f0e39e05377bb9be0532e1b6204d8`, and initial published handoff
+   `2c12283f38fc30a6d73be5a86a67d34842aec715` are pushed and remote verified;
+   this reconciliation completes the bounded Phoenix common publication
+   tuple.
    The continuation clause opens exactly one private specialist Phoenix
    candidate only after this common publication tuple is complete; it does not
    approve specialist pixels or broaden any other boundary.
@@ -68,7 +71,8 @@ gate.
    `db9b464d5f2395b743c6b0c3f298e0f2654d3c14eb9f883147edb14ac22be5a2`
    and `dc651078d81f87168f4be481173add9142a050f199dc92b23f0a030d3047e2c2`.
 5. Focused, fast, and full validation pass in about 1.1s, 73.1s, and
-   137.3s. Focused validation passes 80/80 connected, bounded, grounded,
+   137.3s. Final published-state focused and full gates pass again in about
+   1.0s and 118.8s. Focused validation passes 80/80 connected, bounded, grounded,
    source-footprint-preserving, separated two-talon, and connected-Phoenix
    frames; 16/16 solar-fan views; 54/54 expected eye-bearing views; 72/72
    heated-breast, flame-crest, tail, and copper-wing views; 8/8 exact
@@ -96,9 +100,10 @@ gate.
    from the Owl, Raven, and Harpy comparisons, and Attack A2-A3 produces a
    broad connected solar fan without clipping or floating geometry. The
    designer approved these exact pixels and authorized their bounded
-   publication. Only the initial handoff and final reconciliation remain.
-   After that tuple is complete, the same reply opens
-   one private specialist Phoenix candidate under the selected topology. Do
+   publication. The same reply now opens one private specialist Phoenix full
+   80-frame candidate under the selected topology. Because the specialist was
+   not pre-named, that lane may name only its one candidate; its pixels are not
+   approved and may not be committed or pushed. Do
    not register, regenerate fixtures, add effects or child assets, begin
    resurrection or flight-state art, open elite Phoenix or another family,
    release, accept drift, or open a PR.

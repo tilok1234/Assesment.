@@ -152,12 +152,13 @@ check(
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publishedImplementation === '4111b322fe6f362f92f389e606722b80426aee25'
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publishedApprovalRecord === 'c9cd3669394f0e39e05377bb9be0532e1b6204d8'
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.initialPublishedHandoff === ''
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.initialPublishedHandoff === '2c12283f38fc30a6d73be5a86a67d34842aec715'
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.publicationState === 'published'
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('4111b322fe6f362f92f389e606722b80426aee25')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('c9cd3669394f0e39e05377bb9be0532e1b6204d8')
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('initial published handoff')
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('private specialist Phoenix candidate')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('2c12283f38fc30a6d73be5a86a67d34842aec715')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('completes the bounded Phoenix common publication tuple')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('private specialist Phoenix full 80-frame candidate')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('does not approve specialist pixels'),
   'Ashcrest approval record or publication boundary drifted',
 );
@@ -175,7 +176,7 @@ check(
     && EN_E11_PHOENIX_COMMON_CONTRACT_CARD.precedingGate === EN_E11_OWL_ECLIPSECROWN_NOCTARCH_GATE.id
     && EN_E11_PHOENIX_COMMON_CONTRACT_CARD.activeVariant.id === 'ashcrest-kindler'
     && EN_E11_PHOENIX_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E11_PHOENIX_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E11_PHOENIX_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && JSON.stringify(EN_E11_PHOENIX_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
     && EN_E11_PHOENIX_ASHCREST_KINDLER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Phoenix common role contract drifted',
@@ -191,7 +192,7 @@ check(
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.exclusions.includes('fixtures')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.exclusions.includes('egg or resurrection art')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.exclusions.includes('flight states')
-    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('private specialist Phoenix candidate')
+    && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('private specialist Phoenix full 80-frame candidate')
     && EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.nextGate.includes('outline registration'),
   'Ashcrest anatomy, motion, effect firewall, or stop boundary drifted',
 );

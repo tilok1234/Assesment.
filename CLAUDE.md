@@ -118,8 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private common Phoenix published / handoff reconciliation
-  in progress: on
+- Current approved private common Phoenix published / specialist gate open: on
   `codex/en-e11-phoenix-common`, based exactly on clean, pushed,
   remote-verified Eclipsecrown final reconciliation
   `43452d7a03a92cee228a1d1ffaf147fc39802ad5`, the designer's fresh `Let's do
@@ -145,12 +144,14 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   The designer replied `approved lets do next` to this exact packet. Approval
   binds only to implementation
   `4111b322fe6f362f92f389e606722b80426aee25`, the digest, and six hashes.
-  That implementation and approval record
-  `c9cd3669394f0e39e05377bb9be0532e1b6204d8` are pushed and remote verified.
-  The continuation opens
-  exactly one private specialist Phoenix candidate only after common
-  publication completes and does not approve specialist pixels.
-  Focused/fast/full validation passes in about 1.1s/73.1s/137.3s. Focused
+  That implementation, approval record
+  `c9cd3669394f0e39e05377bb9be0532e1b6204d8`, and initial published handoff
+  `2c12283f38fc30a6d73be5a86a67d34842aec715` are pushed and remote verified;
+  this reconciliation completes the bounded common publication tuple. The
+  continuation now opens exactly one private specialist Phoenix full 80-frame
+  candidate under the selected topology and does not approve its pixels.
+  Focused/fast/full validation passes in about 1.1s/73.1s/137.3s; final
+  published-state focused/full gates pass again in about 1.0s/118.8s. Focused
   validation passes all 80 connected, bounded, grounded, two-talon,
   source-footprint-preserving frames; 16/16 solar fans; expected palette and
   direction marks; aliases, mirrors, eight exact flashes; and pixel-plus-alpha
@@ -159,8 +160,9 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   eight phase sheets, atlas, and both GIFs were inspected at original
   resolution; the 480x96 atlas passes its 20x4 hard-alpha contract with no
   boundary contact, and Aseprite parsed all six principal files. Internal
-  visual QA accepted the packet. Create and push only the initial handoff and
-  final reconciliation. Registration, fixtures, effects, child assets,
+  visual QA accepted the packet. The specialist authoring/review gate is now
+  open, but specialist commit and push remain closed until exact pixel
+  approval. Registration, fixtures, effects, child assets,
   resurrection or flight-state art, elite Phoenix, another family, release,
   accepted drift, and PR remain closed.
 - Current approved private Owl elite published / next gate closed: on
