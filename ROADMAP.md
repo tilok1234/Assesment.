@@ -2,7 +2,42 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E11 approved private specialist Phoenix published / next gate closed
+Current EN-E11 private elite Phoenix candidate / exact pixel approval required
+(2026-08-14): on `codex/en-e11-phoenix-elite`, based exactly on clean, pushed,
+remote-verified Sunveil final reconciliation
+`1e0e8b31bac737f8fc0f8cd3eb4710330bd160de`, the designer's fresh `lets do
+next` opens exactly one private elite Phoenix full 80-frame candidate under the
+selected `baked-single-actor-grounded-flame-crested-phoenix` topology. Because
+the role was not pre-named, this lane names only Dawnthrone Imperator. Its
+bespoke broad throne-bodied geometry carries midnight-indigo plumage, a moon-
+ivory face and throat, connected antique-gold stepped crown and breast, oxblood
+plated mantle wings, turquoise seals, pale-cyan eyes, bronze hooked beak and
+talons, and one connected tiered old-gold throne tail. Attack crouches, erects
+twin body-owned throne pylons, closes into a forward imperial sunwall, and ends
+in a hooked-beak decree. Its frozen digest is
+`6d7f50455ff7864004bac35fe2e94c2d0ef4d3530845db2e83a69ff871dbcaba`.
+Raw / outlined / Form / Sunveil-Ashcrest-Harpy comparison PNG hashes are
+`1bcbe5f19ece1fcc3fa85b73325b54d6ce9ebfa9516d6da389d4815f2a2faf9b`,
+`fbbabe2143550d7aaa12f6b4095f0a36651c069a24a9ade28171088e94d91617`,
+`cb1f4f4810b0db4d920bc188266215dd216c22e38ba0fd27acba7515defb21c0`,
+and `471de61ddc455abfc73a027e1be8fa9908bd411629600cd54b01e200f3438dcf`;
+raw / Form GIF hashes are
+`9707b21b7fdee4742cb1914adeda8939cc0e28c6a8a4806add112934ca4ff8b5`
+and `9da45b041cc0f8102c0b3958632633fc1ca571793eeb6465619d5f5eeef5636e`.
+Focused/fast/full validation passes in about 1.6s/70.2s/121.7s. All 80 frames
+pass structure, grounded Phoenix identity, exact aliases and mirrors, and
+pixel-plus-alpha distinction from Sunveil, Ashcrest, and public Harpy. All 40
+side profiles preserve the broad throne body, and all 16 A2-A3 views preserve
+the twin-pylon or sunwall architecture. Public remains 100/316 and all 232
+fixtures stay untouched. Original-resolution inspection, the exact 20x4 hard-
+alpha atlas measurement, exact hash reproduction, and Aseprite parsing of all
+six principal files pass. Internal visual QA accepted the exact packet for
+designer review. The candidate remains dirty and uncommitted. Stop for exact
+pixel approval; registration, outline enrollment, fixtures, effects, child
+assets, resurrection or flight-state art, another Phoenix or family, commit,
+push, release, accepted drift, and PR remain closed.
+
+Published preceding EN-E11 private specialist Phoenix / elite gate consumed
 (2026-08-14): on `codex/en-e11-phoenix-specialist`, based exactly on clean,
 pushed, remote-verified Ashcrest final reconciliation
 `ef2d1836a88f074e48d536e92c757988a0a13d17`, the designer's `approved lets do
@@ -31,10 +66,10 @@ only to implementation
 hashes. That implementation, approval record
 `017e889275377cee23c5db57486a949bed3caa70`, and initial published handoff
 `3dd15852f6d7664febaa0610b797f589703e6ab6` are pushed and remote verified;
-this reconciliation completes the bounded specialist publication tuple. The
-reply contains
-no continuation clause, so elite Phoenix work and every later gate remain
-closed.
+this reconciliation completes the bounded specialist publication tuple. That
+approval reply itself contained no continuation clause. The designer's later
+fresh `lets do next` separately consumed the elite gate into the private
+Dawnthrone candidate above; it did not open a broader gate.
 Focused, fast, and full validation pass in about 1.0s, 60.6s, and 108.4s.
 All 80 frames pass structure, grounded Phoenix identity, specialist marks,
 aliases, mirrors, and substantial black-shape distinction from approved
@@ -44,10 +79,10 @@ all 232 fixtures remain untouched. Original-resolution review, the exact 20x4
 hard-alpha atlas measurement, exact hash reproduction, and Aseprite parsing of
 all six principal files pass. Internal visual QA accepted the exact packet and
 the designer approved it. Final published-state focused and full gates pass
-again. No next role or family is open; a fresh explicit continuation is
-required. Registration, fixtures, effects, child assets, resurrection or
-flight-state art, elite Phoenix, another family, release, accepted drift, and
-PR remain closed.
+again. Only the later private Dawnthrone review lane above is open.
+Registration, fixtures, effects, child assets, resurrection or flight-state
+art, another Phoenix, another family, release, accepted drift, and PR remain
+closed.
 
 Approved preceding EN-E11 private common Phoenix published / specialist gate open
 (2026-08-14): on `codex/en-e11-phoenix-common`, based exactly on the clean,

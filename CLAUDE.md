@@ -118,7 +118,46 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private Phoenix specialist published / next gate closed:
+- Current private Phoenix elite candidate / exact pixel approval required: on
+  `codex/en-e11-phoenix-elite`, based exactly on clean, pushed, remote-verified
+  Sunveil final reconciliation
+  `1e0e8b31bac737f8fc0f8cd3eb4710330bd160de`, the designer's fresh `lets do
+  next` opens exactly one private elite Phoenix full 80-frame candidate under
+  the selected `baked-single-actor-grounded-flame-crested-phoenix` topology.
+  Because the role was not pre-named, this lane names only Dawnthrone
+  Imperator. It uses bespoke broad throne-bodied geometry with midnight-indigo
+  plumage, moon-ivory face and throat, an antique-gold three-pronged stepped
+  crown and breast, oxblood plated body-owned mantle wings, turquoise seals,
+  pale-cyan eyes, bronze hooked beak and talons, and one connected tiered old-
+  gold throne tail. Attack crouches, raises twin throne pylons, closes into a
+  forward imperial sunwall, and ends in a hooked-beak decree. Cast aliases
+  Attack exactly; Death aliases Hurt H1,H2,H2,H2. The frozen digest is
+  `6d7f50455ff7864004bac35fe2e94c2d0ef4d3530845db2e83a69ff871dbcaba`.
+  Raw / outline / Form / Sunveil-Ashcrest-Harpy comparison PNG hashes are
+  `1bcbe5f19ece1fcc3fa85b73325b54d6ce9ebfa9516d6da389d4815f2a2faf9b`,
+  `fbbabe2143550d7aaa12f6b4095f0a36651c069a24a9ade28171088e94d91617`,
+  `cb1f4f4810b0db4d920bc188266215dd216c22e38ba0fd27acba7515defb21c0`,
+  and `471de61ddc455abfc73a027e1be8fa9908bd411629600cd54b01e200f3438dcf`;
+  raw / Form GIF hashes are
+  `9707b21b7fdee4742cb1914adeda8939cc0e28c6a8a4806add112934ca4ff8b5`
+  and `9da45b041cc0f8102c0b3958632633fc1ca571793eeb6465619d5f5eeef5636e`.
+  Focused/fast/full validation passes in about 1.6s/70.2s/121.7s. Focused
+  validation passes 80/80 connected, bounded, grounded, two-talon, elite-span,
+  crown, plated-mantle, seal, and body-owned-wing frames; 40/40 broad throne-
+  body side profiles; 16/16 twin-pylon or sunwall views; exact aliases and
+  mirrors; and 80/80 substantial Sunveil black-shape distinctions (minimum
+  alpha distance 56; maximum IoU 0.812). Opaque range is 221-371. Complete B
+  adds 8,214 pixels and Form changes 11,022. Every frame differs from Sunveil,
+  Ashcrest, and public Harpy in pixels and alpha. Public remains 100/316 and all
+  232 fixtures remain untouched. Original-resolution inspection, the 480x96
+  hard-alpha atlas with 80 non-empty cells and no boundary contact, exact hash
+  reproduction, and Aseprite parsing of all six principal files pass. Internal
+  visual QA accepted the packet for designer review. The candidate remains
+  dirty and uncommitted. Stop for exact pixel approval: commit, push,
+  registration, outline enrollment, fixtures, effects, child assets,
+  resurrection or flight-state art, another Phoenix or family, release,
+  accepted drift, and PR remain closed.
+- Published preceding private Phoenix specialist / elite gate consumed:
   on `codex/en-e11-phoenix-specialist`, based exactly on the clean, pushed,
   remote-verified Ashcrest Kindler final reconciliation
   `ef2d1836a88f074e48d536e92c757988a0a13d17`, the designer's `approved lets do
@@ -152,9 +191,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   review hashes. That implementation, approval record
   `017e889275377cee23c5db57486a949bed3caa70`, and initial published handoff
   `3dd15852f6d7664febaa0610b797f589703e6ab6` are pushed and remote verified;
-  this reconciliation completes the bounded specialist publication tuple. The
-  reply contains no continuation clause, so elite Phoenix work and every later
-  gate remain closed.
+  this reconciliation completes the bounded specialist publication tuple. That
+  approval reply itself contained no continuation clause. The designer's later
+  fresh `lets do next` separately consumed the elite gate into the private
+  Dawnthrone candidate above; it did not open a broader gate.
   Focused, fast, and full validation pass in about 1.0s, 60.6s, and 108.4s.
   Focused validation passes 80/80 connected, bounded, grounded, two-talon,
   specialist-span, sunveil, cantor-mantle, and body-owned-wing frames; 40/40
@@ -166,11 +206,11 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   resolution inspection, the 480x96 20x4 hard-alpha atlas check with no boundary
   contact, exact hash reproduction, and Aseprite parsing of all six principal
   files pass. Internal visual QA accepted the exact packet and the designer
-  approved it. Final published-state focused and full gates pass again. No next
-  role or family is open; a fresh explicit continuation is required.
-  Registration, outline registration, fixtures, effects, child
-  assets, egg/ash resurrection or flight-state art, elite Phoenix, another
-  family, release, accepted drift, and PR remain closed.
+  approved it. Final published-state focused and full gates pass again. Only
+  the later private Dawnthrone review lane above is open. Registration, outline
+  registration, fixtures, effects, child assets, egg/ash resurrection or
+  flight-state art, another Phoenix, another family, release, accepted drift,
+  and PR remain closed.
 - Approved preceding private common Phoenix published / specialist gate open: on
   `codex/en-e11-phoenix-common`, based exactly on clean, pushed,
   remote-verified Eclipsecrown final reconciliation

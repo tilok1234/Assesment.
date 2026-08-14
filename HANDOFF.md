@@ -23,7 +23,71 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Published Phoenix Specialist / Next Gate Closed
+## Next Chat Start Here - Private Phoenix Elite Candidate / Pixel Approval Required
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e11-phoenix-elite`, based exactly on the clean, pushed,
+   remote-verified final Sunveil Cantor reconciliation
+   `1e0e8b31bac737f8fc0f8cd3eb4710330bd160de`. The current candidate scope is
+   deliberately dirty and uncommitted; review artifacts remain ignored.
+2. After the published Sunveil tuple was complete, the designer supplied the
+   fresh continuation `lets do next`. Under the documented common, specialist,
+   elite order and selected
+   `baked-single-actor-grounded-flame-crested-phoenix` topology, this opens
+   exactly one private elite Phoenix full 80-frame candidate. Because the role
+   was not pre-named, this lane names only Dawnthrone Imperator. The continuation
+   does not approve its pixels or authorize commit, push, registration, outline
+   enrollment, fixtures, effects, child assets, resurrection or flight-state
+   art, another Phoenix or family, release, accepted drift, or a PR.
+3. Dawnthrone Imperator uses bespoke broad throne-bodied geometry rather than
+   rendering or palette-mapping Sunveil or Ashcrest: midnight-indigo plumage,
+   moon-ivory face and throat, antique-gold three-pronged stepped crown and
+   breast, oxblood plated mantle wings, turquoise seals, pale-cyan eyes, bronze
+   hooked beak and talons, and one connected tiered old-gold throne tail. Attack
+   crouches, raises twin body-owned throne pylons, closes into a forward imperial
+   sunwall, and ends in a hooked-beak decree. Cast aliases Attack exactly; Death
+   aliases Hurt H1,H2,H2,H2. No effect or child pixels are baked.
+4. The exact frozen candidate digest is
+   `6d7f50455ff7864004bac35fe2e94c2d0ef4d3530845db2e83a69ff871dbcaba`.
+   Raw / distinct Complete B outlined / Complete B + Form / Sunveil-Ashcrest-
+   Harpy comparison PNG hashes are
+   `1bcbe5f19ece1fcc3fa85b73325b54d6ce9ebfa9516d6da389d4815f2a2faf9b`,
+   `fbbabe2143550d7aaa12f6b4095f0a36651c069a24a9ade28171088e94d91617`,
+   `cb1f4f4810b0db4d920bc188266215dd216c22e38ba0fd27acba7515defb21c0`,
+   and `471de61ddc455abfc73a027e1be8fa9908bd411629600cd54b01e200f3438dcf`.
+   Raw and Complete B + Form GIF hashes are
+   `9707b21b7fdee4742cb1914adeda8939cc0e28c6a8a4806add112934ca4ff8b5`
+   and `9da45b041cc0f8102c0b3958632633fc1ca571793eeb6465619d5f5eeef5636e`.
+5. Focused, fast, and full validation pass in about 1.6s, 70.2s, and 121.7s.
+   Focused validation passes 80/80 connected, bounded, grounded, two-talon,
+   elite-span, crown, plated-mantle, turquoise-seal, and body-owned-wing frames;
+   40/40 broad throne-bodied side profiles; 16/16 twin-pylon or imperial-sunwall
+   views; eight exact flashes; aliases and mirrors; and 80/80 substantial
+   black-shape differences from Sunveil. Minimum Sunveil alpha distance is 56;
+   maximum alpha IoU is 0.812. Opaque range is 221-371. Every frame differs from
+   Sunveil, Ashcrest, and public Harpy in pixels and alpha. Complete B adds 8,214
+   outline pixels and Form changes 11,022 pixels. Public remains 100/316 and all
+   232 fixtures stay untouched.
+6. Exact review files are under
+   `enemy-expansion-review/en-e11-phoenix-dawnthrone-imperator/`. The four PNGs,
+   all eight phase sheets, transparent 20x4 atlas, and both GIFs were inspected
+   at original resolution. The atlas is 480x96 with 80 non-empty hard-alpha
+   24x24 cells and zero boundary contact. Regeneration reproduces all six frozen
+   hashes, and Aseprite parsed all six principal files. Internal visual QA
+   accepted the exact packet for designer review.
+7. Stop for explicit approval of this exact packet or digest. Do not commit or
+   push candidate pixels before that approval. Do not register, regenerate or
+   hand-edit fixtures, add outline enrollment, effects, child assets,
+   resurrection or flight-state art, open another Phoenix or family, release,
+   accept drift, or open a PR. Never use `--accept-drift`.
+8. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e11-phoenix-dawnthrone-imperator`; run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e11-phoenix-dawnthrone-imperator`; then
+   use `npm.cmd run check:fast` and `npm.cmd run check` for project-wide proof.
+   Post the four exact PNGs and both GIFs directly in chat with absolute paths.
+
+## Published Predecessor - Phoenix Specialist / Elite Gate Consumed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-phoenix-specialist`. The exact revised Sunveil Cantor
@@ -44,10 +108,11 @@ gate.
    Pixel approval binds only to implementation
    `f1fb03eedad0537d6999b3e0346ef689ba052ac0`, the exact digest, and six frozen
    review hashes. The exact publication tuple is pushed and remote verified.
-   The reply contains no continuation clause, so elite Phoenix
-   work and every later gate remain closed. Registration, fixtures, outline
-   enrollment, effects, child assets, another family, release, accepted drift,
-   and a PR remain closed.
+   That approval reply contained no continuation clause. The designer's later
+   fresh `lets do next` separately consumed the elite gate into the private
+   Dawnthrone candidate documented above; it did not open any broader gate.
+   Registration, fixtures, outline enrollment, effects, child assets, another
+   family, release, accepted drift, and a PR remain closed.
 4. The rejected v1 digest
    `4abf172caafeb078ebcf8f1ce7d372f3dbc3c5b11efaade94a2cdb641a96d2bf`
    remains rejection evidence under `enemy-expansion-review/en-e11-phoenix-
@@ -91,12 +156,12 @@ gate.
    cells and no boundary contact. Regeneration reproduces all six hashes, and
    Aseprite parsed all six principal files. Internal visual QA accepted the
    exact packet and the designer approved it.
-9. Final published-state focused and full gates pass again. Stop: no next
-   Phoenix role or family is open. A fresh explicit continuation is required
-   before later work begins. Do not register, regenerate fixtures, add outline
-   enrollment, effects, or child assets, begin egg/ash resurrection or flight-
-   state art, open elite Phoenix or another family, release, accept drift, or
-   open a PR. Never use `--accept-drift` or hand-edit fixtures.
+9. Final published-state focused and full gates pass again. The later fresh
+   continuation opens only the private Dawnthrone elite review lane above. Do
+   not register, regenerate fixtures, add outline enrollment, effects, or child
+   assets, begin egg/ash resurrection or flight-state art, open another Phoenix
+   or family, release, accept drift, or open a PR. Never use `--accept-drift` or
+   hand-edit fixtures.
 10. Image-posting convention is mandatory for visual review. Put the source and
     candidate images directly in the final chat message using plain inline
     Markdown with leading-slash Windows paths. Do not wrap images in links,
