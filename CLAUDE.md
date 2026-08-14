@@ -118,7 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private specialist Raven / publication in progress: on
+- Current approved private specialist Raven published / next gate closed: on
   `codex/en-e11-raven-specialist`, based exactly on the clean, pushed current
   V3 assembler checkpoint `e7cedbc569ac0ad5c405efbf9b888e167cb8f671`, the
   designer's fresh `awesome lets keep going` advances the documented Raven
@@ -146,10 +146,14 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   original resolution. The exact four-PNG, two-GIF, digest-frozen packet was
   posted and the designer replied `approved`. Approval binds only to
   implementation `ca79bdeced0161f720775e405416d98cd809314f`, the digest,
-  and six frozen hashes; that implementation and approval record
-  `5e50ad8bf12e6782800be71a7e7613684fc7bb49` are pushed and remote verified.
-  Only the initial published handoff and final reconciliation remain.
+  and six frozen hashes; that implementation, approval record
+  `5e50ad8bf12e6782800be71a7e7613684fc7bb49`, and initial published handoff
+  `930d589f4ab77598bbd11fe925a838b99e52556d` are pushed and remote verified;
+  this reconciliation completes the bounded Raven specialist publication
+  tuple.
   Approval-local focused/fast gates pass again; fast completes in about 65.7s.
+  Final published-state focused/fast/full gates pass in about
+  1.0s/58.9s/144.9s.
   No continuation request was supplied, so public or outline registration,
   fixtures, effects, child assets, Raven elite, Owl, Phoenix, release,
   accepted drift, and a PR remain closed.

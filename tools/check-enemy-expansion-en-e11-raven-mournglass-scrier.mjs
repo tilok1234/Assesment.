@@ -135,11 +135,12 @@ check(
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publishedImplementation === 'ca79bdeced0161f720775e405416d98cd809314f'
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publishedApprovalRecord === '5e50ad8bf12e6782800be71a7e7613684fc7bb49'
-    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.initialPublishedHandoff === ''
-    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.initialPublishedHandoff === '930d589f4ab77598bbd11fe925a838b99e52556d'
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publicationState === 'published'
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('ca79bdeced0161f720775e405416d98cd809314f')
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('5e50ad8bf12e6782800be71a7e7613684fc7bb49')
-    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('initial published handoff')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('930d589f4ab77598bbd11fe925a838b99e52556d')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('completes the bounded Raven specialist publication tuple')
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('No continuation request')
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('outline registration'),
   'Mournglass approval record or publication boundary drifted',
@@ -159,7 +160,7 @@ check(
     && EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.precedingVariant.id === 'cinderquill-scavenger'
     && EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'mournglass-scrier'
     && EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && JSON.stringify(EN_E11_RAVEN_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Raven specialist role contract drifted',

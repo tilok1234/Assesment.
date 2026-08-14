@@ -23,7 +23,7 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Current Approved Checkpoint - Mournglass Scrier / Publication In Progress
+## Current Published Checkpoint - Mournglass Scrier / Next Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e11-raven-specialist`, based exactly on the clean, pushed current
@@ -40,12 +40,13 @@ gate.
    the exact four-PNG, two-GIF, digest-frozen packet below was shown, the
    designer replied `approved`. Pixel approval binds only to implementation
    `ca79bdeced0161f720775e405416d98cd809314f`, the exact digest, and six
-   frozen review hashes. That implementation and approval record
-   `5e50ad8bf12e6782800be71a7e7613684fc7bb49` are pushed and remote verified.
-   Only the initial published handoff and final reconciliation remain. The
-   reply contains no continuation request, so Raven elite, Owl, Phoenix,
-   public or outline registration, fixtures, effects, child assets, release,
-   accepted drift, and a PR remain closed.
+   frozen review hashes. That implementation, approval record
+   `5e50ad8bf12e6782800be71a7e7613684fc7bb49`, and initial published handoff
+   `930d589f4ab77598bbd11fe925a838b99e52556d` are pushed and remote verified;
+   this reconciliation completes the bounded Raven specialist publication
+   tuple. The reply contains no continuation request, so Raven elite, Owl,
+   Phoenix, public or outline registration, fixtures, effects, child assets,
+   release, accepted drift, and a PR remain closed.
 3. Mournglass Scrier preserves the complete approved compact grounded Raven
    beneath violet-black plumage, indigo-slate wings, a pale mourning throat,
    connected silver moon-glass brow crest and quill bars, cool-teal eyes and
@@ -77,7 +78,8 @@ gate.
    passes in about 0.5s / 61.7s / 109.0s. Public remains 100/316, all 232
    fixtures stay exact, and child assets, effects, public registration, and
    outline registration remain zero for this lane. Approval-local focused and
-   fast gates pass again; fast completes in about 65.7s.
+   fast gates pass again; fast completes in about 65.7s. Final published-state
+   focused, fast, and full gates pass in about 1.0s, 58.9s, and 144.9s.
 6. Exact review files are under
    `enemy-expansion-review/en-e11-raven-mournglass-scrier/`. The raw,
    outlined, Complete B + Form, and family-comparison PNGs, all four raw phase
@@ -86,11 +88,13 @@ gate.
    with `npm.cmd run review:enemy-expansion-en-e11-raven-mournglass-scrier`
    and run the focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-raven-mournglass-scrier`.
-7. Create and push only the initial published handoff and final reconciliation
-   needed to complete Mournglass's bounded publication tuple. Do not register
-   it publicly or for outlines, regenerate fixtures, add effects or child
-   assets, begin Raven elite, Owl, or Phoenix, release, accept drift, or open a
-   PR.
+7. The implementation, approval record, and initial published handoff are
+   remote verified; this reconciliation completes Mournglass's bounded
+   publication tuple. No continuation request was supplied, so the next gate
+   stays closed. Do not register it publicly or for outlines, regenerate
+   fixtures, add effects or child assets, begin Raven elite, Owl, or Phoenix,
+   release, accept drift, or open a PR. A fresh explicit continuation request
+   is required before any later lane can open.
 
 ## Current Integration Checkpoint - 22 Approved Suites And V2 Launcher
 
