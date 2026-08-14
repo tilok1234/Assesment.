@@ -25,7 +25,7 @@ export const EN_E11_PHOENIX_SUNVEIL_CANTOR_CONTRACT = deepFreeze({
   family: 'phoenix',
   variant: 'sunveil-cantor',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E11_PHOENIX_TOPOLOGY_DECISION.selected,
   silhouette: 'A bespoke long-necked, low-bodied grounded Phoenix carries a connected back-swept lyre crest, narrow pale-gold processional veil, diagonal dawn-orange cantor mantle, two separated three-toed talons, and one connected forked-ribbon tail. Its side profile reads as a forward singer with an S-curved neck and trailing mantle rather than Ashcrest Kindler\'s compact upright body. Attack changes from gathered bow to alternating high-and-low body-owned wing arches while the actor remains connected and grounded without detached notes, fire, or halo pieces.',
   identity: 'Deep wine-red and carmine plumage, a pale-gold processional sunveil, connected saffron lyre-ray crest, diagonal dawn-orange mantle wings, cool-aqua eyes, gilt hooked beak and talons, and a connected forked-ribbon cantor tail distinguish Sunveil Cantor from approved Ashcrest Kindler, approved Moonveil Augur, and public Harpy Screecher even without color.',
@@ -43,18 +43,27 @@ export const EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E11_PHOENIX_SUNVEIL_CANTOR_CONTRACT.variant,
     role: EN_E11_PHOENIX_SUNVEIL_CANTOR_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
 });
 
 export const EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE = deepFreeze({
   id: 'en-e11-phoenix-sunveil-cantor-full-v2',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-14',
   authorizationEvidence: 'The exact Ashcrest Kindler implementation 4111b322fe6f362f92f389e606722b80426aee25, approval record c9cd3669394f0e39e05377bb9be0532e1b6204d8, initial published handoff 2c12283f38fc30a6d73be5a86a67d34842aec715, and final reconciliation ef2d1836a88f074e48d536e92c757988a0a13d17 are pushed and remote verified. The designer approved the exact Ashcrest packet and supplied the fresh continuation: approved lets do next. Under the documented Phoenix common, specialist, elite role order and selected baked-single-actor-grounded-flame-crested-phoenix topology, this opens exactly one private specialist Phoenix full 80-frame candidate. Because the specialist was not pre-named, this lane names only Sunveil Cantor. The first submitted packet was visually rejected as too similar to Ashcrest; the designer then said lets keep working here, authorizing a narrow private revision of Sunveil Cantor only. This does not approve revised candidate pixels or authorize a commit, push, public or outline registration, fixtures, effects, child assets, egg or ash resurrection art, flight states, elite Phoenix work, another family, release, accepted drift, or a pull request.',
   baseCheckpoint: 'ef2d1836a88f074e48d536e92c757988a0a13d17',
   architectureDecision: EN_E11_PHOENIX_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-14',
+  approvalEvidence: 'The final approval prompt posted the exact labeled all-four-direction revised raw/no-outline, distinct Complete B outlined, Complete B + Form, and Ashcrest-Moonveil-Harpy comparison PNGs together with both synchronized full-suite GIFs and candidate digest f97ddd614b58c2d3f99bc7c16e622cbd99f382455853815d17938804e859c226. All four exact PNGs, all eight raw and Complete B + Form phase sheets, the transparent 20x4 inspection atlas, and both exact GIFs were inspected at original resolution; Aseprite parsed all six principal files and regeneration reproduced every frozen hash. The designer replied: approved. Pixel approval applies only to this exact revised Sunveil Cantor v2 digest and its six frozen review hashes. The reply contains no continuation clause and does not open public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, elite Phoenix work, another family, release, accepted drift, or a pull request.',
+  approvedImplementation: 'f1fb03eedad0537d6999b3e0346ef689ba052ac0',
+  publicationAuthorizedOn: '2026-08-14',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved to the exact revised Sunveil Cantor v2 review packet. This does not authorize public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, elite Phoenix work, another family, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.id,
     candidateFrameDigest: EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.candidateFrameDigest,
@@ -124,7 +133,7 @@ export const EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'Stop after rendering, inspecting, freezing, and validating this exact revised private Sunveil Cantor candidate. Explicit designer approval of the posted exact review packet or candidate digest is required before any implementation commit or push. That approval would apply only to the frozen revised specialist Phoenix pixels and would not open public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, elite Phoenix work, another family, release, accepted drift, or a pull request.',
+  nextGate: 'The exact revised Sunveil Cantor implementation f1fb03eedad0537d6999b3e0346ef689ba052ac0 is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Phoenix specialist publication tuple. The approval reply contains no continuation clause, so elite Phoenix work and every later gate remain closed. Public or outline registration, fixtures, effects, child assets, resurrection or flight-state art, another family, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_PHOENIX_SUNVEIL_CANTOR_DATA = deepFreeze({
@@ -573,7 +582,7 @@ export const EN_E11_PHOENIX_SUNVEIL_CANTOR_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'sunveil-cantor',
     scale: 6,
-    notes: 'Unapproved revised private specialist Phoenix candidate against approved Ashcrest Kindler, approved Moonveil Augur, and public Harpy Screecher. The renderer uses bespoke long-necked processional geometry rather than Ashcrest source pixels. Stop after exact review-packet inspection and validation. Do not commit or push candidate pixels without explicit approval of the posted exact packet or candidate digest. Keep public or outline registration, fixtures, effects, child assets, resurrection art, flight states, elite Phoenix work, another family, release, accepted drift, and a pull request separate.',
+    notes: 'Approved revised private specialist Phoenix bound to exact implementation f1fb03eedad0537d6999b3e0346ef689ba052ac0, candidate digest f97ddd614b58c2d3f99bc7c16e622cbd99f382455853815d17938804e859c226, and its six frozen review hashes. The renderer uses bespoke long-necked processional geometry rather than Ashcrest source pixels. The designer replied approved to the posted exact packet without a continuation clause. Keep public or outline registration, fixtures, effects, child assets, resurrection art, flight states, elite Phoenix work, another family, release, accepted drift, and a pull request separate.',
   },
 });
 

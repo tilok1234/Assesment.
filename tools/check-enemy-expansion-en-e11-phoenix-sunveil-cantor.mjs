@@ -143,7 +143,7 @@ check(
   'approved Phoenix topology decision drifted',
 );
 check(
-  EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.status === 'candidate'
+  EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.status === 'approved'
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.baseCheckpoint === 'ef2d1836a88f074e48d536e92c757988a0a13d17'
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.architectureDecision === EN_E11_PHOENIX_TOPOLOGY_DECISION.id,
   'Sunveil candidate gate identity or base checkpoint drifted',
@@ -158,9 +158,23 @@ check(
   'Sunveil authorization evidence drifted',
 );
 check(
-  !('approvedOn' in EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE)
-    && !('publicationState' in EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE),
-  'Sunveil candidate publication boundary drifted',
+  EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.approvedOn === '2026-08-14'
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.approvalEvidence.includes('The designer replied: approved')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.approvalEvidence.includes('f97ddd614b58c2d3f99bc7c16e622cbd99f382455853815d17938804e859c226')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.approvalEvidence.includes('no continuation clause')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.approvedImplementation === 'f1fb03eedad0537d6999b3e0346ef689ba052ac0'
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publicationAuthorizedOn === '2026-08-14'
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publishedImplementation === ''
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publishedApprovalRecord === ''
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.initialPublishedHandoff === ''
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.publicationState === 'approved-not-published'
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('f1fb03eedad0537d6999b3e0346ef689ba052ac0')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('approval record')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('no continuation clause')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('outline registration'),
+  'Sunveil approval record or publication boundary drifted',
 );
 check(
   EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.precedingApproval.gateId === EN_E11_PHOENIX_ASHCREST_KINDLER_GATE.id
@@ -177,9 +191,9 @@ check(
     && EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.precedingVariant.role === 'common'
     && EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'sunveil-cantor'
     && EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E11_PHOENIX_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
-    && EN_E11_PHOENIX_SUNVEIL_CANTOR_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_CONTRACT.state === 'implemented-complete-motion-approved',
   'Phoenix specialist role contract drifted',
 );
 check(
@@ -195,8 +209,8 @@ check(
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.exclusions.includes('fixtures')
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.exclusions.includes('egg or resurrection art')
     && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.exclusions.includes('flight states')
-    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('Explicit designer approval')
-    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('before any implementation commit or push'),
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('no continuation clause')
+    && EN_E11_PHOENIX_SUNVEIL_CANTOR_GATE.nextGate.includes('outline registration'),
   'Sunveil anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(
@@ -405,13 +419,13 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E11 Phoenix Sunveil Cantor private specialist candidate passes focused validation.');
+  console.log('EN-E11 Phoenix Sunveil Cantor approved private specialist passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Bespoke silhouette: ' + bespokeSilhouettes + '/80 substantial Ashcrest black-shape differences; minimum alpha distance ' + minAshcrestAlphaDistance + '; maximum IoU ' + maxAshcrestAlphaIou.toFixed(3) + '; ' + processionalProfiles + '/40 long side profiles');
   console.log('- Phoenix identity: ' + twoFootRows + '/80 two three-toed talon rows; ' + specialistSpans + '/80 specialist spans; ' + dawnscreenViews + '/16 alternating high-arch dawnscreen views; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + veilViews + '/72 sunveil views; ' + cantorViews + '/72 cantor-mantle views; ' + wingViews + '/72 body-owned wing views');
   console.log('- Distinction: Ashcrest ' + differences.ashcrest + '/80; Moonveil ' + differences.moonveil + '/80; Harpy ' + differences.harpy + '/80 pixel and alpha frames differ');
   console.log('- Presentation: Complete B outline +' + outlinedPixels + ' pixels; Form changes ' + formChanges);
-  console.log('- Protected: approved Ashcrest and Moonveil exact; public Harpy and 100/316 exact; zero child assets/effects; no registration, outline registration, fixtures, commit, or push');
+  console.log('- Protected: approved Ashcrest and Moonveil exact; public Harpy and 100/316 exact; zero child assets/effects; no registration, outline registration, fixtures, or broader gate');
   console.log('- Candidate frame digest: ' + digests.candidate);
   console.log('- Approved Ashcrest frame digest: ' + digests.ashcrest);
   console.log('- Approved Moonveil frame digest: ' + digests.moonveil);

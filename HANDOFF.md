@@ -23,29 +23,29 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Revised Phoenix Specialist Awaiting Visual Approval
+## Next Chat Start Here - Approved Phoenix Specialist Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
-   `codex/en-e11-phoenix-specialist`. `HEAD` is still the clean, pushed,
-   remote-verified Ashcrest Kindler final reconciliation
-   `ef2d1836a88f074e48d536e92c757988a0a13d17`. Preserve the intentional dirty
-   worktree; do not reset or discard it.
-2. The dirty source scope remains exactly nine intended files: modified
-   `CLAUDE.md`, `ENEMY_EXPANSION_PLAN.md`, `HANDOFF.md`, `ROADMAP.md`, and
-   `package.json`; plus untracked
-   `engine/enemy-expansion-en-e11-phoenix-sunveil-cantor.js`,
-   `tools/enemy-expansion-en-e11-phoenix-sunveil-cantor-review.mjs`,
-   `tools/check-enemy-expansion-en-e11-phoenix-sunveil-cantor.mjs`, and
-   `tools/build-enemy-expansion-en-e11-phoenix-sunveil-cantor-gifs.py`.
-   Current and rejected-v1 review artifacts are ignored. There is no temporary
+   `codex/en-e11-phoenix-specialist`. The exact revised Sunveil Cantor
+   implementation `f1fb03eedad0537d6999b3e0346ef689ba052ac0` is pushed and
+   remote verified. Publication is in progress; finish only the approval record,
+   initial published handoff, and final reconciliation.
+2. The immutable implementation contains exactly the intended nine-file source
+   and documentation scope. Current and rejected-v1 review artifacts remain
+   ignored, all 232 fixtures remain untouched, and there is no temporary
    comparison-builder file.
 3. Ashcrest Kindler is approved, published, pushed, and remote verified. The
    designer's `approved lets do next` opened exactly one private Phoenix
    specialist candidate. The first Sunveil packet was visually rejected as an
    Ashcrest reskin. The designer's fresh `lets keep working here` authorized a
-   narrow revision of Sunveil Cantor only; it did not approve revised pixels,
-   commit, push, registration, fixtures, outline enrollment, effects, child
-   assets, elite Phoenix, another family, release, accepted drift, or a PR.
+   narrow revision of Sunveil Cantor only. After the exact four-PNG, two-GIF,
+   digest-frozen v2 packet below was shown, the designer replied `approved`.
+   Pixel approval binds only to implementation
+   `f1fb03eedad0537d6999b3e0346ef689ba052ac0`, the exact digest, and six frozen
+   review hashes. The reply contains no continuation clause, so elite Phoenix
+   work and every later gate remain closed. Registration, fixtures, outline
+   enrollment, effects, child assets, another family, release, accepted drift,
+   and a PR remain closed.
 4. The rejected v1 digest
    `4abf172caafeb078ebcf8f1ce7d372f3dbc3c5b11efaade94a2cdb641a96d2bf`
    remains rejection evidence under `enemy-expansion-review/en-e11-phoenix-
@@ -87,13 +87,13 @@ gate.
    eight phase sheets, transparent 20x4 atlas, and both GIFs were inspected at
    original resolution. The atlas is 480x96 with 80 non-empty hard-alpha 24x24
    cells and no boundary contact. Regeneration reproduces all six hashes, and
-   Aseprite parsed all six principal files. The independent inspection verdict
-   is `candidate-ready-for-designer-review`, not designer pixel approval.
-9. Stop for explicit approval of the posted exact packet or digest. Do not
-   commit, push, register, regenerate fixtures, add outline enrollment, effects,
-   or child assets, begin egg/ash resurrection or flight-state art, open elite
-   Phoenix or another family, release, accept drift, or open a PR. Never use
-   `--accept-drift` or hand-edit fixtures.
+   Aseprite parsed all six principal files. Internal visual QA accepted the
+   exact packet and the designer approved it.
+9. Commit and push only the approval record, initial published handoff, and
+   final reconciliation. Do not register, regenerate fixtures, add outline
+   enrollment, effects, or child assets, begin egg/ash resurrection or flight-
+   state art, open elite Phoenix or another family, release, accept drift, or
+   open a PR. Never use `--accept-drift` or hand-edit fixtures.
 10. Image-posting convention is mandatory for visual review. Put the source and
     candidate images directly in the final chat message using plain inline
     Markdown with leading-slash Windows paths. Do not wrap images in links,
