@@ -36,12 +36,13 @@
   exact four-PNG, two-GIF, digest-frozen packet was posted and the designer
   replied `approved`. Approval binds only to implementation
   `ca79bdeced0161f720775e405416d98cd809314f`, the digest, and six frozen
-  hashes; that implementation is pushed and remote verified. Approval-local
-  focused/fast gates pass again; fast completes in about 65.7s. Commit and
-  push only the approval/handoff reconciliation. No continuation request was
-  supplied, so registration, fixtures, effects, child assets, Raven elite,
-  Owl, Phoenix, release, accepted drift, a PR, and every broader gate remain
-  closed.
+  hashes; that implementation and approval record
+  `5e50ad8bf12e6782800be71a7e7613684fc7bb49` are pushed and remote verified.
+  Only the initial published handoff and final reconciliation remain.
+  Approval-local focused/fast gates pass again; fast completes in about 65.7s.
+  No continuation request was supplied, so registration, fixtures, effects,
+  child assets, Raven elite, Owl, Phoenix, release, accepted drift, a PR, and
+  every broader gate remain closed.
 
 - Current integration status (2026-08-14): on
   `codex/approved-enemy-assembler-integration-v3`, based exactly on reconciled

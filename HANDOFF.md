@@ -40,8 +40,10 @@ gate.
    the exact four-PNG, two-GIF, digest-frozen packet below was shown, the
    designer replied `approved`. Pixel approval binds only to implementation
    `ca79bdeced0161f720775e405416d98cd809314f`, the exact digest, and six
-   frozen review hashes. That implementation is pushed and remote verified.
-   The reply contains no continuation request, so Raven elite, Owl, Phoenix,
+   frozen review hashes. That implementation and approval record
+   `5e50ad8bf12e6782800be71a7e7613684fc7bb49` are pushed and remote verified.
+   Only the initial published handoff and final reconciliation remain. The
+   reply contains no continuation request, so Raven elite, Owl, Phoenix,
    public or outline registration, fixtures, effects, child assets, release,
    accepted drift, and a PR remain closed.
 3. Mournglass Scrier preserves the complete approved compact grounded Raven
@@ -84,11 +86,11 @@ gate.
    with `npm.cmd run review:enemy-expansion-en-e11-raven-mournglass-scrier`
    and run the focused gate with
    `npm.cmd run check:enemy-expansion-en-e11-raven-mournglass-scrier`.
-7. Commit and push only the exact approval record, then create the initial
-   published handoff and final reconciliation needed to complete Mournglass's
-   bounded publication tuple. Do not register it publicly or for outlines,
-   regenerate fixtures, add effects or child assets, begin Raven elite, Owl,
-   or Phoenix, release, accept drift, or open a PR.
+7. Create and push only the initial published handoff and final reconciliation
+   needed to complete Mournglass's bounded publication tuple. Do not register
+   it publicly or for outlines, regenerate fixtures, add effects or child
+   assets, begin Raven elite, Owl, or Phoenix, release, accept drift, or open a
+   PR.
 
 ## Current Integration Checkpoint - 22 Approved Suites And V2 Launcher
 

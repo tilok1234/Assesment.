@@ -133,12 +133,13 @@ check(
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.approvedImplementation === 'ca79bdeced0161f720775e405416d98cd809314f'
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publicationAuthorizedOn === '2026-08-14'
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publishedImplementation === ''
-    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publishedApprovalRecord === ''
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publishedImplementation === 'ca79bdeced0161f720775e405416d98cd809314f'
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publishedApprovalRecord === '5e50ad8bf12e6782800be71a7e7613684fc7bb49'
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.initialPublishedHandoff === ''
-    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publicationState === 'approved-not-published'
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('ca79bdeced0161f720775e405416d98cd809314f')
-    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('approval record')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('5e50ad8bf12e6782800be71a7e7613684fc7bb49')
+    && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('initial published handoff')
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('No continuation request')
     && EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE.nextGate.includes('outline registration'),
   'Mournglass approval record or publication boundary drifted',

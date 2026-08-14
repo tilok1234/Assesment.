@@ -62,10 +62,10 @@ export const EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE = deepFreeze({
   approvedImplementation: 'ca79bdeced0161f720775e405416d98cd809314f',
   publicationAuthorizedOn: '2026-08-14',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved to the exact Mournglass Scrier review packet. This does not authorize registration, fixtures, effects, child assets, Raven elite, later families, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: 'ca79bdeced0161f720775e405416d98cd809314f',
+  publishedApprovalRecord: '5e50ad8bf12e6782800be71a7e7613684fc7bb49',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.id,
     candidateFrameDigest: EN_E11_RAVEN_CINDERQUILL_SCAVENGER_GATE.candidateFrameDigest,
@@ -137,7 +137,7 @@ export const EN_E11_RAVEN_MOURNGLASS_SCRIER_GATE = deepFreeze({
     'release',
     'later EN-E11 work',
   ],
-  nextGate: 'The exact Mournglass Scrier implementation ca79bdeced0161f720775e405416d98cd809314f is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded publication tuple. No continuation request accompanied the pixel approval, so no Raven elite, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, Owl, Phoenix, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Mournglass Scrier implementation ca79bdeced0161f720775e405416d98cd809314f and approval record 5e50ad8bf12e6782800be71a7e7613684fc7bb49 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded publication tuple. No continuation request accompanied the pixel approval, so no Raven elite, other Bird family, or other sprite lane is open. Public or outline registration, fixtures, effects, child assets, Owl, Phoenix, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E11_RAVEN_MOURNGLASS_SCRIER_DATA = deepFreeze({
@@ -483,7 +483,7 @@ export const EN_E11_RAVEN_MOURNGLASS_SCRIER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mournglass-scrier',
     scale: 6,
-    notes: 'Approved private Mournglass Scrier specialist Raven only, bound to exact implementation ca79bdeced0161f720775e405416d98cd809314f, candidate digest 59b3b963b18edf1385fcc13252ec702cfa7d87c48ec8aaf8e34039becbfc8f1a, and its six frozen review hashes. The designer replied approved to the posted exact packet; no continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Raven elite, Owl, Phoenix, release, accepted drift, and a pull request separate.',
+    notes: 'Approved private Mournglass Scrier specialist Raven only, bound to exact implementation ca79bdeced0161f720775e405416d98cd809314f, approval record 5e50ad8bf12e6782800be71a7e7613684fc7bb49, candidate digest 59b3b963b18edf1385fcc13252ec702cfa7d87c48ec8aaf8e34039becbfc8f1a, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. No continuation request was supplied. Keep public or outline registration, fixtures, effects, child assets, Raven elite, Owl, Phoenix, release, accepted drift, and a pull request separate.',
   },
 });
 
