@@ -24,7 +24,7 @@ export const EN_E12_BASILISK_IRONHALO_TYRANT_CONTRACT = deepFreeze({
   family: 'basilisk',
   variant: 'ironhalo-tyrant',
   role: 'elite',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E12_BASILISK_TOPOLOGY_DECISION.selected,
   silhouette: 'One connected broad, high-backed elite Basilisk joins a massive armored wedge head, a connected stepped antique-gold ironhalo crown, a short columnar neck, an articulated fortress-plated obsidian and oxblood body, four separately readable pillar legs with grounded iron claws, and one thick inward-curled serpent tail. It preserves the approved four-clawed crowned-serpent topology while reading taller, wider, more architectural, and more crushing than Crownscale Crawler or Mirrorcrest Mesmer without collapsing into a rigid square.',
   identity: 'Obsidian and blue-black hide, oxblood belly armor, antique-gold fortress plates and connected ironhalo, acid-green eyes, a black-crimson jaw, old-bone fangs, and cold iron claws establish the elite without relying on gaze beams, venom, glow, dust, projectiles, or detached parts.',
@@ -42,18 +42,27 @@ export const EN_E12_BASILISK_ELITE_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E12_BASILISK_IRONHALO_TYRANT_CONTRACT.variant,
     role: EN_E12_BASILISK_IRONHALO_TYRANT_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: [],
 });
 
 export const EN_E12_BASILISK_IRONHALO_TYRANT_GATE = deepFreeze({
   id: 'en-e12-basilisk-ironhalo-tyrant-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-15',
   authorizationEvidence: 'The exact Mirrorcrest Mesmer implementation 9c020537525094430307813e77fd23d7e6308fcc, approval record 7ecc9df1f7f05c38af6cd395bfd26811a0d79099, initial published handoff a983959ccf0fb6c965fcb04e534c170f8b1f854b, and final reconciliation 1b1b11ba6464bdf2bb1220b094e6908578f7a7aa are pushed and remote verified. The designer replied approved letsd do next to the exact Mirrorcrest packet. That approval publishes only Mirrorcrest Mesmer; its continuation opens exactly one private elite Basilisk full 80-frame candidate under the selected baked-single-actor-grounded-four-clawed-crowned-serpent topology. Because the role was not pre-named, this lane names only Ironhalo Tyrant. It does not approve candidate pixels or authorize a commit, push, public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, or a pull request.',
   baseCheckpoint: '1b1b11ba6464bdf2bb1220b094e6908578f7a7aa',
   architectureDecision: EN_E12_BASILISK_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-15',
+  approvalEvidence: 'The final approval prompt posted the exact revised labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and Crownscale-Mirrorcrest-Marsh Crocodile comparison PNGs together with both synchronized full-suite GIFs and candidate digest ea00f445e8f807098b6392cd3cf81fedbf0a29d6eb96434495ab5af9b3308a6f. The earlier rigid-square packet was superseded after the designer requested need to fix animation for that square. The revised stepped-halo, independently articulated plate, four-leg bend, torso-lean, and tail-counter-motion packet was regenerated exactly; all four PNGs, all eight raw and Complete B + Form phase sheets, the transparent 20x4 inspection atlas, and both exact GIFs were inspected at original resolution; Aseprite parsed all six principal files; focused, fast, and full validation passed. The designer replied: aproved. Pixel approval applies only to implementation 7a00ef8691da6df2821cf3ad02437198d0d9f2e6, that revised digest, and its six frozen review hashes. The reply contains no continuation request and does not authorize public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, a pull request, or another enemy gate.',
+  approvedImplementation: '7a00ef8691da6df2821cf3ad02437198d0d9f2e6',
+  publicationAuthorizedOn: '2026-08-15',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied aproved to the exact revised Ironhalo Tyrant packet. This does not authorize public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, a pull request, or another enemy gate.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.id,
     candidateFrameDigest: EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.candidateFrameDigest,
@@ -114,7 +123,7 @@ export const EN_E12_BASILISK_IRONHALO_TYRANT_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'Render, inspect, freeze, and validate this exact private Ironhalo Tyrant candidate, then stop for explicit visual pixel approval. Do not commit, push, register, add outlines, fixtures or effects, mutate the approved-enemy package, create child assets, open Manticore, Sphinx, boss, release, accepted-drift, or pull-request work. The distinct outlined PNG is review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact revised Ironhalo Tyrant implementation 7a00ef8691da6df2821cf3ad02437198d0d9f2e6 is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Basilisk elite publication tuple. The approval reply contains no continuation request, so the next enemy gate remains closed after publication and requires a fresh explicit continuation. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E12_BASILISK_IRONHALO_TYRANT_DATA = deepFreeze({
@@ -574,7 +583,7 @@ export const EN_E12_BASILISK_IRONHALO_TYRANT_FAMILY = deepFreeze({
   },
   review: {
     baselineVariant: 'ironhalo-tyrant', scale: 6,
-    notes: 'Private elite Basilisk candidate only. Review the exact raw/no-outline, distinct Complete B outlined, Complete B + Form, Crownscale/Mirrorcrest/Marsh Crocodile comparison, and paired GIF packet. The renderer uses bespoke broad fortress-backed ironhalo and inward-coil geometry rather than rendering or palette-mapping either approved Basilisk. Keep commit, push, public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, and a pull request closed until explicit pixel approval.',
+    notes: 'Approved private Ironhalo Tyrant elite Basilisk only, bound to exact revised implementation 7a00ef8691da6df2821cf3ad02437198d0d9f2e6, candidate digest ea00f445e8f807098b6392cd3cf81fedbf0a29d6eb96434495ab5af9b3308a6f, and its six frozen review hashes. The designer replied aproved to the revised packet after the rigid-square animation repair. The reply contains no continuation request. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, a pull request, and another enemy gate separate.',
   },
 });
 

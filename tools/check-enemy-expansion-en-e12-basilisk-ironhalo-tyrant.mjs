@@ -138,7 +138,7 @@ check(
   'approved Basilisk topology decision drifted',
 );
 check(
-  EN_E12_BASILISK_IRONHALO_TYRANT_GATE.status === 'candidate'
+  EN_E12_BASILISK_IRONHALO_TYRANT_GATE.status === 'approved'
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.baseCheckpoint === '1b1b11ba6464bdf2bb1220b094e6908578f7a7aa'
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.architectureDecision === EN_E12_BASILISK_TOPOLOGY_DECISION.id
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.precedingApproval.gateId === EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.id
@@ -146,11 +146,26 @@ check(
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.precedingApproval.publishedImplementation === EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publishedImplementation
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.precedingApproval.publishedApprovalRecord === EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publishedApprovalRecord
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.precedingApproval.initialPublishedHandoff === EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.initialPublishedHandoff
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.precedingApproval.currentReconciliation === EN_E12_BASILISK_IRONHALO_TYRANT_GATE.baseCheckpoint
-    && !Object.hasOwn(EN_E12_BASILISK_IRONHALO_TYRANT_GATE, 'approvedOn')
-    && !Object.hasOwn(EN_E12_BASILISK_IRONHALO_TYRANT_GATE, 'approvedImplementation')
-    && !Object.hasOwn(EN_E12_BASILISK_IRONHALO_TYRANT_GATE, 'publicationState'),
-  'Ironhalo gate must remain an unapproved private candidate on the exact specialist checkpoint',
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.precedingApproval.currentReconciliation === EN_E12_BASILISK_IRONHALO_TYRANT_GATE.baseCheckpoint,
+  'Ironhalo approved gate identity or predecessor tuple drifted',
+);
+check(
+  EN_E12_BASILISK_IRONHALO_TYRANT_GATE.approvedOn === '2026-08-15'
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.approvalEvidence.includes('The designer replied: aproved')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.approvalEvidence.includes('ea00f445e8f807098b6392cd3cf81fedbf0a29d6eb96434495ab5af9b3308a6f')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.approvalEvidence.includes('no continuation request')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.approvedImplementation === '7a00ef8691da6df2821cf3ad02437198d0d9f2e6'
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publicationAuthorizedOn === '2026-08-15'
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publishedImplementation === ''
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publishedApprovalRecord === ''
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.initialPublishedHandoff === ''
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publicationState === 'approved-not-published'
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('7a00ef8691da6df2821cf3ad02437198d0d9f2e6')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('approval record')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('next enemy gate remains closed'),
+  'Ironhalo approval record or publication boundary drifted',
 );
 check(
   EN_E12_BASILISK_IRONHALO_TYRANT_GATE.authorizationEvidence.includes('approved letsd do next')
@@ -164,9 +179,9 @@ check(
     && EN_E12_BASILISK_ELITE_CONTRACT_CARD.precedingGate === EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.id
     && EN_E12_BASILISK_ELITE_CONTRACT_CARD.activeVariant.id === 'ironhalo-tyrant'
     && EN_E12_BASILISK_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E12_BASILISK_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E12_BASILISK_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && EN_E12_BASILISK_ELITE_CONTRACT_CARD.deferredRoles.length === 0
-    && EN_E12_BASILISK_IRONHALO_TYRANT_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E12_BASILISK_IRONHALO_TYRANT_CONTRACT.state === 'implemented-complete-motion-approved',
   'Basilisk elite role contract drifted',
 );
 check(
@@ -182,8 +197,8 @@ check(
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.exclusions.includes('outline registration')
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.exclusions.includes('fixtures')
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.exclusions.includes('Manticore or Sphinx')
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('explicit visual pixel approval')
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('Do not commit, push, register'),
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('next enemy gate remains closed')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('outline registration'),
   'Ironhalo anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(
@@ -201,9 +216,9 @@ check(
 );
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 100 && publicVariantCount === 316, 'candidate must preserve the integrated public 100/316 catalog');
-check(!engine.PUBLIC_ENEMIES.some(({ id }) => id === 'basilisk'), 'candidate must keep Basilisk private');
-check(engine.EN_E12_BASILISK_IRONHALO_TYRANT_REGISTRY === undefined, 'candidate must not leak through the public facade');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 100 && publicVariantCount === 316, 'approved private elite must preserve the integrated public 100/316 catalog');
+check(!engine.PUBLIC_ENEMIES.some(({ id }) => id === 'basilisk'), 'approved private elite must keep Basilisk private');
+check(engine.EN_E12_BASILISK_IRONHALO_TYRANT_REGISTRY === undefined, 'approved private elite must not leak through the public facade');
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8');
 const backlogSource = await readFile(path.join(root, 'engine', 'enemy-expansion-approved-backlog-v3.js'), 'utf8');
 const manifestSource = await readFile(path.join(root, 'asset-pack', 'manifest.json'), 'utf8');
@@ -416,15 +431,15 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E12 Basilisk Ironhalo Tyrant private elite candidate passes focused validation.');
+  console.log('EN-E12 Basilisk Ironhalo Tyrant approved private elite passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Basilisk identity: ' + fourFootRows + '/80 four-claw ground rows; ' + eliteSpans + '/80 elite fortress spans; ' + sideFortressSpans + '/40 broad side views; ' + gateRiseViews + '/8 connected crown-gate rises; ' + crushingPressViews + '/8 body-owned crushing presses; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + crownViews + '/72 ironhalo views; ' + plateViews + '/72 fortress-plate views; ' + scaleViews + '/72 scale-marked views');
   console.log('- Articulation: Idle minimum alpha change ' + articulation.idle.whole + ' overall / ' + articulation.idle.crown + ' crown / ' + articulation.idle.legs + ' legs; Walk cyclic minimum ' + articulation.walk.whole + ' overall / ' + articulation.walk.crown + ' crown / ' + articulation.walk.legs + ' legs; Attack transition minimum ' + articulation.attack.whole);
   console.log('- Black-shape distinction: Crownscale minimum distance ' + alphaStats.crownscale.minDistance + ', max IoU ' + alphaStats.crownscale.maxIou.toFixed(3) + '; Mirrorcrest minimum distance ' + alphaStats.mirrorcrest.minDistance + ', max IoU ' + alphaStats.mirrorcrest.maxIou.toFixed(3) + '; Marsh Crocodile minimum distance ' + alphaStats.marshCrocodile.minDistance + ', max IoU ' + alphaStats.marshCrocodile.maxIou.toFixed(3));
   console.log('- Distinction: Crownscale ' + differences.crownscale + '/80; Mirrorcrest ' + differences.mirrorcrest + '/80; Marsh Crocodile ' + differences.marshCrocodile + '/80 pixel and alpha frames differ');
   console.log('- Presentation: Complete B outline +' + outlinedPixels + ' pixels; Form changes ' + formChanges);
-  console.log('- Protected: published Crownscale and Mirrorcrest exact; public Marsh Crocodile and 100/316 exact; zero child assets/effects; no registration, outline registration, fixtures, package mutation, commit, push, or broader EN-E12 work');
-  console.log('- Candidate Ironhalo frame digest: ' + digests.candidate);
+  console.log('- Protected: published Crownscale and Mirrorcrest exact; public Marsh Crocodile and 100/316 exact; zero child assets/effects; bounded publication only; no registration, outline registration, fixtures, package mutation, or broader EN-E12 work');
+  console.log('- Approved Ironhalo frame digest: ' + digests.candidate);
   console.log('- Approved Crownscale frame digest: ' + digests.crownscale);
   console.log('- Approved Mirrorcrest frame digest: ' + digests.mirrorcrest);
   console.log('- Public Marsh Crocodile frame digest: ' + digests.marshCrocodile);

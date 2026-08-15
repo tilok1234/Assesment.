@@ -23,24 +23,27 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Private Basilisk Elite / Pixel Approval Required
+## Next Chat Start Here - Approved Private Basilisk Elite / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-basilisk-elite`, based exactly on clean, pushed, remote-
    verified Mirrorcrest final reconciliation
-   `1b1b11ba6464bdf2bb1220b094e6908578f7a7aa`. The exact Ironhalo Tyrant
-   candidate source, review generator, GIF builder, focused checker, and package
-   scripts are intentionally uncommitted and unpushed. Preserve that private
-   review state and do not modify the approved-enemy copy package.
+   `1b1b11ba6464bdf2bb1220b094e6908578f7a7aa`. The exact revised Ironhalo
+   Tyrant implementation is committed as
+   `7a00ef8691da6df2821cf3ad02437198d0d9f2e6`, pushed, and remote verified.
+   Preserve the frozen private packet and do not modify the approved-enemy copy
+   package.
 2. The designer replied `approved letsd do next` to the exact Mirrorcrest
    Mesmer packet. That reply publishes only Mirrorcrest and opens exactly one
    private elite Basilisk full 80-frame candidate under the selected
    `baked-single-actor-grounded-four-clawed-crowned-serpent` topology. Because
    the role was not pre-named, this lane names only Ironhalo Tyrant. The reply
-   does not approve elite pixels or authorize their commit or push. After the
-   first packet was shown, the designer requested `need to fix animation for
-   that square`. That is a revision request, not approval. The revised packet
-   below supersedes the earlier unapproved freeze.
+   did not approve elite pixels. After the first packet was shown, the designer
+   requested `need to fix animation for that square`; the revised packet below
+   superseded that earlier unapproved freeze. The designer then replied
+   `aproved` to the exact revised packet. Pixel approval binds only to
+   implementation `7a00ef8691da6df2821cf3ad02437198d0d9f2e6`, the digest, and
+   the six frozen review hashes. The reply contains no continuation request.
 3. Ironhalo Tyrant uses bespoke broad, high-backed geometry rather than
    rendering or palette-mapping Crownscale or Mirrorcrest: obsidian and blue-
    black hide, oxblood belly armor, connected antique-gold ironhalo and fortress
@@ -85,15 +88,14 @@ gate.
    hard-alpha 24x24 cells and zero boundary contact. The two GIFs are 640x672,
    four synchronized 180 ms frames, and loop cleanly. Exact hashes match the
    frozen packet, and Aseprite parses all six principal files.
-7. The next action is to post the four exact PNGs and both GIFs directly in
-   chat, then stop for explicit visual pixel approval. If the designer approves
-   that exact packet, standing permission authorizes only its bounded
-   implementation, approval-record, reconciliation commits, and elite branch
-   push. Until then, do not commit or push. The distinct outlined PNG is review
-   evidence only and does not authorize outline enrollment. Registration,
-   fixtures, approved-package mutation, effects, child assets, Manticore,
-   Sphinx, boss work, release, accepted drift, and a PR remain closed. Never use
-   `--accept-drift`.
+7. Standing permission now authorizes only the bounded approval-record commit
+   and push, followed by the initial published handoff and final reconciliation
+   needed to complete the elite publication tuple. The next enemy gate remains
+   closed afterward and requires a fresh explicit continuation. The distinct
+   outlined PNG is review evidence only and does not authorize outline
+   enrollment. Registration, fixtures, approved-package mutation, effects,
+   child assets, Manticore, Sphinx, boss work, release, accepted drift, and a PR
+   remain closed. Never use `--accept-drift`.
 8. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e12-basilisk-ironhalo-tyrant`; run the
    focused gate with

@@ -118,8 +118,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private EN-E12 Basilisk elite candidate / explicit pixel approval
-  required:
+- Current approved private EN-E12 Basilisk elite / approval record checkpoint:
   on `codex/en-e12-basilisk-elite`, based exactly on clean, pushed, remote-
   verified Mirrorcrest final reconciliation
   `1b1b11ba6464bdf2bb1220b094e6908578f7a7aa`, the designer's `approved letsd
@@ -166,12 +165,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   and two synchronized GIFs were inspected at original resolution. The 480x96
   hard-alpha atlas has 80 non-empty 24x24 cells and zero boundary contact; all
   six principal files parse in Aseprite; exact hashes match. Public remains
-  100/316 and all 232 fixtures stay exact. Candidate source, review, checker,
-  GIF builder, and package-script changes are intentionally uncommitted and
-  unpushed. Stop for explicit visual pixel approval of this exact packet. Do
-  not commit, push, register, enroll an outline, edit fixtures, mutate the
-  approved-enemy copy package, add effects or child assets, start Manticore,
-  Sphinx, boss, release, accepted-drift, or PR work.
+  100/316 and all 232 fixtures stay exact. The designer replied `aproved` to
+  this exact revised packet. Pixel approval binds only to implementation
+  `7a00ef8691da6df2821cf3ad02437198d0d9f2e6`, the digest, and the six frozen
+  review hashes. That implementation is pushed and remote verified. Standing
+  publication permission authorizes only the bounded approval-record and
+  handoff-reconciliation commits and elite branch pushes. The reply contains
+  no continuation request, so the next enemy gate remains closed after the
+  publication tuple completes. Public or outline registration, fixtures,
+  approved-enemy package mutation, effects, child assets, Manticore, Sphinx,
+  boss work, release, accepted drift, and a PR remain closed.
 - Published preceding approved private EN-E12 Basilisk specialist / elite gate
   consumed:
   on `codex/en-e12-basilisk-specialist`, based exactly on the clean, pushed,
