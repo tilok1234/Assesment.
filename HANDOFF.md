@@ -23,7 +23,84 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Published Basilisk Specialist / Elite Gate Open
+## Next Chat Start Here - Private Basilisk Elite / Pixel Approval Required
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e12-basilisk-elite`, based exactly on clean, pushed, remote-
+   verified Mirrorcrest final reconciliation
+   `1b1b11ba6464bdf2bb1220b094e6908578f7a7aa`. The exact Ironhalo Tyrant
+   candidate source, review generator, GIF builder, focused checker, and package
+   scripts are intentionally uncommitted and unpushed. Preserve that private
+   review state and do not modify the approved-enemy copy package.
+2. The designer replied `approved letsd do next` to the exact Mirrorcrest
+   Mesmer packet. That reply publishes only Mirrorcrest and opens exactly one
+   private elite Basilisk full 80-frame candidate under the selected
+   `baked-single-actor-grounded-four-clawed-crowned-serpent` topology. Because
+   the role was not pre-named, this lane names only Ironhalo Tyrant. The reply
+   does not approve elite pixels or authorize their commit or push. After the
+   first packet was shown, the designer requested `need to fix animation for
+   that square`. That is a revision request, not approval. The revised packet
+   below supersedes the earlier unapproved freeze.
+3. Ironhalo Tyrant uses bespoke broad, high-backed geometry rather than
+   rendering or palette-mapping Crownscale or Mirrorcrest: obsidian and blue-
+   black hide, oxblood belly armor, connected antique-gold ironhalo and fortress
+   plates, acid-green eyes, a black-crimson armored jaw, old-bone fangs, four
+   separately grounded pillar legs with massive iron claws, and one connected
+   thick inward-curled tail. Attack braces all four claws, raises the connected
+   halo and dorsal gate, compresses the crown architecture into a body-owned
+   crushing press, and recoils. Cast aliases Attack exactly; Death aliases Hurt
+   H1,H2,H2,H2. There are no gaze-beam, venom, glow, dust, projectile, impact,
+   detached-part, effect, or child pixels. The repaired motion replaces rigid
+   rectangular crown/back translation with a stepped arched halo, breathing
+   compression, independent shoulder and dorsal-plate waves, four angled
+   grounded leg-bend phases, torso lean, and tail counter-motion.
+4. The exact frozen candidate digest is
+   `ea00f445e8f807098b6392cd3cf81fedbf0a29d6eb96434495ab5af9b3308a6f`.
+   Raw / distinct Complete B outlined / Complete B + Form / Crownscale-
+   Mirrorcrest-Marsh Crocodile comparison PNG hashes are
+   `5a8bf0fcf580146403ecb13d3659af2573dcb1ebb06f47d9345beda99dd8582b`,
+   `ff22f815f3eb21a56f74f3a2b3332ac504e4fe325cb3464ad5e58b5055309661`,
+   `fd736afe44d060fceb21c8a6daf73b6e5e727199e1dca3cc820f0c9c9ec94499`,
+   and `9c0f872245b75b04bdcaf44a028060a005b4387e95cabfb5b00a2ed8ae761201`.
+   Raw and Complete B + Form GIF hashes are
+   `6f430faef989711f6e86b903648b40d16b530e9f74217b5b538fb53400220417`
+   and `e69f68e2c5e7abbae6ee611e1b27c9eee49296de2e3f16865c16df91586d26bd`.
+5. Focused, fast, and full validation pass in about 1.0s, 72.5s, and 112.0s.
+   Focused proof passes 80/80 connected, bounded, grounded, four-claw, and
+   elite-fortress-span frames; 40/40 broad side views; 8/8 connected crown-gate
+   rises; 8/8 body-owned crushing presses; eight exact complete-silhouette
+   flashes; 72/72 colored ironhalo, fortress-plate, and scale-mark views; 54/54
+   eye-bearing face views; exact aliases and mirrors; and 80/80 pixel-plus-alpha
+   differences against approved Crownscale, approved Mirrorcrest, and public
+   Marsh Crocodile. Articulation proof records Idle minimum alpha changes of 63
+   overall / 42 crown / 18 legs, cyclic Walk minima of 55 / 34 / 17, and an
+   Attack-transition minimum of 39. Black-shape minimum distances / maximum
+   IoUs are 83/0.757, 84/0.755, and 172/0.463. Opaque range is 312-353;
+   Complete B adds 9,050 outline pixels and Form changes 11,363 pixels. Public remains 100/316 and all
+   232 fixtures stay exact.
+6. Exact review files are under
+   `enemy-expansion-review/en-e12-basilisk-ironhalo-tyrant/`. The four PNGs,
+   all eight raw/Form phase sheets, transparent 20x4 atlas, and both GIFs were
+   inspected at original resolution. The atlas is 480x96 with 80 non-empty
+   hard-alpha 24x24 cells and zero boundary contact. The two GIFs are 640x672,
+   four synchronized 180 ms frames, and loop cleanly. Exact hashes match the
+   frozen packet, and Aseprite parses all six principal files.
+7. The next action is to post the four exact PNGs and both GIFs directly in
+   chat, then stop for explicit visual pixel approval. If the designer approves
+   that exact packet, standing permission authorizes only its bounded
+   implementation, approval-record, reconciliation commits, and elite branch
+   push. Until then, do not commit or push. The distinct outlined PNG is review
+   evidence only and does not authorize outline enrollment. Registration,
+   fixtures, approved-package mutation, effects, child assets, Manticore,
+   Sphinx, boss work, release, accepted drift, and a PR remain closed. Never use
+   `--accept-drift`.
+8. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e12-basilisk-ironhalo-tyrant`; run the
+   focused gate with
+   `npm.cmd run check:enemy-expansion-en-e12-basilisk-ironhalo-tyrant`; then use
+   `npm.cmd run check:fast` and `npm.cmd run check` for project-wide proof.
+
+## Published Predecessor - Basilisk Specialist / Elite Gate Consumed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-basilisk-specialist`, based exactly on the clean, pushed,
