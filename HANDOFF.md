@@ -23,17 +23,19 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Approved Private Manticore Common / Initial Publication Handoff
+## Next Chat Start Here - Published Private Manticore Common / Next Enemy Gate Closed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-manticore-common`, currently at exact base
    `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. That base is the clean, pushed,
    remote-verified final reconciliation for the published revised Ironhalo
    Tyrant tuple. Exact Thornmane implementation
-   `a2bb4a00d2e4fda941f781efce6e82df3a66e9b2` and approval record
-   `1551a82ff386f61f91da98a9069618f98fbb3cca` are committed, pushed, and remote
-   verified. Preserve the frozen private packet and do not modify the approved-
-   enemy copy package.
+   `a2bb4a00d2e4fda941f781efce6e82df3a66e9b2`, approval record
+   `1551a82ff386f61f91da98a9069618f98fbb3cca`, and initial published handoff
+   `e12959be67b8894aeba26c305eaf3555f4309bb5` are committed, pushed, and remote
+   verified; this reconciliation completes the bounded common publication tuple.
+   Preserve the frozen private packet and do not modify the approved-enemy copy
+   package.
 2. After Ironhalo publication completed, the designer replied `lets do next`.
    That opened only the documented EN-E12 Manticore topology decision. Codex
    recommended one baked, connected, grounded, mane-faced lion quadruped with
@@ -80,10 +82,9 @@ gate.
    original resolution. The inspection atlas is 480x96 with 80 non-empty hard-
    alpha 24x24 cells and zero boundary contact. All six principal files parse
    in Aseprite and regeneration exactly reproduces every frozen hash.
-7. The exact implementation and approval record are committed, pushed, and
-   remote verified. Only the initial published handoff and final reconciliation
-   remain open to complete the common Manticore publication tuple. The next enemy gate remains
-   closed afterward and requires a fresh explicit continuation.
+7. The bounded common publication tuple is complete. The approval reply contains
+   no continuation request, so no next enemy role or family is open and a fresh
+   explicit continuation is required.
 8. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e12-manticore-thornmane-stalker`; run
    the focused gate with

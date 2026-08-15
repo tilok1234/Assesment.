@@ -71,7 +71,7 @@ export const EN_E12_MANTICORE_COMMON_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E12_MANTICORE_THORNMANE_STALKER_CONTRACT.variant,
     role: EN_E12_MANTICORE_THORNMANE_STALKER_CONTRACT.role,
-    status: 'implemented-full-approved',
+    status: 'implemented-full-approved-published-reconciled',
   },
   deferredRoles: ['specialist', 'elite'],
 });
@@ -90,8 +90,8 @@ export const EN_E12_MANTICORE_THORNMANE_STALKER_GATE = deepFreeze({
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved to the exact Thornmane Stalker packet. This does not authorize public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss work, release, accepted drift, a pull request, or another enemy gate.',
   publishedImplementation: 'a2bb4a00d2e4fda941f781efce6e82df3a66e9b2',
   publishedApprovalRecord: '1551a82ff386f61f91da98a9069618f98fbb3cca',
-  initialPublishedHandoff: '',
-  publicationState: 'published-awaiting-handoff-reconciliation',
+  initialPublishedHandoff: 'e12959be67b8894aeba26c305eaf3555f4309bb5',
+  publicationState: 'published',
   precedingApproval: {
     gateId: EN_E12_BASILISK_IRONHALO_TYRANT_GATE.id,
     candidateFrameDigest: EN_E12_BASILISK_IRONHALO_TYRANT_GATE.candidateFrameDigest,
@@ -160,7 +160,7 @@ export const EN_E12_MANTICORE_THORNMANE_STALKER_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'The exact Thornmane Stalker implementation a2bb4a00d2e4fda941f781efce6e82df3a66e9b2 and approval record 1551a82ff386f61f91da98a9069618f98fbb3cca are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Manticore common publication tuple. The approval reply contains no continuation request, so the next enemy gate remains closed after publication and requires a fresh explicit continuation. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Thornmane Stalker implementation a2bb4a00d2e4fda941f781efce6e82df3a66e9b2, approval record 1551a82ff386f61f91da98a9069618f98fbb3cca, and initial published handoff e12959be67b8894aeba26c305eaf3555f4309bb5 are pushed and remote verified; this reconciliation completes the bounded Manticore common publication tuple. The approval reply contains no continuation request, so no next enemy role or family is open and a fresh explicit continuation is required. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E12_MANTICORE_THORNMANE_STALKER_DATA = deepFreeze({
@@ -612,7 +612,7 @@ export const EN_E12_MANTICORE_THORNMANE_STALKER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'thornmane-stalker',
     scale: 6,
-    notes: 'Approved private Thornmane Stalker common Manticore only, bound to exact implementation a2bb4a00d2e4fda941f781efce6e82df3a66e9b2, approval record 1551a82ff386f61f91da98a9069618f98fbb3cca, candidate digest 734d1a7f43bd39399fdb8f81011ca065f931804ee1207ff82fc72784768342f9, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. The designer replied approved to the exact packet with no continuation request. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss work, release, accepted drift, a pull request, and another enemy gate separate.'
+    notes: 'Published and reconciled private Thornmane Stalker common Manticore only, bound to exact implementation a2bb4a00d2e4fda941f781efce6e82df3a66e9b2, approval record 1551a82ff386f61f91da98a9069618f98fbb3cca, initial published handoff e12959be67b8894aeba26c305eaf3555f4309bb5, candidate digest 734d1a7f43bd39399fdb8f81011ca065f931804ee1207ff82fc72784768342f9, and its six frozen review hashes. The designer replied approved to the exact packet with no continuation request; no next enemy role or family is open. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss work, release, accepted drift, and a pull request separate.'
   },
 });
 

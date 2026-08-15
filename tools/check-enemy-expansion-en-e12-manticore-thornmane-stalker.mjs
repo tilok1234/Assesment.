@@ -152,12 +152,13 @@ check(
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publishedImplementation === 'a2bb4a00d2e4fda941f781efce6e82df3a66e9b2'
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publishedApprovalRecord === '1551a82ff386f61f91da98a9069618f98fbb3cca'
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.initialPublishedHandoff === ''
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.initialPublishedHandoff === 'e12959be67b8894aeba26c305eaf3555f4309bb5'
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publicationState === 'published'
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('a2bb4a00d2e4fda941f781efce6e82df3a66e9b2')
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('1551a82ff386f61f91da98a9069618f98fbb3cca')
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('initial published handoff')
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('next enemy gate remains closed'),
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('e12959be67b8894aeba26c305eaf3555f4309bb5')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('completes the bounded Manticore common publication tuple')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('no next enemy role or family is open'),
   'Thornmane approval record or publication boundary drifted',
 );
 check(
@@ -165,7 +166,7 @@ check(
     && EN_E12_MANTICORE_COMMON_CONTRACT_CARD.precedingFamily.finalVariant === 'ironhalo-tyrant'
     && EN_E12_MANTICORE_COMMON_CONTRACT_CARD.activeVariant.id === 'thornmane-stalker'
     && EN_E12_MANTICORE_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E12_MANTICORE_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E12_MANTICORE_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && JSON.stringify(EN_E12_MANTICORE_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
     && EN_E12_MANTICORE_THORNMANE_STALKER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Manticore common role contract drifted',
@@ -181,7 +182,7 @@ check(
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.exclusions.includes('outline registration')
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.exclusions.includes('fixtures')
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.exclusions.includes('Sphinx')
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('next enemy gate remains closed')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('no next enemy role or family is open')
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('outline registration'),
   'Thornmane anatomy, motion, effect firewall, or stop boundary drifted',
 );
