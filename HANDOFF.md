@@ -23,7 +23,70 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Published Private Basilisk Elite / Next Enemy Gate Closed
+## Next Chat Start Here - Private Manticore Common / Pixel Approval Required
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e12-manticore-common`, currently at exact base
+   `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. That base is the clean, pushed,
+   remote-verified final reconciliation for the published revised Ironhalo
+   Tyrant tuple. Preserve it and do not modify the approved-enemy copy package.
+2. After Ironhalo publication completed, the designer replied `lets do next`.
+   That opened only the documented EN-E12 Manticore topology decision. Codex
+   recommended one baked, connected, grounded, mane-faced lion quadruped with
+   four paws and one body-owned segmented scorpion tail, no wings, and zero
+   child assets. The designer replied `approved`. This approves only
+   `baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped` and opens
+   one private common 80-frame candidate. It does not approve candidate pixels,
+   a commit, or a push.
+3. This lane names only Thornmane Stalker. It uses bespoke low lion geometry:
+   sun-baked tawny fur, an oxblood thorn mane, old-bone mask face, pale sand
+   belly, amber eyes, four separately grounded dark paws, a connected segmented
+   charcoal tail, and a rust-copper hook stinger. It has no wings. Attack braces
+   all four paws, raises the connected tail, drives a body-owned over-back hook
+   thrust, and recovers. Cast aliases Attack exactly; Death aliases Hurt
+   H1,H2,H2,H2. Venom, poison spray, tail trails, dust, projectiles, impacts,
+   glow, detached parts, effects, and child assets remain external.
+4. The exact frozen candidate digest is
+   `734d1a7f43bd39399fdb8f81011ca065f931804ee1207ff82fc72784768342f9`.
+   Raw / distinct Complete B outlined / Complete B + Form / approved Ironhalo-
+   public Tiger-public Emperor Scorpion comparison PNG hashes are
+   `45f5d6431d7ffc34f1af6daebec9c98e5d7a25941aa3c4e9cd50d1c3251bd18a`,
+   `844124203877c721982b8dfbe2547d762b1089cb1c9286c2a633f20d4efafb3e`,
+   `3fbfad8e95779e8b0a8e0e22c36b4772e11d170db60138cd842a1374a35198cf`,
+   and `fb951630360d1b9927103eb3861231a6b4228253882ff8d3a3bee619d5652438`.
+   Raw and Complete B + Form GIF hashes are
+   `f5c09be98b57db33db691fd61069ac3b50b6fcc3972c734d5bbb76a920017277`
+   and `90c83b11a1a8e99eaa93e4e5c60c971fbf6c3525aa96e8f39099974e3a509ed6`.
+5. Focused, fast, and full validation pass in about 1.0s, 60.7s, and 118.2s.
+   Focused proof passes 80/80 connected, bounded, grounded, four-paw, and
+   common-span frames; 40/40 long lion-and-hooktail side views; 8/8 connected
+   tail rises; 8/8 body-owned stinger thrusts; eight exact complete-silhouette
+   flashes; 72/72 colored mane, tail, stinger, and paw views; 54/54 face views;
+   exact aliases and mirrors; and 80/80 pixel-plus-alpha differences from
+   approved Ironhalo Tyrant, public Tiger, and public Emperor Scorpion. Minimum
+   black-shape distances / maximum IoUs are 101/0.699, 118/0.534, and
+   170/0.325. Opaque range is 239-273; Complete B adds 8,812 outline pixels and
+   Form changes 10,509. Public remains 100/316 and all 232 fixtures stay exact.
+6. Exact review files are under
+   `enemy-expansion-review/en-e12-manticore-thornmane-stalker/`. The four PNGs,
+   eight raw/Form phase boards, and two synchronized GIFs were inspected at
+   original resolution. The inspection atlas is 480x96 with 80 non-empty hard-
+   alpha 24x24 cells and zero boundary contact. All six principal files parse
+   in Aseprite and regeneration exactly reproduces every frozen hash.
+7. Candidate source, review tooling, review artifacts, package scripts, and live
+   docs are intentionally uncommitted and unpushed. Show the exact four PNGs and
+   two GIFs together, then stop for explicit visual pixel approval. Do not infer
+   pixel approval from topology approval.
+8. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e12-manticore-thornmane-stalker`; run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e12-manticore-thornmane-stalker`; then
+   use `npm.cmd run check:fast` and `npm.cmd run check`. Commit, push, public or
+   outline registration, fixtures, approved-enemy package mutation, effects,
+   child assets, specialist or elite Manticore, Sphinx, boss work, release,
+   accepted drift, and a PR remain closed. Never use `--accept-drift`.
+
+## Published Predecessor - Private Basilisk Elite / Manticore Topology Gate Consumed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-basilisk-elite`, based exactly on clean, pushed, remote-

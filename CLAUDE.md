@@ -86,6 +86,51 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 
 ## Known state (2026-08-15)
 
+- Current private EN-E12 Manticore common candidate / explicit pixel approval
+  required: work is isolated on `codex/en-e12-manticore-common` at exact base
+  `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`, the clean, pushed, remote-
+  verified final Ironhalo reconciliation. After that bounded Basilisk elite
+  publication completed, the designer replied `lets do next`, opening only the
+  documented Manticore topology decision. The designer then replied `approved`
+  to the recommended
+  `baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped` topology.
+  This approves topology only and authorizes exactly one private common
+  80-frame Manticore candidate; it does not approve candidate pixels. This lane
+  names only Thornmane Stalker: one connected low sun-baked tawny lion body,
+  broad oxblood thorn mane, old-bone mask face, pale sand belly, four separately
+  grounded dark paws, and one connected segmented charcoal scorpion tail with a
+  rust-copper hook stinger. It has no wings. Attack braces, raises the connected
+  tail, performs a body-owned over-back hook thrust, and recovers. Cast aliases
+  Attack exactly; Death aliases Hurt H1,H2,H2,H2. Venom, trails, dust,
+  projectiles, impacts, glow, detached parts, effects, and child assets remain
+  external. The frozen candidate digest is
+  `734d1a7f43bd39399fdb8f81011ca065f931804ee1207ff82fc72784768342f9`.
+  Raw / distinct Complete B outlined / Complete B + Form / Ironhalo-Tiger-
+  Emperor Scorpion comparison PNG hashes are
+  `45f5d6431d7ffc34f1af6daebec9c98e5d7a25941aa3c4e9cd50d1c3251bd18a`,
+  `844124203877c721982b8dfbe2547d762b1089cb1c9286c2a633f20d4efafb3e`,
+  `3fbfad8e95779e8b0a8e0e22c36b4772e11d170db60138cd842a1374a35198cf`,
+  and `fb951630360d1b9927103eb3861231a6b4228253882ff8d3a3bee619d5652438`;
+  raw / Form GIF hashes are
+  `f5c09be98b57db33db691fd61069ac3b50b6fcc3972c734d5bbb76a920017277`
+  and `90c83b11a1a8e99eaa93e4e5c60c971fbf6c3525aa96e8f39099974e3a509ed6`.
+  Focused/fast/full validation passes in about 1.0s/60.7s/118.2s. Focused proof
+  covers 80/80 connected, bounded, grounded, four-paw, and common-span frames;
+  40/40 long lion-and-hooktail side views; 8/8 connected tail rises; 8/8 body-
+  owned stinger thrusts; eight exact flashes; exact aliases and mirrors; and
+  80/80 pixel-plus-alpha differences from approved Ironhalo Tyrant, public
+  Tiger, and public Emperor Scorpion. Minimum black-shape distances / maximum
+  IoUs are 101/0.699, 118/0.534, and 170/0.325. Opaque range is 239-273;
+  Complete B adds 8,812 pixels and Form changes 10,509. The four PNGs, eight
+  raw/Form phase boards, and two synchronized GIFs were inspected at original
+  resolution. The 480x96 hard-alpha atlas has 80 non-empty 24x24 cells and zero
+  boundary contact; all six principal files parse in Aseprite; exact hashes
+  reproduce. Public remains 100/316 and all 232 fixtures stay exact. Candidate
+  source, review tooling, review artifacts, package scripts, and live-doc edits
+  are intentionally uncommitted and unpushed. Stop for explicit visual pixel
+  approval. Commit, push, public or outline registration, fixtures, approved-
+  enemy package mutation, effects, child assets, specialist or elite Manticore,
+  Sphinx, boss work, release, accepted drift, and a PR remain closed.
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
   the frozen asset pack). The stable and consumer expansion registries now
   contain 43 families / 114 variants across approved EN-E01 through EN-E11, so
@@ -118,7 +163,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private EN-E12 Basilisk elite published / next enemy gate
+- Published preceding approved private EN-E12 Basilisk elite / Manticore
+  topology gate consumed
   closed:
   on `codex/en-e12-basilisk-elite`, based exactly on clean, pushed, remote-
   verified Mirrorcrest final reconciliation

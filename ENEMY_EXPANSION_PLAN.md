@@ -1,7 +1,51 @@
 # Enemy Expansion Plan
 
-- Current approved private EN-E12 elite Basilisk published / next enemy gate
-  closed
+- Current private EN-E12 common Manticore candidate / explicit pixel approval
+  required
+  (2026-08-15): branch `codex/en-e12-manticore-common` is based exactly on
+  clean, pushed, remote-verified Ironhalo final reconciliation
+  `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. The designer's `lets do next`
+  opened only the Manticore topology decision. The following `approved`
+  selected only
+  `baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped` and
+  authorizes one private common 80-frame candidate; it does not approve
+  candidate pixels. This lane names only Thornmane Stalker: one connected low
+  tawny lion body with an oxblood thorn mane, old-bone mask face, pale sand
+  belly, four separately grounded dark paws, and one connected charcoal
+  segmented scorpion tail ending in a copper hook stinger. It has no wings.
+  Attack braces all four paws, raises the connected tail, performs a body-owned
+  over-back hook thrust, and recovers. Cast aliases Attack exactly; Death
+  aliases Hurt H1,H2,H2,H2. Venom, trails, dust, projectiles, impacts, glow,
+  detached parts, effects, and child assets remain external. The exact frozen
+  digest is
+  `734d1a7f43bd39399fdb8f81011ca065f931804ee1207ff82fc72784768342f9`.
+  Raw / distinct Complete B outlined / Complete B + Form / approved Ironhalo-
+  public Tiger-public Emperor Scorpion comparison PNG hashes are
+  `45f5d6431d7ffc34f1af6daebec9c98e5d7a25941aa3c4e9cd50d1c3251bd18a`,
+  `844124203877c721982b8dfbe2547d762b1089cb1c9286c2a633f20d4efafb3e`,
+  `3fbfad8e95779e8b0a8e0e22c36b4772e11d170db60138cd842a1374a35198cf`,
+  and `fb951630360d1b9927103eb3861231a6b4228253882ff8d3a3bee619d5652438`;
+  raw / Form GIF hashes are
+  `f5c09be98b57db33db691fd61069ac3b50b6fcc3972c734d5bbb76a920017277`
+  and `90c83b11a1a8e99eaa93e4e5c60c971fbf6c3525aa96e8f39099974e3a509ed6`.
+  Focused/fast/full validation passes in about 1.0s/60.7s/118.2s. All 80 frames
+  are connected, bounded, grounded, four-paw, common-span, and distinct in
+  pixels and alpha from all three comparators. All 40 side views retain the
+  lion-and-hooktail silhouette; all eight connected tail rises and eight body-
+  owned stinger thrusts pass. Minimum black-shape distances / maximum IoUs are
+  101/0.699, 118/0.534, and 170/0.325. Opaque range is 239-273; Complete B adds
+  8,812 pixels and Form changes 10,509. The four PNGs, eight raw/Form phase
+  boards, and two GIFs were inspected at original resolution. The 480x96 hard-
+  alpha atlas has 80 non-empty cells and zero boundary contact; all six
+  principal files parse in Aseprite; frozen hashes reproduce. Public remains
+  100/316 and all 232 fixtures stay exact. Candidate work is intentionally
+  uncommitted and unpushed. Stop for explicit visual pixel approval. Commit,
+  push, public or outline registration, fixtures, approved-enemy package
+  mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss
+  work, release, accepted drift, and a PR remain closed.
+
+- Published preceding approved private EN-E12 elite Basilisk / Manticore
+  topology gate consumed
   (2026-08-15): on `codex/en-e12-basilisk-elite`, based exactly on clean,
   pushed, remote-verified Mirrorcrest final reconciliation
   `1b1b11ba6464bdf2bb1220b094e6908578f7a7aa`, the designer's `approved letsd
@@ -7509,7 +7553,7 @@ remain closed. The outlined PNG is review evidence only.
 
 ### EN-E12 - Mythic composite creatures
 
-- Status: `elite-approved-published-next-enemy-gate-closed`
+- Status: `basilisk-complete-manticore-common-candidate-awaiting-pixel-approval`
 - Families: Basilisk, Manticore, Sphinx
 - Priority-first: Basilisk
 
@@ -7518,23 +7562,18 @@ slice is the final standard-size proof before the isolated 48x48 Boss pilots.
 If a family cannot remain readable at 24x24, stop and request a scale ruling
 rather than quietly moving it into the Boss lane.
 
-The exact Basilisk topology decision is approved as
-`baked-single-actor-grounded-four-clawed-crowned-serpent`. Crownscale Crawler
-common and Mirrorcrest Mesmer specialist are approved, published, and remote
-verified through Mirrorcrest final reconciliation
-`1b1b11ba6464bdf2bb1220b094e6908578f7a7aa`. The designer's `approved letsd do
-next` opened exactly one private elite Basilisk candidate under the same
-topology. The designer replied `aproved` to the revised hash-frozen Ironhalo
-Tyrant packet described at the top of this plan. Approval binds only to pushed,
-remote-verified implementation `7a00ef8691da6df2821cf3ad02437198d0d9f2e6`,
-the digest, and six frozen review hashes. That implementation and approval
-record `16f797813361c61f0bcda2933ecb86d03b0d66cc`, and initial published handoff
-`f0d4b503162703b88213372e1e2831162d1a9ccf` are pushed and remote verified;
-this reconciliation completes the bounded elite publication tuple. The reply
-contains no continuation request, so no next enemy role or family is open. Do
-not register, add outlines, fixtures, effects, or child assets, mutate the
-approved-enemy copy package, start Manticore, Sphinx, or a Boss pilot, release,
-accept drift, or open a PR.
+The Basilisk common, specialist, and elite roles are approved, published, and
+remote verified through Ironhalo final reconciliation
+`b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. After that bounded tuple
+completed, the designer's `lets do next` opened only the Manticore topology
+decision. The following `approved` selected
+`baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped` and opened
+one private common 80-frame candidate without approving its pixels. Thornmane
+Stalker is now hash-frozen and fully validated as described at the top of this
+plan. It remains intentionally uncommitted and unpushed pending explicit visual
+pixel approval. Do not register, add outlines, fixtures, effects, or child
+assets, mutate the approved-enemy copy package, begin specialist or elite
+Manticore, start Sphinx or a Boss pilot, release, accept drift, or open a PR.
 
 ### EN-B01 - Hydra direction pilot
 

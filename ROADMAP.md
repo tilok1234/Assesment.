@@ -2,7 +2,45 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E12 approved private elite Basilisk published / next enemy gate closed
+Current private EN-E12 common Manticore candidate / explicit pixel approval
+required (2026-08-15): branch `codex/en-e12-manticore-common` is based exactly
+on clean, pushed, remote-verified Ironhalo final reconciliation
+`b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. The designer's `lets do next`
+opened only the Manticore topology decision, and the following `approved`
+selected only
+`baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped`. It
+authorizes one private common 80-frame candidate and does not approve its
+pixels. This lane names only Thornmane Stalker: one connected low tawny lion
+body with an oxblood thorn mane, old-bone mask face, pale belly, four separately
+grounded dark paws, and a connected charcoal segmented tail ending in a copper
+hook stinger. Attack braces, raises the tail, drives a body-owned over-back hook
+thrust, and recovers. Cast aliases Attack; Death aliases Hurt H1,H2,H2,H2.
+Wings, venom, trails, projectiles, impacts, glow, detached parts, effects, and
+child assets are absent. The candidate digest is
+`734d1a7f43bd39399fdb8f81011ca065f931804ee1207ff82fc72784768342f9`.
+Raw / outlined / Form / Ironhalo-Tiger-Emperor Scorpion comparison PNG hashes
+are `45f5d6431d7ffc34f1af6daebec9c98e5d7a25941aa3c4e9cd50d1c3251bd18a`,
+`844124203877c721982b8dfbe2547d762b1089cb1c9286c2a633f20d4efafb3e`,
+`3fbfad8e95779e8b0a8e0e22c36b4772e11d170db60138cd842a1374a35198cf`,
+and `fb951630360d1b9927103eb3861231a6b4228253882ff8d3a3bee619d5652438`;
+raw / Form GIF hashes are
+`f5c09be98b57db33db691fd61069ac3b50b6fcc3972c734d5bbb76a920017277`
+and `90c83b11a1a8e99eaa93e4e5c60c971fbf6c3525aa96e8f39099974e3a509ed6`.
+Focused/fast/full gates pass in about 1.0s/60.7s/118.2s: 80/80 frames are
+connected, bounded, grounded, four-paw, common-span, and distinct from all
+three comparators in pixels and alpha; 40/40 side views keep the lion-and-
+hooktail silhouette; all eight tail rises and eight stinger thrusts pass.
+Minimum black-shape distances / maximum IoUs are 101/0.699, 118/0.534, and
+170/0.325. Opaque range is 239-273; Complete B adds 8,812 pixels and Form
+changes 10,509. The four PNGs, eight phase boards, and two GIFs were inspected
+at original resolution; the 480x96 atlas has 80 non-empty hard-alpha cells and
+zero boundary contact; all six principal files parse in Aseprite; frozen hashes
+reproduce. Public remains 100/316 and all 232 fixtures stay exact. All candidate
+work is intentionally uncommitted and unpushed. Stop for explicit visual pixel
+approval; registration, fixtures, approved-package mutation, effects, later
+Manticore roles, Sphinx, bosses, release, accepted drift, and PR remain closed.
+
+Published preceding EN-E12 approved private elite Basilisk / Manticore topology gate consumed
 (2026-08-15): on `codex/en-e12-basilisk-elite`, based exactly on clean, pushed,
 remote-verified Mirrorcrest final reconciliation
 `1b1b11ba6464bdf2bb1220b094e6908578f7a7aa`, the designer's `approved letsd
