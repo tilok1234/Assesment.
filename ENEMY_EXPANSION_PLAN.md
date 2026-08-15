@@ -1,7 +1,7 @@
 # Enemy Expansion Plan
 
-- Current approved private EN-E12 specialist Basilisk / initial handoff in
-  progress
+- Current approved private EN-E12 specialist Basilisk published / elite gate
+  open
   (2026-08-15): on `codex/en-e12-basilisk-specialist`, based exactly on clean,
   pushed, remote-verified Crownscale final reconciliation
   `e894fc126c33fd94c49c077f8dc0432dfabe753a`, the designer's `Approved lets do
@@ -41,12 +41,13 @@
   untouched. The designer replied `approved letsd do next` to the exact posted
   packet. Pixel approval binds only to implementation
   `9c020537525094430307813e77fd23d7e6308fcc`, the digest, and six frozen review
-  hashes. That implementation and approval record
-  `7ecc9df1f7f05c38af6cd395bfd26811a0d79099` are pushed and remote verified;
-  publication is `published-awaiting-handoff-reconciliation`, so only the
-  initial published handoff and final reconciliation remain open. The continuation
-  opens exactly one private elite Basilisk candidate only after the specialist
-  publication tuple completes and does not approve elite pixels. Registration,
+  hashes. That implementation, approval record
+  `7ecc9df1f7f05c38af6cd395bfd26811a0d79099`, and initial published handoff
+  `a983959ccf0fb6c965fcb04e534c170f8b1f854b` are pushed and remote verified;
+  this reconciliation completes the specialist publication tuple. The
+  continuation now opens exactly one private elite Basilisk full 80-frame
+  candidate under the selected topology and does not approve elite pixels or
+  authorize their commit or push. Registration,
   outline enrollment, fixtures, approved-package mutation, effects, child
   assets, Manticore, Sphinx, boss work, release, accepted drift, and PR remain
   closed.

@@ -155,12 +155,13 @@ check(
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publishedImplementation === '9c020537525094430307813e77fd23d7e6308fcc'
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publishedApprovalRecord === '7ecc9df1f7f05c38af6cd395bfd26811a0d79099'
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.initialPublishedHandoff === ''
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.initialPublishedHandoff === 'a983959ccf0fb6c965fcb04e534c170f8b1f854b'
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publicationState === 'published'
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('9c020537525094430307813e77fd23d7e6308fcc')
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('7ecc9df1f7f05c38af6cd395bfd26811a0d79099')
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('initial published handoff')
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('private elite Basilisk candidate')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('a983959ccf0fb6c965fcb04e534c170f8b1f854b')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('completes the bounded Basilisk specialist publication tuple')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('private elite Basilisk full 80-frame candidate')
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('does not approve elite pixels'),
   'Mirrorcrest approval record or publication boundary drifted',
 );
@@ -178,7 +179,7 @@ check(
     && EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.precedingVariant.role === 'common'
     && EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'mirrorcrest-mesmer'
     && EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && JSON.stringify(EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
     && EN_E12_BASILISK_MIRRORCREST_MESMER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Basilisk specialist role contract drifted',
@@ -194,7 +195,7 @@ check(
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.exclusions.includes('outline registration')
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.exclusions.includes('fixtures')
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.exclusions.includes('Manticore or Sphinx')
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('private elite Basilisk candidate')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('private elite Basilisk full 80-frame candidate')
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('outline registration'),
   'Mirrorcrest anatomy, motion, effect firewall, or stop boundary drifted',
 );
