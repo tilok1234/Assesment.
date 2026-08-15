@@ -23,7 +23,71 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Published Basilisk Common / Specialist Gate Open
+## Next Chat Start Here - Private Basilisk Specialist / Pixel Approval Required
+
+1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
+   `codex/en-e12-basilisk-specialist`, based exactly on the clean, pushed,
+   remote-verified Crownscale final reconciliation
+   `e894fc126c33fd94c49c077f8dc0432dfabe753a`. The candidate is private,
+   uncommitted, and unpushed. Do not modify the approved copy package.
+2. The designer replied `Approved lets do next` to the exact Crownscale packet.
+   That publishes only Crownscale and opens exactly one private specialist
+   Basilisk full 80-frame candidate under the selected
+   `baked-single-actor-grounded-four-clawed-crowned-serpent` topology. Because
+   the role was not pre-named, this lane names only Mirrorcrest Mesmer. The
+   reply does not approve its pixels or authorize commit, push, registration,
+   outline enrollment, fixtures, package mutation, effects, child assets, elite
+   Basilisk, Manticore, Sphinx, boss work, release, accepted drift, or a PR.
+3. Mirrorcrest Mesmer uses bespoke lean, low, long geometry rather than
+   rendering or palette-mapping Crownscale: deep teal and blue-black hide,
+   violet belly scales, an arched S-neck, connected opaline moon-silver plates
+   and split crescent mirror crest, cyan eyes, dark plum jaw, ivory fangs, four
+   separately grounded rose-copper claws, and one connected hooked loop-tail.
+   Attack braces all four claws, raises the split crest into a connected body-
+   owned aperture, holds a gaze-lock posture, folds, and recovers. Cast aliases
+   Attack exactly; Death aliases Hurt H1,H2,H2,H2. There are no detached gaze,
+   venom, glow, dust, projectile, impact, Cast, Death, effect, or child pixels.
+4. The exact frozen candidate digest is
+   `3ff5c75cd5272e66cfad42b84c5dbb1e86c20b67f506845923734cda24569a80`.
+   Raw / distinct Complete B outlined / Complete B + Form / Crownscale-
+   Gloamgaze-Marsh Crocodile comparison PNG hashes are
+   `fa14a2e95377039433c3342867e1e498cd63a83abc3cd9a4439392079fc74328`,
+   `bc415ca68f9ef7122baaf96a68ede53f7b9c677e446dcafc54a68698941ca23f`,
+   `0760aa1abd5e2b8f548500aae0acfe21dba701f45324366feb830e68bca4068b`,
+   and `8f7c417002fa89638abaf10815205eeb38d3727cce500c38c6881ca3637eef73`.
+   Raw and Complete B + Form GIF hashes are
+   `f96cd642fcb1e0cc04d79f137142ed34316c308f40f4a64c426b58541a1bd589`
+   and `ca7dc5d41d9e16c9ec8771cd335239e518b028289fec3c6826d9f5c515631c77`.
+5. Focused, fast, and full validation pass in about 1.0s, 60.6s, and 96.3s.
+   Focused proof passes 80/80 connected, bounded, grounded, four-claw, and
+   specialist-span frames; 40/40 lean long-body side views; 8/8 split-aperture
+   rises; 8/8 body-owned gaze locks; eight exact complete-silhouette flashes;
+   exact aliases and mirrors; and 80/80 pixel-plus-alpha differences against
+   approved Crownscale, approved Gloamgaze, and public Marsh Crocodile. Minimum
+   alpha distances / maximum IoUs are 69/0.765, 97/0.657, and 109/0.553. Opaque
+   range is 226-289; Complete B adds 10,114 outline pixels and Form changes
+   10,991 pixels. Public remains 100/316 and all 232 fixtures stay exact.
+6. Exact review files are under
+   `enemy-expansion-review/en-e12-basilisk-mirrorcrest-mesmer/`. The four PNGs,
+   all eight raw/Form phase sheets, transparent 20x4 atlas, and both GIFs were
+   inspected at original resolution. The atlas is 480x96 with 80 non-empty
+   hard-alpha 24x24 cells and zero boundary contact. Regeneration reproduces
+   all six frozen hashes, and Aseprite parses all six principal files.
+7. Stop for explicit visual pixel approval of this exact hash-frozen packet.
+   Technical and internal visual QA do not substitute for the designer's pixel
+   approval. Do not commit or push before that approval. The distinct outlined
+   PNG is review evidence only and does not authorize outline enrollment.
+   Registration, fixtures, approved-package mutation, effects, child assets,
+   elite Basilisk, Manticore, Sphinx, boss work, release, accepted drift, and a
+   PR remain closed. Never use `--accept-drift`.
+8. Regenerate with
+   `npm.cmd run review:enemy-expansion-en-e12-basilisk-mirrorcrest-mesmer`; run
+   the focused gate with
+   `npm.cmd run check:enemy-expansion-en-e12-basilisk-mirrorcrest-mesmer`; then
+   use `npm.cmd run check:fast` and `npm.cmd run check` for project-wide proof.
+   Post the four exact PNGs and both GIFs directly in chat with absolute paths.
+
+## Published Predecessor - Basilisk Common / Specialist Gate Consumed
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-basilisk-common`. Exact Crownscale Crawler implementation

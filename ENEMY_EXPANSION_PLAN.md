@@ -1,6 +1,49 @@
 # Enemy Expansion Plan
 
-- Current approved private EN-E12 common Basilisk published / specialist gate
+- Current private EN-E12 specialist Basilisk candidate / pixel approval
+  required
+  (2026-08-15): on `codex/en-e12-basilisk-specialist`, based exactly on clean,
+  pushed, remote-verified Crownscale final reconciliation
+  `e894fc126c33fd94c49c077f8dc0432dfabe753a`, the designer's `Approved lets do
+  next` publishes only Crownscale Crawler and opens exactly one private
+  specialist Basilisk full 80-frame candidate under the selected
+  `baked-single-actor-grounded-four-clawed-crowned-serpent` topology. Because
+  the specialist was not pre-named, this lane names only Mirrorcrest Mesmer: a
+  connected lean, low, long Basilisk with deep teal and blue-black hide, violet
+  belly scales, an arched S-neck, connected opaline moon-silver plates and split
+  crescent mirror crest, cyan eyes, dark plum jaw, ivory fangs, four separately
+  grounded rose-copper claws, and one connected hooked loop-tail. Attack braces
+  all four claws, raises the split crest into a connected body-owned aperture,
+  holds a gaze-lock posture, folds, and recovers. Cast aliases Attack exactly;
+  Death aliases Hurt H1,H2,H2,H2. Detached gaze, venom, glow, dust, projectiles,
+  impacts, and child assets remain absent. The exact frozen candidate digest is
+  `3ff5c75cd5272e66cfad42b84c5dbb1e86c20b67f506845923734cda24569a80`.
+  Raw / outlined / Form / Crownscale-Gloamgaze-Marsh Crocodile comparison PNG
+  hashes are
+  `fa14a2e95377039433c3342867e1e498cd63a83abc3cd9a4439392079fc74328`,
+  `bc415ca68f9ef7122baaf96a68ede53f7b9c677e446dcafc54a68698941ca23f`,
+  `0760aa1abd5e2b8f548500aae0acfe21dba701f45324366feb830e68bca4068b`,
+  and `8f7c417002fa89638abaf10815205eeb38d3727cce500c38c6881ca3637eef73`;
+  raw / Form GIF hashes are
+  `f96cd642fcb1e0cc04d79f137142ed34316c308f40f4a64c426b58541a1bd589`
+  and `ca7dc5d41d9e16c9ec8771cd335239e518b028289fec3c6826d9f5c515631c77`.
+  Focused/fast/full validation passes in about 1.0s/60.6s/96.3s. All 80 frames
+  are connected, bounded, grounded, four-clawed, specialist-span, and distinct
+  in pixels and alpha from approved Crownscale, approved Gloamgaze, and public
+  Marsh Crocodile. All 40 side views preserve the lean long-body read; all
+  eight split-aperture rises and eight body-owned gaze locks pass. Minimum alpha
+  distances / maximum IoUs are 69/0.765, 97/0.657, and 109/0.553. Opaque range
+  is 226-289; Complete B adds 10,114 pixels and Form changes 10,991. Original-
+  resolution inspection covers all four PNGs and eight raw/Form phase boards;
+  the 480x96 20x4 atlas has 80 non-empty hard-alpha cells and zero boundary
+  contact, all six principal files parse in Aseprite, and regeneration exactly
+  reproduces the frozen hashes. Public remains 100/316 and all 232 fixtures are
+  untouched. The candidate is private, uncommitted, and unpushed. Stop for
+  explicit visual pixel approval. Registration, outline enrollment, fixtures,
+  approved-package mutation, effects, child assets, elite Basilisk, Manticore,
+  Sphinx, boss work, release, accepted drift, and PR remain closed.
+
+- Published preceding approved private EN-E12 common Basilisk / specialist gate
   open
   (2026-08-15): on `codex/en-e12-basilisk-common`, based exactly on clean,
   pushed, remote-verified Dawnthrone/package checkpoint
