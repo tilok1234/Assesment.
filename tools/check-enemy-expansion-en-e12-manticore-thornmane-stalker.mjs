@@ -150,12 +150,13 @@ check(
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.approvedImplementation === 'a2bb4a00d2e4fda941f781efce6e82df3a66e9b2'
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publicationAuthorizedOn === '2026-08-15'
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publishedImplementation === ''
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publishedApprovalRecord === ''
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publishedImplementation === 'a2bb4a00d2e4fda941f781efce6e82df3a66e9b2'
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publishedApprovalRecord === '1551a82ff386f61f91da98a9069618f98fbb3cca'
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.initialPublishedHandoff === ''
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publicationState === 'approved-not-published'
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('a2bb4a00d2e4fda941f781efce6e82df3a66e9b2')
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('approval record')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('1551a82ff386f61f91da98a9069618f98fbb3cca')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('initial published handoff')
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('next enemy gate remains closed'),
   'Thornmane approval record or publication boundary drifted',
 );

@@ -86,7 +86,7 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 
 ## Known state (2026-08-15)
 
-- Current approved private EN-E12 Manticore common / publication in progress:
+- Current approved private EN-E12 Manticore common / initial publication handoff:
   work is isolated on `codex/en-e12-manticore-common` at exact base
   `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`, the clean, pushed, remote-
   verified final Ironhalo reconciliation. After that bounded Basilisk elite
@@ -130,9 +130,10 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   resolution. The 480x96 hard-alpha atlas has 80 non-empty 24x24 cells and zero
   boundary contact; all six principal files parse in Aseprite; exact hashes
   reproduce. Public remains 100/316 and all 232 fixtures stay exact. The exact
-  implementation is committed, pushed, and remote verified. Standing permission
-  now authorizes only the bounded approval-record commit and push followed by
-  the initial published handoff and final reconciliation. Public or outline
+  implementation and approval record
+  `1551a82ff386f61f91da98a9069618f98fbb3cca` are committed, pushed, and remote
+  verified. Only the initial published handoff and final reconciliation remain
+  open. Public or outline
   registration, fixtures, approved-enemy package mutation, effects, child
   assets, specialist or elite Manticore, Sphinx, boss work, release, accepted
   drift, a PR, and another enemy gate remain closed.

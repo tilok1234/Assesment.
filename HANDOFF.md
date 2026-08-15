@@ -23,14 +23,15 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Approved Private Manticore Common / Publication In Progress
+## Next Chat Start Here - Approved Private Manticore Common / Initial Publication Handoff
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-manticore-common`, currently at exact base
    `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. That base is the clean, pushed,
    remote-verified final reconciliation for the published revised Ironhalo
    Tyrant tuple. Exact Thornmane implementation
-   `a2bb4a00d2e4fda941f781efce6e82df3a66e9b2` is committed, pushed, and remote
+   `a2bb4a00d2e4fda941f781efce6e82df3a66e9b2` and approval record
+   `1551a82ff386f61f91da98a9069618f98fbb3cca` are committed, pushed, and remote
    verified. Preserve the frozen private packet and do not modify the approved-
    enemy copy package.
 2. After Ironhalo publication completed, the designer replied `lets do next`.
@@ -79,10 +80,9 @@ gate.
    original resolution. The inspection atlas is 480x96 with 80 non-empty hard-
    alpha 24x24 cells and zero boundary contact. All six principal files parse
    in Aseprite and regeneration exactly reproduces every frozen hash.
-7. The exact implementation is committed, pushed, and remote verified. Standing
-   permission now authorizes only the bounded approval-record commit and push,
-   followed by the initial published handoff and final reconciliation needed to
-   complete the common Manticore publication tuple. The next enemy gate remains
+7. The exact implementation and approval record are committed, pushed, and
+   remote verified. Only the initial published handoff and final reconciliation
+   remain open to complete the common Manticore publication tuple. The next enemy gate remains
    closed afterward and requires a fresh explicit continuation.
 8. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e12-manticore-thornmane-stalker`; run

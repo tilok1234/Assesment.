@@ -1,6 +1,6 @@
 # Enemy Expansion Plan
 
-- Current approved private EN-E12 common Manticore / publication in progress
+- Current approved private EN-E12 common Manticore / initial publication handoff
   (2026-08-15): branch `codex/en-e12-manticore-common` is based exactly on
   clean, pushed, remote-verified Ironhalo final reconciliation
   `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. The designer's `lets do next`
@@ -42,8 +42,9 @@
   alpha atlas has 80 non-empty cells and zero boundary contact; all six
   principal files parse in Aseprite; frozen hashes reproduce. Public remains
   100/316 and all 232 fixtures stay exact. The exact implementation is
-  committed, pushed, and remote verified. Only its bounded approval record,
-  initial published handoff, and final reconciliation remain open. Public or
+  committed, pushed, and remote verified. Approval record
+  `1551a82ff386f61f91da98a9069618f98fbb3cca` is also pushed and remote verified.
+  Only the initial published handoff and final reconciliation remain open. Public or
   outline registration, fixtures, approved-enemy package mutation, effects,
   child assets, specialist or elite Manticore, Sphinx, boss work, release,
   accepted drift, a PR, and another enemy gate remain closed.
@@ -7557,7 +7558,7 @@ remain closed. The outlined PNG is review evidence only.
 
 ### EN-E12 - Mythic composite creatures
 
-- Status: `basilisk-complete-manticore-common-approved-publication-in-progress`
+- Status: `basilisk-complete-manticore-common-published-awaiting-handoff-reconciliation`
 - Families: Basilisk, Manticore, Sphinx
 - Priority-first: Basilisk
 
@@ -7575,9 +7576,10 @@ decision. The following `approved` selected
 one private common 80-frame candidate without approving its pixels. After exact
 review, the designer replied `approved`. Thornmane Stalker is hash-frozen,
 fully validated, and committed, pushed, and remote verified as implementation
-`a2bb4a00d2e4fda941f781efce6e82df3a66e9b2`. The approval reply contains no
-continuation request. Complete only its bounded approval record and publication
-reconciliation. Do not register, add outlines, fixtures, effects, or child
+`a2bb4a00d2e4fda941f781efce6e82df3a66e9b2`. Approval record
+`1551a82ff386f61f91da98a9069618f98fbb3cca` is also pushed and remote verified.
+The approval reply contains no continuation request. Complete only its initial
+published handoff and final reconciliation. Do not register, add outlines, fixtures, effects, or child
 assets, mutate the approved-enemy copy package, begin specialist or elite
 Manticore, start Sphinx or a Boss pilot, release, accept drift, or open a PR.
 

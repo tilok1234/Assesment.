@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current approved private EN-E12 common Manticore / publication in progress
+Current approved private EN-E12 common Manticore / initial publication handoff
 (2026-08-15): branch `codex/en-e12-manticore-common` is based exactly
 on clean, pushed, remote-verified Ironhalo final reconciliation
 `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. The designer's `lets do next`
@@ -40,8 +40,9 @@ changes 10,509. The four PNGs, eight phase boards, and two GIFs were inspected
 at original resolution; the 480x96 atlas has 80 non-empty hard-alpha cells and
 zero boundary contact; all six principal files parse in Aseprite; frozen hashes
 reproduce. Public remains 100/316 and all 232 fixtures stay exact. The exact
-implementation is committed, pushed, and remote verified. Only its bounded
-approval record, initial published handoff, and final reconciliation remain
+implementation and approval record
+`1551a82ff386f61f91da98a9069618f98fbb3cca` are committed, pushed, and remote
+verified. Only the initial published handoff and final reconciliation remain
 open. Public or outline registration, fixtures, approved-package mutation,
 effects, later Manticore roles, Sphinx, bosses, release, accepted drift, PR, and
 another enemy gate remain closed.
