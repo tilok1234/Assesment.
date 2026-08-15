@@ -118,7 +118,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current approved private EN-E12 Basilisk elite / initial publication handoff:
+- Current approved private EN-E12 Basilisk elite published / next enemy gate
+  closed:
   on `codex/en-e12-basilisk-elite`, based exactly on clean, pushed, remote-
   verified Mirrorcrest final reconciliation
   `1b1b11ba6464bdf2bb1220b094e6908578f7a7aa`, the designer's `approved letsd
@@ -169,11 +170,12 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   this exact revised packet. Pixel approval binds only to implementation
   `7a00ef8691da6df2821cf3ad02437198d0d9f2e6`, the digest, and the six frozen
   review hashes. That implementation and approval record
-  `16f797813361c61f0bcda2933ecb86d03b0d66cc` are pushed and remote verified.
-  Only the initial published handoff and final reconciliation remain open to
-  complete the bounded elite publication tuple. The reply contains no
-  continuation request, so the next enemy gate remains closed after the
-  publication tuple completes. Public or outline registration, fixtures,
+  `16f797813361c61f0bcda2933ecb86d03b0d66cc`, and initial published handoff
+  `f0d4b503162703b88213372e1e2831162d1a9ccf` are pushed and remote verified;
+  this reconciliation completes the bounded elite publication tuple. The reply
+  contains no continuation request, so no next enemy role or family is open and
+  a fresh explicit continuation is required. Public or outline registration,
+  fixtures,
   approved-enemy package mutation, effects, child assets, Manticore, Sphinx,
   boss work, release, accepted drift, and a PR remain closed.
 - Published preceding approved private EN-E12 Basilisk specialist / elite gate

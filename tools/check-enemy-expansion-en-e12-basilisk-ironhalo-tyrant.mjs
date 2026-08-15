@@ -160,12 +160,13 @@ check(
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publishedImplementation === '7a00ef8691da6df2821cf3ad02437198d0d9f2e6'
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publishedApprovalRecord === '16f797813361c61f0bcda2933ecb86d03b0d66cc'
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.initialPublishedHandoff === ''
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.initialPublishedHandoff === 'f0d4b503162703b88213372e1e2831162d1a9ccf'
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publicationState === 'published'
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('7a00ef8691da6df2821cf3ad02437198d0d9f2e6')
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('16f797813361c61f0bcda2933ecb86d03b0d66cc')
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('initial published handoff')
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('next enemy gate remains closed'),
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('f0d4b503162703b88213372e1e2831162d1a9ccf')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('completes the bounded Basilisk elite publication tuple')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('no next enemy role or family is open'),
   'Ironhalo approval record or publication boundary drifted',
 );
 check(
@@ -180,7 +181,7 @@ check(
     && EN_E12_BASILISK_ELITE_CONTRACT_CARD.precedingGate === EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.id
     && EN_E12_BASILISK_ELITE_CONTRACT_CARD.activeVariant.id === 'ironhalo-tyrant'
     && EN_E12_BASILISK_ELITE_CONTRACT_CARD.activeVariant.role === 'elite'
-    && EN_E12_BASILISK_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
+    && EN_E12_BASILISK_ELITE_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved-published-reconciled'
     && EN_E12_BASILISK_ELITE_CONTRACT_CARD.deferredRoles.length === 0
     && EN_E12_BASILISK_IRONHALO_TYRANT_CONTRACT.state === 'implemented-complete-motion-approved',
   'Basilisk elite role contract drifted',
@@ -198,7 +199,7 @@ check(
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.exclusions.includes('outline registration')
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.exclusions.includes('fixtures')
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.exclusions.includes('Manticore or Sphinx')
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('next enemy gate remains closed')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('no next enemy role or family is open')
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('outline registration'),
   'Ironhalo anatomy, motion, effect firewall, or stop boundary drifted',
 );
