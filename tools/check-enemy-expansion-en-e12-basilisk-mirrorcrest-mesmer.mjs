@@ -134,7 +134,7 @@ check(
   'approved Basilisk topology decision drifted',
 );
 check(
-  EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.status === 'candidate'
+  EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.status === 'approved'
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.baseCheckpoint === 'e894fc126c33fd94c49c077f8dc0432dfabe753a'
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.architectureDecision === EN_E12_BASILISK_TOPOLOGY_DECISION.id
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.precedingApproval.gateId === EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.id
@@ -142,11 +142,26 @@ check(
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.precedingApproval.publishedImplementation === EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publishedImplementation
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.precedingApproval.publishedApprovalRecord === EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.publishedApprovalRecord
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.precedingApproval.initialPublishedHandoff === EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.initialPublishedHandoff
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.precedingApproval.currentReconciliation === EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.baseCheckpoint
-    && !Object.hasOwn(EN_E12_BASILISK_MIRRORCREST_MESMER_GATE, 'approvedOn')
-    && !Object.hasOwn(EN_E12_BASILISK_MIRRORCREST_MESMER_GATE, 'approvedImplementation')
-    && !Object.hasOwn(EN_E12_BASILISK_MIRRORCREST_MESMER_GATE, 'publicationState'),
-  'Mirrorcrest gate must remain an unapproved private candidate on the exact published common checkpoint',
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.precedingApproval.currentReconciliation === EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.baseCheckpoint,
+  'Mirrorcrest approved gate identity or predecessor tuple drifted',
+);
+check(
+  EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.approvedOn === '2026-08-15'
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.approvalEvidence.includes('The designer replied: approved letsd do next')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.approvalEvidence.includes('3ff5c75cd5272e66cfad42b84c5dbb1e86c20b67f506845923734cda24569a80')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.approvedImplementation === '9c020537525094430307813e77fd23d7e6308fcc'
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publicationAuthorizedOn === '2026-08-15'
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publishedImplementation === ''
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publishedApprovalRecord === ''
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.initialPublishedHandoff === ''
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publicationState === 'approved-not-published'
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('9c020537525094430307813e77fd23d7e6308fcc')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('approval record')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('private elite Basilisk candidate')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('does not approve elite pixels'),
+  'Mirrorcrest approval record or publication boundary drifted',
 );
 check(
   EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.authorizationEvidence.includes('Approved lets do next')
@@ -162,9 +177,9 @@ check(
     && EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.precedingVariant.role === 'common'
     && EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.activeVariant.id === 'mirrorcrest-mesmer'
     && EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.activeVariant.role === 'specialist'
-    && EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD.deferredRoles) === JSON.stringify(['elite'])
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Basilisk specialist role contract drifted',
 );
 check(
@@ -178,8 +193,8 @@ check(
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.exclusions.includes('outline registration')
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.exclusions.includes('fixtures')
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.exclusions.includes('Manticore or Sphinx')
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('explicit visual pixel approval')
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('Do not commit, push, register'),
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('private elite Basilisk candidate')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('outline registration'),
   'Mirrorcrest anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(
@@ -198,9 +213,9 @@ check(
 );
 
 const publicVariantCount = engine.PUBLIC_ENEMIES.reduce((sum, family) => sum + family.variants.length, 0);
-check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 100 && publicVariantCount === 316, 'candidate must preserve the integrated public 100/316 catalog');
-check(!engine.PUBLIC_ENEMIES.some(({ id }) => id === 'basilisk'), 'candidate must keep Basilisk private');
-check(engine.EN_E12_BASILISK_MIRRORCREST_MESMER_REGISTRY === undefined, 'candidate must not leak through the public facade');
+check(engine.ENEMIES.length === 57 && engine.PUBLIC_ENEMIES.length === 100 && publicVariantCount === 316, 'approved private specialist must preserve the integrated public 100/316 catalog');
+check(!engine.PUBLIC_ENEMIES.some(({ id }) => id === 'basilisk'), 'approved private specialist must keep Basilisk private');
+check(engine.EN_E12_BASILISK_MIRRORCREST_MESMER_REGISTRY === undefined, 'approved private specialist must not leak through the public facade');
 const publicSource = await readFile(path.join(root, 'engine', 'enemy-expansion-public.js'), 'utf8');
 const backlogSource = await readFile(path.join(root, 'engine', 'enemy-expansion-approved-backlog-v3.js'), 'utf8');
 const manifestSource = await readFile(path.join(root, 'asset-pack', 'manifest.json'), 'utf8');
@@ -381,14 +396,14 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E12 Basilisk Mirrorcrest Mesmer private specialist candidate passes focused validation.');
+  console.log('EN-E12 Basilisk Mirrorcrest Mesmer approved private specialist passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Basilisk identity: ' + fourFootRows + '/80 four-claw ground rows; ' + specialistSpans + '/80 specialist spans; ' + sideLongSpans + '/40 long-body side views; ' + apertureRiseViews + '/8 split-aperture rises; ' + gazeLockViews + '/8 body-owned gaze locks; ' + flashes + '/8 #f4f4f4 flashes; ' + eyeViews + '/54 eye-bearing views; ' + crownViews + '/72 mirrorcrest views; ' + plateViews + '/72 opaline-plate views; ' + scaleViews + '/72 scale-marked views');
   console.log('- Black-shape distinction: Crownscale minimum distance ' + alphaStats.crownscale.minDistance + ', max IoU ' + alphaStats.crownscale.maxIou.toFixed(3) + '; Gloamgaze minimum distance ' + alphaStats.gloamgaze.minDistance + ', max IoU ' + alphaStats.gloamgaze.maxIou.toFixed(3) + '; Marsh Crocodile minimum distance ' + alphaStats.marshCrocodile.minDistance + ', max IoU ' + alphaStats.marshCrocodile.maxIou.toFixed(3));
   console.log('- Distinction: Crownscale ' + differences.crownscale + '/80; Gloamgaze ' + differences.gloamgaze + '/80; Marsh Crocodile ' + differences.marshCrocodile + '/80 pixel and alpha frames differ');
   console.log('- Presentation: Complete B outline +' + outlinedPixels + ' pixels; Form changes ' + formChanges);
-  console.log('- Protected: published Crownscale exact; approved Gloamgaze exact; public Marsh Crocodile and 100/316 exact; zero child assets/effects; no registration, outline registration, fixtures, package mutation, commit, push, or broader EN-E12 work');
-  console.log('- Candidate Mirrorcrest frame digest: ' + digests.candidate);
+  console.log('- Protected: published Crownscale exact; approved Gloamgaze exact; public Marsh Crocodile and 100/316 exact; zero child assets/effects; bounded publication only; no registration, outline registration, fixtures, package mutation, or broader EN-E12 work');
+  console.log('- Approved Mirrorcrest frame digest: ' + digests.candidate);
   console.log('- Approved Crownscale frame digest: ' + digests.crownscale);
   console.log('- Approved Gloamgaze frame digest: ' + digests.gloamgaze);
   console.log('- Public Marsh Crocodile frame digest: ' + digests.marshCrocodile);

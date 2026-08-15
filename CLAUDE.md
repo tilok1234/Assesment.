@@ -118,8 +118,8 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   reconciliation commits, and branch push. Never infer approval for
   registration, fixtures, effects, later roles/families, release, or another
   gate.
-- Current private EN-E12 Basilisk specialist candidate / pixel approval
-  required:
+- Current approved private EN-E12 Basilisk specialist / publication in
+  progress:
   on `codex/en-e12-basilisk-specialist`, based exactly on the clean, pushed,
   remote-verified Crownscale final reconciliation
   `e894fc126c33fd94c49c077f8dc0432dfabe753a`, the designer's `Approved lets do
@@ -154,11 +154,16 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   atlas, and two GIFs were inspected at original resolution; all 80 atlas cells
   are non-empty with zero boundary contact, all six principal files parse in
   Aseprite, and regeneration reproduces every frozen hash. Public remains
-  100/316 and all 232 fixtures stay exact. The exact candidate is private,
-  uncommitted, and unpushed; the next gate is explicit visual pixel approval.
-  Registration, outline enrollment, fixtures, approved-package mutation,
-  effects, child assets, elite Basilisk, Manticore, Sphinx, boss work, release,
-  accepted drift, and PR remain closed.
+  100/316 and all 232 fixtures stay exact. The designer replied `approved letsd
+  do next` to the exact posted packet. Approval binds only to implementation
+  `9c020537525094430307813e77fd23d7e6308fcc`, the candidate digest, and six
+  frozen review hashes. That implementation is pushed and remote verified;
+  publication is `approved-not-published`, so only the bounded approval record,
+  initial handoff, and final reconciliation remain open. The continuation opens
+  exactly one private elite Basilisk candidate only after that tuple completes
+  and does not approve elite pixels. Registration, outline enrollment,
+  fixtures, approved-package mutation, effects, child assets, Manticore,
+  Sphinx, boss work, release, accepted drift, and PR remain closed.
 - Published preceding approved private EN-E12 Basilisk common / specialist gate
   open:
   on `codex/en-e12-basilisk-common`, based exactly on clean, pushed, remote-

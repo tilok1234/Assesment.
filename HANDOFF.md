@@ -23,21 +23,29 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Private Basilisk Specialist / Pixel Approval Required
+## Next Chat Start Here - Approved Basilisk Specialist / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-basilisk-specialist`, based exactly on the clean, pushed,
    remote-verified Crownscale final reconciliation
-   `e894fc126c33fd94c49c077f8dc0432dfabe753a`. The candidate is private,
-   uncommitted, and unpushed. Do not modify the approved copy package.
+   `e894fc126c33fd94c49c077f8dc0432dfabe753a`. Exact Mirrorcrest implementation
+   `9c020537525094430307813e77fd23d7e6308fcc` is pushed and remote verified.
+   Its approval record, initial published handoff, and final reconciliation are
+   not yet complete. Do not modify the approved copy package.
 2. The designer replied `Approved lets do next` to the exact Crownscale packet.
    That publishes only Crownscale and opens exactly one private specialist
    Basilisk full 80-frame candidate under the selected
    `baked-single-actor-grounded-four-clawed-crowned-serpent` topology. Because
    the role was not pre-named, this lane names only Mirrorcrest Mesmer. The
-   reply does not approve its pixels or authorize commit, push, registration,
-   outline enrollment, fixtures, package mutation, effects, child assets, elite
-   Basilisk, Manticore, Sphinx, boss work, release, accepted drift, or a PR.
+   first reply did not approve specialist pixels. After review of the exact
+   hash-frozen packet below, the designer replied `approved letsd do next`.
+   Pixel approval binds only to implementation
+   `9c020537525094430307813e77fd23d7e6308fcc`, the digest, and six frozen hashes.
+   The continuation opens exactly one private elite Basilisk candidate only
+   after this specialist publication tuple is complete and does not approve
+   elite pixels or authorize registration, outline enrollment, fixtures,
+   package mutation, effects, child assets, Manticore, Sphinx, boss work,
+   release, accepted drift, or a PR.
 3. Mirrorcrest Mesmer uses bespoke lean, low, long geometry rather than
    rendering or palette-mapping Crownscale: deep teal and blue-black hide,
    violet belly scales, an arched S-neck, connected opaline moon-silver plates
@@ -73,13 +81,15 @@ gate.
    inspected at original resolution. The atlas is 480x96 with 80 non-empty
    hard-alpha 24x24 cells and zero boundary contact. Regeneration reproduces
    all six frozen hashes, and Aseprite parses all six principal files.
-7. Stop for explicit visual pixel approval of this exact hash-frozen packet.
-   Technical and internal visual QA do not substitute for the designer's pixel
-   approval. Do not commit or push before that approval. The distinct outlined
-   PNG is review evidence only and does not authorize outline enrollment.
-   Registration, fixtures, approved-package mutation, effects, child assets,
-   elite Basilisk, Manticore, Sphinx, boss work, release, accepted drift, and a
-   PR remain closed. Never use `--accept-drift`.
+7. The designer approved this exact hash-frozen packet. Standing publication
+   permission authorizes only the bounded approval-record, initial-handoff, and
+   final-reconciliation commits and pushes. Publication is currently
+   `approved-not-published`. Complete and remote-verify that tuple before
+   opening exactly one private elite Basilisk candidate; its pixels remain
+   unapproved. The distinct outlined PNG is review evidence only and does not
+   authorize outline enrollment. Registration, fixtures, approved-package
+   mutation, effects, child assets, Manticore, Sphinx, boss work, release,
+   accepted drift, and a PR remain closed. Never use `--accept-drift`.
 8. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e12-basilisk-mirrorcrest-mesmer`; run
    the focused gate with

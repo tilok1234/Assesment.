@@ -23,7 +23,7 @@ export const EN_E12_BASILISK_MIRRORCREST_MESMER_CONTRACT = deepFreeze({
   family: 'basilisk',
   variant: 'mirrorcrest-mesmer',
   role: 'specialist',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E12_BASILISK_TOPOLOGY_DECISION.selected,
   silhouette: 'One connected lean, low, long Basilisk joins a narrow diamond serpent head, a connected split crescent mirror crest, an arched S-neck, a slim plated body, four separately readable splayed grounded clawed legs, and one long tapering tail curled into a raised body-owned hook loop. It preserves the approved four-clawed crowned-serpent topology while reading narrower, longer-necked, more open-centered, and more ritualized than the heavy Crownscale Crawler.',
   identity: 'Deep teal and blue-black hide, violet belly scales, opaline moon-silver mirror plates, a split pale crest, cyan eyes, a dark plum jaw, ivory fangs, and rose-copper claws distinguish the Mirrorcrest Mesmer specialist without relying on gaze beams, venom, glow, dust, or projectiles.',
@@ -42,18 +42,27 @@ export const EN_E12_BASILISK_SPECIALIST_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E12_BASILISK_MIRRORCREST_MESMER_CONTRACT.variant,
     role: EN_E12_BASILISK_MIRRORCREST_MESMER_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['elite'],
 });
 
 export const EN_E12_BASILISK_MIRRORCREST_MESMER_GATE = deepFreeze({
   id: 'en-e12-basilisk-mirrorcrest-mesmer-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-15',
   authorizationEvidence: 'The exact Crownscale Crawler implementation 3071d18d98b84ca1492e88ab85bf7765aa7ee0d0, approval record fd734af1df0a6b2ab1712533892e2a9e18c5984c, initial published handoff 06249d3ce2924a1010ab6a8edd927ab934c50380, and final reconciliation e894fc126c33fd94c49c077f8dc0432dfabe753a are pushed and remote verified. The designer replied Approved lets do next to the exact Crownscale packet. That approval publishes only Crownscale Crawler; its continuation opens exactly one private specialist Basilisk full 80-frame candidate under the selected baked-single-actor-grounded-four-clawed-crowned-serpent topology. Because the role was not pre-named, this lane names only Mirrorcrest Mesmer. It does not approve candidate pixels or authorize a commit, push, public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, elite Basilisk, Manticore, Sphinx, boss work, release, accepted drift, or a pull request.',
   baseCheckpoint: 'e894fc126c33fd94c49c077f8dc0432dfabe753a',
   architectureDecision: EN_E12_BASILISK_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-15',
+  approvalEvidence: 'The final approval prompt posted the exact labeled all-four-direction raw/no-outline, distinct Complete B outlined, Complete B + Form, and Crownscale-Gloamgaze-Marsh Crocodile comparison PNGs together with both synchronized full-suite GIFs and candidate digest 3ff5c75cd5272e66cfad42b84c5dbb1e86c20b67f506845923734cda24569a80. All four exact PNGs, all eight raw and Complete B + Form phase sheets, the transparent 20x4 inspection atlas, and both exact GIFs were inspected at original resolution; Aseprite parsed all six principal files and regeneration reproduced every frozen hash. The designer replied: approved letsd do next. Pixel approval applies only to that exact Mirrorcrest Mesmer digest and its six frozen review hashes. The continuation clause separately opens exactly one private elite Basilisk candidate only after this specialist publication tuple is complete; it does not approve elite pixels or open public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, or a pull request.',
+  approvedImplementation: '9c020537525094430307813e77fd23d7e6308fcc',
+  publicationAuthorizedOn: '2026-08-15',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved letsd do next to the exact Mirrorcrest Mesmer review packet. This does not authorize public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, elite pixel approval, Manticore, Sphinx, boss work, release, accepted drift, or a pull request.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.id,
     candidateFrameDigest: EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.candidateFrameDigest,
@@ -122,7 +131,7 @@ export const EN_E12_BASILISK_MIRRORCREST_MESMER_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'Render, inspect, freeze, and validate this exact private Mirrorcrest Mesmer candidate, then stop for explicit visual pixel approval. Do not commit, push, register, add outlines, fixtures or effects, mutate the approved-enemy package, create child assets, open an elite Basilisk, Manticore, Sphinx, boss, release, accepted-drift, or pull-request lane. The distinct outlined PNG is review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Mirrorcrest Mesmer implementation 9c020537525094430307813e77fd23d7e6308fcc is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Basilisk specialist publication tuple. The same reply includes a lets do next continuation, which opens exactly one private elite Basilisk candidate only after that publication tuple is complete; it does not approve elite pixels. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E12_BASILISK_MIRRORCREST_MESMER_DATA = deepFreeze({
@@ -595,7 +604,7 @@ export const EN_E12_BASILISK_MIRRORCREST_MESMER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mirrorcrest-mesmer',
     scale: 6,
-    notes: 'Private specialist Basilisk candidate only. Review the exact raw/no-outline, distinct Complete B outlined, Complete B + Form, Crownscale/Gloamgaze/Marsh Crocodile comparison, and paired GIF packet. The renderer uses bespoke lean S-necked mirrorcrest and hooked loop-tail geometry rather than rendering or palette-mapping Crownscale. Keep commit, push, public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, elite Basilisk, Manticore, Sphinx, boss work, release, accepted drift, and a pull request closed until explicit pixel approval.',
+    notes: 'Approved private Mirrorcrest Mesmer specialist Basilisk only, bound to exact implementation 9c020537525094430307813e77fd23d7e6308fcc, candidate digest 3ff5c75cd5272e66cfad42b84c5dbb1e86c20b67f506845923734cda24569a80, and its six frozen review hashes. The designer replied approved letsd do next to the posted exact packet. The continuation clause opens only one private elite Basilisk candidate after specialist publication completes and does not approve elite pixels. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, and a pull request separate.',
   },
 });
 
