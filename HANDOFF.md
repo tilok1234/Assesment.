@@ -23,14 +23,15 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Approved Private Basilisk Elite / Publication In Progress
+## Next Chat Start Here - Approved Private Basilisk Elite / Initial Publication Handoff
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-basilisk-elite`, based exactly on clean, pushed, remote-
    verified Mirrorcrest final reconciliation
    `1b1b11ba6464bdf2bb1220b094e6908578f7a7aa`. The exact revised Ironhalo
-   Tyrant implementation is committed as
-   `7a00ef8691da6df2821cf3ad02437198d0d9f2e6`, pushed, and remote verified.
+   Tyrant implementation
+   `7a00ef8691da6df2821cf3ad02437198d0d9f2e6` and approval record
+   `16f797813361c61f0bcda2933ecb86d03b0d66cc` are pushed and remote verified.
    Preserve the frozen private packet and do not modify the approved-enemy copy
    package.
 2. The designer replied `approved letsd do next` to the exact Mirrorcrest
@@ -88,9 +89,9 @@ gate.
    hard-alpha 24x24 cells and zero boundary contact. The two GIFs are 640x672,
    four synchronized 180 ms frames, and loop cleanly. Exact hashes match the
    frozen packet, and Aseprite parses all six principal files.
-7. Standing permission now authorizes only the bounded approval-record commit
-   and push, followed by the initial published handoff and final reconciliation
-   needed to complete the elite publication tuple. The next enemy gate remains
+7. The implementation and approval record are pushed and remote verified. Only
+   the initial published handoff and final reconciliation remain open to
+   complete the bounded elite publication tuple. The next enemy gate remains
    closed afterward and requires a fresh explicit continuation. The distinct
    outlined PNG is review evidence only and does not authorize outline
    enrollment. Registration, fixtures, approved-package mutation, effects,

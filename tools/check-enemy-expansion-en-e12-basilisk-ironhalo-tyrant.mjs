@@ -158,12 +158,13 @@ check(
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.approvedImplementation === '7a00ef8691da6df2821cf3ad02437198d0d9f2e6'
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publicationAuthorizedOn === '2026-08-15'
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publishedImplementation === ''
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publishedApprovalRecord === ''
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publishedImplementation === '7a00ef8691da6df2821cf3ad02437198d0d9f2e6'
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publishedApprovalRecord === '16f797813361c61f0bcda2933ecb86d03b0d66cc'
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.initialPublishedHandoff === ''
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publicationState === 'approved-not-published'
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('7a00ef8691da6df2821cf3ad02437198d0d9f2e6')
-    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('approval record')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('16f797813361c61f0bcda2933ecb86d03b0d66cc')
+    && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('initial published handoff')
     && EN_E12_BASILISK_IRONHALO_TYRANT_GATE.nextGate.includes('next enemy gate remains closed'),
   'Ironhalo approval record or publication boundary drifted',
 );

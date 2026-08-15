@@ -59,10 +59,10 @@ export const EN_E12_BASILISK_IRONHALO_TYRANT_GATE = deepFreeze({
   approvedImplementation: '7a00ef8691da6df2821cf3ad02437198d0d9f2e6',
   publicationAuthorizedOn: '2026-08-15',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied aproved to the exact revised Ironhalo Tyrant packet. This does not authorize public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, a pull request, or another enemy gate.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '7a00ef8691da6df2821cf3ad02437198d0d9f2e6',
+  publishedApprovalRecord: '16f797813361c61f0bcda2933ecb86d03b0d66cc',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.id,
     candidateFrameDigest: EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.candidateFrameDigest,
@@ -123,7 +123,7 @@ export const EN_E12_BASILISK_IRONHALO_TYRANT_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'The exact revised Ironhalo Tyrant implementation 7a00ef8691da6df2821cf3ad02437198d0d9f2e6 is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Basilisk elite publication tuple. The approval reply contains no continuation request, so the next enemy gate remains closed after publication and requires a fresh explicit continuation. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact revised Ironhalo Tyrant implementation 7a00ef8691da6df2821cf3ad02437198d0d9f2e6 and approval record 16f797813361c61f0bcda2933ecb86d03b0d66cc are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Basilisk elite publication tuple. The approval reply contains no continuation request, so the next enemy gate remains closed after publication and requires a fresh explicit continuation. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E12_BASILISK_IRONHALO_TYRANT_DATA = deepFreeze({
@@ -583,7 +583,7 @@ export const EN_E12_BASILISK_IRONHALO_TYRANT_FAMILY = deepFreeze({
   },
   review: {
     baselineVariant: 'ironhalo-tyrant', scale: 6,
-    notes: 'Approved private Ironhalo Tyrant elite Basilisk only, bound to exact revised implementation 7a00ef8691da6df2821cf3ad02437198d0d9f2e6, candidate digest ea00f445e8f807098b6392cd3cf81fedbf0a29d6eb96434495ab5af9b3308a6f, and its six frozen review hashes. The designer replied aproved to the revised packet after the rigid-square animation repair. The reply contains no continuation request. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, a pull request, and another enemy gate separate.',
+    notes: 'Approved private Ironhalo Tyrant elite Basilisk only, bound to exact revised implementation 7a00ef8691da6df2821cf3ad02437198d0d9f2e6, approval record 16f797813361c61f0bcda2933ecb86d03b0d66cc, candidate digest ea00f445e8f807098b6392cd3cf81fedbf0a29d6eb96434495ab5af9b3308a6f, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. The designer replied aproved to the revised packet after the rigid-square animation repair, with no continuation request. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, a pull request, and another enemy gate separate.',
   },
 });
 
