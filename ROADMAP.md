@@ -2,7 +2,7 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current EN-E12 approved private specialist Basilisk / publication in progress
+Current EN-E12 approved private specialist Basilisk / initial handoff in progress
 (2026-08-15): on `codex/en-e12-basilisk-specialist`, based exactly on clean,
 pushed, remote-verified Crownscale final reconciliation
 `e894fc126c33fd94c49c077f8dc0432dfabe753a`, the designer's `Approved lets do
@@ -41,9 +41,10 @@ reproduction passes. Public remains 100/316 and all 232 fixtures stay exact.
 The designer replied `approved letsd do next` to the exact posted packet. Pixel
 approval binds only to implementation
 `9c020537525094430307813e77fd23d7e6308fcc`, the digest, and six frozen review
-hashes. That implementation is pushed and remote verified; publication is
-`approved-not-published`, so only the bounded approval record, initial published
-handoff, and final reconciliation remain open. The continuation opens exactly
+hashes. That implementation and approval record
+`7ecc9df1f7f05c38af6cd395bfd26811a0d79099` are pushed and remote verified;
+publication is `published-awaiting-handoff-reconciliation`, so only the initial
+published handoff and final reconciliation remain open. The continuation opens exactly
 one private elite Basilisk candidate only after the specialist publication tuple
 completes and does not approve elite pixels. Registration, outline enrollment,
 fixtures, approved-package mutation, effects, child assets, Manticore, Sphinx,

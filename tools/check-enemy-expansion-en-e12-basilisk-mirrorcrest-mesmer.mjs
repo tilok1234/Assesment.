@@ -153,12 +153,13 @@ check(
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.approvedImplementation === '9c020537525094430307813e77fd23d7e6308fcc'
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publicationAuthorizedOn === '2026-08-15'
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publishedImplementation === ''
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publishedApprovalRecord === ''
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publishedImplementation === '9c020537525094430307813e77fd23d7e6308fcc'
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publishedApprovalRecord === '7ecc9df1f7f05c38af6cd395bfd26811a0d79099'
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.initialPublishedHandoff === ''
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publicationState === 'approved-not-published'
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.publicationState === 'published-awaiting-handoff-reconciliation'
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('9c020537525094430307813e77fd23d7e6308fcc')
-    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('approval record')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('7ecc9df1f7f05c38af6cd395bfd26811a0d79099')
+    && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('initial published handoff')
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('private elite Basilisk candidate')
     && EN_E12_BASILISK_MIRRORCREST_MESMER_GATE.nextGate.includes('does not approve elite pixels'),
   'Mirrorcrest approval record or publication boundary drifted',

@@ -59,10 +59,10 @@ export const EN_E12_BASILISK_MIRRORCREST_MESMER_GATE = deepFreeze({
   approvedImplementation: '9c020537525094430307813e77fd23d7e6308fcc',
   publicationAuthorizedOn: '2026-08-15',
   publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved letsd do next to the exact Mirrorcrest Mesmer review packet. This does not authorize public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, elite pixel approval, Manticore, Sphinx, boss work, release, accepted drift, or a pull request.',
-  publishedImplementation: '',
-  publishedApprovalRecord: '',
+  publishedImplementation: '9c020537525094430307813e77fd23d7e6308fcc',
+  publishedApprovalRecord: '7ecc9df1f7f05c38af6cd395bfd26811a0d79099',
   initialPublishedHandoff: '',
-  publicationState: 'approved-not-published',
+  publicationState: 'published-awaiting-handoff-reconciliation',
   precedingApproval: {
     gateId: EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.id,
     candidateFrameDigest: EN_E12_BASILISK_CROWNSCALE_CRAWLER_GATE.candidateFrameDigest,
@@ -131,7 +131,7 @@ export const EN_E12_BASILISK_MIRRORCREST_MESMER_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'The exact Mirrorcrest Mesmer implementation 9c020537525094430307813e77fd23d7e6308fcc is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Basilisk specialist publication tuple. The same reply includes a lets do next continuation, which opens exactly one private elite Basilisk candidate only after that publication tuple is complete; it does not approve elite pixels. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Mirrorcrest Mesmer implementation 9c020537525094430307813e77fd23d7e6308fcc and approval record 7ecc9df1f7f05c38af6cd395bfd26811a0d79099 are pushed and remote verified. Only the initial published handoff and final reconciliation remain open to complete the bounded Basilisk specialist publication tuple. The same reply includes a lets do next continuation, which opens exactly one private elite Basilisk candidate only after that publication tuple is complete; it does not approve elite pixels. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E12_BASILISK_MIRRORCREST_MESMER_DATA = deepFreeze({
@@ -604,7 +604,7 @@ export const EN_E12_BASILISK_MIRRORCREST_MESMER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'mirrorcrest-mesmer',
     scale: 6,
-    notes: 'Approved private Mirrorcrest Mesmer specialist Basilisk only, bound to exact implementation 9c020537525094430307813e77fd23d7e6308fcc, candidate digest 3ff5c75cd5272e66cfad42b84c5dbb1e86c20b67f506845923734cda24569a80, and its six frozen review hashes. The designer replied approved letsd do next to the posted exact packet. The continuation clause opens only one private elite Basilisk candidate after specialist publication completes and does not approve elite pixels. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, and a pull request separate.',
+    notes: 'Approved private Mirrorcrest Mesmer specialist Basilisk only, bound to exact implementation 9c020537525094430307813e77fd23d7e6308fcc, approval record 7ecc9df1f7f05c38af6cd395bfd26811a0d79099, candidate digest 3ff5c75cd5272e66cfad42b84c5dbb1e86c20b67f506845923734cda24569a80, and its six frozen review hashes. The implementation and approval record are pushed and remote verified; only the initial handoff and final reconciliation remain. The designer replied approved letsd do next, which opens only one private elite Basilisk candidate after specialist publication completes and does not approve elite pixels. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, Manticore, Sphinx, boss work, release, accepted drift, and a pull request separate.',
   },
 });
 

@@ -23,15 +23,16 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Approved Basilisk Specialist / Publication In Progress
+## Next Chat Start Here - Approved Basilisk Specialist / Initial Handoff In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-basilisk-specialist`, based exactly on the clean, pushed,
    remote-verified Crownscale final reconciliation
    `e894fc126c33fd94c49c077f8dc0432dfabe753a`. Exact Mirrorcrest implementation
    `9c020537525094430307813e77fd23d7e6308fcc` is pushed and remote verified.
-   Its approval record, initial published handoff, and final reconciliation are
-   not yet complete. Do not modify the approved copy package.
+   Approval record `7ecc9df1f7f05c38af6cd395bfd26811a0d79099` is also pushed
+   and remote verified. Only the initial published handoff and final
+   reconciliation remain incomplete. Do not modify the approved copy package.
 2. The designer replied `Approved lets do next` to the exact Crownscale packet.
    That publishes only Crownscale and opens exactly one private specialist
    Basilisk full 80-frame candidate under the selected
@@ -84,7 +85,7 @@ gate.
 7. The designer approved this exact hash-frozen packet. Standing publication
    permission authorizes only the bounded approval-record, initial-handoff, and
    final-reconciliation commits and pushes. Publication is currently
-   `approved-not-published`. Complete and remote-verify that tuple before
+   `published-awaiting-handoff-reconciliation`. Complete and remote-verify that tuple before
    opening exactly one private elite Basilisk candidate; its pixels remain
    unapproved. The distinct outlined PNG is review evidence only and does not
    authorize outline enrollment. Registration, fixtures, approved-package
