@@ -52,7 +52,7 @@ export const EN_E12_MANTICORE_THORNMANE_STALKER_CONTRACT = deepFreeze({
   family: 'manticore',
   variant: 'thornmane-stalker',
   role: 'common',
-  state: 'implemented-complete-motion-candidate',
+  state: 'implemented-complete-motion-approved',
   chassis: EN_E12_MANTICORE_TOPOLOGY_DECISION.selected,
   silhouette: 'One connected low Manticore joins a broad tawny lion body, high oxblood thorn mane, mask-like old-bone face, four separately readable grounded dark paws, and one thick segmented charcoal scorpion tail that rises from the rump, arches above the back, and ends in a body-owned copper hook stinger. It has no wings and must remain distinct from ordinary Big Cat, ordinary Scorpion, the preceding four-clawed crowned-serpent Basilisk, the later winged Sphinx, and 48x48 Chimera work.',
   identity: 'Sun-baked tawny and ochre fur, a dark oxblood mane, warm old-bone facial mask, pale sand belly, charcoal tail plates, a rust-copper stinger, amber eyes, black-brown paws, and small ivory fangs establish the common Manticore without relying on venom, glow, dust, projectiles, trails, impacts, or detached parts.',
@@ -71,18 +71,27 @@ export const EN_E12_MANTICORE_COMMON_CONTRACT_CARD = deepFreeze({
   activeVariant: {
     id: EN_E12_MANTICORE_THORNMANE_STALKER_CONTRACT.variant,
     role: EN_E12_MANTICORE_THORNMANE_STALKER_CONTRACT.role,
-    status: 'implemented-full-candidate',
+    status: 'implemented-full-approved',
   },
   deferredRoles: ['specialist', 'elite'],
 });
 
 export const EN_E12_MANTICORE_THORNMANE_STALKER_GATE = deepFreeze({
   id: 'en-e12-manticore-thornmane-stalker-full-v1',
-  status: 'candidate',
+  status: 'approved',
   authorizedOn: '2026-08-15',
   authorizationEvidence: EN_E12_MANTICORE_TOPOLOGY_DECISION.approvalEvidence,
   baseCheckpoint: 'b0f17a8c780b22b8535ae48ad4c739e73d1f667d',
   architectureDecision: EN_E12_MANTICORE_TOPOLOGY_DECISION.id,
+  approvedOn: '2026-08-15',
+  approvalEvidence: 'The final approval prompt posted the exact labeled all-four-direction Thornmane Stalker raw/no-outline, distinct Complete B outlined, Complete B + Form, and approved Ironhalo-public Tiger-public Emperor Scorpion comparison PNGs together with both synchronized full-suite GIFs and candidate digest 734d1a7f43bd39399fdb8f81011ca065f931804ee1207ff82fc72784768342f9. The packet was regenerated exactly after approval; all four PNGs, all eight raw and Complete B + Form phase boards, the transparent 20x4 inspection atlas, and both exact GIFs were inspected at original resolution; Aseprite parsed all six principal files; focused, fast, and full validation passed. The designer replied: approved. Pixel approval applies only to implementation a2bb4a00d2e4fda941f781efce6e82df3a66e9b2, that digest, and its six frozen review hashes. The reply contains no continuation request and does not authorize public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss work, release, accepted drift, a pull request, or another enemy gate.',
+  approvedImplementation: 'a2bb4a00d2e4fda941f781efce6e82df3a66e9b2',
+  publicationAuthorizedOn: '2026-08-15',
+  publicationAuthorizationEvidence: 'The designer previously said: you have my pertmission to commit and push everything i approve. This standing permission authorizes bounded implementation, approval-record, and reconciliation commits plus branch pushes only after explicit approval of the exact frozen artifact or digest. The designer now replied approved to the exact Thornmane Stalker packet. This does not authorize public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss work, release, accepted drift, a pull request, or another enemy gate.',
+  publishedImplementation: '',
+  publishedApprovalRecord: '',
+  initialPublishedHandoff: '',
+  publicationState: 'approved-not-published',
   precedingApproval: {
     gateId: EN_E12_BASILISK_IRONHALO_TYRANT_GATE.id,
     candidateFrameDigest: EN_E12_BASILISK_IRONHALO_TYRANT_GATE.candidateFrameDigest,
@@ -151,7 +160,7 @@ export const EN_E12_MANTICORE_THORNMANE_STALKER_GATE = deepFreeze({
     'accepted drift',
     'pull request',
   ],
-  nextGate: 'Render, inspect, freeze, and validate this exact private Thornmane Stalker candidate, then stop for explicit visual pixel approval. Do not commit, push, register, add outline enrollment, edit fixtures, mutate the approved-enemy copy package, add effects or child assets, begin specialist or elite Manticore, Sphinx, boss, release, accepted-drift, or pull-request work. The distinct outlined PNG is review evidence only and does not authorize outline registration.',
+  nextGate: 'The exact Thornmane Stalker implementation a2bb4a00d2e4fda941f781efce6e82df3a66e9b2 is pushed and remote verified. Commit and push only this approval record, then create the initial published handoff and final reconciliation needed to complete the bounded Manticore common publication tuple. The approval reply contains no continuation request, so the next enemy gate remains closed after publication and requires a fresh explicit continuation. Public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss work, release, accepted drift, and a pull request remain closed. The distinct outlined PNG remains review evidence only and does not authorize outline registration.',
 });
 
 export const EN_E12_MANTICORE_THORNMANE_STALKER_DATA = deepFreeze({
@@ -603,7 +612,7 @@ export const EN_E12_MANTICORE_THORNMANE_STALKER_FAMILY = deepFreeze({
   review: {
     baselineVariant: 'thornmane-stalker',
     scale: 6,
-    notes: 'Private common Manticore candidate only. Review the exact raw/no-outline, distinct Complete B outlined, Complete B + Form, Ironhalo/Tiger/Emperor Scorpion comparison, and paired GIF packet. The renderer uses bespoke connected mane-faced lion and segmented stinger-tail geometry rather than rendering or palette-mapping the approved Basilisk, public Big Cat, or public Scorpion. Keep commit, push, public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss work, release, accepted drift, and a pull request closed until explicit pixel approval.'
+    notes: 'Approved private Thornmane Stalker common Manticore only, bound to exact implementation a2bb4a00d2e4fda941f781efce6e82df3a66e9b2, candidate digest 734d1a7f43bd39399fdb8f81011ca065f931804ee1207ff82fc72784768342f9, and its six frozen review hashes. The designer replied approved to the exact packet with no continuation request. Keep public or outline registration, fixtures, approved-enemy package mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss work, release, accepted drift, a pull request, and another enemy gate separate.'
   },
 });
 

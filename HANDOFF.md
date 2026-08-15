@@ -23,21 +23,27 @@ second publication approval. This permission never opens registration,
 fixtures, effects, later roles or families, release, or any other unapproved
 gate.
 
-## Next Chat Start Here - Private Manticore Common / Pixel Approval Required
+## Next Chat Start Here - Approved Private Manticore Common / Publication In Progress
 
 1. Work only in `C:\Users\headc\Documents\sprite-assembler-v2` on branch
    `codex/en-e12-manticore-common`, currently at exact base
    `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. That base is the clean, pushed,
    remote-verified final reconciliation for the published revised Ironhalo
-   Tyrant tuple. Preserve it and do not modify the approved-enemy copy package.
+   Tyrant tuple. Exact Thornmane implementation
+   `a2bb4a00d2e4fda941f781efce6e82df3a66e9b2` is committed, pushed, and remote
+   verified. Preserve the frozen private packet and do not modify the approved-
+   enemy copy package.
 2. After Ironhalo publication completed, the designer replied `lets do next`.
    That opened only the documented EN-E12 Manticore topology decision. Codex
    recommended one baked, connected, grounded, mane-faced lion quadruped with
    four paws and one body-owned segmented scorpion tail, no wings, and zero
-   child assets. The designer replied `approved`. This approves only
-   `baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped` and opens
-   one private common 80-frame candidate. It does not approve candidate pixels,
-   a commit, or a push.
+   child assets. The designer replied `approved`. That first reply approved only
+   `baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped` and opened
+   one private common 80-frame candidate without approving its pixels. After
+   the exact four PNGs, two GIFs, and digest below were posted, the designer
+   replied `approved` again. Pixel approval binds only to implementation
+   `a2bb4a00d2e4fda941f781efce6e82df3a66e9b2`, the digest, and six frozen review
+   hashes. The reply contains no continuation request.
 3. This lane names only Thornmane Stalker. It uses bespoke low lion geometry:
    sun-baked tawny fur, an oxblood thorn mane, old-bone mask face, pale sand
    belly, amber eyes, four separately grounded dark paws, a connected segmented
@@ -73,18 +79,20 @@ gate.
    original resolution. The inspection atlas is 480x96 with 80 non-empty hard-
    alpha 24x24 cells and zero boundary contact. All six principal files parse
    in Aseprite and regeneration exactly reproduces every frozen hash.
-7. Candidate source, review tooling, review artifacts, package scripts, and live
-   docs are intentionally uncommitted and unpushed. Show the exact four PNGs and
-   two GIFs together, then stop for explicit visual pixel approval. Do not infer
-   pixel approval from topology approval.
+7. The exact implementation is committed, pushed, and remote verified. Standing
+   permission now authorizes only the bounded approval-record commit and push,
+   followed by the initial published handoff and final reconciliation needed to
+   complete the common Manticore publication tuple. The next enemy gate remains
+   closed afterward and requires a fresh explicit continuation.
 8. Regenerate with
    `npm.cmd run review:enemy-expansion-en-e12-manticore-thornmane-stalker`; run
    the focused gate with
    `npm.cmd run check:enemy-expansion-en-e12-manticore-thornmane-stalker`; then
-   use `npm.cmd run check:fast` and `npm.cmd run check`. Commit, push, public or
-   outline registration, fixtures, approved-enemy package mutation, effects,
-   child assets, specialist or elite Manticore, Sphinx, boss work, release,
-   accepted drift, and a PR remain closed. Never use `--accept-drift`.
+   use `npm.cmd run check:fast` and `npm.cmd run check`. Public or outline
+   registration, fixtures, approved-enemy package mutation, effects, child
+   assets, specialist or elite Manticore, Sphinx, boss work, release, accepted
+   drift, a PR, and another enemy gate remain closed. Never use
+   `--accept-drift`.
 
 ## Published Predecessor - Private Basilisk Elite / Manticore Topology Gate Consumed
 

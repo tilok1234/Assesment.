@@ -2,15 +2,19 @@
 
 This roadmap records the agreed order for turning the current Sprite Assembler into a maintainable editor and, ultimately, a proper Windows application.
 
-Current private EN-E12 common Manticore candidate / explicit pixel approval
-required (2026-08-15): branch `codex/en-e12-manticore-common` is based exactly
+Current approved private EN-E12 common Manticore / publication in progress
+(2026-08-15): branch `codex/en-e12-manticore-common` is based exactly
 on clean, pushed, remote-verified Ironhalo final reconciliation
 `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. The designer's `lets do next`
 opened only the Manticore topology decision, and the following `approved`
 selected only
-`baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped`. It
-authorizes one private common 80-frame candidate and does not approve its
-pixels. This lane names only Thornmane Stalker: one connected low tawny lion
+`baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped`. That first
+reply authorized one private common 80-frame candidate without approving its
+pixels. After exact review, the designer replied `approved`. Pixel approval
+binds only to pushed, remote-verified implementation
+`a2bb4a00d2e4fda941f781efce6e82df3a66e9b2`, the digest, and six frozen review
+hashes; there is no continuation request. This lane names only Thornmane
+Stalker: one connected low tawny lion
 body with an oxblood thorn mane, old-bone mask face, pale belly, four separately
 grounded dark paws, and a connected charcoal segmented tail ending in a copper
 hook stinger. Attack braces, raises the tail, drives a body-owned over-back hook
@@ -35,10 +39,12 @@ Minimum black-shape distances / maximum IoUs are 101/0.699, 118/0.534, and
 changes 10,509. The four PNGs, eight phase boards, and two GIFs were inspected
 at original resolution; the 480x96 atlas has 80 non-empty hard-alpha cells and
 zero boundary contact; all six principal files parse in Aseprite; frozen hashes
-reproduce. Public remains 100/316 and all 232 fixtures stay exact. All candidate
-work is intentionally uncommitted and unpushed. Stop for explicit visual pixel
-approval; registration, fixtures, approved-package mutation, effects, later
-Manticore roles, Sphinx, bosses, release, accepted drift, and PR remain closed.
+reproduce. Public remains 100/316 and all 232 fixtures stay exact. The exact
+implementation is committed, pushed, and remote verified. Only its bounded
+approval record, initial published handoff, and final reconciliation remain
+open. Public or outline registration, fixtures, approved-package mutation,
+effects, later Manticore roles, Sphinx, bosses, release, accepted drift, PR, and
+another enemy gate remain closed.
 
 Published preceding EN-E12 approved private elite Basilisk / Manticore topology gate consumed
 (2026-08-15): on `codex/en-e12-basilisk-elite`, based exactly on clean, pushed,

@@ -1,15 +1,18 @@
 # Enemy Expansion Plan
 
-- Current private EN-E12 common Manticore candidate / explicit pixel approval
-  required
+- Current approved private EN-E12 common Manticore / publication in progress
   (2026-08-15): branch `codex/en-e12-manticore-common` is based exactly on
   clean, pushed, remote-verified Ironhalo final reconciliation
   `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`. The designer's `lets do next`
   opened only the Manticore topology decision. The following `approved`
   selected only
-  `baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped` and
-  authorizes one private common 80-frame candidate; it does not approve
-  candidate pixels. This lane names only Thornmane Stalker: one connected low
+  `baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped`. That first
+  reply authorized one private common 80-frame candidate without approving its
+  pixels. After exact review, the designer replied `approved`. Pixel approval
+  binds only to pushed, remote-verified implementation
+  `a2bb4a00d2e4fda941f781efce6e82df3a66e9b2`, the digest, and six frozen review
+  hashes. The reply contains no continuation request. This lane names only
+  Thornmane Stalker: one connected low
   tawny lion body with an oxblood thorn mane, old-bone mask face, pale sand
   belly, four separately grounded dark paws, and one connected charcoal
   segmented scorpion tail ending in a copper hook stinger. It has no wings.
@@ -38,11 +41,12 @@
   boards, and two GIFs were inspected at original resolution. The 480x96 hard-
   alpha atlas has 80 non-empty cells and zero boundary contact; all six
   principal files parse in Aseprite; frozen hashes reproduce. Public remains
-  100/316 and all 232 fixtures stay exact. Candidate work is intentionally
-  uncommitted and unpushed. Stop for explicit visual pixel approval. Commit,
-  push, public or outline registration, fixtures, approved-enemy package
-  mutation, effects, child assets, specialist or elite Manticore, Sphinx, boss
-  work, release, accepted drift, and a PR remain closed.
+  100/316 and all 232 fixtures stay exact. The exact implementation is
+  committed, pushed, and remote verified. Only its bounded approval record,
+  initial published handoff, and final reconciliation remain open. Public or
+  outline registration, fixtures, approved-enemy package mutation, effects,
+  child assets, specialist or elite Manticore, Sphinx, boss work, release,
+  accepted drift, a PR, and another enemy gate remain closed.
 
 - Published preceding approved private EN-E12 elite Basilisk / Manticore
   topology gate consumed
@@ -7553,7 +7557,7 @@ remain closed. The outlined PNG is review evidence only.
 
 ### EN-E12 - Mythic composite creatures
 
-- Status: `basilisk-complete-manticore-common-candidate-awaiting-pixel-approval`
+- Status: `basilisk-complete-manticore-common-approved-publication-in-progress`
 - Families: Basilisk, Manticore, Sphinx
 - Priority-first: Basilisk
 
@@ -7568,10 +7572,12 @@ remote verified through Ironhalo final reconciliation
 completed, the designer's `lets do next` opened only the Manticore topology
 decision. The following `approved` selected
 `baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped` and opened
-one private common 80-frame candidate without approving its pixels. Thornmane
-Stalker is now hash-frozen and fully validated as described at the top of this
-plan. It remains intentionally uncommitted and unpushed pending explicit visual
-pixel approval. Do not register, add outlines, fixtures, effects, or child
+one private common 80-frame candidate without approving its pixels. After exact
+review, the designer replied `approved`. Thornmane Stalker is hash-frozen,
+fully validated, and committed, pushed, and remote verified as implementation
+`a2bb4a00d2e4fda941f781efce6e82df3a66e9b2`. The approval reply contains no
+continuation request. Complete only its bounded approval record and publication
+reconciliation. Do not register, add outlines, fixtures, effects, or child
 assets, mutate the approved-enemy copy package, begin specialist or elite
 Manticore, start Sphinx or a Boss pilot, release, accept drift, or open a PR.
 

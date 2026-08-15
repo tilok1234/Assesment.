@@ -86,17 +86,21 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
 
 ## Known state (2026-08-15)
 
-- Current private EN-E12 Manticore common candidate / explicit pixel approval
-  required: work is isolated on `codex/en-e12-manticore-common` at exact base
+- Current approved private EN-E12 Manticore common / publication in progress:
+  work is isolated on `codex/en-e12-manticore-common` at exact base
   `b0f17a8c780b22b8535ae48ad4c739e73d1f667d`, the clean, pushed, remote-
   verified final Ironhalo reconciliation. After that bounded Basilisk elite
   publication completed, the designer replied `lets do next`, opening only the
   documented Manticore topology decision. The designer then replied `approved`
   to the recommended
   `baked-single-actor-grounded-mane-faced-scorpion-tailed-quadruped` topology.
-  This approves topology only and authorizes exactly one private common
-  80-frame Manticore candidate; it does not approve candidate pixels. This lane
-  names only Thornmane Stalker: one connected low sun-baked tawny lion body,
+  That first reply approved topology only and authorized exactly one private
+  common 80-frame Manticore candidate. After review of the exact frozen packet,
+  the designer replied `approved`. Pixel approval binds only to pushed,
+  remote-verified implementation
+  `a2bb4a00d2e4fda941f781efce6e82df3a66e9b2`, the digest, and the six frozen
+  review hashes. The reply contains no continuation request. This lane names
+  only Thornmane Stalker: one connected low sun-baked tawny lion body,
   broad oxblood thorn mane, old-bone mask face, pale sand belly, four separately
   grounded dark paws, and one connected segmented charcoal scorpion tail with a
   rust-copper hook stinger. It has no wings. Attack braces, raises the connected
@@ -125,12 +129,13 @@ Python needs `pip install -r requirements.txt` (Pillow ≥11.3) and Node on PATH
   raw/Form phase boards, and two synchronized GIFs were inspected at original
   resolution. The 480x96 hard-alpha atlas has 80 non-empty 24x24 cells and zero
   boundary contact; all six principal files parse in Aseprite; exact hashes
-  reproduce. Public remains 100/316 and all 232 fixtures stay exact. Candidate
-  source, review tooling, review artifacts, package scripts, and live-doc edits
-  are intentionally uncommitted and unpushed. Stop for explicit visual pixel
-  approval. Commit, push, public or outline registration, fixtures, approved-
-  enemy package mutation, effects, child assets, specialist or elite Manticore,
-  Sphinx, boss work, release, accepted drift, and a PR remain closed.
+  reproduce. Public remains 100/316 and all 232 fixtures stay exact. The exact
+  implementation is committed, pushed, and remote verified. Standing permission
+  now authorizes only the bounded approval-record commit and push followed by
+  the initial published handoff and final reconciliation. Public or outline
+  registration, fixtures, approved-enemy package mutation, effects, child
+  assets, specialist or elite Manticore, Sphinx, boss work, release, accepted
+  drift, a PR, and another enemy gate remain closed.
 - Legacy catalog: 57 families / 202 variants (engine/catalogs/enemies.js, feeds
   the frozen asset pack). The stable and consumer expansion registries now
   contain 43 families / 114 variants across approved EN-E01 through EN-E11, so

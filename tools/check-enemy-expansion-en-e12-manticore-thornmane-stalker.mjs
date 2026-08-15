@@ -130,7 +130,7 @@ check(
   'approved Manticore topology decision drifted',
 );
 check(
-  EN_E12_MANTICORE_THORNMANE_STALKER_GATE.status === 'candidate'
+  EN_E12_MANTICORE_THORNMANE_STALKER_GATE.status === 'approved'
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.baseCheckpoint === 'b0f17a8c780b22b8535ae48ad4c739e73d1f667d'
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.architectureDecision === EN_E12_MANTICORE_TOPOLOGY_DECISION.id
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.precedingApproval.gateId === EN_E12_BASILISK_IRONHALO_TYRANT_GATE.id
@@ -138,20 +138,35 @@ check(
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.precedingApproval.publishedImplementation === EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publishedImplementation
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.precedingApproval.publishedApprovalRecord === EN_E12_BASILISK_IRONHALO_TYRANT_GATE.publishedApprovalRecord
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.precedingApproval.initialPublishedHandoff === EN_E12_BASILISK_IRONHALO_TYRANT_GATE.initialPublishedHandoff
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.precedingApproval.currentReconciliation === EN_E12_MANTICORE_THORNMANE_STALKER_GATE.baseCheckpoint
-    && !Object.hasOwn(EN_E12_MANTICORE_THORNMANE_STALKER_GATE, 'approvedOn')
-    && !Object.hasOwn(EN_E12_MANTICORE_THORNMANE_STALKER_GATE, 'approvedImplementation')
-    && !Object.hasOwn(EN_E12_MANTICORE_THORNMANE_STALKER_GATE, 'publicationState'),
-  'Thornmane gate must remain an unapproved private candidate on the exact Ironhalo checkpoint',
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.precedingApproval.currentReconciliation === EN_E12_MANTICORE_THORNMANE_STALKER_GATE.baseCheckpoint,
+  'Thornmane approved gate identity or predecessor tuple drifted',
+);
+check(
+  EN_E12_MANTICORE_THORNMANE_STALKER_GATE.approvedOn === '2026-08-15'
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.approvalEvidence.includes('The designer replied: approved')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.approvalEvidence.includes('734d1a7f43bd39399fdb8f81011ca065f931804ee1207ff82fc72784768342f9')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.approvalEvidence.includes('six frozen review hashes')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.approvalEvidence.includes('no continuation request')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.approvedImplementation === 'a2bb4a00d2e4fda941f781efce6e82df3a66e9b2'
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publicationAuthorizedOn === '2026-08-15'
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publicationAuthorizationEvidence.includes('commit and push everything i approve')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publishedImplementation === ''
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publishedApprovalRecord === ''
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.initialPublishedHandoff === ''
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.publicationState === 'approved-not-published'
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('a2bb4a00d2e4fda941f781efce6e82df3a66e9b2')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('approval record')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('next enemy gate remains closed'),
+  'Thornmane approval record or publication boundary drifted',
 );
 check(
   JSON.stringify(EN_E12_MANTICORE_COMMON_CONTRACT_CARD.roleOrder) === JSON.stringify(['common', 'specialist', 'elite'])
     && EN_E12_MANTICORE_COMMON_CONTRACT_CARD.precedingFamily.finalVariant === 'ironhalo-tyrant'
     && EN_E12_MANTICORE_COMMON_CONTRACT_CARD.activeVariant.id === 'thornmane-stalker'
     && EN_E12_MANTICORE_COMMON_CONTRACT_CARD.activeVariant.role === 'common'
-    && EN_E12_MANTICORE_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-candidate'
+    && EN_E12_MANTICORE_COMMON_CONTRACT_CARD.activeVariant.status === 'implemented-full-approved'
     && JSON.stringify(EN_E12_MANTICORE_COMMON_CONTRACT_CARD.deferredRoles) === JSON.stringify(['specialist', 'elite'])
-    && EN_E12_MANTICORE_THORNMANE_STALKER_CONTRACT.state === 'implemented-complete-motion-candidate',
+    && EN_E12_MANTICORE_THORNMANE_STALKER_CONTRACT.state === 'implemented-complete-motion-approved',
   'Manticore common role contract drifted',
 );
 check(
@@ -165,8 +180,8 @@ check(
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.exclusions.includes('outline registration')
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.exclusions.includes('fixtures')
     && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.exclusions.includes('Sphinx')
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('explicit visual pixel approval')
-    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('Do not commit, push, register'),
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('next enemy gate remains closed')
+    && EN_E12_MANTICORE_THORNMANE_STALKER_GATE.nextGate.includes('outline registration'),
   'Thornmane anatomy, motion, effect firewall, or stop boundary drifted',
 );
 check(
@@ -367,14 +382,14 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exitCode = 1;
 } else {
-  console.log('EN-E12 Manticore Thornmane Stalker private common candidate passes focused validation.');
+  console.log('EN-E12 Manticore Thornmane Stalker approved private common passes focused validation.');
   console.log('- Structure: ' + connected + '/80 connected; ' + bounded + '/80 bounded; ' + grounded + '/80 grounded; opaque range ' + minOpaque + '-' + maxOpaque);
   console.log('- Manticore identity: ' + fourPawRows + '/80 four-paw ground rows; ' + commonSpans + '/80 common spans; ' + sideLionSpans + '/40 lion-and-hooktail side views; ' + tailRiseViews + '/8 tail-rise views; ' + stingerThrustViews + '/8 body-owned stinger thrusts; ' + flashes + '/8 #f4f4f4 flashes; ' + faceViews + '/54 face views; ' + maneViews + '/72 mane views; ' + tailViews + '/72 segmented-tail views; ' + stingerViews + '/72 hook-stinger views');
   console.log('- Black-shape distinction: Ironhalo minimum distance ' + alphaStats.ironhalo.minDistance + ', max IoU ' + alphaStats.ironhalo.maxIou.toFixed(3) + '; Tiger minimum distance ' + alphaStats.tiger.minDistance + ', max IoU ' + alphaStats.tiger.maxIou.toFixed(3) + '; Emperor Scorpion minimum distance ' + alphaStats.emperorScorpion.minDistance + ', max IoU ' + alphaStats.emperorScorpion.maxIou.toFixed(3));
   console.log('- Distinction: Ironhalo ' + differences.ironhalo + '/80; Tiger ' + differences.tiger + '/80; Emperor Scorpion ' + differences.emperorScorpion + '/80 pixel and alpha frames differ');
   console.log('- Presentation: Complete B outline +' + outlinedPixels + ' pixels; Form changes ' + formChanges);
-  console.log('- Protected: published Ironhalo exact; public Tiger, Emperor Scorpion, and 100/316 exact; zero child assets/effects; no commit, push, registration, outline registration, fixtures, package mutation, or broader EN-E12 work');
-  console.log('- Candidate Thornmane frame digest: ' + digests.candidate);
+  console.log('- Protected: published Ironhalo exact; public Tiger, Emperor Scorpion, and 100/316 exact; zero child assets/effects; no public or outline registration, fixtures, package mutation, continuation, or broader EN-E12 work');
+  console.log('- Approved Thornmane frame digest: ' + digests.candidate);
   console.log('- Approved Ironhalo frame digest: ' + digests.ironhalo);
   console.log('- Public Tiger frame digest: ' + digests.tiger);
   console.log('- Public Emperor Scorpion frame digest: ' + digests.emperorScorpion);
